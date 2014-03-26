@@ -96,11 +96,11 @@ You can get hold of content item schema and its fields as in the example below.
 
 You can do this either in 
 
-* :doc:`Your own BrowserView Python code </views/browserviews>`
+* :doc:`Your own BrowserView Python code </develop/plone/views/browserviews>`
 
-* :doc:`pdb breakpoint </testing_and_debugging/pdb>` 
+* :doc:`pdb breakpoint </develop/plone/testing_and_debugging/pdb>` 
 
-* :doc:`Command line Zope debug console </misc/commandline>`
+* :doc:`Command line Zope debug console </develop/plone/misc/commandline>`
 
 Example::
         
@@ -594,7 +594,7 @@ See also
 Vocabularies
 ------------
 
-Archetypes has its own vocabulary infrastructure which is not compatible with :doc:`zope.schema vocabularies </forms/vocabularies>`.
+Archetypes has its own vocabulary infrastructure which is not compatible with :doc:`zope.schema vocabularies </develop/plone/forms/vocabularies>`.
 
 Dynamic vocabularies
 ====================
@@ -611,7 +611,7 @@ Example::
 Hiding widgets conditionally
 -------------------------------
 
-AT widgets have ``condition`` :doc:`expression </functionality/expressions>`.
+AT widgets have ``condition`` :doc:`expression </develop/plone/functionality/expressions>`.
 
 Example how to set a condition for multiple widgets to call a BrowserView to ask whether the widget should be visible or not::
 
