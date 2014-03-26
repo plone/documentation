@@ -17,7 +17,6 @@ The target audience of the documentation includes
 * System administrators: hosting Plone on a server
 
 
-
 Narrative documentation
 =======================
 

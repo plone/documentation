@@ -2,6 +2,7 @@ Working with Content
 =====================
 
 .. toctree::
+    :maxdepth: 2
 
     introduction/index
     logging-in
