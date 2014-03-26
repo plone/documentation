@@ -1,6 +1,6 @@
-===================
-Plone Documentation
-===================
+===========================
+Plone - The Open Source CMS
+===========================
 
 This document is a community maintained manual for `Plone <http://plone.org>`_ content management
 system. The target audience of the documentation includes
