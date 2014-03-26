@@ -1,0 +1,112 @@
+{% extends 'basic/layout.html' %}
+<!-- $Id$ -->
+{% block extrahead %}
+<script language="javascript">
+//<![CDATA[
+
+Documentation.addTranslations({"locale": "fr", "plural_expr": "(n > 1)", "messages": {"See the definition": "Voir la d\u00e9finition"}});
+
+// See http://disqus.disqus.com/general_integration_help/
+var disqus_developer = 1;
+if (document.location.protocol == 'http:') {
+    disqus_developer = 0;
+}
+
+// Some HTML/CSS transforms we can't do in pure CSS (waiting for CSS3 support)
+$(document).ready(function () {
+
+    // Style of .. verisonmodified:: , .. versionadded:: ...
+    $('p:has(span.versionmodified)').addClass('p-versionmodified');
+
+    // Style of the TOC tree
+    $('ul:has(li.toctree-l1)').addClass('toctree');
+
+    // Decorate links to other sites
+    $('a[class~=external]').attr('target', '_blank');
+
+    // Glossary terms
+    $('em.xref').attr('title', _('See the definition'));
+
+    // We need to have all <pre> in a <div class="highlight"> to mimic pygments
+    // to work around a pygments (?) bug
+    var suffixes = {cfg: null, python:null};
+    for (var suffix in suffixes) {
+        var pattern = 'div.highlight-' + suffix + ' > pre';
+        $(pattern).wrap('<div class="highlight" />');
+    }
+    return true;
+});
+//]]>
+</script>
+{% endblock %}
+
+{% block relbar1 %}
+<!--[if lte IE 6]>
+<style type="text/css">
+#ie6msg{border:3px solid #090; margin:8px 0; background:#cfc; color:#000;}
+#ie6msg h4{margin:8px; padding:0;}
+#ie6msg p{margin:8px; padding:0;}
+#ie6msg p a.getie8{font-weight:bold; color:#006;}
+#ie6msg p a.ie6expl{font-weight:normal; color:#006;}
+</style>
+<div id="ie6msg">
+<h4>Did you know that your browser is out of date?</h4>
+<p>If the layout of this site seems ugly, that's because you're actually using
+an outdated browser. And we wont put any effort to provide a nice layout to IE6
+users.</p>
+<p>To get the best possible experience using our website we recommend that you
+upgrade your browser to a newer version. The current version
+is <a class="getie8"
+href="http://upgradeie.s3.amazonaws.com/eng/index.html">Internet Explorer
+8</a>. The upgrade is free. If you're using a PC at work you should contact your
+IT administrator.</p>
+<p>If you want to you may also try some other popular Internet browsers
+like <a class="ie6expl"
+href="http://getfirefox.com">Firefox</a>, <a class="ie6expl"
+href="http://www.google.com/chrome">Chrome</a>, <a class="ie6expl"
+href="http://www.opera.com">Opera</a>, or <a class="ie6expl"
+href="http://www.apple.com/safari/download/">Safari</a></p>
+</div>
+<![endif]-->
+{{ super() }}
+{% endblock %}
+
+{% block sidebarlogo %}
+<p class="logo"><a href="{{ pathto(master_doc) }}"><img src="{{ pathto('_static/plone-icon-64.png', 1) }}" />
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+{% if theme_disqus_name != 'false' %}
+<hr />
+<div id="disqus_thread">
+</div>
+<script type="text/javascript"
+        src="http://disqus.com/forums/{{ theme_disqus_name }}/embed.js">
+</script>
+<noscript>
+  <a href="http://disqus.com/forums/{{ theme_disqus_name }}/?url=ref">
+    View the discussion thread.
+  </a>
+</noscript>
+<a href="http://disqus.com"
+   class="dsq-brlink">blog comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var links = document.getElementsByTagName('a');
+  var query = '?';
+  for(var i = 0; i < links.length; i++) {
+    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+      query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+    }
+    // Not a Jinja end block
+  }
+  document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{{ theme_disqus_name }}/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+{% endif %}
+{% endblock %}
