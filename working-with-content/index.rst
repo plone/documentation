@@ -1,6 +1,5 @@
-====================
-Plone 4 User Manual
-====================
+Working with Content
+=====================
 
 A User Manual for Plone content creators and managers.
 
