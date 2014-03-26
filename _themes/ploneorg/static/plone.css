@@ -19,6 +19,12 @@ div.body h6 {
     font: "Helvetica Neue",Arial,FreeSans,sans-serif;
 }
 
+header {
+    background-color: #3094C8;
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 14%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 64%, rgba(0, 0, 0, 0) 64%, rgba(0, 0, 0, 0));
+    background-size: 18px 18px;
+}
+
 
 div.document {
     background-color: White;
