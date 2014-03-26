@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Plone 4 User Manual'
+project = u'Plone Documentation'
 copyright = u''
 
 # The version info for the project you're documenting, acts as replacement for
@@ -53,7 +53,7 @@ copyright = u''
 # built documents.
 #
 # The short X.Y version.
-version = '4'
+version = '4.3'
 # The full version, including alpha/beta/rc tags.
 release = '4'
 
@@ -170,7 +170,7 @@ html_sidebars = {
 #html_file_suffix = ''
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Plone4UserManual'
+htmlhelp_basename = 'PloneDocumentation'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -184,7 +184,7 @@ htmlhelp_basename = 'Plone4UserManual'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Plone4UserManual.tex', u'Plone 4 User Manual',
+  ('index', 'PloneDocumentation.tex', u'Plone Documentation',
    u'Plone community', 'manual'),
 ]
 
