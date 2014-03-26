@@ -1,13 +1,10 @@
 Working with Content
 =====================
 
-A User Manual for Plone content creators and managers.
-
 .. toctree::
-    :maxdepth: 2
-    :numbered:
 
     introduction/index
+    logging-in
     adding-content/index
     managing-content/index
     using-tinymce-as-visual-editor/index

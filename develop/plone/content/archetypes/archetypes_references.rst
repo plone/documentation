@@ -57,7 +57,7 @@ In this example we set a reference from the ``myct1`` object to the
 
 To get the object(s) referenced, just use the getter. Note that what you get
 is the objects themselves, not their 
-":doc:`brains </searching_and_indexing/query>`":: 
+":doc:`brains </develop/plone/searching_and_indexing/query>`":: 
 
 .. TODO:: Add a glossary entry for brains.
 
