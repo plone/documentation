@@ -1,0 +1,2 @@
+plone.app.themeingplugins Manual
+================================

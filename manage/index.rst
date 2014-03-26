@@ -1,2 +1,8 @@
-Plone Documentation
-=======================================================
+About
+=====
+
+.. toctree::
+    :maxdepth: 1
+
+    installation
+
