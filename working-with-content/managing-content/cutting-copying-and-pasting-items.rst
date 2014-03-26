@@ -14,7 +14,7 @@ butterflies realizes that a Swallowtail butterfly was mistakenly
 included -- the Eastern Tiger Swallowtail folder shown below -- the
 folder can simply be moved with a *cut*/*paste* operation:
 
-.. figure:: ../_static/copy_of_operationcut.png
+.. figure:: /_static/copy_of_operationcut.png
    :align: center
    :alt: 
 
@@ -27,21 +27,21 @@ disappear, however, awaiting the actual *paste* operation. The *paste*
 button is now highlighted to show the cut/paste operation is in
 progress:
 
-.. figure:: ../_static/operationpaste.png
+.. figure:: /_static/operationpaste.png
    :align: center
    :alt: 
 
 The *paste* button is now active. The next step is to navigate to the
 destination folder, in this case the Swallowtails folder:
 
-.. figure:: ../_static/copy_of_operationpaste2.png
+.. figure:: /_static/copy_of_operationpaste2.png
    :align: center
    :alt: 
 
 After clicking the Swallowtails folder, the *paste* button will continue
 to show, because the paste operation has not yet been completed:
 
-.. figure:: ../_static/operationpaste3.png
+.. figure:: /_static/operationpaste3.png
    :align: center
    :alt: 
 
@@ -50,7 +50,7 @@ the Eastern Tiger Swallowtail folder to its proper place in the
 Swallowtails folder, and cuts it from the original location, the
 Skippers folder, and the *cut*/*paste* operation is complete:
 
-.. figure:: ../_static/operationpaste4.png
+.. figure:: /_static/operationpaste4.png
    :align: center
    :alt: 
 

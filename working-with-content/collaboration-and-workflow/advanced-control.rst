@@ -6,7 +6,7 @@ sophisticated features for setting availability by date and by context.
 
 The *state* menu has an *advanced*... item:
 
-.. figure:: ../_static/statemenu.png
+.. figure:: /_static/statemenu.png
    :align: center
    :alt: state-menu.png
 
@@ -14,7 +14,7 @@ The *state* menu has an *advanced*... item:
 
 which brings up the *advanced* state panel:
 
-.. figure:: ../_static/stateadvanced.png
+.. figure:: /_static/stateadvanced.png
    :align: center
    :alt: 
 

@@ -12,7 +12,7 @@ intelligent system.
 To add a collection, use the *Add new...* menu, as for adding other
 content types:
 
-.. figure:: ../_static/p4_addnewmenu.png
+.. figure:: /_static/p4_addnewmenu.png
    :align: center
    :alt: p4\_addnewmenu
 
@@ -20,7 +20,7 @@ content types:
 
 You will see the Add*Collection*panel:
 
-.. figure:: ../_static/copy_of_p4_addcollection.png
+.. figure:: /_static/copy_of_p4_addcollection.png
    :align: center
    :alt: p4\_addcollection2
 
@@ -39,7 +39,7 @@ Setting the search criterion
 After setting the display configuration in the edit panel shown above,
 click the criteria tab to show the panel for setting search criteria:
 
-.. figure:: ../_static/copy2_of_copy_of_p4_collectionssearchcrit1.png
+.. figure:: /_static/copy2_of_copy_of_p4_collectionssearchcrit1.png
    :align: center
    :alt: p4\_collectionssearchcrit1 2
 
@@ -49,7 +49,7 @@ The top area of the panel, *Add New Search Criteria*, lets you set a
 field and a matching criterion. The bottom area, *Set Sort Order*, is a
 simple selection for a field to sort on:
 
-.. figure:: ../_static/copy_of_p4_collectionssearchcrit2.png
+.. figure:: /_static/copy_of_p4_collectionssearchcrit2.png
    :align: center
    :alt: p4\_collectionssearchcrit2 2
 

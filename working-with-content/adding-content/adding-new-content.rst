@@ -6,7 +6,7 @@ definitions of each standard content type
 
 New content items are added via the **Add New . . .** drop-down menu:
 
-.. figure:: ../_static/copy_of_addnewmenu.png
+.. figure:: /_static/copy_of_addnewmenu.png
    :align: center
    :alt: add-new-menu.png
 
@@ -41,7 +41,7 @@ Event
     links next to the "Add event to calendar" text in the main view of
     the event item.
 
-    .. figure:: ../_static/events-summary-chart.jpg
+    .. figure:: /_static/events-summary-chart.jpg
        :align: center
        :alt: events-summary-chart.jpg
     
