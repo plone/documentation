@@ -19,10 +19,30 @@ div.body h6 {
     font: "Helvetica Neue",Arial,FreeSans,sans-serif;
 }
 
+div#topbar {
+    margin-bottom: 0;
+}
+
+div#topbar ul.nav {
+    border-right: 1px solid #3D3D3D;
+    /*height: 25px;*/
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
 header {
     background-color: #3094C8;
     background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 14%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 64%, rgba(0, 0, 0, 0) 64%, rgba(0, 0, 0, 0));
     background-size: 18px 18px;
+    height: 89px;
+}
+
+header a {
+    margin-top: 22px;
+    margin-bottom: 22px;
+    margin-left: 0;
+    display: block;
 }
 
 
