@@ -9,3 +9,4 @@ Programming Plone
 
    getstarted/index
    serving/index
+   views/index
