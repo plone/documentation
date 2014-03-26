@@ -1,9 +1,6 @@
 Adapting & Extending Plone
 ===========================
 
-Table of Contents
-=================
-
 .. toctree::
    :maxdepth: 2
    :numbered:
