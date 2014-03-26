@@ -1,10 +1,11 @@
-Plone Documentation
-=======================================================
 
+===========================
+Plone - The Open Source CMS
+===========================
 
+This document is a community maintained manual for `Plone <http://plone.org>`_ content management system. 
 
-This document is a community maintained manual for the `Plone <http://plone.org>`_ content management
-system. The target audience of the documentation includes
+The target audience of the documentation includes
 
 * Content editors: writing, updating and ordering the actual content of the site
 
@@ -20,6 +21,7 @@ system. The target audience of the documentation includes
 
 Table of Contents
 =================
+
 
 .. toctree::
    :maxdepth: 2

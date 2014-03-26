@@ -3,7 +3,6 @@ Adapting & Extending Plone
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    
    basics
    theming/index

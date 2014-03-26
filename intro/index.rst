@@ -31,7 +31,7 @@ This is supported by a global network of `over 300 solution providers`_ in more 
 Looking for a hosting provider to host your Plone site for you? 
 You can find a list of providers and consultants on `plone.org`_.
 
-.. _over 300 solution providers: http://plone.net/providers
+.. _over 300 solution providers: http://plone.org/support/providers
 .. _plone.org: http://plone.org/support/hosting-providers
 
 **We are very proud to be known by the company we keep.** 
