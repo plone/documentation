@@ -21,3 +21,4 @@ Programming Plone
    sessions/index
    images/index
    syndication
+   misc/index
