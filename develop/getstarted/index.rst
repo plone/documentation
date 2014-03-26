@@ -9,7 +9,7 @@ How to get started with Plone development.
 Introduction
 --------------
 
-Plone is developed in the :doc:`Python </getstarted/python>` programming language. :doc:`You should master Python basics </getstarted/python>`
+Plone is developed in the :doc:`Python </develop/getstarted/python>` programming language. :doc:`You should master Python basics </develop/getstarted/python>`
 before you can efficiently customize Plone. If you are very new to Python, Plone or software development,
 it is suggested that you read the `Professional Plone 4 Development book
 <http://www.packtpub.com/professional-plone-4-development/book>`_
@@ -22,7 +22,7 @@ Plone runs on the top of the `Zope 2 application server <zope2.zope.org/>`_, mea
 can contain and host several Plone sites. Plone also uses Zope 3 components. Zope 3 is not an upgrade for Zope 2,
 but a separate project.
 
-Internally, Plone uses the objected-oriented :doc:`ZODB </persistency/index>` database and the development
+Internally, Plone uses the objected-oriented :doc:`ZODB </develop/persistency/index>` database and the development
 mindset greatly differs from that of SQL based systems. SQL backends can still be integrated with Plone,
 like for any other Python application, but this is a more advanced topic.
 
@@ -54,7 +54,7 @@ Enabling debug mode
 
 By default, Plone runs in a *production mode* where changed files in the file system
 are not reflected in the served HTML. When you start developing Plone you need to
-first :doc:`put it into a debug mode </getstarted/debug_mode>`.
+first :doc:`put it into a debug mode </develop/getstarted/debug_mode>`.
 
 Plone add-ons as Python packages
 -----------------------------------
@@ -84,7 +84,7 @@ Plone add-ons can be found at the `plone.org Products
 Package index) <http://pypi.python.org>`_.
 
 See the :doc:`Installing add-on packages using buildout
-</getstarted/installing_addons>` section for more details.
+</develop/getstarted/installing_addons>` section for more details.
 
 
 Creating your first add-on
@@ -123,7 +123,7 @@ based on ``buildout.cfg``. Buildout is free to override these files on any updat
 You need to have your own add-on in the ``src/`` folder as created above.
 There you overlay changes to the existing Plone core through extension mechanisms provided by Plone:
 
-* :doc:`Layers </views/layers>`
+* :doc:`Layers </develop/views/layers>`
 
 * :doc:`Adapters </components/adapters>`
 
@@ -139,12 +139,12 @@ Plone add-on features
 
 Plone add-ons usually:
 
-* Create custom :doc:`content types </content/index>` or extend existing ones for your specialized need. Plone has
-  two subsystems for content types: :doc:`Dexterity (new) </content/dexterity>` and :doc:`Archetypes (old) </content/archetypes/index>`.
+* Create custom :doc:`content types </develop/content/index>` or extend existing ones for your specialized need. Plone has
+  two subsystems for <content types: :doc:`Dexterity (new) </develop/content/dexterity>` and :doc:`Archetypes (old) </develop/content/archetypes/index>`.
 
-* Add new :doc:`views </views/browserviews>` for your site and its content.
+* Add new :doc:`views </develop/views/browserviews>` for your site and its content.
 
-* Create Python-processed :doc:`forms </forms/index>` on your site.
+* Create Python-processed :doc:`forms </develop/forms/index>` on your site.
 
 * Theme your site
 
