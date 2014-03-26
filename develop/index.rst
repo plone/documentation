@@ -20,3 +20,4 @@ Programming Plone
    security/index
    sessions/index
    images/index
+   syndication
