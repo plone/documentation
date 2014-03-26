@@ -34,7 +34,7 @@ to the folders where reporters do the work of adding news articles.
 Then, reporters would create stories and send them up the line for
 review and approval:
 
-.. figure:: ../_static/workflowsteps.png
+.. figure:: /_static/workflowsteps.png
    :align: center
    :alt: 
 

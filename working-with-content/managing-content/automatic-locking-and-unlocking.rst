@@ -12,7 +12,7 @@ In this example, George Schrubb has started editing the "Widget
 Installation" document. When Jane Smythe (who has permissions to edit
 that document as well) goes to view it, she will see the following:
 
-.. figure:: ../_static/locking01.png
+.. figure:: /_static/locking01.png
    :align: center
    :alt: locking01.png
 

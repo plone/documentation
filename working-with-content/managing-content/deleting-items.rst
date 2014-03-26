@@ -9,7 +9,7 @@ variety of reasons. In the example of the swallowtail butterfly
 mistakenly added to the Skippers folder, instead of cutting it and
 pasting it somewhere, it could simply be deleted:
 
-.. figure:: ../_static/operationdelete.png
+.. figure:: /_static/operationdelete.png
    :align: center
    :alt: 
 

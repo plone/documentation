@@ -14,7 +14,7 @@ so you don't need to install any special software on your computer.
 The word *content* is meant to be general, because you can publish so
 many types of information, including:
 
-.. figure:: ../_static/content_types_into_plone.png
+.. figure:: /_static/content_types_into_plone.png
    :align: center
    :alt: 
 
@@ -25,7 +25,7 @@ be uploaded or created on a web site. Content can also be uploaded from
 your local computer. You create *folders* on a Plone web site to hold
 content and to create a navigation structure:
 
-.. figure:: ../_static/content_is_added_to_folders.png
+.. figure:: /_static/content_is_added_to_folders.png
    :align: center
    :alt: 
 
@@ -35,13 +35,13 @@ You Love Butterflies
 For example, to add content about butterflies, you might add a folder
 named "Butterflies," then add some text to a web page in the folder:
 
-.. figure:: ../_static/butterflies_folder_text.png
+.. figure:: /_static/butterflies_folder_text.png
    :align: center
    :alt: 
 
 And then you might add some butterfly photos to the folder:
 
-.. figure:: ../_static/butterflies_folder.png
+.. figure:: /_static/butterflies_folder.png
    :align: center
    :alt: 
 
@@ -50,7 +50,7 @@ After adding a few reports and videos to the Butterflies folder, the
 content would be organized like this, with two sub-folders within the
 Butterflies folder:
 
-.. figure:: ../_static/folders_within_folders.png
+.. figure:: /_static/folders_within_folders.png
    :align: center
    :alt: 
 
@@ -62,7 +62,7 @@ installation of Plone software on a web server. The web server may be
 anywhere, often at a website server company within a "rack" of computers
 dedicated to the task:
 
-.. figure:: ../_static/server_rack.png
+.. figure:: /_static/server_rack.png
    :align: center
    :alt: 
 
@@ -76,7 +76,7 @@ installation on the server.
 
 Let's simplify the diagram showing how you interact with Plone:
 
-.. figure:: ../_static/client_to_server_simple.png
+.. figure:: /_static/client_to_server_simple.png
    :align: center
    :alt: 
 
@@ -89,13 +89,13 @@ mysite.com. You type www.mysite.com into your web browser. After you
 press Enter, the following sequence of events happens as your browser
 talks to the web server at mysite.com:
 
-.. figure:: ../_static/client_request.png
+.. figure:: /_static/client_request.png
    :align: center
    :alt: 
 
 The Plone software responds:
 
-.. figure:: ../_static/server_response.png
+.. figure:: /_static/server_response.png
    :align: center
    :alt: 
 
@@ -112,14 +112,14 @@ text and graphics, instead of learning a new computer language.
 But back to our overview. Your web browser "renders" (translates) this
 HTML, and you see the resulting web page:
 
-.. figure:: ../_static/my_site_served.png
+.. figure:: /_static/my_site_served.png
    :align: center
    :alt: 
 
 As you view your butterfly web page, you can choose to change it or add
 to it. You can also upload photos, documents, etc. at any time:
 
-.. figure:: ../_static/plone_donut.png
+.. figure:: /_static/plone_donut.png
    :align: center
    :alt: 
 
@@ -127,6 +127,6 @@ After you make your edits and click "save changes," the new version of
 the web page will be immediately available to anyone surfing to your
 site:
 
-.. figure:: ../_static/plone_donut_full.png
+.. figure:: /_static/plone_donut_full.png
    :align: center
    :alt: 

@@ -6,14 +6,14 @@ another.
 
 To add a page, use the *Add new...* menu for a folder:
 
-.. figure:: ../_static/copy_of_addnewmenu.png
+.. figure:: /_static/copy_of_addnewmenu.png
    :align: center
    :alt: 
 
 Select **Page** from the drop-down menu, and you'll see the *Add Page*
 panel:
 
-.. figure:: ../_static/editpagepanelplone3.png
+.. figure:: /_static/editpagepanelplone3.png
    :align: center
    :alt: 
 

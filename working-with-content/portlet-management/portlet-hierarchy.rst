@@ -18,7 +18,7 @@ being blocked and what's being inherited. When a portlet is blocked, you
 will notice a subtle change in color on on the portlet management
 screen:
 
-.. figure:: ../_static/blocked_portlets.png
+.. figure:: /_static/blocked_portlets.png
    :align: center
    :alt: Blocked portlets in management
 
@@ -27,7 +27,7 @@ screen:
 In this diagram, our Portlets are designated in blue underneath the Page
 title:
 
-.. figure:: ../_static/hierarchy.gif
+.. figure:: /_static/hierarchy.gif
    :align: center
    :alt: hierarchy.gif
 

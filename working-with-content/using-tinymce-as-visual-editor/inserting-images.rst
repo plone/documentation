@@ -7,13 +7,13 @@ TinyMCE.
 The TinyMCE editor allows you to insert image files stored in Plone into
 your document, using the |Image| button on the TinyMCE toolbar:
 
-.. figure:: ../_static/toolbar_image.jpg
+.. figure:: /_static/toolbar_image.jpg
    :align: center
    :alt: 
 
 Clicking this button launches the Insert Image dialog:
 
-.. figure:: ../_static/insert_image_dialog.jpg
+.. figure:: /_static/insert_image_dialog.jpg
    :align: center
    :alt: 
 
@@ -44,7 +44,7 @@ Photoshop or other external image editing application to crop or change
 the size of an image. The "Image size" dropdown list provides a choice
 between many sizes and formats:
 
-.. figure:: ../_static/image_size.jpg
+.. figure:: /_static/image_size.jpg
    :align: center
    :alt: 
 
@@ -73,29 +73,29 @@ To enable image captioning go to **Site Setup â†’ TinyMCE**. Make sure
 that you have **Allow captioned images** selected in the **Resource
 Types tab**.
 
-.. figure:: ../_static/image_caption_settings.jpg
+.. figure:: /_static/image_caption_settings.jpg
    :align: center
    :alt: 
 
 When you add image to the site, you can put some text into its
 description that will be displayed as an image caption.
 
-.. figure:: ../_static/add_image.jpg
+.. figure:: /_static/add_image.jpg
    :align: center
    :alt: 
 
 Now when we create a page, and insert image into it, check the box
 Caption:
 
-.. figure:: ../_static/insert_image_caption.jpg
+.. figure:: /_static/insert_image_caption.jpg
    :align: center
    :alt: 
 
 Save this page, and you will see the image followed by its description
 as the caption all inserted into a frame:
 
-.. figure:: ../_static/caption_page.jpg
+.. figure:: /_static/caption_page.jpg
    :align: center
    :alt: 
 
-.. |Image| image:: ../_static/image.gif
+.. |Image| image:: /_static/image.gif

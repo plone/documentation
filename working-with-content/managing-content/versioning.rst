@@ -34,7 +34,7 @@ Viewing the version history
 Once an item as been saved, you can use the **History** link found near
 the top of the page. Simply click it to show the History overlay:
 
-.. figure:: ../_static/history-viewlet.png
+.. figure:: /_static/history-viewlet.png
    :align: center
    :alt: history-viewlet.png
 
@@ -57,7 +57,7 @@ To compare any previous version with the one just before it, click the
 *Compare* link located between two adjacent versions in the History
 overlay.
 
-.. figure:: ../_static/compare-button.png
+.. figure:: /_static/compare-button.png
    :align: center
    :alt: compare-button.png
 
@@ -66,7 +66,7 @@ overlay.
 By clicking this button, you'll see a screen like this one where you can
 see the differences between the two versions:
 
-.. figure:: ../_static/compare-versions.png
+.. figure:: /_static/compare-versions.png
    :align: center
    :alt: compare-versions.png
 
@@ -77,7 +77,7 @@ green is text which has been added to the newer version. You can toggle
 between **inline** or **as code** views of the differences between
 versions.
 
-.. figure:: ../_static/versioncompare-src.png
+.. figure:: /_static/versioncompare-src.png
    :align: center
    :alt: Comparing Versions (HTML Source)
 
