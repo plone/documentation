@@ -1,6 +1,7 @@
+===================
 Plone Documentation
-=======================================================
-<write something interesting here>
+===================
+
 This document is a community maintained manual for `Plone <http://plone.org>`_ content management
 system. The target audience of the documentation includes
 
@@ -12,13 +13,8 @@ system. The target audience of the documentation includes
 
 * System administrators: hosting Plone on a server
 
-This documentation does not have the end user (content editor)
-documentation for Plone. For the editor documentation
-please go to `plone.org documentation <http://plone.org/documentation>`_.
-
-
-Table of Contents
-=================
+Narrative documentation
+========================
 
 .. toctree::
    :maxdepth: 2
