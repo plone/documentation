@@ -1,8 +1,6 @@
 Working with Content
 =====================
 
-A User Manual for Plone content creators and managers.
-
 .. toctree::
 
     introduction/index
