@@ -8,3 +8,5 @@ Programming Plone
    :maxdepth: 2
 
    getstarted/index
+   serving/index
+   views/index
