@@ -17,7 +17,7 @@ Plone web site design. When he clicks the "Skippers" folder, the
 standard view tab panel, or just "standard view," for the folder is
 shown:
 
-.. figure:: ../_static/folderviewstandard.png
+.. figure:: /_static/folderviewstandard.png
    :align: center
    :alt: folder-view-standard.png
 
@@ -30,26 +30,26 @@ see a listing of contained content items, in one of several list
 presentations, selected via the *display* pull-down menu. The default
 view is called *standard view*:
 
-.. figure:: ../_static/folderdisplaymenu.png
+.. figure:: /_static/folderdisplaymenu.png
    :align: center
    :alt: 
 
 And, here is *summary view*:
 
-.. figure:: ../_static/folderviewsummary.png
+.. figure:: /_static/folderviewsummary.png
    :align: center
    :alt: 
 
 And, *tabular view*:
 
-.. figure:: ../_static/folderviewtabular.png
+.. figure:: /_static/folderviewtabular.png
    :align: center
    :alt: 
 
 And, *thumbnail view*, which is mainly useful for photographs, but still
 works for normal content:
 
-.. figure:: ../_static/folderviewthumbnail.png
+.. figure:: /_static/folderviewthumbnail.png
    :align: center
    :alt: 
 

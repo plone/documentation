@@ -19,7 +19,7 @@ content, but she needs him to start adding content. Before we follow
 along with Jane, let's take a peek at what George currently sees when he
 logs in on this Plone site:
 
-.. figure:: ../_static/02b.png
+.. figure:: /_static/02b.png
    :align: center
    :alt: 
 
@@ -33,7 +33,7 @@ Documentation folder.
 Jane navigates to the Documentation folder and clicks on the Sharing
 tab:
 
-.. figure:: ../_static/03.png
+.. figure:: /_static/03.png
    :align: center
    :alt: 
 
@@ -67,7 +67,7 @@ In this example, Jane will grant George "Can add" permission on the
 "Documentation" folder so that he can add content to the folder. First,
 she searches to find him by his name:
 
-.. figure:: ../_static/04.png
+.. figure:: /_static/04.png
    :align: center
    :alt: 
 
@@ -75,7 +75,7 @@ Jane can now add specific permissions for George in the "Documentation"
 folder. She is going to give him the "Can add" permission and then click
 on "Save":
 
-.. figure:: ../_static/05.png
+.. figure:: /_static/05.png
    :align: center
    :alt: 
 
@@ -88,7 +88,7 @@ anything (e.g. clicks on a link) on a Plone site.
 George clicks on the *Home* tab (for example) to refresh his view of the
 site and can now see the "Documentation" folder:
 
-.. figure:: ../_static/06.png
+.. figure:: /_static/06.png
    :align: center
    :alt: 
 
@@ -97,7 +97,7 @@ view all the content in the "Documentation" folder, and he now is able
 to add the available content types to the folder, as shown in the *Add
 new...* menu:
 
-.. figure:: ../_static/07.png
+.. figure:: /_static/07.png
    :align: center
    :alt: 
 
@@ -113,7 +113,7 @@ viewing the document is to make his own copy of it.
 George adds a Page called "Widget Installation" and creates the content
 for that Page. When he's done he saves it:
 
-.. figure:: ../_static/08.png
+.. figure:: /_static/08.png
    :align: center
    :alt: 
 
@@ -121,7 +121,7 @@ Jane views the work George has done. She clicks on the "Documentation"
 tab and sees that George indeed has been busy. She clicks on "Widget
 Installation" page to take a closer look:
 
-.. figure:: ../_static/09.png
+.. figure:: /_static/09.png
    :align: center
    :alt: 
 
@@ -137,7 +137,7 @@ Both Jane and George have been hard at work creating pages in the
 Documentation folder. **Jane has published the Documentation folder and
 several pages:**
 
-.. figure:: ../_static/09b.png
+.. figure:: /_static/09b.png
    :align: center
    :alt: 
 
@@ -145,7 +145,7 @@ Jane has decided that she wants to turn over all editing (but not
 publishing) control of the "Documentation" folder to George. So she
 returns to the "Documentation" folder and clicks on the *Sharing* tab:
 
-.. figure:: ../_static/10.png
+.. figure:: /_static/10.png
    :align: center
    :alt: sharing10.png
 
@@ -157,7 +157,7 @@ including the "Documentation" folder itself. When George next visits the
 folder and clicks on "Project Overview" (which is a Page that Jane
 created), this is what he sees:
 
-.. figure:: ../_static/11.png
+.. figure:: /_static/11.png
    :align: center
    :alt: sharing11.png
 
@@ -172,7 +172,7 @@ sharing tab for "Widget Installation" and searches on Molly's Full Name
 (not username) and gives her the "Can edit" permissions on this
 document.
 
-.. figure:: ../_static/12.png
+.. figure:: /_static/12.png
    :align: center
    :alt: sharing12.png
 
@@ -181,7 +181,7 @@ document.
 Now when Molly goes to the "Documentation" folder, she can see the two
 published items and the private item that she is now allowed to edit:
 
-.. figure:: ../_static/13.png
+.. figure:: /_static/13.png
    :align: center
    :alt: sharing13.png
 
@@ -190,7 +190,7 @@ published items and the private item that she is now allowed to edit:
 And, in fact, when she clicks on the "Widget Installation" document, she
 is able to edit it:
 
-.. figure:: ../_static/13b.png
+.. figure:: /_static/13b.png
    :align: center
    :alt: sharing13b.png
 
@@ -201,7 +201,7 @@ allowed to edit, she doesn't have any additional access. She can view
 these two items because they are published and in the default Plone
 workflow (meaning that anyone can view them).
 
-.. figure:: ../_static/13c.png
+.. figure:: /_static/13c.png
    :align: center
    :alt: sharing13c.png
 
@@ -213,4 +213,4 @@ the published state OR Molly had not been given any other permissions
 have needed the complete URL to reach the document she had been given
 access to edit. Permissions are very specific in Plone!
 
-.. |image25| image:: ../_static/07b.png
+.. |image25| image:: /_static/07b.png

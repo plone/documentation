@@ -14,7 +14,7 @@ system.
 Folders are added by clicking the **Add new...** drop-down menu. Select
 **Folder** from the menu:
 
-.. figure:: ../_static/add-item-menu-folder.png
+.. figure:: /_static/add-item-menu-folder.png
    :align: center
    :alt: add-item-menu-folder.png
 
@@ -22,7 +22,7 @@ Folders are added by clicking the **Add new...** drop-down menu. Select
 
 You should now see the *Add Folder* screen:
 
-.. figure:: ../_static/addfolder.png
+.. figure:: /_static/addfolder.png
    :align: center
    :alt: 
 
@@ -42,7 +42,7 @@ You also notice tabs along the top:
    available for view on the web site,
 -  *Ownership*, for specifying the creator and/or contributors for the
    content item,
--  *Settings,* for allowing comments about the item, adding :ref:`_rst_prev-next-links`,
+-  *Settings,* for allowing comments about the item, adding :doc:`/working-with-content/managing-content/previous-next-links`,
    and choosing whether it shows in the navigation menu for the web
    site.
 
@@ -57,4 +57,4 @@ Watch a Plone 4 video on `adding a
 folder <http://dist.plone.org/media/video/plone4-user-manual/foldercreation.html>`_.
 
 
-.. |lights-camera-action.png| image:: ../_static/lights-camera-action.png
+.. |lights-camera-action.png| image:: /_static/lights-camera-action.png

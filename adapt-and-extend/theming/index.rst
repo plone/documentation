@@ -1,13 +1,8 @@
 Theming Plone
-=============
-
-
-Table of Contents
-=================
+--------------
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
 
    intro
    plone_app_theming

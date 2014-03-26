@@ -7,7 +7,6 @@ pasted, moved, renamed, etc.
 
 .. toctree::
     :maxdepth: 2
-    :numbered:
 
     cutting-copying-and-pasting-items
     editing-content

@@ -2,6 +2,7 @@ About
 ======
 
 .. toctree::
-   :maxdepth: 1
+    :maxdepth: 2
 
     documentation_styleguide
+
