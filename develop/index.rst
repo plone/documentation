@@ -11,3 +11,4 @@ Programming Plone
    serving/index
    views/index
    content/index
+   forms/index
