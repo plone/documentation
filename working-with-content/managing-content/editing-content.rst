@@ -23,7 +23,7 @@ the descriptions of Plone content items as simple as possible.
 Here is the *Edit* panel for a folder, in this case, one called
 "Butterflies":
 
-.. figure:: ../_static/edititemfolder.png
+.. figure:: /_static/edititemfolder.png
    :align: center
    :alt: 
 
@@ -43,7 +43,7 @@ Image can be done by navigating to an individual image and clicking the
 *Edit* tab. Clicking the *Edit* tab for the image, you will see the
 following *Edit Image* panel:
 
-.. figure:: ../_static/editimage.png
+.. figure:: /_static/editimage.png
    :align: center
    :alt: 
 
@@ -57,7 +57,7 @@ simply delete the image entirely.
 Notice also the *Transform* tab at the top, which pertains specifically
 to images, offering a choice of several image transforms:
 
-.. figure:: ../_static/transformimage.png
+.. figure:: /_static/transformimage.png
    :align: center
    :alt: 
 
@@ -85,21 +85,21 @@ will outline the editable text. In the following screen capture, the
 mouse cursor is *not* over editable text, so you see the page title and
 body text as normal:
 
-.. figure:: ../_static/inlineeditingoff.png
+.. figure:: /_static/inlineeditingoff.png
    :align: center
    :alt: 
 
 But when the mouse is moved over the body text, a box highlights the
 body text as editable:
 
-.. figure:: ../_static/inlineeditingbodytext1.png
+.. figure:: /_static/inlineeditingbodytext1.png
    :align: center
    :alt: 
 
 Clicking within the body text after the inline editing box has appeared
 will bring up the visual editor:
 
-.. figure:: ../_static/inlineeditingbodytext2.png
+.. figure:: /_static/inlineeditingbodytext2.png
    :align: center
    :alt: 
 
@@ -111,14 +111,14 @@ the page.
 If the mouse is moved over the title, also editable, an inline editing
 box appears:
 
-.. figure:: ../_static/inlineeditingtitle1.png
+.. figure:: /_static/inlineeditingtitle1.png
    :align: center
    :alt: 
 
 Clicking the title after the box appears will activate a very simple
 editing field with a Save/Cancel choice:
 
-.. figure:: ../_static/inlineeditingtitle2.png
+.. figure:: /_static/inlineeditingtitle2.png
    :align: center
    :alt: 
 

@@ -33,14 +33,14 @@ Using "Check out"
 First, navigate to the page you want check out. Then from the "Actions"
 drop-down menu, select "Check out":
 
-.. figure:: ../_static/01.png
+.. figure:/_static/01.png
    :align: center
    :alt: 
 
 An info message will appear indicating you're now working with a working
 copy:
 
-.. figure:: ../_static/03.png
+.. figure:/_static/03.png
    :align: center
    :alt: 
 
@@ -50,7 +50,7 @@ else can edit that published version while you have a working copy
 checked out. This will prevent other changes from being made to (and
 subsequently lost from) the published version while you edit your copy.
 
-.. figure:: ../_static/locked.png
+.. figure:/_static/locked.png
    :align: center
    :alt: 
 
@@ -60,21 +60,21 @@ Using "Check in"
 When you are ready to have your edited copy replace the published one,
 simply choose "Check-in" from the "Actions" drop-down menu:
 
-.. figure:: ../_static/04a.png
+.. figure:/_static/04a.png
    :align: center
    :alt: 
 
 You will then be prompted to enter a Check-in message. Fill it out and
 click on "Check in":
 
-.. figure:: ../_static/04b.png
+.. figure:/_static/04b.png
    :align: center
    :alt: 
 
 Your updated document will now replace the published copy and become the
 new published copy.
 
-.. figure:: ../_static/05.png
+.. figure:/_static/05.png
    :align: center
    :alt: 
 
@@ -93,14 +93,14 @@ If for any reason it becomes necessary to cancel a check out and **you
 don't want to save any of your changes**, simply navigate to the working
 copy and select "Cancel check-out":
 
-.. figure:: ../_static/cancel1.png
+.. figure:: /_static/cancel1.png
    :align: center
    :alt: 
 
 You will prompted to confirm the "Cancel checkout" or to "Keep
 checkout":
 
-.. figure:: ../_static/cancel2.png
+.. figure:: /_static/cancel2.png
    :align: center
    :alt: 
 

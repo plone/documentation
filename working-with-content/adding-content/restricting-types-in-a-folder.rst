@@ -13,7 +13,7 @@ images in the images folder.
 First, select the last choice in the *Add new...* menu called
 *Restrictions...*:
 
-.. figure:: ../_static/addnewmenu.png
+.. figure:: /_static/addnewmenu.png
    :align: center
    :alt: add-new-menu.png
 
@@ -21,7 +21,7 @@ First, select the last choice in the *Add new...* menu called
 
 There are three choices shown for restricting types in the folder:
 
-.. figure:: ../_static/restricttypes.png
+.. figure:: /_static/restricttypes.png
    :align: center
    :alt: 
 
@@ -33,7 +33,7 @@ standard types to be added, is a way to reset to the default,
 unrestricted setting. The last choice allows selection from a list of
 available types:
 
-.. figure:: ../_static/restricttypesmanually.png
+.. figure:: /_static/restricttypesmanually.png
    :align: center
    :alt: 
 

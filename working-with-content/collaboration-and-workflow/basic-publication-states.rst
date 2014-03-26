@@ -9,7 +9,7 @@ folders, images, pages, etc., and any specialized content types -- there
 is a menu on the right for publication state. This *state* menu has
 settings for controlling publication state:
 
-.. figure:: ../_static/statemenu1.png
+.. figure:: /_static/statemenu1.png
    :align: center
    :alt: 
 
@@ -49,7 +49,7 @@ change the state back to *public draft* state, or *sent back* to
 private, if desired. The menu choices in the state menu will change
 accordingly:
 
-.. figure:: ../_static/statemenu2.png
+.. figure:: /_static/statemenu2.png
    :align: center
    :alt: 
 

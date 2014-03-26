@@ -15,7 +15,7 @@ are placed. The following screen capture shows what user Elizabeth Smith
 would see after logging in and clicking her own name at upper right to
 go to her personal area:
 
-.. figure:: ../_static/dashboard.png
+.. figure:: /_static/dashboard.png
    :align: center
    :alt: 
 
@@ -26,7 +26,7 @@ portlets already assigned to the dashboard -- the dashboard view shown
 above is empty, because there is no content available for display in the
 portlets on this new web site. Here are the default portlets:
 
-.. figure:: ../_static/dashboardedit.png
+.. figure:: /_static/dashboardedit.png
    :align: center
    :alt: 
 

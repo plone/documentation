@@ -22,7 +22,7 @@ External Links
 Select a word or phrase, click the *Insert/edit link* icon, select
 *External* under *Libraries*, and the External link panel will appear:
 
-.. figure:: ../_static/insert_external_link.jpg
+.. figure:: /_static/insert_external_link.jpg
    :align: center
    :alt: 
 
@@ -46,7 +46,7 @@ anchors.
 First, create the document with the subheadings set within it, and
 re-type the subheadings at the top of the document:
 
-.. figure:: ../_static/anchor_page.jpg
+.. figure:: /_static/anchor_page.jpg
    :align: center
    :alt: 
 
@@ -55,21 +55,21 @@ the cursor to the beginning of the subheading and press the *Insert/edit
 anchor* icon. Enter the name of the anchor in the *Anchor name* field.
 Then click *ok*.
 
-.. figure:: ../_static/insert_anchor.jpg
+.. figure:: /_static/insert_anchor.jpg
    :align: center
    :alt: 
 
 Then select each of the re-typed subheadings at the top and click the
 *Insert/edit link* icon to select by subheadings:
 
-.. figure:: ../_static/insert_anchor_select_text.jpg
+.. figure:: /_static/insert_anchor_select_text.jpg
    :align: center
    :alt: 
 
 When selecting *Anchors* under *Libraries*, a panel will appear for
 selecting which subheading to which the anchor link should connect:
 
-.. figure:: ../_static/select_anchor.jpg
+.. figure:: /_static/select_anchor.jpg
    :align: center
    :alt: 
 
@@ -83,4 +83,4 @@ links-to-anchors within narrative text, by setting anchors to other
 styles within the document, and coming up with clever mixes. This
 functionality is especially important for large documents.
 
-.. |image19| image:: ../_static/insert_internal_link.jpg
+.. |image19| image:: /_static/insert_internal_link.jpg

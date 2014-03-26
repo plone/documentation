@@ -42,7 +42,7 @@ normally. Note the presence of the *log in* link the screen image below
 -- and you are surfing the web site anonymously, as seen in the
 following screen capture of a new Plone web site:
 
-.. figure:: ../_static/plonemain3.0anon.png
+.. figure:: /_static/plonemain3.0anon.png
    :align: center
    :alt: 
 
@@ -66,7 +66,7 @@ but you can count on it looking like a tabbed interface with this
 particular green color. In the following screen capture, user John Smith
 has logged into a new Plone web site:
 
-.. figure:: ../_static/plonemain3.0loggedin.png
+.. figure:: /_static/plonemain3.0loggedin.png
    :align: center
    :alt: 
 
@@ -102,7 +102,7 @@ you have logged in. After logging in, if you go to a folder where you
 have rights, you'll see a header strip that has a green color with tabs
 for *contents*, *view*, *edit*, rules**, and *sharing*:
 
-.. figure:: ../_static/editstriptabs.png
+.. figure:: /_static/editstriptabs.png
    :align: center
    :alt: 
 
@@ -120,7 +120,7 @@ but here are descriptions to help you start:
 You also see menus in the lower part of the green header strip,
 *Display, Add new..., and State*:
 
-.. figure:: ../_static/editstripmenus.png
+.. figure:: /_static/editstripmenus.png
    :align: center
    :alt: 
 

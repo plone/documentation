@@ -38,7 +38,7 @@ commonly .jpg (or .jpeg). Other common formats for images include .png
 and .gif. Take note of where you save images on your computer so that
 you can find them when you upload them to your Plone web site.
 
-.. figure:: ../_static/image_resizing.png
+.. figure:: /_static/image_resizing.png
    :align: center
    :alt: image\_resizing.png
 

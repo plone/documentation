@@ -5,7 +5,7 @@ Basic options of TinyMCE.
 
 The default TinyMCE editor will look like this:
 
-.. figure:: ../_static/tiny_start.jpg
+.. figure:: /_static/tiny_start.jpg
    :align: center
    :alt: 
 
@@ -18,6 +18,6 @@ Toolbar
 
 The following table describes the function and output of each button.
 
-.. figure:: ../_static/tiny-mce-toolbar.png
+.. figure:: /_static/tiny-mce-toolbar.png
    :align: center
    :alt:

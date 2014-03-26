@@ -6,7 +6,7 @@ events.
 
 Use the *Add new...* menu for a folder to add an event:
 
-.. figure:: ../_static/copy_of_addnewmenu.png
+.. figure:: /_static/copy_of_addnewmenu.png
    :align: center
    :alt: add-new-menu.png
 
@@ -43,13 +43,13 @@ consult a calendar. There is a handy pop-up calendar that offers an
 alternate way to select the day. If you click one of the little calendar
 icons adjacent to the day pull-down, :
 
-.. figure:: ../_static/eventstartandendfields.png
+.. figure:: /_static/eventstartandendfields.png
    :align: center
    :alt: 
 
 you'll see this pop-up calendar:
 
-.. figure:: ../_static/calendarpopuppanel.png
+.. figure:: /_static/calendarpopuppanel.png
    :align: center
    :alt: 
 
@@ -64,4 +64,4 @@ has been **published*****.
 Watch a Plone 2 video on `adding an
 event <http://media.plone.org/LearnPlone/Creating%20an%20Event.swf>`_.
 
-.. |image4| image:: ../_static/addevent.png
+.. |image4| image:: /_static/addevent.png

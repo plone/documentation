@@ -33,7 +33,7 @@ site underneath.
 We'll use the default Plone layout design as an example of typical
 divisions of the screen:
 
-.. figure:: ../_static/plonedefaultareaslabeled.png
+.. figure:: /_static/plonedefaultareaslabeled.png
    :align: center
    :alt: 
 
@@ -46,7 +46,7 @@ other terms.
 For example, we can select three web sites from the `list of Plone web
 sites <http://plone.net/sites>`_ to compare:
 
-.. figure:: ../_static/akamaidesign.png
+.. figure:: /_static/akamaidesign.png
    :align: center
    :alt: 
 
@@ -62,7 +62,7 @@ is located. The right column holds a series of "portlets." The footer
 contains a horizontal menu, repeating the menu choices in the header,
 for convenience. There is a right-most column that has zoom settings.
 
-.. figure:: ../_static/discoverdesign.png
+.. figure:: /_static/discoverdesign.png
    :align: center
    :alt: 
 
@@ -80,7 +80,7 @@ a sophisticated storage system, and Python, a great programming
 language, which facilitates intelligent "wiring" of the flow of text and
 graphics into the web site.
 
-.. figure:: ../_static/smealdesign.png
+.. figure:: /_static/smealdesign.png
    :align: center
    :alt: 
 
@@ -103,4 +103,4 @@ designers typically combine focus areas, vertical and horizontal menus,
 underlying machinery is Plone and Zope and Python, but the design
 "theme" or "skin" can be made to look any way the designer chooses.
 
-.. |plone-default-design-areas.png| image:: ../_static/plone-default-design-areas.png
+.. |plone-default-design-areas.png| image:: /_static/plone-default-design-areas.png

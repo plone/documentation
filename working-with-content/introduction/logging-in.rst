@@ -7,7 +7,7 @@ When you visit a Plone web site anonymously, or are given the web
 address for site maintenance, you'll see a *log in* button in the
 top-right corner like this:
 
-.. figure:: ../_static/log-in.png
+.. figure:: /_static/log-in.png
    :align: center
    :alt: log-in.png
 
@@ -16,7 +16,7 @@ top-right corner like this:
 After clicking the *log in* link, you'll see an input panel where you
 can type in your user name and password:
 
-.. figure:: ../_static/loginform.png
+.. figure:: /_static/loginform.png
    :align: center
    :alt: 
 

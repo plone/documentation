@@ -11,13 +11,13 @@ After logging in, your full name will be posted on the top-right corner
 of the screen. Click your name to open the dropdown, then click on the
 *Dashboard* link to go to your personal area:
 
-.. figure:: ../_static/loggedinstrip.png
+.. figure:: /_static/loggedinstrip.png
    :align: center
    :alt: 
 
 You will see the dashboard** panel:
 
-.. figure:: ../_static/dashboardjohnsmith.png
+.. figure:: /_static/dashboardjohnsmith.png
    :align: center
    :alt: 
 
@@ -29,7 +29,7 @@ clicking the *Edit* tab, but we'll get to that in a second.
 First, let's look at the *Preferences* link in the previous dropdown,
 which will bring up the personal preferences edit panel:
 
-.. figure:: ../_static/dashboardpersonalprefs.png
+.. figure:: /_static/dashboardpersonalprefs.png
    :align: center
    :alt: 
 

@@ -8,7 +8,7 @@ engines that run Plone.
 Any content item, when clicked by a user with edit rights for the item,
 will show a set of tabs at the top for setting basic properties:
 
-.. figure:: ../_static/basicpropertiestabs.png
+.. figure:: /_static/basicpropertiestabs.png
    :align: center
    :alt: null
 
@@ -33,7 +33,7 @@ Plone can use this metadata in a multitude of ways.
 Here is the *Categorization* panel, shown for a page content item (would
 be the same for other content types):
 
-.. figure:: ../_static/editpagecategorization.png
+.. figure:: /_static/editpagecategorization.png
    :align: center
    :alt: null
 
@@ -65,7 +65,7 @@ The *Dates* panel has fields for the publishing date and the expiration
 date, effectively start and stop dates for the content if you wish to
 set them:
 
-.. figure:: ../_static/datessettings.png
+.. figure:: /_static/datessettings.png
    :align: center
    :alt: null
 
@@ -109,7 +109,7 @@ content type, but generally there are input fields controlling whether
 or not the item appears in navigation, or if there are comments allowed,
 and other similar controls:
 
-.. figure:: ../_static/settingspanel.png
+.. figure:: /_static/settingspanel.png
    :align: center
    :alt: null
 
@@ -165,4 +165,4 @@ You can read more about `Dublin Core <http://dublincore.org/>`_ and
 `HTML
 Metatags <http://www.w3.org/TR/html401/struct/global.html#h-7.4.4.2>`_.
 
-.. |null| image:: ../_static/ownershipsettings.png
+.. |null| image:: /_static/ownershipsettings.png
