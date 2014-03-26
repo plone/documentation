@@ -12,7 +12,7 @@ OS X, with similar functionality.
 Clicking the *Contents* tab for a folder, such as the "Skippers" folder
 below, shows the *Contents* tab panel:
 
-.. figure:: ../_static/foldercontents.png
+.. figure:: /_static/foldercontents.png
    :align: center
    :alt: folder-contents.png
 
@@ -39,7 +39,7 @@ operation must show you the *short name* as well as the *title*, because
 usually would want to change both, if changing either. Consider the
 following example:
 
-.. figure:: ../_static/renameitem.png
+.. figure:: /_static/renameitem.png
    :align: center
    :alt: rename-item.png
 
@@ -76,7 +76,7 @@ fell swoop you can quickly publish, unpublish, etc.
 handy for a folder with more than a dozen items or so, and would be
 indispensable for folders with hundreds of items.
 
-.. figure:: ../_static/advancedstatepanel.png
+.. figure:: /_static/advancedstatepanel.png
    :align: center
    :alt: 
 

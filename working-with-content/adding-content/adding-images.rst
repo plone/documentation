@@ -15,7 +15,7 @@ as these are not widely supported by web browsers.**
 When you are ready to upload an image, use the *Add new...* drop-down
 menu (You will only see the *Add new...* menu after logging in):
 
-.. figure:: ../_static/add-item-menu-image.png
+.. figure:: /_static/add-item-menu-image.png
    :align: center
    :alt: add-item-menu-image.png
 
@@ -23,7 +23,7 @@ menu (You will only see the *Add new...* menu after logging in):
 
 After clicking to add an **Image**, you'll see the *Add Image* panel:
 
-.. figure:: ../_static/addimage.png
+.. figure:: /_static/addimage.png
    :align: center
    :alt: add-image.png
 

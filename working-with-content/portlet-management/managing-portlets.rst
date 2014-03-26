@@ -64,5 +64,5 @@ With Portlets, you can add more than one of the same type on a page.
 There is no limit to how many times you can use an individual Portlet or
 a limit to how many total Portlets can be on a Page.
 
-.. |Portlet manage link| image:: ../_static/copy_of_manage_portlets_button.png
-.. |Manage portlets| image:: ../_static/manage_portlets.png
+.. |Portlet manage link| image:: /_static/copy_of_manage_portlets_button.png
+.. |Manage portlets| image:: /_static/manage_portlets.png

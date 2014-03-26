@@ -10,7 +10,7 @@ navigation.
 Add a link by clicking the menu choice in the *Add new...* menu for a
 folder:
 
-.. figure:: ../_static/copy_of_addnewmenu.png
+.. figure:: /_static/copy_of_addnewmenu.png
    :align: center
    :alt: add-new-menu.png
 
@@ -18,7 +18,7 @@ folder:
 
 You will see the Add*Link* panel:
 
-.. figure:: ../_static/addlink.png
+.. figure:: /_static/addlink.png
    :align: center
    :alt: 
 

@@ -12,7 +12,7 @@ section to learn how to set Kupu as your default editor.
 
 A typical Kupu toolbar looks like this:
 
-.. figure:: ../_static/kupugrab.png
+.. figure:: /_static/kupugrab.png
    :align: center
    :alt: kupu-grab
 
@@ -86,7 +86,7 @@ Internal Links
 Select a word or phrase, click the *internal link* icon, and the *insert
 link* panel will appear:
 
-.. figure:: ../_static/insertlinkpanel.png
+.. figure:: /_static/insertlinkpanel.png
    :align: center
    :alt: 
 
@@ -103,7 +103,7 @@ External Links
 Select a word or phrase, click the *external link* icon, and the
 External link panel will appear:
 
-.. figure:: ../_static/externallinkpanel.png
+.. figure:: /_static/externallinkpanel.png
    :align: center
    :alt: 
 
@@ -127,21 +127,21 @@ anchors.
 First, create the document with the subheadings set within it, and
 re-type the subheadings at the top of the document:
 
-.. figure:: ../_static/anchortext.png
+.. figure:: /_static/anchortext.png
    :align: center
    :alt: 
 
 Then select each of the re-typed subheadings at the top and click the
 anchor icon to select by subheadings:
 
-.. figure:: ../_static/anchorset.png
+.. figure:: /_static/anchorset.png
    :align: center
    :alt: 
 
 A panel will appear for selecting which subheading to which the anchor
 link should connect:
 
-.. figure:: ../_static/anchorwindow.png
+.. figure:: /_static/anchorwindow.png
    :align: center
    :alt: 
 
@@ -165,7 +165,7 @@ Tables are handy for tabular data and lists. To add a table, put your
 cursor where you want it and click the *add table* icon. You'll see the
 *add table* panel:
 
-.. figure:: ../_static/inserttablepanel.png
+.. figure:: /_static/inserttablepanel.png
    :align: center
    :alt: 
 
@@ -174,7 +174,7 @@ Headings* box you'll have a place to type column headings for the table.
 Table class refers to how you want the table to be styled. You have
 choices such as these:
 
-.. figure:: ../_static/inserttablepanelclasses.png
+.. figure:: /_static/inserttablepanelclasses.png
    :align: center
    :alt: 
 
@@ -232,7 +232,7 @@ Text Styling
 The text style setting is made with a pulldown menu. Here are the
 choices:
 
-.. figure:: ../_static/kupu-text-styles.png
+.. figure:: /_static/kupu-text-styles.png
    :align: center
    :alt: kupu-text-styles
 
@@ -272,7 +272,7 @@ are adept at such slightly more technical approaches to entering text.
 Some people prefer such formats not just for speed itself, but for
 fluidity of expression.
 
-.. |insert-image-current-folder.png| image:: ../_static/insertimagecurrentfolder.png
-.. |image21| image:: ../_static/arrowUp.gif
-.. |image22| image:: ../_static/arrowBlank.gif
-.. |image23| image:: ../_static/tableediting.png
+.. |insert-image-current-folder.png| image:: /_static/insertimagecurrentfolder.png
+.. |image21| image:: /_static/arrowUp.gif
+.. |image22| image:: /_static/arrowBlank.gif
+.. |image23| image:: /_static/tableediting.png
