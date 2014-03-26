@@ -1,4 +1,3 @@
-
 ===========================
 Plone - The Open Source CMS
 ===========================
@@ -19,8 +18,8 @@ The target audience of the documentation includes
 
 
 
-Table of Contents
-=================
+Narrative documentation
+=======================
 
 
 .. toctree::
