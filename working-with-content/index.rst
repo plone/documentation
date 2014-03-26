@@ -8,6 +8,7 @@ A User Manual for Plone content creators and managers.
     :numbered:
 
     introduction/index
+    logging-in
     adding-content/index
     managing-content/index
     using-tinymce-as-visual-editor/index

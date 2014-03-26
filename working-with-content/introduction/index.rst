@@ -10,6 +10,5 @@ A Conceptual Overview of Plone
     conceptual-overview
     visual-design-of-plone
     user-accounts-and-roles
-    logging-in
     setting-your-preferences
     your-dashboard
