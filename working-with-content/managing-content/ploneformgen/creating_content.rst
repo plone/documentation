@@ -33,7 +33,7 @@ Next, we need to learn the methods that are used to set our attributes on a Docu
 
 Now, determine where you want to put the new content. That's your target folder. It's convenient to locate that folder in a parent folder of the form object, as you may then use the magic of acquisition to find it without learning how to traverse the object database.
 
-Now, in the form folder, we add a "Custom Script Adapter" — which is just a very convenient form of Python script. Then, just customize the script to look something like the following:
+Now, in the form folder, we add a "Custom Script Adapter" - which is just a very convenient form of Python script. Then, just customize the script to look something like the following:
 
 .. code-block:: python
 
@@ -74,7 +74,7 @@ That's it. This will really work.
 Security
 ========
 
-At the moment, the person that submits your form will need to be logged in as a user that has the right to add pages to the target folder, then change their attributes. You may need to allow other users (even anonymous ones) to submit the form. That's where the Proxy role setting of the custom script adapter comes in. You may change this setting to Manager, and the script will run as if the user has the manager role — even if they're anonymous.
+At the moment, the person that submits your form will need to be logged in as a user that has the right to add pages to the target folder, then change their attributes. You may need to allow other users (even anonymous ones) to submit the form. That's where the Proxy role setting of the custom script adapter comes in. You may change this setting to Manager, and the script will run as if the user has the manager role - even if they're anonymous.
 
 I hope it's obvious that you want to be very, very careful writing a script that will run with the Manager role. Review it, and review it again to make sure it will do only what you want. Never trust unchecked form input to determine target or content ids.
 

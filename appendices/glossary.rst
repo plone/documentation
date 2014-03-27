@@ -45,7 +45,7 @@ It incorporates the original `glossary on plone.org
         <http://docs.zope.org/zope2/zope2book/VirtualHosting.html>`_
 
     Workflow
-        Workflow is a very powerful way of mimicking business processes — it
+        Workflow is a very powerful way of mimicking business processes - it
         is also the way security settings are handled in Plone.
 
     ZODB

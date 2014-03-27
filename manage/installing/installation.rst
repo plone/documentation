@@ -41,7 +41,7 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
   See :doc:`Plone installation requirements <requirements>`.
 
 
-* If you are installing for production — rather than testing or evaluation — review :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` before installation.
+* If you are installing for production - rather than testing or evaluation - review :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` before installation.
 
 
 

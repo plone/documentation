@@ -20,7 +20,7 @@ ZEO server log
 A ZEO server only maintains one log file, which records starts, stops and
 client connections. Unless you are having difficulties with ZEO client
 connections, this file is uninformative. It also typically grows very
-slowly — so slowly that you may never need to rotate it.
+slowly - so slowly that you may never need to rotate it.
 
 The ZEO server log for a cluster will typically be found under your buildout
 directory at var/zeoserver/zeoserver.log.
@@ -33,7 +33,7 @@ kinds of client logs, and each of your clients will maintain both:
 
 Access logs
 
-    A record of HTTP, WebDAV, and — if it's turned on — ftp accesses to the
+    A record of HTTP, WebDAV, and - if it's turned on - ftp accesses to the
     client. This resembles traditional web-server log files. Typical location
     of a client's access log is var/client#/Z2.log.
 
@@ -49,7 +49,7 @@ Log levels
 You may set the verbosity level of access and event logs via the zope2instance
 sections for your clients. This isn't very useful for event logs, but can be
 very useful for access logs. The default verbosity level for access
-logs — WARN — creates an entry for every HTTP access. If you are recording
+logs - WARN - creates an entry for every HTTP access. If you are recording
 HTTP accesses via your proxy server, you may change the access logging level
 to "ERROR" and dramatically slow the rate at which your access logs grow::
 
@@ -67,7 +67,7 @@ Client log rotation
 -------------------
 
 The basic option here is between using the ZEO client log rotation mechanisms
-built into Zope and using external mechanisms — such as the log-rotation
+built into Zope and using external mechanisms - such as the log-rotation
 facilities available on your server.
 
 Plone 4.2.2+

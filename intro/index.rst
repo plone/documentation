@@ -2,15 +2,13 @@
 Introduction
 ============
 
-.. contents:: :local:
-
 What is plone?
 --------------
 
 **A powerful, flexible Content Management Solution that is easy to install, use and extend.**
 
 Plone lets non-technical people create and maintain information for a public website or an intranet using only a web browser. 
-Plone is easy to understand and use — allowing users to be productive in just half an hour — yet offers a wealth of community-developed add-ons and extensibility to keep meeting your needs for years to come.
+Plone is easy to understand and use - allowing users to be productive in just half an hour - yet offers a wealth of community-developed add-ons and extensibility to keep meeting your needs for years to come.
 
 Blending the creativity and speed of open source with a technologically advanced `Python`_ back-end, Plone offers superior security without sacrificing power or extensibility.
 
@@ -35,9 +33,9 @@ You can find a list of providers and consultants on `plone.org`_.
 .. _plone.org: http://plone.org/support/hosting-providers
 
 **We are very proud to be known by the company we keep.** 
-Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell, the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments — all use Plone.
+Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell, the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments - all use Plone.
 
-**Plone is open on many levels.** It runs on Linux, Windows, Mac OS X, FreeBSD and Solaris — and offers a straightforward installation to get you up and running in minutes. 
+**Plone is open on many levels.** It runs on Linux, Windows, Mac OS X, FreeBSD and Solaris - and offers a straightforward installation to get you up and running in minutes. 
 It has been translated into more than 40 languages, and is developed with an unflinching emphasis on usability and standards compliance.
 
 **Need a CMS that integrates** with Active Directory, Salesforce, LDAP, SQL, Web Services. LDAP or Oracle? Plone does. 

@@ -144,7 +144,7 @@ Connections and queues
 
 A versatile load balancer like haproxy will give you fine-grained control
 over the queuing of connections to ZEO client back-end servers. A factor to
-take into account is that ZEO clients will always accept connections — even
+take into account is that ZEO clients will always accept connections - even
 when all threads are busy. Given that requests take dramatically different
 amount of times to render and return, this may result in some clients having
 queued connections when other clients are free.
