@@ -130,7 +130,7 @@ to inspect the object history and rewind it to a working state.
 
 See also
 
-* :doc:`Deleting broken objects </content/deleting>`
+* :doc:`Deleting broken objects </develop/plone/content/deleting>`
 
 Volatile references
 --------------------
