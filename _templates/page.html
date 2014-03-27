@@ -1,0 +1,80 @@
+{#
+  Drop version number from the HTML documentation title
+#}
+{%- set docstitle = "Plone Documentation" %}
+
+{% extends "!page.html" %}
+
+{% block extrahead %}
+{{super()}}
+<script src="{{ pathto('_static/js/plone.js', 1) }}"></script>
+{% endblock %}
+
+{#
+  Remove version number from the top and bottom path bars
+#}{#
+{%- block rootrellink %}
+    <li><a href="{{ pathto(master_doc) }}">Home{{ reldelim1 }}</li>
+{%- endblock %}
+#}
+
+
+
+{#
+  Add Editor Help Pop Up HTML.
+#}
+
+{% block footer %}
+{{ super() }}
+
+<div id="editor-trap">
+      <h3>Edit this document</h3>
+
+      <p>
+        The source code of this file is hosted on GitHub. Everyone can
+        update and fix errors in this document with few clicks -
+        no downloads needed.
+      <p>
+
+      <ol>
+
+        <li>
+          Go to
+        <a href="https://github.com/plone/documentation/blob/master/source/{{ pagename }}.rst">
+          {{ title }}
+        </a> on GitHub.
+      </li>
+
+        <li>
+          Press the <b>Fork</b> button. This will create your own personal copy of the documentation.
+      </li>
+
+        <li>
+        <b>Edit</b> files using GitHub's text editor in your web browser
+      </li>
+
+      <li>
+        Fill in the <b>Commit message</b> text box at the end of the page telling <i>why</i>
+        you did the changes. Press the <b>Propose file change</b> button next to it when done.
+      </li>
+
+
+      <li>
+        Then head to the <i>Send a pull request</i> page (you won't need to fill in any additional text). Just
+        press <b>Send pull request</b> button.
+      </li>
+
+      <li>
+        Your changes are now queued for review under project's <a href="https://github.com/plone/documentation/pulls">Pull requests</a> tab on Github.
+      </li>
+      </ol>
+
+      <p>
+        For basic information about updating this manual
+        and Sphinx format please see <a href="http://docs.plone.org/reference_manuals/active/writing/writing.html">
+        Writing and updating the manual</a> guide.
+      </p>
+
+  </div>
+
+{% endblock %}
