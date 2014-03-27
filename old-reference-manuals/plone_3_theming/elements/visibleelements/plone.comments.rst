@@ -7,8 +7,7 @@ Notes:
     Comments can be turned on or off
 
     -  through the web: on an individual item (Edit > Settings > Allow
-       Comments )
-        or Site Setup > Types (site-wide per type)
+       Comments ) or Site Setup > Types (site-wide per type)
     -  in your product: profiles/default/types (per type)
 
 Snippet:

@@ -8,8 +8,7 @@ Notes:
     be turned on or off
 
     -  through the web: on an individual item (Edit > Settings >
-       Presentation )
-        or Site Setup > Types (site-wide per type)
+       Presentation ) or Site Setup > Types (site-wide per type)
     -  in your product: profiles/default/types (per type)
 
 Snippet:

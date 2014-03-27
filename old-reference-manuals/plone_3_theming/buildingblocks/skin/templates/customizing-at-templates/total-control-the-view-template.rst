@@ -65,6 +65,7 @@ And, just like magic, you should see, rendered in your content area:
    :alt: The Infamous "Foo" View
 
    The Infamous "Foo" View
+
 But Wait! Where Are All My Fields?
 ----------------------------------
 
@@ -156,6 +157,7 @@ within the page. Our end-result would look something like this:
    :alt: Custom Body Macro
 
    Custom Body Macro
+
 If we had created custom widget templates, those would be applied to the
 rendered page as well.
 
@@ -187,6 +189,7 @@ behavior can be found. The final result looks like this:
    :alt: Customized Label
 
    Customized Label
+
 Also, don't forget that you have the power to omit
 ``head``,\ ``body``,\ ``folderlisting``, and ``footer`` by simply
 writing in do-nothing macros into your view template. Furthermore, you

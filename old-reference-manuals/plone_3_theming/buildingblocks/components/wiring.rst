@@ -11,8 +11,7 @@ Configuration Language (ZCML) and given a name.
 
 There are two important things to remember about components
 
-Components are compounds of classes, templates, interfaces, permissions
-etc.
+Components are compounds of classes, templates, interfaces, permissions etc.
     To track components down you need to look in .zcml files first,
     locate their names, and that will lead you to the classes and
     templates that contribute to them.
@@ -94,5 +93,4 @@ If you want to be very disciplined and tidy, consult the ZCMLStyleGuide
 
  
 
-.. |diagram of a
-component| image:: http://plone.org/documentation/manual/theme-reference/images/component.gif
+.. |diagram of a component| image:: http://plone.org/documentation/manual/theme-reference/images/component.gif
