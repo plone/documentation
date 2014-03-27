@@ -5,3 +5,4 @@ Developing for Plone
    :maxdepth: 2
 
    plone/index
+   addons/index
