@@ -1,24 +1,148 @@
-==================================
 Exceptions and common tracebacks
 ==================================
 
 .. admonition:: Description
 
-        Common Python exception traceback patterns you may encounter when working with Plone.
+        Common Python exception traceback patterns you may encounter when
+        working with Plone and possible solutions for them.
 
-.. contents :: :local:
+        Please see :doc:`this tutorial </troubleshooting/basic>` for extracting
+        Python tracebacks from your Plone logs.
 
-Introduction
--------------
+.. contents ::
+    :local:
+    :depth: 1
 
-This document contains a list of common developer errors you might encounter and possible solutions for them.
+Add-on installer error: This object was originally created by a product that is no longer installed
+---------------------------------------------------------------------------------------------------
 
-Please see :doc:`this tutorial </troubleshooting/basic>` for extracting Python tracebacks from your Plone logs.
+**Traceback**::
+
+    2009-10-18 13:11:20 ERROR Zope.SiteErrorLog 1255860680.760.514176531634 http://localhost:8080/twinapex/portal_quickinstaller/installProducts
+    Traceback (innermost last):
+      Module ZPublisher.Publish, line 125, in publish
+      Module Zope2.App.startup, line 238, in commit
+      Module transaction._manager, line 93, in commit
+      Module transaction._transaction, line 325, in commit
+      Module transaction._transaction, line 424, in _commitResources
+      Module ZODB.Connection, line 541, in commit
+      Module ZODB.Connection, line 586, in _commit
+      Module ZODB.Connection, line 620, in _store_objects
+      Module ZODB.serialize, line 407, in serialize
+      Module OFS.Uninstalled, line 40, in __getstate__
+    SystemError: This object was originally created by a product that
+                is no longer installed.  It cannot be updated.
+                (<Salt at broken>)
+
+**Reason**: Data.fs contains objects for which the code is not present.
+You have probably moved Data.fs or edited buildout.cfg.
+
+**Solution**: Check that eggs and zcml contain all necessary products in buildout.cfg.
+
+.. seealso::
+    * http://plone.org/support/forums/general#nabble-td3523234
+    * http://article.gmane.org/gmane.comp.web.zope.plone.setup/3232
+
+Add-on installer error: too many values to unpack
+--------------------------------------------------
+
+An exception prevents running a quick installer.
+
+**Traceback**::
+
+      Module ZPublisher.Publish, line 119, in publish
+      Module ZPublisher.mapply, line 88, in mapply
+      Module ZPublisher.Publish, line 42, in call_object
+      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 589, in installProducts
+      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 475, in installProduct
+       - __traceback_info__: ('gomobile.mobile',)
+      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 396, in snapshotPortal
+      Module five.localsitemanager.registry, line 194, in registeredUtilities
+      Module zope.component.registry, line 127, in registeredUtilities
+    ValueError: too many values to unpack
+
+**Reason**: You have run Data.fs with zope.component 3.5.1, but later downgraded / moved Data.fs.
+
+**Solution**: Pin zope.component to 3.5.1.
+
+.. seealso::
+    http://plone.org/support/forums/general#nabble-td3257712%7Ca3257712
+
+Archetypes: TypeError: getattr(): attribute name must be string
+------------------------------------------------------------------
+
+**Traceback**::
+
+	       'user': <PropertiedUser 'admin'>}
+	  Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
+	   - __traceback_info__: otherwidget.Description(here, target_language=target_language)
+	  Module PythonExpr, line 1, in <expression>
+	  Module Products.Archetypes.generator.widget, line 100, in Description
+	TypeError: getattr(): attribute name must be string
+
+**Reason**: You might have used something else besides string or translation string
+to define Archetypes widget name or description.
+
+AttributeError in setRoles due to workflow state transition
+-----------------------------------------------------------
+
+**Traceback**::
+
+    Traceback (innermost last):
+    Module ZPublisher.Publish, line 115, in publish
+    Module ZPublisher.mapply, line 88, in mapply
+    Module ZPublisher.Publish, line 41, in call_object
+    Module Products.CMFPlone.FactoryTool, line 361, in __call__
+    Module Products.CMFPlone.FactoryTool, line 147, in __getitem__
+    Module Products.CMFPlone.PloneFolder, line 406, in invokeFactory
+    Module Products.CMFCore.TypesTool, line 934, in constructContent
+    Module Products.CMFCore.TypesTool, line 345, in constructInstance
+    Module Products.CMFCore.TypesTool, line 357, in _finishConstruction
+    Module Products.CMFCore.CMFCatalogAware, line 145, in notifyWorkflowCreated
+    Module Products.CMFCore.WorkflowTool, line 355, in notifyCreated
+    Module Products.DCWorkflow.DCWorkflow, line 392, in notifyCreated
+    Module Products.DCWorkflow.DCWorkflow, line 476, in _changeStateOf
+    Module Products.DCWorkflow.DCWorkflow, line 571, in _executeTransition
+    Module Products.DCWorkflow.DCWorkflow, line 435, in updateRoleMappingsFor
+    Module Products.DCWorkflow.utils, line 60, in modifyRolesForPermission
+    Module AccessControl.Permission, line 93, in setRoles
+    AttributeError: appname
+
+**Possible reasons**:
+
+#. You are using AnnotationStorage but you forgot to declare atapi.ATFieldProperty in your class body
+#. You are inhering schema in Archetypes, but you do not inherit the class itself
+
+AttributeError: 'FilesystemResourceDirectory' object has no attribute 'absolute_url'
+------------------------------------------------------------------------------------
+
+**Traceback**::
+
+	2013-09-02 12:26:55 ERROR plone.transformchain Unexpected error whilst trying to apply transform chain
+	Traceback (most recent call last):
+	  File "/home/pab/.buildout/eggs/plone.transformchain-1.0.3-py2.7.egg/plone/transformchain/transformer.py", line 48, in __call__
+	    newResult = handler.transformIterable(result, encoding)
+	  File "/home/pab/.buildout/eggs/plone.app.theming-1.1.1-py2.7.egg/plone/app/theming/transform.py", line 179, in transformIterable
+	    params = prepareThemeParameters(findContext(self.request), self.request, parameterExpressions, cache)
+	  File "/home/pab/.buildout/eggs/plone.app.theming-1.1.1-py2.7.egg/plone/app/theming/utils.py", line 630, in prepareThemeParameters
+	    params[name] = quote_param(expression(expressionContext))
+	  File "/home/pab/.buildout/eggs/Zope2-2.13.20-py2.7.egg/Products/PageTemplates/ZRPythonExpr.py", line 48, in __call__
+	    return eval(self._code, vars, {})
+	  File "PythonExpr", line 1, in <expression>
+	  File "/home/pab/.buildout/eggs/plone.memoize-1.1.1-py2.7.egg/plone/memoize/view.py", line 47, in memogetter
+	    value = cache[key] = func(*args, **kwargs)
+	  File "/home/pab/.buildout/eggs/plone.app.layout-2.3.5-py2.7.egg/plone/app/layout/globals/context.py", line 47, in current_base_url
+	    self.context.absolute_url())))
+	AttributeError: 'FilesystemResourceDirectory' object has no attribute 'absolute_url'
+
+**Reason**: There is a not accessible filesystem resource declared in your diazo theme's html.
+
+**Solution**: Check that all js and css files are available.
 
 AttributeError: 'RelationList' object has no attribute 'source'
 ---------------------------------------------------------------
 
-Example traceback::
+**Traceback**::
 
     2014-03-21 17:19:09 ERROR Zope.SiteErrorLog 1395433149.260.697467198696 http://localhost:8080/Plone/++add++MyType
     Traceback (innermost last):
@@ -38,45 +162,55 @@ Example traceback::
       Module z3c.formwidget.query.widget, line 90, in source
     AttributeError: 'RelationList' object has no attribute 'source'
 
-You're trying to use a relation field on your Dexterity-based content type but
+**Reason**: You're trying to use a relation field on your Dexterity-based content type but
 `plone.app.relationfield`_ is not installed.
 
-Follow the instructions on the Dexterity documentation as
+**Solution**: Follow the instructions on the Dexterity documentation as
 `relation support is no longer included by default`_.
 
 .. _`plone.app.relationfield`: https://pypi.python.org/pypi/plone.app.relationfield
 .. _`relation support is no longer included by default`: https://pypi.python.org/pypi/plone.app.dexterity#relation-support-no-longer-included-by-default
 
+AttributeError: 'module' object has no attribute 'HTTPSConnection'
+--------------------------------------------------------------------
+
+Python has not been compiled with HTTPS support.
+
+Try installing your Python, for example, using minitage.
+
+See :doc:`Python basics </getstarted/python>`.
+
+
 AttributeError: 'str' object has no attribute 'other' (Mixed zope.viewpagetemplate and Five.viewpagetemplate)
 --------------------------------------------------------------------------------------------------------------
 
-Example traceback::
+**Traceback**::
 
-      Module zope.tales.tales, line 696, in evaluate
-       - URL: /home/moo/sits/src/plone.z3cform/plone/z3cform/crud/crud-master.pt
-       - Line 17, Column 2
-       - Expression: <PathExpr standard:u'form/render'>
-       - Names:
-          {'args': (),
-           'context': <SitsPatient at /folder_sits/sitsngta/intranet/sitsdatabase/sitscountry_TE/sitshospital_TES/sitspatient.TETES2009062217>,
-           'default': <object object at 0xb7d76538>,
-           'loop': {},
-           'nothing': None,
-           'options': {},
-           'repeat': {},
-           'request': <HTTPRequest, URL=http://localhost:9000/folder_sits/sitsngta/intranet/sitsdatabase/sitscountry_TE/sitshospital_TES/sitspatient.TETES2009062217/@@ar>,
-           'template': <zope.app.pagetemplate.viewpagetemplatefile.ViewPageTemplateFile object at 0xc6e552c>,
-           'usage': <zope.pagetemplate.pagetemplate.TemplateUsage object at 0xf7fb78c>,
-           'view': <Products.SitsPatient.browser.ar.ARCrudForm object at 0xf928ccc>,
-           'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xf7b4a0c>}
-      Module Products.PTProfiler.ProfilerPatch, line 32, in __patched_call__
-      Module zope.tales.expressions, line 217, in __call__
-      Module zope.tales.expressions, line 211, in _eval
-      Module z3c.form.form, line 143, in render
-      Module Shared.DC.Scripts.Bindings, line 313, in __call__
-      Module Shared.DC.Scripts.Bindings, line 348, in _bindAndExec
-      Module Shared.DC.Scripts.Bindings, line 1, in ?
-      Module Shared.DC.Scripts.Bindings, line 293, in _getTraverseSubpath
+    Module zope.tales.tales, line 696, in evaluate
+     - URL: /home/moo/sits/src/plone.z3cform/plone/z3cform/crud/crud-master.pt
+     - Line 17, Column 2
+     - Expression: <PathExpr standard:u'form/render'>
+     - Names:
+        {'args': (),
+         'context': <SitsPatient at /folder_sits/sitsngta/intranet/sitsdatabase/sitscountry_TE/sitshospital_TES/sitspatient.TETES2009062217>,
+         'default': <object object at 0xb7d76538>,
+         'loop': {},
+         'nothing': None,
+         'options': {},
+         'repeat': {},
+         'request': <HTTPRequest, URL=http://localhost:9000/folder_sits/sitsngta/intranet/sitsdatabase/sitscountry_TE/sitshospital_TES/sitspatient.TETES2009062217/@@ar>,
+         'template': <zope.app.pagetemplate.viewpagetemplatefile.ViewPageTemplateFile object at 0xc6e552c>,
+         'usage': <zope.pagetemplate.pagetemplate.TemplateUsage object at 0xf7fb78c>,
+         'view': <Products.SitsPatient.browser.ar.ARCrudForm object at 0xf928ccc>,
+         'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xf7b4a0c>}
+    Module Products.PTProfiler.ProfilerPatch, line 32, in __patched_call__
+    Module zope.tales.expressions, line 217, in __call__
+    Module zope.tales.expressions, line 211, in _eval
+    Module z3c.form.form, line 143, in render
+    Module Shared.DC.Scripts.Bindings, line 313, in __call__
+    Module Shared.DC.Scripts.Bindings, line 348, in _bindAndExec
+    Module Shared.DC.Scripts.Bindings, line 1, in ?
+    Module Shared.DC.Scripts.Bindings, line 293, in _getTraverseSubpath
     AttributeError: 'str' object has no attribute 'other'
 
 Five ViewPageTemplate class file is slightly different than Zope 3's normal ViewPageTemplate file.
@@ -86,18 +220,544 @@ Another reason is that acquisition chain is not properly set-up in your custom v
 
 Difference::
 
-        from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+    from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 vs.::
 
-        from zope.pagetemplate.pagetemplatefile import PageTemplateFile
+    from zope.pagetemplate.pagetemplatefile import PageTemplateFile
 
+AttributeError: 'wrapper_descriptor' object has no attribute 'im_func'
+------------------------------------------------------------------------
+
+Traceback when starting Plone::
+
+    File "/home/moo/code/gomobile/parts/zope2/lib/python/DocumentTemplate/DT_Util.py", line 19, in <module>
+      from html_quote import html_quote, ustr # for import by other modules, dont remove!
+    File "/home/moo/code/gomobile/parts/zope2/lib/python/DocumentTemplate/html_quote.py", line 4, in <module>
+      from ustr import ustr
+    File "/home/moo/code/gomobile/parts/zope2/lib/python/DocumentTemplate/ustr.py", line 18, in <module>
+      nasty_exception_str = Exception.__str__.im_func
+    AttributeError: 'wrapper_descriptor' object has no attribute 'im_func'
+
+**Reason**: You are trying to use Python 2.6 with Plone 3
+
+**Solution**: With Plone 3 you need to use Python 2.4.
+
+AttributeError: REQUEST in getObject
+------------------------------------
+
+**Traceback**::
+
+    import ZPublisher, Zope
+    Traceback (most recent call last):
+      File "<string>", line 1, in ?
+      File "src/collective.mountpoint/collective/mountpoint/bin/update.py", line 31, in ?
+        sys.exit(main(app))
+      File "/srv/plone/saariselka/src/collective.mountpoint/collective/mountpoint/updateclient.py", line 243, in main
+        exit_code = updater.updateAll()
+      File "/srv/plone/saariselka/src/collective.mountpoint/collective/mountpoint/updateclient.py", line 151, in updateAll
+        mountpoints = list(self.getMountPoints())
+      File "/srv/plone/saariselka/src/collective.mountpoint/collective/mountpoint/updateclient.py", line 49, in getMountPoints
+        return [ brain.getObject() for brain in brains ]
+      File "/srv/plone/saariselka/parts/zope2/lib/python/Products/ZCatalog/CatalogBrains.py", line 86, in getObject
+        target = parent.restrictedTraverse(path[-1])
+      File "/srv/plone/saariselka/parts/zope2/lib/python/OFS/Traversable.py", line 301, in restrictedTraverse
+        return self.unrestrictedTraverse(path, default, restricted=True)
+      File "/srv/plone/saariselka/parts/zope2/lib/python/OFS/Traversable.py", line 259, in unrestrictedTraverse
+        next = queryMultiAdapter((obj, self.REQUEST),
+    AttributeError: REQUEST
+
+**Reason**: You are using command line script. getObject() fails for a catalog
+brain, because the actual object is gone. However, unrestrictedTraverse()
+does not handle this case gracefully.
+
+AttributeError: Schema
+-----------------------
+
+The following traceback comes when you try to view your custom content type::
+
+    Module zope.tales.tales, line 696, in evaluate
+     - URL: file:/fast/xxxm2011/eggs/Products.Archetypes-1.7.10-py2.6.egg/Products/Archetypes/skins/archetypes/base_view.pt
+     - Line 50, Column 4
+     - Expression: <PythonExpr context.Schema().viewableFields(here)>
+     - Names:
+        {'container': <CourseInfo at /xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy>,
+         'context': <CourseInfo at /xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy>,
+         'default': <object object at 0x1002edb70>,
+         'here': <CourseInfo at /xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy>,
+         'loop': {},
+         'nothing': None,
+         'options': {'args': ()},
+         'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x10b70a208>,
+         'request': <HTTPRequest, URL=http://localhost:8090/xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy/base_view>,
+         'root': <Application at >,
+         'template': <FSPageTemplate at /xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy/base_view>,
+         'traverse_subpath': [],
+         'user': <PropertiedUser 'admin'>}
+    Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
+     - __traceback_info__: context.Schema().viewableFields(here)
+    Module PythonExpr, line 1, in <expression>
+    Module AccessControl.ImplPython, line 675, in guarded_getattr
+
+**Reason**: It is picking up Archetypes default view template for your Dexterity content type.
+
+Try if you can access your view by a directly calling it to by its name. E.g.::
+
+  http://yoursite.com/folder/content/@@view
+
+If it's working then it is wrong data in *portal_types*.
+
+Your content item might also be corrupted. It is trying to use dynamic view selector even if it's not supported. Try re-creating
+the particular content item.
+
+AttributeError: getPhysicalPath()
+----------------------------------
+
+**Traceback**::
+
+	Module zope.tal.talinterpreter, line 408, in do_startTag
+	Module zope.tal.talinterpreter, line 485, in attrAction_tal
+	Module Products.PageTemplates.Expressions, line 230, in evaluateText
+	Module zope.tales.tales, line 696, in evaluate
+	 - URL: edit_header
+	 - Line 25, Column 14
+	 - Expression: <PythonExpr (view.getHeaderDefiner().absolute_url())>
+	 - Names:
+	    {'container': <Frontpage at /yourinstance/matkailijalle/yourinstance-1>,
+	     'context': <Frontpage at /yourinstance/matkailijalle/yourinstance-1>,
+	     'default': <object object at 0x7fabf9cec1f0>,
+	     'here': <Frontpage at /yourinstance/matkailijalle/yourinstance-1>,
+	     'loop': {},
+	     'nothing': None,
+	     'options': {'args': ()},
+	     'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0xe617d88>,
+	     'request': <HTTPRequest, URL=http://localhost:9444/yourinstance/matkailijalle/yourinstance-1/@@edit_header>,
+	     'root': <Application at >,
+	     'template': <ImplicitAcquirerWrapper object at 0xe6105d0>,
+	     'traverse_subpath': [],
+	     'user': <PropertiedUser 'admin'>,
+	     'view': <Products.Five.metaclass.EditHeaderBehaviorView object at 0xe51ed10>,
+	     'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xe610c10>}
+	Module zope.tales.pythonexpr, line 59, in __call__
+	 - __traceback_info__: (view.getHeaderDefiner().absolute_url())
+	Module <string>, line 0, in ?
+	Module OFS.Traversable, line 64, in absolute_url
+	Module OFS.Traversable, line 117, in getPhysicalPath
+	AttributeError: getPhysicalPath
+
+Another possible error is::
+
+	AttributeError: absolute_url
+
+This usually means that you should have used context.aq_inner when you have used context.
+absolute_url() tries to get the path to the object, but object parent is set to view (context.aq_parent)
+instead of real container object (context.aq_inner.aq_parent).
+
+.. warning::
+
+	When setting a member attribute in BrowserView, the acquisition parent of objects changes to BrowserView instance.
+	All member attributes receive ImplicitAcquisitionWrapper automatically.
+
+**Demonstration**
+
+We try to set BrowserView member attribute defining_context to be some context object.::
+
+	(Pdb) self.defining_context = context
+	(Pdb) context.aq_parent
+	<PloneSite at /plone>
+	(Pdb) self.defining_context.aq_parent
+	<Products.Five.metaclass.HeaderAnimationHelper object at 0xadb5750>
+	(Pdb) self.defining_context.aq_inner.aq_parent
+	<Products.Five.metaclass.HeaderAnimationHelper object at 0xadb5750>
+	(Pdb) self.defining_context.aq_parent.aq_parent
+	<ATDocument at /plone/doc>
+	(Pdb) self.defining_context.aq_parent.aq_parent.aq_inner
+	<ATDocument at /plone/doc>
+	(Pdb) self.defining_context.aq_parent.aq_parent.aq_parent
+	<PloneSite at /plone>
+
+To get the real object (as it was before set was called) you can create a helper getter::
+
+    def getDefiningContext(self):
+        """
+        Un-fuse automatically injected view from the acquisition chain
+
+        @return: Real defining context object without bad acquistion
+        """
+        if self.defining_context is not None:
+            return self.defining_context.aq_parent.aq_inner.aq_parent
+        return None
+
+AttributeError: type object 'IRAMCache' has no attribute '__iro__'
+-------------------------------------------------------------------
+
+Traceback when trying to open any page::
+
+  Module zope.component._api, line 130, in subscribers
+  Module zope.component.registry, line 290, in subscribers
+  Module zope.interface.adapter, line 535, in subscribers
+  Module zope.app.component.site, line 375, in threadSiteSubscriber
+  Module zope.app.component.hooks, line 61, in setSite
+  Module Products.CMFCore.PortalObject, line 75, in getSiteManager
+  Module ZODB.Connection, line 811, in setstate
+  Module ZODB.Connection, line 870, in _setstate
+  Module ZODB.serialize, line 605, in setGhostState
+  Module zope.component.persistentregistry, line 42, in __setstate__
+  Module zope.interface.adapter, line 80, in _createLookup
+  Module zope.interface.adapter, line 389, in __init__
+  Module zope.interface.adapter, line 426, in init_extendors
+  Module zope.interface.adapter, line 430, in add_extendor
+  AttributeError: type object 'IRAMCache' has no attribute '__iro__'
+
+**Reason**: You have probably imported a Data.fs using newer Plone/Zope version to old Plone, or
+package pindowns are incorrect. If you are copying a site try re-checking that
+source and target buildouts and package versions match.
+
+BadRequest: The id "xxx" is invalid - it is already in use.
+------------------------------------------------------------------
+
+**Traceback**::
+
+        ...
+        Module Products.CMFFormController.Script, line 145, in __call__
+        Module Products.CMFCore.FSPythonScript, line 140, in __call__
+        Module Shared.DC.Scripts.Bindings, line 313, in __call__
+        Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
+        Module Products.CMFCore.FSPythonScript, line 196, in _exec
+        Module None, line 1, in content_edit
+        <FSControllerPythonScript at /xxx/content_edit used for /xxx/sisalto/lomapalvelut/portal_factory/HolidayService/aktiviteetit>
+        Line 1
+        Module Products.CMFCore.FSPythonScript, line 140, in __call__
+        Module Shared.DC.Scripts.Bindings, line 313, in __call__
+        Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
+        Module Products.CMFCore.FSPythonScript, line 196, in _exec
+        Module None, line 9, in content_edit_impl
+        <FSPythonScript at /xxx/content_edit_impl used for /xxx/sisalto/lomapalvelut/portal_factory/HolidayService/aktiviteetit>
+        Line 9
+        Module Products.CMFPlone.FactoryTool, line 264, in doCreate
+        Module Products.ATContentTypes.lib.constraintypes, line 281, in invokeFactory
+        Module Products.CMFCore.PortalFolder, line 315, in invokeFactory
+        Module Products.CMFCore.TypesTool, line 716, in constructContent
+        Module Products.CMFCore.TypesTool, line 276, in constructInstance
+        Module Products.CMFCore.TypesTool, line 450, in _constructInstance
+        Module xxx.app.content.holidayservice, line 7, in addHolidayService
+        Module OFS.ObjectManager, line 315, in _setObject
+        Module Products.CMFCore.PortalFolder, line 333, in _checkId
+        Module OFS.ObjectManager, line 102, in checkValidId
+        BadRequest: The id "holidayservice.2010-03-18.4474765045" is invalid - it is already in use.
+
+.. TODO:: Not really sure why this happens.
+
+Try portal_catalog rebuild as a fix.
+
+ComponentLookupError: cmf.ManagePortal
+----------------------------------------
+
+When starting Plone you'll get::
+
+	zope.configuration.config.ConfigurationExecutionError: <class 'zope.component.interfaces.ComponentLookupError'>: (<InterfaceClass zope.security.interfaces.IPermission>, u'cmf.ManagePortal')
+	  in:
+	  File "/fast/x/src/collective.portletcollection/collective/portletcollection/portlets/configure.zcml", line 11.2-20.8
+
+This is a sign of changed loading order, starting from Plone 4.1.
+You need to explicitly include *CMFCore/permissions.zcml* in your *configuration.zcml*.
+
+Example::
+
+	<include package="Products.CMFCore" file="permissions.zcml" />
+
+.. seealso::
+    http://dev.plone.org/ticket/11837
+
+Content status history won't render - traceback is content path reversed
+--------------------------------------------------------------------------
+
+**Traceback**::
+
+	  Module zope.tales.tales, line 696, in evaluate
+	   - URL: file:/home/antti/workspace/plone/hotellilevitunturi/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/skins/plone_forms/content_status_history.cpt
+	   - Line 201, Column 14
+	   - Expression: <PythonExpr wtool.getTransitionsFor(target, here)>
+	   - Names:
+	      {'container': <PloneSite at /hotellilevitunturi>,
+	       'context': <MainFolder at /hotellilevitunturi/fi/ravintolamaailma>,
+	       'default': <object object at 0xb75d2540>,
+	       'here': <MainFolder at /hotellilevitunturi/fi/ravintolamaailma>,
+	       'loop': {},
+	       'nothing': None,
+	       'options': {'args': (),
+	                   'state': <Products.CMFFormController.ControllerState.ControllerState object at 0x1055614c>},
+	       'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x10556f6c>,
+	       'request': <HTTPRequest, URL=http://localhost:9888/hotellilevitunturi/fi/ravintolamaailma/content_status_history>,
+	       'root': <Application at >,
+	       'template': <FSControllerPageTemplate at /hotellilevitunturi/content_status_history used for /hotellilevitunturi/fi/ravintolamaailma>,
+	       'traverse_subpath': [],
+	       'user': <PropertiedUser 'admin'>}
+	  Module Products.PageTemplates.ZRPythonExpr, line 49, in __call__
+	   - __traceback_info__: wtool.getTransitionsFor(target, here)
+	  Module PythonExpr, line 1, in <expression>
+	  Module Products.CMFPlone.WorkflowTool, line 88, in getTransitionsFor
+	  Module Products.CMFPlone.WorkflowTool, line 37, in flattenTransitions
+	  Module Products.CMFPlone.WorkflowTool, line 69, in flattenTransitionsForPaths
+	  Module OFS.Traversable, line 301, in restrictedTraverse
+	  Module OFS.Traversable, line 284, in unrestrictedTraverse
+	   - __traceback_info__: ([u's', u'a', u'n', u'u', u'o', u'l', u'/', u'a', u'm', u'l', u'i', u'a', u'a', u'm', u'a', u'l', u'o', u't', u'n', u'i', u'v', u'a', u'r', u'/', u'i', u'f', u'/', u'i', u'r', u'u', u't', u'n', u'u', u't', u'i', u'v', u'e', u'l', u'i', u'l', u'l', u'e', u't', u'o', u'h'], u'/')
+	KeyError: u'/'
+
+.. TODO:: No solution
+
+ContentProviderLookupError: plone.htmlhead
+------------------------------------------
+
+**Traceback**::
+
+          Module zope.tales.tales, line 696, in evaluate
+           - URL: file:/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/skins/plone_templates/main_template.pt
+           - Line 39, Column 4
+           - Expression: <StringExpr u'plone.htmlhead'>
+           - Names:
+              {'container': <PloneSite at /isleofback>,
+               'context': <PloneSite at /isleofback>,
+               'default': <object object at 0xb75f2528>,
+               'here': <PloneSite at /isleofback>,
+               'loop': {},
+               'nothing': None,
+               'options': {'args': (<isleofback.app.browser.company.CompanyCreationForm object at 0xea5e80c>,)},
+               'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0xea62dcc>,
+               'request': <HTTPRequest, URL=http://localhost:9666/isleofback/@@create_company>,
+               'root': <Application at >,
+               'template': <ImplicitAcquirerWrapper object at 0xea62bcc>,
+               'traverse_subpath': [],
+               'user': <PropertiedUser 'admin'>,
+               'view': <UnauthorizedBinding: context>,
+               'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xea62d2c>}
+          Module Products.Five.browser.providerexpression, line 25, in __call__
+        ContentProviderLookupError: plone.htmlhead
+
+This is not a bug in Zope. It is caused by trying to render a Plone page frame in an context
+which has not acquisition chain properly set up. Plone ``main_template.pt``
+tries to look up viewlet managers by
+acquistion traversing to parent objects. ``plone.htmlhead`` is the first viewlet manager to
+be looked up like this, and it will fail firstly.
+
+Some possible causes:
+
+* You are trying to embed main_template inside form/view which is already rendered in main_template frame.
+  Please see how to :doc:`embed forms and wrap forms manually </forms/z3c.form>`.
+
+* You might be using wrong ViewPageTemplate import (Five vs. zope.pagetemplate - explained elsewhere in this documentation)
+
+* Make sure that you call __of__() method for views and other objects you construct by hand
+  which expects themselves to be in the acquisition chain (normally discovered by traversing)
+
+.. seealso::
+    https://bugs.launchpad.net/zope2/+bug/176566
+
+ERROR ZODB.Connection Couldn't load state for 0x00
+----------------------------------------------------
+
+The following traceback pops up when you try to start Zope::
+
+	2010-07-14 05:02:33 ERROR ZODB.Connection Couldn't load state for 0x00
+	Traceback (most recent call last):
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/Connection.py", line 811, in setstate
+	    self._setstate(obj)
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/Connection.py", line 870, in _setstate
+	    self._reader.setGhostState(obj, p)
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/serialize.py", line 604, in setGhostState
+	    state = self.getState(pickle)
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/serialize.py", line 597, in getState
+	    return unpickler.load()
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/serialize.py", line 471, in _persistent_load
+	    return self.load_oid(reference)
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/serialize.py", line 537, in load_oid
+	    return self._conn.get(oid)
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/Connection.py", line 244, in get
+	    p, serial = self._storage.load(oid, self._version)
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/FileStorage/FileStorage.py", line 470, in load
+	    pos = self._lookup_pos(oid)
+	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/FileStorage/FileStorage.py", line 462, in _lookup_pos
+	    raise POSKeyError(oid)
+	POSKeyError: 0x01
+
+**Reason**: Data.fs might have been damaged. You might be using blobs with Plone 3 and they don't work perfectly.
+. . . or a bunch other issues which generally mean that your day is screwed.
+
+.. seealso::
+    http://plonechix.blogspot.com/2009/12/definitive-guide-to-poskeyerror.html
+
+Error _restore_index() when starting instance / ZEO server
+--------------------------------------------------------------
+
+**Traceback**::
+
+    2011-05-09 09:42:20 INFO ZServer HTTP server started at Mon May  9 09:42:20 2011
+            Hostname: 0.0.0.0
+            Port: 10997
+    2011-05-09 09:42:21 INFO Marshall libxml2-python not available. Unable to register libxml2 based marshallers, at least SimpleXMLMarshaller
+    2011-05-09 09:42:22 INFO DocFinderTab Applied patch version 1.0.4.
+    Traceback (most recent call last):
+      File "/home/moo/code/python2/parts/opt/lib/python2.4/pdb.py", line 1066, in main
+        pdb._runscript(mainpyfile)
+      File "/home/moo/code/python2/parts/opt/lib/python2.4/pdb.py", line 991, in _runscript
+        self.run(statement, globals=globals_, locals=locals_)
+      File "/home/moo/code/python2/parts/opt/lib/python2.4/bdb.py", line 366, in run
+        exec cmd in globals, locals
+      File "<string>", line 1, in ?
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/run.py", line 56, in ?
+        run()
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/run.py", line 21, in run
+        starter.prepare()
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/__init__.py", line 102, in prepare
+        self.startZope()
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/__init__.py", line 278, in startZope
+        Zope2.startup()
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/__init__.py", line 47, in startup
+        _startup()
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/App/startup.py", line 59, in startup
+        DB = dbtab.getDatabase('/', is_root=1)
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/datatypes.py", line 280, in getDatabase
+        db = factory.open(name, self.databases)
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/datatypes.py", line 178, in open
+        DB = self.createDB(database_name, databases)
+      File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/datatypes.py", line 175, in createDB
+        return ZODBDatabase.open(self, databases)
+      File "/home/moo/xxx/parts/zope2/lib/python/ZODB/config.py", line 97, in open
+        storage = section.storage.open()
+      File "/home/moo/xxx/parts/zope2/lib/python/ZODB/config.py", line 135, in open
+        quota=self.config.quota)
+      File "/home/moo/xxx/parts/zope2/lib/python/ZODB/FileStorage/FileStorage.py", line 154, in __init__
+        r = self._restore_index()
+      File "/home/moo/xxx/parts/zope2/lib/python/ZODB/FileStorage/FileStorage.py", line 365, in _restore_index
+        index = info.get('index')
+
+**Reason**: Data.fs.index is corrupted.
+
+**Solution**: Remove Data.fs.index file. The index will be rebuilt on the launch.
+
+Error: Incorrect padding
+--------------------------
+
+Traceback comes when you try to access any Plone site URL::
+
+	2012-02-06 16:52:25 ERROR Zope.SiteErrorLog 1328539945.430.234286547911 http://localhost:9888/index_html
+	Traceback (innermost last):
+	  Module ZPublisher.Publish, line 110, in publish
+	  Module ZPublisher.BaseRequest, line 588, in traverse
+	  Module Products.PluggableAuthService.PluggableAuthService, line 233, in validate
+	  Module Products.PluggableAuthService.PluggableAuthService, line 559, in _extractUserIds
+	  Module Products.PluggableAuthService.plugins.CookieAuthHelper, line 121, in extractCredentials
+	  Module base64, line 321, in decodestring
+	Error: Incorrect padding
+
+**Reason**: It means that your browser most likely tries to serve bad
+cookies / auth info to Zope.
+
+**Solution**: Clear browser cache, cookies, etc.
+
+Exception: Type name not specified in createObject
+------------------------------------------------------
+
+**Traceback**::
+
+    Module ZPublisher.Publish, line 119, in publish
+    Module ZPublisher.mapply, line 88, in mapply
+    Module ZPublisher.Publish, line 42, in call_object
+    Module Products.CMFFormController.FSControllerPythonScript, line 104, in __call__
+    Module Products.CMFFormController.Script, line 145, in __call__
+    Module Products.CMFCore.FSPythonScript, line 140, in __call__
+    Module Shared.DC.Scripts.Bindings, line 313, in __call__
+    Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
+    Module Products.CMFCore.FSPythonScript, line 196, in _exec
+    Module None, line 11, in createObject
+    <FSControllerPythonScript at /xxx/createObject used for /xxx/sisalto/lomapalvelut>
+    Line 11
+    Exception: Type name not specified
+
+.. TODO:: Complete
+
+ExpatError: portlets.xml: unbound prefix
+-----------------------------------------
+
+**Traceback**::
+
+    Traceback (innermost last):
+      Module plone.postpublicationhook.hook, line 74, in publish
+      Module ZPublisher.mapply, line 88, in mapply
+      Module ZPublisher.Publish, line 42, in call_object
+      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 589, in installProducts
+      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 526, in installProduct
+       - __traceback_info__: ('mfabrik.app',)
+      Module Products.GenericSetup.tool, line 390, in runAllImportStepsFromProfile
+       - __traceback_info__: profile-mfabrik.app:default
+      Module Products.GenericSetup.tool, line 1179, in _runImportStepsFromContext
+      Module Products.GenericSetup.tool, line 1090, in _doRunImportStep
+       - __traceback_info__: portlets
+      Module plone.app.portlets.exportimport.portlets, line 707, in importPortlets
+      Module Products.GenericSetup.utils, line 543, in _importBody
+    ExpatError: portlets.xml: unbound prefix: line 15, column 1
+
+This error can happen while installing a new portlet portlets.xml
+
+**Reason**: You have ``i18n:attributes="title; description"`` in your
+portlets.xml.
+
+**Solution**: Remove it or declare the i18n namespace in XML like this::
+
+    <portlets xmlns:i18n="http://namespaces.zope.org/i18n">
+
+Similar applies for actions.xml, etc.
+
+IOError: [Errno url error] unknown url type: 'https'
+-----------------------------------------------------
+
+**Traceback**::
+
+    File "/home/moo/code/python/parts/opt/lib/python2.4/urllib.py", line 89, in urlretrieve
+      return _urlopener.retrieve(url, filename, reporthook, data)
+    File "/home/moo/code/python/parts/opt/lib/python2.4/urllib.py", line 222, in retrieve
+      fp = self.open(url, data)
+    File "/home/moo/code/python/parts/opt/lib/python2.4/urllib.py", line 187, in open
+      return self.open_unknown(fullurl, data)
+    File "/home/moo/code/python/parts/opt/lib/python2.4/urllib.py", line 199, in open_unknown
+      raise IOError, ('url error', 'unknown url type', type)
+    IOError: [Errno url error] unknown url type: 'https'
+
+**Reason**: Python and Python socket modules have not been compiled with SSL support.
+
+**Solution**: Make sure that you have SSL development libraries installed (Ubuntu/Debian example)
+
+.. code-block:: console
+
+        sudo apt-get install libssl-dev
+
+Make sure that Python is built with SSL support
+
+.. code-block:: console
+
+        ./configure --with-package=_ssl
+
+You can test Python after compilation::
+
+        moo@murskaamo:~/code/python$ source python-2.4/bin/activate
+        (python-2.4)moo@murskaamo:~/code/python$ python
+        Python 2.4.6 (#1, Jul 16 2010, 10:31:46)
+        [GCC 4.4.3] on linux2
+        Type "help", "copyright", "credits" or "license" for more information.
+        >>> import _ssl
+        >>>
+
+Also you might want try
+
+.. code-block:: console
+
+        easy_install pyopenssl
 
 Iteration over non-sequence in _normalizeargs
 ----------------------------------------------
 
 Case 1
-======
+~~~~~~
 
 The following log trace will appear when you try to render
 the site, but you can access ZMI normally::
@@ -146,10 +806,49 @@ This usually means that you have copied Data.fs from another
 system, but you do not have identical add-on product configuration
 installed.
 
-`For more info see this error reference on plone.org <http://plone.org/documentation/error/typeerror-iteration-over-non-sequence>`_.
+traceback to the console similar to the following if you have started Zope
+process on foreground::
+
+    2008-11-09 22:53:13 INFO Zope Ready to handle requests
+    2008-11-09 22:54:50 WARNING OFS.Uninstalled Could not import class 'ATSETemplateTool' from module 'Products.ATSchemaEditorNG.ATSETemplateTool'
+    2008-11-09 22:54:50 WARNING OFS.Uninstalled Could not import class 'SchemaEditorTool' from module 'Products.ATSchemaEditorNG.SchemaEditorTool'
+    2008-11-09 22:54:50 WARNING OFS.Uninstalled Could not import class 'SchemaManagerTool' from module 'Products.GenericPloneContent.SchemaManagerTool'
+    2008-11-09 22:54:50 WARNING OFS.Uninstalled Could not import class 'FormGenTool' from module 'Products.PloneFormGen.tools.formGenTool'
+    2008-11-09 22:54:50 WARNING OFS.Uninstalled Could not import class 'TemplatedDocument' from module 'collective.easytemplate.content.TemplatedDocument'
+    2008-11-09 22:54:50 WARNING OFS.Uninstalled Could not import class 'FormFolder' from module 'Products.PloneFormGen.content.form'
+    2008-11-09 22:54:52 WARNING OFS.Uninstalled Could not import class 'IDropdownSpecific' from module 'webcouturier.dropdownmenu.browser.interfaces'
+    2008-11-09 22:54:52 ERROR Zope.SiteErrorLog http://localhost:8080/lsm
+    Traceback (innermost last):
+      Module ZPublisher.Publish, line 110, in publish
+      Module ZPublisher.BaseRequest, line 424, in traverse
+      Module ZPublisher.BeforeTraverse, line 99, in __call__
+      Module Products.CMFCore.PortalObject, line 94, in __before_publishing_traverse__
+      Module zope.event, line 23, in notify
+      Module zope.component.event, line 26, in dispatch
+      Module zope.component._api, line 130, in subscribers
+      Module zope.component.registry, line 290, in subscribers
+      Module zope.interface.adapter, line 535, in subscribers
+      Module zope.component.event, line 33, in objectEventNotify
+      Module zope.component._api, line 130, in subscribers
+      Module zope.component.registry, line 290, in subscribers
+      Module zope.interface.adapter, line 535, in subscribers
+      Module plone.browserlayer.layer, line 18, in mark_layer
+      Module zope.interface.declarations, line 848, in directlyProvides
+      Module zope.interface.declarations, line 1371, in _normalizeargs
+      Module zope.interface.declarations, line 1370, in _normalizeargs
+    TypeError: iteration over non-sequence
+
+notice the 'Could not import class' message.
+
+**Reason**: You do not have identical product configuration on the new server.
+Please install the missing products and site should work fine again.
+
+Please note that you can get a 'TypeError: iteration over non-sequence'
+exception in other contexts not related with missing products at all. Look
+for the 'Could not import class' message in your traceback.
 
 Case 2
-======
+~~~~~~~
 
 Example traceback::
 
@@ -220,101 +919,11 @@ Exception::
 
 Some template tries to call macro inside another template and the macro is not defined in the target template.
 
-AttributeError in setRoles due to workflow state transition
------------------------------------------------------------
-
-Example::
-
-    Traceback (innermost last):
-    Module ZPublisher.Publish, line 115, in publish
-    Module ZPublisher.mapply, line 88, in mapply
-    Module ZPublisher.Publish, line 41, in call_object
-    Module Products.CMFPlone.FactoryTool, line 361, in __call__
-    Module Products.CMFPlone.FactoryTool, line 147, in __getitem__
-    Module Products.CMFPlone.PloneFolder, line 406, in invokeFactory
-    Module Products.CMFCore.TypesTool, line 934, in constructContent
-    Module Products.CMFCore.TypesTool, line 345, in constructInstance
-    Module Products.CMFCore.TypesTool, line 357, in _finishConstruction
-    Module Products.CMFCore.CMFCatalogAware, line 145, in notifyWorkflowCreated
-    Module Products.CMFCore.WorkflowTool, line 355, in notifyCreated
-    Module Products.DCWorkflow.DCWorkflow, line 392, in notifyCreated
-    Module Products.DCWorkflow.DCWorkflow, line 476, in _changeStateOf
-    Module Products.DCWorkflow.DCWorkflow, line 571, in _executeTransition
-    Module Products.DCWorkflow.DCWorkflow, line 435, in updateRoleMappingsFor
-    Module Products.DCWorkflow.utils, line 60, in modifyRolesForPermission
-    Module AccessControl.Permission, line 93, in setRoles
-    AttributeError: appname
-
-Possible reasons
-
-#. You are using AnnotationStorage but you forgot to declare atapi.ATFieldProperty in your class body
-
-#. You are inhering schema in Archetypes, but you do not inherit the class itself
-
-
-Add-on installer error: too many values to unpack
---------------------------------------------------
-
-An exception prevents running a quick installer.
-
-Example::
-
-      Module ZPublisher.Publish, line 119, in publish
-      Module ZPublisher.mapply, line 88, in mapply
-      Module ZPublisher.Publish, line 42, in call_object
-      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 589, in installProducts
-      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 475, in installProduct
-       - __traceback_info__: ('gomobile.mobile',)
-      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 396, in snapshotPortal
-      Module five.localsitemanager.registry, line 194, in registeredUtilities
-      Module zope.component.registry, line 127, in registeredUtilities
-    ValueError: too many values to unpack
-
-Reason:
-
-You have run Data.fs with zope.component 3.5.1, but later downgraded / moved Data.fs.
-Pin zope.component to 3.5.1.
-
-`See discussion <http://plone.org/support/forums/general#nabble-td3257712%7Ca3257712>`_.
-
-Add-on installer error: This object was originally created by a product that is no longer installed
----------------------------------------------------------------------------------------------------
-
-Example::
-
-    2009-10-18 13:11:20 ERROR Zope.SiteErrorLog 1255860680.760.514176531634 http://localhost:8080/twinapex/portal_quickinstaller/installProducts
-    Traceback (innermost last):
-      Module ZPublisher.Publish, line 125, in publish
-      Module Zope2.App.startup, line 238, in commit
-      Module transaction._manager, line 93, in commit
-      Module transaction._transaction, line 325, in commit
-      Module transaction._transaction, line 424, in _commitResources
-      Module ZODB.Connection, line 541, in commit
-      Module ZODB.Connection, line 586, in _commit
-      Module ZODB.Connection, line 620, in _store_objects
-      Module ZODB.serialize, line 407, in serialize
-      Module OFS.Uninstalled, line 40, in __getstate__
-    SystemError: This object was originally created by a product that
-                is no longer installed.  It cannot be updated.
-                (<Salt at broken>)
-
-Data.fs contains objects for which the code is not present.
-You have probably moved Data.fs or edited buildout.cfg.
-
-Check that eggs and zcml contain all necessary products in buildout.cfg.
-
-Discussion
-
-* http://plone.org/support/forums/general#nabble-td3523234
-
-* http://article.gmane.org/gmane.comp.web.zope.plone.setup/3232
-
-
 z3c.form based form updateWidgets() raises ComponentLookupError
 ---------------------------------------------------------------
 
 Case 1: z3c.form with Plone 3
-==================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Example::
 
@@ -372,7 +981,7 @@ and then your add-on product setup.py file::
 Also remember to run Plone add-on installer for plone.app.z3cform (though it is unrelated to this error).
 
 Case 2: missing plone.app.z3cform migration
-=============================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Example traceback::
 
@@ -484,7 +1093,7 @@ In this case you can see that portlet type "collective.easytemplate.TemplatedPor
 * Make sure you use <include package=".portlets" /> in your code
 
 Manually removing the portlet
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have a traceback like this::
 
@@ -520,86 +1129,6 @@ If you have a traceback like this::
 It usually means that there is a portlet in your content which product code has been removed.
 
 Reinstall the add-on providing the portlet, remove the portlet and then uninstall the add-on again.
-
-AttributeError: getPhysicalPath()
-----------------------------------
-
-::
-
-	  Module zope.tal.talinterpreter, line 408, in do_startTag
-	  Module zope.tal.talinterpreter, line 485, in attrAction_tal
-	  Module Products.PageTemplates.Expressions, line 230, in evaluateText
-	  Module zope.tales.tales, line 696, in evaluate
-	   - URL: edit_header
-	   - Line 25, Column 14
-	   - Expression: <PythonExpr (view.getHeaderDefiner().absolute_url())>
-	   - Names:
-	      {'container': <Frontpage at /yourinstance/matkailijalle/yourinstance-1>,
-	       'context': <Frontpage at /yourinstance/matkailijalle/yourinstance-1>,
-	       'default': <object object at 0x7fabf9cec1f0>,
-	       'here': <Frontpage at /yourinstance/matkailijalle/yourinstance-1>,
-	       'loop': {},
-	       'nothing': None,
-	       'options': {'args': ()},
-	       'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0xe617d88>,
-	       'request': <HTTPRequest, URL=http://localhost:9444/yourinstance/matkailijalle/yourinstance-1/@@edit_header>,
-	       'root': <Application at >,
-	       'template': <ImplicitAcquirerWrapper object at 0xe6105d0>,
-	       'traverse_subpath': [],
-	       'user': <PropertiedUser 'admin'>,
-	       'view': <Products.Five.metaclass.EditHeaderBehaviorView object at 0xe51ed10>,
-	       'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xe610c10>}
-	  Module zope.tales.pythonexpr, line 59, in __call__
-	   - __traceback_info__: (view.getHeaderDefiner().absolute_url())
-	  Module <string>, line 0, in ?
-	  Module OFS.Traversable, line 64, in absolute_url
-	  Module OFS.Traversable, line 117, in getPhysicalPath
-	AttributeError: getPhysicalPath
-
-Another possibility::
-
-	AttributeError: absolute_url
-
-This usually means that you should have used context.aq_inner when you have used context.
-absolute_url() tries to get the path to the object, but object parent is set to view (context.aq_parent)
-instead of real container object (context.aq_inner.aq_parent).
-
-.. warning::
-
-	When setting a member attribute in BrowserView, the acquisition parent of objec changes to BrowserView instance.
-	All member attributes receive ImplicitAcquisitionWrapper automatically.
-
-Demonstration
-=============
-
-We try to set BrowserView member attribute defining_context to be some context object.
-
-	(Pdb) self.defining_context = context
-	(Pdb) context.aq_parent
-	<PloneSite at /plone>
-	(Pdb) self.defining_context.aq_parent
-	<Products.Five.metaclass.HeaderAnimationHelper object at 0xadb5750>
-	(Pdb) self.defining_context.aq_inner.aq_parent
-	<Products.Five.metaclass.HeaderAnimationHelper object at 0xadb5750>
-	(Pdb) self.defining_context.aq_parent.aq_parent
-	<ATDocument at /plone/doc>
-	(Pdb) self.defining_context.aq_parent.aq_parent.aq_inner
-	<ATDocument at /plone/doc>
-	(Pdb) self.defining_context.aq_parent.aq_parent.aq_parent
-	<PloneSite at /plone>
-
-To get the real object (as it was before set was called) you can create a helper getter::
-
-    def getDefiningContext(self):
-        """
-        Un-fuse automatically injected view from the acquisition chain
-
-        @return: Real defining context object without bad acquistion
-        """
-        if self.defining_context is not None:
-            return self.defining_context.aq_parent.aq_inner.aq_parent
-        return None
-
 
 RuntimeError: maximum recursion depth exceeded (Archetypes field problem)
 --------------------------------------------------------------------------
@@ -786,64 +1315,6 @@ How to solve problem
 
 * Delete /parts and /eggs buildout folders, run bootstrap, run buildout.
 
-BadRequest: The id "xxx" is invalid - it is already in use.
-------------------------------------------------------------------
-
-Traceback example::
-
-        ...
-        Module Products.CMFFormController.Script, line 145, in __call__
-        Module Products.CMFCore.FSPythonScript, line 140, in __call__
-        Module Shared.DC.Scripts.Bindings, line 313, in __call__
-        Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
-        Module Products.CMFCore.FSPythonScript, line 196, in _exec
-        Module None, line 1, in content_edit
-        <FSControllerPythonScript at /xxx/content_edit used for /xxx/sisalto/lomapalvelut/portal_factory/HolidayService/aktiviteetit>
-        Line 1
-        Module Products.CMFCore.FSPythonScript, line 140, in __call__
-        Module Shared.DC.Scripts.Bindings, line 313, in __call__
-        Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
-        Module Products.CMFCore.FSPythonScript, line 196, in _exec
-        Module None, line 9, in content_edit_impl
-        <FSPythonScript at /xxx/content_edit_impl used for /xxx/sisalto/lomapalvelut/portal_factory/HolidayService/aktiviteetit>
-        Line 9
-        Module Products.CMFPlone.FactoryTool, line 264, in doCreate
-        Module Products.ATContentTypes.lib.constraintypes, line 281, in invokeFactory
-        Module Products.CMFCore.PortalFolder, line 315, in invokeFactory
-        Module Products.CMFCore.TypesTool, line 716, in constructContent
-        Module Products.CMFCore.TypesTool, line 276, in constructInstance
-        Module Products.CMFCore.TypesTool, line 450, in _constructInstance
-        Module xxx.app.content.holidayservice, line 7, in addHolidayService
-        Module OFS.ObjectManager, line 315, in _setObject
-        Module Products.CMFCore.PortalFolder, line 333, in _checkId
-        Module OFS.ObjectManager, line 102, in checkValidId
-        BadRequest: The id "holidayservice.2010-03-18.4474765045" is invalid - it is already in use.
-
-.. TODO:: Not really sure why this happens.
-
-Try portal_catalog rebuild as a fix.
-
-Exception: Type name not specified in createObject
-------------------------------------------------------
-
-Example traceback::
-
-        Module ZPublisher.Publish, line 119, in publish
-        Module ZPublisher.mapply, line 88, in mapply
-        Module ZPublisher.Publish, line 42, in call_object
-        Module Products.CMFFormController.FSControllerPythonScript, line 104, in __call__
-        Module Products.CMFFormController.Script, line 145, in __call__
-        Module Products.CMFCore.FSPythonScript, line 140, in __call__
-        Module Shared.DC.Scripts.Bindings, line 313, in __call__
-        Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
-        Module Products.CMFCore.FSPythonScript, line 196, in _exec
-        Module None, line 11, in createObject
-        <FSControllerPythonScript at /xxx/createObject used for /xxx/sisalto/lomapalvelut>
-        Line 11
-        Exception: Type name not specified
-
-.. TODO:: Complete
-
 Unauthorized: The object is marked as private
 ----------------------------------------------
 
@@ -982,80 +1453,6 @@ How to fix
 * If your view does not have __init__() method, then copy the source code __init__() method
   to your view class from the first parent class which has a view
 
-ContentProviderLookupError: plone.htmlhead
-------------------------------------------
-
-Example traceback::
-
-          Module zope.tales.tales, line 696, in evaluate
-           - URL: file:/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/skins/plone_templates/main_template.pt
-           - Line 39, Column 4
-           - Expression: <StringExpr u'plone.htmlhead'>
-           - Names:
-              {'container': <PloneSite at /isleofback>,
-               'context': <PloneSite at /isleofback>,
-               'default': <object object at 0xb75f2528>,
-               'here': <PloneSite at /isleofback>,
-               'loop': {},
-               'nothing': None,
-               'options': {'args': (<isleofback.app.browser.company.CompanyCreationForm object at 0xea5e80c>,)},
-               'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0xea62dcc>,
-               'request': <HTTPRequest, URL=http://localhost:9666/isleofback/@@create_company>,
-               'root': <Application at >,
-               'template': <ImplicitAcquirerWrapper object at 0xea62bcc>,
-               'traverse_subpath': [],
-               'user': <PropertiedUser 'admin'>,
-               'view': <UnauthorizedBinding: context>,
-               'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xea62d2c>}
-          Module Products.Five.browser.providerexpression, line 25, in __call__
-        ContentProviderLookupError: plone.htmlhead
-
-This is not a bug in Zope. It is caused by trying to render a Plone page frame in an context
-which has not acquisition chain properly set up. Plone ``main_template.pt``
-tries to look up viewlet managers by
-acquistion traversing to parent objects. ``plone.htmlhead`` is the first viewlet manager to
-be looked up like this, and it will fail firstly.
-
-Some possible causes
-
-* You are trying to embed main_template inside form/view which is already rendered in main_template frame.
-  Please see how to :doc:`embed forms and wrap forms manually </forms/z3c.form>`.
-
-* You might be using wrong ViewPageTemplate import (Five vs. zope.pagetemplate - explained elsewhere in this documentation)
-
-* Make sure that you call __of__() method for views and other objects you construct by hand
-  which expects themselves to be in the acquisition chain (normally discovered by traversing)
-
-See
-
-* https://bugs.launchpad.net/zope2/+bug/176566
-
-
-
-Error while installing a new portlet portlets.xml: unbound prefix
---------------------------------------------------------------------
-
-Example traceback::
-
-        Traceback (innermost last):
-          Module plone.postpublicationhook.hook, line 74, in publish
-          Module ZPublisher.mapply, line 88, in mapply
-          Module ZPublisher.Publish, line 42, in call_object
-          Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 589, in installProducts
-          Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 526, in installProduct
-           - __traceback_info__: ('mfabrik.app',)
-          Module Products.GenericSetup.tool, line 390, in runAllImportStepsFromProfile
-           - __traceback_info__: profile-mfabrik.app:default
-          Module Products.GenericSetup.tool, line 1179, in _runImportStepsFromContext
-          Module Products.GenericSetup.tool, line 1090, in _doRunImportStep
-           - __traceback_info__: portlets
-          Module plone.app.portlets.exportimport.portlets, line 707, in importPortlets
-          Module Products.GenericSetup.utils, line 543, in _importBody
-        ExpatError: portlets.xml: unbound prefix: line 15, column 1
-
-Answer:
-
-You have ``i18n:attributes="title; description"`` in your portlets.xml. Remove it or declare i18n namespace in XML like this: ``<portlets xmlns:i18n="http://namespaces.zope.org/i18n">``. Similar applies for actions.xml, etc.
 
 ImportError: Couldn't import ZPublisherEventsBackport
 -----------------------------------------------------
@@ -1078,40 +1475,6 @@ them both in your buildout. You need to include both eggs::
         eggs =
                 ZPublisherEventsBackport
                 plone.postpublicationhook
-
-ERROR ZODB.Connection Couldn't load state for 0x00
-----------------------------------------------------
-
-The following traceback pops up when you try to start Zope::
-
-	2010-07-14 05:02:33 ERROR ZODB.Connection Couldn't load state for 0x00
-	Traceback (most recent call last):
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/Connection.py", line 811, in setstate
-	    self._setstate(obj)
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/Connection.py", line 870, in _setstate
-	    self._reader.setGhostState(obj, p)
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/serialize.py", line 604, in setGhostState
-	    state = self.getState(pickle)
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/serialize.py", line 597, in getState
-	    return unpickler.load()
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/serialize.py", line 471, in _persistent_load
-	    return self.load_oid(reference)
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/serialize.py", line 537, in load_oid
-	    return self._conn.get(oid)
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/Connection.py", line 244, in get
-	    p, serial = self._storage.load(oid, self._version)
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/FileStorage/FileStorage.py", line 470, in load
-	    pos = self._lookup_pos(oid)
-	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/FileStorage/FileStorage.py", line 462, in _lookup_pos
-	    raise POSKeyError(oid)
-	POSKeyError: 0x01
-
-Data.fs might have been damaged. You might be using blobs with Plone 3 and they don't work perfectly.
-. . . or a bunch other issues which generally mean that your day is screwed.
-
-See also
-
-* http://plonechix.blogspot.com/2009/12/definitive-guide-to-poskeyerror.html
 
 POSKeyError
 -----------
@@ -1153,51 +1516,6 @@ You might want to test other values and report back the findings.
 More Information
 
 * http://blog.crowproductions.de/2008/12/14/a-buildout-to-tame-the-snake-pit/ (comments)
-
-IOError: [Errno url error] unknown url type: 'https'
------------------------------------------------------
-
-Example traceback::
-
-          File "/home/moo/code/python/parts/opt/lib/python2.4/urllib.py", line 89, in urlretrieve
-            return _urlopener.retrieve(url, filename, reporthook, data)
-          File "/home/moo/code/python/parts/opt/lib/python2.4/urllib.py", line 222, in retrieve
-            fp = self.open(url, data)
-          File "/home/moo/code/python/parts/opt/lib/python2.4/urllib.py", line 187, in open
-            return self.open_unknown(fullurl, data)
-          File "/home/moo/code/python/parts/opt/lib/python2.4/urllib.py", line 199, in open_unknown
-            raise IOError, ('url error', 'unknown url type', type)
-        IOError: [Errno url error] unknown url type: 'https'
-
-Reason: Python and Python socket modules have not been compiled with SSL support.
-
-Make sure that you have SSL development libraries installed (Ubuntu/Debian example)
-
-.. code-block:: console
-
-        sudo apt-get install libssl-dev
-
-Make sure that Python is built with SSL support
-
-.. code-block:: console
-
-        ./configure --with-package=_ssl
-
-You can test Python after compilation::
-
-        moo@murskaamo:~/code/python$ source python-2.4/bin/activate
-        (python-2.4)moo@murskaamo:~/code/python$ python
-        Python 2.4.6 (#1, Jul 16 2010, 10:31:46)
-        [GCC 4.4.3] on linux2
-        Type "help", "copyright", "credits" or "license" for more information.
-        >>> import _ssl
-        >>>
-
-Also you might want try
-
-.. code-block:: console
-
-        easy_install pyopenssl
 
 TypeError: len() of unsized object in smtplib
 ----------------------------------------------
@@ -1318,53 +1636,6 @@ what expression causes the exception. However if this only happens with unit tes
         return self._eval(econtext)
 
 manually injected to ``zope.tales.expression`` module.
-
-Content status history won't render - traceback is content path reversed
---------------------------------------------------------------------------
-
-Traceback::
-
-	  Module zope.tales.tales, line 696, in evaluate
-	   - URL: file:/home/antti/workspace/plone/hotellilevitunturi/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/skins/plone_forms/content_status_history.cpt
-	   - Line 201, Column 14
-	   - Expression: <PythonExpr wtool.getTransitionsFor(target, here)>
-	   - Names:
-	      {'container': <PloneSite at /hotellilevitunturi>,
-	       'context': <MainFolder at /hotellilevitunturi/fi/ravintolamaailma>,
-	       'default': <object object at 0xb75d2540>,
-	       'here': <MainFolder at /hotellilevitunturi/fi/ravintolamaailma>,
-	       'loop': {},
-	       'nothing': None,
-	       'options': {'args': (),
-	                   'state': <Products.CMFFormController.ControllerState.ControllerState object at 0x1055614c>},
-	       'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x10556f6c>,
-	       'request': <HTTPRequest, URL=http://localhost:9888/hotellilevitunturi/fi/ravintolamaailma/content_status_history>,
-	       'root': <Application at >,
-	       'template': <FSControllerPageTemplate at /hotellilevitunturi/content_status_history used for /hotellilevitunturi/fi/ravintolamaailma>,
-	       'traverse_subpath': [],
-	       'user': <PropertiedUser 'admin'>}
-	  Module Products.PageTemplates.ZRPythonExpr, line 49, in __call__
-	   - __traceback_info__: wtool.getTransitionsFor(target, here)
-	  Module PythonExpr, line 1, in <expression>
-	  Module Products.CMFPlone.WorkflowTool, line 88, in getTransitionsFor
-	  Module Products.CMFPlone.WorkflowTool, line 37, in flattenTransitions
-	  Module Products.CMFPlone.WorkflowTool, line 69, in flattenTransitionsForPaths
-	  Module OFS.Traversable, line 301, in restrictedTraverse
-	  Module OFS.Traversable, line 284, in unrestrictedTraverse
-	   - __traceback_info__: ([u's', u'a', u'n', u'u', u'o', u'l', u'/', u'a', u'm', u'l', u'i', u'a', u'a', u'm', u'a', u'l', u'o', u't', u'n', u'i', u'v', u'a', u'r', u'/', u'i', u'f', u'/', u'i', u'r', u'u', u't', u'n', u'u', u't', u'i', u'v', u'e', u'l', u'i', u'l', u'l', u'e', u't', u'o', u'h'], u'/')
-	KeyError: u'/'
-
-.. TODO:: No solution
-
-AttributeError: 'module' object has no attribute 'HTTPSConnection'
---------------------------------------------------------------------
-
-Python has not been compiled with HTTPS support.
-
-Try installing your Python, for example, using minitage.
-
-See :doc:`Python basics </getstarted/python>`.
-
 
 LinguaPlone: ImportError: cannot import name permissions
 ----------------------------------------------------------
@@ -1609,21 +1880,6 @@ In this case the following helped::
         self.subforms = [editform, addform]
 
 
-AttributeError: 'wrapper_descriptor' object has no attribute 'im_func'
-------------------------------------------------------------------------
-
-Traceback when starting Plone::
-
-          File "/home/moo/code/gomobile/parts/zope2/lib/python/DocumentTemplate/DT_Util.py", line 19, in <module>
-            from html_quote import html_quote, ustr # for import by other modules, dont remove!
-          File "/home/moo/code/gomobile/parts/zope2/lib/python/DocumentTemplate/html_quote.py", line 4, in <module>
-            from ustr import ustr
-          File "/home/moo/code/gomobile/parts/zope2/lib/python/DocumentTemplate/ustr.py", line 18, in <module>
-            nasty_exception_str = Exception.__str__.im_func
-        AttributeError: 'wrapper_descriptor' object has no attribute 'im_func'
-
-Cause: Trying to use Python 2.6 with Plone 3 - you need to use Python 2.4.
-
 getUtility() fails: ComponentLookupError
 ----------------------------------------
 
@@ -1637,34 +1893,6 @@ Make sure that your class object implements in the utility interface in the ques
 
         class ConvergedMediaFilter(object):
             zope.interface.implements(IConvergenceMediaFilter)
-
-
-AttributeError: REQUEST in getObject
-------------------------------------
-
-Traceback::
-
-          import ZPublisher, Zope
-        Traceback (most recent call last):
-          File "<string>", line 1, in ?
-          File "src/collective.mountpoint/collective/mountpoint/bin/update.py", line 31, in ?
-            sys.exit(main(app))
-          File "/srv/plone/saariselka/src/collective.mountpoint/collective/mountpoint/updateclient.py", line 243, in main
-            exit_code = updater.updateAll()
-          File "/srv/plone/saariselka/src/collective.mountpoint/collective/mountpoint/updateclient.py", line 151, in updateAll
-            mountpoints = list(self.getMountPoints())
-          File "/srv/plone/saariselka/src/collective.mountpoint/collective/mountpoint/updateclient.py", line 49, in getMountPoints
-            return [ brain.getObject() for brain in brains ]
-          File "/srv/plone/saariselka/parts/zope2/lib/python/Products/ZCatalog/CatalogBrains.py", line 86, in getObject
-            target = parent.restrictedTraverse(path[-1])
-          File "/srv/plone/saariselka/parts/zope2/lib/python/OFS/Traversable.py", line 301, in restrictedTraverse
-            return self.unrestrictedTraverse(path, default, restricted=True)
-          File "/srv/plone/saariselka/parts/zope2/lib/python/OFS/Traversable.py", line 259, in unrestrictedTraverse
-            next = queryMultiAdapter((obj, self.REQUEST),
-        AttributeError: REQUEST
-
-Reason: You are using command line script. getObject() fails for a catalog brain, because the actual object
-is gone. However, unrestrictedTraverse() does not handle this case gracefully.
 
 
 get_language: 'NoneType' object has no attribute 'getLocaleID'
@@ -1736,55 +1964,6 @@ Zope component architecture loading has failed (you are missing critical bits). 
 just the first entry where it tries to use an unloaded code.
 
 Start your instance on the foreground and you should see the actual error.
-
-Error _restore_index() when starting instance / ZEO server
---------------------------------------------------------------
-
-Example traceback::
-
-        2011-05-09 09:42:20 INFO ZServer HTTP server started at Mon May  9 09:42:20 2011
-                Hostname: 0.0.0.0
-                Port: 10997
-        2011-05-09 09:42:21 INFO Marshall libxml2-python not available. Unable to register libxml2 based marshallers, at least SimpleXMLMarshaller
-        2011-05-09 09:42:22 INFO DocFinderTab Applied patch version 1.0.4.
-        Traceback (most recent call last):
-          File "/home/moo/code/python2/parts/opt/lib/python2.4/pdb.py", line 1066, in main
-            pdb._runscript(mainpyfile)
-          File "/home/moo/code/python2/parts/opt/lib/python2.4/pdb.py", line 991, in _runscript
-            self.run(statement, globals=globals_, locals=locals_)
-          File "/home/moo/code/python2/parts/opt/lib/python2.4/bdb.py", line 366, in run
-            exec cmd in globals, locals
-          File "<string>", line 1, in ?
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/run.py", line 56, in ?
-            run()
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/run.py", line 21, in run
-            starter.prepare()
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/__init__.py", line 102, in prepare
-            self.startZope()
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/__init__.py", line 278, in startZope
-            Zope2.startup()
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/__init__.py", line 47, in startup
-            _startup()
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/App/startup.py", line 59, in startup
-            DB = dbtab.getDatabase('/', is_root=1)
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/datatypes.py", line 280, in getDatabase
-            db = factory.open(name, self.databases)
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/datatypes.py", line 178, in open
-            DB = self.createDB(database_name, databases)
-          File "/home/moo/xxx/parts/zope2/lib/python/Zope2/Startup/datatypes.py", line 175, in createDB
-            return ZODBDatabase.open(self, databases)
-          File "/home/moo/xxx/parts/zope2/lib/python/ZODB/config.py", line 97, in open
-            storage = section.storage.open()
-          File "/home/moo/xxx/parts/zope2/lib/python/ZODB/config.py", line 135, in open
-            quota=self.config.quota)
-          File "/home/moo/xxx/parts/zope2/lib/python/ZODB/FileStorage/FileStorage.py", line 154, in __init__
-            r = self._restore_index()
-          File "/home/moo/xxx/parts/zope2/lib/python/ZODB/FileStorage/FileStorage.py", line 365, in _restore_index
-            index = info.get('index')
-
-Reason: Data.fs.index is corrupted.
-
-Fix. Remove Data.fs.index file. The index will be rebuilt on the launch.
 
 importToolset: TypeError: 'NoneType' object is not callable
 --------------------------------------------------------------
@@ -1886,8 +2065,8 @@ Re-run buildout.
 
 Enjoy.
 
-'ExtensionClass.ExtensionClass' object is not iterable
------------------------------------------------------------
+TypeError: 'ExtensionClass.ExtensionClass' object is not iterable
+------------------------------------------------------------------
 
 This error tends to happen after moving a Data.fs to a new instance that does not have the identical add-ons to the original instance.
 
@@ -1919,31 +2098,6 @@ In this example traceback the missing add-on is Products.Carousel which provides
 Solution: Install the missing add-on(s)
 
 
-AttributeError: type object 'IRAMCache' has no attribute '__iro__'
---------------------------------------------------------------------------
-
-Traceback when trying to open any page::
-
-  Module zope.component._api, line 130, in subscribers
-  Module zope.component.registry, line 290, in subscribers
-  Module zope.interface.adapter, line 535, in subscribers
-  Module zope.app.component.site, line 375, in threadSiteSubscriber
-  Module zope.app.component.hooks, line 61, in setSite
-  Module Products.CMFCore.PortalObject, line 75, in getSiteManager
-  Module ZODB.Connection, line 811, in setstate
-  Module ZODB.Connection, line 870, in _setstate
-  Module ZODB.serialize, line 605, in setGhostState
-  Module zope.component.persistentregistry, line 42, in __setstate__
-  Module zope.interface.adapter, line 80, in _createLookup
-  Module zope.interface.adapter, line 389, in __init__
-  Module zope.interface.adapter, line 426, in init_extendors
-  Module zope.interface.adapter, line 430, in add_extendor
-  AttributeError: type object 'IRAMCache' has no attribute '__iro__'
-
-You have probably imported a Data.fs using newer Plone/Zope version to old Plone, or
-package pindowns are incorrect. If you are copying a site try re-checking that
-source and target buildouts and package versions match.
-
 Unknown message (kss optimized for production mode) in Javascript console
 ----------------------------------------------------------------------------
 
@@ -1965,85 +2119,6 @@ What you can do:
 Also:
 
 * Put portal_kss for debug mode (in development environment)
-
-ComponentLookupError: cmf.ManagePortal
-----------------------------------------
-
-When starting Plone you'll get::
-
-	zope.configuration.config.ConfigurationExecutionError: <class 'zope.component.interfaces.ComponentLookupError'>: (<InterfaceClass zope.security.interfaces.IPermission>, u'cmf.ManagePortal')
-	  in:
-	  File "/fast/x/src/collective.portletcollection/collective/portletcollection/portlets/configure.zcml", line 11.2-20.8
-
-This is a sign of changed loading order, starting from Plone 4.1.
-You need to explicitly include *CMFCore/permissions.zcml* in your *configuration.zcml*.
-
-Example::
-
-	<include package="Products.CMFCore" file="permissions.zcml" />
-
-More info
-
-* http://dev.plone.org/ticket/11837
-
-
-AttributeError: Schema
------------------------
-
-The following traceback comes when you try to view your custom content type::
-
-    Module zope.tales.tales, line 696, in evaluate
-     - URL: file:/fast/xxxm2011/eggs/Products.Archetypes-1.7.10-py2.6.egg/Products/Archetypes/skins/archetypes/base_view.pt
-     - Line 50, Column 4
-     - Expression: <PythonExpr context.Schema().viewableFields(here)>
-     - Names:
-        {'container': <CourseInfo at /xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy>,
-         'context': <CourseInfo at /xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy>,
-         'default': <object object at 0x1002edb70>,
-         'here': <CourseInfo at /xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy>,
-         'loop': {},
-         'nothing': None,
-         'options': {'args': ()},
-         'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x10b70a208>,
-         'request': <HTTPRequest, URL=http://localhost:8090/xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy/base_view>,
-         'root': <Application at >,
-         'template': <FSPageTemplate at /xxx/courses/professional-courses/business-management-courses/postgraduate-diploma-in-business-and-management-consultancy/base_view>,
-         'traverse_subpath': [],
-         'user': <PropertiedUser 'admin'>}
-    Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
-     - __traceback_info__: context.Schema().viewableFields(here)
-    Module PythonExpr, line 1, in <expression>
-    Module AccessControl.ImplPython, line 675, in guarded_getattr
-
-Reason: It is picking up Archetypes default view template for your Dexterity content type.
-
-Try if you can access your view by a directly calling it to by its name. E.g.::
-
-  http://yoursite.com/folder/content/@@view
-
-If it's working then it is wrong data in *portal_types*.
-
-Your content item might also be corrupted. It is trying to use dynamic view selector even if it's not supported. Try re-creating
-the particular content item.
-
-
-Error: Incorrect padding
---------------------------
-
-Traceback comes when you try to access any Plone site URL::
-
-	2012-02-06 16:52:25 ERROR Zope.SiteErrorLog 1328539945.430.234286547911 http://localhost:9888/index_html
-	Traceback (innermost last):
-	  Module ZPublisher.Publish, line 110, in publish
-	  Module ZPublisher.BaseRequest, line 588, in traverse
-	  Module Products.PluggableAuthService.PluggableAuthService, line 233, in validate
-	  Module Products.PluggableAuthService.PluggableAuthService, line 559, in _extractUserIds
-	  Module Products.PluggableAuthService.plugins.CookieAuthHelper, line 121, in extractCredentials
-	  Module base64, line 321, in decodestring
-	Error: Incorrect padding
-
-It means that your browser most likely tries to serve bad cookies / auth info to Zope.
-Clear browser cache, cookies, etc.
 
 ValueError: Non-zero version length. Versions aren't supported.
 ------------------------------------------------------------------
@@ -2092,21 +2167,6 @@ Plone 3 > Plone 4 migration has not been run. Run the migration
 in *portal_migrations* under ZMI.
 
 
-Archetypes: TypeError: getattr(): attribute name must be string
-------------------------------------------------------------------
-
-Example::
-
-	       'user': <PropertiedUser 'admin'>}
-	  Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
-	   - __traceback_info__: otherwidget.Description(here, target_language=target_language)
-	  Module PythonExpr, line 1, in <expression>
-	  Module Products.Archetypes.generator.widget, line 100, in Description
-	TypeError: getattr(): attribute name must be string
-
-You might have used something else besides string or translation string
-to define Archetypes widget name or description.
-
 
 InvalidInterface: Concrete attribute
 ---------------------------------------
@@ -2134,26 +2194,3 @@ You have extra comma in your schema. Like this::
 	        value_type=zope.schema.Choice(vocabulary="plone.app.vocabularies.PortalTypes")),   # <---- OH CRAP
 
 
-AttributeError: 'FilesystemResourceDirectory' object has no attribute 'absolute_url'
-------------------------------------------------------------------------------------
-
-Example::
-
-	2013-09-02 12:26:55 ERROR plone.transformchain Unexpected error whilst trying to apply transform chain
-	Traceback (most recent call last):
-	  File "/home/pab/.buildout/eggs/plone.transformchain-1.0.3-py2.7.egg/plone/transformchain/transformer.py", line 48, in __call__
-	    newResult = handler.transformIterable(result, encoding)
-	  File "/home/pab/.buildout/eggs/plone.app.theming-1.1.1-py2.7.egg/plone/app/theming/transform.py", line 179, in transformIterable
-	    params = prepareThemeParameters(findContext(self.request), self.request, parameterExpressions, cache)
-	  File "/home/pab/.buildout/eggs/plone.app.theming-1.1.1-py2.7.egg/plone/app/theming/utils.py", line 630, in prepareThemeParameters
-	    params[name] = quote_param(expression(expressionContext))
-	  File "/home/pab/.buildout/eggs/Zope2-2.13.20-py2.7.egg/Products/PageTemplates/ZRPythonExpr.py", line 48, in __call__
-	    return eval(self._code, vars, {})
-	  File "PythonExpr", line 1, in <expression>
-	  File "/home/pab/.buildout/eggs/plone.memoize-1.1.1-py2.7.egg/plone/memoize/view.py", line 47, in memogetter
-	    value = cache[key] = func(*args, **kwargs)
-	  File "/home/pab/.buildout/eggs/plone.app.layout-2.3.5-py2.7.egg/plone/app/layout/globals/context.py", line 47, in current_base_url
-	    self.context.absolute_url())))
-	AttributeError: 'FilesystemResourceDirectory' object has no attribute 'absolute_url'
-
-There is a not accessible filesystem ressource declared in your diazo theme's html. Check that all js and css files are available.
