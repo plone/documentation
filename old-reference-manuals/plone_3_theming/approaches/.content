@@ -1,0 +1,17 @@
+3. Approaches
+=============
+
+There are different ways of tackling Plone themes. Here is information
+to help you make a decision on your approach - whether to base your
+theme on existing structures, whether to work through the web or on the
+filesystem, whether you even need this manual.
+
+#. `From Scratch or Based on Plone
+   Default? <http://plone.org/documentation/manual/theme-reference/approaches/plonedefault>`_
+#. `Through the Web or on the File
+   System? <http://plone.org/documentation/manual/theme-reference/approaches/filesystem>`_
+#. `Future
+   Directions <http://plone.org/documentation/manual/theme-reference/approaches/directions>`_
+
+`All content on one page (useful for printing, presentation mode
+etc.) <http://plone.org/documentation/manual/theme-reference/approaches/referencemanual-all-pages>`_

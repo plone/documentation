@@ -1,0 +1,103 @@
+5. Building Blocks
+==================
+
+Skin, Components, Configuration. The three main building blocks of a
+theme; interconnected, but each with a distinctive way of behaving.
+
+#. `Overview <http://plone.org/documentation/manual/theme-reference/buildingblocks/overview>`_
+#. `Skin <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin>`_
+
+   #. `Templates and the Templating
+      Language <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates>`_
+
+      #. `Templates and the Templating
+         Language <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/overview>`_
+      #. `Getting
+         started <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/getting-started>`_
+      #. `Macros and
+         Slots <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/macros-and-slots>`_
+      #. `Advanced
+         Usage <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/advanced-usage>`_
+      #. `Global Template
+         Variables <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/global-template-variables>`_
+      #. `Customizing AT
+         Templates <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates>`_
+
+         #. `Introduction <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/introduction>`_
+         #. `What Makes It
+            Tick? <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick>`_
+         #. `Customizing
+            Widgets <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/customizing-widgets>`_
+         #. `Total Control: The View
+            Template <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/total-control-the-view-template>`_
+         #. `Conclusion <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/conclusion>`_
+         #. `Reference <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/reference>`_
+
+      #. `How to customise view or edit on archetypes content
+         items <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/how-to-customise-view-or-edit-on-archetypes-content-items>`_
+      #. `Create an Alternative Edit
+         Template <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/create-an-alternative-edit-template>`_
+
+   #. `Where to find what you
+      need <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/locations>`_
+   #. `Style
+      Sheets <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/style-sheets>`_
+
+      #. `The Custom Style Sheet and Base
+         Properties <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/style-sheets/customstylesheet>`_
+      #. `CSS <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/style-sheets/css>`_
+
+         #. `CSS Quick
+            Start <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/style-sheets/css/css-quick-start>`_
+         #. `CSS Customization
+            Examples <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/style-sheets/css/css-customization-examples>`_
+         #. `base\_properties <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/style-sheets/css/base_properties-1>`_
+         #. `Default CSS
+            Stylesheets <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/style-sheets/css/css-stylesheets>`_
+
+   #. `Skin
+      Layers <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers>`_
+
+      #. `Skin
+         Layers <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers/overview>`_
+      #. `Customizing through Order of
+         Precedence <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers/precedence>`_
+      #. `Making and Naming your own
+         Skin <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers/making>`_
+
+#. `Components <http://plone.org/documentation/manual/theme-reference/buildingblocks/components>`_
+
+   #. `Component Wiring and
+      ZCML <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/wiring>`_
+   #. `Viewlets, Portlets and Other
+      Components <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/viewletsandportlets>`_
+   #. `Customizing or Creating
+      New <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/customizing>`_
+   #. `Component
+      Parts <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts>`_
+
+      #. `Interfaces and why they
+         matter <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts/interfaces>`_
+      #. `Python
+         Classes <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts/pythonclasses>`_
+      #. `Permission <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts/permissions>`_
+
+   #. `Making Components Theme
+      Specific <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific>`_
+   #. `Skin or
+      Components? <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/skinorcomponents>`_
+   #. `Where to find what you
+      need <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/locations>`_
+
+#. `Configuration <http://plone.org/documentation/manual/theme-reference/buildingblocks/configuration>`_
+
+   #. `Profiles <http://plone.org/documentation/manual/theme-reference/buildingblocks/configuration/profiles>`_
+   #. `Generic Setup
+      XML <http://plone.org/documentation/manual/theme-reference/buildingblocks/configuration/gsxml>`_
+   #. `The Generic Setup
+      Tool <http://plone.org/documentation/manual/theme-reference/buildingblocks/configuration/tool>`_
+   #. `Where to find what you
+      need <http://plone.org/documentation/manual/theme-reference/buildingblocks/configuration/locations>`_
+
+`All content on one page (useful for printing, presentation mode
+etc.) <http://plone.org/documentation/manual/theme-reference/buildingblocks/referencemanual-all-pages>`_
