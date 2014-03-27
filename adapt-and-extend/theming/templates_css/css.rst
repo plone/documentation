@@ -265,6 +265,12 @@ used on the normal Plone pages.
 
 * https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/skins/plone_scripts/plone.css.py
 
+.. note: plone.css is @import-ed by dialog.css which "hides" it from a browser refresh of a normal Plone page,
+   even when Plone is in development mode.  This means you may find you do not see your CSS updates within the
+   TinyMCE plugin (e.g. in the link/image browser) whilst developing your theme.
+   If this is the case, then simply do a hard refresh in your browser *directly* on: <yoursite>/plone.css to clear
+   the cached version.
+
 CSS reset
 ===========
 
