@@ -103,5 +103,5 @@ Custom local role implementation is made effective using ZCML adapter directive 
     </configure>
 
 If your dynamic role is not any of Plone's existing roles you need to
-:doc:`declare it with rolemap.xml </develop/plone/security/local_roles.rst>`.
+:doc:`declare it with rolemap.xml </develop/plone/security/local_roles>`.
 

@@ -104,7 +104,7 @@ Creating an index
 
 To perform queries on custom data, you need to add corresponding index to portal_catalog first.
 
-E.g. If your :doc:`Archetypes </content/types>` content type has a field::
+E.g. If your :doc:`Archetypes </develop/plone/content/types>` content type has a field::
 
 		schema = [
 		   
@@ -126,7 +126,7 @@ E.g. If your :doc:`Archetypes </content/types>` content type has a field::
 You can add a new index which will *index* the value of this field, so you can
 make queries based on it later.
 
-See more information about :doc:`accessor methods </content/archetypes/fields>`.
+See more information about :doc:`accessor methods </develop/plone/content/archetypes/fields>`.
 
 .. note ::
 
@@ -186,7 +186,7 @@ You can create an index
 * Create indexes in Python code of add-on custom import step.
 
 * As a prerequisitement, your add-on product must have 
-  :doc:`GenericSetup profile support </components/genericsetup>`.   
+  :doc:`GenericSetup profile support </develop/addons/components/genericsetup>`.   
 
 This way is repeatable: index gets created every time an add-on product is installed.
 It is more cumbersome, however.
@@ -306,7 +306,7 @@ Plone calls reindexObject() if
 * portal_catalog rebuild is run (from *Advanced* tab)
 
 * If you add a new
-  index you need to run :doc:`Rebuild catalog </searching_and_indexing/catalog>` 
+  index you need to run :doc:`Rebuild catalog </develop/plone/searching_and_indexing/catalog>` 
   to get the existing values from content objects to new index.
 
 * You might also want to call :doc:`reindexObject()
