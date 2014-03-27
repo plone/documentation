@@ -26,7 +26,7 @@ Creating a new role
 ===================
 
 New Plone roles can be created through the
-:doc:`GenericSetup rolemap.xml </components/genericsetup>` file.
+:doc:`GenericSetup rolemap.xml </develop/addons/components/genericsetup>` file.
 
 Example ``profiles/default/rolemap.xml``
 
@@ -47,7 +47,7 @@ Adding a role to the Sharing Tab
 ================================
 
 To let the newly created role appear in the @@sharing tab, create a
-:doc:`GenericSetup sharing.xml </components/genericsetup>` file.
+:doc:`GenericSetup sharing.xml </develop/addons/components/genericsetup>` file.
 
 Example ``profiles/default/sharing.xml``
 
