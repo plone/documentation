@@ -10,7 +10,7 @@ Create an add-on package
 
 Before extending Plone, we need to create an add-on package to hold our changes. It's possible you would have more than one add-on package. One popular approach is to have a theme product and a product containing your business logic.
 
-We will use ZopeSkel to create a skeleton template for the project. For more information on ZopeSkel, see the section on :doc:`Bootstrapping Plone add-on development </getstarted/paste>`.
+We will use ZopeSkel to create a skeleton template for the project. For more information on ZopeSkel, see the section on :doc:`Bootstrapping Plone add-on development </develop/addons/paste>`.
 
 Put your projects in the src directory of your buildout directory. 
 
@@ -40,7 +40,7 @@ The zopeskel command creates a directory in the src directory named **example.he
 
 Before we move one, lets examine our directory structure. We have **env-27**, our virtual_env. It contains **hello_world**, our Plone installation. We also call this the **buildout directory**. The *buildout directory* contains the **buildout.cfg** file. It also contains the **src** directory, which contains our project **example.helloworld**.
 
-.. image:: /reference_manuals/active/helloworld/images/directory_structure.png
+.. image:: /develop/addons/helloworld/images/directory_structure.png
    :alt: image of directory structure
    
 Looking further into *example.helloworld*, we have the **example** directory which contains the **helloworld** directory. 
@@ -123,7 +123,7 @@ Note::
     
 Now you can install your product from the **Add-ons** are of **Site Setup**. You can access Site Setup from the **admin** menu in the top right corner of your Plone site. 
 
-    .. image:: /reference_manuals/active/helloworld/images/sitesetup.png
+    .. image:: /develop/addons/helloworld/images/sitesetup.png
 
 You can also access Site Setup using an url like 
 
@@ -131,7 +131,7 @@ You can also access Site Setup using an url like
     
 - Select *Add-ons* from the *Site Setup* page. On the Add-ons page, select the *Hello World* add-on and click on *Activate*.
 
-    .. image:: /reference_manuals/active/helloworld/images/addons.png
+    .. image:: /develop/addons/helloworld/images/addons.png
 
 Now that you created and installed an add-on package, you can use it to extend Plone.
 

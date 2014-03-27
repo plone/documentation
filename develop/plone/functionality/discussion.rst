@@ -25,7 +25,7 @@ More info
 Content type support
 -------------------------
 
-Enable discussion in :doc:`portal_types </content/types>` for each content typ
+Enable discussion in :doc:`portal_types </develop/plone/content/types>` for each content typ
 It's the *Allow Discussion* checkbox.
 
 Discussion shows up as ``plone.comments`` viewlet in ``plone.app.layout.viewlets.interfaces.IBelowContent``

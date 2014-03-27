@@ -18,7 +18,7 @@ and examples how to use them.
 Timestamps are part of metadata. For Archetypes, metadata is defined
 in `ExtensibleMetadata <https://github.com/plone/Products.Archetypes/tree/master/Products/Archetypes/ExtensibleMetadata.py>`_.
 
-:doc:`Zope 2 DateTime </misc/datetime>` date objects are used.
+:doc:`Zope 2 DateTime </develop/plone/misc/datetime>` date objects are used.
 
 Last modification date
 ----------------------

@@ -19,7 +19,7 @@ Configlets can be created in two ways:
 
 * Using the ``plone.app.registry`` configuration framework for Plone
   (recommended);
-* Using any :doc:`view code </views/browserviews>`.
+* Using any :doc:`view code </develop/plone/views/browserviews>`.
 
 
 ``plone.app.registry``

@@ -21,7 +21,7 @@ Collection searches are driven by two factors:
 
 * User visible "criteria" which is mapped to portal_catalog queries
 
-* portal_catalog() indexes which you need to add yourself for custom content types. Read more about them in :doc:`Searching and Indexing chapter </searching_and_indexing/index>`
+* portal_catalog() indexes which you need to add yourself for custom content types. Read more about them in :doc:`Searching and Indexing chapter </develop/plone/searching_and_indexing/index>`
 
 Add new collection criteria (new style, plone.app.collection installed)
 -----------------------------------------------------------------------

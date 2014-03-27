@@ -47,13 +47,13 @@ Content linking
 
 Plone offers many kind of support and enhancements in site internal content linking
 
-* Delete protection: :doc:`warning if you try to delete content which is being referred </content/deleting>`.
+* Delete protection: :doc:`warning if you try to delete content which is being referred </develop/plone/content/deleting>`.
 
 * Migrating of links when the content is being moved
 
 The recommended method for linking the content is *Linking by UID* since *Products.TinyMCE* version 1.3.
 
-* When the text is saved in TinyMCE all relative links are converted to :doc:`UID links </content/uid>` in the saved HTML payload
+* When the text is saved in TinyMCE all relative links are converted to :doc:`UID links </develop/plone/content/uid>` in the saved HTML payload
 
 * When the text is displayed again, the HTML is run through output filter and UID links are converted back to human readable links
 
@@ -68,7 +68,7 @@ Editor preferences
 ---------------------
 
 Plone supports user text changeable editor. The active editor is stored in
-the :doc:`user preferences </members/member_profile>`.
+the :doc:`user preferences </develop/plone/members/member_profile>`.
 
 The user can fallback to hand-edited HTML by setting active editor to none.
 
@@ -116,7 +116,7 @@ Customizing TinyMCE options
 ----------------------------
 
 In your add-on code, all TinyMCE options in the control panel can be exported and imported
-:doc:`using GenericSetup, portal_setup and tinymce.xml </components/genericsetup>`.
+:doc:`using GenericSetup, portal_setup and tinymce.xml </develop/addons/components/genericsetup>`.
 
 Custom field-specific style list for TinyMCE
 -----------------------------------------------
@@ -400,9 +400,9 @@ New TinyMCE shortcuts can be registered as global utility via
 
 We'll register our image bank as a shortcut into TinyMCE image dialog.
 
-First make sure your add-on is :doc:`grok'ed </components/grok>`.
+First make sure your add-on is :doc:`grok'ed </develop/addons/components/grok>`.
 
-Then drop in the following file ``shortcut.py`` file into your :doc:`add-on </getstarted/index>`::
+Then drop in the following file ``shortcut.py`` file into your :doc:`add-on </develop/plone/getstarted/index>`::
 
     from five import grok
 

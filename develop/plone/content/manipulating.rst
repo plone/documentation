@@ -36,4 +36,4 @@ explicitly::
         object.reindexObject()
         object.reindexObject(idxs=['modified']) 
 
-For more information, see :doc:`\** How to update this document </searching_and_indexing/indexing>`.
+For more information, see :doc:`\** How to update this document </develop/plone/searching_and_indexing/indexing>`.

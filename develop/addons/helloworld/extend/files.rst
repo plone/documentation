@@ -13,6 +13,6 @@ Before we start writing code, I want to review some important files and director
 We also created an add-on package named **example.helloworld**. It contains the **example** directory which contains the **helloworld** directory. We also call the *helloworld* directory the **product directory**. Among other things, the *product directory* contains the **browser** directory. Many of the changes in our examples happen in the *browser* directory.
 
 
-.. image:: /reference_manuals/active/helloworld/images/directory_structure.png
+.. image:: /develop/addons/helloworld/images/directory_structure.png
 
 

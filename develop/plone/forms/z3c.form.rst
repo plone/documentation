@@ -110,9 +110,9 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 
 * Include Dexterity in your buildout as instructed by Dexterity manual
 
-* Create Plone add-on product using :doc:`Paster </getstarted/paste>`
+* Create Plone add-on product using :doc:`Paster </develop/plone/getstarted/paste>`
 
-* Include :doc:`five.grok support in your add-on </components/grok>`
+* Include :doc:`five.grok support in your add-on </develop/addons/components/grok>`
 
 * Toss ``form.py`` into your add-on product::
 
@@ -1776,7 +1776,7 @@ Since ``plone.app.z3cform`` 0.5.0 the behavior goes like this:
 * Plone 4 forms are unwrapped
 
 The wrapper is a ``plone.z3cform.interfaces.IWrappedForm``
-:doc:`marker interface </components/interfaces>`
+:doc:`marker interface </develop/addons/components/interfaces>`
 on the form object, applied it after the form instance has been constructed.
 If this marker interface is not applied,
 ``plone.z3cform.ZopeTwoFormTemplateFactory``
@@ -2222,7 +2222,7 @@ Validators are best added in the schema itself.
 * The plone.form.directives package provides convenient
   `decorators for form validators <http://pypi.python.org/pypi/plone.directives.form#validators>`_.
   If you use ``plone.form.directives`` validators, make sure your package
-  is :doc:`grokked </components/grok>`
+  is :doc:`grokked </develop/plone/components/grok>`
   (otherwise validators are not registered).
 
 Example: How to use widget specific validators with ``z3c.form``::

@@ -20,7 +20,7 @@ identifies the content in unique way.
 
 Naturally, this id changes when the content is renamed or moved.
 
-Use :doc:`traversing </serving/traversing>` to resolve object by path+id.
+Use :doc:`traversing </develop/plone/serving/traversing>` to resolve object by path+id.
 
 UID and UUID
 =============

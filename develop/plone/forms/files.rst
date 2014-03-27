@@ -13,7 +13,7 @@ Introduction
 =============
 
 This chapter discuss about file uploads and downloads using
-zope.schema based forms and content with :doc:`Dexterity content subsystem </content/dexterity>`.
+zope.schema based forms and content with :doc:`Dexterity content subsystem </develop/plone/content/dexterity>`.
 
 .. note ::
 
@@ -37,7 +37,7 @@ Simple content item file or image field
 Simple upload form example
 ===========================
 
-The example below uses :doc:`five.grok </components/grok>` 
+The example below uses :doc:`five.grok </develop/addons/components/grok>` 
 to declare the form schema and form.
 
 We use `plone.namedfile <http://pypi.python.org/pypi/plone.namedfile>`_

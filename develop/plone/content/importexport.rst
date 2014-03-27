@@ -102,7 +102,7 @@ This overcomes some problems with Zope management based export/import which uses
 <http://docs.python.org/library/pickle.html>`_ and thus needs identical codebase on the source
 and target site. Exporting and importing between Plone 3 and Plone 4 is possible.
 
-You can limit export to cover source content to with arbitrary :doc:`portal_catalog </searching_and_indexing/query>` conditions.
+You can limit export to cover source content to with arbitrary :doc:`portal_catalog </develop/plone/searching_and_indexing/query>` conditions.
 If you limit source content by path you can effectively export single folder only.
 
 The recipe described here assumes the exported and imported site have the same path for the folder.
@@ -204,7 +204,7 @@ but no content is created.
 More information
 ++++++++++++++++
 
-* :doc:`How to perform portal_catalog queries </searching_and_indexing/query>`
+* :doc:`How to perform portal_catalog queries </develop/plone/searching_and_indexing/query>`
 
 * http://webteam.medsci.ox.ac.uk/integrators-developers/transmogrifier-i-want-to-.../
 
