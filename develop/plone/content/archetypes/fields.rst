@@ -98,7 +98,7 @@ You can do this either in
 
 * :doc:`Your own BrowserView Python code </develop/plone/views/browserviews>`
 
-* :doc:`pdb breakpoint </develop/plone/testing_and_debugging/pdb>` 
+* :doc:`pdb breakpoint </manage/deploying/testing_tuning/testing_and_debugging/pdb>` 
 
 * :doc:`Command line Zope debug console </develop/plone/misc/commandline>`
 

@@ -28,7 +28,7 @@ Plone uses *z3c.form* library with the following integration steps
   provide a better widget set over *z3c.form* default with more JavaScript-enabled
   features
 
-Forms are modelled using :doc:`zope.schema </forms/schemas>` models written as Python classes.
+Forms are modelled using :doc:`zope.schema </develop/plone/forms/schemas>` models written as Python classes.
 Widgets for modelled data are set by using either *plone.directives.form* hints set onto
 schema class or in ``z3c.form.form.Form`` based classes body.
 
@@ -110,7 +110,7 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 
 * Include Dexterity in your buildout as instructed by Dexterity manual
 
-* Create Plone add-on product using :doc:`Paster </develop/plone/getstarted/paste>`
+* Create Plone add-on product using :doc:`Paster </develop/addons/paste>`
 
 * Include :doc:`five.grok support in your add-on </develop/addons/components/grok>`
 
@@ -2222,7 +2222,7 @@ Validators are best added in the schema itself.
 * The plone.form.directives package provides convenient
   `decorators for form validators <http://pypi.python.org/pypi/plone.directives.form#validators>`_.
   If you use ``plone.form.directives`` validators, make sure your package
-  is :doc:`grokked </develop/plone/components/grok>`
+  is :doc:`grokked </develop/addons/components/grok>`
   (otherwise validators are not registered).
 
 Example: How to use widget specific validators with ``z3c.form``::

@@ -23,7 +23,7 @@ with Plone 4.
 ZopeSkel templates
 ====================
 
-Please see :doc:`ZopeSkel page </develop/plone/getstarted/paste>` for project skeleton
+Please see :doc:`ZopeSkel page </develop/addons/paste>` for project skeleton
 templates for Dexterity.
 
 Here is an example how to create your own add-on using the buildout below
