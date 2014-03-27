@@ -2,8 +2,6 @@
 Plone - The Open Source CMS
 ===========================
 
-
-
 This document is a community maintained manual for `Plone <http://plone.org>`_ content management system.
 
 The target audience of the documentation includes
@@ -17,12 +15,7 @@ The target audience of the documentation includes
 * Developers: customizing Plone's content types and zforms for a specific use case
 
 * System administrators: hosting Plone on a server
-
-
-Narative documentation
-========================
-
-.. contents:: :local:
+.. contents::
 
 .. toctree::
    :maxdepth: 2
