@@ -11,7 +11,7 @@ Getting Started with PloneFormGen
 Introduction
 ===============
 
-:doc:`Please read general PloneFormGen information first </reference_manuals/active/ploneformgen/index>`
+:doc:`Please read general PloneFormGen information first </working-with-content/managing-content/ploneformgen//index>`
 
 Getting Started
 ===============
