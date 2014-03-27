@@ -28,7 +28,7 @@ What viewlets do
 
 * Viewlets can be reordered (limited to reordering within container in Plone 3.x)
 
-* Viewlets can be registered and overridden in a theme specific manner :doc:`using layers </views/layers>`
+* Viewlets can be registered and overridden in a theme specific manner :doc:`using layers </develop/plone/views/layers>`
 
 * Viewlets have update() and render() methods
 
@@ -67,7 +67,7 @@ A viewlet consists of
 
 * Page template (.pt) file
 
-* A :doc:`browser layer </views/layers>` defining which add-on product must be installed, so that the viewlet is rendered
+* A :doc:`browser layer </develop/plone/views/layers>` defining which add-on product must be installed, so that the viewlet is rendered
 
 * A related Grok or ZCML directives to register the viewlet to a correct viewlet manager with a correct layer
 
@@ -93,9 +93,9 @@ but it is a *view*. Don't know why.
 Creating a viewlet using Grok
 ==================================
 
-:doc:`Grok framework </components/grok>` allows you to register a viewlet easily using Python directives.
+:doc:`Grok framework </develop/addons/components/grok>` allows you to register a viewlet easily using Python directives.
 
-It is recommended that you use :doc:`Dexterity ZopeSkel add-on product code skeleton </getstarted/paste>`
+It is recommended that you use :doc:`Dexterity ZopeSkel add-on product code skeleton </develop/addons/paste>`
 where you add this code.
 
 Create *yourcomponent.app/yourcomponent/app/browser/viewlets.py*::
@@ -328,7 +328,7 @@ Creating a viewlet using Python code and ZCML
 ===============================================
 
 Here is an example code which extends an existing Plone base viewlet (found from plone.app.layout.viewlets.base package)
-and then puts this viewlet to a one of viewlet managers using :doc:`ZCML </components/zcml>`.
+and then puts this viewlet to a one of viewlet managers using :doc:`ZCML </develop/addons/components/zcml>`.
 
 Example Python code for viewlets.py::
 
@@ -432,7 +432,7 @@ There are two primary methods to render viewlets only on some pages
 
 * Register viewlet against some marker interface or content type class -
   the viewlet is rendered on this content type only. You can
-  use :doc:`dynamic marker interfaces </components/interfaces>`
+  use :doc:`dynamic marker interfaces </develop/addons/components/interfaces>`
   to toggle interface on some individual pages through ZMI
 
 * Hard-code a condition to your viewlet in Python code.
