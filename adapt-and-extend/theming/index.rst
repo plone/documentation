@@ -12,3 +12,4 @@ Theming Plone
    create_product
    old_style_theming
    deliverance
+   templates_css/index
