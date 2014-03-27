@@ -35,7 +35,7 @@ Modifying HTTP response cookies
 ===================================
 
 You might want to tune up or clean cookies after some other part of Plone code has set them.
-You can do this in :doc:`post-publication event handler </serving/http_request_and_response>`.
+You can do this in :doc:`post-publication event handler </develop/plone/serving/http_request_and_response>`.
 
 Example ``cleancookies.py`` (needs ZCML subscriber registration too)::
 
@@ -141,7 +141,7 @@ Note that cookies can be set:
 ... so you might need to clean cookies for both incoming HTTP requests and
 HTTP responses.
 
-:doc:`More info in Varnish section of this manual </hosting/varnish>`.
+:doc:`More info in Varnish section of this manual </manage/deploying/caching/varnish>`.
 
 Signing cookies
 =================
