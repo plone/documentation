@@ -130,7 +130,7 @@ Script Adapter" in the 1.1 alpha and end your code with::
     request.response.redirect(request.form['my-selection-field'])
 
 Use a "From" address other than the site address?
-================================================
+=================================================
 
 One stock-field is called replyto and contains a valid email address. I want this address to be in the From: line - not just in Reply-To:. So I could fill in a TALES expression to overwrite the default sender-address. But what's the correct TALES expression for that?
 
