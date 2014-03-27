@@ -14,7 +14,9 @@ Use the *Add new...* menu for a folder to add an event:
 
 You will see rather large *Add Event* panel:
 
-|image4|
+.. figure:: /_static/addevent.png
+   :align: center
+   :alt: Add Event
 
 From the top, we have the following fields:
 
