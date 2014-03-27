@@ -27,6 +27,7 @@ Error Reference
     * ImportError: Couldn't import ZPublisherEventsBackport
     * ImportError: Inappropriate file type for dynamic loading
     * ImportError: No module named PIL
+    * ImportError: No module named html
     * ImportError: No module named pkgutil
     * Invalid or Duplicate property id
     * InvalidInterface: Concrete attribute
@@ -38,7 +39,6 @@ Error Reference
     * POSKeyError
     * PicklingError: Can't pickle &lt;class 'collective.singing.async.IQueue'&gt;: import of module collective.singing.async
     * RuntimeError: maximum recursion depth exceeded (Archetypes field problem)
-    * System lxml too old
     * TraversalError with lots of tuples and lists (METAL problem)
     * TraversalError(subject, name) in expressions
     * TraversalError: @@standard_macros
