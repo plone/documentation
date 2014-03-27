@@ -42,6 +42,7 @@ In your own Theme Product
     paster template will have provided you with some ready-made files -
     for setting up your skin layers, registering your style sheets and
     JavaScript, and ordering your viewlets.
+
 /profiles/default/import\_steps.xml
     Is an essential file for installation, you shouldn't need to change
     this.
@@ -57,9 +58,8 @@ In your own Theme Product
     will determine in what order viewlets appear in viewlet managers.
     You will need to edit this yourself if you want to add your own
     viewlets.
- /profiles.zcml
+/profiles.zcml
     When your Zope instance starts up, this file makes the profile
     available for Generic Setup to use.
 
-.. |The configuration directory in your theme
-product| image:: http://plone.org/documentation/manual/theme-reference/images/your_theme_egg_config_cutdown.gif
+.. |The configuration directory in your theme product| image:: http://plone.org/documentation/manual/theme-reference/images/your_theme_egg_config_cutdown.gif

@@ -36,6 +36,7 @@ In your own Theme Product
 -------------------------
 
  |The browser folder in your theme product|/browser/viewlet.py \|
+
 viewlet.pt
     An example viewlet component
 /browser/interfaces.py
@@ -49,5 +50,4 @@ viewlet.pt
     will need to register these as directories as resources in
     configure.zcml
 
-.. |The browser folder in your theme
-product| image:: http://plone.org/documentation/manual/theme-reference/images/your_theme_egg_components_cutdown.gif
+.. |The browser folder in your theme product| image:: http://plone.org/documentation/manual/theme-reference/images/your_theme_egg_components_cutdown.gif
