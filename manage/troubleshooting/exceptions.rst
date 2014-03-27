@@ -10,10 +10,6 @@ Exceptions and common tracebacks
         Please see :doc:`this tutorial </manage/troubleshooting/basic>` for extracting
         Python tracebacks from your Plone logs.
 
-.. contents ::
-    :local:
-    :depth: 1
-
 Add-on installer error: This object was originally created by a product that is no longer installed
 ---------------------------------------------------------------------------------------------------
 
