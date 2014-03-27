@@ -142,7 +142,7 @@ and the destination, your newly created reports directory.  See the following:
 You should now be able to open $HOME/coverage/reports/all.html within your browser
 for a pretty output like the one below.
 
-.. figure:: /images/coverage.png
+.. figure:: /develop/plone/images/coverage.png
    :align: center
    :alt: Screenshot of text verification
 
