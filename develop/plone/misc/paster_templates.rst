@@ -279,7 +279,7 @@ Developing template egg with paster and buildout.cfg
 ----------------------------------------------------
 
 The preferred method to run paster with Plone is to have it
-automatically pulled in and configured for you by :doc:`buildout </reference_manuals/old/buildout/index>`.
+automatically pulled in and configured for you by :doc:`buildout </old-reference-manuals/buildout/index>`.
 
 develop-eggs
 ============

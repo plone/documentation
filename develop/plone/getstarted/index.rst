@@ -111,7 +111,7 @@ you can create a code skeleton (scaffold) for it using :doc:`Plone ZopeSkel code
 
 Please read how to use :doc:`ZopeSkel to bootstrap your first add-on </develop/addons/paste>`.
 
-If you want to create a package with Dexterity content types please read about :doc:`Setting up a Dexterity project</reference_manuals/external/plone.app.dexterity/prerequisite>`.
+If you want to create a package with Dexterity content types please read about :doc:`Setting up a Dexterity project</external/plone.app.dexterity/prerequisite>`.
 
 Plone development workflow
 ----------------------------
