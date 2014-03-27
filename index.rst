@@ -15,6 +15,7 @@ The target audience of the documentation includes
 * Developers: customizing Plone's content types and zforms for a specific use case
 
 * System administrators: hosting Plone on a server
+
 .. contents::
 
 .. toctree::
@@ -28,12 +29,10 @@ The target audience of the documentation includes
    develop/index
    appendices/index
    about/index
-   
 
 
 
 
-   
 
 .. toctree::
    :maxdepth: 1
