@@ -31,7 +31,7 @@ title:
    :align: center
    :alt: hierarchy.gif
 
-   hierarchy.gif
+   Portlet Hierarchy
 
 As you can see we have two Portlets designated on our Home page
 (navigation and recent items). These same Portlets appear on our About

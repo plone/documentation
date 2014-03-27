@@ -10,7 +10,7 @@ Use the *Add new...* menu for a folder to add an event:
    :align: center
    :alt: add-new-menu.png
 
-   add-new-menu.png
+
 
 You will see rather large *Add Event* panel:
 
@@ -60,8 +60,4 @@ have information and save the event, but remember:
 has been **published*****.
 **
 
-`|image5| <http://media.plone.org/LearnPlone/Creating%20an%20Event.swf>`_
-Watch a Plone 2 video on `adding an
-event <http://media.plone.org/LearnPlone/Creating%20an%20Event.swf>`_.
 
-.. |image4| image:: /_static/addevent.png

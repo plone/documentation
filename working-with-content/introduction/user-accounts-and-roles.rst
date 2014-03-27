@@ -1,10 +1,6 @@
 Plone User Accounts and Roles
 ==================================
 
-The basics of using a Plone web site account, the distinction between
-anonymous surfing and "logged in" web site work, and the description of
-user roles.
-
 Plone web sites come in many flavors, ranging from personal websites
 with one user to community, organization, or business websites that
 could have hundreds of users. Each person who adds content to a Plone
@@ -37,7 +33,11 @@ This is the normal experience for a person surfing the web. You type the
 web address of a web site into your browser and you look at web pages,
 watch videos, view images, but you don't have to log in. This is why
 this mode is called anonymous: anyone can do it just by surfing
-normally. Note the presence of the *log in* link the screen image below
+normally. 
+
+**Pro tip**: you can use two different browsers (like Firefox and Chrome), and *not*  log in with one of them. That way you can easily compare how visitors will see your site, and you can spot content that is not yet published. 
+
+Note the presence of the *log in* link the screen image below
 (top right). If there is a *log in* link showing, you haven't logged in
 -- and you are surfing the web site anonymously, as seen in the
 following screen capture of a new Plone web site:
@@ -56,8 +56,7 @@ information, fill out information forms, transfer funds, and do other
 actions, but only after you have logged in. A Plone web site is not much
 different, except that you can do more sophisticated things. Compare the
 screen image below, captured after a user called "John Smith" has logged
-in. Near the top right you see links for John Smith's name and a log out
-link. There is another important difference you see after logging in --
+in. Near the top right you see John Smith's name, this is a drop-down menu with options for managing your settings, and to log out. There is another important difference you see after logging in --
 the main area in the middle now has a green header strip with tabs. This
 sort of header strip is present when a user has rights to change an area
 of the website. John Smith has the user rights to change this main area.
@@ -87,7 +86,7 @@ Member
    to treat as personal space where they can add content.
 -  can not publish content so that it is visible to the anonymous web
    surfer, even content which they added; a person with manager role
-   must approve content for publishing
+   must approve content for publishing  **note: in many organizations, members are allowed to publish content on parts or all of the site. This is a policy that you can set up for each site or even part of the site**
 
 Manager
 ~~~~~~~

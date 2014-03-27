@@ -6,6 +6,7 @@ Adapting & Extending Plone
    
    basics
    theming/index
-   installing_ad_ons
-   custom_ct
+   config/index
+   install_add_ons
+   custom_ct/index
    configuration

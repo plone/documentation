@@ -67,7 +67,4 @@ A *copy*/*paste* operation is identical to the *cut*/*paste* operation,
 except that there is no removal of content from the original folder. It
 works as you would expect it to work.
 
-`|image8| <http://media.plone.org/LearnPlone/Copy,%20Paste,%20Cut,%20etc.swf>`_
-Watch a Plone 2 video about `performing these
-operations. <http://media.plone.org/LearnPlone/Copy,%20Paste,%20Cut,%20etc.swf>`_
 

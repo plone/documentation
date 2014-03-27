@@ -17,7 +17,7 @@ First, select the last choice in the *Add new...* menu called
    :align: center
    :alt: add-new-menu.png
 
-   add-new-menu.png
+
 
 There are three choices shown for restricting types in the folder:
 

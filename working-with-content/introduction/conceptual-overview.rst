@@ -23,7 +23,7 @@ photos, and images. These can exist in many forms: documents, news
 items, events, videos, audio files, any types of file and data that can
 be uploaded or created on a web site. Content can also be uploaded from
 your local computer. You create *folders* on a Plone web site to hold
-content and to create a navigation structure:
+content, and those automatically also create the navigation structure:
 
 .. figure:: /_static/content_is_added_to_folders.png
    :align: center
@@ -105,7 +105,7 @@ HTML is a computer language that describes how a web page looks. It
 includes text, graphics, fonts, the color of the background, and just
 about everything else. There are many online resources that can teach
 you HTML details, but one of Plone's advantages is that you don't
-need to know (much) about HTML. That's one reason for Plone and other
+need to know about HTML. That's one reason for Plone and other
 similar web software; to let you focus on your content, e.g., butterfly
 text and graphics, instead of learning a new computer language.
 

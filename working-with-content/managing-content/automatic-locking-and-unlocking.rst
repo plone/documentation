@@ -16,7 +16,7 @@ that document as well) goes to view it, she will see the following:
    :align: center
    :alt: locking01.png
 
-   locking01.png
+
 
 Once George has finished editing the document and clicks the Save
 button, the document is automatically unlocked and available to be
@@ -32,7 +32,7 @@ In Plone 3.3 or higher:
 If a user leaves the edit page without clicking Save or Cancel, the
 content locking will remain effective for the next ten minutes after
 which time, the locked content item becomes automatically unlocked. This
-timeout feature is important for browsers that do not execute the
+timeout feature is important for some browsers that do not execute the
 "on-unload" javascript action properly such as Safari.
 Should you desire to disable locking, go to the Plone control panel
 (Site Setup -> Site) and uncheck *Enable locking for through-the-web

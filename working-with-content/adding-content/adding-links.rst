@@ -14,7 +14,7 @@ folder:
    :align: center
    :alt: add-new-menu.png
 
-   add-new-menu.png
+
 
 You will see the Add*Link* panel:
 

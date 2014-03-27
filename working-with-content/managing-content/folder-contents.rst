@@ -43,7 +43,7 @@ following example:
    :align: center
    :alt: rename-item.png
 
-   rename-item.png
+
 
 If you were to change the title to "Long-tailed Skippers," you would
 also change the short name to "long-tailed-skippers." This keeps things
@@ -54,11 +54,7 @@ title, and otherwise make it a carbon copy of the title. Also, use
 lowercase for the short name. See also the page "`What's in a Web
 Name? <http://plone.org/documentation/manual/plone-4-user-manual/adding-content/whats-in-a-web-name>`_"
 for a description of how Plone handles web addressing and the short
-name. The following video also includes in illustration of renaming:
-
-`|image11| <http://media.plone.org/LearnPlone/Copy,%20Paste,%20Cut,%20etc.swf>`_
-Watch a Plone 2 video that includes `renaming an
-item <http://media.plone.org/LearnPlone/Copy,%20Paste,%20Cut,%20etc.swf>`_.
+name. 
 
 The *delete* operation is straightforward. Click to select one or more
 items, and then the delete button, and the items will be deleted.

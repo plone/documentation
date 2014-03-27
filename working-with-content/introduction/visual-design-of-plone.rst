@@ -19,16 +19,10 @@ list of folders in the site. There also may be a set of tabs in the *Log
 In, Location Information* strip near the top.
 
 We can distinguish between the *design* of a web site and the
-*functionality* of a web site. For getting work done, focus on the
-functionality and don't worry so much about the appearance and layout of
-the web site. A strength of the Plone content management system is that
-a web site can be radically redesigned for a new look, without affecting
-the underlying content and functionality. The navigation menu can be
-moved from the left to the right, but it works the same. The right area
-can be deleted where functionality normally put there isn't needed. The
-areas for left, main, and right, as depicted above and below, could be
-changed to top, middle, and bottom, but it would still be a Plone web
-site underneath.
+*functionality* of a web site. Quite often, these aspects of a website are also under the control of different people with different skills. A designer will think about the layout, the appearance and the user interface, while a content editor will think about the structure of the information. 
+
+All of these aspects can be strictly separated in Plone, and can be adjusted independent from each other. 
+
 
 We'll use the default Plone layout design as an example of typical
 divisions of the screen:

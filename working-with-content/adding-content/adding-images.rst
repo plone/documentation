@@ -7,8 +7,7 @@ photographs, maps, and custom graphics are so important on web sites.
 
 :doc:`preparing-images-for-the-web`
 
-**`Preparing Images for the
-Web <http://plone.org/documentation/manual/plone-4-user-manual/adding-content/preparing-images-for-the-web>`_**
+
 
 **Remember to use web-standard file formats for all images. Acceptable
 formats include: JPG, JPEG, GIF, and PNG. Do not use BMP or TIFF formats
@@ -21,7 +20,7 @@ menu (You will only see the *Add new...* menu after logging in):
    :align: center
    :alt: add-item-menu-image.png
 
-   add-item-menu-image.png
+
 
 After clicking to add an **Image**, you'll see the *Add Image* panel:
 
@@ -29,7 +28,7 @@ After clicking to add an **Image**, you'll see the *Add Image* panel:
    :align: center
    :alt: add-image.png
 
-   add-image.png
+
 
 The Title and Description fields (field, as in "data input field") are
 there, as with adding a Folder, and at the bottom there is a place to
@@ -42,8 +41,7 @@ upload an image. Let's look at the three input fields individually:
 -  *Image* - The Image field is a text entry box along with a Browse...
    button. You don't have to type anything here; just click the Browse
    button and you'll be able to browse you local computer for the image
-   file to upload (*Remember*: You need to *remember* where you keep
-   your images on your computer).
+   file to upload.
 
 For images, at a minimum, you will browse your local computer for the
 image file, then click **Save** at the bottom to upload the image to the
