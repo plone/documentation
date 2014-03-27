@@ -190,7 +190,7 @@ htmlhelp_basename = 'PloneDocumentation'
 # (source start file, target name, title, author, documentclass [howto/manual])
 latex_documents = [
     ('index', 'PloneDocumentation.tex', u'Plone Documentation',
-     u'Plone community', 'manual'),
+     u'The Plone community', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
