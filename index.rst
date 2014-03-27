@@ -22,9 +22,9 @@ The target audience of the documentation includes
 Narative documentation
 ========================
 
-.a. contents:: :local:
+.. contents:: :local:
 
-.a. toctree::z
+.. toctree::
    :maxdepth: 2
    :numbered:
 
