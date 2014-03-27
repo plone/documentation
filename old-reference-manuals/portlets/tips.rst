@@ -33,7 +33,7 @@ You can subclass a portlet to create a new portlet type with your enhanced funct
 Using z3c.form in portlets
 -----------------------------
 
-:doc:`z3c.form </forms/z3c.form>` is a modern form library for Plone. The out of the box Plone portlets
+:doc:`z3c.form </develop/plone/forms/z3c.form>` is a modern form library for Plone. The out of the box Plone portlets
 use older *zope.formlib*.
 
 Discussion related to the matter

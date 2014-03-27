@@ -328,7 +328,7 @@ needed to establish a Plone site is:
 
 Below is an example process.
 
-Activate Python 2.6 for Plone (see :doc:`how to use virtualenv controlled non-system wide Python </getstarted/python>`):
+Activate Python 2.6 for Plone (see :doc:`how to use virtualenv controlled non-system wide Python </develop/plone/getstarted/python>`):
 
 .. code-block:: console
 
@@ -512,5 +512,5 @@ Want to do both examples at the same time::
 Troubleshooting
 ----------------
 
-See :doc:`Buildout troubleshooting </troubleshooting/buildout>` chapter.
+See :doc:`Buildout troubleshooting </manage/troubleshooting/buildout>` chapter.
 

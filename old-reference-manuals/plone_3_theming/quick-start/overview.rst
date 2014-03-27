@@ -27,7 +27,7 @@ First Sharpen Your Pencils
     here <firefox-mozilla-ui-development-tools>`.
     To see your customizations, you'll also need to be sure that you are
     running your site in :doc:`debug/development
-    mode </getstarted/debug_mode>`. 
+    mode </develop/plone/getstarted/debug_mode>`. 
 Next Try Som se CSS Customizations
     We'll walk you through the :doc:`process of overriding the page title
     style <change-the-font-colours>`,
