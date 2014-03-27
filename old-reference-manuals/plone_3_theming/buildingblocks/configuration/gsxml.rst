@@ -35,6 +35,7 @@ registry and its tick boxes.
    :alt: screenshot of the javascripts registry in the ZMI
 
    screenshot of the javascripts registry in the ZMI
+
 In the very unlikely event that you need to work out for yourself what
 attributes to use, you'll need to investigate the API (or the interfaces
 and classes) of the tool in question. Use
