@@ -13,16 +13,16 @@ Introduction
 
 Javascripts files must be distributed to Plone
 
-* By creating them through-the-web editor in :doc:`portal_skins </templates_css_and_javascripts/skin_layers>`.
+* By creating them through-the-web editor in :doc:`portal_skins </adapt-and-extend/theming/templates_css/skin_layers>`.
   are stored in ZODB in this case.
 
-* By add-on products using :doc:`resource folders </templates_css_and_javascripts/resourcefolders>`
+* By add-on products using :doc:`resource folders </adapt-and-extend/theming/templates_css/resourcefolders>`
 
 Then the Javascript must be registered on the site
 
 * Through-the-web in portal_javascripts in ZMI
 
-* Using :doc:`GenericSetup jsregistry.xml </components/genericsetup>` which
+* Using :doc:`GenericSetup jsregistry.xml </develop/addons/components/genericsetup>` which
   is run (and rerun) when you use the add-on installer in the control panel
 
 Plone Javascripts are managed by resource registry *portal_javascripts*.
@@ -90,7 +90,7 @@ The following ste
 
 * Include new JS files
 
-        * Use ZCML configuration directive :doc:`resourceFolder </templates_css_and_javascripts/resourcefolders>` to
+        * Use ZCML configuration directive :doc:`resourceFolder </adapt-and-extend/theming/templates_css/resourcefolders>` to
           include static media files in your add-on product
 
         * Put in new Javascript via ZMI upload (you can use Page Template type) to portal_skins/custom folder
@@ -133,7 +133,7 @@ profile file. The following options are available
 
 * *expression* empty string or TAL condition which determines whether the file is served to the user.
   The files with the same condition are grouped to the same compression bundle. For more information,
-  see :doc:`expressions documentation </functionality/expressions>`.
+  see :doc:`expressions documentation </develop/plone/functionality/expressions>`.
 
 * *authenticated* (Plone 4+) is expression override, which tells
   to load the script for authenticated users only
@@ -183,13 +183,13 @@ It is included after toc.js so that the file ends up as the last script
 of the compressed JS bundle which is served for all users.
 
 The Javascript file itself is usually *yourcompany/app/static/yourjsfile.js*
-in your :doc:`add-on product </getstarted/paste>`.
+in your :doc:`add-on product </develop/addons/paste>`.
 
 It is mapped to URI like::
 
         http://localhost:8080/Plone/++resource++yourcompany.app/yourjsfile.js
 
-by :doc:`Zope 3 resource subsystem </templates_css_and_javascripts/resourcefolders>`.
+by :doc:`Zope 3 resource subsystem </adapt-and-extend/theming/templates_css/resourcefolders>`.
 
 Example ``profiles/default/jsregistry.xml`` in your add-on product.
 
@@ -266,7 +266,7 @@ certain widgets or certain pages only.
 The example here shows how to include a Javascript
 if the following conditions are met
 
-* Content type has a certain :doc:`Dexterity behavior </content/behaviors>` applied on it
+* Content type has a certain :doc:`Dexterity behavior </develop/plone/content/behaviors>` applied on it
 
 * Different files are served for view and edit modes
 
@@ -305,7 +305,7 @@ jsregistry.xml:
 
         </object>
 
-We create special conditions using :doc:`Grok </components/grok>` views.
+We create special conditions using :doc:`Grok </develop/addons/components/grok>` views.
 
 .. code-block:: python
 
@@ -419,7 +419,7 @@ Here is described a way to pass data from site or context object to a Javascript
 For each page, we create a ``<script>`` section which will include all the options
 filled in by Python code.
 
-We create the script tag in ``<head>`` section using a :doc:`Grok viewlet </views/viewlets>`
+We create the script tag in ``<head>`` section using a :doc:`Grok viewlet </develop/plone/views/viewlets>`
 registered there.
 
 viewlet.py::
@@ -650,7 +650,7 @@ Loading by page load
 ======================
 
 Let's imagine we have this piece of synchronous page template code.
-The code is a :doc:`view page template </views/browserviews>` code which includes another view inside it.
+The code is a :doc:`view page template </develop/plone/views/browserviews>` code which includes another view inside it.
 
 .. code-block:: html
 

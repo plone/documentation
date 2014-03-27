@@ -54,12 +54,12 @@ configuration files using the ``<include>`` directive.
 
 * ZCML is always interpreted during Plone start-up.
 
-* Your :doc:`unit test </testing_and_debugging/unit_testing>` may need to
+* Your :doc:`unit test </manage/deploying/testing_tuning/testing_and_debugging/unit_testing>` may need to
   manually include ZCML.
 
 * :doc:`Funny exception error messages occur if Plone is started in the
   production mode and ZCML was not properly read for all the packages
-  </troubleshooting/exceptions>`
+  </manage/troubleshooting/exceptions>`
 
 When Plone is started all ZCML files are read.
 
@@ -71,7 +71,7 @@ When Plone is started all ZCML files are read.
   in ``buildout.cfg``
 
 If ZCML contains errors
-:doc:`Plone does not start up in the foreground </troubleshooting/basic>`
+:doc:`Plone does not start up in the foreground </manage/troubleshooting/basic>`
 
 Overrides
 ==========
