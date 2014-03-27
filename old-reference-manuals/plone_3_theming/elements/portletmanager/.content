@@ -1,0 +1,19 @@
+7.4. Portlet Manager
+====================
+
+Tips on moving and hiding portlet managers. Cheat Sheet for creating a
+new portlet manager.
+
+#. `Moving or Removing a Portlet
+   Manager <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/move>`_
+#. `Hiding a Portlet
+   Manager <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/hide>`_
+#. `Creating a New Portlet
+   Manager <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/createnew>`_
+#. `Practical <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/practical>`_
+
+   #. `Adding Portlet
+      Managers <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/practical/adding-portlet-managers>`_
+
+`All content on one page (useful for printing, presentation mode
+etc.) <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/referencemanual-all-pages>`_

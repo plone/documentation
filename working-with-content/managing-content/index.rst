@@ -19,3 +19,4 @@ pasted, moved, renamed, etc.
     versioning
     presentation-mode
     working-copy
+    ploneformgen/index

@@ -1,0 +1,30 @@
+7.8. Hidden Elements
+====================
+
+Hidden page elements (appearing in the HTMLhead or with css set to
+display:none).
+
+#. `Skip
+   Links <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.skip_links>`_
+#. `HTML Head
+   Title <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.title>`_
+#. `Next Previous
+   Links <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.nextprevious.links>`_
+#. `Favicon
+   Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.favicon>`_
+#. `Search
+   Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.search>`_
+#. `Author
+   Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.author>`_
+#. `Navigation
+   Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.navigation>`_
+#. `Analytics <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.analytics>`_
+#. `Dublin Core
+   Metadata <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.dublincore>`_
+#. `KSS Base
+   Url <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.kss-base-url>`_
+#. `RSS
+   Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.RSS>`_
+
+`All content on one page (useful for printing, presentation mode
+etc.) <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/referencemanual-all-pages>`_
