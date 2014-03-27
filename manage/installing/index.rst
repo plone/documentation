@@ -4,6 +4,6 @@ Installing Plone
 .. toctree::
    :maxdepth: 1
 
-   requirements 
+   requirements
    installation
    installing_addons
