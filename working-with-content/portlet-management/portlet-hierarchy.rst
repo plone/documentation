@@ -27,9 +27,8 @@ screen:
 In this diagram, our Portlets are designated in blue underneath the Page
 title:
 
-.. figure:: /_static/hierarchy.gif
+.. figure:: /_static/hierarchy.png
    :align: center
-   :alt: hierarchy.gif
 
    Portlet Hierarchy
 
