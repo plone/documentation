@@ -5,6 +5,8 @@ Adding images to a Plone web site is a basic task that may involve a
 little work on your local computer, but is essential, because
 photographs, maps, and custom graphics are so important on web sites.
 
+:doc:`preparing-images-for-the-web`
+
 **`Preparing Images for the
 Web <http://plone.org/documentation/manual/plone-4-user-manual/adding-content/preparing-images-for-the-web>`_**
 
