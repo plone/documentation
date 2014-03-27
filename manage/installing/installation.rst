@@ -2,7 +2,7 @@
  Installation
 =======================
 
-.. admonition:: Description
+.a. admonition:: Description
 
     Installation instructions for Plone for various operating systems and situations.
 
@@ -42,9 +42,8 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
 
 * If you are installing for production — rather than testing or evaluation — review :doc:`Deploying and installing Plone in production <../deploying/production>` before installation.
 
-.. note::
 
-
+a
 How to install Plone
 ========================================================
 
