@@ -75,7 +75,7 @@ Logging from page templates and RestrictedPython scripts
 --------------------------------------------------------
 
 Python ``logging`` module doesn't provide Zope 2 security assertations
-and does not work in :doc:`RestrictedPython Python scripts </security/sandboxing>`.
+and does not work in :doc:`RestrictedPython Python scripts </develop/plone/security/sandboxing>`.
 
 However, you can use ``context.plone_log()`` method logging in the sandboxed execution mode.
 

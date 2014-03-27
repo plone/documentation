@@ -6,7 +6,7 @@ Exceptions and common tracebacks
         Common Python exception traceback patterns you may encounter when
         working with Plone and possible solutions for them.
 
-        Please see :doc:`this tutorial </troubleshooting/basic>` for extracting
+        Please see :doc:`this tutorial </manage/troubleshooting/basic>` for extracting
         Python tracebacks from your Plone logs.
 
 .. contents ::
@@ -178,7 +178,7 @@ Python has not been compiled with HTTPS support.
 
 Try installing your Python, for example, using minitage.
 
-See :doc:`Python basics </getstarted/python>`.
+See :doc:`Python basics </develop/plone/getstarted/python>`.
 
 
 AttributeError: 'str' object has no attribute 'other' (Mixed zope.viewpagetemplate and Five.viewpagetemplate)
@@ -543,7 +543,7 @@ be looked up like this, and it will fail firstly.
 Some possible causes:
 
 * You are trying to embed main_template inside form/view which is already rendered in main_template frame.
-  Please see how to :doc:`embed forms and wrap forms manually </forms/z3c.form>`.
+  Please see how to :doc:`embed forms and wrap forms manually </develop/plone/forms/z3c.form>`.
 
 * You might be using wrong ViewPageTemplate import (Five vs. zope.pagetemplate - explained elsewhere in this documentation)
 
@@ -1447,7 +1447,7 @@ this to NotFound error.
 
 How to fix
 
-* Put :doc:`pdb break statement </testing_and_debugging/pdb>` to the beginning of the __init__()
+* Put :doc:`pdb break statement </manage/deploying/testing_tuning/testing_and_debugging/pdb>` to the beginning of the __init__()
   method of your view. Then step through view code to see where the exception is raisen.
 
 * If your view does not have __init__() method, then copy the source code __init__() method

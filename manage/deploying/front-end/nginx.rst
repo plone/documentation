@@ -458,7 +458,7 @@ on the server, let's say an ecommerce site shopping cart, you must always
 redirect users to the same ZEO client process or they will have 1/number of
 processes chance to see the orignal data.
 
-Make sure that your :doc:`Zope session cookie </sessions/cookies>` are not
+Make sure that your :doc:`Zope session cookie </develop/plone/sessions/cookies>` are not
 cleared by any front-end server (nginx, Varnish).
 
 By using IP addresses

@@ -165,7 +165,7 @@ persistent objects that are subclasses of ``OFS.Cacheable`` to have the
 cache backend configured externally.
 
 The cache type (cache id) in use is stored 
-:doc:`persistently </persistency/persistent>` per cache user object,
+:doc:`persistently </develop/plone/persistency/persistent>` per cache user object,
 but the cache can be created at runtime (RAM cache) or externally
 (``memcached``) depending on the situation.
 

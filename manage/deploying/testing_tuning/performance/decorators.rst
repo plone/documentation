@@ -30,7 +30,7 @@ Use them like this::
 The `plone.memoize <http://pypi.python.org/pypi/plone.memoize>`_ package
 offers helpful function decorators to cache return values.
 
-See also :doc:`using memcached backend for memoizers </performance/ramcache>`. 
+See also :doc:`using memcached backend for memoizers </manage/deploying/testing_tuning/performance/ramcache>`. 
 
 Cache result for process lifecycle
 ==================================
@@ -110,7 +110,7 @@ Caching on Archetypes accessors
 ---------------------------------
 
 If you have a custom 
-:doc:`Archetypes accessor method </content/archetypes/fields>`,
+:doc:`Archetypes accessor method </develop/plone/content/archetypes/fields>`,
 you can avoid recalculating it during the request processing.
 
 Example::

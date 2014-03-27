@@ -59,7 +59,7 @@ Re-run buildout and see what's wrong.
 Dropping into pdb
 +++++++++++++++++++++++
 
-If you need to inspect start-up errors in Python's :doc:`debugger </testing_and_debugging/pdb>`.
+If you need to inspect start-up errors in Python's :doc:`debugger </manage/deploying/testing_tuning/testing_and_debugging/pdb>`.
 
 Activate Python configuration associated with your ``bin/instance`` script::
 
@@ -145,6 +145,6 @@ If you have lost the Zope Admin Password you can create an emergency user:
 More info
 ----------
 
-* :doc:`common exceptions which you might encounter when starting Zope </troubleshooting/exceptions>`
+* :doc:`common exceptions which you might encounter when starting Zope </manage/troubleshooting/exceptions>`
 
 * `Plone community support guidelines for asking help <http://plone.org/help>`_  

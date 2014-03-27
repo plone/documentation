@@ -19,9 +19,9 @@ it’s great for theme and add-on development and testing.
 A build environment for Plone requires two sets of components:
 
 * The GNU compiler kit and supporting components
-* The development versions of system libraries required by Plone. The
-libraries themselves are in common use, and often included in standard
-distributions. But, we need the development header files.
+* The development versions of system libraries required by Plone. 
+  The libraries themselves are in common use, and often included in standard distributions. But, we need the development header files.
+
 
 It's generally best to install as many of these components as you can via
 platform packages or ports. That way, you'll be able to use your platform's

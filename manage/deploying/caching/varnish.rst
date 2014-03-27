@@ -27,9 +27,8 @@ To use Varnish with Plone
 
 .. note ::
 
-    Some of these examples were written for Varnish 2.x. Varnish 3.x (Feb 2013)
-    has radically altered syntax of VCL language and command line tools, so you
-    might need to adapt the examples a bit.
+    Some of these examples were written for Varnish 2.x. 
+    Varnish 3.x (Feb 2013) has radically altered syntax of VCL language and command line tools, so you might need to adapt the examples a bit.
 
 Installation
 ==========================
@@ -369,7 +368,7 @@ You can provide an uncached version of the site for editors:
 Varnish and I18N
 =================
 
-Please see :doc:`cache issues related to LinguaPlone </i18n/cache>`.
+Please see :doc:`cache issues related to LinguaPlone </develop/plone/i18n/cache>`.
 
 Sanitizing cookies
 ==================
@@ -512,7 +511,7 @@ Disable it by :guilabel:`Use cookie for manual override` setting in
 More info
 ---------
 
-* :doc:`Plone cookies documentation </sessions/cookies>`
+* :doc:`Plone cookies documentation </develop/plone/sessions/cookies>`
 
 * https://www.varnish-cache.org/trac/wiki/VCLExampleCacheCookies
 

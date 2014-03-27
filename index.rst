@@ -33,3 +33,9 @@ Narrative documentation
    appendices/index
    about/index
    
+
+
+.. toctree::
+   :maxdepth: 1
+   
+   License
