@@ -14,7 +14,7 @@ conditions and is not something set in the site database.
 Creating a dynamic role
 ------------------------------
 
-First :doc:`create an Ploneadd-on for your coding needs </getstarted/paste>`.
+First :doc:`create an Ploneadd-on for your coding needs </develop/addons/paste>`.
 
 getRoles() function is called several times per request so
 you might want to cache the result.
@@ -103,5 +103,5 @@ Custom local role implementation is made effective using ZCML adapter directive 
     </configure>
 
 If your dynamic role is not any of Plone's existing roles you need to
-:doc:`declare it with rolemap.xml </security/local_roles>`.
+:doc:`declare it with rolemap.xml </develop/plone/security/local_roles.rst>`.
 

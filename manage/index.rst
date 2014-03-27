@@ -1,7 +1,6 @@
 Managing, Administration of Plone
 =================================
 
-.. contents:: :local:
 
 .. toctree::
     :maxdepth: 2

@@ -141,10 +141,10 @@ otherwise all views and viewlets apply to all sites in one Zope application serv
   products, not on the selected theme.
 
 An add-on layer is a marker interface which is applied on the
-:doc:`HTTP request object </serving/http_request_and_response>`
+:doc:`HTTP request object </develop/plone/serving/http_request_and_response>`
 by Plone core logic.  
 
-First create an :doc:`interface </components/interfaces>` for your layer in 
+First create an :doc:`interface </develop/addons/components/interfaces>` for your layer in 
 ``your.product.interfaces.py``::
 
     """ Define interfaces for your add-on.
@@ -163,7 +163,7 @@ First create an :doc:`interface </components/interfaces>` for your layer in
 
 You then need to refer to this in the ``profile/default/browserlayer.xml``
 file of your add-on installer 
-:doc:`setup profile </components/genericsetup>`:
+:doc:`setup profile </develop/addons/components/genericsetup>`:
 
 .. code-block:: xml
 

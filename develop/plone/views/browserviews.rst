@@ -106,14 +106,14 @@ However, in the most of cases
   which is a wrapper class. It wraps `zope.publisher.browser.BrowserView <https://github.com/zopefoundation/zope.publisher/blob/master/src/zope/publisher/browser.py#L896>`_
   and adds an acquisition (parent traversal) support for it.
 
-* Views have ``index`` attribute which points to :doc:`TAL page template </templates_css_and_javascripts/template_basics>`
+* Views have ``index`` attribute which points to :doc:`TAL page template </adapt-and-extend/theming/templates_css/template_basics>`
   responsible rendering the HTML code. You get the HTML output by doing self.index() and page template
   gets a context argument ``view`` pointing to the view class instance. ``index`` value
   is usually instance of `Products.Five.browser.pagetemplate.ViewPageTemplateFile <https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/browser/pagetemplatefile.py#L33>`_
   (full Plone pages) or `zope.pagetemplate.pagetemplatefile.PageTemplateFile <https://github.com/zopefoundation/zope.pagetemplate/blob/master/src/zope/pagetemplate/pagetemplatefile.py#L40>`_
   (HTML snippets, no acquisition)
 
-* View classes should implement :doc:`interface </components/interface>`  
+* View classes should implement :doc:`interface </develop/addons/components/interfaces>`  
   `zope.browser.interfaces.IBrowserView <https://github.com/zopefoundation/zope.browser/blob/master/src/zope/browser/interfaces.py#L27>`_
 
 Views rendering page snippets and parts can be subclasses of zope.publisher.browser.BrowserView directly
@@ -134,7 +134,7 @@ Overriding view template
 --------------------------
 
 Follow instructions how to :doc:`use z3c.jbot
-</templates_css_and_javascripts/template_basics>` to override templates.
+</adapt-and-extend/theming/templates_css/template_basics>` to override templates.
 
 Overriding view class
 ------------------------
@@ -163,12 +163,12 @@ Example of how to search for this using UNIX tools (assuming that
     grep -ri --include="\*.zcml" folder_tabular_view parts/omelette
 
 The ``folder_tabular_view`` is found in
-the :doc:`skin layer </templates_css_and_javascripts/skin_layers>`
+the :doc:`skin layer </adapt-and-extend/theming/templates_css/skin_layers>`
 called ``plone_content`` in the CMFPlone product.
 
 More info:
 
-* :doc:`How to override old style page templates </templates_css_and_javascripts/skin_layers>`
+* :doc:`How to override old style page templates </adapt-and-extend/theming/templates_css/skin_layers>`
 
 Creating and registering a view
 ===============================
@@ -181,8 +181,8 @@ Creating a view using Grok
 This is the simplest method and recommended for Plone 4.1+ onwards.
 
 First, create your add-on product using
-:doc:`Dexterity project template </getstarted/paste>`. The most important
-thing in the add-on is that your registers itself to :doc:`grok </components/grok>`
+:doc:`Dexterity project template </develop/addons/paste>`. The most important
+thing in the add-on is that your registers itself to :doc:`grok </develop/addons/components/grok>`
 which allows Plone to scan all Python files for ``grok()`` directives and
 furter automatically pick up your views (as opposite using old Zope 3 method
 where you manually register views by typing them in to ZCML in ZCML).
@@ -216,7 +216,7 @@ setup.py and buildout
 
 Either you need to have ``five.grok``
 `registered in your buildout <http://plone.org/documentation/kb/installing-add-ons-quick-how-to>`_
-or have :doc:`five.grok in your setup.py </components/grok>`. If you didn't add it in this
+or have :doc:`five.grok in your setup.py </develop/addons/components/grok>`. If you didn't add it in this
 point and run buildout again to download and install ``five.grok`` package.
 
 Python logic code
@@ -243,8 +243,8 @@ Add the file ``yourcompany.app/yourcompany/app/browser/views.py``::
         ...
 
 The view in question is not registered against any
-:doc:`layer </views/layers>`, so it is immediately available after
-restart without need to run :doc:`Add/remove in Site setup </components/genericsetup>`.
+:doc:`layer </develop/plone/views/layers>`, so it is immediately available after
+restart without need to run :doc:`Add/remove in Site setup </develop/addons/components/genericsetup>`.
 
 The ``grok.context(Interface)`` statement makes the view available for
 every content item and the site root: you can use it in URLs like
@@ -253,7 +253,7 @@ every content item and the site root: you can use it in URLs like
 ``self.context`` parameter received by the view would be the ``newsitem``
 object, and in the second case, it would be the ``news`` container.
 
-Alternatively, you could use the :doc:`content interface </content/types>`
+Alternatively, you could use the :doc:`content interface </develop/plone/content/types>`
 docs to make the view available only for certain content types. Example
 ``grok.context()`` directives could be::
 
@@ -276,7 +276,7 @@ docs to make the view available only for certain content types. Example
 Page template
 `````````````````````
 
-Then create a :doc:`page template for your view. </templates_css_and_javascripts/template_basics>`.
+Then create a :doc:`page template for your view. </adapt-and-extend/theming/templates_css/template_basics>`.
 Create ``yourcompany.app/yourcompany/app/browser/templates`` and add
 the related template:
 
@@ -294,7 +294,7 @@ the related template:
 
 	</html>
 
-Now when you restart to Plone (or use :doc:`auto-restart add-on </getstarted/index>`)
+Now when you restart to Plone (or use :doc:`auto-restart add-on </develop/plone/getstarted/index>`)
 the view should be available through your browser. After enabled,
 grok will scan all Python files for available files, so it doesn't matter
 what .py filename you use.
@@ -302,7 +302,7 @@ what .py filename you use.
 Content slots
 ------------------
 
-Available :doc:`slot </templates_css_and_javascripts/template_basics>`
+Available :doc:`slot </adapt-and-extend/theming/templates_css/template_basics>`
 options you can use for ``<metal fill-slot="">`` in your template which
 inherits from ``<html metal:use-macro="context/main_template/macros/master">``:
 
@@ -362,7 +362,7 @@ Example::
 		# Require admin to access this view
 		grok.require("cmf.ManagePortal")
 
-Use :doc:`available permissions in Zope 3 style strings </security/permission_lists>`.
+Use :doc:`available permissions in Zope 3 style strings </develop/plone/security/permission_lists>`.
 
 More info:
 
@@ -445,7 +445,7 @@ The following example registers a new view (see below for comments):
     is the permission needed to access the view.
     When an HTTP request comes in, the currently logged in user's access
     rights in the current context are checked against this permission.
-    See :doc:`Security chapter </security/permission_lists>` for Plone's
+    See :doc:`Security chapter </develop/plone/security/permission_lists>` for Plone's
     out-of-the-box permissions. Usually you want have ``zope2.View``,
     ``cmf.ModifyPortalContent``, ``cmf.ManagePortal`` or ``zope2.Public``
     here.
@@ -570,7 +570,7 @@ You should never try to put your code there. Instead, use helper method or
 lazy construction design pattern if you need to set-up view variables.
 
 The ``__init__()`` method of the view might not have an
-:doc:`acquisition chain </serving/traversing>` available, meaning that it
+:doc:`acquisition chain </develop/plone/serving/traversing>` available, meaning that it
 does not know the parent or hierarchy where the view is.
 This information is set after the constructor have been run.
 All Plone code which relies on acquisition chain, which means
@@ -596,7 +596,7 @@ layer in your own code.
 
 For more information, see
 
-* :doc:`browser layers </views/layers>`
+* :doc:`browser layers </develop/plone/views/layers>`
 
 Register and unregister view directly using zope.component architecture
 -------------------------------------------------------------------------
@@ -737,9 +737,9 @@ view methods directly from a page template, not only from Python code.
 More information
 ----------------
 
-* :doc:`Context helpers </misc/context>`
+* :doc:`Context helpers </develop/plone/misc/context>`
 
-* :doc:`Expressions </functionality/expressions>`
+* :doc:`Expressions </develop/plone/functionality/expressions>`
 
 Historical perspective
 -----------------------
@@ -965,7 +965,7 @@ the default can be *download*.
 
 The default view ...
 
-* This view is configured in :doc:`portal_types </content/types>`.
+* This view is configured in :doc:`portal_types </develop/plone/content/types>`.
 
 * This view is rendered when a content item is called |---| even though
   they are objects, they have the ``__call__()`` Python method
@@ -981,7 +981,7 @@ rendering explicitly, you can do it as follows::
 
 More info:
 
-* :doc:`Context helpers and utilities </misc/context>`
+* :doc:`Context helpers and utilities </develop/plone/misc/context>`
 
 * http://plone.293351.n2.nabble.com/URL-to-content-view-tp6028204p6028204.html
 

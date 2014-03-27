@@ -25,11 +25,11 @@ Permission checks are done for:
   (Plone automatically publishes traversable methods over HTTP); 
 
 * every called method for 
-  :doc:`RestrictedPython scripts </security/sandboxing>`.
+  :doc:`RestrictedPython scripts </develop/plone/security/sandboxing>`.
 
 The basic way of dealing with permissions is setting the ``permission``
 attribute of view declaration. For more information see :doc:`views
-</views/browserviews>`.
+</develop/plone/views/browserviews>`.
 
 Debugging permission errors: Verbose Security
 ================================================
@@ -378,7 +378,7 @@ Manually fix permission problems
 
 In the case you fiddle with permission and manage to lock out even the admin
 user you can still fix the problem from the 
-:doc:`debug prompt </misc/commandline>`.
+:doc:`debug prompt </develop/plone/misc/commandline>`.
 
 Example debug session, restoring ``Access Contents Information`` for all
 users::
