@@ -16,13 +16,13 @@ The target audience of the documentation includes
 
 * Developers: customizing Plone's content types and zforms for a specific use case
 
-* System administrators: hosting Plone on a serverz
+* System administrators: hosting Plone on a server
 
 
-aNaaarrative documentation
+Narative documentation
 ========================
 
-.. contents:: :local:
+.a. contents:: :local:
 
 .a. toctree::z
    :maxdepth: 2
