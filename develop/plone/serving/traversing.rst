@@ -450,7 +450,7 @@ for the default item) in page templates:
 
 More info:
 
-* See :doc:`plone_context_state helper </misc/context>`
+* See :doc:`plone_context_state helper <develop/addons/helloworld/extend/content>`
 
 Checking if an item is the site front page
 --------------------------------------------
@@ -633,7 +633,7 @@ Advanced traversing with search conditions
 ===========================================
 
 All Plone content should exist in the :doc:`portal_catalog
-</searching_and_indexing/query>`.  Catalog provides fast query access with
+</develop/plone/searching_and_indexing/query>`.  Catalog provides fast query access with
 various indexes to the Plone content.
 
 Other resources
