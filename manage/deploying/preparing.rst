@@ -1,8 +1,8 @@
 Preparing the Server
 ====================
 
-Pareparing to install Plone
---------------------------
+Paareparing to install Plone
+----------------------------
 
 Plone and Zope are generally not available via platform package or port
 systems. So, you can’t say “apt-get install plone” to add it to a Debian
