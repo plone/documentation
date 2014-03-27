@@ -22,7 +22,7 @@ files.
 
 You'll need to disable this when making changes to your site or
 customizing CSS. So make sure you've followed the instructions on how to
-put your site into :doc:`debug mode </getstarted/debug_mode>`.
+put your site into :doc:`debug mode </develop/plone/getstarted/debug_mode>`.
 
 Locating the styles you want to change
 --------------------------------------
