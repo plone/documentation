@@ -249,7 +249,7 @@ Example:
     export PYTHON_EGG_CACHE=~/python-egg-cache
 
 Bauildout defaults
-=================
+==================
 
 You can set user-wide buildout settings in the following file::
 
