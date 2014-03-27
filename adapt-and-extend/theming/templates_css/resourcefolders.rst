@@ -71,7 +71,7 @@ Further reading
 Grok static media folder
 =========================
 
-Learn more about :doc:`Grok and Plone integration </components/grok>`.
+Learn more about :doc:`Grok and Plone integration </develop/addons/components/grok>`.
 
 .. warning:: Since five.grok 1.3.0 this method does not work.
 

@@ -24,8 +24,8 @@ A normal full Plone HTML page consists of:
 * the *master template*, defining the overall layout of the page,
 * *slots*, defined by the master template, and filled by the object being
   published,
-* :doc:`Viewlet managers </views/viewlets>` containing 
-  :doc:`viewlets </views/viewlets>`.
+* :doc:`Viewlet managers </develop/addons/five-grok/browser-components/viewlets>` containing 
+  :doc:`viewlets </develop/addons/five-grok/browser-components/viewlets>`.
 
 Templates can be associated with Python view classes 
 (also known as "new style", circa 2008) or
@@ -425,7 +425,7 @@ For example, they are widely used in various other parts of Plone:
 
 Read more about expressions in `TAL Guide <http://www.owlfish.com/software/simpleTAL/tal-guide.html>`_.
 
-See the :doc:`Expressions chapter </functionality/expressions>` for more information.
+See the :doc:`Expressions chapter </develop/plone/functionality/expressions>` for more information.
 
 Omitting tags
 =================
@@ -444,7 +444,7 @@ You can use ``tal:omit-tag=""``:
 Images
 ======
 
-See :doc:`how to use images in templates </images/templates>`.
+See :doc:`how to use images in templates </develop/plone/images/templates>`.
 
 Overriding templates for existing Plone views
 ==============================================
@@ -503,8 +503,8 @@ You can easily include per-template CSS and JavaScript in the ``<head>``
 element using extra slots defined in Plone's ``main_template.pt``.
 
 Note that these media files do not participate in 
-:doc:`portal_css </templates_css_and_javascripts/css>` or
-:doc:`portal_javascript </templates_css_and_javascripts/javascript>`
+:doc:`portal_css </adapt-and-extend/theming/templates_css/css>` or
+:doc:`portal_javascript </develop/addons/javascript>`
 resource compression. 
 
 Extra slots are:
@@ -597,7 +597,7 @@ interfaces to register special overriding viewlets.
 
 More information:
 
-* :doc:`Viewlets </views/viewlets>`
+* :doc:`Viewlets </develop/plone/views/viewlets>`
 
 * http://starzel.de/blog/how-to-get-a-different-look-for-some-pages-of-a-plone-site
 
@@ -629,7 +629,7 @@ Using macros
 =============
 
 Here is an example how to use `<metal:block define-macro="xxx">` and 
-`<metal:block use-macro="xxx">` in your :doc:`view class </views/browserviews>`
+`<metal:block use-macro="xxx">` in your :doc:`view class </develop/plone/views/browserviews>`
 template files.
 
 .. code-block:: html
