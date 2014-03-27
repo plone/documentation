@@ -5,4 +5,5 @@ Managing, Administration of Plone
     :maxdepth: 1
 
     installing/index
+    deploying/index
     troubleshooting/index
