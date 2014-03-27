@@ -2,8 +2,7 @@ Setting Basic Properties
 ==============================
 
 The tab panels available on each content item has fields for basic
-information. Providing such data is important, providing fuel for the
-engines that run Plone.
+information. The more data you can provide, the better Plone can help in making the content available to the relevant visitors.
 
 Any content item, when clicked by a user with edit rights for the item,
 will show a set of tabs at the top for setting basic properties:
@@ -37,7 +36,7 @@ be the same for other content types):
    :align: center
    :alt: null
 
-   null
+
 
 *Note: Tags were formerly called Categories in Plone 3, and Keywords
 prior to version 3.0.*
@@ -69,7 +68,6 @@ set them:
    :align: center
    :alt: null
 
-   null
 
 The publication and expiration dates work like this:
 
@@ -113,7 +111,7 @@ and other similar controls:
    :align: center
    :alt: null
 
-   null
+
 
 Recommendations
 ---------------
@@ -139,9 +137,8 @@ discover and use relationships within the content.
 Exposing Metadata Properties as meta tags in the HTML source
 ------------------------------------------------------------
 
-From Plone 4 on, in *Site Setup â†’ Site*, there is a check box that
-will expose the Dublin Core metadata properties. Checking this box will
-expose the title, description, etc. metadata as meta tags within the
+From Plone 4 on, in *Site Setup*, there is a check box that
+will expose the :term:`Dublin Core` metadata properties. Checking this box will expose the title, description, etc. metadata as meta tags within the
 HTML ``<head>``.
 For example:
 
@@ -156,10 +153,9 @@ For example:
     <meta content="2009-11-27 17:04:02" name="DC.date.created" />
     <meta content="en" name="DC.language" />a
 
-` <http://dublincore.org/>`_The generator will check and obey the
-`allowAnonymousViewAbout
-setting <http://plone.org/documentation/manual/developer-manual/plone-properties/site-properties/view?searchterm=allowAnonymousViewAbout>`_
-and affects the properties*Creator*, *Contributors* and *Publisher*.
+
+The generator will check and obey the so-called *allowAnonymousViewAbout* 
+setting in the :term:`Control Panel` and affects the properties*Creator*, *Contributors* and *Publisher*.
 
 You can read more about `Dublin Core <http://dublincore.org/>`_ and
 `HTML

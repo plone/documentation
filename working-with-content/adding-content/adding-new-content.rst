@@ -10,7 +10,7 @@ New content items are added via the **Add New . . .** drop-down menu:
    :align: center
    :alt: add-new-menu.png
 
-   add-new-menu.png
+
 
 Adding content in Plone is done *placefully,*which is to say that you
 must navigate to the section of your Plone website that you wish the new
@@ -45,16 +45,14 @@ Event
        :align: center
        :alt: events-summary-chart.jpg
     
-       events-summary-chart.jpg
+
 
     From Plone 3.3 on you can also get all the events in a folder in
     one go (currently only available in iCal format). To download the
     iCal file, append *@@ics\_view* to the end of the URL of the folder
     that contains the events. For example, if you want to get all the
     events into the *events* folder in the root of your site, go to
-    *http://yourdomain.tld/events/@@ics\_view*. There are plans to
-    provide a link to this iCal calendar inside the UI in a future
-    release.
+    *http://example.com/events/@@ics\_view*.
 
 File
     A File in Plone is any binary file you wish to upload with the
@@ -128,3 +126,4 @@ Descriptions are often used to conjunction with a variety of Folder and
 Collection views (such as Standard and Summary). The Description also
 appears in search results via Plone's native search engine.
 
+The Description is just plain text, without any form of mark-up. This is to keep it inline with :term:`Dublin Core` standards.

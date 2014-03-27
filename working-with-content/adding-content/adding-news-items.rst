@@ -9,7 +9,7 @@ Use the *Add new...* menu for a folder to add a news item:
    :align: center
    :alt: add-new-menu.png
 
-   add-new-menu.png
+
 
 You will see the *Add News Item* panel:
 
@@ -34,7 +34,5 @@ Item.
 listing or news portlet until they are **published.***
 *
 
-`|image6| <http://media.plone.org/LearnPlone/Creating%20a%20News%20Item.swf>`_
-Watch a Plone video on `adding a news
-item <http://media.plone.org/LearnPlone/Creating%20a%20News%20Item.swf>`_.
+
 

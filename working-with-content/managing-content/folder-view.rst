@@ -21,7 +21,7 @@ shown:
    :align: center
    :alt: folder-view-standard.png
 
-   folder-view-standard.png
+
 
 The *View* is always how a content item would show for anonymous web
 site visitors. Click the *View tab* when you want to see what a content
@@ -83,9 +83,6 @@ folders, from acting as simple containers to acting as direct links to
 content. Instead, you can often accomplish what you want by only using
 collections, which will be covered later in this manual.
 
-`|image10| <http://media.plone.org/LearnPlone/Choosing%20a%20default%20page.swf>`_
-Watch a Plone 2 video about `setting the page display
-view. <http://media.plone.org/LearnPlone/Choosing%20a%20default%20page.swf>`_
 
 Next, we move to the *Contents* tab to see important functions for
 accessing content in a list of folder content.

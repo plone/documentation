@@ -45,10 +45,7 @@ Collection
 The Collection Portlet will allow you to **display the results of a
 Collection**. You must have a Collection previously created when you add
 this Portlet, then you can specifying the Collection to be used . This
-is a great way to summarize the results of an important Collection so
-that it is easily viewable to the public. For instructions on creating a
-Collection Portlet follow this
-`How-to <http://plone.org/documentation/manual/plone-4-user-manual/portlet-management/resolveuid/eb8800b7a664b35d069ddbcae7e4c837>`_.
+is a great way to present targeted queries like for example "newest sightings of Amazonian butterflies". 
 
 Events
 ------

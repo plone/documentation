@@ -18,7 +18,7 @@ Folders are added by clicking the **Add new...** drop-down menu. Select
    :align: center
    :alt: add-item-menu-folder.png
 
-   add-item-menu-folder.png
+
 
 You should now see the *Add Folder* screen:
 
@@ -52,9 +52,3 @@ types. We will cover these tabs in another section of this user manual.
 Be sure to click **Save** at the bottom of the page when you are
 finished. This will complete the folder creation process.
 
-`|lights-camera-action.png| <http://media.plone.org/LearnPlone/Adding%20a%20new%20folder%20and%20new%20page.swf>`_
-Watch a Plone 4 video on `adding a
-folder <http://dist.plone.org/media/video/plone4-user-manual/foldercreation.html>`_.
-
-
-.. |lights-camera-action.png| image:: /_static/lights-camera-action.png

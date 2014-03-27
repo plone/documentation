@@ -10,7 +10,7 @@ The *state* menu has an *advanced*... item:
    :align: center
    :alt: state-menu.png
 
-   state-menu.png
+
 
 which brings up the *advanced* state panel:
 
@@ -68,7 +68,4 @@ published already, there will be choices in this bottom part of the
 panel for *reject* and *retract*, for "unpublishing" at item, setting it
 back to *public draft* or then to *private* state.
 
-`|image24| <http://media.plone.org/LearnPlone/Publishing%20States.swf>`_
-Watch a Plone 2 video about `controlling publication
-state. <http://media.plone.org/LearnPlone/Publishing%20States.swf>`_
 

@@ -19,7 +19,7 @@ often much smaller than that.
 
 The software you use to view or print your digital photos will often
 have this resizing functionality, or you may have graphics software such
-as Corel Draw, Adobe Photoshop, Irfanview, or Gimp on your computer.
+as Adobe Photoshop or Gimp on your computer.
 Resizing an image, sometimes called resampling, is a standard function
 you should be able to find in your software, often under the *Image*
 menu.
@@ -42,7 +42,7 @@ you can find them when you upload them to your Plone web site.
    :align: center
    :alt: image\_resizing.png
 
-   image\_resizing.png
+
 
 **To summarize**:
 
