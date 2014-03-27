@@ -13,7 +13,7 @@ Introduction
 
 *Querying* is the action to retrieve data from search indexes.  In Plone's
 case this usually means querying content items using the ``portal_catalog``
-tool.  Plone uses the :doc:`portal_catalog </searching_and_indexing/catalog>`
+tool.  Plone uses the :doc:`portal_catalog </develop/plone/searching_and_indexing/catalog>`
 tool to perform most content-related queries. Special catalogs, like
 ``reference_catalog``, exist, for specialized and optimized queries.
 
@@ -29,7 +29,7 @@ Example::
     # portal_catalog is defined in the site root
     portal_catalog = site.portal_catalog
 
-You can also use :doc:`ITools </misc/context>` tool to get access to
+You can also use :doc:`ITools </develop/plone/misc/context>` tool to get access to
 ``portal_catalog`` if you do not have Plone site object directly available::
 
     context = aq_inner(self.context)
@@ -96,7 +96,7 @@ The catalog tool queries return an iterable of catalog brain objects.
 As mentioned previously, brains contain a subset of the actual content
 object information. The available subset is defined by the metadata
 columns in portal_catalog. You can see available metadata columns on
-the portal_catalog "Metadata" tab in ZMI. For more information, see :doc:`indexing </searching_and_indexing/indexing>`.
+the portal_catalog "Metadata" tab in ZMI. For more information, see :doc:`indexing </develop/plone/searching_and_indexing/indexing>`.
 
 
 Available indexes
