@@ -23,3 +23,4 @@ Guide to deploying and installing Plone in production
     packing
     backup
     wsgi
+    zope
