@@ -1,0 +1,135 @@
+7. Page Elements
+================
+
+A reference for the viewlets, portlets, viewlet managers, and portlet
+columns which make up a page. There's a quick reference to each
+component type with links and reminders on how to handle them, a visual
+index of page elements plus code snippets to make your life easier.
+
+#. `Viewlet <http://plone.org/documentation/manual/theme-reference/elements/viewlet>`_
+
+   #. `Anatomy of a
+      Viewlet <http://plone.org/documentation/manual/theme-reference/elements/viewlet/anatomy>`_
+   #. `Moving, Removing or Hiding a
+      Viewlet <http://plone.org/documentation/manual/theme-reference/elements/viewlet/move>`_
+
+      #. `Overview and Cheat
+         Sheet <http://plone.org/documentation/manual/theme-reference/elements/viewlet/move/overview>`_
+
+   #. `Overriding or Creating a New
+      Viewlet <http://plone.org/documentation/manual/theme-reference/elements/viewlet/override>`_
+
+      #. `Overview and Cheat
+         Sheet <http://plone.org/documentation/manual/theme-reference/elements/viewlet/override/overview>`_
+
+#. `Portlet <http://plone.org/documentation/manual/theme-reference/elements/portlet>`_
+
+   #. `Anatomy of a
+      Portlet <http://plone.org/documentation/manual/theme-reference/elements/portlet/anatomy>`_
+   #. `Moving, Removing or Hiding a
+      Portlet <http://plone.org/documentation/manual/theme-reference/elements/portlet/move>`_
+   #. `Overriding a
+      Portlet <http://plone.org/documentation/manual/theme-reference/elements/portlet/override>`_
+   #. `Override the portlets in Plone
+      3.0 <http://plone.org/documentation/manual/theme-reference/elements/portlet/override-the-portlets-in-plone-3.0>`_
+
+#. `Viewlet
+   Manager <http://plone.org/documentation/manual/theme-reference/elements/viewletmanager>`_
+
+   #. `Anatomy of a Viewlet
+      Manager <http://plone.org/documentation/manual/theme-reference/elements/viewletmanager/anatomy>`_
+   #. `Moving, Removing or Hiding a Viewlet
+      Manager <http://plone.org/documentation/manual/theme-reference/elements/viewletmanager/move>`_
+   #. `Creating a New Viewlet
+      Manager <http://plone.org/documentation/manual/theme-reference/elements/viewletmanager/override>`_
+
+#. `Portlet
+   Manager <http://plone.org/documentation/manual/theme-reference/elements/portletmanager>`_
+
+   #. `Moving or Removing a Portlet
+      Manager <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/move>`_
+   #. `Hiding a Portlet
+      Manager <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/hide>`_
+   #. `Creating a New Portlet
+      Manager <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/createnew>`_
+   #. `Practical <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/practical>`_
+
+      #. `Adding Portlet
+         Managers <http://plone.org/documentation/manual/theme-reference/elements/portletmanager/practical/adding-portlet-managers>`_
+
+#. `Page Elements Index - Plone Default and Classic
+   Theme <http://plone.org/documentation/manual/theme-reference/elements/elementsindexnew>`_
+#. `Page Elements Index - Sunburst Theme - Plone
+   4 <http://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_
+#. `Structural
+   Elements <http://plone.org/documentation/manual/theme-reference/elements/structuralelements>`_
+
+   #. `Header <http://plone.org/documentation/manual/theme-reference/elements/structuralelements/plone.header>`_
+
+#. `Hidden
+   Elements <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements>`_
+
+   #. `Skip
+      Links <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.skip_links>`_
+   #. `HTML Head
+      Title <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.title>`_
+   #. `Next Previous
+      Links <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.nextprevious.links>`_
+   #. `Favicon
+      Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.favicon>`_
+   #. `Search
+      Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.search>`_
+   #. `Author
+      Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.author>`_
+   #. `Navigation
+      Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.navigation>`_
+   #. `Analytics <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.analytics>`_
+   #. `Dublin Core
+      Metadata <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.dublincore>`_
+   #. `KSS Base
+      Url <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.kss-base-url>`_
+   #. `RSS
+      Link <http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.links.RSS>`_
+
+#. `Visible Page
+   Elements <http://plone.org/documentation/manual/theme-reference/elements/visibleelements>`_
+
+   #. `Language
+      Selector <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.app.i18n.locales.languageselector>`_
+   #. `Site
+      Actions <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.site_actions>`_
+   #. `Search
+      Box <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.searchbox>`_
+   #. `Logo <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.logo>`_
+   #. `Global
+      Sections <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.global_sections>`_
+   #. `Personal
+      Bar <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.personal_bar>`_
+   #. `Path Bar (Portal
+      Breadcrumbs) <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.path_bar>`_
+   #. `Content
+      Views <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.contentviews>`_
+   #. `Content
+      Actions <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.contentactions>`_
+   #. `Table of
+      Contents <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.tableofcontents>`_
+   #. `Presentation <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.presentation>`_
+   #. `Keywords <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.belowcontenttitle.keywords>`_
+   #. `Byline <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.belowcontenttitle.documentbyline>`_
+   #. `Lock <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.lockinfo>`_
+   #. `Workflow
+      History <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.belowcontentbody.workflowhistory>`_
+   #. `Content
+      History <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.belowcontentbody.contenthistory>`_
+   #. `Document
+      Actions <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.abovecontenttitle.documentactions>`_
+   #. `Related
+      Items <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.belowcontentbody.relateditems>`_
+   #. `Comments <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.comments>`_
+   #. `Next
+      Previous <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.nextprevious>`_
+   #. `Footer <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.footer>`_
+   #. `Colophon <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.colophon>`_
+
+`All content on one page (useful for printing, presentation mode
+etc.) <http://plone.org/documentation/manual/theme-reference/elements/referencemanual-all-pages>`_
