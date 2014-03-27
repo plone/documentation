@@ -42,7 +42,7 @@ You also notice tabs along the top:
    available for view on the web site,
 -  *Ownership*, for specifying the creator and/or contributors for the
    content item,
--  *Settings,* for allowing comments about the item, adding :doc:`/working-with-content/managing-content/previous-next-links`,
+-  *Settings,* for allowing comments about the item, enabling :ref:`rst_prev-next-links`,
    and choosing whether it shows in the navigation menu for the web
    site.
 

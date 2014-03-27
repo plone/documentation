@@ -6,8 +6,12 @@ Theming Plone
 
    intro
    plone_app_theming
-   plone_app_themingplugins
+   plone_app_themeingplugins
    diazo_theme_engine_guide
    plone_diazo_recipes
    create_product
    old_style_theming
+   deliverance
+   templates_css/index
+   quick_test
+   theme_product_with_diazo

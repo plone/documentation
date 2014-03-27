@@ -22,3 +22,6 @@ Guide to deploying and installing Plone in production
     logs
     packing
     backup
+    wsgi
+    zope
+    testing_tuning/index
