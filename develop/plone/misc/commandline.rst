@@ -105,7 +105,7 @@ Script could look like::
         if "app" in locals():
             main(app)
 
-You probably need to spoof your :doc:`security credentials </security/permissions>`.
+You probably need to spoof your :doc:`security credentials </develop/plone/security/permissions>`.
 
 .. note ::
         

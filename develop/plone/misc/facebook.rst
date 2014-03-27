@@ -88,7 +88,7 @@ You can see Facebook id your yourself and your friends here
 
 * http://apps.facebook.com/whatismyid
 
-Simple example. Add this to your :doc:`main_template.pt </templates_css_and_javascripts/template_basics>`.
+Simple example. Add this to your :doc:`main_template.pt </adapt-and-extend/theming/templates_css/template_basics>`.
 Supports Plone default content types and news item image
 
 .. code-block:: html

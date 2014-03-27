@@ -314,7 +314,7 @@ portal_tabs to the current language.
 
 * Source is modified from `The default sections viewlet <https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/viewlets/common.py#L151>`_
 
-* The viewlet is created using :doc:`Grok </components/grok>` framework
+* The viewlet is created using :doc:`Grok </develop/addons/components/grok>` framework
 
 Viewlet code::
 

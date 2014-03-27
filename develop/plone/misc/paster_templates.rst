@@ -10,7 +10,7 @@
 Introduction
 ------------
 
-Plone CMS and Python extensively use :doc:`paster code templating system </getstarted/paste>`
+Plone CMS and Python extensively use :doc:`paster code templating system </develop/addons/paste>`
 to aid add-on product development.
 
 Paster allows you to create code from code skeleton templates,
@@ -20,7 +20,7 @@ Default Plone templates are in `ZopeSkel <http://plone.org/products/zopeskel>`_ 
 
 * This document tells how to create your own paster templates
 
-* For information how to use paster please refer to :doc:`paster section in tutorials </getstarted/paste>`
+* For information how to use paster please refer to :doc:`paster section in tutorials </develop/addons/paste>`
 
 More information
 
@@ -360,7 +360,7 @@ Run buildout
 
         bin/buildout
 
-Run :doc:`testrunner </testing_and_debugging/unit_testing>` for the created add-on
+Run :doc:`testrunner </manage/deploying/testing_tuning/testing_and_debugging/unit_testing>` for the created add-on
 
 .. code-block:: console
 

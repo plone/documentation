@@ -6,7 +6,7 @@ TODO: remove this file, eventually move code example to a "cookbook" section.
 
 .. warning:: Out of date
 
-    This page is out of date. Please visit: :doc:`Local Roles </security/local_roles>`.
+    This page is out of date. Please visit: :doc:`Local Roles </develop/plone/security/local_roles>`.
 
 
 .. admonition:: Description

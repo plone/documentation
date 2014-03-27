@@ -28,7 +28,7 @@ Let's break this down:
   Alternatively we could use e.g. the ``python:`` :term:`TALES` expression
   type and embed one line python of code to generate the attribute value.
 
-* We look up a helper view called :doc:`plone_portal_state </misc/context>`.
+* We look up a helper view called :doc:`plone_portal_state </develop/plone/misc/context>`.
   This is a ``BrowserView`` shipped with Plone. Its purpose is to expose
   different helper methods to page templates and Python code.
 
@@ -117,12 +117,12 @@ media path.
 
 Layer is optional: the static media path is available only 
 when your add-on product is installed if the 
-:doc:`layer </views/layers>` is specified.
+:doc:`layer </develop/plone/views/layers>` is specified.
         
 Grok static media folder
 ------------------------
 
-This applies for add-on products using :doc:`five.grok </components/grok>` API.
+This applies for add-on products using :doc:`five.grok </develop/addons/components/grok>` API.
 
 Create folder ``yourcompany.product/yourcompany/product/static``
 
