@@ -12,7 +12,7 @@
 <div id="searchbox" >
   <h3>{{ _('Quick search') }}</h3>
   <form class="search navbar-form" action="{{ pathto('search') }}" method="get" role="search">
-    <input type="text" class="form-control" name="q" placeholder="search" />
+    <input type="text" class="form-control" name="q" placeholder="search" title="{{ _('Enter search terms or a module, class or function name.') }}" />
     <button type="submit" class="btn btn-default" value="{{ _('Go') }}" >Submit</button>
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />

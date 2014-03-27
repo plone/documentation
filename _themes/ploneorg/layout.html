@@ -1,54 +1,28 @@
 {% extends 'basic/layout.html' %}
 
+{% block doctype %}
+<!DOCTYPE html>
+{% endblock %}
+
 <!-- $Id$ -->
 {% block extrahead %}
-  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap.min.css">
-  <script language="text/javascript" src="_static/js/bootstrap.min.js" />
+  <link rel="stylesheet" type="text/css" href="{{pathto('_static/',1)}}css/bootstrap.min.css">
+  <script src="{{pathto('_static/',1)}}js/jquery-1.9.1.min.js"
+          type="text/javascript"
+          language="text/javascript" ></script>
+  <script src="{{pathto('_static/',1)}}js/bootstrap.min.js"
+          type="text/javascript"
+          language="text/javascript"  ></script>
 
-
-
-  <script language="javascript">
-  //<![CDATA[
-
-  Documentation.addTranslations({"locale": "fr", "plural_expr": "(n > 1)", "messages": {"See the definition": "Voir la d\u00e9finition"}});
-
-  // See http://disqus.disqus.com/general_integration_help/
-  var disqus_developer = 1;
-  if (document.location.protocol == 'http:') {
-      disqus_developer = 0;
-  }
-
-  // Some HTML/CSS transforms we can't do in pure CSS (waiting for CSS3 support)
-  $(document).ready(function () {
-
-      // Style of .. verisonmodified:: , .. versionadded:: ...
-      $('p:has(span.versionmodified)').addClass('p-versionmodified');
-
-      // Style of the TOC tree
-      $('ul:has(li.toctree-l1)').addClass('toctree');
-
-      // Decorate links to other sites
-      $('a[class~=external]').attr('target', '_blank');
-
-      // Glossary terms
-      $('em.xref').attr('title', _('See the definition'));
-
-      // We need to have all <pre> in a <div class="highlight"> to mimic pygments
-      // to work around a pygments (?) bug
-      var suffixes = {cfg: null, python:null};
-      for (var suffix in suffixes) {
-          var pattern = 'div.highlight-' + suffix + ' > pre';
-          $(pattern).wrap('<div class="highlight" />');
-      }
-      return true;
-  });
-  //]]>
-  </script>
+  <script src="{{pathto('_static/',1)}}js/topbar_load.js"
+          type="text/javascript"
+          language="text/javascript"  ></script>
 {% endblock %}
 
 {% block header %}
 <div id="topbar" class="navbar navbar-inverse navbar-static-top">
-  <div class="container">
+  <div class="container" id="topbarcontainer">
+  {#
     <div class="navbar-header">
       <button 
         data-target=".navbar-collapse" 
@@ -61,7 +35,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-{#
+
     <div id="sites-select">
       <ul>
         <li><a href="#">Select your country</a>
@@ -74,12 +48,18 @@
         </li>
       </ul>
     </div>
-#}
+
     <div class="search navbar-right">
-      {{searchbox}} Search 
+      <p class="hiddenStructure">{{ _('Quick search') }}</p>
+      <form class="search navbar-form" action="{{ pathto('search') }}" method="get" role="search">
+        <input type="text" class="form-control" name="q" placeholder="search" title="{{ _('Enter search terms or a module, class or function name.') }}" />
+        <button type="submit" class="btn btn-default" value="{{ _('Go') }}" >Submit</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
     </div>
 
-    <div class="collapse navbar-collapse navbar-right">
+    <nav class="collapse navbar-collapse navbar-right">
       <ul class="nav navbar-nav">
         <li>
           <a title="Plone Planet" href="http://planet.plone.org">PLANET</a>
@@ -100,8 +80,10 @@
         <li>
           <a title="Plone Org" href="http://plone.org">COMMUNITY</a>
         </li>
+        <li class="separator"></li>
       </ul>
-    </div>
+    </nav>
+    #}
   </div>
 </div>  
 
@@ -133,11 +115,34 @@
     </a>
   </div>
 </header>
-
-
-
 {% endblock %}
 
+{% macro plone_relbar() %}
+<div class="related">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="hiddenStructure">{{ _('Navigation') }}</p>
+        <ul>
+          {%- for rellink in rellinks %}
+          <li class="right" {% if loop.first %}style="margin-right: 10px"{% endif %}>
+            <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+               {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+            {%- if not loop.first %}{{ reldelim2 }}{% endif %}</li>
+          {%- endfor %}
+          {%- block rootrellink %}
+          <li><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
+          {%- endblock %}
+          {%- for parent in parents %}
+            <li><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+          {%- endfor %}
+          {%- block relbaritems %} {% endblock %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
 
 {% block relbar1 %}
   <!--[if lte IE 6]>
@@ -167,52 +172,14 @@
   href="http://www.apple.com/safari/download/">Safari</a></p>
   </div>
   <![endif]-->
-  {{ super() }}
+  {{ plone_relbar() }}
 {% endblock %}
 
 {% block relbar2 %}
 {% endblock %}
 
-{#
 {% block footer %}
-  {{ super() }}
-  {% if theme_disqus_name != 'false' %}
-  <hr />
-  <div id="disqus_thread">
-  </div>
-  <script type="text/javascript"
-          src="http://disqus.com/forums/{{ theme_disqus_name }}/embed.js">
-  </script>
-  <noscript>
-    <a href="http://disqus.com/forums/{{ theme_disqus_name }}/?url=ref">
-      View the discussion thread.
-    </a>
-  </noscript>
-  <a href="http://disqus.com"
-     class="dsq-brlink">blog comments powered by
-    <span class="logo-disqus">Disqus</span>
-  </a>
-  <script type="text/javascript">
-  //<![CDATA[
-  (function() {
-    var links = document.getElementsByTagName('a');
-    var query = '?';
-    for(var i = 0; i < links.length; i++) {
-      if(links[i].href.indexOf('#disqus_thread') >= 0) {
-        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-      }
-      // Not a Jinja end block
-    }
-    document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{{ theme_disqus_name }}/get_num_replies.js' + query + '"></' + 'script>');
-  })();
-  //]]>
-  </script>
-  {% endif %}
-{% endblock %}
-#}
-
-{% block footer %}
-<div id="footer">
+<footer>
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-3">
@@ -247,31 +214,47 @@
         <p>For guidelines on the permitted uses of the Plone trademarks, see https://plone.org/foundation/logo</p>
         <p>All other trademarks are owned by their respective owners.</p>
       </div>
-
-      <div id="sitemap" class="col-xs-12">
-        <dl class="five-col">
-          <dt><a href="/products">Downloads</a></dt>
-          <dd><a href="/download">Get Plone</a></dd>
-
-
-          <dt><a href="/documentation">Documentation</a></dt>
-          <dd><a href="/documentation/faq/">FAQs</a></dd>
-
-
-          <dt><a href="http://dev.plone.org/plone">Developers</a></dt>
-          <dd><a href="http://plone.org/roadmap">Roadmap</a></dd>
-
-
-          <dt><a href="/foundation">Plone Foundation</a></dt>
-          <dd><a href="/foundation/foundation-donations">Donate</a></dd>
-
-
-          <dt><a href="/support">Support</a></dt>
-          <dd><a href="http://plone.net/providers">Commercial services</a></dd>
-   
-        </dl>
-      </div>
     </div>
+    <nav class="row" id="sitemap" >
+      <ul class="col-xs-2">
+        <li><a href="/products">Downloads</a></li>
+      </ul>
+      <ul class="col-xs-2">
+        <li><a href="/products">Downloads</a></li>
+      </ul>
+      <ul class="col-xs-2">
+        <li><a href="/products">Downloads</a></li>
+      </ul>
+      <ul class="col-xs-2">
+        <li><a href="/products">Downloads</a></li>
+      </ul>
+      <ul class="col-xs-2">
+        <li><a href="/products">Downloads</a></li>
+      </ul>
+      <ul class="col-xs-2">
+        <li><a href="/products">Downloads</a></li>
+      </ul>
+    </nav>
   </div>
-</div>
+</footer>
+
+
+  <script src="{{pathto('_static/',1)}}js/topbar_load.js"
+          type="text/javascript"
+          language="text/javascript"  ></script>
+
 {% endblock %}
+
+{%- block content %}  
+    <div class="document">
+  {%- block document %}
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            {{ body }}
+          </div>
+        </div>
+      </div>
+  {%- endblock %}
+    </div>
+{%- endblock %}

@@ -1,4 +1,4 @@
-@import url('default.css');
+/*@import url('default.css');*/
 body {
     font: 100% Arial, FreeSans, sans-serif;
     background: White;
@@ -19,18 +19,40 @@ div.body h6 {
     font: "Helvetica Neue",Arial,FreeSans,sans-serif;
 }
 
-div#topbar {
+.hiddenStructure {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    display: block;
+    height: 0.1em;
+    margin: -0.1em 0 0 -0.1em;
+    overflow: hidden;
+    padding: 0;
+    width: 1px;
+}
+div#topbar.navbar {
     margin-bottom: 0;
+    height:40px;
+    min-height: 40px;
 }
 
-div#topbar ul.nav {
-    border-right: 1px solid #3D3D3D;
-    /*height: 25px;*/
+/*
+div#topbar nav ul.nav {
     margin-left: 5px;
     margin-right: 5px;
-
 }
 
+div#topbar nav ul.nav a {
+    font-family: 'DINRegular';
+    font-family: "Helvetica Neue",​Helvetica,​Arial,​sans-serif;
+    font-size: 11px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+div#topbar div.search .form-control {
+    height: 20px;
+}
+*/
 header {
     background-color: #3094C8;
     background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 14%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 64%, rgba(0, 0, 0, 0) 64%, rgba(0, 0, 0, 0));
@@ -45,6 +67,34 @@ header a {
     display: block;
 }
 
+
+footer {
+    background: none repeat scroll 0 0 #EAF2F6;
+    box-shadow: 0 8px 12px -12px rgba(0, 0, 0, 0.5) inset;
+    padding-top: 1em;
+}
+
+footer .colophon p {
+    margin-bottom: 2px;
+}
+
+footer .colophon p {
+    font-family: "Helvetica Neue",​Helvetica,​Arial,​sans-serif;
+    font-size: 11px;
+}
+
+footer nav#sitemap {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+footer nav#sitemap ul {
+    list-style-type: none;
+}
+
+footer nav#sitemap a {
+    font-size: 11px;
+}
 
 div.document {
     background-color: White;
@@ -80,14 +130,6 @@ div.sphinxsidebar h4 a {
 div.sphinxsidebar a,
 div.sphinxsidebar p {
     color: #205c90;
-}
-
-div.related {
-    background-color: #329fd7;
-}
-
-div.related a:hover {
-    color: Black;
 }
 
 a:link, a:visited {
