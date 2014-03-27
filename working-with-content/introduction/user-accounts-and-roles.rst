@@ -42,7 +42,7 @@ Note the presence of the *log in* link the screen image below
 -- and you are surfing the web site anonymously, as seen in the
 following screen capture of a new Plone web site:
 
-.. figure:: /_static/plonemain3.0anon.png
+.. figure:: /_static/plonemain3_0anon.png
    :align: center
    :alt: 
 
