@@ -70,11 +70,11 @@ Add content to the site
     
 To create a new object using the new content-type, select *Person* from the *Add new...* menu of your Plone site. This brings up the *edit* view.
 
-.. image:: /reference_manuals/active/helloworld/images/helloworldpersonform.png
+.. image:: /develop/addons/helloworld/images/helloworldpersonform.png
 
 Fill in the fields and click *Save*. This brings up the *view* view.
 
-.. image:: /reference_manuals/active/helloworld/images/helloworldpersonprivate.png
+.. image:: /develop/addons/helloworld/images/helloworldpersonprivate.png
 
 You should see an *info* message telling you your changes were saved, and a new tab in the navigation bar with the title of your object. 
 
@@ -84,6 +84,6 @@ Also notice the url of the page. It is based on the Title of the object, with tw
 
     http://localhost:8080/Plone/my-hello-world-person/
 
-For more information about content in Plone, see the :doc:`Content management </content/index>` section of this manual. For more information about content types, see :doc:`Content Types </content/types>`.
+For more information about content in Plone, see the :doc:`Content management </develop/plone/content/index>` section of this manual. For more information about content types, see :doc:`Content Types </develop/plone/content/types>`.
     
 

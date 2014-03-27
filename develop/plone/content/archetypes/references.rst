@@ -20,7 +20,7 @@ items" and you can use it in your own content types with ``ReferenceField``.
 ``reference_catalog`` references can be bidirectional.
 
 The ``reference_catalog`` is a catalog just like the
-:doc:`portal_catalog </searching_and_indexing/catalog>` |---| it just uses
+:doc:`portal_catalog </develop/plone/searching_and_indexing/catalog>` |---| it just uses
 different indexes and metadata.
 
 The ``reference_catalog`` is defined in `ReferenceEngine.py <https://github.com/plone/Products.Archetypes/tree/master/Products/Archetypes/ReferenceEngine.py>`_.

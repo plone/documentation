@@ -55,7 +55,7 @@ Plone supports a few dynamic views for folders out of the box:
 * Listing (``folder_listing``) 
 * Full view (``folder_full_view``) 
 
-These are defined in :doc:`portal_types information </content/types>`
+These are defined in :doc:`portal_types information </develop/plone/content/types>`
 for the *Folder* content type and mapped to the *Display* menu all
 over in ZCML using ``browser:menuItem`` as described below.
 
@@ -66,7 +66,7 @@ Newly created folders have this dynamic view applied:
 
 More info
 
-* :doc:`Overriding views </views/browserviews>` 
+* :doc:`Overriding views </develop/plone/views/browserviews>` 
 
 Creating a dynamic view
 ========================
@@ -295,7 +295,7 @@ For more info, see
 
 * http://www.netsight.co.uk/blog/2010/5/21/setting-a-default-view-of-a-folder-in-plone
 
-* :doc:`marker interfaces </components/interfaces>`
+* :doc:`marker interfaces </develop/plone/components/interfaces>`
 
 
 Migration script from default view to another

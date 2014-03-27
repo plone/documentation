@@ -16,7 +16,7 @@ and Archetypes based content.
 
 This does not deal with
 
-* :doc:`browser views </views/browserviews>`
+* :doc:`browser views </develop/plone/views/browserviews>`
 
 * :doc:`generic old style template overrides </templates_css_and_javascripts/skin_layers>`
 

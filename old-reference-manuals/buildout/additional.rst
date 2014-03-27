@@ -248,8 +248,8 @@ Example:
     # Set buildout cache directory for this shell session
     export PYTHON_EGG_CACHE=~/python-egg-cache
 
-Buildout defaults
-=================
+Bauildout defaults
+==================
 
 You can set user-wide buildout settings in the following file::
 
@@ -265,8 +265,8 @@ Example settings how to setting shared egg cache across various buildouts on you
 	download-cache = /Users/mikko/code/buildout-cache/downloads
 	extends-cache = /Users/mikko/code/buildout-cache/extends
 	 
-.. warn ::
-	
+.. warning ::
+
 	If you are sharing egg cache you might run into egg versioning problems especially
 	with older Plone installs. If you are having mysterious VersionConflict etc. problems
 	try disable buildout defaults and run buildout cleanly without shared eggs.

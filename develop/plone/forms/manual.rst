@@ -9,11 +9,11 @@
 Introduction
 -------------
 
-See :doc:`HTTP request object </serving/http_request_and_response>` for basics.
+See :doc:`HTTP request object </develop/plone/serving/http_request_and_response>` for basics.
 
 Here is an example view which checks if a form button has been pressed,
 and takes action accordingly. The view is implemented using 
-:doc:`grok framework </components/grok>`.
+:doc:`grok framework </develop/addons/components/grok>`.
 
 View code::
 

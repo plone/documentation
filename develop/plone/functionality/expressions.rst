@@ -53,7 +53,7 @@ a `path expression <http://docs.zope.org/zope2/zope2book/AppendixC.html#tales-pa
 is assumed.
 
 Path expressions use slashes for traversal 
-(:doc:`traversing </serving/traversing>`),
+(:doc:`traversing <../serving/traversing>`),
 and will implicitly call callables.
 
 Example: call the ``Title()`` method on the ``context`` object

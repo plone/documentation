@@ -269,12 +269,12 @@ portal_actions.
         try to type the action by typing the URL manually. You need
         to do the permission level security check on the view providing the action.
         
-For more information see :doc:`expressions </functionality/expressions>`.
+For more information see :doc:`expressions </develop/plone/functionality/expressions>`.
 
 Condition examples
 ===================
 
-See in :doc:`expressions </functionality/expressions>`.
+See in :doc:`expressions </develop/plone/functionality/expressions>`.
 
 Using actions in views and viewlets
 ------------------------------------

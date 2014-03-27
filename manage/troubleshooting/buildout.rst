@@ -430,7 +430,7 @@ Solution: update the ``zc.buildout`` installed in your system Python:
 An error occurred when trying to install lxml - error: Setup script exited with error: command 'gcc' failed with exit status 1
 ==============================================================================================================================
 
-Traceback when running buildout:: 
+Traceback when running buildout::
 
     ...
     src/lxml/lxml.etree.c:143652: error: ‘__pyx_v_4lxml_5etree_XSLT_DOC_DEFAULT_LOADER’ undeclared (first use in this function)

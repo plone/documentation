@@ -46,20 +46,20 @@ You have probably moved Data.fs or edited buildout.cfg.
 Add-on installer error: too many values to unpack
 --------------------------------------------------
 
-An exception prevents running a quick installer.
-
 **Traceback**::
 
-      Module ZPublisher.Publish, line 119, in publish
-      Module ZPublisher.mapply, line 88, in mapply
-      Module ZPublisher.Publish, line 42, in call_object
-      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 589, in installProducts
-      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 475, in installProduct
-       - __traceback_info__: ('gomobile.mobile',)
-      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 396, in snapshotPortal
-      Module five.localsitemanager.registry, line 194, in registeredUtilities
-      Module zope.component.registry, line 127, in registeredUtilities
+    Module ZPublisher.Publish, line 119, in publish
+    Module ZPublisher.mapply, line 88, in mapply
+    Module ZPublisher.Publish, line 42, in call_object
+    Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 589, in installProducts
+    Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 475, in installProduct
+     - __traceback_info__: ('gomobile.mobile',)
+    Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 396, in snapshotPortal
+    Module five.localsitemanager.registry, line 194, in registeredUtilities
+    Module zope.component.registry, line 127, in registeredUtilities
     ValueError: too many values to unpack
+
+**Condition**: When trying to install a plugin
 
 **Reason**: You have run Data.fs with zope.component 3.5.1, but later downgraded / moved Data.fs.
 
@@ -73,12 +73,12 @@ Archetypes: TypeError: getattr(): attribute name must be string
 
 **Traceback**::
 
-	       'user': <PropertiedUser 'admin'>}
-	  Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
-	   - __traceback_info__: otherwidget.Description(here, target_language=target_language)
-	  Module PythonExpr, line 1, in <expression>
-	  Module Products.Archetypes.generator.widget, line 100, in Description
-	TypeError: getattr(): attribute name must be string
+    'user': <PropertiedUser 'admin'>}
+    Module Products.PageTemplates.ZRPythonExpr, line 48, in __call__
+     - __traceback_info__: otherwidget.Description(here, target_language=target_language)
+    Module PythonExpr, line 1, in <expression>
+    Module Products.Archetypes.generator.widget, line 100, in Description
+    TypeError: getattr(): attribute name must be string
 
 **Reason**: You might have used something else besides string or translation string
 to define Archetypes widget name or description.
@@ -229,7 +229,7 @@ vs.::
 AttributeError: 'wrapper_descriptor' object has no attribute 'im_func'
 ------------------------------------------------------------------------
 
-Traceback when starting Plone::
+**Traceback**::
 
     File "/home/moo/code/gomobile/parts/zope2/lib/python/DocumentTemplate/DT_Util.py", line 19, in <module>
       from html_quote import html_quote, ustr # for import by other modules, dont remove!
@@ -238,6 +238,8 @@ Traceback when starting Plone::
     File "/home/moo/code/gomobile/parts/zope2/lib/python/DocumentTemplate/ustr.py", line 18, in <module>
       nasty_exception_str = Exception.__str__.im_func
     AttributeError: 'wrapper_descriptor' object has no attribute 'im_func'
+
+**Condition**: This exception happens when starting Plone
 
 **Reason**: You are trying to use Python 2.6 with Plone 3
 
@@ -274,7 +276,7 @@ does not handle this case gracefully.
 AttributeError: Schema
 -----------------------
 
-The following traceback comes when you try to view your custom content type::
+**Traceback**::
 
     Module zope.tales.tales, line 696, in evaluate
      - URL: file:/fast/xxxm2011/eggs/Products.Archetypes-1.7.10-py2.6.egg/Products/Archetypes/skins/archetypes/base_view.pt
@@ -298,6 +300,8 @@ The following traceback comes when you try to view your custom content type::
      - __traceback_info__: context.Schema().viewableFields(here)
     Module PythonExpr, line 1, in <expression>
     Module AccessControl.ImplPython, line 675, in guarded_getattr
+
+**Condition**: This error may comes when you try to view your custom content type
 
 **Reason**: It is picking up Archetypes default view template for your Dexterity content type.
 
@@ -391,23 +395,25 @@ To get the real object (as it was before set was called) you can create a helper
 AttributeError: type object 'IRAMCache' has no attribute '__iro__'
 -------------------------------------------------------------------
 
-Traceback when trying to open any page::
+**Traceback**::
 
-  Module zope.component._api, line 130, in subscribers
-  Module zope.component.registry, line 290, in subscribers
-  Module zope.interface.adapter, line 535, in subscribers
-  Module zope.app.component.site, line 375, in threadSiteSubscriber
-  Module zope.app.component.hooks, line 61, in setSite
-  Module Products.CMFCore.PortalObject, line 75, in getSiteManager
-  Module ZODB.Connection, line 811, in setstate
-  Module ZODB.Connection, line 870, in _setstate
-  Module ZODB.serialize, line 605, in setGhostState
-  Module zope.component.persistentregistry, line 42, in __setstate__
-  Module zope.interface.adapter, line 80, in _createLookup
-  Module zope.interface.adapter, line 389, in __init__
-  Module zope.interface.adapter, line 426, in init_extendors
-  Module zope.interface.adapter, line 430, in add_extendor
-  AttributeError: type object 'IRAMCache' has no attribute '__iro__'
+    Module zope.component._api, line 130, in subscribers
+    Module zope.component.registry, line 290, in subscribers
+    Module zope.interface.adapter, line 535, in subscribers
+    Module zope.app.component.site, line 375, in threadSiteSubscriber
+    Module zope.app.component.hooks, line 61, in setSite
+    Module Products.CMFCore.PortalObject, line 75, in getSiteManager
+    Module ZODB.Connection, line 811, in setstate
+    Module ZODB.Connection, line 870, in _setstate
+    Module ZODB.serialize, line 605, in setGhostState
+    Module zope.component.persistentregistry, line 42, in __setstate__
+    Module zope.interface.adapter, line 80, in _createLookup
+    Module zope.interface.adapter, line 389, in __init__
+    Module zope.interface.adapter, line 426, in init_extendors
+    Module zope.interface.adapter, line 430, in add_extendor
+    AttributeError: type object 'IRAMCache' has no attribute '__iro__'
+
+**Condition**: This error can happen when trying to open any page
 
 **Reason**: You have probably imported a Data.fs using newer Plone/Zope version to old Plone, or
 package pindowns are incorrect. If you are copying a site try re-checking that
@@ -453,11 +459,13 @@ Try portal_catalog rebuild as a fix.
 ComponentLookupError: cmf.ManagePortal
 ----------------------------------------
 
-When starting Plone you'll get::
+**Traceback**::
 
 	zope.configuration.config.ConfigurationExecutionError: <class 'zope.component.interfaces.ComponentLookupError'>: (<InterfaceClass zope.security.interfaces.IPermission>, u'cmf.ManagePortal')
 	  in:
 	  File "/fast/x/src/collective.portletcollection/collective/portletcollection/portlets/configure.zcml", line 11.2-20.8
+
+**Condition**: This error may happen when starting Plone
 
 This is a sign of changed loading order, starting from Plone 4.1.
 You need to explicitly include *CMFCore/permissions.zcml* in your *configuration.zcml*.
@@ -474,35 +482,35 @@ Content status history won't render - traceback is content path reversed
 
 **Traceback**::
 
-	  Module zope.tales.tales, line 696, in evaluate
-	   - URL: file:/home/antti/workspace/plone/hotellilevitunturi/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/skins/plone_forms/content_status_history.cpt
-	   - Line 201, Column 14
-	   - Expression: <PythonExpr wtool.getTransitionsFor(target, here)>
-	   - Names:
-	      {'container': <PloneSite at /hotellilevitunturi>,
-	       'context': <MainFolder at /hotellilevitunturi/fi/ravintolamaailma>,
-	       'default': <object object at 0xb75d2540>,
-	       'here': <MainFolder at /hotellilevitunturi/fi/ravintolamaailma>,
-	       'loop': {},
-	       'nothing': None,
-	       'options': {'args': (),
-	                   'state': <Products.CMFFormController.ControllerState.ControllerState object at 0x1055614c>},
-	       'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x10556f6c>,
-	       'request': <HTTPRequest, URL=http://localhost:9888/hotellilevitunturi/fi/ravintolamaailma/content_status_history>,
-	       'root': <Application at >,
-	       'template': <FSControllerPageTemplate at /hotellilevitunturi/content_status_history used for /hotellilevitunturi/fi/ravintolamaailma>,
-	       'traverse_subpath': [],
-	       'user': <PropertiedUser 'admin'>}
-	  Module Products.PageTemplates.ZRPythonExpr, line 49, in __call__
-	   - __traceback_info__: wtool.getTransitionsFor(target, here)
-	  Module PythonExpr, line 1, in <expression>
-	  Module Products.CMFPlone.WorkflowTool, line 88, in getTransitionsFor
-	  Module Products.CMFPlone.WorkflowTool, line 37, in flattenTransitions
-	  Module Products.CMFPlone.WorkflowTool, line 69, in flattenTransitionsForPaths
-	  Module OFS.Traversable, line 301, in restrictedTraverse
-	  Module OFS.Traversable, line 284, in unrestrictedTraverse
-	   - __traceback_info__: ([u's', u'a', u'n', u'u', u'o', u'l', u'/', u'a', u'm', u'l', u'i', u'a', u'a', u'm', u'a', u'l', u'o', u't', u'n', u'i', u'v', u'a', u'r', u'/', u'i', u'f', u'/', u'i', u'r', u'u', u't', u'n', u'u', u't', u'i', u'v', u'e', u'l', u'i', u'l', u'l', u'e', u't', u'o', u'h'], u'/')
-	KeyError: u'/'
+    Module zope.tales.tales, line 696, in evaluate
+     - URL: file:/home/antti/workspace/plone/hotellilevitunturi/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/skins/plone_forms/content_status_history.cpt
+     - Line 201, Column 14
+     - Expression: <PythonExpr wtool.getTransitionsFor(target, here)>
+     - Names:
+        {'container': <PloneSite at /hotellilevitunturi>,
+         'context': <MainFolder at /hotellilevitunturi/fi/ravintolamaailma>,
+         'default': <object object at 0xb75d2540>,
+         'here': <MainFolder at /hotellilevitunturi/fi/ravintolamaailma>,
+         'loop': {},
+         'nothing': None,
+         'options': {'args': (),
+                     'state': <Products.CMFFormController.ControllerState.ControllerState object at 0x1055614c>},
+         'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x10556f6c>,
+         'request': <HTTPRequest, URL=http://localhost:9888/hotellilevitunturi/fi/ravintolamaailma/content_status_history>,
+         'root': <Application at >,
+         'template': <FSControllerPageTemplate at /hotellilevitunturi/content_status_history used for /hotellilevitunturi/fi/ravintolamaailma>,
+         'traverse_subpath': [],
+         'user': <PropertiedUser 'admin'>}
+    Module Products.PageTemplates.ZRPythonExpr, line 49, in __call__
+     - __traceback_info__: wtool.getTransitionsFor(target, here)
+    Module PythonExpr, line 1, in <expression>
+    Module Products.CMFPlone.WorkflowTool, line 88, in getTransitionsFor
+    Module Products.CMFPlone.WorkflowTool, line 37, in flattenTransitions
+    Module Products.CMFPlone.WorkflowTool, line 69, in flattenTransitionsForPaths
+    Module OFS.Traversable, line 301, in restrictedTraverse
+    Module OFS.Traversable, line 284, in unrestrictedTraverse
+     - __traceback_info__: ([u's', u'a', u'n', u'u', u'o', u'l', u'/', u'a', u'm', u'l', u'i', u'a', u'a', u'm', u'a', u'l', u'o', u't', u'n', u'i', u'v', u'a', u'r', u'/', u'i', u'f', u'/', u'i', u'r', u'u', u't', u'n', u'u', u't', u'i', u'v', u'e', u'l', u'i', u'l', u'l', u'e', u't', u'o', u'h'], u'/')
+    KeyError: u'/'
 
 .. TODO:: No solution
 
@@ -511,28 +519,28 @@ ContentProviderLookupError: plone.htmlhead
 
 **Traceback**::
 
-          Module zope.tales.tales, line 696, in evaluate
-           - URL: file:/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/skins/plone_templates/main_template.pt
-           - Line 39, Column 4
-           - Expression: <StringExpr u'plone.htmlhead'>
-           - Names:
-              {'container': <PloneSite at /isleofback>,
-               'context': <PloneSite at /isleofback>,
-               'default': <object object at 0xb75f2528>,
-               'here': <PloneSite at /isleofback>,
-               'loop': {},
-               'nothing': None,
-               'options': {'args': (<isleofback.app.browser.company.CompanyCreationForm object at 0xea5e80c>,)},
-               'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0xea62dcc>,
-               'request': <HTTPRequest, URL=http://localhost:9666/isleofback/@@create_company>,
-               'root': <Application at >,
-               'template': <ImplicitAcquirerWrapper object at 0xea62bcc>,
-               'traverse_subpath': [],
-               'user': <PropertiedUser 'admin'>,
-               'view': <UnauthorizedBinding: context>,
-               'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xea62d2c>}
-          Module Products.Five.browser.providerexpression, line 25, in __call__
-        ContentProviderLookupError: plone.htmlhead
+    Module zope.tales.tales, line 696, in evaluate
+     - URL: file:/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/skins/plone_templates/main_template.pt
+     - Line 39, Column 4
+     - Expression: <StringExpr u'plone.htmlhead'>
+     - Names:
+        {'container': <PloneSite at /isleofback>,
+         'context': <PloneSite at /isleofback>,
+         'default': <object object at 0xb75f2528>,
+         'here': <PloneSite at /isleofback>,
+         'loop': {},
+         'nothing': None,
+         'options': {'args': (<isleofback.app.browser.company.CompanyCreationForm object at 0xea5e80c>,)},
+         'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0xea62dcc>,
+         'request': <HTTPRequest, URL=http://localhost:9666/isleofback/@@create_company>,
+         'root': <Application at >,
+         'template': <ImplicitAcquirerWrapper object at 0xea62bcc>,
+         'traverse_subpath': [],
+         'user': <PropertiedUser 'admin'>,
+         'view': <UnauthorizedBinding: context>,
+         'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xea62d2c>}
+    Module Products.Five.browser.providerexpression, line 25, in __call__
+    ContentProviderLookupError: plone.htmlhead
 
 This is not a bug in Zope. It is caused by trying to render a Plone page frame in an context
 which has not acquisition chain properly set up. Plone ``main_template.pt``
@@ -556,7 +564,7 @@ Some possible causes:
 ERROR ZODB.Connection Couldn't load state for 0x00
 ----------------------------------------------------
 
-The following traceback pops up when you try to start Zope::
+**Traceback**::
 
 	2010-07-14 05:02:33 ERROR ZODB.Connection Couldn't load state for 0x00
 	Traceback (most recent call last):
@@ -579,6 +587,8 @@ The following traceback pops up when you try to start Zope::
 	  File "/Users/moo/yourinstance/eggs/ZODB3-3.8.4-py2.4-macosx-10.6-i386.egg/ZODB/FileStorage/FileStorage.py", line 462, in _lookup_pos
 	    raise POSKeyError(oid)
 	POSKeyError: 0x01
+
+**Condition**: This error can happen when you try to start Zope
 
 **Reason**: Data.fs might have been damaged. You might be using blobs with Plone 3 and they don't work perfectly.
 . . . or a bunch other issues which generally mean that your day is screwed.
@@ -638,7 +648,7 @@ Error _restore_index() when starting instance / ZEO server
 Error: Incorrect padding
 --------------------------
 
-Traceback comes when you try to access any Plone site URL::
+**Traceback**::
 
 	2012-02-06 16:52:25 ERROR Zope.SiteErrorLog 1328539945.430.234286547911 http://localhost:9888/index_html
 	Traceback (innermost last):
@@ -649,6 +659,8 @@ Traceback comes when you try to access any Plone site URL::
 	  Module Products.PluggableAuthService.plugins.CookieAuthHelper, line 121, in extractCredentials
 	  Module base64, line 321, in decodestring
 	Error: Incorrect padding
+
+**Condition**: This error can happen when you try to access any Plone site URL
 
 **Reason**: It means that your browser most likely tries to serve bad
 cookies / auth info to Zope.
@@ -697,7 +709,7 @@ ExpatError: portlets.xml: unbound prefix
       Module Products.GenericSetup.utils, line 543, in _importBody
     ExpatError: portlets.xml: unbound prefix: line 15, column 1
 
-This error can happen while installing a new portlet portlets.xml
+**Condition**: This error can happen while installing a new portlet portlets.xml
 
 **Reason**: You have ``i18n:attributes="title; description"`` in your
 portlets.xml.
@@ -752,6 +764,233 @@ Also you might want try
 .. code-block:: console
 
         easy_install pyopenssl
+
+ImportError: Couldn't import ZPublisherEventsBackport
+-----------------------------------------------------
+
+The following traceback on instance start-up::
+
+    File "/Users/moo/twinapex/parts/zope2/lib/python/zope/configuration/config.py", line 1383, in toargs
+      args[str(name)] = field.fromUnicode(s)
+    File "/Users/moo/twinapex/parts/zope2/lib/python/zope/configuration/fields.py", line 141, in fromUnicode
+      raise schema.ValidationError(v)
+    zope.configuration.xmlconfig.ZopeXMLConfigurationError: File "/Users/moo/twinapex/parts/instance/etc/site.zcml", line 14.2-14.55
+        ZopeXMLConfigurationError: File "/Users/moo/twinapex/parts/instance/etc/package-includes/009-gomobile.mobile-configure.zcml", line 1.0-1.59
+        ZopeXMLConfigurationError: File "/Users/moo/twinapex/src/gomobile.mobile/gomobile/mobile/configure.zcml", line 15.4-15.51
+        ZopeXMLConfigurationError: File "/Users/moo/twinapex/eggs/plone.postpublicationhook-1.1-py2.4.egg/plone/postpublicationhook/configure.zcml", line 5.4-8.10
+        ConfigurationError: ('Invalid value for', 'package', "ImportError: Couldn't import ZPublisherEventsBackport, No module named ZPublisherEventsBackport")
+
+**Reason**: plone.postpublicationhook 1.1 depends on new package, ZPublisherEventsBackport, for Plone 3.3.
+
+**Solution**: You eed to include them both in your buildout.
+You need to include both eggs::
+
+    eggs =
+            ZPublisherEventsBackport
+            plone.postpublicationhook
+
+ImportError: Inappropriate file type for dynamic loading
+---------------------------------------------------------
+
+**Traceback**::
+
+    File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/ZConfig/datatypes.py", line 398, in get
+      t = self.search(name)
+    File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/ZConfig/datatypes.py", line 423, in search
+      package = __import__(n, g, g, component)
+    File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/Zope2/Startup/datatypes.py", line 20, in ?
+      from ZODB.config import ZODBDatabase
+    File "/Users/moo/twinapex/twinapex/eggs/ZODB3-3.8.2-py2.4-macosx-10.6-i386.egg/ZODB/__init__.py", line 20, in ?
+      from persistent import TimeStamp
+    File "/Users/moo/twinapex/twinapex/eggs/ZODB3-3.8.2-py2.4-macosx-10.6-i386.egg/persistent/__init__.py", line 19, in ?
+      from cPersistence import Persistent, GHOST, UPTODATE, CHANGED, STICKY
+    ImportError: Inappropriate file type for dynamic loading
+
+**Condition**: When starting Zope
+
+**Reason**: You probably have files lying over from wrong CPU architecture
+
+* Hand copied eggs between servers
+
+* Migrated OS to new version
+
+* You have several Python interpreters installed and you try to run Zope using
+  the wrong interpreter (the one which the code is not compiled for)
+
+**Solution**: Delete /parts and /eggs buildout folders,
+run bootstrap, run buildout.
+
+ImportError: No module named PIL
+---------------------------------
+
+**Traceback**::
+
+    ...
+    Traceback (most recent call last):
+      File "/home/moo/isleofback/bin/idelauncher.py", line 140, in ?
+        execfile(ZOPE_RUN)
+      File "/home/moo/isleofback/bin/../parts/zope2/lib/python/Zope2/Startup/run.py", line 56, in ?
+        run()
+      File "/home/moo/isleofback/bin/../parts/zope2/lib/python/Zope2/Startup/run.py", line 21, in run
+        starter.prepare()
+      File "/home/moo/isleofback/parts/zope2/lib/python/Zope2/Startup/__init__.py", line 102, in prepare
+        self.startZope()
+      File "/home/moo/isleofback/parts/zope2/lib/python/Zope2/Startup/__init__.py", line 278, in startZope
+        Zope2.startup()
+      File "/home/moo/isleofback/parts/zope2/lib/python/Zope2/__init__.py", line 47, in startup
+        _startup()
+      File "/home/moo/isleofback/parts/zope2/lib/python/Zope2/App/startup.py", line 45, in startup
+        OFS.Application.import_products()
+      File "/home/moo/isleofback/parts/zope2/lib/python/OFS/Application.py", line 686, in import_products
+        import_product(product_dir, product_name, raise_exc=debug_mode)
+      File "/home/moo/isleofback/parts/zope2/lib/python/OFS/Application.py", line 709, in import_product
+        product=__import__(pname, global_dict, global_dict, silly)
+      File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/__init__.py", line 64, in ?
+        import Products.ATContentTypes.content
+      File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/__init__.py", line 26, in ?
+        import Products.ATContentTypes.content.link
+      File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/link.py", line 39, in ?
+        from Products.ATContentTypes.content.base import registerATCT
+      File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/base.py", line 63, in ?
+        from Products.CMFPlone.PloneFolder import ReplaceableWrapper
+      File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/__init__.py", line 215, in ?
+        from browser import ploneview
+      File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/browser/ploneview.py", line 12, in ?
+        from Products.CMFPlone import utils
+      File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/utils.py", line 6, in ?
+        from PIL import Image
+    ImportError: No module named PIL
+
+**Reason**: Python Imaging Library is not properly installed. The default PIL
+package does not work nicely as egg.
+
+**Solution**: Remove all existing PIL eggs from buildout/eggs folder.
+
+Install PIL for your development Python environment::
+
+        easy_install http://dist.repoze.org/PIL-1.1.6.tar.gz
+
+ImportError: No module named pkgutil
+------------------------------------
+
+**Traceback**::
+
+    Traceback (most recent call last):
+      File "/Users/moo/plonecommunity/bin/idelauncher.py", line 101, in <module>
+        exec(data, globals())
+      File "<string>", line 543, in <module>
+      File "/Users/moo/plonecommunity/eggs/plone.app.z3cform-0.5.0-py2.6.egg/plone/__init__.py", line 5, in <module>
+        from pkgutil import extend_path
+    ImportError: No module named pkgutil
+
+If you are using Eclipse, ``idelauncher.py`` has been updated for Plone 4.
+
+Invalid or Duplicate property id
+--------------------------------
+
+**Traceback**::
+
+    *   Dry run selected.
+    * Starting the migration from version: 3.1.4
+    * Attempting to upgrade from: 3.1.4
+    * Upgrade aborted
+    * Error type: zExceptions.BadRequest
+    * Error value: Invalid or duplicate property id
+    * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/MigrationTool.py",
+    line 210, in upgrade newv, msgs = self._upgrade(newv)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/MigrationTool.py",
+    line 321, in _upgrade res = function(self.aq_parent)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/migrations/v3_1/final_three1x.py",
+    line 15, in three14_three15 loadMigrationProfile(portal,
+    'profile-Products.CMFPlone.migrations:3.1.3-3.1.4')
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/migrations/migration_util.py",
+    line 107, in loadMigrationProfile tool.runAllImportStepsFromProfile(profile,
+    purge_old=False)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/tool.py",
+    line 390, in runAllImportStepsFromProfile
+    ignore_dependencies=ignore_dependencies)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/tool.py",
+    line 1179, in _runImportStepsFromContext message =
+    self._doRunImportStep(step, context)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/tool.py",
+    line 1090, in _doRunImportStep return handler(context)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/exportimport/propertiestool.py",
+    line 37, in importPloneProperties importer.body = body
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/utils.py",
+    line 544, in _importBody self._importNode(dom.documentElement)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/exportimport/propertiestool.py",
+    line 103, in _importNode self._initObjects(node)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/exportimport/propertiestool.py",
+    line 154, in _initObjects importer.node = child
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/exportimport/propertiestool.py",
+    line 77, in _importNode self._initProperties(node)
+        * File
+    "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/utils.py",
+    line 724, in _initProperties obj._setProperty(prop_id, val, prop_type)
+        * File
+    "/usr/local/Plone3.2.3/Zope-2.10.7-final-py2.4/lib/python/OFS/PropertyManager.py",
+    line 186, in _setProperty raise BadRequest, 'Invalid or duplicate property
+    id'
+        * End of upgrade path, migration has finished
+        * The upgrade path did NOT reach current version
+        * Migration has failed
+        * Dry run selected, transaction aborted
+
+**Condition**: This exception can happen during Plone migration to the newer version
+
+It is caused by a property (site setting) which already exists and migration tries to create it.
+The usual reason is that one has edited site settings in new Plone version before running the migration.
+
+Try remove violating property ids from the site_properties manually in Zope.
+
+Potential candidates to be removed:
+
+* enable_inline_editing
+
+* lock_on_ttw_edit (boolean)
+
+Potential candidates which need to be added manually:
+
+* redirect_links (boolean)
+
+.. seealso::
+    http://www.mail-archive.com/setup@lists.plone.org/msg03988.html
+
+InvalidInterface: Concrete attribute
+---------------------------------------
+
+**Traceback**::
+	
+	/zope/interface/interface.py", line 495, in __init__
+	    raise InvalidInterface("Concrete attribute, " + name)
+	zope.configuration.xmlconfig.ZopeXMLConfigurationError: File "/Users/mikko/code/buildout.deco/parts/instance/etc/site.zcml", line 15.2-15.55
+	    ZopeXMLConfigurationError: File "/Users/mikko/code/buildout.deco/parts/instance/etc/package-includes/002-plone.app.widgets-configure.zcml", line 1.0-1.61
+	    ZopeXMLConfigurationError: File "/Users/mikko/code/buildout.deco/src/plone.app.widgets/plone/app/widgets/configure.zcml", line 56.2-62.6
+	    InvalidInterface: Concrete attribute, multiChoiceCheckbox
+
+**Condition**: Your ``zope.schema`` based schema breaks on Plone startup.
+
+**Reason**: You have extra comma in your schema. Like this::
+
+	class IChoiceExamples(model.Schema):
+	
+	    multiChoiceCheckbox = zope.schema.List(
+	        title=u"Checkbox multiple choices",
+	        description=u"Select multiple checkboxes using checkboxes and store values in zope.schema.List (maps to python List)." + DEFAULT_MUTABLE_WARNING,
+	        required=False,
+	        value_type=zope.schema.Choice(vocabulary="plone.app.vocabularies.PortalTypes")),   # <---- This is the guilty comma
 
 Iteration over non-sequence in _normalizeargs
 ----------------------------------------------
@@ -1174,89 +1413,6 @@ To fix this simply remobe ATFieldProperty() declaration for the problematic fiel
 access the field value anymore by calling *object.memberimage* but you need to call *object.getMemberimage()* instead.
 
 
-Invalid or Duplicate property id
---------------------------------
-
-The following exception may appear during Plone migration to the newer version::
-
-            *   Dry run selected.
-            * Starting the migration from version: 3.1.4
-            * Attempting to upgrade from: 3.1.4
-            * Upgrade aborted
-            * Error type: zExceptions.BadRequest
-            * Error value: Invalid or duplicate property id
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/MigrationTool.py",
-        line 210, in upgrade newv, msgs = self._upgrade(newv)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/MigrationTool.py",
-        line 321, in _upgrade res = function(self.aq_parent)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/migrations/v3_1/final_three1x.py",
-        line 15, in three14_three15 loadMigrationProfile(portal,
-        'profile-Products.CMFPlone.migrations:3.1.3-3.1.4')
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/migrations/migration_util.py",
-        line 107, in loadMigrationProfile tool.runAllImportStepsFromProfile(profile,
-        purge_old=False)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/tool.py",
-        line 390, in runAllImportStepsFromProfile
-        ignore_dependencies=ignore_dependencies)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/tool.py",
-        line 1179, in _runImportStepsFromContext message =
-        self._doRunImportStep(step, context)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/tool.py",
-        line 1090, in _doRunImportStep return handler(context)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/exportimport/propertiestool.py",
-        line 37, in importPloneProperties importer.body = body
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/utils.py",
-        line 544, in _importBody self._importNode(dom.documentElement)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/exportimport/propertiestool.py",
-        line 103, in _importNode self._initObjects(node)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/exportimport/propertiestool.py",
-        line 154, in _initObjects importer.node = child
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Plone-3.3-py2.4.egg/Products/CMFPlone/exportimport/propertiestool.py",
-        line 77, in _importNode self._initProperties(node)
-            * File
-        "/usr/local/Plone3.2.3/buildout-cache/eggs/Products.GenericSetup-1.4.5-py2.4.egg/Products/GenericSetup/utils.py",
-        line 724, in _initProperties obj._setProperty(prop_id, val, prop_type)
-            * File
-        "/usr/local/Plone3.2.3/Zope-2.10.7-final-py2.4/lib/python/OFS/PropertyManager.py",
-        line 186, in _setProperty raise BadRequest, 'Invalid or duplicate property
-        id'
-            * End of upgrade path, migration has finished
-            * The upgrade path did NOT reach current version
-            * Migration has failed
-            * Dry run selected, transaction aborted
-
-It is caused by a property (site setting) which already exists and migration tries to create it.
-The usual reason is that one has edited site settings in new Plone version before running the migration.
-
-Try remove violating property ids from the site_properties manually in Zope.
-
-Potential candidates to be removed:
-
-* enable_inline_editing
-
-* lock_on_ttw_edit (boolean)
-
-Potential candidates which need to be added manually:
-
-* redirect_links (boolean)
-
-More info:
-
-* http://www.mail-archive.com/setup@lists.plone.org/msg03988.html
-
-
 TraversalError: No traversable adapter found
 ----------------------------------------------
 
@@ -1284,36 +1440,6 @@ This traceback is followed by long dump of template code internals.
 Usual cause: Some add-on product fails to initialize.
 
 Start Zope in foreground mode (bin/instance fg) to see which product fails.
-
-ImportError: Inappropriate file type for dynamic loading
----------------------------------------------------------
-
-Exception when starting Zope::
-
-          File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/ZConfig/datatypes.py", line 398, in get
-            t = self.search(name)
-          File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/ZConfig/datatypes.py", line 423, in search
-            package = __import__(n, g, g, component)
-          File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/Zope2/Startup/datatypes.py", line 20, in ?
-            from ZODB.config import ZODBDatabase
-          File "/Users/moo/twinapex/twinapex/eggs/ZODB3-3.8.2-py2.4-macosx-10.6-i386.egg/ZODB/__init__.py", line 20, in ?
-            from persistent import TimeStamp
-          File "/Users/moo/twinapex/twinapex/eggs/ZODB3-3.8.2-py2.4-macosx-10.6-i386.egg/persistent/__init__.py", line 19, in ?
-            from cPersistence import Persistent, GHOST, UPTODATE, CHANGED, STICKY
-        ImportError: Inappropriate file type for dynamic loading
-
-You probably have files lying over from wrong CPU architecture
-
-* Hand copied eggs between servers
-
-* Migrated OS to new version
-
-* You have several Python interpreters installed and you try to run Zope using
-  the wrong interpreter (the one which the code is not compiled for)
-
-How to solve problem
-
-* Delete /parts and /eggs buildout folders, run bootstrap, run buildout.
 
 Unauthorized: The object is marked as private
 ----------------------------------------------
@@ -1355,73 +1481,6 @@ You need to use __of__() method to set-up the acquisition chain for the view::
         return view
 
 
-ImportError: No module named PIL
----------------------------------
-
-Example::
-
-
-        Traceback (most recent call last):
-          File "/home/moo/isleofback/parts/zope2/lib/python/OFS/Application.py", line 709, in import_product
-            product=__import__(pname, global_dict, global_dict, silly)
-          File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/__init__.py", line 64, in ?
-            import Products.ATContentTypes.content
-          File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/__init__.py", line 26, in ?
-            import Products.ATContentTypes.content.link
-          File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/link.py", line 39, in ?
-            from Products.ATContentTypes.content.base import registerATCT
-          File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/base.py", line 63, in ?
-            from Products.CMFPlone.PloneFolder import ReplaceableWrapper
-          File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/__init__.py", line 215, in ?
-            from browser import ploneview
-          File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/browser/ploneview.py", line 12, in ?
-            from Products.CMFPlone import utils
-          File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/utils.py", line 6, in ?
-            from PIL import Image
-        ImportError: No module named PIL
-        Traceback (most recent call last):
-          File "/home/moo/isleofback/bin/idelauncher.py", line 140, in ?
-            execfile(ZOPE_RUN)
-          File "/home/moo/isleofback/bin/../parts/zope2/lib/python/Zope2/Startup/run.py", line 56, in ?
-            run()
-          File "/home/moo/isleofback/bin/../parts/zope2/lib/python/Zope2/Startup/run.py", line 21, in run
-            starter.prepare()
-          File "/home/moo/isleofback/parts/zope2/lib/python/Zope2/Startup/__init__.py", line 102, in prepare
-            self.startZope()
-          File "/home/moo/isleofback/parts/zope2/lib/python/Zope2/Startup/__init__.py", line 278, in startZope
-            Zope2.startup()
-          File "/home/moo/isleofback/parts/zope2/lib/python/Zope2/__init__.py", line 47, in startup
-            _startup()
-          File "/home/moo/isleofback/parts/zope2/lib/python/Zope2/App/startup.py", line 45, in startup
-            OFS.Application.import_products()
-          File "/home/moo/isleofback/parts/zope2/lib/python/OFS/Application.py", line 686, in import_products
-            import_product(product_dir, product_name, raise_exc=debug_mode)
-          File "/home/moo/isleofback/parts/zope2/lib/python/OFS/Application.py", line 709, in import_product
-            product=__import__(pname, global_dict, global_dict, silly)
-          File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/__init__.py", line 64, in ?
-            import Products.ATContentTypes.content
-          File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/__init__.py", line 26, in ?
-            import Products.ATContentTypes.content.link
-          File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/link.py", line 39, in ?
-            from Products.ATContentTypes.content.base import registerATCT
-          File "/home/moo/isleofback/eggs/Products.ATContentTypes-1.3.4-py2.4.egg/Products/ATContentTypes/content/base.py", line 63, in ?
-            from Products.CMFPlone.PloneFolder import ReplaceableWrapper
-          File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/__init__.py", line 215, in ?
-            from browser import ploneview
-          File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/browser/ploneview.py", line 12, in ?
-            from Products.CMFPlone import utils
-          File "/home/moo/isleofback/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/utils.py", line 6, in ?
-            from PIL import Image
-        ImportError: No module named PIL
-
-Python Imaging Library is not properly installed. The default PIL package does not work nicely as egg.
-
-Remove all existing PIL eggs from buildout/eggs folder.
-
-Install PIL for your development Python environment::
-
-        easy_install http://dist.repoze.org/PIL-1.1.6.tar.gz
-
 NotFound while accessing a BrowserView based view
 --------------------------------------------------
 
@@ -1453,28 +1512,6 @@ How to fix
 * If your view does not have __init__() method, then copy the source code __init__() method
   to your view class from the first parent class which has a view
 
-
-ImportError: Couldn't import ZPublisherEventsBackport
------------------------------------------------------
-
-The following traceback on instance start-up::
-
-          File "/Users/moo/twinapex/parts/zope2/lib/python/zope/configuration/config.py", line 1383, in toargs
-            args[str(name)] = field.fromUnicode(s)
-          File "/Users/moo/twinapex/parts/zope2/lib/python/zope/configuration/fields.py", line 141, in fromUnicode
-            raise schema.ValidationError(v)
-        zope.configuration.xmlconfig.ZopeXMLConfigurationError: File "/Users/moo/twinapex/parts/instance/etc/site.zcml", line 14.2-14.55
-            ZopeXMLConfigurationError: File "/Users/moo/twinapex/parts/instance/etc/package-includes/009-gomobile.mobile-configure.zcml", line 1.0-1.59
-            ZopeXMLConfigurationError: File "/Users/moo/twinapex/src/gomobile.mobile/gomobile/mobile/configure.zcml", line 15.4-15.51
-            ZopeXMLConfigurationError: File "/Users/moo/twinapex/eggs/plone.postpublicationhook-1.1-py2.4.egg/plone/postpublicationhook/configure.zcml", line 5.4-8.10
-            ConfigurationError: ('Invalid value for', 'package', "ImportError: Couldn't import ZPublisherEventsBackport, No module named ZPublisherEventsBackport")
-
-plone.postpublicationhook 1.1 depends on new package, ZPublisherEventsBackport, for Plone 3.3. You eed to include
-them both in your buildout. You need to include both eggs::
-
-        eggs =
-                ZPublisherEventsBackport
-                plone.postpublicationhook
 
 POSKeyError
 -----------
@@ -1707,23 +1744,6 @@ More info
 * http://opensourcehacker.com/2011/06/01/plone-4-upgrade-results-and-steps/
 
 * http://pypi.python.org/pypi/wildcard.fixpersistentutilities
-
-ImportError: No module named pkgutil
-------------------------------------
-
-Example::
-
-        Traceback (most recent call last):
-          File "/Users/moo/plonecommunity/bin/idelauncher.py", line 101, in <module>
-            exec(data, globals())
-          File "<string>", line 543, in <module>
-          File "/Users/moo/plonecommunity/eggs/plone.app.z3cform-0.5.0-py2.6.egg/plone/__init__.py", line 5, in <module>
-            from pkgutil import extend_path
-        ImportError: No module named pkgutil
-
-If you are using Eclipse, ``idelauncher.py`` has been updated for Plone 4.
-
-
 
 "PicklingError: Can't pickle <class 'collective.singing.async.IQueue'>: import of module collective.singing.async"
 --------------------------------------------------------------------------------------------------------------------
@@ -2165,32 +2185,3 @@ Example traceback::
 
 Plone 3 > Plone 4 migration has not been run. Run the migration
 in *portal_migrations* under ZMI.
-
-
-
-InvalidInterface: Concrete attribute
----------------------------------------
-
-Your ``zope.schema`` based schema breaks on Plone startup.
-
-Example::
-	
-	/zope/interface/interface.py", line 495, in __init__
-	    raise InvalidInterface("Concrete attribute, " + name)
-	zope.configuration.xmlconfig.ZopeXMLConfigurationError: File "/Users/mikko/code/buildout.deco/parts/instance/etc/site.zcml", line 15.2-15.55
-	    ZopeXMLConfigurationError: File "/Users/mikko/code/buildout.deco/parts/instance/etc/package-includes/002-plone.app.widgets-configure.zcml", line 1.0-1.61
-	    ZopeXMLConfigurationError: File "/Users/mikko/code/buildout.deco/src/plone.app.widgets/plone/app/widgets/configure.zcml", line 56.2-62.6
-	    InvalidInterface: Concrete attribute, multiChoiceCheckbox
-
-You have extra comma in your schema. Like this::
-
-
-	class IChoiceExamples(model.Schema):
-	
-	    multiChoiceCheckbox = zope.schema.List(
-	        title=u"Checkbox multiple choices",
-	        description=u"Select multiple checkboxes using checkboxes and store values in zope.schema.List (maps to python List)." + DEFAULT_MUTABLE_WARNING,
-	        required=False,
-	        value_type=zope.schema.Choice(vocabulary="plone.app.vocabularies.PortalTypes")),   # <---- OH CRAP
-
-

@@ -10,7 +10,7 @@ Add a custom view
 
 In this tutorial we add a browser view. Plone uses views to display dynamic content. 
 
-There are now two ways to add views to Plone; Zope 3 and Grok. This tutorial covers the Zope 3 method. For more information about views, see the :doc:`Views and viewlets </views/index>` section of the developer manual. 
+There are now two ways to add views to Plone; Zope 3 and Grok. This tutorial covers the Zope 3 method. For more information about views, see the :doc:`Views and viewlets </develop/plone/views/index>` section of the developer manual. 
 
 There are 3 parts to our view; a Python class, a page template, and a ZCML registration. We will add the two files and edit configure.zcml in the **browser** directory.
 
@@ -116,7 +116,7 @@ The third part of our view is the page template.
     
     </html>
 
-Plone uses Zope Page Templates (ZPT). For great documentation on ZPT and the TAL, TALES, and METAL languages, see the :doc:`TAL page templates </templates_css_and_javascripts/template_basics>` section of the developer manual, and the 
+Plone uses Zope Page Templates (ZPT). For great documentation on ZPT and the TAL, TALES, and METAL languages, see the :doc:`TAL page templates </adapt-and-extend/theming/templates_css/template_basics>` section of the developer manual, and the 
 `TAL/TALES & METAL Reference Guide <http://www.owlfish.com/software/simpleTAL/tal-guide.html/>`_
 
 In the above code, we define some xml namespaces; **metal** and **tal** that we use in our template.::
@@ -159,7 +159,7 @@ Then, add @@hello_world_view to the end of an object url in your plone site.::
     
 Since our object has a *hello_name* attribute, the value is displayed along with the word *Hello*.
 
-.. image:: /reference_manuals/active/helloworld/images/hellojimbobview.png
+.. image:: /develop/addons/helloworld/images/hellojimbobview.png
 
 We can also call our view on the root of the site.::
 
@@ -167,7 +167,7 @@ We can also call our view on the root of the site.::
 
 The root of the site does not have a *hello_name* attribute, so *Hello World* is displayed.
 
-.. image:: /reference_manuals/active/helloworld/images/helloworldview.png
+.. image:: /develop/addons/helloworld/images/helloworldview.png
 
-For a more in depth explanation of views, see the :doc:`Views and viewlets </views/index>` section of this manual.
+For a more in depth explanation of views, see the :doc:`Views and viewlets </develop/plone/views/index>` section of this manual.
 

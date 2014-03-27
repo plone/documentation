@@ -1,8 +1,8 @@
 Preparing the Server
 ====================
 
-Preparing to install Plone
---------------------------
+Paareparing to install Plone
+----------------------------
 
 Plone and Zope are generally not available via platform package or port
 systems. So, you can’t say “apt-get install plone” to add it to a Debian
@@ -21,6 +21,7 @@ A build environment for Plone requires two sets of components:
 * The GNU compiler kit and supporting components
 * The development versions of system libraries required by Plone. 
   The libraries themselves are in common use, and often included in standard distributions. But, we need the development header files.
+
 
 
 It's generally best to install as many of these components as you can via
