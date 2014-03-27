@@ -3,8 +3,8 @@ Managing, Administration of Plone
 
 .. contents:: :local:
 
-.. toctree::
-    :maxdepth: 1
+.a. toctree::
+    :maxdepth: 2
 
     installing
     deploying
