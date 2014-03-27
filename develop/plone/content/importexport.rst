@@ -213,7 +213,7 @@ More information
 Fast content import
 -------------------
 
-* See `this blog post <http://blog.redturtle.it/redturtle-blog/fast-content-import>`_
+* See this `blog post <http://blog.redturtle.it/redturtle-blog/fast-content-import>`_
 
 collective.jsonmigrator
 ------------------------
