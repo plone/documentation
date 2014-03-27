@@ -870,6 +870,75 @@ Install PIL for your development Python environment::
 
         easy_install http://dist.repoze.org/PIL-1.1.6.tar.gz
 
+ImportError: No module named html
+----------------------------------
+
+**Traceback**::
+
+    from lxml.html import defs
+    zope.configuration.xmlconfig.ZopeXMLConfigurationError: File "/srv/plone/yourinstance/parts/client1/etc/site.zcml", line 14.2-14.55
+    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/parts/client1/etc/package-includes/012-yourinstance.mobi-configure.zcml", line 1.0-1.59
+    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/src/yourinstance.mobi/yourinstance/mobi/configure.zcml", line 13.2-13.43
+    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/src/gomobiletheme.basic/gomobiletheme/basic/configure.zcml", line 16.2-16.39
+    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/src/gomobile.mobile/gomobile/mobile/configure.zcml", line 19.4-19.34
+    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/src/gomobile.mobile/gomobile/mobile/browser/configure.zcml", line 24.4-29.10
+    ImportError: No module named html
+
+**Condition**: This error can happen when starting an instance
+
+**Reason**: The system lxml version is too old
+
+Let's see if we are getting too old system wide lxml installation::
+
+
+        plone@mansikki:/srv/plone/yourinstance$ python2.4
+        Python 2.4.5 (#2, Jan 21 2010, 20:05:55)
+        [GCC 4.2.4 (Ubuntu 4.2.4-1ubuntu3)] on linux2
+        Type "help", "copyright", "credits" or "license" for more information.
+        >>> import lxml
+        >>> lxml.__file__
+        '/usr/lib/python2.4/site-packages/lxml/__init__.pyc'
+        >>> dir(lxml)
+        ['__builtins__', '__doc__', '__file__', '__name__', '__path__']
+        >>> from lxml import html
+        Traceback (most recent call last):
+          File "<stdin>", line 1, in ?
+        ImportError: cannot import name html
+
+
+If we cannot fix the system lxml (your system software depends on it) the only workaround is to
+create virtualenv. We cannot force Python 2.6, 2.5 or 2.4 not to use system libraries.
+
+Example::
+
+        root@mansikki:/srv/plone# virtualenv -p /usr/bin/python2.4 --no-site-packages py24
+
+Include standalone lxml + libxml compilation in your ``buildout.cfg``::
+
+        parts =
+                ...
+                lxml
+
+        [lxml]
+        recipe = z3c.recipe.staticlxml
+        egg = lxml==2.2.6
+        force = false
+
+If there are exiting lxml builds in buildout be sure they are removed::
+
+        rm -rf eggs/lxml*
+
+Then as the non-root re-bootstrap the buildout using non-system wide Python::
+
+        plone@mansikki:/srv/plone/yourinstance-2010/yourinstance$ source /srv/plone/py24/bin/activate
+        (py24)plone@mansikki:/srv/plone/yourinstance-2010/yourinstance$ python bootstrap.py
+        ...
+        (py24)plone@mansikki:/srv/plone/yourinstance-2010/yourinstance$ bin/buildout
+        ...
+
+... and after this it should no longer pull the bad system lxml.
+
+
 ImportError: No module named pkgutil
 ------------------------------------
 
@@ -1135,120 +1204,46 @@ delete all "too eggs" from ``eggs/`` and ``src/`` folders.
 
 **Solution 2**: Upgrade your site to Plone.
 
-TraversalError with lots of tuples and lists (METAL problem)
-------------------------------------------------------------
+LinguaPlone: ImportError: cannot import name permissions
+----------------------------------------------------------
 
-Exception::
+**Traceback**::
 
-      File "/home/moo/yourinstance/parts/zope2/lib/python/zope/tales/expressions.py", line 217, in __call__
-        return self._eval(econtext)
-      File "/home/moo/yourinstance/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 155, in _eval
-        ob = self._subexprs[-1](econtext)
-      File "/home/moo/yourinstance/parts/zope2/lib/python/zope/tales/expressions.py", line 124, in _eval
-        ob = self._traverser(ob, element, econtext)
-      File "/home/moo/yourinstance/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 85, in boboAwareZopeTraverse
-        request=request)
-      File "/home/moo/yourinstance/parts/zope2/lib/python/zope/traversing/adapters.py", line 164, in traversePathElement
-        return traversable.traverse(nm, further_path)
-       - __traceback_info__: ({u'main': [('version', '1.6'), ('mode', 'html'), ('setPosition', (7, 0)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('beginScope', {u'define-macro': u'main'}), ('optTag', (u'metal:main-macro', None, 'metal', 0, [('startTag', (u'metal:main-macro', [(u'define-macro', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1)), ('setPosition', (8, 1)), ('defineSlot', (u'main', [('beginScope', {u'define-slot': u'main'}), ('optTag', (u'metal:main-slot', None, 'metal', 0, [('startTag', (u'metal:main-slot', [(u'define-slot', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1))])), ('endScope', ())])), ('setPosition', (9, 1)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('rawtextColumn', (u'\n', 0))])), ('endScope', ())]}, 'master')
-      File "/home/moo/yourinstance/parts/zope2/lib/python/zope/traversing/adapters.py", line 52, in traverse
-        raise TraversalError(subject, name)
-       - __traceback_info__: ({u'main': [('version', '1.6'), ('mode', 'html'), ('setPosition', (7, 0)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('beginScope', {u'define-macro': u'main'}), ('optTag', (u'metal:main-macro', None, 'metal', 0, [('startTag', (u'metal:main-macro', [(u'define-macro', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1)), ('setPosition', (8, 1)), ('defineSlot', (u'main', [('beginScope', {u'define-slot': u'main'}), ('optTag', (u'metal:main-slot', None, 'metal', 0, [('startTag', (u'metal:main-slot', [(u'define-slot', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1))])), ('endScope', ())])), ('setPosition', (9, 1)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('rawtextColumn', (u'\n', 0))])), ('endScope', ())]}, 'master', [])
-    TraversalError: ({u'main': [('version', '1.6'), ('mode', 'html'), ('setPosition', (7, 0)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('beginScope', {u'define-macro': u'main'}), ('optTag', (u'metal:main-macro', None, 'metal', 0, [('startTag', (u'metal:main-macro', [(u'define-macro', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1)), ('setPosition', (8, 1)), ('defineSlot', (u'main', [('beginScope', {u'define-slot': u'main'}), ('optTag', (u'metal:main-slot', None, 'metal', 0, [('startTag', (u'metal:main-slot', [(u'define-slot', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1))])), ('endScope', ())])), ('setPosition', (9, 1)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('rawtextColumn', (u'\n', 0))])), ('endScope', ())]}, 'master') (Also, the following error occurred while attempting to render the standard error message, please see the event log for full details: ({u'main': [('version', '1.6'), ('mode', 'html'), ('setPosition', (7, 0)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('beginScope', {u'define-macro': u'main'}), ('optTag', (u'metal:main-macro', None, 'metal', 0, [('startTag', (u'metal:main-macro', [(u'define-macro', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1)), ('setPosition', (8, 1)), ('defineSlot', (u'main', [('beginScope', {u'define-slot': u'main'}), ('optTag', (u'metal:main-slot', None, 'metal', 0, [('startTag', (u'metal:main-slot', [(u'define-slot', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1))])), ('endScope', ())])), ('setPosition', (9, 1)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('rawtextColumn', (u'\n', 0))])), ('endScope', ())]}, 'master'))
+	File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/viewlets/selector.py", line 12, in <module>
+	  from Products.LinguaPlone.interfaces import ITranslatable
+	File "/home/moo/code/finnmall/finnmall/eggs/Products.LinguaPlone-3.1-py2.6.egg/Products/LinguaPlone/__init__.py", line 3, in <module>
+	  from Products.LinguaPlone import permissions
+	ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/parts/instance/etc/site.zcml", line 15.2-15.55
+	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/parts/instance/etc/package-includes/001-abita.policy-configure.zcml", line 1.0-1.56
+	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.policy/abita/policy/configure.zcml", line 8.4-8.37
+	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/configure.zcml", line 9.2-9.32
+	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/configure.zcml", line 10.2-10.33
+	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/viewlets/configure.zcml", line 6.2-11.6
+	    ImportError: cannot import name permissions
 
-Some template tries to call macro inside another template and the macro is not defined in the target template.
+This seems to be Plone 4 issue of some sort.
+Import Products.ATContentTypes before importing LinguagePlone.
 
-z3c.form based form updateWidgets() raises ComponentLookupError
----------------------------------------------------------------
+.. seealso::
+    * http://plone.org/products/linguaplone/issues/253
+    * http://plone.org/products/linguaplone/issues/253
 
-Case 1: z3c.form with Plone 3
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NameError: name 'test' is not defined
+-------------------------------------
 
-Example::
+**Condition**: This exception occurs when you try to customize TAL page template code using test() function.
+test() function has been dropped in Zope 3 page templates. You should no longer
+use test() function anywhere.
 
-    Error in test test_render_form (gomobile.convergence.tests.test_mobile_overrides.TestMobileOverrides)
-    Traceback (most recent call last):
-      File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/Testing/ZopeTestCase/profiler.py", line 98, in __call__
-        testMethod()
-      File "/Users/moo/twinapex/twinapex/src/gomobile.convergence/gomobile/convergence/tests/test_mobile_overrides.py", line 65, in test_render_form
-        result()
-      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 189, in __call__
-        self.update()
-      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 184, in update
-        super(Form, self).update()
-      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 134, in update
-        self.updateWidgets()
-      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 120, in updateWidgets
-        self.widgets = zope.component.getMultiAdapter(
-      File "/Users/moo/twinapex/twinapex/eggs/zope.component-3.5.1-py2.4.egg/zope/component/_api.py", line 104, in getMultiAdapter
-        raise ComponentLookupError(objects, interface, name)
-    ComponentLookupError: ((<Products.Five.metaclass.documentoverriderform object at 0x711c6f0>, <HTTPRequest, URL=http://nohost>, <ATDocument at /plone/doc>), <InterfaceClass z3c.form.interfaces.IWidgets>, u'')
+**Solution**: replace test() with common Python expression in your customized template.
 
-Reason: To use z3c.form based forms z3c.form.interfaces.IFormRequest must be enabled for HTTP request
-object to make form layer adaptions work.
+For example the orignal::
 
-How to fix:
+    tal:attributes="class python:test(here.Format() in ('text/structured', 'text/x-rst', ), 'stx' + kss_class, 'plain', + kss_class)"
 
-* Wrap your forms with plone.z3cform.layout.wrap_form() call as instructed in plone.z3cform README
+would need to be written as::
 
-The same error occurs if plone.app.z3cform, plone.z3cform and z3c.form are not properly included through ZCML.
-In order to be sure that those modules are properly included, you can add the following lines into your configure.zcml
-
-.. code-block:: xml
-
-        <include package="plone.app.z3cform" />
-        <include package="plone.z3cform" />
-        <include package="z3c.form" />
-
-...or you can use autoinclude feature for Plone 3.3+
-
-in configure.zcml
-
-.. code-block:: xml
-
-        <includeDependencies package="." />
-
-and then your add-on product setup.py file::
-
-
-        install_requires=[
-          'setuptools',
-          'plone.app.z3cform',
-          # -*- Extra requirements: -*-
-      ],
-
-Also remember to run Plone add-on installer for plone.app.z3cform (though it is unrelated to this error).
-
-Case 2: missing plone.app.z3cform migration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Example traceback::
-
-    Traceback (innermost last):
-      Module ZPublisher.Publish, line 126, in publish
-      Module ZPublisher.mapply, line 77, in mapply
-      Module ZPublisher.Publish, line 46, in call_object
-      Module z3c.form.form, line 215, in __call__
-      Module z3c.form.form, line 208, in update
-      Module plone.z3cform.patch, line 21, in BaseForm_update
-      Module z3c.form.form, line 149, in update
-      Module z3c.form.form, line 129, in updateWidgets
-      Module zope.component._api, line 109, in getMultiAdapter
-    ComponentLookupError: ((<Products.Five.metaclass.EditForm object at 0x117a97dd0>, <HTTPRequest, URL=http://localhost:8080/folder_xxx/xxxngta/@@dgftreeselect-test>, <PloneSite at /folder_xxx/xxxngta>), <InterfaceClass z3c.form.interfaces.IWidgets>, u'')
-
-You are running Plone 4 with ``plone.app.directives`` form which does not
-open. The reason is that you most likely have old ``plone.app.z3cform``
-installation which is not upgraded properly. In particular,
-the following layer is missing
-
-.. code-block:: xml
-
-	<layer name="plone.app.z3cform" interface="plone.app.z3cform.interfaces.IPloneFormLayer" />
-
-This enables ``z3c.form`` widgets on a Plone site.
-
-Solution: *portal_setup* > *Import*. Choose profile *Plone z3cform support*.
-and import. The layer gets properly inserted to your site database.
+    tal:attributes="class python:here.Format() in ('text/structured', 'text/x-rst', ) and 'stx' + kss_class or 'plain' + kss_class"
 
 NotFound error (Page not found) when accessing @@manage-portlets
 --------------------------------------------------------------------
@@ -1369,149 +1364,33 @@ It usually means that there is a portlet in your content which product code has 
 
 Reinstall the add-on providing the portlet, remove the portlet and then uninstall the add-on again.
 
-RuntimeError: maximum recursion depth exceeded (Archetypes field problem)
---------------------------------------------------------------------------
-
-Example::
-
-           atapi.ImageField(
-                'memberimage',
-                # storage=atapi.AnnotationStorage(), # paster version
-                storage=atapi.AttributeStorage(), # results in "max recursion depth exceeded" error
-                widget=atapi.ImageWidget(
-                    label=_(u"New Field"),
-                    description=_(u"Field description"),
-                ),
-                validators=('isNonEmptyFile'),
-                original_size=(600,600),
-                sizes={ 'mini' : (80,80),
-                        'normal' : (200,200),
-                        'big' : (300,300),
-                        'maxi' : (500,500)},
-            ),
-
-
-        This results in an exception when I try to access the object:
-
-           - __traceback_info__: ('memberimage', <TTMemberImage at tt_member_image.2010-01-23.8138248069>, {'field': <Field memberimage(image:rw)>})
-          Module Products.Archetypes.Storage, line 96, in get
-          Module Products.Archetypes.utils, line 808, in shasattr
-          Module Products.Archetypes.fieldproperty, line 101, in __get__
-          Module Products.Archetypes.Field, line 997, in get
-          Module Products.Archetypes.Field, line 709, in get
-           - __traceback_info__: ('memberimage', <TTMemberImage at tt_member_image.2010-01-23.8138248069>, {'field': <Field memberimage(image:rw)>})
-        RuntimeError: maximum recursion depth exceeded
-
-Reason: Schema fields using AttributeStorage (usually images, files) **cannot** have ATFieldProperty in the class::
-
-        class Sample(base.ATCTContent):
-
-            # This does not work with AttributeStorage
-            memberimage = atapi.ATFieldProperty('memberimage')
-
-To fix this simply remobe ATFieldProperty() declaration for the problematic field. You cannot
-access the field value anymore by calling *object.memberimage* but you need to call *object.getMemberimage()* instead.
-
-
-TraversalError: No traversable adapter found
-----------------------------------------------
-
-Traceback (innermost last):
-
-    * Module ZPublisher.Publish, line 202, in publish_module_standard
-    * Module Products.LinguaPlone.patches, line 66, in new_publish
-    * Module ZPublisher.Publish, line 150, in publish
-    * Module Zope2.App.startup, line 221, in zpublisher_exception_hook
-    * Module ZPublisher.Publish, line 119, in publish
-    * Module ZPublisher.mapply, line 88, in mapply
-    * Module ZPublisher.Publish, line 42, in call_object
-    * Module Shared.DC.Scripts.Bindings, line 313, in __call__
-    * Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
-    * Module Products.CMFCore.FSPageTemplate, line 216, in _exec
-    * Module Products.CMFCore.FSPageTemplate, line 155, in pt_render
-    * Module Products.PageTemplates.PageTemplate, line 98, in pt_render
-    * Module zope.pagetemplate.pagetemplate, line 117, in pt_render
-      Warning: Macro expansion failed
-      Warning: zope.traversing.interfaces.TraversalError: ('No traversable adapter found',
-
-
-This traceback is followed by long dump of template code internals.
-
-Usual cause: Some add-on product fails to initialize.
-
-Start Zope in foreground mode (bin/instance fg) to see which product fails.
-
-Unauthorized: The object is marked as private
-----------------------------------------------
-
-This error is raised when you try to access view functions or objects
-for a view, which you call manually from the code.
-
-Example traceback::
-
-          File "/home/moo/twinapex/parts/zope2/lib/python/zope/tales/expressions.py", line 124, in _eval
-            ob = self._traverser(ob, element, econtext)
-          File "/home/moo/twinapex/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 105, in trustedBoboAwareZopeTraverse
-            request=request)
-          File "/home/moo/twinapex/parts/zope2/lib/python/zope/traversing/adapters.py", line 164, in traversePathElement
-            return traversable.traverse(nm, further_path)
-          File "/home/moo/twinapex/parts/zope2/lib/python/zope/traversing/adapters.py", line 44, in traverse
-            attr = getattr(subject, name, _marker)
-          File "/home/moo/twinapex/parts/zope2/lib/python/Shared/DC/Scripts/Bindings.py", line 184, in __getattr__
-            return guarded_getattr(self._wrapped, name, default)
-          File "/home/moo/twinapex/parts/zope2/lib/python/AccessControl/ImplPython.py", line 563, in validate
-            self._context)
-          File "/home/moo/twinapex/parts/zope2/lib/python/AccessControl/ImplPython.py", line 443, in validate
-            accessed, container, name, value, context)
-          File "/home/moo/twinapex/parts/zope2/lib/python/AccessControl/ImplPython.py", line 808, in raiseVerbose
-            raise Unauthorized(text)
-        Unauthorized: The object is marked as private.  Access to 'showVideo' of (Products.Five.metaclass.SimpleViewClass from /home/moo/twinapex/src/mfabrik.app/mfabrik/app/browser/campaigntopview.pt object at 0x11003a0c) denied.
-
-View acquisition chain is not properly set up and the security manager cannot traverse acquisition
-chain parents to properly determine permissions.
-
-You need to use __of__() method to set-up the acquisition chain for the view::
-
-    def getHeadingView(self):
-        """
-        Check if we have campaign view avaiable for this content and use it.
-        """
-        view = queryMultiAdapter((self.context, self.request), name="mfabrik_heading")
-        view = view.__of__(self.context) # <---------- here
-        return view
-
-
 NotFound while accessing a BrowserView based view
 --------------------------------------------------
 
-You'll get a NotFound error when accessing view using view traverse notation,
+**Traceback**::
+
+    Traceback (innermost last):
+      Module ZPublisher.Publish, line 110, in publish
+      Module ZPublisher.BaseRequest, line 506, in traverse
+      Module ZPublisher.HTTPResponse, line 686, in debugError
+    NotFound:   <h2>Site Error</h2>
+
+**Condition**: You'll get a NotFound error when accessing view using view traverse notation,
 event though the view exist.
 
 Example URL::
 
         http://yoursite/@@myview
 
-Example traceback::
-
-        Traceback (innermost last):
-          Module ZPublisher.Publish, line 110, in publish
-          Module ZPublisher.BaseRequest, line 506, in traverse
-          Module ZPublisher.HTTPResponse, line 686, in debugError
-        NotFound:   <h2>Site Error</h2>
-
-This is because there is an exception raised in your view's __init__()
+**Reason**: This is because there is an exception raised in your view's __init__()
 method. Views are Zope multi-adapters. Exception in multi-adapter factory
 method causes ComponentLookUpError. Zope 2 publisher translates
 this to NotFound error.
 
-How to fix
 
-* Put :doc:`pdb break statement </manage/deploying/testing_tuning/testing_and_debugging/pdb>` to the beginning of the __init__()
-  method of your view. Then step through view code to see where the exception is raisen.
-
-* If your view does not have __init__() method, then copy the source code __init__() method
-  to your view class from the first parent class which has a view
-
+**Solution**:
+* Put :doc:`pdb break statement </manage/deploying/testing_tuning/testing_and_debugging/pdb>` to the beginning of the __init__() method of your view. Then step through view code to see where the exception is raisen.
+* If your view does not have __init__() method, then copy the source code __init__() method to your view class from the first parent class which has a view
 
 POSKeyError
 -----------
@@ -1525,227 +1404,10 @@ It's a low level error usually caused by a corrupt or incomplete database.
 
 * Glitch in database (very unlikely)
 
-More info
+.. seealso::
+    http://rpatterson.net/blog/poskeyerror-during-commit
 
-* http://rpatterson.net/blog/poskeyerror-during-commit
-
-Zope suddenly dies on OSX without a reason
--------------------------------------------
-
-Symptoms: you do a HTTP request to a Plone site running OSX. Zope quits without a reason.
-
-Reason: Infinite recursion is not properly handled by Python on OSX. This is because
-OSX C stack size is smaller than Python default stack size. The underlying Python interpreter
-dies before being able to raise stack size limit exception.
-
-**Workaround**
-
-Edit ``python-2.4/lib/python2.4/site.py`` or corresponding Python interpreter ``site.py``
-file (Python site installation customization file).
-
-Put in to the first code line::
-
-         sys.setrecursionlimit(800)
-
-This will force smaller Python stack not exceeding native OSX C stack.
-You might want to test other values and report back the findings.
-
-More Information
-
-* http://blog.crowproductions.de/2008/12/14/a-buildout-to-tame-the-snake-pit/ (comments)
-
-TypeError: len() of unsized object in smtplib
-----------------------------------------------
-
-Traceback::
-
-        Traceback (innermost last):
-          Module ZPublisher.Publish, line 119, in publish
-          Module ZPublisher.mapply, line 88, in mapply
-          Module ZPublisher.Publish, line 42, in call_object
-          Module Products.CMFFormController.FSControllerPageTemplate, line 90, in __call__
-          Module Products.CMFFormController.BaseControllerPageTemplate, line 28, in _call
-          Module Products.CMFFormController.ControllerBase, line 231, in getNext
-          Module Products.CMFFormController.Actions.TraverseTo, line 38, in __call__
-          Module ZPublisher.mapply, line 88, in mapply
-          Module ZPublisher.Publish, line 42, in call_object
-          Module Products.CMFFormController.FSControllerPythonScript, line 104, in __call__
-          Module Products.CMFFormController.Script, line 145, in __call__
-          Module Products.CMFCore.FSPythonScript, line 140, in __call__
-          Module Shared.DC.Scripts.Bindings, line 313, in __call__
-          Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
-          Module Products.CMFCore.FSPythonScript, line 196, in _exec
-          Module None, line 102, in order_email
-           - <FSControllerPythonScript at /MySite/order_email>
-           - Line 102
-          Module Products.SecureMailHost.SecureMailHost, line 246, in secureSend
-          Module Products.SecureMailHost.SecureMailHost, line 276, in _send
-          Module Products.SecureMailHost.mail, line 126, in send
-          Module smtplib, line 576, in login
-          Module smtplib, line 536, in encode_cram_md5
-          Module hmac, line 50, in __init__
-        TypeError: len() of unsized object
-
-Cause: Your SMTP password has been set empty. Please reset your SMTP password in *Mail* control panel.
-
-More information
-
-* http://plone.293351.n2.nabble.com/Plone-3-3-5-sending-emails-len-of-unsized-object-error-NO-ESMTP-PASSWORD-tp5415484p5415484.html
-
-
-NameError: name 'test' is not defined
--------------------------------------
-
-This exception occurs when you try to customize TAL page template code using test() function.
-test() function has been dropped in Zope 3 page templates. You should no longer
-use test() function anywhere.
-
-Solution: replace test() with common Python expression in your customized template.
-
-For example the orignal::
-
-        tal:attributes="class python:test(here.Format() in ('text/structured', 'text/x-rst', ), 'stx' + kss_class, 'plain', + kss_class)"
-
-would need to be written as:
-
-        tal:attributes="class python:here.Format() in ('text/structured', 'text/x-rst', ) and 'stx' + kss_class or 'plain' + kss_class"
-
-TraversalError(subject, name) in expressions
---------------------------------------------
-
-You have traceback like::
-
-	  File "/home/moo/sits/parts/zope2/lib/python/ZPublisher/Publish.py", line 119, in publish
-	    request, bind=1)
-	  File "/home/moo/sits/parts/zope2/lib/python/ZPublisher/mapply.py", line 88, in mapply
-	    if debug is not None: return debug(object,args,context)
-	  File "/home/moo/sits/parts/zope2/lib/python/ZPublisher/Publish.py", line 42, in call_object
-	    result=apply(object,args) # Type s<cr> to step into published object.
-	  File "/home/moo/sits/parts/zope2/lib/python/Products/Five/browser/metaconfigure.py", line 417, in __call__
-	    return self.index(self, *args, **kw)
-	  File "/home/moo/sits/parts/zope2/lib/python/Shared/DC/Scripts/Bindings.py", line 313, in __call__
-	    return self._bindAndExec(args, kw, None)
-	  File "/home/moo/sits/parts/zope2/lib/python/Shared/DC/Scripts/Bindings.py", line 350, in _bindAndExec
-	    return self._exec(bound_data, args, kw)
-	  File "/home/moo/sits/parts/zope2/lib/python/Products/PageTemplates/PageTemplateFile.py", line 129, in _exec
-	    return self.pt_render(extra_context=bound_names)
-	  File "/home/moo/sits/parts/zope2/lib/python/Products/PageTemplates/PageTemplate.py", line 98, in pt_render
-	    showtal=showtal)
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/pagetemplate/pagetemplate.py", line 117, in pt_render
-	    strictinsert=0, sourceAnnotations=sourceAnnotations)()
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/tal/talinterpreter.py", line 271, in __call__
-	    self.interpret(self.program)
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/tal/talinterpreter.py", line 346, in interpret
-	    handlers[opcode](self, args)
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/tal/talinterpreter.py", line 891, in do_useMacro
-	    self.interpret(macro)
-	    handlers[opcode](self, args)
-
-	  ...
-
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/tal/talinterpreter.py", line 586, in do_setLocal_tal
-	    self.engine.setLocal(name, self.engine.evaluateValue(expr))
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/tales/tales.py", line 696, in evaluate
-	    return expression(self)
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/tales/expressions.py", line 218, in __call__
-	    return self._eval(econtext)
-	  File "/home/moo/sits/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 153, in _eval
-	    ob = self._subexprs[-1](econtext)
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/tales/expressions.py", line 124, in _eval
-	    ob = self._traverser(ob, element, econtext)
-	  File "/home/moo/sits/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 103, in trustedBoboAwareZopeTraverse
-	    request=request)
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/traversing/adapters.py", line 164, in traversePathElement
-	    return traversable.traverse(nm, further_path)
-	  File "/home/moo/sits/parts/zope2/lib/python/zope/traversing/adapters.py", line 52, in traverse
-	    raise TraversalError(subject, name)
-
-From line ``Products/PageTemplates/Expressions.py`` you can see the error comes from TAL templates.
-TAL templates are trying to execute path based expressions.
-
-If you can view this error through error_log the error_log traceback will contain information
-what expression causes the exception. However if this only happens with unit tests you can have something like::
-
-    def __call__(self, econtext):
-        if self._name == 'exists':
-            return self._exists(econtext)
-        print "Evaluating expression:" + self._s
-        return self._eval(econtext)
-
-manually injected to ``zope.tales.expression`` module.
-
-LinguaPlone: ImportError: cannot import name permissions
-----------------------------------------------------------
-
-Traceback::
-
-	  File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/viewlets/selector.py", line 12, in <module>
-	    from Products.LinguaPlone.interfaces import ITranslatable
-	  File "/home/moo/code/finnmall/finnmall/eggs/Products.LinguaPlone-3.1-py2.6.egg/Products/LinguaPlone/__init__.py", line 3, in <module>
-	    from Products.LinguaPlone import permissions
-	ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/parts/instance/etc/site.zcml", line 15.2-15.55
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/parts/instance/etc/package-includes/001-abita.policy-configure.zcml", line 1.0-1.56
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.policy/abita/policy/configure.zcml", line 8.4-8.37
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/configure.zcml", line 9.2-9.32
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/configure.zcml", line 10.2-10.33
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/viewlets/configure.zcml", line 6.2-11.6
-	    ImportError: cannot import name permissions
-
-This seems to be Plone 4 issue of some sort.
-Import Products.ATContentTypes before importing LinguagePlone.
-
-* http://plone.org/products/linguaplone/issues/253
-
-Related
-
-* http://plone.org/products/linguaplone/issues/253
-
-TypeError: 'NoneType' object is not callable during upgrade
------------------------------------------------------------------
-
-Traceback during add-on install run / site upgrade::
-
-        Traceback (innermost last):
-          Module ZPublisherEventsBackport.patch, line 77, in publish
-          Module ZPublisher.mapply, line 88, in mapply
-          Module ZPublisher.Publish, line 42, in call_object
-          Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 589, in installProducts
-          Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 526, in installProduct
-           - __traceback_info__: ('mfabrik.plonezohointegration',)
-          Module Products.GenericSetup.tool, line 390, in runAllImportStepsFromProfile
-           - __traceback_info__: profile-mfabrik.plonezohointegration:default
-          Module Products.GenericSetup.tool, line 1179, in _runImportStepsFromContext
-          Module Products.GenericSetup.tool, line 1090, in _doRunImportStep
-           - __traceback_info__: toolset
-          Module Products.GenericSetup.tool, line 128, in importToolset
-        TypeError: 'NoneType' object is not callable
-
-This means that your site database contains installed add-on utility objects
-for which Python code is no longer present.
-
-More pointers for resolving the tool can be found using pdb::
-
-        (Pdb) tool_id
-        'portal_newsletters'
-
-This happens when you have used Singing and Dancing news letter product. This add-on
-is problematic and does not uninstall cleanly.
-
-* Reinstall Singing & Dancing
-
-* Uninstall Singing & Dancing
-
-* Hope your site works again
-
-More info
-
-* http://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
-
-* http://opensourcehacker.com/2011/06/01/plone-4-upgrade-results-and-steps/
-
-* http://pypi.python.org/pypi/wildcard.fixpersistentutilities
-
-"PicklingError: Can't pickle <class 'collective.singing.async.IQueue'>: import of module collective.singing.async"
+PicklingError: Can't pickle <class 'collective.singing.async.IQueue'>: import of module collective.singing.async
 --------------------------------------------------------------------------------------------------------------------
 
 Singing & Dancing add-on does not uninstall cleanly. Try this command-line script to get it fixed (not tested).
@@ -1778,112 +1440,178 @@ then you can remove it afterwards::
 
         transaction.commit()
 
-System lxml too old
---------------------
+RuntimeError: maximum recursion depth exceeded (Archetypes field problem)
+--------------------------------------------------------------------------
 
-Traceback when starting an instance::
+**Traceback**::
 
-    from lxml.html import defs
-    zope.configuration.xmlconfig.ZopeXMLConfigurationError: File "/srv/plone/yourinstance/parts/client1/etc/site.zcml", line 14.2-14.55
-    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/parts/client1/etc/package-includes/012-yourinstance.mobi-configure.zcml", line 1.0-1.59
-    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/src/yourinstance.mobi/yourinstance/mobi/configure.zcml", line 13.2-13.43
-    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/src/gomobiletheme.basic/gomobiletheme/basic/configure.zcml", line 16.2-16.39
-    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/src/gomobile.mobile/gomobile/mobile/configure.zcml", line 19.4-19.34
-    ZopeXMLConfigurationError: File "/srv/plone/yourinstance/src/gomobile.mobile/gomobile/mobile/browser/configure.zcml", line 24.4-29.10
-    ImportError: No module named html
+    - __traceback_info__: ('memberimage', <TTMemberImage at tt_member_image.2010-01-23.8138248069>, {'field': <Field memberimage(image:rw)>})
+    Module Products.Archetypes.Storage, line 96, in get
+    Module Products.Archetypes.utils, line 808, in shasattr
+    Module Products.Archetypes.fieldproperty, line 101, in __get__
+    Module Products.Archetypes.Field, line 997, in get
+    Module Products.Archetypes.Field, line 709, in get
+     - __traceback_info__: ('memberimage', <TTMemberImage at tt_member_image.2010-01-23.8138248069>, {'field': <Field memberimage(image:rw)>})
+    RuntimeError: maximum recursion depth exceeded
 
+**Condition**: The following code will generate this error when you try to access the object::
 
-Let's see if we are getting too old system wide lxml installation::
+    atapi.ImageField(
+         'memberimage',
+         # storage=atapi.AnnotationStorage(), # paster version
+         storage=atapi.AttributeStorage(), # results in "max recursion depth exceeded" error
+         widget=atapi.ImageWidget(
+             label=_(u"New Field"),
+             description=_(u"Field description"),
+         ),
+         validators=('isNonEmptyFile'),
+         original_size=(600,600),
+         sizes={ 'mini' : (80,80),
+                 'normal' : (200,200),
+                 'big' : (300,300),
+                 'maxi' : (500,500)},
+     ),
 
+**Reason**: Schema fields using AttributeStorage (usually images, files) **cannot** have ATFieldProperty in the class::
 
-        plone@mansikki:/srv/plone/yourinstance$ python2.4
-        Python 2.4.5 (#2, Jan 21 2010, 20:05:55)
-        [GCC 4.2.4 (Ubuntu 4.2.4-1ubuntu3)] on linux2
-        Type "help", "copyright", "credits" or "license" for more information.
-        >>> import lxml
-        >>> lxml.__file__
-        '/usr/lib/python2.4/site-packages/lxml/__init__.pyc'
-        >>> dir(lxml)
-        ['__builtins__', '__doc__', '__file__', '__name__', '__path__']
-        >>> from lxml import html
-        Traceback (most recent call last):
-          File "<stdin>", line 1, in ?
-        ImportError: cannot import name html
+    class Sample(base.ATCTContent):
 
+        # This does not work with AttributeStorage
+        memberimage = atapi.ATFieldProperty('memberimage')
 
-If we cannot fix the system lxml (your system software depends on it) the only workaround is to
-create virtualenv. We cannot force Python 2.6, 2.5 or 2.4 not to use system libraries.
+**Solution**: simply remove ATFieldProperty() declaration for the problematic field. You cannot
+access the field value anymore by calling *object.memberimage* but you need to call *object.getMemberimage()* instead.
 
-Example::
+TraversalError with lots of tuples and lists (METAL problem)
+------------------------------------------------------------
 
-        root@mansikki:/srv/plone# virtualenv -p /usr/bin/python2.4 --no-site-packages py24
+**Traceback**::
 
-Include standalone lxml + libxml compilation in your ``buildout.cfg``::
+    File "/home/moo/yourinstance/parts/zope2/lib/python/zope/tales/expressions.py", line 217, in __call__
+      return self._eval(econtext)
+    File "/home/moo/yourinstance/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 155, in _eval
+      ob = self._subexprs[-1](econtext)
+    File "/home/moo/yourinstance/parts/zope2/lib/python/zope/tales/expressions.py", line 124, in _eval
+      ob = self._traverser(ob, element, econtext)
+    File "/home/moo/yourinstance/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 85, in boboAwareZopeTraverse
+      request=request)
+    File "/home/moo/yourinstance/parts/zope2/lib/python/zope/traversing/adapters.py", line 164, in traversePathElement
+      return traversable.traverse(nm, further_path)
+     - __traceback_info__: ({u'main': [('version', '1.6'), ('mode', 'html'), ('setPosition', (7, 0)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('beginScope', {u'define-macro': u'main'}), ('optTag', (u'metal:main-macro', None, 'metal', 0, [('startTag', (u'metal:main-macro', [(u'define-macro', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1)), ('setPosition', (8, 1)), ('defineSlot', (u'main', [('beginScope', {u'define-slot': u'main'}), ('optTag', (u'metal:main-slot', None, 'metal', 0, [('startTag', (u'metal:main-slot', [(u'define-slot', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1))])), ('endScope', ())])), ('setPosition', (9, 1)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('rawtextColumn', (u'\n', 0))])), ('endScope', ())]}, 'master')
+    File "/home/moo/yourinstance/parts/zope2/lib/python/zope/traversing/adapters.py", line 52, in traverse
+      raise TraversalError(subject, name)
+     - __traceback_info__: ({u'main': [('version', '1.6'), ('mode', 'html'), ('setPosition', (7, 0)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('beginScope', {u'define-macro': u'main'}), ('optTag', (u'metal:main-macro', None, 'metal', 0, [('startTag', (u'metal:main-macro', [(u'define-macro', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1)), ('setPosition', (8, 1)), ('defineSlot', (u'main', [('beginScope', {u'define-slot': u'main'}), ('optTag', (u'metal:main-slot', None, 'metal', 0, [('startTag', (u'metal:main-slot', [(u'define-slot', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1))])), ('endScope', ())])), ('setPosition', (9, 1)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('rawtextColumn', (u'\n', 0))])), ('endScope', ())]}, 'master', [])
+    TraversalError: ({u'main': [('version', '1.6'), ('mode', 'html'), ('setPosition', (7, 0)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('beginScope', {u'define-macro': u'main'}), ('optTag', (u'metal:main-macro', None, 'metal', 0, [('startTag', (u'metal:main-macro', [(u'define-macro', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1)), ('setPosition', (8, 1)), ('defineSlot', (u'main', [('beginScope', {u'define-slot': u'main'}), ('optTag', (u'metal:main-slot', None, 'metal', 0, [('startTag', (u'metal:main-slot', [(u'define-slot', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1))])), ('endScope', ())])), ('setPosition', (9, 1)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('rawtextColumn', (u'\n', 0))])), ('endScope', ())]}, 'master') (Also, the following error occurred while attempting to render the standard error message, please see the event log for full details: ({u'main': [('version', '1.6'), ('mode', 'html'), ('setPosition', (7, 0)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('beginScope', {u'define-macro': u'main'}), ('optTag', (u'metal:main-macro', None, 'metal', 0, [('startTag', (u'metal:main-macro', [(u'define-macro', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1)), ('setPosition', (8, 1)), ('defineSlot', (u'main', [('beginScope', {u'define-slot': u'main'}), ('optTag', (u'metal:main-slot', None, 'metal', 0, [('startTag', (u'metal:main-slot', [(u'define-slot', u'main', 'metal')]))], [('rawtextColumn', (u'\n\t', 1))])), ('endScope', ())])), ('setPosition', (9, 1)), ('setSourceFile', 'file:/home/moo/workspace2/collective.skinny/collective/skinny/skins/skinny_faux_layer/main_template.pt'), ('rawtextColumn', (u'\n', 0))])), ('endScope', ())]}, 'master'))
 
-        parts =
-                ...
-                lxml
+Some template tries to call macro inside another template and the macro is not defined in the target template.
 
-        [lxml]
-        recipe = z3c.recipe.staticlxml
-        egg = lxml==2.2.6
-        force = false
+TraversalError(subject, name) in expressions
+--------------------------------------------
 
-If there are exiting lxml builds in buildout be sure they are removed::
+**Traceback**::
 
-        rm -rf eggs/lxml*
+    File "/home/moo/sits/parts/zope2/lib/python/ZPublisher/Publish.py", line 119, in publish
+      request, bind=1)
+    File "/home/moo/sits/parts/zope2/lib/python/ZPublisher/mapply.py", line 88, in mapply
+      if debug is not None: return debug(object,args,context)
+    File "/home/moo/sits/parts/zope2/lib/python/ZPublisher/Publish.py", line 42, in call_object
+      result=apply(object,args) # Type s<cr> to step into published object.
+    File "/home/moo/sits/parts/zope2/lib/python/Products/Five/browser/metaconfigure.py", line 417, in __call__
+      return self.index(self, *args, **kw)
+    File "/home/moo/sits/parts/zope2/lib/python/Shared/DC/Scripts/Bindings.py", line 313, in __call__
+      return self._bindAndExec(args, kw, None)
+    File "/home/moo/sits/parts/zope2/lib/python/Shared/DC/Scripts/Bindings.py", line 350, in _bindAndExec
+      return self._exec(bound_data, args, kw)
+    File "/home/moo/sits/parts/zope2/lib/python/Products/PageTemplates/PageTemplateFile.py", line 129, in _exec
+      return self.pt_render(extra_context=bound_names)
+    File "/home/moo/sits/parts/zope2/lib/python/Products/PageTemplates/PageTemplate.py", line 98, in pt_render
+      showtal=showtal)
+    File "/home/moo/sits/parts/zope2/lib/python/zope/pagetemplate/pagetemplate.py", line 117, in pt_render
+      strictinsert=0, sourceAnnotations=sourceAnnotations)()
+    File "/home/moo/sits/parts/zope2/lib/python/zope/tal/talinterpreter.py", line 271, in __call__
+      self.interpret(self.program)
+    File "/home/moo/sits/parts/zope2/lib/python/zope/tal/talinterpreter.py", line 346, in interpret
+      handlers[opcode](self, args)
+    File "/home/moo/sits/parts/zope2/lib/python/zope/tal/talinterpreter.py", line 891, in do_useMacro
+      self.interpret(macro)
+      handlers[opcode](self, args)
 
-Then as the non-root re-bootstrap the buildout using non-system wide Python::
+    ...
 
-        plone@mansikki:/srv/plone/yourinstance-2010/yourinstance$ source /srv/plone/py24/bin/activate
-        (py24)plone@mansikki:/srv/plone/yourinstance-2010/yourinstance$ python bootstrap.py
-        ...
-        (py24)plone@mansikki:/srv/plone/yourinstance-2010/yourinstance$ bin/buildout
-        ...
+    File "/home/moo/sits/parts/zope2/lib/python/zope/tal/talinterpreter.py", line 586, in do_setLocal_tal
+      self.engine.setLocal(name, self.engine.evaluateValue(expr))
+    File "/home/moo/sits/parts/zope2/lib/python/zope/tales/tales.py", line 696, in evaluate
+      return expression(self)
+    File "/home/moo/sits/parts/zope2/lib/python/zope/tales/expressions.py", line 218, in __call__
+      return self._eval(econtext)
+    File "/home/moo/sits/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 153, in _eval
+      ob = self._subexprs[-1](econtext)
+    File "/home/moo/sits/parts/zope2/lib/python/zope/tales/expressions.py", line 124, in _eval
+      ob = self._traverser(ob, element, econtext)
+    File "/home/moo/sits/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 103, in trustedBoboAwareZopeTraverse
+      request=request)
+    File "/home/moo/sits/parts/zope2/lib/python/zope/traversing/adapters.py", line 164, in traversePathElement
+      return traversable.traverse(nm, further_path)
+    File "/home/moo/sits/parts/zope2/lib/python/zope/traversing/adapters.py", line 52, in traverse
+      raise TraversalError(subject, name)
 
-... and after this it should no longer pull the bad system lxml.
+**Reason**: From line ``Products/PageTemplates/Expressions.py`` you can see the error comes from TAL templates.
+TAL templates are trying to execute path based expressions.
+
+If you can view this error through error_log the error_log traceback will contain information
+what expression causes the exception. However if this only happens with unit tests you can have something like::
+
+    def __call__(self, econtext):
+        if self._name == 'exists':
+            return self._exists(econtext)
+        print "Evaluating expression:" + self._s
+        return self._eval(econtext)
+
+manually injected to ``zope.tales.expression`` module.
 
 TraversalError: @@standard_macros
 -----------------------------------
 
-Traceback::
+**Traceback**::
 
-           - Warning: Macro expansion failed
-           - Warning: zope.traversing.interfaces.TraversalError: (<plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>, '++view++standard_macros')
-          Module zope.tal.talinterpreter, line 271, in __call__
-          Module zope.tal.talinterpreter, line 346, in interpret
-          Module zope.tal.talinterpreter, line 870, in do_useMacro
-          Module zope.tales.tales, line 696, in evaluate
-           - URL: form
-           - Line 1, Column 0
-           - Expression: <PathExpr standard:'context/@@standard_macros/page'>
-           - Names:
-              {'container': <plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>,
-               'context': <plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>,
-               'default': <object object at 0x100311200>,
-               'here': <plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>,
-               'loop': {},
-               'nothing': None,
-               'options': {'args': (<plone.app.headeranimation.browser.forms.AddHeaderAnimationForm object at 0x1102dc490>,)},
-               'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x110845758>,
-               'request': None,
-               'root': None,
-               'template': <ImplicitAcquirerWrapper object at 0x11084ff10>,
-               'traverse_subpath': [],
-               'user': <PropertiedUser 'admin'>,
-               'view': <UnauthorizedBinding: context>,
-               'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0x110844310>}
-          Module zope.tales.expressions, line 217, in __call__
-          Module Products.PageTemplates.Expressions, line 155, in _eval
-          Module zope.tales.expressions, line 124, in _eval
-          Module Products.PageTemplates.Expressions, line 105, in trustedBoboAwareZopeTraverse
-          Module zope.traversing.adapters, line 154, in traversePathElement
-           - __traceback_info__: (<plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>, '@@standard_macros')
-          Module zope.traversing.namespace, line 107, in namespaceLookup
-        TraversalError: (<plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>, '++view++standard_macros')
+    - Warning: Macro expansion failed
+    - Warning: zope.traversing.interfaces.TraversalError: (<plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>, '++view++standard_macros')
+    Module zope.tal.talinterpreter, line 271, in __call__
+    Module zope.tal.talinterpreter, line 346, in interpret
+    Module zope.tal.talinterpreter, line 870, in do_useMacro
+    Module zope.tales.tales, line 696, in evaluate
+     - URL: form
+     - Line 1, Column 0
+     - Expression: <PathExpr standard:'context/@@standard_macros/page'>
+     - Names:
+        {'container': <plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>,
+         'context': <plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>,
+         'default': <object object at 0x100311200>,
+         'here': <plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>,
+         'loop': {},
+         'nothing': None,
+         'options': {'args': (<plone.app.headeranimation.browser.forms.AddHeaderAnimationForm object at 0x1102dc490>,)},
+         'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0x110845758>,
+         'request': None,
+         'root': None,
+         'template': <ImplicitAcquirerWrapper object at 0x11084ff10>,
+         'traverse_subpath': [],
+         'user': <PropertiedUser 'admin'>,
+         'view': <UnauthorizedBinding: context>,
+         'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0x110844310>}
+    Module zope.tales.expressions, line 217, in __call__
+    Module Products.PageTemplates.Expressions, line 155, in _eval
+    Module zope.tales.expressions, line 124, in _eval
+    Module Products.PageTemplates.Expressions, line 105, in trustedBoboAwareZopeTraverse
+    Module zope.traversing.adapters, line 154, in traversePathElement
+     - __traceback_info__: (<plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>, '@@standard_macros')
+    Module zope.traversing.namespace, line 107, in namespaceLookup
+    TraversalError: (<plone.app.headeranimation.browser.forms.HeaderCRUDForm object at 0x110289590>, '++view++standard_macros')
 
-:doc`Wrapping is missing from your form object </forms/z3c.form.txt>`.
-In this case the following helped::
+:doc:`Wrapping is missing from your form object </develop/plone/forms/z3c.form>`.
+
+**Solution**:
+::
 
     def update(self):
         super(HeaderCRUDForm, self).update()
@@ -1899,85 +1627,383 @@ In this case the following helped::
         editform.update()
         self.subforms = [editform, addform]
 
+TraversalError: No traversable adapter found
+----------------------------------------------
+
+**Traceback**::
+    
+    ...
+    * Module ZPublisher.Publish, line 202, in publish_module_standard
+    * Module Products.LinguaPlone.patches, line 66, in new_publish
+    * Module ZPublisher.Publish, line 150, in publish
+    * Module Zope2.App.startup, line 221, in zpublisher_exception_hook
+    * Module ZPublisher.Publish, line 119, in publish
+    * Module ZPublisher.mapply, line 88, in mapply
+    * Module ZPublisher.Publish, line 42, in call_object
+    * Module Shared.DC.Scripts.Bindings, line 313, in __call__
+    * Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
+    * Module Products.CMFCore.FSPageTemplate, line 216, in _exec
+    * Module Products.CMFCore.FSPageTemplate, line 155, in pt_render
+    * Module Products.PageTemplates.PageTemplate, line 98, in pt_render
+    * Module zope.pagetemplate.pagetemplate, line 117, in pt_render
+      Warning: Macro expansion failed
+      Warning: zope.traversing.interfaces.TraversalError: ('No traversable adapter found',
+
+
+This traceback is followed by long dump of template code internals.
+
+Usual cause: Some add-on product fails to initialize.
+
+**Solution**: Start Zope in foreground mode (bin/instance fg) to see which product fails.
+
+TypeError: 'ExtensionClass.ExtensionClass' object is not iterable
+------------------------------------------------------------------
+
+**Traceback**::
+
+  Module ZPublisher.Publish, line 126, in publish
+  Module ZPublisher.mapply, line 77, in mapply
+  Module ZPublisher.Publish, line 46, in call_object
+  Module Shared.DC.Scripts.Bindings, line 322, in __call__
+  Module Products.PloneHotfix20110531, line 106, in _patched_bindAndExec
+  Module Shared.DC.Scripts.Bindings, line 359, in _bindAndExec
+  Module App.special_dtml, line 185, in _exec
+  Module DocumentTemplate.DT_Let, line 77, in render
+  Module DocumentTemplate.DT_In, line 647, in renderwob
+  Module DocumentTemplate.DT_In, line 772, in sort_sequence
+  Module ZODB.Connection, line 860, in setstate
+  Module ZODB.Connection, line 914, in _setstate
+  Module ZODB.serialize, line 612, in setGhostState
+  Module ZODB.serialize, line 605, in getState
+  Module zope.interface.declarations, line 756, in Provides
+  Module zope.interface.declarations, line 659, in __init__
+  Module zope.interface.declarations, line 45, in __init__
+  Module zope.interface.declarations, line 1382, in _normalizeargs
+  Module zope.interface.declarations, line 1381, in _normalizeargs
+  TypeError: ("'ExtensionClass.ExtensionClass' object is not iterable", <function Provides at 0x9f04d84>, (<class 'Products.ATContentTypes.content.folder.ATFolder'>, <class 'Products.Carousel.interfaces.ICarouselFolder'>))
+
+**Condition**: This error tends to happen after moving a Data.fs to a new instance that does not have the identical add-ons to the original instance.
+
+In this example traceback the missing add-on is Products.Carousel which provides the marker interface Products.Carousel.interfaces.ICarousel
+
+**Solution**: Install the missing add-on(s)
+
+TypeError: 'NoneType' object is not callable during upgrade
+-----------------------------------------------------------------
+
+**Traceback**::
+
+    Traceback (innermost last):
+      Module ZPublisherEventsBackport.patch, line 77, in publish
+      Module ZPublisher.mapply, line 88, in mapply
+      Module ZPublisher.Publish, line 42, in call_object
+      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 589, in installProducts
+      Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 526, in installProduct
+       - __traceback_info__: ('mfabrik.plonezohointegration',)
+      Module Products.GenericSetup.tool, line 390, in runAllImportStepsFromProfile
+       - __traceback_info__: profile-mfabrik.plonezohointegration:default
+      Module Products.GenericSetup.tool, line 1179, in _runImportStepsFromContext
+      Module Products.GenericSetup.tool, line 1090, in _doRunImportStep
+       - __traceback_info__: toolset
+      Module Products.GenericSetup.tool, line 128, in importToolset
+    TypeError: 'NoneType' object is not callable
+
+**Condition**: This error can happen during add-on install run / site upgrade
+
+**Reason**: This means that your site database contains installed add-on utility objects
+for which Python code is no longer present.
+
+More pointers for resolving the tool can be found using pdb::
+
+        (Pdb) tool_id
+        'portal_newsletters'
+
+This happens when you have used Singing and Dancing news letter product. This add-on
+is problematic and does not uninstall cleanly.
+
+* Reinstall Singing & Dancing
+
+* Uninstall Singing & Dancing
+
+* Hope your site works again
+
+.. seealso::
+    * http://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
+    * http://opensourcehacker.com/2011/06/01/plone-4-upgrade-results-and-steps/
+    * http://pypi.python.org/pypi/wildcard.fixpersistentutilities
+
+TypeError: argument of type 'NoneType' is not iterable
+---------------------------------------------------------
+
+**Traceback**::
+
+	Module ZPublisher.Publish, line 115, in publish
+	  Module ZPublisher.BaseRequest, line 437, in traverse
+	  Module Products.CMFCore.DynamicType, line 147, in __before_publishing_traverse__
+	  Module Products.CMFDynamicViewFTI.fti, line 215, in queryMethodID
+	  Module Products.CMFDynamicViewFTI.fti, line 182, in defaultView
+	  Module Products.CMFPlone.PloneTool, line 831, in browserDefault
+	  Module plone.app.folder.base, line 65, in index_html
+	  Module plone.folder.ordered, line 202, in __contains__
+	TypeError: argument of type 'NoneType' is not iterable
+
+**Reason** Plone 3 > Plone 4 migration has not been run. Run the migration
+in *portal_migrations* under ZMI.
+
+TypeError: len() of unsized object in smtplib
+----------------------------------------------
+
+**Traceback**::
+
+    Traceback (innermost last):
+      Module ZPublisher.Publish, line 119, in publish
+      Module ZPublisher.mapply, line 88, in mapply
+      Module ZPublisher.Publish, line 42, in call_object
+      Module Products.CMFFormController.FSControllerPageTemplate, line 90, in __call__
+      Module Products.CMFFormController.BaseControllerPageTemplate, line 28, in _call
+      Module Products.CMFFormController.ControllerBase, line 231, in getNext
+      Module Products.CMFFormController.Actions.TraverseTo, line 38, in __call__
+      Module ZPublisher.mapply, line 88, in mapply
+      Module ZPublisher.Publish, line 42, in call_object
+      Module Products.CMFFormController.FSControllerPythonScript, line 104, in __call__
+      Module Products.CMFFormController.Script, line 145, in __call__
+      Module Products.CMFCore.FSPythonScript, line 140, in __call__
+      Module Shared.DC.Scripts.Bindings, line 313, in __call__
+      Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
+      Module Products.CMFCore.FSPythonScript, line 196, in _exec
+      Module None, line 102, in order_email
+       - <FSControllerPythonScript at /MySite/order_email>
+       - Line 102
+      Module Products.SecureMailHost.SecureMailHost, line 246, in secureSend
+      Module Products.SecureMailHost.SecureMailHost, line 276, in _send
+      Module Products.SecureMailHost.mail, line 126, in send
+      Module smtplib, line 576, in login
+      Module smtplib, line 536, in encode_cram_md5
+      Module hmac, line 50, in __init__
+    TypeError: len() of unsized object
+
+**Reason**: Your SMTP password has been set empty. Please reset your SMTP password in *Mail* control panel.
+
+.. seealso::
+    http://plone.293351.n2.nabble.com/Plone-3-3-5-sending-emails-len-of-unsized-object-error-NO-ESMTP-PASSWORD-tp5415484p5415484.html
+
+Unauthorized: The object is marked as private
+----------------------------------------------
+
+**Traceback**::
+
+    File "/home/moo/twinapex/parts/zope2/lib/python/zope/tales/expressions.py", line 124, in _eval
+      ob = self._traverser(ob, element, econtext)
+    File "/home/moo/twinapex/parts/zope2/lib/python/Products/PageTemplates/Expressions.py", line 105, in trustedBoboAwareZopeTraverse
+      request=request)
+    File "/home/moo/twinapex/parts/zope2/lib/python/zope/traversing/adapters.py", line 164, in traversePathElement
+      return traversable.traverse(nm, further_path)
+    File "/home/moo/twinapex/parts/zope2/lib/python/zope/traversing/adapters.py", line 44, in traverse
+      attr = getattr(subject, name, _marker)
+    File "/home/moo/twinapex/parts/zope2/lib/python/Shared/DC/Scripts/Bindings.py", line 184, in __getattr__
+      return guarded_getattr(self._wrapped, name, default)
+    File "/home/moo/twinapex/parts/zope2/lib/python/AccessControl/ImplPython.py", line 563, in validate
+      self._context)
+    File "/home/moo/twinapex/parts/zope2/lib/python/AccessControl/ImplPython.py", line 443, in validate
+      accessed, container, name, value, context)
+    File "/home/moo/twinapex/parts/zope2/lib/python/AccessControl/ImplPython.py", line 808, in raiseVerbose
+      raise Unauthorized(text)
+    Unauthorized: The object is marked as private.  Access to 'showVideo' of (Products.Five.metaclass.SimpleViewClass from /home/moo/twinapex/src/mfabrik.app/mfabrik/app/browser/campaigntopview.pt object at 0x11003a0c) denied.
+
+**Condition**:This error is raised when you try to access view functions or objects
+for a view, which you call manually from the code.
+
+**Reason**: View acquisition chain is not properly set up and the security manager cannot traverse acquisition
+chain parents to properly determine permissions.
+
+**Solution**: You need to use __of__() method to set-up the acquisition chain for the view::
+
+    def getHeadingView(self):
+        """
+        Check if we have campaign view avaiable for this content and use it.
+        """
+        view = queryMultiAdapter((self.context, self.request), name="mfabrik_heading")
+        view = view.__of__(self.context) # <---------- here
+        return view
+
+
+Unknown message (kss optimized for production mode) in Javascript console
+----------------------------------------------------------------------------
+
+This is a KSS error message. KSS is an technology used in Plone 3
+and started to be phased out in Plone 4.
+
+**Possible causes**:
+
+* Problems with KSS files (see portal_kss registry)
+
+* Browser bugs (Google around for the fixes)
+
+**Solution**:
+
+* Go to portal_kss
+
+* Remove are stale entries (missing files, marked on red)
+
+Also:
+
+* Put portal_kss for debug mode (in development environment)
+
+ValueError: Non-zero version length. Versions aren't supported.
+------------------------------------------------------------------
+
+**Traceback**::
+
+    File "/Users/moo/code/buildout-cache/eggs/zope.component-3.7.1-py2.6.egg/zope/component/registry.py", line 323, in subscribers
+      return self.adapters.subscribers(objects, provided)
+    File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZODB/Connection.py", line 838, in setstate
+      self._setstate(obj)
+    File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZODB/Connection.py", line 888, in _setstate
+      p, serial = self._storage.load(obj._p_oid, '')
+    File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZEO/ClientStorage.py", line 810, in load
+      data, tid = self._server.loadEx(oid)
+    File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZEO/ServerStub.py", line 176, in loadEx
+      return self.rpc.call("loadEx", oid)
+    File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZEO/zrpc/connection.py", line 703, in call
+      raise inst # error raised by server
+    ValueError: Non-zero version length. Versions aren't supported.
+
+**Condition**: When trying to open any page
+
+**Reason**: Most likely a corrupted Data.fs. Stop zeoserver. Recopy Data.fs. Recopy blobs.
+
+.. seealso::
+    * http://stackoverflow.com/questions/8387902/plone-upgrade-3-3-5-to-plone-4-1-2
+    * https://mail.zope.org/pipermail/zodb-dev/2010-September/013620.html
+
+Zope suddenly dies on OSX without a reason
+-------------------------------------------
+
+Symptoms: you do a HTTP request to a Plone site running OSX. Zope quits without a reason.
+
+Reason: Infinite recursion is not properly handled by Python on OSX. This is because
+OSX C stack size is smaller than Python default stack size. The underlying Python interpreter
+dies before being able to raise stack size limit exception.
+
+**Solution**
+
+Edit ``python-2.4/lib/python2.4/site.py`` or corresponding Python interpreter ``site.py``
+file (Python site installation customization file).
+
+Put in to the first code line::
+
+         sys.setrecursionlimit(800)
+
+This will force smaller Python stack not exceeding native OSX C stack.
+You might want to test other values and report back the findings.
+
+.. seealso::
+    http://blog.crowproductions.de/2008/12/14/a-buildout-to-tame-the-snake-pit/ (comments)
+
+from zopeskel.basic_namespace import BasicNamespace
+---------------------------------------------------------
+
+When starting ZopeSkel::
+
+  File "/home/moo/code/python2/parts/opt/lib/python2.6/pkgutil.py", line 238, in load_module
+    mod = imp.load_module(fullname, self.file, self.filename, self.etc)
+  File "/home/moo/code/plonecommunity/eggs/ZopeSkel-2.19-py2.6.egg/zopeskel/__init__.py", line 2, in <module>
+    from zopeskel.basic_namespace import BasicNamespace
+
+Or on paster with local commands::
+
+  File "/fast/buildout-cache/eggs/templer.core-1.0b4-py2.6.egg/templer/core/basic_namespace.py", line 3, in <module>
+    from templer.core.base import BaseTemplate
+  File "/fast/buildout-cache/eggs/templer.core-1.0b4-py2.6.egg/templer/core/base.py", line 8, in <module>
+    from paste.script import command
+  ImportError: cannot import name command
+
+System-wide templer / paster / zopeskel installation is affecting your buildout installation.
+
+Remove system-wide installation::
+
+    rm -rf /home/moo/code/python2/python-2.6/lib/python2.6/site-packages/ZopeSkel-2.19-py2.6.egg/
+
+Re-run buildout.
+
+Enjoy.
 
 getUtility() fails: ComponentLookupError
 ----------------------------------------
 
-Example exception::
+**Traceback**::
 
-        -> filter = getUtility(IConvergenceMediaFilter)
-        (Pdb) n
-        ComponentLookupError: <zope.component.interfaces.ComponentLookupError instance at 0x1038166c>
+    -> filter = getUtility(IConvergenceMediaFilter)
+    (Pdb) n
+    ComponentLookupError: <zope.component.interfaces.ComponentLookupError instance at 0x1038166c>
 
-Make sure that your class object implements in the utility interface in the question::
+**Solution**: Make sure that your class object implements in the utility interface in the question::
 
-        class ConvergedMediaFilter(object):
-            zope.interface.implements(IConvergenceMediaFilter)
+    class ConvergedMediaFilter(object):
+        zope.interface.implements(IConvergenceMediaFilter)
 
 
 get_language: 'NoneType' object has no attribute 'getLocaleID'
 ------------------------------------------------------------------------------------
 
-Example traceback::
+**Traceback**::
 
-        Traceback (innermost last):
+    Module ZPublisher.Publish, line 202, in publish_module_standard
+    Module ZPublisherEventsBackport.patch, line 115, in publish
+    Module plone.app.linkintegrity.monkey, line 21, in zpublisher_exception_hook_wrapper
+    Module Zope2.App.startup, line 221, in zpublisher_exception_hook
+    Module ZPublisherEventsBackport.patch, line 77, in publish
+    Module ZPublisher.mapply, line 88, in mapply
+    Module ZPublisher.Publish, line 42, in call_object
+    Module Products.Five.browser.metaconfigure, line 417, in __call__
+    Module Shared.DC.Scripts.Bindings, line 313, in __call__
+    Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
+    Module Products.PageTemplates.PageTemplateFile, line 129, in _exec
+    Module Products.CacheSetup.patch_cmf, line 126, in PT_pt_render
+    Warning: Macro expansion failed
+    Warning: exceptions.TypeError: ('Could not adapt', <HTTPRequest, URL=http://mansikki.redinnovation.com:9666/isleofback/sisalto/etusivu/isleofbackfrontpage_view>, <InterfaceClass zope.i18n.interfaces.IUserPreferredLanguages>)
+    Module zope.tal.talinterpreter, line 271, in __call__
+    Module zope.tal.talinterpreter, line 346, in interpret
+    Module zope.tal.talinterpreter, line 891, in do_useMacro
+    Module zope.tal.talinterpreter, line 346, in interpret
+    Module zope.tal.talinterpreter, line 536, in do_optTag_tal
+    Module zope.tal.talinterpreter, line 521, in do_optTag
+    Module zope.tal.talinterpreter, line 516, in no_tag
+    Module zope.tal.talinterpreter, line 346, in interpret
+    Module zope.tal.talinterpreter, line 534, in do_optTag_tal
+    Module zope.tal.talinterpreter, line 516, in no_tag
+    Module zope.tal.talinterpreter, line 346, in interpret
+    Module zope.tal.talinterpreter, line 745, in do_insertStructure_tal
+    Module Products.PageTemplates.Expressions, line 223, in evaluateStructure
+    Module zope.tales.tales, line 696, in evaluate
+    URL: file:/srv/plone/saariselka.fi/src/plonetheme.isleofback/plonetheme/isleofback/skins/plonetheme_isleofback_custom_templates/main_template.pt
+    Line 58, Column 4
+    Expression: <StringExpr u'plone.htmlhead.links'>
+    Names:
 
-            Module ZPublisher.Publish, line 202, in publish_module_standard
-            Module ZPublisherEventsBackport.patch, line 115, in publish
-            Module plone.app.linkintegrity.monkey, line 21, in zpublisher_exception_hook_wrapper
-            Module Zope2.App.startup, line 221, in zpublisher_exception_hook
-            Module ZPublisherEventsBackport.patch, line 77, in publish
-            Module ZPublisher.mapply, line 88, in mapply
-            Module ZPublisher.Publish, line 42, in call_object
-            Module Products.Five.browser.metaconfigure, line 417, in __call__
-            Module Shared.DC.Scripts.Bindings, line 313, in __call__
-            Module Shared.DC.Scripts.Bindings, line 350, in _bindAndExec
-            Module Products.PageTemplates.PageTemplateFile, line 129, in _exec
-            Module Products.CacheSetup.patch_cmf, line 126, in PT_pt_render
-            Warning: Macro expansion failed
-            Warning: exceptions.TypeError: ('Could not adapt', <HTTPRequest, URL=http://mansikki.redinnovation.com:9666/isleofback/sisalto/etusivu/isleofbackfrontpage_view>, <InterfaceClass zope.i18n.interfaces.IUserPreferredLanguages>)
-            Module zope.tal.talinterpreter, line 271, in __call__
-            Module zope.tal.talinterpreter, line 346, in interpret
-            Module zope.tal.talinterpreter, line 891, in do_useMacro
-            Module zope.tal.talinterpreter, line 346, in interpret
-            Module zope.tal.talinterpreter, line 536, in do_optTag_tal
-            Module zope.tal.talinterpreter, line 521, in do_optTag
-            Module zope.tal.talinterpreter, line 516, in no_tag
-            Module zope.tal.talinterpreter, line 346, in interpret
-            Module zope.tal.talinterpreter, line 534, in do_optTag_tal
-            Module zope.tal.talinterpreter, line 516, in no_tag
-            Module zope.tal.talinterpreter, line 346, in interpret
-            Module zope.tal.talinterpreter, line 745, in do_insertStructure_tal
-            Module Products.PageTemplates.Expressions, line 223, in evaluateStructure
-            Module zope.tales.tales, line 696, in evaluate
-            URL: file:/srv/plone/saariselka.fi/src/plonetheme.isleofback/plonetheme/isleofback/skins/plonetheme_isleofback_custom_templates/main_template.pt
-            Line 58, Column 4
-            Expression: <StringExpr u'plone.htmlhead.links'>
-            Names:
+    {'container': <IsleofbackFrontpage at /isleofback/sisalto/etusivu>,
+     'context': <IsleofbackFrontpage at /isleofback/sisalto/etusivu>,
+     'default': <object object at 0x7fd445785220>,
+     'here': <IsleofbackFrontpage at /isleofback/sisalto/etusivu>,
+     'loop': {},
+     'nothing': None,
+     'options': {'args': (<Products.Five.metaclass.SimpleViewClass from /srv/plone/saariselka.fi/src/isleofback.app/isleofback/app/browser/isleofbacknewfrontpageview.pt object at 0xbaa9910>,)},
+     'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0xcd1b3f8>,
+     'request': <HTTPRequest, URL=http://mansikki.redinnovation.com:9666/isleofback/sisalto/etusivu/isleofbackfrontpage_view>,
+     'root': <Application at >,
+     'template': <ImplicitAcquirerWrapper object at 0xcd208d0>,
+     'traverse_subpath': [],
+     'user': <SpecialUser 'Anonymous User'>,
+     'view': <Products.Five.metaclass.SimpleViewClass from /srv/plone/saariselka.fi/src/isleofback.app/isleofback/app/browser/isleofbacknewfrontpageview.pt object at 0xbaa9910>,
+     'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xcd20d90>}
 
-            {'container': <IsleofbackFrontpage at /isleofback/sisalto/etusivu>,
-             'context': <IsleofbackFrontpage at /isleofback/sisalto/etusivu>,
-             'default': <object object at 0x7fd445785220>,
-             'here': <IsleofbackFrontpage at /isleofback/sisalto/etusivu>,
-             'loop': {},
-             'nothing': None,
-             'options': {'args': (<Products.Five.metaclass.SimpleViewClass from /srv/plone/saariselka.fi/src/isleofback.app/isleofback/app/browser/isleofbacknewfrontpageview.pt object at 0xbaa9910>,)},
-             'repeat': <Products.PageTemplates.Expressions.SafeMapping object at 0xcd1b3f8>,
-             'request': <HTTPRequest, URL=http://mansikki.redinnovation.com:9666/isleofback/sisalto/etusivu/isleofbackfrontpage_view>,
-             'root': <Application at >,
-             'template': <ImplicitAcquirerWrapper object at 0xcd208d0>,
-             'traverse_subpath': [],
-             'user': <SpecialUser 'Anonymous User'>,
-             'view': <Products.Five.metaclass.SimpleViewClass from /srv/plone/saariselka.fi/src/isleofback.app/isleofback/app/browser/isleofbacknewfrontpageview.pt object at 0xbaa9910>,
-             'views': <zope.app.pagetemplate.viewpagetemplatefile.ViewMapper object at 0xcd20d90>}
+    Module Products.Five.browser.providerexpression, line 37, in __call__
+    Module plone.app.viewletmanager.manager, line 83, in render
+    Module plone.memoize.volatile, line 265, in replacement
+    Module plone.app.layout.links.viewlets, line 28, in render_cachekey
+    Module plone.app.layout.links.viewlets, line 19, in get_language
 
-            Module Products.Five.browser.providerexpression, line 37, in __call__
-            Module plone.app.viewletmanager.manager, line 83, in render
-            Module plone.memoize.volatile, line 265, in replacement
-            Module plone.app.layout.links.viewlets, line 28, in render_cachekey
-            Module plone.app.layout.links.viewlets, line 19, in get_language
-
-        AttributeError: <exceptions.AttributeError instance at 0xcd1bb48> (Also, the following error occurred while attempting to render the standard error message, please see the event log for full details: 'NoneType' object has no attribute 'getLocaleID')
+    AttributeError: <exceptions.AttributeError instance at 0xcd1bb48> (Also, the following error occurred while attempting to render the standard error message, please see the event log for full details: 'NoneType' object has no attribute 'getLocaleID')
 
 Some sort of Products.CacheSetup related problem on Plone 3.3.x, hiding the real error.
 Zope component architecture loading has failed (you are missing critical bits). This is
@@ -1988,30 +2014,30 @@ Start your instance on the foreground and you should see the actual error.
 importToolset: TypeError: 'NoneType' object is not callable
 --------------------------------------------------------------
 
-This happens when you try to install an add-on
+**Traceback**::
+
+    Module ZPublisher.Publish, line 47, in call_object
+    Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 575, in installProducts
+    Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 512, in installProduct
+     - __traceback_info__: ('plone.app.registry',)
+    Module Products.GenericSetup.tool, line 323, in runAllImportStepsFromProfile
+     - __traceback_info__: profile-plone.app.registry:default
+    Module Products.GenericSetup.tool, line 1080, in _runImportStepsFromContext
+    Module Products.GenericSetup.tool, line 994, in _doRunImportStep
+     - __traceback_info__: toolset
+    Module Products.GenericSetup.tool, line 123, in importToolset
+
+**Condition**: This happens when you try to install an add-on
 product through Add-ons configuration panel.
 
-Traceback::
-
-  Module ZPublisher.Publish, line 47, in call_object
-  Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 575, in installProducts
-  Module Products.CMFQuickInstallerTool.QuickInstallerTool, line 512, in installProduct
-   - __traceback_info__: ('plone.app.registry',)
-  Module Products.GenericSetup.tool, line 323, in runAllImportStepsFromProfile
-   - __traceback_info__: profile-plone.app.registry:default
-  Module Products.GenericSetup.tool, line 1080, in _runImportStepsFromContext
-  Module Products.GenericSetup.tool, line 994, in _doRunImportStep
-   - __traceback_info__: toolset
-  Module Products.GenericSetup.tool, line 123, in importToolset
-
-You have leftovers from some old add-on installation (persistent tool)
+**Reason**: You have leftovers from some old add-on installation (persistent tool)
 and Python egg code is no longer present for this tool.
 
 You should see a warning in logs giving you a hint when running add-on installer::
 
-        2011-05-29 16:40:25 INFO GenericSetup.toolset Class Products.Notifica.NotificaTool.NotificaTool not found for tool notifica_tool
+    2011-05-29 16:40:25 INFO GenericSetup.toolset Class Products.Notifica.NotificaTool.NotificaTool not found for tool notifica_tool
 
-To fix this, see informatin below (Removing portal tools part)
+**Solution**: see informatin below (Removing portal tools part)
 
 * http://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
 
@@ -2052,136 +2078,98 @@ In debug shell you can also check what all leftoverts toolset contains::
         'MailHost', 'portal_properties', 'portal_migration', 'portal_types', 'portal_uidgenerator']
 
 
-More info
+.. seealso::
+    http://plone.293351.n2.nabble.com/importToolset-NoneType-object-is-not-callable-upon-product-install-td5553065.html
 
-* http://plone.293351.n2.nabble.com/importToolset-NoneType-object-is-not-callable-upon-product-install-td5553065.html
+z3c.form based form updateWidgets() raises ComponentLookupError
+---------------------------------------------------------------
 
+Case 1: z3c.form with Plone 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-from zopeskel.basic_namespace import BasicNamespace
----------------------------------------------------------
+**Traceback**::
 
-When starting ZopeSkel::
+    Error in test test_render_form (gomobile.convergence.tests.test_mobile_overrides.TestMobileOverrides)
+    Traceback (most recent call last):
+      File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/Testing/ZopeTestCase/profiler.py", line 98, in __call__
+        testMethod()
+      File "/Users/moo/twinapex/twinapex/src/gomobile.convergence/gomobile/convergence/tests/test_mobile_overrides.py", line 65, in test_render_form
+        result()
+      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 189, in __call__
+        self.update()
+      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 184, in update
+        super(Form, self).update()
+      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 134, in update
+        self.updateWidgets()
+      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 120, in updateWidgets
+        self.widgets = zope.component.getMultiAdapter(
+      File "/Users/moo/twinapex/twinapex/eggs/zope.component-3.5.1-py2.4.egg/zope/component/_api.py", line 104, in getMultiAdapter
+        raise ComponentLookupError(objects, interface, name)
+    ComponentLookupError: ((<Products.Five.metaclass.documentoverriderform object at 0x711c6f0>, <HTTPRequest, URL=http://nohost>, <ATDocument at /plone/doc>), <InterfaceClass z3c.form.interfaces.IWidgets>, u'')
 
-  File "/home/moo/code/python2/parts/opt/lib/python2.6/pkgutil.py", line 238, in load_module
-    mod = imp.load_module(fullname, self.file, self.filename, self.etc)
-  File "/home/moo/code/plonecommunity/eggs/ZopeSkel-2.19-py2.6.egg/zopeskel/__init__.py", line 2, in <module>
-    from zopeskel.basic_namespace import BasicNamespace
+**Reason**: To use z3c.form based forms z3c.form.interfaces.IFormRequest must be enabled for HTTP request
+object to make form layer adaptions work.
 
-Or on paster with local commands::
+**Solution**:
 
-  File "/fast/buildout-cache/eggs/templer.core-1.0b4-py2.6.egg/templer/core/basic_namespace.py", line 3, in <module>
-    from templer.core.base import BaseTemplate
-  File "/fast/buildout-cache/eggs/templer.core-1.0b4-py2.6.egg/templer/core/base.py", line 8, in <module>
-    from paste.script import command
-  ImportError: cannot import name command
+* Wrap your forms with plone.z3cform.layout.wrap_form() call as instructed in plone.z3cform README
 
-System-wide templer / paster / zopeskel installation is affecting your buildout installation.
+The same error occurs if plone.app.z3cform, plone.z3cform and z3c.form are not properly included through ZCML.
+In order to be sure that those modules are properly included, you can add the following lines into your configure.zcml
 
-Remove system-wide installation::
+.. code-block:: xml
 
-    rm -rf /home/moo/code/python2/python-2.6/lib/python2.6/site-packages/ZopeSkel-2.19-py2.6.egg/
+        <include package="plone.app.z3cform" />
+        <include package="plone.z3cform" />
+        <include package="z3c.form" />
 
-Re-run buildout.
+...or you can use autoinclude feature for Plone 3.3+
 
-Enjoy.
+in configure.zcml
 
-TypeError: 'ExtensionClass.ExtensionClass' object is not iterable
-------------------------------------------------------------------
+.. code-block:: xml
 
-This error tends to happen after moving a Data.fs to a new instance that does not have the identical add-ons to the original instance.
+        <includeDependencies package="." />
 
-Traceback::
-
-  Module ZPublisher.Publish, line 126, in publish
-  Module ZPublisher.mapply, line 77, in mapply
-  Module ZPublisher.Publish, line 46, in call_object
-  Module Shared.DC.Scripts.Bindings, line 322, in __call__
-  Module Products.PloneHotfix20110531, line 106, in _patched_bindAndExec
-  Module Shared.DC.Scripts.Bindings, line 359, in _bindAndExec
-  Module App.special_dtml, line 185, in _exec
-  Module DocumentTemplate.DT_Let, line 77, in render
-  Module DocumentTemplate.DT_In, line 647, in renderwob
-  Module DocumentTemplate.DT_In, line 772, in sort_sequence
-  Module ZODB.Connection, line 860, in setstate
-  Module ZODB.Connection, line 914, in _setstate
-  Module ZODB.serialize, line 612, in setGhostState
-  Module ZODB.serialize, line 605, in getState
-  Module zope.interface.declarations, line 756, in Provides
-  Module zope.interface.declarations, line 659, in __init__
-  Module zope.interface.declarations, line 45, in __init__
-  Module zope.interface.declarations, line 1382, in _normalizeargs
-  Module zope.interface.declarations, line 1381, in _normalizeargs
-  TypeError: ("'ExtensionClass.ExtensionClass' object is not iterable", <function Provides at 0x9f04d84>, (<class 'Products.ATContentTypes.content.folder.ATFolder'>, <class 'Products.Carousel.interfaces.ICarouselFolder'>))
-
-In this example traceback the missing add-on is Products.Carousel which provides the marker interface Products.Carousel.interfaces.ICarousel
-
-Solution: Install the missing add-on(s)
+and then your add-on product setup.py file::
 
 
-Unknown message (kss optimized for production mode) in Javascript console
-----------------------------------------------------------------------------
+        install_requires=[
+          'setuptools',
+          'plone.app.z3cform',
+          # -*- Extra requirements: -*-
+      ],
 
-This is a KSS error message. KSS is an technology used in Plone 3
-and started to be phased out in Plone 4.
+Also remember to run Plone add-on installer for plone.app.z3cform (though it is unrelated to this error).
 
-Possible causes are
+Case 2: missing plone.app.z3cform migration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Problems with KSS files (see portal_kss registry)
+**Traceback**::
 
-* Browser bugs (Google around for the fixes)
+    Traceback (innermost last):
+      Module ZPublisher.Publish, line 126, in publish
+      Module ZPublisher.mapply, line 77, in mapply
+      Module ZPublisher.Publish, line 46, in call_object
+      Module z3c.form.form, line 215, in __call__
+      Module z3c.form.form, line 208, in update
+      Module plone.z3cform.patch, line 21, in BaseForm_update
+      Module z3c.form.form, line 149, in update
+      Module z3c.form.form, line 129, in updateWidgets
+      Module zope.component._api, line 109, in getMultiAdapter
+    ComponentLookupError: ((<Products.Five.metaclass.EditForm object at 0x117a97dd0>, <HTTPRequest, URL=http://localhost:8080/folder_xxx/xxxngta/@@dgftreeselect-test>, <PloneSite at /folder_xxx/xxxngta>), <InterfaceClass z3c.form.interfaces.IWidgets>, u'')
 
-What you can do:
+**Reason**: You are running Plone 4 with ``plone.app.directives`` form which does not
+open. The reason is that you most likely have old ``plone.app.z3cform``
+installation which is not upgraded properly. In particular,
+the following layer is missing
 
-* Go to portal_kss
+.. code-block:: xml
 
-* Remove are stale entries (missing files, marked on red)
+	<layer name="plone.app.z3cform" interface="plone.app.z3cform.interfaces.IPloneFormLayer" />
 
-Also:
+This enables ``z3c.form`` widgets on a Plone site.
 
-* Put portal_kss for debug mode (in development environment)
+**Solution**: *portal_setup* > *Import*. Choose profile *Plone z3cform support*.
+and import. The layer gets properly inserted to your site database.
 
-ValueError: Non-zero version length. Versions aren't supported.
-------------------------------------------------------------------
-
-When trying to open any page::
-
-      File "/Users/moo/code/buildout-cache/eggs/zope.component-3.7.1-py2.6.egg/zope/component/registry.py", line 323, in subscribers
-        return self.adapters.subscribers(objects, provided)
-      File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZODB/Connection.py", line 838, in setstate
-        self._setstate(obj)
-      File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZODB/Connection.py", line 888, in _setstate
-        p, serial = self._storage.load(obj._p_oid, '')
-      File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZEO/ClientStorage.py", line 810, in load
-        data, tid = self._server.loadEx(oid)
-      File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZEO/ServerStub.py", line 176, in loadEx
-        return self.rpc.call("loadEx", oid)
-      File "/Users/moo/code/buildout-cache/eggs/ZODB3-3.9.5-py2.6-macosx-10.6-i386.egg/ZEO/zrpc/connection.py", line 703, in call
-        raise inst # error raised by server
-    ValueError: Non-zero version length. Versions aren't supported.
-
-Most likely a corrupted Data.fs. Stop zeoserver. Recopy Data.fs. Recopy blobs.
-
-More info
-
-* http://stackoverflow.com/questions/8387902/plone-upgrade-3-3-5-to-plone-4-1-2
-
-* https://mail.zope.org/pipermail/zodb-dev/2010-September/013620.html
-
-
-TypeError: argument of type 'NoneType' is not iterable
----------------------------------------------------------
-
-Example traceback::
-
-	Module ZPublisher.Publish, line 115, in publish
-	  Module ZPublisher.BaseRequest, line 437, in traverse
-	  Module Products.CMFCore.DynamicType, line 147, in __before_publishing_traverse__
-	  Module Products.CMFDynamicViewFTI.fti, line 215, in queryMethodID
-	  Module Products.CMFDynamicViewFTI.fti, line 182, in defaultView
-	  Module Products.CMFPlone.PloneTool, line 831, in browserDefault
-	  Module plone.app.folder.base, line 65, in index_html
-	  Module plone.folder.ordered, line 202, in __contains__
-	TypeError: argument of type 'NoneType' is not iterable
-
-Plone 3 > Plone 4 migration has not been run. Run the migration
-in *portal_migrations* under ZMI.

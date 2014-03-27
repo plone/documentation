@@ -37,6 +37,12 @@ Narative documentation
    about/index
    
 
-   
-:doc:`Licence </license>`
 
+
+
+   
+
+.. toctree::
+   :maxdepth: 1
+
+   license
