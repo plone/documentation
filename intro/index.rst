@@ -8,7 +8,7 @@ What is plone?
 **A powerful, flexible Content Management Solution that is easy to install, use and extend.**
 
 Plone lets non-technical people create and maintain information for a public website or an intranet using only a web browser. 
-Plone is easy to understand and use - allowing users to be productive in just half an hour - yet offers a wealth of community-developed add-ons and extensibility to keep meeting your needs for years to come.
+Plone is easy to understand and use - allowing users to be productive in just half an hour - yet offers a wealth of community-developed add-ons and extensibility to keep meeting your needs for years to come.
 
 Blending the creativity and speed of open source with a technologically advanced `Python`_ back-end, Plone offers superior security without sacrificing power or extensibility.
 
@@ -19,8 +19,8 @@ Out of that diversity comes an attention to detail in code, function, user inter
 
 .. _Ohloh: http://www.ohloh.net/
 
-**Plone’s intellectual property** and trademarks are protected by the non-profit `Plone Foundation`_. 
-This means that Plone’s future is not in the hands of any one person or company.
+**Plone's intellectual property** and trademarks are protected by the non-profit `Plone Foundation`_. 
+This means that Plone's future is not in the hands of any one person or company.
 
 .. _Plone Foundation: http://plone.org/about/foundation
 
@@ -33,17 +33,16 @@ You can find a list of providers and consultants on `plone.org`_.
 .. _plone.org: http://plone.org/support/hosting-providers
 
 **We are very proud to be known by the company we keep.** 
-Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell, the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments - all use Plone.
+Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell, the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments - all use Plone.
 
-**Plone is open on many levels.** It runs on Linux, Windows, Mac OS X, FreeBSD and Solaris - and offers a straightforward installation to get you up and running in minutes. 
+**Plone is open on many levels.** It runs on Linux, Windows, Mac OS X, FreeBSD and Solaris - and offers a straightforward installation to get you up and running in minutes. 
 It has been translated into more than 40 languages, and is developed with an unflinching emphasis on usability and standards compliance.
 
 **Need a CMS that integrates** with Active Directory, Salesforce, LDAP, SQL, Web Services. LDAP or Oracle? Plone does. 
-Need to be sure your website is accessible? Plone meets or exceeds US Government 508 and W3C’s WAI-AA standards.
+Need to be sure your website is accessible? Plone meets or exceeds US Government 508 and W3C's WAI-AA standards.
 
 **Worried about security?** As an open source product, a large number of developers frequently scrutinize the code for any potential security issues. 
 This proactive approach is better than the wait-and-see approach in proprietary software that relies on keeping security issues a secret instead of resolving them outright.
-
 Based on Python and the Zope libraries, Plone has a technological edge that has has helped it attain the best security track record of any major CMS (Source: `CVE`_). 
 In fact, security is a major reason why many CMS users are switching to Plone.
 
@@ -53,7 +52,5 @@ The market is full of open source content management systems, so it is important
 Remember that a simple CMS may work out great to start with, but lead to problems with scaling or migration when you need more capability than it can provide. 
 At the other end of the spectrum, a powerful CMS can be so difficult to learn and maintain that it never gains acceptance to users. 
 Make sure the CMS you choose meets your needs today without compromising future growth.
-
-We hope you’ll take the time to learn more about Plone and what it can do for you. 
-We’ve created this site specifically as a gateway to information on how to get started with Plone, as well as information on development, solutions providers, events, news, and the wealth of product add-ons created by the community.
-
+We hope you'll take the time to learn more about Plone and what it can do for you. 
+We've created this site specifically as a gateway to information on how to get started with Plone, as well as information on development, solutions providers, events, news, and the wealth of product add-ons created by the community.
