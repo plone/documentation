@@ -15,7 +15,7 @@ If you are building the codebase Plone behaves as any other Python application.
 
 * Write your SQL related code using known available Python SQL libraries and frameworks
 
-* Plug your code to Plone HTML pages through :doc:`views </views/browserviews>`
+* Plug your code to Plone HTML pages through :doc:`views </develop/plone/views/browserviews>`
 
 Example Python SQL libraries
 

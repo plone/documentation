@@ -29,7 +29,7 @@ Getting the logged-in member
 ============================
 
 Anonymous and logged-in members are exposed via the
-:doc:`IPortalState context helper </misc/context>`.
+:doc:`IPortalState context helper </develop/plone/misc/context>`.
 
 Example (browserview: use ``self.context`` since ``self`` is not
 acquisition-wrapped)::
@@ -98,7 +98,7 @@ Depending on the Plone version and add-ons in use, it may not be available.
 
 You can use this hash directly when importing your user data,
 for example as follows (can be executed from a 
-:doc:`debug prompt </misc/commandline>`.)::
+:doc:`debug prompt </develop/plone/misc/commandline>`.)::
 
     # The file 'exported.txt' contains lines with: "memberid hash"
     lines = open('exported.txt').readlines()

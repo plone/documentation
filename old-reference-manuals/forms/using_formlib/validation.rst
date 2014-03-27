@@ -64,7 +64,7 @@ docstring will be used in the error message.
 Now, if you type an invalid address into the *customer* field and click
 *send*, a kind and colorful error message will be displayed:
 
-.. figure:: /images/formlib_validation_error_pretty.png
+.. figure:: /develop/plone/images/formlib_validation_error_pretty.png
    :align: center
    :alt: Simple validation error
 
@@ -153,7 +153,7 @@ file:
 Restart your Zope instance for the changes to take effect and test your
 new form. You'll see something similar to this:
 
-.. figure:: /images/formlib_invariant_error.png
+.. figure:: /develop/plone/images/formlib_invariant_error.png
    :align: center
    :alt: Invariant error
 

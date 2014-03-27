@@ -211,6 +211,7 @@ You can also SSH tunnel the proxy from a remote server:
 *!!Attention!!*
 
   In Plone 4.3 the System changed , and from now on you get special users with different privileges for buildout and run. Because of the sudo command you proxy environment variables aren't saved in the sudo env list. 
+
 There are 3 ways to fix this in \*nix systems: 
 
 Inline: Set the environment variable inline. 
@@ -327,7 +328,7 @@ needed to establish a Plone site is:
 
 Below is an example process.
 
-Activate Python 2.6 for Plone (see :doc:`how to use virtualenv controlled non-system wide Python </getstarted/python>`):
+Activate Python 2.6 for Plone (see :doc:`how to use virtualenv controlled non-system wide Python </develop/plone/getstarted/python>`):
 
 .. code-block:: console
 
@@ -511,5 +512,5 @@ Want to do both examples at the same time::
 Troubleshooting
 ----------------
 
-See :doc:`Buildout troubleshooting </troubleshooting/buildout>` chapter.
+See :doc:`Buildout troubleshooting </manage/troubleshooting/buildout>` chapter.
 

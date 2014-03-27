@@ -450,7 +450,7 @@ for the default item) in page templates:
 
 More info:
 
-* See :doc:`plone_context_state helper <develop/addons/helloworld/extend/content>`
+* See :doc:`plone_context_state helper </develop/addons/helloworld/extend/content>`
 
 Checking if an item is the site front page
 --------------------------------------------

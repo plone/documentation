@@ -98,7 +98,7 @@ Below is an example which:
 * rewrites all relative links of Page content as absolute; 
 * removes some nasty tags from Page content; 
 * outputs the folder content and subcontent as one continuous page; 
-* is based on :doc:`Grok views </components/grok>`.
+* is based on :doc:`Grok views </develop/addons/components/grok>`.
 
 This is suitable for e.g. printing the whole folder in one pass.
 

@@ -134,7 +134,7 @@ Post-login actions are executed after a successful login. Post-login actions whi
 
 * Setting the status message after login
 
-Post-login code can be executd with :doc:`events </components/events>` defined in
+Post-login code can be executd with :doc:`events </develop/addons/components/events>` defined in
 PluggableAuthService service.
 
 * ``IUserLoggedInEvent``
@@ -143,7 +143,7 @@ PluggableAuthService service.
 
 * ``IUserLoggedOutEvent``
 
-Here is an :doc:`Grok based </components/grok>` example how to redirect a user to
+Here is an :doc:`Grok based </develop/addons/components/grok>` example how to redirect a user to
 a custom folder after he/she logs in (overrides standard Plone login behavior)
 
 ``postlogin.py``::
@@ -300,7 +300,7 @@ For each set of extracted credentials, try to authenticate
 a user;  accumulate a list of the IDs of such users over all
 our authentication and extraction plugins.
 
-``PluggableAuthService`` may use :doc:`ZCacheable </performance/ramcache>`
+``PluggableAuthService`` may use :doc:`ZCacheable </manage/deploying/testing_tuning/performance/ramcache>`
 pattern to see if the user data exists already in the cache, based on
 any extracted credentials, instead of actually checking whether
 the credentials are valid or not. PluggableAuthService must

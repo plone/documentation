@@ -95,7 +95,7 @@ Expressions
 
 The ``expression`` attribute of ``portal_css`` defines when your CSS file is
 included on an HTML page.  For more information see
-:doc:`expressions documentation </functionality/expressions>`.
+:doc:`expressions documentation </develop/plone/functionality/expressions>`.
 
 Inserting CSS as last into anonymous bundles
 ---------------------------------------------

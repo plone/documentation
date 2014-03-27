@@ -45,4 +45,4 @@ The examples of running tests use the standard commands for buildouts, since
 this is the only way that works reliably on Windows (that is, plain zopectl
 test will not work on Windows).
 
-Take a look at the :doc:`buildout docs </reference_manuals/old/buildout/index>` for more information.
+Take a look at the :doc:`buildout docs </old-reference-manuals/buildout/index>` for more information.

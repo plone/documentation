@@ -29,7 +29,6 @@ The target audience of the documentation includes
    develop/index
    appendices/index
    about/index
-   
 
 .. toctree::
    :maxdepth: 1

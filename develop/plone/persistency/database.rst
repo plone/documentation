@@ -76,7 +76,7 @@ Query and searching
 ZODB does not provide query services as is
 i.e. there is no SELECT statement.
 
-Plone provides :doc:`cataloging </searching_and_indexing/catalog>`
+Plone provides :doc:`cataloging </develop/plone/searching_and_indexing/catalog>`
 service for this purpose.
 
 This gives some benefits
@@ -112,7 +112,7 @@ There are currently three primary ways to define data models in Plone
 
 * Not defining the model, but relying on ad hoc object attributes
 
-Read about :doc:`zope.schema </forms/schemas>`
+Read about :doc:`zope.schema </develop/plone/forms/schemas>`
 how to define a model for the data to be stored
 in ZODB database.
 
@@ -181,7 +181,7 @@ script from your ``buildout/bin`` folder::
 
     bin/zopepy pack.py
 
-For more information, see :doc:`command-line scripts </misc/commandline>`.
+For more information, see :doc:`command-line scripts </develop/plone/misc/commandline>`.
 
 Visualizing object graphs
 ====================================

@@ -16,7 +16,7 @@ Add-ons allow portlets in other parts in of the user interface too, like
 above and below the content.
 
 This document is contains quick how-to information only.
-Please visit :doc:`Portlets reference manual </reference_manuals/old/portlets/index>`
+Please visit :doc:`Portlets reference manual </old-reference-manuals/portlets/index>`
 for in-depth information.
 
 Related add-ons and packages

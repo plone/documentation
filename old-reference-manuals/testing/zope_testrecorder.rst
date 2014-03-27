@@ -41,7 +41,7 @@ Presuming you run Zope on localhost:8080, you should now be able to go
 to http://localhost:8080/test-recorder/index.html. You should see a page
 something like this:
 
-.. figure:: /images/blank-testrecorder.png
+.. figure:: /develop/plone/images/blank-testrecorder.png
    :align: center
    :alt: Screenshot of blank test recorder
 
@@ -56,7 +56,7 @@ doctest, click the Add comment button. If you wish to verify that some
 text appears on the page, highlight that text, shift-click on it, and
 select “Check text appears on page”:
 
-.. figure:: /images/verify-testrecorder.png
+.. figure:: /develop/plone/images/verify-testrecorder.png
    :align: center
    :alt: Screenshot of text verification
 

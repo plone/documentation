@@ -185,13 +185,13 @@ And that's all! Here's how the form and result pages will look like:\ **
 
 **Contact form:**
 
-.. figure:: /images/formlib_firstform-filled.png
+.. figure:: /develop/plone/images/formlib_firstform-filled.png
    :align: center
    :alt: First form
 
 **Result page**:
 
-.. figure:: /images/formlib_firstresult.png
+.. figure:: /develop/plone/images/formlib_firstresult.png
    :align: center
    :alt: First result
 

@@ -130,7 +130,7 @@ Do not index image objects themselves, as adding image data to the
 ``portal_catalog`` brain objects would greatly increase their site and make
 brain look-up slow.
 
-Instead, index only image paths using :doc:`getPhysicalPath() </serving/traversing>`.
+Instead, index only image paths using :doc:`getPhysicalPath() </develop/plone/serving/traversing>`.
 When you need to display image using metadata columns, you can generate the image
 URL manually. Then, the image object will be woken up when the browser makes a
 HTTP request for the image.
@@ -147,7 +147,7 @@ you to configure available image scales in ``portal_properties`` ->
 ``imaging_properties``.
 
 You can update these through-the-web or using :doc:`GenericSetup profile
-</components/genericsetup>`.
+</develop/addons/components/genericsetup>`.
 
 ``propertiestool.xml``
 

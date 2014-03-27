@@ -310,7 +310,7 @@ Plone calls reindexObject() if
   to get the existing values from content objects to new index.
 
 * You might also want to call :doc:`reindexObject()
-  </searching_and_indexing/catalog>` method  manually in some
+  </develop/plone/searching_and_indexing/catalog>` method  manually in some
   cases. This method is defined in the `ICatalogAware <http://svn.zope.org/Products.CMFCore/trunk/Products/CMFCore/interfaces/_content.py?rev=91414&view=auto>`_ interface.
 
 

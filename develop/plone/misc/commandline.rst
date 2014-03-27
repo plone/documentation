@@ -105,7 +105,7 @@ Script could look like::
         if "app" in locals():
             main(app)
 
-You probably need to spoof your :doc:`security credentials </security/permissions>`.
+You probably need to spoof your :doc:`security credentials </develop/plone/security/permissions>`.
 
 .. note ::
         
@@ -209,7 +209,7 @@ to have long-running transactions you need to at least two
 front end processes, ZEO clients, so that long-running
 transactions won't block your site. 
 
-* :doc:`Converting instance to ZEO based configuration </reference_manuals/old/buildout/zope_to_zeo>`
+* :doc:`Converting instance to ZEO based configuration </old-reference-manuals/buildout/zope_to_zeo>`
 
 Your code might want to call transaction.commit() now and then to commit the 
 current transaction.

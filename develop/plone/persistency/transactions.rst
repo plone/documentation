@@ -104,7 +104,7 @@ http://svn.zope.org/transaction/trunk/transaction/_transaction.py?rev=81646&view
 Viewing transaction content and debugging transactions
 =======================================================
 
-Please see :doc:`Transaction troubleshooting </troubleshooting/transactions>`
+Please see :doc:`Transaction troubleshooting </manage/troubleshooting/transactions>`
 
 Undoing transactions
 =======================

@@ -3,6 +3,7 @@ Miscellaneous information
 ==========================
 
 This section describes functions and APIs which are not directly related to any bigger subsystems.
+Also some other information that does not fit in any specific category
 
 # Managing member profile (portal_membership under site root)
 
@@ -28,3 +29,4 @@ This section describes functions and APIs which are not directly related to any 
     sql
     portal_transforms
     porg
+    plone5way

@@ -2,7 +2,7 @@
  Installation
 =======================
 
-.a. admonition:: Description
+.. admonition:: Description
 
     Installation instructions for Plone for various operating systems and situations.
 

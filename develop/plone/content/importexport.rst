@@ -88,7 +88,7 @@ then add the following to your ZCML::
 
 Then the "Content (transmogrifier)" generic setup import / export will import / export site content to JSON files.
 
-For more information on using, see `this blog post <http://shuttlethread.com/blog/development-with-transmogrify.dexterity>`_.
+For more information on using, see `this transmogrify blog post <http://shuttlethread.com/blog/development-with-transmogrify.dexterity>`_.
 
 quintagroup.transmogrifier: Exporting single folder only
 ========================================================
@@ -213,7 +213,10 @@ More information
 Fast content import
 -------------------
 
+
+For specific use-cases, you can create 'brains' first and import later
 * See `this blog post <http://blog.redturtle.it/redturtle-blog/fast-content-import>`_
+
 
 collective.jsonmigrator
 ------------------------

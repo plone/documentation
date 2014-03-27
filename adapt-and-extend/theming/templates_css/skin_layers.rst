@@ -165,7 +165,7 @@ Poking portal_skins
 ``portal_skins`` is a persistent tool in Plone site root providing functions to manage skin layers.
 Its code mostly lives in ``Products.CMFCore.SkinsTool``.
 
-Available skin layers are directly exposed as :doc:`traversable </serving/traversing>` attributes::
+Available skin layers are directly exposed as :doc:`traversable </develop/plone/serving/traversing>` attributes::
 
         (Pdb) for i in dir(portal_skins): print i
         ATContentTypes
@@ -196,7 +196,7 @@ You can edit a specific skin layer::
 
         skin = portal_skins.getSkinByName("Go Mobile Default Theme")
 
-``portal_skins.selections`` is a :doc:`PersistentDict </persistency/persistent>` object
+``portal_skins.selections`` is a :doc:`PersistentDict </develop/plone/persistency/persistent>` object
 holding *skin name* -> *comma separated layer list* mappings.
 
 

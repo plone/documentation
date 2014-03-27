@@ -8,7 +8,7 @@ For content-oriented forms:
 
 * :doc:`Dexterity </develop/addons/dexterity>` for Plone 4.1+
 
-* :doc:`Archetypes </reference_manuals/old/archetypes/index>` is used for content types in Plone 3.x
+* :doc:`Archetypes </old-reference-manuals/archetypes/index>` is used for content types in Plone 3.x
 
 For convenience forms built and maintained through-the-web and where the results are stored in CSV sheet or emailed:
 
