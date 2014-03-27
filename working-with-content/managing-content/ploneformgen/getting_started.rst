@@ -161,7 +161,7 @@ If you want to see the form the way that your site visitors would, you can click
 
 Note that you cannot complete or submit the form when working in the editing environment. You will need to return to the normal form view first.
 
-.. image:: quickedit-demo.gif
+.. image:: quickedit-demo.png
    :alt: screenshot: Quick edit demo
 
 Changing the Order of the Fields

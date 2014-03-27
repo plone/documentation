@@ -98,4 +98,4 @@ as the caption all inserted into a frame:
    :align: center
    :alt: 
 
-.. |Image| image:: /_static/image.gif
+.. |Image| image:: /_static/image.png

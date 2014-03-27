@@ -65,7 +65,7 @@ but you can count on it looking like a tabbed interface with this
 particular green color. In the following screen capture, user John Smith
 has logged into a new Plone web site:
 
-.. figure:: /_static/plonemain3.0loggedin.png
+.. figure:: /_static/plonemain3_0loggedin.png
    :align: center
    :alt: 
 

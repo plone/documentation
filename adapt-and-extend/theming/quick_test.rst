@@ -25,7 +25,7 @@ Procedure
 
 If you're using Plone 4.2, look for 'Site Setup' > 'Theming'.
 
-.. image:: images/sitesetup-cp-4.2.png
+.. image:: images/sitesetup-cp-4_2.png
 
 In a Plone 4.1 with plone.app.theming you may find the same thing under 'Site Setup' > 'Diazo theme'
 Instead.
