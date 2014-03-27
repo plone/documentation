@@ -25,9 +25,10 @@
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.todo'
+    'sphinx.ext.todo',
     #'collective.sphinx.autoatschema',
-    #'collective.sphinx.includedoc'
+    #'collective.sphinx.includedoc'    
+    #'sphinxcontrib.contributors',
     ]
 
 # See http://sphinx.pocoo.org/ext/todo.html#confval-todo_include_todos
@@ -148,7 +149,7 @@ html_static_path = ['_static']
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
 html_sidebars = {
-    '**': ['localtoc.html', 'searchbox.html', ],
+    '**': ['localtoc.html', 'searchbox.html', 'plone.html', 'contributors.html'],
 }
 # Additional templates that should be rendered to pages, maps page names to
 # template names.

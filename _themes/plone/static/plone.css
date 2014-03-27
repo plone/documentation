@@ -29,6 +29,23 @@ div.sphinxsidebar {
     border: 1px solid #eeeeee;
 }
 
+div.sphinxsidebar div.logo {
+    background-color: #329fd7;
+    padding: 10px;    
+    margin-left: -11px;
+    margin-right: -6px;
+    margin-top: -11px;
+    text-align: center;
+}
+
+div.sphinxsidebar div.logo a span {
+    display: block;
+    color: #FFF;
+    font-size: 24px;
+    margin-top: 5px;
+
+}
+
 div.sphinxsidebar h3 {
     margin-left: -11px;
     margin-right: -6px;
@@ -72,6 +89,13 @@ a:link, a:visited {
 a:link:hover,
 a:visited:hover {
     color: #75ad0a;
+}
+
+div.footer {
+    color: #329fd7;
+}
+div.footer a {
+    color: #329fd7;
 }
 
 
