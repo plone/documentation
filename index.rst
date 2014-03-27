@@ -17,8 +17,8 @@ The target audience of the documentation includes
 * System administrators: hosting Plone on a serverz
 
 
-Narrative documentationz
-=======================
+Naarrative documentation
+========================
 
 
 .a. toctree::z
