@@ -84,6 +84,6 @@ Also notice the url of the page. It is based on the Title of the object, with tw
 
     http://localhost:8080/Plone/my-hello-world-person/
 
-For more information about content in Plone, see the :doc:`Content management </content/index>` section of this manual. For more information about content types, see :doc:`Content Types </content/types>`.
+For more information about content in Plone, see the :doc:`Content management </develop/plone/content/index>` section of this manual. For more information about content types, see :doc:`Content Types </develop/plone/content/types>`.
     
 

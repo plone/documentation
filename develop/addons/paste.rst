@@ -91,7 +91,7 @@ Troubleshooting
 -----------------
 
 If you get any exceptions running this command see 
-:doc:`troubleshooting </troubleshooting/exceptions>`.
+:doc:`troubleshooting </manage/troubleshooting/exceptions>`.
 If self-service help doesn't get you anywhere `file issues on Github 
 <https://github.com/collective/ZopeSkel/issues>`_.
 
@@ -113,7 +113,7 @@ ZopeSkel Templates
 
 ``archetypes``
     Creates a package skeleton for 
-    :doc:`Archetypes </content/archetypes/index>` based content types.
+    :doc:`Archetypes </develop/plone/content/archetypes/index>` based content types.
     
 ``dexterity``
     Creates a package for developing Dexterity content types.
@@ -176,9 +176,9 @@ in your ``buildout.cfg``::
 
 Rerun buildout to pick up the new package.
 
-:doc:`Restart Plone in foreground mode </troubleshooting/basic>`.
+:doc:`Restart Plone in foreground mode </manage/troubleshooting/basic>`.
 If your new code files contain errors it usually fails at this point
-with a :doc:`Python traceback </troubleshooting/exceptions>`.  
+with a :doc:`Python traceback </manage/troubleshooting/exceptions>`.  
 This traceback will contain valuable information about what went wrong,
 and will be the first thing anyone will ask for if you seek help.
 
@@ -276,7 +276,7 @@ Site setup and Add-on installation
 
 If you want your add-on to be 'activated' by going to the Plone Add-on
 control panel, you will
-need to have a :doc:`GenericSetup profile </components/genericsetup>`.
+need to have a :doc:`GenericSetup profile </develop/addons/components/genericsetup>`.
 ZopeSkel can set this up for you, just say 'Yes' if you are asked.
 Some templates require a profile, and will not ask.
 This profile modifies the site database 
@@ -291,7 +291,7 @@ the site.
 
 Not all add-ons provide GenericSetup profiles.
 If an add-on does not modify the site database
-in any way, e.g. they provide only new :doc:`views </views/browserviews>`,
+in any way, e.g. they provide only new :doc:`views </develop/plone/views/browserviews>`,
 it may not require one. 
 But a GenericSetup profile is required in order to have the add-on appear in
 the list of 'available add-ons' in the Plone Add-ons control panel.
@@ -310,7 +310,7 @@ This allows paster to know that packages created by that template provide
 local commands
 defined by the templer system which underlies ZopeSkel.
 
-:doc:`More about paster templates </misc/paster_templates>`.
+:doc:`More about paster templates </develop/plone/misc/paster_templates>`.
 
 setup.py install_requires
 -------------------------

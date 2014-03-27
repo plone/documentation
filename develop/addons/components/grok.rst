@@ -170,7 +170,7 @@ Remove ``five.grok`` from the dependency list of your egg and remove ``<grok:gro
 
 Remove ``from five import grok`` in all of your package modules.
 
-Manually :doc:`register static media folder of your egg </templates_css_and_javascripts/resourcefolders>`
+Manually :doc:`register static media folder of your egg </adapt-and-extend/theming/templates_css/resourcefolders>`
 
 Declare views and forms using `configure.zcml <http://developer.plone.org/views/browserviews.html#creating-a-view-using-zcml>`_
 
