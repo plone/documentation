@@ -181,7 +181,7 @@ More information
 Regular database packing
 ========================
 
-The append-only nature of the :doc:`ZODB </persistency/database>`
+The append-only nature of the :doc:`ZODB </develop/plone/persistency/database>`
 makes the database grow continuously even
 if you only edit old information and don't add any new content.
 To make sure your server's hard disk does not fill up,

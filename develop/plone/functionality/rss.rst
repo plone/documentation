@@ -87,7 +87,7 @@ This expression will
   force Plone content language. We use the current language (from the user cookie) here, 
   to make sure that the user gets RSS feed in correct language on multilingual sites.
 
-More about :doc:`expressions </functionality/expressions>`.
+More about :doc:`expressions </develop/plone/functionality/expressions>`.
 
 Publish and test
 ================

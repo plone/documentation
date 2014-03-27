@@ -40,19 +40,21 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
   Shared hosting is not supported unless the shared hosting company says Plone is good to go.
   See :doc:`Plone installation requirements <requirements>`.
 
-* If you are installing for production — rather than testing or evaluation — review :doc:`Deploying and installing Plone in production <../deploying/production>` before installation.
+
+* If you are installing for production — rather than testing or evaluation — review :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` before installation.
 
 
-a
+
+
 How to install Plone
 ========================================================
 
 Plone can run on all popular desktop or server operating systems, including
 Linux, OS X, BSD and Microsoft Windows.
 
-* You may install Plone on the server for production usage
+* You can install Plone on a server for production usage
 
-* You may install Plone locally on your own computer for the development and test drive
+* You can install Plone locally on your own computer for development and test drive
 
 Ubuntu / Debian
 ---------------
@@ -66,7 +68,7 @@ Installing Plone using the Unified UNIX Installer
 
   This is the recommended method for
   a *development or evaluation* installation of Plone on a Unix workalike.
-  For a *production* installation, :doc:`Installing Plone for Production on Ubuntu </getstarted/ubuntu_production>` is a much better guide.
+  For a *production* installation, :doc:`Installing Plone for Production on Ubuntu </manage/deploying/production/ubuntu_production>` is a much better guide.
 
 This recipe is good for:
 
@@ -87,7 +89,7 @@ first.
 
 For information on using this installation with more advanced production
 hosting environments and deployments,
-see the :doc:`hosting guide </hosting>`.
+see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 Instructions are tested for the *Ubuntu 12.04 Long Term Support* release.
 
@@ -219,7 +221,7 @@ If everything is OK, press ``CTRL-C`` in the terminal to stop Plone if you're ru
 If you have problems, please see the `help guidelines <http://plone.org/help>`_.
 
 For automatic start-up when your server boots up, init scripts, etc.
-please see the :doc:`hosting guide </hosting>`.
+please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 Installing Plone using buildout on Ubuntu / Debian
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -276,7 +278,7 @@ This will:
 
 More info:
 
-* :doc:`ZopeSkel </getstarted/paste>`
+* :doc:`ZopeSkel </develop/addons/paste>`
 * `virtualenv <http://pypi.python.org/pypi/virtualenv>`_
 * `Pillow <http://pypi.python.org/pypi/Pillow/>`_
 * `lxml <http://lxml.de/>`_
@@ -355,7 +357,7 @@ Entering debug mode after installation
 =========================================
 
 When you have Plone installed and want to start
-development you need do :doc:`enter debug mode </getstarted/debug_mode>`.
+development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
 
 Installer source code
 ======================

@@ -10,7 +10,7 @@ Introduction
 ------------
 
 Plone uses `Buildout <http://www.buildout.org/>`_ for installing add-on packages.
-See :doc:`installation instructions </getstarted/installation>` for
+See :doc:`installation instructions </manage/installing/installation>` for
 how to create a Plone installation suitable for development.
 
 

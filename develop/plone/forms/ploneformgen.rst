@@ -19,6 +19,6 @@ To make it easy to get started, newly created form folders are pre-populated to 
 
 * `PloneFormGen product page <http://plone.org/products/ploneformgen>`_
 
-* :doc:`PloneFormGen documentation and tutorials </reference_manuals/active/ploneformgen/index>`
+* :doc:`PloneFormGen documentation and tutorials </working-with-content/managing-content/ploneformgen/index>`
 
-* :doc:`Creating forms with PloneFormGen add-on without programming </reference_manuals/active/ploneformgen/getting_started>`
+* :doc:`Creating forms with PloneFormGen add-on without programming </working-with-content/managing-content/ploneformgen/getting_started>`

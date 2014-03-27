@@ -18,7 +18,7 @@ This does not deal with
 
 * :doc:`browser views </develop/plone/views/browserviews>`
 
-* :doc:`generic old style template overrides </templates_css_and_javascripts/skin_layers>`
+* :doc:`generic old style template overrides </adapt-and-extend/theming/templates_css/skin_layers>`
 
 The template loading mechanism
 ---------------------------------

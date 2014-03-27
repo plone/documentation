@@ -46,7 +46,7 @@ process the file.
 
 You need to declare an ``extends`` directive to pin down required dependency
 versions in ``buildout.cfg``.
-For more information, see :doc:`buildout troubleshooting </troubleshooting/buildout>`.
+For more information, see :doc:`buildout troubleshooting </manage/troubleshooting/buildout>`.
 
 You also need to declare the following packages as dependencies in 
 the ``install_dependencies`` directive of your ``setup.py`` file:

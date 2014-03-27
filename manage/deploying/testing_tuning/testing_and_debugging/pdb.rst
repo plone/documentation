@@ -26,7 +26,7 @@ add-on products.
 
 If you wish to play around with Zope in interactive Python shell or run
 scripts instead of debugging (exceptions), please read :doc:`Command line
-</misc/commandline>` documentation.
+</develop/plone/misc/commandline>` documentation.
 
 See also
 

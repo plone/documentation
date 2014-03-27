@@ -59,7 +59,7 @@ The proper solution to this problem is to:
   some kind of timestamp issue?).
   Restarting ZEO clients once seems to be enough.
 
-* :doc:`Copy a Plone site <reference_manuals/active/deployment/copy>`
+* :doc:`Copy a Plone site </manage/deploying/copy>`
 
 However you may have failed.
 You may have damaged or lost your ``blobstorage`` forever.

@@ -546,9 +546,11 @@ It incorporates the original `glossary on plone.org
         <http://www.muthukadan.net/docs/zca.html>`_.
         
     Plonista
-        A Plonista is a member of the Plone community. It can be somebody who loves 
-        Plone, or uses Plone, or someone who spreads Plone and Plone knowledge.
+        A Plonista is a member of the Plone community. 
+        It can be somebody who loves Plone, or uses Plone, or someone who spreads Plone and Plone knowledge.
         It can also be someone who is a Plone developer, or it can be all of the above.
 
     control panel
-        The Control Panel is the place where many parameters of a Plone site can be set. Here add-ons can be enabled, users and groups created, the workflow and permissions can be set and settings for language, caching and many other can be found. If you have "Site Admin" permisisons, you can find it under "Site -> Site Setup" in your personal tools.
+        The Control Panel is the place where many parameters of a Plone site can be set. 
+        Here add-ons can be enabled, users and groups created, the workflow and permissions can be set and settings for language, caching and many other can be found. 
+        If you have "Site Admin" permisisons, you can find it under "Site -> Site Setup" in your personal tools.

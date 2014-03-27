@@ -59,7 +59,7 @@ They are harmless.
 The reason: Buildout uses a Python tool called ``setuptools`` internally to
 install the packages.  setuptools scans all ``.py`` files inside the Python
 package and assumes they are Python modules.  However, Plone has something
-called :doc:`RestrictedPython </security/sandboxing>`. RestrictedPython
+called :doc:`RestrictedPython </develop/plone/security/sandboxing>`. RestrictedPython
 allows untrusted users to execute Python code in Plone (Python Scripts in
 the :term:`ZMI`).  RestrictedPython scripts use slightly modified Python
 syntax compared to plain Python modules.

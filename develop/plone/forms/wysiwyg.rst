@@ -326,7 +326,7 @@ The recommended way is to customize TinyMCE
   in a separate Javascript file loaded after tinymce.js
 
 * override existing individual TinyMCE files using
-  :doc:`jbot </templates_css_and_javascripts/skin_layers>`.
+  :doc:`jbot </adapt-and-extend/theming/templates_css/skin_layers>`.
 
 Overriding plug-in
 ===================================

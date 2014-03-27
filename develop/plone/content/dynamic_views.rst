@@ -295,7 +295,7 @@ For more info, see
 
 * http://www.netsight.co.uk/blog/2010/5/21/setting-a-default-view-of-a-folder-in-plone
 
-* :doc:`marker interfaces </develop/plone/components/interfaces>`
+* :doc:`marker interfaces </develop/addons/components/interfaces>`
 
 
 Migration script from default view to another

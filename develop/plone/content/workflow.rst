@@ -221,7 +221,7 @@ Example how to submit to review::
 
 Example how to cause specific transitions based on another event (e.g. a parent folder state change).
 This code must be part of your product's trusted code not a workflow script because of the permission
-issues mentioned above. See also see :doc:`/develop/plone/components/events` ::
+issues mentioned above. See also see :doc:`/develop/addons/components/events` ::
 
        # Subscribe to the workflow transition completed action
        from five import grok

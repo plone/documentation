@@ -6,13 +6,13 @@ Plone includes several alternative form mechanisms:
 
 For content-oriented forms:
 
-* :doc:`Dexterity </getstarted/dexterity>` for Plone 4.1+
+* :doc:`Dexterity </develop/addons/dexterity>` for Plone 4.1+
 
 * :doc:`Archetypes </reference_manuals/old/archetypes/index>` is used for content types in Plone 3.x
 
 For convenience forms built and maintained through-the-web and where the results are stored in CSV sheet or emailed:
 
-* :doc:`PloneFormGen </reference_manuals/active/ploneformgen/index>`
+* :doc:`PloneFormGen </working-with-content/managing-content/ploneformgen/index>`
 
 For application and utility forms where custom logic is added by writing Python code:
 

@@ -80,7 +80,7 @@ __call__() and nocall: behavior in TAL path traversing
 
 The TAL path expression will call Python callable objects by default.
 
-If you try to get a hold of a :doc:`helper view </views/browserviews>` like this::
+If you try to get a hold of a :doc:`helper view </develop/plone/views/browserviews>` like this::
 
      tal:define="commentsView context/@@comments_view"
 
@@ -151,7 +151,7 @@ Available expression variables are defined in ``CMFCore/Expressions.py``::
         'here':         object,
         }
 
-You can also access :doc:`helper views </misc/context>` directly by name.
+You can also access :doc:`helper views </develop/plone/misc/context>` directly by name.
 
 Using expressions in your own code
 ===================================
@@ -230,7 +230,7 @@ Expression examples
 Get current language
 --------------------
 
-Use :doc:`IPortalState context helper </misc/context>` view.
+Use :doc:`IPortalState context helper </develop/plone/misc/context>` view.
 
 Example how to generate a multilingual-aware RSS feed link::
 
@@ -329,16 +329,16 @@ Through-the-web scripts
 
 The Zope Management Interface allows one to create,
 edit and execute 
-:doc:`RestrictedPython sandboxed scripts </security/sandboxing>`
+:doc:`RestrictedPython sandboxed scripts </develop/plone/security/sandboxing>`
 directly through the web management interface. This functionality
 is generally discouraged nowadays in the favor of
-:doc:`view classes </views/browserviews>`.
+:doc:`view classes </develop/plone/views/browserviews>`.
 
 Creating a TTW Python script in an add-on installer
 -----------------------------------------------------
 
 Here is an example of how one can pre-seed a Python script in 
-an add-on installer :doc:`GenericSetup profile </components/genericsetup>`.
+an add-on installer :doc:`GenericSetup profile </develop/addons/components/genericsetup>`.
 
 ``setuphandlers.py``::
 
