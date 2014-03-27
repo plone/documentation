@@ -24,4 +24,7 @@ Guide to deploying and installing Plone in production
     backup
     wsgi
     zope
+    caching/index
+    front-end/index
+    production/index
     testing_tuning/index
