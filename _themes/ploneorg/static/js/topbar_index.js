@@ -71,7 +71,7 @@ var html = [
             '</li>',
             '<!-- Developers -->',
             '<li>',
-            '<a href="http://developers.plone.org" title="Plone Developers">DEVELOPERS</a>',
+            '<a href="http://docss.plone.org" title="Plone Documentation">DOCUMENTATION</a>',
 
             '</li>',
             '<!-- Network -->',

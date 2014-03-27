@@ -35,24 +35,6 @@ div#topbar.navbar {
     min-height: 40px;
 }
 
-/*
-div#topbar nav ul.nav {
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-div#topbar nav ul.nav a {
-    font-family: 'DINRegular';
-    font-family: "Helvetica Neue",​Helvetica,​Arial,​sans-serif;
-    font-size: 11px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-div#topbar div.search .form-control {
-    height: 20px;
-}
-*/
 header {
     background-color: #3094C8;
     background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 14%, rgba(0, 0, 0, 0) 14%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 64%, rgba(0, 0, 0, 0) 64%, rgba(0, 0, 0, 0));
@@ -64,7 +46,7 @@ header a {
     margin-top: 22px;
     margin-bottom: 22px;
     margin-left: 0;
-    display: block;
+    display: inline-block;
 }
 
 
@@ -79,7 +61,9 @@ footer .colophon p {
 }
 
 footer .colophon p {
-    font-family: "Helvetica Neue",​Helvetica,​Arial,​sans-serif;
+
+    font-family: 'DINRegular';
+    /*font-family: "Helvetica Neue",​Helvetica,​Arial,​sans-serif;*/
     font-size: 11px;
 }
 
@@ -193,4 +177,3 @@ a:visited:hover {
 #editor-trap.toggled > h3 {
     display: block;
 }
-
