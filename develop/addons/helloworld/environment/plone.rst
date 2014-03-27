@@ -15,7 +15,7 @@ Install ZopeSkel
 
 ZopeSkel simplifies the process of setting up Plone development. 
 
-The Plone community is transitioning between ZopeSkel 2.21.2 and a major rewrite currently at 3.0b3. Currently, the Plone installers use version 2.21.2. (August 2012) For more information about ZopeSkel see the :doc:`Bootstrapping Plone add-on development </getstarted/paste>` section of this manual.
+The Plone community is transitioning between ZopeSkel 2.21.2 and a major rewrite currently at 3.0b3. Currently, the Plone installers use version 2.21.2. (August 2012) For more information about ZopeSkel see the :doc:`Bootstrapping Plone add-on development </develop/addons/paste>` section of this manual.
 
 We will install ZopeSkel 2.21.2 in our virtual_env and and use it to install Plone. 
     

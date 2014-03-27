@@ -77,7 +77,7 @@ Getting indexed objects
 ------------------------
 
 This is a faster method. ``portal_catalog`` must be up-to-date for the folder.
-This will return :doc:`brain objects </searching_and_indexing/query>`::
+This will return :doc:`brain objects </develop/plone/searching_and_indexing/query>`::
 
     brains = folder.getFolderContents()
 
@@ -137,7 +137,7 @@ Plone applies some default rules for ``listFolderContents()``
 * ``portal_properties.nav_tree_properties.metaTypesNotToQuery``: folders (large
   folders) don't generate listing.
 
-* :doc:`default_page </content/dynamic_views>` are not listed.
+* :doc:`default_page </develop/plone/content/dynamic_views>` are not listed.
 
 * ``portal_properties.nav_tree_properties``: meta types marked here do not
   appear in the listing.
@@ -630,7 +630,7 @@ You need to add the ``browser:menuItem`` entry to make your view appear in the
 :guilabel:`Display...` menu
 from which folders and topics can choose the style of the display.
 
-See :doc:`dynamic views </content/dynamic_views>`.
+See :doc:`dynamic views </develop/plone/content/dynamic_views>`.
 
 You need to add:
 
@@ -861,7 +861,7 @@ Empty listing view
 ======================================
 
 Sometimes you want a show folder without listing its content.
-You can create a :doc:`dynamic view </content/dynamic_views>`
+You can create a :doc:`dynamic view </develop/plone/content/dynamic_views>`
 in your add-on which is available from *Display...* menu.
 
 Example ``configure.zcml`` bit

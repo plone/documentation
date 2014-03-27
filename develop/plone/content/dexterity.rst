@@ -23,7 +23,7 @@ with Plone 4.
 ZopeSkel templates
 ====================
 
-Please see :doc:`ZopeSkel page </getstarted/paste>` for project skeleton
+Please see :doc:`ZopeSkel page </develop/plone/getstarted/paste>` for project skeleton
 templates for Dexterity.
 
 Here is an example how to create your own add-on using the buildout below
@@ -196,7 +196,7 @@ members are allowed to create certain content types.
    creation.
 
 Create a permission with
-:doc:`collective.autopermission </security/permissions>` in
+:doc:`collective.autopermission </develop/plone/security/permissions>` in
 ``configure.zcml``
 
 .. code-block:: xml
@@ -316,9 +316,9 @@ Then you can inherit from the proper ``plone.dexterity`` base classes::
 
 See also:
 
-* :doc:`FTI </content/types>`
+* :doc:`FTI </develop/plone/content/types>`
 
-* :doc:`z3c.form </forms/z3c.form>`
+* :doc:`z3c.form </develop/plone/forms/z3c.form>`
 
 
 Custom edit form

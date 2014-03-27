@@ -15,7 +15,7 @@ Creating content objects
 Permission-aware way (Dexterity)
 -----------------------------------
 
-These instructions apply for :doc:`Dexterity </content/dexterity>` content
+These instructions apply for :doc:`Dexterity </develop/plone/content/dexterity>` content
 types.
 
 Example::
@@ -212,9 +212,9 @@ The behavior can be controlled with ``allowed_content_types`` setting.
 * You can change it through the ``portal_types`` management interface.
 
 * You can change it in your add-on installer :doc:`GenericSetup
-  </components/genericsetup>` profile.
+  </develop/addons/components/genericsetup>` profile.
 
-Example for :doc:`Dexterity content type </content/dexterity>`. The file
+Example for :doc:`Dexterity content type </develop/plone/content/dexterity>`. The file
 would be something like
 ``profiles/default/types/yourcompany.app.typeid.xml``::
 
@@ -226,7 +226,7 @@ would be something like
     <property name="allow_discussion">False</property>
 
 
-Example for :doc:`Archetypes content </content/archetypes/index>`. The file
+Example for :doc:`Archetypes content </develop/plone/content/archetypes/index>`. The file
 would be something like ``profiles/default/types/YourType.xml``::
 
     <property name="filter_content_types">True</property>

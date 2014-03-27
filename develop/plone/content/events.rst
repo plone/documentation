@@ -441,7 +441,7 @@ Beta code notice
 
 Make sure that the ``recurrence_days`` index from ``vs.event`` is working -
 if it isn't, check 
-:doc:`Custom indexing example </searching_and_indexing/indexing>` 
+:doc:`Custom indexing example </develop/plone/searching_and_indexing/indexing>` 
 how to create your own recurrency indexer.
 After you save your ``vs.event`` content item,
 you should see data in the ``recurrence_days`` index through

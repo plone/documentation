@@ -113,7 +113,7 @@ Example::
         street_address = FieldProperty(ICheckoutAddress["street_address"])
 
 For persistent objects, see :doc:`persistent object documentation
-</persistency/persistent>`.
+</develop/plone/persistency/persistent>`.
 
 
 Using schemas as data models
@@ -121,7 +121,7 @@ Using schemas as data models
 
 
 Based on the example data model above, we can use it in e.g. content type
-:doc:`browser views </views/browserviews>` to store arbitrary data as content
+:doc:`browser views </develop/plone/views/browserviews>` to store arbitrary data as content
 type attributes.
 
 Example::

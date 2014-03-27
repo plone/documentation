@@ -56,7 +56,7 @@ Example how to check for this permission::
 Bypassing permissions
 -------------------------
 
-This is handy if you work e.g. in a :doc:`debug shell </misc/commandline>`
+This is handy if you work e.g. in a :doc:`debug shell </develop/plone/misc/commandline>`
 and you are deleting badly behaved objects::
 
     from AccessControl.SecurityManagement import newSecurityManager
@@ -159,7 +159,7 @@ objects from a folder without firing any events::
     site._delObject("broken-folder", suppress_events=True)
 
 The best way to clean up bad objects on your site is via a
-:doc:`command line script </misc/commandline>`,
+:doc:`command line script </develop/plone/misc/commandline>`,
 in which case remember to commit the transaction
 after removing the broken objects.
 

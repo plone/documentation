@@ -33,7 +33,7 @@ It is recommended that you do Plone development on Linux or OS X. Development on
 but you need to have much more experience dealing with Python and Windows related problems, so starting
 on Windows is not so easy.
 
-See :doc:`installation instructions </getstarted/installation>` for how to create a Plone installation
+See :doc:`installation instructions </manage/installing/installation>` for how to create a Plone installation
 suitable for development.
 
 Non-programming approaches for customizing Plone
@@ -84,14 +84,14 @@ Plone add-ons can be found at the `plone.org Products
 Package index) <http://pypi.python.org>`_.
 
 See the :doc:`Installing add-on packages using buildout
-</develop/plone/getstarted/installing_addons>` section for more details.
+</manage/installing/installing_addons>` section for more details.
 
 
 Creating your first add-on
 ----------------------------
 
 Since Python egg package structure is little bit complex, to get started with your first add-on
-you can create a code skeleton (scaffold) for it using :doc:`Plone ZopeSkel code templates </getstarted/paste>`.
+you can create a code skeleton (scaffold) for it using :doc:`Plone ZopeSkel code templates </develop/addons/paste>`.
 
 * ZopeSkel generates a basic Python egg package with some Plone files in-place.
 
@@ -109,7 +109,7 @@ you can create a code skeleton (scaffold) for it using :doc:`Plone ZopeSkel code
   ``archetype`` (create Archetypes content), ``dexterity`` (create Dexterity content) and ``plone``
   (barebone Plone add-on).
 
-Please read how to use :doc:`ZopeSkel to bootstrap your first add-on </getstarted/paste>`.
+Please read how to use :doc:`ZopeSkel to bootstrap your first add-on </develop/addons/paste>`.
 
 If you want to create a package with Dexterity content types please read about :doc:`Setting up a Dexterity project</reference_manuals/external/plone.app.dexterity/prerequisite>`.
 
@@ -125,9 +125,9 @@ There you overlay changes to the existing Plone core through extension mechanism
 
 * :doc:`Layers </develop/plone/views/layers>`
 
-* :doc:`Adapters </components/adapters>`
+* :doc:`Adapters </develop/addons/components/adapters>`
 
-* :doc:`Installation profiles </components/genericsetup>`
+* :doc:`Installation profiles </develop/addons/components/genericsetup>`
 
 Plone development always happens on your local computer or the development server.
 The changes are moved to production through version control system like Git or Subversion.
@@ -150,7 +150,7 @@ Plone add-ons usually:
 
 * etc.
 
-A lot of Plone functionality is built on :doc:`Zope 3 development patterns </components/index>`
+A lot of Plone functionality is built on :doc:`Zope 3 development patterns </develop/addons/components/index>`
 like adapters and interfaces. These design patterns take some time to learn, but they are crucial in complex
 component based software like Plone.
 
@@ -166,7 +166,7 @@ Plone must be started in the development mode using ``bin/instance fg`` command.
 
 * TAL page templates (.pt files) are automatically reloaded on every request
 
-* :doc:`GenericSetup XML files are reloaded </components/genericsetup>`
+* :doc:`GenericSetup XML files are reloaded </develop/addons/components/genericsetup>`
 
 Please note that Plone development mode does not reload ``.py`` or ``.zcml`` files by default.
 This is possible, however.  Use the `sauna.reload <http://pypi.python.org/pypi/sauna.reload/>`_ package
@@ -182,7 +182,7 @@ limited and usually can take you only half way there.
 Hello World Tutorial
 ----------------------
 
-We have a :doc:`tutorial </reference_manuals/active/helloworld/index>` introducing the basics of Plone development.
+We have a :doc:`tutorial </develop/addons/helloworld/index>` introducing the basics of Plone development.
 
 The tutorial covers a basic form, a custom content-type, and a dynamic view.
 It also has detailed sections on building a development environment, installing Plone, and
@@ -194,13 +194,13 @@ More info
 .. toctree::
     :maxdepth: 1
 
-    installation
+    /manage/installing/installation
     debug_mode
-    installing_addons
+    /manage/installing/installing_addons
     python
-    paste
-    /reference_manuals/active/helloworld/index
-    dexterity
+    /develop/addons/paste
+    /develop/addons/helloworld/index
+    /develop/addons/dexterity
 
 Plone resources
 =================

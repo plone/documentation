@@ -13,9 +13,9 @@ Introduction
 
 Plone has two kind of content types subsystems:
 
-* :doc:`Archetypes </content/archetypes/index>`-based
+* :doc:`Archetypes </develop/plone/content/archetypes/index>`-based
 
-* :doc:`Dexterity </content/dexterity>`-based (new)
+* :doc:`Dexterity </develop/plone/content/dexterity>`-based (new)
 
 * See also Plomino (later in this document).
 
@@ -85,7 +85,7 @@ Creating a new content type
 ============================
 
 These instructions apply to
-:doc:`Archetypes</content/archetypes/index>`-based content types.
+:doc:`Archetypes</develop/plone/content/archetypes/index>`-based content types.
 
 Install ZopeSkel
 ----------------
