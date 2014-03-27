@@ -57,8 +57,3 @@ Error Reference
     * importToolset: TypeError: 'NoneType' object is not callable
     * z3c.form based form updateWidgets() raises ComponentLookupError
 
-
-.. toctree::
-    :maxdepth: 2
-
-    ../manage/troubleshooting/exceptions.rst
