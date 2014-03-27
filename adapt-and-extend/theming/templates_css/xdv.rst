@@ -86,7 +86,7 @@ Tutorials
 Creating your first XDV project
 ==================================
 
-The :doc:`ZopeSkel package </getstarted/paste>` includes an XDV theme skeleton
+The :doc:`ZopeSkel package </develop/addons/paste>` includes an XDV theme skeleton
 since version 2.20.
 
 Example how to boostrap your theme.
@@ -152,7 +152,7 @@ More info
 Handling .. relative URLs
 ===========================
 
-Here is an example of :doc:`monkey-patch </misc/monkeypatch>`
+Here is an example of :doc:`monkey-patch </develop/plone/misc/monkeypatch>`
 which you can use to override relative URLs in your theme using
 a dot notation.
 

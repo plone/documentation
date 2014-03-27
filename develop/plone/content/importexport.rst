@@ -213,8 +213,10 @@ More information
 Fast content import
 -------------------
 
+
 For specific use-cases, you can create 'brains' first and import later
 * See `this blog post <http://blog.redturtle.it/redturtle-blog/fast-content-import>`_
+
 
 collective.jsonmigrator
 ------------------------
