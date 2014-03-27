@@ -159,7 +159,7 @@ Then, add @@hello_world_view to the end of an object url in your plone site.::
     
 Since our object has a *hello_name* attribute, the value is displayed along with the word *Hello*.
 
-.. image:: /reference_manuals/active/helloworld/images/hellojimbobview.png
+.. image:: /develop/addons/helloworld/images/hellojimbobview.png
 
 We can also call our view on the root of the site.::
 
@@ -167,7 +167,7 @@ We can also call our view on the root of the site.::
 
 The root of the site does not have a *hello_name* attribute, so *Hello World* is displayed.
 
-.. image:: /reference_manuals/active/helloworld/images/helloworldview.png
+.. image:: /develop/addons/helloworld/images/helloworldview.png
 
 For a more in depth explanation of views, see the :doc:`Views and viewlets </views/index>` section of this manual.
 

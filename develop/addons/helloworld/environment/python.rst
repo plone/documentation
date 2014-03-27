@@ -28,7 +28,7 @@ For our buildout configuration, we will use **buildout.python**. It is a project
     
     - You can also download buildout.python from their web interface. Open https://github.com/collective/buildout.python in your browser, and click on the **Downloads** link on the right hand side.
     
-        .. image:: /reference_manuals/active/helloworld/images/buildout.python-web.png
+        .. image:: /develop/addons/helloworld/images/buildout.python-web.png
     
         On the next page, click on **Download as zip** or **Download as tar.gz** to download the buildout files. When the download is complete, uncompress the file and rename the resulting directory to **buildout.python**.
     

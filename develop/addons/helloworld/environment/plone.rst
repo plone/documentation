@@ -153,11 +153,11 @@ You can access the Plone site in your browser at::
 
 The first time you access the site, you will need to click on the *Create a new Plone site* button to perform some initialization.
 
-    .. image:: /reference_manuals/active/helloworld/images/createplonesite.png
+    .. image:: /develop/addons/helloworld/images/createplonesite.png
     
 You'll be presented with a form titled **Create a Plone site**. Keep the defaults for now, and click on the *Create Plone Site* button at the bottom. After a few moments, you should see the Home page of your site.
 
-    .. image:: /reference_manuals/active/helloworld/images/welcometoplone.png
+    .. image:: /develop/addons/helloworld/images/welcometoplone.png
 
 
 -------------
@@ -168,7 +168,7 @@ Before moving on, lets review what our directory structure lools like. Inside th
 
 Inside *env-27* we have the **hello_world** directory, our Plone installation. Called the **buildout_directory**, it has the **buildout.cfg** file, and a script in the bin directory named **instance** used to start and stop Plone.
 
-.. image:: /reference_manuals/active/helloworld/images/directory_structure_plone.png
+.. image:: /develop/addons/helloworld/images/directory_structure_plone.png
 
 
 .. Note::
