@@ -39,12 +39,12 @@ Restart and make sure that's all working. Then update that search template to ha
 
 If you aren't convinced by the boat load of pretty that is the new search form, don't copy or paste anything and just omit the class= line in the code above. You can paste your old template as is. I'll sigh for you... *sigh*. It will look something like::
 
-<browser:page
- name="search"
- permission="zope2.View"
- for="Products.CMFPlone.interfaces.IPloneSiteRoot"
- layer="my.site.interfaces.IMySiteLayer"
- template="templates/search.pt"/>
+    <browser:page
+      name="search"
+      permission="zope2.View"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      layer="my.site.interfaces.IMySiteLayer"
+      template="templates/search.pt"/>
 
 
 Upgrading to new collections
@@ -91,16 +91,14 @@ A simple example in practice is::
       class=".views.MyView"
       permission="zope2.View"/>
 
-Registering an interface for new collection
----------------------------------------------
+Registering an interface for new collection::
 
-    <class class="plone.app.collection.collection.Collection"
-     zcml:condition="installed plone.app.collection">
+    <class class="plone.app.collection.collection.Collection" 
+        zcml:condition="installed plone.app.collection">
      <implements interface=".interfaces.IMyInterface" />
     </class>
 
-Retrieve the raw query
----------------------------------
+Retrieve the raw query::
 
     from plone.app.querystring import queryparser
     query = queryparser.parseFormquery(collectionobj, collectionobj.getRawQuery())
