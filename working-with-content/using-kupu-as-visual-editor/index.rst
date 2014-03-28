@@ -273,6 +273,6 @@ Some people prefer such formats not just for speed itself, but for
 fluidity of expression.
 
 .. |insert-image-current-folder.png| image:: /_static/insertimagecurrentfolder.png
-.. |image21| image:: /_static/arrowUp.gif
-.. |image22| image:: /_static/arrowBlank.gif
+.. |image21| image:: /_static/arrowUp.png
+.. |image22| image:: /_static/arrowBlank.png
 .. |image23| image:: /_static/tableediting.png
