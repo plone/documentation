@@ -116,7 +116,7 @@ theme; interconnected, but each with a distinctive way of behaving.
 .. toctree::
     :maxdepth: 1
 
-    
+    buildingblocks/components/index
     buildingblocks/components/wiring
     buildingblocks/components/viewletsandportlets
     buildingblocks/components/customizing
@@ -252,6 +252,7 @@ index of page elements plus code snippets to make your life easier.
     elements/hiddenelements/plone.links.search
     elements/hiddenelements/plone.nextprevious.links
     elements/hiddenelements/plone.skip_links
+    elements/index.rst
 
 Where is what?
 ------------------
@@ -273,6 +274,7 @@ eggs directories, diagrams of a theme egg on the file system.
     whereiswhat/skin
     whereiswhat/theme
     whereiswhat/zopeinstance
+    whereiswhat/index
 
 
 
