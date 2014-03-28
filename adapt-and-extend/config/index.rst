@@ -11,8 +11,13 @@ Table of Contents
 =================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    site
    add_ons
    mail
+   safe-html
+
+
+
+
