@@ -26,7 +26,7 @@ Plone has conversion utilities for
 
 * For HTML ids and CSS
 
-Normalization depends on the locale. E.g. in English "" will be normalized as "ae" but in Finnish it will
+Normalization depends on the locale. E.g. in English "æ" will be normalized as "ae" but in Finnish it will
 be normalized "å" -> "a".
 
 See `plone.i18n.normalizers package <https://github.com/plone/plone.i18n/tree/master/plone/i18n/normalizer/__init__.py>`_.
