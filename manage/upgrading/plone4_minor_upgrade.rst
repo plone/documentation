@@ -3,6 +3,13 @@
 Upgrading Plone 4 within 4.x.x series dot minor releases
 =========================================================
 
+.. admonition:: Description
+
+   Steps for minor upgrades within the Plone 4 Major Release.
+
+.. contents:: :local:
+
+
 *Plone 4 uses buildout, which makes minor version upgrades very simple.*
 
 Plone 4.0 and above use buildout in its packaged installers.
