@@ -7,4 +7,5 @@ Managing, Administration of Plone
 
     installing/index
     deploying/index
+    upgrading/index
     troubleshooting/index
