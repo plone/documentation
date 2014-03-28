@@ -32,7 +32,7 @@ It is important to remember that the content view templates aren't
 complete in themselves, they merely provide a snippet of content which
 is dropped into a "slot" in the main\_template - called 'main'.
 
-.. figure:: http://plone.org/documentation/manual/theme-reference/page/images/maintemplate.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/maintemplate.gif
    :align: center
    :alt: 
 

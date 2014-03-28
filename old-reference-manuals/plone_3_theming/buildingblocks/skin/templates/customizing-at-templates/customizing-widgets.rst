@@ -163,7 +163,7 @@ by setting ``macro``:
 Be sure to restart Zope and reinstall using ``portal_quickinstaller``.
 Now, our StringField, when rendered, looks like this:
 
-.. figure:: http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/customwidget.jpg/image_preview
+.. figure:: /old-reference-manuals/plone_3_theming/images/customwidget.jpg
    :align: center
    :alt: Custom Widget
 

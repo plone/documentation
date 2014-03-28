@@ -52,4 +52,4 @@ Plone <http://docs.neuroinf.de/PloneBook/ch7.rst>`_ (note that most of
 this book refers to Plone 2, but these sections are still relevant for
 Plone 3).
 
-.. |screenshot of Skin layers in the ZMI| image:: http://plone.org/documentation/manual/theme-reference/buildingblocks/images/order_of_precedence.gif
+.. |screenshot of Skin layers in the ZMI| image:: /old-reference-manuals/plone_3_theming/images/order_of_precedence.gif

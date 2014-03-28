@@ -16,7 +16,7 @@ XML.
 
 This contains the handler for non-Generic Setup installation steps.
 
-.. figure:: http://plone.org/documentation/manual/theme-reference/images/your_theme_egg_qi_installation.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_qi_installation.gif
    :align: center
    :alt: your theme egg - the files used by quick installer
 

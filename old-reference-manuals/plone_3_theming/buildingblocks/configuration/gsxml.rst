@@ -30,7 +30,7 @@ attributes correspond to the attributes of those classes.
 So, in this case, the sub-node represents an entry in the JavaScripts
 registry and its tick boxes.
 
-.. figure:: http://plone.org/documentation/manual/theme-reference/images/portal_js_snippet.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/portal_js_snippet.gif
    :align: center
    :alt: screenshot of the javascripts registry in the ZMI
 

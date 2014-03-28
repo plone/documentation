@@ -60,7 +60,7 @@ following code:
 
 And, just like magic, you should see, rendered in your content area:
 
-.. figure:: http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/fooview.jpg/image_preview
+.. figure:: /old-reference-manuals/plone_3_theming/images/fooview.jpg
    :align: center
    :alt: The Infamous "Foo" View
 
@@ -152,7 +152,7 @@ Archetypes inserts the ``css`` macro into the '' tag of the rendered
 page, making our custom CSS code, linked files, and includes available
 within the page. Our end-result would look something like this:
 
-.. figure:: http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/custombody.jpg/image_preview
+.. figure:: /old-reference-manuals/plone_3_theming/images/custombody.jpg
    :align: center
    :alt: Custom Body Macro
 
@@ -184,7 +184,7 @@ Notice that I've only overridden the default label for fields labeled
 "myfield". The ``label`` macro in ``widgets/field`` is where the default
 behavior can be found. The final result looks like this:
 
-.. figure:: http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/customlabel.jpg/image_preview
+.. figure:: /old-reference-manuals/plone_3_theming/images/customlabel.jpg
    :align: center
    :alt: Customized Label
 

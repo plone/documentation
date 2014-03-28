@@ -116,7 +116,7 @@ theme; interconnected, but each with a distinctive way of behaving.
 .. toctree::
     :maxdepth: 1
 
-    buildingblocks/skin/components
+    
     buildingblocks/components/wiring
     buildingblocks/components/viewletsandportlets
     buildingblocks/components/customizing
