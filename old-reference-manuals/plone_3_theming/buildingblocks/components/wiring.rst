@@ -43,8 +43,7 @@ parts have four main functions.
    it to display only with specific content types (by using the "for"
    attribute).
 
-There's more about this in the `component
-parts <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts>`_
+There's more about this in the :doc:`Components </old-reference-manuals/plone_3_theming/elements/index>`
 section.
 
 Zope Configuration Language (ZCML)
@@ -93,4 +92,4 @@ If you want to be very disciplined and tidy, consult the ZCMLStyleGuide
 
  
 
-.. |diagram of a component| image:: http://plone.org/documentation/manual/theme-reference/images/component.gif
+.. |diagram of a component| image:: /old-reference-manuals/plone_3_theming/images/component.gif

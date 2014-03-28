@@ -59,11 +59,11 @@ this information (self.logo\_tag, self.portal\_title) using the variable
 Do I have to use Classes?
 -------------------------
 
-Viewlets tend to be wired up with a Python class which points to a
-template. So, even though you might only want to create a new template,
+Viewlets tend to be wired up with a Python class which points to a template.
+So, even though you might only want to create a new template,
 you'll find that you have to write a class to point to your new
-template. The
-`Elements <http://plone.org/documentation/manual/theme-reference/elements>`_
+template. 
+The :doc:`Elements </old-reference-manuals/plone_3_theming/elements/index>`
 section of this manual should help you by giving you a snippet of code
 for each element to copy and paste into your own product.
 

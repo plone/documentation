@@ -11,8 +11,7 @@ The templates for most components can be customized through the web:
 
 -  Site Setup > Zope Management Interface > portal\_view\_customizations
 
-The
-`Elements <http://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_
+The :doc:`Elements </old-reference-manuals/plone_3_theming/elements/index>`
 section can help you identify the component you need.
 
 Plone Default Components on the File system
@@ -24,11 +23,9 @@ tricky. They are packaged up into a number of different eggs, so you
 need first to locate where your eggs are stored, and then work out which
 of these contains the component elements you need.
 
--  To work out where your eggs are stored, look at the `Where is
-   What <http://plone.org/documentation/manual/theme-reference/whereiswhat/egglocation>`_
+-  To work out where your eggs are stored, look at the :doc:`Where is what </old-reference-manuals/plone_3_theming/whereiswhat/index>`
    section of this manual?
--  The
-   `Elements <http://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_
+-  The :doc:`Elements </old-reference-manuals/plone_3_theming/elements/index>`
    section of this manual will help you track down the egg containing
    the component you need.
 
@@ -50,4 +47,4 @@ viewlet.pt
     will need to register these as directories as resources in
     configure.zcml
 
-.. |The browser folder in your theme product| image:: http://plone.org/documentation/manual/theme-reference/images/your_theme_egg_components_cutdown.gif
+.. |The browser folder in your theme product| image:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_components_cutdown.gif
