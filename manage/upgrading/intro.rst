@@ -26,5 +26,5 @@ Up until Plone 2.1, the policy was that each of our major releases would be incr
 
 Starting after the 2.5 release, we have moved to a policy that increases the version number to a .0 on every major release. This means that when we say a *major release*, we are referring to a x.0 release, whereas a minor release has the version numbering 2.5.x or 3.0.x.
 
-In addition to the general procedure there are :doc:`version-specific migration guides </manage/upgrading/version_specific_migration>`. These guides contain more specific instructions and valuable information that has been collected from real-life migration cases.
+In addition to the general procedure there are :doc:`version-specific migration guides </manage/upgrading/version_specific_migration/index>`. These guides contain more specific instructions and valuable information that has been collected from real-life migration cases.
 

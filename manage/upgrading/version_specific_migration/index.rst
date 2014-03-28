@@ -14,7 +14,7 @@ Version-specific migration procedures and tips
    p1_to_p2_upgrade
    p2_to_p21_upgrade
    p21_to_p25_upgrade
-   p25_to_p30_upgrade
+   p25_to_p30_upgrade/index
    p3x_to_p32_upgrade
    p32_to_p33x_upgrade
    p3x_to_p40_upgrade

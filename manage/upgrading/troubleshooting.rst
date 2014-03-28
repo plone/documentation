@@ -23,7 +23,7 @@ When Zope doesn't start and there's no useful information in the log file, you c
 
 You may be able to find more information on the error messages in:
 
-* the :doc:`Version-specific migration tips </manage/upgrading/version_specific_migration>` for your version of Plone
+* the :doc:`Version-specific migration tips </manage/upgrading/version_specific_migration/index>` for your version of Plone
 * the :doc:`Error References </appendices/error-reference>`
 
 Test without customizations
