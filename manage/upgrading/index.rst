@@ -11,7 +11,7 @@ Plone Upgrade Guide
     though the stack discussion may be useful to everyone.
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 2
 
     intro
     preparations
