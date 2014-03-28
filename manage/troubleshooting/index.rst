@@ -10,3 +10,4 @@ Troubleshooting
     unicode.rst
     images.rst
     transactions.rst
+    manual-remove-utility
