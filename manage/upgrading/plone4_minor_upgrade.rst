@@ -16,7 +16,7 @@ buildout shipped with the Plone Unified Installer.
    Before performing any Plone upgrade, you should always have a complete backup of your site.
    See the :doc:`Preparations </manage/upgrading/preparations>` section of this manual for more details.
 
-   In addition, you should check the :doc:`Version-specific migration tips </manage/upgrading/version_specific_migration>`
+   In addition, you should check the :doc:`Version-specific migration tips </manage/upgrading/version_specific_migration/index>`
    section of this manual for any notes that may apply to the specific version upgrade you're about to perform.
 
 **1) Edit your buildout.cfg file**
