@@ -8,15 +8,15 @@ This document is a community maintained manual for `Plone <http://plone.org>`_ c
 
 The target audience of the documentation includes
 
-* Content editors: writing, updating and ordering the actual content of the sitez
+* Content editors: writing, updating and ordering the actual content of the site
 
-* Integrators: installing Plone, add-ons and setting up the sitez
+* Site administrators: installing Plone, add-ons and setting up the site
 
-* Theme authors: changing Plone's visual appearancez
+* Designers: changing Plone's visual appearance
 
-* Developers: customizing Plone's content types and zforms for a specific use case
+* Deployers: hosting Plone for production on a server
 
-* System administrators: hosting Plone on a server
+* Developers: Customizing Plone, developing add-ons, and improving Plone itself
 
 
 .. toctree::
