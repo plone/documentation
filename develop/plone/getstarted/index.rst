@@ -188,20 +188,6 @@ The tutorial covers a basic form, a custom content-type, and a dynamic view.
 It also has detailed sections on building a development environment, installing Plone, and
 creating an add-on package for your development code.
 
-More info
-------------
-
-.. toctree::
-    :maxdepth: 1
-
-    /manage/installing/installation
-    debug_mode
-    /manage/installing/installing_addons
-    python
-    /develop/addons/paste
-    /develop/addons/helloworld/index
-    /develop/addons/dexterity
-
 Plone resources
 =================
 
