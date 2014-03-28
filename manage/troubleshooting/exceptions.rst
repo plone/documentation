@@ -1048,7 +1048,10 @@ InvalidInterface: Concrete attribute
 
 **Condition**: Your ``zope.schema`` based schema breaks on Plone startup.
 
-**Reason**: You have extra comma in your schema. Like this::
+**Reason**: You have extra comma in your schema. Like this:
+
+.. code-block:: python
+    :emphasize-lines: 7
 
 	class IChoiceExamples(model.Schema):
 	
