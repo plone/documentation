@@ -2,6 +2,12 @@
 Introduction
 ============
 
+.. admonition:: Description
+
+   What we are talking about.
+
+.. contents:: :local:
+
 
 What does it mean to upgrade Plone?
 ========================================================
