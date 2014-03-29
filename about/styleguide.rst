@@ -314,47 +314,6 @@ Note:
 
       This is a TODO item
 
-Code documentation
-==================
-
-For certain kinds of documentation it is better to write the documentation
-in parts of the Plone core code base. This can be done using the *autodoc*
-sphinx extension.
-
-... to include a module docstring:
-
-.. code-block:: rst
-
-   .. automodule:: plone.app.contentrules.exportimport
-
-... to include a class docstring:
-
-.. code-block:: rst
-
-   .. autoclass:: Products.CMFEditions.exportimport.repository.RepositoryToolXMLAdapter
-
-... or to include both a module and class docstrings:
-
-.. code-block:: rst
-
-   .. automodule:: Products.CMFEditions.exportimport.repository
-      :members: RepositoryToolXMLAdapter
-
-Not all documentation is best kept with the code. You should use autodoc
-if:
-
-- the documentation is reasonably self-contained and relates just to
-  that module;
-- it's mainly reference material, rather than tutorial-style documentation;
-- you think it's more likely to be maintained by the code authors.
-
-Once you write code documentation:
-
-1. find an appropriate place in this manual to place it. Make sure it flows
-   and makes when sense read with the documentation around it;
-#. include a comment in the docstring mentioning its use in this manual so
-   those editing the code can test the manual if changes are made;
-#. add the module to the autocheckout value in the manual's ``buildout.cfg``.
 
 Style recommendations
 =====================
