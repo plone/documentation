@@ -289,7 +289,7 @@ It incorporates the original `glossary on plone.org
         `PLIP <http://dev.plone.org/plone/wiki/PLIP>`_.
 
     ATCT
-        ATContentTypes - the new content types written with Archetypes which
+        ATContentTypes - the Plone content types written with Archetypes which
         replaces the default CMF content types in Plone 2.1 onwards.
 
     ResourceRegistries
@@ -554,3 +554,6 @@ It incorporates the original `glossary on plone.org
         The Control Panel is the place where many parameters of a Plone site can be set. 
         Here add-ons can be enabled, users and groups created, the workflow and permissions can be set and settings for language, caching and many other can be found. 
         If you have "Site Admin" permisisons, you can find it under "Site -> Site Setup" in your personal tools.
+
+    Dexterity
+        Dexterity is an alternative to :term:`Archetypes`, Plone's venerable content type framework. Being more recent, Dexterity has been able to learn from some of the mistakes that were made Archetypes, and - more importantly - leverage some of the technologies that did not exist when Archetypes was first conceived. Dexterity is built from the ground up to support through-the-web type creation. Dexterity also allows types to be developed jointly through-the-web and on the filesystem. For example, a schema can be written in Python and then extended through the web.
