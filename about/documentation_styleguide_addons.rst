@@ -22,19 +22,28 @@ Styleguide
 
 * All documentation should be written in **valid** `rest <http://docutils.sourceforge.net/rst.html>`_
 * All documentation should be in the folder */docs/source*
+* If you want to include images, you should place them into _images
 * You should use `Sphinx <http://sphinx-doc.org/>`_
 
 Structure
 ---------
 
-* You should configure Sphinx in that way that you have a seperate */source* directory for all documetation
+* You should configure Sphinx in that way that you have a seperate */source* directory for your documentation .rst files
 
-$YOUR_PROJECT/docs/source
+.. code-block:: rst
 
-/docs could contain your Makefile and conf.py
+    source
+    $YOUR_PROJECT/docs/source
 
-/source should *only* contain your documentation written in rst
+    /docs could contain your Makefile and conf.py
 
+    /docs/_images should *only* contain images
+
+    /source should *only* contain your documentation written in rst
+
+* Do not link files from outsite your '/docs/source' directory, this will break the build
+* Please do not use 'autodoc' to include comments for your Code, this will break too !
+* Please follow our :doc:`styleguide </styleguide>` and use **semantic linefeeds**
 
 .. todo:
     finish this and link to our mr.gutenberg
