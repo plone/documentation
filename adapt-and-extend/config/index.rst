@@ -1,14 +1,5 @@
-Configuration
-=============
-
-
-Introduction
-============
-
-
-
-Table of Contents
-=================
+Configuration and Control panel
+===============================
 
 .. toctree::
    :maxdepth: 1
