@@ -7,7 +7,6 @@ Documentation maintenance guide
 
    writing
    join
-   crosslinking
 
 Presentations
 -----------------
