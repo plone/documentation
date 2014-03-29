@@ -4,7 +4,7 @@
 
 .. admonition:: Description
 
-   How to write and submit content for the Plone Developer Documentation.
+   How to write and submit content for the Plone Documentation.
 
 .. contents:: :local:
 
@@ -12,7 +12,7 @@ Introduction
 ============
 
 This chapter explains the basics of editing, updating and contributing to
-the *Plone Developer Documentation*.
+the *Plone Documentation*.
 
 Reaching documentation team
 =============================
@@ -25,74 +25,48 @@ To reach this team for any questions please contact
 
 * *#plone-docs* IRC channel on irc.freenode.net
 
-Editing documentation on Github
-==============================================
+Contributing
+============
 
-* You can `commit file edits through GitHub web interface
-  <https://github.com/collective/collective.developermanual>`_ using the
-  **Fork and Edit** button, followed by a pull request.
+The Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
-* Alternatively, clone the repository using *git*, perform changes, and push
-  them to your fork. Then submit a pull request.
+If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <http://plone.org/foundation/contributors-agreement>`_.
 
-The Plone collective GitHub repository has open-for-all contribution access.
-If you want to contribute changes without asking the maintainers to merge
-them, please add your GitHub username to your profile on plone.org and
-request access `here <http://dev.plone.org/wiki/ContributeCollective>`_.
+If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team, for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net
+
+Git workflow / branching model
+==============================
+
+It is important that you **NEVER** commit to master directly. Even for the smallest and most trivial fix. **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
+
+If you don't get feedback on your pull request in a day please come to #plone-docs and ask.
+
+The main goal of this process is not to boss developers around and make their lives harder, but to bring greater quality to the documentation.
+
+Pull request checklist
+======================
+
+Checklist of things that every person accepting pull request should follow.
+
+* The title and description of a pull request MUST be descriptive and need to reflect the changes. Please review, line by line, and comment if the code change was not mentioned in the description of the pull request.
+
 
 Editing documentation using git
 =================================
 
 This is the recommended method of editing the documentation for
-advanced users. Please do not be afraid to commit.  If you
-break the documentation or add invalid information, it will be cleaned up
-sooner or later and no one is going to blame you: human errors happen all
-the time.
+advanced users. Please do not be afraid to commit.
 
 * Learn about `Sphinx <http://sphinx.pocoo.org/>`_ and `restructured text
   <http://sphinx.pocoo.org/rest.html>`_.
 
-* Get the documentation source files:
-
-.. code-block:: sh
-
-   git clone https://github.com/collective/collective.developermanual
-
-* Bootstrap with Python 2.5 or later. We use a version of Sphinx that has
-  dropped Python 2.4 support.
-
-.. note::
-
-   You do not need to bootstrap and buildout if you simply want to
-   make a quick edit the documentation. Go to the "source" directory
-   to find the files. Continue reading if you want to run a complete
-   local copy.
-
-.. code-block:: sh
-
-   cd collective.developermanual
-   python2.7 bootstrap.py
-
-* Run buildout to install and configure all Python packages in your buildout folder for the documentation generation 
-
-.. code-block:: sh
-
-   bin/buildout
+* `Fork <https://help.github.com/articles/fork-a-repo>`_ the documentation source files into your own repository
 
 * Edit the file(s) which you want to update.
 
-* Check that building with Sphinx does not give warnings:
+* Check that you do not have any syntax errors or typos
 
-.. code-block:: sh
-
-   make html
-
-* Commit changes:
-
-.. code-block:: sh
-
-   git commit -m "My message about my changes"
-   git push
+* Commit changes your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request.
 
 Document page format
 ====================
@@ -100,7 +74,7 @@ Document page format
 Here are some Sphinx coding conventions used in the documentation.
 
 Tab policy
--------------------------
+----------
 
 * Indentation 4 spaces
 
@@ -109,14 +83,14 @@ Tab policy
 * No trailing whitespaces
 
 Headings and filenames
--------------------------
+----------------------
 
 * For the headings, capitalize the first letter only
 
 * For the filenames, use_underscore_naming_style
 
 Page structure
----------------------
+--------------
 
 Each page must contain, in this order:
 
@@ -387,8 +361,6 @@ Note:
 
       This is a note box (yellow)
 
-.. commented out as missing resource gives sphinx error.
-.. TODO item (see :doc:`TODO list </todos>`:
 
 .. code-block:: rst
 
