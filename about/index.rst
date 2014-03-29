@@ -4,5 +4,7 @@ About
 .. toctree::
     :maxdepth: 2
 
-    documentation_styleguide
+    contributing
+    styleguide
+    helper_tools
     documentation_styleguide_addons
