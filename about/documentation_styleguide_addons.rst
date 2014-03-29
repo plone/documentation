@@ -38,4 +38,7 @@ $YOUR_PROJECT/docs/source
 
 .. todo:
     finish this and link to our mr.gutenberg
-
+    - we do not link to files outsite
+    - do not use autodoc, please
+    - follow the writng and style guide [syantec lines]
+    - if youinclude images have one folder for example _images, you may have robot test in the future
