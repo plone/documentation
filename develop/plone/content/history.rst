@@ -14,7 +14,7 @@ More about `CMFEditions here <http://plone.org/products/cmfeditions/documentatio
 
 See also 
 
-* `Versioning tutorial for custom content types <http://www.uwosh.edu/ploneprojects/documentation/how-tos/how-to-enable-versioning-history-for-a-custom-content-type>`_. 
+* `Versioning tutorial for custom content types <http://www.uwosh.edu/ploneprojects/docs/how-tos/how-to-enable-versioning-history-tab-for-a-custom-content-type/>`_. 
 
 Enabling versioning on your custom content type (Plone 3 ONLY)
 ----------------------------------------------------------------

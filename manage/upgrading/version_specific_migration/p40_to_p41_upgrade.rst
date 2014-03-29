@@ -78,7 +78,6 @@ From Plone 4.1 on, versioning policies for custom types can be configured using 
 
 If you activated versioning for your custom content types you most likely followed one of these How-Tos:
 
-* :doc:`Enabling versioning on your custom content-types </???>`
 * :doc:`History and Versioning </develop/plone/content/history>`
 
 Both basically recommend to set the versioning policies CMFEditions is using in a custom setuphandler::
