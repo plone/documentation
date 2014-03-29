@@ -1,6 +1,6 @@
-==========================
- Documentation Styleguide
-==========================
+==============
+ Contributing
+==============
 
 .. admonition:: Description
 
