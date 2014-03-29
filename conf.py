@@ -27,8 +27,10 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.todo',
     #'collective.sphinx.autoatschema',
-    #'collective.sphinx.includedoc'    
+    #'collective.sphinx.includedoc'
     #'sphinxcontrib.contributors',
+    'sphinxcontrib_robotframework',
+    'sphinx.ext.autosummary', 
     ]
 
 # See http://sphinx.pocoo.org/ext/todo.html#confval-todo_include_todos
