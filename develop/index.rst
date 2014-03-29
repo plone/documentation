@@ -26,4 +26,23 @@ Developing for Plone
 .. toctree::
    :maxdepth: 2
 
+   /external/plone.app.contenttypes/docs/README
+
+.. toctree::
+   :maxdepth: 2
+
+   /external/plone.app.contentlisting/docs/README
+
+.. toctree::
+   :maxdepth: 2
+
    /external/plone.app.robotframework/docs/source/index
+
+
+
+Tutorials:
+
+.. toctree::
+   :maxdepth: 2
+
+   /external/tutorial.todoapp/docs/index
