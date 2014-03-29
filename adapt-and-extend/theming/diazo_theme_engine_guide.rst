@@ -1,2 +1,0 @@
-Diazo Theme Engine Guide
-========================

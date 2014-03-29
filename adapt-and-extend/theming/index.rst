@@ -13,7 +13,7 @@ Theming Plone
 
    intro
    plone_app_theming
-   diazo_theme_engine_guide
+   /external/diazo/docs/index
    theme_product_with_diazo
    quick_test
 

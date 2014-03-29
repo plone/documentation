@@ -7,11 +7,9 @@ Documentation maintenance guide
 
    preface
    writing
-   developermanual
    nursinghome
    join
    crosslinking
-   todos
 
 Presentations
 -----------------

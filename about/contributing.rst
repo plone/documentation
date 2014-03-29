@@ -68,4 +68,4 @@ advanced users. Please do not be afraid to commit.
 
 * Commit changes your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request.
 
-For more information about writing documentation please read the :doc:`styleguide <styleguide.rst>`_ and also :doc: `this <helper_tools.rst>`_.
+For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
