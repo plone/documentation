@@ -31,7 +31,7 @@ div.sphinxsidebar {
 
 div.sphinxsidebar div.logo {
     background-color: #329fd7;
-    padding: 10px;    
+    padding: 10px;
     margin-left: -11px;
     margin-right: -6px;
     margin-top: -11px;
@@ -100,6 +100,7 @@ div.footer a {
 
 
 /* Styles for floating Edit on GitHub box */
+/*
 #editor-trap {
     margin: 1em;
     padding: 1em;
@@ -128,7 +129,7 @@ div.footer a {
     cursor: pointer;
 }
 
-#editor-trap h3 { 
+#editor-trap h3 {
     margin: 0 0 0.5em 0;
     padding: 0;
     background: transparent;
@@ -138,6 +139,7 @@ div.footer a {
     margin: 0;
     padding: 0 0 0 2em;
 }
+*/
 
 /* Hide trick */
 
