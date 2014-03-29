@@ -4,7 +4,7 @@
 Plone - The Open Source CMS
 ============================
 
-This document is a community maintained manual for `Plone <http://plone.org>`_ content management system.
+This document is a community maintained manual for the `Plone <http://plone.org>`_ content management system.
 
 The target audience of the documentation includes
 
@@ -21,7 +21,7 @@ The target audience of the documentation includes
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
+
 
    intro/index
    working-with-content/index
