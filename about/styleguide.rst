@@ -14,8 +14,15 @@ Introduction
 This chapter explains the basics of editing, and updating to
 the *Plone Documentation*.
 
+
+.. note:: 
+
+  All pages should be in ReStructured Text, and have a .rst extension. Images should be in .png, .jpg or .gif format.
+
 Document page format
 ====================
+
+
 
 Here are some Sphinx coding conventions used in the documentation.
 
@@ -38,7 +45,7 @@ Headings and filenames
 Page structure
 --------------
 
-Each page must contain, in this order:
+Each page should contain, in this order:
 
 * The main heading. This will be visible in the table of contents:
 
@@ -74,7 +81,7 @@ Introduction paragraph: A brief overview:
 .. code-block:: rst
 
    Introduction
-   ============
+   ------------
 
    This chapter will describe the basics of how to contribute to this document.
 
@@ -83,7 +90,7 @@ A number of paragraphs: The actual content of the document page:
 .. code-block:: rst
 
    Contributions needed
-   ====================
+   --------------------
 
    Below is the list of documentation and references we'd like to see
 
@@ -92,14 +99,14 @@ Section structure
 
 Each section (folder) must contain
 
-* :file:`index.txt` with:
+* :file:`index.rst` with:
 
 * Section heading: This will be visible in the table of contents
 
 * A single paragraph summarizing what this section is all about. This will be
   mapped to Plone folder description.
 
-* Sphinx toctree directive, maxdepth 2. Each ``.txt`` file in the folder should
+* Sphinx toctree directive, maxdepth 2. Each ``.rst`` file in the folder should
   be linked to this toctree.
 
 .. code-block:: rst
@@ -315,8 +322,20 @@ Note:
       This is a TODO item
 
 
-Style recommendations
+Line length
 =====================
+
+Documentation is not code. Repeat after us: Documentation is not code.
+
+Therefore, documentation should not follow PEP8 or other arbitrary conventions.
+
+**Remember :** This documentation is set up so it is fully translatable by using standard tools like transifex.
+
+Your sentences will become .po strings, to be translated. 
+
+Now, think about how translations would work if the translator can only see an arbitrary part of a sentence. Translating is hard enough without creating additional problems...
+
+If you want to keep short lines:
 
 Use **semantic linefeeds**
 (http://rhodesmill.org/brandon/2012/one-sentence-per-line/)

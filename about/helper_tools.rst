@@ -8,15 +8,29 @@
 
 .. contents:: :local:
 
-Introduction
-============
-
-This is about Tools and Plugins which will help to write Documentation
-the *Plone Documentation*.
 
 
-Some helper tools
-=================
+
+
+Online tools:
+-------------
+
+- `rst.ninjs.org <http://rst.ninjs.org/>`_ and a fork with more Sphinx support at `livesphinx.herokuapp.com <http://livesphinx.herokuapp.com/>`_
+- `notex.ch <https://notex.ch/>`_
+
+
+Offline tools:
+---------------
+
+**ReText** if you use Ubuntu or Debian you could use **ReText** a Editor for **.rst** and **.md**
+
+.. code-block:: rst
+
+   apt-get install retext
+
+
+**Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
+
 
 **Emacs** has a nice `rst-mode
 <http://docutils.sourceforge.net/docs/user/emacs.html>`_. This mode comes
@@ -31,11 +45,7 @@ Marketplace.
 **Vim** does syntax highlighting for RST files.
 There is also a nice plugin with enhanced functionalities called `Riv <https://github.com/Rykka/riv.vim>`_.
 
-**ReText** if you use Ubuntu or Debian you could also use **ReText** a Editor for **.rst** and **.md**
 
-.. code-block:: rst
-
-   apt-get install retext
 
 
 

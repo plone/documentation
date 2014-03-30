@@ -13,7 +13,6 @@ Theming Plone
 .. toctree::
    :maxdepth: 2
 
-   intro
    /external/plone.app.theming/docs/index
    /external/diazo/docs/index
    theme_product_with_diazo
