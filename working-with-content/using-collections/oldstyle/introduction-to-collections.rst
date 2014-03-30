@@ -1,5 +1,5 @@
-Introduction to Collections
-================================
+Introduction to (old-style) Collections
+========================================
 
 A Collection in Plone works much like a report or query does in a
 database. Use Collections to dynamically sort and display your content.
