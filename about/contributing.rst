@@ -14,11 +14,10 @@ Introduction
 This chapter explains the basics of editing, updating and contributing to
 the *Plone Documentation*.
 
-Reaching documentation team
-=============================
+Reaching the documentation team
+===============================
 
-Plone community runs a documentation team which is responsible
-for keeping Plone documentation coherent.
+Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
 To reach this team for any questions please contact
 
 * `Documentation team mailing list <https://plone.org/support/forums/docs>`_
@@ -34,28 +33,47 @@ If you want to contribute to this documentation, you can do so directly by makin
 
 If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team, for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net
 
+
 Git workflow / branching model
 ==============================
 
-It is important that you **NEVER** commit to master directly. Even for the smallest and most trivial fix. **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
+The documentation is hosted on github. And there are tools hooked directly into it: 
+
+* there are branches for the different versions of Plone
+
+* translation hooks with Transifex are in place
+
+* some external documentation is pulled in, to collect all the documentation in one place.
+
+For these reasons, it is important we keep the documentation coherent. 
+Therefore, we follow a simple workflow, which we ask all contributors to respect:
+
+
+Please  **DO NOT** commit to master directly. Even for the smallest and most trivial fix. **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
+
+Your pull requests may be checked for spelling, and clarity. So don't hesitate to contribute also if English is not your first language, we will try to be helpful in corrections without being annoying.
 
 If you don't get feedback on your pull request in a day please come to #plone-docs and ask.
 
-The main goal of this process is not to boss developers around and make their lives harder, but to bring greater quality to the documentation.
+The main goal of this process is not to annoy you. On the contrary, we **love** your contributions. 
+
+But the documentation team also wants to keep the documentation in good shape.
+
 
 Pull request checklist
 ======================
 
-Checklist of things that every person accepting pull request should follow.
+Making a good pull request makes life easier for everybody: 
 
-* The title and description of a pull request MUST be descriptive and need to reflect the changes. Please review, line by line, and comment if the code change was not mentioned in the description of the pull request.
+* The title and description of a pull request MUST be descriptive and need to reflect the changes. So please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
 
+If you can state for which versions of Plone your submissions are valid, that would be awesome.
 
-Editing documentation using git
-=================================
+Editing the documentation using git
+===================================
 
 This is the recommended method of editing the documentation for
-advanced users. Please do not be afraid to commit.
+advanced users. 
 
 * Learn about `Sphinx <http://sphinx.pocoo.org/>`_ and `restructured text
   <http://sphinx.pocoo.org/rest.html>`_.
