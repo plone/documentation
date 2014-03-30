@@ -1,6 +1,6 @@
-===========
- Styleguide
-===========
+===============
+Rest Styleguide
+===============
 
 .. admonition:: Description
 

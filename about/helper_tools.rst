@@ -1,6 +1,6 @@
-================================
- Tools for writing Documentation
-================================
+======================================
+Helper tools for writing Documentation
+======================================
 
 .. admonition:: Description
 
@@ -45,7 +45,7 @@ Marketplace.
 **Vim** does syntax highlighting for RST files.
 There is also a nice plugin with enhanced functionalities called `Riv <https://github.com/Rykka/riv.vim>`_.
 
-
+If you have a lot of existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions.
 
 
 
