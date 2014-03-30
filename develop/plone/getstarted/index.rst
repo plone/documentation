@@ -111,7 +111,7 @@ you can create a code skeleton (scaffold) for it using :doc:`Plone ZopeSkel code
 
 Please read how to use :doc:`ZopeSkel to bootstrap your first add-on </develop/addons/paste>`.
 
-If you want to create a package with Dexterity content types please read about :doc:`Setting up a Dexterity project</external/plone.app.dexterity/prerequisite>`.
+If you want to create a package with Dexterity content types please read about :doc:`Setting up a Dexterity project</external/plone.app.dexterity/docs/prerequisite>`.
 
 Plone development workflow
 ----------------------------
@@ -189,7 +189,7 @@ It also has detailed sections on building a development environment, installing 
 creating an add-on package for your development code.
 
 Plone resources
-=================
+---------------
 
 * `Plone Trac <http://dev.plone.org/plone>`_ contains bug reports, Plone source
   code and commits. Useful when you encounter a new exception or you are
@@ -201,7 +201,7 @@ Plone resources
 
 
 Zope resources
-==================
+---------------
 
 * `Zope source code in version control system <http://svn.zope.org/>`_.
 
@@ -211,3 +211,20 @@ Zope resources
 
   The chapters on Zope Page Templates however are still the best reference
   on the topic.
+
+Python resources
+----------------
+
+.. toctree::
+   :maxdepth: 2
+
+   python
+
+Debug mode explained
+--------------------
+
+
+.. toctree::
+   :maxdepth: 2
+
+   debug_mode

@@ -54,3 +54,18 @@ At the other end of the spectrum, a powerful CMS can be so difficult to learn an
 Make sure the CMS you choose meets your needs today without compromising future growth.
 We hope you'll take the time to learn more about Plone and what it can do for you. 
 We've created this site specifically as a gateway to information on how to get started with Plone, as well as information on development, solutions providers, events, news, and the wealth of product add-ons created by the community.
+
+
+
+What does Plone mean? How is it pronounced?
+-------------------------------------------
+
+*Does the word Plone mean anything, and where does it come from? Why is Plone called Plone?*
+
+The word Plone originally comes from the electronic band Plone that used to exist on the Warp record label. The music is playful and minimalistic.
+
+The founders of Plone-the-Software (Alan Runyan and Alexander Limi) were listening to Plone-the-Band when they met (as well as during the initial coding/design of Plone) - and one of the original quotes floating around at the time was that "Plone should look and feel like the band sounds". Thus, a legend was born. ;)
+
+The current status of Plone-the-Band is not known.
+
+Plone is pronounced in the same manner as the word "grown". It is not spelled out when you say it, and is not an abbreviation for anything.

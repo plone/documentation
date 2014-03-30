@@ -6,3 +6,4 @@ Appendices
    
    glossary.rst
    error-reference.rst
+   older-manuals.rst

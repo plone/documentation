@@ -320,10 +320,7 @@ Style recommendations
 
 Use **semantic linefeeds**
 (http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
-when you are editing restructured text
-(or any other interpreted rich text format)
-because it will greatly improve the editing and maintenance
-of your documents.
+when you are editing restructured text (or any other interpreted rich text format) because it will greatly improve the editing and maintenance of your documents.
 
 Take this example paragraph::
 
