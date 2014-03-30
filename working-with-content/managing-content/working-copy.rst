@@ -1,6 +1,8 @@
 Working Copy
 ==================
 
+.. include:: /_robot.rst
+
 Working Copy lets you have two versions of your content in parallel.
 
 **When a Plone site is first created, there a number of additional
@@ -33,9 +35,62 @@ Using "Check out"
 First, navigate to the page you want check out. Then from the "Actions"
 drop-down menu, select "Check out":
 
-.. figure:/_static/01.png
+.. replaces /_static/01.png
+.. figure:: ../../_robot/working-copy_checkout.png
    :align: center
-   :alt: 
+   :alt:
+
+.. code:: robotframework
+
+   *** Variables ***
+
+   @{CONFIGURE_PACKAGES}  plone.app.iterate
+   @{APPLY_PROFILES}  plone.app.iterate:plone.app.iterate
+   ${REGISTER_TRANSLATIONS}  ${CURDIR}/../_locales
+
+   *** Test Cases ***
+
+   Create sample content
+       ${folder_id} =  Translate  folder_news_id
+       ...  default=news
+       ${folder_title} =  Translate  folder_news_title
+       ...  default=News
+       ${container} =  Create content  type=Folder
+       ...  id=${folder_id}  title=${folder_title}
+
+       ${item_id} =  Translate  sample_news_id
+       ...  default=website-refresh
+       ${item_title} =  Translate  sample_news_title
+       ...  default=Welcome to our new site!
+       ${item_description} =  Translate  sample_news_description
+       ...  default=The long wait is now over
+       ${item_text} =  Translate  sample_news_text
+       ...  default=<p>Our new site is built with Plone.</p>
+
+       ${item} =  Create content  container=${container}  type=News Item
+       ...  id=${item_id}  title=${item_title}
+       ...  description=${item_description}  text=${item_text}
+       Fire transition  ${item}  publish
+
+   Show how to checkout
+       ${folder_id} =  Translate  folder_news_id
+       ...  default=news
+       ${item_id} =  Translate  sample_news_id
+       ...  default=website-refresh
+       Go to  ${PLONE_URL}/${folder_id}/${item_id}
+
+       Page should contain element  css=#plone-contentmenu-actions dt a
+       Click link  css=#plone-contentmenu-actions dt a
+       Wait until element is visible
+       ...  css=#plone-contentmenu-actions dd.actionMenuContent
+
+       Mouse over  css=#plone-contentmenu-actions-iterate_checkout
+       Update element style  portal-footer  display  none
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/working-copy_checkout.png
+       ...  contentActionMenus
+       ...  css=#portal-column-content
 
 An info message will appear indicating you're now working with a working
 copy:
