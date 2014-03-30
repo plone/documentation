@@ -1,7 +1,7 @@
 Preparing the Server
 ====================
 
-Paareparing to install Plone
+Preparing to install Plone
 ----------------------------
 
 Plone and Zope are generally not available via platform package or port

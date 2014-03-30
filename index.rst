@@ -35,3 +35,5 @@ The target audience of the documentation includes
    :maxdepth: 1
 
    license
+
+   askforhelp

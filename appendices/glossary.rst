@@ -557,3 +557,6 @@ It incorporates the original `glossary on plone.org
 
     Dexterity
         Dexterity is an alternative to :term:`Archetypes`, Plone's venerable content type framework. Being more recent, Dexterity has been able to learn from some of the mistakes that were made Archetypes, and - more importantly - leverage some of the technologies that did not exist when Archetypes was first conceived. Dexterity is built from the ground up to support through-the-web type creation. Dexterity also allows types to be developed jointly through-the-web and on the filesystem. For example, a schema can be written in Python and then extended through the web.
+
+    Buildout
+        Buildout is a Python-based build system for creating, assembling and deploying applications from multiple parts, some of which may be non-Python-based. It lets you create a buildout configuration and reproduce the same software later. See `buildout.org <http://www.buildout.org/en/latest/>`_
