@@ -1,15 +1,31 @@
 language: python
 python: '2.7'
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
 - ln -s ../../documentation source/documentation
 - mkdir -p buildout-cache/downloads
 - virtualenv buildout
 - buildout/bin/python bootstrap.py -c travis.cfg
-- bin/buildout -N -t 3 -c travis.cfg buildout:checkout=documentation sources:documentation="fs documentation egg=false"
+- bin/buildout -N -t 3 -c travis.cfg buildout:checkout=documentation sources:documentation="fs
+  documentation egg=false"
 before_script:
 - gem install --version 0.8.9 faraday
 - gem install travis-artifacts
 script: make html
 after_script:
 - travis-artifacts upload --path build/html
+- travis-artifacts upload --target-path latest --path build/html
+notifications:
+  irc:
+    channels:
+    - irc.freenode.org#plone-docs
+    template:
+    - ! '%{repository}#%{build_number} (%{branch} | %{commit} | %{author}): %{message}'
+    - ! 'Sphinx: http://plone-documentation.s3-website-us-east-1.amazonaws.com/artifacts/%{build_number}/%{build_number}.1/'
+env:
+  global:
+  - secure: PAvLvTgw/D1iopxy7u+Qwdd+Z80TF/uuQB66QGcdNXltX11sELKlYkXuXIK+PhPWYvzMUbX0bUS6I+DQgmqHzhaI8bvkjFYFt5eNRqri3BloTLKBAu+vqik27SYlhTj+anJ0i40OiJXA91rOEBeVuXovci20f2IcmMyMziJtAQA=
+  - secure: fpI10bztCDtOmFftG/gWXXcyF4LEHkcvcb+69YTMCS2pP0DQuUFW8Fxx1Q9SQzGEkWfrwKACd3dyY2Pkdyqww3x02PZ/KSje/6deTYNNgbdOZfRgWKlyyHBDyGSjyVAARiJgF+fAcA+SINlt+5LZVsSsOQ9MBILmgbq8mA5nxCk=
