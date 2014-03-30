@@ -2,7 +2,7 @@ language: python
 python: '2.7'
 install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
-- mkdir source && ln -s ../../documentation source/documentation
+- ln -s ../../documentation source/documentation
 - mkdir -p buildout-cache/downloads
 - virtualenv buildout
 - buildout/bin/python bootstrap.py -c travis.cfg
