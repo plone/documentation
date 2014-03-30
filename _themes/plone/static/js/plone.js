@@ -18,7 +18,8 @@ function preferPrimaryDomain() {
     }
 
     // Redirect other domains to docs.plone.org
-    if(window.location.hostname != "docs.plone.org") {
+    if(window.location.hostname != "docs.plone.org" &&
+       window.location.hostname != "plone-documentation.s3-website-us-east-1.amazonaws.com") {
         var href = window.location.href;
         href = href.replace(window.location.hostname, "docs.plone.org");
         href = href.replace("https://", "http://");
