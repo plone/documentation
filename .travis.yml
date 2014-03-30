@@ -1,0 +1,15 @@
+language: python
+python: '2.7'
+install:
+- git clone https://github.com/plone/papyrus .. && cd ../papyrus
+- mkdir source && ln -s ../../documentation source/documentation
+- mkdir -p buildout-cache/downloads
+- virtualenv buildout
+- buildout/bin/python bootstrap.py -c travis.cfg
+- bin/buildout -N -t 3 -c travis.cfg buildout:checkout=documentation sources:documentation="fs documentationbranch=sources-only egg=false"
+before_script:
+- gem install --version 0.8.9 faraday
+- gem install travis-artifacts
+script: make html
+after_script:
+- travis-artifacts upload --path build/html
