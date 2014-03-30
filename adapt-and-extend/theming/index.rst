@@ -1,10 +1,12 @@
 Theming Plone
 =============
 
-.. admonition:: Description
+.. admonition:: Intro
 
    The current best-practice way to theme a Plone site is by using an engine called "Diazo".
    This allows designers to design a theme in just plain, flat HTML, CSS (and javascript, if wanted) and then to hook that into the Plone backend to fill it with sophisticated content.
+
+   The easiest way to do this is to use "plone.app.theming". But if you need to integrate Plone with other back-end servers, legacy systems, or any webservice, you can use Diazo to all combine it in a unified look & feel.
 
 
 
