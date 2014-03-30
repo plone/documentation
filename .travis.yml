@@ -27,5 +27,6 @@ notifications:
     - ! 'Sphinx: http://plone-documentation.s3-website-us-east-1.amazonaws.com/artifacts/%{build_number}/%{build_number}.1/'
 env:
   global:
+  - ARTIFACTS_S3_BUCKET=plone-documentation
   - secure: PAvLvTgw/D1iopxy7u+Qwdd+Z80TF/uuQB66QGcdNXltX11sELKlYkXuXIK+PhPWYvzMUbX0bUS6I+DQgmqHzhaI8bvkjFYFt5eNRqri3BloTLKBAu+vqik27SYlhTj+anJ0i40OiJXA91rOEBeVuXovci20f2IcmMyMziJtAQA=
   - secure: fpI10bztCDtOmFftG/gWXXcyF4LEHkcvcb+69YTMCS2pP0DQuUFW8Fxx1Q9SQzGEkWfrwKACd3dyY2Pkdyqww3x02PZ/KSje/6deTYNNgbdOZfRgWKlyyHBDyGSjyVAARiJgF+fAcA+SINlt+5LZVsSsOQ9MBILmgbq8mA5nxCk=
