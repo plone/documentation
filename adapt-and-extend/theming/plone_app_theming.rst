@@ -1,2 +1,0 @@
-plone.app.theming Manual
-========================

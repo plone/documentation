@@ -12,7 +12,7 @@ Theming Plone
    :maxdepth: 2
 
    intro
-   plone_app_theming
+   /external/plone.app.theming/docs/index
    /external/diazo/docs/index
    theme_product_with_diazo
    quick_test
