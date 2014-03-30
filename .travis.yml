@@ -5,7 +5,7 @@ before_install:
 - sh -e /etc/init.d/xvfb start
 install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
-- ln -s ../../documentation source/documentation
+- mkdir -p source && ln -s ../../documentation source/documentation
 - mkdir -p buildout-cache/downloads
 - virtualenv buildout
 - buildout/bin/python bootstrap.py -c travis.cfg
