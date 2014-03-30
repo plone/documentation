@@ -329,11 +329,13 @@ Documentation is not code. Repeat after us: Documentation is not code.
 
 Therefore, documentation should not follow PEP8 or other arbitrary conventions.
 
-**Remember :** This documentation is set up so it is fully translatable by using standard tools like transifex.
+.. note::
 
-Your sentences will become .po strings, to be translated. 
+  **Remember :** This documentation is set up so it is fully translatable by using standard tools like transifex.
 
-Now, think about how translations would work if the translator can only see an arbitrary part of a sentence. Translating is hard enough without creating additional problems...
+  Your sentences will become .po strings, to be translated. 
+
+  Now, think about how translations would work if the translator can only see an arbitrary part of a sentence. Translating is hard enough without creating additional problems...
 
 If you want to keep short lines:
 
