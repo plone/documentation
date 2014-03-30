@@ -8,8 +8,11 @@ link**, usually located on the bottom of each side column. Under Manage
 Portlets, you can create new Portlets, remove Portlets, rename and
 rearrange Portlets.
 
+Finding the Manage Portlets link
+--------------------------------
+
 |Portlet manage link|
----------------------
+
 
 Clicking on this link will take us to a new page that will allow us to
 edit the Portlets. The other method of getting to this screen is by
@@ -19,7 +22,7 @@ Page, the URL would end up being
 www.myplonesite.org/about/@@manage-portlets.
 
 |Manage portlets|
------------------
+
 
 Adding a Portlet
 ----------------
