@@ -27,28 +27,51 @@ Developing for Plone Core
 
    plone-coredev/index
 
-Various documentation
+Dev helper packages
 ---------------------
+
+plone.app.testing
+^^^^^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 2
+
+   /external/plone.app.testing/docs/source/index
+
+plone.api
+^^^^^^^^^
 
 .. toctree::
    :maxdepth: 2
 
    /external/plone.api/docs/index
 
+plone.app.multilingual
+^^^^^^^^^^^^^^^^^^^^^^
+
 .. toctree::
    :maxdepth: 2
 
    /external/plone.app.multilingual/docs/index
+
+plone.app.contenttypes
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 2
 
    /external/plone.app.contenttypes/docs/README
 
+plone.app.contentlisting
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. toctree::
    :maxdepth: 2
 
    /external/plone.app.contentlisting/docs/README
+
+plone.app.robotframework
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 2
@@ -57,7 +80,8 @@ Various documentation
 
 
 
-Tutorials:
+Tutorials
+----------
 
 .. toctree::
    :maxdepth: 2
