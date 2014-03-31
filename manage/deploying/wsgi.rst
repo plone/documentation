@@ -9,11 +9,8 @@ Introduction
 
 WSGI is Python standard for hosting Python web services.
 
-* http://www.wsgi.org/wsgi/
+* https://wsgi.readthedocs.org/en/latest/
 
-For using Plone on WSGI, please see Repoze project
-
-* http://repoze.org/quickstart.html
 
 * http://repoze.org/
 
