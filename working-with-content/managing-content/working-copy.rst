@@ -1,7 +1,7 @@
 Working Copy
 ==================
 
-.. include:: /_robot.rst
+.. include:: ../../_robot.rst
 
 Working Copy lets you have two versions of your content in parallel.
 
