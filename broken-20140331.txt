@@ -190,9 +190,6 @@ develop/plone/views/viewlets.rst:318: [broken] http://svn.zope.org/zope.contentp
 develop/plone/views/viewlets.rst:322: [broken] http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto: timed out
 develop/plone/views/viewlets.rst:190: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto: timed out
 develop/plone/views/viewlets.rst:183: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/manager.py?rev=113069&view=auto: timed out
-manage/deploying/front-end/nginx.rst:273: [broken] http://aleksandarsavic.com/nginx-redirect-wwwexamplecom-requests-to-examplecom-or-vice-versa/: HTTP Error 404: Not Found
-manage/deploying/front-end/nginx.rst:333: [broken] http://aleksandarsavic.com/nginx-and-wordpress-setup-clean-seo-friendly-urls/: HTTP Error 404: Not Found
-manage/deploying/front-end/nginx.rst:480: [broken] http://nginx-sticky-module.googlecode.com/files/nginx-sticky-module-1.0-rc2.tar.gz: HTTP Error 404: Not Found
 manage/deploying/production/ubuntu_production.rst:279: [broken] http://localhost:8080/: <urlopen error [Errno 111] Connection refused>
 manage/deploying/testing_tuning/performance/instancesthreads.rst:114: [broken] http://www.memcached.org: <urlopen error [Errno 111] Connection refused>
 manage/deploying/testing_tuning/testing_and_debugging/error_log.rst:10: [broken] http://svn.zope.org/Zope/trunk/src/Products/SiteErrorLog/SiteErrorLog.py?rev=96315&view=auto: timed out
