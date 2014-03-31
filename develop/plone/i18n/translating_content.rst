@@ -60,7 +60,7 @@ Example::
 
 For more information, see:
 
-* http://pypi.python.org/pypi/Products.LinguaPlone/3.1a2#language-independent-fields
+* https://pypi.python.org/pypi/Products.LinguaPlone/3.1a2#language-independent-fields
 
 * http://n2.nabble.com/languageIndependent-fields-not-updated-td2430489.html
 
@@ -163,7 +163,7 @@ Here is a workaround
 * When the end user, not editor, clicks link the Link content type takes
   him/her to the actual English content
 
-You may also find `redturtle.smartlink <http://pypi.python.org/pypi/redturtle.smartlink/>`_
+You may also find `redturtle.smartlink <https://pypi.python.org/pypi/redturtle.smartlink/>`_
 as useful add-on.
 
 Serving translated content from a correct domain name
@@ -686,7 +686,7 @@ Installation of ``raptus.multilanguageplone`` is straight-forward with
 buildout. If the site already contains articles then you have to migrate
 them.
 
-See http://pypi.python.org/pypi/raptus.multilanguagefields
+See https://pypi.python.org/pypi/raptus.multilanguagefields
 
 Switching from Linguaplone
 --------------------------

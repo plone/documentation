@@ -28,11 +28,11 @@ Test browser
 
 Plone uses Products.Five.testbrowser as an browser emulator used in functional tests.
 It is based on zope.testbrowser package.
-You can find more information in the `zope.testbrowser docs home page <http://pypi.python.org/pypi/zope.testbrowser>`_. The API is described in `zope.testbrowser.interfaces (3.4 used by Plone 3) <http://svn.zope.org/zope.testbrowser/tags/3.4.2/src/zope/testbrowser/interfaces.py?rev=81337&view=markup>`_.
+You can find more information in the `zope.testbrowser docs home page <https://pypi.python.org/pypi/zope.testbrowser>`_. The API is described in `zope.testbrowser.interfaces (3.4 used by Plone 3) <http://svn.zope.org/zope.testbrowser/tags/3.4.2/src/zope/testbrowser/interfaces.py?rev=81337&view=markup>`_.
 
 .. warning::
 
-    There also exists old `zc.testbrowser <http://pypi.python.org/pypi/zc.testbrowser>`_,
+    There also exists old `zc.testbrowser <https://pypi.python.org/pypi/zc.testbrowser>`_,
     which is a different package with similar name.
 
 All code assumes here is is executed in unit test context where self.portal is your unit test site instance.
@@ -44,7 +44,7 @@ You can record functional tests through the browser. Think it as a Microsoft Wor
 
 * http://pyyou.wordpress.com/2008/04/11/how-to-install-zopetestrecorder-with-buildout/
 
-* http://pypi.python.org/pypi/zope.testrecorder
+* https://pypi.python.org/pypi/zope.testrecorder
 
 Functional test skeleton
 ------------------------
@@ -52,7 +52,7 @@ Functional test skeleton
 First see collective.testlayer package which does some of the things
 described below
 
-* http://pypi.python.org/pypi/collective.testcaselayer
+* https://pypi.python.org/pypi/collective.testcaselayer
 
 Example code::
 

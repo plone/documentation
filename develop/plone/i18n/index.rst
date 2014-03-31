@@ -21,11 +21,11 @@ several add-on products that provides multilingual support to Plone:
 * `plone.app.multilingual`_ (Archetypes and Dexterity content types, requires
   at least Plone 4.1)
 
-.. _zope.i18n: http://pypi.python.org/pypi/zope.i18n
-.. _zope.i18nmessageid: http://pypi.python.org/pypi/zope.i18nmessageid
-.. _plone.i18n: http://pypi.python.org/pypi/plone.i18n
-.. _Products.LinguaPlone: http://pypi.python.org/pypi/Products.LinguaPlone
-.. _plone.app.multilingual: http://pypi.python.org/pypi/plone.app.multilingual
+.. _zope.i18n: https://pypi.python.org/pypi/zope.i18n
+.. _zope.i18nmessageid: https://pypi.python.org/pypi/zope.i18nmessageid
+.. _plone.i18n: https://pypi.python.org/pypi/plone.i18n
+.. _Products.LinguaPlone: https://pypi.python.org/pypi/Products.LinguaPlone
+.. _plone.app.multilingual: https://pypi.python.org/pypi/plone.app.multilingual
 
 Contents
 ========

@@ -9,7 +9,7 @@ altering the original source code.
 
 Plone community promotes conflict free way to do monkey patching
 using `collective.monkeypatcher package 
-<http://pypi.python.org/pypi/collective.monkeypatcher>`_.
+<https://pypi.python.org/pypi/collective.monkeypatcher>`_.
 
 Patching constants
 ====================

@@ -72,7 +72,7 @@ initially. Done.
 
 You can find this function among other useful tools in the package
 `collective.setuphandlertools
-<http://pypi.python.org/pypi/collective.setuphandlertools>`_ and on `github
+<https://pypi.python.org/pypi/collective.setuphandlertools>`_ and on `github
 <https://github.com/collective/collective.setuphandlertools>`_.
 
 A fix, so that zope.formlib accepts schema updates is beeing discussed in the

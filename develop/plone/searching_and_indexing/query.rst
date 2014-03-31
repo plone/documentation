@@ -993,7 +993,7 @@ Below is a fail-safe example for a metadata access::
 Fuzzy search
 ===============
 
-* http://pypi.python.org/pypi/c2.search.fuzzy/
+* https://pypi.python.org/pypi/c2.search.fuzzy/
 
 Unique values
 =============

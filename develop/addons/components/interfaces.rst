@@ -17,7 +17,7 @@ An interface defines the shape of a hole where different pieces fit.
 The shape of the piece is defined by the interface, but the implementation
 details like color, material, etc. can vary.
 
-See `zope.interface package README <http://pypi.python.org/pypi/zope.interface>`_.
+See `zope.interface package README <https://pypi.python.org/pypi/zope.interface>`_.
 
 Common interfaces
 ==================
@@ -298,9 +298,9 @@ Tagged values are arbitrary metadata you can stick on
 For example, the `plone.autoform`_ package uses them to set form widget
 hints for `zope.schema`_ data model declarations.
 
-.. _zope.schema: http://pypi.python.org/pypi/zope.schema
-.. _plone.autoform: http://pypi.python.org/pypi/plone.autoform
-.. _zope.dottedname: http://pypi.python.org/pypi/zope.dottedname
-.. _zope.interface: http://pypi.python.org/pypi/zope.interfaces
+.. _zope.schema: https://pypi.python.org/pypi/zope.schema
+.. _plone.autoform: https://pypi.python.org/pypi/plone.autoform
+.. _zope.dottedname: https://pypi.python.org/pypi/zope.dottedname
+.. _zope.interface: https://pypi.python.org/pypi/zope.interfaces
 .. _Products.Five: http://svn.zope.org/Zope/trunk/src/Products/Five/README.txt?view=markup
 .. |---| unicode:: U+02014 .. em dash

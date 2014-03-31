@@ -40,7 +40,7 @@ You can add ``MemcachedManager`` to your Zope setup, and replace the
 RamCache instance in the ZMI with a new instance of ``MemcachedManager``
 (keep the id the same).
 
-* http://pypi.python.org/pypi/Products.MemcachedManager
+* https://pypi.python.org/pypi/Products.MemcachedManager
 
 Using custom RAM cache
 =======================

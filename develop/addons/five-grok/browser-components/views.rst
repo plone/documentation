@@ -512,11 +512,11 @@ tutorial.
 as skin layer templates are used for many of the standard pages, but the
 principles behind them are the same.
 
-.. _plone.memoize: http://pypi.python.org/pypi/plone.memoize
-.. _plone.theme: http://pypi.python.org/pypi/plone.theme
-.. _plone.browserlayer: http://pypi.python.org/pypi/plone.browserlayer
-.. _z3c.jbot: http://pypi.python.org/pypi/z3c.jbot
+.. _plone.memoize: https://pypi.python.org/pypi/plone.memoize
+.. _plone.theme: https://pypi.python.org/pypi/plone.theme
+.. _plone.browserlayer: https://pypi.python.org/pypi/plone.browserlayer
+.. _z3c.jbot: https://pypi.python.org/pypi/z3c.jbot
 .. _Customization for Developers: /documentation/tutorial/customization-for-developers/
-.. _z3c.form: http://pypi.python.org/pypi/z3c.form
+.. _z3c.form: https://pypi.python.org/pypi/z3c.form
 .. _Dexterity Developer Manual: developer.plone.org/reference_manuals/external/plone.app.dexterity/
 .. _ZPT reference: http://docs.zope.org/zope2/zope2book/AppendixC.html

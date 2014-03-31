@@ -145,7 +145,7 @@ If you want to override an already overridden template, read here:
 
 More info:
 
-* http://pypi.python.org/pypi/z3c.jbot/
+* https://pypi.python.org/pypi/z3c.jbot/
 
 * http://blog.keul.it/2011/06/z3cjbot-magical-with-your-skins.html
 
@@ -155,7 +155,7 @@ Main template
 
 The master page template in Plone is called ``main_template.pt`` and it is
 provided by the
-`Products.CMFPlone package <https://github.com/plone/Products.CMFPlone/tree/master/Products/CMFPlone/skins/plone_templates/main_template.pt>`_.
+`Products.CMFPlone package <https://github.com/plone/Products.CMFPlone/blob/4.3.x/Products/CMFPlone/skins/plone_templates/main_template.pt>`_.
 
 This template provides the visual frame for Plone themes. The template is
 an old-style page template living in ``plone_skins/plone_templates``.
@@ -680,7 +680,7 @@ More info
 
 * http://stackoverflow.com/q/13165748/315168
 
-.. _z3c.jbot: http://pypi.python.org/pypi/z3c.jbot
+.. _z3c.jbot: https://pypi.python.org/pypi/z3c.jbot
 .. _Roll out your own add-on:
 .. _sane_plone_addon_template:
    https://github.com/miohtama/sane_plone_addon_template

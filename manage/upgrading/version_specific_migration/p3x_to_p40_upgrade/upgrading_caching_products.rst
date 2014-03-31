@@ -6,7 +6,7 @@ Plone 3's primary caching add-on product, CacheFu (aka CacheSetup) is not compat
 
 Many production Plone sites use the add-on CacheFu (aka CacheSetup) to boost site performance. This is a widely recognized "best practice." **However, CacheFu is not compatible with Plone 4.**
 
-Do not despair: the Plone community has created a new, simpler and more powerful replacement for CacheFu called `plone.app.caching <http://pypi.python.org/pypi/plone.app.caching>`_, which is Plone 4 compatible.
+Do not despair: the Plone community has created a new, simpler and more powerful replacement for CacheFu called `plone.app.caching <https://pypi.python.org/pypi/plone.app.caching>`_, which is Plone 4 compatible.
 
 If your Plone 3 site currently includes CacheFu/CacheSetup, you should:
 * Uninstall CacheFu from your Plone 3 site **before upgrading it to Plone 4**. (If, after migration, your site triggers "AttributeError: getHTTPCachingHeaders" on file system resources, try reconfiguring CacheFu to not use a proxy and turn it off **before** uninstalling it.)

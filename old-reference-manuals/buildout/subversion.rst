@@ -115,7 +115,7 @@ client to remember them permanently:
     (R)eject, accept (t)emporarily or accept (p)ermanently? p
 
    
-.. _plone.recipe.bundlecheckout: http://pypi.python.org/pypi/plone.recipe.bundlecheckout
-.. _mr.developer: http://pypi.python.org/pypi/mr.developer
-.. _infrae.subversion: http://pypi.python.org/pypi/infrae.subversion
+.. _plone.recipe.bundlecheckout: https://pypi.python.org/pypi/plone.recipe.bundlecheckout
+.. _mr.developer: https://pypi.python.org/pypi/mr.developer
+.. _infrae.subversion: https://pypi.python.org/pypi/infrae.subversion
 .. _`infrae.subversion: a recipe against disaster`: http://danielnouri.org/blog/devel/zope/infrae-subversion.html

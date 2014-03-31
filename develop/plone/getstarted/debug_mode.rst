@@ -47,7 +47,7 @@ In **debug mode**
 Reloading Python code
 ========================
 
-Reloading Python code automatically can be enabled with `sauna.reload add-on <http://pypi.python.org/pypi/sauna.reload/>`_.
+Reloading Python code automatically can be enabled with `sauna.reload add-on <https://pypi.python.org/pypi/sauna.reload/>`_.
 
 Javascript and CSS issues with production mode
 =================================================

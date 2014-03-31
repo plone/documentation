@@ -124,9 +124,9 @@ Creating unit tests
 
 Pointers:
 
-* http://pypi.python.org/pypi/plone.app.testing
+* https://pypi.python.org/pypi/plone.app.testing
 
-* http://pypi.python.org/pypi/Products.PloneTestCase
+* https://pypi.python.org/pypi/Products.PloneTestCase
 
 * http://www.zope.org/Members/shh/ZopeTestCaseWiki/ApiReference
 

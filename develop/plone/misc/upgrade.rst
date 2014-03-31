@@ -40,7 +40,7 @@ not performed a clean uninstall.
 
 Use this utility:
 
-* http://pypi.python.org/pypi/wildcard.fixpersistentutilities
+* https://pypi.python.org/pypi/wildcard.fixpersistentutilities
 
 .. note :: Perform this against old buildout
 

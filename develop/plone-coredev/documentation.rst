@@ -57,7 +57,7 @@ At the very least, your package should include the following forms of documentat
     * Integrators who need to extend the functionality of the package in code.
     * Sysadmins who need to maintain the server running the software.
 
-    Simple packages with limited functionality can get by with a single page of narrative documentation. In this case it's simplest to include it in an extended :file:`README.rst`. Some excellent examples of a single-page readme are http://pypi.python.org/pypi/plone.outputfilters and https://github.com/plone/plone.app.caching
+    Simple packages with limited functionality can get by with a single page of narrative documentation. In this case it's simplest to include it in an extended :file:`README.rst`. Some excellent examples of a single-page readme are https://pypi.python.org/pypi/plone.outputfilters and https://github.com/plone/plone.app.caching
 
     If your project is moderately complex, you may want to set up your documentation with multiple pages. The best way to do this is to add Sphinx to your project and host your docs on readthedocs.org so that it rebuilds the documentation whenever you push to github. If you do this, your :file:`README.rst` must link off site to the documentation.
 
@@ -96,5 +96,5 @@ Using Sphinx
 
 reST References:
  * `Plone Oriented Shpinx Documentation <http://developer.plone.org/reference_manuals/active/writing/index.html>`_
- * `Sphinx reST Primer <http://sphinx.pocoo.org/rest.html>`_ 
+ * `Sphinx reST Primer <http://sphinx-doc.org/rest.html>`_ 
 

@@ -43,7 +43,7 @@ kind of data each Python attribute can hold.
 More info
 ----------------
 
-* `zope.schema <http://pypi.python.org/pypi/zope.schema>`_ on PyPi
+* `zope.schema <https://pypi.python.org/pypi/zope.schema>`_ on PyPi
 
 * `zope.schema source code <http://svn.zope.org/zope.schema/trunk/src/zope/schema/>`_ - definite source for field types and usage.
 
@@ -574,6 +574,6 @@ http://effbot.org/zone/default-values.htm
 
 Use value adapters instead 
 
-* http://pypi.python.org/pypi/plone.directives.form#value-adapters
+* https://pypi.python.org/pypi/plone.directives.form#value-adapters
 
 .. |---| unicode:: U+02014 .. em dash

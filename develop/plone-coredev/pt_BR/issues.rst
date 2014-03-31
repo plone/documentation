@@ -50,7 +50,7 @@ As long as you don't have any pending commits, you just need to remove the packa
 
 You can also get such fun errors as::
 
-    Link to http://sphinx.pocoo.org/ ***BLOCKED*** by --allow-hosts
+    Link to http://sphinx-doc.org/ ***BLOCKED*** by --allow-hosts
 
 
 These are ok to ignore IF and ONLY IF the lines following it say::

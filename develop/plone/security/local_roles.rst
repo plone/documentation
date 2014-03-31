@@ -174,7 +174,7 @@ There you see how roles for a given context are being resolved.
 
 Check the ``acl_users.portal_role_manager`` tool via the :term:`ZMI`.
 
-Please see the `zopyx.plone.cassandra <http://pypi.python.org/pypi/zopyx.plone.cassandra>`_ add-on product.
+Please see the `zopyx.plone.cassandra <https://pypi.python.org/pypi/zopyx.plone.cassandra>`_ add-on product.
 
 Other
 -----

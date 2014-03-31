@@ -15,7 +15,7 @@ Prerequisitements
 
 What you need to know in order to install add-ons for Plone
 
-- How to use command line of your operating system. This is a hard requirement - you cannot achieve your goal unless you know how to interact with the command line. Here are basics tutorials for `Windows <http://vishnuvalentino.com/hacking-tutorial/16-steps-tutorial-basic-command-prompt/>`_ and `Linux <http://linuxcommand.org/learning_the_shell.php>`_
+- How to use command line of your operating system. This is a hard requirement - you cannot achieve your goal unless you know how to interact with the command line. Here are basics tutorials for `Windows <http://www.hacking-tutorial.com/tips-and-tricks/16-steps-tutorial-basic-command-prompt/>`_ and `Linux <http://linuxcommand.org/learning_the_shell.php>`_
 - Working with plain text based configuration files and editing them with a text editor like Notepad
 - First create a :doc:`development / back-up copy </manage/deploying/copy>` of your site. Never install to the working production server directly, without first testing the add-on on a test instance.
 
@@ -25,8 +25,8 @@ Background
 
 Since Plone 3, Plone installations are managed using :term:`Buildout`. Plone add-ons are distributed as Python modules, also known as eggs.
 
-- the `Plone product <http://plone.org/product>`_ download area contains popular add-ons for Plone
-- Add-on file downloads are hosted on the `PyPi Python package repository <http://pypi.org>`_ - along with tons of other Python software
+- the `Plone product <http://plone.org/products>`_ download area contains popular add-ons for Plone
+- Add-on file downloads are hosted on the `PyPi Python package repository <https://pypi.python.org>`_ - along with tons of other Python software
 - the buildout.cfg file in your Plone configuration defines which add-ons are available for your sites to install in Site Setup > Add-ons control panel
 - the bin/buildout command (or bin/buildout.exe on Windows) in your Plone installation reads buildout.cfg and automatically downloads required packages when run - you do not need to download any Plone add-ons manually
 - Plone site setup -> Add ons control panel defines which add-ons are installed for the current Plone site (remember, there can be many Plone sites on a single Zope application server)
@@ -38,7 +38,7 @@ Since Plone 3, Plone installations are managed using :term:`Buildout`. Plone add
 Finding add-ons
 ----------------
 
-Browse the `plone.org product area <http://plone.org/products>`_ or `search on PyPi <http://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for possible add-ons.
+Browse the `plone.org product area <http://plone.org/products>`_ or `search on PyPi <https://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for possible add-ons.
 
 When you find a suitable add-on you must note down its Python package name. Quite often, this is in the form of a name with a dot in it. For example, for the add-on PloneFormGe  the package id is Products.PloneFormGen. The id is visible in the PyPi page URL if it is not mentioned anywhere else. Capitalization is important here!
 

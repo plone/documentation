@@ -279,8 +279,8 @@ This will:
 More info:
 
 * :doc:`ZopeSkel </develop/addons/paste>`
-* `virtualenv <http://pypi.python.org/pypi/virtualenv>`_
-* `Pillow <http://pypi.python.org/pypi/Pillow/>`_
+* `virtualenv <https://pypi.python.org/pypi/virtualenv>`_
+* `Pillow <https://pypi.python.org/pypi/Pillow/>`_
 * `lxml <http://lxml.de/>`_
 
 Installing Plone using RPMs, .dev, ... packages

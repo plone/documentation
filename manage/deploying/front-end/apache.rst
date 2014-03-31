@@ -254,7 +254,7 @@ Then you can add to your virtual host configuration::
   CacheDirLength 2
 
 Then install go to *Cache Configration* (Plone 4.1+)
-and configure `the caching options <http://pypi.python.org/pypi/plone.app.caching>`_.
+and configure `the caching options <https://pypi.python.org/pypi/plone.app.caching>`_.
 
 Unsetting language cookie for media content
 =============================================

@@ -83,12 +83,12 @@ A note about versions
 
 This manual is targeted at Plone 4.1 and above (Zope 2.13).
 
-.. _plone.z3cform: http://pypi.python.org/pypi/plone.z3cform
-.. _plone.app.z3cform: http://pypi.python.org/pypi/plone.app.z3cform
-.. _plone.autoform: http://pypi.python.org/pypi/plone.autoform
-.. _plone.directives.form: http://pypi.python.org/pypi/plone.directives.form
-.. _five.grok: http://pypi.python.org/pypi/five.grok
+.. _plone.z3cform: https://pypi.python.org/pypi/plone.z3cform
+.. _plone.app.z3cform: https://pypi.python.org/pypi/plone.app.z3cform
+.. _plone.autoform: https://pypi.python.org/pypi/plone.autoform
+.. _plone.directives.form: https://pypi.python.org/pypi/plone.directives.form
+.. _five.grok: https://pypi.python.org/pypi/five.grok
 .. _five.grok manual: http://developer.plone.org/reference_manuals/active/five-grok
 .. _five.grok view documentation: http://developer.plone.org/reference_manuals/active/five-grok/browser-components/views.html
-.. _z3c.form: http://pypi.python.org/pypi/z3c.form
+.. _z3c.form: https://pypi.python.org/pypi/z3c.form
 .. _Dexterity manual: http://developer.plone.org/reference_manuals/external/plone.app.dexterity/

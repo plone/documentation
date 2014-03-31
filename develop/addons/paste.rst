@@ -327,7 +327,7 @@ For example, a Plone add-on might read::
 
 This means that when you use setuptools/buildout/pip/whatever Python package
 installation tool to install your package from the
-`Python Package Index (PyPi) <http://pypi.python.org/pypi>`_
+`Python Package Index (PyPi) <https://pypi.python.org/pypi>`_
 it will also automatically install Python packages declared in 
 ``install_requires``.
 

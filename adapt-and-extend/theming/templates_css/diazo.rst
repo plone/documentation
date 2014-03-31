@@ -31,9 +31,9 @@ Example backends to perform diazo transformation include:
 
 Diazo theming can be used together with Plone, in which case enhanced
 support is provided by the 
-`plone.app.theming package <http://http://pypi.python.org/pypi/plone.app.theming>`_. 
+`plone.app.theming package <https://pypi.python.org/pypi/plone.app.theming>`_. 
 (This is the Plone integration package for Diazo, like
-`collective.xdv package <http://pypi.python.org/pypi/collective.xdv>`_
+`collective.xdv package <https://pypi.python.org/pypi/collective.xdv>`_
 was the integration package for XDV)
 Technically, ``plone.app.theming`` adds a Plone settings panel (Diazo)
 and does XSL transformation in Zope's post-publication hook using the
@@ -46,7 +46,7 @@ For more information, have a look at his
 `branch of plone.app.theming <https://github.com/plone/plone.app.theming/tree/optilude-ace>`_.
 
 Diazo can be used standalone with 
-`Diazo package <http://pypi.python.org/pypi/diazo>`_ to theme any web site, 
+`Diazo package <https://pypi.python.org/pypi/diazo>`_ to theme any web site, 
 whether it's Wordpress, Joomla, Drupal or a custom in-house PHP solution
 from the year 2000.
 
@@ -74,13 +74,12 @@ There are several reasons for this:
 With Diazo you can easily also have a separate ``admin.yoursite.com``
 domain where the Plone editing interface is untouched.  
 
-R
-elated links
+Related links
 -------------
 
-* http://pypi.python.org/pypi/plone.app.theming
+* https://pypi.python.org/pypi/plone.app.theming
  
-* http://pypi.python.org/pypi/diazo
+* https://pypi.python.org/pypi/diazo
 
 * http://diazo.org
 

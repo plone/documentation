@@ -47,12 +47,12 @@ discussed in this manual. This includes:
 Some of this reflects the Dexterity developers’ preferences and views.
 You are allowed to disagree.
 
-.. _grokcore.annotation: http://pypi.python.org/pypi/grokcore.annotation
-.. _grokcore.security: http://pypi.python.org/pypi/grokcore.security
+.. _grokcore.annotation: https://pypi.python.org/pypi/grokcore.annotation
+.. _grokcore.security: https://pypi.python.org/pypi/grokcore.security
 .. _Dexterity developer manual: developer.plone.org/reference_manuals/external/plone.app.dexterity/
-.. _grokcore.view: http://pypi.python.org/pypi/grokcore.view
-.. _grokcore.site: http://pypi.python.org/pypi/grokcore.site
-.. _plone.theme: http://pypi.python.org/pypi/plone.theme
-.. _grokcore.formlib: http://pypi.python.org/pypi/grokcore.formlib
-.. _z3c.form: http://pypi.python.org/pypi/z3c.form
-.. _grokcore.viewlet: http://pypi.python.org/pypi/grokcore.viewlet
+.. _grokcore.view: https://pypi.python.org/pypi/grokcore.view
+.. _grokcore.site: https://pypi.python.org/pypi/grokcore.site
+.. _plone.theme: https://pypi.python.org/pypi/plone.theme
+.. _grokcore.formlib: https://pypi.python.org/pypi/grokcore.formlib
+.. _z3c.form: https://pypi.python.org/pypi/z3c.form
+.. _grokcore.viewlet: https://pypi.python.org/pypi/grokcore.viewlet

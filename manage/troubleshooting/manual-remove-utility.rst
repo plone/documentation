@@ -13,7 +13,7 @@ Manually Removing Local Persistent Utilities
 
   **Update**
 
-  There is now a useful tool available, `wildcard.fixpersistentutilities <http://pypi.python.org/pypi/wildcard.fixpersistentutilities>`_ ,  to address these issues TTW (Through The Web). I would suggest trying it before you go through this article.
+  There is now a useful tool available, `wildcard.fixpersistentutilities <https://pypi.python.org/pypi/wildcard.fixpersistentutilities>`_ ,  to address these issues TTW (Through The Web). I would suggest trying it before you go through this article.
 
 
 Purpose

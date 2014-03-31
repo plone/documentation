@@ -324,7 +324,7 @@ If your add-on product or custom code depends on AdvancedQuery, you will need to
          'setuptools',
          'Products.AdvancedQuery',
 
-`AdvancedQuery can be found here. <http://pypi.python.org/pypi/Products.AdvancedQuery/3.0.1>`_
+`AdvancedQuery can be found here. <https://pypi.python.org/pypi/Products.AdvancedQuery/3.0.1>`_
 
 Validators
 ==========
@@ -416,7 +416,7 @@ Preparing already existing content types
 
 In order to prepare your own content types to use blobs and provide migration facilities to your users once plone.app.blob is available, you need to perform the following steps. Check `example.blobattype <http://dev.plone.org/collective/browser/example.blobattype/trunk>`_ for example code.
 
-Use a schema extender to replace the FileField(s) of your content type with BlobField(s). For detailed information on how to do so please look into the `archetypes.schemaextender <http://pypi.python.org/pypi/archetypes.schemaextender/>`_ documentation. In essence this breaks down to:
+Use a schema extender to replace the FileField(s) of your content type with BlobField(s). For detailed information on how to do so please look into the `archetypes.schemaextender <https://pypi.python.org/pypi/archetypes.schemaextender/>`_ documentation. In essence this breaks down to:
 
 * Creating an extension field::
 
@@ -656,7 +656,7 @@ This is the form that site administrators, or any other user with the Manage use
 User registration fields made flexible
 --------------------------------------
 
-The new join and user-addding forms let you to select the groups to which the user will be assigned once created. You can customize which fields do you want to be shown in this form from the Site Setup → Users and Groups → Member registration dialog. You can also modify the list programatically and add new fields as described in `collective.examples.userdata <http://pypi.python.org/pypi/collective.examples.userdata>`_.
+The new join and user-addding forms let you to select the groups to which the user will be assigned once created. You can customize which fields do you want to be shown in this form from the Site Setup → Users and Groups → Member registration dialog. You can also modify the list programatically and add new fields as described in `collective.examples.userdata <https://pypi.python.org/pypi/collective.examples.userdata>`_.
 
 Nested groups enabled by default
 --------------------------------
@@ -725,7 +725,7 @@ Rerun buildout.Then you can run tests::
 
     bin/test -s your.packagename
 
-See `z3c.recipe.testrunner <http://pypi.python.org/pypi/zc.recipe.testrunner#detailed-documentation>`_ page for more information.
+See `z3c.recipe.testrunner <https://pypi.python.org/pypi/zc.recipe.testrunner#detailed-documentation>`_ page for more information.
 
 Changes in PloneTestCase setup
 ------------------------------

@@ -342,4 +342,4 @@ come with Plone and third party packages, most of which are named
 vocabularies. Many of these can be found in the *plone.app.vocabularies*
 package, and add-ons such as *plone.principalsource*.
 
-.. _documentation: http://pypi.python.org/pypi/plone.app.registry
+.. _documentation: https://pypi.python.org/pypi/plone.app.registry

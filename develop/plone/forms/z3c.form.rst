@@ -15,13 +15,13 @@ Introduction
 
 Plone uses *z3c.form* library with the following integration steps
 
-* `plone.app.z3cform <http://pypi.python.org/pypi/plone.app.z3cform>`_ provides
+* `plone.app.z3cform <https://pypi.python.org/pypi/plone.app.z3cform>`_ provides
   Plone specific widgets and main template
 
-* `plone.z3cform <http://pypi.python.org/pypi/plone.z3cform>`_ integrates *z3c.form*
+* `plone.z3cform <https://pypi.python.org/pypi/plone.z3cform>`_ integrates *z3c.form*
   with applications using Zope 2 mechanisms like acquisition
 
-* `z3c.form <http://pypi.python.org/pypi/z3c.form/>`_ is a form library which can be
+* `z3c.form <https://pypi.python.org/pypi/z3c.form/>`_ is a form library which can be
   used with any Python application using Zope 3 HTTP requests objects
 
 * (Plone 4.4+ only) `plone.app.widgets <https://github.com/plone/plone.app.widgets/>`_
@@ -269,7 +269,7 @@ Changing form ACTION attribute
 By default, the HTTP ``POST`` request is made to ``context.absolute_url()``.
 However you might want to make the post go to an external server.
 
-* See `how to set <form> action attribute <http://pypi.python.org/pypi/plone.app.z3cform#form-action>`_
+* See `how to set <form> action attribute <https://pypi.python.org/pypi/plone.app.z3cform#form-action>`_
 
 Customizing form inner template
 --------------------------------
@@ -716,7 +716,7 @@ Reordering and hiding widgets
 ------------------------------
 
 With Dexterity forms you can use
-`plone.directives.form <http://pypi.python.org/pypi/plone.directives.form>`_::
+`plone.directives.form <https://pypi.python.org/pypi/plone.directives.form>`_::
 
     from z3c.form.interfaces import IAddForm, IEditForm
 
@@ -782,7 +782,7 @@ Example::
 For more information about how to reorder fields see the ``plone.z3cform``
 page at PyPI:
 
-<http://pypi.python.org/pypi/plone.z3cform#fieldsets-and-form-extenders>`_
+<https://pypi.python.org/pypi/plone.z3cform#fieldsets-and-form-extenders>`_
 
 
 Hiding fields
@@ -933,7 +933,7 @@ factory, and uses it for one field in one form::
 
 
 Alternatively, you can use
-`plone.directives.form <http://pypi.python.org/pypi/plone.directives.form>`_
+`plone.directives.form <https://pypi.python.org/pypi/plone.directives.form>`_
 to add widget hints to form schema.
 
 Widget save
@@ -1740,8 +1740,8 @@ Example::
 WYSIWYG widgets
 ================
 
-By using `plone.directives.form <http://pypi.python.org/pypi/plone.directives.form>`_
-and `plone.app.z3cform <http://pypi.python.org/pypi/plone.app.z3cform>`_ packages you can do::
+By using `plone.directives.form <https://pypi.python.org/pypi/plone.directives.form>`_
+and `plone.app.z3cform <https://pypi.python.org/pypi/plone.app.z3cform>`_ packages you can do::
 
     from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 
@@ -1760,7 +1760,7 @@ and `plone.app.z3cform <http://pypi.python.org/pypi/plone.app.z3cform>`_ package
 
 More information
 
-* http://pypi.python.org/pypi/plone.directives.form
+* https://pypi.python.org/pypi/plone.directives.form
 
 Wrapped and non-wrapped forms
 =============================
@@ -2220,7 +2220,7 @@ Validators are best added in the schema itself.
   you can check the `validators documentation <http://packages.python.org/z3c.form/validator.html>`_.
 
 * The plone.form.directives package provides convenient
-  `decorators for form validators <http://pypi.python.org/pypi/plone.directives.form#validators>`_.
+  `decorators for form validators <https://pypi.python.org/pypi/plone.directives.form#validators>`_.
   If you use ``plone.form.directives`` validators, make sure your package
   is :doc:`grokked </develop/addons/components/grok>`
   (otherwise validators are not registered).

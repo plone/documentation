@@ -49,18 +49,18 @@ recipes `at PyPI`_.
 -  `plone.recipe.command`_ - Execute arbitrary commands in buildout
    through os.system.
 
-.. _at PyPI: http://pypi.python.org/pypi?:action=browse&show=all&c=512
-.. _zc.recipe.egg: http://pypi.python.org/pypi/zc.recipe.egg/
-.. _infrae.subversion: http://pypi.python.org/pypi/infrae.subversion/1.4.5
-.. _plone.recipe.zope2install: http://pypi.python.org/pypi/plone.recipe.zope2install/
-.. _plone.recipe.zope2instance: http://pypi.python.org/pypi/plone.recipe.zope2instance/
-.. _plone.recipe.zope2zeoserver: http://pypi.python.org/pypi/plone.recipe.zope2zeoserver/
-.. _plone.recipe.distros: http://pypi.python.org/pypi/plone.recipe.distros/
-.. _plone.recipe.apache: http://pypi.python.org/pypi/plone.recipe.apache/
-.. _gocept.nginx: http://pypi.python.org/pypi/gocept.nginx/0.9.4
-.. _plone.recipe.varnish: http://pypi.python.org/pypi/plone.recipe.varnish/
-.. _plone.recipe.squid: http://pypi.python.org/pypi/plone.recipe.squid
-.. _collective.recipe.omelette: http://pypi.python.org/pypi/collective.recipe.omelette/
-.. _collective.recipe.i18noverrides: http://pypi.python.org/pypi/collective.recipe.i18noverrides/
-.. _zc.recipe.cmmi: http://pypi.python.org/pypi/zc.recipe.cmmi/
-.. _plone.recipe.command: http://pypi.python.org/pypi/plone.recipe.command/
+.. _at PyPI: https://pypi.python.org/pypi?:action=browse&show=all&c=512
+.. _zc.recipe.egg: https://pypi.python.org/pypi/zc.recipe.egg/
+.. _infrae.subversion: https://pypi.python.org/pypi/infrae.subversion/1.4.5
+.. _plone.recipe.zope2install: https://pypi.python.org/pypi/plone.recipe.zope2install/
+.. _plone.recipe.zope2instance: https://pypi.python.org/pypi/plone.recipe.zope2instance/
+.. _plone.recipe.zope2zeoserver: https://pypi.python.org/pypi/plone.recipe.zope2zeoserver/
+.. _plone.recipe.distros: https://pypi.python.org/pypi/plone.recipe.distros/
+.. _plone.recipe.apache: https://pypi.python.org/pypi/plone.recipe.apache/
+.. _gocept.nginx: https://pypi.python.org/pypi/gocept.nginx/0.9.4
+.. _plone.recipe.varnish: https://pypi.python.org/pypi/plone.recipe.varnish/
+.. _plone.recipe.squid: https://pypi.python.org/pypi/plone.recipe.squid
+.. _collective.recipe.omelette: https://pypi.python.org/pypi/collective.recipe.omelette/
+.. _collective.recipe.i18noverrides: https://pypi.python.org/pypi/collective.recipe.i18noverrides/
+.. _zc.recipe.cmmi: https://pypi.python.org/pypi/zc.recipe.cmmi/
+.. _plone.recipe.command: https://pypi.python.org/pypi/plone.recipe.command/

@@ -212,7 +212,7 @@ This will generate:
 	the ``src`` attribute of the ``<img>`` tag aloud.
 
 In order to simplify accessing these image scales, use
-`archetypes.fieldtraverser <http://pypi.python.org/pypi/archetypes.fieldtraverser>`_.
+`archetypes.fieldtraverser <https://pypi.python.org/pypi/archetypes.fieldtraverser>`_.
 This package allows you to traverse to the stored image scales while still
 using ``AnnotationStorage`` and is a lot simpler to get going (in the
 author's humble opinion :).
@@ -226,7 +226,7 @@ For ``ATImage``, those are in
 Lightbox style image pop-ups
 ====================================
 
-Plone comes with `plone.app.jquerytools <http://pypi.python.org/pypi/plone.app.jquerytools>`_ which offers easy integration
+Plone comes with `plone.app.jquerytools <https://pypi.python.org/pypi/plone.app.jquerytools>`_ which offers easy integration
 for lightbox style image pop-ups.
 
 You can use Plone standard image content type, defining scales using `plone.app.imaging <https://github.com/plone/plone.app.imaging/>`_
@@ -290,7 +290,7 @@ And then we activate all this in a Javascript using ``prepOverlay()`` from ``plo
          */
         function prepareProductImagePreviews() {
 
-            // http://pypi.python.org/pypi/plone.app.jquerytools/1.4#examples
+            // https://pypi.python.org/pypi/plone.app.jquerytools/1.4#examples
             $('.product-image-preview')
             .prepOverlay({
                 subtype: 'image',

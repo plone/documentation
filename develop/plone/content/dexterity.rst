@@ -167,14 +167,14 @@ Please tune the versions according the latest available releases.
 
     # symlinks all Python source code to parts/omelette folder when buildout is run
     # windows users will need to install additional software for this part to build
-    # correctly.  See http://pypi.python.org/pypi/collective.recipe.omelette for
+    # correctly.  See https://pypi.python.org/pypi/collective.recipe.omelette for
     # relevant details.
     [omelette]
     recipe = collective.recipe.omelette
     eggs = ${instance:eggs}
 
     # Put your mr.developer managed source code repositories here, see
-    # http://pypi.python.org/pypi/mr.developer for details on format for this part
+    # https://pypi.python.org/pypi/mr.developer for details on format for this part
     [sources]
     collective.developermanual = git git://github.com/collective/collective.developermanual.git
 

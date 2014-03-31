@@ -40,7 +40,7 @@ Simple upload form example
 The example below uses :doc:`five.grok </develop/addons/components/grok>` 
 to declare the form schema and form.
 
-We use `plone.namedfile <http://pypi.python.org/pypi/plone.namedfile>`_
+We use `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_
 for the upload field, which is a CSV file. We accept the upload and then
 process the file.  
 
@@ -57,7 +57,7 @@ the ``install_dependencies`` directive of your ``setup.py`` file:
 
 After doing this, rerunning ``buildout`` will pull in these packages for you
 and you will be able to import them successfully.
-For more information, see `plone.directives.form README <http://pypi.python.org/pypi/plone.directives.form>`_.
+For more information, see `plone.directives.form README <https://pypi.python.org/pypi/plone.directives.form>`_.
 
 Code::
 
@@ -460,7 +460,7 @@ sane instead::
 
 See also
 
-* http://pypi.python.org/pypi/experimental.gracefulblobmissing/
+* https://pypi.python.org/pypi/experimental.gracefulblobmissing/
 
 Widget download URLs
 =========================

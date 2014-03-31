@@ -25,7 +25,7 @@ Introduction
 
 
 
-* http://pypi.python.org/pypi/collective.sharingroles
+* https://pypi.python.org/pypi/collective.sharingroles
 
 * http://encolpe.wordpress.com/2010/02/08/add-a-new-role-in-the-sharing-tab-for-plone-3/
 

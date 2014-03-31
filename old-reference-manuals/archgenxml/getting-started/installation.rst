@@ -110,7 +110,7 @@ If you don't want to use buildout, you can use ``virtualenv`` to create an
 isolated environment. You have to install the ``setuptools`` egg in order to
 have the ``easy_install`` command available. On Ubuntu you can do it with
 ``apt-get install python-setuptools``. On Windows, go to the 
-`setuptools pypi page <http://pypi.python.org/pypi/setuptools>`_, download the
+`setuptools pypi page <https://pypi.python.org/pypi/setuptools>`_, download the
 ``exe`` which matches the Python version you are using, and execute it to
 install it.
 

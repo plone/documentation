@@ -58,5 +58,5 @@ Or::
 
 Or add to the list of eggs in your Buildout.
 
-.. _`Pillow`: http://pypi.python.org/pypi/Pillow
+.. _`Pillow`: https://pypi.python.org/pypi/Pillow
 

@@ -12,7 +12,7 @@
 Profiling Plone
 ===========================
 
-* http://pypi.python.org/pypi/collective.profiler/
+* https://pypi.python.org/pypi/collective.profiler/
 
 Optimizing ZEO and threads
 ===========================
@@ -27,7 +27,7 @@ switches in the interpreter.
 Debugging slow threads in production
 ====================================
 
-* http://pypi.python.org/pypi/Products.LongRequestLogger
+* https://pypi.python.org/pypi/Products.LongRequestLogger
 
 Memcached as session storage
 ============================
@@ -38,7 +38,7 @@ to raise ``ConflictErrors`` if there is considerable load on the system.
 Memcached provides a more scalable session backend.
 
 For more information, see 
-`lovely.session add-on product <http://pypi.python.org/pypi/lovely.session/0.2.2>`_.
+`lovely.session add-on product <https://pypi.python.org/pypi/lovely.session/0.2.2>`_.
 
 Input/output performance of the server
 ======================================
@@ -113,7 +113,7 @@ There are some tricks you can use here:
 
 * http://plone.293351.n2.nabble.com/the-mysterious-case-of-the-zope-sessions-that-shouldn-t-tp5731395p5731395.html
 
-* http://pypi.python.org/pypi/collective.beaker/
+* https://pypi.python.org/pypi/collective.beaker/
 
 ZServer thread count
 ======================
@@ -140,7 +140,7 @@ Find good value by doing performance testing for your site.
 
 More info:
 
-* http://pypi.python.org/pypi/plone.recipe.zope2instance
+* https://pypi.python.org/pypi/plone.recipe.zope2instance
 
 XSendFile
 ============

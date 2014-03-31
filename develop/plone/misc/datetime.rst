@@ -17,7 +17,7 @@ Zope DateTime predates Python datetime which was added in Python 2.4.
 Zope DateTime is old code, so do rites necessary
 for your religion before programming with it.
 
-* `Zope DateTime HTML API documentation <http://pypi.python.org/pypi/DateTime/>`_
+* `Zope DateTime HTML API documentation <https://pypi.python.org/pypi/DateTime/>`_
 
 * `Python datetime documentation <http://docs.python.org/library/datetime.html>`_
 
@@ -58,7 +58,7 @@ More info
 DateTime API
 -------------
 
-`Zope DateTime HTML API documentation <http://pypi.python.org/pypi/DateTime/>`_
+`Zope DateTime HTML API documentation <https://pypi.python.org/pypi/DateTime/>`_
 
 You may find the following links useful
 

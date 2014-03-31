@@ -33,7 +33,7 @@ extensions = [
     'sphinx.ext.autosummary', 
     ]
 
-# See http://sphinx.pocoo.org/ext/todo.html#confval-todo_include_todos
+# See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
 todo_include_todos = True
 
 # Add any paths that contain templates here, relative to this directory.
@@ -214,7 +214,7 @@ latex_logo = "_static/logo_2x.png"
 #latex_use_modindex = True
 
 # Do not try do funny things on our characters
-# http://sphinx.pocoo.org/config.html#confval-html_use_smartypants
+# http://sphinx-doc.org/config.html#confval-html_use_smartypants
 html_use_smartypants = False
 
 

@@ -62,10 +62,7 @@ root folder to be exposed via ++resource++your.product/ URI
 
         
 
-Further reading
 
-
-* `Example <http://www.themeswiki.org/Creating_a_Custom_theme_for_Plone#Image_Resources>`_
 
 
 Grok static media folder

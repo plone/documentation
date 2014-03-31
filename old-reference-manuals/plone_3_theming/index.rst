@@ -10,7 +10,7 @@ Preface
 This is a theming guide for Plone 3. The technologies here work
 directly on Zope Page Templates (TAL) and viewlets.
 On Plone 4.2+ versions of Plone the suggested approach for theming your site
-is `plone.app.theming <http://pypi.python.org/pypi/plone.app.theming>`_
+is `plone.app.theming <https://pypi.python.org/pypi/plone.app.theming>`_
 where you can create your theme through-the-web and with less
 needed low level programming information.
 

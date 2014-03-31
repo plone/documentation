@@ -46,7 +46,7 @@ More info
 
 * `ZCML viewlet definition <http://apidoc.zope.org/++apidoc++/ZCML/http_co__sl__sl_namespaces.zope.org_sl_browser/viewlet/index.html>`_.
 
-* http://pypi.python.org/pypi/zope.viewlet/
+* https://pypi.python.org/pypi/zope.viewlet/
 
 Finding viewlets
 ----------------

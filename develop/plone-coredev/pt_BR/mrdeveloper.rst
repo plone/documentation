@@ -2,7 +2,7 @@ Mr. Developer
 =============
 
 Esse buildout usa o mr.developer para gerenciar o desenvolvimento do pacote. Veja
-http://pypi.python.org/pypi/mr.developer para maiores informações ou execute
+https://pypi.python.org/pypi/mr.developer para maiores informações ou execute
 'bin/develop help' para obter uma lista de comandos disponíveis.
 
 A forma mais comum de obter as últimas atualizações é:

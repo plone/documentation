@@ -22,9 +22,9 @@ following references:
    *z3c.form* is used in Dexterity.
 
 .. _z3c.form: http://docs.zope.org/z3c.form
-.. _plone.z3cform: http://pypi.python.org/pypi/plone.z3cform
-.. _plone.app.z3cform: http://pypi.python.org/pypi/plone.z3cform
-.. _plone.autoform: http://pypi.python.org/pypi/plone.autoform
-.. _plone.directives.form: http://pypi.python.org/pypi/plone.directives.form
+.. _plone.z3cform: https://pypi.python.org/pypi/plone.z3cform
+.. _plone.app.z3cform: https://pypi.python.org/pypi/plone.z3cform
+.. _plone.autoform: https://pypi.python.org/pypi/plone.autoform
+.. _plone.directives.form: https://pypi.python.org/pypi/plone.directives.form
 .. _five.grok: /products/dexterity/documentation/manual/five.grok
 .. _Dexterity manual: http://developer.plone.org/reference_manuals/external/plone.app.dexterity/

@@ -113,7 +113,7 @@ Add to your ``buildout.cfg``:
 More information
 ^^^^^^^^^^^^^^^^
 
-* `dumppickedversions <http://pypi.python.org/pypi/buildout.dumppickedversions>`_
+* `dumppickedversions <https://pypi.python.org/pypi/buildout.dumppickedversions>`_
 
 Good-py service
 ---------------
@@ -210,10 +210,10 @@ Fix: update Distribute in system-wide Python::
 
     easy_install -U Distribute
     Searching for Distribute
-    Reading http://pypi.python.org/simple/Distribute/
+    Reading https://pypi.python.org/simple/Distribute/
     Reading http://packages.python.org/distribute
     Best match: distribute 0.6.12
-    Downloading http://pypi.python.org/packages/source/d/distribute/distribute-0.6.12.tar.gz#md5=5a52e961f8d8799d243fe8220f9d760e
+    Downloading https://pypi.python.org/packages/source/d/distribute/distribute-0.6.12.tar.gz#md5=5a52e961f8d8799d243fe8220f9d760e
     Processing distribute-0.6.12.tar.gz
     Running distribute-0.6.12/setup.py -q bdist_egg --dist-dir /tmp/easy_install-jlL3e7/distribute-0.6.12/egg-dist-tmp-IV9SiQ
     Before install bootstrap.
@@ -590,7 +590,7 @@ Example::
 
 Solution:
 
-`This bug has been fixed in Distiribute 0.6.27 <http://pypi.python.org/pypi/distribute/0.6.27#id2>`_ - make sure your system-wide Python
+`This bug has been fixed in Distiribute 0.6.27 <https://pypi.python.org/pypi/distribute/0.6.27#id2>`_ - make sure your system-wide Python
 uses this version or above::
 
        sudo /srv/plone/python/python-2.7/bin/easy_install -U Distribute

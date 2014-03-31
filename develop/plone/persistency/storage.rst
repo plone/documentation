@@ -40,7 +40,7 @@ Pickle format is series of bytes. Here is example what it does look like::
 
 It is not very human readable format.
 
-Even if you use SQL based `RelStorage <http://pypi.python.org/pypi/RelStorage/>`_ ZODB backends, the objects
+Even if you use SQL based `RelStorage <https://pypi.python.org/pypi/RelStorage/>`_ ZODB backends, the objects
 are still pickled to the database; SQL does not support varying table schema per row and Python objects
 do not have fixed schema format.
 

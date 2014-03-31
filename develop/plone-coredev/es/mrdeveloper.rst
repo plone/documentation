@@ -4,7 +4,7 @@ Mr. Developer
 =============
 
 Esta configuración buildout usa mr.developer para administrar los paquetes de desarrollo. Ver 
-http://pypi.python.org/pypi/mr.developer para mayor información o ejecutar 
+https://pypi.python.org/pypi/mr.developer para mayor información o ejecutar 
 el comando :command:`bin/develop help` para un lista de comando disponibles.
 
 El mas común flujo de trabajo para obtener todas la ultimas actualizaciones es::

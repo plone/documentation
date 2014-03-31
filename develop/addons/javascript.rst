@@ -388,7 +388,7 @@ Popup overlays and forms
 
 plone.app.jquerytools provides a “prepOverlay” plugin that makes it easy to create popup overlays to display images or AJAX-loaded content from other pages. It also handles AJAX submission of forms in popups.
 
-The prepOverlay plugin is well-documented at http://pypi.python.org/pypi/plone.app.jquerytools. Many usage examples are available in Products/CMFPlone/skins/plone_ecmascript/popupforms.js, which provides the setup for Plone 4’s standard popup forms.
+The prepOverlay plugin is well-documented at https://pypi.python.org/pypi/plone.app.jquerytools. Many usage examples are available in Products/CMFPlone/skins/plone_ecmascript/popupforms.js, which provides the setup for Plone 4’s standard popup forms.
 
 Messages and translation
 ------------------------------------------

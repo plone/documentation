@@ -15,7 +15,7 @@ archetypes.schemaextender
 
 Prerequisites
 -------------
-You must install the `archetypes.schemaextender <http://pypi.python.org/pypi/archetypes.schemaextender>`_ product.
+You must install the `archetypes.schemaextender <https://pypi.python.org/pypi/archetypes.schemaextender>`_ product.
 
 Adding a field to an existing content type
 ------------------------------------------

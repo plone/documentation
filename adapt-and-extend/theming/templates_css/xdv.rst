@@ -34,11 +34,11 @@ Example backends to perform XDV transformation include:
 * Nginx web server transform module
 
 XDV theming can be used together with Plone, where enhanced support is provided
-by the `collective.xdv package <http://pypi.python.org/pypi/collective.xdv>`_.
+by the `collective.xdv package <https://pypi.python.org/pypi/collective.xdv>`_.
 Technically, collective.xdv adds a Plone settings panel and does the XSL transformation in Zope's
 post-publication hook using lxml library.
 
-XDV can be used standalone with the `XDV package <http://pypi.python.org/pypi/xdv/0.3a2>`_ to theme any web site,
+XDV can be used standalone with the `XDV package <https://pypi.python.org/pypi/xdv/0.3a2>`_ to theme any web site,
 let it be Wordpress, Joomla, Drupal or a custom in-house PHP solution from year 2000.
 
 XDV is based on the `Deliverance specification <http://deliverance.openplans.org/>`_
@@ -77,11 +77,11 @@ Tutorials
 
 * http://plone.org/products/collective.xdv/documentation/reference-manual/theming
 
-* http://pypi.python.org/pypi/collective.xdv
+* https://pypi.python.org/pypi/collective.xdv
 
-* http://pypi.python.org/pypi/xdv
+* https://pypi.python.org/pypi/xdv
 
-* http://pypi.python.org/pypi/dv.xdvserver (with WSGI)
+* https://pypi.python.org/pypi/dv.xdvserver (with WSGI)
 
 Creating your first XDV project
 ==================================
@@ -104,7 +104,7 @@ to get XDV on your development computer and the server.
 
 If you are working with Plone you can integrate XDV to your
 existing site's buildout. If you are not working with Plone, the
-`XDV home page <http://pypi.python.org/pypi/xdv#installation>`_ has instructions
+`XDV home page <https://pypi.python.org/pypi/xdv#installation>`_ has instructions
 on how to deploy the XDV command standalone.
 
 XDV Rules
@@ -125,7 +125,7 @@ It provides a straightforward XML based syntax to manipulate HTML easily:
 
 * etc.
 
-The rules XML syntax is documented at `XDV homepage <http://pypi.python.org/pypi/xdv>`_.
+The rules XML syntax is documented at `XDV homepage <https://pypi.python.org/pypi/xdv>`_.
 
 Rules will be compiled to an XSL template (theme.xsl) by the *xdvcompiler* command.
 The actual theming is done by one of the XSL backends listed above,
@@ -364,13 +364,13 @@ rules.xml::
                  We keep this file in Plone, but this could be served from elsewhere. -->
             <append css:theme="head">
                 <style type="text/css">
-                   @import url(http://mfabrik.com/++resource++plonetheme.mfabrik/wordpress.css);
+                   @import url(http://example.com/++resource++plonetheme.example/wordpress.css);
                 </style>
             </append>
 
             <!-- This stylesheet is used by special spam protection plug-in NoSpamNX -->
             <append css:theme="head">
-                <link rel="stylesheet" href="http://blog.mfabrik.com/wp-content/plugins/nospamnx/nospamnx.css" type="text/css" />
+                <link rel="stylesheet" href="http://blog.example.com/wp-content/plugins/nospamnx/nospamnx.css" type="text/css" />
             </append>
 
             <!-- Remove Google Analytics script used for CMS site -->
@@ -522,20 +522,20 @@ xdv.py::
 
          To compile, execute in the buildout folder::
 
-             python src/plonetheme.mfabrik/xdv.py
+             python src/plonetheme.example/xdv.py
 
          To build test HTML::
 
-             python src/plonetheme.mfabrik/xdv.py --test
+             python src/plonetheme.example/xdv.py --test
 
 
          To build test HTML and preview it in a browser, execute in buildout folder::
 
-             python src/plonetheme.mfabrik/xdv.py --preview
+             python src/plonetheme.example/xdv.py --preview
 
          If you want to use alternative development theme source::
 
-             python src/plonetheme.mfabrik/xdv.py --preview --development
+             python src/plonetheme.example/xdv.py --preview --development
 
         """
 
@@ -544,7 +544,7 @@ xdv.py::
         import webbrowser
 
         # rules XML for theming
-        RULES_XML = "src/plonetheme.mfabrik/deliverance/etc/rules.xml"
+        RULES_XML = "src/plonetheme.example/deliverance/etc/rules.xml"
 
         # Which XSL file to generate for compiled XDV
         OUTPUT_FILE = "theme.xsl"
@@ -555,10 +555,10 @@ xdv.py::
         # Our "theme.html" is a remote template served for each request.
         # Because we are doing live integration, this is a HTTP resource,
         # not a local file.
-        THEME="http://mfabrik.com/news/wordpress_listing/"
+        THEME="http://example.com/news/wordpress_listing/"
 
         # Alternative theme location - used for development
-        DEVELOPMENT_THEME="http://localhost:8080/mfabrik/news/wordpress_listing/"
+        DEVELOPMENT_THEME="http://localhost:8080/example/news/wordpress_listing/"
 
         #
         # External site you are theming.
@@ -567,7 +567,7 @@ xdv.py::
         SITE="http://blog.twinapex.fi/"
 
         # We need to explicitly
-        INTEGRATED_SITE_URL="http://blog.mfabrik.com"
+        INTEGRATED_SITE_URL="http://blog.example.com"
 
         try:
             opts, args = getopt.getopt(sys.argv[1:], "ptd", ["preview", "test", "development"])
@@ -624,7 +624,7 @@ It will compile the rules XML with some boilerplate XSL.
 
 Running our compile script::
 
-        python src/plonetheme.mfabrik/xdv.py
+        python src/plonetheme.example/xdv.py
 
 Since Plone usually does not use any relative paths or relative resources in HTML,
 we do not give the parameter "Absolute prefix" to the compilation stage.
@@ -633,7 +633,7 @@ locator: portal_url and VirtualHostMonster.
 
 For more information see
 
-* http://pypi.python.org/pypi/xdv/0.3a2#compilation
+* https://pypi.python.org/pypi/xdv/0.3a2#compilation
 
 Testing the theme
 -------------------
@@ -645,12 +645,12 @@ The following command will apply the theme to an example external page::
 
 ... or we can use the shortcut provided by our script ... ::
 
-        python src/plonetheme.mfabrik/xdv.py --preview
+        python src/plonetheme.example/xdv.py --preview
 
 ... alternatively we can specify that the theme source should be fetched from the
 development server (localhost)::
 
-        python src/plonetheme.mfabrik/xdv.py --preview --development
+        python src/plonetheme.example/xdv.py --preview --development
 
 Applying the theme in an Apache production environment
 ------------------------------------------------------
@@ -663,7 +663,7 @@ Installing dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 We use Apache and mod_transform.
-`Instructions on how to set up modules for Apache <http://pypi.python.org/pypi/xdv#apache>`_
+`Instructions on how to set up modules for Apache <https://pypi.python.org/pypi/xdv#apache>`_
 are available on the XDV homepage. Some hand-built modules must be used,
 instructions to set them up for Ubuntu / Debian are available.
 
@@ -749,15 +749,15 @@ Integrating with Wordpress
 Below is our virtualhost configuration which runs Wordpress and PHP.
 Transformation filter chain has been added in.
 
-/etc/apache/sites-enabled/blog.mfabrik.com::
+/etc/apache/sites-enabled/blog.example.com::
 
         <VirtualHost *>
 
-            ServerName blog.mfabrik.com
-            ServerAdmin info@mfabrik.com
+            ServerName blog.example.com
+            ServerAdmin info@example.com
 
             LogFormat       combined
-            TransferLog     /var/log/apache2/blog.mfabrik.com.log
+            TransferLog     /var/log/apache2/blog.example.com.log
 
             # Basic Wordpress setup
 
@@ -810,7 +810,7 @@ After Apache has all modules enabled and your virtualhost configuration is ok,
 you should see Wordpress through your new theme by visiting the site
 served through Apache:
 
-* http://blog.mfabrik.com
+* http://blog.example.com
 
 Automatically reflecting CMS changes back to XDV theme
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -847,7 +847,7 @@ and make Apache's transformation cache aware of changes::
         #
 
         # Recompile theme
-        sudo -H -u twinapex /bin/sh -c cd /srv/plone/twinapex.fi ; python src/plonetheme.mfabrik/xdv.py
+        sudo -H -u twinapex /bin/sh -c cd /srv/plone/twinapex.fi ; python src/plonetheme.example/xdv.py
 
         # Make Apache aware of theme changes
         sudo apache2ctl restart
@@ -887,8 +887,8 @@ This setting can be overridden in
 Here is an example how we override this in our wp-config.php::
 
         // http://codex.wordpress.org/Editing_wp-config.php#WordPress_address_.28URL.29
-        define('WP_HOME','http://blog.mfabrik.com');
-        define('WP_SITEURL','http://blog.mfabrik.com');
+        define('WP_HOME','http://blog.example.com');
+        define('WP_SITEURL','http://blog.example.com');
 
 HTTP 404 Not Found special case
 --------------------------------
@@ -914,7 +914,7 @@ Wordpress which does not expose the old theme.
 
                 <a href="<?php bloginfo('url'); ?>">Go to blog homepage</a>
 
-                <a href="http://mfabrik.com">mFabrik business site</a>
+                <a href="http://example.com">example business site</a>
         </body>
         </html>
 

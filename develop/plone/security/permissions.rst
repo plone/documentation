@@ -47,7 +47,7 @@ For the security reasons, this option is disabled by default.
 
 More info
 
-* http://pypi.python.org/pypi/plone.recipe.zope2instance
+* https://pypi.python.org/pypi/plone.recipe.zope2instance
 
 Checking if the logged-in user has a permission
 ====================================================
@@ -252,7 +252,7 @@ Permissions are created declaratively in :term:`ZCML`. Before Zope 2.12
 was required to enable this, but now it is standard behaviour.
 
 .. _collective.autopermission:
-   http://pypi.python.org/pypi/collective.autopermission/1.0b1
+   https://pypi.python.org/pypi/collective.autopermission/1.0b1
 
 * http://n2.nabble.com/creating-and-using-your-own-permissions-in-Plone-3-tp339972p1498626.html
 

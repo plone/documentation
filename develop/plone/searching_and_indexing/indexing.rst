@@ -220,7 +220,7 @@ For more information see
 Custom index methods
 ====================
 
-The `plone.indexer <http://pypi.python.org/pypi/plone.indexer>`_ package provides method to create custom indexing functions.
+The `plone.indexer <https://pypi.python.org/pypi/plone.indexer>`_ package provides method to create custom indexing functions.
 
 Sometimes you want to index "virtual" attributes of an object
 computed from existing ones, or just want to customize the way
@@ -228,7 +228,7 @@ certain attributes are indexed, for example, saving only the 10
 first characters of a field instead of its whole content.
 
 To do so in an elegant and flexible way, Plone>=3.3 includes a new
-package, `plone.indexer <http://pypi.python.org/pypi/plone.indexer>`_,
+package, `plone.indexer <https://pypi.python.org/pypi/plone.indexer>`_,
 which provides a series of primitives to delegate indexing operations
 to adapters.
 

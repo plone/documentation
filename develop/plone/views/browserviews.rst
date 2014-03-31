@@ -1032,7 +1032,7 @@ One workaround to avoid this mess is to use aq_inner when accessing self.obj val
 
 .. _Products.Five:
    http://svn.zope.org/Zope/trunk/src/Products/Five/README.txt?view=markup
-.. _five.grok: http://pypi.python.org/pypi/five.grok
+.. _five.grok: https://pypi.python.org/pypi/five.grok
 .. _collective.recipe.omelette:
-   http://pypi.python.org/pypi/collective.recipe.omelette
+   https://pypi.python.org/pypi/collective.recipe.omelette
 .. |---| unicode:: U+02014 .. em dash

@@ -189,7 +189,7 @@ adding or removing marker interfaces. None of these is terribly common.
 See the documentation for `zope.interface`_ (including its interfaces)
 for details.
 
-.. _zope.interface: http://pypi.python.org/pypi/zope.interface
+.. _zope.interface: https://pypi.python.org/pypi/zope.interface
 
 .. _Dexterity developer manual: http://developer.plone.org/reference_manuals/external/plone.app.dexterity/
 
