@@ -341,7 +341,7 @@ Custom 500 internal error page
 
 To make you look more pro when you update the server or Plone goes down
 
-* http://www.codestyle.org/sitemanager/apache/errors-500.shtml
+* https://httpd.apache.org/docs/2.2/custom-error.html
 
 Load balanced Apache virtual host configuration
 -------------------------------------------------
@@ -355,7 +355,7 @@ This complex config example includes
 * Apache disk cache. This should provide static resource caching w/HTTPS support
   if you are using plone.app.caching.
 
-* Server site https://production.yourorganization.org
+* https://httpd.apache.org/docs/2.2/caching.html
 
 See
 
