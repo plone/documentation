@@ -22,7 +22,6 @@ first, really nasty things start to happen.
 
 Read more:
 
-* http://www.amk.ca/python/howto/unicode
 
 * http://evanjones.ca/python-utf8.html
 
@@ -98,22 +97,7 @@ UnicodeDecodeError
 
 * http://wiki.python.org/moin/UnicodeDecodeError
 
-Safe way to ``decode()`` strings
----------------------------------
 
-This example will accept all string input and convert it to proper
-unicode strings.
-
-Example::
-
-    if type(value) == str:
-        # Ignore errors even if the string is not proper UTF-8 or has
-        # broken marker bytes.
-        # Python built-in function unicode() can do this.
-        value = unicode(value, "utf-8", errors="ignore")
-    else:
-        # Assume the value object has proper __unicode__() method
-        value = unicode(value)
 
 * http://pyref.infogami.com/__unicode__
 
