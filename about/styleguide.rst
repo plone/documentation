@@ -325,9 +325,9 @@ Note:
 Line length
 =====================
 
-Documentation is not code. Repeat after us: Documentation is not code.
+Documentation is not code. Repeat after us: **Documentation is not code.**
 
-Therefore, documentation should not follow PEP8 or other arbitrary conventions.
+Therefore, documentation should **not** follow PEP8 or other arbitrary conventions.
 
 .. note::
 
