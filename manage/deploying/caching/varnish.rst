@@ -517,7 +517,7 @@ More info
 
 * https://www.varnish-cache.org/trac/wiki/VCLExampleRemovingSomeCookies
 
-* http://blog.carumba.com/post/226455049/remove-google-analytics-cookies-in-varnish
+* https://www.varnish-cache.org/docs/3.0/tutorial/cookies.html
 
 Do not cache error pages
 ==========================
