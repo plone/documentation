@@ -190,10 +190,6 @@ develop/plone/views/viewlets.rst:318: [broken] http://svn.zope.org/zope.contentp
 develop/plone/views/viewlets.rst:322: [broken] http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto: timed out
 develop/plone/views/viewlets.rst:190: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto: timed out
 develop/plone/views/viewlets.rst:183: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/manager.py?rev=113069&view=auto: timed out
-manage/upgrading/version_specific_migration/p3x_to_p40_upgrade/updating_addons.rst:47: [broken] http://dev.plone.org/plone/changeset/22388: HTTP Error 500: Internal Server Error
-manage/upgrading/version_specific_migration/p3x_to_p40_upgrade/updating_addons.rst:385: [broken] http://dev.plone.org/collective/changeset/100642: HTTP Error 500: Internal Server Error
-manage/upgrading/version_specific_migration/p3x_to_p40_upgrade/updating_addons.rst:833: [broken] http://plone.293351.n2.nabble.com/Empty-Control-Panel-Products-using-Plone-4-td5732192.html#a5732192: Anchor 'a5732192' not found
-manage/upgrading/version_specific_migration/p41_to_p42_upgrade.rst:83: [broken] http://collective-docs.plone.org/en/latest/zcml/tricks.html#id2: HTTP Error 404: Not Found
 old-reference-manuals/archetypes/a_simple_at_product/troubleshooting.rst:23: [broken] http://plone.org/documentation/manual/archetypes-developer-manual/a-semi-realistic-example/the-startup-module: HTTP Error 404: Not Found
 old-reference-manuals/archetypes/appendix.rst:74: [broken] http://.../myArchExample/my_view: label empty or too long
 old-reference-manuals/archetypes/appendix.rst:716: [broken] https://plone.org/tutorial/borg/setup-using-genericsetup: HTTP Error 404: Not Found
