@@ -15,9 +15,9 @@ This chapter explains the basics of editing, and updating to
 the *Plone Documentation*.
 
 
-.. note:: 
+.. note::
 
-  All pages should be in ReStructured Text, and have a .rst extension. Images should be in .png, .jpg or .gif format.
+  All pages should be in ReStructured Text, and have a .rst extension. Images should be in .png, or .jpg format. Please, don't use .gif, because the PDF-generating software has issues with that.
 
 Document page format
 ====================
@@ -333,7 +333,7 @@ Therefore, documentation should **not** follow PEP8 or other arbitrary conventio
 
   **Remember :** This documentation is set up so it is fully translatable by using standard tools like transifex.
 
-  Your sentences will become .po strings, to be translated. 
+  Your sentences will become .po strings, to be translated.
 
   Now, think about how translations would work if the translator can only see an arbitrary part of a sentence. Translating is hard enough without creating additional problems...
 
