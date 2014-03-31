@@ -190,9 +190,6 @@ develop/plone/views/viewlets.rst:318: [broken] http://svn.zope.org/zope.contentp
 develop/plone/views/viewlets.rst:322: [broken] http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto: timed out
 develop/plone/views/viewlets.rst:190: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto: timed out
 develop/plone/views/viewlets.rst:183: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/manager.py?rev=113069&view=auto: timed out
-manage/deploying/caching/varnish.rst:642: [broken] https://www.varnish-cache.org/trac/wiki/VCLExamplePurging: <urlopen error [Errno -2] Name or service not known>
-manage/deploying/caching/varnish.rst:644: [broken] https://github.com/kennethreitz/requests/tree/develop/requests: HTTP Error 404: Not Found
-manage/deploying/caching/varnish.rst:520: [broken] http://blog.carumba.com/post/226455049/remove-google-analytics-cookies-in-varnish: timed out
 manage/deploying/front-end/apache.rst:344: [broken] http://www.codestyle.org/sitemanager/apache/errors-500.shtml: HTTP Error 404: Not Found
 manage/deploying/front-end/apache.rst:358: [broken] https://production.yourorganization.org: <urlopen error _ssl.c:494: The handshake operation timed out>
 manage/deploying/front-end/nginx.rst:273: [broken] http://aleksandarsavic.com/nginx-redirect-wwwexamplecom-requests-to-examplecom-or-vice-versa/: HTTP Error 404: Not Found
