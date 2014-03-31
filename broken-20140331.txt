@@ -190,8 +190,6 @@ develop/plone/views/viewlets.rst:318: [broken] http://svn.zope.org/zope.contentp
 develop/plone/views/viewlets.rst:322: [broken] http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto: timed out
 develop/plone/views/viewlets.rst:190: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto: timed out
 develop/plone/views/viewlets.rst:183: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/manager.py?rev=113069&view=auto: timed out
-manage/upgrading/troubleshooting.rst:86: [broken] http://zope.org/Collectors/CMF: HTTP Error 404: Not Found
-manage/upgrading/troubleshooting.rst:87: [broken] http://www.zope.org/Collectors: HTTP Error 404: Not Found
 manage/upgrading/version_specific_migration/p25_to_p30_upgrade/updating_addons_p30.rst:201: [broken] http://dev.plone.org/collective/browser/Poi/branches/plone3-support/configure.zcml?rev=41071: HTTP Error 404: Not Found
 m manage/upgrading/version_specific_migration/p3x_to_p40_upgrade/updating_addons.rst:350: [broken] https://github.com/collective/Products.PloneSoftwareCenter/commit/db7189e9327656c6ed75a39f39c7481433f06ad5#Products/PloneSoftwareCenter/validators.py: Anchor 'Products/PloneSoftwareCenter/validators.py' not found
 manage/upgrading/version_specific_migration/p3x_to_p40_upgrade/updating_addons.rst:357: [broken] https://github.com/collective/Products.PloneSoftwareCenter/commit/5d7237a391385dd68fac0749119297585bdc6406#Products/PloneSoftwareCenter/validators.py: Anchor 'Products/PloneSoftwareCenter/validators.py' not found
