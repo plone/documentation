@@ -18,7 +18,7 @@ BLOBs and POSKeyErrors
 
 The `Plone CMS <http://plone.org>`_ from version 4.x onwards
 stores files and images uploaded to the `ZODB <http://www.zodb.org/>`_
-as `BLOBs <http://www.zodb.org/zodbbook/introduction.html?highlight=blob#blobs>`_.
+as blob.
 They exist in a ``var/blobstorage`` folder structure on the file system,
 files being named after (opaque) persistent object ids.
 When using the default backend, the objects themselves,
@@ -68,9 +68,9 @@ all content with bad BLOB data must be deleted
 (which usually entails losing some site images and uploaded files).
 
 Below is Python code for a 
-`Grok view <http://collective-docs.readthedocs.org/en/latest/views/browserviews.html#creating-a-view-using-grok>`_
+`Grok view <http://grok.zope.org/>`_
 which you can drop in to your own 
-`Plone add-on product <http://collective-docs.readthedocs.org/en/latest/tutorials/paste.html#creating-an-add-on-product-skeleton>`_.
+Plone.
 It creates an admin view which you can call directly via an URL.
 This code will walk through all the content on your Plone site and try to
 delete bad content items with BLOBs missing.
