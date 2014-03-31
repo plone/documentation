@@ -143,8 +143,7 @@ And your main Zope instance stays in production mode:
 Virtual hosting
 ===============
 
-Zope has a component called
-`VirtualHostMonster <https://weblion.psu.edu/trac/weblion/wiki/VirtualHostMonster>`_
+Zope has a component called Virtual Host Monster
 which does the virtual host mapping inside Zope. More information can be found in the `zope book <http://docs.zope.org/zope2/zope2book/VirtualHosting.html>`_
 
 Suppressing virtual host monster
