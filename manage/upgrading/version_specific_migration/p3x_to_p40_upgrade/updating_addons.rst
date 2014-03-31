@@ -44,7 +44,6 @@ An error would look like this::
 
     NameError: name 'templateId' is not defined
 
-Look at `this example changeset <http://dev.plone.org/plone/changeset/22388>`_ from CMFPlone itself to see the kind of changes that are needed.
 
 How do you know what definition you should add to your template?
 The canonical place to look this up is the @@plone view from Plone 3 (not Plone 4).
@@ -378,7 +377,7 @@ So:
 * msgid is now the first instead of the second call
 * domain is now optional
 
-And one more tricky thing (and this changeset does that not completely correctly): when you specify the context you first had to pass a content object (usually the page, image, folder etc you are looking at) but now you need to pass in the request instead. This `changeset <http://dev.plone.org/collective/changeset/100642>`_ fixes it for the Poi product.
+And one more tricky thing (and this changeset does that not completely correctly): when you specify the context you first had to pass a content object (usually the page, image, folder etc you are looking at) but now you need to pass in the request instead.
 
 Use plone.app.blob-based BLOB storage
 =====================================
@@ -826,5 +825,4 @@ In ZMI, /Control_Panel/Products shows no products, and says "There are currently
 
 It was turned off in Plone 4.
 
-* `More info <http://plone.293351.n2.nabble.com/Empty-Control-Panel-Products-using-Plone-4-td5732192.html#a5732192>`_
 
