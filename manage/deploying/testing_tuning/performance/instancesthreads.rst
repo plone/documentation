@@ -159,4 +159,4 @@ most difficult setup.
 .. _munin.zope: https://pypi.python.org/pypi/munin.zope
 .. _Varnish: https://www.varnish-cache.org
 .. _collective.stats: https://pypi.python.org/pypi/collective.stats
-.. _memcached: http://www.memcached.org
+.. _memcached: https://en.wikipedia.org/wiki/Memcached
