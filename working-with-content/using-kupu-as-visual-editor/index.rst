@@ -260,7 +260,6 @@ entry panel. The mark-up formats available in Plone are:
 
 -  `Markdown <http://en.wikipedia.org/wiki/Markdown>`_
 -  `Textile <http://en.wikipedia.org/wiki/Textile_%28markup_language%29>`_
--  `Structured Text <http://www.zope.org/Documentation/Articles/STX>`_
 -  `Restructured Text <http://en.wikipedia.org/wiki/ReStructuredText>`_
 
 Each of these works by the embedding of special formatting codes within
