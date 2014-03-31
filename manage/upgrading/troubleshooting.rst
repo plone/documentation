@@ -83,8 +83,6 @@ Once you have investigated, analyzed, identified and confirmed the cause of your
 
 * Products: the README usually tells how to report bugs
 * `Plone Issue Tracker <http://dev.plone.org/plone>`_
-* `CMF Issue Collector <http://zope.org/Collectors/CMF>`_ (if you don't know what the CMF is, don't report bugs)
-* `Zope Issue Collector <http://www.zope.org/Collectors>`_
 
 Do not use the bug trackers to ask for help.
 First analyze your problem and assert that it's a bug before you report it.
