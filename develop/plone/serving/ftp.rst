@@ -9,5 +9,5 @@ FTP support is not very well maintained. WebDAV protocol is recommended over FTP
 Enabling FTP
 ------------
 
-`See zope2instance recipe <http://pypi.python.org/pypi/plone.recipe.zope2instance>`_.
+`See zope2instance recipe <https://pypi.python.org/pypi/plone.recipe.zope2instance>`_.
 

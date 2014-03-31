@@ -53,9 +53,9 @@ Tools kit plugins are available by enabling the
 plone.app.jquerytools.plugins.js resource Plone's JavaScript registry.
 
 The integration with jQuery Tools is provided through the package
-`plone.app.jquerytools <http://pypi.python.org/pypi/plone.app.jquerytools/>`_,
+`plone.app.jquerytools <https://pypi.python.org/pypi/plone.app.jquerytools/>`_,
 which includes a set of overlay helpers for common AJAX overlay needs.
 This kit is used to provide many of Plone's overlayed forms. See the
 `plone.app.jquerytools pypi
-page <http://pypi.python.org/pypi/plone.app.jquerytools/>`_ for
+page <https://pypi.python.org/pypi/plone.app.jquerytools/>`_ for
 documentation and examples.

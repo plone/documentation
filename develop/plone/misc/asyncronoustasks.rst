@@ -218,7 +218,7 @@ lovely.remotetask
 
 .. TODO:: NO WORKING EXAMPLES HOW TO USE THIS
 
-* `lovely.remotetask package <http://pypi.python.org/pypi/lovely.remotetask>`_ package page
+* `lovely.remotetask package <https://pypi.python.org/pypi/lovely.remotetask>`_ package page
 
 * http://tarekziade.wordpress.com/2007/09/28/a-co-server-for-zope/
 

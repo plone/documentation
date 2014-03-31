@@ -14,7 +14,7 @@ Introduction
 Plone supports TinyMCE (default), Kupu and CKEditor.
 
 TinyMCE and Plone integration
-is distributed in `Products.TinyMCE package <http://pypi.python.org/pypi/Products.TinyMCE>`_.
+is distributed in `Products.TinyMCE package <https://pypi.python.org/pypi/Products.TinyMCE>`_.
 
 Disabling HTML filtering and safe HTML transformation
 ---------------------------------------------------------
@@ -138,7 +138,7 @@ Rich text transformations
 
 * http://developer.plone.org/reference_manuals/external/plone.app.dexterity/advanced/rich-text-markup-transformations.html
 
-* http://pypi.python.org/pypi/plone.app.textfield
+* https://pypi.python.org/pypi/plone.app.textfield
 
 
 Hacking TinyMCE Javascript

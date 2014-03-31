@@ -462,7 +462,7 @@ You might want to override your system-wide libraries,
 because operating systems may ship with old, incompatible, versions.
 
 You can use ``environment-vars`` of the
-`zope2instance <http://pypi.python.org/pypi/plone.recipe.zope2instance>`_ recipe.
+`zope2instance <https://pypi.python.org/pypi/plone.recipe.zope2instance>`_ recipe.
 
 Example in ``buildout.cfg``
 
@@ -479,7 +479,7 @@ Extending buildout section
 
 Buildout extensions can be extended in another buildout file.
 
-* http://pypi.python.org/pypi/zc.buildout#extending-sections-macros
+* https://pypi.python.org/pypi/zc.buildout#extending-sections-macros
 
 
 Overriding parts variables from command line

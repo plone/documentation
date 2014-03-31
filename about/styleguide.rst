@@ -129,7 +129,7 @@ documentation maintainer.
 
 In order to have consistent heading styles in all files that make this great
 document, it is recommended to follow strictly the rules stated in the Sphinx
-manual here: http://sphinx.pocoo.org/rest.html#sections
+manual here: http://sphinx-doc.org/rest.html#sections
 
 As individual files do not have so called "parts" or "chapters", the headings
 would be underlined like this:
@@ -264,8 +264,8 @@ Inline code highlighting:
 
    These Python objects are rendered as hyperlinks if the symbol is
    mentioned in a relevant directive. See
-   http://sphinx.pocoo.org/domains.html and
-   http://sphinx.pocoo.org/ext/autodoc.html
+   http://sphinx-doc.org/domains.html and
+   http://sphinx-doc.org/ext/autodoc.html
 
 Making an external link (note the underscore at the end):
 

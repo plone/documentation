@@ -112,7 +112,7 @@ Besides, the main portal catalog, the site contains other catalogs.
   UID, relationship, sourceUID, targetId and targetUID.
 
 * Add-on products may install their own catalogs which are optimized for specific purposes.
-  For example, `betahaus.emaillogin <http://pypi.python.org/pypi/betahaus.emaillogin>`_
+  For example, `betahaus.emaillogin <https://pypi.python.org/pypi/betahaus.emaillogin>`_
   creates email_catalog is which is used to speed-up login by email process.
 
 Manually indexing object to a catalog

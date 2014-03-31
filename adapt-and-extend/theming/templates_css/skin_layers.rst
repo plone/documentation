@@ -155,7 +155,7 @@ For layered example (theme layer, add-on layer), see
 
 More info
 
-* http://pypi.python.org/pypi/z3c.jbot
+* https://pypi.python.org/pypi/z3c.jbot
 
 * http://stackoverflow.com/questions/6161802/nested-overrides-in-portal-skins-folder
         

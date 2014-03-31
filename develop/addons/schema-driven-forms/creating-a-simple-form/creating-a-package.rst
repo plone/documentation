@@ -37,7 +37,7 @@ in. Finally, we have added a *tests* extra to pull in
           description="Examples of forms using plone.directives.form",
           long_description=open("README.rst").read() + "\n" +
                            open(os.path.join("docs", "HISTORY.rst")).read(),
-          # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+          # Get more strings from https://pypi.python.org/pypi?%3Aaction=list_classifiers
           classifiers=[
             "Framework :: Plone",
             "Programming Language :: Python",

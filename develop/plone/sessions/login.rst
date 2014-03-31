@@ -24,7 +24,7 @@ There are two login points in Plone
 
 In addition, the ``/logout`` action logs the user out.
 
-The logic that drives the login process is implemented using the CMF form controller framework (legacy). To customize it, you need to override one or more of the ``login_*`` scripts. This can be accomplished in two ways: register your own skin directory or use `z3c.jbot <http://pypi.python.org/pypi/z3c.jbot>`_. Note that in both cases, you need to copy the ``.metadata`` file as well.
+The logic that drives the login process is implemented using the CMF form controller framework (legacy). To customize it, you need to override one or more of the ``login_*`` scripts. This can be accomplished in two ways: register your own skin directory or use `z3c.jbot <https://pypi.python.org/pypi/z3c.jbot>`_. Note that in both cases, you need to copy the ``.metadata`` file as well.
 
 
 Extracting credentials
@@ -35,7 +35,7 @@ Extracting credentials try to extract log-in (username, password) from HTTP requ
 Below is an example how to extract and authenticate the user manually.
 It is mostly suitable for unit testing.
 Note that given login field isn't necessarily the username. For example,
-`betahaus.emaillogin <http://pypi.python.org/pypi/betahaus.emaillogin>`_ add-on authenticates users by their email addresses.
+`betahaus.emaillogin <https://pypi.python.org/pypi/betahaus.emaillogin>`_ add-on authenticates users by their email addresses.
 
 Credential extraction will go through all plug-ins registered for
 `PlonePAS <https://github.com/plone/Products.PlonePAS/tree/master/README.txt>`_ system.
@@ -399,11 +399,11 @@ Login as another user ("sudo")
 If you need to login to production system another user and you do not know the password,
 there is an add-on product for it
 
-*  http://pypi.python.org/pypi/niteoweb.loginas
+*  https://pypi.python.org/pypi/niteoweb.loginas
 
 Another option
 
-* http://pypi.python.org/pypi/Products.OneTimeTokenPAS
+* https://pypi.python.org/pypi/Products.OneTimeTokenPAS
 
 Getting logged in users
 -----------------------

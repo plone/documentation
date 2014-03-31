@@ -118,7 +118,7 @@ Registering a local utility
 
 * http://davisagli.com/blog/registering-add-on-specific-components-using-z3c.baseregistry
 
-* http://pypi.python.org/pypi/z3c.baseregistry
+* https://pypi.python.org/pypi/z3c.baseregistry
 
 .. warning::
 

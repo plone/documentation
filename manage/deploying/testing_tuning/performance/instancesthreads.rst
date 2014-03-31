@@ -154,9 +154,9 @@ most difficult setup.
 
 .. _HAproxy: http://haproxy.1wt.eu
 .. _Pound: http://www.apsis.ch/pound
-.. _jarn.checkinterval: http://pypi.python.org/pypi/jarn.checkinterval
+.. _jarn.checkinterval: https://pypi.python.org/pypi/jarn.checkinterval
 .. _Munin: http://munin-monitoring.org
-.. _munin.zope: http://pypi.python.org/pypi/munin.zope
+.. _munin.zope: https://pypi.python.org/pypi/munin.zope
 .. _Varnish: https://www.varnish-cache.org
-.. _collective.stats: http://pypi.python.org/pypi/collective.stats
+.. _collective.stats: https://pypi.python.org/pypi/collective.stats
 .. _memcached: http://www.memcached.org

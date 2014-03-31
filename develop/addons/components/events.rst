@@ -14,7 +14,7 @@ Introduction
 
 This document briefly discusses event handling using the ``zope.event`` module.
 The Zope Component Architecture's
-`zope.event package <http://pypi.python.org/pypi/zope.event>`_ is
+`zope.event package <https://pypi.python.org/pypi/zope.event>`_ is
 used to manage subscribeable events in Plone.
 
 Some of the notable characteristics of the Plone event system are:
@@ -313,7 +313,7 @@ Asynchronous event handling
 See also
 ========
 
-* http://pypi.python.org/pypi/zope.event/3.4.1
+* https://pypi.python.org/pypi/zope.event/3.4.1
 
 * http://apidoc.zope.org/++apidoc++/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/subscriber/index.html
 

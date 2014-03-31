@@ -54,7 +54,7 @@ To export a folder from a site to another do
 collective.transmogrifier
 -------------------------
 
-On it's own `collective.transmogrifier <http://pypi.python.org/pypi/collective.transmogrifier>`_ isn't an import tool,
+On it's own `collective.transmogrifier <https://pypi.python.org/pypi/collective.transmogrifier>`_ isn't an import tool,
 rather a generic framework for creating pipelines to process data.
 Pipeline configs are .ini-style files that join together blueprints to quickly create a tool for processing data.
 
@@ -285,7 +285,7 @@ export.py::
             """
             if isinstance(value, DateTime):
                 # Zope DateTime
-                # http://pypi.python.org/pypi/DateTime/3.0.2
+                # https://pypi.python.org/pypi/DateTime/3.0.2
                 return value.ISO8601()
             elif hasattr(value, "isBinary") and value.isBinary():
 

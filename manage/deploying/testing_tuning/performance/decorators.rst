@@ -27,7 +27,7 @@ Use them like this::
     generators (``yield``).
     The cache will end up storing an empty value.
 
-The `plone.memoize <http://pypi.python.org/pypi/plone.memoize>`_ package
+The `plone.memoize <https://pypi.python.org/pypi/plone.memoize>`_ package
 offers helpful function decorators to cache return values.
 
 See also :doc:`using memcached backend for memoizers </manage/deploying/testing_tuning/performance/ramcache>`. 
@@ -136,7 +136,7 @@ Caching using global HTTP request
 ----------------------------------
 
 This example uses the 
-`five.globalrequest package <http://pypi.python.org/pypi/five.globalrequest>`_ 
+`five.globalrequest package <https://pypi.python.org/pypi/five.globalrequest>`_ 
 for caching. Values are stored on the thread-local ``HTTPRequest`` object
 which lasts for the transaction lifecycle::
 

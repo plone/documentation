@@ -60,10 +60,7 @@ It incorporates the original `glossary on plone.org
         don't want to resort to HTML for creating web content. It uses
         indenting for structure, and other markup for formatting. It has
         been superseded by :term:`reStructuredText`, but some people still
-        prefer the old version, as it's simpler. More information in the
-        `How-to section of plone.org
-        <http://plone.org/documentation/howto/structured-text-cheatsheet>`_.
-
+        prefer the old version, as it's simpler. 
     Catalog
         The catalog is an internal index of the content inside Plone so that
         it can be searched. The catalog object is accessible through the
@@ -100,8 +97,7 @@ It incorporates the original `glossary on plone.org
         :term:`skin`. The order of layers is important, the topmost layers
         will be examined first when rendering a page. Each layer is an entry
         in ``portal_skins`` -> 'Contents', and is usually a Filesystem
-        Directory View or a Folder.  See
-        http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers
+        Directory View or a Folder.  
 
     Skin
         A collection of template layers (see :term:`layer`) is used as the
@@ -286,7 +282,7 @@ It incorporates the original `glossary on plone.org
         Plone release or not.
 
         See more info about how to write a
-        `PLIP <http://dev.plone.org/plone/wiki/PLIP>`_.
+        `PLIP <https://dev.plone.org/plone/wiki/PLIP>`_.
 
     ATCT
         ATContentTypes - the Plone content types written with Archetypes which
@@ -437,7 +433,7 @@ It incorporates the original `glossary on plone.org
         introduced by
         `setuptools <http://peak.telecommunity.com/DevCenter/EasyInstall>`_
         which has since been superseded by `Distribute
-        <http://packages.python.org/distribute/>`_.
+        <https://pythonhosted.org/distribute/>`_.
 
         A way to package and distribute Python packages. Each egg contains a
         ``setup.py`` file with metadata (such as the author's name and email

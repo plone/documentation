@@ -152,9 +152,9 @@ Below are few useful unit test functions::
 Other references
 ----------------
 
-* `zope.security <http://pypi.python.org/pypi/zope.security>`_
+* `zope.security <https://pypi.python.org/pypi/zope.security>`_
 
 .. _AccessControl: http://svn.zope.org/Zope/trunk/src/AccessControl
 
-.. _RestrictedPython: http://pypi.python.org/pypi/RestrictedPython
+.. _RestrictedPython: https://pypi.python.org/pypi/RestrictedPython
 

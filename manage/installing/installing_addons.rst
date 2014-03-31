@@ -22,14 +22,14 @@ of Plone add-on packages where a lot of add-on packages for Plone are
 listed.
 
 A lot more packages can be found in the `PyPI (the Python Package
-index) <http://pypi.python.org>`_, although most of the packages might
+index) <https://pypi.python.org>`_, although most of the packages might
 not be Plone specific.
 
 
 Installing add-ons using buildout
 ---------------------------------
 
-Add-on packages which are uploaded to `PyPI <http://pypi.python.org>`_
+Add-on packages which are uploaded to `PyPI <https://pypi.python.org>`_
 or `plone.org <http://plone.org/products>`_ as *egg* can be installed
 by buildout.
 
@@ -74,7 +74,7 @@ Installing development version of add-on packages
 If you need to use the latest development version of an add-on package
 you can easily get the source in your development installation using
 the buildout extension `mr.developer
-<http://pypi.python.org/pypi/mr.developer>`_.
+<https://pypi.python.org/pypi/mr.developer>`_.
 
 For managing the sources it is recommended to create a `sources.cfg`
 which you can include in your buildout.

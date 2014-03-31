@@ -54,7 +54,7 @@ Change log level by editing ``[instance]`` section ``event-log-level``::
 
 More information 
 
-* http://pypi.python.org/pypi/plone.recipe.zope2instance
+* https://pypi.python.org/pypi/plone.recipe.zope2instance
 
 Logging from Python code
 ------------------------

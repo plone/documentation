@@ -384,7 +384,7 @@ See:
 
 Examples:
 
-* `i18ndude Python package <http://pypi.python.org/pypi/i18ndude>`_
+* `i18ndude Python package <https://pypi.python.org/pypi/i18ndude>`_
 
 * `i18ndude example for Plone 3.0 and later <http://maurits.vanrees.org/weblog/archive/2007/09/i18n-locales-and-plone-3.0>`_
 
@@ -612,8 +612,8 @@ The rule for compiled .mo files is that
 
 * Released eggs on PyPi, however, **must** contain compiled .mo files
 
-The easiest way to manage this is to use `zest.releaser <http://pypi.python.org/pypi/zest.releaser>`_
-tool together with `zest.pocompile package <http://pypi.python.org/pypi/zest.pocompile>`_
+The easiest way to manage this is to use `zest.releaser <https://pypi.python.org/pypi/zest.releaser>`_
+tool together with `zest.pocompile package <https://pypi.python.org/pypi/zest.pocompile>`_
 to release your eggs.
 
 Dynamic content
@@ -716,8 +716,8 @@ Other
 
 
 
-.. _zope.i18n: http://pypi.python.org/pypi/zope.i18n
-.. _zope.i18nmessageid: http://pypi.python.org/pypi/zope.i18nmessageid
-.. _Products.LinguaPlone: http://pypi.python.org/pypi/Products.LinguaPlone
-.. _infrae.i18nextract: http://pypi.python.org/pypi/infrae.i18nextract
-.. _plone.app.locales: http://pypi.python.org/pypi/plone.app.locales
+.. _zope.i18n: https://pypi.python.org/pypi/zope.i18n
+.. _zope.i18nmessageid: https://pypi.python.org/pypi/zope.i18nmessageid
+.. _Products.LinguaPlone: https://pypi.python.org/pypi/Products.LinguaPlone
+.. _infrae.i18nextract: https://pypi.python.org/pypi/infrae.i18nextract
+.. _plone.app.locales: https://pypi.python.org/pypi/plone.app.locales

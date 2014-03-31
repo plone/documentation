@@ -649,6 +649,6 @@ See object publishing_.
 
 .. _Unauthorized: https://github.com/zopefoundation/AccessControl/blob/master/src/AccessControl/unauthorized.py
 
-.. _UID: http://pypi.python.org/pypi/Products.CMFUid
+.. _UID: https://pypi.python.org/pypi/Products.CMFUid
 
 

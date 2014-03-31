@@ -102,7 +102,7 @@ current when the transaction is committed.
         
 More information
 
-* http://pypi.python.org/pypi/ZODB3/3.10.0b5#b5-2010-09-02        
+* https://pypi.python.org/pypi/ZODB3/3.10.0b5#b5-2010-09-02        
 
 Accessing broken objects
 ------------------------
@@ -126,7 +126,7 @@ to inspect the object history and rewind it to a working state.
 
 * http://plone.293351.n2.nabble.com/Cleaning-up-damaged-BTree-can-t-delete-folder-tp5761780p5773269.html
 
-* http://pypi.python.org/pypi/dm.historical/
+* https://pypi.python.org/pypi/dm.historical/
 
 See also
 

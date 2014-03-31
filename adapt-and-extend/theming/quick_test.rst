@@ -9,7 +9,7 @@ Quick Test Recipe
     required to get started with Diazo based theme creation.
     This recipe is designed to get you started quickly. 
 
-    The goal of this recipe is to help you confirm that everything is working. The theme resources for this recipe are hosted on a github page (http://pigeonflight.github.com).
+    The goal of this recipe is to help you confirm that everything is working. The theme resources for this recipe are hosted on a github page (http://pigeonflight.github.io).
 
 .. contents:: :local:
 
@@ -40,9 +40,9 @@ In the Diazo theming control panel click on the 'Advanced Settings' tab.
 
 Enter the following values:
 
- **Rules file:** http://pigeonflight.github.com/diazodemo/rules.xml
+ **Rules file:** http://pigeonflight.github.io/diazodemo/rules.xml
 
- **Absolute path prefix:** http://pigeonflight.github.com/diazodemo/
+ **Absolute path prefix:** http://pigeonflight.github.io/diazodemo/
 
  **Read network** should be checked, then click 'save'
 
@@ -50,7 +50,7 @@ Enter the following values:
 
 .. note:: The rule file and resources in this example are hosted online, this will be a problem if your Plone site is behind a firewall or otherwise not connected to the internet.
 
-When you visit your Plone site you will see a the main content displayed inside of the custom theme provided by http://pigeonflight.github.com/diazodemo.
+When you visit your Plone site you will see a the main content displayed inside of the custom theme provided by http://pigeonflight.github.io/diazodemo.
 
 It should look similar to this screenshot:
 

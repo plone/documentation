@@ -373,7 +373,7 @@ you have two ways to access the request object:
   site traversal starts, the HTTP request is assigned to current site object
   as the ``site.REQUEST`` attribute.
 
-* Use http://pypi.python.org/pypi/five.globalrequest.
+* Use https://pypi.python.org/pypi/five.globalrequest.
 
 Example of getting the request using acquisition::
 
@@ -396,7 +396,7 @@ zope.globalrequest.getRequest
 
 See
 
-* http://pypi.python.org/pypi/five.globalrequest
+* https://pypi.python.org/pypi/five.globalrequest
 
 
 HTTP response
@@ -560,7 +560,7 @@ It is used e.g. by ``plone.app.caching``.
 
 More information
 
-* http://pypi.python.org/pypi/plone.transformchain
+* https://pypi.python.org/pypi/plone.transformchain
 
 Post-publication hook
 =====================
@@ -576,7 +576,7 @@ This is practical for caching purposes: it is the ideal place to determine and
 insert caching headers into the response.
 
 Read more at the `plone.postpublicationhook package page
-<http://pypi.python.org/pypi/plone.postpublicationhook/>`_.
+<https://pypi.python.org/pypi/plone.postpublicationhook/>`_.
 
 Custom redirect mappings
 ========================
@@ -750,7 +750,7 @@ Cross-origin resource sharing (CORS)
 
 .. XXX: ``get_contentish`` above will fail if it encounters an object without aq_parent which is not contentish.
 
-.. _annotations: http://pypi.python.org/pypi/zope.annotation/3.4.1
+.. _annotations: https://pypi.python.org/pypi/zope.annotation/3.4.1
 
 .. _Repoze: http://repoze.org/
 

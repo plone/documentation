@@ -218,7 +218,7 @@ Defining CSS styles reaction to the presence of the class:
 Per-folder CSS theme overrides
 =================================
 
-* http://pypi.python.org/pypi/Products.CustomOverrides
+* https://pypi.python.org/pypi/Products.CustomOverrides
 
 Striping listing colours
 ==========================

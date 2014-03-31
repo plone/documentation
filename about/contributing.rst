@@ -75,8 +75,8 @@ Editing the documentation using git
 This is the recommended method of editing the documentation for
 advanced users. 
 
-* Learn about `Sphinx <http://sphinx.pocoo.org/>`_ and `restructured text
-  <http://sphinx.pocoo.org/rest.html>`_.
+* Learn about `Sphinx <http://sphinx-doc.org/>`_ and `restructured text
+  <http://sphinx-doc.org/rest.html>`_.
 
 * `Fork <https://help.github.com/articles/fork-a-repo>`_ the documentation source files into your own repository
 

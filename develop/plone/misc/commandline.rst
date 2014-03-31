@@ -45,7 +45,7 @@ Command line scripts are also useful for long-running transaction processing
   
 See also
 
-* `lovely.remotetask package <http://pypi.python.org/pypi/lovely.remotetask>`_ 
+* `lovely.remotetask package <https://pypi.python.org/pypi/lovely.remotetask>`_ 
   for more fine-graned control and Zope-based cron jobs
 
   
@@ -177,7 +177,7 @@ zopepy
 zopepy buildout recipe creating bin/zopepy command which you can use to run Python scripts in Zope environment set-up
 (PYTHONPATH, database connection, etc.)
 
-* http://pypi.python.org/pypi/zc.recipe.egg
+* https://pypi.python.org/pypi/zc.recipe.egg
 
 buildout.cfg example::
 

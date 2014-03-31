@@ -51,8 +51,8 @@ Through the code changes
 ==========================
 
 To expand Plone using Python, you have to create your own add-on product.
-Add-on products are distributed as packaged Python modules called eggs_.
-The recommended way is to use the paster_ command to generate an add-on
+Add-on products are distributed as packaged Python modules called :doc:`eggs </old-reference-manuals/buildout/index>`.
+The recommended way is to use the :doc:`paster </develop/addons/paste>` command to generate an add-on
 product skeleton which you can
 use as a starting point for your development.
 Paster also contains useful subcommands, like ``addcontent``,
@@ -60,6 +60,4 @@ which automate various Plone add-on development tasks.
 
 * Another `paster tutorial <http://www.unc.edu/~jj/plone/>`_
 
-.. _paster: http://plone.org/documentation/how-to/use-paster>
 
-.. _eggs: http://plone.org/documentation/tutorial/buildout/packages-products-and-eggs

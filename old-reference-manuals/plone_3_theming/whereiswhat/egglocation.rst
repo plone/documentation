@@ -35,7 +35,7 @@ structure of all namespace packages, symlinking to the actual contents,
 via buildout. Full instructions and documentation on this can be found
 here:
 
-`http://pypi.python.org/pypi/collective.recipe.omelette <http://pypi.python.org/pypi/collective.recipe.omelette>`_
+`https://pypi.python.org/pypi/collective.recipe.omelette <https://pypi.python.org/pypi/collective.recipe.omelette>`_
 
 Once you've re-run buildout with the omelette recipe, you'll find that
 you have a new section here:

@@ -61,4 +61,4 @@ last two options to work, you would need to create the directories
 *eggs* and *downloads* inside the *~/.buildout* directory.
 
 .. _versions: http://dist.plone.org/release/3.2/versions.cfg
-.. _zc.buildout 1.4.1: http://pypi.python.org/pypi/zc.buildout/1.4.1#specifying-extends-cache-and-offline-mode
+.. _zc.buildout 1.4.1: https://pypi.python.org/pypi/zc.buildout/1.4.1#specifying-extends-cache-and-offline-mode

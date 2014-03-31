@@ -80,6 +80,6 @@ Store the raw values of fields on the file system.
               ))
     ...
 
-* `Official documentation of fss <http://pypi.python.org/pypi/iw.fss/>`_.
+* `Official documentation of fss <https://pypi.python.org/pypi/iw.fss/>`_.
 
 

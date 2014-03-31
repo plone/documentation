@@ -37,4 +37,4 @@ Naturally, you will need to re-run buildout after editing *setup.py*
 and/or *buildout.cfg*.
 
 .. _buildout: ../../../../../../documentation/tutorial/buildout
-.. _five.grok installation instructions: http://pypi.python.org/pypi/five.grok
+.. _five.grok installation instructions: https://pypi.python.org/pypi/five.grok

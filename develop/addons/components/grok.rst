@@ -33,7 +33,7 @@ More info
 
 * http://grok.zope.org/
 
-* http://pypi.python.org/pypi/five.grok
+* https://pypi.python.org/pypi/five.grok
 
 Tutorial
 ========

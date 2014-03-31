@@ -107,9 +107,5 @@ Static Text
 -----------
 
 The Static Text Portlet allows you to enter content just as you would on
-a normal Page object. This is useful for adding hyperlink to different
-sites or any information that will not change. An example of this
-Portlet is the "Still Stumped?" Portlet on the right hand side of this
-site. For more on Static Text Portlets and an example view the How-to
-`Static
-Portlets <http://plone.org/documentation/manual/plone-4-user-manual/portlet-management/resolveuid/3698a06fc5f57d6f9bd6eaf1824f5cc8>`_.
+a normal Page object. This is useful for adding hyperlinks to different
+sites, address information, or any information that is relatively static. 

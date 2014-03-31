@@ -63,7 +63,7 @@ Plone sites can be customized by installing *Plone add-ons*, which add or custom
 You can install existing add-ons that others have developed or you can develop and install your own add-ons.
 Add-ons are developed and distributed as
 `Python packages <http://packages.python.org/distribute/setuptools.html>`_. Many open-source Python packages,
-including Plone add-ons, are available from `PyPI (the Python Package index) <http://pypi.python.org>`_.
+including Plone add-ons, are available from `PyPI (the Python Package index) <https://pypi.python.org>`_.
 
 Plone uses a tool called `Buildout <http://www.buildout.org/>`_ to manage the set of Python packages
 that are part of your Plone installation.
@@ -81,7 +81,7 @@ Finding and installing add-on packages
 
 Plone add-ons can be found at the `plone.org Products
 <http://plone.org/products>`_ page or at the  `PyPI (the Python
-Package index) <http://pypi.python.org>`_.
+Package index) <https://pypi.python.org>`_.
 
 See the :doc:`Installing add-on packages using buildout
 </manage/installing/installing_addons>` section for more details.
@@ -169,7 +169,7 @@ Plone must be started in the development mode using ``bin/instance fg`` command.
 * :doc:`GenericSetup XML files are reloaded </develop/addons/components/genericsetup>`
 
 Please note that Plone development mode does not reload ``.py`` or ``.zcml`` files by default.
-This is possible, however.  Use the `sauna.reload <http://pypi.python.org/pypi/sauna.reload/>`_ package
+This is possible, however.  Use the `sauna.reload <https://pypi.python.org/pypi/sauna.reload/>`_ package
 to make Plone reload your Python code automatically when it is changed.
 
 Through-the-web customizations

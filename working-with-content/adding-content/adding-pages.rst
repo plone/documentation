@@ -44,7 +44,6 @@ personal preferences. The mark-up formats available in Plone are:
 
 -   [Markdown](http://en.wikipedia.org/wiki/Markdown)
 -   [Textile](http://en.wikipedia.org/wiki/Textile_%28markup_language%29)
--   [Structured Text](http://www.zope.org/Documentation/Articles/STX)
 -   [Restructured Text](http://en.wikipedia.org/wiki/ReStructuredText)
 
 Each of these works by the embedding of special formatting codes within

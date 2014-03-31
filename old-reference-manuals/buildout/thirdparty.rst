@@ -14,7 +14,7 @@ Installing eggs
 ---------------
 
 So long as an egg has a release in the
-`PyPi <http://pypi.python.org/pypi>`_ or elsewhere, buildout can
+`PyPi <https://pypi.python.org/pypi>`_ or elsewhere, buildout can
 download and install it, including any explicitly specified
 dependencies. Simply list the egg, and optionally a version
 (otherwise, you get the latest available), in the *eggs* option.

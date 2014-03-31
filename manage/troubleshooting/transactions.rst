@@ -97,7 +97,7 @@ The code, ``fixblobs.py``::
 
         Also see:
 
-        http://pypi.python.org/pypi/experimental.gracefulblobmissing/
+        https://pypi.python.org/pypi/experimental.gracefulblobmissing/
 
     """
 
@@ -230,7 +230,7 @@ More info
 
 * http://stackoverflow.com/questions/8655675/cleaning-up-poskeyerror-no-blob-file-content-from-plone-site
 
-* http://pypi.python.org/pypi/experimental.gracefulblobmissing/
+* https://pypi.python.org/pypi/experimental.gracefulblobmissing/
 
 
 Transactions

@@ -159,10 +159,10 @@ In particular, we tend to use Plone content types instead of
 Grok ”models" and standard add/edit forms instead of the formlib-based
 forms from Grok.
 
-.. _martian: http://pypi.python.org/pypi/martian
-.. _grokcore.component: http://pypi.python.org/pypi/grokcore.component
-.. _grokcore.security: http://pypi.python.org/pypi/grokcore.security
-.. _grokcore.view: http://pypi.python.org/pypi/grokcore.view
-.. _grokcore.viewlet: http://pypi.python.org/pypi/grokcore.viewlet
-.. _five.grok: http://pypi.python.org/pypi/five.grok
+.. _martian: https://pypi.python.org/pypi/martian
+.. _grokcore.component: https://pypi.python.org/pypi/grokcore.component
+.. _grokcore.security: https://pypi.python.org/pypi/grokcore.security
+.. _grokcore.view: https://pypi.python.org/pypi/grokcore.view
+.. _grokcore.viewlet: https://pypi.python.org/pypi/grokcore.viewlet
+.. _five.grok: https://pypi.python.org/pypi/five.grok
 .. _Grok: http://grok.zope.org

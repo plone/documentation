@@ -43,12 +43,12 @@ Using ``pdb``
   Zope and start it in the foreground using the ``bin/instance fg`` command.
 
 # TextMate support for ``pdb`` can be found at
-  `http://pypi.python.org/pypi/PdbTextMateSupport/0.3
-  <http://pypi.python.org/pypi/PdbTextMateSupport/0.3>`_.
+  `https://pypi.python.org/pypi/PdbTextMateSupport/0.3
+  <https://pypi.python.org/pypi/PdbTextMateSupport/0.3>`_.
 
 # ``mr.freeze`` allows traces to be added without restarting:
-  `http://pypi.python.org/pypi/mr.freeze
-  <http://pypi.python.org/pypi/mr.freeze>`_.
+  `https://pypi.python.org/pypi/mr.freeze
+  <https://pypi.python.org/pypi/mr.freeze>`_.
 
 Example::
 
@@ -197,7 +197,7 @@ known as post-mortem debugging.
 
 This can be achieved with ` `Products.PDBDebugMode`` add-on.
 
-* http://pypi.python.org/pypi/Products.PDBDebugMode
+* https://pypi.python.org/pypi/Products.PDBDebugMode
 
 
 .. note ::

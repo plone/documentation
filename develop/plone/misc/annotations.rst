@@ -27,7 +27,7 @@ Plone uses annotations for:
 * Storing settings information in portal or content object (various add-on
   products).
 
-See `zope.annotation package <http://pypi.python.org/pypi/zope.annotation/3.4.1>`_.
+See `zope.annotation package <https://pypi.python.org/pypi/zope.annotation/3.4.1>`_.
 
 HTTP request example
 ====================

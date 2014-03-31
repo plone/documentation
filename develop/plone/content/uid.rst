@@ -46,7 +46,7 @@ Dexterity content items since ``plone.app.dexterity`` version 1.1.
 	If you have pre-Dexterity 1.1 content items you must run a migration step in portal_setup to 
 	give them UUIDs.
 
-To get object UUID you can use `plone.app.uuid <http://pypi.python.org/pypi/plone.app.uuid/>`_ package.
+To get object UUID you can use `plone.app.uuid <https://pypi.python.org/pypi/plone.app.uuid/>`_ package.
 
 Getting object UUID::
 

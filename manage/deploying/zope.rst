@@ -676,6 +676,6 @@ Please see:
 Adding multiple file storage mount points
 -----------------------------------------
 
-* http://pypi.python.org/pypi/collective.recipe.filestorage
+* https://pypi.python.org/pypi/collective.recipe.filestorage
 
 

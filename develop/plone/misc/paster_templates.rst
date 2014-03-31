@@ -290,7 +290,7 @@ in source code form.
 * You can use ``develop-eggs`` directive
 
 * You can use buildout extensions designed for source code and version
-  control management, like `mr.developer <http://pypi.python.org/pypi/mr.developer>`_.
+  control management, like `mr.developer <https://pypi.python.org/pypi/mr.developer>`_.
 
 Then you need to declare ``[paster]`` part and section in ``buildout.cfg``::
 

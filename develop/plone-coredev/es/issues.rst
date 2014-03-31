@@ -52,7 +52,7 @@ Mientras usted no tenga cualquier revisión de cambios pendiente, usted solo nec
 
 Usted también se puede conseguir con errores tan divertidos tales como::
 
-    Link to http://sphinx.pocoo.org/ ***BLOCKED*** by --allow-hosts
+    Link to http://sphinx-doc.org/ ***BLOCKED*** by --allow-hosts
 
 
 Estos errores están bien para ser ignorados SI y SÓLO SI las líneas que siguen diga::

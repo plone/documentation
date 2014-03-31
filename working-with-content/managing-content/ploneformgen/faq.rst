@@ -116,7 +116,7 @@ in your Options Vocabulary field.
 Q. Could a selection field in a FormFolder be used to redirect?
 ===============================================================
 
-I have created a custom FormFolder, using PloneFormGen. Within the FormFolder, I have created a page and added a selection field with value/label pairs equivalent to: path (url) | company department -->i.e. http://Plone/reports/accounting|Accounting I am wondering if it is possible to create an action override that would 'redirect_to' the 'selected' value in the selection field, something like: 'redirect_to:string: ' If so, how might I access the value from the selection field?
+I have created a custom FormFolder, using PloneFormGen. Within the FormFolder, I have created a page and added a selection field with value/label pairs equivalent to: path (url) | company department -->i.e. http://my.site/reports/accounting|Accounting I am wondering if it is possible to create an action override that would 'redirect_to' the 'selected' value in the selection field, something like: 'redirect_to:string: ' If so, how might I access the value from the selection field?
 
 For the redirection, just put something like::
 

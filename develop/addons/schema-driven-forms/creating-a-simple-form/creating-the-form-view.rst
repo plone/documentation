@@ -140,4 +140,4 @@ to the context’s default view. In this case, that means the portal front
 page.
 
 .. _five.grok manual: http://developer.plone.org/reference_manuals/active/five-grok
-.. _five.grok: http://pypi.python.org/pypi/five.grok
+.. _five.grok: https://pypi.python.org/pypi/five.grok

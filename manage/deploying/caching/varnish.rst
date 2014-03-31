@@ -45,7 +45,7 @@ The suggest method to install Varnish is to use your OS package manager.
 
 Buildout examples
 
-* http://pypi.python.org/pypi/plone.recipe.varnish
+* https://pypi.python.org/pypi/plone.recipe.varnish
 
 Management console
 ==================
@@ -572,7 +572,7 @@ the cache in a special header::
 Then let's create a Plone view which will make a request from Plone to
 Varnish (``upstream localhost:80``)
 and issue the ``PURGE`` command.
-We do this using the `Requests <http://pypi.python.org/pypi/requests>`_
+We do this using the `Requests <https://pypi.python.org/pypi/requests>`_
 Python library.
 
 Example view code::

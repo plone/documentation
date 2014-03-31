@@ -626,4 +626,4 @@ subscription adapters are registered with the *<subscriber />* ZCML
 directive. There is currently no way to register one using Grok
 conventions.
 
-.. _z3c.form: http://pypi.python.org/pypi/z3c.form
+.. _z3c.form: https://pypi.python.org/pypi/z3c.form

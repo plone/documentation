@@ -137,7 +137,7 @@ If, and only if, you cannot use a platform install of nginx you may use the reci
 
 * http://www.martinaspeli.net/articles/an-uber-buildout-for-a-production-plone-server
 
-* http://pypi.python.org/pypi/gocept.nginx
+* https://pypi.python.org/pypi/gocept.nginx
 
 A buildout will download, install and configure nginx from scratch.
 The buildout file contains an nginx configuration which can use template
@@ -162,7 +162,7 @@ Assuming you have a buildout nginx section called ``balancer``::
 Deployment configuration
 =========================
 
-`gocept.nginx <http://pypi.python.org/pypi/gocept.nginx/>`_ supports a
+`gocept.nginx <https://pypi.python.org/pypi/gocept.nginx/>`_ supports a
 special deployment configuration where you manually configure all
 directories. One important reason why you might wish to do this, is to
 change the location of the ``pid`` file. Normally this file would be created

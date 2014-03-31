@@ -1730,7 +1730,7 @@ is problematic and does not uninstall cleanly.
 .. seealso::
     * http://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
     * http://opensourcehacker.com/2011/06/01/plone-4-upgrade-results-and-steps/
-    * http://pypi.python.org/pypi/wildcard.fixpersistentutilities
+    * https://pypi.python.org/pypi/wildcard.fixpersistentutilities
 
 TypeError: argument of type 'NoneType' is not iterable
 ---------------------------------------------------------

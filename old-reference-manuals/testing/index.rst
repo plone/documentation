@@ -13,7 +13,7 @@ PloneTestCase tests
 
     Technologies presented here are for Plone 3.x and older.
 
-For `up-to-date testing best pratices read about plone.app.testing <http://pypi.python.org/pypi/plone.app.testing>`_.
+For `up-to-date testing best pratices read about plone.app.testing <https://pypi.python.org/pypi/plone.app.testing>`_.
 
 .. toctree::
     :maxdepth: 1

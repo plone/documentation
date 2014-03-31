@@ -88,7 +88,7 @@ get errors.
 collective.recipe.backup
 ========================
 
-`collective.recipe.backup <http://pypi.python.org/pypi/collective.recipe.backup>`_
+`collective.recipe.backup <https://pypi.python.org/pypi/collective.recipe.backup>`_
 is a well-maintained and well-supported recipe for solving the "objects in
 motion" problem for a live Plone database. It makes it easy to both back up
 and restore the object database. The recipe is basically a sophisticated
@@ -118,7 +118,7 @@ a ``backup`` part:
 
 There are several useful option settings for the recipe, all set by adding
 configuration information. All are documented on `the PyPI page
-<http://pypi.python.org/pypi/collective.recipe.backup>`_. Perhaps the most
+<https://pypi.python.org/pypi/collective.recipe.backup>`_. Perhaps the most
 useful is the ``location`` option, which sets the destination for backup
 files:
 

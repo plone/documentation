@@ -58,7 +58,7 @@ Al menos, su paquete tendría que incluir las siguientes formas de documentació
     * Los integradores quiénes necesitan extender la funcionalidad del paquete desde el código fuente.
     * Los administradores de sistemas quiénes necesitan mantener que el servidor ejecute el software.
 
-    Los paquetes sencillos con funcionalidad limitada pueden ser una página sola de narrativa documentación. En este caso es más sencillo de incluir él un extendido :file:`README.rst`. Algunos ejemplos excelentes de una página sencilla de archivo readme son http://pypi.python.org/pypi/plone.outputfilters y https://github.com/plone/plone.app.caching
+    Los paquetes sencillos con funcionalidad limitada pueden ser una página sola de narrativa documentación. En este caso es más sencillo de incluir él un extendido :file:`README.rst`. Algunos ejemplos excelentes de una página sencilla de archivo readme son https://pypi.python.org/pypi/plone.outputfilters y https://github.com/plone/plone.app.caching
 
     Si su proyecto es moderadamente complejo, puedes querer instalar su documentación con páginas múltiples. La manera mejor de hacer este es para añadir Sphinx a su proyecto y hospedar su documentos en readthedocs.org de modo que reconstruye la documentación siempre que aplica un cambio en github.com Si tú hace esto, su :file:`README.rst` debe que enlazar fuera sitio a la documentación.
 
@@ -97,5 +97,5 @@ Utilizando Sphinx
 
 Referencias reST:
  * `Documentación Shpinx orientada a Plone <http://developer.plone.org/reference_manuals/active/writing/index.html>`_
- * `Manual básico Sphinx reST <http://sphinx.pocoo.org/rest.html>`_ 
+ * `Manual básico Sphinx reST <http://sphinx-doc.org/rest.html>`_ 
 

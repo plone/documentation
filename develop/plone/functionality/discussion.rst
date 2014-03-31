@@ -20,7 +20,7 @@ More info
 
 * http://packages.python.org/plone.app.discussion/
 
-* http://pypi.python.org/pypi/plone.app.discussion
+* https://pypi.python.org/pypi/plone.app.discussion
 
 Content type support
 -------------------------

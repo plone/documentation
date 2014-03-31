@@ -28,5 +28,5 @@ subscribers.
 Both of these packages have interfaces containing copious internal
 documentation.
 
-.. _grokcore.component: http://pypi.python.org/pypi/grokcore.component
-.. _documentation: http://pypi.python.org/pypi/grokcore.component
+.. _grokcore.component: https://pypi.python.org/pypi/grokcore.component
+.. _documentation: https://pypi.python.org/pypi/grokcore.component

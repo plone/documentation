@@ -115,4 +115,4 @@ context is not annotatable. When it is, we get the current counter (if
 set), increment it, and then save it back again, before printing the
 value.
 
-.. _zope.annotation: http://pypi.python.org/pypi/zope.annotation
+.. _zope.annotation: https://pypi.python.org/pypi/zope.annotation

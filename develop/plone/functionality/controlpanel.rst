@@ -29,15 +29,15 @@ Configlets can be created in two ways:
 Plone 4.x+ add-ons.
 
 For tutorial and more information please see the
-`PyPi page <http://pypi.python.org/pypi/plone.app.registry>`_.
+`PyPi page <https://pypi.python.org/pypi/plone.app.registry>`_.
 
 Example products:
 
-* http://pypi.python.org/pypi/collective.gtags
+* https://pypi.python.org/pypi/collective.gtags
 
 * http://plone.org/products/collective.habla
 
-* http://pypi.python.org/pypi/collective.xdv
+* https://pypi.python.org/pypi/collective.xdv
 
 Minimal example using ``five.grok``
 ------------------------------------
@@ -298,4 +298,4 @@ buildout you can use operating system environment variables.
 
 For example, see:
 
-* http://pypi.python.org/pypi/Products.LongRequestLogger
+* https://pypi.python.org/pypi/Products.LongRequestLogger

@@ -13,7 +13,7 @@ Introduction
 ===============
 
 Plone caching is configured using the 
-`plone.app.caching <http://pypi.python.org/pypi/plone.app.caching>`_ add-on. 
+`plone.app.caching <https://pypi.python.org/pypi/plone.app.caching>`_ add-on. 
 It supplies a web user interface for cache configuration and default caching
 rules for Plone.
  
@@ -22,7 +22,7 @@ already.  This document mainly deals how you can combine
 ``plone.app.caching`` with your custom code.
 
 Internally ``plone.app.caching`` uses 
-`z3c.caching <http://pypi.python.org/pypi/z3c.caching/>`_ which defines
+`z3c.caching <https://pypi.python.org/pypi/z3c.caching/>`_ which defines
 programming level ZCML directives to create your cache rules.
 
 ``plone.app.caching`` does both:

@@ -182,7 +182,7 @@ file of your add-on installer
 
 More information
 
-* http://pypi.python.org/pypi/plone.browserlayer
+* https://pypi.python.org/pypi/plone.browserlayer
 
 * See example in `LinguaPlone <https://github.com/plone/Products.LinguaPlone/tree/master/Products/LinguaPlone/profiles/default/browserlayer.xml>`_.
 
