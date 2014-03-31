@@ -102,7 +102,6 @@ If you get the above error message there are two potential reasons:
   an explicit ``test_suite`` declaration in the ``test`` module any more.
   Instead, all subclasses of ``TestCase`` are automatically picked.
   However, this change is backwards incompatible.
-  http://wiki.zope.org/zope2/HowToRunZopeUnitTests
 
 Test coverage
 =============

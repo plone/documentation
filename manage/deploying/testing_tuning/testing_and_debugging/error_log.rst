@@ -7,7 +7,6 @@ the tracebacks accessible from Plone control panel and ZMI.
 
 The service is somewhat archaid and can log exceptions only, no plain error messages.
 
-`Site error log service source code <http://svn.zope.org/Zope/trunk/src/Products/SiteErrorLog/SiteErrorLog.py?rev=96315&view=auto>`_.
 
 Example how to add exceptions to error log
 ------------------------------------------
