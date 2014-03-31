@@ -639,7 +639,7 @@ Example view code::
 
 More info
 
-* https://www.varnish-cache.org/trac/wiki/VCLExamplePurging
+* https://www.varnish-cache.org/docs/3.0/tutorial/purging.html
 
 * https://github.com/kennethreitz/requests/tree/develop/requests
 
