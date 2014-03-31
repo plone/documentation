@@ -169,6 +169,4 @@ I didn't by any means figure this all our on my own so please do not give me cre
 
 - http://blog.fourdigits.nl/removing-a-persistent-local-utility
 - http://blog.fourdigits.nl/removing-a-persistent-local-utility-part-ii
-- http://plone.org/support/forums/addons#nabble-td3341437
 
- 

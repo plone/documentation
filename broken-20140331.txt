@@ -190,9 +190,6 @@ develop/plone/views/viewlets.rst:318: [broken] http://svn.zope.org/zope.contentp
 develop/plone/views/viewlets.rst:322: [broken] http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto: timed out
 develop/plone/views/viewlets.rst:190: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto: timed out
 develop/plone/views/viewlets.rst:183: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/manager.py?rev=113069&view=auto: timed out
-manage/troubleshooting/exceptions.rst:40: [broken] http://plone.org/support/forums/general#nabble-td3523234: Anchor 'nabble-td3523234' not found
-manage/troubleshooting/exceptions.rst:66: [broken] http://plone.org/support/forums/general#nabble-td3257712%7Ca3257712: Anchor 'nabble-td3257712%7Ca3257712' not found
-manage/troubleshooting/manual-remove-utility.rst:172: [broken] http://plone.org/support/forums/addons#nabble-td3341437: Anchor 'nabble-td3341437' not found
 manage/troubleshooting/transactions.rst:70: [broken] http://collective-docs.readthedocs.org/en/latest/views/browserviews.html#creating-a-view-using-grok: HTTP Error 404: NOT FOUND
 manage/troubleshooting/transactions.rst:19: [broken] http://www.zodb.org/zodbbook/introduction.html?highlight=blob#blobs: HTTP Error 404: NOT FOUND
 manage/troubleshooting/transactions.rst:70: [broken] http://collective-docs.readthedocs.org/en/latest/tutorials/paste.html#creating-an-add-on-product-skeleton: timed out
