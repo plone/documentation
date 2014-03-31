@@ -9,7 +9,7 @@
    Library  OperatingSystem
 
    Suite Setup  Run keywords  Suite Setup  Test Setup
-   Suite Teardown  Suite Teardown
+   Suite Teardown  Run keywords  Test teardown  Suite Teardown
 
    *** Variables ***
 
@@ -43,9 +43,6 @@
        Set autologin username  ${user_id}
 
    Test Teardown
-       Set Zope layer  ${FIXTURE}
-       Run keyword if  not sys.argv[0].startswith('bin/robot')
-       ...             Run keywords  ZODB TearDown  ZODB SetUp
        Run keyword if  sys.argv[0].startswith('bin/robot')
        ...             Remote ZODB TearDown  ${FIXTURE}
 
