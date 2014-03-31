@@ -18,7 +18,7 @@ Even better: when there is a clear structure and style for your documentation, t
 Further advantages of following this guide:
 
 * The documentation can be included on `docs.plone.org <http://docs.plone.org>`_
-* It will be in optimal format to be translated with tools like Transifex. 
+* It will be in optimal format to be translated with tools like Transifex.
 * Unicorns will come and play in your garden. No, *really*.
 
 Styleguide
@@ -52,7 +52,7 @@ For including documentation into docs.plone.org, **please** follow these guideli
 
 * Please do not link files from outsite your '/docs/source' directory. Linking *the other way around* is fine. So, if you create a README.rst, do it in the /docs/source directory, and make a symlink to it from the root of your repository. Github will display that one just fine.
 * Please do not use 'autodoc' to include comments of your code.
-* Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**. Do **not** break your sentences into half with newlines because you think you should follow PEP8. 
+* Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**. Do **not** break your sentences into half with newlines because you think you should follow PEP8.
 
-*Your documentation is not code.* It needs to be translatable. No, not in PHP, but in Chinese, Catalan, Klingon, ...  
+*Your documentation is not code.* It needs to be translatable. No, not in PHP, but in Chinese, Catalan, Klingon, ...
 
