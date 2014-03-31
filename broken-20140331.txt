@@ -190,7 +190,6 @@ develop/plone/views/viewlets.rst:318: [broken] http://svn.zope.org/zope.contentp
 develop/plone/views/viewlets.rst:322: [broken] http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto: timed out
 develop/plone/views/viewlets.rst:190: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto: timed out
 develop/plone/views/viewlets.rst:183: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/manager.py?rev=113069&view=auto: timed out
-manage/deploying/testing_tuning/performance/instancesthreads.rst:114: [broken] http://www.memcached.org: <urlopen error [Errno 111] Connection refused>
 manage/deploying/testing_tuning/testing_and_debugging/error_log.rst:10: [broken] http://svn.zope.org/Zope/trunk/src/Products/SiteErrorLog/SiteErrorLog.py?rev=96315&view=auto: timed out
 manage/deploying/testing_tuning/testing_and_debugging/unit_testing.rst:101: [broken] http://wiki.zope.org/zope2/HowToRunZopeUnitTests: <urlopen error timed out>
 manage/deploying/wsgi.rst:12: [broken] http://www.wsgi.org/wsgi/: HTTP Error 404: NOT FOUND
