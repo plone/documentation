@@ -198,7 +198,7 @@ For existing workflows, the easiest way to make the product install use GenericS
 * Unpack the tar file, and put the resulting files and directories in a directory 'profiles/default/' in the root of your product.
 * Remove the workflow directories in 'workflow/' that are not part of your product, and edit 'workflows.xml' so that it only has the information for your workflows. See "Poi changeset 41071":http://dev.plone.org/collective/changeset/41071 for an example.
 * Delete your old '.py'-based workflow definitions in 'Extensions', but make sure you keep any workflow scripts, since these will be referenced from the profile definitions.
-* Add a 'configure.zcml' file in the root of your product that registers the default profile. See "Poi's configure.zcml":http://dev.plone.org/collective/browser/Poi/branches/plone3-support/configure.zcml?rev=41071 for an example.
+* Add a 'configure.zcml' file in the root of your product that registers the default profile.
 * Remove the redundant code from 'Extensions/Install.py' and add the boilerplate code to invoke the GS setup, see "Poi changeset 41071":http://dev.plone.org/collective/changeset/41071 for an example.
 
 This process is also the same for any code you want to move to GenericSetup, in the Poi example, we also moved the catalog metadata and various other things to use GenericSetup profiles, and could get rid of most of 'Install.py' in the process.
