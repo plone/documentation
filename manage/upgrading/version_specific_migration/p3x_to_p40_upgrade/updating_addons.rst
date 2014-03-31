@@ -344,17 +344,13 @@ This means that the specified validator is using old interfaces and is not worki
 
         implements(IValidator) 
 
-Example changesets:
 
-* `DataGridField <https://github.com/collective/Products.DataGridField/commit/634133e5913727690a40a093ca580ab87d3b1cea#Products/DataGridField/validators.py>`_ (only part of the changeset applies)
-* `PloneSoftwareCenter <https://github.com/collective/Products.PloneSoftwareCenter/commit/db7189e9327656c6ed75a39f39c7481433f06ad5#Products/PloneSoftwareCenter/validators.py>`_  
 
 If you now use this code on Plone 3, this will fail::
 
     TypeError: Error when calling the metaclass bases
         iteration over non-sequence
 
-So if you want to avoid that and be compatible with Plone 3 and 4 at the same time, you can conditionally use either of the two lines, like in this `changeset. <https://github.com/collective/Products.PloneSoftwareCenter/commit/5d7237a391385dd68fac0749119297585bdc6406#Products/PloneSoftwareCenter/validators.py>`_
 
 Manual calls to translate
 =========================
