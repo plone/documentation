@@ -190,7 +190,6 @@ develop/plone/views/viewlets.rst:318: [broken] http://svn.zope.org/zope.contentp
 develop/plone/views/viewlets.rst:322: [broken] http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto: timed out
 develop/plone/views/viewlets.rst:190: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto: timed out
 develop/plone/views/viewlets.rst:183: [broken] http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/manager.py?rev=113069&view=auto: timed out
-manage/deploying/zope.rst:146: [broken] https://weblion.psu.edu/trac/weblion/wiki/VirtualHostMonster: HTTP Error 404: Not Found
 manage/troubleshooting/buildout.rst:96: [broken] http://maurits.vanrees.org/weblog/archive/2010/08/fake-version-pinning: HTTP Error 500: Internal Server Error
 manage/troubleshooting/buildout.rst:32: [broken] http://pypi.appspot.com/: HTTP Error 404: Not Found
 manage/troubleshooting/buildout.rst:165: [broken] http://maurits.vanrees.org/weblog/archive/2010/04/nonewplone: HTTP Error 500: Internal Server Error
