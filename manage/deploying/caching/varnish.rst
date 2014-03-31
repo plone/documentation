@@ -641,7 +641,7 @@ More info
 
 * https://www.varnish-cache.org/docs/3.0/tutorial/purging.html
 
-* https://github.com/kennethreitz/requests/tree/develop/requests
+* https://www.varnish-cache.org/trac/wiki/BackendConditionalRequests
 
 * http://kristianlyng.wordpress.com/2010/02/02/varnish-purges/
 
