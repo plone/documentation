@@ -29,7 +29,8 @@ Here are instructions how to deal with community servers down situations
 
 Mirrors
 
-* http://pypi.appspot.com/
+* http://www.pypi-mirrors.org/
+
 
 Individual package failing outside PyPI
 ---------------------------------------
@@ -37,6 +38,7 @@ Individual package failing outside PyPI
 To figure out which file buildout tries to download, usually the only way
 is to use ``buildout -D`` pdb debug mode and step up in stack frames to see 
 what is going on.
+
 
 parts/instance/etc/zope.conf: [Errno 2] No such file or directory
 ===================================================================
@@ -162,7 +164,7 @@ Below are links how to keep Plone 3.1 and earlier buildouts running.
 
 See:
 
-* http://maurits.vanrees.org/weblog/archive/2010/04/nonewplone
+* http://www.netsight.co.uk/blog/resurrecting-old-plone-3-buildouts
 
 
 
