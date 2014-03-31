@@ -37,7 +37,6 @@ You have probably moved Data.fs or edited buildout.cfg.
 **Solution**: Check that eggs and zcml contain all necessary products in buildout.cfg.
 
 .. seealso::
-    * http://plone.org/support/forums/general#nabble-td3523234
     * http://article.gmane.org/gmane.comp.web.zope.plone.setup/3232
 
 Add-on installer error: too many values to unpack
@@ -62,8 +61,6 @@ Add-on installer error: too many values to unpack
 
 **Solution**: Pin zope.component to 3.5.1.
 
-.. seealso::
-    http://plone.org/support/forums/general#nabble-td3257712%7Ca3257712
 
 Archetypes: TypeError: getattr(): attribute name must be string
 ------------------------------------------------------------------
