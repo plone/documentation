@@ -17,7 +17,7 @@ the *Plone Documentation*.
 Reaching the documentation team
 ===============================
 
-Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
+The Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
 To reach this team for any questions please contact
 
 * `Documentation team mailing list <https://plone.org/support/forums/docs>`_
@@ -87,3 +87,14 @@ advanced users.
 * Commit changes your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request.
 
 For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
+
+Editing the documentation on Github
+===================================
+
+- Go to `Plone Documentation <https://github.com/plone/documentation>`_ on  GitHub.
+- Press the **Fork** button. This will create your own personal copy of the documentation.
+- **Edit** files using GitHub's text editor in your web browser
+- Fill in the **Commit message** text box at the end of the page telling why you did the changes. Press the **Propose file change** button next to it when done.
+- Then head to the *Send a pull request* page (you won't need to fill in any additional text). Just press **Send pull request** button.
+- Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on Github.
+- For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
