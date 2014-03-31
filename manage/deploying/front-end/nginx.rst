@@ -270,7 +270,7 @@ Hosts are configured in a separate buildout section::
 
 More info
 
-* http://aleksandarsavic.com/nginx-redirect-wwwexamplecom-requests-to-examplecom-or-vice-versa/
+* https://stackoverflow.com/questions/7947030/nginx-no-www-to-www-and-www-to-no-www
 
 Permanent redirect
 ===================
@@ -330,7 +330,8 @@ More info on nginx redirects
 
 * http://scott.yang.id.au/2007/04/do-you-need-permalink-redirect/
 
-* http://aleksandarsavic.com/nginx-and-wordpress-setup-clean-seo-friendly-urls/
+
+
 
 
 Make nginx aware where the request came from
@@ -448,6 +449,7 @@ on SSI for a specific location::
             }
     }
 
+
 Session affinity
 =================
 
@@ -484,7 +486,7 @@ Manually extract ``nginx-sticky-module`` under ``src``:
 .. code-block:: console
 
     cd src
-    wget http://nginx-sticky-module.googlecode.com/files/nginx-sticky-module-1.0-rc2.tar.gz
+    wget https://code.google.com/p/nginx-sticky-module/downloads/list
 
 Then add it to the ``nginx-build`` part in buildout:
 
@@ -577,6 +579,7 @@ cart is not "lost".
 More info
 
 * http://code.google.com/p/nginx-sticky-module/source/browse/trunk/README
+
 
 * http://nathanvangheem.com/news/nginx-with-built-in-load-balancing-and-caching
 
