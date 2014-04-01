@@ -28,7 +28,7 @@ Best practices
 
 For including documentation into docs.plone.org, **please** follow these guidelines:
 
-* Please do not symlink to, or use the *include* directive on files that live outside your '/docs/source' directory. Linking *the other way around* is fine. So, if you create a README.rst, do it in the /docs/source directory, and make a symlink to it from the root of your repository. Github will display that one just fine.
+* Please do not symlink to, or use the *include* directive on files that live outside your '/docs' directory. Linking *the other way around* is fine. So, if you create a README.rst, do it in the /docs/source directory, and make a symlink to it from the root of your repository. Github will display that one just fine.
 * Please do not use 'autodoc' to include comments of your code.
 * Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**. Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
 
