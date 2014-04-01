@@ -3,7 +3,7 @@ Overview
 
 Here's a quick overview of what this manual covers.
 
-.. image:: ../images/mindmap.gif
+.. image:: ../images/mindmap.png
 
 Section 1: Introduction
 

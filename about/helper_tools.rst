@@ -22,7 +22,8 @@ Online tools:
 Offline tools:
 ---------------
 
-**ReText** if you use Ubuntu or Debian you could use **ReText** a Editor for **.rst** and **.md**
+**ReText** is a handy editor for **.rst** and **.md** formats.
+On Ubuntu and Debian-based systems all you have to do is
 
 .. code-block:: rst
 

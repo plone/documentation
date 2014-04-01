@@ -1,6 +1,6 @@
-======
-About
-======
+========================
+About this documentation
+========================
 
 .. toctree::
     :maxdepth: 2

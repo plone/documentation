@@ -7,7 +7,7 @@ theme.
 There are really three main building blocks in a theme. The diagram
 below shows you how these slot together:
 
-.. image:: buildingblocks1.gif
+.. image:: buildingblocks1.png
 
 Skin
 ----
