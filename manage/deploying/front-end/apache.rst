@@ -63,7 +63,7 @@ domain name is ``yoursite.com`` (note with or without www matters, see below)::
 	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/yoursite.com:80/Plone/VirtualHostRoot/$1 [P,L]
 
 	</VirtualHost>
- 
+
         <VirtualHost *>
             ServerAlias   *
             ServerRoot    /var/www
@@ -77,7 +77,7 @@ Restart apache::
       sudo apache2ctl configtest
       sudo apache2ctl restart
 
-Check that Plone respondes::
+Check that Plone responds::
 
       http://yoursite.com:8080/Plone
 

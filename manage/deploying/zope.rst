@@ -523,7 +523,7 @@ For example:
 * event-log-old-files = 3
 
 This will rotate the event log when it reaches 10mb in size. It will retain a
-maximum of 3 files. Similar direcives are also available for the access log.
+maximum of 3 files. Similar directives are also available for the access log.
 
 * access-log-max-size = 100mb
 
