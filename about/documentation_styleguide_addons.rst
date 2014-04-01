@@ -51,7 +51,7 @@ Breaking sentences with linebreaks would mean a translator will only see part of
 Styleguide
 ==========
 
-* All documentation should be written in **valid** `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_  There are some :doc:<helper_tools> available.
+* All documentation should be written in **valid** `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_  There are some :doc:`helper_tools` available.
 * All documentation should be in the folder */docs/source*
 * It's good practice to have a README.rst and a CHANGES.rst file in the top level of your package. If you want that information to also be available in the documentation on docs.plone.org, you should move those files into the /docs/source directory, and then make a symlink in the root of your package. Don't forget to update setup.py if you're using these files as long_description!!
 * that README.rst should just contain a **short** description of your package, what it does, and the requirements. Do **not** put your entire documentation in it.
