@@ -1,7 +1,7 @@
 Using Listings & Queries (Collections)
 =======================================
 
-Collections take advantage of the intelligence of Plone. 
+Collections take advantage of the intelligence of Plone.
 
 Think of them as automatically updated queries, with criteria that you define. As new pieces of content are added, they will show up in these Collections if they match the criteria.
 
@@ -11,6 +11,7 @@ Collections have gone through various iterations, since Plone 4.2 the so-called 
     :maxdepth: 2
 
     newstyle/introduction-to-collections
+    newstyle/creating_collections
 
 Before that, there were 'oldstyle' Collections. Setting them up was a bit less streamlined, but for power users they can have more flexibility, which is why you can enable them in your site if wanted.
 
