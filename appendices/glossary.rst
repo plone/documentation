@@ -60,7 +60,8 @@ It incorporates the original `glossary on plone.org
         don't want to resort to HTML for creating web content. It uses
         indenting for structure, and other markup for formatting. It has
         been superseded by :term:`reStructuredText`, but some people still
-        prefer the old version, as it's simpler. 
+        prefer the old version, as it's simpler.
+
     Catalog
         The catalog is an internal index of the content inside Plone so that
         it can be searched. The catalog object is accessible through the
@@ -97,7 +98,7 @@ It incorporates the original `glossary on plone.org
         :term:`skin`. The order of layers is important, the topmost layers
         will be examined first when rendering a page. Each layer is an entry
         in ``portal_skins`` -> 'Contents', and is usually a Filesystem
-        Directory View or a Folder.  
+        Directory View or a Folder.
 
     Skin
         A collection of template layers (see :term:`layer`) is used as the
@@ -540,15 +541,15 @@ It incorporates the original `glossary on plone.org
         developing any Python application.
         From `A Comprehensive Guide to Zope Component Architecture
         <http://www.muthukadan.net/docs/zca.html>`_.
-        
+
     Plonista
-        A Plonista is a member of the Plone community. 
+        A Plonista is a member of the Plone community.
         It can be somebody who loves Plone, or uses Plone, or someone who spreads Plone and Plone knowledge.
         It can also be someone who is a Plone developer, or it can be all of the above.
 
     control panel
-        The Control Panel is the place where many parameters of a Plone site can be set. 
-        Here add-ons can be enabled, users and groups created, the workflow and permissions can be set and settings for language, caching and many other can be found. 
+        The Control Panel is the place where many parameters of a Plone site can be set.
+        Here add-ons can be enabled, users and groups created, the workflow and permissions can be set and settings for language, caching and many other can be found.
         If you have "Site Admin" permisisons, you can find it under "Site -> Site Setup" in your personal tools.
 
     Dexterity
