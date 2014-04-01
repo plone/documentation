@@ -30,7 +30,7 @@ On Ubuntu and Debian-based systems all you have to do is
    apt-get install retext
 
 
-If you have existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions. For instance, it can create valid rst files from Markdown and quite a number of other formats.
+**Pandoc** If you have existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions. For instance, it can create valid rst files from Markdown and quite a number of other formats.
 
 
 **Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
