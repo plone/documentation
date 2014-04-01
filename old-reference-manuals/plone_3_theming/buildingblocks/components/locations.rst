@@ -47,4 +47,4 @@ viewlet.pt
     will need to register these as directories as resources in
     configure.zcml
 
-.. |The browser folder in your theme product| image:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_components_cutdown.gif
+.. |The browser folder in your theme product| image:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_components_cutdown.png

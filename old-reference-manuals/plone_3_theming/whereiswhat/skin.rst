@@ -23,7 +23,7 @@ When your theme is installed in your Plone site, this sets up the
 hierarchy of skin layers, and registers your style sheets and JavaScript
 with the registries
 
-.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_skin.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_skin.png
    :align: center
    :alt: your theme egg - the skin files
 

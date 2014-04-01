@@ -32,9 +32,9 @@ It is important to remember that the content view templates aren't
 complete in themselves, they merely provide a snippet of content which
 is dropped into a "slot" in the main\_template - called 'main'.
 
-.. figure:: /old-reference-manuals/plone_3_theming/images/maintemplate.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/maintemplate.png
    :align: center
-   :alt: 
+   :alt:
 
 If you feel unsure about slots, then have a look back at the `templates
 and templating language
@@ -84,9 +84,9 @@ This gets dropped into a slot in the main\_template:
 
 ::
 
-    <metal:bodytext metal:define-slot="main" 
+    <metal:bodytext metal:define-slot="main"
                     tal:content="nothing">
-    ... 
+    ...
     </metal:bodytext>
 
 2. Going back to the fill-slot in the document\_view you’ll see a few
@@ -94,7 +94,7 @@ tags calling the relevant fields from the content type – like this:
 
 ::
 
-    <metal:field 
+    <metal:field
            use-macro="python:here.widget('title', mode='view')">
     </metal:field>
 
@@ -139,7 +139,7 @@ fill-slot (outside of the main fill-slot):
 ::
 
     <metal:mystyleslot fill-slot="style_slot">
-     ..... 
+     .....
     </metal:mystyleslot>
 
 We'll go into other ways of providing styles in more detail in the next

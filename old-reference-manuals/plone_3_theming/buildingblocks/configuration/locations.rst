@@ -62,4 +62,4 @@ In your own Theme Product
     When your Zope instance starts up, this file makes the profile
     available for Generic Setup to use.
 
-.. |The configuration directory in your theme product| image:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_config_cutdown.gif
+.. |The configuration directory in your theme product| image:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_config_cutdown.png

@@ -39,7 +39,7 @@ Plone Default skin can be found in the CMFPlone product:
 In your own Theme Product
 -------------------------
 
-|The skins folder in your theme product|    
+|The skins folder in your theme product|
 
 /skins/[your theme namespace].[your theme name]\_custom\_templates \|
  custom\_images \| styles
@@ -49,7 +49,7 @@ In your own Theme Product
     plone3\_theme paster template will have provided blank style sheets
     to override the Plone Default ones.
 
-/skins.zcml 
+/skins.zcml
     When your Zope instance starts up, this turns your directories into
     skin layers
 
@@ -63,6 +63,6 @@ In your own Theme Product
 
  
 
-.. |The skins folder in your theme product| image:: your_theme_egg_skin_cutdown.gif
+.. |The skins folder in your theme product| image:: your_theme_egg_skin_cutdown.png
 
-.. |Subsidiary files used for installing and setting up the Skin| image:: your_theme_egg_skin_cutdown1.gif
+.. |Subsidiary files used for installing and setting up the Skin| image:: your_theme_egg_skin_cutdown1.png

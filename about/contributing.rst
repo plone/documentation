@@ -1,6 +1,6 @@
-==============
- Contributing
-==============
+==================================
+ Contributing to the documentation
+==================================
 
 .. admonition:: Description
 
@@ -8,11 +8,7 @@
 
 .. contents:: :local:
 
-Introduction
-============
 
-This chapter explains the basics of editing, updating and contributing to
-the *Plone Documentation*.
 
 Reaching the documentation team
 ===============================
@@ -37,7 +33,7 @@ If you haven't filled in a Contributor Agreement, you can still contribute. Cont
 Git workflow / branching model
 ==============================
 
-The documentation is hosted on github. And there are tools hooked directly into it: 
+The documentation is hosted on github. And there are tools hooked directly into it:
 
 * there are branches for the different versions of Plone
 
@@ -45,7 +41,7 @@ The documentation is hosted on github. And there are tools hooked directly into 
 
 * some external documentation is pulled in, to collect all the documentation in one place.
 
-For these reasons, it is important we keep the documentation coherent. 
+For these reasons, it is important we keep the documentation coherent.
 Therefore, we follow a simple workflow, which we ask all contributors to respect:
 
 
@@ -55,7 +51,7 @@ Your pull requests may be checked for spelling, and clarity. So don't hesitate t
 
 If you don't get feedback on your pull request in a day please come to #plone-docs and ask.
 
-The main goal of this process is not to annoy you. On the contrary, we **love** your contributions. 
+The main goal of this process is not to annoy you. On the contrary, we **love** your contributions.
 
 But the documentation team also wants to keep the documentation in good shape.
 
@@ -63,7 +59,7 @@ But the documentation team also wants to keep the documentation in good shape.
 Pull request checklist
 ======================
 
-Making a good pull request makes life easier for everybody: 
+Making a good pull request makes life easier for everybody:
 
 * The title and description of a pull request MUST be descriptive and need to reflect the changes. So please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
 
@@ -73,7 +69,7 @@ Editing the documentation using git
 ===================================
 
 This is the recommended method of editing the documentation for
-advanced users. 
+advanced users.
 
 * Learn about `Sphinx <http://sphinx-doc.org/>`_ and `restructured text
   <http://sphinx-doc.org/rest.html>`_.

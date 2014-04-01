@@ -60,13 +60,13 @@ Here's a sample ZCML directive conjuring up the presentation viewlet
 ::
 
     <configure    xmlns="http://namespaces.zope.org/zope"
-        xmlns:browser="http://namespaces.zope.org/browser">  
-        <browser:viewlet      
-             name="plone.presentation"      
-             for="Products.ATContentTypes.interface.IATDocument"      
-             manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"      
-             class=".presentation.PresentationViewlet"      
-             permission="zope2.View"      
+        xmlns:browser="http://namespaces.zope.org/browser">
+        <browser:viewlet
+             name="plone.presentation"
+             for="Products.ATContentTypes.interface.IATDocument"
+             manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+             class=".presentation.PresentationViewlet"
+             permission="zope2.View"
         />
     </configure>
 
@@ -92,4 +92,4 @@ If you want to be very disciplined and tidy, consult the ZCMLStyleGuide
 
  
 
-.. |diagram of a component| image:: /old-reference-manuals/plone_3_theming/images/component.gif
+.. |diagram of a component| image:: /old-reference-manuals/plone_3_theming/images/component.png

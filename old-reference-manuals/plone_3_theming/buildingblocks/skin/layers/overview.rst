@@ -12,9 +12,9 @@ layer is a directory. In the Zope Management Interface (ZMI), each layer
 appears in portal\_skins as a separate folder (containing page
 templates, style sheets or Python scripts).
 
-.. figure:: /old-reference-manuals/plone_3_theming/images/portal_skins_zmi_snip.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/portal_skins_zmi_snip.png
    :align: center
-   :alt: 
+   :alt:
 
 These have two uses.
 

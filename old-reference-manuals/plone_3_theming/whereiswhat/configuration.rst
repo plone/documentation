@@ -16,7 +16,7 @@ ordering your viewlets.
 When your Zope instance starts up, this file makes the profile available
 for Generic Setup to use.
 
-.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_config.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_config.png
    :align: center
    :alt: your theme egg - the configuration files
 

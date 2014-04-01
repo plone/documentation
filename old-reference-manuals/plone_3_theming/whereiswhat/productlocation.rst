@@ -7,7 +7,7 @@ a file system layout very similar to this diagram.
 If the diagram doesn't help, then consult the next few pages where
 sections of the diagram are combined with a text explanation.
 
-.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg.png
    :align: center
    :alt: your theme egg
 

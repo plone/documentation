@@ -27,7 +27,7 @@ These directories can be used for templates, styles, and images. You
 will need to register these as directories as resources in
 configure.zcml.
 
-.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_components.gif
+.. figure:: /old-reference-manuals/plone_3_theming/images/your_theme_egg_components.png
    :align: center
    :alt: your theme egg - the components files
 

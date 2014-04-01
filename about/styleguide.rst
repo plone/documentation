@@ -19,6 +19,47 @@ the *Plone Documentation*.
 
   All pages should be in ReStructured Text, and have a .rst extension. Images should be in .png, or .jpg format. Please, don't use .gif, because the PDF-generating software has issues with that.
 
+
+Line length & translations
+==========================
+
+Documentation is not code. Repeat after us: **Documentation is not code.**
+
+Therefore, documentation should **not** follow PEP8 or other arbitrary conventions.
+
+.. note::
+
+  **Remember :** This documentation is set up so it is fully translatable by using standard tools like transifex.
+
+  Your sentences will become .po strings, to be translated.
+
+  Now, think about how translations would work if the translator can only see an arbitrary part of a sentence. Translating is hard enough without creating additional problems...
+
+If you want to keep short lines:
+
+Use **semantic linefeeds**
+(http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
+when you are editing restructured text (or any other interpreted rich text format) because it will greatly improve the editing and maintenance of your documents.
+
+Take this example paragraph::
+
+    Patterns can take options in two ways:
+    from the DOM or via the jQuery interface.
+    It is highly recommended to use the DOM interface,
+    since it offers a lot more flexibility compared to the jQuery approach.
+    Also,
+    if you wish to use the automatic binding and rebinding functionality,
+    the DOM approach is more straightforward and hassle-free.
+
+Notice how it's easier to just reshuffle sentences and add stuff if,
+instead of using your editor "autowrap" feature,
+you manually insert line breaks after full stops, commas,
+or upon "grammatical" boundaries
+(and not merely word ones).
+
+But again, do not be afraid to use more than 80 characters. It's 2014, and it's documentation.
+
+
 Document page format
 ====================
 
@@ -322,40 +363,4 @@ Note:
       This is a TODO item
 
 
-Line length
-=====================
-
-Documentation is not code. Repeat after us: **Documentation is not code.**
-
-Therefore, documentation should **not** follow PEP8 or other arbitrary conventions.
-
-.. note::
-
-  **Remember :** This documentation is set up so it is fully translatable by using standard tools like transifex.
-
-  Your sentences will become .po strings, to be translated.
-
-  Now, think about how translations would work if the translator can only see an arbitrary part of a sentence. Translating is hard enough without creating additional problems...
-
-If you want to keep short lines:
-
-Use **semantic linefeeds**
-(http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
-when you are editing restructured text (or any other interpreted rich text format) because it will greatly improve the editing and maintenance of your documents.
-
-Take this example paragraph::
-
-    Patterns can take options in two ways:
-    from the DOM or via the jQuery interface.
-    It is highly recommended to use the DOM interface,
-    since it offers a lot more flexibility compared to the jQuery approach.
-    Also,
-    if you wish to use the automatic binding and rebinding functionality,
-    the DOM approach is more straightforward and hassle-free.
-
-Notice how it's easier to just reshuffle sentences and add stuff if,
-instead of using your editor "autowrap" feature,
-you manually insert line breaks after full stops, commas,
-or upon "grammatical" boundaries
-(and not merely word ones).
 
