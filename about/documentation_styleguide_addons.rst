@@ -66,7 +66,6 @@ Directory Structure
 
 .. code-block:: rst
 
-    source
     $YOUR_PROJECT/docs/source
 
 * /docs could contain your Makefile and conf.py
