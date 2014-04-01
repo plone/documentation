@@ -16,7 +16,7 @@ Collections have gone through various iterations, since Plone 4.2 the so-called 
 Before that, there were 'oldstyle' Collections. Setting them up was a bit less streamlined, but for power users they can have more flexibility, which is why you can enable them in your site if wanted.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     oldstyle/introduction-to-collections
     oldstyle/adding-collections

@@ -15,7 +15,7 @@ Plone). All Sort Orders are in Ascending Order unless the Reverse Order
 check box is selected. By checking this we can display in reverse order,
 or newest dates first, etc.
 
-**Date****s**
+**Dates**
 -------------
 
 There are numerous Date options which will be explained in the next
