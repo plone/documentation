@@ -62,7 +62,7 @@ Styleguide
 Directory Structure
 =====================
 
-* You should configure Sphinx in that way that you have a seperate */source* directory for your documentation .rst files
+* You should configure Sphinx in that way that you have a separate */source* directory for your documentation .rst files
 
 .. code-block:: rst
 
