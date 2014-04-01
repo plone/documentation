@@ -4,7 +4,7 @@ Helper tools for writing Documentation
 
 .. admonition:: Description
 
-   Tools and Plugins which will help to write Documentation.
+   Tools and Plugins which will help to write documentation.
 
 .. contents:: :local:
 
@@ -30,6 +30,9 @@ On Ubuntu and Debian-based systems all you have to do is
    apt-get install retext
 
 
+If you have existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions. For instance, it can create valid rst files from Markdown and quite a number of other formats.
+
+
 **Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
 
 
@@ -46,7 +49,6 @@ Marketplace.
 **Vim** does syntax highlighting for RST files.
 There is also a nice plugin with enhanced functionalities called `Riv <https://github.com/Rykka/riv.vim>`_.
 
-If you have a lot of existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions.
 
 
 

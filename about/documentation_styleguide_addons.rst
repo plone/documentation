@@ -28,7 +28,7 @@ Best practices
 
 For including documentation into docs.plone.org, **please** follow these guidelines:
 
-* Please do not link files from outsite your '/docs/source' directory. Linking *the other way around* is fine. So, if you create a README.rst, do it in the /docs/source directory, and make a symlink to it from the root of your repository. Github will display that one just fine.
+* Please do not link to files that live outside your '/docs/source' directory. Linking *the other way around* is fine. So, if you create a README.rst, do it in the /docs/source directory, and make a symlink to it from the root of your repository. Github will display that one just fine.
 * Please do not use 'autodoc' to include comments of your code.
 * Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**. Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
 
@@ -51,7 +51,7 @@ Breaking sentences with linebreaks would mean a translator will only see part of
 Styleguide
 ==========
 
-* All documentation should be written in **valid** `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_
+* All documentation should be written in **valid** `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_  There are some :doc:<helper_tools> available.
 * All documentation should be in the folder */docs/source*
 * It's good practice to have a README.rst and a CHANGES.rst file in the top level of your package. If you want that information to also be available in the documentation on docs.plone.org, you should move those files into the /docs/source directory, and then make a symlink in the root of your package. Don't forget to update setup.py if you're using these files as long_description!!
 * that README.rst should just contain a **short** description of your package, what it does, and the requirements. Do **not** put your entire documentation in it.
