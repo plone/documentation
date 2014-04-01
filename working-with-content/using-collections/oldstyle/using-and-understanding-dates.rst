@@ -14,8 +14,8 @@ Dates Defined
 The Creation Date is the date the document was made. You can think of
 this as its birthday, the day it was born. You cannot change the
 Creation Date of an object.
-**
-Effective Date**
+
+**Effective Date**
 The Effective Date is the date when an object becomes published. This
 date is customizable through the **Edit tab** on objects under the
 **Date tab**. However, there it is referred to as the Publishing Date (a
@@ -34,14 +34,14 @@ on when they became viewable to the public, which is more relevant to
 the audience of your Collection. Also, you can go in and manually adjust
 the Effective Date to control the sort order which is not something you
 can do with the Creation Date.
-**
-Expiration Date**
+
+**Expiration Date**
 The Expiration Date refers to the day that the item will no longer
 become publicly available. This date is also customizable through the
 Edit tab (shown above) like the Effective Date. By default, objects have
 no Expiration Date.
-**
-Modification Date**
+
+**Modification Date**
 The Modification Date is the date the object was last edited. Note that
 this date is first set the day the object is created and will
 automatically change every time the object is edited. There is no way to

@@ -8,7 +8,7 @@ Mastering how to use the different Criteria will allow you to use
 Collections in several useful ways. In this section, we will use
 examples to illustrate the many ways of using Criteria.
 
-**Categories**
+Categories
 --------------
 
 The Category criterion allows you to search the **Category field** of
@@ -24,7 +24,7 @@ content objects we had designated with the Category *Organization*.
 Once again the values available to you are completely dependent on what
 you have specified on your objects in the Categorization tab.
 
-**Creator**
+Creator
 -----------
 
 When using the Creator criterion, we are **filtering objects based on
@@ -41,7 +41,7 @@ use the **List of Values** option. Otherwise you would normally use the
 Text option unless the creator you wanted to select was yourself in
 which case you would use Restrict to Current User.
 
-**Description**
+Description
 ---------------
 
 The Description field is essentially a **search box type** criterion.
@@ -50,10 +50,10 @@ However, instead of searching the title and body of a page, it will
 object. This criterion is only really useful if you fill out the
 Description field consistently for all your content objects.
 
-**Location**
+Location
 ------------
 
-Using the Location criterionis much like specifying a location when you
+Using the Location criterion is much like specifying a location when you
 search for a document on your hard drive. By specifying a Location
 criterion, **the results that are displayed in your Collection will only
 come from that location**, most commonly a Folder. This can be useful if
@@ -71,7 +71,7 @@ clicking the Browse button or directly on the title of the folder you
 want to open. You may also use the Search box to search for the Title of
 an object.
 
-**Search Text**
+Search Text
 ---------------
 
 The Search Text is a very useful criterion. It is similar to the search
@@ -86,7 +86,7 @@ use the Search Text criterion and specify *collections*. All Tutorials,
 Videos, Glossary items, etc with *collections* in the Title,
 Description, or Body would then appear in the Collection results.
 
-**Related To**
+Related To
 --------------
 
 The Related To field is another field, like Category, that **must be
@@ -112,7 +112,7 @@ which objects are related to content but on which objects have another
 object related **to it**. The Collection will display the results that
 are related to that value.
 
-**State**
+State
 ---------
 
 Using the State criterion is very simple. It allows us to **sort by
@@ -123,10 +123,10 @@ Private state can be useful as well. For example, a site administrator
 might want to quickly see private content, so that they could determine
 what work needs to be done and what could deleted.
 
-**Dates**
+Dates
 ---------
 
 You may have noticed that there are **several different dates
 available** to use as Criteria. Since there are such a large number of
-dates, they will be covered on their own section of the manual.
+dates, they will be covered in :doc:`their own section of the manual <using-and-understanding-dates>`
 
