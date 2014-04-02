@@ -259,7 +259,7 @@ Here are the gory details:
       to be wrapped.
 
     * If there is no namespace traversal adapter, find an ``IPublishTraverse``
-      object in one of three places: 
+      object in one of three places:
 
       * If the current traversal object implements it directly, use that;
       * if there is an adapter from the current object
@@ -267,60 +267,60 @@ Here are the gory details:
       * fall back to the ``DefaultPublishTraverse`` implementation found in
         ``ZPublisher.BaseRequest``.
 
-      Then call the ``publishTraverse()`` method
-      to find an object to traverse to and return that (without
-      acquisition-wrapping it).
+    Then call the ``publishTraverse()`` method
+    to find an object to traverse to and return that (without
+    acquisition-wrapping it).
 
-      Implementing ``IPublishTraverse`` is a common way to allow further
-      traversal from a view, with paths like ``.../@@foo/some/path``, where
-      the ``@@foo`` view either implements or is adaptable to
-      ``IPublishTraverse``.
+    Implementing ``IPublishTraverse`` is a common way to allow further
+    traversal from a view, with paths like ``.../@@foo/some/path``, where
+    the ``@@foo`` view either implements or is adaptable to
+    ``IPublishTraverse``.
 
-      ``DefaultPublishTraverse`` is used in most cases, either directly or as a
-      fallback from custom implementations. It works like this:
+    ``DefaultPublishTraverse`` is used in most cases, either directly or as a
+    fallback from custom implementations. It works like this:
 
-      * If the name starts with an underscore, raise a ``Forbidden`` exception
-      * If the object has a ``__bobo_traverse__`` method, call it with the
-        request and the name of the next entry on the traversal stack as
-        arguments. It may return either an object, or a tuple of objects.
-        In the latter case, amend the request parents list as if traversal had
-        happened over all the elements in the tuple except the last one, and
-        treat that as the next object.
-      * If the ``__bobo_traverse__`` call fails by raising an
-        ``AttributeError``, ``KeyError`` or ``NotFound`` exception, attempt
-        to look up a view with the traversal name (which would have been given
-        without the explicit ``@@`` prefix). If this succeeds, set the status
-        code to 200 (the preceding failure may have set it to 404),
-        acquisition-wrap the view if applicable, and return it.
-      * If there was no ``__bobo_traverse__``, or if it raised the special
-        exception ``ZPublisher.interfaces.UseTraversalDefault``, try the
-        following:
+    * If the name starts with an underscore, raise a ``Forbidden`` exception
+    * If the object has a ``__bobo_traverse__`` method, call it with the
+      request and the name of the next entry on the traversal stack as
+      arguments. It may return either an object, or a tuple of objects.
+      In the latter case, amend the request parents list as if traversal had
+      happened over all the elements in the tuple except the last one, and
+      treat that as the next object.
+    * If the ``__bobo_traverse__`` call fails by raising an
+      ``AttributeError``, ``KeyError`` or ``NotFound`` exception, attempt
+      to look up a view with the traversal name (which would have been given
+      without the explicit ``@@`` prefix). If this succeeds, set the status
+      code to 200 (the preceding failure may have set it to 404),
+      acquisition-wrap the view if applicable, and return it.
+    * If there was no ``__bobo_traverse__``, or if it raised the special
+      exception ``ZPublisher.interfaces.UseTraversalDefault``, try the
+      following:
 
-        * Attempt to look up the name as an attribute of the current object,
-          using ``aq_base`` (i.e. explicitly not acquiring from parents of
-          the current object). If this succeeds, return the attribute, which
-          is expected to be acquisition-wrapped if applicable (i.e. the
-          parent object extends ``Acquisition.Implicit`` or
-          ``Acquisition.Explicit``).
-        * Next, try to look up a view using the same semantics as above
-        * Next, try ``getattr()`` without the ``aq_base`` check, i.e.
-          allowing acquired attributes.
-        * Next, try ``__getitem__()`` (dictionary-like) access.
-        * If that fails, raise a ``KeyError`` to indicate the object could
-          not be found (this is later turned into a 404 response).
+      * Attempt to look up the name as an attribute of the current object,
+        using ``aq_base`` (i.e. explicitly not acquiring from parents of
+        the current object). If this succeeds, return the attribute, which
+        is expected to be acquisition-wrapped if applicable (i.e. the
+        parent object extends ``Acquisition.Implicit`` or
+        ``Acquisition.Explicit``).
+      * Next, try to look up a view using the same semantics as above
+      * Next, try ``getattr()`` without the ``aq_base`` check, i.e.
+        allowing acquired attributes.
+      * Next, try ``__getitem__()`` (dictionary-like) access.
+      * If that fails, raise a ``KeyError`` to indicate the object could
+        not be found (this is later turned into a 404 response).
 
-      * If we now have a sub-object, check that it has a docstring. If it
-        does not, raise a ``Forbidden`` exception.
+    * If we now have a sub-object, check that it has a docstring. If it
+      does not, raise a ``Forbidden`` exception.
 
-        The requirement for a docstring is an ancient and primitive security
-        restriction, since Zope can be used to publish all kinds of Python
-        objects. It is mostly a nuisance these days, but note that views and
-        custom ``ITraversable`` and ``IPublishTraverse`` traversal do not have
-        this restriction.
-      * Next, raise a ``Forbidden`` exception if traversal resolved a
-        primitive or built-in list, tuple, set or dict |---| these are not
-        directly traversable.
-      * Finally, return the object.
+      The requirement for a docstring is an ancient and primitive security
+      restriction, since Zope can be used to publish all kinds of Python
+      objects. It is mostly a nuisance these days, but note that views and
+      custom ``ITraversable`` and ``IPublishTraverse`` traversal do not have
+      this restriction.
+    * Next, raise a ``Forbidden`` exception if traversal resolved a
+      primitive or built-in list, tuple, set or dict |---| these are not
+      directly traversable.
+    * Finally, return the object.
   * If a ``KeyError``, ``AttributeError`` or ``NotFound`` exception is raised
     during name resolution, return a 404 response by raising an exception.
     Similarly, if a ``Forbidden`` exception is raised, set and return a 403
@@ -335,9 +335,9 @@ Here are the gory details:
     which is a sub-interface of ``IPublishTraverse`` and is implemented by the
     ``DefaultPublishTraverse`` class. Again, the ``IBrowserPublisher`` for the
     traversed-to object is found in one of three ways:
-    * the object may implement it itself; or 
+    * the object may implement it itself; or
     * it may be adaptable, with the request, to this interface; or
-    * the fallback ``DefaultPublishTraverse`` may be used. 
+    * the fallback ``DefaultPublishTraverse`` may be used.
     The ``browserDefault()`` method on the ``IBrowserPublisher`` is then
     called with the request as an argument.
 
