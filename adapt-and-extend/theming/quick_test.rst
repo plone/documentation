@@ -7,7 +7,7 @@ Quick Test Recipe
     Diazo is the system used to implement Plone themes.
     As of Plone 4.2, Plone ships with all the 'machinery'
     required to get started with Diazo based theme creation.
-    This recipe is designed to get you started quickly. 
+    This recipe is designed to get you started quickly.
 
     The goal of this recipe is to help you confirm that everything is working. The theme resources for this recipe are hosted on a github page (http://pigeonflight.github.io).
 
@@ -73,11 +73,11 @@ an HTML document.
 
 The diagram below explains this visually.
 
-.. image:: images/diazothemeexplained-thumb.png
-   :target: .. _clickToZoom: ../diazothemexplained.png
+.. image:: images/diazothemeexplained.png
 
-`View an explanatory diagram in PDF format <../diazothemeexplained.pdf>`_
-   
+
+`View an explanatory diagram in PDF format <diazothemeexplained.pdf>`_
+
 Troubleshooting
 ------------------
 

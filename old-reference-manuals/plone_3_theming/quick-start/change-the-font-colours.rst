@@ -29,8 +29,8 @@ Locating the styles you want to change
 
 -  If you don't already have a page in your Plone site, add one, save it
    and inspect it in view mode.
--  Use `Firebug, or a similar
-   tool, <firefox-mozilla-ui-development-tools>`_
+-  Use :doc:`Firebug, or a similar
+   tool, <firefox-mozilla-ui-development-tools>`
    to locate the class name of the page title - in this case its
    h1.documentFirstHeading.
 
