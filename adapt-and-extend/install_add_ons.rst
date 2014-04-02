@@ -53,7 +53,7 @@ Edit the file buildout.cfg in your Plone folder with a text editor. Find line
 
 .. code-block:: console
 
-  eggs = 
+  eggs =
       Plone
       Pillow
       etc...
@@ -77,7 +77,7 @@ After the buildout.cfg has been changed run command buildout from the command li
 
 Note: Run buildout from command line using the instructions below. You don't double click buildout.exe.
 
- 
+
 
 On UNIX
 
@@ -86,7 +86,6 @@ On UNIX
   bin/buildout
 
 
-.. code-block:: console
 
 On Windows (for Plone 4.1)
 
