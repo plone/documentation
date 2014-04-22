@@ -9,7 +9,7 @@ PAS
 
 * Generic Zope code base http://svn.zope.org/Products.PluggableAuthService/
 
-* `Plone codebase <https://github.com/plone/Products.PlonePAS/tree/master/README.txt>`_
+* `Plone codebase <https://github.com/plone/Products.PlonePAS/blob/master/README.txt>`_
 
 Plugin repository for PAS
 =========================

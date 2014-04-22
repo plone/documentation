@@ -264,9 +264,9 @@ attribute on the folder to the id of the default page::
 
 More information can be found in
 
-* https://github.com/plone/plone.app.layout/tree/master/plone/app/layout/globals/context.py
+* https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/globals/context.py
 
-* https://github.com/plone/plone.app.layout/tree/master/plone/app/layout/navigation/defaultpage.py
+* https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/navigation/defaultpage.py
 
 Disabling dynamic views
 ========================

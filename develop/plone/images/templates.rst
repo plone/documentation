@@ -143,7 +143,7 @@ You can refer to ``ATImage`` object's content data download by adding
 The magic is done in the ``__bobo_traverse__`` method of ``ATImage`` by
 providing traversable hooks to access image download:
 
-* https://github.com/plone/Products.ATContentTypes/tree/master/Products/ATContentTypes/content/image.py
+* https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py
 
 Rendering ``ImageField`` 
 =========================
@@ -163,7 +163,7 @@ to perform the ``ImageField`` manipulation.
 
 See ``ImageField`` for more information:
 
-* https://github.com/plone/Products.Archetypes/tree/master/Products/Archetypes/Field.py
+* https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/Field.py
 
 ``tag()`` method
 ==================

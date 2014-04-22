@@ -38,7 +38,7 @@ Note that given login field isn't necessarily the username. For example,
 `betahaus.emaillogin <https://pypi.python.org/pypi/betahaus.emaillogin>`_ add-on authenticates users by their email addresses.
 
 Credential extraction will go through all plug-ins registered for
-`PlonePAS <https://github.com/plone/Products.PlonePAS/tree/master/README.txt>`_ system.
+`PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.txt>`_ system.
 
 The first found login/password pair attempt will be used for user authentication.
 
@@ -94,7 +94,7 @@ will go through all authentication plug-ins and return the first successful
 authenticated users.
 
 Read more in
-`PlonePAS <https://github.com/plone/Products.PlonePAS/tree/master/README.txt>`_.
+`PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.txt>`_.
 
 Unit test example::
 
@@ -309,7 +309,7 @@ but installing LDAP sets it to RAM cache.
 
 More info
 
-* https://github.com/plone/plone.app.ldap/tree/master/plone/app/ldap/ploneldap/util.py
+* https://github.com/plone/plone.app.ldap/blob/master/plone/app/ldap/ploneldap/util.py
 
 PAS cache settings
 =====================
@@ -344,7 +344,7 @@ Here is a short view snippet to set PAS cache state::
 
             More info
 
-            * https://github.com/plone/plone.app.ldap/tree/master/plone/app/ldap/ploneldap/util.py
+            * https://github.com/plone/plone.app.ldap/blob/master/plone/app/ldap/ploneldap/util.py
 
             """
 

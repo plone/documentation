@@ -585,9 +585,9 @@ your Zope 2-style page template::
 
 Examples of this usage:
 
-* The `Contact info page <https://github.com/plone/Products.CMFPlone/tree/master/Products/CMFPlone/skins/plone_templates/contact-info.cpt>`_.
+* The `Contact info page <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/skins/plone_templates/contact-info.cpt>`_.
 
-* The `Recently modified page <https://github.com/plone/Products.CMFPlone/tree/master/Products/CMFPlone/skins/plone_templates/recently_modified.pt>`_.
+* The `Recently modified page <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/skins/plone_templates/recently_modified.pt>`_.
 
 Special style on individual pages
 ===================================

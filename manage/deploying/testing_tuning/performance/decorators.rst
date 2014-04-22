@@ -83,7 +83,7 @@ Caching on BrowserViews
 This is useful if the same view/utility is going to be called many times
 from different places during the same HTTP request.
 
-The `plone.memoize.view <https://github.com/plone/plone.memoize/tree/master/plone/memoize/view.txt>`_
+The `plone.memoize.view <https://github.com/plone/plone.memoize/blob/master/plone/memoize/view.txt>`_
 package provides necessary decorators for ``BrowserView``-based classes.
 
 .. code-block:: python
@@ -206,7 +206,7 @@ In your tests you can call the private method to avoid memoization.
 Other resources
 ===============
 
-* `plone.memoize source code <https://github.com/plone/plone.memoize/tree/master/plone/memoize/>`_
+* `plone.memoize source code <https://github.com/plone/plone.memoize/blob/master/plone/memoize/>`_
 
 * `zope.app.cache source code <http://svn.zope.org/zope.app.cache/trunk/src/zope/app/cache/>`_
 

@@ -49,7 +49,7 @@ Below is a minimal example for creating a configlet using:
 * ``plone.app.registry``
 
 It is based on the 
-`youraddon template <https://github.com/miohtama/sane_plone_addon_template/tree/master>`_.
+`youraddon template <https://github.com/miohtama/sane_plone_addon_template/blob/master>`_.
 The add-on package in this case is called 
 `silvuple <https://github.com/miohtama/silvuple>`_.
 

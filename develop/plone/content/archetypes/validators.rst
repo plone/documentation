@@ -12,7 +12,7 @@ This page has tips how to validate fields defined in Archetypes schema.
 List of default validators
 ----------------------------
 
-* https://github.com/plone/Products.validation/tree/master/Products/validation/validators/BaseValidators.py
+* https://github.com/plone/Products.validation/blob/master/Products/validation/validators/BaseValidators.py
 
 Creating a validator
 -----------------------
