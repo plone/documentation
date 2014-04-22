@@ -246,7 +246,7 @@ In the UI, you can access this feature via the :guilabel:`Add...` menu
 
 Type contraining is managed by the ``ATContentTypes`` product:
 
-* https://github.com/plone/Products.ATContentTypes/tree/master/Products/ATContentTypes/lib/constraintypes.py
+* https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/lib/constraintypes.py
 
 
 Example::

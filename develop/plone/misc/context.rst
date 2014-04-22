@@ -25,7 +25,7 @@ so they should access the information quite effectively.
 
 To see what's available through the interface,
 read the documentation in the 
-`plone.app.layout.globals.interfaces <https://github.com/plone/plone.app.layout/tree/master/plone/app/layout/globals/interfaces.py>`_
+`plone.app.layout.globals.interfaces <https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/globals/interfaces.py>`_
 module.
 
 Example showing how to get the portal root URL::
@@ -141,7 +141,7 @@ information or configuration here. Tools include e.g.:
 ITools interface
 ----------------
 
-`plone.app.layout.globals.interfaces.ITools interface <https://github.com/plone/plone.app.layout/tree/master/plone/app/layout/globals/interfaces.py>`_
+`plone.app.layout.globals.interfaces.ITools interface <https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/globals/interfaces.py>`_
 and Tools BrowserView provide cached access for the most commonly
 needed tools.
 

@@ -25,7 +25,7 @@ Sessions have features like:
 * Identified by cookies
 
 In Plone, sessions are managed by Zope's session_data_manager tool.
-The source code is in `Products.Sessions <https://github.com/zopefoundation/Zope/tree/master/src/Products/Sessions/>`_.
+The source code is in `Products.Sessions <https://github.com/zopefoundation/Zope/blob/master/src/Products/Sessions/>`_.
 
 
 Setting a session parameter

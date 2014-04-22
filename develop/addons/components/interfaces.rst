@@ -109,7 +109,7 @@ In page templates you can use ``plone_interface_info`` helper view::
 
 See also
 
-* https://github.com/plone/plone.app.layout/tree/master/plone/app/layout/globals/interface.py
+* https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/globals/interface.py
 
 
 Interface resolution order

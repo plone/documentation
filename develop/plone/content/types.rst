@@ -62,7 +62,7 @@ Python instead, here's how::
         there is no HTTP request (e.g. when installing add-on product).
          
         This code is copied from
-        https://github.com/plone/plone.app.layout/tree/master/plone/app/layout/globals/portal.py
+        https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/globals/portal.py
         
         @return: Generator for (id, type_info title) tuples
         """

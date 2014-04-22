@@ -214,11 +214,11 @@ More info:
 
 * https://github.com/zopefoundation/Zope/blob/master/src/OFS/Cache.py
 
-* https://github.com/plone/plone.app.ldap/tree/master/plone/app/ldap/ploneldap/util.py
+* https://github.com/plone/plone.app.ldap/blob/master/plone/app/ldap/ploneldap/util.py
 
 Other resources
 ===============
 
-* `plone.memoize source code <https://github.com/plone/plone.memoize/tree/master/plone/memoize/>`_.
+* `plone.memoize source code <https://github.com/plone/plone.memoize/blob/master/plone/memoize/>`_.
 
 * `zope.app.cache source code <http://svn.zope.org/zope.app.cache/trunk/src/zope/app/cache/>`_

@@ -67,27 +67,27 @@ The default Plone schemas are defined
 
 Id and title fields:
 
-* https://github.com/plone/Products.Archetypes/tree/master/Products/Archetypes/BaseObject.py
+* https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/BaseObject.py
 
 Category and owners schemata: Dublin core metadata
 
-* https://github.com/plone/Products.Archetypes/tree/master/Products/Archetypes/ExtensibleMetadata.py
+* https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/ExtensibleMetadata.py
 
 Settings schemata: Exclude from navigation, related items and next/previous navigation
 
-* https://github.com/plone/Products.ATContentTypes/tree/master/Products/ATContentTypes/content/schemata.py
+* https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/schemata.py
 
 Document content
 
-* https://github.com/plone/Products.ATContentTypes/tree/master/Products/ATContentTypes/content/document.py
+* https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/document.py
 
 Image content
 
-* https://github.com/plone/Products.ATContentTypes/tree/master/Products/ATContentTypes/content/image.py
+* https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py
 
 News content
 
-* https://github.com/plone/Products.ATContentTypes/tree/master/Products/ATContentTypes/content/newsitem.py
+* https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/newsitem.py
 
 Run-time introspection
 =======================
@@ -113,7 +113,7 @@ Field can be also accessed by name::
 
 See
 
-* https://github.com/plone/Products.Archetypes/tree/master/Products/Archetypes/Schema/__init__.py
+* https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/Schema/__init__.py
 
 Field name
 ----------
@@ -152,7 +152,7 @@ Archetypes has two kinds of access methods:
 * raw, the so-called *edit* accessor, ``getRawSomething()`` which does not
   filter output.
 
-If you use direct attribute access, i.e. ``obj.something`` you can get a `BaseUnit <https://github.com/plone/Products.Archetypes/tree/master/Products/Archetypes/BaseUnit.py>`_ object.
+If you use direct attribute access, i.e. ``obj.something`` you can get a `BaseUnit <https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/BaseUnit.py>`_ object.
 ``BaseUnit`` is an encapsulation of raw data for long text or file.
 It contains information about mimetype, filename, encoding.
 To get the raw value of a ``BaseUnit`` object you can use the ``getRaw``
@@ -228,7 +228,7 @@ Example how to hide all metadata fields::
 Reordering fields
 -----------------
 
-See moveField() in `Schema/__init__.py <https://github.com/plone/Products.Archetypes/tree/master/Products/Archetypes/Schema/__init__.py>`_.
+See moveField() in `Schema/__init__.py <https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/Schema/__init__.py>`_.
 
 Example
 

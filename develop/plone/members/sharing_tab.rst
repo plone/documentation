@@ -19,9 +19,9 @@ Introduction
 -------------
 
 
-* `Sharing tab source code <https://github.com/plone/plone.app.workflow/tree/master/plone/app/workflow/browser/sharing.py>`_
+* `Sharing tab source code <https://github.com/plone/plone.app.workflow/blob/master/plone/app/workflow/browser/sharing.py>`_
 
-* `Default sharing tab role translations <https://github.com/plone/plone.app.workflow/tree/master/plone/app/workflow/configure.zcml>`_
+* `Default sharing tab role translations <https://github.com/plone/plone.app.workflow/blob/master/plone/app/workflow/configure.zcml>`_
 
 
 

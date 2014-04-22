@@ -168,9 +168,9 @@ Groups
 Groups are stored as ``PloneGroup`` objects. ``PloneGroup`` is a subclass of
 ``PloneUser``.  Groups are managed by the ``portal_groups`` tool.
 
-* https://github.com/plone/Products.PlonePAS/tree/master/Products/PlonePAS/plugins/ufactory.py
+* https://github.com/plone/Products.PlonePAS/blob/master/Products/PlonePAS/plugins/ufactory.py
 
-* https://github.com/plone/Products.PlonePAS/tree/master/Products/PlonePAS/plugins/group.py
+* https://github.com/plone/Products.PlonePAS/blob/master/Products/PlonePAS/plugins/group.py
 
 Creating a group
 ----------------
@@ -185,9 +185,9 @@ Example::
 
 For more information, see:
 
-* https://github.com/plone/Products.PlonePAS/tree/master/Products/PlonePAS/tests/test_groupstool.py
+* https://github.com/plone/Products.PlonePAS/blob/master/Products/PlonePAS/tests/test_groupstool.py
 
-* https://github.com/plone/Products.PlonePAS/tree/master/Products/PlonePAS/plugins/group.py
+* https://github.com/plone/Products.PlonePAS/blob/master/Products/PlonePAS/plugins/group.py
 
 Add local roles to a group
 --------------------------
