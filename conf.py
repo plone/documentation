@@ -130,8 +130,6 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  Major themes that come with
 # Sphinx are currently 'default' and 'sphinxdoc'.
-#html_theme = 'default'
-#html_theme = 'plone'
 html_theme = 'plone_org_4'
 import sphinx.themes.plone
 html_theme_path = sphinx.themes.plone.get_html_theme_path()
@@ -148,7 +146,7 @@ html_theme_options = {
 #        {'lang_code':'it','lang_name':'Italian'},
         ],
     'doc_language'  : 'en',
-    'trademark_name' : 'Plone Trademark',
+    'trademark_name' : 'Plone',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
