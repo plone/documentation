@@ -196,7 +196,7 @@ It incorporates the original `glossary on plone.org
         Simply put, any Zope object can acquire any object or property from
         any of its parents. That is, if you have a folder called *A*,
         containing two resources (a document called *homepage* and another
-        folder called *B*), then an URL pointing at http://.../A/B/homepage
+        folder called *B*), then an URL pointing at `http://.../A/B/homepage`
         would work even though *B* is empty. This is because Zope starts to
         look for *homepage* in *B*, doesn't find it, and goes back up to
         *A*, where it's found. The reality, inevitably, is more complex than
@@ -432,9 +432,7 @@ It incorporates the original `glossary on plone.org
         A widely used Python packaging format which consists of a zip or
         ``.tar.gz`` archive with some metadata information. It was
         introduced by
-        `setuptools <http://peak.telecommunity.com/DevCenter/EasyInstall>`_
-        which has since been superseded by `Distribute
-        <https://pythonhosted.org/distribute/>`_.
+        `setuptools <https://pypi.python.org/pypi/setuptools>`_
 
         A way to package and distribute Python packages. Each egg contains a
         ``setup.py`` file with metadata (such as the author's name and email
@@ -444,8 +442,7 @@ It incorporates the original `glossary on plone.org
         for eggs that you install. It is even possible for two different
         eggs to concurrently use different versions of the same dependency.
         Eggs also support a feature called *entry points*, a kind of generic
-        plug-in mechanism. Much more detail is available at the `PEAK
-        website <http://peak.telecommunity.com/DevCenter/setuptools>`_.
+        plug-in mechanism.
 
     Python Package Index
         The Python community's index of thousands of downloadable Python
