@@ -42,7 +42,7 @@ start and stop commands.
 The Unified Installer has an init_scripts directory that contains sample
 initialization/stop scripts for several platforms. If you didn't use that
 installer, you may find the scripts on
-`github <https://github.com/plone/Installers-UnifiedInstaller/tree/master/init_scripts>`_.
+`github <https://github.com/plone/Installers-UnifiedInstaller/blob/master/init_scripts>`_.
 
 Process control with Supervisor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

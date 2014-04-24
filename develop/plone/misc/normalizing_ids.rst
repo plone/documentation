@@ -29,7 +29,7 @@ Plone has conversion utilities for
 Normalization depends on the locale. E.g. in English "æ" will be normalized as "ae" but in Finnish it will
 be normalized "å" -> "a".
 
-See `plone.i18n.normalizers package <https://github.com/plone/plone.i18n/tree/master/plone/i18n/normalizer/__init__.py>`_.
+See `plone.i18n.normalizers package <https://github.com/plone/plone.i18n/blob/master/plone/i18n/normalizer/__init__.py>`_.
 
 Examples
 ========
@@ -61,7 +61,7 @@ To see available language specific localizers, see the source code of plone.i18n
 
 More examples:
 
-* `Static text portlets normalizes portlet title for CSS class <https://github.com/plone/plone.portlet.static/tree/master/plone/portlet/static/static.py>`_.
+* `Static text portlets normalizes portlet title for CSS class <https://github.com/plone/plone.portlet.static/blob/master/plone/portlet/static/static.py>`_.
 
 Creating ids programmatically
 -----------------------------

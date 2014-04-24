@@ -321,7 +321,7 @@ See
 
 * http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto
 
-* https://github.com/plone/plone.app.layout/tree/master/plone/app/layout/viewlets/common.py
+* https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/viewlets/common.py
 
 
 Creating a viewlet using Python code and ZCML

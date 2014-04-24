@@ -324,13 +324,13 @@ Example code::
                     
 For more information about portlet assignments and managers, see
 
-* https://github.com/plone/plone.app.portlets/tree/master/plone/app/portlets/tests/test_mapping.py
+* https://github.com/plone/plone.app.portlets/blob/master/plone/app/portlets/tests/test_mapping.py
 
-* https://github.com/plone/plone.app.portlets/tree/master/plone/app/portlets/tests/test_traversal.py
+* https://github.com/plone/plone.app.portlets/blob/master/plone/app/portlets/tests/test_traversal.py
 
-* https://github.com/plone/plone.app.portlets/tree/master/plone/app/portlets/configure.zcml
+* https://github.com/plone/plone.app.portlets/blob/master/plone/app/portlets/configure.zcml
 
-* https://github.com/plone/plone.portlets/tree/master/plone/portlets/interfaces.py
+* https://github.com/plone/plone.portlets/blob/master/plone/portlets/interfaces.py
 
 * http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto (for portlet renderers)
 
@@ -950,7 +950,7 @@ Example how to convert links in all static text portlets::
 Other resources and examples
 -----------------------------
 
-* `Static text portlet <https://github.com/plone/plone.portlet.static/tree/master/plone/portlet/static/>`_.
+* `Static text portlet <https://github.com/plone/plone.portlet.static/blob/master/plone/portlet/static/>`_.
 
 * `Templated portlet <https://svn.plone.org/svn/collective/collective.easytemplate/trunk/collective/easytemplate/browser/portlets/templated.py>`_
                                      

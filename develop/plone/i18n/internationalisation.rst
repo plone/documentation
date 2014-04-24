@@ -545,7 +545,7 @@ The script will:
     
     if test ! -e $I18NDUDE; then
             echo "You must install i18ndude with buildout"
-            echo "See https://github.com/collective/collective.developermanual/tree/master/source/i18n/localization.txt"
+            echo "See https://github.com/collective/collective.developermanual/blob/master/source/i18n/localization.txt"
             exit
     fi
     

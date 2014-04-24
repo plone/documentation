@@ -13,7 +13,7 @@ Functional testing
 Introduction
 ------------
 
-PloneTestCase product provides `FunctionalTestCase <https://github.com/plone/Products.PloneTestCase/tree/master/Products/PloneTestCase/PloneTestCase.py>`_
+PloneTestCase product provides `FunctionalTestCase <https://github.com/plone/Products.PloneTestCase/blob/master/Products/PloneTestCase/PloneTestCase.py>`_
 base class for functional testing. Unlike unit tests, functional tests simulate real HTTP requests with transaction life cycle.
 
 * Functional tests has different transaction for each browser.open() request

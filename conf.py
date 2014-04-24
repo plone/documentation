@@ -54,6 +54,7 @@ copyright = u'''The text and illustrations in this website are licensed by the P
         Plone and the Plone<sup>®</sup> logo are registered trademarks of the Plone Foundation, registered in the United States and other countries.
         For guidelines on the permitted uses of the Plone trademarks, see https://plone.org/foundation/logo
         All other trademarks are owned by their respective owners.'''
+trademark_name = "Plone"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -61,12 +62,15 @@ copyright = u'''The text and illustrations in this website are licensed by the P
 #
 # The short X.Y version.
 #versions = ['5','4.3','3.3']
-version = ['5','4.3','3.3']
+version = [
+#    '5',
+    '4.3',
+#    '3.3',
+    ]
 # The full version, including alpha/beta/rc tags.
 release = '4.3'
 
-#languages = [{'lang_code':'en','lang_name':'English'}, {'lang_code':'de','lang_name':'German'}, {'lang_code':'it','lang_name':'Italian'}, ]
-#language = 'en'
+
 
 #searchbox = True
 
@@ -124,7 +128,13 @@ html_theme_path = sphinx.themes.plone.get_html_theme_path()
 #html_theme_options = {}
 html_theme_options = {
 #	"rightsidebar": "false",
-
+    'doc_languages' : [
+#        {'lang_code':'en','lang_name':'English'}, 
+#        {'lang_code':'de','lang_name':'German'}, 
+#        {'lang_code':'it','lang_name':'Italian'}, 
+        ],
+    'doc_language'  : 'en',
+    'trademark_name' : 'Plone Trademark',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -172,7 +182,7 @@ html_title = '%(project)s v%(release)s' % {'project': project, 'release': releas
 #html_use_modindex = True
 
 # If false, no index is generated.
-#html_use_index = True
+html_use_index = True
 
 # If true, the index is split into individual pages for each letter.
 #html_split_index = False
@@ -227,7 +237,6 @@ latex_logo = "_static/logo_2x.png"
 # Do not try do funny things on our characters
 # http://sphinx-doc.org/config.html#confval-html_use_smartypants
 html_use_smartypants = False
-
 
 # Don't build Modules pages
 html_domain_indices = False

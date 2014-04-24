@@ -122,5 +122,5 @@ widgets that shows the HTML output of each.
 
 In addition, the Dexterity manual contains `an overview of common custom widgets <http://developer.plone.org/reference_manuals/external/plone.app.dexterity/reference/widgets.html>`_.
 
-.. _documentation: http://docs.zope.org/z3c.form
-.. _listing: http://docs.zope.org/z3c.form/browser/README.html
+.. _documentation: https://pythonhosted.org/z3c.form/
+.. _listing: https://pythonhosted.org/z3c.form/browser/README.html

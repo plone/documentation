@@ -109,7 +109,7 @@ In page templates you can use ``plone_interface_info`` helper view::
 
 See also
 
-* https://github.com/plone/plone.app.layout/tree/master/plone/app/layout/globals/interface.py
+* https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/globals/interface.py
 
 
 Interface resolution order
@@ -302,5 +302,5 @@ hints for `zope.schema`_ data model declarations.
 .. _plone.autoform: https://pypi.python.org/pypi/plone.autoform
 .. _zope.dottedname: https://pypi.python.org/pypi/zope.dottedname
 .. _zope.interface: https://pypi.python.org/pypi/zope.interfaces
-.. _Products.Five: http://svn.zope.org/Zope/trunk/src/Products/Five/README.txt?view=markup
+.. _Products.Five: https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/README.txt
 .. |---| unicode:: U+02014 .. em dash

@@ -27,7 +27,7 @@ More information about ZODB
 
 * http://www.zodb.org/
 
-* `Documentation <http://www.zodb.org/zodbbook/>`_
+* `Documentation <zodb.readthedocs.org/>`_
 
 * `API documentation <http://zodb.readthedocs.org/en/latest/api.html>`_
 
