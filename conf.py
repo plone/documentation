@@ -70,9 +70,8 @@ trademark_name = "Plone"
 # built documents.
 #
 # The short X.Y version.
-#versions = ['5','4.3','3.3']
 version = [
-#    '5',
+#    '5.0',
     '4.3',
 #    '3.3',
     ]
