@@ -29,7 +29,7 @@ Read more in
 
 * http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/utilities
 
-* `zope.component documentation <http://apidoc.zope.org/++apidoc++/Code/zope/component/README.txt/index.html>`_.
+* `zope.component documentation <http://docs.zope.org/zope.component/>`_.
 
 Local and global utilities
 --------------------------

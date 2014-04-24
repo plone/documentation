@@ -71,7 +71,7 @@ Plone 4.1 ships with
 
 * jQuery
 
-* `jQuery tools <http://flowplayer.org/tools>`_: Use jQuery Tools for tabs, tooltips, overlays, masking and scrollables.
+* `jQuery tools <http://jquerytools.org/>`_: Use jQuery Tools for tabs, tooltips, overlays, masking and scrollables.
 
 * `jQuery Form Plugin <http://jquery.malsup.com/form/>`_: Use it for AJAX form input marshaling and submission. Note that jQuery’s built-in form input marshaling is inadequate for many forms as it does not handle submit-button or file-input data.
 
@@ -572,11 +572,6 @@ and they do not differ by the user.
 For example, see ``FacebookConnectJavascriptViewlet``
 
 * http://svn.plone.org/svn/collective/mfabrik.like/trunk/mfabrik/like/viewlets.py
-
-Conditional comments (IE)
-------------------------------
-
-* http://plone.org/products/plone/roadmap/232a
 
 Upgrading jQuery
 ------------------
