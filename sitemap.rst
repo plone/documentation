@@ -2,7 +2,7 @@ Plone Documentation - Table of Contents
 =======================================
 
 .. toctree::
-   :maxdepth: -1
+   :maxdepth: 4
    :glob:
 
    index
