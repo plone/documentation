@@ -47,48 +47,6 @@ this is simply to upload your own image and give it the same name:
 -  Save your changes and refresh your browser to see the changes on your
    site
 
-Alternative Approach (Plone 3 only)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The name (ID) of the logo image is specified in base\_properties - a
-list of useful values that, in Plone 3, are picked up and used across
-the Plone Default theme style sheets. This gives you the ability to
-upload your own logo image, give it any name you like, and then
-customize the base\_properties with that name.
-
--  Go to the Zope Management Interface (Site Setup > Zope Management
-   Interface)
--  Make sure that you've switched your css registry to debug mode
-   (portal\_css)
--  Go to portal\_skins > custom and choose Image from the drop down list
-   on the right
--  Upload your own image giving it an ID and a Title e.g.:
-
-   ::
-
-       ID = MyLogo.jpg
-       Title = My Logo
-
--  Go to portal\_skins > plone\_styles, click base\_properties and then
-   click the customize button
--  You'll now have a customized version of base\_properties in the
-   custom folder of portal\_skins which you can change as you like. Find
-   the logoName field and replace the value *logo.jpg* with the ID you
-   gave your image (if you gave your ID a .jpg or .gif suffix, make sure
-   you include that, and remember that it is case-sensitive) e.g.:
-
-   ::
-
-       logoName = MyLogo.jpg
-
--  Save your changes and refresh your browser
-
-In Plone 4 base\_properties still exists but has only a very limited
-use.
-
-**Note** that when you go back to your customized base\_properties in
-portal\_skins > custom, it will look like an empty folder. Click the
-properties tab to get back to the list of properties.
 
 2. Changing the portal\_logo style
 ----------------------------------
