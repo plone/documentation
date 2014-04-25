@@ -345,7 +345,21 @@ Warning:
 
    .. warning::
 
-      This is a warning box (red)
+      This is a warning box (yellow)
+
+.. warning::
+
+   This is a warning box (yellow)
+
+.. code-block:: rst
+
+   .. error::
+
+      This is an error box (red)
+
+.. error::
+
+   This is an error box (red)
 
 Note:
 
@@ -353,8 +367,11 @@ Note:
 
    .. note::
 
-      This is a note box (yellow)
+      This is a note box (blue)
 
+.. note::
+
+   This is a note box (blue)
 
 .. code-block:: rst
 
