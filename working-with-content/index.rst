@@ -49,6 +49,11 @@ Working with Content
 
     portlet-management/index
 
+.. toctree::
+    :maxdepth: 2
+
+    content-quality/index
+
 
 .. toctree::
     :maxdepth: 1
