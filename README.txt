@@ -1,4 +1,4 @@
-This is the offical Plone Documentation, maintained by the Plone Docs-Team.
+This is the official Plone Documentation, maintained by the Plone Docs-Team.
 
 You can read the documentation on http://docs.plone.org
 
@@ -13,7 +13,7 @@ the documentation team
 
 
 
-If you want to have a full and complete copy of the docs and the supporting buildout, 
+If you want to have a full and complete copy of the docs and the supporting buildout,
 for now you can do the following on a *nix system:
 
 git clone https://github.com/plone/papyrus.git
