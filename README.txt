@@ -1,5 +1,8 @@
-hi there. Please don't put anything here yet. We're working on a future version of the Plone documentation here.
+This is the offical Plone Documentation, maintained by the Plone Docs-Team, you can read the documentation on http://docs.plone.org
 
+If you want to conrtibute, please read:
+
+http://docs.plone.org/about/contributing.html
 
 thanks,
 
