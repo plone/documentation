@@ -76,7 +76,7 @@ The diagram below explains this visually.
 .. image:: images/diazothemeexplained.png
 
 
-`View an explanatory diagram in PDF format <diazothemeexplained.pdf>`_
+:download:`View an explanatory diagram in PDF format <diazothemeexplained.pdf>`
 
 Troubleshooting
 ------------------

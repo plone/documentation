@@ -128,6 +128,6 @@ If there was an error with one or more of the tests, you’d be told here!
 Please refer to the `testing tutorial`_ for more about writing tests -
 and writing *good* tests - and how to run them.
 
-.. _tutorial on testing and test-driven development: /documentation/tutorial/testing
-.. _testing tutorial: /documentation/tutorial/testing
+.. _tutorial on testing and test-driven development: /old-reference-manuals/testing
+.. _testing tutorial: /old-reference-manuals/testing
 

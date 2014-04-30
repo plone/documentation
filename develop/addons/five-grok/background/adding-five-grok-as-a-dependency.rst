@@ -3,7 +3,7 @@ Adding five.grok as a dependency
 
 **How to install the five.grok package safely**
 
-Assuming you already have a suitable package and a `buildout`_, using
+Assuming you already have a suitable package and a :doc:`buildout </old-reference-manuals/buildout/index>`, using
 *five.grok* should be as simple as depending on it in your *setup.py*
 file:
 
@@ -36,5 +36,5 @@ already part of the “known good set” of packages. Otherwise, see the
 Naturally, you will need to re-run buildout after editing *setup.py*
 and/or *buildout.cfg*.
 
-.. _buildout: ../../../../../../documentation/tutorial/buildout
+
 .. _five.grok installation instructions: https://pypi.python.org/pypi/five.grok

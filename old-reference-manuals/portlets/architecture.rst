@@ -90,8 +90,7 @@ configurable, this can use the special ``base.NullAddForm``, which
 is just a view that creates the portlet and then redirects back to
 the portlet management screen.
 
-For more information about *zope.formlib*, check
-`this tutorial <../../../tutorial/writing-forms-easily-with-zope-formlib>`_.
+For more information about *zope.formlib*, check :doc:`this tutorial </old-reference-manuals/formlib/index>`.
 
 The edit form can be omitted if the portlet configuration is not
 editable.
