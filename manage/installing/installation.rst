@@ -238,7 +238,7 @@ This will:
 * create a default ``buildout.cfg`` configuration file and folder structure
   around it;
 
-* automatically download and install all packages from `pypi.python.org <pypi.python.org>`_;
+* automatically download and install all packages from `pypi.python.org <http://pypi.python.org>`_;
 
 * configure Plone and Zope for you.
 

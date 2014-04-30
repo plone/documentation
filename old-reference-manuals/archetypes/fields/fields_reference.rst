@@ -147,8 +147,8 @@ Fields Reference
 	<td>BooleanWidget</td>
 	<td>Implemented as a check box.</td>
 	<td>
-	<ul><li> <a href="widgets-reference#LabelWidget">LabelWidget</a> </li>
-	<li> <a href="widgets-reference#BooleanWidget">BooleanWidget</a></li>
+	<ul><li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a> </li>
+	<li> <a href="widgets_reference.html#BooleanWidget">BooleanWidget</a></li>
 	</ul></td>
 	</tr><tr class="even"><td>default</td>
 	<td>boolean</td>
@@ -170,8 +170,8 @@ Fields Reference
 	<td>ComputedWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li> <a href="widgets-reference#LabelWidget">LabelWidget</a> </li>
-	<li> <a href="widgets-reference#ComputedWidget">ComputedWidget</a></li>
+	<ul><li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a> </li>
+	<li> <a href="widgets_reference.html#ComputedWidget">ComputedWidget</a></li>
 	</ul></td>
 	</tr><tr class="even"><td>storage</td>
 	<td>storage</td>
@@ -205,8 +205,8 @@ Fields Reference
 	<td>FileWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li><a href="widgets-reference#LabelWidget">LabelWidget</a></li>
-	<li><a href="widgets-reference#FileWidget">FileWidget</a></li>
+	<ul><li><a href="widgets_reference.html#LabelWidget">LabelWidget</a></li>
+	<li><a href="widgets_reference.html#FileWidget">FileWidget</a></li>
 	</ul></td>
 	</tr><tr class="even"><td>storage</td>
 	<td>storage</td>
@@ -244,8 +244,8 @@ Fields Reference
 	<td>CalendarWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li> <a href="widgets-reference#LabelWidget">LabelWidget</a> </li>
-	<li> <a href="widgets-reference#CalendarWidget">CalendarWidget</a> </li>
+	<ul><li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a> </li>
+	<li> <a href="widgets_reference.html#CalendarWidget">CalendarWidget</a> </li>
 	</ul></td>
 	</tr><tr class="even"><td>default</td>
 	<td>DateTime</td>
@@ -286,8 +286,8 @@ Fields Reference
 	<td>FileWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li> <a href="widgets-reference#FileWidget">FileWidget</a> </li>
-	<li> <a href="widgets-reference#LabelWidget">LabelWidget</a> </li>
+	<ul><li> <a href="widgets_reference.html#FileWidget">FileWidget</a> </li>
+	<li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a> </li>
 	</ul></td>
 	</tr><tr class="even"><td>default</td>
 	<td>string</td>
@@ -327,8 +327,8 @@ Fields Reference
 	<td>DecimalWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li> <a href="widgets-reference#LabelWidget">LabelWidget</a></li>
-	<li><a href="widgets-reference#DecimalWidget">DecimalWidget</a></li>
+	<ul><li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a></li>
+	<li><a href="widgets_reference.html#DecimalWidget">DecimalWidget</a></li>
 	</ul></td>
 	</tr><tr class="even"><td>validators</td>
 	<td>validators</td>
@@ -377,8 +377,8 @@ Fields Reference
 	<td>ImageWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li> <a href="widgets-reference#ImageWidget">ImageWidget</a> </li>
-	<li> <a href="widgets-reference#LabelWidget">LabelWidget</a> </li>
+	<ul><li> <a href="widgets_reference.html#ImageWidget">ImageWidget</a> </li>
+	<li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a> </li>
 	</ul></td>
 	</tr><tr class="even"><td>default</td>
 	<td>string</td>
@@ -445,7 +445,7 @@ Fields Reference
 	<td>IntegerWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li> <a href="widgets-reference#LabelWidget">LabelWidget</a> </li>
+	<ul><li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a> </li>
 	<li> IntegerWidget </li>
 	</ul></td>
 	</tr><tr class="even"><td>default</td>
@@ -475,12 +475,12 @@ Fields Reference
 	<td>LinesWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li> <a href="widgets-reference#KeywordWidget">KeywordWidget</a> </li>
-	<li> <a href="widgets-reference#LinesWidget">LinesWidget</a> </li>
-	<li> <a href="widgets-reference#LabelWidget">LabelWidget</a> </li>
-	<li> <a href="widgets-reference#MultiSelectionWidget">MultiSelectionWidget</a> </li>
-	<li> <a href="widgets-reference#PicklistWidget">PicklistWidget</a> </li>
-	<li> <a href="widgets-reference#InAndOutWidget">InAndOutWidget</a> </li>
+	<ul><li> <a href="widgets_reference.html#KeywordWidget">KeywordWidget</a> </li>
+	<li> <a href="widgets_reference.html#LinesWidget">LinesWidget</a> </li>
+	<li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a> </li>
+	<li> <a href="widgets_reference.html#MultiSelectionWidget">MultiSelectionWidget</a> </li>
+	<li> <a href="widgets_reference.html#PicklistWidget">PicklistWidget</a> </li>
+	<li> <a href="widgets_reference.html#InAndOutWidget">InAndOutWidget</a> </li>
 	</ul></td>
 	</tr><tr class="even"><td>default</td>
 	<td>string</td>
@@ -502,10 +502,10 @@ Fields Reference
 	<td>ReferenceWidget</td>
 	<td><br></td>
 	<td>
-	<ul><ul><li> <a href="widgets-reference#ReferenceWidget">ReferenceWidget</a> </li>
-	</ul><ul><li> <a href="widgets-reference#ReferenceBrowserWidget">ReferenceBrowserWidget</a> </li>
-	<li> <a href="widgets-reference#LabelWidget">LabelWidget</a> </li>
-	<li> <a href="widgets-reference#InAndOutWidget">InAndOutWidget</a> </li>
+	<ul><ul><li> <a href="widgets_reference.html#ReferenceWidget">ReferenceWidget</a> </li>
+	</ul><ul><li> <a href="widgets_reference.html#ReferenceBrowserWidget">ReferenceBrowserWidget</a> </li>
+	<li> <a href="widgets_reference.html#LabelWidget">LabelWidget</a> </li>
+	<li> <a href="widgets_reference.html#InAndOutWidget">InAndOutWidget</a> </li>
 	</ul></ul></td>
 	</tr><tr class="even"><td>index_method</td>
 	<td><br></td>
@@ -577,9 +577,9 @@ Fields Reference
 	<td>StringWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li><a href="widgets-reference#LabelWidget">LabelWidget</a></li>
-	<li><a href="widgets-reference#StringWidget">StringWidget</a></li>
-	<li><a href="widgets-reference#SelectionWidget">SelectionWidget</a></li>
+	<ul><li><a href="widgets_reference.html#LabelWidget">LabelWidget</a></li>
+	<li><a href="widgets_reference.html#StringWidget">StringWidget</a></li>
+	<li><a href="widgets_reference.html#SelectionWidget">SelectionWidget</a></li>
 	</ul></td>
 	</tr></tbody></table><p><strong>Special properties</strong></p>
 	<table class="listing"><thead><tr><th style="cursor: pointer;">Name<span class="sortdirection">&emsp;</span></th> <th style="cursor: pointer;">Type<span class="sortdirection">&emsp;</span></th> <th style="cursor: pointer;">Default<span class="sortdirection">&emsp;</span></th> <th style="cursor: pointer;">Description<span class="sortdirection">&emsp;</span></th> <th style="cursor: pointer;">some possible values<span class="sortdirection">&emsp;</span></th>
@@ -608,9 +608,9 @@ Fields Reference
 	<td>StringWidget</td>
 	<td><br></td>
 	<td>
-	<ul><li><a href="widgets-reference#LabelWidget">LabelWidget</a></li>
-	<li><a href="widgets-reference#TextAreaWidget">TextAreaWidget</a></li>
-	<li><a href="widgets-reference#RichWidget">RichWidget</a></li>
+	<ul><li><a href="widgets_reference.html#LabelWidget">LabelWidget</a></li>
+	<li><a href="widgets_reference.html#TextAreaWidget">TextAreaWidget</a></li>
+	<li><a href="widgets_reference.html#RichWidget">RichWidget</a></li>
 	</ul></td>
 	</tr></tbody></table><p><strong>Special properties</strong></p>
 	<table class="listing"><thead><tr><th style="cursor: pointer;">Name<span class="sortdirection">&emsp;</span></th> <th style="cursor: pointer;">Type<span class="sortdirection">&emsp;</span></th> <th style="cursor: pointer;">Default<span class="sortdirection">&emsp;</span></th> <th style="cursor: pointer;">Description<span class="sortdirection">&emsp;</span></th> <th style="cursor: pointer;">some possible values<span class="sortdirection">&emsp;</span></th>
