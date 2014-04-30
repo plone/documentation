@@ -12,9 +12,9 @@ subsystem or on the Dexterity subsystem.
 
 For more information, consult the manual of the relevant subsystem:
 
-* `Archetypes examples <http://plone.org/documentation/tutorial/manipulating-plone-objects-programmatically/reading-and-writing-field-values>`_.
+* :doc:`Archetypes examples </old-reference-manuals/archetypes/index`.
 
-* See `Manipulating Content Objects </reference_manuals/external/plone.app.dexterity/reference/manipulating-content-objects.html>`_ in the Dexterity manual
+* See :doc:`Manipulating Content Objects </external/plone.app.dexterity/docs/reference/manipulating-content-objects>` in the Dexterity manual
 
 Reindexing modified objects
 ===========================

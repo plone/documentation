@@ -61,7 +61,7 @@ If the problem does not occur in a fresh site, the cause of your problem is most
 Make the problem reproducible
 =============================
 
-Before you go out and `ask for help </intro/ask-for-help>`_, you should be able to describe your problem in such a way that others can reproduce it in their environment.
+Before you go out and :doc:`ask for help </askforhelp>`, you should be able to describe your problem in such a way that others can reproduce it in their environment.
 
 Reduce the problem to the smallest possible domain.
 Eliminate products and customizations that are not part of the problem.
@@ -71,7 +71,7 @@ The more complex your story is, the more likely that it is unique to your situat
 Ask for help on a mailing list
 ==============================
 
-`Ask for help </intro/ask-for-help>`_ on the `Plone setup list <http://plone.org/support>`_. Be sure to:
+:doc:`Ask for help </askforhelp>` on the `Plone setup list <http://plone.org/support>`_. Be sure to:
 
 * Provide relevant source code for your customizations that are part of the problem.
 * Describe the exact configuration, software versions, migration history, error messages and so on.

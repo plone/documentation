@@ -111,7 +111,7 @@ extension).
 If we now had a content object providing *IDocument* reachable at
 *http://example.org/my-document*, we would be able to invoke this view
 using a URL like *http://example.org/my-document/@@as-message*. See the
-`Dexterity Developer Manual`_ for more information about how to register
+:doc:`Dexterity Developer Manual </external/plone.app.dexterity/docs/index>` for more information about how to register
 default and alternative views for content items.
 
 Notes:
@@ -132,8 +132,8 @@ Notes:
    *grok.require()*. This directive is required. You can pass
    *“zope2.Public”* to indicate that the view does not require any
    permissions at all. Other common permissions include *zope2.View*,
-   *cmf.ModifyPortalContent* and *cmf.ManagePortal*. See the `Dexterity
-   Developer Manual`_ for more information about permissions and
+   *cmf.ModifyPortalContent* and *cmf.ManagePortal*. See the :doc:`Dexterity
+   Developer Manual </external/plone.app.dexterity/docs/index>` for more information about permissions and
    workflow.
 -  We override the *update()* method, which is called by the base class
    before the view is rendered. This is a good place to pre-calculate
@@ -462,7 +462,7 @@ In Plone, this normally happens in one of two ways:
 -  One or more browser layers can be activated when a particular product
    is installed in a Plone site. The `plone.browserlayer`_ package
    supports this via the *browserlayer.xml* GenericSetup syntax. See the
-   `Dexterity Developer Manual`_ for more information about creating a
+   :doc:`Dexterity Developer Manual </external/plone.app.dexterity/docs/index>` for more information about creating a
    GenericSetup profile.
 
 For example, the following class (view implementation and template not
@@ -505,8 +505,7 @@ Notes:
     registered with five.grok. For a simpler way to override templates (but
     not Python logic), you may also want to look into `z3c.jbot`_.
 
-For more details on this topic, see the `Customization for Developers`_
-tutorial.
+
 
 [1] As of Plone 3, that’s not entirely true: an older technology known
 as skin layer templates are used for many of the standard pages, but the
@@ -516,7 +515,5 @@ principles behind them are the same.
 .. _plone.theme: https://pypi.python.org/pypi/plone.theme
 .. _plone.browserlayer: https://pypi.python.org/pypi/plone.browserlayer
 .. _z3c.jbot: https://pypi.python.org/pypi/z3c.jbot
-.. _Customization for Developers: /documentation/tutorial/customization-for-developers/
 .. _z3c.form: https://pypi.python.org/pypi/z3c.form
-.. _Dexterity Developer Manual: developer.plone.org/reference_manuals/external/plone.app.dexterity/
 .. _ZPT reference: http://docs.zope.org/zope2/zope2book/AppendixC.html

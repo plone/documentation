@@ -44,7 +44,7 @@ Minimal example using ``five.grok``
 
 Below is a minimal example for creating a configlet using:
 
-* `grok </components/grok>`_
+* :doc:`grok </develop/addons/components/grok>`
 
 * ``plone.app.registry``
 
