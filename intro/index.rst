@@ -66,6 +66,6 @@ The word Plone originally comes from the electronic band Plone that used to exis
 
 The founders of Plone-the-Software (Alan Runyan and Alexander Limi) were listening to Plone-the-Band when they met (as well as during the initial coding/design of Plone) - and one of the original quotes floating around at the time was that "Plone should look and feel like the band sounds". Thus, a legend was born. ;)
 
-Plone-the-Band broke up in 2001, but Plone-the-Software lives on.
+Plone-the-Band `broke up in 2001 <http://en.wikipedia.org/wiki/Plone_%28band%29>`_, but Plone-the-Software lives on.
 
 Plone is pronounced in the same manner as the word "grown". It is not spelled out when you say it, and is not an abbreviation for anything.
