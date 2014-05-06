@@ -197,62 +197,6 @@ actually merge it to the 4.2 release branch. Let's do that now::
   > git merge my-awesome-feature-4.2
 
 
-Committing to Products.CMFPlone
--------------------------------
-If you are working a bug fix on ``Products.CMFPlone``,
-there are a couple other things to take notice of.
-First and foremost, 
-you'll see that there are several branches.
-At the time of writing this document,
-there are branches for 4.1, 4.2, and master, which is the implied 4.3.
-
-Still with me? So you have a bug fix for 4.x.
-If the fix is only for one version,
-make sure to get that branch and party on.
-However, chances are the bug is in multiple branches. 
-
-Let's say the bug starts in 4.1. Pull the 4.1 branch and fix and commit there with tests.
-
-If your fix only involved a single commit,
-you can use git's ``cherry-pick`` command to apply the same commit
-to a different branch.
-
-First check out the branch::
-
-  > git checkout 4.2
-
-And then ``cherry-pick`` the commit (you can get the SHA hash from git log).
-
-  > git cherry-pick b6ff4309
-
-There may be conflicts; if so, resolve them and then follow the directions
-git gives you to complete the ``cherry-pick``.
-
-If your fix involved multiple commits, ``cherry-picking`` them one by one can get tedious.
-In this case things are easiest if you did your fix in a separate feature branch.
-
-In that scenario, you first merge the feature branch to the 4.1 branch::
-
-  > git checkout 4.1
-  > git merge my-awesome-feature
-
-Then you return to the feature branch and make a branch for `rebasing` it onto the 4.2 branch::
-
-  > git checkout my-awesome-feature
-  > git checkout -b my-awesome-feature-4.2
-  > git rebase ef978a --onto 4.2
-
-(ef978a happens to be the last commit in the feature branch's history before
-it was branched off of 4.1. You can look at git log to find this.)
-
-At this point, the feature branch's history has been updated, but it hasn't actually
-been merged to 4.2 yet. This lets you deal with resolving conflicts before you
-actually merge it to the 4.2 release branch. Let's do that now::
-
-  > git checkout 4.2
-  > git merge my-awesome-feature-4.2
-
-
 Branches and Forks and Direct Commits - Oh My!
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Plone used to be in an svn repository, so everyone is familiar and accustomed to committing directly to the branches. After the migration to github, the community decided to maintain this spirit. If you have signed the :doc:`contributor agreement <contributors_agreement_explained>` form, you can commit directly to the branch (for plone this would be the version branch, for most other packages this would be ``master``).
