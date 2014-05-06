@@ -84,13 +84,13 @@ advanced users.
 
 For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
 
-Editing the documentation on Github
+Editing the documentation on GitHub
 ===================================
 
 - Go to `Plone Documentation <https://github.com/plone/documentation>`_ on  GitHub.
 - Press the **Fork** button. This will create your own personal copy of the documentation.
 - **Edit** files using GitHub's text editor in your web browser
-- Fill in the **Commit message** text box at the end of the page telling why you did the changes. Press the **Propose file change** button next to it when done.
-- Then head to the *Send a pull request* page (you won't need to fill in any additional text). Just press **Send pull request** button.
+- Fill in the **Commit changes**-textbox at the end of the page telling why you did the changes. Press the **Commit changes**-button next to it when done.
+- Then head to the green *New pull request*-button (e.g. by navigating to your fork's root and clicking "Pull requests" on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text. Just press **New pull request** button, finally click "Send pull request".
 - Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on Github.
 - For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
