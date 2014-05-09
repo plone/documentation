@@ -339,3 +339,21 @@ Example::
 
             # XXX: customize widgets here
 
+Registering an edit form works by registering a normal browser page.
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        >
+
+        <browser:page
+            for="your.app.flexiblecontent"
+            class=".flexicontent.EditView"
+            name="edit"
+            />
+
+    </configure>
+
+In the example above it is important, that you give the browser page the name "edit".
