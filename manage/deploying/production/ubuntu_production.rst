@@ -284,4 +284,4 @@ Scaling up
 This installation will do well on a minimum server configuration (512MB RAM).
 If you've a larger site, buy more memory and set up reverse-proxy caching and load balancing.
 
-`Deploying and installing Plone in production <http://developer.plone.org/reference_manuals/active/deployment>`_ is a good introduction to scaling topics.
+:doc:`Deploying and installing Plone in production </manage/deploying/index>` is a good introduction to scaling topics.

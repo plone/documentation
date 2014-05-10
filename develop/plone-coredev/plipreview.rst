@@ -56,7 +56,7 @@ Python
 
 Javascript
 ^^^^^^^^^^
- * Does the javascript meet our set of javascript standards? See http://developer.plone.org/templates_css_and_javascripts/javascript.html
+ * Does the javascript meet our set of javascript standards? See :doc:`/develop/addons/javascript_standards`
  * Does the Javascript work in all currently supported browsers? Is it performant? 
 
 ME/TAL

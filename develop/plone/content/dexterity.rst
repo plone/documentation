@@ -16,9 +16,9 @@ default Archetypes system from Plone 5 and onward and can be already used
 with Plone 4.
 
 
-* `Dexterity Developer Manual <http://developer.plone.org/reference_manuals/external/plone.app.dexterity>`_.
+* :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`
 
-* `How Dexterity is related to Archetypes <http://developer.plone.org/reference_manuals/external/plone.app.dexterity/how-is-dexterity-related-to-archetypes.html>`_
+* :doc:`How Dexterity is related to Archetypes </external/plone.app.dexterity/docs/intro>`
 
 ZopeSkel templates
 ====================

@@ -172,7 +172,7 @@ Remove ``from five import grok`` in all of your package modules.
 
 Manually :doc:`register static media folder of your egg </adapt-and-extend/theming/templates_css/resourcefolders>`
 
-Declare views and forms using `configure.zcml <http://developer.plone.org/views/browserviews.html#creating-a-view-using-zcml>`_
+Declare views and forms using :doc:`configure.zcml </develop/plone/views/browserviews.html#creating-a-view-using-zcml>`
 
 Remove ``grok.templatedir()`` and map view classes to templates using ``<browser:page>`` ZCML directive.
 

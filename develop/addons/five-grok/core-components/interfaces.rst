@@ -7,10 +7,7 @@ There is nothing Grok-specific about interfaces, but they are important
 because they used in various directives for describing or registering
 components.
 
-Zope interfaces are implemented in the *zope.interface* package. In
-addition, *zope.schema* contains various classes that can be used to
-describe the type of attributes on an interface (the `Dexterity
-developer manual`_ contains a reference).
+Zope interfaces are implemented in the *zope.interface* package. In addition, *zope.schema* contains various classes that can be used to describe the type of attributes on an interface (the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>` contains a reference).
 
 Interfaces are typically found in an *interfaces.py* module, although
 you will sometimes see schema interfaces kept in the same module as
@@ -191,5 +188,5 @@ for details.
 
 .. _zope.interface: https://pypi.python.org/pypi/zope.interface
 
-.. _Dexterity developer manual: http://developer.plone.org/reference_manuals/external/plone.app.dexterity/
+
 
