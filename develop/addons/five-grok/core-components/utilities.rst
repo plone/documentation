@@ -20,8 +20,8 @@ local utility is simply used to override a global utility with of same
 interface (and optionally name).
 
 In Plone, local components can be installed using the
-*componentregistry.xml* GenericSetup import step. See the `GenericSetup
-documentation`_ for more details. The techniques mentioned in this
+*componentregistry.xml* GenericSetup import step. See the :doc:`GenericSetup
+documentation </develop/addons/components/genericsetup>` for more details. The techniques mentioned in this
 manual pertain to global utilities only.
 
 Global utilities can be registered in one of two ways using *five.grok*:
@@ -172,4 +172,4 @@ unnamed and three named global utilities with *five.grok*.
 
 .. _plone.app.registry: https://pypi.python.org/pypi/plone.app.registry
 .. _plone.registry: https://pypi.python.org/pypi/plone.registry
-.. _GenericSetup documentation: http://developer.plone.org/components/genericsetup.html
+

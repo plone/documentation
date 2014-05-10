@@ -86,8 +86,8 @@ Let’s go through this in some detail:
    available on any context, use *zope.interface.Interface* as the
    context); *grok.require()* specifies a permission which the user must
    have to be able to view the form (here, we use the standard
-   *zope2.View* permission). See the views section in the `five.grok
-   manual`_ for more detail.
+   *zope2.View* permission). See the views section in the :doc:`five.grok
+   manual </develop/addons/five-grok/index>` for more detail.
 -  Next, we specify the schema via the *schema* attribute. This is the
    equivalent of assigning the *fields* attribute to a *field.Fields()*
    instance, as you may have seen in documentation for “plain”
@@ -139,5 +139,5 @@ message (so that it can appear on the next page) and redirect the user
 to the context’s default view. In this case, that means the portal front
 page.
 
-.. _five.grok manual: http://developer.plone.org/reference_manuals/active/five-grok
+
 .. _five.grok: https://pypi.python.org/pypi/five.grok

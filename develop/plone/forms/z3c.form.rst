@@ -34,9 +34,9 @@ schema class or in ``z3c.form.form.Form`` based classes body.
 
 Starting points to learn *z3c.form* in Plone
 
-* Read about `creating schema-driven forms with Dexterity content subsystem <http://developer.plone.org/reference_manuals/external/plone.app.dexterity/schema-driven-forms/index.html>`_
+* Read about :doc:`creating schema-driven forms with Dexterity content subsystem </develop/addons/schema-driven-forms/index>`
 
-* `TODO app tutorial for Plone <http://developer.plone.org/reference_manuals/external/tutorials.todoapp/docs/index.html>`_
+* :doc:`TODO app tutorial for Plone </external/tutorial.todoapp/docs/index>`
 
 Other related packages you might want to take a closer look
 
@@ -593,7 +593,7 @@ Setting a widget for a field
 --------------------------------
 
 Using plone.directives.form schema hints
-``````````````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example::
 
@@ -625,11 +625,11 @@ Example::
 
 More info
 
-* `Form schema hints <https://developer.plone.org/reference_manuals/external/plone.app.dexterity/reference/form-schema-hints.html>`_
+* :doc:`Form schema hints </external/plone.app.dexterity/docs/reference/form-schema-hints>`
 
 
 Setting widget for z3c.form plain forms
-``````````````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can set field's widgetFactory after fields have
 been declared in form class body.
@@ -663,7 +663,7 @@ Example::
 
 
 Setting widget dynamically Form.updateWidgets()
-``````````````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Widget type can be set dynamically based on external conditions.
 
@@ -1375,7 +1375,7 @@ Buttons are stored in ``buttons`` class attribute.
     of it if you wish to have form-specific changes.
 
 Reading buttons
-```````````````
+^^^^^^^^^^^^^^^
 
 Example::
 
@@ -1386,7 +1386,7 @@ Example::
 
 
 Removing or hiding buttons
-``````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here is an example how to hide all buttons from a certain form instance.
 
@@ -1406,7 +1406,7 @@ Example::
 
 
 Adding buttons dynamically
-```````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the example below, the ``Buttons`` array is already constructed
 dynamically
@@ -2157,7 +2157,7 @@ There are three kind of validation hooks you can use with z3c.form
 * z3c.form (validation is bound ot the form instance)
 
 Field specific internal validators
-````````````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you define your field with *zope.schema*
 you can enable flags for field internal validation.
@@ -2181,7 +2181,7 @@ Example::
 For available internal validation options, see the field source code in zope.schema package.
 
 Constrain validators
-````````````````````````````````````````````````````
+^^^^^^^^^^^^^^^^^^^^^
 
 zope.schema fields take a callable argument ``constrain``
 which defines a Python function validating the incoming value.
@@ -2207,12 +2207,12 @@ Example::
 For more information, see ``zope.schema`` documentation.
 
 Invariant validators
-``````````````````````````
+^^^^^^^^^^^^^^^^^^^^
 
 TODO: Are invariants useful with z3c.form??
 
 Form widget validators
-``````````````````````````
+^^^^^^^^^^^^^^^^^^^^^^
 
 Validators are best added in the schema itself.
 

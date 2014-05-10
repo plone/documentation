@@ -15,8 +15,8 @@ discussed in this manual. This includes:
 -  Defining permissions with *grok.Permission*. We prefer to define
    permissions in configuration files, rather than code. See
    `grokcore.security`_ if you hate XML so much that you don’t mind
-   using Python as a configuration language. See the `Dexterity
-   developer manual`_ for more details on creating custom permissions.
+   using Python as a configuration language. See the :doc:`Dexterity
+   developer manual </external/plone.app.dexterity/docs/index>` for more details on creating custom permissions.
 -  Defining resource directories (other than the implicit *static*
    directory) using *grok.DirectoryResource* instead of the
    *<browser:resourceDirectory />* directive, for the same reasons. See
@@ -49,7 +49,6 @@ You are allowed to disagree.
 
 .. _grokcore.annotation: https://pypi.python.org/pypi/grokcore.annotation
 .. _grokcore.security: https://pypi.python.org/pypi/grokcore.security
-.. _Dexterity developer manual: developer.plone.org/reference_manuals/external/plone.app.dexterity/
 .. _grokcore.view: https://pypi.python.org/pypi/grokcore.view
 .. _grokcore.site: https://pypi.python.org/pypi/grokcore.site
 .. _plone.theme: https://pypi.python.org/pypi/plone.theme

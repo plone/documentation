@@ -3,22 +3,17 @@ Introduction
 
 **What is z3c.form all about?**
 
-HTML forms are the cornerstone of modern web applications. When you
-interact with Plone, you use forms all the time - to search the content
-store, to edit content items, to fill in your personal details. You will
-notice that most of these forms use the same layout and conventions, and
-that they all rely on common patterns such as server-side validation and
-different buttons resulting in different actions.
+HTML forms are the cornerstone of modern web applications. When you interact with Plone, you use forms all the time - to search the content store, to edit content items, to fill in your personal details. You will notice that most of these forms use the same layout and conventions, and that they all rely on common patterns such as server-side validation and different buttons resulting in different actions.
 
-Over the years, several approaches have evolved to deal with forms. A
-few of the most important ones are:
+Over the years, several approaches have evolved to deal with forms. A few of the most important ones are:
+
 
 -  Creating a simple view with an HTML form that submits to itself (or
    another view), where the request is validated and processed in custom
    Python code. This is very flexible and requires little learning, but
    can also be fairly cumbersome, and it is harder to maintain a common
-   look and feel and behaviour across all forms. See the `five.grok
-   view documentation`_ for some hints on one way to build such views.
+   look and feel and behaviour across all forms. See the :doc:`five.grok
+   view documentation </develop/addons/five-grok/browser-components/views>` for some hints on one way to build such views.
 -  Using the *CMFFormController* library. This relies on special page
    objects known as “controller page templates” that submit to
    “controller python scripts”. The form controller takes care of the
@@ -38,11 +33,9 @@ few of the most important ones are:
 -  Using *`z3c.form`_*. This is a newer library, inspired by formlib,
    but more flexible and modern.
 
-This manual will show you how to use *z3c.form* in a Plone context. It
-will use tools and patterns that are consistent with those used for
-Dexterity development, as shown in the `Dexterity manual`_, but the
-information contained herein is not Dexterity specific. Note that
-Dexterity’s standard add and edit forms are all based on *z3c.form*.
+This manual will show you how to use *z3c.form* in a Plone context. 
+It will use tools and patterns that are consistent with those used for Dexterity development, as shown in the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`, but the information contained herein is not Dexterity specific. Note that Dexterity’s standard add and edit forms are all based on *z3c.form*.
+
 
 Tools
 -----
@@ -74,7 +67,7 @@ packages in this tutorial. The most important packages are:
    `five.grok`_ and adds support for the patterns that apply to the
    *grok.View* base class, including automatic template association. We
    will use *plone.directives.form* to configure our forms in this
-   manual. You can read more about this in the `five.grok manual`_. We
+   manual. You can read more about this in the :doc:`five.grok manual </develop/addons/five-grok/index>`. We
    will register all our forms using *plone.directives.form* in this
    tutorial.
 
@@ -88,7 +81,5 @@ This manual is targeted at Plone 4.1 and above (Zope 2.13).
 .. _plone.autoform: https://pypi.python.org/pypi/plone.autoform
 .. _plone.directives.form: https://pypi.python.org/pypi/plone.directives.form
 .. _five.grok: https://pypi.python.org/pypi/five.grok
-.. _five.grok manual: http://developer.plone.org/reference_manuals/active/five-grok
-.. _five.grok view documentation: http://developer.plone.org/reference_manuals/active/five-grok/browser-components/views.html
 .. _z3c.form: https://pypi.python.org/pypi/z3c.form
-.. _Dexterity manual: http://developer.plone.org/reference_manuals/external/plone.app.dexterity/
+

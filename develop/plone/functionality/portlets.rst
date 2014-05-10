@@ -49,7 +49,7 @@ Subclassing a portlet
 
 You can subclass a portlet to create a new portlet type with your enhanced functionality.
 
-* http://developer.plone.org/reference_manuals/old/portlets/appendix/subclassing.html
+* :doc:`/old-reference-manuals/portlets/appendix/subclassing`
 
 Using z3c.form in portlets
 -----------------------------

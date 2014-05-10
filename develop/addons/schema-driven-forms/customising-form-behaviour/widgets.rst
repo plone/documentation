@@ -120,7 +120,7 @@ You can find the default widgets in the *browser* package in *z3c.form*.
 The *z3c.form* `documentation`_ contains a `listing`_ of all the default
 widgets that shows the HTML output of each.
 
-In addition, the Dexterity manual contains `an overview of common custom widgets <http://developer.plone.org/reference_manuals/external/plone.app.dexterity/reference/widgets.html>`_.
+In addition, the Dexterity manual contains :doc:`an overview of common custom widgets </external/plone.app.dexterity/docs/reference/widgets>`.
 
 .. _documentation: https://pythonhosted.org/z3c.form/
 .. _listing: https://pythonhosted.org/z3c.form/browser/README.html

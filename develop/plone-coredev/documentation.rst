@@ -4,21 +4,7 @@ Writing documentation
 Documentation of Plone
 ----------------------
 
-As a community, Plone maintains several types of documentation:
-
-* *Curated* documents. This is a limited set of documentation that is intended to be carefully managed and regularly updated.
-
-  * `User Manual <http://plone.org/documentation/manual/plone-4-user-manual>`_
-  * `Installing Plone <http://plone.org/documentation/manual/installing-plone>`_
-  * `Theme Reference <http://developer.plone.org/#theme-development>`_
-  * `Developer Manual <http://developer.plone.org/>`_
-
-  Improvements to the curated documents can be discussed on the `plone-docs mailing list <https://lists.sourceforge.net/lists/listinfo/plone-docs>`_.
-
-* *Community-edited* documents. These are open for contributions by anyone. This leads to a wealth of information that is of more widely ranging quality.
-
-  * `Knowledgebase on plone.org <http://plone.org/documentation/kb>`_. Anyone with a plone.org account is free to edit.
-  * `Collective Plone developer documentation <http://developer.plone.org/index.html>`_. Anyone may `contribute <http://collective-docs.readthedocs.org/en/latest/introduction/developermanual.html>`_.
+`docs.plone.org <http://docs.plone.org>`_ contains a full overview of the current documentation for Plone.
 
 Documenting a package
 ---------------------
@@ -95,6 +81,6 @@ Using Sphinx
 ~~~~~~~~~~~~
 
 reST References:
- * `Plone Oriented Shpinx Documentation <http://developer.plone.org/reference_manuals/active/writing/index.html>`_
+
  * `Sphinx reST Primer <http://sphinx-doc.org/rest.html>`_ 
 
