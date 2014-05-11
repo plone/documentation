@@ -799,9 +799,9 @@ The new way to register a vocabulary is like this:
          provides="zope.app.schema.vocabulary.IVocabularyFactory"
           />
 
-See more information about `utilities <http://developer.plone.org/components/utilities.html>`_ and `vocabularies <http://developer.plone.org/forms/vocabularies.html>`_ in the community documentation.
+See more information about :doc:`utilities </develop/addons/components/utilities>` and :doc:`vocabularies </develop/plone/forms/vocabularies>`.
 
-Or register your vocabularies using a grok utility. Read more about `how vocabularies are handled the grok way <http://developer.plone.org/reference_manuals/external/plone.app.dexterity/advanced/vocabularies.html>`_ in the dexterity developer manual.
+Or register your vocabularies using a grok utility. Read more about :doc:`how vocabularies are handled the grok way </external/plone.app.dexterity/docs/advanced/vocabularies>` in the dexterity developer manual.
 
 Folder implementation changes
 =============================

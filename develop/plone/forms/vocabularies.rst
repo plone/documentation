@@ -102,7 +102,7 @@ Stock vocabularies
 
 Some vocabularies Plone provides out of the box
 
-* `Some common named vocabularies <http://developer.plone.org/reference_manuals/external/plone.app.dexterity/advanced/vocabularies.html#some-common-vocabularies>`_ 
+* :doc:`Some common named vocabularies </external/plone.app.dexterity/docs/advanced/vocabularies>` 
 
 * `Thumbnail size vocabulary (TinyMCE) <https://github.com/plone/Products.TinyMCE/blob/master/Products/TinyMCE/vocabularies.py>`_
 
@@ -333,8 +333,8 @@ Complex example 2
         return SimpleVocabulary(terms)
 
 	 
-For another example, see `Dynamic sources <http://developer.plone.org/reference_manuals/external/plone.app.dexterity/advanced/vocabularies.html#dynamic-sources>`_
-chapter in Dexterity manual.
+For another example, see the :doc:`Dynamic sources </external/plone.app.dexterity/docs/advanced/vocabularies>`
+chapter in the Dexterity manual.
 
 Registering a named vocabulary provider in ZCML
 ===================================================

@@ -6,10 +6,10 @@ Creating a package
 For the purposes of this tutorial, we will create a simple package that
 adds the necessary dependencies. If you have an existing package that
 requires a form, you should be able to add the same dependencies. If you
-have read the Dexterity manual, most of this should be familiar.
+have read the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`, most of this should be familiar.
 
 For details about creating new packages, see 
-`Bootstrapping Plone add-on development <http://developer.plone.org/getstarted/paste.html>`_.
+:doc:`Bootstrapping Plone add-on development </develop/addons/paste>`.
 
 First, we create a new package:
 
@@ -94,7 +94,7 @@ This will:
    *install\_requires* line in *setup.py*. This saves us from manually
    including them with individual ZCML *<include />* statements.
 -  “Grok” the package, to configure the forms we will add. See the
-   `five.grok manual`_ for more details.
+   :doc:`five.grok manual</develop/addons/five-grok/index>` for more details.
 -  Create an installation profile that will install this package and its
    dependencies.
 
@@ -159,4 +159,4 @@ here. The important things to note are:
    tests section. This ensures that *collective.testcaselayer* is
    installed for the testrunner.
 
-.. _five.grok manual: http://developer.plone.org/reference_manuals/active/five-grok
+

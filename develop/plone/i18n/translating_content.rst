@@ -496,7 +496,7 @@ to work with Dexterity content types and the *old fashioned* Archetypes based
 content types as well. It only works with Plone 4.1 and above due to the use of
 UUIDs for referencing the translations.
 
-For more information see: http://developer.plone.org/reference_manuals/external/plone.app.multilingual/index.html
+For more information see :doc:`plone.app.multilingual</external/plone.app.multilingual/docs/index>`
 
 Installation
 ------------

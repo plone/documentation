@@ -52,7 +52,7 @@ Finding good documentation for them, however, can be challenging.  Here are
 some starting points:
 
 
-* `Dexterity field list <http://developer.plone.org/reference_manuals/external/plone.app.dexterity/reference/fields.html>`_.
+* :doc:`Dexterity field list </external/plone.app.dexterity/docs/reference/fields>`.
 
 
 Example of a schema

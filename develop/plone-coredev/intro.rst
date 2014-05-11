@@ -58,7 +58,7 @@ The line with a * by it will indicate which branch you are currently working on.
 .. important::
    Make sure to rerun buildout if you were in a different branch earlier to get the correct versions of packages, otherwise you will get some weird behavior! 
 
-For more information on buildout, please see the `collective developer manual documentation on buildout <http://developer.plone.org/reference_manuals/old/buildout/index.html>`_.
+For more information on buildout, please see the :doc:`collective developer manual documentation on buildout </old-reference-manuals/buildout/index>`.
 
 
 Checking out Packages for Fixing

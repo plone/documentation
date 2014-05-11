@@ -38,12 +38,12 @@ Concrete Rules
  * Indent properly, even in HTML. 
  * Never use a bare except. Anything like ``except: pass`` will likely be reverted instantly
  * Avoid ``tal:on-error``, since this swallows exceptions
- * Don't use ``hasattr()`` - this swallows exceptions, use ``getattr(foo, 'bar', None)`` instead. The problem with swallowed exceptions is not just poor error reporting. This can also mask ``ConflictErrors``, which indicate that something has gone wrong at the `ZODB level <http://developer.plone.org/troubleshooting/transactions.html#conflicterror>`_!
+ * Don't use ``hasattr()`` - this swallows exceptions, use ``getattr(foo, 'bar', None)`` instead. The problem with swallowed exceptions is not just poor error reporting. This can also mask ``ConflictErrors``, which indicate that something has gone wrong at the :doc:`ZODB level </manage/troubleshooting/transactions>`!
  * Never, ever put any HTML in Python code and return it as a string
  * Do not acquire anything unless absolutely necessary, especially tools. For example, instead of using ``context.plone_utils``, use::
   
     from Products.CMFCore.utils import getToolByName
     plone_utils = getToolByName(context, 'plone_utils')
 
- * Do not put too much logic in ZPT (use `Views <http://developer.plone.org/views/index.html>`_ instead!)
- * Remember to add `i18n <http://developer.plone.org/i18n/index.html>`_ tags in ZPTs and Python code
+ * Do not put too much logic in ZPT (use :doc:`Views </develop/plone/views/index>` instead!)
+ * Remember to add :doc:`i18n </develop/plone/i18n/index>` tags in ZPTs and Python code
