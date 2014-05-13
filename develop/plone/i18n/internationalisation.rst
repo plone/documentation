@@ -377,6 +377,10 @@ automate generation of ``.mo`` files of your product ``.po`` files.
     Note that the value does not matter: the code in ``zope.i18n``
     simply looks for the existence of the variable and does not
     care what its value is.
+
+.. Note:: If you use i18ndude make sure to use ``_`` as an alias for
+    your ``MessageFactory`` else i18ndude won't find your message strings
+    in python code and report that "no entries for domain" were found.
         
 See:
 
