@@ -119,6 +119,11 @@ If you're planning on developing with Plone, install git version control support
     If sudo command is not recognized or does not work you don't have administrator rights to Ubuntu / Debian operating system.
     Please contact your server vendor or consult the operating system support forum.
 
+.. note::
+
+    For Ubuntu 14.04 please also install **libz-dev**
+
+
 Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
