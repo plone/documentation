@@ -78,7 +78,7 @@ Viewing indexes and indexed data
 --------------------------------
 
 Indexed data
-============
+^^^^^^^^^^^^
 
 You can do this through portal_catalog tool in ZMI.
 
@@ -89,7 +89,7 @@ You can do this through portal_catalog tool in ZMI.
 * Click any object
 
 Indexes and metadata columns
-============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Available indexes are stored in the database, not in Python code.
 To see what indexes your site has
@@ -102,7 +102,7 @@ To see what indexes your site has
 Creating an index
 -----------------
 
-To perform queries on custom data, you need to add corresponding index to portal_catalog first.
+To perform queries on custom data, you need to add the corresponding index to portal_catalog first.
 
 E.g. If your :doc:`Archetypes </develop/plone/content/types>` content type has a field::
 
@@ -135,7 +135,7 @@ See more information about :doc:`accessor methods </develop/plone/content/archet
 	please see *Custom index method* below. 
 
 Creating an index through the web
-=================================
+---------------------------------
 
 This method is suitable during development time - you can create an index
 to your Plone database locally.
@@ -168,7 +168,7 @@ direct value matching, ranged date queries, free text search, etc. need differen
 
 
 Adding index using add-on product installer
-===========================================
+-------------------------------------------
 
 You need to have your own add-on product which
 registers new indexes when the add-on installer is run.
@@ -218,7 +218,7 @@ For more information see
 * http://maurits.vanrees.org/weblog/archive/2009/12/catalog
 
 Custom index methods
-====================
+--------------------
 
 The `plone.indexer <https://pypi.python.org/pypi/plone.indexer>`_ package provides method to create custom indexing functions.
 
@@ -274,7 +274,7 @@ files, not with the deprecated Zope 2 ones into the
 ``Products.ATContentTypes.interfaces`` file.
 
 Creating a metadata column
------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The same rules and methods apply for metadata columns as creating index above.
 The difference with metadata is that
@@ -295,7 +295,7 @@ To create metadata colums in your ``catalog.xml`` add::
 
 
 When indexing happens and how to reindex manually
----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Content item reindexing is run when 
 
@@ -390,9 +390,9 @@ Some interesting columns
 * exclude_from_nav: If True the object won't appear in sitemap, navigation tree
 
 Custom sorting by title
-=============================
+^^^^^^^^^^^^^^^^^^^^^^^
 
-``sortable_title is type of FieldIndex (raw value) and normal ``Title`` index is type of searhable text.
+sortable_title is type of FieldIndex (raw value) and normal ``Title`` index is type of searchable text.
 
 ``sortable_title`` is generated from ``Title`` in ``Products/CMFPlone/CatalogTool.py``. 
 
