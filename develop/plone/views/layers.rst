@@ -127,13 +127,13 @@ Theme layers can be created via the following steps:
 
        </object>
 
-Add-on layer
--------------
+Add-on layer for clean extensions
+---------------------------------
 
 An add-on product layer is enabled when an add-on product is installed. 
 Since one Zope application server may contain several Plone sites, 
 you need to keep enabled code paths separate by using add-on layers -
-otherwise all views and viewlets apply to all sites in one Zope application server. 
+otherwise all views and viewlets apply to all sites in one Zope application server.
 
 * You can enable views and viewlets specific to functional add-ons.
 
@@ -186,13 +186,18 @@ More information
 
 * See example in `LinguaPlone <https://github.com/plone/Products.LinguaPlone/blob/master/Products/LinguaPlone/profiles/default/browserlayer.xml>`_.
 
-Using layers (for customization)
---------------------------------
+Add-on layer for changing existing behavior
+-------------------------------------------
 
-The whole point of using layers is to enable someone else to override your 
-:term:`ZCA` registrations (for example, to override a view).
-By subclassing a marker interface for some marker you can define a more
-specific adapter which will take precedence over the primary adapter.
+You can also use layers to modify the behavior of plone or another Add-on.
+
+To make sure that your own view is used, your Layer must be mor specific than the layer where original view is registered.
+
+For example, some z3cform things register their views on the ``IPloneFormLayer`` from plone.app.z3cform.interfaces.
+
+If you want to override the ploneform-macros view that is registered on the ``IPloneFormLayer``, your own Layer must be a subclass of IPloneFormLayer.
+
+If a view does not declare a specific Layer,  it becomes registered on the ``IDefaultBrowserLayer`` from zope.publisher.interfaces.browser.IDefaultBrowserLayer.
 
 Manual layers
 -------------
@@ -240,72 +245,6 @@ Example::
             # Render the edit form
             return FormWrapper.__call__(self)
 
-Problem with ``IDefaultBrowserLayer``
----------------------------------------
-
-``zope.publisher.interfaces.browser.IDefaultBrowserLayer`` is a problematic
-layer, because it takes precedence in the
-HTTP request multi-adapter look up (due to magic involving Plone themes).
-
-Below is a dump of ``self.request.__provides__.__iro__`` for adding an extra
-form layer::
-
-    (<InterfaceClass Products.CMFDefault.interfaces.ICMFDefaultSkin>, 
-     <InterfaceClass plone.z3cform.z2.IFixedUpRequest>, 
-     <InterfaceClass getpaid.expercash.browser.views.IExperCashFormLayer>,
-     <InterfaceClass plone.app.z3cform.interfaces.IPloneFormLayer>, 
-     <InterfaceClass z3c.form.interfaces.IFormLayer>, 
-     <InterfaceClass zope.publisher.interfaces.browser.IBrowserRequest>, 
-     ...
-
-One would assume that the custom form layer (``IExperCashFormLayer``) is
-used and that
-it would take priority over the more generic ``IPloneFormLayer``.
-However, due to the involvement of ``IDefaultBrowserLayer`` when registering
-items using ``<browser:page for="*">`` syntax, it does not.
-
-The fix is to make your custom layer to subclass ``IDefaultBrowserLayer``,
-as follows::
-
-    class IExperCashFormLayer(IDefaultBrowserLayer, IPloneFormLayer):
-        """ Define a custom layer for which against our form macros are registered.
-
-        This way we override the default plone.app.z3cform templates.
-
-        Inheriting from IDefaultBrowserLayer makes sure this layer will get 1st priority.
-        """ 
-
-We register a custom macro as follows:
-
-.. code-block:: xml
-
-      <!-- Override plone.app.z3cform default form template -->
-      <browser:page
-          name="ploneform-macros"
-          for="*"
-          layer=".views.IExperCashFormLayer"
-          class=".views.Macros"
-          template="templates/expercash-form-macros.pt"
-          allowed_interface="zope.interface.common.mapping.IItemMapping"
-          permission="zope.Public"
-          />
-
-Now, manual assignment works OK::
-
-      def update(self):
-            """ z3c.form.form.Form.Update() method
-            """
-
-            # This will fix @@ploneform-macros to use our special version
-            zope.interface.alsoProvides(self.request, IExperCashFormLayer)
-
-            # This should return macros we have registered
-            macros = self.context.unrestrictedTraverse("@@ploneform-macros")
-
-(If this didn't make sense for you, don't worry.
-It doesn't make sense for me either.)            
-
-.. todo:: This is not helpful.
 
 Troubleshooting instructions for layers
 =============================================
