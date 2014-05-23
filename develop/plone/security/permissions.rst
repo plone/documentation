@@ -45,6 +45,9 @@ For the security reasons, this option is disabled by default.
 
 * Restart Plone properly after buildout ``bin/plonectl stop && bin/plonectl start`` 
 
+* remove the ``Unauthorized`` exception from the list of ignored exception inside
+  the ``error_log`` object within the Plone root folder through the ZMI
+
 More info
 
 * https://pypi.python.org/pypi/plone.recipe.zope2instance
