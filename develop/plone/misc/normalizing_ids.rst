@@ -51,7 +51,7 @@ You can use normalizers this way also when getUtility() is not available (e.g. s
 
 Language specific example for URL::
 
-    from zope.component import getUtility
+    from zope.component import queryUtility
     from plone.i18n.normalizer.interfaces import IURLNormalizer
 
 	# Get URL normalizer for language english
