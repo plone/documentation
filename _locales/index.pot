@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The Plone Foundation
+# This file is distributed under the same license as the Plone Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone Documentation ['4.3']\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-29 14:19+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../index.rst:5
+# 5ec1cb13999a426c800af141e30da505
+msgid "Plone - The Open Source CMS"
+msgstr ""
+
+#: ../index.rst:7
+# 075edcd3f1cc408a88edbac393064792
+msgid "This document is a community maintained manual for the `Plone <http://plone.org>`_ content management system."
+msgstr ""
+
+#: ../index.rst:9
+# c113c312747241268c2b1a96ac87ff9c
+msgid "The target audience of the documentation includes"
+msgstr ""
+
+#: ../index.rst:11
+# ce5ba4397f9c4086b7bda0c2b94a607d
+msgid "Content editors: writing, updating and ordering the actual content of the site"
+msgstr ""
+
+#: ../index.rst:13
+# 83e4722d2a0d40eda429af772bb1bee1
+msgid "Site administrators: installing Plone, add-ons and setting up the site"
+msgstr ""
+
+#: ../index.rst:15
+# 2252daa70d5841e0ab62b138ff3085e3
+msgid "Designers: changing Plone's visual appearance"
+msgstr ""
+
+#: ../index.rst:17
+# b651f76a977e4ffea4f954e4a6505f3c
+msgid "Deployers: hosting Plone for production on a server"
+msgstr ""
+
+#: ../index.rst:19
+# 0e0e8e7deb194b23b04438ebefc0de4e
+msgid "Developers: Customizing Plone, developing add-ons, and improving Plone itself"
+msgstr ""
+

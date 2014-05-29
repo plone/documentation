@@ -1,0 +1,456 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The Plone Foundation
+# This file is distributed under the same license as the Plone Documentation package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: plone-doc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-29 14:19+0200\n"
+"PO-Revision-Date: 2014-05-29 13:28+0000\n"
+"Last-Translator: Giacomo <giacomo.spettoli@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/plone-doc/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# ec30796117174c65aa31d38f4217d54d
+#: ../askforhelp.rst:2
+msgid "Asking for help"
+msgstr ""
+
+# a386b9fbfd724dd0aa63ef7aced736da
+#: ../askforhelp.rst:6
+msgid "guidelines and examples"
+msgstr ""
+
+# 08a559b32aad47aab5fe9c993713c802
+#: ../askforhelp.rst:8
+msgid ""
+"If you need help with an error or problem: before asking the question, "
+"please take a few minutes to read the guidelines below. It is important to "
+"know how to state questions, because once you learn it, answers will come "
+"much faster."
+msgstr ""
+
+# c3c8180dc9ea44c49d2094e583eece51
+#: ../askforhelp.rst:12
+msgid "Asking help on discussion forums and mailing lists"
+msgstr ""
+
+# 797dbb837e364255b7a06d48e603d00c
+#: ../askforhelp.rst:14
+msgid ""
+"By stating a **well-phrased question** you increase the likelihood of fast "
+"and helpful response to your question."
+msgstr ""
+
+# 850939c3f5b841759b58280216ee893c
+#: ../askforhelp.rst:16
+msgid ""
+"Here are some general key rules users need to follow in creating a new "
+"topic."
+msgstr ""
+
+# 1bf8dbd0fcf541cca87ea51288d68671
+#: ../askforhelp.rst:18
+msgid ""
+"ALWAYS start with searching, that means, before you create a topic. Most of "
+"your questions were probably already answered by someone else in the past. "
+"Save your and our time by searching the web first."
+msgstr ""
+
+# 694307a979f64c13b3417b218d1ea505
+#: ../askforhelp.rst:20
+msgid "Where to search:"
+msgstr ""
+
+# f8cbf45eacd84fec99cce80df10bc4ff
+#: ../askforhelp.rst:22
+msgid ""
+"Google - Before asking for help, make a Google search with related keywords."
+" Pick meaningful keywords from the log entry."
+msgstr ""
+
+# 7077376b85ea48a7890805f2ce5f47b9
+#: ../askforhelp.rst:24
+msgid ""
+"`StackOverflow <http://stackoverflow.com/questions/tagged/plone?sort=faq>`_ "
+"- some FAQs are maintained here."
+msgstr ""
+
+# d19ca68c898448d1ae8f2015220074e8
+#: ../askforhelp.rst:26
+msgid ""
+":doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error"
+" messages - for enabling debug mode and common tracebacks."
+msgstr ""
+
+# ea8625776fed45ffb025fa026a72863b
+#: ../askforhelp.rst:28
+msgid ""
+"`Plone development tracker <http://dev.plone.org/plone>`_ - for known "
+"related issues (plone.org account needed)."
+msgstr ""
+
+# 318274c0edcc48c59621969749f3b36e
+#: ../askforhelp.rst:30
+msgid ""
+"If at any point you see any kind of error message (including error codes) – "
+"put them in the topic. Never write anything like “I see some error message”."
+" Be specific."
+msgstr ""
+
+# bce49f3d2f524d84b736950df4622c1d
+#: ../askforhelp.rst:32
+msgid ""
+"See  :doc:`Basic troubleshooting </manage/troubleshooting/basic>` in case of"
+" an error"
+msgstr ""
+
+# 6a27220ecdf04a7487eba4ad98fbcc1b
+#: ../askforhelp.rst:34
+msgid ""
+"Follow the structure of the forum by creating your topic in a proper "
+"location (subforum). If you are in doubt where to create your topic, post to"
+" the `general questions <https://plone.org/support/forums/general>`_ forum."
+msgstr ""
+
+# 1c4941f69bd448818bc6d5ab513765f2
+#: ../askforhelp.rst:36
+msgid ""
+"Follow the netiquette while visiting and writing on forum or mailing list "
+"(give respect = get respect). This includes:"
+msgstr ""
+
+# 593f1a16c9b047869ae86d55b2b6fdad
+#: ../askforhelp.rst:38
+msgid ""
+"Be patient – Sometimes the problem cannot be solved within minutes or hours."
+" You might need to bump the topic few times till an experienced person comes"
+" to the site and sees it but usually if you do not see any response after "
+"24h it probably means we cannot answer your question."
+msgstr ""
+
+# 13855c2ba0824a67bbcfbafb70a504a4
+#: ../askforhelp.rst:39
+msgid "Do not use bad words. Respect others and what they are doing."
+msgstr ""
+
+# aa168282dcf2441490ac789225e9c9c0
+#: ../askforhelp.rst:40
+msgid ""
+"Do not completely edit/erase your posts after you posted them on the forum "
+"(except for small corrections - they are allowed) Remember that once you "
+"sent them, they belong to the community and shall be used by anyone who "
+"needs it."
+msgstr ""
+
+# 279256cb833b4a35807a81db86724522
+#: ../askforhelp.rst:43
+msgid "How to write a good topic"
+msgstr ""
+
+# 5585f05ed3964b3c95b91a93b36edd03
+#: ../askforhelp.rst:45
+msgid ""
+"Keep in mind, that if you ask a question and all you hear is silence, it "
+"might be a good indicator that something is wrong with your topic. Read the "
+"hints below and try to match your topic with specified pattern."
+msgstr ""
+
+# 494ce674fba548ab898e7177d6af3b1e
+#: ../askforhelp.rst:47
+msgid ""
+"**Subject lines:** most people will read a message only if it appears to be "
+"intelligent. Your subject line is your sales pitch, so you should make your "
+"subject line specific and easy to understand."
+msgstr ""
+
+# 37aab42d3b004606bc0654ef5d52fe69
+#: ../askforhelp.rst:51
+msgid "**A poor subject line:**"
+msgstr ""
+
+# a971eefa013c484fb21f93661fd9b58b
+#: ../askforhelp.rst:53
+msgid "GET METHOD!! URGENT HELP!!!!"
+msgstr ""
+
+# e28ad120effa4f56aa3ac473fe106927
+#: ../askforhelp.rst:55
+msgid "**A better subject line:**"
+msgstr ""
+
+# f0d27c9d9cd740839db9864efb6a0c0d
+#: ../askforhelp.rst:57
+msgid "FooError in Passing GET variables to FormController"
+msgstr ""
+
+# 3cc3aa09b61848a8b431863303e019f1
+#: ../askforhelp.rst:59
+msgid ""
+"The big picture - An opening sentence should state the general problem that "
+"you wish to solve."
+msgstr ""
+
+# c16650eaefba4ddc8d0d8ad2ec1560e3
+#: ../askforhelp.rst:61
+msgid ""
+"**A snapshot of your environment** - For Plone and for other relevant "
+"products: provide version numbers. e.g., \"I'm running Plone 4.0.1 under "
+"Python 2.6.4.\""
+msgstr ""
+
+# 637ebfd5865e4fcc999f0848f92de465
+#: ../askforhelp.rst:63
+msgid ""
+"**Steps to reproduce the issue** - Give information about your ideas of how "
+"this error appeared, what caused it or anything that could lead to "
+"reproducing the error on another computer. The expected result ."
+msgstr ""
+
+# b3c36398af9e4dc6af2cfc73ab179ce3
+#: ../askforhelp.rst:66
+msgid "Asking help in real time chat (IRC)"
+msgstr ""
+
+# 23836dd005ad4cec9e17dbc242d3edab
+#: ../askforhelp.rst:68
+msgid ""
+"Plone community real time chat is at the  `#plone "
+"<irc://irc.freenode.net/#plone>`_ IRC channel on the freenode IRC network."
+msgstr ""
+
+# 7e2216fe101a491092376e7d5113ec86
+#: ../askforhelp.rst:70
+msgid ""
+"If you're not already familiar with IRC, you can visit the `support area "
+"<https://plone.org/support>`_, which offers a web page that connects you to "
+"our chat room right in your web browser."
+msgstr ""
+
+# a67ae70189534eceb0e25b6760a2f5aa
+#: ../askforhelp.rst:73
+msgid "Here are couple of useful hints while connecting to IRC network:"
+msgstr ""
+
+# adae06bffe59432c849916f8973f6f0f
+#: ../askforhelp.rst:75
+msgid ""
+"Do not ask permission to ask a question, but directly start the conversation"
+" having the all necessary input. Follow the example below:"
+msgstr ""
+
+# 57e95ba8f18041ffb82528bc4b356821
+#: ../askforhelp.rst:77
+msgid ""
+"Hi! I am trying to install PloneFormGen product, but it does not appear in "
+"the add on products list."
+msgstr ""
+
+# 394bd73a96c64d04bac9b9af0a3bb58f
+#: ../askforhelp.rst:79
+msgid "When I start Zope in debug mode I get the following log entry."
+msgstr ""
+
+# d006660648a64aa088a646f782e09e9e
+#: ../askforhelp.rst:81
+msgid ""
+"I pasted the log to pastie.org and here is the link for the log entry "
+"http://pastie.org/123123"
+msgstr ""
+
+# 6a122932a70c48fc9e7bef0d3b8369a7
+#: ../askforhelp.rst:83
+msgid ""
+"Be specific - tell us why you are trying to accomplish something and then "
+"tell us what the problem is. Here are some guidelines how to form a good "
+"question for Internet discussion."
+msgstr ""
+
+# 568c55f6b7f545a789a22689f11ecae0
+#: ../askforhelp.rst:85
+msgid ""
+"Do not copy-paste text to chat. This disrupts other people chatting about "
+"other topics. Instead please paste the full traceback error log to "
+"pastie.org and then paste the link to your error log or code (from your "
+"browser's address bar) to the chat."
+msgstr ""
+
+# 91324d9e9aee457fb3d09e19b389df4f
+#: ../askforhelp.rst:87
+msgid ""
+"Do not send direct messages to chat participants unless you have a clear "
+"reason to do so"
+msgstr ""
+
+# b0b5688974e64262a31cea06d1497334
+#: ../askforhelp.rst:88
+msgid ""
+"Keep the chat window open at least 30 minutes so that someone has time to "
+"pick up your question. Be patient."
+msgstr ""
+
+# b192e01d45544919bc0a3b2d52913d26
+#: ../askforhelp.rst:90
+msgid ""
+"Do not repeat yourself - people might be busy or not able to help with your "
+"problem.  Silence doesn't mean we're ignoring you, it means that nobody is "
+"online right now who knows the answer to your question."
+msgstr ""
+
+# 45698ce3313b4f49b2acd71d3d545ce0
+#: ../askforhelp.rst:92
+msgid ""
+"Do not overuse CAPS-LOCK writing, since it is considered shouting and nobody"
+" likes when others shout at them. Do not use excessive exclamation marks "
+"(!!!) or question marks (???) as it makes you look unprofessional and "
+"discourages to help you."
+msgstr ""
+
+# a25a5dde31cf467ea56e3e859ca0c763
+#: ../askforhelp.rst:94
+msgid ""
+"There are many people discussing simultaneously - if you address a message "
+"to a particular person, use his or her nick name. Hint: you can use Tab key "
+"to autocomplete nick name after typing few letters."
+msgstr ""
+
+# 6b3cba2796c64fd0bfea53b101612b9d
+#: ../askforhelp.rst:96
+msgid ""
+"IRC is a real-time communication tool. Keep in mind, that since you write "
+"something, and send it, it cannot be taken back."
+msgstr ""
+
+# a945ffcf81fc4fcf8fb90f6ca574d220
+#: ../askforhelp.rst:98
+msgid ""
+"Try to respond to all questions other users have. IRC is much more fluent "
+"and faster than forum, so don’t worry if you forget about putting something "
+"in the first message – you can still keep up."
+msgstr ""
+
+# e8b66aa199b140b58e3443a282a3873c
+#: ../askforhelp.rst:100
+msgid ""
+"Do not worry if you are not fluent in English - Plone is a global community,"
+" and people will usually try to ask you more detailed questions in a way "
+"that the message gets through."
+msgstr ""
+
+# e925b913c64f43e4bad0e7ca5cbd612a
+#: ../askforhelp.rst:105
+msgid "**Examples**"
+msgstr ""
+
+# 9f4f2c0b67b84ac6ad454cf0a91d9fcc
+#: ../askforhelp.rst:107
+msgid "An ineffective IRC question:"
+msgstr ""
+
+# 05746c398b97471f9f2fe8d406fdf90c
+#: ../askforhelp.rst:109
+msgid ""
+"\"Anyone here using product XYZ? Anyone here have problems installing XYZ?\""
+msgstr ""
+
+# 80c524d4d9704c998e73d58675b4550d
+#: ../askforhelp.rst:111
+msgid ""
+"A question that is more likely to gain attention and a positive response:"
+msgstr ""
+
+# ad1b0eb80ab94b72b31bbf13514c4d98
+#: ../askforhelp.rst:113
+msgid ""
+"\"Hi, I'm using product XYZ on Plone 4.0.1, I have a problem with the "
+"feature that is supposed to doABC— I get error BlahBlahError — what might be"
+" wrong? Here is a link to the error log on "
+"pastie.org:http://pastie.org/123123\""
+msgstr ""
+
+# 94beabcabdc945a4b1030d46616cc3a3
+#: ../askforhelp.rst:116
+msgid "Tracebacks"
+msgstr ""
+
+# d7b84c4b2ceb49d98a63f97222a7b443
+#: ../askforhelp.rst:118
+msgid ""
+"When there is an error, a Python program always products a traceback, a "
+"complete information where the application was when the error happened. To "
+"help you with an error, a complete traceback log is needed, not just the "
+"last line which says something like \"AttributeError\"."
+msgstr ""
+
+# b835e66d30904d0599a17c9446c713de
+#: ../askforhelp.rst:120
+msgid ""
+"Copy full tracebacks to your message (discussion forums) or pastie.org link "
+"(IRC). The most reliable way to get the traceback output is to start Plone "
+"(Zope application server) on foreground mode in your terminal / command "
+"line."
+msgstr ""
+
+# 739e0308183d42508b3e3cff267ef261
+#: ../askforhelp.rst:122
+msgid ""
+"First, shutdown Plone if it's running as service / background process. Then "
+"start Plone on foreground mode."
+msgstr ""
+
+# 310cbcb26c864f75b633626452afa0fe
+#: ../askforhelp.rst:124
+msgid ""
+"On Linux, OSX or similar systems this is (navigate to Plone folder first):"
+msgstr ""
+
+# 65cf8a502bde4e5ea98290a77c305593
+#: ../askforhelp.rst:130
+msgid "On Windows command prompt this is"
+msgstr ""
+
+# 06076ad712034ed88309b3e022f0bde5
+#: ../askforhelp.rst:137
+msgid ""
+"Zope outputs all debug information to the console where it was started in "
+"foreground mode. When the error happens, the full traceback is printed to "
+"the console as well."
+msgstr ""
+
+# c72b016a86304da8bdd63b0c9e2712be
+#: ../askforhelp.rst:139
+msgid ""
+"If Zope does not start in foreground mode it means that your add-on "
+"configuration is bad and you need to fix it and the related traceback is "
+"printed as well. In production mode, Zope ignores all add-ons which fail to "
+"load."
+msgstr ""
+
+# f8d2ad700bf041d292afcb123aa77d96
+#: ../askforhelp.rst:145
+msgid "Credits"
+msgstr ""
+
+# d5fa471a63f84effb2f93d6886245f83
+#: ../askforhelp.rst:147
+msgid ""
+"This how-to originated as an informal, user-friendly alternative to Eric "
+"Raymond's `How to Ask Questions the Smart Way <http://www.catb.org/~esr/faqs"
+"/smart-questions.html>`_. ESR's doc is long and offensive, though once you "
+"realize that ESR is your crusty old merchant-marine uncle it can be fun and "
+"helpful."
+msgstr ""
+
+# b587447843484d7eaa37b094dc001927
+#: ../askforhelp.rst:149
+msgid ""
+"The error report format is adapted from Joel Spolsky's comments on bug "
+"tracking, e.g., in `Joel on Software "
+"<http://www.joelonsoftware.com/articles/fog0000000029.html>`_."
+msgstr ""

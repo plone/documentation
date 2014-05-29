@@ -1,3 +1,4 @@
 external
 !external/index.rst
 broken*
+*.mo
