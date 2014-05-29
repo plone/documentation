@@ -1,0 +1,803 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The Plone Foundation
+# This file is distributed under the same license as the Plone Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone Documentation ['4.3']\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-29 14:19+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../about/contributing.rst:3
+# 70d5d7e04bec40589ad83577f9aa9e77
+msgid "Contributing to the documentation"
+msgstr ""
+
+#: ../about/contributing.rst:5
+#: ../about/documentation_styleguide_addons.rst:5
+#: ../about/helper_tools.rst:5
+#: ../about/styleguide.rst:5
+# 61d2a2905a9a431abc120c9296b506e4
+# aa10980cc63148508453c4ff771861ac
+# a118c4bc612d47c294625c9374133f3e
+# 29e8c4e6f67d41129eeb9f750a588b69
+msgid "Description"
+msgstr ""
+
+#: ../about/contributing.rst:7
+# c1f1375c20bc4247b0c62d521add0de3
+msgid "How to write and submit content for the Plone Documentation."
+msgstr ""
+
+#: ../about/contributing.rst:14
+# 7c5598e8c0214d2596003903958a3306
+msgid "Reaching the documentation team"
+msgstr ""
+
+#: ../about/contributing.rst:16
+# ebffcdea15bb4f488c8d6cdeea497370
+msgid "The Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent. To reach this team for any questions please contact"
+msgstr ""
+
+#: ../about/contributing.rst:19
+# 477674e8a5bc41ac8abd1d9748224cef
+msgid "`Documentation team mailing list <https://plone.org/support/forums/docs>`_"
+msgstr ""
+
+#: ../about/contributing.rst:21
+# c3af24d37ef84f3b87fb681386f5581e
+msgid "*#plone-docs* IRC channel on irc.freenode.net"
+msgstr ""
+
+#: ../about/contributing.rst:24
+# bada691cb29c44fdbe9082575d177217
+msgid "Contributing"
+msgstr ""
+
+#: ../about/contributing.rst:26
+# d00d5e1442d74a13a78014492680e9a1
+msgid "The Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_."
+msgstr ""
+
+#: ../about/contributing.rst:28
+# 50411d9a23f447769f489a8517c975a5
+msgid "If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <http://plone.org/foundation/contributors-agreement>`_."
+msgstr ""
+
+#: ../about/contributing.rst:30
+# faab08cf2e8d4b0a9a53c82914366b15
+msgid "If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team, for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net"
+msgstr ""
+
+#: ../about/contributing.rst:34
+# 57700ab042814076b1f44671556e9549
+msgid "Git workflow / branching model"
+msgstr ""
+
+#: ../about/contributing.rst:36
+# ed4c86c13d0a4a3ea8333c3d8d4d347b
+msgid "The documentation is hosted on github. And there are tools hooked directly into it:"
+msgstr ""
+
+#: ../about/contributing.rst:38
+# 5c01b2cd7cec42f994c8c88973afb762
+msgid "there are branches for the different versions of Plone"
+msgstr ""
+
+#: ../about/contributing.rst:40
+# 0cf0f2fe6c044611a652a39bfe98a268
+msgid "translation hooks with Transifex are in place"
+msgstr ""
+
+#: ../about/contributing.rst:42
+# 44f9f10af4db4948924a4c929ae3fcb6
+msgid "some external documentation is pulled in, to collect all the documentation in one place."
+msgstr ""
+
+#: ../about/contributing.rst:44
+# e1c84c1ec7104328b0e3ae181471f26e
+msgid "For these reasons, it is important we keep the documentation coherent. Therefore, we follow a simple workflow, which we ask all contributors to respect:"
+msgstr ""
+
+#: ../about/contributing.rst:48
+# a2cdeb1c3a584f2bae3650b9834dee23
+msgid "Please  **DO NOT** commit to master directly. Even for the smallest and most trivial fix. **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself."
+msgstr ""
+
+#: ../about/contributing.rst:50
+# e2afd53f0244431d8d980adad6f741f6
+msgid "Your pull requests may be checked for spelling, and clarity. So don't hesitate to contribute also if English is not your first language, we will try to be helpful in corrections without being annoying."
+msgstr ""
+
+#: ../about/contributing.rst:52
+# db47e51190c34e08aa1c32bb8dec5f60
+msgid "If you don't get feedback on your pull request in a day please come to #plone-docs and ask."
+msgstr ""
+
+#: ../about/contributing.rst:54
+# 0d9d7e0beab843bbaecabbc597334966
+msgid "The main goal of this process is not to annoy you. On the contrary, we **love** your contributions."
+msgstr ""
+
+#: ../about/contributing.rst:56
+# e6b66d00eebd448fb82ec5d253cb98e2
+msgid "But the documentation team also wants to keep the documentation in good shape."
+msgstr ""
+
+#: ../about/contributing.rst:60
+# d536e641a7aa4c9eac612bbbf25c9257
+msgid "Pull request checklist"
+msgstr ""
+
+#: ../about/contributing.rst:62
+# 608088c9139e4cdabdffab041d10280b
+msgid "Making a good pull request makes life easier for everybody:"
+msgstr ""
+
+#: ../about/contributing.rst:64
+# 687c19f2a97b4e89b77a0c7cdbf8880a
+msgid "The title and description of a pull request MUST be descriptive and need to reflect the changes. So please say \"grammar fixes on the intro page\" or \"new page: feature x explained as a user story\""
+msgstr ""
+
+#: ../about/contributing.rst:66
+# 0aaa23ec5edc42c89d5e63a60ee3421e
+msgid "If you can state for which versions of Plone your submissions are valid, that would be awesome."
+msgstr ""
+
+#: ../about/contributing.rst:69
+# ce9f1a477f664b7a8d6f165fb311aeaa
+msgid "Editing the documentation using git"
+msgstr ""
+
+#: ../about/contributing.rst:71
+# eb1b3604cc894d0b941307c614d22371
+msgid "This is the recommended method of editing the documentation for advanced users."
+msgstr ""
+
+#: ../about/contributing.rst:74
+# f4da18a28a724c1dbaf76eb9b0031704
+msgid "Learn about `Sphinx <http://sphinx-doc.org/>`_ and `restructured text <http://sphinx-doc.org/rest.html>`_."
+msgstr ""
+
+#: ../about/contributing.rst:77
+# 8470fbdc19b54e959a72380fbc172cec
+msgid "`Fork <https://help.github.com/articles/fork-a-repo>`_ the documentation source files into your own repository"
+msgstr ""
+
+#: ../about/contributing.rst:79
+# a37da9fd023c4a9cbc51eb1d322ce3c2
+msgid "Edit the file(s) which you want to update."
+msgstr ""
+
+#: ../about/contributing.rst:81
+# 33c1bfe8c3804f539ae38bd3097392f4
+msgid "Check that you do not have any syntax errors or typos"
+msgstr ""
+
+#: ../about/contributing.rst:83
+# 18c1033e97fb481496b537dadf031a09
+msgid "Commit your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request."
+msgstr ""
+
+#: ../about/contributing.rst:85
+#: ../about/contributing.rst:96
+# d3b3faab140149548f14baccca76ffe4
+# e8cc535c77584b38a0b86b7d2c9c7090
+msgid "For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`."
+msgstr ""
+
+#: ../about/contributing.rst:88
+# a7ca4a99cdd845d8b4d7954adcb66892
+msgid "Editing the documentation on GitHub"
+msgstr ""
+
+#: ../about/contributing.rst:90
+# 73596bcf4a12468dbf33dcba0fcefbf5
+msgid "Go to `Plone Documentation <https://github.com/plone/documentation>`_ on  GitHub."
+msgstr ""
+
+#: ../about/contributing.rst:91
+# 5a582b8a5ad6455a9de30c5ee57ea986
+msgid "Press the **Fork** button. This will create your own personal copy of the documentation."
+msgstr ""
+
+#: ../about/contributing.rst:92
+# ddaffcb52b2343e3bf2b396fef4443cb
+msgid "**Edit** files using GitHub's text editor in your web browser"
+msgstr ""
+
+#: ../about/contributing.rst:93
+# 4a058ad4d30a46da82349fe9ae513097
+msgid "Fill in the **Commit changes**-textbox at the end of the page telling why you did the changes. Press the **Commit changes**-button next to it when done."
+msgstr ""
+
+#: ../about/contributing.rst:94
+# 116bc75fb73041f4bf63ef300bfee9fe
+msgid "Then head to the green *New pull request*-button (e.g. by navigating to your fork's root and clicking \"Pull requests\" on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text. Just press **New pull request** button, finally click \"Send pull request\"."
+msgstr ""
+
+#: ../about/contributing.rst:95
+# 4de9585b20d9454c9a81ba77a3d83057
+msgid "Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on Github."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:3
+# e1f4404da0f54d30821e9553de3dc9ad
+msgid "Documentation Styleguide for Add ons"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:7
+# c55c678cf3394d68a7335d73a98da9e5
+msgid "A guide to write Documentation for Plone Add-ons"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:12
+#: ../about/styleguide.rst:12
+# b46a0e8daf7a4e15b27dc826cee5cab3
+# 0b84b178fd1e4ba4b0d833ad99880747
+msgid "Introduction"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:14
+# 0cc17081ecf241f6bc426a3d322f5579
+msgid "Having a 'best practices' approach for writing your documentation will benefit the users of your add-on, and the community at large."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:16
+# 688136feb3524b13ad6a0ac15ffdfe8f
+msgid "Even better: when there is a clear structure and style for your documentation, the chances that other people will help improve the documentation increase!"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:18
+# 12110446bf4c43b88d12a843f770b659
+msgid "Further advantages of following this guide:"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:20
+# 30c9b580c69745faa4a3177fd135b906
+msgid "The documentation can be included on `docs.plone.org <http://docs.plone.org>`_"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:21
+# 851f863a32a44c1390ec0dc6066ab98b
+msgid "It will be in optimal format to be translated with tools like `Transifex <https://www.transifex.com/>`_."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:22
+# 955c3ae833744d5881e3aea0a327f94f
+msgid "Unicorns will come and play in your garden. No, *really*."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:27
+# 9d1ba36c87834c1f8d6dcef3c49ce49d
+msgid "Best practices"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:29
+# 3951fecd4c1c4c7d83bb6241e2f96935
+msgid "For including documentation into docs.plone.org, **please** follow these guidelines:"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:31
+# 5d3a9b04eb2e4a9297e97dbd4ea48851
+msgid "Please do not symlink to, or use the *include* directive on files that live outside your '/docs' directory. Linking *the other way around* is fine. So, if you create a README.rst, do it in the /docs/source directory, and make a symlink to it from the root of your repository. Github will display that one just fine."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:32
+# 1190490c846a4b32819a2a28c32b0a29
+msgid "Please do not use 'autodoc' to include comments of your code."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:33
+# e81b478812394c4e997bee21c57dfed4
+msgid "Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**. Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:35
+# 8c611174dd7a4467a7cf2bf9a1f394d2
+msgid "*Your documentation is not code.*"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:37
+# c6df08b190ee4f6aa8a1d86e4b3bc93f
+msgid "Let's repeat that, shall we?"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:39
+# 264c90a9ab1a4ed3aafa1e75f1488c1e
+msgid "**Your documentation is not code.**"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:41
+# 542f22b3ed6a4651aa9a48cf3df25b63
+msgid "It needs to be translatable. No, not into PHP, but into Chinese, Catalan, Klingon, ..."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:43
+# 0d99652a426d403a9f5cce32921353bc
+msgid "Think about it this way: each sentence in the documentation can be turned into a .po string. Breaking sentences with linebreaks would mean a translator will only see part of the sentence, making it impossible to translate."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:52
+# b7ef68238d114e85a5dcad815369c288
+msgid "Styleguide"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:54
+# eefc0bf8a91f429dbff0da23a5da337a
+msgid "All documentation should be written in **valid** `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_  There are some :doc:`helper_tools` available."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:55
+# bfce602e2e7d499e9865ce8d662c02ad
+msgid "All documentation should be in the folder */docs/source*"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:56
+# 1ce8850f07b141de9138c2a5486b4468
+msgid "It's good practice to have a README.rst and a CHANGES.rst file in the top level of your package. If you want that information to also be available in the documentation on docs.plone.org, you should move those files into the /docs/source directory, and then make a symlink in the root of your package. Don't forget to update setup.py if you're using these files as long_description!!"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:57
+# 38f3e02fc6ec4c98a01de11045b2a206
+msgid "that README.rst should just contain a **short** description of your package, what it does, and the requirements. Do **not** put your entire documentation in it."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:58
+# d493a31742c742a3947c4d5a0ba41168
+msgid "The documentation goes into /docs/source/\\*.rst. Make sure the starting page of your doc is called index.rst. Create multiple pages if it makes your documentation clearer."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:59
+# e9d8d59d2d3c454cbf1d44ee8574d5bf
+msgid "If you want to include images (*Yes! We love you! But do remember, .png or .jpg, no .gif please*), you should place them into /docs/_images"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:60
+# 3e69452558654a51925f3e5d721a9d23
+msgid "You should use `Sphinx <http://sphinx-doc.org/>`_"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:63
+# 38500e0d753a477c83b0b3670847d2a2
+msgid "Directory Structure"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:65
+# bc2d68df130140d5a1d9f4ea65c0fae7
+msgid "You should configure Sphinx in that way that you have a separate */source* directory for your documentation .rst files"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:71
+# d33593ca5863453886983372b639122b
+msgid "/docs could contain your Makefile and conf.py"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:73
+# 86571764cb05435ead6dbaa1e97180f7
+msgid "/docs/_images should *only* contain images"
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:75
+# 57f28030a86e4d928c41fd112b45df79
+msgid "/docs/source should *only* contain your documentation written in rst. Use .rst as the file extension."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:77
+# ab0245b75afb47b1847ad947cf2cd8a8
+msgid "use relative links for internal links within your /docs/source directory, to include images for instance."
+msgstr ""
+
+#: ../about/documentation_styleguide_addons.rst:79
+# 3c351e4f6c7243068f193e1c561a48a8
+msgid "make sure all .rst files are referenced with a Table of Contents directive, like this example:"
+msgstr ""
+
+#: ../about/helper_tools.rst:3
+# 72d12c79fc8c41f0ac1818cfbbf10679
+msgid "Helper tools for writing Documentation"
+msgstr ""
+
+#: ../about/helper_tools.rst:7
+# e5feb4eacb2f43368e2ad03ec2edb982
+msgid "Tools and Plugins which will help to write documentation."
+msgstr ""
+
+#: ../about/helper_tools.rst:16
+# ca14df12a81048878041d33b1a4ce9b5
+msgid "Online tools:"
+msgstr ""
+
+#: ../about/helper_tools.rst:18
+# 72ebb0db7217418989596e3ec1360a33
+msgid "`rst.ninjs.org <http://rst.ninjs.org/>`_ and a fork with more Sphinx support at `livesphinx.herokuapp.com <http://livesphinx.herokuapp.com/>`_"
+msgstr ""
+
+#: ../about/helper_tools.rst:19
+# 3790a36c697b4d42932e4312839f8241
+msgid "`notex.ch <https://notex.ch/>`_"
+msgstr ""
+
+#: ../about/helper_tools.rst:23
+# 0d02df830fd047969641065d3ca6cff1
+msgid "Offline tools:"
+msgstr ""
+
+#: ../about/helper_tools.rst:25
+# e84da6e75f56429ab38936df08495020
+msgid "**ReText** is a handy editor for **.rst** and **.md** formats. On Ubuntu and Debian-based systems all you have to do is"
+msgstr ""
+
+#: ../about/helper_tools.rst:33
+# 7fd2bebb37ad4a61b7b2421b3664c520
+msgid "**Pandoc** If you have existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the \"swiss army knife\" of document conversions. For instance, it can create valid rst files from Markdown and quite a number of other formats."
+msgstr ""
+
+#: ../about/helper_tools.rst:36
+# 450ef62c413f4bd99d1c0b182e1906b6
+msgid "**Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer."
+msgstr ""
+
+#: ../about/helper_tools.rst:39
+# 94337198b5bb499b82371c1d61494caa
+msgid "**Emacs** has a nice `rst-mode <http://docutils.sourceforge.net/docs/user/emacs.html>`_. This mode comes with some Emacs distros. Try ``M-x rst-mode`` in your Emacs and enjoy syntax coloration, underlining a heading with ``^C ^A``"
+msgstr ""
+
+#: ../about/helper_tools.rst:44
+# cbe6b97b8ad84dbe950485682d408883
+msgid "Another nice tool for Emacs is `Flycheck <https://flycheck.readthedocs.org/en/latest/index.html>`_."
+msgstr ""
+
+#: ../about/helper_tools.rst:46
+# ccebc91007034cf38e68d41a525b6420
+msgid "**Eclipse** users can install **ReST Editor** through the Eclipse Marketplace."
+msgstr ""
+
+#: ../about/helper_tools.rst:49
+# 5af1a82a7a2449a1b0e11ba0c0fbe5d2
+msgid "**Vim** does syntax highlighting for RST files. There is also a nice plugin with enhanced functionalities called `Riv <https://github.com/Rykka/riv.vim>`_."
+msgstr ""
+
+#: ../about/index.rst:3
+# d7f7311a1d71407fbf6cbc10d434f761
+msgid "About this documentation"
+msgstr ""
+
+#: ../about/styleguide.rst:3
+# 02ccc90c8c8f4230bc1bed498672f3d1
+msgid "Rest Styleguide"
+msgstr ""
+
+#: ../about/styleguide.rst:7
+# 323b2ba266dd4602acf81b3d4681fa29
+msgid "How to write content for the Plone Documentation."
+msgstr ""
+
+#: ../about/styleguide.rst:14
+# 0eb51d5a353848d98f174ca3bfaaf097
+msgid "This chapter explains the basics of editing, and updating to the *Plone Documentation*."
+msgstr ""
+
+#: ../about/styleguide.rst:20
+# 50e6cff7b31f4e409cb20dd3a5418775
+msgid "All pages should be in ReStructured Text, and have a .rst extension. Images should be in .png, or .jpg format. Please, don't use .gif, because the PDF-generating software has issues with that."
+msgstr ""
+
+#: ../about/styleguide.rst:24
+# 32d371cdee864f76b68a5eb777c31515
+msgid "Line length & translations"
+msgstr ""
+
+#: ../about/styleguide.rst:26
+# c74fdbb757564a65b2da99c80c2bf765
+msgid "Documentation is not code. Repeat after us: **Documentation is not code.**"
+msgstr ""
+
+#: ../about/styleguide.rst:28
+# 9209eab4b39047a79e6ddb4b4634823e
+msgid "Therefore, documentation should **not** follow PEP8 or other arbitrary conventions."
+msgstr ""
+
+#: ../about/styleguide.rst:32
+# d239b0d67f124d1d8a17444f7f620963
+msgid "**Remember :** This documentation is set up so it is fully translatable by using standard tools like transifex."
+msgstr ""
+
+#: ../about/styleguide.rst:34
+# 35d21367ca204024a21af50afe3dfbf5
+msgid "Your sentences will become .po strings, to be translated."
+msgstr ""
+
+#: ../about/styleguide.rst:36
+# 8e7904fe8055474eba78dd3ce74f65c4
+msgid "Now, think about how translations would work if the translator can only see an arbitrary part of a sentence. Translating is hard enough without creating additional problems..."
+msgstr ""
+
+#: ../about/styleguide.rst:38
+# 4d922b8e5e4b4df09d483bf07a72cf31
+msgid "If you want to keep short lines:"
+msgstr ""
+
+#: ../about/styleguide.rst:40
+# b504fc89d46b41df88ba3f4043809d7d
+msgid "Use **semantic linefeeds** (http://rhodesmill.org/brandon/2012/one-sentence-per-line/) when you are editing restructured text (or any other interpreted rich text format) because it will greatly improve the editing and maintenance of your documents."
+msgstr ""
+
+#: ../about/styleguide.rst:44
+# f35313cf040d46a3bd8d80269407e8b1
+msgid "Take this example paragraph::"
+msgstr ""
+
+#: ../about/styleguide.rst:54
+# 7de3afd3410b4664a2b9718a4a16f8fd
+msgid "Notice how it's easier to just reshuffle sentences and add stuff if, instead of using your editor \"autowrap\" feature, you manually insert line breaks after full stops, commas, or upon \"grammatical\" boundaries (and not merely word ones)."
+msgstr ""
+
+#: ../about/styleguide.rst:60
+# f7af76bafe514e85bcbf3da15471fdc5
+msgid "But again, do not be afraid to use more than 80 characters. It's 2014, and it's documentation."
+msgstr ""
+
+#: ../about/styleguide.rst:64
+# 2e5ebe6bb231493ea34e46d205004f45
+msgid "Document page format"
+msgstr ""
+
+#: ../about/styleguide.rst:68
+# 181c6bbc22a84980a4fbe3ee63e805db
+msgid "Here are some Sphinx coding conventions used in the documentation."
+msgstr ""
+
+#: ../about/styleguide.rst:71
+# a67031046fa54de38fcd04fdd3e5f45b
+msgid "Tab policy"
+msgstr ""
+
+#: ../about/styleguide.rst:73
+# bb15d8578c4442e59c5b472ae06d0a8f
+msgid "Indentation 4 spaces"
+msgstr ""
+
+#: ../about/styleguide.rst:75
+# 8de0e38c93ca44eaab530f194dd23f93
+msgid "No hard tabs"
+msgstr ""
+
+#: ../about/styleguide.rst:77
+# 2e3a518d07654673969828ea8716e55a
+msgid "No trailing whitespaces"
+msgstr ""
+
+#: ../about/styleguide.rst:80
+# 5063ec62725e40da9023fcd2b669c559
+msgid "Headings and filenames"
+msgstr ""
+
+#: ../about/styleguide.rst:82
+# b67a3642f7534f85bb6cb36dc2f32374
+msgid "For the headings, capitalize the first letter only"
+msgstr ""
+
+#: ../about/styleguide.rst:84
+# 009380eadb3b49db812592c6f8f5b62e
+msgid "For the filenames, use_underscore_naming_style"
+msgstr ""
+
+#: ../about/styleguide.rst:87
+# a0d298590be342398a6a947b4242cb4e
+msgid "Page structure"
+msgstr ""
+
+#: ../about/styleguide.rst:89
+# 00d756505c7a4e5893d04faf437844ab
+msgid "Each page should contain, in this order:"
+msgstr ""
+
+#: ../about/styleguide.rst:91
+# 45af3d33ca0944fca930e4cfab67e2c9
+msgid "The main heading. This will be visible in the table of contents:"
+msgstr ""
+
+#: ../about/styleguide.rst:99
+# 5713fb91bc244dd2a9ffafd4743da7bd
+msgid "The description of the page, which will appear in Plone's *Description* Dublin Core metadata field. This created using the reST *admonition* directive. A single paragraph of text consisting of 1-3 sentences is recommended, so that the same text fits into the search engine results (Google):"
+msgstr ""
+
+#: ../about/styleguide.rst:112
+# abfd42627b524c81ab184a7ef0ba9101
+msgid "The *contents* directive will cause Sphinx to generate the *Table of Contents* shortcut links at the start of the page.  Using the *local* option excludes the page itself and ToC title from the listing:"
+msgstr ""
+
+#: ../about/styleguide.rst:120
+# 3585ce9115ba4f0b840292ea99062e64
+msgid "Introduction paragraph: A brief overview:"
+msgstr ""
+
+#: ../about/styleguide.rst:129
+# 92b692eb5f2c47ecb64a50ba3fbad276
+msgid "A number of paragraphs: The actual content of the document page:"
+msgstr ""
+
+#: ../about/styleguide.rst:139
+# 75886b4d91bb4e909393d2598d53912f
+msgid "Section structure"
+msgstr ""
+
+#: ../about/styleguide.rst:141
+# a4f965873ca845b091b8fc1477cec8f1
+msgid "Each section (folder) must contain"
+msgstr ""
+
+#: ../about/styleguide.rst:143
+# 9c73f2178db04ffb8c803fe418c87ed4
+msgid ":file:`index.rst` with:"
+msgstr ""
+
+#: ../about/styleguide.rst:145
+# 73cad1914f484d2d8d3480e09cb084b1
+msgid "Section heading: This will be visible in the table of contents"
+msgstr ""
+
+#: ../about/styleguide.rst:147
+# aa2d38b99821476cb4a7c1b6c395b844
+msgid "A single paragraph summarizing what this section is all about. This will be mapped to Plone folder description."
+msgstr ""
+
+#: ../about/styleguide.rst:150
+# 1cbe7c4ed9384bc6812a7dc230d5a81b
+msgid "Sphinx toctree directive, maxdepth 2. Each ``.rst`` file in the folder should be linked to this toctree."
+msgstr ""
+
+#: ../about/styleguide.rst:163
+# f923ad981c714e4dbb1e80d45bfe3e94
+msgid "Headings style guide"
+msgstr ""
+
+#: ../about/styleguide.rst:165
+# fa9c1c1159354b7397d458b219091207
+msgid "ReStructured text and Sphinx enable any style you would prefer for the various heading level you would need. In example, underlining level 1 headings with ``.``, level 2 headings with ``#`` and level 3 headings with ``|`` is perfect as far as ``docutils`` is concerned. But not for a human documentation maintainer."
+msgstr ""
+
+#: ../about/styleguide.rst:171
+# 9de3ad81133a469791fad4ec32ef7768
+msgid "In order to have consistent heading styles in all files that make this great document, it is recommended to follow strictly the rules stated in the Sphinx manual here: http://sphinx-doc.org/rest.html#sections"
+msgstr ""
+
+#: ../about/styleguide.rst:175
+# 8837ef5b2fae49c589fa42185ed2093b
+msgid "As individual files do not have so called \"parts\" or \"chapters\", the headings would be underlined like this:"
+msgstr ""
+
+#: ../about/styleguide.rst:194
+# ebffd42c67e144219fa17ce0d5ebb5cb
+msgid "Syntax highlighting"
+msgstr ""
+
+#: ../about/styleguide.rst:196
+# a76a60f25d2749e4ae6020575ff3de39
+msgid "Sphinx does syntax highlighting using the `Pygments <http://pygments.org/>`_ library."
+msgstr ""
+
+#: ../about/styleguide.rst:199
+# 91932d38e6ed4deab5e82945916eeef2
+msgid "You can specify different highlighting for a code block using the following syntax::"
+msgstr ""
+
+#: ../about/styleguide.rst:210
+# 3db452e7f6f34d09b17be1bad15456ea
+msgid "You can specify the language used for syntax highlighting by using the ``code-block`` directive:"
+msgstr ""
+
+#: ../about/styleguide.rst:221
+# 27e8a4a668e24780b2876c97874d19a5
+msgid "For example, to specify XML:"
+msgstr ""
+
+#: ../about/styleguide.rst:229
+# 529283a37ee44e1499322ca195424268
+msgid "... or UNIX shell:"
+msgstr ""
+
+#: ../about/styleguide.rst:238
+# 6b8a74399de84fffa572c021f43eb023
+msgid "... or a buildout.cfg:"
+msgstr ""
+
+#: ../about/styleguide.rst:249
+# faeb8c4863464163b8e344d85706f430
+msgid "... or interactive Python:"
+msgstr ""
+
+#: ../about/styleguide.rst:266
+# 6094f6cbe5964acdb04c064e63431fed
+msgid "Setting the highlighting mode for the whole document:"
+msgstr ""
+
+#: ../about/styleguide.rst:276
+# 431fcafeacd04153b80a1d632ce95dc8
+msgid "If syntax highlighting is not enabled for your code block, you probably have a syntax error and Pygments will fail silently."
+msgstr ""
+
+#: ../about/styleguide.rst:279
+# 145342a656114387b4fd05b5caef236e
+msgid "The full list of lexers and associated short names is here: http://pygments.org/docs/lexers/"
+msgstr ""
+
+#: ../about/styleguide.rst:283
+# 515a970604ed48a0a2b288e5839b8689
+msgid "Other Sphinx and restructured text source snippets"
+msgstr ""
+
+#: ../about/styleguide.rst:285
+# 071a0c1ff7544544a1b931ca1bfb20e8
+msgid "Italics:"
+msgstr ""
+
+#: ../about/styleguide.rst:291
+# 4efd61dcc16a492f8c7bb49fef58aa03
+msgid "Strong:"
+msgstr ""
+
+#: ../about/styleguide.rst:297
+# 903e45fd9a404dc7ac52c8197b970f96
+msgid "Inline code highlighting:"
+msgstr ""
+
+#: ../about/styleguide.rst:306
+# a0c8233bbab042adb40e8a6d31c93883
+msgid "These Python objects are rendered as hyperlinks if the symbol is mentioned in a relevant directive. See http://sphinx-doc.org/domains.html and http://sphinx-doc.org/ext/autodoc.html"
+msgstr ""
+
+#: ../about/styleguide.rst:311
+# a583cc774f5e44e88fdcd4dab6eb9856
+msgid "Making an external link (note the underscore at the end):"
+msgstr ""
+
+#: ../about/styleguide.rst:317
+# 3921e460285c49f18b3eae85b2cde022
+msgid "Making an internal link:"
+msgstr ""
+
+#: ../about/styleguide.rst:329
+# 9f73a602a2af48e4a0463133ec83b4aa
+msgid "Glossary:"
+msgstr ""
+
+#: ../about/styleguide.rst:335
+# 39e04bd2e998478f9d1edceb79ff171d
+msgid "Bullet list:"
+msgstr ""
+
+#: ../about/styleguide.rst:342
+# dc5293b7141a4936b7d158d85b63617e
+msgid "Warning:"
+msgstr ""
+
+#: ../about/styleguide.rst:352
+# 507ef58b3c0b42e19a8ec57a4f6dd80f
+msgid "This is a warning box (yellow)"
+msgstr ""
+
+#: ../about/styleguide.rst:362
+# 4647c59df30347dabb9c7ad213a0c960
+msgid "This is an error box (red)"
+msgstr ""
+
+#: ../about/styleguide.rst:364
+# 5fca57ecc9f94fe8b05738da2af49bbe
+msgid "Note:"
+msgstr ""
+
+#: ../about/styleguide.rst:374
+# 100b1fa8410c4500b6529fa3f5658330
+msgid "This is a note box (blue)"
+msgstr ""
+

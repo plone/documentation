@@ -1,0 +1,4259 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) The Plone Foundation
+# This file is distributed under the same license as the Plone Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone Documentation ['4.3']\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-29 14:19+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../adapt-and-extend/basics.rst:2
+# 535b3b7183744ae7a8a2c98cebb9c28f
+msgid "Basic Changes (Look and Feel)"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:2
+# ddb5545dd5844834a2a3127ccc7b6653
+msgid "Change the Font Colours"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:4
+# 71e9f2cc45404c6591234fd5521ff04b
+msgid "How to change the font colours - a through-the-web approach."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:6
+# 434c02457ed64d89bdf30faacde74601
+msgid "You'll be introduced to some very simple techniques here for through-the-web customizations of Plone's CSS."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:9
+# 86784dcc0596480bba0f22748a5509ad
+msgid "How to locate the styles you want to change"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:10
+# f30a70a6898241c687daaf0b29e4eec8
+msgid "How to override these styles using the ploneCustom.css style sheet"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:12
+# 45c8be94c2514bbb8dd1fa3097add80b
+msgid "In this case we'll change the colour of page titles from black to turquoise."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:16
+# d8ff062d1f2f454cac45556ae859a86e
+msgid "Before you start"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:18
+# dc3742e2a5644389aac0cd8a1fc8d964
+msgid "For convenience, Plone themes often comprise a number of separate style sheets, but for speed and efficiency, in production mode, Plone has a mechanism (portal\\_css) for packaging these up into just one or two files."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:23
+# 984bd46436f0481f9b5170db74078436
+msgid "You'll need to disable this when making changes to your site or customizing CSS. So make sure you've followed the instructions on how to put your site into :doc:`debug mode </develop/plone/getstarted/debug_mode>`."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:28
+# dea8a436716244bcbb7662456a2801f5
+msgid "Locating the styles you want to change"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:30
+# a9eed7bf87d34ce197c4349b08092b61
+msgid "If you don't already have a page in your Plone site, add one, save it and inspect it in view mode."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:32
+# 25688f91c4444a1fbc7b13efba738093
+msgid "Use `Firebug <https://getfirebug.com/>`_ , or a similar tool, to locate the class name of the page title - in this case its h1.documentFirstHeading."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:37
+# 5ba1052121184efc952270f8dd23d77b
+msgid "Locating the ploneCustom.css style sheet"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:39
+# e6ff1639344844a8958235c9ee4ea964
+msgid "As a matter of course, the last style sheet to load on every Plone page is ploneCustom.css. You'll see this if you inspect the HTML head tag of your page using Firebug. If you dig further, you'll probably find that this style sheet is completely empty. By the rules of precedence in the CSS Cascade, any styles in this sheet will override styles specified in the preceding sheets. So you have a \"blank sheet\" here for your own customizations."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:47
+# 9eb6607cdef34335b8fca2532194d05b
+msgid "The trick now is to locate this file, so that you can make it available for editing."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:50
+# 97d8c5726d124944b5601c730aefe57c
+msgid "To make life easier for yourself, you might like to open a second tab or browser window at this point - you can then quickly switch back to the first tab to see your changes."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:54
+# 3a78577c185c4d4aa17d5d6791e3392a
+msgid "Go to Site Setup > Zope Management Interface and click portal\\_skins"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:56
+# d359090d60db49feb4a39cabf7935258
+msgid "Use the Find option in the tabs across the top to locate ploneCustom.css:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:59
+# 22e22d878b9d4050ab0f690d1b569d8c
+msgid "Type *ploneCustom.css* in the \"with ids:\" box and click Find"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:60
+# 7170c5be013e42a6ac8c01c993022230
+msgid "You may get more than one result, it doesn't matter which you choose to click on, however best practice is to choose the one flagged with the red asterisk."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:65
+# cc0ef4f403a449379a550ba7b3d668f2
+msgid "Customizing and Editing ploneCustom.css"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:67
+# 3b0687a21afe4fc0b39516ec50e8da90
+msgid "When you click on ploneCustom.css you'll find that you can't edit it. The next stage is to put the ploneCustom.css in a place where it can be edited. You'll see a Customize option just above the grey text area, click the Customize button and you'll find that the style sheet has been automatically copied to portal\\_skins/custom."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:73
+# d0d77c87a1c44185a503c15038c115c9
+msgid "You're now free to edit the file as you like. To change the colour of our page titles, add:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:82
+# a503e86bfaa94eebbae5bb2fb4c0d641
+msgid "and save."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:84
+# a276526d665f419985ebbee6ca280c01
+msgid "If you've installed Plone 4 with the Sunburst theme, the ploneCustom.css comes with a number of commented out pre-packaged styles that you might like to experiment with. You can override the layout styles to a fixed width and alter the colours of the links."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:90
+# 10ef30db9b5f4a18ae5f2fa6705804b7
+msgid "Rolling back your changes"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:92
+# 723adc412b3a4a258d65a603dbc77641
+msgid "You've got a couple of options for reverting back to the original CSS:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:94
+# bc0acd442af345b6a52faa5f8c51995b
+msgid "comment out your styles in the ploneCustom.css - the usual CSS commenting syntax applies"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:97
+# aeb8e4ee902c4dafa1e247ec1228407e
+msgid "delete (or, if you want to keep a note of what you did, rename) your version of ploneCustom.css, you'll find it here:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:100
+# 67b4d835d19e4d68b91e5932f79ab675
+msgid "Site Setup > Zope Management Interface > portal\\_skins > custom"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:101
+# 2853974150e0408b88025dae71ce2fb5
+msgid "you can choose the delete or rename options - try renaming to ploneCustom.css.old"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:103
+# 83ffa4c5c16e4ff4855de02365b20619
+msgid "you can then go back to the beginning of the process of locating and customizing ploneCustom.css"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:107
+#: ../adapt-and-extend/change-the-logo.rst:189
+# c2108121b4a94310925a401ed05665ab
+# dd7358f03a264a4e9d1c066dae7b55fe
+msgid "Further Information"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:109
+# bea8675cab0940a88c3af5c438e3351b
+msgid "You've actually encountered two types of customization here."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:111
+# b15426d698c14c4386fd5bc7bd454a4c
+msgid "The first is a standard method of using order of precedence - the Cascade - to overwrite CSS styles as they reach the browser."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:113
+# b243ea968eaa4d528582fdcd7a9cc144
+msgid "The second is a Plone/Zope specific method of overriding the style sheets themselves by dropping them into the custom folder of portal\\_skins. This method can also be used for templates and other resources and is explained in more :doc:`depth in the section on Skin Layers </adapt-and-extend/theming/templates_css/skin_layers>` in this manual."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:120
+# a3a70b09de2241a882e0b7e6f256ec1a
+msgid "More advanced techniques, including incorporating your own style sheets into a theme product, are covered later in this manual."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-font-colours.rst:123
+# eaf1cc68171b47299c014899f6e727cb
+msgid "You can find out more about how the CSS Registry (portal\\_css) packages up the style sheets to deliver them to the page in the :doc:`Templates and Components to Page </adapt-and-extend/theming/templates_css/index>` section of this manual."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:2
+# 0d9ddbc25b7c49548d3c4aaaceecf19b
+msgid "Change the Logo"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:4
+# 8b26a230e28949639ae16dafb97f1ff6
+msgid "How to substitute the standard Plone logo with your own logo - a through-the-web approach."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:8
+# b363458d76a74f46b92f21d9fc1c1620
+msgid "The Basics"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:10
+# 47a64c335af140adbbf97626e516bc7e
+msgid "In Plone 3 and 4, the logo is simply an image with a link to the home page of your site wrapped around it (there's just one small difference between versions, the name is logo.jpg in Plone 3, logo.png in Plone 4)."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:20
+# 2eb69b1d470c4065ba2a2dc6f8bd376d
+msgid "If you're happy with this approach, then you won't need to touch the HTML as all the attributes in this snippet are generated automatically. Follow the instructions in Section 1: Changing the Image and its Title."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:24
+# b9835c15c21849328e2258edf07961db
+msgid "If you just want to tweak the styles a little bit, then go to Section 2: Changing the portal\\_logo style."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:27
+# e1e3e02f7cb146d98530477165314ac9
+msgid "If you would rather deliver your logo in a different fashion and need to rewrite the HTML, then you can do this by customizing the logo template, follow the instructions in Section 3: Changing the HTML."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:32
+# 36975141577743a3821b4116eb88f1e5
+msgid "1. Changing the Image and its Title"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:34
+# 45514972c1a94560980392be63133861
+msgid "The logo image - logo.jpg (Plone 3) logo.png (Plone 4) - can be found in the plone\\_images folder in portal\\_skins. The quickest way to replace this is simply to upload your own image and give it the same name:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:38
+#: ../adapt-and-extend/change-the-logo.rst:59
+# 3571947b75944bdabc1509056c56e03b
+# fa6808506c704709b48f6494e04616e1
+msgid "Go to the Zope Management Interface (Site Setup > Zope Management Interface)"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:40
+# c541e974d85d4219ba159147cbc2b2ae
+msgid "Go to portal\\_skins > plone\\_images"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:41
+# cc7c134535cc4916b0e01576271f6c24
+msgid "Click logo.jpg (Plone 3) or logo.png (Plone 4) and then click the customize button"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:43
+# 43a2f85c77f14b06b11c90550b9c8ed9
+msgid "Now replace the image by clicking the browse button and choosing your own image from your file system"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:45
+# 3b4f4b4c001d49c49efcb45ef1fff1d0
+msgid "Edit the Title field (this will ensure that the title attribute changes in the HTML)"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:47
+# bc223c87e00b46fab6e879747436738b
+msgid "Save your changes and refresh your browser to see the changes on your site"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:52
+# 09af32bd40e04092a8e3f3b959ab233d
+msgid "2. Changing the portal\\_logo style"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:54
+# 6d18756bf79344a9821f9b34a705086c
+msgid "There are no styles set for *#portal-logo*, but there are some for *#portal-logo img* in basic.css. Use the Firebug extension for Firefox to investigate these. The simplest approach is to override these with your own styles in ploneCustom.css."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:61
+# 569d6aeeb0814668b4709629f7b7e7c0
+msgid "Make sure you have debug mode / development mode turned on in the CSS Registry (portal\\_css)"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:63
+# e33df3dea5df403ebae0bc51665fe46c
+msgid "Click portal\\_skins > plone\\_styles > ploneCustom.css and then click the Customize button"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:65
+# f8e87c54251241799e6f4ca7f0545631
+msgid "You will now have an editable version of ploneCustom.css in the custom folder of portal\\_skins"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:67
+# df291338bb24462c97e17dc4e0d243f2
+msgid "Add your own styles here, click Save, and refresh your browser to see the changes"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:71
+# fbc42d8f88e648458b11421beec1f3bd
+msgid "3. Changing the HTML"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:73
+# f9e597162e904404a37a9b9d9b3603b1
+msgid "The HTML for the logo is generated by logo.pt - a page template which is part of a viewlet called plone.logo. To customize this through the web, you'll need to use portal\\_view\\_customizations."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:77
+# ccfb0a818530423a816783c7681da7c9
+msgid "Go to the portal\\_view\\_customizations in the Zope Management Interface (Site Setup > Zope Management Interface)"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:80
+# 9bb3214787f640f99aaaf775b375a961
+msgid "Click plone.logo and then click the Customize button"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:81
+# 0aefcd80a04a416cb807df982d81e932
+msgid "You'll now have a template you can rewrite - we've highlighted the significant bits in the theory section below and given you a couple of examples to get you started."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:84
+# 00224e8a99404cf4be39dbc6d791101c
+msgid "Save your changes and refresh your browser to see them"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:86
+# b3fce493562a44ccaf4d1d89cdc2c432
+msgid "**Note**: if you want to go back and make further changes later, you'll see that plone.logo is highlighted in the portal\\_view\\_customizations list, click on it to edit it. If you want to remove your customizations completely, use the contents tab of portal\\_view\\_customizations, tick the box next to your template and click Delete."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:93
+# 9238b5abd47f44379c02323b89ea89ad
+msgid "The Theory"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:95
+# 8c1f3ca6213d486b8ce888ef6531f5a2
+msgid "Here's the logo.pt template. It is written in the templating language used by Plone - TAL (or ZPT). It helps to know this (and it doesn't take long to learn), but we'll talk you through this example:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:110
+# 63c1230ec775415b9bf7f4c957216262
+msgid "First we have the link tag:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:112
+# 34b9b5d61a624ee6bccd4f9254b6798e
+msgid "You can disregard *metal:define-macro=\"portal\\_logo\"*\\ this is just wrapping the code into something that can be re-used again if necessary."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:115
+# ad0ecc23586349148dd802722c0c2c38
+msgid "The important bit is *tal:attributes=\"href view/navigation\\_root\\_url\"*, this is the code that supplies your site URL to the href attribute."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:118
+# db59267da47a48c787479684e086de6f
+msgid "There is a magic variable here, *view/navigation\\_root\\_url,*\\ that seems to have appeared from nowhere. In fact, *view* is a collection of properties computed by the plone.logo viewlet and seamlessly passed to the logo.pt template. Here are the available properties:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:124
+# 8bfdce0a0f884d7aa77c6a5d3061d701
+msgid "navigation\\_root\\_url"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:124
+# 0a2c497d2ed2467bb220d97e58c17a68
+msgid "supplies the URL of your site (it could potentially be something different if you've set up a different navigation root)"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:130
+# 3fd914e0b19d4c608b7569eb9b11d1c0
+msgid "logo\\_tag"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:127
+# 4773d2f1b929446a8d39ae8f11a5276e
+msgid "looks up the name of the logo image from base\\_properties, finds the image, collects its dimensions and title and turns all of this into an HTML image tag with the appropriate attributes Check back to the alternative approach in Section 1 of this How To for more information about base\\_properties."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:133
+# 0f48eb039f0b498d8b0554203c84b7d0
+msgid "portal\\_title"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:133
+# 15eb2c4e57dc455f845f3ae2e10e1d9d
+msgid "looks up and supplies the title of your site"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:135
+# 70a952a8dc8a4aa195ce356f083d34a8
+msgid "Now look at the image tag in the template."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:137
+# dc2f6ca73c48428fa641bf86a9851ac3
+msgid "The key here is *tal:replace=\"structure view/logo\\_tag\"*. This means that the template won't deliver the image tag actually written out here, instead, it will **replace the whole thing** with the tag generated by the plone.logo viewlet. If you don't want this to happen, then you should delete this line."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:143
+# 976813eda9944cf3aeb33b5a5db1ce11
+msgid "Note: *structure* means treat the value as HTML rather than a text string."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:147
+# d720425275724c1fb06ae5b2728cb90f
+msgid "Example 1: A plain text title"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:149
+# f23ffa4d704d46cbba69ae35c678edda
+msgid "Here's a customized version of the template, using *view/portal\\_title* rather than *view/logo\\_tag*, to give you a text header instead (if you've used Plone 2, then you might recognize this):"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:163
+# 2a26cdf302db4a6a812947b2001993f9
+msgid "Of course you'll want to supply your own styles, look back at Section 2 of this How To for information on defining these in ploneCustom.css. You could adjust this example to use an accessible image replacement technique in your CSS."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:169
+# 75d4f0a5890c484195c2c433ae8aaba1
+msgid "Example 2: Supplying your own image tag"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:171
+# d044e4fd0c1343848f9d887ee283c365
+msgid "You don't have to use logo\\_tag if you don't want to:"
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:185
+# 726804f28055443eb26cb2bfed65ebf3
+msgid "You will, of course, need to upload your own logo to the custom folder in portal\\_skins, see the instructions in Section 1 of this How To."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:191
+# 6af58fe592e04183b1c9f2440eb466fc
+msgid "There are further How Tos in the Logo section of the Plone documentation dealing with more advanced customization methods."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:193
+# a844c5815a164d7fa91a385670c700c0
+msgid "More guidance on TAL and ZPT can be found in the ZPT tutorial."
+msgstr ""
+
+#: ../adapt-and-extend/change-the-logo.rst:194
+# 05a33cb718694e2b811801faa165511c
+msgid "If you want to transfer your changes to the file system in your own theme product, then proceed to the :doc:`viewlets overview section </develop/plone/views/viewlets>`."
+msgstr ""
+
+#: ../adapt-and-extend/config/add_ons.rst:2
+# 85daac99e4c24f19a7dd1a0a372b9f38
+msgid "Add-ons"
+msgstr ""
+
+#: ../adapt-and-extend/config/index.rst:2
+# 36e09789aac2443088c64e764e60fd5a
+msgid "Configuration and Control panel"
+msgstr ""
+
+#: ../adapt-and-extend/config/mail.rst:2
+# fd1a17028dcb4bf4afa9559e4c22898e
+msgid "Mail Configuration"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:3
+# 0d45867743374e3983f0f16e0af72c7b
+msgid "Enabling HTML embed codes"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:5
+#: ../adapt-and-extend/theming/quick_test.rst:5
+#: ../adapt-and-extend/theming/templates_css/css.rst:5
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:5
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:5
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:5
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:5
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:5
+# 9fdc5ede4e5b438aaff76162534d1b0f
+# bb92fda3b2e544bba3c8cdf0e23b6e28
+# 1d263da67c4b4942bf531e7e54d42484
+# 66022dd5121c46b18166936159e8596e
+# 876eda849f6243888b91bf31dd52aa47
+# e9fd836e338145a1a68356872a4b8a22
+# a71753662f7f4768be07a8cf0c34a320
+# 0ca153d485c64c8fa2a60abf6c766c85
+msgid "Description"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:7
+# 7bb2a583aa894b9585bac76dab909c8a
+msgid "Normally, Plone will not allow you to paste the code necessary to embed videos, slideshows or music players from popular websites such as Flickr, YouTube, Google Maps and MySpace. Learn how to adjust the HTML filtering to allow this content."
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:11
+# 407d998bd1b745998ed49a77fe75f167
+msgid "Important security note"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:13
+# 73bbe696b2814557855ed07ab0bbf02b
+msgid "Making these configuration changes has serious security implications for your site. Plone filters out the tags that are used for HTML embedding for a good reason: they can be abused by your site users to create privilege escalation attacks. If you have untrusted people allowed to create content on your Plone site, then a malicious person could create some \"nasty\" Javascript in some content, then trick a person with Admin rights into viewing that content. That \"nasty\" Javascript can now do HTTP requests to interact with the Plone site with the full Admin rights granted to the trusted user."
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:21
+# 49b712cbdaa0447eb73419c297560660
+msgid "*Bottom line: do not use this technique to enable embeddable content in your Plone site unless you are certain that you absolutely trust all users who are allowed to create content in your site.*"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:24
+# dbe230f7a6844ae0842afadf6ac0a885
+msgid "Plone 4"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:26
+# 2824ba8a76814a129e1db3a55cf34081
+msgid "In Plone 4, there are two steps you need to take in order to easily embed content:"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:28
+# 6ad9702e7b0b40659e3ad6f0c5f08a6a
+msgid "First, go to Site Setup>TinyMCE Visual Editor then click on the Toolbar tab."
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:30
+# 3e89fd054f494e0a959a2bfafd479620
+msgid "Enable the checkbox next to \"Insert/edit Media\""
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:31
+#: ../adapt-and-extend/config/safe-html.rst:39
+# 85ce89cfffcd46f18fe4facce2bfbf47
+# 9367447d9d1b4f2c8de1b9ecdfda81ca
+msgid "Scroll down to the bottom of the screen and click \"Save\""
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:34
+# 86510064fbb64914808a01aa8edd8e4b
+msgid "Then, go to Site Setup>HTML Filtering"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:36
+# f2ac01a0bf0e484b94e875d71eaf9009
+msgid "Remove \"Object\" and \"Embed\" from the \"Nasty Tags\" list"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:37
+# 714b6fa1566b4f72a18ce2f5717c4e03
+msgid "Remove \"Object\" and \"Param\" from the \"Stripped Tags\" list"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:38
+# d57c6698b33d4573a043f196fcee5198
+msgid "Add \"Embed\" and \"iframe\" to the \"Custom Tags\" list"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:42
+# 1e8689f15d7a48a6ac5e583cdeda577d
+msgid "With these changes made, you should be able to click newly-added \"Embed Media\" button in the TinyMCE toolbar.  You can paste in the URL of a YouTube video, and TinyMCE will do the rest for you!"
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:44
+# 6e0e6d23a6884b9280d619a80e5730a6
+msgid "For a Flickr slideshow, and most other embeds, switch into HTML editing mode and paste in the raw embed code."
+msgstr ""
+
+#: ../adapt-and-extend/config/safe-html.rst:48
+# 2cb1abbc04de4606b8be6eb50b57bb1b
+msgid "To allow completely arbitrary HTML codes, see `David Glick's blogpost <http://glicksoftware.com/blog/disable-html-filtering>`_"
+msgstr ""
+
+#: ../adapt-and-extend/config/site.rst:2
+# 18d6817d91c1442b90cab2aeac2f25af
+msgid "Site-Configuration"
+msgstr ""
+
+#: ../adapt-and-extend/custom-ct/index.rst:2
+# c4811c03dd0f4b31bd901dbb0023e27b
+msgid "Custom Content-Types"
+msgstr ""
+
+#: ../adapt-and-extend/custom-ct/index.rst:4
+# 7d0e95739a404b2c869249d59c84cecd
+msgid "The current recommended way to develop new custom content-types is by using :term:`Dexterity`. You'll find the full manual here."
+msgstr ""
+
+#: ../adapt-and-extend/custom-ct/index.rst:11
+# c3d0a1f5ab3548c4b585ea4d31532280
+msgid "Up until Plone 4.1, the standard way was to use :term:`Archetypes`. You can still develop using Archetypes, if you prefer, and they will remain available."
+msgstr ""
+
+#: ../adapt-and-extend/index.rst:2
+# 02264c4bf286474c8c4b9798168c0834
+msgid "Adapting & Extending Plone"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:2
+# f38b5136c6934f4ebf825b5f4b1f439d
+msgid "Installing Add-ons"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:4
+# f332f6718c7f453c8473d3f41ed85a6b
+msgid "quick instructions"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:6
+# dac291c323834220a749eac03d7e154d
+msgid "These instructions cover add-on installation process for Plone 3.3.x and 4 installation."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:9
+#: ../adapt-and-extend/theming/deliverance.rst:8
+#: ../adapt-and-extend/theming/templates_css/css.rst:13
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:13
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:13
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:14
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:14
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:13
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:6
+# 88affb0456bc4e99ab784963226f4e62
+# e0b69ea4591f4dd0a3ce74befcd3eccf
+# 6a19b60cdbcc44129b1b52233ba40449
+# 712498eb6e0746a2aa2dadc1bc599f09
+# d267cc14b1fc44c9a164d9a071d5d242
+# 42a2b3be3f0d421ea922c64bb2df8330
+# 01a3ac04b900452e814f994691a54035
+# 4bae47b3a89b4e8dbff71e585977f4c7
+# 390c0d98c2d74cd5935ea9912ef36f8c
+msgid "Introduction"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:11
+# 786a1d95bc1248c4a49da48f841abe1b
+msgid "This page covers add-on installation instructions for Plone 4 and Plone 3.3.x systems. Legacy systems are not covered in these instructions."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:14
+# d20bf557bd0f448a8e3fb7acb33b28a8
+msgid "Prerequisitements"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:16
+# db480f0917e444e1b6497883f44f7ef6
+msgid "What you need to know in order to install add-ons for Plone"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:18
+# 09ca5d5584e8405aba96ed6ec2d0023f
+msgid "How to use command line of your operating system. This is a hard requirement - you cannot achieve your goal unless you know how to interact with the command line. Here are basics tutorials for `Windows <http://www.hacking-tutorial.com/tips-and-tricks/16-steps-tutorial-basic-command-prompt/>`_ and `Linux <http://linuxcommand.org/learning_the_shell.php>`_"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:19
+# e0483aff6e6c4d6493a77bf221402f7b
+msgid "Working with plain text based configuration files and editing them with a text editor like Notepad"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:20
+# 43a8852c9c744be6a317d5e1742817b5
+msgid "First create a :doc:`development / back-up copy </manage/deploying/copy>` of your site. Never install to the working production server directly, without first testing the add-on on a test instance."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:24
+# 382b6a8c4691443fac7f6ab482bedc33
+msgid "Background"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:26
+# 4d7de2a6c2194348ae1be1555353d68f
+msgid "Since Plone 3, Plone installations are managed using :term:`Buildout`. Plone add-ons are distributed as Python modules, also known as eggs."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:28
+# 264591ff5acc48c6b6257caf7e530d42
+msgid "the `Plone product <http://plone.org/products>`_ download area contains popular add-ons for Plone"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:29
+# 0fcb4504114944408073c49493b8e9bf
+msgid "Add-on file downloads are hosted on the `PyPi Python package repository <https://pypi.python.org>`_ - along with tons of other Python software"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:30
+# 06869fba1f0f432cbea6aa2365e49c4a
+msgid "the buildout.cfg file in your Plone configuration defines which add-ons are available for your sites to install in Site Setup > Add-ons control panel"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:31
+# 7e91dc83106641c399f12d48237ef22f
+msgid "the bin/buildout command (or bin/buildout.exe on Windows) in your Plone installation reads buildout.cfg and automatically downloads required packages when run - you do not need to download any Plone add-ons manually"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:32
+# c47c40ebc3fb47abb93391271a1e00a1
+msgid "Plone site setup -> Add ons control panel defines which add-ons are installed for the current Plone site (remember, there can be many Plone sites on a single Zope application server)"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:36
+# 6d9916703a31474db1b950c221cda7b5
+msgid "Plone add-ons, though Python eggs, must be installed through buildout as only buildout will regenerate the config files reflecting newly downloaded and installed eggs. Other Python installation tools like easy_install and pip do not apply in a Plone context."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:39
+# c8914aacc4c84ce78c6c0e8d1db9bbcd
+msgid "Finding add-ons"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:41
+# 0f25df845c3b48b6901dc76a54d6d264
+msgid "Browse the `plone.org product area <http://plone.org/products>`_ or `search on PyPi <https://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for possible add-ons."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:43
+# 231b2dd488b24956958749cf3394ffd1
+msgid "When you find a suitable add-on you must note down its Python package name. Quite often, this is in the form of a name with a dot in it. For example, for the add-on PloneFormGe  the package id is Products.PloneFormGen. The id is visible in the PyPi page URL if it is not mentioned anywhere else. Capitalization is important here!"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:45
+# 94ddd3e4bd6948f2a3f6ea424f308d45
+msgid "Before proceeding make sure that the add-on is compatible with your Plone version. If you cannot find this information on the package page please contact the add-on author."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:48
+# ac2d9a0a4ec54342bce60521f28da571
+msgid "Downloading and configuring an add-on package for Plone"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:50
+# a262263a18d2491d9056bf4eaf51fc43
+msgid "Please do not directly test new add-ons on your production site. Instead, have a development copy of the site around where you can safely test the add-ons. Before proceeding to the production environment, always take a back up copy of your Plone site."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:52
+# 83e6e5cec4ae429ea67e141b6ddd92e5
+msgid "Edit the file buildout.cfg in your Plone folder with a text editor. Find line"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:62
+# 80f45846fb7f448784b88edbcb82e621
+msgid "There you can include your package in the  list."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:74
+# 6f31dd98bf994f93a115465b263c61b7
+msgid "Some older Plone add-ons (released before Plone 3.3.x) also require you to add add-on package name to zcml= section in buildout.cfg. As a a rule of the thumb, all add-ons released since  the second half of 2010 should no longer require this."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:76
+# f7f51722b5bc46f78ae25637c8e80bfc
+msgid "After the buildout.cfg has been changed run command buildout from the command line. The buildout command reads buildout.cfg and download the packages defined in the eggs section and makes them available for Plone."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:78
+# c7c5b35e919f44a5a9cfe09859b23c96
+msgid "Note: Run buildout from command line using the instructions below. You don't double click buildout.exe."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:82
+# a3e5daa8cfb242b5b94d833fda6c502e
+msgid "On UNIX"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:90
+# 9d42a228d12f43e0981c8e08a2b17cbb
+msgid "On Windows (for Plone 4.1)"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:98
+# 22ce33e21b8b4860ae4b5fbc57648508
+msgid "If buildout fails please see the :doc:`troubleshooting buildout </manage/troubleshooting/buildout>` section."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:101
+# 90f339640eb4487b89962af9af2a7e1a
+msgid "Downloading and configuring add-on package from github"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:103
+# c590b7c2d6d94e75af5fa6e740958978
+msgid "Sometimes you need the newest version of an add-on, this is only suggested for experienced developers or for testing purposes. See :doc:`this section</manage/installing/installing_addons>`"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:108
+# abb845eb7f9e489d9cc1f58276db3c6b
+msgid "Further help"
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:110
+# 81b20777e4be48049954fe1a07a16002
+msgid "More detailed instructions for installing Plone add-ons are available for dealing with legacy systems."
+msgstr ""
+
+#: ../adapt-and-extend/install_add_ons.rst:112
+# 7f365c9368344330aa2b484806d8c026
+msgid "Please visit the  :doc:`help asking guidelines</askforhelp>` and `Plone support <http://plone.org/support>`_ options page to find further help if these instructions are not enough. Also, contact the add-on author, as listed on Plone product page, to ask specific instructions regarding a particular add-on."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:3
+# a1932bc282b94e288effe16f9246d8f4
+msgid "Deliverance"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:10
+# b1d4d0172a4a47f5a431af86553581f9
+msgid "This page contains info for using Deliverance theming proxy with Plone."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:13
+# b03965f0207a49bc85c1144c35734ebd
+msgid "What is Deliverance"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:15
+# add0dedc116c4ab493620670cc72e5c8
+msgid "Deliverance moves items from your Plone site into placeholders in your theme, without touching the Plone site or the theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:17
+# 52152014ee274ee786d6ef5e42029ce5
+msgid "Deliverance is a universal tool to theme HTML, applying a consistent style to applications and static files regardless of how they are implemented and with what technology."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:19
+# ea63cab20e46449596fd14372ab57447
+msgid "Deliverance extracts pieces of content from your Plone site generated output and puts those into named placeholders in the theme's resulting template."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:21
+# 0d676866e6e14ba9a50aa3a0548050c2
+msgid "This is accomplished without touching the Plone site or the theme that is used within the Plone itself."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:23
+# 336557bf349d4763ac524a3379d96051
+msgid "Some of the benefits:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:25
+# 0739fab71e0b46c4aa691e83be0cc067
+msgid "A designer can create a Plone theme without any specific knowledge of Plone's specific technology"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:27
+# ddb6fa0974b34d6dae97095d544fa08d
+msgid "A single theme can apply to multiple backend web applications regardless of what platform they were developed for"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:31
+# ef771a2bad9a4182887ee38f84125db2
+msgid "Full Documentation on Deliverance"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:33
+# 84264d33aea14c579c231f272b7fcfd6
+msgid "You can read all about Deliverance in more detail but it is not necessary to follow this tutorial."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:35
+# 65a4c2ce4a414269a2fc6f4a69cb9c77
+msgid "Read `Deliverance Documentation <http://pythonhosted.org/Deliverance>`__."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:38
+# 00f7ed69f2294f3cb33165413a3574a8
+msgid "About this tutorial"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:40
+# 6b2602f4f5fc41a6a94ffc43d2f9e770
+msgid "This tutorial was developed based on slides from the Plone Symposium East 2009 presentation \"Deliverance: Plone Theming Without the Learning Curve\"."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:42
+# 423e529e99154280a13a946a5e1bcca8
+msgid "Full slides are `available <http://www.slideshare.net/Jazkarta/deliverance-plone-theming-without-the-learning-curve-from-plone-symposium-east-2009>`__."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:45
+# 78e3e3d3ff4d42dfbca0eb826c8cbfa5
+msgid "Installation & Setup"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:47
+# c1fbba6c2f6b459faaa8072c54a57b66
+msgid "In order to follow the steps in this tutorial you must setup and install Plone and Deliverance. This is easily done by using the tutorial buildout."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:50
+# 1b480e18a8194251b4a15736214c28a5
+msgid "A python2.4 runtime is required in order to follow this tutorial. In order to follow the steps described in this tutorial checkout the pre build buildout file from http://svn.plone.org/svn/collective/deliverancedemo/trunk/:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:57
+# 081aa424fcdd4d01960fb795eed4e75d
+msgid "Enter the directory and run the buildout process:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:65
+# 57e7ade5e114479283db556d063d1521
+msgid "If you have problems with the buildout, in particular, compiling libxml2 on your Mac, please refer to the next section in this documentation."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:67
+# 59febacbbcb44087b8aa8d77223fb6b3
+msgid "Next let's run an install step that will create a Plone instance called 'Plone' that we'll use for testing:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:74
+# 4919db9090a4405582937d2a04330ba7
+msgid "Installing lxml on Mac OSX"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:76
+# 372e6773aea3406dae11e866d4b530d6
+msgid "If you have problems with the buildout, in particular, compiling libxml2 on your Mac, please refer to this documentation."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:79
+# 4d7c5eb548e54fb9a85deaec58088957
+msgid "If you get the error **ImportError: Failure linking new module at startup (lxml)**."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:81
+# 8209651a7bd24eef90d40d47b046e326
+msgid "This has only been witnessed on Mac OS X. It usually means that the build found some existing 'libxml2' or 'libxslt' instead of the one that's compiled by the buildout. It's unclear how this happens, but it can be resolved by manually setting the MacOS \\`\\`DYLD\\_LIBRARY\\_PATH\\`\\`. For example, if your cwd is the \\`\\`buildout\\`\\` directory:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:89
+# 4a014ba630914a6b916d48c6553231ce
+msgid "Then restart the servers."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:91
+# 4f3d31fe679a4d3b9779f6bdeaed5872
+msgid "You can also compile libxml and libxslt as part of the buildout, and then link lxml to these locally built parts. In your buildout.cfg file:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:129
+# 215a3332aad24908ac0f89684068ad9f
+msgid "Starting Deliverance"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:131
+# 6a15aac49e4b48efba38ace1cd598a03
+msgid "The buildout has created Plone and Deliverance instances. To view the demo and follow the tutorial we need to start both."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:134
+# 216e684fea524277be63a8924354dfff
+msgid "To start plone after the successful buildout:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:140
+# 56c56b50979a4a918a3890e6db471344
+msgid "View your Plone site at http://localhost:8080/Plone"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:142
+# b3f5688b144b4dad8922daed5aead92d
+msgid "|0.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:144
+# d599cd1363bf41fbb57e888bd067f178
+msgid "Now that your Plone site is up and running, you can start the deliverance proxy server:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:150
+# 2f2618dcf54c424bb13e5598c0b9ce56
+msgid "Deliverance will be available on port 5000."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:152
+# fccea3d4b995448195264cf064613fc1
+msgid "Check out the new visual appearance of your Plone site on: http://localhost:5000"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:154
+# 5040c87d54dc4c588db873b0d795ecfe
+msgid "|1.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:156
+# 0d0cc724668046c49555ecc8906e6ec1
+msgid "As you can see the theme looks completely different from the Plone site. For every request you make to the Deliverance proxy, Deliverance requests the pages from the Plone site and inserts parts of the Plone page into the defined them, all based on the directions in the rules.xml."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:159
+# 58ccdcaab20f4075bed008f0da2fb47b
+msgid "If you want to follow along with the tutorial, then restart delivance like so:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:166
+# 11e284c28e124e3c96d87b6f4698e836
+msgid "Static theme"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:168
+# f723243c37714b1e93c9980fd1033125
+msgid "The theme used in this example is taken from the Open Source Web Design site ( http://www.oswd.org/design/preview/id/3293 )"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:170
+# 402b4a6f68194adb933067fed212dd9e
+msgid "We have modified it slightly to have explicit CSS identifiers for the main content text area, rather than a generic paragraph. While this was not necessary, it was preferable for the purposes of keeping this tutorial straightforward."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:173
+# 34f9c6a9479d4674a4298840d0fec6e1
+msgid "The theme files are located in *static* directory."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:176
+# df0bb5b341604024866a67c255b069e3
+msgid "Simple start script"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:178
+#: ../adapt-and-extend/theming/deliverance.rst:203
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:100
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:117
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:295
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:684
+# 42ebe9642e41462b8615c1d0543cc43f
+# a91cb3885db54314849f184716553059
+# 96bef3da14934ac3be9f7e640c02cdad
+# 693311e3cd774fa4b7307ddd620a02f4
+# 318e7e54cde5450180381a7372740852
+# 0ef63d3d05914deeac8716b6ab423616
+msgid "Example::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:199
+# d7370d4a791c426cbdd6f2aee884acdb
+msgid "Buildout restart snippet"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:201
+# 15d1d618f13441bbb6ad8b2bec61e903
+msgid "For *rundeliverance.sh* see above."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:212
+# f084a3f40ac443c9b92c67661df4a131
+msgid "Configuration"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:214
+# 1235646572454b3d8f4788255435e472
+msgid "Deliverance stores it's configuration in a .xml file. This file has to be parsed to the deliverance process - in the introduction it was passed as the first argument as rules.xml."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:217
+# c4bc823b4fa44c0492a4a4308f669736
+msgid "The *rules.xml* file consists of different sections:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:219
+# 559942f7d1bf4147a19ffa7e164a2e12
+msgid "server settings"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:220
+# 8c77e7b54de3401f98ee902e5f2d76fc
+msgid "proxy definition"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:221
+# 7ba95730865f4fbead20bd204448ed53
+msgid "the rules"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:224
+# 4a4abaf4df394ef68e1c60565ea5ff71
+msgid "Server settings"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:226
+# 8438482bf89a4e79b5ad1440026cf3d9
+msgid "The server-settings section is used to define connection relevant settings like the IP address and the port used by deliverance."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:238
+# b52b9ee254f64a319acb60b68356cdff
+msgid "Proxy definition"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:240
+# b566da8dde5c4af883b8d927d2a9c8da
+msgid "The proxy definition defines where deliverance retrieves it's content"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:248
+# b39644d376b440a2bb66acad8d60bccc
+msgid "(note: maybe small explanation about the class, it maps the rules to the path?)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:251
+# c96c85cdefb148bcb4d317e7f379a298
+msgid "Rules"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:253
+# 7b65acd806244c2eaa4915846c273b54
+msgid "Deliverance uses a rules file to govern the merging. We use CSS selectors to identify elements to act on."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:255
+# 831057c31aa14bb8ba6937b2afd516d3
+msgid "Rules are verbs of common actions"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:258
+# 8a3237419740429c94ec9fbfe6d17cd6
+msgid "<drop> - Removes elements from the theme or the content."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:259
+# c0b303b814bc4aca92e2c2f7afc35263
+msgid "<replace> - Replaces something in the theme with elements from the content."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:261
+# 07a508328547440d9c10fd3ef0c38cb7
+msgid "<prepend> - Prepends content to an element in the theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:262
+# 2e517502e5ae407ebf150ee78c602403
+msgid "<append> - Appends content to an element in the theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:264
+# 79cd2d3c0f084289bfb4125f776d47e4
+msgid "Rules tell Deliverance how to map the content into the theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:273
+# 56f4865a7c6e4de483a3735f63977030
+msgid "In this tutorial we will add several rules to integrate our sample theme with Plone."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:276
+# c5d76ec1fdb14ab68712378a82e9ead4
+msgid "Logo & Navigation Tabs"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:278
+# ab60d8d24c7c47edbb616992dbe07e30
+msgid "Style the Logo and Navigation parts."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:281
+# 34f4ecf1db0248139c99af37ce753afe
+msgid "Logo"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:283
+# 570e0d3db9504987af94fe8685c650a6
+msgid "For demonstration purposes we will replace the theme's logo with the Plone's default logo."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:285
+# 5664daa69ad4436a9b8b647861d69560
+msgid "This will demonstrate how images can be replaced using Deliverance, as would be the case with some generic downloadable skin."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:290
+# 898ff00fb28b445789c3b8a676a99faf
+msgid "in most real cases you would want to have the final logo to be a part of your chosen theme. This is because these sorts of graphics are typically part of the branding effort developed as part of the overall custom theme design - so an appropriate logo would likely be included in the theme already."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:293
+# 78efcef12f5e4a24bda6b92f8835a065
+msgid "We have verified that the Plone element for the logo is: **#portal-logo img**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:296
+# 7079711fe5dd4b46940f680ff39d5634
+msgid "|2.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:300
+# 37354e70b2aa4d27b0cf93ee3718d471
+msgid "We want the image coming from Plone to replace the default logo as it is defined In the theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:302
+# abc84977e4e043f496d2d08ca777491e
+msgid "To do this we have identified the selector for this element in the Theme to be: **#logo h1**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:306
+# 8fddbbee965943738a739fa4ad96631e
+msgid "|3.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:311
+# 0869d874f772408a8a2078cd00327ac3
+msgid "In the rules file add this command:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:317
+# d8ae18190c304b91acab740f834c12e2
+msgid "**This rule replaces the theme's default logo with the stock logo from Plone site.**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:319
+# f2857eb6d7df4684a6b4e8b655a70df5
+msgid "As a result, Plone's default logo has effectively replaced the \"Logo Here\" image from the theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:321
+# d775ae57bd7a4d2aa9d25b0468de8ebd
+msgid "|4.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:325
+# 0f1a043b627745f5b5c7c57856df79ac
+msgid "Navigation tabs"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:327
+# 5c3b1c72a1b34a07ae55e96260fbba69
+msgid "First fnd the element in the Plone site that represents the individual tabs in the top navigation:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:329
+# 70089ac72f534807acf31887bedb200f
+msgid "We have verified that the Plone's element of interest here is: **children#portal-globalnav**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:332
+# bed05cad2fe74939ac8a5fc9eac7ecd7
+msgid "|7.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:336
+# 8132ec8b822e43cbae7c7fc3370cc828
+msgid "The corresponding placeholder in the theme is: **children:#links ul**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:338
+# 236c6964570b493ebf4844fe28d47b32
+msgid "Here is a screenshot related to **children:#links ul** (those are all of the **\"li\"** elements) in the Theme's own HTML."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:340
+# a7763301b2754473ab54183fe954d83c
+msgid "|8.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:344
+# 362836112e62455ca65fb76555f9cb19
+msgid "The rule is:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:350
+# 9fef438146c64497ba6b651c1f5b11f5
+msgid "The theme's own tabs as they looked **before** the rule was applied:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:352
+# 2d589fe159ab4447980461f12c4fa5a3
+msgid "|5.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:356
+# 9550f182878a4f989d803f780a126e5f
+msgid "The theme's new tabs pulled from Plone, as they looked **after** the rule was applied:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:359
+# 94072460c5954835b52dd11ea6a63d27
+msgid "|9.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:364
+# 0880bddcc31d482dae033f5764dd4448
+msgid "Page Contents"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:366
+# f96fd2f19703439295b7cbf68a09ecbd
+msgid "Let's incorporate the Page heading, description and body text into the result."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:370
+# 0aaa236ce3864675b9021723536af4ee
+msgid "Replacing the Page Heading"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:372
+# 7e8ddf554bb445f0951bcf679f5cf1c3
+msgid "Find the element in the Plone site's HTML output that represents the page heading, and use the **children:** keyword with it, so it is: **children:#parent-fieldname-title**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:376
+# 11c3381b6416462b834acabdaad852ca
+msgid "We use the Deliverance **children** selection type which applies only to the children of the element selected, since we just want the text of the heading (we do not want the selector itself)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:378
+# ea499cc40bd24d588cfdde793086ea33
+msgid "Screenshot related to **children:#parent-fieldname-title** in the Plone's HTML:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:381
+# b5b8ad7c620a4dc6be92b7e510b3affe
+msgid "|13.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:384
+# a5ba2b3ca59e47029b07d64d5b486795
+msgid "Now we need to find the corresponding element in the theme: **children:div#leftbar h1** This is the ***\"hello!\"*** heading in the theme which we want to replace with the actual page heading."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:388
+# 2e42a45bee104d2aabb9933be714ec79
+msgid "Screenshot related to **children:div#leftbar h1** in the Theme's HTML:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:390
+# c2986ccf1eac4e2dad6dbcc2243f0f0e
+msgid "|14.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:394
+# f3f0f745dab74a7ca24ba9ce7c637b9e
+msgid "The rule we must use to replace the placeholder page heading with the page heading coming from Plone is:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:400
+# 772b95175a3a4dada0e6027fcd35f3ea
+msgid "Screenshot related to the result of the above rule:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:402
+#: ../adapt-and-extend/theming/deliverance.rst:438
+#: ../adapt-and-extend/theming/deliverance.rst:465
+# 49e3e8dd22654f1181be8fa7bd047af8
+# 0f74b011a3f44781ac3b83bd3a0d72d8
+# f6c3e6156ebe403bb709a06e375c3728
+msgid "|20.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:407
+# 9277798f4a154c7da0725deb6f5a8f4c
+msgid "Copy the Plone description field"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:409
+# 4973cab310a04c3f81966591209de503
+msgid "Put the document description in the first paragraph of the page text."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:411
+# 966d4be42f764af39c35108c3f8ce4bd
+msgid "This is the ***\"Your source for all things wireless\"*** string. The element in the Plone site that represents the description is:\\ **#parent-fieldname-description**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:414
+# 18199581e84943bca42682b6d2f28d92
+msgid "Screenshot reference for the above:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:416
+# dd3366f3e64f49fda9bb5da430823f9a
+msgid "|15.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:420
+# d47ba21d54924f0286ec8f81e13645e5
+msgid "Screenshot reference for the Theme below:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:422
+# 6100f8aab0a44392811338d2acaa5cd0
+msgid "|16.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:426
+# af99a8478bf9436ca40c1a30159fa4d0
+msgid "Please note there was originally no **#description** in the theme. We have modified it to make it simpler so no XPath references are needed in this tutorial."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:430
+# 69602e661649423cac8b4dc14f0d5047
+msgid "In this case we want to replace the contents of the theme's **#description**:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:436
+# 9e452e477c504cc899ed0f85d333354b
+msgid "The \"after\" screenshot is below:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:443
+# e30f8e90d07e4297bdb2c2a3c2f24f9a
+msgid "Replacing the body text"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:445
+# 685fb3aab64c4044a86191e19feed8fb
+msgid "Find the element that represents the body text in our Plone site, it is **#parent-fieldname-text**, but for our rule we will use: **children: #parent-fieldname-text**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:449
+# 123eb14307374cec9052b3390974fd6b
+msgid "|18.png|"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:453
+# cbf633ad842349ca87775f002ed368ad
+msgid "The corresponding placeholder in the theme is the block of text starting with ***\"Lorem ipsum dolor...\"***: **#bodytext**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:459
+# 2ff159e62a514e87a47d7ea095c19290
+msgid "Our astute reader will note that we do not use the children: selection in the theme. This is because the theme author has chosen to use a **<p>** tag as the **#bodytext** section. Because the Plone content includes **<p>** tags itself we choose to replace the entire tag in the theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:463
+# 32acd8cafe6e4ad7ae80f2ec6f31c224
+msgid "The \"after\" screenshot is shown below - the second paragraph (below description) that starts with ***\"Lorem Ipsum...\"***"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:470
+# f123558c0f924d2aacd52e4714122a37
+msgid "Remove 'more' link"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:472
+# fbd00393e4874e77b02ab9afe25d198a
+msgid "The theme has a ***\"more\"*** link which we do not wish to use at all."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:474
+# ade1de3fd9004cfaa759ae0a2bcd4fc6
+msgid "In order to eliminate it we will use Deliverance's **<drop>** action."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:476
+# 765bf8c2a9d24057a1eba42c46f0a2e6
+msgid "The ***\"more\"*** link is contained with the **div** identified as: **#more**"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:478
+# 784917fd0d6e4977a1fde07b67217811
+msgid "This rule drops the entire div from the resulting page:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:485
+# 5aa9e06819104fb4b267c9b83ba47a4e
+msgid "Next Steps"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:487
+# 08700815279b46e0ab11b4a9fb8224bc
+msgid "This tutorial is being developed by the Plone community. Help us finish this and learn more about Deliverance and Plone at the same time."
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:490
+# 81e779c941154d0ab929baeff5fafeb6
+msgid "The following more advanced topics are under development:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:492
+# 8045189402b3432fb543e11314eae812
+msgid "Using XPath"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:493
+# 686036fb43684249be85b464ec030a01
+msgid "Working with non-page views"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:494
+# 0d5306a0c8c04d6ab3b8f8f75d4cf868
+msgid "Enabling Login and Portlets"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:495
+# a13d49f7da2e4fbd8d1d8c899910987d
+msgid "Enabling Plone's editing interface in the themed site"
+msgstr ""
+
+#: ../adapt-and-extend/theming/deliverance.rst:496
+# 43eb3f6a9fb144c5b0603ccc47ff34f0
+msgid "Enable theme per section"
+msgstr ""
+
+#: ../adapt-and-extend/theming/index.rst:2
+# 8e10ae5043d340898499f06b7afe7ebd
+msgid "Theming Plone"
+msgstr ""
+
+#: ../adapt-and-extend/theming/index.rst:4
+# 231263d39b7c41cc8d68f5e4078b4644
+msgid "Intro"
+msgstr ""
+
+#: ../adapt-and-extend/theming/index.rst:6
+# 3a8a9f4147264010b7a47bc8ed79e640
+msgid "The current best-practice way to theme a Plone site is by using an engine called \"Diazo\". This allows designers to design a theme in just plain, flat HTML, CSS (and javascript, if wanted) and then to hook that into the Plone backend to fill it with sophisticated content."
+msgstr ""
+
+#: ../adapt-and-extend/theming/index.rst:9
+# 0bdafac2c53f45eb9a35c934c9e4329b
+msgid "The easiest way to do this is to use \"plone.app.theming\". But if you need to integrate Plone with other back-end servers, legacy systems, or any webservice, you can use Diazo to all combine it in a unified look & feel."
+msgstr ""
+
+#: ../adapt-and-extend/theming/index.rst:21
+# b0310113cf1d4d0f9ed341b151723f99
+msgid "Using Diazo is also possible as a standalone service. That makes it possible to include several back-end applications under one 'look'"
+msgstr ""
+
+#: ../adapt-and-extend/theming/index.rst:28
+# e147b322fe0f4071a491af0872149084
+msgid "General information on the stylesheets and other resources in Plone"
+msgstr ""
+
+#: ../adapt-and-extend/theming/index.rst:35
+# 67551540101b4e52afeb4f0bf5ad387c
+msgid "Information on 'old-style' theming for Plone 3, but still valid in Plone 4. So upgrading from Plone3 to Plone4 is possible without switching to the new style of theming."
+msgstr ""
+
+#: ../adapt-and-extend/theming/index.rst:38
+# 5d6fec2d776e4ba0b226e2310e89226b
+msgid "Do note that for all **new** theme development, Diazo is strongly recommended."
+msgstr ""
+
+#: ../adapt-and-extend/theming/old_style_theming.rst:2
+# 5d9d6089f6cd4c6994ab4c6ffedaf0af
+msgid "Old-Style Plone Theming"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:3
+# 6e998f375bfe4c55a11db661405ad141
+msgid "Quick Test Recipe"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:7
+# 06e75474990d4e9293da2e90256d70f7
+msgid "Diazo is the system used to implement Plone themes. As of Plone 4.2, Plone ships with all the 'machinery' required to get started with Diazo based theme creation. This recipe is designed to get you started quickly."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:12
+# 0f936c60366c4e4fa396a06aecb81fe4
+msgid "The goal of this recipe is to help you confirm that everything is working. The theme resources for this recipe are hosted on a github page (http://pigeonflight.github.io)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:17
+# 87f52e47bc8d4a36b3ffc39b84c6539c
+msgid "Ingredients"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:19
+# 310227aea63345398b76b01e48b432be
+msgid "You will need to have the following:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:21
+# 7b6d0e37f7ba47c99aecce7fe795990f
+msgid "Administrative access to a working copy of Plone 4.2 or (Plone 4.1 with plone.app.theming installed)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:24
+# 89b1845591514dcca179f637f02bb98a
+msgid "Procedure"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:26
+# b8758706795d4ae2bfdeb9b385ab5fb9
+msgid "If you're using Plone 4.2, look for 'Site Setup' > 'Theming'."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:30
+# 51a9d1bfca5e4c0a9c1c5b9403b01588
+msgid "In a Plone 4.1 with plone.app.theming you may find the same thing under 'Site Setup' > 'Diazo theme' Instead."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:35
+# acfbaec7f4ae4ba5a6c808d8a1a7d563
+msgid "If you don't see anything like the 'Diazo theme' option, go to 'Site Setup' > 'Add-ons', select 'Diazo theme support' and click 'Activate'."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:37
+# de98361b379040418e560013378d0a19
+msgid "In the Diazo theming control panel click on the 'Advanced Settings' tab."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:41
+# b67ad4baade342d9bc9c5faa50fd3099
+msgid "Enter the following values:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:43
+# a5a6d6847f7640eeac99ad99bf919d88
+msgid "**Rules file:** http://pigeonflight.github.io/diazodemo/rules.xml"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:45
+# cb3f6c7919d64d809138659faaf79b3e
+msgid "**Absolute path prefix:** http://pigeonflight.github.io/diazodemo/"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:47
+# 064f5b81f6cf4379a8601d02662eb203
+msgid "**Read network** should be checked, then click 'save'"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:49
+# 5cbb42854179403d838868cbd82cd1cf
+msgid "Make sure that your Diazo theme is enabled"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:51
+# ba9a4d8ca324465cb22620c02db76bd8
+msgid "The rule file and resources in this example are hosted online, this will be a problem if your Plone site is behind a firewall or otherwise not connected to the internet."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:53
+# 49ab4a9b78fe489e85fc3dd1cc87e82a
+msgid "When you visit your Plone site you will see a the main content displayed inside of the custom theme provided by http://pigeonflight.github.io/diazodemo."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:55
+# 8a8b34cca846433d83a55a784dff4da3
+msgid "It should look similar to this screenshot:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:60
+# c4486751586243aabfd77df8c0df0b05
+msgid "Disabling the test theme"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:62
+# faa8741fd6c34444ac8a80e5a3491aec
+msgid "To disable the test theme click on the enable/disable button at the top right. Then uncheck the 'Theme enabled' box."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:68
+# 3419fe7acfa34862ba4a3a2bd5fbb50d
+msgid "How the rule.xml file works"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:70
+# 2fb6eb4b3e364ed1bd3ff137451ab32f
+msgid "Think of the rules.xml file as a mapper which uses CSS ids and classes to identify content from the Plone site that should be injected into an HTML document."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:74
+# 12b2b9f53515498080963cabce5ecc94
+msgid "The diagram below explains this visually."
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:79
+# ecfeef20e5d44410b120a4124b8355a0
+msgid ":download:`View an explanatory diagram in PDF format <diazothemeexplained.pdf>`"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:82
+# e309c4cdffb147c9b9cf471de418c70c
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:84
+# 4720852809e44ffebc4e7e2233c8a854
+msgid "The theme is not showing"
+msgstr ""
+
+#: ../adapt-and-extend/theming/quick_test.rst:86
+# 416b2ae3506b4733aa93d3e8e55f0e0e
+msgid "Check 'Site Setup' > 'Diazo Theme' and ensure that under 'Basic Settings', 'Enabled' is checked."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:3
+# 9a7bd088854f41169fb805180c657f5c
+msgid "CSS"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:7
+# 8dca2625d4cf42fdadb218435e7bacb0
+msgid "Creating and registering CSS files for Plone and Plone add-on products. CSS-related Python functionality."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:15
+# 8bc5ccbf7da24ea6b82a76dc89bdb0ae
+msgid "This page has Plone-specific CSS instructions."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:17
+# cf59f7552ecc47d2a2b57824369e27d3
+msgid "In Plone, most CSS files are managed by the ``portal_css`` tool via the :term:`ZMI`. Page templates can still import CSS files directly, but ``portal_css`` does CSS file compression and merging automatically if used."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:23
+# 0e8142c1d31642229aef1aed5a5baf8c
+msgid "View all Plone HTML elements"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:25
+# d3e3602bf993408b85aa3e3bc40f87cb
+msgid "To test Plone HTML element rendering go to ``test_rendering`` page on your site::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:29
+# bbedfd8cd2c54494af507e7ab346908e
+msgid "It will output a styled list of all commonly used Plone user interface elements."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:32
+# d4853388c1aa47d3b4199f506c0b6e67
+msgid "Registering a new CSS file"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:34
+# 3ed66eb01cb2467b96b69bda9089c2e8
+msgid "You can register stylesheets to be included in Plone's various CSS bundles using GenericSetup XML."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:37
+# e7f4b6d462eb45bc81cb65d5b554cffe
+msgid "Example ``profiles/default/cssregistry.xml``:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:80
+# c6de2ee8263f469b987acea26853a20f
+msgid "In this case there should be a registered resource directory named yourproduct.something. In the directory should be a file yourstylesheet.css. If you have registered the stylesheet directly in zcml"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:87
+# 5c1057d03f9d4790a4274fb79b0fcdbb
+msgid "<browser:resource"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:85
+# e49ec80d71284f7888ab6b6f19dd7c72
+msgid "name=\"yourstylesheet.css\" file=\"yourstylesheet.css\" />"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:89
+# a6a8d6a4c6c146999a96fcac078125f9
+msgid "then id must be"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:91
+# 6fc86d7894be4bb78a3b46f23825a90b
+msgid "id=\"++resource++yourstylesheet.css\""
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:94
+# 08cfed027a544e8892657e37c12e42e0
+msgid "Expressions"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:96
+# 05551caccb984bb5bb4ea8b6e06d4b42
+msgid "The ``expression`` attribute of ``portal_css`` defines when your CSS file is included on an HTML page.  For more information see :doc:`expressions documentation </develop/plone/functionality/expressions>`."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:101
+# 8d64d7de1bd445d2bf1308717b0a9733
+msgid "Inserting CSS as last into anonymous bundles"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:103
+# 0eefd9f06a8a4325bc378cbbc422b50c
+msgid "Plone compresses and merges CSS files to *bundles*."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:105
+# 43ec18d6d90f4b1aa8ba8ec963c26874
+msgid "For Plone 3.x, the optimal place to put CSS file available to all users is after ``ploneKss.css``, as in the example above, to override rules in earlier files."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:0
+# 9235fd84a565498c9fdb1e7a31273bd8
+msgid "Todo"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:109
+# 38bcd490e8914a34b02a9ec9872c95c5
+msgid "Also for Plone 4.x?"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:112
+# 0264394b0cf8456bbc0cf5e9a764d3fe
+msgid "CSS files for logged-in members only"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:114
+# 43d8a8dc0cac4eee8a02f67977cd0ed2
+msgid "Add the following expression to your CSS file::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:118
+# 76240b524d0b40e9bfd795d1a304879c
+msgid "If you want to load the CSS in the same bundle as Plone's default ``member.css``, use ``insert-after=\"member.css\"``. In this case, however, the file will be one of the first CSS files to be loaded and cannot override values from other files unless the CSS directive ``!important`` is used."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:124
+# 6826b8846a304a36b4ff327a00e7c706
+msgid "Condition for Diazo themed sites"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:126
+# 13f6a710e7c74cff84fcddc056c38f4d
+msgid "To check if theming is active, will return true if Diazo is enabled::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:131
+# dc0d012e4ee146acba76a5314d1db892
+msgid "Conditional comments (IE)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:133
+# 0b2dbb7108fe4677924736796e341b29
+msgid "http://plone.org/products/plone/roadmap/232"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:135
+# fe66962c82fc4fa887e37238ad6fbd96
+msgid "``cssregistry.xml`` example:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:158
+# 5c6cdf213b4a4820b7030b75f9450106
+msgid "Generating CSS classes programmatically in templates"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:160
+# 233d8527e89b4c9badc78547940e55c5
+msgid "# Try to put string generation code in your view/viewlet if you have one."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:164
+# 415bd922be4f4686b544608f431217da
+msgid "# If you do not have a view (e.g. you're dealing with ``main_template``)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:163
+# dfa641660d514347a24fd92b4dd4d080
+msgid "you can create a view and call it as in the following example."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:166
+# 34282f518d514acaa5ee259154e884a4
+msgid "View class generating CSS class spans::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:190
+# 86eead635bc9486dafdbb838c3e6e763
+msgid "Registering the view in ZCML:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:202
+# 61a27c9ce0214f19a6e492c05c9abe15
+msgid "Calling the view in ``main_template.pt``:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:211
+# f7355725a7d54a8187f9c09d9c3dd1d9
+msgid "Defining CSS styles reaction to the presence of the class:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:219
+# 303e6edbf2e540929d21b84a0f464dd9
+msgid "Per-folder CSS theme overrides"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:221
+# 03711c161232427d9e775db70ef268dc
+msgid "https://pypi.python.org/pypi/Products.CustomOverrides"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:224
+# 0a9d0f4f9b9143698df02b1d71234fc5
+msgid "Striping listing colours"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:226
+# a0807cac777e49539299dfe3e60839a6
+msgid "In your template you can define classes for 1) the item itself 2) extra odd and even classes."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:233
+# 27b8835e3c92444dae2a41525253c663
+msgid "And you can colorize this with CSS:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:257
+# 90b32ee0915d474a9772cde507fc1fef
+msgid "``plone.css``"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:259
+# 4f92204379384f7fa371fd1071ec311a
+msgid "``plone.css`` is automagically generated dynamically based on the full ``portal_css`` registry configuration.  It is used in e.g. TinyMCE to load all CSS styles into the TinyMCE ``<iframe>`` in a single pass. It is not used on the normal Plone pages."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:264
+# b72e1e08a392462b8517546ca1bb9d03
+msgid "``plone.css`` generation:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:266
+# a1a1d83a200549ae98c4ee606c780e56
+msgid "https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/skins/plone_scripts/plone.css.py"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:275
+# 4ea3917a99b041d6bf12a13b694fdf0a
+msgid "CSS reset"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:277
+# 21d709608c714bb282eb36ad802f739a
+msgid "If you are building a custom theme and you want to do a cross-browser CSS reset, the following snippet is recommended:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:303
+# 1c476818540747458e35adf06de578b5
+msgid "Adding new CSS body classes"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:305
+# d040f25ddbdb46b6a1c2d43ba4be1246
+msgid "Plone themes provide certain standard CSS classes on the ``<body>`` element to identify view, template, site section, etc. for theming."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:308
+# 0bba78bedae04bb3a51679f2ecad0091
+msgid "The default body CSS classes look like this:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:314
+# 8c1329bca5214202b9b0bb83b71b6eb0
+msgid "But you can include your own CSS classes as well. This can be done by overriding ``plone.app.layout.globals.LayoutPolicy`` class which is registered as the ``plone_layout`` view."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:318
+# 81f71e80722a40bfb776dc6efa9e706b
+msgid "``layout.py``:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/css.rst:378
+# 1e4637b827f946b68b46d8233e16e83e
+msgid "Related ZCML registration:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:3
+# a180449984004024875d4ae4545a82ec
+msgid "Diazo theming"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:7
+# 3d604cc6d79945c39be4c3b6d38792a6
+msgid "Theming Plone and integrating external sites under one theme service using Diazo."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:15
+# 07d6c751e4174993816615d318766e15
+msgid "Diazo is the new name of what was previously known as XDV. Diazo, like XDV, is an external HTML theming engine, a.k.a. theming proxy, which allows you to mix and match HTML and CSS from internal and external sites by using simple XML rules. It separates the theme development from the site development, so that people with little HTML and CSS knowledge can create themes without need to know underlying Python, PHP or whatever. It also enables integration of different services and sites to one, unified, user experience. For more information, you can always read the `wikipedia article <http://en.wikipedia.org/wiki/Diazo_%28software%29>`_"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:24
+# e3318527e0354ebdbd89bcfd7d50105d
+msgid "Example backends to perform diazo transformation include:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:26
+# 2f19277c2e394e57bb6b5bdd24f30c14
+msgid "``plone.app.theming`` (as a normal Plone add-on)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:28
+# da97b0b8f288425bab75cfb1a5b66374
+msgid "Apache's ``mod_transform``"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:30
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:34
+# 1bb695f3e0254172b15113b7dd9ff185
+# ca105399478f437ea678c55408302cb0
+msgid "Nginx web server transform module"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:32
+# d759af53d10b4e9bb8bd914370d2132b
+msgid "Diazo theming can be used together with Plone, in which case enhanced support is provided by the `plone.app.theming package <https://pypi.python.org/pypi/plone.app.theming>`_. (This is the Plone integration package for Diazo, like `collective.xdv package <https://pypi.python.org/pypi/collective.xdv>`_ was the integration package for XDV) Technically, ``plone.app.theming`` adds a Plone settings panel (Diazo) and does XSL transformation in Zope's post-publication hook using the ``lxml`` library."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:42
+# d11db7dbbe9e4981b2e83682e0c750e9
+msgid "The community (Martin Aspeli) is currently working on an online theme editing interface, so designers can make a diazo theme for a Plone site entirely through the web. For more information, have a look at his `branch of plone.app.theming <https://github.com/plone/plone.app.theming/tree/optilude-ace>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:48
+# f49d79dec220424b80599431294a576a
+msgid "Diazo can be used standalone with `Diazo package <https://pypi.python.org/pypi/diazo>`_ to theme any web site, whether it's Wordpress, Joomla, Drupal or a custom in-house PHP solution from the year 2000."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:55
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:52
+# 46a700f4fedf46bd86258c9eca832f74
+# e59c5175da0d499c8d92836879da175f
+msgid "Theming editing interface (backend)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:57
+# 951488786a204fc4a2bc70249ee24126
+msgid "The editing interface, backend, or admin site, however you wish to call it, can also be themed with ``plone.app.theming``. If you don't want to theme the editing interface, however, you can fallback to the default Plone theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:62
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:58
+# 8e72a7e258004655a0dbeded3a8137f8
+# 38349f7286184a8ab4421969144327ec
+msgid "There are several reasons for this:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:64
+# 475e7283a4794fa79c7d7e983000478f
+msgid "The Plone editing interface is powerful and has very good usability, which means that it is internally quite complex (makes complex things to pose itself as a simple to the end user)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:68
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:64
+# 8f5be60f9db741bfa3cff4e6471eb919
+# 09b9397d0b0142d480ddcda8c1be6ee9
+msgid "The public theme you are building would not fit to the editing interface very well. E.g. no space for portlets. This is especially problematic if an external artist has created the visuals without properly fitting them for Plone."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:74
+# 1e741296eac04c76b97a1960ea054f8f
+msgid "With Diazo you can easily also have a separate ``admin.yoursite.com`` domain where the Plone editing interface is untouched."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:78
+# ff445becad204cffaec284b61303c0fb
+msgid "Related links"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:80
+# 99730d22b1ab4d46a29a61ddc517685a
+msgid "https://pypi.python.org/pypi/plone.app.theming"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:82
+# 45b74aa905b64b029ab873a9facdf185
+msgid "https://pypi.python.org/pypi/diazo"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:84
+# 9fc5f29d8db34403aeb0df4b4abcb96e
+msgid "http://diazo.org"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:86
+# da87484377e749b3a1005cd7ca04b3a3
+msgid "http://plone.org/products/collective.examples.diazo"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:90
+# 603d36a798134949acb4f160d297f9fe
+msgid "Creating your first Diazo theme package"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:96
+# a83b4038dc93495fa08fa877c56df9b8
+msgid "to be documented"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:99
+# 8709186153e7494794d1277c7f66dbce
+msgid "Setting up Diazo"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:101
+# 3bf6960fce2b43abb2326633124c9560
+msgid "If you are working with Plone you can integrate ``plone.app.theming`` to your site's existing buildout."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:104
+# 84cc9878dbfb4b0b98853c9eeb67e7e0
+msgid "If you are not working with Plone, the `Diazo home page <http://docs.diazo.org/en/latest/installation.html>`_ has instructions how to deploy the Diazo command standalone."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:109
+# 98ed57db70e0442689b66db51525fe3c
+msgid "Diazo Rules"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:111
+# 2d4568c79e814cb794b89994ece91106
+msgid "Rules (``rules.xml``) will tell how to fit content from external sources to your theme HTML."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:114
+# 365345ce8f19432d80d084f634526820
+msgid "It provides straightforward XML-based syntax to manipulate HTML easily:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:116
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:118
+# a616984c23144d918cfd762c7761507d
+# 9ba995a4aa25491dbd801d658b91eb59
+msgid "Append, replace and drop HTML pieces"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:118
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:120
+# 56853705c0ce47e49eb35de29b35bf2d
+# 48a7c7c4af5f4497855899a66f7f3332
+msgid "Insert HTML snippets"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:120
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:122
+# 04e438ec3c23411b88ee7e0b96cc4eba
+# c0ae364e3dc045658253584f09a48110
+msgid "CSS or XPath selectors can be used to identify HTML parts"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:122
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:124
+# 30d861695a01493394f51b1ae7c6f761
+# 1728523eba0b46e7a7be4119480679a3
+msgid "It is possible to mix and match content from more than two sites"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:124
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:424
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:126
+# 7ae169a5fd5545a79a17d96f38d345c1
+# 041b3e9e832a4ae5832bcfb86eeef251
+# ac2377a724784eabb21568c0acc53dd2
+msgid "etc."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:126
+# eaf42afe9d1e498083368d84071aa316
+msgid "Rules XML syntax is documented at the `Diazo homepage <http://docs.diazo.org>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:129
+# f68a7bb955604903b3d2da03ae79d68a
+msgid "The actual theming is done by one of the XSL backends listed above, by taking HTML as input and applying XSL transformations on it."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:133
+# d15b45b93c91424d9ae2e776a670baea
+msgid "Dropping specific CSS files with Diazo"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:135
+# 4ef405f9748640c9a6ef29d897c52be3
+msgid "For example if you wish to get rid of the ``base-cachekey????.css`` file that comes from a Plone site, but still want to keep the authoring CSS and any special CSS files that come from add-ons::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:145
+# 405595df00b847d58982041bd96d82c6
+msgid "Benefits of using Diazo theming instead of creating native Wordpress (or other) themes"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:147
+# 2a6a71b757384f98bfd0f6414da9ab1f
+msgid "You need to maintain only one theming add-on product e.g. one for your main CMS and Wordpress receives updates to this site and theme automatically"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:151
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:252
+# b26acd206b4c4a7ab42ecd87265108d5
+# e82b38af0a7b46daac13915824c12a1a
+msgid "Wordpress does not need to be touched"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:153
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:254
+# 9390fa4a602b4d28b5c8b4054411e923
+# 868a3d1bb05748ef9c620448debb45ea
+msgid "You can host your Wordpress on a different server, even wordpress.com, and still integrate it to your main CMS"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:156
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:257
+# 3dfb1c57bfd04208b23964074475b4a5
+# 4895bd95b20c4b1186ca86feff15938b
+msgid "The theme can be recycled not only for Wordpress, but also other external services: Bugzilla, Trac, Webmail, phpBB, you-name-it"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:162
+# 45b11d75eaa74d5ebf798f4bd95c4177
+msgid "Applying the theme in Apache production environment"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/diazo.rst:164
+# 4ec5342bbb7242a3935e3c125482de1c
+msgid "http://docs.diazo.org/en/latest/deployment.html#apache"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/dtml.rst:3
+# 12dac17eee3a4cb6bb8c9fb02786ad26
+msgid "DTML"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/dtml.rst:5
+# 1abbdd3b99ec49058fa20be4221955b8
+msgid "DTML technology has been phased out ten years ago."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/dtml.rst:7
+# 4cdbc9b0aa09438e985ec44e8f091933
+msgid "Do not use it."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/index.rst:3
+# 73e2a8b97cd8444b9e5c24bc44c27ca9
+msgid "Front-end: templates, CSS and Javascript"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/index.rst:5
+# 2fda8482665149cc9ec22b3c8c2e3922
+msgid "Instructions and information for front-end development for Plone CMS."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/index.rst:7
+# d5faa9c07c8140ada9c5fb02cb4f4199
+msgid "This includes creating page templates, managing Javascript and CSS assets and writing Javascript for Plone."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:3
+# a7554ea297e843f08f9939d6927b3bef
+msgid "Resource folders"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:7
+# 8d2b25feaaaf44b5bb9ab34b20b1bd95
+msgid "How to use resource directories to expose static media files (css, js, other) in your Plone add-on product"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:15
+# 59cc215764c8448fb9c80e78a1aacb04
+msgid "Resource folders are the Zope Toolkit way to expose static media files to Plone URL mapping."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:18
+# a83ab3022f66482f9bf567f00a51e96d
+msgid "Resource folders provide a mechanism which allows conflict free way to have static media files mapped to Plone URL space. Each URL is prefixed with ``++resource++your.package`` resource identified."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:24
+# 05c506428cab4e2a819b7b29c941ff49
+msgid "ZCML resourceDirectory"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:26
+# 806b139164174a938bfbb10527b500e1
+msgid "If you want to customize media folder mapping point, you need to use the resourceDirectory directive."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:29
+# deb65ae498e94b81ba35a21d09db088a
+msgid "Below is an example how to map *static* folder in your add-on root folder to be exposed via ++resource++your.product/ URI"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:69
+# cd0d3811fc634472add730a90d398619
+msgid "Grok static media folder"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:71
+# ca99e06e892741c190ff4d879b549a03
+msgid "Learn more about :doc:`Grok and Plone integration </develop/addons/components/grok>`."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:73
+# e5aa2b2a365e4623bf5d61996f8d5717
+msgid "Since five.grok 1.3.0 this method does not work."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:75
+# 96291f90431041cab4c06029f6db5721
+msgid "The easiest way to manage static resources is to make use of the static resource directory feature in five.grok. Simply add a directory called static in the package and make sure that the ``<grok:grok package=\".\" />`` line appears in configure.zcml."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:79
+# 009599c03c7b4930bb86660373fe62d3
+msgid "Example how to include ``yourproduct.app/static`` folder as ``++resource++yourproduct.app`` URL."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/resourcefolders.rst:91
+# ec206b101b224fc99e60406f0f90e38d
+msgid "If a ``static`` resource directory in the ``example.conference`` package contains a file called ``conference.css``, it will be accessible on a URL like ``http://<server>/site/++resource++example.conference/conference.css``. The resource name is the same as the package name wherein the static directory appears."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:3
+# 0ce6a043451c4d40808b9fbf01bb667d
+msgid "Skin layers"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:7
+# 85a0a76c6e7c4826a44a84dfb7eadaea
+msgid "Skin layers are a legacy Plone 2 technology, still is use, for adding overridable templates and media resources to Plone packages."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:16
+# 4cc0c9e99ec34fd8999ac1e1e498922b
+msgid "Skin layers, portal_skins and CMFCore.SkinsTool are the old-fashioned way to manage Plone templates."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:19
+# 59080f166c674a25b10e0062bab254b2
+msgid "Each Plone theme has set of folders it will pick from portal_skins. These sets are defined in portal_skins -> properties."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:22
+# d0490eccfd66481486c8b0e15141d88d
+msgid "Skins layers are searched for a template by template name, higher layers first."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:24
+# f0374228aede4c1f9392f21f7a9bf424
+msgid "Skin layers can be reordered through-the-web in portal_skins -> properties"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:28
+# 263e4143d9214ee1bca54b06472a6add
+msgid "Defining a skin layer"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:30
+# 7a1bb42d9c7c479194537ff6d8d5962d
+msgid "Skin files are placed in the *skins* folder of your add-on product."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:32
+# 798b22ff05b94ba3ae6d679bce933b8a
+msgid "The structure looks like this:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:34
+# 76518ed353fe48a7a3f2f13533813ccf
+msgid "yourproduct/namespace/configure.zcml"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:36
+# c3084d48b8a64be19f4df1c13acc33e5
+msgid "yourproduct/namespace/profiles/default/skins.xml"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:38
+# ef1c84e5999a460abe6bb476c6be3e57
+msgid "yourproduct/namespace/skins"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:40
+# 29f35f99b4574fd98038a99393919f4d
+msgid "yourproduct/namespace/skins/layer1folder"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:42
+# c7ba3b39527e4695ae14b7bcdddee9ab
+msgid "yourproduct/namespace/skins/layer2folder/document_view.pt"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:44
+# 0d3dace648c44fa48a45b569147bc8b5
+msgid "yourproduct/namespace/skins/layer2folder"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:46
+# d7aacfa8338f42189b862b551fb6a006
+msgid "..."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:48
+# 7a203d4f33674f0fbfe0915476dbca18
+msgid "GenericSetup skins.xml::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:59
+# d5305ae62f04460fb3b34562a856ba5d
+msgid "ZCML to register the layer::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:69
+# 6c02632abb454e4ebac614bd0f96f2f4
+msgid "See also"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:71
+# 357354668f7a4392aa47661f233e3f9b
+msgid "https://mail.zope.org/pipermail/zope-cmf/2007-February/025650.html"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:74
+# 532d23fd5ae64b2fab08800302dc86d0
+msgid "Unit testing and portal_skins"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:76
+# d5f736e85b2e4be1b8df56dfd6ccc493
+msgid "If you test templates in your unit testing code you might need to call PloneTestCase._refreshSkinData()::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:85
+# 31b06ecb5e034904b89162a255ab732e
+msgid "Activating the current skin layer from a debug/ipzope shell"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:87
+# bc7addcda72548849e37a3a9c8f47807
+msgid "The skin needs to be initialised before its files can be accessed e.g. via restrictedTraverse::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:94
+# f9b402bbaa314b20bf36831426168b6b
+msgid "Rendering a skin layer template"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:96
+# db133b5c0d394eccb790c35bc05d9664
+msgid "Templates must be bound to a context object before rendering.  Plone acquisition magic maps templates as acquired attributes of all contentish objects."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:113
+# c313edf3dcbf4e399665b1881f0e23f2
+msgid "Testing templates"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:115
+# d92731d9c8244f4a9c75ae7972ddbf2b
+msgid "Below is some example code how templates behave."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:128
+# 6c887e76933f45ffb751d5c1627df2f4
+msgid "Nested folder overrides (z3c.jbot)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:130
+# 2a23fbf2e34547178df911f9fdc12d35
+msgid "z3c.jbot allows to override any portal_skins based file based on its file-system path + filename."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:133
+# bc51be015d5d4adba8f1f6fb084755bf
+msgid "Example jbot ZCML slug (no layers, unconditional overrides)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:146
+# 5759b70d39a54c8885018420855ea052
+msgid "Then your add-on has folder structure (example)::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:152
+# 71f713b74b75492d985a46fa25272a08
+msgid "For layered example (theme layer, add-on layer), see"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:154
+# eb2ed97700a442abbc50b842d89c6878
+msgid "https://github.com/miohtama/sane_plone_addon_template/blob/master/youraddon/configure.zcml#L41"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:156
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:679
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:148
+# 763ea807408e412bbcd829ae9a2619c5
+# ebc2439a6ead48e5b70d643f3aeb85bd
+# 7bf82d5eb0844623942365e1e739c3ae
+msgid "More info"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:158
+# 96157466158b49c9bf83da9464d4cac8
+msgid "https://pypi.python.org/pypi/z3c.jbot"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:160
+# 018535b17c814dea981ea13ab90cf0f7
+msgid "http://stackoverflow.com/questions/6161802/nested-overrides-in-portal-skins-folder"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:163
+# 14a88b0676ba42edb77b4363b064d37d
+msgid "Poking portal_skins"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:165
+# 8ce75499e17d4ca4b81cc5c6989ad955
+msgid "``portal_skins`` is a persistent tool in Plone site root providing functions to manage skin layers. Its code mostly lives in ``Products.CMFCore.SkinsTool``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:168
+# 68052e972e87484786633ad60d013345
+msgid "Available skin layers are directly exposed as :doc:`traversable </develop/plone/serving/traversing>` attributes::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:193
+# 1b5369a8660b448b8a7938db3e9478a8
+msgid "``portal_skins.getSkinSelections()`` will list available skins."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:195
+# 884917c9e87b440c8fb89daf15f69db5
+msgid "You can edit a specific skin layer::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:199
+# 47859044e4954843a943959389ef01b1
+msgid "``portal_skins.selections`` is a :doc:`PersistentDict </develop/plone/persistency/persistent>` object holding *skin name* -> *comma separated layer list* mappings."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:205
+# 647fc4aafd0f44c8a7960b4e05c63553
+msgid "Dumping a portal_skins folder to the filesystem"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/skin_layers.rst:207
+# 768dde700147404d9b11b739b055919f
+msgid "qPloneSkinDump can build a filesystem dump from portal_skins but it only works on Plone 2. If you need this functionality you can try to use this script ripped off qPloneSkinDump: https://gist.github.com/silviot/5402869. It is a WorksForMe quality script; replace the variables and run it with::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:3
+# e641aed066e6409393cd6bd90a491cfc
+msgid "TAL page templates"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:7
+# 3d05ec0138e94e5fb107892d3f852f8d
+msgid "Plone uses Zope Page Templates (:term:`ZPT`). This document contains references to this template language and generally available templates, macros and views you can use to build your Plone add-on product."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:16
+# e0101d796ba54c8ebdb9b64334b587a4
+msgid "Plone uses `Zope Page Templates <http://docs.zope.org/zope2/zope2book/AppendixC.html>`_, consisting of the three related standards: Template Attribute Language (:term:`TAL`), TAL Expression Syntax (:term:`TALES`), and Macro Expansion TAL (:term:`METAL`)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:22
+# 3e4ca14cf3794d129fe62a763608c51c
+msgid "A normal full Plone HTML page consists of:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:24
+# 258ae7bfa56c488c88d9ad23627dd8c5
+msgid "the *master template*, defining the overall layout of the page,"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:25
+# db83f53db0514e6b949de2ee1e43ef50
+msgid "*slots*, defined by the master template, and filled by the object being published,"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:27
+# c04b0251739e4e248d902cf701e854ab
+msgid ":doc:`Viewlet managers </develop/addons/five-grok/browser-components/viewlets>` containing :doc:`viewlets </develop/addons/five-grok/browser-components/viewlets>`."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:30
+# 16988a99f06e46a897c51c84192b82e7
+msgid "Templates can be associated with Python view classes (also known as \"new style\", circa 2008) or they can be standalone (\"old style\", circa 2001)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:36
+# 25fe0487883146828b814e1e78843476
+msgid "The rationale for moving away from standalone page templates is that the page template code becomes easily cluttered with inline Python code. This makes templates hard to customize or override.  New style templates provide better separation with view logic (Python code) and HTML generation (page template)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:44
+# f494d2d2808e42e293c2c08601d95bd2
+msgid "The MIME-Type"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:45
+# 24c7fb0592264705855fb70e08aa3422
+msgid "Basically a document file got a mime-type. This is also important for Plone Templates if you don't want to export to text/html. If you want to export to a XML File you have to change the mime-type because otherwise the browser won't recognize the file as an XML. At the moment Plone supports text/html which is the default value. And text/xml. You got 2 opportunities to change this value. If you customize a template you got an input box which called \"Content-Type\". The other Way is to create a file named by your template name and extend the name by `.metadata`."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:53
+# 3292c779b8c943cb80cd7af38c6d7bba
+msgid "Example:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:52
+# d07befae0c2148109f7b0a614bc86406
+msgid "my_view.pt"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:53
+# 98c856d38aea4b399452e54e3a8e34b4
+msgid "my_view.pt.metadata"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:55
+# 75d95668ee874b5da78bc8db41172620
+msgid "Content of metadata file::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:62
+# 90513a7ca52e4e41bb3307ee84e3c6c0
+msgid "Overriding templates"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:64
+# 912ef69947474364913321421c5a3aa9
+msgid "The recommended approach to customize ``.pt`` files for Plone 4 is to use a little helper called `z3c.jbot`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:67
+# c8d7630a6c984e0186a927948642a60d
+msgid "If you need to override templates in core Plone or in an existing add-on, you can do the following:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:70
+# c81d1882beb6467c9346e81a89ef83d9
+msgid "`Roll out your own add-on`_ which you can use to contain your page templates on the file system."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:73
+# c536d323faad4496bed87985e72ab770
+msgid "Use the `z3c.jbot`_ Plone helper add-on to override existing page templates. This is provided in the `sane_plone_addon_template`_ add-in, no separate set-up needed."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:78
+# e5d7d456fef04ce3a030000cc29faa03
+msgid "`z3c.jbot`_ can override page templates (``.pt`` files) for views, viewlets, old style page templates and portlets. In fact it can override any ``.pt`` file in the Plone source tree."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:83
+# 8dd38d48662d40c4941b8f1d029628c9
+msgid "Overriding a template using z3c.jbot"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:85
+# 20829f498f334265bc5da71f471b62ad
+msgid "First of all, make sure that your customization add-on supports `z3c.jbot`_. `sane_plone_addon_template`_ has a ``templates`` folder where you can drop in your new ``.pt`` files."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:90
+# 2089dd5278b84628a62726c9a515b4f1
+msgid "Locate the template you need to override in Plone source tree. You can do this by searching the ``eggs/`` folder of your Plone installation for ``.pt`` files. Usually this folder is ``.../buildout-cache/eggs``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:95
+# 0ac6d5c3acc348b6b4d6f765de2512db
+msgid "Below is an example UNIX ``find`` command to find ``.pt`` files. You can also use Windows Explorer file search or similar tools:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:109
+# 6fa22ad608604f26bd2abaeb7fe1f0da
+msgid "Your ``eggs/`` folder may contain several versions of the same egg if you have re-run buildout or upgraded Plone. In this case the correct action is usually to pick the latest version."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:114
+# 99899394acfe438dbbb5834934a388cd
+msgid "Make a copy of ``.pt`` file you are going to override."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:116
+# 12d8b805981846ecb9d0b657a5f195a2
+msgid "Rename the file to its so-called *canonical* name: to do this, exclude the ``.egg`` folder name from the filename, and then replace all slashes ``/`` with dot ``.``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:122
+# 26346cbfa7214707bb9b6dbdab3eeb3a
+msgid "to::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:126
+# b21e550ca8c74e7087a70f8e4131d1d6
+msgid "Drop the file in the templates folder you have registered for ``z3c.jbot`` in your add-on."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:129
+# dae5405b47434d0cae1886335dba26f7
+msgid "Make your changes in the new ``.pt`` file."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:133
+# e523797e2aa04eb18d689285dc1bcc28
+msgid "After overriding the template for the first time (adding the file to the ``templates/`` folder) you need to restart Plone. `z3c.jbot`_ scans new overrides only during the restart."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:138
+# 5bec44273db64524a5c9e92eca1758a7
+msgid "After the file is in place, changes to the file are instantly picked up: the template code is re-read on every HTTP request |---| just hit enter in your browser location bar. (Hitting enter in the location bar is quicker than hitting :guilabel:`Refresh`, which also reloads CSS and JS files.)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:143
+# b968a7ea67c94fb488c4191d1b5a1759
+msgid "If you want to override an already overridden template, read here: <http://stackoverflow.com/questions/16209392/how-can-i-override-an-already-overriden-template-by-jbot>"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:146
+# cc42c77c784f4939a188cbeae8f0e605
+msgid "More info:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:148
+# f596e08a6bce40cdafaa8c3b490192c1
+msgid "https://pypi.python.org/pypi/z3c.jbot/"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:150
+# 632bb90b626944bb8d67f24ff27c46da
+msgid "http://blog.keul.it/2011/06/z3cjbot-magical-with-your-skins.html"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:154
+# d3ec0031a88945d9baab0f38ef616d9f
+msgid "Main template"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:156
+# 1ee9c411c78d4906a2a9a7a1fea43d05
+msgid "The master page template in Plone is called ``main_template.pt`` and it is provided by the `Products.CMFPlone package <https://github.com/plone/Products.CMFPlone/blob/4.3.x/Products/CMFPlone/skins/plone_templates/main_template.pt>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:160
+# 0f044473e5cd4599a29c7b9e50ded12a
+msgid "This template provides the visual frame for Plone themes. The template is an old-style page template living in ``plone_skins/plone_templates``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:164
+# 5f689e44955448a1ad5ab08382fea9d9
+msgid "Custom per view main template"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:166
+# 676ff0fc95e2486aba8fe4f571854cc6
+msgid "Here is an example how to provide a customized main template for one view. In this example we have customized main template so that only the content area is visible."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:169
+# eceff21e7bfe42b18a7596e3935e4672
+msgid "First we register our template in ``configure.zcml``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:179
+# 8f956aaf60cd4874bcaaeb446ac63746
+msgid "We refer it in our page template instead of ``here/main_template``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:190
+# 514325fd336343a68821c25d311ab1d8
+msgid "``barebone-main-template.pt`` is an edited copy of ``portal_skins/sunburst_templates/main_template.pt``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:323
+# 568583dad7c34df38864714c622ae2e5
+msgid "Plone template element map"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:325
+# 4998f7603e3048079b79adff99fc2285
+msgid "Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers are described `here <http://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:329
+# 2519ebb3d06c4c49ba475862b6de9dfa
+msgid "Plone 3 viewlets differ from Plone 4 viewlets."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:332
+# 3c74ec5d8a044993b90592e407394a5c
+msgid "Zope Page Templates"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:334
+# faf5131d84b348c4aef7efef1cbe04cb
+msgid "Zope Page Templates, or :term:`ZPT` for short, is an XML-based templating language, consisting of the Template Attribute Language (:term:`TAL`), TAL Expression Syntax (:term:`TALES`), and Macro Expansion TAL (:term:`METAL`)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:338
+# 580bb406fe8644bba7422fe93d7764ae
+msgid "It operates using two XML namespaces (``tal:`` and ``metal:``) that can occur either on attributes of elements in another namespace (e.g. you will often have :term:`TAL` attributes on HTML elements) or on elements (in which case the element itself will be ignored, but all its attributes will be recognized as :term:`TAL` or :term:`METAL` statements)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:344
+# 89201dd3c3bb4cbdb9fb47bdd1bcfcdf
+msgid "A statement in the ``tal:`` namespace will modify the element on which it occurs and/or its child elements."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:347
+# 580994f583514a1ab18cf04b9dab5069
+msgid "A statement in the ``metal:`` namespace defines how a template interacts with other templates (defining or using macros and slots to be filled by macros)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:351
+# 7fcd4530bd4e45e28b77f56bc8cc4a92
+msgid "The value of an attribute in the ``tal:`` namespace is an expression. The syntax of this expression is defined by the :term:`TALES` standard."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:355
+# 91dd263c8cb142e5934b4ddd15bd9966
+msgid "TAL"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:357
+# 6fd15bbb219448ffaad1482a4684c4aa
+msgid "`TAL <http://wiki.zope.org/ZPT/TALSpecification14>`_ is the Template Attribute Language used in Plone."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:360
+# aa030ce01fbc4e0ebf94b49b686d4c45
+msgid "`TAL Guide <http://www.owlfish.com/software/simpleTAL/tal-guide.html>`_"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:364
+# 2f0d7ae4851b4fd087b41cdc3249c216
+msgid "Escaped and unescaped content"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:366
+# 0a1758f523274670a1ec347bade9e84e
+msgid "By default, all :term:`TAL` output is escaped for security reasons::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:374
+# 2a5d12df32ba468e920597e820f907e8
+msgid "Will output escaped HTML source code:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:380
+# 3b08e3424529410f8da9b1bb88c72f04
+msgid "Unescaped content can be output using the TALES ``structure`` keyword in the expression for the ``tal:replace`` and ``tal:content`` statements:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:387
+# 06fa6b0ff02b447c87b7c310c3da83b6
+msgid "Will output unescaped HTML source code:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:394
+# 64b52471d8834a0d86a942fde759e306
+msgid "METAL"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:396
+# 61f9d1b1b08a435db55a82b0eb705df9
+msgid "The :term:`METAL` (Macro Expansion TAL) standard provides *macros* and *slots* to the template language."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:399
+# f94e1866e4a34f6d921485da5fc7b019
+msgid "Using METAL macros is no longer recommended, since they couple programming logic too tightly with the template language.  You should use views instead."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:402
+# b84eeed3b2884adeb3593ee1db38c477
+msgid "Read more about them in the `TAL Guide <http://www.owlfish.com/software/simpleTAL/tal-guide.html>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:406
+# 6b78c1f98eb04668930c771e8058f7f8
+msgid "TALES expressions"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:408
+# a051dea200d34703b2effc6646f9478c
+msgid "The value of TAL statements are defined by TALES expressions. A TALES expression starts with the expression type. If no type is specified, the default is assumed. Three types are standard:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:412
+# 101eea71f30c4e11bf2d027b0c18616b
+msgid "``path:`` expressions (*default*),"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:413
+# 572ba875f8804dffb1d941bde5cc134e
+msgid "``python:`` expressions,"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:414
+# b23b877e7f5849d082b86872a7a78f76
+msgid "``string:`` expressions."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:416
+# dd9b25e9b4354f2487c997720f7d70c7
+msgid "They are generally useful, and not limited to use in Page Templates. For example, they are widely used in various other parts of Plone:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:419
+# 80fb2589375c42e3bf53bab4a812d836
+msgid "CSS and Javascript registries, to decide whether to include a particular file;"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:421
+# 8b34572bb85c4641bc69d45a1ab297ca
+msgid "Action conditions, to decide whether to show or hide action link;"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:422
+# 3e153193c5a747b1bcb6be01243e8be4
+msgid "Workflow security guards, to decide whether to allow a workflow state transition"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:426
+# 5a81b179882c4a4882e1635abd2d7d38
+msgid "Read more about expressions in `TAL Guide <http://www.owlfish.com/software/simpleTAL/tal-guide.html>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:428
+# 545bc085512c45a88441efc5d465f67e
+msgid "See the :doc:`Expressions chapter </develop/plone/functionality/expressions>` for more information."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:431
+# 869703802de44f398616518280dddaed
+msgid "Omitting tags"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:433
+# d215a724a4b845fdb7a00e8bc6ba2255
+msgid "Sometimes you need to create XML control structures which should not end up to the output page."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:436
+# c71aa911937349b68ceafec48e904eeb
+msgid "You can use ``tal:omit-tag=\"\"``:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:445
+# e14e71a120b242e59b29787b021bbd9e
+msgid "Images"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:447
+# afc490d9442c44889ad8e23672905b2b
+msgid "See :doc:`how to use images in templates </develop/plone/images/templates>`."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:450
+# 6df3b415c0ef48daa3f051ac0de86153
+msgid "Overriding templates for existing Plone views"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:452
+# d5b60af4f7264f91aa3adfd117b01d4f
+msgid "New style templates can be overridden by overriding the view using the template."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:455
+# 73b93d5f26f849df84047a57c82e3f04
+msgid "Old stype templates can be overridden by register a new skins layer in ``plone_skins``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:459
+# 8d1c075497414c47a48b5d8bcdc2978f
+msgid "View page template"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:461
+# fec52ebc5be74acaa1581c0977f634e5
+msgid "http://lionfacelemonface.wordpress.com/2009/03/02/i-used-macros-in-my-browser-views-and-saved-a-bunch-of-money-on-my-car-insurance/"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:464
+# 9938f82d6307446fab467ce8eee0b6c6
+msgid "Old style page template"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:466
+# e2c9236676134c81925ea33b42c7dbd9
+msgid "Create a new layer in ``portal_skins``"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:468
+# c5a4a92e1ad1405390d62962337e3a70
+msgid "Templates are resolved by their name, and a property on the ``portal_skins`` tool defines the order in which skin layers are searched for the name (see the *Properties* tab on ``portal_skins``)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:472
+# 343c3d94712943b58efdbb96d3b72262
+msgid "You can reorder layers for the active theme so that your layer takes priority."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:476
+# ce942576a07e4b29ace712492b73596c
+msgid "Portlet slots"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:478
+# d33e853bcdbe4e64ad961fa64cd9ae53
+msgid "By default, Plone ``main_template`` has slots for left and right portlets. If you have a view where you don't explicitly want to render portlets you can do:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:497
+# b20028c2b2104603bc183817314a9156
+msgid "This blanks out the ``column_one_slot`` and ``column_two_slot`` slots."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:500
+# c9b732ce8d53468d8cd87672b84fd8a2
+msgid "Head slots"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:502
+# 491c6d2e3750459fbd9a360caa7a58aa
+msgid "You can easily include per-template CSS and JavaScript in the ``<head>`` element using extra slots defined in Plone's ``main_template.pt``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:505
+# e536817faaec4fca9bafc83700a6173f
+msgid "Note that these media files do not participate in :doc:`portal_css </adapt-and-extend/theming/templates_css/css>` or :doc:`portal_javascript </develop/addons/javascript>` resource compression."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:510
+# 15bd9169b4424ec282204f1cd2a565a3
+msgid "Extra slots are:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:526
+# fa1574899fee47918b0b0022784ac60f
+msgid "Example use:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:572
+# cd979c68d8cf4fe6aa2c4fa2e92be6b8
+msgid "Edit frame"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:574
+# d9f4e3293af246f0bbad42f7ec98dd32
+msgid "By default, Plone draws a green *edit* frame around the content if you can edit it. You might want to disable this behavior for particular views."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:578
+# b3a675ddc37048fa88bc358d8e316ad4
+msgid "Hiding the edit frame"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:580
+# 711c9e72078e4e209b01e2e44cdc1b3c
+msgid "If you'd like to hide the (green) editing frame, place the following code in your Zope 2-style page template::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:586
+# 1a25457ce371443a89f147b87057112f
+msgid "Examples of this usage:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:588
+# ed7be0c455ce41a998af7398a43db753
+msgid "The `Contact info page <https://github.com/plone/Products.CMFPlone/blob/4.3.x/Products/CMFPlone/skins/plone_templates/contact-info.cpt>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:590
+# 359a3fc888974c1985f09f54d0198d06
+msgid "The `Recently modified page <https://github.com/plone/Products.CMFPlone/blob/4.3.x/Products/CMFPlone/skins/plone_templates/recently_modified.pt>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:593
+# b1223f327e174bb2b2e5302d0de6aa4a
+msgid "Special style on individual pages"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:595
+# 504df8fd3b89404991b65a8ded7597fe
+msgid "To override page layout partially for individual pages you can use marker interfaces to register special overriding viewlets."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:598
+# 5938863da2aa4162b404f86a6c68b0f8
+msgid "More information:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:600
+# d9cb2fbd6a12485e9fa8bf497de730b0
+msgid ":doc:`Viewlets </develop/plone/views/viewlets>`"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:602
+# e2da99fc560d4bc4ad286259ea414508
+msgid "http://starzel.de/blog/how-to-get-a-different-look-for-some-pages-of-a-plone-site"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:605
+# f7dc3d03e4934096a60aa1d589612794
+msgid "URL quoting inside TAL templates"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:607
+# 62036877d8f9476aa2ebde93cccb6418
+msgid "You need to escape TAL attribute URLs if they contain special characters like plus (+) in query parameters. Otherwise browsers will mangle links, leading to incorrect parameter passing."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:611
+# f7084e0904aa4e58a64d7b0cca40fa49
+msgid "Zope 2 provides ``url_quote()`` function which you can access"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:619
+# 528ce400f34241cc9dfb467c9fd45c78
+msgid "Then you can use this function in your TAL code"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:626
+# 0b8a34bd038d4f8e8aee9846d2bf896b
+msgid "If you need to also quote spaces, use ``url_quote_plus`` rather than ``url_quote``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:629
+# 17304b9d337e4f7dadab383df4dd9137
+msgid "Using macros"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:631
+# 7460a022c89b42bd8d36b86ffcd08f55
+msgid "Here is an example how to use `<metal:block define-macro=\"xxx\">` and `<metal:block use-macro=\"xxx\">` in your :doc:`view class </develop/plone/views/browserviews>` template files."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/template_basics.rst:681
+# 188166e590b54590a835cd75db2bf8fe
+msgid "http://stackoverflow.com/q/13165748/315168"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:3
+# 3245eb4685484c3ba93d80e51f0e5ca6
+msgid "Diazo / XDV theming"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:7
+# 9415063e6bff438484bd80abcdf8967b
+msgid "Theming Plone and integrating external sites under one theme service using Diazo / XDV solution."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:15
+# e0c97ced062a42e1802c7e3a5bc7fa81
+msgid "XDV is an external HTML theming engine, a.k.a. a theming proxy, which allows you to mix and match HTML and CSS from internal and external sites by using simple XML rules. It separates the theme development from the site development, so that people with little HTML and CSS knowledge can create themes without the need to know the underlying Python, PHP or whatever. It also enables integration of different services and sites to one unified user experience. For example, XDV is used by `plone.org <http://plone.org>`_ to integrate the Plone CMS and the Trac issue tracker."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:24
+# f96b51e47b9b4e60bb788913e4f2647a
+msgid "XDV compiles theming rules to XSL templates, which has been a standard XML based template language since 1999. XSL has good support in every programming language and web server out there."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:28
+# 92528ca83d7b49468df04e48145c7b64
+msgid "Example backends to perform XDV transformation include:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:30
+# f5154fde03eb46398cdb12790ee69e8b
+msgid "collective.xdv (as a normal Plone add-on, a post-process hook)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:32
+# 1610dd002ed14981bf57bdd73d3f7dd4
+msgid "Apache's mod_transform"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:36
+# 357e89c05cfd45519951aec5171a70c4
+msgid "XDV theming can be used together with Plone, where enhanced support is provided by the `collective.xdv package <https://pypi.python.org/pypi/collective.xdv>`_. Technically, collective.xdv adds a Plone settings panel and does the XSL transformation in Zope's post-publication hook using lxml library."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:41
+# 1aa1e9fdff2e490d855abb67b0651b82
+msgid "XDV can be used standalone with the `XDV package <https://pypi.python.org/pypi/xdv/0.3a2>`_ to theme any web site, let it be Wordpress, Joomla, Drupal or a custom in-house PHP solution from year 2000."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:44
+# a1f31288b69a48efa7a373312097def9
+msgid "XDV is based on the `Deliverance specification <http://deliverance.openplans.org/>`_ The difference between XDV and the Deliverance reference implementation is that XDV internally compiles themes to XSL templates, whereas Deliverance relies on processing HTML in Python. Currently the XDV approach seems to be working better, as we had many problems trying to apply Deliverance for Wordpress sites (redirects didn't work, HTTP posts didn't work, etc.)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:54
+# eef2b0ba12044ec7b3c6b52b7c3c7ae4
+msgid "The editing interface, backend, or admin site, however you wish to call it, can be themed with collective.xdv. However, it does not need to be and the edit interface can fallback to the default Plone theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:60
+# fe087acc17df4a45ac9c164ed7bba32c
+msgid "The Plone editing interface is powerful and has very high usability, which means that it is internally quite complex (it takes complex things to seem simple to the end user)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:70
+# e70c63521b3f413c95f0daa61214619b
+msgid "With XDV you can easily have a separate admin.yoursite.com where the Plone editing interface is untouched."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:74
+# a0525ef5c3fb46f0817ad7616a95cb75
+msgid "Tutorials"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:76
+# b0bef69db5c248648b334d754d6b0548
+msgid "http://reinout.vanrees.org/weblog/2010/12/29/xdv-setup.html"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:78
+# b10455019be64460a95bc919dd4459af
+msgid "http://plone.org/products/collective.xdv/documentation/reference-manual/theming"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:80
+# 53b9a183032b4233adc03ac504b27cf0
+msgid "https://pypi.python.org/pypi/collective.xdv"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:82
+# 67dcb7709d924f68b973b7faedb66cba
+msgid "https://pypi.python.org/pypi/xdv"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:84
+# df9679b4fd8045feb1fa8930cf997ef1
+msgid "https://pypi.python.org/pypi/dv.xdvserver (with WSGI)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:87
+# cd83e4b1ce2044109283033f6852b78d
+msgid "Creating your first XDV project"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:89
+# c745547bec1b43cb82c0cd4bf9d61d86
+msgid "The :doc:`ZopeSkel package </develop/addons/paste>` includes an XDV theme skeleton since version 2.20."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:92
+# 5e756f00ec724b359571cc85fce37286
+msgid "Example how to boostrap your theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:98
+# 94a2e6d91fad4a52b0992a29b62818a2
+msgid "Setting up XDV development tools"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:100
+# 045fd30844244a279f469925364ea6d0
+msgid "XDV tools are deployed as Python eggs. You can use tools like the `buildout <http://www.buildout.org/>`_ configuration and assembly tool or easy_install to get XDV on your development computer and the server."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:105
+# 4ae8b71138274bab92bafddbd8b386b0
+msgid "If you are working with Plone you can integrate XDV to your existing site's buildout. If you are not working with Plone, the `XDV home page <https://pypi.python.org/pypi/xdv#installation>`_ has instructions on how to deploy the XDV command standalone."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:111
+# d0108a5a8aa046a7a9e147ac4b24b519
+msgid "XDV Rules"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:113
+# e46ad389228147328b658271b91bdb6e
+msgid "Rules (rules.xml) will tell how to fit content from external source to your theme HTML."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:116
+# a051d6885c404ca39e53702f52a7ab48
+msgid "It provides a straightforward XML based syntax to manipulate HTML easily:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:128
+# 5d4f9f498f1f4e97a36404552acdde3c
+msgid "The rules XML syntax is documented at `XDV homepage <https://pypi.python.org/pypi/xdv>`_."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:130
+# 2e47725141164956afd74103e4ba07dd
+msgid "Rules will be compiled to an XSL template (theme.xsl) by the *xdvcompiler* command. The actual theming is done by one of the XSL backends listed above, by taking HTML as input and applying XSL transformations on it."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:134
+# 0448ebf9c6324bd18f76a4b35291298b
+msgid "Note that currently rules without matching selectors are silently ignored and there is no bullet-proof way to debug what happens inside XSL transformation, except by looking into the compiled theme.xsl."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:139
+# 3d1141e0e42c42afbd50b43e0885f4ce
+msgid "Dropping specific CSS files with XDV"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:141
+# 3a8c369141494265b1b3e12170b3e7ac
+msgid "For example if you wish to get rid of the base-cachekey????.css file that comes from a Plone site, but still want to keep the authoring CSS and any special CSS files that come from add-ons, you can use the following rule::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:150
+# fea2496db3294f0b97fab91a4117a078
+msgid "http://www.coactivate.org/projects/deliverance/lists/deliverance-discussion/archive/2010/09/1284795659190"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:153
+# 60a51585415a4f56807b0bb5efff8c63
+msgid "Handling .. relative URLs"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:155
+# e72689a8428842cd818cf9a2254feef0
+msgid "Here is an example of :doc:`monkey-patch </develop/plone/misc/monkeypatch>` which you can use to override relative URLs in your theme using a dot notation."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:159
+# f34c2f366a83423097a04f48e980fa1b
+msgid "It adds a custom behavior to normal ``urlparse.urljoin()`` logic."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:207
+# 0f4d43b3cedc43848020ae21610fe77e
+msgid "Using XDV to theme and integrate a Wordpress site"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:209
+# 0ba6477c5c3c402ca4dd0546e30f5bc0
+msgid "Below are instructions for how to integrate a Wordpress site to your CMS. In this example the CMS is Plone, but it could be any other system."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:212
+# 8b01832d811448059c248ba996b1fe4f
+msgid "We will create an XDV theme which will theme a Wordpress site to match our CMS site on the fly."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:215
+# dd68f3302c32448d9fb888bcf827d465
+msgid "The Wordpress theme is built with XDV, using a live Plone web page as a theme template."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:218
+# 7b4690ae73e14be085f56e6730bd4055
+msgid "This way the Wordpress theme inherits \"live data\" from the Plone site, like top tabs (portal sections), footer, CSS and other stuff which can be changed on-the-fly and reflecting such changes to two separate theming products would be cumbersome."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:223
+# 2f2654c21cbc41e7acc2d4e0f1079d7a
+msgid "Benefits of using Wordpress for blogging instead of the main CMS:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:225
+# dac27ee293ef4aea93b21d072440ac2b
+msgid "Wordpress post and comment management is easy"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:227
+# 9a3e3e56c387409f8bbdcc1a594bc5e9
+msgid "Wordpress does not need to be touched: the old public Wordpress instance can keep happily running wherever it is during the whole process"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:231
+# f5674ffeeea14236a2e0a91f0e4217c6
+msgid "You do not need to migrate legacy Wordpress installations to your CMS's internal blogging tool"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:234
+# e2b2edaa214143658a00ff9909efd909
+msgid "Wordpress comes with extensive blog spam filtering tools. We get 11000 spam comments a month."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:237
+# 5ef24620463f4b66bdf36b352100b1ed
+msgid "Wordpress is designed for blogging and the user interface is good for that"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:240
+# 94cf8b3aff5f44cfaa5b6f300353d2be
+msgid "Wordpress integrates well with blog pingback support services"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:242
+# e3daefc29d2c45fa81c0ee8e18f0c58f
+msgid "Wordpress supports Gravatars and other blogging plug-ins"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:244
+# 14124751d53e45aabc77d7f3a5ebc817
+msgid "..and so on..."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:246
+# b5215aa73cc24079aff63d29f4cb4d15
+msgid "Benefits of using XDV theming instead of creating a native Wordpress theme are"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:248
+# b1934415240a47aa921bd964c0b1ef80
+msgid "You need to maintain only one theming add-on product i.e. the one for your main CMS and Wordpress receives the updates to this site and the theme automatically"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:261
+# 385fb7cd1f9545dc886061d3a975e8dd
+msgid "Even though Wordpress has a slick UI, it is a well known fact that it is a can of worms internally. My developers do not like the idea of PHP development and would spit on my face if I ask them to go develop a Wordpress theme for us"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:268
+# 1a77607975574dddaf8d74d0a312d15b
+msgid "Theme elements"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:270
+# f0e7a87738364914b22994d1f40186c8
+msgid "The theme will consist of the following pieces"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:272
+# c9b1e5dcea3d4531974f3f36199f1eed
+msgid "Deliverance rules XML file which defines how to combine Plone and Wordpress HTML (rules.xml)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:275
+# 5c127593891b48c4b2edd7020754277d
+msgid "Additional CSS definitions active only for Wordpress (wordpress.css). Dependency on this CSS in injected in the <head> by rules XML"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:278
+# 9728ab07f7f5437fa81e23da79e1bdad
+msgid "Special Plone page template which will provide slots where Wordpress can drop in the content (wordpress_listing.pt)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:281
+# cba4e13ef2894a728af6f132ce62bf3a
+msgid "A helper script which makes it easy to perform repeatable theming actions, like recompiling the theme (xdv.py)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:286
+# 34b6cf50a5bb4cdd9b84e74a690eccbb
+msgid "CMS page template"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:288
+# aa08e2898587411280fc3f086f2f8815
+msgid "This explains how to create a Plone page template where Wordpress content will be dropped in. This step is not necessary, as we could do this without touching Plone. However, it makes things more straightforward and explicit when we known that the Wordpress theme uses a certain template and we explicitly define slots for Wordpress content there."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:320
+# b45d0b2ce668417fa8497825c961deb8
+msgid "Theming rules"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:322
+# d11a20b2acfd483b8b6e2e3d32c93c3a
+msgid "Following are the XDV rules (rules.xml) for how we will fit the Wordpress site to the Plone frame."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:324
+# 79aa909dde534095b7fee5ee70120c98
+msgid "It will integrate"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:326
+# 68ed8de3ca7c4499b9609f7c9c09451a
+msgid "Content from Wordpress"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:328
+# eb69784888f74905b3c7fb401c3db1a1
+msgid "Metadata from Wordpress"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:330
+# d40cc21990234f9c9345652f4ad33b6c
+msgid "CSS from Plone"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:332
+# d095df00578040948b53ffddbb65dcee
+msgid "Page basic structrure from Plone"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:334
+# c62fce8100a74613a9acd05dcaa17989
+msgid "rules.xml::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:401
+# 86fc12bc32794bd0877af110f63a85cc
+msgid "Wordpress specific CSS"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:403
+# 4ea1b7cc7c1d458f9825eb8bba825845
+msgid "This CSS has styles which are applied only to Wordpress pages. They are mainly corner case fixes where Wordpress and CMS styles must match."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:407
+# af40ce6fcc7b4f45bee3ab83b8664727
+msgid "The CSS file is loaded when rules.xml injects it into the <head> section."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:409
+# 2542c4a450894dc3af40f046cf12879c
+msgid "wordpress.css::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:496
+# 0ee81948adb14a93b99a4757c22ba570
+msgid "Helper script"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:498
+# 1bc805e20ca648a18bc9eadd0422e23b
+msgid "The following Python script (xdv.py) makes it easy for us to:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:500
+# 1cc361ec85414bb587ffa13d916d2099
+msgid "Recompile the theme"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:502
+# a61417c4cd5148d9a3c09f2473e82753
+msgid "Test the theme applied on the site"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:504
+# 20435ff8787c4c368ff1a29c10ab5875
+msgid "Preview the theme in our browser"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:508
+# 56654c5ef7f347d181519c0a976523e9
+msgid "It is basically wrapped with default file locations around the"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:507
+# 9b89cac7bd40489aaec92f61a1744a42
+msgid "*bin/xdvcompiler* and *bin/xdvrun* commands with some webbrowser opening magic."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:510
+# 5fdc51fc062a487fbe4f9b621dceebcb
+msgid "Drop the file into your Plone theme package and modify it to fit your needs."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:512
+# c56d8c1eb11a479da57f8e2ea7810a5c
+msgid "xdv.py::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:620
+# 698ee969d53542888062b0111e26d74b
+msgid "Compiling the theme"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:622
+# d07c34188831400aa7bbd04e6bf67271
+msgid "This will generate XSL templates to do the theming transform. It will compile the rules XML with some boilerplate XSL."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:625
+# 4e935e793a884481a7d0db0516fca4a3
+msgid "Running our compile script::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:629
+# 755f2cb1dfd6499fbbfb1f07c561fe20
+msgid "Since Plone usually does not use any relative paths or relative resources in HTML, we do not give the parameter \"Absolute prefix\" to the compilation stage. In Plone, everything is mapped through a virtual hosting aware resource locator: portal_url and VirtualHostMonster."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:634
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:921
+# 06780e461c2946cfbb8ccb0329241bb4
+# 7eec8b8090d340a3b0e417d191b9562f
+msgid "For more information see"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:636
+# bb4bed7dbbad45aeae316c3a07397911
+msgid "https://pypi.python.org/pypi/xdv/0.3a2#compilation"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:639
+# ca464f2490764bca95dfc41575ba7dc4
+msgid "Testing the theme"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:641
+# a5cff148805746f28b246fe490c6d095
+msgid "The following command will apply the theme to an example external page::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:646
+# 478273200c714dbc9362740fbb5c4086
+msgid "... or we can use the shortcut provided by our script ... ::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:650
+# e26d2979c1c54bcb9b00af6541dea7ba
+msgid "... alternatively we can specify that the theme source should be fetched from the development server (localhost)::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:656
+# f6c655437cc3415f96f68fe5a2cc7c3d
+msgid "Applying the theme in an Apache production environment"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:658
+# 3493193cc94f41a9960c68298c805a1a
+msgid "These steps tell how to apply the integration theme for Wordpress when Wordpress is running under an Apache virtualhost."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:663
+# 5023f0cd82b5458fbd7453f7bc208675
+msgid "Installing dependencies"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:665
+# f4ad6cf68d3040998baf8e6198df81d0
+msgid "We use Apache and mod_transform. `Instructions on how to set up modules for Apache <https://pypi.python.org/pypi/xdv#apache>`_ are available on the XDV homepage. Some hand-built modules must be used, instructions to set them up for Ubuntu / Debian are available."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:670
+# b8865a9dfb09453b8b2c266ffab80e86
+msgid "Apache 2 supports `filter chains <http://httpd.apache.org/docs/2.2/mod/mod_filter.html>`_ which allow you to perform magic on the HTTP response before sending it out. This corresponds to Python's WSGI middleware."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:674
+# 75e2a6fe8dc64158bc4dd0c200f7d6ec
+msgid "We will use special builds of mod_transform and mod_depends which are known to work. These modules were forked from their orignal creations to make them XDV compatible, as the orignal has not been updated since 2004 (this is a good example of how the freedom of open source guarantees that you \"won't run out of support\")"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:680
+# e4d9845e01154368a2937b00a6a98ef5
+msgid "`XDV mod_transform and mod_depends homepage <http://code.google.com/p/html-xslt/>`_"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:682
+# 5f83d200a6d644b78cff868e7946f047
+msgid "`Orignal mod_transform and mod_depends homepage <http://www.outoforder.cc/projects/apache/mod_transform/>`_"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:695
+# bd352ec04c164ad2a7da0a5dcd4c40f3
+msgid "Enable built-in Apache modules::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:700
+# 3fe90a8b77a04b3daea43c2a734fe38f
+msgid "For modules *depends* and *transform* you need to manually add them to the end of Apache configuration, as they do not provide a2enmod stubs for Debian. Edit /etc/apache2/apache.conf::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:707
+# 831f1e1ac8e34368bc0aa46eb8455f49
+msgid "You need to hard reset Apache to make the new modules effective::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:712
+# 5399bcca2f0f4dc399043e688f1b804f
+msgid "Virtual host configuration"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:715
+# 03cb3f53e9f9492e82dac6335cadfcb4
+msgid "Standard Configuration"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:716
+# ec3f461824b1427aa208b643b582efab
+msgid "The example below shows a typical xdv setup ::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:748
+# 707f7c0de0954ca0a401d57d45894491
+msgid "Integrating with Wordpress"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:749
+# 40e72b9e221d4151a24bd33cb8da27a7
+msgid "Below is our virtualhost configuration which runs Wordpress and PHP. Transformation filter chain has been added in."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:752
+# daecf57f11594c35b0147ed3e02426ff
+msgid "/etc/apache/sites-enabled/blog.example.com::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:807
+# cab77c245c00465e8861402fa7d63270
+msgid "Running it"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:809
+# f2d1d9265bb641ccbca75638e1536687
+msgid "After Apache has all modules enabled and your virtualhost configuration is ok, you should see Wordpress through your new theme by visiting the site served through Apache:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:813
+# e2d6369a702445c1b695aec6bf3a5323
+msgid "http://blog.example.com"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:816
+# ad216942fa284952a06d5969343c9839
+msgid "Automatically reflecting CMS changes back to XDV theme"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:818
+# 485081f7b0cb43bd9118c88ead152d20
+msgid "The theme should be recompiled every time"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:820
+# 55d1dfc2cf8b4a2dac898ea14fdabf9b
+msgid "Plone is restarted: CSS references change in <head> as CSS cache is rebuilt"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:822
+# 9da9f3b4efa1467ca8a3f3168a2788fe
+msgid "CSS is modified: CSS references change in <head> as CSS cache is rebuilt"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:824
+# c518aaeb0bc3410ea827116e26f873c8
+msgid "Plone content is changed and changes reflect back to Wordpress theme (e.g. a new top level site section is being added)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:827
+# cca0381100d94f4f8ddaf2203edf7cc5
+msgid "This is because the compilation will hard-link resources and template snippets to the resulting theme.xsl file. If hard-linked resources change on the Plone site, the transformation XSL file does not automatically reflect back the changes."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:832
+# 6541b8b1259a4f12a3ceb199728cf0b2
+msgid "It could be possible to use Plone events automatically to rerun theme compilation when concerned resources change. However, this would be quite complex.  For now, we are satisfied with a scheduled task which will recompile the theme now and then."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:837
+# 2b807cfced3749c48a0cdd6dbbbd1a9e
+msgid "Alternatively, mod_transforms could be run in non-cached mode with some performance implications."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:840
+# fa493663e6aa421a89d086254446c997
+msgid "Here is a shell script, update-wordpress-theme.sh, which will perform the recompilation and make Apache's transformation cache aware of changes::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:855
+# 78a300edc3764ed29716d23f536d69dc
+msgid "Then we call it periodically in cron job, every 15 minutes in /etc/cron.d/update-wordpress::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:864
+# 8197807b51df4a0ba269f72eefa1292f
+msgid "It looks like Varnish has issues with Apache2 apache2ctl graceful restart. Do only hard restarts when using Apache in conjunction with Varnish."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:869
+# 73994542a1d448e3a582aa742521ac24
+msgid "Updating Wordpress settings"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:871
+# 1881b67c22364e95a63377f1e9d46143
+msgid "No changes on Wordpress needed if the domain name is not changed in the theme transformation process."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:875
+# 0d34b517d51b4244bdcfb0a1399cee9c
+msgid "Site URL"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:877
+# f9a04e84f8a640a2a8a36cdd753c9a9c
+msgid "Unlike Plone, Wordpress does not have decent virtual hosting machinery. It knowns only one URL which it uses to refer to the site in the external context (e.g. RSS feeds)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:881
+# 8a0cb3f292a44009b5bf7340ccdda759
+msgid "This setting can be overridden in"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:883
+# 52bcf7df202749a19000797bfdd4b96d
+msgid "Wordpress administrative interface"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:885
+# 110a1388ced247419e2fa9e3ffb99cd1
+msgid "wp-config.php"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:887
+# a5ac9c2e8bb0405d986d0f9d2506887f
+msgid "Here is an example how we override this in our wp-config.php::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:894
+# 4f0ab55adc484474b69959b801e9730e
+msgid "HTTP 404 Not Found special case"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:896
+# 4481eae2a888430bbaf4191eafe10cdb
+msgid "Http 404 Not Found responses are not themed by the Apache filter chain. This is not possible due to the order of the pipeline in Apache."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:899
+# f67200e5107241dfaab45aa72f3ea232
+msgid "As a workaround you can set up a custom HTTP 404 page in Wordpress which does not expose the old theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:902
+# f2db50898fb34ca6a8bf1779878e3c41
+msgid "Go to Wordpress admin interface, Theme editor"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:904
+# 109510c332de40febf8abb01c271d0e2
+msgid "Edit 404.php and modify it so that it does not pull in the Wordpress theme::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:923
+# 248edc0d01fb44a4b61b52f1c616ccf9
+msgid "http://codex.wordpress.org/Creating_an_Error_404_Page"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:926
+# 00fb39bd1a7f47d9ae775543816a3121
+msgid "Roll-out checklist"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:928
+# 3fab84cc8d654bb8969502d0557d9e46
+msgid "Below is a checklist you need to go to through to confirm that the theme integration works on your production site"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:931
+# 190bae38d15c4b7ea92f60a5648ad0c6
+msgid "Wordpress public pages are loaded with the new theme"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:933
+# 73ec77db45ed4b9d93369cc6f4aee233
+msgid "Wordpress login works"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:935
+# b36bcd7c86624d4b9838682b97eab5d2
+msgid "Wordpress administrative interface works"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:937
+# a2aaab085b24444b9bc4632315d41611
+msgid "RSS feed from Wordpress works and contains correct URLs"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:939
+# 4589fd05fc7143e1a3540eceb8fa12c5
+msgid "HTTP 404 not found is handled correctly"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:941
+# 8a26a6e3122a40b3bff94edfb1827492
+msgid "HTTP 302 redirect is handled correctly (i.e. missing / at the end of blog post URL)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:943
+# 3e01890329f94322b3c7c2dc4f460284
+msgid "Changes on CMS site are reflected to Wordpress theme within the update delay"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:945
+# c735ff5ed38641bc9569e03c66ac1e98
+msgid "Old blog site is redirected to new site using HTTP 301 (if applicable)"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:950
+# e7d3ea6ade044648bb71237059a552ce
+msgid "Using XDV to theme and integrate a phpBB forum"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:952
+# 411b1447f5dd4e0a8099809a1e7cca84
+msgid "What we want to achieve is to have a regular Plone site for the CMS pages, and a mix of Plone and phpBB for the forum part. By mix, I mean combination of elements from the two products. The header and menu will come from Plone, and the body will be from phpBB. This mixing will be done with XDV."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:958
+# 1b4ada7e38c542bb90f5a273b1b9101a
+msgid "First thought that came to mind was to use collective.xdv which has a nice control panel page that holds all the configuration stuff needed for XDV, and it does all the magic for me and I don’t need to think about configuration or compiling on each change. This is a very nice thing when the Plone site is the main site and only some elements are needed to be dropped in from another location. As usual, we need the opposite of this: the phpBB site needs to be the main one, and drop in some minor content from the Plone site. This means that we can’t use the magic of collective.xdv, but we must set up everything by hand."
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:969
+# 0720b9060e124fc18501df57dfa4ca1f
+msgid "A detailed tutorial on how to make this happen can be found here:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/templates_css/xdv.rst:971
+# 078c5e8b3a1a47a6b1d204dada2f5046
+msgid "http://alasdoo.com/2010/12/xdv-plone-and-phpbb-under-one-nginx-roof/"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:3
+# 8c52153a5af44f299b7150dc5eb56a77
+msgid "Create a Plone theme product with Diazo"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:8
+# 79fa2977f6fb43bd901798493bcceca5
+msgid "Creating a theme product with the Diazo inline editor is an easy way to start and to test, but it is not a solid long term solution."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:11
+# 8fc224ab1e834d51a5d66e5cbe2c1ef8
+msgid "Even if ``plone.app.theming`` allows to import and export a Diazo theme as a ZIP archive, it might be prefereable to manage your theme into an actual Plone product."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:15
+# 951a27fcb0d446c8887a118a81587754
+msgid "One of the most obvious reason is it will allow you to override Plone elements that are not accessible from the pure Diazo features (like overloading content views templates, viewlets, configuration settings, etc.)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:20
+# ab69f5970caa4615afa9d78f66b31b8b
+msgid "Create a product to handle your Diazo theme"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:23
+# e9032bcaaffb4645bcf359e7ed56bc4d
+msgid "Create a module"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:25
+# c1f52d44dcce4f3596dc1110ee589dc0
+msgid "To create a blank module, you will use ZopeSkel. ZopeSkel is part of the executables files deployed in ``./bin`` on a standard UnifiedInstaller install once you have run the develop.cfg buildout::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:31
+# 7c46a398cd3c48899f4cd8e175397dc4
+msgid "ZopeSkel allows to initialize Python modules based on different templates."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:33
+# 50a573f3121c48c8a7e6f959cd4bc19e
+msgid "You will use the template named ``plone``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:35
+# 8f47c1bbdabf4ac0a55a7cbe7eeab921
+msgid "Into your Plone install, go to src/, and launch the following command::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:39
+# d4e9c08d46a4422bad940dc9a1a780d7
+msgid "Give a name to your module (for instance: projectname.theme). And just accept all the default choices but::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:44
+# b964cec39b9a4141b06ef2e17e86300b
+msgid "The module is created in ``src/projectname.theme``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:46
+# 1124cb8a255c4df2bc0db8f63f5d8b1f
+msgid "Declare this new module in your ``buildout.cfg``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:56
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:188
+# 56dd209a04a3441f80d8c51e061e86d1
+# ebdda60e2c6343418219cad58043069a
+msgid "And run buildout::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:61
+# f3701a07624049569f3734ee469caf25
+msgid "Put your Diazo theme in the module"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:63
+# c360ece5b25b4e139c8830aff5d2b51f
+msgid "Create a folder for the Diazo resources::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:67
+# 4c4c28a8c4b548c9bd88998789d7cc1a
+msgid "Download your theme created using the inline editor and unzip it in that folder."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:69
+# eae238b3e106402fbc64c45407bc87cf
+msgid "Modify the ``configure.zcml`` file to declare this ``static`` folder::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:85
+# 667dbf4f322d426a9e779f6fdefd91e2
+msgid "Update the GenericSetup profile"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:87
+# 1926071e5ef54d02b9d73f140621a1b1
+msgid "In ``src/projectname.theme/projectname/theme/profiles/default/``, you have to:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:89
+# d9743107d1244be294d5862bf8ce0df3
+msgid "Add the dependency with ``plone.app.theming`` in ``metadata.xml``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:99
+# 16f34ba5a4574646b7f0242bce7d7a55
+msgid "Declare the theme by creating ``theme.xml``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:107
+# ee444bd83c5441eaa4133ada384e877d
+msgid "Then you can restart Zope, and install the new product to activate the theme."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:110
+# c631a83868584eadb99239431d11ae6f
+msgid "Override the Plone skin"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:112
+# 33730915a3264d2eb8c35413566785ed
+msgid "Diazo allows to control the global rendering of the Plone pages."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:114
+# b29bde5e479a4080bb1672bb4507bbab
+msgid "But if you need to change elements which are deeply melt into the Plone generated content, or which are not easily accessible using a CSS selector, or maybe an image (for instance, the members default portrait, ``defaultUser.png``) which are provided by the Plone skin, you will have to override the Plone skin."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:120
+# 2e761cc1fd39402fbab4eeee67d6269f
+msgid "that is basically what you do when you go to ZMI / portal_skins and click on the ``Customize`` button. But here, you will do that from the sources."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:123
+# 99b3d51433624b91ace7d7d966c23347
+msgid "To override Plone skin elements from our product, you will need to:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:125
+# 96513aa7a22a4528a83d6070093078d3
+msgid "Create a folder ``src/projectname.theme/projectname/theme/skins/projectname_custom`` and put the needed resources in that folder (like your new version of ``defaultUser.png``). It can be anything, you just need to make sure it as the very same name as the original one."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:131
+# 22a1f3a0c24346958e60b39650b58bbe
+msgid "Declare that folder in configure.zcml::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:146
+# 53772450bced44879fcab31a2a0b3606
+msgid "And move it in first position compare to the other existing skin layers by creating ``src/projectname.theme/projectname/theme/profiles/default/skins.xml``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:163
+# 3e6d58a3903d44058e7eabc2fa48b2b5
+msgid "You can now restart Zope and re-install your product from the Plone control panel (Site Setup > Add-ons), once done, the elements contained in ``projectname_custom`` will take priority on the corresponding elements from the Plone skin (or any other add-on skin)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:169
+# 6e6cd6e96464493e9b7454030995554c
+msgid "Override Plone BrowserViews with jbot"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:171
+# 0089ac2a83ea4a15bd3c8b42ff39a752
+msgid "A large part of the Plone UI are not provided by the portal_skins layers but by BrowserViews."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:174
+# e641675cd591498c9d03015cc7cbbeda
+msgid "That is the case for viewlets (all the blocks you can see when you call the url ``./@@manage-viewlets``)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:177
+# 4ee4a8422f944854bf1623f4e3712ee5
+msgid "to override them from the ZMI, you can go to ``./portal_view_customizations``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:179
+# 610629dde8204826b23bc0617ff60f5e
+msgid "To overrides them from your theme product, the easiest way is to use ``z3c.jbot`` (Just a Bunch of Templates)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:182
+# f3adaaf5317c438ea23b94f1cee0e07a
+msgid "First of all you need to add this module in ``buildout.cfg``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:192
+# 6f7010767f124f779dbf918f0f2e93d6
+msgid "Then create a folder ``src/projectname.theme/projectname/theme/static/overrides``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:195
+# 67522346e5c84e32a6cb36d4d3235934
+msgid "And declare that folder as a jbot folder:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:197
+# 04c919b76fbf4f73a4b106612ec7f547
+msgid "modify configure.zcml::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:217
+# 63c321b26ae049cabe64e862720afa41
+msgid "create ``interfaces.py``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:225
+# fb8563a8a2824ae58e5bf80d7a10560f
+msgid "and declare a layer by creating ``src/projectname.theme/projectname/theme/profiles/default/browserlayer.xml``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:234
+# 0099d0b99288412bba5beafa7637b2a8
+msgid "Then, you can put in ``src/projectname.theme/projectname/theme/static/overrides`` all the templates you want to override but you will need to name them by prefixing the template name by its complete path to its original version."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:239
+# b0ed08713beb4db9b4952fbaa73de0e0
+msgid "For instance, to override ``colophon.pt`` from plone.app.layout, knowing this template in a subfolder named ``viewlets``, you need to name it ``plone.app.layout.viewlets.colophon.pt``."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:243
+# f205f6f0d19748e0a162a2c5fb3c5059
+msgid "ZMI > portal_view_customizations is an handy way to find the template path."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:245
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:308
+# 0faa6231203447b7852891f527d2b9d7
+# a5c61faf533f4a6ea99206bcd144510b
+msgid "You can now restart Zope and re-install your product from the Plone control panel (Site Setup > Add-ons)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:249
+# 267eacf97baf4f95a0e394177f8a065e
+msgid "Manage CSS and JS in registries"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:251
+# c317882360fa4bf393e3006df7b73a69
+msgid "For performances reasons, it is recommended to minimize the amount of JS and CSS files loaded in you pages."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:254
+# 49fccfd129ad4b058e49dd28a73e85f4
+msgid "To do that, Plone offers two registries, ``portal_javascript`` and ``portal_css``, which allow to:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:257
+# 2ffd2b8563f1440083ca4f6fdaee3e70
+msgid "declare resources you want to load,"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:258
+# 1b406d8611ce4b238ef96ed8cd6459a8
+msgid "sort them,"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:259
+# db3f1d714bfe49d19c70dc204086530c
+msgid "if needed, specify conditions to decide when a resource must be loaded or not."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:261
+# 61a519fca64641968a8e489120ba8a8c
+msgid "Using those information, Plone will inject the corresponding tags (``<script>``, ``<link>``, etc.) in the ``<head>``, and if Zope does not run in debug mode, the different files will be merged and compressed."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:265
+# 5acf54771c1e4e3f8f1a75d71e29c280
+msgid "It is obviously important to manage your theme's main CSS and JS that way."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:267
+# f18025bbfe5f4d5f8a7303ff1fb7a1a5
+msgid "To do so, you first need to **remove them from your theme HTML templates** (so you do not make things worse by loading them twice)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:270
+# 698d9bb261944f9aa4b864e2f971bb4e
+msgid "Then, declare them to the registries:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:272
+# e539ae3d9a704b81a98c9d0160097708
+msgid "Create a file ``src/projectname.theme/projectname/theme/profiles/default/jsregistry.xml``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:290
+# 22ba6330fe024e7eaa87371469ce9d3a
+msgid "And a file ``src/projectname.theme/projectname/theme/profiles/default/cssregistry.xml``::"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:311
+# c41060141d274960ab104972e4abbcde
+msgid "the expression ``request/HTTP_X_THEME_ENABLED | nothing`` returns True only if the page is served through Diazo (it allows to avoid to load the resources when the Diazo theme is not active)."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:313
+# 33f76ed3e5764d1285a31094b4de6a97
+msgid "You have to be careful about the resources order and their conditions: resources are merged together in the order they are declared with as far as the condition are the same."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:317
+# 69898c294e504431b31b75d84cb3b312
+msgid "If the next resource as a different condition, it will end the current merged set of resources, and start a new one."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:320
+# 66dbedd862e0473289c318ba7e4225e6
+msgid "So if you want to minimize the total number of resulting files, you have to:"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:322
+# 639a1d1b35554097b9146a78bf1fe674
+msgid "declare as few conditions as possible,"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:323
+# 57b43009c4314da2a076d5db8f045a88
+msgid "when you have to declare a condition, try to make them identical if possible,"
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:324
+# 84e4fa7195df4001b27fd0e957023048
+msgid "and re-order the resources in such a way that similar conditions are consecutives."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:326
+# 11c3c3fb2b6c4cef9751fb2874b62e60
+msgid "Regarding the JS or CSS which are not used globally into the web site, but just in a very specific template, it might be better to not declare them in the registries, and let them declared manually into the static HTML /template."
+msgstr ""
+
+#: ../adapt-and-extend/theming/theme_product_with_diazo.rst:330
+# 073fabc60c554ad8843d0173235dbfbe
+msgid "if you use a responsiveCSS framework, it is often useful to deactivate the Plone ``mobile.css`` file which might produces bad formatting (typically with Boostrap). To do so, you add the following to ``cssregistry.xml``::"
+msgstr ""
+
