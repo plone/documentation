@@ -49,7 +49,12 @@ Marketplace.
 **Vim** does syntax highlighting for RST files.
 There is also a nice plugin with enhanced functionalities called `Riv <https://github.com/Rykka/riv.vim>`_.
 
+**restview** `ReStructuredText viewer <https://pypi.python.org/pypi/restview>`_
+A viewer for ReStructuredText documents that renders them on the fly.
 
+.. code-block:: rst
+
+    pip install restview
 
 
 
