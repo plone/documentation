@@ -31,6 +31,13 @@ On Ubuntu and Debian-based systems all you have to do is
 
 
 **Pandoc** If you have existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions. For instance, it can create valid rst files from Markdown and quite a number of other formats.
+On Ubuntu you can install it via apt
+
+.. code-block:: rst
+
+    apt-get install pandoc
+
+There is also a `online version <http://johnmacfarlane.net/pandoc/try/>`_.
 
 
 **Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
