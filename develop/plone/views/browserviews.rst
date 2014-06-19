@@ -66,7 +66,7 @@ View components
 ---------------
 
 Views are Zope Component Architecture (:term:`ZCA`) *multi-adapter
-registrations*.  
+registrations*.
 
 Views are looked up by name. The Zope publisher always does a view lookup,
 instead of traversing, if the name to be traversed is prefixed with ``@@``.
@@ -113,7 +113,7 @@ However, in the most of cases
   (full Plone pages) or `zope.pagetemplate.pagetemplatefile.PageTemplateFile <https://github.com/zopefoundation/zope.pagetemplate/blob/master/src/zope/pagetemplate/pagetemplatefile.py#L40>`_
   (HTML snippets, no acquisition)
 
-* View classes should implement :doc:`interface </develop/addons/components/interfaces>`  
+* View classes should implement :doc:`interface </develop/addons/components/interfaces>`
   `zope.browser.interfaces.IBrowserView <https://github.com/zopefoundation/zope.browser/blob/master/src/zope/browser/interfaces.py#L27>`_
 
 Views rendering page snippets and parts can be subclasses of zope.publisher.browser.BrowserView directly
@@ -400,6 +400,13 @@ Example::
     view.  If this code fails and an exception is raised, the
     ``zope.component`` machinery remaps this to a "View not found"
     exception or traversal error.
+
+    Additionally, view class may be instantiated in other places than where
+    you intended to render the view.
+    For example, plone.app.contentmenu does this when creating the menu to
+    select a view layout.
+    This will result in the ``__init__()`` being called on unexpected
+    contexts, probably wasting a lot of time.
 
     Instead, use a pattern where you have a ``setup()`` or similar
     method which ``__call__()`` or view users can explicitly call.
