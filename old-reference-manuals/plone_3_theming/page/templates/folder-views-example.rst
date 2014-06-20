@@ -24,7 +24,7 @@ a code snippet):
                                            actions nothing;
                                            view here/defaultView;
                                            object_title item/pretty_title_or_id"
-                               tal:on-error="nothing">                  
+                               tal:on-error="nothing">                 
                        <div metal:use-macro="here/?view/macros/main"/>
 
                     </tal:block>

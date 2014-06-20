@@ -93,7 +93,7 @@ few lines of code.
 
 ::
 
-    <span metal:define-slot="inside" 
+    <span metal:define-slot="inside"
                 class="explain"
                 tal:attributes="title python:here.end()"
                 tal:content="python:here.toLocalizedTime(here.end(),

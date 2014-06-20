@@ -1,10 +1,10 @@
 =======================
-Widgets Reference 
+Widgets Reference
 =======================
 
 .. admonition:: Description
 
-		This page is a syntax reference and general guide for defining and using Widgets. 
+		This page is a syntax reference and general guide for defining and using Widgets.
 
 .. raw:: html
 
@@ -40,13 +40,13 @@ Widgets Reference
 	<p><a href="#TextAreaWidget">TextAreaWidget</a></p>
 	</td>
 	</tr></tbody></table><h2 id="common_attributes">Common Widget Attributes</h2>
-	<p>The table below describes attributes common to nearly all widgets. Illustrations 
+	<p>The table below describes attributes common to nearly all widgets. Illustrations
 	and special attributes listings for each of the standard widgets follows.</p>
 	<table class="listing"><thead><tr><th style="cursor: pointer;">Name<span class="sortdirection">&emsp;</span></th>
 	<th style="cursor: pointer;">Description<span class="sortdirection">&emsp;</span></th>
 	<th style="cursor: pointer;">Possible Values<span class="sortdirection">&emsp;</span></th>
 	</tr></thead><tbody><tr class="odd"><td>condition <br></td>
-	<td>A string containing a TALES expression to determine whether or not a field/widget is 
+	<td>A string containing a TALES expression to determine whether or not a field/widget is
 	included on a view or edit page.
 	This does not distinguish between view and edit mode.<br></td>
 	<td>Your TALES expression may referenc the current context as 'object' and the Plone site root as 'portal'<br></td>
@@ -114,7 +114,7 @@ Widgets Reference
 	<td>integer</td>
 	<td>
 	5</td>
-	<td>Specifies the number of future years offered by the year drop-down portion 
+	<td>Specifies the number of future years offered by the year drop-down portion
 	of the date widget. Do not use both future_year and end_year.
 	(Plone 2.5+)</td>
 	</tr><tr class="odd"><td>starting_year</td>
@@ -145,7 +145,7 @@ Widgets Reference
 	<td>tuple</td>
 	<td>
 	('view', 'edit')</td>
-	<td>As ComputedField is a read-only field, this property can be used to prevent 
+	<td>As ComputedField is a read-only field, this property can be used to prevent
 	the widget from appearing in edit templates, by setting it to just ('view',).</td>
 	</tr></tbody></table><p>&nbsp;</p>
 	<h3 id="DecimalWidget">DecimalWidget</h3>
@@ -176,7 +176,7 @@ Widgets Reference
 	<td>boolean</td>
 	<td>False</td>
 	<td>In view mode, shows dollars and cents. Enter "123.123" and "$123.12" is shown.
-	(Note: this feature is not localized; it always uses the dollar sign, period, 
+	(Note: this feature is not localized; it always uses the dollar sign, period,
 	and two digits precision.)</td>
 	</tr><tr class="odd"><td>size</td>
 	<td><br></td>
@@ -190,7 +190,7 @@ Widgets Reference
 	</blockquote>
 	<p>&nbsp;</p>
 	<h3 id="ImageWidget">ImageWidget</h3>
-	<p>Renders an HTML widget that can be used to upload, display, delete, and 
+	<p>Renders an HTML widget that can be used to upload, display, delete, and
 	replace images. You can provide a <em>display_threshold</em> that allows
 	you to set the size of an image; if it's below this
 	size, the image will display in the Web page.</p>
@@ -211,7 +211,7 @@ Widgets Reference
 	<h3 id="InAndOutWidget">InAndOutWidget</h3>
 	<p>In edit mode, renders a widget for moving items from one list to another.
 	Items are removed from the source list.
-	This can be used to choose multiple values from a list. This provides a good 
+	This can be used to choose multiple values from a list. This provides a good
 	alternative to the MultiSelectionWidget when the vocabulary is too long for checkboxes.</p>
 	<blockquote>
 	<p><img width="376" height="149" alt="inandoutwidget.png" src="inandoutwidget.png"></p>
@@ -247,13 +247,13 @@ Widgets Reference
 	</tr></tbody></table><p>&nbsp;</p>
 	<h3 id="KeywordWidget">KeywordWidget</h3>
 	<p>
-	This widget allows the user to select keywords or categories from a list. It is 
-	used for the <em>Categories</em> field in the Categorization Schema (Plone 3+) 
+	This widget allows the user to select keywords or categories from a list. It is
+	used for the <em>Categories</em> field in the Categorization Schema (Plone 3+)
 	or the equivalent <em>Keywords</em> field on the Properties Tab (Plone &lt; 3)
 	of a content object.<br>
-	Keywords are drawn from the field vocabulary and/or the unique values for the 
+	Keywords are drawn from the field vocabulary and/or the unique values for the
 	field in a specified catalog.<br>
-	Additional keywords may be added unless the enforceVocabulary property of the 
+	Additional keywords may be added unless the enforceVocabulary property of the
 	field is True.</p>
 	<h4>Special Properties</h4>
 	<table class="listing"><thead><tr><th style="cursor: pointer;">Name<span class="sortdirection">&emsp;</span></th>
@@ -322,7 +322,7 @@ Widgets Reference
 	</tr></thead><tbody><tr class="odd"><td>format</td>
 	<td>string</td>
 	<td>select</td>
-	<td>Possible values: 'select' or 'checkbox'. Uses a either a series of checkboxes or 
+	<td>Possible values: 'select' or 'checkbox'. Uses a either a series of checkboxes or
 	a multi-selection list. Note that checkboxes have much better usability for short
 	vocabularies. Consider using the InAndOutWidget for longer vocabularies.</td>
 	</tr><tr class="even"><td>size</td>
@@ -362,7 +362,7 @@ Widgets Reference
 	<td>('edit',)</td>
 	</tr></tbody></table><p>&nbsp;</p>
 	<h3 id="PicklistWidget">PicklistWidget</h3>
-	<p>Similar to the InAndOutWidget, but the values stay in the source list after 
+	<p>Similar to the InAndOutWidget, but the values stay in the source list after
 	selection.</p>
 	<blockquote>
 	<p><img width="368" height="155" alt="picklistwidget.png" src="picklistwidget.png"></p>
@@ -380,7 +380,7 @@ Widgets Reference
 	</tr></tbody></table><p>&nbsp;</p>
 	<h3 id="ReferenceWidget">ReferenceWidget</h3>
 	<p>Renders an HTML text input box which accepts a list of possible reference
-	 values. Used in combination with the Reference Field.<br><strong>Note:</strong> In Plone 2.5 and above, the ReferenceBrowserWidget is 
+	 values. Used in combination with the Reference Field.<br><strong>Note:</strong> In Plone 2.5 and above, the ReferenceBrowserWidget is
 	 a usually a better choice for a reference widget due to its ability to browse for content
 	 referenceable objects.</p>
 	<blockquote>
@@ -640,7 +640,7 @@ Widgets Reference
 	<td>integer</td>
 	<td>False</td>
 	<td>
-	If non-zero, sets a maximum input length in characters. Since the HTML textarea tag 
+	If non-zero, sets a maximum input length in characters. Since the HTML textarea tag
 	has no maxlength property, this is enforced via a JavaScript snippet. So, it is is
 	not applicable when JavaScript is unavailable.</td>
 	</tr></tbody></table><h2>Add-on Widgets</h2>
@@ -674,13 +674,13 @@ Widgets Reference
 	<p><a href="#TextAreaWidget">TextAreaWidget</a></p>
 	</td>
 	</tr></tbody></table><h2 id="common_attributes">Common Widget Attributes</h2>
-	<p>The table below describes attributes common to nearly all widgets. Illustrations 
+	<p>The table below describes attributes common to nearly all widgets. Illustrations
 	and special attributes listings for each of the standard widgets follows.</p>
 	<table class="listing"><thead><tr><th style="cursor: pointer;">Name<span class="sortdirection">&emsp;</span></th>
 	<th style="cursor: pointer;">Description<span class="sortdirection">&emsp;</span></th>
 	<th style="cursor: pointer;">Possible Values<span class="sortdirection">&emsp;</span></th>
 	</tr></thead><tbody><tr class="odd"><td>condition <br></td>
-	<td>A string containing a TALES expression to determine whether or not a field/widget is 
+	<td>A string containing a TALES expression to determine whether or not a field/widget is
 	included on a view or edit page.
 	This does not distinguish between view and edit mode.<br></td>
 	<td>Your TALES expression may referenc the current context as 'object' and the Plone site root as 'portal'<br></td>
@@ -748,7 +748,7 @@ Widgets Reference
 	<td>integer</td>
 	<td>
 	5</td>
-	<td>Specifies the number of future years offered by the year drop-down portion 
+	<td>Specifies the number of future years offered by the year drop-down portion
 	of the date widget. Do not use both future_year and end_year.
 	(Plone 2.5+)</td>
 	</tr><tr class="odd"><td>starting_year</td>
@@ -779,7 +779,7 @@ Widgets Reference
 	<td>tuple</td>
 	<td>
 	('view', 'edit')</td>
-	<td>As ComputedField is a read-only field, this property can be used to prevent 
+	<td>As ComputedField is a read-only field, this property can be used to prevent
 	the widget from appearing in edit templates, by setting it to just ('view',).</td>
 	</tr></tbody></table><p>&nbsp;</p>
 	<h3 id="DecimalWidget">DecimalWidget</h3>
@@ -810,7 +810,7 @@ Widgets Reference
 	<td>boolean</td>
 	<td>False</td>
 	<td>In view mode, shows dollars and cents. Enter "123.123" and "$123.12" is shown.
-	(Note: this feature is not localized; it always uses the dollar sign, period, 
+	(Note: this feature is not localized; it always uses the dollar sign, period,
 	and two digits precision.)</td>
 	</tr><tr class="odd"><td>size</td>
 	<td><br></td>
@@ -824,7 +824,7 @@ Widgets Reference
 	</blockquote>
 	<p>&nbsp;</p>
 	<h3 id="ImageWidget">ImageWidget</h3>
-	<p>Renders an HTML widget that can be used to upload, display, delete, and 
+	<p>Renders an HTML widget that can be used to upload, display, delete, and
 	replace images. You can provide a <em>display_threshold</em> that allows
 	you to set the size of an image; if it's below this
 	size, the image will display in the Web page.</p>
@@ -845,7 +845,7 @@ Widgets Reference
 	<h3 id="InAndOutWidget">InAndOutWidget</h3>
 	<p>In edit mode, renders a widget for moving items from one list to another.
 	Items are removed from the source list.
-	This can be used to choose multiple values from a list. This provides a good 
+	This can be used to choose multiple values from a list. This provides a good
 	alternative to the MultiSelectionWidget when the vocabulary is too long for checkboxes.</p>
 	<blockquote>
 	<p><img width="376" height="149" alt="inandoutwidget.png" src="inandoutwidget.png"></p>
@@ -881,13 +881,13 @@ Widgets Reference
 	</tr></tbody></table><p>&nbsp;</p>
 	<h3 id="KeywordWidget">KeywordWidget</h3>
 	<p>
-	This widget allows the user to select keywords or categories from a list. It is 
-	used for the <em>Categories</em> field in the Categorization Schema (Plone 3+) 
+	This widget allows the user to select keywords or categories from a list. It is
+	used for the <em>Categories</em> field in the Categorization Schema (Plone 3+)
 	or the equivalent <em>Keywords</em> field on the Properties Tab (Plone &lt; 3)
 	of a content object.<br>
-	Keywords are drawn from the field vocabulary and/or the unique values for the 
+	Keywords are drawn from the field vocabulary and/or the unique values for the
 	field in a specified catalog.<br>
-	Additional keywords may be added unless the enforceVocabulary property of the 
+	Additional keywords may be added unless the enforceVocabulary property of the
 	field is True.</p>
 	<h4>Special Properties</h4>
 	<table class="listing"><thead><tr><th style="cursor: pointer;">Name<span class="sortdirection">&emsp;</span></th>
@@ -956,7 +956,7 @@ Widgets Reference
 	</tr></thead><tbody><tr class="odd"><td>format</td>
 	<td>string</td>
 	<td>select</td>
-	<td>Possible values: 'select' or 'checkbox'. Uses a either a series of checkboxes or 
+	<td>Possible values: 'select' or 'checkbox'. Uses a either a series of checkboxes or
 	a multi-selection list. Note that checkboxes have much better usability for short
 	vocabularies. Consider using the InAndOutWidget for longer vocabularies.</td>
 	</tr><tr class="even"><td>size</td>
@@ -996,7 +996,7 @@ Widgets Reference
 	<td>('edit',)</td>
 	</tr></tbody></table><p>&nbsp;</p>
 	<h3 id="PicklistWidget">PicklistWidget</h3>
-	<p>Similar to the InAndOutWidget, but the values stay in the source list after 
+	<p>Similar to the InAndOutWidget, but the values stay in the source list after
 	selection.</p>
 	<blockquote>
 	<p><img width="368" height="155" alt="picklistwidget.png" src="picklistwidget.png"></p>
@@ -1014,7 +1014,7 @@ Widgets Reference
 	</tr></tbody></table><p>&nbsp;</p>
 	<h3 id="ReferenceWidget">ReferenceWidget</h3>
 	<p>Renders an HTML text input box which accepts a list of possible reference
-	 values. Used in combination with the Reference Field.<br><strong>Note:</strong> In Plone 2.5 and above, the ReferenceBrowserWidget is 
+	 values. Used in combination with the Reference Field.<br><strong>Note:</strong> In Plone 2.5 and above, the ReferenceBrowserWidget is
 	 a usually a better choice for a reference widget due to its ability to browse for content
 	 referenceable objects.</p>
 	<blockquote>
@@ -1274,7 +1274,7 @@ Widgets Reference
 	<td>integer</td>
 	<td>False</td>
 	<td>
-	If non-zero, sets a maximum input length in characters. Since the HTML textarea tag 
+	If non-zero, sets a maximum input length in characters. Since the HTML textarea tag
 	has no maxlength property, this is enforced via a JavaScript snippet. So, it is is
 	not applicable when JavaScript is unavailable.</td>
 	</tr></tbody></table><h2>Add-on Widgets</h2>

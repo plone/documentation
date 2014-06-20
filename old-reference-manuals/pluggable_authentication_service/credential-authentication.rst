@@ -25,15 +25,15 @@ Here is a simple example::
    def authenticateCredentials(self, credentials):
        users={ "hanno" : "hannosch", "martin" : "optilude",
                "philipp" : "philiKON" }
-   
+
        if "login" not in credentials or "password" not in credentials:
            return None
-   
+
        login=credentials["login"]
        password=credentials["password"]
        if users.get(login, None)==password:
            return (login, login)
-   
+
        return None
 
 This plugin allows the users *hanno*, *martin* and *philipp* to login with their nickname as password.

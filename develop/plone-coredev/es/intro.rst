@@ -30,7 +30,7 @@ Para instalar un entorno de desarrollo plone 4.2 debe ejecutar los siguientes co
   > git clone -b 4.2  https://github.com/plone/buildout.coredev ./plone42devel
   > virtualenv --no-site-packages plone42devpy
   > cd plone42devel
-  > ../plone42devpy/bin/python bootstrap.py # (donde "python" es el ejecutable de su interprete python 2.6 o 2.7). 
+  > ../plone42devpy/bin/python bootstrap.py # (donde "python" es el ejecutable de su interprete python 2.6 o 2.7).
   > bin/buildout -v
 
 Si se encuentra con problemas en este proceso, consulte la documentación :doc:`issues`.
@@ -58,7 +58,7 @@ Para ver en qué branch usted se encuentra actualmente, solo ejecute el siguient
 La línea con un * por él indicará qué branch actualmente estás trabajando.
 
 .. important::
-   ¡Asegúrese de volver a ejecutar buildout si estuviera en una branch diferente antes para obtener las versiones correctas de los paquetes, de lo contrario obtendrá un comportamiento extraño! 
+   ¡Asegúrese de volver a ejecutar buildout si estuviera en una branch diferente antes para obtener las versiones correctas de los paquetes, de lo contrario obtendrá un comportamiento extraño!
 
 Para mas información sobre buildout, por favor ver la documentación sobre `buildout en el manual de desarrollador collective <http://developer.plone.org/reference_manuals/old/buildout/index.html>`_.
 
@@ -72,7 +72,7 @@ Usted puede conseguir el código fuente del paquete con ``mr.developer`` o con e
 En el directorio raíz de su su buildout, abra el archivo :file:`checkouts.cfg` y añada su paquete si no es ya allí de la siguiente forma::
 
   auto-checkout =
-          # mi paquetes modificados 
+          # mi paquetes modificados
           plone.app.caching
           plone.caching
           # otros paquetes
@@ -92,7 +92,7 @@ Alternativamente, nosotros podemos administrar los checkouts desde la línea de 
 
 Probando localmente
 -------------------
-En un mundo ideal, usted debería escribir un caso de prueba para su incidencia antes de tratar de corregir el fallo. En realidad esto rara ves sucede. No importa la forma cómo usted te acercas a resolver la falla, usted tiene que SIEMPRE probar la ejecución de los casos de prueba para ambos el módulo y plone.org antes de que usted genere una revisión con cualquiera de cambios. 
+En un mundo ideal, usted debería escribir un caso de prueba para su incidencia antes de tratar de corregir el fallo. En realidad esto rara ves sucede. No importa la forma cómo usted te acercas a resolver la falla, usted tiene que SIEMPRE probar la ejecución de los casos de prueba para ambos el módulo y plone.org antes de que usted genere una revisión con cualquiera de cambios.
 
 ¡Si usted no comienza con un caso de prueba, se ahorrará problemas potenciales y valida el fallo antes de llegar demasiado profundo en la incidencia!
 
@@ -112,12 +112,12 @@ Después que las pruebas al nivel del módulo se ejecutan con su cambio realizad
 
 Actualizar el archivo CHANGES.rst y checkouts.cfg
 -------------------------------------------------
-Una ves todo las pruebas se ejecuten localmente en su maquina, usted debe estar **CASI** listo para generar una revisión de sus cambios. Un par de cosas hay que hacer antes de continuar. 
+Una ves todo las pruebas se ejecuten localmente en su maquina, usted debe estar **CASI** listo para generar una revisión de sus cambios. Un par de cosas hay que hacer antes de continuar.
 
 Lo primero, por favor, edite el archivo :file:`CHANGES.rst` (o :file:`CHANGES.txt`, o :file:`HISTORY.txt`) en cada archivo que usted modifico y agregue un resumen de sus cambios. En esta nota el cambio será cotejada para la próxima versión Plone y es importante para los integradores y desarrolladores puedan ser capaz de ver lo que obtendrán si se actualizan.
 Nuevas entradas al changelog debería ser agregadas en la partes superiores del archivo :file:`CHANGES.txt`.
 
-*Lo más importante*, si no lo hizo antes, edite el archivo :file:`checkouts.cfg` en el directorio de buildout y agregar el paquete al cual le hizo sus cambios a la lista de ``auto-checkout``. Esto le permite al release manager de Plone saber que paquete ha sido actualizado para que cuando se de la próxima versión de Plone, este tendrá que fijar a la próxima versión del paquete al momento de generar un nuevo paquete Egg. LEER: esto es como su corrección viene en un paquete egg! 
+*Lo más importante*, si no lo hizo antes, edite el archivo :file:`checkouts.cfg` en el directorio de buildout y agregar el paquete al cual le hizo sus cambios a la lista de ``auto-checkout``. Esto le permite al release manager de Plone saber que paquete ha sido actualizado para que cuando se de la próxima versión de Plone, este tendrá que fijar a la próxima versión del paquete al momento de generar un nuevo paquete Egg. LEER: esto es como su corrección viene en un paquete egg!
 
 Tenga en cuenta que hay una separador de sección llamada ``# Test Fixes Only``. Asegúrese que su paquete egg este por encima de esa línea o su paquete egg probablemente no se hizo muy rápidamente. Esto le dice al release manager que los paquetes Egg por debajo de esta línea tienen pruebas que están actualizadas, pero no hay cambios en el código.
 
@@ -147,7 +147,7 @@ Generando revisiones al paquete Products.CMFPlone
 -------------------------------------------------
 Si usted esta trabajando un corregir un fallo en el paquete ``Products.CMFPlone``,
 hay un par de otras cosas que debe tomar en cuenta.
-Primero y mas importante, 
+Primero y mas importante,
 puede ver que este paquete tiene varias branches.
 Al momento de escribir este documento,
 habían tres branches para ``4.1``, ``4.2``, y la ``master``, el cual es implícitamente 4.3.
@@ -155,7 +155,7 @@ habían tres branches para ``4.1``, ``4.2``, y la ``master``, el cual es implíc
 ¿Aun me sigue con la explicación? Entonces, usted tiene un corrección de fallas para 4.x.
 Si la corrección es solamente para una versión,
 asegúrese de obtener la branch y aplicar sus cambios allí.
-Sin embargo, si la corrección del fallo es en múltiples branches. 
+Sin embargo, si la corrección del fallo es en múltiples branches.
 
 Por ejemplo, el fallo inicia en la versión 4.1. Obtenga la branch 4.1 y aplicar sus cambios allí con varias revisiones por cada cambio con sus respectivas pruebas.
 
@@ -171,7 +171,7 @@ Y entonces con el comando ``git cherry-pick`` y el número de revisión del comm
 
   > git cherry-pick b6ff4309
 
-Tal ves allá conflictos; entonces, resuélvalos y seguir las instrucciones 
+Tal ves allá conflictos; entonces, resuélvalos y seguir las instrucciones
 que la herramienta git le da a usted para completar el comando ``git cherry-pick``.
 
 Si su corrección involucra múltiples revisiones, entonces hacer un ``cherry-picking`` uno a uno puede resultar tedioso.
@@ -191,7 +191,7 @@ A continuación, regrese a la branch característica y haga una branch para `est
 (ef978a viene a ser la ultima revisión en el histórico de la branch característica antes
 de que sea bifurcaba de la versión 4.1. Usted puede mirar el histórico de su repositorio git con el comando ``git log`` para encontrar este.)
 
-Al llegar a este punto, la historia de la branch característica ha sido actualizada, pero no ha sido de hecho 
+Al llegar a este punto, la historia de la branch característica ha sido actualizada, pero no ha sido de hecho
 fusionada con la versión 4.2 aún. Este le permite a usted resolver conflictos antes de que usted
 lo fusione a la branch release 4.2. Hacerlo ahora así con los siguientes comandos::
 
@@ -203,7 +203,7 @@ Generando revisiones al paquete Products.CMFPlone
 -------------------------------------------------
 Si usted esta trabajando un corregir un fallo en el paquete ``Products.CMFPlone``,
 hay un par de otras cosas que debe tomar en cuenta.
-Primero y mas importante, 
+Primero y mas importante,
 puede ver que este paquete tiene varias branches.
 Al momento de escribir este documento,
 habían tres branches para ``4.1``, ``4.2``, y la ``master``, el cual es implícitamente 4.3.
@@ -211,7 +211,7 @@ habían tres branches para ``4.1``, ``4.2``, y la ``master``, el cual es implíc
 ¿Aun me sigue con la explicación? Entonces, usted tiene un corrección de fallas para 4.x.
 Si la corrección es solamente para una versión,
 asegúrese de obtener la branch y aplicar sus cambios allí.
-Sin embargo, si la corrección del fallo es en múltiples branches. 
+Sin embargo, si la corrección del fallo es en múltiples branches.
 
 Por ejemplo, el fallo inicia en la versión 4.1. Obtenga la branch 4.1 y aplicar sus cambios allí con varias revisiones por cada cambio con sus respectivas pruebas.
 
@@ -227,7 +227,7 @@ Y entonces con el comando ``git cherry-pick`` y el número de revisión (usted p
 
   > git cherry-pick b6ff4309
 
-Tal ves allá conflictos; entonces, resuélvalos y seguir las instrucciones 
+Tal ves allá conflictos; entonces, resuélvalos y seguir las instrucciones
 que la herramienta git le da a usted para completar el comando ``git cherry-pick``.
 
 Si su corrección involucra múltiples revisiones, entonces hacer un ``cherry-picking`` uno a uno puede resultar tedioso.
@@ -247,7 +247,7 @@ A continuación, regrese a la branch característica y haga una branch para `est
 (ef978a viene a ser la ultima revisión en el histórico de la branch característica antes
 de que sea bifurcaba de la versión 4.1. Usted puede mirar el histórico de su repositorio git con el comando ``git log`` para encontrar este.)
 
-Al llegar a este punto, la historia de la branch característica ha sido actualizada, pero no ha sido de hecho 
+Al llegar a este punto, la historia de la branch característica ha sido actualizada, pero no ha sido de hecho
 fusionada con la versión 4.2 aún. Este le permite a usted resolver conflictos antes de que usted
 lo fusione a la branch release 4.2. Hacerlo ahora así con los siguientes comandos::
 
@@ -260,7 +260,7 @@ Los branches y los forks y hacer revisiones directamente - ¡Por Dios!
 Plone uso un repositorio svn, así que todo el mundo es familiar y acostumbrado a hacer revisiones directamente a las branches. Después de la migración de los repositorios svn a los repositorios git en el servicio github, la comunidad decidió mantener este espíritu. Si usted ha firmado el documento :doc:`contributor agreement <contributors_agreement_explained>`, usted puede hacer commit directamente a la branch (para plone esto sería la versión del branch, para más otros paquetes esto sería el branch llamado ``master``).
 
 AUN ASÍ, hay unas cuantas situaciones donde una hacer un nuevo branch es apropiado. Si usted:
- * usted se esta iniciando, 
+ * usted se esta iniciando,
  * usted no esta seguro acerca de sus cambios
  * quiere una revisión de comentario/código
  * están llevando a cabo un cambio no trivial
@@ -294,6 +294,6 @@ Si usted esta trabajando de un ticket asignado, por favor no olvide en volver a 
 
 FAQ
 ---
- * *¿Cómo puedo saber si se tomaron mis cambios de mi paquete?* 
+ * *¿Cómo puedo saber si se tomaron mis cambios de mi paquete?*
     Usted puede seguir el proyecto en github y mirar la `linea del tiempo de cambios <https://github.com/organizations/plone>`_. Usted también puede descargar el :file:`CHANGES.txt` de cada liberación de Plone para ver una lista comprensible de todos los cambios y validar que su contribuciones estén presente.
 

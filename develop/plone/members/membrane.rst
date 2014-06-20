@@ -176,7 +176,7 @@ security-checked and may be used from ZMI scripts::
     rtool = context.portal_registration
     rtool.editMember(id, properties={}, password="secret")
 
-Use ``getToolByName`` rather than acquiring the tool from  ``context`` 
+Use ``getToolByName`` rather than acquiring the tool from  ``context``
 if you're doing this in a browser view.
 
 Accessing hashed password
@@ -232,7 +232,7 @@ deleting the old object::
         """
         Copies Product.remember based user from one location to another.
 
-        This is useful if you have locally stored members on your site 
+        This is useful if you have locally stored members on your site
         (for example one folder per country)
         and you need to move the person from one country to another.
 
@@ -245,7 +245,7 @@ deleting the old object::
 
         When all the fields in the user schema validate successfully,
         the re-registration email for the new user is automatically send
-        (TODO: Not sure whether this is general condition for Products.Remember) 
+        (TODO: Not sure whether this is general condition for Products.Remember)
 
         @param sourceUser: from Products.remember.content.member.Member instance
 
@@ -255,7 +255,7 @@ deleting the old object::
 
         @param post_process: function(sourceUser, targetUser) for setting up custom fields if there is no 1:1 mapping between fields of the new and old user object. Also you can do workflow mangling here.
 
-        @param expected_creation_state: The workflow state where the new member should be after it has been correctly initialized. In this point update() is not yet called, so Remember automatic registration mechanism should have not been triggered. 
+        @param expected_creation_state: The workflow state where the new member should be after it has been correctly initialized. In this point update() is not yet called, so Remember automatic registration mechanism should have not been triggered.
 
         @param expected_initialization_state: The workflow state where the new member should be after it has been correctly initialized. In this point update() is not yet called, so Remember automatic registration mechanism should have not been triggered.
 
@@ -327,7 +327,7 @@ deleting the old object::
                     if name in schema:
                         newfield = schema[name]
                         logger.debug("Copying field " + name + " " + str(value))
-                        newfield.set(nc, value)            
+                        newfield.set(nc, value)
                     else:
                         # The old field does not exist on the new object
                         logger.warning("Target does not have field " + name)
@@ -344,7 +344,7 @@ deleting the old object::
         # Assert that the user is not yet log in-able
         workflow = getToolByName(lc, "portal_workflow")
         review_state = workflow.getInfoFor(nc, 'review_state')
-        assert review_state == expected_creation_state, "Got review state:" + review_state 
+        assert review_state == expected_creation_state, "Got review state:" + review_state
 
         # Remove the old user object
         parent = lc.aq_parent
@@ -375,8 +375,8 @@ deleting the old object::
         # Check if we have betahaus.emailcatalog extension installed for Plone 3.x
         email_catalog = getToolByName(nc, "email_catalog", default=None)
 
-        if email_catalog is not None:           
-            # This ensures the member log-in will work in the future    
+        if email_catalog is not None:
+            # This ensures the member log-in will work in the future
             # as email_catalog does not automatically reflect member changes
             email_catalog.uncatalog_object(lc_path)
             email_catalog.reindexObject(nc)

@@ -1,10 +1,10 @@
 ===========================
-The configuration module 
+The configuration module
 ===========================
 
 .. admonition:: Description
 
-		The configuration details for your content type, in config.py. 
+		The configuration details for your content type, in config.py.
 
 First, we have to import a class from Archetypes:
 

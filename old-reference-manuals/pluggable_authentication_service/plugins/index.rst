@@ -10,4 +10,4 @@ Plugins
    :maxdepth: 2
 
    plugin-interfaces/index
-   plugin-types/index 
+   plugin-types/index

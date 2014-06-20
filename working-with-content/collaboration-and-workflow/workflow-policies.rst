@@ -36,7 +36,7 @@ review and approval:
 
 .. figure:: /_static/workflowsteps.png
    :align: center
-   :alt: 
+   :alt:
 
 Reporters would add news articles and would *submit* them (the *publish*
 menu choice is not available to them). Likewise, editors may *reject*

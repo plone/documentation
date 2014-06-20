@@ -302,7 +302,7 @@ How to clean up annotations on content objects:
 Make your code persistence free
 -------------------------------
 
-There is one issue with the above methods: you are creating new persistent 
+There is one issue with the above methods: you are creating new persistent
 classes so your data need your source code.
 That makes your code hard to uninstall (have to keep the code BBB + cleaning
 up the DB by walking throw all objects)

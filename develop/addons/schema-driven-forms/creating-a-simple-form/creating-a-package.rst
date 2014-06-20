@@ -8,7 +8,7 @@ adds the necessary dependencies. If you have an existing package that
 requires a form, you should be able to add the same dependencies. If you
 have read the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`, most of this should be familiar.
 
-For details about creating new packages, see 
+For details about creating new packages, see
 :doc:`Bootstrapping Plone add-on development </develop/addons/paste>`.
 
 First, we create a new package:

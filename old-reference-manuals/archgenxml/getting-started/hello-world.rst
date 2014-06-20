@@ -77,7 +77,7 @@ Move the whole folder ``HelloWorld`` to your Zope/Plone 3 instance's
 Manager. Choose *Plone Setup* from the personal bar and choose *Add/Remove
 Products*. A new product ``HelloWorld`` should now appear in the list of
 products available for install. Choose it and click *install*. Go to your
-personal folder. In the list of addable items, you'll find the content type 
+personal folder. In the list of addable items, you'll find the content type
 from the new product. Add a test instance to see if it works.
 
 .. image:: helloworld-plone-shot.png

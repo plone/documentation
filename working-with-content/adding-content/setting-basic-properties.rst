@@ -154,7 +154,7 @@ For example:
     <meta content="en" name="DC.language" />a
 
 
-The generator will check and obey the so-called *allowAnonymousViewAbout* 
+The generator will check and obey the so-called *allowAnonymousViewAbout*
 setting in the :term:`Control Panel` and affects the properties*Creator*, *Contributors* and *Publisher*.
 
 You can read more about `Dublin Core <http://dublincore.org/>`_ and

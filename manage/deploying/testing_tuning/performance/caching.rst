@@ -1,5 +1,5 @@
 ================
- Caching rules 
+ Caching rules
 ================
 
 .. contents :: :local:
@@ -12,22 +12,22 @@
 Introduction
 ===============
 
-Plone caching is configured using the 
-`plone.app.caching <https://pypi.python.org/pypi/plone.app.caching>`_ add-on. 
+Plone caching is configured using the
+`plone.app.caching <https://pypi.python.org/pypi/plone.app.caching>`_ add-on.
 It supplies a web user interface for cache configuration and default caching
 rules for Plone.
- 
+
 Using only the web user interface, ``plone.app.caching`` is very flexible
 already.  This document mainly deals how you can combine
 ``plone.app.caching`` with your custom code.
 
-Internally ``plone.app.caching`` uses 
+Internally ``plone.app.caching`` uses
 `z3c.caching <https://pypi.python.org/pypi/z3c.caching/>`_ which defines
 programming level ZCML directives to create your cache rules.
 
 ``plone.app.caching`` does both:
 
-* front end caching server support, and 
+* front end caching server support, and
 
 * in-memory cache in Zope.
 
@@ -51,7 +51,7 @@ operations here:
 
 .. note ::
 
-        Plone 3 has its own, older, caching mechanisms. 
+        Plone 3 has its own, older, caching mechanisms.
 
 
 Setting per-view cache rules
@@ -88,7 +88,7 @@ Here is our ``configure.zcml`` for our custom add-on ``browser`` package:
         >
 
       <include package="z3c.caching" file="meta.zcml" />
-    
+
       <!-- Let's define a ruleset which we use to cover all almost static
           pages which get heavy traffic.  This will appear in Cache
           configuration of Site setup control panel. -->
@@ -97,16 +97,16 @@ Here is our ``configure.zcml`` for our custom add-on ``browser`` package:
           title="Homepage"
           description="Site homepage view"
           />
-    
+
       <!-- We include one grok.View class in our ruleset. This view is being
           used at the site front page. -->
       <cache:ruleset
           for=".views.CoursePage"
           ruleset="plone.homepage"
           />
-    
-            
-    </configure>         
+
+
+    </configure>
 
 After defining the rule and checking that the rule appears in the caching
 control panel, we'll:
@@ -115,19 +115,19 @@ control panel, we'll:
 
 * on the *Detailed settings* tab we'll use the *Create per-ruleset* command
   to override timeout to be 1h instead of default 24h for *Homepage*.
-  
+
 .. warning ::
 
         Do not enable the Zope RAM cache for page templates. Somehow, at
         some point, you will end up having some bad page HTML in Zope's
-        internal cache and you have no idea how to clear it. 
-        
+        internal cache and you have no idea how to clear it.
+
 .. note ::
 
         If you are testing the rule on a local computer first, remember
-        to re-do caching control panels in the production environment, 
+        to re-do caching control panels in the production environment,
         as they are stored in the database.
-   
+
 Testing the rule
 -----------------
 
@@ -147,15 +147,15 @@ Here is an example showing how to test loading the page using the ``wget``
 UNIX command-line utility (discard the retrieved document and print the HTTP
 response headers)::
 
-    $ wget --output-document=/dev/null --server-response http://localhost:8080/ 
+    $ wget --output-document=/dev/null --server-response http://localhost:8080/
 
-The output looks like this::        
+The output looks like this::
 
     huiske-imac:tmp moo$ wget --output-document=/dev/null --server-response http://localhost:8080/LS/courses
     --2011-08-03 15:18:27--  http://localhost:8080/LS/courses
     Resolving localhost (localhost)... 127.0.0.1, ::1
     Connecting to localhost (localhost)|127.0.0.1|:8080... connected.
-    HTTP request sent, awaiting response... 
+    HTTP request sent, awaiting response...
       HTTP/1.0 200 OK
       Server: Zope/(2.13.7, python 2.6.4, darwin) ZServer/1.1
       Date: Wed, 03 Aug 2011 12:18:55 GMT
@@ -179,7 +179,7 @@ Varnish is picking up the rule. We fetch the page twice: first run is *cold*
 (not yet cached), the second run should be cached::
 
     wget --output-document=/dev/null --server-response http://www.site.com/courses
-    wget --output-document=/dev/null --server-response http://www.site.com/courses        
+    wget --output-document=/dev/null --server-response http://www.site.com/courses
 
 The output::
 
@@ -187,7 +187,7 @@ The output::
     --2011-08-03 15:39:10--  http://www.site.com/courses
     Resolving www.site.com (www.site.com)... 79.125.22.172
     Connecting to www.site.com (www.site.com)|79.125.22.172|:80... connected.
-    HTTP request sent, awaiting response... 
+    HTTP request sent, awaiting response...
       HTTP/1.1 200 OK
       Server: Zope/(2.13.7, python 2.6.5, linux2) ZServer/1.1
       X-Cache-Operation: plone.app.caching.moderateCaching
@@ -207,12 +207,12 @@ The output::
 We'll see that you have **two** numbers on line from Varnish::
 
     X-Varnish: 72735907 72735905
-        
+
 These are Varnish internal timestamps: when the request was pulled to the
 cache and when it was served. If you see only one number on subsequent
 requests it means that Varnish is not caching the request (because it's
 fetching the page from Plone every time). If you see two numbers you know it
-is OK (and you can feel the speed).          
+is OK (and you can feel the speed).
 
 More info:
 
@@ -222,7 +222,7 @@ Creating a "cache forever" view
 ================================
 
 You might create views which generate or produce resources (images, JS, CSS)
-in-fly. If you refer this views always through content unique URL 
+in-fly. If you refer this views always through content unique URL
 you can cache the view result forever.
 
 This can be done
@@ -241,23 +241,23 @@ Related ZCML
          xmlns:browser="http://namespaces.zope.org/browser"
          xmlns:cache="http://namespaces.zope.org/cache"
          >
-     
+
        <include package="z3c.caching" file="meta.zcml" />
        <include package="plone.app.caching" />
-     
+
        <!-- Because we generate the image URL containing image modified timestamp,
             the URL is always stable and when image changes the URL changes.
             Thus, we can use strong caching (cache URL forever)
          -->
-     
+
        <cache:ruleset
            for=".views.ImagePortletImageDownload"
            ruleset="plone.stableResource"
            />
-     
-     
+
+
      </configure>
-     
+
 Related view code::
 
     class ImagePortletImageDownload(ImagePortletHelper):

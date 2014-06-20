@@ -1,4 +1,4 @@
-Viewlets 
+Viewlets
 ===========
 
 **Dynamic snippets with viewlets**
@@ -232,7 +232,7 @@ viewlet manager class directly:
         grok.name('example.messaging.DummyViewlet')
         grok.require('zope2.View')
         grok.viewletmanager(MessageAreaViewletManager)
-        
+
         def render(self):
             return "<p>Dummy</p>"
 

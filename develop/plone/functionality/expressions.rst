@@ -7,7 +7,7 @@ Expressions
     Expressions are string templates or Python expressions
     which are used in various places in Plone for templates,
     action conditions
-    and URL generation. 
+    and URL generation.
 
 .. contents:: :local:
 
@@ -21,7 +21,7 @@ You might want to use expressions in your own add-on product
 to provide user-written conditions for viewlet visibility,
 portlets, dynamic text, etc.
 
-The authoritative reference is 
+The authoritative reference is
 `Appendix C: Zope Page Templates Reference <http://docs.zope.org/zope2/zope2book/AppendixC.html>`_
 of the `Zope 2 Book <http://docs.zope.org/zope2/zope2book/index.html>`_
 
@@ -52,7 +52,7 @@ notation,
 a `path expression <http://docs.zope.org/zope2/zope2book/AppendixC.html#tales-path-expressions>`_
 is assumed.
 
-Path expressions use slashes for traversal 
+Path expressions use slashes for traversal
 (:doc:`traversing <../serving/traversing>`),
 and will implicitly call callables.
 
@@ -60,7 +60,7 @@ Example: call the ``Title()`` method on the ``context`` object
 (finding it by :term:`acquisition` if necessary)
 and return its value::
 
-    context/Title        
+    context/Title
 
 Variables can be included using ``?``.
 Example: access a folder using the id stored in the ``myItemId`` variable,
@@ -71,7 +71,7 @@ and return its title::
 .. Note::
 
     With this kind of usage, if the variable you're dereferencing isn't
-    sanitized, there could be security ramifications. Use 
+    sanitized, there could be security ramifications. Use
     ``python:restrictedTraverse()`` instead if you need to use
     variables in your path parts.
 
@@ -97,19 +97,19 @@ and the traversing logic tries to render that template.
 
 This happens because
 
-1) `` context/@@comments_view`` creates a view instance 
+1) `` context/@@comments_view`` creates a view instance
 
-2) then calls its ``__call__()`` method 
+2) then calls its ``__call__()`` method
 
-3) the default ``BrowserView.__call__()``  behavior  to render a template by doing:: 
-    
-    def __call__(self): 
+3) the default ``BrowserView.__call__()``  behavior  to render a template by doing::
+
+    def __call__(self):
         return self.index()
 
 4) Because your view does not have a template assigned it also lacks self.index attribute
 
 The workaround for cases like this is to use ``nocall::`` traversing::
-    
+
      tal:define="commentsView nocall:context/@@comments_view"
 
 
@@ -129,7 +129,7 @@ Evaluate as Python code.
 
 Example::
 
-    python:object.myFunction() == False             
+    python:object.myFunction() == False
 
 
 Expression variables
@@ -167,7 +167,7 @@ Example::
     # the user input
     expression = Expression("python:context.Title() == 'foo')
 
-    expression_context = getExprContext(self.context)  
+    expression_context = getExprContext(self.context)
 
     # Evaluate expression by calling
     # Expression.__call__(). This
@@ -200,10 +200,10 @@ Then you can call the method on a view from a TALES expression::
 Your view code would look like::
 
     class MyViewName(BrowserView):
-        """ Exposes methods for expression conditions """ 
+        """ Exposes methods for expression conditions """
 
         def my_method(self):
-            """ Funky condition 
+            """ Funky condition
 
             self.context = object for which this view was traversed
             """
@@ -234,7 +234,7 @@ Use :doc:`IPortalState context helper </develop/plone/misc/context>` view.
 
 Example how to generate a multilingual-aware RSS feed link::
 
-    string:${object/@@plone_portal_state/portal_url}/site-feed/RSS?set_language=${object/@@plone_portal_state/language} 
+    string:${object/@@plone_portal_state/portal_url}/site-feed/RSS?set_language=${object/@@plone_portal_state/language}
 
 ... or you can use a Python expression for comparison::
 
@@ -259,7 +259,7 @@ for different languages:
 .. code-block:: html
 
     <div tal:replace="structure context/footertext"
-        tal:condition="python:context.restrictedTraverse('@@plone_portal_state').language() == 'no'" /> 
+        tal:condition="python:context.restrictedTraverse('@@plone_portal_state').language() == 'no'" />
     <div tal:replace="structure context/footertexteng"
         tal:condition="python:context.restrictedTraverse('@@plone_portal_state').language() == 'en'" />
 
@@ -269,9 +269,9 @@ Check if object implements an interface
 
 Example::
 
-    python:context.restrictedTraverse('@@plone_interface_info').provides('Products.CMFCore.interfaces.IFolderish')            
+    python:context.restrictedTraverse('@@plone_interface_info').provides('Products.CMFCore.interfaces.IFolderish')
 
-Returns ``True`` or ``False``. Useful for actions. 
+Returns ``True`` or ``False``. Useful for actions.
 
 Check if a certain hostname was used for HTTP request
 --------------------------------------------------------
@@ -305,7 +305,7 @@ To have a value appear in TAL or not you can do::
 
    <input type="checkbox" tal:attributes="checked python:'checked' if MYCONDITION else ''" />
 
-We execute a Python snippet which 
+We execute a Python snippet which
 
 * We will dynamically create a *checked* attribute on `<input>` based on Python evaluation
 
@@ -318,7 +318,7 @@ We execute a Python snippet which
 
     Python 2.6, Plone 4+ syntax
 
-     
+
 
 Through-the-web scripts
 ========================
@@ -328,7 +328,7 @@ Through-the-web scripts
    Move TTW script info to its own chapter.
 
 The Zope Management Interface allows one to create,
-edit and execute 
+edit and execute
 :doc:`RestrictedPython sandboxed scripts </develop/plone/security/sandboxing>`
 directly through the web management interface. This functionality
 is generally discouraged nowadays in the favor of
@@ -337,7 +337,7 @@ is generally discouraged nowadays in the favor of
 Creating a TTW Python script in an add-on installer
 -----------------------------------------------------
 
-Here is an example of how one can pre-seed a Python script in 
+Here is an example of how one can pre-seed a Python script in
 an add-on installer :doc:`GenericSetup profile </develop/addons/components/genericsetup>`.
 
 ``setuphandlers.py``::
@@ -348,7 +348,7 @@ an add-on installer :doc:`GenericSetup profile </develop/addons/components/gener
     if port not in (80, 443):
         # Don't kick in HTTP/HTTPS redirects if the site
         # is directly being accessed from a Zope front-end port
-        return None 
+        return None
     """
 
     def runCustomInstallerCode(site):

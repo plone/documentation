@@ -54,7 +54,7 @@ title, and otherwise make it a carbon copy of the title. Also, use
 lowercase for the short name. See also the page "`What's in a Web
 Name? <http://plone.org/documentation/manual/plone-4-user-manual/adding-content/whats-in-a-web-name>`_"
 for a description of how Plone handles web addressing and the short
-name. 
+name.
 
 The *delete* operation is straightforward. Click to select one or more
 items, and then the delete button, and the items will be deleted.
@@ -74,7 +74,7 @@ indispensable for folders with hundreds of items.
 
 .. figure:: /_static/advancedstatepanel.png
    :align: center
-   :alt: 
+   :alt:
 
 In addition to these individual action operations, reordering is a
 natural mouse-driven manipulation, as described in the next section.

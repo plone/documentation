@@ -20,7 +20,7 @@ You will see the Add*Link* panel:
 
 .. figure:: /_static/addlink.png
    :align: center
-   :alt: 
+   :alt:
 
 Good titles for links are important, because the titles will show up in
 lists of links, and because there tend to be quite a number of links

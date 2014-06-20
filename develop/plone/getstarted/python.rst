@@ -24,8 +24,8 @@ Python tutorials and online classes
 
 * `Google Python classes <http://code.google.com/edu/languages/google-python-class/>`_
 
-* `Free Python books <http://pythonbooks.revolunet.com/>`_ 
+* `Free Python books <http://pythonbooks.revolunet.com/>`_
 
-* `Dive into Python book <http://www.diveintopython.net/toc/index.html>`_ 
+* `Dive into Python book <http://www.diveintopython.net/toc/index.html>`_
 
 * `Python at codeacademy.org <http://www.codecademy.com/#!/exercises/0>`_

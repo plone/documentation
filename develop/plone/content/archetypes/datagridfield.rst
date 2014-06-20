@@ -49,17 +49,17 @@ Checkbox column values are handled specially::
             """ DataGridField value converter for CheckboxColumn """
             if value is None:
                 return None
-        
+
             if value == '':
                 return False
-            
+
             if value == '1':
                 return True
-            
+
             # XXX: Not sure if happens
             if value == '0':
                 return False
-        
+
             raise RuntimeError("Bad checkbox value:" + value)
 
 

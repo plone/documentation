@@ -48,7 +48,7 @@ Steps:
 5. Testing methods/behaviour of archetypes classes: Create a class inside the test package. Give it the stereotype ``<<testcase>>`` or ``<<doc_testcase>>``. Make them derive from main testcase class using the generalization arrow. On a testcase class you can add methods starting with 'test' such as 'testMyFancyFeature'. After code generation you just need to fill in your test code. A doc_testcase class creates an empty doctest text-file in the '/docs' directory of your product. There are some tagged value available to control the testcase in detail. Please look at the chapter :ref:`agx-tagged-values` for more information.
 6. To generate all imports and some startup code, you can use the dependency arrow from the testcase class to the archetypes class.
 7. You can repeat 5 and 6 for every class you want to include in yout test. You can organize your tests also different, like one integration test, as you like.
-8. Generate and run the tests. 
+8. Generate and run the tests.
 
 .. TODO:: steps needed to get the test fly, such as 'zopectl test' or setting SOFTWAREHOME and INSTANCEHOME environment.
 

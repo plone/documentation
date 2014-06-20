@@ -92,7 +92,7 @@ To create the reference via code, use a special form of the addReference method:
    origin = <the origin content>
    destination = <the destination content>
    assocName = <the association name>
-   
+
    origin.addReference(destination,
        assocName,
        referenceClass=ContentReferenceCreator(assocName),

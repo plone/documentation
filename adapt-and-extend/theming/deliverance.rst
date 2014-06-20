@@ -27,7 +27,7 @@ Some of the benefits:
 -  A single theme can apply to multiple backend web applications
    regardless of what platform they were developed for
 
-Full Documentation on Deliverance 
+Full Documentation on Deliverance
 ---------------------------------
 
 You can read all about Deliverance in more detail but it is not necessary to follow this tutorial.
@@ -44,10 +44,10 @@ Full slides are `available <http://www.slideshare.net/Jazkarta/deliverance-plone
 Installation & Setup
 ====================
 
-In order to follow the steps in this tutorial you must setup and install Plone and Deliverance. 
+In order to follow the steps in this tutorial you must setup and install Plone and Deliverance.
 This is easily done by using the tutorial buildout.
 
-A python2.4 runtime is required in order to follow this tutorial. 
+A python2.4 runtime is required in order to follow this tutorial.
 In order to follow the steps described in this tutorial checkout the pre build buildout file from http://svn.plone.org/svn/collective/deliverancedemo/trunk/:
 
 ::
@@ -78,8 +78,8 @@ If you have problems with the buildout, in particular, compiling libxml2 on your
 
 If you get the error **ImportError: Failure linking new module at startup (lxml)**.
 
-This has only been witnessed on Mac OS X. 
-It usually means that the build found some existing 'libxml2' or 'libxslt' instead of the one that's compiled by the buildout. 
+This has only been witnessed on Mac OS X.
+It usually means that the build found some existing 'libxml2' or 'libxslt' instead of the one that's compiled by the buildout.
 It's unclear how this happens, but it can be resolved by manually setting the MacOS \`\`DYLD\_LIBRARY\_PATH\`\`. For example, if your cwd is the \`\`buildout\`\` directory:
 
 ::
@@ -88,7 +88,7 @@ It's unclear how this happens, but it can be resolved by manually setting the Ma
 
 Then restart the servers.
 
-You can also compile libxml and libxslt as part of the buildout, and then link lxml to these locally built parts. 
+You can also compile libxml and libxslt as part of the buildout, and then link lxml to these locally built parts.
 In your buildout.cfg file:
 
 ::
@@ -98,7 +98,7 @@ In your buildout.cfg file:
         libxml2
         libxslt
         lxml
-        
+
     [libxml2]
     recipe = zc.recipe.cmmi
     url = http://dist.repoze.org/lemonade/dev/cmmi/libxml2-2.6.32.tar.gz
@@ -128,7 +128,7 @@ In your buildout.cfg file:
 Starting Deliverance
 ====================
 
-The buildout has created Plone and Deliverance instances. 
+The buildout has created Plone and Deliverance instances.
 To view the demo and follow the tutorial we need to start both.
 
 To start plone after the successful buildout:
@@ -147,7 +147,7 @@ Now that your Plone site is up and running, you can start the deliverance proxy 
 
     $> ./bin/deliverance-proxy rules.xml
 
-Deliverance will be available on port 5000. 
+Deliverance will be available on port 5000.
 
 Check out the new visual appearance of your Plone site on: http://localhost:5000
 
@@ -167,7 +167,7 @@ Static theme
 
 The theme used in this example is taken from the Open Source Web Design site ( http://www.oswd.org/design/preview/id/3293 )
 
-We have modified it slightly to have explicit CSS identifiers for the main content text area, rather than a generic paragraph. 
+We have modified it slightly to have explicit CSS identifiers for the main content text area, rather than a generic paragraph.
 While this was not necessary, it was preferable for the purposes of keeping this tutorial straightforward.
 
 The theme files are located in *static* directory.
@@ -186,7 +186,7 @@ Example::
         # 1. Login http://yoursite.com:9000/.deliverance/login admin/x
         #
         # 2. Get debug output http://yoursite.com:9000/?deliv_log
-        
+
         # Deliverance Python files are added to PYTHONPATH
         # and they are maintained under SVN version control
         export PYTHONPATH=src/plonetheme.yoursite/deliverance
@@ -206,7 +206,7 @@ Example::
         # Restart script
         sudo -H -u yourdeliveranceuser kill `cat path/to/deliverance/var/deliverance.pid`
         sudo -H -u yourdeliveranceuser nohup bash rundeliverance.sh &
-        
+
 
 Configuration
 ---------------
@@ -423,7 +423,7 @@ Screenshot reference for the Theme below:
 
 
 
-Please note there was originally no **#description** in the theme. 
+Please note there was originally no **#description** in the theme.
 We have modified it to make it simpler so no XPath references are needed in
 this tutorial.
 
@@ -456,8 +456,8 @@ The corresponding placeholder in the theme is the block of text starting with **
 
     <replace content="children:#parent-fieldname-text" theme="#bodytext" />
 
-Our astute reader will note that we do not use the children: selection in the theme. 
-This is because the theme author has chosen to use a **<p>** tag as the **#bodytext** section. 
+Our astute reader will note that we do not use the children: selection in the theme.
+This is because the theme author has chosen to use a **<p>** tag as the **#bodytext** section.
 Because the Plone content includes **<p>** tags itself we choose to replace the entire tag in the theme.
 
 The "after" screenshot is shown below - the second paragraph (below description) that starts with ***"Lorem Ipsum..."***

@@ -12,7 +12,7 @@ If you want to protect certain actions in your product by a special permission,
 you most likely will want to assign this permission to a role when the product
 is installed.  You will want to use Generic Setup's rolemap.xml to assign these
 permissions.  A new permission will be added to the Zope instance by calling
-setDefaultRoles on it. 
+setDefaultRoles on it.
 
 However, at the time when Generic Setup is run, almost none of your code has
 actually been run, so the permission doesn't exist yet.  That's why we define
@@ -51,15 +51,15 @@ to make them available available as Zope 3 permissions. This is done
 in ZCML using a the <permission> directive. Example configure.zcml:
 
 .. code-block:: xml
-   
-    <configure 
+
+    <configure
       xmlns="http://namespaces.zope.org/zope">
 
-      <permission 
-        id="myproduct.mypermission" 
-	title="MyProduct: MyPermission" 
+      <permission
+        id="myproduct.mypermission"
+	title="MyProduct: MyPermission"
 	/>
-    
+
     </configure>
 
 It's convention to prefix the permission id with the name of the
@@ -73,19 +73,19 @@ configure.zcml:
 
 .. code-block:: xml
 
-    <configure 
+    <configure
       xmlns="http://namespaces.zope.org/zope"
       xmlns:browser="http://namespaces.zope.org/browser">
-   
-      <permission 
-        id="myproduct.mypermission" 
+
+      <permission
+        id="myproduct.mypermission"
  	title="MyProduct: MyPermission" />
- 
-      <browser:page 
-        for="*" 
+
+      <browser:page
+        for="*"
 	name="myexampleview"
         class="browser.MyExampleView"
-        permission="myproduct.mypermission" 
+        permission="myproduct.mypermission"
 	/>
 
     </configure>
@@ -94,9 +94,9 @@ configure.zcml:
 Define both Zope 2 and Zope3 permissions in one Step in ZCML
 ------------------------------------------------------------
 
-You can use `collective.autopermission 
-<https://pypi.python.org/pypi/collective.autopermission/1.0b1>`_ 
-(`svn repository 
+You can use `collective.autopermission
+<https://pypi.python.org/pypi/collective.autopermission/1.0b1>`_
+(`svn repository
 <http://svn.plone.org/svn/collective/collective.autopermission>`_)
 and define both the Zope 2 and Zope 3 permission at once with the
 <permission> zcml-directive. To do that install
@@ -107,23 +107,23 @@ permissions *and* before you use them.  (collective.autopermission is
 not required in Zope 2.12/Plone 4 anymore!)
 
 .. code-block:: xml
-  
-    <configure 
+
+    <configure
       xmlns="http://namespaces.zope.org/zope"
       xmlns:browser="http://namespaces.zope.org/browser">
- 
+
       <include package="collective.autopermission" />
- 
-      <permission 
-        id="myproduct.mypermission" 
+
+      <permission
+        id="myproduct.mypermission"
         title="MyProduct: MyPermission"
 	/>
-  
-      <browser:page 
-        for="*" 
+
+      <browser:page
+        for="*"
         name="myexampleview"
         class="browser.MyExampleView"
-        permission="myproduct.mypermission" 
+        permission="myproduct.mypermission"
 	/>
 
     </configure>

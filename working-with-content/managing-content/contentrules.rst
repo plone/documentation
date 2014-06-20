@@ -42,7 +42,7 @@ The following actions are available by default:
 - Transition workflow state of object
 - Send email
 
- 
+
 Creating and Defining Content Rules
 ===================================
 
@@ -61,7 +61,7 @@ In this example, you're going to create a content rule that will send an email a
 
 .. image:: /_static/example_rules_list.png
    :align: center
-   :alt: 
+   :alt:
 
 
 If there are a large number of content rules, it can be useful to filter them based on the triggers in the dropdown menu
@@ -72,23 +72,23 @@ If there are a large number of content rules, it can be useful to filter them ba
 
 .. image:: /_static/addingnewrule.png
    :align: center
-   :alt: 
+   :alt:
 
- 
+
 - Click the "Save" button. At this point, you have essentially created a "container" for the content rule:
 
 .. image:: /_static/rulejustadded.png
    :align: center
 
 
- 
+
 Next you'll further define the trigger and actions for this rule.
 
- 
+
 Defining a Content Rule
 ========================
 
- 
+
 
 - After creating a content rule, you need to actually define the specific conditions of the trigger and actions that will occur based on those conditions.
 - Click on the title of your content rule, in this case "Send Email when any Page is Modified".
@@ -106,7 +106,7 @@ Defining a Content Rule
 .. image:: /_static/addcontenttypecondition.png
    :align: center
 
-        
+
 **For the action:**
 
         - Select "Send email" from the drop down menu and click on the "Add" button.
@@ -122,7 +122,7 @@ Defining a Content Rule
 
 - Click the "Save" button
 
- 
+
 
 Congratulations, you have created a working content rule! Your content rule should look like:
 
@@ -166,7 +166,7 @@ If you wish to have this rule apply to all the subfolders but not to the current
     Basically, the "Apply to subfolders" and "Apply to current folder only" can be thought of as toggles.
     You can test this rule now by creating a new Page or modifying an existing Page. Once you click on "Save" for that Page, an email will be sent.
 
- 
+
 Managing Multiple Rules
 =======================
 
@@ -178,9 +178,9 @@ In this section you'll need to create one or more additional rules before procee
     Move News Items to a Folder when that News Item is published
     Send an email whenever a News Item is modified.
 
- 
 
- 
+
+
 More on Triggers. Actions, and Assigning Rules
 ==============================================
 
@@ -194,7 +194,7 @@ Triggers
     -    Object removed
     -    Workflow state changed
 
-     
+
 Conditions
 ----------
 
@@ -205,7 +205,7 @@ Conditions
     -   User's group
     -    User's role
 
-     
+
 Actions
 -------
 
@@ -217,7 +217,7 @@ Actions
     -    Transition workflow state
     -    Mail action
 
-     
+
 Assigning rules
 ---------------
 
@@ -242,4 +242,4 @@ If you're on a folder that has the rule assigned to it directly (e.g. it's NOT a
 
 Alternately, if you're on a folder that has the rule assigned from a folder higher up in the hierarchy, clicking on the rule Title link will take you to the folder's Rules tab where the rule has been explicitly assigned.
 
-If from the Rules tab, a rule is listed at active, then the assignment of that rule is being managed from a parent folder. 
+If from the Rules tab, a rule is listed at active, then the assignment of that rule is being managed from a parent folder.

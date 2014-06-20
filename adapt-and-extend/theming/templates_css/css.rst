@@ -77,15 +77,15 @@ Example ``profiles/default/cssregistry.xml``:
 
     </object>
 
-In this case there should be a registered resource directory named 
+In this case there should be a registered resource directory named
 yourproduct.something. In the directory should be a file yourstylesheet.css.
 If you have registered the stylesheet directly in zcml
-    
+
     <browser:resource
      name="yourstylesheet.css"
      file="yourstylesheet.css"
      />
-     
+
 then id must be
 
     id="++resource++yourstylesheet.css"
@@ -329,50 +329,50 @@ class which is registered as the ``plone_layout`` view.
     from plone.app.layout.globals import layout as base
     from plone.app.layout.navigation.interfaces import INavigationRoot
 
-    
+
     class LayoutPolicy(base.LayoutPolicy):
         """
         Enhanced layout policy helper.
-    
+
         Extend the Plone standard class to have some more <body> CSS classes
         based on the current context.
         """
-    
+
         def bodyClass(self, template, view):
             """Returns the CSS class to be used on the body tag.
             """
-    
+
             # Get content parent
             body_class = base.LayoutPolicy.bodyClass(self, template, view)
-    
+
             # Include context and parent ids as CSS classes on <body>
             normalizer = queryUtility(IIDNormalizer)
-    
+
             body_class += " context-" + normalizer.normalize(self.context.getId())
-    
+
             parent = self.context.aq_parent
-    
+
             # Check that we have a valid parent
             if hasattr(parent, "getId"):
                 body_class += " parent-" + normalizer.normalize(parent.getId())
-    
+
             # Get path with "Default content item" wrapping applied
             context_helper = getMultiAdapter((self.context, self.request), name="plone_context_state")
             canonical = context_helper.canonical_object()
-    
+
             # Mark site front page with special CSS class
             if INavigationRoot.providedBy(canonical):
-    
+
                 if "template-document_view" in body_class:
                     body_class += " front-page"
-    
+
             # Add in logged-in / not logged in status
             portal_state = getMultiAdapter((self.context, self.request), name="plone_portal_state")
             if portal_state.anonymous():
                 body_class += " anonymous"
             else:
                 body_class += " logged-in"
-    
+
             return body_class
 
 Related ZCML registration:

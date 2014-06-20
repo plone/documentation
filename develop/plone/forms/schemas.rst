@@ -140,7 +140,7 @@ Example::
             context.test_address.last_name = u"Ohtamaa"
 
             # Note that you can still add arbitrary attributes to any
-            # persistent object.  They are simply not validated, as they 
+            # persistent object.  They are simply not validated, as they
             # don't go through the ``zope.schema`` FieldProperty
             # declarations.
             # Do not do this, you will regret it later.
@@ -174,7 +174,7 @@ default
 .. warning::
 
     Do not initialize any non-primitive values using the *default* keyword
-    parameter of schema fields.  Python and the ZODB stores objects by 
+    parameter of schema fields.  Python and the ZODB stores objects by
     reference.  Python code will construct only *one* field value during
     schema construction, and share its content across all objects.  This
     is probably not what you intend. Instead, initialize objects in the
@@ -214,9 +214,9 @@ Dumping schema data
 Below is an example how to extract all schema defined fields from an object.
 
 ::
-    
+
     from collections import OrderedDict
-    
+
     import zope.schema
 
 
@@ -245,7 +245,7 @@ When trying to introspect a Dexterity type, you can get a reference to the schem
 
     from zope.component import getUtility
     from plone.dexterity.interfaces import IDexterityFTI
-    
+
     schema = getUtility(IDexterityFTI, name=PORTAL_TYPE_NAME).lookupSchema()
 
 ...and then inspect it using the methods above. Note this won't have behavior
@@ -505,7 +505,7 @@ Example::
         form.widget(yourField=CheckBoxFieldWidget)
         yourField = schema.List(title=u"Available headers and animations",
                                    description=u"Headers and animations uploaded here",
-                                   required=False, 
+                                   required=False,
                                    value_type=zope.schema.Choice(source=yourVocabularyFunction),
                                    )
 
@@ -572,7 +572,7 @@ as a default value will make all created field values to share this same object.
 
 http://effbot.org/zone/default-values.htm
 
-Use value adapters instead 
+Use value adapters instead
 
 * https://pypi.python.org/pypi/plone.directives.form#value-adapters
 

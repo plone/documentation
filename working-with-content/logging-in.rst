@@ -18,7 +18,7 @@ can type in your user name and password:
 
 .. figure:: /_static/loginform.png
    :align: center
-   :alt: 
+   :alt:
 
 After logging in to a Plone web site you will see some indication of
 your name, often the top in the top-right corner of the screen. You can

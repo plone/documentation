@@ -14,12 +14,12 @@ The most important interfaces that you may want to configure are:
    Authentication plugins are responsible for authenticating a set of
    credentials. Usually that will mean verifying if a login name and
    password are correct by comparing them with a user record in a database
-   such as the ZODB or an SQL database. 
+   such as the ZODB or an SQL database.
 
 **Extraction**
    Extraction plugins determine the credentials for a request.
    Credentials can take different forms, such as a HTTP cookie, HTTP form
-   data or the user's IP address. 
+   data or the user's IP address.
 
 **Groups**
    These plugins determine which group(s) a user (or group) belongs to.
@@ -35,4 +35,4 @@ The most important interfaces that you may want to configure are:
    Plone site in the ZODB.
 
 **User Enumeration**
-   User enumeration plugins implement the searching logic for users. 
+   User enumeration plugins implement the searching logic for users.

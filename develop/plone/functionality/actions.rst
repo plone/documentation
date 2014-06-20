@@ -4,7 +4,7 @@
 
 .. admonition:: Description
 
-        Creating and using portal_actions mechanism  
+        Creating and using portal_actions mechanism
 
 .. contents :: :local:
 
@@ -29,7 +29,7 @@ Actions are managed by
 * portal_actions for generic actions
 
 * portal_types for view, edit etc. actions and object default action... all actions
-  which are tied to a particular content type and may vary by type 
+  which are tied to a particular content type and may vary by type
 
 Iterating through available actions
 -------------------------------------
@@ -57,7 +57,7 @@ Exporting and importing all portal_actions
 =============================================
 
 You can transfer action configuration from a Plone site to another using GenericSetup export/import XML.
-You can also do this to generate XML from which you can cut out snippets for creating 
+You can also do this to generate XML from which you can cut out snippets for creating
 actions.xml by hand.
 
 * Go to portal_setup
@@ -103,8 +103,8 @@ Example how to add an action to object actions:
        <property name="visible">True</property>
       </object>
     </object>
-    
-Example how to add actions to user menu, which is 
+
+Example how to add actions to user menu, which is
 visible in the top right corner for logged in users (Plone 4):
 
 .. code-block:: xml
@@ -125,8 +125,8 @@ visible in the top right corner for logged in users (Plone 4):
            <property name="visible">True</property>
           </object>
          </object>
-        </object>    
-    
+        </object>
+
 Reordering actions in actions.xml
 ==================================
 
@@ -161,7 +161,7 @@ for edit action.
 
 Action can be also not related to document, like::
 
-    http://localhost:8080/site/sitemap 
+    http://localhost:8080/site/sitemap
 
 Default action
 --------------
@@ -253,14 +253,14 @@ Example::
 
         # See ActionInformation.py / ActionInformation for available edits
         actionInformation.edit(visible=False)
-        
+
 Visibility expressions
 ----------------------
 
 In portal_actions expression is used to determine whether an action is visible
-on a particular page. 
+on a particular page.
 
-Expression is "expression" field in actions.xml or "Expression" field in 
+Expression is "expression" field in actions.xml or "Expression" field in
 portal_actions.
 
 .. note::
@@ -268,7 +268,7 @@ portal_actions.
         This check is just a visibility check. Users can still
         try to type the action by typing the URL manually. You need
         to do the permission level security check on the view providing the action.
-        
+
 For more information see :doc:`expressions </develop/plone/functionality/expressions>`.
 
 Condition examples
@@ -283,7 +283,7 @@ Example::
 
     context_state = getMultiAdapter((self.context, self.request),
                                 name=u'plone_context_state')
-    
+
     # First argument is action category,
     # we have custom "mobile_actions"
     self.actions = context_state.actions().get('mobile_actions', None)
@@ -303,7 +303,7 @@ Example how to generate tabs list::
 
     def getSections(self):
         """
-        
+
         @return: tuple (selectedTabs, currentSelectedTab)
         """
 
@@ -312,45 +312,45 @@ Example how to generate tabs list::
         actions = context_state.actions()
 
 
-        # Get CatalogNavigationTabs instance       
+        # Get CatalogNavigationTabs instance
         portal_tabs_view = getMultiAdapter((self.context, self.request),
                                            name='portal_tabs_view')
-                                           
-        # Action parameter is "portal_tabs" by default, but can be other                                           
+
+        # Action parameter is "portal_tabs" by default, but can be other
         portal_tabs = portal_tabs_view.topLevelTabs(actions=actions)
 
         selectedTabs = self.context.restrictedTraverse('selectedTabs')
 
         selected_tabs = selectedTabs('index_html',
                                           self.context,
-                                          portal_tabs)        
+                                          portal_tabs)
 
         selected_portal_tab = selected_tabs['portal']
-        
+
         return (portal_tabs, selected_portal_tab)
 
 Custom action listings
 ----------------------
- 
+
 Example::
 
-        import Acquisition        
+        import Acquisition
         from zope.component import getMultiAdapter
-        
+
         class Sections(base.Sections):
             """
             """
-        
+
             def update(self):
                 base.Sections.update(self)
-                
+
                 context = Acquisition.aq_inner(self.context)
                 # IContextState view provides shortcut to get different action listings
                 context_state = getMultiAdapter((context, self.request), name=u'plone_context_state')
                 all_actions = context_state.keyed_actions() # id -> action mappings
                 mobile_site_actions = all_actions["mobile_site_actions"].values()
                 self.portal_tabs = mobile_site_actions
-         
+
 Different tabs per section/folder
 ---------------------------------
 
@@ -366,6 +366,6 @@ Plone specific event handlers are used to update Plone related stuff like ``port
 on move.
 
 Plone internal clipboard relies on the presence of Zope 2 session (different from authentication session).
-Paste action fails silenlty (is missing) if ``_ZopeId`` session cookie does not work correctly on your 
+Paste action fails silenlty (is missing) if ``_ZopeId`` session cookie does not work correctly on your
 web server.
 

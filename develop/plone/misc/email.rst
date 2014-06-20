@@ -82,7 +82,7 @@ This can be called with a ``member`` object and the ``portal_url``::
     mail_text = mail_template(member=member,
                               portal_url=portal.absolute_url(),
                               charset=email_charset,
-                              request=REQUEST)  
+                              request=REQUEST)
 
 For more complete examples (with i18n support, etc.) see the password reset
 modules (particularly ``Products.remember.tools.registration``).
@@ -96,7 +96,7 @@ modules (particularly ``Products.remember.tools.registration``).
 Graceful failing
 ----------------
 
-In the case SMTP server rejects the connection. etc. don't abort the current transaction (which is 
+In the case SMTP server rejects the connection. etc. don't abort the current transaction (which is
 the default behavior)
 
 * http://stackoverflow.com/questions/9013009/ploneformgen-and-fail-safe-email-send

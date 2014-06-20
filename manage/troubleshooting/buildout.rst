@@ -19,8 +19,8 @@ Network errors and timeouts
 
 The usual reason for download error or timeout is that either
 
-* ``pypi.python.org`` server is down, or 
-* one of ``plone.org`` servers is down, or 
+* ``pypi.python.org`` server is down, or
+* one of ``plone.org`` servers is down, or
 * other Python package source server is down.
 
 Here are instructions how to deal with community servers down situations
@@ -36,7 +36,7 @@ Individual package failing outside PyPI
 ---------------------------------------
 
 To figure out which file buildout tries to download, usually the only way
-is to use ``buildout -D`` pdb debug mode and step up in stack frames to see 
+is to use ``buildout -D`` pdb debug mode and step up in stack frames to see
 what is going on.
 
 
@@ -90,7 +90,7 @@ Example::
 If your buildout is fetching strange versions:
 
 * try running buildout in verbose mode: ``bin/buildout -vvv``
-* Use dumppickedversions (below) 
+* Use dumppickedversions (below)
 * Manually pin down version in the ``[versions]`` section of your buildout.
 
 Further reading:
@@ -110,7 +110,7 @@ Add to your ``buildout.cfg``:
 .. code-block:: cfg
 
     extensions = buildout.dumppickedversions
-    dump-picked-versions-file = versions.cfg        
+    dump-picked-versions-file = versions.cfg
 
 More information
 ^^^^^^^^^^^^^^^^
@@ -122,7 +122,7 @@ Good-py service
 
 Good-py contains some good known versions sets. These are most convenient to
 use if you are using complex configuration of add-ons that you are not
-familiar with. 
+familiar with.
 
 Some good-py configurations take a Plone version as a paremeter.
 
@@ -135,13 +135,13 @@ Example:
         base.cfg
         http://dist.plone.org/release/3.3.5/versions.cfg
         http://good-py.appspot.com/release/dexterity/1.0-next?plone=3.3.5
-            
+
 Or:
 
 .. code-block:: cfg
 
     extends =
-        http://dist.plone.org/release/4.0/versions.cfg           
+        http://dist.plone.org/release/4.0/versions.cfg
         http://good-py.appspot.com/release/dexterity/1.0b2?plone=4.0
 
 
@@ -159,7 +159,7 @@ More info
 Plone 3.1
 =========
 
-Plone 3.1 and earlier are not eggified. 
+Plone 3.1 and earlier are not eggified.
 Below are links how to keep Plone 3.1 and earlier buildouts running.
 
 See:
@@ -181,7 +181,7 @@ Here is a pindown example from 2010/02:
     # zope.index 3.5.0 requires 'ZODB3>=3.8.0b1'
     # This will conflict with the fake ZODB egg.
     zope.app.catalog = 3.5.2
-    zope.component = 3.5.1 
+    zope.component = 3.5.1
     plone.app.z3cform=0.4.2
     plone.recipe.zope2instance = 3.6
     zope.sendmail = 3.6.0
@@ -203,7 +203,7 @@ You try to run buildout, but it is stuck in a loop::
     Getting distribution for 'distribute'.
     Getting distribution for 'distribute'.
     Getting distribution for 'distribute'.
-    
+
 Your system-wide Distribute version is older than the latest release.
 Buildout tries to update it, but since system wide site-packages version
 overrides anything buildout can do, it is stuck in a loop.
@@ -249,15 +249,15 @@ You get the following traceback when running buildout::
       File "/home/moo/py24/lib/python2.4/site-packages/distribute-0.6.10-py2.4.egg/pkg_resources.py", line 2164, in requires
         raise UnknownExtra(
     UnknownExtra: zope.i18n 0.0 has no such extra feature 'zcml'
-        
+
 You might be using an add-on meant for Plone 4 with Plone 3. Check if
 ``setup.py`` contains *Zope2* as a dependency. If it does, then you need to
-use earlier version of the add-on for your Plone 3 site.        
+use earlier version of the add-on for your Plone 3 site.
 
 More info:
 
-* http://groups.google.com/group/singing-dancing/browse_thread/thread/331cdfe78cf371ed        
-    
+* http://groups.google.com/group/singing-dancing/browse_thread/thread/331cdfe78cf371ed
+
 
 We already have: zope.interface 4.0.3
 ========================================
@@ -303,14 +303,14 @@ When running buildout, Plone 3.3.5::
     Error: There is a version conflict.
     We already have: zope.location 3.4.0
     but zope.traversing 3.13 requires 'zope.location>=3.7.0'.
-                
+
 Solution:
 
 .. code-block:: console
-        
+
     rm -rf fake-eggs/*
     bin/buildout install zope2
-    bin/buildout            
+    bin/buildout
 
 
 ImportError: No module named lxml
@@ -322,21 +322,21 @@ installed.
 Example traceback when running buildout::
 
     ...
-    Processing openxmllib-1.0.6.tar.gz 
-    <snip Unpacking... > 
-    Running openxmllib-1.0.6/setup.py bdist_egg --dist-dir /tmp/easy_install-Urh6x4/openxmllib-1.0.6/egg-dist-tmp-ju0TuT 
-    Traceback (most recent call last): 
-    <snip Traceback... > 
-      File "setup.py", line 5, in <module> 
-      File "/tmp/easy_install-Urh6x4/openxmllib-1.0.6/openxmllib/__init__.py", line 17, in <module> 
-      File "/tmp/easy_install-Urh6x4/openxmllib-1.0.6/openxmllib/wordprocessing.py", line 5, in <module> 
+    Processing openxmllib-1.0.6.tar.gz
+    <snip Unpacking... >
+    Running openxmllib-1.0.6/setup.py bdist_egg --dist-dir /tmp/easy_install-Urh6x4/openxmllib-1.0.6/egg-dist-tmp-ju0TuT
+    Traceback (most recent call last):
+    <snip Traceback... >
+      File "setup.py", line 5, in <module>
+      File "/tmp/easy_install-Urh6x4/openxmllib-1.0.6/openxmllib/__init__.py", line 17, in <module>
+      File "/tmp/easy_install-Urh6x4/openxmllib-1.0.6/openxmllib/wordprocessing.py", line 5, in <module>
       File "/tmp/easy_install-Urh6x4/openxmllib-1.0.6/openxmllib/document.py", line 14, in <module>
-    ImportError: No module named lxml 
-    An error occurred when trying to install openxmllib 1.0.6. Look above this message for any errors that were output by easy_install. 
-    While: 
-      Installing plone-core-addons. 
-      Getting distribution for 'openxmllib>=1.0.6'. 
-    Error: Couldn't install: openxmllib 1.0.6 
+    ImportError: No module named lxml
+    An error occurred when trying to install openxmllib 1.0.6. Look above this message for any errors that were output by easy_install.
+    While:
+      Installing plone-core-addons.
+      Getting distribution for 'openxmllib>=1.0.6'.
+    Error: Couldn't install: openxmllib 1.0.6
 
 Solution: ensure lxml compilation happens before openxmllib is being
 compiled.
@@ -428,7 +428,7 @@ Solution: update the ``zc.buildout`` installed in your system Python:
 .. code-block:: console
 
     easy_install -U zc.buildout
-        
+
 An error occurred when trying to install lxml - error: Setup script exited with error: command 'gcc' failed with exit status 1
 ==============================================================================================================================
 
@@ -457,8 +457,8 @@ On Ubuntu/Debian you could do this as follows:
 VersionConflict: distribute 0.6.19
 ==================================
 
-When running buildout you see something like this::        
-        
+When running buildout you see something like this::
+
       File "/home/danieltordable.es/buildout-cache/eggs/zc.buildout-1.4.4-py2.6.egg/zc/buildout/easy_install.py", line 606, in _maybe_add_setuptools
         if ws.find(requirement) is None:
       File "/home/danieltordable.es/buildout-cache/eggs/distribute-0.6.19-py2.6.egg/pkg_resources.py", line 474, in find
@@ -477,13 +477,13 @@ Update Distribute (Plone universal installer, using supplied
 
 .. code-block:: console
 
-        python/bin/easy_install -U Distribute                
-        
+        python/bin/easy_install -U Distribute
+
 Update Distribute (OSX/Ubuntu/Linux):
 
 .. code-block:: console
 
-        easy_install -U Distribute      
+        easy_install -U Distribute
 
 
 argparse 1.2.1
@@ -546,7 +546,7 @@ VersionConflict: zope.browserpage 3.9.0 requires 'zope.publisher>=3.8'.
 Plone 3.3.x package pindown problems.
 
 Example::
-    
+
     Error: There is a version conflict.
     We already have: zope.publisher 3.5.6
     but zope.browserpage 3.9.0 requires 'zope.publisher>=3.8'.
@@ -622,7 +622,7 @@ Couldn't install: BTrees 4.0.5
 ===============================
 
 Example::
-    
+
     Unpacking persistent-4.0.6/docs/using.rst to /tmp/easy_install-71ggL3/BTrees-4.0.5/temp/easy_install-B8bWf7/persistent-4.0.6/docs/using.rst
     Unpacking persistent-4.0.6/docs/index.rst to /tmp/easy_install-71ggL3/BTrees-4.0.5/temp/easy_install-B8bWf7/persistent-4.0.6/docs/index.rst
     Unpacking persistent-4.0.6/docs/glossary.rst to /tmp/easy_install-71ggL3/BTrees-4.0.5/temp/easy_install-B8bWf7/persistent-4.0.6/docs/glossary.rst
@@ -653,7 +653,7 @@ Try install manually the core buildout part where you have ``fake-eggs`` defined
         bin/buildout install instance
         # enable zeoserver, clients in buildout
     bin/buildout install client1
-        bin/buildout 
+        bin/buildout
         # Don't touch anything to break it
 
 

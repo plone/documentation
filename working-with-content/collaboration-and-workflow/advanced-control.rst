@@ -16,7 +16,7 @@ which brings up the *advanced* state panel:
 
 .. figure:: /_static/stateadvanced.png
    :align: center
-   :alt: 
+   :alt:
 
 Below an explanation section at the beginning of the panel, there is a
 check box showing the content that will be affected by this change of

@@ -6,7 +6,7 @@ The 'display' menu
 
 		The 'display' menu is the drop-down that lets content authors select
 		which view template to use, or which object to set as a default-page
-		in a folder. 
+		in a folder.
 
 The ``display`` menu is found in ``global\_contentmenu.pt`` and supports
 three different functions:

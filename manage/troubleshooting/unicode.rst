@@ -28,7 +28,7 @@ Read more:
 safe_unicode()
 =====================
 
-Plone's core contains a helper function which allows you 
+Plone's core contains a helper function which allows you
 to safely decode strings to unicode without fear of UnicodeDecodeException.
 Use this in your own code to decode unicode in the cases you are
 not sure if the input is 8-bit bytestrings or real unicode strings.

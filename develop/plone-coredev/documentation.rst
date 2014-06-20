@@ -82,5 +82,5 @@ Using Sphinx
 
 reST References:
 
- * `Sphinx reST Primer <http://sphinx-doc.org/rest.html>`_ 
+ * `Sphinx reST Primer <http://sphinx-doc.org/rest.html>`_
 

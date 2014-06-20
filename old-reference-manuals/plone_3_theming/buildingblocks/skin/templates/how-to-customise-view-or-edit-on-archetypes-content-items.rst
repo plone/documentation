@@ -58,43 +58,43 @@ different things you can customise. See base.pt
 
             <metal:header define-macro="header">
 
-            
+
 
             </metal:header>
 
-            
+
 
             <!-- body macro where all the fields are -->
 
             <metal:body define-macro="body">
 
-                    
+
 
             </metal:body>
 
-            
+
 
             <!-- folderlisting that shows sub-objects if there are any -->
 
             <metal:folderlisting define-macro="folderlisting">
 
-                    
 
-                    
+
+
 
             </metal:folderlisting>
 
-            
+
 
             <!-- footer, by line created date etc. -->
 
             <metal:footer define-macro="footer">
 
-                    
+
 
             </metal:footer>
 
-            
+
 
     </metal:main>
 
@@ -126,7 +126,7 @@ Below is an skeleton of a custom edit template:
 
       </metal:head>
 
-      
+
 
       <metal:head define-macro="javascript_head">
 
@@ -144,7 +144,7 @@ Below is an skeleton of a custom edit template:
 
             </metal:header>
 
-            
+
 
             <!-- typedesription, typeDescription from the content type -->
 
@@ -156,11 +156,11 @@ Below is an skeleton of a custom edit template:
 
 
 
-            <!-- body, editform , fields, buttons, the default macro 
+            <!-- body, editform , fields, buttons, the default macro
 
                  contains a number of slots which usually provide enough
 
-                 ways to customise so often I use that macro and just 
+                 ways to customise so often I use that macro and just
 
                  fill the slots
 
@@ -176,7 +176,7 @@ Below is an skeleton of a custom edit template:
 
                   </metal:block>
 
-                  
+
 
                   <!-- listing of the fields, usually I won't customise this
 
@@ -218,13 +218,13 @@ Below is an skeleton of a custom edit template:
 
 
 
-            
+
 
             <!-- footer, by line created date etc. -->
 
             <metal:footer define-macro="footer">
 
-            
+
 
             </metal:footer>
 

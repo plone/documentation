@@ -38,9 +38,9 @@ widget for a field, using the *form.widget()* directive:
     ...
 
     class IPizzaOrder(model.Schema):
-        
+
         ...
-        
+
         form.widget('notes', WysiwygFieldWidget)
         notes = schema.Text(
                 title=_(u"Notes"),
@@ -70,7 +70,7 @@ can set these properties by passing them to the widget directive:
             )
 
 .. note::
-    
+
     Support for specifying widget properties was added in plone.autoform 1.4.
 
 Some of the more useful properties are shown below. These generally
@@ -106,10 +106,10 @@ using this style of configuration (or simply looking at the basic
 ::
 
     class OrderForm(Form):
-        
+
         fields = field.Fields(IPizzaOrder)
         fields['notes'].widgetFactory = WysiwygFieldWidget
-        
+
         ...
 
 

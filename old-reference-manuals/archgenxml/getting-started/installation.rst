@@ -20,7 +20,7 @@ global site-packages directory, using buildout or virtualenv is recommended.
    ``~/.agx_zope_path`` file. This case is not supported anymore. You can
    delete this file if you have it.
 
-On Windows, I assume that you installed Python 2.4.4 using the 
+On Windows, I assume that you installed Python 2.4.4 using the
 `msi installer <http://www.python.org/download/releases/2.4.4/>`_ installer,
 and that you installed it in the default location. If you have not already
 done so, configure the ``Path`` environment variable to include your python
@@ -72,7 +72,7 @@ snippet:
    [buildout]
    parts =
        archgenxml
-   
+
    [archgenxml]
    recipe = zc.recipe.egg:scripts
    eggs = archgenxml
@@ -109,7 +109,7 @@ Using ``easy_install`` in a virtualenv
 If you don't want to use buildout, you can use ``virtualenv`` to create an
 isolated environment. You have to install the ``setuptools`` egg in order to
 have the ``easy_install`` command available. On Ubuntu you can do it with
-``apt-get install python-setuptools``. On Windows, go to the 
+``apt-get install python-setuptools``. On Windows, go to the
 `setuptools pypi page <https://pypi.python.org/pypi/setuptools>`_, download the
 ``exe`` which matches the Python version you are using, and execute it to
 install it.

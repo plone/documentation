@@ -15,18 +15,18 @@ root of the buildout next to the main *buildout.cfg* file:
     [buildout]
     extends =
         buildout.cfg
-    
+
     parts +=
         debug-instance
         zeoserver
         varnish-build
         varnish-instance
-    
+
     [zeoserver]
     recipe = plone.recipe.zope2zeoserver
     zope2-location = ${instance:zope2-location}
     zeo-address = ${instance:zeo-address}
-    
+
     [instance]
     recipe = plone.recipe.zope2instance
     zope2-location = ${zope2:location}
@@ -37,18 +37,18 @@ root of the buildout next to the main *buildout.cfg* file:
     debug-mode = off
     verbose-security = off
     eggs += Products.CacheSetup
-    
+
     [debug-instance]
     recipe = collective.recipe.zope2cluster
     instance-clone = instance
     http-address = 8081
     debug-mode = on
     verbose-security = on
-    
+
     [varnish-build]
     recipe = zc.recipe.cmmi
     url = http://downloads.sourceforge.net/varnish/varnish-2.0.2.tar.gz
-    
+
     [varnish-instance]
     recipe = plone.recipe.varnish
     daemon = ${buildout:parts-directory}/varnish-build/sbin/varnishd
@@ -109,7 +109,7 @@ more recipes, or take a look at the
 `source code for some of Plone's own recipes`_ to understand how
 recipes are created.
 
- 
+
 
 .. _plone.recipe.zope2zeoserver: http://cheeseshop.python.org/pypi/plone.recipe.zope2zeoserver
 .. _plone.recipe.zope2instance: http://cheeseshop.python.org/pypi/plone.recipe.zope2instance

@@ -178,7 +178,7 @@ You don't have to use logo\_tag if you don't want to:
        tal:attributes="href view/navigation_root_url"
        i18n:domain="plone">
         <img src="[My logo ID]" alt="[My Logo]"
-             width="[My Width]" height="[My Height]" 
+             width="[My Width]" height="[My Height]"
              tal:attributes="title view/portal_title" />
     </a>
 

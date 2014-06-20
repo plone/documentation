@@ -4,7 +4,7 @@ Indexes and metadata
 
 .. admonition:: Description
 
-        How to program your custom fields and data queriable 
+        How to program your custom fields and data queriable
         through portal_catalog.
 
 .. contents :: :local:
@@ -107,7 +107,7 @@ To perform queries on custom data, you need to add the corresponding index to po
 E.g. If your :doc:`Archetypes </develop/plone/content/types>` content type has a field::
 
 		schema = [
-		   
+		
 		   DateField("revisitDate",
 		        widget = atapi.DateWidget(
 		            label="Revisit date"),
@@ -117,12 +117,12 @@ E.g. If your :doc:`Archetypes </develop/plone/content/types>` content type has a
 		]
 
         class MyContent(...):
-                
+
                 # This is automatically run-time generated function accessor method,
                 # but could be any hand-written method as well
                 # def getMyCustomValue(self):
                 #        pass
-                        
+
 You can add a new index which will *index* the value of this field, so you can
 make queries based on it later.
 
@@ -130,9 +130,9 @@ See more information about :doc:`accessor methods </develop/plone/content/archet
 
 .. note ::
 
-	If you want to create an index for content type you do not 
+	If you want to create an index for content type you do not
 	control yourself or if you want to do some custom logic in your indexer,
-	please see *Custom index method* below. 
+	please see *Custom index method* below.
 
 Creating an index through the web
 ---------------------------------
@@ -146,18 +146,18 @@ to your Plone database locally.
 
 * Click Indexes tab
 
-* On top right corner, you have a drop down menu to add new indexes. Choose the index type you need to add. 
+* On top right corner, you have a drop down menu to add new indexes. Choose the index type you need to add.
 
-	* Type: FieldIndex 
+	* Type: FieldIndex
 	
 	* Id: getMyCustomValue
 	
 	* Indexed attributes: getMyCustomValue
-                                                        
+
 You can use Archetypes accessors methods directly as an indexed attribute.
 In example we use ``getMyCustomValue`` for AT field ``customValue``.
-         
-The type of index you need depends on what kind queries you need to do on the data. E.g. 
+
+The type of index you need depends on what kind queries you need to do on the data. E.g.
 direct value matching, ranged date queries, free text search, etc. need different kind of indexes.
 
 * After this you can query portal_catalog::
@@ -178,15 +178,15 @@ You can create an index
 
 * Using catalog.xml where XML is written by hand
 
-* Create the index through the web and export catalog data from a development site 
-  using *portal_setup* tool *Export* functionality. The index is created 
+* Create the index through the web and export catalog data from a development site
+  using *portal_setup* tool *Export* functionality. The index is created
   through-the-web as above, XML is generated for you and you can fine tune the resulting XML
   before dropping it in to your add-on product.
-  
+
 * Create indexes in Python code of add-on custom import step.
 
-* As a prerequisitement, your add-on product must have 
-  :doc:`GenericSetup profile support </develop/addons/components/genericsetup>`.   
+* As a prerequisitement, your add-on product must have
+  :doc:`GenericSetup profile support </develop/addons/components/genericsetup>`.
 
 This way is repeatable: index gets created every time an add-on product is installed.
 It is more cumbersome, however.
@@ -297,7 +297,7 @@ To create metadata colums in your ``catalog.xml`` add::
 When indexing happens and how to reindex manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Content item reindexing is run when 
+Content item reindexing is run when
 
 Plone calls reindexObject() if
 
@@ -306,7 +306,7 @@ Plone calls reindexObject() if
 * portal_catalog rebuild is run (from *Advanced* tab)
 
 * If you add a new
-  index you need to run :doc:`Rebuild catalog </develop/plone/searching_and_indexing/catalog>` 
+  index you need to run :doc:`Rebuild catalog </develop/plone/searching_and_indexing/catalog>`
   to get the existing values from content objects to new index.
 
 * You might also want to call :doc:`reindexObject()
@@ -375,10 +375,10 @@ Some interesting indexes
 
 * path: Where the object is (getPhysicalPath accessor method).
 
-* object_provides: What interfaces and marker interfaces object has. KeywordIndex of 
-  interface full names. 
-  
-* is_default_page: is_default_page is method in CMFPlone/CatalogTool.py handled by plone.indexer, so there is nothing 
+* object_provides: What interfaces and marker interfaces object has. KeywordIndex of
+  interface full names.
+
+* is_default_page: is_default_page is method in CMFPlone/CatalogTool.py handled by plone.indexer, so there is nothing
   like object.is_default_page and this method calls ptool.isDefaultPage(obj)
 
 Some interesting columns
@@ -394,29 +394,29 @@ Custom sorting by title
 
 sortable_title is type of FieldIndex (raw value) and normal ``Title`` index is type of searchable text.
 
-``sortable_title`` is generated from ``Title`` in ``Products/CMFPlone/CatalogTool.py``. 
+``sortable_title`` is generated from ``Title`` in ``Products/CMFPlone/CatalogTool.py``.
 
 You can override ``sortable_title`` by providing an indexer adapter with a specific interface of your content type.
 
 Example indexes.py::
 
         from plone.indexer import indexer
-        
+
         from xxx.researcher.interfaces import IResearcher
 
         @indexer(IResearcher)
         def sortable_title(obj):
-            """     
+            """
             Provide custom sorting title.
-            
-            This is used by various folder functions of Plone. 
+
+            This is used by various folder functions of Plone.
             This can differ from actual Title.
             """
-                
-            # Remember to handle None value if the object has not been edited yet 
+
+            # Remember to handle None value if the object has not been edited yet
             first_name = obj.getFirst_name() or ""
             last_name = obj.getLast_name() or ""
-            
+
             return last_name + " " + first_name
 
 Related ``configure.zcml``
@@ -544,7 +544,7 @@ Your content types can override ``SearchableText`` index with custom method to p
 with the text they want to go into full-text searching.
 
 Below is an example of having ``SearchableText`` on a custom Archetypes content class.
-This class has some methods which are not part of AT schema and thus must be manually 
+This class has some methods which are not part of AT schema and thus must be manually
 added to ``SearchableText``
 
 ::
@@ -552,28 +552,28 @@ added to ``SearchableText``
     def SearchableText(self):
         """
         Override searchable text logic based on the requirements.
-        
+
         This method constructs a text blob which contains all full-text
-        searchable text for this content item. 
-        
-        This method is called by portal_catalog to populate its SearchableText index.        
+        searchable text for this content item.
+
+        This method is called by portal_catalog to populate its SearchableText index.
         """
-        
+
         # Test this by enable pdb here and run catalog rebuild in ZMI
         # xxx
-        
+
         # Speed up string concatenation ops by using a buffer
         entries = []
-        
+
         # plain text fields we index from ourself,
         # a list of accessor methods of the class
         plain_text_fields = ("Title", "Description")
-        
+
         # HTML fields we index from ourself
         # a list of accessor methods of the class
         html_fields = ("getSummary", "getBiography")
-        
-        
+
+
         def read(accessor):
             """
             Call a class accessor method to give a value for certain Archetypes field.
@@ -585,27 +585,27 @@ added to ``SearchableText``
 
             if value is None:
                 value = ""
-                                        
+
             return value
-            
-        
-        # Concatenate plain text fields as is 
+
+
+        # Concatenate plain text fields as is
         for f in plain_text_fields:
             accessor = getattr(self, f)
-            value = read(accessor)            
+            value = read(accessor)
             entries.append(value)
-        
+
         transforms = getToolByName(self, 'portal_transforms')
 
         # Run HTML valued fields through text/plain conversion
         for f in html_fields:
-            accessor = getattr(self, f)            
-            value = read(accessor)     
-            
-            if value != "":                 
+            accessor = getattr(self, f)
+            value = read(accessor)
+
+            if value != "":
                 stream = transforms.convertTo('text/plain', value, mimetype='text/html')
                 value = stream.getData()
-            
+
             entries.append(value)
 
         # Plone accessor methods assume utf-8
@@ -613,12 +613,12 @@ added to ``SearchableText``
             if type(text) == unicode:
                 return text.encode("utf-8")
             return text
-        
+
         entries = [ convertToUTF8(entry) for entry in entries ]
-            
+
         # Concatenate all strings to one text blob
         return " ".join(entries)
-        
+
 
 Other
 -----

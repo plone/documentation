@@ -11,7 +11,7 @@ pasting it somewhere, it could simply be deleted:
 
 .. figure:: /_static/operationdelete.png
    :align: center
-   :alt: 
+   :alt:
 
 In the example shown above, the *Eastern Tiger Swallowtail* folder is
 will be deleted after clicking on the *Delete* button.

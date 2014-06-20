@@ -1,4 +1,4 @@
-Introduction 
+Introduction
 =============
 
 **What is z3c.form all about?**
@@ -33,7 +33,7 @@ Over the years, several approaches have evolved to deal with forms. A few of the
 -  Using *`z3c.form`_*. This is a newer library, inspired by formlib,
    but more flexible and modern.
 
-This manual will show you how to use *z3c.form* in a Plone context. 
+This manual will show you how to use *z3c.form* in a Plone context.
 It will use tools and patterns that are consistent with those used for Dexterity development, as shown in the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`, but the information contained herein is not Dexterity specific. Note that Dexterity’s standard add and edit forms are all based on *z3c.form*.
 
 

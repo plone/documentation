@@ -33,25 +33,25 @@ The target audience of the documentation includes
    :maxdepth: 2
 
    adapt-and-extend/index
-   
+
 .. toctree::
    :maxdepth: 2
 
    manage/index
-   
+
 .. toctree::
    :maxdepth: 2
 
    develop/index
-   
+
 .. toctree::
    :maxdepth: 2
 
    appendices/index
-   
+
 .. toctree::
    :maxdepth: 2
-   
+
    about/index
 
 .. toctree::

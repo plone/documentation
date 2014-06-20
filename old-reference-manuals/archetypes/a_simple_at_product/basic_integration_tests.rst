@@ -1,10 +1,10 @@
 ==========================
-Basic integration tests 
+Basic integration tests
 ==========================
 
 .. admonition:: Description
 
-		No product is complete without tests. 
+		No product is complete without tests.
 
 To build high-quality software, you *must* provide automatic tests -
 often known as “unit” tests (though tests for Archetypes products tend
@@ -43,19 +43,19 @@ up:
     @onsetup
     def setup_product():
         """Set up the package and its dependencies.
-        
+
         The @onsetup decorator causes the execution of this body to be deferred
         until the setup of the Plone site testing layer. We could have created our
         own layer, but this is the easiest way for Plone integration tests.
         """
-        
+
         fiveconfigure.debug_mode = True
         import example.archetype
         zcml.load_config('configure.zcml', example.archetype)
         fiveconfigure.debug_mode = False
-            
+
         ztc.installPackage('example.archetype')
-        
+
 
     setup_product()
     ptc.setupPloneSite(products=['example.archetype'])

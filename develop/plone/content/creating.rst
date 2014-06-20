@@ -35,36 +35,36 @@ Permission-aware way (Archetypes and Dexterity)
 create content item.
 
 Example::
-        
+
     def createResearcherById(folder, id):
         """ Create one researcher in a folder based on its X id.
-        
+
         @param id: X id of the researcher
-    
+
         @returns: Newly created researcher
         """
-        
+
         # Call X REST service to get JSON blob for this researcher
         # Note: queryById parses JSON back to Python to do some sanity checks for it
         index = XPeopleIndex()
         oraData = index.queryById(id)
-            
+
         # Need to have temporary id
         id = str(random.randint(0, 99999999))
-        
+
         folder.invokeFactory("XResearcher", id)
         content = folder[id]
-        
+
         # XResearcher stores its internal data as JSON
-        json_data = json.dumps(oraData)    
+        json_data = json.dumps(oraData)
         content.setXData(json_data)
-        
+
         # Will finish Archetypes content item creation process,
         # rename-after-creation and such
         content.processForm()
-        
+
         return content
-    
+
 
 Example (from unit tests)::
 
@@ -97,11 +97,11 @@ logged in users when creating the content item, do as follows::
 	def construct_without_permission_check(folder, type_name, id, *args, **kwargs):
 	    """ Construct a new content item bypassing creation and content add permissions checks.
 
-	    @param folder: Folderish content item where to place the new content item 
-	    @param type_name: Content type id in portal_types 
-	    @param id: Traversing id for the new content 
-	    @param args: Optional arguments for the construction (will be passed to the creation method if the type has one) 
-	    @param kwargs: Optional arguments for the construction (will be passed to the creation method if the type has one) 
+	    @param folder: Folderish content item where to place the new content item
+	    @param type_name: Content type id in portal_types
+	    @param id: Traversing id for the new content
+	    @param args: Optional arguments for the construction (will be passed to the creation method if the type has one)
+	    @param kwargs: Optional arguments for the construction (will be passed to the creation method if the type has one)
 	    @return: Reference to newly created content item
 	    """
 
@@ -145,9 +145,9 @@ object ids manually::
 
     def createResearcherById(folder, id):
         """ Create one researcher in a folder based on its ORA id.
-        
+
         @param id: X id of the researcher
-    
+
         @returns: Newly created researcher
         """
 
@@ -161,7 +161,7 @@ object ids manually::
         folder.invokeFactory("XResearcher", id)
         content = folder[id]
 
-        # XXX: set up content item data            
+        # XXX: set up content item data
 
         # Will finish Archetypes content item creation process,
         # rename-after-creation and such
@@ -377,8 +377,8 @@ errors in the complex content type setup chain and security limitations.
 The consequence is that you don't see your content type in the :guilabel:`Add`
 drop-down menu.  Here are some tips for debugging.
 
-* Is your product broken due to Python import time errors? Check 
-  :term:`ZMI`: :guilabel:`Control panel` -> :guilabel:`Products`. 
+* Is your product broken due to Python import time errors? Check
+  :term:`ZMI`: :guilabel:`Control panel` -> :guilabel:`Products`.
   Turn on Zope debugging mode to trace import errors.
 
 * Have you rerun the quick installer (``GenericSetup``) after
@@ -387,7 +387,7 @@ drop-down menu.  Here are some tips for debugging.
 * Do you have a correct :guilabel:`Add` permission for the product? Check
   ``__init__.py`` ``ContentInit()`` call.
 
-* Does it show up in the portal factory? 
+* Does it show up in the portal factory?
   Check :term:`ZMI`: :guilabel:`portal_factory` and ``factorytool.xml``.
 
 * Is it corretly registered as a portal type and implictly addable? Check
@@ -398,7 +398,7 @@ drop-down menu.  Here are some tips for debugging.
   :guilabel:`portal_types`.
 
 * Does it have a proper factory method? Check :term:`ZMI`:
-  :guilabel:`portal_types`. 
+  :guilabel:`portal_types`.
   Check Zope logs for ``_queryFactory`` and import errors.
 
 * Does it register itself with Archetypes? Check :term:`ZMI`:
@@ -441,7 +441,7 @@ Example::
                 self.invokeFactory("BigBlock", id, title="Big block " + str(i+1))
                 item = self[id]
 
-                # Clear creation flag 
+                # Clear creation flag
                 item.markCreationFlag()
 
 

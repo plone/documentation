@@ -22,34 +22,34 @@ environment. Here is how it looks:
         productdistros
         instance
         zopepy
-    
+
     # Change the number here, and in find-links below, to change the version of
     # Plone being used
     extends = http://dist.plone.org/release/3.3.5/versions.cfg
     versions = versions
-    
+
     # Add additional egg download sources here. dist.plone.org contains archives
     # of Plone packages.
     find-links =
         http://dist.plone.org/release/3.3.5
         http://dist.plone.org/thirdparty
-    
+
     # Add additional eggs here
     eggs =
-        
+
     # Reference any eggs you are developing here, one per line
     # e.g.: develop = src/my.package
     develop =
-    
+
     [zope2]
     recipe = plone.recipe.zope2install
     url = ${versions:zope2-url}
-    
+
     # Use this section to download additional old-style products.
     # List any number of URLs for product tarballs under URLs (separate
     # with whitespace, or break over several lines, with subsequent lines
     # indented). If any archives contain several products inside a top-level
-    # directory, list the archive file name (i.e. the last part of the URL, 
+    # directory, list the archive file name (i.e. the last part of the URL,
     # normally with a .tar.gz suffix or similar) under 'nested-packages'.
     # If any archives extract to a product directory with a version suffix, list
     # the archive name under 'version-suffix-packages'.
@@ -57,8 +57,8 @@ environment. Here is how it looks:
     recipe = plone.recipe.distros
     urls =
     nested-packages =
-    version-suffix-packages = 
-    
+    version-suffix-packages =
+
     [instance]
     recipe = plone.recipe.zope2instance
     zope2-location = ${zope2:location}
@@ -67,22 +67,22 @@ environment. Here is how it looks:
     # comment the following two options in production sites
     debug-mode = on
     verbose-security = on
-    
+
     # If you want Zope to know about any additional eggs, list them here.
     # This should include any development eggs you listed in develop-eggs above,
     # e.g. eggs = Plone my.package
     eggs =
         Plone
         ${buildout:eggs}
-    
+
     # If you want to register ZCML slugs for any packages, list them here.
     # e.g. zcml = my.package my.other.package
-    zcml = 
-    
+    zcml =
+
     products =
         ${buildout:directory}/products
         ${productdistros:location}
-    
+
     [zopepy]
     recipe = zc.recipe.egg
     eggs = ${instance:eggs}
@@ -112,13 +112,13 @@ Our global settings are as follows:
         productdistros
         instance
         zopepy
-    
+
     find-links =
         http://dist.plone.org/release/3.3.5
         http://dist.plone.org/thirdparty
-    
+
     eggs =
-        
+
     develop =
 
 This specifies that the parts *zope2*, *productdistros*,
@@ -137,7 +137,7 @@ example, if you want sqlalchemy 0.3, but not 0.4, you could list;
 
 .. code-block:: cfg
 
-    eggs = 
+    eggs =
         sqlalchemy>=0.3,<0.4dev
 
 Please note that you will need the Python Imaging Library (PIL) for
@@ -164,8 +164,8 @@ where the egg is extracted in source format. For example:
 
     eggs =
         my.package
-    
-    develop = 
+
+    develop =
         src/my.package
 
 This presumes that there is an egg called *my.package* in the
@@ -247,14 +247,14 @@ Consider the following distributions:
 
 ::
 
-    # A typical distribution 
+    # A typical distribution
     ExampleProduct-1.0.tgz
      |
      |- ExampleProduct
          |
          |- __init__.py
          |- (product code)
-    
+
     # A version suffix distribution
     AnotherExampleProduct-2.0.tgz
      |
@@ -262,7 +262,7 @@ Consider the following distributions:
          |
          |- __init__.py
          |- (product code)
-    
+
     # A nested package distribution
     ExampleProductBundle-1.0.tgz
      |
@@ -271,7 +271,7 @@ Consider the following distributions:
          |- ProductOne
          |   |- __init__.py
          |   |- (product code)
-         | 
+         |
          |- ProductTwo
              |- __init__.py
              |- (product code)
@@ -312,13 +312,13 @@ Here is how it looks:
     # comment the following two options in production sites
     debug-mode = on
     verbose-security = on
-    
+
     eggs =
         Plone
         ${buildout:eggs}
-    
-    zcml = 
-    
+
+    zcml =
+
     products =
         ${buildout:directory}/products
         ${productdistros:location}

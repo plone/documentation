@@ -37,16 +37,16 @@ providing *IMyType* would look like this:
     from Products.CMFCore.interfaces import IFolderish
 
     class IMyType(form.Schema):
-        
+
         ...
 
     class MyAddForm(form.SchemaEditForm):
         grok.name('edit')
         grok.require('cmf.ModifyPortalContent')
         grok.context(IMyType)
-        
+
         schema = IMyType
-        
+
         label = _(u"Edit my type")
         description = _(u"Make your changes below.")
 
@@ -66,16 +66,16 @@ A non-schema example would look like:
     from Products.CMFCore.interfaces import IFolderish
 
     class IMyType(model.Schema):
-        
+
         ...
 
     class MyAddForm(form.EditForm):
         grok.name('edit')
         grok.require('cmf.ModifyPortalContent')
         grok.context(IMyType)
-        
+
         fields = field.Fields(IMyType)
-        
+
         label = _(u"Edit my type")
         description = _(u"Make your changes below.")
 
@@ -96,31 +96,31 @@ As a slightly ore interesting example, here is one adapted from
     from plone.registry.interfaces import IRegistry
 
     class IMySettings(model.Schema):
-        
+
         ...
 
     class MyAddForm(form.EditForm):
         grok.name('edit')
         grok.require('zope2.View')
         grok.context(IMyType)
-        
+
         fields = field.Fields(IMyType)
-        
+
         label = _(u"Edit my type")
         description = _(u"Make your changes below.")
-        
+
     class EditSettings(form.SchemaEditForm):
         grok.name('edit-my-settings')
         grok.require('cmf.ManagePortal')
         grok.context(ISiteRoot)
-        
+
         schema = IMySettings
-        
+
         label = _(u"Edit settings")
 
         def getContent(self):
             return getUtility(IRegistry).forInterface(self.schema)
-        
+
 
 The idea here is that *IMySettings*, which is set as the schema for this
 schema edit form, is installed in the registry as a set of records. The

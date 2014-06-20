@@ -24,22 +24,22 @@ run, unless it is overridden by a more specific option in the
 
 The most common options are:
 
-executable 
+executable
     Specify a python interpreter other than the system default. This is
     useful if you have Python 2.5 installed, say, but you want your
     buildouts to use another installation of Python 2.4.
-eggs-directory 
+eggs-directory
     Specify a directory where eggs will be downloaded. This allows
     multiple buildouts to share the same eggs, saving disk space and
     download time. Note that only those eggs explicitly required by a
     particular buildout will be activated. The eggs directory may
     contain many more eggs (or many different versions of the same
     package) than what is used at any one time.
-download-cache 
+download-cache
     Specify a shared directory for downloaded archives. Again, this can
     save disk space and download time. NOTE: before zc.buildout 1.0,
     this was called download-directory
-extends-cache 
+extends-cache
     Specify a shared directory for extended buildout configurations
     that are downloaded from a URL. As of Plone 3.2 this is how Plone
     pins the `versions`_ of its eggs. This option was added in

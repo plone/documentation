@@ -1,4 +1,4 @@
-Interfaces 
+Interfaces
 =============
 
 **Describing functionality with interfaces**
@@ -85,9 +85,9 @@ are described by *zope.schema* fields.
     class IMessage(Interface):
         """An email-like message
         """
-        
+
         subject = schema.TextLine(title=u"Subject")
-        recipients = schema.Tuple(title=u"Recipients", 
+        recipients = schema.Tuple(title=u"Recipients",
                                   description=u"A list of email addresses",
                                   value_type=schema.TextLine())
         body = schema.Text(title=u"Body", required=False)

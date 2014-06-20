@@ -33,9 +33,9 @@ This is the normal experience for a person surfing the web. You type the
 web address of a web site into your browser and you look at web pages,
 watch videos, view images, but you don't have to log in. This is why
 this mode is called anonymous: anyone can do it just by surfing
-normally. 
+normally.
 
-**Pro tip**: you can use two different browsers (like Firefox and Chrome), and *not*  log in with one of them. That way you can easily compare how visitors will see your site, and you can spot content that is not yet published. 
+**Pro tip**: you can use two different browsers (like Firefox and Chrome), and *not*  log in with one of them. That way you can easily compare how visitors will see your site, and you can spot content that is not yet published.
 
 Note the presence of the *log in* link the screen image below
 (top right). If there is a *log in* link showing, you haven't logged in
@@ -44,7 +44,7 @@ following screen capture of a new Plone web site:
 
 .. figure:: /_static/plonemain3_0anon.png
    :align: center
-   :alt: 
+   :alt:
 
 Authenticated (Logged-in) Web Activity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +67,7 @@ has logged into a new Plone web site:
 
 .. figure:: /_static/plonemain3_0loggedin.png
    :align: center
-   :alt: 
+   :alt:
 
 User Roles
 ----------
@@ -103,7 +103,7 @@ for *contents*, *view*, *edit*, rules**, and *sharing*:
 
 .. figure:: /_static/editstriptabs.png
    :align: center
-   :alt: 
+   :alt:
 
 You'll be able to explore to find the differences between these tabs,
 but here are descriptions to help you start:
@@ -121,7 +121,7 @@ You also see menus in the lower part of the green header strip,
 
 .. figure:: /_static/editstripmenus.png
    :align: center
-   :alt: 
+   :alt:
 
 Explore these also. Here are basic descriptions of these menus:
 

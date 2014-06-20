@@ -1,4 +1,4 @@
-The Zope Component Architecture 
+The Zope Component Architecture
 =================================
 
 **A high level overview of the basic concepts of the Zope Component

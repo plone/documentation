@@ -4,14 +4,14 @@ Properties plugins
 
 .. contents:: :local:
 
-Properties are stored in property sheets: 
+Properties are stored in property sheets:
 mapping-like objects, such as a standard python dictionary,
 which contain the properties for a principal.
 The property sheets are ordered:
 if a property is present in multiple property sheets only the property in
 the sheet with the highest priority is visible.
 
-Property sheets are created by plugins implementing the 
+Property sheets are created by plugins implementing the
 ``IPropertiesPlugin`` interface.
 This interface contains only a single method::
 

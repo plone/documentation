@@ -1,4 +1,4 @@
-Views 
+Views
 ========
 
 **Browser views with and without templates**
@@ -49,15 +49,15 @@ This class could go in any Python module. For generic views,
     class AsMessage(grok.View):
         """Render a document as a message
         """
-        
+
         grok.context(IDocument)
         grok.require('zope2.View')
         grok.name('as-message')
-        
+
         def update(self):
             context = aq_inner(self.context)
             self.message = IMessage(context)
-        
+
         def truncatedBody(self, maxLength=1000):
             return self.message.body[:maxLength
 
@@ -88,7 +88,7 @@ extension).
         <h1 class="documentFirstHeading">Message view</h1>
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
-        
+
         <p class="documentDescription">This is the message view of the content object</p>
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
@@ -99,7 +99,7 @@ extension).
         <div>
             <label>Body:</label> <span tal:content="view/truncatedBody" />
         </div>
-            
+
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
         </tal:main-macro>
@@ -184,36 +184,36 @@ that generated file, rather than display a plain text response.
     class MessageRecipients(grok.View):
         """Return a CSV file with message recipients
         """
-        
+
         grok.context(IDocument)
         grok.require('zope2.View')
         grok.name('message-recipients')
-        
+
         def update(self):
             context = aq_inner(self.context)
             self.message = IMessage(context)
-        
+
         def render(self):
         out = StringIO()
         context = aq_inner(self.context)
         writer = csv.writer(out)
-        
+
         # Write header
         writer.writerow(('Email address', 'Subject'))
-        
+
         subject = self.message.subject
-        
+
         # Write body
         for recipient in self.message.recipients:
             writer.writerow((recipient, subject,))
-        
+
         # Prepare response
-        
+
         filename = "Recipients for %s.csv" % context.title
-        
+
         self.request.response.setHeader('Content-Type', 'text/csv')
         self.request.response.setHeader('Content-Disposition', 'attachment; filename="%s"' % filename)
-        
+
         return out.getvalue()
 
 Notes:
@@ -253,16 +253,16 @@ stored in an annotation (as described earlier in this manual).
     class Subscribe(grok.View):
         """Allow users to subscribe to an item
         """
-        
+
         grok.context(IAnnotatable)
         grok.require('zope2.View')
-        
+
         def update(self):
             context = aq_inner(self.context)
-            
+
             # A dictionary of items submitted in a POST request
             form = self.request.form
-        
+
             self.errors = {}
 
             if 'form.button.Subscribe' in self.request:
@@ -273,7 +273,7 @@ stored in an annotation (as described earlier in this manual).
                 else:
                     annotations = IAnnotations(context)
                     addresses = annotations.setdefault('example.grok.subscriptions',  OOSet())
-                
+
                     if email in addresses:
                         self.errors['email'] = "Email address already subscribed"
                     else:
@@ -304,11 +304,11 @@ Here is the form template. Assuming the view was put in a module
         <h1 class="documentFirstHeading">Subscribe</h1>
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
-        
+
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <form tal:attributes="action request/URL" method="post">
-        
+
             <div class="field">
                 <div class="error"
                     tal:condition="view/errors/email|nothing"
@@ -316,9 +316,9 @@ Here is the form template. Assuming the view was put in a module
                 <label for="email">Email address:</label>
                 <input type="text" id="email" name="email" />
             </div>
-        
+
         </form>
-            
+
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
         </tal:main-macro>
@@ -403,11 +403,11 @@ accessed independently. Here is an example:
         """Utility view to quickly access message aspects of
         an object.
         """
-        
+
         grok.context(IContentish)
         grok.require('zope2.View')
         grok.name('message-info')
-        
+
         def render(self):
             """No-op to keep grok.View happy
             """
@@ -419,7 +419,7 @@ accessed independently. Here is an example:
             if message is None:
                 return None
             return message.recipients
-            
+
         ...
 
         @view.memoize
@@ -477,12 +477,12 @@ shown) could be used to override a view for a specific layer:
     class AsMessage(grok.View):
         """Render a document as a message
         """
-        
+
         grok.context(IDocument)
         grok.layer(IMessageOverrides)
         grok.require('zope2.View')
         grok.name('as-message')
-        
+
         ...
 
 Notes:

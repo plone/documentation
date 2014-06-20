@@ -1,5 +1,5 @@
 =========================================
- Renaming content 
+ Renaming content
 =========================================
 
 .. admonition:: Description
@@ -32,8 +32,8 @@ OFS interface has facilities to rename objects
 
 * Products.CMFPlone.PloneFolder overrides manage_renameObject() to have hooks
   to reindex the new object path
-  
-  
+
+
 .. warning::
 
         Security warning: "Copy or Move" permission is needed on the object by
@@ -43,49 +43,49 @@ OFS interface has facilities to rename objects
 
         New id must be a 8-bit string, not unicode.
         The system might accept values in invalid format.
-        
+
 Example how to rename object *lc* to have *-old* suffix::
 
         id = lc.getId()
         if not lc.cb
         parent = lc.aq_parent
         parent.manage_renameObject(id, id + "-old")
-        
-    
 
-        
+
+
+
 These checks performed before rename by the manage_renameObject()::
 
         if not lc.cb_userHasCopyOrMovePermission():
             print "Does not have needed permission"
             return
-        
+
         if not lc.cb_isMoveable():
             # This makes sanity checks whether the object is
-            # properly connected to the database 
+            # properly connected to the database
             print "Object problem"
             return
-        
+
 .. warning::
 
         Testing warning: Rename mechanism relies of Persistent attribute called _p_jar to be present
         on the content object. By default, this is not the case on unit tests. You need to call
         transaction.savepoint() to make _p_jar appear on persistent objects.
-        
+
         If you don't do this, you'll receive a "CopyError" when calling manage_renameObjects
         that the operation is not supported.
-        
-        
+
+
 Unit testing example::
-        
+
         import transaction
-        
-        
+
+
         self.portal.invokeFactory("Document", doc")
         doc = self.portal.doc
-        
+
         # Make sure all persistent objects have _p_jar attribute
         transaction.savepoint(optimistic=True)
-        
+
         # Call manage_renameCode()...
-                
+

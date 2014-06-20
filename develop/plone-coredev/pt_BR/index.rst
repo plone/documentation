@@ -26,7 +26,7 @@ Sumário
    plips
    issues
    updateme
-   
+
 Others
 ------
 
@@ -35,5 +35,5 @@ These are some documents using as reference for this documentation.
 .. toctree::
    :maxdepth: 1
 
-   mrdeveloper 
+   mrdeveloper
    plipreview

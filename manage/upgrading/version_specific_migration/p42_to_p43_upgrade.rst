@@ -80,7 +80,7 @@ Note that these may be combined::
 
 Don't forget to reinstall Dexterity from the Add-ons control panel.
 
-For more information see `Dexterity 2.0's release notes. <https://pypi.python.org/pypi/plone.app.dexterity/2.0>`_ 
+For more information see `Dexterity 2.0's release notes. <https://pypi.python.org/pypi/plone.app.dexterity/2.0>`_
 
 
 Changed imports and functions
@@ -98,7 +98,7 @@ Example::
      from zope.app.component.hooks import setSite
     except ImportError:
      # Plone >= 4.3
-     from zope.component.hooks import setSite  # NOQA 
+     from zope.component.hooks import setSite  # NOQA
 
 zope.app.publisher.interfaces.IResource
 ---------------------------------------

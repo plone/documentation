@@ -6,7 +6,7 @@ Troubleshooting: solucionar problemas
 Incidencias Buildout
 --------------------
 
-Buildout puede ser muy frustrante para aquellos no familiarizados con el análisis a través del lenguaje robot autista. ¡No tema! Estos errores son casi siempre tienen una solución rápida y un con poco de comprensión le lleva a un largo camino. 
+Buildout puede ser muy frustrante para aquellos no familiarizados con el análisis a través del lenguaje robot autista. ¡No tema! Estos errores son casi siempre tienen una solución rápida y un con poco de comprensión le lleva a un largo camino.
 
 Errores ejecutando bootstrap.py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -14,7 +14,7 @@ Ni siquiera se puede llegar a correr buildout y entonces ya tendrá un error. D�
 
     ...
      File "/usr/local/lib/python2.6/site-packages/distribute-0.6.13-py2.6.egg/pkg_resources.py", line 556, in resolve
-        raise VersionConflict(dist,req) # XXX put more info here  
+        raise VersionConflict(dist,req) # XXX put more info here
      pkg_resources.VersionConflict: (zc.buildout 1.5.1 (/usr/local/lib/python2.6/site-packages/zc.buildout-1.5.1-py2.6.egg), Requirement.parse('zc.buildout==1.5.2'))
 
 
@@ -34,7 +34,7 @@ Al volver a ejecutar el archivo bootstrap.py, este buscará para el paquete egg 
 
 De una de esas, digamos dos Ave Marías, con tres padres nuestros y ejecute de nuevo bootstrap.py. ¡Tada!
 
-Otra cosa de la nota es que está ejecutando bootstrap efectivamente asocia al ejecutable python y todas sus bibliotecas a su buildout. Si tiene varias instalaciones Python y quiere cambiar a cual Python está asociando a su buildout, sólo tiene que volver a ejecutar bootstrap.py con el nuevo python (y vuelva a ejecutar el buildout). Usted puede obtener el mismo error anterior nuevamente, ahora que sabes cómo solucionarlo, usted puede pasar ese tiempo bebiendo cerveza en vez de aplastar el teclado. 
+Otra cosa de la nota es que está ejecutando bootstrap efectivamente asocia al ejecutable python y todas sus bibliotecas a su buildout. Si tiene varias instalaciones Python y quiere cambiar a cual Python está asociando a su buildout, sólo tiene que volver a ejecutar bootstrap.py con el nuevo python (y vuelva a ejecutar el buildout). Usted puede obtener el mismo error anterior nuevamente, ahora que sabes cómo solucionarlo, usted puede pasar ese tiempo bebiendo cerveza en vez de aplastar el teclado.
 
 ¡Hurra!
 
@@ -43,11 +43,11 @@ Cuando Mr. Developer no es feliz
 ``mr.developer`` nunca es feliz, excepto cuando es. A pesar de que esto técnicamente no es un incidente buildout, pasa cuándo esta ejecutando buildout, entonces yo lo estoy poniéndolo en las incidencias buildout.
 
 Cuándo trabajando con la instancia de desarrollo, especialmente con toda el movimiento de ida y vuelta de cambios entre github y svn, usted puedes tener una copia vieja de un paquete en le directorio ``src``. El error luce así::
- 
+
     mr.developer: Can't update package 'Products.CMFPlone' because its URL doesn't match.
 
 
-Mientras usted no tenga cualquier revisión de cambios pendiente, usted solo necesita remover el paquete del directorio ``src/`` y se vuelve a revisar para usted cuando se actualiza. 
+Mientras usted no tenga cualquier revisión de cambios pendiente, usted solo necesita remover el paquete del directorio ``src/`` y se vuelve a revisar para usted cuando se actualiza.
 
 
 Usted también se puede conseguir con errores tan divertidos tales como::
@@ -69,7 +69,7 @@ La segunda opción es el permitir al host al cual ese apunta para ser añadido d
 
     allow-hosts += sphinx.pocoo.org
 
-Otra vez, esto es sólo necesario si el paquete no fue encontrado al final. 
+Otra vez, esto es sólo necesario si el paquete no fue encontrado al final.
 
 ¡Hurra!
 
@@ -126,7 +126,7 @@ nosotros somos incapaces de correr él por defecto.
 Incidencias con paquetes egg modificado
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 El comando :command:`bin/develop status` el mostrara que el paquete egg ``Products.CMFActionIcons`` ha sido
-modificado, pero no lo he tocado.  Y ejecutando este comando :command:`bin/develop up` esta previniendo 
+modificado, pero no lo he tocado.  Y ejecutando este comando :command:`bin/develop up` esta previniendo
 la actualización de todos los paquetes egg.
 
 Solución

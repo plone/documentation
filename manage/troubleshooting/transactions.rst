@@ -38,7 +38,7 @@ various problems appear on the Plone site:
 
 * database packing may fail.
 
-Instead, you'll see something like this - an evil ``POSKeyError`` exception 
+Instead, you'll see something like this - an evil ``POSKeyError`` exception
 (POS referring to Persistent Object Storage)::
 
     Traceback (most recent call last):
@@ -54,7 +54,7 @@ The proper solution to this problem is to:
 
 * Re-copy ``blobstorage`` folder;
 
-* restart Plone twice in foreground mode 
+* restart Plone twice in foreground mode
   (sometimes a freshly copied blobstorage folder does not get picked up -
   some kind of timestamp issue?).
   Restarting ZEO clients once seems to be enough.
@@ -67,9 +67,9 @@ To get the Plone site to a working state,
 all content with bad BLOB data must be deleted
 (which usually entails losing some site images and uploaded files).
 
-Below is Python code for a 
+Below is Python code for a
 `Grok view <http://grok.zope.org/>`_
-which you can drop in to your own 
+which you can drop in to your own
 Plone.
 It creates an admin view which you can call directly via an URL.
 This code will walk through all the content on your Plone site and try to
@@ -270,10 +270,10 @@ as mentioned by A. Jung::
 If every transaction appears as write transaction
 --------------------------------------------------
 
-If you are not careful, you may accidentally write code 
-which turns all transactions to write transactions. 
+If you are not careful, you may accidentally write code
+which turns all transactions to write transactions.
 This typically happens when you call some method without realizing that
-that method eventually modifies a persistent object, 
+that method eventually modifies a persistent object,
 causing a database write.
 
 Symptoms:
@@ -318,7 +318,7 @@ How to debug it
 Zope 2 doesn't have many well-documented ZODB debugging tools.
 Below is one snippet to examine the contents of the last transactions
 of an offline ``Data.fs`` file.
-It is an evolved version of 
+It is an evolved version of
 `this original script <http://www.mail-archive.com/zodb-dev@zope.org/msg04387.html>`_.
 
 * Do something on a badly behaving site.
@@ -335,7 +335,7 @@ environment using the ``zopepy`` script::
 
     bin/zopepy debug.py -n 30 Data.fs
 
-.. Warning:: 
+.. Warning::
     The following is obsolete with current Zope. FileIterator does not
     take a ``pos`` argument any more.
 

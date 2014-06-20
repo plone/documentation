@@ -49,13 +49,13 @@ Let's break this down:
 When the page template is generated, the following snippet could look like,
 for example:
 
-.. code-block:: html 
+.. code-block:: html
 
     <img src="http://localhost:8080/mfabrik/++resource++plonetheme.mfabrik/logo.png" alt="[ X ]">
 
 ... or:
 
-.. code-block:: html 
+.. code-block:: html
 
     <img src="http://mfabrik.com/++resource++plonetheme.mfabrik/logo.png" alt="[ X ]">
 
@@ -71,25 +71,25 @@ Relative image look-ups
 
 Hardcoded relative image path might seem to work:
 
-.. code-block:: html 
+.. code-block:: html
 
     <img src="++resource++plonetheme.mfabrik/logo.png" >
 
 ... but this causes a different image *base URL* to be used on every page.
 The image URLs, from the browser point of view, would be:
 
-.. code-block:: html 
+.. code-block:: html
 
     <img src="http://yoursite/++resource++plonetheme.mfabrik/logo.png" >
 
 ... and then in another folder:
 
-.. code-block:: html 
+.. code-block:: html
 
     <img src="http://yoursite/folder/++resource++plonetheme.mfabrik/logo.png" >
-              
+
 ... which **prevents the browser from caching the image**.
-              
+
 Registering static media folders in your add-on product
 =========================================================
 
@@ -115,10 +115,10 @@ directory.
 This will be picked up at the ``++resource++yourcompany.product/`` static
 media path.
 
-Layer is optional: the static media path is available only 
-when your add-on product is installed if the 
+Layer is optional: the static media path is available only
+when your add-on product is installed if the
 :doc:`layer </develop/plone/views/layers>` is specified.
-        
+
 Grok static media folder
 ------------------------
 
@@ -127,7 +127,7 @@ This applies for add-on products using :doc:`five.grok </develop/addons/componen
 Create folder ``yourcompany.product/yourcompany/product/static``
 
 This will be automatically picked up as ``++resource++yourcompany.product/``
-static media path 
+static media path
 when a Grok'ed add-on is launched.
 
 Rendering Image content items
@@ -139,13 +139,13 @@ You can refer to ``ATImage`` object's content data download by adding
 .. code-block:: html
 
     <img alt="" tal:attributes="src string:${context/getImage/absolute_url}/image" />
-        
+
 The magic is done in the ``__bobo_traverse__`` method of ``ATImage`` by
 providing traversable hooks to access image download:
 
 * https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py
 
-Rendering ``ImageField`` 
+Rendering ``ImageField``
 =========================
 
 Archetypes's ``ImageField`` maps its data to the content object at attribute
@@ -153,12 +153,12 @@ which is the field's name.
 If you have a field ``campaignVideoThumbnail`` you can generate an image tag
 as follows:
 
-.. code-block:: html 
+.. code-block:: html
 
     <img class="thumbnail" tal:attributes="src string:${campaign/absolute_url}/campaignVideoThumbnail" alt="Campaign video" />
 
 If you need more complex ``<img>`` output,
-create a helper function in your ``BrowserView`` and use Python code 
+create a helper function in your ``BrowserView`` and use Python code
 to perform the ``ImageField`` manipulation.
 
 See ``ImageField`` for more information:
@@ -172,7 +172,7 @@ See ``ImageField`` for more information:
 
     Using ``tag()`` is discouraged. Create your image tags manually.
 
-Some content provides a handy ``tag()`` method to generate 
+Some content provides a handy ``tag()`` method to generate
 ``<img src="" />`` tags
 with different image sizes.
 
@@ -201,7 +201,7 @@ Displaying a version of the image using the "preview" scale::
 
 This will generate:
 
-.. code-block:: html 
+.. code-block:: html
 
 	<img src="http://something/folder/image/image_preview" alt="foobar text" />
 
@@ -219,7 +219,7 @@ author's humble opinion :).
 
 Default scale names and sizes are defined in ``ImageField`` declaration for
 custom ``ImageField``\s.
-For ``ATImage``, those are in 
+For ``ATImage``, those are in
 `Products.ATContentTypes.content.image
 <http://svn.plone.org/svn/collective/Products.ATContentTypes/trunk/Products/ATContentTypes/content/image.py>`_.
 

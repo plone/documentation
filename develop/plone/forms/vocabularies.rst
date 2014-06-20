@@ -6,7 +6,7 @@ Vocabularies
 
         Vocabularies are lists of (value -> human readable title) pairs used
         by e.g. selection drop downs. zope.schema provides
-        tools to programmatically construct their vocabularies. 
+        tools to programmatically construct their vocabularies.
 
 .. contents :: :local:
 
@@ -64,7 +64,7 @@ Some info::
 
 .. note ::
 
-        If you need international texts please note that 
+        If you need international texts please note that
         only title is, and should be, translated. Value and token
         should always carry the same value.
 
@@ -102,7 +102,7 @@ Stock vocabularies
 
 Some vocabularies Plone provides out of the box
 
-* :doc:`Some common named vocabularies </external/plone.app.dexterity/docs/advanced/vocabularies>` 
+* :doc:`Some common named vocabularies </external/plone.app.dexterity/docs/advanced/vocabularies>`
 
 * `Thumbnail size vocabulary (TinyMCE) <https://github.com/plone/Products.TinyMCE/blob/master/Products/TinyMCE/vocabularies.py>`_
 
@@ -332,7 +332,7 @@ Complex example 2
 
         return SimpleVocabulary(terms)
 
-	 
+	
 For another example, see the :doc:`Dynamic sources </external/plone.app.dexterity/docs/advanced/vocabularies>`
 chapter in the Dexterity manual.
 
@@ -349,7 +349,7 @@ and then refer them by name via ``getUtility()`` or in zope.schema.Choice.
       component="zope.app.gary.paths.Favorites"
       name="garys-favorite-path-references"
       />
-      
+
 Then you can refer to vocabulary by its name::
 
 
@@ -358,4 +358,4 @@ Then you can refer to vocabulary by its name::
 
         area = schema.Choice(source="garys-favorite-path-references", title=_("Area"), required=False)
 
-For more information see `vocabularies API doc <http://apidoc.zope.org/++apidoc++/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/vocabulary/index.html>`_.  
+For more information see `vocabularies API doc <http://apidoc.zope.org/++apidoc++/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/vocabulary/index.html>`_.

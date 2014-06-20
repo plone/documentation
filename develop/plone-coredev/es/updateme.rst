@@ -22,5 +22,5 @@ El comando ``git cherry-pick`` hace commits en la rama más reciente a la rama a
   > git checkout 4.3
   > git cherry-pick b6ff4309
 
-Tal ves allá conflictos; entonces, resuélvalos y seguir las instrucciones 
+Tal ves allá conflictos; entonces, resuélvalos y seguir las instrucciones
 que la herramienta git le da a usted para completar el comando :command:`git cherry-pick`.

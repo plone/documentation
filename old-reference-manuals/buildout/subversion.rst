@@ -8,7 +8,7 @@ Installing products from Subversion
   Subversion version control repository. This how to tells how such
   product can be automatically installed in buildout installations.
 
-   
+
 A few buildout recipes provide direct version control checkout
 functionality:
 
@@ -36,9 +36,9 @@ section.
 ::
 
     [buildout]
-    
+
     parts =
-    
+
         plone
         zope2
         productdistros
@@ -52,11 +52,11 @@ section. In the example below we checkout TickingMachine product.
 
 ::
 
-    # Get TickingMachine directly from SVN since it's not eggified    
-    
+    # Get TickingMachine directly from SVN since it's not eggified
+
     [svnproducts]
     recipe = infrae.subversion
-    
+
     urls =
         http://tickingmachine.googlecode.com/svn/trunk TickingMachine
 
@@ -102,7 +102,7 @@ client to remember them permanently:
 
 ::
 
-     svn ls   https://svn.plone.org/svn/collective/collective.easytemplate/trunk 
+     svn ls   https://svn.plone.org/svn/collective/collective.easytemplate/trunk
     Error validating server certificate for 'https://svn.plone.org:443':
      - The certificate is not issued by a trusted authority. Use the
        fingerprint to validate the certificate manually!
@@ -111,10 +111,10 @@ client to remember them permanently:
      - Valid: from Mon, 14 Jan 2008 08:35:24 GMT until Wed, 13 Jan 2010 08:35:24 GMT
      - Issuer: Plone Foundation, Houston, Texas, US
      - Fingerprint: 39:6e:42:08:44:65:aa:7b:cb:55:85:9a:0c:0c:13:95:16:aa:38:48
-    
+
     (R)eject, accept (t)emporarily or accept (p)ermanently? p
 
-   
+
 .. _plone.recipe.bundlecheckout: https://pypi.python.org/pypi/plone.recipe.bundlecheckout
 .. _mr.developer: https://pypi.python.org/pypi/mr.developer
 .. _infrae.subversion: https://pypi.python.org/pypi/infrae.subversion

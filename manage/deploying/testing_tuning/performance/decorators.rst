@@ -19,7 +19,7 @@ Use them like this::
     @cache_this_function
     def my_slow_function():
         # This is run only once and all subsequent calls get value from the cache
-        return  
+        return
 
 .. warning::
 
@@ -30,7 +30,7 @@ Use them like this::
 The `plone.memoize <https://pypi.python.org/pypi/plone.memoize>`_ package
 offers helpful function decorators to cache return values.
 
-See also :doc:`using memcached backend for memoizers </manage/deploying/testing_tuning/performance/ramcache>`. 
+See also :doc:`using memcached backend for memoizers </manage/deploying/testing_tuning/performance/ramcache>`.
 
 Cache result for process lifecycle
 ==================================
@@ -54,7 +54,7 @@ Example::
 Timeout caches
 ==============
 
-The @ram.cache decorator takes a function argument and calls it to get a value. 
+The @ram.cache decorator takes a function argument and calls it to get a value.
 So long as that value is unchanged, the cached result of the decorated function is returned.
 This makes it easy to set a timeout cache::
 
@@ -63,11 +63,11 @@ This makes it easy to set a timeout cache::
 
     @ram.cache(lambda *args: time() // (60 * 60))
     def cached_query(self):
-        # very expensive operation, 
+        # very expensive operation,
         # will not be called more than once an hour
 
 time.time() returns the time in seconds as a floating point number. "//" is Python's integer division.
-So, the result of ``time() // (60 * 60)`` only changes once an hour. 
+So, the result of ``time() // (60 * 60)`` only changes once an hour.
 ``args`` passed are ignored.
 
 
@@ -109,7 +109,7 @@ package provides necessary decorators for ``BrowserView``-based classes.
 Caching on Archetypes accessors
 ---------------------------------
 
-If you have a custom 
+If you have a custom
 :doc:`Archetypes accessor method </develop/plone/content/archetypes/fields>`,
 you can avoid recalculating it during the request processing.
 
@@ -119,7 +119,7 @@ Example::
         """ Same as above, but does not run through JSON reader every time.
         """
 
-        # Manually store the result on HTTP request object annotations 
+        # Manually store the result on HTTP request object annotations
 
         # Use informative string + Archetypes unique identified as the key
         key = "parsed-ora-data-" + self.UID()
@@ -128,15 +128,15 @@ Example::
         data = cache.get(key, None)
         if data is not None:
             data = self.getParsedORAData()
-            cache[key] = data 
+            cache[key] = data
 
         return data
 
 Caching using global HTTP request
 ----------------------------------
 
-This example uses the 
-`five.globalrequest package <https://pypi.python.org/pypi/five.globalrequest>`_ 
+This example uses the
+`five.globalrequest package <https://pypi.python.org/pypi/five.globalrequest>`_
 for caching. Values are stored on the thread-local ``HTTPRequest`` object
 which lasts for the transaction lifecycle::
 

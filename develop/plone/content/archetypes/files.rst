@@ -23,7 +23,7 @@ Calling AT File field accessor will return a ``File`` object::
 
 Note that this may return ``None`` if the content item has been constructed
 but the form has not been properly saved.
-        
+
 If the size is ``0``, the file is not yet uploaded::
 
     (Pdb) attach.getSize()
@@ -33,18 +33,18 @@ Example how to check in a view whether AT context file size exists::
 
     @property
     def available(self):
-        
+
         # Make sure that we have content item of right kind
         if ICaseStudy.providedBy(self.context):
-        
+
             # Make sure the content item is not anymore in the creation stage
             if self.context.getAttachment() is not None:
-            
+
                 # Check the content of File field
                 if self.context.getAttachment().getSize() > 0:
                     return True
-                
-        return False 
+
+        return False
 
 Setting max file size to FileField and ImageField
 =====================================================

@@ -214,7 +214,7 @@ and there are no problems due to low level disk corruption or bit flip.
 Restart and cache warm-up
 ===========================
 
-Discussion why Plone is slow after restart 
+Discussion why Plone is slow after restart
 
 * https://mail.zope.org/pipermail/zodb-dev/2013-March/014935.html
 

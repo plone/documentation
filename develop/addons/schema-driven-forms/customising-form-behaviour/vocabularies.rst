@@ -103,7 +103,7 @@ Next, we create a registry.xml containing the following:
 ::
 
     <registry>
-        
+
         <record name="example.dexterityforms.pizzaTypes">
             <field type="plone.registry.field.Tuple">
                 <title>Pizza types</title>
@@ -172,15 +172,15 @@ Here is an example that returns our pizza types:
     @grok.provider(IContextSourceBinder)
     def availablePizzas(context):
         registry = queryUtility(IRegistry)
-        
+
         terms = []
-        
+
         if registry is not None:
             for pizza in registry.get('example.dexterityforms.pizzaTypes', ()):
                 # create a term - the arguments are the value, the token, and
                 # the title (optional)
                 terms.append(SimpleVocabulary.createTerm(pizza, pizza.encode('utf-8'), pizza))
-        
+
         return SimpleVocabulary(terms)
 
 Here, we have defined a function acting as the*IContextSourceBinder*, as
@@ -210,7 +210,7 @@ To use this context source binder, we use the *source* argument to the
 ::
 
     class IPizzaOrder(model.Schema):
-        
+
         ...
 
         orderItems = schema.Set(
@@ -237,18 +237,18 @@ initialised with the registry key
 
     class RegistrySource(object):
         grok.implements(IContextSourceBinder)
-        
+
         def __init__(self, key):
             self.key = key
-        
+
         def __call__(self, context):
             registry = queryUtility(IRegistry)
             terms = []
-        
+
             if registry is not None:
                 for value in registry.get(self.key, ()):
                     terms.append(SimpleVocabulary.createTerm(value, value.encode('utf-8'), value))
-        
+
             return SimpleVocabulary(terms)
 
 Notice how in our first implementation, the function *provided* the
@@ -311,7 +311,7 @@ creating a named utility providing *IVocabularyFactory*, like so:
 
     class PizzasVocabulary(object):
         grok.implements(IVocabularyFactory)
-        
+
         def __call__(self, context):
             registry = queryUtility(IRegistry)
             terms = []

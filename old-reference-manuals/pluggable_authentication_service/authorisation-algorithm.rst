@@ -10,7 +10,7 @@ These are the steps the PAS user folder follows in its ``validate`` method:
    This looks for any possible form of authentication information in a
    request: HTTP cookies, HTTP form parameters, HTTP authentication
    headers, originating IP address, etc.
-   A request can have multiple (or no) sets of credentials.  
+   A request can have multiple (or no) sets of credentials.
 
 #. for each set of credentials found:
 

@@ -33,10 +33,10 @@ We are now finished with the UML. Save it and let AGX do the work. What still is
     from Products.ATVocabularyManager.config import TOOL_NAME as ATVOCABULARYTOOL
     from Products.CMFCore.utils import getToolByName
     from Products.ATVocabularyManager.utils.vocabs import createSimpleVocabs
-    
+
     def setupVocabularies(context):
         """let's install the countries vocab"""
-    
+
         vocabs = {}
         vocabs['countries'] = (
             ('ice', u'Iceland'),

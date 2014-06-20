@@ -20,7 +20,7 @@ In these examples, the **python_dev** directory contains our entire development 
 There are 3 main steps in building our development environment; build Python 2.7, create a virtual_env, and install Plone. These correspond to 3 directories in our development environment:
 
 - **buildout.python** sits inside *python_dev*. It contains our build of Python 2.7
-- **env-27** sits inside *python_dev*. It is our virtual_env. 
+- **env-27** sits inside *python_dev*. It is our virtual_env.
 - **hello_world** is our Plone installation. It sits inside *env-27*.
 
-The *python_dev* directory can sit anywhere on your filesystem that makes sense. 
+The *python_dev* directory can sit anywhere on your filesystem that makes sense.

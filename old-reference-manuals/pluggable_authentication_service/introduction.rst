@@ -6,9 +6,9 @@ Introduction
 
 .. admonition:: Description
 
-    The Pluggable Authentication Service (PAS) is an alternative 
-    to the standard Zope User Folder 
-    or the popular Group User Folder (GRUF). 
+    The Pluggable Authentication Service (PAS) is an alternative
+    to the standard Zope User Folder
+    or the popular Group User Folder (GRUF).
     PAS has a highly modular design, which is
     very powerful, but also a lot harder to understand.
 

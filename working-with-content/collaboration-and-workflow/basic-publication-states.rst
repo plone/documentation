@@ -11,7 +11,7 @@ settings for controlling publication state:
 
 .. figure:: /_static/statemenu1.png
    :align: center
-   :alt: 
+   :alt:
 
 The header for the menu will show the current publication state for the
 content item, such as *State: Private*, as shown above. Private is the
@@ -51,7 +51,7 @@ accordingly:
 
 .. figure:: /_static/statemenu2.png
    :align: center
-   :alt: 
+   :alt:
 
 Consideration should be given to retracting ("unpublishing"), or setting
 to *private*, any content that has become obsolete or undesired for some

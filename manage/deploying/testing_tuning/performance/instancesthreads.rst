@@ -6,7 +6,7 @@ About Instances and Threads, Performance and RAM consumption
 
 .. admonition:: Description
 
-    Understanding how instances-per-core, threads-per-instance and ZODB-caches 
+    Understanding how instances-per-core, threads-per-instance and ZODB-caches
     are influencing performance.
 
 Introduction

@@ -24,29 +24,29 @@ Common interfaces
 
 Some interfaces are commonly used throughout Plone.
 
-The usual use case is that a 
+The usual use case is that a
 :doc:`context directive for a view </develop/plone/views/browserviews>`
-is provided, specifying where the view is available 
+is provided, specifying where the view is available
 (e.g. for which content types).
 
-``zope.interface.Interface`` 
+``zope.interface.Interface``
     Base class of all interfaces. Also used as a ``*`` wildcard when
     registering views, meaning that the view applies on every object.
 
-``Products.CMFCore.interfaces.IContentish`` 
+``Products.CMFCore.interfaces.IContentish``
     All *content* items on the site.
     In the site root, this interface excludes Zope objects like
     ``acl_users`` (the user folder) and ``portal_skins`` which might
     otherwise appear in the item listing when you iterate through the root
     content.
 
-``Products.CMFCore.interfaces.IFolderish`` 
+``Products.CMFCore.interfaces.IFolderish``
     All *folders* in the site.
 
-``Products.CMFCore.interfaces.ISiteRoot`` 
+``Products.CMFCore.interfaces.ISiteRoot``
     The Plone site root object.
 
-``plone.app.layout.navigation.interfaces import INavigationRoot`` 
+``plone.app.layout.navigation.interfaces import INavigationRoot``
     Navigation top object - where the breadcrumbs are anchored.
     On multilingual sites, this is the top-level folder for the current
     language.
@@ -196,7 +196,7 @@ You can assign the marker interface for several classes in ZCML using
 a ``<class>`` declaration. Here we're assigning ``ILastModifiedSupport``
 to documents, events and news items:
 
-.. code-block:: xml 
+.. code-block:: xml
 
     <!-- List of content types where "last modified" viewlet is enabled -->
     <class class="Products.ATContentTypes.content.document.ATDocument">
@@ -244,7 +244,7 @@ Browse to any object and visit the :guilabel:`Interfaces` tab.
 Marker interfaces might need to be explicitly declared using the
 :term:`ZCML` ``<interface>`` directive, so that Zope can find them:
 
-.. code-block:: xml 
+.. code-block:: xml
 
     <!-- Declare marker interface, so that it is available in ZMI -->
     <interface interface="mfabrik.app.interfaces.promotion.IPromotionsPage" />
@@ -269,7 +269,7 @@ Example::
 
     This marking persists with the object: it is not temporary.
 
-    Under the hood: 
+    Under the hood:
     ``mark()`` delegates to ``zope.interface.directlyProvides()`` |---| with
     the result that
     a persistent object (e.g. content item) has a reference to the interface

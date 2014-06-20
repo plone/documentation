@@ -1,4 +1,4 @@
-Page forms 
+Page forms
 ===========
 
 **The most basic type of form**
@@ -22,30 +22,30 @@ the site root is often good choice.
     from Products.CMFCore.interfaces import ISiteRoot
 
     class IMyForm(model.Schema):
-        
+
         ...
 
     class MyForm(form.SchemaForm):
         grok.name('my-form')
         grok.require('zope2.View')
         grok.context(ISiteRoot)
-        
+
         schema = IMyForm
         ignoreContext = True
-        
+
         label = _(u"My form")
         description = _(u"A sample form.")
-        
+
         @button.buttonAndHandler(_(u'Ok'))
         def handleOk(self, action):
             data, errors = self.extractData()
-            
+
             if errors:
                 self.status = self.formErrorsMessage
                 return
-            
+
             ...
-            
+
         @button.buttonAndHandler(_(u"Cancel"))
         def handleCancel(self, action):
             ...
@@ -62,30 +62,30 @@ A non-schema version would look like this:
     from Products.CMFCore.interfaces import ISiteRoot
 
     class IMyForm(model.Schema):
-        
+
         ...
 
     class MyForm(form.Form):
         grok.name('my-form')
         grok.require('zope2.View')
         grok.context(ISiteRoot)
-        
+
         fields = field.Fields(IMyForm)
         ignoreContext = True
-        
+
         label = _(u"My form")
         description = _(u"A sample form.")
-        
+
         @button.buttonAndHandler(_(u'Ok'))
         def handleOk(self, action):
             data, errors = self.extractData()
-            
+
             if errors:
                 self.status = self.formErrorsMessage
                 return
-            
+
             ...
-            
+
         @button.buttonAndHandler(_(u"Cancel"))
         def handleCancel(self, action):
             ...
@@ -120,7 +120,7 @@ easy to construct the form’s initial values dynamically.
     ...
 
     class IMyForm(model.Schema):
-        
+
         foo = schema.TextLine(title=_(u"Foo"))
         bar = schema.TextLine(title=_(u"Bar"))
 
@@ -128,29 +128,29 @@ easy to construct the form’s initial values dynamically.
         grok.name('my-form')
         grok.require('zope2.View')
         grok.context(ISiteRoot)
-        
+
         schema = IMyForm
         ignoreContext = True
-        
+
         label = _(u"My form")
         description = _(u"A sample form.")
-        
+
         def getContent(self):
             data = {}
             data['foo'] = u"Foo"
             data['bar'] = u"Bar"
             return data
-        
+
         @button.buttonAndHandler(_(u'Ok'))
         def handleOk(self, action):
             data, errors = self.extractData()
-            
+
             if errors:
                 self.status = self.formErrorsMessage
                 return
-            
+
             ...
-            
+
         @button.buttonAndHandler(_(u"Cancel"))
         def handleCancel(self, action):
             ...

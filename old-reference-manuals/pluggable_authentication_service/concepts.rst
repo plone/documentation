@@ -18,7 +18,7 @@ There are a few basic concepts used in PAS:
    or something else.
 
 **user name**
-   The user name is the name used by the user to log into the system. 
+   The user name is the name used by the user to log into the system.
    To avoid confusion between "user id" and "user name" this tutorial will
    use the term login name instead.
 

@@ -47,13 +47,13 @@ icons adjacent to the day pull-down, :
 
 .. figure:: /_static/eventstartandendfields.png
    :align: center
-   :alt: 
+   :alt:
 
 you'll see this pop-up calendar:
 
 .. figure:: /_static/calendarpopuppanel.png
    :align: center
-   :alt: 
+   :alt:
 
 Just click the day and it will be set. Fill in the fields for which you
 have information and save the event, but remember:

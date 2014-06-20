@@ -9,7 +9,7 @@ Prerequisites
 Before we can create a buildout to manage Zope and Plone, there are
 a few prerequisites to take care of.
 
-As of Plone 3.2, all of the Plone installers are buildout based. 
+As of Plone 3.2, all of the Plone installers are buildout based.
 You can get the latest `installer`_ and run it to have a working
 buildout without having to follow these steps. However, these steps
 are still valid if you want to create the buildout manually with

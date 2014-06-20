@@ -1,10 +1,10 @@
 ====================
-Fields Reference 
+Fields Reference
 ====================
 
 .. admonition:: Description
 
-		Attributes of standard Archetypes fields. 
+		Attributes of standard Archetypes fields.
 
 .. raw:: html
 

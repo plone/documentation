@@ -44,7 +44,7 @@ Event
     .. figure:: /_static/events-summary-chart.jpg
        :align: center
        :alt: events-summary-chart.jpg
-    
+
 
 
     From Plone 3.3 on you can also get all the events in a folder in

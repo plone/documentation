@@ -20,13 +20,13 @@ Here is a simple example::
         # Only act on the current user
         if getSecurityManager().getUser().getId()!=principal:
             return ()
-    
+
         # Only act if the request originates from the local host
         if request is not None:
             ip=request.get("HTTP_X_FORWARDED_FOR", request.get("REMOTE_ADDR", ""))
             if ip!="127.0.0.1":
                 return ()
-    
+
         return ("Manager",)
 
 This gives the current user in Manager role if the site is being accessed

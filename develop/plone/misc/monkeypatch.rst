@@ -8,14 +8,14 @@ JavaScript, Objective-C, Ruby, Perl, Python, Groovy, etc.) without
 altering the original source code.
 
 Plone community promotes conflict free way to do monkey patching
-using `collective.monkeypatcher package 
+using `collective.monkeypatcher package
 <https://pypi.python.org/pypi/collective.monkeypatcher>`_.
 
 Patching constants
 ====================
 
 Some modules (typically ``config.py`` files) include constant
-definitions used throughout the package. Given that 
+definitions used throughout the package. Given that
 ``collective.monkeypatcher`` is intended to patch methods
 you'll not be able to patch a constant straightforward. Instead you'll
 have to make use of the ``handler`` option::
@@ -34,7 +34,7 @@ And your ``patches.py`` module should include this::
     NEW_SIZE_CONST = {'kB': 1024, 'MB': 1024*1024, 'GB': 1024*1024*1024, 'TB': 1024*1024*1024*1024}
 
     patched_size_const = lambda : NEW_SIZE_CONST  # Now we have a callable method!
-    
+
     def apply_patched_const(scope, original, replacement):
         setattr(scope, original, replacement())
         return
@@ -70,7 +70,7 @@ And your ``patches.py`` module should include this::
         # This is actually the same as apply_patched_const above
         setattr(scope, original, replacement())
         return
-        
+
     patched_items = lambda : property(items)  # We get a @property decorated method!
 
 

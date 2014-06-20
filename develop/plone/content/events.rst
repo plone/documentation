@@ -2,9 +2,9 @@
  Eventish content types
 =========================
 
-.. admonition:: Description 
+.. admonition:: Description
 
-    Creating and programming event and eventish content types in Plone 
+    Creating and programming event and eventish content types in Plone
 
 .. contents:: :local:
 
@@ -24,13 +24,13 @@ shows published events in a calendar view.
 Further reading
 ----------------
 
-`vs.event <http://plone.org/products/vs.event>`_ 
+`vs.event <http://plone.org/products/vs.event>`_
     recurring events for Plone 3 and 4.0
 
-`plone.app.event <http://www.zopyx.com/blog/plone.app.event>`_ 
+`plone.app.event <http://www.zopyx.com/blog/plone.app.event>`_
     recurring events for Plone 4.1+
 
-`Dateable <http://plone.org/products/dateable>`_ 
+`Dateable <http://plone.org/products/dateable>`_
     Plone code to bring all the different calendar extensions together
 
 * http://www.inigo-tech.com/blog/customizing-p4a.calendar-and-the-power-of-collections-and-views
@@ -49,7 +49,7 @@ to get the event listing of a certain month.
 Adding a new event type to the calendar
 ------------------------------------------------
 
-Use-case: you've created a content type and want it to be shown in 
+Use-case: you've created a content type and want it to be shown in
 the calendar portlet.
 
 First add a custom import step. In ``profiles/default/import_steps.xml``
@@ -114,10 +114,10 @@ iCal export
 
 Plone 3+ provides ``ics_view`` which applies to:
 
-* Single :guilabel:`Event` content items 
+* Single :guilabel:`Event` content items
 * :guilabel:`Folder`\s
 
-The view creates an ``iCal`` export of the content. 
+The view creates an ``iCal`` export of the content.
 A single exported ``iCal`` file (mimetype: ``text/calendar``) can contain
 several events.
 When applied to a folder, the view exports all items that provide the
@@ -134,41 +134,41 @@ Purging old events
 
 After the event end day the event stays visible in Plone listings.
 
-You need to have a special janiator script / job if you want to get old events 
+You need to have a special janiator script / job if you want to get old events
 deleted from your site after they have been passed.
 
 Below is a ZMI script which will delete events which are more than 30 days past their ending date::
 
-     
+
      from StringIO import StringIO
      import DateTime
-     
+
      buf = StringIO()
-     
+
      # DateTime deltas are days as floating points
      # Select events which have the event ending date more than one month in past
      end = DateTime.DateTime() - 30*1
      start = DateTime.DateTime(2000, 1,1)
-     
+
      date_range_query = { 'query':(start,end), 'range': 'min:max'}
-     
+
      items = context.portal_catalog.queryCatalog({
                  "Language": "all", # Bypass LinguaPlone language check
                  "portal_type":["CompanyEvent", "VSEvent"],
                  "end" : date_range_query,
                  "sort_on" : "created" })
-     
+
      items = list(items)
-     
+
      print >> buf, "Found %d items to be purged" % len(items)
-     
+
      count = 0
      for b in items:
          count += 1
          obj = b.getObject()
          print >> buf, "Deleting:" + obj.absolute_url() + " " + str(obj.created())
          obj.aq_parent.manage_delObjects([obj.getId()])
-     
+
      return buf.getvalue()
 
 
@@ -181,8 +181,8 @@ appears five years ahead of the time when the event is saved.
 
 Below is the glue code which is needed to support
 the recurrent event in the Plone 3 calendar portlet.
-It combines ``vs.event``, ``plone.app.portlets`` and ``Products.CMFCalendar`` 
-bits to pull the necessary stuff together (a task which was not 
+It combines ``vs.event``, ``plone.app.portlets`` and ``Products.CMFCalendar``
+bits to pull the necessary stuff together (a task which was not
 trivial).
 
 Making recurrent event appear in the calendar portlet
@@ -231,7 +231,7 @@ standard Plone calendar portlet::
 
         cur_date = datetime.date(year, month, daynumber)
 
-        return cur_date.toordinal() 
+        return cur_date.toordinal()
 
 
     def create_event_structure(portal_calendar, results, year, month):
@@ -300,7 +300,7 @@ standard Plone calendar portlet::
                     last_days_event = last_day_data['eventslist'][-1]
                     last_days_event['end'] = (result.end-1).latestTime().Time()
                 else:
-                    eventDays[eventEndDay]['eventslist'].append( 
+                    eventDays[eventEndDay]['eventslist'].append(
                         { 'end': result.end.Time()
                         , 'start': None, 'title': event['title']} )
                     eventDays[eventEndDay]['event'] = 1
@@ -324,9 +324,9 @@ standard Plone calendar portlet::
             """
             List recurrencing events in the calendar
 
-            1. Get a list of supported event types 
-            2. Build a list of queried recurrence_days 
-            3. Query all recurrent events occurring in the given month 
+            1. Get a list of supported event types
+            2. Build a list of queried recurrence_days
+            3. Query all recurrent events occurring in the given month
             4. Retrofit calendar data with these recurrent events.
 
             @param weeks: Array of displayable calendar weeks.
@@ -344,7 +344,7 @@ standard Plone calendar portlet::
             recurrence_days_in_this_month = []
             for week in weeks:
                 for day in week:
-                    # This is an empty cell in the calendar 
+                    # This is an empty cell in the calendar
                     # and does not present a meaningful date
                     daynumber = day['day']
                     date = convert_to_indexed_format(year, month, daynumber)
@@ -358,9 +358,9 @@ standard Plone calendar portlet::
             # so if you want to speed up you can hardcode
             # recurrent event type list here.
             matched_recurrence_events = self.context.portal_catalog(
-                            portal_type=supported_event_types, 
+                            portal_type=supported_event_types,
                             recurrence_days={
-                                "query":recurrence_days_in_this_month, 
+                                "query":recurrence_days_in_this_month,
                                 "operator" : "or"
                             })
 
@@ -380,12 +380,12 @@ standard Plone calendar portlet::
 
                     for event in matched_recurrence_events:
                         # The event hit this date
-                        # Get event brain result id 
+                        # Get event brain result id
                         rid = event.getRID()
                         # Get list of recurrence_days indexed value.
-                        # ZCatalog holds internal Catalog object which we can directly poke in evil way    
-                        # This call goes to Products.PluginIndexes.UnIndex.Unindex class and we 
-                        # read the persistent value from there what it has stored in our index 
+                        # ZCatalog holds internal Catalog object which we can directly poke in evil way
+                        # This call goes to Products.PluginIndexes.UnIndex.Unindex class and we
+                        # read the persistent value from there what it has stored in our index
                         # recurrence_days
                         indexed_days = portal_catalog._catalog.getIndex("recurrence_days").getEntryForObject(rid, default=[])
 
@@ -401,7 +401,7 @@ standard Plone calendar portlet::
                             data["end"] = None
                             data["title"] = event["Title"]
 
-                            day["eventslist"].append(data) 
+                            day["eventslist"].append(data)
 
 
         def getEventsForCalendar(self):
@@ -434,14 +434,14 @@ standard Plone calendar portlet::
                         day['eventstring'] = '\n'.join(localized_date+[' %s' % self.getEventString(e) for e in day['eventslist']])
                         day['date_string'] = '%s-%s-%s' % (year, month, daynumber)
 
-            return weeks 
+            return weeks
 
 Beta code notice
 ----------------
 
 Make sure that the ``recurrence_days`` index from ``vs.event`` is working -
-if it isn't, check 
-:doc:`Custom indexing example </develop/plone/searching_and_indexing/indexing>` 
+if it isn't, check
+:doc:`Custom indexing example </develop/plone/searching_and_indexing/indexing>`
 how to create your own recurrency indexer.
 After you save your ``vs.event`` content item,
 you should see data in the ``recurrence_days`` index through
@@ -453,7 +453,7 @@ Further reading
 * http://plone.293351.n2.nabble.com/what-s-dateable-chronos-how-to-render-recurrence-events-in-a-calendar-portlet-tp5282788p5287261.html
 
 * ``vs.event`` has ``KeywordIndex`` ``recurrence_days`` which contains a
-  * value 
+  * value
   created by
   ``vs.event.content.recurrence.VSRecurrenceSupport.getOccurrenceDays()``.
   This value is a list of dates 5 years ahead when the event occurs.
