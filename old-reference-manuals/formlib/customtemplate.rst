@@ -27,7 +27,7 @@ definition:
         form_fields = form.Fields(IFeedbackForm)
         template = ViewPageTemplateFile('feedback_form.pt')
         result_template = ViewPageTemplateFile('feedback_result.pt')
-    
+
         @form.action("send")
         def action_send(self, action, data):
             mhost = MHost()
@@ -90,8 +90,8 @@ very easy to use. Modify and add the emphasized lines:
     from zope.formlib.namedtemplate import NamedTemplate
     # Five's ViewPageTemplateFile doesn't work correctly with formlib's NamedTemplateImplementation,
     # so we use here the Plone implementation
-    from plone.app.form import named_template_adapter  
-    
+    from plone.app.form import named_template_adapter
+
     class FeedbackForm(PageForm):
         """
         A typical feedback form
@@ -101,7 +101,7 @@ very easy to use. Modify and add the emphasized lines:
         template = NamedTemplate('feedback.form')
         result_template = ViewPageTemplateFile('feedback_result.pt')
         # rest of the form class implementation...
-    
+
     feedback_template = named_template_adapter(
         ViewPageTemplateFile('feedback_form.pt'))
 
@@ -146,12 +146,12 @@ interface, with the schema field names as keys, so we write:
 ::
 
     from zope.app.form.browser import RadioWidget as _RadioWidget
-    
+
     def RadioWidget(field, request):
         vocabulary = field.vocabulary
         widget = _RadioWidget(field, vocabulary, request)
-        return widget 
-    
+        return widget
+
     class FeedbackForm(PageForm):
         """
         A typical feedback form

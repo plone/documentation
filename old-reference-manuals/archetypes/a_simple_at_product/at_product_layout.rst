@@ -4,7 +4,7 @@ Product package layout
 
 .. admonition:: Description
 
-    Conventions and techniques for organizing the package for an AT product. 
+    Conventions and techniques for organizing the package for an AT product.
 
 Following Zope, Plone and AT’s conventions, the content of our example
 product pakage will look like this:

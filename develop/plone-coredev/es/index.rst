@@ -6,7 +6,7 @@ Procesos para el desarrollo del núcleo de Plone
 
 Introducción
 ============
-Esta documentación describes el proceso para desarrollar en Plone. Este es principalmente un recurso técnico para instalar su configuración buildout del desarrollador del núcleo del CMS, corregir fallos, y escribir plips. 
+Esta documentación describes el proceso para desarrollar en Plone. Este es principalmente un recurso técnico para instalar su configuración buildout del desarrollador del núcleo del CMS, corregir fallos, y escribir plips.
 
 ¡DETÉNGASE!
 -----------
@@ -35,7 +35,7 @@ Estos son algunos documentos a utilizar como referencia para esta documentación
    :maxdepth: 1
 
    contributors_agreement_explained
-   mrdeveloper 
+   mrdeveloper
    plipreview
 
 Traducciones disponibles

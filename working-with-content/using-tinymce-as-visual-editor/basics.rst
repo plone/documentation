@@ -7,7 +7,7 @@ The default TinyMCE editor will look like this:
 
 .. figure:: /_static/tiny_start.jpg
    :align: center
-   :alt: 
+   :alt:
 
 On top you can see the toolbar, below the text area and at the bottom a
 resize bar. If you drag the lower right corner you can make the editor

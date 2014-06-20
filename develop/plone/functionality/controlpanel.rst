@@ -12,7 +12,7 @@
 Introduction
 =============
 
-This documentation tells you how to create new "configlets" to 
+This documentation tells you how to create new "configlets" to
 Plone site setup control panel.
 
 Configlets can be created in two ways:
@@ -48,13 +48,13 @@ Below is a minimal example for creating a configlet using:
 
 * ``plone.app.registry``
 
-It is based on the 
+It is based on the
 `youraddon template <https://github.com/miohtama/sane_plone_addon_template/blob/master>`_.
-The add-on package in this case is called 
+The add-on package in this case is called
 `silvuple <https://github.com/miohtama/silvuple>`_.
 
 In ``buildout.cfg``, make sure you have the ``extends`` line for
-Dexterity (see the 
+Dexterity (see the
 `Dexterity installation guide
 <http://plone.org/products/dexterity/documentation/how-to/install>`_.
 
@@ -82,7 +82,7 @@ Dexterity (see the
 
     class ISettings(form.Schema):
         """ Define settings data structure """
-        
+
         adminLanguage = schema.TextLine(title=u"Admin language",
                 description=u"Type two letter language code (admins always use this language)")
 
@@ -157,19 +157,19 @@ will be used for which field:
   shown to the user.
 
 Example (``collective.gtags`` project, ``controlpanel.py``)::
-        
+
     class TagSettingsEditForm(controlpanel.RegistryEditForm):
-        
+
         schema = ITagSettings
-        label = _(u"Tagging settings") 
+        label = _(u"Tagging settings")
         description = _(u"Please enter details of available tags")
-        
+
         def updateFields(self):
             super(TagSettingsEditForm, self).updateFields()
             self.fields['tags'].widgetFactory = TextLinesFieldWidget
             self.fields['unique_categories'].widgetFactory = TextLinesFieldWidget
             self.fields['required_categories'].widgetFactory = TextLinesFieldWidget
-        
+
         def updateWidgets(self):
             super(TagSettingsEditForm, self).updateWidgets()
             self.widgets['tags'].rows = 8
@@ -190,7 +190,7 @@ There is a change concerning the 1.0b1 codebase::
         # plone.app.registry 1.0b2+
         from plone.app.registry.browser.controlpanel import RegistryEditForm
         from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
-            
+
 
 Configlets without ``plone.registry``
 ============================================
@@ -240,7 +240,7 @@ Here are the ingredients:
         form.widget(contentTypes=CheckBoxFieldWidget)
         contentTypes = schema.List(title=u"Enabled content types",
                                    description=u"Which content types appear on translation master page",
-                                   required=False, 
+                                   required=False,
                                    value_type=schema.Choice(source="plone.app.vocabularies.ReallyUserFriendlyTypes"),
                                    )
 
@@ -262,7 +262,7 @@ Here are the ingredients:
             view_factor = layout.wrap_form(SettingsEditForm, ControlPanelFormWrapper)
             view = view_factor(self.context, self.request)
             return view()
- 
+
 ``profiles/default/registry.xml``:
 
 .. code-block:: xml
@@ -285,14 +285,14 @@ Here are the ingredients:
 Configuring Plone products from buildout
 ========================================
 
-See a section in the 
+See a section in the
 :ref:`Buildout chapter <configuring-products-from-buildout>`
 
 
 Configuration using environment variables
 =========================================
 
-If your add-on requires "setting file" 
+If your add-on requires "setting file"
 for few simple settings you can change for each
 buildout you can use operating system environment variables.
 

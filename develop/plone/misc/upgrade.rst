@@ -59,7 +59,7 @@ Migration from non-folderish to folderish Archetypes based content types
 
 Non-folderish content types are missing some BTree attributes, which folderish
 content types have (See ``Products.BtreeFolder2.BTreeFolder2Base._initBtrees``
-). 
+).
 
 plone.app.folder provides an upgrade view to migrate pre-plone.app.folder (or
 non-folderish) types to the new BTree based implementation (defined in:

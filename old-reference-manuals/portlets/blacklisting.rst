@@ -45,7 +45,7 @@ Remove all the portlet assignments for a specific manager assigned to the
 news object using the purge attribute:
 
 ::
-   
+
     <assignment
         purge="True"
         manager="plone.rightcolumn"

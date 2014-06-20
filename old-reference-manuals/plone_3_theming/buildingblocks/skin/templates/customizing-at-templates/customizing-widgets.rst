@@ -89,11 +89,11 @@ skin template called ``my_string_widget``. Start with this:
               xmlns:metal="http://xml.zope.org/namespaces/metal"
               xmlns:i18n="http://xml.zope.org/namespaces/i18n"
               i18n:domain="plone">
-        
+
           <head><title></title></head>
-        
+
           <body>
-        
+
             <metal:define define-macro="view">
               <metal:use use-macro="context/widgets/string/macros/view">
                 <metal:fill fill-slot="inside">
@@ -102,17 +102,17 @@ skin template called ``my_string_widget``. Start with this:
                 </metal:fill>
               </metal:use>
             </metal:define>
-        
+
             <metal:define define-macro="edit">
               <metal:block use-macro="context/widgets/string/macros/edit" />
             </metal:define>
-        
+
             <metal:define define-macro="search">
               <metal:block use-macro="context/widgets/string/macros/search" />
             </metal:define>
-        
+
           </body>
-        
+
         </html>
 
 (NB: I'm breaking AT's naming convention here. You don't have to do that,
@@ -145,7 +145,7 @@ templates:
 Now, let's modify the way that our StringField displays. For brevity,
 I'll just show the ``view`` macro:
 
-Then, we should tell our type's schema to point at the new template, 
+Then, we should tell our type's schema to point at the new template,
 by setting ``macro``:
 
 ::

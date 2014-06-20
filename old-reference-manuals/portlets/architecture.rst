@@ -39,7 +39,7 @@ package's *interfaces.py* file, type:
 
     from plone.portlets.interfaces import IPortletDataProvider
     from Products.CMFPlone import PloneMessageFactory as _
-    
+
     class IRecentPortlet(IPortletDataProvider):
         count = schema.Int(title=_(u'Number of items to display'),
                            description=_(u'How many items to list.'),
@@ -66,13 +66,13 @@ portlet.
     from plone.app.portlets.portlets import base
     from zope.interface import implements
     from ploneexample.portlet.interfaces import IRecentPortlet
-    
+
     class Assignment(base.Assignment):
         implements(IRecentPortlet)
-    
+
         def __init__(self, count=5):
             self.count = count
-    
+
         @property
         def title(self):
             return _(u"Recent items")
@@ -102,10 +102,10 @@ editable.
         form_fields = form.Fields(IRecentPortlet)
         label = _(u"Add Recent Portlet")
         description = _(u"This portlet displays recently modified content.")
-    
+
         def create(self, data):
             return Assignment(count=data.get('count', 5))
-    
+
     class EditForm(base.EditForm):
         form_fields = form.Fields(IRecentPortlet)
         label = _(u"Edit Recent Portlet")
@@ -127,21 +127,21 @@ upon the rendering of the portlet.
 It's a multi-adapter that takes a number of parameters which makes
 it possible to vary the rendering of the portlet:
 
-context 
+context
     The current content object. Mind the type of content object that's
     being shown.
-request 
+request
     The current request. Mind the current theme/browser layer.
-view 
+view
     The current (full page) view. Mind the current view, and whether or
     not this is the canonical view of the object (as indicated by the
     ``IViewView`` marker interface) or a particular view, like the
     manage-portlets view.
-manager 
+manager
     The portlet manager where this portlet was rendered (for now, think
     of a portlet manager as a column). Mind where in the page the
     portlet was rendered.
-data 
+data
     The portlet data, which is basically an instance of the portlet
     assignment class. Mind the configuration of the portlet
     assignment.
@@ -161,38 +161,38 @@ the portlet under a certain category (more on this later).
     from zope.component import getMultiAdapter
     from Acquisition import aq_inner
     from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-    
+
     class Renderer(base.Renderer):
         _template = ViewPageTemplateFile('recent.pt')
-    
+
         def __init__(self, *args):
             base.Renderer.__init__(self, *args)
-    
+
             context = aq_inner(self.context)
             portal_state = getMultiAdapter((context, self.request), name=u'plone_portal_state')
             self.anonymous = portal_state.anonymous()  # whether or not the current user is Anonymous
             self.portal_url = portal_state.portal_url()  # the URL of the portal object
-            
+
             # a list of portal types considered "end user" types
-            self.typesToShow = portal_state.friendly_types()  
-    
+            self.typesToShow = portal_state.friendly_types()
+
             plone_tools = getMultiAdapter((context, self.request), name=u'plone_tools')
             self.catalog = plone_tools.catalog()
-    
+
         def render(self):
             return self._template()
-    
+
         @property
         def available(self):
             """Show the portlet only if there are one or more elements."""
             return not self.anonymous and len(self._data())
-    
+
         def recent_items(self):
             return self._data()
-    
+
         def recently_modified_link(self):
             return '%s/recently_modified' % self.portal_url
-    
+
         @memoize
         def _data(self):
             limit = self.data.count
@@ -226,11 +226,11 @@ write:
         xmlns:five="http://namespaces.zope.org/five"
         xmlns:plone="http://namespaces.plone.org/plone"
         i18n_domain="ploneexample.portlet">
-    
+
         <five:registerPackage package="." initialize=".initialize" />
-    
+
         <include package="plone.app.portlets"/>
-    
+
         <plone:portlet
             name="ploneexample.portlet.Recent"
             interface=".recent.IRecentPortlet"
@@ -239,7 +239,7 @@ write:
             addview=".recent.AddForm"
             editview=".recent.EditForm"
             />
-    
+
     </configure>
 
 Note you have to define/reference the plone XML namespace for the
@@ -274,11 +274,11 @@ registerProfile ZCML directive:
         xmlns:plone="http://namespaces.plone.org/plone"
         xmlns:gs="http://namespaces.zope.org/genericsetup"
         i18n_domain="ploneexample.portlet">
-    
+
         <five:registerPackage package="." initialize=".initialize" />
-    
+
         <include package="plone.app.portlets"/>
-    
+
         <gs:registerProfile
             name="ploneexample.portlet"
             title="Recent Items Example"
@@ -286,7 +286,7 @@ registerProfile ZCML directive:
             description="An example portlet"
             provides="Products.GenericSetup.interfaces.EXTENSION"
             />
-    
+
         <plone:portlet
             name="ploneexample.portlet.Recent"
             interface=".recent.IRecentPortlet"
@@ -295,7 +295,7 @@ registerProfile ZCML directive:
             addview=".recent.AddForm"
             editview=".recent.EditForm"
             />
-    
+
     </configure>
 
 Next, create the folder profiles/default and place a
@@ -307,7 +307,7 @@ Next, create the folder profiles/default and place a
     <portlets
         xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         i18n:domain="plone">
-      <portlet 
+      <portlet
         addview="ploneexample.portlet.Recent"
         title="Recent items Example"
         description="An example portlet which can render a listing of recently changed items."

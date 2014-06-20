@@ -23,9 +23,9 @@ This does not deal with
 The template loading mechanism
 ---------------------------------
 
-Archetypes tries to look up a template with name 
+Archetypes tries to look up a template with name
 
-* *Content type name lowercased* + *_view.pt* 
+* *Content type name lowercased* + *_view.pt*
 
 * *Content type name lowercased* + *_edit.cpt*
 
@@ -34,18 +34,18 @@ from portal_skins.
 Example controlled page template (cpt) file yourcontenttype.cpt:
 
         Check More info links
- 
-For cpt files (controlled page template) you'll also need corresponding 
+
+For cpt files (controlled page template) you'll also need corresponding
 .metadata file::
 
         [default]
         title = Edit Your Content Type
-        
+
         [validators]
         validators = validate_atct
         validators..form_add =
         validators..cancel =
-        
+
         [actions]
         action.success = traverse_to:string:content_edit
         action.success..cancel = redirect_to:python:object.REQUEST['last_referer']

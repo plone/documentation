@@ -9,7 +9,7 @@ Introduction
 
 Tips on how to automatically start Plone on server boot.
 
-This manual assumes, that you are installed Plone via the Unified-Installer as ``root install`` if you did a different install, please addjust the examples below for your own needs, the user as which you are running Plone maybe different for example. 
+This manual assumes, that you are installed Plone via the Unified-Installer as ``root install`` if you did a different install, please addjust the examples below for your own needs, the user as which you are running Plone maybe different for example.
 
 plonectl script
 ===============
@@ -208,7 +208,7 @@ Make sure to read: http://upstart.ubuntu.com/
 
 Also check the original source of this sample file: http://chrigl.de/blogentries/my-plone-configuration
 
-The above sample has not been extensively tested and is intended for use with in a zeocluster configuration. 
+The above sample has not been extensively tested and is intended for use with in a zeocluster configuration.
 To use the above sample for a normal (non-root) user installation, replace the last line with:
 
         exec /home/$USERID/Plone/plonectl start

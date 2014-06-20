@@ -24,7 +24,7 @@ First, define an interface class with the schema of the form:
 
     from zope.interface import Interface
     from zope.schema import TextLine, Text
-    
+
     class IFeedbackForm(Interface):
         """
         A typical feedback schema
@@ -32,10 +32,10 @@ First, define an interface class with the schema of the form:
         customer = TextLine(title=u'Customer',
                           description=u'Customer email',
                           required=True)
-    
+
         subject = TextLine(title=u'Subject',
                            required=True)
-    
+
         message = Text(title=u'Message',
                        description=u'The message body',
                        required=True)
@@ -69,7 +69,7 @@ The simplest way to define a collection of form fields is using the
 ::
 
     from zope.formlib import form
-    
+
     class FeedbackForm(PageForm):
         """
         A typical feedback form
@@ -99,14 +99,14 @@ data. More on actions later.
             pass
         def Send(self, sender, to, subject, body):
             pass
-    
+
     class FeedbackForm(PageForm):
         """
         A typical feedback form
         """
         form_fields = form.Fields(IFeedbackForm)
         result_template = ViewPageTemplateFile('feedback_result.pt')
-    
+
         @form.action("send")
         def action_send(self, action, data):
             mhost = MHost()
@@ -127,10 +127,10 @@ An example result form is:
 ::
 
     <html metal:use-macro="context/@@standard_macros/view">
-         
+
     <head>
     </head>
-    
+
     <body>
         <div metal:fill-slot="body">
             <h1 tal:content="view/label">Form label</h1>

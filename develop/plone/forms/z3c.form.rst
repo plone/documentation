@@ -795,7 +795,7 @@ Here's how to do it in pure ``z3c.form``::
 
         def updateWidgets(self):
             self.widgets["getAvailability"].mode = z3c.form.interfaces.HIDDEN_MODE
-            
+
 If you want to hide a widget that is part of a group, you cannot use the updateWidgets method.
 The groups and their widgets get initialized after the widgets have been updated.
 Before that, the groups variable is just a list of group factories.
@@ -805,12 +805,12 @@ For hiding widgets there, you have to access the group in the update method like
 
     import z3c.form.interfaces
     ...
-    
+
         def update(self):
             for group in self.groups:
                 if 'xxx' in group.widgets:
                     group.widgets['xxx'].mode = z3c.form.interfaces.HIDDEN_MODE
-                    
+
 groups itself is a list like object, you can also remove a complete group by just removing it from the group dictionary.
 
 Unprefixing widgets
@@ -1329,11 +1329,11 @@ To prevent that, you must explicitly add the buttons of the base class in your f
 
     from z3c.form import button
     from z3c.form.form import EditForm
-    
+
     class Form(EditForm):
-    
+
         buttons = EditForm.buttons.copy()
-        
+
         @button.buttonAndHandler(...)
         def handle_add(...):
             ...

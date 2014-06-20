@@ -12,23 +12,23 @@ Before extending Plone, we need to create an add-on package to hold our changes.
 
 We will use ZopeSkel to create a skeleton template for the project. For more information on ZopeSkel, see the section on :doc:`Bootstrapping Plone add-on development </develop/addons/paste>`.
 
-Put your projects in the src directory of your buildout directory. 
+Put your projects in the src directory of your buildout directory.
 
 - Change your working directory to the src directory of your buildout.::
 
      # from your buildout directory
      cd src
-    
+
 
 - Create a project using ZopeSkel 2.21.2 from our virtual_env. Here, we create an archetypes based project in a directory named example.helloworld.::
 
     ../../bin/zopeskel archetype example.helloworld
-    
+
 - ZopeSkel will ask you a series of questions. For now, you can use the defaults for Expert Mode and Version. Use *Hello World* for the Project Title. We will reference it in another step below.::
 
-    Expert Mode? (What question mode would you like? (easy/expert/all)?) ['easy']: 
+    Expert Mode? (What question mode would you like? (easy/expert/all)?) ['easy']:
     Project Title (Title of the project) ['Example Name']: Hello World
-    Version (Version number for project) ['1.0']: 
+    Version (Version number for project) ['1.0']:
     Description (One-line description of the project) ['']: Simple Hello World Example
 
 The zopeskel command creates a directory in the src directory named **example.helloworld**.::
@@ -42,11 +42,11 @@ Before we move one, lets examine our directory structure. We have **env-27**, ou
 
 .. image:: /develop/addons/helloworld/images/directory_structure.png
    :alt: image of directory structure
-   
-Looking further into *example.helloworld*, we have the **example** directory which contains the **helloworld** directory. 
+
+Looking further into *example.helloworld*, we have the **example** directory which contains the **helloworld** directory.
 
 In the examples below, we sometimes refer to the *helloworld* directory as the **product directory**. It contains the **browser** directory. Most of the changes we make take place in the *browser* directory.
-    
+
 Here it is from the command-line.::
 
     [michaelc@Cullerton src]$ ll example.helloworld/
@@ -84,10 +84,10 @@ Here it is from the command-line.::
     drwxr-xr-x  3 michaelc  staff   102 Aug 28 23:31 profiles
     drwxr-xr-x  5 michaelc  staff   170 Aug 28 23:31 tests
 
-    
-To use the code in your project, you'll need to reference it in your buildout.cfg file. 
 
-- Edit the *buildout.cfg* file. 
+To use the code in your project, you'll need to reference it in your buildout.cfg file.
+
+- Edit the *buildout.cfg* file.
 
     Add *example.helloworld* to the *eggs* section.::
 
@@ -100,14 +100,14 @@ To use the code in your project, you'll need to reference it in your buildout.cf
 
         develop =
             src/example.helloworld
-            
+
     Then save your changes.
 
 - You need to rerun buildout for the changes to take effect.::
 
     # from your buildout directory
     ./bin/buildout
-    
+
 - Then start or restart your Plone instance.::
 
     # from your buildout directory
@@ -115,20 +115,20 @@ To use the code in your project, you'll need to reference it in your buildout.cf
     or
     ./bin/instance restart
 
-Note:: 
+Note::
 
-    If you are running ZEO instead of a stand-alone instance you'll need to use something like:: 
-    
+    If you are running ZEO instead of a stand-alone instance you'll need to use something like::
+
         ./bin/client1 restart
-    
-Now you can install your product from the **Add-ons** are of **Site Setup**. You can access Site Setup from the **admin** menu in the top right corner of your Plone site. 
+
+Now you can install your product from the **Add-ons** are of **Site Setup**. You can access Site Setup from the **admin** menu in the top right corner of your Plone site.
 
     .. image:: /develop/addons/helloworld/images/sitesetup.png
 
-You can also access Site Setup using an url like 
+You can also access Site Setup using an url like
 
-    *http://localhost:8080/Plone/plone_control_panel* 
-    
+    *http://localhost:8080/Plone/plone_control_panel*
+
 - Select *Add-ons* from the *Site Setup* page. On the Add-ons page, select the *Hello World* add-on and click on *Activate*.
 
     .. image:: /develop/addons/helloworld/images/addons.png

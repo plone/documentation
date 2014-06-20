@@ -45,7 +45,7 @@ Collection
 The Collection Portlet will allow you to **display the results of a
 Collection**. You must have a Collection previously created when you add
 this Portlet, then you can specifying the Collection to be used . This
-is a great way to present targeted queries like for example "newest sightings of Amazonian butterflies". 
+is a great way to present targeted queries like for example "newest sightings of Amazonian butterflies".
 
 Events
 ------
@@ -108,4 +108,4 @@ Static Text
 
 The Static Text Portlet allows you to enter content just as you would on
 a normal Page object. This is useful for adding hyperlinks to different
-sites, address information, or any information that is relatively static. 
+sites, address information, or any information that is relatively static.

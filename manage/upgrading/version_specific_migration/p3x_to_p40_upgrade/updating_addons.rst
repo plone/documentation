@@ -17,11 +17,11 @@ You can do this using BBB imports.
 Here is an example how to detect Plone 4 during imports.
 Then you can use PLONE_VERSION variable for making different code paths.::
 
-    try: 
-        # Plone 4 and higher 
-        import plone.app.upgrade 
-        PLONE_VERSION = 4 
-    except ImportError: 
+    try:
+        # Plone 4 and higher
+        import plone.app.upgrade
+        PLONE_VERSION = 4
+    except ImportError:
         PLONE_VERSION = 3
 
 No more global definitions in templates
@@ -219,7 +219,7 @@ P = Abbreviation for "Products".
 	
 Removed
 -------
- 
+
 Products.CMFPlone.CatalogTool.registerIndexableAttribute – see the plone.indexer package instead.
 
 Products.CMFPlone.PloneTool.setDefaultSkin
@@ -337,11 +337,11 @@ Error you may get when starting your zope instance::
 
 This means that the specified validator is using old interfaces and is not working anymore. You need to remove this line::
 
-    __implements__= (IValidator,) 
+    __implements__= (IValidator,)
 
 (IValidator might be called ivalidator in all lowercase, at least in this specific example) and replace it with this::
 
-        implements(IValidator) 
+        implements(IValidator)
 
 
 
@@ -389,7 +389,7 @@ Using plone.app.blob for new content types
 
 Just use plone.app.field.BlobField or plone.app.field.ImageField instead of atapi.FileField or atapi.ImageField (respectively) in your schema::
 
-    from Products.Archetypes import atapi 
+    from Products.Archetypes import atapi
     from plone.app.blob.field import BlobField, ImageField
 
     schema = atapi.Schema((
@@ -483,7 +483,7 @@ In Plone 2.1 - 3.x the standard method for sending mail looked like this::
 
     mh = getToolByName(context, 'MailHost')
     mh.secureSend(message, mto, mfrom, subject=None,
-              mcc=None, mbcc=None, subtype=None, 
+              mcc=None, mbcc=None, subtype=None,
               charset=None, **kwargs)
 
 Where the message parameter is either text with no headers or an email.Message.Message object, the mto, mfrom, mcc and mbcc parameters are lists of email addresses, subject is content of the email subject header, subtype is used to provide the message mime sub-type, charset is used for message and header encoding, and the kwargs are used to provide additional headers.
@@ -491,8 +491,8 @@ Where the message parameter is either text with no headers or an email.Message.M
 In Plone 4.x, this method is deprecated and the standard send method of the MailHost should be used instead. The following is an example of using send::
 
     mh = getToolByName(context, 'MailHost')
-    mh.send(messageText, mto=None, mfrom=None, 
-        subject=None, encode=None, 
+    mh.send(messageText, mto=None, mfrom=None,
+        subject=None, encode=None,
         immediate=False, charset='utf8', msg_type=None)
 
 Here, messageText is the message with or without headers or an *email.Message.Message* object, *mto* and *mfrom* are strings containing the to and from addresses, *subject* is the content of the email subject header, *encode* is used to specify the message payload encoding (and should almost never be used), *immediate* is used to override the default *MailHost* queuing behavior, and *charset* is used for message and header character encoding (in Plone you should generally pass 'utf8' as the value for charset unless you have a specific reason not to). If you need to set custom headers they will need to be set in the *messageText* itself.
@@ -542,15 +542,15 @@ The syntax for limiting portlets to a certain type of manager has changed.
 
 The original format for limiting a portlet to a certain type of manager was::
 
-    <portlet addview="portlets.BBB" 
-         title="Foo" 
-         description="Foo" 
+    <portlet addview="portlets.BBB"
+         title="Foo"
+         description="Foo"
          for="plone.app.portlets.interfaces.IColumn" />
 
 but this form was deprecated in Plone 3.1 to allow multiple values in the for field. In Plone 4 the required form is::
 
-    <portlet title="Foo" 
-            addview="portlets.New" 
+    <portlet title="Foo"
+            addview="portlets.New"
             description="Foo">
         <for interface="plone.app.portlets.interfaces.IColumn" />
         <for interface="plone.app.portlets.interfaces.IDashboard" />
@@ -707,7 +707,7 @@ Zope 2 start-up script no longer supports running tests. You need to use zc.reci
 
 Add to your builout.cfg:
 
-    parts = 
+    parts =
         ...
         test
 
@@ -754,18 +754,18 @@ ztc.installProduct('TextIndexNG3') needs to be moved out of the deferred method 
 
     @onsetup
     def setup_product():
-    
+
         import my.types
         zcml.load_config('configure.zcml', my.types)
-        
+
         # We need to tell the testing framework that these products
         # should be available. This can't happen until after we have loaded
         # the ZCML.
         ztc.installPackage('my.types')
-    
+
     #initialize products outside of the deferred (@onsetup) method, otherwise it's too late
     ztc.installProduct('TextIndexNG3')
-    
+
     setup_product()
     ptc.setupPloneSite(products=['my.types'])
 

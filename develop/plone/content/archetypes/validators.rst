@@ -19,4 +19,4 @@ Creating a validator
 
 * http://play.pixelblaster.ro/blog/archive/2006/08/27/creating-an-archetypes-validator
 
-* http://www.pererikstrandberg.se/blog/index.cgi?page=PloneArchetypesFieldValidator 
+* http://www.pererikstrandberg.se/blog/index.cgi?page=PloneArchetypesFieldValidator

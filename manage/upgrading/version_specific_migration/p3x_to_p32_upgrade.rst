@@ -38,7 +38,7 @@ If you're updating an existing buildout, please note that the buildout files for
     [buildout]
 
     # parts: note that the plone part is no longer necessary.
-    parts = 
+    parts =
         zope2
         instance
         ... Any other parts you've been using except "plone"
@@ -76,7 +76,7 @@ If you're updating an existing buildout, please note that the buildout files for
     # remove any reference to the plone part: e.g., ${plone:eggs} or ${plone:products}
 
 
-If you have already modified your buildout.cfg file, for example to install new add-ons, remember to copy what you added to the eggs = and zcml = lines into the [instance] section. 
+If you have already modified your buildout.cfg file, for example to install new add-ons, remember to copy what you added to the eggs = and zcml = lines into the [instance] section.
 
 If you've installed "old style" products you'll need to copy the productdistros section and add it to parts too.
 

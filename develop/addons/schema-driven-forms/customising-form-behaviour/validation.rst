@@ -1,4 +1,4 @@
-Validation 
+Validation
 ============
 
 **How to validate a form prior to processing**
@@ -74,7 +74,7 @@ function:
         return True
 
     class IPizzaOrder(model.Schema):
-        
+
         name = schema.TextLine(
                 title=_(u"Your full name"),
             )
@@ -92,7 +92,7 @@ function:
                 title=_(u"Postcode"),
                 constraint=postcodeConstraint,
             )
-        
+
         telephone = schema.ASCIILine(
                 title=_(u"Telephone number"),
                 description=_(u"We prefer a mobile number"),
@@ -146,7 +146,7 @@ For example:
 
 
     class IPizzaOrder(model.Schema):
-        
+
         ...
 
     class OrderForm(form.SchemaForm):
@@ -157,7 +157,7 @@ For example:
     def validateName(value):
         """Ensure names have a space (indicating a first name and surname)
         """
-        
+
         if ' ' not in value:
             raise Invalid(_(u"Please give a full name"))
 
@@ -224,10 +224,10 @@ following code snippet:
     ...
 
     class SampleValidator(validator.SimpleFieldValidator):
-        
+
         def validate(self, value):
             super(SampleValidator, self).validate(value)
-            
+
             # validate here
 
     validator.WidgetValidatorDiscriminators(SampleValidator, field=IPizzaOrder['orderItems'], view=OrderForm)
@@ -290,7 +290,7 @@ For example:
     ...
 
     class IPizzaOrder(model.Schema):
-        
+
         name = schema.TextLine(
                 title=_(u"Your full name"),
             )
@@ -308,7 +308,7 @@ For example:
                 title=_(u"Postcode"),
                 constraint=postcodeConstraint,
             )
-        
+
         telephone = schema.ASCIILine(
                 title=_(u"Telephone number"),
                 description=_(u"We prefer a mobile number"),
@@ -318,7 +318,7 @@ For example:
                 title=_(u"Your order"),
                 value_type=schema.Choice(values=[_(u'Margherita'), _(u'Pepperoni'), _(u'Hawaiian')])
             )
-        
+
         @invariant
         def addressInvariant(data):
             if data.address1 == data.address2:
@@ -363,7 +363,7 @@ our handler for the “order” button:
             if errors:
                 self.status = self.formErrorsMessage
                 return
-            
+
             # Handle order here. For now, just print it to the console. A more
             # realistic action would be to send the order to another system, send
             # an email, or similar
@@ -421,15 +421,15 @@ two examples to our action handler.
         @button.buttonAndHandler(_(u'Order'))
         def handleApply(self, action):
             data, errors = self.extractData()
-            
+
             # Some additional validation
             if 'address1' in data and 'address2' in data:
-                
+
                 if len(data['address1']) < 2 and len(data['address2']) < 2:
                     raise ActionExecutionError(Invalid(_(u"Please provide a valid address")))
                 elif len(data['address1']) < 2 and len(data['address2']) > 10:
                     raise WidgetActionExecutionError('address2', Invalid(u"Please put the main part of the address in the first field"))
-            
+
             if errors:
                 self.status = self.formErrorsMessage
                 return

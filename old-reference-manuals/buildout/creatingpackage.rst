@@ -62,7 +62,7 @@ Of course, you must also add this package to the buildout. In
     eggs =
         ...
         myorg.mypackage
-    
+
     develop =
         src/myorg.mypackage
 

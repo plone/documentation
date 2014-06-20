@@ -13,13 +13,13 @@ of the screen. Click your name to open the dropdown, then click on the
 
 .. figure:: /_static/loggedinstrip.png
    :align: center
-   :alt: 
+   :alt:
 
 You will see the dashboard** panel:
 
 .. figure:: /_static/dashboardjohnsmith.png
    :align: center
-   :alt: 
+   :alt:
 
 When you log in for the first time, your dashboard will be empty, as the
 Info message explains. Portlets are specific "views" of different types
@@ -31,7 +31,7 @@ which will bring up the personal preferences edit panel:
 
 .. figure:: /_static/dashboardpersonalprefs.png
    :align: center
-   :alt: 
+   :alt:
 
 Date entry fields include:
 

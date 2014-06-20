@@ -53,8 +53,8 @@ In your.product/your/product/configure.zcml insert::
         />
 
 
-The first line defines to which interface you want to bind the execution of your code, which means here, 
-that the code will only be executed if the object is one of your contenttype's. 
+The first line defines to which interface you want to bind the execution of your code, which means here,
+that the code will only be executed if the object is one of your contenttype's.
 If you want this to be interface-agnostic, insert an asterix as a wildcard instead.
 
 The second line defines the event on which this should happen, which is here 'IObjectInitializedEvent'.

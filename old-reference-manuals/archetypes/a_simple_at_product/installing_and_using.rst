@@ -1,11 +1,11 @@
 ===========================
-Installing the product 
+Installing the product
 ===========================
 
 .. admonition:: Description
 
 		Ensuring the product elements (types, browser layers,
-		resources) are correctly installed. 
+		resources) are correctly installed.
 
 In this part, we will provide the code to be executed when the
 integrator “adds”, i.e. installs, the InstantMessage product to the
@@ -39,7 +39,7 @@ element, add the setup code for the type(s) you want to install:
         name="title">Controls the available content types in your portal</property>
      <object name="InstantMessage"
         meta_type="Factory-based Type Information with dynamic views"/>
-    </object> 
+    </object>
 
 The *name* property of the ``<object>`` node constitutes the called
 *portal type* name of the content-type, a CMF concept which supports two
@@ -173,7 +173,7 @@ Plone UI.
    when the action is available, but the exposed page will still be
    accesible from the associated URL.
 
-\ **Notes:**\ 
+\ **Notes:**\
 
 -  Defining new content-type actions this way, i.e. using GenericSetup,
    supersedes the old ``updateActions`` function from
@@ -213,7 +213,7 @@ In order to install our browser skin layer, we also add a
 ::
 
     <?xml version="1.0"?>
-    <layers>  
+    <layers>
       <layer name="example.archetype"
              interface="example.archetype.interfaces.IInstantMessageSpecific" />
     </layers>

@@ -34,7 +34,7 @@ We’ll create a module called *order.py* inside our package
     from example.dexterityforms.interfaces import MessageFactory as _
 
     class IPizzaOrder(model.Schema):
-        
+
         name = schema.TextLine(
                 title=_(u"Your full name"),
             )
@@ -51,7 +51,7 @@ We’ll create a module called *order.py* inside our package
         postcode = schema.TextLine(
                 title=_(u"Postcode"),
             )
-        
+
         telephone = schema.ASCIILine(
                 title=_(u"Telephone number"),
                 description=_(u"We prefer a mobile number"),
@@ -70,8 +70,8 @@ template.
 
 At the top, we have included a number of imports. Some of these pertain to the form view, which will be described next.
 Other than that, we have simply defined a schema that describes the form’s fields. The *title* and *description* of each field are used as label and help text, respectively.
-The *required* attribute can be set to *False* for optional fields. 
-For a full field and widgets reference, see the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`. 
+The *required* attribute can be set to *False* for optional fields.
+For a full field and widgets reference, see the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`.
 (It is no accident that the Dexterity content type fields and widgets are defined in the same manner as those of a standalone form!)
 
 Also notice how all the user-facing strings are wrapped in the message

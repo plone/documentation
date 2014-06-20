@@ -14,7 +14,7 @@ Check the log files
 ===================
 
 When a site error occurs, or Zope fails to start, there's probably an informative error message in Zope's log files.
-Locate `these log files <http://plone.org/documentation/faq/plone-logs>`_ and inspect instance.log. 
+Locate `these log files <http://plone.org/documentation/faq/plone-logs>`_ and inspect instance.log.
 Ignore irrelevant warnings and search for words such as error, exception and traceback (case-insensitive).
 
 When Zope doesn't start and there's no useful information in the log file, you can start Zope interactively and watch for error messages in the output:::
@@ -32,7 +32,7 @@ Test without customizations
 When you have customized page templates or Python scripts, your changes may interfere with changes in the new version of Plone.
 It's important to rule out this possibility, since your customizations are unique to your site and no one on the planet will be able to help you solve it.
 
-Temporarily remove your customizations, for example by removing your layers from portal_skins, or by removing files from these layers on the file system. 
+Temporarily remove your customizations, for example by removing your layers from portal_skins, or by removing files from these layers on the file system.
 If the problem disappears, you'll need to doublecheck your customizations.
 It's usually best to copy the original files of the new version of Plone to your skin, and re-customize those.
 
@@ -45,9 +45,9 @@ Remove the uninstalled products from the Products directory of your Zope instanc
 
 If the problem disappears, you'll need to doublecheck the offending product:
 
-* Does it support the new version of Plone, Zope and Python? 
+* Does it support the new version of Plone, Zope and Python?
   Check the product's README.txt or other informational files or pages.
-* Does the product require any additional migration procedures? 
+* Does the product require any additional migration procedures?
   Check the product's INSTALL.txt, UPGRADE.txt or other informational files or pages.
 * Does the product install properly? Re-install it and check the install log.
 
@@ -55,7 +55,7 @@ Test with a fresh Plone instance
 ================================
 
 Create a new Plone site with your new version of Plone.
-You don't need a new Zope instance, since you can add another Plone site in the root of Zope. 
+You don't need a new Zope instance, since you can add another Plone site in the root of Zope.
 If the problem does not occur in a fresh site, the cause of your problem is most likely a customization, an installed product or content that was not migrated properly.
 
 Make the problem reproducible

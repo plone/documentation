@@ -33,7 +33,7 @@ Please note that it is difficult to predict how well migration will work, since 
 * If you have a standard Plone site with simple customizations, it will likely work very well.
 * If you have installed and depend on a lot of third-party products produced by developers outside the Plone Team, it's hard to say something definite - make sure the products you depend on are certified to work with Plone 2.1.x.
   **Special note about SpeedPack:** You should uninstall this product, as most of the improvements done in this product are now part of Plone, and as a result, it's no longer necessary (and it doesn't work on Zope 2.8).
-* If you have a big site running Plone and want a painless transition to the much-improved version 2.1, we suggest that you hire a company that can do the migration properly for you. 
+* If you have a big site running Plone and want a painless transition to the much-improved version 2.1, we suggest that you hire a company that can do the migration properly for you.
   Send a mail to the "Plone Developer mailing list":/contact#developers, and we can recommend a company in your area if needed.
 
 The migration tool handles most cases, but your mileage may vary.

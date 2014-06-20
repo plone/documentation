@@ -17,9 +17,9 @@ frame.
 
 By default, Plone comes with dynamic views for:
 
-* Folder listing 
-* Summary 
-* Photo album 
+* Folder listing
+* Summary
+* Photo album
 * etc.
 
 The default view can be also a content item picked from the folder.
@@ -36,7 +36,7 @@ Permission for changing the view template of an item
 
 A user needs the :guilabel:`Modify view template` permission to use the
 dynamic view dropdown.
-If you want to restrict this ability, 
+If you want to restrict this ability,
 grant or revoke this permission as appropriate.
 
 This can be useful for some content-types like Dexterity ones, where
@@ -49,11 +49,11 @@ Default dynamic views
 
 Plone supports a few dynamic views for folders out of the box:
 
-* Summary view (``folder_summary_view``) 
-* Tabular view (``folder_tabular_view``) 
-* Album view (``atct_album_view``) 
-* Listing (``folder_listing``) 
-* Full view (``folder_full_view``) 
+* Summary view (``folder_summary_view``)
+* Tabular view (``folder_tabular_view``)
+* Album view (``atct_album_view``)
+* Listing (``folder_listing``)
+* Full view (``folder_full_view``)
 
 These are defined in :doc:`portal_types information </develop/plone/content/types>`
 for the *Folder* content type and mapped to the *Display* menu all
@@ -66,21 +66,21 @@ Newly created folders have this dynamic view applied:
 
 More info
 
-* :doc:`Overriding views </develop/plone/views/browserviews>` 
+* :doc:`Overriding views </develop/plone/views/browserviews>`
 
 Creating a dynamic view
 ========================
 
 Here are instructions how to create your own dynamic view.
 
-There is also an example product 
+There is also an example product
 `Listless view <https://github.com/miohtama/listlessview>`_,
 which provides "no content listing" view for Folder content types.
 
 Registering a dynamic view menu item
 ------------------------------------
 
-In order to be able to register dynamic views, 
+In order to be able to register dynamic views,
 your content type must support them.
 
 To do this, the content type should subclass
@@ -98,8 +98,8 @@ view in your ``configure.zcml``:
             action="@@product_listing"
             description="List folder contents as product summary view"
             />
-        
-.. note:: 
+
+.. note::
     ``Products.ATContentTypes`` uses a non-standard name for the
     ``interfaces`` package.
     There, it is ``interface``, while all other packages use ``interfaces``.
@@ -113,7 +113,7 @@ from ``Products/CMFPlone/profiles/default/types``.
 Including the changed ``view_methods`` in the XML code is enough.
 
 You can also change this through portal_types in the ZMI.
-    
+
 .. note::
 
     ``view_methods`` must not have the ``@@view`` signature in their method
@@ -154,17 +154,17 @@ add the following ``profiles/default/types/Topic.xml``.
 
         </property>
     </object>
-    
+
 Working around broken default view
 ====================================
 
 If you manage to:
 
-* Create a new view 
-* set it to the default as a folder 
+* Create a new view
+* set it to the default as a folder
 * and this view has a bug
 
-... you cannot access the folder anymore, because you are taken to the 
+... you cannot access the folder anymore, because you are taken to the
 broken view stack trace instead instead of rendering the green edit menubar.
 
 The fix is to reset the view by browsing to the ``select_default_view``
@@ -240,7 +240,7 @@ Another example how to use this::
         """
 
         page = self.context
-        
+
         try:
             if IFolderish.providedBy(self.context):
                 folder = self.context
@@ -250,9 +250,9 @@ Another example how to use this::
                 page = folder[page_name]
         except:
             pass
-                
+
         tabs = getattr(page, "showTabs", False)
-                
+
         return tabs
 
 .. TODO:: Bare except?

@@ -138,7 +138,7 @@ Zope outputs all debug information to the console where it was started in foregr
 
 If Zope does not start in foreground mode it means that your add-on configuration is bad and you need to fix it and the related traceback is printed as well. In production mode, Zope ignores all add-ons which fail to load.
 
- 
+
 
 
 Credits

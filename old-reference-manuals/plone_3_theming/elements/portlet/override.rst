@@ -47,7 +47,7 @@ Sample configuration.zcml directive
 
 ::
 
-    <configure 
+    <configure
         xmlns:plone="http://namespaces.plone.org/plone">
         <include package="plone.app.portlets"  />
         <plone:portletRenderer
@@ -73,6 +73,6 @@ then you'll need to assign it to the recurse method in the class.
     from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
     class [your class name](Renderer):
-        _template = ViewPageTemplateFile([your template name].pt)  
+        _template = ViewPageTemplateFile([your template name].pt)
         recurse = ViewPageTemplateFile([your recurse template name])
 

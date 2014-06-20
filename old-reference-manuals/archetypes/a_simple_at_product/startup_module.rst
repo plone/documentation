@@ -1,5 +1,5 @@
 ====================
-The startup module 
+The startup module
 ====================
 
 .. admonition:: Description
@@ -110,7 +110,7 @@ Here is the improved code:
     def initialize(context):
 
         content_types, constructors, ftis = process_types(
-                 listTypes(config.PROJECTNAME), 
+                 listTypes(config.PROJECTNAME),
                  config.PROJECTNAME)
 
 
@@ -121,10 +121,10 @@ Here is the improved code:
         allTypes = zip(content_types, constructors)
         for atype, constructor in allTypes:
             kind = "%s: %s" % (config.PROJECTNAME, atype.portal_type)
-            utils.ContentInit(kind,            
+            utils.ContentInit(kind,
                               content_types      = (atype,),
                               permission         = config.ADD_CONTENT_PERMISSIONS[atype.portal_type],
-                              extra_constructors = (constructor,),            
+                              extra_constructors = (constructor,),
                               fti                = ftis,
                               ).initialize(context)
 

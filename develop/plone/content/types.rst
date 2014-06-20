@@ -60,27 +60,27 @@ Python instead, here's how::
         We cannot use the method provided by the IPortalState utility view,
         because the vocabulary factory must be available in contexts where
         there is no HTTP request (e.g. when installing add-on product).
-         
+
         This code is copied from
         https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/globals/portal.py
-        
+
         @return: Generator for (id, type_info title) tuples
         """
 
         context = aq_inner(site)
         site_properties = getToolByName(context, "portal_properties").site_properties
         not_searched = site_properties.getProperty('types_not_searched', [])
-    
+
         portal_types = getToolByName(context, "portal_types")
         types = portal_types.listContentTypes()
-        
+
         # Get list of content type ids which are not filtered out
         prepared_types = [t for t in types if t not in not_searched]
-        
+
         # Return (id, title) pairs
         return [ (id, portal_types[id].title) for id in prepared_types ]
 
-        
+
 Creating a new content type
 ============================
 
@@ -104,7 +104,7 @@ Add ZopeSkel to your buildout.cfg and run buildout::
     eggs =
        PasteScript
        ZopeSkel
-    
+
 Create an archetypes product
 ----------------------------
 
@@ -124,7 +124,7 @@ Adjust your buildout.cfg and run buildout again::
     parts =
         instance
         zopeskel
-    
+
     ...
     [instance]
     eggs = my.product
@@ -156,7 +156,7 @@ Related how-tos:
 
 .. note::
 
-    Creating types by hand is not worth the trouble. Please use a 
+    Creating types by hand is not worth the trouble. Please use a
     code generator to create the skeleton for your new content type.
 
 .. warning::
@@ -164,8 +164,8 @@ Related how-tos:
     The content type name must not contain spaces.
     Neither the content type name or the description
     may contain non-ASCII letters. If you need to change these please
-    create a translation catalog which will translate the text to 
-    one with spaces or international letters.  
+    create a translation catalog which will translate the text to
+    one with spaces or international letters.
 
 
 Debugging new content type problems
@@ -178,10 +178,10 @@ Creating types by hand is not worth the trouble.
 Creating new content types through-the-web
 =============================================
 
-There exist solutions for non-programmers and Plone novices 
+There exist solutions for non-programmers and Plone novices
 to create their content types more easily.
 
-Dexterity 
+Dexterity
 ---------
 
 * http://plone.org/products/dexterity
@@ -226,13 +226,13 @@ For the instances of some content types, the user may manually
 restrict which kinds of objects may be added inside. This is done by clicking
 the :guilabel:`Add new...` link on the green edit bar and then choosing
 :guilabel:`Restrictions...`.
- 
+
 This can also be done programmatically on an instance of a content type that
 supports it.
 
 First, we need to know whether the instance supports this.
 
-Example:: 
+Example::
 
     from Products.Archetypes.utils import shasattr # To avoid acquisition
     if shasattr(context, 'canSetConstrainTypes'):
@@ -243,7 +243,7 @@ Example::
 If ``setConstrainTypesMode`` is ``1``, then only the types enabled by using
 ``setLocallyAllowedTypes`` will be allowed.
 
-The types specified by ``setLocallyAllowedTypes`` must be a subset 
+The types specified by ``setLocallyAllowedTypes`` must be a subset
 of the allowable
 types specified in the content-type's FTI (Factory Type Information) in the
 ``portal_types`` tool.

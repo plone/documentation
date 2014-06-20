@@ -35,20 +35,20 @@ the error message.
 ::
 
     from zope.schema import ValidationError
-    
+
     class InvalidEmailAddress(ValidationError):
         "Invalid email address"
-    
+
     from Products.CMFDefault.utils import checkEmailAddress
     from Products.CMFDefault.exceptions import EmailAddressInvalid
-    
+
     def validateaddress(value):
         try:
             checkEmailAddress(value)
         except EmailAddressInvalid:
             raise InvalidEmailAddress(value)
         return True
-    
+
     class IFeedbackForm(Interface):
         """
         A typical feedback schema
@@ -57,10 +57,10 @@ the error message.
                           description=u'Customer email',
                           required=True,
                           constraint=validateaddress)
-    
+
         subject = TextLine(title=u'Subject',
                            required=True)
-    
+
         message = Text(title=u'Message',
                        description=u'The message body',
                        required=True)
@@ -86,7 +86,7 @@ dropdown. It's easier to explain it in Python than in English:
 
     from zope.schema import Choice
     from zope.interface import invariant, Invalid
-    
+
     class IFeedbackForm(Interface):
         """
         A typical feedback schema
@@ -95,22 +95,22 @@ dropdown. It's easier to explain it in Python than in English:
                           description=u'Customer email',
                           required=True,
                           constraint=validateaddress)
-    
+
         subject = Choice(title=u'Subject',
                        vocabulary='Available Subjects',
                        required=True,
                        )
-    
+
         other = TextLine(title=u'Other',
                          description=u"""
                             If you've specified Other above,
                             please fill this this field too.""",
                             required=False)
-    
+
         message = Text(title=u'Message',
                        description=u'The message body',
                        required=True)
-    
+
         @invariant
         def otherFilledIfSelected(feedback):
             if feedback.subject == u'Other' and not feedback.other:
@@ -129,7 +129,7 @@ You still need to define the *Available Subjects* vocabulary:
 ::
 
     from zope.schema.vocabulary import SimpleVocabulary
-    
+
     def availableSubjects(context):
         subjects = ('Comment',
                     'Feature Request',

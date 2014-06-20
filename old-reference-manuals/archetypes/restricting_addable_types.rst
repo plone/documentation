@@ -5,7 +5,7 @@ Restricting addable types
 .. admonition:: Description
 
 		The constrain-types machinery and how it drives the "restrict..."
-		option under the "add item" menu. 
+		option under the "add item" menu.
 
 As of Plone 2.1, the “add item” menu supports a “restrict…” page that
 lets the user decide which items can and cannot be added to that folder.

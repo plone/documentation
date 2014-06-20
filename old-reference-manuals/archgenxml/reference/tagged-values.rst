@@ -883,190 +883,190 @@ unknown
 =======
 
 Modify
-   
+
 
 access
-   
+
 
 allow_empty_rows
-   
+
 
 columns
-   
+
 
 default:widget:Reference
-   
+
 
 default_content_type
-   
+
 
 default_output_type
-   
+
 
 default_page_type
-   
+
 
 i18ncontent
-   
+
 
 index_method
-   
+
 
 languageIndependent
-   
+
 
 max_size
-   
+
 
 mode
-   
+
 
 pil_quality
-   
+
 
 pil_resize_algo
-   
+
 
 rename_after_creation
-   
+
 
 storage
-   
+
 
 swallowResizeExceptions
-   
+
 
 widget:addable
-   
+
 
 widget:allow_brightness
-   
+
 
 widget:allow_browse
-   
+
 
 widget:allow_file_upload
-   
+
 
 widget:allow_search
-   
+
 
 widget:allow_sorting
-   
+
 
 widget:append_only
-   
+
 
 widget:auto_insert
-   
+
 
 widget:available_indexes
-   
+
 
 widget:base_query
-   
+
 
 widget:checkbox_bound
-   
+
 
 widget:cols
-   
+
 
 widget:columns
-   
+
 
 widget:default_search_index
-   
+
 
 widget:destination
-   
+
 
 widget:destination_types
-   
+
 
 widget:divider
-   
+
 
 widget:dollars_and_cents
-   
+
 
 widget:ending_year
-   
+
 
 widget:force_close_on_insert
-   
+
 
 widget:format
-   
+
 
 widget:future_years
-   
+
 
 widget:history_length
-   
+
 
 widget:image_method
-   
+
 
 widget:image_portal_types
-   
+
 
 widget:maxlength
-   
+
 
 widget:nullValueTitle
-   
+
 
 widget:omitCountries
-   
+
 
 widget:only_for_review_states
-   
+
 
 widget:provideNullValue
-   
+
 
 widget:restrict_browsing_to_startup_directory
-   
+
 
 widget:rows
-   
+
 
 widget:search_catalog
-   
+
 
 widget:show_hm
-   
+
 
 widget:show_indexes
-   
+
 
 widget:show_path
-   
+
 
 widget:show_review_state
-   
+
 
 widget:show_ymd
-   
+
 
 widget:size
-   
+
 
 widget:starting_year
-   
+
 
 widget:startup_directory
-   
+
 
 widget:thousands_commas
-   
+
 
 widget:visible
-   
+
 
 widget:whole_dollars
-   
+
 
 view
 ====

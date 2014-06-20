@@ -17,11 +17,11 @@ In this example we take a folder of *Pages* (meta type: ``Document``)
 and create *News Items* from them::
 
     """
-    from the News Item type, the new items will be content copies 
+    from the News Item type, the new items will be content copies
     of their corresponding Pages (Documents)"""
 
-    source_contenttype = 'Document' 
-    target_contenttype = 'Service' 
+    source_contenttype = 'Document'
+    target_contenttype = 'Service'
 
     items = context.listFolderContents(
             contentFilter={"portal_type": source_contenttype})
@@ -32,7 +32,7 @@ and create *News Items* from them::
         description = item.Description()
         text = item.getText()
 
-        service = context.invokeFactory(target_contenttype, id, 
+        service = context.invokeFactory(target_contenttype, id,
                  title=title,description=description,text=text)
 
 .. TODO:: content type "Service"?
@@ -41,7 +41,7 @@ Converting Images into News Items
 ====================================
 
 This is similar to the example of converting pages into news items.
-Notice that when we pass the image data to ``invokeFactory`` we need to 
+Notice that when we pass the image data to ``invokeFactory`` we need to
 make it into a string::
 
     source_contenttype = 'Image'

@@ -261,19 +261,19 @@ Minimal code for creating a new catalog
                This may take a long time.
             """
 
-            
+
 
             def indexObject(obj, path):
                 self.reindexObject(obj)
 
             self.manage_catalogClear()
-        
+
             portal = getToolByName(self, 'portal_url').getPortalObject()
             portal.ZopeFindAndApply(portal,
                                     #""" put your meta_type here """,
-                                
-                                    obj_metatypes=(), 
-                                               
+
+                                    obj_metatypes=(),
+
                                     search_sub=True, apply_func=indexObject)
 
     InitializeClass(MyCatalog)
@@ -307,12 +307,12 @@ See *Catalogs* tab on archetype_tool in Zope Management Interface.
 Map an catalog for an new type
 ------------------------------
 
-code 
+code
 
 ::
 
  at = getToolByName(context,'archetype_tool')
- at.setCatalogsByType('MetaType', ['portal_catalog','mycatalog',]) 
+ at.setCatalogsByType('MetaType', ['portal_catalog','mycatalog',])
 
 
 

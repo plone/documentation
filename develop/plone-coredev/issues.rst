@@ -4,7 +4,7 @@
 Buildout Issues
 ---------------
 
-Buildout can be frustrating for those unfamiliar with parsing through autistic robot language. Fear not! These errors are almost always a quick fix and a little bit of understanding goes a long ways. 
+Buildout can be frustrating for those unfamiliar with parsing through autistic robot language. Fear not! These errors are almost always a quick fix and a little bit of understanding goes a long ways.
 
 Errors Running bootstrap.py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -12,7 +12,7 @@ You may not even get to running buildout and then you will already have an error
 
     ...
      File "/usr/local/lib/python2.6/site-packages/distribute-0.6.13-py2.6.egg/pkg_resources.py", line 556, in resolve
-        raise VersionConflict(dist,req) # XXX put more info here  
+        raise VersionConflict(dist,req) # XXX put more info here
      pkg_resources.VersionConflict: (zc.buildout 1.5.1 (/usr/local/lib/python2.6/site-packages/zc.buildout-1.5.1-py2.6.egg), Requirement.parse('zc.buildout==1.5.2'))
 
 
@@ -32,7 +32,7 @@ When you rerun bootstrap, it will look for the buildout of the egg, note that th
 
 Do one of those, say two hail marys, and re-run bootstrap. Tada!
 
-One other thing of note is that running bootstrap effectively ties that python executable and all of its libraries to your buildout. If you have several python installs and want to switch which python is tied to your buildout, simply rerun bootstrap.py with the new python (and then rerun buildout). You may get the same error above again but now that you know how to fix it, you can spend that time drinking beer instead of smashing your keyboard. 
+One other thing of note is that running bootstrap effectively ties that python executable and all of its libraries to your buildout. If you have several python installs and want to switch which python is tied to your buildout, simply rerun bootstrap.py with the new python (and then rerun buildout). You may get the same error above again but now that you know how to fix it, you can spend that time drinking beer instead of smashing your keyboard.
 
 Hooray!
 
@@ -41,11 +41,11 @@ When Mr. Developer is Unhappy
 ``mr.developer`` is never unhappy, except when it is. Although this technically isn't a buildout issue, it happens when running buildout so I'm putting it under buildout issues.
 
 When working with the dev instance, especially with all the moving back and forth between github and svn, you may have an old copy of a src package. The error looks like::
- 
+
     mr.developer: Can't update package 'Products.CMFPlone' because its URL doesn't match.
 
 
-As long as you don't have any pending commits, you just need to remove the package from src/ and it will recheck it out for you when it updates. 
+As long as you don't have any pending commits, you just need to remove the package from src/ and it will recheck it out for you when it updates.
 
 
 You can also get such fun errors as::
@@ -67,7 +67,7 @@ The second option is to allow the host that it is pointing to by adding somethin
 
     allow-hosts += sphinx.pocoo.org
 
-Again, this is only necessary if the package wasn't found in the end. 
+Again, this is only necessary if the package wasn't found in the end.
 
 Hooray!
 

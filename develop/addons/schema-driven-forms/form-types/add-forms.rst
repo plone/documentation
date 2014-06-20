@@ -1,4 +1,4 @@
-Add forms 
+Add forms
 =============
 
 **Forms to create new content objects**
@@ -35,27 +35,27 @@ content item.
     from Products.CMFCore.interfaces import IFolderish
 
     class IMyType(model.Schema):
-        
+
         ...
 
     class MyAddForm(form.SchemaAddForm):
         grok.name('add-my-type')
         grok.require('cmf.AddPortalContent')
         grok.context(IFolderish)
-        
+
         schema = IMyType
-        
+
         label = _(u"Add my type of content")
         description = _(u"A sample form.")
-        
+
         def create(self, data):
             type = MyType()
             type.id = data['id']
             type.title = data['title']
             ...
-            
+
             return type
-        
+
         def add(self, object):
             self.context._setObject(object.id, object)
 
@@ -77,26 +77,26 @@ A non-schema version would look like this:
     from Products.CMFCore.interfaces import IFolderish
 
     class IMyType(model.Schema):
-        
+
         ...
 
     class MyAddForm(form.AddForm):
         grok.name('add-my-type')
         grok.require('cmf.AddPortalContent')
         grok.context(IFolderish)
-        
+
         fields = field.Fields(IMyType)
-        
+
         label = _(u"Add my type of content")
         description = _(u"A sample form.")
-        
+
         def create(self, data):
             type = MyType()
             type.id = data['id']
             type.title = data['title']
             ...
-            
+
             return type
-        
+
         def add(self, object):
             self.context._setObject(object.id, object)

@@ -93,7 +93,7 @@ A simple example in practice is::
 
 Registering an interface for new collection::
 
-    <class class="plone.app.collection.collection.Collection" 
+    <class class="plone.app.collection.collection.Collection"
         zcml:condition="installed plone.app.collection">
      <implements interface=".interfaces.IMyInterface" />
     </class>

@@ -6,7 +6,7 @@ Using SELinux with Plone
 
     Tutorial on using SELinux with Plone, using Plone 4.3 and RedHat Linux 6.3.
 
-.. contents:: :local: 
+.. contents:: :local:
 
 Introduction
 ============
@@ -16,9 +16,9 @@ This document is a tutorial on using SELinux with Plone, using RedHat Linux 6.3 
 About SELinux
 =============
 
-SELinux is a mandatory access control system, meaning that SELinux assigns security *contexts* (presented by *labels*) to system resources, and allows access only to the processes that have defined required levels of authorization to the contexts. In other words, SELinux maintains that certain *target* executables (having security contexts) can access (level of access being defined explicitly) only certain files (having again security context labels). In essence the contexts are roles, which makes SELinux a Role Based Access Control system. It should be noted that even root is usually just an ordinary user for RBAC systems, and will be contained like any other user. 
+SELinux is a mandatory access control system, meaning that SELinux assigns security *contexts* (presented by *labels*) to system resources, and allows access only to the processes that have defined required levels of authorization to the contexts. In other words, SELinux maintains that certain *target* executables (having security contexts) can access (level of access being defined explicitly) only certain files (having again security context labels). In essence the contexts are roles, which makes SELinux a Role Based Access Control system. It should be noted that even root is usually just an ordinary user for RBAC systems, and will be contained like any other user.
 
-The concept of contexts and labels can be slightly confusing at first. It stems from the idea of chain of trust. A system that upholds that proper authorization checks are being done is worthless if the system allows moving the protected data to a place that does not have similar authorization checks. Context labels are file system attributes, and when the file is moved around the label (representing context) moves with the file. The system is supposed to limit where the information can be moved, and the contexts can be extended beyond file system (ie. labels on rows in database systems), building complete information systems that will never hand over data to a party that is unable (or unwilling) to take care of it. 
+The concept of contexts and labels can be slightly confusing at first. It stems from the idea of chain of trust. A system that upholds that proper authorization checks are being done is worthless if the system allows moving the protected data to a place that does not have similar authorization checks. Context labels are file system attributes, and when the file is moved around the label (representing context) moves with the file. The system is supposed to limit where the information can be moved, and the contexts can be extended beyond file system (ie. labels on rows in database systems), building complete information systems that will never hand over data to a party that is unable (or unwilling) to take care of it.
 
 Most SELinux policies *target* an executable, and define the contexts (usually applied with labels to files) it can access by using *type enforcement rules*. However there are also *capabilities* that control more advanced features such as the ability to execute heap or stack, setuid, fork process, bind into ports, or open TCP sockets. Most of the capabilities and macros come from reference policy, which offers policy developers ready solutions to most common problems. The reference policy shipped by Linux distributions contains ready rules for some 350 targets, including applications like most common daemons (sshd), and system services (init/systemd).
 
@@ -105,7 +105,7 @@ Most applications require largish amount of rules just to start properly. To rea
     permissive plonectl_exec_t;
     permissive plone_rw_t;
 
-Permissive in SELinux means that all actions by mentioned contexts will be allowed to process, and the incidents (*access vector denials*) will be only logged. This will allows to gather rules faster than going through the complete development cycle. 
+Permissive in SELinux means that all actions by mentioned contexts will be allowed to process, and the incidents (*access vector denials*) will be only logged. This will allows to gather rules faster than going through the complete development cycle.
 
 .. warning::
    Please note that permissive rules have to be removed at some point, or the policy will **not** protect the application as expected.
@@ -153,14 +153,14 @@ Caveats
 
 First of all, audit2allow is not a silver bullet. There are cases where your application accesses something that it does not really require for operation, for instance to scan your system for automatic configuration of services. There are also cases where it prints nothing yet the application clearly is denied access to something. That can be caused by *dontaudit* rules, which silence logging of events that could generate too much noise. In any case a healthy amount of criticism should be applied to everything audit2allow output, especially when the suggested rules would give access rights to outside application directories.
 
-Misconfiguration can cause either file labeling to fail, or the application process not to get transitioned to proper executing context. If it seems that the policy is doing nothing, check that the files are labeled correctly (`ls -lFZ`), and the process is running in the correct context (`ps -efZ`). 
+Misconfiguration can cause either file labeling to fail, or the application process not to get transitioned to proper executing context. If it seems that the policy is doing nothing, check that the files are labeled correctly (`ls -lFZ`), and the process is running in the correct context (`ps -efZ`).
 
 Evaluating the file context rules (fules and their labels) is managed by a heurestic algorithm, which gives precedence to more specific rules by evaluating the length and precision of the path patterns. The patterns are easy for beginner to misconfigure. When suspecting that the file context rules are not getting applied correctly, always investigate `semanage fcontext -l` to see what rules match your files.
 
 Policies for Plone
 ==================
 
-The following contains results of ordinary "install, test & break, add rules, repeat from beginning" development cycle for a basic Plone SELinux policy. 
+The following contains results of ordinary "install, test & break, add rules, repeat from beginning" development cycle for a basic Plone SELinux policy.
 
 Relabeling rights
 -----------------
@@ -187,7 +187,7 @@ By default you might not have the right to give any of new security labels to fi
     allow setfiles_t plone_rw_t:lnk_file relabelto;
     # Python interpreter creates pyc files, this is required to relabel them correctly in some cases
     allow setfiles_t plone_t:file relabelfrom;
-    
+
 If the transition is not done, the application will keep running in the starting user's original context. Most likely that will be unconfined_t, which means no SELinux restrictions will be applied to the process.
 
 Transition to context
@@ -206,7 +206,7 @@ When you first run Plone (ie. "plonectl fg"), you will notice that it doesn't ru
 
     # When unconfined_t runs something that has plonectl_exec_t transition the execution context to it
     type_transition unconfined_t plonectl_exec_t:process plonectl_exec_t;
-    # Allow the previous, and some basic process control 
+    # Allow the previous, and some basic process control
     allow unconfined_t plonectl_exec_t:process { siginh rlimitinh noatsecure transition };
     # The new process probably should have rights to itself
     allow plonectl_exec_t self:file entrypoint;
@@ -352,7 +352,7 @@ Easiest way to test the policy is to label for instance the Python executable as
     # chcon system_u:object_r:plonectl_exec_t:s0 python2.7
     # setenforce Enforcing
     # ./python2.7
-    Python 2.7.3 (default, Apr 28 2013, 22:22:46) 
+    Python 2.7.3 (default, Apr 28 2013, 22:22:46)
     [GCC 4.4.7 20120313 (Red Hat 4.4.7-3)] on linux2
     Type "help", "copyright", "credits" or "license" for more information.
     >>> import os
@@ -387,8 +387,8 @@ Then modify the following RPM spec file to suit your needs: ::
     Release:    1%{?dist}
     Summary:    SELinux policy module for plone
 
-    Group:  System Environment/Base     
-    License:    GPLv2+  
+    Group:  System Environment/Base
+    License:    GPLv2+
     # This is an example. You will need to change it.
     URL:        http://setest
     Source0:    plone.pp
@@ -447,10 +447,10 @@ External resources
 The following external resources are sorted by probable usefulness to someone who is beginning working with SELinux:
 
 - `Fedora SELinux FAQ <https://docs.fedoraproject.org/en-US/Fedora/13/html/SELinux_FAQ/index.html>`_
-- `Reference policy API <http://oss.tresys.com/docs/refpolicy/api/>`_ 
+- `Reference policy API <http://oss.tresys.com/docs/refpolicy/api/>`_
 - `NSA - SELinux FAQ <http://www.nsa.gov/research/selinux/faqs.shtml>`_
-- `NSA - SELinux main website <http://www.nsa.gov/research/selinux/index.shtml>`_ 
-- `Official SELinux project wiki <http://selinuxproject.org/>`_ 
+- `NSA - SELinux main website <http://www.nsa.gov/research/selinux/index.shtml>`_
+- `Official SELinux project wiki <http://selinuxproject.org/>`_
 - `Red Hat Enterprise SELinux Policy Administration (RHS429) classroom course <https://www.redhat.com/training/courses/rhs429/>`_
 - `Tresys Open Source projects <http://www.tresys.com/open-source.php>`_ (IDE, documentation about the reference policy, and several management tools)
 

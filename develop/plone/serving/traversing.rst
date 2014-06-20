@@ -344,7 +344,7 @@ Example::
 
     site = getSite() # returns portal root from thread local storage
 
-.. note:: Before Plone 4.3 getSite resided in zope.app.component.hooks. See 
+.. note:: Before Plone 4.3 getSite resided in zope.app.component.hooks. See
    http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/referencemanual-all-pages
 
 .. note:: Due to the fact that Plone does not show the default content item
@@ -472,7 +472,7 @@ Example code below::
 
         path = canonical.absolute_url_path()
 
-        return INavigationRoot.providedBy(canonical)    
+        return INavigationRoot.providedBy(canonical)
 
 Custom traversal
 =================
@@ -480,10 +480,10 @@ Custom traversal
 There exist many ways to make your objects traversable:
 
 * ``__getitem__()`` which makes your objects act like Python dictionary.
-  This is the simplest method and recommended. 
+  This is the simplest method and recommended.
 
 *  ``IPublishTraverse`` interface. There is an example below and works for
-   making nice urls and path munging. 
+   making nice urls and path munging.
 
 * ``ITraversable`` interface. You can create your own traversing hooks.
   ``zope.traversing.interfaces.ITraversable``
@@ -553,18 +553,18 @@ Example using ``IPublishTraverse``::
     class MyUser(BrowserView):
         """Registered as a browser view at '/user', collect the username and
         view name from the url, check security, and display that page. For
-        example, '/user/jjohns/log' will look up the log view for user 
+        example, '/user/jjohns/log' will look up the log view for user
         'jjohns'
         """
         path = []
-    
+
         def publishTraverse(self, request, name):
             # stop traversing, we have arrived
             request['TraversalRequestNameStack'] = []
             # return self so the publisher calls this view
         	return self
-    
-    
+
+
         def __init__(self, context, request):
             """Once we get to __call__, the path is lost so we
             capture it here on initialization
@@ -575,13 +575,13 @@ Example using ``IPublishTraverse``::
                 [self.section, profileid] = request.path
             elif len(self.request.path) == 1:
                 self.section = request.path[0]
-            
+
         def __call__(self):
             # do the permission check here, now that Zope has set
             # up the security context. It can't be checked in __init__
-            # because the security manager isn't set up on traverse 
+            # because the security manager isn't set up on traverse
             self.checkPermission()
-    
+
             # XXX: still need to check the permission of the view
             try:
                 view = api.content.get_view(self.section,
@@ -593,7 +593,7 @@ Example using ``IPublishTraverse``::
                                             self.context,
                                             self.request)
             return view()
-        
+
         def checkPermission(self):
             """You might want to do other stuff"""
             raise Unauthorized

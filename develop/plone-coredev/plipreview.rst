@@ -17,7 +17,7 @@ There are several things that could be addressed in a PLIP review depending on t
 
 General
 -------
- * Does the PLIP actually do what the implementors proposed? Are there incomplete variations? 
+ * Does the PLIP actually do what the implementors proposed? Are there incomplete variations?
  * Were there any errors running buildout? Did the migration(s) work?
  * Do error and status messages make sense? Are they properly internationalized?
  * Are there any performance considerations? Has the implementor addressed them if so?
@@ -30,10 +30,10 @@ Bugs
 
 Usability Issues
 ----------------
- * Is the implementation usable? 
- * How will novice end users respond to the change? 
- * Does this PLIP need a usability review? If you think this PLIP needs a usability review, please change the state to "please review" and add a note in the comments. 
- * Is the PLIP consistent with the rest of Plone? For example, if there is control panel configuration, does the new form fit in with the rest of the panels? 
+ * Is the implementation usable?
+ * How will novice end users respond to the change?
+ * Does this PLIP need a usability review? If you think this PLIP needs a usability review, please change the state to "please review" and add a note in the comments.
+ * Is the PLIP consistent with the rest of Plone? For example, if there is control panel configuration, does the new form fit in with the rest of the panels?
  * Does everything flow nicely for novice and advanced users? Is there any workflow that feels odd?
  * Are there any new permissions and do they work properly? Does their role assignment make sense?
 
@@ -57,7 +57,7 @@ Python
 Javascript
 ^^^^^^^^^^
  * Does the javascript meet our set of javascript standards? See :doc:`/develop/addons/javascript_standards`
- * Does the Javascript work in all currently supported browsers? Is it performant? 
+ * Does the Javascript work in all currently supported browsers? Is it performant?
 
 ME/TAL
 ^^^^^^

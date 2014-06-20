@@ -42,24 +42,24 @@ description.py::
           A helper view which exports dublin core description w/new line support
           allowing several paragraphs in Plone's description field.
           """
-      
+
           grok.name("description-helper")
           grok.context(Interface)
-      
+
           def render(self):
               """
               Get a content item description w/new line support.
-      
+
               Transform hard lines to breaks in HTML.
               """
-      
+
               # Call archetypes accessor
               text = self.context.Description()
-      
+
               # Transform plain text description with ASCII newlines
               # to one with
               portal_transforms = getToolByName(self.context, 'portal_transforms')
-      
+
               # Output here is a single <p> which contains <br /> for newline
               data = portal_transforms.convertTo('text/html', text, mimetype='text/-x-web-intelligent')
               html = data.getData()
@@ -95,9 +95,9 @@ Rewriting relative links
 
 Below is an example which:
 
-* rewrites all relative links of Page content as absolute; 
-* removes some nasty tags from Page content; 
-* outputs the folder content and subcontent as one continuous page; 
+* rewrites all relative links of Page content as absolute;
+* removes some nasty tags from Page content;
+* outputs the folder content and subcontent as one continuous page;
 * is based on :doc:`Grok views </develop/addons/components/grok>`.
 
 This is suitable for e.g. printing the whole folder in one pass.
@@ -167,26 +167,26 @@ This is suitable for e.g. printing the whole folder in one pass.
         # aborts page rendering
         for node in tree.xpath('//title'):
             node.getparent().remove(node)
-          
+
         data =  etree.tostring(tree, pretty_print=False, encoding="utf-8")
 
         return data
 
     class Help(grok.View):
         """ Render all folder pages and subpages as continuous printable document """
-        
-        # Available on any folder            
+
+        # Available on any folder
         grok.context(IFolderish)
 
         def update(self):
 
             objects = []
             # Walk through all objects recursively
-            
+
             def walk(folder, level):
-                            
+
                 for id, object in folder.contentItems():
-                    
+
                     if object.portal_type == "Image":
                         continue
 
@@ -195,23 +195,23 @@ This is suitable for e.g. printing the whole folder in one pass.
                         text = object.getText()
                     else:
                         text = ""
-                    
+
                     objects.append({
-                        "object":object, 
+                        "object":object,
                         "level":level,
                         # We need to re-map relative links or
                         # they are incorrect in rendered HTML output
                         "text" : remove_bad_tags(fix_links(text, object.absolute_url()))
                     })
-            
+
                     if object.portal_type == "Folder":
                         walk(object,level+1)
-                        
-            
+
+
             walk(self.context, 1)
-            
+
             self.objects = objects
-            
+
 ``help.pt``
 
 .. code-block:: html
@@ -219,7 +219,7 @@ This is suitable for e.g. printing the whole folder in one pass.
     <html xmlns="http://www.w3.org/1999/xhtml"
           xmlns:tal="http://xml.zope.org/namespaces/tal"
           xmlns:metal="http://xml.zope.org/namespaces/metal"
-          xmlns:i18n="http://xml.zope.org/namespaces/i18n" 
+          xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           metal:use-macro="context/main_template/macros/master">
     <body>
 
@@ -228,7 +228,7 @@ This is suitable for e.g. printing the whole folder in one pass.
 
       <p class="discreet">
         Printable versions
-      </p>  
+      </p>
     </metal:slot>
 
     <metal:block fill-slot="top_slot" tal:define="dummy python:request.set('disable_border',1)" />
@@ -238,19 +238,19 @@ This is suitable for e.g. printing the whole folder in one pass.
         <div class="help-all">
             <tal:rep repeat="page view/objects">
                 <tal:def define="body page/text|nothing;title page/object/Title;level page/level">
-                
+
                     <div tal:condition="python:level==1" style="page-break-before:always"><!-- --></div>
-                    <h1 tal:condition="python:level==1" tal:content="title" /> 
+                    <h1 tal:condition="python:level==1" tal:content="title" />
                     <h2 tal:condition="python:level==2" tal:content="title" />
                     <h3 tal:condition="python:level>2" tal:content="title" />
-                    
+
                     <div class="help-body">
                         <tal:body tal:replace="structure body" />
                     </div>
-                    
+
                     <div style="clear: both"><!-- --></div>
-                    
-                    
+
+
                 </tal:def>
             </tal:rep>
         </div>

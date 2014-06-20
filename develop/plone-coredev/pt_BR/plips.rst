@@ -3,7 +3,7 @@ Implementing PLIPS
 
 All about PLIPS
 ---------------
-What is a PLIP? 
+What is a PLIP?
     A PLIP is a PLone Improvement Proposal. It is a change to a Plone package that would affect everyone. PLIPs go through a different process than bug fixes because of their broad reaching effect. The Plone 4.x Framework Team reviews all PLIPs to be sure that it’s in the best interest of the broader community to be implemented and that it is of high quality.
 
 Is it a PLIP or a bugfix?
@@ -15,7 +15,7 @@ Who can submit PLIPs?
     PLIPs are not just for code monkeys. If you have ideas on new interactions or UI your ideas are more than welcome. We will even help you pair up with implementors if needed.
 
 What is a PLIP champion?
-   When you submit your PLIP and it is approved, 1 Framework Team member who is especially excited about seeing the PLIP completed will be assigned to your PLIP as a champion. They are there to push you through completion as well as answer any questions and provide guidance. 
+   When you submit your PLIP and it is approved, 1 Framework Team member who is especially excited about seeing the PLIP completed will be assigned to your PLIP as a champion. They are there to push you through completion as well as answer any questions and provide guidance.
 
     A champion should
 
@@ -35,11 +35,11 @@ When can I submit a PLIP?
 
 When is the PLIP due?
     Summary: As soon as you get it done.
-    &tldr; Technically, we want to see it completed for the release to which it’s assigned. We know that things get busy and new problems make PLIPs more complicated and we will push it to the next release. 
+    &tldr; Technically, we want to see it completed for the release to which it’s assigned. We know that things get busy and new problems make PLIPs more complicated and we will push it to the next release.
     In general, we don’t want to track a PLIP for more than a year. If your PLIP is accepted and we haven’t seen activity in over a year, we will probably ask you to restart the whole process.
 
 You don’t like my PLIP :( What now?
-    Just because a PLIP isn’t accepted in core doesn’t mean it’s a bad idea. It is often the case that there are competing implementations and we want to see it vetted as an add on before “blessing” a preferred implementation. 
+    Just because a PLIP isn’t accepted in core doesn’t mean it’s a bad idea. It is often the case that there are competing implementations and we want to see it vetted as an add on before “blessing” a preferred implementation.
 
 Process Overview
 ----------------
@@ -48,7 +48,7 @@ Process Overview
 #. Developer implements PLIP (code, tests, documentation)
 #. PLIP is submitted for review by developer
 #. Framework Team reviews plip and givea feedback
-#. Developer addresses concerns in feedback and resubmits if necessary. This may go back and forth a few times until both the FWT and developer are happy with the result. 
+#. Developer addresses concerns in feedback and resubmits if necessary. This may go back and forth a few times until both the FWT and developer are happy with the result.
 #. PLIP is approved for merge. In rare circumstances, a PLIP will be rejected. This is usually the result of the developer not responding to feedback or dropping out of the process.  Hang in there!
 #. After all other PLIPS are merged, a release is cut. Standy for bugs!
 
@@ -63,9 +63,9 @@ When writing a PLIP, be as specific and to-the-point as you can. Remember your a
 
 If your change is minor then a ticket in the tracker will be sufficient, added as an enhancement. The key point here is that each change needs documentation so other users can see what it is. This can be in the form of an issue tracker entry, or a PLIP in the case of a bigger change. A bug or minor change does normally not need to go through a review process - a PLIP does.
 
-After your plip is written, solicit feedback on your idea on the plone-developers mailing list. In this vetting process, you want to make sure that the change won’t adversely affect other people on accident. Others may be able to point out risks or even offer up better or existing solutions. 
+After your plip is written, solicit feedback on your idea on the plone-developers mailing list. In this vetting process, you want to make sure that the change won’t adversely affect other people on accident. Others may be able to point out risks or even offer up better or existing solutions.
 
-When you are happy with the feedback, submit a PLIP. XXX: Link here. Please use the template provided (XXX: put the template here? Can we just have a custom ticket type?). Please note a few things. It is very rare that the “Risks” section will be empty or none. If you find this is the case and your PLIP is anything more than trivial, maybe some more vetting should be done. 
+When you are happy with the feedback, submit a PLIP. XXX: Link here. Please use the template provided (XXX: put the template here? Can we just have a custom ticket type?). Please note a few things. It is very rare that the “Risks” section will be empty or none. If you find this is the case and your PLIP is anything more than trivial, maybe some more vetting should be done.
 
 The seconder field is REQUIRED. We will send the PLIP back to you if it is not filled in. Currently, this is just someone else who thinks your PLIP is a good idea, a +1. In the near future, we will start asking that the seconder is either a coding partner, or someone who is willing and able to finish the PLIP should something happen to the implementor.
 
@@ -86,11 +86,11 @@ These are the criterias by which the framework team will review your review bund
 
 Implementing Your PLIP
 ----------------------
-You can start the development at any time - but if you are going to modify Plone itself, you might want to wait to see if your idea is approved first to save yourself some work if it isn't. 
+You can start the development at any time - but if you are going to modify Plone itself, you might want to wait to see if your idea is approved first to save yourself some work if it isn't.
 
 General Rules
 ^^^^^^^^^^^^^
- * Any new packages must be in a branch in the plone namespace in github. You don't have to develop there, but it must be there when submitted. We recommend using branches off of the github.com/plone repo and will detail that below. 
+ * Any new packages must be in a branch in the plone namespace in github. You don't have to develop there, but it must be there when submitted. We recommend using branches off of the github.com/plone repo and will detail that below.
  * Most importantly, the PLIP reviewers must be able run buildout and everything should "just work" (tm).
  * Any new code must:
     * Be :doc:`Properly Documented <documentation>`

@@ -84,7 +84,7 @@ Reseting user password without emailing them
 Exporting and importing member passwords
 ----------------------------------------
 
-You can also get at the hash of the user's password 
+You can also get at the hash of the user's password
 (only the hash is available, and only for standard Plone user objects)
 (in this example we're in Plone add-on context, since ``self`` is
 acquisition-wrapped)::
@@ -97,7 +97,7 @@ Note that this is a private data structure.
 Depending on the Plone version and add-ons in use, it may not be available.
 
 You can use this hash directly when importing your user data,
-for example as follows (can be executed from a 
+for example as follows (can be executed from a
 :doc:`debug prompt </develop/plone/misc/commandline>`.)::
 
     # The file 'exported.txt' contains lines with: "memberid hash"
@@ -118,7 +118,7 @@ for example as follows (can be executed from a
             c += 1
             changes.append((memberid, passwordhash_exported))
 
-    uf.source_users._user_passwords.update(changes) 
+    uf.source_users._user_passwords.update(changes)
 
 Also, take a look at a script for exporting Plone 3.0's memberdata and
 passwords:
@@ -158,7 +158,7 @@ have the context::
     from Products.CMFCore.utils import getToolByName
 
     membership_tool = getToolByName(self, 'portal_membership')
-    agents = [member for member in membership_tool.listMembers() 
+    agents = [member for member in membership_tool.listMembers()
                 if member.has_role('Agent')]
 
 
@@ -235,17 +235,17 @@ Example to get full group information::
     for group in group_list:
         # group is PloneGroup object
         yield (group.getName(), group.title)
-        
+
 List users within all groups
 ----------------------------
 
 Example to get the email addresses of all users on a site, by group::
-            
+
     acl_users = getToolByName(context, 'acl_users')
     groups_tool = getToolByName(context, 'portal_groups')
     groups = acl_users.source_groups.getGroupIds()
     for group_id in groups:
-        group = groups_tool.getGroupById(group_id)  
+        group = groups_tool.getGroupById(group_id)
         if group is None:
             continue
         members = group.getGroupMembers()
@@ -338,7 +338,7 @@ Use the ``portal_registration`` tool. Example (browserview)::
             IStatusMessage(request).addStatusMessage(_(u"Username must contain only characters a-z"), "error")
             return None
 
-        # This is the minimum required information 
+        # This is the minimum required information
         # to create a working member
         properties = {
             'username': username,
@@ -366,7 +366,7 @@ Batch member creation
 Email login
 ===========
 
-* Plone 3 does not allow a dot in the username. 
+* Plone 3 does not allow a dot in the username.
     * This is available as an add-on; see http://plone.org/products/betahaus.emaillogin
 
 * In Plone 4, it is a default feature.
@@ -559,8 +559,8 @@ Example ``company.py``::
 
         # This is minimum required information set
         # to create a working member
-        properties = { 
-            'username': username, 
+        properties = {
+            'username': username,
             # Full name must be always as utf-8 encoded
             'fullname': title.encode("utf-8"),
             'email': email

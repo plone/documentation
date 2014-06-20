@@ -17,7 +17,7 @@ go to her personal area:
 
 .. figure:: /_static/dashboard.png
    :align: center
-   :alt: 
+   :alt:
 
 The dashboard appears to be empty for a new user.
 
@@ -28,7 +28,7 @@ portlets on this new web site. Here are the default portlets:
 
 .. figure:: /_static/dashboardedit.png
    :align: center
-   :alt: 
+   :alt:
 
 You see the *News* and *Events* portlets in the left-most column, the
 *Recent Items* portlet in the second column, and the *Review List*

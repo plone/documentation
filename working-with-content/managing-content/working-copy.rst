@@ -35,14 +35,14 @@ drop-down menu, select "Check out":
 
 .. figure:/_static/01.png
    :align: center
-   :alt: 
+   :alt:
 
 An info message will appear indicating you're now working with a working
 copy:
 
 .. figure:/_static/03.png
    :align: center
-   :alt: 
+   :alt:
 
 Now you're free to edit your own local copy of a published document.
 During this time, the original document is "locked" -- that is, no one
@@ -52,7 +52,7 @@ subsequently lost from) the published version while you edit your copy.
 
 .. figure:/_static/locked.png
    :align: center
-   :alt: 
+   :alt:
 
 Using "Check in"
 ----------------
@@ -62,21 +62,21 @@ simply choose "Check-in" from the "Actions" drop-down menu:
 
 .. figure:/_static/04a.png
    :align: center
-   :alt: 
+   :alt:
 
 You will then be prompted to enter a Check-in message. Fill it out and
 click on "Check in":
 
 .. figure:/_static/04b.png
    :align: center
-   :alt: 
+   :alt:
 
 Your updated document will now replace the published copy and become the
 new published copy.
 
 .. figure:/_static/05.png
    :align: center
-   :alt: 
+   :alt:
 
 You will also notice that there is no longer a copy of the document in
 the user's personal folder.
@@ -95,14 +95,14 @@ copy and select "Cancel check-out":
 
 .. figure:: /_static/cancel1.png
    :align: center
-   :alt: 
+   :alt:
 
 You will prompted to confirm the "Cancel checkout" or to "Keep
 checkout":
 
 .. figure:: /_static/cancel2.png
    :align: center
-   :alt: 
+   :alt:
 
 Note that if the user who has checked out a working copy is not
 available to check in or cancel a check out, users with the Manager role

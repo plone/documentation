@@ -15,7 +15,7 @@ The user object
 
 There are two basic user types:
 a normal user (as defined by the ``IBasicUser`` interface)
-and a user with member properties 
+and a user with member properties
 (defined by the ``IPropertiedUser`` interface).
 Since basic users are not used within Plone we will only consider
 ``IPropertiedUser`` users.

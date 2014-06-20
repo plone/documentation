@@ -25,7 +25,7 @@ Through-the-web changes
 Minor configuration changes can be done through the web. These
 changes are effective immediately and don't require you to write
 any code or restart Zope application server. The downside is that
-since through-the-web changes don't have a source code "recipe" for 
+since through-the-web changes don't have a source code "recipe" for
 what you did,
 the changes are not automatically repeatable.
 If you need to do the same changes

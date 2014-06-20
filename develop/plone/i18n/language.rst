@@ -4,7 +4,7 @@ Language functions
 
 .. admonition:: Description
 
-    Accessing and changing the language state of Plone programmatically. 
+    Accessing and changing the language state of Plone programmatically.
 
 .. contents:: :local:
 
@@ -37,7 +37,7 @@ Example view/viewlet method of getting the current language.
 
     from Products.Five.browser import BrowserView
     from zope.component import getMultiAdapter
-    
+
     class MyView(BrowserView):
 
         ...
@@ -85,7 +85,7 @@ Example below::
     # set member, iterate keys and values this is enough
     try:
         from collections import OrderedDict
-    except ImportError:    
+    except ImportError:
         from odict import odict as OrderedDict
 
     def getLanguages(self):
@@ -95,16 +95,16 @@ Example below::
         Example output::
 
              {
-                u'fi': {u'id' : u'fi', u'flag': u'/++resource++country-flags/fi.gif', u'name': u'Finnish', u'native': u'Suomi'}, 
-                u'de': {u'id' : u'de', u'flag': u'/++resource++country-flags/de.gif', u'name': u'German', u'native': u'Deutsch'}, 
-                u'en': {u'id' : u'en', u'flag': u'/++resource++country-flags/gb.gif', u'name': u'English', u'native': u'English'}, 
+                u'fi': {u'id' : u'fi', u'flag': u'/++resource++country-flags/fi.gif', u'name': u'Finnish', u'native': u'Suomi'},
+                u'de': {u'id' : u'de', u'flag': u'/++resource++country-flags/de.gif', u'name': u'German', u'native': u'Deutsch'},
+                u'en': {u'id' : u'en', u'flag': u'/++resource++country-flags/gb.gif', u'name': u'English', u'native': u'English'},
                 u'ru': {u'id' : u'ru', u'flag': u'/++resource++country-flags/ru.gif', u'name': u'Russian', u'native': u'\u0420\u0443\u0441\u0441\u043a\u0438\u0439'}
               }
         """
         result = OrderedDict()
 
         portal_languages = self.context.portal_languages
-        
+
         # Get barebone language listing from portal_languages tool
         langs = portal_languages.getAvailableLanguages()
 
@@ -289,22 +289,22 @@ Below some example code.
 
 ``languages.py``::
 
-        """ Custom language negotiator based on hostname.  
+        """ Custom language negotiator based on hostname.
         """
 
         from Products.PloneLanguageTool import LanguageTool
-        
+
         # These are default languages available when hostname cannot be solved
         all_languages = [ "fi", "en" ]
-        
+
         def get_host_name(request):
-            """ Extract host name in virtual host safe manner 
-            
+            """ Extract host name in virtual host safe manner
+
             @param request: HTTPRequest object, assumed contains environ dictionary
-            
+
             @return: Host DNS name, as requested by client. Lowercased, no port part.
             """
-            
+
             if "HTTP_X_FORWARDED_HOST" in request.environ:
                 # Virtual host
                 host = request.environ["HTTP_X_FORWARDED_HOST"]
@@ -314,50 +314,50 @@ Below some example code.
             else:
                 host = None
                 return host
-                
+
             # separate to domain name and port sections
             host=host.split(":")[0].lower()
-                
-            return host 
-        
-        
+
+            return host
+
+
         def get_language(domain_name):
-            """    
+            """
             @param domain_name: Full qualified domain name of HTTP request
             """
-            
+
             if domain_name.endswith(".mobi") or domain_name.endswith(".com"):
                 return "en"
             elif domain_name.endswith(".fi"):
                 return "fi"
             else:
-                return "en"         
-        
+                return "en"
+
         def getCcTLDLanguages(self):
             """
             Monkey-patched top level domain language negotiator.
-            
+
             This will be installed by collective.monkeypatcher.
-            """        
-            
+            """
+
             if not hasattr(self, 'REQUEST'):
                 return None
-            
+
             request = self.REQUEST
-            
+
             # Could not extract hostname
             hostname = get_host_name(request)
-                
+
             if not hostname:
                 return all_languages
-                             
+
             # Limit available languages based on hostname
             langs = [ get_language(hostname) ]
-            
+
             return langs
-            
+
         # Also we need to fix a bug present in Plone 3.3.5
-        # 
+        #
         #    @memoize
         #    def language(self):
         #        # TODO Looking for lower-case language is wrong, the negotiator
@@ -366,36 +366,36 @@ Below some example code.
         #        # the content language, though.
         #        return self.request.get('language', None) or \
         #                aq_inner(self.context).Language() or self.default_language()
-        
+
         from plone.memoize.view import memoize, memoize_contextless
-        
+
         def working_portal_state_language(self):
                 return self.request.get('LANGUAGE', None) or \
                         self.request.get('language', None) or \
                         aq_inner(self.context).Language() or \
                         self.default_language()
-        
+
         working_portal_state_language = memoize(working_portal_state_language)
 
 ``configure.zcml``
 
 .. code-block:: xml
 
-  <!-- Use collective.monkeypatcher to introduce our custom language negotiation phase -->  
+  <!-- Use collective.monkeypatcher to introduce our custom language negotiation phase -->
   <monkey:patch
         description="Add custom TLD language resolution"
         class="Products.PloneLanguageTool.LanguageTool"
         original="getCcTLDLanguages"
         replacement=".languages.getCcTLDLanguages"
         />
-  
+
   <monkey:patch
         description="Fix Plone 3.3.5 bug"
         class="plone.app.layout.globals.portal.PortalState"
         original="language"
         replacement=".languages.working_portal_state_language"
         />
-  
+
 Login-aware language negotiation
 ==========================================
 
@@ -425,19 +425,19 @@ Corresponding event handler::
     from Products.CMFCore.utils import getToolByName
     from AccessControl import getSecurityManager
     from zope.app.component.hooks import getSite
-    
+
     @adapter(IPubAfterTraversal)
     def Negotiator(event):
-    
+
         # Keep the current request language (negotiated on portal_languages)
         # untouched
-    
+
         site = getSite()
         ms = getToolByName(site, 'portal_membership')
         member = ms.getAuthenticatedMember()
         if member.getUserName() == 'Anonymous User':
             return
-    
+
         language = member.language
         if language:
             # Fake new language for all authenticated users

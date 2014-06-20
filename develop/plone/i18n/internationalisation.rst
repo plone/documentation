@@ -81,7 +81,7 @@ a directory called ``LC_MESSAGES`` within each of these, followed by the
 corresponding ``.po`` files containing the translation strings:
 
 .. code-block:: sh
-   
+
    ./locales/en/LC_MESSAGES/mypackage.po
    ./locales/fi/LC_MESSAGES/mypackage.po
    ./locales/ga/LC_MESSAGES/mypackage.po
@@ -105,8 +105,8 @@ You also need to have the following ZCML entry:
 
 .. code-block:: xml
 
-    <configure xmlns:i18n="http://namespaces.zope.org/i18n"> 
-        <i18n:registerTranslations directory="locales" /> 
+    <configure xmlns:i18n="http://namespaces.zope.org/i18n">
+        <i18n:registerTranslations directory="locales" />
     </configure>
 
 After the setup above you can use message factory to mark strings with
@@ -116,7 +116,7 @@ Message ids must be unicode strings.
 
 .. code-block:: python
 
-    from your.app.package import yourAppMessageFactory as _ 
+    from your.app.package import yourAppMessageFactory as _
     my_translatable_text = _(u"My text")
 
 The object will still look like a string::
@@ -133,11 +133,11 @@ But in reality it is a ``zope.i18nmessageid.message.Message`` object::
     'your.app.package'
 
 To see the translation::
-    
+
     >>> from zope.i18n import translate
     >>> translate(my_translatable_text)
     u"The text of the translation." # This is the corresponding msgstr from the .po file
-    
+
 For more information see:
 
 * http://grok.zope.org/documentation/how-to/how-to-internationalize-your-application
@@ -151,7 +151,7 @@ Declare XML namespace ``i18n`` and translation domain at the beginning of your t
 
     <div id="mobile-header" xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="plomobile">
 
-Translate element content text using ``i18n:translate=""``. It will use the text content of the 
+Translate element content text using ``i18n:translate=""``. It will use the text content of the
 element as msgid.
 
 .. code-block:: html
@@ -203,7 +203,7 @@ Translation can be performed using the ``context.translate()`` method::
 
     # translated is now u"Käännetty teksti" (in Finnish)
 
-``context.translate()`` uses the ``translate.py`` Python script from 
+``context.translate()`` uses the ``translate.py`` Python script from
 ``LanguageTool``.
 
 It has the signature::
@@ -214,23 +214,23 @@ It has the signature::
 and does the trick::
 
     from Products.CMFCore.utils import getToolByName
-    
+
     # get tool
     tool = getToolByName(context, 'translation_service')
-    
+
     # this returns type unicode
     value = tool.translate(msgid,
                             domain,
                             mapping,
                             context=context,
                             target_language=target_language,
-                            default=default)                  
-              
+                            default=default)
+
 .. note::
-        
+
     Translation needs HTTP request object and thus may not work correctly
-    from command-line scripts. 
-        
+    from command-line scripts.
+
 
 Non-python message ids
 ----------------------
@@ -285,14 +285,14 @@ First start Plone in debug shell:
 .. code-block:: console
 
     bin/instance debug
-        
+
 and then call translation service, in your site, manually::
 
     >>> site = app.yoursiteid
     >>> translation_service = site.translation_service
     >>> translation_service.translate("Add Events Portlet", domain="plone", target_language="fi")
     u'Lis\xe4\xe4 Tapahtumasovelma'
-            
+
 Plone 3
 ---------
 
@@ -381,10 +381,10 @@ automate generation of ``.mo`` files of your product ``.po`` files.
 .. Note:: If you use i18ndude make sure to use ``_`` as an alias for
     your ``MessageFactory`` else i18ndude won't find your message strings
     in python code and report that "no entries for domain" were found.
-        
+
 See:
 
-* http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4       
+* http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
 
 Examples:
 
@@ -412,7 +412,7 @@ Add the following to your buildout.cfg:
     unzip = true
     recipe = zc.recipe.egg
     eggs = i18ndude
-        
+
 After this ``i18ndude`` is available in your ``buildout/bin`` folder
 
 For **Plone 3** you might need to add:
@@ -424,7 +424,7 @@ For **Plone 3** you might need to add:
     zope.i18nmessageid = 3.6.1
     zope.interface = 3.8.0
 
-.. code-block:: console 
+.. code-block:: console
 
         bin/i18ndude -h
         Usage: i18ndude command [options] [path | file1 file2 ...]]
@@ -434,7 +434,7 @@ You can also call it relative to your current package source folder
 .. code-block:: console
 
         server:home moo$  cd src/mfabrik.plonezohointegration/
-        server:mfabrik.plonezohointegration moo$ ../../bin/i18ndude 
+        server:mfabrik.plonezohointegration moo$ ../../bin/i18ndude
 
 .. warning::
 
@@ -469,8 +469,8 @@ Example:
 .. code-block:: console
 
     i18ndude rebuild-pot --pot locales/mydomain.pot --create your.app.package .
-    
-    
+
+
 Manual ``.po`` entries
 ------------------------
 
@@ -493,7 +493,7 @@ Here is a sample ``manual.pot`` file::
     "Domain: mfabrik.app\n"
 
     # This entry is used in gomobiletheme.mfabrik  templates for the campaign page header
-    # It is not automatically picked, since it is referred from external package        
+    # It is not automatically picked, since it is referred from external package
     #. Default: "Watch video"
     msgid "watch_video"
     msgstr ""
@@ -529,34 +529,34 @@ The script will:
     #
     # http://plone.org/documentation/manual/plone-community-developer-documentation/i18n/localization
     #
-    
+
     # Assume the product name is the current folder name
     CURRENT_PATH=`pwd`
     CATALOGNAME="yourproduct.app"
-    
+
     # List of languages
     LANGUAGES="en fi de"
-    
+
     # Create locales folder structure for languages
     install -d locales
     for lang in $LANGUAGES; do
         install -d locales/$lang/LC_MESSAGES
     done
-    
+
     # Assume i18ndude is installed with buildout
     # and this script is run under src/ folder with two nested namespaces in the package name (like mfabrik.plonezohointegration)
     I18NDUDE=../../../../bin/i18ndude
-    
+
     if test ! -e $I18NDUDE; then
             echo "You must install i18ndude with buildout"
             echo "See https://github.com/collective/collective.developermanual/blob/master/source/i18n/localization.txt"
             exit
     fi
-    
+
     #
     # Do we need to merge manual PO entries from a file called manual.pot.
     # this option is later passed to i18ndude
-    # 
+    #
     if test -e locales/manual.pot; then
             echo "Manual PO entries detected"
             MERGE="--merge locales/manual.pot"
@@ -564,31 +564,31 @@ The script will:
             echo "No manual PO entries detected"
             MERGE=""
     fi
-    
+
     # Rebuild .pot
     $I18NDUDE rebuild-pot --pot locales/$CATALOGNAME.pot $MERGE --create $CATALOGNAME .
-    
-    
+
+
     # Compile po files
     for lang in $(find locales -mindepth 1 -maxdepth 1 -type d); do
-    
+
         if test -d $lang/LC_MESSAGES; then
-    
+
             PO=$lang/LC_MESSAGES/${CATALOGNAME}.po
-    
+
             # Create po file if not exists
             touch $PO
-    
+
             # Sync po file
             echo "Syncing $PO"
             $I18NDUDE sync --pot locales/$CATALOGNAME.pot $PO
-    
-    
+
+
             # Plone 3.3 and onwards do not need manual .po -> .mo compilation,
             # but it will happen on start up if you have
             # registered the locales directory in ZCML
             # For more info see http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
-        
+
             # Compile .po to .mo
             # MO=$lang/LC_MESSAGES/${CATALOGNAME}.mo
             # echo "Compiling $MO"
@@ -638,8 +638,8 @@ You need to give the name to the dynamic part
 .. code-block:: html
 
     <h1 i18n:translate="search_form_heading">
-    Search from 
-    <span i18n:name="site_title" 
+    Search from
+    <span i18n:name="site_title"
           tal:content="context/@@plone_portal_state/portal_title" /></h1>
 
 ... and then you can refer the dynamic part by a name::
@@ -660,10 +660,10 @@ Overriding translations
 ========================
 
 If you need to change a translation from a ``.po`` file, you could
-create a new python package and register your own ``.po`` files.  
+create a new python package and register your own ``.po`` files.
 
-To do this, create the package and add a ``locales`` directory in there, 
-along the lines of what `plone.app.locales`_ does.  
+To do this, create the package and add a ``locales`` directory in there,
+along the lines of what `plone.app.locales`_ does.
 Then you can add your own translations in the language that you need;
 for example ``locales/fr/LC_MESSAGES/plone.po`` to override French messages
 in the ``plone`` domain.
@@ -697,9 +697,9 @@ To manage this, you can include the ZCML in the buildout:
     # is loaded before plone.app.locales
     zcml = my.package
 
-See the *Overriding Translations* section of Maurits van Rees's 
+See the *Overriding Translations* section of Maurits van Rees's
 `blog entry on Plone i18n
-<http://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4>`_, 
+<http://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4>`_,
 and Vincent Fretin's `posting
 <http://article.gmane.org/gmane.comp.web.zope.plone.user/109580>`_ on the
 Plone-Users mailing list.
@@ -715,7 +715,7 @@ Other
 * http://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
 
 * http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
-            
+
 * http://dev.plone.org/plone/ticket/9089
 
 

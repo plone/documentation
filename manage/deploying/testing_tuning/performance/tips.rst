@@ -37,7 +37,7 @@ to raise ``ConflictErrors`` if there is considerable load on the system.
 
 Memcached provides a more scalable session backend.
 
-For more information, see 
+For more information, see
 `lovely.session add-on product <https://pypi.python.org/pypi/lovely.session/0.2.2>`_.
 
 Input/output performance of the server
@@ -60,7 +60,7 @@ Reducing memory usage
 =======================
 
 These tips are especially critical when running Plone on low-memory virtual
-private server (VPS). But using the memory tips below, and some filesystem and operating system tweaks, 
+private server (VPS). But using the memory tips below, and some filesystem and operating system tweaks,
 it is also perfectly possible to run Plone on an ARM-based Android stick, or a Raspberry Pi. See http://polyester.github.io/
 
 Disable extra languages

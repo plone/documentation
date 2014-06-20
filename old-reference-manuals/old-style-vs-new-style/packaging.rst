@@ -63,7 +63,7 @@ Distribute
 
 Distribute is a fork of Setuptools. It is intended to "get us through" to the
 point where a better solution can be implemented within the Python core in
-the Distutils2 module which is currently in development (as of early 2011). 
+the Distutils2 module which is currently in development (as of early 2011).
 
 Distribute is actively maintained, has frequent bug fixes and releases, and
 is the self-proclaimed "new hotness".

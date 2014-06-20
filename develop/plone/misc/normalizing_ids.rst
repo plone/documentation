@@ -4,7 +4,7 @@
 
 .. admonition:: Description
 
-	How to convert arbitrary text input to URL/CSS/file/programming safe ids. 
+	How to convert arbitrary text input to URL/CSS/file/programming safe ids.
 
 .. contents:: :local:
 
@@ -67,7 +67,7 @@ Creating ids programmatically
 -----------------------------
 
 If you are creating content programmatically using invokeFactory() or by
-calling the class constructor you need to provide the id yourself. 
+calling the class constructor you need to provide the id yourself.
 
 Below is an example how to generate id from a title. *container* is the
 folderish object that will contain our new object.::
@@ -76,12 +76,12 @@ folderish object that will contain our new object.::
     import transaction
     from zope.container.interfaces import INameChooser
 
-    # For the NameChooser to work, it needs our object to already exist. 
+    # For the NameChooser to work, it needs our object to already exist.
     # So we create our object with a temporary but unique id. Seconds since
     # epoch will do.
     oid = container.invokeFactory(portal_type, id=time.time())
 
-    # It's necessary to save the object creation before we can rename it 
+    # It's necessary to save the object creation before we can rename it
     transaction.savepoint(optimistic=True)
     new_obj = container._getOb(oid)
 

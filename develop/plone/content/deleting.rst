@@ -34,7 +34,7 @@ Or::
 Permissions
 -------------
 
-The user must have Zope 2 *Delete objects* permission on the *content item* being 
+The user must have Zope 2 *Delete objects* permission on the *content item* being
 deleted. This is checked in ``Products.CMFPlone.PloneFolder.manage_delObjects()``.
 
 Otherwise an ``Unauthorized`` exception is raised.
@@ -73,7 +73,7 @@ This can be a bit tricky. An example::
 
     ids = folder.objectIds() # Plone 3 or older
     ids = folder.keys()      # Plone 4 or newer
-    
+
     if len(ids) > 0:
         # manage_delObject will mutate the list
         # so we cannot give it tuple returned by objectIds()
@@ -84,7 +84,7 @@ Bypassing link integrity check
 ===============================
 
 If link integrity checks has been enabled in the site setup, you cannot
-delete objects which themselves are link targets or if their children 
+delete objects which themselves are link targets or if their children
 are link targets.
 
 Instead, a ``LinkIntegrityException`` will be raised.
@@ -92,7 +92,7 @@ The ``LinkIntegrityException`` contains information identifying
 the content which could not be deleted.
 
 The ``plone.app.linkintegrity.browser.remote`` module contains
-code which allows you to delete the object in any case. 
+code which allows you to delete the object in any case.
 It catches the exception, modifies the HTTP request
 to contain a marker interface allowing delete to happen
 and then replays the transaction.
@@ -102,7 +102,7 @@ you will be shown a confirmation dialog. The original request payload
 gets pickled and is stored encoded in the HTML form.
 
 When the user presses confirm, the original request gets unpickled
-from the ``HTTP POST`` payload. Then the view modifies the Zope publisher 
+from the ``HTTP POST`` payload. Then the view modifies the Zope publisher
 so that it will play the original unpickled ``HTTP POST``
 with the marker interface
 "Do not care about link integrity breaches" turned on.
@@ -122,7 +122,7 @@ integrity check::
     props.enable_link_integrity_checks = False
 
     for b in items:
-        count += 1            
+        count += 1
         obj = b.getObject()
         logger.info("Deleting:" + obj.absolute_url() + " " + str(obj.created()))
 
@@ -152,7 +152,7 @@ events which might raise exception due to bad broken objects
 or badly behaving code.
 
 `OFS.ObjectManager <http://svn.zope.org/Zope/trunk/src/OFS/ObjectManager.py?rev=115507&view=auto>`_, the base class for Zope folders,
-provides an internal method to delete 
+provides an internal method to delete
 objects from a folder without firing any events::
 
     # Delete object with id "broken-folder" without firing any delete events
@@ -180,7 +180,7 @@ delete them if they are created too long ago::
     end = DateTime.DateTime() - 30*3
     start = DateTime.DateTime(2000, 1,1)
 
-    date_range_query = { 'query':(start,end), 'range': 'min:max'} 
+    date_range_query = { 'query':(start,end), 'range': 'min:max'}
 
     items = context.portal_catalog.queryCatalog({
                 "portal_type":"FeedFeederItem",
@@ -193,7 +193,7 @@ delete them if they are created too long ago::
 
     count = 0
     for b in items:
-        count += 1            
+        count += 1
         obj = b.getObject()
         print >> buf, "Deleting:" + obj.absolute_url() + " " + str(obj.created())
         obj.aq_parent.manage_delObjects([obj.getId()])
@@ -203,14 +203,14 @@ delete them if they are created too long ago::
 Below is an advanced version for old item-date-based deletion code
 which is suitable for huge sites.
 This snippet is from the ``Products.feedfeeder`` package.
-It will look for ``Feedfeeder`` items 
-(automatically generated from RSS) which 
+It will look for ``Feedfeeder`` items
+(automatically generated from RSS) which
 are older than X days and delete them.
 
 It's based on Zope 3 page registration (sidenote: I noticed that views do not
 need to be based on BrowserView page class).
 
-* Transaction thresholds make sure the code runs faster and does not 
+* Transaction thresholds make sure the code runs faster and does not
   run out of RAM
 
 * Logging to Plone event log files
@@ -266,7 +266,7 @@ Here is the view Python source code::
             end = DateTime.DateTime() - days
             start = DateTime.DateTime(2000, 1,1)
 
-            date_range_query = {'query':(start,end), 'range': 'min:max'} 
+            date_range_query = {'query':(start,end), 'range': 'min:max'}
 
             items = context.portal_catalog.queryCatalog({
                         "portal_type": "FeedFeederItem",
@@ -278,7 +278,7 @@ Here is the view Python source code::
             logger.info("Found %d items to be purged" % len(items))
 
             for b in items:
-                count += 1            
+                count += 1
                 obj = b.getObject()
                 logger.info("Deleting:" + obj.absolute_url() + " " + str(obj.created()))
                 obj.aq_parent.manage_delObjects([obj.getId()])

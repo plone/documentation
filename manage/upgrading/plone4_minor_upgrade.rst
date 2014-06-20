@@ -30,7 +30,7 @@ buildout shipped with the Plone Unified Installer.
 
 Out of the box, Plone's Unified Installer includes a buildout.cfg (typically located at your-plone-directory/zinstance/buildout.cfg) file that contains the following parameter::
 
-    extends = 
+    extends =
     base.cfg
     versions.cfg
     # http://dist.plone.org/release/4.1-latest/versions.cfg
@@ -39,7 +39,7 @@ This tells buildout to get all of its package versions from the included version
 
 To upgrade your buildout to use the latest Plone 4.1.x release, comment out versions.cfg and uncomment the line pointing to dist.plone.org, so it looks like this::
 
-    extends = 
+    extends =
     base.cfg
     # versions.cfg
     http://dist.plone.org/release/4.1-latest/versions.cfg

@@ -1,4 +1,4 @@
-Other five.grok functionality 
+Other five.grok functionality
 =============================
 
 **What we haven't covered**

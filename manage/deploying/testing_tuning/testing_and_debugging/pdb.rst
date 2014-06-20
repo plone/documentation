@@ -188,11 +188,11 @@ Executing code on the context of the current stack frame::
 Automatically start debugger when exception is raised (browser)
 ==================================================================
 
-You can start interactive through-the-browser Python debugger when your site 
+You can start interactive through-the-browser Python debugger when your site
 throws an exception.
 
-Instead of getting "We're sorry there seems to be an error..." page you get 
-a pdb prompt which allows you to debug the exception. This is also 
+Instead of getting "We're sorry there seems to be an error..." page you get
+a pdb prompt which allows you to debug the exception. This is also
 known as post-mortem debugging.
 
 This can be achieved with ` `Products.PDBDebugMode`` add-on.
@@ -202,7 +202,7 @@ This can be achieved with ` `Products.PDBDebugMode`` add-on.
 
 .. note ::
 
-   PDBDebugMode is not safe to install on the production server due to 
+   PDBDebugMode is not safe to install on the production server due to
    sandbox security escape.
 
 
@@ -215,18 +215,18 @@ Automatically start debugger when exception is raised (command line)
     line scripts.
 
 .. note::
-        
+
     This does not work with Zope web server launch as it forks a process.
 
 Example::
-        
+
     python -m pdb myscript.py
 
 Hit ``c`` and ``enter`` to start the application. It keeps running, until
 an uncaught exception is raised. At this point, it falls back to the ``pdb``
 debug prompt.
 
-        
+
 For more information see
 
 * http://docs.python.org/library/pdb.html

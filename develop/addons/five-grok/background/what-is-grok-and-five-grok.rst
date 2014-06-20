@@ -1,4 +1,4 @@
-What is Grok and five.grok? 
+What is Grok and five.grok?
 =============================
 
 **Heritage and anthropology**

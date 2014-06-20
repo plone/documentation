@@ -30,7 +30,7 @@ extensions = [
     #'collective.sphinx.includedoc'
     #'sphinxcontrib.contributors',
     'sphinxcontrib_robotframework',
-    'sphinx.ext.autosummary', 
+    'sphinx.ext.autosummary',
     ]
 
 # See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
@@ -122,7 +122,7 @@ pygments_style = 'sphinx'
 # Sphinx are currently 'default' and 'sphinxdoc'.
 html_theme = 'plone_org_4'
 import sphinx.themes.plone
-html_theme_path = sphinx.themes.plone.get_html_theme_path() 
+html_theme_path = sphinx.themes.plone.get_html_theme_path()
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -131,9 +131,9 @@ html_theme_path = sphinx.themes.plone.get_html_theme_path()
 html_theme_options = {
 #	"rightsidebar": "false",
     'doc_languages' : [
-#        {'lang_code':'en','lang_name':'English'}, 
-#        {'lang_code':'de','lang_name':'German'}, 
-#        {'lang_code':'it','lang_name':'Italian'}, 
+#        {'lang_code':'en','lang_name':'English'},
+#        {'lang_code':'de','lang_name':'German'},
+#        {'lang_code':'it','lang_name':'Italian'},
         ],
     'doc_language'  : 'en',
     'trademark_name' : 'Plone',

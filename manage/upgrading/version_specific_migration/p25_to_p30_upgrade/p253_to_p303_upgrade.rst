@@ -51,7 +51,7 @@ These steps assume a previous 2.5.3 installation in the folder */var/plone/*, wh
     .. note::
 
     Note that this step isn't completely necessary: you could just delete the existing files, but it's nice to back-up a working configuration in case things go wrong later.
-    
+
 #. Copy Data.fs from the old instance to the new installation, and ensure the permissions are correct::
 
     cp /var/plone253/zeocluster/server/var/Data.fs .
@@ -64,19 +64,19 @@ These steps assume a previous 2.5.3 installation in the folder */var/plone/*, wh
 #. Log into the ZMI as the "admin" user:
    http://localhost:8080/manage/
 
-#. .. note:: 
+#. .. note::
 
       Note: this step is here presently only for the purpose of a full procedure review: it may be bug-related and should not be performed as part of a base migration. Try this only if all else fails.
-   
+
    In the ZMI, at the Plone site root, delete the following objects:
    * **content_type_registry**
    * **mimetypes_registry**
    * **portal_transforms**
 
-#. .. note:: 
+#. .. note::
 
       Note: this step is here presently only for the purpose of a full procedure review: it may be bug-related and should not be performed as part of a base migration. Try this only if all else fails.
-   
+
    At the site root, using the Add pull-down, add new versions of the **Content Types Registry**, **MimetypesRegistry Tool**, and **PortalTransforms Tool** (in that order).
 #. At the site root, click **portal_migration**, and in the **Upgrade** tab, click the **Upgrade** button.
 #. After upgrading the site, click the **View** tab to test the main page.

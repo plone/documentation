@@ -4,7 +4,7 @@ Introduction
 
 .. admonition:: Description
 
-		Introducing a sample AT Product and the contents of the tutorial. 
+		Introducing a sample AT Product and the contents of the tutorial.
 
 In this part of the manual, we discuss a sample AT Product to explain
 CMF/Archetypes practices. We will be building a product called

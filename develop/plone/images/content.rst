@@ -128,7 +128,7 @@ In **Plone 3** this hook is defined in ``__bobo_traverse__`` in ``ATImage`` clas
 ``portal_catalog`` and images
 ==============================
 
-Do not index image objects themselves, as adding image data to the 
+Do not index image objects themselves, as adding image data to the
 ``portal_catalog`` brain objects would greatly increase their site and make
 brain look-up slow.
 
@@ -263,7 +263,7 @@ Plone site.
                     print "Has bad ATImage schema:" + content.absolute_url()
 
                 # Since this is a HUGE operation (think of resizing 2 GB images)
-                # it is not a good idea to buffer the transaction in memory 
+                # it is not a good idea to buffer the transaction in memory
                 # (Zope default behavior).
                 # Using subtransactions we hint Zope when it would be a good
                 # time to buffer the changes on disk.
@@ -311,8 +311,8 @@ Python code::
      from zope.component import adapts
      from zope.interface import implements, Interface
      from plone.app.imaging.interfaces import IImageScaleHandler
-     
-     
+
+
      def dereference(func_name):
          def new_func(self, instance, *args, **kw):
              if self.context is None:
@@ -322,20 +322,20 @@ Python code::
              func = getattr(handler, func_name)
              return func(instance, *args, **kw)
          return new_func
-     
-     
+
+
      class IReferenceField(Interface):
          """ marker """
-     
+
      class ReferencedImageScaleHandler(object):
          """ proxy the standard image scale handler so that it operates on a referenced image """
          implements(IImageScaleHandler)
          adapts(IReferenceField)
-     
+
          def __init__(self, context):
              self.reference_field = context
              self.context = None
-     
+
          getScale = dereference('getScale')
          createScale = dereference('createScale')
          retrieveScale = dereference('retrieveScale')

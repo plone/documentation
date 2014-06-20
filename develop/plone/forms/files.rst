@@ -23,7 +23,7 @@ zope.schema based forms and content with :doc:`Dexterity content subsystem </dev
 Plone uses "blobs" (large binary objects) to store file-like data in the
 ZODB. The ZODB writes these objects to the filesystem as separate files,
 but due to security, performance and transaction consideration, the original
-filename is not visible. The files are stored in a distributed tree. 
+filename is not visible. The files are stored in a distributed tree.
 
 For more introduction information, see:
 
@@ -37,22 +37,22 @@ Simple content item file or image field
 Simple upload form example
 ===========================
 
-The example below uses :doc:`five.grok </develop/addons/components/grok>` 
+The example below uses :doc:`five.grok </develop/addons/components/grok>`
 to declare the form schema and form.
 
 We use `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_
 for the upload field, which is a CSV file. We accept the upload and then
-process the file.  
+process the file.
 
 You need to declare an ``extends`` directive to pin down required dependency
 versions in ``buildout.cfg``.
 For more information, see :doc:`buildout troubleshooting </manage/troubleshooting/buildout>`.
 
-You also need to declare the following packages as dependencies in 
+You also need to declare the following packages as dependencies in
 the ``install_dependencies`` directive of your ``setup.py`` file:
 
 * ``five.grok``,
-* ``plone.autoform``, 
+* ``plone.autoform``,
 * ``plone.directives.form``.
 
 After doing this, rerunning ``buildout`` will pull in these packages for you
@@ -64,13 +64,13 @@ Code::
     # Core Zope 2 + Zope 3 + Plone
     from zope.interface import Interface
     from zope import schema
-    from zope.app.component.hooks import getSite 
-    from five import grok 
+    from zope.app.component.hooks import getSite
+    from five import grok
     from Products.CMFCore.interfaces import ISiteRoot
     from Products.CMFCore.utils import getToolByName
     from Products.CMFCore import permissions
     from Products.statusmessages.interfaces import IStatusMessage
-            
+
     # Form and validation
     from z3c.form import field
     import z3c.form.button
@@ -80,71 +80,71 @@ Code::
 
     import StringIO
     import csv
-    
-    
-    from plone.namedfile.field import NamedFile        
+
+
+    from plone.namedfile.field import NamedFile
     from plone.i18n.normalizer import idnormalizer
-    
-    
+
+
     class IImportUsersFormSchema(form.Schema):
         """ Define fields used on the form """
-        
+
         csv_file = NamedFile(title=_(u"CSV file"))
-    
+
     class ImportUsersForm(form.SchemaForm):
-        """ A sample form showing how to mass import users using an uploaded CSV file. 
+        """ A sample form showing how to mass import users using an uploaded CSV file.
         """
-        
+
         # Form label
         name = _(u"Import Companies")
-        
-        # Which plone.directives.form.Schema subclass is used to define 
-        # fields for this form 
+
+        # Which plone.directives.form.Schema subclass is used to define
+        # fields for this form
         schema = IImportUsersFormSchema
-        
-        # Permission required to 
+
+        # Permission required to
         grok.require("cmf.ManagePortal")
-        
+
         ignoreContext = True
-        
+
         # This form is available at the site root only
         grok.context(ISiteRoot)
-    
+
         # appear as @@import_companies view
         grok.name("import_companies")
-        
-        
+
+
         def processCSV(self, data):
             """
-            """                
+            """
             io =  StringIO.StringIO(data)
-            
+
             reader = csv.reader(io, delimiter=',', dialect="excel", quotechar='"')
-                        
+
             header = reader.next()
             print header
-                            
+
             def get_cell(row, name):
-                """ Read one cell on a 
-                
+                """ Read one cell on a
+
                 @param row: CSV row as list
-                
+
                 @param name: Column name: 1st row cell content value, header
                 """
-                
+
                 assert type(name) == unicode, "Column names must be unicode"
-                
+
                 index = None
                 for i in range(0, len(header)):
                     if header[i].decode("utf-8") == name:
                         index = i
-                        
+
                 if index is None:
                     raise RuntimeError("CSV data does not have column:" + name)
-                
+
                 return row[index].decode("utf-8")
-            
-            
+
+
             # Map CSV import fields to a corresponding content item AT fields
             mappings = {
                         u"Puhnro" : "phonenumber",
@@ -152,36 +152,36 @@ Code::
                         u"Postinumero" : "postalCode",
                         u"Postitoimipaikka" : "postOffice",
                         u"Www-osoite" : "homepageLink",
-                        u"Lähiosoite" : "streetAddress",                                                            
+                        u"Lähiosoite" : "streetAddress",
                         }
-            
+
             updated = 0
-            
+
             for row in reader:
-                           
+
                 # do stuff ...
-                updated += 1 
-                                        
-                
-            return updated 
-                 
-                                            
+                updated += 1
+
+
+            return updated
+
+
         @z3c.form.button.buttonAndHandler(_('Import'), name='import')
         def importCompanies(self, action):
             """ Create and handle form button "Create company"
             """
-            
+
             # Extract form field values and errors from HTTP request
             data, errors = self.extractData()
             if errors:
                 self.status = self.formErrorsMessage
                 return
-            
+
             # Do magic
             file = data["csv_file"].data
-            
+
             number = self.processCSV(file)
-            
+
             # If everything was ok post success note
             # Note you can also use self.status here unless you do redirects
             if number is not None:
@@ -251,10 +251,10 @@ In Dexterity you can specify a ``@@download`` field for content types:
 .. code-block:: html
 
     <!-- Render link to video file if it's uploaded to this context item -->
-    <tal:video define="video nocall:context/videoFile" 
-        tal:condition="nocall:video">    
-        <a class="flow-player" tal:attributes="href string:${context/absolute_url}/@@download/videoFile/${video/filename}"></a>      
-    </tal:video>    
+    <tal:video define="video nocall:context/videoFile"
+        tal:condition="nocall:video">
+        <a class="flow-player" tal:attributes="href string:${context/absolute_url}/@@download/videoFile/${video/filename}"></a>
+    </tal:video>
 
 Complex example
 ---------------
@@ -325,7 +325,7 @@ Streaming file data
 
 File data is delivered to the browser as a stream. The view function returns
 a streaming iterator instead of raw data. This greatly reduces the latency
-and memory usage when the file should not be buffered as a whole to 
+and memory usage when the file should not be buffered as a whole to
 memory before sending.
 
 Example (``plone.app.headeranimation``)::
@@ -477,7 +477,7 @@ you must fix file download URLs manually.
 
 See `example in plone.app.headeranimations <https://svn.plone.org/svn/collective/plone.app.headeranimation/trunk/plone/app/headeranimation/browser/widgets.py>`_.
 
-Migrating custom content for blobs 
+Migrating custom content for blobs
 ====================================
 
 Some hints how to migrate your custom content:
@@ -501,11 +501,11 @@ Example correct form header:
 .. code-block:: xml
 
   <form action="." enctype="multipart/form-data" method="post" tal:attributes="action request/getURL">
-    
+
 
 File-system access in load-balanced configurations
 ==================================================
 
-The `plone.namedfiled <http://plone.org/products/plone.app.blob>`_ 
+The `plone.namedfiled <http://plone.org/products/plone.app.blob>`_
 product page contains configuration instructions
 for ``plone.namedfile`` and ZEO.

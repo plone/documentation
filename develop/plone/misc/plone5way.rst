@@ -20,7 +20,7 @@ Live Sites
 ----------
 
 We can modify live sites’ appearance without having to touch the file system by
-putting things in the custom folder. 
+putting things in the custom folder.
 
 
 
@@ -34,7 +34,7 @@ putting things in the custom folder.
 No Filesystem or Buildout Access
 --------------------------------
 
-We often do not have access to the file system nor can we run buildout. 
+We often do not have access to the file system nor can we run buildout.
 
 
     See Live Sites response.
@@ -42,7 +42,7 @@ We often do not have access to the file system nor can we run buildout.
 Customizing a collection’s display
 ----------------------------------
 
-We have some custom content types that we want to display using a collection. 
+We have some custom content types that we want to display using a collection.
 We build the collection and specify “item type”.  We want the display to show
 fields that are unique to the custom content types.  We locate the collection
 view template, customize it, rename it (to, say, custom_collection_view),
@@ -63,7 +63,7 @@ Creating a cloned content type so that it has a different default view
 ----------------------------------------------------------------------
 
 Let’s say a site has a custom content type based on Document but we want to have
-the default view include boilerplate text around the rich text and description. 
+the default view include boilerplate text around the rich text and description.
 We would go to portal_types, clone the Document type, rename the cloned type
 “Project”.  Then we go to portal_skins, find document_view, customize it,
 rename it to project_view, and add the boilerplate text we want.  Then back in
@@ -73,7 +73,7 @@ view) shows the boilerplate text we wanted.
 
 
     Cloned content types will still be available with dexterity. In fact, it’ll
-    be incredibly more robust and powerful. 
+    be incredibly more robust and powerful.
 
 
     For the views, look to the previous point about using

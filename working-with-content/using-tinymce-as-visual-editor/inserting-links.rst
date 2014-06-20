@@ -24,7 +24,7 @@ Select a word or phrase, click the *Insert/edit link* icon, select
 
 .. figure:: /_static/insert_external_link.jpg
    :align: center
-   :alt: 
+   :alt:
 
 Type the web address of the external web site in the box after http://.
 When you press return or leave the field a preview will appear to check
@@ -48,7 +48,7 @@ re-type the subheadings at the top of the document:
 
 .. figure:: /_static/anchor_page.jpg
    :align: center
-   :alt: 
+   :alt:
 
 Now create the anchors for each subheading. To create each anchor move
 the cursor to the beginning of the subheading and press the *Insert/edit
@@ -57,21 +57,21 @@ Then click *ok*.
 
 .. figure:: /_static/insert_anchor.jpg
    :align: center
-   :alt: 
+   :alt:
 
 Then select each of the re-typed subheadings at the top and click the
 *Insert/edit link* icon to select by subheadings:
 
 .. figure:: /_static/insert_anchor_select_text.jpg
    :align: center
-   :alt: 
+   :alt:
 
 When selecting *Anchors* under *Libraries*, a panel will appear for
 selecting which subheading to which the anchor link should connect:
 
 .. figure:: /_static/select_anchor.jpg
    :align: center
-   :alt: 
+   :alt:
 
 The *Link to anchor* tab will appear. The right side of the panel shows
 the anchors that have been set within the document. Here the

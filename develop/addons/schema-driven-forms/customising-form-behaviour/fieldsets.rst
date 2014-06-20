@@ -41,9 +41,9 @@ purely for aesthetic effect.
     ...
 
     class IPizzaOrder(model.Schema):
-        
+
         # Main form
-        
+
         name = schema.TextLine(
                 title=_(u"Your full name"),
             )
@@ -61,7 +61,7 @@ purely for aesthetic effect.
                 title=_(u"Postcode"),
                 constraint=postcodeConstraint,
             )
-        
+
         telephone = schema.ASCIILine(
                 title=_(u"Telephone number"),
                 description=_(u"We prefer a mobile number"),
@@ -71,34 +71,34 @@ purely for aesthetic effect.
                 title=_(u"Your order"),
                 value_type=schema.Choice(source=availablePizzas)
             )
-        
+
         form.widget('notes', WysiwygFieldWidget)
         notes = schema.Text(
                 title=_(u"Notes"),
                 description=_(u"Please include any additional notes for delivery"),
                 required=False
         )
-        
+
         # Feedback fieldset
-        
+
         model.fieldset(
-            'feedback', 
+            'feedback',
             label=_(u"Feedback"),
             fields=['feedbackNote', 'feedbackEmail']
         )
-        
+
         feedbackNote = schema.Text(
                 title=_(u"Feedback"),
                 description=_(u"Please provide any feedback below"),
                 required=False,
             )
-        
+
         feebackEmail = schema.TextLine(
                 title=_(u"Email address"),
                 description=_(u"If you'd like us to contact you, please give us an email address below"),
                 required=False,
             )
-        
+
         ...
 
 .. note::

@@ -1,4 +1,4 @@
-Error snippets 
+Error snippets
 ===============
 
 **Customising error messages**
@@ -48,9 +48,9 @@ a new function to *order.py*, just after the interface definition:
     ...
 
     class IPizzaOrder(model.Schema):
-        
+
         ...
-        
+
         telephone = schema.ASCIILine(
                 title=_(u"Telephone number"),
                 description=_(u"We prefer a mobile number"),

@@ -30,11 +30,11 @@ which manages widgets display) change the template as below:
 
 ::
 
-    <tal:fields repeat="field 
+    <tal:fields repeat="field
     python:schematas[fieldset].editableFields(here, visible_only=True)">
 
-       <div tal:omit-tag="" 
-             tal:condition="python:field.getName() 
+       <div tal:omit-tag=""
+             tal:condition="python:field.getName()
              in ['title','myfield1','myfield2','myfield3','myfield4']">
 
            <metal:fieldMacro use-macro="python:here.widget(field.getName(),

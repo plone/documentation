@@ -1,5 +1,5 @@
 ===================
-Troubleshooting 
+Troubleshooting
 ===================
 
 .. admonition:: Description
@@ -7,7 +7,7 @@ Troubleshooting
 		When creating new content types, many factors can silently fail due
 		to human errors in the complex content type setup chain and security
 		limitations. The effect is that you don't see your content type in
-		Add drop down menu. Here are some tips for debugging. 
+		Add drop down menu. Here are some tips for debugging.
 
 1. Is your product broken due to Python import time errors? Check the
 \*Zope Management Interface (ZMI from now on) → Control Panel →

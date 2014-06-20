@@ -1,4 +1,4 @@
-Utilities 
+Utilities
 ===========
 
 **Singletons and registries with utilities**
@@ -58,7 +58,7 @@ To illustate both of these techniques, we will create two interfaces:
 
         def switch(newPreferredLanguage):
             """Switch preferred languages.
-            
+
             Takes a local name as a parameter)
             """
 
@@ -109,7 +109,7 @@ interface:
 
     class Language(object):
         grok.implements(ILanguage)
-        
+
         def __init__(title):
             self.title = title
 
@@ -149,7 +149,7 @@ for us.
         def preferredLanguage(self):
             envKey = os.environ.get('PREFERRED_LANGUAGE', 'en_US')
             return getUtility(ILanguage, envKey)
-     
+
         def switch(self, newPreferredLanguage):
             os.environ['PREFERRED_LANGUAGE'] = newPreferredLanguage
 

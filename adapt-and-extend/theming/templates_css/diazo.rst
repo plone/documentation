@@ -13,12 +13,12 @@ Introduction
 -------------
 
 Diazo is the new name of what was previously known as XDV.
-Diazo, like XDV, is an external HTML theming engine, a.k.a. theming proxy, which allows 
-you to mix and match HTML and CSS from internal and external sites 
-by using simple XML rules. It separates the theme development from the site development, 
+Diazo, like XDV, is an external HTML theming engine, a.k.a. theming proxy, which allows
+you to mix and match HTML and CSS from internal and external sites
+by using simple XML rules. It separates the theme development from the site development,
 so that people with little HTML and CSS knowledge can create themes
 without need to know underlying Python, PHP or whatever. It also enables
-integration of different services and sites to one, unified, user experience. 
+integration of different services and sites to one, unified, user experience.
 For more information, you can always read the `wikipedia article <http://en.wikipedia.org/wiki/Diazo_%28software%29>`_
 
 Example backends to perform diazo transformation include:
@@ -30,8 +30,8 @@ Example backends to perform diazo transformation include:
 * Nginx web server transform module
 
 Diazo theming can be used together with Plone, in which case enhanced
-support is provided by the 
-`plone.app.theming package <https://pypi.python.org/pypi/plone.app.theming>`_. 
+support is provided by the
+`plone.app.theming package <https://pypi.python.org/pypi/plone.app.theming>`_.
 (This is the Plone integration package for Diazo, like
 `collective.xdv package <https://pypi.python.org/pypi/collective.xdv>`_
 was the integration package for XDV)
@@ -42,11 +42,11 @@ and does XSL transformation in Zope's post-publication hook using the
 The community (Martin Aspeli) is currently working on an online theme
 editing interface, so designers can make a diazo theme for a Plone site
 entirely through the web.
-For more information, have a look at his 
+For more information, have a look at his
 `branch of plone.app.theming <https://github.com/plone/plone.app.theming/tree/optilude-ace>`_.
 
-Diazo can be used standalone with 
-`Diazo package <https://pypi.python.org/pypi/diazo>`_ to theme any web site, 
+Diazo can be used standalone with
+`Diazo package <https://pypi.python.org/pypi/diazo>`_ to theme any web site,
 whether it's Wordpress, Joomla, Drupal or a custom in-house PHP solution
 from the year 2000.
 
@@ -55,7 +55,7 @@ Theming editing interface (backend)
 =====================================
 
 The editing interface, backend, or admin site, however you wish to call it,
-can also be themed with ``plone.app.theming``. 
+can also be themed with ``plone.app.theming``.
 If you don't want to theme the editing interface, however,
 you can fallback to the default Plone theme.
 
@@ -64,21 +64,21 @@ There are several reasons for this:
 * The Plone editing interface is powerful and has very good
   usability, which means that it is internally quite complex
   (makes complex things to pose itself as a simple to the end user).
-  
-* The public theme you are building would not fit to the 
+
+* The public theme you are building would not fit to the
   editing interface very well. E.g. no space for portlets.
   This is especially problematic if an external
   artist has created the visuals without properly
-  fitting them for Plone. 
-  
+  fitting them for Plone.
+
 With Diazo you can easily also have a separate ``admin.yoursite.com``
-domain where the Plone editing interface is untouched.  
+domain where the Plone editing interface is untouched.
 
 Related links
 -------------
 
 * https://pypi.python.org/pypi/plone.app.theming
- 
+
 * https://pypi.python.org/pypi/diazo
 
 * http://diazo.org
@@ -99,13 +99,13 @@ Setting up Diazo
 ----------------
 
 If you are working with Plone you can integrate ``plone.app.theming`` to
-your site's existing buildout. 
+your site's existing buildout.
 
-If you are not working with Plone, the 
+If you are not working with Plone, the
 `Diazo home page <http://docs.diazo.org/en/latest/installation.html>`_
 has instructions how to deploy the Diazo command standalone.
 
-Diazo Rules 
+Diazo Rules
 -----------
 
 Rules (``rules.xml``) will tell how to fit content from external sources to
@@ -118,7 +118,7 @@ It provides straightforward XML-based syntax to manipulate HTML easily:
 * Insert HTML snippets
 
 * CSS or XPath selectors can be used to identify HTML parts
-  
+
 * It is possible to mix and match content from more than two sites
 
 * etc.
@@ -145,7 +145,7 @@ Benefits of using Diazo theming instead of creating native Wordpress (or other) 
 --------------------------------------------------------------------------------------
 
 * You need to maintain only one theming add-on product
-  e.g. one for your main CMS and Wordpress receives 
+  e.g. one for your main CMS and Wordpress receives
   updates to this site and theme automatically
 
 * Wordpress does not need to be touched
@@ -155,7 +155,7 @@ Benefits of using Diazo theming instead of creating native Wordpress (or other) 
 
 * The theme can be recycled not only for Wordpress, but also
   other external services: Bugzilla, Trac, Webmail, phpBB,
-  you-name-it  
+  you-name-it
 
 
 Applying the theme in Apache production environment

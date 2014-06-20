@@ -13,7 +13,7 @@
 Introduction
 =============
 
-Plone uses `Zope Page Templates <http://docs.zope.org/zope2/zope2book/AppendixC.html>`_, 
+Plone uses `Zope Page Templates <http://docs.zope.org/zope2/zope2book/AppendixC.html>`_,
 consisting of the three related standards:
 Template Attribute Language (:term:`TAL`),
 TAL Expression Syntax (:term:`TALES`),
@@ -24,10 +24,10 @@ A normal full Plone HTML page consists of:
 * the *master template*, defining the overall layout of the page,
 * *slots*, defined by the master template, and filled by the object being
   published,
-* :doc:`Viewlet managers </develop/addons/five-grok/browser-components/viewlets>` containing 
+* :doc:`Viewlet managers </develop/addons/five-grok/browser-components/viewlets>` containing
   :doc:`viewlets </develop/addons/five-grok/browser-components/viewlets>`.
 
-Templates can be associated with Python view classes 
+Templates can be associated with Python view classes
 (also known as "new style", circa 2008) or
 they can be standalone ("old style", circa 2001).
 
@@ -45,18 +45,18 @@ The MIME-Type
 Basically a document file got a mime-type. This is also important for Plone Templates if you don't want to export to text/html.
 If you want to export to a XML File you have to change the mime-type because otherwise the browser won't recognize the file as an XML.
 At the moment Plone supports text/html which is the default value. And text/xml.
-You got 2 opportunities to change this value. If you customize a template you got an input box which called "Content-Type". 
-The other Way is to create a file named by your template name and extend the name by `.metadata`. 
+You got 2 opportunities to change this value. If you customize a template you got an input box which called "Content-Type".
+The other Way is to create a file named by your template name and extend the name by `.metadata`.
 
  Example:
    * my_view.pt
    * my_view.pt.metadata
 
 Content of metadata file::
-    
+
          [default]
          content_type = text/xml
-        
+
 
 Overriding templates
 ======================
@@ -92,7 +92,7 @@ Overriding a template using z3c.jbot
    installation for ``.pt`` files. Usually this folder is
    ``.../buildout-cache/eggs``.
 
-   Below is an example UNIX ``find`` command to find ``.pt`` files. 
+   Below is an example UNIX ``find`` command to find ``.pt`` files.
    You can also use Windows Explorer file search or similar tools:
 
    .. code-block:: console
@@ -114,7 +114,7 @@ Overriding a template using z3c.jbot
 3. Make a copy of ``.pt`` file you are going to override.
 
    Rename the file to its so-called *canonical* name: to do this,
-   exclude the ``.egg`` folder name from the filename, and 
+   exclude the ``.egg`` folder name from the filename, and
    then replace all slashes ``/`` with dot ``.``::
 
        archetypes/kss/browser/edit_field_wrapper.pt
@@ -130,12 +130,12 @@ Overriding a template using z3c.jbot
 
    .. warning::
 
-       After overriding the template for the first time 
+       After overriding the template for the first time
        (adding the file to the ``templates/`` folder)
        you need to restart Plone.
        `z3c.jbot`_ scans new overrides only during the restart.
 
-After the file is in place, changes to the file are instantly picked up: 
+After the file is in place, changes to the file are instantly picked up:
 the template code is re-read on every HTTP request |---| just hit enter in
 your browser location bar. (Hitting enter in the location bar is quicker
 than hitting :guilabel:`Refresh`, which also reloads CSS and JS files.)
@@ -323,8 +323,8 @@ Plone template element map
 ==========================
 
 Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers
-are described 
-`here <http://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_. 
+are described
+`here <http://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_.
 
 .. note:: Plone 3 viewlets differ from Plone 4 viewlets.
 
@@ -348,7 +348,7 @@ A statement in the ``metal:`` namespace defines how a template interacts
 with other templates (defining or using macros and slots to be filled by
 macros).
 
-The value of an attribute in the ``tal:`` namespace is an expression. The 
+The value of an attribute in the ``tal:`` namespace is an expression. The
 syntax of this expression is defined by the :term:`TALES` standard.
 
 TAL
@@ -399,7 +399,7 @@ The :term:`METAL` (Macro Expansion TAL) standard provides *macros* and
 Using METAL macros is no longer recommended, since they couple programming
 logic too tightly with the template language.  You should use views instead.
 
-Read more about them in the 
+Read more about them in the
 `TAL Guide <http://www.owlfish.com/software/simpleTAL/tal-guide.html>`_.
 
 TALES expressions
@@ -466,7 +466,7 @@ Old style page template
 * Create a new layer in ``portal_skins``
 
 * Templates are resolved by their name, and a property on the
-  ``portal_skins`` tool defines the order in which skin layers are 
+  ``portal_skins`` tool defines the order in which skin layers are
   searched for the name (see the *Properties* tab on ``portal_skins``).
 
 * You can reorder layers for the active theme so that your layer takes
@@ -502,10 +502,10 @@ Head slots
 You can easily include per-template CSS and JavaScript in the ``<head>``
 element using extra slots defined in Plone's ``main_template.pt``.
 
-Note that these media files do not participate in 
+Note that these media files do not participate in
 :doc:`portal_css </adapt-and-extend/theming/templates_css/css>` or
 :doc:`portal_javascript </develop/addons/javascript>`
-resource compression. 
+resource compression.
 
 Extra slots are:
 
@@ -620,7 +620,7 @@ Then you can use this function in your TAL code
 
 .. code-block:: xml
 
-       <a href="#" tal:define="start_esc python:url_quote(start)" 
+       <a href="#" tal:define="start_esc python:url_quote(start)"
           tal:attributes="href string: ${url}/day?currentDate=${start_esc}&xmy=${xmy}&xsub=${xsub}">
 
 If you need to also quote spaces, use ``url_quote_plus`` rather than ``url_quote``.
@@ -628,7 +628,7 @@ If you need to also quote spaces, use ``url_quote_plus`` rather than ``url_quote
 Using macros
 =============
 
-Here is an example how to use `<metal:block define-macro="xxx">` and 
+Here is an example how to use `<metal:block define-macro="xxx">` and
 `<metal:block use-macro="xxx">` in your :doc:`view class </develop/plone/views/browserviews>`
 template files.
 
@@ -643,7 +643,7 @@ template files.
 
           <metal:row define-macro="row">
                <!--
-                   A macro. You can call this using metal:use-macro 
+                   A macro. You can call this using metal:use-macro
                    and pass variables to using tal:define.
                -->
           </metal:row>

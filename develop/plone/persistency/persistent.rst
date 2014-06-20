@@ -9,11 +9,11 @@
         and they appear as normal Python objects in your code. This document clarifies
         some of special properties, like with containers, when you deal with persistent
         objects programmatically.
-        
+
 .. contents:: :local:
 
 Introduction
-------------         
+------------
 
 **Q: How do I save() object in Plone**
 
@@ -22,19 +22,19 @@ Introduction
 Plone does this automatically for you. You just assign the file data
 as an attribute of some persistent object. When the HTTP request
 completes, Zope transaction manager will automatically update all
-changed persistent objects to the database. There is no "save" as such in Zope world - 
+changed persistent objects to the database. There is no "save" as such in Zope world -
 it all is transparent to the developer. If the
 transaction fails in any point, no data is being written and you do
 not need to worry about the partial data being written to the
 database.
 
-* Changed objects will be automatically saved (if they are attached to the 
+* Changed objects will be automatically saved (if they are attached to the
   traversing graph)
-  
+
 * Save will not occur if an exception is raised
-        
+
 If your data class inherits from higher level Plone base classes
-(all go up to persistent.Persitent class). persistency is handled transparently for you. 
+(all go up to persistent.Persitent class). persistency is handled transparently for you.
 Plone also handles
 transaction automatically for each HTTP request. Unless you wish
 to do manual transactions there is no need to call transaction.commit().
@@ -85,29 +85,29 @@ More info
 Up-to-date reads
 ----------------
 
-Normally, ZODB only assures that objects read are consistent, but not necessarily up to date. 
-Checking whether an object is up to date is important when information read from one object 
+Normally, ZODB only assures that objects read are consistent, but not necessarily up to date.
+Checking whether an object is up to date is important when information read from one object
 is used to update another.
 
 The following will force the object to use the most up-to-date version in the transaction::
 
         self._p_jar.readCurrent(ob)
 
-A conflict error will be raised if the version of ob read by the transaction isn't 
+A conflict error will be raised if the version of ob read by the transaction isn't
 current when the transaction is committed.
 
 .. note ::
 
         ZODB versions older than 3.10.0b5 do not support this feature.
-        
+
 More information
 
-* https://pypi.python.org/pypi/ZODB3/3.10.0b5#b5-2010-09-02        
+* https://pypi.python.org/pypi/ZODB3/3.10.0b5#b5-2010-09-02
 
 Accessing broken objects
 ------------------------
 
-ZODB is object database. 
+ZODB is object database.
 By default, it cannot load object from the database if the code (Python class)
 is not present.
 
@@ -116,7 +116,7 @@ fake the non-existing classes in the run-time environment.
 
 More info
 
-* http://mockit.blogspot.com/2010/11/getting-broken-objects-out-of-zodb.html 
+* http://mockit.blogspot.com/2010/11/getting-broken-objects-out-of-zodb.html
 
 Fixing damaged objects
 ------------------------
@@ -186,7 +186,7 @@ Example::
         object.context = context
 
         return object
-        
+
 Correct use of volatile variables in functions
 ================================================
 
@@ -194,34 +194,34 @@ Correct use of volatile variables in functions
 
     if hasattr(self, '_v_image'):
         return self._v_image
-        
+
 **RIGHT**::
 
     marker = []
     value = getattr(self, "_v_image", marker)
     if value is not marker:
-        return value        
+        return value
 
 **RIGHT**::
 
     try:
         return self._v_image
     except AttributeError:
-    
+
 **WRONG**::
 
     self._v_image=expensive_calculation()
     return self._v_image
 
 **RIGHT**::
-    
+
     image=expensive_calculation()
     self._v_image=image
     return image
 
 For more information, see
 
-* https://mail.zope.org/pipermail/zodb-dev/2010-May/013437.html        
+* https://mail.zope.org/pipermail/zodb-dev/2010-May/013437.html
 
 
 Measuring persistent object sizes

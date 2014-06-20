@@ -41,7 +41,7 @@ Buildout folder structure
 
 Plone buildouts have folders with predefined purposes:
 
-``bin/`` 
+``bin/``
     Contains Python scripts and shell scripts installed by various eggs,
     including the ``buildout`` command itself.  The default Plone start
     script ``bin/instance`` is here.
@@ -51,7 +51,7 @@ Plone buildouts have folders with predefined purposes:
     runs, so you should not change anything here (note: some broken recipes
     store things like pid files here). Generated configuration files are
     stored here: don't change them directly (changes will be wiped), change
-    the corresponding buildout sections instead. 
+    the corresponding buildout sections instead.
 
 ``src/``
     source code you are developing yourself.
@@ -68,7 +68,7 @@ Plone buildouts have folders with predefined purposes:
     consisting of filestorage files (e.g. ``Data.fs``) and blobstorage
     directories.
 
-``bootstrap.py`` 
+``bootstrap.py``
     Installs the ``buildout`` command.
 
 ``buildout.cfg``
@@ -96,7 +96,7 @@ and your Python wrapper still rely on the old version. This leads to
 version incompatibilities and you are unable to start the Python applications.
 
 Since only one Python interpreter can be active at a time,
-it is tricky to develop multi-version Python code on Windows, 
+it is tricky to develop multi-version Python code on Windows,
 for example if you need to develop Plone 3 sites
 (Python 2.4) and Plone 4 sites (Python 2.6) simultaneously.
 
@@ -210,18 +210,18 @@ You can also SSH tunnel the proxy from a remote server:
 
 *!!Attention!!*
 
-  In Plone 4.3 the System changed , and from now on you get special users with different privileges for buildout and run. Because of the sudo command you proxy environment variables aren't saved in the sudo env list. 
+  In Plone 4.3 the System changed , and from now on you get special users with different privileges for buildout and run. Because of the sudo command you proxy environment variables aren't saved in the sudo env list.
 
-There are 3 ways to fix this in \*nix systems: 
+There are 3 ways to fix this in \*nix systems:
 
-Inline: Set the environment variable inline. 
- 1) ``sudo -u plone_buildout http_proxy="http://myproxy:1234" ./bin/buildout`` 
+Inline: Set the environment variable inline.
+ 1) ``sudo -u plone_buildout http_proxy="http://myproxy:1234" ./bin/buildout``
 
-Copy the environment from the currently logged in user. 
- 2) ``sudo -E -u plone_buildout ./bin/buildout`` 
+Copy the environment from the currently logged in user.
+ 2) ``sudo -E -u plone_buildout ./bin/buildout``
 
-Setup sudoers 
- 3)Maybe this article is interesting for setting up sudoers: http://ubuntuforums.org/showthread.php?t=1132821 
+Setup sudoers
+ 3)Maybe this article is interesting for setting up sudoers: http://ubuntuforums.org/showthread.php?t=1132821
 
 
 
@@ -235,7 +235,7 @@ There are two ways to set the cache folder
 
 * Use the ``PYTHON_EGG_CACHE`` environment variable;
 
-* or set the ``download-cache`` variable in ``[buildout]``. 
+* or set the ``download-cache`` variable in ``[buildout]``.
   This is only recommended if the ``buildout.cfg``
   file is not shared between different configurations.
 
@@ -265,7 +265,7 @@ Example settings how to setting shared egg cache across various buildouts on you
 	eggs-directory = /Users/mikko/code/buildout-cache/eggs
 	download-cache = /Users/mikko/code/buildout-cache/downloads
 	extends-cache = /Users/mikko/code/buildout-cache/extends
-	 
+	
 .. warning ::
 
 	If you are sharing egg cache you might run into egg versioning problems especially
@@ -409,7 +409,7 @@ Then log in to the Zope Management Interface using your browser::
 Configuring plone products from buildout
 ----------------------------------------
 
-In case add-on products require configuration which is not 
+In case add-on products require configuration which is not
 handled by buildout recipes, you can supply this configuration using the
 ``zope-conf-additional`` specification of the ``plone.recipe.zope2instance``
 recipe:
@@ -427,7 +427,7 @@ recipe:
 These configuration sections are added directly to your ``zope.conf`` file.
 
 Any named product-config section is then available as a simple dictionary to any python product that cares to look for it.
-The above example creates a ``foobar`` entry which is a dict with a 
+The above example creates a ``foobar`` entry which is a dict with a
 ``'spam': 'eggs'`` mapping.
 
 Here is how you then access that from your code::
@@ -456,9 +456,9 @@ you to trigger scripts:
 Setting ``LD_LIBRARY_PATH``
 ----------------------------
 
-``LD_LIBRARY_PATH`` is a UNIX environment variable which specifies 
+``LD_LIBRARY_PATH`` is a UNIX environment variable which specifies
 from which folders to load native dynamic linked libraries (``.so`` files).
-You might want to override your system-wide libraries, 
+You might want to override your system-wide libraries,
 because operating systems may ship with old, incompatible, versions.
 
 You can use ``environment-vars`` of the

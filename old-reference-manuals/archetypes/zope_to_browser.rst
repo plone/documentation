@@ -1,11 +1,11 @@
 =========================
-From Zope to the Browser 
+From Zope to the Browser
 =========================
 
 .. admonition:: Description
 
 		How do content types get "published" (in the Zope sense, not
-		the workflow sense) to the web browser? 
+		the workflow sense) to the web browser?
 
 There is a fairly complex mechanism that determines how a content object
 ends up being displayed in the browser. The following is an adaptation
@@ -13,7 +13,7 @@ of an email to the plone-devel list which aims to untangle this
 complexity. It pertains to Plone 2.1 only.
 Assumptions:
 
- * You want the 'view' action to be the same as what happens when you go to the object directly for most content types... 
+ * You want the 'view' action to be the same as what happens when you go to the object directly for most content types...
 
  * ...but for some types, like File and Image, you want the "view" action to display a template, whereas if you go straight to the object, you get the file's contents
 

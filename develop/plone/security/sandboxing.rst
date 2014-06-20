@@ -5,7 +5,7 @@ Sandboxing and RestrictedPython
 .. admonition:: Description
 
         Legacy Plone code uses RestrictedPython sandboxing to secure
-        each module and class functions. This documentation 
+        each module and class functions. This documentation
         tells how it happens.
 
 .. contents :: local
@@ -15,19 +15,19 @@ Introduction
 
 Plone has two sandboxing modes
 
-* Unrestricted: Python code is executed normally and the code can access the full 
+* Unrestricted: Python code is executed normally and the code can access the full
   Zope application server environment. This includes other site instances too.
-  This is generally what happens when you write your own add-on and 
+  This is generally what happens when you write your own add-on and
   add views for it.
 
 * Restricted (RestrictedPython): scripts and evalutions are specially compiled, have limited Python
   language functionality and every function call is checked against the security manager.
-  This is what happens when you try to add Python code or customize 
+  This is what happens when you try to add Python code or customize
   page templates through Zope Management Interface.
 
 Restricted execution is enabled only for **through-the-web** scripts and **legacy code**:
 
-* Old style TAL page templates: everything you put inside page template 
+* Old style TAL page templates: everything you put inside page template
   tal:content, tal:condition, etc. These templates are .pt templates
   **without** accomppaning BrowserView
 
@@ -37,10 +37,10 @@ Restricted execution is enabled only for **through-the-web** scripts and **legac
 
         RestrictedPython was bad idea and mostly causes headache. Avoid through-the-web
         Zope scripts if possible.
-        
-For further information, read 
 
-* http://plone.293351.n2.nabble.com/Update-was-Plone-4-Chameleon-compatibility-tp5612838p5614466.html        
+For further information, read
+
+* http://plone.293351.n2.nabble.com/Update-was-Plone-4-Chameleon-compatibility-tp5612838p5614466.html
 
 Whitelisting modules for RestrictedPython import
 ---------------------------------------------------
@@ -81,72 +81,72 @@ Below are few useful unit test functions::
 
     def _execUntrusted(self, debug, function_body, **kwargs):
         """ Sets up a sandboxed Python environment with Zope security in place.
-        
+
         Calls func() in an sandboxed environment. The security mechanism
-        should catch all unauthorized function calls (declared 
+        should catch all unauthorized function calls (declared
         with a class SecurityManager).
-        
-        Security is effective only inside the function itself - 
+
+        Security is effective only inside the function itself -
         The function security declarations themselves are ignored.
-    
+
         @param func: Function object
         @param args: Parameters delivered to func
         @param kwargs: Parameters delivered to func
         @param debug: If True, break into pdb debugger just before evaluation
         @return: Function return value
         """
-                
+
         # Create global variable environment for the sandbox
         globals = get_safe_globals()
         globals['__builtins__'] = safe_builtins
-        
+
         # Zope seems to have some hacks with guaded_getattr.
-        # guarded_getattr is used to check the permission when the 
+        # guarded_getattr is used to check the permission when the
         # object is being traversed in the restricted code.
         # E.g. this controls function call permissions.
         from AccessControl.ImplPython import guarded_getattr as guarded_getattr_safe
-        globals['_getattr_'] = guarded_getattr_safe                
-        #globals['getattr'] = guarded_getattr_safe                
-        #globals['guarded_getattr'] = guarded_getattr_safe                
-                         
-        
+        globals['_getattr_'] = guarded_getattr_safe
+        #globals['getattr'] = guarded_getattr_safe
+        #globals['guarded_getattr'] = guarded_getattr_safe
+
+
         globals.update(kwargs)
-        
+
         # Our magic code
-        
+
         # The following will compile the parsed Python code
         # and applies a special AST mutator
         # which will proxy __getattr__ and function calls
         # through guarded_getattr
         code = compile_restricted(function_body, "<string>", "eval")
-                
-        # Here is a good place to break in 
+
+        # Here is a good place to break in
         # if you need to do some ugly permission debugging
         if debug:
             pass # go pdb here
-            
+
         return eval(code, globals)
-    
+
     def execUntrusted(self, func, **kwargs):
         """ Sets up a sandboxed Python environment with Zope security in place. """
         return self._execUntrusted(False, func, **kwargs)
-    
+
     def execUntrustedDebug(self, func, **kwargs):
         """ Sets up a sandboxed Python debug environment with Zope security in place. """
         return self._execUntrusted(True, func, **kwargs)
-    
+
     def assertUnauthorized(self, func, **kwargs):
         """ Check that calling func with currently effective roles will raise Unauthroized error. """
         try:
             self.execUntrusted(func, **kwargs)
         except Unauthorized, e:
             return
-        
+
         raise AssertionError, 'Unauthorized exception was expected'
 
     def test_xxx(self):
         # Run RestrictedPython in unit test code
-        # myCustomUserCreationFunction() is view/Python script/method you must call in the restricted mode 
+        # myCustomUserCreationFunction() is view/Python script/method you must call in the restricted mode
         self.execUntrusted('portal.myCustomUserCreationFunction(username="national_coordinator", email="nationalcoordinator@redinnovation.com")', portal=self.portal)
 
 Other references

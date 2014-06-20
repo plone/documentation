@@ -1,11 +1,11 @@
 --------------------------
-Timestamps 
+Timestamps
 --------------------------
 
 .. admonition:: Description
 
 	How to read created and modified timestamps on
-	Plone content items programmatically 
+	Plone content items programmatically
 
 .. contents :: local
 
@@ -30,7 +30,7 @@ Example (Zope console debug mode)::
 
         >>> app.yoursite.yourpage.modified()
         DateTime('2009/02/04 10:56:25.740 Universal')
-        
+
 Setting modification date explicitly
 ====================================
 
@@ -54,7 +54,7 @@ Example (Zope console debug mode, assume obj is Archetypes content item)::
 	>>> obj.setModificationDate(now)
 	>>> obj.modified()
 	>>> DateTime('2010/01/20 12:58:38.033 GMT+2')
-	        
+	
 Viewlet example
 ===============
 
@@ -64,33 +64,33 @@ Viewlet code::
 
         from zope.component import getMultiAdapter
         from plone.app.layout.viewlets.common import ViewletBase
-    
+
         class LastModifiedViewlet(ViewletBase):
             """ Viewlet to change the document last modification time.
             """
-            
+
             def modified(self):
                 """
-                
+
                 https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/browser/ploneview.py
-                
+
                 @return: Last modified as a string, local time format
                 """
-                
-                # Get Plone helper view 
-                # which we use to convert the date to local format 
+
+                # Get Plone helper view
+                # which we use to convert the date to local format
                 plone = getMultiAdapter((self.context, self.request), name="plone")
-                
+
                 time = self.context.modified()
-                
+
                 return plone.toLocalizedTime(time)
-                        
+
 Template (lastmodified.py)::
 
         <div id="last-modified">
                 Last modified: <span tal:content="view/modified" />
         </div>
-        
+
 Viewlet registration::
 
     <!-- Last modification date, register only for contentish context objects -->
@@ -103,7 +103,7 @@ Viewlet registration::
         permission="zope2.View"
         />
 
-        
+
 CSS::
 
         #last-modified {
@@ -113,30 +113,30 @@ CSS::
         }
 
 
-        
+
 Creation date
 -------------
 
-Products.Archetypes.ExtensibleMetadata.created() function will give the 
+Products.Archetypes.ExtensibleMetadata.created() function will give the
 creation date as Zope DateTime object. This is part of Dublin Core metadata.
 
 Example (Zope console debug mode)::
 
         >>> app.yoursite.yourpage.created()
         DateTime('2009/02/04 10:56:25.740 Universal')
-        
+
 
 IsExpired()
 --------------
 
 * https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/utils.py#L112
-       
-
-        
-        
 
 
 
 
 
-        
+
+
+
+
+

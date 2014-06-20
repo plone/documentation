@@ -4,7 +4,7 @@
 
 .. admonition:: Description
 
-        How to control commenting and discussion in Plone programmatically  
+        How to control commenting and discussion in Plone programmatically
 
 
 .. contents :: :local:
@@ -14,7 +14,7 @@ Introduction
 
 ``plone.app.discussion`` provides basic in-site discussion support.
 
-Disqus is a popular external <iframe> embed service used for commenting. 
+Disqus is a popular external <iframe> embed service used for commenting.
 
 More info
 
@@ -38,10 +38,10 @@ Example::
 
     def getDiscussionCount(self):
         try:
-            # plone.app.discussion.conversation object 
+            # plone.app.discussion.conversation object
             # fetched via IConversation adapter
             conversation = IConversation(self.targetContent)
         except:
             return 0
-        
+
         return conversation.total_comments

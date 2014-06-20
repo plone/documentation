@@ -41,7 +41,7 @@ Todo sobre los PLIPS
     En general, nosotros no queremos seguir un PLIP por mas de un año. Si su PLIP es aceptada y nosotros no vemos actividad en mas de un año, nosotros probablemente le preguntaremos para iniciar de nuevo el proceso.
 
 **No le gusta mi PLIP :( Y ahora que?**
-    Solo por que un PLIP no ha sido aceptado en núcleo no significa que sea una mala idea. A menudo, es el caso que hay implementaciones compitiendo y nosotros queremos ver eso evaluado como un añadido antes de recibir la "bendición" la implementación preferida. 
+    Solo por que un PLIP no ha sido aceptado en núcleo no significa que sea una mala idea. A menudo, es el caso que hay implementaciones compitiendo y nosotros queremos ver eso evaluado como un añadido antes de recibir la "bendición" la implementación preferida.
 
 Información general del proceso
 -------------------------------
@@ -66,9 +66,9 @@ Cuando escribe una PLIP, de se lo mas especifico que pueda al punto a tratar. Re
 
 Si el cambio es menor entonces un ticket en el sistema de seguimiento debe ser suficiente, añadido como una mejora. El punto clave acá es que cada cambio necesita documentación para que otros usuarios puedan ver que cambios hay de nuevo. Esto puede ser en el formulario de un registro de en el sistema de incidencia, o un PLIP en el caso de que es un cambio mayor. Un fallo o cambio menor normalmente no necesita ir a través del proceso de revisión - que hace un PLIP.
 
-Después que su plip es escrita, solicite un comentario de sus ideas en la lista de correo plone-developers. En este proceso de evaluación, usted quiere asegurarse de que el cambio no afectará negativamente a otras personas en un accidente. Otros pueden ser capaces de señalar puntos de riegos o incluso ofrecer una mejor o soluciones existentes. 
+Después que su plip es escrita, solicite un comentario de sus ideas en la lista de correo plone-developers. En este proceso de evaluación, usted quiere asegurarse de que el cambio no afectará negativamente a otras personas en un accidente. Otros pueden ser capaces de señalar puntos de riegos o incluso ofrecer una mejor o soluciones existentes.
 
-Cuándo este feliz con el comentario, :ref:`presente un PLIP <como_presentar_plip>`. Por favor, use la plantilla proveída (XXX: put the template here? Can we just have a custom ticket type?). Por favor, note un par de cosas. Es muy rara ves que la sección de “Risks” estará vacío o nula. Si usted busca esto es el caso y su PLIP no tiene más nada que un cambio trivial, quizás con algo más investigación debería estar listo. 
+Cuándo este feliz con el comentario, :ref:`presente un PLIP <como_presentar_plip>`. Por favor, use la plantilla proveída (XXX: put the template here? Can we just have a custom ticket type?). Por favor, note un par de cosas. Es muy rara ves que la sección de “Risks” estará vacío o nula. Si usted busca esto es el caso y su PLIP no tiene más nada que un cambio trivial, quizás con algo más investigación debería estar listo.
 
 El campo seconder es REQUERIDO. Nosotros enviaremos el PLIP de regreso a usted si ese campo no es llenado. En la actualidad, sólo alguien más que piensa que su PLIP es una buena idea, un +1. En el futuro cercano, vamos a empezar a preguntar al secunde que es un socio de la codificación, o alguien que esté dispuesto y sea capaz de terminar el PLIP si algo le ocurriera al implementador.
 
@@ -91,7 +91,7 @@ Vea la pagina :doc:`plipreview` para más información.
 
 Implementando su PLIP
 ----------------------
-Usted puede iniciar el desarrollo en cualquier momento - pero si usted yendo a modificar el Plone en si mismo, usted podría querer esperar para ver si sus ideas son aprobadas primero para salvarse algún trabajo que no sea necesario. 
+Usted puede iniciar el desarrollo en cualquier momento - pero si usted yendo a modificar el Plone en si mismo, usted podría querer esperar para ver si sus ideas son aprobadas primero para salvarse algún trabajo que no sea necesario.
 
 Reglas Generales
 ^^^^^^^^^^^^^^^^
@@ -108,9 +108,9 @@ Creando una nueva branch PLIP
 .. TODO: Esto necesita actualizar para las branches
 
 Cree un archivo de configuración buildout para su PLIP en la carpeta llamada ``plips``.
-Dar un nombre descriptivo, iniciando con el numero de plip; 
+Dar un nombre descriptivo, iniciando con el numero de plip;
 por ejemplo ``plip-1234-widget-frobbing.cfg``. Es archivo sera definido en el
-branches/trunks que usted esta trabajando con su PLIP. Esto debería lucir algo 
+branches/trunks que usted esta trabajando con su PLIP. Esto debería lucir algo
 así como lo siguiente:
 
 En el archivo ``plips/plip-1234-widget-frobbing.cfg``::
@@ -120,11 +120,11 @@ En el archivo ``plips/plip-1234-widget-frobbing.cfg``::
  auto-checkout +=
      plone.somepackage
      plone.app.someotherpackage
- 
+
  [sources]
  plone.somepackage = git git://github.com/plone/plone.somepackage.git branch=plip-1234-widget-frobbing
  plone.app.someotherpackage = git git://github.com/plone/plone.app.somepackage.git branch=plip-1234-widget-frobbing
- 
+
  [instance]
  eggs +=
      plone.somepackage
@@ -133,7 +133,7 @@ En el archivo ``plips/plip-1234-widget-frobbing.cfg``::
      plone.somepackage
      plone.app.someotherpackage
 
-Utilice la misma convención de nombre cuando haga un branch existente a paquetes existentes, y siempre usted 
+Utilice la misma convención de nombre cuando haga un branch existente a paquetes existentes, y siempre usted
 debería siempre hacer branch paquetes cuando esta trabajando en las PLIPs.
 
 Finalizando

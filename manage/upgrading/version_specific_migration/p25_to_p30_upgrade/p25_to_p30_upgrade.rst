@@ -33,5 +33,5 @@ Also mandatory is Python Imaging Library 1.1.5 or newer, Python ElementTree.
 
 Caching
 =======
- 
+
 * Caching related changes required (or maybe none!)

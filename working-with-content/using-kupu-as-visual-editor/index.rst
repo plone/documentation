@@ -88,7 +88,7 @@ link* panel will appear:
 
 .. figure:: /_static/insertlinkpanel.png
    :align: center
-   :alt: 
+   :alt:
 
 You use this panel by clicking on Home or Current folder to begin
 navigating the Plone web site to find a folder, page, or image to which
@@ -105,7 +105,7 @@ External link panel will appear:
 
 .. figure:: /_static/externallinkpanel.png
    :align: center
-   :alt: 
+   :alt:
 
 Type the web address of the external website in the box starting with
 http://. You can click *preview* if you need to check the address. If
@@ -129,21 +129,21 @@ re-type the subheadings at the top of the document:
 
 .. figure:: /_static/anchortext.png
    :align: center
-   :alt: 
+   :alt:
 
 Then select each of the re-typed subheadings at the top and click the
 anchor icon to select by subheadings:
 
 .. figure:: /_static/anchorset.png
    :align: center
-   :alt: 
+   :alt:
 
 A panel will appear for selecting which subheading to which the anchor
 link should connect:
 
 .. figure:: /_static/anchorwindow.png
    :align: center
-   :alt: 
+   :alt:
 
 The *Link to anchor* tab will appear. The left side shows a list of
 styles that could be set within the document. For this example, the
@@ -167,7 +167,7 @@ cursor where you want it and click the *add table* icon. You'll see the
 
 .. figure:: /_static/inserttablepanel.png
    :align: center
-   :alt: 
+   :alt:
 
 Setting rows and columns is straightforward. If you check the *Create
 Headings* box you'll have a place to type column headings for the table.
@@ -176,7 +176,7 @@ choices such as these:
 
 .. figure:: /_static/inserttablepanelclasses.png
    :align: center
-   :alt: 
+   :alt:
 
 Here are examples of these table styles:
 

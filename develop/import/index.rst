@@ -11,7 +11,7 @@ Importing content from other sources
 Introduction
 ============
 
-Rarely does a new website start all from scratch. 
+Rarely does a new website start all from scratch.
 Most of the time, you will have to import content from other systems. These may include:
 
 - other CMS systems, sometimes based on PHP/MySQL
@@ -25,7 +25,7 @@ While Plone even comes with an FTP service, that can serve as a last-ditch effor
 Transmogrify
 ============
 
-By far the most flexible tool available is something called **collective.transmogrifier**. 
+By far the most flexible tool available is something called **collective.transmogrifier**.
 
 .. note::
 	
@@ -57,10 +57,10 @@ Various add-ons exist to make working with transmogrify easier:
 - `funnelweb <https://pypi.python.org/pypi/funnelweb>`_ helps to parse static sites, and crawl external sites
 - `parse2plone <https://pypi.python.org/pypi/parse2plone>`_ is meant to get HTML content from the file system into Plone
 
-And a wide array of extra 'blueprints' exist, like 
+And a wide array of extra 'blueprints' exist, like
 
 - `quintagroup.transmogrifier <https://pypi.python.org/pypi/quintagroup.transmogrifier>`_
 - `transmogrify.sqlalchemy <https://pypi.python.org/pypi/transmogrify.sqlalchemy/1.0.1>`_ to get content out of just about any SQL database you can think of
-- `collective.jsonmigrator <https://pypi.python.org/pypi/collective.jsonmigrator>`_ is good at migrating data via JSON format from very old Plone versions, going back all the way to 2.x 
+- `collective.jsonmigrator <https://pypi.python.org/pypi/collective.jsonmigrator>`_ is good at migrating data via JSON format from very old Plone versions, going back all the way to 2.x
 
 Note this is only a selection, do a search on pypi to find more. NB searching both on `transmogrify <https://pypi.python.org/pypi?%3Aaction=search&term=transmogrify&submit=search>`_ and `transmogrifier <https://pypi.python.org/pypi?%3Aaction=search&term=transmogrifier&submit=search>`_ gives more results!
