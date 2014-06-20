@@ -28,7 +28,7 @@ To set up a plone 4.2 development environment::
   > git clone -b 4.2  https://github.com/plone/buildout.coredev ./plone42devel
   > virtualenv --no-site-packages plone42devpy
   > cd plone42devel
-  > ../plone42devpy/bin/python bootstrap.py # (where "python" is your python 2.6 binary). 
+  > ../plone42devpy/bin/python bootstrap.py # (where "python" is your python 2.6 binary).
   > bin/buildout -v
 
 If you run into issues in this process, please see the doc :doc:`issues`.
@@ -56,7 +56,7 @@ To see what branch you are currently on, just do::
 The line with a * by it will indicate which branch you are currently working on.
 
 .. important::
-   Make sure to rerun buildout if you were in a different branch earlier to get the correct versions of packages, otherwise you will get some weird behavior! 
+   Make sure to rerun buildout if you were in a different branch earlier to get the correct versions of packages, otherwise you will get some weird behavior!
 
 For more information on buildout, please see the `collective developer manual documentation on buildout <http://collective-docs.plone.org/en/latest/tutorials/buildout/index.html>`_.
 
@@ -70,7 +70,7 @@ You can get the source of the package with mr.developer and the checkout command
 At the base of your buildout, open checkouts.cfg and add your package if it's not already there::
 
   auto-checkout =
-          # my modified packages 
+          # my modified packages
           plone.app.caching
           plone.caching
           # others
@@ -90,7 +90,7 @@ Don't forget to rerun buildout! In both methods, mr.developer will download the 
 
 Testing Locally
 ---------------
-In an ideal world, you would write a test case for your issue before actually trying to fix it. In reality this rarely happens. No matter how you approach it, you should ALWAYS run test cases for both the module and plone.org before commiting any changes. 
+In an ideal world, you would write a test case for your issue before actually trying to fix it. In reality this rarely happens. No matter how you approach it, you should ALWAYS run test cases for both the module and plone.org before commiting any changes.
 
 If you don't start with a test case, save yourself potential problems and validate the bug before getting too deep into the issue!
 
@@ -108,11 +108,11 @@ After the module level tests run with your change, please make sure other module
 
 Updating CHANGES.rst and checkouts.cfg
 --------------------------------------
-Once all the tests are running locally on your machine, you are ALMOST ready to commit the changes. A couple housekeeping things before moving on. 
+Once all the tests are running locally on your machine, you are ALMOST ready to commit the changes. A couple housekeeping things before moving on.
 
 First, please edit CHANGES.rst (or CHANGES.txt) in each pakage you have modified and add a summary of the change. This change note will be collated for the next Plone release and is important for integrators and developers.
 
-*Most importantly*, if you didn't do it earlier, edit checkouts.cfg in the buildout directory and add your changes package to the auto-checkout list. This lets the release manager know that the package has been updated so that when the next release of Plone is cut a new egg will be released and Plone will need to pin to the next version of that package. READ: this is how your fix becomes an egg! 
+*Most importantly*, if you didn't do it earlier, edit checkouts.cfg in the buildout directory and add your changes package to the auto-checkout list. This lets the release manager know that the package has been updated so that when the next release of Plone is cut a new egg will be released and Plone will need to pin to the next version of that package. READ: this is how your fix becomes an egg!
 
 Note that there is a section seperator called "# Test Fixes Only". Make sure your egg is above that line or your egg probably won't get made very quickly. This just tells the release manager that any eggs below this line have tests that are updated, but no code changes.
 
@@ -142,7 +142,7 @@ Committing to Products.CMFPlone
 -------------------------------
 If you are working a bug fix on Products.CMFPlone,
 there are a couple other things to take notice of.
-First and foremost, 
+First and foremost,
 you'll see that there are several branches.
 At the time of writing this document,
 there are branches for 4.1, 4.2, and master, which is the implied 4.3.
@@ -150,7 +150,7 @@ there are branches for 4.1, 4.2, and master, which is the implied 4.3.
 Still with me? So you have a bug fix for 4.x.
 If the fix is only for one version,
 make sure to get that branch and party on.
-However, chances are the bug is in multiple branches. 
+However, chances are the bug is in multiple branches.
 
 Let's say the bug starts in 4.1. Pull the 4.1 branch and fix and commit there with tests.
 
@@ -199,7 +199,7 @@ Branches and Forks and Direct Commits - Oh My!
 Plone used to be in an svn repository, so everyone is familiar and accustomed to committing directly to the branches. After the migration to github, the community decided to maintain this spirit. If you have signed the contributor agreement, you can commit directly to the branch (for plone this would be the version branch, for most other packages this would be master).
 
 HOWEVER, there are a few situations where a branch is appropriate. If you:
- * are just getting started, 
+ * are just getting started,
  * are not sure about your changes
  * want feedback/code review
  * are implementing a non-trivial change
@@ -229,6 +229,6 @@ If you are working from a ticket, please don't forget to go back to the ticket a
 
 FAQ
 ---
- * *How do I know when my package got made?* 
+ * *How do I know when my package got made?*
     You can follow the project on github and watch its timeline. You can also check the CHANGES.txt of every plone release for a comprehensive list of all changes and validate that yours is present.
 

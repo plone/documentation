@@ -20,13 +20,13 @@ Get a sample image::
 
 Start Python with Zope libraries in PYTHONPATH or Plone debug shell (latter)::
 
-     bin/zopepy 
+     bin/zopepy
 
      # bin/instance debug  # <--- needs Plone site stopped first
 
 Run the following on the interactive Python prompt started above::
 
-    
+
     import PIL
     from PIL import Image
     im = Image.open("JohnCarrollGilbertStuart.jpg")  # Open downloaded image
@@ -86,7 +86,7 @@ For further debugging the problem you can start the particular Python interprete
 Run Python in verbose mode to print all imports (the example below has been shortened)::
 
         (python-2.4)moo@murskaamo:~/isleofback$ python -v
-        Python 2.4.6 (#1, Jul 16 2010, 10:31:46) 
+        Python 2.4.6 (#1, Jul 16 2010, 10:31:46)
         [GCC 4.4.3] on linux2
         Type "help", "copyright", "credits" or "license" for more information.
         >>> import _imaging
@@ -94,7 +94,7 @@ Run Python in verbose mode to print all imports (the example below has been shor
           File "<stdin>", line 1, in ?
         ImportError: libjpeg.so.8: cannot open shared object file: No such file or directory
         >>> exit
-        
+
 In this case we have a custom Python build based on `collective.buildout.python <http://blog.mfabrik.com/2010/07/16/easily-install-all-python-versions-under-linux-and-osx-using-collective-buildout-python/>`_ recipe.
 It will compile us a custom libjpeg version and should not use OS libjpeg::
 
@@ -109,13 +109,13 @@ However, looks like this libjpeg does not end up in the OS LD_LIBRARY_PATH impor
 
 For more information see
 
-* http://permalink.gmane.org/gmane.comp.web.zope.plone.product-developers/4946         
+* http://permalink.gmane.org/gmane.comp.web.zope.plone.product-developers/4946
 
 IOError when scaling images on Plone 4
 ========================================
 
 Example::
-        
+
         Traceback (most recent call last):
           File "/srv/plone/xxx/plone-new/eggs/plone.app.imaging-1.0.4-py2.6.egg/plone/app/imaging/traverse.py", line 73, in createScale
             imgdata, format = field.scale(data, width, height)
@@ -137,7 +137,7 @@ Version may vary so ``apt-cache search`` and ``grep``
 commands are your friends::
 
         sudo apt-get install libpng12-dev  libjpeg62-dev python-imaging
-               
+
 Forcing libjpeg path
 ======================
 
@@ -147,7 +147,7 @@ Try in buildout.cfg::
         ...
         environment-vars =
                 LD_LIBRARY_PATH /srv/plone/python/python-2.6/lib
-        
+
 
 libjpeg.so.8: cannot open shared object file: No such file or directory
 =========================================================================

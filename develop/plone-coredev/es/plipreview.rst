@@ -19,7 +19,7 @@ Hay varias cosas que podría ser dirigido en una revisión PLIP que depende de l
 
 General
 -------
- * ¿Este PLIP realmente hace lo que los implementadores propusieron? ¿Hay variaciones incompletas? 
+ * ¿Este PLIP realmente hace lo que los implementadores propusieron? ¿Hay variaciones incompletas?
  * ¿Hubo allí algunos errores al ejecutar el buildout? ¿Hizo el trabajo de migración?
  * ¿No mensajes de error y los mensajes de estado tiene sentido? ¿Son correctas las internacionalizaciones?
  * ¿Hay alguna consideraciones de rendimiento? ¿El implementador de este PLIP se dirigió a ellos si es así?
@@ -32,10 +32,10 @@ Errores
 
 Incidentes de usabilidad
 ------------------------
- * ¿Es usable la implementación? 
- * ¿Cómo los usuarios finales novatos responden al cambio? 
- * ¿Hace este PLIP necesidad una revisión de usabilidad? Si usted piensa que este PLIP necesita una revisión de usabilidad, por favor, cambiar el estado a "please review" y agregue una nota a estos comentarios. 
- * ¿El PLIP es compatible con el resto de Plone? Por ejemplo, si hay configuración de panel del control, hacer esta forma nueva funciona en con el resto de los panel de control. 
+ * ¿Es usable la implementación?
+ * ¿Cómo los usuarios finales novatos responden al cambio?
+ * ¿Hace este PLIP necesidad una revisión de usabilidad? Si usted piensa que este PLIP necesita una revisión de usabilidad, por favor, cambiar el estado a "please review" y agregue una nota a estos comentarios.
+ * ¿El PLIP es compatible con el resto de Plone? Por ejemplo, si hay configuración de panel del control, hacer esta forma nueva funciona en con el resto de los panel de control.
  * ¿Todo se comporta bien para principiantes y usuarios avanzados? ¿Hay algún flujo de trabajo que se ofrece una experiencia extraña?
  * ¿Hay permisos nuevos y ellos trabajan correctamente? ¿Esas asignaciones de roles hacen con sentido?
 
@@ -59,7 +59,7 @@ Python
 Javascript
 ^^^^^^^^^^
  * ¿El javascript conocer a nuestro conjunto de normas javascript? Ver http://developer.plone.org/templates_css_and_javascripts/javascript.html
- * ¿El Javascript funciona en todos los navegadores soportados actualmente? ¿Es eficaz? 
+ * ¿El Javascript funciona en todos los navegadores soportados actualmente? ¿Es eficaz?
 
 ME/TAL
 ^^^^^^

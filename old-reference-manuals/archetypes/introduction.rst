@@ -2,7 +2,7 @@
 Introduction
 ===============
 
-What is Archetypes? 
+What is Archetypes?
 ---------------------
 
 .. admonition:: Description
@@ -39,7 +39,7 @@ Archetypes schemas
 
 .. admonition:: Description
 
-		Introducing Archetypes-based schemas and fields. 
+		Introducing Archetypes-based schemas and fields.
 
 Archetypes provides a robust framework for storing data attributes on
 content objects.  This framework consist of a number of **Fields**

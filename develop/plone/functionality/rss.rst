@@ -52,7 +52,7 @@ Collecting content for the RSS feed
 
 * Go to your collection content item
 
-* Go to *criteria* tab 
+* Go to *criteria* tab
 
 * Set *content types* criteria
 
@@ -83,8 +83,8 @@ This expression will
 
 * Get URL for *site-feed* object, using *RSS* template
 
-* Will explicitly set HTTP GET query parameter *set_language* which can be used to manually 
-  force Plone content language. We use the current language (from the user cookie) here, 
+* Will explicitly set HTTP GET query parameter *set_language* which can be used to manually
+  force Plone content language. We use the current language (from the user cookie) here,
   to make sure that the user gets RSS feed in correct language on multilingual sites.
 
 More about :doc:`expressions </develop/plone/functionality/expressions>`.
@@ -92,10 +92,10 @@ More about :doc:`expressions </develop/plone/functionality/expressions>`.
 Publish and test
 ================
 
-Publish collection after the content seems to be right, using the workflow 
+Publish collection after the content seems to be right, using the workflow
 menu on the collection content item.
 
-Test RSS feed by copy-pasting RSS URL from the site action to your RSS Reader, like 
+Test RSS feed by copy-pasting RSS URL from the site action to your RSS Reader, like
 *Google Reader*.
 
 Syndication Settings
@@ -104,7 +104,7 @@ Syndication Settings
 Plone <= 4.2
 ============
 
-``portal_syndication`` is a persistent utility  managing RSS settings. 
+``portal_syndication`` is a persistent utility  managing RSS settings.
 It provides settings to for formatting RSS feeds (frequency of updates, number of items).
 
 * https://github.com/plone/Products.CMFPlone/blob/4.2.x/Products/CMFPlone/SyndicationTool.py
@@ -114,7 +114,7 @@ Plone >= 4.3
 
 In Plone 4.3, the ``portal_syndication`` utility was replaced by a browser view and registry settings.
 
-The view may be traversed to from any context with ``@@syndication-util``.  
+The view may be traversed to from any context with ``@@syndication-util``.
 
 for example, in Plone 4.2 you check for the ability to syndicate a context like so:
 
@@ -144,7 +144,7 @@ In Plone 4.3, this is updated to look like this:
              Subscribe to an always-updated feed of these search terms</a>
     </p>
 
-The ``syndication-util`` view is found in ``Products.CMFPlone.browser.syndication.utils``  
+The ``syndication-util`` view is found in ``Products.CMFPlone.browser.syndication.utils``
 
  * https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/browser/syndication/utils.py
 
@@ -156,7 +156,7 @@ Access /content/synPropertiesForm and publish.
 RSS feed content
 ----------------
 
-RSS feed content is the content of the folder or special stream provided by 
+RSS feed content is the content of the folder or special stream provided by
 the content type.
 
 ``portal_syndication`` uses the following logic to pull the content::

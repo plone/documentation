@@ -25,7 +25,7 @@ Memoizers
 ---------
 
 Memoize's RAM cache can be replaced with a ``memcached`` backend with the
-following snippet. 
+following snippet.
 
 See the set-up for the http://plone.org/ site as an example:
 
@@ -164,7 +164,7 @@ ZCacheable
 persistent objects that are subclasses of ``OFS.Cacheable`` to have the
 cache backend configured externally.
 
-The cache type (cache id) in use is stored 
+The cache type (cache id) in use is stored
 :doc:`persistently </develop/plone/persistency/persistent>` per cache user object,
 but the cache can be created at runtime (RAM cache) or externally
 (``memcached``) depending on the situation.

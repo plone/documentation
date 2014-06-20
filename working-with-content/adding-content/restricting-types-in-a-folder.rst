@@ -23,7 +23,7 @@ There are three choices shown for restricting types in the folder:
 
 .. figure:: /_static/restricttypes.png
    :align: center
-   :alt: 
+   :alt:
 
 The default choice, to use the setting of the parent folder. Having this
 as the default means that if you create a folder and restrict the types
@@ -35,7 +35,7 @@ available types:
 
 .. figure:: /_static/restricttypesmanually.png
    :align: center
-   :alt: 
+   :alt:
 
 Types listed under the *Allowed types* heading are those available on
 the web site. The default, as shown, is to allow all types. Allowed

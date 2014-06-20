@@ -1,4 +1,4 @@
-Layout templates 
+Layout templates
 ===================
 
 **Creating a custom layout for our form**
@@ -39,19 +39,19 @@ the form tag:
           xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           i18n:domain="example.dexterityforms"
           metal:use-macro="context/main_template/macros/master">
-          
+
         <metal:block fill-slot="main">
-            
+
             <h1 class="documentFirstHeading" tal:content="view/label | nothing" />
-            
+
             <p>Welcome to Backgammon Pizza! We hope you enjoy our food.</p>
-            
+
             <div id="content-core">
                 <metal:block use-macro="context/@@ploneform-macros/titlelessform" />
             </div>
-            
+
         </metal:block>
-        
+
     </html>
 
 Notice how the *@@ploneform-macros* view does most of the work. This

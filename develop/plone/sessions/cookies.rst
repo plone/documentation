@@ -75,22 +75,22 @@ Default Plone cookies
 
 Typical Plone cookies::
 
-	# Logged in cookie 
-	__ac="NjE2NDZkNjk2ZTMyOjcyNzQ3NjQxNjQ2ZDY5NmUzNjM2MzczNw%253D%253D"; 
+	# Logged in cookie
+	__ac="NjE2NDZkNjk2ZTMyOjcyNzQ3NjQxNjQ2ZDY5NmUzNjM2MzczNw%253D%253D";
 
 	# Language chooser
 	I18N_LANGUAGE="fi";
 
-	# Status message 
+	# Status message
 	statusmessages="BURUZXJ2ZXR1bG9hISBPbGV0IG55dCBraXJqYXV0dW51dCBzaXPDpMOkbi5pbmZv"
 
 	# Google Analytics tracking
-	__utma=39444192.1440286234.1270737994.1321356818.1321432528.21; 
-	__utmz=39444192.1306272121.6.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); 
-	__utmb=39444192.3.10.1321432528; 
+	__utma=39444192.1440286234.1270737994.1321356818.1321432528.21;
+	__utmz=39444192.1306272121.6.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);
+	__utmb=39444192.3.10.1321432528;
 	__utmc=39444192;
 
-	# Plone copy-paste clipboard 
+	# Plone copy-paste clipboard
 	__cp="x%25DA%2515%258AA%250A%25800%250C%2504%25A3%25A0%25E0E%257CF%25FF%25E4%2529%2587%25801%25D5B%25B3-%25F8%257B%25D3%25C3%250E%25CC%25B0i%2526%2522%258D%25D19%2505%25D2%2512%25C0P%25DF%2502%259D%25AB%253E%250C%2514_%25C3%25CAu%258B%25C0%258Fq%2511s%25E8k%25EC%250AH%25FE%257C%258Fh%25AD%25B3qm.9%252B%257E%25FD%25D1%2516%25B3"; Path=/
 
 Zope session cookie
@@ -120,7 +120,7 @@ Session cookie lifetime
 
 Setting session cookie lifetime
 
-* http://plone.org/documentation/kb/cookie-duration 
+* http://plone.org/documentation/kb/cookie-duration
 
 Sanitizing cookies for the cache
 ====================================

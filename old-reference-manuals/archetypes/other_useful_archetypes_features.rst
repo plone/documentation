@@ -1,10 +1,10 @@
 =================================
-Other Useful Archetypes Features 
+Other Useful Archetypes Features
 =================================
 
 .. admonition:: Description
 
-		Complementary features you'd be pleased to know about. 
+		Complementary features you'd be pleased to know about.
 
 How to use events to hook the Archetypes creation process
 ----------------------------------------------------------
@@ -13,7 +13,7 @@ How to use events to hook the Archetypes creation process
 
 	Times have changed since the days of at_post_create_script(). Here is the
 	way to hook into Zope3 (or Five's) event system in order to execute code
-	during the Archetypes content creation and or editing process. 
+	during the Archetypes content creation and or editing process.
 
 In the old days the only way to execute code during the object creation
 process for Archetypes was to add a method to your content type called
@@ -144,13 +144,13 @@ use \ *IObjectEditedEvent*.
 The \ `Sending and handling events`_ tutorial is a little out of date
 but provides a broader explanation of the underlying mechanics. `Walking
 through Five to Zope 3 - Events`_ is another great introduction to
-events handling. 
+events handling.
 
 .. raw:: html
 
    </div>
 
- 
+
 
 .. _Sending and handling events: ../../../tutorial/borg/sending-and-handling-events/
 .. _Walking through Five to Zope 3 - Events: ../../../tutorial/five-zope3-walkthrough/events

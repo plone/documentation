@@ -33,15 +33,15 @@ out into their component parts:
 ::
 
     www.mysite.com/about/personnel/sally/bio
-    ^ 
+    ^
     website name
-                   ^ 
+                   ^
                    a folder named About
-                         ^ 
+                         ^
                          a folder named Personnel
-                                   ^ 
+                                   ^
                                    a folder named Sally
-                                         ^ 
+                                         ^
                                          a folder named Bio
 
 In this example, Plone changed each folder title to lowercase, e.g.,

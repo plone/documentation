@@ -1,4 +1,4 @@
-Adding five.grok as a dependency 
+Adding five.grok as a dependency
 ==================================
 
 **How to install the five.grok package safely**

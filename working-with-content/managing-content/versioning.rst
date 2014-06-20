@@ -87,7 +87,7 @@ You may also compare any previous version to the *current* version by
 clicking the *Compare to current* link History overlay, found to the far
 right of each version listed.
 
-Viewing and reverting to previous versions 
+Viewing and reverting to previous versions
 ------------------------------------------
 
 **You can preview any previous version** of a document by clicking the

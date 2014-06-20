@@ -32,26 +32,26 @@ view is called *standard view*:
 
 .. figure:: /_static/folderdisplaymenu.png
    :align: center
-   :alt: 
+   :alt:
 
 And, here is *summary view*:
 
 .. figure:: /_static/folderviewsummary.png
    :align: center
-   :alt: 
+   :alt:
 
 And, *tabular view*:
 
 .. figure:: /_static/folderviewtabular.png
    :align: center
-   :alt: 
+   :alt:
 
 And, *thumbnail view*, which is mainly useful for photographs, but still
 works for normal content:
 
 .. figure:: /_static/folderviewthumbnail.png
    :align: center
-   :alt: 
+   :alt:
 
 Making a photo album is easy. Just add the photographs (images, or image
 files, the most common being .jpg files) to a folder and set the display

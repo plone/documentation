@@ -2,13 +2,13 @@
  Navigation trees
 ====================================
 
-.. contents :: :local: 
+.. contents :: :local:
 
 .. admonition:: Description
 
         How navigation trees are generate in Plone and how to generate
         custom navigation trees.
-        
+
 Introduction
 ------------
 
@@ -20,7 +20,7 @@ Plone exposes methods to build navigation trees.
 
 These are internally used by navigation portlet and sitemap.
 
-Creating a custom navigation tree 
+Creating a custom navigation tree
 ----------------------------------
 
 See `Products.PloneHelpCenter <https://github.com/collective/Products.PloneHelpCenter/blob/0f2fac5a7216eb8c0d83736dbcbd6a4385f9b4f4/Products/PloneHelpCenter/content/ReferenceManual.py>`_ for full code.
@@ -28,17 +28,17 @@ See `Products.PloneHelpCenter <https://github.com/collective/Products.PloneHelpC
 The following example builds Table of Contents for *Reference Manual* content type::
 
         class Strategy(NavtreeStrategyBase):
-            
+
             rootPath = '/'.join(root.getPhysicalPath())
             showAllParents = False
-                
+
         strategy = Strategy()
         query=  {'path'        : '/'.join(root.getPhysicalPath()),
                  'object_provides' : 'Products.PloneHelpCenter.interfaces.IHelpCenterMultiPage',
                  'sort_on'     : 'getObjPositionInParent'}
-                
+
         toc = buildFolderTree(self, current, query, strategy)['children']
-        
+
 Excluding items in the navigation tree
 ----------------------------------------
 
@@ -61,7 +61,7 @@ Querying items in natural sort order
 --------------------------------------
 
 Sometimes you want to display content items as they appear in Plone navigation.
-Below is an example which builds a flat vobulary for a form checbox list 
+Below is an example which builds a flat vobulary for a form checbox list
 based on a custom portal_catalog query and root folder.
 
 query_items_in_natural_sort_order::
@@ -159,4 +159,4 @@ How to use::
         # Convert tuples to SimpleTerm objects
         terms = make_terms(result)
 
-        return SimpleVocabulary(terms)        
+        return SimpleVocabulary(terms)

@@ -14,7 +14,7 @@ Plugin Types
    extraction-plugins
    authentication-plugins
    challenge-plugins
-   update-credentials-plugins 
+   update-credentials-plugins
    reset-credentials-plugins
    properties-plugins
    groups-plugins

@@ -63,8 +63,8 @@ If you need to refer to the session id, you can query for it::
     sdm = self.context.session_data_manager
     session_id = sdm.getBrowserIdManager().getBrowserId(create=False)
     # Session id will be None if the session has not been created yet
-        
-        
+
+
 Initial construction of session data
 ======================================
 
@@ -81,20 +81,20 @@ Example::
 
     def getOrCreateCheckoutSession(context, create=False, browser_id=None):
         """ Get the named session object for storing session data.
-        
+
         Each add-on product can have their own session data slot(s)
-        identified by a string name. 
-        
+        identified by a string name.
+
         @param context: Any Plone content item with acquisition support
-        
+
         @param create: Force new data creation, otherwise return None if not exist
-        
+
         @param browser_id: Cookie id in the user browsers. We can set this
             explicitly if we want to
-            
+
         @return: ICheckoutData instance
         """
-        
+
         session_manager = context.session_data_manager
         if browser_id is None:
             if not session_manager.hasSessionData() and not create:
@@ -129,7 +129,7 @@ Example::
             return
         del session['getpaid.cart']
 
-	    
+	
 Session data and unit testing
 =============================
 

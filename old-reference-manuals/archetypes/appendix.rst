@@ -42,10 +42,10 @@ i.e.,
 
     class MyExample (BaseContent):
       """ My example Archetype Content Type. """
-    
+
       # define the schema
       # override the default actions
-    
+
       def my_function (self, foo1, foo2):
         """ You need a doc string here!! I lost a lot of time finding this out.
             Archetypes needs this when registering the function in the framework.
@@ -114,10 +114,10 @@ corresponding key in the REQUEST). For example, here's a
 
     class MyExample (BaseContent):
       """ My example Archetype Content Type. """
-    
+
       # define the schema
       # override the default actions
-    
+
       def post_validate (self, REQUEST, errors):
         """ This function checks the edit form values in context.
             It's called after the field validation passes.  """
@@ -135,10 +135,10 @@ code shows how to do this.
 
     class MyExample (BaseFolder):
       """ My example Archetype Content Type. """
-    
+
       # define the schema
       # override the default actions
-    
+
       def addTransaction (self, type, quantity):
         """ This function creates a new MyTransaction object in the folder. """
         # create a unique id for this transaction
@@ -204,10 +204,10 @@ some like this (for example, MyOrder.py):
     from AccessControl import ClassSecurityInfo
     from Products.Archetypes.atapi import *
     from Products.Laborde.config import *
-    
+
     from Products.DataGridField import DataGridField, DataGridWidget # we talk about this later
     from Products.DataGridField.Column import Column #really!
-    
+
     schema = Schema((
         StringField(
             name='PurchaseOrderID',
@@ -235,7 +235,7 @@ some like this (for example, MyOrder.py):
                 "Quantity"
             ),
         ),
-    
+
         ComputedField(
             name='TotalCost',
             searchable=True,
@@ -245,22 +245,22 @@ some like this (for example, MyOrder.py):
                 modes=('view')
             ),
         ),
-    
+
     ),
     )
-    
+
     PurchaseOrder_schema = BaseSchema.copy() + \
         schema.copy()
-    
+
     class PurchaseOrder(BaseContent):
         """
         """
-    
+
         # some class defitnitions
-    
+
         # a function that calculates total
         # but it doesn't even check (try-except) data it uses
-    
+
         def calculateTotal(self):
             Total = 0.0
             for n in self.PurchaseOrderItems:
@@ -269,7 +269,7 @@ some like this (for example, MyOrder.py):
                 Total = Total + Quantity * UnitaryCost
             Total = '%1.2f' % Total # this makes our total have 2 decimals for display
             return Total
-    
+
     registerType(PurchaseOrder, PROJECTNAME)
 
  
@@ -386,89 +386,89 @@ Here is the file in it's entirety:
 ::
 
     from Products.Archetypes.public import *
-    
+
     from Products.CMFCore import CMFCorePermissions
-    
-    
-    
+
+
+
     from config import PKG_NAME
-    
-    
-    
+
+
+
     schema = BaseSchema.copy() + Schema((
-    
+
             TextField('abstract',
-    
+
                     required=1,
-    
+
                     searchable=1,
-    
+
                     widget = TextAreaWidget(description="Abstract", label="Abstract"),
-    
+
                     schemata = 'article'),
-    
+
             TextField('body',
-    
+
                     required=1,
-    
+
                     searchable=1,
-    
+
                     widget = TextAreaWidget(description="Body", label="Body"),
-    
+
                     schemata = 'article'),
-    
+
             TextField('firstname',
-    
+
                     required=1,
-    
+
                     searchable=1,
-    
+
                     widget = StringWidget(description="First name", label="First name"),
-    
+
                     schemata = 'author'),
-    
+
             TextField('lastname',
-    
+
                     required=1,
-    
+
                     searchable=1,
-    
+
                     widget = StringWidget(description="Last name", label="Last name"),
-    
+
                     schemata = 'author'),
-    
+
             ))
-    
-    
-    
+
+
+
     schema['title'].schemata = 'article'
-    
+
     schema['id'].schemata = 'article'
-    
-    
-    
+
+
+
     class Article(BaseContent):
-    
+
             schema = schema
-    
-    
-    
+
+
+
             actions = (
-    
+
                             {'id': 'view',
-    
+
                             'name': 'View',
-    
+
                             'action': 'string:${object_url}/article_view',
-    
+
                             'permissions': (CMFCorePermissions.View,)
-    
+
                             },
-    
+
             )
-    
-    
-    
+
+
+
     registerType(Article, PKG_NAME)
 
 View template
@@ -512,13 +512,13 @@ body and above the header add the following code:
 ::
 
             <div style="margin-bottom: 1em">
-    
+
                     <span tal:repeat="schemata python: here.Schemata().keys()">
-    
+
                             <b tal:condition="python: schemata != 'metadata'">[<a tal:attributes="href string:?page=${schemata}"><span tal:replace="schemata" /></a>]</b>
-    
+
                     </span>
-    
+
             </div>
 
 This just repeats over our schematas' names (we get them with
@@ -558,127 +558,127 @@ The completed article\_view.pt looks like this:
 ::
 
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-    
+
           lang="en"
-    
+
           xmlns:tal="http://xml.zope.org/namespaces/tal"
-    
+
           xmlns:metal="http://xml.zope.org/namespaces/metal"
-    
+
           xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    
+
           metal:use-macro="here/main_template/macros/master">
-    
-    
-    
+
+
+
       <head><title></title></head>
-    
-    
-    
+
+
+
       <body>
-    
-    
-    
+
+
+
         <div metal:fill-slot="main">
-    
-    
-    
+
+
+
           <metal:main_macro define-macro="main">
-    
-    
-    
+
+
+
             <div style="margin-bottom: 1em">
-    
+
                     <span tal:repeat="schemata python: here.Schemata().keys()">
-    
+
                             <b tal:condition="python: schemata != 'metadata'">[<a tal:attributes="href string:?page=${schemata}"><span tal:replace="schemata" /></a>]</b>
-    
+
                     </span>
-    
+
             </div>
-    
-    
-    
+
+
+
             <metal:header_macro define-macro="header">
-    
+
               <div metal:use-macro="here/document_actions/macros/document_actions">
-    
+
                 Document actions (print, rss, etc)
-    
+
               </div>
-    
+
               <h1 tal:content="title_string | here/title_or_id" />
-    
+
               <tal:has_document_byline tal:condition="exists:here/document_byline">
-    
+
                 <div metal:use-macro="here/document_byline/macros/byline">
-    
+
                   Get the byline - contains details about author and modification date.
-    
+
                 </div>
-    
+
               </tal:has_document_byline>
-    
+
             </metal:header_macro>
-    
-    
-    
+
+
+
             <metal:body_macro metal:define-macro="body"
-    
+
                               tal:define="field_macro field_macro | here/widgets/field/macros/view;"
-    
+
                               tal:repeat="field  python:here.Schemata()[here.REQUEST.get('page', here.Schemata().keys()[0])].filterFields(isMetadata=0)">
-    
+
               <tal:if_visible define="mode string:view;
-    
+
                                       visState python:field.widget.isVisible(here, mode);
-    
+
                                       visCondition python:field.widget.testCondition(here, portal, template);"
-    
+
                               condition="python:visState == 'visible' and visCondition">
-    
+
                 <metal:use_field use-macro="field_macro" />
-    
+
               </tal:if_visible>
-    
+
             </metal:body_macro>
-    
-    
-    
+
+
+
             <metal:folderlisting_macro metal:define-macro="folderlisting"
-    
+
                                        tal:define="fl_macro here/folder_listing/macros/listing | nothing;
-    
+
                                                    folderish here/isPrincipiaFolderish | nothing;">
-    
+
                 <tal:if_folderlisting condition="python:folderish and fl_macro">
-    
+
                     <metal:use_macro use-macro="fl_macro" />
-    
+
                 </tal:if_folderlisting>
-    
+
             </metal:folderlisting_macro>
-    
-    
-    
+
+
+
             <metal:footer_macro define-macro="footer">
-    
+
             </metal:footer_macro>
-    
-    
-    
+
+
+
           </metal:main_macro>
-    
-    
-    
+
+
+
         </div>
-    
-    
-    
+
+
+
       </body>
-    
-    
-    
+
+
+
     </html>
 
 Conclusion
@@ -736,10 +736,10 @@ on which you want to activate versioning.
 
     from Products.CMFCore.utils import getToolByName
     from Products.CMFEditions.setuphandlers import DEFAULT_POLICIES
-    
+
     # put your custom types in this list
     TYPES_TO_VERSION = ('Scientist', 'Article', 'Presentation')
-    
+
     def setVersionedTypes(portal):
         portal_repository = getToolByName(portal, 'portal_repository')
         versionable_types = list(portal_repository.getVersionableContentTypes())
@@ -787,11 +787,11 @@ the 3 content-types used in the example above.
         <type portal_type="Scientist">
           <field name="any" difftype="Compound Diff for AT types"/>
         </type>
-    
+
         <type portal_type="Article">
           <field name="any" difftype="Compound Diff for AT types"/>
         </type>
-    
+
         <type portal_type="Presentation">
           <field name="any" difftype="Compound Diff for AT types"/>
         </type>
@@ -961,18 +961,18 @@ basic example:
 ::
 
     from zope.interface import Interface, Attribute
-    
+
     class IShoe(Interface):
         """A shoe
         """
-    
+
         color = Attribute("Color of the shoe")
         size = Attribute("Shoe size")
-    
+
     class IShoeWearing(Interface):
         """An object that may wear shoes
         """
-    
+
         def wear(left, right):
             """Wear the given pair of shoes
             """
@@ -992,13 +992,13 @@ interface:
 ::
 
     from zope.interface import implements
-    
+
     class Shoe(object):
         """A regular shoe
         """
-    
+
         implements(IShoe)
-        
+
         color = u''
         size = 0
 
@@ -1113,14 +1113,14 @@ person:
     class IPerson(Interface):
         """A person
         """
-    
+
         name = Attribute("The person's name")
         apparel = Attribute("A list of things this person is wearing")
-    
+
     class Person(object):
-    
+
         implements(IPerson)
-    
+
         name = u''
         apparel = ()
 
@@ -1155,16 +1155,16 @@ adapter:
 
     from zope.interface import implements
     from zope.component import adapts
-    
+
     class PersonWearingShoes(object):
         """Adapter allowing a person to wear shoes
         """
         implements(IShoeWearing)
         adapts(IPerson)
-    
+
         def __init__(self, context):
             self.context = context
-    
+
         def wear(self, left, right):
             self.context.apparel += (left, right)
 
@@ -1353,14 +1353,14 @@ security etc. However, abstractly a view looks like this:
     class PersonView(object):
         implements(IBrowserView)
         adapts(IPerson, IHttpRequest)
-    
+
         def __init__(self, context, request):
             self.context = context
             self.request = request
-    
+
         def name(self):
             return self.context.name
-    
+
         def requested_shoes(self):
             return self.request.get('requested_shoes', [])
 
@@ -1435,16 +1435,16 @@ can't find your shoes):
     class IShoeLocator(Interface):
         """A service for finding your shoes
         """
-    
+
         def findShoes(owner):
             """Find all shoes for the given owner.
             """
-    
+
     class DefaultShoeLocator(object):
         implements(IShoeLocator)
-        
+
         def findShoes(self, owner):
-            return ... 
+            return ...
 
 The Component Architecture contains a very flexible
 *utility registry*, which lets you look up things by interface and
@@ -1466,8 +1466,8 @@ the utility component:
 
 ::
 
-    <utility 
-        factory=".locator.DefaultShoeLocator" 
+    <utility
+        factory=".locator.DefaultShoeLocator"
         provides=".interfaces.IShoeLocator
         />
 
@@ -1490,7 +1490,7 @@ wanted to keep around:
     >>> left = Shoe()
     >>> right = Shoe()
         ...
-    
+
     >>> from zope.component import provideUtility
     >>> provideUtility(left, name=u'left-shoe')
     >>> provideUtility(right, name=u'right-shoe')
@@ -1514,7 +1514,7 @@ module *shoes.py*, we could write:
         component=".shoes.left"
         name="left"
         />
-    
+
     <utility
         component=".shoes.right"
         name="right"
@@ -1558,10 +1558,10 @@ on a local site manager instance:
 ::
 
     >>> from zope.component import getSiteManager
-    
+
     >>> getUtility(IShoe, name=u'left-shoe) is left
     True
-    
+
     >>> sm = getSiteManager(context)
     >>> sm.provideUtility(myShoe, name=u'left-shoe')
     >>> getUtility(IShoe, name=u'left-shoe) is myShoe
@@ -1603,15 +1603,15 @@ To the user, b-org presents itself as three content types:
 
 
 
-Department 
+Department
     A container for employees, and a source of groups. That is, each
     department becomes a group, and the employees within that
     department become group members.
-Employee 
+Employee
     Information about employees, and a source of users. That is, each
     active employee object becomes a user who can log in and interact
     with the portal.
-Project 
+Project
     A project workspace - a folder where employees can collaborate on
     content. Content inside the project folder has a custom workflow,
     and employees who are related to the project (by reference) have
@@ -1628,24 +1628,24 @@ called *charity*.
 This seemingly innocuous orchestration of functionality is achieved
 by a variety of means:
 
-Archetypes 
+Archetypes
     Used to build the actual content types and their schemata.
 
-The Zope 3 Component Architecture 
+The Zope 3 Component Architecture
     Is used to make all this exensibility possible - you will see lots
     of examples of interfaces, adapters and utilities.
 
-Membrane 
+Membrane
     The content types are registered with *membrane* to be able to act
     as groups and users
 
-PAS and PlonePAS 
+PAS and PlonePAS
     The Pluggable Authentication Service is used by membrane to
     actually provide user sources. A custom PAS plug-in is also used to
     manage local roles for members and managers within projects and
     departments.
 
-GenericSetup 
+GenericSetup
     The next-generation set-up and installation framework is used to
     install and configure b-org. *charity* demonstrates how
     GenericSetup XML profiles can be used directly, without depending
@@ -1655,13 +1655,13 @@ Zope 3 events
     Zope 3's event dispatch mechanism is used to ensure employee users
     actually own their own Employee objects, among other things.
 
-Zope 3 views 
+Zope 3 views
     The *charity* demo uses views for its display templates.
 
-Annotations 
+Annotations
     Employees' passwords are hashed and stored in an annotation
 
-Placeful workflow 
+Placeful workflow
     To let content inside projects have a different workflow to that of
     the rest of the site, each project uses a *CMFPlacefulWorkflow*
     policy.
@@ -1791,7 +1791,7 @@ of the following top-level files and directories:
 configure.zcml
     Registers the schema extension adapters (see below) and references
     the browser package
-Extensions/ 
+Extensions/
     Contains an *Install.py* script that configures the Factory Type
     Information for the Department, Employee and Project content types.
     It does so by using GenericSetup XML files, but invokes the import
@@ -1800,7 +1800,7 @@ Extensions/
     Contains Zope 3 views for the charity department, employee and
     project content types, and a *configure.zcml* to register these.
     More on views in a later section.
-schema/ 
+schema/
     Contains adapters that extend the schemas for Departments,
     Employees and Projects with use-case specific fields.
 
@@ -2096,27 +2096,27 @@ files and directories:
 
  
 
-\_\_init\_\_.py 
+\_\_init\_\_.py
     Initialises the Zope 2 product machinery, registers content types,
     the skin layer and the GenericSetup extension profile that is used
     to install b-org.
-config.py 
+config.py
     Holds various constants
-configure.zcml 
+configure.zcml
     Starts the Zope 3 snowball going. This references other packages
     with their own *configure.zcml* files.
-content/ 
+content/
     Contains the Archetypes content types for Department, Employee and
     Project. Also contains some utilities, like *EmployeeLocator*, an
     adapter to find employees, two utilities used to provide
     vocabularies *AddableTypesProvider* and *ValidRolesProvider*, and
     the the schema extension mechanism in *schema.py*.
-events/ 
+events/
     Contains event subscribers which modify ownership of an Employee
     object so that the employee user owns it (and can thus edit their
     own profiles, for example), as well as to set up the local workflow
     when a Project is created.
-interfaces/ 
+interfaces/
     Contains all the interfaces that b-org defines, in various
     sub-modules like *interfaces/employee.py* for the Employee-related
     interfaces. All of these are imported into
@@ -2125,21 +2125,21 @@ interfaces/
 membership/
     Contains various adapters for plugging into membrane which enable
     b-orgs user-and-group functionality.
-pas/ 
+pas/
     Contains a custom PAS plug-in which is used to manage the local
     roles for Project members
-permissions.py 
+permissions.py
     Contains custom add-content permissions, so that the ability to add
     Department, Employee and Project content objects can be controlled
     by different permissions.
-profiles/ 
+profiles/
     Contains the GenericSetup extension profile that sets up b-org.
     This is registered in the *borg/*\_\_init\_\_.py*.*
-setuphandlers.py 
+setuphandlers.py
     Defines a custom GenericSetup "import step" which configures
     aspects of b-org that cannot be expressed in the existing
     GenericSetup XML formats.
-skins/ 
+skins/
     Contains the borg skin layer, which is registered in
     *borg/\_\_init\_\_.py*. This contains only the b-org icons. These
     could potentially have been defined in a *browser* package using
@@ -2148,7 +2148,7 @@ skins/
     section on Zope 3 views for more details.
  tests/
     Contains unit and integration tests.
-zmi/ 
+zmi/
     Defines a ZMI page for adding the PAS plug-in, for completeness'
     sake.
 
@@ -2180,27 +2180,27 @@ files
 
 
 
-interfaces/department.py 
+interfaces/department.py
     Contains a description of a department (*IDepartment*) and a marker
     interface for the content object that stores the department
     (*IDepartmentContent*).
-interfaces/employee.py 
+interfaces/employee.py
     Contains the equivalent interfaces, *IEmployee* and
     *IEmployeeContent*, as well as the definition of a specific event
     interface, *IEmployeeModified.*
-interfaces/project.py 
+interfaces/project.py
     Again contains *IProject* and *IProjectContent*, as well
     *ILocalWorkflowSelection*, which is used to denote a utility that
     defines the placeful workflow policy that projects will use.
-interfaces/workspace.py 
+interfaces/workspace.py
     Holds the interface *IWorkspace*, which is used by the local-role
     PAS plug-in to extract which users should have which local roles in
     a project.
-interfaces/schema.py 
+interfaces/schema.py
     Contains interfaces relevant to the custom schema extension
     mechanism - *ISchemaExtender*, *IExtensibleSchemaProvider* and
     *ISchemaInvalidatedEvent*.
-interfaces/utils.py 
+interfaces/utils.py
     Defines interfaces that are used as input to various vocabularies -
     *IEmployeeLocator*, *IAddableTypesProvider* and
     *IValidRolesProvider*.
@@ -2307,7 +2307,7 @@ most likely they will either be directly provided by a particular
 object or adaptable to it. Take the *IAddableTypesProvider*:
 ::
 
-    class IAddableTypesProvider(Interface):    """A component capable of finding addable types in a given context.    """    availableTypes = schema.Tuple(title=u'Available types',                                  description=u'A list of all addable types',                                  value_type=schema.Object(ITypeInformation))    defaultAddableTypes = schema.Tuple(title=u'Default addable types',                                       description=u'A list of types to be addable by default',                                       value_type=schema.Object(ITypeInformation))        
+    class IAddableTypesProvider(Interface):    """A component capable of finding addable types in a given context.    """    availableTypes = schema.Tuple(title=u'Available types',                                  description=u'A list of all addable types',                                  value_type=schema.Object(ITypeInformation))    defaultAddableTypes = schema.Tuple(title=u'Default addable types',                                       description=u'A list of types to be addable by default',                                       value_type=schema.Object(ITypeInformation))
 
 The implication here is that client code will do something like:
 ::
@@ -2578,24 +2578,24 @@ various files:
 
 
 
-import\_steps.xml 
+import\_steps.xml
     Lists the steps to be performed during import (set-up)
-export\_steps.xml 
+export\_steps.xml
     Lists the steps to be performed during export - that is, if the
     configuration is changed in the ZODB and the site admin wishes to
     export the configuration to a file, these steps will be performed.
-membrane\_tool.xml 
+membrane\_tool.xml
     Configuration for membrane tools
-skins.xml 
+skins.xml
     Sets up skins in portal\_types
-types.xml 
+types.xml
     Configures FTIs (Factory Type Information settings) for the content
     types that b-org ships with. Each of the types listed here has a
     corresponding file in *profiles/default/types* (the name of the
     type and the name of the file should match). This file contains all
     the various FTI settings, such as friendly name, meta type, actions
     and aliases.
-workflows.xml 
+workflows.xml
     Configures workflows. This works in the same way as *types.xml* -
     the main file configures the names of the workflows and the
     bindings of workflows to content types. The actual workflow
@@ -2829,14 +2829,14 @@ IUserRelated adapter
     are possibly different when PAS is used: the user id must be
     globally unique; the user name is the named used for logging in.
 
-IUserAuthentication adapter 
+IUserAuthentication adapter
     Used to perform actual authentication by validating a supplied
     username and password.
 
 IUserRoles adapter
     Used to determine which roles the particular user is given.
 
-IMembraneUserManagement 
+IMembraneUserManagement
     Used by membrane and Plone's UI to deal with changes to the user,
     such as the adding of a new user (not implemented here, since we
 
@@ -3152,7 +3152,7 @@ event handler in *events/configure.zcml* looks like this:
 
 .. code-block:: xml
 
-    <subscriber 
+    <subscriber
         for="..interfaces.IProjectContent
              zope.app.container.interfaces.IObjectAddedEvent"
         handler=".project.addLocalProjectWorkflow" />
@@ -3218,12 +3218,12 @@ The implementation is trivial, and can be found in
 
     from zope.interface import implements...
     from Products.borg.interfaces import IEmployeeModifiedEvent...
-    
+
     class EmployeeModifiedEvent(object):
         """Event to notify that employees have been saved.
         """
         implements(IEmployeeModifiedEvent)
-        
+
         def __init__(self, context):
             self.context = context
 
@@ -3239,7 +3239,7 @@ in *content/employee.py*, we have:
 ::
 
     from zope.event import notify...
-    
+
     class Employee(ExtensibleSchemaSupport, BaseContent):
     ...
 
@@ -3450,7 +3450,7 @@ example from the "recent" portlet, starting with
                                 results view/results;">
         ...
         <tal:items tal:repeat="obj results">
-            ...    
+            ...
         </tal:items>
         ...
     </tal:recentlist>
@@ -3489,13 +3489,13 @@ again slightly modernised:
 
     from Products.Five.browser import BrowserView
     from Products.CMFCore.utils import getToolByName
-    
+
     from Acquisition import aq_inner
-    
+
     class RecentPortlet(BrowserView):
         """The recent portlet
         """
-    
+
         def results(self):
             """Get the search results
             """
@@ -3538,7 +3538,7 @@ prefix each directive with *browser:*
 
     <configure xmlns="http://namespaces.zope.org/browser"
                i18n_domain="charity">
-    
+
       <page
           name="charity_department_view"
           for="Products.borg.interfaces.IDepartmentContent"
@@ -3546,9 +3546,9 @@ prefix each directive with *browser:*
           template="department.pt"
           permission="zope2.View"
           />
-          
+
       ...
-      
+
     </configure>
 
 Here, we explicitly state that this view is only available for
@@ -3571,20 +3571,20 @@ file on the filesystem. Here is the class:
 
     from Products.Five.browser import BrowserView
     from Products.borg.interfaces import IDepartment
-    
+
     class DepartmentView(BrowserView):
         """A view of a charity department"""
-    
+
         def __init__(self, context, request):
             self.context = context
             self.request = request
-        
+
         def name(self):
             return self.context.Title()
-            
+
         def managers(self):
             return self.context.getManagers()
-            
+
         def details(self):
             return self.context.Description()
 
@@ -3597,15 +3597,15 @@ And here is the template that uses these methods:
           metal:use-macro="here/main_template/macros/master"
           i18n:domain="charity">
     <body>
-    
+
     <metal:main fill-slot="main">
-        
+
         <div metal:use-macro="here/document_actions/macros/document_actions">
             Document actions (print, rss etc)
         </div>
-        
+
         <h1 class="documentFirstHeading" tal:content="view/name" />
-        
+
         <table class="listing vertical" style="float:right" tal:condition="view/managers">
           <tr>
             <th>Manager(s)</th>
@@ -3616,15 +3616,15 @@ And here is the template that uses these methods:
             </td>
           </tr>
         </table>
-    
+
         <div tal:content="structure view/details" />
-    
+
         <metal:listing use-macro="here/folder_listing/macros/listing" />
-        
+
         <div class="visualClear"><!----></div>
-        
+
     </metal:main>
-    
+
     </body>
     </html>
 
@@ -3659,14 +3659,14 @@ which would result in this being called:
     class ModifyCustomerView(BrowserView):
         """Modify a customer from a form
         """
-    
+
         def __call__(self):
             name = self.request.form.get('name', None)
             dog = self.request.form.get('dog', None)
-    
+
             self.context.name = name
             self.context.dog = dog
-    
+
             self.request.response.redirect('@@customer_view')
 
 This is obviously a simplified example, but the important thing to

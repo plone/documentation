@@ -49,8 +49,8 @@ Edit your Products/NEWTHEME/configure.zcml and add:
         name="my.abovecontentportlets"
         manager="plone.app.layout.viewlets.interfaces.IContentViews"
         template="abovecontentportlets.pt"
-        permission="zope2.View" 
-    /> 
+        permission="zope2.View"
+    />
 
 Step Two: Add a portlet manager
 -------------------------------
@@ -73,7 +73,7 @@ register a portlet manager:
 
     <?xml version="1.0"?>
     <portlets> 
-     <portletmanager 
+     <portletmanager
        name="my.abovecontentportlets"
        type="Products.NEWTHEME.interfaces.IMyAboveContent"
      />

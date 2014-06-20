@@ -45,7 +45,7 @@ and news portlets for the right-hand column.
          type="portlets.Login"
          name="login"
          />
-         
+        
       <assignment
          manager="plone.rightcolumn"
          category="context"
@@ -61,7 +61,7 @@ and news portlets for the right-hand column.
          type="portlets.News"
          name="news"
          />
-         
+        
      
     </portlets>
 

@@ -25,7 +25,7 @@ to update the search and listing information.
 Cataloging has a quirk regarding the ``modified`` metadata: when calling
 ``reindexObject`` on an object, the value for ``modified`` in
 ``portal_catalog`` will be set to the time of the reindex, regardless of the
-value of the modified property of the object. 
+value of the modified property of the object.
 
 In order to store the correct value you can do an extra reindex of the
 object with the ``modified`` index as parameter.
@@ -34,6 +34,6 @@ First do a normal ``reindexObject``, then call it with the modified index
 explicitly::
 
         object.reindexObject()
-        object.reindexObject(idxs=['modified']) 
+        object.reindexObject(idxs=['modified'])
 
 For more information, see :doc:`\** How to update this document </develop/plone/searching_and_indexing/indexing>`.

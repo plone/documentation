@@ -117,7 +117,7 @@ maybe an image (for instance, the members default portrait, ``defaultUser.png``)
 which are provided by the Plone skin, you will have to override the Plone skin.
 
 .. note::
-    that is basically what you do when you go to ZMI / portal_skins and 
+    that is basically what you do when you go to ZMI / portal_skins and
     click on the ``Customize`` button. But here, you will do that from the sources.
 
 To override Plone skin elements from our product, you will need to:
@@ -138,7 +138,7 @@ To override Plone skin elements from our product, you will need to:
             >
 
           ...
-          
+
           <cmf:registerDirectory name="projectname_custom"/>
 
         </configure>
@@ -161,7 +161,7 @@ To override Plone skin elements from our product, you will need to:
         </object>
 
     You can now restart Zope and re-install your product from the Plone control
-    panel (Site Setup > Add-ons), once done, the elements contained in 
+    panel (Site Setup > Add-ons), once done, the elements contained in
     ``projectname_custom`` will take priority on the corresponding elements from
     the Plone skin (or any other add-on skin).
 
@@ -204,7 +204,7 @@ And declare that folder as a jbot folder:
         >
 
         ...
-      
+
         <include package="z3c.jbot" file="meta.zcml" />
         <interface name="projectname.theme"
             interface="projectname.theme.interfaces.IThemeSpecific"
@@ -323,7 +323,7 @@ So if you want to minimize the total number of resulting files, you have to:
     - when you have to declare a condition, try to make them identical if possible,
     - and re-order the resources in such a way that similar conditions are consecutives.
 
-Regarding the JS or CSS which are not used globally into the web site, but just 
+Regarding the JS or CSS which are not used globally into the web site, but just
 in a very specific template, it might be better to not declare them in the
 registries, and let them declared manually into the static HTML /template.
 

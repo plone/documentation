@@ -14,17 +14,17 @@ Introduction
 Permissions control whether logged-in or anonymous users can execute code
 and access content.
 
-Permissions in Plone are managed by 
-`Zope's AccessControl module <http://svn.zope.org/AccessControl/trunk/src/AccessControl/>`_. 
+Permissions in Plone are managed by
+`Zope's AccessControl module <http://svn.zope.org/AccessControl/trunk/src/AccessControl/>`_.
 Persistent permission setting and getting by role heavy lifting is done by
 `AccessControl.rolemanager.RoleManager <http://svn.zope.org/AccessControl/trunk/src/AccessControl/rolemanager.py?view=auto>`_.
 
 Permission checks are done for:
 
-* every view/method which is hit by incoming HTTP request 
-  (Plone automatically publishes traversable methods over HTTP); 
+* every view/method which is hit by incoming HTTP request
+  (Plone automatically publishes traversable methods over HTTP);
 
-* every called method for 
+* every called method for
   :doc:`RestrictedPython scripts </develop/plone/security/sandboxing>`.
 
 The basic way of dealing with permissions is setting the ``permission``
@@ -34,16 +34,16 @@ attribute of view declaration. For more information see :doc:`views
 Debugging permission errors: Verbose Security
 ================================================
 
-You can turn on ``verbose-security`` option in buildout to get better traceback info when 
+You can turn on ``verbose-security`` option in buildout to get better traceback info when
 you encounter a permission problem on the site (you are presented a login dialog).
 
 For the security reasons, this option is disabled by default.
 
-* Set ``verbose-security = on`` in your buildout.cfg ``instance`` or related section. 
+* Set ``verbose-security = on`` in your buildout.cfg ``instance`` or related section.
 
 * Rerun buildout
 
-* Restart Plone properly after buildout ``bin/plonectl stop && bin/plonectl start`` 
+* Restart Plone properly after buildout ``bin/plonectl stop && bin/plonectl start``
 
 * remove the ``Unauthorized`` exception from the list of ignored exceptions inside
   the ``error_log`` object within the Plone root folder through the ZMI
@@ -65,7 +65,7 @@ has a certain permission for some object.
 
     # Import permission names as pseudo-constant strings from somewhere...
     # see security doc for more info
-    from Products.CMFCore.permissions import ModifyPortalContent 
+    from Products.CMFCore.permissions import ModifyPortalContent
 
     def some_function(self, obj):
         sm = getSecurityManager()
@@ -82,22 +82,22 @@ Checking whether a specific role has a permission
 
 The following example uses the ``rolesOfPermission()`` method to check
 whether the *Authenticated* role has a permission on a certain folder on the
-site. The weirdness of the method interface is explained by the fact that 
+site. The weirdness of the method interface is explained by the fact that
 it was written for use in a :term:`ZMI` template::
 
     def checkDBPermission(self):
-        from zope.app.component.hooks import getSite 
+        from zope.app.component.hooks import getSite
         site = getSite()
         obj = site.intranet
         perms = obj.rolesOfPermission("View")
         found = False
-        
+
         for perm in perms:
             if perm["name"] == "Authenticated":
                 if perm["selected"] != "": # will be SELECTED if the permission is granted
                     found = True
                     break
-        
+
         if not found:
             from Products.statusmessages.interfaces import IStatusMessage
             messages = IStatusMessage(self.request)
@@ -107,7 +107,7 @@ it was written for use in a :term:`ZMI` template::
 Permission Access
 ==================
 
-Objects that are manageable :term:`TTW` inherit from 
+Objects that are manageable :term:`TTW` inherit from
 `RoleManager  <http://api.plone.org/CMF/1.5.4/private/AccessControl.Role.RoleManager-class.html>`_.
 The API provided by this class permits you to manage permissions.
 
@@ -139,16 +139,16 @@ Show the security matrix of permission::
      {'selected': '', 'name': 'Reader'},
      {'selected': '', 'name': 'Reviewer'},
      {'selected': '', 'name': 'SubscriptionViewer'}]
- 
+
 
 Bypassing permission checks
 ===========================
 
 The current user is defined by active security manager.
-During both restricted and unrestricted execution certain 
-functions may do their own security checks 
+During both restricted and unrestricted execution certain
+functions may do their own security checks
 (``invokeFactory``, workflow, search)
-to filter out results. 
+to filter out results.
 
 If a function does its own security checks,
 there is usually a code path that will execute without security check.
@@ -160,12 +160,12 @@ For example the methods below have security-aware and raw versions:
 
 However, in certain situations you have only a security-aware code path
 which is blocked for the current user. You still want to execute
-this code path and you are sure that it does not violate your site 
-security principles. 
+this code path and you are sure that it does not violate your site
+security principles.
 
 Below is an example how you can call any Python function and
 work around the security checks by establishing a temporary
-``AccessControl.SecurityManager`` with a special role. 
+``AccessControl.SecurityManager`` with a special role.
 
 Example::
 
@@ -187,7 +187,7 @@ Example::
 
         Example how to call::
 
-            execute_under_special_role(portal, "Manager", 
+            execute_under_special_role(portal, "Manager",
                 doSomeNormallyNotAllowedStuff,
                 source_folder, target_folder)
 
@@ -200,7 +200,7 @@ Example::
 
         @param args: Passed to the function
 
-        @param kwargs: Passed to the function 
+        @param kwargs: Passed to the function
         """
 
         sm = getSecurityManager()
@@ -209,7 +209,7 @@ Example::
             try:
                 # Clone the current user and assign a new role.
                 # Note that the username (getId()) is left in exception
-                # tracebacks in the error_log, 
+                # tracebacks in the error_log,
                 # so it is an important thing to store.
                 tmp_user = UnrestrictedUser(
                     sm.getUser().getId(), '', [role], ''
@@ -227,7 +227,7 @@ Example::
                 raise
         finally:
             # Restore the old security manager
-            setSecurityManager(sm)    
+            setSecurityManager(sm)
 
 For a more complete implementation of this technique, see:
 
@@ -250,8 +250,8 @@ Gracefully failing when the user does not have a permission. Example::
 Creating permissions
 ====================
 
-Permissions are created declaratively in :term:`ZCML`. Before Zope 2.12 
-(that is, before Plone 4), the `collective.autopermission`_ package 
+Permissions are created declaratively in :term:`ZCML`. Before Zope 2.12
+(that is, before Plone 4), the `collective.autopermission`_ package
 was required to enable this, but now it is standard behaviour.
 
 .. _collective.autopermission:
@@ -264,29 +264,29 @@ was required to enable this, but now it is standard behaviour.
 Example:
 
 .. code-block:: xml
-  
-    <configure 
+
+    <configure
       xmlns="http://namespaces.zope.org/zope"
       xmlns:browser="http://namespaces.zope.org/browser">
- 
+
       <include package="collective.autopermission" />
- 
-      <permission 
-        id="myproduct.mypermission" 
+
+      <permission
+        id="myproduct.mypermission"
         title="MyProduct: MyPermission"
         />
-  
-      <browser:page 
-        for="*" 
+
+      <browser:page
+        for="*"
         name="myexampleview"
         class="browser.MyExampleView"
-        permission="myproduct.mypermission" 
+        permission="myproduct.mypermission"
         />
 
     </configure>
 
-Now you can use the permission both as a Zope 2-style permission 
-(``MyProduct: MyPermission``) or a Zope 3-style permission 
+Now you can use the permission both as a Zope 2-style permission
+(``MyProduct: MyPermission``) or a Zope 3-style permission
 (``myproduct.mypermission``).
 The only disadvantage is that you can't import the permission string as a
 variable from a ``permissions.py`` file,
@@ -304,22 +304,22 @@ such as ``BrowserViews/formlib/z3c.form``. For example, from
 
 .. code-block:: xml
 
-    <configure 
+    <configure
       xmlns="http://namespaces.zope.org/zope"
       xmlns:browser="http://namespaces.zope.org/browser">
-   
-      <permission 
-        id="myproduct.mypermission" 
+
+      <permission
+        id="myproduct.mypermission"
         title="MyProduct: MyPermission" />
- 
-      <browser:page 
-        for="*" 
+
+      <browser:page
+        for="*"
         name="myexampleview"
         class="browser.MyExampleView"
-        permission="myproduct.mypermission" 
+        permission="myproduct.mypermission"
         />
 
-    </configure>        
+    </configure>
 
 Define Zope 2 permissions in Python code (old style)
 ------------------------------------------------------
@@ -329,7 +329,7 @@ permission, you most likely will want to assign this permission to a role
 when the product is installed.
 You will want to use Generic Setup's ``rolemap.xml`` to assign these
 permissions.  A new permission will be added to
-the Zope instance by calling ``setDefaultRoles`` on it. 
+the Zope instance by calling ``setDefaultRoles`` on it.
 
 However, at the time when Generic Setup is run, almost none of your code has
 actually been run, so the permission doesn't exist yet.  That's why we define
@@ -373,20 +373,20 @@ To assign a permission to a role, use ``profiles/default/rolemap.xml``:
           <role name="Member"/>
         </permission>
       </permissions>
-    </rolemap> 
+    </rolemap>
 
 
 Manually fix permission problems
 ================================
 
 In the case you fiddle with permission and manage to lock out even the admin
-user you can still fix the problem from the 
+user you can still fix the problem from the
 :doc:`debug prompt </develop/plone/misc/commandline>`.
 
 Example debug session, restoring ``Access Contents Information`` for all
 users::
 
-    >>> c = app.yoursiteid.yourfolderid.problematiccontent 
+    >>> c = app.yoursiteid.yourfolderid.problematiccontent
     >>> import AccessControl
     >>> from Products.CMFCore.permissions import AccessContentsInformation
     >>> sm = AccessControl.getSecurityManager()

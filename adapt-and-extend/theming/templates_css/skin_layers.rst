@@ -128,12 +128,12 @@ Nested folder overrides (z3c.jbot)
 ---------------------------------------
 
 z3c.jbot allows to override any portal_skins based file based on its file-system
-path + filename. 
+path + filename.
 
 Example jbot ZCML slug (no layers, unconditional overrides)
 
 .. code-block:: xml
-        
+
         <configure
             xmlns="http://namespaces.zope.org/zope"
             xmlns:five="http://namespaces.zope.org/five"
@@ -148,7 +148,7 @@ Then your add-on has folder structure (example)::
         yourcompany.app/yourcompany/app/jbot
         yourcompany.app/yourcompany/app/jbot/Products.TinyMCE.skins.tinymce.plugins.table.js.table.js
         yourcompany.app/yourcompany/app/jbot/Products.TinyMCE.skins.tinymce.plugins.table.html.pt
-        
+
 For layered example (theme layer, add-on layer), see
 
 * https://github.com/miohtama/sane_plone_addon_template/blob/master/youraddon/configure.zcml#L41
@@ -158,7 +158,7 @@ More info
 * https://pypi.python.org/pypi/z3c.jbot
 
 * http://stackoverflow.com/questions/6161802/nested-overrides-in-portal-skins-folder
-        
+
 Poking portal_skins
 -------------------
 

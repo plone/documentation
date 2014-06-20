@@ -21,7 +21,7 @@ logs in on this Plone site:
 
 .. figure:: /_static/02b.png
    :align: center
-   :alt: 
+   :alt:
 
 Notice that as of right now, George can't even view the Documentation
 folder, because Jane created it and it is still in the *Private* state.
@@ -35,7 +35,7 @@ tab:
 
 .. figure:: /_static/03.png
    :align: center
-   :alt: 
+   :alt:
 
 One of the first things to notice is that Jane already has all the
 permissions available for this Folder. These permissions were actually
@@ -69,7 +69,7 @@ she searches to find him by his name:
 
 .. figure:: /_static/04.png
    :align: center
-   :alt: 
+   :alt:
 
 Jane can now add specific permissions for George in the "Documentation"
 folder. She is going to give him the "Can add" permission and then click
@@ -77,7 +77,7 @@ on "Save":
 
 .. figure:: /_static/05.png
    :align: center
-   :alt: 
+   :alt:
 
 And that's all there is to it! Let's see how George views the site now.
 
@@ -90,7 +90,7 @@ site and can now see the "Documentation" folder:
 
 .. figure:: /_static/06.png
    :align: center
-   :alt: 
+   :alt:
 
 When George clicks on the "Documentation" tab, he notices that he can
 view all the content in the "Documentation" folder, and he now is able
@@ -99,7 +99,7 @@ new...* menu:
 
 .. figure:: /_static/07.png
    :align: center
-   :alt: 
+   :alt:
 
 George wants to review what Jane has already created, so he clicks on
 the Project Overview link and sees:
@@ -115,7 +115,7 @@ for that Page. When he's done he saves it:
 
 .. figure:: /_static/08.png
    :align: center
-   :alt: 
+   :alt:
 
 Jane views the work George has done. She clicks on the "Documentation"
 tab and sees that George indeed has been busy. She clicks on "Widget
@@ -123,7 +123,7 @@ Installation" page to take a closer look:
 
 .. figure:: /_static/09.png
    :align: center
-   :alt: 
+   :alt:
 
 Notice that Jane has full access to the page that George created. She
 can edit it as well as cut/copy/paste it. Instead, she will wait until
@@ -139,7 +139,7 @@ several pages:**
 
 .. figure:: /_static/09b.png
    :align: center
-   :alt: 
+   :alt:
 
 Jane has decided that she wants to turn over all editing (but not
 publishing) control of the "Documentation" folder to George. So she

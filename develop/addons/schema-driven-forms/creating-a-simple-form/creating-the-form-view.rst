@@ -1,4 +1,4 @@
-Creating the form view 
+Creating the form view
 ======================
 
 **Using our schema in a form**
@@ -18,31 +18,31 @@ Still in *order.py*, we add the following:
         grok.name('order-pizza')
         grok.require('zope2.View')
         grok.context(ISiteRoot)
-        
+
         schema = IPizzaOrder
         ignoreContext = True
-        
+
         label = _(u"Order your pizza")
         description = _(u"We will contact you to confirm your order and delivery.")
-        
+
         def update(self):
             # disable Plone's editable border
             self.request.set('disable_border', True)
-            
+
             # call the base class version - this is very important!
             super(OrderForm, self).update()
-        
+
         @button.buttonAndHandler(_(u'Order'))
         def handleApply(self, action):
             data, errors = self.extractData()
             if errors:
                 self.status = self.formErrorsMessage
                 return
-            
+
             # Handle order here. For now, just print it to the console. A more
             # realistic action would be to send the order to another system, send
             # an email, or similar
-            
+
             print u"Order received:"
             print u"  Customer: ", data['name']
             print u"  Telephone:", data['telephone']
@@ -51,17 +51,17 @@ Still in *order.py*, we add the following:
             print u"            ", data['postcode']
             print u"  Order:    ", ', '.join(data['orderItems'])
             print u""
-            
+
             # Redirect back to the front page with a status message
 
             IStatusMessage(self.request).addStatusMessage(
-                    _(u"Thank you for your order. We will contact you shortly"), 
+                    _(u"Thank you for your order. We will contact you shortly"),
                     "info"
                 )
-            
+
             contextURL = self.context.absolute_url()
             self.request.response.redirect(contextURL)
-            
+
         @button.buttonAndHandler(_(u"Cancel"))
         def handleCancel(self, action):
             """User cancelled. Redirect back to the front page.

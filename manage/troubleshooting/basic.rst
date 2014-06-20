@@ -5,7 +5,7 @@
 .. admonition:: Description
 
         Here is some info for basic Plone troubleshooting, especially with add-on modules-
-        
+
 .. contents :: :local:
 
 Start Plone as foreground / debug mode
@@ -16,34 +16,34 @@ as "python ....." in your task manager process list.
 
 Zope will report any problems with code when it is launched in foreground mode (attached to a terminal).
 
-* Basic command-line knowledge is needed in order to proceed 
+* Basic command-line knowledge is needed in order to proceed
 
-First stop Zope if it's running as a background process 
+First stop Zope if it's running as a background process
 
 * On Windows: use Plone Control Panel or Windows Control Panel Services section to shutdown Plone first
 
-* On Linux: use /etc/init.d/plone stop or related command to shutdown Plone 
+* On Linux: use /etc/init.d/plone stop or related command to shutdown Plone
 
 Use the command
 
 .. code-block:: console
 
         bin/instance fg
-        
+
 or Windows command-line command (note that Plone location may depend on where you installed it)
 
 .. code-block:: console
-        
-        cd "C:\Program files\Plone" 
+
+        cd "C:\Program files\Plone"
         bin\instance.exe fg
-        
+
 to start Plone.
-                      
-All errors will be printed into the terminal. 
+
+All errors will be printed into the terminal.
 The error is printed as Python *traceback*. It is important to copy-paste all lines of this traceback,
 not just the last line.
 
-If there is no start up error you will see the line 
+If there is no start up error you will see the line
 
 No such file or directory: 'zope.conf'
 +++++++++++++++++++++++++++++++++++++++++
@@ -67,7 +67,7 @@ Activate Python configuration associated with your ``bin/instance`` script::
 
 Start Plone pdb enabled::
 
-    python -m pdb bin/instance fg              
+    python -m pdb bin/instance fg
 
 Check if Plone is up and responds to requests
 -----------------------------------------------
@@ -79,7 +79,7 @@ Use ``telnet`` command to connect Plone port and see if you get valid HTTP respo
 .. code-block:: console
 
      telnet localhost 8080
-     
+
 Then do a human HTTP user agent simulation by typing::
 
      GET / HTTP/1.0<enter><enter>
@@ -90,22 +90,22 @@ Plone response looks like this::
     Connected to localhost.localdomain.
     Escape character is '^]'.
     GET / HTTP/1.0
-    
+
     HTTP/1.0 200 OK
     Server: Zope/(2.13.10, python 2.6.6, linux2) ZServer/1.1
     Date: Wed, 01 Feb 2012 09:59:40 GMT
     Content-Length: 1614
     Content-Type: text/html; charset=utf-8
     Connection: close
-    
+
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    
+
     <head>
     <base href="http://xxx.fi:9980/" />
 
-If you get the answer from Plone (based on HTTP response headers) then 
+If you get the answer from Plone (based on HTTP response headers) then
 Plone is running and you have problem elsewhere in your firewall/server/
 front-end web server configuration.
 
@@ -134,7 +134,7 @@ Not able to log in
 ------------------
 
 It might happen that you start your instance with an empty database and you are
-not able to log in even if you are absolutely sure about your password. If you work 
+not able to log in even if you are absolutely sure about your password. If you work
 on localhost throw away the localhost related cookies in your browser and restart.
 
 If you have lost the Zope Admin Password you can create an emergency user:
@@ -147,4 +147,4 @@ More info
 
 * :doc:`common exceptions which you might encounter when starting Zope </manage/troubleshooting/exceptions>`
 
-* `Plone community support guidelines for asking help <http://plone.org/help>`_  
+* `Plone community support guidelines for asking help <http://plone.org/help>`_

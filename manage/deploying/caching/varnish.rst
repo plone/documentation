@@ -27,7 +27,7 @@ To use Varnish with Plone
 
 .. note ::
 
-    Some of these examples were written for Varnish 2.x. 
+    Some of these examples were written for Varnish 2.x.
     Varnish 3.x (Feb 2013) has radically altered syntax of VCL language and command line tools, so you might need to adapt the examples a bit.
 
 Installation
@@ -138,7 +138,7 @@ For example::
 fail and report on syntax errors.  Now that the new configuration has been
 loaded, it can be activated with::
 
-    vcl.use newconf_1 
+    vcl.use newconf_1
 
 .. note::
 
@@ -681,5 +681,5 @@ Example::
 
     if (req.http.host ~ "(www\.|www2\.)?app\.fi(:[0-9]+)?$") {
         set req.url = "/VirtualHostBase/http/www.app.fi:80/app/app/VirtualHostRoot" req.url;
-        set req.backend = app_director;   
-    }  
+        set req.backend = app_director;
+    }

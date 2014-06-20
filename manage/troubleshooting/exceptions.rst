@@ -1628,7 +1628,7 @@ TraversalError: No traversable adapter found
 ----------------------------------------------
 
 **Traceback**::
-    
+
     ...
     * Module ZPublisher.Publish, line 202, in publish_module_standard
     * Module Products.LinguaPlone.patches, line 66, in new_publish

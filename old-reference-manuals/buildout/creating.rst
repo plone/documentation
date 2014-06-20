@@ -13,9 +13,9 @@ including a Zope instance, the Plone sources, custom configuration
 options, and your our project's source code.
 
 
-.. note:: 
+.. note::
 
-     As of Plone 3.2, all of the Plone installers are buildout based. 
+     As of Plone 3.2, all of the Plone installers are buildout based.
      You can get the latest `installer`_ and run it to have a working
      buildout without having to follow these steps. However, these steps
      are still valid if you want to create the buildout manually with
@@ -111,13 +111,13 @@ directories that buildout has created for us:
 bin/
     Contains various executables, including the *buildout* command, and
     the *instance* Zope control script.
-eggs/ 
+eggs/
     Contains eggs that buildout has downloaded. These will be
     explicitly activated by the control scripts in the *bin/*
     directory.
-downloads/ 
+downloads/
     Contains non-egg downloads, such as the Zope source code archive.
-var/ 
+var/
     Contains the log files (in *var/log/*) and the file storage ZODB
     data (in *var/filestorage/Data.fs*). Buildout will never overwrite
     these.
@@ -127,10 +127,10 @@ var/
     but this folder gets wiped and regenerated when running
     *bin/buildout*, so the import location was changed.
 
-src/ 
+src/
     Initially empty. You can place your own development eggs here and
     reference them in *buildout.cfg*. More on that later.
-products/ 
+products/
     This is analogous to a Zope instance's *Products/* directory (note
     the difference in capitalisation). If you are developing any
     old-style Zope 2 products, place them here. We will see how

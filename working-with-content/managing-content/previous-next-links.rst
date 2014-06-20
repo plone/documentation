@@ -12,14 +12,14 @@ in the folder:
 
 .. figure:: /_static/previousnextenabling.png
    :align: center
-   :alt: 
+   :alt:
 
 Once enabled, as content items are added to the folder, previous and
 next links will automatically appear as needed:
 
 .. figure:: /_static/previousnextexample.png
    :align: center
-   :alt: 
+   :alt:
 
 Three pages have been created within the Cloudywings folder, and "Page
 Two" (which has no text, for this example) has been clicked. At the

@@ -492,7 +492,7 @@ For further reading see:
 Single Sign-On and Active Directory
 -----------------------------------
 
-Plone can be used in a Microsoft Active Directory environment (or standard Kerberos environment) such that users are automatically 
+Plone can be used in a Microsoft Active Directory environment (or standard Kerberos environment) such that users are automatically
 and transparently authenticated to Plone without requesting credentials from the user.
 
 This is quite an advanced topic and requires some set up on the server, but can be achieved with Plone running on either Unix/Linux

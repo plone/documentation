@@ -16,7 +16,7 @@ many types of information, including:
 
 .. figure:: /_static/content_types_into_plone.png
    :align: center
-   :alt: 
+   :alt:
 
 A Plone web site contains various kinds of content, including text,
 photos, and images. These can exist in many forms: documents, news
@@ -27,7 +27,7 @@ content, and those automatically also create the navigation structure:
 
 .. figure:: /_static/content_is_added_to_folders.png
    :align: center
-   :alt: 
+   :alt:
 
 You Love Butterflies
 ====================
@@ -37,13 +37,13 @@ named "Butterflies," then add some text to a web page in the folder:
 
 .. figure:: /_static/butterflies_folder_text.png
    :align: center
-   :alt: 
+   :alt:
 
 And then you might add some butterfly photos to the folder:
 
 .. figure:: /_static/butterflies_folder.png
    :align: center
-   :alt: 
+   :alt:
 
 You can add many types of content to a folder, including sub-folders.
 After adding a few reports and videos to the Butterflies folder, the
@@ -52,7 +52,7 @@ Butterflies folder:
 
 .. figure:: /_static/folders_within_folders.png
    :align: center
-   :alt: 
+   :alt:
 
 What Goes on Behind the Scenes
 ==============================
@@ -64,7 +64,7 @@ dedicated to the task:
 
 .. figure:: /_static/server_rack.png
    :align: center
-   :alt: 
+   :alt:
 
 The diagram shows the many cables that connect individual server
 computers to the Internet, across fast network connections. Your Plone
@@ -78,7 +78,7 @@ Let's simplify the diagram showing how you interact with Plone:
 
 .. figure:: /_static/client_to_server_simple.png
    :align: center
-   :alt: 
+   :alt:
 
 You use your web browser -- Firefox, Safari, Internet Explorer, etc. --
 to view and edit your Plone web site, and the changes are stored by the
@@ -91,13 +91,13 @@ talks to the web server at mysite.com:
 
 .. figure:: /_static/client_request.png
    :align: center
-   :alt: 
+   :alt:
 
 The Plone software responds:
 
 .. figure:: /_static/server_response.png
    :align: center
-   :alt: 
+   :alt:
 
 Plone reads its database to look for information stored in mysite.com.
 It then sends back the web page to your computer, in a code called HTML.
@@ -114,14 +114,14 @@ HTML, and you see the resulting web page:
 
 .. figure:: /_static/my_site_served.png
    :align: center
-   :alt: 
+   :alt:
 
 As you view your butterfly web page, you can choose to change it or add
 to it. You can also upload photos, documents, etc. at any time:
 
 .. figure:: /_static/plone_donut.png
    :align: center
-   :alt: 
+   :alt:
 
 After you make your edits and click "save changes," the new version of
 the web page will be immediately available to anyone surfing to your
@@ -129,4 +129,4 @@ site:
 
 .. figure:: /_static/plone_donut_full.png
    :align: center
-   :alt: 
+   :alt:

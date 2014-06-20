@@ -24,7 +24,7 @@ You should now see the *Add Folder* screen:
 
 .. figure:: /_static/addfolder.png
    :align: center
-   :alt: 
+   :alt:
 
 Fill in the **Title**, which is required, as indicated by the red
 square. The **Description** is optional; you can always come back to

@@ -1,4 +1,4 @@
-Events 
+Events
 ========
 
 **Registering event handlers and sending events**
@@ -130,7 +130,7 @@ mandated by the *IObjectEvent* interface.
 
     class MessageSentEvent(ObjectEvent):
         grok.implements(IMessageSentEvent)
-        
+
         def __init__(self, object, message, messageCount):
             self.object = object
             self.message = message
@@ -148,17 +148,17 @@ broadcasting an event:
     class BloggingBroadcaster(grok.MultiAdapter):
         grok.provides(IMessageBroadcaster)
         grok.adapts(IContent, IBloggingService)
-        
+
         COUNTER_KEY = 'example.messaging.counter'
-        
+
         def __init__(self, context, service):
             self.context = context
             self.service = service
-        
+
         def send(self):
             message = IMessage(self.context)
             text = message.format()
-            
+
             annotations = IAnnotations(self.context, None)
             messageCount = -1
             if annotations is not None:
@@ -166,9 +166,9 @@ broadcasting an event:
                 messageCount += 1
                 annotations[COUNTER_KEY] = messageCount
                 print "This is message number", messageCount
-            
+
             notify(MessageSentEvent(self.context, message, messageCount))
-            
+
             print text
 
 Notes:

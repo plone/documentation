@@ -24,7 +24,7 @@ so they should access the information quite effectively.
 * ``ITools`` is mapped as the ``plone_tools`` named view.
 
 To see what's available through the interface,
-read the documentation in the 
+read the documentation in the
 `plone.app.layout.globals.interfaces <https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/globals/interfaces.py>`_
 module.
 
@@ -32,19 +32,19 @@ Example showing how to get the portal root URL::
 
     from zope.component import getMultiAdapter
     ...
-    
+
     class MyView(BrowserView):
 
         ...
-        
+
         def __call__(self):
             # aq_inner is needed in some cases like in the portlet renderers
-            # where the context itself is a portlet renderer and it's not on the 
+            # where the context itself is a portlet renderer and it's not on the
             # acquisition chain leading to the portal root.
             # If you are unsure what this means always use context.aq_inner
             context = self.context.aq_inner
             portal_state = getMultiAdapter((context, self.request), name=u'plone_portal_state')
-     
+
             self.some_url = portal_state.portal_url() + "/my_foo_bar"
 
 
@@ -112,7 +112,7 @@ viewlet templates:
     <div tal:define="portal_state context/@@plone_portal_state" >
         The language is <span tal:content="portal_state/language" />
     </div>
-    
+
 Use in templates and expressions
 ==================================
 
@@ -121,21 +121,21 @@ expressions, e.g. ``portal_actions``, as well.
 
 Example ``portal_actions`` conditional expression::
 
-    python:object.restrictedTraverse('@@plone_portal_state').language() == 'fi'    
+    python:object.restrictedTraverse('@@plone_portal_state').language() == 'fi'
 
 
 Tools
 =====
 
 Tools are persistent utility classes available in the site root.
-They are visible in the :term:`ZMI`, and sometimes expose useful 
+They are visible in the :term:`ZMI`, and sometimes expose useful
 information or configuration here. Tools include e.g.:
 
-``portal_catalog`` 
+``portal_catalog``
     Search and indexing facilities for content
-``portal_workflow`` 
+``portal_workflow``
     Look up workflow status, and do workflow-related actions.
-``portal_membership`` 
+``portal_membership``
     User registration information.
 
 ITools interface
@@ -173,7 +173,7 @@ provides some helper methods for Plone specific functionality and user interface
 ``getToolByName``
 ------------------
 
-``getToolByName`` is the old-fashioned way of getting tools, 
+``getToolByName`` is the old-fashioned way of getting tools,
 using the context object as a starting point.
 It also works for tools which do not implement the ``ITools`` interface.
 

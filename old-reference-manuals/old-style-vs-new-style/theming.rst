@@ -11,7 +11,7 @@ Zope2
 *Old style*
 
 Zope2 is the oldest portion of the stack. It offers technologies like
-``Acquisition`` (among others) which facilitate the reuse of objects 
+``Acquisition`` (among others) which facilitate the reuse of objects
 such as page templates amongst a website full of "content" objects.
 
 CMF
@@ -41,5 +41,5 @@ Diazo
 
 Born out of a desire to separate Python package code from website resources
 like CSS, JavaScript and images; Diazo (orginally called XDV) is a technology
-that maps Plone content to an XHTML template, based on an XML ruleset. 
+that maps Plone content to an XHTML template, based on an XML ruleset.
 

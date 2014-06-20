@@ -39,7 +39,7 @@ All about PLIPS
     In general, we don’t want to track a PLIP for more than a year. If your PLIP is accepted and we haven’t seen activity in over a year, we will probably ask you to restart the whole process.
 
 **You don’t like my PLIP :( What now?**
-    Just because a PLIP isn’t accepted in core doesn’t mean it’s a bad idea. It is often the case that there are competing implementations and we want to see it vetted as an add on before “blessing” a preferred implementation. 
+    Just because a PLIP isn’t accepted in core doesn’t mean it’s a bad idea. It is often the case that there are competing implementations and we want to see it vetted as an add on before “blessing” a preferred implementation.
 
 Process Overview
 ----------------
@@ -64,9 +64,9 @@ When writing a PLIP, be as specific and to-the-point as you can. Remember your a
 
 If your change is minor then a ticket in the tracker will be sufficient, added as an enhancement. The key point here is that each change needs documentation so other users can see what it is. This can be in the form of an issue tracker entry, or a PLIP in the case of a bigger change. A bug or minor change does normally not need to go through a review process - a PLIP does.
 
-After your PLIP is written, solicit feedback on your idea on the plone-developers mailing list. In this vetting process, you want to make sure that the change won’t adversely affect other people on accident. Others may be able to point out risks or even offer up better or existing solutions. 
+After your PLIP is written, solicit feedback on your idea on the plone-developers mailing list. In this vetting process, you want to make sure that the change won’t adversely affect other people on accident. Others may be able to point out risks or even offer up better or existing solutions.
 
-When you are happy with the feedback, :ref:`submit a PLIP <how_submit_plip>`. Please use the template provided (XXX: put the template here? Can we just have a custom ticket type?). Please note a few things. It is very rare that the “Risks” section will be empty or none. If you find this is the case and your PLIP is anything more than trivial, maybe some more vetting should be done. 
+When you are happy with the feedback, :ref:`submit a PLIP <how_submit_plip>`. Please use the template provided (XXX: put the template here? Can we just have a custom ticket type?). Please note a few things. It is very rare that the “Risks” section will be empty or none. If you find this is the case and your PLIP is anything more than trivial, maybe some more vetting should be done.
 
 The seconder field is REQUIRED. We will send the PLIP back to you if it is not filled in. Currently, this is just someone else who thinks your PLIP is a good idea, a +1. In the near future, we will start asking that the seconder is either a coding partner, or someone who is willing and able to finish the PLIP should something happen to the implementor.
 
@@ -89,7 +89,7 @@ See the :doc:`plipreview` page for more information.
 
 Implementing Your PLIP
 ----------------------
-You can start the development at any time - but if you are going to modify Plone itself, you might want to wait to see if your idea is approved first to save yourself some work if it isn't. 
+You can start the development at any time - but if you are going to modify Plone itself, you might want to wait to see if your idea is approved first to save yourself some work if it isn't.
 
 General Rules
 ^^^^^^^^^^^^^
@@ -118,11 +118,11 @@ In file ``plips/plip-1234-widget-frobbing.cfg``::
  auto-checkout +=
      plone.somepackage
      plone.app.someotherpackage
- 
+
  [sources]
  plone.somepackage = git git://github.com/plone/plone.somepackage.git branch=plip-1234-widget-frobbing
  plone.app.someotherpackage = git git://github.com/plone/plone.app.somepackage.git branch=plip-1234-widget-frobbing
- 
+
  [instance]
  eggs +=
      plone.somepackage

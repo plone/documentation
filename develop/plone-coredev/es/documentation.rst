@@ -97,5 +97,5 @@ Utilizando Sphinx
 
 Referencias reST:
  * `Documentación Shpinx orientada a Plone <http://developer.plone.org/reference_manuals/active/writing/index.html>`_
- * `Manual básico Sphinx reST <http://sphinx-doc.org/rest.html>`_ 
+ * `Manual básico Sphinx reST <http://sphinx-doc.org/rest.html>`_
 

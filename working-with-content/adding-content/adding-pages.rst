@@ -8,14 +8,14 @@ To add a page, use the *Add new...* menu for a folder:
 
 .. figure:: /_static/copy_of_addnewmenu.png
    :align: center
-   :alt: 
+   :alt:
 
 Select **Page** from the drop-down menu, and you'll see the *Add Page*
 panel:
 
 .. figure:: /_static/editpagepanelplone3.png
    :align: center
-   :alt: 
+   :alt:
 
 The **Title** and **Description** fields are there at the top. Fill each
 of them out appropriately. There is a *Change note* field at the bottom,
@@ -32,7 +32,7 @@ When you make a change, such as setting a word to bold, you see the bold
 text immediately.
 
 People are naturally comfortable with the WYSIWYG approach of typical
-word processors. We will describe later in this manual. 
+word processors. We will describe later in this manual.
 
 Markup languages
 ----------------
@@ -50,7 +50,7 @@ Each of these works by the embedding of special formatting codes within
 text. For example, with structured text formatting, surrounding a word
 or phrase by double asterisks will make that word or phrase bold, as in
 \*\*This text would be bold.\*\* These mark-up formats are worth
-learning for speed of input if you do a lot of page creation, or if you 
+learning for speed of input if you do a lot of page creation, or if you
 are adept at such slightly more technical approaches to entering text.
-Some people prefer such formats not just for speed itself, but for 
+Some people prefer such formats not just for speed itself, but for
 fluidity of expression.

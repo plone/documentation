@@ -1,4 +1,4 @@
-Further details 
+Further details
 ================
 
 **Where to find more information about the core components**

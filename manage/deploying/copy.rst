@@ -13,7 +13,7 @@ Introduction
 ============
 
 These instructions tell you the basics of creating a duplicate of Plone site
-for testing or back-up 
+for testing or back-up
 
 
 Prerequisites
@@ -36,7 +36,7 @@ In order to copy a Plone site the following must be copied
 
 .. note::
 
-    BLOB storage is supported from Plone 4.x onwards. Older Plone installations do not 
+    BLOB storage is supported from Plone 4.x onwards. Older Plone installations do not
     have this folder.
 
 
@@ -59,14 +59,14 @@ Copying and bootstrapping a Plone site to a new computer
 Copying site data in UNIX environment
 =====================================
 
-Below are example UNIX commands to copy a Plone site data from a computer to 
-another over SCP/SSH connection. The actual username and folder locations 
+Below are example UNIX commands to copy a Plone site data from a computer to
+another over SCP/SSH connection. The actual username and folder locations
 depend on your system configuration.
 
-Note: a copy of the Plone site configuration must already exist on the target computer. 
+Note: a copy of the Plone site configuration must already exist on the target computer.
 These instructions are only for copying / back-uping site data.
 
-This operation can be perfomed on a running system - Data.fs is append only file and you 
+This operation can be perfomed on a running system - Data.fs is append only file and you
 will simply lose transactions which happened during the copying of the end of the file.
 
 Copy local to remote
@@ -81,8 +81,8 @@ Copy Data.fs database:
 Copy BLOB files using rsync
 ===========================
 
-BLOB files contain file and image data uploaded to your site. Since the actual 
-content of file rarely changes after upload, rsync can synchronize only changed 
+BLOB files contain file and image data uploaded to your site. Since the actual
+content of file rarely changes after upload, rsync can synchronize only changed
 files using -a (archive) flag.
 
     rsync -av --compress-level=9 var/blobstorage plone@server.com:/srv/plone/site/var

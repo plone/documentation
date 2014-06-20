@@ -13,7 +13,7 @@ alphabetical order:
 
 .. figure:: /_static/copy_of_foldercontents.png
    :align: center
-   :alt: 
+   :alt:
 
 To move the top item named "Spread-winged Skippers" to the bottom of the
 list, one would click within the Order column on the left (containing
@@ -31,11 +31,11 @@ moved:
 
 .. figure:: /_static/foldercontentsdrag.png
    :align: center
-   :alt: 
+   :alt:
 
 When the mouse button is released, the item stays where it was dropped:
 
 .. figure:: /_static/foldercontentsdrop.png
    :align: center
-   :alt: 
+   :alt:
 

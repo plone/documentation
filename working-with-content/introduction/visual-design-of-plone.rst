@@ -19,9 +19,9 @@ list of folders in the site. There also may be a set of tabs in the *Log
 In, Location Information* strip near the top.
 
 We can distinguish between the *design* of a web site and the
-*functionality* of a web site. Quite often, these aspects of a website are also under the control of different people with different skills. A designer will think about the layout, the appearance and the user interface, while a content editor will think about the structure of the information. 
+*functionality* of a web site. Quite often, these aspects of a website are also under the control of different people with different skills. A designer will think about the layout, the appearance and the user interface, while a content editor will think about the structure of the information.
 
-All of these aspects can be strictly separated in Plone, and can be adjusted independent from each other. 
+All of these aspects can be strictly separated in Plone, and can be adjusted independent from each other.
 
 
 We'll use the default Plone layout design as an example of typical
@@ -29,7 +29,7 @@ divisions of the screen:
 
 .. figure:: /_static/plonedefaultareaslabeled.png
    :align: center
-   :alt: 
+   :alt:
 
 You may need to adapt these terms as needed for your Plone web site
 design. You may encounter varied terms for describing screen real
@@ -42,7 +42,7 @@ sites <http://plone.org/support/sites>`_ to compare:
 
 .. figure:: /_static/akamaidesign.png
    :align: center
-   :alt: 
+   :alt:
 
 This is the web site for Akamai, a leading provider of online web tools
 and acceleration technology. The header area has simple text menu
@@ -58,7 +58,7 @@ for convenience. There is a right-most column that has zoom settings.
 
 .. figure:: /_static/discoverdesign.png
    :align: center
-   :alt: 
+   :alt:
 
 This is the web site for Discover Magazine. The header area contains a
 large horizontal menu, the "main menu," if you will, a smaller
@@ -76,7 +76,7 @@ graphics into the web site.
 
 .. figure:: /_static/smealdesign.png
    :align: center
-   :alt: 
+   :alt:
 
 The last of the three sites to examine is the web site for Penn State
 University's Smeal College of Business. The header contains a logo, a

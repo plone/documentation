@@ -1,5 +1,5 @@
 =============================
-A Simple AT Product 
+A Simple AT Product
 =============================
 
 .. admonition:: Description

@@ -11,7 +11,7 @@ Configuring PAS
     In the ZMI you will see a ``acl_users`` folder in the site root.
     This is your PAS object.
 
-If you open the ``acl_users`` folder you will see 
+If you open the ``acl_users`` folder you will see
 a number of different items.
 Each item is a PAS plugin, which implements some PAS functionality.
 
@@ -19,22 +19,22 @@ Each item is a PAS plugin, which implements some PAS functionality.
    :width: 400 px
    :alt: The contents of a PAS user folder in the ZMI
 
-There is one special item: the ``plugins`` object manages 
+There is one special item: the ``plugins`` object manages
 all administrative bookkeeping within PAS.
-It remembers which interfaces are active for each plugin 
+It remembers which interfaces are active for each plugin
 and in what order the plugins should be called.
 
 Let's take a look to see how this works.
-If you open the ``plugins`` object 
+If you open the ``plugins`` object
 you will see a list of all the PAS interfaces,
 along with a short description of what they do.
 
 We will take a look at the extraction plugins.
-These plugins take care of extracting the credentials 
+These plugins take care of extracting the credentials
 such as your username and password from a request.
 These credentials can then be used to authenticate the user.
-If you click on the Extraction Plugins header you will see 
-a screen which shows the plugins which implement this interface 
+If you click on the Extraction Plugins header you will see
+a screen which shows the plugins which implement this interface
 and allows you to configure which plugins will be used and in what order.
 
 .. image:: extraction-interface-config.jpg

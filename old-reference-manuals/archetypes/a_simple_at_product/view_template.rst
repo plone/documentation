@@ -1,11 +1,11 @@
 ======================================
-Adding a custom view for the content 
+Adding a custom view for the content
 ======================================
 
 .. admonition:: Description
 
 		Providing the custom presentation template for the
-		InsantMessage, using Zope's browser layer mechanism. 
+		InsantMessage, using Zope's browser layer mechanism.
 
 The browser layer concept
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,15 +81,15 @@ Here is the example template code:
               Title
             </h1>
 
-            <p tal:content="structure here/getBody" />          
+            <p tal:content="structure here/getBody" />
 
             <div class="documentByLine">
-              Message by <span tal:content="context/Creator" /> 
+              Message by <span tal:content="context/Creator" />
               with <strong tal:content="priority" /> priority.
               -
               <span tal:replace="python:here.toLocalizedTime(context.CreationDate(),long_format=1)" />
             </div>
-        
+
     </div>
 
     </body>

@@ -8,7 +8,7 @@ This tutorial [1]_ describes two simple examples of overriding viewlets. To lear
 Overriding the Logo
 -------------------
 
-In this example, we override the logo for the site. I assume you have a theme product named my.theme with an IThemeSpecific interface. 
+In this example, we override the logo for the site. I assume you have a theme product named my.theme with an IThemeSpecific interface.
 
 #. Create an entry in browser/configure.zcml of your theme to override the viewlet.::
 
@@ -37,7 +37,7 @@ In this example, we override the logo for the site. I assume you have a theme pr
 Overriding the Title
 --------------------
 
-In this example we override the view class associated with the title viewlet. I assume you have a theme product with an IThemeSpecific interface. 
+In this example we override the view class associated with the title viewlet. I assume you have a theme product with an IThemeSpecific interface.
 
 #. Create an entry in browser/configure.zcml of your theme to override the view class.::
 
@@ -46,20 +46,20 @@ In this example we override the view class associated with the title viewlet. I 
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".common.TitleViewlet"
         layer=".interfaces.IThemeSpecific"
-        permission="zope2.View" 
+        permission="zope2.View"
         />
 
 #. Create a class named TitleViewlet inside browser/common.py of your theme containing code to return the appropriate title.::
 
     class TitleViewlet(ViewletBase):
-    
+
         def update(self):
             # do any setup you need
-            
+
         def index(self):
             ...
             return the appropriate title
-        
+
 
 Discussion
 ----------
@@ -108,7 +108,7 @@ Here is TitleViewlet from plone.app.layout. It has the page title on the left an
 
     class TitleViewlet(ViewletBase):
         index = ViewPageTemplateFile('title.pt')
-    
+
         def update(self):
             portal_state = getMultiAdapter((self.context, self.request),
                                             name=u'plone_portal_state')
@@ -125,7 +125,7 @@ Here is an example for comparison that switches page title and portal title, and
 
     class TitleViewlet(ViewletBase):
         index = ViewPageTemplateFile('title.pt')
-    
+
         def update(self):
             portal_state = getMultiAdapter((self.context, self.request),
                                             name=u'plone_portal_state')

@@ -8,13 +8,13 @@ Introduction
 ------------
 
 Plone versioning allows you to go back between older edits of the same content object.
-         
+
 `Versioning allows you to restore and diff previous copies of the same content <http://plone.org/documentation/manual/plone-3-user-manual/managing-content/versioning-plone-v3.0-plone-v3.2>`_.
 More about `CMFEditions here <http://plone.org/products/cmfeditions/documentation/refmanual/cmfeditionoverview>`_.
 
-See also 
+See also
 
-* `Versioning tutorial for custom content types <http://www.uwosh.edu/ploneprojects/docs/how-tos/how-to-enable-versioning-history-tab-for-a-custom-content-type/>`_. 
+* `Versioning tutorial for custom content types <http://www.uwosh.edu/ploneprojects/docs/how-tos/how-to-enable-versioning-history-tab-for-a-custom-content-type/>`_.
 
 Enabling versioning on your custom content type (Plone 3 ONLY)
 ----------------------------------------------------------------
@@ -36,18 +36,18 @@ Below are some notes how to enable it.
 
 * Add versioning migration code to your setuphandlers.py / custom import steps::
 
-        
+
     from Products.CMFCore.utils import getToolByName
-    from Products.CMFEditions.setuphandlers import VERSIONING_ACTIONS, ADD_POLICIES, DEFAULT_POLICIES   
-    
+    from Products.CMFEditions.setuphandlers import VERSIONING_ACTIONS, ADD_POLICIES, DEFAULT_POLICIES
+
     class DPSetup(object):
-    
+
         def configureVersioning(self,portal):
            """
            Importing various settings
            Big thanks to amir toole from plone-users
            """
-    
+
            for versioning_actions in ('MyositisPatient','MyositisVisit','MyositisOrdination','MyositisSeriousadverseevent','MyositisAdhoc','MyositisAdhoc1','MyositisAdhoc2','MyositisAdhoc3','MyositisAdhoc4'):
             VERSIONING_ACTIONS[versioning_actions] = 'version_document_view'
             portal_repository = getToolByName(portal, 'portal_repository')
@@ -60,7 +60,7 @@ Below are some notes how to enable it.
                  portal_repository.addPolicyForContentType(ctype, policy_id)
 
       ...
-      
+
       def importFinalSteps(context):
         """
         The last bit of code that runs as part of this setup profile.
@@ -68,15 +68,15 @@ Below are some notes how to enable it.
         site = context.getSite()
         configurator = DPSetup()
         configurator.configureVersioning(site)
-        
-* To see which fields differ between versions, diff tool must be configured to support your custom content types. 
+
+* To see which fields differ between versions, diff tool must be configured to support your custom content types.
   GenericSetup support is available after Plone 3.2. For older you must manually create entries in portal_diff_tool.
   Example GenericSetup difftool.xml::
 
     <?xml version="1.0"?>
-    
+
     <object>
-    
+
       <difftypes>
           <type portal_type="Presentation">
             <!-- Field any will match all field names, otherwise you need to specify the field name in schema -->
@@ -85,13 +85,13 @@ Below are some notes how to enable it.
       </difftypes>
     </object>
 
-      
-      
-* If you have customized the edit process of your content type, 
+
+
+* If you have customized the edit process of your content type,
   make sure that your edit action traverses to update_version_before_edit.cpt. For hints how to do this,
   see portal_form_controller actions tab. Example::
-  
-  
+
+
     ## Script (Python) "diagnose_content_edit"
     ##title=Custom editing script for diagnose content type
     ##bind container=container
@@ -102,36 +102,36 @@ Below are some notes how to enable it.
     ##bind subpath=traverse_subpath
     ##parameters=id=''
     ##
-    
+
     context.plone_log("Diagnose edit by doctor")
-    
+
     #
     # TODO:
     # No freaking idea which of the update_version handlers is supposed to be run and when
     #
-    
-    # Run versioning support code  
+
+    # Run versioning support code
     # context.update_version_before_edit()
-    
+
     state = context.content_edit_impl(state, id)
-    
-    # Run versioning support code 
+
+    # Run versioning support code
     context.update_version_on_edit()
-    
+
     context.plone_log("Done")
-    
-    
+
+
     # Automatically trigger the workflow state change on edit
     context.portal_workflow.doActionFor(context, "push_to_review")
-    
+
     return state
-      
-  
+
+
 * If you are using custom roles you need to have at least CMFEditions: Save new version
   permission enabled for the roles or you'll get exception::
-  
-    ...    
-    
+
+    ...
+
     * Module Products.PythonScripts.PythonScript, line 327, in _exec
     * Module None, line 36, in update_version_before_edit
       <ControllerPythonScript at /xxx/update_version_before_edit used for /xxx/yyy>
@@ -143,10 +143,10 @@ Below are some notes how to enable it.
 
 * If your content type contains blob fields you want to version, you will need to edit
   portal_modifier/CloneBlobs entry and add your portal type to the condition field.
-    
+
 For more information
 
-* http://plone.org/documentation/manual/developer-manual/archetypes/appendix-practicals/enabling-versioning-on-your-custom-content-types 
+* http://plone.org/documentation/manual/developer-manual/archetypes/appendix-practicals/enabling-versioning-on-your-custom-content-types
 
 Checking whether versioning is enabled
 --------------------------------------
@@ -156,14 +156,14 @@ The following check is performed by update_versioning_before_edit and update_ver
     pr = context.portal_repository
 
     isVersionable = pr.isVersionable(context)
-    
+
     if pr.supportsPolicy(context, 'at_edit_autoversion') and isVersionable:
         # Versioning should work
         pass
     else:
         # Something is wrong....
         pass
-        
+
 Inspecting versioning policies
 ------------------------------
 
@@ -172,7 +172,7 @@ Example::
     portal_repository = context.portal_repository
     map = portal_repository.getPolicyMap()
     for i in map.items(): print i
-    
+
 Will output (inc. some custom content types)::
 
     ('File Disease Description', ['at_edit_autoversion', 'version_on_revert'])
@@ -192,9 +192,9 @@ How versioning (CMFEditions) works
 
 .. note::
 
-        You might actually want to check out the package to get your web browser to 
+        You might actually want to check out the package to get your web browser to
         properly read the file.
-        
+
 Getting the complete revision history for an object
 ---------------------------------------------------
 
@@ -215,7 +215,7 @@ If you want to run this from somewhere without a ``REQUEST`` available, such
 as the *Plone/Zope debug console*, then you'll need to fake a request and access
 level accordingly. Note the subtle change to using ``ContentHistoryViewlet``
 rather than ``ContentHistoryView`` - we need to avoid initialising an entire
-view because this involves component lookups (and thus, pain).  We also need to 
+view because this involves component lookups (and thus, pain).  We also need to
 fake our security as well to avoid anything being left out from the history.
 
 .. code-block:: python

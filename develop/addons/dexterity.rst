@@ -104,7 +104,7 @@ Add a content-type:
 Fix buildout
 ============
 
-Again the buildout.cfg & plone.cfg contains errors, fix the errors before running buildout. 
+Again the buildout.cfg & plone.cfg contains errors, fix the errors before running buildout.
 
 1. Add the following line to [buildout] part:
 

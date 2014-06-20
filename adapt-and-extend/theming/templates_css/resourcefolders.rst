@@ -6,8 +6,8 @@
 
         How to use resource directories to expose static media files (css, js, other)
         in your Plone add-on product
-       
-.. contents:: :local: 
+
+.. contents:: :local:
 
 Introduction
 =============
@@ -17,7 +17,7 @@ Plone URL mapping.
 
 Resource folders provide a mechanism which allows conflict free
 way to have static media files mapped to Plone URL space.
-Each URL is prefixed with ``++resource++your.package``  
+Each URL is prefixed with ``++resource++your.package``
 resource identified.
 
 ZCML resourceDirectory
@@ -36,10 +36,10 @@ root folder to be exposed via ++resource++your.product/ URI
             xmlns:five="http://namespaces.zope.org/five"
             xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
             xmlns:i18n="http://namespaces.zope.org/i18n"
-            xmlns:browser="http://namespaces.zope.org/browser"        
+            xmlns:browser="http://namespaces.zope.org/browser"
             i18n_domain="your.product">
-        
-                  
+
+
                   <!-- Register the installation GenericSetup extension profile
                        (needed for portal_css and portal_javascripts XML import) -->
                   <genericsetup:registerProfile
@@ -49,18 +49,18 @@ root folder to be exposed via ++resource++your.product/ URI
                       description="Your add-on product description"
                       provides="Products.GenericSetup.interfaces.EXTENSION"
                       />
-                  
+
                    <!-- Resource directory for static media files -->
                  <browser:resourceDirectory
                         name="your.product"
                         directory="static"
                         />
-                  
+
                   <!-- -*- extra stuff goes here -*- -->
-        
+
         </configure>
 
-        
+
 
 
 
@@ -81,13 +81,13 @@ Example how to include ``yourproduct.app/static`` folder as ``++resource++yourpr
 .. code-block:: xml
 
         <configure
-            ...       
+            ...
             xmlns:grok="http://namespaces.zope.org/grok">
-            
+
           <grok:grok package="." />
-           
+
         </configure>
-        
+
 If a ``static`` resource directory in the ``example.conference`` package contains a file called ``conference.css``,
 it will be accessible on a URL like ``http://<server>/site/++resource++example.conference/conference.css``.
 The resource name is the same as the package name wherein the static directory appears.

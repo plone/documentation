@@ -47,6 +47,7 @@ drop-down menu, select "Check out":
 .. replaces /_static/01.png
 .. figure:: ../../_robot/working-copy_checkout.png
    :align: center
+   :alt:
 .. code:: robotframework
 
    Create sample content
@@ -98,6 +99,7 @@ copy:
 .. replaces /_static/03.png
 .. figure:: ../../_robot/working-copy_checkout-notification.png
    :align: center
+   :alt:
 .. code:: robotframework
 
    Show checkout notification
@@ -124,6 +126,7 @@ subsequently lost from) the published version while you edit your copy.
 .. replaces /_static/locked.png
 .. figure:: ../../_robot/working-copy_locked.png
    :align: center
+   :alt:
 .. code:: robotframework
 
    Show locked original
@@ -149,6 +152,7 @@ simply choose "Check-in" from the "Actions" drop-down menu:
 .. replaces /_static/04a.png
 .. figure:: ../../_robot/working-copy_checkin.png
    :align: center
+   :alt:
 .. code:: robotframework
 
    Show check-in option
@@ -179,6 +183,7 @@ click on "Check in":
 .. replaces /_static/04b.png
 .. figure:: ../../_robot/working-copy_checkin-form.png
    :align: center
+   :alt:
 .. code:: robotframework
 
    Show checkin form
@@ -198,13 +203,13 @@ click on "Check in":
        ...  ${CURDIR}/../../_robot/working-copy_checkin-form.png
        ...  css=#portal-column-content
 
-
 Your updated document will now replace the published copy and become the
 new published copy.
 
 .. replaces /_static/05.png
 .. figure:: ../../_robot/working-copy_checkin-confirmation.png
    :align: center
+   :alt:
 .. code:: robotframework
 
    Show checkin confirmation
@@ -237,6 +242,7 @@ copy and select "Cancel check-out":
 .. replaces /_static/cancel1.png
 .. figure:: ../../_robot/working-copy_cancel-checkout.png
    :align: center
+   :alt:
 .. code:: robotframework
 
    Show cancel checkout
@@ -274,6 +280,7 @@ checkout":
 .. replaces /_static/cancel2.png
 .. figure:: ../../_robot/working-copy_cancel-checkout-form.png
    :align: center
+   :alt:
 .. code:: robotframework
 
    Show cancel checkout form

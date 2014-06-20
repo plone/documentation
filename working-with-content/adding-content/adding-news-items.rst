@@ -15,7 +15,7 @@ You will see the *Add News Item* panel:
 
 .. figure:: /_static/addnewsitem.png
    :align: center
-   :alt: 
+   :alt:
 
 The standard fields for title, description, and change note are in the
 panel, along with a visual editor area for body text and image and image

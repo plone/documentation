@@ -32,4 +32,4 @@ For unit tests::
 
         # Sitemap must be enabled from the settings to access the view
         self.portal.portal_properties.site_properties.enable_sitemap = True
- 
+

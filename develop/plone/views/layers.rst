@@ -5,7 +5,7 @@ Layers
 .. admonition:: Description
 
     Layers allow you to easily enable and disable views and other site
-    functionality based on installed add-ons and themes. 
+    functionality based on installed add-ons and themes.
 
 .. contents:: :local:
 
@@ -28,7 +28,7 @@ dynamically activate various parts
 of the configuration (theme files, add-on product functionality).
 
 Layers ensure that only one add-on product can override the specific Plone
-instance functionality in your site at a time, while still allowing you 
+instance functionality in your site at a time, while still allowing you
 to have possibly conflicting add-on products in your buildout and
 ZCML. Remember that multiple Plone site instances can share
 the same ZCML and code files.
@@ -118,7 +118,7 @@ Theme layers can be created via the following steps:
        <object name="portal_skins" allow_any="False" cookie_persistence="False"
            default_skin="SitsSkin">
 
-           <!-- define skins-based folder objects here if any --> 
+           <!-- define skins-based folder objects here if any -->
 
            <skin-path name="SitsSkin" based-on="Plone Default">
                <layer name="plone_skins_style_folder_name"
@@ -130,8 +130,8 @@ Theme layers can be created via the following steps:
 Add-on layer for clean extensions
 ---------------------------------
 
-An add-on product layer is enabled when an add-on product is installed. 
-Since one Zope application server may contain several Plone sites, 
+An add-on product layer is enabled when an add-on product is installed.
+Since one Zope application server may contain several Plone sites,
 you need to keep enabled code paths separate by using add-on layers -
 otherwise all views and viewlets apply to all sites in one Zope application server.
 
@@ -142,9 +142,9 @@ otherwise all views and viewlets apply to all sites in one Zope application serv
 
 An add-on layer is a marker interface which is applied on the
 :doc:`HTTP request object </develop/plone/serving/http_request_and_response>`
-by Plone core logic.  
+by Plone core logic.
 
-First create an :doc:`interface </develop/addons/components/interfaces>` for your layer in 
+First create an :doc:`interface </develop/addons/components/interfaces>` for your layer in
 ``your.product.interfaces.py``::
 
     """ Define interfaces for your add-on.
@@ -162,7 +162,7 @@ First create an :doc:`interface </develop/addons/components/interfaces>` for you
         """
 
 You then need to refer to this in the ``profile/default/browserlayer.xml``
-file of your add-on installer 
+file of your add-on installer
 :doc:`setup profile </develop/addons/components/genericsetup>`:
 
 .. code-block:: xml
@@ -249,7 +249,7 @@ Example::
 Troubleshooting instructions for layers
 =============================================
 
-* Check that your view or whatever is working without a layer assigned 
+* Check that your view or whatever is working without a layer assigned
   (globally);
 
 * Check that ``configure.zcml`` has a layer entry. Put some garbage to
@@ -287,7 +287,7 @@ the request object may contain manually activated layers.
 
 Example::
 
-    from interfaces import IThemeSpecific 
+    from interfaces import IThemeSpecific
     from plone.browserlayer.utils import registered_layers
 
     if IThemeSpecific in registered_layers():

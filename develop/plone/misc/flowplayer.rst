@@ -35,7 +35,7 @@ Dexterity model definition::
         videoFile = NamedFile(
                     title=u"Video file",
                     description=u"Upload video file from local computer to show mini-video-player in the portlet",
-                    required=False         
+                    required=False
                     )
 
 Helper view Python code::
@@ -61,16 +61,16 @@ Helper view template:
         <!-- The href references the FLV file. It is not safe to use XHTML
             style self-closing tags here. -->
         <tal:video define="video nocall:context/videoFile"
-             tal:condition="nocall:video">    
+             tal:condition="nocall:video">
                 <a class="flow-player" tal:attributes="href string:${context/absolute_url}/@@download/videoFile/${video/filename}">
-                </a>      
+                </a>
         </tal:video>
 
         <!-- Helper for Javascript which is used to determine location of
-            Flowplayer resource files -->                       
-        <span class="flowplayer-site-url" style="display:none" tal:content="context/portal_url" />                      
+            Flowplayer resource files -->
+        <span class="flowplayer-site-url" style="display:none" tal:content="context/portal_url" />
 
-    </div>            
+    </div>
 
 Using the view:
 
@@ -80,9 +80,9 @@ Using the view:
 
         <div tal:attributes="class string:ls-portlet ${context/extraCSS}">
 
-          <h3 tal:condition="view/has_title" 
+          <h3 tal:condition="view/has_title"
               tal:attributes="class string:portletHeader ls-portlet-header">
-            <a class="header" 
+            <a class="header"
                tal:omit-tag=""
                tal:content="context/title" />
           </h3>
@@ -90,7 +90,7 @@ Using the view:
           <div tal:define="videoView nocall:context/@@minivideo"
                tal:replace="structure videoView" />
 
-        </div>          
+        </div>
 
     </div>
 
@@ -103,18 +103,18 @@ Javascript, registered in ``portal_javascripts``, doing the magic:
 
     /**
      * Bootstrap flow player.
-     * 
+     *
      * Call this when DOM is ready ( jq(document).ready() ).
      */
     function setupPortletVideo() {
 
-        // Site base URL must be available in some hidden variable 
+        // Site base URL must be available in some hidden variable
         // so that we can build references to our media resources
         var urlBase = jq(".flowplayer-site-url").text();
 
         console.log("Video set-up:" + urlBase);
 
-        // Iterate through all links which are tagged as video on the page 
+        // Iterate through all links which are tagged as video on the page
         // Use a special marker class for videos which we want to configure ourselves
         jq('a.flow-player').each(function() {
 
@@ -136,7 +136,7 @@ Javascript, registered in ``portal_javascripts``, doing the magic:
                     "plugins": {
                         // Note that + must be escaped as %2B
                         "audio": {
-                            "url": urlBase + "/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.audio.swf" },                              
+                            "url": urlBase + "/%2B%2Bresource%2B%2Bcollective.flowplayer/flowplayer.audio.swf" },
                         // Disable control plug-in
                         // On mouse over Play button still appears
                         "controls" : {
@@ -144,7 +144,7 @@ Javascript, registered in ``portal_javascripts``, doing the magic:
                             playlist:false,
                             fullscreen:false,
                             mute:false,
-                            time:false,                                     
+                            time:false,
                             }
                         },
 
@@ -161,8 +161,8 @@ Javascript, registered in ``portal_javascripts``, doing the magic:
             config.clip.url = self.attr('href');
 
             // Create Flowplayer by calling its own JS API
-            var player = flowplayer(this, 
-                   {"src": urlBase + "/++resource++collective.flowplayer/flowplayer.swf"                     
+            var player = flowplayer(this,
+                   {"src": urlBase + "/++resource++collective.flowplayer/flowplayer.swf"
                    }, config);
         });
     }

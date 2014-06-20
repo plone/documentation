@@ -15,7 +15,7 @@ You will see the *Add File* panel:
 
 .. figure:: /_static/addfile.png
    :align: center
-   :alt: 
+   :alt:
 
 Click the *Browse* button to navigate to the file you want to upload
 from your local computer. Provide a title (you can use the same file

@@ -1,4 +1,4 @@
-Actions (buttons) 
+Actions (buttons)
 =================
 
 **Defining form buttons and executing code when they are clicked**
@@ -22,7 +22,7 @@ in our pizza order form:
         @button.buttonAndHandler(_(u'Order'))
         def handleApply(self, action):
             ...
-            
+
         @button.buttonAndHandler(_(u"Cancel"))
         def handleCancel(self, action):
             ...
@@ -65,16 +65,16 @@ parameter the form to which the button belongs. If this does not return
 .. code-block:: python
 
     ...
-    
+
     import datetime
 
     def daytime(form):
         hour = datetime.datetime.now().hour
         return hour >= 9 and hour <= 17:
-        
+
 
     class MyForm(form.SchemaForm)
-        
+
         ...
 
         @button.buttonAndHandler(_(u'Give me a call'), condition=daytime)

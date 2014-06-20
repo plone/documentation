@@ -19,19 +19,19 @@ Manually Removing Local Persistent Utilities
 Purpose
 -------
 
-Occasionally you'll download and install a product in Plone that uses local persistent utilities. 
-This usually seems pretty innocent in itself; however, it sometimes happens that when you uninstall the product and remove its egg from the file system, the utility is still registered. 
-This will essentially break your instance unless you make the egg available again so the ZODB can reference the utilities during lookups. 
+Occasionally you'll download and install a product in Plone that uses local persistent utilities.
+This usually seems pretty innocent in itself; however, it sometimes happens that when you uninstall the product and remove its egg from the file system, the utility is still registered.
+This will essentially break your instance unless you make the egg available again so the ZODB can reference the utilities during lookups.
 This how-to will explain how to remove these utilities manually.
 
 Symptoms
 --------
 
-You'll find zope throwing errors like this, 
+You'll find zope throwing errors like this,
 
 .. code-block:: console
 
-  AttributeError: type object 'IQueue' has no attribute '__iro__' 
+  AttributeError: type object 'IQueue' has no attribute '__iro__'
 
 or
 
@@ -142,14 +142,14 @@ I found myself in this situation with the Singing and Dancing product so I'll ju
   from transaction import commit
   commit()
   app._p_jar.sync()
- 
+
 Removing portal tools
 ---------------------
 
 If you still have problems (re)installing products after you removed the broken local persistent components, you probably have to clean the Portal setup tool.You probably see something like this in the error log :
 
 .. code-block:: console
- 
+
     setup_tool = app.myportal.portal_setup
     toolset = setup_tool.getToolsetRegistry()
     if 'portal_myproduct' in toolset._required.keys():

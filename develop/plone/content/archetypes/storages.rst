@@ -62,7 +62,7 @@ This stores field values in an external SQL database.
 FSSStorage
 ==========
 
-Store the raw values of fields on the file system.  
+Store the raw values of fields on the file system.
 
 .. code-block:: python
 

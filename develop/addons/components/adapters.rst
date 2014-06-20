@@ -9,7 +9,7 @@ Introduction
 
 Adapters make it possible to extend the behavior of a class without
 modifying the class itself. This allows more modular, readable code in
-complex systems where there might be hundreds of methods per class. Some 
+complex systems where there might be hundreds of methods per class. Some
 more advantages of this concept are:
 
 * The class interface itself is more readable (less visible clutter);
@@ -25,7 +25,7 @@ more advantages of this concept are:
 The downside is that adapters cannot be found by "exploring" classes or
 source code. They must be well documented in order to be discoverable.
 
-Read more about adapters in the 
+Read more about adapters in the
 `zope.component README <http://docs.zope.org/zope.component/narr.html#adapters>`_.
 
 `Adapter ZCML <http://docs.zope.org/zope.component/zcml.html#adapter>`_.
@@ -72,7 +72,7 @@ This is the image provider interface::
 This is our content class::
 
     class MyShoppableItemType(folder.ATFolder):
-        """ Buyable physical good with variants of title and price and multiple images 
+        """ Buyable physical good with variants of title and price and multiple images
         """
         implements(IVariantProduct)
 
@@ -113,7 +113,7 @@ This is the adapter for the content class::
 Register the adapter for your custom content type ``MyShoppableItemType`` in
 the ``configure.zcml`` file of your product:
 
-.. code-block:: xml 
+.. code-block:: xml
 
     <adapter
         for=".shop.MyShoppableItemType"
@@ -150,7 +150,7 @@ Example::
                         name=klass.__name__, provided=IWidgetDemo)
     return klass
 
-More info 
+More info
 
 * http://www.muthukadan.net/docs/zca.html#registration
 
@@ -282,4 +282,4 @@ folder.  They use ``five.localsitemanager`` to register themselves.
 
 * http://opkode.net/media/blog/schema-extending-an-object-only-inside-a-specific-folder
 
- 
+

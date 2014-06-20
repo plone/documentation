@@ -28,12 +28,12 @@ Here is a simple example::
 
    def extractCredentials(self, request):
        login=request.get("login", None)
-   
+
        if login is None:
            return {}
-   
+
        password="request.get("password", None)
-   
+
        return { "login" : login, "password" : password }
 
 This plugin extracts the login name and password from fields with the same name in the request object.

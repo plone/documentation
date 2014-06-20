@@ -1,11 +1,11 @@
 =====================================
-The content package and its modules 
+The content package and its modules
 =====================================
 
 .. admonition:: Description
 
 		Now we are ready for the core of the product, i.e. the
-		content class definition module (content/message.py). 
+		content class definition module (content/message.py).
 
 Since it provides a Python (sub)package, the ‘content’ directory
 contains 2 modules:
@@ -35,7 +35,7 @@ this way:
 
 ::
 
-    from Products.Archetypes import atapi 
+    from Products.Archetypes import atapi
 
 **i18n support**
 
@@ -193,7 +193,7 @@ initializes the package.
 
     import message
 
- 
+
 
 .. _in the Fields section at the end of the manual: ../fields
 .. _here: ../../../../search?path=%2Fplone.org%2Fproducts&portal_type=PSCProject&SearchableText=widget&Search=Search

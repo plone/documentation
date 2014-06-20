@@ -19,9 +19,9 @@ Creating a portlet
 
 * You need a paster-compatible product skeleton created using *paster create -t plone* or
   *paster create -t archetypes* commands.
-  
-* Use project specific paster command *paster addcontent portlet* to create a code 
-  skeleton for your new portlet. 
+
+* Use project specific paster command *paster addcontent portlet* to create a code
+  skeleton for your new portlet.
 
 Subclassing a portlet
 ---------------------
@@ -56,7 +56,7 @@ whose portlet you are going to override.
             >
 
                 <include package="plone.app.portlets" />
-        
+
                 <plone:portletRenderer
                    portlet="plone.app.portlets.portlets.news.INewsPortlet"
                    template="mytheme_news.pt"
@@ -82,7 +82,7 @@ The portlet renderer can define available property to hint the portlet manager w
 Example ::
 
         class Renderer(base.Renderer):
-        
+
             @property
             def available(self):
                 # Show this portlet for logged in users only
@@ -96,22 +96,22 @@ which have been assigned to the portal root::
 
     def check_root_portlets(self):
         """ Print all portlet assignments in the portal root """
-        
+
         from zope.component import getUtility, getMultiAdapter
         from plone.portlets.interfaces import IPortletManager
         from plone.portlets.interfaces import IPortletAssignment
-        from plone.portlets.interfaces import IPortletAssignmentMapping      
-        
+        from plone.portlets.interfaces import IPortletAssignmentMapping
+
         content = self.portal
-                                        
+
         for manager_name in [ "plone.leftcolumn", "plone.rightcolumn" ]:
-            
-            print "Checking portlet column:" + manager_name 
-            
+
+            print "Checking portlet column:" + manager_name
+
             manager = getUtility(IPortletManager, name=manager_name, context=content)
-    
+
             mapping = getMultiAdapter((content, manager), IPortletAssignmentMapping)
-                                                                    
+
             # id is portlet assignment id
             # and automatically generated
             for id, assignment in mapping.items():
@@ -120,7 +120,7 @@ which have been assigned to the portal root::
 Looking up a portlet by id
 -----------------------------
 
-Here are some tips how to extract the portlet id data in the portlet 
+Here are some tips how to extract the portlet id data in the portlet
 renderer to pass around to be consumed elsewhere.
 
 portlets.py::
@@ -149,7 +149,7 @@ portlets.py::
 
 Then we can re-look-up this portlet and its image field, based on the field name, in the downloader view::
 
-    
+
     # Zope imports
     from zExceptions import InternalError
     from zope.interface import Interface
@@ -253,75 +253,75 @@ directly to content items. This excludes dashboard, group and content type based
 Then it prints some info about them and renders them.
 
 Example code::
-        
+
         from Products.Five.browser import BrowserView
-        
+
         from zope.component import getUtility, getMultiAdapter
         from zope.app.component.hooks import setHooks, setSite, getSite
-        
+
         from plone.portlets.interfaces import IPortletType
         from plone.portlets.interfaces import IPortletManager
         from plone.portlets.interfaces import IPortletAssignment
         from plone.portlets.interfaces import IPortletDataProvider
         from plone.portlets.interfaces import IPortletRenderer
-        from plone.portlets.interfaces import IPortletAssignmentMapping      
-        from plone.portlets.interfaces import ILocalPortletAssignable  
-        
+        from plone.portlets.interfaces import IPortletAssignmentMapping
+        from plone.portlets.interfaces import ILocalPortletAssignable
+
         from Products.CMFCore.interfaces import IContentish
-        
+
         class FixPortlets(BrowserView):
                 """ Magical portlet debugging view """
-                
+
                 def __call__(self):
                     """
                     """
-                    
+
                     request = self.request
-                    
+
                     portal = getSite()
-                    
+
                     # Not sure why this is needed...
                     view = portal.restrictedTraverse('@@plone')
-                    
+
                     # Query all content items on the site which can get portlets assigned
                     # Note that this should excule special, hidden, items like tools which otherwise
-                    # might appearn in portal_catalog queries                       
+                    # might appearn in portal_catalog queries
                     all_content = portal.portal_catalog(show_inactive=True, language="ALL", object_provides=ILocalPortletAssignable.__identifier__)
-                                            
-                    # Load the real object instead of index stub            
+
+                    # Load the real object instead of index stub
                     all_content = [ content.getObject() for content in all_content ]
-                    
+
                     # portal itself does not show up in the query above,
-                    # though it might contain portlet assignments            
-                    all_content = list(all_content) + [portal] 
-                    
+                    # though it might contain portlet assignments
+                    all_content = list(all_content) + [portal]
+
                     for content in all_content:
-                                        
+
                             for manager_name in [ "plone.leftcolumn", "plone.rightcolumn" ]:
-                            
+
                                     manager = getUtility(IPortletManager, name=manager_name, context=content)
-                            
+
                                     mapping = getMultiAdapter((content, manager), IPortletAssignmentMapping)
-                                                                                            
+
                                     # id is portlet assignment id
                                     # and automatically generated
                                     for id, assignment in mapping.items():
                                             print "Found portlet assignment:" + id + " " + str(assignment)
-                                            
+
                                             renderer = getMultiAdapter((content, request, view, manager, assignment), IPortletRenderer)
-                                            
+
                                             # Renderer acquisition chain must be set-up so that templates
                                             # et. al. can resolve permission inheritance
                                             renderer = renderer.__of__(content)
-                                            
+
                                             # Seee http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto
-                                            renderer.update()                                    
+                                            renderer.update()
                                             html = renderer.render()
                                             print "Got HTML output:" + html
-                                             
-                                            
+
+
                     return "OK"
-                    
+
 For more information about portlet assignments and managers, see
 
 * https://github.com/plone/plone.app.portlets/blob/master/plone/app/portlets/tests/test_mapping.py
@@ -350,26 +350,26 @@ Example::
 
         import Acquisition
         from zope.component import getUtility, getMultiAdapter
-        
-        
+
+
         from plone.portlets.interfaces import IPortletRetriever, IPortletManager
 
         for column in ["plone.leftcolumn", "plone.rightcolumn"]:
-            
+
             manager = getUtility(IPortletManager, name=column)
-            
+
             retriever = getMultiAdapter((self.context, manager), IPortletRetriever)
 
             portlets = retriever.getPortlets()
 
             for portlet in portlets:
-                
+
                 # portlet is {'category': 'context', 'assignment': <FacebookLikeBoxAssignment at facebook-like-box>, 'name': u'facebook-like-box', 'key': '/isleofback/sisalto/huvit-ja-harrasteet
-                # Identify portlet by interface provided by assignment 
+                # Identify portlet by interface provided by assignment
                 if IFacebookLikeBoxData.providedBy(portlet["assignment"]):
                     return True
-                
-        return False                
+
+        return False
 
 Rendering a portlet
 --------------------------------
@@ -383,127 +383,127 @@ Below is an example how to render a portlet in Plone
 How to get your portlet HTML::
 
         import Acquisition
-        from zope.component import getUtility, getMultiAdapter, queryMultiAdapter        
+        from zope.component import getUtility, getMultiAdapter, queryMultiAdapter
         from plone.portlets.interfaces import IPortletRetriever, IPortletManager, IPortletRenderer
-        
+
         def get_portlet_manager(column):
             """ Return one of default Plone portlet managers.
-            
+
             @param column: "plone.leftcolumn" or "plone.rightcolumn"
-            
+
             @return: plone.portlets.interfaces.IPortletManagerRenderer instance
             """
             manager = getUtility(IPortletManager, name=column)
             return manager
-               
+
         def render_portlet(context, request, view, manager, interface):
             """ Render a portlet defined in external location.
-            
+
             .. note ::
-            
+
                 Portlets can be idenfied by id (not user visible)
                 or interface (portlet class). This method supports look up
                 by interface and will return the first matching portlet with this interface.
-            
+
             @param context: Content item reference where portlet appear
-        
+
             @param manager: IPortletManagerRenderer instance
-            
+
             @param view: Current view or None if not available
-            
-            @param interface: Marker interface class we use to identify the portlet. E.g. IFacebookPortlet 
-            
+
+            @param interface: Marker interface class we use to identify the portlet. E.g. IFacebookPortlet
+
             @return: Rendered portlet HTML as a string, or empty string if portlet not found
-            """    
-            
+            """
+
             retriever = getMultiAdapter((context, manager), IPortletRetriever)
-        
+
             portlets = retriever.getPortlets()
-            
+
             assignment = None
-        
+
             for portlet in portlets:
-                
+
                 # portlet is {'category': 'context', 'assignment': <FacebookLikeBoxAssignment at facebook-like-box>, 'name': u'facebook-like-box', 'key': '/isleofback/sisalto/huvit-ja-harrasteet
-                # Identify portlet by interface provided by assignment 
+                # Identify portlet by interface provided by assignment
                 if interface.providedBy(portlet["assignment"]):
                     assignment = portlet["assignment"]
                     break
-                
+
             if assignment is None:
                 # Did not find a portlet
                 return ""
-            
-            #- A special type of content provider, IPortletRenderer, knows how to render each 
-            #type of portlet. The IPortletRenderer should be a multi-adapter from 
+
+            #- A special type of content provider, IPortletRenderer, knows how to render each
+            #type of portlet. The IPortletRenderer should be a multi-adapter from
             #(context, request, view, portlet manager, data provider).
-            
+
             renderer = queryMultiAdapter((context, request, view, manager, assignment), IPortletRenderer)
-            
+
             # Make sure we have working acquisition chain
             renderer = renderer.__of__(context)
-            
+
             if renderer is None:
                 raise RuntimeError("No portlet renderer found for portlet assignment:" + str(assignment))
-            
+
             renderer.update()
             # Does not check visibility here... force render always
             html = renderer.render()
-            
+
             return html
-                     
+
 How to use this code in your own view::
 
     def render_slope_info(self):
-        """ Render a portlet from another page in-line to this page 
-        
+        """ Render a portlet from another page in-line to this page
+
         Does not render other portlets in the same portlet manager.
         """
         context = self.context.aq_inner
         request = self.request
         view = self
-        
+
         column = "isleofback.app.frontpageportlets"
-        
+
         # Alternatively, you can directly query your custom portlet manager by interface
         from isleofback.app.portlets.slopeinfo import ISlopeInfo
-                
+
         manager = get_portlet_manager(column)
-        
-        html = render_portlet(context, request, view, manager, ISlopeInfo)   
+
+        html = render_portlet(context, request, view, manager, ISlopeInfo)
         return html
-        
+
 How to call view helper function from page template
 
 .. code-block:: html
 
-         <div tal:replace="structure view/render_slope_info" />        
-                     
+         <div tal:replace="structure view/render_slope_info" />
+
 More info
 
-* http://blog.mfabrik.com/2011/03/10/how%C2%A0to-render-a-portlet-in-plone/ 
+* http://blog.mfabrik.com/2011/03/10/how%C2%A0to-render-a-portlet-in-plone/
 
 Hiding unwanted portlets
 -----------------------------
 
 Example portlets.xml::
 
-  <!-- This leaves only News portlet --> 
+  <!-- This leaves only News portlet -->
 
-  <portlet addview="portlets.Calendar" remove="true" />   
-  <portlet addview="portlets.Classic" remove="true" />   
-  <portlet addview="portlets.Login" remove="true" />   
-  <portlet addview="portlets.Events" remove="true" />   
-  <portlet addview="portlets.Recent" remove="true" />   
-  <portlet addview="portlets.rss" remove="true" />   
-  <portlet addview="portlets.Search" remove="true" />   
-  <portlet addview="portlets.Language" remove="true" />   
-  <portlet addview="plone.portlet.collection.Collection" remove="true" /> 
-  <portlet addview="plone.portlet.static.Static" remove="true" /> 
- 
+  <portlet addview="portlets.Calendar" remove="true" />
+  <portlet addview="portlets.Classic" remove="true" />
+  <portlet addview="portlets.Login" remove="true" />
+  <portlet addview="portlets.Events" remove="true" />
+  <portlet addview="portlets.Recent" remove="true" />
+  <portlet addview="portlets.rss" remove="true" />
+  <portlet addview="portlets.Search" remove="true" />
+  <portlet addview="portlets.Language" remove="true" />
+  <portlet addview="plone.portlet.collection.Collection" remove="true" />
+  <portlet addview="plone.portlet.static.Static" remove="true" />
+
   <!-- collective.flowplayer add-on -->
-  <portlet addview="collective.flowplayer.Player" remove="true" /> 
-    
+  <portlet addview="collective.flowplayer.Player" remove="true" />
+
 
 Portlet na,es can be found in ``plone.app.portlets/configure.zcml``.
 
@@ -528,10 +528,10 @@ This is how you do from within a template:
 And this is how you do it from within a view::
 
     import grok
-    
+
     class SomeView(grok.View):
         grok.context(IPloneSiteRoot)
-           
+
         def update(self):
             super(SomeView, self).update()
             self.request.set('disable_plone.rightcolumn',1)
@@ -542,7 +542,7 @@ Source: http://stackoverflow.com/questions/5872306/how-can-i-remove-portlets-in-
 Disabling right or left columns on a context
 --------------------------------------------
 
-Sometimes you just want to turn off the portlets in a certain context that doesn't have 
+Sometimes you just want to turn off the portlets in a certain context that doesn't have
 a template or fancy view.  To do this in code do this::
 
     from zope.component import getMultiAdapter
@@ -572,21 +572,21 @@ Creating a new portlet manager
 ----------------------------------
 
 If you need additional portlet slots at the site.
-In this example we use ``Products.ContentWellCode`` to provide us some 
+In this example we use ``Products.ContentWellCode`` to provide us some
 facilities as a dependency.
 
 * Create a viewlet which will handle portlet rendering in a normal page mode.
   Have several portlet slots, a.k.a. wells, where you can drop in portlets.
-  Wells are rendered horizontally side-by-side and portlets going in 
+  Wells are rendered horizontally side-by-side and portlets going in
   from top to bottom.
 
 * Register this viewlet in a viewlet manager where you wish to show your portlets
   on the main template
 
 * Have a management view which allows you to shuffle portlets around. This
-  is borrowed from ``Products.ContentWellPortlets``. 
+  is borrowed from ``Products.ContentWellPortlets``.
 
-* Register portlet wells in ``portlets.xml`` - note that one 
+* Register portlet wells in ``portlets.xml`` - note that one
   management view can handle several slots as in the example below
 
 The code skeleton works against `this Plone add-on template <https://github.com/miohtama/sane_plone_addon_template>`_.
@@ -597,7 +597,7 @@ Example portlet manager viewlets.py::
 
         For more information see
 
-        * http://collective-docs.readthedocs.org/en/latest/views/viewlets.html  
+        * http://collective-docs.readthedocs.org/en/latest/views/viewlets.html
 
     """
 
@@ -623,7 +623,7 @@ Example portlet manager viewlets.py::
     # By default, set context to zope.interface.Interface
     # which matches all the content items.
     # You can register viewlets to be content item type specific
-    # by overriding grok.context() on class body level 
+    # by overriding grok.context() on class body level
     grok.context(Interface)
 
     logger = logging.getLogger("PortletManager")
@@ -656,10 +656,10 @@ Example portlet manager viewlets.py::
 
         def showPortlets(self):
             return '@@manage-portlets' not in self.request.get('URL')
-            
+
         def portletManagersToShow(self):
             visibleManagers = []
-            
+
             for n in range(1,self.portlet_count):
                 name = '%s%s' % (self.name, n)
 
@@ -668,14 +668,14 @@ Example portlet manager viewlets.py::
                 except:
                     # In the case we have problems to load portlet manager, do something about it
                     # This is graceful fallback in a situation where 1) add-on is already installed
-                    # 2) new portlet code drops in and re-run add-on installer is                
+                    # 2) new portlet code drops in and re-run add-on installer is
                     continue
 
                 if mgr(self.context, self.request, self).visible:
                     visibleManagers.append(name)
-                            
+
             import pdb ; pdb.set_trace()
-            
+
             managers = []
             numManagers = len(visibleManagers)
             for counter, name in enumerate(visibleManagers):
@@ -709,10 +709,10 @@ Example portlet manager viewlets.py::
          This viewlet is a place holder to match portlets.xml and portlet management view together.
 
          * Manager is referred by name in manage page template
-         
+
          * portlets.xml refers to this interface
-         
-         * provider:ColophonPortlets expression is also used in template to render the actual porlets  
+
+         * provider:ColophonPortlets expression is also used in template to render the actual porlets
          """
 
 Example ZCML bit
@@ -721,15 +721,15 @@ Example ZCML bit
 
   <!-- Register new portlet management view for our portlet manager -->
 
-  
+
   <include package ="plone.app.portlets" />
 
-  <!-- 
+  <!--
 
       The .pt file is customized for the portlet manager name (from portlets.xml)
       and management link.
 
-    -->    
+    -->
   <browser:page
      name="manage-portlets-colophon"
      for="plone.portlets.interfaces.ILocalPortletAssignable"
@@ -767,7 +767,7 @@ The page template for the manager ``manage-portlets-colophon.pt`` is the followi
                 <tal:warning tal:condition="plone_view/isDefaultPageInFolder">
                     <dl class="portalMessage warning">
                         <dt i18n:translate="message_warning_above_content_area_dt">Is this really where you want to add portlets above the content?</dt>
-                        <dd i18n:translate="message_warning_above_content_area_dd">If you add portlets here, they will only appear on this item. If instead you want portlets to appear on all items in this folder, 
+                        <dd i18n:translate="message_warning_above_content_area_dd">If you add portlets here, they will only appear on this item. If instead you want portlets to appear on all items in this folder,
                             <a href=""
                                tal:attributes="href string:${plone_view/getCurrentFolderUrl}/@@manage-portlets-colophon"
                                i18n:name="manage-portletsinheader_link">
@@ -775,12 +775,12 @@ The page template for the manager ``manage-portlets-colophon.pt`` is the followi
                             </a>
                         </dd>
                     <dl>
-                </tal:warning>  
+                </tal:warning>
 
                 <h1 class="documentFirstHeading"
                     i18n:translate="manage_portlets_in_header">Manage portlets in colophon
                 </h1>
-                
+
                 <p>
                      <a href=""
                            class="link-parent"
@@ -788,7 +788,7 @@ The page template for the manager ``manage-portlets-colophon.pt`` is the followi
                            i18n:translate="return_to_view">
                         Return
                      </a>
-                </p>            
+                </p>
 
                 <div class="porlet-well_manager">
                     <h2 i18n:translate="portlet-well-a">Colophon Portlet Well 1</h2>
@@ -820,7 +820,7 @@ The page template for the manager ``manage-portlets-colophon.pt`` is the followi
 
         </body>
     </html>
-            
+
 Then we have ``portlets-colophon.pt`` page template for the viewlet which renders
 the portlets and related management link
 
@@ -833,7 +833,7 @@ the portlets and related management link
             <tal:portletmanagers tal:repeat="manager viewlet/portletManagersToShow">
                 <div tal:attributes="class python:manager[1]"
                      tal:define="mgr python:manager[0]"
-                     tal:content="structure provider:${mgr}" /> 
+                     tal:content="structure provider:${mgr}" />
 
             </tal:portletmanagers>
 
@@ -841,7 +841,7 @@ the portlets and related management link
 
             <div class="manage-portlets-link"
                tal:condition="viewlet/canManagePortlets">
-                <a href="" 
+                <a href=""
                    class="managePortletsFallback"
                    tal:attributes="href viewlet/manageUrl">
                    Add, edit or remove a portlet in <b tal:content="viewlet/name" />
@@ -861,28 +861,28 @@ and associates them with the used interface
     <!-- Set up all the new portlet managers we need above and below the content well -->
     <portlets>
 
-        
-        <portletmanager 
+
+        <portletmanager
              name="PortletsColophon1"
              type="youraddon.viewlets.IColphonPortlets"
         />
 
-        <portletmanager 
+        <portletmanager
              name="PortletsColophon2"
              type="youraddon.viewlets.IColphonPortlets"
         />
 
-        <portletmanager 
+        <portletmanager
              name="PortletsColophon3"
              type="youraddon.viewlets.IColphonPortlets"
         />
 
-        <portletmanager 
+        <portletmanager
              name="PortletsColophon4"
              type="youraddon.viewlets.IColphonPortlets"
         />
 
-        <portletmanager 
+        <portletmanager
              name="PortletsColophon5"
              type="youraddon.viewlets.IColphonPortlets"
         />
@@ -910,49 +910,49 @@ Example how to convert links in all static text portlets::
     from StringIO import StringIO
     import urlparse
     from lxml import html
-        
+
     def fix_links(content, absolute_prefix):
         """
         Rewrite relative links to be absolute links based on certain URL.
-        
+
         @param html: HTML snippet as a string
         """
-        
+
         parser = etree.HTMLParser()
-                    
+
         content = content.strip()
-        
+
         tree  = html.fragment_fromstring(content, create_parent=True)
-            
+
         def join(base, url):
             """
-            Join relative URL  
-            """  
+            Join relative URL
+            """
             if not (url.startswith("/") or "://" in url):
                 return urlparse.urljoin(base, url)
             else:
-                # Already absolute 
+                # Already absolute
                 return url
-        
-        for node in tree.xpath('//*[@src]'):         
-            url = node.get('src')            
-            url = join(absolute_prefix, url)        
+
+        for node in tree.xpath('//*[@src]'):
+            url = node.get('src')
+            url = join(absolute_prefix, url)
             node.set('src', url)
-        for node in tree.xpath('//*[@href]'):    
-            href = node.get('href')                        
+        for node in tree.xpath('//*[@href]'):
+            href = node.get('href')
             url = join(absolute_prefix, href)
             node.set('href', url)
-        
+
         data =  etree.tostring(tree, pretty_print=False, encoding="utf-8")
-            
+
         return data
-                                     
+
 Other resources and examples
 -----------------------------
 
 * `Static text portlet <https://github.com/plone/plone.portlet.static/blob/master/plone/portlet/static/>`_.
 
 * `Templated portlet <https://svn.plone.org/svn/collective/collective.easytemplate/trunk/collective/easytemplate/browser/portlets/templated.py>`_
-                                     
 
-                                     
+
+

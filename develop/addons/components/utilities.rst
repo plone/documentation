@@ -12,7 +12,7 @@ Utilities
 Introduction
 ============
 
-* Utility classes provide site-wide utility functions. 
+* Utility classes provide site-wide utility functions.
 
 * They are registered by marker interfaces.
 
@@ -22,10 +22,10 @@ Introduction
 * Utilities can be looked up by name or interface
 
 * Compared to "plain Python functions", utilities provide the advantage of
-  being plug-in points without need of 
+  being plug-in points without need of
   :doc:`monkey-patching </develop/plone/misc/monkeypatch>`.
 
-Read more in 
+Read more in
 
 * http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/utilities
 
@@ -34,7 +34,7 @@ Read more in
 Local and global utilities
 --------------------------
 
-Utilities can be 
+Utilities can be
 
 * *global* - registered during Zope start-up
 
@@ -49,10 +49,10 @@ Global utilities are registered in ZCML and affect all Zope application
 server and Plone site instances.
 
 Some hints::
-        
+
     <Moo^_^> what's difference between gsm.queryUtility() (global site manager) and zope.component.queryUtility()
     <agroszer> Moo^_^, I think gsm... takes the global registrations, z.c.queryUtility respects the current context
-        
+
 Registering a global utility
 =============================
 
@@ -69,14 +69,14 @@ Utilities may or may not have a name.
 
 ZCML example:
 
-.. code-block:: xml 
+.. code-block:: xml
 
     <!-- Register header animation picking logic - override this for your custom logic -->
     <utility
         provides="gomobile.convergence.interfaces.IConvergenceMediaFilter"
         factory=".filter.ConvergedMediaFilter"
         />
-         
+
 
 Python example (named utility)::
 
@@ -87,29 +87,29 @@ Python example (named utility)::
         processor = processor_class()
         gsm = component.getGlobalSiteManager()
         gsm.registerUtility(processor, interfaces.IOnsitePaymentProcessor, processor.name)
-        
+
 The utility class "factory" is in its simplest form a class which implements
 the interface::
 
     class ConvergedMediaFilter(object):
-        """ Helper class to deal with media state of content objects.  
+        """ Helper class to deal with media state of content objects.
         """
-        
+
         zope.interface.implements(IConvergenceMediaFilter)
-        
+
         def foobar(x):
             """ An example method """
-            return x+2      
+            return x+2
 
 Class is constructed / factory is run during the ZCML initialization.
 
 To use this class::
-    
+
     from gomobile.convergence.interfaces import IConvergenceMediaFilter
 
     def something():
        filter = getUtility(IConvergenceMediaFilter)
-       x = filter.foobar(3)                    
+       x = filter.foobar(3)
 
 Registering a local utility
 =============================
@@ -122,7 +122,7 @@ Registering a local utility
 
 .. warning::
 
-    Local utilities may be destroyed when the add-on product that 
+    Local utilities may be destroyed when the add-on product that
     provides them is reinstalled.
     Do not use them to store any data.
 
@@ -157,7 +157,7 @@ Example::
 
 .. note::
 
-    You cannot use ``getUtility()`` on Python module level code 
+    You cannot use ``getUtility()`` on Python module level code
     during import, as the Zope Component Architecture is not yet initialized
     at that time.
     Always call ``getUtility()`` from an HTTP request end point or after
@@ -171,14 +171,14 @@ Query only global utilities::
 
     from zope.app import zapi
     gsm = zapi.getGlobalSiteManager()
-    return gsm.getUtility(IConvergenceMediaFilter)  
+    return gsm.getUtility(IConvergenceMediaFilter)
 
 .. warning::
 
     Due to Zope component architecture initialization order, you cannot call
     ``getUtility()`` in module-level Python code.
     Module-level Python code is run when the module is being
-    imported, and Zope components are not yet set up at this point. 
+    imported, and Zope components are not yet set up at this point.
 
 Getting all named utilities of one interface
 ============================================

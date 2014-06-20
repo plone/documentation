@@ -25,7 +25,7 @@ Here is the *Edit* panel for a folder, in this case, one called
 
 .. figure:: /_static/edititemfolder.png
    :align: center
-   :alt: 
+   :alt:
 
 That's it. Change what you want and save, and the content item will be
 updated in Plone's storage system. You can repeatedly edit content
@@ -45,7 +45,7 @@ following *Edit Image* panel:
 
 .. figure:: /_static/editimage.png
    :align: center
-   :alt: 
+   :alt:
 
 Here, an image called "Eastern Tiger Swallowtail Butterfly" is being
 edited.Â You can change the title and description, as usual, in which
@@ -59,7 +59,7 @@ to images, offering a choice of several image transforms:
 
 .. figure:: /_static/transformimage.png
    :align: center
-   :alt: 
+   :alt:
 
 So, editing an image is a bit different than adding one in the first
 place, but not by much.
@@ -87,21 +87,21 @@ body text as normal:
 
 .. figure:: /_static/inlineeditingoff.png
    :align: center
-   :alt: 
+   :alt:
 
 But when the mouse is moved over the body text, a box highlights the
 body text as editable:
 
 .. figure:: /_static/inlineeditingbodytext1.png
    :align: center
-   :alt: 
+   :alt:
 
 Clicking within the body text after the inline editing box has appeared
 will bring up the visual editor:
 
 .. figure:: /_static/inlineeditingbodytext2.png
    :align: center
-   :alt: 
+   :alt:
 
 Change or add text and save, and the normal view is back. This is
 considerably quicker -- fewer clicks and less intervening wait time --
@@ -113,14 +113,14 @@ box appears:
 
 .. figure:: /_static/inlineeditingtitle1.png
    :align: center
-   :alt: 
+   :alt:
 
 Clicking the title after the box appears will activate a very simple
 editing field with a Save/Cancel choice:
 
 .. figure:: /_static/inlineeditingtitle2.png
    :align: center
-   :alt: 
+   :alt:
 
 Change the title and save. The speed benefit of inline editing is really
 sensed for editing something as simple as a title.

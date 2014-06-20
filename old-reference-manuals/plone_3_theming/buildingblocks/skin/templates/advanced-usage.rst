@@ -500,5 +500,5 @@ will render as:
 
     <input type="checkbox">
 
-This article contains information and examples from the `Zope Book <http://docs.zope.org/zope2/zope2book/source/index.html>`_, © 
+This article contains information and examples from the `Zope Book <http://docs.zope.org/zope2/zope2book/source/index.html>`_, ©
 `Zope Developers Community. <http://docs.zope.org/zope2/zope2book/source/Contributions.html>`_

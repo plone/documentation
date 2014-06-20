@@ -2,7 +2,7 @@
 Performance and tuning
 ==========================
 
-Tips how to optimize your Plone code for maximum performance. 
+Tips how to optimize your Plone code for maximum performance.
 
 .. toctree::
     :maxdepth: 2

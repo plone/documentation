@@ -1,4 +1,4 @@
-Adapters 
+Adapters
 ===========
 
 **Adapting from one interface to another with simple adapters and
@@ -44,9 +44,9 @@ the *ITweet* interface:
     class IMessage(Interface):
         """An email-like message
         """
-        
+
         subject = schema.TextLine(title=u"Subject")
-        recipients = schema.Tuple(title=u"Recipients", 
+        recipients = schema.Tuple(title=u"Recipients",
                                   description=u"A list of email addresses",
                                   value_type=schema.TextLine())
         body = schema.Text(title=u"Body", required=False)
@@ -58,7 +58,7 @@ the *ITweet* interface:
     class ITweet(Interface):
         """A microblogging message
         """
-        
+
         from_ = schema.TextLine(title=u"Subject")
         message = schema.Text(title=u"The message")
 
@@ -81,7 +81,7 @@ for the most appropriate one. In code, it looks like this:
     def sendAsEmail(context):
         """Convert the object passed in to an email message and send it.
         """
-        
+
         message = IMessage(context)
         sendEmail(message)
 
@@ -144,26 +144,26 @@ like this:
 
     class TweetMessage(grok.Adapter):
         """Adapts an ITweet to an IMessage.
-        
+
         This adapter is readonly. Thus we are strictly speaking only implementing
         a subset of the IMessage interface.
         """
-        
+
         grok.provides(IMessage)
         grok.context(ITweet)
-        
+
         @property
         def subject(self):
             return u"New tweet from %s!" % self.context.form_
-        
+
         @property
         def recipients(self):
             return ('tweetgateway@example.org',)
-        
+
         @property
         def body(self):
             return self.context.message
-        
+
         def format(self):
             return "%s\n%s" % (self.subject, self.body,)
 
@@ -224,15 +224,15 @@ implementation not shown, but assume it supports the properties
         @property
         def subject(self):
             return self.context.title
-        
+
         @property
         def recipients(self):
             return ('intray@example.org',)
-        
+
         @property
         def body(self):
             return self.context.text
-        
+
         def format(self):
             return "%s\n%s" % (self.subject, self.body,)
 
@@ -583,11 +583,11 @@ function, as indicated above. More commonly, however, we will use the
     class BloggingBroadcaster(grok.MultiAdapter):
         grok.provides(IMessageBroadcaster)
         grok.adapts(IContent, IBloggingService)
-        
+
         def __init__(self, context, service):
             self.context = context
             self.service = service
-        
+
         def send(self):
             message = IMessage(self.context)
             text = message.format()
@@ -596,11 +596,11 @@ function, as indicated above. More commonly, however, we will use the
     class MicroBloggingBroadcaster(grok.MultiAdapter):
         grok.provides(IMessageBroadcaster)
         grok.adapts(IContent, IMicroBloggingService)
-        
+
         def __init__(self, context, service):
             self.context = context
             self.service = service
-        
+
         def send(self):
             message = IMessage(self.context)
             text = message.format()

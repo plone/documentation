@@ -2,7 +2,7 @@
  WebDAV
 ===========
 
-.. admonition:: Description 
+.. admonition:: Description
 
     WebDAV is a protocol to manage your site directly from MS Windows
     Explorer and such.  Plone supports WebDAV without add-ons.
@@ -36,7 +36,7 @@ Alternative ``buildout.cfg`` configuration snippet which might be needed for
 some WebDAV clients::
 
    [instance]
-   ... 
+   ...
    zope-conf-additional =
        enable-ms-author-via on
        <webdav-source-server>
@@ -90,7 +90,7 @@ For Apache, you can use the ``limit`` statement, see http://httpd.apache.org/doc
 Supporting WebDAV in your custom content
 ========================================
 
-Please read more about it in the 
+Please read more about it in the
 `Dexterity WebDAV manual <https://github.com/plone/plone.dexterity/blob/master/docs/WebDAV.txt>`_.
 
 WebDAV notes
@@ -174,7 +174,7 @@ By default ``Resource.PUT()`` fails with ``405 Method Not Allowed``. That is, it
 is not by default possible to ``PUT`` to a resource that already exists. The same
 is true of ``Collection.PUT()``.
 
-In Dexterity, the ``PUT()`` method is overridden to adapt self to 
+In Dexterity, the ``PUT()`` method is overridden to adapt self to
 ``zope.filerepresentation.IRawWriteFile``, and call its ``write()`` method one
 or more times, writing the contents of the request body, before calling
 ``close()``. The ``mimeType`` and ``encoding`` properties will also be set
@@ -244,7 +244,7 @@ status.
 
 The ``PropertyManager`` mixin class defines the ``propertysheets`` variable to
 be an instance of ``DefaultPropertySheets``. This in turn has two property
-sheets, ``default``, a ``DefaultProperties`` instance, and ``webdav``, a 
+sheets, ``default``, a ``DefaultProperties`` instance, and ``webdav``, a
 ``DAVProperties`` instance.
 
 The ``DefaultProperties`` instance contains the main property sheet. This
@@ -288,7 +288,7 @@ content object). In particular:
 Other properties in this and any other property sheets are returned as stored
 when requested.
 
-If the ``PROPFIND`` request specifies a depth of 1 or infinity 
+If the ``PROPFIND`` request specifies a depth of 1 or infinity
 (i.e. the client wants properties for items in a collection),
 the process is repeated for all
 items returned by the ``listDAVObjects()`` methods,
@@ -385,7 +385,7 @@ of ``listDAVObjects()`` and adding a special traversal hook to allow its
 contents to be retrieved.
 
 This pseudo-file supports ``HEAD``, ``GET``, ``PUT``, ``LOCK``,
-``UNLOCK``, ``PROPFIND`` and ``PROPPATCH`` requests 
+``UNLOCK``, ``PROPFIND`` and ``PROPPATCH`` requests
 (an error will be raised if the user attempts to rename, copy, move
 or delete it). These operate on the container object, obviously.
 For example, when the data object is updated via a ``PUT`` request,

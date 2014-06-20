@@ -18,7 +18,7 @@ IReferenceable interface.
 
 References are maintained in the ``uid_catalog`` and ``reference_catalog``
 catalogs.  You can find both at the root of your Plone site. Check them to
-see their indexes and metadata. 
+see their indexes and metadata.
 
 Although you could use the ZCatalog API to manage Archetypes references,
 these catalogs are rarely used directly. A ``ReferenceField`` and its API is
@@ -56,8 +56,8 @@ In this example we set a reference from the ``myct1`` object to the
     >>> myct1.setMyReferenceField(areferenceableobject_uid)
 
 To get the object(s) referenced, just use the getter. Note that what you get
-is the objects themselves, not their 
-":doc:`brains </develop/plone/searching_and_indexing/query>`":: 
+is the objects themselves, not their
+":doc:`brains </develop/plone/searching_and_indexing/query>`"::
 
 .. TODO:: Add a glossary entry for brains.
 

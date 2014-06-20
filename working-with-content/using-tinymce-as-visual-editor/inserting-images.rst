@@ -9,13 +9,13 @@ your document, using the |Image| button on the TinyMCE toolbar:
 
 .. figure:: /_static/toolbar_image.jpg
    :align: center
-   :alt: 
+   :alt:
 
 Clicking this button launches the Insert Image dialog:
 
 .. figure:: /_static/insert_image_dialog.jpg
    :align: center
-   :alt: 
+   :alt:
 
 The three columns of the dialog display:
 
@@ -46,7 +46,7 @@ between many sizes and formats:
 
 .. figure:: /_static/image_size.jpg
    :align: center
-   :alt: 
+   :alt:
 
 -  Large (<img src="rose.png/image\_large" alt="rose" />);
 -  Preview (<img src="rose.png/image\_preview" alt="rose" />);
@@ -75,27 +75,27 @@ Types tab**.
 
 .. figure:: /_static/image_caption_settings.jpg
    :align: center
-   :alt: 
+   :alt:
 
 When you add image to the site, you can put some text into its
 description that will be displayed as an image caption.
 
 .. figure:: /_static/add_image.jpg
    :align: center
-   :alt: 
+   :alt:
 
 Now when we create a page, and insert image into it, check the box
 Caption:
 
 .. figure:: /_static/insert_image_caption.jpg
    :align: center
-   :alt: 
+   :alt:
 
 Save this page, and you will see the image followed by its description
 as the caption all inserted into a frame:
 
 .. figure:: /_static/caption_page.jpg
    :align: center
-   :alt: 
+   :alt:
 
 .. |Image| image:: /_static/image.png

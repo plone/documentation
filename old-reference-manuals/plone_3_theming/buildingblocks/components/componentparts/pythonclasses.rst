@@ -62,7 +62,7 @@ Do I have to use Classes?
 Viewlets tend to be wired up with a Python class which points to a template.
 So, even though you might only want to create a new template,
 you'll find that you have to write a class to point to your new
-template. 
+template.
 The :doc:`Elements </old-reference-manuals/plone_3_theming/elements/index>`
 section of this manual should help you by giving you a snippet of code
 for each element to copy and paste into your own product.

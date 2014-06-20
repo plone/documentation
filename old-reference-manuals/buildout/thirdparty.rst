@@ -23,7 +23,7 @@ dependencies. Simply list the egg, and optionally a version
 
     [buildout]
     ...
-    eggs = 
+    eggs =
         elementtree
         borg.project>=1.0b1,<2.0dev
 
@@ -37,13 +37,13 @@ directly. Thus, we have:
 
     [buildout]
     ...
-    
+
     find-links =
         http://dist.plone.org
         http://download.zope.org/ppix/
         http://download.zope.org/distribution/
         http://effbot.org/downloads
-    
+
     eggs =
         elementtree
 
@@ -78,7 +78,7 @@ Then, add the following to *buildout.cfg*:
     eggs =
         ...
         plone.portlets
-    
+
     develop =
         src/plone.portlets
 
@@ -100,12 +100,12 @@ Note that:
     ...
     develop =
         src/plone.portlets
-    
+
     ...
-    
+
     [plone]
     recipe = plone.recipe.plone
-    eggs = 
+    eggs =
         plone.portlets
 
 This is because *plone.recipe.plone* is very explicit about which
@@ -174,12 +174,12 @@ Zope:
     eggs =
         elementtree
         borg.project
-    
+
     ...
-    
+
     [instance]
     ...
-    zcml = 
+    zcml =
         borg.project
 
 Should you need to load an *overrides.zcml* or a *meta.zcml*, you
@@ -204,9 +204,9 @@ various dependencies directly from the policy product's
 ::
 
     <configure xmlns="http://namespace.zope.org/zope">
-    
+
         <include package="borg.project" />
-    
+
     </configure>
 
 In this case, you may still need one slug (using the *zcml* option

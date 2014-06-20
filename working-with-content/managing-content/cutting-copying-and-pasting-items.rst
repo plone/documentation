@@ -16,7 +16,7 @@ folder can simply be moved with a *cut*/*paste* operation:
 
 .. figure:: /_static/copy_of_operationcut.png
    :align: center
-   :alt: 
+   :alt:
 
 Note that the Eastern Tiger Swallowtail folder has been checked, and
 that the *cut* button is about to be clicked. After clicking the *cut*
@@ -29,21 +29,21 @@ progress:
 
 .. figure:: /_static/operationpaste.png
    :align: center
-   :alt: 
+   :alt:
 
 The *paste* button is now active. The next step is to navigate to the
 destination folder, in this case the Swallowtails folder:
 
 .. figure:: /_static/copy_of_operationpaste2.png
    :align: center
-   :alt: 
+   :alt:
 
 After clicking the Swallowtails folder, the *paste* button will continue
 to show, because the paste operation has not yet been completed:
 
 .. figure:: /_static/operationpaste3.png
    :align: center
-   :alt: 
+   :alt:
 
 And last, clicking the *paste* button for the destination folder adds
 the Eastern Tiger Swallowtail folder to its proper place in the
@@ -52,7 +52,7 @@ Skippers folder, and the *cut*/*paste* operation is complete:
 
 .. figure:: /_static/operationpaste4.png
    :align: center
-   :alt: 
+   :alt:
 
 The *paste* button remains active, because you would be allowed to
 continue pasting the folder in other places if you wanted. This could
