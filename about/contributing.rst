@@ -20,7 +20,8 @@ To reach this team for any questions please contact
 
 * *#plone-docs* IRC channel on irc.freenode.net
 
-Contributing
+
+License
 ============
 
 The Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
@@ -28,9 +29,10 @@ The Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed un
 If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <http://plone.org/foundation/contributors-agreement>`_.
 
 If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team, for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net
+Basically, all we need is your written confirmation that you are agreeing your contribution can be under Creative Commons. You can also add in a comment with your pull request "I, <full name>, agree to have this published under Creative Commons 4.0 International BY".
 
 
-Git workflow / branching model
+Workflow
 ==============================
 
 The documentation is hosted on github. And there are tools hooked directly into it:
@@ -54,6 +56,22 @@ If you don't get feedback on your pull request in a day please come to #plone-do
 The main goal of this process is not to annoy you. On the contrary, we **love** your contributions.
 
 But the documentation team also wants to keep the documentation in good shape.
+
+
+Editing the documentation on GitHub
+===================================
+
+This is the recommended way for smaller changes, and for people who are not familiar with Git.
+
+- Go to `Plone Documentation <https://github.com/plone/documentation>`_ on  GitHub.
+- Press the **Fork** button. This will create your own personal copy of the documentation.
+- **Edit** files using GitHub's text editor in your web browser
+- Fill in the **Commit changes**-textbox at the end of the page telling why you did the changes. Press the **Commit changes**-button next to it when done.
+- Then head to the green *New pull request*-button (e.g. by navigating to your fork's root and clicking "Pull requests" on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text. Just press **New pull request** button, finally click "Send pull request".
+- Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on Github.
+- For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
+- You will receive a message when your request has been integrated into the documentation. At that moment, feel free to delete the copy of the documentation you created under your account on github. Next time you contribute, just fork again. That way you'll always have a fresh copy of the documentation to work on.
+
 
 
 Pull request checklist
@@ -84,13 +102,3 @@ advanced users.
 
 For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
 
-Editing the documentation on GitHub
-===================================
-
-- Go to `Plone Documentation <https://github.com/plone/documentation>`_ on  GitHub.
-- Press the **Fork** button. This will create your own personal copy of the documentation.
-- **Edit** files using GitHub's text editor in your web browser
-- Fill in the **Commit changes**-textbox at the end of the page telling why you did the changes. Press the **Commit changes**-button next to it when done.
-- Then head to the green *New pull request*-button (e.g. by navigating to your fork's root and clicking "Pull requests" on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text. Just press **New pull request** button, finally click "Send pull request".
-- Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on Github.
-- For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
