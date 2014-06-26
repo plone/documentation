@@ -464,3 +464,47 @@ Code for debug.py::
     if __name__ == "__main__":
         main()
 
+Updating objects created by older code
+======================================
+
+In the course of development, classes may be renamed or moved. 
+When an object is read from the ZODB,
+the class required to unpickle the serialized object is named in the pickle data.
+If this name cannot be imported, you have a broken object on your hands. 
+
+In the Zope event log that will show up as, for example::
+
+    2014-06-19 11:04:04 WARNING OFS.Uninstalled Could not import class 'ATSimpleStringCriterion' from module 'Products.ATContentTypes.types.criteria.ATSimpleStringCriterion'
+
+To make the object usable again, 
+the reference needs to be updated to refer to a class that can instantiate this object. 
+One tool that can help you with this is 
+`zodbupdate <https://pypi.python.org/pypi/zodbupdate>`_
+
+In this case, the ``ATSimpleStringCriterion`` class in question has moved from
+``Products.ATContentTypes.types.criteria.ATSimpleStringCriterion`` to
+``Products.ATContentTypes.criteria.simplestring``.
+
+To make ``zodbupdate`` handle this, add a ``zodbupdate`` entry point to
+``ATContentTypes``. Depending on your configuration, that may look like 
+this:
+
+.. code-block:: console
+
+    $ cat .../buildout-cache/eggs/Products.ATContentTypes-2.1.13-py2.7.egg/EGG-INFO/entry_points.txt 
+    [zodbupdate]
+    renames=Products.ATContentTypes:rename_dict
+
+Next, define ``rename_dict`` in the ``__init__.py`` of the named package, e.g.::
+
+    .../buildout-cache/eggs/Products.ATContentTypes-2.1.13-py2.7.egg/Products/ATContentTypes/__init__.py 
+
+ In this case, our ``rename_dict`` will look like this:
+
+.. code-block:: python
+
+    rename_dict = {
+        'Products.ATContentTypes.types.criteria.ATSimpleStringCriterion ATSimpleStringCriterion':
+        'Products.ATContentTypes.criteria.simplestring ATSimpleStringCriterion'}
+
+.. note:: As always, work on a copy of your data first, before working on the live site.
