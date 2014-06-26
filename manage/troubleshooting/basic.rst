@@ -50,6 +50,8 @@ No such file or directory: 'zope.conf'
 
 Example:
 
+.. code-block:: console
+
     sudo /Applications/Plone/zinstance/bin/plonectl start
     instance: Error: error opening file /Applications/Plone/zinstance/parts/instance/etc/zope.conf: [Errno 2] No such file or directory: '/Applications/Plone/zinstance/parts/instance/etc/zope.conf'
 
@@ -61,11 +63,15 @@ Dropping into pdb
 
 If you need to inspect start-up errors in Python's :doc:`debugger </manage/deploying/testing_tuning/testing_and_debugging/pdb>`.
 
-Activate Python configuration associated with your ``bin/instance`` script::
+Activate Python configuration associated with your ``bin/instance`` script:
+
+.. code-block:: console
 
     source ~/code/collective.buildout.python/python-2.6/bin/activate
 
-Start Plone pdb enabled::
+Start Plone pdb enabled:
+
+.. code-block:: console
 
     python -m pdb bin/instance fg
 
