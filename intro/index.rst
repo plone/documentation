@@ -2,7 +2,7 @@
 Introduction
 ============
 
-What is plone?
+What is Plone?
 --------------
 
 **A powerful, flexible Content Management Solution that is easy to install, use and extend.**
