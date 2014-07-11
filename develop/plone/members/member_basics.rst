@@ -360,7 +360,9 @@ Use the ``portal_registration`` tool. Example (browserview)::
 Batch member creation
 -----------------------
 
-* http://plone.org/documentation/kb/batch-adding-users
+* An example script can be run with bin/plonectl, tested on Plone 4.3.3; see http://gist.github.com/l34marr/02a9ef12a1e51c474bee
+
+* An example script tested on Plone 2.5.x; see http://plone.org/documentation/kb/batch-adding-users
 
 
 Email login
