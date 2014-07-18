@@ -6,6 +6,8 @@ Completing this configuration allows your Plone site to send email. If the mail 
 Using Gmail as an External Host
 -------------------------------
 
+The following settings are an example of how you can configure your site to use your Gmail address.
+
 | **SMTP Server:** smtp.gmail.com
 | **SMTP Port:** 587
 | **ESMTP username:** [username]@gmail.com
