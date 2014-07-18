@@ -8,7 +8,7 @@ Using localhost for email
 -------------------------
 
 One common way to configure mail for your Plone site is to use a mail server on the same machine that is hosting Plone. 
-To do this, you'll first need to configure a mail server, like Postfix (`http://www.postfix.org/BASIC_CONFIGURATION_README.html <http://www.postfix.org/BASIC_CONFIGURATION_README.html>`_).
+To do this, you'll first need to configure a mail server, like `Postfix <http://www.postfix.org/BASIC_CONFIGURATION_README.html>`_.
 
 | **SMTP Server:** localhost
 | **SMTP Port:** 25
