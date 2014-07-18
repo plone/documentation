@@ -18,4 +18,4 @@ Using Gmail as an External Host
 Testing the Configuration
 -------------------------
 
-You can test the configuration by clicking the "Save and send test e-mail" button at the bottom of the form. You should receive an email from the email address you specified with the subject "Test email from Plone".
+You can test the configuration by clicking the "Save and send test e-mail" button at the bottom of the form. You should receive an email from the email address you specified with the subject "Test email from Plone."
