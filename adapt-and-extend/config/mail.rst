@@ -4,8 +4,7 @@ Mail Configuration
 Using an External Host
 ----------------------
 
-**SMTP Server:** smtp.gmail.com
-
+| **SMTP Server:** smtp.gmail.com
 | **SMTP Port:** 465 (SSL) / 587 (TLS/STARTTLS)
 
 * **ESMTP username:** [username]@gmail.com
