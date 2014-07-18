@@ -17,10 +17,11 @@ To do this, you'll first need to configure a mail server, like `Postfix <http://
 | **Site 'From' Name:** [This will appear as the "From" address name]
 | **Site 'From' Address:** [emailaddress]@[yourdomain]
 
-Using Gmail as an External Host
+Using an external host
 -------------------------------
 
 The following settings are an example of how you can configure your site to use your Gmail address.
+You can also use any external mail server, such as your business or institution email (you can get your SMTP settings from your in-house IT department).
 
 | **SMTP Server:** smtp.gmail.com
 | **SMTP Port:** 587
