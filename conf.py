@@ -31,7 +31,8 @@ extensions = [
     #'sphinxcontrib.contributors',
     'sphinxcontrib_robotframework',
     'sphinx.ext.autosummary',
-    ]
+    'sphinxcontrib.spelling'
+]
 
 # See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
 todo_include_todos = True
