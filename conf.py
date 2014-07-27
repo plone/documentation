@@ -34,6 +34,9 @@ extensions = [
     'sphinxcontrib.spelling'
 ]
 
+# This is our wordlist with know words, like Github or Plone ...
+spelling_word_list_filename='spelling_wordlist.txt'
+
 # See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
 todo_include_todos = True
 
