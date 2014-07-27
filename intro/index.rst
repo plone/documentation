@@ -10,27 +10,21 @@ What is Plone?
 Plone lets non-technical people create and maintain information for a public website or an intranet using only a web browser.
 Plone is easy to understand and use - allowing users to be productive in just half an hour - yet offers a wealth of community-developed add-ons and extensibility to keep meeting your needs for years to come.
 
-Blending the creativity and speed of open source with a technologically advanced `Python`_ back-end, Plone offers superior security without sacrificing power or extensibility.
+Blending the creativity and speed of open source with a technologically advanced `Python <http://www.python.org/>`_ back-end, Plone offers superior security without sacrificing power or extensibility.
 
-.. _Python: http://www.python.org/
 
 **The Plone community** is an incredibly diverse group that bridges many types and sizes of organizations, many countries and languages, and everything from technical novices to hardcore programmers.
-Out of that diversity comes an attention to detail in code, function, user interface and ease of use that makes Plone one of the top 2% of open source projects worldwide. (Source: `Ohloh`_)
+Out of that diversity comes an attention to detail in code, function, user interface and ease of use that makes Plone one of the top 2% of open source projects worldwide. (Source: `Ohloh <http://www.ohloh.net/>`_)
 
-.. _Ohloh: http://www.ohloh.net/
 
-**Plone's intellectual property** and trademarks are protected by the non-profit `Plone Foundation`_.
+**Plone's intellectual property** and trademarks are protected by the non-profit `Plone Foundation <https://plone.org/about/foundation>`_.
 This means that Plone's future is not in the hands of any one person or company.
 
-.. _Plone Foundation: http://plone.org/about/foundation
 
 **Thousands of websites** across large and small businesses, education, government, non-profits, sciences, media and publishing are using Plone to solve their content management needs.
-This is supported by a global network of `over 300 solution providers`_ in more than 50 countries.
+This is supported by a global network of `over 300 solution providers <https://plone.org/support/providers>`_ in more than 50 countries.
 Looking for a hosting provider to host your Plone site for you?
-You can find a list of providers and consultants on `plone.org`_.
-
-.. _over 300 solution providers: http://plone.org/support/providers
-.. _plone.org: http://plone.org/support/hosting-providers
+You can find a list of providers and consultants on `plone.org <https://plone.org/support/hosting-providers>`_.
 
 **We are very proud to be known by the company we keep.**
 Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell, the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments - all use Plone.
@@ -43,10 +37,9 @@ Need to be sure your website is accessible? Plone meets or exceeds US Government
 
 **Worried about security?** As an open source product, a large number of developers frequently scrutinize the code for any potential security issues.
 This proactive approach is better than the wait-and-see approach in proprietary software that relies on keeping security issues a secret instead of resolving them outright.
-Based on Python and the Zope libraries, Plone has a technological edge that has has helped it attain the best security track record of any major CMS (Source: `CVE`_).
+Based on Python and the Zope libraries, Plone has a technological edge that has has helped it attain the best security track record of any major CMS (Source: `CVE <http://cve.mitre.org/>`_).
 In fact, security is a major reason why many CMS users are switching to Plone.
 
-.. _CVE: http://cve.mitre.org/
 
 The market is full of open source content management systems, so it is important to do your homework before choosing one for your organization.
 Remember that a simple CMS may work out great to start with, but lead to problems with scaling or migration when you need more capability than it can provide.
