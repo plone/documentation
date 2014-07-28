@@ -197,7 +197,7 @@ Please use inline links
 
     `Example <http://example.com>`_
 
-otherwise the URL will get lost during translation.
+otherwise the URL is not attached to the context it is used in, and that makes it harder for translations to use the right expressions.
 
 Syntax highlighting
 ===================
