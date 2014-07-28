@@ -63,8 +63,6 @@ But again, do not be afraid to use more than 80 characters. It's 2014, and it's 
 Document page format
 ====================
 
-
-
 Here are some Sphinx coding conventions used in the documentation.
 
 Tab policy
@@ -189,6 +187,17 @@ would be underlined like this:
    Heading 4
    `````````
    ...
+
+Links
+=====
+
+Sphinx can use two link styles, inline and via a link at the end of the page. Please only use inline links like this:
+
+.. code-block:: rst
+
+    `Example <http://example.com>`_
+
+otherwise the URL is not attached to the context it is used in, and that makes it harder for translators to use the right expressions.
 
 Syntax highlighting
 ===================
