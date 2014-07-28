@@ -191,13 +191,13 @@ would be underlined like this:
 Links
 =====
 
-Please use inline links
+Sphinx can use two link styles, inline and via a link at the end of the page. Please only use inline links like this:
 
 .. code-block:: rst
 
     `Example <http://example.com>`_
 
-otherwise the URL is not attached to the context it is used in, and that makes it harder for translations to use the right expressions.
+otherwise the URL is not attached to the context it is used in, and that makes it harder for translators to use the right expressions.
 
 Syntax highlighting
 ===================
