@@ -67,37 +67,68 @@ This is an example of how a README(.rst) should look like:
 
 .. code-block:: rst
 
-    $project
-    ========
+    collective.fancystuff
+    =====================
 
-    $project will solve your problem of where to start with documentation,
-    by providing a basic explanation of how to do it easily.
-
+    collective.fancystuff will make your Plone site more fancy.
+    It can do cool things, and will make the task of keeping your site fancy a lot easier.
+    
+    The main audience for this are people who run a chocolate factory. 
+    But it also is useful for organisations planning on world domination.
+    
+    
     Features
     --------
 
     - Be awesome
-    - Make things faster
+    - Make things fancier
+    - Works out of the box, but can also be customized. After installation, you will find a new item in your site control panel where to set various options.
+    
+    
+    Examples
+    --------
+    
+    This add-on can be seen in action at the following sites:
+    - http://fancysite.com
+    - http://fluffystuff.org
+    
+    
+    Documentation
+    -------------
+    
+    Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+    
+    
+    Translations
+    ------------
+    
+    This product has been translated into 
+    
+    - Klingon (thanks, K'Plai)
+    
 
     Installation
     ------------
 
-    Install $project by add it to your buildout:
+    Install collective.fancystuff by adding it to your buildout:
 
-    [buildout]
-    parts =
+       [buildout]
+ 
         ...
-        $project
+    
+        eggs = 
+            collective.fancystuff
+    
+        
+    and then running "bin/buildout"
 
-    [$project]
-    recipe = zc.recipe.egg
-    eggs = $project.egg
+    
 
     Contribute
     ----------
 
-    - Issue Tracker: github.com/$project/$project/issues
-    - Source Code: github.com/$project/$project
+    - Issue Tracker: github.com/collective/collective.fancystuff/issues
+    - Source Code: github.com/collective/collective.fancystuff
     - Documentation: docs.plone.org/foo/bar
 
     Support
