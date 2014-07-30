@@ -59,6 +59,58 @@ Styleguide
 * If you want to include images (*Yes! We love you! But do remember, .png or .jpg, no .gif please*), you should place them into /docs/_images
 * You should use `Sphinx <http://sphinx-doc.org/>`_
 
+
+README
+======
+
+This is an example of how a README(.rst) should look like:
+
+.. code-block:: rst
+
+    $project
+    ========
+
+    $project will solve your problem of where to start with documentation,
+    by providing a basic explanation of how to do it easily.
+
+    Features
+    --------
+
+    - Be awesome
+    - Make things faster
+
+    Installation
+    ------------
+
+    Install $project by add it to your buildout:
+
+    [buildout]
+    parts =
+        ...
+        $project
+
+    [$project]
+    recipe = zc.recipe.egg
+    eggs = $project.egg
+
+    Contribute
+    ----------
+
+    - Issue Tracker: github.com/$project/$project/issues
+    - Source Code: github.com/$project/$project
+    - Documentation: docs.plone.org/foo/bar
+
+    Support
+    -------
+
+    If you are having issues, please let us know.
+    We have a mailing list located at: project@example.com
+
+    License
+    -------
+
+    The project is licensed under the GPLv2.
+
 Directory Structure
 =====================
 
