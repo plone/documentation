@@ -708,7 +708,7 @@ See `DateIndex <http://svn.zope.org/Zope/trunk/src/Products/PluginIndexes/DateIn
 
 Example::
 
-    items = portal_catalog(effective_date = {'date': {'query':(DateTime('2002-05-08 15:16:17'),
+    items = portal_catalog(effective_date = {'query':(DateTime('2002-05-08 15:16:17'),
                                             DateTime('2062-05-08 15:16:17')),
                                    'range': 'min:max'})
 
