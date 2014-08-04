@@ -41,3 +41,18 @@ import it from there::
 When the testrunner passes interact, you'll get an interactive Python prompt.
 
 For more information see: https://pypi.python.org/pypi/interlude
+
+
+Get fields from browser
+-----------------------
+
+The most common operation when using a doctest is filling fields of a form::
+
+    >>> browser.getControl(name='form.widgets.text').value = 'Some text'
+
+One common problem with this is that you can get an ``LookupError: name ...``.
+If there is a typo, or the field does not exist, etc etc.
+
+A quick way to see which fields exist on the current browser helps a lot while debugging test failures::
+
+    >>> [[c.name for c in f.controls] for f in browser.mech_browser.forms()]
