@@ -1,7 +1,7 @@
-Change the Font Colours
+Change the Font Colors
 =======================
 
-How to change the font colours - a through-the-web approach.
+How to change the font colors - a through-the-web approach.
 
 You'll be introduced to some very simple techniques here for
 through-the-web customizations of Plone's CSS.
@@ -9,7 +9,7 @@ through-the-web customizations of Plone's CSS.
 -  How to locate the styles you want to change
 -  How to override these styles using the ploneCustom.css style sheet
 
-In this case we'll change the colour of page titles from black to
+In this case we'll change the color of page titles from black to
 turquoise.
 
 Before you start
@@ -70,7 +70,7 @@ edited. You'll see a Customize option just above the grey text area,
 click the Customize button and you'll find that the style sheet has been
 automatically copied to portal\_skins/custom.
 
-You're now free to edit the file as you like. To change the colour of
+You're now free to edit the file as you like. To change the color of
 our page titles, add:
 
 ::
@@ -84,7 +84,7 @@ and save.
 If you've installed Plone 4 with the Sunburst theme, the ploneCustom.css
 comes with a number of commented out pre-packaged styles that you might
 like to experiment with. You can override the layout styles to a fixed
-width and alter the colours of the links.
+width and alter the colors of the links.
 
 Rolling back your changes
 -------------------------
