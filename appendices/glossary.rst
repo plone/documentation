@@ -339,10 +339,10 @@ It incorporates the original `glossary on plone.org
         optimization notes, design changes, etc.
 
     Monkey patch
-        A monkey patch is a way to modify the behaviour of Zope or a Product
+        A monkey patch is a way to modify the behavior of Zope or a Product
         without altering the original code. Useful for fixes that have to
         live alongside the original code for a while, like security
-        hotfixes, behavioural changes, etc.
+        hotfixes, behavioral changes, etc.
 
         The term "monkey patch" seems to have originated as follows: First
         it was "guerrilla patch", referring to code that sneakily changes
@@ -480,7 +480,7 @@ It incorporates the original `glossary on plone.org
         part. By enabling or disabling certain components in ZCML, you can
         configure certain policies of the overall application. In Zope 2,
         enabling and disabling components means to drop in or remove a
-        certain Zope 2 product. When it's there, it's automagically imported
+        certain Zope 2 product. When it's there, it's automatically imported
         and loaded. This is not the case in Zope 3. If you don't enable it
         explicitly, it will not be found.
 
@@ -547,7 +547,7 @@ It incorporates the original `glossary on plone.org
     control panel
         The Control Panel is the place where many parameters of a Plone site can be set.
         Here add-ons can be enabled, users and groups created, the workflow and permissions can be set and settings for language, caching and many other can be found.
-        If you have "Site Admin" permisisons, you can find it under "Site -> Site Setup" in your personal tools.
+        If you have "Site Admin" permissions, you can find it under "Site -> Site Setup" in your personal tools.
 
     Dexterity
         Dexterity is an alternative to :term:`Archetypes`, Plone's venerable content type framework. Being more recent, Dexterity has been able to learn from some of the mistakes that were made Archetypes, and - more importantly - leverage some of the technologies that did not exist when Archetypes was first conceived. Dexterity is built from the ground up to support through-the-web type creation. Dexterity also allows types to be developed jointly through-the-web and on the filesystem. For example, a schema can be written in Python and then extended through the web.
