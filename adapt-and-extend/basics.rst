@@ -5,4 +5,4 @@ Basic Changes (Look and Feel)
    :maxdepth: 1
 
    change-the-logo
-   change-the-font-colours
+   change-the-font-colors

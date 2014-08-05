@@ -220,8 +220,8 @@ Per-folder CSS theme overrides
 
 * https://pypi.python.org/pypi/Products.CustomOverrides
 
-Striping listing colours
-==========================
+Striping listing colors
+=======================
 
 In your template you can define classes for 1) the item itself 2) extra odd
 and even classes.
