@@ -63,5 +63,12 @@ A viewer for ReStructuredText documents that renders them on the fly.
 
     pip install restview
 
+Language tools:
+---------------
 
+These tools can help you to check for grammatical mistakes and typos, you should always a spell checker anyway !
+
+**LanguageTool** `is an Open Source proof­reading software for English, French, German, Polish, and more than 20 other languages <https://www.languagetool.org/>`_.
+
+**After the Deadline** `is a language checker for the web <http://www.afterthedeadline.com/>`_.
 
