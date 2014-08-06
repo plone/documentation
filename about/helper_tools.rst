@@ -66,7 +66,7 @@ A viewer for ReStructuredText documents that renders them on the fly.
 Language tools:
 ---------------
 
-These tools can help you to check for grammatical mistakes and typos, you should always use a spell checker anyway !
+These tools can help you to check for grammatical mistakes and typos, you should always use a spell checker anyway!
 
 **LanguageTool** `is an Open Source proof­reading software for English, French, German, Polish, and more than 20 other languages <https://www.languagetool.org/>`_.
 
