@@ -82,8 +82,7 @@ The returned variables are:
 * ``err_hook``, set via the module level variable ``zpublisher_exception_hook``.
   This is used to handle error responses (more below).
 * ``validated_hook``, set via the module level variable
-  ``zpublisher_validated_hook``. This is used to initialize a security manager
-  once authentication and authorization have taken place (more below).
+  ``zpublisher_validated_hook``. This is used to initialize a security manager once authentication and authorization have taken place (more below).
 * ``transactions_manager``, set via the module level variable
   ``zpublisher_transactions_manager``, but defaulting to the
   ``DefaultTransactionsManager`` which uses the ``transaction`` API to manage
@@ -101,8 +100,7 @@ The publisher then performs the following steps:
 * Set ``debug_mode`` and ``realm`` on the response, as returned by
   ``get_module_info()``.
 * If ``bobo_before()`` is set, it is called with no arguments.
-* Set the initial value for ``request['PARENTS']`` to be the published
-  object. This will be the ``ZApplicationWrapper`` set during the startup
+* Set the initial value for ``request['PARENTS']`` to be the published object. This will be the ``ZApplicationWrapper`` set during the startup
   phase.
 * Begin a transaction using the ``transactions_manager``.
 * Traverse to the actual object being published (e.g. a view) by calling
@@ -134,16 +132,12 @@ The publisher then performs the following steps:
   objects (which would in effect instantiate them). We do allow binding of
   ``self`` for methods on objects, and we pass the ``request`` as context for
   debugging.
-* Set the result of the ``mapply()`` call as the response body. As a marker,
-  the response object itself can be returned from the callable that ``mapply()``
-  invokes to bypass this behavior, i.e. if the published object set the
-  response body itself.
+* Set the result of the ``mapply()`` call as the response body. As a marker, the response object itself can be returned from the callable that ``mapply()`` invokes to bypass this behavior, i.e. if the published object set the response body itself.
 * Notify the ``ZPublisher.pubevents.PubBeforeCommit`` event.
 * Commit the transaction using the ``transactions_manager``.
 * End the ``zope.security`` interaction.
 * Notify the ``ZPublisher.pubevents.PubSuccess`` event.
-* Return the response object, which is then used by the ZServer to write to
-  stdout.
+* Return the response object, which is then used by the ZServer to write to stdout.
 
 If an exception happens during this process, the ``err_hook`` is called. This
 is allowed to raise a ``Retry`` exception. Regardless, the event
@@ -197,9 +191,8 @@ variable). This method is inordinately complicated, mostly because it caters for
 a lot of edge cases. The basic idea is pretty simple, though: each path element
 represents an item to traverse to, from the preceding object (its parent).
 Traversal can mean dictionary-like access (``__getitem__``), attribute-like access
-(``__getattr__``), or one of a number of different hooks for overriding or
-extending traversal. Once the final element on the path is found, the user's
-access to it is validated, before it is returned to be passed to ``mapply()``.
+(``__getattr__``), or one of a number of different hooks for overriding or extending traversal. 
+Once the final element on the path is found, the user's access to it is validated, before it is returned to be passed to ``mapply()``.
 
 Here are the gory details:
 
@@ -400,10 +393,7 @@ Here are the gory details:
     never happen in a modern Zope installation). This either returns a user
     object or ``None``, if the user is not found in this user folder, or there
     is a user, but the user cannot be authorized by this user folder.
-  * If ``None`` is returned, the search continues up the list of traversal
-    parents until a suitable user folder is found. If no such user folder is
-    found, an ``Unauthorized`` exception is raised, unless there are no security
-    declarations on the context.
+  * If ``None`` is returned, the search continues up the list of traversal parents until a suitable user folder is found. If no such user folder is found, an ``Unauthorized`` exception is raised, unless there are no security declarations on the context.
   * If a user with permissions is found, and the ``validated_hook`` is set
     (found via ``get_module_info()`` as described above), it is called with the
     request and user as arguments. The standard ``validated_hook`` calls
