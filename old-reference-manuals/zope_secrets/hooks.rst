@@ -21,7 +21,7 @@ Process lifecycle
   application object is set.
 ``IDatabaseOpenedWithRoot``
   notified later in the startup cycle, when the application root has been
-  set and initalised.
+  set and initialized.
 ``IProcessStarting``
   notified when the Zope startup process has completed, but before the Zope
   server runs (and so can listen to requests).
