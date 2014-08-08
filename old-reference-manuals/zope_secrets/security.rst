@@ -43,7 +43,7 @@ protected by that permission, e.g.:
         ('Default permission', ['']),
         )
 
-The roles reuqired to access an object (e.g. a content object), are stored
+The roles required to access an object (e.g. a content object), are stored
 in a class or instance variable ``__roles__``. This may contain a tuple or list
 of role names, an ``AccessControl.PermissionRole.PermissionRole`` object, or one
 of the following special variables:
@@ -130,7 +130,7 @@ For example, the permission ``"Access contents information"`` becomes
 function ``AccessControl.Permission.pname``.
 
 ``ClassSecurityInfo`` does little except record information until the
-``InitializeClass()`` call is made with the class as an arugment. This will:
+``InitializeClass()`` call is made with the class as an argument. This will:
 
 * Loop over all attributes and assign a ``__name__`` attribute to the value of
   any attribute in the class's ``__dict__`` that has the ``_need__name__``
@@ -210,7 +210,7 @@ The default ``rolesForPermissionOn()`` does the following:
     this is a signal to delegate to another permission. Continue acquisition
     from the parent, but discard any roles acquired so far.
 
-* If no object with the managled permission attribute is found, return the
+* If no object with the mangled permission attribute is found, return the
   default roles. Applicable default roles are stored in each ``PermissionRole``
   object, but for other types of roles, use ``('Manager',)``.
 * In all cases, if the global variable ``_embed_permission_in_roles`` is true,
@@ -325,8 +325,8 @@ does this:
     object.
 
 * If this is the top-level user folder and the user is the emergency user,
-  return the user immediately without further authorisation.
-* Otherwise, attempt to authorise the user by creating a new security manager
+  return the user immediately without further authorization.
+* Otherwise, attempt to authorize the user by creating a new security manager
   for this user and calling its ``validate()`` method with ``accessed``,
   ``container``, ``name``, and ``value`` as arguments.
 
@@ -339,7 +339,7 @@ method on the ``ZopeSecurityPolicy``. This is a charming 200+ line bundle of
 * Obtain the ``aq_base``'d version of ``container`` and ``accessed``. If the
   ``accessed`` parent was not acquisition-wrapped, treat the ``aq_base``'d
   container as the ``aq_base``'d ``accessed``.
-* The caller may have passed in the required roles already as an optimisation.
+* The caller may have passed in the required roles already as an optimization.
   If not, attempt to get the required roles by calling
   ``getRoles(container, name, value)``. The Python version of this is defined in
   ``AccessControl.ZopeSecurityPolicy``. It does the following:
@@ -367,7 +367,7 @@ method on the ``ZopeSecurityPolicy``. This is a charming 200+ line bundle of
   * If there is no ``container`` passed in, we have no way of inferring one, so
     all bets are off. Raise ``Unauthorized``.
   * Attempt to get a ``__roles__`` value from the ``container``. If it is
-    acqusition-wrapped, also try to explicitly acquire ``__roles__`` if it does
+    acquisition-wrapped, also try to explicitly acquire ``__roles__`` if it does
     not have a ``__roles__`` attribute itself.
 
     If this fails, then we may still be able to get some security assertions
@@ -422,7 +422,7 @@ method on the ``ZopeSecurityPolicy``. This is a charming 200+ line bundle of
       owned by a user, we raise ``Unauthorized`` if the owner does not have any
       of the required roles.
     * If the execution context has proxy roles, these are allowed to be used
-      to validate access intead of the user's actual roles.
+      to validate access instead of the user's actual roles.
     * Otherwise, call ``user.allowed()`` to validate access and either return
       true or raise ``Unauthorized``.
 
@@ -440,7 +440,7 @@ setting the mangled permission attribute (see the description of
 
 The most basic API to do so is the class
 ``AccessControl.Permission.Permission``. This is a transient helper class
-initialised with a (non-mangled) permission name (i.e. the first element in an
+initialized with a (non-mangled) permission name (i.e. the first element in an
 ``__ac_permissions__`` tuple), a tuple of attributes the permission applies to
 (i.e. the second element in an ``__ac_permissions__`` item) |---| referred to as
 the variable ``data`` |---| and an object where the permission is being managed.
@@ -465,7 +465,7 @@ supplied as the optional last parameter to ``getRoles()``.
 mangled permission name as an instance variable on the object (or delete the
 variable, if setting to an empty list of roles). Next, it will
 ensure no other ``__roles__`` or ``<name>__roles__`` *instance* variables have
-been set (class variables are left alone, of course), so that the managled
+been set (class variables are left alone, of course), so that the mangled
 permission name attribute is the unambiguous statement of the permission-to-
 role mapping.
 
@@ -481,7 +481,7 @@ calls ``setRoles()``.
 In most cases, it is easier to use the API provided by
 ``AccessControl.rolemanager.RoleManager`` to manipulate roles in a particular
 context, rather than using ``Permission`` directly. This class, usually via the
-more specific ``OFS.roles.RoleManager``, is a mixin to most persistent objects
+more specific ``OFS.roles.RoleManager``, is a mixing to most persistent objects
 in Zope. It contains a number of relevant methods:
 
 .. In the following definition, s/inheritance/acquisition/ ?
@@ -526,7 +526,7 @@ Global and local roles
 ======================
 
 The list of known (valid) roles in any context is set in the attribute
-``__ac_roles__``. On the initialisation of the application root during startup,
+``__ac_roles__``. On the initialization of the application root during startup,
 in ``install_required_roles()`` in ``OFS.Application.AppInitializer``, this is
 made to include at least ``Owner`` and ``Authenticated``. The ``RoleManager``
 base class sets it as a class variable with the value
@@ -538,7 +538,7 @@ include roles from any parent objects referenced via a ``__parent__``
 attribute.
 
 User-defined roles can be set through the ZMI or the method ``_addRole()`` in
-the ``OFS.roles.RoleManager`` specialisation, which simply manipulates the
+the ``OFS.roles.RoleManager`` specialization, which simply manipulates the
 ``__ac_roles__`` tuple as an instance variable. There is also ``_delRoles()`` to
 delete roles. The method ``userdefined_roles()`` on the base
 ``AccessControl.rolemanager.RoleManager`` class will return a list of all roles
@@ -587,7 +587,7 @@ Emergency users
 ===============
 
 On startup, at import time of ``AccessControl.users``, the function
-``readUserAccessFile()`` is called to look for a file called ``accesss`` in the
+``readUserAccessFile()`` is called to look for a file called ``access`` in the
 Zope ``INSTANCE_HOME`` (an environment variable) directory. If found, it reads
 the first line and parses it to return a tuple ``(name, password, domains,
 remote_user_mode,)``.

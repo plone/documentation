@@ -56,4 +56,4 @@ Analytics and SEO
 
 
 
-And after all that work, you can use `quintagroup.analytics <https://pypi.python.org/pypi/quintagroup.analytics>`_ to see your webmaster stats increase. Now lean back with your favourite hot beverage, you've earned it!
+And after all that work, you can use `quintagroup.analytics <https://pypi.python.org/pypi/quintagroup.analytics>`_ to see your webmaster stats increase. Now lean back with your favorite hot beverage, you've earned it!

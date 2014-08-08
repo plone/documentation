@@ -82,8 +82,8 @@ The returned variables are:
 * ``err_hook``, set via the module level variable ``zpublisher_exception_hook``.
   This is used to handle error responses (more below).
 * ``validated_hook``, set via the module level variable
-  ``zpublisher_validated_hook``. This is used to initialise a security manager
-  once authentication and authorisation have taken place (more below).
+  ``zpublisher_validated_hook``. This is used to initialize a security manager
+  once authentication and authorization have taken place (more below).
 * ``transactions_manager``, set via the module level variable
   ``zpublisher_transactions_manager``, but defaulting to the
   ``DefaultTransactionsManager`` which uses the ``transaction`` API to manage
@@ -101,7 +101,7 @@ The publisher then performs the following steps:
 * Set ``debug_mode`` and ``realm`` on the response, as returned by
   ``get_module_info()``.
 * If ``bobo_before()`` is set, it is called with no arguments.
-* Set the inital value for ``request['PARENTS']`` to be the published
+* Set the initial value for ``request['PARENTS']`` to be the published
   object. This will be the ``ZApplicationWrapper`` set during the startup
   phase.
 * Begin a transaction using the ``transactions_manager``.
@@ -136,7 +136,7 @@ The publisher then performs the following steps:
   debugging.
 * Set the result of the ``mapply()`` call as the response body. As a marker,
   the response object itself can be returned from the callable that ``mapply()``
-  invokes to bypass this behaviour, i.e. if the published object set the
+  invokes to bypass this behavior, i.e. if the published object set the
   response body itself.
 * Notify the ``ZPublisher.pubevents.PubBeforeCommit`` event.
 * Commit the transaction using the ``transactions_manager``.
@@ -197,7 +197,7 @@ variable). This method is inordinately complicated, mostly because it caters for
 a lot of edge cases. The basic idea is pretty simple, though: each path element
 represents an item to traverse to, from the preceding object (its parent).
 Traversal can mean dictionary-like access (``__getitem__``), attribute-like access
-(``__getattr__``), or one of a number of different hooks for overiding or
+(``__getattr__``), or one of a number of different hooks for overriding or
 extending traversal. Once the final element on the path is found, the user's
 access to it is validated, before it is returned to be passed to ``mapply()``.
 
@@ -399,7 +399,7 @@ Here are the gory details:
     called ``old_validate()``, used if there is no user folder, but that should
     never happen in a modern Zope installation). This either returns a user
     object or ``None``, if the user is not found in this user folder, or there
-    is a user, but the user cannot be authorised by this user folder.
+    is a user, but the user cannot be authorized by this user folder.
   * If ``None`` is returned, the search continues up the list of traversal
     parents until a suitable user folder is found. If no such user folder is
     found, an ``Unauthorized`` exception is raised, unless there are no security
@@ -455,12 +455,12 @@ The implementation does the following:
 
   * If the name starts with an underscore, raise a ``zExceptions.NotFound``
     exception |---| traversal to names starting with an underscore is never allowed.
-  * If the name is ``..``, get the acqusition parent of the current traversal
+  * If the name is ``..``, get the acquisition parent of the current traversal
     object and continue traversal from here after validating access if
     applicable.
   * Otherwise, if the name starts with a ``+`` or ``@``, perform traversal
     namespace lookup as described for publication traversal above. If this
-    throws a ``LocationError``, fail with an ``AttributeError``. If it suceeds,
+    throws a ``LocationError``, fail with an ``AttributeError``. If it succeeds,
     acquisition-wrap the result if possible and validate access to it if
     applicable before continuing traversal from this object.
   * Otherwise, if the object has a ``__bobo_traverse__()`` hook, invoke it to
@@ -489,7 +489,7 @@ The implementation does the following:
   * Assuming we still don't have a value and there was no
     ``__bobo_traverse__()``, attempt to acquire an attribute, using either
     ``getattr()`` or ``guarded_getattr()`` depending on whether security checks
-    are being made and continue traversal from the result if this suceeds.
+    are being made and continue traversal from the result if this succeeds.
 * If we reach the end of the path, return the most recently traversed-to object.
 * If an exception of any kind (other than a ``ConflictError``) is thrown and a
   ``default`` was passed in, return this rather than letting the exception
