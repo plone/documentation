@@ -18,12 +18,12 @@ of modifying the existing portlet, we need to create a new
 invariant with little changed properties.
 `See this general briefing about Plone 3.x portlet mechanism. <http://martinaspeli.net/articles/an-introduction-to-plone-portlets>`_
 This example modifies the render behavior of static text portlet,
-by adding a grey backgroundd CSS class for it.
+by adding a grey background CSS class for it.
 
 
 #. Create a portlet interface stub and portlets Python module: To
    define a new portlet. Refer this in your product ZCML.
-#. Create a new assigment class: To make new portlet assignable
+#. Create a new assignment class: To make new portlet assignable
    through portlet manager
 #. Create a new add form class: To make new portlet creatable,
    returning your custom portlet instances

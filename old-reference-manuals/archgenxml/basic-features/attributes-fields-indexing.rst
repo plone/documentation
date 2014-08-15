@@ -22,7 +22,7 @@ As before, when reading tagged values, ArchGenXML will generally treat them as s
 
 field recycling - copy from parents schema or another source schema and modify
 ------------------------------------------------------------------------------
-This feature alows you to copy a field from another source schema and rename the field.
+This feature allows you to copy a field from another source schema and rename the field.
 
 Rather than subclass an entire class then delete unwanted fields, you can explicitly copy just the fields you need. You can keep the copied field "as-is" or modify it by overriding properties with tag values as needed.
 
