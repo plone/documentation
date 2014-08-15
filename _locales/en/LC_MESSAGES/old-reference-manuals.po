@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -36323,8 +36323,8 @@ msgid ""
 "`See this general briefing about Plone 3.x portlet mechanism. "
 "<http://martinaspeli.net/articles/an-introduction-to-plone-portlets>`_ This "
 "example modifies the render behavior of static text portlet, by adding a "
-"grey backgroundd CSS class for it."
-msgstr "Portlet subclassing is not trivial due to explict references between portlet engine parts. Here are short instructions minimal steps to needed to a subclass a portlet to another portlet. Instead of modifying the existing portlet, we need to create a new invariant with little changed properties. `See this general briefing about Plone 3.x portlet mechanism. <http://martinaspeli.net/articles/an-introduction-to-plone-portlets>`_ This example modifies the render behavior of static text portlet, by adding a grey backgroundd CSS class for it."
+"grey background CSS class for it."
+msgstr "Portlet subclassing is not trivial due to explict references between portlet engine parts. Here are short instructions minimal steps to needed to a subclass a portlet to another portlet. Instead of modifying the existing portlet, we need to create a new invariant with little changed properties. `See this general briefing about Plone 3.x portlet mechanism. <http://martinaspeli.net/articles/an-introduction-to-plone-portlets>`_ This example modifies the render behavior of static text portlet, by adding a grey background CSS class for it."
 
 # 10dda001385b47c0a70a61a84591292a
 #: ../old-reference-manuals/portlets/appendix/subclassing.rst:24

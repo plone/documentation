@@ -18,9 +18,9 @@ To enable Relations install the Product (`code-location <http://plone.org/produc
 
 Basics
 ------
-As an option on command line, up to a tagged-value on model-level or on a single UML-Association you just define the ``relation_implementation`` and set it to ``relations``. A directed Assoziation results in one Relation.
+As an option on command line, up to a tagged-value on model-level or on a single UML-Association you just define the ``relation_implementation`` and set it to ``relations``. A directed Association results in one Relation.
 
-**Give the association and its assoziation ends names.** They'll be used as the names for the RelationField. If you dont want a field turn it off by setting a tagged value ``generate_reference_fields`` on class (or package, model) level to ``0``.
+**Give the association and its assoziation ends names.** They'll be used as the names for the RelationField. If you don't want a field turn it off by setting a tagged value ``generate_reference_fields`` on class (or package, model) level to ``0``.
 
 Inverse Relation
 ----------------
@@ -31,7 +31,7 @@ The tagged-value ``inverse_relation_name`` will be used for the back-relation on
 Cardinality
 -----------
 You can use the Multiplicity on in UML to define the cardinality of an Relation.
-You can use the minimum and maximun value here using the syntax ``1..5`` which means at least one relationrelated objects but not more than five.
+You can use the minimum and maximum value here using the syntax ``1..5`` which means at least one relation related objects but not more than five.
 
 Constraints
 -----------
