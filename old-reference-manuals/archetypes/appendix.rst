@@ -35,7 +35,7 @@ confused at first.
 To cut to the chase, Zope figures out which object/function the URL
 is pointing to, and it takes the query string (?arg=val,arg2=val2,
 etc.) and uses it to figure out all the right arguments for the
-function call. So, you define your function in the ususal way,
+function call. So, you define your function in the usual way,
 i.e.,
 
 ::
@@ -62,10 +62,10 @@ i.e.,
 I was confused when I saw the description of *actions* in the Plone
 manual. Here's how I think of them: they're just the hyper-linked
 tabs along the top of the Content Type (content actions) or
-horizontal site navagation (site actions). The links are typically
+horizontal site navigation (site actions). The links are typically
 to a Content Type function (that returns a page), or to a page
 template (I only know how to make .pt and .cpt types so far). The
-actions for the Content Type are defined (overriden) using the
+actions for the Content Type are defined (overridden) using the
 Factory Type Information format, and the process well described in
 the Archetype tutorials. I'll just add that you can make most of
 the tabs (actions) visible=True or visible=False. You can append
@@ -256,7 +256,7 @@ some like this (for example, MyOrder.py):
         """
         """
 
-        # some class defitnitions
+        # some class definitions
 
         # a function that calculates total
         # but it doesn't even check (try-except) data it uses
@@ -277,14 +277,14 @@ some like this (for example, MyOrder.py):
 Aargh! I've just core dumped and almost killed 30!
 The above code can be divided in two parts: Schema and Class
 (Product). We have declared 3 different fields in the schema: the
-first is a bultin trivial Archetype field; the second is imported
-from the Product DataGridField (you need it installled on your
+first is a build in trivial Archetype field; the second is imported
+from the Product DataGridField (you need installed on your
 Plone instance to work); the third is our the field we want to
 change as someone changes values on the form.
 
 ::
 
-    expression="dir()" # useful to check avaible objects
+    expression="dir()" # useful to check available objects
 
 ,
 
@@ -296,7 +296,7 @@ change as someone changes values on the form.
 
 ::
 
-    expression="dir(context)" # avaible context child objects
+    expression="dir(context)" # available context child objects
 
 or
 
@@ -306,7 +306,7 @@ or
 
 We've just called something (a function, in fact) named
 *calculateTotal*.
-But smart as we are, we realized that expresssions called this way
+But smart as we are, we realized that expressions called this way
 must be somewhere in our context scope. I mean, inside our class
 definition.
 The function definition itself isn't that simple: it adds up the
@@ -328,16 +328,16 @@ for two dictionary items. Other field are rather simple to retrieve
 data: just use field's name attribute.
 The *widget=SomeWidget(modes='view',...)* realizes the feat of
 showing this field only on the view mode: not when adding the item
-and editting, nor when editting an existing item.
+and editing, nor when editing an existing item.
 
 What's next?
 ~~~~~~~~~~~~
 
 
 -  What could we do with PhotoField (ImageWidget)?
--  try-except is always recomended
+-  try-except is always recommended
 -  Could this better than *mutate* ?
--  Can we make a file avaible for download with some strange mime
+-  Can we make a file available for download with some strange mime
    type based on the information of this product?
 
 3. Making the view page of a content type use your schemata declarations
@@ -1410,7 +1410,7 @@ adapter and find that every method takes at a common parameter,
 it's a good candidate for a multi-adapter. Also observe that in the
 case above, we could register a different adapter for a different
 type of request as well as for a different type of object. Again,
-the Component Arhictecture will find the most specific one looking
+the Component Architecture will find the most specific one looking
 at both interfaces.
 
 Named adapters do not have to be multi-adapters, of course. They

@@ -37,8 +37,8 @@ explicitly.
 
 CASE II: "Old-style" content types, including CMF types and old AT types
 -- These do not implement this interface. The "display" menu is not
-used. The previous behaviour of Plone still holds.
-The "old-style" behaviour is implemented using the Zope hook
+used. The previous behavior of Plone still holds.
+The "old-style" behavior is implemented using the Zope hook
 \_\_browser\_default\_\_(), which exists to define what happens when you
 traverse to an object without an explicit page template or method. This
 is used to look up the default-page (e.g. index\_html) or discover what
@@ -49,10 +49,10 @@ this logic. The rules are (slightly simplified):
 1. A method, attribute or contained object 'index\_html' will always
 win. Files and Images use this to dump content (via a method
 index\_html()); creating a content object index\_html in a folder as a
-defualt page is the now-less-encouraged way, but should still be the
+default page is the now-less-encouraged way, but should still be the
 method that trumps all others.
 
-2. A propery 'default\_page' set on a folderish object giving the id of
+2. A property  'default\_page' set on a folderish object giving the id of
 a contained object to be the default-page is checked next.
 
 3. A property 'default\_page' in 'site\_properties' gives us a list of
@@ -85,7 +85,7 @@ object index\_html. The fallback on the 'folderlisting' action in
 PloneTool.browserDefault() mentioned above is there to ensure that when
 there \*isn't\* an index\_html or other default-page, we get
 'folder\_listing' (instead of an infinite loop), essentially making the
-'folderlisting' action on Folders the canonical place to specfy the view
+'folderlisting' action on Folders the canonical place to specify the view
 template. If you think that sounds messy, you're right. (With CMF 1.5
 types, things are little different - more on that later.)
 
@@ -98,7 +98,7 @@ almost always have 'view' and 'edit'. Other standard actions are
 something like 'string:${object\_url}/base\_edit' for the edit tab.
 'base\_edit' here is a page template.
 
-Method aliases -- These let you generalise actions. The alias 'edit' can
+Method aliases -- These let you generalize actions. The alias 'edit' can
 point to 'atct\_edit' for an ATContentTypes document, for example, and
 point to 'document\_edit\_form' for a CMF document. Aliases can be
 traversed to, so /path/to/object/edit will send you to 'atct\_edit' on
@@ -115,11 +115,11 @@ specified. That is, /path/to/object will look up the "(Default)" alias.
 This may specify a page template, for example, or a method (such as a
 file-dumping index\_html()) to call.
 Crucially, if "(Default)" is not set or is an empty string, CMF falls
-back on the old behaviour of calling the \_\_browser\_default\_\_()
+back on the old behavior of calling the \_\_browser\_default\_\_()
 method. In PloneFolder.py, this is defined to call
 PloneTool.browserDefault(), as mentioned above, which implements the
 Plone-specific rules for the lookup. Hence, if we need the old
-behaviour, we can just unset "(Default)"! This is what happens with
+behavior, we can just unset "(Default)"! This is what happens with
 old-style content types (that is, it is the default if you're not using
 ATContentTypes' base classes or setting up the aliases yourself).
 Now, CMFDynamicViewFTI, which is used by ATContentTypes, extends the
@@ -155,7 +155,7 @@ alias pointing to "index\_html", and the "view" alias pointing to
 layout inside Plone. (Note that using "(dynamic view)" for the "view"
 alias would \*not\* work, because the index\_html attribute would take
 precedence over the layout when testing for a default-page.)
-Additionaly, the 'view' action (tab) for each of these types must be
+Additionally, the 'view' action (tab) for each of these types must be
 'string:${object\_url}/view' to ensure it invokes the "view" alias, not
 the "(Default)" alias.
 For Folders, the use of "(dynamic view)" takes care of the default-page
@@ -183,11 +183,11 @@ equation. The first thing to note is that view() method is masked by the
 'view' method alias. Hence, /path/to/object/view will invoke the method
 alias 'view' if it exists, not call view(), making that method a lot
 less relevant.
-However, we still want \_\_call\_\_() to have a well-defined behaviour.
+However, we still want \_\_call\_\_() to have a well-defined behavior.
 In CMF 1.4, \_\_call\_\_()used to look up the 'view' action, and this is
 still the default fallback, but if the "(Default)" alias is set, this is
-used instead. This may give somewhat unexpected behaviour, however: From
-the comments in the source code and the behaviour in Zope, where
+used instead. This may give somewhat unexpected behavior, however: From
+the comments in the source code and the behavior in Zope, where
 \_\_call\_\_() is the last fallback if neither
 \_\_browser\_default\_\_() nor index\_html are found, and to ensure that
 the "view() --> \_\_call\_\_()" mechanism always returns the object
@@ -197,20 +197,20 @@ file content dumped via an index\_html() method. For \*Folders\* in
 Plone 2.0, this was actually not the case: \_\_call\_\_() would look up
 the 'view' action, which was "string:${object\_url}", which with the use
 of \_\_browser\_default\_\_() resulted in a lookup of a default-page if
-one was present. With the CMF 1.5 behaviour, the use of the "(Default)"
+one was present. With the CMF 1.5 behavior, the use of the "(Default)"
 alias in \_\_call\_\_() will mean that calling a File returns the dumped
 file content. Calling a Folder will return the default-page (or the
 Folder in its view if no default page is set) as in Plone 2.0.
-The behaviour in Plone 2.1 is that \_\_call\_\_(), as overridden in
+The behavior in Plone 2.1 is that \_\_call\_\_(), as overridden in
 BrowserDefaultMixin, should always return the object itself as it would
 be rendered in Plone without any index\_html or default-page magic.
 Hence, \_\_call\_\_() in CMFDynamicViewFTI looks up the "(selected
-layout)" target and resolves this. This behaviour is thus consistent
-with the old behaviour of Documents and Files, but whereas Folders with
+layout)" target and resolves this. This behavior is thus consistent
+with the old behavior of Documents and Files, but whereas Folders with
 a default-page in 2.0 used to return that default page from
 \_\_call\_\_(), in 2.1, it returns the Folder itself rendered in its
 selected layout. Again remember that this method will rarely if ever be
 called, since /path/to/object is intercepted by CMF's pre-traversal hook
 and ends up looking up the "(Default)" method alias (which \*does\*
-honour default-page for Folders), and /path/to/object/view uses the
+honor default-page for Folders), and /path/to/object/view uses the
 "view" method alias, as described above.
