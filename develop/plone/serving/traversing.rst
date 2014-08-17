@@ -362,25 +362,18 @@ Traversing back to the site root
 
 Sometimes ``getSite()`` or ``portal_url`` are not available, but you still
 have the acquisition chain intact. In these cases you can simply traverse
-parent objects back to the site root using ``aq_parent`` accessor::
+parent objects back to the site root by iterating over the aquisition-chain or using the ``aq_parent`` accessor::
 
     from Products.CMFCore.interfaces import ISiteRoot
 
-    @@grok.provider(IContextSourceBinder)
-    def languages(context):
+    def getSite(context):
 
-        # z3c.form KSS inline validation hack
         if not ISiteRoot.providedBy(context):
-            for item in getSite().aq_chain:
+            return context
+        else:
+            for item in context.aq_chain:
                 if ISiteRoot.providedBy(item):
-                    context = item
-
-        ltool = getToolByName(context, 'portal_languages')
-        lang_items = ltool.listAvailableLanguageInformation()
-        return SimpleVocabulary(
-            [SimpleTerm(value=item['code'], token=item['code'], title=item[u'native']) for item in lang_items]
-        )
-
+                    return item
 
 Checking for the site root
 ---------------------------
