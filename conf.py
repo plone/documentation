@@ -31,8 +31,7 @@ extensions = [
     #'sphinxcontrib.contributors',
     'sphinxcontrib_robotframework',
     'sphinx.ext.autosummary',
-    'sphinxcontrib.googleanalytics'
-]
+    ]
 
 # Enable Robot Framework tests during Sphinx compilation:
 sphinxcontrib_robotframework_enabled = True  # 'True' is the default
@@ -84,11 +83,6 @@ release = '4.3'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 exclude_patterns = ['README.rst', '_*.rst']
-
-#languages = [{'lang_code':'en','lang_name':'English'}, {'lang_code':'de','lang_name':'German'}, {'lang_code':'it','lang_name':'Italian'}, ]
-#language = 'en'
-
-#searchbox = True
 
 # Announce that we have a opensearch plugin
 html_use_opensearch = 'http://docs.plone.org'
