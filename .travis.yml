@@ -28,5 +28,5 @@ notifications:
 env:
   global:
   - ARTIFACTS_S3_BUCKET=plone-documentation
-  - secure: prXVT9fqR4dvCZBffLEJspXzakJVJZ7hFKfjFj1R1+xJEX0du5+uhk+ieW+6o3o3Gr+DB006V6IuDNu759giesv98Qs7Py/CIhW5Gowz+8MXZKRR8IA8J57jsozNnQraO2vY/Nzjoqfywc176Z9+Ajn4FuMFwgj+IUoIEZYvF4M=
-  - secure: G5IxV7rbrHPQKsUlQdiNle6f7XhZTWZVBiwgLJfRuK/yNP9IWPHkjJF1UrEHasdKHmon6bqKd9KWxuIctSHyS9puzifqaMCbbRpYTW8UjkJx9+UaK9iQF3jV1ulrd2bIz7F/tpz2ZbPYpiv3mKevb6m0HuSZfrnR1r4xdunFKH8=
+  - secure: B1NL93YgevEmUmvogdnq6Cz1GFvsFiYyCIv6yvudss2f9jzX1nzolbXiH8bFDwJnNQmkzFSm+fzWRDCSvoO8KnvLHTOjsrlcLQ6Er9A/vNQU1DgBvoqxBI7Y+h8OrTzhGK7YENAD/1PkSXmt/OAji/YKJNSULTawpGN1hGBfEio=
+  - secure: Bn6H7ckcLTZrR73FcoqWH2ukzlQKGyDyFFAPN9FbJ0/gPH3a/6XLMe59WH6pYcvzxotxfvaQEloTuXnJvjn/f7lTkRHU1Z+DbymdmXuhNCv0meMwg0EhSKiqfYpUqhs/1Jn/fqUnxcFu66Ts905DKs1fnBbWHG5+JmVkslFaRSo=
