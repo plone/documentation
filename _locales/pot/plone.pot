@@ -1,0 +1,65 @@
+# Translations template for PROJECT.
+# Copyright (C) 2014 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2014-03-31 21:41+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#. Default: "Jane Doe"
+#: source/documentation/_robot.rst:0
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "user_fullname"
+msgstr ""
+
+#. Default: "jane-doe"
+#: source/documentation/_robot.rst:0
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "user_id"
+msgstr ""
+
+#. Default: "website-refresh"
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "sample_news_id"
+msgstr ""
+
+#. Default: "news"
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "folder_news_id"
+msgstr ""
+
+#. Default: "Update news item ingress"
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "checkin_message"
+msgstr ""
+
+#. Default: "<p>Our new site is built with Plone.</p>"
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "sample_news_text"
+msgstr ""
+
+#. Default: "The long wait is now over"
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "sample_news_description"
+msgstr ""
+
+#. Default: "Welcome to our new site!"
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "sample_news_title"
+msgstr ""
+
+#. Default: "News"
+#: source/documentation/working-with-content/managing-content/working-copy.rst:0
+msgid "folder_news_title"
+msgstr ""
+

@@ -1,4 +1,5 @@
 external
 !external/index.rst
+/_robot/*.png
 broken*
 *.mo

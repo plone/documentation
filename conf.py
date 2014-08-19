@@ -33,6 +33,15 @@ extensions = [
     'sphinx.ext.autosummary',
     ]
 
+# Enable Robot Framework tests during Sphinx compilation:
+sphinxcontrib_robotframework_enabled = True  # 'True' is the default
+sphinxcontrib_robotframework_quiet = True  # 'False' is the default
+
+# Configure Robot Frameowrk tests to use Firefox
+sphinxcontrib_robotframework_variables = {
+    "BROWSER": "Firefox"  # 'Firefox' is the default
+}
+
 # See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
 todo_include_todos = True
 
@@ -73,7 +82,7 @@ release = '4.3'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['README.rst']
+exclude_patterns = ['README.rst', '_*.rst']
 
 # Announce that we have a opensearch plugin
 html_use_opensearch = 'http://docs.plone.org'
