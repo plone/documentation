@@ -487,6 +487,7 @@ Example: this ZCML configuration:
 
 and this Python code::
 
+    from Products.Five.browser import BrowserView
     from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
     class MyView(BrowserView):
