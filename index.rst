@@ -27,6 +27,11 @@ The target audience of the documentation includes
 .. toctree::
    :maxdepth: 2
 
+   installation/index
+
+.. toctree::
+   :maxdepth: 2
+
    working-with-content/index
 
 .. toctree::
