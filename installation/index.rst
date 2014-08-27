@@ -5,12 +5,7 @@ Installing Plone
 For mortals
 -----------
 
-<<<<<<< HEAD
 If you want to quickly evaluate and test Plone, the Unified-Installers provided of the Plone foundation, are a perfect match. It will install a lot of the required dependencies for you, the :doc:`Installation </manage/installing/installation>`-chapter in the Administration-section shows you how to do it.
-
-=======
-If you want to quickly evaluate and test Plone, the Plone foundation provides the Unified-Installers, which will install a lot of the required dependencies for you, the :doc:`Installation </manage/installing/installation>`-chapter in the Administration-section shows you how to do it.
->>>>>>> aecb54015e481ccc831c0f7e116ea47efcdd0c07
 
 For real
 --------
