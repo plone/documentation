@@ -28,7 +28,8 @@ To use Varnish with Plone
 .. note ::
 
     Some of these examples were written for Varnish 2.x.
-    Varnish 3.x (Feb 2013) has radically altered syntax of VCL language and command line tools, so you might need to adapt the examples a bit.
+    Varnish 3.x (Jun 2011) and Varnish 4.x (Apr 2014) has radically altered syntax of VCL language
+    and command line tools, so you might need to adapt the examples a bit.
 
 Installation
 ==========================
@@ -181,6 +182,180 @@ Use the admin console to print stats for you::
 
 Virtual hosting proxy rule
 ==========================
+
+Varnish 4.x example
+--------------------
+
+Varnish 4.x has been released, almost three years after the release of Varnish 3.0 in June 2011, 
+the backend fetch parts of VCL again have changed in Varnish 4.
+
+An example with two separate Plone installations (Zope standalone mode)
+behind Varnish 4.x HTTP 80 port.
+
+Example::
+
+    # To make sure that people have upgraded their VCL to the current version, 
+    # Varnish now requires the first line of VCL to indicate the VCL version number
+    vcl 4.0;
+
+    #
+    # This backend never responds... we get hit in the case of bad virtualhost name
+    #
+    backend default {
+        .host = "127.0.0.1";
+        .port = "55555";
+    }
+
+    #
+    # Plone Zope clients
+    #
+    backend site1 {
+        .host = "127.0.0.1";
+        .port = "9944";
+    }
+
+    backend site2 {
+        .host = "127.0.0.1";
+        .port = "9966";
+    }
+
+    #
+    # Guess which site / virtualhost we are diving into.
+    # Apache, Nginx or Plone directly
+    #
+    sub choose_backend {
+
+        if (req.http.host ~ "^(.*\.)?site2\.fi(:[0-9]+)?$") {
+            set req.backend_hint = site2;
+
+            # Zope VirtualHostMonster
+            set req.url = "/VirtualHostBase/http/" + req.http.host + ":80/Plone/VirtualHostRoot" + req.url;
+
+        }
+
+        if (req.http.host ~ "^(.*\.)?site1\.fi(:[0-9]+)?$") {
+            set req.backend_hint = site1;
+
+            # Zope VirtualHostMonster
+            set req.url = "/VirtualHostBase/http/" + req.http.host + ":80/Plone/VirtualHostRoot" + req.url;
+        }
+
+    }
+
+    # For now, we'll only allow purges coming from localhost
+    acl purge {
+        "127.0.0.1";
+        "localhost";
+    }
+
+    sub vcl_recv {
+
+        #
+        # Do Plone cookie sanitization, so cookies do not destroy cacheable anonymous pages
+        #
+        if (req.http.Cookie) {
+            set req.http.Cookie = ";" + req.http.Cookie;
+            set req.http.Cookie = regsuball(req.http.Cookie, "; +", ";");
+            set req.http.Cookie = regsuball(req.http.Cookie, ";(statusmessages|__ac|_ZopeId|__cp)=", "; \1=");
+            set req.http.Cookie = regsuball(req.http.Cookie, ";[^ ][^;]*", "");
+            set req.http.Cookie = regsuball(req.http.Cookie, "^[; ]+|[; ]+$", "");
+
+            if (req.http.Cookie == "") {
+                unset req.http.Cookie;
+            }
+        }
+
+        call choose_backend;
+
+        if (req.method != "GET" &&
+          req.method != "HEAD" &&
+          req.method != "PUT" &&
+          req.method != "POST" &&
+          req.method != "TRACE" &&
+          req.method != "OPTIONS" &&
+          req.method != "DELETE") {
+            /* Non-RFC2616 or CONNECT which is weird. */
+            return (pipe);
+        }
+        if (req.method != "GET" && req.method != "HEAD") {
+            /* We only deal with GET and HEAD by default */
+            return (pass);
+        }
+        if (req.http.Authorization || req.http.Cookie) {
+            /* Not cacheable by default */
+            return (pass);
+        }
+        return (hash);
+    }
+
+    sub vcl_hash {
+        hash_data(req.url);
+        if (req.http.host) {
+            hash_data(req.http.host);
+        } else {
+            hash_data(server.ip);
+        }
+        return (lookup);
+    }
+
+    sub vcl_purge {
+        return (synth(200, "Purged"));
+    }
+
+    # error() is now synth()
+    sub vcl_synth {
+        if (resp.status == 720) {
+            # We use this special error status 720 to force redirects with 301 (permanent) redirects
+            # To use this, call the following from anywhere in vcl_recv: error 720 "http://host/new.html"
+            set resp.status = 301;
+            set resp.http.Location = resp.reason;
+            return (deliver);
+        } elseif (resp.status == 721) {
+            # And we use error status 721 to force redirects with a 302 (temporary) redirect
+            # To use this, call the following from anywhere in vcl_recv: error 720 "http://host/new.html"
+            set resp.status = 302;
+            set resp.http.Location = resp.reason;
+            return (deliver);
+        }
+    
+        return (deliver);
+    }
+
+    #
+    # Show custom helpful 500 page when the upstream does not respond
+    # vcl_error is now vcl_backend_error
+
+    sub vcl_backend_error {
+        // Let's deliver a friendlier error page.
+        // You can customize this as you wish.
+        set resp.http.Content-Type = "text/html; charset=utf-8";
+        set resp.http.Retry-After = "5";
+        synthetic( {"
+            <?xml version="1.0" encoding="utf-8"?>
+            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+            <html>
+             <head>
+              <title>"} + resp.status + " " + resp.reason + {"</title>
+              <style type="text/css">
+               #page {width: 400px; padding: 10px; margin: 20px auto; border: 1px solid black; background-color: #FFF;}
+               p {margin-left:20px;}
+               body {background-color: #DDD; margin: auto;}
+              </style>
+             </head>
+             <body>
+              <div id="page">
+               <h1>This page is not available</h1>
+                <p>Sorry, not available.</p>
+                <hr />
+                <h4>Debug Info:</h4>
+                <pre>Status: "} + resp.status + {" Response: "} + resp.reason + {" XID: "} + req.xid + {"</pre>
+              </div>
+             </body>
+            </html>
+        "} );
+        return (deliver);
+    }
 
 Varnish 3.x example
 -------------------
@@ -429,6 +604,45 @@ besides ones dealing with the logged in users (content authors)::
         return (deliver);
     }
 
+In the Varnish 4.x vcl_fetch is now vcl_backend_response, then the above example looks like this::
+
+    sub vcl_recv {
+
+      if (req.http.Cookie) {
+          # (logged in user, status message - NO session storage or language cookie)
+          set req.http.Cookie = ";" req.http.Cookie;
+          set req.http.Cookie = regsuball(req.http.Cookie, "; +", ";");
+          set req.http.Cookie = regsuball(req.http.Cookie, ";(statusmessages|__ac|_ZopeId|__cp)=", "; \1=");
+          set req.http.Cookie = regsuball(req.http.Cookie, ";[^ ][^;]*", "");
+          set req.http.Cookie = regsuball(req.http.Cookie, "^[; ]+|[; ]+$", "");
+
+          if (req.http.Cookie == "") {
+              unset req.http.Cookie;
+          }
+      }
+      ...
+
+    sub vcl_backend_response {
+
+        # Here we could unset cookies explicitly,
+        # but we assume plone.app.caching extension does it jobs
+        # and no extra cookies fall through for HTTP responses we'd like to cache
+        # (like images)
+
+        if (!beresp.ttl > 0s) {
+          set beresp.uncacheable = true;
+          return (deliver);
+        }
+ 
+        if (beresp.http.Set-Cookie) {
+          set beresp.uncacheable = true;
+          return (deliver);
+        }
+
+        set beresp.grace = 120s;
+        return (deliver);
+    }
+
 The snippet for stripping out non-Plone cookies comes from
 http://www.phase2technology.com/node/1218/
 
@@ -458,22 +672,42 @@ Debugging cookie issues
 Use the following snippet to set a HTTP response debug header to see what
 the backend server sees as cookie after ``vcl_recv`` clean-up regexes::
 
-	sub vcl_fetch {
+    sub vcl_fetch {
 
-	    /* Use to see what cookies go through our filtering code to the server */
-	    set beresp.http.X-Varnish-Cookie-Debug = "Cleaned request cookie: " + req.http.Cookie;
+        /* Use to see what cookies go through our filtering code to the server */
+        set beresp.http.X-Varnish-Cookie-Debug = "Cleaned request cookie: " + req.http.Cookie;
 
-	    if (beresp.ttl <= 0s ||
-	        beresp.http.Set-Cookie ||
-	        beresp.http.Vary == "*") {
-	        /*
-	         * Mark as "Hit-For-Pass" for the next 2 minutes
-	         */
-	        set beresp.ttl = 120 s;
-	        return (hit_for_pass);
-	    }
-	    return (deliver);
-	}
+        if (beresp.ttl <= 0s ||
+            beresp.http.Set-Cookie ||
+            beresp.http.Vary == "*") {
+            /*
+             * Mark as "Hit-For-Pass" for the next 2 minutes
+             */
+            set beresp.ttl = 120 s;
+            return (hit_for_pass);
+        }
+        return (deliver);
+    }
+
+Varnish 4.x::
+
+    sub vcl_backend_response {
+
+        /* Use to see what cookies go through our filtering code to the server */
+        set beresp.http.X-Varnish-Cookie-Debug = "Cleaned request cookie: " + req.http.Cookie;
+
+        if (beresp.ttl <= 0s ||
+            beresp.http.Set-Cookie ||
+            beresp.http.Vary == "*") {
+            /*
+             * Mark as "Hit-For-Pass" for the next 2 minutes
+             */
+            # hit_for_pass objects are created using beresp.uncacheable
+            set beresp.uncacheable = true;
+            set beresp.ttl = 120s;
+            return (deliver);
+        }
+    }
 
 And then test with ``wget``::
 
@@ -568,6 +802,26 @@ the cache in a special header::
         }
     }
 
+In the Varnish 4.x::
+
+    acl purge {
+        "localhost";
+        # XXX: Add your local computer public IP here if you
+        # want to test the code against the production server
+        # from the development instance
+    }
+    ...
+
+    sub vcl_recv {
+        ...
+        # Allow PURGE requests clearing everything
+        if (req.method == "PURGE") {
+            if (!client.ip ~ purge) {
+                return(synth(405, "Not allowed."));
+            }
+            return (purge);
+        }
+    }
 
 Then let's create a Plone view which will make a request from Plone to
 Varnish (``upstream localhost:80``)
@@ -681,5 +935,45 @@ Example::
 
     if (req.http.host ~ "(www\.|www2\.)?app\.fi(:[0-9]+)?$") {
         set req.url = "/VirtualHostBase/http/www.app.fi:80/app/app/VirtualHostRoot" req.url;
+
+        # Varnish 3.x
+        #set req.url = "/VirtualHostBase/http/" + req.http.host + ":80/app/app/VirtualHostRoot" + req.url;
+
         set req.backend = app_director;
+    }
+
+Example with Varnish 4::
+
+    # Round-robin between two ZEO front end clients
+
+    backend app1 {
+        .host = "localhost";
+        .port = "8080";
+    }
+
+    backend app2 {
+        .host = "localhost";
+        .port = "8081";
+    }
+
+    # Directors have been moved to the vmod_directors
+    # To make directors (backend selection logic) easier to extend, the directors are now defined in loadable VMODs.
+    # Setting a backend for future fetches in vcl_recv is now done as bellow, is an example redirector based on round-robin requests.
+
+    import directors;
+
+    sub vcl_init {
+        new cluster1 = directors.round_robin();
+        cluster1.add_backend(site1);    # Backend site1 defined above
+        cluster1.add_backend(site2);    # Backend site2 defined above
+    }
+
+
+    sub vcl_recv {
+        if (req.http.host ~ "(www\.|www2\.)?app\.fi(:[0-9]+)?$") {
+            set req.backend_hint = cluster1.backend();
+            set req.url = "/VirtualHostBase/http/" + req.http.host + ":80/app/app/VirtualHostRoot" + req.url;
+        }
+
+        ...
     }
