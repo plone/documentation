@@ -90,7 +90,11 @@ Importing content from other systems
 Tutorials
 ----------
 
+`“Mastering Plone”-training <http://plone-training.readthedocs.org>`_
+
 .. toctree::
    :maxdepth: 1
 
    /external/tutorial.todoapp/docs/index
+
+
