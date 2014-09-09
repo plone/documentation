@@ -1,11 +1,11 @@
-===================
- Varnish 4.x
-===================
+============
+Varnish 4.x
+============
 
 .. admonition:: Description
 
     Varnish is a caching front-end server. This document has notes on how to
-    use Varnish with Plone. If you're using Varnish 2.x or 3.x, then will want to look into :doc:`Varnish </manage/deploying/varnish>`
+    use Varnish with Plone. If you're using Varnish 2.x or 3.x, then you want to look into :doc:`Varnish </manage/deploying/varnish>`
 
 
 .. contents:: :local:
@@ -32,7 +32,7 @@ To use Varnish with Plone
     changes in the Varnish 4.x (Apr 2014) syntax of VCL language and command line tools.
 
 Installation
-==========================
+============
 
 The suggest method to install Varnish is to use your OS package manager.
 
@@ -64,7 +64,7 @@ You can access Varnish admin console on your server by::
 (Ubuntu/Debian installation)
 
 Telnet console
------------------
+--------------
 
 The telnet management console is available on some configurations
 where ``varnishadm`` cannot be used. The functionality is the same.
@@ -158,7 +158,7 @@ See
 * http://opensourcehacker.com/2013/02/07/varnish-shell-singleliners-reload-config-purge-cache-and-test-hits/
 
 Logs
-======
+====
 
 To see a real-time log dump (in a system-wide Varnish configuration)::
 
@@ -203,7 +203,7 @@ Virtual hosting proxy rule
 Varnish 4.x example
 --------------------
 
-Varnish 4.x has been released, almost three years after the release of Varnish 3.0 in June 2011, 
+Varnish 4.x has been released, almost three years after the release of Varnish 3.0 in June 2011,
 the backend fetch parts of VCL again have changed in Varnish 4.
 
 An example with two separate Plone installations (Zope standalone mode)
@@ -211,7 +211,7 @@ behind Varnish 4.x HTTP 80 port.
 
 Example::
 
-    # To make sure that people have upgraded their VCL to the current version, 
+    # To make sure that people have upgraded their VCL to the current version,
     # Varnish now requires the first line of VCL to indicate the VCL version number
     vcl 4.0;
 
@@ -330,7 +330,7 @@ Example::
             set resp.http.Location = resp.reason;
             return (deliver);
         }
-    
+
         return (deliver);
     }
 
@@ -362,7 +362,7 @@ Example::
 For VCL examples Varnish 2.x or 3.x, then will want to look into :doc:`Varnish </manage/deploying/varnish>`
 
 Varnishd port and IP address to listen
-========================================
+======================================
 
 You give IP address(s) and ports to Varnish to listen to
 on the ``varnishd`` command line using -a switch.
@@ -374,15 +374,15 @@ Edit ``/etc/default/varnish``::
                  -s file,/var/lib/varnish/$INSTANCE/varnish_storage.bin,1G"
 
 
-Cached and editor subdomains
-==============================
+Cached and editor sub domains
+=============================
 
 You can provide an uncached version of the site for editors:
 
 * http://serverfault.com/questions/297541/varnish-cached-and-non-cached-subdomains/297547#297547
 
 Varnish and I18N
-=================
+================
 
 Please see :doc:`cache issues related to LinguaPlone </develop/plone/i18n/cache>`.
 
@@ -403,7 +403,7 @@ HTTP caching needs to deal with both HTTP request and response cookie handling
 * HTTP response ``Set-Cookie`` header.
   This sets a server-side cookie. If your server is setting
   cookies Varnish does not cache these responses by default.
-  Howerver, this might be desirable
+  However, this might be desirable
   behavior if e.g. multi-lingual content is served from one URL with
   language cookies.
   ``Set-Cookie`` can be post-processed in varnish's ``vcl_fetch`` step.
@@ -443,7 +443,7 @@ besides ones dealing with the logged in users (content authors)::
                         set beresp.ttl = 120s;
                         set beresp.uncacheable = true;
         }
- 
+
         set beresp.grace = 120s;
         return (deliver);
     }
@@ -464,7 +464,7 @@ An example how to purge Google cookies only and allow other cookies by default::
          ....
 
 Debugging cookie issues
-------------------------------------
+-----------------------
 
 Use the following snippet to set a HTTP response debug header to see what
 the backend server sees as cookie after ``vcl_recv`` clean-up regexes::
@@ -533,7 +533,7 @@ More info
 * https://www.varnish-cache.org/docs/4.0/users-guide/increasing-your-hitrate.html#cookies
 
 Do not cache error pages
-==========================
+========================
 
 You can make sure that Varnish does not accidentally cache error pages.
 E.g. it would cache front page when the site is down::
@@ -609,12 +609,12 @@ Example view code::
 
         grok.context(ISiteRoot)
 
-        # Onlyl site admins can use this
+        # Only site admins can use this
         grok.require("cmf.ManagePortal")
 
         def render(self):
             """
-            Call the parent cache using Requets Python library and issue PURGE command for all URLs.
+            Call the parent cache using Requests Python library and issue PURGE command for all URLs.
 
             Pipe through the response as is.
             """
@@ -654,7 +654,7 @@ More info
 * https://www.varnish-cache.org/docs/4.0/users-guide/purging.html
 
 Round-robin balancing
-========================
+=====================
 
 Varnish can do round-robin load balancing internally.
 Use this if you want to distribute CPU-intensive load between several

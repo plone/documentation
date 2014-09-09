@@ -1,11 +1,11 @@
-===================
- Varnish
-===================
+=======
+Varnish
+=======
 
 .. admonition:: Description
 
     Varnish is a caching front-end server. This document has notes on how to
-    use Varnish with Plone. If you're using Varnish 4.x, then will want to look into :doc:`Varnish4 </manage/deploying/varnish4>`
+    use Varnish with Plone. If you're using Varnish 4.x, then you want to look into :doc:`Varnish4 </manage/deploying/varnish4>`
 
 .. contents:: :local:
 
@@ -31,7 +31,7 @@ To use Varnish with Plone
     Varnish 3.x (Jun 2011) has radically altered syntax of VCL language and command line tools, so you might need to adapt the examples a bit.
 
 Installation
-==========================
+============
 
 The suggest method to install Varnish is to use your OS package manager.
 
@@ -51,7 +51,7 @@ Management console
 ==================
 
 ``varnishadm``
---------------------------------------------
+--------------
 
 You can access Varnish admin console on your server by::
 
@@ -61,7 +61,7 @@ You can access Varnish admin console on your server by::
 (Ubuntu/Debian installation)
 
 Telnet console
------------------
+---------------
 
 The telnet management console is available on some configurations
 where ``varnishadm`` cannot be used. The functionality is the same.
@@ -151,7 +151,7 @@ See
 * http://opensourcehacker.com/2013/02/07/varnish-shell-singleliners-reload-config-purge-cache-and-test-hits/
 
 Logs
-======
+====
 
 To see a real-time log dump (in a system-wide Varnish configuration)::
 
@@ -323,7 +323,7 @@ Zope's VirtualHostMonster is used to map site name to Plone site instance
 id) use ``req.url`` mutating.
 
 The following maps the Plone site id *plonecommunity* to the
-*plonecommunity.mobi* domain.  Plone is a single Zope instance, running on
+*plonecommunity.mobi* domain. Plone is a single Zope instance, running on
 port 9999.
 
 Example::
@@ -346,7 +346,7 @@ Example::
 
 
 Varnishd port and IP address to listen
-========================================
+=======================================
 
 You give IP address(s) and ports to Varnish to listen to
 on the ``varnishd`` command line using -a switch.
@@ -359,7 +359,7 @@ Edit ``/etc/default/varnish``::
 
 
 Cached and editor subdomains
-==============================
+============================
 
 You can provide an uncached version of the site for editors:
 
@@ -453,7 +453,7 @@ Another example how to purge Google cookies only and allow other cookies by defa
          ....
 
 Debugging cookie issues
-------------------------------------
+-----------------------
 
 Use the following snippet to set a HTTP response debug header to see what
 the backend server sees as cookie after ``vcl_recv`` clean-up regexes::
@@ -520,7 +520,7 @@ More info
 * https://www.varnish-cache.org/docs/3.0/tutorial/cookies.html
 
 Do not cache error pages
-==========================
+========================
 
 You can make sure that Varnish does not accidentally cache error pages.
 E.g. it would cache front page when the site is down::
@@ -647,7 +647,7 @@ More info
 
 
 Round-robin balancing
-========================
+=====================
 
 Varnish can do round-robin load balancing internally.
 Use this if you want to distribute CPU-intensive load between several
