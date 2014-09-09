@@ -1,11 +1,12 @@
 ===================
- Varnish
+ Varnish 4.x
 ===================
 
 .. admonition:: Description
 
     Varnish is a caching front-end server. This document has notes on how to
-    use Varnish with Plone. If you're using Varnish 4.x, then will want to look into :doc:`Varnish4 </manage/deploying/varnish4>`
+    use Varnish with Plone. If you're using Varnish 2.x or 3.x, then will want to look into :doc:`Varnish </manage/deploying/varnish>`
+
 
 .. contents:: :local:
 
@@ -27,8 +28,8 @@ To use Varnish with Plone
 
 .. note ::
 
-    Some of these examples were written for Varnish 2.x.
-    Varnish 3.x (Jun 2011) has radically altered syntax of VCL language and command line tools, so you might need to adapt the examples a bit.
+    After a radically change of VCL language in Varnish 3.x (Jun 2011), again we had radical
+    changes in the Varnish 4.x (Apr 2014) syntax of VCL language and command line tools.
 
 Installation
 ==========================
@@ -38,6 +39,8 @@ The suggest method to install Varnish is to use your OS package manager.
 * You can install using packages (RPM/DEB) - consult your operating system instructions.
 
 * For more up to date packages for Debian you could check: https://www.varnish-cache.org/installation/debian
+
+* For more up to date packages for RedHat (RPM Based) you could check: https://www.varnish-cache.org/installation/redhat
 
 * You can install backports
 
@@ -77,6 +80,7 @@ Example::
     Port number depends on your Varnish settings.
 
 More info
+---------
 
 * http://opensourcehacker.com/2013/02/07/varnish-shell-singleliners-reload-config-purge-cache-and-test-hits/
 
@@ -92,8 +96,11 @@ Purging the cache
 
 This will remove all entries from the Varnish cache::
 
-   varnishadm "ban.url ."
+   varnishadm "ban req.url ~ ."
 
+Or remove all entries of JPG from the Varnish cache::
+
+   varnishadm "ban req.url ~ .jpg"
 
 Loading new VCL to live Varnish
 ===============================
@@ -170,25 +177,43 @@ Check live "top-like" Varnish statistics::
 
 Use the admin console to print stats for you::
 
-    stats
-    200 2114
+          Uptime mgt:   8+00:21:20
+          Uptime child: 5+17:29:28
 
-           95717  Client connections accepted
-          132889  Client requests received
-           38638  Cache hits
-           21261  Cache hits for pass
+            NAME                                                                CURRENT       CHANGE      AVERAGE       AVG_10      AVG_100     AVG_1000
+          MAIN.uptime                                                            494968         1.00         1.00         1.00         1.00         1.00
+          MAIN.sess_conn                                                           1545         0.00          .           0.00         0.00         0.00
+          MAIN.client_req                                                          1569         0.00          .           0.00         0.00         0.00
+          MAIN.cache_hit                                                            461         0.00          .           0.00         0.00         0.00
+          MAIN.cache_hitpass                                                         16         0.00          .           0.00         0.00         0.00
+          MAIN.cache_miss                                                           477         0.00          .           0.00         0.00         0.00
+          MAIN.backend_conn                                                        1060         0.00          .           0.00         0.00         0.00
+          MAIN.fetch_head                                                            18         0.00          .           0.00         0.00         0.00
+          MAIN.fetch_length                                                         996         0.00          .           0.00         0.00         0.00
+          MAIN.fetch_204                                                              1         0.00          .           0.00         0.00         0.00
+          MAIN.fetch_304                                                             46         0.00          .           0.00         0.00         0.00
+          MAIN.pools                                                                  9         0.00          .           9.00         9.00         9.00
+          MAIN.threads                                                              900         0.00          .         900.00       900.00       900.00
+          MAIN.threads_created                                                      900         0.00          .           0.00         0.00         0.00
           ...
 
 Virtual hosting proxy rule
 ==========================
 
-Varnish 3.x example
--------------------
+Varnish 4.x example
+--------------------
+
+Varnish 4.x has been released, almost three years after the release of Varnish 3.0 in June 2011, 
+the backend fetch parts of VCL again have changed in Varnish 4.
 
 An example with two separate Plone installations (Zope standalone mode)
-behind Varnish 3.x HTTP 80 port.
+behind Varnish 4.x HTTP 80 port.
 
 Example::
+
+    # To make sure that people have upgraded their VCL to the current version, 
+    # Varnish now requires the first line of VCL to indicate the VCL version number
+    vcl 4.0;
 
     #
     # This backend never responds... we get hit in the case of bad virtualhost name
@@ -199,7 +224,7 @@ Example::
     }
 
     #
-    # Plone Zope front end clients running on koskela
+    # Plone Zope clients
     #
     backend site1 {
         .host = "127.0.0.1";
@@ -218,7 +243,7 @@ Example::
     sub choose_backend {
 
         if (req.http.host ~ "^(.*\.)?site2\.fi(:[0-9]+)?$") {
-            set req.backend = site2;
+            set req.backend_hint = site2;
 
             # Zope VirtualHostMonster
             set req.url = "/VirtualHostBase/http/" + req.http.host + ":80/Plone/VirtualHostRoot" + req.url;
@@ -226,7 +251,7 @@ Example::
         }
 
         if (req.http.host ~ "^(.*\.)?site1\.fi(:[0-9]+)?$") {
-            set req.backend = site1;
+            set req.backend_hint = site1;
 
             # Zope VirtualHostMonster
             set req.url = "/VirtualHostBase/http/" + req.http.host + ":80/Plone/VirtualHostRoot" + req.url;
@@ -234,6 +259,11 @@ Example::
 
     }
 
+    # For now, we'll only allow purges coming from localhost
+    acl purge {
+        "127.0.0.1";
+        "localhost";
+    }
 
     sub vcl_recv {
 
@@ -248,23 +278,23 @@ Example::
             set req.http.Cookie = regsuball(req.http.Cookie, "^[; ]+|[; ]+$", "");
 
             if (req.http.Cookie == "") {
-                remove req.http.Cookie;
+                unset req.http.Cookie;
             }
         }
 
         call choose_backend;
 
-        if (req.request != "GET" &&
-          req.request != "HEAD" &&
-          req.request != "PUT" &&
-          req.request != "POST" &&
-          req.request != "TRACE" &&
-          req.request != "OPTIONS" &&
-          req.request != "DELETE") {
+        if (req.method != "GET" &&
+          req.method != "HEAD" &&
+          req.method != "PUT" &&
+          req.method != "POST" &&
+          req.method != "TRACE" &&
+          req.method != "OPTIONS" &&
+          req.method != "DELETE") {
             /* Non-RFC2616 or CONNECT which is weird. */
             return (pipe);
         }
-        if (req.request != "GET" && req.request != "HEAD") {
+        if (req.method != "GET" && req.method != "HEAD") {
             /* We only deal with GET and HEAD by default */
             return (pass);
         }
@@ -272,78 +302,64 @@ Example::
             /* Not cacheable by default */
             return (pass);
         }
+        return (hash);
+    }
+
+    sub vcl_hash {
+        hash_data(req.url);
+        if (req.http.host) {
+            hash_data(req.http.host);
+        } else {
+            hash_data(server.ip);
+        }
         return (lookup);
     }
 
-
-    #
-    # Show custom helpful 500 page when the upstream does not respond
-    #
-    sub vcl_error {
-      // Let's deliver a friendlier error page.
-      // You can customize this as you wish.
-      set obj.http.Content-Type = "text/html; charset=utf-8";
-      synthetic {"
-      <?xml version="1.0" encoding="utf-8"?>
-      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-      <html>
-        <head>
-          <title>"} + obj.status + " " + obj.response + {"</title>
-          <style type="text/css">
-          #page {width: 400px; padding: 10px; margin: 20px auto; border: 1px solid black; background-color: #FFF;}
-          p {margin-left:20px;}
-          body {background-color: #DDD; margin: auto;}
-          </style>
-        </head>
-        <body>
-        <div id="page">
-        <h1>This page is not available</h1>
-        <p>Sorry, not available.</p>
-        <hr />
-        <h4>Debug Info:</h4>
-        <pre>Status: "} + obj.status + {"
-    Response: "} + obj.response + {"
-    XID: "} + req.xid + {"</pre>
-          </div>
-        </body>
-       </html>
-      "};
-      return(deliver);
+    # error() is now synth()
+    sub vcl_synth {
+        if (resp.status == 720) {
+            # We use this special error status 720 to force redirects with 301 (permanent) redirects
+            # To use this, call the following from anywhere in vcl_recv: error 720 "http://host/new.html"
+            set resp.status = 301;
+            set resp.http.Location = resp.reason;
+            return (deliver);
+        } elseif (resp.status == 721) {
+            # And we use error status 721 to force redirects with a 302 (temporary) redirect
+            # To use this, call the following from anywhere in vcl_recv: error 720 "http://host/new.html"
+            set resp.status = 302;
+            set resp.http.Location = resp.reason;
+            return (deliver);
+        }
+    
+        return (deliver);
     }
 
-Varnish 2.x example
--------------------
+    sub vcl_synth {
+        set resp.http.Content-Type = "text/html; charset=utf-8";
+        set resp.http.Retry-After = "5";
 
-When Varnish has been set-up you need to include Plone virtual hosting
-rule in its configuration file.
+        synthetic( {"
+                <?xml version="1.0" encoding="utf-8"?>
+                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+                <html>
+                  <head>
+                    <title>"} + resp.status + " " + resp.reason + {"</title>
+                  </head>
+                  <body>
+                    <h1>Error "} + resp.status + " " + resp.reason + {"</h1>
+                    <p>"} + resp.reason + {"</p>
+                    <h3>Guru Meditation:</h3>
+                    <p>XID: "} + req.xid + {"</p>
+                    <hr>
+                    <p>Varnish cache server</p>
+                  </body>
+                </html>
+        "} );
 
-If you want to map Varnish backend directly to Plone-as-a-virtualhost (i.e.
-Zope's VirtualHostMonster is used to map site name to Plone site instance
-id) use ``req.url`` mutating.
-
-The following maps the Plone site id *plonecommunity* to the
-*plonecommunity.mobi* domain.  Plone is a single Zope instance, running on
-port 9999.
-
-Example::
-
-    backend plonecommunity {
-            .host = "127.0.0.1";
-            .port = "9999";
+        return (deliver);
     }
 
-    sub vcl_recv {
-            if (req.http.host ~ "^(www.)?plonecommunity.mobi(:[0-9]+)?$"
-                || req.http.host ~ "^plonecommunity.mfabrik.com(:[0-9]+)?$") {
-
-                    set req.backend = plonecommunity
-                    set req.url = "/VirtualHostBase/http/" req.http.host ":80/plonecommunity/VirtualHostRoot" req.url;
-                    set req.backend = plonecommunity;
-            }
-    }
-
-
+For VCL examples Varnish 2.x or 3.x, then will want to look into :doc:`Varnish </manage/deploying/varnish>`
 
 Varnishd port and IP address to listen
 ========================================
@@ -406,39 +422,34 @@ besides ones dealing with the logged in users (content authors)::
           set req.http.Cookie = regsuball(req.http.Cookie, "^[; ]+|[; ]+$", "");
 
           if (req.http.Cookie == "") {
-              remove req.http.Cookie;
+              unset req.http.Cookie;
           }
       }
       ...
 
-    # Let's not remove Set-Cookie header in VCL fetch
-    sub vcl_fetch {
+    sub vcl_backend_response {
 
         # Here we could unset cookies explicitly,
         # but we assume plone.app.caching extension does it jobs
         # and no extra cookies fall through for HTTP responses we'd like to cache
         # (like images)
 
-        if (!beresp.cacheable) {
-            return (pass);
+        if (beresp.ttl <= 0s
+                || beresp.http.Set-Cookie
+                || beresp.http.Surrogate-control ~ "no-store"
+                || (!beresp.http.Surrogate-Control && beresp.http.Cache-Control ~ "no-cache|no-store|private")
+                || beresp.http.Vary == "*") {
+                        /* * Mark as "Hit-For-Pass" for the next 2 minutes */
+                        set beresp.ttl = 120s;
+                        set beresp.uncacheable = true;
         }
-        if (beresp.http.Set-Cookie) {
-            return (pass);
-        }
-        set beresp.prefetch =  -30s;
+ 
+        set beresp.grace = 120s;
         return (deliver);
     }
 
-The snippet for stripping out non-Plone cookies comes from
-http://www.phase2technology.com/node/1218/
 
-That article notes that "this processing occurs only between Varnish and the
-backend [...]; the client, typically a userÎéÎ÷s browser, still has all the
-cookies.  Nothing is happening to the clientÎéÎ÷s original request." While it's
-true that the browser still has the cookies, they never reach the backend
-and are therefor ignored.
-
-Another example how to purge Google cookies only and allow other cookies by default::
+An example how to purge Google cookies only and allow other cookies by default::
 
     sub vcl_recv {
         # Remove Google Analytics cookies - will prevent caching of anon content
@@ -447,7 +458,7 @@ Another example how to purge Google cookies only and allow other cookies by defa
         if (req.http.cookie) {
            set req.http.Cookie = regsuball(req.http.Cookie, "__utm.=[^;]+(; )?", "");
            if (req.http.cookie ~ "^ *$") {
-               remove req.http.cookie;
+               unset req.http.cookie;
            }
          }
          ....
@@ -458,22 +469,23 @@ Debugging cookie issues
 Use the following snippet to set a HTTP response debug header to see what
 the backend server sees as cookie after ``vcl_recv`` clean-up regexes::
 
-	sub vcl_fetch {
+    sub vcl_backend_response {
 
-	    /* Use to see what cookies go through our filtering code to the server */
-	    set beresp.http.X-Varnish-Cookie-Debug = "Cleaned request cookie: " + req.http.Cookie;
+        /* Use to see what cookies go through our filtering code to the server */
+        set beresp.http.X-Varnish-Cookie-Debug = "Cleaned request cookie: " + req.http.Cookie;
 
-	    if (beresp.ttl <= 0s ||
-	        beresp.http.Set-Cookie ||
-	        beresp.http.Vary == "*") {
-	        /*
-	         * Mark as "Hit-For-Pass" for the next 2 minutes
-	         */
-	        set beresp.ttl = 120 s;
-	        return (hit_for_pass);
-	    }
-	    return (deliver);
-	}
+        if (beresp.ttl <= 0s ||
+            beresp.http.Set-Cookie ||
+            beresp.http.Vary == "*") {
+            /*
+             * Mark as "Hit-For-Pass" for the next 2 minutes
+             */
+            # hit_for_pass objects are created using beresp.uncacheable
+            set beresp.uncacheable = true;
+            set beresp.ttl = 120s;
+            return (deliver);
+        }
+    }
 
 And then test with ``wget``::
 
@@ -493,11 +505,16 @@ And then test with ``wget``::
       Content-Type: text/html;charset=utf-8
       Set-Cookie: I18N_LANGUAGE="fi"; Path=/
       Content-Length: 23836
-      X-Cookie-Debug: Request cookie: (null)
+      X-Varnish-Cookie-Debug:Cleaned request cookie: __gads=ID=1477fbe04d35a542:T=1405963607:S=ALNI_MYJat5RSzKvD5xve78jLJsxl6-b_Q; __ac="NjE2NDZkNjk2ZTo2NDMxMzQyNDcwMzQ3MjMwNmMzMTc2MzM3Mg%253D%253D"
       Date: Wed, 16 Nov 2011 09:28:37 GMT
       X-Varnish: 1562749485
       Age: 0
-      Via: 1.1 varnish
+      Via: 1.1 varnish-v4
+
+More info
+---------
+
+* https://www.varnish-software.com/blog/adding-headers-gain-insight-vcl
 
 Plone Language cookie (I18N_LANGUAGE)
 -------------------------------------
@@ -513,11 +530,7 @@ More info
 
 * :doc:`Plone cookies documentation </develop/plone/sessions/cookies>`
 
-* https://www.varnish-cache.org/trac/wiki/VCLExampleCacheCookies
-
-* https://www.varnish-cache.org/trac/wiki/VCLExampleRemovingSomeCookies
-
-* https://www.varnish-cache.org/docs/3.0/tutorial/cookies.html
+* https://www.varnish-cache.org/docs/4.0/users-guide/increasing-your-hitrate.html#cookies
 
 Do not cache error pages
 ==========================
@@ -525,17 +538,18 @@ Do not cache error pages
 You can make sure that Varnish does not accidentally cache error pages.
 E.g. it would cache front page when the site is down::
 
-    sub vcl_fetch {
-        if ( beresp.status >= 500 ) {
+    sub vcl_backend_response {
+        if (beresp.status >= 500 && beresp.status < 600) {
+            unset beresp.http.Cache-Control;
+            set beresp.http.Cache-Control = "no-cache, max-age=0, must-revalidate";
             set beresp.ttl = 0s;
-            set beresp.cacheable = false;
+            set beresp.http.Pragma = "no-cache";
+            set beresp.uncacheable = true;
+            return(deliver);
         }
         ...
     }
 
-More info
-
-* https://www.varnish-cache.org/lists/pipermail/varnish-misc/2010-February/003774.html
 
 Custom and full cache purges
 ============================
@@ -558,16 +572,13 @@ the cache in a special header::
     sub vcl_recv {
         ...
         # Allow PURGE requests clearing everything
-        if (req.request == "PURGE") {
+        if (req.method == "PURGE") {
             if (!client.ip ~ purge) {
-                error 405 "Not allowed.";
+                return(synth(405, "Not allowed."));
             }
-            # Purge for the current host using reg-ex from X-Purge-Regex header
-            purge("req.http.host == " req.http.host " && req.url ~ " req.http.X-Purge-Regex);
-            error 200 "Purged.";
+            return (purge);
         }
     }
-
 
 Then let's create a Plone view which will make a request from Plone to
 Varnish (``upstream localhost:80``)
@@ -638,13 +649,9 @@ Example view code::
 
 
 More info
+---------
 
-* https://www.varnish-cache.org/docs/3.0/tutorial/purging.html
-
-* https://www.varnish-cache.org/trac/wiki/BackendConditionalRequests
-
-* http://kristianlyng.wordpress.com/2010/02/02/varnish-purges/
-
+* https://www.varnish-cache.org/docs/4.0/users-guide/purging.html
 
 Round-robin balancing
 ========================
@@ -668,18 +675,29 @@ Example::
         .port = "8081";
     }
 
-    director app_director round-robin {
-        {
-            .backend = app1;
-        }
-        {
-            .backend = app2;
-        }
+    # Directors have been moved to the vmod_directors
+    # To make directors (backend selection logic) easier to extend, the directors are now defined in loadable VMODs.
+    # Setting a backend for future fetches in vcl_recv is now done as bellow, is an example redirector based on round-robin requests.
+
+    import directors;
+
+    sub vcl_init {
+        new cluster1 = directors.round_robin();
+        cluster1.add_backend(site1);    # Backend site1 defined above
+        cluster1.add_backend(site2);    # Backend site2 defined above
     }
+
 
     sub vcl_recv {
+        if (req.http.host ~ "(www\.|www2\.)?app\.fi(:[0-9]+)?$") {
+            set req.backend_hint = cluster1.backend();
+            set req.url = "/VirtualHostBase/http/" + req.http.host + ":80/app/app/VirtualHostRoot" + req.url;
+        }
 
-    if (req.http.host ~ "(www\.|www2\.)?app\.fi(:[0-9]+)?$") {
-        set req.url = "/VirtualHostBase/http/www.app.fi:80/app/app/VirtualHostRoot" req.url;
-        set req.backend = app_director;
+        ...
     }
+
+More info
+---------
+
+* https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html
