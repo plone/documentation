@@ -1,11 +1,11 @@
-===================
- Varnish
-===================
+=======
+Varnish
+=======
 
 .. admonition:: Description
 
-    Varnish is a caching front-end server. This document has notes on how to
-    use Varnish with Plone. If you're using Varnish 4.x, then will want to look into :doc:`Varnish4 </manage/deploying/varnish4>`
+    Varnish is a caching front-end server. This document has notes on how to use Varnish with Plone. 
+    If you're using Varnish 4.x, then you want to look into :doc:`Varnish4 </manage/deploying/varnish4>`
 
 .. contents:: :local:
 
@@ -14,8 +14,7 @@
 Introduction
 ============
 
-This chapter contains information about using the Varnish caching proxy with
-Plone.
+This chapter contains information about using the Varnish caching proxy with Plone.
 
 * http://varnish-cache.org/
 
@@ -31,7 +30,7 @@ To use Varnish with Plone
     Varnish 3.x (Jun 2011) has radically altered syntax of VCL language and command line tools, so you might need to adapt the examples a bit.
 
 Installation
-==========================
+============
 
 The suggest method to install Varnish is to use your OS package manager.
 
@@ -51,7 +50,7 @@ Management console
 ==================
 
 ``varnishadm``
---------------------------------------------
+--------------
 
 You can access Varnish admin console on your server by::
 
@@ -61,10 +60,10 @@ You can access Varnish admin console on your server by::
 (Ubuntu/Debian installation)
 
 Telnet console
------------------
+---------------
 
-The telnet management console is available on some configurations
-where ``varnishadm`` cannot be used. The functionality is the same.
+The telnet management console is available on some configurations where ``varnishadm`` cannot be used. 
+The functionality is the same.
 
 Example::
 
@@ -98,16 +97,13 @@ This will remove all entries from the Varnish cache::
 Loading new VCL to live Varnish
 ===============================
 
-More often than not, it is beneficial to load new configuration without
-bringing the cache down for maintenance.  Using this method also checks the
-new VCL for syntax errors before activating it.  Logging in to Varnish CLI
-requires the ``varnishadm`` tool, the address of the management interface,
-and the secret file for authentication.
+More often than not, it is beneficial to load new configuration without bringing the cache down for maintenance.
+Using this method also checks the new VCL for syntax errors before activating it.
+Logging in to Varnish CLI requires the ``varnishadm`` tool, the address of the management interface, and the secret file for authentication.
 
 See the ``varnishadm`` man-page for details.
 
-Opening a new CLI connection to the Varnish console, in a buildout-based
-Varnish installation::
+Opening a new CLI connection to the Varnish console, in a buildout-based Varnish installation::
 
     parts/varnish-build/bin/varnishadm -T localhost:8088
 
@@ -116,8 +112,7 @@ Port 8088 is defined in ``buildout.cfg``::
     [varnish-instance]
     telnet = localhost:8088
 
-Opening a new CLI connection to the Varnish console, in a system-wide
-Varnish installation on Ubuntu/Debian::
+Opening a new CLI connection to the Varnish console, in a system-wide Varnish installation on Ubuntu/Debian::
 
     varnishadm -T localhost:6082 -S /etc/varnish/secret
 
@@ -134,32 +129,29 @@ For example::
     # Ubuntu / Debian default config
     vcl.load defconf1 /etc/varnish/default.vcl
 
-``vcl.load`` will load and compile the new configuration. Compilation will
-fail and report on syntax errors.  Now that the new configuration has been
-loaded, it can be activated with::
+``vcl.load`` will load and compile the new configuration.
+Compilation will fail and report on syntax errors.
+Now that the new configuration has been loaded, it can be activated with::
 
     vcl.use newconf_1
 
 .. note::
 
-    Varnish remembers ``<name>`` in ``vcl.load``, so every time you
-    need to reload your config you need to invent a new name for
-    vcl.load / vcl.use command pair.
+    Varnish remembers ``<name>`` in ``vcl.load``, so every time you need to reload your config you need to invent a new name for vcl.load / vcl.use command pair.
 
 See
 
 * http://opensourcehacker.com/2013/02/07/varnish-shell-singleliners-reload-config-purge-cache-and-test-hits/
 
 Logs
-======
+====
 
 To see a real-time log dump (in a system-wide Varnish configuration)::
 
     varnishlog
 
-By default, Varnish does not log to any file and keeps the log only in
-memory.  If you want to extract Apache-like logs from varnish, you need to
-use the ``varnishncsa`` utility.
+By default, Varnish does not log to any file and keeps the log only in memory.
+If you want to extract Apache-like logs from varnish, you need to use the ``varnishncsa`` utility.
 
 Stats
 =====
@@ -185,8 +177,7 @@ Virtual hosting proxy rule
 Varnish 3.x example
 -------------------
 
-An example with two separate Plone installations (Zope standalone mode)
-behind Varnish 3.x HTTP 80 port.
+An example with two separate Plone installations (Zope standalone mode) behind Varnish 3.x HTTP 80 port.
 
 Example::
 
@@ -315,16 +306,12 @@ Example::
 Varnish 2.x example
 -------------------
 
-When Varnish has been set-up you need to include Plone virtual hosting
-rule in its configuration file.
+When Varnish has been set-up you need to include Plone virtual hosting rule in its configuration file.
 
-If you want to map Varnish backend directly to Plone-as-a-virtualhost (i.e.
-Zope's VirtualHostMonster is used to map site name to Plone site instance
-id) use ``req.url`` mutating.
+If you want to map Varnish backend directly to Plone-as-a-virtualhost (i.e. Zope's VirtualHostMonster is used to map site name to Plone site instance id) use ``req.url`` mutating.
 
-The following maps the Plone site id *plonecommunity* to the
-*plonecommunity.mobi* domain.  Plone is a single Zope instance, running on
-port 9999.
+The following maps the Plone site id *plonecommunity* to the *plonecommunity.mobi* domain.
+Plone is a single Zope instance, running on port 9999.
 
 Example::
 
@@ -346,10 +333,10 @@ Example::
 
 
 Varnishd port and IP address to listen
-========================================
+=======================================
 
-You give IP address(s) and ports to Varnish to listen to
-on the ``varnishd`` command line using -a switch.
+You give IP address(s) and ports to Varnish to listen to on the ``varnishd`` command line using -a switch.
+
 Edit ``/etc/default/varnish``::
 
     DAEMON_OPTS="-a 192.168.1.1:80 \
@@ -359,7 +346,7 @@ Edit ``/etc/default/varnish``::
 
 
 Cached and editor subdomains
-==============================
+============================
 
 You can provide an uncached version of the site for editors:
 
@@ -373,27 +360,20 @@ Please see :doc:`cache issues related to LinguaPlone </develop/plone/i18n/cache>
 Sanitizing cookies
 ==================
 
-Any cookie set on the server side (session cookie) or on the client-side
-(e.g. Google Analytics Javascript cookies)
-is poison for caching the anonymous visitor content.
+Any cookie set on the server side (session cookie) or on the client-side (e.g. Google Analytics Javascript cookies) is poison for caching the anonymous visitor content.
 
 HTTP caching needs to deal with both HTTP request and response cookie handling
 
-* HTTP request *Cookie* header. The browser sending HTTP request
-  with ``Cookie`` header confuses Varnish cache look-up. This header can be
-  set by Javascript also, not just by the server.
+* HTTP request *Cookie* header. The browser sending HTTP request with ``Cookie`` header confuses Varnish cache look-up. This header can be set by Javascript also, not just by the server.
   ``Cookie`` can be preprocessed in varnish's ``vcl_recv`` step.
 
 * HTTP response ``Set-Cookie`` header.
-  This sets a server-side cookie. If your server is setting
-  cookies Varnish does not cache these responses by default.
-  Howerver, this might be desirable
-  behavior if e.g. multi-lingual content is served from one URL with
-  language cookies.
+  This sets a server-side cookie. 
+  If your server is setting cookies Varnish does not cache these responses by default.
+  Howerver, this might be desirable behavior if e.g. multi-lingual content is served from one URL with language cookies.
   ``Set-Cookie`` can be post-processed in varnish's ``vcl_fetch`` step.
 
-Example of removing all Plone-related cookies,
-besides ones dealing with the logged in users (content authors)::
+Example of removing all Plone-related cookies, besides ones dealing with the logged in users (content authors)::
 
     sub vcl_recv {
 
@@ -432,11 +412,9 @@ besides ones dealing with the logged in users (content authors)::
 The snippet for stripping out non-Plone cookies comes from
 http://www.phase2technology.com/node/1218/
 
-That article notes that "this processing occurs only between Varnish and the
-backend [...]; the client, typically a user's browser, still has all the
-cookies.  Nothing is happening to the client's original request." While it's
-true that the browser still has the cookies, they never reach the backend
-and are therefor ignored.
+That article notes that "this processing occurs only between Varnish and the backend [...]; the client, typically a user's browser, still has all the
+cookies.  Nothing is happening to the client's original request." 
+While it's true that the browser still has the cookies, they never reach the backend and are therefor ignored.
 
 Another example how to purge Google cookies only and allow other cookies by default::
 
@@ -453,10 +431,9 @@ Another example how to purge Google cookies only and allow other cookies by defa
          ....
 
 Debugging cookie issues
-------------------------------------
+-----------------------
 
-Use the following snippet to set a HTTP response debug header to see what
-the backend server sees as cookie after ``vcl_recv`` clean-up regexes::
+Use the following snippet to set a HTTP response debug header to see what the backend server sees as cookie after ``vcl_recv`` clean-up regexes::
 
 	sub vcl_fetch {
 
@@ -505,8 +482,7 @@ Plone Language cookie (I18N_LANGUAGE)
 This cookie could be removed in ``vcl_fetch`` response post-processing (how?).
 However, a better solution is to disable this cookie in the backend itself:
 in this case in Plone's ``portal_languages`` tool.
-Disable it by :guilabel:`Use cookie for manual override` setting in
-``portal_languages``.
+Disable it by :guilabel:`Use cookie for manual override` setting in ``portal_languages``.
 
 More info
 ---------
@@ -520,7 +496,7 @@ More info
 * https://www.varnish-cache.org/docs/3.0/tutorial/cookies.html
 
 Do not cache error pages
-==========================
+========================
 
 You can make sure that Varnish does not accidentally cache error pages.
 E.g. it would cache front page when the site is down::
@@ -569,11 +545,8 @@ the cache in a special header::
     }
 
 
-Then let's create a Plone view which will make a request from Plone to
-Varnish (``upstream localhost:80``)
-and issue the ``PURGE`` command.
-We do this using the `Requests <https://pypi.python.org/pypi/requests>`_
-Python library.
+Then let's create a Plone view which will make a request from Plone to Varnish (``upstream localhost:80``) and issue the ``PURGE`` command.
+We do this using the `Requests <https://pypi.python.org/pypi/requests>`_ Python library.
 
 Example view code::
 
@@ -647,12 +620,10 @@ More info
 
 
 Round-robin balancing
-========================
+=====================
 
 Varnish can do round-robin load balancing internally.
-Use this if you want to distribute CPU-intensive load between several
-ZEO front end client instances, each listening on
-its own port.
+Use this if you want to distribute CPU-intensive load between several ZEO front end client instances, each listening on its own port.
 
 Example::
 
