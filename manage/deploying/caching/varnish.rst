@@ -433,8 +433,8 @@ The snippet for stripping out non-Plone cookies comes from
 http://www.phase2technology.com/node/1218/
 
 That article notes that "this processing occurs only between Varnish and the
-backend [...]; the client, typically a userÎéÎ÷s browser, still has all the
-cookies.  Nothing is happening to the clientÎéÎ÷s original request." While it's
+backend [...]; the client, typically a user's browser, still has all the
+cookies.  Nothing is happening to the client's original request." While it's
 true that the browser still has the cookies, they never reach the backend
 and are therefor ignored.
 
