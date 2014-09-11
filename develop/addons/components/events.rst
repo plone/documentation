@@ -83,7 +83,8 @@ Subscribing using the ``grok`` API
 Example subscription which subscribes a content type to add and edit events::
 
     from five import grok
-    from Products.Archetypes.interfaces import IObjectEditedEvent, IObjectInitializedEvent
+    from Products.Archetypes.interfaces import IObjectEditedEvent
+    from Products.Archetypes.interfaces import IObjectInitializedEvent
 
     class ORAResearcher(folder.ATFolder, orabase.ORABase, ResearcherMixin):
         """A Researcher synchronized from ORA.
