@@ -48,7 +48,7 @@ In your.product/your/product/configure.zcml insert::
 
     <subscriber
         for=".interfaces.IMyContentTypeClass
-             zope.lifecycleevent.IObjectInitializedEvent"
+             zope.lifecycleevent.IObjectCreatedEvent"
         handler=".your_python_file.your_method"
         />
 
@@ -57,7 +57,7 @@ The first line defines to which interface you want to bind the execution of your
 that the code will only be executed if the object is one of your contenttype's.
 If you want this to be interface-agnostic, insert an asterix as a wildcard instead.
 
-The second line defines the event on which this should happen, which is here 'IObjectInitializedEvent'.
+The second line defines the event on which this should happen, which is here 'IObjectCreatedEvent' -- for Archetypes you should use 'Products.Archetypes.interfaces.IObjectInitializedEvent' instead.
 For more available possible events to be used as a trigger, see :doc:`event handler documentation </external/plone.app.dexterity/docs/advanced/event-handlers>`
 
 The third line gives the path to the script that is supposed to be executed.
