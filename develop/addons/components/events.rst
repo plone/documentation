@@ -124,7 +124,7 @@ For more information, see:
 
 * :doc:`Using Grok </develop/addons/components/grok>`
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/events
+* http://docs.plone.org/develop/addons/five-grok/core-components/events.html
 
 Subscribing using ZCML
 ----------------------
