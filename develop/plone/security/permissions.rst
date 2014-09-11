@@ -15,9 +15,9 @@ Permissions control whether logged-in or anonymous users can execute code
 and access content.
 
 Permissions in Plone are managed by
-`Zope's AccessControl module <http://svn.zope.org/AccessControl/trunk/src/AccessControl/>`_.
+`Zope's AccessControl module <https://github.com/zopefoundation/AccessControl>`_.
 Persistent permission setting and getting by role heavy lifting is done by
-`AccessControl.rolemanager.RoleManager <http://svn.zope.org/AccessControl/trunk/src/AccessControl/rolemanager.py?view=auto>`_.
+`AccessControl.rolemanager.RoleManager <https://github.com/zopefoundation/AccessControl/blob/master/src/AccessControl/rolemanager.py>`_.
 
 Permission checks are done for:
 
