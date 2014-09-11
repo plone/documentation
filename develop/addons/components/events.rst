@@ -48,7 +48,7 @@ In your.product/your/product/configure.zcml insert::
 
     <subscriber
         for=".interfaces.IMyContentTypeClass
-             zope.lifecycleevent.IObjectInitializedEvent"
+             zope.lifecycleevent.IObjectCreatedEvent"
         handler=".your_python_file.your_method"
         />
 
@@ -57,7 +57,7 @@ The first line defines to which interface you want to bind the execution of your
 that the code will only be executed if the object is one of your contenttype's.
 If you want this to be interface-agnostic, insert an asterix as a wildcard instead.
 
-The second line defines the event on which this should happen, which is here 'IObjectInitializedEvent'.
+The second line defines the event on which this should happen, which is here 'IObjectCreatedEvent' -- for Archetypes you should use 'Products.Archetypes.interfaces.IObjectInitializedEvent' instead.
 For more available possible events to be used as a trigger, see :doc:`event handler documentation </external/plone.app.dexterity/docs/advanced/event-handlers>`
 
 The third line gives the path to the script that is supposed to be executed.
@@ -83,7 +83,8 @@ Subscribing using the ``grok`` API
 Example subscription which subscribes a content type to add and edit events::
 
     from five import grok
-    from Products.Archetypes.interfaces import IObjectEditedEvent, IObjectInitializedEvent
+    from Products.Archetypes.interfaces import IObjectEditedEvent
+    from Products.Archetypes.interfaces import IObjectInitializedEvent
 
     class ORAResearcher(folder.ATFolder, orabase.ORABase, ResearcherMixin):
         """A Researcher synchronized from ORA.
@@ -123,7 +124,7 @@ For more information, see:
 
 * :doc:`Using Grok </develop/addons/components/grok>`
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/events
+* http://docs.plone.org/develop/addons/five-grok/core-components/events.html
 
 Subscribing using ZCML
 ----------------------
