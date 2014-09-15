@@ -30,7 +30,7 @@ We'll be using paster to create a Dexterity project. First a virtual environment
 .. topic:: Templer or Paster
 
     Templer is the replacement of ZopeSkel/Paster, because of a bug in zopeskel.dexterity it isn't
-    possible to use it with Templer. Instead ZopeSkel is pinned on version 2.12.2.
+    possible to use it with Templer. Instead ZopeSkel is pinned on version 2.21.2.
 
 Create a dexterity product
 ==========================
