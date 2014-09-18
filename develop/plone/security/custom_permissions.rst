@@ -36,10 +36,9 @@ It includes an example how to use the permission in a browser page
 Now you can use the permission both as a Zope 2 permission *('MyProduct: MyPermission')* or a Zope 3 permission *('myproduct.mypermission')*.
 The only disadvantage is that you can't import the permissionstring as a variable from a *permissions.py* like from *Products.CMFCore.permissions*.
 
-If you want to protect certain actions in your product by a special permission,
-you most likely will want to assign this permission to a role when the product is installed.
-
-You will want to use Generic Setup's *rolemap.xml* to assign these permissions.
+Use Generic Setup's *rolemap.xml* to assign the new permission to roles.
+This defines the defaults.
+With the use of (custom) workflows this mapping may change.
 
 .. code-block:: xml
 
