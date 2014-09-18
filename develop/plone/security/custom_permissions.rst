@@ -65,4 +65,4 @@ Define the following code in your  __init__.py:
 
     from Products.CMFCore.permissions import setDefaultRoles
 
-    setDefaultRoles('MyProduct: MyPermission', ('Manager', Owner',))
+    setDefaultRoles('MyProduct: MyPermission', ('Manager', 'Owner',))
