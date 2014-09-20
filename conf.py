@@ -31,7 +31,11 @@ extensions = [
     #'sphinxcontrib.contributors',
     'sphinxcontrib_robotframework',
     'sphinx.ext.autosummary',
-    ]
+    'sphinxcontrib.spelling',
+]
+
+# This is our wordlist with know words, like Github or Plone ...
+spelling_word_list_filename='spelling_wordlist.txt'
 
 # Enable Robot Framework tests during Sphinx compilation:
 sphinxcontrib_robotframework_enabled = True  # 'True' is the default
