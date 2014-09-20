@@ -11,15 +11,9 @@ Standard permissions and roles
 Standard permissions
 ~~~~~~~~~~~~~~~~~~~~
 
-The standard permissions can be found in
-``AccessControl``s
-and ``Product.CMFCore``\’s ``permissions.zcml``.
-Here, you will find a short ``id``
-(also known as the *Zope 3 permission id*)
-and a longer ``title``
-(also known as the *Zope 2 permission title*).
-For historical reasons, some areas in Plone use the id,
-whilst others use the title.
+The standard permissions can be found in ``AccessControl``s and ``Product.CMFCore``\’s ``permissions.zcml``.
+Here, you will find a short ``id`` (also known as the *Zope 3 permission id*) and a longer ``title`` (also known as the *Zope 2 permission title*).
+For historical reasons, some areas in Plone use the id, whilst others use the title.
 As a rule of thumb:
 
 - Browser views defined in ZCML directive use the Zope 3 permission id;
@@ -62,8 +56,7 @@ Standard roles
 ~~~~~~~~~~~~~~~
 
 As with permissions, it is easy to create custom roles
-(use the ``rolemap.xml`` GenericSetup import step – see ``CMFPlone``\’s version of this file for an example),
-although you should use the standard roles where possible.
+(use the ``rolemap.xml`` GenericSetup import step – see ``CMFPlone``\’s version of this file for an example), although you should use the standard roles where possible.
 
 The standard roles in Plone are:
 
