@@ -31,7 +31,7 @@ extensions = [
     #'sphinxcontrib.contributors',
     'sphinxcontrib_robotframework',
     'sphinx.ext.autosummary',
-    'sphinxcontrib.spelling'
+    'sphinxcontrib.spelling',
 ]
 
 # This is our wordlist with know words, like Github or Plone ...
