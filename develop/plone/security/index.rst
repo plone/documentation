@@ -15,6 +15,7 @@ Zope provides various built-in security facilities
 
     permissions
     permission_lists
+    standard_permissions
     custom_permissions
     csrf
     local_roles
