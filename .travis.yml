@@ -1,6 +1,7 @@
 language: python
 python: '2.7'
 before_install:
+- apt-get install enchant
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 install:
@@ -12,7 +13,6 @@ install:
 - bin/buildout -N -t 3 -c travis.cfg buildout:checkout=documentation sources:documentation="fs
   documentation egg=false"
 before_script:
-- apt-get install enchant
 - gem install --version 0.8.9 faraday
 - gem install travis-artifacts
 script:
