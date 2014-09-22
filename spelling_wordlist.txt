@@ -1,3 +1,13 @@
+Glick
+svn
+WSGI
+zope
+docstring
+PloneformGen
+jQuery
+uid
+nginx
+plone
 acl
 Aspeli
 Bootstrap
