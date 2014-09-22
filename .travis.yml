@@ -12,6 +12,7 @@ install:
 - bin/buildout -N -t 3 -c travis.cfg buildout:checkout=documentation sources:documentation="fs
   documentation egg=false"
 before_script:
+- apt-get install enchant
 - gem install --version 0.8.9 faraday
 - gem install travis-artifacts
 script:
