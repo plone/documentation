@@ -93,13 +93,13 @@ The standard roles in Plone are:
      representing “standard” Plone users.
 
 In addition, there are three roles that are intended to be used as *local roles* only.
-These are granted to specific users or groups via the :guilabe :`Sharing` tab,
+These are granted to specific users or groups via the :guilabel:`Sharing` tab,
 where they appear under more user friendly pseudonyms.
 
 :guilabel:`Reader`, aka :guilabel:`Can view`,
     confers the right to view content.
     As a role of thumb,
-    the :guilabel:`Reader` role should have the :guilabel:`View` and :guilabel:`Access contents information` permissions if the :guilabel:`Owner roles does.
+    the :guilabel:`Reader` role should have the :guilabel:`View` and :guilabel:`Access contents information` permissions if the :guilabel:`Owner` roles does.
 
 :guilabel:`Editor`, aka :guilabel:`Can edit`,
     confers the right to edit content.
