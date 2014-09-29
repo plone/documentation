@@ -68,7 +68,6 @@ phpBB
 Plone
 plone
 PloneFormGen
-PloneformGen
 Plonista
 png
 Portlet
@@ -104,7 +103,6 @@ Virtualbox
 virtualenv
 virtualhost
 Webmail
-WISGI
 Wordpress
 Workflow
 workflow
