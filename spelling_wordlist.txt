@@ -19,7 +19,6 @@ exe
 Facebook
 fieldset
 Flickr
-fo
 FormActionAdapter
 freenode
 getLink
