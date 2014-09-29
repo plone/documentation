@@ -1,11 +1,11 @@
-=======
-Varnish
-=======
+===========
+Varnish 3.x
+===========
 
 .. admonition:: Description
 
-    Varnish is a caching front-end server. This document has notes on how to use Varnish with Plone. 
-    If you're using Varnish 4.x, then you want to look into :doc:`Varnish4 </manage/deploying/varnish4>`
+    Varnish is a caching front-end server. This document has notes on how to use Varnish with Plone.
+    If you're using Varnish 4.x, then you want to look into :doc:`Varnish 4.x </manage/deploying/caching/varnish4>`
 
 .. contents:: :local:
 
@@ -62,7 +62,7 @@ You can access Varnish admin console on your server by::
 Telnet console
 ---------------
 
-The telnet management console is available on some configurations where ``varnishadm`` cannot be used. 
+The telnet management console is available on some configurations where ``varnishadm`` cannot be used.
 The functionality is the same.
 
 Example::
@@ -368,7 +368,7 @@ HTTP caching needs to deal with both HTTP request and response cookie handling
   ``Cookie`` can be preprocessed in varnish's ``vcl_recv`` step.
 
 * HTTP response ``Set-Cookie`` header.
-  This sets a server-side cookie. 
+  This sets a server-side cookie.
   If your server is setting cookies Varnish does not cache these responses by default.
   Howerver, this might be desirable behavior if e.g. multi-lingual content is served from one URL with language cookies.
   ``Set-Cookie`` can be post-processed in varnish's ``vcl_fetch`` step.
@@ -413,7 +413,7 @@ The snippet for stripping out non-Plone cookies comes from
 http://www.phase2technology.com/node/1218/
 
 That article notes that "this processing occurs only between Varnish and the backend [...]; the client, typically a user's browser, still has all the
-cookies.  Nothing is happening to the client's original request." 
+cookies.  Nothing is happening to the client's original request."
 While it's true that the browser still has the cookies, they never reach the backend and are therefor ignored.
 
 Another example how to purge Google cookies only and allow other cookies by default::

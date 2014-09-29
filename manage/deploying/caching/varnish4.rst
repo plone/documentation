@@ -4,8 +4,8 @@ Varnish 4.x
 
 .. admonition:: Description
 
-    Varnish is a caching front-end server. This document has notes on how to use Varnish with Plone. 
-    If you're using Varnish 2.x or 3.x, then you want to look into :doc:`Varnish </manage/deploying/varnish>`
+    Varnish is a caching front-end server. This document has notes on how to use Varnish with Plone.
+    If you're using Varnish 2.x or 3.x, then you want to look into :doc:`Varnish 3.x </manage/deploying/caching/varnish3>`
 
 
 .. contents:: :local:
@@ -65,7 +65,7 @@ You can access Varnish admin console on your server by::
 Telnet console
 --------------
 
-The telnet management console is available on some configurations where ``varnishadm`` cannot be used. 
+The telnet management console is available on some configurations where ``varnishadm`` cannot be used.
 The functionality is the same.
 
 Example::
@@ -136,7 +136,7 @@ For example::
     # Ubuntu / Debian default config
     vcl.load defconf1 /etc/varnish/default.vcl
 
-``vcl.load`` will load and compile the new configuration. 
+``vcl.load`` will load and compile the new configuration.
 Compilation will fail and report on syntax errors.
 Now that the new configuration has been loaded, it can be activated with::
 
@@ -195,7 +195,8 @@ Virtual hosting proxy rule
 Varnish 4.x example
 --------------------
 
-Varnish 4.x has been released, almost three years after the release of Varnish 3.0 in June 2011, the backend fetch parts of VCL again have changed in Varnish 4.
+Varnish 4.x has been released, almost three years after the release of Varnish 3.0 in June 2011.
+The backend fetching parts of VCL again have changed in Varnish 4.
 
 An example with two separate Plone installations (Zope standalone mode) behind Varnish 4.x HTTP 80 port.
 
@@ -349,7 +350,7 @@ Example::
         return (deliver);
     }
 
-For VCL examples Varnish 2.x or 3.x, then will want to look into :doc:`Varnish </manage/deploying/varnish>`
+For VCL examples Varnish 2.x or 3.x, you will want to look into :doc:`Varnish 3.x </manage/deploying/caching/varnish3>`
 
 Varnishd port and IP address to listen
 ======================================

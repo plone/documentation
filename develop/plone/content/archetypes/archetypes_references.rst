@@ -61,7 +61,7 @@ is the objects themselves, not their
 
 .. TODO:: Add a glossary entry for brains.
 
-:doc:`More info in Varnish section of this manual </manage/deploying/caching/varnish>`.
+:doc:`More info in Varnish section of this manual </manage/deploying/caching/varnish3>`.
 
     >>> myct1.getMyReferenceField() == areferenceableobject
     True
