@@ -22,7 +22,7 @@ To reach this team for any questions please contact
 
 
 License
-============
+=======
 
 The Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
@@ -33,7 +33,7 @@ Basically, all we need is your written confirmation that you are agreeing your c
 
 
 Workflow
-==============================
+========
 
 The documentation is hosted on github. And there are tools hooked directly into it:
 
@@ -101,4 +101,34 @@ advanced users.
 * Commit your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request.
 
 For more information about writing documentation please read the :doc:`styleguide </about/styleguide>` and also :doc:`this </about/helper_tools>`.
+
+Translation
+===========
+
+We use `Transifex <https://www.transifex.com/>`_ for translation.
+Thanks to that it is really easy to contribute to translation.
+
+Quick start:
+------------
+
+* Browse to: https://www.transifex.com/projects/p/plone-doc/ and choose your language.
+
+* Click on the right *Join Team*
+
+
+Getting started
+---------------
+
+* Go to: https://www.transifex.com/signin/
+
+* Go to: https://www.transifex.com/projects/p/plone-doc/
+
+* Click on: `HELP TRANSLATE PLONE DOCUMENTATION <https://www.transifex.com/signup/?join_project=plone-doc>`_
+
+* Choose your language
+
+* Click on the right *Join Team*
+
+
+
 
