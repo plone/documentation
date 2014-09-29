@@ -141,7 +141,7 @@ Note that cookies can be set:
 ... so you might need to clean cookies for both incoming HTTP requests and
 HTTP responses.
 
-:doc:`More info in Varnish section of this manual </manage/deploying/caching/varnish>`.
+:doc:`More info in Varnish section of this manual </manage/deploying/caching/varnish3>`.
 
 Signing cookies
 =================
