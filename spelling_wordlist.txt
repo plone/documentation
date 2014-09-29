@@ -1,12 +1,14 @@
 acl
 Ansible
 Aspeli
+boolean
 Bootstrap
 Bugzilla
 buildout
 cfg
 config
 contentprovider
+cron
 css
 de
 deliverance
@@ -63,9 +65,11 @@ pastie
 pdb
 PDF
 Photoshop
+php
 phpBB
 Plone
 plone
+ploneCustom
 PloneFormGen
 Plonista
 png
@@ -107,6 +111,7 @@ Workflow
 workflow
 WSGI
 www
+xdv
 xml
 XPath
 zcml
