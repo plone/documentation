@@ -10,6 +10,9 @@
     flexible: members can be in different folders, have different workflows
     and states and different profile fields.
 
+    It is also possible to use this approach with dexterity; for that, 
+    use the ``dexterity.membrane`` add-on.
+
 .. contents :: :local:
 
 Introduction
@@ -26,6 +29,9 @@ user classes.
 
 * ``Products.remember`` is a basic implementation of this with two different
   user workflows and a normal user schema.
+
+* ``dexterity.membrane`` is a port of ``Products.membrane`` to the dexterity
+  framework.
 
 Basics
 ======
@@ -394,5 +400,36 @@ deleting the old object::
         return nc
 
 
+Configuring default roles with Dexterity
+=========================================
 
+To configure default roles for Dexterity-based members, you need a class
+providing the ``IMembraneUserRoles`` interface, and to register it as adapter.
+
+Define the class (here, in a file named ``roles.py``)::
+
+    from Products.membrane.interfaces import IMembraneUserRoles
+    from dexterity.membrane.behavior.membraneuser import DxUserObject
+    from dexterity.membrane.behavior.membraneuser import IMembraneUser
+    from zope.component import adapter
+    from zope.interface import implementer
+
+    DEFAULT_ROLES = ['Member']
+
+
+    @implementer(IMembraneUserRoles)
+    @adapter(IMembraneUser)
+    class MyDefaultRoles(DxUserObject):
+
+         def getRolesForPrincipal(self, principal, request=None):
+             return DEFAULT_ROLES
+
+And register this class in ``configure.zcml``:
+
+.. code-block:: xml
+
+    <adapter
+         factory=".roles.MyDefaultRoles"
+         provides="Products.membrane.interfaces.IMembraneUserRoles"
+    />
 
