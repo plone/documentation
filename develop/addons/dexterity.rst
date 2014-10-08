@@ -15,29 +15,31 @@ Create a dexterity product
 Use zopeskel to create a Python package which contains a Dexterity-based product.
 (Note: just select default options - press Enter - for all questions during installation, except for project name which must be collective.example)
 
-    .. code-block:: console
+Use ``zopeskel`` to create a Python egg which contains a Dexterity-based product.
+(Note: just select default options for all questions during installation,
+except for _project name_, for which we'll use ``collective.example``.)
 
-        cd to your buildout directory
+.. code-block:: console
 
-        $ cd src
+    # cd to your buildout directory
+    $ cd src
+    $ ../bin/zopeskel dexterity
+    dexterity: A Dexterity-based product
 
-        $ ../bin/zopeskel dexterity
-        dexterity: A Dexterity-based product
+    This template expects a project name with 1 dot in it (a 'basic
+    namespace', like 'foo.bar').
 
-        This template expects a project name with 1 dot in it (a 'basic
-        namespace', like 'foo.bar').
+    Enter project name: collective.example
 
-        Enter project name: collective.example
+    [...]
 
-        ...
+    usage: paster COMMAND
 
-        usage: paster COMMAND
+    Commands:
+      addcontent  Adds plone content types to your project
 
-        Commands:
-          addcontent  Adds plone content types to your project
-
-        For more information: paster help COMMAND
-        ------------------------------------------------------------------------------
+    For more information: paster help COMMAND
+    ------------------------------------------------------------------------
 
 Add your package to buildout
 ============================
@@ -51,9 +53,9 @@ Edit your ``buildout.cfg`` file to add the package to your ``egg`` list and your
 Add content using paster
 ========================
 
-Using the following command the local paster command for adding content are shown:
+Use ``paster`` to list the types of content that can be added:
 
-    .. code-block:: console
+.. code-block:: console
 
         $ ../bin/paster addcontent -l
         Available templates:
@@ -62,7 +64,7 @@ Using the following command the local paster command for adding content are show
 
 Add a content-type:
 
-    .. code-block:: console
+.. code-block:: console
 
         $ ../bin/paster addcontent dexterity_content
         Enter contenttype_name (Content type name ) ['Example Type']: Example content
