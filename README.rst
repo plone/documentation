@@ -18,9 +18,7 @@ the documentation team
 
 
 If you want to have a full and complete copy of the docs and the supporting buildout,
-for now you can do the following on a \*\nix system:
-
-::
+for now you can do the following on a \*\nix system::
 
     git clone https://github.com/plone/papyrus.git
     virtualenv --no-site-packages papyrus
@@ -33,5 +31,5 @@ for now you can do the following on a \*\nix system:
     (this fetches the external packages whose docs-folder is part of this documentation)
     make html
 
-and browse the results in build/html/
+and browse the results in ``build/html/``
 
