@@ -16,8 +16,7 @@ Use zopeskel to create a Python package which contains a Dexterity-based product
 (Note: just select default options - press Enter - for all questions during installation, except for project name which must be collective.example)
 
 Use ``zopeskel`` to create a Python egg which contains a Dexterity-based product.
-(Note: just select default options for all questions during installation,
-except for _project name_, for which we'll use ``collective.example``.)
+(Note: just select default options for all questions during installation, except for _project name_, for which we'll use ``collective.example``.)
 
 .. code-block:: console
 
