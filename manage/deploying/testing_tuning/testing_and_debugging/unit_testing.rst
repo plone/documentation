@@ -12,8 +12,6 @@ add-on product is intact in the current product configuration. Unit tests
 are regression tests and are designed to catch broken functionality over the
 code evolution.
 
-`Plone unit testing tutorial <http://plone.org/documentation/tutorial/richdocument/unit-testing>`_.
-
 Running unit tests
 ===================
 
