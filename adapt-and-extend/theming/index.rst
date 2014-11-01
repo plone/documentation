@@ -15,15 +15,8 @@ Theming Plone
 
    /external/plone.app.theming/docs/index
    /external/diazo/docs/index
-   theme_product_with_diazo
    quick_test
-
-Using Diazo is also possible as a standalone service. That makes it possible to include several back-end applications under one 'look'
-
-.. toctree::
-   :maxdepth: 2
-
-   deliverance
+   theme_product_with_diazo
 
 General information on the stylesheets and other resources in Plone
 
