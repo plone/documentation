@@ -28,7 +28,9 @@ Best practices
 
 For including documentation into docs.plone.org, **please** follow these guidelines:
 
-* Please do not symlink to, or use the *include* directive on files that live outside your '/docs' directory. Linking *the other way around* is fine. So, if you create a README.rst, do it in the /docs/source directory, and make a symlink to it from the root of your repository. Github will display that one just fine.
+* Please do not symlink to, or use the *include* directive on files that live outside your '/docs' directory.
+* So, for best results: write a **short** README.rst in the top level of your repository. It should have an introduction of what the package does, about 1-3 paragraphs, plus licensing and contact information. And then a link to the longer documentation in the /docs directory.
+* Linking *the other way around* is OK, but not optimal. If you create a README.rst in the /docs/source directory, and make a symlink to it from the root of your repository, Github will display that one just fine. But pypi will not render it nice, instead rendering it as plain text which may confuse readers.
 * Please do not use 'autodoc' to include comments of your code.
 * Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**. Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
 
@@ -72,40 +74,40 @@ This is an example of how a README(.rst) should look like:
 
     collective.fancystuff will make your Plone site more fancy.
     It can do cool things, and will make the task of keeping your site fancy a lot easier.
-    
-    The main audience for this are people who run a chocolate factory. 
+
+    The main audience for this are people who run a chocolate factory.
     But it also is useful for organisations planning on world domination.
-    
-    
+
+
     Features
     --------
 
     - Be awesome
     - Make things fancier
     - Works out of the box, but can also be customized. After installation, you will find a new item in your site control panel where to set various options.
-    
-    
+
+
     Examples
     --------
-    
+
     This add-on can be seen in action at the following sites:
     - http://fancysite.com
     - http://fluffystuff.org
-    
-    
+
+
     Documentation
     -------------
-    
+
     Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-    
-    
+
+
     Translations
     ------------
-    
-    This product has been translated into 
-    
+
+    This product has been translated into
+
     - Klingon (thanks, K'Plai)
-    
+
 
     Installation
     ------------
@@ -113,16 +115,16 @@ This is an example of how a README(.rst) should look like:
     Install collective.fancystuff by adding it to your buildout:
 
        [buildout]
- 
+
         ...
-    
-        eggs = 
+
+        eggs =
             collective.fancystuff
-    
-        
+
+
     and then running "bin/buildout"
 
-    
+
 
     Contribute
     ----------
