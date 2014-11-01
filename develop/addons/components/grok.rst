@@ -227,6 +227,36 @@ because ``BrowserView`` base class doesn't do this.
             self.update()
             return self.index()  # Or self.render() for grok.CodeView
 
+
+Grok static media folder
+=========================
+
+Learn more about :doc:`Resource directories </develop/adapt-and-extend/theming/temaplates_css/resourcefolder>`.
+
+.. warning:: Since five.grok 1.3.0 this method does not work.
+
+The easiest way to manage static resources is to make use of the static resource directory feature in five.grok.
+Simply add a directory called static in the package and make sure that the ``<grok:grok package="." />``
+line appears in configure.zcml.
+
+Example how to include ``yourproduct.app/static`` folder as ``++resource++yourproduct.app`` URL.
+
+.. code-block:: xml
+
+        <configure
+            ...
+            xmlns:grok="http://namespaces.zope.org/grok">
+
+          <grok:grok package="." />
+
+        </configure>
+
+If a ``static`` resource directory in the ``example.conference`` package contains a file called ``conference.css``,
+it will be accessible on a URL like ``http://<server>/site/++resource++example.conference/conference.css``.
+The resource name is the same as the package name wherein the static directory appears.
+
+
+
 More info
 ===========
 
