@@ -552,12 +552,11 @@ Example view code::
 
     import requests
 
-    from Products.CMFCore.interfaces import ISiteRoot
-    from five import grok
-
+    from Products.Five import BrowserView
     from requests.models import Request
 
-    class Purge(grok.CodeView):
+
+    class Purge(BrowserView):
         """
         Purge upstream cache from all entries.
 
@@ -569,12 +568,7 @@ Example view code::
 
         """
 
-        grok.context(ISiteRoot)
-
-        # Onlyl site admins can use this
-        grok.require("cmf.ManagePortal")
-
-        def render(self):
+        def __call__(self):
             """
             Call the parent cache using Requets Python library and issue PURGE command for all URLs.
 
@@ -608,6 +602,17 @@ Example view code::
             if hasattr(resp, "body"):
                 text.append(str(resp.body))
 
+
+Registering the view in ZCML:
+
+.. code-block:: xml
+
+    <browser:view
+            for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+            name="purge"
+            class=".views.Purge"
+            permission="cmf.ManagePortal"
+            />
 
 
 More info
