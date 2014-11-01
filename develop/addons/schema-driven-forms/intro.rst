@@ -12,8 +12,7 @@ Over the years, several approaches have evolved to deal with forms. A few of the
    another view), where the request is validated and processed in custom
    Python code. This is very flexible and requires little learning, but
    can also be fairly cumbersome, and it is harder to maintain a common
-   look and feel and behaviour across all forms. See the :doc:`five.grok
-   view documentation </develop/addons/five-grok/browser-components/views>` for some hints on one way to build such views.
+   look and feel and behaviour across all forms. See the :doc:`Views and viewlets </develop/plone/views/index>` for some hints on one way to build such views.
 -  Using the *CMFFormController* library. This relies on special page
    objects known as “controller page templates” that submit to
    “controller python scripts”. The form controller takes care of the
