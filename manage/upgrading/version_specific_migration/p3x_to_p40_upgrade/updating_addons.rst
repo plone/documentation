@@ -801,7 +801,6 @@ The new way to register a vocabulary is like this:
 
 See more information about :doc:`utilities </develop/addons/components/utilities>` and :doc:`vocabularies </develop/plone/forms/vocabularies>`.
 
-Or register your vocabularies using a grok utility. Read more about :doc:`how vocabularies are handled the grok way </external/plone.app.dexterity/docs/advanced/vocabularies>` in the dexterity developer manual.
 
 Folder implementation changes
 =============================
