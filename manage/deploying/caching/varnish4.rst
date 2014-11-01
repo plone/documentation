@@ -569,7 +569,6 @@ Example view code::
 
     import requests
 
-    from Products.CMFPlone.interfaces import IPloneSiteRoot
     from Products.Five import BrowserView
 
     from requests.models import Request
