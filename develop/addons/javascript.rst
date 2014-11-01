@@ -260,8 +260,7 @@ certain widgets or certain pages only.
 
 * A special condition is created in Python code to determine when to include the script or not
 
-* Javascripts are served from a *static* media folder in
-  a Plone add-on utilizing Grok framework
+* Javascripts are served from a *static* media folder.
 
 The example here shows how to include a Javascript
 if the following conditions are met
@@ -305,28 +304,24 @@ jsregistry.xml:
 
         </object>
 
-We create special conditions using :doc:`Grok </develop/addons/components/grok>` views.
+We create special conditions using :doc:`Views </develop/plone/views/browserviews>` views.
 
 .. code-block:: python
 
-        # Zope imports
+        # imports
         from Acquisition import aq_inner
         from zope.interface import Interface
-        from five import grok
+        from Products.Five import BrowserView
         from zope.component import getMultiAdapter
 
         from yourcompany.app.behavior.lsmintegration import IYourWidgetIntegration
 
-        class IntegrationJavascriptHelper(grok.CodeView):
+        class IntegrationJavascriptHelper(BrowserView):
             """ Used by portal_javascripts to determine when to include our
                 custom Javascript integration code.
 
             This view is referred from the expression in jsregistry.xml.
             """
-
-            # The view is available on every content item type
-            grok.context(Interface)
-            grok.name("integration_javascript")
 
             def render(self):
                 """ Check if we are in a specific content type.
@@ -361,7 +356,6 @@ We create special conditions using :doc:`Grok </develop/addons/components/grok>`
 
             Subclass the existing checked and add more limiting conditions.
             """
-            grok.name("edit_integration_javascript")
 
             def render(self):
                 """
@@ -382,6 +376,24 @@ We create special conditions using :doc:`Grok </develop/addons/components/grok>`
                     return True
 
                 return False
+
+
+Related ZCML registration:
+
+.. code-block:: xml
+
+    <browser:page
+        name="integration_javascript"
+        for="*"
+        class=".views.IntegrationJavascriptHelper"
+        />
+
+    <browser:page
+        name="edit_integration_javascript"
+        for="*"
+        class=".views.EditModeIntegrationJavascriptHelper"
+        />
+
 
 Popup overlays and forms
 --------------------------
