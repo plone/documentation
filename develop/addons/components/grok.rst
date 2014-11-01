@@ -257,6 +257,57 @@ The resource name is the same as the package name wherein the static directory a
 
 
 
+Subscribing using the ``grok`` API
+-----------------------------------------
+
+.. note::
+
+    Since the release of Plone 4, this (grok) method is simpler.
+
+Example subscription which subscribes a content type to add and edit events::
+
+    from five import grok
+    from Products.Archetypes.interfaces import IObjectEditedEvent
+    from Products.Archetypes.interfaces import IObjectInitializedEvent
+
+    class ORAResearcher(folder.ATFolder, orabase.ORABase, ResearcherMixin):
+        """A Researcher synchronized from ORA.
+        """
+        implements(IORAResearcher, IResearcher)
+
+        meta_type = "ORAResearcher"
+        schema = ORAResearcherSchema
+
+        # Callbacks for both add and edit events
+
+        @grok.subscribe(ORAResearcher, IObjectEditedEvent)
+        def object_edited(context, event):
+            orabase.object_edited(context, event)
+
+        @grok.subscribe(ORAResearcher, IObjectInitializedEvent)
+        def object_added(context, event):
+            orabase.object_added(context, event)
+
+
+Example subscription which subscribes events without context::
+
+        # Really old stuff
+        from ZPublisher.interfaces import IPubStart
+
+        # Modern stuff
+        from five import grok
+
+        @grok.subscribe(IPubStart)
+        def check_redirect(e):
+            """ Check if we have a custom redirect script in Zope
+            application server root.
+            """
+
+For more information, see:
+
+* :doc:`Using Grok </develop/addons/five-grok/core-components/events>`
+
+
 More info
 ===========
 
