@@ -60,8 +60,7 @@ Setting per-view cache rules
 Here is an example how you can define a cache rules for your custom view
 class.  In this example we want to cache our site front page in Varnish,
 because is is very complex, and wakes up a lot of ZODB objects. The front
-page is programmed using ``five.grok.View`` class, but it could be any kind
-of view class that Plone understands.
+page is programmed using :doc:`BrowserView </develop/plone/views/browserviews>`.
 
 Our front page is subject to moderate changes as new content comes in, but
 the changes are not time critical, so we define a one hour timeout for
@@ -98,7 +97,7 @@ Here is our ``configure.zcml`` for our custom add-on ``browser`` package:
           description="Site homepage view"
           />
 
-      <!-- We include one grok.View class in our ruleset. This view is being
+      <!-- We include one BrowserView class in our ruleset. This view is being
           used at the site front page. -->
       <cache:ruleset
           for=".views.CoursePage"
@@ -259,17 +258,16 @@ Related ZCML
      </configure>
 
 Related view code::
+    from Products.Five import BrowserView
 
-    class ImagePortletImageDownload(ImagePortletHelper):
+    class ImagePortletImageDownload(BrowserView):
         """
         Expose image fields as downloadable BLOBS from the image portlet.
 
         Allow set caching rules (content caching for this view)
         """
-        grok.context(Interface)
-        grok.name("image-portlet-downloader")
 
-        def render(self):
+        def __call__(self):
             """
 
             """
@@ -315,5 +313,16 @@ When we refer to the view in ``<img src>`` we use modified time parameter::
 
         return imageURL
 
+
+Related ZCML registration:
+
+.. code-block:: xml
+
+    <browser:page
+        name="image-portlet-downloader"
+        for="*"
+        permission="zope.Public"
+        class=".views.ImagePortletImageDownload"
+        />
 
 .. |---| unicode:: U+02014 .. em dash
