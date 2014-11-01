@@ -45,7 +45,7 @@ Below is an example how to work around this for jQuery getJSON() calls by
   to make server-to-server call and return it as it would be a local call, thus
   working around cross-domain restriction
 
-This example is for Plone/Grok, but the code is easily port to other web frameworks.
+This example is for Plone, but the code is easily port to other web frameworks.
 
 .. note ::
 
@@ -113,12 +113,11 @@ The server-side view::
         import urllib2
         from urllib2 import HTTPError
 
-        from five import grok
-        from Products.CMFCore.interfaces import ISiteRoot
+        from Products.five import BrowserView
         from mysite.app import options
 
 
-        class Proxy(grok.CodeView):
+        class Proxy(BrowserView):
             """
             Pass a AJAX call to a remote server. This view is mainly indended to be used
             with jQuery.getJSON() requests.
@@ -127,10 +126,6 @@ The server-side view::
 
             Asssuming only HTTP GET requests are made.s
             """
-
-            # This view is available only at the root of Plone site
-            grok.context(ISiteRoot)
-
 
             def isAllowed(self, url):
                 """
@@ -210,6 +205,18 @@ The server-side view::
                     logger.error(e.read())
 
                     raise e
+
+Registering the view in ZCML:
+
+.. code-block:: xml
+
+    <browser:view
+            for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+            name="proxy"
+            class=".views.Proxy"
+            permission="zope.Public"
+            />
+
 
 Speeding up AJAX loaded content HTML
 ====================================================================
