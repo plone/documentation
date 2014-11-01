@@ -113,7 +113,7 @@ The server-side view::
         import urllib2
         from urllib2 import HTTPError
 
-        from Products.five import BrowserView
+        from Products.Five import BrowserView
         from mysite.app import options
 
 
