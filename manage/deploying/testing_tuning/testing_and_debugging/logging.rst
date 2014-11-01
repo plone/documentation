@@ -109,32 +109,27 @@ the status of long running operations and later show to the
 end user, who does not have access to file system logs,
 how the operation proceeded.
 
-Below is an Grok view code example.
+Below is an :doc:`BrowserView </develop/plone/views/browserviews>` code example.
 
 Example view code::
 
         import logging
         from StringIO import StringIO
 
-        from five import grok
+        from Products.Five import BrowserView
 
         from xxx.objects.interfaces import IXXXResearcher
-        from Products.CMFCore.interfaces import ISiteRoot
         from Products.statusmessages.interfaces import IStatusMessage
 
         from xxx.objects.sync import sync_with_xxx
 
-        grok.templatedir("templates")
-
         logger = logging.getLogger("XXX sync")
 
 
-        class SyncAll(grok.View):
+        class SyncAll(BrowserView):
             """
             Update all researcher data on the site from XXX (admin action)
             """
-
-            grok.context(ISiteRoot)
 
             def sync(self):
                 """
@@ -192,7 +187,7 @@ Example view code::
 
                 return self.buffer.getvalue()
 
-            def update(self):
+            def __call__(self):
                 """ Process the form.
 
                 Process the form, log the output and show the output to the user.
@@ -228,6 +223,7 @@ Example view code::
                     finally:
                         # Put log output for the page template access
                         self.logs = self.stopCapture()
+                return self.index()
 
 The related page template
 
@@ -264,6 +260,19 @@ The related page template
             </div>
         </body>
         </html>
+
+
+Registering the view in ZCML:
+
+.. code-block:: xml
+
+    <browser:view
+            for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+            name="syncall"
+            class=".views.SyncAll"
+            permission="cmf.ManagePortal"
+            />
+
 
 transaction_note()
 -------------------
