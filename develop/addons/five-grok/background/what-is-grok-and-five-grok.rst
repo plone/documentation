@@ -1,6 +1,10 @@
 What is Grok and five.grok?
 =============================
 
+.. warning::
+    Grok is not allowed for Plone core developement.
+    Grok is not recommended for Plone addon development.
+
 **Heritage and anthropology**
 
 This manual is about using *five.grok* to configure components in the

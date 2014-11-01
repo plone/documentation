@@ -2,6 +2,10 @@
  Grok framework
 ================
 
+.. warning::
+    Grok is not allowed for Plone core developement.
+    Grok is not recommended for Plone addon development.
+
 .. admonition:: Description
 
         Using Grok framework in Plone programming. Grok

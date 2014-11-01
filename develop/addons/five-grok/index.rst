@@ -7,6 +7,10 @@ five.grok, which brings convention-over-configuration to Zope 2 and Plone.**
 It will be useful to developers who want to learn how to configure
 Zope components using grok-style configuration instead of ZCML.
 
+.. warning::
+	Grok is not allowed for Plone core developement.
+	Grok is not recommended for Plone addon development.
+
 .. toctree::
    :maxdepth: 2
 
