@@ -21,7 +21,6 @@ We’ll create a module called *order.py* inside our package
 
 ::
 
-    from five import grok
     from plone.supermodel import model
     from plone.directives import form
 

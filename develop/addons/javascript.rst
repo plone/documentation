@@ -260,8 +260,7 @@ certain widgets or certain pages only.
 
 * A special condition is created in Python code to determine when to include the script or not
 
-* Javascripts are served from a *static* media folder in
-  a Plone add-on utilizing Grok framework
+* Javascripts are served from a *static* media folder.
 
 The example here shows how to include a Javascript
 if the following conditions are met
@@ -305,30 +304,26 @@ jsregistry.xml:
 
         </object>
 
-We create special conditions using :doc:`Grok </develop/addons/components/grok>` views.
+We create special conditions using :doc:`Views </develop/plone/views/browserviews>` views.
 
 .. code-block:: python
 
-        # Zope imports
+        # imports
         from Acquisition import aq_inner
         from zope.interface import Interface
-        from five import grok
+        from Products.Five import BrowserView
         from zope.component import getMultiAdapter
 
         from yourcompany.app.behavior.lsmintegration import IYourWidgetIntegration
 
-        class IntegrationJavascriptHelper(grok.CodeView):
+        class IntegrationJavascriptHelper(BrowserView):
             """ Used by portal_javascripts to determine when to include our
                 custom Javascript integration code.
 
             This view is referred from the expression in jsregistry.xml.
             """
 
-            # The view is available on every content item type
-            grok.context(Interface)
-            grok.name("integration_javascript")
-
-            def render(self):
+            def __call__(self):
                 """ Check if we are in a specific content type.
 
                 Check that the Dexterity content type has a certain
@@ -336,11 +331,6 @@ We create special conditions using :doc:`Grok </develop/addons/components/grok>`
 
                 Alternative, just check for a marker interface here.
                 """
-
-                # The render() method is the only traversable
-                # Grok CodeView method. It can be used for rendering
-                # HTML code, but also for utility views
-                # to return raw Python data
 
                 try:
                     # Check if a Dexterity behavior is available on the current context object
@@ -361,9 +351,8 @@ We create special conditions using :doc:`Grok </develop/addons/components/grok>`
 
             Subclass the existing checked and add more limiting conditions.
             """
-            grok.name("edit_integration_javascript")
 
-            def render(self):
+            def __call__(self):
                 """
                 @return True: If this template is rendered "Edit view" of the item
                 """
@@ -382,6 +371,24 @@ We create special conditions using :doc:`Grok </develop/addons/components/grok>`
                     return True
 
                 return False
+
+
+Related ZCML registration:
+
+.. code-block:: xml
+
+    <browser:page
+        name="integration_javascript"
+        for="*"
+        class=".views.IntegrationJavascriptHelper"
+        />
+
+    <browser:page
+        name="edit_integration_javascript"
+        for="*"
+        class=".views.EditModeIntegrationJavascriptHelper"
+        />
+
 
 Popup overlays and forms
 --------------------------
@@ -419,8 +426,7 @@ Here is described a way to pass data from site or context object to a Javascript
 For each page, we create a ``<script>`` section which will include all the options
 filled in by Python code.
 
-We create the script tag in ``<head>`` section using a :doc:`Grok viewlet </develop/plone/views/viewlets>`
-registered there.
+We create the script tag in ``<head>`` section using a :doc:`Viewlet </develop/plone/views/viewlets>`.
 
 viewlet.py::
 
@@ -437,17 +443,8 @@ viewlet.py::
         # Zope imports
         from Acquisition import aq_inner
         from zope.interface import Interface
-        from five import grok
+        from plone.app.layout.viewlets.common import ViewletBase
         from zope.component import getMultiAdapter
-
-        # Plone imports
-        from plone.app.layout.viewlets.interfaces import IHtmlHead
-
-        # The viewlets in this file are rendered on every content item type
-        grok.context(Interface)
-
-        # Use templates directory to search for templates.
-        grok.templatedir('templates')
 
         # The generated HTML snippet going to <head>
         TEMPLATE = u"""
@@ -456,7 +453,7 @@ viewlet.py::
         </script>
         """
 
-        class JavascriptSettingsSnippet(grok.Viewlet):
+        class JavascriptSettingsSnippet(ViewletBase):
             """ Include dynamic Javascript code in <head>.
 
             Include some code in <head> section which initializes
@@ -465,9 +462,6 @@ viewlet.py::
 
             Useful for settings.
             """
-
-            # This viewlet will be render()'ed in <head> section of Plone pages
-            grok.viewletmanager(IHtmlHead)
 
             def getSettings(self):
                 """
@@ -500,6 +494,15 @@ viewlet.py::
                 return html
 
 
+configure.zcml::
+    <browser:viewlet
+        name="javascriptsettingssnippet"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".viewlets.JavascriptSettingsSnippet"
+        permission="zope2.View"
+        />
+
+
 Passing settings on one page only
 ==================================
 
@@ -524,25 +527,12 @@ Here is an example like above, but is
 
 .. code-block:: python
 
-    class TranslatorMaster(grok.View):
+    from Products.Five import BrowserView
+
+    class TranslatorMaster(BrowserView):
         """
         Translate content to multiple languages on a single view.
         """
-
-        def getJavascriptContextVars(self):
-            """
-            @return: Python dictionary of settings
-            """
-
-            state = getMultiAdapter((self.context, self.request), name="plone_portal_state")
-
-
-            # Create youroptions Javascript object and populate in these variables
-            return {
-                # Javascript AJAX will call this view to populate the listing
-                "jsonContentLister" : "%s/%s" % (state.portal_url(), getattr(JSONContentListing, "grokcore.component.directive.name"))
-            }
-
 
         def getSetupJavascript(self):
             """
@@ -551,13 +541,23 @@ Here is an example like above, but is
             Generate Javascript code to set ``windows.silvupleOptions`` object from ``getJavascriptContextVars()``
             method output.
             """
-            settings = self.getJavascriptContextVars()
+            settings = {'my': 'settings'}
             json_snippet = json.dumps(settings)
 
             # Use Python string template facility to produce the code
             html = SETTINGS_TEMPLATE % { "name" : "silvupleOptions", "json" : json_snippet }
 
             return html
+
+Related ZCML registration:
+
+.. code-block:: xml
+
+    <browser:page
+        name="translatormaster"
+        for="*"
+        class=".views.TranslatorMaster"
+        />
 
 
 Generating Javascript dynamically

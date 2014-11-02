@@ -12,8 +12,7 @@ Over the years, several approaches have evolved to deal with forms. A few of the
    another view), where the request is validated and processed in custom
    Python code. This is very flexible and requires little learning, but
    can also be fairly cumbersome, and it is harder to maintain a common
-   look and feel and behaviour across all forms. See the :doc:`five.grok
-   view documentation </develop/addons/five-grok/browser-components/views>` for some hints on one way to build such views.
+   look and feel and behaviour across all forms. See the :doc:`Views and viewlets </develop/plone/views/index>` for some hints on one way to build such views.
 -  Using the *CMFFormController* library. This relies on special page
    objects known as “controller page templates” that submit to
    “controller python scripts”. The form controller takes care of the
@@ -63,13 +62,9 @@ packages in this tutorial. The most important packages are:
    widget, or specifying relative field ordering. We will use
    *plone.autoform* in this tutorial to simplify form setup.
 -  `plone.directives.form`_ provides tools for registering forms using
-   convention-over-configuration instead of ZCML. It depends on
-   `five.grok`_ and adds support for the patterns that apply to the
-   *grok.View* base class, including automatic template association. We
+   convention-over-configuration instead of ZCML. We
    will use *plone.directives.form* to configure our forms in this
-   manual. You can read more about this in the :doc:`five.grok manual </develop/addons/five-grok/index>`. We
-   will register all our forms using *plone.directives.form* in this
-   tutorial.
+   manual.
 
 A note about versions
 ---------------------
@@ -80,6 +75,5 @@ This manual is targeted at Plone 4.1 and above (Zope 2.13).
 .. _plone.app.z3cform: https://pypi.python.org/pypi/plone.app.z3cform
 .. _plone.autoform: https://pypi.python.org/pypi/plone.autoform
 .. _plone.directives.form: https://pypi.python.org/pypi/plone.directives.form
-.. _five.grok: https://pypi.python.org/pypi/five.grok
 .. _z3c.form: https://pypi.python.org/pypi/z3c.form
 

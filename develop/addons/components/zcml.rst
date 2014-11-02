@@ -34,10 +34,6 @@ Plone uses ZCML to:
 
     Everything you can do in ZCML can also be done in Python code.
 
-After developers found ZCML cumbersome, the
-:doc:`Grok framework </develop/addons/components/grok>` was created. Grok makes it possible
-use the ZCA without writing XML by enabling Python directives and function
-decorators to be used instead.
 
 More info:
 

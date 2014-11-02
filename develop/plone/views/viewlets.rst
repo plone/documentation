@@ -69,7 +69,7 @@ A viewlet consists of
 
 * A :doc:`browser layer </develop/plone/views/layers>` defining which add-on product must be installed, so that the viewlet is rendered
 
-* A related Grok or ZCML directives to register the viewlet to a correct viewlet manager with a correct layer
+* A ZCML directive to register the viewlet to a correct viewlet manager with a correct layer
 
 
 Re-using code from a View
@@ -90,69 +90,6 @@ These can be found in `plone.app.layout.viewlet module <https://github.com/plone
 The language selector lives in `plone.app.i18n.locales.browser <https://github.com/plone/plone.app.i18n/blob/master/plone/app/i18n/locales/browser/configure.zcml>`_,
 but it is a *view*. Don't know why.
 
-Creating a viewlet using Grok
-==================================
-
-:doc:`Grok framework </develop/addons/components/grok>` allows you to register a viewlet easily using Python directives.
-
-It is recommended that you use :doc:`Dexterity ZopeSkel add-on product code skeleton </develop/addons/paste>`
-where you add this code.
-
-Create *yourcomponent.app/yourcomponent/app/browser/viewlets.py*::
-
-        """
-
-            Viewlets related to application logic.
-
-        """
-
-        # Zope imports
-        from Acquisition import aq_inner
-        from zope.interface import Interface
-        from five import grok
-        from zope.component import getMultiAdapter
-
-        # Plone imports
-        from plone.app.layout.viewlets.interfaces import IHtmlHead
-
-        from yourcompany.app.behavior.lsmintegration import ISomeDexterityBehavior
-
-        # The viewlets in this file are rendered on every content item type
-        grok.context(Interface)
-
-        # Use templates directory to search for templates.
-        grok.templatedir('templates')
-
-        class JavascriptSnippet(grok.Viewlet):
-            """ A viewlet which will include some custom code in <head> if the condition is met """
-
-            grok.viewletmanager(IHtmlHead)
-
-            def available(self):
-                """ Check if we are in a specific content type.
-
-                Check that the Dexterity content type has a certain
-                behavior set on it through Dexterity settings panel.
-                """
-                try:
-                    avail = ISomeDexterityBehavior(self.context)
-                except TypeError:
-                    return False
-
-                return True
-
-
-Then create folder ``yourcomponent.app/yourcomponent/app/browser/templates`` where you add the related ``javascripthead.pt``:
-
-.. code-block:: html
-
-        <tal:extra-head omit-tag="" condition="viewlet/available">
-                <meta name="something" content="your custom meta">
-        </tal:extra-head>
-
-More info
-
-* http://vincentfretin.ecreall.com/articles/using-five.grok-to-add-viewlets
 
 Creating a viewlet manager
 -----------------------------
@@ -185,27 +122,13 @@ and `plone.app.viewletmanager.manager.OrderedViewletManager <https://github.com/
 
 More info
 
-* http://grok.zope.org/doc/current/reference/components.html?highlight=viewlet#grok.ViewletManager
-
 * http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto
 
 * http://plone.org/documentation/manual/theme-reference/elements/viewletmanager/anatomy/
 
 
-
-Creating a viewlet manager: Grok way
-============================================
-
-Recommended if you want to keep the number of files and lines of XML and Python to a minimum.
-
-An example here for related Python code::
-
-* http://code.google.com/p/plonegomobile/source/browse/gomobiletheme.basic/trunk/gomobiletheme/basic/viewlets.py#80
-
-Creating a viewlet manager: ZCML way
-============================================
-
-For those who want to write XML.
+Creating a viewlet manager
+===========================
 
 Usually viewlet managers are dummy interfaces and the actual implementation
 comes from ``plone.app.viewletmanager.manager.OrderedViewletManager``.
@@ -299,8 +222,6 @@ Yo dawg - we put viewlets in your viewlets so you can render viewlets!
 
 Only six files needed to change a bit of HTML code - welcome to the land of productivity!
 On the top of this you also need to create a new ``viewlets.xml`` export for your theme.
-
-After all this ZCML typing you probably should just look the grok example above.
 
 More info
 
@@ -437,79 +358,7 @@ There are two primary methods to render viewlets only on some pages
 
 * Hard-code a condition to your viewlet in Python code.
 
-Below is an example of overriding a render() method to conditionally render your viewlet using Grok viewlets.
-
-Viewlet code::
-
-    from zope.interface import Interface
-    from five import grok
-    from Products.CMFCore.interfaces import IContentish
-    from plone.app.layout.viewlets.interfaces import IAboveContentTitle
-
-    class TopTabNavigation(grok.Viewlet):
-        """
-
-        """
-        grok.context(Interface)
-        grok.viewletmanager(IAboveContentTitle)
-
-        def getTabSources(self):
-            """ List content items in the folder of this item.
-
-            """
-            parent = self.context.aq_parent
-            for obj in parent.objectValues():
-                if IContentish.providedBy(obj):
-                    yield obj
-
-
-        def getTabData(self):
-            """
-            Generate dict of data needed to render navigation tabs.
-            """
-
-            self.tabs = self.getTabSources()
-
-            published = self.request.get("PUBLISHED", None)
-
-            if hasattr(published, "context"):
-                published = published.context
-
-            for t in self.tabs:
-
-                active = (t == published)
-
-                data = {
-                        "url" : t.absolute_url(),
-                        "class" : "navbar_selected" if active else "navbar_normal",
-                        "title" : t.Title(),
-                        "id" : t.getId()
-                }
-                yield data
-
-        def hasTabs(self):
-            """
-            Defined in dynamicpage.py
-            """
-            return getattr(self.context, "showTabs", False)
-
-Page template code
-
-.. code-block:: html
-
-    <div class="navmenubar navmenubar-viewlet" tal:condition="viewlet/hasTabs">
-        <ul id="navigationBar">
-                <tal:tab repeat="tab viewlet/getTabData">
-                <li tal:attributes="class tab/class; id tab/id">
-                        <a tal:attributes="href tab/url" tal:content="tab/title" />
-
-                </tal:tab>
-
-                <li class="visualClear"><!-- --></li>
-        </ul>
-    </div>
-
-Below is an example of overriding a render() method to conditionally render your viewlet using Zope 3 viewlets::
+Below is an example of overriding a render() method to conditionally render your viewlet::
 
 
         import Acquisition

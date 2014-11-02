@@ -27,8 +27,6 @@ Introduction
 
 Read more in
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/utilities
-
 * `zope.component documentation <http://docs.zope.org/zope.component/>`_.
 
 Local and global utilities

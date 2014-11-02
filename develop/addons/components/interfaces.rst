@@ -212,22 +212,26 @@ to documents, events and news items:
     </class>
 
 
-Then we can have a viewlet for these content types only using the following
-(grok example)::
+Then we can have a view for these content types only using the following::
 
-    from five import grok
+.. code-block:: python
+
+    from Products.Five import BrowserView
     from interfaces import ILastModifiedSupport
     from plone.app.layout.viewlets.interfaces import IBelowContent
 
-    class LastModified(grok.Viewlet):
-        """ Viewlet to show the document last modification time.
-
-        This is enabled on Page, Event and News Item which implement
-        ILastModifiedSupport marker interface.
+    class LastModified(BrowserView):
+        """ View for .interfaces.ILastModifiedSupport only
         """
 
-        grok.context(ILastModifiedSupport)
-        grok.viewletmanager(IBelowContent)
+.. code-block:: xml
+
+    <browser:view
+            for=".interfaces.ILastModifiedSupport"
+            name="lastmodified"
+            class=".views.LastModified"
+            template="templates/lastmodified.pt"
+            />
 
 Related:
 

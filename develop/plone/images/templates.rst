@@ -119,16 +119,8 @@ Layer is optional: the static media path is available only
 when your add-on product is installed if the
 :doc:`layer </develop/plone/views/layers>` is specified.
 
-Grok static media folder
-------------------------
+Also see :doc:`Resource folders </adapt-and-extend/theming/templates_css/resourcefolders>`
 
-This applies for add-on products using :doc:`five.grok </develop/addons/components/grok>` API.
-
-Create folder ``yourcompany.product/yourcompany/product/static``
-
-This will be automatically picked up as ``++resource++yourcompany.product/``
-static media path
-when a Grok'ed add-on is launched.
 
 Rendering Image content items
 ======================================

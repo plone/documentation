@@ -490,7 +490,7 @@ It incorporates the original `glossary on plone.org
         Plone.
 
     grok
-        See the grok project documentation.
+        See :doc:`Grok framework </develop/addons/components/grok>`
 
     .po
         The file format used by the :term:`gettext` translation system.

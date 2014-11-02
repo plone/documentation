@@ -321,7 +321,6 @@ For example, a Plone add-on might read::
 
     install_requires=['setuptools',
             # -*- Extra requirements: -*-
-            "five.grok",
             "plone.directives.form"
             ],
 

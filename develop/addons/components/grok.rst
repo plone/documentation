@@ -2,6 +2,10 @@
  Grok framework
 ================
 
+.. warning::
+    Grok is not allowed for Plone core developement.
+    Grok is not recommended for Plone addon development.
+
 .. admonition:: Description
 
         Using Grok framework in Plone programming. Grok
@@ -226,6 +230,166 @@ because ``BrowserView`` base class doesn't do this.
         def __call__(self):
             self.update()
             return self.index()  # Or self.render() for grok.CodeView
+
+
+Grok static media folder
+=========================
+
+Learn more about :doc:`Resource directories </develop/adapt-and-extend/theming/temaplates_css/resourcefolder>`.
+
+.. warning:: Since five.grok 1.3.0 this method does not work.
+
+The easiest way to manage static resources is to make use of the static resource directory feature in five.grok.
+Simply add a directory called static in the package and make sure that the ``<grok:grok package="." />``
+line appears in configure.zcml.
+
+Example how to include ``yourproduct.app/static`` folder as ``++resource++yourproduct.app`` URL.
+
+.. code-block:: xml
+
+        <configure
+            ...
+            xmlns:grok="http://namespaces.zope.org/grok">
+
+          <grok:grok package="." />
+
+        </configure>
+
+If a ``static`` resource directory in the ``example.conference`` package contains a file called ``conference.css``,
+it will be accessible on a URL like ``http://<server>/site/++resource++example.conference/conference.css``.
+The resource name is the same as the package name wherein the static directory appears.
+
+
+
+Subscribing using the ``grok`` API
+-----------------------------------------
+
+.. note::
+
+    Since the release of Plone 4, this (grok) method is simpler.
+
+Example subscription which subscribes a content type to add and edit events::
+
+    from five import grok
+    from Products.Archetypes.interfaces import IObjectEditedEvent
+    from Products.Archetypes.interfaces import IObjectInitializedEvent
+
+    class ORAResearcher(folder.ATFolder, orabase.ORABase, ResearcherMixin):
+        """A Researcher synchronized from ORA.
+        """
+        implements(IORAResearcher, IResearcher)
+
+        meta_type = "ORAResearcher"
+        schema = ORAResearcherSchema
+
+        # Callbacks for both add and edit events
+
+        @grok.subscribe(ORAResearcher, IObjectEditedEvent)
+        def object_edited(context, event):
+            orabase.object_edited(context, event)
+
+        @grok.subscribe(ORAResearcher, IObjectInitializedEvent)
+        def object_added(context, event):
+            orabase.object_added(context, event)
+
+
+Example subscription which subscribes events without context::
+
+        # Really old stuff
+        from ZPublisher.interfaces import IPubStart
+
+        # Modern stuff
+        from five import grok
+
+        @grok.subscribe(IPubStart)
+        def check_redirect(e):
+            """ Check if we have a custom redirect script in Zope
+            application server root.
+            """
+
+For more information, see:
+
+* :doc:`Using Grok </develop/addons/five-grok/core-components/events>`
+
+
+Creating a viewlet using Grok
+==================================
+
+:doc:`Grok framework </develop/addons/components/grok>` allows you to register a viewlet easily using Python directives.
+
+It is recommended that you use :doc:`Dexterity ZopeSkel add-on product code skeleton </develop/addons/paste>`
+where you add this code.
+
+Create *yourcomponent.app/yourcomponent/app/browser/viewlets.py*::
+
+        """
+
+            Viewlets related to application logic.
+
+        """
+
+        # Zope imports
+        from Acquisition import aq_inner
+        from zope.interface import Interface
+        from five import grok
+        from zope.component import getMultiAdapter
+
+        # Plone imports
+        from plone.app.layout.viewlets.interfaces import IHtmlHead
+
+        from yourcompany.app.behavior.lsmintegration import ISomeDexterityBehavior
+
+        # The viewlets in this file are rendered on every content item type
+        grok.context(Interface)
+
+        # Use templates directory to search for templates.
+        grok.templatedir('templates')
+
+        class JavascriptSnippet(grok.Viewlet):
+            """ A viewlet which will include some custom code in <head> if the condition is met """
+
+            grok.viewletmanager(IHtmlHead)
+
+            def available(self):
+                """ Check if we are in a specific content type.
+
+                Check that the Dexterity content type has a certain
+                behavior set on it through Dexterity settings panel.
+                """
+                try:
+                    avail = ISomeDexterityBehavior(self.context)
+                except TypeError:
+                    return False
+
+                return True
+
+
+Then create folder ``yourcomponent.app/yourcomponent/app/browser/templates`` where you add the related ``javascripthead.pt``:
+
+.. code-block:: html
+
+        <tal:extra-head omit-tag="" condition="viewlet/available">
+                <meta name="something" content="your custom meta">
+        </tal:extra-head>
+
+More info
+
+* http://vincentfretin.ecreall.com/articles/using-five.grok-to-add-viewlets
+
+
+Creating a viewlet manager: Grok way
+============================================
+
+Recommended if you want to keep the number of files and lines of XML and Python to a minimum.
+
+An example here for related Python code::
+
+* http://code.google.com/p/plonegomobile/source/browse/gomobiletheme.basic/trunk/gomobiletheme/basic/viewlets.py#80
+
+More info
+
+* http://grok.zope.org/doc/current/reference/components.html?highlight=viewlet#grok.ViewletManager
+
 
 More info
 ===========

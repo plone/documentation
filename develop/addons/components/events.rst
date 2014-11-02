@@ -27,10 +27,6 @@ Some of the notable characteristics of the Plone event system are:
 * exceptions raised in an event handler will interrupt the request
   processing.
 
-For more information, see:
-
-* http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/events
-
 Registering an event handler
 ============================
 
@@ -71,60 +67,6 @@ Create your.product/your/product/your_python_file.py and insert::
 For Dexterity-contenttype's and additional ZOPE-Illumination see also:
  :doc:`event handler documentation </external/plone.app.dexterity/docs/advanced/event-handlers>`
 
-
-
-Subscribing using the ``grok`` API
------------------------------------------
-
-.. note::
-
-    Since the release of Plone 4, this (grok) method is simpler.
-
-Example subscription which subscribes a content type to add and edit events::
-
-    from five import grok
-    from Products.Archetypes.interfaces import IObjectEditedEvent
-    from Products.Archetypes.interfaces import IObjectInitializedEvent
-
-    class ORAResearcher(folder.ATFolder, orabase.ORABase, ResearcherMixin):
-        """A Researcher synchronized from ORA.
-        """
-        implements(IORAResearcher, IResearcher)
-
-        meta_type = "ORAResearcher"
-        schema = ORAResearcherSchema
-
-        # Callbacks for both add and edit events
-
-        @grok.subscribe(ORAResearcher, IObjectEditedEvent)
-        def object_edited(context, event):
-            orabase.object_edited(context, event)
-
-        @grok.subscribe(ORAResearcher, IObjectInitializedEvent)
-        def object_added(context, event):
-            orabase.object_added(context, event)
-
-
-Example subscription which subscribes events without context::
-
-        # Really old stuff
-        from ZPublisher.interfaces import IPubStart
-
-        # Modern stuff
-        from five import grok
-
-        @grok.subscribe(IPubStart)
-        def check_redirect(e):
-            """ Check if we have a custom redirect script in Zope
-            application server root.
-            """
-
-
-For more information, see:
-
-* :doc:`Using Grok </develop/addons/components/grok>`
-
-* http://docs.plone.org/develop/addons/five-grok/core-components/events.html
 
 Subscribing using ZCML
 ----------------------
