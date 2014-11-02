@@ -138,9 +138,6 @@ To see the translation::
     >>> translate(my_translatable_text)
     u"The text of the translation." # This is the corresponding msgstr from the .po file
 
-For more information see:
-
-* http://grok.zope.org/documentation/how-to/how-to-internationalize-your-application
 
 Marking translatable strings in TAL page templates
 ---------------------------------------------------
