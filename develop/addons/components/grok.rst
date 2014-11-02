@@ -312,6 +312,85 @@ For more information, see:
 * :doc:`Using Grok </develop/addons/five-grok/core-components/events>`
 
 
+Creating a viewlet using Grok
+==================================
+
+:doc:`Grok framework </develop/addons/components/grok>` allows you to register a viewlet easily using Python directives.
+
+It is recommended that you use :doc:`Dexterity ZopeSkel add-on product code skeleton </develop/addons/paste>`
+where you add this code.
+
+Create *yourcomponent.app/yourcomponent/app/browser/viewlets.py*::
+
+        """
+
+            Viewlets related to application logic.
+
+        """
+
+        # Zope imports
+        from Acquisition import aq_inner
+        from zope.interface import Interface
+        from five import grok
+        from zope.component import getMultiAdapter
+
+        # Plone imports
+        from plone.app.layout.viewlets.interfaces import IHtmlHead
+
+        from yourcompany.app.behavior.lsmintegration import ISomeDexterityBehavior
+
+        # The viewlets in this file are rendered on every content item type
+        grok.context(Interface)
+
+        # Use templates directory to search for templates.
+        grok.templatedir('templates')
+
+        class JavascriptSnippet(grok.Viewlet):
+            """ A viewlet which will include some custom code in <head> if the condition is met """
+
+            grok.viewletmanager(IHtmlHead)
+
+            def available(self):
+                """ Check if we are in a specific content type.
+
+                Check that the Dexterity content type has a certain
+                behavior set on it through Dexterity settings panel.
+                """
+                try:
+                    avail = ISomeDexterityBehavior(self.context)
+                except TypeError:
+                    return False
+
+                return True
+
+
+Then create folder ``yourcomponent.app/yourcomponent/app/browser/templates`` where you add the related ``javascripthead.pt``:
+
+.. code-block:: html
+
+        <tal:extra-head omit-tag="" condition="viewlet/available">
+                <meta name="something" content="your custom meta">
+        </tal:extra-head>
+
+More info
+
+* http://vincentfretin.ecreall.com/articles/using-five.grok-to-add-viewlets
+
+
+Creating a viewlet manager: Grok way
+============================================
+
+Recommended if you want to keep the number of files and lines of XML and Python to a minimum.
+
+An example here for related Python code::
+
+* http://code.google.com/p/plonegomobile/source/browse/gomobiletheme.basic/trunk/gomobiletheme/basic/viewlets.py#80
+
+More info
+
+* http://grok.zope.org/doc/current/reference/components.html?highlight=viewlet#grok.ViewletManager
+
+
 More info
 ===========
 
