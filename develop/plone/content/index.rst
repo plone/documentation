@@ -37,13 +37,11 @@ There are two different subsystems to create content objects in Plone
     ownership
     timestamps
     dynamic_views
-    behaviors
     history
     importexport
     events
     content_rules
     archetypes/index
-    dexterity
 
 
 

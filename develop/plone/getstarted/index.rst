@@ -15,9 +15,6 @@ it is suggested that you read the `Professional Plone 4 Development book
 <http://www.packtpub.com/professional-plone-4-development/book>`_
 before you attempt to develop your own solutions.
 
-If you quickly want to learn about current best-practices in developing with Plone you should also work through the
-`Todo list application tutorial <http://tutorialtodoapp.readthedocs.org/en/latest/index.html>`_.
-
 Plone runs on the top of the `Zope 2 application server <zope2.zope.org/>`_, meaning that one Zope 2 server process
 can contain and host several Plone sites. Plone also uses Zope 3 components. Zope 3 is not an upgrade for Zope 2,
 but a separate project.
@@ -111,7 +108,7 @@ you can create a code skeleton (scaffold) for it using :doc:`Plone ZopeSkel code
 
 Please read how to use :doc:`ZopeSkel to bootstrap your first add-on </develop/addons/paste>`.
 
-If you want to create a package with Dexterity content types please read about :doc:`Setting up a Dexterity project</external/plone.app.dexterity/docs/prerequisite>`.
+
 
 Plone development workflow
 ----------------------------
@@ -140,7 +137,7 @@ Plone add-on features
 Plone add-ons usually:
 
 * Create custom :doc:`content types </develop/plone/content/index>` or extend existing ones for your specialized need. Plone has
-  two subsystems for <content types: :doc:`Dexterity (new) </develop/plone/content/dexterity>` and :doc:`Archetypes (old) </develop/plone/content/archetypes/index>`.
+  two subsystems for content types: Dexterity and :doc:`Archetypes (old) </develop/plone/content/archetypes/index>`.
 
 * Add new :doc:`views </develop/plone/views/browserviews>` for your site and its content.
 

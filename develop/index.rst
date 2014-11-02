@@ -18,65 +18,6 @@ Programming with Plone
 
    plone/index
 
-Developing for Plone Core
--------------------------
-
-
-.. toctree::
-   :maxdepth: 2
-
-   plone-coredev/index
-
-Dev helper packages
----------------------
-
-plone.app.testing
-^^^^^^^^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   /external/plone.app.testing/docs/source/index
-
-plone.api
-^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   /external/plone.api/docs/index
-
-plone.app.multilingual
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   /external/plone.app.multilingual/docs/index
-
-plone.app.contenttypes
-^^^^^^^^^^^^^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   /external/plone.app.contenttypes/docs/README
-
-plone.app.contentlisting
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   /external/plone.app.contentlisting/docs/README
-
-plone.app.robotframework
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   /external/plone.app.robotframework/docs/source/index
 
 
 Importing content from other systems
@@ -94,12 +35,9 @@ Tutorials
 
 Mastering Plone is intended as a week-long training for people who are new to Plone or want to learn about the current best-practices of Plone-development.
 
-It is in active use by various trainers in the Plone world, and is being developed as a 'collaborative syllabus'. 
+It is in active use by various trainers in the Plone world, and is being developed as a 'collaborative syllabus'.
 
 
-.. toctree::
-   :maxdepth: 1
 
-   /external/tutorial.todoapp/docs/index
 
 

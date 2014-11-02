@@ -12,19 +12,6 @@
 Creating content objects
 ========================
 
-Permission-aware way (Dexterity)
------------------------------------
-
-These instructions apply for :doc:`Dexterity </develop/plone/content/dexterity>` content
-types.
-
-Example::
-
-    from plone.dexterity.utils import createContentInContainer
-
-    # Factory-type information id is the same as in types.xml
-    # optionally you can set checkConstraints=False to skip permission checks
-    item = createContentInContainer(folder, "your.app.dexterity.fti.information", title=title)
 
 
 Permission-aware way (Archetypes and Dexterity)
@@ -214,16 +201,6 @@ The behavior can be controlled with ``allowed_content_types`` setting.
 * You can change it in your add-on installer :doc:`GenericSetup
   </develop/addons/components/genericsetup>` profile.
 
-Example for :doc:`Dexterity content type </develop/plone/content/dexterity>`. The file
-would be something like
-``profiles/default/types/yourcompany.app.typeid.xml``::
-
-    <!-- List content types we allow here -->
-    <property name="filter_content_types">True</property>
-    <property name="allowed_content_types">
-          <element value="yourcompany.app.courseinfo" />
-    </property>
-    <property name="allow_discussion">False</property>
 
 
 Example for :doc:`Archetypes content </develop/plone/content/archetypes/index>`. The file

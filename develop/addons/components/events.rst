@@ -27,9 +27,7 @@ Some of the notable characteristics of the Plone event system are:
 * exceptions raised in an event handler will interrupt the request
   processing.
 
-For more information, see:
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/events
 
 Registering an event handler
 ============================
@@ -58,7 +56,7 @@ that the code will only be executed if the object is one of your contenttype's.
 If you want this to be interface-agnostic, insert an asterix as a wildcard instead.
 
 The second line defines the event on which this should happen, which is here 'IObjectCreatedEvent' -- for Archetypes you should use 'Products.Archetypes.interfaces.IObjectInitializedEvent' instead.
-For more available possible events to be used as a trigger, see :doc:`event handler documentation </external/plone.app.dexterity/docs/advanced/event-handlers>`
+
 
 The third line gives the path to the script that is supposed to be executed.
 
@@ -68,8 +66,7 @@ Create your.product/your/product/your_python_file.py and insert::
 
         # do sth with your created contenttype
 
-For Dexterity-contenttype's and additional ZOPE-Illumination see also:
- :doc:`event handler documentation </external/plone.app.dexterity/docs/advanced/event-handlers>`
+
 
 
 

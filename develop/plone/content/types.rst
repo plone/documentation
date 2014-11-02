@@ -15,7 +15,7 @@ Plone has two kind of content types subsystems:
 
 * :doc:`Archetypes </develop/plone/content/archetypes/index>`-based
 
-* :doc:`Dexterity </develop/plone/content/dexterity>`-based (new)
+* Dexterity (covered in the Plone 4 documentation)
 
 * See also Plomino (later in this document).
 

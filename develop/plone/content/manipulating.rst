@@ -14,7 +14,6 @@ For more information, consult the manual of the relevant subsystem:
 
 * :doc:`Archetypes examples </old-reference-manuals/archetypes/index>`.
 
-* See :doc:`Manipulating Content Objects </external/plone.app.dexterity/docs/reference/manipulating-content-objects>` in the Dexterity manual
 
 Reindexing modified objects
 ===========================
