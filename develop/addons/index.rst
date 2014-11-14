@@ -7,6 +7,7 @@ Develop Plone Add ons
    paste
    dexterity
    components/index
+   mockup
    javascript
    javascript_standards
    ajax
