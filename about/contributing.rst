@@ -20,6 +20,8 @@ To reach this team for any questions please contact
 
 * *#plone-docs* IRC channel on irc.freenode.net
 
+For news and updates you can also follow `PloneDocs <https://twitter.com/plonedocs>`_ on twitter.
+
 
 License
 =======
