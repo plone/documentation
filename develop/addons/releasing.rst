@@ -38,10 +38,7 @@ Use the ``fullrelease`` command in the root of your checkout.
 
 .. code-block:: console
 
-        $ ../bin/paster addcontent -l
-        Available templates:
-            dexterity_behavior:  A behavior skeleton
-            dexterity_content:   A content type skeleton
+        $ fullrelease
 
 
 See also
