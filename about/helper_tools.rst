@@ -42,6 +42,9 @@ There is also a `online version <http://johnmacfarlane.net/pandoc/try/>`_.
 
 **Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
 
+One  particular which is really good for getting a impression how it will looks
+like in html is `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_ a live
+previewer/exporter for markup files (markdown, rst, creole, textile...).
 
 **Emacs** has a nice `rst-mode
 <http://docutils.sourceforge.net/docs/user/emacs.html>`_. This mode comes
