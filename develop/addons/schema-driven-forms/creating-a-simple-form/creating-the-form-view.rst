@@ -87,7 +87,7 @@ Let’s go through this in some detail:
    context); *grok.require()* specifies a permission which the user must
    have to be able to view the form (here, we use the standard
    *zope2.View* permission). See the views section in the :doc:`five.grok
-   manual </develop/addons/five-grok/index>` for more detail.
+   manual </appendices/five-grok/index>` for more detail.
 -  Next, we specify the schema via the *schema* attribute. This is the
    equivalent of assigning the *fields* attribute to a *field.Fields()*
    instance, as you may have seen in documentation for “plain”

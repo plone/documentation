@@ -309,7 +309,7 @@ Example subscription which subscribes events without context::
 
 For more information, see:
 
-* :doc:`Using Grok </develop/addons/five-grok/core-components/events>`
+* :doc:`Using Grok </appendices/five-grok/core-components/events>`
 
 
 Creating a viewlet using Grok

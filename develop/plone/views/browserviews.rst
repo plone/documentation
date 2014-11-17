@@ -51,7 +51,7 @@ introduce an easy API to Zope 3, including a way to set up and maintain
 views. For more information about how to use Grok (found in
 the `five.grok`_ package) with Plone,
 please read the `Plone and Grok tutorial
-<http://docs.plone.org/develop/addons/five-grok>`_.
+<http://docs.plone.org/appendices/five-grok>`_.
 
 .. note:: At the time of writing (Q1/2010), all project templates in Paster
    still use old-style Zope views.
