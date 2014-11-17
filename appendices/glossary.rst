@@ -484,11 +484,6 @@ It incorporates the original `glossary on plone.org
         and loaded. This is not the case in Zope 3. If you don't enable it
         explicitly, it will not be found.
 
-        The :term:`grok` project has taken a different approach to the same
-        problem, and allows component registration etc. to be done
-        declaratively from Python code. Both approaches are possible in
-        Plone.
-
     grok
         See :doc:`Grok framework </develop/addons/components/grok>`
 
