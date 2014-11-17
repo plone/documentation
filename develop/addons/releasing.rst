@@ -45,3 +45,4 @@ See also
 - :doc:`how to use virtualenv controlled non-system wide Python </develop/plone/getstarted/python>`
 - Full zest.releaser documentation http://zestreleaser.readthedocs.org/en/latest/
 - ":doc:`plone.api coding conventions </plone.api/docs/contribute/conventions>`"
+- http://opensourcehacker.com/2012/08/14/high-quality-automated-package-releases-for-python-with-zest-releaser/
