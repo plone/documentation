@@ -143,7 +143,7 @@ PluggableAuthService service.
 
 * ``IUserLoggedOutEvent``
 
-Here is an :doc:`Grok based </develop/addons/components/grok>` example how to redirect a user to
+Here is an :doc:`Grok based </appendices/grok>` example how to redirect a user to
 a custom folder after he/she logs in (overrides standard Plone login behavior)
 
 ``postlogin.py``::

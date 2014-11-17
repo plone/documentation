@@ -315,7 +315,7 @@ For more information, see:
 Creating a viewlet using Grok
 ==================================
 
-:doc:`Grok framework </develop/addons/components/grok>` allows you to register a viewlet easily using Python directives.
+:doc:`Grok framework </appendices/grok>` allows you to register a viewlet easily using Python directives.
 
 It is recommended that you use :doc:`Dexterity ZopeSkel add-on product code skeleton </develop/addons/paste>`
 where you add this code.

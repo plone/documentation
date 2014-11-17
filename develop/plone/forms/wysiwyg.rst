@@ -400,7 +400,7 @@ New TinyMCE shortcuts can be registered as global utility via
 
 We'll register our image bank as a shortcut into TinyMCE image dialog.
 
-First make sure your add-on is :doc:`grok'ed </develop/addons/components/grok>`.
+First make sure your add-on is :doc:`grok'ed </appendices/grok>`.
 
 Then drop in the following file ``shortcut.py`` file into your :doc:`add-on </develop/plone/getstarted/index>`::
 

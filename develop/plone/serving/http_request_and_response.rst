@@ -581,7 +581,7 @@ Read more at the `plone.postpublicationhook package page
 Custom redirect mappings
 ========================
 
-Below is an example how you use :doc:`five.grok </develop/addons/components/grok>`
+Below is an example how you use :doc:`five.grok </appendices/grok>`
 to install an event handler which checks in the site root for a TTW Python
 script and if such exist it asks it to provide a HTTP redirect.
 

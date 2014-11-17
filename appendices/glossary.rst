@@ -485,7 +485,7 @@ It incorporates the original `glossary on plone.org
         explicitly, it will not be found.
 
     grok
-        See :doc:`Grok framework </develop/addons/components/grok>`
+        See :doc:`Grok framework </appendices/grok>`
 
     .po
         The file format used by the :term:`gettext` translation system.
