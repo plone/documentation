@@ -6,6 +6,7 @@ Develop Plone Add ons
 
    paste
    dexterity
+   releasing
    components/index
    javascript
    javascript_standards
