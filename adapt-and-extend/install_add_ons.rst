@@ -25,7 +25,7 @@ Background
 
 Since Plone 3, Plone installations are managed using :term:`Buildout`. Plone add-ons are distributed as Python modules, also known as eggs.
 
-- the `Plone product <http://plone.org/products>`_ download area contains popular add-ons for Plone
+- the `Plone product <https://plone.org/products>`_ download area contains popular add-ons for Plone
 - Add-on file downloads are hosted on the `PyPi Python package repository <https://pypi.python.org/pypi>`_ - along with tons of other Python software
 - the buildout.cfg file in your Plone configuration defines which add-ons are available for your sites to install in Site Setup > Add-ons control panel
 - the bin/buildout command (or bin/buildout.exe on Windows) in your Plone installation reads buildout.cfg and automatically downloads required packages when run - you do not need to download any Plone add-ons manually
@@ -38,7 +38,7 @@ Since Plone 3, Plone installations are managed using :term:`Buildout`. Plone add
 Finding add-ons
 ----------------
 
-Browse the `plone.org product area <http://plone.org/products>`_ or `search on PyPi <https://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for possible add-ons.
+Browse the `plone.org product area <https://plone.org/products>`_ or `search on PyPi <https://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for possible add-ons.
 
 When you find a suitable add-on you must note down its Python package name. Quite often, this is in the form of a name with a dot in it. For example, for the add-on PloneFormGe  the package id is Products.PloneFormGen. The id is visible in the PyPi page URL if it is not mentioned anywhere else. Capitalization is important here!
 
@@ -109,4 +109,4 @@ Further help
 
 More detailed instructions for installing Plone add-ons are available for dealing with legacy systems.
 
-Please visit the  :doc:`help asking guidelines</askforhelp>` and `Plone support <http://plone.org/support>`_ options page to find further help if these instructions are not enough. Also, contact the add-on author, as listed on Plone product page, to ask specific instructions regarding a particular add-on.
+Please visit the  :doc:`help asking guidelines</askforhelp>` and `Plone support <https://plone.org/support>`_ options page to find further help if these instructions are not enough. Also, contact the add-on author, as listed on Plone product page, to ask specific instructions regarding a particular add-on.
