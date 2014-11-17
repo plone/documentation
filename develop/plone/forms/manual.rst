@@ -13,7 +13,7 @@ See :doc:`HTTP request object </develop/plone/serving/http_request_and_response>
 
 Here is an example view which checks if a form button has been pressed,
 and takes action accordingly. The view is implemented using
-:doc:`grok framework </develop/addons/components/grok>`.
+:doc:`grok framework </appendices/grok>`.
 
 View code::
 

@@ -37,7 +37,7 @@ Simple content item file or image field
 Simple upload form example
 ===========================
 
-The example below uses :doc:`five.grok </develop/addons/components/grok>`
+The example below uses :doc:`five.grok </appendices/grok>`
 to declare the form schema and form.
 
 We use `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_

@@ -11,6 +11,5 @@ Develop Plone Add ons
    javascript
    javascript_standards
    ajax
-   five-grok/index
    helloworld/index
    schema-driven-forms/index

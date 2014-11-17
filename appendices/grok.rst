@@ -309,13 +309,13 @@ Example subscription which subscribes events without context::
 
 For more information, see:
 
-* :doc:`Using Grok </develop/addons/five-grok/core-components/events>`
+* :doc:`Using Grok </appendices/five-grok/core-components/events>`
 
 
 Creating a viewlet using Grok
 ==================================
 
-:doc:`Grok framework </develop/addons/components/grok>` allows you to register a viewlet easily using Python directives.
+:doc:`Grok framework </appendices/grok>` allows you to register a viewlet easily using Python directives.
 
 It is recommended that you use :doc:`Dexterity ZopeSkel add-on product code skeleton </develop/addons/paste>`
 where you add this code.

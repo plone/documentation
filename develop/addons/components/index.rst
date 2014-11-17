@@ -13,13 +13,6 @@ adapters, utilities
 and registries. The wiring of components is done on XML based language
 called :doc:`ZCML </develop/addons/components/zcml>`.
 
-Grok - wrapper around Z3
-============================
-
-On Z3 component layer there exist higher level framework called :doc:`Grok </develop/addons/components/grok>`
-which gives you a way to automatic scan Python modules for decorators and directives without
-the need off manually writing ZCML code or Python to register your business logic.
-
 Database drops using Generic setup
 ====================================
 
@@ -41,7 +34,6 @@ More info
     adapters
     utilities
     zcml
-    grok
     genericsetup
     events
     customizing_plone

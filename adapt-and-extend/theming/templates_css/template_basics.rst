@@ -24,8 +24,7 @@ A normal full Plone HTML page consists of:
 * the *master template*, defining the overall layout of the page,
 * *slots*, defined by the master template, and filled by the object being
   published,
-* :doc:`Viewlet managers </develop/addons/five-grok/browser-components/viewlets>` containing
-  :doc:`viewlets </develop/addons/five-grok/browser-components/viewlets>`.
+* :doc:`viewlets and Viewlet managers </develop/plone/views/viewlets>`.
 
 Templates can be associated with Python view classes
 (also known as "new style", circa 2008) or

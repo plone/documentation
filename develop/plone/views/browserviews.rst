@@ -51,7 +51,7 @@ introduce an easy API to Zope 3, including a way to set up and maintain
 views. For more information about how to use Grok (found in
 the `five.grok`_ package) with Plone,
 please read the `Plone and Grok tutorial
-<http://docs.plone.org/develop/addons/five-grok>`_.
+<http://docs.plone.org/appendices/five-grok>`_.
 
 .. note:: At the time of writing (Q1/2010), all project templates in Paster
    still use old-style Zope views.
@@ -182,7 +182,7 @@ This is the simplest method and recommended for Plone 4.1+ onwards.
 
 First, create your add-on product using
 :doc:`Dexterity project template </develop/addons/paste>`. The most important
-thing in the add-on is that your registers itself to :doc:`grok </develop/addons/components/grok>`
+thing in the add-on is that your registers itself to :doc:`grok </appendices/grok>`
 which allows Plone to scan all Python files for ``grok()`` directives and
 furter automatically pick up your views (as opposite using old Zope 3 method
 where you manually register views by typing them in to ZCML in ZCML).
@@ -216,7 +216,7 @@ setup.py and buildout
 
 Either you need to have ``five.grok``
 `registered in your buildout <http://plone.org/documentation/kb/installing-add-ons-quick-how-to>`_
-or have :doc:`five.grok in your setup.py </develop/addons/components/grok>`. If you didn't add it in this
+or have :doc:`five.grok in your setup.py </appendices/grok>`. If you didn't add it in this
 point and run buildout again to download and install ``five.grok`` package.
 
 Python logic code

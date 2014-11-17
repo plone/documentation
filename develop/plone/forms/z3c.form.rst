@@ -112,7 +112,7 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 
 * Create Plone add-on product using :doc:`Paster </develop/addons/paste>`
 
-* Include :doc:`five.grok support in your add-on </develop/addons/components/grok>`
+* Include :doc:`five.grok support in your add-on </appendices/grok>`
 
 * Toss ``form.py`` into your add-on product::
 
@@ -2222,7 +2222,7 @@ Validators are best added in the schema itself.
 * The plone.form.directives package provides convenient
   `decorators for form validators <https://pypi.python.org/pypi/plone.directives.form#validators>`_.
   If you use ``plone.form.directives`` validators, make sure your package
-  is :doc:`grokked </develop/addons/components/grok>`
+  is :doc:`grokked </appendices/grok>`
   (otherwise validators are not registered).
 
 Example: How to use widget specific validators with ``z3c.form``::

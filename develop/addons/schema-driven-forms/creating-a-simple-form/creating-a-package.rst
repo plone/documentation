@@ -94,7 +94,7 @@ This will:
    *install\_requires* line in *setup.py*. This saves us from manually
    including them with individual ZCML *<include />* statements.
 -  “Grok” the package, to configure the forms we will add. See the
-   :doc:`five.grok manual</develop/addons/five-grok/index>` for more details.
+   :doc:`five.grok manual</appendices/five-grok/index>` for more details.
 -  Create an installation profile that will install this package and its
    dependencies.
 
