@@ -168,7 +168,7 @@ of who created it or when.
 
 Meanwhile, Molly has joined George as a new team member. George helps
 Molly start updating the "Widget Installation" document. He goes to the
-sharing tab for "Widget Installation" and searches on Molly's Full Name
+sharing tab for "Widget Installation" and searches for Molly's Full Name
 (not username) and gives her the "Can edit" permissions on this
 document.
 
