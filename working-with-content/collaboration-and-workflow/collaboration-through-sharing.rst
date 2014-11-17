@@ -1,7 +1,7 @@
 Collaboration through Sharing
 ==================================
 
-The Sharing tab empowers you collaborate with other users through the
+The Sharing tab empowers you to collaborate with other users through the
 use of several built-in roles.
 
 Example 1: Letting others add content to a folder you created
@@ -14,7 +14,7 @@ has created a folder called "Documentation" and added one Page to it,
 document. The default workflow for this Plone site has not been
 modified.
 Now she wants to let her colleague, George Shrubb, add content to the
-Documentation folder. He have permission to edit any of the existing
+Documentation folder. He has permission to edit any of the existing
 content, but she needs him to start adding content. Before we follow
 along with Jane, let's take a peek at what George currently sees when he
 logs in on this Plone site:
