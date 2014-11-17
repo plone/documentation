@@ -16,7 +16,7 @@ Online tools:
 -------------
 
 - `rst.ninjs.org <http://rst.ninjs.org/>`_ and a fork with more Sphinx support at `livesphinx.herokuapp.com <http://livesphinx.herokuapp.com/>`_
-- `notex.ch <https://notex.ch/>`_
+- `notex.ch <https://www.notex.ch/>`_
 
 
 Offline tools:
