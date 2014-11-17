@@ -26,7 +26,7 @@ Background
 Since Plone 3, Plone installations are managed using :term:`Buildout`. Plone add-ons are distributed as Python modules, also known as eggs.
 
 - the `Plone product <http://plone.org/products>`_ download area contains popular add-ons for Plone
-- Add-on file downloads are hosted on the `PyPi Python package repository <https://pypi.python.org>`_ - along with tons of other Python software
+- Add-on file downloads are hosted on the `PyPi Python package repository <https://pypi.python.org/pypi>`_ - along with tons of other Python software
 - the buildout.cfg file in your Plone configuration defines which add-ons are available for your sites to install in Site Setup > Add-ons control panel
 - the bin/buildout command (or bin/buildout.exe on Windows) in your Plone installation reads buildout.cfg and automatically downloads required packages when run - you do not need to download any Plone add-ons manually
 - Plone site setup -> Add ons control panel defines which add-ons are installed for the current Plone site (remember, there can be many Plone sites on a single Zope application server)
