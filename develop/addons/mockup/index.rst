@@ -6,7 +6,6 @@ Training materials for learning Mockup.
 
 .. toctree::
     :maxdepth: 2
-    :numbered: 1
 
     intro
     install
@@ -17,5 +16,4 @@ Training materials for learning Mockup.
     including_from_mockup
     writing-documentation
     mockup-alternatives
-    working_with_mockup
     working_with_resource_registry
