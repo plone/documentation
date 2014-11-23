@@ -28,7 +28,7 @@ Copy Editors
 A *workflow policy*, sometimes abbreviated to *workflow*, describes the
 constraints on state-changing actions for different groups of people.
 Once the workflow policy has been created, it needs to be applied to an
-area of the website for the rules to take affect. In the example of the
+area of the website for the rules to take effect. In the example of the
 newspaper web site, a workflow policy would be set up and then applied
 to the folders where reporters do the work of adding news articles.
 Then, reporters would create stories and send them up the line for
