@@ -91,13 +91,13 @@ If Plone can find utilities that convert various document formats to text, it wi
 
 These may be added after initial installation.
 
-Plone 4.3 / 4.2
-===============
+Plone 3.3
+=========
 
 Python
 ------
 
-Python 2.7 (dev), built with support for expat (xml.parsers.expat), zlib and ssl.
+Python 2.4 (dev), built with support for expat (xml.parsers.expat), zlib and ssl.
 (Python XML support may be a separate package on some platforms.)*
 
 virtualenv*
@@ -109,69 +109,6 @@ Libraries
 * libjpeg (dev)*
 * readline (dev)*
 * libssl or openssl (dev)
-* libxml2 >= 2.7.8 (dev)*
-* libxslt >= 1.1.26 (dev)*
+* libxml2 (dev)*
+* libxslt (dev)*
 
-Plone 4.1
-=========
-
-Python
-------
-
-Python 2.6 (dev), built with support for expat (xml.parsers.expat), zlib and ssl.
-(Python XML support may be a separate package on some platforms.)*
-
-virtualenv*
-
-Libraries
----------
-
-* libz (dev)
-* libjpeg (dev)*
-* readline (dev)*
-
-
-Minimal build
-=============
-
-With complete requirements in place, a barebones Plone install may be created
-with a few steps. '~...#' is a system prompt. Adjust the Plone and Python
-versions to match your requirements::
-
-    ~/$ mkdir Plone-4.3
-    ~/$ cd Plone-4.3
-    ~/Plone-4.3$ virtualenv --distribute Python-2.7
-    ~/Plone-4.3$ mkdir zinstance
-    ~/Plone-4.3$ cd zinstance
-    ~/Plone-4.3$ wget http://downloads.buildout.org/1/bootstrap.py
-    ~/Plone-4.3/zinstance$ echo """
-    > [buildout]
-    >
-    > extends =
-    >     http://dist.plone.org/release/4.3-latest/
-    >
-    > parts =
-    >     instance
-    >
-    > [instance]
-    > recipe = plone.recipe.zope2instance
-    > user = admin:admin
-    > http-address = 8080
-    > eggs =
-    >     Plone
-    >     Pillow
-    > """ > buildout.cfg
-    ~/Plone-4.3/zinstance$ ../Python-2.7/bin/python bootstrap.py --distribute
-    ~/Plone-4.3/zinstance$ bin/buildout
-      Long download and build process ...
-      Errors like "SyntaxError: ("'return' outside function"..."" may be ignored.
-
-This build will install Plone, ready to be run with::
-
-    ~/Plone-4.3/zinstance$ bin/instance start
-
-running attached to port 8080. Use login id "admin" and password "admin" for initial login.
-
-This build would be adequate for a quick evaluation installation. For a
-production or development installation, use one of `Plone's installers
-<http://plone.org/products/plone>`_.
