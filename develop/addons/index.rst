@@ -8,6 +8,7 @@ Develop Plone Add ons
    dexterity
    releasing
    components/index
+   mockup/index
    javascript
    javascript_standards
    ajax
