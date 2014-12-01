@@ -1,0 +1,11 @@
+Changelog
+---------
+
+December Release 2014:
+
+- add OmniMarkerPreviewer
+- add twitter account info
+- Remove obsolete Deliverance/XDV docs [it is in Plone 3 now]
+- remove conf.py, it lives in papyrus now
+- update README.rst advice to deal with pypi
+- add in contributing link to trello and community.plone.org

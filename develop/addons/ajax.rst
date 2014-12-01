@@ -34,7 +34,7 @@ AJAX loader
 Cross-Origin Resource Sharing (CORS) proxy view
 ====================================================================
 
-Old web browsers do not support `Allow-acces-origin HTTP header <https://developer.mozilla.org/en/HTTP_access_control>`_
+Old web browsers do not support `Allow-acces-origin HTTP header <https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS>`_
 needed to do cross-domain AJAX requests (IE6, IE7).
 
 Below is an example how to work around this for jQuery getJSON() calls by

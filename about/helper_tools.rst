@@ -16,7 +16,7 @@ Online tools:
 -------------
 
 - `rst.ninjs.org <http://rst.ninjs.org/>`_ and a fork with more Sphinx support at `livesphinx.herokuapp.com <http://livesphinx.herokuapp.com/>`_
-- `notex.ch <https://notex.ch/>`_
+- `notex.ch <https://www.notex.ch/>`_
 
 
 Offline tools:
@@ -41,6 +41,8 @@ There is also a `online version <http://johnmacfarlane.net/pandoc/try/>`_.
 
 
 **Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
+
+One  particular which is really good for getting a impression how it will looks like in html is `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_ a live previewer/exporter for markup files (markdown, rst, creole, textile...). 
 
 
 **Emacs** has a nice `rst-mode

@@ -253,7 +253,7 @@ how many times the request is replayed.
 
 More info
 
-* http://www.zopyx.com/blog/on-zodb-conflict-resolution
+* https://www.andreas-jung.com/contents/on-zodb-conflict-resolution
 
 How to debug which object causes ``ConflictError``\s
 -----------------------------------------------------

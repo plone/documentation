@@ -16,9 +16,15 @@ Reaching the documentation team
 The Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
 To reach this team for any questions please contact
 
-* `Documentation team mailing list <https://plone.org/support/forums/docs>`_
+* `Documentation team mailing list <https://plone.org/support/forums-old/docs>`_
 
 * *#plone-docs* IRC channel on irc.freenode.net
+
+* `Documentation <https://community.plone.org/category/documentation>`_ category on community.plone.org.
+
+For news and updates you can also follow `PloneDocs <https://twitter.com/plonedocs>`_ on twitter.
+
+If you want to know more about the  work-flow, long term ideas and other upcoming improvements you can check the `board <https://trello.com/b/M8Eyzlld/plone-docs>`_ on Trello.
 
 
 License
