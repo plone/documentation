@@ -11,6 +11,8 @@ This document is a community maintained manual for the `Plone <http://plone.org>
    This version is mostly for version 3.3.x of Plone, which hasn't been updated since 2011.
    It is here to help those who still run Plone 3 sites, and for those feeling nostalgic.
    We recommend to work with the current stable version of Plone.
+   You can find the latest version of the documentation on
+   http://docs.plone.org
 
 The target audience of the documentation includes
 
