@@ -1,13 +1,7 @@
 about/contributing.rst:70: [broken] https://github.com/yourGitHubUserName/documentation/pulls: HTTP Error 404: Not Found
 about/contributing.rst:29: [redirected permanently] http://plone.org/foundation/contributors-agreement to https://plone.org/foundation/contributors-agreement
 about/contributing.rst:27: [redirected permanently] http://plone.org to https://plone.org/
-about/contributing.rst:19: [redirected permanently] https://plone.org/support/forums/docs to https://plone.org/support/forums-old/docs
-about/helper_tools.rst:19: [redirected permanently] https://notex.ch/ to https://www.notex.ch/
 about/helper_tools.rst:18: [broken] http://livesphinx.herokuapp.com/: timed out
-adapt-and-extend/install_add_ons.rst:29: [redirected with Found] https://pypi.python.org to https://pypi.python.org/pypi
-adapt-and-extend/install_add_ons.rst:28: [redirected permanently] http://plone.org/products to https://plone.org/products
-adapt-and-extend/install_add_ons.rst:41: [redirected permanently] http://plone.org/products to https://plone.org/products
-adapt-and-extend/install_add_ons.rst:112: [redirected permanently] http://plone.org/support to https://plone.org/support
 adapt-and-extend/install_add_ons.rst:18: [redirected permanently] http://www.hacking-tutorial.com/tips-and-tricks/16-steps-tutorial-basic-command-prompt/ to http://www.hacking-tutorial.com/tips-and-trick/16-steps-tutorial-basic-command-prompt/
 adapt-and-extend/theming/templates_css/css.rst:133: [redirected permanently] http://plone.org/products/plone/roadmap/232 to https://plone.org/products/plone/roadmap/232
 adapt-and-extend/theming/templates_css/template_basics.rst:602: [redirected with Found] http://starzel.de/blog/how-to-get-a-different-look-for-some-pages-of-a-plone-site to http://www.starzel.de/blog/how-to-get-a-different-look-for-some-pages-of-a-plone-site
@@ -22,9 +16,7 @@ appendices/glossary.rst:28: [redirected permanently] http://plone.org/documentat
 appendices/glossary.rst:279: [redirected permanently] http://plone.org/team/FrameworkTeam to https://plone.org/team/FrameworkTeam
 appendices/glossary.rst:312: [redirected permanently] http://plone.org/events/sprints to https://plone.org/events/sprints
 askforhelp.rst:68: [local] irc://irc.freenode.net/#plone
-askforhelp.rst:28: [redirected permanently] http://dev.plone.org/plone to https://dev.plone.org/
 askforhelp.rst:34: [redirected permanently] https://plone.org/support/forums/general to https://plone.org/support/forums-old/general
-develop/addons/ajax.rst:37: [redirected permanently] https://developer.mozilla.org/en/HTTP_access_control to https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
 develop/addons/components/adapters.rst:283: [broken] http://opkode.net/media/blog/schema-extending-an-object-only-inside-a-specific-folder: HTTP Error 404: Not Found
 develop/addons/components/adapters.rst:155: [redirected permanently] http://www.muthukadan.net/docs/zca.html#registration to http://muthukadan.net/docs/zca.html#registration
 develop/addons/components/adapters.rst:46: [broken] http://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific: HTTP Error 404: Not Found
