@@ -27,7 +27,7 @@ Download Plone
 
 Plone is available for Microsoft Windows, Mac OSX X, Linux and BSD operating systems.
 
-`Download the latest Plone release <http://plone.org/products/plone/latest_release>`_.
+`Download the latest Plone 3 release <https://plone.org/products/plone/releases/3.3.6>`_.
 
 Binary installers are available for Windows and OS X. Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer. "Unified" refers to its ability to install on most Unix workalikes.
 
@@ -98,13 +98,14 @@ Install the operating system software and libraries needed to run Plone
 
 .. code-block:: console
 
-    sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+    sudo apt-get install build-essential python2.4-dev python-lxml python-elementtree python-imaging libreadline5 libreadline5-dev zlib1g zlib1g-dev libjpeg62 libjpeg62-dev libssl0.9.8 libssl-dev build-essential subversion cron groff-base wget lynx
+
 
 You will probably also want these optional system packages (see `Plone manual for more information <http://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/debian-libraries>`_):
 
 .. code-block:: console
 
-    sudo apt-get install libreadline-dev wv poppler-utils
+    sudo apt-get install wv poppler-utils
 
 .. note::
 
@@ -112,7 +113,7 @@ You will probably also want these optional system packages (see `Plone manual fo
 
 If you're planning on developing with Plone, install git version control support::
 
-    sudo apt-get install git
+    sudo apt-get install git subversion
 
 .. note::
 
@@ -128,12 +129,12 @@ Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download from `the plone.org download page <http://plone.org/download>`_ to your server using wget command. Curl also works.
-Substitute the latest version number for 4.3.3
+Substitute the latest version number for 3.3.6
 in the instructions below.
 
 .. code-block:: console
 
-    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.3/+download/Plone-4.3.3-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/3.3/3.3.6/+download/Plone-3.3.6-UnifiedInstaller-20110816.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,11 +143,11 @@ Run the Plone installer in standalone mode
 
     # Extract the downloaded file
     #
-    tar -xf Plone-4.3.3-UnifiedInstaller.tgz
+    tar -xf Plone-3.3.6-UnifiedInstaller.tgz
     #
     # Go the folder containing installer script
     #
-    cd Plone-4.3.3-UnifiedInstaller
+    cd Plone-3.3.6-UnifiedInstaller
     #
     # Run script
     ./install.sh standalone
@@ -236,7 +237,7 @@ Python interpreter.
 This procedure is only useful if you know buildout well enough to
 tailor your own buildout configuration.
 
-You need to manage dependencies (``Python``, ``libxml``, ``Pillow``) yourself.
+You need to manage dependencies (``Python``, ``libxml``, ``Pillow/Pil``) yourself.
 
 This will:
 
@@ -254,7 +255,7 @@ This will:
         sudo apt-get install python-virtualenv
 
 2. Create a ``virtualenv`` where you can install some Python packages
-   (``ZopeSkel``, ``Pillow``):
+   (``ZopeSkel``, ``Pillow/Pil``):
 
    .. code-block:: console
 
@@ -265,20 +266,20 @@ This will:
    .. code-block:: console
 
         source plone-virtualenv/bin/activate
-        easy_install "ZopeSkel<2.99"
+        easy_install "ZopeSkel"
 
 4. Create Plone buildout project using ZopeSkel:
 
    .. code-block:: console
 
-        paster create -t plone4_buildout myplonefolder
+        paster create -t plone3_buildout myplonefolder
 
 5. Optionally edit ``buildout.cfg`` at this point.
-   Run buildout (use Python 2.6 for Plone 4.1):
+   Run buildout (use Python 2.4 for Plone 3):
 
    .. code-block:: console
 
-    python2.6 bootstrap.py
+    python2.4 bootstrap.py
     bin/buildout
 
 More info:
@@ -306,12 +307,6 @@ It is very rare to need C language extensions.
 
 If you have needs beyond those met by the Windows Installer, read on.
 
-For Plone 4.1 and later, see these instructions:
-
-* https://docs.google.com/document/d/19-o6yYJWuvw7eyUiLs_b8br4C-Kb8RcyHcQSIf_4Pb4/edit
-
-If you wish to develop Plone on Windows you need to set-up a working MingW
-environment (this can be somewhat painful if you aren't used to it)
 
 
 OSX
@@ -345,18 +340,6 @@ After either of these steps, you immediately should be able to install Plone usi
 
 Proceed as with Linux.
 
-LibXML2/LibXSLT Versions
-------------------------
-
-If you are installing Plone 4.2+ or 4.1 with Diazo, you will need up-to-date versions of libxml2 and libxslt::
-
-    LIBXML2 >= "2.7.8"
-    LIBXSLT >= "1.1.26"
-
-Ideally, install these via system packages or ports. If that's not possible,
-use most current version of the z3c.recipe.staticlxml buildout recipe to build an lxml (Python wrapper) egg with static libxml2 and libxslt components.
-
-Don't worry about this if you're using an installer.
 
 Entering debug mode after installation
 =========================================
