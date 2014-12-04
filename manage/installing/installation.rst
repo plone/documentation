@@ -291,9 +291,7 @@ More info:
 Installing Plone using RPMs, .dev, ... packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Not supported by Plone community.
-
-(i.e. you're on your own, and don't say we didn't tell you.)
+See the `Preparing the Server </manage/deploying/preparing>`_ section of the Deployment guide for a list of system packages needed to install Plone. General instructions are otherese the same as for Debian-style systems.
 
 Microsoft Windows
 -------------------------

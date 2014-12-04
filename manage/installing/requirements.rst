@@ -108,6 +108,7 @@ Libraries
 * libz (dev)
 * libjpeg (dev)*
 * readline (dev)*
+* libexpat (dev)
 * libssl or openssl (dev)
 * libxml2 >= 2.7.8 (dev)*
 * libxslt >= 1.1.26 (dev)*
