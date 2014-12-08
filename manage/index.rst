@@ -1,5 +1,5 @@
-Managing, Administration of Plone
-=================================
+Installing, Managing and Updating Plone
+=======================================
 
 
 .. toctree::
@@ -10,8 +10,8 @@ Managing, Administration of Plone
     upgrading/index
     troubleshooting/index
 
-Automatisation
-^^^^^^^^^^^^^^
+Automating Plone Deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
