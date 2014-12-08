@@ -29,3 +29,4 @@ Guide to deploying and installing Plone in production
     front-end/index
     production/index
     testing_tuning/index
+    /external/ansible-playbook/index
