@@ -27,9 +27,9 @@ is fairly readable so taking a quick look through it can be very
 informative.
 
 When using a GenericSetup extension profile to customize the
-Catalog Tool** in your portal, you only need to include XML for the
+Catalog Tool in your portal, you only need to include XML for the
 pieces of the catalog you are changing. To add an index for the
-Archetypes location field, as in the example above, a policy
+Archetypes location field, as in the example below, a policy
 package could include the following
 *profiles/default/catalog.xml*:
 
@@ -350,10 +350,10 @@ Zope 2 product PluginIndexes defines various portal_catalog index types used by 
 
 * FieldIndex stores values as is
 
-* DateIndex and DateRangeIndex store dates (Zope 2 DateTime objects) in searhable format. The latter
+* DateIndex and DateRangeIndex store dates (Zope 2 DateTime objects) in searchable format. The latter
   provides ranged searches.
 
-* KeywordIndex allows keyword-style look-ups (query term is matched against the all values of a stored list)
+* KeywordIndex allows keyword-style look-ups (query term is matched against all the values of a stored list)
 
 * ZCTextIndex is used for full text indexing
 
