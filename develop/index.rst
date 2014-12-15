@@ -94,8 +94,12 @@ Tutorials
 
 Mastering Plone is intended as a week-long training for people who are new to Plone or want to learn about the current best-practices of Plone-development.
 
-It is in active use by various trainers in the Plone world, and is being developed as a 'collaborative syllabus'. 
+It is in active use by various trainers in the Plone world, and is being developed as a 'collaborative syllabus'.
 
+
+`"Mastering Mockup"-training <https://mockup-training.readthedocs.org/en/latest/index.html>`_
+
+This training was created to teach about Mockup, the new Frontend library for Plone 5 .
 
 .. toctree::
    :maxdepth: 1
