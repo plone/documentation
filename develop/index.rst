@@ -104,6 +104,8 @@ This training was created to teach about Mockup, the new Frontend library for Pl
 .. toctree::
    :maxdepth: 1
 
-   /external/tutorial.todoapp/docs/index
+:doc:`"Plone Todo list application tutorial" </external/tutorial.todoapp/docs/index>`
+
+You will learn to: create custom content-types Through-The-Web, create and apply custom workflows, create custom listings, dump your changes into a filesytem package to future-proof them and write tests for your filesystem package.
 
 
