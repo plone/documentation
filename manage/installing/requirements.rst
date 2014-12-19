@@ -135,43 +135,59 @@ Libraries
 Minimal build
 =============
 
-With complete requirements in place, a barebones Plone install may be created
-with a few steps. '~...#' is a system prompt. Adjust the Plone and Python
-versions to match your requirements::
+With complete requirements in place, a barebones Plone install may be created with a few steps. 
+``~/$`` is a system prompt. 
+
+.. code-block:: bash
 
     ~/$ mkdir Plone-4.3
     ~/$ cd Plone-4.3
-    ~/Plone-4.3$ virtualenv --distribute Python-2.7
+    ~/Plone-4.3$ virtualenv-2.7 Python-2.7
     ~/Plone-4.3$ mkdir zinstance
     ~/Plone-4.3$ cd zinstance
-    ~/Plone-4.3$ wget http://downloads.buildout.org/1/bootstrap.py
+    ~/Plone-4.3/zinstance$ wget http://downloads.buildout.org/1/bootstrap.py
     ~/Plone-4.3/zinstance$ echo """
-    > [buildout]
-    >
-    > extends =
-    >     http://dist.plone.org/release/4.3-latest/
-    >
-    > parts =
-    >     instance
-    >
-    > [instance]
-    > recipe = plone.recipe.zope2instance
-    > user = admin:admin
-    > http-address = 8080
-    > eggs =
-    >     Plone
-    >     Pillow
-    > """ > buildout.cfg
-    ~/Plone-4.3/zinstance$ ../Python-2.7/bin/python bootstrap.py --distribute
+    [buildout]
+    extends =
+        http://dist.plone.org/release/4.3-latest/versions.cfg
+
+    parts =
+        instance
+
+    [instance]
+    recipe = plone.recipe.zope2instance
+    user = admin:admin
+    http-address = 8080
+    eggs =
+        Plone
+        Pillow
+
+    """ > buildout.cfg
+    ~/Plone-4.3/zinstance$ ../Python-2.7/bin/python bootstrap.py
     ~/Plone-4.3/zinstance$ bin/buildout
-      Long download and build process ...
-      Errors like "SyntaxError: ("'return' outside function"..."" may be ignored.
 
-This build will install Plone, ready to be run with::
+This will start a long download and build process ...
 
+Errors like "SyntaxError: ("'return' outside function"..."" may be ignored.
+
+After it finished you can start Plone in foreground-mode with:
+
+.. code-block:: bash
+    
+    ~/Plone-4.3/zinstance$ bin/instance fg
+
+You can stop it with ``ctrl + c``.
+
+Start and stop this Plone-instance in production-mode like this;
+
+.. code-block:: bash
+    
     ~/Plone-4.3/zinstance$ bin/instance start
 
-running attached to port 8080. Use login id "admin" and password "admin" for initial login.
+    ~/Plone-4.3/zinstance$ bin/instance stop
+
+Plone will run on port 8080 and can be accessed via http://localhost:8080. 
+Use login id "admin" and password "admin" for initial login so you can create a site.
 
 This build would be adequate for a quick evaluation installation. For a
 production or development installation, use one of `Plone's installers
