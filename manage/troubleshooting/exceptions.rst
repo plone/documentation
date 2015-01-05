@@ -413,6 +413,66 @@ AttributeError: type object 'IRAMCache' has no attribute '__iro__'
 package pindowns are incorrect. If you are copying a site try re-checking that
 source and target buildouts and package versions match.
 
+AttributeError: set_stripped_tags
+---------------------------------
+
+**Traceback**::
+
+    ...
+    Module ZPublisher.Publish, line 60, in publish
+    Module ZPublisher.mapply, line 77, in mapply
+    Module ZPublisher.Publish, line 46, in call_object
+    Module zope.formlib.form, line 795, in __call__
+    Module five.formlib.formbase, line 50, in update
+    Module zope.formlib.form, line 776, in update
+    Module zope.formlib.form, line 620, in success
+    Module plone.app.controlpanel.form, line 38, in handle_edit_action
+    Module zope.formlib.form, line 543, in applyChanges
+    Module zope.formlib.form, line 538, in applyData
+    Module zope.schema._bootstrapfields, line 227, in set
+    Module plone.app.controlpanel.filter, line 173, in set_
+    AttributeError: set_stripped_tags 
+
+**Condition**: This error may happen on saving changed settings in the HTML-Filtering controlpanel.
+
+possible cause: 
+
+* You have migrated your Plone site from 3.3.5 to Plone 4.x
+
+* For some reason kupu library tool may not be removed in the upgrade step that removed kupu.
+
+**Solution**: Go to the ZMI and delete the kupu library tool manually.
+
+AttributeError: set_stripped_combinations
+-----------------------------------------
+
+**Traceback**::
+
+    ...
+    Module ZPublisher.Publish, line 126, in publish 
+    Module ZPublisher.mapply, line 77, in mapply 
+    Module ZPublisher.Publish, line 46, in call_object 
+    Module zope.formlib.form, line 795, in __call__ 
+    Module five.formlib.formbase, line 50, in update 
+    Module zope.formlib.form, line 776, in update 
+    Module zope.formlib.form, line 620, in success 
+    Module plone.app.controlpanel.form, line 38, in handle_edit_action 
+    Module zope.formlib.form, line 543, in applyChanges 
+    Module zope.formlib.form, line 538, in applyData 
+    Module zope.schema._bootstrapfields, line 227, in set 
+    Module plone.app.controlpanel.filter, line 254, in set 
+    AttributeError: set_stripped_combinations
+
+**Condition**: This error may happen on saving changed settings in the HTML-Filtering controlpanel.
+
+possible cause: 
+
+* You have migrated your Plone site from 3.3.5 to Plone 4.x
+
+* For some reason kupu library tool may not be removed in the upgrade step that removed kupu.
+
+**Solution**: Go to the ZMI and delete the kupu library tool manually.
+
 BadRequest: The id "xxx" is invalid - it is already in use.
 ------------------------------------------------------------------
 
