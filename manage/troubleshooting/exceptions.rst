@@ -510,7 +510,6 @@ BadRequest: The id "xxx" is invalid - it is already in use.
 
 Try portal_catalog rebuild as a fix.
 
-
 ComponentLookupError: cmf.ManagePortal
 ----------------------------------------
 
