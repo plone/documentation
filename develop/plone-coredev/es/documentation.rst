@@ -9,8 +9,8 @@ Como una comunidad, Plone mantienen muchos tipos de documentación:
 
 * Documentos *mantenidos*. Esto es un conjunto limitado de documentación que está pretendido para ser cuidadosamente dirigido y regularmente actualizado.
 
-  * `Manual de Usuario <http://plone.org/documentation/manual/plone-4-user-manual>`_.
-  * `Instalando Plone <http://plone-spanish-docs.readthedocs.org/en/latest/manuales/instalando_plone.html>`_, la versión original de esta documentación en Ingles esta disponible como `Installing Plone <http://plone.org/documentation/manual/installing-plone>`_.
+  * `Manual de Usuario <https://plone.org/documentation/manual/plone-4-user-manual>`_.
+  * `Instalando Plone <http://plone-spanish-docs.readthedocs.org/en/latest/manuales/instalando_plone.html>`_, la versión original de esta documentación en Ingles esta disponible como `Installing Plone <https://plone.org/documentation/manual/installing-plone>`_.
   * `Referencia de Temas <http://developer.plone.org/#theme-development>`_
   * `Manual de Desarrollo <http://developer.plone.org/>`_
 
@@ -18,7 +18,7 @@ Como una comunidad, Plone mantienen muchos tipos de documentación:
 
 * Documentos *editado colectivamente en comunidad*. Estos son abiertos para contribuciones por cualquier que lo deseo hacer. Esto dirige a una riqueza de información que es de más ampliamente variando calidad.
 
-  * `Base de conocimiento en plone.org <http://plone.org/documentation/kb>`_. Cualquiera con una cuenta en plone.org es libre de editarlo.
+  * `Base de conocimiento en plone.org <https://plone.org/documentation/kb>`_. Cualquiera con una cuenta en plone.org es libre de editarlo.
   * `Documentación para el programador en Plone Collective <http://developer.plone.org/index.html>`_. Cualquiera tal ves puede `contribuir <http://collective-docs.readthedocs.org/en/latest/introduction/developermanual.html>`_.
 
 Documentando un paquete

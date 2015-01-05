@@ -16,7 +16,7 @@ You'll find more extensive information about the Generic Setup Tool in
 this tutorial:
 
 -  `Understanding and Using Generic Setup on
-   plone.org <http://plone.org/tutorial/genericsetup/exports-snapshots-and-comparisons>`_
+   plone.org <https://plone.org/tutorial/genericsetup/exports-snapshots-and-comparisons>`_
 
 However, there are two useful facts to know about it.
 

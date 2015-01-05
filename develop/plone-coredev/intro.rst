@@ -4,7 +4,7 @@ This document assumes you want to fix a bug and will detail the full process. Fo
 
 Version Support Policy
 ----------------------
-If you are triaging or fixing bugs, keep in mind that Plone has a `version support policy <http://plone.org/support/version-support-policy>`_.
+If you are triaging or fixing bugs, keep in mind that Plone has a `version support policy <https://plone.org/support/version-support-policy>`_.
 
 Dependencies
 ------------

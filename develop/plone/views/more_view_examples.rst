@@ -141,7 +141,7 @@ Here is an example for comparison that switches page title and portal title, and
 More information about the title tag can be found at the `HTML Head Title`_ page which is part of the `Plone Theme Reference`_.
 
 
-.. [1] http://plone.org/author/spanky
+.. [1] https://plone.org/author/spanky
 .. _Views and Viewlets: http://collective-docs.readthedocs.org/en/latest/views/index.html
-.. _HTML Head Title: http://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.title
-.. _Plone Theme Reference: http://plone.org/documentation/manual/theme-reference
+.. _HTML Head Title: https://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.title
+.. _Plone Theme Reference: https://plone.org/documentation/manual/theme-reference

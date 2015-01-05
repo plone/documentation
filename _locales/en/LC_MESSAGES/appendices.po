@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -38,8 +38,8 @@ msgstr "This is a glossary for some definitions used in this documentation and s
 #: ../appendices/glossary.rst:8
 msgid ""
 "It incorporates the original `glossary on plone.org "
-"<http://plone.org/documentation/glossary>`_."
-msgstr "It incorporates the original `glossary on plone.org <http://plone.org/documentation/glossary>`_."
+"<https://plone.org/documentation/glossary>`_."
+msgstr "It incorporates the original `glossary on plone.org <https://plone.org/documentation/glossary>`_."
 
 # 26568512f62e46019ec0f40964a3ae3f
 #: ../appendices/glossary.rst:494
@@ -600,9 +600,9 @@ msgstr "*PLone Improvement Proposal* (just like Python's PEPs: Python Enhancemen
 msgid ""
 "Motivation, deliverables, risks and a list of people willing to do the work "
 "must be included. This document is submitted to the `Framework Team "
-"<http://plone.org/team/FrameworkTeam>`_, who reviews the proposal and "
+"<https://plone.org/team/FrameworkTeam>`_, who reviews the proposal and "
 "decides if it's suitable to be included in the next Plone release or not."
-msgstr "Motivation, deliverables, risks and a list of people willing to do the work must be included. This document is submitted to the `Framework Team <http://plone.org/team/FrameworkTeam>`_, who reviews the proposal and decides if it's suitable to be included in the next Plone release or not."
+msgstr "Motivation, deliverables, risks and a list of people willing to do the work must be included. This document is submitted to the `Framework Team <https://plone.org/team/FrameworkTeam>`_, who reviews the proposal and decides if it's suitable to be included in the next Plone release or not."
 
 # 56e33b3cde304fe3b6bdd03c1dcaf640
 #: ../appendices/glossary.rst:285
@@ -782,10 +782,10 @@ msgstr "`reStructuredText <http://docutils.sourceforge.net/rst.html>`_ is an eas
 #: ../appendices/glossary.rst:28
 msgid ""
 "reStructuredText is a revision and reinterpretation of the `StructuredText "
-"<http://plone.org/documentation/glossary/stx>`_ and `Setext "
+"<https://plone.org/documentation/glossary/stx>`_ and `Setext "
 "<http://docutils.sourceforge.net/mirror/setext.html>`_ lightweight markup "
 "systems."
-msgstr "reStructuredText is a revision and reinterpretation of the `StructuredText <http://plone.org/documentation/glossary/stx>`_ and `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_ lightweight markup systems."
+msgstr "reStructuredText is a revision and reinterpretation of the `StructuredText <https://plone.org/documentation/glossary/stx>`_ and `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_ lightweight markup systems."
 
 # 0673e4b1736a4f9ab8e51764ef137c8a
 #: ../appendices/glossary.rst:102
@@ -847,8 +847,8 @@ msgid ""
 "Based on ideas from the extreme programming (XP) community. A sprint is a "
 "three to five day focused development session, in which developers pair in a"
 " room and focus on building a particular subsystem. See "
-"http://plone.org/events/sprints"
-msgstr "Based on ideas from the extreme programming (XP) community. A sprint is a three to five day focused development session, in which developers pair in a room and focus on building a particular subsystem. See http://plone.org/events/sprints"
+"https://plone.org/events/sprints"
+msgstr "Based on ideas from the extreme programming (XP) community. A sprint is a three to five day focused development session, in which developers pair in a room and focus on building a particular subsystem. See https://plone.org/events/sprints"
 
 # 613e16ed7ea34714b033ef90aa3c4cea
 #: ../appendices/glossary.rst:57

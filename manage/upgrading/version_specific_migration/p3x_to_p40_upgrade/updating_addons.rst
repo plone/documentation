@@ -216,7 +216,7 @@ P = Abbreviation for "Products".
 | P.ATReferenceBrowserWidget.\                      | archetypes.referencebrowserwidget.ReferenceBrowserWidget              |
 | ATReferenceBrowserWidget.ReferenceBrowserWidget   |                                                                       |
 +---------------------------------------------------+-----------------------------------------------------------------------+
-	
+
 Removed
 -------
 
@@ -404,7 +404,7 @@ Just use plone.app.field.BlobField or plone.app.field.ImageField instead of atap
                   ),
         ))
 
-Check the `Archetypes Fields Reference <http://plone.org/documentation/manual/developer-manual/archetypes/fields/fields-reference/>`_ for details.
+Check the `Archetypes Fields Reference <https://plone.org/documentation/manual/developer-manual/archetypes/fields/fields-reference/>`_ for details.
 
 Preparing already existing content types
 ----------------------------------------
@@ -604,7 +604,7 @@ If your theme has a custom version of main_template.pt, it will need to be updat
 Updates to template variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Templates that have been overridden must be reviewed to make sure new changes to the original templates are included. Also, check to make sure they are not using `global template variables that are no longer available <http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/updating-add-on-products-for-plone-4.0/no-more-global-definitions-in-templates>`_.
+Templates that have been overridden must be reviewed to make sure new changes to the original templates are included. Also, check to make sure they are not using `global template variables that are no longer available <https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/updating-add-on-products-for-plone-4.0/no-more-global-definitions-in-templates>`_.
 
 Update the "based-on" declarations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -725,7 +725,7 @@ See `z3c.recipe.testrunner <https://pypi.python.org/pypi/zc.recipe.testrunner#de
 Changes in PloneTestCase setup
 ------------------------------
 
-If you previously set up a `PloneTestCase as explained in the developer manual <http://plone.org/documentation/manual/developer-manual/testing/writing-a-plonetestcase-unit-integration-test>`_
+If you previously set up a `PloneTestCase as explained in the developer manual <https://plone.org/documentation/manual/developer-manual/testing/writing-a-plonetestcase-unit-integration-test>`_
 
 you might need to change the initialization of Zope2 products::
 
@@ -813,7 +813,7 @@ plone.app.folder is the new package providing the folder code. plone.app.folder 
 
 `For more information see this discussion. <http://plone.293351.n2.nabble.com/Custom-content-and-migrating-to-plone-app-folder-P4-tp5545767p5633850.html>`_
 
-`Performance impact explained. <http://plone.org/products/plone/features/new-faster-folder-implementation>`_
+`Performance impact explained. <https://plone.org/products/plone/features/new-faster-folder-implementation>`_
 
 Empty/Control_Panel/Products using Plone 4
 ==========================================

@@ -18,7 +18,7 @@ Even if not recommended the techniques described are
 still useful and might be needed with new versions of Plone.
 Please consult
 `stackoverflow.com (plone tag) <http://stackoverflow.com/questions/tagged/plone>`_ or
-`plone-users mailing list <http://plone.org/support/forums/general>`_
+`plone-users mailing list <https://plone.org/support/forums/general>`_
 when in confusion.
 
 Introduction

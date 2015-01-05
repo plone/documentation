@@ -226,7 +226,7 @@ We refer it in our page template instead of ``here/main_template``::
             <metal:javascriptslot define-slot="javascript_head_slot" />
 
             <meta name="viewport" content="width=device-width, initial-scale=0.6666, maximum-scale=1.0, minimum-scale=0.6666" />
-            <meta name="generator" content="Plone - http://plone.org" />
+            <meta name="generator" content="Plone - https://plone.org" />
         </tal:notajax>
     </head>
 
@@ -323,7 +323,7 @@ Plone template element map
 
 Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers
 are described
-`here <http://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_.
+`here <https://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_.
 
 .. note:: Plone 3 viewlets differ from Plone 4 viewlets.
 

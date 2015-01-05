@@ -119,7 +119,7 @@ installed in *C:\\Python24*, as is the default). Edit this with
 Notepad, and add the TRUNCATED! Please download pandoc if you want
 to convert large files.
 
-.. _installer: http://plone.org/products/plone
+.. _installer: https://plone.org/products/plone
 .. _Python 2.4: http://www.python.org/download/releases/
 .. _PIL: http://www.pythonware.com/products/pil/
 .. _setuptools: http://peak.telecommunity.com/DevCenter/setuptools

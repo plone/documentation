@@ -14,7 +14,7 @@ This stylesheet is always loaded last on a page, and can be used,
 therefore, to override any other styles. There's an excellent and
 comprehensive tutorial on this here:
 
--  `http://plone.org/documentation/tutorial/working-with-css <http://plone.org/documentation/manual/tutorial/working-with-css>`_
+-  `https://plone.org/documentation/tutorial/working-with-css <https://plone.org/documentation/manual/tutorial/working-with-css>`_
 
  
 

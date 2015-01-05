@@ -101,7 +101,7 @@ name="[your skin name]"
 />
 
 Used to name the theme specific interface (see
-`Components <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_
+`Components <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_
 section)
 
 profiles/default/viewlets.xml
@@ -113,5 +113,5 @@ profiles/default/viewlets.xml
 Used to specify the theme when reordering viewlets in viewlet managers
 
 (see
-`Components <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_
+`Components <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_
 section)

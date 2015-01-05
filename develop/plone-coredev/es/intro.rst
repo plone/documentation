@@ -6,7 +6,7 @@ Este documento supone que usted quiere corregir un fallo y detallará el proceso
 
 Política sobre soporte a la Versión
 -----------------------------------
-Si usted está tratando de corregir fallos, tenga en cuenta que Plone tiene una `política sobre soporte al versionamiento <http://plone.org/support/version-support-policy>`_.
+Si usted está tratando de corregir fallos, tenga en cuenta que Plone tiene una `política sobre soporte al versionamiento <https://plone.org/support/version-support-policy>`_.
 
 Dependencias
 ------------

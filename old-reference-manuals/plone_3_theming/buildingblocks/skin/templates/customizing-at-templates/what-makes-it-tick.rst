@@ -42,7 +42,7 @@ template, for instance, would be called ``mytype_view``.
 
 Now, before we move on, I must warn you: don't edit ``base_view``.
 Seriously.
-Don't.\ `[1] <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick#ref1>`_
+Don't.\ `[1] <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick#ref1>`_
 
 No, really. Don't customize ``base_view``. If you think you need to
 customize ``base_view``, first, well... don't. Keep reading the
@@ -134,7 +134,7 @@ The widget template
 
 There are all kinds of widgets out there to do all kinds of things. The
 `Archetypes Quick Reference
-Manual <http://plone.org/products/archetypes/documentation/manual/quickref>`_
+Manual <https://plone.org/products/archetypes/documentation/manual/quickref>`_
 covers the details for the various widgets in Archetypes.
 
 [1] Unless you're wiggy.

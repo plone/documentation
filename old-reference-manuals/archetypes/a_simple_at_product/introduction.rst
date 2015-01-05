@@ -33,6 +33,6 @@ Archetypes capabilities:
 -  defining specific “Add” permissions for the contents.
 
 The code of the product can be downloaded here:
-`http://plone.org/products/example.archetype/`_
+`https://plone.org/products/example.archetype/`_
 
-.. _`http://plone.org/products/example.archetype/`: ../../../../products/example.archetype/
+.. _`https://plone.org/products/example.archetype/`: ../../../../products/example.archetype/

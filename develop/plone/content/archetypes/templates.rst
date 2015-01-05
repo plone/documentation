@@ -56,4 +56,4 @@ For cpt files (controlled page template) you'll also need corresponding
 
 More info
 
-* http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/how-to-customise-view-or-edit-on-archetypes-content-items
+* https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/how-to-customise-view-or-edit-on-archetypes-content-items

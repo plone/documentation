@@ -59,7 +59,7 @@ please read the `Plone and Grok tutorial
 More information
 ----------------
 
-* `Zope view tutorial <http://plone.org/documentation/tutorial/borg/zope-3-views>`_.
+* `Zope view tutorial <https://plone.org/documentation/tutorial/borg/zope-3-views>`_.
 
 
 View components
@@ -215,7 +215,7 @@ setup.py and buildout
 `````````````````````
 
 Either you need to have ``five.grok``
-`registered in your buildout <http://plone.org/documentation/kb/installing-add-ons-quick-how-to>`_
+`registered in your buildout <https://plone.org/documentation/kb/installing-add-ons-quick-how-to>`_
 or have :doc:`five.grok in your setup.py </appendices/grok>`. If you didn't add it in this
 point and run buildout again to download and install ``five.grok`` package.
 
@@ -344,7 +344,7 @@ to have the same id as a view::
 
 More info
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
+* https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
 
 
 
@@ -366,7 +366,7 @@ Use :doc:`available permissions in Zope 3 style strings </develop/plone/security
 
 More info:
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
+* https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
 
 Creating a view using ZCML
 ------------------------------

@@ -23,7 +23,7 @@ portal\_quickinstaller\*.
 3. Do you have a correct Add permission for the product? Check the call
 of the \`\`ContentInit()\`\` method inside the \*\_\_init\_\_.py\* file.
 See `The startup module
-<http://plone.org/documentation/manual/archetypes-developer-manual/a-semi-realistic-example/the-startup-module>`_.
+<https://plone.org/documentation/manual/archetypes-developer-manual/a-semi-realistic-example/the-startup-module>`_.
 
 4. Does it show up in the portal factory? Check \*ZMI →
 portal\_factory\* and \*factorytool.xml\*.

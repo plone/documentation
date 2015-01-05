@@ -121,7 +121,7 @@ Please tune the versions according the latest available releases.
             plone.app.dexterity
 
     # Some pre-Plone 3.3 packages may need you to register the package name here in
-    # order their configure.zcml to be run (http://plone.org/products/plone/roadmap/247)
+    # order their configure.zcml to be run (https://plone.org/products/plone/roadmap/247)
     # - this is never required for packages in the Products namespace (Products.*)
     zcml =
 

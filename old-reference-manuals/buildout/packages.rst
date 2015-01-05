@@ -126,12 +126,12 @@ line.
 Later in this tutorial, we will show how buildout can manage slugs
 for us automatically.
 
-.. _Software home: http://plone.org/documentation/glossary/software-home
-.. _Zope instance: http://plone.org/documentation/glossary/zope-instance
-.. _Python path: http://plone.org/documentation/glossary/python-path
-.. _Python package: http://plone.org/documentation/glossary/python-package
-.. _Zope product: http://plone.org/documentation/glossary/zope-product
-.. _Python egg: http://plone.org/documentation/glossary/python-egg
-.. _The Python Package Index: http://plone.org/documentation/glossary/python-package-index
-.. _easy\_install: http://plone.org/documentation/glossary/easy_install
-.. _Namespace package: http://plone.org/documentation/glossary/namespace-package
+.. _Software home: https://plone.org/documentation/glossary/software-home
+.. _Zope instance: https://plone.org/documentation/glossary/zope-instance
+.. _Python path: https://plone.org/documentation/glossary/python-path
+.. _Python package: https://plone.org/documentation/glossary/python-package
+.. _Zope product: https://plone.org/documentation/glossary/zope-product
+.. _Python egg: https://plone.org/documentation/glossary/python-egg
+.. _The Python Package Index: https://plone.org/documentation/glossary/python-package-index
+.. _easy\_install: https://plone.org/documentation/glossary/easy_install
+.. _Namespace package: https://plone.org/documentation/glossary/namespace-package

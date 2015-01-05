@@ -2144,7 +2144,7 @@ Validators
 Introduction
 --------------------
 
-Please read `Dexterity manual validators chapter <http://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/referencemanual-all-pages>`_.
+Please read `Dexterity manual validators chapter <https://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/referencemanual-all-pages>`_.
 
 There are three kind of validation hooks you can use with z3c.form
 
@@ -2270,7 +2270,7 @@ Example: How to use widget specific validators with ``z3c.form``::
 
 More info
 
-* http://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/validation
+* https://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/validation
 
 Custom field specific validation in form action handlers and update()
 ------------------------------------------------------------------------

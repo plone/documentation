@@ -10,7 +10,7 @@ CSS:
 Name:
     plone.footer
 Type:
-    `viewlet <http://plone.org/documentation/manual/theme-reference/elements/elements/viewlet>`_
+    `viewlet <https://plone.org/documentation/manual/theme-reference/elements/elements/viewlet>`_
 
 Use:
     Site Setup > Zope Management Interface >
@@ -25,7 +25,7 @@ The following details will help you locate the files that you will need
 to copy into your own product. They will also help you to provide the
 correct information to create your own zcml directives, Python classes,
 and interfaces.See
-`viewlet <http://plone.org/documentation/manual/theme-reference/elements/elements/viewlet>`_
+`viewlet <https://plone.org/documentation/manual/theme-reference/elements/elements/viewlet>`_
 for more information.
 
 Located in:

@@ -13,7 +13,7 @@ Content Views
 Since each content type is likely to have a different combination of
 fields, each content type requires a separate template for display. As
 we saw in the `templates and templating
-language <http://plone.org/documentation/manual/theme-reference/page/buildingblocks/skin/templates>`_
+language <https://plone.org/documentation/manual/theme-reference/page/buildingblocks/skin/templates>`_
 section, these usually have \_view appended to their name. You can find
 those for the standard Plone content types in
 
@@ -38,7 +38,7 @@ is dropped into a "slot" in the main\_template - called 'main'.
 
 If you feel unsure about slots, then have a look back at the `templates
 and templating language
-section <http://plone.org/documentation/manual/theme-reference/page/buildingblocks/skin/templates>`_.
+section <https://plone.org/documentation/manual/theme-reference/page/buildingblocks/skin/templates>`_.
 
 Around this main slot, the components - viewlets and portlets come into
 play - supplying the page furniture and decoration around the content.

@@ -43,7 +43,7 @@ questions, a custom template is all you need:
 
 If you answered yes to most of the questions, then you might need to
 create a Widget class. If the questions aren't clear, take a look at the
-`RichDocument tutorial <http://plone.org/tutorial/richdocument>`_ . If
+`RichDocument tutorial <https://plone.org/tutorial/richdocument>`_ . If
 you've got a specific enough use-case (like RichDocument) that you
 *need* custom widget classes, you're probably able to make it happen
 just by the sheer fact that you *know* you need them.

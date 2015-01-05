@@ -57,7 +57,7 @@ Because our skeleton theme product utilizes GenericSetup to install
 itself, we will shortly be configuring several xml files needed by GS.
 
 `Understanding and Using GenericSetup in
-Plone <http://plone.org/documentation/tutorial/genericsetup>`_
+Plone <https://plone.org/documentation/tutorial/genericsetup>`_
 
     Now a bit dated, Rob Miller's tutorial on GS remains a useful
     resource for background on GS.
@@ -68,7 +68,7 @@ Improvements <http://theploneblog.org/blog/archive/2007/06/21/genericsetup-impro
     More information about GS from Rob Miller.
 
 `Benefit NOW from Using GenericSetup and Z3
-Technologies <http://plone.org/documentation/tutorial/benefit-now-from-using-genericsetup-and-zope-3-technologies/?searchterm=benefit%20NOW>`_
+Technologies <https://plone.org/documentation/tutorial/benefit-now-from-using-genericsetup-and-zope-3-technologies/?searchterm=benefit%20NOW>`_
 
     Impress your colleagues by using GenericSetup and Zope 3 views
     efficiently and with minimal effort! This tutorial shows you how to
@@ -85,7 +85,7 @@ functionality has been backported to work under Zope 2. (And yes, Plone
 this tutorial:
 
 `Customization for
-developers <http://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/plone.org/documentation/tutorial/customization-for-developers>`_
+developers <https://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/plone.org/documentation/tutorial/customization-for-developers>`_
 
     An overview of Plone 3 customization by Martin Aspeli.
 

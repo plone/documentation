@@ -15,7 +15,7 @@ In your own product
 
 There is a detailed tutorial available here:
 
--  `http://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/ <http://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/>`_
+-  `https://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/ <https://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/>`_
 
 You can also look up the details of the portlet you want to override in
 the Elements section of this manual.

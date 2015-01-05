@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 # Giacomo <giacomo.spettoli@gmail.com>, 2014
 msgid ""
@@ -27,8 +27,8 @@ msgstr "Plone - Il CMS Open Source"
 #: ../index.rst:7
 msgid ""
 "This document is a community maintained manual for the `Plone "
-"<http://plone.org>`_ content management system."
-msgstr "Questo documento è mantenuto dalla comunità per il content management system `Plone <http://plone.org>`_"
+"<https://plone.org>`_ content management system."
+msgstr "Questo documento è mantenuto dalla comunità per il content management system `Plone <https://plone.org>`_"
 
 # c113c312747241268c2b1a96ac87ff9c
 #: ../index.rst:9

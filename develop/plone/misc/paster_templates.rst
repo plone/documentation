@@ -16,7 +16,7 @@ to aid add-on product development.
 Paster allows you to create code from code skeleton templates,
 automatically filling in your company name etc.
 
-Default Plone templates are in `ZopeSkel <http://plone.org/products/zopeskel>`_ package.
+Default Plone templates are in `ZopeSkel <https://plone.org/products/zopeskel>`_ package.
 
 * This document tells how to create your own paster templates
 
@@ -26,7 +26,7 @@ More information
 
 * http://wiki.pylonshq.com/display/pylonscookbook/Creating+Templates+For+The+paster+create+Command
 
-* http://plone.org/products/zopeskel
+* https://plone.org/products/zopeskel
 
 * http://svn.plone.org/svn/collective/collective.dexteritypaste/trunk
 

@@ -457,7 +457,7 @@ Other
 
 * http://blogs.ingeniweb.com/blogs/user/7/tag/i18ndude/
 
-* http://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
+* https://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
 
 
 

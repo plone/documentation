@@ -17,7 +17,7 @@ Content Flavors
 
 Prerequisites
 -------------
-You must install the `Content Flavors <http://plone.org/products/contentflavors>`_ product.
+You must install the `Content Flavors <https://plone.org/products/contentflavors>`_ product.
 
 Adding a field to an existing content typ
 -----------------------------------------
@@ -36,6 +36,6 @@ Limits
 * Content Flavors also allows **custom views** to be used by existing types but this feature is not supported by ArchGenXML yet.
 * You may not be able to see the additional field(s) if the ExistingType uses some non-default view. You then have to manually manage this by **overriding these existing views** with some of your own, with or without the help of the Content Flavors product.
 * The existing content type may have to be based on ATCT (to be tested)?
-* Several flavors can be applied to a given type. The order of precedence can be managed through the web if the existing type follows some requirements detailed in the `Content Flavors documentation <http://plone.org/products/contentflavors/documentation>`_.
-* There are possible issues with indexing the additional fields, see `CF documentation for details <http://plone.org/products/contentflavors/documentation>`_.
-* Content Flavors was an experiment and is now deprecated in favour of the `archetypes.schemaextender <http://plone.org/products/realestatebroker/documentation/how-to/customize-the-fields-of-the-content-types>`_, which is also supported by AGX.
+* Several flavors can be applied to a given type. The order of precedence can be managed through the web if the existing type follows some requirements detailed in the `Content Flavors documentation <https://plone.org/products/contentflavors/documentation>`_.
+* There are possible issues with indexing the additional fields, see `CF documentation for details <https://plone.org/products/contentflavors/documentation>`_.
+* Content Flavors was an experiment and is now deprecated in favour of the `archetypes.schemaextender <https://plone.org/products/realestatebroker/documentation/how-to/customize-the-fields-of-the-content-types>`_, which is also supported by AGX.

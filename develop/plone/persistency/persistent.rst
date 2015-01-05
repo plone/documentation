@@ -47,7 +47,7 @@ If you want to do your own persistent classes please read the following
 
 * `Persistent interface description <http://apidoc.zope.org/++apidoc++/Interface/persistent.interfaces.IPersistent/index.html>`_.
 
-* `ZODB tips and tricks <http://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf>`_
+* `ZODB tips and tricks <https://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf>`_
 
 Lists and dictionaries
 ----------------------
@@ -237,7 +237,7 @@ See also
 
 * http://blog.hannosch.eu/2009/05/visualizing-persistent-structure-of.html
 
-* http://plone.org/documentation/kb/debug-zodb-bloat
+* https://plone.org/documentation/kb/debug-zodb-bloat
 
 * treeanalyze.py will give you the total size of a traverse graph http://svn.erp5.org/erp5/trunk/utils/treenalyser.py?view=markup&pathrev=24405
 

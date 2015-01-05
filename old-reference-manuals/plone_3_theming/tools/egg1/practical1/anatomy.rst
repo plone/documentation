@@ -123,13 +123,13 @@ Viewlets/
     modified, these viewlets and their related code belong in your theme
     product's browser/ directory. For more information on how to work
     with viewlets, `read this
-    tutorial <http://plone.org/documentation/tutorial/customizing-main-template-viewlets>`_.
+    tutorial <https://plone.org/documentation/tutorial/customizing-main-template-viewlets>`_.
 
 If modifying page templates, you won't need to restart Zope in order to
 see your changes take effect. Changes to python, XML or ZCML, however,
 will require a restart.
 
 `Customization for
-developers <http://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/plone.org/documentation/tutorial/customization-for-developers>`_
+developers <https://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/plone.org/documentation/tutorial/customization-for-developers>`_
 An overview of Plone 3 customization by Martin Aspeli.
 

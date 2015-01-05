@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -3721,7 +3721,7 @@ msgstr ""
 msgid ""
 "Don't use commas to import multiple things on a single line. Some developers"
 " use IDEs (like `Eclipse <http://pydev.org/>`_) or tools (such as `mr.igor "
-"<http://pypi.python.org/pypi/mr.igor>`_) that expect one import per line. "
+"<https://pypi.python.org/pypi/mr.igor>`_) that expect one import per line. "
 "Let's be nice to them."
 msgstr ""
 
@@ -4273,22 +4273,22 @@ msgstr ""
 
 # 609a0876f2064c74b726db77fee09e79
 #: ../external/plone.api/docs/contribute/develop.rst:71
-msgid "http://plone.org/documentation/tutorial/buildout"
+msgid "https://plone.org/documentation/tutorial/buildout"
 msgstr ""
 
 # f97ad81a990e45a49fb7f366b047a332
 #: ../external/plone.api/docs/contribute/develop.rst:72
-msgid "http://pypi.python.org/pypi/zc.buildout/"
+msgid "https://pypi.python.org/pypi/zc.buildout/"
 msgstr ""
 
 # fbdb580965274847bba7b0a7acf8f8e3
 #: ../external/plone.api/docs/contribute/develop.rst:73
-msgid "http://pypi.python.org/pypi/setuptools"
+msgid "https://pypi.python.org/pypi/setuptools"
 msgstr ""
 
 # f7afb352435c4850b8dcc253030234b5
 #: ../external/plone.api/docs/contribute/develop.rst:74
-msgid "http://plone.org/documentation/manual/installing-plone"
+msgid "https://plone.org/documentation/manual/installing-plone"
 msgstr ""
 
 # 53221e6519d64f26b54e026f83b0522a
@@ -11077,8 +11077,8 @@ msgstr ""
 #: ../external/plone.app.dexterity/docs/install.rst:6
 msgid ""
 "Dexterity is distributed as a number of eggs, published on `PyPI "
-"<http://pypi.python.org>`_. The `plone.app.dexterity "
-"<http://pypi.python.org/pypi/plone.app.dexterity>`_ egg pulls in all the "
+"<https://pypi.python.org>`_. The `plone.app.dexterity "
+"<https://pypi.python.org/pypi/plone.app.dexterity>`_ egg pulls in all the "
 "required dependencies and should get you up and running. This how-to "
 "explains what you need to do use Dexterity in a standard Plone buildout."
 msgstr ""
@@ -11145,7 +11145,7 @@ msgstr ""
 #: ../external/plone.app.dexterity/docs/install.rst:67
 msgid ""
 "We use the `buildout.dumppickedversions "
-"<http://pypi.python.org/pypi/buildout.dumppickedversions>`_ extension to "
+"<https://pypi.python.org/pypi/buildout.dumppickedversions>`_ extension to "
 "help show what versions buildout picked for any dependencies not pinned in "
 "the buildout. This helps trace any dependency issues."
 msgstr ""
@@ -18456,7 +18456,7 @@ msgstr ""
 msgid ""
 "**plone.app.robotframework** comes with a special console script ``robot-"
 "server``, which starts up a Plone site with a given `plone.app.testing "
-"<http://pypi.python.org/pypi/plone.app.testing/>`_ testing layer set up."
+"<https://pypi.python.org/pypi/plone.app.testing/>`_ testing layer set up."
 msgstr ""
 
 # 73f8e97fd61f4efc9930aeddb53ee818
@@ -18618,7 +18618,7 @@ msgstr ""
 #: ../external/plone.app.robotframework/docs/source/tutorial.rst:53
 msgid ""
 "Luckily, with `plone.app.testing "
-"<http://pypi.python.org/pypi/plone.app.testing/>`_ we can easily define a "
+"<https://pypi.python.org/pypi/plone.app.testing/>`_ we can easily define a "
 "custom test fixture with Plone and our own add-on installed."
 msgstr ""
 
@@ -18681,7 +18681,7 @@ msgstr ""
 #: ../external/plone.app.robotframework/docs/source/tutorial.rst:118
 msgid ""
 "To be able to run Robot Framework test suite with `zope.testrunner "
-"<http://pypi.python.org/pypi/zope.testrunner/>`_ and on top of our add-ons "
+"<https://pypi.python.org/pypi/zope.testrunner/>`_ and on top of our add-ons "
 "functional test fixture, we need to"
 msgstr ""
 
@@ -18945,7 +18945,7 @@ msgstr ""
 #: ../external/plone.app.robotframework/docs/source/tutorial.rst:58
 msgid ""
 "After the base fixture has been created (by following `plone.app.testing "
-"<http://pypi.python.org/pypi/plone.app.testing/>`_ documentation) we only "
+"<https://pypi.python.org/pypi/plone.app.testing/>`_ documentation) we only "
 "need to define a functional testing fixture, which adds a fully functional "
 "ZServer to serve a Plone sandbox with our add-on."
 msgstr ""
@@ -20660,7 +20660,7 @@ msgstr ""
 #: ../external/plone.diazo/docs/contributing.rst:62
 msgid ""
 "If you have questions as a user of Diazo, please see "
-"http://plone.org/support."
+"https://plone.org/support."
 msgstr ""
 
 # a59b7727ce4c41d69ecde43b0329203c

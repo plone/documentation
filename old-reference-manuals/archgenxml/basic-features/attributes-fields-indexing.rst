@@ -10,7 +10,7 @@ Attributes / Fields / Indexing
 
 Archetypes are using *schemas* (also called *schemata*) with *fields* to define the form-fields on your content. The schema and its fields of your content types is generated from the *attributes* of your classes in your model and their tagged values. Each field has a type and a widget.
 
-The `Archetypes documentation <http://plone.org/documentation/manual/archetypes-developer-manual>`_ and the quick reference at the end of this document describes which fields are available and what parameters they take as configuration.
+The `Archetypes documentation <https://plone.org/documentation/manual/archetypes-developer-manual>`_ and the quick reference at the end of this document describes which fields are available and what parameters they take as configuration.
 
 Usage of tagged values
 ----------------------

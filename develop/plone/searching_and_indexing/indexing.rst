@@ -107,13 +107,13 @@ To perform queries on custom data, you need to add the corresponding index to po
 E.g. If your :doc:`Archetypes </develop/plone/content/types>` content type has a field::
 
 		schema = [
-		
+
 		   DateField("revisitDate",
 		        widget = atapi.DateWidget(
 		            label="Revisit date"),
 		            description="When you are alarmed this content should be revisited (one month beforehand this date)",
 		            schemata="revisit"
-		            ),		
+		            ),
 		]
 
         class MyContent(...):
@@ -149,9 +149,9 @@ to your Plone database locally.
 * On top right corner, you have a drop down menu to add new indexes. Choose the index type you need to add.
 
 	* Type: FieldIndex
-	
+
 	* Id: getMyCustomValue
-	
+
 	* Indexed attributes: getMyCustomValue
 
 You can use Archetypes accessors methods directly as an indexed attribute.
@@ -197,8 +197,8 @@ It is more cumbersome, however.
 	when an add-on product is reinstalled. If you want to avoid
 	this then you need to create new indexes in add-on
 	installer custom setup step (Python code).
-	
-	
+
+
 The example below is not safe for data prune on reinstall.
 This file is ``profiles/default/catalog.xml``
 It installs a new index called ``revisit_date``
@@ -284,7 +284,7 @@ The difference with metadata is that
 * You store always a value copy as is
 
 To create metadata colums in your ``catalog.xml`` add::
-	
+
 	<?xml version="1.0"?>
 	<object name="portal_catalog" meta_type="Plone Catalog Tool">
 
@@ -633,4 +633,4 @@ Other
 
 .. _its doctest: http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt
 
-.. _Archetypes Developer Manual: http://plone.org/documentation/manual/developer-manual/archetypes
+.. _Archetypes Developer Manual: https://plone.org/documentation/manual/developer-manual/archetypes

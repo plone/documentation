@@ -17,7 +17,7 @@ how to create a Plone installation suitable for development.
 Discovering Plone add-ons and other python packages
 ---------------------------------------------------
 
-The `plone.org Products <http://plone.org/products>`_ is a directory
+The `plone.org Products <https://plone.org/products>`_ is a directory
 of Plone add-on packages where a lot of add-on packages for Plone are
 listed.
 
@@ -30,7 +30,7 @@ Installing add-ons using buildout
 ---------------------------------
 
 Add-on packages which are uploaded to `PyPI <https://pypi.python.org>`_
-or `plone.org <http://plone.org/products>`_ as *egg* can be installed
+or `plone.org <https://plone.org/products>`_ as *egg* can be installed
 by buildout.
 
 Edit your `buildout.cfg` file and add the add-on package to the list

@@ -42,7 +42,7 @@ A viewlet can be configured so that it is only available for:
 
 More info
 
-* `Plone 4 Viewlet and viewlet manager reference <http://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_
+* `Plone 4 Viewlet and viewlet manager reference <https://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_
 
 * `ZCML viewlet definition <http://apidoc.zope.org/++apidoc++/ZCML/http_co__sl__sl_namespaces.zope.org_sl_browser/viewlet/index.html>`_.
 
@@ -124,7 +124,7 @@ More info
 
 * http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto
 
-* http://plone.org/documentation/manual/theme-reference/elements/viewletmanager/anatomy/
+* https://plone.org/documentation/manual/theme-reference/elements/viewletmanager/anatomy/
 
 
 Creating a viewlet manager
@@ -225,7 +225,7 @@ On the top of this you also need to create a new ``viewlets.xml`` export for you
 
 More info
 
-* http://plone.org/documentation/manual/theme-reference/elements/viewletmanager/override
+* https://plone.org/documentation/manual/theme-reference/elements/viewletmanager/override
 
 Viewlet behavior
 ----------------

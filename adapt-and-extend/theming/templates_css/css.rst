@@ -130,7 +130,7 @@ To check if theming is active, will return true if Diazo is enabled::
 Conditional comments (IE)
 ==============================
 
-* http://plone.org/products/plone/roadmap/232
+* https://plone.org/products/plone/roadmap/232
 
 ``cssregistry.xml`` example:
 

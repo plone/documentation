@@ -29,7 +29,7 @@ for ready solution, for examples, for inspiration.
 
 * https://github.com/collective/collective.portletalias
 
-* http://plone.org/products/contentwellportlets
+* https://plone.org/products/contentwellportlets
 
 * https://github.com/miohtama/imageportlet
 
@@ -88,7 +88,7 @@ whose portlet you are going to override.
 
 More information
 
-* http://plone.org/documentation/manual/theme-reference/elements/portlet/override-the-portlets-in-plone-3.0
+* https://plone.org/documentation/manual/theme-reference/elements/portlet/override-the-portlets-in-plone-3.0
 
 update() and render()
 -----------------------
@@ -579,9 +579,9 @@ a template or fancy view.  To do this in code do this::
 
 Or just do it using GenericSetup like a sane person:
 
-* http://plone.org/documentation/manual/developer-manual/generic-setup/reference/portlets
+* https://plone.org/documentation/manual/developer-manual/generic-setup/reference/portlets
 
-* http://plone.org/products/plone/roadmap/203
+* https://plone.org/products/plone/roadmap/203
 
 Creating a new portlet manager
 ----------------------------------

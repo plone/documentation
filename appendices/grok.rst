@@ -42,7 +42,7 @@ More info
 Tutorial
 ========
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok
+* https://plone.org/products/dexterity/documentation/manual/five.grok
 
 * http://www.martinaspeli.net/articles/using-grok-techniques-in-plone
 
@@ -112,13 +112,13 @@ Edit your Python egg ``setup.py`` file and list ``five.grok`` as dependency::
 
 Re-run buildout. Now buildout should download ``five.grok`` for PyPi and activate it for you.
 
-If you are using Plone 4.1 or older you also need `Dexterity extends = line pindowns in your buildout <http://plone.org/products/dexterity/documentation/how-to/install>`_.
+If you are using Plone 4.1 or older you also need `Dexterity extends = line pindowns in your buildout <https://plone.org/products/dexterity/documentation/how-to/install>`_.
 Otherwise you may get *Version Conflict* errors when running buildout.
 
 Plone 4.3 migration and five.grok dependency
 =======================================================
 
-Please see `Plone 4.2 -> 4.3 Dexterity upgrade guide <http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/dexterity-optional-extras>`_ first.
+Please see `Plone 4.2 -> 4.3 Dexterity upgrade guide <https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/dexterity-optional-extras>`_ first.
 
 Migrating Dexterity and z3c.forms to Plone 4.3
 --------------------------------------------------
@@ -396,7 +396,7 @@ More info
 
 Tutorials
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok/background/adding-five.grok-as-a-dependency
+* https://plone.org/products/dexterity/documentation/manual/five.grok/background/adding-five.grok-as-a-dependency
 
 Steps:
 

@@ -43,7 +43,7 @@ There are two kinds of adapters:
 Example adapters users
 -----------------------
 
-* http://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific
+* https://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific
 
 Registering an adapter
 ======================

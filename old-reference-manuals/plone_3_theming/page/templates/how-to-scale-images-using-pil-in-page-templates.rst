@@ -151,4 +151,4 @@ Enjoy!
 
 ALSO SEE:
 
-`http://plone.org/documentation/manual/archetypes-developer-manual/fields/fields-reference <http://plone.org/kb/manual/archetypes-developer-manual/fields/fields-reference>`_\ `http://plone.org/documentation/tutorial/richdocument/pil <http://plone.org/kb/tutorial/richdocument/pil>`_
+`https://plone.org/documentation/manual/archetypes-developer-manual/fields/fields-reference <https://plone.org/kb/manual/archetypes-developer-manual/fields/fields-reference>`_\ `https://plone.org/documentation/tutorial/richdocument/pil <https://plone.org/kb/tutorial/richdocument/pil>`_

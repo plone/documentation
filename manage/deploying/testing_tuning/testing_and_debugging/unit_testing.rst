@@ -87,7 +87,7 @@ whether you have a set of component that function well together:
 
 More information:
 
-* http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-longer-bin-instance-test-use-zc.recipe.testrunner
+* https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-longer-bin-instance-test-use-zc.recipe.testrunner
 
 AttributeError: 'module' object has no attribute 'test_suite'
 -------------------------------------------------------------
@@ -364,7 +364,7 @@ changes please read the relevant section in the `Plone Upgrade Guide`_.
 According to that guide we can reuse some of the test code in
 ``Products.CMFPlone.tests``.
 
-.. _`Plone Upgrade Guide`: http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/mailhost.securesend-is-now-deprecated-use-send-instead
+.. _`Plone Upgrade Guide`: https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/mailhost.securesend-is-now-deprecated-use-send-instead
 
 Here's some example of a ``unittest.TestCase`` based on the excellent ``plone.app.testing``
 framework. Adapt it to your own needs.

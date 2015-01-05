@@ -131,7 +131,7 @@ Archetypes
 
 For Archetypes see
 
-* http://plone.org/products/tinymce/documentation/how-to/how-to-customize-tinymce-for-an-archetypes-richwidget
+* https://plone.org/products/tinymce/documentation/how-to/how-to-customize-tinymce-for-an-archetypes-richwidget
 
 Rich text transformations
 ---------------------------

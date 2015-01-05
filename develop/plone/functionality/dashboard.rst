@@ -12,4 +12,4 @@ Dashboard is a "block" in user preferences.
 Tutorial
 ---------
 
-* http://plone.org/documentation/kb/setup-a-custom-dashboard
+* https://plone.org/documentation/kb/setup-a-custom-dashboard

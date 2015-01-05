@@ -90,7 +90,7 @@ required, the global\_defines macro is still available in the core Plone
 Default skin layers in the plone\_deprecated folder.  For more
 information on making a Plone 3 theme compatible with Plone 4, consult
 the `upgrade
-guide <http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-more-global-definitions-in-templates>`_.
+guide <https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-more-global-definitions-in-templates>`_.
 
 Available Views and Methods
 ---------------------------

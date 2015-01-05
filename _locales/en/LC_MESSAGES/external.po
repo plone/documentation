@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -3721,9 +3721,9 @@ msgstr "Don't use ``*`` to import *everything* from a module, because if you do,
 msgid ""
 "Don't use commas to import multiple things on a single line. Some developers"
 " use IDEs (like `Eclipse <http://pydev.org/>`_) or tools (such as `mr.igor "
-"<http://pypi.python.org/pypi/mr.igor>`_) that expect one import per line. "
+"<https://pypi.python.org/pypi/mr.igor>`_) that expect one import per line. "
 "Let's be nice to them."
-msgstr "Don't use commas to import multiple things on a single line. Some developers use IDEs (like `Eclipse <http://pydev.org/>`_) or tools (such as `mr.igor <http://pypi.python.org/pypi/mr.igor>`_) that expect one import per line. Let's be nice to them."
+msgstr "Don't use commas to import multiple things on a single line. Some developers use IDEs (like `Eclipse <http://pydev.org/>`_) or tools (such as `mr.igor <https://pypi.python.org/pypi/mr.igor>`_) that expect one import per line. Let's be nice to them."
 
 # 4b3a04103efd49dea55a18af736ce6e6
 #: ../external/plone.api/docs/contribute/conventions.rst:228
@@ -4273,23 +4273,23 @@ msgstr "If you experience problems read through the following links as almost al
 
 # 609a0876f2064c74b726db77fee09e79
 #: ../external/plone.api/docs/contribute/develop.rst:71
-msgid "http://plone.org/documentation/tutorial/buildout"
-msgstr "http://plone.org/documentation/tutorial/buildout"
+msgid "https://plone.org/documentation/tutorial/buildout"
+msgstr "https://plone.org/documentation/tutorial/buildout"
 
 # f97ad81a990e45a49fb7f366b047a332
 #: ../external/plone.api/docs/contribute/develop.rst:72
-msgid "http://pypi.python.org/pypi/zc.buildout/"
-msgstr "http://pypi.python.org/pypi/zc.buildout/"
+msgid "https://pypi.python.org/pypi/zc.buildout/"
+msgstr "https://pypi.python.org/pypi/zc.buildout/"
 
 # fbdb580965274847bba7b0a7acf8f8e3
 #: ../external/plone.api/docs/contribute/develop.rst:73
-msgid "http://pypi.python.org/pypi/setuptools"
-msgstr "http://pypi.python.org/pypi/setuptools"
+msgid "https://pypi.python.org/pypi/setuptools"
+msgstr "https://pypi.python.org/pypi/setuptools"
 
 # f7afb352435c4850b8dcc253030234b5
 #: ../external/plone.api/docs/contribute/develop.rst:74
-msgid "http://plone.org/documentation/manual/installing-plone"
-msgstr "http://plone.org/documentation/manual/installing-plone"
+msgid "https://plone.org/documentation/manual/installing-plone"
+msgstr "https://plone.org/documentation/manual/installing-plone"
 
 # 53221e6519d64f26b54e026f83b0522a
 #: ../external/plone.api/docs/contribute/develop.rst:76
@@ -11077,11 +11077,11 @@ msgstr "*How to install Dexterity and use it in your project*"
 #: ../external/plone.app.dexterity/docs/install.rst:6
 msgid ""
 "Dexterity is distributed as a number of eggs, published on `PyPI "
-"<http://pypi.python.org>`_. The `plone.app.dexterity "
-"<http://pypi.python.org/pypi/plone.app.dexterity>`_ egg pulls in all the "
+"<https://pypi.python.org>`_. The `plone.app.dexterity "
+"<https://pypi.python.org/pypi/plone.app.dexterity>`_ egg pulls in all the "
 "required dependencies and should get you up and running. This how-to "
 "explains what you need to do use Dexterity in a standard Plone buildout."
-msgstr "Dexterity is distributed as a number of eggs, published on `PyPI <http://pypi.python.org>`_. The `plone.app.dexterity <http://pypi.python.org/pypi/plone.app.dexterity>`_ egg pulls in all the required dependencies and should get you up and running. This how-to explains what you need to do use Dexterity in a standard Plone buildout."
+msgstr "Dexterity is distributed as a number of eggs, published on `PyPI <https://pypi.python.org>`_. The `plone.app.dexterity <https://pypi.python.org/pypi/plone.app.dexterity>`_ egg pulls in all the required dependencies and should get you up and running. This how-to explains what you need to do use Dexterity in a standard Plone buildout."
 
 # edf465af09da4f6a8316c38ef77237de
 #: ../external/plone.app.dexterity/docs/install.rst:14
@@ -11145,10 +11145,10 @@ msgstr "Note that:"
 #: ../external/plone.app.dexterity/docs/install.rst:67
 msgid ""
 "We use the `buildout.dumppickedversions "
-"<http://pypi.python.org/pypi/buildout.dumppickedversions>`_ extension to "
+"<https://pypi.python.org/pypi/buildout.dumppickedversions>`_ extension to "
 "help show what versions buildout picked for any dependencies not pinned in "
 "the buildout. This helps trace any dependency issues."
-msgstr "We use the `buildout.dumppickedversions <http://pypi.python.org/pypi/buildout.dumppickedversions>`_ extension to help show what versions buildout picked for any dependencies not pinned in the buildout. This helps trace any dependency issues."
+msgstr "We use the `buildout.dumppickedversions <https://pypi.python.org/pypi/buildout.dumppickedversions>`_ extension to help show what versions buildout picked for any dependencies not pinned in the buildout. This helps trace any dependency issues."
 
 # e91503ad812b4cabba62f27b4bf1b951
 #: ../external/plone.app.dexterity/docs/install.rst:72
@@ -18456,8 +18456,8 @@ msgstr "Speed up your test writing with robot-server"
 msgid ""
 "**plone.app.robotframework** comes with a special console script ``robot-"
 "server``, which starts up a Plone site with a given `plone.app.testing "
-"<http://pypi.python.org/pypi/plone.app.testing/>`_ testing layer set up."
-msgstr "**plone.app.robotframework** comes with a special console script ``robot-server``, which starts up a Plone site with a given `plone.app.testing <http://pypi.python.org/pypi/plone.app.testing/>`_ testing layer set up."
+"<https://pypi.python.org/pypi/plone.app.testing/>`_ testing layer set up."
+msgstr "**plone.app.robotframework** comes with a special console script ``robot-server``, which starts up a Plone site with a given `plone.app.testing <https://pypi.python.org/pypi/plone.app.testing/>`_ testing layer set up."
 
 # 73f8e97fd61f4efc9930aeddb53ee818
 #: ../external/plone.app.robotframework/docs/source/server.rst:8
@@ -18618,9 +18618,9 @@ msgstr "Functional Selenium tests require a fully functional Plone-environment."
 #: ../external/plone.app.robotframework/docs/source/tutorial.rst:53
 msgid ""
 "Luckily, with `plone.app.testing "
-"<http://pypi.python.org/pypi/plone.app.testing/>`_ we can easily define a "
+"<https://pypi.python.org/pypi/plone.app.testing/>`_ we can easily define a "
 "custom test fixture with Plone and our own add-on installed."
-msgstr "Luckily, with `plone.app.testing <http://pypi.python.org/pypi/plone.app.testing/>`_ we can easily define a custom test fixture with Plone and our own add-on installed."
+msgstr "Luckily, with `plone.app.testing <https://pypi.python.org/pypi/plone.app.testing/>`_ we can easily define a custom test fixture with Plone and our own add-on installed."
 
 # 5dd82ac14e4046f481870b8eacc0980a
 #: ../external/plone.app.robotframework/docs/source/templer.rst:149
@@ -18681,9 +18681,9 @@ msgstr "Register the suite for zope.testrunner"
 #: ../external/plone.app.robotframework/docs/source/tutorial.rst:118
 msgid ""
 "To be able to run Robot Framework test suite with `zope.testrunner "
-"<http://pypi.python.org/pypi/zope.testrunner/>`_ and on top of our add-ons "
+"<https://pypi.python.org/pypi/zope.testrunner/>`_ and on top of our add-ons "
 "functional test fixture, we need to"
-msgstr "To be able to run Robot Framework test suite with `zope.testrunner <http://pypi.python.org/pypi/zope.testrunner/>`_ and on top of our add-ons functional test fixture, we need to"
+msgstr "To be able to run Robot Framework test suite with `zope.testrunner <https://pypi.python.org/pypi/zope.testrunner/>`_ and on top of our add-ons functional test fixture, we need to"
 
 # 3dc10b27a1e94dc8ab50995d43696e91
 # 8d14e0d2db724420ae1e840b2c2f2c60
@@ -18945,10 +18945,10 @@ msgstr "Define functional test fixture"
 #: ../external/plone.app.robotframework/docs/source/tutorial.rst:58
 msgid ""
 "After the base fixture has been created (by following `plone.app.testing "
-"<http://pypi.python.org/pypi/plone.app.testing/>`_ documentation) we only "
+"<https://pypi.python.org/pypi/plone.app.testing/>`_ documentation) we only "
 "need to define a functional testing fixture, which adds a fully functional "
 "ZServer to serve a Plone sandbox with our add-on."
-msgstr "After the base fixture has been created (by following `plone.app.testing <http://pypi.python.org/pypi/plone.app.testing/>`_ documentation) we only need to define a functional testing fixture, which adds a fully functional ZServer to serve a Plone sandbox with our add-on."
+msgstr "After the base fixture has been created (by following `plone.app.testing <https://pypi.python.org/pypi/plone.app.testing/>`_ documentation) we only need to define a functional testing fixture, which adds a fully functional ZServer to serve a Plone sandbox with our add-on."
 
 # e89c09b9d65b4f48b0a5787bae471c7d
 #: ../external/plone.app.robotframework/docs/source/tutorial.rst:63
@@ -20660,8 +20660,8 @@ msgstr "Discussion about the development of Diazo happens mainly on the ``plone-
 #: ../external/plone.diazo/docs/contributing.rst:62
 msgid ""
 "If you have questions as a user of Diazo, please see "
-"http://plone.org/support."
-msgstr "If you have questions as a user of Diazo, please see http://plone.org/support."
+"https://plone.org/support."
+msgstr "If you have questions as a user of Diazo, please see https://plone.org/support."
 
 # a59b7727ce4c41d69ecde43b0329203c
 #: ../external/plone.diazo/docs/contributing.rst:64

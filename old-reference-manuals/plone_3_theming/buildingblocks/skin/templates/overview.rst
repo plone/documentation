@@ -17,7 +17,7 @@ There are several excellent introductions to ZPT, and it doesn't take
 long to learn TAL. Try these:
 
 -  `Zope Page Templates tutorial on
-   plone.org <http://plone.org/documentation/tutorial/zpt/>`_
+   plone.org <https://plone.org/documentation/tutorial/zpt/>`_
 -  `ZPT Reference on
    Zope.org <http://www.zope.org/Documentation/Books/ZopeBook/2_6Edition/AppendixC.stx>`_
 
@@ -26,7 +26,7 @@ rest you can pick your way through or familiarise yourself with as you
 go along.
 
 -  `Zope Page Template Tutorial on plone.org - Advanced
-   Usage <http://plone.org/documentation/tutorial/zpt/advanced-usage>`_
+   Usage <https://plone.org/documentation/tutorial/zpt/advanced-usage>`_
 
 A Plone web page is delivered via an aggregation of templates, rather
 than just one, and there a couple of aspects of Zope Page Template that
@@ -57,7 +57,7 @@ And filled via another template like this:
 
 The ZPT tutorial on plone.org talks you through this in more detail, and
 the `Templates and Components to
-Page <http://plone.org/documentation/manual/theme-reference/buildingblocks/page/templates>`_
+Page <https://plone.org/documentation/manual/theme-reference/buildingblocks/page/templates>`_
 section of this manual gives you an example.
 
 2. Content view templates (\_view)
@@ -69,7 +69,7 @@ section of this manual gives you an example.
 
 From the user's, contributor's, or visitor's perspective, a view is the
 way in which a content item is presented on the page. There's a `useful
-introduction <http://plone.org/documentation/plone-2.5-user-manual/managing-content/folder-view/>`_
+introduction <https://plone.org/documentation/plone-2.5-user-manual/managing-content/folder-view/>`_
 to this in the Plone User Manual.
 
 Templates that are used to render a content item for a view have \_view

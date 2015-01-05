@@ -110,7 +110,7 @@ or the mailing list below (sometimes requests go unnoticed).
 Support
 =======
 
-Please ask questions on the `plone-i18n mailing-list <http://plone.org/support/forums/i18n>`_.
+Please ask questions on the `plone-i18n mailing-list <https://plone.org/support/forums/i18n>`_.
 
 
 Statistics for Plone 4

@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -25,7 +25,7 @@ msgstr ""
 # 8deb079c69054867a731d4de187d01ce
 #: ../license.rst:4
 msgid ""
-"Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed "
+"Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed "
 "under a `Creative Commons Attribution 4.0 International License "
 "<http://creativecommons.org/licenses/by/4.0/>`_."
 msgstr ""
@@ -35,7 +35,7 @@ msgstr ""
 msgid ""
 "If you want to contribute to this documentation, you can do so directly by "
 "making a pull request, if you have filled out a `Contributor Agreement "
-"<http://plone.org/foundation/contributors-agreement>`_."
+"<https://plone.org/foundation/contributors-agreement>`_."
 msgstr ""
 
 # b81c35ca29c043ecaf40e04c7204fde4

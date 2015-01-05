@@ -135,8 +135,8 @@ Libraries
 Minimal build
 =============
 
-With complete requirements in place, a barebones Plone install may be created with a few steps. 
-``~/$`` is a system prompt. 
+With complete requirements in place, a barebones Plone install may be created with a few steps.
+``~/$`` is a system prompt.
 
 .. code-block:: bash
 
@@ -173,7 +173,7 @@ Errors like "SyntaxError: ("'return' outside function"..."" may be ignored.
 After it finished you can start Plone in foreground-mode with:
 
 .. code-block:: bash
-    
+
     ~/Plone-4.3/zinstance$ bin/instance fg
 
 You can stop it with ``ctrl + c``.
@@ -181,14 +181,14 @@ You can stop it with ``ctrl + c``.
 Start and stop this Plone-instance in production-mode like this;
 
 .. code-block:: bash
-    
+
     ~/Plone-4.3/zinstance$ bin/instance start
 
     ~/Plone-4.3/zinstance$ bin/instance stop
 
-Plone will run on port 8080 and can be accessed via http://localhost:8080. 
+Plone will run on port 8080 and can be accessed via http://localhost:8080.
 Use login id "admin" and password "admin" for initial login so you can create a site.
 
 This build would be adequate for a quick evaluation installation. For a
 production or development installation, use one of `Plone's installers
-<http://plone.org/products/plone>`_.
+<https://plone.org/products/plone>`_.

@@ -51,7 +51,7 @@ Archetypes based content image scales is handled by `plone.namedfile <https://py
 
 Dexterity based content image scales are handled by `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_.
 
-Archetypes based content image scales is handled by `plone.app.imaging <http://plone.org/products/plone.app.imaging>`_.
+Archetypes based content image scales is handled by `plone.app.imaging <https://plone.org/products/plone.app.imaging>`_.
 
 Both packages offer the same traverseable `@@images` view which can be used from page templates and Python code
 to provide different image scales for image fields on content.
@@ -119,7 +119,7 @@ the corresponding scale name::
     http://yoursite/content/imageOne/image_preview
 
 In **Plone 4** this behavior comes from the monkey-patch applied by the
-`plone.app.imaging <http://plone.org/products/plone.app.imaging>`_ package.
+`plone.app.imaging <https://plone.org/products/plone.app.imaging>`_ package.
 
 In **Plone 3** this hook is defined in ``__bobo_traverse__`` in ``ATImage`` class:
 * https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py
@@ -144,7 +144,7 @@ Custom image scales and recreating scale data
 For Plone 4
 -------------
 
-`plone.app.imaging <http://plone.org/products/plone.app.imaging>`_ allows
+`plone.app.imaging <https://plone.org/products/plone.app.imaging>`_ allows
 you to configure available image scales in ``portal_properties`` ->
 ``imaging_properties``.
 

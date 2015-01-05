@@ -5,7 +5,7 @@ How to create a new portlet manager.
 
 A practical example of creating a new portlet manager can be found here
 
--  `http://plone.org/documentation/how-to/adding-portlet-managers <http://plone.org/documentation/how-to/adding-portlet-managers>`_
+-  `https://plone.org/documentation/how-to/adding-portlet-managers <https://plone.org/documentation/how-to/adding-portlet-managers>`_
 
 Here's a quick checklist of what you need to do.
 

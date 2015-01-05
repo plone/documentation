@@ -4,7 +4,7 @@ Este documento assume que você deseja corrigir um bug e irá detalhar o process
 
 Política de Versões Suportadas
 ------------------------------
-Se você estiver fazendo uma triagem ou corrigindo bugs, tenha em mente que o Plone possui uma `Política de versões suportadas <http://plone.org/support/version-support-policy>`_.
+Se você estiver fazendo uma triagem ou corrigindo bugs, tenha em mente que o Plone possui uma `Política de versões suportadas <https://plone.org/support/version-support-policy>`_.
 
 Dependências
 ------------

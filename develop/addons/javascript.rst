@@ -77,7 +77,7 @@ Plone 4.1 ships with
 
 Also see
 
-* `Plone compatible jQuery UI package <http://plone.org/products/collective.js.jqueryui>`_.
+* `Plone compatible jQuery UI package <https://plone.org/products/collective.js.jqueryui>`_.
 
 * `Useful Plone out of the box Javascripts <http://www.sixfeetup.com/blog/2009/7/31/utilize-available-javascript-in-plone-without-knowing-javascript>`_.
 
@@ -605,7 +605,7 @@ Loading Javascript files for certain edit views only (to be used with widgets)
 Converting page links to pop-up windows
 ----------------------------------------
 
-`plone.app.jquerytools <http://plone.org/products/plone.app.jquerytools>`_
+`plone.app.jquerytools <https://plone.org/products/plone.app.jquerytools>`_
 can convert links, images and forms to AJAX pop-up windows.
 Plone 4 uses this e.g. for the login box pop-up functionality.
 

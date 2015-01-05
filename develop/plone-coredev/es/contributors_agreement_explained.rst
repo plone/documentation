@@ -10,7 +10,7 @@ Este documento explica el propósito de este respondiendo a este con preguntas y
 acerca del lo que este significa.
 
 El acuerdo de contribución para Plone puede ser encontrado en:
-`http://plone.org/foundation/contributors-agreement/agreement.pdf`_
+`https://plone.org/foundation/contributors-agreement/agreement.pdf`_
 
 Acerca del acuerdo de contribuidor de Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,10 +116,10 @@ Plone estará siempre disponible bajo una licencia aprobada por la Open Source I
   estar haciendo disponibles) contribuyendo con recursos financieros a nuestra comunidad, que puede estar usado para
   desarrollar, comercializar y proteger a la versión GPL de Plone.
 
-.. _http://plone.org/foundation/contributors-agreement/agreement.pdf: http://plone.org/foundation/contributors-agreement/agreement.pdf
+.. _https://plone.org/foundation/contributors-agreement/agreement.pdf: https://plone.org/foundation/contributors-agreement/agreement.pdf
 .. _http://dev.plone.org/plone: http://dev.plone.org/plone
 .. _https://github.com/plone: https://github.com/plone
 .. _http://dev.plone.org/collective: http://dev.plone.org/collective
 .. _https://github.com/collective: https://github.com/collective
-.. _Política de Acuerdos del contribuyente y parches : http://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011
+.. _Política de Acuerdos del contribuyente y parches : https://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011
 

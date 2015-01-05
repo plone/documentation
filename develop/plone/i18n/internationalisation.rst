@@ -524,7 +524,7 @@ The script will:
     #
     # Copyright 2010 mFabrik http://mfabrik.com
     #
-    # http://plone.org/documentation/manual/plone-community-developer-documentation/i18n/localization
+    # https://plone.org/documentation/manual/plone-community-developer-documentation/i18n/localization
     #
 
     # Assume the product name is the current folder name
@@ -709,7 +709,7 @@ Other
 
 * http://reinout.vanrees.org/weblog/2007/12/14/translating-schemata-names.html
 
-* http://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
+* https://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
 
 * http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
 

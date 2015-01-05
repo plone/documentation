@@ -47,6 +47,6 @@ If your theme or product has customized these, you will need to replace them wit
 | review_history.pt                            | plone.belowcontentbody.contenthistory  | viewlet         |
 +----------------------------------------------+----------------------------------------+-----------------+
 
-For more info about how the viewlet architecture replaced METAL macros check the `Customizing the viewlets in main_template <http://plone.org/documentation/kb/customizing-main-template-viewlets/>`_ tutorial.
+For more info about how the viewlet architecture replaced METAL macros check the `Customizing the viewlets in main_template <https://plone.org/documentation/kb/customizing-main-template-viewlets/>`_ tutorial.
 
 For an overview of the Plone portlets infrastucture, see the :doc:`Portlets </develop/plone/functionality/portlets>` section of the Developer Manual.

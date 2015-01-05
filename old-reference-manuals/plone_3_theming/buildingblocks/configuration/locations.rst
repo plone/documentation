@@ -9,7 +9,7 @@ Through the Web
 
 There are a number of different routes to configure your site through
 the web. The
-`Elements <http://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_
+`Elements <https://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_
 section of this manual should give you pointers on where to look to
 configure particular page elements. In general
 

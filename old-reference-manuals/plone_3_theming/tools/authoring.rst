@@ -10,7 +10,7 @@ You might find the following useful:
 Zope/Plone TextMate support
 ---------------------------
 
--  `http://plone.org/products/textmate-support/ <http://plone.org/products/textmate-support/>`_
+-  `https://plone.org/products/textmate-support/ <https://plone.org/products/textmate-support/>`_
 -  `http://dev.plone.org/collective/browser/textmate-support <http://dev.plone.org/collective/browser/textmate-support>`_
 
 You will have to check this out of the collective svn - instructions on
@@ -46,8 +46,8 @@ If you fancy using an IDE, then there are plenty of options, though
 these are directed towards Python development rather than writing or
 customizing templates:
 
--  `http://plone.org/documentation/how-to/developing-plone-with-eclipse-ide <http://plone.org/documentation/how-to/developing-plone-with-eclipse-ide>`_
--  `http://plone.org/documentation/tutorial/debugging-plone-products-with-pida <http://plone.org/documentation/tutorial/debugging-plone-products-with-pida>`_
+-  `https://plone.org/documentation/how-to/developing-plone-with-eclipse-ide <https://plone.org/documentation/how-to/developing-plone-with-eclipse-ide>`_
+-  `https://plone.org/documentation/tutorial/debugging-plone-products-with-pida <https://plone.org/documentation/tutorial/debugging-plone-products-with-pida>`_
 
 Other IDEs include Wing
 (`http://www.wingware.com/ <http://www.wingware.com/>`_), BoaConstructor

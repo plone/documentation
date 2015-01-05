@@ -9,8 +9,8 @@ Introduction
 
 Plone versioning allows you to go back between older edits of the same content object.
 
-`Versioning allows you to restore and diff previous copies of the same content <http://plone.org/documentation/manual/plone-3-user-manual/managing-content/versioning-plone-v3.0-plone-v3.2>`_.
-More about `CMFEditions here <http://plone.org/products/cmfeditions/documentation/refmanual/cmfeditionoverview>`_.
+`Versioning allows you to restore and diff previous copies of the same content <https://plone.org/documentation/manual/plone-3-user-manual/managing-content/versioning-plone-v3.0-plone-v3.2>`_.
+More about `CMFEditions here <https://plone.org/products/cmfeditions/documentation/refmanual/cmfeditionoverview>`_.
 
 See also
 
@@ -146,7 +146,7 @@ Below are some notes how to enable it.
 
 For more information
 
-* http://plone.org/documentation/manual/developer-manual/archetypes/appendix-practicals/enabling-versioning-on-your-custom-content-types
+* https://plone.org/documentation/manual/developer-manual/archetypes/appendix-practicals/enabling-versioning-on-your-custom-content-types
 
 Checking whether versioning is enabled
 --------------------------------------

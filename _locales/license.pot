@@ -23,12 +23,12 @@ msgstr ""
 
 #: ../license.rst:4
 # 8deb079c69054867a731d4de187d01ce
-msgid "Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_."
+msgid "Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_."
 msgstr ""
 
 #: ../license.rst:6
 # c76bab9528e444299ef38ab39f1ba82b
-msgid "If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <http://plone.org/foundation/contributors-agreement>`_."
+msgid "If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_."
 msgstr ""
 
 #: ../license.rst:8

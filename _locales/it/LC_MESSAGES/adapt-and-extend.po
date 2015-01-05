@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -894,7 +894,7 @@ msgstr ""
 # 264591ff5acc48c6b6257caf7e530d42
 #: ../adapt-and-extend/install_add_ons.rst:28
 msgid ""
-"the `Plone product <http://plone.org/products>`_ download area contains "
+"the `Plone product <https://plone.org/products>`_ download area contains "
 "popular add-ons for Plone"
 msgstr ""
 
@@ -945,7 +945,7 @@ msgstr ""
 # 0f25df845c3b48b6901dc76a54d6d264
 #: ../adapt-and-extend/install_add_ons.rst:41
 msgid ""
-"Browse the `plone.org product area <http://plone.org/products>`_ or `search "
+"Browse the `plone.org product area <https://plone.org/products>`_ or `search "
 "on PyPi "
 "<https://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for"
 " possible add-ons."
@@ -1065,7 +1065,7 @@ msgstr ""
 #: ../adapt-and-extend/install_add_ons.rst:112
 msgid ""
 "Please visit the  :doc:`help asking guidelines</askforhelp>` and `Plone "
-"support <http://plone.org/support>`_ options page to find further help if "
+"support <https://plone.org/support>`_ options page to find further help if "
 "these instructions are not enough. Also, contact the add-on author, as "
 "listed on Plone product page, to ask specific instructions regarding a "
 "particular add-on."
@@ -2295,7 +2295,7 @@ msgstr ""
 
 # 0b2dbb7108fe4677924736796e341b29
 #: ../adapt-and-extend/theming/templates_css/css.rst:133
-msgid "http://plone.org/products/plone/roadmap/232"
+msgid "https://plone.org/products/plone/roadmap/232"
 msgstr ""
 
 # fe66962c82fc4fa887e37238ad6fbd96
@@ -2594,7 +2594,7 @@ msgstr ""
 
 # da87484377e749b3a1005cd7ca04b3a3
 #: ../adapt-and-extend/theming/templates_css/diazo.rst:86
-msgid "http://plone.org/products/collective.examples.diazo"
+msgid "https://plone.org/products/collective.examples.diazo"
 msgstr ""
 
 # 603d36a798134949acb4f160d297f9fe
@@ -3450,7 +3450,7 @@ msgstr ""
 #: ../adapt-and-extend/theming/templates_css/template_basics.rst:325
 msgid ""
 "Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers "
-"are described `here <http://plone.org/documentation/manual/theme-"
+"are described `here <https://plone.org/documentation/manual/theme-"
 "reference/elements/elementsindexsunburst4>`_."
 msgstr ""
 
@@ -3917,7 +3917,7 @@ msgid ""
 "development, so that people with little HTML and CSS knowledge can create "
 "themes without the need to know the underlying Python, PHP or whatever. It "
 "also enables integration of different services and sites to one unified user"
-" experience. For example, XDV is used by `plone.org <http://plone.org>`_ to "
+" experience. For example, XDV is used by `plone.org <https://plone.org>`_ to "
 "integrate the Plone CMS and the Trac issue tracker."
 msgstr ""
 
@@ -4010,7 +4010,7 @@ msgstr ""
 # b10455019be64460a95bc919dd4459af
 #: ../adapt-and-extend/theming/templates_css/xdv.rst:78
 msgid ""
-"http://plone.org/products/collective.xdv/documentation/reference-"
+"https://plone.org/products/collective.xdv/documentation/reference-"
 "manual/theming"
 msgstr ""
 

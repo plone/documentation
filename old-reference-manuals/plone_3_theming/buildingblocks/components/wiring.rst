@@ -78,7 +78,7 @@ There are three things to note:
 -  ZCML attributes often refer to interfaces rather than actual content
    types, classes or components (see the *for* and *manager* attributes
    in the example above). You'll find more about interfaces in a `later
-   section <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts/interfaces>`_.
+   section <https://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts/interfaces>`_.
 -  Look at the class attribute and you'll see it begins with a leading
    dot. This means you can find it in the same directory as the ZCML
    file itself. If it isn't within the same directory you'll need to
