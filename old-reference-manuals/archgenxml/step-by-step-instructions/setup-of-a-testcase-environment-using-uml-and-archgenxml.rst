@@ -21,9 +21,9 @@ core or other add-on products, affects the work of *others*.
 There are several documents available to read on why testing is
 important, so feel free to have a look:
 
-* `Testing in Plone - Introduction <http://plone.org/documentation/tutorial/testing/introduction>`_
-* `Best Practices for Plone development - Unit Testing <http://plone.org/documentation/tutorial/best-practices/unit-testing>`_
-* `RichDocument Tutorial - Unit testing <http://plone.org/documentation/tutorial/richdocument/unit-testing>`_
+* `Testing in Plone - Introduction <https://plone.org/documentation/tutorial/testing/introduction>`_
+* `Best Practices for Plone development - Unit Testing <https://plone.org/documentation/tutorial/best-practices/unit-testing>`_
+* `RichDocument Tutorial - Unit testing <https://plone.org/documentation/tutorial/richdocument/unit-testing>`_
 
 and there are many more: Try the *testing*. Some of these documents
 are describing in detail how to write the tests itself, which this
@@ -41,7 +41,7 @@ hand-work to create it !
 
 Steps:
 
-1. Check if `PloneTestCase <http://plone.org/products/plonetestcase/>`_ product was shipped with your Plone. If not install it in the version for your Plone.
+1. Check if `PloneTestCase <https://plone.org/products/plonetestcase/>`_ product was shipped with your Plone. If not install it in the version for your Plone.
 2. Create a package in your model and name it 'tests' and give it the stereotype ``<<tests>>``
 3. Inside the new tests package create class 'MyFancyTestcase' (in the uml below named 'testPlone') and give it the stereotype ``<<plone_testcase>>``. This is your main testcase class.
 4. Create an additional class inside the test package, call it 'testSetup', and give it the stereotype ``<<setup_testcase>>``. Let it derive from the main testcase class using the generalization arrow.

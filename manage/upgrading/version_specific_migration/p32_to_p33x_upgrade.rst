@@ -24,7 +24,7 @@ Upgrade Steps
 
     extends = http://dist.plone.org/release/3.3.5/versions.cfg
 
-* check http://plone.org/products/plone to see whether a more recent release is advised
+* check https://plone.org/products/plone to see whether a more recent release is advised
 * we have at least 3.3.5.
 
 If you're using a buildout.cfg that reads versions.cfg from a file instead of a URL, you'll need to add this line and comment out the existing extends = versions.cfg line. Alternatively, you may download a new versions.cfg file from the URL above and point to that instead - if you prefer having the setup locally.

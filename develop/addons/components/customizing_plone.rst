@@ -34,7 +34,7 @@ need go through manual steps to achieve the same customization.
 
 Possible through-the-web changes are:
 
-* Site settings: E.g. adding/removing `content rules <http://plone.org/documentation/how-to/content-rules>`_
+* Site settings: E.g. adding/removing `content rules <https://plone.org/documentation/how-to/content-rules>`_
 
 * Showing and hiding viewlets (parts of the page) using ``@@manage-viewlets``
 

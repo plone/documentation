@@ -10,7 +10,7 @@ On the file system, rather than customize, the process is to wire up a
 new viewlet, or re-wire an existing viewlet.
 
 You'll find a detailed tutorial on creating a viewlet in `this
-article <http://plone.org/documentation/kb/customizing-main-template-viewlets/adding-a-viewlet/>`_.
+article <https://plone.org/documentation/kb/customizing-main-template-viewlets/adding-a-viewlet/>`_.
 
 Quick Cheat Sheet
 -----------------
@@ -37,7 +37,7 @@ You will need to know the name of:
 
 You will need to create the following (you should be able to locate the
 originals to copy by looking at the Elements section or by using
-`GloWorm <http://plone.org/documentation/products/gloworm>`_):
+`GloWorm <https://plone.org/documentation/products/gloworm>`_):
 
 3. browser viewlet directive
     This will go in [your theme package]/browser/configure.zcml

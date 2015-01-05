@@ -45,7 +45,7 @@ For further information, read
 Whitelisting modules for RestrictedPython import
 ---------------------------------------------------
 
-* http://plone.org/documentation/kb/using-unauthorized-modules-in-scripts
+* https://plone.org/documentation/kb/using-unauthorized-modules-in-scripts
 
 Traversing special cases
 -------------------------

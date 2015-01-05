@@ -34,6 +34,6 @@ Tools: What do I need to have installed?
 -  Plone 2.0 or 2.1
 -  Archetypes (included by default in Plone 2.1)
 -  `The ATViewTutorial
-   product <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/atviewtutorial.tgz>`_
+   product <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/atviewtutorial.tgz>`_
    - this product has examples of the concepts in this tutorial
 

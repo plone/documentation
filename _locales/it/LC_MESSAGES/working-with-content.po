@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -3021,7 +3021,7 @@ msgstr ""
 #: ../working-with-content/introduction/visual-design-of-plone.rst:40
 msgid ""
 "For example, we can select three web sites from the `list of Plone web sites"
-" <http://plone.org/support/sites>`_ to compare:"
+" <https://plone.org/support/sites>`_ to compare:"
 msgstr ""
 
 # cd4759f44a9749c8ae177ddd37249fa3
@@ -3205,7 +3205,7 @@ msgid ""
 "Security settings control panel. The effect is that on the registration form"
 " no field is shown for the user name. On the login form the user is now "
 "asked to fill in an email address. See `E-mail address based login in the "
-"Upgrade Guid <http://plone.org/documentation/manual/upgrade-guide/version"
+"Upgrade Guid <https://plone.org/documentation/manual/upgrade-guide/version"
 "/upgrading-plone-3-x-to-4.0/e-mail-address-based-login>`_ for more info "
 "about this feature."
 msgstr ""
@@ -4260,7 +4260,7 @@ msgid ""
 "should contain no blanks. Use dashes for any blanks in the title, and "
 "otherwise make it a carbon copy of the title. Also, use lowercase for the "
 "short name. See also the page \"`What's in a Web Name? "
-"<http://plone.org/documentation/manual/plone-4-user-manual/adding-content"
+"<https://plone.org/documentation/manual/plone-4-user-manual/adding-content"
 "/whats-in-a-web-name>`_\" for a description of how Plone handles web "
 "addressing and the short name."
 msgstr ""
@@ -6808,7 +6808,7 @@ msgstr ""
 
 # 703a450f6a1740a09937e342d7a7f6fd
 #: ../working-with-content/managing-content/ploneformgen/index.rst:20
-msgid "`PloneFormGen product page <http://plone.org/products/ploneformgen>`_"
+msgid "`PloneFormGen product page <https://plone.org/products/ploneformgen>`_"
 msgstr ""
 
 # cb885cb534e1481ca1859514cee130c2

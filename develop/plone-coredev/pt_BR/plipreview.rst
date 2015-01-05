@@ -56,7 +56,7 @@ Python
 
 Javascript
 ^^^^^^^^^^
- * O javascript segue os padrões utilizados? Veja a referência em http://plone.org/documentation/manual/developer-manual/client-side-functionality-javascript/javascript-standards/referencemanual-all-pages
+ * O javascript segue os padrões utilizados? Veja a referência em https://plone.org/documentation/manual/developer-manual/client-side-functionality-javascript/javascript-standards/referencemanual-all-pages
  * O javascript funciona em todas os navegadores suportados atualmente? Como está o desempenho?
 
 ME/TAL

@@ -130,7 +130,7 @@ explains how committing works in ZODB.
 Browsing
 ========
 
-You can explore ZODB with-in Plone using `ZODBBrowser <http://plone.org/products/zodbbrowser>`_.
+You can explore ZODB with-in Plone using `ZODBBrowser <https://plone.org/products/zodbbrowser>`_.
 
 Packing database
 =====================
@@ -230,6 +230,6 @@ ZODB tips and tricks
 
 Please see
 
-* http://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf
+* https://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf
 
 .. |---| unicode:: U+02014 .. em dash

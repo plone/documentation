@@ -8,7 +8,7 @@ Se você deseja contribuir com o desenvolvimento do Plone, siga algumas instruç
 
 2) Peça ajuda sobre configuração do ambiente no IRC. A maioria dos desenvolvedores estão lá.
 
-Baixe um cliente de IRC e acesse o canal #plone-framework ou #plone, ambos no freenode. As pessoas no #plone-framework usam Plone há muito tempo e ficam felizes em poder ajudar. Mais informações podem ser obtidas no endereço http://plone.org/support/chat.
+Baixe um cliente de IRC e acesse o canal #plone-framework ou #plone, ambos no freenode. As pessoas no #plone-framework usam Plone há muito tempo e ficam felizes em poder ajudar. Mais informações podem ser obtidas no endereço https://plone.org/support/chat.
 
 Se você está em um fuso horário em que o canal não esteja muito ativo, envie um e-mail para a lista plone-developers ou pegue uma cerveja e espere o pessoal acordar.
 

@@ -6,7 +6,7 @@ These are test snippets useful for common use cases.
 
 
 See
-http://plone.org/documentation/manual/developer-manual/testing/writing-a-plonetestcase-unit-integration-test
+https://plone.org/documentation/manual/developer-manual/testing/writing-a-plonetestcase-unit-integration-test
 to learn about PloneTestCase helper methods.
 
 Test portal title::

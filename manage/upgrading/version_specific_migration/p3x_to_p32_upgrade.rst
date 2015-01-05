@@ -31,7 +31,7 @@ Out of the box, Plone's Unified Installer includes a *buildout.cfg*.
 
 If you're upgrading using buildout for the first time, take a look at :doc:`General advice on updating from a non-buildout to buildout-based installation. </manage/upgrading/non_buildout_to_buildout_upgrade>`
 
-http://plone.org/documentation/manual/upgrade-guide/general-advice-on-updating-from-a-non-buildout-to-buildout-based-installation
+https://plone.org/documentation/manual/upgrade-guide/general-advice-on-updating-from-a-non-buildout-to-buildout-based-installation
 
 If you're updating an existing buildout, please note that the buildout files for 3.2.x look slightly different to those for 3.0 and 3.1 - they don't need a custom plone installation step as buildout can now handle it directly, here's an example of the relevant parts of *buildout.cfg*::
 

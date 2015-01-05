@@ -11,7 +11,7 @@ CompoundField and ArrayField
 
 Prerequisites
 -------------
-Install the `CompoundField <http://plone.org/products/compoundfield>`_ extension into you Products folder.
+Install the `CompoundField <https://plone.org/products/compoundfield>`_ extension into you Products folder.
 
 List of fields - ArrayField
 ---------------------------

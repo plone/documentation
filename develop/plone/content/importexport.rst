@@ -93,7 +93,7 @@ For more information on using, see `this transmogrify blog post <http://shuttlet
 quintagroup.transmogrifier: Exporting single folder only
 ========================================================
 
-Here is explained how to export and import `Plone CMS <http://plone.org>`_
+Here is explained how to export and import `Plone CMS <https://plone.org>`_
 folders between different Plonen versions, or
 different CMS systems, using  XML based content marshalling and
 `quintagroup.transmogrifier <http://projects.quintagroup.com/products/wiki/quintagroup.transmogrifier>`_.

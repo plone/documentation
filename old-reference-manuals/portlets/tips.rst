@@ -566,7 +566,7 @@ Or just do it using GenericSetup like a sane person:
 
 * :doc:`/develop/addons/components/genericsetup`
 
-* http://plone.org/products/plone/roadmap/203
+* https://plone.org/products/plone/roadmap/203
 
 Creating a new portlet manager
 ----------------------------------

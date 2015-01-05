@@ -12,9 +12,9 @@ Prerequisites
 -------------
 You must install to additional Products:
 
-* `membrane <http://plone.org/products/membrane>`_
+* `membrane <https://plone.org/products/membrane>`_
 
-* `remember <http://plone.org/products/remember>`_ (using `Five 1.4.3+ <http://codespeak.net/z3/five/>`_)
+* `remember <https://plone.org/products/remember>`_ (using `Five 1.4.3+ <http://codespeak.net/z3/five/>`_)
 
 You should also read the documentation of both and understand how they work!
 

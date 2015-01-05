@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../index.rst:7
 # 075edcd3f1cc408a88edbac393064792
-msgid "This document is a community maintained manual for the `Plone <http://plone.org>`_ content management system."
+msgid "This document is a community maintained manual for the `Plone <https://plone.org>`_ content management system."
 msgstr ""
 
 #: ../index.rst:9

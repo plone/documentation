@@ -10,7 +10,7 @@ Introduction
 =============
 
 `Python <http://python.org>`_ is the programming language used by
-`Plone <http://plone.org>`_ and `Zope <http://zope.org>`_. One needs to have at least basic Python experience
+`Plone <https://plone.org>`_ and `Zope <http://zope.org>`_. One needs to have at least basic Python experience
 before considering building Plone add-ons or customizations.
 
 .. note ::

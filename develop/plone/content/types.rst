@@ -173,7 +173,7 @@ Debugging new content type problems
 
 Creating types by hand is not worth the trouble.
 
-* `Why doesn't my custom content type show up in add menu <http://plone.org/documentation/faq/why-doesnt-my-custom-content-type-show-up-in-add-menu/>`_ checklist.
+* `Why doesn't my custom content type show up in add menu <https://plone.org/documentation/faq/why-doesnt-my-custom-content-type-show-up-in-add-menu/>`_ checklist.
 
 Creating new content types through-the-web
 =============================================
@@ -184,7 +184,7 @@ to create their content types more easily.
 Dexterity
 ---------
 
-* http://plone.org/products/dexterity
+* https://plone.org/products/dexterity
 
 * Core feature
 

@@ -91,7 +91,7 @@ Enter zip\_safe
     Stick with the default here.
 
 `Creating new eggs and packages quickly with
-paster <http://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/use-paster>`_
+paster <https://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/use-paster>`_
 
     How to use the paster command to create new packages with proper
     setuptools- and egg-compliant filesystem layout quickly and easily.

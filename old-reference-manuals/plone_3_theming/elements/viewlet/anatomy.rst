@@ -33,7 +33,7 @@ for
     specify an interface marking a group of content types, if you wish.
     The viewlet will then be restricted to those content types (for an
     example see the `Presentation
-    viewlet <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.presentation>`_
+    viewlet <https://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.presentation>`_
     in the Elements section)
 view
     specify an interface marking a specific browser view, if you wish.
@@ -41,6 +41,6 @@ view
     an example investigate the source code of the Content Actions
     viewlet - you'll find directions on where to locate this code on the
     `Content
-    Actions <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.contentactions>`_
+    Actions <https://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.contentactions>`_
     page of the Elements section)
 

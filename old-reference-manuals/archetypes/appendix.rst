@@ -174,7 +174,7 @@ What do we need?
 -  A Plone installation
 -  A nice text editor (my wintel box runs SciTE)
 -  Some product (for real dummies like me, try
-   http://plone.org/documentation/tutorial/anonymously-adding-custom-content-types-with-argouml-and-archgenxml/view)
+   https://plone.org/documentation/tutorial/anonymously-adding-custom-content-types-with-argouml-and-archgenxml/view)
 
 **What we are going to achieve?**
 

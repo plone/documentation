@@ -14,7 +14,7 @@ Relations
 
 Prerequisites
 -------------
-To enable Relations install the Product (`code-location <http://plone.org/products/relations/>`_).
+To enable Relations install the Product (`code-location <https://plone.org/products/relations/>`_).
 
 Basics
 ------

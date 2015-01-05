@@ -7,7 +7,7 @@ layout, or remove or hide them from your page.
 You'll find detailed information and a tutorial on how to move viewlets
 here:
 
--  `http://plone.org/documentation/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets <http://plone.org/documentation/manual/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets>`_
+-  `https://plone.org/documentation/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets <https://plone.org/documentation/manual/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets>`_
 
 Quick Cheat Sheet of the Basics
 -------------------------------
@@ -30,7 +30,7 @@ Moving or removing viewlets is part of your site configuration:
 -  Add or edit [your theme package]/profiles/default/viewlets.xml
 
 You'll find general information about the site configuration in the
-`Configuration <http://plone.org/documentation/manual/theme-reference/elements/buildingblocks/configuration>`_\ section
+`Configuration <https://plone.org/documentation/manual/theme-reference/elements/buildingblocks/configuration>`_\ section
 of this manual. It's worth reading this through before you launch in
 here, as configuring viewlets and viewlet managers can be a bit tricky.
 It will tell you
@@ -39,7 +39,7 @@ It will tell you
    for you
 -  why things might not be working as you expect
 
-`GloWorm <http://plone.org/products/gloworm>`_ is a useful tool here
+`GloWorm <https://plone.org/products/gloworm>`_ is a useful tool here
 too. It will help you move the viewlets around through the Plone user
 interface and inspect the resulting configuration.
 

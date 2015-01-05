@@ -7,9 +7,9 @@ Converting single process Zope instance to ZEO cluster buildout.cfg
 Introduction
 ------------
 
-See `ZEO <http://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/to-zeo-or-not-to-zeo>`_.
+See `ZEO <https://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/to-zeo-or-not-to-zeo>`_.
 
-See the `plone.app.blob product page <http://plone.org/products/plone.app.blob>`_
+See the `plone.app.blob product page <https://plone.org/products/plone.app.blob>`_
 for good ZEO configuration examples.
 
 Steps

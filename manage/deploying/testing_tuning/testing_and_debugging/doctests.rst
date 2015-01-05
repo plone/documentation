@@ -4,7 +4,7 @@ Doctests
 
 Doctests are way to do tests with interactive Python interpreter.
 
-* http://plone.org/documentation/tutorial/testing/doctests
+* https://plone.org/documentation/tutorial/testing/doctests
 
 Doctests and pdb
 ----------------

@@ -31,6 +31,6 @@ the Security settings control panel. The effect is that on the
 registration form no field is shown for the user name. On the login form
 the user is now asked to fill in an email address. See `E-mail address
 based login in the Upgrade
-Guid <http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/e-mail-address-based-login>`_
+Guid <https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/e-mail-address-based-login>`_
 for more info about this feature.
 

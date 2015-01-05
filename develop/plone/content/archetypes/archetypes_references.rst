@@ -35,7 +35,7 @@ Example declaration of a ``ReferenceField`` inside a schema::
     ))
 
 Check the *Fields Reference* section in the *Archetypes Developer Manual* at
-http://plone.org to learn about the ``ReferenceField`` available options.
+https://plone.org to learn about the ``ReferenceField`` available options.
 
 Archetypes reference fields just store the UID (Universal Object Identifier)
 of an object providing the ``IReferenceable`` interface. Continuing with the

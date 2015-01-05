@@ -506,6 +506,6 @@ Example correct form header:
 File-system access in load-balanced configurations
 ==================================================
 
-The `plone.namedfiled <http://plone.org/products/plone.app.blob>`_
+The `plone.namedfiled <https://plone.org/products/plone.app.blob>`_
 product page contains configuration instructions
 for ``plone.namedfile`` and ZEO.

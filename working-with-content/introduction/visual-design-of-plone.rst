@@ -38,7 +38,7 @@ areas, "portlet," or "viewlet," for discrete areas or boxes, and several
 other terms.
 
 For example, we can select three web sites from the `list of Plone web
-sites <http://plone.org/support/sites>`_ to compare:
+sites <https://plone.org/support/sites>`_ to compare:
 
 .. figure:: /_static/akamaidesign.png
    :align: center

@@ -49,7 +49,7 @@ Then, install the platform's build kit, nginx, and supervisor:
 Step 2: Install Plone
 ---------------------
 
-Check `http://plone.org/products/plone <http://plone.org/products/plone>`_. Follow the `Download` link to get to the latest release. Copy the URL for the `Unified Installer`. Substitute that URL below:
+Check `https://plone.org/products/plone <https://plone.org/products/plone>`_. Follow the `Download` link to get to the latest release. Copy the URL for the `Unified Installer`. Substitute that URL below:
 
 .. code-block:: console
 
@@ -74,7 +74,7 @@ This will install Plone to /usr/local/Plone. There are installer options to put 
     This creates a `zeo` installation with two Plone clients. We will only connect one of those clients to the Internet. The other will be reserved for debugging and administrator access. If you know this is a larger site and wish to use load balancing, you may create more clients with the `--clients=##` command-line argument to create more clients. They're also easy to add later.
 
 If you hit an "lxml" error during installation (ie the log shows "Error: Couldn't install: lxml 2.3.6") you may need additional libraries.
-Take a look at http://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/debian-libraries
+Take a look at https://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/debian-libraries
 
 When the install completes, you'll be shown the preset administrative password. Record it. If you lose it, you may see it again:
 

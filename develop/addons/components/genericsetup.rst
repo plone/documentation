@@ -75,7 +75,7 @@ accordingly.
         information) is read during Plone start-up.
         If this file has problems your add-on might not appear in the installer control panel.
 
-* `GenericSetup tutorial <http://plone.org/documentation/tutorial/genericsetup>`_
+* `GenericSetup tutorial <https://plone.org/documentation/tutorial/genericsetup>`_
 
 * `GenericSetup product page <https://pypi.python.org/pypi/Products.GenericSetup/1.4.5>`_.
 
@@ -195,7 +195,7 @@ Dependencies
 
 GenericSetup profile can contain dependencies to other add-on product installers and profiles.
 
-* `More information about GenericSetup dependencies <http://plone.org/products/plone/roadmap/195/>`_.
+* `More information about GenericSetup dependencies <https://plone.org/products/plone/roadmap/195/>`_.
 
 For example, if you want to declare dependency to *collective.basket* add-on product, so that it
 is automatically installed when your add-on installed you can use the declaration below.
@@ -627,7 +627,7 @@ propertiestool.xml
 ------------------
 In the propertiestool.xml you can change all values of the portal_properties.
 
-take a look at: http://plone.org/documentation/manual/developer-manual/generic-setup/reference/properties-ref
+take a look at: https://plone.org/documentation/manual/developer-manual/generic-setup/reference/properties-ref
 
 metadata.xml
 ------------

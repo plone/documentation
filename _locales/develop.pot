@@ -669,7 +669,7 @@ msgstr ""
 
 #: ../develop/addons/components/adapters.rst:46
 # 0413cd38b8254161b9d56c0a3233698c
-msgid "http://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific"
+msgid "https://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific"
 msgstr ""
 
 #: ../develop/addons/components/adapters.rst:49
@@ -1325,7 +1325,7 @@ msgstr ""
 
 #: ../develop/addons/components/customizing_plone.rst:37
 # 0920775b84854dc7b00626bfd7890bb5
-msgid "Site settings: E.g. adding/removing `content rules <http://plone.org/documentation/how-to/content-rules>`_"
+msgid "Site settings: E.g. adding/removing `content rules <https://plone.org/documentation/how-to/content-rules>`_"
 msgstr ""
 
 #: ../develop/addons/components/customizing_plone.rst:39
@@ -1438,7 +1438,7 @@ msgstr ""
 #: ../develop/addons/components/events.rst:126
 # 14fc549480344137a0138aa1b21bbe7d
 # a68230f4ac314dafbf2220aee13f4a15
-msgid "http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/events"
+msgid "https://plone.org/products/dexterity/documentation/manual/five.grok/core-components/events"
 msgstr ""
 
 #: ../develop/addons/components/events.rst:35
@@ -1628,7 +1628,7 @@ msgstr ""
 
 #: ../develop/addons/components/events.rst:230
 # 64107700b95f4205b96198c21ad7ae62
-msgid "http://plone.org/documentation/manual/developer-manual/archetypes/other-useful-archetypes-features/how-to-use-events-to-hook-the-archetypes-creation-process"
+msgid "https://plone.org/documentation/manual/developer-manual/archetypes/other-useful-archetypes-features/how-to-use-events-to-hook-the-archetypes-creation-process"
 msgstr ""
 
 #: ../develop/addons/components/events.rst:232
@@ -1941,7 +1941,7 @@ msgstr ""
 
 #: ../develop/addons/components/genericsetup.rst:78
 # 817b9de8fd8045ca907a13202beeca20
-msgid "`GenericSetup tutorial <http://plone.org/documentation/tutorial/genericsetup>`_"
+msgid "`GenericSetup tutorial <https://plone.org/documentation/tutorial/genericsetup>`_"
 msgstr ""
 
 #: ../develop/addons/components/genericsetup.rst:80
@@ -2124,7 +2124,7 @@ msgstr ""
 
 #: ../develop/addons/components/genericsetup.rst:186
 # 3a0b6b2c3fa54a52be0165c5bc0cf0e7
-msgid "For the theory, see: `<http://plone.org/documentation/kb/genericsetup/creating-an-uninstall-profile>`_"
+msgid "For the theory, see: `<https://plone.org/documentation/kb/genericsetup/creating-an-uninstall-profile>`_"
 msgstr ""
 
 #: ../develop/addons/components/genericsetup.rst:189
@@ -2146,7 +2146,7 @@ msgstr ""
 
 #: ../develop/addons/components/genericsetup.rst:197
 # e252a996d0f642f58bab1c9a637a2c8a
-msgid "`More information about GenericSetup dependencies <http://plone.org/products/plone/roadmap/195/>`_."
+msgid "`More information about GenericSetup dependencies <https://plone.org/products/plone/roadmap/195/>`_."
 msgstr ""
 
 #: ../develop/addons/components/genericsetup.rst:199
@@ -2631,7 +2631,7 @@ msgstr ""
 
 #: ../develop/addons/components/genericsetup.rst:629
 # fc3565161885401bbcb7470fd9469054
-msgid "take a look at: http://plone.org/documentation/manual/developer-manual/generic-setup/reference/properties-ref"
+msgid "take a look at: https://plone.org/documentation/manual/developer-manual/generic-setup/reference/properties-ref"
 msgstr ""
 
 #: ../develop/addons/components/genericsetup.rst:632
@@ -2778,7 +2778,7 @@ msgstr ""
 
 #: ../develop/addons/components/grok.rst:41
 # 83c736fe1a284c67a9ad942b5203749d
-msgid "http://plone.org/products/dexterity/documentation/manual/five.grok"
+msgid "https://plone.org/products/dexterity/documentation/manual/five.grok"
 msgstr ""
 
 #: ../develop/addons/components/grok.rst:43
@@ -2870,7 +2870,7 @@ msgstr ""
 
 #: ../develop/addons/components/grok.rst:111
 # 603316e41b4d4e8783f1b7230aedbf71
-msgid "If you are using Plone 4.1 or older you also need `Dexterity extends = line pindowns in your buildout <http://plone.org/products/dexterity/documentation/how-to/install>`_. Otherwise you may get *Version Conflict* errors when running buildout."
+msgid "If you are using Plone 4.1 or older you also need `Dexterity extends = line pindowns in your buildout <https://plone.org/products/dexterity/documentation/how-to/install>`_. Otherwise you may get *Version Conflict* errors when running buildout."
 msgstr ""
 
 #: ../develop/addons/components/grok.rst:115
@@ -2880,7 +2880,7 @@ msgstr ""
 
 #: ../develop/addons/components/grok.rst:117
 # e8c2df73d57844e4960ed04350811930
-msgid "Please see `Plone 4.2 -> 4.3 Dexterity upgrade guide <http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/dexterity-optional-extras>`_ first."
+msgid "Please see `Plone 4.2 -> 4.3 Dexterity upgrade guide <https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/dexterity-optional-extras>`_ first."
 msgstr ""
 
 #: ../develop/addons/components/grok.rst:120
@@ -3007,7 +3007,7 @@ msgstr ""
 
 #: ../develop/addons/components/grok.rst:235
 # f184d1def878418293f6a8c3b8dff324
-msgid "http://plone.org/products/dexterity/documentation/manual/five.grok/background/adding-five.grok-as-a-dependency"
+msgid "https://plone.org/products/dexterity/documentation/manual/five.grok/background/adding-five.grok-as-a-dependency"
 msgstr ""
 
 #: ../develop/addons/components/grok.rst:237
@@ -3406,7 +3406,7 @@ msgstr ""
 
 #: ../develop/addons/components/utilities.rst:30
 # 45c5f040a6c047eaaf470c15e0fe84f0
-msgid "http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/utilities"
+msgid "https://plone.org/products/dexterity/documentation/manual/five.grok/core-components/utilities"
 msgstr ""
 
 #: ../develop/addons/components/utilities.rst:32
@@ -3501,7 +3501,7 @@ msgstr ""
 
 #: ../develop/addons/components/utilities.rst:117
 # b4ae857315ad450db102b70bfc303df5
-msgid "http://plone.org/documentation/manual/developer-manual/generic-setup/reference/component-registry"
+msgid "https://plone.org/documentation/manual/developer-manual/generic-setup/reference/component-registry"
 msgstr ""
 
 #: ../develop/addons/components/utilities.rst:119
@@ -3621,7 +3621,7 @@ msgstr ""
 
 #: ../develop/addons/components/utilities.rst:212
 # b4c75771684d4b55909c8c57e68d6c1b
-msgid "http://plone.org/documentation/kb/manually-removing-local-persistent-utilities"
+msgid "https://plone.org/documentation/kb/manually-removing-local-persistent-utilities"
 msgstr ""
 
 #: ../develop/addons/components/utilities.rst:213
@@ -3770,7 +3770,7 @@ msgstr ""
 
 #: ../develop/addons/components/zcml.rst:66
 # 0f0bb5b6cb4e433e821c936f696bc39b
-msgid "New way: Python egg ``setup.py`` file contains a `autoinclude <http://plone.org/products/plone/roadmap/247>`_ hint and is picked up automatically when all the packages are scanned."
+msgid "New way: Python egg ``setup.py`` file contains a `autoinclude <https://plone.org/products/plone/roadmap/247>`_ hint and is picked up automatically when all the packages are scanned."
 msgstr ""
 
 #: ../develop/addons/components/zcml.rst:70
@@ -3815,7 +3815,7 @@ msgstr ""
 
 #: ../develop/addons/components/zcml.rst:100
 # bd138f98ea824f47980ac966f7de0d0d
-msgid "Since Plone 3.3, the ``z3c.autoinclude`` plugin can do this (http://plone.org/products/plone/roadmap/247/)."
+msgid "Since Plone 3.3, the ``z3c.autoinclude`` plugin can do this (https://plone.org/products/plone/roadmap/247/)."
 msgstr ""
 
 #: ../develop/addons/components/zcml.rst:105
@@ -4489,7 +4489,7 @@ msgstr ""
 
 #: ../develop/addons/five-grok/browser-components/viewlets.rst:154
 # b9886b507a5f4a53acbf60b50b94a767
-msgid "See `this tutorial <http://plone.org/documentation/kb/customizing-main-template-viewlets>`_ for more detail about the syntax of this file."
+msgid "See `this tutorial <https://plone.org/documentation/kb/customizing-main-template-viewlets>`_ for more detail about the syntax of this file."
 msgstr ""
 
 #: ../develop/addons/five-grok/browser-components/viewlets.rst:157
@@ -4886,7 +4886,7 @@ msgstr ""
 
 #: ../develop/addons/five-grok/core-components/adapters.rst:27
 # f81d17094cf142c0a78e645bcc163546
-msgid "If you prefer duck metaphors, there is an awesome talk by Brandon Craig Rhodes about the concept of an adapter for your viewing pleasure `here <http://plone.org/events/conferences/2008-washington-dc/agenda/using-grok-to-walk-like-a-duck>`_. It even has sound effects."
+msgid "If you prefer duck metaphors, there is an awesome talk by Brandon Craig Rhodes about the concept of an adapter for your viewing pleasure `here <https://plone.org/events/conferences/2008-washington-dc/agenda/using-grok-to-walk-like-a-duck>`_. It even has sound effects."
 msgstr ""
 
 #: ../develop/addons/five-grok/core-components/adapters.rst:32
@@ -6845,7 +6845,7 @@ msgstr ""
 
 #: ../develop/addons/helloworld/intro.rst:23
 # d09f2345c4af4635adabba196358259b
-msgid "You don't have to do it this way. You can create a similar environment using the `Plone 4 installers <http://plone.org/products/plone/releases/4.2>`_. The examples should all work with little or no adjustment."
+msgid "You don't have to do it this way. You can create a similar environment using the `Plone 4 installers <https://plone.org/products/plone/releases/4.2>`_. The examples should all work with little or no adjustment."
 msgstr ""
 
 #: ../develop/addons/helloworld/intro.rst:25
@@ -7046,7 +7046,7 @@ msgstr ""
 
 #: ../develop/addons/javascript.rst:80
 # 2e9bc20dd63846a981f69bbb24649485
-msgid "`Plone compatible jQuery UI package <http://plone.org/products/collective.js.jqueryui>`_."
+msgid "`Plone compatible jQuery UI package <https://plone.org/products/collective.js.jqueryui>`_."
 msgstr ""
 
 #: ../develop/addons/javascript.rst:82
@@ -7501,7 +7501,7 @@ msgstr ""
 
 #: ../develop/addons/javascript.rst:608
 # 3a6ef59b20864232a6433fe746941d40
-msgid "`plone.app.jquerytools <http://plone.org/products/plone.app.jquerytools>`_ can convert links, images and forms to AJAX pop-up windows. Plone 4 uses this e.g. for the login box pop-up functionality."
+msgid "`plone.app.jquerytools <https://plone.org/products/plone.app.jquerytools>`_ can convert links, images and forms to AJAX pop-up windows. Plone 4 uses this e.g. for the login box pop-up functionality."
 msgstr ""
 
 #: ../develop/addons/javascript.rst:612
@@ -10209,7 +10209,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/agreement.rst:10
 # ec2e659ae57c4fb391f331f42d205801
-msgid "Attend a `conference <http://plone.org/events/conferences>`_ / `symposium <http://plone.org/events/regional>`_ or participate in a `sprint <http://plone.org/events/sprints>`_ / `tune-up <http://plone.org/events/plone-tuneups>`_. There are plenty of opportunities to meet the community and start contributing through various coding sessions, either in person or on the web. You may even be able to get immediate core access at a conference if you are flexing your mad coding skills and the right people are attending."
+msgid "Attend a `conference <https://plone.org/events/conferences>`_ / `symposium <https://plone.org/events/regional>`_ or participate in a `sprint <https://plone.org/events/sprints>`_ / `tune-up <https://plone.org/events/plone-tuneups>`_. There are plenty of opportunities to meet the community and start contributing through various coding sessions, either in person or on the web. You may even be able to get immediate core access at a conference if you are flexing your mad coding skills and the right people are attending."
 msgstr ""
 
 #: ../develop/plone-coredev/agreement.rst:12
@@ -10229,12 +10229,12 @@ msgstr ""
 
 #: ../develop/plone-coredev/agreement.rst:18
 # e965700b49cc43549d3782b4e42b37c0
-msgid "Sign the contributor agreement at http://plone.org/foundation/contributors-agreement/agreement.pdf/at_download/file, then either snail mail it to the address provided or scan and email it to assignments@plone.org. This offers both copyright protection and ensures that the Plone Foundation is able to exercise some control over the codebase, ensuring it is not appropriated for someone's unethical purposes. For questions about why the agreement is required, please see :doc:`Contributor’s Agreement for Plone Explained <contributors_agreement_explained>`."
+msgid "Sign the contributor agreement at https://plone.org/foundation/contributors-agreement/agreement.pdf/at_download/file, then either snail mail it to the address provided or scan and email it to assignments@plone.org. This offers both copyright protection and ensures that the Plone Foundation is able to exercise some control over the codebase, ensuring it is not appropriated for someone's unethical purposes. For questions about why the agreement is required, please see :doc:`Contributor’s Agreement for Plone Explained <contributors_agreement_explained>`."
 msgstr ""
 
 #: ../develop/plone-coredev/agreement.rst:20
 # 05224b0521574c7a80683b7c481a191e
-msgid "If you aren't sure where to start or just want more direction, feel free to get on IRC, mailing lists, Twitter, etc... and ask for help. While there is no official mentoring process, there are plenty of people willing to act in that role and guide you through the steps of getting involved in the community. A common way to start contributing is to participate in a Plone tune-up day. Tune-ups are filled with a good mix of newbies and experienced devs alike. For more information, please see  http://plone.org/tuneup."
+msgid "If you aren't sure where to start or just want more direction, feel free to get on IRC, mailing lists, Twitter, etc... and ask for help. While there is no official mentoring process, there are plenty of people willing to act in that role and guide you through the steps of getting involved in the community. A common way to start contributing is to participate in a Plone tune-up day. Tune-ups are filled with a good mix of newbies and experienced devs alike. For more information, please see  https://plone.org/tuneup."
 msgstr ""
 
 #: ../develop/plone-coredev/agreement.rst:22
@@ -10279,7 +10279,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/contributors_agreement_explained.rst:10
 # bf93b07e5b6b4433bea4323ee8bf40a0
-msgid "The Plone Contributor Agreement can be found at: `http://plone.org/foundation/contributors-agreement/agreement.pdf`_"
+msgid "The Plone Contributor Agreement can be found at: `https://plone.org/foundation/contributors-agreement/agreement.pdf`_"
 msgstr ""
 
 #: ../develop/plone-coredev/contributors_agreement_explained.rst:14
@@ -10424,7 +10424,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/culture.rst:7
 # 75ab848760d0415190cca8678b936ac1
-msgid "Download an IRC client (Or using an alternative client `through the web <http://webchat.freenode.net/>`_) and jump on to `#plone-framework <http://webchat.freenode.net?channels=plone-framework>`_ (and/or `#plone <http://webchat.freenode.net?channels=plone>`_ - both on freenode). The people in `#plone-framework <http://webchat.freenode.net?channels=plone-framework>`_ have been using plone for a very long time and are happy to help you get going and make the right decisions. More info on IRC can be found at http://plone.org/support/chat."
+msgid "Download an IRC client (Or using an alternative client `through the web <http://webchat.freenode.net/>`_) and jump on to `#plone-framework <http://webchat.freenode.net?channels=plone-framework>`_ (and/or `#plone <http://webchat.freenode.net?channels=plone>`_ - both on freenode). The people in `#plone-framework <http://webchat.freenode.net?channels=plone-framework>`_ have been using plone for a very long time and are happy to help you get going and make the right decisions. More info on IRC can be found at https://plone.org/support/chat."
 msgstr ""
 
 #: ../develop/plone-coredev/culture.rst:9
@@ -10746,7 +10746,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/es/agreement.rst:12
 # 2c9a20730cc4419288c70ac93c7b221e
-msgid "Asistir una `conferencia <http://plone.org/events/conferences>`_ / un `simposio <http://plone.org/events/regional>`_ o participar en un `sprints <http://plone.org/events/sprints>`_ / `tune-ups <http://plone.org/events/plone-tuneups>`_. Hay abundancia de oportunidades de conocer la comunidad y comenzar a contribuir a través de varias sesiones de programación, ya sea en persona o en la web. Usted puede incluso ser capaz de obtener acceso inmediato en una conferencia si usted ha demostrando sus habilidades de programación y las personas adecuada asisten."
+msgid "Asistir una `conferencia <https://plone.org/events/conferences>`_ / un `simposio <https://plone.org/events/regional>`_ o participar en un `sprints <https://plone.org/events/sprints>`_ / `tune-ups <https://plone.org/events/plone-tuneups>`_. Hay abundancia de oportunidades de conocer la comunidad y comenzar a contribuir a través de varias sesiones de programación, ya sea en persona o en la web. Usted puede incluso ser capaz de obtener acceso inmediato en una conferencia si usted ha demostrando sus habilidades de programación y las personas adecuada asisten."
 msgstr ""
 
 #: ../develop/plone-coredev/es/agreement.rst:14
@@ -10766,12 +10766,12 @@ msgstr ""
 
 #: ../develop/plone-coredev/es/agreement.rst:20
 # d65f5d110641409a8156bfad47579657
-msgid "Firme y envié un correo con el contributor agreement ubicado en http://plone.org/foundation/contributors-agreement/agreement.pdf/at_download/file, entonces sea bien por correo postal a la dirección indicada o escanear y enviar por correo electrónico a assignments@plone.org. Esto ofrece protección de derechos de autor y se asegura de que la Fundación Plone que sea capaz de ejercer un cierto control sobre el código base, asegurándose de que no es apropiado para fines poco éticos de alguien. Para preguntas acerca de por qué el acuerdo está requerido, por favor ver :doc:`Contributor’s Agreement for Plone Explained <contributors_agreement_explained>`."
+msgid "Firme y envié un correo con el contributor agreement ubicado en https://plone.org/foundation/contributors-agreement/agreement.pdf/at_download/file, entonces sea bien por correo postal a la dirección indicada o escanear y enviar por correo electrónico a assignments@plone.org. Esto ofrece protección de derechos de autor y se asegura de que la Fundación Plone que sea capaz de ejercer un cierto control sobre el código base, asegurándose de que no es apropiado para fines poco éticos de alguien. Para preguntas acerca de por qué el acuerdo está requerido, por favor ver :doc:`Contributor’s Agreement for Plone Explained <contributors_agreement_explained>`."
 msgstr ""
 
 #: ../develop/plone-coredev/es/agreement.rst:22
 # b3b7c08ea38144d5b48ea0111a38f590
-msgid "Si usted no esta seguro por dónde empezar o solo querer más dirección, siéntase libre de usar el canal IRC, las listas de correo, Twitter, etc... y pedir ayuda. Si bien no existe un proceso oficial de tutoría, hay un montón de personas dispuestas a actuar en ese rol y le guiará por los pasos de involucrarse en la comunidad. Una manera común de empezar las contribuciones es participar en un día de tune-up de Plone. Los Tune-ups está llenado con una buena mezcla de programadores recién iniciados y experimentados igualmente. Para más información, por favor ver http://plone.org/tuneup."
+msgid "Si usted no esta seguro por dónde empezar o solo querer más dirección, siéntase libre de usar el canal IRC, las listas de correo, Twitter, etc... y pedir ayuda. Si bien no existe un proceso oficial de tutoría, hay un montón de personas dispuestas a actuar en ese rol y le guiará por los pasos de involucrarse en la comunidad. Una manera común de empezar las contribuciones es participar en un día de tune-up de Plone. Los Tune-ups está llenado con una buena mezcla de programadores recién iniciados y experimentados igualmente. Para más información, por favor ver https://plone.org/tuneup."
 msgstr ""
 
 #: ../develop/plone-coredev/es/agreement.rst:24
@@ -10816,7 +10816,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/es/contributors_agreement_explained.rst:12
 # 062e837682644a97befdaf13888a6af3
-msgid "El acuerdo de contribución para Plone puede ser encontrado en: `http://plone.org/foundation/contributors-agreement/agreement.pdf`_"
+msgid "El acuerdo de contribución para Plone puede ser encontrado en: `https://plone.org/foundation/contributors-agreement/agreement.pdf`_"
 msgstr ""
 
 #: ../develop/plone-coredev/es/contributors_agreement_explained.rst:16
@@ -10961,7 +10961,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/es/culture.rst:9
 # 0742318c565d4a15a8f0f85e7f7952db
-msgid "Descargue un software de cliente IRC (o use un cliente alternativo `a través de la web <http://webchat.freenode.net/>`_) y entre dentro de la sala IRC `#plone-framework <http://webchat.freenode.net?channels=plone-framework>`_ (y / o en la sala `#plone <http://webchat.freenode.net?channels=plone>`_ - ambos en el servidor freenode). La gente en la sala IRC `#plone-framework <http://webchat.freenode.net?channels=plone-framework>`_ tienen mucho tiempo usando Plone y por eso estarán muy felices en ayudarle a ir por la dirección correcta y hacerle tomar las decisiones mas adecuadas. Mas información sobre el servicio de IRC puede ser encontrada en el siguiente enlace http://plone.org/support/chat."
+msgid "Descargue un software de cliente IRC (o use un cliente alternativo `a través de la web <http://webchat.freenode.net/>`_) y entre dentro de la sala IRC `#plone-framework <http://webchat.freenode.net?channels=plone-framework>`_ (y / o en la sala `#plone <http://webchat.freenode.net?channels=plone>`_ - ambos en el servidor freenode). La gente en la sala IRC `#plone-framework <http://webchat.freenode.net?channels=plone-framework>`_ tienen mucho tiempo usando Plone y por eso estarán muy felices en ayudarle a ir por la dirección correcta y hacerle tomar las decisiones mas adecuadas. Mas información sobre el servicio de IRC puede ser encontrada en el siguiente enlace https://plone.org/support/chat."
 msgstr ""
 
 #: ../develop/plone-coredev/es/culture.rst:11
@@ -11001,12 +11001,12 @@ msgstr ""
 
 #: ../develop/plone-coredev/es/documentation.rst:12
 # 309bcb39617f428e9099d2656ccb3967
-msgid "`Manual de Usuario <http://plone.org/documentation/manual/plone-4-user-manual>`_."
+msgid "`Manual de Usuario <https://plone.org/documentation/manual/plone-4-user-manual>`_."
 msgstr ""
 
 #: ../develop/plone-coredev/es/documentation.rst:13
 # a88607dace774c7f9aff431941b5145a
-msgid "`Instalando Plone <http://plone-spanish-docs.readthedocs.org/en/latest/manuales/instalando_plone.html>`_, la versión original de esta documentación en Ingles esta disponible como `Installing Plone <http://plone.org/documentation/manual/installing-plone>`_."
+msgid "`Instalando Plone <http://plone-spanish-docs.readthedocs.org/en/latest/manuales/instalando_plone.html>`_, la versión original de esta documentación en Ingles esta disponible como `Installing Plone <https://plone.org/documentation/manual/installing-plone>`_."
 msgstr ""
 
 #: ../develop/plone-coredev/es/documentation.rst:14
@@ -11031,7 +11031,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/es/documentation.rst:21
 # f626fca6e2fb4b23a9db0455fd3d57c6
-msgid "`Base de conocimiento en plone.org <http://plone.org/documentation/kb>`_. Cualquiera con una cuenta en plone.org es libre de editarlo."
+msgid "`Base de conocimiento en plone.org <https://plone.org/documentation/kb>`_. Cualquiera con una cuenta en plone.org es libre de editarlo."
 msgstr ""
 
 #: ../develop/plone-coredev/es/documentation.rst:22
@@ -11301,7 +11301,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/es/intro.rst:9
 # 361b063a2b2544fe98eeaf3b25406061
-msgid "Si usted está tratando de corregir fallos, tenga en cuenta que Plone tiene una `política sobre soporte al versionamiento <http://plone.org/support/version-support-policy>`_."
+msgid "Si usted está tratando de corregir fallos, tenga en cuenta que Plone tiene una `política sobre soporte al versionamiento <https://plone.org/support/version-support-policy>`_."
 msgstr ""
 
 #: ../develop/plone-coredev/es/intro.rst:12
@@ -12895,7 +12895,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/intro.rst:7
 # 184ed5c9371e4df1be6c081de592071e
-msgid "If you are triaging or fixing bugs, keep in mind that Plone has a `version support policy <http://plone.org/support/version-support-policy>`_."
+msgid "If you are triaging or fixing bugs, keep in mind that Plone has a `version support policy <https://plone.org/support/version-support-policy>`_."
 msgstr ""
 
 #: ../develop/plone-coredev/intro.rst:13
@@ -14361,7 +14361,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/agreement.rst:6
 # 923872287a8241d997e4befa371bfb3d
-msgid "O acordo de contribuição do Plone pode ser encontrado em: http://plone.org/foundation/contributors-agreement/agreement.pdf"
+msgid "O acordo de contribuição do Plone pode ser encontrado em: https://plone.org/foundation/contributors-agreement/agreement.pdf"
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/agreement.rst:9
@@ -14506,7 +14506,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/culture.rst:11
 # b937d2de7a234ff19d43ec117be6e078
-msgid "Baixe um cliente de IRC e acesse o canal #plone-framework ou #plone, ambos no freenode. As pessoas no #plone-framework usam Plone há muito tempo e ficam felizes em poder ajudar. Mais informações podem ser obtidas no endereço http://plone.org/support/chat."
+msgid "Baixe um cliente de IRC e acesse o canal #plone-framework ou #plone, ambos no freenode. As pessoas no #plone-framework usam Plone há muito tempo e ficam felizes em poder ajudar. Mais informações podem ser obtidas no endereço https://plone.org/support/chat."
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/culture.rst:13
@@ -14531,22 +14531,22 @@ msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/documentation.rst:11
 # c6b1a5836c6340478534b28983e54cba
-msgid "`User Manual <http://plone.org/documentation/manual/plone-4-user-manual>`_"
+msgid "`User Manual <https://plone.org/documentation/manual/plone-4-user-manual>`_"
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/documentation.rst:12
 # d514d285db704f5b9d34db932e20d0fe
-msgid "`Installing Plone <http://plone.org/documentation/manual/installing-plone>`_"
+msgid "`Installing Plone <https://plone.org/documentation/manual/installing-plone>`_"
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/documentation.rst:13
 # e064cb63ecd34fc989d7fef524c9a9b5
-msgid "`Theme Reference <http://plone.org/documentation/manual/theme-reference>`_"
+msgid "`Theme Reference <https://plone.org/documentation/manual/theme-reference>`_"
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/documentation.rst:14
 # b945d329259e4322892eb352161d7c83
-msgid "`Developer Manual <http://plone.org/documentation/manual/developer-manual>`_"
+msgid "`Developer Manual <https://plone.org/documentation/manual/developer-manual>`_"
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/documentation.rst:16
@@ -14561,7 +14561,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/documentation.rst:20
 # a5b7ad868bb547dea812e9062c441af0
-msgid "`Knowledgebase on plone.org <http://plone.org/documentation/kb>`_. Anyone with a plone.org account is free to edit."
+msgid "`Knowledgebase on plone.org <https://plone.org/documentation/kb>`_. Anyone with a plone.org account is free to edit."
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/documentation.rst:21
@@ -14656,7 +14656,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/intro.rst:7
 # a66640e8faa44a05993cd448f230c257
-msgid "Se você estiver fazendo uma triagem ou corrigindo bugs, tenha em mente que o Plone possui uma `Política de versões suportadas <http://plone.org/support/version-support-policy>`_."
+msgid "Se você estiver fazendo uma triagem ou corrigindo bugs, tenha em mente que o Plone possui uma `Política de versões suportadas <https://plone.org/support/version-support-policy>`_."
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/intro.rst:10
@@ -15116,7 +15116,7 @@ msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/plipreview.rst:59
 # 28193fdd94894f1b9abeb6bfebdeb7f5
-msgid "O javascript segue os padrões utilizados? Veja a referência em http://plone.org/documentation/manual/developer-manual/client-side-functionality-javascript/javascript-standards/referencemanual-all-pages"
+msgid "O javascript segue os padrões utilizados? Veja a referência em https://plone.org/documentation/manual/developer-manual/client-side-functionality-javascript/javascript-standards/referencemanual-all-pages"
 msgstr ""
 
 #: ../develop/plone-coredev/pt_BR/plipreview.rst:60
@@ -15551,7 +15551,7 @@ msgstr ""
 
 #: ../develop/plone/content/archetypes/archetypes_references.rst:37
 # cc800ac06d054f7fa7e7663757f35b9f
-msgid "Check the *Fields Reference* section in the *Archetypes Developer Manual* at http://plone.org to learn about the ``ReferenceField`` available options."
+msgid "Check the *Fields Reference* section in the *Archetypes Developer Manual* at https://plone.org to learn about the ``ReferenceField`` available options."
 msgstr ""
 
 #: ../develop/plone/content/archetypes/archetypes_references.rst:40
@@ -15728,7 +15728,7 @@ msgstr ""
 
 #: ../develop/plone/content/archetypes/datagridfield.rst:75
 # 47bd80ba35a641e48d0e7820c1296067
-msgid "Refer `Archetypes manual <http://plone.org/documentation/manual/archetypes-developer-manual>`_ for basics Archetypes developer information."
+msgid "Refer `Archetypes manual <https://plone.org/documentation/manual/archetypes-developer-manual>`_ for basics Archetypes developer information."
 msgstr ""
 
 #: ../develop/plone/content/archetypes/editing.rst:3
@@ -16515,7 +16515,7 @@ msgstr ""
 
 #: ../develop/plone/content/archetypes/templates.rst:59
 # aa2d54ed681b455d8807b1c33e0f64c1
-msgid "http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/how-to-customise-view-or-edit-on-archetypes-content-items"
+msgid "https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/how-to-customise-view-or-edit-on-archetypes-content-items"
 msgstr ""
 
 #: ../develop/plone/content/archetypes/validators.rst:3
@@ -16567,7 +16567,7 @@ msgstr ""
 
 #: ../develop/plone/content/behaviors.rst:7
 # 5ba4a22424f6483f9272e3b3d9160bf5
-msgid "`Tutorial <http://plone.org/products/dexterity/documentation/manual/behaviors>`_"
+msgid "`Tutorial <https://plone.org/products/dexterity/documentation/manual/behaviors>`_"
 msgstr ""
 
 #: ../develop/plone/content/behaviors.rst:9
@@ -16607,12 +16607,12 @@ msgstr ""
 
 #: ../develop/plone/content/content_rules.rst:5
 # 99b031357d774b3688179783666e2b65
-msgid "`User manual <http://plone.org/documentation/tutorial/creating-content-rule-conditions-and-actions/>`_"
+msgid "`User manual <https://plone.org/documentation/tutorial/creating-content-rule-conditions-and-actions/>`_"
 msgstr ""
 
 #: ../develop/plone/content/content_rules.rst:7
 # fc303b6217864bf8a452575f094185f3
-msgid "`Developer manual <http://plone.org/documentation/how-to/content-rules>`_"
+msgid "`Developer manual <https://plone.org/documentation/how-to/content-rules>`_"
 msgstr ""
 
 #: ../develop/plone/content/creating.rst:3
@@ -17058,7 +17058,7 @@ msgstr ""
 #: ../develop/plone/content/creating.rst:499
 # 2374c5d00f58466ebe94adcf129ad15d
 # 2cb25d3395f545238718760c99d6be5d
-msgid "http://plone.org/products/ploneformgen/documentation/how-to/creating-content-from-pfg"
+msgid "https://plone.org/products/ploneformgen/documentation/how-to/creating-content-from-pfg"
 msgstr ""
 
 #: ../develop/plone/content/creating.rst:502
@@ -17968,12 +17968,12 @@ msgstr ""
 
 #: ../develop/plone/content/dynamic_views.rst:333
 # 1a36bb8146604848a76cd0d4a9b4a429
-msgid "http://plone.org/documentation/how-to/how-to-create-and-set-a-custom-homepage-template-using-generic-setup"
+msgid "https://plone.org/documentation/how-to/how-to-create-and-set-a-custom-homepage-template-using-generic-setup"
 msgstr ""
 
 #: ../develop/plone/content/dynamic_views.rst:335
 # 7033a027c80e48f495a97bc0306012be
-msgid "`CMFDynamicView plone.org product page <http://plone.org/products/cmfdynamicviewfti/>`_"
+msgid "`CMFDynamicView plone.org product page <https://plone.org/products/cmfdynamicviewfti/>`_"
 msgstr ""
 
 #: ../develop/plone/content/events.rst:3
@@ -17998,7 +17998,7 @@ msgstr ""
 
 #: ../develop/plone/content/events.rst:28
 # aa9c925565794572823b44e78f479570
-msgid "`vs.event <http://plone.org/products/vs.event>`_"
+msgid "`vs.event <https://plone.org/products/vs.event>`_"
 msgstr ""
 
 #: ../develop/plone/content/events.rst:28
@@ -18018,7 +18018,7 @@ msgstr ""
 
 #: ../develop/plone/content/events.rst:34
 # 7edad7de81914c87894722507cca946d
-msgid "`Dateable <http://plone.org/products/dateable>`_"
+msgid "`Dateable <https://plone.org/products/dateable>`_"
 msgstr ""
 
 #: ../develop/plone/content/events.rst:34
@@ -18225,7 +18225,7 @@ msgstr ""
 
 #: ../develop/plone/content/history.rst:12
 # 1a775612a7874c6bbc56b5d069040eb6
-msgid "`Versioning allows you to restore and diff previous copies of the same content <http://plone.org/documentation/manual/plone-3-user-manual/managing-content/versioning-plone-v3.0-plone-v3.2>`_. More about `CMFEditions here <http://plone.org/products/cmfeditions/documentation/refmanual/cmfeditionoverview>`_."
+msgid "`Versioning allows you to restore and diff previous copies of the same content <https://plone.org/documentation/manual/plone-3-user-manual/managing-content/versioning-plone-v3.0-plone-v3.2>`_. More about `CMFEditions here <https://plone.org/products/cmfeditions/documentation/refmanual/cmfeditionoverview>`_."
 msgstr ""
 
 #: ../develop/plone/content/history.rst:17
@@ -18285,7 +18285,7 @@ msgstr ""
 
 #: ../develop/plone/content/history.rst:149
 # cd85c79637fa4ff0b8900afb14ca9584
-msgid "http://plone.org/documentation/manual/developer-manual/archetypes/appendix-practicals/enabling-versioning-on-your-custom-content-types"
+msgid "https://plone.org/documentation/manual/developer-manual/archetypes/appendix-practicals/enabling-versioning-on-your-custom-content-types"
 msgstr ""
 
 #: ../develop/plone/content/history.rst:152
@@ -18520,7 +18520,7 @@ msgstr ""
 
 #: ../develop/plone/content/importexport.rst:96
 # 0e847ee7a0a44e278d3f26bfb541e6b7
-msgid "Here is explained how to export and import `Plone CMS <http://plone.org>`_ folders between different Plonen versions, or different CMS systems, using  XML based content marshalling and `quintagroup.transmogrifier <http://projects.quintagroup.com/products/wiki/quintagroup.transmogrifier>`_."
+msgid "Here is explained how to export and import `Plone CMS <https://plone.org>`_ folders between different Plonen versions, or different CMS systems, using  XML based content marshalling and `quintagroup.transmogrifier <http://projects.quintagroup.com/products/wiki/quintagroup.transmogrifier>`_."
 msgstr ""
 
 #: ../develop/plone/content/importexport.rst:101
@@ -19787,7 +19787,7 @@ msgstr ""
 
 #: ../develop/plone/content/types.rst:176
 # 14a49845be8441cb9182f2cf5bf68b8a
-msgid "`Why doesn't my custom content type show up in add menu <http://plone.org/documentation/faq/why-doesnt-my-custom-content-type-show-up-in-add-menu/>`_ checklist."
+msgid "`Why doesn't my custom content type show up in add menu <https://plone.org/documentation/faq/why-doesnt-my-custom-content-type-show-up-in-add-menu/>`_ checklist."
 msgstr ""
 
 #: ../develop/plone/content/types.rst:179
@@ -19802,7 +19802,7 @@ msgstr ""
 
 #: ../develop/plone/content/types.rst:187
 # 5105f9e738654e80a7b7a6bc1c93b496
-msgid "http://plone.org/products/dexterity"
+msgid "https://plone.org/products/dexterity"
 msgstr ""
 
 #: ../develop/plone/content/types.rst:189
@@ -20576,7 +20576,7 @@ msgstr ""
 
 #: ../develop/plone/forms/files.rst:509
 # d85dc61bf77a456f8a7f562f3a5a9ddc
-msgid "The `plone.namedfiled <http://plone.org/products/plone.app.blob>`_ product page contains configuration instructions for ``plone.namedfile`` and ZEO."
+msgid "The `plone.namedfiled <https://plone.org/products/plone.app.blob>`_ product page contains configuration instructions for ``plone.namedfile`` and ZEO."
 msgstr ""
 
 #: ../develop/plone/forms/index.rst:3
@@ -20763,7 +20763,7 @@ msgstr ""
 
 #: ../develop/plone/forms/ploneformgen.rst:20
 # a0b05c66e683427982ab9874fcd04aad
-msgid "`PloneFormGen product page <http://plone.org/products/ploneformgen>`_"
+msgid "`PloneFormGen product page <https://plone.org/products/ploneformgen>`_"
 msgstr ""
 
 #: ../develop/plone/forms/ploneformgen.rst:22
@@ -21589,7 +21589,7 @@ msgstr ""
 
 #: ../develop/plone/forms/wysiwyg.rst:134
 # d105280071114db482fba8b013345288
-msgid "http://plone.org/products/tinymce/documentation/how-to/how-to-customize-tinymce-for-an-archetypes-richwidget"
+msgid "https://plone.org/products/tinymce/documentation/how-to/how-to-customize-tinymce-for-an-archetypes-richwidget"
 msgstr ""
 
 #: ../develop/plone/forms/wysiwyg.rst:137
@@ -23166,7 +23166,7 @@ msgstr ""
 
 #: ../develop/plone/forms/z3c.form.rst:2147
 # ee3baeafee2f48f9be836f5980303107
-msgid "Please read `Dexterity manual validators chapter <http://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/referencemanual-all-pages>`_."
+msgid "Please read `Dexterity manual validators chapter <https://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/referencemanual-all-pages>`_."
 msgstr ""
 
 #: ../develop/plone/forms/z3c.form.rst:2149
@@ -23271,7 +23271,7 @@ msgstr ""
 
 #: ../develop/plone/forms/z3c.form.rst:2273
 # 46c645725b8d419fa36de57d16e3de9f
-msgid "http://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/validation"
+msgid "https://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/validation"
 msgstr ""
 
 #: ../develop/plone/forms/z3c.form.rst:2276
@@ -23823,7 +23823,7 @@ msgstr ""
 
 #: ../develop/plone/functionality/collections.rst:68
 # 3c643e0e72244cf89e225d4f88008216
-msgid "If you still want to create XML files by hand, read more about it in `Enable Collection Indices (fields for searching) for custom types HOW TO <http://plone.org/documentation/how-to/enable-collection-indices-fields-for-searching-for-custom-types>`_."
+msgid "If you still want to create XML files by hand, read more about it in `Enable Collection Indices (fields for searching) for custom types HOW TO <https://plone.org/documentation/how-to/enable-collection-indices-fields-for-searching-for-custom-types>`_."
 msgstr ""
 
 #: ../develop/plone/functionality/collections.rst:71
@@ -24025,7 +24025,7 @@ msgstr ""
 
 #: ../develop/plone/functionality/controlpanel.rst:38
 # 0eba8b0a6d514d24830e75df66fdb3e3
-msgid "http://plone.org/products/collective.habla"
+msgid "https://plone.org/products/collective.habla"
 msgstr ""
 
 #: ../develop/plone/functionality/controlpanel.rst:40
@@ -24055,7 +24055,7 @@ msgstr ""
 
 #: ../develop/plone/functionality/controlpanel.rst:56
 # 3f907fdd9d744829948a24a50a84110a
-msgid "In ``buildout.cfg``, make sure you have the ``extends`` line for Dexterity (see the `Dexterity installation guide <http://plone.org/products/dexterity/documentation/how-to/install>`_."
+msgid "In ``buildout.cfg``, make sure you have the ``extends`` line for Dexterity (see the `Dexterity installation guide <https://plone.org/products/dexterity/documentation/how-to/install>`_."
 msgstr ""
 
 #: ../develop/plone/functionality/controlpanel.rst:61
@@ -24207,7 +24207,7 @@ msgstr ""
 
 #: ../develop/plone/functionality/dashboard.rst:15
 # 9413aa64e72544d1a52dc3f10d3011de
-msgid "http://plone.org/documentation/kb/setup-a-custom-dashboard"
+msgid "https://plone.org/documentation/kb/setup-a-custom-dashboard"
 msgstr ""
 
 #: ../develop/plone/functionality/discussion.rst:3
@@ -24732,7 +24732,7 @@ msgstr ""
 
 #: ../develop/plone/functionality/portlets.rst:32
 # fa57517dd5674f7fb1c3e6831a711b0b
-msgid "http://plone.org/products/contentwellportlets"
+msgid "https://plone.org/products/contentwellportlets"
 msgstr ""
 
 #: ../develop/plone/functionality/portlets.rst:34
@@ -24812,7 +24812,7 @@ msgstr ""
 
 #: ../develop/plone/functionality/portlets.rst:91
 # 97e3a6cd1e8c41ffa93a5de7bc370b9a
-msgid "http://plone.org/documentation/manual/theme-reference/elements/portlet/override-the-portlets-in-plone-3.0"
+msgid "https://plone.org/documentation/manual/theme-reference/elements/portlet/override-the-portlets-in-plone-3.0"
 msgstr ""
 
 #: ../develop/plone/functionality/portlets.rst:94
@@ -25039,12 +25039,12 @@ msgstr ""
 
 #: ../develop/plone/functionality/portlets.rst:582
 # 94e584ba9fbf489e80b23f30cf6db442
-msgid "http://plone.org/documentation/manual/developer-manual/generic-setup/reference/portlets"
+msgid "https://plone.org/documentation/manual/developer-manual/generic-setup/reference/portlets"
 msgstr ""
 
 #: ../develop/plone/functionality/portlets.rst:584
 # 65c1223497d24852bac3a0bfbf6abef5
-msgid "http://plone.org/products/plone/roadmap/203"
+msgid "https://plone.org/products/plone/roadmap/203"
 msgstr ""
 
 #: ../develop/plone/functionality/portlets.rst:587
@@ -25635,7 +25635,7 @@ msgstr ""
 
 #: ../develop/plone/getstarted/debug_mode.rst:87
 # e5040ab5fa53446499494846f6b6fd20
-msgid "Run installer from `Plone.org <http://plone.org/products>`_ download page"
+msgid "Run installer from `Plone.org <https://plone.org/products>`_ download page"
 msgstr ""
 
 #: ../develop/plone/getstarted/debug_mode.rst:89
@@ -25845,7 +25845,7 @@ msgstr ""
 
 #: ../develop/plone/getstarted/index.rst:46
 # 0ceb90af6e3f461abd47f79c7db6ebed
-msgid "`PloneFormGen allows you to build forms in a web browser <http://plone.org/products/ploneformgen>`_"
+msgid "`PloneFormGen allows you to build forms in a web browser <https://plone.org/products/ploneformgen>`_"
 msgstr ""
 
 #: ../develop/plone/getstarted/index.rst:48
@@ -25895,7 +25895,7 @@ msgstr ""
 
 #: ../develop/plone/getstarted/index.rst:82
 # f96c00603f5b4015b6bebbaf5553608a
-msgid "Plone add-ons can be found at the `plone.org Products <http://plone.org/products>`_ page or at the  `PyPI (the Python Package index) <https://pypi.python.org>`_."
+msgid "Plone add-ons can be found at the `plone.org Products <https://plone.org/products>`_ page or at the  `PyPI (the Python Package index) <https://pypi.python.org>`_."
 msgstr ""
 
 #: ../develop/plone/getstarted/index.rst:86
@@ -26145,7 +26145,7 @@ msgstr ""
 
 #: ../develop/plone/getstarted/python.rst:12
 # af641d1a5a49405195094818f58fffd4
-msgid "`Python <http://python.org>`_ is the programming language used by `Plone <http://plone.org>`_ and `Zope <http://zope.org>`_. One needs to have at least basic Python experience before considering building Plone add-ons or customizations."
+msgid "`Python <http://python.org>`_ is the programming language used by `Plone <https://plone.org>`_ and `Zope <http://zope.org>`_. One needs to have at least basic Python experience before considering building Plone add-ons or customizations."
 msgstr ""
 
 #: ../develop/plone/getstarted/python.rst:18
@@ -26340,7 +26340,7 @@ msgstr ""
 
 #: ../develop/plone/i18n/contribute_to_translations.rst:113
 # 0ea9ea927ec743fb91dbf08db35579b1
-msgid "Please ask questions on the `plone-i18n mailing-list <http://plone.org/support/forums/i18n>`_."
+msgid "Please ask questions on the `plone-i18n mailing-list <https://plone.org/support/forums/i18n>`_."
 msgstr ""
 
 #: ../develop/plone/i18n/contribute_to_translations.rst:117
@@ -27033,7 +27033,7 @@ msgstr ""
 #: ../develop/plone/i18n/language.rst:460
 # ad1ca0a42d634162bf56caea0c19de46
 # 501fc3b96a1a410b8b437c0930df6c71
-msgid "http://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm="
+msgid "https://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm="
 msgstr ""
 
 #: ../develop/plone/i18n/internationalisation.rst:719
@@ -27285,7 +27285,7 @@ msgstr ""
 
 #: ../develop/plone/i18n/translating_content.rst:24
 # adf43eb366e840ab843ff831481eb213
-msgid "`LinguaPlone add-on product <http://plone.org/products/linguaplone>`_ has been the defacto standard multilingual product for Plone for almost a decade. It's well stablished, proven, tested and reliable solution. However, it has no support for Dexterity based content types and nowadays it's on legacy mode (only bugfixes)."
+msgid "`LinguaPlone add-on product <https://plone.org/products/linguaplone>`_ has been the defacto standard multilingual product for Plone for almost a decade. It's well stablished, proven, tested and reliable solution. However, it has no support for Dexterity based content types and nowadays it's on legacy mode (only bugfixes)."
 msgstr ""
 
 #: ../develop/plone/i18n/translating_content.rst:30
@@ -27829,7 +27829,7 @@ msgstr ""
 
 #: ../develop/plone/images/content.rst:54
 # 336034325478414cb719eec26e3b2212
-msgid "Archetypes based content image scales is handled by `plone.app.imaging <http://plone.org/products/plone.app.imaging>`_."
+msgid "Archetypes based content image scales is handled by `plone.app.imaging <https://plone.org/products/plone.app.imaging>`_."
 msgstr ""
 
 #: ../develop/plone/images/content.rst:56
@@ -27916,7 +27916,7 @@ msgstr ""
 
 #: ../develop/plone/images/content.rst:121
 # 02f803ef10904e5889865c5b4b23a06b
-msgid "In **Plone 4** this behavior comes from the monkey-patch applied by the `plone.app.imaging <http://plone.org/products/plone.app.imaging>`_ package."
+msgid "In **Plone 4** this behavior comes from the monkey-patch applied by the `plone.app.imaging <https://plone.org/products/plone.app.imaging>`_ package."
 msgstr ""
 
 #: ../develop/plone/images/content.rst:124
@@ -27951,7 +27951,7 @@ msgstr ""
 
 #: ../develop/plone/images/content.rst:147
 # 6d42ccc2f7114403b64706d42ba7d9c6
-msgid "`plone.app.imaging <http://plone.org/products/plone.app.imaging>`_ allows you to configure available image scales in ``portal_properties`` -> ``imaging_properties``."
+msgid "`plone.app.imaging <https://plone.org/products/plone.app.imaging>`_ allows you to configure available image scales in ``portal_properties`` -> ``imaging_properties``."
 msgstr ""
 
 #: ../develop/plone/images/content.rst:151
@@ -28753,7 +28753,7 @@ msgstr ""
 
 #: ../develop/plone/members/member_basics.rst:363
 # 01f50b38799746779cd52e4afdb882dd
-msgid "http://plone.org/documentation/kb/batch-adding-users"
+msgid "https://plone.org/documentation/kb/batch-adding-users"
 msgstr ""
 
 #: ../develop/plone/members/member_basics.rst:367
@@ -28768,7 +28768,7 @@ msgstr ""
 
 #: ../develop/plone/members/member_basics.rst:370
 # 27ee4d005f414acfa78bf4196e5ce0a9
-msgid "This is available as an add-on; see http://plone.org/products/betahaus.emaillogin"
+msgid "This is available as an add-on; see https://plone.org/products/betahaus.emaillogin"
 msgstr ""
 
 #: ../develop/plone/members/member_basics.rst:372
@@ -29065,7 +29065,7 @@ msgstr ""
 
 #: ../develop/plone/members/membrane.rst:33
 # a927c03a519e4d5dafd8d74792a916e1
-msgid "Read the `membrane tutorial <http://plone.org/documentation/tutorial/borg/membrane>`_."
+msgid "Read the `membrane tutorial <https://plone.org/documentation/tutorial/borg/membrane>`_."
 msgstr ""
 
 #: ../develop/plone/members/membrane.rst:35
@@ -29527,7 +29527,7 @@ msgstr ""
 
 #: ../develop/plone/misc/annotations.rst:326
 # 8b69517cff1443cf88a7b67932c4182b
-msgid "http://plone.org/documentation/tutorial/embrace-and-extend-the-zope-3-way/annotations"
+msgid "https://plone.org/documentation/tutorial/embrace-and-extend-the-zope-3-way/annotations"
 msgstr ""
 
 #: ../develop/plone/misc/annotations.rst:3
@@ -30548,7 +30548,7 @@ msgstr ""
 
 #: ../develop/plone/misc/facebook.rst:16
 # ebc137d6eaeb4ff990a967f0ba6cf299
-msgid "http://plone.org/products/facebook-like-button"
+msgid "https://plone.org/products/facebook-like-button"
 msgstr ""
 
 #: ../develop/plone/misc/facebook.rst:18
@@ -30668,7 +30668,7 @@ msgstr ""
 
 #: ../develop/plone/misc/flowplayer.rst:18
 # 378bb936623445e39c3eb79288e7467a
-msgid "http://plone.org/products/collective-flowplayer"
+msgid "https://plone.org/products/collective-flowplayer"
 msgstr ""
 
 #: ../develop/plone/misc/flowplayer.rst:21
@@ -31085,7 +31085,7 @@ msgstr ""
 
 #: ../develop/plone/misc/normalizing_ids.rst:97
 # 5ccf689080b74bd3b5b552aa11079cca
-msgid "`Enforcing normalization for old migrated context <http://plone.org/documentation/how-to/how-to-force-all-your-old-content-into-the-new-normalized-id-format>`_."
+msgid "`Enforcing normalization for old migrated context <https://plone.org/documentation/how-to/how-to-force-all-your-old-content-into-the-new-normalized-id-format>`_."
 msgstr ""
 
 #: ../develop/plone/misc/paster_templates.rst:3
@@ -31110,7 +31110,7 @@ msgstr ""
 
 #: ../develop/plone/misc/paster_templates.rst:19
 # 8bad221f05e147cd9b652c00f25a7da2
-msgid "Default Plone templates are in `ZopeSkel <http://plone.org/products/zopeskel>`_ package."
+msgid "Default Plone templates are in `ZopeSkel <https://plone.org/products/zopeskel>`_ package."
 msgstr ""
 
 #: ../develop/plone/misc/paster_templates.rst:21
@@ -31130,7 +31130,7 @@ msgstr ""
 
 #: ../develop/plone/misc/paster_templates.rst:29
 # 66230f5a96d445e5baa9cd16efdd358b
-msgid "http://plone.org/products/zopeskel"
+msgid "https://plone.org/products/zopeskel"
 msgstr ""
 
 #: ../develop/plone/misc/paster_templates.rst:31
@@ -31912,7 +31912,7 @@ msgstr ""
 
 #: ../develop/plone/misc/seo.rst:18
 # 52bd26a041d146cf83d3e063d9108ddc
-msgid "http://plone.org/products/plone-seo/"
+msgid "https://plone.org/products/plone-seo/"
 msgstr ""
 
 #: ../develop/plone/misc/seo.rst:21
@@ -31982,7 +31982,7 @@ msgstr ""
 
 #: ../develop/plone/misc/slideshow.rst:18
 # e34a480fb0914d43bbec5290e1b511f5
-msgid "`Products.Carousel <http://plone.org/products/carousel/>`_"
+msgid "`Products.Carousel <https://plone.org/products/carousel/>`_"
 msgstr ""
 
 #: ../develop/plone/misc/slideshow.rst:20
@@ -31992,7 +31992,7 @@ msgstr ""
 
 #: ../develop/plone/misc/slideshow.rst:22
 # d503f9171dea4f61a9952344ea057823
-msgid "http://plone.org/products/pipbox"
+msgid "https://plone.org/products/pipbox"
 msgstr ""
 
 #: ../develop/plone/misc/slideshow.rst:25
@@ -32162,7 +32162,7 @@ msgstr ""
 
 #: ../develop/plone/misc/upgrade.rst:12
 # 77312a79a18d40e98cd6af9a0158d5ca
-msgid "This guide contains some tips for Plone upgrades. For more Information, see also the `Official Plone upgrade guide <http://plone.org/documentation/manual/upgrade-guide>`_"
+msgid "This guide contains some tips for Plone upgrades. For more Information, see also the `Official Plone upgrade guide <https://plone.org/documentation/manual/upgrade-guide>`_"
 msgstr ""
 
 #: ../develop/plone/misc/upgrade.rst:17
@@ -32227,7 +32227,7 @@ msgstr ""
 
 #: ../develop/plone/misc/upgrade.rst:51
 # 5e24ca874c4444558c03c984490eb12f
-msgid "For content migrations, `Products.contentmigration <https://pypi.python.org/pypi/Products.contentmigration/>`_  can help you. Documentation on how to use it can be found on `plone.org <http://plone.org/documentation/kb/migrate-custom-types-with-products.contentmigration>`_."
+msgid "For content migrations, `Products.contentmigration <https://pypi.python.org/pypi/Products.contentmigration/>`_  can help you. Documentation on how to use it can be found on `plone.org <https://plone.org/documentation/kb/migrate-custom-types-with-products.contentmigration>`_."
 msgstr ""
 
 #: ../develop/plone/misc/upgrade.rst:58
@@ -32337,7 +32337,7 @@ msgstr ""
 
 #: ../develop/plone/misc/upgrade.rst:125
 # ff095a1c15774307be8f729884fbbcc6
-msgid "Follow the instructions regarding `How to migrate comments to plone.app.discussion <http://plone.org/products/plone.app.discussion/documentation/how-to/how-to-migrate-comments-to-plone.app.discussion>`_ to migrate existing Plone comments."
+msgid "Follow the instructions regarding `How to migrate comments to plone.app.discussion <https://plone.org/products/plone.app.discussion/documentation/how-to/how-to-migrate-comments-to-plone.app.discussion>`_ to migrate existing Plone comments."
 msgstr ""
 
 #: ../develop/plone/misc/upgrade.rst:132
@@ -32557,7 +32557,7 @@ msgstr ""
 
 #: ../develop/plone/persistency/database.rst:133
 # 17c3dd26439f47ff931e68617532fae6
-msgid "You can explore ZODB with-in Plone using `ZODBBrowser <http://plone.org/products/zodbbrowser>`_."
+msgid "You can explore ZODB with-in Plone using `ZODBBrowser <https://plone.org/products/zodbbrowser>`_."
 msgstr ""
 
 #: ../develop/plone/persistency/database.rst:136
@@ -32724,7 +32724,7 @@ msgstr ""
 
 #: ../develop/plone/persistency/database.rst:233
 # 2a565aaa126646e1ba494dd44ddc30eb
-msgid "http://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf"
+msgid "https://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf"
 msgstr ""
 
 #: ../develop/plone/persistency/index.rst:3
@@ -32839,7 +32839,7 @@ msgstr ""
 
 #: ../develop/plone/persistency/persistent.rst:50
 # dfca288147ef40b9aa23067eb13ff8b4
-msgid "`ZODB tips and tricks <http://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf>`_"
+msgid "`ZODB tips and tricks <https://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf>`_"
 msgstr ""
 
 #: ../develop/plone/persistency/persistent.rst:53
@@ -33027,7 +33027,7 @@ msgstr ""
 #: ../develop/plone/persistency/storage.rst:130
 # 81610ef19313438aa885950c81af3fb2
 # e069d77d3a8d4c2db4d33b0fb5310ac1
-msgid "http://plone.org/documentation/kb/debug-zodb-bloat"
+msgid "https://plone.org/documentation/kb/debug-zodb-bloat"
 msgstr ""
 
 #: ../develop/plone/persistency/persistent.rst:242
@@ -33197,7 +33197,7 @@ msgstr ""
 
 #: ../develop/plone/persistency/storage.rst:117
 # a1b75642e41f453b9cf6bed4bf81b30b
-msgid "Plone's Archetypes subsystem supports storing individual Archetypes fields in SQL database. This is mainly `an integration feature <http://plone.293351.n2.nabble.com/Work-with-Contents-in-SQL-database-td5868800.html>`_. Read more about this in `Archetypes manual <http://plone.org/products/archetypes/documentation/old/ArchetypesDeveloperGuide/index_html#advanced-storage-manual>`_."
+msgid "Plone's Archetypes subsystem supports storing individual Archetypes fields in SQL database. This is mainly `an integration feature <http://plone.293351.n2.nabble.com/Work-with-Contents-in-SQL-database-td5868800.html>`_. Read more about this in `Archetypes manual <https://plone.org/products/archetypes/documentation/old/ArchetypesDeveloperGuide/index_html#advanced-storage-manual>`_."
 msgstr ""
 
 #: ../develop/plone/persistency/storage.rst:121
@@ -34766,7 +34766,7 @@ msgstr ""
 
 #: ../develop/plone/searching_and_indexing/query.rst:623
 # d4538dfbac6f478f955e58ba2511946d
-msgid "(Originally from `this tutorial <http://plone.org/documentation/how-to/query-portal_catalog-for-interfaces>`_.)"
+msgid "(Originally from `this tutorial <https://plone.org/documentation/how-to/query-portal_catalog-for-interfaces>`_.)"
 msgstr ""
 
 #: ../develop/plone/searching_and_indexing/query.rst:627
@@ -34921,7 +34921,7 @@ msgstr ""
 
 #: ../develop/plone/searching_and_indexing/query.rst:866
 # c0efc4791dc94efd8af50123951daedd
-msgid "http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/removed-advanced-query"
+msgid "https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/removed-advanced-query"
 msgstr ""
 
 #: ../develop/plone/searching_and_indexing/query.rst:870
@@ -35101,7 +35101,7 @@ msgstr ""
 
 #: ../develop/plone/searching_and_indexing/query.rst:1081
 # 6dad17e13f5a44dba64089e2c41ea1cf
-msgid "`Indexing tutorial <http://plone.org/documentation/tutorial/using-portal_catalog/tutorial-all-pages>`_ on plone.org"
+msgid "`Indexing tutorial <https://plone.org/documentation/tutorial/using-portal_catalog/tutorial-all-pages>`_ on plone.org"
 msgstr ""
 
 #: ../develop/plone/searching_and_indexing/query.rst:1083
@@ -35976,7 +35976,7 @@ msgstr ""
 
 #: ../develop/plone/security/sandboxing.rst:48
 # 85e9de7385dd438083389c90bc1d9c06
-msgid "http://plone.org/documentation/kb/using-unauthorized-modules-in-scripts"
+msgid "https://plone.org/documentation/kb/using-unauthorized-modules-in-scripts"
 msgstr ""
 
 #: ../develop/plone/security/sandboxing.rst:51
@@ -37655,7 +37655,7 @@ msgstr ""
 
 #: ../develop/plone/serving/traversing.rst:347
 # dda8173d80df4ba9bdb6a48d4a5a57f7
-msgid "Before Plone 4.3 getSite resided in zope.app.component.hooks. See http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/referencemanual-all-pages"
+msgid "Before Plone 4.3 getSite resided in zope.app.component.hooks. See https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/referencemanual-all-pages"
 msgstr ""
 
 #: ../develop/plone/serving/traversing.rst:350
@@ -37705,7 +37705,7 @@ msgstr ""
 
 #: ../develop/plone/serving/traversing.rst:414
 # 247ba6139182410cb357ad366eef1f3c
-msgid "http://plone.org/products/plone/roadmap/234"
+msgid "https://plone.org/products/plone/roadmap/234"
 msgstr ""
 
 #: ../develop/plone/serving/traversing.rst:417
@@ -38467,7 +38467,7 @@ msgstr ""
 
 #: ../develop/plone/serving/xmlrpc.rst:77
 # c207743d844b401b9dd883213eb40b02
-msgid "http://plone.org/products/wsapi4plone.core"
+msgid "https://plone.org/products/wsapi4plone.core"
 msgstr ""
 
 #: ../develop/plone/serving/xmlrpc.rst:80
@@ -38482,7 +38482,7 @@ msgstr ""
 
 #: ../develop/plone/serving/xmlrpc.rst:100
 # 820b004cb67b4800a086794a91bd32ec
-msgid "For more information see `wsapi4plone.core <http://plone.org/products/wsapi4plone.core/>`_ add-on product adds XML-RPC operations support for Plone."
+msgid "For more information see `wsapi4plone.core <https://plone.org/products/wsapi4plone.core/>`_ add-on product adds XML-RPC operations support for Plone."
 msgstr ""
 
 #: ../develop/plone/serving/xmlrpc.rst:109
@@ -38602,7 +38602,7 @@ msgstr ""
 
 #: ../develop/plone/sessions/cookies.rst:123
 # f62f5e178b73492bbfb5fad3fefaa989
-msgid "http://plone.org/documentation/kb/cookie-duration"
+msgid "https://plone.org/documentation/kb/cookie-duration"
 msgstr ""
 
 #: ../develop/plone/sessions/cookies.rst:126
@@ -39544,7 +39544,7 @@ msgstr ""
 
 #: ../develop/plone/views/browserviews.rst:49
 # 052e0027bb44412c9d0fcd869ab5af61
-msgid "Later, a project called `Grok <http://grok.zope.org/>`_ was started to introduce an easy API to Zope 3, including a way to set up and maintain views. For more information about how to use Grok (found in the `five.grok`_ package) with Plone, please read the `Plone and Grok tutorial <http://plone.org/products/dexterity/documentation/manual/five.grok>`_."
+msgid "Later, a project called `Grok <http://grok.zope.org/>`_ was started to introduce an easy API to Zope 3, including a way to set up and maintain views. For more information about how to use Grok (found in the `five.grok`_ package) with Plone, please read the `Plone and Grok tutorial <https://plone.org/products/dexterity/documentation/manual/five.grok>`_."
 msgstr ""
 
 #: ../develop/plone/views/browserviews.rst:56
@@ -39554,7 +39554,7 @@ msgstr ""
 
 #: ../develop/plone/views/browserviews.rst:62
 # 6077c22a87cc4ec890787a62330e6610
-msgid "`Zope view tutorial <http://plone.org/documentation/tutorial/borg/zope-3-views>`_."
+msgid "`Zope view tutorial <https://plone.org/documentation/tutorial/borg/zope-3-views>`_."
 msgstr ""
 
 #: ../develop/plone/views/browserviews.rst:66
@@ -39754,7 +39754,7 @@ msgstr ""
 
 #: ../develop/plone/views/browserviews.rst:217
 # 10acf6677c494c85afbf61aa565412be
-msgid "Either you need to have ``five.grok`` `registered in your buildout <http://plone.org/documentation/kb/installing-add-ons-quick-how-to>`_ or have :doc:`five.grok in your setup.py </develop/addons/components/grok>`. If you didn't add it in this point and run buildout again to download and install ``five.grok`` package."
+msgid "Either you need to have ``five.grok`` `registered in your buildout <https://plone.org/documentation/kb/installing-add-ons-quick-how-to>`_ or have :doc:`five.grok in your setup.py </develop/addons/components/grok>`. If you didn't add it in this point and run buildout again to download and install ``five.grok`` package."
 msgstr ""
 
 #: ../develop/plone/views/browserviews.rst:223
@@ -39886,7 +39886,7 @@ msgstr ""
 #: ../develop/plone/views/browserviews.rst:369
 # daed16777c274dc380f0208f72fc67ec
 # db8b0bd0b610452090e2b3fc012f85f0
-msgid "http://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views"
+msgid "https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views"
 msgstr ""
 
 #: ../develop/plone/views/browserviews.rst:352
@@ -40570,12 +40570,12 @@ msgstr ""
 
 #: ../develop/plone/views/layers.rst:44
 # ee8151a6d5e64e2c936af9b861e868b5
-msgid "`Making components theme specific <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific>`_"
+msgid "`Making components theme specific <https://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific>`_"
 msgstr ""
 
 #: ../develop/plone/views/layers.rst:46
 # d2436745d6784a5c8205b42d648865be
-msgid "`Browser Layer tutorial <http://plone.org/documentation/tutorial/customization-for-developers/browser-layers>`_."
+msgid "`Browser Layer tutorial <https://plone.org/documentation/tutorial/customization-for-developers/browser-layers>`_."
 msgstr ""
 
 #: ../develop/plone/views/layers.rst:48
@@ -40970,7 +40970,7 @@ msgstr ""
 
 #: ../develop/plone/views/more_view_examples.rst:144
 # 593b487535f54cc18d0c8e30814a5368
-msgid "http://plone.org/author/spanky"
+msgid "https://plone.org/author/spanky"
 msgstr ""
 
 #: ../develop/plone/views/viewlets.rst:7
@@ -41040,7 +41040,7 @@ msgstr ""
 
 #: ../develop/plone/views/viewlets.rst:45
 # aaad8b1d2ee24720a901e45550da1753
-msgid "`Plone 4 Viewlet and viewlet manager reference <http://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_"
+msgid "`Plone 4 Viewlet and viewlet manager reference <https://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_"
 msgstr ""
 
 #: ../develop/plone/views/viewlets.rst:47
@@ -41205,7 +41205,7 @@ msgstr ""
 
 #: ../develop/plone/views/viewlets.rst:192
 # bc643e4cd98f4b5aa89abe8b7745e879
-msgid "http://plone.org/documentation/manual/theme-reference/elements/viewletmanager/anatomy/"
+msgid "https://plone.org/documentation/manual/theme-reference/elements/viewletmanager/anatomy/"
 msgstr ""
 
 #: ../develop/plone/views/viewlets.rst:197
@@ -41290,7 +41290,7 @@ msgstr ""
 
 #: ../develop/plone/views/viewlets.rst:307
 # 13fcf31d170d476f9cab860cb08d6b09
-msgid "http://plone.org/documentation/manual/theme-reference/elements/viewletmanager/override"
+msgid "https://plone.org/documentation/manual/theme-reference/elements/viewletmanager/override"
 msgstr ""
 
 #: ../develop/plone/views/viewlets.rst:310

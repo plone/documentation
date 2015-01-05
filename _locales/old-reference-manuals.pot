@@ -980,7 +980,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archetypes/a_simple_at_product/introduction.rst:35
 # c75887f0e91048aa95a0cfce6baa6c95
-msgid "The code of the product can be downloaded here: `http://plone.org/products/example.archetype/`_"
+msgid "The code of the product can be downloaded here: `https://plone.org/products/example.archetype/`_"
 msgstr ""
 
 #: ../old-reference-manuals/archetypes/a_simple_at_product/startup_module.rst:3
@@ -1104,7 +1104,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archetypes/a_simple_at_product/troubleshooting.rst:23
 # 63f7fc3c5a0343a8847026623eb925c9
-msgid "3. Do you have a correct Add permission for the product? Check the call of the \\`\\`ContentInit()\\`\\` method inside the \\*\\_\\_init\\_\\_.py\\* file. See `The startup module <http://plone.org/documentation/manual/archetypes-developer-manual/a-semi-realistic-example/the-startup-module>`_."
+msgid "3. Do you have a correct Add permission for the product? Check the call of the \\`\\`ContentInit()\\`\\` method inside the \\*\\_\\_init\\_\\_.py\\* file. See `The startup module <https://plone.org/documentation/manual/archetypes-developer-manual/a-semi-realistic-example/the-startup-module>`_."
 msgstr ""
 
 #: ../old-reference-manuals/archetypes/a_simple_at_product/troubleshooting.rst:28
@@ -1343,7 +1343,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archetypes/appendix.rst:176
 # 1634a76c8586487791257874c5f35ab3
-msgid "Some product (for real dummies like me, try http://plone.org/documentation/tutorial/anonymously-adding-custom-content-types-with-argouml-and-archgenxml/view)"
+msgid "Some product (for real dummies like me, try https://plone.org/documentation/tutorial/anonymously-adding-custom-content-types-with-argouml-and-archgenxml/view)"
 msgstr ""
 
 #: ../old-reference-manuals/archetypes/appendix.rst:179
@@ -4406,7 +4406,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/basic-features/attributes-fields-indexing.rst:13
 # 19c6a791555046eab93994cd1f8c2ca9
-msgid "The `Archetypes documentation <http://plone.org/documentation/manual/archetypes-developer-manual>`_ and the quick reference at the end of this document describes which fields are available and what parameters they take as configuration."
+msgid "The `Archetypes documentation <https://plone.org/documentation/manual/archetypes-developer-manual>`_ and the quick reference at the end of this document describes which fields are available and what parameters they take as configuration."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/basic-features/attributes-fields-indexing.rst:16
@@ -5785,7 +5785,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/getting-started/installation.rst:45
 # f8343514aedc4d9e8e293c88bdb984f9
-msgid "It can happen that the ArchGenXML version on http://plone.org is older than PyPI because the release manager forgot to upload it on http://plone.org or for another reason.  ``easy_install`` and ``buildout`` will get the latest ArchGenXML version from PyPI by default, so it's fine."
+msgid "It can happen that the ArchGenXML version on https://plone.org is older than PyPI because the release manager forgot to upload it on https://plone.org or for another reason.  ``easy_install`` and ``buildout`` will get the latest ArchGenXML version from PyPI by default, so it's fine."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/getting-started/installation.rst:53
@@ -5978,7 +5978,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/getting-started/installation.rst:205
 # ca49e4f38dc745a0b0eae556e5e5ac40
-msgid "On Windows, you may have to install and configure the `mingw32 compiler <http://plone.org/documentation/kb/using-buildout-on-windows>`_ to compile the ``zope.proxy`` egg, an indirect dependency of ArchGenXML. Now ``zope.proxy`` eggs are built for Windows, so you should not have this problem anymore."
+msgid "On Windows, you may have to install and configure the `mingw32 compiler <https://plone.org/documentation/kb/using-buildout-on-windows>`_ to compile the ``zope.proxy`` egg, an indirect dependency of ArchGenXML. Now ``zope.proxy`` eggs are built for Windows, so you should not have this problem anymore."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/getting-started/installation.rst:211
@@ -5988,12 +5988,12 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/getting-started/installation.rst:213
 # 8e2ba8874a444abc881aaac39083a702
-msgid "For any questions or problems, please ask on the `archetypes-users mailing-list <http://plone.org/support/forums/archetypes>`_. Please don't use comments on the manual pages. Not everybody is alerted when a comment is added."
+msgid "For any questions or problems, please ask on the `archetypes-users mailing-list <https://plone.org/support/forums/archetypes>`_. Please don't use comments on the manual pages. Not everybody is alerted when a comment is added."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/getting-started/installation.rst:217
 # 60ea695484244b6d8470229adfc1aa3d
-msgid "If you want to contribute to this documentation, please post on the `plone-docs mailing-list <http://plone.org/support/forums/docs>`_."
+msgid "If you want to contribute to this documentation, please post on the `plone-docs mailing-list <https://plone.org/support/forums/docs>`_."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/getting-started/introduction.rst:9
@@ -9931,17 +9931,17 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/step-by-step-instructions/setup-of-a-testcase-environment-using-uml-and-archgenxml.rst:24
 # d2281b9dd8da483d97cf843c0930555a
-msgid "`Testing in Plone - Introduction <http://plone.org/documentation/tutorial/testing/introduction>`_"
+msgid "`Testing in Plone - Introduction <https://plone.org/documentation/tutorial/testing/introduction>`_"
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/step-by-step-instructions/setup-of-a-testcase-environment-using-uml-and-archgenxml.rst:25
 # 682347423e414fd089b12845bf1c722a
-msgid "`Best Practices for Plone development - Unit Testing <http://plone.org/documentation/tutorial/best-practices/unit-testing>`_"
+msgid "`Best Practices for Plone development - Unit Testing <https://plone.org/documentation/tutorial/best-practices/unit-testing>`_"
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/step-by-step-instructions/setup-of-a-testcase-environment-using-uml-and-archgenxml.rst:26
 # 08bdf50849114091aa504a0a1e6a6b44
-msgid "`RichDocument Tutorial - Unit testing <http://plone.org/documentation/tutorial/richdocument/unit-testing>`_"
+msgid "`RichDocument Tutorial - Unit testing <https://plone.org/documentation/tutorial/richdocument/unit-testing>`_"
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/step-by-step-instructions/setup-of-a-testcase-environment-using-uml-and-archgenxml.rst:28
@@ -9971,7 +9971,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/step-by-step-instructions/setup-of-a-testcase-environment-using-uml-and-archgenxml.rst:44
 # 245487c6756a45ddaafaed20724cc701
-msgid "Check if `PloneTestCase <http://plone.org/products/plonetestcase/>`_ product was shipped with your Plone. If not install it in the version for your Plone."
+msgid "Check if `PloneTestCase <https://plone.org/products/plonetestcase/>`_ product was shipped with your Plone. If not install it in the version for your Plone."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/step-by-step-instructions/setup-of-a-testcase-environment-using-uml-and-archgenxml.rst:45
@@ -10036,7 +10036,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/ATVocabularyManager.rst:15
 # 2bcf1c4e664941d58cd5aff7ce26e891
-msgid "You can download ATVocabularyManager from the Plone.org products area: `/products/atvocabularymanager <http://plone.org/products/atvocabularymanager>`_"
+msgid "You can download ATVocabularyManager from the Plone.org products area: `/products/atvocabularymanager <https://plone.org/products/atvocabularymanager>`_"
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/ATVocabularyManager.rst:18
@@ -10131,7 +10131,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/CompoundField-and-ArrayField.rst:14
 # ba023c31cd4a46eab9919e316803b86d
-msgid "Install the `CompoundField <http://plone.org/products/compoundfield>`_ extension into you Products folder."
+msgid "Install the `CompoundField <https://plone.org/products/compoundfield>`_ extension into you Products folder."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/CompoundField-and-ArrayField.rst:17
@@ -10285,7 +10285,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/archetypes-schemaextender.rst:48
 # 4bb8742850404550954a5aa073decaa2
-msgid "support for `adapters and named adapters <http://plone.org/documentation/tutorial/borg/a-whirlwind-tour-of-zope-3/>`_"
+msgid "support for `adapters and named adapters <https://plone.org/documentation/tutorial/borg/a-whirlwind-tour-of-zope-3/>`_"
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/archetypes-schemaextender.rst:49
@@ -10310,7 +10310,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/content-flavors.rst:20
 # 232630b2c67544a4ac3f06fca5b7f4da
-msgid "You must install the `Content Flavors <http://plone.org/products/contentflavors>`_ product."
+msgid "You must install the `Content Flavors <https://plone.org/products/contentflavors>`_ product."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/content-flavors.rst:23
@@ -10370,17 +10370,17 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/content-flavors.rst:39
 # 67e6cb5a46e540378a71202f5549a017
-msgid "Several flavors can be applied to a given type. The order of precedence can be managed through the web if the existing type follows some requirements detailed in the `Content Flavors documentation <http://plone.org/products/contentflavors/documentation>`_."
+msgid "Several flavors can be applied to a given type. The order of precedence can be managed through the web if the existing type follows some requirements detailed in the `Content Flavors documentation <https://plone.org/products/contentflavors/documentation>`_."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/content-flavors.rst:40
 # 7180d627bc6a416e9f612beb51c8f753
-msgid "There are possible issues with indexing the additional fields, see `CF documentation for details <http://plone.org/products/contentflavors/documentation>`_."
+msgid "There are possible issues with indexing the additional fields, see `CF documentation for details <https://plone.org/products/contentflavors/documentation>`_."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/content-flavors.rst:41
 # 0defbd8ee8d748799b7e6317cfac7f3c
-msgid "Content Flavors was an experiment and is now deprecated in favour of the `archetypes.schemaextender <http://plone.org/products/realestatebroker/documentation/how-to/customize-the-fields-of-the-content-types>`_, which is also supported by AGX."
+msgid "Content Flavors was an experiment and is now deprecated in favour of the `archetypes.schemaextender <https://plone.org/products/realestatebroker/documentation/how-to/customize-the-fields-of-the-content-types>`_, which is also supported by AGX."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/index.rst:3
@@ -10405,7 +10405,7 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/relations.rst:17
 # 7977916731e14c449e767b07295c753d
-msgid "To enable Relations install the Product (`code-location <http://plone.org/products/relations/>`_)."
+msgid "To enable Relations install the Product (`code-location <https://plone.org/products/relations/>`_)."
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/relations.rst:20
@@ -10500,12 +10500,12 @@ msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/remember.rst:15
 # f385a3d0d5964e18860131e8e6c85933
-msgid "`membrane <http://plone.org/products/membrane>`_"
+msgid "`membrane <https://plone.org/products/membrane>`_"
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/remember.rst:17
 # 9f47fcf0d5904a5da5139567e45cddea
-msgid "`remember <http://plone.org/products/remember>`_ (using `Five 1.4.3+ <http://codespeak.net/z3/five/>`_)"
+msgid "`remember <https://plone.org/products/remember>`_ (using `Five 1.4.3+ <http://codespeak.net/z3/five/>`_)"
 msgstr ""
 
 #: ../old-reference-manuals/archgenxml/third-party-product-integration/remember.rst:19
@@ -12397,12 +12397,12 @@ msgstr ""
 
 #: ../old-reference-manuals/buildout/zope_to_zeo.rst:10
 # 64e1520b60eb4751aef394c55f5c4856
-msgid "See `ZEO <http://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/to-zeo-or-not-to-zeo>`_."
+msgid "See `ZEO <https://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/to-zeo-or-not-to-zeo>`_."
 msgstr ""
 
 #: ../old-reference-manuals/buildout/zope_to_zeo.rst:12
 # 2824aab11ab44844af010ab7284255a8
-msgid "See the `plone.app.blob product page <http://plone.org/products/plone.app.blob>`_ for good ZEO configuration examples."
+msgid "See the `plone.app.blob product page <https://plone.org/products/plone.app.blob>`_ for good ZEO configuration examples."
 msgstr ""
 
 #: ../old-reference-manuals/buildout/zope_to_zeo.rst:16
@@ -14192,7 +14192,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/componentparts/permissions.rst:14
 # 5c84c7d77fd343a48ce1445803b1bfac
-msgid "`http://plone.org/documentation/tutorial/understanding-permissions/ <http://plone.org/documentation/tutorial/understanding-permissions/>`_"
+msgid "`https://plone.org/documentation/tutorial/understanding-permissions/ <https://plone.org/documentation/tutorial/understanding-permissions/>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/componentparts/permissions.rst:16
@@ -14764,7 +14764,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/customizing.rst:15
 # 033092931bf445d389885f25dd724203
-msgid "You will need to know the name of your component (plone.presentation for instance). The `Elements <http://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_ section of this manual will help if the name isn't obvious. You can only rewrite the template, which might be limiting."
+msgid "You will need to know the name of your component (plone.presentation for instance). The `Elements <https://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_ section of this manual will help if the name isn't obvious. You can only rewrite the template, which might be limiting."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/customizing.rst:24
@@ -14794,7 +14794,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/customizing.rst:59
 # e42c4e7ed32140c583130d25494e7181
-msgid "If you're not sure where your configure.zcml file lives, consult the `Where to Find What you Need <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/locations>`_ page of this section."
+msgid "If you're not sure where your configure.zcml file lives, consult the `Where to Find What you Need <https://plone.org/documentation/manual/theme-reference/buildingblocks/components/locations>`_ page of this section."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/index.rst:3
@@ -15153,17 +15153,17 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:16
 # 7561ba9e2c8a4dc0a869fd2d1026de99
-msgid "`Anatomy of a Viewlet <http://plone.org/documentation/manual/theme-reference/elements/viewlet/anatomy>`_ section in this reference manual"
+msgid "`Anatomy of a Viewlet <https://plone.org/documentation/manual/theme-reference/elements/viewlet/anatomy>`_ section in this reference manual"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:19
 # 263860fe85474ef4bfa362869faae687
-msgid "`http://plone.org/documentation/tutorial/customizing-main-template-viewlets <http://plone.org/documentation/tutorial/customizing-main-template-viewlets>`_"
+msgid "`https://plone.org/documentation/tutorial/customizing-main-template-viewlets <https://plone.org/documentation/tutorial/customizing-main-template-viewlets>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:20
 # 8ea1c1bbf709467ab026cf20c669e138
-msgid "`http://plone.org/documentation/tutorial/customization-for-developers/viewlets/ <http://plone.org/documentation/tutorial/customization-for-developers/viewlets/>`_"
+msgid "`https://plone.org/documentation/tutorial/customization-for-developers/viewlets/ <https://plone.org/documentation/tutorial/customization-for-developers/viewlets/>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:23
@@ -15183,26 +15183,26 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:35
 # de294902ec55484790c63389e35f8465
-msgid "The `Anatomy of a Portlet <http://plone.org/documentation/manual/theme-reference/elements/portlet/anatomy>`_ section of this manual"
+msgid "The `Anatomy of a Portlet <https://plone.org/documentation/manual/theme-reference/elements/portlet/anatomy>`_ section of this manual"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:38
 #: ../old-reference-manuals/plone_3_theming/elements/portlet/override.rst:18
 # 4d58363225594ae39b6c48c6e991acc9
 # f5f75b598efb4fa681140d37151a1ef3
-msgid "`http://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/ <http://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/>`_"
+msgid "`https://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/ <https://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:39
 # b4a0d4da9867404893b7cd227d71f493
-msgid "`http://plone.org/documentation/tutorial/customization-for-developers/portlet-renderers/ <http://plone.org/documentation/tutorial/customization-for-developers/portlet-renderers/>`_ (for a much more technical explanation)"
+msgid "`https://plone.org/documentation/tutorial/customization-for-developers/portlet-renderers/ <https://plone.org/documentation/tutorial/customization-for-developers/portlet-renderers/>`_ (for a much more technical explanation)"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:41
 #: ../old-reference-manuals/plone_3_theming/elements/portletmanager/createnew.rst:8
 # 8ca9bcbdc4404102abbd81b652bab960
 # 97e6b3a33fc84d52ac78712ff3abbcee
-msgid "`http://plone.org/documentation/how-to/adding-portlet-managers <http://plone.org/documentation/how-to/adding-portlet-managers>`_"
+msgid "`https://plone.org/documentation/how-to/adding-portlet-managers <https://plone.org/documentation/how-to/adding-portlet-managers>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:44
@@ -15212,12 +15212,12 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:46
 # 8940f50c25cb401282226caf45cfac6e
-msgid "We gave one definition of the term \"view\" above in the `skin section <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin>`_. However, behind the scenes, in the context of components, View has a more technical meaning. It refers to a component which is usually made up of a Python class or a template or both and, put simply, processes the data from a content item before it reaches the page. There's a `technical explanation <http://plone.org/plone-developer-reference/patterns/views/>`_ in the Plone Developer Manual."
+msgid "We gave one definition of the term \"view\" above in the `skin section <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin>`_. However, behind the scenes, in the context of components, View has a more technical meaning. It refers to a component which is usually made up of a Python class or a template or both and, put simply, processes the data from a content item before it reaches the page. There's a `technical explanation <https://plone.org/plone-developer-reference/patterns/views/>`_ in the Plone Developer Manual."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:56
 # 243f13178d6244979fa7f6a7b00dcf8e
-msgid "You'll sometimes see it referred to as BrowserView or <browser:page> and in templates you'll see a browser view's name prefaced by @@. We look at browser views again in the section on `putting a page together <http://plone.org/documentation/manual/theme-reference/page>`_."
+msgid "You'll sometimes see it referred to as BrowserView or <browser:page> and in templates you'll see a browser view's name prefaced by @@. We look at browser views again in the section on `putting a page together <https://plone.org/documentation/manual/theme-reference/page>`_."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:61
@@ -15237,7 +15237,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/viewletsandportlets.rst:75
 # aedff68e025b46d790088290c4f0469b
-msgid "“Oh great”, I can hear you saying, “so which should I use, components or skins?” Go to the section `Skin or Components? <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/skinorcomponents>`_ for a discussion of the pros and cons. At the time of writing we suggest the simpler option is to keep your templates, images and style sheets in your skin. We're just mentioning browser resources so that you know what they are if you encounter them."
+msgid "“Oh great”, I can hear you saying, “so which should I use, components or skins?” Go to the section `Skin or Components? <https://plone.org/documentation/manual/theme-reference/buildingblocks/components/skinorcomponents>`_ for a discussion of the pros and cons. At the time of writing we suggest the simpler option is to keep your templates, images and style sheets in your skin. We're just mentioning browser resources so that you know what they are if you encounter them."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/wiring.rst:2
@@ -15342,7 +15342,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/wiring.rst:78
 # 680e07ff199d41d68f430010b0f22ea7
-msgid "ZCML attributes often refer to interfaces rather than actual content types, classes or components (see the *for* and *manager* attributes in the example above). You'll find more about interfaces in a `later section <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts/interfaces>`_."
+msgid "ZCML attributes often refer to interfaces rather than actual content types, classes or components (see the *for* and *manager* attributes in the example above). You'll find more about interfaces in a `later section <https://plone.org/documentation/manual/theme-reference/buildingblocks/components/componentparts/interfaces>`_."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/components/wiring.rst:82
@@ -15402,7 +15402,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/configuration/locations.rst:10
 # 171e0458c3954710b3bf6d0e48cc99c1
-msgid "There are a number of different routes to configure your site through the web. The `Elements <http://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_ section of this manual should give you pointers on where to look to configure particular page elements. In general"
+msgid "There are a number of different routes to configure your site through the web. The `Elements <https://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_ section of this manual should give you pointers on where to look to configure particular page elements. In general"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/configuration/locations.rst:16
@@ -15578,7 +15578,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/configuration/tool.rst:18
 # f81a2d4a923e449fb0206ff6e6cafd5f
-msgid "`Understanding and Using Generic Setup on plone.org <http://plone.org/tutorial/genericsetup/exports-snapshots-and-comparisons>`_"
+msgid "`Understanding and Using Generic Setup on plone.org <https://plone.org/tutorial/genericsetup/exports-snapshots-and-comparisons>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/configuration/tool.rst:21
@@ -15875,7 +15875,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/layers/making.rst:103
 # 22d57e7adffd437987ff77cae5480720
-msgid "Used to name the theme specific interface (see `Components <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_ section)"
+msgid "Used to name the theme specific interface (see `Components <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_ section)"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/layers/making.rst:107
@@ -15900,7 +15900,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/layers/making.rst:115
 # a275dc0bd3704caf8ada622cc3df1344
-msgid "(see `Components <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_ section)"
+msgid "(see `Components <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_ section)"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/layers/overview.rst:2
@@ -16173,7 +16173,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/style-sheets/customstylesheet.rst:17
 # 2686d3a2937d4f3185c6d4b8d561bda3
-msgid "`http://plone.org/documentation/tutorial/working-with-css <http://plone.org/documentation/manual/tutorial/working-with-css>`_"
+msgid "`https://plone.org/documentation/tutorial/working-with-css <https://plone.org/documentation/manual/tutorial/working-with-css>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/style-sheets/customstylesheet.rst:22
@@ -16939,7 +16939,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/customizing-at-templates/customizing-widgets.rst:44
 # 2e4605a780ac4f09bfe8b57fed84f558
-msgid "If you answered yes to most of the questions, then you might need to create a Widget class. If the questions aren't clear, take a look at the `RichDocument tutorial <http://plone.org/tutorial/richdocument>`_ . If you've got a specific enough use-case (like RichDocument) that you *need* custom widget classes, you're probably able to make it happen just by the sheer fact that you *know* you need them."
+msgid "If you answered yes to most of the questions, then you might need to create a Widget class. If the questions aren't clear, take a look at the `RichDocument tutorial <https://plone.org/tutorial/richdocument>`_ . If you've got a specific enough use-case (like RichDocument) that you *need* custom widget classes, you're probably able to make it happen just by the sheer fact that you *know* you need them."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/customizing-at-templates/customizing-widgets.rst:52
@@ -17177,7 +17177,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/customizing-at-templates/introduction.rst:36
 # f507304f97994dc9a5a7b299d9c9ca3c
-msgid "`The ATViewTutorial product <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/atviewtutorial.tgz>`_ - this product has examples of the concepts in this tutorial"
+msgid "`The ATViewTutorial product <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/atviewtutorial.tgz>`_ - this product has examples of the concepts in this tutorial"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/customizing-at-templates/reference.rst:4
@@ -17570,7 +17570,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick.rst:43
 # a95403c512c24d7fb3a56b352fcf6190
-msgid "Now, before we move on, I must warn you: don't edit ``base_view``. Seriously. Don't.\\ `[1] <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick#ref1>`_"
+msgid "Now, before we move on, I must warn you: don't edit ``base_view``. Seriously. Don't.\\ `[1] <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick#ref1>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick.rst:47
@@ -17675,7 +17675,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick.rst:135
 # 53565239ec714c0493c151ed1087e1ae
-msgid "There are all kinds of widgets out there to do all kinds of things. The `Archetypes Quick Reference Manual <http://plone.org/products/archetypes/documentation/manual/quickref>`_ covers the details for the various widgets in Archetypes."
+msgid "There are all kinds of widgets out there to do all kinds of things. The `Archetypes Quick Reference Manual <https://plone.org/products/archetypes/documentation/manual/quickref>`_ covers the details for the various widgets in Archetypes."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/customizing-at-templates/what-makes-it-tick.rst:140
@@ -18521,7 +18521,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/overview.rst:19
 # a96b9e9c93c64dc6aafc87d6b26943b9
-msgid "`Zope Page Templates tutorial on plone.org <http://plone.org/documentation/tutorial/zpt/>`_"
+msgid "`Zope Page Templates tutorial on plone.org <https://plone.org/documentation/tutorial/zpt/>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/overview.rst:21
@@ -18536,7 +18536,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/overview.rst:28
 # c0fccdd00cd74aad854d250c271850b5
-msgid "`Zope Page Template Tutorial on plone.org - Advanced Usage <http://plone.org/documentation/tutorial/zpt/advanced-usage>`_"
+msgid "`Zope Page Template Tutorial on plone.org - Advanced Usage <https://plone.org/documentation/tutorial/zpt/advanced-usage>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/overview.rst:31
@@ -18561,7 +18561,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/overview.rst:58
 # 000575e4427c457cac2b275314e617d7
-msgid "The ZPT tutorial on plone.org talks you through this in more detail, and the `Templates and Components to Page <http://plone.org/documentation/manual/theme-reference/buildingblocks/page/templates>`_ section of this manual gives you an example."
+msgid "The ZPT tutorial on plone.org talks you through this in more detail, and the `Templates and Components to Page <https://plone.org/documentation/manual/theme-reference/buildingblocks/page/templates>`_ section of this manual gives you an example."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/overview.rst:64
@@ -18576,7 +18576,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/overview.rst:70
 # 3fe238e9dabf431991053b432eda8a4c
-msgid "From the user's, contributor's, or visitor's perspective, a view is the way in which a content item is presented on the page. There's a `useful introduction <http://plone.org/documentation/plone-2.5-user-manual/managing-content/folder-view/>`_ to this in the Plone User Manual."
+msgid "From the user's, contributor's, or visitor's perspective, a view is the way in which a content item is presented on the page. There's a `useful introduction <https://plone.org/documentation/plone-2.5-user-manual/managing-content/folder-view/>`_ to this in the Plone User Manual."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/buildingblocks/skin/templates/overview.rst:75
@@ -19037,7 +19037,7 @@ msgstr ""
 # 4be055ac82e549c196bcc0d853cb2292
 # b0da034969b648cfac0c420ff7f5a03f
 # ac126f2ccc914515898ad3ff228cab00
-msgid "`viewlet <http://plone.org/documentation/manual/theme-reference/elements/elements/viewlet>`_"
+msgid "`viewlet <https://plone.org/documentation/manual/theme-reference/elements/elements/viewlet>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/hiddenelements/plone.analytics.rst:19
@@ -19321,7 +19321,7 @@ msgstr ""
 # 065953813d0d43feb8179de8bb682b22
 # 3c0fe4a968484646a2d83336203be09c
 # 744463d09acf4e62bc4c5105416cf826
-msgid "The following details will help you locate the files that you will need to copy into your own product. They will also help you to provide the correct information to create your own zcml directives, Python classes, and interfaces.See `viewlet <http://plone.org/documentation/manual/theme-reference/elements/elements/viewlet>`_ for more information."
+msgid "The following details will help you locate the files that you will need to copy into your own product. They will also help you to provide the correct information to create your own zcml directives, Python classes, and interfaces.See `viewlet <https://plone.org/documentation/manual/theme-reference/elements/elements/viewlet>`_ for more information."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/hiddenelements/plone.analytics.rst:34
@@ -20685,7 +20685,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/portlet/move.rst:10
 # 7ec73658fdff4b08885b4e7f9cd7ee5b
-msgid "`http://plone.org/documentation/tutorial/where-is-what/portlets-1/ <http://plone.org/documentation/tutorial/where-is-what/portlets-1/>`_"
+msgid "`https://plone.org/documentation/tutorial/where-is-what/portlets-1/ <https://plone.org/documentation/tutorial/where-is-what/portlets-1/>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/portlet/move.rst:12
@@ -20705,7 +20705,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/portlet/move.rst:68
 # 556d0fa3aef74627993b518a6fe24743
-msgid "The attributes for the assignment directive are described in full here: `http://plone.org/products/plone/roadmap/203/ <http://plone.org/products/plone/roadmap/203/>`_. In brief:"
+msgid "The attributes for the assignment directive are described in full here: `https://plone.org/products/plone/roadmap/203/ <https://plone.org/products/plone/roadmap/203/>`_. In brief:"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/portlet/move.rst:74
@@ -20925,7 +20925,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/portlet/override-the-portlets-in-plone-3.0.rst:50
 # 4a1e19f0b2a34dad8666e08f34a8d4b2
-msgid "We assume you have created **MyTheme** Plone 3 theme with either DIYPloneStyle or ZopeSkel generators. We do not cover explanations of all aspects of creating a theme for Plone 3.0. To find out more about core ideas of making a theme, managing the viewlets in Plone 3.0 and many more, check an excellent tutorial by David Convent - `Customizing the viewlets in main\\_template <http://plone.org/how-to/override-the-portlets-in-plone-3.0/.org/documentation/tutorial/customizing-main-template-viewlets>`_."
+msgid "We assume you have created **MyTheme** Plone 3 theme with either DIYPloneStyle or ZopeSkel generators. We do not cover explanations of all aspects of creating a theme for Plone 3.0. To find out more about core ideas of making a theme, managing the viewlets in Plone 3.0 and many more, check an excellent tutorial by David Convent - `Customizing the viewlets in main\\_template <https://plone.org/how-to/override-the-portlets-in-plone-3.0/.org/documentation/tutorial/customizing-main-template-viewlets>`_."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/portlet/override-the-portlets-in-plone-3.0.rst:58
@@ -21536,12 +21536,12 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/anatomy.rst:33
 # 3453acc98d4041999ee77593e5f4070a
-msgid "specify an interface marking a group of content types, if you wish. The viewlet will then be restricted to those content types (for an example see the `Presentation viewlet <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.presentation>`_ in the Elements section)"
+msgid "specify an interface marking a group of content types, if you wish. The viewlet will then be restricted to those content types (for an example see the `Presentation viewlet <https://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.presentation>`_ in the Elements section)"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/anatomy.rst:39
 # 476a33bf8b994ddb97034316271bde75
-msgid "specify an interface marking a specific browser view, if you wish. The viewlet will be restricted to items with that specific view (for an example investigate the source code of the Content Actions viewlet - you'll find directions on where to locate this code on the `Content Actions <http://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.contentactions>`_ page of the Elements section)"
+msgid "specify an interface marking a specific browser view, if you wish. The viewlet will be restricted to items with that specific view (for an example investigate the source code of the Content Actions viewlet - you'll find directions on where to locate this code on the `Content Actions <https://plone.org/documentation/manual/theme-reference/elements/visibleelements/plone.contentactions>`_ page of the Elements section)"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/move/overview.rst:2
@@ -21561,7 +21561,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/move/overview.rst:10
 # ae5656e55d4840ab98e03a6f0542855b
-msgid "`http://plone.org/documentation/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets <http://plone.org/documentation/manual/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets>`_"
+msgid "`https://plone.org/documentation/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets <https://plone.org/documentation/manual/tutorial/customizing-main-template-viewlets/reordering-and-hiding-viewlets>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/move/overview.rst:13
@@ -21596,7 +21596,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/move/overview.rst:32
 # 894b297c4efb40dea7c6af1368349abc
-msgid "You'll find general information about the site configuration in the `Configuration <http://plone.org/documentation/manual/theme-reference/elements/buildingblocks/configuration>`_\\ section of this manual. It's worth reading this through before you launch in here, as configuring viewlets and viewlet managers can be a bit tricky. It will tell you"
+msgid "You'll find general information about the site configuration in the `Configuration <https://plone.org/documentation/manual/theme-reference/elements/buildingblocks/configuration>`_\\ section of this manual. It's worth reading this through before you launch in here, as configuring viewlets and viewlet managers can be a bit tricky. It will tell you"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/move/overview.rst:38
@@ -21611,7 +21611,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/move/overview.rst:42
 # 9a322512e77b467fa501bf8d617747ff
-msgid "`GloWorm <http://plone.org/products/gloworm>`_ is a useful tool here too. It will help you move the viewlets around through the Plone user interface and inspect the resulting configuration."
+msgid "`GloWorm <https://plone.org/products/gloworm>`_ is a useful tool here too. It will help you move the viewlets around through the Plone user interface and inspect the resulting configuration."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/move/overview.rst:47
@@ -21698,7 +21698,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/override/overview.rst:12
 # ca3f6e36ece9475d9c1d0c49e4de918a
-msgid "You'll find a detailed tutorial on creating a viewlet in `this article <http://plone.org/documentation/kb/customizing-main-template-viewlets/adding-a-viewlet/>`_."
+msgid "You'll find a detailed tutorial on creating a viewlet in `this article <https://plone.org/documentation/kb/customizing-main-template-viewlets/adding-a-viewlet/>`_."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/override/overview.rst:21
@@ -21742,7 +21742,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/override/overview.rst:38
 # feee49a2b8a245ee94e06da243950ea1
-msgid "You will need to create the following (you should be able to locate the originals to copy by looking at the Elements section or by using `GloWorm <http://plone.org/documentation/products/gloworm>`_):"
+msgid "You will need to create the following (you should be able to locate the originals to copy by looking at the Elements section or by using `GloWorm <https://plone.org/documentation/products/gloworm>`_):"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/viewlet/override/overview.rst:42
@@ -22026,7 +22026,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.abovecontenttitle.documentactions.rst:28
 # 2b03f0fcdc8e494db15a59cce2663028
-msgid "`http://plone.org/documentation/kb/where-is-what/document-actions <http://plone.org/documentation/kb/where-is-what/document-actions'>`_"
+msgid "`https://plone.org/documentation/kb/where-is-what/document-actions <https://plone.org/documentation/kb/where-is-what/document-actions'>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.abovecontenttitle.documentactions.rst:47
@@ -22579,7 +22579,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.global_sections.rst:31
 # ed18471c6cb4458792608aae3a28d940
-msgid "`http://plone.org/documentation/kb/where-is-what/the-navigation-tabs <http://plone.org/documentation/kb/where-is-what/the-navigation-tabs>`_"
+msgid "`https://plone.org/documentation/kb/where-is-what/the-navigation-tabs <https://plone.org/documentation/kb/where-is-what/the-navigation-tabs>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.global_sections.rst:50
@@ -22673,7 +22673,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.logo.rst:21
 # 9b06bd3f0f90413a8da9e17c59ed47bc
-msgid "`http://plone.org/documentation/kb/where-is-what/the-logo <http://plone.org/documentation/kb/where-is-what/the-logo>`_ See also the Quick Start Section of this manual."
+msgid "`https://plone.org/documentation/kb/where-is-what/the-logo <https://plone.org/documentation/kb/where-is-what/the-logo>`_ See also the Quick Start Section of this manual."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.logo.rst:41
@@ -22772,7 +22772,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.path_bar.rst:25
 # 0afa4701d8554366a79960c27209f7f9
-msgid "`http://plone.org/documentation/kb/where-is-what/the-path-bar <http://plone.org/documentation/kb/where-is-what/the-path-bar'>`_"
+msgid "`https://plone.org/documentation/kb/where-is-what/the-path-bar <https://plone.org/documentation/kb/where-is-what/the-path-bar'>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.path_bar.rst:44
@@ -22824,7 +22824,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.personal_bar.rst:28
 # 6d0b40631ff246a583536c1fa9f94de9
-msgid "`http://plone.org/documentation/kb/where-is-what/the-personal-bar <http://plone.org/documentation/kb/where-is-what/the-personal-bar'>`_"
+msgid "`https://plone.org/documentation/kb/where-is-what/the-personal-bar <https://plone.org/documentation/kb/where-is-what/the-personal-bar'>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.personal_bar.rst:47
@@ -22935,7 +22935,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.searchbox.rst:27
 # a745696d2352448fa988f50ef174569b
-msgid "`http://plone.org/documentation/kb/the-search-box <http://plone.org/documentation/tutorial/where-is-what/the-search-box>`_"
+msgid "`https://plone.org/documentation/kb/the-search-box <https://plone.org/documentation/tutorial/where-is-what/the-search-box>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/elements/visibleelements/plone.searchbox.rst:46
@@ -23069,7 +23069,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/index.rst:17
 # 9e4930a575884b8488cba90d9b70db52
-msgid "Even if not recommended the techniques described are still useful and might be needed with new versions of Plone. Please consult `stackoverflow.com (plone tag) <http://stackoverflow.com/questions/tagged/plone>`_ or `plone-users mailing list <http://plone.org/support/forums/general>`_ when in confusion."
+msgid "Even if not recommended the techniques described are still useful and might be needed with new versions of Plone. Please consult `stackoverflow.com (plone tag) <http://stackoverflow.com/questions/tagged/plone>`_ or `plone-users mailing list <https://plone.org/support/forums/general>`_ when in confusion."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/index.rst:35
@@ -23406,12 +23406,12 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/intro/what.rst:32
 # 7a4406561d6946efa5d7ab6e60e6c3a4
-msgid "If you're at all skeptical about what can be achieved, have a look at the wealth of different sites showcased on `plone.net <http://plone.net/>`_ or at the downloadable themes available from the `Products section <http://plone.org/documentation/products>`_ of this site."
+msgid "If you're at all skeptical about what can be achieved, have a look at the wealth of different sites showcased on `plone.net <http://plone.net/>`_ or at the downloadable themes available from the `Products section <https://plone.org/documentation/products>`_ of this site."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/intro/what.rst:38
 # 1d448cff321e47008dc0db791c968b47
-msgid "If you already have a Plone 3 theme and want to know how to upgrade it to work with Plone 4 then the `upgrade guide <http://plone.org/documentation/manual/upgrade-guide>`_ has further information and guidance."
+msgid "If you already have a Plone 3 theme and want to know how to upgrade it to work with Plone 4 then the `upgrade guide <https://plone.org/documentation/manual/upgrade-guide>`_ has further information and guidance."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/content/overview.rst:2
@@ -23681,7 +23681,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/otherinfo.rst:87
 # f0619402395d48ccb0fb42be98896449
-msgid "The global\\_defines macro is not used at all and the variables have been entirely replaced in all Plone templates. However, should it be required, the global\\_defines macro is still available in the core Plone Default skin layers in the plone\\_deprecated folder.  For more information on making a Plone 3 theme compatible with Plone 4, consult the `upgrade guide <http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-more-global-definitions-in-templates>`_."
+msgid "The global\\_defines macro is not used at all and the variables have been entirely replaced in all Plone templates. However, should it be required, the global\\_defines macro is still available in the core Plone Default skin layers in the plone\\_deprecated folder.  For more information on making a Plone 3 theme compatible with Plone 4, consult the `upgrade guide <https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-more-global-definitions-in-templates>`_."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/otherinfo.rst:96
@@ -24306,7 +24306,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/templates/how-to-scale-images-using-pil-in-page-templates.rst:154
 # 30592264c6cd4534af5200d7e4f31bc4
-msgid "`http://plone.org/documentation/manual/archetypes-developer-manual/fields/fields-reference <http://plone.org/kb/manual/archetypes-developer-manual/fields/fields-reference>`_\\ `http://plone.org/documentation/tutorial/richdocument/pil <http://plone.org/kb/tutorial/richdocument/pil>`_"
+msgid "`https://plone.org/documentation/manual/archetypes-developer-manual/fields/fields-reference <https://plone.org/kb/manual/archetypes-developer-manual/fields/fields-reference>`_\\ `https://plone.org/documentation/tutorial/richdocument/pil <https://plone.org/kb/tutorial/richdocument/pil>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/templates/overview.rst:2
@@ -24326,7 +24326,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/templates/overview.rst:13
 # 1150726ad5454c8aa52c8ea4cc9f5b34
-msgid "Since each content type is likely to have a different combination of fields, each content type requires a separate template for display. As we saw in the `templates and templating language <http://plone.org/documentation/manual/theme-reference/page/buildingblocks/skin/templates>`_ section, these usually have \\_view appended to their name. You can find those for the standard Plone content types in"
+msgid "Since each content type is likely to have a different combination of fields, each content type requires a separate template for display. As we saw in the `templates and templating language <https://plone.org/documentation/manual/theme-reference/page/buildingblocks/skin/templates>`_ section, these usually have \\_view appended to their name. You can find those for the standard Plone content types in"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/templates/overview.rst:20
@@ -24356,7 +24356,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/templates/overview.rst:39
 # 475b6768226a4006881e0e18c3ced5ed
-msgid "If you feel unsure about slots, then have a look back at the `templates and templating language section <http://plone.org/documentation/manual/theme-reference/page/buildingblocks/skin/templates>`_."
+msgid "If you feel unsure about slots, then have a look back at the `templates and templating language section <https://plone.org/documentation/manual/theme-reference/page/buildingblocks/skin/templates>`_."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/page/templates/overview.rst:43
@@ -24693,7 +24693,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/quick-start/change-the-font-colours.rst:114
 # c766ed73d0354c2c881c67477ce0e570
-msgid "The second is a Plone/Zope specific method of overriding the style sheets themselves by dropping them into the custom folder of portal\\_skins. This method can also be used for templates and other resources and is explained in more `depth in the section on Skin Layers <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers/precedence>`_ in this manual."
+msgid "The second is a Plone/Zope specific method of overriding the style sheets themselves by dropping them into the custom folder of portal\\_skins. This method can also be used for templates and other resources and is explained in more `depth in the section on Skin Layers <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers/precedence>`_ in this manual."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/quick-start/change-the-font-colours.rst:121
@@ -24703,7 +24703,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/quick-start/change-the-font-colours.rst:124
 # ee395cbfb07f4be6a7b045308733f1ff
-msgid "You can find out more about how the CSS Registry (portal\\_css) packages up the style sheets to deliver them to the page in the `Templates and Components to Page <http://plone.org/documentation/manual/theme-reference/page/css/overview>`_ section of this manual."
+msgid "You can find out more about how the CSS Registry (portal\\_css) packages up the style sheets to deliver them to the page in the `Templates and Components to Page <https://plone.org/documentation/manual/theme-reference/page/css/overview>`_ section of this manual."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/quick-start/change-the-logo.rst:2
@@ -25007,7 +25007,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/quick-start/change-the-logo.rst:236
 # bcbf6873f2f443f4a4d7a3c680aeecd9
-msgid "If you want to transfer your changes to the file system in your own theme product, then the further sections in this reference manual will give you an outline of the files and templates you'll need (`Logo viewlet section <http://plone.org/documentation/manual/theme-reference/elements>`_)."
+msgid "If you want to transfer your changes to the file system in your own theme product, then the further sections in this reference manual will give you an outline of the files and templates you'll need (`Logo viewlet section <https://plone.org/documentation/manual/theme-reference/elements>`_)."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/quick-start/firefox-mozilla-ui-development-tools.rst:2
@@ -25217,7 +25217,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/authoring.rst:13
 # a88041a3447b46c1b21291a9649fe3aa
-msgid "`http://plone.org/products/textmate-support/ <http://plone.org/products/textmate-support/>`_"
+msgid "`https://plone.org/products/textmate-support/ <https://plone.org/products/textmate-support/>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/authoring.rst:14
@@ -25277,12 +25277,12 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/authoring.rst:49
 # 02bc69f886994a7fb143483262110eb7
-msgid "`http://plone.org/documentation/how-to/developing-plone-with-eclipse-ide <http://plone.org/documentation/how-to/developing-plone-with-eclipse-ide>`_"
+msgid "`https://plone.org/documentation/how-to/developing-plone-with-eclipse-ide <https://plone.org/documentation/how-to/developing-plone-with-eclipse-ide>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/authoring.rst:50
 # d02fbb6ce2144407b38403c742f2bbb3
-msgid "`http://plone.org/documentation/tutorial/debugging-plone-products-with-pida <http://plone.org/documentation/tutorial/debugging-plone-products-with-pida>`_"
+msgid "`https://plone.org/documentation/tutorial/debugging-plone-products-with-pida <https://plone.org/documentation/tutorial/debugging-plone-products-with-pida>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/authoring.rst:52
@@ -25542,7 +25542,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/anatomy.rst:117
 # 33694295d4754909830c015bb9de2787
-msgid "It is a great oversimplification to state that most often you will be overriding viewlets from eggs commonly known as plone.app.layout, plone.app.portlets, and plone.app.content. Those viewlets, can be found in your buildout/eggs/ in packages named \"plone.app.layout[xx],\" \"plone.app.portlets[xx],\" and \"plone.app.content[xx],\" where [xx] is a version number. When modified, these viewlets and their related code belong in your theme product's browser/ directory. For more information on how to work with viewlets, `read this tutorial <http://plone.org/documentation/tutorial/customizing-main-template-viewlets>`_."
+msgid "It is a great oversimplification to state that most often you will be overriding viewlets from eggs commonly known as plone.app.layout, plone.app.portlets, and plone.app.content. Those viewlets, can be found in your buildout/eggs/ in packages named \"plone.app.layout[xx],\" \"plone.app.portlets[xx],\" and \"plone.app.content[xx],\" where [xx] is a version number. When modified, these viewlets and their related code belong in your theme product's browser/ directory. For more information on how to work with viewlets, `read this tutorial <https://plone.org/documentation/tutorial/customizing-main-template-viewlets>`_."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/anatomy.rst:128
@@ -25552,7 +25552,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/anatomy.rst:132
 # 847ced9fd9544695ac16c1957e200cc8
-msgid "`Customization for developers <http://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/plone.org/documentation/tutorial/customization-for-developers>`_ An overview of Plone 3 customization by Martin Aspeli."
+msgid "`Customization for developers <https://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/plone.org/documentation/tutorial/customization-for-developers>`_ An overview of Plone 3 customization by Martin Aspeli."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/background.rst:2
@@ -25627,7 +25627,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/background.rst:59
 # 4000822c122c4653a29134399fbc0c1b
-msgid "`Understanding and Using GenericSetup in Plone <http://plone.org/documentation/tutorial/genericsetup>`_"
+msgid "`Understanding and Using GenericSetup in Plone <https://plone.org/documentation/tutorial/genericsetup>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/background.rst:62
@@ -25647,7 +25647,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/background.rst:70
 # 52718ce5118d4ef7a7c2b1bb1a0e6e96
-msgid "`Benefit NOW from Using GenericSetup and Z3 Technologies <http://plone.org/documentation/tutorial/benefit-now-from-using-genericsetup-and-zope-3-technologies/?searchterm=benefit%20NOW>`_"
+msgid "`Benefit NOW from Using GenericSetup and Z3 Technologies <https://plone.org/documentation/tutorial/benefit-now-from-using-genericsetup-and-zope-3-technologies/?searchterm=benefit%20NOW>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/background.rst:73
@@ -25667,7 +25667,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/background.rst:87
 # 3f7a94451d6347daafa3afd39dcded3c
-msgid "`Customization for developers <http://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/plone.org/documentation/tutorial/customization-for-developers>`_"
+msgid "`Customization for developers <https://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/plone.org/documentation/tutorial/customization-for-developers>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/background.rst:90
@@ -25817,7 +25817,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/jumpstart.rst:93
 # f626c47eda624d92b3bb8f5a90ecfe62
-msgid "`Creating new eggs and packages quickly with paster <http://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/use-paster>`_"
+msgid "`Creating new eggs and packages quickly with paster <https://plone.org/documentation/how-to/how-to-create-a-plone-3-theme-product-on-the-filesystem/use-paster>`_"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical1/jumpstart.rst:96
@@ -25909,7 +25909,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical2/thirdparty.rst:18
 # 9861edda45974760aaf78ed0094f7ba5
-msgid "First, we need to understand what egg-based means. If the theme, when unzipped, is named plonetheme.whatever, or you generate a new theme using the `Paster <http://plone.org/how-to/use-paster>`_ recipe and answer \"yes\" to the \"is this a Zope2 product\", then your theme product is egg-based. On an even simpler note, if the root folder contains setup.py, it's an egg. In a typical egg-based theme product, setup.py would look something like this, where the highlighted text is the name of the egg."
+msgid "First, we need to understand what egg-based means. If the theme, when unzipped, is named plonetheme.whatever, or you generate a new theme using the `Paster <https://plone.org/how-to/use-paster>`_ recipe and answer \"yes\" to the \"is this a Zope2 product\", then your theme product is egg-based. On an even simpler note, if the root folder contains setup.py, it's an egg. In a typical egg-based theme product, setup.py would look something like this, where the highlighted text is the name of the egg."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/tools/egg1/practical2/thirdparty.rst:37
@@ -26098,7 +26098,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/whereiswhat/egglocation.rst:23
 # eeb0033820f1452cbc2aa15ba2b61237
-msgid "(note that to share eggs between buildouts you can specify a different location for this in a buildout defaults file, check the `buildout tutorial on plone.org <http://plone.org/documentation/tutorial/buildout/creating-a-buildout-defaults-file>`_ for more information)."
+msgid "(note that to share eggs between buildouts you can specify a different location for this in a buildout defaults file, check the `buildout tutorial on plone.org <https://plone.org/documentation/tutorial/buildout/creating-a-buildout-defaults-file>`_ for more information)."
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/whereiswhat/egglocation.rst:30
@@ -26247,7 +26247,7 @@ msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/whereiswhat/page.rst:44
 # f84be3b7932442baa5be7316b415ef79
-msgid "you'll also find an excellent overview in the `What Controls What You See <http://plone.org/documentation/tutorial/where-is-what/introduction>`_\\ tutorial on Plone.org"
+msgid "you'll also find an excellent overview in the `What Controls What You See <https://plone.org/documentation/tutorial/where-is-what/introduction>`_\\ tutorial on Plone.org"
 msgstr ""
 
 #: ../old-reference-manuals/plone_3_theming/whereiswhat/page.rst:47
@@ -28727,7 +28727,7 @@ msgstr ""
 
 #: ../old-reference-manuals/portlets/tips.rst:569
 # 7fb759ce9aa84390ae482ce5f094c23a
-msgid "http://plone.org/products/plone/roadmap/203"
+msgid "https://plone.org/products/plone/roadmap/203"
 msgstr ""
 
 #: ../old-reference-manuals/portlets/tips.rst:572

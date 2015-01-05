@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../appendices/glossary.rst:8
 # a50541dc63a74b73bb606f968ce04195
-msgid "It incorporates the original `glossary on plone.org <http://plone.org/documentation/glossary>`_."
+msgid "It incorporates the original `glossary on plone.org <https://plone.org/documentation/glossary>`_."
 msgstr ""
 
 #: ../appendices/glossary.rst:494
@@ -442,7 +442,7 @@ msgstr ""
 
 #: ../appendices/glossary.rst:279
 # 20d1e2ac507c4d00a0e05ad0a45dd9b9
-msgid "Motivation, deliverables, risks and a list of people willing to do the work must be included. This document is submitted to the `Framework Team <http://plone.org/team/FrameworkTeam>`_, who reviews the proposal and decides if it's suitable to be included in the next Plone release or not."
+msgid "Motivation, deliverables, risks and a list of people willing to do the work must be included. This document is submitted to the `Framework Team <https://plone.org/team/FrameworkTeam>`_, who reviews the proposal and decides if it's suitable to be included in the next Plone release or not."
 msgstr ""
 
 #: ../appendices/glossary.rst:285
@@ -562,7 +562,7 @@ msgstr ""
 
 #: ../appendices/glossary.rst:28
 # bae7db36a0d64e009cb28c091aa56cfb
-msgid "reStructuredText is a revision and reinterpretation of the `StructuredText <http://plone.org/documentation/glossary/stx>`_ and `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_ lightweight markup systems."
+msgid "reStructuredText is a revision and reinterpretation of the `StructuredText <https://plone.org/documentation/glossary/stx>`_ and `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_ lightweight markup systems."
 msgstr ""
 
 #: ../appendices/glossary.rst:102
@@ -607,7 +607,7 @@ msgstr ""
 
 #: ../appendices/glossary.rst:312
 # c0eaeddeca884a109998f1ecf30d22a1
-msgid "Based on ideas from the extreme programming (XP) community. A sprint is a three to five day focused development session, in which developers pair in a room and focus on building a particular subsystem. See http://plone.org/events/sprints"
+msgid "Based on ideas from the extreme programming (XP) community. A sprint is a three to five day focused development session, in which developers pair in a room and focus on building a particular subsystem. See https://plone.org/events/sprints"
 msgstr ""
 
 #: ../appendices/glossary.rst:57

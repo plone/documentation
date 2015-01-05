@@ -151,4 +151,4 @@ parts/
    normally need local copies anyway. All your configuration should be
    in the buildout.cfg file, and all custom code in src/ or products/.
 
-.. _installer: http://plone.org/products/plone
+.. _installer: https://plone.org/products/plone

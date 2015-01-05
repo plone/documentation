@@ -323,4 +323,4 @@ How to achieve this: https://gist.github.com/toutpt/7680498
 Other resources
 ---------------
 
-* http://plone.org/documentation/tutorial/embrace-and-extend-the-zope-3-way/annotations
+* https://plone.org/documentation/tutorial/embrace-and-extend-the-zope-3-way/annotations

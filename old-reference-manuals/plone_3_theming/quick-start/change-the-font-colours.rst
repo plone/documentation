@@ -115,7 +115,7 @@ You've actually encountered two types of customization here.
    sheets themselves by dropping them into the custom folder of
    portal\_skins. This method can also be used for templates and other
    resources and is explained in more `depth in the section on Skin
-   Layers <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers/precedence>`_
+   Layers <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/layers/precedence>`_
    in this manual.
 
 More advanced techniques, including incorporating your own style sheets
@@ -124,5 +124,5 @@ into a theme product, are covered later in this manual.
 You can find out more about how the CSS Registry (portal\_css) packages
 up the style sheets to deliver them to the page in the `Templates and
 Components to
-Page <http://plone.org/documentation/manual/theme-reference/page/css/overview>`_
+Page <https://plone.org/documentation/manual/theme-reference/page/css/overview>`_
 section of this manual.

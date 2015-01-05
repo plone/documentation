@@ -41,9 +41,9 @@ theme is picked.
 
 For more information, read
 
-* `Making components theme specific <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific>`_
+* `Making components theme specific <https://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific>`_
 
-* `Browser Layer tutorial <http://plone.org/documentation/tutorial/customization-for-developers/browser-layers>`_.
+* `Browser Layer tutorial <https://plone.org/documentation/tutorial/customization-for-developers/browser-layers>`_.
 
 * `Zope 3 Developer Handbook, Skinning <http://zope3.xmu.me/skinning.html>`_
 

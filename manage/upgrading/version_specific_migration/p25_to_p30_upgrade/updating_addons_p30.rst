@@ -252,7 +252,7 @@ Any customizations of main_template.pt or header.pt will need to be updated to u
 
 If have previously shipped customized versions of templates like header.pt, viewThreadsAtBottom.pt or global_contentmenu.pt to get things into the page, please switch to viewlets instead, as it makes it much easier for multiple products to co-exist without stepping on each others changes.
 
-Documentation and examples can be found in "this tutorial":http://plone.org/documentation/tutorial/customizing-main-template-viewlets.
+Documentation and examples can be found in "this tutorial":https://plone.org/documentation/tutorial/customizing-main-template-viewlets.
 
 Plone 3 does not create member folders by default
 =================================================
@@ -268,7 +268,7 @@ Using a tableless layout
 The languishing tableless version of the Plone default theme has finally been removed from Plone 3.0.
 However, a product exists which can be used as a substitute.
 
-For people who want to use tableless, you can simply install the `Plone Tableless <http://plone.org/products/plone-tableless/>`_ product on top of your site.
+For people who want to use tableless, you can simply install the `Plone Tableless <https://plone.org/products/plone-tableless/>`_ product on top of your site.
 
 If you are submitting a theme to plone.org for public consumption, please specify this as a dependency in your theme product's README.txt file.
 

@@ -21,7 +21,7 @@ your needs.
 LinguaPlone
 ===========
 
-`LinguaPlone add-on product <http://plone.org/products/linguaplone>`_ has been
+`LinguaPlone add-on product <https://plone.org/products/linguaplone>`_ has been
 the defacto standard multilingual product for Plone for almost a decade. It's
 well stablished, proven, tested and reliable solution. However, it has no
 support for Dexterity based content types and nowadays it's on legacy mode (only

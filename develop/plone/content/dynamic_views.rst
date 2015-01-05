@@ -330,6 +330,6 @@ content-type specific views.  Aliases are configured in ``portal_types``.
 Other resources
 ================
 
-* http://plone.org/documentation/how-to/how-to-create-and-set-a-custom-homepage-template-using-generic-setup
+* https://plone.org/documentation/how-to/how-to-create-and-set-a-custom-homepage-template-using-generic-setup
 
-* `CMFDynamicView plone.org product page <http://plone.org/products/cmfdynamicviewfti/>`_
+* `CMFDynamicView plone.org product page <https://plone.org/products/cmfdynamicviewfti/>`_

@@ -45,7 +45,7 @@ in. Finally, we have added a *tests* extra to pull in
           keywords='',
           author='Martin Aspeli',
           author_email='optilude@gmail.com',
-          url='http://plone.org/products/dexterity/documentation/manual/schema-driven-forms',
+          url='https://plone.org/products/dexterity/documentation/manual/schema-driven-forms',
           license='GPL',
           packages=find_packages(exclude=['ez_setup']),
           namespace_packages=['example'],

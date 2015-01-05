@@ -20,7 +20,7 @@ It also has detailed sections on building a development environment, installing 
 
         This can be a lot of work, just to try some hello world examples in Plone.
 
-        You don't have to do it this way. You can create a similar environment using the `Plone 4 installers <http://plone.org/products/plone/releases/4.2>`_. The examples should all work with little or no adjustment.
+        You don't have to do it this way. You can create a similar environment using the `Plone 4 installers <https://plone.org/products/plone/releases/4.2>`_. The examples should all work with little or no adjustment.
 
         There are benefits to managing your own Python development environment. The choice is up to you.
 

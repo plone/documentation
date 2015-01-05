@@ -45,6 +45,6 @@ AGX support of archetypes schemaextender is illustrated by the example model in 
 
 You may note from this example model that AGX support of archetypes.schemaextender comes with a bunch of funny features :
 
-* support for `adapters and named adapters <http://plone.org/documentation/tutorial/borg/a-whirlwind-tour-of-zope-3/>`_
+* support for `adapters and named adapters <https://plone.org/documentation/tutorial/borg/a-whirlwind-tour-of-zope-3/>`_
 * adapted interfaces (or classes) can be external to your model (using the ``<<stub>>`` stereotype)
 * you can even let a stub class implement a stub interface : in the example above, the *HumanBeing* stub class has a realization arrow to *IAStubInterfaceFromYetAnotherProduct*, which will be turned by AGX into a five:implement ZCML declaration. This is useful when you want to integrate 2 distinct third party products via your own product. Your model is then nothing more than a "glue" model, which is a good thing in many cases.

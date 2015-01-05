@@ -14,7 +14,7 @@ Check the log files
 ===================
 
 When a site error occurs, or Zope fails to start, there's probably an informative error message in Zope's log files.
-Locate `these log files <http://plone.org/documentation/faq/plone-logs>`_ and inspect instance.log.
+Locate `these log files <https://plone.org/documentation/faq/plone-logs>`_ and inspect instance.log.
 Ignore irrelevant warnings and search for words such as error, exception and traceback (case-insensitive).
 
 When Zope doesn't start and there's no useful information in the log file, you can start Zope interactively and watch for error messages in the output:::
@@ -71,7 +71,7 @@ The more complex your story is, the more likely that it is unique to your situat
 Ask for help on a mailing list
 ==============================
 
-:doc:`Ask for help </askforhelp>` on the `Plone setup list <http://plone.org/support>`_. Be sure to:
+:doc:`Ask for help </askforhelp>` on the `Plone setup list <https://plone.org/support>`_. Be sure to:
 
 * Provide relevant source code for your customizations that are part of the problem.
 * Describe the exact configuration, software versions, migration history, error messages and so on.

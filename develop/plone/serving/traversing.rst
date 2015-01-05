@@ -345,7 +345,7 @@ Example::
     site = getSite() # returns portal root from thread local storage
 
 .. note:: Before Plone 4.3 getSite resided in zope.app.component.hooks. See
-   http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/referencemanual-all-pages
+   https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-4.2-to-4.3/referencemanual-all-pages
 
 .. note:: Due to the fact that Plone does not show the default content item
    as a separate object, the page you are viewing in the browser from the
@@ -404,7 +404,7 @@ The navigation root check has the same mechanism as the site root check::
 
 More info
 
-* http://plone.org/products/plone/roadmap/234
+* https://plone.org/products/plone/roadmap/234
 
 Getting Zope application server handle
 ======================================

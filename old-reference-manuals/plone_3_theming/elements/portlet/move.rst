@@ -7,7 +7,7 @@ Whether or not portlets appear on your site is highly customizable
 through the web, you can use the manage portlets link in most contexts.
 For more information:
 
--  `http://plone.org/documentation/tutorial/where-is-what/portlets-1/ <http://plone.org/documentation/tutorial/where-is-what/portlets-1/>`_
+-  `https://plone.org/documentation/tutorial/where-is-what/portlets-1/ <https://plone.org/documentation/tutorial/where-is-what/portlets-1/>`_
 
 It's assumed that you wouldn't want to *fix* portlets on a page
 (otherwise they'd probably be viewlets). However, if you wish to set up
@@ -66,7 +66,7 @@ and news portlets for the right-hand column.
     </portlets>
 
  The attributes for the assignment directive are described in full here:
-`http://plone.org/products/plone/roadmap/203/ <http://plone.org/products/plone/roadmap/203/>`_. 
+`https://plone.org/products/plone/roadmap/203/ <https://plone.org/products/plone/roadmap/203/>`_. 
 In brief:
 
 manager and type

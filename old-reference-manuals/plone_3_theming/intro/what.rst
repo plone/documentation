@@ -32,12 +32,12 @@ Things are somewhat different in Plone 4:
 If you're at all skeptical about what can be achieved, have a look at
 the wealth of different sites showcased on
 `plone.net <http://plone.net/>`_ or at the downloadable themes available
-from the `Products section <http://plone.org/documentation/products>`_
+from the `Products section <https://plone.org/documentation/products>`_
 of this site.
 
 If you already have a Plone 3 theme and want to know how to upgrade it
 to work with Plone 4 then the `upgrade
-guide <http://plone.org/documentation/manual/upgrade-guide>`_ has
+guide <https://plone.org/documentation/manual/upgrade-guide>`_ has
 further information and guidance.
 
  

@@ -23,7 +23,7 @@ Your own theme product
 (note that to share eggs between buildouts you can specify a different
 location for this in a buildout defaults file, check the `buildout
 tutorial on
-plone.org <http://plone.org/documentation/tutorial/buildout/creating-a-buildout-defaults-file>`_
+plone.org <https://plone.org/documentation/tutorial/buildout/creating-a-buildout-defaults-file>`_
 for more information).
 
 Using Omelette to get at your eggs quickly

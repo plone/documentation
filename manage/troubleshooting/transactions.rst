@@ -16,7 +16,7 @@ This document contains information to fix and debug ZODB databases with Plone.
 BLOBs and POSKeyErrors
 ========================
 
-The `Plone CMS <http://plone.org>`_ from version 4.x onwards
+The `Plone CMS <https://plone.org>`_ from version 4.x onwards
 stores files and images uploaded to the `ZODB <http://www.zodb.org/>`_
 as blob.
 They exist in a ``var/blobstorage`` folder structure on the file system,

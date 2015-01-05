@@ -17,7 +17,7 @@ Final disposition of form input is handled via plug-in action products. Action a
 
 To make it easy to get started, newly created form folders are pre-populated to act as a simple e-mail response form.
 
-* `PloneFormGen product page <http://plone.org/products/ploneformgen>`_
+* `PloneFormGen product page <https://plone.org/products/ploneformgen>`_
 
 Getting started with PloneFormGen
 ---------------------------------

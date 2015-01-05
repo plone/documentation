@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -3973,7 +3973,7 @@ msgstr ""
 # c4776bd9d8c84b3daa58df281da4b6fe
 #: ../manage/deploying/production/ubuntu_production.rst:52
 msgid ""
-"Check `http://plone.org/products/plone <http://plone.org/products/plone>`_. "
+"Check `https://plone.org/products/plone <https://plone.org/products/plone>`_. "
 "Follow the `Download` link to get to the latest release. Copy the URL for "
 "the `Unified Installer`. Substitute that URL below:"
 msgstr ""
@@ -4013,7 +4013,7 @@ msgstr ""
 msgid ""
 "If you hit an \"lxml\" error during installation (ie the log shows \"Error: "
 "Couldn't install: lxml 2.3.6\") you may need additional libraries. Take a "
-"look at http://plone.org/documentation/manual/installing-plone/installing-"
+"look at https://plone.org/documentation/manual/installing-plone/installing-"
 "on-linux-unix-bsd/debian-libraries"
 msgstr ""
 
@@ -5564,7 +5564,7 @@ msgstr ""
 
 # 99979e8f13ea4a77a28e926f493db1d0
 #: ../manage/deploying/testing_tuning/performance/ramcache.rst:30
-msgid "See the set-up for the http://plone.org/ site as an example:"
+msgid "See the set-up for the https://plone.org/ site as an example:"
 msgstr ""
 
 # 6d5cbe15501a4107b4586eac0b3e3341
@@ -5994,7 +5994,7 @@ msgstr ""
 # ed256a26ddae4167844b28118ef1be51
 #: ../manage/deploying/testing_tuning/testing_and_debugging/boilerplate_tests.rst:8
 msgid ""
-"See http://plone.org/documentation/manual/developer-manual/testing/writing-a"
+"See https://plone.org/documentation/manual/developer-manual/testing/writing-a"
 "-plonetestcase-unit-integration-test to learn about PloneTestCase helper "
 "methods."
 msgstr ""
@@ -6151,7 +6151,7 @@ msgstr ""
 
 # cdc7959f029c472d8fb02cf9fd6e1340
 #: ../manage/deploying/testing_tuning/testing_and_debugging/doctests.rst:7
-msgid "http://plone.org/documentation/tutorial/testing/doctests"
+msgid "https://plone.org/documentation/tutorial/testing/doctests"
 msgstr ""
 
 # f82289233b184877bbbbf600105fe4f8
@@ -7118,7 +7118,7 @@ msgstr ""
 #: ../manage/deploying/testing_tuning/testing_and_debugging/unit_testing.rst:15
 msgid ""
 "`Plone unit testing tutorial "
-"<http://plone.org/documentation/tutorial/richdocument/unit-testing>`_."
+"<https://plone.org/documentation/tutorial/richdocument/unit-testing>`_."
 msgstr ""
 
 # 28fcb728e6ab4783971b49153e180b71
@@ -7195,7 +7195,7 @@ msgstr ""
 # 42ba5b1e2ed840b39b4be7c0c535e426
 #: ../manage/deploying/testing_tuning/testing_and_debugging/unit_testing.rst:92
 msgid ""
-"http://plone.org/documentation/manual/upgrade-guide/version/upgrading-"
+"https://plone.org/documentation/manual/upgrade-guide/version/upgrading-"
 "plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-longer-bin-"
 "instance-test-use-zc.recipe.testrunner"
 msgstr ""
@@ -8184,7 +8184,7 @@ msgstr ""
 #: ../manage/installing/installation.rst:30
 msgid ""
 "`Download the latest Plone release "
-"<http://plone.org/products/plone/latest_release>`_."
+"<https://plone.org/products/plone/latest_release>`_."
 msgstr ""
 
 # bcc2642d65684d57afb8f7f8749dc717
@@ -8338,7 +8338,7 @@ msgstr ""
 #: ../manage/installing/installation.rst:103
 msgid ""
 "You will probably also want these optional system packages (see `Plone "
-"manual for more information <http://plone.org/documentation/manual"
+"manual for more information <https://plone.org/documentation/manual"
 "/installing-plone/installing-on-linux-unix-bsd/debian-libraries>`_):"
 msgstr ""
 
@@ -8377,7 +8377,7 @@ msgstr ""
 # 8757a836f6fa4493b1e005146aad24ee
 #: ../manage/installing/installation.rst:130
 msgid ""
-"Download from `the plone.org download page <http://plone.org/download>`_ to "
+"Download from `the plone.org download page <https://plone.org/download>`_ to "
 "your server using wget command. Curl also works. Substitute the latest "
 "version number for 4.3.3 in the instructions below."
 msgstr ""
@@ -8504,7 +8504,7 @@ msgstr ""
 #: ../manage/installing/installation.rst:226
 msgid ""
 "If you have problems, please see the `help guidelines "
-"<http://plone.org/help>`_."
+"<https://plone.org/help>`_."
 msgstr ""
 
 # 1428e68f80104909b6568b7d82cdc1a7
@@ -8550,7 +8550,7 @@ msgstr ""
 #: ../manage/installing/installation.rst:246
 msgid ""
 "automatically download and install all packages from `pypi.python.org "
-"<http://pypi.python.org>`_;"
+"<https://pypi.python.org>`_;"
 msgstr ""
 
 # 4bb4677a7d054a3da95b0abad063b9e5
@@ -8684,7 +8684,7 @@ msgstr ""
 #: ../manage/installing/installation.rst:325
 msgid ""
 "Please use the installer from the download page "
-"`<http://plone.org/products/plone/releases>`_."
+"`<https://plone.org/products/plone/releases>`_."
 msgstr ""
 
 # 28d0803023c946438acc65f37260f557
@@ -8806,7 +8806,7 @@ msgstr ""
 # b05e734cd8ca468292a089a0f42dae11
 #: ../manage/installing/installing_addons.rst:20
 msgid ""
-"The `plone.org Products <http://plone.org/products>`_ is a directory of "
+"The `plone.org Products <https://plone.org/products>`_ is a directory of "
 "Plone add-on packages where a lot of add-on packages for Plone are listed."
 msgstr ""
 
@@ -8827,7 +8827,7 @@ msgstr ""
 #: ../manage/installing/installing_addons.rst:32
 msgid ""
 "Add-on packages which are uploaded to `PyPI <https://pypi.python.org>`_ or "
-"`plone.org <http://plone.org/products>`_ as *egg* can be installed by "
+"`plone.org <https://plone.org/products>`_ as *egg* can be installed by "
 "buildout."
 msgstr ""
 
@@ -9220,7 +9220,7 @@ msgstr ""
 msgid ""
 "This build would be adequate for a quick evaluation installation. For a "
 "production or development installation, use one of `Plone's installers "
-"<http://plone.org/products/plone>`_."
+"<https://plone.org/products/plone>`_."
 msgstr ""
 
 # c14d334d7c534147b1b0954682f142fa
@@ -9438,7 +9438,7 @@ msgstr ""
 #: ../manage/troubleshooting/exceptions.rst:1728
 #: ../manage/troubleshooting/exceptions.rst:2039
 msgid ""
-"http://plone.org/documentation/kb/manually-removing-local-persistent-"
+"https://plone.org/documentation/kb/manually-removing-local-persistent-"
 "utilities/"
 msgstr ""
 
@@ -9478,7 +9478,7 @@ msgstr ""
 #: ../manage/troubleshooting/basic.rst:150
 msgid ""
 "`Plone community support guidelines for asking help "
-"<http://plone.org/help>`_"
+"<https://plone.org/help>`_"
 msgstr ""
 
 # cda9995f5a174620b61f1e0f3f9b6216
@@ -11126,7 +11126,7 @@ msgstr ""
 # ab5f2344b2cf472d96bb7ef1181c7db5
 #: ../manage/troubleshooting/exceptions.rst:1225
 #: ../manage/troubleshooting/exceptions.rst:1226
-msgid "http://plone.org/products/linguaplone/issues/253"
+msgid "https://plone.org/products/linguaplone/issues/253"
 msgstr ""
 
 # 2ae691faea7b4a6680d66661972392a3
@@ -12293,7 +12293,7 @@ msgstr ""
 # 732e4f0a2d9f4079872c6aab20c88a0c
 #: ../manage/troubleshooting/transactions.rst:19
 msgid ""
-"The `Plone CMS <http://plone.org>`_ from version 4.x onwards stores files "
+"The `Plone CMS <https://plone.org>`_ from version 4.x onwards stores files "
 "and images uploaded to the `ZODB <http://www.zodb.org/>`_ as blob. They "
 "exist in a ``var/blobstorage`` folder structure on the file system, files "
 "being named after (opaque) persistent object ids. When using the default "
@@ -13534,7 +13534,7 @@ msgstr ""
 msgid ""
 "When a site error occurs, or Zope fails to start, there's probably an "
 "informative error message in Zope's log files. Locate `these log files "
-"<http://plone.org/documentation/faq/plone-logs>`_ and inspect instance.log. "
+"<https://plone.org/documentation/faq/plone-logs>`_ and inspect instance.log. "
 "Ignore irrelevant warnings and search for words such as error, exception and"
 " traceback (case-insensitive)."
 msgstr ""
@@ -13677,7 +13677,7 @@ msgstr ""
 #: ../manage/upgrading/troubleshooting.rst:74
 msgid ""
 ":doc:`Ask for help </askforhelp>` on the `Plone setup list "
-"<http://plone.org/support>`_. Be sure to:"
+"<https://plone.org/support>`_. Be sure to:"
 msgstr ""
 
 # cd3e1e0552ca4573b5df7e995f70b2d4
@@ -14804,7 +14804,7 @@ msgstr ""
 #: ../manage/upgrading/version_specific_migration/p25_to_p30_upgrade/updating_addons_p30.rst:255
 msgid ""
 "Documentation and examples can be found in \"this "
-"tutorial\":http://plone.org/documentation/tutorial/customizing-main-"
+"tutorial\":https://plone.org/documentation/tutorial/customizing-main-"
 "template-viewlets."
 msgstr ""
 
@@ -14845,7 +14845,7 @@ msgstr ""
 #: ../manage/upgrading/version_specific_migration/p25_to_p30_upgrade/updating_addons_p30.rst:271
 msgid ""
 "For people who want to use tableless, you can simply install the `Plone "
-"Tableless <http://plone.org/products/plone-tableless/>`_ product on top of "
+"Tableless <https://plone.org/products/plone-tableless/>`_ product on top of "
 "your site."
 msgstr ""
 
@@ -15618,7 +15618,7 @@ msgstr ""
 # 39b5625c9a754fa0988d21641f32418e
 #: ../manage/upgrading/version_specific_migration/p32_to_p33x_upgrade.rst:27
 msgid ""
-"check http://plone.org/products/plone to see whether a more recent release "
+"check https://plone.org/products/plone to see whether a more recent release "
 "is advised"
 msgstr ""
 
@@ -15750,7 +15750,7 @@ msgstr ""
 # 2e17772cd856401ca9519c8752f2ef72
 #: ../manage/upgrading/version_specific_migration/p3x_to_p32_upgrade.rst:34
 msgid ""
-"http://plone.org/documentation/manual/upgrade-guide/general-advice-on-"
+"https://plone.org/documentation/manual/upgrade-guide/general-advice-on-"
 "updating-from-a-non-buildout-to-buildout-based-installation"
 msgstr ""
 
@@ -16160,7 +16160,7 @@ msgstr ""
 msgid ""
 "For more info about how the viewlet architecture replaced METAL macros check"
 " the `Customizing the viewlets in main_template "
-"<http://plone.org/documentation/kb/customizing-main-template-viewlets/>`_ "
+"<https://plone.org/documentation/kb/customizing-main-template-viewlets/>`_ "
 "tutorial."
 msgstr ""
 
@@ -16993,7 +16993,7 @@ msgstr ""
 #: ../manage/upgrading/version_specific_migration/p3x_to_p40_upgrade/updating_addons.rst:407
 msgid ""
 "Check the `Archetypes Fields Reference "
-"<http://plone.org/documentation/manual/developer-manual/archetypes/fields"
+"<https://plone.org/documentation/manual/developer-manual/archetypes/fields"
 "/fields-reference/>`_ for details."
 msgstr ""
 
@@ -17461,7 +17461,7 @@ msgid ""
 "Templates that have been overridden must be reviewed to make sure new "
 "changes to the original templates are included. Also, check to make sure "
 "they are not using `global template variables that are no longer available "
-"<http://plone.org/documentation/manual/upgrade-guide/version/upgrading-"
+"<https://plone.org/documentation/manual/upgrade-guide/version/upgrading-"
 "plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/updating-add-on-"
 "products-for-plone-4.0/no-more-global-definitions-in-templates>`_."
 msgstr ""
@@ -17779,7 +17779,7 @@ msgstr ""
 #: ../manage/upgrading/version_specific_migration/p3x_to_p40_upgrade/updating_addons.rst:728
 msgid ""
 "If you previously set up a `PloneTestCase as explained in the developer "
-"manual <http://plone.org/documentation/manual/developer-"
+"manual <https://plone.org/documentation/manual/developer-"
 "manual/testing/writing-a-plonetestcase-unit-integration-test>`_"
 msgstr ""
 
@@ -17886,7 +17886,7 @@ msgstr ""
 # d34a1d4ba6954c92896f2c20e9b817e9
 #: ../manage/upgrading/version_specific_migration/p3x_to_p40_upgrade/updating_addons.rst:817
 msgid ""
-"`Performance impact explained. <http://plone.org/products/plone/features"
+"`Performance impact explained. <https://plone.org/products/plone/features"
 "/new-faster-folder-implementation>`_"
 msgstr ""
 

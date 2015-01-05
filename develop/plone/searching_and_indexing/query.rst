@@ -620,7 +620,7 @@ Caveats
   it will return all results. so if the interface you defined would yield a none
   type object, the search would return all values of object_provides.
 
-(Originally from `this tutorial <http://plone.org/documentation/how-to/query-portal_catalog-for-interfaces>`_.)
+(Originally from `this tutorial <https://plone.org/documentation/how-to/query-portal_catalog-for-interfaces>`_.)
 
 .. note ::
 
@@ -863,7 +863,7 @@ More information
 
 * See AdvancedQuery_.
 
-* http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/removed-advanced-query
+* https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/removed-advanced-query
 
 
 Setting Up A New Style Query
@@ -1078,7 +1078,7 @@ More info:
 Other notes
 ============
 
-* `Indexing tutorial <http://plone.org/documentation/tutorial/using-portal_catalog/tutorial-all-pages>`_ on plone.org
+* `Indexing tutorial <https://plone.org/documentation/tutorial/using-portal_catalog/tutorial-all-pages>`_ on plone.org
 
 * `Manual sorting example <http://www.universalwebservices.net/web-programming-resources/zope-plone/advanced-sorting-of-plone-search-results/>`_
 

@@ -170,7 +170,7 @@ Event types
 
 Other resources:
 
-* http://plone.org/documentation/manual/developer-manual/archetypes/other-useful-archetypes-features/how-to-use-events-to-hook-the-archetypes-creation-process
+* https://plone.org/documentation/manual/developer-manual/archetypes/other-useful-archetypes-features/how-to-use-events-to-hook-the-archetypes-creation-process
 
 * http://n2.nabble.com/IObjectInitializedEvent-tp4784897p4784897.html
 

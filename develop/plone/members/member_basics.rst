@@ -362,14 +362,14 @@ Batch member creation
 
 * An example script can be run with bin/plonectl, tested on Plone 4.3.3; see http://gist.github.com/l34marr/02a9ef12a1e51c474bee
 
-* An example script tested on Plone 2.5.x; see http://plone.org/documentation/kb/batch-adding-users
+* An example script tested on Plone 2.5.x; see https://plone.org/documentation/kb/batch-adding-users
 
 
 Email login
 ===========
 
 * Plone 3 does not allow a dot in the username.
-    * This is available as an add-on; see http://plone.org/products/betahaus.emaillogin
+    * This is available as an add-on; see https://plone.org/products/betahaus.emaillogin
 
 * In Plone 4, it is a default feature.
 

@@ -14,7 +14,7 @@ used by components through the Zope Management Interface.
 
 You will need to know the name of your component (plone.presentation for
 instance). The
-`Elements <http://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_
+`Elements <https://plone.org/documentation/manual/theme-reference/elements/elementsindex>`_
 section of this manual will help if the name isn't obvious. You can only
 rewrite the template, which might be limiting.
 
@@ -58,6 +58,6 @@ and wire in your own class.
    it can be found in the same directory as this configure.zcml file.
 -  If you're not sure where your configure.zcml file lives, consult the
    `Where to Find What you
-   Need <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/locations>`_
+   Need <https://plone.org/documentation/manual/theme-reference/buildingblocks/components/locations>`_
    page of this section.
 

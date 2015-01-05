@@ -14,10 +14,10 @@ a Viewlet Manager.
 For more information you can look at
 
 -  `Anatomy of a
-   Viewlet <http://plone.org/documentation/manual/theme-reference/elements/viewlet/anatomy>`_
+   Viewlet <https://plone.org/documentation/manual/theme-reference/elements/viewlet/anatomy>`_
    section in this reference manual
--  `http://plone.org/documentation/tutorial/customizing-main-template-viewlets <http://plone.org/documentation/tutorial/customizing-main-template-viewlets>`_
--  `http://plone.org/documentation/tutorial/customization-for-developers/viewlets/ <http://plone.org/documentation/tutorial/customization-for-developers/viewlets/>`_
+-  `https://plone.org/documentation/tutorial/customizing-main-template-viewlets <https://plone.org/documentation/tutorial/customizing-main-template-viewlets>`_
+-  `https://plone.org/documentation/tutorial/customization-for-developers/viewlets/ <https://plone.org/documentation/tutorial/customization-for-developers/viewlets/>`_
 
 Portlet
 -------
@@ -33,30 +33,30 @@ Manager.
 For more information take a look at:
 
 -  The `Anatomy of a
-   Portlet <http://plone.org/documentation/manual/theme-reference/elements/portlet/anatomy>`_
+   Portlet <https://plone.org/documentation/manual/theme-reference/elements/portlet/anatomy>`_
    section of this manual
--  `http://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/ <http://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/>`_
--  `http://plone.org/documentation/tutorial/customization-for-developers/portlet-renderers/ <http://plone.org/documentation/tutorial/customization-for-developers/portlet-renderers/>`_
+-  `https://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/ <https://plone.org/documentation/how-to/override-the-portlets-in-plone-3.0/>`_
+-  `https://plone.org/documentation/tutorial/customization-for-developers/portlet-renderers/ <https://plone.org/documentation/tutorial/customization-for-developers/portlet-renderers/>`_
    (for a much more technical explanation)
--  `http://plone.org/documentation/how-to/adding-portlet-managers <http://plone.org/documentation/how-to/adding-portlet-managers>`_
+-  `https://plone.org/documentation/how-to/adding-portlet-managers <https://plone.org/documentation/how-to/adding-portlet-managers>`_
 
 View (Browser View)
 -------------------
 
 We gave one definition of the term "view" above in the `skin
-section <http://plone.org/documentation/manual/theme-reference/buildingblocks/skin>`_.
+section <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin>`_.
 However, behind the scenes, in the context of components, View has a
 more technical meaning. It refers to a component which is usually made
 up of a Python class or a template or both and, put simply, processes
 the data from a content item before it reaches the page. There's a
 `technical
-explanation <http://plone.org/plone-developer-reference/patterns/views/>`_
+explanation <https://plone.org/plone-developer-reference/patterns/views/>`_
 in the Plone Developer Manual.
 
 You'll sometimes see it referred to as BrowserView or <browser:page> and
 in templates you'll see a browser view's name prefaced by @@. We look at
 browser views again in the section on `putting a page
-together <http://plone.org/documentation/manual/theme-reference/page>`_.
+together <https://plone.org/documentation/manual/theme-reference/page>`_.
 
     Note that the term browser and the browser namespace are used to
     demarcate presentational components – that is, those bits of code
@@ -74,7 +74,7 @@ be done for a directory containing templates and style sheets.
 
 “Oh great”, I can hear you saying, “so which should I use, components or
 skins?” Go to the section `Skin or
-Components? <http://plone.org/documentation/manual/theme-reference/buildingblocks/components/skinorcomponents>`_
+Components? <https://plone.org/documentation/manual/theme-reference/buildingblocks/components/skinorcomponents>`_
 for a discussion of the pros and cons. At the time of writing we suggest
 the simpler option is to keep your templates, images and style sheets in
 your skin. We're just mentioning browser resources so that you know what

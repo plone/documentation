@@ -11,7 +11,7 @@ giving them particular rights over particular aspects of the site.
 To find out more about permissions consult the Understanding Permissions
 and Security Tutorial:
 
--  `http://plone.org/documentation/tutorial/understanding-permissions/ <http://plone.org/documentation/tutorial/understanding-permissions/>`_
+-  `https://plone.org/documentation/tutorial/understanding-permissions/ <https://plone.org/documentation/tutorial/understanding-permissions/>`_
 
 In the case of components, the permission attribute allows the site to
 decide whether a user has a right to see, or interact with a component.

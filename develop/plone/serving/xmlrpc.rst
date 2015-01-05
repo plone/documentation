@@ -74,7 +74,7 @@ Web Services API for Plone (wsapi4plone)
 This is an add-on product exposes more methods available through Zope's
 XML-RPC api.
 
-*  http://plone.org/products/wsapi4plone.core
+*  https://plone.org/products/wsapi4plone.core
 
 Importing an Image Using WSAPI
 ================================
@@ -97,7 +97,7 @@ post it to a folder called 'ministries' and give it the name 'theimage'.
 
     output = client.get_object(client.post_object(myimage))
 
-For more information see `wsapi4plone.core <http://plone.org/products/wsapi4plone.core/>`_ add-on product adds XML-RPC operations
+For more information see `wsapi4plone.core <https://plone.org/products/wsapi4plone.core/>`_ add-on product adds XML-RPC operations
 support for Plone.
 
 

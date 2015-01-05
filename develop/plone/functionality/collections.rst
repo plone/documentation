@@ -65,7 +65,7 @@ New criteria can be created through-the-web in Site setup -> Collection section.
 
 portal_catalog indices can be added through-the-web on ZMI portal_catalog tool tabs.
 
-If you still want to create XML files by hand, read more about it in `Enable Collection Indices (fields for searching) for custom types HOW TO <http://plone.org/documentation/how-to/enable-collection-indices-fields-for-searching-for-custom-types>`_.
+If you still want to create XML files by hand, read more about it in `Enable Collection Indices (fields for searching) for custom types HOW TO <https://plone.org/documentation/how-to/enable-collection-indices-fields-for-searching-for-custom-types>`_.
 
 Sticky sorting
 --------------

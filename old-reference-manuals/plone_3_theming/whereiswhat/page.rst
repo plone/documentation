@@ -42,7 +42,7 @@ relevant files
 -  you can find a visual key to page elements in the Elements section of
    this manual
 -  you'll also find an excellent overview in the `What Controls What You
-   See <http://plone.org/documentation/tutorial/where-is-what/introduction>`_\ tutorial
+   See <https://plone.org/documentation/tutorial/where-is-what/introduction>`_\ tutorial
    on Plone.org
 -  and a mapping of the viewlet and portlet managers on the `Weblion
    wiki <https://weblion.psu.edu/trac/weblion/wiki/PloneThreeWhereIsWhat>`_

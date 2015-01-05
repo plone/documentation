@@ -27,7 +27,7 @@ Download Plone
 
 Plone is available for Microsoft Windows, Mac OSX X, Linux and BSD operating systems.
 
-`Download the latest Plone release <http://plone.org/products/plone/latest_release>`_.
+`Download the latest Plone release <https://plone.org/products/plone/latest_release>`_.
 
 Binary installers are available for Windows and OS X. Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer. "Unified" refers to its ability to install on most Unix workalikes.
 
@@ -100,7 +100,7 @@ Install the operating system software and libraries needed to run Plone
 
     sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
-You will probably also want these optional system packages (see `Plone manual for more information <http://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/debian-libraries>`_):
+You will probably also want these optional system packages (see `Plone manual for more information <https://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/debian-libraries>`_):
 
 .. code-block:: console
 
@@ -127,7 +127,7 @@ If you're planning on developing with Plone, install git version control support
 Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download from `the plone.org download page <http://plone.org/download>`_ to your server using wget command. Curl also works.
+Download from `the plone.org download page <https://plone.org/download>`_ to your server using wget command. Curl also works.
 Substitute the latest version number for 4.3.4
 in the instructions below.
 
@@ -223,7 +223,7 @@ For this you need the login credentials printed to your terminal earlier, also a
 
 If everything is OK, press ``CTRL-C`` in the terminal to stop Plone if you're running in debug mode. Use the ``plonectl stop`` command if you didn't start in debug mode.
 
-If you have problems, please see the `help guidelines <http://plone.org/help>`_.
+If you have problems, please see the `help guidelines <https://plone.org/help>`_.
 
 For automatic start-up when your server boots up, init scripts, etc.
 please see the :doc:`deployment guide </manage/deploying/production/index>`.
@@ -243,7 +243,7 @@ This will:
 * create a default ``buildout.cfg`` configuration file and folder structure
   around it;
 
-* automatically download and install all packages from `pypi.python.org <http://pypi.python.org>`_;
+* automatically download and install all packages from `pypi.python.org <https://pypi.python.org>`_;
 
 * configure Plone and Zope for you.
 
@@ -320,7 +320,7 @@ Installing Plone using OSX binary installer
 
 This is the recommended method if you want to try Plone for the first time.
 
-Please use the installer from the download page `<http://plone.org/products/plone/releases>`_.
+Please use the installer from the download page `<https://plone.org/products/plone/releases>`_.
 
 The binary installer is intended to provide an environment suitable for testing, evaluating, and developing theme and add-on packages.
 It will not give you the ability to add or develop components that require a C compiler.

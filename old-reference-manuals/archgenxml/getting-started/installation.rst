@@ -42,8 +42,8 @@ If you want to install archgenxml via buildout (recommended), read
 :ref:`agx-installation-using-buildout` and skip the
 :ref:`agx-installation-using-easy-install` part.
 
-It can happen that the ArchGenXML version on http://plone.org is older than
-PyPI because the release manager forgot to upload it on http://plone.org or for
+It can happen that the ArchGenXML version on https://plone.org is older than
+PyPI because the release manager forgot to upload it on https://plone.org or for
 another reason.  ``easy_install`` and ``buildout`` will get the latest
 ArchGenXML version from PyPI by default, so it's fine.
 
@@ -203,7 +203,7 @@ Troubleshooting
 ^^^^^^^^^^^^^^^
 
 On Windows, you may have to install and configure the `mingw32 compiler
-<http://plone.org/documentation/kb/using-buildout-on-windows>`_ to compile the
+<https://plone.org/documentation/kb/using-buildout-on-windows>`_ to compile the
 ``zope.proxy`` egg, an indirect dependency of ArchGenXML. Now ``zope.proxy``
 eggs are built for Windows, so you should not have this problem anymore.
 
@@ -211,8 +211,8 @@ Support
 ^^^^^^^
 
 For any questions or problems, please ask on the `archetypes-users mailing-list
-<http://plone.org/support/forums/archetypes>`_. Please don't use comments on
+<https://plone.org/support/forums/archetypes>`_. Please don't use comments on
 the manual pages. Not everybody is alerted when a comment is added.
 
 If you want to contribute to this documentation, please post on the `plone-docs
-mailing-list <http://plone.org/support/forums/docs>`_.
+mailing-list <https://plone.org/support/forums/docs>`_.

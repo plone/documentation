@@ -17,7 +17,7 @@ Is the Theme Product Egg-Based or in the Product's Namespace?
 
 First, we need to understand what egg-based means. If the theme, when
 unzipped, is named plonetheme.whatever, or you generate a new theme
-using the `Paster <http://plone.org/how-to/use-paster>`_ recipe and
+using the `Paster <https://plone.org/how-to/use-paster>`_ recipe and
 answer "yes" to the "is this a Zope2 product", then your theme product
 is egg-based. On an even simpler note, if the root folder contains
 setup.py, it's an egg. In a typical egg-based theme product, setup.py

@@ -12,7 +12,7 @@ ATVocabularyManager
 
 ATVM manages dynamic vocabularies. It installs a tool, where a site Manager can add, change and delete vocabularies. These vocabularies can then be used anywhere on the site.
 
-You can download ATVocabularyManager from the Plone.org products area: `/products/atvocabularymanager <http://plone.org/products/atvocabularymanager>`_
+You can download ATVocabularyManager from the Plone.org products area: `/products/atvocabularymanager <https://plone.org/products/atvocabularymanager>`_
 
 Using simple flat vocabularies
 ------------------------------

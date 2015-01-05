@@ -3,7 +3,7 @@ Acordo de Contribuição
 
 Contribuidores em potencial para a base de código do núcleo do Plone devem assinar o acordo de contribuição, que atribui os direitos autorais do código para a Plone Foundation, a organização sem fins lucrativos que administra a base de código do Plone. Este documento explica os objetivos do acordo, assim como perguntas e respostas sobre o que isto significa.
 
-O acordo de contribuição do Plone pode ser encontrado em: http://plone.org/foundation/contributors-agreement/agreement.pdf
+O acordo de contribuição do Plone pode ser encontrado em: https://plone.org/foundation/contributors-agreement/agreement.pdf
 
 Sobre o acordo de contribuição
 ------------------------------
@@ -46,10 +46,10 @@ O Plone será disponibilizado sob uma licença não-GPL?
 Por que alguém iria querer um Plone não-GPL?
   Duas razões possíveis: Algumas empresas relutam em fazer mudanças em sistemas semelhantes a frameworks (como o Plone) licenciadas sob a GPL, temendo serem forçadas a abrir seu trabalho interno em função de alguma cláusula da GPL - podendo assim licenciá-las sob uma licença no estilo BSD, por exemplo. Além disso, empresas podem desejar oferecer uma versão comercial do Plone, sob uma licença hermética, sem a obrigação de revelar seu código fonte ou compartilhar alterações.
 
-.. _http://plone.org/foundation/contributors-agreement/agreement.pdf: http://plone.org/foundation/contributors-agreement/agreement.pdf
+.. _https://plone.org/foundation/contributors-agreement/agreement.pdf: https://plone.org/foundation/contributors-agreement/agreement.pdf
 .. _http://dev.plone.org/plone: http://dev.plone.org/plone
 .. _https://github.com/plone: https://github.com/plone
 .. _http://dev.plone.org/collective: http://dev.plone.org/collective
 .. _https://github.com/collective: https://github.com/collective
-.. _Política para acordos de contribuição e patches : http://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011
-.. Policy for Contributor Agreements and Patches : http://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011
+.. _Política para acordos de contribuição e patches : https://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011
+.. Policy for Contributor Agreements and Patches : https://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011

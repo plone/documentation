@@ -53,7 +53,7 @@ all aspects of creating a theme for Plone 3.0. To find out more about
 core ideas of making a theme, managing the viewlets in Plone 3.0 and
 many more, check an excellent tutorial by David Convent - `Customizing
 the viewlets in
-main\_template <http://plone.org/how-to/override-the-portlets-in-plone-3.0/.org/documentation/tutorial/customizing-main-template-viewlets>`_.
+main\_template <https://plone.org/how-to/override-the-portlets-in-plone-3.0/.org/documentation/tutorial/customizing-main-template-viewlets>`_.
 
 The key concept in working with portlets in Plone 3.0 is the use of Zope
 3 skin layer - the same as we have when overriding a viewlet. We assume

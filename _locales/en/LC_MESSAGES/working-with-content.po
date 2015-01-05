@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -3021,8 +3021,8 @@ msgstr "You may need to adapt these terms as needed for your Plone web site desi
 #: ../working-with-content/introduction/visual-design-of-plone.rst:40
 msgid ""
 "For example, we can select three web sites from the `list of Plone web sites"
-" <http://plone.org/support/sites>`_ to compare:"
-msgstr "For example, we can select three web sites from the `list of Plone web sites <http://plone.org/support/sites>`_ to compare:"
+" <https://plone.org/support/sites>`_ to compare:"
+msgstr "For example, we can select three web sites from the `list of Plone web sites <https://plone.org/support/sites>`_ to compare:"
 
 # cd4759f44a9749c8ae177ddd37249fa3
 #: ../working-with-content/introduction/visual-design-of-plone.rst:47
@@ -3205,10 +3205,10 @@ msgid ""
 "Security settings control panel. The effect is that on the registration form"
 " no field is shown for the user name. On the login form the user is now "
 "asked to fill in an email address. See `E-mail address based login in the "
-"Upgrade Guid <http://plone.org/documentation/manual/upgrade-guide/version"
+"Upgrade Guid <https://plone.org/documentation/manual/upgrade-guide/version"
 "/upgrading-plone-3-x-to-4.0/e-mail-address-based-login>`_ for more info "
 "about this feature."
-msgstr "From Plone 4 on, you (or the site administrator) can allow users to use their email address as login name. This feature can be switched on in the Security settings control panel. The effect is that on the registration form no field is shown for the user name. On the login form the user is now asked to fill in an email address. See `E-mail address based login in the Upgrade Guid <http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/e-mail-address-based-login>`_ for more info about this feature."
+msgstr "From Plone 4 on, you (or the site administrator) can allow users to use their email address as login name. This feature can be switched on in the Security settings control panel. The effect is that on the registration form no field is shown for the user name. On the login form the user is now asked to fill in an email address. See `E-mail address based login in the Upgrade Guid <https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/e-mail-address-based-login>`_ for more info about this feature."
 
 # 49b57ff748f54cb196b8b3432f955883
 #: ../working-with-content/managing-content/automatic-locking-and-unlocking.rst:2
@@ -4260,10 +4260,10 @@ msgid ""
 "should contain no blanks. Use dashes for any blanks in the title, and "
 "otherwise make it a carbon copy of the title. Also, use lowercase for the "
 "short name. See also the page \"`What's in a Web Name? "
-"<http://plone.org/documentation/manual/plone-4-user-manual/adding-content"
+"<https://plone.org/documentation/manual/plone-4-user-manual/adding-content"
 "/whats-in-a-web-name>`_\" for a description of how Plone handles web "
 "addressing and the short name."
-msgstr "If you were to change the title to \"Long-tailed Skippers,\" you would also change the short name to \"long-tailed-skippers.\" This keeps things tidy -- it keeps them correct, so that the URL for the item, the web address, is kept up-to-date with the actual content item. Note that the short name should contain no blanks. Use dashes for any blanks in the title, and otherwise make it a carbon copy of the title. Also, use lowercase for the short name. See also the page \"`What's in a Web Name? <http://plone.org/documentation/manual/plone-4-user-manual/adding-content/whats-in-a-web-name>`_\" for a description of how Plone handles web addressing and the short name."
+msgstr "If you were to change the title to \"Long-tailed Skippers,\" you would also change the short name to \"long-tailed-skippers.\" This keeps things tidy -- it keeps them correct, so that the URL for the item, the web address, is kept up-to-date with the actual content item. Note that the short name should contain no blanks. Use dashes for any blanks in the title, and otherwise make it a carbon copy of the title. Also, use lowercase for the short name. See also the page \"`What's in a Web Name? <https://plone.org/documentation/manual/plone-4-user-manual/adding-content/whats-in-a-web-name>`_\" for a description of how Plone handles web addressing and the short name."
 
 # 5898c6c4b0a04bd798676afebfacde9c
 #: ../working-with-content/managing-content/folder-contents.rst:59
@@ -6808,8 +6808,8 @@ msgstr "To make it easy to get started, newly created form folders are pre-popul
 
 # 703a450f6a1740a09937e342d7a7f6fd
 #: ../working-with-content/managing-content/ploneformgen/index.rst:20
-msgid "`PloneFormGen product page <http://plone.org/products/ploneformgen>`_"
-msgstr "`PloneFormGen product page <http://plone.org/products/ploneformgen>`_"
+msgid "`PloneFormGen product page <https://plone.org/products/ploneformgen>`_"
+msgstr "`PloneFormGen product page <https://plone.org/products/ploneformgen>`_"
 
 # cb885cb534e1481ca1859514cee130c2
 #: ../working-with-content/managing-content/ploneformgen/index.rst:23

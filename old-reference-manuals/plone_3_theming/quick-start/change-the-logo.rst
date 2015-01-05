@@ -237,6 +237,6 @@ Further Information
    theme product, then the further sections in this reference manual
    will give you an outline of the files and templates you'll need
    (`Logo viewlet
-   section <http://plone.org/documentation/manual/theme-reference/elements>`_).
+   section <https://plone.org/documentation/manual/theme-reference/elements>`_).
 
  
