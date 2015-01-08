@@ -216,7 +216,9 @@ collective.jsonmigrator
 =======================
 
 collective.jsonmigrator is basically a collective.transmogrifier pipeline that pulls Plone content from 
-to JSON views on an old site and writes it into your new site (this can also be done as a 2 step process).
+to JSON views on an old site and writes it into your new site. It's major advantage is that the JSON view
+product: collective.jsonify is very low on dependencies (basically just simplejson), so it can be installed on very old Plone
+sites, that would be difficult if not impossible to install collective.transmogrifier into.
 
 See:
 
@@ -224,7 +226,7 @@ See:
 
 * https://github.com/collective/collective.jsonify
 
-* http://www.jowettenterprises.com/blog/plone-content-migration-using-transmogrifier-and-collective.jsonify
+* A basic tutorial: http://www.jowettenterprises.com/blog/plone-content-migration-using-transmogrifier-and-collective.jsonify
 
 * http://stackoverflow.com/questions/13721016/exporting-plone-archetypes-data-in-json
 
