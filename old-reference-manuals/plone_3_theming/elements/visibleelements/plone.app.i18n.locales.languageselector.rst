@@ -37,7 +37,7 @@ Template Name:
 Class Name:
     plone.app.i18n.locales.browser.selector.LanguageSelector
 Manager:
-    Portal Top (name)
+    plone.portaltop (name)
     plone.app.layout.viewlets.interfaces.IPortalTop (interface)
 
 Sample files & directives
@@ -75,7 +75,7 @@ Hide the original viewlet (if you wish)
 ::
 
     <object>
-        <hidden manager="Portal Top" skinname="[your skin name]">
+        <hidden manager="plone.portaltop" skinname="[your skin name]">
             <viewlet name="plone.app.i18n.locales.languageselector" />
         </hidden>
 
@@ -83,7 +83,7 @@ Insert your new viewlet in a viewlet manager
 
 ::
 
-        <order manager="Portal Top" skinname="[your skin name]"
+        <order manager="plone.portaltop" skinname="[your skin name]"
                based-on="Plone Default">
             <viewlet name="[your namespace].[your viewlet name]"
                      insert-before="*" />
