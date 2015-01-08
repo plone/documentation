@@ -68,6 +68,8 @@ The following add-ons make it useful in a Plone context:
   See the site for some example configs for migration.
 * `transmogrify.dexterity <https://github.com/collective/transmogrify.dexterity>`_ provides some blueprints relevant to Dexterity types,
   and has some default pipelines for you to use.
+* `collective.jsonmigrator <#collective.jsonmigrator>`_ is particularly useful when the old site is not able to install 
+  collective.transmogrifier as it has a very low level of dependencies on that end of the migration.
 
 transmogrify.dexterity: CSV import
 ==================================
