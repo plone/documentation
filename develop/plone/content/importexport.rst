@@ -68,7 +68,7 @@ The following add-ons make it useful in a Plone context:
   See the site for some example configs for migration.
 * `transmogrify.dexterity <https://github.com/collective/transmogrify.dexterity>`_ provides some blueprints relevant to Dexterity types,
   and has some default pipelines for you to use.
-* `collective.jsonmigrator <#collectivejsonmigrator>`_ is particularly useful when the old site is not able to install 
+* `collective.jsonmigrator <collectivejsonmigrator> is particularly useful when the old site is not able to install 
   collective.transmogrifier as it has a very low level of dependencies on that end of the migration.
 
 transmogrify.dexterity: CSV import
@@ -222,13 +222,13 @@ sites, that would be difficult if not impossible to install collective.transmogr
 
 See:
 
-* https://github.com/collective/collective.jsonmigrator
+* <https://github.com/collective/collective.jsonmigrator>`_
 
-* https://github.com/collective/collective.jsonify
+* <https://github.com/collective/collective.jsonify>`_
 
-* A basic tutorial: http://www.jowettenterprises.com/blog/plone-content-migration-using-transmogrifier-and-collective.jsonify
+* A basic tutorial: <http://www.jowettenterprises.com/blog/plone-content-migration-using-transmogrifier-and-collective.jsonify>`_
 
-* http://stackoverflow.com/questions/13721016/exporting-plone-archetypes-data-in-json
+* <http://stackoverflow.com/questions/13721016/exporting-plone-archetypes-data-in-json>`_
 
 Fast content import
 -------------------
