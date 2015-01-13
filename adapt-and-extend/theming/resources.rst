@@ -4,10 +4,11 @@ JS/CSS Resources
 
 .. admonition:: Description
 
-    Resources are js/css and its dependencies to add the frontend logic and design
-    on top of Plone. There are so many different kind of resources like widgets, design styles,
-    behavior logic and single page apps. In order to organize them we are using two
-    main standard technologies: require.js and less.
+    Resources are JavaScript, CSS or LESS resources and their dependencies.
+    They add frontend logic and design to Plone. There are many different areas
+    where there resources are used, like for widgets, design styles, behavior
+    logic and single page apps. In order to organize them we are using two main
+    standard technologies: require.js and LESS.
 
     The goal of this recipe is to help you confirm that everything is working.
 
@@ -16,41 +17,49 @@ JS/CSS Resources
 Resources
 ---------
 
-The main unit of the resource system, its a js and some css that are going to be identified on a name.
-
-As possible options we have the shim (export, init and depends) so it can be configured to be exported to the global namespace, init on load and depend on some other resource.
+Resources are the main unit of the resource registry. A resource consists of a
+JavaScript file and/or some CSS/LESS resources. A resource is identified by a
+name.
 
 An example of a resource definition on registry.xml::
 
   <records prefix="plone.resources/tinymce"
-            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-      <value key="js">++plone++static/components/tinymce/tinymce.js</value>
-      <value key="export">window.tinyMCE</value>
-      <value key="init">function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }</value>
-      <value key="css">
-        <element>++plone++static/components/tinymce/skins/lightgray/skin.min.css</element>
-        <element>++plone++static/components/tinymce/skins/lightgray/content.inline.min.css</element>
-      </value>
+           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++static/components/tinymce/tinymce.js</value>
+    <value key="export">window.tinyMCE</value>
+    <value key="init">function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }</value>
+    <value key="css">
+      <element>++plone++static/components/tinymce/skins/lightgray/skin.min.css</element>
+      <element>++plone++static/components/tinymce/skins/lightgray/content.inline.min.css</element>
+    </value>
   </records>
 
 
-The options are :
+The possible options of a resource are:
 
-- js : URL of the js file
+- js: URL of the js file.
 
-- export : shim export option
+- css: List of css elements.
 
-- init : shim init option
+- url: URL that will be defined on the require.js namespace as the resource-url
+       variable.
 
-- depends : shim depends option
+These are the "Shim" options for a resource, where older, non-require.js
+compatible JavaScript code is used. For more information see:
+http://requirejs.org/docs/api.html#config-shim
 
-- css : list of css elements
+- export: Shim export option to define a global variable to where the
+          JavaScript module should be made available.
 
-- url : url that will be defined on the require.js namespace as the resource-url variable
+- depends: Shim depends option to define which other require.js resources
+           should be loaded before this shim module.
 
-The export/init/depends are the shim option to load the js files in the correct order on the global namespace, for more information : http://requirejs.org/docs/api.html#config-shim
+- init: Shim init option to define some JavaScript code to be run on
+        initialization.
 
-The URL option allow you to define the base url in case you want to load txt resources on require js::
+
+The URL option allows you to define the base url in case you want to load txt
+resources on require js::
         
     registry.xml 
 
@@ -88,89 +97,104 @@ The URL option allow you to define the base url in case you want to load txt res
 Default resources on Plone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Plone loads a group of mockup components and bower components as resources on the registry. 
-In order to avoid running bower install on each installation of Plone it ships by default a minimal
-bower components folder on the CMFPlone static folder with the correct versions of the resources
-that are need to run the default plone js/css.
+Plone loads a group of mockup and bower components as resources on the
+registry. In order to avoid running ``bower install`` on each installation of
+Plone, it ships with a bower components folder with all resources needed to run
+the default Plone JavaScript and CSS.
 
-The default bower components shipped are on : 
-
+Plone's default bower components are defined here: 
 https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json
 
-The group of resources registered on CMFPlone are :
-
+Plone's resource registration is defined here:
 https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml
 
 
 The ++plone++ traversal namespace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There is a specific folder type called ++plone++ designed to be similar to ++theme++ but with the difference that
-you can overwrite an specific file, so its possible to edit a resource TTW.
+There is a specific folder type called ++plone++ designed to be similar to
+++theme++ but with the difference that you can overwrite a specific file. This
+makes it possible to edit a resource Through-The-Web.
 
 Example::
 
     <plone:static
-      directory="static"
-      type="plone"
-      name="static"
-      />
+        directory="static"
+        type="plone"
+        name="static"
+        />
 
 
 Bundle
 ------
 
-Mainly bundles are groups of resources that are going to be loaded on your plone site. Instead of loading single resources we can group them by our possible needs. In case you
-develop an specific add-on you will need to create your own bundle, if you want to load a single page you will create a bundle, if you want to define some group of js/css that
-will be rendered on some page you need a bundle. 
+Bundles are mainly groups of resources that are going to be loaded on your
+Plone site. Instead of loading single resources, they can be grouped, combined
+and alltogether minified according to the project's requirements. This reduces
+the amound of necessary web requests.
 
-Each bundle will be delivered on a production site as a standalone resource: two http calls (js/css) for each bundle
+In case you develop a specific add-on you might want to create your own bundle.
+Alternatively, you can register your add-on code to be included in Plone's
+default ``plone`` bundle.
+
+For single pages like the ``@@plone-addsite``, you can define a customized
+bundle with only the resources needed for that page.
+
+In development mode, each bundle includes their resources in the rendered site
+as individual resources with individual requests. This can lead to a lot of
+requests and high response times.
+
+For production sites, the development mode has to be disabled and all bundles
+must be compiled. This can be done Through-The-Web in the resource editor.
+There is only one JavaScript and one CSS file included in the output per active
+bundle.
 
 Examples::
 
     <records prefix="plone.bundles/plone"
                 interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-        <value key="resources">
-            <element>plone</element>
-        </value>
-        <value key="enabled">True</value>
-        <value key="jscompilation">++plone++static/plone-compiled.js</value>
-        <value key="csscompilation">++plone++static/plone-compiled.css</value>
-        <value key="last_compilation">2014-08-14 00:00:00</value>
+      <value key="resources">
+        <element>plone</element>
+      </value>
+      <value key="enabled">True</value>
+      <value key="jscompilation">++plone++static/plone-compiled.js</value>
+      <value key="csscompilation">++plone++static/plone-compiled.css</value>
+      <value key="last_compilation">2014-08-14 00:00:00</value>
     </records>
 
     <records prefix="plone.bundles/plone-legacy"
-                interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-        <value key="resources" purge="false">
-            <element>plone_javascript_variables</element>
-            <element>unlockOnFormUnload</element>
-            <element>table_sorter</element>
-            <element>inline-validation</element>
-            <element>jquery-highlightsearchterms</element>
-        </value>
-        <value key="depends">plone</value>
-        <value key="jscompilation">++plone++static/plone-legacy-compiled.js</value>
-        <value key="csscompilation">++plone++static/plone-legacy-compiled.css</value>
-        <value key="last_compilation">2014-08-14 00:00:00</value>
-        <value key="compile">False</value>
-        <value key="enabled">True</value>
+             interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+      <value key="resources" purge="false">
+        <element>plone_javascript_variables</element>
+        <element>unlockOnFormUnload</element>
+        <element>table_sorter</element>
+        <element>inline-validation</element>
+        <element>jquery-highlightsearchterms</element>
+      </value>
+      <value key="depends">plone</value>
+      <value key="jscompilation">++plone++static/plone-legacy-compiled.js</value>
+      <value key="csscompilation">++plone++static/plone-legacy-compiled.css</value>
+      <value key="last_compilation">2014-08-14 00:00:00</value>
+      <value key="compile">False</value>
+      <value key="enabled">True</value>
     </records>
 
-The options are :
+The possible options of a bundle are:
 
-- enabled: the bundle its enabled by default
+- enabled: Enable of disable the bundle.
 
-- depends: the bundle depends on another bundle
+- depends: Dependency on another bundle.
 
-- compile: the bundle has less/requirejs
+- resources: List of resources that are included in this bundle.
 
-- jscompilation: url where the minimized/compiled js version will be
+- compile: Compilation is necessary, if the bundle has any LESS or require.js
+           resources.
 
-- csscompilation: url where the minimized/compiled css version will be 
+- jscompilation: URL of the compiled and minified JS file.
 
-- last_compilation: date of the compilation that is shipped on the compiled url
+- csscompilation: URL of the compiled and minified CSS file.
 
-- resources: list of resources that are going to be loaded
+- last_compilation: Date of the last compilation time.
 
 
 Decide which bundles are rendered on a specific call
