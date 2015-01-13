@@ -68,6 +68,8 @@ The following add-ons make it useful in a Plone context:
   See the site for some example configs for migration.
 * `transmogrify.dexterity <https://github.com/collective/transmogrify.dexterity>`_ provides some blueprints relevant to Dexterity types,
   and has some default pipelines for you to use.
+* `collective.jsonmigrator <collectivejsonmigrator> is particularly useful when the old site is not able to install collective.transmogrifier,
+  as collective.jsonmigrator has a very low level of dependencies for that end of the migration.
 
 transmogrify.dexterity: CSV import
 ==================================
@@ -210,26 +212,28 @@ More information
 
 * https://svn.plone.org/svn/collective/quintagroup.transmogrifier/trunk/quintagroup/transmogrifier/catalogsource.py
 
+collective.jsonmigrator
+=======================
+
+collective.jsonmigrator is basically a collective.transmogrifier pipeline that pulls Plone content from to JSON views on an old site and writes it into your new site. 
+It's major advantage is that the JSON view product: collective.jsonify is very low on dependencies (basically just simplejson), 
+so it can be installed on very old Plone sites that would be difficult if not impossible to install collective.transmogrifier into.
+
+See:
+
+* <https://github.com/collective/collective.jsonmigrator>`_
+
+* <https://github.com/collective/collective.jsonify>`_
+
+* A basic tutorial: <http://www.jowettenterprises.com/blog/plone-content-migration-using-transmogrifier-and-collective.jsonify>`_
+
+* <http://stackoverflow.com/questions/13721016/exporting-plone-archetypes-data-in-json>`_
+
 Fast content import
 -------------------
 
-
 For specific use-cases, you can create 'brains' first and import later
 * See `this blog post <http://blog.redturtle.it/redturtle-blog/fast-content-import>`_
-
-
-collective.jsonmigrator
-------------------------
-
-Convert Plone content to JSON and move it between sites.
-
-See
-
-* https://github.com/collective/collective.jsonmigrator
-
-* https://github.com/collective/collective.jsonify
-
-* http://stackoverflow.com/questions/13721016/exporting-plone-archetypes-data-in-json
 
 Simple JSON export
 ----------------------
