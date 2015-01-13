@@ -157,9 +157,6 @@ Examples::
         <element>plone</element>
       </value>
       <value key="enabled">True</value>
-      <value key="jscompilation">++plone++static/plone-compiled.js</value>
-      <value key="csscompilation">++plone++static/plone-compiled.css</value>
-      <value key="last_compilation">2014-08-14 00:00:00</value>
     </records>
 
     <records prefix="plone.bundles/plone-legacy"
@@ -172,9 +169,6 @@ Examples::
         <element>jquery-highlightsearchterms</element>
       </value>
       <value key="depends">plone</value>
-      <value key="jscompilation">++plone++static/plone-legacy-compiled.js</value>
-      <value key="csscompilation">++plone++static/plone-legacy-compiled.css</value>
-      <value key="last_compilation">2014-08-14 00:00:00</value>
       <value key="compile">False</value>
       <value key="enabled">True</value>
     </records>
@@ -189,6 +183,9 @@ The possible options of a bundle are:
 
 - compile: Compilation is necessary, if the bundle has any LESS or require.js
            resources.
+
+
+The following are also possible bundle options, but automatically set by Plone:
 
 - jscompilation: URL of the compiled and minified JS file.
 
