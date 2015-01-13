@@ -173,6 +173,7 @@ Examples::
       <value key="enabled">True</value>
     </records>
 
+
 The possible options of a bundle are:
 
 - enabled: Enable of disable the bundle.
@@ -183,6 +184,10 @@ The possible options of a bundle are:
 
 - compile: Compilation is necessary, if the bundle has any LESS or require.js
            resources.
+
+- expression: Python expression for conditional inclusion.
+
+- conditionalcomment: Conditional Comment for Internet Explorer hacks.
 
 
 The following are also possible bundle options, but automatically set by Plone:
