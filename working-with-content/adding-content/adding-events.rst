@@ -1,18 +1,40 @@
 Adding Events
-==================
+=============
+
+.. include:: ../../_robot.rst
 
 Plone web sites have a built-in system for managing and showing calendar
 events.
 
 Use the *Add new...* menu for a folder to add an event:
 
-.. figure:: /_static/copy_of_addnewmenu.png
+.. replaces /_static/copy_of_addnewmenu.png
+.. figure:: ../_robot/adding-events_add-menu.png
    :align: center
    :alt: add-new-menu.png
 
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show add new event menu
+       Go to  ${PLONE_URL}
+
+       Click link  css=#plone-contentmenu-factories dt a
+       Wait until element is visible
+       ...  css=#plone-contentmenu-factories dd.actionMenuContent
+
+       Mouse over  event
+       Update element style  portal-footer  display  none
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/adding-events_add-menu.png
+       ...  contentActionMenus
+       ...  css=#plone-contentmenu-factories dd.actionMenuContent
 
 
-You will see rather large *Add Event* panel:
+Select **Event** from the drop-down menu, and you'll see rather large *Add Event* panel:
 
 .. figure:: /_static/addevent.png
    :align: center
@@ -62,4 +84,5 @@ have information and save the event, but remember:
 has been **published*****.
 **
 
-
+.. robotframework::
+   :creates: ../../_robot/adding-events_add-menu.png
