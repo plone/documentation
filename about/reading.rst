@@ -1,5 +1,5 @@
-Reading the documenatation
-==========================
+Reading the documentation
+=========================
 
 .. contents:: :local:
 
