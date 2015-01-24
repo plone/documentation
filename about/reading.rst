@@ -11,9 +11,37 @@ The easiest way for reading these documentation is online on http://docs.plone.o
 Offline
 =======
 
-If you used to use dash or zeal, you can do that with. We have compiled docsets for Plone 3 and Plone 4.
+If you used to use `Dash <http://kapeli.com/dash>`_ or `Zeal <http://zealdocs.org/download.html>`_, you can do that for `Plone <https://plone.org>`_ too. We have compiled docsets for Plone 3 and Plone 4.
+
+Dash
+----
+
+..note:: If you have already installed the **old** Plone 4 docset via the community repository in Dash, please remove it, we do not support this anymore.
+
+In order to get the docsets into Dash you have to subscribe to our *docset feed*.
+
+        - start Dash
+        - bla
+        - bla
+
+        todo: add picture here
+
+Zeal
+----
+
+If you use Zeal [on Ubuntu for example], you have to subscribe to our *docset feed*.
+
+        - bla
+        - bla
+
+        todo: add picture here
 
 Docker
 ======
 
 If you prefer to run the docs, locally for online/offline usage you can just pull our container from docker.hub
+
+        todo: link to plone docs on docker hub.
+
+If you use docker we assume that you know how to run a docker container.
+
