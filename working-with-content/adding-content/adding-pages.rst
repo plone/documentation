@@ -1,21 +1,61 @@
 Adding Pages
-=================
+============
+
+.. include:: ../../_robot.rst
 
 Pages in Plone vary greatly, but are single "web pages," of one sort or
 another.
 
 To add a page, use the *Add new...* menu for a folder:
 
-.. figure:: /_static/copy_of_addnewmenu.png
+.. replaces ../_static/copy_of_addnewmenu.png
+.. figure:: ../_robot/adding-pages_add-menu.png
    :align: center
    :alt:
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show add new menu
+       Go to  ${PLONE_URL}
+
+       Click link  css=#plone-contentmenu-factories dt a
+       Wait until element is visible
+       ...  css=#plone-contentmenu-factories dd.actionMenuContent
+
+       Mouse over  document
+       Update element style  portal-footer  display  none
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/adding-pages_add-menu.png
+       ...  contentActionMenus
+       ...  css=#plone-contentmenu-factories dd.actionMenuContent
 
 Select **Page** from the drop-down menu, and you'll see the *Add Page*
 panel:
 
-.. figure:: /_static/editpagepanelplone3.png
+.. replaces ../_robot/editpagepanelplone3.png
+.. figure:: ../../_robot/adding-pages_add-form.png
    :align: center
    :alt:
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show new page edit form
+       Page should contain element  document
+       Click link  document
+
+       Wait until element is visible
+       ...  css=input#title
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/adding-pages_add-form.png
+       ...  css=#content
 
 The **Title** and **Description** fields are there at the top. Fill each
 of them out appropriately. There is a *Change note* field at the bottom,
@@ -38,12 +78,12 @@ Markup languages
 ----------------
 
 Your site-administrator may also enable so-called markup languages.
-If you are the sort of person who likes to enter text using so-called
-mark-up formats, you may switch off the visual editor under your
-personal preferences. The mark-up formats available in Plone are:
+If you are the sort of person who likes to enter text using so-called mark-up formats, you may switch off the visual editor under your personal preferences, which will replace it with a simplified textentry panel.
+The mark-up formats available in Plone are:
 
 -   [Markdown](http://en.wikipedia.org/wiki/Markdown)
 -   [Textile](http://en.wikipedia.org/wiki/Textile_%28markup_language%29)
+-   [Structured Text](http://www.zope.org/Documentation/Articles/STX)
 -   [Restructured Text](http://en.wikipedia.org/wiki/ReStructuredText)
 
 Each of these works by the embedding of special formatting codes within
@@ -54,3 +94,7 @@ learning for speed of input if you do a lot of page creation, or if you
 are adept at such slightly more technical approaches to entering text.
 Some people prefer such formats not just for speed itself, but for
 fluidity of expression.
+
+.. robotframework::
+   :creates: ../../_robot/adding-pages_add-menu.png
+             ../../_robot/adding-pages_add-form.png
