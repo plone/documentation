@@ -184,7 +184,7 @@ Please tune the versions according the latest available releases.
 Content creation permissions
 =============================
 
-Please read to :doc:`dexterity and permissions  </external/plone.app.dexterity/docs/advanced/permissions.rst>`
+Please read :doc:`dexterity and permissions </external/plone.app.dexterity/docs/advanced/permissions>`
 
 Exclusion from navigation
 ===========================
