@@ -22,24 +22,22 @@ In order to get the docsets into Dash you have to subscribe to our *docset feed*
 
         - start Dash
         - click on *Download Docsets*
+        - click on the *Plus* sign in the left down corner
+        - enter Feed URL: http://docs.plone.org/plone4.xml
+        - click on OK
 
 .. figure:: /_static/download_dash_docset.png
    :align: center
    :alt:
-
-        - click on the *Plus* sign in the left down corner
 
 .. figure:: /_static/plus_dash_docset.png
    :align: center
    :alt:
 
-        - enter Feed URL: http://docs.plone.org/plone4.xml
-
-.. figure:: /_static/download_dash_docset.png
+.. figure:: /_static/add_dash_docset.png
    :align: center
    :alt:
 
-        - click on OK
 
 
 Zeal
