@@ -80,7 +80,7 @@ Markup languages
 Your site-administrator may also enable so-called markup languages.
 If you are the sort of person who likes to enter text using so-called
 mark-up formats, you may switch off the visual editor under your
-personal preferences, which will replace Kupu with a simplified text
+personal preferences, which will replace TinyMCE with a simplified text
 entry panel. The mark-up formats available in Plone are:
 
 -   [Markdown](http://en.wikipedia.org/wiki/Markdown)
