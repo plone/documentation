@@ -1,6 +1,6 @@
-=======================
+===================
  TAL page templates
-=======================
+===================
 
 .. admonition:: Description
 
@@ -40,7 +40,7 @@ they can be standalone ("old style", circa 2001).
 
 
 The MIME-Type
-===================================
+=============
 Basically a document file got a mime-type. This is also important for Plone Templates if you don't want to export to text/html.
 If you want to export to a XML File you have to change the mime-type because otherwise the browser won't recognize the file as an XML.
 At the moment Plone supports text/html which is the default value. And text/xml.
@@ -58,7 +58,7 @@ Content of metadata file::
 
 
 Overriding templates
-======================
+====================
 
 The recommended approach to customize ``.pt`` files for Plone 4 is to use a
 little helper called `z3c.jbot`_.
@@ -79,7 +79,7 @@ you can do the following:
   In fact it can override any ``.pt`` file in the Plone source tree.
 
 Overriding a template using z3c.jbot
-------------------------------------------
+------------------------------------
 
 1. First of all, make sure that your customization add-on supports
    `z3c.jbot`_.
@@ -160,7 +160,7 @@ This template provides the visual frame for Plone themes. The template is
 an old-style page template living in ``plone_skins/plone_templates``.
 
 Custom per view main template
---------------------------------
+-----------------------------
 
 Here is an example how to provide a customized main template for one view.
 In this example we have customized main template so that only the content area is visible.
@@ -321,9 +321,7 @@ We refer it in our page template instead of ``here/main_template``::
 Plone template element map
 ==========================
 
-Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers
-are described
-`here <https://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_.
+Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers are described :doc:`here </develop/plone/views/viewlets>`.
 
 .. note:: Plone 3 viewlets differ from Plone 4 viewlets.
 
