@@ -99,7 +99,10 @@ Transaction boundary events
 It is possible to perform actions before and after transaction is written to
 the database.
 
-http://svn.zope.org/transaction/trunk/transaction/_transaction.py?rev=81646&view=auto
+See transaction documentation about
+`before commit hooks <http://zodb.readthedocs.org/en/latest/transactions.html#before-commit-hook>`_ and 
+`after commit hooks <http://zodb.readthedocs.org/en/latest/transactions.html#after-commit-hooks>`_.
+
 
 Viewing transaction content and debugging transactions
 =======================================================
