@@ -6,7 +6,7 @@ Your addon should be listed and hosted on PyPI if you want other people to use y
 
 .. warning ::
     Everything on PyPI is public.
-    Be careful not to hardcore passwords in *any* file.
+    Be careful not to hard-code passwords in *any* file.
 
 
 Setup necessary packages
