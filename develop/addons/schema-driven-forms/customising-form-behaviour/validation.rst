@@ -153,7 +153,7 @@ For example:
 
         ...
 
-    @form.validator(field=IPizzaOrder['name'])
+    @form.validator.validator(field=IPizzaOrder['name'])
     def validateName(value):
         """Ensure names have a space (indicating a first name and surname)
         """
@@ -161,14 +161,14 @@ For example:
         if ' ' not in value:
             raise Invalid(_(u"Please give a full name"))
 
-The *@form.validator()* decorator registers a validator adapter. When
+The *@form.validator.validator()* decorator registers a validator adapter. When
 the validation is invoked, the decorated function will be called with
 the field’s value as an argument and given an opportunity to raise a
 validation error, much like the constraint above. Again like the
 constraint, the default validator is called first, so things like the
 required flag and indeed any custom constraint are processed first.
 
-The *@form.validator()* decorator can take keyword arguments to make the
+The *@form.validator.validator()* decorator can take keyword arguments to make the
 validator more specific or more generic. The valid values are:
 
 context
@@ -203,7 +203,7 @@ seen above. A validator is registered as a multi-adapter providing
 *z3c.form.interfaces.IValidator* and adapting the objects *(context,
 request, view, field, widget)*, corresponding to the discriminants seen
 above. You may wish to register an adapter directly instead of using the
-*@form.validator()* decorator if you:
+*@form.validator.validator()* decorator if you:
 
 -  want to skip the default validation of field properties like
    *required* or *min*/*max*
@@ -239,7 +239,7 @@ default validation logic. In the validate() method, we can use variables
 like self.context, self.request, self.view, self.field and self.widget
 to access the adapted objects. The WidgetValidatorDiscriminators class
 takes care of preparing the adapter discriminators. It takes the same
-keyword arguments as @form.validator() seen above.
+keyword arguments as *@form.validator.validator()* seen above.
 
 Form-level validation
 ---------------------
