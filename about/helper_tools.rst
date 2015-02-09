@@ -57,7 +57,9 @@ Another nice tool for Emacs is `Flycheck <https://flycheck.readthedocs.org/en/la
 Marketplace.
 
 **Vim** does syntax highlighting for RST files.
-There is also a nice plugin with enhanced functionalities called `Riv <https://github.com/Rykka/riv.vim>`_.
+There is a nice plugin called `vim-markdown <https://github.com/plasticboy/vim-markdown>`.
+
+If you prefer a more *advanced* plugin with enhanced functionalities you could use `Riv <https://github.com/Rykka/riv.vim>`_.
 
 **restview** `ReStructuredText viewer <https://pypi.python.org/pypi/restview>`_
 A viewer for ReStructuredText documents that renders them on the fly.
