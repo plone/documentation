@@ -42,8 +42,7 @@ There is also a `online version <http://johnmacfarlane.net/pandoc/try/>`_.
 
 **Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
 
-One  particular which is really good for getting a impression how it will looks like in html is `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_ a live previewer/exporter for markup files (markdown, rst, creole, textile...). 
-
+One  particular which is really good for getting a impression how it will looks like in html is `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_ a live previewer/exporter for markup files (markdown, rst, creole, textile...).
 
 **Emacs** has a nice `rst-mode
 <http://docutils.sourceforge.net/docs/user/emacs.html>`_. This mode comes
@@ -56,9 +55,13 @@ Another nice tool for Emacs is `Flycheck <https://flycheck.readthedocs.org/en/la
 Marketplace.
 
 **Vim** does syntax highlighting for RST files.
-There is also a nice plugin with enhanced functionalities called `Riv <https://github.com/Rykka/riv.vim>`_.
+There is a nice plugin called `vim-markdown
+<https://github.com/plasticboy/vim-markdown>`.
 
-**restview** `ReStructuredText viewer <https://pypi.python.org/pypi/restview>`_
+If you prefer a more *advanced* plugin with enhanced functionalities you could
+use `Riv <https://github.com/Rykka/riv.vim>`_.
+
+**Restview** `ReStructuredText viewer <https://pypi.python.org/pypi/restview>`_
 A viewer for ReStructuredText documents that renders them on the fly.
 
 .. code-block:: rst
