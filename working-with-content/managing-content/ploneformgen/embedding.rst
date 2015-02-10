@@ -41,7 +41,7 @@ Or if you are using a view class, you could define a method like::
 (Note that restrictedTraverse expects a path relative to the object you are
 calling it on, with no initial slash.)  And then in the associated template::
 
-    <tal:block tal:replace="view/render_form"/>
+    <tal:block tal:replace="structure view/render_form"/>
 
 By default the embedded form uses the current URL as the form's 'action' parameter.
 When the form is rendered upon submission, it will perform validation, run the normal
