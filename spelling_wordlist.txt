@@ -93,6 +93,8 @@ TinyMCE
 toctree
 Todo
 Trac
+toolbar
+Toolbar
 transifex
 txt
 uid
