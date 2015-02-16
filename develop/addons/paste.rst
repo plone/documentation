@@ -2,6 +2,13 @@
  Bootstrapping Plone add-on development
 =========================================
 
+.. note ::
+
+    Using ZopeSKel is not considered *best practice* anymore, if you know how
+    to handle it and its dependencies it fine, otherwise we advise you to use
+    :doc:`bobtemplates <bobtemplates>`.
+
+
 .. admonition:: Description
 
     ZopeSkel is a tool which generates a code skeleton template for your
