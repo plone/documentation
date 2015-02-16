@@ -13,12 +13,30 @@ JS/CSS Resources
 
 .. contents:: :local:
 
+
+Introduction to Plone 5 resources
+---------------------------------
+
+Plone 5 introduces new concepts, for some, with working with JavaScript and CSS in Plone.
+Plone 5 utilizes Asynchronous Module Definition (AMD) with requirejs. We chose AMD
+over other module loading implementations(like commonjs) because AMD can be used in
+non-compiled form in the browser. This way, someone can click "development mode"
+in the resource registry control panel and work with the non-compiled JavaScript files directly.
+
+Additionally, Plone 5 streamlines the use of LESS to compile CSS.
+
+These two concepts for JavaScript and CSS are merged into one idea--a resource.
+
+
 Resources
 ---------
 
-The main unit of the resource system, its a js and some css that are going to be identified on a name.
+The main unit of the resource system is a JavaScript file and/or a set of CSS/LESS files.
 
-As possible options we have the shim (export, init and depends) so it can be configured to be exported to the global namespace, init on load and depend on some other resource.
+Since this can be a single JavaScript file, there are additional requirejs
+options are available to be able to customize. Possible options we have are
+is shim (export, init and depends) so it can be configured to be exported 
+o the global namespace, init on load and depend on some other resource.
 
 An example of a resource definition on registry.xml::
 
@@ -36,7 +54,7 @@ An example of a resource definition on registry.xml::
 
 The options are :
 
-- js : URL of the js file
+- js : URL of the JavaScript file
 
 - export : shim export option
 
@@ -44,13 +62,13 @@ The options are :
 
 - depends : shim depends option
 
-- css : list of css elements
+- css : list of LESS/CS elements
 
-- url : url that will be defined on the require.js namespace as the resource-url variable
+- url : URL that will be defined on the require.js namespace as the resource-url variable
 
 The export/init/depends are the shim option to load the js files in the correct order on the global namespace, for more information : http://requirejs.org/docs/api.html#config-shim
 
-The URL option allow you to define the base url in case you want to load txt resources on require js::
+The URL option will you to define the base url in case you want to load txt resources on require js::
         
     registry.xml 
 
@@ -113,8 +131,10 @@ Example::
     <plone:static
       directory="static"
       type="plone"
-      name="static"
+      name="myresources"
       />
+
+will give you ++plone++myresources based urls
 
 
 Bundle
@@ -162,13 +182,13 @@ The options are :
 
 - depends: the bundle depends on another bundle
 
-- compile: the bundle has less/requirejs
+- compile: the bundle has less/requirejs and needs to be compiled
 
-- jscompilation: url where the minimized/compiled js version will be
+- jscompilation: URL where the minimized/compiled JavaScript version will be
 
-- csscompilation: url where the minimized/compiled css version will be 
+- csscompilation: URL where the minimized/compiled CSS version will be 
 
-- last_compilation: date of the compilation that is shipped on the compiled url
+- last_compilation: date of the compilation that is shipped on the compiled URL
 
 - resources: list of resources that are going to be loaded
 
@@ -188,12 +208,12 @@ Decide which bundles are rendered on a specific call
 Compiled bundles
 ^^^^^^^^^^^^^^^^
 
-In a compiled bundle normaly there is only one resource that is going to be loaded for each specific bundle, this resource will be
-a js with a requirejs wrapper and a less file.
+In a compiled bundle normally there is only one resource that is going to be loaded for each specific
+bundle, this resource will be a JavaScript file with a requirejs wrapper and a less file.
 
-When the site is in development mode the files are delivered as they are on stored and will get its dependencies asyncronous (AMD-LESS).
+When the site is in development mode the files are delivered as they are on stored and will get its dependencies asynchronously (AMD and LESS).
 
-The main feature of the compiled bundles is that the list of real resources that are going to be loaded on the site are defined on the js and less files.
+The main feature of the compiled bundles is that the list of real resources that are going to be loaded on the site are defined on the JavaScript and LESS files.
 
 Example::
 
@@ -239,14 +259,14 @@ Example::
     @import url("@{mockup-patterns-tinymce}");
     ...
 
-On development mode all the less/js resources are going to be retrived on live so its possible to debug
+On development mode all the less/js resources are going to be retrieved on live so its possible to debug
 and modify the filesystem files and see the result on the fly.
 
-In order to provide a compiled version for the production mode there are three possiblities:
+In order to provide a compiled version for the production mode there are three possibilities:
 
 - Compile TTW and store on the ZODB (explained later)
 
-- Compile with a generated guntfile: There is a python scripts that extracts all the information from an existing plone and generates a gruntfile - https://github.com/plone/buildout.coredev/blob/5.0/generate_gruntfile.py
+- Compile with a generated gruntfile: ./bin/plone-compile-resources --site-id=myplonesite --bundle=mybundle
 
 - Create your own compilation chain: Using the tool you prefer create a compiled version of your bundle with the correct urls.
 
@@ -257,7 +277,7 @@ Non compiled bundles
 In case your resources are not using requirejs/less and you just want to group them on bundles to minimize and deliver them in groups you can use
 the non compiled bundles. 
 
-They are minimized and stored on the csscompiled/jscompiled url defined on the bundle for the first request each time:
+They are minimized and stored on the csscompiled/jscompiled URL defined on the bundle for the first request each time:
 
 - its on production mode
 
@@ -288,9 +308,11 @@ Example::
 Default Plone bundles
 ^^^^^^^^^^^^^^^^^^^^^
 
-There are two main plone bundles by default: plone and plone-legacy.
+There are three main plone bundles by default: plone and plone-legacy.
 
 - plone bundle : is a compiled bundle with the main components required to run the toolbar and main mockup patterns with only the css needed by that elements
+
+- plone logged in bundle : is a compiled bundle that is only included for logged in users
 
 - plone legacy bundle : is a non compiled bundle that gets all the jsregistry and cssregistry that are loaded on the addons that are installed so they are minified
 
@@ -361,12 +383,80 @@ TODO
 Plone resources/bundles
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Diazo themes
-^^^^^^^^^^^
 
+Diazo themes
+^^^^^^^^^^^^
+
+TODO
 
 Old registry migration and compatibility
 ----------------------------------------
 
-TODO
+The deprecated resource registries(and portal_javascripts) has no concept of
+dependency management. It simply allowed you to specify an order in which
+JavaScript files should be included on your site. It also would combined and
+minify them for you in deployment mode.
 
+Prior to Plone 5, JavaScript files were added to the registry by using a Generic
+Setup Profile and including a jsregistry.xml file to it. This would add your
+JavaScript to the registry, with some options and potentially set ordering.
+
+In Plone 5.0, Plone will still recognize these jsregistry.xml files. Plone
+tries to provide a shim for those that are stubborn to migrate. How it does
+this is by adding all jsregistry.xml JavaScripts into a "plone-legacy" Resource
+Registry bundle. This bundle simply includes a global jQuery object and
+includes the resources in sequential order after it.
+
+
+Updating non-AMD scripts
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you are not including your JavaScript in the Resource Registries and just
+need it to work alongside Plone's JavaScript because you're manually including
+the JavaScript files in one way or another(page templates, themes), there are
+a number of techniques available to read on the web that describe how to make
+your scripts conditionally work with AMD.
+
+For the sake of this post, I will describe one technique used in Plone core to
+fix the JavaScript. The change we'll be investigating can be seen with in a commit
+to plone.app.registry. plone.app.registry has a control panel that allows some
+ajax searching and modals for editing settings.
+
+To utilize the dependency management that AMD provides and have the javascript
+depend on jQuery, we can wrap the script in an AMD require function. This function
+allows you to define a set of dependencies and a function that takes as arguments,
+those dependencies you defined. After the dependencies are loaded, the function
+you defined is called.
+
+Example::
+
+      require([
+        'jquery',
+        'pat-registry'
+      ], function($, Registry) {
+        'use strict';
+        ...
+        // All my previous JavaScript file code here
+        ...
+      });
+
+
+requirejs require/define and resource/bundle
+--------------------------------------------
+
+In working with requirejs, you'll likely be aware of the 
+`mismatched anonymous define() <http://requirejs.org/docs/errors.html#mismatch>`_
+potential misuse of require and define.
+
+Basically, it comes down to, you should not use `define` with script tags. `define`
+should only be included in a page by using a `require` call.
+
+How this works with resources and bundles is that bundles should ONLY ever be
+'require' calls. If you try to use a JavaScript file that has a `define` call
+with a bundle, you'll get the previously mentioned error. Make sure to use
+a JavaScript file with a 'require' call to include all your `define` resources.
+
+This is how requirejs works and is normal behavior; however, any novice will likely
+come around to noticing this when working with AMD JavaScript. With Plone,
+it's one additional caveat you'll need to be aware of when working with the Resource
+Registry.
