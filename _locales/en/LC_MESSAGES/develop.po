@@ -29073,9 +29073,9 @@ msgstr "Customizing form frame"
 # fd6a1a7d8a534f6aa65de539d0c129eb
 #: ../develop/plone/forms/z3c.form.rst:299
 msgid ""
-"Please see `plone.app.zc3form README "
+"Please see `plone.app.z3cform README "
 "<https://github.com/plone/plone.app.z3cform>`_."
-msgstr "Please see `plone.app.zc3form README <https://github.com/plone/plone.app.z3cform>`_."
+msgstr "Please see `plone.app.z3cform README <https://github.com/plone/plone.app.z3cform>`_."
 
 # a00000fb14d44af78cd15c0cd1407bb2
 #: ../develop/plone/forms/z3c.form.rst:302
