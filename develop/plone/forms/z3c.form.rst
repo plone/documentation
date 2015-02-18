@@ -296,7 +296,7 @@ Example::
 Customizing form frame
 ------------------------
 
-Please see `plone.app.zc3form README <https://github.com/plone/plone.app.z3cform>`_.
+Please see `plone.app.z3cform README <https://github.com/plone/plone.app.z3cform>`_.
 
 Rendering a form manually
 ---------------------------
