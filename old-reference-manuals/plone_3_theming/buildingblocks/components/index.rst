@@ -1,8 +1,0 @@
-=============
-Components
-=============
-
-
-
-
-.. contents:: :local:
