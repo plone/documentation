@@ -105,27 +105,45 @@ from another package, you can do so with using the
 configure tag which will then run the block of :term:`ZCML`
 in the context of that package.
 
-Here is an example of defining portlet manager to be
-defined in another manager::
+Here's an example of overriding the :term:`BrowserView` 'folder_contents'. It
+is defined in package ``plone.app.content`` in directory ``browser`` with this
+:term:`ZCML` statement::
+
+    <browser:page
+        for="Products.CMFCore.interfaces._content.IFolderish"
+        class=".folder.FolderContentsView"
+        name="folder_contents"
+        template="templates/folder_contents.pt"
+        permission="cmf.ListFolderContents"
+    />
+
+In your own package ``my.package``, you want to override the class, but keep the
+template. Assuming you created a class ``MyFolderContentsView`` inside
+``foldercontents.py`` in the ``browser`` directory of your package, add this
+:term:`ZCML` statement::
 
     <configure
         xmlns="http://namespaces.zope.org/zope"
         xmlns:browser="http://namespaces.zope.org/browser"
         i18n_domain="my.package">
 
-      <!-- Moved viewlet registration -->
-      <configure package="Products.ContentWellPortlets">
-        <browser:viewlet
-            name="contentwellportlets.portletsabovecontent"
-            class="Products.ContentWellPortlets.browser.viewlets.PortletsAboveViewlet"
-            manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
-            layer="Products.ContentWellPortlets.browser.interfaces.IContentWellPortlets"
-            permission="zope2.View"
-            template="browser/templates/portletsabovecontent.pt"
-            />
+      <!-- override folder_contents -->
+      <configure package="plone.app.content.browser">
+          <browser:page
+              for="Products.CMFCore.interfaces._content.IFolderish"
+              class="my.package.browser.foldercontents.MyFolderContentsView"
+              name="folder_contents"
+              template="folder_contents.pt"
+              layer="my.package.interfaces.IMyPackageLayer"
+              permission="cmf.ListFolderContents"
+          />
       </configure>
-
     </configure>
+
+Basically, you re-define the :term:`BrowserView` in the context of its original
+package, so that the relative path to the template stays valid.
+But using the full path in dotted notation, you can let it point to your
+own class.
 
 
 Conditionally run :term:`ZCML`
