@@ -78,9 +78,11 @@ Attributes/Directives used
 
 Use
 
-profiles/default/skins.xml
+``profiles/default/skins.xml``
 
-<skin\_path name="[your skin name]"
+::
+
+  <skin\_path name="[your skin name]"
 
 Used to name your set of skin layers.
 
@@ -92,26 +94,22 @@ default\_skin="[your skin name]">
 
 Used to set your set of skin layers as the default skin.
 
-browser/configure.zcml
+``browser/configure.zcml``::
 
-<interface …
-
-name="[your skin name]"
-
-/>
+  <interface …
+  name="[your skin name]"
+  />
 
 Used to name the theme specific interface (see
-`Components <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_
+:doc:`Components </old-reference-manuals/plone_3_theming/buildingblocks/components/index>`_
 section)
 
-profiles/default/viewlets.xml
+``profiles/default/viewlets.xml``::
 
-<order manager="plone.portalfooter" skinname="[your skin name]"
-
->
+  <order manager="plone.portalfooter" skinname="[your skin name]">
 
 Used to specify the theme when reordering viewlets in viewlet managers
 
 (see
-`Components <https://plone.org/documentation/manual/theme-reference/buildingblocks/skin/components>`_
+:doc:`Components </old-reference-manuals/plone_3_theming/buildingblocks/components/index>`_
 section)
