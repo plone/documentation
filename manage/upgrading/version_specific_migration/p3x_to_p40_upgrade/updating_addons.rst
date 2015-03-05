@@ -239,6 +239,7 @@ which is the action category that should be retrieved. This should be used
 instead of the 'keyed_actions' method which has been removed.
 
 Items removed from the plone_deprecated skin layer:
+
 * colophon.pt
 * correctPREformatting.js
 * cropText.py
