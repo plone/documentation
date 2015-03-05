@@ -54,8 +54,8 @@ These things are not mandatory yet, but represent best-practice recommendations 
 * Packaging technology:
 
   * Use python packages instead of Zope products
-  * Ship packages as eggs and register them with the "Python Cheese Shop":http://cheeseshop.python.org/
-  * Use "Python Paste":http://pythonpaste.org/ to create new packages
+  * Ship packages as eggs and register them with the `PYthon Package Index <https://pypi.python.org/>`__
+  * Use `Python Paste <http://pythonpaste.org/>`__ to create new packages
 
 
 CMFCore.permission import syntax change
@@ -86,7 +86,7 @@ To make this work with both the new way of importing it and fall back to the old
 Then you should be all set, and be able to support multiple versions with your product.
 Note that the try/except block is only necessary if you want to support Plone 2.1, if you're targeting Plone 2.5 and above, you only have to do the variant listed under "New CMF" in the example above.
 
-To see a live example of this change, consult "Poi changeset 40594":http://dev.plone.org/collective/changeset/40594#file1.
+To see a live example of this change, consult this `Poi changeset <https://github.com/collective/Products.Poi/commit/4fbca095c64185dda0f7d58a1982c82b89f4012c#diff-8fc1f83856b97f0319c6a954b889e449>`__.
 
 Transaction module is no longer implicitly in Archetypes
 ========================================================
@@ -108,7 +108,7 @@ to::
 
     import transaction
 
-For a live example, see `Poi changeset 40594 <http://dev.plone.org/collective/changeset/40594#file3>`_.
+For a live example, see this `Poi changeset <https://github.com/collective/Products.Poi/commit/4fbca095c64185dda0f7d58a1982c82b89f4012c#diff-83f55ebfdf46ffe7d466bfaf902e682f>`__.
 
 get_transaction module rename
 =============================
@@ -149,7 +149,7 @@ with::
 
 You might have to add an 'import transaction' statement at the top of your file if you haven't imported it already.
 
-For a live example, see the Install.py part of "Poi changeset 40594":http://dev.plone.org/collective/changeset/40594#file0.
+For a live example, see the Install.py part of this `Poi changeset <https://github.com/collective/Products.Poi/commit/4fbca095c64185dda0f7d58a1982c82b89f4012c#diff-347b4813ab7ff9876b5f5066c175f2b9>`__.
 
 ContentFactoryMetadata deprecation
 ==================================
@@ -171,8 +171,6 @@ Update this to::
     from Products.CMFCore.TypesTool import FactoryTypeInformation
 
 instead, and you should be good to go. This change should work all the way back to Plone 2.1.
-
-For a live example, see "DataGridField changeset 7901":http://dev.plone.org/archetypes/changeset/7901.
 
 Update your workflows to use GenericSetup profiles
 ==================================================
@@ -196,10 +194,12 @@ For existing workflows, the easiest way to make the product install use GenericS
   * You will now get a tar file named something like 'setup_tool-20070424225827.tar'.
 
 * Unpack the tar file, and put the resulting files and directories in a directory 'profiles/default/' in the root of your product.
-* Remove the workflow directories in 'workflow/' that are not part of your product, and edit 'workflows.xml' so that it only has the information for your workflows. See "Poi changeset 41071":http://dev.plone.org/collective/changeset/41071 for an example.
+* Remove the workflow directories in 'workflow/' that are not part of your product, and edit 'workflows.xml' so that it only has the information for your workflows.
 * Delete your old '.py'-based workflow definitions in 'Extensions', but make sure you keep any workflow scripts, since these will be referenced from the profile definitions.
 * Add a 'configure.zcml' file in the root of your product that registers the default profile.
-* Remove the redundant code from 'Extensions/Install.py' and add the boilerplate code to invoke the GS setup, see "Poi changeset 41071":http://dev.plone.org/collective/changeset/41071 for an example.
+* Remove the redundant code from 'Extensions/Install.py' and add the boilerplate code to invoke the GS setup.
+
+For a full example, see this big `Poi changeset <https://github.com/collective/Products.Poi/commit/ed9a931aa0c291fcf929a652b25df2d086edb1ee>`__.
 
 This process is also the same for any code you want to move to GenericSetup, in the Poi example, we also moved the catalog metadata and various other things to use GenericSetup profiles, and could get rid of most of 'Install.py' in the process.
 
@@ -252,7 +252,7 @@ Any customizations of main_template.pt or header.pt will need to be updated to u
 
 If have previously shipped customized versions of templates like header.pt, viewThreadsAtBottom.pt or global_contentmenu.pt to get things into the page, please switch to viewlets instead, as it makes it much easier for multiple products to co-exist without stepping on each others changes.
 
-Documentation and examples can be found in "this tutorial":https://plone.org/documentation/tutorial/customizing-main-template-viewlets.
+Documentation and examples can be found in `this section <http://docs.plone.org/develop/plone/views/viewlets.html>`__.
 
 Plone 3 does not create member folders by default
 =================================================
@@ -289,14 +289,45 @@ In some cases, editing also means the ability to add new objects inside the obje
 
 For this to work, third party content types that add custom workflows will have to either use one of the standard "add content" permissions or explicitly give Editor the Add portal content role.
 
-See "Ticket #6265":http://dev.plone.org/plone/ticket/6265 for the changeset and full explanation.
+See `Ticket #6265 <http://dev.plone.org/plone/ticket/6265>`__ for the full explanation.
 
 Indexes declared in Archetypes schemata need to be moved to GenericSetup
 ========================================================================
 
 If you have declared indexes or metadata directly on the Archetypes field declarations, and you are using GenericSetup to install your types/FTIs, you will need to move them to GenericSetup.
 
-This applies if you have moved from using 'install_types()' in 'Extensions/Install.py', to installing new content types/FTIs with GenericSetup using a 'types.xml' import step. For each field that specifies an 'index', like this example from "PoiIssue.py r40594":http://dev.plone.org/collective/browser/Poi/trunk/content/PoiIssue.py?rev=40594#L77:: StringField( name='issueType', index="FieldIndex:schema", widget=SelectionWidget( label="Issue type", description="Select the type of issue.", label_msgid='Poi_label_issueType', description_msgid='Poi_help_issueType', i18n_domain='Poi', ), enforceVocabulary=True, vocabulary='getIssueTypesVocab', required=True ), …you need to move the creation to catalog.xml with GenericSetup. If there is 'index="FieldIndex"', that means you need a new index, of type FieldIndex, with the name being the name of the accessor method:: If there is also ':schema' or ':metadata', e.g. 'index="FieldIndex:schema"', you also need a metadata column:: This is necessary because the schema does not really exist at install time, so there is no way GenericSetup can inspect it and configure new indexes. This was a bad design from the start, as portal-wide indexes do not belong in type-specific schemata anyway.
+This applies if you have moved from using 'install_types()' in
+'Extensions/Install.py', to installing new content types/FTIs with
+GenericSetup using a 'types.xml' import step.  Take this example from
+`PoiIssue.py r40594 <https://github.com/collective/Products.Poi/blob/4fbca095c64185dda0f7d58a1982c82b89f4012c/Products/Poi/content/PoiIssue.py#L77>`__::
+
+    StringField(
+        name='release',
+        default="(UNASSIGNED)",
+        index="FieldIndex:schema",
+        widget=SelectionWidget(
+            label="Version",
+            description="Select the version the issue was found in.",
+            condition="object/isUsingReleases",
+            label_msgid='Poi_label_release',
+            description_msgid='Poi_help_release',
+            i18n_domain='Poi',
+        ),
+        required=True,
+        vocabulary='getReleasesVocab'
+    ),
+
+You need to move the creation to catalog.xml with GenericSetup. If there is ``index="FieldIndex"``, that means you need a new index, of type FieldIndex, with the name being the name of the accessor method::
+
+    <index name="getRelease" meta_type="FieldIndex">
+      <indexed_attr value="getRelease"/>
+    </index>
+
+If there is also ``:schema`` or ``:metadata``, e.g. ``index="FieldIndex:schema"``, you also need a metadata column::
+
+    <column value="getRelease"/>
+
+This is necessary because the schema does not really exist at install time, so there is no way GenericSetup can inspect it and configure new indexes. This was a bad design from the start, as portal-wide indexes do not belong in type-specific schemata anyway.
 
 The "Sharing" tab is now a global action
 ========================================
@@ -309,7 +340,7 @@ It will be removed from existing, installed types during migration.
 
 If you do not remove the action, the user will see two "Sharing" tabs.
 
-For an example of the canonical set of actions and aliases, see "the GenericSetup definition of the Document FTI":http://dev.plone.org/plone/browser/CMFPlone/trunk/profiles/default/types/Document.xml.
+For an example of the canonical set of actions and aliases, see `the GenericSetup definition of the Document FTI <https://github.com/plone/Products.CMFPlone/blob/3.0/profiles/default/types/Document.xml>`__.
 Of course, you may not need the 'References', 'History' or 'External Edit' actions in your own types.
 
 Multi page schemas
