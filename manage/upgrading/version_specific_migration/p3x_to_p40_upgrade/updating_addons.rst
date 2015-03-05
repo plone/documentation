@@ -362,7 +362,9 @@ If you have any of these imports, you cannot use them anymore::
     Products.CMFPlone.utils.utranslate
     Products.PageTemplates.GlobalTranslationService.getGlobalTranslationService
 
-Instead you need to use zope.i18n.translate directly. See this example changeset from Poi.
+Instead you need to use zope.i18n.translate directly. See this
+`example changeset from Poi <https://github.com/collective/Products.Poi/commit/e37434db3a9001afd66ab838bdfb2fe2b518846f>`_.
+
 
 The tricky thing here is that the order of the arguments has changed so you probably need some more changes. The old call signature was this::
 
