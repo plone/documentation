@@ -57,13 +57,3 @@ If you use Zeal [on Ubuntu for example], you have to subscribe to our *docset fe
    :align: center
    :alt:
 
-
-Docker
-======
-
-If you prefer to run the docs, locally for online/offline usage you can just pull our container from docker.hub
-
-        todo: link to plone docs on docker hub.
-
-If you use docker we assume that you know how to run a docker container.
-
