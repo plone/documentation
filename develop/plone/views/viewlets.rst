@@ -1,6 +1,6 @@
-==============
+=========
  Viewlets
-==============
+=========
 
 .. admonition:: Description
 
@@ -10,7 +10,7 @@
 .. contents :: :local:
 
 Introduction
---------------
+------------
 
 Viewlets are view snippets which will render a part of the HTML page.
 Viewlets provide conflict-free way to contribute new user-interface actions and
@@ -20,7 +20,7 @@ Each viewlet is associated with a viewlet manager. To add viewlets to your HTML 
 to add them to a viewlet manager, which allows you to shuffle viewlets around through-the-web.
 
 What viewlets do
-===================
+================
 
 * Viewlets are managed using /@@manage-viewlets page
 
@@ -83,7 +83,7 @@ Thus, you can use ``self.view`` to get the view, and then use its methods.
 
 
 Stock viewlets
-===================
+==============
 
 These can be found in `plone.app.layout.viewlet module <https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/viewlets/configure.zcml>`_.
 
@@ -92,7 +92,7 @@ but it is a *view*. Don't know why.
 
 
 Creating a viewlet manager
------------------------------
+--------------------------
 
 Viewlet managers contain viewlets. A viewlet manager is itself
 a Zope 3 interface which contains an OrdereredViewletManager implementation.
@@ -128,7 +128,7 @@ More info
 
 
 Creating a viewlet manager
-===========================
+==========================
 
 Usually viewlet managers are dummy interfaces and the actual implementation
 comes from ``plone.app.viewletmanager.manager.OrderedViewletManager``.
@@ -246,7 +246,7 @@ See
 
 
 Creating a viewlet using Python code and ZCML
-===============================================
+=============================================
 
 Here is an example code which extends an existing Plone base viewlet (found from plone.app.layout.viewlets.base package)
 and then puts this viewlet to a one of viewlet managers using :doc:`ZCML </develop/addons/components/zcml>`.
@@ -323,7 +323,7 @@ Then a sample page template (like.pt). You can use TAL template variable *view* 
         </iframe>
 
 Registering a viewlet using ZCML
-===================================
+================================
 
 Example configuration ZCML snippets below. You usually <viewlet> to *browser/configure.zcml* folder.
 
@@ -347,7 +347,7 @@ Example configuration ZCML snippets below. You usually <viewlet> to *browser/con
         </configure>
 
 Conditionally rendering viewlets
-----------------------------------
+--------------------------------
 
 There are two primary methods to render viewlets only on some pages
 
@@ -891,7 +891,7 @@ viewlet
 
 
 Poking viewlet registrations programmatically
-------------------------------------------------
+---------------------------------------------
 
 Below is an example how one can poke viewlets registration for a Plone site.
 
