@@ -236,7 +236,7 @@ Viewlets have two important methods
 
 #. render() - generate the resulting HTML code by evaluating the template with context variables set up in update()
 
-These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto>`_.
+These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <https://github.com/zopefoundation/zope.contentprovider/blob/master/src/zope/contentprovider/interfaces.py>`_.
 
 See
 
