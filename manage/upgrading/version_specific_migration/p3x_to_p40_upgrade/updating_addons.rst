@@ -390,7 +390,7 @@ Plone 4 ships with a new type of storage specially designed for large binary obj
 Using plone.app.blob for new content types
 ------------------------------------------
 
-Just use plone.app.field.BlobField or plone.app.field.ImageField instead of atapi.FileField or atapi.ImageField (respectively) in your schema::
+Just use plone.app.blob.field.BlobField or plone.app.blob.field.ImageField instead of atapi.FileField or atapi.ImageField (respectively) in your schema::
 
     from Products.Archetypes import atapi
     from plone.app.blob.field import BlobField, ImageField
