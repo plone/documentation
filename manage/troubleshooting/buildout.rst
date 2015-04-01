@@ -69,7 +69,8 @@ syntax compared to plain Python modules.
 setuptools does not know which files are normal ``.py`` and which files are
 RestrictedPython and tries to interpret them all using standard Python
 syntax rules. Then it fails. However, setuptools only tries to scan files
-(for what?) but still installs them correctly. No harm done.
+(`in order to see if they are zip-safe <https://pythonhosted.org/setuptools/easy_install.html#compressed-installation>`__)
+but still installs them correctly. No harm done.
 
 
 Version conflicts
