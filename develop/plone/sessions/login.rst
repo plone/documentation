@@ -145,8 +145,21 @@ PluggableAuthService service.
 
 * ``IUserLoggedOutEvent``
 
-Here is an :doc:`Grok based </appendices/grok>` example how to redirect a user to
+Here is an example how to redirect a user to
 a custom folder after he/she logs in (overrides standard Plone login behavior)
+
+``configure.zcml``::
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        i18n_domain="my.package">
+
+        <subscriber
+            for="Products.PluggableAuthService.interfaces.events.IUserLoggedInEvent"
+            handler=".postlogin.logged_in_handler"
+            />
+
+    </configure>
 
 ``postlogin.py``::
 
@@ -164,10 +177,6 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
 
     # CMFCore imports
     from Products.CMFCore import permissions
-    from Products.PluggableAuthService.interfaces.events import IUserLoggedInEvent
-
-    # Caveman imports
-    from five import grok
 
     # Plone imports
     from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
@@ -223,7 +232,6 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
         return None
 
 
-    @grok.subscribe(IUserLoggedInEvent)
     def logged_in_handler(event):
         """
         Listen to the event and perform the action accordingly.
