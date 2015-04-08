@@ -173,6 +173,7 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
     from AccessControl import getSecurityManager
     from zope.interface import Interface
     from zope.component import getUtility
+    from zope.app.component.hooks import getSite
     from zope.globalrequest import getRequest
 
     # CMFCore imports
