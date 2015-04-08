@@ -134,7 +134,9 @@ Post-login actions are executed after a successful login. Post-login actions whi
 
 * Setting the status message after login
 
-Post-login code can be executd with :doc:`events </develop/addons/components/events>` defined in
+You can use the `collective.onlogin <https://pypi.python.org/pypi/collective.onlogin>`_ package to set up many actions for you.
+
+If you need more control, post-login code can be executed with :doc:`events </develop/addons/components/events>` defined in
 PluggableAuthService service.
 
 * ``IUserLoggedInEvent``
@@ -143,8 +145,21 @@ PluggableAuthService service.
 
 * ``IUserLoggedOutEvent``
 
-Here is an :doc:`Grok based </appendices/grok>` example how to redirect a user to
+Here is an example how to redirect a user to
 a custom folder after he/she logs in (overrides standard Plone login behavior)
+
+``configure.zcml``::
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        i18n_domain="my.package">
+
+        <subscriber
+            for="Products.PluggableAuthService.interfaces.events.IUserLoggedInEvent"
+            handler=".postlogin.logged_in_handler"
+            />
+
+    </configure>
 
 ``postlogin.py``::
 
@@ -159,13 +174,10 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
     from zope.interface import Interface
     from zope.component import getUtility
     from zope.app.component.hooks import getSite
+    from zope.globalrequest import getRequest
 
     # CMFCore imports
     from Products.CMFCore import permissions
-    from Products.PluggableAuthService.interfaces.events import IUserLoggedInEvent
-
-    # Caveman imports
-    from five import grok
 
     # Plone imports
     from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
@@ -187,20 +199,11 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
         You want to make it simple for the users with limited knowledge to edit their own data
         by redirecting to the edit view right after the login.
 
-        :return: True or False depending if we found a redirect target to the user or not
+        :return: URL if we should redirect, otherwise None
         """
 
-        # Get acce s to the site within we are currently processing
-        # the HTTP request
+        # Fetch the site related to the current HTTP request
         portal = getSite()
-
-        # We need to access the HTTP requesrt object via
-        # acquisition as it is not exposed by the event
-        request = getattr(portal, "REQUEST", None)
-        if not request:
-            # HTTP request is not present e.g.
-            # when doing unit testing / calling scripts from command line
-            return False
 
         # Look for portal relative paths where the items are
         try:
@@ -213,7 +216,7 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
             # Let the login proceed even if the folder has been deleted
             # don't make it impossible to login to the site
             logger.exception(e)
-            return False
+            return None
 
         # Check if the current user has Editor access
         # in the any items of the folder
@@ -222,16 +225,14 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
         for obj in target.listFolderContents():
             if sm.checkPermission(permissions.ModifyPortalContent, obj):
                 logger.info("Redirecting user %s to %s" % (user, obj))
-                request.response.redirect(obj.absolute_url() + "/edit")
-                return True
+                return obj.absolute_url() + "/edit"
 
         logger.warn("User %s did not have his/her own content item in %s" % (user, target))
 
         # Let the normal login proceed to the page "You are now logged in" etc.
-        return False
+        return None
 
 
-    @grok.subscribe(IUserLoggedInEvent)
     def logged_in_handler(event):
         """
         Listen to the event and perform the action accordingly.
@@ -239,7 +240,20 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
 
         user = event.object
 
-        redirect_to_edit_access_folder(user)
+        url = redirect_to_edit_access_folder(user)
+        if url:
+            request = getRequest()
+            if request is None:
+                # HTTP request is not present e.g.
+                # when doing unit testing / calling scripts from command line
+                return
+
+            # check if came_from is not empty, then clear it up, otherwise further
+            # Plone scripts will override our redirect
+            if request.get('came_from', None):
+                request['came_from'] = ''
+                request.form['came_from'] = ''
+            request.RESPONSE.redirect(url)
 
 
 Post-logout actions
