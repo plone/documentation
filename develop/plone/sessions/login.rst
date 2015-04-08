@@ -173,7 +173,7 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
     from AccessControl import getSecurityManager
     from zope.interface import Interface
     from zope.component import getUtility
-    from zope.app.component.hooks import getSite
+    from zope.globalrequest import getRequest
 
     # CMFCore imports
     from Products.CMFCore import permissions
@@ -241,14 +241,11 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
 
         url = redirect_to_edit_access_folder(user)
         if url:
-            # We need to access the HTTP request object via
-            # acquisition as it is not exposed by the event
-            portal = getSite()
-            request = getattr(portal, "REQUEST", None)
-            if not request:
+            request = getRequest()
+            if request is None:
                 # HTTP request is not present e.g.
                 # when doing unit testing / calling scripts from command line
-                return None
+                return
 
             # check if came_from is not empty, then clear it up, otherwise further
             # Plone scripts will override our redirect
