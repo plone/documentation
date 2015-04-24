@@ -16,7 +16,8 @@ Introduction
 This document covers the basics of installing Plone on popular operating systems.
 It will also point you to other documents for more complex or demanding installations.
 
-Plone runs as an application on the Zope application server. That server is installed automatically by the install process.
+Plone runs as an application on the Zope application server. 
+That server is installed automatically by the install process.
 
 .. warning::
 
@@ -29,7 +30,8 @@ Plone is available for Microsoft Windows, Mac OSX X, Linux and BSD operating sys
 
 `Download the latest Plone release <https://plone.org/products/plone/latest_release>`_.
 
-Binary installers are available for Windows and OS X. Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer. "Unified" refers to its ability to install on most Unix workalikes.
+Binary installers are available for Windows and OS X.
+Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer. "Unified" refers to its ability to install on most Unix workalikes.
 
 Plone installation requirements
 ========================================================
@@ -49,8 +51,7 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
 How to install Plone
 ========================================================
 
-Plone can run on all popular desktop or server operating systems, including
-Linux, OS X, BSD and Microsoft Windows.
+Plone can run on all popular desktop or server operating systems, including Linux, OS X, BSD and Microsoft Windows.
 
 * You can install Plone on a server for production usage
 
@@ -59,36 +60,32 @@ Linux, OS X, BSD and Microsoft Windows.
 Ubuntu / Debian
 ---------------
 
-We describe Ubuntu/Debian installation in detail as an example of installation on a common Unix workalike. The only difference for most other systems would be in package-manager commands and package names. See :doc:`Plone installation requirements <requirements>` for package names and commands on other platforms.
+We describe Ubuntu/Debian installation in detail as an example of installation on a common Unix workalike.
+The only difference for most other systems would be in package-manager commands and package names.
+See :doc:`Plone installation requirements <requirements>` for package names and commands on other platforms.
 
 Installing Plone using the Unified UNIX Installer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-  This is the recommended method for
-  a *development or evaluation* installation of Plone on a Unix workalike.
+  This is the recommended method for a *development or evaluation* installation of Plone on a Unix workalike.
   For a *production* installation, :doc:`Installing Plone for Production on Ubuntu </manage/deploying/production/ubuntu_production>` is a much better guide.
 
 This recipe is good for:
 
 * Plone development and testing on Ubuntu / Debian
 
-* Operating system installations where you have administrator (root) access. Note that
-  root access is not strictly necessary as long as you have required software installed
-  beforehand on the server, but this tutorial assumes you need to install the software
-  yourself and you are the admin. If you don't have the ability to install system libraries, you'll need to get your sysadmin to do it for you. The libraries required are in common use.
+* Operating system installations where you have administrator (root) access.
+  Note that root access is not strictly necessary as long as you have required software installed beforehand on the server, but this tutorial assumes you need to install the software yourself and you are the admin.
+  If you don't have the ability to install system libraries, you'll need to get your sysadmin to do it for you.
+  The libraries required are in common use.
 
-The resulting installation is self-contained,
-does not touch system files,
-and is safe to play with (no root/sudoing is needed).
+The resulting installation is self-contained, does not touch system files, and is safe to play with (no root/sudoing is needed).
 
-If you are not familiar with UNIX operating system command line
-you might want to study this `Linux shell tutorial <http://linuxcommand.org/learning_the_shell.php>`_
-first.
+If you are not familiar with UNIX operating system command line you might want to study this `Linux shell tutorial <http://linuxcommand.org/learning_the_shell.php>`_ first.
 
-For information on using this installation with more advanced production
-hosting environments and deployments,
+For information on using this installation with more advanced production hosting environments and deployments,
 see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 Instructions are tested for the *Ubuntu 12.04 Long Term Support* release.
@@ -128,8 +125,7 @@ Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download from `the plone.org download page <https://plone.org/download>`_ to your server using wget command. Curl also works.
-Substitute the latest version number for 4.3.4
-in the instructions below.
+Substitute the latest version number for 4.3.4 in the instructions below.
 
 .. code-block:: console
 
@@ -164,8 +160,7 @@ You can change this password after logging in to the Zope Management Interface.
 
 .. note::
 
-   The password is also written down in the ``buildout.cfg`` file, but this
-   setting is not effective after Plone has been started for the first time.
+   The password is also written down in the ``buildout.cfg`` file, but this setting is not effective after Plone has been started for the first time.
    Changing this setting does not do any good.
 
 Install the Plone developer tools
@@ -225,23 +220,19 @@ If everything is OK, press ``CTRL-C`` in the terminal to stop Plone if you're ru
 
 If you have problems, please see the `help guidelines <https://plone.org/help>`_.
 
-For automatic start-up when your server boots up, init scripts, etc.
-please see the :doc:`deployment guide </manage/deploying/production/index>`.
+For automatic start-up when your server boots up, init scripts, etc. please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 Installing Plone using buildout on Ubuntu / Debian
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Here are quick instructions to install Plone using a pre-installed buildout and the OS-provided
-Python interpreter.
-This procedure is only useful if you know buildout well enough to
-tailor your own buildout configuration.
+Here are quick instructions to install Plone using a pre-installed buildout and the OS-provided Python interpreter.
+This procedure is only useful if you know buildout well enough to tailor your own buildout configuration.
 
 You need to manage dependencies (``Python``, ``libxml``, ``Pillow``) yourself.
 
 This will:
 
-* create a default ``buildout.cfg`` configuration file and folder structure
-  around it;
+* create a default ``buildout.cfg`` configuration file and folder structure around it;
 
 * automatically download and install all packages from `pypi.python.org <https://pypi.python.org>`_;
 
@@ -289,9 +280,10 @@ More info:
 * `lxml <http://lxml.de/>`_
 
 Installing Plone using RPMs, .dev, ... packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-See the :doc:`Preparing the Server </manage/deploying/preparing>` section of the Deployment guide for a list of system packages needed to install Plone. General instructions are otherese the same as for Debian-style systems.
+See the :doc:`Preparing the Server </manage/deploying/preparing>` section of the Deployment guide for a list of system packages needed to install Plone.
+General instructions are otherwise the same as for Debian-style systems.
 
 Microsoft Windows
 -------------------------
@@ -308,8 +300,7 @@ For Plone 4.1 and later, see these instructions:
 
 * https://docs.google.com/document/d/19-o6yYJWuvw7eyUiLs_b8br4C-Kb8RcyHcQSIf_4Pb4/edit
 
-If you wish to develop Plone on Windows you need to set-up a working MingW
-environment (this can be somewhat painful if you aren't used to it)
+If you wish to develop Plone on Windows you need to set-up a working MingW environment (this can be somewhat painful if you aren't used to it)
 
 
 OSX
@@ -329,8 +320,7 @@ This is *very* rarely needed.
 Installing Plone from source on OS X
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installation via the Unified Installer or buildout is very similar to Unix. However, you will
-need to install a command-line build environment. To get a free build kit from Apple, do one of the following:
+Installation via the Unified Installer or buildout is very similar to Unix. However, you will need to install a command-line build environment. To get a free build kit from Apple, do one of the following:
 
 * Download gcc and command-line tools from
   https://developer.apple.com/downloads/. This will require an Apple
@@ -351,16 +341,14 @@ If you are installing Plone 4.2+ or 4.1 with Diazo, you will need up-to-date ver
     LIBXML2 >= "2.7.8"
     LIBXSLT >= "1.1.26"
 
-Ideally, install these via system packages or ports. If that's not possible,
-use most current version of the z3c.recipe.staticlxml buildout recipe to build an lxml (Python wrapper) egg with static libxml2 and libxslt components.
+Ideally, install these via system packages or ports. If that's not possible, use most current version of the z3c.recipe.staticlxml buildout recipe to build an lxml (Python wrapper) egg with static libxml2 and libxslt components.
 
 Don't worry about this if you're using an installer.
 
 Entering debug mode after installation
 =========================================
 
-When you have Plone installed and want to start
-development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
+When you have Plone installed and want to start development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
 
 Installer source code
 ======================
