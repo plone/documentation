@@ -4,7 +4,7 @@ Tutorial: Installing Plone for Production on Ubuntu
 
 .. admonition:: Description
 
-    A step-by-step guide to installing Plone 4.x on a recent Ubuntu LTS [12.04] server installation.
+    A step-by-step guide to installing Plone 4.x on a recent Ubuntu LTS [14.04] server installation.
 
 .. contents:: :local:
 
