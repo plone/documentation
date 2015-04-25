@@ -16,7 +16,7 @@ Introduction
 This document covers the basics of installing Plone on popular operating systems.
 It will also point you to other documents for more complex or demanding installations.
 
-Plone runs as an application on the Zope application server. 
+Plone runs as an application on the Zope application server.
 That server is installed automatically by the install process.
 
 .. warning::
@@ -24,7 +24,7 @@ That server is installed automatically by the install process.
     We strongly advise against installing Plone via OS package or port. There is no .rpm, .deb, or BSD port that is supported by the Plone community. Plone dependencies can and should be installed via package or port -- but not Plone itself.
 
 Download Plone
-===================
+==============
 
 Plone is available for Microsoft Windows, Mac OSX X, Linux and BSD operating systems.
 
@@ -34,7 +34,7 @@ Binary installers are available for Windows and OS X.
 Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer. "Unified" refers to its ability to install on most Unix workalikes.
 
 Plone installation requirements
-========================================================
+===============================
 
 See :doc:`Plone installation requirements <requirements>` for detailed requirements.
 
@@ -49,7 +49,7 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
 
 
 How to install Plone
-========================================================
+====================
 
 Plone can run on all popular desktop or server operating systems, including Linux, OS X, BSD and Microsoft Windows.
 
@@ -88,14 +88,14 @@ If you are not familiar with UNIX operating system command line you might want t
 For information on using this installation with more advanced production hosting environments and deployments,
 see the :doc:`deployment guide </manage/deploying/production/index>`.
 
-Instructions are tested for the *Ubuntu 12.04 Long Term Support* release.
+Instructions are tested for the *Ubuntu 14.04 Long Term Support* release.
 
 Install the operating system software and libraries needed to run Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: console
 
-    sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+    sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev libz-dev
 
 You will probably also want these optional system packages (see `Plone manual for more information <https://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/debian-libraries>`_):
 
@@ -118,7 +118,7 @@ If you're planning on developing with Plone, install git version control support
 
 .. note::
 
-    For Ubuntu 14.04 please also install **libz-dev**
+    If you still use Ubuntu 12.04 you do **not** need **libz-dev**.
 
 
 Download the latest Plone unified installer
@@ -223,7 +223,7 @@ If you have problems, please see the `help guidelines <https://plone.org/help>`_
 For automatic start-up when your server boots up, init scripts, etc. please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 Installing Plone using buildout on Ubuntu / Debian
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here are quick instructions to install Plone using a pre-installed buildout and the OS-provided Python interpreter.
 This procedure is only useful if you know buildout well enough to tailor your own buildout configuration.
@@ -286,10 +286,10 @@ See the :doc:`Preparing the Server </manage/deploying/preparing>` section of the
 General instructions are otherwise the same as for Debian-style systems.
 
 Microsoft Windows
--------------------------
+------------------
 
 Installing Plone on Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By far the easiest way to install on Windows is to use the binary installer provided on plone.org. This installation is adequate for Python development.
 It is very rare to need C language extensions.
@@ -304,10 +304,10 @@ If you wish to develop Plone on Windows you need to set-up a working MingW envir
 
 
 OSX
-----------------------------------------------------
+---
 
 Installing Plone using OSX binary installer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is the recommended method if you want to try Plone for the first time.
 
@@ -346,7 +346,7 @@ Ideally, install these via system packages or ports. If that's not possible, use
 Don't worry about this if you're using an installer.
 
 Entering debug mode after installation
-=========================================
+=======================================
 
 When you have Plone installed and want to start development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
 
