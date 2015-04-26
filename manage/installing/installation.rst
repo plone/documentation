@@ -1,6 +1,6 @@
-=======================
+==============
  Installation
-=======================
+==============
 
 .. admonition:: Description
 
@@ -9,6 +9,20 @@
 .. contents:: :local:
 
 .. highlight:: console
+
+.. note::
+
+    This is a draft for Plone 5 and still WIP, lots of stuff is not updated yet
+    !!!
+
+    Todo:
+    - update plone versions in commands below
+    - update osx install
+    - update windows install
+    - mention virtualbox and vagrant
+    - mention docker
+    - more ?
+
 
 Introduction
 =============
@@ -23,7 +37,7 @@ Plone runs as an application on the Zope application server. That server is inst
     We strongly advise against installing Plone via OS package or port. There is no .rpm, .deb, or BSD port that is supported by the Plone community. Plone dependencies can and should be installed via package or port -- but not Plone itself.
 
 Download Plone
-===================
+==============
 
 Plone is available for Microsoft Windows, Mac OSX X, Linux and BSD operating systems.
 
@@ -32,7 +46,7 @@ Plone is available for Microsoft Windows, Mac OSX X, Linux and BSD operating sys
 Binary installers are available for Windows and OS X. Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer. "Unified" refers to its ability to install on most Unix workalikes.
 
 Plone installation requirements
-========================================================
+===============================
 
 See :doc:`Plone installation requirements <requirements>` for detailed requirements.
 
@@ -47,7 +61,7 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
 
 
 How to install Plone
-========================================================
+====================
 
 Plone can run on all popular desktop or server operating systems, including
 Linux, OS X, BSD and Microsoft Windows.
@@ -91,7 +105,7 @@ For information on using this installation with more advanced production
 hosting environments and deployments,
 see the :doc:`deployment guide </manage/deploying/production/index>`.
 
-Instructions are tested for the *Ubuntu 12.04 Long Term Support* release.
+Instructions are tested for the *Ubuntu 14.04 Long Term Support* release.
 
 Install the operating system software and libraries needed to run Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -121,19 +135,19 @@ If you're planning on developing with Plone, install git version control support
 
 .. note::
 
-    For Ubuntu 14.04 please also install **libz-dev**
+    For Ubuntu 12.04 you do not have to install **libz-dev**
 
 
 Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download from `the plone.org download page <http://plone.org/download>`_ to your server using wget command. Curl also works.
-Substitute the latest version number for 4.3.3
+Substitute the latest version number for 5.0
 in the instructions below.
 
 .. code-block:: console
 
-    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.3/+download/Plone-4.3.3-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.3/+download/Plone-4.3.3-UnifiedInstaller.tgz #HAS TO CHANGE TO 5
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,11 +156,11 @@ Run the Plone installer in standalone mode
 
     # Extract the downloaded file
     #
-    tar -xf Plone-4.3.3-UnifiedInstaller.tgz
+    tar -xf Plone-4.3.3-UnifiedInstaller.tgz #HAS TO CHANGE TO 5
     #
     # Go the folder containing installer script
     #
-    cd Plone-4.3.3-UnifiedInstaller
+    cd Plone-4.3.3-UnifiedInstaller # HAS TO CHANGE TO 5
     #
     # Run script
     ./install.sh standalone
@@ -229,7 +243,7 @@ For automatic start-up when your server boots up, init scripts, etc.
 please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 Installing Plone using buildout on Ubuntu / Debian
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Here are quick instructions to install Plone using a pre-installed buildout and the OS-provided
 Python interpreter.
@@ -274,12 +288,10 @@ This will:
         paster create -t plone4_buildout myplonefolder
 
 5. Optionally edit ``buildout.cfg`` at this point.
-   Run buildout (use Python 2.6 for Plone 4.1):
 
    .. code-block:: console
 
-    python2.6 bootstrap.py
-    bin/buildout
+        bin/buildout
 
 More info:
 
@@ -289,17 +301,17 @@ More info:
 * `lxml <http://lxml.de/>`_
 
 Installing Plone using RPMs, .dev, ... packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not supported by Plone community.
 
 (i.e. you're on your own, and don't say we didn't tell you.)
 
 Microsoft Windows
--------------------------
+-----------------
 
 Installing Plone on Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By far the easiest way to install on Windows is to use the binary installer provided on plone.org. This installation is adequate for Python development.
 It is very rare to need C language extensions.
@@ -315,10 +327,10 @@ environment (this can be somewhat painful if you aren't used to it)
 
 
 OSX
-----------------------------------------------------
+---
 
 Installing Plone using OSX binary installer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is the recommended method if you want to try Plone for the first time.
 
@@ -348,18 +360,10 @@ Proceed as with Linux.
 LibXML2/LibXSLT Versions
 ------------------------
 
-If you are installing Plone 4.2+ or 4.1 with Diazo, you will need up-to-date versions of libxml2 and libxslt::
-
-    LIBXML2 >= "2.7.8"
-    LIBXSLT >= "1.1.26"
-
-Ideally, install these via system packages or ports. If that's not possible,
-use most current version of the z3c.recipe.staticlxml buildout recipe to build an lxml (Python wrapper) egg with static libxml2 and libxslt components.
-
 Don't worry about this if you're using an installer.
 
 Entering debug mode after installation
-=========================================
+======================================
 
 When you have Plone installed and want to start
 development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
