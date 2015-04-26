@@ -4,7 +4,7 @@ Tutorial: Installing Plone for Production on Ubuntu
 
 .. admonition:: Description
 
-    A step-by-step guide to installing Plone 4.x on a recent Ubuntu LTS [12.04] server installation.
+    A step-by-step guide to installing Plone 5.x on a recent Ubuntu LTS [14.04] server installation.
 
 .. contents:: :local:
 
@@ -53,14 +53,14 @@ Check `http://plone.org/products/plone <http://plone.org/products/plone>`_. Foll
 
 .. code-block:: console
 
-    wget https://launchpad.net/plone/4.3/4.3.3/+download/Plone-4.3.3-UnifiedInstaller.tgz
+    wget https://launchpad.net/plone/4.3/4.3.3/+download/Plone-4.3.3-UnifiedInstaller.tgz #HAS CHANGE TO 5
 
 Unpack, change into the unpack directory and run the installer:
 
 .. code-block:: console
 
-    tar xf Plone-4.3.3-UnifiedInstaller.tgz
-    cd Plone-4.3.3-UnifiedInstaller/
+    tar xf Plone-4.3.3-UnifiedInstaller.tgz #HAS CHANGE TO 5
+    cd Plone-4.3.3-UnifiedInstaller/ #HAS CHANGE TO 5
     sudo ./install.sh zeo
 
 This will install Plone to /usr/local/Plone. There are installer options to put it elsewhere. Run `./install.sh`` with no arguments to get options.
@@ -93,12 +93,12 @@ We're going to use `supervisor` to start Plone with the server. To do so, we'll 
 
 Specify that supervisor should start the database server and client1 automatically::
 
-    [program:plone4server]
+    [program:plone5server]
     user=plone_daemon
     directory=/usr/local/Plone/zeocluster
     command=/usr/local/Plone/zeocluster/bin/zeoserver fg
 
-    [program:plone4client1]
+    [program:plone5client1]
     user=plone_daemon
     directory=/usr/local/Plone/zeocluster
     command=/usr/local/Plone/zeocluster/bin/client1 console
@@ -111,13 +111,13 @@ To start immediately, tell supervisor about the new components:
 
     sudo supervisorctl
     supervisor> reread
-    supervisor> add plone4server
+    supervisor> add plone5server
     plone4server: added process group
-    supervisor> add plone4client1
+    supervisor> add plone5client1
     plone4client1: added process group
     supervisor> status
-    plone4client1                    RUNNING    pid 32327, uptime 0:00:02
-    plone4server                     RUNNING    pid 32326, uptime 0:00:08
+    plone5client1                    RUNNING    pid 32327, uptime 0:00:02
+    plone5server                     RUNNING    pid 32326, uptime 0:00:08
 
 Step 4: Create a Plone site
 ---------------------------
@@ -133,7 +133,7 @@ We'll set up nginx by adding a new configuration file:
 
 .. code-block:: console
 
-    sudo vi /etc/nginx/sites-available/plone4.conf
+    sudo vi /etc/nginx/sites-available/plone5.conf
 
 Add the contents::
 
@@ -172,7 +172,7 @@ Enable the new nginx site configuration:
 .. code-block:: console
 
     cd /etc/nginx/sites-enabled
-    sudo ln -s /etc/nginx/sites-available/plone4.conf
+    sudo ln -s /etc/nginx/sites-available/plone5.conf
 
 And, tell nginx to reload the configuration:
 
