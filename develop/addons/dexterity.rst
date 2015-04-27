@@ -6,39 +6,41 @@ Dexterity is covered in detail in the `Dexterity Developer Manual <http://docs.p
 
 Here, we'll just add a few details on setting up and using the ZopeSkel package creator for use with Dexterity.
 
-The only prerequisite is a working Plone buildout and to have added the ZopeSkel part described in :doc:`bootstrapping </develop/addons/paste>`.
+The only prerequisite is a working Plone buildout and to have added mr.bob and bobtemplates.plone part described in :doc:`bootstrapping </develop/addons/bobtemplates>`.
 
 
 Create a dexterity product
 ==========================
 
-Use zopeskel to create a Python package which contains a Dexterity-based product.
-(Note: just select default options - press Enter - for all questions during installation, except for project name which must be collective.example)
+Use bobtemplates.plone to create a Python package which contains a Dexterity-based product.
 
-Use ``zopeskel`` to create a Python egg which contains a Dexterity-based product.
-(Note: just select default options for all questions during installation, except for _project name_, for which we'll use ``collective.example``.)
+.. code-block::
 
-.. code-block:: console
+    mrbob -O collective.myaddon bobtemplates:plone_addon
 
-    # cd to your buildout directory
-    $ cd src
-    $ ../bin/zopeskel dexterity
-    dexterity: A Dexterity-based product
+    Welcome to mr.bob interactive mode. Before we generate directory structure, some questions need to be answered.
 
-    This template expects a project name with 1 dot in it (a 'basic
-    namespace', like 'foo.bar').
+    Answer with a question mark to display help.
+    Values in square brackets at the end of the questions show the default value if there is no answer.
 
-    Enter project name: collective.example
 
-    [...]
+    --> What kind of package would you like to create? [Basic]: Dexterity
 
-    usage: paster COMMAND
+    --> Content type name [Task]:
 
-    Commands:
-      addcontent  Adds plone content types to your project
+    --> Author's name [$NAME]:
 
-    For more information: paster help COMMAND
-    ------------------------------------------------------------------------
+    --> Author's email [$EMAIL]:
+
+    --> Author's github username:
+
+--> Package description [An add-on for Plone]:
+
+--> Plone version [4.3.4]:
+
+
+Generated file structure at $/collective.myaddon
+
 
 Add your package to buildout
 ============================
@@ -48,25 +50,3 @@ Edit your ``buildout.cfg`` file to add the package to your ``egg`` list and your
 .. note::
 
     If you try to use a local command without this step, paster will suggest you run ``python setup.py develop``. **Do not do that.** Instead, add your package to your buildout and run buildout.
-
-Add content using paster
-========================
-
-Use ``paster`` to list the types of content that can be added:
-
-.. code-block:: console
-
-        $ ../bin/paster addcontent -l
-        Available templates:
-            dexterity_behavior:  A behavior skeleton
-            dexterity_content:   A content type skeleton
-
-Add a content-type:
-
-.. code-block:: console
-
-        $ ../bin/paster addcontent dexterity_content
-        Enter contenttype_name (Content type name ) ['Example Type']: Example content
-        Enter contenttype_description (Content type description ) ['Description of the Example Type']: Just an example
-        (Use default values for rest - press Enter)
-

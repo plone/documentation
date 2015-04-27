@@ -6,6 +6,7 @@ Develop Plone Add ons
 
    bobtemplates
    dexterity
+   paster
    releasing
    components/index
    javascript
