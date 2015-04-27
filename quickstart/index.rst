@@ -69,6 +69,6 @@ Note however, that your chances of :doc:`getting help </askforhelp>` on setup qu
 
 Besides that, there are many people deploying Plone as part of other deployment tools, be they Ansible, Salt, Chef, Puppet or the like. If you are familiar with these, you will most likely find others in the Plone community that share your enthusiasm.
 
-You can also try `Plock: the Plone installer for the pip-loving crowd <https://plock.github.io>`. Plock is a Plone installer for Python folks already familiar with ``pip``. Plock creates a ``buildout.cfg`` for you and installs Plone with just few commands e.g. ``pip install plock; plock plone; plone/bin/plone fg``
+You can also try `Plock: the Plone installer for the pip-loving crowd <https://plock.github.io>`_. Plock is a Plone installer for Python folks already familiar with ``pip``. Plock creates a ``buildout.cfg`` for you and installs Plone with just few commands e.g. ``pip install plock; plock plone; plone/bin/plone fg``
 
 
