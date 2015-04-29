@@ -358,4 +358,7 @@ Then you can refer to vocabulary by its name::
 
         area = schema.Choice(source="garys-favorite-path-references", title=_("Area"), required=False)
 
-For more information see `vocabularies API doc <http://docs.zope.org/zope3/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/vocabulary/index.html>`_.
+For more information see:
+
+* `vocabularies API doc <http://docs.zope.org/zope3/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/vocabulary/index.html>`_ 
+* `zope.component docs <https://raw.githubusercontent.com/zopefoundation/zope.component/master/docs/zcml.rst>`_
