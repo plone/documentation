@@ -44,20 +44,9 @@ content type:
      </bindings>
     </object>
 
-Image scales (Plone 4)
-========================
 
-Archetypes based content image scales is handled by `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_.
-
-Dexterity based content image scales are handled by `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_.
-
-Archetypes based content image scales is handled by `plone.app.imaging <http://plone.org/products/plone.app.imaging>`_.
-
-Both packages offer the same traverseable `@@images` view which can be used from page templates and Python code
-to provide different image scales for image fields on content.
-
-Image scales (Plone 3)
-=======================
+Image scales
+============
 
 When the image is uploaded, both field or content, Plone creates scaled-down
 versions from it by default.
@@ -118,9 +107,6 @@ the corresponding scale name::
 
     http://yoursite/content/imageOne/image_preview
 
-In **Plone 4** this behavior comes from the monkey-patch applied by the
-`plone.app.imaging <http://plone.org/products/plone.app.imaging>`_ package.
-
 In **Plone 3** this hook is defined in ``__bobo_traverse__`` in ``ATImage`` class:
 * https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py
 
@@ -140,53 +126,6 @@ HTTP request for the image.
 
 Custom image scales and recreating scale data
 =============================================
-
-For Plone 4
--------------
-
-`plone.app.imaging <http://plone.org/products/plone.app.imaging>`_ allows
-you to configure available image scales in ``portal_properties`` ->
-``imaging_properties``.
-
-You can update these through-the-web or using :doc:`GenericSetup profile
-</develop/addons/components/genericsetup>`.
-
-``propertiestool.xml``
-
-.. code-block:: xml
-
-    <?xml version="1.0"?>
-    <object name="portal_properties" meta_type="Plone Properties Tool">
-     <object name="imaging_properties" meta_type="Plone Property Sheet">
-      <property name="title">Image handling properties</property>
-      <property name="allowed_sizes" type="lines">
-       <element value="large 768:768"/>
-       <element value="preview 400:400"/>
-       <element value="mini 200:200"/>
-       <element value="thumb 128:128"/>
-       <element value="tile 64:64"/>
-       <element value="icon 32:32"/>
-       <element value="listing 16:16"/>
-
-       <!-- Include our custom sizes here -->
-       <element value="custom1 290:290"/>
-       <element value="custom2 210:210"/>
-       <element value="custom_210_189 210:189"/>
-       <element value="custom_290_258 290:256"/>
-
-      </property>
-     </object>
-    </object>
-
-.. note ::
-
-    For Plone 4, after adding new scales no batch processing of existing images
-    are needed and new scales are created on-demand when the images are viewed
-    for the first time.
-
-
-For Plone 3
---------------
 
 Below is an example showing how to make custom image scales available in your
 Plone site.
