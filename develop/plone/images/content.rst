@@ -44,8 +44,8 @@ content type:
      </bindings>
     </object>
 
-Image scales (Plone 4)
-========================
+Image scales 
+============
 
 Archetypes based content image scales is handled by `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_.
 
@@ -56,35 +56,6 @@ Archetypes based content image scales is handled by `plone.app.imaging <https://
 Both packages offer the same traverseable `@@images` view which can be used from page templates and Python code
 to provide different image scales for image fields on content.
 
-Image scales (Plone 3)
-=======================
-
-When the image is uploaded, both field or content, Plone creates scaled-down
-versions from it by default.
-
-These are configured using the ``ImageField`` *``sizes``* parameter. See the
-``ImageField`` class notes here:
-
-* https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/Field.py
-
-The default image scales for ``Image`` content are configured in:
-
-* https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py
-
-Configuration::
-
-    sizes= {'large':   (768, 768),
-            'preview': (400, 400),
-            'mini':    (200, 200),
-            'thumb':   (128, 128),
-            'tile':    (64, 64),
-            'icon':    (32, 32),
-            'listing': (16, 16),
-           },
-
-More info:
-
-* http://plone.293351.n2.nabble.com/Register-browser-view-for-image-scales-tp5626267p5626267.html
 
 ``getScale()``
 --------------
