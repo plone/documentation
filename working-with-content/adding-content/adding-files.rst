@@ -7,8 +7,8 @@ Files of various types can be uploaded to Plone web sites.
 
 Choose file in the *Add new...* menu for a folder to upload a file:
 
-.. replaces /_static/copy_of_addnewmenu.png
-.. figure:: ../_robot/adding-files_add-menu.png
+.. replaces ../../_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-files_add-menu.png
    :align: center
    :alt: add-new-menu.png
 
@@ -34,7 +34,7 @@ Choose file in the *Add new...* menu for a folder to upload a file:
 
 Select **File** from the drop-down menu, and you'll see the *Add File* panel:
 
-.. figure:: /_static/addfile.png
+.. figure:: ../../_static/addfile.png
    :align: center
    :alt:
 

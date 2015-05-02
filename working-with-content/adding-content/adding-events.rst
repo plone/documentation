@@ -8,8 +8,8 @@ events.
 
 Use the *Add new...* menu for a folder to add an event:
 
-.. replaces /_static/copy_of_addnewmenu.png
-.. figure:: ../_robot/adding-events_add-menu.png
+.. replaces ../../_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-events_add-menu.png
    :align: center
    :alt: add-new-menu.png
 
@@ -36,7 +36,7 @@ Use the *Add new...* menu for a folder to add an event:
 
 Select **Event** from the drop-down menu, and you'll see rather large *Add Event* panel:
 
-.. figure:: /_static/addevent.png
+.. figure:: ../../_static/addevent.png
    :align: center
    :alt: Add Event
 
@@ -67,13 +67,13 @@ consult a calendar. There is a handy pop-up calendar that offers an
 alternate way to select the day. If you click one of the little calendar
 icons adjacent to the day pull-down, :
 
-.. figure:: /_static/eventstartandendfields.png
+.. figure:: ../../_static/eventstartandendfields.png
    :align: center
    :alt:
 
 you'll see this pop-up calendar:
 
-.. figure:: /_static/calendarpopuppanel.png
+.. figure:: ../../_static/calendarpopuppanel.png
    :align: center
    :alt:
 
