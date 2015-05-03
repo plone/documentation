@@ -58,8 +58,6 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
 * If you are installing for production - rather than testing or evaluation - review :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` before installation.
 
 
-
-
 How to install Plone
 ====================
 
@@ -242,63 +240,6 @@ If you have problems, please see the `help guidelines <http://plone.org/help>`_.
 For automatic start-up when your server boots up, init scripts, etc.
 please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
-Installing Plone using buildout on Ubuntu / Debian
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Here are quick instructions to install Plone using a pre-installed buildout and the OS-provided
-Python interpreter.
-This procedure is only useful if you know buildout well enough to
-tailor your own buildout configuration.
-
-You need to manage dependencies (``Python``, ``libxml``, ``Pillow``) yourself.
-
-This will:
-
-* create a default ``buildout.cfg`` configuration file and folder structure
-  around it;
-
-* automatically download and install all packages from `pypi.python.org <http://pypi.python.org>`_;
-
-* configure Plone and Zope for you.
-
-1. Install ``virtualenv`` for python (on Ubuntu):
-
-   .. code-block:: console
-
-        sudo apt-get install python-virtualenv
-
-2. Create a ``virtualenv`` where you can install some Python packages
-   (``ZopeSkel``, ``Pillow``):
-
-   .. code-block:: console
-
-        virtualenv plone-virtualenv
-
-3. In this virtualenv install ``ZopeSkel`` (from the release 2 series):
-
-   .. code-block:: console
-
-        source plone-virtualenv/bin/activate
-        easy_install "ZopeSkel<2.99"
-
-4. Create Plone buildout project using ZopeSkel:
-
-   .. code-block:: console
-
-        paster create -t plone4_buildout myplonefolder
-
-5. Optionally edit ``buildout.cfg`` at this point.
-
-   .. code-block:: console
-
-        bin/buildout
-
-More info:
-
-* :doc:`ZopeSkel </develop/addons/paste>`
-* `virtualenv <https://pypi.python.org/pypi/virtualenv>`_
-* `Pillow <https://pypi.python.org/pypi/Pillow/>`_
-* `lxml <http://lxml.de/>`_
 
 Installing Plone using RPMs, .dev, ... packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
