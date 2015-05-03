@@ -30,6 +30,26 @@ Example::
 
 
 
+Archetypes
+========================================
+
+Plone 5 now uses dexterity as the content type engine instead of Archetypes.
+
+For packages that still use Archetypes, you'll need to install the ATContentTypes
+base package.
+
+In your package, in a setuphandler, the code might look something like this::
+
+
+    from Products.CMFPlone.utils import getFSVersionTuple
+    if getFSVersionTuple()[0] == 5:
+        # if plone 5, we need to make sure archetypes related tools is installed
+        qi = getToolByName(site, 'portal_quickinstaller')
+        # install ATContentTypes if it isn't installed
+        if not qi.isProductInstalled('ATContentTypes'):
+            qi.installProducts(['ATContentTypes'])
+
+
 
 Resource Registry
 ========================================
@@ -152,4 +172,5 @@ Conditional resources
 ~~~~~~~~~~~~~~~~~~~~~
 
 In Plone 5, individual resources can not be conditionally added to every page. This is due to the way we build JavaScript with AMD. Only bundles can be conditionally included. So if you have a resource that needs to be conditionally included, it will likely need it's own bundle.
+
 
