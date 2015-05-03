@@ -55,7 +55,7 @@ Another nice tool for Emacs is `Flycheck <https://flycheck.readthedocs.org/en/la
 Marketplace.
 
 **Vim** does syntax highlighting for RST files.
-There is a nice plugin called `vim-markdown <https://github.com/plasticboy/vim-markdown>`.
+There is a nice plugin called `vim-markdown <https://github.com/plasticboy/vim-markdown>`_.
 
 If you prefer a more *advanced* plugin with enhanced functionalities you could use `Riv <https://github.com/Rykka/riv.vim>`_.
 
