@@ -9,7 +9,7 @@
 .. contents :: :local:
 
 Introduction
-=================
+============
 
 :term:`ZCML` stands for the *Zope Configuration Mark-up Language*.  It is an
 XML-based language used to extend and plug into systems based on the Zope
@@ -150,8 +150,8 @@ But using the full path in dotted notation, you can let it point to your
 own class.
 
 
-Conditionally run :term:`ZCML`
-===============================
+Conditionally run ZCML
+======================
 
 You can conditionally run :term:`ZCML` if a certain package or feature is
 installed.
