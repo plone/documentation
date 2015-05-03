@@ -73,8 +73,9 @@ Language tools:
 
 These tools can help you to check for grammatical mistakes and typos, you should always use a spell checker anyway!
 
-**LanguageTool** `is an Open Source proof­reading software for English, French, German, Polish, and more than 20 other languages <https://www.languagetool.org/>`_.
+**LanguageTool** is an Open Source proofreading software for English, French, German, Polish and more than 20 other languages.
+See `www.languagetool.org <https://www.languagetool.org/>`_.
 
-**After the Deadline** `is a language checker for the web <http://www.afterthedeadline.com/>`_. 
+**After the Deadline** `is a language checker for the web <http://www.afterthedeadline.com/>`_.
 This handy tool is also available in your Plone sites, by the way, see the :doc:`conent quality </working-with-content/content-quality/index>` section
 
