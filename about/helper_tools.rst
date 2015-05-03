@@ -46,10 +46,8 @@ One  particular which is really good for getting a impression how it will looks
 like in html is `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_ a live
 previewer/exporter for markup files (markdown, rst, creole, textile...).
 
-**Emacs** has a nice `rst-mode
-<http://docutils.sourceforge.net/docs/user/emacs.html>`_. This mode comes
-with some Emacs distros. Try ``M-x rst-mode`` in your Emacs and enjoy syntax
-coloration, underlining a heading with ``^C ^A``
+**Emacs** has a nice `rst-mode <http://docutils.sourceforge.net/docs/user/emacs.html>`_.
+This mode comes with some Emacs distros. Try ``M-x rst-mode`` in your Emacs and enjoy syntax coloration, underlining a heading with ``^C ^A``
 
 Another nice tool for Emacs is `Flycheck <https://flycheck.readthedocs.org/en/latest/index.html>`_.
 
