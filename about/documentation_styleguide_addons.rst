@@ -23,16 +23,45 @@ Further advantages of following this guide:
 
 
 
-Best practices
-===============
+Documentation structure & styleguide
+====================================
 
 For including documentation into docs.plone.org, **please** follow these guidelines:
 
+
+* All documentation should be written in **valid** `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_  There are some :doc:`helper_tools` available.
+
+* The top level of your package should contain the following documentation-related files:
+
+  - README.rst   This should be a **short** description of your add-on, not the entire documentation!
+    See the :ref:`styleguide-readme-example`
+
+  - CHANGES.rst  This should track the feature changes in your add-on, see :ref:`styleguide-changes-example`
+
+  - CONTRIBUTORS.rst  This should list the people writing, translating and otherwise contributing
+
+* All of your (longer) end-user documentation should go into the /docs subdirectory. Feel free to split your documentation into separate files, or even further subdirectories if it helps clarity.
+
+* Make **absolutely** sure there is a start page called index.rst.
+  It is also usually a *really* good idea to have that include a Table of Content, see :ref:`styleguide-toc-example`
+
+* use relative links for internal links within your /docs/ directory, to include images for instance.
+
+* If you want to include images and screenshots, you should place them into /docs/resources/ , along with other resources like PDF's, audio, video, etcetera.
+  (*Yes! Make more screenshots, we love you! But do remember, .png or .jpg as file formats, no .gif please*)
+
+* Include a /docs/LICENSE.rst with a short description of the license, and /docs/LICENSE.GPL for the legalese.
+
 * Please do not symlink to, or use the *include* directive on files that live outside your '/docs' directory.
-* So, for best results: write a **short** README.rst in the top level of your repository. It should have an introduction of what the package does, about 1-3 paragraphs, plus licensing and contact information. And then a link to the longer documentation in the /docs directory.
-* Linking *the other way around* is OK, but not optimal. If you create a README.rst in the /docs/source directory, and make a symlink to it from the root of your repository, Github will display that one just fine. But pypi will not render it nice, instead rendering it as plain text which may confuse readers.
+
 * Please do not use 'autodoc' to include comments of your code.
-* Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**. Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
+
+* Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**.
+  Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
+  PEP8 is for Python files, not for ReStructuredText.
+
+* Usage of `Sphinx <http://sphinx-doc.org/>`_ within your project is optional, but if you want your add-on to (also) be documented for instance on `Read The Docs <https://readthedocs.org/>`_ it is highly recommended. Put the associated Makefile and conf.py into the /docs directory.
+
 
 *Your documentation is not code.*
 
@@ -47,25 +76,18 @@ Breaking sentences with linebreaks would mean a translator will only see part of
 
 
 
+.. note::
+
+   If you use `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ to generate the layout of your add-on, the recommended files will already be there, and in the right place. You'll still have to write the content, though.
 
 
 
-Styleguide
-==========
+.. _styleguide-readme-example:
 
-* All documentation should be written in **valid** `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_  There are some :doc:`helper_tools` available.
-* All documentation should be in the folder */docs/source*
-* It's good practice to have a README.rst and a CHANGES.rst file in the top level of your package. If you want that information to also be available in the documentation on docs.plone.org, you should move those files into the /docs/source directory, and then make a symlink in the root of your package. Don't forget to update setup.py if you're using these files as long_description!!
-* that README.rst should just contain a **short** description of your package, what it does, and the requirements. Do **not** put your entire documentation in it.
-* The documentation goes into /docs/source/\*.rst. Make sure the starting page of your doc is called index.rst. Create multiple pages if it makes your documentation clearer.
-* If you want to include images (*Yes! We love you! But do remember, .png or .jpg, no .gif please*), you should place them into /docs/_images
-* You should use `Sphinx <http://sphinx-doc.org/>`_
+README example
+==============
 
-
-README
-======
-
-This is an example of how a README(.rst) should look like:
+This is an example of how a README.rst should look like:
 
 .. code-block:: rst
 
@@ -84,7 +106,8 @@ This is an example of how a README(.rst) should look like:
 
     - Be awesome
     - Make things fancier
-    - Works out of the box, but can also be customized. After installation, you will find a new item in your site control panel where to set various options.
+    - Works out of the box, but can also be customized.
+      After installation, you will find a new item in your site control panel where to set various options.
 
 
     Examples
@@ -98,7 +121,8 @@ This is an example of how a README(.rst) should look like:
     Documentation
     -------------
 
-    Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+    Full documentation for end users can be found in the "docs" folder.
+    It is also available online at http://docs.plone.org/foo/bar
 
 
     Translations
@@ -144,24 +168,50 @@ This is an example of how a README(.rst) should look like:
 
     The project is licensed under the GPLv2.
 
-Directory Structure
-=====================
 
-* You should configure Sphinx in that way that you have a separate */source* directory for your documentation .rst files
 
-.. code-block:: rst
+.. _styleguide-changes-example:
 
-    $YOUR_PROJECT/docs/source
+Tracking changes
+================
 
-* /docs could contain your Makefile and conf.py
+Feature-level changes to code are tracked inside ``CHANGES.rst``.
+The title of the ``CHANGES.rst`` file should be ``Changelog``.
+Example:
 
-* /docs/_images should *only* contain images
+.. sourcecode:: rst
 
-* /docs/source should *only* contain your documentation written in rst. Use .rst as the file extension.
+    Changelog
+    =========
 
-* use relative links for internal links within your /docs/source directory, to include images for instance.
+    1.0.0-dev (Unreleased)
+    ----------------------
 
-* make sure all .rst files are referenced with a Table of Contents directive, like this example:
+    - Added feature Z.
+      [github_userid1]
+
+    - Removed Y.
+      [github_userid2]
+
+
+    1.0.0-alpha.1 (yyyy-mm-dd)
+    --------------------------
+
+    - Fixed Bug X.
+      [github_userid1]
+
+
+Add an entry every time you add/remove a feature, fix a bug, etc. on top of the
+current development changes block.
+
+
+
+.. _styleguide-toc-example:
+
+Table of Contents for your documentation
+========================================
+
+Make sure all .rst files are referenced with a Table of Contents directive, like this example:
 
 .. code-block:: rst
 
@@ -174,4 +224,5 @@ Directory Structure
       how_to_contribute
 
 
+(note: the files themselves will have an extention of .rst, but you don't specify that extension in the toctree directive)
 
