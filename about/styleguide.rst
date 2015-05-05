@@ -11,13 +11,14 @@ Rest Styleguide
 Introduction
 ============
 
-This chapter explains the basics of editing, and updating to
-the *Plone Documentation*.
+This chapter explains the basics of editing, and updating to the *Plone Documentation*.
 
 
 .. note::
 
-  All pages should be in ReStructured Text, and have a .rst extension. Images should be in .png, or .jpg format. Please, don't use .gif, because the PDF-generating software has issues with that.
+  All pages should be in ReStructured Text, and have a .rst extension.
+  Images should be in .png, or .jpg format.
+  Please, don't use .gif, because the PDF-generating software has issues with that.
 
 
 Line length & translations
@@ -94,22 +95,17 @@ Each page should contain, in this order:
    Writing and updating this document
    ==================================
 
-* The description of the page, which will appear in Plone's
-  *Description* Dublin Core metadata field. This created using the reST
-  *admonition* directive. A single paragraph of text consisting of 1-3
-  sentences is recommended, so that the same text fits into the search
-  engine results (Google):
+* The description of the page, which will appear in Plone's *Description* Dublin Core metadata field.
+  This created using the reST *admonition* directive. A single paragraph of text consisting of 1-3 sentences is recommended, so that the same text fits into the search engine results (Google):
 
 .. code-block:: rst
 
    .. admonition:: Description
 
-      This text will go to Plone's pages description field. It will appear in
-      the search engine listings for the page.
+      This text will go to Plone's pages description field. It will appear in the search engine listings for the page.
 
-The *contents* directive will cause Sphinx to generate the *Table of
-Contents* shortcut links at the start of the page.  Using the *local*
-option excludes the page itself and ToC title from the listing:
+The *contents* directive will cause Sphinx to generate the *Table of Contents* shortcut links at the start of the page.
+Using the *local* option excludes the page itself and ToC title from the listing:
 
 .. code-block:: rst
 
@@ -142,8 +138,7 @@ Each section (folder) must contain
 
 * Section heading: This will be visible in the table of contents
 
-* A single paragraph summarizing what this section is all about. This will be
-  mapped to Plone folder description.
+* A single paragraph summarizing what this section is all about. This will be mapped to Plone folder description.
 
 * Sphinx toctree directive, maxdepth 2. Each ``.rst`` file in the folder should
   be linked to this toctree.
@@ -160,18 +155,13 @@ Each section (folder) must contain
 Headings style guide
 ====================
 
-ReStructured text and Sphinx enable any style you would prefer for the
-various heading level you would need. In example, underlining level 1
-headings with ``.``, level 2 headings with ``#`` and level 3 headings with
-``|`` is perfect as far as ``docutils`` is concerned. But not for a human
-documentation maintainer.
+ReStructured text and Sphinx enable any style you would prefer for the various heading level you would need.
+For example, underlining level 1 headings with ``.``, level 2 headings with ``#`` and level 3 headings with ``|`` is perfectly valid as far as ``docutils`` is concerned.
+But not for a human documentation maintainer.
 
-In order to have consistent heading styles in all files that make this great
-document, it is recommended to follow strictly the rules stated in the Sphinx
-manual here: http://sphinx-doc.org/rest.html#sections
+In order to have consistent heading styles in all files that make this great document, it is recommended to follow strictly the rules stated in the Sphinx manual here: http://sphinx-doc.org/rest.html#sections
 
-As individual files do not have so called "parts" or "chapters", the headings
-would be underlined like this:
+As individual files do not have so called "parts" or "chapters", the headings would be underlined like this:
 
 .. code-block:: rst
 
@@ -205,8 +195,7 @@ Syntax highlighting
 Sphinx does syntax highlighting using the `Pygments <http://pygments.org/>`_
 library.
 
-You can specify different highlighting for a code block using the following
-syntax::
+You can specify different highlighting for a code block using the following syntax::
 
     With two colons you start a code block using the default highlighter::
 
@@ -216,8 +205,7 @@ syntax::
             pass
 
 
-You can specify the language used for syntax highlighting by using
-the ``code-block`` directive:
+You can specify the language used for syntax highlighting by using the ``code-block`` directive:
 
 .. code-block:: rst
 
@@ -282,8 +270,7 @@ Setting the highlighting mode for the whole document:
 
       some shell commands
 
-If syntax highlighting is not enabled for your code block, you probably have
-a syntax error and Pygments will fail silently.
+If syntax highlighting is not enabled for your code block, you probably have a syntax error and Pygments will fail silently.
 
 The full list of lexers and associated short names is here:
 http://pygments.org/docs/lexers/
@@ -307,13 +294,12 @@ Inline code highlighting:
 
 .. code-block:: rst
 
-   This is :func:`aFunction`, this is the :mod:`some.module` that contains
-   the :class:`some.module.MyClass`
+   This is :func:`aFunction`, this is the :mod:`some.module` that contains the :class:`some.module.MyClass`
 
 .. note::
 
-   These Python objects are rendered as hyperlinks if the symbol is
-   mentioned in a relevant directive. See
+   These Python objects are rendered as hyperlinks if the symbol is mentioned in a relevant directive.
+   See
    http://sphinx-doc.org/domains.html and
    http://sphinx-doc.org/ext/autodoc.html
 
@@ -332,8 +318,7 @@ Making an internal link:
    See also :ref:`somewhere` (assuming that a line containing only
    ``.. _somewhere:`` exists above a heading in any file of this
    documentation) ...
-   And a link to the term :term:`foo` assuming that ``foo`` is defined in
-   the glossary.
+   And a link to the term :term:`foo` assuming that ``foo`` is defined in the glossary.
 
 Glossary:
 
