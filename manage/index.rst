@@ -9,3 +9,11 @@ Managing, Administration of Plone
     deploying/index
     upgrading/index
     troubleshooting/index
+
+Automating Plone Deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 2
+
+   /external/ansible-playbook/docs/index
