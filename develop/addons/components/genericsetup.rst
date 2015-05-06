@@ -187,7 +187,7 @@ For the theory, see:
 `<http://blog.keul.it/2013/05/how-to-make-your-plone-add-on-products.html>`_
 
 For an example, see the `collective.pdfpeek source code
-<http://svn.plone.org/svn/collective/collective.pdfpeek/trunk/collective/pdfpeek/profiles/>`_.
+<https://github.com/collective/collective.pdfpeek/tree/master/collective/pdfpeek/profiles>`_.
 
 
 Dependencies
@@ -266,7 +266,7 @@ add-on product is installed and uninstalled.
 This is not very straightforward process, though.
 
 The best practice is to create a ``setuphandlers.py`` file
-which contains function ``setupVarious()`` which runs required
+which contains function ``setup_various()`` which runs required
 Python code to make changes to Plone site object.
 This function is registerd as a custom ``genericsetup:importStep``
 in XML.
@@ -296,7 +296,7 @@ Also you need to register this custom import step in ``configure.zcml``
           name="your.package"
           title="your.package special import handlers"
           description=""
-          handler="your.package.setuphandlers.setupVarious"
+          handler="your.package.setuphandlers.setup_various"
           />
 
     </configure>
@@ -307,13 +307,14 @@ Also you need to register this custom import step in ``configure.zcml``
 
     __docformat__ = "epytext"
 
-    def runCustomCode(site):
-        """ Run custom add-on product installation code to modify Plone site object and others
+    def run_custom_code(site):
+        """Run custom add-on product installation code to modify Plone
+           site object and others
 
         @param site: Plone site
         """
 
-    def setupVarious(context):
+    def setup_various(context):
         """
         @param context: Products.GenericSetup.context.DirectoryImportContext instance
         """
@@ -326,7 +327,7 @@ Also you need to register this custom import step in ``configure.zcml``
 
         portal = context.getSite()
 
-        runCustomCode(portal)
+        run_custom_code(portal)
 
 And add a dummy text file
 ``your.package/your/package/profiles/default/your.package.marker.txt``::
@@ -418,8 +419,11 @@ Add upgrade code
 
 The code for the upgrade method itself is best placed in a *upgrades.py* module::
 
+    from plone import api
     import logging
-    PROFILE_ID='profile-YOUR.PRODUCT:default'
+
+    PROFILE_ID = 'profile-YOUR.PRODUCT:default'
+
 
     def convert_price_to_string(context, logger=None):
         """Method to convert float Price fields to string.
@@ -428,9 +432,8 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
         the plone site and 'logger' is the portal_setup logger.
 
         But this method will be used as upgrade step, in which case 'context'
-        will be portal_setup and 'logger' will be None.
+        will be portal_setup and 'logger' will be None."""
 
-        """
         if logger is None:
             # Called as upgrade step: define our own logger.
             logger = logging.getLogger('YOUR.PRODUCT')
@@ -440,10 +443,10 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
         # the registration of our import step in zcml, but doing it in
         # code makes this method usable as upgrade step as well.
         # Remove these lines when you have no catalog.xml file.
-        setup = getToolByName(context, 'portal_setup')
+        setup = api.portal.get_tool('portal_setup')
         setup.runImportStepFromProfile(PROFILE_ID, 'catalog')
 
-        catalog = getToolByName(context, 'portal_catalog')
+        catalog = api.portal.get_tool('portal_catalog')
         brains = catalog(portal_type='MyType')
         count = 0
         for brain in brains:
@@ -557,6 +560,7 @@ Example:
 
         from zExceptions import BadRequest
 
+
         def uninstall(self, reinstall):
             if reinstall == False:
                 raise BadRequest('This product cannot be uninstalled!')
@@ -669,8 +673,11 @@ where Plone keeps its PAS plugins.
 
     from Products.PluginRegistry import exportimport
     from Products.PluginRegistry.interfaces import IPluginRegistry
+
+
     def getRegistry(site):
         return IPluginRegistry(site.acl_users.plugins)
+
     exportimport._getRegistry = getRegistry
 
 Secondly, code to handle the import step needs to be activated in Plone:
