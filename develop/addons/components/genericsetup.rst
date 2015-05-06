@@ -266,7 +266,7 @@ add-on product is installed and uninstalled.
 This is not very straightforward process, though.
 
 The best practice is to create a ``setuphandlers.py`` file
-which contains function ``setupVarious()`` which runs required
+which contains function ``setup_various()`` which runs required
 Python code to make changes to Plone site object.
 This function is registerd as a custom ``genericsetup:importStep``
 in XML.
@@ -296,7 +296,7 @@ Also you need to register this custom import step in ``configure.zcml``
           name="your.package"
           title="your.package special import handlers"
           description=""
-          handler="your.package.setuphandlers.setupVarious"
+          handler="your.package.setuphandlers.setup_various"
           />
 
     </configure>
@@ -307,13 +307,14 @@ Also you need to register this custom import step in ``configure.zcml``
 
     __docformat__ = "epytext"
 
-    def runCustomCode(site):
-        """ Run custom add-on product installation code to modify Plone site object and others
+    def run_custom_code(site):
+        """Run custom add-on product installation code to modify Plone
+           site object and others
 
         @param site: Plone site
         """
 
-    def setupVarious(context):
+    def setup_various(context):
         """
         @param context: Products.GenericSetup.context.DirectoryImportContext instance
         """
@@ -326,7 +327,7 @@ Also you need to register this custom import step in ``configure.zcml``
 
         portal = context.getSite()
 
-        runCustomCode(portal)
+        run_custom_code(portal)
 
 And add a dummy text file
 ``your.package/your/package/profiles/default/your.package.marker.txt``::
