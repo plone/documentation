@@ -187,7 +187,7 @@ For the theory, see:
 `<http://blog.keul.it/2013/05/how-to-make-your-plone-add-on-products.html>`_
 
 For an example, see the `collective.pdfpeek source code
-<http://svn.plone.org/svn/collective/collective.pdfpeek/trunk/collective/pdfpeek/profiles/>`_.
+<https://github.com/collective/collective.pdfpeek/tree/master/collective/pdfpeek/profiles>`_.
 
 
 Dependencies
