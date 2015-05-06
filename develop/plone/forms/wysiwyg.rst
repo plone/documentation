@@ -26,19 +26,15 @@ attacks. This will make Plone to strip away from HTML
 
 * Some other potentially unsafe tags and attributes
 
-If you need to put `<scrip>` tag on your content text in TinyMCE you can disable this security feature.
+If you need to put a `<script>` tag on your content text in TinyMCE you can disable this security feature.
 
 .. warning::
 
         If you don't trust all of your site editors, then this will open your site for an attack.
 
-In the Zope Management Interface, at the top of a Plone site, go to portal_transforms and open the safe_html transform. Disable it by putting a "1" in the disable_transform field and saving.
-
-A site restart might be required depending on Plone version.
-
 More info
 
-* http://stackoverflow.com/questions/5796643/make-plone-accept-any-html-input
+* http://glicksoftware.com/blog/disable-html-filtering
 
 
 
