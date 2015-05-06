@@ -419,8 +419,11 @@ Add upgrade code
 
 The code for the upgrade method itself is best placed in a *upgrades.py* module::
 
+    from plone import api
     import logging
-    PROFILE_ID='profile-YOUR.PRODUCT:default'
+
+    PROFILE_ID = 'profile-YOUR.PRODUCT:default'
+
 
     def convert_price_to_string(context, logger=None):
         """Method to convert float Price fields to string.
@@ -429,9 +432,8 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
         the plone site and 'logger' is the portal_setup logger.
 
         But this method will be used as upgrade step, in which case 'context'
-        will be portal_setup and 'logger' will be None.
+        will be portal_setup and 'logger' will be None."""
 
-        """
         if logger is None:
             # Called as upgrade step: define our own logger.
             logger = logging.getLogger('YOUR.PRODUCT')
@@ -441,10 +443,10 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
         # the registration of our import step in zcml, but doing it in
         # code makes this method usable as upgrade step as well.
         # Remove these lines when you have no catalog.xml file.
-        setup = getToolByName(context, 'portal_setup')
+        setup = api.portal.get_tool('portal_setup')
         setup.runImportStepFromProfile(PROFILE_ID, 'catalog')
 
-        catalog = getToolByName(context, 'portal_catalog')
+        catalog = api.portal.get_tool('portal_catalog')
         brains = catalog(portal_type='MyType')
         count = 0
         for brain in brains:
@@ -558,6 +560,7 @@ Example:
 
         from zExceptions import BadRequest
 
+
         def uninstall(self, reinstall):
             if reinstall == False:
                 raise BadRequest('This product cannot be uninstalled!')
@@ -670,8 +673,11 @@ where Plone keeps its PAS plugins.
 
     from Products.PluginRegistry import exportimport
     from Products.PluginRegistry.interfaces import IPluginRegistry
+
+
     def getRegistry(site):
         return IPluginRegistry(site.acl_users.plugins)
+
     exportimport._getRegistry = getRegistry
 
 Secondly, code to handle the import step needs to be activated in Plone:
