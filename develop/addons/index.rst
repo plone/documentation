@@ -4,8 +4,9 @@ Develop Plone Add ons
 .. toctree::
    :maxdepth: 2
 
-   paste
+   bobtemplates.plone/README
    dexterity
+   paster
    releasing
    components/index
    javascript

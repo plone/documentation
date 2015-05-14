@@ -9,7 +9,15 @@ requires a form, you should be able to add the same dependencies. If you
 have read the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`, most of this should be familiar.
 
 For details about creating new packages, see
-:doc:`Bootstrapping Plone add-on development </develop/addons/paste>`.
+:doc:`Bootstrapping Plone add-on development </develop/addons/bobtemplates.plone/README>`.
+
+.. note:: 
+
+    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
+
+
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
 
 First, we create a new package:
 

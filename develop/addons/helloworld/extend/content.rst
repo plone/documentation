@@ -12,6 +12,12 @@ In this tutorial we add a custom content-type.
 
 Plone comes with built-in content-types like Collection, Event, File, Folder, Image, Link, News Item, and Page. If you need a custom content-type, you can extend an existing content-type, or create your own from scratch. In this example, we'll create a simple archetypes based content-type from scratch.
 
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
+
+.. note:: 
+
+    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
 Install code template with ZopeSkel
 -------------------------------------

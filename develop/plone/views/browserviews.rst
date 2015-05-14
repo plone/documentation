@@ -56,6 +56,14 @@ please read the `Plone and Grok tutorial
 .. note:: At the time of writing (Q1/2010), all project templates in Paster
    still use old-style Zope views.
 
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
+
+.. note:: 
+
+    Using paster is deprecated instead you should use :doc:`bobtemplates.plone
+    </develop/addons/bobtemplates.plone/README>`
+
 More information
 ----------------
 
@@ -120,7 +128,7 @@ Views rendering page snippets and parts can be subclasses of zope.publisher.brow
 as snippets might not need acquisition support which adds some overhead to the rendering process.
 
 Customizing views
-===========================
+=================
 
 To customize existing Plone core or add-on views you have different options.
 
@@ -131,13 +139,13 @@ To customize existing Plone core or add-on views you have different options.
   installs a view class replacement using add-on layer.
 
 Overriding view template
---------------------------
+------------------------
 
 Follow instructions how to :doc:`use z3c.jbot
 </adapt-and-extend/theming/templates_css/template_basics>` to override templates.
 
 Overriding view class
-------------------------
+---------------------
 
 Here is a short introduction on finding how existing views are defined.
 
@@ -176,19 +184,19 @@ Creating and registering a view
 This shows how to create and register view in a Zope 3 manner.
 
 Creating a view using Grok
-------------------------------
+--------------------------
 
 This is the simplest method and recommended for Plone 4.1+ onwards.
 
 First, create your add-on product using
-:doc:`Dexterity project template </develop/addons/paste>`. The most important
+:doc:`Dexterity project template </develop/addons/bobtemplates.plone/README>`. The most important
 thing in the add-on is that your registers itself to :doc:`grok </appendices/grok>`
 which allows Plone to scan all Python files for ``grok()`` directives and
 furter automatically pick up your views (as opposite using old Zope 3 method
 where you manually register views by typing them in to ZCML in ZCML).
 
 configure.zcml
-`````````````````````
+``````````````
 
 First make sure the file ``configure.zcml`` in your add-on root folder
 contains the following lines. These lines are needed only once, in the root
@@ -220,7 +228,7 @@ or have :doc:`five.grok in your setup.py </appendices/grok>`. If you didn't add 
 point and run buildout again to download and install ``five.grok`` package.
 
 Python logic code
-`````````````````````
+`````````````````
 
 Add the file ``yourcompany.app/yourcompany/app/browser/views.py``::
 
@@ -274,7 +282,7 @@ docs to make the view available only for certain content types. Example
 	grok.context(IATDocument)
 
 Page template
-`````````````````````
+`````````````
 
 Then create a :doc:`page template for your view. </adapt-and-extend/theming/templates_css/template_basics>`.
 Create ``yourcompany.app/yourcompany/app/browser/templates`` and add
@@ -300,7 +308,7 @@ grok will scan all Python files for available files, so it doesn't matter
 what .py filename you use.
 
 Content slots
-------------------
+-------------
 
 Available :doc:`slot </adapt-and-extend/theming/templates_css/template_basics>`
 options you can use for ``<metal fill-slot="">`` in your template which
@@ -324,7 +332,7 @@ inherits from ``<html metal:use-macro="context/main_template/macros/master">``:
     main template.
 
 Accessing your newly created view
------------------------------------
+---------------------------------
 
 Now you can access your view within the news folder::
 
@@ -349,7 +357,7 @@ More info
 
 
 Setting view permissions
-``````````````````````````
+````````````````````````
 
 Use `grok.require <http://grok.zope.org/doc/current/reference/directives.html#grok-require>`_
 
@@ -369,7 +377,7 @@ More info:
 * https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
 
 Creating a view using ZCML
-------------------------------
+--------------------------
 
 Example::
 
@@ -412,7 +420,7 @@ Example::
     method which ``__call__()`` or view users can explicitly call.
 
 Registering a view
-`````````````````````
+``````````````````
 
 Zope 3 views are registered in :term:`ZCML`, an XML-based configuration
 language.  Usually, the configuration file, where the registration done, is
@@ -466,7 +474,7 @@ The following example registers a new view (see below for comments):
    ``configure.zcml`` to use ``browser`` configuration directives.
 
 Relationship between views and templates
-``````````````````````````````````````````
+````````````````````````````````````````
 
 The ZCML ``<browser:view template="">`` directive will set the ``index``
 class attribute.
@@ -525,7 +533,7 @@ Rendering of the view is done as follows::
             return self.render()
 
 Overriding a view template at run-time
-````````````````````````````````````````
+``````````````````````````````````````
 
 Below is a sample code snippet which allows you to override an already
 constructed ``ViewPageTemplateFile`` with a chosen file at run-time::

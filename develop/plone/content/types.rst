@@ -80,6 +80,9 @@ Python instead, here's how::
         # Return (id, title) pairs
         return [ (id, portal_types[id].title) for id in prepared_types ]
 
+.. note:: 
+
+    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
 Creating a new content type
 ============================
@@ -104,6 +107,7 @@ Add ZopeSkel to your buildout.cfg and run buildout::
     eggs =
        PasteScript
        ZopeSkel
+
 
 Create an archetypes product
 ----------------------------
@@ -139,11 +143,15 @@ Adjust your buildout.cfg and run buildout again::
 Create a new content type
 -------------------------
 
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
+
 Change into the directory of the new product and then use paster to
 add a new content type::
 
     cd my.product
     ../bin/paster addcontent contenttype
+
 
 
 Related how-tos:

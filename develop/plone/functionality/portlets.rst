@@ -35,6 +35,10 @@ for ready solution, for examples, for inspiration.
 
 * https://github.com/collective/collective.cover
 
+.. note:: 
+
+    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
+
 Creating a portlet
 ------------------
 
@@ -43,6 +47,9 @@ Creating a portlet
 
 * Use project specific paster command *paster addcontent portlet* to create a code
   skeleton for your new portlet.
+
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
 
 Subclassing a portlet
 ---------------------
