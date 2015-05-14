@@ -4,7 +4,7 @@ Develop Plone Add ons
 .. toctree::
    :maxdepth: 2
 
-   bobtemplates
+   bobtemplates.plone/README
    dexterity
    paster
    releasing
