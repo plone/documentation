@@ -80,7 +80,7 @@ Python instead, here's how::
         # Return (id, title) pairs
         return [ (id, portal_types[id].title) for id in prepared_types ]
 
-. note:: 
+.. note:: 
 
     Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
