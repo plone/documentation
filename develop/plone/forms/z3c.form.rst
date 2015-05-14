@@ -112,6 +112,9 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 
 * Create Plone add-on product using :doc:`Paster </develop/addons/paste>`
 
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
+
 * Include :doc:`five.grok support in your add-on </appendices/grok>`
 
 * Toss ``form.py`` into your add-on product::
