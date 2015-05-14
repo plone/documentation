@@ -4,9 +4,9 @@ Creating a Dexterity project
 
 Dexterity is covered in detail in the `Dexterity Developer Manual <http://docs.plone.org/external/plone.app.dexterity/docs/>`_, which includes an extensive tutorial on setting up a Dexterity development environment and creating Dexterity add-on packages.
 
-Here, we'll just add a few details on setting up and using the ZopeSkel package creator for use with Dexterity.
+Here, we'll just add a few details on setting up and using the bobtemplates.plone package creator for use with Dexterity.
 
-The only prerequisite is a working Plone buildout and to have added mr.bob and bobtemplates.plone part described in :doc:`bootstrapping </develop/addons/bobtemplates>`.
+The only prerequisite is a working Plone buildout and to have added mr.bob and bobtemplates.plone part described in :doc:`bootstrapping </develop/addons/bobtemplates.plone/README>`.
 
 
 Create a dexterity product
@@ -46,7 +46,3 @@ Add your package to buildout
 ============================
 
 Edit your ``buildout.cfg`` file to add the package to your ``egg`` list and your ``develop`` list. Run buildout.
-
-.. note::
-
-    If you try to use a local command without this step, paster will suggest you run ``python setup.py develop``. **Do not do that.** Instead, add your package to your buildout and run buildout.
