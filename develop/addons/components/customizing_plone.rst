@@ -34,7 +34,7 @@ need go through manual steps to achieve the same customization.
 
 Possible through-the-web changes are:
 
-* Site settings: E.g. adding/removing `content rules <https://plone.org/documentation/how-to/content-rules>`_
+* Site settings: E.g. adding/removing `content rules </working-with-content/managing-content/contentrules>`_
 
 * Showing and hiding viewlets (parts of the page) using ``@@manage-viewlets``
 
@@ -52,12 +52,8 @@ Through the code changes
 
 To expand Plone using Python, you have to create your own add-on product.
 Add-on products are distributed as packaged Python modules called :doc:`eggs </old-reference-manuals/buildout/index>`.
-The recommended way is to use the :doc:`paster </develop/addons/paste>` command to generate an add-on
+The recommended way is to use the :doc:`bobtemplates </develop/addons/bobtemplates>` command to generate an add-on
 product skeleton which you can
 use as a starting point for your development.
-Paster also contains useful subcommands, like ``addcontent``,
-which automate various Plone add-on development tasks.
-
-* Another `paster tutorial <http://www.unc.edu/~jj/plone/>`_
 
 
