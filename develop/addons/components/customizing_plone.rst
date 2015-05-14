@@ -48,11 +48,11 @@ Possible through-the-web changes are:
   interface and registering using ``portal_css`` and ``portal_javascripts``
 
 Through the code changes
-==========================
+========================
 
 To expand Plone using Python, you have to create your own add-on product.
 Add-on products are distributed as packaged Python modules called :doc:`eggs </old-reference-manuals/buildout/index>`.
-The recommended way is to use the :doc:`bobtemplates </develop/addons/bobtemplates>` command to generate an add-on
+The recommended way is to use the :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` command to generate an add-on
 product skeleton which you can
 use as a starting point for your development.
 
