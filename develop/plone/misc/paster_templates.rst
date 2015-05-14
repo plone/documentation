@@ -2,6 +2,12 @@
  Creating your own Paster templates
 ======================================================
 
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
+
+.. note::
+    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
+
 .. admonition:: Description
 
 	How to create Paster code skeleton templates to easily add your
