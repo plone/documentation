@@ -34,7 +34,7 @@ need go through manual steps to achieve the same customization.
 
 Possible through-the-web changes are:
 
-* Site settings: E.g. adding/removing `content rules </working-with-content/managing-content/contentrules>`_
+* Site settings: E.g. adding/removing :doc:`content rules </working-with-content/managing-content/contentrules>`
 
 * Showing and hiding viewlets (parts of the page) using ``@@manage-viewlets``
 
