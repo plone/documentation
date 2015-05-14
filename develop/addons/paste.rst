@@ -2,6 +2,9 @@
  Bootstrapping Plone add-on development
 =========================================
 
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates <bobtemplates>`
+
 .. note ::
 
     Using ZopeSKel is not considered *best practice* anymore, if you know how
