@@ -391,5 +391,4 @@ For including gists just use the *gist* directive
 
 .. note::
   
-    Since this documentation is also build as a docset for off-line use, please **always** include a link to the gist under the gist directive, even
-    if the link will not work in off-line mode.
+    Since this documentation serves as source for various versions (html, PDF, Dash/Zeal, others), please **always** include a link to the gist under the gist directive.
