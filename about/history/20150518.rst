@@ -122,6 +122,8 @@ Changelog
   
   	**polyester** and **svx** updated the style-guide with the usage of gists.
 
+- **Added document where to find hotfixes**
 
+        **polyester** wrote documentation about where user can find information about security hotfixes.
 
 
