@@ -7,3 +7,4 @@ Installing Plone
    requirements
    installation
    installing_addons
+   hotfixes
