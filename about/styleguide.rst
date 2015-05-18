@@ -376,3 +376,19 @@ Note:
 .. TODO::
 
    This is a TODO item
+
+Including gists
+----------------
+
+Sometimes it is handy to include `gists <https://help.github.com/articles/about-gists/>`_.
+This can be useful if you want to include for example a configuration file.
+
+For including gists just use the *gist* directive
+
+.. code-block:: rst
+
+    .. gist:: https://gist.github.com/shomah4a/5149412
+
+.. note::
+  
+    Since this documentation serves as source for various versions (html, PDF, Dash/Zeal, others), please **always** include a link to the gist under the gist directive.
