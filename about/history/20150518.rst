@@ -85,3 +85,15 @@ Changelog
 - **Updated styleguide with gists info**
 
         **svx**and **polyester**  added docs on how to use gists.
+- **Added document where to find hotfixes**
+
+        **polyester** wrote documentation about where user can find information about security hotfixes.
+
+- **Corrected ZEXP export/import**
+
+        **thet** fixed documentation about export and import of ZEXP.
+
+- **Sublime helpers**
+
+        **polyester** added more documentation about Sublime add-ons for writing good documentation.
+
