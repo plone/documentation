@@ -22,24 +22,21 @@ Goal: you want to import and export content between Plone sites.
 Zope 2 import / export
 --------------------------
 
-Zope 2 can import/export parts of the site in .zexp format which is basically a Python pickle
-data of the exported objects. Data is raw dump of Python internal data structures which means
-that the source and the target Plone versions must be compatible regarding the data e.g.
-no export from Plone 3 to Plone 4.
+Zope 2 can import/export parts of the site in .zexp format. This is basically Python pickle data of the exported objects. The data is a raw dump of Python internal data structures, which means that the source and the target Plone versions must be compatible. For example, a export from Plone 3 to Plone 4 is not possible.
 
-To export a folder from a site to another do
+To export objects from a site to another, do the following:
 
-* Go to Zope Management Interface root
+* In the Zope Management Interface, navigate to the Folder, which holds the object to be exported.
 
-* Checkbox a folder
+* Tick the checkbox for a object to be exported.
 
-* Press *Import / Export*
+* Click *Import / Export*
 
-* Export as .zexp
+* Export as .zexp.
 
-* Zope 2 will tell you the path where .zexp was created on the server
+* Zope 2 will tell you the path where .zexp was created on the server.
 
-* Zope .zexp to *youranothersite*/var/instance folder
+* Zope .zexp to *youranothersite*/var/instance/import folder
 
 * Go to ZMI root of your another site
 
@@ -50,6 +47,7 @@ To export a folder from a site to another do
 * Import it
 
 * Go to portal_catalog -> Advanced tab. *Clear and Rebuild* the catalog (raw Zope pickle does not know about anything living inside the catalog)
+
 
 collective.transmogrifier
 -------------------------
