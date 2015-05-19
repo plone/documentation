@@ -11,119 +11,125 @@ Changelog
     **gforcada** fixed various typos.
 
 - **Fixed mistaken import: p.a.field -> p.a.blob.field**
-  
+
   	**mauritsvanrees** fixed a wrong import in *updating_addons*
 
 - **Added documentation why setuptools are scanning .py files**
-  
+
   	**mgedmin** added documentation explaining why setuptools are scanning .py files.
 
 - **Fixed post-login example, add collective.onlogin note**
-  
-  	**lentinj** fixed *post-login* example. 
+
+  	**lentinj** fixed *post-login* example.
 
 - **De-grok'ed' example**
 
 	**lentinj** removed *grok* from an example about post-login.
 
 - **Updated filename**
-  
+
   	**staeff** updated a filename in the README.
 
 - **Added links to manual page**
-  
+
   	**svx** added a missing link to a manual page, that fixed #219.
 
 - **Updated installation.rst**
-  
+
   	**polyester** updated and adjusted the .rst syntax.
 
 - **Updated default Ubuntu version**
-  
+
   	**svx** updated the *installation docs* with Ubuntu 14.04 as default version, that fixed #210.
 
 - **Started to remove paster/zopeskel stuff**
-  
+
   	**svx** started to work on removing old paster/zopeskel documentation.
 
 - **Added link to zope.component docs**
-  
+
   	**djowett** added a link to zope.component documentation.
 
 - **Removed Plone 3 docs from Plone 4 documentation**
-  
+
   	**svx** removed old Plone 3 only documentation from the docs for PLone 4.
 
 - **Fixed some of the screen-shots, and broken links**
-  
+
   	**polyester** fixed certain broken links and missing screen-shots.
 
 - **Fixed no :term: in headers, and deleting an invisible utf-8 char**
-  
+
   	**polyester** fixed various .rst syntax mistakes in the docs.
 
 - **Updated helper_tools.rst**
-  
+
   	**polyester** updated the documentation about emacs and vim.
 
 - **Changed order of docs**
-  
+
   	**svx** changed the order of the migration docs, with this the docs are more up to date.
 
 - **Cleaned upgrade part**
-  
+
   	**svx** adjusted the docs for Plone 4.
 
 - **Gave equal weight to ansible install**
-  
+
   	**polyester** updated the weight, ansible is now a equal citizen in the documentation.
 
 - **Clarified styleguide**
-  
+
   	**polyester** updated the style-guide with best practices for README's and Changelogs.
 
 - **Fixed docs about releasing a package**
-  
-  	**svx** updated the documentation about releasing a package, this fixed issue #110.
+
+ 	**svx** updated the documentation about releasing a package, this fixed issue #110.
 
 - **Updated wysiwyg.rst**
-  
+
   	**Schemata** updated the docs about *wysiwyg*.
 
 - **Updated link to collective.pdfpeek github repo**
-  
+
   	**saily** Updated *genericsetup.rst* with the correct and updated link.
 
- - **Adjusted to pep8*
-   
+- **Adjusted to pep8*
+
    	**saily** fixed example in *genericsetup.rst* to be pep8 compatible.
 
- - **Adjusted code example to our guidelines**
-   
+- **Adjusted code example to our guidelines**
+
    	**saily** adjusted *genericsetup.rst* to make use of plone.api.
 
- - **Added bobtemplates.plone**
-   
+- **Added bobtemplates.plone**
+
    	**svx** updated the documentation to follow best practices and use bobtemplates.plone.
 
- - **Renamed images for sharing narrative**
-   
+- **Renamed images for sharing narrative**
+
    	**polyester** renamed various images, that fixed issue #159.
 
- - **Update customizing_plone.rst**
-   
+- **Update customizing_plone.rst**
+
    	**polyester** updated *customizing_plone.rst* with a reference to *contentrules*.
 
 - **Removed outdated file**
-  
+
   	**svx** removed and old and outdated file, which was used for testing purposes.
 
 - **Updated style-guide**
-  
+
   	**polyester** and **svx** updated the style-guide with the usage of gists.
 
 - **Added document where to find hotfixes**
 
         **polyester** wrote documentation about where user can find information about security hotfixes.
 
+- **Corrected ZEXP export/import**
 
+        **thet** fixed documentation about export and import of ZEXP.
+
+- **Sublime helpers**
+
+        **polyester** added more documentation about Sublime add-ons for writing good documentation.
