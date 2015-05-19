@@ -30,21 +30,25 @@ On Ubuntu and Debian-based systems all you have to do is
    apt-get install retext
 
 
-**Pandoc** If you have existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions. For instance, it can create valid rst files from Markdown and quite a number of other formats.
+**Pandoc** If you have existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions. For instance, it can create valid rst files from Markdown and many other formats.
 On Ubuntu you can install it via apt
 
 .. code-block:: rst
 
     apt-get install pandoc
 
-There is also a `online version <http://johnmacfarlane.net/pandoc/try/>`_.
+See also the `online version <http://johnmacfarlane.net/pandoc/try/>`_.
 
 
 **Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
 
-One  particular which is really good for getting a impression how it will looks
-like in html is `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_ a live
-previewer/exporter for markup files (markdown, rst, creole, textile...).
+Very useful is `Restructured Text Snippets <https://packagecontrol.io/packages/Restructured%20Text%20(RST)%20Snippets>`_, which has automated header creation, html preview and more. It even makes creating tables in ReST tolerable.
+**Highly recommended**.
+
+The *SublimeLinter* framework also comes with two plugins: `sublimelinter-rst <https://packagecontrol.io/packages/SublimeLinter-rst>`_ will error check RST files, and `write good <https://packagecontrol.io/packages/SublimeLinter-contrib-write-good>`_ checks your English for writing style.
+
+When not using the Snippets, but you still want to check how the html would look, `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_  is a live previewer/exporter for markup files (markdown, rst, creole, textile...).
+
 
 **Emacs** has a nice `rst-mode <http://docutils.sourceforge.net/docs/user/emacs.html>`_.
 This mode comes with some Emacs distros. Try ``M-x rst-mode`` in your Emacs and enjoy syntax coloration, underlining a heading with ``^C ^A``
