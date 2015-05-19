@@ -22,24 +22,21 @@ Goal: you want to import and export content between Plone sites.
 Zope 2 import / export
 --------------------------
 
-Zope 2 can import/export parts of the site in .zexp format which is basically a Python pickle
-data of the exported objects. Data is raw dump of Python internal data structures which means
-that the source and the target Plone versions must be compatible regarding the data e.g.
-no export from Plone 3 to Plone 4.
+Zope 2 can import/export parts of the site in .zexp format. This is basically Python pickle data of the exported objects. The data is a raw dump of Python internal data structures, which means that the source and the target Plone versions must be compatible. For example, a export from Plone 3 to Plone 4 is not possible.
 
-To export a folder from a site to another do
+To export objects from a site to another, do the following:
 
-* Go to Zope Management Interface root
+* In the Zope Management Interface, navigate to the Folder, which holds the object to be exported.
 
-* Checkbox a folder
+* Tick the checkbox for a object to be exported.
 
-* Press *Import / Export*
+* Click *Import / Export*
 
-* Export as .zexp
+* Export as .zexp.
 
-* Zope 2 will tell you the path where .zexp was created on the server
+* Zope 2 will tell you the path where .zexp was created on the server.
 
-* Zope .zexp to *youranothersite*/var/instance folder
+* Zope .zexp to *youranothersite*/var/instance/import folder
 
 * Go to ZMI root of your another site
 
@@ -50,6 +47,7 @@ To export a folder from a site to another do
 * Import it
 
 * Go to portal_catalog -> Advanced tab. *Clear and Rebuild* the catalog (raw Zope pickle does not know about anything living inside the catalog)
+
 
 collective.transmogrifier
 -------------------------
@@ -68,6 +66,8 @@ The following add-ons make it useful in a Plone context:
   See the site for some example configs for migration.
 * `transmogrify.dexterity <https://github.com/collective/transmogrify.dexterity>`_ provides some blueprints relevant to Dexterity types,
   and has some default pipelines for you to use.
+* `collective.jsonmigrator <collectivejsonmigrator> is particularly useful when the old site is not able to install collective.transmogrifier,
+  as collective.jsonmigrator has a very low level of dependencies for that end of the migration.
 
 transmogrify.dexterity: CSV import
 ==================================
@@ -93,7 +93,7 @@ For more information on using, see `this transmogrify blog post <http://shuttlet
 quintagroup.transmogrifier: Exporting single folder only
 ========================================================
 
-Here is explained how to export and import `Plone CMS <http://plone.org>`_
+Here is explained how to export and import `Plone CMS <https://plone.org>`_
 folders between different Plonen versions, or
 different CMS systems, using  XML based content marshalling and
 `quintagroup.transmogrifier <http://projects.quintagroup.com/products/wiki/quintagroup.transmogrifier>`_.
@@ -210,26 +210,28 @@ More information
 
 * https://svn.plone.org/svn/collective/quintagroup.transmogrifier/trunk/quintagroup/transmogrifier/catalogsource.py
 
+collective.jsonmigrator
+=======================
+
+collective.jsonmigrator is basically a collective.transmogrifier pipeline that pulls Plone content from to JSON views on an old site and writes it into your new site. 
+It's major advantage is that the JSON view product: collective.jsonify is very low on dependencies (basically just simplejson), 
+so it can be installed on very old Plone sites that would be difficult if not impossible to install collective.transmogrifier into.
+
+See:
+
+* <https://github.com/collective/collective.jsonmigrator>`_
+
+* <https://github.com/collective/collective.jsonify>`_
+
+* A basic tutorial: <http://www.jowettenterprises.com/blog/plone-content-migration-using-transmogrifier-and-collective.jsonify>`_
+
+* <http://stackoverflow.com/questions/13721016/exporting-plone-archetypes-data-in-json>`_
+
 Fast content import
 -------------------
 
-
 For specific use-cases, you can create 'brains' first and import later
 * See `this blog post <http://blog.redturtle.it/redturtle-blog/fast-content-import>`_
-
-
-collective.jsonmigrator
-------------------------
-
-Convert Plone content to JSON and move it between sites.
-
-See
-
-* https://github.com/collective/collective.jsonmigrator
-
-* https://github.com/collective/collective.jsonify
-
-* http://stackoverflow.com/questions/13721016/exporting-plone-archetypes-data-in-json
 
 Simple JSON export
 ----------------------
