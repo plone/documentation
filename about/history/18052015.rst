@@ -1,0 +1,22 @@
+Changelog
+=========
+
+- **Added version warning to Plone 3.X docs**
+
+    **svx** added a warning message about the version of Plone.
+
+- **Fixed missing qoute**
+
+    **svx** fixed a missing html template quote.
+
+- **Fixed link to u2d docs**
+
+    **svx** added a link to recent Plone documentation.
+
+- **Removed Plone 4 stuff from Plone 3 docs**
+
+    **svx** removed Plone 4 only documentation from Plone 3 docs.
+
+- **Updated zexp import/export**
+
+    **svx** did an update and fix about import/export of zexp.
