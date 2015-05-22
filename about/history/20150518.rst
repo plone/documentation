@@ -94,7 +94,7 @@ Changelog
 
     *@saily* Updated *genericsetup.rst* with the correct and updated link.
 
-- **Adjusted to pep8*
+- **Adjusted to pep8**
 
     *@saily* fixed example in *genericsetup.rst* to be pep8 compatible.
 
