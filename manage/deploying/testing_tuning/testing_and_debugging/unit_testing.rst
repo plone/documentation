@@ -31,11 +31,6 @@ command will be generated.
     eggs =
         ${instance:eggs}
 
-.. note ::
-
-    On Plone 3 you can run tests with the ``bin/instance test`` command,
-    which corresponds ``bin/test``.
-
 
 Running tests for one package:
 
@@ -289,75 +284,8 @@ Setting a real HTTP request
     >>> request=self.portal.REQUEST
 
 
-Grabbing emails
-===============
-
-Test outgoing email messages with Plone 3
------------------------------------------
-
-To debug outgoing email traffic you can create a dummy mailhost.
-
-
-Example::
-
-    from zope.component import getUtility, getMultiAdapter, getSiteManager
-    from Products.MailHost.interfaces import IMailHost
-    from Products.SecureMailHost.SecureMailHost import SecureMailHost
-    from Products.CMFCore.utils import getToolByName
-
-
-    class DummySecureMailHost(SecureMailHost):
-        """Grab outgoing emails"""
-
-        meta_type = 'Dummy secure Mail Host'
-
-        def __init__(self, id):
-            self.id = id
-
-            # Use these two instance attributes to check what email has been sent
-            self.sent = []
-            self.mto = None
-
-        def _send(self, mfrom, mto, messageText, debug=False):
-            self.sent.append(messageText)
-            self.mto = mto
-
-
-    ...
-
-    def afterSetUp(self):
-        self.loginAsPortalOwner()
-        sm = getSiteManager(self.portal)
-        sm.unregisterUtility(provided=IMailHost)
-        self.dummyMailHost = DummySecureMailHost('dMailhost')
-        sm.manage_changeProperties({'email_from_address': 'moo@isthemasteofuniverse.com'})
-        sm.registerUtility(self.dummyMailHost, IMailHost)
-
-        # Set mail host for tools which use getToolByName() look up
-        self.MailHost = self.dummyMailHost
-
-        # Make sure that registration tool uses mail host mock
-        rtool = getToolByName(self.portal, 'portal_registration')
-        rtool.MailHost = self.dummyMailHost
-
-    ....
-
-    def test_xxx(self):
-        # Reset outgoing emails
-        self.dummyMailHost.sent = []
-
-        # Do a workflow state change which should trigger content rule
-        # sending out email
-        self.workflow.doActionFor(member, "approve_by_sits")
-        review_state = self.workflow.getInfoFor(member, 'review_state')
-        self.assertEqual(review_state, "approved_by_sits")
-
-        # Check that email has been sent
-        self.assertEqual(len(self.dummyMailHost.sent), 1)
-
-
-Test outgoing email messages with Plone 4
------------------------------------------
+Test outgoing email messages
+----------------------------
 
 The ``MailHost`` code has changed in Plone 4. For more detail about the
 changes please read the relevant section in the `Plone Upgrade Guide`_.
