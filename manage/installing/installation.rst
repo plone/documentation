@@ -125,11 +125,11 @@ Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download from `the plone.org download page <https://plone.org/download>`_ to your server using wget command. Curl also works.
-Substitute the latest version number for 4.3.4 in the instructions below.
+Substitute the latest version number for 4.3.5 in the instructions below.
 
 .. code-block:: console
 
-    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.4/+download/Plone-4.3.4-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.5/+download/Plone-4.3.5-UnifiedInstaller.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -138,11 +138,11 @@ Run the Plone installer in standalone mode
 
     # Extract the downloaded file
     #
-    tar -xf Plone-4.3.4-UnifiedInstaller.tgz
+    tar -xf Plone-4.3.5-UnifiedInstaller.tgz
     #
     # Go the folder containing installer script
     #
-    cd Plone-4.3.4-UnifiedInstaller
+    cd Plone-4.3.5-UnifiedInstaller
     #
     # Run script
     ./install.sh standalone
