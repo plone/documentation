@@ -31,11 +31,6 @@ command will be generated.
     eggs =
         ${instance:eggs}
 
-.. note ::
-
-    On Plone 3 you can run tests with the ``bin/instance test`` command,
-    which corresponds ``bin/test``.
-
 
 Running tests for one package:
 
@@ -87,7 +82,7 @@ whether you have a set of component that function well together:
 
 More information:
 
-* http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-longer-bin-instance-test-use-zc.recipe.testrunner
+* https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/no-longer-bin-instance-test-use-zc.recipe.testrunner
 
 AttributeError: 'module' object has no attribute 'test_suite'
 -------------------------------------------------------------
@@ -119,143 +114,17 @@ You might need to add additional setup.py options to get your tests work
 Creating unit tests
 ====================
 
-Pointers:
+For any new test suites, you should be using `plone.app.testing`, your next step should be to 
+`read the documentation </external/plone.app.testing/docs/source>`.
 
-* https://pypi.python.org/pypi/plone.app.testing
+You may come across `Products.PloneTestCase <https://pypi.python.org/pypi/Products.PloneTestCase>` in older code.
+Also interesting is `ZopeTestCase <http://www.zope.org/Members/shh/ZopeTestCaseWiki/ApiReference>`.
 
-* https://pypi.python.org/pypi/Products.PloneTestCase
-
-* http://www.zope.org/Members/shh/ZopeTestCaseWiki/ApiReference
-
-
-For new test suites, it is recommended to use `plone.app.testing`.
-
-
-Base test class skeleton
-========================
-
-Example::
-
-    # Zope imports
-    from Testing import ZopeTestCase
-
-    # Plone imports -> PloneTestCase load zcml layer and install product
-    from Products.PloneTestCase import PloneTestCase
-
-    # For loading zcml
-    from Products.Five import zcml
-
-    ## Import all module that you want load zcml
-    import Products.PloneFormGen
-    import Products.Five
-    import Products.GenericSetup
-    import Products.CMFPlone
-    import myapp.content
-
-    ## Install all product requirement
-    PloneTestCase.installProduct('PloneLanguageTool')
-    ## ....
-    PloneTestCase.installProduct('collective.dancing')
-    ## Install a Python package registered via five:registerPackage
-    PloneTestCase.installPackage('myapp.content')
-
-    ## load zcml
-    zcml.load_config('meta.zcml' , Products.CMFPlone)
-    zcml.load_config('meta.zcml' , Products.Five)
-    zcml.load_config('meta.zcml' , Products.GenericSetup)
-    zcml.load_config('configure.zcml' , Products.Five)
-    zcml.load_config('configure.zcml',Products.Five)
-    ## ....
-    zcml.load_config('configure.zcml',Products.PloneFormGen)
-    zcml.load_config('configure.zcml',myapp.content)
-
-    # Setup Plone site
-    PloneTestCase.setupPloneSite(products=['PloneLanguageTool', 'myapp.content'],extension_profiles=['myapp.content:default',])
-
-
-    class MySiteTestCase(PloneTestCase.PloneTestCase):
-        """Base class for all class with test cases"""
-
-        def afterSetUp(self):
-            """ some tasks after setup the site """
-
-
-Posing as different users
-===========================
-
-There is a shortcut to privilege you from all security checks::
-
-    self.loginAsPortalOwner()
-
-In Plone 4, using plone.app.testing, use::
-    from plone.app.testing import login
-    ...
-    login(self.portal, 'admin')
-
-where ``self`` is the test case instance.
-
-.. note ::
-
-    This privileges are effective only in the context where permissions are
-    checked manually. They do not affect traversal-related permissions:
-    looking up views or pages in unit test Python code.  For that kind of
-    testing, use functional testing.
-
-Unit tests and themes
-========================
-
-If your test code modifies skin registries you need to force the skin data
-to be reloaded.
-
-Example (``self`` is the unit test)::
-
-    self._refreshSkinData()
-
-Running add-on installers and extensions profiles for unit tests
-=================================================================
-
-By default, no add-on installers or extension profiles are installed.
-
-You need to modify ``PloneTestCase.setupPloneSite()`` call in your base unit
-tests.
-
-Simple example::
-
-    ptc.setupPloneSite(products=['namespace.yourproduct'])
-
-Complex example::
-
-    ptc.setupPloneSite(products=['harvinaiset.app', 'TickingMachine'], extension_profiles=["harvinaiset.app:tests","harvinaiset.app:default"])
-
-
-Tested package not found warning
----------------------------------
-
-Installers may fail without interrupting the test run. Monitor Zope start up
-messages. If you get error like::
-
-    Installing gomobiletheme.basic ... NOT FOUND
-
-You might be missing this from your ``configure.zcml``
-
-.. code-block:: xml
-
-    <five:registerPackage package="." initialize=".initialize" />
-
-... or you have a spelling error in your test setup code.
-
-Load ZCML for testing
-=====================
-
-For loading ZCML files in your test, you can use the Five API::
-
-    import <your fabulous module>
-    from Products.Five import zcml
-    zcml.load_config('configure.zcml', <your fabulous module>)
-
+Miscallaneous hints
+===================
 
 Setting log level in unit tests
-===============================
+-------------------------------
 
 Many components use the ``DEBUG`` output level, while the default output
 level for unit testing is ``INFO``.  Import messages may go unnoticed during
@@ -270,101 +139,15 @@ Add this to your unit test code::
         logger.root.setLevel(logging.DEBUG)
         logger.root.addHandler(logging.StreamHandler(sys.stdout))
 
-HTTP request
-============
-
-Zope unit tests have a mock ``HTTPRequest`` object set up.
-
-You can access it as follows::
-
-    self.portal.REQUEST # mock HTTPRequest object
-
-Setting a real HTTP request
----------------------------
-
-::
-
-    >>> from Testing import makerequest
-    >>> self.app = makerequest.makerequest(Zope.app())
-    >>> request=self.portal.REQUEST
-
-
-Grabbing emails
-===============
-
-Test outgoing email messages with Plone 3
------------------------------------------
-
-To debug outgoing email traffic you can create a dummy mailhost.
-
-
-Example::
-
-    from zope.component import getUtility, getMultiAdapter, getSiteManager
-    from Products.MailHost.interfaces import IMailHost
-    from Products.SecureMailHost.SecureMailHost import SecureMailHost
-    from Products.CMFCore.utils import getToolByName
-
-
-    class DummySecureMailHost(SecureMailHost):
-        """Grab outgoing emails"""
-
-        meta_type = 'Dummy secure Mail Host'
-
-        def __init__(self, id):
-            self.id = id
-
-            # Use these two instance attributes to check what email has been sent
-            self.sent = []
-            self.mto = None
-
-        def _send(self, mfrom, mto, messageText, debug=False):
-            self.sent.append(messageText)
-            self.mto = mto
-
-
-    ...
-
-    def afterSetUp(self):
-        self.loginAsPortalOwner()
-        sm = getSiteManager(self.portal)
-        sm.unregisterUtility(provided=IMailHost)
-        self.dummyMailHost = DummySecureMailHost('dMailhost')
-        sm.manage_changeProperties({'email_from_address': 'moo@isthemasteofuniverse.com'})
-        sm.registerUtility(self.dummyMailHost, IMailHost)
-
-        # Set mail host for tools which use getToolByName() look up
-        self.MailHost = self.dummyMailHost
-
-        # Make sure that registration tool uses mail host mock
-        rtool = getToolByName(self.portal, 'portal_registration')
-        rtool.MailHost = self.dummyMailHost
-
-    ....
-
-    def test_xxx(self):
-        # Reset outgoing emails
-        self.dummyMailHost.sent = []
-
-        # Do a workflow state change which should trigger content rule
-        # sending out email
-        self.workflow.doActionFor(member, "approve_by_sits")
-        review_state = self.workflow.getInfoFor(member, 'review_state')
-        self.assertEqual(review_state, "approved_by_sits")
-
-        # Check that email has been sent
-        self.assertEqual(len(self.dummyMailHost.sent), 1)
-
-
-Test outgoing email messages with Plone 4
------------------------------------------
+Test outgoing email messages
+----------------------------
 
 The ``MailHost`` code has changed in Plone 4. For more detail about the
 changes please read the relevant section in the `Plone Upgrade Guide`_.
 According to that guide we can reuse some of the test code in
 ``Products.CMFPlone.tests``.
 
-.. _`Plone Upgrade Guide`: http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/mailhost.securesend-is-now-deprecated-use-send-instead
+.. _`Plone Upgrade Guide`: https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/mailhost.securesend-is-now-deprecated-use-send-instead
 
 Here's some example of a ``unittest.TestCase`` based on the excellent ``plone.app.testing``
 framework. Adapt it to your own needs.
@@ -451,16 +234,13 @@ framework. Adapt it to your own needs.
 
 
 Unit testing and the Zope component architecture
-==================================================
+------------------------------------------------
 
 If you are dealing with the Zope component architecture at a low level in
 your unit tests, there are some things to remember, because the global site
 manager doesn't behave properly in unit tests.
 
 See discussion: http://plone.293351.n2.nabble.com/PTC-global-components-bug-tp3413057p3413057.html
-
-ZCML
-====
 
 Below are examples how to run special ZCML snippets for your unit tests.
 
