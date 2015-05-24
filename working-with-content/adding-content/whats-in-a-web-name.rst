@@ -76,3 +76,19 @@ The web address of a given item is referred to as the **short name** in
 Plone. When you use the **Rename** function, you'll see the short name
 along with the title.
 
+What’s in a Title?
+------------------
+
+The title of a content item not only affects the **short name** that is used in the URL of the item.  It is also displayed, with a twist, in the `title bar <http://en.wikipedia.org/wiki/Window_decoration#Title_bar>`_ of the browser window, or in the browser tab.  The twist consists in the fact that what is displayed consists of the *item title* and the *site title*, separated by an `Em dash <http://en.wikipedia.org/wiki/Dash#Em_dash>`_. 
+The site title is set in the *site control panel* (``http://yoursite.com/@@site-controlpanel``), but for the purposes of this section it is not necessary to have the permissions to access it.
+
+For example, the title for the item at https://www.cia.gov/about-cia shows in the browser tab or title bar as:  
+
+*About CIA — Central Intelligence Agency*.  
+
+The part to the left of the Em dash, **About CIA** is the *item title*, while the part to the right, **Central Intelligence Agency**, is the *site title*.
+The site title is appended to the item title, with an Em dash, automatically.  Technically, this is  what the ``<title>`` HTML element is set to.
+
+Why is this important?  In and of itself, this behavior of a Plone site might often be overlooked.  However, it becomes important when looking at the results provided by a search engine, such as Google.  When Google lists a page from a Plone site, the title used is the same one just described (*item title — site title*).
+
+Often, you might want the homepage of your site to be listed in Google search results with just the site title.  But you can not leave the homepage item title empty, so how to achieve this?  Thankfully, there is an easy solution:  make the homepage title **exactly identical** to the site title.
