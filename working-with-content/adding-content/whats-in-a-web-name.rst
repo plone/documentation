@@ -92,3 +92,7 @@ The site title is appended to the item title, with an Em dash, automatically.  T
 Why is this important?  In and of itself, this behavior of a Plone site might often be overlooked.  However, it becomes important when looking at the results provided by a search engine, such as Google.  When Google lists a page from a Plone site, the title used is the same one just described (*item title — site title*).
 
 Often, you might want the homepage of your site to be listed in Google search results with just the site title.  But you can not leave the homepage item title empty, so how to achieve this?  Thankfully, there is an easy solution:  make the homepage title **exactly identical** to the site title.
+
+In the CIA example above, if the homepage title were set to *Central Intelligence Agency*, then Google would list it simply as:
+
+*Central Intelligence Agency*
