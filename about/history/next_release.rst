@@ -10,4 +10,8 @@ Changelog
 
 - **Added documentation on <title> element**
 
-    *@fulv* updated the docs about what a title from a content item is. 
+    *@fulv* updated the docs about what a title from a content item is.
+
+- **Provided one more example for the Title**
+
+    *@fulv* provided more examples about titles in content items.
