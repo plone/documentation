@@ -35,7 +35,7 @@ for ready solution, for examples, for inspiration.
 
 * https://github.com/collective/collective.cover
 
-.. note:: 
+.. note::
 
     Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
@@ -100,7 +100,7 @@ More information
 update() and render()
 -----------------------
 
-These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto>`_.
+These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py>`_.
 
 available property
 -------------------
@@ -342,7 +342,7 @@ Example code::
                                             # et. al. can resolve permission inheritance
                                             renderer = renderer.__of__(content)
 
-                                            # Seee http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto
+                                            # Seee https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py
                                             renderer.update()
                                             html = renderer.render()
                                             print "Got HTML output:" + html
@@ -360,7 +360,7 @@ For more information about portlet assignments and managers, see
 
 * https://github.com/plone/plone.portlets/blob/master/plone/portlets/interfaces.py
 
-* http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto (for portlet renderers)
+* https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py (for portlet renderers)
 
 Checking if a certain context portlet is active on a page
 ----------------------------------------------------------
