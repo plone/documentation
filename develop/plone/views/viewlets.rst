@@ -30,9 +30,9 @@ What viewlets do
 
 * Viewlets can be registered and overridden in a theme specific manner :doc:`using layers </develop/plone/views/layers>`
 
-* Viewlets have update() and render() methods
+* Viewlets have ``update()`` and ``render()`` methods
 
-* Viewlets should honour `zope.contentprovider.interfaces.IContentProvider call contract <http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto>`_.
+* Viewlets should honour `zope.contentprovider.interfaces.IContentProvider call contract <https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py>`_.
 
 A viewlet can be configured so that it is only available for:
 
@@ -117,14 +117,14 @@ configuration is changed accordingly.
     Hide viewlets in one manager using /@@manage-viewlets and viewlets.xml
     export, then re-register the same viewlet to a new manager.
 
-Viewlet managers are based on `zope.viewlet.manager.ViewletManager <http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/manager.py?rev=113069&view=auto>`_
+Viewlet managers are based on `zope.viewlet.manager.ViewletManager <https://github.com/zopefoundation/zope.viewlet/blob/3.7.2/src/zope/viewlet/manager.py>`_
 and `plone.app.viewletmanager.manager.OrderedViewletManager <https://github.com/plone/plone.app.viewletmanager/blob/master/plone/app/viewletmanager/manager.py>`_.
 
 More info
 
-* http://svn.zope.org/zope.viewlet/trunk/src/zope/viewlet/viewlet.py?rev=113069&view=auto
+* https://github.com/zopefoundation/zope.viewlet/blob/3.7.2/src/zope/viewlet/viewlet.py
 
-* https://plone.org/documentation/manual/theme-reference/elements/viewletmanager/anatomy/
+* http://docs.plone.org/old-reference-manuals/plone_3_theming/elements/viewletmanager/anatomy.html
 
 
 Creating a viewlet manager
@@ -230,15 +230,15 @@ Viewlet behavior
 
 Viewlets have two important methods
 
-#. update() - set up all variables
+#. ``update()`` - set up all variables
 
-#. render() - generate the resulting HTML code by evaluating the template with context variables set up in update()
+#. ``render()`` - generate the resulting HTML code by evaluating the template with context variables set up in update()
 
-These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <https://github.com/zopefoundation/zope.contentprovider/blob/master/src/zope/contentprovider/interfaces.py>`_.
+These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py>`_.
 
 See
 
-* http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto
+* https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py
 
 * https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/viewlets/common.py
 
