@@ -147,66 +147,64 @@ properly CSS float then and close this float.
 In your ``browser/viewlets/manager.py`` or similar file add::
 
     <browser:viewletManager
-     name="plonetheme.yourtheme.headerbottommanager"
-     provides="plonetheme.yourtheme.browser.viewlets.manager.IHeaderBottomViewletManager"
-     class="plone.app.viewletmanager.manager.OrderedViewletManager"
-     layer="plonetheme.yourtheme.browser.interfaces.IThemeSpecific"
-     permission="zope2.View"
-     template="headerbottomviewletmanager.pt"
-     />
+        name="plonetheme.yourtheme.headerbottommanager"
+        provides="plonetheme.yourtheme.browser.viewlets.manager.IHeaderBottomViewletManager"
+        class="plone.app.viewletmanager.manager.OrderedViewletManager"
+        layer="plonetheme.yourtheme.browser.interfaces.IThemeSpecific"
+        permission="zope2.View"
+        template="headerbottomviewletmanager.pt"
+        />
 
 Then in ``browser/viewlets/configure.zcml``::
 
     <browser:viewletManager
-     name="plonetheme.yourock.browser.viewlets.MyViewletManager"
-     provides=".viewlets.MyViewletManager"
-     class="plone.app.viewletmanager.manager.OrderedViewletManager"
-     layer="plonetheme.yourock.interfaces.IThemeLayer"
-     permission="zope2.View"
-     />
+        name="plonetheme.yourock.browser.viewlets.MyViewletManager"
+        provides=".viewlets.MyViewletManager"
+        class="plone.app.viewletmanager.manager.OrderedViewletManager"
+        layer="plonetheme.yourock.interfaces.IThemeLayer"
+        permission="zope2.View"
+        />
 
 Optionally you can include a template which renders some wrapping HTML around viewlets. *browser/viewlets/headerbottomviewletmanager.pt*::
 
     <div id="header-bottom">
-        <tal:comment replace="nothing">
-            <!-- Rendeder all viewlets inside this manager.
+      <tal:comment replace="nothing">
+        <!-- Rendeder all viewlets inside this manager.
+          Pull viewlets out of the manager and render then one-by-one
+        -->
+      </tal:comment>
 
-                 Pull viewlets out of the manager and render then one-by-one
-             -->
-        </tal:comment>
+      <tal:viewlets repeat="viewlet view/viewlets">
+        <tal:viewlet replace="structure python:viewlet.render()" />
+      </tal:viewlets>
 
-        <tal:viewlets repeat="viewlet view/viewlets">
-               <tal:viewlet replace="structure python:viewlet.render()" />
-        </tal:viewlets>
-
-        <div style="clear:both"><!-- --></div>
+      <div style="clear:both"><!-- --></div>
     </div>
 
 
 And then re-register some stock viewlets against your new viewlet manager in *browser/viewlets/configure.zcml*::
 
-   <!-- Re-register two stock viewlets to the new manager -->
+    <!-- Re-register two stock viewlets to the new manager -->
 
-   <browser:viewlet
-     name="plone.path_bar"
-     for="*"
-     manager="plonetheme.yourtheme.browser.viewlets.manager.IHeaderBottomViewletManager"
-     layer="plonetheme.yourtheme.browser.interfaces.IThemeSpecific"
-     class="plone.app.layout.viewlets.common.PathBarViewlet"
-     permission="zope2.View"
-     />
+    <browser:viewlet
+        name="plone.path_bar"
+        for="*"
+        manager="plonetheme.yourtheme.browser.viewlets.manager.IHeaderBottomViewletManager"
+        layer="plonetheme.yourtheme.browser.interfaces.IThemeSpecific"
+        class="plone.app.layout.viewlets.common.PathBarViewlet"
+        permission="zope2.View"
+        />
 
 
-  <!-- This is a customization for rendering the a bit different language selector -->
-  <browser:viewlet
-     name="plone.app.i18n.locales.languageselector"
-     for="*"
-     manager="plonetheme.yourtheme.browser.viewlets.manager.IHeaderBottomViewletManager"
-     layer="plonetheme.yourtheme.browser.interfaces.IThemeSpecific"
-     class=".selector.LanguageSelector"
-     permission="zope2.View"
-    />
-
+    <!-- This is a customization for rendering the a bit different language selector -->
+    <browser:viewlet
+        name="plone.app.i18n.locales.languageselector"
+        for="*"
+        manager="plonetheme.yourtheme.browser.viewlets.manager.IHeaderBottomViewletManager"
+        layer="plonetheme.yourtheme.browser.interfaces.IThemeSpecific"
+        class=".selector.LanguageSelector"
+        permission="zope2.View"
+        />
 
 Now, we need to render our viewlet manager somehow. One place to do it is in a ``main_template.pt``,
 but because we need to add this HTML output to a header section which is produced by *another*
@@ -216,7 +214,7 @@ Yo dawg - we put viewlets in your viewlets so you can render viewlets!
 ``browser/viewlets/headerbottom.pt``::
 
     <tal:comment replace="nothing">
-        <!-- Render our precious viewlet manager -->
+      <!-- Render our precious viewlet manager -->
     </tal:comment>
     <tal:render-manager replace="structure provider:plonetheme.yourtheme.headerbottommanager" />
 
