@@ -15,9 +15,11 @@ Introduction
 WebDAV is enabled by default. A Zope server listening on port 8080 will also
 accept WebDAV traffic on that port. For common cases, client-side tools
 should work reasonably well.
-(http://plone.293351.n2.nabble.com/webdav-status-td7570063.html)
-(http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav)
-(https://support.apple.com/kb/PH13859)
+
+Connecting to Plone via WebDAV
+------------------------------
+
+"OS X Mavericks: Connect to a WebDAV server": https://support.apple.com/kb/PH13859
 
 Permissions
 -----------
@@ -93,6 +95,11 @@ Apache
 ~~~~~~
 
 For Apache, you can use the ``limit`` statement, see http://httpd.apache.org/docs/current/mod/core.html#limit
+
+See also
+~~~~~~~~
+
+"How can I stop people accessing a plone server via webdav?" http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav
 
 
 Supporting WebDAV in your custom content
