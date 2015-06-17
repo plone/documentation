@@ -17,6 +17,7 @@ accept WebDAV traffic on that port. For common cases, client-side tools
 should work reasonably well.
 (http://plone.293351.n2.nabble.com/webdav-status-td7570063.html)
 (http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav)
+(https://support.apple.com/kb/PH13859)
 
 Permissions
 -----------
