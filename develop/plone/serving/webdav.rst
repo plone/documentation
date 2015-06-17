@@ -26,8 +26,6 @@ Permissions
 
 The "WebDAV access" permission is required for any user to be able to connect to WebDAV.
 
-If you create new Zope users (e.g. at http://yoursite:8080/acl_users/users/manage_users) they will be able to connect to your site using WebDAV.
-
 To allow Plone users (ie. users created within a Plone site, as opposed to users created in Zope) to connect using WebDAV, go to the Security tab of the Zope (e.g. http://yoursite:8080/manage_access), find the permission "WebDAV access", check the box for it under the Anonymous column, and press the Save Changes button.
 
 Enabling WebDAV on an extra port in Zope
