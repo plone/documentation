@@ -68,7 +68,7 @@ Disabling WebDAV
 ----------------
 
 You can't disable WebDAV in Plone itself; it's tightly integrated in Zope.
-You could take away the "Access WebDAV" permission from everyone, but the
+You could take away the "WebDAV access" permission from everyone, but the
 Zope server will still answer each request.
 
 What you can do is make your web server filter out the WebDAV commands;
