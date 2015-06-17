@@ -5,7 +5,7 @@
 .. admonition:: Description
 
     WebDAV is a protocol to manage your site directly from MS Windows
-    Explorer and such.  Plone supports WebDAV without add-ons.
+    Explorer and such.  Plone supports WebDAV without add-ons, and Plone responds to WebDAV requests out of the box.
 
 .. contents:: :local:
 
@@ -18,10 +18,17 @@ should work reasonably well.
 (http://plone.293351.n2.nabble.com/webdav-status-td7570063.html)
 (http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav)
 
+Permissions
+-----------
+
+The "WebDAV access" permission is required for any user to be able to connect to WebDAV.
+
+If you create new Zope users (e.g. at http://yoursite:8080/acl_users/users/manage_users) they will be able to connect to your site using WebDAV.
+
 Enabling WebDAV on an extra port in Zope
 ----------------------------------------
 
-Modify your buildout configuration's client setup to add a webdav address:
+You can have Plone listen for WebDAV requests on additional ports by modifying your buildout configuration's client setup to add a WebDAV address:
 
 Short ``buildout.cfg`` example::
 
@@ -57,12 +64,12 @@ proxy WebDAV through Apache.
 Disabling WebDAV
 ----------------
 
-You can't disable WebDAV in Plone itself, it's tightly integrated in Zope.
+You can't disable WebDAV in Plone itself; it's tightly integrated in Zope.
 You could take away the "Access WebDAV" permission from everyone, but the
 Zope server will still answer each request.
 
-What you can do: Make your web server filter out the WebDAV commands.
-This will stop WebDAV requests from reaching your Zope server.
+What you can do is make your web server filter out the WebDAV commands;
+this will stop WebDAV requests before they reach your Zope server.
 
 Nginx
 ~~~~~
