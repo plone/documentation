@@ -5,19 +5,22 @@
 .. admonition:: Description
 
     WebDAV is a protocol to manage your site directly from MS Windows
-    Explorer and such.  Plone supports WebDAV without add-ons, and Plone responds to WebDAV requests out of the box.
+    Explorer, Mac OS, Linux and so on.  Plone supports WebDAV without add-ons, and Plone responds to WebDAV requests out of the box.
 
 .. contents:: :local:
 
 Introduction
 ==============
 
-WebDAV is enabled by default. A Zope server listening on port 8080 will also
-accept WebDAV traffic on that port. For common cases, client-side tools
-should work reasonably well.
+WebDAV is enabled by default in Plone. A Plone server listening on port 8080 will also
+accept WebDAV traffic on that port. 
+
+Note: if you're looking for an alternative way of allowing easy file uploads to Plone, consider using the add-on collective.wildcardfoldercontents (https://pypi.python.org/pypi/wildcard.foldercontents/). That functionality is also included in Plone 5.
 
 Connecting to Plone via WebDAV
 ------------------------------
+
+For common cases, client-side tools should work reasonably well.
 
 "OS X Mavericks: Connect to a WebDAV server": https://support.apple.com/kb/PH13859
 
