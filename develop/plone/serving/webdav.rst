@@ -106,7 +106,7 @@ For Apache, you can use the ``limit`` statement, see http://httpd.apache.org/doc
 See also
 ~~~~~~~~
 
-`"How can I stop people accessing a plone server via webdav?" <http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav>`_
+`"How can I stop people accessing a Plone server via WebDAV?" <http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav>`_
 
 
 Supporting WebDAV in your custom content
