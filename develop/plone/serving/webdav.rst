@@ -15,28 +15,32 @@ Introduction
 WebDAV is enabled by default in Plone. A Plone server listening on port 8080 will also
 accept WebDAV traffic on that port. 
 
-Note: if you're looking for an alternative way of allowing easy file uploads to Plone, consider using the add-on collective.wildcardfoldercontents (https://pypi.python.org/pypi/wildcard.foldercontents/). That functionality is also included in Plone 5.
+.. note:: 
+
+    If you're looking for an alternative way of allowing easy file uploads to Plone, consider using the add-on `collective.wildcardfoldercontents <https://pypi.python.org/pypi/wildcard.foldercontents>`_. That functionality is also included in Plone 5.
 
 Connecting to Plone via WebDAV
 ------------------------------
 
 For common cases, client-side tools should work reasonably well.
 
-"OS X Mavericks: Connect to a WebDAV server": https://support.apple.com/kb/PH13859
+`"OS X Mavericks: Connect to a WebDAV server": <https://support.apple.com/kb/PH13859>`_
 
 Permissions
 -----------
 
 The "WebDAV access" permission is required for any user to be able to connect to WebDAV.
 
-To allow Plone users (ie. users created within a Plone site, as opposed to users created in Zope) to connect using WebDAV, go to the Security tab of the Zope (e.g. http://yoursite:8080/manage_access), find the permission "WebDAV access", check the box for it under the Anonymous column, and press the Save Changes button. This generally grants WebDAV connection access. Normal Plone permissions will take care of who can view or change actual content.
+To allow Plone users (ie. users created within a Plone site, as opposed to users created in Zope) to connect using WebDAV, go to the Security tab of the Zope (e.g. http://yoursite:8080/manage_access), find the permission "WebDAV access", check the box for it under the Anonymous column, and press the Save Changes button. 
+This generally grants WebDAV connection access. 
+Normal Plone permissions will take care of who can view or change actual content.
 
 Enabling WebDAV on an extra port in Zope
 ----------------------------------------
 
 You can have Plone listen for WebDAV requests on additional ports by modifying your buildout configuration's client setup to add a WebDAV address:
 
-Short ``buildout.cfg`` example::
+Here is a short ``buildout.cfg`` example::
 
      [instance]
      ...
@@ -45,7 +49,7 @@ Short ``buildout.cfg`` example::
      webdav-address=1980
      ...
 
-Alternative ``buildout.cfg`` configuration snippet which might be needed for
+Here is an alternative ``buildout.cfg`` configuration snippet which might be needed for
 some WebDAV clients::
 
    [instance]
@@ -102,7 +106,7 @@ For Apache, you can use the ``limit`` statement, see http://httpd.apache.org/doc
 See also
 ~~~~~~~~
 
-"How can I stop people accessing a plone server via webdav?" http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav
+`"How can I stop people accessing a plone server via webdav?" <http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav>`_
 
 
 Supporting WebDAV in your custom content
