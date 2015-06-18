@@ -24,6 +24,8 @@ Zope 2 import / export
 
 Zope 2 can import/export parts of the site in .zexp format. This is basically Python pickle data of the exported objects. The data is a raw dump of Python internal data structures, which means that the source and the target Plone versions must be compatible. For example, a export from Plone 3 to Plone 4 is not possible.
 
+Another limitation is this will not export/import `dexterity/intid references </external/plone.app.dexterity/docs/advanced/references>`. The intid of the object the relation points to will be copied, but that int probably won't match. You will need to recreate any relations.
+
 To export objects from a site to another, do the following:
 
 * In the Zope Management Interface, navigate to the Folder, which holds the object to be exported.
