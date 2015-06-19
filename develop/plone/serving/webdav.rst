@@ -5,7 +5,7 @@
 .. admonition:: Description
 
     WebDAV is a protocol to manage your site directly from MS Windows
-    Explorer, Mac OS, Linux and so on.  Plone supports WebDAV without add-ons, and Plone responds to WebDAV requests out of the box.
+    Explorer, Mac OS, Linux and so on. Plone supports WebDAV without add-ons, and Plone responds to WebDAV requests out of the box.
 
 .. contents:: :local:
 
@@ -40,7 +40,9 @@ Enabling WebDAV on an extra port in Zope
 
 You can have Plone listen for WebDAV requests on additional ports by modifying your buildout configuration's client setup to add a WebDAV address:
 
-Here is a short ``buildout.cfg`` example::
+Here is a short ``buildout.cfg`` example:
+
+.. code-block::
 
      [instance]
      ...
@@ -50,7 +52,9 @@ Here is a short ``buildout.cfg`` example::
      ...
 
 Here is an alternative ``buildout.cfg`` configuration snippet which might be needed for
-some WebDAV clients::
+some WebDAV clients:
+
+.. code-block::
 
    [instance]
    ...
@@ -64,8 +68,10 @@ some WebDAV clients::
 These snippets will be in the **generated** ``parts/instance/etc/zope.conf``
 after buildout has been re-run.
 
-This will enable the WebDAV server on http://www.mydomain.com:1980/. Note
-that you cannot use this URL in your web browser, just in WebDAV clients.
+This will enable the WebDAV server on http://www.mydomain.com:1980/.
+
+.. note:: You cannot use this URL in your web browser, just in WebDAV clients.
+
 Using the web browser will give you an error message ``AttributeError:
 manage_FTPget``. You could also just run the WebDAV server on ``localhost``
 with address 1980, forcing you to either use a WebDAV client locally or
@@ -84,17 +90,21 @@ this will stop WebDAV requests before they reach your Zope server.
 Nginx
 ~~~~~
 
-For nginx, this is done by adding::
+For nginx, this is done by adding:
 
-            dav_methods off
+code-block::
+
+	dav_methods off
 
 to the server block in your nginx.conf. (http://wiki.nginx.org/HttpDavModule)
 
-If you do not use the HttpDavModule, you can add::
+If you do not use the HttpDavModule, you can add:
 
-            limit_except GET POST {
-              deny   all;
-            }
+.. code-block::
+
+    limit_except GET POST {
+     deny   all;
+    }
 
 to the location block.
 
@@ -103,14 +113,11 @@ Apache
 
 For Apache, you can use the ``limit`` statement, see http://httpd.apache.org/docs/current/mod/core.html#limit
 
-See also
-~~~~~~~~
 
-`"How can I stop people accessing a Plone server via WebDAV?" <http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav>`_
+.. seealso:: `"How can I stop people accessing a Plone server via WebDAV?" <http://stackoverflow.com/questions/9127269/how-can-i-stop-people-accessing-a-plone-server-via-webdav>`_
 
 
 Supporting WebDAV in your custom content
 ========================================
 
-Please read more about it in the
-`Dexterity WebDAV manual <https://github.com/plone/plone.dexterity/blob/master/docs/WebDAV.txt>`_.
+Please read more about it in the `Dexterity WebDAV manual <https://github.com/plone/plone.dexterity/blob/master/docs/WebDAV.txt>`_.
