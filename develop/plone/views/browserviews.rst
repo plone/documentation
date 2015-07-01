@@ -59,7 +59,7 @@ please read the `Plone and Grok tutorial
 .. deprecated:: may_2015
     Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
 
-.. note:: 
+.. note::
 
     Using paster is deprecated instead you should use :doc:`bobtemplates.plone
     </develop/addons/bobtemplates.plone/README>`
@@ -67,7 +67,8 @@ please read the `Plone and Grok tutorial
 More information
 ----------------
 
-* `Zope view tutorial <https://plone.org/documentation/tutorial/borg/zope-3-views>`_.
+* `Mastering Plone Training <http://training.plone.org/4/>`_ has several chapters on views.
+* The :doc:`Tutorial app </external/tutorial.todoapp/docs/chapter_3>` has a chapter on views as well.
 
 
 View components
