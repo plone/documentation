@@ -17,6 +17,7 @@ Also some other information that does not fit in any specific category
     normalizing_ids
     monkeypatch
     commandline
+    zope_debug_prompt
     asyncronoustasks
     flowplayer
     navigationtree
