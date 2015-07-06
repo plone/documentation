@@ -103,11 +103,11 @@ Available indexes
 -----------------
 
 To see the full list of available indexes in your catalog, open the
-ZMI (what usually means navigating to *http://yoursiteURL/manage*)
-look for the *portal\_catalog* object tool into the root of your
+ZMI (which usually means navigating to *http://yoursiteURL/manage*)
+look for the *portal\_catalog* object tool in the root of your
 Plone site and check the *Indexes* tab. Note that there are
 different types of indexes, and each one admits different types of
-search parameters, and behave differently. For example,
+search parameters, and behaves differently. For example,
 *FieldIndex* and *KeywordIndex* support sorting, but *ZCTextIndex*
 doesn't. To learn more about indexes, see
 `The Zope Book, Searching and Categorizing Content <http://docs.zope.org/zope2/zope2book/SearchingZCatalog.html>`_.
@@ -125,7 +125,7 @@ Subject
         catalog.searchResults(Subject=('cats', 'dogs'))
 
 portal\_type
-    As its name suggest, search for content whose portal type is
+    As its name suggests, search for content whose portal type is
     indicated. For example:
     ::
 
@@ -255,11 +255,11 @@ For more information, see
 * http://www.mail-archive.com/zope-dev@zope.org/msg17514.html
 
 
-Counting value of an specific index
------------------------------------
+Counting value of a specific index
+----------------------------------
 
 The efficient way of counting the number value of an index is to work directly in this index. For example we want to count the number of each portal_type. Quering via search results is a performance bootleneck for that. Iterating on all brains put those in zodb cache. This method is also a memory bottleneck.
-So the good way for do that
+So a good way to achieve this would be::
 
 .. code-block:: python
 
@@ -314,11 +314,11 @@ portal_catalog query takes *sort_on* argument which tells the index used for sor
 *sort_order* defines sort direction. It can be string "reverse".
 
 Sorting is supported only on FieldIndexes.
-Due to nature of searchable text indexes (they index split text, not strings) they
+Due to the nature of searchable text indexes (they index split text, not strings) they
 cannot be used for sorting. For example, to do sorting by title, an index
 called *sortable_tite* should be used.
 
-Example how to sort by id::
+Example of how to sort by id::
 
     results = context.portal_catalog.searchResults(sort_on="id",
                                                    portal_type="Document",
@@ -420,7 +420,7 @@ Bypassing query security check
 
         Security: All portal_catalog queries are limited to the current user permissions by default.
 
-If you want to bypass this restrictions, use the
+If you want to bypass this restriction, use the
 unrestrictedSearchResults() method.
 
 Example::
@@ -439,7 +439,7 @@ Bypassing language check
 .. note::
 
         All portal_catalog() queries are limited to the selected language of
-        current user. You need to explicitly bypass the language check if you
+        the current user. You need to explicitly bypass the language check if you
         want to do multilingual queries.
 
 Example of how to bypass language check::
@@ -531,7 +531,7 @@ example:
 Query multiple values
 =====================
 
-``KeywordIndex`` index type indexes list of values.
+``KeywordIndex`` index type indexes lists of values.
 It is used e.g. by Plone's categories (subject) feature
 and ``object_provides`` provided interfaces index.
 
@@ -558,7 +558,7 @@ Attributes of record objects
 
 Below is an example of matching any of multiple values gives as a Python list in KeywordIndex.
 It queries all event types and recurrence_days KeywordIndex must match
-any of given dates::
+any of the given dates::
 
         # Query all events on the site
         # Note that there is no separate list for recurrent events
@@ -610,7 +610,7 @@ Caveats
 
       catalog(object_provides="Products.ATContentTypes.interface.IATDocument")
 
-  , because Products.ATContentTypes.interface imports everything from
+  because Products.ATContentTypes.interface imports everything from
   ``document.py``. But this will work::
 
       catalog(object_provides="Products.ATContentTypes.interface.document.IATDocument")
