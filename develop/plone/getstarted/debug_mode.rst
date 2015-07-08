@@ -45,12 +45,12 @@ In **debug mode**
      Plone does not reload .py or .zcml files in the debug mode by default.
 
 Reloading Python code
-========================
+=====================
 
 Reloading Python code automatically can be enabled with `sauna.reload add-on <https://pypi.python.org/pypi/sauna.reload/>`_.
 
 Javascript and CSS issues with production mode
-=================================================
+==============================================
 
 See **portal_css** and **portal_javascript** in ZMI to inspect how your scripts are bundled.
 
@@ -75,7 +75,7 @@ Possible things to debug and force refresh of static assets
 
 
 Starting Plone in debug mode on Microsoft Windows
-============================================================
+=================================================
 
 This document explains how to start and run the latest Plone (Plone 4.1.4) on Windows 7. This document explains post-installer steps on how to start and enter into a Plone site.
 Installation
@@ -88,7 +88,7 @@ This quick start has been tested on Windows 7.  Installation remains the same on
 
 2. The Plone buildout directory will be installed in C:\\Plone41
 
-3. The installer will launch your Plone instance when it finishes.  To connect, direct your browser to: http://127.0.0.1:8080
+3. The installer will launch your Plone instance when it finishes.  To connect, direct your browser to: http://localhost:8080
 
 .. note::
    In the buildout bin directory you'll find the executable files to control Plone instance.
@@ -123,7 +123,7 @@ When you launch Plone in debug or daemon mode it will take a few moments to laun
 
 When the instance is running and listing to port 8080, point your browser to address on your local computer::
 
-   http://127.0.0.1:8080
+   http://localhost:8080
 
 The Plone welcome screen will load and you can create your first Plone site directly by clicking the **Create a new Plone Site** button.
 
@@ -135,7 +135,7 @@ A form will load asking for the *Path Identifier* (aka the site id) and *Title* 
 To create your site, fill in this form and click the *Create Plone Site* button.  Plone will then create and load your site.
 
 .. note::
-   The url of your local Plone instance will end with the site id you set when setting up your site.  If the site id were *Plone* then the resultant URL is: *http://127.0.0.1:8080/Plone*.
+   The url of your local Plone instance will end with the site id you set when setting up your site.  If the site id were *Plone* then the resultant URL is: *http://localhost:8080/Plone*.
 
 Congratulations! You should be now logged in as an admin to your new Plone instance and you'll see the front page of Plone.
 
@@ -159,7 +159,7 @@ Type in command::
 Press CTRL+C to stop.
 
 Clustered installation ("zeo")
---------------------------------------------
+------------------------------
 
 If you have ZEO cluster mode installation you can start individual processes in debug mode::
 
