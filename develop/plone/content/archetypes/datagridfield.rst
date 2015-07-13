@@ -72,7 +72,7 @@ and install example types on your computer.
 
 Refer `unit tests <https://github.com/collective/Products.DataGridField/blob/master/Products/DataGridField/tests/test_columns.py>`_ for more code examples.
 
-Refer `Archetypes manual <http://plone.org/documentation/manual/archetypes-developer-manual>`_ for basics Archetypes developer information.
+Refer `Archetypes manual <https://plone.org/documentation/manual/archetypes-developer-manual>`_ for basics Archetypes developer information.
 
 .. _DataGridField: http://www.google.com/url?sa=t&source=web&ct=res&cd=1&url=http%3A%2F%2Fplone.org%2Fproducts%2Fdatagridfield&ei=_ZtjSuiXDomD-Qbx0830DA&usg=AFQjCNGWg4ZN7xjGb7kCJwtLNbMPmmVWtQ&sig2=V-ZebsEdHEzPKIRQqjaanQ
 

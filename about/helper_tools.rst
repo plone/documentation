@@ -16,7 +16,7 @@ Online tools:
 -------------
 
 - `rst.ninjs.org <http://rst.ninjs.org/>`_ and a fork with more Sphinx support at `livesphinx.herokuapp.com <http://livesphinx.herokuapp.com/>`_
-- `notex.ch <https://notex.ch/>`_
+- `notex.ch <https://www.notex.ch/>`_
 
 
 Offline tools:
@@ -63,7 +63,7 @@ There is a nice plugin called `vim-markdown <https://github.com/plasticboy/vim-m
 
 If you prefer a more *advanced* plugin with enhanced functionalities you could use `Riv <https://github.com/Rykka/riv.vim>`_.
 
-**restview** `ReStructuredText viewer <https://pypi.python.org/pypi/restview>`_
+**Restview** `ReStructuredText viewer <https://pypi.python.org/pypi/restview>`_
 A viewer for ReStructuredText documents that renders them on the fly.
 
 .. code-block:: rst

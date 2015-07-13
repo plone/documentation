@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -68,18 +68,18 @@ msgstr "Contributing"
 # d00d5e1442d74a13a78014492680e9a1
 #: ../about/contributing.rst:26
 msgid ""
-"The Plone Documentation by `Plone Foundation <http://plone.org>`_ is "
+"The Plone Documentation by `Plone Foundation <https://plone.org>`_ is "
 "licensed under a `Creative Commons Attribution 4.0 International License "
 "<http://creativecommons.org/licenses/by/4.0/>`_."
-msgstr "The Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_."
+msgstr "The Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_."
 
 # 50411d9a23f447769f489a8517c975a5
 #: ../about/contributing.rst:28
 msgid ""
 "If you want to contribute to this documentation, you can do so directly by "
 "making a pull request, if you have filled out a `Contributor Agreement "
-"<http://plone.org/foundation/contributors-agreement>`_."
-msgstr "If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <http://plone.org/foundation/contributors-agreement>`_."
+"<https://plone.org/foundation/contributors-agreement>`_."
+msgstr "If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_."
 
 # faab08cf2e8d4b0a9a53c82914366b15
 #: ../about/contributing.rst:30

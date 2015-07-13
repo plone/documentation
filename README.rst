@@ -24,7 +24,7 @@ for now you can do the following on a \*\nix system::
     virtualenv --no-site-packages papyrus
     (make sure you have a 2.7 virtualenv)
     cd papyrus
-    ./bin/python bootstrap.py
+    ./bin/python bootstrap-buildout.py
     bin/buildout
     (wait a bit, as this also enables robot-framework it needs to download quite a few eggs)
     make externals

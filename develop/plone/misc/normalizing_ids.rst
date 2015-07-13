@@ -94,5 +94,5 @@ folderish object that will contain our new object.::
 Other
 -----
 
-`Enforcing normalization for old migrated context <http://plone.org/documentation/how-to/how-to-force-all-your-old-content-into-the-new-normalized-id-format>`_.
+`Enforcing normalization for old migrated context <https://plone.org/documentation/how-to/how-to-force-all-your-old-content-into-the-new-normalized-id-format>`_.
 

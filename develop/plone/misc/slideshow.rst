@@ -15,11 +15,11 @@ Introduction
 
 Header slideshows
 
-* `Products.Carousel <http://plone.org/products/carousel/>`_
+* `Products.Carousel <https://plone.org/products/carousel/>`_
 
 AJAX'y image pop-ups
 
-* http://plone.org/products/pipbox
+* https://plone.org/products/pipbox
 
 Migrate Products.Slideshow to Products.Carousel
 ==================================================

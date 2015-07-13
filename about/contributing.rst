@@ -16,7 +16,7 @@ Reaching the documentation team
 The Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
 To reach this team for any questions please contact
 
-* `Documentation team mailing list <https://plone.org/support/forums/docs>`_
+* `Documentation team mailing list <https://plone.org/support/forums-old/docs>`_
 
 * *#plone-docs* IRC channel on irc.freenode.net
 
@@ -26,12 +26,13 @@ For news and updates you can also follow `PloneDocs <https://twitter.com/plonedo
 
 If you want to know more about the  work-flow, long term ideas and other upcoming improvements you can check the `board <https://trello.com/b/M8Eyzlld/plone-docs>`_ on Trello.
 
+
 License
 =======
 
-The Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
+The Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
-If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <http://plone.org/foundation/contributors-agreement>`_.
+If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_.
 
 If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team, for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net
 Basically, all we need is your written confirmation that you are agreeing your contribution can be under Creative Commons. You can also add in a comment with your pull request "I, <full name>, agree to have this published under Creative Commons 4.0 International BY".

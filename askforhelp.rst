@@ -25,7 +25,7 @@ Where to search:
 
 - :doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error messages - for enabling debug mode and common tracebacks.
 
-- `Plone development tracker <http://dev.plone.org/plone>`_ - for known related issues (plone.org account needed).
+- `Github issue tracker <https://github.com/plone/Products.CMFPlone/issues>`_ - for known related issues
 
 If at any point you see any kind of error message (including error codes) – put them in the topic. Never write anything like “I see some error message”. Be specific.
 

@@ -13,7 +13,7 @@ Introduction
 
 See the add-on
 
-* http://plone.org/products/facebook-like-button
+* https://plone.org/products/facebook-like-button
 
 for non-programming integration.
 

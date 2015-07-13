@@ -15,7 +15,7 @@ menu, you will need to contact your site manager and request that
    *** Variables ***
 
    @{CONFIGURE_PACKAGES}  plone.app.iterate
-   @{APPLY_PROFILES}  plone.app.iterate:plone.app.iterate
+   @{APPLY_PROFILES}  plone.app.contenttypes:default plone.app.iterate:plone.app.iterate
    ${REGISTER_TRANSLATIONS}  ${CURDIR}/../../_locales
 
    *** Test Cases ***

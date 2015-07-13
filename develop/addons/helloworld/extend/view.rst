@@ -10,7 +10,7 @@ Add a custom view
 
 In this tutorial we add a browser view. Plone uses views to display dynamic content.
 
-There are now two ways to add views to Plone; Zope 3 and Grok. This tutorial covers the Zope 3 method. For more information about views, see the :doc:`Views and viewlets </develop/plone/views/index>` section of the developer manual.
+For more information about views, see the :doc:`Views and viewlets </develop/plone/views/index>` section.
 
 There are 3 parts to our view; a Python class, a page template, and a ZCML registration. We will add the two files and edit configure.zcml in the **browser** directory.
 

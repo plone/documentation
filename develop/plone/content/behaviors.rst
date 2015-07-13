@@ -4,7 +4,7 @@
 
 Behaviors allow you the extend the functionality of existing content.
 
-* `Tutorial <http://plone.org/products/dexterity/documentation/manual/behaviors>`_
+* `Tutorial <https://plone.org/products/dexterity/documentation/manual/behaviors>`_
 
 * `Source code <https://github.com/plone/plone.behavior/blob/master/plone/behavior/>`_
 

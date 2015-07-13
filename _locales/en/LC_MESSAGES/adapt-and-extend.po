@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) The Plone Foundation
 # This file is distributed under the same license as the Plone Documentation package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
@@ -894,9 +894,9 @@ msgstr "Since Plone 3, Plone installations are managed using :term:`Buildout`. P
 # 264591ff5acc48c6b6257caf7e530d42
 #: ../adapt-and-extend/install_add_ons.rst:28
 msgid ""
-"the `Plone product <http://plone.org/products>`_ download area contains "
+"the `Plone product <https://plone.org/products>`_ download area contains "
 "popular add-ons for Plone"
-msgstr "the `Plone product <http://plone.org/products>`_ download area contains popular add-ons for Plone"
+msgstr "the `Plone product <https://plone.org/products>`_ download area contains popular add-ons for Plone"
 
 # 0fcb4504114944408073c49493b8e9bf
 #: ../adapt-and-extend/install_add_ons.rst:29
@@ -945,11 +945,11 @@ msgstr "Finding add-ons"
 # 0f25df845c3b48b6901dc76a54d6d264
 #: ../adapt-and-extend/install_add_ons.rst:41
 msgid ""
-"Browse the `plone.org product area <http://plone.org/products>`_ or `search "
+"Browse the `plone.org product area <https://plone.org/products>`_ or `search "
 "on PyPi "
 "<https://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for"
 " possible add-ons."
-msgstr "Browse the `plone.org product area <http://plone.org/products>`_ or `search on PyPi <https://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for possible add-ons."
+msgstr "Browse the `plone.org product area <https://plone.org/products>`_ or `search on PyPi <https://pypi.python.org/pypi?:action=search&term=plone&submit=search>`_ for possible add-ons."
 
 # 231b2dd488b24956958749cf3394ffd1
 #: ../adapt-and-extend/install_add_ons.rst:43
@@ -1065,11 +1065,11 @@ msgstr "More detailed instructions for installing Plone add-ons are available fo
 #: ../adapt-and-extend/install_add_ons.rst:112
 msgid ""
 "Please visit the  :doc:`help asking guidelines</askforhelp>` and `Plone "
-"support <http://plone.org/support>`_ options page to find further help if "
+"support <https://plone.org/support>`_ options page to find further help if "
 "these instructions are not enough. Also, contact the add-on author, as "
 "listed on Plone product page, to ask specific instructions regarding a "
 "particular add-on."
-msgstr "Please visit the  :doc:`help asking guidelines</askforhelp>` and `Plone support <http://plone.org/support>`_ options page to find further help if these instructions are not enough. Also, contact the add-on author, as listed on Plone product page, to ask specific instructions regarding a particular add-on."
+msgstr "Please visit the  :doc:`help asking guidelines</askforhelp>` and `Plone support <https://plone.org/support>`_ options page to find further help if these instructions are not enough. Also, contact the add-on author, as listed on Plone product page, to ask specific instructions regarding a particular add-on."
 
 # a1932bc282b94e288effe16f9246d8f4
 #: ../adapt-and-extend/theming/deliverance.rst:3
@@ -2295,8 +2295,8 @@ msgstr "Conditional comments (IE)"
 
 # 0b2dbb7108fe4677924736796e341b29
 #: ../adapt-and-extend/theming/templates_css/css.rst:133
-msgid "http://plone.org/products/plone/roadmap/232"
-msgstr "http://plone.org/products/plone/roadmap/232"
+msgid "https://plone.org/products/plone/roadmap/232"
+msgstr "https://plone.org/products/plone/roadmap/232"
 
 # fe66962c82fc4fa887e37238ad6fbd96
 #: ../adapt-and-extend/theming/templates_css/css.rst:135
@@ -2594,8 +2594,8 @@ msgstr "http://diazo.org"
 
 # da87484377e749b3a1005cd7ca04b3a3
 #: ../adapt-and-extend/theming/templates_css/diazo.rst:86
-msgid "http://plone.org/products/collective.examples.diazo"
-msgstr "http://plone.org/products/collective.examples.diazo"
+msgid "https://plone.org/products/collective.examples.diazo"
+msgstr "https://plone.org/products/collective.examples.diazo"
 
 # 603d36a798134949acb4f160d297f9fe
 #: ../adapt-and-extend/theming/templates_css/diazo.rst:90
@@ -3450,9 +3450,9 @@ msgstr "Plone template element map"
 #: ../adapt-and-extend/theming/templates_css/template_basics.rst:325
 msgid ""
 "Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers "
-"are described `here <http://plone.org/documentation/manual/theme-"
+"are described `here <https://plone.org/documentation/manual/theme-"
 "reference/elements/elementsindexsunburst4>`_."
-msgstr "Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers are described `here <http://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_."
+msgstr "Plone 4 ships with the *Sunburst* theme. Its viewlets and viewlets managers are described `here <https://plone.org/documentation/manual/theme-reference/elements/elementsindexsunburst4>`_."
 
 # 2519ebb3d06c4c49ba475862b6de9dfa
 #: ../adapt-and-extend/theming/templates_css/template_basics.rst:329
@@ -3917,9 +3917,9 @@ msgid ""
 "development, so that people with little HTML and CSS knowledge can create "
 "themes without the need to know the underlying Python, PHP or whatever. It "
 "also enables integration of different services and sites to one unified user"
-" experience. For example, XDV is used by `plone.org <http://plone.org>`_ to "
+" experience. For example, XDV is used by `plone.org <https://plone.org>`_ to "
 "integrate the Plone CMS and the Trac issue tracker."
-msgstr "XDV is an external HTML theming engine, a.k.a. a theming proxy, which allows you to mix and match HTML and CSS from internal and external sites by using simple XML rules. It separates the theme development from the site development, so that people with little HTML and CSS knowledge can create themes without the need to know the underlying Python, PHP or whatever. It also enables integration of different services and sites to one unified user experience. For example, XDV is used by `plone.org <http://plone.org>`_ to integrate the Plone CMS and the Trac issue tracker."
+msgstr "XDV is an external HTML theming engine, a.k.a. a theming proxy, which allows you to mix and match HTML and CSS from internal and external sites by using simple XML rules. It separates the theme development from the site development, so that people with little HTML and CSS knowledge can create themes without the need to know the underlying Python, PHP or whatever. It also enables integration of different services and sites to one unified user experience. For example, XDV is used by `plone.org <https://plone.org>`_ to integrate the Plone CMS and the Trac issue tracker."
 
 # f96b51e47b9b4e60bb788913e4f2647a
 #: ../adapt-and-extend/theming/templates_css/xdv.rst:24
@@ -4010,9 +4010,9 @@ msgstr "http://reinout.vanrees.org/weblog/2010/12/29/xdv-setup.html"
 # b10455019be64460a95bc919dd4459af
 #: ../adapt-and-extend/theming/templates_css/xdv.rst:78
 msgid ""
-"http://plone.org/products/collective.xdv/documentation/reference-"
+"https://plone.org/products/collective.xdv/documentation/reference-"
 "manual/theming"
-msgstr "http://plone.org/products/collective.xdv/documentation/reference-manual/theming"
+msgstr "https://plone.org/products/collective.xdv/documentation/reference-manual/theming"
 
 # 53b9a183032b4233adc03ac504b27cf0
 #: ../adapt-and-extend/theming/templates_css/xdv.rst:80

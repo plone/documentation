@@ -27,8 +27,6 @@ Introduction
 
 Read more in
 
-* http://plone.org/products/dexterity/documentation/manual/five.grok/core-components/utilities
-
 * `zope.component documentation <http://docs.zope.org/zope.component/>`_.
 
 Local and global utilities
@@ -114,7 +112,7 @@ To use this class::
 Registering a local utility
 =============================
 
-* http://plone.org/documentation/manual/developer-manual/generic-setup/reference/component-registry
+* https://plone.org/documentation/manual/developer-manual/generic-setup/reference/component-registry
 
 * http://davisagli.com/blog/registering-add-on-specific-components-using-z3c.baseregistry
 
@@ -209,7 +207,7 @@ Unregistering utilities
 Removing persistent local utilities
 ===================================
 
-* http://plone.org/documentation/kb/manually-removing-local-persistent-utilities
+* https://plone.org/documentation/kb/manually-removing-local-persistent-utilities
 * http://blog.fourdigits.nl/removing-a-persistent-local-utility
 * http://blog.fourdigits.nl/removing-a-persistent-local-utility-part-ii
 

@@ -29,11 +29,15 @@ for ready solution, for examples, for inspiration.
 
 * https://github.com/collective/collective.portletalias
 
-* http://plone.org/products/contentwellportlets
+* https://plone.org/products/contentwellportlets
 
 * https://github.com/miohtama/imageportlet
 
 * https://github.com/collective/collective.cover
+
+.. note::
+
+    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
 Creating a portlet
 ------------------
@@ -43,6 +47,9 @@ Creating a portlet
 
 * Use project specific paster command *paster addcontent portlet* to create a code
   skeleton for your new portlet.
+
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
 
 Subclassing a portlet
 ---------------------
@@ -88,12 +95,12 @@ whose portlet you are going to override.
 
 More information
 
-* http://plone.org/documentation/manual/theme-reference/elements/portlet/override-the-portlets-in-plone-3.0
+* https://plone.org/documentation/manual/theme-reference/elements/portlet/override-the-portlets-in-plone-3.0
 
 update() and render()
 -----------------------
 
-These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto>`_.
+These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py>`_.
 
 available property
 -------------------
@@ -335,7 +342,7 @@ Example code::
                                             # et. al. can resolve permission inheritance
                                             renderer = renderer.__of__(content)
 
-                                            # Seee http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto
+                                            # Seee https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py
                                             renderer.update()
                                             html = renderer.render()
                                             print "Got HTML output:" + html
@@ -353,7 +360,7 @@ For more information about portlet assignments and managers, see
 
 * https://github.com/plone/plone.portlets/blob/master/plone/portlets/interfaces.py
 
-* http://svn.zope.org/zope.contentprovider/trunk/src/zope/contentprovider/interfaces.py?rev=98212&view=auto (for portlet renderers)
+* https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py (for portlet renderers)
 
 Checking if a certain context portlet is active on a page
 ----------------------------------------------------------
@@ -579,9 +586,9 @@ a template or fancy view.  To do this in code do this::
 
 Or just do it using GenericSetup like a sane person:
 
-* http://plone.org/documentation/manual/developer-manual/generic-setup/reference/portlets
+* https://plone.org/documentation/manual/developer-manual/generic-setup/reference/portlets
 
-* http://plone.org/products/plone/roadmap/203
+* https://plone.org/products/plone/roadmap/203
 
 Creating a new portlet manager
 ----------------------------------

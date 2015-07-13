@@ -15,6 +15,8 @@
 
    ${FIXTURE}  plone.app.robotframework.PLONE_ROBOT_TESTING
    @{DIMENSIONS}  640  1024
+   @{APPLY_PROFILES}  plone.app.contenttypes:default   plone.app.iterate:plone.app.iterate
+
 
    *** Keywords ***
 

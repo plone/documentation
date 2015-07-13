@@ -94,12 +94,18 @@ Tutorials
 
 Mastering Plone is intended as a week-long training for people who are new to Plone or want to learn about the current best-practices of Plone-development.
 
-It is in active use by various trainers in the Plone world, and is being developed as a 'collaborative syllabus'. 
+It is in active use by various trainers in the Plone world, and is being developed as a 'collaborative syllabus'.
 
+
+`"Mastering Mockup"-training <https://mockup-training.readthedocs.org/en/latest/index.html>`_
+
+This training was created to teach about Mockup, the new Frontend library for Plone 5 .
 
 .. toctree::
    :maxdepth: 1
 
-   /external/tutorial.todoapp/docs/index
+:doc:`"Plone Todo list application tutorial" </external/tutorial.todoapp/docs/index>`
+
+You will learn to: create custom content-types Through-The-Web, create and apply custom workflows, create custom listings, dump your changes into a filesytem package to future-proof them and write tests for your filesystem package.
 
 

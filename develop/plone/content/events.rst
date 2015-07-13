@@ -24,13 +24,13 @@ shows published events in a calendar view.
 Further reading
 ----------------
 
-`vs.event <http://plone.org/products/vs.event>`_
+`vs.event <https://plone.org/products/vs.event>`_
     recurring events for Plone 3 and 4.0
 
 `plone.app.event <http://www.zopyx.com/blog/plone.app.event>`_
     recurring events for Plone 4.1+
 
-`Dateable <http://plone.org/products/dateable>`_
+`Dateable <https://plone.org/products/dateable>`_
     Plone code to bring all the different calendar extensions together
 
 * http://www.inigo-tech.com/blog/customizing-p4a.calendar-and-the-power-of-collections-and-views

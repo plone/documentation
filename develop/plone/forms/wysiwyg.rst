@@ -26,19 +26,21 @@ attacks. This will make Plone to strip away from HTML
 
 * Some other potentially unsafe tags and attributes
 
-If you need to put `<scrip>` tag on your content text in TinyMCE you can disable this security feature.
+If you need to put a `<script>` tag on your content text in TinyMCE you can disable this security feature.
 
 .. warning::
 
         If you don't trust all of your site editors, then this will open your site for an attack.
 
-In the Zope Management Interface, at the top of a Plone site, go to portal_transforms and open the safe_html transform. Disable it by putting a "1" in the disable_transform field and saving.
+**Step 1:** Turn off Plone’s safe_html transform. Go to /portal_transforms/safe_html in the ZMI, and enter a 1 in the ‘disable_transform’ box. This prevents Plone from removing tags and attributes while rendering rich text.
 
-A site restart might be required depending on Plone version.
+**Step 2:** Set the "X-XSS-Protection: 0" response header. This can be done in your frontend webserver such as apache or nginx. Alternatively, if you only need to disable the protection for users who have permission to edit, you can add this to the site’s main_template:
+
+    tal:define="dummy python:checkPermission('Modify portal content', context) and request.RESPONSE.setHeader('X-XSS-Protection', '0');"
 
 More info
 
-* http://stackoverflow.com/questions/5796643/make-plone-accept-any-html-input
+* http://glicksoftware.com/blog/disable-html-filtering
 
 
 
@@ -131,7 +133,7 @@ Archetypes
 
 For Archetypes see
 
-* http://plone.org/products/tinymce/documentation/how-to/how-to-customize-tinymce-for-an-archetypes-richwidget
+* https://plone.org/products/tinymce/documentation/how-to/how-to-customize-tinymce-for-an-archetypes-richwidget
 
 Rich text transformations
 ---------------------------
@@ -400,7 +402,7 @@ New TinyMCE shortcuts can be registered as global utility via
 
 We'll register our image bank as a shortcut into TinyMCE image dialog.
 
-First make sure your add-on is :doc:`grok'ed </develop/addons/components/grok>`.
+First make sure your add-on is :doc:`grok'ed </appendices/grok>`.
 
 Then drop in the following file ``shortcut.py`` file into your :doc:`add-on </develop/plone/getstarted/index>`::
 

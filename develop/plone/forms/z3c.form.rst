@@ -112,7 +112,10 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 
 * Create Plone add-on product using :doc:`Paster </develop/addons/paste>`
 
-* Include :doc:`five.grok support in your add-on </develop/addons/components/grok>`
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
+
+* Include :doc:`five.grok support in your add-on </appendices/grok>`
 
 * Toss ``form.py`` into your add-on product::
 
@@ -296,7 +299,7 @@ Example::
 Customizing form frame
 ------------------------
 
-Please see `plone.app.zc3form README <https://github.com/plone/plone.app.z3cform>`_.
+Please see `plone.app.z3cform README <https://github.com/plone/plone.app.z3cform>`_.
 
 Rendering a form manually
 ---------------------------
@@ -2144,7 +2147,7 @@ Validators
 Introduction
 --------------------
 
-Please read `Dexterity manual validators chapter <http://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/referencemanual-all-pages>`_.
+Please read `Dexterity manual validators chapter <https://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/referencemanual-all-pages>`_.
 
 There are three kind of validation hooks you can use with z3c.form
 
@@ -2222,7 +2225,7 @@ Validators are best added in the schema itself.
 * The plone.form.directives package provides convenient
   `decorators for form validators <https://pypi.python.org/pypi/plone.directives.form#validators>`_.
   If you use ``plone.form.directives`` validators, make sure your package
-  is :doc:`grokked </develop/addons/components/grok>`
+  is :doc:`grokked </appendices/grok>`
   (otherwise validators are not registered).
 
 Example: How to use widget specific validators with ``z3c.form``::
@@ -2270,7 +2273,7 @@ Example: How to use widget specific validators with ``z3c.form``::
 
 More info
 
-* http://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/validation
+* https://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/validation
 
 Custom field specific validation in form action handlers and update()
 ------------------------------------------------------------------------

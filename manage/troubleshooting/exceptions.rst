@@ -413,6 +413,66 @@ AttributeError: type object 'IRAMCache' has no attribute '__iro__'
 package pindowns are incorrect. If you are copying a site try re-checking that
 source and target buildouts and package versions match.
 
+AttributeError: set_stripped_tags
+---------------------------------
+
+**Traceback**::
+
+    ...
+    Module ZPublisher.Publish, line 60, in publish
+    Module ZPublisher.mapply, line 77, in mapply
+    Module ZPublisher.Publish, line 46, in call_object
+    Module zope.formlib.form, line 795, in __call__
+    Module five.formlib.formbase, line 50, in update
+    Module zope.formlib.form, line 776, in update
+    Module zope.formlib.form, line 620, in success
+    Module plone.app.controlpanel.form, line 38, in handle_edit_action
+    Module zope.formlib.form, line 543, in applyChanges
+    Module zope.formlib.form, line 538, in applyData
+    Module zope.schema._bootstrapfields, line 227, in set
+    Module plone.app.controlpanel.filter, line 173, in set_
+    AttributeError: set_stripped_tags
+
+**Condition**: This error may happen on saving changed settings in the HTML-Filtering controlpanel.
+
+possible cause:
+
+* You have migrated your Plone site from 3.3.5 to Plone 4.x
+
+* For some reason kupu library tool may not be removed in the upgrade step that removed kupu.
+
+**Solution**: Go to the ZMI and delete the kupu library tool manually.
+
+AttributeError: set_stripped_combinations
+-----------------------------------------
+
+**Traceback**::
+
+    ...
+    Module ZPublisher.Publish, line 126, in publish
+    Module ZPublisher.mapply, line 77, in mapply
+    Module ZPublisher.Publish, line 46, in call_object
+    Module zope.formlib.form, line 795, in __call__
+    Module five.formlib.formbase, line 50, in update
+    Module zope.formlib.form, line 776, in update
+    Module zope.formlib.form, line 620, in success
+    Module plone.app.controlpanel.form, line 38, in handle_edit_action
+    Module zope.formlib.form, line 543, in applyChanges
+    Module zope.formlib.form, line 538, in applyData
+    Module zope.schema._bootstrapfields, line 227, in set
+    Module plone.app.controlpanel.filter, line 254, in set
+    AttributeError: set_stripped_combinations
+
+**Condition**: This error may happen on saving changed settings in the HTML-Filtering controlpanel.
+
+possible cause:
+
+* You have migrated your Plone site from 3.3.5 to Plone 4.x
+
+* For some reason kupu library tool may not be removed in the upgrade step that removed kupu.
+
+**Solution**: Go to the ZMI and delete the kupu library tool manually.
+
 BadRequest: The id "xxx" is invalid - it is already in use.
 ------------------------------------------------------------------
 
@@ -1035,7 +1095,7 @@ InvalidInterface: Concrete attribute
 ---------------------------------------
 
 **Traceback**::
-	
+
 	/zope/interface/interface.py", line 495, in __init__
 	    raise InvalidInterface("Concrete attribute, " + name)
 	zope.configuration.xmlconfig.ZopeXMLConfigurationError: File "/Users/mikko/code/buildout.deco/parts/instance/etc/site.zcml", line 15.2-15.55
@@ -1051,7 +1111,7 @@ InvalidInterface: Concrete attribute
     :emphasize-lines: 7
 
 	class IChoiceExamples(model.Schema):
-	
+
 	    multiChoiceCheckbox = zope.schema.List(
 	        title=u"Checkbox multiple choices",
 	        description=u"Select multiple checkboxes using checkboxes and store values in zope.schema.List (maps to python List)." + DEFAULT_MUTABLE_WARNING,
@@ -1222,8 +1282,8 @@ This seems to be Plone 4 issue of some sort.
 Import Products.ATContentTypes before importing LinguagePlone.
 
 .. seealso::
-    * http://plone.org/products/linguaplone/issues/253
-    * http://plone.org/products/linguaplone/issues/253
+    * https://plone.org/products/linguaplone/issues/253
+    * https://plone.org/products/linguaplone/issues/253
 
 NameError: name 'test' is not defined
 -------------------------------------
@@ -1725,7 +1785,7 @@ is problematic and does not uninstall cleanly.
 * Hope your site works again
 
 .. seealso::
-    * http://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
+    * https://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
     * http://opensourcehacker.com/2011/06/01/plone-4-upgrade-results-and-steps/
     * https://pypi.python.org/pypi/wildcard.fixpersistentutilities
 
@@ -2036,7 +2096,7 @@ You should see a warning in logs giving you a hint when running add-on installer
 
 **Solution**: see informatin below (Removing portal tools part)
 
-* http://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
+* https://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
 
 Example: start site debug shell::
 

@@ -124,5 +124,3 @@ If you need to be backward compatible you can add repositorytool.xml (which will
     except ImportError:
         # repositorytool.xml will be used
         pass
-
-<include package="Products.CMFCore" />

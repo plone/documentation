@@ -1,20 +1,42 @@
 Adding Events
-==================
+=============
+
+.. include:: ../../_robot.rst
 
 Plone web sites have a built-in system for managing and showing calendar
 events.
 
 Use the *Add new...* menu for a folder to add an event:
 
-.. figure:: /_static/copy_of_addnewmenu.png
+.. replaces ../../_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-events_add-menu.png
    :align: center
    :alt: add-new-menu.png
 
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show add new event menu
+       Go to  ${PLONE_URL}
+
+       Click link  css=#plone-contentmenu-factories dt a
+       Wait until element is visible
+       ...  css=#plone-contentmenu-factories dd.actionMenuContent
+
+       Mouse over  event
+       Update element style  portal-footer  display  none
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/adding-events_add-menu.png
+       ...  contentActionMenus
+       ...  css=#plone-contentmenu-factories dd.actionMenuContent
 
 
-You will see rather large *Add Event* panel:
+Select **Event** from the drop-down menu, and you'll see rather large *Add Event* panel:
 
-.. figure:: /_static/addevent.png
+.. figure:: ../../_static/addevent.png
    :align: center
    :alt: Add Event
 
@@ -45,13 +67,13 @@ consult a calendar. There is a handy pop-up calendar that offers an
 alternate way to select the day. If you click one of the little calendar
 icons adjacent to the day pull-down, :
 
-.. figure:: /_static/eventstartandendfields.png
+.. figure:: ../../_static/eventstartandendfields.png
    :align: center
    :alt:
 
 you'll see this pop-up calendar:
 
-.. figure:: /_static/calendarpopuppanel.png
+.. figure:: ../../_static/calendarpopuppanel.png
    :align: center
    :alt:
 
@@ -62,4 +84,5 @@ have information and save the event, but remember:
 has been **published*****.
 **
 
-
+.. robotframework::
+   :creates: ../../_robot/adding-events_add-menu.png

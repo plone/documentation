@@ -35,7 +35,7 @@ Example products:
 
 * https://pypi.python.org/pypi/collective.gtags
 
-* http://plone.org/products/collective.habla
+* https://plone.org/products/collective.habla
 
 * https://pypi.python.org/pypi/collective.xdv
 
@@ -44,7 +44,7 @@ Minimal example using ``five.grok``
 
 Below is a minimal example for creating a configlet using:
 
-* :doc:`grok </develop/addons/components/grok>`
+* :doc:`grok </appendices/grok>`
 
 * ``plone.app.registry``
 
@@ -56,7 +56,7 @@ The add-on package in this case is called
 In ``buildout.cfg``, make sure you have the ``extends`` line for
 Dexterity (see the
 `Dexterity installation guide
-<http://plone.org/products/dexterity/documentation/how-to/install>`_.
+<https://plone.org/products/dexterity/documentation/how-to/install>`_.
 
 ``setup.py``::
 

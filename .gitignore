@@ -3,3 +3,4 @@ external
 /_robot/*.png
 broken*
 *.mo
+.DS_Store

@@ -10,7 +10,7 @@ General Tips
 ============
 
 This guide contains some tips for Plone upgrades. For more Information, see
-also the `Official Plone upgrade guide <http://plone.org/documentation/manual/upgrade-guide>`_
+also the `Official Plone upgrade guide <https://plone.org/documentation/manual/upgrade-guide>`_
 
 
 Recommended set-up
@@ -51,7 +51,7 @@ Content Upgrades
 For content migrations, `Products.contentmigration
 <https://pypi.python.org/pypi/Products.contentmigration/>`_  can help you.
 Documentation on how to use it can be found on `plone.org
-<http://plone.org/documentation/kb/migrate-custom-types-with-products.contentmigration>`_.
+<https://plone.org/documentation/kb/migrate-custom-types-with-products.contentmigration>`_.
 
 
 Migration from non-folderish to folderish Archetypes based content types
@@ -124,7 +124,7 @@ Migrate existing comments
 
 Follow the instructions regarding `How to migrate comments to
 plone.app.discussion
-<http://plone.org/products/plone.app.discussion/documentation/how-to/how-to-migrate-comments-to-plone.app.discussion>`_
+<https://plone.org/products/plone.app.discussion/documentation/how-to/how-to-migrate-comments-to-plone.app.discussion>`_
 to migrate existing Plone comments.
 
 

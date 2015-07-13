@@ -10,7 +10,7 @@
     flexible: members can be in different folders, have different workflows
     and states and different profile fields.
 
-    It is also possible to use this approach with dexterity; for that, 
+    It is also possible to use this approach with dexterity; for that,
     use the ``dexterity.membrane`` add-on.
 
 .. contents :: :local:
@@ -36,7 +36,7 @@ user classes.
 Basics
 ======
 
-* Read the `membrane tutorial <http://plone.org/documentation/tutorial/borg/membrane>`_.
+* Read the `membrane tutorial <https://plone.org/documentation/tutorial/borg/membrane>`_.
 
 * See the example code ``Products.membrane.example``.
 

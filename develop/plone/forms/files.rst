@@ -37,7 +37,7 @@ Simple content item file or image field
 Simple upload form example
 ===========================
 
-The example below uses :doc:`five.grok </develop/addons/components/grok>`
+The example below uses :doc:`five.grok </appendices/grok>`
 to declare the form schema and form.
 
 We use `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_
@@ -506,6 +506,6 @@ Example correct form header:
 File-system access in load-balanced configurations
 ==================================================
 
-The `plone.namedfiled <http://plone.org/products/plone.app.blob>`_
+The `plone.namedfiled <https://plone.org/products/plone.app.blob>`_
 product page contains configuration instructions
 for ``plone.namedfile`` and ZEO.

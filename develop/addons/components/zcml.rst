@@ -34,10 +34,6 @@ Plone uses ZCML to:
 
     Everything you can do in ZCML can also be done in Python code.
 
-After developers found ZCML cumbersome, the
-:doc:`Grok framework </develop/addons/components/grok>` was created. Grok makes it possible
-use the ZCA without writing XML by enabling Python directives and function
-decorators to be used instead.
 
 More info:
 
@@ -64,7 +60,7 @@ configuration files using the ``<include>`` directive.
 When Plone is started all ZCML files are read.
 
 * New way: Python egg ``setup.py`` file contains a
-  `autoinclude <http://plone.org/products/plone/roadmap/247>`_
+  `autoinclude <https://plone.org/products/plone/roadmap/247>`_
   hint and is picked up automatically when all the packages are scanned.
 
 * Old way: ZCML reference must be manually added to the ``zcml = section``
@@ -98,7 +94,7 @@ during ZCML parsing, not when site is run.
           myegg-overrides
 
     Since Plone 3.3, the ``z3c.autoinclude`` plugin can do this
-    (http://plone.org/products/plone/roadmap/247/).
+    (https://plone.org/products/plone/roadmap/247/).
 
 
 Specify files and code from another package

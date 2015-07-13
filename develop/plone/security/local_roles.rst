@@ -141,6 +141,22 @@ will reset local roles based on external input ::
                 self.manage_delLocalRoles([username])
 
 
+Blocking local roles
+====================
+
+Local roles may need to be blocked on a particular object by default. This can be
+achieved by add a flag to your content object, like so:
+
+.. code-block:: python
+
+    class MyType(content.Container):
+        """My content type
+        """
+        implements(IMyType)
+        __ac_local_roles_block__ = True
+
+
+
 Local role caching
 ==================
 

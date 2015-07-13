@@ -23,6 +23,13 @@ check box showing the content that will be affected by this change of
 publication state. It shows that the folder "Long-tailed Skipper" will
 be affected by this state change.
 
+A brief aside:  you may have noticed that, apart from the checkbox to the
+left, there is also a checkbox above, next to the headers of the
+*Affected content* section.  The reason is that this same *advanced*
+state panel can be used to make the changes described below to a whole
+list of unrelated content items simultaneously, in bulk, from the 
+*contents* tab of a folder.  More on this later.
+
 The next field, *Include contained items*, is a check box for
 controlling whether the state change affects this item only (the
 "Long-tailed Skipper" folder) or the items it contains and all of any

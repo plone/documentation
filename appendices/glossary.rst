@@ -6,7 +6,7 @@ This is a glossary for some definitions used in this documentation and
 still heavily under construction.
 
 It incorporates the original `glossary on plone.org
-<http://plone.org/documentation/glossary>`_.
+<https://plone.org/documentation/glossary>`_.
 
 .. glossary:: :sorted:
 
@@ -26,7 +26,7 @@ It incorporates the original `glossary on plone.org
         `Docutils <http://docutils.sourceforge.net/index.html>`_.
 
         reStructuredText is a revision and reinterpretation of the
-        `StructuredText <http://plone.org/documentation/glossary/stx>`_ and
+        `StructuredText <https://plone.org/documentation/glossary/stx>`_ and
         `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_
         lightweight markup systems.
 
@@ -278,7 +278,7 @@ It incorporates the original `glossary on plone.org
 
         Motivation, deliverables, risks and a list of people willing to do
         the work must be included. This document is submitted to the
-        `Framework Team <http://plone.org/team/FrameworkTeam>`_, who reviews
+        `Framework Team <https://plone.org/team/FrameworkTeam>`_, who reviews
         the proposal and decides if it's suitable to be included in the next
         Plone release or not.
 
@@ -312,7 +312,7 @@ It incorporates the original `glossary on plone.org
         Based on ideas from the extreme programming (XP) community. A sprint
         is a three to five day focused development session, in which
         developers pair in a room and focus on building a particular
-        subsystem. See http://plone.org/events/sprints
+        subsystem. See https://plone.org/events/sprints
 
     RAD
         Rapid Application Development - A term applied to development tools
@@ -484,13 +484,7 @@ It incorporates the original `glossary on plone.org
         and loaded. This is not the case in Zope 3. If you don't enable it
         explicitly, it will not be found.
 
-        The :term:`grok` project has taken a different approach to the same
-        problem, and allows component registration etc. to be done
-        declaratively from Python code. Both approaches are possible in
-        Plone.
-
-    grok
-        See the grok project documentation.
+        
 
     .po
         The file format used by the :term:`gettext` translation system.

@@ -8,7 +8,7 @@ This document explains the purposes of this, along with questions and answers
 about what this means.
 
 The Plone Contributor Agreement can be found at:
-`http://plone.org/foundation/contributors-agreement/agreement.pdf`_
+`https://plone.org/foundation/contributors-agreement/agreement.pdf`_
 
 About the Plone Contributor Agreement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,10 +114,10 @@ How much would a non-GPL version of Plone cost?
   become available) is contributing financial resources to our community, which can be used to
   further develop, market, and protect the GPL version of Plone.
 
-.. _http://plone.org/foundation/contributors-agreement/agreement.pdf: http://plone.org/foundation/contributors-agreement/agreement.pdf
+.. _https://plone.org/foundation/contributors-agreement/agreement.pdf: https://plone.org/foundation/contributors-agreement/agreement.pdf
 .. _http://dev.plone.org/plone: http://dev.plone.org/plone
 .. _https://github.com/plone: https://github.com/plone
 .. _http://dev.plone.org/collective: http://dev.plone.org/collective
 .. _https://github.com/collective: https://github.com/collective
-.. _Policy for Contributor Agreements and Patches : http://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011
+.. _Policy for Contributor Agreements and Patches : https://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011
 

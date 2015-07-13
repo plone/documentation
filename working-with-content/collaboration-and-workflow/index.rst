@@ -11,3 +11,4 @@ Sharing tab and the State menu.
     advanced-control
     workflow-policies
     collaboration-through-sharing
+    folder-workflow-state

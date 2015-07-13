@@ -6,7 +6,7 @@ basic settings for making an item private or public.
 
 In the upper right corner of the edit panel for any content type --
 folders, images, pages, etc., and any specialized content types -- there
-is a menu on the right for publication state. This *state* menu has
+is a menu for publication state. This *state* menu has
 settings for controlling publication state:
 
 .. figure:: /_static/statemenu1.png
@@ -15,7 +15,7 @@ settings for controlling publication state:
 
 The header for the menu will show the current publication state for the
 content item, such as *State: Private*, as shown above. Private is the
-initial state when you create a content item -- an uploaded image, a
+initial state when you create a content item -- a
 page, a news item -- and in the private state, as the name indicates,
 the content item will generally not be available to visitors to the web
 site. The *Publish* menu choice will make the content item available on

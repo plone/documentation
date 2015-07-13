@@ -134,7 +134,7 @@ Otherwise your Plone site may not
 
 For more information see
 
-* http://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
+* https://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
 
 Not able to log in
 ------------------
@@ -153,4 +153,4 @@ More info
 
 * :doc:`common exceptions which you might encounter when starting Zope </manage/troubleshooting/exceptions>`
 
-* `Plone community support guidelines for asking help <http://plone.org/help>`_
+* `Plone community support guidelines for asking help <https://plone.org/help>`_

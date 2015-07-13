@@ -5,6 +5,7 @@ About this documentation
 .. toctree::
     :maxdepth: 2
 
+    reading
     contributing
     styleguide
     helper_tools

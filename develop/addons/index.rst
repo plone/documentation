@@ -6,10 +6,11 @@ Develop Plone Add ons
 
    bobtemplates.plone/README
    dexterity
+   paster
+   releasing
    components/index
    javascript
    javascript_standards
    ajax
-   five-grok/index
    helloworld/index
    schema-driven-forms/index

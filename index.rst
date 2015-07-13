@@ -4,7 +4,7 @@
 Plone - The Open Source CMS
 ============================
 
-This document is a community maintained manual for the `Plone <http://plone.org>`_ content management system.
+This document is a community maintained manual for the `Plone <https://plone.org>`_ content management system.
 
 The target audience of the documentation includes
 

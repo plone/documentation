@@ -43,7 +43,7 @@ If you lack programming skill or resources, you can still get some things done i
 
 * `Plomino is a a powerful and flexible web-based application builder for Plone <http://www.plomino.net>`_
 
-* `PloneFormGen allows you to build forms in a web browser <http://plone.org/products/ploneformgen>`_
+* `PloneFormGen allows you to build forms in a web browser <https://plone.org/products/ploneformgen>`_
 
 * Plone 4+ comes with through-the-web Dexterity content type editor
 
@@ -80,7 +80,7 @@ Finding and installing add-on packages
 --------------------------------------
 
 Plone add-ons can be found at the `plone.org Products
-<http://plone.org/products>`_ page or at the  `PyPI (the Python
+<https://plone.org/products>`_ page or at the  `PyPI (the Python
 Package index) <https://pypi.python.org>`_.
 
 See the :doc:`Installing add-on packages using buildout
@@ -147,7 +147,7 @@ Plone add-on features
 
 .. note ::
 
-	Explain that Archetypes ar really really old, maybe remove them even ?
+	Explain that Archetypes are old and basically there to support upgraded sites, but that new development should use Dexterity, maybe remove them even ?
 
 Plone add-ons usually:
 

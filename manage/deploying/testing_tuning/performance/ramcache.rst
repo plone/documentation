@@ -27,7 +27,7 @@ Memoizers
 Memoize's RAM cache can be replaced with a ``memcached`` backend with the
 following snippet.
 
-See the set-up for the http://plone.org/ site as an example:
+See the set-up for the https://plone.org/ site as an example:
 
 * https://github.com/plone/Products.PloneOrg/blob/master/src/Products/PloneOrg/caching.py
 

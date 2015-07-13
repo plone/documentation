@@ -1,6 +1,6 @@
-=================
+==========
  Dexterity
-=================
+==========
 
 .. admonition:: Description
 
@@ -9,10 +9,9 @@
 .. contents:: :local:
 
 Introduction
-===================
+============
 
-Dexterity is a subsystem for content objects. It is intended to replace the
-default Archetypes system from Plone 5 and onward and can be already used
+Dexterity is a subsystem for content objects. It is the standard content type for Plone 5 and onward and can be already used
 with Plone 4.
 
 
@@ -59,7 +58,7 @@ Now you can start adding content into your add-on
 
 
 Buildout example
-====================
+================
 
 Below is a sample example which will install
 
@@ -121,7 +120,7 @@ Please tune the versions according the latest available releases.
             plone.app.dexterity
 
     # Some pre-Plone 3.3 packages may need you to register the package name here in
-    # order their configure.zcml to be run (http://plone.org/products/plone/roadmap/247)
+    # order their configure.zcml to be run (https://plone.org/products/plone/roadmap/247)
     # - this is never required for packages in the Products namespace (Products.*)
     zcml =
 
@@ -185,51 +184,7 @@ Please tune the versions according the latest available releases.
 Content creation permissions
 =============================
 
-By default, (global) Dexterity content types are addable to a folder if the
-editor has the ``cmf.AddPortalContent`` permission.
-
-You might want to fine-tune permissions so that only certain privileged
-members are allowed to create certain content types.
-
-.. note:: This behavior differs from Archetypes behavior where each content
-   type was automatically assigned a permission for controlling its
-   creation.
-
-Create a permission with
-:doc:`collective.autopermission </develop/plone/security/permissions>` in
-``configure.zcml``
-
-.. code-block:: xml
-
-    <include package="collective.autopermission" />
-    <permission id="yourcompany.app.AddSuperContent" title="yourcompany.app: Add Super Content" />
-
-Make sure that this permission becomes available on your site by adding the following to ``rolemap.xml``
-
-.. code-block:: xml
-
-    <?xml version="1.0"?>
-    <rolemap>
-       <permissions>
-             <permission
-             name="yourcompany.app: Add Super Content"
-             acquire="True">
-             <role name="Manager" />
-             </permission>
-      </permissions>
-    </rolemap>
-
-Add in your content type GenericSetup XML
-
-.. code-block:: xml
-
-    <!-- add permission -->
-    <property name="add_permission">yourcompany.app.AddSuperContent</property>
-
-Reinstall your add-on.
-
-Confirm that the new permission appears on the :guilabel:`Security` tab in
-the :term:`ZMI` root.
+Please read :doc:`dexterity and permissions </external/plone.app.dexterity/docs/advanced/permissions>`
 
 Exclusion from navigation
 ===========================

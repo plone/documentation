@@ -254,7 +254,7 @@ Cleaning up content annotations
 
    If you store full Python objects in annotations you need to clean them up
    during your add-on uninstallation. Otherwise if Python code is not present
-   you cannot no longer import or export Plone site (annotations are pickled
+   you can no longer import or export Plone site (annotations are pickled
    objects in the database and pickles do no longer work if the code is not
    present).
 
@@ -323,4 +323,4 @@ How to achieve this: https://gist.github.com/toutpt/7680498
 Other resources
 ---------------
 
-* http://plone.org/documentation/tutorial/embrace-and-extend-the-zope-3-way/annotations
+* https://plone.org/documentation/tutorial/embrace-and-extend-the-zope-3-way/annotations

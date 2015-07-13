@@ -43,7 +43,7 @@ There are two kinds of adapters:
 Example adapters users
 -----------------------
 
-* http://plone.org/documentation/manual/theme-reference/buildingblocks/components/themespecific
+* :doc:`Theme specific adapters </old-reference-manuals/plone_3_theming/buildingblocks/components/themespecific>`
 
 Registering an adapter
 ======================
@@ -280,6 +280,6 @@ Local adapters
 Local adapters are effective only inside a certain container, such as a
 folder.  They use ``five.localsitemanager`` to register themselves.
 
-* http://opkode.net/media/blog/schema-extending-an-object-only-inside-a-specific-folder
+* https://opkode.com/blog/2010/01/26/schema-extending-an-object-only-inside-a-specific-folder/
 
 

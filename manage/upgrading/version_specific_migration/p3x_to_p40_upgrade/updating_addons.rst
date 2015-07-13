@@ -216,7 +216,7 @@ P = Abbreviation for "Products".
 | P.ATReferenceBrowserWidget.\                      | archetypes.referencebrowserwidget.ReferenceBrowserWidget              |
 | ATReferenceBrowserWidget.ReferenceBrowserWidget   |                                                                       |
 +---------------------------------------------------+-----------------------------------------------------------------------+
-	
+
 Removed
 -------
 
@@ -362,7 +362,9 @@ If you have any of these imports, you cannot use them anymore::
     Products.CMFPlone.utils.utranslate
     Products.PageTemplates.GlobalTranslationService.getGlobalTranslationService
 
-Instead you need to use zope.i18n.translate directly. See this example changeset from Poi.
+Instead you need to use zope.i18n.translate directly. See this
+`example changeset from Poi <https://github.com/collective/Products.Poi/commit/e37434db3a9001afd66ab838bdfb2fe2b518846f>`_.
+
 
 The tricky thing here is that the order of the arguments has changed so you probably need some more changes. The old call signature was this::
 
@@ -388,7 +390,7 @@ Plone 4 ships with a new type of storage specially designed for large binary obj
 Using plone.app.blob for new content types
 ------------------------------------------
 
-Just use plone.app.field.BlobField or plone.app.field.ImageField instead of atapi.FileField or atapi.ImageField (respectively) in your schema::
+Just use plone.app.blob.field.BlobField or plone.app.blob.field.ImageField instead of atapi.FileField or atapi.ImageField (respectively) in your schema::
 
     from Products.Archetypes import atapi
     from plone.app.blob.field import BlobField, ImageField
@@ -405,7 +407,7 @@ Just use plone.app.field.BlobField or plone.app.field.ImageField instead of atap
                   ),
         ))
 
-Check the `Archetypes Fields Reference <http://plone.org/documentation/manual/developer-manual/archetypes/fields/fields-reference/>`_ for details.
+Check the `Archetypes Fields Reference <https://plone.org/documentation/manual/developer-manual/archetypes/fields/fields-reference/>`_ for details.
 
 Preparing already existing content types
 ----------------------------------------
@@ -605,7 +607,7 @@ If your theme has a custom version of main_template.pt, it will need to be updat
 Updates to template variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Templates that have been overridden must be reviewed to make sure new changes to the original templates are included. Also, check to make sure they are not using `global template variables that are no longer available <http://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/updating-add-on-products-for-plone-4.0/no-more-global-definitions-in-templates>`_.
+Templates that have been overridden must be reviewed to make sure new changes to the original templates are included. Also, check to make sure they are not using `global template variables that are no longer available <https://plone.org/documentation/manual/upgrade-guide/version/upgrading-plone-3-x-to-4.0/updating-add-on-products-for-plone-4.0/updating-add-on-products-for-plone-4.0/no-more-global-definitions-in-templates>`_.
 
 Update the "based-on" declarations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -726,7 +728,7 @@ See `z3c.recipe.testrunner <https://pypi.python.org/pypi/zc.recipe.testrunner#de
 Changes in PloneTestCase setup
 ------------------------------
 
-If you previously set up a `PloneTestCase as explained in the developer manual <http://plone.org/documentation/manual/developer-manual/testing/writing-a-plonetestcase-unit-integration-test>`_
+If you previously set up a `PloneTestCase as explained in the developer manual <https://plone.org/documentation/manual/developer-manual/testing/writing-a-plonetestcase-unit-integration-test>`_
 
 you might need to change the initialization of Zope2 products::
 
@@ -802,7 +804,6 @@ The new way to register a vocabulary is like this:
 
 See more information about :doc:`utilities </develop/addons/components/utilities>` and :doc:`vocabularies </develop/plone/forms/vocabularies>`.
 
-Or register your vocabularies using a grok utility. Read more about :doc:`how vocabularies are handled the grok way </external/plone.app.dexterity/docs/advanced/vocabularies>` in the dexterity developer manual.
 
 Folder implementation changes
 =============================
@@ -815,7 +816,7 @@ plone.app.folder is the new package providing the folder code. plone.app.folder 
 
 `For more information see this discussion. <http://plone.293351.n2.nabble.com/Custom-content-and-migrating-to-plone-app-folder-P4-tp5545767p5633850.html>`_
 
-`Performance impact explained. <http://plone.org/products/plone/features/new-faster-folder-implementation>`_
+`Performance impact explained. <https://plone.org/products/plone/features/new-faster-folder-implementation>`_
 
 Empty/Control_Panel/Products using Plone 4
 ==========================================

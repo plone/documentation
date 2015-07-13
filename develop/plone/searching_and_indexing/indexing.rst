@@ -27,9 +27,9 @@ is fairly readable so taking a quick look through it can be very
 informative.
 
 When using a GenericSetup extension profile to customize the
-Catalog Tool** in your portal, you only need to include XML for the
+Catalog Tool in your portal, you only need to include XML for the
 pieces of the catalog you are changing. To add an index for the
-Archetypes location field, as in the example above, a policy
+Archetypes location field, as in the example below, a policy
 package could include the following
 *profiles/default/catalog.xml*:
 
@@ -107,13 +107,13 @@ To perform queries on custom data, you need to add the corresponding index to po
 E.g. If your :doc:`Archetypes </develop/plone/content/types>` content type has a field::
 
 		schema = [
-		
+
 		   DateField("revisitDate",
 		        widget = atapi.DateWidget(
 		            label="Revisit date"),
 		            description="When you are alarmed this content should be revisited (one month beforehand this date)",
 		            schemata="revisit"
-		            ),		
+		            ),
 		]
 
         class MyContent(...):
@@ -149,9 +149,9 @@ to your Plone database locally.
 * On top right corner, you have a drop down menu to add new indexes. Choose the index type you need to add.
 
 	* Type: FieldIndex
-	
+
 	* Id: getMyCustomValue
-	
+
 	* Indexed attributes: getMyCustomValue
 
 You can use Archetypes accessors methods directly as an indexed attribute.
@@ -197,8 +197,8 @@ It is more cumbersome, however.
 	when an add-on product is reinstalled. If you want to avoid
 	this then you need to create new indexes in add-on
 	installer custom setup step (Python code).
-	
-	
+
+
 The example below is not safe for data prune on reinstall.
 This file is ``profiles/default/catalog.xml``
 It installs a new index called ``revisit_date``
@@ -284,7 +284,7 @@ The difference with metadata is that
 * You store always a value copy as is
 
 To create metadata colums in your ``catalog.xml`` add::
-	
+
 	<?xml version="1.0"?>
 	<object name="portal_catalog" meta_type="Plone Catalog Tool">
 
@@ -350,10 +350,10 @@ Zope 2 product PluginIndexes defines various portal_catalog index types used by 
 
 * FieldIndex stores values as is
 
-* DateIndex and DateRangeIndex store dates (Zope 2 DateTime objects) in searhable format. The latter
+* DateIndex and DateRangeIndex store dates (Zope 2 DateTime objects) in searchable format. The latter
   provides ranged searches.
 
-* KeywordIndex allows keyword-style look-ups (query term is matched against the all values of a stored list)
+* KeywordIndex allows keyword-style look-ups (query term is matched against all the values of a stored list)
 
 * ZCTextIndex is used for full text indexing
 
@@ -633,4 +633,4 @@ Other
 
 .. _its doctest: http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt
 
-.. _Archetypes Developer Manual: http://plone.org/documentation/manual/developer-manual/archetypes
+.. _Archetypes Developer Manual: https://plone.org/documentation/manual/developer-manual/archetypes

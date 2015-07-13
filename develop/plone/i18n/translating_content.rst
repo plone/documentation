@@ -12,11 +12,11 @@ Translated content
 Introduction
 =============
 
-Plone doesn't ships (yet) out of the box with a multilingual solution for
-translating user generated content. There are several add-on products that add
-multilingual support to Plone. Each of them has its own features and drawbacks,
-so be careful when you choose one for your project and be sure that it fulfills
-your needs.
+Plone ships out of the box with a multilingual solution for translating user generated content.
+
+For all practical purposes, you should use that package, plone.app.multilingual
+
+
 
 LinguaPlone
 ===========
@@ -314,7 +314,7 @@ portal_tabs to the current language.
 
 * Source is modified from `The default sections viewlet <https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/viewlets/common.py#L151>`_
 
-* The viewlet is created using :doc:`Grok </develop/addons/components/grok>` framework
+* The viewlet is created using :doc:`Grok </appendices/grok>` framework
 
 Viewlet code::
 

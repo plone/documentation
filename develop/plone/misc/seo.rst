@@ -5,7 +5,7 @@
 .. admonition:: Description
 
 	How to make Plone more search engine aware
-	
+
 .. contents:: :local:
 
 Introduction
@@ -15,7 +15,7 @@ Plone is very search-engine friendly out of the box.
 
 You can further fine-tune your search engine optimizations with PloneSEO add-on
 
-* http://plone.org/products/plone-seo/
+* https://plone.org/products/plone-seo/
 
 robots.txt
 ------------------

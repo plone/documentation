@@ -52,7 +52,7 @@ address, is kept up-to-date with the actual content item. Note that the
 short name should contain no blanks. Use dashes for any blanks in the
 title, and otherwise make it a carbon copy of the title. Also, use
 lowercase for the short name. See also the page "`What's in a Web
-Name? <http://plone.org/documentation/manual/plone-4-user-manual/adding-content/whats-in-a-web-name>`_"
+Name? <https://plone.org/documentation/manual/plone-4-user-manual/adding-content/whats-in-a-web-name>`_"
 for a description of how Plone handles web addressing and the short
 name.
 

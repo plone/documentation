@@ -132,6 +132,7 @@ libxslt-devel
 readline-devel
 make
 which
+python-devel
 
 OpenSUSE
 ********
@@ -144,8 +145,8 @@ Using ``zypper in``
 * libjpeg-devel
 * zlib-devel
 * patch
-* openssl-devel
-* expat-devel
+* libopenssl-devel
+* libexpat-devel
 * man
 
 --build-python will be needed as the system Python 2.7 is missing many

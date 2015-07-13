@@ -58,8 +58,8 @@ Create file ``/etc/nginx/sites-available/yoursite.conf`` with contents::
     add_header Strict-Transport-Security "max-age=15768000; includeSubDomains";
     add_header X-XSS-Protection "1; mode=block";
     add_header X-Content-Type-Options "nosniff";
-    #add_header Content-Security-Policy "default-src 'self'; img-src *; style-src 'unsafe-inline'; script-src 'unsafe-inline' 'unsafe-eval'";
-    add_header Content-Security-Policy-Report-Only "default-src 'self'; img-src *; style-src 'unsafe-inline'; script-src 'unsafe-inline' 'unsafe-eval'";
+    #add_header Content-Security-Policy "default-src 'self'; img-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'";
+    add_header Content-Security-Policy-Report-Only "default-src 'self'; img-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'";
 
     # This specifies which IP and port Plone is running on.
     # The default is 127.0.0.1:8080

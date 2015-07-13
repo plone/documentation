@@ -16,7 +16,7 @@ This document contains information to fix and debug ZODB databases with Plone.
 BLOBs and POSKeyErrors
 ========================
 
-The `Plone CMS <http://plone.org>`_ from version 4.x onwards
+The `Plone CMS <https://plone.org>`_ from version 4.x onwards
 stores files and images uploaded to the `ZODB <http://www.zodb.org/>`_
 as blob.
 They exist in a ``var/blobstorage`` folder structure on the file system,
@@ -67,10 +67,7 @@ To get the Plone site to a working state,
 all content with bad BLOB data must be deleted
 (which usually entails losing some site images and uploaded files).
 
-Below is Python code for a
-`Grok view <http://grok.zope.org/>`_
-which you can drop in to your own
-Plone.
+Below is Python code for a :doc:`BrowserView </develop/plone/views/browserviews>` which you can drop in to your own Plone.
 It creates an admin view which you can call directly via an URL.
 This code will walk through all the content on your Plone site and try to
 delete bad content items with BLOBs missing.
@@ -105,10 +102,10 @@ The code, ``fixblobs.py``::
     from ZODB.POSException import POSKeyError
     from zope.component import queryUtility
     from Products.CMFCore.interfaces import IPropertiesTool
-    from Products.CMFCore.interfaces import IFolderish, ISiteRoot
+    from Products.CMFCore.interfaces import IFolderish
 
     # Plone imports
-    from five import grok
+    from Products.Five import BrowserView
     from Products.Archetypes.Field import FileField
     from Products.Archetypes.interfaces import IBaseContent
     from plone.namedfile.interfaces import INamedFile
@@ -183,7 +180,7 @@ The code, ``fixblobs.py``::
                 recurse(child)
 
 
-    class FixBlobs(grok.CodeView):
+    class FixBlobs(BrowserView):
         """
         A management view to clean up content with damaged BLOB files
 
@@ -194,10 +191,6 @@ The code, ``fixblobs.py``::
         2) Visit site.com/@@fix-blobs URL
 
         """
-        grok.name("fix-blobs")
-        grok.context(ISiteRoot)
-        grok.require("cmf.ManagePortal")
-
         def disable_integrity_check(self):
             """  Content HTML may have references to this broken image - we cannot fix that HTML
             but link integrity check will yell if we try to delete the bad image.
@@ -225,6 +218,17 @@ The code, ``fixblobs.py``::
             print "All done"
             return "OK - check console for status messages"
 
+Registering the view in ZCML:
+
+.. code-block:: xml
+
+    <browser:view
+            for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+            name="fix-blobs"
+            class=".fixblobs.FixBlobs"
+            permission="cmf.ManagePortal"
+            />
+
 
 More info
 
@@ -249,7 +253,7 @@ how many times the request is replayed.
 
 More info
 
-* http://www.zopyx.com/blog/on-zodb-conflict-resolution
+* https://www.andreas-jung.com/contents/on-zodb-conflict-resolution
 
 How to debug which object causes ``ConflictError``\s
 -----------------------------------------------------

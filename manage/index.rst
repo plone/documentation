@@ -1,5 +1,5 @@
-Managing, Administration of Plone
-=================================
+Installing, Managing and Updating Plone
+=======================================
 
 
 .. toctree::
@@ -17,3 +17,4 @@ Automating Plone Deployment
    :maxdepth: 2
 
    /external/ansible-playbook/docs/index
+

@@ -120,7 +120,7 @@ Session cookie lifetime
 
 Setting session cookie lifetime
 
-* http://plone.org/documentation/kb/cookie-duration
+* https://plone.org/documentation/kb/cookie-duration
 
 Sanitizing cookies for the cache
 ====================================

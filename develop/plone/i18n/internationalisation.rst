@@ -138,9 +138,6 @@ To see the translation::
     >>> translate(my_translatable_text)
     u"The text of the translation." # This is the corresponding msgstr from the .po file
 
-For more information see:
-
-* http://grok.zope.org/documentation/how-to/how-to-internationalize-your-application
 
 Marking translatable strings in TAL page templates
 ---------------------------------------------------
@@ -527,7 +524,7 @@ The script will:
     #
     # Copyright 2010 mFabrik http://mfabrik.com
     #
-    # http://plone.org/documentation/manual/plone-community-developer-documentation/i18n/localization
+    # https://plone.org/documentation/manual/plone-community-developer-documentation/i18n/localization
     #
 
     # Assume the product name is the current folder name
@@ -712,7 +709,7 @@ Other
 
 * http://reinout.vanrees.org/weblog/2007/12/14/translating-schemata-names.html
 
-* http://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
+* https://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
 
 * http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
 
