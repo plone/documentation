@@ -22,12 +22,10 @@ Also some other information that does not fit in any specific category
     flowplayer
     navigationtree
     seo
-    paster_templates
     facebook
     slideshow
     upgrade
     html
     sql
     portal_transforms
-    porg
     plone5way
