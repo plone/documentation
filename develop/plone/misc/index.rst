@@ -22,7 +22,6 @@ Also some other information that does not fit in any specific category
     flowplayer
     navigationtree
     seo
-    facebook
     slideshow
     upgrade
     html
