@@ -76,7 +76,7 @@ manage the particular role.
 Setting local role
 ===================
 
-``manage_setLocalRoles`` is defined in `AccessControl.Role.RoleManager <http://svn.zope.org/Zope/trunk/src/AccessControl/Role.py?rev=96262&view=markup>`_.
+``manage_setLocalRoles`` is defined in `AccessControl.rolemanager.RoleManager <https://github.com/zopefoundation/AccessControl/blob/master/src/AccessControl/rolemanager.py#L339>`_.
 
 Example::
 
