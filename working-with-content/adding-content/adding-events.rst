@@ -26,12 +26,8 @@ Use the *Add new...* menu for a folder to add an event:
        Wait until element is visible
        ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
 
-       Pause
-
        Mouse over  event
        Update element style  portal-footer  display  none
-
-       Pause
 
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-events_add-menu.png
