@@ -1,10 +1,10 @@
-======================
+====================
 Indexes and metadata
-======================
+====================
 
 .. admonition:: Description
 
-        How to program your custom fields and data queriable
+        How to program your custom fields and data queries
         through portal_catalog.
 
 .. contents :: :local:
@@ -12,13 +12,13 @@ Indexes and metadata
 What does indexing mean?
 -------------------------
 
-Indexing is the action to make object data searchable.
+Indexing is the action to make object data search-able.
 Plone stores available indexes in the database.
 You can create them through-the-web and inspect existing indexes
 in portal_catalog on Index tab.
 
 The Catalog Tool can be configured through the ZMI or
-programatically in Python but current best practice in the CMF
+problematically in Python but current best practice in the CMF
 world is to use GenericSetup to configure it using the declarative
 *catalog.xml* file. The GenericSetup profile for Plone, for
 example, uses the *CMFPlone/profiles/default/catalog.xml* XML data
@@ -62,7 +62,7 @@ include the following *profiles/default/catalog.xml*:
       the import step for a *catalog.xml* is run a second time (for example
       when you reinstall the product), the indexes specified will be
       destroyed, losing all currently indexed entries, and then re-created
-      fresh (and empty!). If you want to workaround this behaviour, you can
+      fresh (and empty!). If you want to workaround this behavior, you can
       either update the catalog afterwards or add the indexes yourself in
       Python code using a custom import handler.
 
@@ -294,10 +294,10 @@ To create metadata colums in your ``catalog.xml`` add::
 	</object>
 
 
-When indexing happens and how to reindex manually
+When indexing happens and how to re-index manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Content item reindexing is run when
+Content item re-indexing is run when
 
 Plone calls reindexObject() if
 
@@ -323,7 +323,7 @@ You must call reindexObject() if you
 
 .. warning::
 
-    **Unit test warning:** Usually Plone reindexes modified objects at the end of each request (each transaction).
+    **Unit test warning:** Usually Plone re-indexes modified objects at the end of each request (each transaction).
     If you modify the object yourself you are responsible to notify related catalogs about the new object data.
 
 
@@ -350,7 +350,7 @@ Zope 2 product PluginIndexes defines various portal_catalog index types used by 
 
 * FieldIndex stores values as is
 
-* DateIndex and DateRangeIndex store dates (Zope 2 DateTime objects) in searchable format. The latter
+* DateIndex and DateRangeIndex store dates (Zope 2 DateTime objects) in search-able format. The latter
   provides ranged searches.
 
 * KeywordIndex allows keyword-style look-ups (query term is matched against all the values of a stored list)
@@ -392,7 +392,7 @@ Some interesting columns
 Custom sorting by title
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-sortable_title is type of FieldIndex (raw value) and normal ``Title`` index is type of searchable text.
+sortable_title is type of FieldIndex (raw value) and normal ``Title`` index is type of search-able text.
 
 ``sortable_title`` is generated from ``Title`` in ``Products/CMFPlone/CatalogTool.py``.
 
@@ -426,118 +426,9 @@ Related ``configure.zcml``
     <adapter factory=".indexes.sortable_title" name="sortable_title" />
 
 
-TextIndexNG3
-------------
-
-`TextIndexNG3 <http://www.zopyx.com/projects/TextIndexNG3>`_ is advanced text indexing solution for Zope.
-
-Please read TextIndexNG3 README.txt regarding how to add support for custom fields.
-Besides installing TextIndexNG3 in GenericSetup XML you need to provide a custom
-indexing adapter.
-
-# Add TextIndexNG3 in catalog.xml. Example::
-
-    <index name="getYourFieldName" meta_type="TextIndexNG3">
-
-      <field value="getYourFieldName"/>
-
-      <autoexpand value="off"/>
-      <autoexpand_limit value="4"/>
-      <dedicated_storage value="False"/>
-      <default_encoding value="utf-8"/>
-      <index_unknown_languages value="True"/>
-      <language value="en"/>
-      <lexicon value="txng.lexicons.default"/>
-      <query_parser value="txng.parsers.en"/>
-      <ranking value="True"/>
-      <splitter value="txng.splitters.simple"/>
-      <splitter_additional_chars value="_-"/>
-      <splitter_casefolding value="True"/>
-      <storage value="txng.storages.term_frequencies"/>
-      <use_normalizer value="False"/>
-      <use_stemmer value="False"/>
-      <use_stopwords value="False"/>
-    </index>
-
-# Create adapter which will add TextIndexNG3 indexing support for your custom fields. Example::
-
-    import logging
-
-    from Products.TextIndexNG3.adapters.cmf_adapters import CMFContentAdapter
-    from zope.component import adapts
-
-    logger = logging.getLogger("Plone")
-
-    class TextIndexNG3SearchAdapter(CMFContentAdapter):
-        """ Adapter which provides custom field specific index information for TextIndexNG3
-        """
-
-        # Your content marker interface here
-        adapts(IDescriptionBase)
-
-        def indexableContent(self, fields):
-            """ Produce TextIndexNG3 indexing information for the object
-
-            Traceback::
-
-                  ZCatalog.py(536)catalog_object()
-                -> update_metadata=update_metadata)
-                  Catalog.py(360)catalogObject()
-                -> blah = x.index_object(index, object, threshold)
-                  Products/TextIndexNG3/TextIndexNG3.py(91)index_object()
-                -> result = self.index.index_object(obj, docid)
-                  Products/TextIndexNG3/src/textindexng/index.py(114)index_object()
-                -> default_language=self.languages[0])
-                  Products/TextIndexNG3/src/textindexng/content.py(99)extract_content()
-                -> icc = adapter.indexableContent(fields)
-                > indexableContent()
-
-            """
-            logging.debug("Indexing" + str(self.context))
-
-            # Use superclass to construct generic field adapters (id, title, description, SearchableText)
-            icc = CMFContentAdapter.indexableContent(self, fields)
-
-            # These fields have their own TextIndexNG3 indexes which
-            # are queried separately from SearchableText
-            accessors = [ "getClassifications", "getOtherNames" ]
-
-            for accessor in accessors:
-
-                try:
-                    method = getattr(self.context, accessor)
-                except AttributeError:
-                    logger.warn("Declared indexing for unsuppoted accessor:" + accesor)
-                    continue
-
-                value = method()
-
-                # We might have a value which is not a real string,
-                # but must be first stringified
-                try:
-                    value = unicode(value)
-                except UnicodeDecodeError, e:
-                    # Bad things happen here?
-                    logger.warn("Failed to index field:" + accessor)
-                    logger.exception(e)
-                    continue
-
-                # Convert value to text format (utf-8) expected
-                # by the indexer
-                text = self._c(value)
-
-                icc.addContent(accessor, text, self.language)
-
-            return icc
-
-
-
-# Add adapter in your ZCML::
-
-    <adapter factory=".customcontent.TextIndexNG3SearchAdapter"/>
 
 Full-text searching
----------------------
+--------------------
 
 Plone provides special index called ``SearchableText`` which is used on the site full-text search.
 Your content types can override ``SearchableText`` index with custom method to populate this index
@@ -551,10 +442,10 @@ added to ``SearchableText``
 
     def SearchableText(self):
         """
-        Override searchable text logic based on the requirements.
+        Override search-able text logic based on the requirements.
 
         This method constructs a text blob which contains all full-text
-        searchable text for this content item.
+        search-able text for this content item.
 
         This method is called by portal_catalog to populate its SearchableText index.
         """
@@ -630,7 +521,3 @@ Other
 .. _ExtendedPathIndex: https://github.com/plone/Products.ExtendedPathIndex/blob/master/README.txt
 
 .. _PluginxIndexes: http://svn.zope.org/Zope/trunk/src/Products/PluginIndexes/
-
-.. _its doctest: http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt
-
-.. _Archetypes Developer Manual: https://plone.org/documentation/manual/developer-manual/archetypes

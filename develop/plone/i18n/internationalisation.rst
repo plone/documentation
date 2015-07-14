@@ -1,6 +1,6 @@
-====================================
+========================
 Translating text strings
-====================================
+========================
 
 .. admonition:: Description
 
@@ -88,7 +88,7 @@ corresponding ``.po`` files containing the translation strings:
 
 
 Marking translatable strings in Python
-------------------------------------------
+---------------------------------------
 
 Each module declares its own ``MessageFactory`` which is a callable and
 marks strings with translation domain.  ``MessageFactory`` is declared in
@@ -290,11 +290,6 @@ and then call translation service, in your site, manually::
     >>> translation_service.translate("Add Events Portlet", domain="plone", target_language="fi")
     u'Lis\xe4\xe4 Tapahtumasovelma'
 
-Plone 3
----------
-
-You can find ``PlacelessTranslationService`` in the :term:`ZMI` root/control
-panel (not site root).
 
 Translation string substitution
 ===============================
@@ -412,14 +407,6 @@ Add the following to your buildout.cfg:
 
 After this ``i18ndude`` is available in your ``buildout/bin`` folder
 
-For **Plone 3** you might need to add:
-
-.. code-block:: cfg
-
-    [versions]
-    # i18ndude pindowns for Plone 3.3
-    zope.i18nmessageid = 3.6.1
-    zope.interface = 3.8.0
 
 .. code-block:: console
 
@@ -459,7 +446,7 @@ Example:
     mkdir locales/en/LC_MESSAGES
 
 Creating ``.pot`` base file
------------------------------
+----------------------------
 
 Example:
 
@@ -497,7 +484,7 @@ Here is a sample ``manual.pot`` file::
 
 
 Managing ``.po`` files
-------------------------
+-----------------------
 
 Example shell script to manage i18n files. Change ``CATALOGNAME`` to reflect
 the actual package of your product:
@@ -605,7 +592,7 @@ More information
 * http://encolpe.wordpress.com/2008/04/28/manage-your-internationalization-with-i18ndude/
 
 Distributing compiled translations
-=====================================
+===================================
 
 The rule for compiled .mo files is that
 
@@ -649,7 +636,6 @@ You need to give the name to the dynamic part
 
 More info
 
-* http://dev.plone.org/plone/changeset/35219
 
 * http://permalink.gmane.org/gmane.comp.web.zope.plone.collective.cvs/111531
 
@@ -705,15 +691,12 @@ Plone-Users mailing list.
 Other
 =====
 
-* http://grok.zope.org/documentation/how-to/how-to-internationalize-your-application
-
 * http://reinout.vanrees.org/weblog/2007/12/14/translating-schemata-names.html
 
 * https://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
 
 * http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
 
-* http://dev.plone.org/plone/ticket/9089
 
 
 
