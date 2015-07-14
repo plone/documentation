@@ -21,17 +21,18 @@ Use the *Add new...* menu for a folder to add an event:
    Show add new event menu
        Go to  ${PLONE_URL}
 
-       Click link  css=#plone-contentmenu-factories dt a
+       Click link  css=#plone-contentmenu-factories a
+
        Wait until element is visible
-       ...  css=#plone-contentmenu-factories dd.actionMenuContent
+       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
 
        Mouse over  event
        Update element style  portal-footer  display  none
 
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-events_add-menu.png
-       ...  contentActionMenus
-       ...  css=#plone-contentmenu-factories dd.actionMenuContent
+       ...  css=div.plone-toolbar-container
+       ...  css=#plone-contentmenu-factories ul
 
 
 Select **Event** from the drop-down menu, and you'll see rather large *Add Event* panel:
