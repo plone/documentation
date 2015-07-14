@@ -33,7 +33,7 @@ When you have customized page templates or Python scripts, your changes may inte
 It's important to rule out this possibility, since your customizations are unique to your site and no one on the planet will be able to help you solve it.
 
 Temporarily remove your customizations, for example by removing your layers from portal_skins, or by removing files from these layers on the file system.
-If the problem disappears, you'll need to doublecheck your customizations.
+If the problem disappears, you'll need to double-check your customizations.
 It's usually best to copy the original files of the new version of Plone to your skin, and re-customize those.
 
 Test without products
@@ -66,7 +66,7 @@ Before you go out and :doc:`ask for help </askforhelp>`, you should be able to d
 Reduce the problem to the smallest possible domain.
 Eliminate products and customizations that are not part of the problem.
 This makes it easier for others to reproduce the problem and it increases your chances of meeting others with the same problem or even a solution.
-The more complex your story is, the more likely that it is unique to your situation and inpenetrable to others.
+The more complex your story is, the more likely that it is unique to your situation and in-penetrable to others.
 
 Ask for help on a mailing list
 ==============================
@@ -82,7 +82,7 @@ Report a bug
 Once you have investigated, analyzed, identified and confirmed the cause of your problem and you are convinced it's a bug (rather than an X-file), go to the appropriate bug tracker and report it:
 
 * Products: the README usually tells how to report bugs
-* `Plone Issue Tracker <http://dev.plone.org/plone>`_
+* `Plone Issue Tracker <https://github.com/plone/Products.CMFPlone/issues>`_
 
 Do not use the bug trackers to ask for help.
 First analyze your problem and assert that it's a bug before you report it.
