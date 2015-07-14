@@ -24,9 +24,9 @@ For more info, see:
 
 PlonePAS subclasses and extends MemberData and MemberDataTool.
 
-* `See PlonePAS MemberDataTool <http://dev.plone.org/collective/browser/Products.PlonePAS/trunk/Products/PlonePAS/tools/memberdata.py?rev=122125#L27>`_.
+* `See PlonePAS MemberDataTool <https://gist.github.com/svx/0f0b88ac2da4aaa38098>`_.
 
-* `See PlonePAS MemberData class <http://dev.plone.org/collective/browser/Products.PlonePAS/trunk/Products/PlonePAS/tools/memberdata.py?rev=122125#L220>`_.
+* `See PlonePAS MemberData class <https://gist.github.com/svx/7ced29e3dded6fe893c9>`_.
 
 Getting member profile properties
 =================================
@@ -132,7 +132,7 @@ Example::
         return home_folder
 
 Setting password
----------------------
+-----------------
 
 Password is a special case.
 
@@ -179,7 +179,7 @@ Remember to update your form templates accordingly.
 
 
 Setting visual editor for all users
----------------------------------------
+------------------------------------
 
 The *visual editor* property is set on the member upon creation.
 
@@ -230,7 +230,7 @@ Run it::
         so no changes are permitted.
 
 Password reset requests
-==========================
+========================
 
 Directly manipulating password reset requests is useful e.g. for testing.
 

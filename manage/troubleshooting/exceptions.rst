@@ -528,8 +528,6 @@ Example::
 
 	<include package="Products.CMFCore" file="permissions.zcml" />
 
-.. seealso::
-    http://dev.plone.org/ticket/11837
 
 Content status history won't render - traceback is content path reversed
 --------------------------------------------------------------------------
@@ -616,7 +614,7 @@ Some possible causes:
     https://bugs.launchpad.net/zope2/+bug/176566
 
 ERROR ZODB.Connection Couldn't load state for 0x00
-----------------------------------------------------
+---------------------------------------------------
 
 **Traceback**::
 
@@ -651,7 +649,7 @@ ERROR ZODB.Connection Couldn't load state for 0x00
     http://plonechix.blogspot.com/2009/12/definitive-guide-to-poskeyerror.html
 
 Error _restore_index() when starting instance / ZEO server
---------------------------------------------------------------
+-----------------------------------------------------------
 
 **Traceback**::
 
@@ -700,7 +698,7 @@ Error _restore_index() when starting instance / ZEO server
 **Solution**: Remove Data.fs.index file. The index will be rebuilt on the launch.
 
 Error: Incorrect padding
---------------------------
+-------------------------
 
 **Traceback**::
 
@@ -722,7 +720,7 @@ cookies / auth info to Zope.
 **Solution**: Clear browser cache, cookies, etc.
 
 Exception: Type name not specified in createObject
-------------------------------------------------------
+---------------------------------------------------
 
 **Traceback**::
 
@@ -775,7 +773,7 @@ portlets.xml.
 Similar applies for actions.xml, etc.
 
 IOError: [Errno url error] unknown url type: 'https'
------------------------------------------------------
+----------------------------------------------------
 
 **Traceback**::
 
@@ -844,7 +842,7 @@ You need to include both eggs::
             plone.postpublicationhook
 
 ImportError: Inappropriate file type for dynamic loading
----------------------------------------------------------
+--------------------------------------------------------
 
 **Traceback**::
 
@@ -1092,7 +1090,7 @@ Potential candidates which need to be added manually:
     http://www.mail-archive.com/setup@lists.plone.org/msg03988.html
 
 InvalidInterface: Concrete attribute
----------------------------------------
+-------------------------------------
 
 **Traceback**::
 
@@ -1213,7 +1211,7 @@ exception in other contexts not related with missing products at all. Look
 for the 'Could not import class' message in your traceback.
 
 Case 2
-~~~~~~~
+~~~~~~
 
 Example traceback::
 
@@ -1262,7 +1260,7 @@ delete all "too eggs" from ``eggs/`` and ``src/`` folders.
 **Solution 2**: Upgrade your site to Plone.
 
 LinguaPlone: ImportError: cannot import name permissions
-----------------------------------------------------------
+---------------------------------------------------------
 
 **Traceback**::
 
@@ -1465,7 +1463,7 @@ It's a low level error usually caused by a corrupt or incomplete database.
     http://rpatterson.net/blog/poskeyerror-during-commit
 
 PicklingError: Can't pickle <class 'collective.singing.async.IQueue'>: import of module collective.singing.async
---------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
 
 Singing & Dancing add-on does not uninstall cleanly. Try this command-line script to get it fixed (not tested).
 Some parts may work, some not, depending on how messed up your site is.
@@ -1627,7 +1625,7 @@ what expression causes the exception. However if this only happens with unit tes
 manually injected to ``zope.tales.expression`` module.
 
 TraversalError: @@standard_macros
------------------------------------
+----------------------------------
 
 **Traceback**::
 
@@ -1685,7 +1683,7 @@ TraversalError: @@standard_macros
         self.subforms = [editform, addform]
 
 TraversalError: No traversable adapter found
-----------------------------------------------
+---------------------------------------------
 
 **Traceback**::
 
@@ -1746,7 +1744,7 @@ In this example traceback the missing add-on is Products.Carousel which provides
 **Solution**: Install the missing add-on(s)
 
 TypeError: 'NoneType' object is not callable during upgrade
------------------------------------------------------------------
+------------------------------------------------------------
 
 **Traceback**::
 
@@ -1885,7 +1883,7 @@ chain parents to properly determine permissions.
 
 
 Unknown message (kss optimized for production mode) in Javascript console
-----------------------------------------------------------------------------
+--------------------------------------------------------------------------
 
 This is a KSS error message. KSS is an technology used in Plone 3
 and started to be phased out in Plone 4.
@@ -1907,7 +1905,7 @@ Also:
 * Put portal_kss for debug mode (in development environment)
 
 ValueError: Non-zero version length. Versions aren't supported.
-------------------------------------------------------------------
+---------------------------------------------------------------
 
 **Traceback**::
 
@@ -2001,7 +1999,7 @@ getUtility() fails: ComponentLookupError
 
 
 get_language: 'NoneType' object has no attribute 'getLocaleID'
-------------------------------------------------------------------------------------
+---------------------------------------------------------------
 
 **Traceback**::
 
@@ -2069,7 +2067,7 @@ just the first entry where it tries to use an unloaded code.
 Start your instance on the foreground and you should see the actual error.
 
 importToolset: TypeError: 'NoneType' object is not callable
---------------------------------------------------------------
+------------------------------------------------------------
 
 **Traceback**::
 
@@ -2141,65 +2139,7 @@ In debug shell you can also check what all leftoverts toolset contains::
 z3c.form based form updateWidgets() raises ComponentLookupError
 ---------------------------------------------------------------
 
-Case 1: z3c.form with Plone 3
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Traceback**::
-
-    Error in test test_render_form (gomobile.convergence.tests.test_mobile_overrides.TestMobileOverrides)
-    Traceback (most recent call last):
-      File "/Users/moo/twinapex/twinapex/parts/zope2/lib/python/Testing/ZopeTestCase/profiler.py", line 98, in __call__
-        testMethod()
-      File "/Users/moo/twinapex/twinapex/src/gomobile.convergence/gomobile/convergence/tests/test_mobile_overrides.py", line 65, in test_render_form
-        result()
-      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 189, in __call__
-        self.update()
-      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 184, in update
-        super(Form, self).update()
-      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 134, in update
-        self.updateWidgets()
-      File "/Users/moo/twinapex/twinapex/eggs/z3c.form-1.9.0-py2.4.egg/z3c/form/form.py", line 120, in updateWidgets
-        self.widgets = zope.component.getMultiAdapter(
-      File "/Users/moo/twinapex/twinapex/eggs/zope.component-3.5.1-py2.4.egg/zope/component/_api.py", line 104, in getMultiAdapter
-        raise ComponentLookupError(objects, interface, name)
-    ComponentLookupError: ((<Products.Five.metaclass.documentoverriderform object at 0x711c6f0>, <HTTPRequest, URL=http://nohost>, <ATDocument at /plone/doc>), <InterfaceClass z3c.form.interfaces.IWidgets>, u'')
-
-**Reason**: To use z3c.form based forms z3c.form.interfaces.IFormRequest must be enabled for HTTP request
-object to make form layer adaptions work.
-
-**Solution**:
-
-* Wrap your forms with plone.z3cform.layout.wrap_form() call as instructed in plone.z3cform README
-
-The same error occurs if plone.app.z3cform, plone.z3cform and z3c.form are not properly included through ZCML.
-In order to be sure that those modules are properly included, you can add the following lines into your configure.zcml
-
-.. code-block:: xml
-
-        <include package="plone.app.z3cform" />
-        <include package="plone.z3cform" />
-        <include package="z3c.form" />
-
-...or you can use autoinclude feature for Plone 3.3+
-
-in configure.zcml
-
-.. code-block:: xml
-
-        <includeDependencies package="." />
-
-and then your add-on product setup.py file::
-
-
-        install_requires=[
-          'setuptools',
-          'plone.app.z3cform',
-          # -*- Extra requirements: -*-
-      ],
-
-Also remember to run Plone add-on installer for plone.app.z3cform (though it is unrelated to this error).
-
-Case 2: missing plone.app.z3cform migration
+Case: missing plone.app.z3cform migration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Traceback**::

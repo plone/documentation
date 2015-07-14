@@ -1,6 +1,6 @@
-==================
+================
 Getting started
-==================
+================
 
 How to get started with Plone development.
 
@@ -45,7 +45,7 @@ If you lack programming skill or resources, you can still get some things done i
 
 * `PloneFormGen allows you to build forms in a web browser <https://plone.org/products/ploneformgen>`_
 
-* Plone 4+ comes with through-the-web Dexterity content type editor
+* Plone comes with through-the-web Dexterity content type editor
 
 However, for heavy customization, Python, JavaScript, TAL page templates and CSS programming is needed.
 
@@ -68,12 +68,6 @@ including Plone add-ons, are available from `PyPI (the Python Package index) <ht
 Plone uses a tool called `Buildout <http://www.buildout.org/>`_ to manage the set of Python packages
 that are part of your Plone installation.
 Using Buildout involves using the ``buildout.cfg`` configuration file and the ``bin/buildout`` command.
-
-.. note ::
-
-  In prior versions of Plone and Zope, add-ons were referred to as "products" and they were installed by copying
-  them into a special folder called ``products``. This method is now deprecated in favor of using
-  standard Python packages, managed by Buildout.
 
 
 Finding and installing add-on packages
@@ -111,14 +105,6 @@ you can create a code skeleton (scaffold) for it using :doc:`Plone ZopeSkel code
 
 	Remove Plone 3 and ZopeSkel stuff
 
-.. note ::
-
-  There are different scaffolds for different kind of add-ons. The most typically used are ``plone3_theme``,
-  ``archetype`` (create Archetypes content), ``dexterity`` (create Dexterity content) and ``plone``
-  (barebone Plone add-on).
-
-Please read how to use :doc:`ZopeSkel to bootstrap your first add-on </develop/addons/paste>`.
-
 If you want to create a package with Dexterity content types please read about :doc:`Setting up a Dexterity project</external/plone.app.dexterity/docs/prerequisite>`.
 
 Plone development workflow
@@ -152,7 +138,7 @@ Plone add-on features
 Plone add-ons usually:
 
 * Create custom :doc:`content types </develop/plone/content/index>` or extend existing ones for your specialized need. Plone has
-  two subsystems for <content types: :doc:`Dexterity (new) </develop/plone/content/dexterity>` and :doc:`Archetypes (old) </develop/plone/content/archetypes/index>`.
+  two subsystems for <content types: :doc:`Dexterity</develop/plone/content/dexterity>`.
 
 * Add new :doc:`views </develop/plone/views/browserviews>` for your site and its content.
 
@@ -203,15 +189,13 @@ creating an add-on package for your development code.
 Plone resources
 ---------------
 
-.. note ::
-
-	Replace track with CMF Plone issue tracker
-
-* `Plone Trac <http://dev.plone.org/plone>`_ contains bug reports, Plone source
+* `Plone Issue Tracker <https://github.com/plone/Products.CMFPlone/issues>`_ contains bug reports, Plone source
   code and commits. Useful when you encounter a new exception or you are
   looking for a reference on how to use the API.
 
 * `Plone source code in version control system <https://github.com/plone>`_.
+
+.. note:: Fix link to Plone API
 
 * `Plone API (in development) <http://ploneapi.readthedocs.org/>`_.
 
