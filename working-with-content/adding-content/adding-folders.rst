@@ -1,37 +1,70 @@
 Adding Folders
-===================
+==============
 
-Adding folders to a Plone web site is the basic way of controlling the
-organization of content.
+.. include:: ../../_robot.rst
 
-You have undoubtedly created folders (directories) on your computer's
-hard drive. Personal computers use a hierarchy of folders to structure
-and organize the programs and files on the hard drive. In Plone folders
-are essentially used the same way, except that they are created on a
-Plone web site, for organizing content in Plone's built-in storage
-system.
+Adding folders to a Plone web site is the basic way of controlling the organization of content.
 
-Folders are added by clicking the **Add new...** drop-down menu. Select
-**Folder** from the menu:
+You have undoubtedly created folders (directories) on your computer's hard drive.
+Personal computers use a hierarchy of folders to structure and organize the programs and files on the hard drive.
+In Plone folders are essentially used the same way, except that they are created on a Plone web site, for organizing content in Plone's built-in storage system.
 
-.. figure:: /_static/add-item-menu-folder.png
+Folders are added by clicking the **Add new...** drop-down menu.
+Select **Folder** from the menu:
+
+.. replaces: /_static/add-item-menu-folder.png
+.. figure:: ../../_robot/adding-folders_add-menu.png
    :align: center
-   :alt: add-item-menu-folder.png
+   :alt: add-new-menu.png
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show add new folder menu
+       Go to  ${PLONE_URL}
+
+       Click link  css=#plone-contentmenu-factories a
+
+       Wait until element is visible
+       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
+
+       Mouse over  folder
+       Update element style  portal-footer  display  none
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/adding-folders_add-menu.png
+       ...  css=div.plone-toolbar-container
+       ...  css=#plone-contentmenu-factories ul
 
 
 
 You should now see the *Add Folder* screen:
 
-.. figure:: /_static/addfolder.png
+.. replaces: /_static/addfolder.png
+.. figure:: ../../_robot/adding-folders_add-form.png
    :align: center
    :alt:
 
-Fill in the **Title**, which is required, as indicated by the red
-square. The **Description** is optional; you can always come back to
-the edit panel if you need to add a description of the folder.
-Descriptions are useful when a site visitor uses the search tool
-included with Plone - results will display with both the Title and
-Description of the item.
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show new folder add form
+       Page should contain element  folder
+       Click link  folder
+
+       Wait until element is visible
+       ...  css=#form-widgets-IDublinCore-title
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/adding-folders_add-form.png
+       ...  css=#content
+Fill in the **Title**, which is required, as indicated by the red dot.
+The **Summary** is optional; you can always come back to the edit panel if you need to add a description of the folder.
+Summaries are useful when a site visitor uses the search tool included with Plone - results will display with both the Title and Summary of the item.
 
 You also notice tabs along the top:
 
@@ -46,9 +79,12 @@ You also notice tabs along the top:
    and choosing whether it shows in the navigation menu for the web
    site.
 
-These tabs are standard, so you'll see them when you click other content
-types. We will cover these tabs in another section of this user manual.
+These tabs are standard, so you'll see them when you click other content types.
+We will cover these tabs in another section of this user manual.
 
-Be sure to click **Save** at the bottom of the page when you are
-finished. This will complete the folder creation process.
+Be sure to click **Save** at the bottom of the page when you are finished.
+This will complete the folder creation process.
 
+.. robotframework::
+   :creates: ../../_robot/adding-folders_add-menu.png
+             ../../_robot/adding-folders_add-form.png
