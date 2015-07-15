@@ -62,6 +62,8 @@ You should now see the *Add Folder* screen:
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-folders_add-form.png
        ...  css=#content
+
+
 Fill in the **Title**, which is required, as indicated by the red dot.
 The **Summary** is optional; you can always come back to the edit panel if you need to add a description of the folder.
 Summaries are useful when a site visitor uses the search tool included with Plone - results will display with both the Title and Summary of the item.

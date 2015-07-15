@@ -1,72 +1,109 @@
 Setting Basic Properties
-==============================
+========================
 
-The tab panels available on each content item has fields for basic
-information. The more data you can provide, the better Plone can help in making the content available to the relevant visitors.
+.. include:: ../../_robot.rst
 
-Any content item, when clicked by a user with edit rights for the item,
-will show a set of tabs at the top for setting basic properties:
+The tab panels available on each content item has fields for basic information.
+The more data you can provide, the better Plone can help in making the content available to the relevant visitors.
 
-.. figure:: /_static/basicpropertiestabs.png
+Any content item, when clicked by a user with edit rights for the item, will show a set of tabs at the top for setting basic properties:
+
+.. replaces: /_static/basicpropertiestabs.png
+.. figure:: ../../_robot/basicpropertiestabs.png
    :align: center
-   :alt: null
+   :alt: basicpropertiestabs.png
 
-   null
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show basic properties tab
+       Go to  ${PLONE_URL}
+
+       Click link  css=#plone-contentmenu-factories a
+
+       Wait until element is visible
+       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
+
+       Page should contain element  document
+       Click link  document
+       Update element style  portal-footer  display  none
+
+       Wait until element is visible
+       ...  css=#form-widgets-IDublinCore-title
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/basicpropertiestabs.png
+       ...  css=nav.autotoc-nav
+
+
 
 These basic properties tabs are:
 
 -  *Default* - shows the main data entry panel for the content item
--  *Categorization* - shows a panel for creating and setting categories
-   (keywords) for the item
+-  *Settings* - shows a small panel for setting whether or not the item will appear in navigation menus and if comments are allowed on the item
+-  *Categorization* - shows a panel for creating and setting tags (keywords) for the item
 -  *Dates* - shows the publishing date and expiration date for the item
--  *Ownership* - shows a panel for setting creators, contributors, and
-   any copyright information for the item
--  *Settings* - shows a small panel for setting whether or not the item
-   will appear in navigation menus and if comments are allowed on the
-   item
+-  *Ownership* - shows a panel for setting creators, contributors, and any copyright information for the item
 
-The input fields under these tabs cover basic descriptive information
-called ***metadata***. Metadata is sometimes called "data about data."
+
+The input fields under these tabs cover basic descriptive information called **metadata**.
+Metadata is sometimes called "data about data."
 Plone can use this metadata in a multitude of ways.
 
-Here is the *Categorization* panel, shown for a page content item (would
-be the same for other content types):
+Here is the *Categorization* panel, shown for a page content item (would be the same for other content types):
 
-.. figure:: /_static/editpagecategorization.png
+.. replaces: /_static/editpagecategorization.png
+.. figure:: ../../_robot/editpagecategorization.png
    :align: center
-   :alt: null
+   :alt:
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show edit page categorization
+       Click link  Categorization
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/editpagecategorization.png
+       ...  css=#content-core
 
 
 
-*Note: Tags were formerly called Categories in Plone 3, and Keywords
-prior to version 3.0.*
+The main input field for the panel is for specifying *Tags*, sometimes also known as *Categories*
 
-The main input field for the panel is for specifying *categories*.
-Create them anew, just by typing in words or phrases, one per line, in
-the **New tags** box. When you save, the new tags will be created within
-the system of tags for the web site, and this content item will be filed
-under them. If you re-edit this item, or edit any other, the new tags
-will show up as **Existing tags**.
+Create them, just by typing in words or phrases.
+Plone will automatically search for existing tags while you type, so you can select already existing tags.
+If you want to create a new tag, just hit "enter" after your word (or phrase).
 
-The *Related Items* field lets you set links between content items,
-which will show as links at the bottom, when a content item is viewed.
-This is useful when you don't want to use explicit categories to connect
-content.
+The *Related Items* field lets you set links between content items, which will show as links at the bottom, when a content item is viewed.
+This is useful when you don't want to use explicit tags to connect content.
 
-The *Location* field is a geographic location, suitable for use with
-mapping systems, but appropriate to enter, for general record keeping.
+The *Location* field is a geographic location, suitable for use with mapping systems, but appropriate to enter, for general record keeping. Note that this field may not always be present, this is a setting that your site administrator has to enable.
 
-The *Language* choice normally would be allowed to fall to the site
-default, but on multilingual web sites, different languages could be
-used in a mix of content.
+The *Language* choice normally would default to the site setting, but on multilingual web sites, different languages could be used in a mix of content.
 
-The *Dates* panel has fields for the publishing date and the expiration
-date, effectively start and stop dates for the content if you wish to
-set them:
+The *Dates* panel has fields for the publishing date and the expiration date, effectively start and stop dates for the content if you wish to set them:
 
-.. figure:: /_static/datessettings.png
+.. replaces: /_static/datessettings.png
+.. figure:: ../../_robot/datessettings.png
    :align: center
-   :alt: null
+   :alt:
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show datessettings
+       Click link  Dates
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/datessettings.png
+       ...  css=#content-core
 
 
 The publication and expiration dates work like this:
@@ -100,45 +137,64 @@ The *Ownership* panel has three free-form fields for listing creators,
 contributors, and information about copyright or ownership rights to the
 content:
 
-|null|
+.. figure:: ../../_robot/ownershippanel.png
+   :align: center
+   :alt:
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show ownershippanel
+       Click link  Ownership
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/ownershippanel.png
+       ...  css=#content-core
 
 The *Settings* panel has fields that may vary a bit from content type to
 content type, but generally there are input fields controlling whether
 or not the item appears in navigation, or if there are comments allowed,
 and other similar controls:
 
-.. figure:: /_static/settingspanel.png
+.. replaces: /_static/settingspanel.png
+.. figure:: ../../_robot/settingspanel.png
    :align: center
-   :alt: null
+   :alt:
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show settingspanel
+       Click link  Settings
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/settingspanel.png
+       ...  css=#content-core
 
 
 
 Recommendations
 ---------------
 
-There is no requirement to enter the information specified through these
-panels, but it is a good idea to do so. For the *Ownership* panel,
-providing the data is important for situations where there are several
-people involved in content creation, especially if there are multiple
-creators and contributors working in groups. You don't always need
-fields such as publishing and expiration dates, language, and
-copyrights, but these data should be specified when appropriate. A
-content management system can only be as good as the data completeness
-allows.
+There is no requirement to enter the information specified through these panels, but it is a good idea to do so.
+For the *Ownership* panel, providing the data is important for situations where there are several
+people involved in content creation, especially if there are multiple creators and contributors working in groups.
+You don't always need fields such as publishing and expiration dates, language, and copyrights, but these data should be specified when appropriate.
+A content management system can only be as good as the data completeness allows.
 
-Specifying categories requires attention, but if you are able to get in
-the habit, and are zealously committed to creating a meaningful set of
-categories, there is a big return on the investment. The return happens
-through the use of searching and other facilities in Plone that work off
-the categorization. The same holds for setting related items. You'll be
-able to put your finger on what you need, and you may be able to
-discover and use relationships within the content.
+Specifying tags requires attention, but if you are able to get in the habit, and are committed to creating a meaningful set of tags, there is a big return on the investment.
+The return happens through the use of searching and other facilities in Plone that work off the categorization.
+The same holds for setting related items. You'll be able to put your finger on what you need, and you may be able to discover and use relationships within the content.
 
 Exposing Metadata Properties as meta tags in the HTML source
 ------------------------------------------------------------
 
-From Plone 4 on, in *Site Setup*, there is a check box that
-will expose the :term:`Dublin Core` metadata properties. Checking this box will expose the title, description, etc. metadata as meta tags within the
+From Plone 4 on, in *Site Setup*, there is a check box that will expose the :term:`Dublin Core` metadata properties.
+Checking this box will expose the title, description, etc. metadata as meta tags within the
 HTML ``<head>``.
 For example:
 
@@ -154,11 +210,10 @@ For example:
     <meta content="en" name="DC.language" />a
 
 
-The generator will check and obey the so-called *allowAnonymousViewAbout*
-setting in the :term:`Control Panel` and affects the properties*Creator*, *Contributors* and *Publisher*.
+The generator will check and obey the so-called *allowAnonymousViewAbout* setting in the :term:`Control Panel` and affects the properties*Creator*, *Contributors* and *Publisher*.
 
 You can read more about `Dublin Core <http://dublincore.org/>`_ and
 `HTML
 Metatags <http://www.w3.org/TR/html401/struct/global.html#h-7.4.4.2>`_.
 
-.. |null| image:: /_static/ownershipsettings.png
+
