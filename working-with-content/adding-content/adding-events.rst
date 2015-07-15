@@ -3,8 +3,7 @@ Adding Events
 
 .. include:: ../../_robot.rst
 
-Plone web sites have a built-in system for managing and showing calendar
-events.
+Plone web sites have a built-in system for managing and showing calendar events.
 
 Use the *Add new...* menu for a folder to add an event:
 
@@ -35,55 +34,69 @@ Use the *Add new...* menu for a folder to add an event:
        ...  css=#plone-contentmenu-factories ul
 
 
-Select **Event** from the drop-down menu, and you'll see rather large *Add Event* panel:
+Select **Event** from the drop-down menu, and you'll see the rather large *Add Event* panel:
 
-.. figure:: ../../_static/addevent.png
+.. replaces: ../../_static/addevent.png
+.. figure:: ../../_robot/adding-events_add-form.png
    :align: center
-   :alt: Add Event
+   :alt:
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show new event add form
+       Page should contain element  event
+       Click link  event
+
+       Wait until element is visible
+       ...  css=#form-widgets-IDublinCore-title
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/adding-events_add-form.png
+       ...  css=#content
 
 From the top, we have the following fields:
 
 -  *Title* - **REQUIRED**
--  *Description*
--  *Event location*
--  *Start date and time* - **REQUIRED**
--  *End date and time* - **REQUIRED**
--  *Event body text* (visual editor panel)
+-  *Summary*
+-  *Event starts* - **REQUIRED**
+-  *Event ends* - **REQUIRED**
+-  *Whole Day*
+-  *Open End*
+-  *Recurrence*
+-  *Event Location*
 -  *Attendees*
--  *Event type(s)*
--  *Event URL*
 -  *Contact Name*
 -  *Contact Email*
 -  *Contact Phone*
+-  *Event URL*
+-  *Event body text* (visual editor panel)
 -  Change note
 
-Note that only three fields, title and start and end date and time, are
-required. So, although this is a large input panel, if you are in a
-hurry, just type in the title and the start and end times and save. Of
-course, if you have the other information, you should type it in.
-One part of the panel needs a bit more explanation: the event start and
-end times. The year, month, day, and other fields are simple pull-down
-menus. But for the day, often you can't remember exactly and you need to
-consult a calendar. There is a handy pop-up calendar that offers an
-alternate way to select the day. If you click one of the little calendar
-icons adjacent to the day pull-down, :
+Note that only three fields, title and start and end date and time, are required.
+So, although this is a large input panel, if you are in a hurry, just type in the title and the start and end times and save.
+Of course, if you have the other information, you should type it in.
 
-.. figure:: ../../_static/eventstartandendfields.png
-   :align: center
-   :alt:
+One part of the panel needs a bit more explanation: the event start and end times.
+Both these can be set using a handy pop-up calendar. This will show when you click on the date.
 
-you'll see this pop-up calendar:
+Setting an event to be "Whole day" will remove the start and end times.
 
-.. figure:: ../../_static/calendarpopuppanel.png
-   :align: center
-   :alt:
+But there are many more options: you can set an event to be "Open-ended" if you don't know when the end date is, or if it is an ongoing activity that you would still like to show as an event.
 
-Just click the day and it will be set. Fill in the fields for which you
-have information and save the event, but remember:
+For repeating events, use the "recurrence" link. You can set when, and how often, your event will repeat: daily, weekly, every third Tuesday of the month until 2017, etcetera. You can specify that an event should repeat a certain number of times, or until a certain date.
 
-**IMPORTANT:***It will not show on the main web site calendar until it
-has been **published*****.
-**
+
+
+.. note::
+
+   **IMPORTANT:** Your event will not show on the main web site calendar until it has been **published**.
+
+
+
 
 .. robotframework::
    :creates: ../../_robot/adding-events_add-menu.png
+             ../../_robot/adding-events_add-form.png

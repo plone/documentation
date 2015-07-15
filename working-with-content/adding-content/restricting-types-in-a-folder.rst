@@ -1,14 +1,11 @@
 Restricting Types in a Folder
 ===================================
 
-The Add new... menu has a choice for restricting the content types that
-can be added to the folder.
+The Add new... menu has a choice for restricting the content types that can be added to the folder.
 
-Restricting types available for adding to a folder is the simplest way
-to control content creation on a Plone web site. You may want to
-restrict content types if your site is going to be worked on by several
-people. In this way you can enforce good practices such as putting just
-images in the images folder.
+Restricting types available for adding to a folder is the simplest way to control content creation on a Plone web site.
+You may want to restrict content types if your site is going to be worked on by several people.
+In this way you can enforce good practices such as putting just images in the images folder, or having your "News" items all in the same folder.
 
 First, select the last choice in the *Add new...* menu called
 *Restrictions...*:
