@@ -62,8 +62,7 @@ Alternative ways to deploy
 
 The Universal Installer itself is based on `buildout <http://www.buildout.org>`_. If you're working with Plone a lot, it is a good idea to get familiar with this tool and the relation with other Python module management tools.
 
-Buildout can be used in a variety of ways, and many people use it to tweak their own development-instances and/or deployment instances. See  `collective.minimalplone4 <https://github.com/collective/minimalplone4>`_ for a very bare-bones example, and
-`starzel.buildout <https://github.com/starzel/buildout>`_ for a rather maximalized example.
+Buildout can be used in a variety of ways, and many people use it to tweak their own development-instances and/or deployment instances. See `starzel.buildout <https://github.com/starzel/buildout>`_ for a rather maximalized example.
 
 Note however, that your chances of :doc:`getting help </askforhelp>` on setup questions in the Plone support channels (IRC, community.plone.org, mailinglists) increase when other people can reproduce your outcomes, which is most efficiently done with the Universal Installer.
 
