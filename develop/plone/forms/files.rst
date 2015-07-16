@@ -37,9 +37,6 @@ Simple content item file or image field
 Simple upload form example
 ===========================
 
-The example below uses :doc:`five.grok </appendices/grok>`
-to declare the form schema and form.
-
 We use `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_
 for the upload field, which is a CSV file. We accept the upload and then
 process the file.
@@ -51,7 +48,6 @@ For more information, see :doc:`buildout troubleshooting </manage/troubleshootin
 You also need to declare the following packages as dependencies in
 the ``install_dependencies`` directive of your ``setup.py`` file:
 
-* ``five.grok``,
 * ``plone.autoform``,
 * ``plone.directives.form``.
 
@@ -59,23 +55,44 @@ After doing this, rerunning ``buildout`` will pull in these packages for you
 and you will be able to import them successfully.
 For more information, see `plone.directives.form README <https://pypi.python.org/pypi/plone.directives.form>`_.
 
-Code::
+
+Open the *configure.zcml* file and add the view definition::
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
+
+        ...
+
+        <browser:page
+              for="Products.CMFCore.interfaces.ISiteRoot"
+              name="import_companies"
+              permission="cmf.ManagePortal"
+              class=".importusers.ImportUsersForm"
+              />
+
+    </configure>
+
+Create a module named *importusers.py*, and add the following code to it::
+
+    # -*- coding: utf-8 -*-
 
     # Core Zope 2 + Zope 3 + Plone
     from zope.interface import Interface
     from zope import schema
-    from zope.app.component.hooks import getSite
-    from five import grok
+    from zope.component.hooks import getSite
     from Products.CMFCore.interfaces import ISiteRoot
     from Products.CMFCore.utils import getToolByName
     from Products.CMFCore import permissions
+    from Products.CMFPlone import PloneMessageFactory as _
     from Products.statusmessages.interfaces import IStatusMessage
 
     # Form and validation
     from z3c.form import field
     import z3c.form.button
     from plone.directives import form
-    from collective.z3cform.grok.grok import PloneFormWrapper
     import plone.autoform.form
 
     import StringIO
@@ -102,16 +119,7 @@ Code::
         # fields for this form
         schema = IImportUsersFormSchema
 
-        # Permission required to
-        grok.require("cmf.ManagePortal")
-
         ignoreContext = True
-
-        # This form is available at the site root only
-        grok.context(ISiteRoot)
-
-        # appear as @@import_companies view
-        grok.name("import_companies")
 
 
         def processCSV(self, data):
