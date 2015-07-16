@@ -402,19 +402,30 @@ New TinyMCE shortcuts can be registered as global utility via
 
 We'll register our image bank as a shortcut into TinyMCE image dialog.
 
-First make sure your add-on is :doc:`grok'ed </appendices/grok>`.
+The view is registered at ``configure.zcml`` in your :doc:`add-on </develop/plone/getstarted/index>`::
 
-Then drop in the following file ``shortcut.py`` file into your :doc:`add-on </develop/plone/getstarted/index>`::
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:five="http://namespaces.zope.org/five"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+        xmlns:i18n="http://namespaces.zope.org/i18n"
+        i18n_domain="example.dexterityforms">
 
-    from five import grok
+      ...
 
-    from Products.TinyMCE.interfaces.shortcut import ITinyMCEShortcut
+      <utility
+          name="imagebank"
+          factory=".shortcut.ImageBankShortcut"
+          provides="Products.TinyMCE.interfaces.shortcut.ITinyMCEShortcut" />
 
-    class ImageBankShortcut(grok.GlobalUtility):
+    </configure>
+
+
+Then add the following to the ``shortcut.py`` file::
+
+    class ImageBankShortcut(object):
         """Provides shortcut to the language neutral image bank below language folders """
-
-        grok.name("imagebank")
-        grok.provides(ITinyMCEShortcut)
 
         # This time we don't bother with i18n and assume
         # the whole world understands Finnish

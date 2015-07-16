@@ -12,41 +12,53 @@ Introduction
 See :doc:`HTTP request object </develop/plone/serving/http_request_and_response>` for basics.
 
 Here is an example view which checks if a form button has been pressed,
-and takes action accordingly. The view is implemented using
-:doc:`grok framework </appendices/grok>`.
+and takes action accordingly.
 
-View code::
+Register the view in ``configure.zcml``::
 
-        import logging
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
 
-        from five import grok
+        ...
 
-        from Products.CMFCore.interfaces import ISiteRoot
-        from Products.statusmessages.interfaces import IStatusMessage
+        <browser:page
+              for="Products.CMFCore.interfaces.ISiteRoot"
+              name="yourviewname"
+              permission="zope2.View"
+              class=".yourview.YourViewName"
+              template="yourview.pt"
+              />
+
+    </configure>
 
 
-        grok.templatedir("templates")
+Code for the browser view, name the file ``yourview.py``::
 
-        class YourViewName(grok.View):
+    from Products.CMFCore.interfaces import ISiteRoot
+    from Products.Five.browser import BrowserView
+    from Products.statusmessages.interfaces import IStatusMessage
 
-            # This view is available on certain content types only
-            grok.context(IYourContentTypeInterface)
 
-            def update(self):
+    class YourViewName(BrowserView):
 
-                if "button-name" in self.request.form:
+        def update(self):
 
-                    messages = IStatusMessage(self.request)
+            if "button-name" in self.request.form:
 
-                    try:
-                        # do something
-                        messages.addStatusMessage("Button pressed")
+                messages = IStatusMessage(self.request)
+                try:
+                    # do something
+                    messages.add("Button pressed")
 
-                    except Exception, e:
-                        logger.exception(e)
-                        messages.addStatusMessage(u"It did not work out. This exception came when processing the form:" + unicode(e))
+                except Exception, e:
+                    logger.exception(e)
+                    messages.add(u"It did not work out. This exception came when processing the form:" + unicode(e))
 
-Page template code:
+
+Page template code, name the file ``yourview.pt``:
 
 .. code-block:: html
 
@@ -67,7 +79,8 @@ Page template code:
                         </p>
 
 
-                        <form action="@@yourviewname" method="POST">
+                        <form action="@@yourviewname" method="POST"
+                              tal:define="foo view/update">
                                 <button type="submit" name="button-name">
                                         Pres me
                                 </button>

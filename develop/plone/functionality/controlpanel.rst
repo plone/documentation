@@ -39,14 +39,10 @@ Example products:
 
 * https://pypi.python.org/pypi/collective.xdv
 
-Minimal example using ``five.grok``
-------------------------------------
+Minimal example
+---------------
 
-Below is a minimal example for creating a configlet using:
-
-* :doc:`grok </appendices/grok>`
-
-* ``plone.app.registry``
+Below is a minimal example for creating a configlet using ``plone.app.registry``.
 
 It is based on the
 `youraddon template <https://github.com/miohtama/sane_plone_addon_template/blob/master>`_.
@@ -62,6 +58,28 @@ Dexterity (see the
 
     install_requires = [..."plone.app.dexterity", "plone.app.registry"],
 
+``configure.zcml``
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
+
+        ...
+
+        <browser:page
+            name="silvuple-settings"
+            for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+            class=".settings.SettingsView"
+            permission="cmf.ManagePortal"
+            />
+
+    </configure>
+
+
 ``settings.py``::
 
     """
@@ -72,8 +90,8 @@ Dexterity (see the
 
     from zope.interface import Interface
     from zope import schema
-    from five import grok
     from Products.CMFCore.interfaces import ISiteRoot
+    from Products.Five.browser import BrowserView
 
     from plone.z3cform import layout
     from plone.directives import form
@@ -93,12 +111,11 @@ Dexterity (see the
         schema = ISettings
         label = u"Silvuple settings"
 
-    class SettingsView(grok.CodeView):
+    class SettingsView(BrowserView):
         """
         View which wrap the settings form using ControlPanelFormWrapper to a HTML boilerplate frame.
         """
-        grok.name("silvuple-settings")
-        grok.context(ISiteRoot)
+
         def render(self):
             view_factor = layout.wrap_form(SettingsEditForm, ControlPanelFormWrapper)
             view = view_factor(self.context, self.request)

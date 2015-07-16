@@ -31,20 +31,41 @@ You can use ``portal_transforms`` to do plain text -> HTML conversion.
 
 Below is an example how to create a Description field rendered with new line support.
 
-description.py::
 
-      from five import grok
+Register the view in ``configure.zcml``:
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
+
+        ...
+
+        <browser:page
+            name="description-helper"
+            for="*"
+            class=".description.DescriptionHelper"
+            permission="zope2.View"
+            />
+
+    </configure>
+
+
+Create a file ``description.py`` and add the following code::
+
       from zope.interface import Interface
       from Products.CMFCore.utils import getToolByName
+      from Products.Five.browser import BrowserView
 
-      class DescriptionHelper(grok.CodeView):
+
+      class DescriptionHelper(BrowserView):
           """
           A helper view which exports dublin core description w/new line support
           allowing several paragraphs in Plone's description field.
           """
-
-          grok.name("description-helper")
-          grok.context(Interface)
 
           def render(self):
               """

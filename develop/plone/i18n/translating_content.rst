@@ -314,7 +314,29 @@ portal_tabs to the current language.
 
 * Source is modified from `The default sections viewlet <https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/viewlets/common.py#L151>`_
 
-* The viewlet is created using :doc:`Grok </appendices/grok>` framework
+Zcml code::
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
+
+        ...
+
+        <browser:viewlet
+              name="plone.global_sections"
+              for="*"
+              manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+              layer="example.addon.interfaces.IThemeSpecific"
+              class=".sections.Sections"
+              template="sections.pt"
+              permission="zope2.View"
+              />
+
+    </configure>
 
 Viewlet code::
 
@@ -330,29 +352,19 @@ Viewlet code::
 
     # Zope imports
     from zope.component import getMultiAdapter, getUtility, queryMultiAdapter
-    from five import grok
     from AccessControl import getSecurityManager
     from AccessControl import Unauthorized
 
     # Plone imports
-    from plone.app.layout.viewlets.interfaces import IPortalHeader
+    from plone.app.layout.viewlets import common as base
 
     # Add-ons
     from Products.LinguaPlone.interfaces import ITranslatable
 
-    grok.templatedir("templates")
-    grok.layer(IThemeSpecific)
-
-    # By default, set context to zope.interface.Interface
-    # which matches all the content items.
-    # You can register viewlets to be content item type specific
-    # by overriding grok.context() on class body level
-    grok.context(Interface)
-
     logger = logging.getLogger("Sections")
 
 
-    class Sections(grok.Viewlet):
+    class Sections(base.ViewletBase):
         """
         Override tabs navigation to support multilingual items.
 
@@ -363,10 +375,6 @@ Viewlet code::
           set disable_folder_sections to False in navtree_properties
 
         """
-
-        # Override existing plone.global_sections
-        grok.name("plone.global_sections")
-        grok.viewletmanager(IPortalHeader)
 
         def translateTabs(self, tabs):
             """
@@ -457,20 +465,20 @@ Viewlet code::
             if valid_actions:
                 return {'portal': valid_actions[-1][1]}
 
-        return {'portal': default_tab}
+            return {'portal': default_tab}
 
 
 Page template code
 
 .. code-block:: html
 
-    <tal:sections tal:define="portal_tabs viewlet/portal_tabs"
+    <tal:sections tal:define="portal_tabs view/portal_tabs"
          tal:condition="portal_tabs"
          i18n:domain="plone">
         <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
 
         <ul id="portal-globalnav"
-            tal:define="selected_tab python:viewlet.selected_portal_tab"
+            tal:define="selected_tab python:view.selected_portal_tab"
             ><tal:tabs tal:repeat="tab portal_tabs"
             ><li tal:define="tid tab/id"
                  tal:attributes="id string:portaltab-${tid};

@@ -16,8 +16,8 @@ build on this form over the coming sections, so if you look at the
 example source code, you may find a few extra bits. However, the basics
 are simple enough.
 
-We’ll create a module called *order.py* inside our package
-(*example/dexterityforms/order.py)*, and add the following code to it:
+We’ll create a module called ``order.py`` inside our package
+(*example/dexterityforms/browser/order.py)*, and add the following code to it:
 
 ::
 
@@ -30,7 +30,7 @@ We’ll create a module called *order.py* inside our package
     from Products.CMFCore.interfaces import ISiteRoot
     from Products.statusmessages.interfaces import IStatusMessage
 
-    from example.dexterityforms.interfaces import MessageFactory as _
+    from example.dexterityforms import _
 
     class IPizzaOrder(model.Schema):
 
