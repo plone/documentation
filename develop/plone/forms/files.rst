@@ -56,7 +56,7 @@ and you will be able to import them successfully.
 For more information, see `plone.directives.form README <https://pypi.python.org/pypi/plone.directives.form>`_.
 
 
-Open the *configure.zcml* file and add the view definition::
+Open the *configure.zcml* file and add register the view::
 
     <configure
         xmlns="http://namespaces.zope.org/zope"

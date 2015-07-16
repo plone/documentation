@@ -115,7 +115,7 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 .. deprecated:: may_2015
     Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
-* Add the zcml definition for the form::
+* Register the form in ``configure.zcml``::
 
     <configure
         xmlns="http://namespaces.zope.org/zope"

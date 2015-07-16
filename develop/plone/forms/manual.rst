@@ -14,7 +14,7 @@ See :doc:`HTTP request object </develop/plone/serving/http_request_and_response>
 Here is an example view which checks if a form button has been pressed,
 and takes action accordingly.
 
-Add the view definition to ``configure.zcml``::
+Register the view in ``configure.zcml``::
 
     <configure
         xmlns="http://namespaces.zope.org/zope"

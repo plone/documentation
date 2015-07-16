@@ -402,7 +402,7 @@ New TinyMCE shortcuts can be registered as global utility via
 
 We'll register our image bank as a shortcut into TinyMCE image dialog.
 
-Add the view definition to the ``configure.zcml`` in your :doc:`add-on </develop/plone/getstarted/index>`::
+The view is registered at ``configure.zcml`` in your :doc:`add-on </develop/plone/getstarted/index>`::
 
     <configure
         xmlns="http://namespaces.zope.org/zope"

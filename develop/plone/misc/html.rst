@@ -32,7 +32,7 @@ You can use ``portal_transforms`` to do plain text -> HTML conversion.
 Below is an example how to create a Description field rendered with new line support.
 
 
-Add the view definition to ``configure.zcml``:
+Register the view in ``configure.zcml``:
 
 .. code-block:: xml
 
