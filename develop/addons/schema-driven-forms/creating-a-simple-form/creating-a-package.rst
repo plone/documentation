@@ -76,7 +76,7 @@ will pull in the other pre-requisites, including *plone.z3cform* and
             'plone.api',
             'setuptools',
             'z3c.jbot',
-            # Extra dependencies
+            # Extra dependencies for z3c forms
             'plone.app.z3cform',
             'plone.directives.form',
         ],
@@ -94,66 +94,22 @@ will pull in the other pre-requisites, including *plone.z3cform* and
     )
 
 
-Next, we edit *configure.zcml* to add some boilerplate:
-
-.. code-block:: xml
-
-    <configure
-        xmlns="http://namespaces.zope.org/zope"
-        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-        xmlns:grok="http://namespaces.zope.org/grok"
-        i18n_domain="example.dexterityforms">
-
-        <includeDependencies package="." />
-        <grok:grok package="." />
-
-        <genericsetup:registerProfile
-            name="default"
-            title="Example forms"
-            directory="profiles/default"
-            description="Example forms using plone.directives.forms"
-            provides="Products.GenericSetup.interfaces.EXTENSION"
-            />
-
-    </configure>
-
-This will:
-
--  Include the configuration of the packages we have listed in the
-   *install\_requires* line in *setup.py*. This saves us from manually
-   including them with individual ZCML *<include />* statements.
--  “Grok” the package, to configure the forms we will add. See the
-   :doc:`five.grok manual</appendices/five-grok/index>` for more details.
--  Create an installation profile that will install this package and its
-   dependencies.
-
 The installation profile contains the instructions to install our
-package’s dependencies into the Plone site. We create a
-*profiles/default* directory, and add to it a *metadata.xml*:
+package’s dependencies into the Plone site. Edit *metadata.xml*
+in the *profiles/default* directory, and add the depencency:
 
 .. code-block:: xml
 
+    <?xml version="1.0"?>
     <metadata>
-        <version>1</version>
-        <dependencies>
-            <dependency>profile-plone.app.z3cform:default</dependency>
-        </dependencies>
+      <version>1000</version>
+      <dependencies>
+        <dependency>profile-plone.app.z3cform:default</dependency>
+      </dependencies>
     </metadata>
-
 
 We need to install *plone.app.z3cform* to ensure that our forms have the
 proper widgets and templates available.
-
-Next, we add a *message factory* to allow the titles and descriptions in
-our form to be translated. We’ll do this in a module *interfaces.py* at
-the root of our package:
-
-::
-
-    import zope.i18nmessageid
-    MessageFactory = zope.i18nmessageid.MessageFactory('example.dexterityforms')
-
-The name of the factory should normally be the name of the package.
 
 Finally, we add this package to our *buildout.cfg* and re-run
 *bin/buildout*.
