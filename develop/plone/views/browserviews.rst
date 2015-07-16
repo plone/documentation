@@ -36,34 +36,6 @@ The ``BrowserView.__call__()`` method acts as an entry point to executing
 the view code. From Zope's point of view, even a function would be
 sufficient, as it is a callable.
 
-Plain Zope 3 vs. Grok
----------------------
-
-Views were introduced in Zope 3 and made available in Plone by way of
-the `Products.Five`_ package, which provides some Plone/Zope 2 specific
-adaptation hooks to the modern Zope 3 code base.  However, Zope 3's way
-of XML-based configuration using :term:`ZCML` and separating things to three
-different files (Python module, ZCML configuration, TAL template) was
-later seen as cumbersome.
-
-Later, a project called `Grok <http://grok.zope.org/>`_ was started to
-introduce an easy API to Zope 3, including a way to set up and maintain
-views. For more information about how to use Grok (found in
-the `five.grok`_ package) with Plone,
-please read the `Plone and Grok tutorial
-<http://docs.plone.org/appendices/five-grok>`_.
-
-.. note:: At the time of writing (Q1/2010), all project templates in Paster
-   still use old-style Zope views.
-
-.. deprecated:: may_2015
-    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
-
-.. note::
-
-    Using paster is deprecated instead you should use :doc:`bobtemplates.plone
-    </develop/addons/bobtemplates.plone/README>`
-
 More information
 ----------------
 
@@ -184,224 +156,31 @@ Creating and registering a view
 
 This shows how to create and register view in a Zope 3 manner.
 
-Creating a view using Grok
+
+Creating a view using ZCML
 --------------------------
 
-This is deprecated for Plone 4.1+ onwards.
-
 First, create your add-on product using
-:doc:`Dexterity project template </develop/addons/bobtemplates.plone/README>`. The most important
-thing in the add-on is that your registers itself to :doc:`grok </appendices/grok>`
-which allows Plone to scan all Python files for ``grok()`` directives and
-furter automatically pick up your views (as opposite using old Zope 3 method
-where you manually register views by typing them in to ZCML in ZCML).
-
-configure.zcml
-``````````````
-
-First make sure the file ``configure.zcml`` in your add-on root folder
-contains the following lines. These lines are needed only once, in the root
-configuration ZCML file::
-
-	<configure
-	    ...
-	    xmlns:five="http://namespaces.zope.org/five"
-	    xmlns:grok="http://namespaces.zope.org/grok"
-	    >
-
-	  <include package="five.grok" />
-
-	  <five:registerPackage package="." initialize=".initialize" />
-
-	  <!-- Grok the package to initialise schema interfaces and content classes -->
-	  <grok:grok package="." />
-
-          ....
-
-	</configure>
-
-setup.py and buildout
-`````````````````````
-
-Either you need to have ``five.grok``
-`registered in your buildout <https://plone.org/documentation/kb/installing-add-ons-quick-how-to>`_
-or have :doc:`five.grok in your setup.py </appendices/grok>`. If you didn't add it in this
-point and run buildout again to download and install ``five.grok`` package.
+:doc:`Dexterity project template </develop/addons/bobtemplates.plone/README>`.
 
 Python logic code
 `````````````````
 
 Add the file ``yourcompany.app/yourcompany/app/browser/views.py``::
 
-    """ Viewlets related to application logic.
+    """ Example view
     """
 
     # Zope imports
     from zope.interface import Interface
-    from five import grok
-
-    # Search for templates in the 'templates' directory
-    grok.templatedir('templates')
-
-    class MyView(grok.View):
-        """ Render the title and description of item only (example)
-        """
-
-        # The view is available on every content item type
-        grok.context(Interface)
-        ...
-
-The view in question is not registered against any
-:doc:`layer </develop/plone/views/layers>`, so it is immediately available after
-restart without need to run :doc:`Add/remove in Site setup </develop/addons/components/genericsetup>`.
-
-The ``grok.context(Interface)`` statement makes the view available for
-every content item and the site root: you can use it in URLs like
-``http://yoursite/news/newsitem/@@yourviewname`` or
-``http://yoursite/news/@@yourviewname``. In the first case, the incoming
-``self.context`` parameter received by the view would be the ``newsitem``
-object, and in the second case, it would be the ``news`` container.
-
-Alternatively, you could use the :doc:`content interface </develop/plone/content/types>`
-docs to make the view available only for certain content types. Example
-``grok.context()`` directives could be::
-
-	# View is registered in portal root only
-	from Products.CMFCore.interfaces import ISiteRoot
-
-	grok.context(ISiteRoot)
-
-	# Any content with child items
-	from Products.CMFCore.interfaces import IFolderish
-
-	grok.context(IFolderish)
-
-
-	# Only "Page" Plone content type
-	from Products.ATContentTypes.interface import IATDocument
-
-	grok.context(IATDocument)
-
-Page template
-`````````````
-
-Then create a :doc:`page template for your view. </adapt-and-extend/theming/templates_css/template_basics>`.
-Create ``yourcompany.app/yourcompany/app/browser/templates`` and add
-the related template:
-
-.. code-block:: xml
-
-	<html xmlns="http://www.w3.org/1999/xhtml"
-	      xmlns:metal="http://xml.zope.org/namespaces/metal"
-	      xmlns:tal="http://xml.zope.org/namespaces/tal"
-	      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-	      metal:use-macro="context/main_template/macros/master">
-
-	    <metal:block fill-slot="content-core">
-	            XXX - this text comes below title and description
-	    </metal:block>
-
-	</html>
-
-Now when you restart to Plone (or use :doc:`auto-restart add-on </develop/plone/getstarted/index>`)
-the view should be available through your browser. After enabled,
-grok will scan all Python files for available files, so it doesn't matter
-what .py filename you use.
-
-Content slots
--------------
-
-Available :doc:`slot </adapt-and-extend/theming/templates_css/template_basics>`
-options you can use for ``<metal fill-slot="">`` in your template which
-inherits from ``<html metal:use-macro="context/main_template/macros/master">``:
-
-``content``
-    render edit border yourself
-
-``main``
-    overrides main slot in main template; you must render title and description yourself
-
-``content-title``
-    title and description prerendered, Plone version > 4.x
-
-``content-core``
-    content body specific to your view, Plone version > 4.x
-
-``header``
-    A slot for inserting content above the title; may be useful in conjunction with
-    content-core slot if you wish to use the stock content-title provided by the
-    main template.
-
-Accessing your newly created view
----------------------------------
-
-Now you can access your view within the news folder::
-
-    http://localhost:8080/Plone/news/myview
-
-... or on a site root::
-
-    http://localhost:8080/Plone/myview
-
-... or on any other content item.
-
-You can also use the ``@@`` notation at the front of the view name to make
-sure that you are looking up a *view*, and not a content item that happens
-to have the same id as a view::
-
-        http://localhost:8080/Plone/news/@@myview
-
-More info
-
-* https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
-
-
-
-Setting view permissions
-````````````````````````
-
-Use `grok.require <http://grok.zope.org/doc/current/reference/directives.html#grok-require>`_
-
-Example::
-
-	from five import grok
-
-	class MyView(grok.View):
-
-		# Require admin to access this view
-		grok.require("cmf.ManagePortal")
-
-Use :doc:`available permissions in Zope 3 style strings </develop/plone/security/permission_lists>`.
-
-More info:
-
-* https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
-
-Creating a view using ZCML
---------------------------
-
-Example::
-
-    # We must use BrowserView from view, not from zope.browser
     from Products.Five.browser import BrowserView
+    from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
     class MyView(BrowserView):
+        """ Render the title and description of item only (example)
+        """
+        index = ViewPageTemplateFile("myview.pt")
 
-        def __init__(self, context, request):
-            """ Initialize context and request as view multi adaption parameters.
-
-            Note that the BrowserView constructor does this for you.
-            This step here is just to show how view receives its context and
-            request parameter. You do not need to write __init__() for your
-            views.
-            """
-            self.context = context
-            self.request = request
-
-        # by default call will call self.index() method which is mapped
-        # to ViewPageTemplateFile specified in ZCML
-        #def __call__():
-        #
 
 .. warning::
 
@@ -419,6 +198,7 @@ Example::
 
     Instead, use a pattern where you have a ``setup()`` or similar
     method which ``__call__()`` or view users can explicitly call.
+
 
 Registering a view
 ``````````````````
@@ -474,8 +254,84 @@ The following example registers a new view (see below for comments):
 .. Note:: You need to declare the ``browser`` namespace in your
    ``configure.zcml`` to use ``browser`` configuration directives.
 
+
+The view in question is not registered against any
+:doc:`layer </develop/plone/views/layers>`, so it is immediately available after
+restart without need to run :doc:`Add/remove in Site setup </develop/addons/components/genericsetup>`.
+
+Page template
+`````````````
+
+Then create a :doc:`page template for your view. </adapt-and-extend/theming/templates_css/template_basics>`.
+Create a file ``myview.pt`` file in ``yourcompany.app/yourcompany/app/browser/templates``
+and add the template:
+
+.. code-block:: xml
+
+	<html xmlns="http://www.w3.org/1999/xhtml"
+	      xmlns:metal="http://xml.zope.org/namespaces/metal"
+	      xmlns:tal="http://xml.zope.org/namespaces/tal"
+	      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+	      metal:use-macro="context/main_template/macros/master">
+
+	    <metal:block fill-slot="content-core">
+	            XXX - this text comes below title and description
+	    </metal:block>
+
+	</html>
+
+Now when you restart to Plone (or use :doc:`auto-restart add-on </develop/plone/getstarted/index>`)
+the view should be available through your browser.
+
+Accessing your newly created view
+`````````````````````````````````
+
+Now you can access your view within the news folder::
+
+    http://localhost:8080/Plone/news/myview
+
+... or on a site root::
+
+    http://localhost:8080/Plone/myview
+
+... or on any other content item.
+
+You can also use the ``@@`` notation at the front of the view name to make
+sure that you are looking up a *view*, and not a content item that happens
+to have the same id as a view::
+
+        http://localhost:8080/Plone/news/@@myview
+
+More info
+
+* https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
+
+Content slots
+-------------
+
+Available :doc:`slot </adapt-and-extend/theming/templates_css/template_basics>`
+options you can use for ``<metal fill-slot="">`` in your template which
+inherits from ``<html metal:use-macro="context/main_template/macros/master">``:
+
+``content``
+    render edit border yourself
+
+``main``
+    overrides main slot in main template; you must render title and description yourself
+
+``content-title``
+    title and description prerendered, Plone version > 4.x
+
+``content-core``
+    content body specific to your view, Plone version > 4.x
+
+``header``
+    A slot for inserting content above the title; may be useful in conjunction with
+    content-core slot if you wish to use the stock content-title provided by the
+    main template.
+
 Relationship between views and templates
-````````````````````````````````````````
+----------------------------------------
 
 The ZCML ``<browser:view template="">`` directive will set the ``index``
 class attribute.
@@ -533,8 +389,9 @@ Rendering of the view is done as follows::
         def __call__(self):
             return self.render()
 
+
 Overriding a view template at run-time
-``````````````````````````````````````
+--------------------------------------
 
 Below is a sample code snippet which allows you to override an already
 constructed ``ViewPageTemplateFile`` with a chosen file at run-time::
@@ -555,7 +412,7 @@ constructed ``ViewPageTemplateFile`` with a chosen file at run-time::
     form_instance.template = BoundPageTemplate(template, form_instance)
 
 Several templates per view
-```````````````````````````
+--------------------------
 
 You can bind several templates to one view and render them individually.
 This is very useful for reusable templating, or when you subclass
