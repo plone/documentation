@@ -581,9 +581,9 @@ Read more at the `plone.postpublicationhook package page
 Custom redirect mappings
 ========================
 
-Below is an example how you use :doc:`five.grok </appendices/grok>`
-to install an event handler which checks in the site root for a TTW Python
-script and if such exist it asks it to provide a HTTP redirect.
+Below is an example how to install an event handler which checks in the site
+root for a TTW Python script and if such exist it asks it to provide a HTTP
+redirect.
 
 This behavior allows you to write site-wide redirects easily
 
@@ -593,8 +593,28 @@ This behavior allows you to write site-wide redirects easily
 
 * You can easily have some redirects migrated from the old (non-Plone) sites
 
-``redirect.py`` - no modifications needed for your site, just copy-paste this to your Grok add-on folder.
-Remember to add ``url`` to *Parameter list* of the script on the script edit view::
+Add the event subscriber to ``configure.zcml``:
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
+
+        ...
+
+        <subscriber
+            for="zope.traversing.interfaces.IBeforeTraverseEvent"
+            handler=".redirect.check_redirect"
+            />
+
+    </configure>
+
+
+Create a file ``redirect.py`` and add the code below. Remember to add
+``url`` to *Parameter list* of the script on the script edit view::
 
         """
 
@@ -607,28 +627,15 @@ Remember to add ``url`` to *Parameter list* of the script on the script edit vie
             * Redirect script must contain ``url`` in its parameter list
 
         """
-
-
         import logging
-
-        # Now we import things through the last decade...
-
-        # Really old old stuff
+        from zope.component.hooks import getSite
         from zExceptions import Redirect
-
-        # Really old stuff
         from Products.CMFCore.interfaces import ISiteRoot
 
-        # Old stuff
-        from zope.traversing.interfaces import IBeforeTraverseEvent
-
-        # Modern stuff
-        from five import grok
 
         logger = logging.getLogger("redirect")
 
-        @grok.subscribe(ISiteRoot, IBeforeTraverseEvent)
-        def check_redirect(site, event):
+        def check_redirect(event):
             """
             Check if we have a custom redirect script in Zope application server root.
 
@@ -641,6 +648,7 @@ Remember to add ``url`` to *Parameter list* of the script on the script edit vie
 
             https://github.com/zopefoundation/Zope/blob/master/src/Zope2/App/tests/testExceptionHook.py
             """
+            site = getSite()
             request = event.request
 
             url = request["ACTUAL_URL"]
