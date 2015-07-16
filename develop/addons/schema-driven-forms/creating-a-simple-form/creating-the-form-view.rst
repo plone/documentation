@@ -4,20 +4,15 @@ Creating the form view
 **Using our schema in a form**
 
 To render our form, we need to create a view that uses a *z3c.form* base
-class. The view is registered like any other, either in ZCML or, as we
-will show here, by using convention-over-configuration ala `five.grok`_.
-It is then configured with the schema to use for form fields, the label
-(page title) and description (lead-in text) to show, and actions to
-render as buttons.
+class. The view is registered in ZCML. It is then configured with the
+schema to use for form fields, the label (page title) and description
+(lead-in text) to show, and actions to render as buttons.
 
-Still in *order.py*, we add the following:
+Still in *browser/order.py*, we add the following:
 
 ::
 
     class OrderForm(form.SchemaForm):
-        grok.name('order-pizza')
-        grok.require('zope2.View')
-        grok.context(ISiteRoot)
 
         schema = IPizzaOrder
         ignoreContext = True
@@ -69,6 +64,29 @@ Still in *order.py*, we add the following:
             contextURL = self.context.absolute_url()
             self.request.response.redirect(contextURL)
 
+
+
+Open the *browser/configure.zcml* file and add the view definition.
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
+
+        ...
+
+        <browser:page
+              for="Products.CMFCore.interfaces.ISiteRoot"
+              name="order-pizza"
+              permission="zope2.View"
+              class=".order.OrderForm"
+              />
+
+    </configure>
+
 Let’s go through this in some detail:
 
 -  We derive our form view from one of the standard base classes in
@@ -78,16 +96,6 @@ Let’s go through this in some detail:
    actions that can be found on more specialised base classes such as
    *SchemaAddForm* or *SchemaEditForm*. It basically mirrors the
    *z3c.form.form.Form* base class.
--  We then use the standard *five.grok* view directives to register the
-   view: *grok.name()* gives it a friendly name (used as a path segment
-   in the URL); *grok.context()* sets the type of context where the form
-   is available (here, we make it available on the Plone site root,
-   though any interface or class may be passed; to make the form
-   available on any context, use *zope.interface.Interface* as the
-   context); *grok.require()* specifies a permission which the user must
-   have to be able to view the form (here, we use the standard
-   *zope2.View* permission). See the views section in the :doc:`five.grok
-   manual </appendices/five-grok/index>` for more detail.
 -  Next, we specify the schema via the *schema* attribute. This is the
    equivalent of assigning the *fields* attribute to a *field.Fields()*
    instance, as you may have seen in documentation for “plain”
@@ -113,11 +121,15 @@ Let’s go through this in some detail:
    base class version) or post-processing afterwards (after calling the
    base class version). See the section on the form rendering lifecycle
    later in this manual for the gory details.
--  Finally, we define two actions, using the
+-  We define two actions, using the
    *@button.buttonAndHandler()* decorator. Each action is rendered as a
    button (in order). The argument is a (translated) string that will be
    used as a button label. The decorated handler function will be called
    when the button is clicked.
+-  Finally the view is registered in *configure.zcml*. The view definition
+   is configured in the *<browser:page/>* tag: For more information about
+   the definition see the `docs about browser views.
+   <http://docs.plone.org/develop/plone/views/browserviews.html#creating-a-view-using-zcml>`_
 
 For the purposes of this test, the actual work we do with the main
 handler is relatively contrived. However, the patterns are generally
@@ -139,5 +151,3 @@ message (so that it can appear on the next page) and redirect the user
 to the context’s default view. In this case, that means the portal front
 page.
 
-
-.. _five.grok: https://pypi.python.org/pypi/five.grok
