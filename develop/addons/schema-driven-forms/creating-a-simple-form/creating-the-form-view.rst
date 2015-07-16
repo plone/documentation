@@ -8,7 +8,7 @@ class. The view is registered in ZCML. It is then configured with the
 schema to use for form fields, the label (page title) and description
 (lead-in text) to show, and actions to render as buttons.
 
-Open the *browser/configure.zcml* file and add the view definition.
+Open the ``browser/configure.zcml`` file and add the view definition.
 
 .. code-block:: xml
 
@@ -29,7 +29,7 @@ Open the *browser/configure.zcml* file and add the view definition.
 
     </configure>
 
-In the *browser/order.py* view, we add the following:
+In the ``browser/order.py`` view, we add the following:
 
 ::
 

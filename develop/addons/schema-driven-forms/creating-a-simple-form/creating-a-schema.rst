@@ -16,7 +16,7 @@ build on this form over the coming sections, so if you look at the
 example source code, you may find a few extra bits. However, the basics
 are simple enough.
 
-We’ll create a module called *order.py* inside our package
+We’ll create a module called ``order.py`` inside our package
 (*example/dexterityforms/browser/order.py)*, and add the following code to it:
 
 ::

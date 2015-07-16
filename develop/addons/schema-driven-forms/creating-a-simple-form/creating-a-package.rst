@@ -23,7 +23,7 @@ created, answer *Basic*.
 
     $ mrbob -O example.dexterityforms bobtemplates:plone_addon
 
-After answering the relevant questions, we edit *setup.py* to add
+After answering the relevant questions, we edit ``setup.py`` to add
 *plone.app.z3cform* and *plone.directives.form* as dependencies. This
 will pull in the other pre-requisites, including *plone.z3cform* and
 *z3c.form* itself.
@@ -95,7 +95,7 @@ will pull in the other pre-requisites, including *plone.z3cform* and
 
 
 The installation profile contains the instructions to install our
-package’s dependencies into the Plone site. Edit *metadata.xml*
+package’s dependencies into the Plone site. Edit ``metadata.xml``
 in the *profiles/default* directory, and add the depencency:
 
 .. code-block:: xml
