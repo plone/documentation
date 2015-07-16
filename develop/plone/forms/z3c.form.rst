@@ -115,7 +115,27 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 .. deprecated:: may_2015
     Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
-* Include :doc:`five.grok support in your add-on </appendices/grok>`
+* Add the zcml definition for the form::
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:five="http://namespaces.zope.org/five"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+        xmlns:i18n="http://namespaces.zope.org/i18n"
+        i18n_domain="example.dexterityforms">
+
+      ...
+
+        <browser:page
+              for="Products.CMFCore.interfaces.ISiteRoot"
+              name="my-form"
+              permission="zope2.View"
+              class=".form.MyForm"
+              />
+
+    </configure>
+
 
 * Toss ``form.py`` into your add-on product::
 
@@ -125,7 +145,6 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 
     """
 
-    from five import grok
     from plone.directives import form
 
     from zope import schema
@@ -148,9 +167,6 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
         This form can be accessed as http://yoursite/@@my-form
 
         """
-        grok.name('my-form')
-        grok.require('zope2.View')
-        grok.context(ISiteRoot)
 
         schema = IMyForm
         ignoreContext = True
