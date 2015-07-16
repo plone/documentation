@@ -14,7 +14,7 @@ See :doc:`HTTP request object </develop/plone/serving/http_request_and_response>
 Here is an example view which checks if a form button has been pressed,
 and takes action accordingly.
 
-Add the zcml definition for the view::
+Add the view definition to ``configure.zcml``::
 
     <configure
         xmlns="http://namespaces.zope.org/zope"
@@ -35,7 +35,7 @@ Add the zcml definition for the view::
     </configure>
 
 
-Code for the browser view::
+Code for the browser view, name the file ``yourview.py``::
 
     from Products.CMFCore.interfaces import ISiteRoot
     from Products.Five.browser import BrowserView
@@ -58,7 +58,7 @@ Code for the browser view::
                     messages.add(u"It did not work out. This exception came when processing the form:" + unicode(e))
 
 
-Page template code:
+Page template code, name the file ``yourview.pt``:
 
 .. code-block:: html
 
