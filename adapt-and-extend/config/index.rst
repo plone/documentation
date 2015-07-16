@@ -9,6 +9,7 @@ Configuration and Control panel
    mail
    safe-html
    /external/Products.TinyMCE/docs/source/index
+   templating
 
 
 

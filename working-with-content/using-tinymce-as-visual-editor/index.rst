@@ -11,4 +11,3 @@ A user manual for content creators
     inserting-images
     inserting-links
     inserting-tables
-    templating
