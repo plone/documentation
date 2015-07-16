@@ -8,7 +8,28 @@ class. The view is registered in ZCML. It is then configured with the
 schema to use for form fields, the label (page title) and description
 (lead-in text) to show, and actions to render as buttons.
 
-Still in *browser/order.py*, we add the following:
+Open the *browser/configure.zcml* file and add the view definition.
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
+
+        ...
+
+        <browser:page
+              for="Products.CMFCore.interfaces.ISiteRoot"
+              name="order-pizza"
+              permission="zope2.View"
+              class=".order.OrderForm"
+              />
+
+    </configure>
+
+In the *browser/order.py* view, we add the following:
 
 ::
 
@@ -66,29 +87,14 @@ Still in *browser/order.py*, we add the following:
 
 
 
-Open the *browser/configure.zcml* file and add the view definition.
 
-.. code-block:: xml
-
-    <configure
-        xmlns="http://namespaces.zope.org/zope"
-        xmlns:browser="http://namespaces.zope.org/browser"
-        xmlns:plone="http://namespaces.plone.org/plone"
-        i18n_domain="example.dexterityforms">
-
-        ...
-
-        <browser:page
-              for="Products.CMFCore.interfaces.ISiteRoot"
-              name="order-pizza"
-              permission="zope2.View"
-              class=".order.OrderForm"
-              />
-
-    </configure>
 
 Let’s go through this in some detail:
 
+-  The view is registered in *configure.zcml*. The view definition
+   is configured in the *<browser:page/>* tag: For more information about
+   the definition see the `docs about browser views.
+   <http://docs.plone.org/develop/plone/views/browserviews.html#creating-a-view-using-zcml>`_
 -  We derive our form view from one of the standard base classes in
    *plone.directives.form*. The *SchemaForm* is a *plone.autoform*-based
    form (so it configures the form fields from the schema automatically
@@ -121,15 +127,11 @@ Let’s go through this in some detail:
    base class version) or post-processing afterwards (after calling the
    base class version). See the section on the form rendering lifecycle
    later in this manual for the gory details.
--  We define two actions, using the
+-  Finally we define two actions, using the
    *@button.buttonAndHandler()* decorator. Each action is rendered as a
    button (in order). The argument is a (translated) string that will be
    used as a button label. The decorated handler function will be called
    when the button is clicked.
--  Finally the view is registered in *configure.zcml*. The view definition
-   is configured in the *<browser:page/>* tag: For more information about
-   the definition see the `docs about browser views.
-   <http://docs.plone.org/develop/plone/views/browserviews.html#creating-a-view-using-zcml>`_
 
 For the purposes of this test, the actual work we do with the main
 handler is relatively contrived. However, the patterns are generally
