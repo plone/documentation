@@ -112,13 +112,13 @@ We need to install *plone.app.z3cform* to ensure that our forms have the
 proper widgets and templates available.
 
 There are two options to continue working on the package. The easiest option
-is to run the buildout from the *example.dexterityforms*. This allows you to
-directly work on this package without an extra buildout. In this package a
-buildout is included, for details on how to run buildout see
+is to run the buildout from the *example.dexterityforms* package. This allows
+you to directly work on this package without an extra buildout. In this
+package a buildout is included, for details on how to run buildout see
 `docs on writing your own add-ons. <http://training.plone.org/5/eggs1.html`_
 
 The second option is to add the package to an existing buildout. Add this
-package to our *buildout.cfg* and re-run *bin/buildout*.
+package to *buildout.cfg* and re-run *bin/buildout*.
 
 ::
 
