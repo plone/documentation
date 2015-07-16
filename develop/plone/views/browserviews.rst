@@ -157,8 +157,8 @@ Creating and registering a view
 This shows how to create and register view in a Zope 3 manner.
 
 
-Creating a view using ZCML
---------------------------
+Creating a view
+---------------
 
 First, create your add-on product using
 :doc:`Dexterity project template </develop/addons/bobtemplates.plone/README>`.
