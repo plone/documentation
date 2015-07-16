@@ -318,16 +318,25 @@ Zcml code::
 
 .. code-block:: xml
 
-    <browser:viewlet
-          name="plone.global_sections"
-          for="*"
-          manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-          layer="example.addon.interfaces.IThemeSpecific"
-          class=".sections.Sections"
-          template="sections.pt"
-          permission="zope2.View"
-          />
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
 
+        ...
+
+        <browser:viewlet
+              name="plone.global_sections"
+              for="*"
+              manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+              layer="example.addon.interfaces.IThemeSpecific"
+              class=".sections.Sections"
+              template="sections.pt"
+              permission="zope2.View"
+              />
+
+    </configure>
 
 Viewlet code::
 

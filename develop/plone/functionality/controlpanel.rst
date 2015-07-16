@@ -39,14 +39,10 @@ Example products:
 
 * https://pypi.python.org/pypi/collective.xdv
 
-Minimal example using ``five.grok``
-------------------------------------
+Minimal example
+---------------
 
-Below is a minimal example for creating a configlet using:
-
-* :doc:`grok </appendices/grok>`
-
-* ``plone.app.registry``
+Below is a minimal example for creating a configlet using ``plone.app.registry``.
 
 It is based on the
 `youraddon template <https://github.com/miohtama/sane_plone_addon_template/blob/master>`_.
@@ -66,12 +62,22 @@ Dexterity (see the
 
 .. code-block:: xml
 
-      <browser:page
-          name="silvuple-settings"
-          for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-          class=".settings.SettingsView"
-          permission="cmf.ManagePortal"
-          />
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.dexterityforms">
+
+        ...
+
+        <browser:page
+            name="silvuple-settings"
+            for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+            class=".settings.SettingsView"
+            permission="cmf.ManagePortal"
+            />
+
+    </configure>
 
 
 ``settings.py``::
