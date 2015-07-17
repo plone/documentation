@@ -221,13 +221,20 @@ Zope functionality often assumes you have logged in as certain
 user or you are anonymous user. Command-line scripts
 do not have user information set by default.
 
-How to set the effective Zope user to admin::
+How to set the effective Zope user to a regular user using
+`plone.api context managers </external/plone.api/docs/env.html>`_::
 
-  from AccessControl.SecurityManagement import newSecurityManager
+    from plone import api
+    from zope.component.hooks import setSite
 
-  # Use Zope application server user database (not plone site)
-  admin=app.acl_users.getUserById("admin")
-  newSecurityManager(None, admin)
+    # Sets the current site as the active site
+    setSite(app['Plone'])
+
+    # Enable the context manager to switch the user
+    with api.env.adopt_user(username="admin"):
+        # You're now posing as admin!
+        portal.restrictedTraverse("manage_propertiesForm")
+
 
 Spoofing HTTP request
 ---------------------

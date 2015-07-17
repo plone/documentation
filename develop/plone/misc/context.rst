@@ -138,6 +138,24 @@ information or configuration here. Tools include e.g.:
 ``portal_membership``
     User registration information.
 
+Get a portal tool using plone.api
+---------------------------------
+
+The `plone.api </external/plone.api/docs/portal.html#get-tool>`_.
+can be used to get a portal tool::
+
+    from plone import api
+    catalog = api.portal.get_tool(name='portal_catalog')
+
+The ``plone.api`` package exposes functionality from portal tools, it is not
+longer necessary to directly call a tool. For example; the API can be used
+the get the
+`workflow state </external/plone.api/docs/content.html#get-workflow-state>`_,
+`change the workflow state </external/plone.api/docs/content.html#transition>`_,
+`get a member </external/plone.api/docs/user.html#get-all-users>`_ and
+`get the member properties </external/plone.api/docs/user.html#user-properties>`_.
+
+
 ITools interface
 ----------------
 
@@ -169,21 +187,3 @@ Example::
 provides some helper methods for Plone specific functionality and user interface.
 
 * ``IPlone`` helper views is registered under the name ``plone``
-
-``getToolByName``
-------------------
-
-``getToolByName`` is the old-fashioned way of getting tools,
-using the context object as a starting point.
-It also works for tools which do not implement the ``ITools`` interface.
-
-``getToolByName`` gets any Plone portal root item using acquisition.
-
-Example::
-
-    from Products.CMFCore.WorkflowCore import WorkflowException
-
-    # Do the workflow transition "submit" for the current context
-    workflowTool = getToolByName(self.context, "portal_workflow")
-    workflowTool.doActionFor(self.context, "submit")
-
