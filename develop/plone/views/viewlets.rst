@@ -56,7 +56,7 @@ available viewlets may depend on installed Plone version and installed add-ons.
 
 * The ``portal_view_customizations`` tool in ZMI will show you viewlet registrations (and the viewlet managers they are registered for). As with views, you can hover over the viewlet name to see where it is registered in a tool tip.
 
-* To discover the name of a particular viewlet, you can use the @@manage-viewlets view, e.g. http://localhost:8080/plone/@@manage-viewlets.
+* To discover the name of a particular viewlet, you can use the ``@@manage-viewlets`` view, e.g. http://localhost:8080/plone/@@manage-viewlets.
 
 Creating a viewlet
 ------------------
@@ -309,7 +309,7 @@ Example Python code for viewlets.py::
                 @return: style="" for <iframe>
                 """
                 params = self.contructParameters()
-                return "margin-left: 10px; border:none; overflow:hidden; width:%spx; height:%spx;" % (params["width"], params["height"])
+                return "margin-left: 10px; border:none; overflow:hidden; width:{}px; height:{}px;".format(params["width"], params["height"])
 
 Then a sample page template (like.pt). You can use TAL template variable *view* to refer to your viewlet class instance::
 
@@ -381,7 +381,8 @@ Below is an example of overriding a render() method to conditionally render your
 
                 # Don't assume that all content items would have portal_type attribute
                 # available (might be changed in the future / very specialized content)
-                current_content_type =  portal_type = getattr(Acquisition.aq_base(self.context), 'portal_type', None)
+                current_content_type = portal_type = getattr(
+                    Acquisition.aq_base(self.context), 'portal_type', None)
 
                 # Note that plone.registry keeps values as unicode strings
                 # make sure that we have one also
@@ -486,7 +487,9 @@ and more information.
                 viewlet = factory(context, request, self, None).__of__(context)
             except TypeError:
                 # Bad constructor call parameters
-                raise RuntimeError("Unable to initialize viewlet %s. Factory method %s call failed." % (name, str(factory)))
+                raise RuntimeError(
+                    "Unable to initialize viewlet {}. Factory method {} call failed."
+                        .format(name, str(factory)))
 
             return viewlet
 
@@ -501,7 +504,7 @@ and more information.
 
             viewlet = self.setupViewletByName(name)
             if viewlet is None:
-                raise NotFound("Viewlet does not exist by name %s for theme layer %s" % name)
+                raise NotFound("Viewlet does not exist by name {} for theme layer".format(name))
 
             viewlet.update()
             return viewlet.render()
