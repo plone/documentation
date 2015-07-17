@@ -19,47 +19,50 @@ are simple enough.
 We’ll create a module called *order.py* inside our package
 (*example/dexterityforms/order.py)*, and add the following code to it:
 
-::
+:: py
 
-    from plone.supermodel import model
-    from plone.directives import form
-
+    from plone.autoform.form import AutoExtensibleForm
+    from zope import interface
     from zope import schema
-    from z3c.form import button
-
-    from Products.CMFCore.interfaces import ISiteRoot
+    from zope import component
+    from z3c.form import form, button
+    
     from Products.statusmessages.interfaces import IStatusMessage
-
-    from example.dexterityforms.interfaces import MessageFactory as _
-
-    class IPizzaOrder(model.Schema):
-
+    
+    from example.form import _
+    
+    
+    class OrderFormSchema(interface.Interface):
+    
         name = schema.TextLine(
                 title=_(u"Your full name"),
             )
-
+    
         address1 = schema.TextLine(
                 title=_(u"Address line 1"),
             )
-
+    
         address2 = schema.TextLine(
                 title=_(u"Address line 2"),
                 required=False,
             )
-
+    
         postcode = schema.TextLine(
                 title=_(u"Postcode"),
             )
-
+    
         telephone = schema.ASCIILine(
                 title=_(u"Telephone number"),
                 description=_(u"We prefer a mobile number"),
             )
-
+    
         orderItems = schema.Set(
                 title=_(u"Your order"),
-                value_type=schema.Choice(values=[_(u'Margherita'), _(u'Pepperoni'), _(u'Hawaiian')])
+                value_type=schema.Choice(values=[_(u'Margherita'),
+                                                 _(u'Pepperoni'),
+                                                 _(u'Hawaiian')])
             )
+
 
 For now, this form is quite simple. The list of pizzas is hard-coded,
 and we can only choose one of each type. We will make it (a little) more
