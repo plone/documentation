@@ -278,15 +278,10 @@ See this discussion thread:
 Creating OFS objects
 ==========================
 
-Zope has facilities for basic folder and contained objects using the OFS_
+Zope has facilities for basic folder and contained objects using the
+`IObjectManager definition <http://svn.zope.org/Zope/trunk/src/OFS/interfaces.py?rev=96262&view=auto>`_
 subsystem. You do not need to work with raw objects unless you are doing
 your custom lightweight, Plone-free, persistent data.
-
-More examples in:
-
-* `Singing & Dancing <https://svn.plone.org/svn/collective/collective.dancing/trunk/collective/dancing/channel.py>`_.
-
-.. _OFS: `IObjectManager definition <http://svn.zope.org/Zope/trunk/src/OFS/interfaces.py?rev=96262&view=auto>`_.
 
 Object construction life cycle
 ==========================================

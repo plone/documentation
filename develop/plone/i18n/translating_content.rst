@@ -677,7 +677,7 @@ object paths.
 If you have non-default content types, you have to provide your own
 ``multilanguagefields`` adapter.
 
-See https://svn.plone.org/svn/collective/raptus.multilanguagefields/trunk/raptus/multilanguagefields/samples/
+See https://github.com/Raptus/raptus.multilanguagefields/tree/master/raptus/multilanguagefields/samples
 
 Installation
 ------------

@@ -88,7 +88,7 @@ Now you can do in your page template
 
 More info
 
-* http://svn.plone.org/svn/collective/intelligenttext/trunk/README.txt
+* https://github.com/plone/plone.intelligenttext/tree/master/plone/intelligenttext
 
 Rewriting relative links
 ==========================

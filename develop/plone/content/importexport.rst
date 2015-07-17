@@ -208,7 +208,7 @@ More information
 
 * http://webteam.medsci.ox.ac.uk/integrators-developers/transmogrifier-i-want-to-.../
 
-* https://svn.plone.org/svn/collective/quintagroup.transmogrifier/trunk/quintagroup/transmogrifier/catalogsource.py
+* https://github.com/collective/quintagroup.transmogrifier/blob/master/quintagroup/transmogrifier/catalogsource.py
 
 collective.jsonmigrator
 =======================

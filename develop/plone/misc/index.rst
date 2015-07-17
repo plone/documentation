@@ -21,7 +21,6 @@ Also some other information that does not fit in any specific category
     asyncronoustasks
     flowplayer
     navigationtree
-    paster_templates
     facebook
     slideshow
     upgrade
