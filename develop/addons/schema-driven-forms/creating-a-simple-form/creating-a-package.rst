@@ -5,8 +5,7 @@ Creating a package
 
 For the purposes of this tutorial, we will create a simple package that
 adds the necessary dependencies. If you have an existing package that
-requires a form, you should be able to add the same dependencies. If you
-have read the :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/index>`, most of this should be familiar.
+requires a form, you should be able to add the same dependencies. 
 
 For details about creating new packages, see
 :doc:`Bootstrapping Plone add-on development </develop/addons/bobtemplates.plone/README>`.
@@ -19,59 +18,80 @@ For details about creating new packages, see
 .. deprecated:: may_2015
     Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
 
-First, we create a new package:
+First, we create a new package in src:
 
 .. code-block:: bash
 
-    $ paster create -t plone example.dexterityforms
+    $ ../bin/mrbob -O example.form bobtemplates:plone_addon
 
-After answering the relevant questions, we edit *setup.py* to add
-*plone.app.z3cform* and *plone.directives.form* as dependencies. This
+We create a package from the Basic template for Plone 5.0. After 
+answering the relevant questions, we edit *setup.py* to add
+*plone.app.z3cform*  as dependencies. This
 will pull in the other pre-requisites, including *plone.z3cform* and
-*z3c.form* itself. We have also removed the *ZopeSkel* local command
-support, which we will not need, although there is no harm in keeping it
-in. Finally, we have added a *tests* extra to pull in
-*collective.testcaselayer* for our integration tests.
+*z3c.form* itself.
 
 ::
 
-    from setuptools import setup, find_packages
-    import os
-
-    version = '1.0b1'
-
-    setup(name='example.dexterityforms',
-          version=version,
-          description="Examples of forms using plone.directives.form",
-          long_description=open("README.rst").read() + "\n" +
-                           open(os.path.join("docs", "HISTORY.rst")).read(),
-          # Get more strings from https://pypi.python.org/pypi?%3Aaction=list_classifiers
-          classifiers=[
+    # -*- coding: utf-8 -*-
+    """Installer for the example.form package."""
+    
+    from setuptools import find_packages
+    from setuptools import setup
+    
+    
+    long_description = (
+        open('README.rst').read()
+        + '\n' +
+        'Contributors\n'
+        '============\n'
+        + '\n' +
+        open('CONTRIBUTORS.rst').read()
+        + '\n' +
+        open('CHANGES.rst').read()
+        + '\n')
+    
+    
+    setup(
+        name='example.form',
+        version='0.1',
+        description="An add-on for Plone",
+        long_description=long_description,
+        # Get more from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+        classifiers=[
+            "Environment :: Web Environment",
             "Framework :: Plone",
+            "Framework :: Plone :: 5.0",
             "Programming Language :: Python",
+            "Programming Language :: Python :: 2.7",
+        ],
+        keywords='Python Plone',
+        author='Pavel Bogdanovic',
+        author_email='pb@prontonet.eu',
+        url='http://pypi.python.org/pypi/example.form',
+        license='GPL',
+        packages=find_packages('src', exclude=['ez_setup']),
+        namespace_packages=['example'],
+        package_dir={'': 'src'},
+        include_package_data=True,
+        zip_safe=False,
+        install_requires=[
+            'plone.api',
+            'setuptools',
+            'z3c.jbot',
+            'plone.app.z3cform',
+        ],
+        extras_require={
+            'test': [
+                'plone.app.testing',
+                'plone.app.contenttypes',
+                'plone.app.robotframework[debug]',
             ],
-          keywords='',
-          author='Martin Aspeli',
-          author_email='optilude@gmail.com',
-          url='https://plone.org/products/dexterity/documentation/manual/schema-driven-forms',
-          license='GPL',
-          packages=find_packages(exclude=['ez_setup']),
-          namespace_packages=['example'],
-          include_package_data=True,
-          zip_safe=False,
-          install_requires=[
-              'setuptools',
-              'plone.app.z3cform',
-              'plone.directives.form',
-          ],
-          extras_require={
-            'tests': ['collective.testcaselayer',]
-          },
-          entry_points="""
-          [z3c.autoinclude.plugin]
-          target = plone
-          """,
-          )
+        },
+        entry_points="""
+        [z3c.autoinclude.plugin]
+        target = plone
+        """,
+    )
 
 Next, we edit *configure.zcml* to add some boilerplate:
 
