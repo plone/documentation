@@ -19,7 +19,7 @@ are simple enough.
 We’ll create a module called *order.py* inside our package
 (*example/dexterityforms/order.py)*, and add the following code to it:
 
-:: py
+.. code-block:: py
 
     from plone.autoform.form import AutoExtensibleForm
     from zope import interface
