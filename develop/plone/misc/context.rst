@@ -138,11 +138,19 @@ information or configuration here. Tools include e.g.:
 ``portal_membership``
     User registration information.
 
+
+.. warning::
+    Portal tools are deprecated and are phased out and neing replaced by
+    `utilities <develop/addons/components/utilities.html>`_. The
+    `Removal of selected portal tools <https://dev.plone.org/ticket/13770>`_
+    PLIP is created to migrate from tools to utilities.
+
+
 Get a portal tool using plone.api
 ---------------------------------
 
-The `plone.api </external/plone.api/docs/portal.html#get-tool>`_.
-can be used to get a portal tool::
+It is recommended to use `plone.api </external/plone.api/docs/portal.html#get-tool>`_
+to get a portal tool::
 
     from plone import api
     catalog = api.portal.get_tool(name='portal_catalog')
@@ -187,3 +195,21 @@ Example::
 provides some helper methods for Plone specific functionality and user interface.
 
 * ``IPlone`` helper views is registered under the name ``plone``
+
+``getToolByName``
+------------------
+
+``getToolByName`` is the old-fashioned way of getting tools,
+using the context object as a starting point.
+It also works for tools which do not implement the ``ITools`` interface.
+
+``getToolByName`` gets any Plone portal root item using acquisition.
+
+Example::
+
+    from Products.CMFCore.WorkflowCore import WorkflowException
+
+    # Do the workflow transition "submit" for the current context
+    workflowTool = getToolByName(self.context, "portal_workflow")
+    workflowTool.doActionFor(self.context, "submit")
+
