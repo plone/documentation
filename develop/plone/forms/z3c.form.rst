@@ -1569,9 +1569,7 @@ CRUD form elements:
 Examples
 --------
 
-* Easy: `plone.app.headeranimation animation and image list manager <https://svn.plone.org/svn/collective/plone.app.headeranimation/trunk/plone/app/headeranimation/browser/forms.py>`_.
-
-* Complex: `Singing & dancing channel manager example <https://svn.plone.org/svn/collective/collective.dancing/trunk/collective/dancing/browser/channel.py>`_
+* `plone.z3cform documentation for CRUD forms <https://pypi.python.org/pypi/plone.z3cform#crud-create-read-update-and-delete-forms>`_
 
 Displaying the status message in a non-standard location
 ===========================================================
