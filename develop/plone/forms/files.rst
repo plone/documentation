@@ -475,6 +475,8 @@ images:
 If your form content is something else than traversable context object then
 you must fix file download URLs manually.
 
+See `example in plone.app.headeranimations <https://svn.plone.org/svn/collective/plone.app.headeranimation/trunk/plone/app/headeranimation/browser/widgets.py>`_.
+
 Migrating custom content for blobs
 ====================================
 

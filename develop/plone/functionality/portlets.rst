@@ -972,6 +972,6 @@ Other resources and examples
 
 * `Static text portlet <https://github.com/plone/plone.portlet.static/blob/master/plone/portlet/static/>`_.
 
-* `Templated portlet <https://github.com/collective/collective.easytemplate/blob/master/collective/easytemplate/browser/portlets/templated.py>`_
+* `Templated portlet <https://svn.plone.org/svn/collective/collective.easytemplate/trunk/collective/easytemplate/browser/portlets/templated.py>`_
 
 

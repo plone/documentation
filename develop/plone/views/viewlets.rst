@@ -410,6 +410,9 @@ Rendering viewlet by name
 
 Below is a complex example how to expose viewlets without going through a viewlet manager.
 
+See `collective.fastview <http://svn.plone.org/svn/collective/collective.fastview/trunk/>`_ for updates
+and more information.
+
 .. code-block:: python
 
     from Acquisition import aq_inner
@@ -742,7 +745,7 @@ a page specific CSS files.
 You can register custom Javascript or CSS files to HTML <head> section using viewlets.
 
 Below is an head.pt which will be injected in <head>. This examples shows how to dynamically generate
-``<script>`` elements.
+``<script>`` elements. Example is taken from `mfabrik.like add-on <https://svn.plone.org/svn/collective/mfabrik.like/trunk>`_.
 
 .. code-block:: html
 
