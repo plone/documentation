@@ -4,15 +4,14 @@ Creating the form view
 **Using our schema in a form**
 
 To render our form, we need to create a view that uses a *z3c.form* base
-class. The view is registered like any other, either in ZCML or, as we
-will show here, by using convention-over-configuration ala `five.grok`_.
+class. The view is registered like any other in ZCML.
 It is then configured with the schema to use for form fields, the label
 (page title) and description (lead-in text) to show, and actions to
 render as buttons.
 
 Still in *order.py*, we add the following:
 
-::
+.. code-block :: py
 
     class OrderForm(form.SchemaForm):
         grok.name('order-pizza')
