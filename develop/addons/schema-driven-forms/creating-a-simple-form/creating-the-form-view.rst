@@ -4,39 +4,18 @@ Creating the form view
 **Using our schema in a form**
 
 To render our form, we need to create a view that uses a *z3c.form* base
-class. The view is registered in ZCML. It is then configured with the
-schema to use for form fields, the label (page title) and description
-(lead-in text) to show, and actions to render as buttons.
+class. The view is registered like any other in ZCML.
+It is then configured with the schema to use for form fields, the label
+(page title) and description (lead-in text) to show, and actions to
+render as buttons.
 
-Open the ``browser/configure.zcml`` file and register the view.
+Still in *order.py*, we add the following:
 
-.. code-block:: xml
+.. code-block :: py
 
-    <configure
-        xmlns="http://namespaces.zope.org/zope"
-        xmlns:browser="http://namespaces.zope.org/browser"
-        xmlns:plone="http://namespaces.plone.org/plone"
-        i18n_domain="example.dexterityforms">
-
-        ...
-
-        <browser:page
-              for="Products.CMFCore.interfaces.ISiteRoot"
-              name="order-pizza"
-              permission="zope2.View"
-              class=".order.OrderForm"
-              />
-
-    </configure>
-
-In the ``browser/order.py`` view, we add the following:
-
-::
-
-    class OrderForm(form.SchemaForm):
-
-        schema = IPizzaOrder
-        ignoreContext = True
+    class OrderForm(AutoExtensibleForm, form.Form):
+        schema = OrderFormSchema
+        form_name = 'order_form'
 
         label = _(u"Order your pizza")
         description = _(u"We will contact you to confirm your order and delivery.")
@@ -85,30 +64,49 @@ In the ``browser/order.py`` view, we add the following:
             contextURL = self.context.absolute_url()
             self.request.response.redirect(contextURL)
 
+The  form is registered in configure.zcml
 
+.. code-block :: xml
 
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:plone="http://namespaces.plone.org/plone"
+        i18n_domain="example.form">
+
+        <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+        <include package="z3c.jbot" file="meta.zcml" />
+        <browser:jbot
+            directory="overrides"
+            layer="example.form.interfaces.IExampleFormLayer"
+            />
+
+        <!-- Publish static files -->
+        <browser:resourceDirectory
+            name="example.form"
+            directory="static"
+            />
+
+        <adapter factory=".order.OrderFormAdapter"/>
+
+        <browser:page
+            for="Products.CMFCore.interfaces.ISiteRoot"
+            name="order-pizza"
+            class=".order.OrderForm"
+            permission="zope2.View"
+            />
+
+    </configure>
 
 
 Let’s go through this in some detail:
 
--  The view is registered in *configure.zcml*. The view definition
-   is configured in the *<browser:page/>* tag: For more information about
-   the definition see the `docs about browser views.
-   <http://docs.plone.org/develop/plone/views/browserviews.html#creating-a-view-using-zcml>`_
 -  We derive our form view from one of the standard base classes in
-   *plone.directives.form*. The *SchemaForm* is a *plone.autoform*-based
-   form (so it configures the form fields from the schema automatically
-   and takes schema hints into account), without any of the standard
+   *plone.autoform*. It comes without any of the standard
    actions that can be found on more specialised base classes such as
    *SchemaAddForm* or *SchemaEditForm*. It basically mirrors the
    *z3c.form.form.Form* base class.
--  Next, we specify the schema via the *schema* attribute. This is the
-   equivalent of assigning the *fields* attribute to a *field.Fields()*
-   instance, as you may have seen in documentation for “plain”
-   *z3c.form. (*In fact, the "*fields = field.Fields(ISchema)*" pattern
-   of working is supported if you use *plone.directives.form.Form* as a
-   base class instead of *SchemaForm*, but you will then be unable to
-   use form schema hints in the schema itself - more on this later.)
+-  Next, we specify the schema via the *schema* attribute.
 -  We set *ignoreContext* to *True*. This tells *z3c.form* not to
    attempt to read the current value of any of the form fields from the
    context. The default behaviour is to attempt to adapt the context
@@ -127,11 +125,19 @@ Let’s go through this in some detail:
    base class version) or post-processing afterwards (after calling the
    base class version). See the section on the form rendering lifecycle
    later in this manual for the gory details.
--  Finally we define two actions, using the
+-  Finally, we define two actions, using the
    *@button.buttonAndHandler()* decorator. Each action is rendered as a
    button (in order). The argument is a (translated) string that will be
    used as a button label. The decorated handler function will be called
    when the button is clicked.
+-  We then use the standard way to register the view via zcml:
+   *name* gives it a friendly name (used as a path segment
+   in the URL); *for* sets the type of context where the form
+   is available (here, we make it available on the Plone site root,
+   though any interface or class may be passed; to make the form
+   available on any context, use * as *for*); *permission* specifies a permission which the user must
+   have to be able to view the form (here, we use the standard
+   *zope2.View* permission).
 
 For the purposes of this test, the actual work we do with the main
 handler is relatively contrived. However, the patterns are generally
@@ -153,3 +159,5 @@ message (so that it can appear on the next page) and redirect the user
 to the context’s default view. In this case, that means the portal front
 page.
 
+
+.. _five.grok: https://pypi.python.org/pypi/five.grok
