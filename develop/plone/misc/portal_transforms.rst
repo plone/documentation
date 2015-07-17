@@ -25,7 +25,7 @@ so that content managers are allowed to insert iframe, object, embed, param,
 script, style, tags and more into the TinyMCE editor::
 
     import logging
-    from Products.CMFCore.utils import getToolByName
+    from plone import api
     from Products.PortalTransforms.Transform import make_config_persistent
 
     logger = logging.getLogger('MY.PACKAGE.setuphandlers')
@@ -40,7 +40,7 @@ script, style, tags and more into the TinyMCE editor::
 
         tid = 'safe_html'
 
-        pt = getToolByName(context, 'portal_transforms')
+        pt = api.portal.get_tool(name='portal_transforms')
         if not tid in pt.objectIds(): return
 
         trans = pt[tid]
