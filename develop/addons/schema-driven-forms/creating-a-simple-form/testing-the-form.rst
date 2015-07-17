@@ -112,3 +112,4 @@ buildout. It should look just similiar to the packages buildout.
     
     [sources]
     example.form = fs example.form
+
