@@ -49,6 +49,7 @@ The *SublimeLinter* framework also comes with two plugins: `sublimelinter-rst <h
 
 When not using the Snippets, but you still want to check how the html would look, `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_  is a live previewer/exporter for markup files (markdown, rst, creole, textile...).
 
+Watch `the video <https://www.youtube.com/watch?v=3fWLuqyc3Oc>`_ on youtube.
 
 **Emacs** has a nice `rst-mode <http://docutils.sourceforge.net/docs/user/emacs.html>`_.
 This mode comes with some Emacs distros. Try ``M-x rst-mode`` in your Emacs and enjoy syntax coloration, underlining a heading with ``^C ^A``
