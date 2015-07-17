@@ -124,7 +124,6 @@ How to use::
         terms = [ SimpleTerm(value=pair[0], token=pair[0], title=pair[1]) for pair in items ]
         return terms
 
-    @grok.provider(IContextSourceBinder)
     def course_source(context):
         """
         Populate vocabulary with values from portal_catalog.
@@ -160,3 +159,5 @@ How to use::
         terms = make_terms(result)
 
         return SimpleVocabulary(terms)
+
+    directlyProvides(course_source, IContextSourceBinder)
