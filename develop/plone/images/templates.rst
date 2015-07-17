@@ -213,7 +213,7 @@ Default scale names and sizes are defined in ``ImageField`` declaration for
 custom ``ImageField``\s.
 For ``ATImage``, those are in
 `Products.ATContentTypes.content.image
-<https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py>`_.
+<http://svn.plone.org/svn/collective/Products.ATContentTypes/trunk/Products/ATContentTypes/content/image.py>`_.
 
 Lightbox style image pop-ups
 ====================================

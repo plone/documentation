@@ -317,7 +317,7 @@ Sample content
 
 More info
 
-* `tinymce editor_plugin.js <https://github.com/espenmn/medialog.tinymceplugins.helpmenu/blob/master/medialog/tinymceplugins/helpmenu/skins/tinymce_plugin_helpmenu/editor_plugin.js>`_ and `en.js <https://github.com/espenmn/medialog.tinymceplugins.helpmenu/blob/master/medialog/tinymceplugins/helpmenu/skins/tinymce_plugin_helpmenu/helpmenu/lang/en.js>`_
+* https://svn.plone.org/svn/collective/medialog.tinymceplugins.helpmenu/trunk/medialog/tinymceplugins/helpmenu/skins/tinymce_plugin_helpmenu/editor_plugin.js
 
 Customizing existing plug-in
 ------------------------------------

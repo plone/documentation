@@ -16,3 +16,6 @@ Example publishers
 ==================
 
 * A widget to make specified files downloadable: `plone.formwidgets.namedfile.widget <https://github.com/plone/plone.formwidget.namedfile/blob/master/plone/formwidget/namedfile/widget.py>`_.
+
+.. XXX: Marked in code as: "Do not use - was not working idea".
+.. * `plone.app.headeranimations animations traversing code <https://svn.plone.org/svn/collective/plone.app.headeranimation/trunk/plone/app/headeranimation/browser/traverse.py>`_.
