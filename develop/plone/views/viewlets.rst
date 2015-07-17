@@ -410,9 +410,6 @@ Rendering viewlet by name
 
 Below is a complex example how to expose viewlets without going through a viewlet manager.
 
-See `collective.fastview <http://svn.plone.org/svn/collective/collective.fastview/trunk/>`_ for updates
-and more information.
-
 .. code-block:: python
 
     from Acquisition import aq_inner
