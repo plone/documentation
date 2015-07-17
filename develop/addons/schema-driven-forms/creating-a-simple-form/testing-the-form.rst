@@ -43,7 +43,8 @@ Remember: We have worked so far in a development environment of the
 package itself. Now you want to insert example.form to your project's 
 buildout. It should look just similiar to the packages buildout.
 
-.. code-bloc :: ini
+.. code-block:: ini
+
     [buildout]
     extends = http://dist.plone.org/release/5.0-latest/versions.cfg
     extensions = mr.developer
