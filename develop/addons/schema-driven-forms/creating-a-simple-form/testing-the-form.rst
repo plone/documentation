@@ -38,3 +38,79 @@ Try to fill in the form and use the two buttons. You should see the
 validation (both on-the-fly and after submit if you ignore the
 on-the-fly warnings), as well a message printed to the console if a
 valid form is submitted when clicking the *Order* button.
+
+Remember: We have worked so far in a development environment of the 
+package itself. Now you want to insert example.form to your project's 
+buildout. It should look just similiar to the packages buildout.
+
+.. code-block:: ini
+
+    [buildout]
+    extends = http://dist.plone.org/release/5.0-latest/versions.cfg
+    extensions = mr.developer
+    parts =
+        instance
+        test
+        code-analysis
+        releaser
+    develop = src/example.form
+    
+    
+    [instance]
+    recipe = plone.recipe.zope2instance
+    user = admin:admin
+    http-address = 8080
+    eggs =
+        Plone
+        Pillow
+        example.form [test]
+    
+    
+    [code-analysis]
+    recipe = plone.recipe.codeanalysis
+    directory = ${buildout:directory}/src/example
+    flake8-exclude = bootstrap.py,bootstrap-buildout.py,docs,*.egg.,omelette
+    flake8-max-complexity = 15
+    flake8-extensions =
+        flake8-blind-except
+        flake8-debugger
+        flake8-coding
+    
+    [omelette]
+    recipe = collective.recipe.omelette
+    eggs = ${instance:eggs}
+    
+    
+    [test]
+    recipe = zc.recipe.testrunner
+    eggs = ${instance:eggs}
+    defaults = ['-s', 'example.form', '--auto-color', '--auto-progress']
+    
+    
+    [robot]
+    recipe = zc.recipe.egg
+    eggs =
+        ${test:eggs}
+        plone.app.robotframework[debug,ride,reload]
+    
+    [releaser]
+    recipe = zc.recipe.egg
+    eggs = zest.releaser
+    
+    
+    [versions]
+    setuptools = 18.0.1
+    zc.buildout = 2.2.5
+    zc.recipe.egg = 2.0.1
+    
+    flake8 = 2.3.0
+    
+    robotframework = 2.8.4
+    robotframework-ride = 1.3
+    robotframework-selenium2library = 1.6.0
+    robotsuite = 1.6.1
+    selenium = 2.46.0
+    
+    [sources]
+    example.form = fs example.form
+
