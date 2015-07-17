@@ -487,7 +487,9 @@ and more information.
                 viewlet = factory(context, request, self, None).__of__(context)
             except TypeError:
                 # Bad constructor call parameters
-                raise RuntimeError("Unable to initialize viewlet %s. Factory method {} call failed.".format(name, str(factory)))
+                raise RuntimeError(
+                    "Unable to initialize viewlet {}. Factory method {} call failed."
+                        .format(name, str(factory)))
 
             return viewlet
 
@@ -502,7 +504,7 @@ and more information.
 
             viewlet = self.setupViewletByName(name)
             if viewlet is None:
-                raise NotFound("Viewlet does not exist by name %s for theme layer {}".format(name))
+                raise NotFound("Viewlet does not exist by name {} for theme layer".format(name))
 
             viewlet.update()
             return viewlet.render()
