@@ -95,7 +95,6 @@ whose portlet you are going to override.
 
 More information
 
-* https://plone.org/documentation/manual/theme-reference/elements/portlet/override-the-portlets-in-plone-3.0
 
 update() and render()
 -----------------------
@@ -619,7 +618,7 @@ Example portlet manager viewlets.py::
 
         For more information see
 
-        * http://collective-docs.readthedocs.org/en/latest/views/viewlets.html
+        * http://docs.plone.org/5/en/develop/plone/views/viewlets.html
 
     """
 

@@ -17,7 +17,7 @@ TinyMCE and Plone integration
 is distributed in `Products.TinyMCE package <https://pypi.python.org/pypi/Products.TinyMCE>`_.
 
 Disabling HTML filtering and safe HTML transformation
----------------------------------------------------------
+------------------------------------------------------
 
 By default Plone does HTML filtering to prevent `cross-site scripting <http://en.wikipedia.org/wiki/Cross-site_scripting>`_
 attacks. This will make Plone to strip away from HTML
@@ -315,10 +315,6 @@ Sample content
     });
 
 
-More info
-
-* https://svn.plone.org/svn/collective/medialog.tinymceplugins.helpmenu/trunk/medialog/tinymceplugins/helpmenu/skins/tinymce_plugin_helpmenu/editor_plugin.js
-
 Customizing existing plug-in
 ------------------------------------
 
@@ -436,7 +432,6 @@ Then add the following to the ``shortcut.py`` file::
 
         def render(self, context):
 
-            # http://collective-docs.readthedocs.org/en/latest/misc/context.html
             portal_state = context.restrictedTraverse('@@plone_portal_state')
 
             return ["""

@@ -142,6 +142,6 @@ More information about the title tag can be found at the `HTML Head Title`_ page
 
 
 .. [1] https://plone.org/author/spanky
-.. _Views and Viewlets: http://collective-docs.readthedocs.org/en/latest/views/index.html
+.. _Views and Viewlets: http://docs.plone.org/5/en/develop/plone/views/viewlets.html
 .. _HTML Head Title: https://plone.org/documentation/manual/theme-reference/elements/hiddenelements/plone.htmlhead.title
-.. _Plone Theme Reference: https://plone.org/documentation/manual/theme-reference
+.. _Plone Theme Reference: http://docs.plone.org/5/en/adapt-and-extend/theming/index.html
