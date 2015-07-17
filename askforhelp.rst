@@ -1,9 +1,10 @@
+===============
 Asking for help
 ===============
 
 
-guidelines and examples
-------------------------
+Guidelines and Examples
+=======================
 
 If you need help with an error or problem: before asking the question, please take a few minutes to read the guidelines below. It is important to know how to state questions, because once you learn it, answers will come much faster.
 
@@ -26,6 +27,8 @@ Where to search:
 - :doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error messages - for enabling debug mode and common tracebacks.
 
 - `Github issue tracker <https://github.com/plone/Products.CMFPlone/issues>`_ - for known related issues
+
+- `Documentation issue tracker <https://github.com/plone/documentation/issues>`_ - for documentation related issues
 
 If at any point you see any kind of error message (including error codes) – put them in the topic. Never write anything like “I see some error message”. Be specific.
 
