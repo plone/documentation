@@ -344,7 +344,7 @@ Viewlet code::
 
         For more information see
 
-        * http://collective-docs.readthedocs.org/en/latest/views/viewlets.html
+        * http://docs.plone.org/5/en/develop/plone/views/viewlets.html
 
     """
 

@@ -402,7 +402,6 @@ The sample ``clean.py``:
                 full_path = dp + "/" + id
                 if not is_white_listed(full_path):
                     logger.info("Hard deleting path:" + full_path)
-                    # http://collective-docs.readthedocs.org/en/latest/content/deleting.html#fail-safe-deleting
                     folder._delObject(id, suppress_events=True)
 
                     i += 1

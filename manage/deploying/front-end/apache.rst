@@ -1,6 +1,6 @@
-====================================
+========
  Apache
-====================================
+========
 
 .. admonition:: Description
 
@@ -114,7 +114,7 @@ Apache and Plone guide (old)
 
 
 Procedure to restart Apache in production environment
----------------------------------------------------------------
+------------------------------------------------------
 
 You might share the same Apache web server across
 several production sites. You don't want to hinder
@@ -178,7 +178,7 @@ Migration redirects
 To redirect traffic from all pages permanently (301) to the landing page of a new site::
 
 	RewriteEngine On
-	RewriteRule (.*) http://collective-docs.readthedocs.org/ [L,R=301]
+	RewriteRule (.*) http://docs.plone.org/ [L,R=301]
 
 Proxying other site under Plone URI space
 -----------------------------------------
@@ -192,7 +192,7 @@ Examples::
    ProxyPassReverse /othersite/ http://www.some.other.domain.com/othersite/
 
 Reverse proxy host
-=====================
+===================
 
 By default, host name is correctly delivered from Apache to Plone.
 Otherwise you might see all your HTTP requests coming from localhost, Apache.
@@ -230,7 +230,7 @@ Virtual hosting Apache configuration generator
 
 
 Caching images
-----------------
+---------------
 
 You can force caching of content types
 on apache
@@ -257,7 +257,7 @@ Then install go to *Cache Configration* (Plone 4.1+)
 and configure `the caching options <https://pypi.python.org/pypi/plone.app.caching>`_.
 
 Unsetting language cookie for media content
-=============================================
+============================================
 
 Media like content can confuse and break language selector on multilingual sites.
 
@@ -344,7 +344,7 @@ To make you look more pro when you update the server or Plone goes down
 * https://httpd.apache.org/docs/2.2/custom-error.html
 
 Load balanced Apache virtual host configuration
--------------------------------------------------
+------------------------------------------------
 
 This complex config example includes
 
