@@ -152,12 +152,16 @@ of the affected comments accordingly:
 
     from Products.CMFPlone.utils import getToolByName
     from zope.app.component import hooks
+    from plone import api
+
     context = hooks.getSite()
-    catalog = getToolByName(context, 'portal_catalog')
-    mtool = getToolByName(context, 'portal_membership')
+
+    catalog = api.portal.get_tool(name='portal_catalog')
+    mtool = api.portal.get_tool(name='portal_membership')
+
     brains = catalog.searchResults(object_provides='plone.app.discussion.interfaces.IComment')
     for brain in brains:
-        member = mtool.getMemberById(brain.Creator)
+        member = api.user.get(username=brain.Creator')
         comment = brain.getObject()
 
         if member and not comment.author_username and not comment.author_name and not comment.author_email:

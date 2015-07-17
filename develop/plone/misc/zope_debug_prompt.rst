@@ -61,32 +61,29 @@ From here, the ``app`` variable is equivalent to the root of your Zope instance.
 A simple example::
 
     from AccessControl.SecurityManagement import newSecurityManager
-    from Products.CMFCore.utils import getToolByName
     from Testing.makerequest import makerequest
-    from zope.component.hooks import setSite, getSite
+    from zope.component.hooks import setSite
+    from plone import api
     import transaction
-    
+
     app = makerequest(app) # Enables functionality that expects a REQUEST
-    
-    app._p_jar.sync() # Syncs the debug prompt with any transactions 
-    
-    site=app['mysiteid'] # Use your site id
-    
+
+    app._p_jar.sync() # Syncs the debug prompt with any transactions
+
+    site=app['Plone'] # Use your site id
+
     setSite(site) # Sets the current site as the active site
-    
-    # Simulate logging in as the Zope 'admin' user    
-    admin = app.acl_users.getUserById('admin')
-    admin = admin.__of__(admin.acl_users)
-    newSecurityManager(None, admin) 
-    
-    # Grab the portal_catalog tool
-    portal_catalog = getToolByName(site, "portal_catalog")
-    
-    # Query the catalog for all results. Returns 'brains' 
-    results = portal_catalog.searchResults()
-    
-    # Print the number of objects in the catalog
-    print u"My site has %d objects." % len(results)
+
+    # Simulate logging in as the Zope 'admin' user
+    with api.env.adopt_user(username="admin"):
+        # Grab the portal_catalog tool
+        portal_catalog = api.portal.get_tool(name='portal_catalog')
+
+        # Query the catalog for all results. Returns 'brains'
+        results = portal_catalog.searchResults()
+
+        # Print the number of objects in the catalog
+        print u"My site has %d objects." % len(results)
 
 Code Snippets
 =============

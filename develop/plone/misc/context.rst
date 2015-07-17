@@ -138,6 +138,32 @@ information or configuration here. Tools include e.g.:
 ``portal_membership``
     User registration information.
 
+
+.. warning::
+    Portal tools are deprecated and are phased out and being replaced by
+    `utilities <develop/addons/components/utilities.html>`_. The
+    `Removal of selected portal tools <https://dev.plone.org/ticket/13770>`_
+    PLIP is created to migrate from tools to utilities.
+
+
+Get a portal tool using plone.api
+---------------------------------
+
+It is recommended to use `plone.api </external/plone.api/docs/portal.html#get-tool>`_
+to get a portal tool::
+
+    from plone import api
+    catalog = api.portal.get_tool(name='portal_catalog')
+
+The ``plone.api`` package exposes functionality from portal tools, it is not
+longer necessary to directly call a tool. For example; the API can be used
+the get the
+`workflow state </external/plone.api/docs/content.html#get-workflow-state>`_,
+`change the workflow state </external/plone.api/docs/content.html#transition>`_,
+`get a member </external/plone.api/docs/user.html#get-all-users>`_ and
+`get the member properties </external/plone.api/docs/user.html#user-properties>`_.
+
+
 ITools interface
 ----------------
 

@@ -64,9 +64,9 @@ In detail:
 
 To check whether the server clock is running, restart the instance or the ZEO
 client in the foreground and see if a message similar to the following is
-displayed:
+displayed::
 
-2009-03-03 19:57:38 INFO ZServer Clock server for "/ mysite / do_stuff" started (user: admin, period: 60)
+    2009-03-03 19:57:38 INFO ZServer Clock server for "/ mysite / do_stuff" started (user: admin, period: 60)
 
 If you are using a public source control repository for your ``buildout.cfg`` you
 might want to put zope-conf-additional= to ``secret.cfg`` which lies only on the

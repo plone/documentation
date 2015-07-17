@@ -56,8 +56,8 @@ Register the view in ``configure.zcml``:
 
 Create a file ``description.py`` and add the following code::
 
+      from plone import api
       from zope.interface import Interface
-      from Products.CMFCore.utils import getToolByName
       from Products.Five.browser import BrowserView
 
 
@@ -79,7 +79,7 @@ Create a file ``description.py`` and add the following code::
 
               # Transform plain text description with ASCII newlines
               # to one with
-              portal_transforms = getToolByName(self.context, 'portal_transforms')
+              portal_transforms = api.portal.get_tool(name='portal_transforms')
 
               # Output here is a single <p> which contains <br /> for newline
               data = portal_transforms.convertTo('text/html', text, mimetype='text/-x-web-intelligent')
@@ -119,11 +119,28 @@ Below is an example which:
 * rewrites all relative links of Page content as absolute;
 * removes some nasty tags from Page content;
 * outputs the folder content and subcontent as one continuous page;
-* is based on :doc:`Grok views </appendices/grok>`.
 
 This is suitable for e.g. printing the whole folder in one pass.
 
-``help.py``::
+Register the view in ``configure.zcml``:
+
+.. code-block:: xml
+
+    <configure
+          xmlns="http://namespaces.zope.org/zope"
+          xmlns:browser="http://namespaces.zope.org/browser"
+          >
+
+        <browser:page
+              for="Products.CMFCore.interfaces.IFolderish"
+              name="help"
+              permission="zope2.View"
+              class=".help.Help"
+              />
+
+    </configure>
+
+Add the file ``help.py``::
 
     from lxml import etree
     from StringIO import StringIO
@@ -131,10 +148,8 @@ This is suitable for e.g. printing the whole folder in one pass.
     from lxml import html
 
     import zope.interface
-    from five import grok
-    from Products.CMFCore.interfaces import IFolderish
+    from Products.Five.browser import BrowserView
 
-    grok.templatedir("templates")
 
     def fix_links(content, absolute_prefix):
         """
@@ -193,11 +208,9 @@ This is suitable for e.g. printing the whole folder in one pass.
 
         return data
 
-    class Help(grok.View):
+    class Help(BrowserView):
         """ Render all folder pages and subpages as continuous printable document """
 
-        # Available on any folder
-        grok.context(IFolderish)
 
         def update(self):
 
@@ -233,7 +246,7 @@ This is suitable for e.g. printing the whole folder in one pass.
 
             self.objects = objects
 
-``help.pt``
+Add the ``help.pt`` template:
 
 .. code-block:: html
 
