@@ -569,9 +569,6 @@ Use Python string templates.
 Don't put dynamically generated javascripts to ``portal_javascripts`` registry unless you want to cache them
 and they do not differ by the user.
 
-For example, see ``FacebookConnectJavascriptViewlet``
-
-* http://svn.plone.org/svn/collective/mfabrik.like/trunk/mfabrik/like/viewlets.py
 
 Upgrading jQuery
 ------------------

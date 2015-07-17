@@ -123,7 +123,7 @@ Useful for sudo style logins.
 
 See also
 
-* http://svn.plone.org/svn/collective/niteoweb.loginas/trunk/niteoweb/loginas/browser/login_as.py
+* https://github.com/miohtama/niteoweb.loginas/blob/master/niteoweb/loginas/browser/login_as.py
 
 Post-login actions
 -------------------
@@ -430,7 +430,7 @@ Locking user account after too many retries
 For security reasons, you might want to locking users after too many tries of logins.
 This protects user accounts against brute force attacks.
 
-* https://svn.plone.org/svn/collective/PASPlugins/Products.LoginLockout/branches/ajung-login-logging/
+* https://github.com/collective/Products.LoginLockout/tree/master/Products/LoginLockout
 
 Hyperlinks to authenticated Plone content in Microsoft Office
 ---------------------------------------------------------------------------
