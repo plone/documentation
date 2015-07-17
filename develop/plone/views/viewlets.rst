@@ -742,7 +742,7 @@ a page specific CSS files.
 You can register custom Javascript or CSS files to HTML <head> section using viewlets.
 
 Below is an head.pt which will be injected in <head>. This examples shows how to dynamically generate
-``<script>`` elements. Example is taken from `mfabrik.like add-on <https://svn.plone.org/svn/collective/mfabrik.like/trunk>`_.
+``<script>`` elements.
 
 .. code-block:: html
 
