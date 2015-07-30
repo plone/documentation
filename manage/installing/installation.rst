@@ -125,11 +125,11 @@ Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download from `the plone.org download page <https://plone.org/download>`_ to your server using wget command. Curl also works.
-Substitute the latest version number for 4.3.5 in the instructions below.
+Substitute the latest version number for 4.3.6 in the instructions below.
 
 .. code-block:: console
 
-    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.5/+download/Plone-4.3.5-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.6/+download/Plone-4.3.6-UnifiedInstaller.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -138,11 +138,11 @@ Run the Plone installer in standalone mode
 
     # Extract the downloaded file
     #
-    tar -xf Plone-4.3.5-UnifiedInstaller.tgz
+    tar -xf Plone-4.3.6-UnifiedInstaller.tgz
     #
     # Go the folder containing installer script
     #
-    cd Plone-4.3.5-UnifiedInstaller
+    cd Plone-4.3.6-UnifiedInstaller
     #
     # Run script
     ./install.sh standalone
@@ -224,6 +224,10 @@ For automatic start-up when your server boots up, init scripts, etc. please see 
 
 Installing Plone using buildout on Ubuntu / Debian
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. note:: This part of the documentation is outdated, even if ZopeSkel still may work it is not considered best practice anymore.
+          Please only follow the steps below is you know what you are doing.
 
 Here are quick instructions to install Plone using a pre-installed buildout and the OS-provided Python interpreter.
 This procedure is only useful if you know buildout well enough to tailor your own buildout configuration.
