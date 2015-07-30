@@ -22,34 +22,36 @@ An interesting approach was developed by Nejc Zupan: `Plone on a free-tier Herok
 Plone on your own machine
 =========================
 
-The recommended and best supported way to deploy Plone, both for laptops as well as servers, is the Universal Installer.
-It can provide you both with a single instance with developer tools installed, as well as with multiple failover clients running against a database server.
-
-What this means it that it will scale from quick evaluation to development to deployment, which will make your experience easier.
-
-The catch is that the Universal Installer works on Linux and Unix-like systems (including OS X and other BSD's), not Windows.
-For Windows, there is a binary installer available.
-In all honesty, though, this is not the ideal way to work with Plone if you want to develop with it.
-A large portion of the toolchain is not readily available on Windows environments.
-
-There is a highly workable alternative, though: Using virtual machines.
-The latest release of Plone also comes as a Virtualbox / Vagrant image.
-This will install a fully-working Plone for you in a virtual machine, but integrated with the host so that all your favourite Windows editing and development tools work.
-If you want to develop with Plone on a Windows machine, that would be your easiest option.
-
-For OS X users there is a also a binary installer available.
-The Universal Installer works just fine under OS X, but does require use of the terminal. If that is something you'd like to avoid, the binary installer is your friend.
-
-You can find all information on using these different options at the :doc:`Installation </manage/installing/index>` chapter in the "Managing, Administration" section of these docs.
-
+You may find information on all methods of installing Plone at the :doc:`Installation </manage/installing/index>` chapter in the "Managing, Administration" section of these docs.
 Or, head straight to `plone.org/download <https://plone.org/download>`_ to get started now!
 
+A quick guide to installation options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+For evaluation or demonstration
+```````````````````````````````
 
-Deployment
-==========
+For a quick install of Plone 5, you may install Plone in a virtual environment on nearly any computer. Just use the VirtualBox Appliance, found on our `Plone 5 download page <https://plone.org/products/plone/releases/5.0>`_.
 
-Any deployment of Plone as a real-world site will usually entail setting up some more software.
+For earlier versions of Plone, you may use the VirtualBox/Vagrant Install Kit to create a virtual machine.
+
+On Linux, BSD and OS X machines, you also have the option to use our Unified Installer to install a complete demo/production/development Plone. See the :doc:`Installation </manage/installing/index>` chapter.
+
+For development
+```````````````
+
+On Windows or OS X, you may use the VirtualBox/Vagrant kit to build Plone in a virtual machine running locally. This kit allows you to use host OS tools for editing.
+
+On Linux, BSD, OS X, and many other Unix workalikes, use the Unified Installer.
+
+For a production server
+```````````````````````
+See the :doc:`Installation </manage/installing/index>` chapter for complete details.
+You'll generally wish to use the Unified Installer or our Ansible full-stack deployment kit.
+
+The installation chapter details many security and efficiency issues you'll wish to consider for a production-server deployment.
+
+Any deployment of Plone as a real-world site will usually entail setting up a full software stack.
 In almost all cases, you will want to have a webserver like NGINX or Apache in front, and a cache like Varnish to optimize response times.
 
 Depending on your needs, you might also want redundant, high-availability options like ha-proxy, and monitoring tools to keep an eye on things and notify you when trouble arises.
@@ -58,7 +60,7 @@ A good selection of these tools is described  in the :doc:`Guide to deploying an
 
 
 Alternative ways to deploy
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Universal Installer itself is based on `buildout <http://www.buildout.org>`_. If you're working with Plone a lot, it is a good idea to get familiar with this tool and the relation with other Python module management tools.
 
