@@ -226,7 +226,7 @@ Installing Plone using buildout on Ubuntu / Debian
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-.. note:: These part of the documentation is outdated, even if ZopeSkel still may work it is not considered best practice anymore.
+.. note:: This part of the documentation is outdated, even if ZopeSkel still may work it is not considered best practice anymore.
           Please only follow the steps below is you know what you are doing.
 
 Here are quick instructions to install Plone using a pre-installed buildout and the OS-provided Python interpreter.
