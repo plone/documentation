@@ -1,0 +1,33 @@
+
+20150803
+========
+
+- **Update quick install guide to remove old options, emphasize new**
+    @smcmahon updated the installation guide.
+
+- **Update Plone version, add note**
+    @svx update the Plone version in the install part of the documentation and added a note about *ZopeSkel*.
+
+- **Update wordlist**
+    @svx updated the list with *good known words* to reduce false typo warnings.
+
+- **Switch from 127.0.0.1 to localhost**
+    @svx updated various parts of the docs to use localhost instead of *127.0.0.1*.
+
+- **Some very trivial spelling and grammar fixes**
+    @rockfruit fixed spelling and grammar of the docs on certain places.
+
+- **Various fixes**
+    @polyester fixed  various broken links including #280.
+
+- **Using the Zope debug prompt with Plone**
+    @tsimkins added documentation on how to use the Zope debug prompt from the command line to interact with Plone.
+
+- **Update WebDAV documentation**
+    @tkimnguyen updated the docs about WebDav and Plone.
+
+- **Various typo and link fixes**
+    @hvelarde fixed various broken links and typos.
+
+- **Added documentation on <title> element**
+    @fulv added documentation about titles in content items.
