@@ -1,8 +1,6 @@
-Changelog
-=========
 
 20150803
---------
+========
 
 - **Update quick install guide to remove old options, emphasize new**
     @smcmahon updated the installation guide.
