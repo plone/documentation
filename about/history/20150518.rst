@@ -1,8 +1,5 @@
-Changelog
-=========
-
 20150518
---------
+========
 
 - **Various typo fixes**
 
