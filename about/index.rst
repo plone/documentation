@@ -7,7 +7,7 @@ About this documentation
 
     reading
     contributing
-    styleguide
+    documentation_styleguide
+    rst-styleguide
     helper_tools
-    documentation_styleguide_addons
     history/20150518
