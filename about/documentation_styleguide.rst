@@ -1,17 +1,17 @@
-=====================================
-Documentation Styleguide for Add ons
-=====================================
+========================
+Documentation Styleguide
+========================
 
 .. admonition:: Description
 
-    A guide to write Documentation for Plone Add-ons
+    A guide to write Documentation for Plone and for Plone Add-ons
 
 .. contents:: :local:
 
 Introduction
 ============
 
-Having a 'best practices' approach for writing your documentation will benefit the users of your add-on, and the community at large.
+Having a 'best practices' approach for writing your documentation will benefit the users and the community at large.
 
 Even better: when there is a clear structure and style for your documentation, the chances that other people will help improve the documentation increase!
 
@@ -19,9 +19,22 @@ Further advantages of following this guide:
 
 * The documentation can be included on `docs.plone.org <http://docs.plone.org>`_
 * It will be in optimal format to be translated with tools like `Transifex <https://www.transifex.com/>`_.
-* Unicorns will come and play in your garden. No, *really*.
 
+Tone
+----
 
+Guides should be informational, but friendly. Use the active voice whenever possible, and contractions and pronouns are acceptable (in particular, the use of you in regards to the reader).
+
+Use common sense – if a term is related to a high-level concept that fewer people would know, then take a sentence or two to explain it.
+
+**Your documentation is not code.**
+
+It needs to be translatable. No, not into PHP, but into Chinese, Catalan, Klingon, ...
+
+Think about it this way:
+
+Each sentence in the documentation can be turned into a .po string.
+Breaking sentences with linebreaks would mean a translator will only see part of the sentence, making it impossible to translate.
 
 Documentation structure & styleguide
 ====================================
@@ -63,26 +76,13 @@ For including documentation into docs.plone.org, **please** follow these guideli
 * Usage of `Sphinx <http://sphinx-doc.org/>`_ within your project is optional, but if you want your add-on to (also) be documented for instance on `Read The Docs <https://readthedocs.org/>`_ it is highly recommended. Put the associated Makefile and conf.py into the /docs directory.
 
 
-*Your documentation is not code.*
-
-Let's repeat that, shall we?
-
-**Your documentation is not code.**
-
-It needs to be translatable. No, not into PHP, but into Chinese, Catalan, Klingon, ...
-
-Think about it this way: each sentence in the documentation can be turned into a .po string.
-Breaking sentences with linebreaks would mean a translator will only see part of the sentence, making it impossible to translate.
-
-
-
 .. note::
 
    If you use `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ to generate the layout of your add-on, the recommended files will already be there, and in the right place. You'll still have to write the content, though.
 
 
-
 .. _styleguide-readme-example:
+
 
 README example
 ==============
