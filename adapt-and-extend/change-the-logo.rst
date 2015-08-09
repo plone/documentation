@@ -3,8 +3,7 @@ Change the Logo
 
 .. include:: ../_robot.rst
 
-How to substitute the standard Plone logo with your own logo - a
-through-the-web approach.
+How to substitute the standard Plone logo with your own logo - a through-the-web approach.
 
 
 
@@ -53,10 +52,8 @@ Since Plone 5 you can directly change the logo in the Site control panel. Just u
 Further Information
 -------------------
 
--  There are further How Tos in the Logo section of the Plone
-   documentation dealing with more advanced customization methods.
+-  There are further How Tos in the Logo section of the Plone documentation dealing with more advanced customization methods.
 -  More guidance on TAL and ZPT can be found in the ZPT tutorial.
--  If you want to transfer your changes to the file system in your own
-   theme product, then proceed to the :doc:`viewlets overview section </develop/plone/views/viewlets>`.
+-  If you want to transfer your changes to the file system in your own theme product, then proceed to the :doc:`viewlets overview section </develop/plone/views/viewlets>`.
 
  
