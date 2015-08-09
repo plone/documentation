@@ -16,6 +16,7 @@ Theming Plone
    /external/plone.app.theming/docs/index
    /external/diazo/docs/index
    theme_product_with_diazo
+   theme_product
    quick_test
    resources
    barceloneta
