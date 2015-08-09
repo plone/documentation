@@ -5,16 +5,11 @@ Create a Plone 5 theme product (addon)
 Introduction
 ------------
 
-Creating a theme product with the Diazo inline editor is an easy way to start
-and to test, but it is not a solid long term solution.
+Creating a theme product with the Diazo inline editor is an easy way to start and to test, but it is not a solid long term solution.
 
-Even if ``plone.app.theming`` allows to import and export a Diazo theme as a ZIP
-archive, it might be prefereable to manage your theme into an actual Plone
-product.
+Even if ``plone.app.theming`` allows to import and export a Diazo theme as a ZIP archive, it might be prefereable to manage your theme into an actual Plone product.
 
-One of the most obvious reason is it will allow you to override Plone elements
-that are not accessible from the pure Diazo features (like overloading content
-views templates, viewlets, configuration settings, etc.).
+One of the most obvious reason is it will allow you to override Plone elements that are not accessible from the pure Diazo features (like overloading content views templates, viewlets, configuration settings, etc.).
 
 Create a product to handle your Diazo theme
 -------------------------------------------
@@ -160,16 +155,12 @@ To overrides them from your theme product, the easiest way is to use
 ``z3c.jbot`` (Just a Bunch of Templates).
 
 Since jbot is already included in the skeleton, you can just start using it, by putting in ``src/plonetheme/tango/browser/overrides/`` all the templates you want to override.
-But you will need to name them by prefixing the template
-name by its complete path to its original version.
+But you will need to name them by prefixing the template name by its complete path to its original version.
 
-For instance, to override ``colophon.pt`` from plone.app.layout, knowing this
-template in a subfolder named ``viewlets``, you need to name it
-``plone.app.layout.viewlets.colophon.pt``.
+For instance, to override ``colophon.pt`` from plone.app.layout, knowing this template in a subfolder named ``viewlets``, you need to name it ``plone.app.layout.viewlets.colophon.pt``.
 
 .. note:: ZMI > portal_view_customizations is an handy way to find the template path.
 
-You can now restart Zope and re-install your product from the Plone control
-panel (Site Setup > Add-ons).
+You can now restart Zope and re-install your product from the Plone control panel (Site Setup > Add-ons).
 
 
