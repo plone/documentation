@@ -1,35 +1,40 @@
-========================================
 This is the official Plone Documentation
 ========================================
 
+You can read the documentation on `docs.plone.org <http://docs.plone.org>`_.
+
+Installation
+------------
+
+If you want to build the full documentation locally please follow the `build instructions <https://github.com/plone/papyrus/blob/master/docs/install.rst>`_.
+
+You will find the results results in ``build/html/``.
+
+This is tested with Debian, Ubuntu and OSX.
+
+
+
+Contribute
+----------
+
+If you want to contribute please make sure to read `our documentation about contributing <http://docs.plone.org/about/contributing.html>`_ first.
+
+- Issue Tracker: `github.com/plone/documentation/issues <https://github.com/plone/documentation/issues>`_
+- Source Code: `github.com/plone/documentation <https://github.com/plone/documentation>`_
+- Documentation: `docs.plone.org <http://docs.plone.org>`_
+
+Support
+-------
+
+If you are having issues, please let us know.
+
+We have a community space at: `community.plone.org/c/documentation <https://community.plone.org/c/documentation>`_.
+
+License
+-------
+
+The project is licensed under the GPLv2.
+
+
 maintained by the Plone Docs-Team
-
-You can read the documentation on http://docs.plone.org
-
-If you want to contribute, please read:
-
-http://docs.plone.org/about/contributing.html
-
-thanks,
-
-the documentation team
-
-
-
-
-If you want to have a full and complete copy of the docs and the supporting buildout,
-for now you can do the following on a \*\nix system::
-
-    git clone https://github.com/plone/papyrus.git
-    virtualenv --no-site-packages papyrus
-    (make sure you have a 2.7 virtualenv)
-    cd papyrus
-    ./bin/python bootstrap-buildout.py
-    bin/buildout
-    (wait a bit, as this also enables robot-framework it needs to download quite a few eggs)
-    make externals
-    (this fetches the external packages whose docs-folder is part of this documentation)
-    make html
-
-and browse the results in ``build/html/``
 
