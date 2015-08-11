@@ -1,6 +1,6 @@
-=========================================
- Bootstrapping Plone add-on development
-=========================================
+=========================
+Using ZopeSkel and Paster
+=========================
 
 .. deprecated:: may_2015
     Use :doc:`bobtemplates.plone <bobtemplates.plone/README>`
