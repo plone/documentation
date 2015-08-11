@@ -23,7 +23,7 @@ With the help of Mr.Bob and templates for plone, that is quickly done:
 Develop with Dexterity
 ----------------------
 
-Dexterity is covered in detail in the `Dexterity Developer Manual <http://docs.plone.org/external/plone.app.dexterity/docs/>`_, which includes an extensive tutorial on
+Dexterity is covered in detail in the :doc:`Dexterity Developer Manual </external/plone.app.dexterity/docs/index>`, which includes an extensive tutorial on
 setting up a Dexterity development environment.
 
 
