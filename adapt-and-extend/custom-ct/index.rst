@@ -1,16 +1,15 @@
 Custom Content-Types
 ====================
 
-The current recommended way to develop new custom content-types is by using :term:`Dexterity`. You'll find the full manual here.
+The recommended way to develop new custom content-types is by using :term:`Dexterity`. You'll find the full manual here.
 
 .. toctree::
    :maxdepth: 1
 
    /external/plone.app.dexterity/docs/index
 
-Up until Plone 4.1, the standard way was to use :term:`Archetypes`. You can still develop using Archetypes, if you prefer, and they will remain available.
+Up until Plone 4.1, the standard way was to use :term:`Archetypes`.
+You can still develop using Archetypes, and they will remain functional.
+For any **new** development, Dexterity is strongly recommended.
 
-.. toctree::
-   :maxdepth: 1
-
-   /old-reference-manuals/archetypes/index
+The Archetypes reference manual will remain available at the `Plone 4 documentention <http://docs.plone.org/4/en/old-reference-manuals/archetypes/index.html>`_
