@@ -20,7 +20,7 @@ Some things that you can do through the debug prompt:
 - Produce reports or export data from objects
 
 This is very similar to the Python debug prompt (just entering ``python`` at the command line) and the same whitespace restrictions apply.
- 
+
 Cautions
 ========
 
@@ -39,7 +39,7 @@ Precautions for developing code that makes updates via the debug prompt:
 Starting the debug prompt interactively
 =======================================
 
-This assumes that you are running Plone in a ZEO configuration on a *NIX server, and your Zope clients run as the ``plone_daemon`` user.
+This assumes that you are running Plone in a ZEO configuration on a \*NIX server, and your Zope clients run as the ``plone_daemon`` user.
 
 After logging into your server, start the debug prompt with::
 
@@ -51,8 +51,8 @@ The output will look something like::
     2015-06-26 12:33:51 WARNING SecurityInfo Conflicting security declarations for "manage_pasteObjects"
     2015-06-26 12:33:51 WARNING SecurityInfo Class "CopyContainer" had conflicting security declarations
     2015-06-26 12:33:52 WARNING Init Class Products.Five.metaclass.RedirectsView has a security declaration for nonexistent method 'errors'
-        
-    >>>    
+
+    >>>
 
 There may be some additional warnings, based on the products installed.
 

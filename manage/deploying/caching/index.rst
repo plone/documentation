@@ -15,7 +15,7 @@ Any dynamically generated website with a non-trivial number of visitors, will be
 
 Plone is no exception to that.
 Caching in Plone is a two-step process for most larger sites.
-There is an add-on called ``plone.app.caching`` that is shipped with Plone since version 4.1.
+There is an add-on called ``plone.app.caching`` that is shipped with Plone.
 On its own, it will already speed up response time quite dramatically.
 You simply have to enable it, use the default values provided, and you will have a faster site.
 
@@ -25,14 +25,6 @@ You can also 'invalidate' content automatically when you update a piece of conte
 
 But plone.app.caching works even better together with a dedicated front-end cache, a program that is specialized in doing this work.
 These days, the favourite and recommended program for that is called "Varnish".
-
-Here, you will find documentation on both. Remember, they work best together.
-
-.. toctree::
-    :maxdepth: 2
-
-    /external/plone.app.caching/docs/index
-
 
 
 

@@ -51,9 +51,8 @@ Through the code changes
 ========================
 
 To expand Plone using Python, you have to create your own add-on product.
-Add-on products are distributed as packaged Python modules called :doc:`eggs </old-reference-manuals/buildout/index>`.
-The recommended way is to use the :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` command to generate an add-on
-product skeleton which you can
-use as a starting point for your development.
+Add-on products are distributed as packaged Python modules called `eggs <http://docs.plone.org/4/en/old-reference-manuals/buildout/index.html>`_.
+
+The recommended way is to use the :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` command to generate an add-on product skeleton which you can use as a starting point for your development.
 
 

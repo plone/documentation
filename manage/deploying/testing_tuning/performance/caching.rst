@@ -257,7 +257,11 @@ Related ZCML
 
      </configure>
 
-Related view code::
+Related view code:
+
+
+.. code-block:: python
+
     from Products.Five import BrowserView
 
     class ImagePortletImageDownload(BrowserView):
@@ -293,7 +297,9 @@ Related view code::
             # Push data to the downstream clients
             return stream_data(image)
 
-When we refer to the view in ``<img src>`` we use modified time parameter::
+When we refer to the view in ``<img src>`` we use modified time parameter:
+
+.. code-block:: python
 
     def getImageURL(self, imageDesc):
         """

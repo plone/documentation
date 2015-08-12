@@ -52,7 +52,7 @@ plone.app.multilingual
 .. toctree::
    :maxdepth: 1
 
-   /external/plone.app.multilingual/docs/index
+   /external/plone.app.multilingual/README
 
 plone.app.contenttypes
 ^^^^^^^^^^^^^^^^^^^^^^

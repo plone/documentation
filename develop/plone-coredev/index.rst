@@ -42,13 +42,4 @@ These are some documents using as reference for this documentation.
    mrdeveloper
    plipreview
 
-Translations available
-----------------------
 
-There are some initiatives to maintenance available translations in other languages for this documentation like:
-
-.. toctree::
-   :maxdepth: 1
-
-   Spanish version <es/index>
-   Portuguese version <pt_BR/index>

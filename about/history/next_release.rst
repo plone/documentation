@@ -15,3 +15,11 @@ Changelog
 - **Provided one more example for the Title**
 
     *@fulv* provided more examples about titles in content items.
+
+- **Fix outdated links**
+
+    *@polyester* fixed many outdated and broken links
+
+- **rst syntax fixes**
+
+    *@polyester* fixed various rst syntax errors

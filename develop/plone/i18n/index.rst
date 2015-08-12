@@ -13,10 +13,9 @@ localization particularities (dates, etc):
 * Adapting locale-specific settings (such as the time format) for the site,
   like the `plone.i18n`_ package.
 
-And the ones responsible for translating the user generated content. There are
-several add-on products that provides multilingual support to Plone:
+And the ones responsible for translating the user generated content.
+Since Plone 5, this is done out of the box with plone.app.multilingual
 
-* `Products.LinguaPlone`_ (Archetypes content types based only)
 
 * `plone.app.multilingual`_ (Archetypes and Dexterity content types, requires
   at least Plone 4.1)
@@ -24,7 +23,6 @@ several add-on products that provides multilingual support to Plone:
 .. _zope.i18n: https://pypi.python.org/pypi/zope.i18n
 .. _zope.i18nmessageid: https://pypi.python.org/pypi/zope.i18nmessageid
 .. _plone.i18n: https://pypi.python.org/pypi/plone.i18n
-.. _Products.LinguaPlone: https://pypi.python.org/pypi/Products.LinguaPlone
 .. _plone.app.multilingual: https://pypi.python.org/pypi/plone.app.multilingual
 
 Contents

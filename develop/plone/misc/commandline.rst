@@ -110,7 +110,7 @@ You probably need to spoof your :doc:`security credentials </develop/plone/secur
 .. note ::
 
         Instance must be stopped in order to run this.
-	
+
 Cron and timed jobs
 ---------------------
 
@@ -133,7 +133,7 @@ Alternatively, you can use
         If the batch job takes long to process the site might
         be unavailable for the visitors for a long period.
 
-	
+
 Scripting context
 -----------------
 
@@ -144,7 +144,7 @@ The command line interpreter and scripts gets following global context variables
 * sys.argv contains command-line parameters after python script name
 
 	* argv[0] = script name
-	
+
 	* arvg[1] = first command line argument
 
 
@@ -170,7 +170,7 @@ Example how to commit::
 More info
 
 * http://www.enfoldsystems.com/software/server/docs/4.0/enfolddebuggingtools.html
-	
+
 zopepy
 ------
 
@@ -193,26 +193,23 @@ buildout.cfg example::
 Then running::
 
 	bin/zopepy path/to/myscript.py
-	
+
 ...or if you want to run a script outside buildout folder::
 
         cd /tmp
         /srv/plone/site/bin/zopepy pack2.py
-        	
+
 
 Setting up ZEO for command line-processing
 ------------------------------------------
 
 Plone site HTTP requests are processed by one process per requests.
-One process cannot handle more than one request once. If you need
-to have long-running transactions you need to at least two
-front end processes, ZEO clients, so that long-running
-transactions won't block your site.
+One process cannot handle more than one request once.
+If you need to have long-running transactions you need to at least two front end processes, ZEO clients, so that long-running transactions won't block your site.
 
-* :doc:`Converting instance to ZEO based configuration </old-reference-manuals/buildout/zope_to_zeo>`
+* `Converting instance to ZEO based configuration <http://docs.plone.org/4/en/old-reference-manuals/buildout/zope_to_zeo.html>`_
 
-Your code might want to call transaction.commit() now and then to commit the
-current transaction.
+Your code might want to call transaction.commit() now and then to commit the current transaction.
 
 Posing as user
 --------------
@@ -300,7 +297,7 @@ and portal_skins skin layers::
         script()
 
 
-	
+
 More info
 
 * http://wiki.zope.org/zope2/HowToFakeREQUESTInDebugger
