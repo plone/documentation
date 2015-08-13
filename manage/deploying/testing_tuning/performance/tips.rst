@@ -87,15 +87,6 @@ How to offload blob processing from Zope:
 
 * http://www.slideshare.net/Jazkarta/large-files-without-the-trials
 
-LinguaPlone and multi-lingual sites
-=====================================
-
-Do not use ``LanguageIndex``, and update your ``LinguaPlone`` to version
-3.1.
-
-* http://plone.293351.n2.nabble.com/Products-LinguaPlone-LanguageIndex-vs-FieldIndex-tp5554729p5554729.html
-
-* http://plone-regional-forums.221720.n2.nabble.com/New-LinguaPlone-releases-with-large-performance-improvements-td5578581.html
 
 Sessions and performance
 ========================

@@ -297,13 +297,9 @@ Symptoms:
 Traceback example::
 
         * Module ZPublisher.Publish, line 202, in publish_module_standard
-        * Module Products.LinguaPlone.patches, line 67, in new_publish
         * Module ZPublisher.Publish, line 170, in publish
-        * Module Products.LinguaPlone.patches, line 67, in new_publish
         * Module ZPublisher.Publish, line 170, in publish
-        * Module Products.LinguaPlone.patches, line 67, in new_publish
         * Module ZPublisher.Publish, line 170, in publish
-        * Module Products.LinguaPlone.patches, line 67, in new_publish
         * Module ZPublisher.Publish, line 157, in publish
         * Module plone.app.linkintegrity.monkey, line 15, in zpublisher_exception_hook_wrapper
         * Module ZPublisher.Publish, line 125, in publish

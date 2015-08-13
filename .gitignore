@@ -4,3 +4,4 @@ external
 broken*
 *.mo
 .DS_Store
+_locales

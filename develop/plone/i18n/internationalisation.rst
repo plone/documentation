@@ -12,18 +12,15 @@ Translating text strings
 Introduction
 ============
 
-Internationalization is a process to make your code locale- and
-language-aware.  Usually this means supplying translation files for text
-strings used in the code.
+Internationalization is a process to make your code locale- and language-aware.
+Usually this means supplying translation files for text strings used in the code.
 
-Plone internally uses the UNIX standard term:`gettext` tool to perform
-term:`i18n`.
+Plone internally uses the UNIX standard term:`gettext` tool to perform :term:`i18n`.
 
-There are two separate gettext systems. Both use the :term:`.po` file format
-to describe translations.
+There are two separate gettext systems. Both use the :term:`.po` file format to describe translations.
 
-Note that this chapter concerns only *code-level* translations. *Content*
-translations are managed by the `Products.LinguaPlone`_ add-on product.
+Note that this chapter concerns only *code-level* translations.
+*Content* translations are managed by the :doc:`plone.app.multilingual </external/plone.app.multilingual/README>` add-on product.
 
 `zope.i18n`_
 ==============
@@ -33,27 +30,18 @@ translations are managed by the `Products.LinguaPlone`_ add-on product.
 * Translations are stored in the ``locales`` folder of your application.
   Example: ``locales/fi/LC_MESSAGES/your.app.po``
 
-* Has `zope.i18nmessageid`_ package, which provides a string-like class
-  which allows storing the translation domain with translatable text strings
-  easily.
+* Has `zope.i18nmessageid`_ package, which provides a string-like class which allows storing the translation domain with translatable text strings easily.
 
-* ``.po`` files must usually be manually converted to ``.mo`` binary files
-  every time the translations are updated.  See :term:`i18ndude`. (It is
-  also possible to set an environment variable to trigger recompilation of
-  ``.mo`` files; see below.)
+* ``.po`` files must usually be manually converted to ``.mo`` binary files every time the translations are updated.  See :term:`i18ndude`. (It is also possible to set an environment variable to trigger recompilation of ``.mo`` files; see below.)
 
-Plone (at least 3.3) uses only filename and path to search for the
-translation files.
+Plone (at least 3.3) uses only filename and path to search for the translation files.
 Information in the ``.po`` file headers is ignored.
 
 Generating a ``.pot`` template file for your package(s)
 --------------------------------------------------------
 
-`infrae.i18nextract`_ can be used in your buildout to create a script which
-searches particular packages for translation strings. This can be
-particularly useful for creating a single *translations* package which
-contains the translations for the set of packages which make up your
-application.
+`infrae.i18nextract`_ can be used in your buildout to create a script which searches particular packages for translation strings.
+This can be particularly useful for creating a single *translations* package which contains the translations for the set of packages which make up your application.
 
 Add the following to your ``buildout.cfg``:
 
@@ -68,17 +56,13 @@ Add the following to your ``buildout.cfg``:
     output-package = myapplication.translations
     domain = mypackage
 
-Running the ``./bin/translation-extract`` script will produce a ``.pot``
-file in the specified output directory which can then be used to create the
-``.po`` files for each translation:
+Running the ``./bin/translation-extract`` script will produce a ``.pot`` file in the specified output directory which can then be used to create the ``.po`` files for each translation:
 
 .. code-block:: console
 
    msginit --locale=fr --input=locales/mypackage.pot --output=locales/fr/LC_MESSAGES/mypackage.po
 
-The ``locales`` directory should contain a directory for each language, and
-a directory called ``LC_MESSAGES`` within each of these, followed by the
-corresponding ``.po`` files containing the translation strings:
+The ``locales`` directory should contain a directory for each language, and a directory called ``LC_MESSAGES`` within each of these, followed by the corresponding ``.po`` files containing the translation strings:
 
 .. code-block:: sh
 
@@ -90,9 +74,8 @@ corresponding ``.po`` files containing the translation strings:
 Marking translatable strings in Python
 ---------------------------------------
 
-Each module declares its own ``MessageFactory`` which is a callable and
-marks strings with translation domain.  ``MessageFactory`` is declared in
-the main ``__init__.py`` file of your package.
+Each module declares its own ``MessageFactory`` which is a callable and marks strings with translation domain.
+``MessageFactory`` is declared in the main ``__init__.py`` file of your package.
 
 .. code-block:: python
 
@@ -109,9 +92,8 @@ You also need to have the following ZCML entry:
         <i18n:registerTranslations directory="locales" />
     </configure>
 
-After the setup above you can use message factory to mark strings with
-translation domains.  ``i18ndude`` translation utilities use underscore
-``_`` to mark translatable strings (term:`gettext` message ids).
+After the setup above you can use message factory to mark strings with translation domains.
+``i18ndude`` translation utilities use underscore ``_`` to mark translatable strings (term:`gettext` message ids).
 Message ids must be unicode strings.
 
 .. code-block:: python
@@ -159,16 +141,14 @@ element as msgid.
 
 * Use attributes i18n:translate, i18n:attributes and so on
 
-For examples look any core Plone .pt files
+For examples look at any core Plone .pt files
 
 Automatically translated message ids
 -------------------------------------
 
-Plone will automatically perform translation for message ids which are
-output in page templates.
+Plone will automatically perform translation for message ids which are output in page templates.
 
-The following code would translate ``my_translateable_text`` to the native
-language activated for the current page.
+The following code would translate ``my_translateable_text`` to the native language activated for the current page.
 
 .. code-block:: xml
 
@@ -183,12 +163,9 @@ language activated for the current page.
 Manually translated message ids
 -------------------------------
 
-If you need to manipulate translated text outside page templates, you need
-to perform the final translation manually.
+If you need to manipulate translated text outside page templates, you need to perform the final translation manually.
 
-Translation always needs context (i.e. under which site the translation
-happens), as the active language and other preferences are read from the
-HTTP request object and site object settings.
+Translation always needs context (i.e. under which site the translation happens), as the active language and other preferences are read from the HTTP request object and site object settings.
 
 Translation can be performed using the ``context.translate()`` method::
 
@@ -225,15 +202,13 @@ and does the trick::
 
 .. note::
 
-    Translation needs HTTP request object and thus may not work correctly
-    from command-line scripts.
+    Translation needs HTTP request object and thus may not work correctly from command-line scripts.
 
 
 Non-python message ids
 ----------------------
 
-There are also other message id markers in code outside the Python domain,
-that have their own mechanisms:
+There are also other message id markers in code outside the Python domain, that have their own mechanisms:
 
 * ZCML entries
 * GenericSetup XML
@@ -243,18 +218,15 @@ that have their own mechanisms:
 Translating browser view names
 ------------------------------
 
-Often you might want to translate browser view names, so that the "Display"
-contentmenu shows something more human readable than, for example,
+Often you might want to translate browser view names, so that the "Display" contentmenu shows something more human readable than, for example,
 "my_awesome_view".
 
 These are the steps needed to get it translated:
 
-* Use the "plone" domain for your browser view name translations. Wether put
-  the whole ZCML in the plone domain of just the view definitions with
+* Use the "plone" domain for your browser view name translations. Wether put the whole ZCML in the plone domain of just the view definitions with
   i18n:domain="plone".
 
-* The msgids for the views are their names. Translate them in a plone.po
-  override file in your locales folder.
+* The msgids for the views are their names. Translate them in a plone.po override file in your locales folder.
 
 Please note, i18ndude does not parse the zcml files for translation strings
 (see below "Translating other ZCML").
@@ -302,8 +274,7 @@ to get the final translated string.  It will use the currently activate
 language.  Translation domain will be taken from the msgid object itself,
 which is a string-like ``zope.i18nmessageid`` instance.
 
-Message ids are immutable (read-only) objects so you need to always create a
-new message id if you use different variable substitution mappings.
+Message ids are immutable (read-only) objects so you need to always create a new message id if you use different variable substitution mappings.
 
 Python code::
 
@@ -334,26 +305,13 @@ For more information, see
 
 * http://wiki.zope.org/zope3/TurningMessageIDsIntoRocks
 
-PlacelessTranslationService
-============================
-
-* Historic, being phased out.
-
-* Stores ``.po`` files in ``i18n`` folder of your add-on product.
-
-* Used for main "plone" translation catalog (until Plone 3.3.x)
-
-* Translation files are processed when Plone is restarted. Example:
-  ``i18n/yourapp-fi.po``.
-
 i18ndude
 ========
 
 :term:`i18ndude` is a developer-oriented command-line utility to manage
 ``.po`` and ``.mo`` files.
 
-Usually you build our own shell script wrapper around ``i18ndude`` to
-automate generation of ``.mo`` files of your product ``.po`` files.
+Usually you build our own shell script wrapper around ``i18ndude`` to automate generation of ``.mo`` files of your product ``.po`` files.
 
 .. note::
 
@@ -389,8 +347,7 @@ Examples:
 Installing i18ndude
 -------------------
 
-The recommended method is to have term:`i18ndude` installed via your
-`buildout <http://www.buildout.org/docs/index.html>`_.
+The recommended method is to have term:`i18ndude` installed via your `buildout <http://www.buildout.org/docs/index.html>`_.
 
 Add the following to your buildout.cfg:
 
@@ -422,10 +379,7 @@ You can also call it relative to your current package source folder
 
 .. warning::
 
-    Do not ``easy_install i18ndude``. ``i18ndude`` depends on various Zope
-    packages and pulling them to your system-wide Python configuration could
-    be dangerous, due to potential conflicts with corresponding, but
-    different versions, of the same packages used with Plone.
+    Do not ``easy_install i18ndude``. ``i18ndude`` depends on various Zope packages and pulling them to your system-wide Python configuration could be dangerous, due to potential conflicts with corresponding, but different versions, of the same packages used with Plone.
 
 More information
 
@@ -458,12 +412,10 @@ Example:
 Manual ``.po`` entries
 ------------------------
 
-``i18ndude`` scans source ``.py`` and ``.pt`` files for translatable text
-strings.  On some occasions this is not enough - for example if you
-dynamically generate message ids in your code. Entries which cannot be
-detected by automatic code scan are called *manual po entries*. They are
-managed in ``locales/manual.pot`` which is merged to generated
-``locales/yournamespace.app.pot`` file.
+``i18ndude`` scans source ``.py`` and ``.pt`` files for translatable text strings.
+On some occasions this is not enough - for example if you dynamically generate message ids in your code.
+Entries which cannot be detected by automatic code scan are called *manual po entries*.
+They are managed in ``locales/manual.pot`` which is merged to generated ``locales/yournamespace.app.pot`` file.
 
 Here is a sample ``manual.pot`` file::
 
@@ -486,8 +438,7 @@ Here is a sample ``manual.pot`` file::
 Managing ``.po`` files
 -----------------------
 
-Example shell script to manage i18n files. Change ``CATALOGNAME`` to reflect
-the actual package of your product:
+Example shell script to manage i18n files. Change ``CATALOGNAME`` to reflect the actual package of your product:
 
 The script will:
 
@@ -600,9 +551,7 @@ The rule for compiled .mo files is that
 
 * Released eggs on PyPi, however, **must** contain compiled .mo files
 
-The easiest way to manage this is to use `zest.releaser <https://pypi.python.org/pypi/zest.releaser>`_
-tool together with `zest.pocompile package <https://pypi.python.org/pypi/zest.pocompile>`_
-to release your eggs.
+The easiest way to manage this is to use the `zest.releaser <https://pypi.python.org/pypi/zest.releaser>`_ tool together with `zest.pocompile package <https://pypi.python.org/pypi/zest.pocompile>`_ to release your eggs.
 
 Dynamic content
 ===============
@@ -642,14 +591,10 @@ More info
 Overriding translations
 ========================
 
-If you need to change a translation from a ``.po`` file, you could
-create a new python package and register your own ``.po`` files.
+If you need to change a translation from a ``.po`` file, you could create a new python package and register your own ``.po`` files.
 
-To do this, create the package and add a ``locales`` directory in there,
-along the lines of what `plone.app.locales`_ does.
-Then you can add your own translations in the language that you need;
-for example ``locales/fr/LC_MESSAGES/plone.po`` to override French messages
-in the ``plone`` domain.
+To do this, create the package and add a ``locales`` directory in there, along the lines of what `plone.app.locales`_ does.
+Then you can add your own translations in the language that you need; for example ``locales/fr/LC_MESSAGES/plone.po`` to override French messages in the ``plone`` domain.
 
 Reference the translation in ``configure.zcml`` of your package:
 
@@ -680,12 +625,7 @@ To manage this, you can include the ZCML in the buildout:
     # is loaded before plone.app.locales
     zcml = my.package
 
-See the *Overriding Translations* section of Maurits van Rees's
-`blog entry on Plone i18n
-<http://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4>`_,
-and Vincent Fretin's `posting
-<http://article.gmane.org/gmane.comp.web.zope.plone.user/109580>`_ on the
-Plone-Users mailing list.
+See the *Overriding Translations* section of Maurits van Rees's `blog entry on Plone i18n <http://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4>`_, and Vincent Fretin's `posting <http://article.gmane.org/gmane.comp.web.zope.plone.user/109580>`_ on the Plone-Users mailing list.
 
 
 Other
@@ -702,6 +642,5 @@ Other
 
 .. _zope.i18n: https://pypi.python.org/pypi/zope.i18n
 .. _zope.i18nmessageid: https://pypi.python.org/pypi/zope.i18nmessageid
-.. _Products.LinguaPlone: https://pypi.python.org/pypi/Products.LinguaPlone
 .. _infrae.i18nextract: https://pypi.python.org/pypi/infrae.i18nextract
 .. _plone.app.locales: https://pypi.python.org/pypi/plone.app.locales
