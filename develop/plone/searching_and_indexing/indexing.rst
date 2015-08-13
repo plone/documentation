@@ -260,13 +260,12 @@ the ``@indexer`` decorator, and you can omit the ``provides``
 attribute because the thing returned by the decorator is actually a
 class providing the required ``IIndexer`` interface.
 
-To learn more about the *plone.indexer* package, read
-`its doctest`_.
+To learn more about the *plone.indexer* package, read `its doctest <http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt>`_.
 
-For more info about how to create content-types, refer to the
-`Archetypes Developer Manual`_.
+For more info about how to create content-types, refer to the :doc:`developing add-ons section </develop/addons/index>`.
+For older Archetypes content-types, see the `Plone 4 documentention on Archetypes <http://docs.plone.org/4/en/old-reference-manuals/archetypes/index.html>`_
 
-**Important note:** If you want to adapt a out-of-the-box
+**Important note:** If you want to adapt an
 Archetypes content-type like Event or News Item, take into account
 you will have to feed the ``indexer`` decorator with the Zope 3
 interfaces defined in ``Products.ATContentTypes.interface.*``
@@ -346,7 +345,7 @@ Also, if you modify security related parameters (permissions), you need to call 
 Index types
 -----------
 
-Zope 2 product PluginIndexes defines various portal_catalog index types used by Plone.
+Zope 2 product `PluginIndexes <https://github.com/zopefoundation/Products.ZCatalog/tree/master/src/Products/PluginIndexes>`_ defines various portal_catalog index types used by Plone.
 
 * FieldIndex stores values as is
 
@@ -357,7 +356,7 @@ Zope 2 product PluginIndexes defines various portal_catalog index types used by 
 
 * ZCTextIndex is used for full text indexing
 
-* ExtendedPathIndex_ is used for indexing content object locations.
+* `ExtendedPathIndex <https://github.com/plone/Products.ExtendedPathIndex>`_ is used for indexing content object locations.
 
 
 Default Plone indexes and metadata columns
@@ -515,13 +514,3 @@ Other
 -----
 
 * http://toutpt.wordpress.com/2008/12/14/archetype_tool-queuecatalog-becareful-with-indexing-with-plones-portal_catalog/
-
-
-
-.. _ExtendedPathIndex: https://github.com/plone/Products.ExtendedPathIndex/blob/master/README.txt
-
-.. _PluginxIndexes: http://svn.zope.org/Zope/trunk/src/Products/PluginIndexes/
-
-.. _its doctest: http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt
-
-.. _Archetypes Developer Manual: https://plone.org/documentation/manual/developer-manual/archetypes

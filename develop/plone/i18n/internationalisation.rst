@@ -22,15 +22,17 @@ There are two separate gettext systems. Both use the :term:`.po` file format to 
 Note that this chapter concerns only *code-level* translations.
 *Content* translations are managed by the :doc:`plone.app.multilingual </external/plone.app.multilingual/README>` add-on product.
 
-`zope.i18n`_
-==============
+zope.i18n
+=========
+
+See also `zope.i18n on pypi <https://pypi.python.org/pypi/zope.i18n>`_
 
 * Follows term:`gettext` best practices
 
 * Translations are stored in the ``locales`` folder of your application.
   Example: ``locales/fi/LC_MESSAGES/your.app.po``
 
-* Has `zope.i18nmessageid`_ package, which provides a string-like class which allows storing the translation domain with translatable text strings easily.
+* Has `zope.i18nmessageid <https://pypi.python.org/pypi/zope.i18nmessageid>`_ package, which provides a string-like class which allows storing the translation domain with translatable text strings easily.
 
 * ``.po`` files must usually be manually converted to ``.mo`` binary files every time the translations are updated.  See :term:`i18ndude`. (It is also possible to set an environment variable to trigger recompilation of ``.mo`` files; see below.)
 
@@ -40,7 +42,7 @@ Information in the ``.po`` file headers is ignored.
 Generating a ``.pot`` template file for your package(s)
 --------------------------------------------------------
 
-`infrae.i18nextract`_ can be used in your buildout to create a script which searches particular packages for translation strings.
+`infrae.i18nextract <https://pypi.python.org/pypi/infrae.i18nextract>`_ can be used in your buildout to create a script which searches particular packages for translation strings.
 This can be particularly useful for creating a single *translations* package which contains the translations for the set of packages which make up your application.
 
 Add the following to your ``buildout.cfg``:
@@ -605,8 +607,7 @@ Reference the translation in ``configure.zcml`` of your package:
         <i18n:registerTranslations directory="locales" />
     </configure>
 
-Your ZCML needs to be included *before* the one from `plone.app.locales`_:
-the first translation of a msgid wins.
+Your ZCML needs to be included *before* the one from `plone.app.locales <https://pypi.python.org/pypi/plone.app.locales>`_: the first translation of a msgid wins.
 To manage this, you can include the ZCML in the buildout:
 
 .. code-block:: cfg
@@ -638,9 +639,3 @@ Other
 * http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
 
 
-
-
-.. _zope.i18n: https://pypi.python.org/pypi/zope.i18n
-.. _zope.i18nmessageid: https://pypi.python.org/pypi/zope.i18nmessageid
-.. _infrae.i18nextract: https://pypi.python.org/pypi/infrae.i18nextract
-.. _plone.app.locales: https://pypi.python.org/pypi/plone.app.locales
