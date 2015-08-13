@@ -1,6 +1,6 @@
-===============================================
+=========
  Catalogs
-===============================================
+=========
 
 .. admonition:: Description
 
@@ -10,7 +10,7 @@
 .. contents:: :local:
 
 Why ZCatalogs?
-----------------
+--------------
 
 Plone is built on the CMF, which uses the ZODB to store content in
 a very free-form manner with arbitrary hierarchy and a lot of
@@ -47,7 +47,7 @@ with Plone since the 3.0 release, is what you're looking for. See
 `Boolean queries (AdvancedQuery)`_ for a brief introduction.
 
 Quick start
--------------
+-----------
 
 Every ZCatalog is composed of indexes and metadata. Indexes are
 fields you can search by, and metadata are copies of the contents
@@ -160,7 +160,7 @@ How to trigger rebuild::
     portal_catalog.clearFindAndRebuild()
 
 Retrieving unique values from a catalog
-------------------------------------------
+---------------------------------------
 Catalogs have a uniqueValues method associated with each index.
 There are times when you will need to get a list of all the values
 currently stored on a particular index. For example if you wanted

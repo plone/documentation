@@ -302,8 +302,7 @@ Here are the ingredients:
 Configuring Plone products from buildout
 ========================================
 
-See a section in the
-:ref:`Buildout chapter <configuring-products-from-buildout>`
+See a section in the `Buildout chapter <http://docs.plone.org/4/en/old-reference-manuals/buildout/additional.html#configuring-products-from-buildout>`_
 
 
 Configuration using environment variables

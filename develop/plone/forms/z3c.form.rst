@@ -1,6 +1,6 @@
-==================================
+================
 z3c.form library
-==================================
+================
 
 .. admonition:: Description
 
@@ -110,12 +110,14 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 
 * Include Dexterity in your buildout as instructed by Dexterity manual
 
-* Create Plone add-on product using :doc:`Paster </develop/addons/paste>`
+* Create Plone add-on product using `Paster <http://docs.plone.org/4/en/develop/addons/paste.html>`_
 
 .. deprecated:: may_2015
     Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
 * Register the form in ``configure.zcml``::
+
+
 
     <configure
         xmlns="http://namespaces.zope.org/zope"
@@ -315,7 +317,7 @@ Example::
 Customizing form frame
 ------------------------
 
-Please see `plone.app.z3cform README <https://github.com/plone/plone.app.z3cform>`_.
+Please see `plone.app.z3cform README <https://github.com/plone/plone.app.z3cform>`__.
 
 Rendering a form manually
 ---------------------------
@@ -454,7 +456,9 @@ Read-only fields
 
 There is ``field.readonly`` flag.
 
-Example code::
+Example code:
+
+.. code-block:: python
 
     class AREditForm(crud.EditForm):
         """ Form whose fields are dynamically constructed """
@@ -517,7 +521,9 @@ editable::
 Dynamic schemas
 ----------------------------
 
-Below is an example of how to include new schemas on the fly::
+Below is an example of how to include new schemas on the fly:
+
+.. code-block:: python
 
     class EditForm(dexterity.EditForm, Helper):
 
@@ -557,7 +563,9 @@ Below is an example of how to include new schemas on the fly::
 Date and time
 ---------------
 
-Example::
+Example:
+
+.. code-block:: python
 
     class IDeal(form.Schema):
         """
@@ -1188,7 +1196,7 @@ You can change how the frame around each widget is rendered
 in the widget rendering loop. This frame has elements like
 label, required marker, field description and so on.
 
-For instructions see `plone.app.z3cform README <https://github.com/plone/plone.app.z3cform/>`_
+For instructions see `plone.app.z3cform README <https://github.com/plone/plone.app.z3cform/>`__
 
 Combined widgets
 -------------------
@@ -2239,8 +2247,12 @@ Validators are best added in the schema itself.
 * The plone.form.directives package provides convenient
   `decorators for form validators <https://pypi.python.org/pypi/plone.directives.form#validators>`_.
   If you use ``plone.form.directives`` validators, make sure your package
-  is :doc:`grokked </appendices/grok>`
+  is `grokked <http://docs.plone.org/4/en/appendices/grok.html>`_
   (otherwise validators are not registered).
+
+.. note::
+
+   using Grok is not recommended anymore!
 
 Example: How to use widget specific validators with ``z3c.form``::
 

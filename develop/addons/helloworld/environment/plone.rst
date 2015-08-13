@@ -10,7 +10,7 @@ Install Plone
 
 Now that we have a virtual_env, we can move on the to third step of our process; installing Plone. First, we need to install ZopeSkel.
 
-.. note:: 
+.. note::
 
     Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
@@ -23,7 +23,7 @@ Install ZopeSkel
 
 ZopeSkel simplifies the process of setting up Plone development.
 
-The Plone community is transitioning between ZopeSkel 2.21.2 and a major rewrite currently at 3.0b3. Currently, the Plone installers use version 2.21.2. (August 2012) For more information about ZopeSkel see the :doc:`Bootstrapping Plone add-on development </develop/addons/paste>` section of this manual.
+The Plone community is transitioning between ZopeSkel 2.21.2 and a major rewrite currently at 3.0b3. Currently, the Plone installers use version 2.21.2. (August 2012) For more information about ZopeSkel see the `Bootstrapping Plone add-on development <http://docs.plone.org/4/en/develop/addons/paste.html>`_ section of this manual.
 
 We will install ZopeSkel 2.21.2 in our virtual_env and and use it to install Plone.
 

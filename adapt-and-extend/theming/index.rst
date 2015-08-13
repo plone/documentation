@@ -14,11 +14,28 @@ Theming Plone
    :maxdepth: 2
 
    theme_product
+
+
+.. toctree::
+   :maxdepth: 2
+
+
    /external/plone.app.theming/docs/index
    /external/diazo/docs/index
-   quick_test
+
+.. toctree::
+   :maxdepth: 2
+
    resources
    barceloneta
+
+An older (Plone 4.2) quick guide which may help to understand Diazo better:
+
+.. toctree::
+   :maxdepth: 2
+
+   quick_test
+
 
 Using Diazo is also possible as a standalone service. That makes it possible to include several back-end applications under one 'look'
 
@@ -34,12 +51,7 @@ General information on the stylesheets and other resources in Plone
 
    templates_css/index
 
-Information on 'old-style' theming for Plone 3, but still valid in Plone 4.
-So upgrading from Plone3 to Plone4 is possible without switching to the new style of theming.
+.. note ::
 
-Do note that for all **new** theme development, Diazo is strongly recommended.
-
-.. toctree::
-   :maxdepth: 2
-
-   old_style_theming.rst
+    Up to version 4.1, Plone was using an older style of theming. Using that is not considered *best practice* anymore.
+    See `older versions of these docs <http://docs.plone.org/4/en/adapt-and-extend/theming/old_style_theming.html>`_ if you need the information.

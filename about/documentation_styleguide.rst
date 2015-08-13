@@ -69,7 +69,7 @@ For including documentation into docs.plone.org, **please** follow these guideli
 
 * Please do not use 'autodoc' to include comments of your code.
 
-* Please follow this :doc:`ReST styleguide <styleguide>` and use **semantic linefeeds**.
+* Please follow this :doc:`ReST styleguide <rst-styleguide>` and use **semantic linefeeds**.
   Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
   PEP8 is for Python files, not for ReStructuredText.
 

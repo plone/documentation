@@ -1,5 +1,5 @@
-Introduction
-============
+bobtemplates introduction
+=========================
 
 .. image:: https://secure.travis-ci.org/plone/bobtemplates.plone.png?branch=master
     :target: http://travis-ci.org/plone/bobtemplates.plone

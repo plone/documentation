@@ -1,6 +1,6 @@
 ==========================================
  Database and transactions troubleshooting
-===========================================
+==========================================
 
 .. admonition:: Description
 
@@ -14,7 +14,7 @@ Introduction
 This document contains information to fix and debug ZODB databases with Plone.
 
 BLOBs and POSKeyErrors
-=======================
+======================
 
 The `Plone CMS <https://plone.org>`_ from version 4.x onwards
 stores files and images uploaded to the `ZODB <http://www.zodb.org/>`_
@@ -195,7 +195,7 @@ The code, ``fixblobs.py``::
             """  Content HTML may have references to this broken image - we cannot fix that HTML
             but link integrity check will yell if we try to delete the bad image.
 
-            
+
             """
             ptool = queryUtility(IPropertiesTool)
             props = getattr(ptool, 'site_properties', None)
@@ -297,13 +297,9 @@ Symptoms:
 Traceback example::
 
         * Module ZPublisher.Publish, line 202, in publish_module_standard
-        * Module Products.LinguaPlone.patches, line 67, in new_publish
         * Module ZPublisher.Publish, line 170, in publish
-        * Module Products.LinguaPlone.patches, line 67, in new_publish
         * Module ZPublisher.Publish, line 170, in publish
-        * Module Products.LinguaPlone.patches, line 67, in new_publish
         * Module ZPublisher.Publish, line 170, in publish
-        * Module Products.LinguaPlone.patches, line 67, in new_publish
         * Module ZPublisher.Publish, line 157, in publish
         * Module plone.app.linkintegrity.monkey, line 15, in zpublisher_exception_hook_wrapper
         * Module ZPublisher.Publish, line 125, in publish

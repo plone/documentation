@@ -88,10 +88,9 @@ Creating your first add-on
 
 	Replace ZopeSkel and paster with bobtemplates !!
 
-Since Python egg package structure is little bit complex, to get started with your first add-on
-you can create a code skeleton (scaffold) for it using :doc:`Plone ZopeSkel code templates </develop/addons/paste>`.
+Since Python egg package structure is little bit complex, to get started with your first add-on you can create a code skeleton (scaffold) for it using :doc:`bobtemplates for Plone </develop/addons/bobtemplates.plone/README>`.
 
-* ZopeSkel generates a basic Python egg package with some Plone files in-place.
+* Mr.Bob with the bobtemplates.plone generates a basic Python egg package with some Plone files in-place.
 
 * This package is registered to buildout as a development egg in the ``buildout.cfg`` file.
 

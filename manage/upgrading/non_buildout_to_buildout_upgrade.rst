@@ -10,7 +10,7 @@ Beginning with Plone 3.2, we're no longer distributing Plone in the traditional 
 
 Buildout, a sophisticated configuration management system from the creator of Zope, is now the recommended way for managing Plone installations. This poses a one-time challenge for folks upgrading from old to new-style installs. It should, though, make future updates much easier.
 
-The :doc:`Managing projects with Buildout </old-reference-manuals/buildout/index>` tutorial provides a great introduction to buildout and its use. Here, we'll just offer a few hints on making your move to buildout as painless as possible.
+The `Managing projects with Buildout <http://docs.plone/org/4/en/old-reference-manuals/buildout/index.html>` tutorial provides a great introduction to buildout and its use. Here, we'll just offer a few hints on making your move to buildout as painless as possible.
 
 #. Give up any idea of doing an in-place update. Many of us got into the habit with earlier versions of Plone of simply unpacking the tarball for a new version into the "Products" directory of the old install. That was never a good idea for a major version update, and it's just not feasible while trying to switch to buildout. The internal layout of the files has just changed too much. Changing to buildout will make it much easier, though, to upgrade in place in the future.
 #. Install a new, buildout-based Plone version to a different place than your old installation. Different path, different drive, different server, different hosting facility — whichever you need.

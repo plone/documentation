@@ -355,7 +355,7 @@ You can provide an uncached version of the site for editors:
 Varnish and I18N
 =================
 
-Please see :doc:`cache issues related to LinguaPlone </develop/plone/i18n/cache>`.
+For older sites using LinguaPlone see `cache issues related to LinguaPlone <http://docs.plone.org/4/en/develop/plone/i18n/cache.html>`_.
 
 Sanitizing cookies
 ==================

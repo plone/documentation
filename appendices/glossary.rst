@@ -2,11 +2,9 @@
  Glossary
 ==========
 
-This is a glossary for some definitions used in this documentation and
-still heavily under construction.
+This is a glossary for some definitions used in this documentation and still heavily under construction.
 
-It incorporates the original `glossary on plone.org
-<https://plone.org/documentation/glossary>`_.
+It incorporates the original `glossary on plone.org <https://plone.org/documentation/glossary>`_.
 
 .. glossary:: :sorted:
 
@@ -484,7 +482,7 @@ It incorporates the original `glossary on plone.org
         and loaded. This is not the case in Zope 3. If you don't enable it
         explicitly, it will not be found.
 
-        
+
 
     .po
         The file format used by the :term:`gettext` translation system.
@@ -549,3 +547,5 @@ It incorporates the original `glossary on plone.org
     Buildout
         Buildout is a Python-based build system for creating, assembling and deploying applications from multiple parts, some of which may be non-Python-based. It lets you create a buildout configuration and reproduce the same software later. See `buildout.org <http://www.buildout.org/en/latest/>`_
 
+    browserview
+         Plone uses a view pattern to output dynamically generated HTML pages. Views are the basic elements of modern Python web frameworks. A view runs code to setup Python variables for a rendering template. Output is not limited to HTML pages and snippets, but may contain JSON, file download payloads, or other data formats. See :doc:`views </develop/plone/views/browserviews>`

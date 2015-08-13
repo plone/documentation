@@ -55,9 +55,8 @@ Example view/viewlet method of getting the current language.
 Getting language of content item
 ================================
 
-All content objects don't necessarily support the ``Language()`` look-up
-defined by the ``IDublinCore`` interface. Below is the safe way to extract
-the served language on the content.
+All content objects don't necessarily support the ``Language()`` look-up defined by the ``IDublinCore`` interface.
+Below is the safe way to extract the served language on the content.
 
 Example BrowserView method::
 

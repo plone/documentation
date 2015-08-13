@@ -183,7 +183,7 @@ It is included after toc.js so that the file ends up as the last script
 of the compressed JS bundle which is served for all users.
 
 The Javascript file itself is usually *yourcompany/app/static/yourjsfile.js*
-in your :doc:`add-on product </develop/addons/paste>`.
+in your :doc:`add-on product </develop/addons/bobtemplates.plone/README>`.
 
 It is mapped to URI like::
 

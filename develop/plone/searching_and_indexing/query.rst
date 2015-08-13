@@ -259,7 +259,7 @@ Counting value of a specific index
 ----------------------------------
 
 The efficient way of counting the number value of an index is to work directly in this index. For example we want to count the number of each portal_type. Quering via search results is a performance bootleneck for that. Iterating on all brains put those in zodb cache. This method is also a memory bottleneck.
-So a good way to achieve this would be::
+So a good way to achieve this would be:
 
 .. code-block:: python
 

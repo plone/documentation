@@ -10,7 +10,15 @@ Create an add-on package
 
 Before extending Plone, we need to create an add-on package to hold our changes. It's possible you would have more than one add-on package. One popular approach is to have a theme product and a product containing your business logic.
 
-We will use ZopeSkel to create a skeleton template for the project. For more information on ZopeSkel, see the section on :doc:`Bootstrapping Plone add-on development </develop/addons/paste>`.
+We will use ZopeSkel to create a skeleton template for the project. For more information on ZopeSkel, see the section on `Bootstrapping Plone add-on development <http://docs.plone.org/4/en/develop/addons/paste.html>`_.
+
+.. note::
+
+    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
+
+
+.. deprecated:: may_2015
+    Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
 
 Put your projects in the src directory of your buildout directory.
 

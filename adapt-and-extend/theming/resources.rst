@@ -35,7 +35,7 @@ The main unit of the resource system is a JavaScript file and/or a set of CSS/LE
 
 Since this can be a single JavaScript file, there are additional requirejs
 options are available to be able to customize. Possible options we have are
-is shim (export, init and depends) so it can be configured to be exported 
+is shim (export, init and depends) so it can be configured to be exported
 o the global namespace, init on load and depend on some other resource.
 
 An example of a resource definition on registry.xml::
@@ -69,8 +69,8 @@ The options are :
 The export/init/depends are the shim option to load the js files in the correct order on the global namespace, for more information : http://requirejs.org/docs/api.html#config-shim
 
 The URL option will you to define the base url in case you want to load txt resources on require js::
-        
-    registry.xml 
+
+    registry.xml
 
     <records prefix="plone.resources/mockup-patterns-structure"
             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
@@ -106,12 +106,12 @@ The URL option will you to define the base url in case you want to load txt reso
 Default resources on Plone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Plone loads a group of mockup components and bower components as resources on the registry. 
+Plone loads a group of mockup components and bower components as resources on the registry.
 In order to avoid running bower install on each installation of Plone it ships by default a minimal
 bower components folder on the CMFPlone static folder with the correct versions of the resources
 that are need to run the default plone js/css.
 
-The default bower components shipped are on : 
+The default bower components shipped are on :
 
 https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json
 
@@ -142,7 +142,7 @@ Bundle
 
 Mainly bundles are groups of resources that are going to be loaded on your plone site. Instead of loading single resources we can group them by our possible needs. In case you
 develop an specific add-on you will need to create your own bundle, if you want to load a single page you will create a bundle, if you want to define some group of js/css that
-will be rendered on some page you need a bundle. 
+will be rendered on some page you need a bundle.
 
 Each bundle will be delivered on a production site as a standalone resource: two http calls (js/css) for each bundle
 
@@ -186,7 +186,7 @@ The options are :
 
 - jscompilation: URL where the minimized/compiled JavaScript version will be
 
-- csscompilation: URL where the minimized/compiled CSS version will be 
+- csscompilation: URL where the minimized/compiled CSS version will be
 
 - last_compilation: date of the compilation that is shipped on the compiled URL
 
@@ -275,7 +275,7 @@ Non compiled bundles
 ^^^^^^^^^^^^^^^^^^^^
 
 In case your resources are not using requirejs/less and you just want to group them on bundles to minimize and deliver them in groups you can use
-the non compiled bundles. 
+the non compiled bundles.
 
 They are minimized and stored on the csscompiled/jscompiled URL defined on the bundle for the first request each time:
 
@@ -333,10 +333,10 @@ In order to allow to have a complete theme its possible to define a bundle in di
     production-css = /++theme++barceloneta/less/barceloneta-compiled.css
     tinymce-content-css = /++theme++barceloneta/less/barceloneta-compiled.css
 
-    development-js = 
-    production-js = 
+    development-js =
+    production-js =
 
-This options allow us to define to plone that the js/css renderer will add the diazo one so we will be able to overwrite the 
+This options allow us to define to plone that the js/css renderer will add the diazo one so we will be able to overwrite the
 <link> <script> tags from the theme with the plone ones loading the diazo resources.
 
 As on the native plone bundles its possible to define a development/production set (less/requirejs) so it integrates with the
@@ -364,7 +364,7 @@ TODO
 Browser Page bundle
 ^^^^^^^^^^^^^^^^^^^
 
-If you want that your browser page loads or unloads an specific bundle when its rendered you can use::
+If you want that your browser page loads or unloads an specific bundle when its rendered you can use:
 
 TODO
 
@@ -444,7 +444,7 @@ Example::
 requirejs require/define and resource/bundle
 --------------------------------------------
 
-In working with requirejs, you'll likely be aware of the 
+In working with requirejs, you'll likely be aware of the
 `mismatched anonymous define() <http://requirejs.org/docs/errors.html#mismatch>`_
 potential misuse of require and define.
 

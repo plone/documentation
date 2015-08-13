@@ -10,7 +10,7 @@ Indexes and metadata
 .. contents :: :local:
 
 What does indexing mean?
--------------------------
+------------------------
 
 Indexing is the action to make object data search-able.
 Plone stores available indexes in the database.
@@ -18,7 +18,7 @@ You can create them through-the-web and inspect existing indexes
 in portal_catalog on Index tab.
 
 The Catalog Tool can be configured through the ZMI or
-problematically in Python but current best practice in the CMF
+programatically in Python but current best practice in the CMF
 world is to use GenericSetup to configure it using the declarative
 *catalog.xml* file. The GenericSetup profile for Plone, for
 example, uses the *CMFPlone/profiles/default/catalog.xml* XML data
@@ -62,7 +62,7 @@ include the following *profiles/default/catalog.xml*:
       the import step for a *catalog.xml* is run a second time (for example
       when you reinstall the product), the indexes specified will be
       destroyed, losing all currently indexed entries, and then re-created
-      fresh (and empty!). If you want to workaround this behavior, you can
+      fresh (and empty!). If you want to workaround this behaviour, you can
       either update the catalog afterwards or add the indexes yourself in
       Python code using a custom import handler.
 
@@ -260,13 +260,12 @@ the ``@indexer`` decorator, and you can omit the ``provides``
 attribute because the thing returned by the decorator is actually a
 class providing the required ``IIndexer`` interface.
 
-To learn more about the *plone.indexer* package, read
-`its doctest`_.
+To learn more about the *plone.indexer* package, read `its doctest <http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt>`_.
 
-For more info about how to create content-types, refer to the
-`Archetypes Developer Manual`_.
+For more info about how to create content-types, refer to the :doc:`developing add-ons section </develop/addons/index>`.
+For older Archetypes content-types, see the `Plone 4 documentention on Archetypes <http://docs.plone.org/4/en/old-reference-manuals/archetypes/index.html>`_
 
-**Important note:** If you want to adapt a out-of-the-box
+**Important note:** If you want to adapt an
 Archetypes content-type like Event or News Item, take into account
 you will have to feed the ``indexer`` decorator with the Zope 3
 interfaces defined in ``Products.ATContentTypes.interface.*``
@@ -294,10 +293,10 @@ To create metadata colums in your ``catalog.xml`` add::
 	</object>
 
 
-When indexing happens and how to re-index manually
+When indexing happens and how to reindex manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Content item re-indexing is run when
+Content item reindexing is run when
 
 Plone calls reindexObject() if
 
@@ -323,7 +322,7 @@ You must call reindexObject() if you
 
 .. warning::
 
-    **Unit test warning:** Usually Plone re-indexes modified objects at the end of each request (each transaction).
+    **Unit test warning:** Usually Plone reindexes modified objects at the end of each request (each transaction).
     If you modify the object yourself you are responsible to notify related catalogs about the new object data.
 
 
@@ -346,18 +345,18 @@ Also, if you modify security related parameters (permissions), you need to call 
 Index types
 -----------
 
-Zope 2 product PluginIndexes defines various portal_catalog index types used by Plone.
+Zope 2 product `PluginIndexes <https://github.com/zopefoundation/Products.ZCatalog/tree/master/src/Products/PluginIndexes>`_ defines various portal_catalog index types used by Plone.
 
 * FieldIndex stores values as is
 
-* DateIndex and DateRangeIndex store dates (Zope 2 DateTime objects) in search-able format. The latter
+* DateIndex and DateRangeIndex store dates (Zope 2 DateTime objects) in searchable format. The latter
   provides ranged searches.
 
 * KeywordIndex allows keyword-style look-ups (query term is matched against all the values of a stored list)
 
 * ZCTextIndex is used for full text indexing
 
-* ExtendedPathIndex_ is used for indexing content object locations.
+* `ExtendedPathIndex <https://github.com/plone/Products.ExtendedPathIndex>`_ is used for indexing content object locations.
 
 
 Default Plone indexes and metadata columns
@@ -392,7 +391,7 @@ Some interesting columns
 Custom sorting by title
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-sortable_title is type of FieldIndex (raw value) and normal ``Title`` index is type of search-able text.
+sortable_title is type of FieldIndex (raw value) and normal ``Title`` index is type of searchable text.
 
 ``sortable_title`` is generated from ``Title`` in ``Products/CMFPlone/CatalogTool.py``.
 
@@ -442,10 +441,10 @@ added to ``SearchableText``
 
     def SearchableText(self):
         """
-        Override search-able text logic based on the requirements.
+        Override searchable text logic based on the requirements.
 
         This method constructs a text blob which contains all full-text
-        search-able text for this content item.
+        searchable text for this content item.
 
         This method is called by portal_catalog to populate its SearchableText index.
         """
@@ -515,9 +514,3 @@ Other
 -----
 
 * http://toutpt.wordpress.com/2008/12/14/archetype_tool-queuecatalog-becareful-with-indexing-with-plones-portal_catalog/
-
-
-
-.. _ExtendedPathIndex: https://github.com/plone/Products.ExtendedPathIndex/blob/master/README.txt
-
-.. _PluginxIndexes: http://svn.zope.org/Zope/trunk/src/Products/PluginIndexes/

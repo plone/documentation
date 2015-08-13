@@ -1283,6 +1283,10 @@ Import Products.ATContentTypes before importing LinguagePlone.
     * https://plone.org/products/linguaplone/issues/253
     * https://plone.org/products/linguaplone/issues/253
 
+.. note::
+
+   The standard multilingual solution for Plone 5 is :doc:`plone.app.multilingual </external/plone.app.multilingual/README>`, which has upgrade steps from LinguaPlone.
+
 NameError: name 'test' is not defined
 -------------------------------------
 

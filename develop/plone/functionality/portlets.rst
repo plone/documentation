@@ -12,12 +12,10 @@ Introduction
 ------------
 
 Portlets are editable boxes in the left and right side bar of Plone user interface.
-Add-ons allow portlets in other parts in of the user interface too, like
-above and below the content.
+Add-ons allow portlets in other parts in of the user interface too, like above and below the content.
 
-This document is contains quick how-to information only.
-Please visit :doc:`Portlets reference manual </old-reference-manuals/portlets/index>`
-for in-depth information.
+This document contains quick how-to information only.
+Please visit the `Portlets reference manual <http://docs/plone.org/4/en/old-reference-manuals/portlets/index.html>`_ for in-depth information.
 
 Related add-ons and packages
 ------------------------------
@@ -56,7 +54,7 @@ Subclassing a portlet
 
 You can subclass a portlet to create a new portlet type with your enhanced functionality.
 
-* :doc:`/old-reference-manuals/portlets/appendix/subclassing`
+* `subclassing portlets <http://docs/plone.org/4/en/old-reference-manuals/portlets/appendix/subclassing.html>`_
 
 Using z3c.form in portlets
 -----------------------------

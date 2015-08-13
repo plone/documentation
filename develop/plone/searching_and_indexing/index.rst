@@ -1,6 +1,6 @@
-=============================
+============================
 Queries, search and indexing
-=============================
+============================
 
 In plone, database index and search facilities are provided by portal_catalog tool.
 There are two distinct functions. Indexing: All searchable data is copied to the catalog
