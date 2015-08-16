@@ -14,11 +14,6 @@ Adding images to a Plone web site is a basic task that may involve a little work
 
 When you are ready to upload an image, use the *Add new...* drop-down menu.
 
-.. replaces: /_static/add-item-menu-image.png
-.. figure:: ../../_robot/adding-images_add-menu.png
-   :align: center
-   :alt: add-new-menu.png
-
 .. code:: robotframework
    :class: hidden
 
@@ -41,13 +36,13 @@ When you are ready to upload an image, use the *Add new...* drop-down menu.
        ...  css=#plone-contentmenu-factories ul
 
 
+.. replaces: /_static/add-item-menu-image.png
+.. figure:: ../../_robot/adding-images_add-menu.png
+   :align: center
+   :alt: add-new-menu.png
+
 
 After clicking to add an **Image**, you'll see the *Add Image* panel:
-
-.. replaces: /_static/addimage.png
-.. figure:: ../../_robot/adding-images_add-form.png
-   :align: center
-   :alt:
 
 .. code:: robotframework
    :class: hidden
@@ -65,7 +60,10 @@ After clicking to add an **Image**, you'll see the *Add Image* panel:
        ...  ${CURDIR}/../../_robot/adding-images_add-form.png
        ...  css=#content
 
-
+.. replaces: /_static/addimage.png
+.. figure:: ../../_robot/adding-images_add-form.png
+   :align: center
+   :alt: Adding images form
 
 The Title and Description fields (field, as in "data input field") are there, as with adding a Folder, and at the bottom there is a place to upload an image.
 Let's look at the three input fields individually:
@@ -84,7 +82,3 @@ You'll have to wait a few seconds for the upload to complete.
 A preview of the uploaded image will be shown when the upload has finished.
 
 Images and files that you upload into Plone have their IDs (URLs) based on the title that you give to the image (instead of the file name of the image or file). However, if you leave the title empty, the name of the item will default to the name of the file.
-
-.. robotframework::
-   :creates: ../../_robot/adding-images_add-menu.png
-             ../../_robot/adding-images_add-form.png

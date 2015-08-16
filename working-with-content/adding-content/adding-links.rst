@@ -8,11 +8,6 @@ Having links as discrete items lets you do things like organizing them in folder
 
 Add a link by clicking the menu choice in the *Add new...* menu:
 
-.. replaces: /_static/copy_of_addnewmenu.png
-.. figure:: ../../_robot/adding-links_add-menu.png
-   :align: center
-   :alt: add-new-menu.png
-
 .. code:: robotframework
    :class: hidden
 
@@ -34,13 +29,12 @@ Add a link by clicking the menu choice in the *Add new...* menu:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
+.. replaces: /_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-links_add-menu.png
+   :align: center
+   :alt: add-new-menu.png
 
 You will see the Add*Link* panel:
-
-.. freplaces: /_static/addlink.png
-.. figure:: ../../_robot/adding-links_add-form.png
-   :align: center
-   :alt:
 
 .. code:: robotframework
    :class: hidden
@@ -58,6 +52,11 @@ You will see the Add*Link* panel:
        ...  ${CURDIR}/../../_robot/adding-links_add-form.png
        ...  css=#content
 
+.. replaces: /_static/addlink.png
+.. figure:: ../../_robot/adding-links_add-form.png
+   :align: center
+   :alt: Adding links form
+
 Good titles for links are important, because the titles will show up in lists of links, and because there tend to be large numbers links held in a folder or collection.
 
 Paste the web address in the URL field or type it in.
@@ -72,7 +71,3 @@ status, or permissions.
 -  **If you have the ability to edit the link object**, when you click on the link object you'll be taken to the object itself so that you can edit it (otherwise you'd be taken to the link's target and could never get to the edit tab!)
 -  **If you don't have the ability to edit the link object**, when you click on the link object you'll be taken to the target of the link object. Likewise, if you enter the web address of the link object
    directly in your browser, you'll be taken directly to the link's target. The link object in this case acts as a *redirect*.
-
-.. robotframework::
-   :creates: ../../_robot/adding-links_add-menu.png
-             ../../_robot/adding-links_add-form.png

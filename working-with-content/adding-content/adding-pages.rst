@@ -8,11 +8,6 @@ another.
 
 To add a page, use the *Add new...* menu for a folder:
 
-.. replaces ../../_static/copy_of_addnewmenu.png
-.. figure:: ../../_robot/adding-pages_add-menu.png
-   :align: center
-   :alt: add-new-menu.png
-
 .. code:: robotframework
    :class: hidden
 
@@ -34,14 +29,12 @@ To add a page, use the *Add new...* menu for a folder:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-
+.. replaces ../../_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-pages_add-menu.png
+   :align: center
+   :alt: add-new-menu.png
 
 Select **Page** from the menu, and you'll see the *Add Page* screen:
-
-.. replaces ../../_robot/editpagepanelplone3.png
-.. figure:: ../../_robot/adding-pages_add-form.png
-   :align: center
-   :alt:
 
 .. code:: robotframework
    :class: hidden
@@ -58,6 +51,11 @@ Select **Page** from the menu, and you'll see the *Add Page* screen:
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-pages_add-form.png
        ...  css=#content
+
+.. replaces ../../_robot/editpagepanelplone3.png
+.. figure:: ../../_robot/adding-pages_add-form.png
+   :align: center
+   :alt: Adding pages form
 
 The **Title** and **Description** fields are there at the top. Fill each of them out appropriately. There is a *Change note* field at the bottom, also a standard input that is very useful for storing helpful memos describing changes to a document as you make them.
 This is useful for pages on which you may be collaborating with others.
@@ -86,6 +84,3 @@ For example, with structured text formatting, surrounding a word or phrase by do
 These mark-up formats are worth learning for speed of input if you do a lot of page creation, or if you are adept at such slightly more technical approaches to entering text.
 Some people prefer such formats not just for speed itself, but for fluidity of expression.
 
-.. robotframework::
-   :creates: ../../_robot/adding-pages_add-menu.png
-             ../../_robot/adding-pages_add-form.png

@@ -9,11 +9,6 @@ A general overview of how to add new content items in Plone, including definitio
 
 New content items are added via the **Add New . . .** drop-down menu:
 
-.. replaces: /_static/copy_of_addnewmenu.png
-.. figure:: ../../_robot/adding-content_add-menu.png
-   :align: center
-   :alt: add-new-menu.png
-
 .. code:: robotframework
    :class: hidden
 
@@ -35,7 +30,10 @@ New content items are added via the **Add New . . .** drop-down menu:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-
+.. replaces: /_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-content_add-menu.png
+   :align: center
+   :alt: add-new-menu.png
 
 Adding content in Plone is done *placefully*, which means you should navigate to the section of your Plone website where you want the new content to reside **before** you use the **Add New . . .** drop-down menu.
 You can of course cut, copy, and paste content items from one section to another if needed at any later time.
@@ -54,7 +52,7 @@ Event
     This content type has a function which allows the site visitor to add the event to their desktop calendar. This includes applications such as: Google Calendar, Outlook, Sunbird and others.
     To add a single event to your calendar, click on the iCal link next to the "Add event to calendar" text in the main view of the event item.
 
-    .. figure:: /_static/events-summary-chart.png
+    .. figure:: ../../_static/events-summary-chart.png
        :align: center
        :alt: events-summary-chart.png
 
@@ -117,6 +115,3 @@ Descriptions are often used to conjunction with a variety of Folder and Collecti
 The Description also appears in search results via Plone's native search engine.
 
 The Description is just plain text, without any form of mark-up. This is to keep it inline with the :term:`Dublin Core` standard, a long-established way of categorizing information.
-
-.. robotframework::
-   :creates: ../../_robot/adding-content_add-menu.png
