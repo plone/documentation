@@ -12,10 +12,7 @@ In Plone folders are essentially used the same way, except that they are created
 Folders are added by clicking the **Add new...** drop-down menu.
 Select **Folder** from the menu:
 
-.. replaces: /_static/add-item-menu-folder.png
-.. figure:: ../../_robot/adding-folders_add-menu.png
-   :align: center
-   :alt: add-new-menu.png
+
 
 .. code:: robotframework
    :class: hidden
@@ -38,14 +35,13 @@ Select **Folder** from the menu:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-
+.. replaces: /_static/add-item-menu-folder.png
+.. figure:: ../../_robot/adding-folders_add-menu.png
+   :align: center
+   :alt: add-new-menu.png
 
 You should now see the *Add Folder* screen:
 
-.. replaces: /_static/addfolder.png
-.. figure:: ../../_robot/adding-folders_add-form.png
-   :align: center
-   :alt:
 
 .. code:: robotframework
    :class: hidden
@@ -62,6 +58,11 @@ You should now see the *Add Folder* screen:
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-folders_add-form.png
        ...  css=#content
+
+.. replaces: /_static/addfolder.png
+.. figure:: ../../_robot/adding-folders_add-form.png
+   :align: center
+   :alt:
 
 
 Fill in the **Title**, which is required, as indicated by the red dot.
@@ -87,6 +88,3 @@ We will cover these tabs in another section of this user manual.
 Be sure to click **Save** at the bottom of the page when you are finished.
 This will complete the folder creation process.
 
-.. robotframework::
-   :creates: ../../_robot/adding-folders_add-menu.png
-             ../../_robot/adding-folders_add-form.png

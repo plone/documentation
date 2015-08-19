@@ -36,14 +36,6 @@
        ${language} =  Get environment variable  LANGUAGE  'en'
        Set default language  ${language}
 
-       Enable autologin as  Manager
-       ${user_id} =  Translate  user_id
-       ...  default=jane-doe
-       ${user_fullname} =  Translate  user_fullname
-       ...  default=Jane Doe
-       Create user  ${user_id}  Member  fullname=${user_fullname}
-       Set autologin username  ${user_id}
-
    Test Teardown
        Run keyword if  sys.argv[0].startswith('bin/robot')
        ...             Remote ZODB TearDown  ${FIXTURE}

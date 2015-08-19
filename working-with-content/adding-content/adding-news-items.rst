@@ -7,11 +7,6 @@ Plone web sites have a built-in system for publishing news items.
 
 Use the *Add new...* menu for a folder to add a news item:
 
-.. replaces: /_static/copy_of_addnewmenu.png
-.. figure:: ../../_robot/adding-news-items_add-menu.png
-   :align: center
-   :alt: add-new-news-item-menu.png
-
 .. code:: robotframework
    :class: hidden
 
@@ -33,13 +28,12 @@ Use the *Add new...* menu for a folder to add a news item:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
+.. replaces: /_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-news-items_add-menu.png
+   :align: center
+   :alt: add-new-news-item-menu.png
 
 You will see the *Add News Item* panel:
-
-.. replaces: /_static/addnewsitem.png
-.. figure:: ../../_robot/adding-news-items_add-form.png
-   :align: center
-   :alt:
 
 .. code:: robotframework
    :class: hidden
@@ -57,6 +51,11 @@ You will see the *Add News Item* panel:
        ...  ${CURDIR}/../../_robot/adding-news-items_add-form.png
        ...  css=#content
 
+.. replaces: /_static/addnewsitem.png
+.. figure:: ../../_robot/adding-news-items_add-form.png
+   :align: center
+   :alt:
+
 The standard fields for title, description, and change note are in the panel, along with a visual editor area for body text and image and image caption fields.
 You can be as creative as you want in the body text area, and you can use the insert image (upload image) function to add as much illustration as needed.
 The images you upload for the news item will be added to the folder in which you are adding the news item.
@@ -68,9 +67,4 @@ Use the **Body Text** to insert an image in the actual body of the News Item.
 .. note::
 
     **IMPORTANT**: News items will not appear in the main web site news listing or news portlet until they are **published.**
-
-
-.. robotframework::
-   :creates: ../../_robot/adding-news-items_add-menu.png
-             ../../_robot/adding-news-items_add-form.png
 

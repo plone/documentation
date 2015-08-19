@@ -10,4 +10,4 @@ A Conceptual Overview of Plone
     visual-design-of-plone
     user-accounts-and-roles
     setting-your-preferences
-    your-dashboard
+

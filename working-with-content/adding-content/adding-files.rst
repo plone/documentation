@@ -7,10 +7,7 @@ Files of various types can be uploaded to Plone web sites.
 
 Choose file in the *Add new...* menu for a folder to upload a file:
 
-.. replaces ../../_static/copy_of_addnewmenu.png
-.. figure:: ../../_robot/adding-files_add-menu.png
-   :align: center
-   :alt: add-new-menu.png
+
 
 .. code:: robotframework
    :class: hidden
@@ -32,12 +29,14 @@ Choose file in the *Add new...* menu for a folder to upload a file:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
+.. replaces ../../_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-files_add-menu.png
+   :align: center
+   :alt: add-new-menu.png
+
 Select **File** from the drop-down menu, and you'll see the *Add File* panel:
 
-.. replaces: ../../_static/addfile.png
-.. figure:: ../../_robot/adding-files_add-form.png
-   :align: center
-   :alt:
+
 
 .. code:: robotframework
    :class: hidden
@@ -55,6 +54,11 @@ Select **File** from the drop-down menu, and you'll see the *Add File* panel:
        ...  ${CURDIR}/../../_robot/adding-files_add-form.png
        ...  css=#content
 
+.. replaces: ../../_static/addfile.png
+.. figure:: ../../_robot/adding-files_add-form.png
+   :align: center
+   :alt:
+
 Click the *Browse* button to navigate to the file you want to upload from your local computer. Provide a title (you can use the same file name used on your local computer if you want).
 Provide a *description* if you want. When you click the save button the file will be uploaded to the folder.
 
@@ -67,6 +71,3 @@ They will appear by name in lists and will be available for download if clicked.
 There are specialized add-on tools for Plone web sites that search the content of files, or can provide a preview of for instance PDF or Office files.
 If you are interested in this functionality, ask your Plone web site administrator.
 
-.. robotframework::
-   :creates: ../../_robot/adding-files_add-menu.png
-             ../../_robot/adding-files_add-form.png

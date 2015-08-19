@@ -549,3 +549,6 @@ It incorporates the original `glossary on plone.org <https://plone.org/documenta
 
     browserview
          Plone uses a view pattern to output dynamically generated HTML pages. Views are the basic elements of modern Python web frameworks. A view runs code to setup Python variables for a rendering template. Output is not limited to HTML pages and snippets, but may contain JSON, file download payloads, or other data formats. See :doc:`views </develop/plone/views/browserviews>`
+
+    toolbar
+         Plone uses a toolbar to have quick access to the content management functions. On a standard instance, this will appear on the left of your screen. However, your site administrator might change this to have a horizontal layout, and it will appear hidden at first when using a smaller-screen device like a phone or tablet.

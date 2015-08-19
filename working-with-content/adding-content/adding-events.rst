@@ -7,10 +7,7 @@ Plone web sites have a built-in system for managing and showing calendar events.
 
 Use the *Add new...* menu for a folder to add an event:
 
-.. replaces ../../_static/copy_of_addnewmenu.png
-.. figure:: ../../_robot/adding-events_add-menu.png
-   :align: center
-   :alt: add-new-menu.png
+
 
 .. code:: robotframework
    :class: hidden
@@ -33,13 +30,15 @@ Use the *Add new...* menu for a folder to add an event:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
+.. replaces ../../_static/copy_of_addnewmenu.png
+.. figure:: ../../_robot/adding-events_add-menu.png
+   :align: center
+   :alt: add-new-menu.png
+
 
 Select **Event** from the drop-down menu, and you'll see the rather large *Add Event* panel:
 
-.. replaces: ../../_static/addevent.png
-.. figure:: ../../_robot/adding-events_add-form.png
-   :align: center
-   :alt:
+
 
 .. code:: robotframework
    :class: hidden
@@ -56,6 +55,11 @@ Select **Event** from the drop-down menu, and you'll see the rather large *Add E
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-events_add-form.png
        ...  css=#content
+
+.. replaces: ../../_static/addevent.png
+.. figure:: ../../_robot/adding-events_add-form.png
+   :align: center
+   :alt: Adding events form
 
 From the top, we have the following fields:
 
@@ -93,10 +97,3 @@ For repeating events, use the "recurrence" link. You can set when, and how often
 .. note::
 
    **IMPORTANT:** Your event will not show on the main web site calendar until it has been **published**.
-
-
-
-
-.. robotframework::
-   :creates: ../../_robot/adding-events_add-menu.png
-             ../../_robot/adding-events_add-form.png
