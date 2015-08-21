@@ -706,11 +706,19 @@ Querying by date
 
 See `DateIndex <http://svn.zope.org/Zope/trunk/src/Products/PluginIndexes/DateIndex/tests/test_DateIndex.py?rev=102443&view=auto>`_.
 
-Example::
+Example:
 
-    items = portal_catalog(effective_date = {'query':(DateTime('2002-05-08 15:16:17'),
-                                            DateTime('2062-05-08 15:16:17')),
-                                   'range': 'min:max'})
+.. code-block:: python
+
+    date_range = {
+        'query': (
+            DateTime('2002-05-08 15:16:17'),
+            DateTime('2062-05-08 15:16:17'),
+        ),
+        'range': 'min:max',
+    }
+
+    items = portal_catalog(effective=date_range)
 
 Note that ``effectiveRange`` may be a lot more efficient. This will return only
 objects whose ``effective_date`` is in the past, ie. objects that are not
