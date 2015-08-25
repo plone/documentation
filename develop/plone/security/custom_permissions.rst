@@ -52,7 +52,7 @@ With the use of (custom) workflows this mapping may change.
           <role name="Owner"/>
           <role name="Contributor"/>
         </permission>
-      </permission>
+      </permissions>
     </rolemap>
 
 A new permission will be added to the whole Zope instance by calling *setDefaultRoles* on it.
