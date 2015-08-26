@@ -83,7 +83,7 @@ Actions are in GenericSetup profile file *default/profiles/actions.xml*.
 Alternatively, if you are developing add-on product, you can add actions one-by-one by
 manually creating entries in actions.xml.
 
-Example how to add an action to object actions:
+Example how to add an action to the ``document_actions`` (like ``rss`` and ``print``):
 
 .. code-block:: xml
 
@@ -102,6 +102,7 @@ Example how to add an action to object actions:
        </property>
        <property name="visible">True</property>
       </object>
+     </object>
     </object>
 
 Example how to add actions to user menu, which is
