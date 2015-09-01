@@ -37,7 +37,6 @@ Example ``localroles.py``::
 
     from zope.interface import Interface, implements
     from zope.component import adapts
-    from zope.component.interfaces import ISiteManager
     from borg.localrole.interfaces import ILocalRoleProvider
 
     from plone.memoize import forever
