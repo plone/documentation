@@ -413,7 +413,7 @@ Default passed in variables
 
 Plone passes in some variables, like ``portal_url`` to Javascript by default.
 
-* https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/browser/jsvariables.py
+* https://github.com/plone/Products.CMFPlone/blob/4.3/Products/CMFPlone/browser/jsvariables.py
 
 More info
 
