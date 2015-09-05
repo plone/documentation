@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Plone Documentation ['4.3']\n"
+"Project-Id-Version: Plone Documentation ['5', '4', '3']\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-29 14:19+0200\n"
+"POT-Creation-Date: 2015-09-05 16:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../sitemap.rst:2
-# 8b835b4fd4854941a5e30a1acf7a481e
 msgid "Plone Documentation - Table of Contents"
 msgstr ""
 

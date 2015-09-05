@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Plone Documentation ['4.3']\n"
+"Project-Id-Version: Plone Documentation ['5', '4', '3']\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-29 14:19+0200\n"
+"POT-Creation-Date: 2015-09-05 16:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../license.rst:2
-# 7f107cdc7b0e44a19bdcf316ba34954a
 msgid "License for Plone Documentation"
 msgstr ""
 
 #: ../license.rst:4
-# 8deb079c69054867a731d4de187d01ce
-msgid "Plone Documentation by `Plone Foundation <http://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_."
+msgid "Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_."
 msgstr ""
 
 #: ../license.rst:6
-# c76bab9528e444299ef38ab39f1ba82b
-msgid "If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <http://plone.org/foundation/contributors-agreement>`_."
+msgid "If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_."
 msgstr ""
 
 #: ../license.rst:8
-# b81c35ca29c043ecaf40e04c7204fde4
 msgid "If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team, for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net"
 msgstr ""
 

@@ -68,4 +68,4 @@ Note however, that your chances of :doc:`getting help </askforhelp>` on setup qu
 
 Besides that, there are many people deploying Plone as part of other deployment tools, be they Ansible, Salt, Chef, Puppet or the like. If you are familiar with these, you will most likely find others in the Plone community that share your enthusiasm.
 
-There is an :doc:`Ansible playbook </external/ansible-playbook/docs/index`, maintained by the Plone community, that can completely provision a remote machine to run a full-stack, production-ready Plone server with all the bells and whistles.
+There is an :doc:`Ansible playbook </external/ansible-playbook/docs/index>`, maintained by the Plone community, that can completely provision a remote machine to run a full-stack, production-ready Plone server with all the bells and whistles.

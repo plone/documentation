@@ -33,7 +33,7 @@ Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Nov
 It has been translated into more than 40 languages, and is developed with an unflinching emphasis on usability and standards compliance.
 
 **Need a CMS that integrates** with Active Directory, Salesforce, LDAP, SQL, Web Services. LDAP or Oracle? Plone does.
-Need to be sure your website is accessible? Plone meets or exceeds US Government 508 and W3C's WAI-AA standards.
+Need to be sure your website is accessible? Plone meets or exceeds US Government 508 and the WCAG 2.0 standards.
 
 **Worried about security?** As an open source product, a large number of developers frequently scrutinize the code for any potential security issues.
 This proactive approach is better than the wait-and-see approach in proprietary software that relies on keeping security issues a secret instead of resolving them outright.
