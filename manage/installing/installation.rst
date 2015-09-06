@@ -93,6 +93,8 @@ Instructions are tested for the *Ubuntu 14.04 Long Term Support* release.
 Install the operating system software and libraries needed to run Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. _installation-os-libs-label:
+
 .. code-block:: console
 
     sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev libz-dev
@@ -233,6 +235,7 @@ Here are quick instructions to install Plone using a pre-installed buildout and 
 This procedure is only useful if you know buildout well enough to tailor your own buildout configuration.
 
 You need to manage dependencies (``Python``, ``libxml``, ``Pillow``) yourself.
+Install the operating system software and libraries needed to run Plone (see above).
 
 This will:
 
