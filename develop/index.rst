@@ -25,7 +25,7 @@ Developing for Plone Core
 .. toctree::
    :maxdepth: 2
 
-   plone-coredev/index
+   coredev/docs/index
 
 Dev helper packages
 ---------------------
@@ -44,7 +44,7 @@ plone.api
 .. toctree::
    :maxdepth: 1
 
-   /external/plone.api/docs/index
+   plone.api/docs/index
 
 plone.app.multilingual
 ^^^^^^^^^^^^^^^^^^^^^^
