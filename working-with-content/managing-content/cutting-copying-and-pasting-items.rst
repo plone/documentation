@@ -1,70 +1,51 @@
 Cutting, Copying and Pasting Items
 =======================================
 
-Cut, copy, and paste operations involve moving one or more items from
-one folder to another.
+.. include:: ../../_robot.rst
+
+Cut, copy, and paste operations involve moving one or more items from one folder to another.
 
 Cut/Paste
 ---------
 
 Moving items from one area to another on a website is a common task.
-Often this need arises with placement of content in the wrong folder.
-For example, if the author of the following content about Skipper
-butterflies realizes that a Swallowtail butterfly was mistakenly
-included -- the Eastern Tiger Swallowtail folder shown below -- the
-folder can simply be moved with a *cut*/*paste* operation:
 
-.. figure:: /_static/copy_of_operationcut.png
+It may be that you, or someone else, has created the item in the wrong place.
+Or, as time goes by, you decide that reordering content will make your site easier to use, for instance in an intranet when projects and their associated files get transferred to another department in the organisation.
+
+Whatever the reason, Plone makes it easy to tranfer individual content items, or even whole folders containing hundreds of items, to another location. All internal links will still work. Plone will even redirect external links (where other websites have linked to this content item direct) in most cases. This mechanism can break, however, if you create a new item with the same title and same location as the one you moved.
+
+The easiest way to move content is by using "Contents" on the Toolbar.
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Edit folder
+       Go to  ${PLONE_URL}
+       Click element  css=#contentview-folderContents a
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/foldercontents-cutpaste.png
+       ...  css=#content
+
+.. figure:: ../../_robot/foldercontents-cutpaste.png
    :align: center
-   :alt:
+   :alt: cutting and pasting content
 
-Note that the Eastern Tiger Swallowtail folder has been checked, and
-that the *cut* button is about to be clicked. After clicking the *cut*
-button, the screen will show a new *paste* button. The Eastern Tiger
-Swallowtail folder and all of its contents are now in the web site's
-"memory." The Eastern Tiger Swallowtail folder does not immediately
-disappear, however, awaiting the actual *paste* operation. The *paste*
-button is now highlighted to show the cut/paste operation is in
-progress:
+You see an overview of all content in the folder, and in this screenshot that is the content in the top-level or *root* of the site.
 
-.. figure:: /_static/operationpaste.png
-   :align: center
-   :alt:
+You can select individual items, and then use the "Cut" button to cut them. A message "Successfully cut items" will show, but the content will still be visible!
 
-The *paste* button is now active. The next step is to navigate to the
-destination folder, in this case the Swallowtails folder:
+Now you can navigate to the folder where you want the content to be, and press the "Paste" button. Only then will the actual moving take place.
 
-.. figure:: /_static/copy_of_operationpaste2.png
-   :align: center
-   :alt:
-
-After clicking the Swallowtails folder, the *paste* button will continue
-to show, because the paste operation has not yet been completed:
-
-.. figure:: /_static/operationpaste3.png
-   :align: center
-   :alt:
-
-And last, clicking the *paste* button for the destination folder adds
-the Eastern Tiger Swallowtail folder to its proper place in the
-Swallowtails folder, and cuts it from the original location, the
-Skippers folder, and the *cut*/*paste* operation is complete:
-
-.. figure:: /_static/operationpaste4.png
-   :align: center
-   :alt:
-
-The *paste* button remains active, because you would be allowed to
-continue pasting the folder in other places if you wanted. This could
-happen in several situations, including when you need to copy one page,
-for example, as a kind of template or basis document, into several
-folders.
+The *paste* button remains active, because you would be allowed to continue pasting the content you cut into other places if you wanted.
+This could happen in several situations, including when you need to copy one page, for example, as a kind of template or basis document, into several folders.
 
 Copy/Paste
 ----------
 
-A *copy*/*paste* operation is identical to the *cut*/*paste* operation,
-except that there is no removal of content from the original folder. It
-works as you would expect it to work.
+A *copy*/*paste* operation is identical to the *cut*/*paste* operation, except that there is no removal of content from the original folder. It works as you would expect it to work: the original content remains.
+If you copy and then paste into the same folder, the (now doubled) new copy of the content will get an automated *short name* of something like "copy_of_originalitem", which you will most likely want to correct by using the "Rename" button.
 
 

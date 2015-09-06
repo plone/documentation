@@ -11,8 +11,7 @@ Create and maintain good quality content
 What is "content quality"?
 --------------------------
 
-Under this heading we list several tools that help you to ensure content can be properly indexed,
-is enriched with meta-data such as tags, dates and even geo-location, and to make sure links are not broken.
+Under this heading we list several tools that help you to ensure content can be properly indexed, is enriched with meta-data such as tags, dates and even geo-location, and to make sure links are not broken.
 
 This will also help you with accessibility certification for your content, and Search Engine Optimization (SEO)
 

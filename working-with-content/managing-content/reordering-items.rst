@@ -1,41 +1,25 @@
 Reordering Items
 =====================
 
-The contents tab contains functionality for quick and precise reordering
-of items in a folder.
+.. include:: ../../_robot.rst
 
-Consider the following folder, called "Skippers," for holding
-information about this type of butterfly.Â Often, when we add content
-items, we don't initially get them in the order we want.Â The desired
-ordering is not always alphabetical, but in this example we can assume
-so. Below you see the Skipper butterfly subfolders are not in
-alphabetical order:
+Using "Contents" on the Toolbar gives you the overview of a folder. From here, you can do manual reordering of items in a folder.
 
-.. figure:: /_static/copy_of_foldercontents.png
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Edit folder
+       Go to  ${PLONE_URL}
+       Click element  css=#contentview-folderContents a
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/foldercontents-reorder.png
+       ...  css=#content
+
+.. figure:: ../../_robot/foldercontents-reorder.png
    :align: center
-   :alt:
+   :alt: reordering content
 
-To move the top item named "Spread-winged Skippers" to the bottom of the
-list, one would click within the Order column on the left (containing
-the "double-colon" symbols) and drag the row to the desired position:
-
-.. figure:: /_static/p4_foldercontentsreorder.png
-   :align: center
-   :alt: Example of Reordering
-
-   Example of Reordering
-
-Dragging and dropping is done by holding the mouse button down as you
-move the item. The item that is being moved turns yellow as it is being
-moved:
-
-.. figure:: /_static/foldercontentsdrag.png
-   :align: center
-   :alt:
-
-When the mouse button is released, the item stays where it was dropped:
-
-.. figure:: /_static/foldercontentsdrop.png
-   :align: center
-   :alt:
-
+   Simply hover over the content item you want to reorder (any column is fine, just don't hover exactly over the title), and the cursor changes into a hand. Click and drag to reorder.

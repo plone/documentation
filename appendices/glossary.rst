@@ -202,7 +202,7 @@ It incorporates the original `glossary on plone.org <https://plone.org/documenta
         Book <http://www.plope.com/Books/2_7Edition/Acquisition.stx>`_.
 
     Kupu
-        Kupu is the user-friendly graphical HTML editor component that used
+        Kupu was the user-friendly graphical HTML editor component that used
         to be bundled with Plone, starting with version 2.1. It has since
         been replaced by :term:`TinyMCE`.
 

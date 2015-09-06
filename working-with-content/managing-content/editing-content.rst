@@ -1,59 +1,49 @@
 Editing Content
-====================
+===============
+
+.. include:: ../../_robot.rst
 
 Editing Plone content works the same as adding content -- usually the data entry and configuration panels for the content are the same for editing as for adding.
 
 Of course, when we edit an item of content, the item already exists.
-Click the Edit tab for an item and you will see the data entry panel for the item, along with the existing values of the item's data.
+Click "Edit" on the toolbar when you are viewing it, and you will see the data entry panel for the item, along with the existing values of the item's data.
 
-For an example of something really simple, where editing looks the same as adding, we can review how to edit a folder.
+For an example of something really simple, where editing looks the same as adding, we can review how to edit the default frontpage on a new Plone site.
 
-The *Edit* panel for a folder simply shows the title and description
-input areas.
-Often a description is not provided for a folder, so the only thing changed is the title.
+The *Edit* panel for a Page shows the title, description and text areas.
 
 .. note::
 
-    If you do wish to give a description, which is a good idea for distinguishing folders in a list, the description can be text only -- there is no opportunity for setting styling of text, such as bold, italics, or other formatting. This keeps the descriptions of Plone content items as simple as possible.
+    If you do wish to give a description, which is a generally a good idea, the description can be text only -- there is no opportunity for setting styling of text, such as bold, italics, or other formatting. This keeps the descriptions of Plone content items as simple as possible, and is also required by the :term:`Dublin Core` standard.
 
-Here is the *Edit* panel for a folder, in this case, one called
-"Butterflies":
 
-.. figure:: /_static/edititemfolder.png
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Edit folder
+       Go to  ${PLONE_URL}
+       Click element  css=#contentview-edit a
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/edit-page.png
+       ...  css=#content
+
+.. figure:: ../../_robot/edit-page.png
    :align: center
-   :alt:
+   :alt: Editing a page
 
-That's it. Change what you want and save, and the content item will be updated in Plone's storage system.
+That's it. Change what you want, for instance changing the description or the content, and save.
+The content item will be updated in Plone's storage system.
 You can repeatedly edit content items, just as you can repeatedly edit files on your local computer.
 
+
+
 .. note::
 
-    By now you have appreciated that Plone stores discrete content items as separate entities, akin to "files" on a local computer, but you really don't have to think about it that way.
-    Plone is a content management system, where the content comes in the form of numerous discrete content items that may be individually edited.
-    Edit away at your heart's content.
-
-For an example of editing a content item that is a bit different than adding in the first place, we can examine editing an image.
-Editing an Image can be done by navigating to an individual image and clicking the *Edit* tab. Clicking the *Edit* tab for the image, you will see the following *Edit Image* panel:
-
-.. figure:: /_static/editimage.png
-   :align: center
-   :alt:
-
-Here, an image called "Eastern Tiger Swallowtail Butterfly" is being edited.
+    Note that there is an extra field, called **Change Note**.
+    Here you can write a short message on why you were editing this, like "updated with our new company motto".
+    That note will normally not be shown on a public website, but is available for your co-workers to see when they look at the history of a content item.
 
 
-You can change the title and description, as usual, in which case you would usually keep the setting to "Keep existing image."
-You can also change the image itself by checking the "Replace with new image" choice.
-Or, clicking the "Delete current image" choice will simply delete the image entirely.
-
-Notice also the *Transform* tab at the top, which pertains specifically
-to images, offering a choice of several image transforms:
-
-.. figure:: /_static/transformimage.png
-   :align: center
-   :alt:
-
-So, editing an image is a bit different than adding one in the first place, but not by much.
-
-Editing panels for other content items are also usually just like the panels for adding.
 

@@ -19,7 +19,7 @@ When you visit a Plone web site anonymously, or are given the web address for si
 
    *** Test Cases ***
 
-   Take login screenshot
+   Take login link screenshot
        Go to  ${PLONE_URL}
        Highlight link  css=#personaltools-login
        Capture and crop page screenshot
@@ -42,11 +42,11 @@ After clicking the *log in* link, you'll see an input panel where you can type i
 
    *** Test Cases ***
 
-   Take annotated screenshot
+   Take login screenshot
        Go to  ${PLONE_URL}/login
        Capture and crop page screenshot
        ...    ${CURDIR}/../_robot/login-popup.png
-       ...    css=#plone-modal-dialog
+       ...    css=#content-core
 
 
 .. figure:: ../_robot/login-popup.png

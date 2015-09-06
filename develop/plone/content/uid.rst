@@ -32,7 +32,7 @@ Plone uses UUIDs for
 
 * Storing content-to-content references (Archetypes, ReferenceField)
 
-* Linking by UIDs (Kupu) - this enables persistent links even though the object is moved
+* Linking by UIDs - this enables persistent links even though the object is moved
 
 * Plain UID is supported by Archetypes only and is based on reference_catalog
 
@@ -87,11 +87,11 @@ UUID Acquisition problem with Dexterity Content Types
 Make sure your Dexterity content type has the `plone.app.referenceablebehavior.interfaces.IReferenceable <https://github.com/plone/plone.app.referenceablebehavior/blob/master/plone/app/referenceablebehavior/interfaces.py>`_ behavior enabled. If not, when querying for an object's UUID, you will get its parent UUID. Then you can end up with a lot of objects with the same UUID as their parent.
 
 If you run into this issue, here's an easy upgrade step to fix it::
-	
+
 	import transaction
 	from plone.uuid.handlers import addAttributeUUID
 	from Products.CMFCore.utils import getToolByName
-	
+
 	...
 	def recalculate_uuids(setup_tool):
 
