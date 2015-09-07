@@ -11,10 +11,9 @@ WYSIWYG text editing and TinyMCE
 Introduction
 ------------
 
-Plone supports TinyMCE (default), Kupu and CKEditor.
+Plone supports TinyMCE (default), and CKEditor and others through external add-ons.
 
-TinyMCE and Plone integration
-is distributed in `Products.TinyMCE package <https://pypi.python.org/pypi/Products.TinyMCE>`_.
+In Plone 5, TinyMCE and the Plone integration is provided by the `Mockup project <https://github.com/plone/mockup>`_. In Plone 4, the integration package was called Products.TinyMCE
 
 Disabling HTML filtering and safe HTML transformation
 ------------------------------------------------------

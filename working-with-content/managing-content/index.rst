@@ -1,5 +1,5 @@
 Managing Content
-====================
+================
 
 The contents tab is the place where content items can be copied, cut,
 pasted, moved, renamed, etc.
@@ -8,8 +8,8 @@ pasted, moved, renamed, etc.
 .. toctree::
     :maxdepth: 2
 
-    cutting-copying-and-pasting-items
     editing-content
+    cutting-copying-and-pasting-items
     folder-view
     folder-contents
     reordering-items
@@ -17,7 +17,6 @@ pasted, moved, renamed, etc.
     deleting-items
     automatic-locking-and-unlocking
     versioning
-    presentation-mode
     working-copy
     contentrules
     ploneformgen/index

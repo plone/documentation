@@ -219,7 +219,7 @@ user or you are anonymous user. Command-line scripts
 do not have user information set by default.
 
 How to set the effective Zope user to a regular user using
-`plone.api context managers </external/plone.api/docs/env.html>`_::
+:doc:`plone.api context managers </develop/plone.api/docs/env>`::
 
     from plone import api
     from zope.component.hooks import setSite

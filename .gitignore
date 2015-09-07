@@ -5,3 +5,7 @@ broken*
 *.mo
 .DS_Store
 _locales
+develop/coredev
+develop/plone.api
+develop/addons/bobtemplates.plone
+

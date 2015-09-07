@@ -53,9 +53,3 @@ Working with Content
     :maxdepth: 2
 
     content-quality/index
-
-
-.. toctree::
-    :maxdepth: 1
-
-    using-kupu-as-visual-editor/index

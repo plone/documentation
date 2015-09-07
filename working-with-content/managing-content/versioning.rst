@@ -1,14 +1,13 @@
 Versioning
 ===============
 
-An overview on how to view the version history of an item, compare
-versions, preview previous versions and revert to previous versions.
+An overview on how to view the version history of an item, compare versions, preview previous versions and revert to previous versions.
 
 Creating a new version
 --------------------------
 
-Plone includes a versioning feature. By default, the following content
-types have versioning enabled:
+Plone includes a versioning feature.
+By default, the following content types have versioning enabled:
 
 -  Pages
 -  News Items
@@ -17,21 +16,18 @@ types have versioning enabled:
 
 Note that all other content types do track workflow history.
 
-Content items can be configured to have versioning enabled/disabled
-through the Site Setup â†’ Plone Configuration panel under "Types".
+Content items can be configured to have versioning enabled/disabled through the Site Setup Plone Configuration panel under "Types".
 
-When editing an item, you may use the **change note** field at the
-bottom; the change note will be stored in the item's version history. If
-the change note is left blank, Plone includes a default note: "Initial
-Revision".
+When editing an item, you may use the **change note** field at the bottom; the change note will be stored in the item's version history.
+If the change note is left blank, Plone includes a default note: "Initial Revision".
 
-A new version is created every time the item is saved. Versioning keeps
-track of all kinds of edits: content, metadata, settings, etc.
+A new version is created every time the item is saved.
+Versioning keeps track of all kinds of edits: content, metadata, settings, etc.
 
 Viewing the version history
 ---------------------------
 
-Once an item as been saved, you can use the **History** link found near
+Once an item has been saved, you can use the **History** link found near
 the top of the page. Simply click it to show the History overlay:
 
 .. figure:: /_static/history-viewlet.png

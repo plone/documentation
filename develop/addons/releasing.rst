@@ -50,6 +50,6 @@ Use the ``fullrelease`` command in the root of your checkout.
 
     Full zest.releaser documentation http://zestreleaser.readthedocs.org/en/latest/
 
-    :doc:`plone.api coding conventions </external/plone.api/docs/contribute/conventions>`"
+    :doc:`plone.api coding conventions </develop/plone.api/docs/contribute/conventions>`"
 
     http://opensourcehacker.com/2012/08/14/high-quality-automated-package-releases-for-python-with-zest-releaser/

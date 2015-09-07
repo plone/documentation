@@ -74,7 +74,6 @@ Compare the screen image below, captured after a user called "Jane Doe" has logg
 A toolbar has appeared on the left, which has a number of icons and actions that she can perform on the site content.
 At the bottom of the toolbar, her name is mentioned.
 A submenu opens when she clicks on this, allowing her to log out and perform various other options.
-Near the top right you see John Smith's name, this is a drop-down menu with options for managing your settings, and to log out.
 
 
 .. code:: robotframework

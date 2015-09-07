@@ -149,7 +149,7 @@ information or configuration here. Tools include e.g.:
 Get a portal tool using plone.api
 ---------------------------------
 
-It is recommended to use `plone.api </external/plone.api/docs/portal.html#get-tool>`_
+It is recommended to use `plone.api </develop/plone.api/docs/portal.html#get-tool>`_
 to get a portal tool::
 
     from plone import api
@@ -158,10 +158,10 @@ to get a portal tool::
 The ``plone.api`` package exposes functionality from portal tools, it is not
 longer necessary to directly call a tool. For example; the API can be used
 the get the
-`workflow state </external/plone.api/docs/content.html#get-workflow-state>`_,
-`change the workflow state </external/plone.api/docs/content.html#transition>`_,
-`get a member </external/plone.api/docs/user.html#get-all-users>`_ and
-`get the member properties </external/plone.api/docs/user.html#user-properties>`_.
+`workflow state </develop/plone.api/docs/content.html#get-workflow-state>`_,
+`change the workflow state </develop/plone.api/docs/content.html#transition>`_,
+`get a member </develop/plone.api/docs/user.html#get-all-users>`_ and
+`get the member properties </develop/plone.api/docs/user.html#user-properties>`_.
 
 
 ITools interface

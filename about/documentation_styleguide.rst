@@ -224,5 +224,5 @@ Make sure all .rst files are referenced with a Table of Contents directive, like
       how_to_contribute
 
 
-(note: the files themselves will have an extention of .rst, but you don't specify that extension in the toctree directive)
+(note: the files themselves will have an extension of .rst, but you don't specify that extension in the toctree directive)
 
