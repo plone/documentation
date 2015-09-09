@@ -1,0 +1,2 @@
+TinyMCE configuration
+=====================

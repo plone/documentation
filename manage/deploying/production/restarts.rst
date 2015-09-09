@@ -9,7 +9,9 @@ Introduction
 
 Tips on how to automatically start Plone on server boot.
 
-This manual assumes, that you are installed Plone via the Unified-Installer as ``root install`` if you did a different install, please addjust the examples below for your own needs, the user as which you are running Plone maybe different for example.
+This manual assumes, that you have installed Plone via the Unified-Installer as ``root install``.
+
+If you did a different install, please adjust the examples below to your own needs, the user as which you are running Plone may be different for example.
 
 plonectl script
 ===============
