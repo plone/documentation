@@ -38,8 +38,7 @@ Therefore, documentation should **not** follow PEP8 or other arbitrary conventio
 
 If you want to keep short lines:
 
-Use **semantic linefeeds**
-(http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
+Use `semantic linefeeds <http://rhodesmill.org/brandon/2012/one-sentence-per-line/>`_
 when you are editing restructured text (or any other interpreted rich text format) because it will greatly improve the editing and maintenance of your documents.
 
 Take this example paragraph::
@@ -58,7 +57,7 @@ you manually insert line breaks after full stops, commas,
 or upon "grammatical" boundaries
 (and not merely word ones).
 
-But again, do not be afraid to use more than 80 characters. It's 2014, and it's documentation.
+But again, do not be afraid to use more than 80 characters.
 
 
 Document page format
