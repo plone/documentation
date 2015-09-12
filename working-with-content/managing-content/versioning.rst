@@ -14,7 +14,7 @@ By default, the following content types have versioning enabled:
 -  Events
 -  Links
 
-Note that all other content types do track workflow history.
+Note that all other content types do track workflow history (so, when an item was published, unpublished etcetera)
 
 Content items can be configured to have versioning enabled/disabled through the Site Setup Plone Configuration panel under "Types".
 
@@ -27,69 +27,77 @@ Versioning keeps track of all kinds of edits: content, metadata, settings, etc.
 Viewing the version history
 ---------------------------
 
-Once an item has been saved, you can use the **History** link found near
-the top of the page. Simply click it to show the History overlay:
+Once an item has been saved, you can see the **History** by clicking on the *clock* item in the Toolbar.
 
-.. figure:: /_static/history-viewlet.png
+.. include:: ../../_robot.rst
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Create sample content
+       Go to  ${PLONE_URL}
+
+       ${item} =  Create content  type=Document
+       ...  id=samplepage  title=Sample Page
+       ...  description=The long wait is now over
+       ...  text=<p>Our new site is built with Plone.</p>
+       Fire transition  ${item}  publish
+
+       Go to  ${PLONE_URL}/samplepage
+       Click element  css=#contentview-edit a
+       Click element  css=#form-widgets-IDublinCore-title
+       Input text  css=#form-widgets-IDublinCore-title  Hurray
+       Click element  css=#form-widgets-IVersionable-changeNote
+       Input text  css=#form-widgets-IVersionable-changeNote  Title should be Hurray, not Sample Page.
+       Click button  css=#form-buttons-save
+
+   Show history
+       Go to  ${PLONE_URL}/samplepage
+       Click link  css=#contentview-history a
+       Wait until element is visible
+       ...  css=#history-list
+       Update element style  portal-footer  display  none
+
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/content-history.png
+               ...  css=#content-header
+               ...  css=div.plone-toolbar-container
+
+.. figure:: ../../_robot/content-history.png
    :align: center
-   :alt: history-viewlet.png
+   :alt: History view of a content item
 
-   history-viewlet.png
 
-The most recent version is listed first. The History viewlet provides
-the following information:
+
+The most recent version is listed first. The History view provides the following information:
 
 -  The type of edit (content or workflow)
 -  Which user made the edit
 -  What date and time the edit occurred
 
+In the above example, Jane created a Page, then published it. Then, she decided to edit the Page, change it's title and she put in "Title should be Hurray, not Sample Page." in the "Change notes" box.
+Here you can see why it's good to put in change notes: you get a good overview of *why* an item was edited.
+
 Comparing versions
 ------------------
 
-From the History viewlet you can compare any previous version with the
-current version or any other version with the version just before it.
+From the History viewlet you can compare any previous version with the current version or any other version with the version just before it.
 
-To compare any previous version with the one just before it, click the
-*Compare* link located between two adjacent versions in the History
-overlay.
+To compare any previous version with the one just before it, click the *Compare* link located between two adjacent versions in the History overlay.
 
-.. figure:: /_static/compare-button.png
-   :align: center
-   :alt: compare-button.png
 
-   compare-button.png
+By clicking this button, you'll see a screen like this one where you can see the differences between the two versions:
 
-By clicking this button, you'll see a screen like this one where you can
-see the differences between the two versions:
+You may also compare any previous version to the *current* version by clicking the *Compare to current* link.
 
-.. figure:: /_static/compare-versions.png
-   :align: center
-   :alt: compare-versions.png
-
-   compare-versions.png
-
-In this example, text in red is text which has been deleted and text in
-green is text which has been added to the newer version. You can toggle
-between **inline** or **as code** views of the differences between
-versions.
-
-.. figure:: /_static/versioncompare-src.png
-   :align: center
-   :alt: Comparing Versions (HTML Source)
-
-   Comparing Versions (HTML Source)
-
-You may also compare any previous version to the *current* version by
-clicking the *Compare to current* link History overlay, found to the far
-right of each version listed.
 
 Viewing and reverting to previous versions
 ------------------------------------------
 
-**You can preview any previous version** of a document by clicking the
-*View* link to the right of any version listed.
+**You can preview any previous version** of a document by clicking the *View* link to the right of any version listed.
 
-**To revert back to a previous version**, click on the *Revert to this
-revision* button to the right of any version listed.
+**To revert back to a previous version**, click on the *Revert to this revision* button to the right of any version listed.
 
 
