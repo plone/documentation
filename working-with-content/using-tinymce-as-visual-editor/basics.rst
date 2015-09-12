@@ -15,7 +15,6 @@ The default TinyMCE editor will look like this:
    Show TinyMCE
        Go to  ${PLONE_URL}
        Click element  css=#contentview-edit a
-       Pause
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/tinymce.png
        ...  css=#formfield-form-widgets-IRichText-text
