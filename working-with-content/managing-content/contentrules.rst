@@ -91,7 +91,7 @@ The following **actions** are available by default:
 
 .. note::
 
-   Content Rules are extendable. There are add-ons available that will create new actions, conditions or triggers, and you can also write your own. An example would be an action that tweets each time a News article is published, or will alert you if an event will start next week. A search on `https://pypi.python.org`_ for "contentrules will show you some examples."
+   Content Rules are extendable. There are add-ons available that will create new actions, conditions or triggers, and you can also write your own. An example would be an action that tweets each time a News article is published, or will alert you if an event will start next week. A search on `https://pypi.python.org <https://pypi.python.org>`_ for "contentrules will show you some examples."
 
 
 
