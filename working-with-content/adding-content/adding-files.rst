@@ -29,7 +29,6 @@ Choose file in the *Add new...* menu for a folder to upload a file:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-.. replaces ../../_static/copy_of_addnewmenu.png
 .. figure:: ../../_robot/adding-files_add-menu.png
    :align: center
    :alt: add-new-menu.png
@@ -54,7 +53,6 @@ Select **File** from the drop-down menu, and you'll see the *Add File* panel:
        ...  ${CURDIR}/../../_robot/adding-files_add-form.png
        ...  css=#content
 
-.. replaces: ../../_static/addfile.png
 .. figure:: ../../_robot/adding-files_add-form.png
    :align: center
    :alt:

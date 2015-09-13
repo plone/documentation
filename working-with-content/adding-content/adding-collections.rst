@@ -30,7 +30,6 @@ Choose "Collection" in the *Add new...* menu for a folder to start defining your
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-.. replaces ../../_static/copy_of_addnewmenu.png
 .. figure:: ../../_robot/adding-collections_add-menu.png
    :align: center
    :alt: add new collection menu image
@@ -51,7 +50,6 @@ Select **Collection** from the drop-down menu, and you'll see the *Add Collectio
        ...  ${CURDIR}/../../_robot/adding-collections_add-form.png
        ...  css=#content
 
-.. replaces: ../../_static/addfile.png
 .. figure:: ../../_robot/adding-collections_add-form.png
    :align: center
    :alt: collection form
@@ -71,7 +69,6 @@ Apart from the usual fields, the interesting part starts with the **Search terms
        ...  ${CURDIR}/../../_robot/collection-criteria.png
        ...  css=div.select2-drop-active
 
-.. replaces: ../../_static/addfile.png
 .. figure:: ../../_robot/collection-criteria.png
    :align: center
    :alt:

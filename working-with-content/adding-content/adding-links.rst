@@ -29,7 +29,6 @@ Add a link by clicking the menu choice in the *Add new...* menu:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-.. replaces: /_static/copy_of_addnewmenu.png
 .. figure:: ../../_robot/adding-links_add-menu.png
    :align: center
    :alt: add-new-menu.png
@@ -52,7 +51,6 @@ You will see the Add*Link* panel:
        ...  ${CURDIR}/../../_robot/adding-links_add-form.png
        ...  css=#content
 
-.. replaces: /_static/addlink.png
 .. figure:: ../../_robot/adding-links_add-form.png
    :align: center
    :alt: Adding links form

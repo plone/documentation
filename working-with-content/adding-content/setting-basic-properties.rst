@@ -34,7 +34,6 @@ Any content item, when clicked by a user with edit rights for the item, will sho
        ...  ${CURDIR}/../../_robot/basicpropertiestabs.png
        ...  css=nav.autotoc-nav
 
-.. replaces: /_static/basicpropertiestabs.png
 .. figure:: ../../_robot/basicpropertiestabs.png
    :align: center
    :alt: basicpropertiestabs.png
@@ -66,7 +65,6 @@ Here is the *Categorization* panel, shown for a page content item (would be the 
        ...  ${CURDIR}/../../_robot/editpagecategorization.png
        ...  css=#content-core
 
-.. replaces: /_static/editpagecategorization.png
 .. figure:: ../../_robot/editpagecategorization.png
    :align: center
    :alt: Edit page categorization
@@ -98,7 +96,6 @@ The *Dates* panel has fields for the publishing date and the expiration date, ef
        ...  ${CURDIR}/../../_robot/datessettings.png
        ...  css=#content-core
 
-.. replaces: /_static/datessettings.png
 .. figure:: ../../_robot/datessettings.png
    :align: center
    :alt: Dates Settings
@@ -170,7 +167,6 @@ and other similar controls:
        ...  ${CURDIR}/../../_robot/settingspanel.png
        ...  css=#content-core
 
-.. replaces: /_static/settingspanel.png
 .. figure:: ../../_robot/settingspanel.png
    :align: center
    :alt: Settings panel

@@ -7,7 +7,7 @@ Configuration and Control panel
    site
    add_ons
    mail
-   safe-html
+   html-filtering
    tinymce
    templating
 

@@ -29,7 +29,6 @@ To add a page, use the *Add new...* menu for a folder:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-.. replaces ../../_static/copy_of_addnewmenu.png
 .. figure:: ../../_robot/adding-pages_add-menu.png
    :align: center
    :alt: add-new-menu.png
@@ -52,7 +51,6 @@ Select **Page** from the menu, and you'll see the *Add Page* screen:
        ...  ${CURDIR}/../../_robot/adding-pages_add-form.png
        ...  css=#content
 
-.. replaces ../../_robot/editpagepanelplone3.png
 .. figure:: ../../_robot/adding-pages_add-form.png
    :align: center
    :alt: Adding pages form

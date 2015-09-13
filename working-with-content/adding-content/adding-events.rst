@@ -30,7 +30,6 @@ Use the *Add new...* menu for a folder to add an event:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-.. replaces ../../_static/copy_of_addnewmenu.png
 .. figure:: ../../_robot/adding-events_add-menu.png
    :align: center
    :alt: add-new-menu.png
@@ -56,7 +55,6 @@ Select **Event** from the drop-down menu, and you'll see the rather large *Add E
        ...  ${CURDIR}/../../_robot/adding-events_add-form.png
        ...  css=#content
 
-.. replaces: ../../_static/addevent.png
 .. figure:: ../../_robot/adding-events_add-form.png
    :align: center
    :alt: Adding events form

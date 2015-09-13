@@ -35,7 +35,6 @@ Select **Folder** from the menu:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-.. replaces: /_static/add-item-menu-folder.png
 .. figure:: ../../_robot/adding-folders_add-menu.png
    :align: center
    :alt: add-new-menu.png
@@ -59,7 +58,6 @@ You should now see the *Add Folder* screen:
        ...  ${CURDIR}/../../_robot/adding-folders_add-form.png
        ...  css=#content
 
-.. replaces: /_static/addfolder.png
 .. figure:: ../../_robot/adding-folders_add-form.png
    :align: center
    :alt:
