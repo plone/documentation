@@ -1,86 +1,68 @@
 Inserting Links
-====================
+===============
 
-Inserting internal, external and anchor links.
+.. include:: ../../_robot.rst
 
-Internal Links
---------------
+.. code:: robotframework
+   :class: hidden
 
-Select a word or phrase, click the *Insert/edit link* icon, and the
-*Insert/edit link* panel will appear: |image19|
+   *** Test Cases ***
 
-You use this panel by clicking on Home or Current folder to begin
-navigating the Plone web site to find a folder, page, or image to which
-you wish to make a link. In the example above, a page named "Long-tailed
-Skippers" has been chosen for the link. After this panel is closed, a
-link to the "Long-tailed Skippers" page will be set for the word or
-phrase selected for the link.
+   Show TinyMCE image
+       Go to  ${PLONE_URL}
+       Click element  css=#contentview-edit a
+       Wait until element is visible
+       ...  css=#mceu_16-body
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/tinymce-linkbutton.png
+       ...  css=#mceu_14
 
-External Links
---------------
+       Click element  css=#mceu_14 button
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/tinymce-linkdialog.png
+       ...  css=div.plone-modal-content
 
-Select a word or phrase, click the *Insert/edit link* icon, select
-*External* under *Libraries*, and the External link panel will appear:
+Select a word or phrase and click on the *Insert/edit link* icon:
 
-.. figure:: /_static/insert_external_link.jpg
+.. figure:: ../../_robot/tinymce-linkbutton.png
    :align: center
-   :alt:
+   :alt: TinyMCE link button
 
-Type the web address of the external web site in the box after http://.
-When you press return or leave the field a preview will appear to check
-the address. If you paste in the web address, make sure you don't have
-duplicate http:// at the beginning of the address. Then click *ok*. The
-external link will be set to the word or phrase you selected.
+The Link dialog will appear:
+
+
+.. figure:: ../../_robot/tinymce-linkdialog.png
+   :align: center
+   :alt: TinyMCE link dialog
+
+Here, you can fill in the information on where you want to link to:
+
+Internal Link
+-------------
+
+You can search for, or navigate to, the content item that you want to link to. Furthermore, you can set a "target": open in the same browser window, or a new one. In general, it is considered good etiquette to always open internal links in the same window. Setting a descriptive Title for the link is helpful if the item you are linking to does not have a distinctive title of its own.
+
+
+Upload
+------
+
+The Upload tab lets you upload a PDF or Office document or other file. It will be stored in the same Folder as the content item you are editing.
+
+External Link
+--------------
+
+When linking to external sites, make sure you include the *complete* link, including the "http\/\/" or "https:\/\/" part, otherwise it will be interpreted as a *relative* link within your own site. Again, you can set a Target and Title.
+Opinions differ on whether you should open an external link in a new window or not; ask if your organisation has a policy on this.
+
+
+Email
+-----
+
+This tab lets you create a ``mailto:`` link, which will open in the user's email programme. You can optionally set a subject for the email, although your visitor will always be able to override it. So setting the Email Subject is more a helpful suggestion.
+
 
 Anchors
 -------
 
-Anchors are like position markers within a document, based on headings,
-subheadings, or another style set within the document. As an example,
-for a page called "Eastern Tiger Swallowtail," with subheadings entitled
-"Description," "Habitat," "Behavior," "Conservation Status," and
-"Literature," an easy set of links to these subheadings (to the
-positions within the document at those subheadings) can be created using
-anchors.
-
-First, create the document with the subheadings set within it, and
-re-type the subheadings at the top of the document:
-
-.. figure:: /_static/anchor_page.jpg
-   :align: center
-   :alt:
-
-Now create the anchors for each subheading. To create each anchor move
-the cursor to the beginning of the subheading and press the *Insert/edit
-anchor* icon. Enter the name of the anchor in the *Anchor name* field.
-Then click *ok*.
-
-.. figure:: /_static/insert_anchor.jpg
-   :align: center
-   :alt:
-
-Then select each of the re-typed subheadings at the top and click the
-*Insert/edit link* icon to select by subheadings:
-
-.. figure:: /_static/insert_anchor_select_text.jpg
-   :align: center
-   :alt:
-
-When selecting *Anchors* under *Libraries*, a panel will appear for
-selecting which subheading to which the anchor link should connect:
-
-.. figure:: /_static/select_anchor.jpg
-   :align: center
-   :alt:
-
-The *Link to anchor* tab will appear. The right side of the panel shows
-the anchors that have been set within the document. Here the
-*Description* anchor is chosen for the link (for the word Description,
-typed at the top of the document).
-
-You can be creative with this powerful feature, by weaving such
-links-to-anchors within narrative text, by setting anchors to other
-styles within the document, and coming up with clever mixes. This
-functionality is especially important for large documents.
-
-.. |image19| image:: /_static/insert_internal_link.jpg
+Anchors are like position markers within a document, based on headings, subheadings, or another style set within the document. You can also set Anchors at arbitrary positions in a document.
+Plone automatically creates Anchors for headings and subheadings, and thus you can directly link to a chapter in a long web document.

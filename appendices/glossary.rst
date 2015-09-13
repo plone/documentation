@@ -552,3 +552,7 @@ It incorporates the original `glossary on plone.org <https://plone.org/documenta
 
     toolbar
          Plone uses a toolbar to have quick access to the content management functions. On a standard instance, this will appear on the left of your screen. However, your site administrator might change this to have a horizontal layout, and it will appear hidden at first when using a smaller-screen device like a phone or tablet.
+
+
+    Diazo
+          The standard way to theme Plone sites from Plone 5 onwards. It consists in essence of a static 'theme' mockup of your website, with HTML, CSS and JavaScript files, and a set of rules that will 'switch in' the dynamic content from Plone into the theme.

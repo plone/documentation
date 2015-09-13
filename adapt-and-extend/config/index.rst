@@ -8,7 +8,7 @@ Configuration and Control panel
    add_ons
    mail
    safe-html
-   /external/Products.TinyMCE/docs/source/index
+   tinymce
    templating
 
 

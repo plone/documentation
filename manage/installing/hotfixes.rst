@@ -21,8 +21,8 @@ This is a very low-volume list. Security updates are also announced via the plon
 
 To see which Hotfixes should be applied against which Plone version, you can check `the security matrix at plone.org/security/hotfixes <https://plone.org/security/hotfixes/>`_
 
-When a new maintenance release is brought out, the previous Hotfixes are incorporated. So if you run Plone 4.3.3 or later, there is no need to install hotfixes.
-(state: May 2015. Do check the link above if reading at a later date)
+When a new maintenance release is brought out, the previous Hotfixes are incorporated. So if you run Plone 4.3.3 or later, there is no need to install hotfixes for the Plone 4.x series, and the Plone 5 release has all relevant previous updates as well.
+(state: September 2015. Do check the link above if reading at a later date)
 
 How to install
 --------------

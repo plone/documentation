@@ -6,12 +6,10 @@ Guide to Caching
 
     Caching strategies to improve performance.
 
-    This guide particularly focuses on
-    `Unix-like <https://en.wikipedia.org/wiki/Unix-like>`_ environments,
-    though the stack discussion may be useful to everyone.
+    This guide particularly focuses on `Unix-like <https://en.wikipedia.org/wiki/Unix-like>`_ environments, though the stack discussion may be useful to everyone.
 
 
-Any dynamically generated website with a non-trivial number of visitors, will benefit from ``caching``, where resources (like text, images, CSS, javascripts) that are used for multiple visitors are stored in a way that is really fast to retrieve, so that the (often complicated) back-end server doesn't have to generate those resources for every visitor.
+Any dynamically generated website with a non-trivial number of visitors, will benefit from ``caching``, where resources (like text,  images, CSS, javascripts) that are used for multiple visitors are stored in a way that is really fast to retrieve, so that the (often complicated) back-end server doesn't have to generate those resources for every visitor.
 
 Plone is no exception to that.
 Caching in Plone is a two-step process for most larger sites.
@@ -24,7 +22,7 @@ So, it is usually best to set up 'strong' caching for things that don't change o
 You can also 'invalidate' content automatically when you update a piece of content, so that the front-end server knows it has to get a fresh copy when you edit a piece of content.
 
 But plone.app.caching works even better together with a dedicated front-end cache, a program that is specialized in doing this work.
-These days, the favourite and recommended program for that is called "Varnish".
+These days, the favorite and recommended program for that is called "Varnish".
 
 
 

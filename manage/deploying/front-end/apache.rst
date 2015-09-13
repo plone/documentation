@@ -87,14 +87,12 @@ Check that Apache responds::
 
 If everything is good then your Plone site properly configured using Apache front-end.
 
-Content Security Policy (CSP) prevents a wide range of attacks,
-including cross-site scripting and other cross-site injections, but
-the CSP header setting may require careful tuning. To enable it,
-replace the Content-Security-Policy-Report-Only by
-Content-Security-Policy. The example above works with Plone 4.x
-(including TinyMCE) but it very wide. You may need to adjust it if you
-want to make CSP more restrictive or use additional Plone
-Products. For more information, see
+Content Security Policy (CSP) prevents a wide range of attacks, including cross-site scripting and other cross-site injections, but
+the CSP header setting may require careful tuning.
+To enable it, replace the Content-Security-Policy-Report-Only by Content-Security-Policy.
+The example above works with Plone 5.x (including TinyMCE) but it very wide.
+You may need to adjust it if you want to make CSP more restrictive or use additional Plone Products.
+For more information, see
 
 *  http://www.w3.org/TR/CSP/
 
@@ -106,7 +104,7 @@ to::
 
 	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/https/yoursite.com:443/Plone/VirtualHostRoot/$1 [P,L]
 
-Inside an SSL-enabled Apache virtual host definition.
+inside an SSL-enabled Apache virtual host definition.
 
 Apache and Plone guide (old)
 ==============================
@@ -116,9 +114,8 @@ Apache and Plone guide (old)
 Procedure to restart Apache in production environment
 ------------------------------------------------------
 
-You might share the same Apache web server across
-several production sites. You don't want to hinder
-the performance of the other sites when doing Apache configuration changes to one site.
+You might share the same Apache web server across several production sites.
+You don't want to hinder the performance of the other sites when doing Apache configuration changes to one site.
 
 The correct procedure to restart Apache is (on Ubuntu/Debian Linux)
 
@@ -134,9 +131,8 @@ The correct procedure to restart Apache is (on Ubuntu/Debian Linux)
 www-redirects
 -------------
 
-If you wish to force people to use your site with or without www prefix you can use
-the rules below. Note that setting this kind of rule is very useful from the search
-engine optimization point of view also.
+If you wish to force people to use your site with or without www prefix you can use the rules below.
+Note that setting this kind of rule is very useful from the search engine optimization point of view also.
 
 Example in <VirtualHost> section to redirect www.site.com -> site.com::
 
@@ -183,8 +179,8 @@ To redirect traffic from all pages permanently (301) to the landing page of a ne
 Proxying other site under Plone URI space
 -----------------------------------------
 
-The following rule can be used to put a static web site to sit in the
-same URI space with Plone. Put these rules **before** VirtualHost ProxyPass.
+The following rule can be used to put a static web site to sit in the same URI space with Plone.
+Put these rules **before** VirtualHost ProxyPass.
 
 Examples::
 
@@ -208,14 +204,11 @@ For more information, see
 Redirecting certain URIs to old site
 -------------------------------------
 
-This is useful if you migrate to a Plone from some legacy technology
-and you still need to have some part of the URI space to
-point to the old server.
+This is useful if you migrate to a Plone from some legacy technology and you still need to have some part of the URI space to point to the old server.
 
 * Create alternative domain name for the existing old site (e.g. www2)
 
-* Modify Apache configuration so that URLs still being used
-  are redirected to the old server with alternative name, Put in this rewrite
+* Modify Apache configuration so that URLs still being used are redirected to the old server with alternative name, Put in this rewrite
 
 ::
 
@@ -232,8 +225,7 @@ Virtual hosting Apache configuration generator
 Caching images
 ---------------
 
-You can force caching of content types
-on apache
+You can force caching of content types on apache
 
 First you need to enable Apache modules::
 
@@ -267,13 +259,10 @@ By default, Plone sets I18N_LANGUAGE cookie on
 
 * All ATImage requests
 
-Even if images are often language neutral, they still set I18N_LANGUAGE cookie
-on HTTP response. This is problematic if image gets cached and the user
-switches the language using the language selector. This happens when
-you enforce caching using Apache level rules (instead of using Products.CacheSetup
-or similar product). The user browsers received cached HTTP response image
-for the image and it contains Set-Cookie: I18N_LANGUAGE header for the wrong language
--> browser language choice by cookie is reset.
+Even if images are often language neutral, they still set I18N_LANGUAGE cookie on HTTP response.
+This is problematic if image gets cached and the user switches the language using the language selector.
+This happens when you enforce caching using Apache level rules (instead of using Products.CacheSetup or similar product).
+The user browsers received cached HTTP response image for the image and it contains Set-Cookie: I18N_LANGUAGE header for the wrong language -> browser language choice by cookie is reset.
 
 A workaround is to force language cookie off from media like content::
 
@@ -352,8 +341,7 @@ This complex config example includes
 
 * Load balancing using ZEO front-ends and Apache load balancer module
 
-* Apache disk cache. This should provide static resource caching w/HTTPS support
-  if you are using plone.app.caching.
+* Apache disk cache. This should provide static resource caching w/HTTPS support if you are using plone.app.caching.
 
 * https://httpd.apache.org/docs/2.2/caching.html
 

@@ -20,36 +20,20 @@ Nginx is an modern alternative server to Apache.
 Minimal Nginx front end configuration for Plone on Ubuntu/Debian Linux
 =======================================================================
 
-This is a minimal configuration to run nginx on Ubuntu/Debian in front
-of a Plone site.  These instructions are *not* for configurations where one
-uses the buildout configuration tool to build a static Nginx server.
+This is a minimal configuration to run nginx on Ubuntu/Debian in front of a Plone site.
+These instructions are *not* for configurations where one uses the buildout configuration tool to build a static Nginx server.
 
 * Plone will by default be served on port 8080.
 
-* We use :term:`VirtualHostMonster` to pass the original protocol and
-  hostname to Plone. VirtualHostMonster provides a way to rewrite the
-  request path.
+* We use :term:`VirtualHostMonster` to pass the original protocol and hostname to Plone. VirtualHostMonster provides a way to rewrite the request path.
 
-* We also need to rewrite the request path, because you want to site be
-  served from port 80 root (/), but Plone sites are nested in the
-  Zope application server as paths */site1*, */site2* etc.
+* We also need to rewrite the request path, because you want to site be served from port 80 root (/), but Plone sites are nested in the Zope application server as paths */site1*, */site2* etc.
 
-* You don't need to configure VirtualHostMonster in Plone/Zope in any way,
-  because all the installers will automatically install one for you. Nginx
-  configuration is all you need to touch.
+* You don't need to configure VirtualHostMonster in Plone/Zope in any way, because all the installers will automatically install one for you. Nginx configuration is all you need to touch.
 
-* The URL passed to VirtualHostMonster is the URL Plone uses to construct
-  links in the template (``portal_url`` in the code, also used by content
-  ``absolute_url()`` method). If your site loads without CSS styles usually
-  it is a sign that VirtualHostMonster URL is incorrectly written -- Plone
-  uses the URL to link stylesheets also.
+* The URL passed to VirtualHostMonster is the URL Plone uses to construct links in the template (``portal_url`` in the code, also used by content ``absolute_url()`` method). If your site loads without CSS styles usually it is a sign that VirtualHostMonster URL is incorrectly written -- Plone uses the URL to link stylesheets also.
 
-* Plone itself contains a mini web server (Medusa) which serves the requests
-  from port 8080 -- Nginx acts simple as a HTTP proxy between Medusa and
-  outgoing port 80 traffic.  Nginx does not spawn Plone process or anything
-  like that, but Plone processes are externally controlled, usually by
-  buildout-created ``bin/instance`` and ``bin/plonectl`` commands, or by
-  a ``supervisor`` instance.
+* Plone itself contains a mini web server (Medusa) which serves the requests from port 8080 -- Nginx acts simple as a HTTP proxy between Medusa and outgoing port 80 traffic.  Nginx does not spawn Plone process or anything like that, but Plone processes are externally controlled, usually by buildout-created ``bin/instance`` and ``bin/plonectl`` commands, or by a ``supervisor`` instance.
 
 Create file ``/etc/nginx/sites-available/yoursite.conf`` with contents::
 
@@ -119,14 +103,10 @@ More info:
 
 * http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
 
-Content Security Policy (CSP) prevents a wide range of attacks,
-including cross-site scripting and other cross-site injections, but
-the CSP header setting may require careful tuning. To enable it,
-replace the Content-Security-Policy-Report-Only by
-Content-Security-Policy. The example above works with Plone 4.x
-(including TinyMCE) but it very wide. You may need to adjust it if you
-want to make CSP more restrictive or use additional Plone
-Products. For more information, see
+Content Security Policy (CSP) prevents a wide range of attacks, including cross-site scripting and other cross-site injections, but
+the CSP header setting may require careful tuning.
+To enable it, replace the Content-Security-Policy-Report-Only by Content-Security-Policy.
+The example above works with Plone 4.x and up (including TinyMCE) but it very wide. You may need to adjust it if you want to make CSP more restrictive or use additional Plone Products. For more information, see
 
 *  http://www.w3.org/TR/CSP/
 
@@ -140,11 +120,9 @@ If, and only if, you cannot use a platform install of nginx you may use the reci
 * https://pypi.python.org/pypi/gocept.nginx
 
 A buildout will download, install and configure nginx from scratch.
-The buildout file contains an nginx configuration which can use template
-variables from ``buildout.cfg`` itself.
+The buildout file contains an nginx configuration which can use template variables from ``buildout.cfg`` itself.
 
-When you change the configuration of nginx in buildout you probably don't
-want to rerun the whole buildout, but only the nginx part of it::
+When you change the configuration of nginx in buildout you probably don't want to rerun the whole buildout, but only the nginx part of it::
 
     bin/buildout -c production.cfg install balancer
 
@@ -162,14 +140,10 @@ Assuming you have a buildout nginx section called ``balancer``::
 Deployment configuration
 =========================
 
-`gocept.nginx <https://pypi.python.org/pypi/gocept.nginx/>`_ supports a
-special deployment configuration where you manually configure all
-directories. One important reason why you might wish to do this, is to
-change the location of the ``pid`` file. Normally this file would be created
-in ``parts``, which is deleted and recreated when you re-run buildout. This
-interferes with reliably restarting nginx, since the pid file may have been
-deleted since startup. In this case, you need to manually kill nginx to get
-things back on track.
+`gocept.nginx <https://pypi.python.org/pypi/gocept.nginx/>`_ supports a special deployment configuration where you manually configure all directories.
+One important reason why you might wish to do this, is to change the location of the ``pid`` file.
+Normally this file would be created in ``parts``, which is deleted and recreated when you re-run buildout.
+This interferes with reliably restarting nginx, since the pid file may have been deleted since startup. In this case, you need to manually kill nginx to get things back on track.
 
 Example deployment configuration in ``production.cfg``::
 
@@ -211,8 +185,7 @@ Then you can use the following cycle to update the configuration::
 Manually killing nginx
 =======================
 
-You have lost ``PID`` file, or the recorded ``PID`` does not match the real
-``PID`` any longer.  Use buildout's starter script as a search key:
+You have lost ``PID`` file, or the recorded ``PID`` does not match the real ``PID`` any longer.  Use buildout's starter script as a search key:
 
 .. code-block:: console
 
@@ -247,8 +220,7 @@ Set nginx logging to debug mode::
 www-redirect
 ============
 
-Below is an example how to do a basic *yourdomain.com -> www.yourdomain.com*
-redirect.
+Below is an example how to do a basic *yourdomain.com -> www.yourdomain.com* redirect.
 
 Put the following in your ``gocept.nginx`` configuration::
 
@@ -292,8 +264,8 @@ Below is an example redirect rule::
 Cleaning up query string
 --------------------------
 
-By default, nginx includes all trailing ``HTTP GET`` query parameters in the
-redirect.  You can disable this behavior by adding a trailing ?::
+By default, nginx includes all trailing ``HTTP GET`` query parameters in the redirect.
+You can disable this behavior by adding a trailing ?::
 
     location /tapahtumat.php {
             rewrite ^ http://${hosts:main}/no_ugly_query_string? permanent;
@@ -302,8 +274,7 @@ redirect.  You can disable this behavior by adding a trailing ?::
 Matching incoming query string
 ------------------------------
 
-The ``location`` directive does not support query strings.  Use the ``if``
-directive from the HTTP rewrite module.
+The ``location`` directive does not support query strings.  Use the ``if`` directive from the HTTP rewrite module.
 
 Example::
 
@@ -337,8 +308,7 @@ More info on nginx redirects
 Make nginx aware where the request came from
 =============================================
 
-If you set up nginx to run in front of Zope, and set up a virtual host with
-it like this::
+If you set up nginx to run in front of Zope, and set up a virtual host with it like this::
 
     server {
             server_name demo.webandmobile.mfabrik.com;
@@ -348,9 +318,8 @@ it like this::
             }
     }
 
-Zope will always get the request from ``127.0.0.1:8080`` and not from the
-actual host, due to the redirection. To solve this problem correct your
-configuration to be like this::
+Zope will always get the request from ``127.0.0.1:8080`` and not from the actual host, due to the redirection.
+To solve this problem correct your configuration to be like this::
 
     server {
             server_name demo.webandmobile.mfabrik.com;
@@ -367,15 +336,11 @@ configuration to be like this::
 PHP with nginx and PHP-FPM
 ===========================
 
-If you are coming from Apache world, you may be used to the scenario where
-Apache handles all php-related stuff. With nginx, it's a bit different:
-nginx does not automatically spawn FCGI processes, so you must start them
-separately. In fact, FCGI is a lot like proxying, which means that PHP-FPM
-will run as a separate server and all we need to do is to forward the
-request to it.
+If you are coming from Apache world, you may be used to the scenario where Apache handles all php-related stuff.
+With nginx, it's a bit different: nginx does not automatically spawn FCGI processes, so you must start them separately.
+In fact, FCGI is a lot like proxying, which means that PHP-FPM will run as a separate server and all we need to do is to forward the request to it.
 
-A detailed tutorial on how to set it all up, configure and run it can be
-found here:
+A detailed tutorial on how to set it all up, configure and run it can be found here:
 
 * http://alasdoo.com/2010/12/xdv-plone-and-phpbb-under-one-nginx-roof/
 
@@ -383,12 +348,9 @@ found here:
 SSI: server-side include
 ==========================
 
-In order to include external content in a page (XDV), we must set up nginx
-to make these includes for us. For including external content we will use
-the SSI (server-side include) method, which means that on each request nginx
-will get the needed external content, put it in place and only then return
-the response. Here is a configuration that sets up the filtering and turns
-on SSI for a specific location::
+In order to include external content in a page (XDV), we must set up nginx to make these includes for us.
+For including external content we will use the SSI (server-side include) method, which means that on each request nginx will get the needed external content, put it in place and only then return the response.
+Here is a configuration that sets up the filtering and turns on SSI for a specific location::
 
     server {
             listen 80;
@@ -453,24 +415,18 @@ on SSI for a specific location::
 Session affinity
 =================
 
-If you intend to use nginx for session balancing between ZEO processes, you
-need to be aware of session affinity.  By default, ZEO processes don't share
-session data. If you have site functionality which stores user-specific data
-on the server, let's say an ecommerce site shopping cart, you must always
-redirect users to the same ZEO client process or they will have 1/number of
-processes chance to see the orignal data.
+If you intend to use nginx for session balancing between ZEO processes, you need to be aware of session affinity.
+By default, ZEO processes don't share session data.
+If you have site functionality which stores user-specific data on the server, let's say an ecommerce site shopping cart, you must always redirect users to the same ZEO client process or they will have 1/number of processes chance to see the orignal data.
 
-Make sure that your :doc:`Zope session cookie </develop/plone/sessions/cookies>` are not
-cleared by any front-end server (nginx, Varnish).
+Make sure that your :doc:`Zope session cookie </develop/plone/sessions/cookies>` are not cleared by any front-end server (nginx, Varnish).
 
 By using IP addresses
 -------------------------
 
-This is the most reliable way. nginx will balance each incoming request to a
-front end client by the request's source IP address.
+This is the most reliable way. nginx will balance each incoming request to a front end client by the request's source IP address.
 
-This method is reliable as long as nginx can correctly extract IP address
-from the configuration.
+This method is reliable as long as nginx can correctly extract IP address from the configuration.
 
 * http://wiki.nginx.org/NginxHttpUpstreamModule#ip_hash
 
@@ -573,8 +529,7 @@ Check that some (non-anonymous) page has the ``route`` cookie set:
       Connection: keep-alive
 
 
-Now test it by doing session-related activity and see that your shopping
-cart is not "lost".
+Now test it by doing session-related activity and see that your shopping cart is not "lost".
 
 More info
 
@@ -587,8 +542,7 @@ More info
 Securing Plone-Sites with https and nginx
 =========================================
 
-For instructions how to use SSL for all authenticated traffic see this
-blog-post:
+For instructions how to use SSL for all authenticated traffic see this blog-post:
 
 * http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
 

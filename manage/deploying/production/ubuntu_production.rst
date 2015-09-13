@@ -53,17 +53,19 @@ Check `http://plone.org/products/plone <http://plone.org/products/plone>`_. Foll
 
 .. code-block:: console
 
-    wget https://launchpad.net/plone/4.3/4.3.3/+download/Plone-4.3.3-UnifiedInstaller.tgz #HAS CHANGE TO 5
+    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0rc1/+download/Plone-5.0rc1-UnifiedInstaller.tgz
 
 Unpack, change into the unpack directory and run the installer:
 
 .. code-block:: console
 
-    tar xf Plone-4.3.3-UnifiedInstaller.tgz #HAS CHANGE TO 5
-    cd Plone-4.3.3-UnifiedInstaller/ #HAS CHANGE TO 5
-    sudo ./install.sh zeo
+    tar -xf Plone-5.0rc1-UnifiedInstaller.tgz
+    cd Plone-5.0rc1-UnifiedInstaller
+    sudo ./install.sh
 
-This will install Plone to /usr/local/Plone. There are installer options to put it elsewhere. Run `./install.sh`` with no arguments to get options.
+This will install Plone to /usr/local/Plone. There are installer options to put it elsewhere, and the install script will guide you through them. Use ``install.sh --help`` to see all command-line switches.
+
+
 
 .. note::
 
@@ -73,8 +75,8 @@ This will install Plone to /usr/local/Plone. There are installer options to put 
 
     This creates a `zeo` installation with two Plone clients. We will only connect one of those clients to the Internet. The other will be reserved for debugging and administrator access. If you know this is a larger site and wish to use load balancing, you may create more clients with the `--clients=##` command-line argument to create more clients. They're also easy to add later.
 
-If you hit an "lxml" error during installation (ie the log shows "Error: Couldn't install: lxml 2.3.6") you may need additional libraries.
-Take a look at http://plone.org/documentation/manual/installing-plone/installing-on-linux-unix-bsd/debian-libraries
+If you hit an "lxml" error during installation (ie the log shows "Error: Couldn't install: lxml 2.3.6") you may need :doc:`additional libraries </manage/installing/requirements>`.
+
 
 When the install completes, you'll be shown the preset administrative password. Record it. If you lose it, you may see it again:
 
@@ -89,7 +91,7 @@ We're going to use `supervisor` to start Plone with the server. To do so, we'll 
 
 .. code-block:: console
 
-    sudo vi /etc/supervisor/conf.d/plone4.conf
+    sudo vi /etc/supervisor/conf.d/plone5.conf
 
 Specify that supervisor should start the database server and client1 automatically::
 
@@ -112,9 +114,9 @@ To start immediately, tell supervisor about the new components:
     sudo supervisorctl
     supervisor> reread
     supervisor> add plone5server
-    plone4server: added process group
+    plone5server: added process group
     supervisor> add plone5client1
-    plone4client1: added process group
+    plone5client1: added process group
     supervisor> status
     plone5client1                    RUNNING    pid 32327, uptime 0:00:02
     plone5server                     RUNNING    pid 32326, uptime 0:00:08
@@ -135,7 +137,9 @@ We'll set up nginx by adding a new configuration file:
 
     sudo vi /etc/nginx/sites-available/plone5.conf
 
-Add the contents::
+Add the contents
+
+.. code-block:: ini
 
     server {
       server_name www.yourhostname.com;

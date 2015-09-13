@@ -1,5 +1,10 @@
-Change the Font Colors
-=======================
+Change the Font Colors - deprecated
+====================================
+
+.. note::
+
+  This tutorial is deprecated for Plone 5. New documenation is almost ready.
+
 
 How to change the font colors - a through-the-web approach.
 

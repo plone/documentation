@@ -1,70 +1,39 @@
 Inserting Tables
-=====================
+================
 
-Inserting, updating and deleting tables, columns, rows and cells.
+.. include:: ../../_robot.rst
 
-Tables are handy for tabular data and lists. To add a table, put your
-cursor where you want it and click the *Inserts a new table* icon.
-You'll see the *Insert/Modify table* panel:
+.. code:: robotframework
+   :class: hidden
 
-.. figure:: /_static/insert_table.jpg
+   *** Test Cases ***
+
+   Show TinyMCE image
+       Go to  ${PLONE_URL}
+       Click element  css=#contentview-edit a
+       Wait until element is visible
+       ...  css=#mceu_16-body
+
+       Click element  css=#mceu_22 button
+       Mouse over  css=#mceu_45
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/tinymce-table.png
+       ...  css=#content
+
+Tables are handy for tabular data and lists.
+
+To add a table, put your cursor where you want it and click the *Table* dropdown menu.
+
+.. figure:: ../../_robot/tinymce-table.png
    :align: center
-   :alt:
+   :alt: TinyMCE table
 
-Setting rows and columns is straightforward. You can add a summary of
-the table in the *Summary* field if you like. Table class refers to how
-you want the table to be styled. You have choices such as these:
+There are various options to choose a *style* for the table, insert rows and columns, and set properties on the individual cells. Plone comes with a few basic styles for tables, but you (or your site administrator) will most likely want to provide some extra CSS classes to make them look better.
 
-.. figure:: /_static/insert_table_classes.jpg
-   :align: center
-   :alt:
+.. note::
 
-Here are examples of these table styles:
+   Creating and managing tables in HTML has historically been *awkward*. People tend to mis-use them for layout purposes, which you should not do.
 
-Subdued grid:
+   Use tables **only** for tabular data. And, as rule of thumb, try to keep it to a very small number of rows and columns.
 
-.. figure:: /_static/table_subdued_grid.jpg
-   :align: center
-   :alt:
-
-Invisible grid:
-
-.. figure:: /_static/table_invisible_grid.jpg
-   :align: center
-   :alt:
-
-Fancy listing:
-
-.. figure:: /_static/table_fancy_listing.jpg
-   :align: center
-   :alt:
-
-Fancy grid listing:
-
-.. figure:: /_static/table_fancy_grid_listing.jpg
-   :align: center
-   :alt:
-
-Fancy vertical listing:
-
-.. figure:: /_static/table_fancy_vertical_listing.jpg
-   :align: center
-   :alt:
-
-After the table has been created you can click in a cell to show table
-resizing handles:
-
-.. figure:: /_static/table_resize.jpg
-   :align: center
-   :alt:
-
-In the table above, the cursor has been placed in the "Special Leader"
-cell, which activates little square handles around the edges for
-resizing the entire table. It also activates the other table controls in
-the toolbar which, lets you edit properties of a row or a cell, lets you
-add and remove rows or columns and lets you split and merge cells.
-
-.. figure:: /_static/table_controls.jpg
-   :align: center
-   :alt:
-
+   If you want to present information that is mostly tabular, such as larger amounts of statistical data, there are various add-ons to help you do that. These will generate nicer tables, and are easier to work with both for content editors and visitors to your site. Visitors will be able to sort tables and use a quick search to locate individual cells, for instance.
