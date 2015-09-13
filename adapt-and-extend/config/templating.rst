@@ -1,7 +1,7 @@
-Templating
-=================
+Templating in TinyMCE
+=====================
 
-TinyMCE in Plone 5 is adapted to allow templating engine for its content. 
+TinyMCE in Plone 5 is adapted to allow templating engine for its content.
 
 Right now parametrized templates are not implemented.
 
@@ -9,7 +9,7 @@ How to enable it
 ----------------
 
 * On Control Panel -> TinyMCE -> Toolbar -> custom plugins add::
-    
+
     template|+plone+static/components/tinymce-builded/js/tinymce/plugins/template
 
 * On Control Panel -> TinyMCE -> Toolbar -> toolbar::
@@ -20,8 +20,10 @@ How to configure which templates are available
 ----------------------------------------------
 
 For each template we need a file available on the browser, we assume for this
-example to use a diazo file at ++theme+example/templates/template.html with 
-the content::
+example to use a diazo file at ++theme+example/templates/template.html with
+the content:
+
+.. code-block:: html
 
     <div class="mceTmpl">
         <h1>Template</h1>
@@ -33,7 +35,7 @@ the content::
             <div class="col-md-6">
                 <h2>Header</h2>
             </div>
-        </div>            
+        </div>
     </div>
 
 In order to define it::

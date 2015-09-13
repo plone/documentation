@@ -40,7 +40,7 @@ More information
 ----------------
 
 * `Mastering Plone Training <http://training.plone.org/5/>`_ has several chapters on views.
-* The :doc:`Tutorial app </external/tutorial.todoapp/docs/chapter_3>` has a chapter on views as well.
+
 
 
 View components

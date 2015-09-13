@@ -36,7 +36,7 @@ Starting points to learn *z3c.form* in Plone
 
 * Read about :doc:`creating schema-driven forms with Dexterity content subsystem </develop/addons/schema-driven-forms/index>`
 
-* :doc:`TODO app tutorial for Plone </external/tutorial.todoapp/docs/index>`
+* `Plone training manual <http://training.plone.org/5>`__
 
 Other related packages you might want to take a closer look
 

@@ -1,13 +1,31 @@
 Mail Configuration
 ==================
 
-Completing this configuration allows your Plone site to send email.  
-If the mail settings are not configured properly, you will not be able to receive form submissions via email from your site.
+.. include:: ../../_robot.rst
+
+.. code:: robotframework
+   :class: hidden
+
+   *** Test Cases ***
+
+   Show Mail setup screen
+       Go to  ${PLONE_URL}/@@mail-controlpanel
+       Capture and crop page screenshot
+       ...  ${CURDIR}/../../_robot/mail-setup.png
+       ...  css=#content
+
+.. figure:: ../../_robot/mail-setup.png
+   :align: center
+   :alt: Mail setup configuration
+
+
+Completing this configuration allows your Plone site to send email.
+If the mail settings are not configured properly, you will not be able to receive form submissions via email from your site, and users can't be contacted for an email reset link.
 
 Using localhost for email
 -------------------------
 
-One common way to configure mail for your Plone site is to use a mail server on the same machine that is hosting Plone. 
+One common way to configure mail for your Plone site is to use a mail server on the same machine that is hosting Plone.
 To do this, you'll first need to configure a mail server, like `Postfix <http://www.postfix.org/BASIC_CONFIGURATION_README.html>`_.
 
 | **SMTP Server:** localhost
@@ -18,7 +36,7 @@ To do this, you'll first need to configure a mail server, like `Postfix <http://
 | **Site 'From' Address:** [emailaddress]@[yourdomain]
 
 Using an external host
--------------------------------
+----------------------
 
 The following settings are an example of how you can configure your site to use your Gmail address.
 You can also use any external mail server, such as your business or institution email (you can get your SMTP settings from your in-house IT department).
@@ -35,5 +53,5 @@ You can also use any external mail server, such as your business or institution 
 Testing the Configuration
 -------------------------
 
-You can test the configuration by clicking the "Save and send test e-mail" button at the bottom of the form. 
+You can test the configuration by clicking the "Save and send test e-mail" button at the bottom of the form.
 You should receive an email from the email address you specified with the subject "Test email from Plone."

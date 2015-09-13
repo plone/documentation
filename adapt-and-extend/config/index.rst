@@ -1,15 +1,40 @@
-Configuration and Control panel
-===============================
+Site Setup
+==========
+
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   site
-   add_ons
+   intro
+   date-and-time
+   language
    mail
-   html-filtering
+   navigation
+   site
+   add-ons
+   search
+   discussion
+   theming
+   socialmedia
+   syndication
    tinymce
    templating
+   content-rules
+   editing
+   image-handling
+   markup
+   content-settings
+   dexterity-content-types
+   users-groups
+   html-filtering
+   security
+   errors
+   maintenance
+   management-interface
+   caching
+   configuration-registry
+   resource-registries
+
 
 
 
