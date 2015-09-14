@@ -96,7 +96,6 @@ The menu choices in the state menu will change accordingly:
                ...  css=#content-header
                ...  css=div.plone-toolbar-container
 
-.. replaces ../../_static/copy_of_addnewmenu.png
 .. figure:: ../../_robot/workflow-reject.png
    :align: center
    :alt: basic workflow menu

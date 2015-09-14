@@ -36,7 +36,6 @@ When you are ready to upload an image, use the *Add new...* drop-down menu.
        ...  css=#plone-contentmenu-factories ul
 
 
-.. replaces: /_static/add-item-menu-image.png
 .. figure:: ../../_robot/adding-images_add-menu.png
    :align: center
    :alt: add-new-menu.png
@@ -60,7 +59,6 @@ After clicking to add an **Image**, you'll see the *Add Image* panel:
        ...  ${CURDIR}/../../_robot/adding-images_add-form.png
        ...  css=#content
 
-.. replaces: /_static/addimage.png
 .. figure:: ../../_robot/adding-images_add-form.png
    :align: center
    :alt: Adding images form

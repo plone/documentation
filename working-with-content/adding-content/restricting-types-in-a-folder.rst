@@ -75,13 +75,6 @@ The last choice allows selection from a list of available types:
    :alt: menu for setting restrictions.png
 
 
-
-
-
-.. figure:: /_static/restricttypesmanually.png
-   :align: center
-   :alt:
-
 Types listed under the *Allowed types* heading are those available on the web site.
 The default, as shown, is to allow all types.
 Allowed types may be toggled on and off for the folder.

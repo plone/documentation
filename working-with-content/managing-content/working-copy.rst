@@ -74,7 +74,6 @@ Then from the "Actions" menu, select "Check out":
 
 
 
-.. replaces /_static/01.png
 .. figure:: ../../_robot/working-copy_checkout.png
         :align: center
         :alt:
@@ -82,7 +81,6 @@ Then from the "Actions" menu, select "Check out":
 An info message will appear indicating you're now working with a working
 copy:
 
-.. replaces /_static/03.png
 .. figure:: ../../_robot/working-copy_checkout-notification.png
        :align: center
        :alt:
@@ -120,7 +118,6 @@ Using "Check in"
 When you are ready to have your edited copy replace the published one,
 simply choose "Check-in" from the "Actions" drop-down menu:
 
-.. replaces /_static/04a.png
 .. figure:: ../../_robot/working-copy_checkin.png
        :align: center
        :alt:
@@ -155,7 +152,6 @@ simply choose "Check-in" from the "Actions" drop-down menu:
 You will then be prompted to enter a Check-in message.
 Fill it out and click on "Check in":
 
-.. replaces /_static/04b.png
 .. figure:: ../../_robot/working-copy_checkin-form.png
        :align: center
        :alt:
@@ -174,7 +170,6 @@ Canceling a "Check out"
 
 If for any reason it becomes necessary to cancel a check out and **you don't want to save any of your changes**, simply navigate to the working copy and select "Cancel check-out":
 
-.. replaces /_static/cancel1.png
 .. figure:: ../../_robot/working-copy_cancel-checkout.png
        :align: center
        :alt:
@@ -209,7 +204,6 @@ If for any reason it becomes necessary to cancel a check out and **you don't wan
 
 You will prompted to confirm the "Cancel checkout" or to "Keep checkout":
 
-.. replaces /_static/cancel2.png
 .. figure:: ../../_robot/working-copy_cancel-checkout-form.png
        :align: center
        :alt:

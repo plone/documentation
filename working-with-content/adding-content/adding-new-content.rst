@@ -30,7 +30,6 @@ New content items are added via the **Add New . . .** drop-down menu:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-.. replaces: /_static/copy_of_addnewmenu.png
 .. figure:: ../../_robot/adding-content_add-menu.png
    :align: center
    :alt: add-new-menu.png

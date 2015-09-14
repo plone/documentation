@@ -28,7 +28,6 @@ Use the *Add new...* menu for a folder to add a news item:
        ...  css=div.plone-toolbar-container
        ...  css=#plone-contentmenu-factories ul
 
-.. replaces: /_static/copy_of_addnewmenu.png
 .. figure:: ../../_robot/adding-news-items_add-menu.png
    :align: center
    :alt: add-new-news-item-menu.png
@@ -51,7 +50,6 @@ You will see the *Add News Item* panel:
        ...  ${CURDIR}/../../_robot/adding-news-items_add-form.png
        ...  css=#content
 
-.. replaces: /_static/addnewsitem.png
 .. figure:: ../../_robot/adding-news-items_add-form.png
    :align: center
    :alt:

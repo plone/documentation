@@ -4,6 +4,7 @@ Adapting & Extending Plone
 .. toctree::
    :maxdepth: 2
 
+
    basics
    theming/index
    config/index
