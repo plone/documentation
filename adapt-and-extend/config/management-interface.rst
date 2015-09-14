@@ -3,9 +3,14 @@ ZMI, the Zope Management Interface
 
 Here be dragons.
 
-Cute and sometimes *very* useful dragons, but still dragons...
+The ZMI is a direct interface into the backend software stack of Plone.
+While it can still serve as a valuable tool for Plone specialists to fix problems or accomplish certain tasks, it is *not* recommended as a regular tool for Plone maintenance.
+
+If you are just starting out, this is probably not where you want to go.
 
 If you are a Plone expert, this is where to get to the venerable ZMI.
-If you are just starting out, this is probably not where you want to go, there are many options of making a site unusable.
 
-Make sure to make regular backups.
+
+.. note::
+
+   Only users with role "Manager" can use this option.

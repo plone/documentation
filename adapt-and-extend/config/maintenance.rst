@@ -19,8 +19,6 @@ Maintenance and packing
    :alt: ZODB maintenance configuration
 
 
-The only option you should use here, is regularly *pack* the database.
+As you can see, there is not much to do here with Plone manager permissions.
 
-.. note::
-
-   When deploying a Plone site for production, of course it makes much more sense to automate this via a cronjob or similar.
+If you have *Zope manager* permissions, there is one extra option here: to *pack* your database. However, in any normal deploying setup, you would want to automate that task via a cronjob or similar mechanism.
