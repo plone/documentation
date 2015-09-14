@@ -64,7 +64,7 @@ Apart from the usual fields, the interesting part starts with the **Search terms
 
    select criteria
        Go to  ${PLONE_URL}/++add++Collection
-       Click element  select2-chosen-12
+       Click element  css=div.querystring-criteria-index a
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/collection-criteria.png
        ...  css=div.select2-drop-active

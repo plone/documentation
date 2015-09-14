@@ -1,21 +1,24 @@
 Caching
 =======
 
+.. robot screenshot not working for unknown reason, robot user has no access to cache although logged in as Manager
+.. replacing with static screenshot for now
 
-.. include:: ../../_robot.rst
+.. .. include:: ../../_robot.rst
 
-.. code:: robotframework
-   :class: hidden
+.. .. code:: robotframework
+..    :class: hidden
 
-   *** Test Cases ***
+..   *** Test Cases ***
 
-   Show caching setup screen
+..   Show caching setup screen
        Go to  ${PLONE_URL}/@@caching-controlpanel
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/caching-setup.png
        ...  css=#content
 
-.. figure:: ../../_robot/caching-setup.png
+
+.. figure:: ../../_static/caching-setup.png
    :align: center
    :alt: caching configuration
 
