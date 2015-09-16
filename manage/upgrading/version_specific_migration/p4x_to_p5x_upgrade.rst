@@ -10,6 +10,47 @@ Upgrading Plone 4.x to 5.0
 .. contents:: :local:
 
 
+Changes due to implemented PLIPS
+================================
+
+PLIPs that resulted in changes that might have to be documented in the upgrade-guide
+
+Define extra member properties TTW
+Todo: Explain how to migrate your own custom memberproperties
+Who: Eric Brehault
+
+plone.api
+Todo: Tell people to use it. Explain how to configure plone.recipe.codeanalysis to check for old-style code
+Roel
+
+plone.app.multilingual
+Todo: How to migrate from LP to PAM
+Who: ?
+
+Convert control panels to use z3c.form
+Todo: How to migrate your custom control-panels
+Who: Tisto
+
+CSS and JS integration/ResourceRegistries rethink (require.js/mockup/less...)
+Todo: Nathan
+
+Main_template rebirth to HTML5  bloodbare
+Todo: What to do when you customized your main_templates.
+Who: ?
+
+Automatic CSRF Protection
+Todo: How to protect your existing forms
+Who: Nathan
+
+Improvements for user ids and login names
+Todo: ?
+Who: ?
+
+Linkintegrity in Plone 5
+Who: pbauer
+
+
+
 Changed imports and functions
 ========================================
 
