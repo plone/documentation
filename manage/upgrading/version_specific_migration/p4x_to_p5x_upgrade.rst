@@ -9,6 +9,35 @@ Upgrading Plone 4.x to 5.0
 
 .. contents:: :local:
 
+Changes due to implemented PLIPS
+================================
+
+PLIP 13350 "Define extra member properties TTW"
+-----------------------------------------------
+
+In Plone 5, the custom fields displayed in the user profile form and the
+registration form are managed by `plone.schemaeditor`. They are dynamically
+editable from the Plone control panel, and can be imported from a Generic Setup
+profile file named `userschema.xml`.
+
+If you have some custom member properties in your Plone site, be aware that:
+
+- extra attributes defined in `memberdata_properties.xml` will be preserved, but
+  they will not be automatically shown in the user profile form or the
+  registration form,
+- if you have implemented some custom forms in order to display your custom
+  member attributes, they will not work anymore as `plone.app.users` is now
+  based on `z3c.form`. You can easily replace them by declaring their schema in
+  `userschema.xml`.
+
+.. note::
+
+    When a custom field is defined in `userschema.xml`, its corresponding
+    attribute is automatically created in the `portal_memberdata` tool, so there
+    is no need to declare it in `memberdata_properties.xml`.
+    `memberdata_properties.xml` will only handled attributes that are not
+    related to the user profile form or the registration form.
+
 
 Changed imports and functions
 ========================================
