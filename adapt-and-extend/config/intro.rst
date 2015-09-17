@@ -14,10 +14,10 @@ This screen, which is available for the roles ``Site Admin`` and ``Manager``, is
    Show Site setup screen
        Go to  ${PLONE_URL}/@@overview-controlpanel
        Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/site-setup.png
+       ...  ${CURDIR}/../../_robot/site-overview.png
        ...  css=#content
 
-.. figure:: ../../_robot/site-setup.png
+.. figure:: ../../_robot/site-overview.png
    :align: center
    :alt: Site setup configuration
 
