@@ -274,31 +274,47 @@ If you access attributes directly in your code, you must change your accessors. 
 filter setting changes
 ~~~~~~~~~~~~~~~~~~~~~~
 
+Nothing changed, chapter can be removed?
+
 tinymce setting changes
 ~~~~~~~~~~~~~~~~~~~~~~~
-and resource types
-and spellchecker
 
-maintenance setting changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-navigation setting changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-search setting changes
-~~~~~~~~~~~~~~~~~~~~~~
+Nothing changed, chapter can be removed?
 
 security setting changes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+complex, look betas.py **TODO**
+
 site setting changes
 ~~~~~~~~~~~~~~~~~~~~
 
-date&time setting changes
-~~~~~~~~~~~~~~~~~~~~~~~~~
+There are no special changes, but some new fields. Have a look!
+
 
 mail setting changes
 ~~~~~~~~~~~~~~~~~~~~
+
+All settings were managed with the tool `MailHost` and with the GenericSetup file portal_languages.xml.
+Now these attributes are managed with plone properties.
+As Plone 5 has full migration during an upgrade, please perform the upgrade and export the registry settings in GenericSetup to get the right settings.
+If you access attributes directly in your code, you must change your accessors. You know already how to get attributes from the `portal_languages` tool. The new attributes can be accessed via plone.api as described above.
+
++-----------------------------+--------------------------+
+| old attribute               | new attribute            |
++-----------------------------+--------------------------+
+| MailHost.smtp_host          | plone.smtp_host          |
++-----------------------------+--------------------------+
+| MailHost.smtp_port          | plone.smtp_port          |
++-----------------------------+--------------------------+
+| MailHost.smtp_user_id       | plone.smtp_user_id       |
++-----------------------------+--------------------------+
+| MailHost.smtp_pass          | plone.smtp_pass          |
++-----------------------------+--------------------------+
+| MailHost.email_from_address | plone.email_from_address |
++-----------------------------+--------------------------+
+| MailHost.email_from_name    | plone.email_from_name    |
++-----------------------------+--------------------------+
 
 markup setting changes
 ~~~~~~~~~~~~~~~~~~~~~~
