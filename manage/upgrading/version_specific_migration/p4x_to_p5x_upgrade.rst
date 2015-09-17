@@ -65,6 +65,223 @@ Linkintegrity in Plone 5
 
 
 
+PLIP 10359 "Convert control panels to use z3c.form"
+---------------------------------------------------
+
+In Plone 5, the control panels have been reimplemented to z3c.form. Also,
+access to changes has been moved to plone.registry.
+
+You might want to change your implementation of custom control panels too.
+You can read all about it here: xxx
+
+editing changes
+~~~~~~~~~~~~~~~
+In the past editor settings were part of the portal properties which contained a site properties object with the relevant attributes.
+
+site properties allowed direct attribute access, so you could access the available_editors via::
+
+    ptools.site_properties.available editors
+
+Now you can access the property via get_registry_record()::
+
+    >>> from plone import api
+    >>> api.portal.get_registry_record('plone.available_editors')
+
+The keys mostly the same, they are only prefixed with `plone.` now.
+Normally, you do not modify or access these records. Instead you change the settings in your genericsetup profile in the file `propertiestool.xml`
+
++--------------------+-----------------------------------+-----------------------------------------+
+| Old Property Sheet | Old Key                           | New Property                            |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | sortAttribute                     | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | sortOrder                         | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | sitemapDepth                      | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | root                              | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | currentFolderOnlyInNavtree        | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | includeTop                        | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | topLevel                          | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | bottomLevel                       | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | showAllParents                    | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | idsNotToList                      | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | parentMetaTypesNotToQuery         | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | metaTypesNotToList                | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | enable_wf_state_filtering         | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| navtree_properties | wf_states_to_show                 | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | allowAnonymousViewAbout           | plone.allow_anon_views_about            |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | displayPublicationDateInByline    | plone.display_publication_date_byline   |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | default_language                  | plone.default_language                  |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | default_charset                   | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | ext_editor                        | plone.ext_editor                        |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | available_editors                 | plone.available_editors                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | default_editor                    | plone.default_editor                    |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | allowRolesToAddKeywords           | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | autho_cookie_length               | plone.auth_cookie_length                |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | calendar_starting_year            | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | calender_future_years_available   | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | invalid_ids                       | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | default_page                      | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | search_results_description_length | plone.search_results_description_length |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | ellipsis                          | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | typesLinkToFolderContentsInFC     | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | visible_ids                       | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | exposeDCMetaTags                  | plone.exposeDCMetaTags                  |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | types_not_searched                | plone.types_not_searched                |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | search_review_state_for_anon      | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | search_enable_description_search  | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | search_enable_sort_on             | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | search_enable_batch_size          | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | search_collapse_options           | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | disable_folder_section            | **SPECIAL**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | disable_nonfolderish_sections     | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | typesUseViewActionInListings      | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | verify_login_name                 | plone.verify_login_name                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | many_users                        | plone.many_users                        |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | many_groups                       | plone.many_groups                       |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | enable_livesearch                 | plone.enable_livesearch                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | default_page_types                | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | use_folder_contents               | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | forbidden_contenttypes            | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | default_contenttype               | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | enable_sitemap                    | plone.enable_sitemap                    |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | number_of_days_to_keep            | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | enable_inline_editing             | **REMOVED**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | lock_on_ttw_edit                  | plone.lock_on_ttw_edit                  |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | enable_link_integrity_checks      | plone.enable_link_integrity_checks      |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | webstats_js                       | plone.webstats_js                       |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | external_links_open_new_window    | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | icon_visibility                   | plone.icon_visibility                   |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | mark_special_links                | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | redirect_links                    | **TBD**                                 |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | use_email_as_login                | plone.use_email_as_login                |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | user_registration_fields          | **SPECIAL**                             |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | allow_external_login_sites        | plone.allow_external_login_sites        |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | external_login_url                | plone.external_login_url                |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | external_logout_url               | plone.extenal_logout_url                |
++--------------------+-----------------------------------+-----------------------------------------+
+| site_properties    | external_login_iframe             | plone.external_login_iframe             |
++--------------------+-----------------------------------+-----------------------------------------+
+
+disable_folder_sections
+"""""""""""""""""""""""
+
+This property has been removed and the logic is different.
+You can influence the portal tab generation with the property `plone.generate_tabs`
+This controls, if the tabs are generated from the content in the root folder.
+In addition, you can control if non folders will create entries or not with the property `plone.nonfolderish_tabs`.
+If you want to disable_folder_sections, you will want to set `plone.generate_tabs` to false.
+
+
+language setting changes
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+filter setting changes
+~~~~~~~~~~~~~~~~~~~~~~
+
+tinymce setting changes
+~~~~~~~~~~~~~~~~~~~~~~~
+and resource types
+and spellchecker
+
+maintenance setting changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+navigation setting changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+search setting changes
+~~~~~~~~~~~~~~~~~~~~~~
+
+security setting changes
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+site setting changes
+~~~~~~~~~~~~~~~~~~~~
+
+date&time setting changes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+mail setting changes
+~~~~~~~~~~~~~~~~~~~~
+
+markup setting changes
+~~~~~~~~~~~~~~~~~~~~~~
+
+user_and_group setting changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+social media changes
+~~~~~~~~~~~~~~~~~~~~
+
+imaging changes
+~~~~~~~~~~~~~~~
+
+loggin setting changes
+~~~~~~~~~~~~~~~~~~~~~~
+
+
 Changed imports and functions
 =============================
 
