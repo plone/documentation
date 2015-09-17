@@ -74,8 +74,6 @@ access to changes has been moved to plone.registry.
 You might want to change your implementation of custom control panels too.
 You can read all about it here: xxx
 
-editing changes
-~~~~~~~~~~~~~~~
 In the past editor settings were part of the portal properties which contained a site properties object with the relevant attributes.
 
 site properties allowed direct attribute access, so you could access the available_editors via::
@@ -236,6 +234,42 @@ If you want to disable_folder_sections, you will want to set `plone.generate_tab
 
 language setting changes
 ~~~~~~~~~~~~~~~~~~~~~~~~
+
+All settings were managed with the tool `portal_languages` and with the GenericSetup file portal_languages.xml.
+Now these attributes are managed with plone properties.
+As Plone 5 has full migration during an upgrade, please perform the upgrade and export the registry settings in GenericSetup to get the right settings.
+If you access attributes directly in your code, you must change your accessors. You know already how to get attributes from the `portal_languages` tool. The new attributes can be accessed via plone.api as described above.
+
++-----------------------------------------------------------------------------------+-----------------------------------+
+| old attribute                                                                     | new attribute                     |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| root.portal_languages.supported_langs                                             | plone.available_languages         |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| site.portal_properties.site_properties.default_language or  site.default_language | plone.default_language            |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| root.portal_languages.use_combined_language_codes                                 | plone.use_combined_language_codes |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| root.portal_languages.display_flags                                               | plone.display_flags               |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.use_path_negotiation                                             | plone.use_path_negotiation        |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.use_content_negotiation                                          | plone.use_content_negotiation     |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.use_cookie_negotiation                                           | plone.use_cookie_negotiation      |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.set_cookie_everywhere                                            | plone.set_cookie_always           |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.authenticated_users_only                                         | plone.authenticated_users_only    |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.use_request_negotiation                                          | plone.use_request_negotiation     |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.use_cctld_negotiation                                            | plone.use_cctld_negotiation       |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.use_subdomain_negotiation                                        | plone.use_subdomain_negotiation   |
++-----------------------------------------------------------------------------------+-----------------------------------+
+| portal_languages.always_show_selector                                             | plone.always_show_selector        |
++-----------------------------------------------------------------------------------+-----------------------------------+
+
 
 filter setting changes
 ~~~~~~~~~~~~~~~~~~~~~~
