@@ -16,15 +16,12 @@ Reaching the documentation team
 The Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
 To reach this team for any questions please contact
 
-* `Documentation team mailing list <https://plone.org/support/forums-old/docs>`_
-
 * *#plone-docs* IRC channel on irc.freenode.net
 
 * `Documentation <https://community.plone.org/category/documentation>`_ category on community.plone.org.
 
 For news and updates you can also follow `PloneDocs <https://twitter.com/plonedocs>`_ on twitter.
 
-If you want to know more about the  work-flow, long term ideas and other upcoming improvements you can check the `board <https://trello.com/b/M8Eyzlld/plone-docs>`_ on Trello.
 
 
 License
@@ -43,7 +40,7 @@ Workflow
 
 The documentation is hosted on github. And there are tools hooked directly into it:
 
-* there are branches for the different versions of Plone
+* there are branches for the different versions of Plone, see :ref:`plone-versions`.
 
 * translation hooks with Transifex are in place
 
@@ -64,6 +61,19 @@ The main goal of this process is not to annoy you. On the contrary, we **love** 
 But the documentation team also wants to keep the documentation in good shape.
 
 
+.. _plone-versions:
+
+Documentation for different versions of Plone
+=============================================
+
+The documentation for the different versions (Plone 3, Plone 4, Plone 5) are organized in branches inside the `Plone Documentation <https://github.com/plone/documentation>`_
+
+The *default* branch points to the current version of Plone.
+
+Documentation changes that are valid for multiple versions of Plone can be done by making multiple pull requests, or by *cherry-picking* which may be easier to do when branches are widely different.
+When all this seems alien and strange, just note in your pull request that you think this is valid for other versions of Plone as well, and the documentation team will take care of doing the technical stuff.
+
+
 Editing the documentation on GitHub
 ===================================
 
@@ -78,6 +88,13 @@ This is the recommended way for smaller changes, and for people who are not fami
 - For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
 - You will receive a message when your request has been integrated into the documentation. At that moment, feel free to delete the copy of the documentation you created under your account on github. Next time you contribute, just fork again. That way you'll always have a fresh copy of the documentation to work on.
 
+
+Before you make a pull request
+==============================
+
+* Check for typos. Again, do not let this discourage you if English is not your first language, but simple typing errors can usually be found with spellcheckers
+* Make sure that all links you put in are valid.
+* Check that you are using valid restructured text.
 
 
 Pull request checklist
