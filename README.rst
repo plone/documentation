@@ -6,7 +6,7 @@ You can read the documentation on `docs.plone.org <http://docs.plone.org>`_.
 Installation
 ------------
 
-If you want to build the full documentation locally please follow the `build instructions <https://github.com/plone/papyrus/blob/master/docs/install.rst>`_.
+If you want to build the full documentation locally please follow the `build instructions <https://github.com/plone/papyrus/blob/5.0/docs/install.rst>`_.
 
 You will find the results results in ``build/html/``.
 
