@@ -12,8 +12,6 @@ You will find the results results in ``build/html/``.
 
 This is tested with Debian, Ubuntu and OSX.
 
-
-
 Contribute
 ----------
 
