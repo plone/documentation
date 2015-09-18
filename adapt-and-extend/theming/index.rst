@@ -7,21 +7,15 @@ Introduction
 The documentation about theming a Plone site is organized by scenarios. The way you can do things depends on your use case. Reade the following scenarios and decide where to start.
 
 
-Theming for dummies
-+++++++++++++++++++
+Theming through the web
++++++++++++++++++++++++
 
-This tutorial will show you how you can change the look and feel of Plone through the web without creating a theme package.
-
-
-Create a theme product
-++++++++++++++++++++++
-
-This tutorial shows basically how to create a theme package. You have to create a package for later steps.
+This tutorial will show you how you can change the look and feel of Plone through the web without writing a line of code.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   create-theme-product
+   theming-through-the-web
 
 
 Customize the Barceloneta default theme
