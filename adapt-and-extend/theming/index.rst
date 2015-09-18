@@ -1,10 +1,19 @@
 Theming Plone
 =============
 
+
 Introduction
 ------------
 
 The documentation about theming a Plone site is organized by scenarios. The way you can do things depends on your use case. Reade the following scenarios and decide where to start.
+
+We should reuse this:
+
+* https://github.com/plone/documentation/issues/350
+* https://github.com/collective?utf8=✓&query=diazo
+* https://github.com/TH-code/diazoframework.plone
+* https://github.com/TH-code/diazotheme.bootstrap
+* http://docs.diazo.org/en/latest/
 
 
 Theming through the web
