@@ -13,11 +13,8 @@ before_install:
 - cd ..
 install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
-- mkdir -p source && ln -s ../../documentation source/documentation
-- mkdir -p buildout-cache/downloads
-- python bootstrap-buildout.py
-- bin/buildout -N -t 3 buildout:checkout=documentation sources:documentation="fs
-  documentation egg=false"
+- python bootstrap-buildout.py --setuptools-version=18.0.1 --version=2.4.0
+- bin/buildout -N -t 3 
 before_script:
 - gem install --version 0.8.9 faraday
 - gem install travis-artifacts
