@@ -3,15 +3,6 @@ This is the official Plone Documentation
 
 You can read the documentation on `docs.plone.org <http://docs.plone.org>`_.
 
-Installation
-------------
-
-If you want to build the full documentation locally please follow the `build instructions <https://github.com/plone/papyrus/blob/5.0/docs/install.rst>`_.
-
-You will find the results results in ``build/html/``.
-
-This is tested with Debian, Ubuntu and OSX.
-
 Contribute
 ----------
 
@@ -27,6 +18,16 @@ Support
 If you are having issues, please let us know.
 
 We have a community space at: `community.plone.org/c/documentation <https://community.plone.org/c/documentation>`_.
+
+
+Installation
+------------
+
+If you want to build the full documentation locally please follow the `build instructions <https://github.com/plone/papyrus/blob/5.0/docs/install.rst>`_.
+
+Note that this is *not* needed to make smaller edits, and not recommended just to **read** the documentation, but is recommended when doing larger scale edits.
+
+This is tested with Debian, Ubuntu and OSX.
 
 License
 -------
