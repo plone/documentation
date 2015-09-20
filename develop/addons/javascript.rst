@@ -6,7 +6,15 @@
 
         Writing, including and customizing Javascript for Plone add-ons
 
-.. contents:: :local:
+.. note::
+
+   This is **not** the recommended or valid way for Plone 5 any more.
+   While we are updating this documentation, you should look at the following blogposts:
+
+   - `Updating JavaScript for Plone 5 <https://www.nathanvangheem.com/news/updating-javascript-for-plone-5>`_
+   - `Plone 5 Resource Registries <https://www.nathanvangheem.com/news/plone-5-resource-registries>`_
+   - `Customizing JavaScript pattern options in Plone 5 <https://www.nathanvangheem.com/news/customizing-javascript-pattern-options-in-plone-5>`_
+
 
 Introduction
 ------------

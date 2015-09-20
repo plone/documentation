@@ -151,7 +151,10 @@ Adding a new plug-in
 
 Here are instructions how to add new plugins to TinyMCE
 
-Plug-in configuration goes to ``registry.xml`` GS profile with the record::
+Plug-in configuration goes to ``registry.xml`` GS profile with the record:
+
+.. code-block:: xml
+
   <record name="plone.custom_plugins"
           interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
           field="custom_plugins">
@@ -193,4 +196,4 @@ Example::
 .. warning ::
 
         Since there resources are loaded in built into one JavaScript file,
-        Any change this way will require you to re-build the JavaScript.
+        any change this way will require you to re-build the JavaScript.
