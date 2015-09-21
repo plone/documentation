@@ -33,7 +33,7 @@ Out of the box, Plone's Unified Installer includes a buildout.cfg (typically loc
     extends =
     base.cfg
     versions.cfg
-    # http://dist.plone.org/release/4.1-latest/versions.cfg
+    # http://dist.plone.org/release/4.3-latest/versions.cfg
 
 This tells buildout to get all of its package versions from the included versions.cfg file.  Notice that there is another line, commented out, that points to dist.plone.org.  This location will always contain the most recent versions that comprise the latest release in the Plone 4.1 series.  (You can also replace 4.1-latest with 4.0-latest or 4.2-latest, or another other existing minor release in the 4.x series.)
 
@@ -42,7 +42,7 @@ To upgrade your buildout to use the latest Plone 4.1.x release, comment out vers
     extends =
     base.cfg
     # versions.cfg
-    http://dist.plone.org/release/4.1-latest/versions.cfg
+    http://dist.plone.org/release/4.3-latest/versions.cfg
 
 Save your changes.
 
@@ -62,4 +62,5 @@ Visit your Zope instance's ZMI (http://yoursite:8080). You will likely see a mes
 
 Click **Upgrade** button next to the site and the upgrade will run. Check the *Dry Run* checkbox if you want to test the migration before you execute it.
 
-Voila! You've successfully upgraded your Plone site. Plone on!
+Voila! You've successfully upgraded your Plone site.
+Plone on!
