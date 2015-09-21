@@ -17,7 +17,8 @@ Plone hotfixes are released after timely announcement from the Security Team.
 
 To stay up to date, it is advisable when you are the administrator of a Plone site, to suscribe to the `Plone Announce mailing list <https://lists.sourceforge.net/lists/listinfo/plone-announce>`_
 
-This is a very low-volume list. Security updates are also announced via the plone.org website and other channels.
+This is a very low-volume list.
+Security updates are also announced via the plone.org website and other channels.
 
 To see which Hotfixes should be applied against which Plone version, you can check `the security matrix at plone.org/security/hotfixes <https://plone.org/security/hotfixes/>`_
 
