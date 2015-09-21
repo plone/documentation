@@ -22,9 +22,11 @@ Plone has a builtin tool that migrates existing content to the new structure.
 This guide describes migration in Plone, specifically how you upgrade between different versions.
 
 Before migrating you should read this entire document to understand the potential impact migrating will have on your Plone site.
-In particular, read everything in the *common problems and issues* section.
 
-The guide applies to all contemporary versions of Plone, and we have also included the older, unsupported versions for reference.
+It is also wise to have read the :doc:`troubleshooting <troubleshooting>` section, just in case you may need to employ one of the techniques there.
+
+The guide applies to all contemporary versions of Plone.
+For unsupported versions from the year 2009 and before, see older versions of this documentation.
 
 
 A note about version numbering and terminology
