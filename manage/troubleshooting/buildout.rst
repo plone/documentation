@@ -422,8 +422,8 @@ If you get::
 Rerun ``bootstrap.py`` with the correct Python interpreter.
 
 
-``Error: Picked: <some.package> = <some.version>``
-===================================================
+Error: Picked: <some.package> = <some.version>
+==============================================
 
 If you get something like this::
 
@@ -444,7 +444,7 @@ If you get something like this::
 This means that your buildout has "allow picked versions" set to false.
 You need to pin the version for the picked version (or turn on "allow picked versions").
 
-Buildout error: ``Not a recognized archive type``
+Buildout error: Not a recognized archive type
 =================================================
 
 If you run across an error like this when running buildout::
@@ -462,7 +462,7 @@ This error makes it look as if your Python install doesn't have support for this
 Distribute / setuptools tries to mess with system Python and Permission denied
 ==============================================================================
 
-When running ``bootsrap.py`` your buildout files
+When running ``bootstrap.py`` your buildout files
 because it tries to write to system-wide Python installation.
 
 Example::
