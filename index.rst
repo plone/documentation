@@ -4,19 +4,19 @@
 Plone - The Open Source CMS
 ============================
 
-This document is a community maintained manual for the `Plone <https://plone.org>`_ content management system.
+This is a community-maintained manual for the `Plone <http://plone.org>`_ content management system.
 
-The target audience of the documentation includes
+This documentation is for:
 
-* Content editors: writing, updating and ordering the actual content of the site
+* Content editors: who write, update, and order content on a site
 
-* Site administrators: installing Plone, add-ons and setting up the site
+* Site administrators: who install Plone and add-ons, and set up a site
 
-* Designers: changing Plone's visual appearance
+* Designers: who create site themes
 
-* Deployers: hosting Plone for production on a server
+* Deployers: who configure server(s) for site hosting
 
-* Developers: Customizing Plone, developing add-ons, and improving Plone itself
+* Developers: who customize a site's capabilities, create add-ons, and contribute to Plone itself
 
 
 .. toctree::
