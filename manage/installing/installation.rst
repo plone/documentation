@@ -26,16 +26,19 @@ Introduction
 This document covers the basics of installing Plone on popular operating systems.
 It will also point you to other documents for more complex or demanding installations.
 
-Plone runs as an application on the Zope application server. That server is installed automatically by the install process.
+Plone runs as an application on the Zope application server.
+That server is installed automatically by the install process.
 
 .. warning::
 
-    We strongly advise against installing Plone via OS packages or ports. There is no .rpm, .deb, or BSD port that is supported by the Plone community. Plone dependencies can and should be installed via package or port -- but not Plone itself.
+    We strongly advise against installing Plone via OS packages or ports.
+    There is no .rpm, .deb, or BSD port that is supported by the Plone community. Plone dependencies can and should be installed via package or port -- but not Plone itself.
 
 Download Plone
 ==============
 
-Plone is available for Mac OSX X, Linux and BSD operating systems. For Windows, we currently advise running Plone 5 in a virtualmachine or Vagrant image. We anticipate having a binary windows installer for later releases.
+Plone is available for Mac OSX X, Linux and BSD operating systems.
+For Windows, we currently advise running Plone 5 in a virtualmachine or Vagrant image. We anticipate having a binary windows installer for later releases.
 
 `Download the latest Plone release <http://plone.org/products/plone/latest_release>`_.
 
@@ -57,7 +60,8 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
 How to install Plone
 ====================
 
-Plone can run on all popular desktop or server operating systems, including Linux, OS X, BSD and Microsoft Windows. (Note: currently there is no binary installer for Plone 5 on Windows, we recommend using the `Vagrant kit <https://github.com/plone/plonedev.vagrant>`__)
+Plone can run on all popular desktop or server operating systems, including Linux, OS X, BSD and Microsoft Windows.
+(Note: currently there is no binary installer for Plone 5 on Windows, we recommend using the `Vagrant kit <https://github.com/plone/plonedev.vagrant>`__)
 
 * You can install Plone on a server for production usage
 
@@ -133,7 +137,7 @@ Substitute the latest version number for 5.0rc1 in the instructions below.
 
 .. code-block:: console
 
-    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0rc1/+download/Plone-5.0rc1-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0rc2/+download/Plone-5.0rc2-UnifiedInstaller.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,11 +146,11 @@ Run the Plone installer in standalone mode
 
     # Extract the downloaded file
     #
-    tar -xf Plone-5.0rc1-UnifiedInstaller.tgz
+    tar -xf Plone-5.0rc2-UnifiedInstaller.tgz
     #
     # Go the folder containing installer script
     #
-    cd Plone-5.0rc1-UnifiedInstaller
+    cd Plone-5.0rc2-UnifiedInstaller
     #
     # Run script
     ./install.sh
@@ -212,7 +216,7 @@ Use
 to stop the instance.
 
 By default, Plone will listen to port 8080 on available network interfaces.
-That may be changed by editing buildout.cfg and re-running buildout.
+The port may be changed by editing buildout.cfg and re-running buildout.
 
 You've got Plone
 ~~~~~~~~~~~~~~~~
@@ -268,8 +272,8 @@ Please use the installer from the download page `<http://plone.org/products/plon
 Installing Plone from source on OS X
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installation via the Unified Installer or buildout is very similar to Unix. However, you will
-need to install a command-line build environment. To get a free build kit from Apple, do one of the following:
+Installation via the Unified Installer or buildout is very similar to Unix.
+However, you will need to install a command-line build environment. To get a free build kit from Apple, do one of the following:
 
 * Download gcc and command-line tools from
   https://developer.apple.com/downloads/. This will require an Apple
