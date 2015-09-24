@@ -473,7 +473,7 @@ should allow your scripts to run normally.
 Example::
 
       <!-- Plone bundles here -->
-      <script type="text/javascript">
+      <script>
         require = undefined
         define = undefined
       </script>
@@ -487,7 +487,7 @@ Example::
 
       <before theme="/html/head/script[1]">
           <xsl:apply-templates select="/html/head/script" />
-          <script type="text/javascript">
+          <script>
               require = undefined
               define = undefined
           </script>
