@@ -460,3 +460,35 @@ This is how requirejs works and is normal behavior; however, any novice will lik
 come around to noticing this when working with AMD JavaScript. With Plone,
 it's one additional caveat you'll need to be aware of when working with the Resource
 Registry.
+
+Including non-requirejs scripts with Plone
+------------------------------------------
+
+If you have scripts that cannot be updated to use requirejs, it may be possible
+to include both.
+
+After the Plone scripts, you can unset the require and define variables which
+should allow your scripts to run normally.
+
+Example::
+
+      <!-- Plone bundles here -->
+      <script>
+        require = undefined
+        define = undefined
+      </script>
+      <script>
+        // Your javascript here
+      </script>
+
+You can add the Plone resources to your theme before your own javascript.
+
+Example::
+
+      <before theme="/html/head/script[1]">
+          <xsl:apply-templates select="/html/head/script" />
+          <script>
+              require = undefined
+              define = undefined
+          </script>
+      </before>
