@@ -356,9 +356,34 @@ The options are :
 Diazo frontend - barceloneta backend
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Using diazo rules you can define a frontend and a backend separatelly defining which bundles you want to load.
+Using diazo rules you can theme the frontend of your site how you like, and use the default Barceloneta theme for the backend.
 
-TODO
+Example::
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <rules
+        xmlns="http://namespaces.plone.org/diazo"
+        xmlns:css="http://namespaces.plone.org/diazo/css"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:xi="http://www.w3.org/2001/XInclude">
+
+        <!-- Include the backend theme -->
+        <xi:include href="++theme++barceloneta/backend.xml" />
+
+        <!-- Only theme front end pages -->
+        <rules css:if-content="body.viewpermission-view,body.viewpermission-none">
+
+            <rules css:if-content="#visual-portal-wrapper">
+
+                <theme href="index.html" />
+
+                <!-- Your diazo front end rules go here -->
+
+            </rules>
+        </rules>
+    </rules>
+
+TODO - including the toolbar in the front-end
 
 
 Browser Page bundle
