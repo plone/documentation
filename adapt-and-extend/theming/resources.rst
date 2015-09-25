@@ -371,19 +371,23 @@ Example::
         <xi:include href="++theme++barceloneta/backend.xml" />
 
         <!-- Only theme front end pages -->
-        <rules css:if-content="body.viewpermission-view,body.viewpermission-none">
+        <rules css:if-content="body.frontend" css:if-content="#visual-portal-wrapper">
 
-            <rules css:if-content="#visual-portal-wrapper">
+            <theme href="index.html" />
 
-                <theme href="index.html" />
+            <!-- Include basic plone/toolbar bundles -->
+            <after theme-children="/html/head" content="/html/head/link[@data-bundle='basic' or @data-bundle='plone' or @data-bundle='plone-logged-in' or @data-bundle='diazo']" />
+            <after theme-children="/html/head" content="/html/head/script[@data-bundle='basic' or @data-bundle='plone' or @data-bundle='plone-logged-in' or @data-bundle='diazo']" />
 
-                <!-- Your diazo front end rules go here -->
+            <!-- Insert the toolbar -->
+            <before css:theme-children="body" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
 
-            </rules>
+            <!-- Your diazo front end rules go here -->
+
         </rules>
     </rules>
 
-TODO - including the toolbar in the front-end
+You can define your own diazo bundle in your manifest.cfg (by using development-js, production-js and css options). This diazo bundle will not be included in the backend theme.
 
 
 Browser Page bundle
