@@ -8,7 +8,7 @@ Inserting Links
 
    *** Test Cases ***
 
-   Show TinyMCE image
+   Show TinyMCE insert links
        Go to  ${PLONE_URL}
        Click element  css=#contentview-edit a
        Wait until element is visible

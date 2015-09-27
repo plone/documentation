@@ -8,14 +8,14 @@ Inserting Tables
 
    *** Test Cases ***
 
-   Show TinyMCE image
+   Show TinyMCE insert tables
        Go to  ${PLONE_URL}
        Click element  css=#contentview-edit a
        Wait until element is visible
        ...  css=#mceu_16-body
 
-       Click element  css=#mceu_22 button
-       Mouse over  css=#mceu_45
+       Click element  css=#mceu_21 button
+       Mouse over  css=#mceu_44
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/tinymce-table.png
        ...  css=#content
