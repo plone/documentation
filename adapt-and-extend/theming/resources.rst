@@ -356,9 +356,38 @@ The options are :
 Diazo frontend - barceloneta backend
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Using diazo rules you can define a frontend and a backend separatelly defining which bundles you want to load.
+Using diazo rules you can theme the frontend of your site how you like, and use the default Barceloneta theme for the backend.
 
-TODO
+Example::
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <rules
+        xmlns="http://namespaces.plone.org/diazo"
+        xmlns:css="http://namespaces.plone.org/diazo/css"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:xi="http://www.w3.org/2001/XInclude">
+
+        <!-- Include the backend theme -->
+        <xi:include href="++theme++barceloneta/backend.xml" />
+
+        <!-- Only theme front end pages -->
+        <rules css:if-content="body.frontend#visual-portal-wrapper">
+
+            <theme href="index.html" />
+
+            <!-- Include basic plone/toolbar bundles -->
+            <after css:theme-children="head" css:content="head link[data-bundle='basic'], head link[data-bundle='plone'], head link[data-bundle='plone-logged-in'], head link[data-bundle='diazo']" />
+            <after css:theme-children="head" css:content="head script[data-bundle='basic'], head script[data-bundle='plone'], head script[data-bundle='plone-logged-in'], script link[data-bundle='diazo']" />
+
+            <!-- Insert the toolbar -->
+            <before css:theme-children="body" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
+
+            <!-- Your diazo front end rules go here -->
+
+        </rules>
+    </rules>
+
+You can define your own diazo bundle in your manifest.cfg (by using development-js, production-js and css options). This diazo bundle will not be included in the backend theme.
 
 
 Browser Page bundle
