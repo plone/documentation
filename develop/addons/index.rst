@@ -48,12 +48,13 @@ Releasing your package
 Working with Javascript
 -----------------------
 
+**NOTE** working with JavaScript has changed considerably in Plone 5. Read the note at the beginning of the document.
+
 .. toctree::
    :maxdepth: 2
 
    javascript
 
-   javascript_standards
 
    ajax
 

@@ -13,19 +13,12 @@ before_install:
 - cd ..
 install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
-- mkdir -p source && ln -s ../../documentation source/documentation
-- mkdir -p buildout-cache/downloads
-- python bootstrap-buildout.py
-- bin/buildout -N -t 3 buildout:checkout=documentation sources:documentation="fs
-  documentation egg=false"
+- python bootstrap-buildout.py --setuptools-version=18.0.1 --version=2.4.0
+- bin/buildout -N -t 3 buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false" 
 before_script:
-- gem install --version 0.8.9 faraday
-- gem install travis-artifacts
 script:
 - LANGS=en make html
 after_script:
-- travis-artifacts upload --path build/html
-- travis-artifacts upload --target-path latest --path build/html
 cache:
   directories:
   - eggs
@@ -39,6 +32,3 @@ notifications:
 env:
   global:
   - LD_LIBRARY_PATH=`pwd`/enchant-1.6.0/lib
-  - ARTIFACTS_S3_BUCKET=plone-documentation
-  - secure: B1NL93YgevEmUmvogdnq6Cz1GFvsFiYyCIv6yvudss2f9jzX1nzolbXiH8bFDwJnNQmkzFSm+fzWRDCSvoO8KnvLHTOjsrlcLQ6Er9A/vNQU1DgBvoqxBI7Y+h8OrTzhGK7YENAD/1PkSXmt/OAji/YKJNSULTawpGN1hGBfEio=
-  - secure: Bn6H7ckcLTZrR73FcoqWH2ukzlQKGyDyFFAPN9FbJ0/gPH3a/6XLMe59WH6pYcvzxotxfvaQEloTuXnJvjn/f7lTkRHU1Z+DbymdmXuhNCv0meMwg0EhSKiqfYpUqhs/1Jn/fqUnxcFu66Ts905DKs1fnBbWHG5+JmVkslFaRSo=

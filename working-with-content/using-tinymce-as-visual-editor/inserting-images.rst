@@ -16,6 +16,7 @@ Inserting Images
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/tinymce-imgbutton.png
        ...  css=#mceu_15
+
        Click element  css=#mceu_15 button
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/tinymce-imgdialog.png

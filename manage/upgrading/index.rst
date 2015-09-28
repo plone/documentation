@@ -19,6 +19,5 @@ Plone Upgrade Guide
     addon_upgrade
     troubleshooting
     version_specific_migration/index
-    non_buildout_based_upgrade
-    non_buildout_to_buildout_upgrade
+
 
