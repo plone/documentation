@@ -45,7 +45,7 @@ Select **Page** from the menu, and you'll see the *Add Page* screen:
        Click link  document
 
        Wait until element is visible
-       ...  css=#form-widgets-IDublinCore-title
+       ...  css=#mceu_16-body
 
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-pages_add-form.png

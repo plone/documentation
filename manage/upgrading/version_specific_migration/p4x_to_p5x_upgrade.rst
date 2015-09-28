@@ -30,44 +30,34 @@ If you have some custom member properties in your Plone site, be aware that:
     `memberdata_properties.xml` will only handled attributes that are not related to the user profile form or the registration form.
 
 
-Changes due to implemented PLIPS
-================================
+Other PLIP changes
+------------------
 
-PLIPs that resulted in changes that might have to be documented in the upgrade-guide
+PLIPs that resulted in changes that will have to be documented in this upgrade-guide. Check back soon for updates!
 
-Define extra member properties TTW
-Todo: Explain how to migrate your own custom memberproperties
-Who: Eric Brehault
 
 plone.api
-Todo: Tell people to use it. Explain how to configure plone.recipe.codeanalysis to check for old-style code
-Roel
+  Todo: Tell people to use it. Explain how to configure plone.recipe.codeanalysis to check for old-style code
+  Roel
 
 plone.app.multilingual
-Todo: How to migrate from LP to PAM
-Who: ?
+  Todo: How to migrate from LP to PAM
+  Who: ?
 
 Convert control panels to use z3c.form
-Todo: How to migrate your custom control-panels
-Who: Tisto
-
-CSS and JS integration/ResourceRegistries rethink (require.js/mockup/less...)
-Todo: Nathan
+  Todo: How to migrate your custom control-panels
+  Who: Tisto
 
 Main_template rebirth to HTML5  bloodbare
-Todo: What to do when you customized your main_templates.
-Who: ?
+  Todo: What to do when you customized your main_templates.
+  Who: ?
 
 Automatic CSRF Protection
-Todo: How to protect your existing forms
-Who: Nathan
-
-Improvements for user ids and login names
-Todo: ?
-Who: ?
+  Todo: How to protect your existing forms
+  Who: Nathan
 
 Linkintegrity in Plone 5
-Who: pbauer
+  Who: pbauer
 
 
 
@@ -282,7 +272,7 @@ In Plone 4.x, the Plone configuration settings have been stored as portal proper
 
 
 Generic Setup
-~~~~~~~~~~~~~
+-------------
 
 All settings are stored in the registry.xml Generic Setup file. This file can be exported through the ZMI (Zope Management Interface). Go to the Plone Site Setup, choose "Management Interface" from the "Advanced" section. Click on "portal_setup". Go to the "export" tab. Choose the "Export the configuration registry schemata" checkbox and click the "Export selected steps" button. The registry.xml file will contain entries like this::
 
@@ -304,7 +294,7 @@ Drop the settings you want to change into registry.xml in you Generic Setup prof
 
 
 Python Code
-~~~~~~~~~~~
+-----------
 
 All Generic Setup settings can be looked up with Python code.
 
@@ -336,7 +326,7 @@ Now the enable_livesearch should disabled::
 
 
 Editing Control Panel
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Plone 5.x::
 
@@ -357,7 +347,7 @@ Plone 5.x::
 
 
 Language Control Panel
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Plone 5.x::
 
@@ -405,7 +395,7 @@ Plone 5.x::
 
 
 Mail Control Panel
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Plone 4.x::
 
@@ -420,7 +410,7 @@ Plone 4.x::
 
 
 Maintenance Control Panel
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Plone 5.x::
 
@@ -432,7 +422,7 @@ Plone 5.x::
 
 
 Navigation Control Panel
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Plone 5.x::
 
@@ -459,7 +449,7 @@ Plone 5.x::
 
 
 Search Control Panel
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Plone 5.x::
 
@@ -474,7 +464,7 @@ Plone 5.x::
 
 
 Site Control Panel
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Plone 4.x::
 
@@ -509,7 +499,7 @@ Plone 5.x::
 
 
 Overview Control Panel
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Plone 5.x::
 
@@ -520,7 +510,7 @@ Plone 5.x::
 
 
 Markup Control Panel
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Plone 5.x::
 
@@ -535,7 +525,7 @@ Plone 5.x::
 
 
 User and Groups Control Panel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Plone 5.x::
 

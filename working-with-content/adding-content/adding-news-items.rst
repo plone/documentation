@@ -44,7 +44,7 @@ You will see the *Add News Item* panel:
        Click link  news-item
 
        Wait until element is visible
-       ...  css=#form-widgets-IDublinCore-title
+       ...  css=#mceu_16-body
 
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-news-items_add-form.png

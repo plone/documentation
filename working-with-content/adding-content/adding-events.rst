@@ -49,8 +49,7 @@ Select **Event** from the drop-down menu, and you'll see the rather large *Add E
        Click link  event
 
        Wait until element is visible
-       ...  css=#form-widgets-IDublinCore-title
-
+       ...  css=#mceu_16-body
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-events_add-form.png
        ...  css=#content

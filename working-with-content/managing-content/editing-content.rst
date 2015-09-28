@@ -25,6 +25,8 @@ The *Edit* panel for a Page shows the title, description and text areas.
    Edit folder
        Go to  ${PLONE_URL}
        Click element  css=#contentview-edit a
+       Wait until element is visible
+       ...  css=#mceu_16-body
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/edit-page.png
        ...  css=#content

@@ -46,6 +46,8 @@ Select **Collection** from the drop-down menu, and you'll see the *Add Collectio
    Show new collection add form
        Page should contain element  collection
        Click link  collection
+       Wait until element is visible
+       ...  css=#mceu_16-body
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-collections_add-form.png
        ...  css=#content
