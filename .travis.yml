@@ -15,12 +15,9 @@ install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
 - mkdir -p buildout-cache/downloads
 - python bootstrap-buildout.py
-- bin/buildout -N -t 3 buildout:checkout=documentation sources:documentation="git
-https://github.com/plone/documentation egg=false branch=4.3"
-before_script:
+- bin/buildout -N -t 3 buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false branch=4.3"
 script:
 - LANGS=en make html
-after_script:
 cache:
   directories:
   - eggs
