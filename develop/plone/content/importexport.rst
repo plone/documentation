@@ -66,8 +66,7 @@ The following add-ons make it useful in a Plone context:
   See the site for some example configs for migration.
 * `transmogrify.dexterity <https://github.com/collective/transmogrify.dexterity>`_ provides some blueprints relevant to Dexterity types,
   and has some default pipelines for you to use.
-* `collective.jsonmigrator <collectivejsonmigrator> is particularly useful when the old site is not able to install collective.transmogrifier,
-  as collective.jsonmigrator has a very low level of dependencies for that end of the migration.
+* `collective.jsonmigrator <collectivejsonmigrator>` is particularly useful when the old site is not able to install collective.transmogrifier, as collective.jsonmigrator has a very low level of dependencies for that end of the migration.
 
 transmogrify.dexterity: CSV import
 ==================================
@@ -213,8 +212,8 @@ More information
 collective.jsonmigrator
 =======================
 
-collective.jsonmigrator is basically a collective.transmogrifier pipeline that pulls Plone content from to JSON views on an old site and writes it into your new site. 
-It's major advantage is that the JSON view product: collective.jsonify is very low on dependencies (basically just simplejson), 
+collective.jsonmigrator is basically a collective.transmogrifier pipeline that pulls Plone content from to JSON views on an old site and writes it into your new site.
+It's major advantage is that the JSON view product: collective.jsonify is very low on dependencies (basically just simplejson),
 so it can be installed on very old Plone sites that would be difficult if not impossible to install collective.transmogrifier into.
 
 See:

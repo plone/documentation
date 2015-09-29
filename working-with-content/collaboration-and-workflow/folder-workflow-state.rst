@@ -15,7 +15,7 @@ When it comes to the *Private* state, **Folders** are somewhat special.  Changin
 
 Thus, putting a folder in the private state is not a guarantee of security for any of its contents.  Unless, of course, all the content has been made private, as well.  This can be done in bulk and in a single step, as described in :doc:`Advanced Control <advanced-control>`.
 
-This is especially true of a folder's default item view (see :doc:`Setting an Individual Content Item as the View for a Folder <managing-content/folder-view>`).  If the contained item that is set as the folder's default view is published, then the folder will in a sense be public as well, even if it's own state has been set to private.  However, the folder will still be hidden from navigation for anonymous users.
+This is especially true of a folder's default item view (see :doc:`Setting an Individual Content Item as the View for a Folder </working-with-content/managing-content/folder-view>`).  If the contained item that is set as the folder's default view is published, then the folder will in a sense be public as well, even if it's own state has been set to private.  However, the folder will still be hidden from navigation for anonymous users.
 
 When it comes to the folder default item view, care must be taken to have clarity on whether the desired workflow state is set on the folder, the default view item, or both.
 

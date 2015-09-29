@@ -258,6 +258,7 @@ Related ZCML
      </configure>
 
 Related view code::
+
     from Products.Five import BrowserView
 
     class ImagePortletImageDownload(BrowserView):
