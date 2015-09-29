@@ -13,9 +13,9 @@ Introduction
 ==============
 
 WebDAV is enabled by default in Plone. A Plone server listening on port 8080 will also
-accept WebDAV traffic on that port. 
+accept WebDAV traffic on that port.
 
-.. note:: 
+.. note::
 
     If you're looking for an alternative way of allowing easy file uploads to Plone, consider using the add-on `collective.wildcardfoldercontents <https://pypi.python.org/pypi/wildcard.foldercontents>`_. That functionality is also included in Plone 5.
 
@@ -31,8 +31,8 @@ Permissions
 
 The "WebDAV access" permission is required for any user to be able to connect to WebDAV.
 
-To allow Plone users (ie. users created within a Plone site, as opposed to users created in Zope) to connect using WebDAV, go to the Security tab of the Zope (e.g. http://yoursite:8080/manage_access), find the permission "WebDAV access", check the box for it under the Anonymous column, and press the Save Changes button. 
-This generally grants WebDAV connection access. 
+To allow Plone users (ie. users created within a Plone site, as opposed to users created in Zope) to connect using WebDAV, go to the Security tab of the Zope (e.g. http://yoursite:8080/manage_access), find the permission "WebDAV access", check the box for it under the Anonymous column, and press the Save Changes button.
+This generally grants WebDAV connection access.
 Normal Plone permissions will take care of who can view or change actual content.
 
 Enabling WebDAV on an extra port in Zope
@@ -40,9 +40,9 @@ Enabling WebDAV on an extra port in Zope
 
 You can have Plone listen for WebDAV requests on additional ports by modifying your buildout configuration's client setup to add a WebDAV address:
 
-Here is a short ``buildout.cfg`` example:
+Here is a short ``buildout.cfg`` example::
 
-.. code-block::
+
 
      [instance]
      ...
@@ -52,9 +52,9 @@ Here is a short ``buildout.cfg`` example:
      ...
 
 Here is an alternative ``buildout.cfg`` configuration snippet which might be needed for
-some WebDAV clients:
+some WebDAV clients::
 
-.. code-block::
+
 
    [instance]
    ...
@@ -90,17 +90,17 @@ this will stop WebDAV requests before they reach your Zope server.
 Nginx
 ~~~~~
 
-For nginx, this is done by adding:
+For nginx, this is done by adding::
 
-code-block::
+
 
 	dav_methods off
 
 to the server block in your nginx.conf. (http://wiki.nginx.org/HttpDavModule)
 
-If you do not use the HttpDavModule, you can add:
+If you do not use the HttpDavModule, you can add::
 
-.. code-block::
+
 
     limit_except GET POST {
      deny   all;
