@@ -10,15 +10,6 @@
 
 .. highlight:: console
 
-.. note::
-
-    This is a beta for Plone 5 and still WIP
-
-    Todo:
-
-    - mention docker
-    - more ?
-
 
 Introduction
 ============
@@ -133,7 +124,7 @@ Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download from `the plone.org download page <http://plone.org/download>`_ to your server using wget command. Curl also works.
-Substitute the latest version number for 5.0rc1 in the instructions below.
+Substitute the latest version number for 5.0 in the instructions below.
 
 .. code-block:: console
 
