@@ -53,14 +53,14 @@ Check `http://plone.org/products/plone <http://plone.org/products/plone>`_. Foll
 
 .. code-block:: console
 
-    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0rc1/+download/Plone-5.0rc1-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0/+download/Plone-5.0-UnifiedInstaller.tgz
 
 Unpack, change into the unpack directory and run the installer:
 
 .. code-block:: console
 
-    tar -xf Plone-5.0rc1-UnifiedInstaller.tgz
-    cd Plone-5.0rc1-UnifiedInstaller
+    tar -xf Plone-5.0-UnifiedInstaller.tgz
+    cd Plone-5.0-UnifiedInstaller
     sudo ./install.sh
 
 This will install Plone to /usr/local/Plone. There are installer options to put it elsewhere, and the install script will guide you through them. Use ``install.sh --help`` to see all command-line switches.
