@@ -14,10 +14,10 @@ before_install:
 install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
 - python bootstrap-buildout.py --setuptools-version=18.0.1 --version=2.4.0
-- bin/buildout -N -t 3 buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false" 
+- bin/buildout -N -t 3 buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false"
 before_script:
 script:
-- LANGS=en make html
+- bin/pybot .
 after_script:
 cache:
   directories:
@@ -28,7 +28,7 @@ notifications:
     - irc.freenode.org#plone-docs
     template:
     - ! '%{repository}#%{build_number} (%{branch} | %{commit} | %{author}): %{message}'
-    - ! 'Sphinx: http://plone-documentation.s3-website-us-east-1.amazonaws.com/artifacts/%{build_number}/%{build_number}.1/en/'
+#   - ! 'Sphinx: http://plone-documentation.s3-website-us-east-1.amazonaws.com/artifacts/%{build_number}/%{build_number}.1/en/'
 env:
   global:
   - LD_LIBRARY_PATH=`pwd`/enchant-1.6.0/lib
