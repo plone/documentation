@@ -31,31 +31,14 @@ root folder to be exposed via ++resource++your.product/ URI
 
 .. code-block:: xml
 
-        <configure
-            xmlns="http://namespaces.zope.org/zope"
-            xmlns:five="http://namespaces.zope.org/five"
-            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-            xmlns:i18n="http://namespaces.zope.org/i18n"
-            xmlns:browser="http://namespaces.zope.org/browser"
-            i18n_domain="your.product">
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser">
 
+      <!-- Resource directory for static media files -->
+      <browser:resourceDirectory
+          name="your.product"
+          directory="static"
+          />
 
-                  <!-- Register the installation GenericSetup extension profile
-                       (needed for portal_css and portal_javascripts XML import) -->
-                  <genericsetup:registerProfile
-                      name="default"
-                      title="Your add-on product name"
-                      directory="profiles/default"
-                      description="Your add-on product description"
-                      provides="Products.GenericSetup.interfaces.EXTENSION"
-                      />
-
-                   <!-- Resource directory for static media files -->
-                 <browser:resourceDirectory
-                        name="your.product"
-                        directory="static"
-                        />
-
-                  <!-- -*- extra stuff goes here -*- -->
-
-        </configure>
+    </configure>
