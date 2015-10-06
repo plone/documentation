@@ -149,21 +149,16 @@ Your Zope ZMI should not be available via the production domain.
 The following rules will block all common ZMI pages
 
 
-For Apache httpd
-
-
+For Apache httpd (2.2 syntax)
 
 
 .. code:: apacheconf
 
-
-   RewriteRule ^(.*)manage(.*) - [L,NC]
-
-
-    <LocationMatch "^/(manage|manage_main|(.*)/manage(.*))" >
-        Deny from all
+    RewriteRule ^(.*)manage(_.*)$ - [L,NC]
+    <LocationMatch "^/(manage|manage_main|(.*)/manage(_.*))$" >
+     Order deny,allow
+     Deny from all
     </LocationMatch>
-
 
 
 
