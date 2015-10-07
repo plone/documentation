@@ -4,7 +4,10 @@ JS/CSS Resources
 
 .. admonition:: Description
 
-    Resources are JavaScript, CSS or LESS resources and their dependencies.  They add frontend logic and design to Plone. There are many different areas where resources are used - like widgets, design styles, behavior logic and single page apps. In order to organize them we are using two main standard technologies: require.js and Less.
+    Resources are JavaScript, CSS or LESS resources and their dependencies.
+    They add frontend logic and design to Plone.
+    There are many different areas where resources are used - like widgets, design styles, behavior logic and single page apps.
+    In order to organize them we are using two main standard technologies: require.js and Less.
 
     The goal of this recipe is to help you confirm that everything is working.
 
@@ -14,7 +17,10 @@ JS/CSS Resources
 Introduction to Plone 5 resources
 ---------------------------------
 
-Plone 5 introduces new concepts, for some, with working with JavaScript and CSS in Plone.  Plone 5 utilizes Asynchronous Module Definition (AMD) with requirejs. We chose AMD over other module loading implementations(like commonjs) because AMD can be used in non-compiled form in the browser. This way, someone can click "development mode" in the resource registry control panel and work with the non-compiled JavaScript files directly.
+Plone 5 introduces new concepts, for some, with working with JavaScript and CSS in Plone.
+Plone 5 utilizes Asynchronous Module Definition (AMD) with requirejs.
+We chose AMD over other module loading implementations(like commonjs) because AMD can be used in non-compiled form in the browser.
+This way, someone can click "development mode" in the resource registry control panel and work with the non-compiled JavaScript files directly.
 
 Additionally, Plone 5 streamlines the use of LESS to compile CSS.
 
@@ -24,11 +30,16 @@ These two concepts for JavaScript and CSS are merged into one idea--a resource.
 Resources
 ---------
 
-Resources are the main unit of the resource registry. A resource consists of a JavaScript file and/or some CSS/Less files. A resource is identified by a name.
+Resources are the main unit of the resource registry.
+A resource consists of a JavaScript file and/or some CSS/Less files.
+A resource is identified by a name.
 
-Since this can be a single JavaScript file, there are additional RequireJS options available to be able to customize. Possible options we have are is shim (export, init and depends) so it can be configured to be exported o the global namespace, init on load and depend on some other resource.
+Since this can be a single JavaScript file, there are additional RequireJS options available to be able to customize.
+Possible options we have are is shim (export, init and depends) so it can be configured to be exported to the global namespace, init on load and depend on some other resource.
 
-An example of a resource definition on registry.xml::
+An example of a resource definition on registry.xml:
+
+.. code-block:: xml
 
   <records prefix="plone.resources/tinymce"
            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
@@ -60,9 +71,12 @@ These are the "Shim" options for a resource, where older, non-RequireJS compatib
 - init: Shim init option to define some JavaScript code to be run on initialization.
 
 
-The URL option allows you to define the base url for loading text resources like XML templates. See the following for an example:
+The URL option allows you to define the base url for loading text resources like XML templates.
+See the following for an example:
 
-In registry.xml::
+In registry.xml:
+
+.. code-block:: xml
 
     <records prefix="plone.resources/mockup-patterns-structure"
             interface='Products.CMFPlone.interfaces.IResourceRegistry'>
@@ -97,7 +111,8 @@ In mockup/patterns/structure/js/views/actionmenu.js::
 Default resources on Plone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Plone loads a group of mockup components and bower components as resources on the registry.  In order to avoid running bower install on each installation of Plone it ships by default a minimal bower components folder on the CMFPlone static folder with the correct versions of the resources that are need to run the default plone js/css.
+Plone loads a group of mockup components and bower components as resources on the registry.
+In order to avoid running bower install on each installation of Plone it ships by default a minimal bower components folder on the CMFPlone static folder with the correct versions of the resources that are need to run the default plone js/css.
 
 Plone's default bower components are defined here:
 
@@ -113,7 +128,9 @@ The ++plone++ traversal namespace
 
 There is a specific folder type called ++plone++ designed to be similar to ++theme++ but with the difference that you can overwrite an specific file, so its possible to edit a resource TTW.
 
-Example::
+Example:
+
+.. code-block:: xml
 
     <plone:static
         directory="static"
@@ -127,23 +144,33 @@ This allows you to access resources in this directory by using the URL path ``++
 Bundle
 ------
 
-Bundles are groups of resources that are going to be loaded on your Plone site. Instead of loading single resources, bundles allow you to group, combine and minify resources and reduce the number of web requests and the responses payload.
+Bundles are groups of resources that are going to be loaded on your Plone site.
+Instead of loading single resources, bundles allow you to group, combine and minify resources and reduce the number of web requests and the responses payload.
 
-In case you develop a specific add-on you might want to create your own bundle. Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
+In case you develop a specific add-on you might want to create your own bundle.
+Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
 
 For single pages like the theming controlpanel, you can define a customized bundle with only the resources needed for that page.
 
 In development mode, each bundle includes their resources in the rendered site as individual resource with individual requests. This can lead to a lot of requests and high response times.
 
-For production sites, the development mode has to be disabled and all bundles must be compiled. This can be done Through-The-Web in the resource editor. There is only one JavaScript and one CSS file included in the output per active bundle.
+For production sites, the development mode has to be disabled and all bundles must be compiled.
+This can be done Through-The-Web in the resource editor.
+There is only one JavaScript and one CSS file included in the output per active bundle.
 
 
 .. note::
 
-    A bundle can depend on another. This is mainly used for the order of inclusion in the rendered content. Currently, it doesn't hook in the require js dependency mechanism. This means, each bundle gets all their dependencies compiled in, which raise the response payload unnecessarily.  To avoid this, add your resources to existing bundles, like the "plone" bundle.
+    A bundle can depend on another.
+    This is mainly used for the order of inclusion in the rendered content.
+    Currently, it doesn't hook in the require js dependency mechanism.
+    This means, each bundle gets all their dependencies compiled in, which raise the response payload unnecessarily.
+    To avoid this, add your resources to existing bundles, like the "plone" bundle.
 
 
-Examples::
+Examples:
+
+.. code-block:: xml
 
     <records prefix="plone.bundles/plone"
                 interface='Products.CMFPlone.interfaces.IBundleRegistry'>
@@ -287,7 +314,9 @@ They are minimized and stored on the csscompiled/jscompiled URL defined on the b
 
 You can also force to create a new minimized version TTW.
 
-Example::
+Example:
+
+.. code-block:: xml
 
   <records prefix="plone.bundles/plone-legacy"
             interface='Products.CMFPlone.interfaces.IBundleRegistry'>
@@ -358,7 +387,9 @@ Diazo frontend - barceloneta backend
 
 Using diazo rules you can theme the frontend of your site how you like, and use the default Barceloneta theme for the backend.
 
-Example::
+Example:
+
+.. code-block:: xml
 
     <?xml version="1.0" encoding="UTF-8"?>
     <rules
@@ -421,11 +452,17 @@ TODO
 Old registry migration and compatibility
 ----------------------------------------
 
-The deprecated resource registries(and portal_javascripts) has no concept of dependency management. It simply allowed you to specify an order in which JavaScript files should be included on your site. It also would combined and minify them for you in deployment mode.
+The deprecated resource registries(and portal_javascripts) has no concept of dependency management.
+It simply allowed you to specify an order in which JavaScript files should be included on your site.
+It also would combined and minify them for you in deployment mode.
 
-Prior to Plone 5, JavaScript files were added to the registry by using a Generic Setup Profile and including a jsregistry.xml file to it. This would add your JavaScript to the registry, with some options and potentially set ordering.
+Prior to Plone 5, JavaScript files were added to the registry by using a Generic Setup Profile and including a jsregistry.xml file to it.
+This would add your JavaScript to the registry, with some options and potentially set ordering.
 
-In Plone 5.0, Plone will still recognize these jsregistry.xml files. Plone tries to provide a shim for those that are stubborn to migrate. How it does this is by adding all jsregistry.xml JavaScripts into a "plone-legacy" Resource Registry bundle. This bundle simply includes a global jQuery object and includes the resources in sequential order after it.
+In Plone 5.0, Plone will still recognize these jsregistry.xml files.
+Plone tries to provide a shim for those that are stubborn to migrate.
+How it does this is by adding all jsregistry.xml JavaScripts into a "plone-legacy" Resource Registry bundle.
+This bundle simply includes a global jQuery object and includes the resources in sequential order after it.
 
 
 Updating non-AMD scripts
@@ -433,11 +470,14 @@ Updating non-AMD scripts
 
 If you are not including your JavaScript in the Resource Registries and just need it to work alongside Plone's JavaScript because you're manually including the JavaScript files in one way or another(page templates, themes), there are a number of techniques available to read on the web that describe how to make your scripts conditionally work with AMD.
 
-For the sake of this post, I will describe one technique used in Plone core to fix the JavaScript. The change we'll be investigating can be seen with in a commit to plone.app.registry. plone.app.registry has a control panel that allows some ajax searching and modals for editing settings.
+For the sake of this post, I will describe one technique used in Plone core to fix the JavaScript.
+The change we'll be investigating can be seen with in a commit to plone.app.registry.
+plone.app.registry has a control panel that allows some ajax searching and modals for editing settings.
 
 To utilize the dependency management that AMD provides and have the javascript depend on jQuery, we can wrap the script in an AMD require function. This function allows you to define a set of dependencies and a function that takes as arguments, those dependencies you defined. After the dependencies are loaded, the function you defined is called.
 
 Example::
+
 
       require([
         'jquery',
@@ -455,11 +495,15 @@ requirejs require/define and resource/bundle
 
 In working with requirejs, you'll likely be aware of the `mismatched anonymous define() <http://requirejs.org/docs/errors.html#mismatch>`_ potential misuse of require and define.
 
-Basically, it comes down to, you should not use `define` with script tags. `define` should only be included in a page by using a `require` call.
+Basically, it comes down to, you should not use `define` with script tags.
+`define` should only be included in a page by using a `require` call.
 
-How this works with resources and bundles is that bundles should ONLY ever be 'require' calls. If you try to use a JavaScript file that has a `define` call with a bundle, you'll get the previously mentioned error. Make sure to use a JavaScript file with a 'require' call to include all your `define` resources.
+How this works with resources and bundles is that bundles should ONLY ever be 'require' calls.
+If you try to use a JavaScript file that has a `define` call with a bundle, you'll get the previously mentioned error.
+Make sure to use a JavaScript file with a 'require' call to include all your `define` resources.
 
-This is how requirejs works and is normal behavior; however, any novice will likely come around to noticing this when working with AMD JavaScript. With Plone, it's one additional caveat you'll need to be aware of when working with the Resource Registry.
+This is how requirejs works and is normal behavior; however, any novice will likely come around to noticing this when working with AMD JavaScript.
+With Plone, it's one additional caveat you'll need to be aware of when working with the Resource Registry.
 
 Including non-requirejs scripts with Plone
 ------------------------------------------
@@ -468,7 +512,9 @@ If you have scripts that cannot be updated to use requirejs, it may be possible 
 
 After the Plone scripts, you can unset the require and define variables which should allow your scripts to run normally.
 
-Example::
+Example:
+
+.. code-block:: xml
 
       <!-- Plone bundles here -->
       <script>
@@ -481,7 +527,9 @@ Example::
 
 You can add the Plone resources to your theme before your own javascript.
 
-Example::
+Example:
+
+.. code-block:: xml
 
       <before theme="/html/head/script[1]">
           <xsl:apply-templates select="/html/head/script" />
