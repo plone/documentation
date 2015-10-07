@@ -4,12 +4,14 @@ JS/CSS Resources
 
 .. admonition:: Description
 
-    Resources are JavaScript, CSS or LESS resources and their dependencies.
+    Resources are JavaScript, CSS or Less resources and their dependencies.
     They add frontend logic and design to Plone.
     There are many different areas where resources are used - like widgets, design styles, behavior logic and single page apps.
-    In order to organize them we are using two main standard technologies: require.js and Less.
+    Plone 5 introduces a completly changed resource registry and incorporates
+    standard techniques to optimize the development process with JavaScript and
+    CSS - namely RequireJS and Less.
 
-    The goal of this recipe is to help you confirm that everything is working.
+    This chapter should give you a good understanding of all the resource related techniques.
 
 .. contents:: :local:
 
@@ -18,11 +20,11 @@ Introduction to Plone 5 resources
 ---------------------------------
 
 Plone 5 introduces new concepts, for some, with working with JavaScript and CSS in Plone.
-Plone 5 utilizes Asynchronous Module Definition (AMD) with requirejs.
+Plone 5 utilizes Asynchronous Module Definition (AMD) with RequireJS.
 We chose AMD over other module loading implementations(like commonjs) because AMD can be used in non-compiled form in the browser.
 This way, someone can click "development mode" in the resource registry control panel and work with the non-compiled JavaScript files directly.
 
-Additionally, Plone 5 streamlines the use of LESS to compile CSS.
+Additionally, Plone 5 streamlines the use of Less to compile CSS.
 
 These two concepts for JavaScript and CSS are merged into one idea--a resource.
 
@@ -218,7 +220,7 @@ The possible options of a bundle are:
 
 The following are for pre-compiled bundles and are automatically set, when the bundle is build Through-The-Web:
 
-- jscompilation: URL of the compiled and minified JS file.
+- jscompilation: URL of the compiled and minified JavaScript file.
 
 - csscompilation: URL of the compiled and minified CSS file.
 
@@ -240,11 +242,11 @@ Decide which bundles are rendered on a specific call
 Compiled bundles
 ^^^^^^^^^^^^^^^^
 
-In a compiled bundle normally there is only one resource that is going to be loaded for each specific bundle, this resource will be a JavaScript file with a requirejs wrapper and a less file.
+In a compiled bundle normally there is only one resource that is going to be loaded for each specific bundle, this resource will be a JavaScript file with a RequireJS wrapper and a Less file.
 
-When the site is in development mode the files are delivered as they are on stored and will get its dependencies asynchronously (AMD and LESS).
+When the site is in development mode the files are delivered as they are on stored and will get its dependencies asynchronously (AMD and Less).
 
-The main feature of the compiled bundles is that the list of real resources that are going to be loaded on the site are defined on the JavaScript and LESS files.
+The main feature of the compiled bundles is that the list of real resources that are going to be loaded on the site are defined on the JavaScript and Less files.
 
 Example::
 
@@ -290,7 +292,7 @@ Example::
     @import url("@{mockup-patterns-tinymce}");
     ...
 
-On development mode all the less/js resources are going to be retrieved on live so its possible to debug and modify the filesystem files and see the result on the fly.
+On development mode all the Less/JavaScript resources are going to be retrieved on live so its possible to debug and modify the filesystem files and see the result on the fly.
 
 In order to provide a compiled version for the production mode there are three possibilities:
 
@@ -339,7 +341,7 @@ Example:
 Default Plone bundles
 ^^^^^^^^^^^^^^^^^^^^^
 
-There are three main plone bundles by default: plone and plone-legacy.
+There are three main plone bundles by default: plone, pone-logged-in and plone-legacy.
 
 - plone bundle : is a compiled bundle with the main components required to run the toolbar and main mockup patterns with only the css needed by that elements
 
@@ -369,13 +371,13 @@ In order to allow to have a complete theme its possible to define a bundle in di
 
 This options allow us to define to plone that the js/css renderer will add the diazo one so we will be able to overwrite the <link> <script> tags from the theme with the plone ones loading the diazo resources.
 
-As on the native plone bundles its possible to define a development/production set (less/requirejs) so it integrates with the resource compilation system in plone.
+As on the native plone bundles its possible to define a development/production set (Less/RequireJS) so it integrates with the resource compilation system in plone.
 
 The options are :
 
 - enabled-bundles / disabled-bundles : list of bundles that should be added or disabled when we are rendering throw that diazo theme
 
-- development-css / development-js : less file and requirejs file that should be used on the compilation on browser system
+- development-css / development-js : Less file and RequireJS file that should be used on the compilation on browser system
 
 - production-css / production-js : compiled versions that should be delivered on production. There is no aid system to compile them, you can compile it with you prefered system.
 
@@ -474,7 +476,7 @@ For the sake of this post, I will describe one technique used in Plone core to f
 The change we'll be investigating can be seen with in a commit to plone.app.registry.
 plone.app.registry has a control panel that allows some ajax searching and modals for editing settings.
 
-To utilize the dependency management that AMD provides and have the javascript depend on jQuery, we can wrap the script in an AMD require function. This function allows you to define a set of dependencies and a function that takes as arguments, those dependencies you defined. After the dependencies are loaded, the function you defined is called.
+To utilize the dependency management that AMD provides and have the JavaScript depend on jQuery, we can wrap the script in an AMD require function. This function allows you to define a set of dependencies and a function that takes as arguments, those dependencies you defined. After the dependencies are loaded, the function you defined is called.
 
 Example::
 
@@ -490,10 +492,10 @@ Example::
       });
 
 
-requirejs require/define and resource/bundle
+RequireJS require/define and resource/bundle
 --------------------------------------------
 
-In working with requirejs, you'll likely be aware of the `mismatched anonymous define() <http://requirejs.org/docs/errors.html#mismatch>`_ potential misuse of require and define.
+In working with RequireJS, you'll likely be aware of the `mismatched anonymous define() <http://requirejs.org/docs/errors.html#mismatch>`_ potential misuse of require and define.
 
 Basically, it comes down to, you should not use `define` with script tags.
 `define` should only be included in a page by using a `require` call.
@@ -502,13 +504,13 @@ How this works with resources and bundles is that bundles should ONLY ever be 'r
 If you try to use a JavaScript file that has a `define` call with a bundle, you'll get the previously mentioned error.
 Make sure to use a JavaScript file with a 'require' call to include all your `define` resources.
 
-This is how requirejs works and is normal behavior; however, any novice will likely come around to noticing this when working with AMD JavaScript.
+This is how RequireJS works and is normal behavior; however, any novice will likely come around to noticing this when working with AMD JavaScript.
 With Plone, it's one additional caveat you'll need to be aware of when working with the Resource Registry.
 
-Including non-requirejs scripts with Plone
+Including non-RequireJS scripts with Plone
 ------------------------------------------
 
-If you have scripts that cannot be updated to use requirejs, it may be possible to include both.
+If you have scripts that cannot be updated to use RequireJS, it may be possible to include both.
 
 After the Plone scripts, you can unset the require and define variables which should allow your scripts to run normally.
 
@@ -522,10 +524,10 @@ Example:
         define = undefined
       </script>
       <script>
-        // Your javascript here
+        // Your JavaScript here
       </script>
 
-You can add the Plone resources to your theme before your own javascript.
+You can add the Plone resources to your theme before your own JavaScript.
 
 Example:
 
