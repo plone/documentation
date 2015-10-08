@@ -45,7 +45,7 @@ More info
 
 * `zope.schema <https://pypi.python.org/pypi/zope.schema>`_ on PyPi
 
-* `zope.schema source code <http://svn.zope.org/zope.schema/trunk/src/zope/schema/>`_ - definite source for field types and usage.
+* `zope.schema source code <http://github.com/zopefoundation/zope.schema>`_ - definite source for field types and usage.
 
 ``zope.schema`` provides a very comprehensive set of fields out of the box.
 Finding good documentation for them, however, can be challenging.  Here are
@@ -155,7 +155,7 @@ use to construct schema fields.  Each subclass of ``Field`` will have its own
 set of possible parameters in addition to this.
 
 See the full list `here
-<http://apidoc.zope.org/++apidoc++/Code/zope/schema/_bootstrapfields/Field/index.html>`_.
+<http://docs.zope.org/zope3/Code/zope/schema/_bootstrapfields/Field/index.html>`_.
 
 Title
     field title as unicode string
@@ -432,13 +432,13 @@ For more information see:
 
 * `Using Zope schemas with a complex vocabulary and multi-select fields <http://www.upfrontsystems.co.za/Members/izak/sysadman/using-zope-schemas-with-a-complex-vocabulary-and-multi-select-fields>`_
 
-* Collections section in `zope.schema documentation <http://apidoc.zope.org/++apidoc++/Code/zope/schema/fields.txt/index.html>`_
+* Collections section in `zope.schema documentation <http://docs.zope.org/zope3/Code/zope/schema/fields.txt/index.html>`_
 
-* Schema `field sources documentation <http://apidoc.zope.org/++apidoc++/Code/zope/schema/sources.txt/index.html>`_
+* Schema `field sources documentation <http://docs.zope.org/zope3/Code/zope/schema/sources.txt/index.html>`_
 
-* `Choice field <http://apidoc.zope.org/++apidoc++/Code/zope/schema/_field/Choice/index.html>`_
+* `Choice field <http://docs.zope.org/zope3/Code/zope/schema/_field/Choice/index.html>`_
 
-* `List field <http://apidoc.zope.org/++apidoc++/Code/zope/schema/_field/List/index.html>`_.
+* `List field <http://docs.zope.org/zope3/Code/zope/schema/_field/List/index.html>`_.
 
 
 Single-choice example
