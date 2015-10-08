@@ -38,7 +38,7 @@ First step with any new server is to update the already installed system librari
 .. code-block:: console
 
     sudo apt-get update
-    sudo apt-get dist-upgrade
+    sudo apt-get upgrade
 
 Then, install the platform's build kit, nginx, and supervisor:
 
