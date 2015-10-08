@@ -4,14 +4,7 @@ JS/CSS Resources
 
 .. admonition:: Description
 
-    Resources are JavaScript, CSS or Less resources and their dependencies.
-    They add frontend logic and design to Plone.
-    There are many different areas where resources are used - like widgets, design styles, behavior logic and single page apps.
-    Plone 5 introduces a completly changed resource registry and incorporates
-    standard techniques to optimize the development process with JavaScript and
-    CSS - namely RequireJS and Less.
-
-    This chapter should give you a good understanding of all the resource related techniques.
+    For JavaScript and CSS development, Plone 5 makes extensive use of tools like Bower, Grunt, RequireJS and Less for an optimized development process. The JavaScript and CSS resources are managed in the Resource Registry. The Resource Registry was completly rewritten in Plone 5 to support the new dependency based RequireJS approach. It also allows us to build Less and RequireJS bundles Through-The-Web for a low entry barrier. This chapter should give you a good understanding of the new Resource Registry.
 
 .. contents:: :local:
 
@@ -19,14 +12,17 @@ JS/CSS Resources
 Introduction to Plone 5 resources
 ---------------------------------
 
-Plone 5 introduces new concepts, for some, with working with JavaScript and CSS in Plone.
-Plone 5 utilizes Asynchronous Module Definition (AMD) with RequireJS.
-We chose AMD over other module loading implementations(like commonjs) because AMD can be used in non-compiled form in the browser.
-This way, someone can click "development mode" in the resource registry control panel and work with the non-compiled JavaScript files directly.
+Plone 5 introduces new concepts for working with JavaScript and CSS in Plone.
 
-Additionally, Plone 5 streamlines the use of Less to compile CSS.
+We finally have a solution to define JavaScript modules and their dependencies
+- in contrast of the previous approach, where all dependencies had to be loaded
+  in order. We achieve that with the tool RequireJS, which follows the Asynchronous Module Definition (AMD) approach.
+We chose AMD over other module loading implementations(like CommonJS) because AMD can be used in non-compiled form in the browser and also compiled Through-The-Web. This way, we can also support a "development mode" like in Plone versions prior to 5, where changes in the JavaScript sources are instantly reflected.
 
-These two concepts for JavaScript and CSS are merged into one idea--a resource.
+CSS can be developed with the CSS compiler Less. Who ever worked
+with Less probably don't want to edit CSS directly - especially for bigger projects. Less gives us a lot of nice features like inheritance, scoping, functions, mixins and variables, which are not available in pure CSS. Again, the availablility of a JavaScript based compiler made a good reason to choose Less over Sass. 
+
+Our concept of a resource is made of a JavaScript and/or some Less or CSS files.
 
 
 Resources
@@ -34,10 +30,11 @@ Resources
 
 Resources are the main unit of the resource registry.
 A resource consists of a JavaScript file and/or some CSS/Less files.
-A resource is identified by a name.
+A resource is identified by RequireJS via a name.
 
-Since this can be a single JavaScript file, there are additional RequireJS options available to be able to customize.
-Possible options we have are is shim (export, init and depends) so it can be configured to be exported to the global namespace, init on load and depend on some other resource.
+Resources - as well as bundles - are configured by using ``plone.registry``.
+From the resource configuration a RequireJS configuration is build to compile
+bundles. Like in RequireJS, we can also include non-module, legacy resources, which do not make use of the RequireJS ``define`` and ``require`` methods. For this, the "shim" options are available, as explained below.
 
 An example of a resource definition on registry.xml:
 
@@ -64,7 +61,7 @@ The possible options of a resource are:
 - url: Base URL for loading additional resources like text files. See below for an example.
 
 
-These are the "Shim" options for a resource, where older, non-RequireJS compatible JavaScript code is used. For more information see: http://requirejs.org/docs/api.html#config-shim
+These are the "Shim" options for a resource to support JavaScript code, which doesn't define modules or depenencies. We call them "legacy" JavaScript code, as it doesn't follow our proposed best practices. For more information see: http://requirejs.org/docs/api.html#config-shim
 
 - export: Shim export option to define a global variable to where the JavaScript module should be made available.
 
@@ -113,34 +110,31 @@ In mockup/patterns/structure/js/views/actionmenu.js::
 Default resources on Plone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Plone loads a group of mockup components and bower components as resources on the registry.
-In order to avoid running bower install on each installation of Plone it ships by default a minimal bower components folder on the CMFPlone static folder with the correct versions of the resources that are need to run the default plone js/css.
-
-Plone's default bower components are defined here:
-
-https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json
-
-Plone's resource registration is defined here:
-
-https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml
+Plone 5 ships with a list of mockup- and bower components for Plone 5's new
+UI.
+These resources can be found in the static folder (``Products.CMFPlone.static``), where you can also find the ``bower.json <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json>`` file. and are preconfigured in the registry (``registry.xml <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml>`` in ``Products.CMFPlone.profiles.dependencies``).
 
 
-The ++plone++ traversal namespace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The ++plone++static traversal namespace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There is a specific folder type called ++plone++ designed to be similar to ++theme++ but with the difference that you can overwrite an specific file, so its possible to edit a resource TTW.
+We have a new ``plone.resource`` based traversal namespace called ``++plone++static``. It points to the ``Products.CMFPlone.static`` folder. The interesting thing with plone.resource based resources is, that they can be stored in the ZODB (where they are looked up first, by default) or in the filesystem. This allows us to customize filesystem based resources Through-The-Web.
 
-Example:
+This is how the ``++plone++static`` directory resource is configured::
 
 .. code-block:: xml
 
     <plone:static
         directory="static"
         type="plone"
-        name="myresources"
+        name="static"
         />
 
-This allows you to access resources in this directory by using the URL path ``++plone++myresources/``.
+Now we can access the contents within the "static" folder by using the URL part ``++plone++myresources/`` and append the path to the resource under "static".
+
+.. note::
+
+    When providing static resources (JavaScript/Less/CSS) for Plone 5's resource registry, use ``plone.resource`` based resources instead of Zope's browser resources. The latter are cached heavily and you won't get your changes compiled into bundles, even after Zope restarts.
 
 
 Bundle
