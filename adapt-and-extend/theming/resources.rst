@@ -140,13 +140,16 @@ Now we can access the contents within the "static" folder by using the URL part 
 Bundle
 ------
 
-Bundles are groups of resources that are going to be loaded on your Plone site.
-Instead of loading single resources, bundles allow you to group, combine and minify resources and reduce the number of web requests and the responses payload.
+A bundle is a set of resources. Bundles can group resources for different purposes - like the "plone" bundle for all users or "plone-logged-in" for only logged in users. Only bundles are loaded in a Plone site (well - there is an exception. You can register individual resources to be loaded for a specific request via an API method. More on this later).
 
-In case you develop a specific add-on you might want to create your own bundle.
-Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
+For production environments you will want to compile your bundles and
+combine and minify all the necessary resources including their dependencies
+(which are now well defined) into a single file. This minimized the number of
+web requests and the payload of data send over the network.
 
-For single pages like the theming controlpanel, you can define a customized bundle with only the resources needed for that page.
+When developing an add-on you might want to create your own bundle Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
+
+For single pages like the theming controlpanel, you can define a customized bundle and only include that for this page.
 
 In development mode, each bundle includes their resources in the rendered site as individual resource with individual requests. This can lead to a lot of requests and high response times.
 
@@ -159,8 +162,8 @@ There is only one JavaScript and one CSS file included in the output per active 
 
     A bundle can depend on another.
     This is mainly used for the order of inclusion in the rendered content.
-    Currently, it doesn't hook in the require js dependency mechanism.
-    This means, each bundle gets all their dependencies compiled in, which raise the response payload unnecessarily.
+    Currently, it doesn't hook in the ReqireJS dependency mechanism.
+    This means, each bundle gets all their dependencies compiled in, even if it was already used for another bundle. This raises the response payload unnecessarily.
     To avoid this, add your resources to existing bundles, like the "plone" bundle.
 
 
@@ -197,15 +200,15 @@ Examples:
     </records>
 
 
-The possible options of a bundle are:
+The possible options for a bundle are:
 
-- enabled: Enable of disable the bundle.
+- enabled: Enable or disable the bundle.
 
 - depends: Dependency on another bundle.
 
 - resources: List of resources that are included in this bundle.
 
-- compile: Compilation is necessary, if the bundle has any Less or RequireJS resources.
+- compile: Compilation is necessary, if the bundle has any Less or RequireJS resources. Set to false, if compilation should not be done. Then this bundle can be combined with any other non-compilable bundles.
 
 - expression: Python expression for conditional inclusion.
 
