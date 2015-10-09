@@ -14,7 +14,7 @@ Plone 5 Resource Registry
 
 
 Introduction to Plone 5 resources
----------------------------------
+=================================
 
 Plone 5 introduces new concepts for working with JavaScript and CSS in Plone.
 
@@ -31,7 +31,7 @@ Our concept of a resource is made of a JavaScript and/or some Less or CSS files.
 
 
 Resources
----------
+=========
 
 Resources are the main unit of the resource registry.
 A resource consists of a JavaScript file and/or some CSS/Less files.
@@ -118,7 +118,7 @@ In mockup/patterns/structure/js/views/actionmenu.js::
 
 
 Default resources on Plone
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 Plone 5 ships with a list of Mockup- and Bower components for Plone 5's new
 UI.
@@ -127,7 +127,7 @@ The resources are preconfigured in the registry (`registry.xml <https://github.c
 
 
 The ++plone++static traversal namespace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 
 We have a new ``plone.resource`` based traversal namespace called ``++plone++static``.
 It points to the ``Products.CMFPlone.static`` folder.
@@ -152,7 +152,7 @@ Now we can access the contents within the "static" folder by using the URL part 
 
 
 Bundles
--------
+=======
 
 A bundle is a set of resources.
 Bundles can group resources for different purposes - like the "plone" bundle for all users or "plone-logged-in" for only logged in users.
@@ -242,7 +242,7 @@ The following are for pre-compiled bundles and are automatically set, when the b
 
 
 Bundle compilation
-^^^^^^^^^^^^^^^^^^
+------------------
    
 In order to provide a compiled version for the production mode there are three possibilities:
 
@@ -255,7 +255,7 @@ In order to provide a compiled version for the production mode there are three p
 
 
 Default Plone bundles
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 There are three main Plone bundles by default:
 
@@ -268,7 +268,7 @@ There are three main Plone bundles by default:
 
 
 The legacy bundle
-^^^^^^^^^^^^^^^^^
+-----------------
 
 Code which cannot migrated to use RequireJS or uses RequireJS in a way, which is incompatible with Plone's use of it (e.g. it's using it's own RequireJS setup) can be included in the legacy bundle.
 
@@ -311,7 +311,7 @@ Example:
 
 
 Adding or removing bundles from a request
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------------
 
 Besides of using the bundle options ``enabled`` and ``expression``, where you can globally or conditionally control the inclusion of bundles you also have these options:
 
@@ -331,7 +331,7 @@ These are the ``Products.CMFPlone.resources`` API methods:
 
 
 Diazo Bundles
--------------
+=============
 
 The point with Diazo is to create standalone static themes which work without Plone.
 Diazo themes can use - and will use -their own resources and compiling systems.
@@ -370,10 +370,10 @@ The options are:
 
 
 Migrating older code to the new resource registry
--------------------------------------------------
+=================================================
 
 Old registry migration and compatibility
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 
 The deprecated resource registries ``portal_css`` and ``portal_javascripts`` have no concept of dependency management.
 They simply allowed you to specify an order in which JavaScript and CSS files should be included the rendered site.
@@ -392,7 +392,7 @@ This bundle simply includes a global jQuery object and includes the resources in
 
 
 Updating non-AMD scripts
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 Updating your existing JavaScript files to make use of RequireJS should be quite easy.
 Just wrap your code into the recipe shown below.
@@ -419,7 +419,7 @@ Then you need to register this resource in the resource registry and add it to a
 
 
 Usage of ``define`` and ``require`` and the ``mismatched anonymous define`` error
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------------------------
 
 When working with RequireJS, you'll likely be aware of the `mismatched anonymous define() <http://requirejs.org/docs/errors.html#mismatch>`_ potential misuse of require and define.
 
@@ -435,7 +435,7 @@ Being aware of this saves you some headache.
 
 
 Including non-RequireJS scripts in a Diazo theme
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------
 
 We already described how to add resources to the legacy bundle and that the legacy bundle unsets the ``define`` and ``require`` statements.
 
