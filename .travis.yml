@@ -16,8 +16,10 @@ install:
 - python bootstrap-buildout.py --setuptools-version=18.0.1 --version=2.4.0
 - bin/buildout -N -t 3 buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false"
 before_script:
+- echo '[general]' > docutils.conf
+- echo 'report_level = 5' >> docutils.conf
 script:
-- bin/pybot .
+- bin/pybot source
 after_script:
 cache:
   directories:
