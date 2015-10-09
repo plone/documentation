@@ -20,7 +20,7 @@ We finally have a solution to define JavaScript modules and their dependencies
 We chose AMD over other module loading implementations(like CommonJS) because AMD can be used in non-compiled form in the browser and also compiled Through-The-Web. This way, we can also support a "development mode" like in Plone versions prior to 5, where changes in the JavaScript sources are instantly reflected.
 
 CSS can be developed with the CSS compiler Less. Who ever worked
-with Less probably don't want to edit CSS directly - especially for bigger projects. Less gives us a lot of nice features like inheritance, scoping, functions, mixins and variables, which are not available in pure CSS. Again, the availablility of a JavaScript based compiler made a good reason to choose Less over Sass. 
+with Less probably don't want to edit CSS directly - especially for bigger projects. Less gives us a lot of nice features like inheritance, scoping, functions, mixins and variables, which are not available in pure CSS. Again, the availability of a JavaScript based compiler made a good reason to choose Less over Sass. 
 
 Our concept of a resource is made of a JavaScript and/or some Less or CSS files.
 
@@ -61,7 +61,7 @@ The possible options of a resource are:
 - url: Base URL for loading additional resources like text files. See below for an example.
 
 
-These are the "Shim" options for a resource to support JavaScript code, which doesn't define modules or depenencies. We call them "legacy" JavaScript code, as it doesn't follow our proposed best practices. For more information see: http://requirejs.org/docs/api.html#config-shim
+These are the "Shim" options for a resource to support JavaScript code, which doesn't define modules or dependencies. We call them "legacy" JavaScript code, as it doesn't follow our proposed best practices. For more information see: http://requirejs.org/docs/api.html#config-shim
 
 - export: Shim export option to define a global variable to where the JavaScript module should be made available.
 
@@ -110,15 +110,16 @@ In mockup/patterns/structure/js/views/actionmenu.js::
 Default resources on Plone
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Plone 5 ships with a list of mockup- and bower components for Plone 5's new
+Plone 5 ships with a list of Mockup- and Bower components for Plone 5's new
 UI.
-These resources can be found in the static folder (``Products.CMFPlone.static``), where you can also find the ``bower.json <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json>`` file. and are preconfigured in the registry (``registry.xml <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml>`` in ``Products.CMFPlone.profiles.dependencies``).
+These resources can be found in the static folder (``Products.CMFPlone.static``), where you can also find the ``bower.json <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json>`` file.
+The resources are preconfigured in the registry (``registry.xml <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml>`` in ``Products.CMFPlone.profiles.dependencies``).
 
 
 The ++plone++static traversal namespace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We have a new ``plone.resource`` based traversal namespace called ``++plone++static``. It points to the ``Products.CMFPlone.static`` folder. The interesting thing with plone.resource based resources is, that they can be stored in the ZODB (where they are looked up first, by default) or in the filesystem. This allows us to customize filesystem based resources Through-The-Web.
+We have a new ``plone.resource`` based traversal namespace called ``++plone++static``. It points to the ``Products.CMFPlone.static`` folder. The interesting thing with Plone.resource based resources is, that they can be stored in the ZODB (where they are looked up first, by default) or in the filesystem. This allows us to customize filesystem based resources Through-The-Web.
 
 This is how the ``++plone++static`` directory resource is configured::
 
@@ -148,7 +149,7 @@ In development mode, each bundle includes all of their resources in the rendered
 
 When developing an add-on you might want to create your own bundle Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
 
-For single pages like the theming controlpanel, you can define a customized bundle and only include that for this page.
+For single pages like the theming control panel, you can define a customized bundle and only include that for this page.
 
 .. note::
 
@@ -221,17 +222,17 @@ Bundle compilation
    
 In order to provide a compiled version for the production mode there are three possibilities:
 
-- Compile Through-The-Web and store on the ZODB. This is done via the resource controlpanel.
+- Compile Through-The-Web and store on the ZODB. This is done via the resource control panel.
 
-- Compile with a generated gruntfile: ``./bin/plone-compile-resources --site-id=myplonesite --bundle=mybundle``
+- Compile with a generated Grunt file: ``./bin/plone-compile-resources --site-id=myplonesite --bundle=mybundle``
 
-- Create your own compilation chain: Using the tool you prefer create a compiled version of your bundle with the correct urls.
+- Create your own compilation chain: Using the tool you prefer create a compiled version of your bundle with the correct URLs.
 
 
 Default Plone bundles
 ^^^^^^^^^^^^^^^^^^^^^
 
-There are three main plone bundles by default:
+There are three main Plone bundles by default:
 
 - plone: This is the main compiled bundle with all the JavaScript and CSS components required for the Plone Toolbar and the main Mockup patterns.
 
@@ -282,11 +283,11 @@ Example:
 Adding or removing bundles from a request
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Besides of using the bundle options ``enabled`` and ``expression``, where you can globaly or conditionally control the inclusion of bundles you also have these options:
+Besides of using the bundle options ``enabled`` and ``expression``, where you can globally or conditionally control the inclusion of bundles you also have these options:
 
 - Controlling via Diazo: Diazo include or exclude specific bundles, no matter if its disabled by default. This can be done in the theme's ``manifest.cfg`` file via the options ``enabled-bundles`` and ``disabled-bundles``. Those options get a comma separated list of bundle names (TODO: verify "comma separated list").
 
-- A browser page can include or exclude a specific bundle by using the API methods frin Products.CMFPlone.resources, no matter if its disabled by default.
+- A browser page can include or exclude a specific bundle by using the API methods from ``Products.CMFPlone.resources``, no matter if its disabled by default.
 
 These are the ``Products.CMFPlone.resources`` API methods:
 
@@ -353,7 +354,7 @@ This bundle simply includes a global jQuery object and includes the resources in
 Updating non-AMD scripts
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Updateing your existing JavaScript files to make use of RequireJS should be quite easy. Just wrap your code into the recipe shown below. You can define any dependencies via it's RequireJS name identifier. Those dependencies are injected into the anonymous function, which follows the dependency list, like shown for jQuery.
+Updating your existing JavaScript files to make use of RequireJS should be quite easy. Just wrap your code into the recipe shown below. You can define any dependencies via it's RequireJS name identifier. Those dependencies are injected into the anonymous function, which follows the dependency list, like shown for jQuery.
 
 Example::
 
@@ -378,7 +379,7 @@ Usage of ``define`` and ``require`` and the ``mismatched anonymous define`` erro
 
 When working with RequireJS, you'll likely be aware of the `mismatched anonymous define() <http://requirejs.org/docs/errors.html#mismatch>`_ potential misuse of require and define.
 
-Basically it comes down to, that you should not use ``define`` with script tags - code that is rendered without beeing loaded via RequireJS ``require`` calls. ``define`` should only be included in a page by using a ``require`` call.
+Basically it comes down to, that you should not use ``define`` with script tags - code that is rendered without being loaded via RequireJS ``require`` calls. ``define`` should only be included in a page by using a ``require`` call.
 
 Applied to the concept of resources and bundles this means, that bundles should _only_ ever be ``require`` calls.
 If you try to use a JavaScript file that has a ``define`` call with a bundle, you'll likely get the previously mentioned error.
