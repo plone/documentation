@@ -18,6 +18,7 @@ install:
 before_script:
 - echo '[general]' > docutils.conf
 - echo 'report_level = 5' >> docutils.conf
+- rm -rf source/documentation/external/plone.app.robotframework
 script:
 - bin/pybot source
 after_script:
