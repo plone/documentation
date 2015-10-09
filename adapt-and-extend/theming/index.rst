@@ -26,7 +26,7 @@ Theming Plone
 .. toctree::
    :maxdepth: 2
 
-   resources
+   resourceregistry
    barceloneta
 
 An older (Plone 4.2) quick guide which may help to understand Diazo better:
