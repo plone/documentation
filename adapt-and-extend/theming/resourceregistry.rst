@@ -122,8 +122,8 @@ Default resources on Plone
 
 Plone 5 ships with a list of Mockup- and Bower components for Plone 5's new
 UI.
-These resources can be found in the static folder (``Products.CMFPlone.static``), where you can also find the ``bower.json <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json>`` file.
-The resources are preconfigured in the registry (``registry.xml <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml>`` in ``Products.CMFPlone.profiles.dependencies``).
+These resources can be found in the static folder (``Products.CMFPlone.static``), where you can also find the `bower.json <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json>`_ file.
+The resources are preconfigured in the registry (`registry.xml <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml>`_ in ``Products.CMFPlone.profiles.dependencies``).
 
 
 The ++plone++static traversal namespace
@@ -134,7 +134,7 @@ It points to the ``Products.CMFPlone.static`` folder.
 The interesting thing with Plone.resource based resources is, that they can be stored in the ZODB (where they are looked up first, by default) or in the filesystem.
 This allows us to customize filesystem based resources Through-The-Web.
 
-This is how the ``++plone++static`` directory resource is configured::
+This is how the ``++plone++static`` directory resource is configured:
 
 .. code-block:: xml
 
