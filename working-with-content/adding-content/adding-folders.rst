@@ -22,7 +22,9 @@ Select **Folder** from the menu:
    Show add new folder menu
        Go to  ${PLONE_URL}
 
-       Click link  css=#plone-contentmenu-factories a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-factories
+       Click element  css=span.icon-plone-contentmenu-factories
 
        Wait until element is visible
        ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
