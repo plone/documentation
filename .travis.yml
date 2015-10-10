@@ -24,7 +24,7 @@ script:
 after_script:
 cache:
   directories:
-  - eggs
+  - ../eggs
 notifications:
   irc:
     channels:
