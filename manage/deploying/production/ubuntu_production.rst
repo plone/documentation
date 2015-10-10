@@ -38,7 +38,7 @@ First step with any new server is to update the already installed system librari
 .. code-block:: console
 
     sudo apt-get update
-    sudo apt-get dist-upgrade
+    sudo apt-get upgrade
 
 Then, install the platform's build kit, nginx, and supervisor:
 
@@ -265,11 +265,12 @@ If you want to use a software firewall on the machine, you may use `ufw` to simp
     sudo apt-get install ufw
     sudo ufw limit 22/tcp
     sudo ufw allow 80/tcp
+    sudo ufw allow 443/tcp
     sudo ufw enable
 
 .. note::
 
-    This blocks everything but SSH and HTTP.
+    This blocks everything but SSH and HTTP(S).
 
 So, you may be wondering, how do you do Zope Management Interface administration?
 SSH port forwarding will allow you to build a temporary encrypted tunnel from your workstation to the server.
