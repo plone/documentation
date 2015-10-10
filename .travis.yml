@@ -14,13 +14,14 @@ before_install:
 install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
 - python bootstrap-buildout.py --setuptools-version=18.0.1 --version=2.4.0
-- bin/buildout -N -t 3 buildout:eggs-directory=../eggs buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false" versions:plone.app.robotframework=0.9.13
+- bin/buildout -N -t 3 buildout:eggs-directory=../eggs buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false" versions:plone.app.robotframework=0.9.14
 before_script:
 - echo '[general]' > docutils.conf
 - echo 'report_level = 5' >> docutils.conf
 - rm -rf source/documentation/external/plone.app.robotframework
 script:
 - bin/pybot --listener plone.app.robotframework.server.LazyStop source
+- LANGS=en make html SPHINXOPTS="-D sphinxcontrib_robotframework_enabled=0"
 after_script:
 cache:
   directories:
