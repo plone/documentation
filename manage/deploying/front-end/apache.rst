@@ -228,7 +228,7 @@ Caching images
 First of all, there are much better caching solutions for Plone than Apache's mod_cache, see the :doc:`Guide to caching </manage/deploying/caching/index>`.
 
 One important thing to know about mod_cache is that by default it caches Set-Cookie headers. Most likely, this is not what you want when using it with Plone, so you should use the CacheIgnoreHeaders directive to strip Set-Cookie headers from cached objects.
-Have a close look at the official `Apache documentation <http://httpd.apache.org/docs/current/mod/mod_cache.html>`) and also read the comments at the bottom, they are very informative - even more so in the `2.2 version <http://httpd.apache.org/docs/2.2/mod/mod_cache.html>`.
+Have a close look at the official `Apache documentation <http://httpd.apache.org/docs/current/mod/mod_cache.html>`_) and also read the comments at the bottom, they are very informative - even more so in the `2.2 version <http://httpd.apache.org/docs/2.2/mod/mod_cache.html>`_.
 
 If you cannot avoid using mod_cache, you can configure disk based Apache caching as follows:
 
