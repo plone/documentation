@@ -225,9 +225,14 @@ Virtual hosting Apache configuration generator
 Caching images
 ---------------
 
-You can force caching of content types on apache
+First of all, there are much better caching solutions for Plone than Apache's mod_cache, see the :doc:`Guide to caching </manage/deploying/caching/index>`.
 
-First you need to enable Apache modules::
+One important thing to know about mod_cache is that by default it caches Set-Cookie headers. Most likely, this is not what you want when using it with Plone, so you should use the CacheIgnoreHeaders directive to strip Set-Cookie headers from cached objects.
+Have a close look at the official `Apache documentation <http://httpd.apache.org/docs/current/mod/mod_cache.html>`) and also read the comments at the bottom, they are very informative - even more so in the `2.2 version <http://httpd.apache.org/docs/2.2/mod/mod_cache.html>`.
+
+If you cannot avoid using mod_cache, you can configure disk based Apache caching as follows:
+
+First you need to enable the relevant Apache modules::
 
 * mod_cache, mod_diskcache
 
@@ -244,42 +249,11 @@ Then you can add to your virtual host configuration::
   #CacheDefaultExpire 1
   #CacheMaxExpire 7200
   CacheDirLength 2
+  # the next line is important, see above
+  CacheIgnoreHeaders Set-Cookie
 
-Then install go to *Cache Configration* (Plone 4.1+)
+Then go to *Cache Configration* (Plone 4.1+)
 and configure `the caching options <https://pypi.python.org/pypi/plone.app.caching>`_.
-
-Unsetting language cookie for media content
-============================================
-
-Media like content can confuse and break language selector on multilingual sites.
-
-By default, Plone sets I18N_LANGUAGE cookie on
-
-* All page requests
-
-* All ATImage requests
-
-Even if images are often language neutral, they still set I18N_LANGUAGE cookie on HTTP response.
-This is problematic if image gets cached and the user switches the language using the language selector.
-This happens when you enforce caching using Apache level rules (instead of using Products.CacheSetup or similar product).
-The user browsers received cached HTTP response image for the image and it contains Set-Cookie: I18N_LANGUAGE header for the wrong language -> browser language choice by cookie is reset.
-
-A workaround is to force language cookie off from media like content::
-
-  SetEnvIfNoCase Request_URI "\.(?:gif|jpe?g|png|css|js)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_preview(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_large(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_small(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_thumb(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_mini(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image*$" language-neutral
-  SetEnvIfNoCase Request_URI "navImage_small(/)$" language-neutral
-  # Any URL having image in it
-  SetEnvIfNoCase Request_URI "^.*image*" language-neutral
-
-
-  Header unset Set-Cookie env=language-neutral
-
 
 Testing cache headers
 ---------------------
@@ -398,11 +372,12 @@ Example::
           ProxyPass             / balancer://lbyourorganization/http://localhost/VirtualHostBase/https/production.yourorganization.org:443/yourorganization_plone_site/VirtualHostRoot/
           ProxyPassReverse      / balancer://lbyourorganization/http://localhost/VirtualHostBase/https/production.yourorganization.org:443/yourorganization_plone_site/VirtualHostRoot/
 
-          # Disk cache configuration
+          # Disk cache configuration, if you really must use Apache for caching
           CacheEnable disk /
 	  # Must point to www-data writable directly which depends on OS
           CacheRoot "/var/cache/yourorganization-production"
           CacheLastModifiedFactor 0.1
+          CacheIgnoreHeader Set-Cookie
 
           # Debug header flags all requests coming from this server
           Header append X-YourOrganization-Production yes
