@@ -22,7 +22,9 @@ When you are ready to upload an image, use the *Add new...* drop-down menu.
    Show add new image menu
        Go to  ${PLONE_URL}
 
-       Click link  css=#plone-contentmenu-factories a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-factories
+       Click element  css=span.icon-plone-contentmenu-factories
 
        Wait until element is visible
        ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
