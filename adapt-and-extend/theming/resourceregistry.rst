@@ -170,11 +170,11 @@ In development mode, modifications to the resources are instantly reflected with
 
 When developing an add-on you might want to create your own bundle Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
 
-For single pages like the theming control panel, you can define a customized bundle and only include that for this page.
+If you need a bundle for a single page, you can define an extra bundle and only include it there. The ``resourceregistry`` bundle for example is only used for the ``@@resourceregistry-controlpanel`` view. (see the section `Adding or removing bundles from a request`_ for more information)
 
 .. note::
 
-    A bundle can depend on another.
+    A bundle can depend on another one.
     This is mainly used for the order of inclusion in the rendered content and mostly relevant for legacy bundles.
     Currently, bundle dependencies don't make use of RequireJS dependencies.
     This means, each bundle gets all of their dependencies compiled in, even if it was already used for another bundle.
