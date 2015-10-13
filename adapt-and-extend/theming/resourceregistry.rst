@@ -316,11 +316,11 @@ Adding or removing bundles from a request
 
 Besides of using the bundle options ``enabled`` and ``expression``, where you can globally or conditionally control the inclusion of bundles you also have these options:
 
-- Controlling via Diazo: Diazo include or exclude specific bundles, no matter if its disabled by default.
+- Controlling via Diazo: Diazo include or exclude specific bundles, no matter if it's disabled by default.
   This can be done in the theme's ``manifest.cfg`` file via the options ``enabled-bundles`` and ``disabled-bundles``.
   Those options get a comma separated list of bundle names (TODO: verify "comma separated list").
 
-- A browser page can include or exclude a specific bundle by using the API methods from ``Products.CMFPlone.resources``, no matter if its disabled by default.
+- A browser page can include or exclude a specific bundle by using the API methods from ``Products.CMFPlone.resources``, no matter if it's disabled by default.
 
 These are the ``Products.CMFPlone.resources`` API methods:
 
