@@ -287,7 +287,7 @@ Resources, which are registered into ``portal_javascripts`` or ``portal_css`` re
 
     JavaScript, which doesn't use RequireJS can still be managed by it by including it and configuring shim options for it.
 
-The resources of non-compiled bundles are all combined and minified.
+The plone-legacy bundle treats resources differently: They are not compiled, but simply concatenated and minified.
 
 Example:
 
