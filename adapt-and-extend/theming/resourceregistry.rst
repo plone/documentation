@@ -165,7 +165,7 @@ This minimizes the number of web requests and the payload of data send over the 
 In Production mode, only one or two files are included in the output: a JavaScript and a CSS file.
 
 In development mode, each bundle includes all of their resources in the rendered site as individual resource with individual requests.
-This can lead to a lot of requests and high response times, though the RequireJS loads it's dependencies asynchronously.
+This can lead to a lot of requests and high response times, though the RequireJS loads its dependencies asynchronously.
 In development mode, modifications to the resources are instantly reflected without the need to compile a bundle beforehand.
 
 When developing an add-on you might want to create your own bundle Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
@@ -271,11 +271,11 @@ There are three main Plone bundles by default:
 The legacy bundle
 -----------------
 
-Code which cannot migrated to use RequireJS or uses RequireJS in a way, which is incompatible with Plone's use of it (e.g. it's using it's own RequireJS setup) can be included in the legacy bundle.
+Code which cannot migrated to use RequireJS or uses RequireJS in a way, which is incompatible with Plone's use of it (e.g. it's using its own RequireJS setup) can be included in the legacy bundle.
 
 .. note::
 
-    Some JavaScript use it's own setup of RequireJS.
+    Some JavaScript use its own setup of RequireJS.
     Others - like Leaflet 0.7 or DataTables 1.10 - try to register themselves for RequireJS which lead to the infamous "mismatched anonymous define" errors (see below).
     You can register those scripts in the legacy bundle.
     The ``define`` and ``require`` methods are unset before these scripts are included in the output and reset again after all scripts have been included.
@@ -324,11 +324,11 @@ Besides of using the bundle options ``enabled`` and ``expression``, where you ca
 
 These are the ``Products.CMFPlone.resources`` API methods:
 
-- ``add_bundle_on_request(request, bundle)``: Add a bundle to the current request by specifying it's name.
+- ``add_bundle_on_request(request, bundle)``: Add a bundle to the current request by specifying its name.
 
-- ``remove_bundle_on_request(request, bundle)``: Remove a bundle to the current request by specifying it's name.
+- ``remove_bundle_on_request(request, bundle)``: Remove a bundle to the current request by specifying its name.
 
-- ``add_resource_on_request(request, bundle)``: Add an individual resource to the current request by specifying it's name.
+- ``add_resource_on_request(request, bundle)``: Add an individual resource to the current request by specifying its name.
 
 
 Diazo Bundles
@@ -397,7 +397,7 @@ Updating non-AMD scripts
 
 Updating your existing JavaScript files to make use of RequireJS should be quite easy.
 Just wrap your code into the recipe shown below.
-You can define any dependencies via it's RequireJS name identifier.
+You can define any dependencies via its RequireJS name identifier.
 Those dependencies are injected into the anonymous function, which follows the dependency list, like shown for jQuery.
 
 Example::
