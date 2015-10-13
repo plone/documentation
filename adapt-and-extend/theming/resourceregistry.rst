@@ -224,8 +224,7 @@ The possible options for a bundle are:
 - resources: List of resources that are included in this bundle.
 
 - compile: Compilation is necessary, if the bundle has any Less or RequireJS resources.
-  Set to false, if compilation should not be done.
-  Then this bundle can be combined with any other non-compilable bundles.
+  Set to false, if there shall be no button to compile this bundle (eg. used for the `plone-legacy` bundle).
 
 - expression: TALES expression for conditional inclusion.
 
