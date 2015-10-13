@@ -181,8 +181,10 @@ If you need a bundle for a single page, you can define an extra bundle and only 
     This raises the response payload unnecessarily.
     To avoid this, add your resources to existing bundles, like the "plone" bundle.
 
+Bundle Definition
+-----------------
 
-Examples:
+Example based on Plone's standard bundles defined in ``Products/CMFPlone/profiles/dependencies/registry.xml``
 
 .. code-block:: xml
 
