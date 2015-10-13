@@ -239,7 +239,8 @@ The following are for pre-compiled bundles and are automatically set, when the b
 
 - csscompilation: URL of the compiled and minified CSS file.
 
-- last_compilation: Date of the last compilation time.
+- last_compilation: Date of the last compilation time. Used as version parameter for caching
+  (eg. plone-logged-in-compiled.min.js?version=2015-05-07%2000:00:00.000003)
 
 
 Bundle compilation
