@@ -219,7 +219,7 @@ The possible options for a bundle are:
 
 - enabled: Enable or disable the bundle.
 
-- depends: Dependency on another bundle.
+- depends: Currently used for the order of inclusion in the rendered content. Include bundle after bundles listed here.
 
 - resources: List of resources that are included in this bundle.
 
