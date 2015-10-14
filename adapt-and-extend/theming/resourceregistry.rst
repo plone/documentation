@@ -25,7 +25,7 @@ This way, we can also support a "development mode" like in Plone versions prior 
 
 CSS can be developed with the CSS compiler Less.
 Who ever worked with Less probably don't want to edit CSS directly - especially for bigger projects. Less gives us a lot of nice features like inheritance, scoping, functions, mixins and variables, which are not available in pure CSS.
-Again, the availability of a JavaScript based compiler made a good reason to choose Less over Sass. 
+Again, the availability of a JavaScript based compiler made a good reason to choose Less over Sass.
 
 Our concept of a resource is made of a JavaScript and/or some Less or CSS files.
 
@@ -61,29 +61,33 @@ An example of a resource definition on registry.xml:
 
 The possible options of a resource are:
 
-- js : URL of the JavaScript file
+js
+    URL of the JavaScript file
 
-- css: List of CSS/Less elements.
+css
+    List of CSS/Less elements.
 
-- url: Base URL for loading additional resources like text files.
-  See below for an example.
+url
+    Base URL for loading additional resources like text files.
+    See below for an example.
 
 
 These are the "Shim" options for a resource to support JavaScript code, which doesn't define modules or dependencies.
 We call them "legacy" JavaScript code, as it doesn't follow our proposed best practices.
 For more information see: http://requirejs.org/docs/api.html#config-shim
 
-- export: Shim export option to define a global variable to where the JavaScript module should be made available.
-
-- depends: Shim depends option to define which other RequireJS resources should be loaded before this shim module.
-
-- init: Shim init option to define some JavaScript code to be run on initialization.
+export
+    Shim export option to define a global variable to where the JavaScript module should be made available.
+depends
+    Shim depends option to define which other RequireJS resources should be loaded before this shim module.
+init
+    Shim init option to define some JavaScript code to be run on initialization.
 
 
 The URL option allows you to define the base url for loading text resources like XML templates.
 See the following for an example:
 
-In registry.xml:
+In ``registry.xml``:
 
 .. code-block:: xml
 
@@ -97,7 +101,9 @@ In registry.xml:
     </records>
 
 
-In mockup/patterns/structure/js/views/actionmenu.js::
+In ``mockup/patterns/structure/js/views/actionmenu.js``:
+
+.. code-block:: js
 
     define([
       'jquery',
@@ -114,8 +120,10 @@ In mockup/patterns/structure/js/views/actionmenu.js::
         className: 'btn-group actionmenu',
         template: _.template(ActionMenuTemplate),
 
-    ...
-
+    // ...
+    });
+    return ActionMenu;
+    });
 
 Default resources on Plone
 --------------------------
@@ -165,7 +173,7 @@ This minimizes the number of web requests and the payload of data send over the 
 In Production mode, only one or two files are included in the output: a JavaScript and a CSS file.
 
 In development mode, each bundle includes all of their resources in the rendered site as individual resource with individual requests.
-This can lead to a lot of requests and high response times, though the RequireJS loads it's dependencies asynchronously.
+This can lead to a lot of requests and high response times, though the RequireJS loads its dependencies asynchronously.
 In development mode, modifications to the resources are instantly reflected without the need to compile a bundle beforehand.
 
 When developing an add-on you might want to create your own bundle Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
@@ -243,7 +251,7 @@ The following are for pre-compiled bundles and are automatically set, when the b
 
 Bundle compilation
 ------------------
-   
+
 In order to provide a compiled version for the production mode there are three possibilities:
 
 - Compile Through-The-Web and store on the ZODB.
@@ -270,15 +278,15 @@ There are three main Plone bundles by default:
 The legacy bundle
 -----------------
 
-Code which cannot migrated to use RequireJS or uses RequireJS in a way, which is incompatible with Plone's use of it (e.g. it's using it's own RequireJS setup) can be included in the legacy bundle.
+Code which cannot migrated to use RequireJS or uses RequireJS in a way, which is incompatible with Plone's use of it (e.g. it is using its own RequireJS setup) can be included in the legacy bundle.
 
 .. note::
 
-    Some JavaScript use it's own setup of RequireJS.
+    Some JavaScript uses its own setup of RequireJS.
     Others - like Leaflet 0.7 or DataTables 1.10 - try to register themselves for RequireJS which lead to the infamous "mismatched anonymous define" errors (see below).
     You can register those scripts in the legacy bundle.
     The ``define`` and ``require`` methods are unset before these scripts are included in the output and reset again after all scripts have been included.
-    See yourself: https://github.com/plone/Products.CMFPlone/pull/870/files 
+    See yourself: https://github.com/plone/Products.CMFPlone/pull/870/files
 
 Resources, which are registered into ``portal_javascripts`` or ``portal_css`` registries via an addon are automatically registered in the legacy bundle and cleared from ``portal_javascripts`` and ``portal_css``.
 
@@ -323,11 +331,11 @@ Besides of using the bundle options ``enabled`` and ``expression``, where you ca
 
 These are the ``Products.CMFPlone.resources`` API methods:
 
-- ``add_bundle_on_request(request, bundle)``: Add a bundle to the current request by specifying it's name.
+- ``add_bundle_on_request(request, bundle)``: Add a bundle to the current request by specifying its name.
 
-- ``remove_bundle_on_request(request, bundle)``: Remove a bundle to the current request by specifying it's name.
+- ``remove_bundle_on_request(request, bundle)``: Remove a bundle to the current request by specifying its name.
 
-- ``add_resource_on_request(request, bundle)``: Add an individual resource to the current request by specifying it's name.
+- ``add_resource_on_request(request, bundle)``: Add an individual resource to the current request by specifying its name.
 
 
 Diazo Bundles
@@ -364,7 +372,7 @@ The options are:
 - tinymce-content-css: CSS file to include for the TinyMCE editor, so that TinyMCE gives you a best possible WYSIWYG experience.
 
 .. note::
-    
+
     You have to use your own compilation environment to compile the Diazo bundles.
     This cannot be done via the Resouce Registry or the ``plone-compile-resources`` script.
 
@@ -396,10 +404,12 @@ Updating non-AMD scripts
 
 Updating your existing JavaScript files to make use of RequireJS should be quite easy.
 Just wrap your code into the recipe shown below.
-You can define any dependencies via it's RequireJS name identifier.
+You can define any dependencies via its RequireJS name identifier.
 Those dependencies are injected into the anonymous function, which follows the dependency list, like shown for jQuery.
 
-Example::
+Example:
+
+.. code-block:: javascript
 
       require([
         'jquery'
