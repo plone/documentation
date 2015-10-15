@@ -189,8 +189,10 @@ If you need a bundle for a single page, you can define an extra bundle and only 
     This raises the response payload unnecessarily.
     To avoid this, add your resources to existing bundles, like the "plone" bundle.
 
+Bundle Definition
+-----------------
 
-Examples:
+Example based on Plone's standard bundles defined in ``Products/CMFPlone/profiles/dependencies/registry.xml``
 
 .. code-block:: xml
 
@@ -227,13 +229,12 @@ The possible options for a bundle are:
 
 - enabled: Enable or disable the bundle.
 
-- depends: Dependency on another bundle.
+- depends: Currently used for the order of inclusion in the rendered content. Include bundle after bundles listed here.
 
 - resources: List of resources that are included in this bundle.
 
 - compile: Compilation is necessary, if the bundle has any Less or RequireJS resources.
-  Set to false, if compilation should not be done.
-  Then this bundle can be combined with any other non-compilable bundles.
+  Set to false, if there shall be no button to compile this bundle (eg. used for the `plone-legacy` bundle).
 
 - expression: TALES expression for conditional inclusion.
 
@@ -246,7 +247,8 @@ The following are for pre-compiled bundles and are automatically set, when the b
 
 - csscompilation: URL of the compiled and minified CSS file.
 
-- last_compilation: Date of the last compilation time.
+- last_compilation: Date of the last compilation time. Used as version parameter for caching
+  (eg. plone-logged-in-compiled.min.js?version=2015-05-07%2000:00:00.000003)
 
 
 Bundle compilation
@@ -278,11 +280,11 @@ There are three main Plone bundles by default:
 The legacy bundle
 -----------------
 
-Code which cannot migrated to use RequireJS or uses RequireJS in a way, which is incompatible with Plone's use of it (e.g. it is using its own RequireJS setup) can be included in the legacy bundle.
+Code which cannot be migrated to use RequireJS or uses RequireJS in a way, which is incompatible with Plone's use of it (e.g. it's using its own RequireJS setup) can be included in the legacy bundle.
 
 .. note::
 
-    Some JavaScript uses its own setup of RequireJS.
+    Some JavaScript use its own setup of RequireJS.
     Others - like Leaflet 0.7 or DataTables 1.10 - try to register themselves for RequireJS which lead to the infamous "mismatched anonymous define" errors (see below).
     You can register those scripts in the legacy bundle.
     The ``define`` and ``require`` methods are unset before these scripts are included in the output and reset again after all scripts have been included.
@@ -294,7 +296,7 @@ Resources, which are registered into ``portal_javascripts`` or ``portal_css`` re
 
     JavaScript, which doesn't use RequireJS can still be managed by it by including it and configuring shim options for it.
 
-The resources of non-compiled bundles are all combined and minified.
+The plone-legacy bundle treats resources differently: They are not compiled, but simply concatenated and minified.
 
 Example:
 
@@ -323,11 +325,11 @@ Adding or removing bundles from a request
 
 Besides of using the bundle options ``enabled`` and ``expression``, where you can globally or conditionally control the inclusion of bundles you also have these options:
 
-- Controlling via Diazo: Diazo include or exclude specific bundles, no matter if its disabled by default.
+- Controlling via Diazo: Diazo include or exclude specific bundles, no matter if it's disabled by default.
   This can be done in the theme's ``manifest.cfg`` file via the options ``enabled-bundles`` and ``disabled-bundles``.
   Those options get a comma separated list of bundle names (TODO: verify "comma separated list").
 
-- A browser page can include or exclude a specific bundle by using the API methods from ``Products.CMFPlone.resources``, no matter if its disabled by default.
+- A browser page can include or exclude a specific bundle by using the API methods from ``Products.CMFPlone.resources``, no matter if it's disabled by default.
 
 These are the ``Products.CMFPlone.resources`` API methods:
 
