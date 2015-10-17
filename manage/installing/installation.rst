@@ -133,29 +133,57 @@ Substitute the latest version number for 5.0 in the instructions below.
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Extract the downloaded file
+
 .. code-block:: console
 
-    # Extract the downloaded file
-    #
     tar -xf Plone-5.0-UnifiedInstaller.tgz
-    #
-    # Go the folder containing installer script
-    #
-    cd Plone-5.0-UnifiedInstaller
-    #
-    # Run script
-    ./install.sh
-
-
-install.sh has many options, and will guide you through the options.
-
-If you prefer to set the options directly on the command-line, use:
+ 
+Go the folder containing installer script
 
 .. code-block:: console
 
-    ./install.sh --help
+    cd Plone-5.0-UnifiedInstaller
 
-to discover all of the command-line switches.
+. note::
+
+  This will run the installer without any extra options, like setting passwords, setting the install path or anything else, for a full overview over all the possible options use ``./install.sh --help``.
+
+
+Run script
+
+.. code-block:: console
+
+  ./install.sh
+
+Please follow the instructions on the screen 
+
+.. image:: /_static/install_gui_1.png
+
+We choose here for the ``standalone`` mode
+
+.. image:: /_static/install_gui_2.png
+
+Read carefully the message on the screen and *if* you want to continue click on *yes*.
+
+.. image:: /_static/install_gui_3.png
+
+Accept the default insatllation target or change the path 
+
+.. image:: /_static/install_gui_4.png
+
+Pick a option
+
+.. image:: /_static/install_gui_5.png
+
+Controll the settings to make sure everything is as you want it
+
+.. image:: /_static/install_gui_6.png
+
+Wait till the installer is done.
+
+.. image:: /_static/install_gui_7.png
+
 
 The default admin credentials will be printed to the console, and saved in the file adminPassword.txt in the resulting install.
 You can change this password after logging in to the Zope Management Interface.
