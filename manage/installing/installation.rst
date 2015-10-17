@@ -133,29 +133,63 @@ Substitute the latest version number for 5.0 in the instructions below.
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Extract the downloaded file
+
 .. code-block:: console
 
-    # Extract the downloaded file
-    #
     tar -xf Plone-5.0-UnifiedInstaller.tgz
-    #
-    # Go the folder containing installer script
-    #
-    cd Plone-5.0-UnifiedInstaller
-    #
-    # Run script
-    ./install.sh
-
-
-install.sh has many options, and will guide you through the options.
-
-If you prefer to set the options directly on the command-line, use:
+ 
+Go the folder containing installer script
 
 .. code-block:: console
 
-    ./install.sh --help
+    cd Plone-5.0-UnifiedInstaller
 
-to discover all of the command-line switches.
+. note::
+
+  This will run the installer without any extra options, like setting passwords, setting the install path or anything else, for a full overview over all the possible options use ``./install.sh --help``.
+
+
+Run script
+
+.. code-block:: console
+
+  ./install.sh
+
+Please follow the instructions on the screen 
+
+.. image:: /_static/install_gui_1.png
+   :alt: Shows installer welcome message
+
+We choose here for the ``standalone`` mode
+
+.. image:: /_static/install_gui_2.png
+   :alt: Shows menu to choose between standalone and zeo
+
+Accept the default installation target or change the path 
+
+.. image:: /_static/install_gui_3.png
+   :alt: Shows menu to set installation target
+
+Choose a password option
+
+.. image:: /_static/install_gui_4.png
+   :alt: Shows password menu
+
+Controll the settings to make sure everything is as you want it
+
+.. image:: /_static/install_gui_5.png
+   :alt: Show overview about password and target dir
+
+Wait till the installer is done
+
+.. image:: /_static/install_gui_6.png
+   :alt: Shows installer in progess
+
+
+.. image:: /_static/install_gui_7.png
+   :alt: Show that installer is finished
+
 
 The default admin credentials will be printed to the console, and saved in the file adminPassword.txt in the resulting install.
 You can change this password after logging in to the Zope Management Interface.
