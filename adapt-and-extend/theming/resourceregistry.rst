@@ -187,7 +187,8 @@ If you need a bundle for a single page, you can define an extra bundle and only 
     Currently, bundle dependencies don't make use of RequireJS dependencies.
     This means, each bundle gets all of their dependencies compiled in, even if it was already used for another bundle.
     This raises the response payload unnecessarily.
-    To avoid this, add your resources to existing bundles, like the "plone" bundle.
+    To avoid this, add your resources to existing bundles, like the "plone" bundle for production sites in your integration package.
+    You should still provide a custom bundle, so that users can see the JavaScript and CSS in action without having to revisit the resource registry and press the "build" button.
 
 Bundle Definition
 -----------------
