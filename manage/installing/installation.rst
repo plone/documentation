@@ -159,30 +159,36 @@ Run script
 Please follow the instructions on the screen 
 
 .. image:: /_static/install_gui_1.png
+   :alt: Shows installer welcome message
 
 We choose here for the ``standalone`` mode
 
 .. image:: /_static/install_gui_2.png
+   :alt: Shows menu to choose between standalone and zeo
 
-Read carefully the message on the screen and *if* you want to continue click on *yes*.
+Accept the default installation target or change the path 
 
 .. image:: /_static/install_gui_3.png
+   :alt: Shows menu to set installation target
 
-Accept the default insatllation target or change the path 
+Choose a password option
 
 .. image:: /_static/install_gui_4.png
-
-Pick a option
-
-.. image:: /_static/install_gui_5.png
+   :alt: Shows password menu
 
 Controll the settings to make sure everything is as you want it
 
-.. image:: /_static/install_gui_6.png
+.. image:: /_static/install_gui_5.png
+   :alt: Show overview about password and target dir
 
-Wait till the installer is done.
+Wait till the installer is done
+
+.. image:: /_static/install_gui_6.png
+   :alt: Shows installer in progess
+
 
 .. image:: /_static/install_gui_7.png
+   :alt: Show that installer is finished
 
 
 The default admin credentials will be printed to the console, and saved in the file adminPassword.txt in the resulting install.
