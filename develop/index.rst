@@ -70,6 +70,14 @@ plone.app.contentlisting
 
    /external/plone.app.contentlisting/docs/README
 
+plone.app.event
+^^^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+
+   /external/plone.app.event/docs/index
+
 plone.app.robotframework
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
