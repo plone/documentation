@@ -53,7 +53,7 @@ Working with Javascript
 .. toctree::
    :maxdepth: 2
 
-   javascript
+   javascript/index
 
 
    ajax
