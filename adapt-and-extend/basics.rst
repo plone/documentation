@@ -6,3 +6,4 @@ Basic Changes (Look and Feel)
 
    change-the-logo
    change-the-font-colors
+   remove-welcome-section
