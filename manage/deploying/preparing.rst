@@ -102,8 +102,27 @@ Use ``apt-get install``. The matching package names are:
 * libxslt-dev
 * python-dev
 
-Fedora/CentOS
-*************
+
+Fedora
+******
+
+Using ``dnf install``:
+
+gcc-c++
+patch
+openssl-devel
+libjpeg-devel
+libxslt-devel
+readline-devel
+make
+which
+python-devel
+wv
+poppler-utils
+
+
+CentOS
+******
 
 Using ``yum install``:
 
@@ -116,6 +135,8 @@ readline-devel
 make
 which
 python-devel
+wv
+poppler-utils
 
 OpenSUSE
 ********
