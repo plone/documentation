@@ -130,7 +130,8 @@ With complete requirements in place, a barebones Plone install may be created wi
     ~/Plone-5$ mkdir zinstance
     ~/Plone-5$ cd zinstance
     ~/Plone-5/zinstance$ wget https://raw.githubusercontent.com/buildout/buildout/master/bootstrap/bootstrap.py
-    ~/Plone-5/zinstance$ echo """
+    ~/Plone-5/zinstance$
+     echo """
     [buildout]
     extends =
         http://dist.plone.org/release/5-latest/versions.cfg
