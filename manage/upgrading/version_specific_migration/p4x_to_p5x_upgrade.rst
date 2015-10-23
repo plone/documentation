@@ -42,7 +42,6 @@ plone.api
 
 plone.app.multilingual
   Todo: How to migrate from LP to PAM
-  Who: ?
 
 Convert control panels to use z3c.form
   Todo: How to migrate your custom control-panels
@@ -82,6 +81,33 @@ Example:
         from Products.ATContentTypes.interfaces.factory import IFactoryTool
 
 
+plone.app.multilingual
+======================
+
+..  warning::
+
+    This is still work in progess
+
+There are 3 different parts to the migration from LinguaPlone to plone.app.multilingual:
+
+* From LP to PAM 2.X - on Plone4 and than to Plone5 (PAM 3.X)
+
+  See: https://github.com/plone/plone.app.multilingual/issues/181
+
+* From PAM 1.X to 2.X - on Plone4 and than to Plone5 (PAM 3.X)
+
+  Step 1: plone.multilingual is merged into plone.app.multilingual. Imports in your custom code needs to be changed:
+  See:https://github.com/plone/plone.app.multilingual/issues/181#issuecomment-141661848
+
+  Step 2: Removed plone.multilingualbehavior: https://github.com/plone/plone.app.multilingual/issues/183
+
+  Step 3: TODO
+
+* From PAM 2.X on Plone4 to Plone5 (PAM 3.X)
+
+  Step 1: plone.multilingual is merged into plone.app.multilingual. Imports in your custom code needs to be changed: See:https://github.com/plone/plone.app.multilingual/issues/181#issuecomment-141661848
+  https://github.com/plone/Products.CMFPlone/issues/1187
+
 
 Archetypes
 ============
@@ -90,23 +116,24 @@ Plone 5 now uses dexterity as the content type engine instead of Archetypes.
 
 For packages that still use Archetypes, you'll need to install the ATContentTypes base package.
 
-In your package, in a setuphandler, the code might look something like this:
+The easiest way to get the dependencies for Archetypes (uuid_catalog, reference_catalog, archetypes_tool) is to add the following profile to your dependencies in ``metadata.xml``:
 
-.. code-block:: python
+..  code-block:: xml
 
+    <dependencies>
+         ...
+        <dependency>Products.ATContentTypes:base</dependency>
+    </dependencies>
 
-    from Products.CMFPlone.utils import getFSVersionTuple
-    if getFSVersionTuple()[0] == 5:
-        # if plone 5, we need to make sure archetypes related tools is installed
-        qi = getToolByName(site, 'portal_quickinstaller')
-        # install ATContentTypes if it isn't installed
-        if not qi.isProductInstalled('ATContentTypes'):
-            qi.installProducts(['ATContentTypes'])
-
+See https://github.com/smcmahon/Products.PloneFormGen/blob/master/Products/PloneFormGen/profiles/default/metadata.xml for a working example.
 
 
 Resource Registry
 =================
+
+.. seealso::
+
+   http://docs.plone.org/adapt-and-extend/theming/resourceregistry.html
 
 Plone 5 introduces some new concepts, for some, with working with JavaScript in Plone.
 Plone 5 utilizes Asynchronous Module Definition (AMD) with `requirejs <http://requirejs.org/>`_.
@@ -260,15 +287,53 @@ For advanced users, compilation can be done using a tool like grunt in your deve
 Conditional resources
 ~~~~~~~~~~~~~~~~~~~~~
 
-In Plone 5, individual resources can not be conditionally added to every page.
+In Plone 5, individual resources can not be registered conditionally to certain page.
 This is due to the way we build JavaScript with AMD.
-Only bundles can be conditionally included.So if you have a resource that needs to be conditionally included, it will likely need its own bundle.
+
+Instead we have Python helper-methods in the Resource Registry to add custom JS and CSS to your views or forms.
+
+Instead of useing the legacy fill-slot like this (Plone 4):
+
+..  code-block:: xml
+
+    <metal:slot fill-slot="javascript_head_slot">
+      ...
+    </metal:slot>
+    <metal:slot fill-slot="css_slot">
+      ...
+    </metal:slot>
+
+In Plone 5 it’s recommended to instead use the new Python methods you can find in ``Products.CMFPlone.resources``:
+
+..  code-block:: python
+
+    from Products.CMFPlone.resources import add_bundle_on_request
+    from Products.CMFPlone.resources import add_resource_on_request
+
+    add_resource_on_request(self.request, 'jquery.recurrenceinput')
+    add_bundle_on_request(self.request, 'thememapper')
+
+This is better than always loading a resource or bundle for your whole site.
+
+Only bundles can be conditionally included. So if you have a resource that needs to be conditionally included, it will likely need its own bundle.
 
 
 Control Panel
 =============
 
 In Plone 4.x, the Plone configuration settings have been stored as portal properties spread across the ZMI. In Plone 5, those settings are all stored as plone.app.registry entries in registry.xml.
+
+There are now sections in the control panel, this can be set from the controlpanel.xml. See the current definitions for more information.
+
+The display of icons for control panels is now controlled by css.  The name of the control panel is normalized into a css class, which is applied to the link in the main layout of all control panels.  For example, if the “appId” of your control panel (as set in controlpanel.xml in your install profile) is “MyPackage” then the css class that will be generated is “.icon-controlpanel-MyPackage”. In order to have an icon for your control panel you must make sure that a css rule exists for that generated css class.  An example might be::
+
+    .icon-controlpanel-MyPackage:before { content: ‘\e844’; }
+
+The value you use for this css rule should identify one of the fontello icons included in Plone, or a font-based icon provided by your package itself.
+
+It is not possible at this time to set an icon for your add-on package control panels without including css in your package.
+
+For documentation on how to use it in your own add-ons see http://training.plone.org/5/registry.html
 
 
 Generic Setup
