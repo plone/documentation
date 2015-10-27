@@ -145,7 +145,7 @@ Go the folder containing installer script
 
     cd Plone-5.0-UnifiedInstaller
 
-. note::
+.. note::
 
   This will run the installer without any extra options, like setting passwords, setting the install path or anything else, for a full overview over all the possible options use ``./install.sh --help``.
 
