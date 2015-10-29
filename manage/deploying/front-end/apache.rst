@@ -352,15 +352,14 @@ Example::
           </IfModule>
 
           # Balance load between 4 ZEO front-ends
-          # Use Pending Request Counting Algorithm (s. http://httpd.apache.org/docs/current/mod/mod_lbmethod_bybusyness.html).
-          # It is much better at reducing latencies that occur as a result
-          # of single long running requests blocking a ZEO client than Apache's default.
-          # You will need to install the separate mod_lbmethod_bybusyness module in Apache 2.4.
           <Proxy balancer://lbyourorganization>
             BalancerMember http://127.0.0.1:13001/
             BalancerMember http://127.0.0.1:13002/
             BalancerMember http://127.0.0.1:13003/
             BalancerMember http://127.0.0.1:13004/
+            # Use Pending Request Counting Algorithm (s. http://httpd.apache.org/docs/current/mod/mod_lbmethod_bybusyness.html).
+            # This will reduce latencies that occur as a result of long running requests temporarily blocking a ZEO client.
+            # You will need to install the separate mod_lbmethod_bybusyness module in Apache 2.4.
             ProxySet lbmethod=bybusyness
           </Proxy>
 
