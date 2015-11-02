@@ -37,6 +37,17 @@ Add your package to buildout
 
 Edit your ``buildout.cfg`` file to add the package to your ``egg`` list and your ``develop`` list. Run buildout.
 
+
+The Plone Collective
+--------------------
+
+This is an organization for developers of Plone add-ons to work collectively. Software that is released in here follows a simple, collaborative model: every member can contribute to every project.
+
+This means you will have the best chance of having other people contributing to your add-on. So when your add-on is generic enough to be useful to other people, please consider to release it here.
+
+`Read more on how to become a member of the Plone Collective <https://collective.github.io/>`_
+
+
 Releasing your package
 ----------------------
 
