@@ -602,3 +602,21 @@ Plone 5.x::
 
   >>> usergroups_settings.many_users
   False
+
+
+portal_languages is now a utility
+=================================
+
+Part of the work on PLIP 13091 (plone.app.multilingual) required to move ``portal_languages`` to a utility.
+
+So code that used to look like this::
+
+
+  # OLD 4.x approach
+  portal.portal_languages.getDefaultLanguage()
+
+Now it should look like this::
+
+  # NEW in 5.0
+  language_tool = api.portal.get_tool('portal_languages')
+  language_tool.getDefaultLanguage()
