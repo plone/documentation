@@ -620,3 +620,21 @@ Now it should look like this::
   # NEW in 5.0
   language_tool = api.portal.get_tool('portal_languages')
   language_tool.getDefaultLanguage()
+
+
+Tests changes
+=============
+
+In Plone 4.x a date or date time widget used to be rendered as a set of input fields::
+
+  # OLD 4.x approach
+  browser_manager.getControl(name='form.widgets.IPublication.effective-year').value = '2015'
+  browser_manager.getControl(name='form.widgets.IPublication.effective-month').value = ['10']
+  browser_manager.getControl(name='form.widgets.IPublication.effective-day').value = '11'
+  browser_manager.getControl(name='form.widgets.IPublication.effective-hour').value = '15'
+  browser_manager.getControl(name='form.widgets.IPublication.effective-min').value = '14'
+
+Now the same input field will be rendered as a single string input::
+
+  # NEW in 5.0
+  browser_manager.getControl(name='form.widgets.IPublication.effective').value = '2015-10-11 15:14'
