@@ -638,3 +638,119 @@ Now the same input field will be rendered as a single string input::
 
   # NEW in 5.0
   browser_manager.getControl(name='form.widgets.IPublication.effective').value = '2015-10-11 15:14'
+
+
+Deprecation of ``portal_properties.xml``
+========================================
+
+``portal_properties.xml`` Generic Setup import step is now deprecated and has been moved to plone.registry.
+
+
+parentMetaTypesNotToQuery
+-------------------------
+
+::
+
+  # OLD 4.x approach
+  <object name="portal_properties">
+    <object name="navtree_properties">
+      <property name="parentMetaTypesNotToQuery" purge="false">
+        <element value="my.hidden.content.type" />
+      </property>
+    </object>
+  </object>
+
+Now in ``registry.xml`` should look like::
+
+  # NEW in 5.0
+  <?xml version="1.0"?>
+  <registry>
+    <record
+        name="plone.parent_types_not_to_query"
+        interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
+        field="parent_types_not_to_query">
+      <value>
+        <element value="my.hidden.content.type" />
+      </value>
+    </record>
+  </registry>
+
+metaTypesNotToList
+------------------
+
+::
+
+  # OLD 4.x approach
+  <?xml version="1.0"?>
+  <object name="portal_properties">
+    <object name="navtree_properties">
+      <property name="metaTypesNotToList" purge="false">
+        <element value="my.hidden.content.type" />
+      </property>
+  </object>
+
+*nothing* should  be done in Plone 5.
+
+The new setting is on ``Products.CMFPlone.interfaces.controlpanel.INavigationSchema.displayed_types`` and it works the other way around.
+
+Instead of blacklisting content types it whitelists them,
+so if you don't want your content type to show there's nothing to do.
+
+typesLinkToFolderContentsInFC
+-----------------------------
+
+::
+
+  # OLD 4.x approach
+  <?xml version="1.0"?>
+  <object name="portal_properties">
+    <object name="site_properties">
+      <property name="typesLinkToFolderContentsInFC" purge="false">
+        <element value="my.fancy.content.type" />
+      </property>
+    </object>
+  </object>
+
+Now in ``registry.xml`` should look like::
+
+  # NEW in Plone 5
+  <record
+      name="plone.types_use_view_action_in_listings"
+      interface="Products.CMFPlone.interfaces.controlpanel.ITypesSchema"
+      field="types_use_view_action_in_listings">
+    <value>
+      <element>my.fancy.content.type</element>
+    </value>
+  </record>
+
+
+types_not_searched
+------------------
+
+::
+
+  # OLD 4.x approach
+  <?xml version="1.0"?>
+  <object name="portal_properties">
+    <object name="site_properties">
+      <property name="types_not_searched" purge="false">
+        <element value="my.fancy.content.type" />
+      </property>
+    </object>
+  </object>
+
+
+Now in ``registry.xml`` should look like::
+
+  # NEW in Plone 5
+  <?xml version="1.0"?>
+  <registry>
+    <record
+        name="plone.types_not_searched"
+        interface="Products.CMFPlone.interfaces.controlpanel.ISearchSchema"
+        field="types_not_searched">
+      <value>
+        <element>my.fancy.content.type</element>
+      </value>
+    </record>
+  </registry>
