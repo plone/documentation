@@ -10,7 +10,7 @@ z3c.form library
 
 .. contents:: :local:
 
-Introductionc
+Introduction
 =============
 
 Plone uses *z3c.form* library with the following integration steps
