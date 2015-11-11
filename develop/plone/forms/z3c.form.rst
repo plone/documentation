@@ -2300,6 +2300,7 @@ Example: How to use widget specific validators with ``z3c.form``::
 More info
 
 * http://docs.plone.org/develop/addons/schema-driven-forms/customising-form-behaviour/validation.html#field-widget-validators
+* http://www.jowettenterprises.com/blog/an-image-dimension-validator-for-plone-4
 
 Custom field specific validation in form action handlers and update()
 ------------------------------------------------------------------------
