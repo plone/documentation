@@ -10,7 +10,7 @@ z3c.form library
 
 .. contents:: :local:
 
-Introduction
+Introductionc
 =============
 
 Plone uses *z3c.form* library with the following integration steps
@@ -2177,7 +2177,7 @@ There are three kind of validation hooks you can use with z3c.form
 
 * zope.schema @invariant (validation is model specific)
 
-* zope.schema constrain (validation is model specific)
+* zope.schema constraint (validation is model specific)
 
 * z3c.form (validation is bound ot the form instance)
 
@@ -2205,10 +2205,10 @@ Example::
 
 For available internal validation options, see the field source code in zope.schema package.
 
-Constrain validators
+Constraint validators
 ^^^^^^^^^^^^^^^^^^^^^
 
-zope.schema fields take a callable argument ``constrain``
+zope.schema fields take a callable argument ``constraint``
 which defines a Python function validating the incoming value.
 
 Example::
@@ -2299,7 +2299,7 @@ Example: How to use widget specific validators with ``z3c.form``::
 
 More info
 
-* https://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/validation
+* http://docs.plone.org/develop/addons/schema-driven-forms/customising-form-behaviour/validation.html#field-widget-validators
 
 Custom field specific validation in form action handlers and update()
 ------------------------------------------------------------------------
