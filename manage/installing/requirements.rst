@@ -128,7 +128,7 @@ With complete requirements in place, a barebones Plone install may be created wi
     ~/$ cd Plone-5
     ~/Plone-5$ virtualenv-2.7 zinstance
     ~/Plone-5$ cd zinstance
-    ~/Plone-5/zinstance bin/pip install zc-buildout
+    ~/Plone-5/zinstance bin/pip install zc.buildout
     ~/Plone-5/zinstance$
      echo """
     [buildout]
