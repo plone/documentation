@@ -257,10 +257,10 @@ Another example how to use this::
 
 .. TODO:: Bare except?
 
-Setting the default page can be done as simply as setting a ``default_page``
-attribute on the folder to the id of the default page::
+Setting the default page can be done by calling the ``setDefaultPage`` on the folder, passing id of the default 
+page::
 
-    folder.default_page = "my_content_id"
+    folder.setDefaultPage("my_content_id")
 
 More information can be found in
 
