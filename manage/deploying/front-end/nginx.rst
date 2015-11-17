@@ -611,5 +611,5 @@ Enabling gzip compression in Nginx will make your web sites respond much more qu
 
 Instructions for enabling gzip in Nginx: 
 
+* https://varvy.com/pagespeed/enable-compression.html
 * https://www.nginx.com/resources/admin-guide/compression-and-decompression/
-* http://httpd.apache.org/docs/2.2/mod/mod_deflate.html
