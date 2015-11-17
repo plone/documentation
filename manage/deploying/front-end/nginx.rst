@@ -605,7 +605,7 @@ Limitations:
   Don't underestimate how valuable that is.
 
 Enabling gzip compression
--------------------------
+=========================
 
 Enabling gzip compression in Nginx will make your web sites respond much more quickly for your web site users and will reduce the amount of bandwidth used by your web sites.
 
