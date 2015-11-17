@@ -528,3 +528,15 @@ Buildout download cache is corrupted. Run ``bin/buildout -vvv`` for more info. T
       # Corrupted .tar.gz download
       rm /Users/mikko/code/buildout-cache/downloads/dist/lxml-2.3.6.tar.gz
 
+
+Mac OS X Error: Couldn't install: lxml 3.4.4
+============================================
+
+...using the Plone 5.0 unified installer on Mac OS X 10.11.1 El Capitan
+
+As per http://stackoverflow.com/questions/19548011/cannot-install-lxml-on-mac-os-x-10-9 you should update your Xcode command line tools::
+
+    xcode-select --install
+
+then re-run ``bin/buildout``. 
+
