@@ -665,8 +665,8 @@ Example::
 
     sub vcl_init {
         new cluster1 = directors.round_robin();
-        cluster1.add_backend(site1);    # Backend site1 defined above
-        cluster1.add_backend(site2);    # Backend site2 defined above
+        cluster1.add_backend(app1);    # Backend app1 defined above
+        cluster1.add_backend(app2);    # Backend app2 defined above
     }
 
 
