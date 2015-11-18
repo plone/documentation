@@ -492,15 +492,16 @@ Each value is atomically constrained by *value_type* schema field.
 Example::
 
     from zope import schema
-    from plone.directives import form
+    from plone.supermodel import model
+    from plone.autoform import directives as form
 
     from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
-    class IMultiChoice(form.Schema):
+    class IMultiChoice(model.Schema):
         ...
 
         # Contains lists of values from Choice list using special "get_field_list" vocabulary
-        # We also give a plone.form.directives hint to render this as
+        # We also give a plone.autoform.directives hint to render this as
         # multiple checbox choices
         form.widget(yourField=CheckBoxFieldWidget)
         yourField = schema.List(title=u"Available headers and animations",
