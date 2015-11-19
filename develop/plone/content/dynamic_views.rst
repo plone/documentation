@@ -23,13 +23,8 @@ By default, Plone comes with dynamic views for:
 * etc.
 
 The default view can be also a content item picked from the folder.
-Available content item types can be managed from the :term:`ZMI` at
-:guilabel:`portal_properties` -> :guilabel:`site_properties` ->
-:guilabel:`default_page_types`.
 
-More info
-
-* http://stackoverflow.com/questions/9432229/enabling-folder-as-one-of-default-content-item-views
+Available content item types can be managed from the: Site Setup Control Panel -> Content Rules (site.com/@@content-controlpanel) -> Select your new type from the drop down menu -> Click the "Can be used as default page" checkbox. 
 
 Permission for changing the view template of an item
 -------------------------------------------------------
