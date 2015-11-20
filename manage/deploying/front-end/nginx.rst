@@ -603,3 +603,13 @@ Limitations:
 * Nginx does not support the s-maxage cache-control directive. Only max-age.
   This means that moderate caching will do nothing. However, strong caching works and will cause all your static resources and registry items to be cached.
   Don't underestimate how valuable that is.
+
+Enabling gzip compression
+=========================
+
+Enabling gzip compression in Nginx will make your web sites respond much more quickly for your web site users and will reduce the amount of bandwidth used by your web sites.
+
+Instructions for enabling gzip in Nginx: 
+
+* https://varvy.com/pagespeed/enable-compression.html
+* https://www.nginx.com/resources/admin-guide/compression-and-decompression/
