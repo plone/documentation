@@ -544,7 +544,7 @@ Securing Plone Sites With HTTPS and Nginx
 
 It's important to protect at least some, if not all, of your web site using HTTPS encryption. This is particularly true for any login information. 
 
-The simplest way to protect confidential data is to serve your web site using only HTTPS (not unencrytped HTTP). 
+The simplest way to protect confidential data is to serve your web site using only HTTPS. 
 
 Add SSL Support to Your Server
 ------------------------------
@@ -557,7 +557,7 @@ To use HTTPS encryption you must first set up your server with SSL. This require
 
 * purchase or create SSL certificates and put them somewhere on your server
 
-* configure Nginx to use the SSL certificates
+* configure Nginx to use those SSL certificates
 
 View `detailed Nginx SSL support instructions <https://www.linode.com/docs/security/ssl/how-to-provide-encrypted-access-to-resources-using-ssl-certificated-on-nginx/>`_.
 
@@ -570,13 +570,13 @@ It uses two ``server`` blocks; the first listens for HTTP traffic and sends it t
 
 Some assumptions below:
 
-* that you have placed your SSL certificate files ``mydomain.com.crt`` and ``mydomain.com.key`` in the ``/etc/ssl/localcerts/`` directory
+* you have placed your SSL certificate files ``mydomain.com.crt`` and ``mydomain.com.key`` in the ``/etc/ssl/localcerts/`` directory
 
-* you have set up a standalone Plone instance (i.e., not a zeo install that has multiple ZEO clients) that is listening on port 8080
+* you have set up a standalone Plone instance that is listening on port 8080 (as opposed to a multi-ZEO client install that would be listening on multiple ports and would require load balancing)
 
 * you are using the domain ``mydomain.com``
 
-::
+.. code-block:: console
 
     # This adds security headers
     add_header X-Frame-Options "SAMEORIGIN";
@@ -627,9 +627,9 @@ Some assumptions below:
 How to Secure Only Authenticated Traffic
 ----------------------------------------
 
-For instructions on how to use SSL for only authenticated traffic see this blog-post:
+This method allows public visitors to view your site unencrypted but encrypts login forms.  
 
-* http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
+See the `blog post on how to use SSL just for authenticated traffic <http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx>`_. 
 
 Setting log files
 =============================
