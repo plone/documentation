@@ -539,10 +539,95 @@ More info
 * http://nathanvangheem.com/news/nginx-with-built-in-load-balancing-and-caching
 
 
-Securing Plone-Sites with https and nginx
+Securing Plone Sites With HTTPS and Nginx
 =========================================
 
-For instructions how to use SSL for all authenticated traffic see this blog-post:
+It's important to protect at least some, if not all, of your web site using HTTPS encryption. This is particularly true for any login information. 
+
+The simplest way to protect confidential data is to serve your web site using only HTTPS (not unencrytped HTTP). 
+
+Add SSL Support to Your Server
+------------------------------
+
+To use HTTPS encryption you must first set up your server with SSL. This requires that you:
+
+* install system packages for SSL (often this is the package called ``openssl``)
+
+* ensure Nginx includes SSL support
+
+* purchase or create SSL certificates and put them somewhere on your server
+
+* configure Nginx to use the SSL certificates
+
+View `detailed Nginx SSL support instructions <https://www.linode.com/docs/security/ssl/how-to-provide-encrypted-access-to-resources-using-ssl-certificated-on-nginx/>`_.
+
+How to Secure All Web Site Traffic
+----------------------------------
+
+Here is a sample Nginx configuration that secures all web site traffic, by forcing all HTTP (port 80) traffic to be redirected to HTTPS (port 443).
+
+It uses two ``server`` blocks; the first listens for HTTP traffic and sends it to the second, which handles HTTPS traffic.
+
+Some assumptions below:
+
+* that you have placed your SSL certificate files ``mydomain.com.crt`` and ``mydomain.com.key`` in the ``/etc/ssl/localcerts/`` directory
+
+* you have set up a standalone Plone instance (i.e., not a zeo install that has multiple ZEO clients) that is listening on port 8080
+
+* you are using the domain ``mydomain.com``
+
+::
+
+    # This adds security headers
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header Strict-Transport-Security "max-age=15768000; includeSubDomains";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+    #add_header Content-Security-Policy "default-src 'self'; img-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'";
+    add_header Content-Security-Policy-Report-Only "default-src 'self'; img-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'";
+
+    # This specifies which IP and port Plone is running on.
+    # The default is 127.0.0.1:8080
+    upstream plone {
+	server 127.0.0.1:8080;
+    }
+
+    # this forces all unencrypted HTTP traffic on port 80 to be redirected to encrypted HTTPS
+    server {
+	listen 80;
+	server_name mydomain.com;
+	location / {
+	    rewrite ^ https://$server_name$request_uri permanent;
+	}
+    }
+
+    server {
+	listen 443 default ssl;
+	ssl_certificate /etc/ssl/localcerts/mydomain.com.crt;
+	ssl_certificate_key /etc/ssl/localcerts/mydomain.com.key;
+	server_name mydomain.com;
+	access_log /var/log/nginx/mydomain.com.access.log;
+	error_log /var/log/nginx/mydomain.com.error.log;
+
+	# Note that domain name spelling in VirtualHostBase URL matters
+	# -> this is what Plone sees as the "real" HTTP request URL.
+	# "Plone" in the URL is your site id (case sensitive)
+	location / {
+	    rewrite ^/(.*)$ /VirtualHostBase/https/mydomain.com:443/MyDomain/VirtualHostRoot/$1 break;
+
+	    # this puts the originating request IP address in the logs
+	    proxy_pass http://127.0.0.1:8080/;
+	    proxy_set_header        Host            $host;
+	    proxy_set_header        X-Real-IP       $remote_addr;
+	    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+
+	}
+
+
+How to Secure Only Authenticated Traffic
+----------------------------------------
+
+For instructions on how to use SSL for only authenticated traffic see this blog-post:
 
 * http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
 
