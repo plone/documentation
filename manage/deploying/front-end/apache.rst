@@ -388,5 +388,14 @@ Example::
 
         </VirtualHost>
 
+Enabling gzip compression
+-------------------------
+
+Enabling gzip compression in Apache will make your web sites respond much more quickly for your web site users and will reduce the amount of bandwidth used by your web sites.
+
+Instructions for enabling gzip in Apache: 
+
+* https://varvy.com/pagespeed/enable-compression.html
+* http://httpd.apache.org/docs/2.2/mod/mod_deflate.html
 
 
