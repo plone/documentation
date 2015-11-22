@@ -627,7 +627,7 @@ Some assumptions below:
 How to Secure Only Authenticated Traffic
 ----------------------------------------
 
-This method allows public visitors to view your site unencrypted but encrypts login forms.  
+This method allows public visitors to view your site unencrypted but encrypts login forms and any subsequent logged-in web traffic.  It has the advantage of making your site faster to respond for public viewing.
 
 See the `blog post on how to use SSL just for authenticated traffic <http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx>`_. 
 
