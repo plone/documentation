@@ -484,7 +484,7 @@ Example::
 
 Solution:
 
-`This bug has been fixed in Distiribute 0.6.27 <https://pypi.python.org/pypi/distribute/0.6.27#id2>`_ - make sure your system-wide Python
+`This bug has been fixed in Distribute 0.6.27 <https://pypi.python.org/pypi/distribute/0.6.27#id2>`_ - make sure your system-wide Python
 uses this version or above::
 
        sudo /srv/plone/python/python-2.7/bin/easy_install -U Distribute
@@ -528,3 +528,12 @@ Buildout download cache is corrupted. Run ``bin/buildout -vvv`` for more info. T
       # Corrupted .tar.gz download
       rm /Users/mikko/code/buildout-cache/downloads/dist/lxml-2.3.6.tar.gz
 
+
+Mac OS X Error: Couldn't install: lxml 3.4.4
+============================================
+
+If you got the error ``Couldn't install: lxml 3.4.4`` while using the Plone 5.0 unified installer on Mac OS X 10.11.1 El Capitan, you should `update your Xcode command line tools <http://stackoverflow.com/questions/19548011/cannot-install-lxml-on-mac-os-x-10-9>`_::
+
+    xcode-select --install
+
+then re-run ``bin/buildout``. 
