@@ -3,10 +3,14 @@ Reading the documentation
 
 .. contents:: :local:
 
-Web
-===
+Online
+=======
 
-The easiest way for reading these documentation is online on http://docs.plone.org
+The easiest way to read this documentation is online at http://docs.plone.org
+
+There is also build in support for `opensearch <http://www.opensearch.org/Home>`_ that means you can search http://docs.plone.org right away from your brower bar, if your bowser supports that.
+
+`This video <https://www.youtube.com/watch?v=J9gkjO_Xvxs>`_ shows an example on how to add http://docs.plone.org to Firefox.  
 
 Offline
 =======
