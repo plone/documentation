@@ -147,7 +147,7 @@ With complete requirements in place, a barebones Plone install may be created wi
         Pillow
 
     """ > buildout.cfg
-    ~/Plone-4.3/zinstance$ bin/buildout
+    ~/Plone-5/zinstance$ bin/buildout
 
 This will start a long download and build process ...
 
