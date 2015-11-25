@@ -15,9 +15,6 @@ it is suggested that you read the `Professional Plone 4 Development book
 <http://www.packtpub.com/professional-plone-4-development/book>`_
 before you attempt to develop your own solutions.
 
-If you quickly want to learn about current best-practices in developing with Plone you should also work through the
-`Todo list application tutorial <http://tutorialtodoapp.readthedocs.org/en/latest/index.html>`_.
-
 Plone runs on the top of the `Zope 2 application server <zope2.zope.org/>`_, meaning that one Zope 2 server process
 can contain and host several Plone sites. Plone also uses Zope 3 components. Zope 3 is not an upgrade for Zope 2,
 but a separate project.
@@ -25,6 +22,15 @@ but a separate project.
 Internally, Plone uses the objected-oriented :doc:`ZODB </develop/plone/persistency/index>` database and the development
 mindset greatly differs from that of SQL based systems. SQL backends can still be integrated with Plone,
 like for any other Python application, but this is a more advanced topic.
+
+
+Training
+--------
+
+A number of Plone trainers have joined forces to create completely open  `Training materials <http://training.plone.org/5>`_.
+
+While following a real-life course is the best way to get up to speed with Plone, the material is also very useful for self-study.
+You will find separate chapters on creating packages, writing your own theme and much more here.
 
 Installing Plone
 ----------------
@@ -175,15 +181,6 @@ Through-the-web customizations
 Some aspects of Plone can be changed through the Zope Management Interface (ZMI).
 Documentation here does not focus on extending functionality through the ZMI because this method is severely
 limited and usually can take you only half way there.
-
-Hello World Tutorial
---------------------
-
-We have a :doc:`tutorial </develop/addons/helloworld/index>` introducing the basics of Plone development.
-
-The tutorial covers a basic form, a custom content-type, and a dynamic view.
-It also has detailed sections on building a development environment, installing Plone, and
-creating an add-on package for your development code.
 
 Plone resources
 ---------------
