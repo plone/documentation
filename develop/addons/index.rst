@@ -83,12 +83,10 @@ Background
 
    schema-driven-forms/index
 
-Example
--------
+Training
+--------
 
-.. toctree::
-   :maxdepth: 2
+A number of Plone trainers have joined forces to create completely open  `Training materials <http://training.plone.org/5>`_.
 
-   helloworld/index
-
-Also make sure to check out the `Training material <http://training.plone.org>`_
+While following a real-life course is the best way to get up to speed with Plone, the material is also very useful for self-study.
+You will find separate chapters on creating packages, writing your own theme and much more here.
