@@ -32,7 +32,7 @@ We'll use the default Plone layout design as an example of typical divisions of 
 You may need to adapt these terms as needed for your Plone web site design.
 You may encounter varied terms for describing screen real estate, such as right and left "slots," for the left and right column areas, "portlet," or "viewlet," for discrete areas or boxes, and several other terms.
 
-For example, we can look at a web site from the `list of Plone success stories <https://plone.com/support/sites>`_ to compare:
+For example, we can look at a web site from the `list of Plone success stories <https://plone.com/success-stories>`_ to compare:
 
 .. figure:: /_static/victoria.png
    :align: center
