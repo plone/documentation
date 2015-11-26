@@ -576,6 +576,8 @@ Some assumptions below:
 
 * you are using the domain ``mydomain.com``
 
+* the ID of your site is ``MyDomain``
+
 .. code-block:: console
 
     # This adds security headers
@@ -613,7 +615,7 @@ Some assumptions below:
 	# -> this is what Plone sees as the "real" HTTP request URL.
 	# "Plone" in the URL is your site id (case sensitive)
 	location / {
-	    rewrite ^/(.*)$ /VirtualHostBase/https/mydomain.com:443/MyDomain/VirtualHostRoot/$1 break;
+	    rewrite ^/(.*)$ /VirtualHostBase/$scheme/mydomain.com:443/MyDomain/VirtualHostRoot/$1 break;
 
 	    # this puts the originating request IP address in the logs
 	    proxy_pass http://127.0.0.1:8080/;
