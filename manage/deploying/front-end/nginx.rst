@@ -48,7 +48,7 @@ Create file ``/etc/nginx/sites-available/yoursite.conf`` with contents::
     # This specifies which IP and port Plone is running on.
     # The default is 127.0.0.1:8080
     upstream plone {
-        server 127.0.0.1:8090;
+        server 127.0.0.1:8080;
     }
 
     # Redirect all www-less traffic to the www.site.com domain
@@ -570,13 +570,13 @@ It uses two ``server`` blocks; the first listens for HTTP traffic and sends it t
 
 Some assumptions below:
 
-* you have placed your SSL certificate files ``mydomain.com.crt`` and ``mydomain.com.key`` in the ``/etc/ssl/localcerts/`` directory
+* you have placed your SSL certificate files ``yoursite.com.crt`` and ``yoursite.com.key`` in the ``/etc/ssl/localcerts/`` directory
 
 * you have set up a standalone Plone instance that is listening on port 8080 (as opposed to a multi-ZEO client install that would be listening on multiple ports and would require load balancing)
 
-* you are using the domain ``mydomain.com``
+* you are using the domain ``yoursite.com``
 
-* the ID of your site is ``MyDomain``
+* the ID of your site is ``Plone``
 
 .. code-block:: console
 
@@ -597,7 +597,7 @@ Some assumptions below:
     # this forces all unencrypted HTTP traffic on port 80 to be redirected to encrypted HTTPS
     server {
 	listen 80;
-	server_name mydomain.com;
+	server_name yoursite.com;
 	location / {
 	    rewrite ^ https://$server_name$request_uri permanent;
 	}
@@ -605,17 +605,17 @@ Some assumptions below:
 
     server {
 	listen 443 default ssl;
-	ssl_certificate /etc/ssl/localcerts/mydomain.com.crt;
-	ssl_certificate_key /etc/ssl/localcerts/mydomain.com.key;
-	server_name mydomain.com;
-	access_log /var/log/nginx/mydomain.com.access.log;
-	error_log /var/log/nginx/mydomain.com.error.log;
+	ssl_certificate /etc/ssl/localcerts/yoursite.com.crt;
+	ssl_certificate_key /etc/ssl/localcerts/yoursite.com.key;
+	server_name yoursite.com;
+	access_log /var/log/nginx/yoursite.com.access.log;
+	error_log /var/log/nginx/yoursite.com.error.log;
 
 	# Note that domain name spelling in VirtualHostBase URL matters
 	# -> this is what Plone sees as the "real" HTTP request URL.
-	# "Plone" in the URL is your site id (case sensitive)
+	# "Plone" in the URL is your site ID (case sensitive)
 	location / {
-	    rewrite ^/(.*)$ /VirtualHostBase/$scheme/mydomain.com:443/MyDomain/VirtualHostRoot/$1 break;
+	    rewrite ^/(.*)$ /VirtualHostBase/$scheme/yoursite.com:443/Plone/VirtualHostRoot/$1 break;
 
 	    # this puts the originating request IP address in the logs
 	    proxy_pass http://127.0.0.1:8080/;
