@@ -36,7 +36,7 @@ Example ``profiles/default/rolemap.xml``
     <rolemap>
       <roles>
         <role name="National Coordinator"/>
-        <role name="Sits Manager"/>
+        <role name="Site Manager"/>
       </roles>
       <permissions>
       </permissions>
@@ -56,8 +56,8 @@ Example ``profiles/default/sharing.xml``
     <sharing xmlns:i18n="http://xml.zope.org/namespaces/i18n"
              i18n:domain="plone">
       <role
-          id="Sits Coordinator"
-          title="Is a sits coordinator"
+          id="Site Manager"
+          title="Is a site coordinator"
           permission="Manage portal"
           i18n:attributes="title"
           />
@@ -66,11 +66,6 @@ Example ``profiles/default/sharing.xml``
 The title is the name to be shown on the sharing page. The required_permission
 is optional. If given, the user must have this permission to be allowed to
 manage the particular role.
-
-.. Note::
-
-    For Plone 3, there is the `collective.sharingroles <https://pypi.python.org/pypi/collective.sharingroles>`_ addon.
-    Since Plone 4, this is `merged into plone.app.workflow <https://github.com/plone/plone.app.workflow/commit/f9991ca0cc3dd2b8a2c392c145f44c21996eac67>`_.
 
 
 Setting local role
