@@ -35,7 +35,7 @@ Installation
 
 The suggest method to install Varnish is to use your OS package manager.
 
-* You can install using packages (RPM/DEB) - consult your operating system instructions.
+* You can install using packages (DEB) - consult your operating system instructions.
 
 * For more up to date packages for Debian you could check: https://www.varnish-cache.org/installation/debian
 
