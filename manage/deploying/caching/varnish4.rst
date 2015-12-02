@@ -39,8 +39,6 @@ The suggest method to install Varnish is to use your OS package manager.
 
 * For more up to date packages for Debian you could check: https://www.varnish-cache.org/installation/debian
 
-* For more up to date packages for RedHat (RPM Based) you could check: https://www.varnish-cache.org/installation/redhat
-
 * You can install backports
 
 * You can install using buildout
@@ -53,7 +51,7 @@ Management console
 ==================
 
 ``varnishadm``
---------------------------------------------
+--------------
 
 You can access Varnish admin console on your server by::
 
