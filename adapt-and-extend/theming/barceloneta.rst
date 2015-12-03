@@ -137,24 +137,6 @@ You can develop a custom Diazo based theme and use the Barceloneta theme only fo
 
         <theme href="index.html" />
 
-        <!-- Include basic plone/toolbar bundles -->
-        <after
-            css:theme-children="head"
-            css:content="head link[data-bundle='basic'], head link[data-bundle='plone'], head link[data-bundle='plone-logged-in'], head link[data-bundle='diazo']"
-            />
-        <after
-            css:theme-children="head"
-            css:content="head script[data-bundle='basic'], head script[data-bundle='plone'], head script[data-bundle='plone-logged-in'], script link[data-bundle='diazo']"
-            />
-
-        <!-- Insert the toolbar -->
-        <before
-            css:theme-children="body"
-            css:content-children="#edit-bar"
-            css:if-not-content=".ajax_load"
-            css:if-content=".userrole-authenticated"
-            />
-
         <!-- Your diazo front end rules go here -->
 
         </rules>
