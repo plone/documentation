@@ -163,7 +163,7 @@ The best way to clean up bad objects on your site is via a
 in which case remember to commit the transaction
 after removing the broken objects.
 
-Purging site from old content
+Purging old content from site 
 ========================================
 
 This term:`ZMI` script allows you to find content items of certain type and
