@@ -235,7 +235,6 @@ Example::
 
     }
 
-
     sub vcl_recv {
 
         #
@@ -249,33 +248,12 @@ Example::
             set req.http.Cookie = regsuball(req.http.Cookie, "^[; ]+|[; ]+$", "");
 
             if (req.http.Cookie == "") {
-                remove req.http.Cookie;
+                unset req.http.Cookie;
             }
         }
 
         call choose_backend;
-
-        if (req.request != "GET" &&
-          req.request != "HEAD" &&
-          req.request != "PUT" &&
-          req.request != "POST" &&
-          req.request != "TRACE" &&
-          req.request != "OPTIONS" &&
-          req.request != "DELETE") {
-            /* Non-RFC2616 or CONNECT which is weird. */
-            return (pipe);
-        }
-        if (req.request != "GET" && req.request != "HEAD") {
-            /* We only deal with GET and HEAD by default */
-            return (pass);
-        }
-        if (req.http.Authorization || req.http.Cookie) {
-            /* Not cacheable by default */
-            return (pass);
-        }
-        return (lookup);
     }
-
 
     #
     # Show custom helpful 500 page when the upstream does not respond
