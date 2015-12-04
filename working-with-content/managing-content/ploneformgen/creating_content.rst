@@ -10,7 +10,7 @@ Creating content from PFG
 
 This is actually very easy if you know a little Python and are willing to learn something about the content items you want to create.
 
-Please note that I'm not going to show you how to create new content types here. Just how to use PFG to create content objects from existing types. If you want to create new content types, learn to use Archetypes.
+Please note that I'm not going to show you how to create new content types here. Just how to use PFG to create content objects from existing types. If you want to create new content types, learn to use Dexterity.
 
 Your first step should be to determine the attributes you want to set in the new content item and how they'll map from your form fields.
 
@@ -18,14 +18,13 @@ In this case, we're going to use the sample contact form created when you first 
 
 Our mapping of form fields to content attributes will look like this:
 
-Form Field
-    Document Attribute
-Your E-Mail Address (replyto)
-    Description
-Subject (topic)
-    Title
-Comments (comments)
-    Body text
+============================= ==========================
+Form Field                    Document Attribute
+============================= ==========================
+Your E-Mail Address (replyto) Description
+Subject (topic)               Title
+Comments (comments)           Body text
+============================= ==========================
 
 Note that for each form field, we've determined its ID in the form. We'll use those to look up the field in the form submission.
 
@@ -41,7 +40,7 @@ Now, in the form folder, we add a "Custom Script Adapter" - which is just a very
     # our target folder is "submissions"
     target = context.submissions
 
-    # The request object has an dictionary attribute named
+    # The request object has a dictionary attribute named
     # form that contains the submitted form content, keyed
     # by field name
     form = request.form
