@@ -41,6 +41,21 @@ Buildout examples
 
 * https://pypi.python.org/pypi/plone.recipe.varnish
 
+VCL Basics
+==========
+
+The Varnish Configuration Language (VCL) provides a state machine for controlling Varnish.
+
+Make sure you read and understand the `VCL Basics <https://www.varnish-software.com/book/3/VCL_Basics.html>`_ before you continue.
+
+Some things that you must always keep in mind:
+
+* Each request is processed separately.
+* Each request is independent of any others going on at the same time, previously or later.
+* States are related, but isolated.
+* ``return(x);`` exits one state and instructs Varnish to proceed to the next state.
+* Default VCL code is always present, appended below your own VCL.
+
 Management console
 ==================
 
