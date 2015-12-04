@@ -477,32 +477,39 @@ Custom and full cache purges
 
 Below is an example how to create an action to purge the whole Varnish cache.
 
-First you need to allow ``HTTP PURGE`` request in ``default.vcl`` from
-``localhost``.
-We'll create a special ``PURGE`` command which takes URLs to be purged out of
-the cache in a special header::
+First you need to allow ``HTTP PURGE`` request in ``default.vcl`` from ``localhost``.
+
+We'll create a special ``PURGE`` command which takes URLs to be purged out of the cache in a special header::
 
     acl purge {
         "localhost";
-        # XXX: Add your local computer public IP here if you
-        # want to test the code against the production server
-        # from the development instance
+        "192.168.55.0"/24;
     }
-    ...
 
     sub vcl_recv {
-        ...
-        # Allow PURGE requests clearing everything
+        # allow PURGE from localhost and 192.168.55...
+
         if (req.request == "PURGE") {
             if (!client.ip ~ purge) {
                 error 405 "Not allowed.";
             }
-            # Purge for the current host using reg-ex from X-Purge-Regex header
-            purge("req.http.host == " req.http.host " && req.url ~ " req.http.X-Purge-Regex);
+            return (lookup);
+        }
+    }
+
+    sub vcl_hit {
+        if (req.request == "PURGE") {
+            purge;
             error 200 "Purged.";
         }
     }
 
+    sub vcl_miss {
+        if (req.request == "PURGE") {
+            purge;
+            error 200 "Purged.";
+        }
+    }
 
 Then let's create a Plone view which will make a request from Plone to Varnish (``upstream localhost:80``) and issue the ``PURGE`` command.
 We do this using the `Requests <https://pypi.python.org/pypi/requests>`_ Python library.
