@@ -24,12 +24,6 @@ To use Varnish with Plone
 
 * Add Plone virtual hosting rule to the default varnish configuration
 
-
-.. note ::
-
-    Some of these examples were written for Varnish 2.x.
-    Varnish 3.x (Jun 2011) has radically altered syntax of VCL language and command line tools, so you might need to adapt the examples a bit.
-
 Installation
 ============
 
@@ -303,35 +297,6 @@ Example::
       "};
       return(deliver);
     }
-
-Varnish 2.x example
--------------------
-
-When Varnish has been set-up you need to include Plone virtual hosting rule in its configuration file.
-
-If you want to map Varnish backend directly to Plone-as-a-virtualhost (i.e. Zope's VirtualHostMonster is used to map site name to Plone site instance id) use ``req.url`` mutating.
-
-The following maps the Plone site id *plonecommunity* to the *plonecommunity.mobi* domain.
-Plone is a single Zope instance, running on port 9999.
-
-Example::
-
-    backend plonecommunity {
-            .host = "127.0.0.1";
-            .port = "9999";
-    }
-
-    sub vcl_recv {
-            if (req.http.host ~ "^(www.)?plonecommunity.mobi(:[0-9]+)?$"
-                || req.http.host ~ "^plonecommunity.mfabrik.com(:[0-9]+)?$") {
-
-                    set req.backend = plonecommunity
-                    set req.url = "/VirtualHostBase/http/" req.http.host ":80/plonecommunity/VirtualHostRoot" req.url;
-                    set req.backend = plonecommunity;
-            }
-    }
-
-
 
 Varnishd port and IP address to listen
 =======================================
