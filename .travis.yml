@@ -15,7 +15,7 @@ install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
 - mkdir -p source && ln -s ../../documentation source/documentation
 - python bootstrap-buildout.py --setuptools-version=18.3.1 --version=2.4.3
-- bin/buildout -N -t 3 buildout:eggs-directory=../eggs buildout:checkout=documentation sources:documentation="fs documentation egg=false" versions:plone.app.robotframework=0.9.14
+- bin/buildout -N -t 3 buildout:eggs-directory=../eggs buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false" versions:plone.app.robotframework=0.9.14
 before_script:
 - echo '[general]' > docutils.conf
 - echo 'report_level = 5' >> docutils.conf
