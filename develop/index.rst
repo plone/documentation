@@ -25,7 +25,7 @@ Debugging Plone
 .. toctree::
    :maxdepth: 2
 
-    debugging/index
+   debugging/index
 
 
 Testing Plone
@@ -34,7 +34,7 @@ Testing Plone
 .. toctree::
    :maxdepth: 2
 
-    testing/index
+   testing/index
 
 
 Developing for Plone Core
@@ -52,7 +52,7 @@ The Plone Style Guide
 .. toctree::
    :maxdepth: 2
 
-    styleguide/index
+   styleguide/index
 
 
 Dev helper packages
