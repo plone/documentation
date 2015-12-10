@@ -40,11 +40,20 @@ Testing Plone
 Developing for Plone Core
 -------------------------
 
-
 .. toctree::
    :maxdepth: 2
 
    coredev/docs/index
+
+
+The Plone Style Guide
+---------------------
+
+.. toctree::
+   :maxdepth: 2
+
+    styleguide/index
+
 
 Dev helper packages
 ---------------------
