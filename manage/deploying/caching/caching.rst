@@ -1,6 +1,6 @@
-================
- Caching rules
-================
+=============
+Caching rules
+=============
 
 .. contents :: :local:
 
@@ -9,8 +9,9 @@
     How to program front end caching server (Varnish, Apache) to cache the
     content from Plone site and thus make it faster.
 
+
 Introduction
-===============
+============
 
 Plone caching is configured using the
 `plone.app.caching <https://pypi.python.org/pypi/plone.app.caching>`_ add-on.
@@ -55,7 +56,7 @@ operations here:
 
 
 Setting per-view cache rules
-==============================
+============================
 
 Here is an example how you can define a cache rules for your custom view
 class.  In this example we want to cache our site front page in Varnish,
@@ -128,7 +129,7 @@ control panel, we'll:
         as they are stored in the database.
 
 Testing the rule
------------------
+----------------
 
 * First, we'll test the rule on our local development computer to make sure
   that it loads;
@@ -217,8 +218,9 @@ More info:
 
 * http://stackoverflow.com/questions/6170962/plone-app-caching-for-front-page-only
 
+
 Creating a "cache forever" view
-================================
+===============================
 
 You might create views which generate or produce resources (images, JS, CSS)
 in-fly. If you refer this views always through content unique URL

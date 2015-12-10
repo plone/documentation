@@ -14,6 +14,9 @@ to set the names and location of your log files. We'll describe below the
 common names and locations. If this doesn't match your situation, check your
 buildout's zeoserver and zope2instance sections.
 
+.. note::
+    If Zope instance is started in the foreground mode logs will be printed in the console (stdout).
+
 ZEO server log
 ~~~~~~~~~~~~~~
 
@@ -47,8 +50,8 @@ Log levels
 ~~~~~~~~~~
 
 You may set the verbosity level of access and event logs via the zope2instance
-sections for your clients. This isn't very useful for event logs, but can be
-very useful for access logs. The default verbosity level for access
+sections for your clients. In the context of deployments, it can be
+very useful for change the loglevel for access logs. The default verbosity level for access
 logs - WARN - creates an entry for every HTTP access. If you are recording
 HTTP accesses via your proxy server, you may change the access logging level
 to "ERROR" and dramatically slow the rate at which your access logs grow::

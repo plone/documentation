@@ -18,6 +18,25 @@ Programming with Plone
 
    plone/index
 
+
+Debugging Plone
+---------------
+
+.. toctree::
+   :maxdepth: 2
+
+    debugging/index
+
+
+Testing Plone
+-------------
+
+.. toctree::
+   :maxdepth: 2
+
+    testing/index
+
+
 Developing for Plone Core
 -------------------------
 
