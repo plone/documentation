@@ -24,12 +24,6 @@ To use Varnish with Plone
 
 * Add Plone virtual hosting rule to the default varnish configuration
 
-
-.. note ::
-
-    Some of these examples were written for Varnish 2.x.
-    Varnish 3.x (Jun 2011) has radically altered syntax of VCL language and command line tools, so you might need to adapt the examples a bit.
-
 Installation
 ============
 
@@ -46,6 +40,21 @@ The suggest method to install Varnish is to use your OS package manager.
 Buildout examples
 
 * https://pypi.python.org/pypi/plone.recipe.varnish
+
+VCL Basics
+==========
+
+The Varnish Configuration Language (VCL) provides a state machine for controlling Varnish.
+
+Make sure you read and understand the `VCL Basics <https://www.varnish-software.com/book/3/VCL_Basics.html>`_ before you continue.
+
+Some things that you must always keep in mind:
+
+* Each request is processed separately.
+* Each request is independent of any others going on at the same time, previously or later.
+* States are related, but isolated.
+* ``return(x);`` exits one state and instructs Varnish to proceed to the next state.
+* Default VCL code is always present, appended below your own VCL.
 
 Management console
 ==================
@@ -226,7 +235,6 @@ Example::
 
     }
 
-
     sub vcl_recv {
 
         #
@@ -240,33 +248,12 @@ Example::
             set req.http.Cookie = regsuball(req.http.Cookie, "^[; ]+|[; ]+$", "");
 
             if (req.http.Cookie == "") {
-                remove req.http.Cookie;
+                unset req.http.Cookie;
             }
         }
 
         call choose_backend;
-
-        if (req.request != "GET" &&
-          req.request != "HEAD" &&
-          req.request != "PUT" &&
-          req.request != "POST" &&
-          req.request != "TRACE" &&
-          req.request != "OPTIONS" &&
-          req.request != "DELETE") {
-            /* Non-RFC2616 or CONNECT which is weird. */
-            return (pipe);
-        }
-        if (req.request != "GET" && req.request != "HEAD") {
-            /* We only deal with GET and HEAD by default */
-            return (pass);
-        }
-        if (req.http.Authorization || req.http.Cookie) {
-            /* Not cacheable by default */
-            return (pass);
-        }
-        return (lookup);
     }
-
 
     #
     # Show custom helpful 500 page when the upstream does not respond
@@ -303,35 +290,6 @@ Example::
       "};
       return(deliver);
     }
-
-Varnish 2.x example
--------------------
-
-When Varnish has been set-up you need to include Plone virtual hosting rule in its configuration file.
-
-If you want to map Varnish backend directly to Plone-as-a-virtualhost (i.e. Zope's VirtualHostMonster is used to map site name to Plone site instance id) use ``req.url`` mutating.
-
-The following maps the Plone site id *plonecommunity* to the *plonecommunity.mobi* domain.
-Plone is a single Zope instance, running on port 9999.
-
-Example::
-
-    backend plonecommunity {
-            .host = "127.0.0.1";
-            .port = "9999";
-    }
-
-    sub vcl_recv {
-            if (req.http.host ~ "^(www.)?plonecommunity.mobi(:[0-9]+)?$"
-                || req.http.host ~ "^plonecommunity.mfabrik.com(:[0-9]+)?$") {
-
-                    set req.backend = plonecommunity
-                    set req.url = "/VirtualHostBase/http/" req.http.host ":80/plonecommunity/VirtualHostRoot" req.url;
-                    set req.backend = plonecommunity;
-            }
-    }
-
-
 
 Varnishd port and IP address to listen
 =======================================
@@ -519,32 +477,39 @@ Custom and full cache purges
 
 Below is an example how to create an action to purge the whole Varnish cache.
 
-First you need to allow ``HTTP PURGE`` request in ``default.vcl`` from
-``localhost``.
-We'll create a special ``PURGE`` command which takes URLs to be purged out of
-the cache in a special header::
+First you need to allow ``HTTP PURGE`` request in ``default.vcl`` from ``localhost``.
+
+We'll create a special ``PURGE`` command which takes URLs to be purged out of the cache in a special header::
 
     acl purge {
         "localhost";
-        # XXX: Add your local computer public IP here if you
-        # want to test the code against the production server
-        # from the development instance
+        "192.168.55.0"/24;
     }
-    ...
 
     sub vcl_recv {
-        ...
-        # Allow PURGE requests clearing everything
+        # allow PURGE from localhost and 192.168.55...
+
         if (req.request == "PURGE") {
             if (!client.ip ~ purge) {
                 error 405 "Not allowed.";
             }
-            # Purge for the current host using reg-ex from X-Purge-Regex header
-            purge("req.http.host == " req.http.host " && req.url ~ " req.http.X-Purge-Regex);
+            return (lookup);
+        }
+    }
+
+    sub vcl_hit {
+        if (req.request == "PURGE") {
+            purge;
             error 200 "Purged.";
         }
     }
 
+    sub vcl_miss {
+        if (req.request == "PURGE") {
+            purge;
+            error 200 "Purged.";
+        }
+    }
 
 Then let's create a Plone view which will make a request from Plone to Varnish (``upstream localhost:80``) and issue the ``PURGE`` command.
 We do this using the `Requests <https://pypi.python.org/pypi/requests>`_ Python library.
