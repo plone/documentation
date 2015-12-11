@@ -66,7 +66,7 @@ Re-run buildout and see what's wrong.
 Dropping into pdb
 +++++++++++++++++++++++
 
-If you need to inspect start-up errors in Python's :doc:`debugger </manage/deploying/testing_tuning/testing_and_debugging/pdb>`.
+If you need to inspect start-up errors in Python's :doc:`debugger </develop/debugging/pdb>`.
 
 Activate Python configuration associated with your ``bin/instance`` script:
 

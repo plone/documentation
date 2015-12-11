@@ -30,7 +30,7 @@ Use them like this::
 The `plone.memoize <https://pypi.python.org/pypi/plone.memoize>`_ package
 offers helpful function decorators to cache return values.
 
-See also :doc:`using memcached backend for memoizers </manage/deploying/testing_tuning/performance/ramcache>`.
+See also :doc:`using memcached backend for memoizers <ramcache>`.
 
 Cache result for process lifecycle
 ==================================

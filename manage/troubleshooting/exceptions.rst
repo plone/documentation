@@ -1448,7 +1448,7 @@ this to NotFound error.
 
 
 **Solution**:
-* Put :doc:`pdb break statement </manage/deploying/testing_tuning/testing_and_debugging/pdb>` to the beginning of the __init__() method of your view. Then step through view code to see where the exception is raisen.
+* Put :doc:`pdb break statement </develop/debugging/pdb>` to the beginning of the __init__() method of your view. Then step through view code to see where the exception is raised.
 * If your view does not have __init__() method, then copy the source code __init__() method to your view class from the first parent class which has a view
 
 POSKeyError

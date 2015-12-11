@@ -91,7 +91,7 @@ How many ZEO clients, how much memory?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It's typical to allocate roughly one ZEO client for every processor core you have available.
-However, there are lots of trade-offs, and many clients will eat RAM rapidly. :doc:`About Instances, Threads and RAM consumption </manage/deploying/testing_tuning/performance/instancesthreads>` is a good guide to the issues involved.
+However, there are lots of trade-offs, and many clients will eat RAM rapidly. :doc:`About Instances, Threads and RAM consumption </manage/deploying/performance/instancesthreads>` is a good guide to the issues involved.
 
 Sticky sessions
 ~~~~~~~~~~~~~~~

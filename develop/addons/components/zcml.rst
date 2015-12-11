@@ -50,7 +50,7 @@ configuration files using the ``<include>`` directive.
 
 * ZCML is always interpreted during Plone start-up.
 
-* Your :doc:`unit test </manage/deploying/testing_tuning/testing_and_debugging/unit_testing>` may need to
+* Your :doc:`unit test </develop/testing/unit_testing>` may need to
   manually include ZCML.
 
 * :doc:`Funny exception error messages occur if Plone is started in the
