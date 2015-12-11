@@ -1,6 +1,6 @@
-==============
+=======
 Logging
-==============
+=======
 
 .. admonition:: Description
 
@@ -13,37 +13,32 @@ Introduction
 
 `Python logging package <http://docs.python.org/library/logging.html>`_ is used to log from Plone.
 
-Log file location
-==================
-
-By default, logs go to ``var/log`` folder under buildout.
-
-If Zope instance is started in the foreground mode
-logs will be printed in the console (stdout).
-
-Plone log filename varies depending on the installation mode (Zope, ZEO cluster).
-But for each instance there are two log files
-
-* Event logs (errors), normally called *instance.log*
-
-* HTTP request log (Apache compatible), normally called *Z2.log*
 
 Viewing logs in real time
-===========================
+-------------------------
 
-UNIX'y way for your terminal.
+The best way to trace log messages when developing, is start the Zope instance in foreground mode. Log messages are printed to the console (stdout).
 
-Open error log viewer using ``tail`` command (print content from file end) and wait for further file writes
+You can of course also view the logs from the logfile::
 
 .. code-block:: console
 
      tail -f var/log/instance.log
 
-
 Press CTRL+C to abort.
 
+
+The site error log service
+--------------------------
+
+Plone sites contain error log service which is located as *error_log* in the site root. It logs site exceptions and makes
+the tracebacks accessible from Plone control panel and ZMI.
+
+The service is somewhat archaic and can log exceptions only, not plain error messages.
+
+
 Log level
-=========
+---------
 
 Default log level is ``INFO``. To enable more verbose logging, edit ``buildout.cfg``,
 
