@@ -98,7 +98,7 @@ You can do this either in
 
 * :doc:`Your own BrowserView Python code </develop/plone/views/browserviews>`
 
-* :doc:`pdb breakpoint </manage/deploying/testing_tuning/testing_and_debugging/pdb>`
+* :doc:`pdb breakpoint </develop/debugging/pdb>`
 
 * :doc:`Command line Zope debug console </develop/plone/misc/commandline>`
 
@@ -224,7 +224,7 @@ You might want to modify all schema fields based on some criteria.
 Example how to hide all metadata fields::
 
 	for f in ExperienceEducatorSchema.filterFields(isMetadata=True): f.widget.visible = { "edit" : "invisible" }
-	
+
 Reordering fields
 -----------------
 

@@ -314,7 +314,7 @@ For each set of extracted credentials, try to authenticate
 a user;  accumulate a list of the IDs of such users over all
 our authentication and extraction plugins.
 
-``PluggableAuthService`` may use :doc:`ZCacheable </manage/deploying/testing_tuning/performance/ramcache>`
+``PluggableAuthService`` may use :doc:`ZCacheable </manage/deploying/performance/ramcache>`
 pattern to see if the user data exists already in the cache, based on
 any extracted credentials, instead of actually checking whether
 the credentials are valid or not. PluggableAuthService must

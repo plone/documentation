@@ -14,5 +14,5 @@ They not only apply to code, but also documentation, naming conventions and othe
     naming
     editor
 
-Some of the information here is taken from the :doc:`Core Development styleguide </develop/coredev/docs/style>` and the :doc:`plone.api contributing guide </develop/plone.api/docs/contribute/conventions>`
+Some of the information here is taken from the :doc:`plone.api contributing guide </develop/plone.api/docs/contribute/conventions>`
 

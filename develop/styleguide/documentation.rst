@@ -6,8 +6,8 @@ Styleguide for documentation
 General style guides on documentation
 =====================================
 
-For general information on how to write documentation, see :doc:`../../about/documentation_styleguide.rst`.
-Information on our Restructured Text style guide can be found here: :doc:`../../about/rst-styleguide.rst`.
+For general information on how to write documentation, see the :doc:`documentation styleguide </about/documentation_styleguide>`.
+Information on our Restructured Text style guide can be found in the: :doc:`REST styleguide </about/rst-styleguide>`.
 
 
 Restructured Text versus Plain Text
