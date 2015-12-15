@@ -27,7 +27,7 @@ Production deployment for Windows is typically very different from that on Unix-
 While some parts of the common open-source stack are available on Windows (Apache, for example), it's more common to integrate
 using tools like IIS that are often already in use in the enterprise.
 If your shop is committed to a Microsoft stack, this document won't be of much use to you.
-However, if you're on a Windows server, but open to using the (very often superior) open-source alternatives to non-Microsoft application components, the stack and tools discussion here may be very useful.
+However, if you're on a Windows server, but open to using the (very often superior) open-source alternatives to Microsoft application components, the stack and tools discussion here may be very useful.
 
 Audience
 ========
