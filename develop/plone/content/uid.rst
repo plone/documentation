@@ -112,7 +112,7 @@ If you run into this issue, here's an easy upgrade step to fix it::
 		addAttributeUUID(obj, None)
 		obj.reindexObject(idxs=['UID'])
 
-		if (index % 100 == 0):
+		if index % 100 == 0:
 		    # Commit every 100 items
 		    transaction.commit()
 
