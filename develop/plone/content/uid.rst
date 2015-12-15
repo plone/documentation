@@ -160,7 +160,7 @@ Use lookupObject() in reference catalog.
 	>>> site.reference_catalog.lookupObject('ce380ef0f10a85beb864025928e1819b')
 	<ATBTreeFolder at /test/events>
 
-*None* will be returned if there is content item with matching UID (the item has been deleted).
+*None* will be returned if there is no content item matching the specified UID.
 
 
 
