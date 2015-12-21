@@ -21,7 +21,7 @@ Skills required to understand this tutorial include:
 
 * The ability to add an SQL database connection and Z SQL Methods via the Zope Management Interface and to understand what they do. If you've never read the Relational Database Connectivity chapter of the Zope Book, take some time now to do it; it's fundamental.
 
-* Simple Python scripting via the ZMI. Read the python-based scripts portions of the Advanced Zope Scripting chapter of the Zope Book if you're new to this vital Zope/Plone development skill.
+* Simple Python scripting via the Zope Management Interface (ZMI). Read the python-based scripts portions of the Advanced Zope Scripting chapter of the Zope Book if you're new to this vital Zope/Plone development skill.
 
 Our basic steps will be to:
 
@@ -78,7 +78,7 @@ The form
 Now, create a PloneFormGen form with three fields:
 
 uid
-    An string field with id uid, marked hidden, with a default value of "-1". Later in the tutorial, we'll use the "-1" as a marker value to indicate a new record.
+    An string field with id *uid*, marked hidden, with a default value of "-1". Later in the tutorial, we'll use the "-1" as a marker value to indicate a new record.
 
 string1
     A string field with id string1.
@@ -86,18 +86,24 @@ string1
 string2
     A string field with id string2.
 
+![screenshot1](sql_crud_ss1.png) 
+
 Note that the form field ids must exactly match our column ids. You can script your way around this requirement, but it's a lot easier this way.
 
 While you're at it, turn off or delete the mailer action adapter. It's harmless, but it would be a distraction.
 
 That's it. We now have a form that matches our database table.
 
+![screenshot1](sql_crud_ss2.png) 
+
 Inserting rows
 ==============
 
 In this step, we create a method to insert a row, and show how to make simple use of it.
 
-Now, inside the Zope Management Interface, in your form folder, create a Z SQL Method with the id *testCreateRow*.
+Now, inside the ZMI, in your form folder, create a Z SQL Method with the id *testCreateRow*.
+
+![screenshot1](sql_crud_ss3.png) 
 
 Set the parameters:
 
@@ -118,15 +124,18 @@ Then, in the big text area, specify the code:
 
 Note: always use <dtml-sqlvar ...> to insert your variables. It protects you against SQL-injection attacks by SQL quoting the values.
 
-Now for a little magic: Z SQL Methods can pick up their arguments from REQUEST.form, which is exactly where Zope is putting your form variables when you submit a form. That means that you can just go to the [overrides] pane of your Form Folder and set ``here/testCreateRow`` as your After Validation Script.
+![screenshot1](sql_crud_ss4.png) 
+
+Now for a little magic: Z SQL Methods can pick up their arguments from REQUEST.form, which is exactly where Zope is putting your form variables when you submit a form. To do this, switch from the ZMI to view your form through your site. Click "Edit" and select the "Overrides" tab. Under the heading "After Validation Script," enter ``here/testCreateRow` and click "save".
 
 Your form will now store its input into your SQL table! Add a few rows to check it out.
+
 Reading a Row, Filling in the Fields
+====================================
 
-If we want to update records, we're going to have to get rows from our SQL table and use the columns to populate our form fields.
-The SQL
+If we want to update records, we're going to have to get rows from our SQL table and use the columns to populate our form fields. This process is similar to what you just did to insert a row.
 
-Now, use the ZMI to create, inside your form folder, a Z SQL Method named testReadRow. Set up the following parameters:
+Go back to the ZMI and from inside your form folder, add a Z SQL Method named *testReadRow*. Set up the following parameters:
 
 Connection ID
     Choose your test database adapter.
@@ -182,7 +191,7 @@ The rest of the code checks to make sure that we got one result, and throws all 
 The form
 ========
 
-Now, just go to the [override] pane of your form folder, and specify ``here/formSetup`` for your Form Setup Script.
+Now, just go to the [Overrides] pane of your form folder, and specify ``here/formSetup`` for your Form Setup Script.
 
 Calling The Form
 ----------------
@@ -202,7 +211,7 @@ Updating or inserting as necessary
 
 In this step, we'll create an update SQL method and show how to selectively update or insert data.
 
-Using the ZMI, create a Z SQL Method inside your form folder with the id testUpdateRow. For its parameters, set:
+Using the ZMI, create a Z SQL Method inside your form folder with the id *testUpdateRow*. For its parameters, set:
 
 
 Connection ID
@@ -239,7 +248,7 @@ Let's use that knowledge in a simple switchboard script with the id doUpdateInse
     else:
         context.testCreateRow()
 
-Now, go to the [overrides] pane of your form folder and set ``here/doUpdateInsert`` as the *AfterValidationScript*.
+Now, go to the [Overrides] pane of your form folder and set ``here/doUpdateInsert`` as the *AfterValidationScript*.
 
 .. Note:: Believe it or not ... you're done.
 
