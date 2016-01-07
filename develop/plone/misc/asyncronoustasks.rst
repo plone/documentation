@@ -1,6 +1,6 @@
-=================================
+============================
  Clock and asyncronous tasks
-=================================
+============================
 
 
 .. admonition:: Description
@@ -10,7 +10,7 @@
 .. contents:: :local:
 
 Cron jobs
-==================
+=========
 
 You can use simple UNIX cron + wget combo to make timed jobs in Plone.
 
@@ -29,7 +29,7 @@ can be authenticated using HTTP Basic Auth.
   if permissions aren't sufficient.
 
 Clock server
-==================
+============
 
 You can make Zope to make regular calls to your views.
 
@@ -80,7 +80,7 @@ production server and is never committed to the version control::
                 secret.cfg
 
 Creating a separate ZEO instance for long running tasks
-------------------------------------------------------------------------------------
+-------------------------------------------------------
 
 Below is an example how to extend a single process Plone instance buildout to
 contain two ZEO front end processes, client1 and client2 and dedicate client2
@@ -96,7 +96,7 @@ The purpose of this is that client2 does heavy writes to the database, potential
 blocking the normal site operation of the site if we don't have a separate client for it.
 
 We create additional ``production.cfg`` file which extends the default ``buildout.cfg`` file.
-You still can use ``buildout.cfg`` as is for the development, but on the productoin server
+You still can use ``buildout.cfg`` as is for the development, but on the production server
 your buildout command must be run for the ZEO server enabled file.
 
 Actual clock server jobs, with usernames and passwords, are stored in a separate ``secret.cfg``
@@ -207,7 +207,7 @@ recommended to put it under the version control::
 
 
 Asynchronous
-==================
+============
 
 Asyncronous tasks are long-running tasks which are run on their own thread.
 
