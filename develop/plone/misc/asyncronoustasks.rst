@@ -101,7 +101,7 @@ your buildout command must be run for the ZEO server enabled file.
 
 Actual clock server jobs, with usernames and passwords, are stored in a separate ``secret.cfg``
 file which is only available on the production server and is not stored in the version control system.
-The user credentials for a specially created a Zope user, not Plone user.
+The user credentials for a specially created Zope user, not Plone user.
 This user can be created through ``acl_users`` in Zope root in ZMI.
 
 We also include ``plonectl`` command for easy management of ZEO server, client1 and client2.
