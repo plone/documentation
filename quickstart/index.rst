@@ -13,8 +13,6 @@ Online demo sites
 If you're just curious to see how Plone looks, without any modifications, there are a few online demo sites that can help you.
 Both `plone5demo.quintagroup.com <http://plone5demo.quintagroup.com/>`_ and `plone5.veit-schiele.de/ <https://plone5.veit-schiele.de/>`_ provide you with a Plone 5 site that is re-set every day.
 
-Do note that Plone 5 is currently still in beta/RC status.
-
 An interesting approach was developed by Nejc Zupan: `Plone on a free-tier Heroku <http://www.niteoweb.com/blog/dear-plone-welcome-to-2014>`_ . That way, you can set up your own demo (or even very-light-weight production) Plone, which makes it a good fit to have Plone with your choice of add-ons be tested by your department or other group.
 
 
