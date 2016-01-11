@@ -336,6 +336,39 @@ These are the ``Products.CMFPlone.resources`` API methods:
 
 - ``add_resource_on_request(request, bundle)``: Adds an individual resource to the current request by specifying its name.
 
+Bundle aggregation for production
+=================================
+
+Principle
+---------
+
+To reduce the amount of resources loaded in each page, Plone standard bundles are aggregated together.
+
+A first aggregation named `default` contains all the bundles that must be available everytime. It corresponds to 2 outputs (one JS and one CSS). A second aggregation named `logged-in` contains the bundles only needed for authenticated users. It also corresponds to 2 outputs (JS and CSS).
+
+The aggregation is triggered by a GenericSetup step depending on the `registry.xml` file.
+Any profile containing the `registry.xml` file will automatically refresh the current aggregations with the declared bundles.
+
+As bundles can be defined or modified TTW, Plone will also provide a "Merge bundles for production" button in the Resource registry that allows to re-generate the aggregations.
+
+Declaring aggregation
+---------------------
+
+Custom bundles from an add-on or from a theme can be aggregated with the standard Plone bundles using the `merge_with` property. Its value can be `default` or `logged-in`.
+
+.. code-block:: xml
+
+  <records prefix="plone.bundles/my-bundle"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="merge_with">logged-in</value>
+    ...
+  </record>
+
+If the `merge_with` property is not defined or is empty, the bundle is not aggregated and is published separately.
+
+.. note:: If the `merge_with` property value is `default` or `logged-in`, the `expression` property will not be considered.
+
+.. note:: In Development mode, aggregation is disabled, all bundles are published separately.
 
 Diazo Bundles
 =============
