@@ -291,13 +291,31 @@ Also you need to register this custom import step in ``configure.zcml``
         xmlns="http://namespaces.zope.org/zope"
         xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
-      <!-- Register the import step -->
       <genericsetup:importStep
           name="your.package"
           title="your.package special import handlers"
           description=""
           handler="your.package.setuphandlers.setup_various"
           />
+
+    </configure>
+
+You can run other steps before yours by using the ``depends`` directive.
+For instance, if your import step depends on a content type to be installed first, you must use:
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+      <genericsetup:importStep
+          name="your.package"
+          title="your.package special import handlers"
+          description=""
+          handler="your.package.setuphandlers.setup_various">
+        <depends name="content" />
+      </genericsetup:importStep>
 
     </configure>
 
