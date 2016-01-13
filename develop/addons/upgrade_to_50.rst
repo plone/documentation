@@ -68,3 +68,16 @@ But any custom redirection or form submission will have to include a token provi
 
     from plone.protect.utils import addTokenToUrl
     url = addTokenToUrl(url)
+
+
+plone.app.stagingbehavior
+-------------------------
+
+plone.app.stagingbehavior was used to enable versioning functionality for Dexterity-based content types.
+It allowed you to perform the checkout and checkin operations to work on a copy of your original content on Plone 4.
+
+The version of plone.app.iterate used in Plone 5 implements this already making that package obsolete
+
+You should remove any hard dependency on plone.app.stagingbehavior from your add-on to avoid issues.
+
+See https://github.com/collective/collective.cover/pull/577/files for an example on how to achieve that.
