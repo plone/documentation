@@ -186,9 +186,7 @@ For more information, see :doc:`command-line scripts </develop/plone/misc/comman
 Visualizing object graphs
 =========================
 
-* http://blog.hannosch.eu/2009/05/visualizing-persistent-structure-of.html
-
-* http://david.wglick.org/2009/visualizing-the-zodb-with-graphviz/
+* http://glicksoftware.com/blog/visualizing-the-zodb-with-graphviz
 
 Cache size
 ==========
