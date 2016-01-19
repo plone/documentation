@@ -32,7 +32,7 @@ If you absolutely need to break this rule, append ``# noPEP8`` to the offending 
     but is a bit more relaxed there.
     It explicitly **does not** aply to documentation ``.rst`` files.
     For rst files, use *semantic* linebreaks.
-    See `the Plone rst styleguide <http://docs.plone.org/about/rst-styleguide.html#line-length-translations>`_ for the reasoning behind it.
+    See the :doc:`REST styleguide </about/rst-styleguide.html#line-length-translations>`_ for the reasoning behind it.
 
 Breaking lines
 --------------

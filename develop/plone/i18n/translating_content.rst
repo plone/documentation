@@ -88,8 +88,7 @@ Marking fields as language independent
 Archetypes
 ^^^^^^^^^^
 
-The language independent fields on Archetype-based content are marked the same
-way as in LinguaPlone::
+The language independent fields on Archetype-based content are marked as follows (same as in previous version of Plone with LinguaPlone in place)::
 
     atapi.StringField(
         'myField',
