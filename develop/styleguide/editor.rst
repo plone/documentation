@@ -25,3 +25,10 @@ and add the following configuration on ``~/.editorconfig``.
 
     [Makefile]
     indent_style = tab
+
+
+dotfiles
+--------
+
+Some Plone developers use dotfiles similar to these: `plone.dotfiles <https://github.com/plone/plone.dotfiles>`_. This might inspire you with your own dotfiles/configuration settings.
+
