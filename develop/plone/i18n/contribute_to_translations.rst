@@ -1,6 +1,6 @@
-=============================================
+============================================
 How to contribute to Plone core translations
-=============================================
+============================================
 
 .. admonition:: Description
 
@@ -9,7 +9,7 @@ How to contribute to Plone core translations
 .. contents:: :local:
 
 Introduction
-=============
+============
 
 You need to have write access to
 https://github.com/collective/plone.app.locales to be able to commit
@@ -75,7 +75,7 @@ Please do a ``git pull`` before editing a po file to be sure you have the latest
 version.
 
 Committing directly (commit access)
--------------------------------------
+-----------------------------------
 
 You can commit your translation from this locales directory:
 
@@ -86,7 +86,7 @@ You can commit your translation from this locales directory:
 
 
 Creating a pull request (no commit access)
---------------------------------------------------------------------------
+------------------------------------------
 
 If you do not have commit access on Github `collective group <https://github.com/collective>`_.
 you can do the following:
@@ -112,8 +112,3 @@ Support
 
 Please ask questions on the `plone-i18n mailing-list <https://plone.org/support/forums/i18n>`_.
 
-
-Statistics for Plone 4
-======================
-
-http://www.transifex.net/projects/p/Plone/
