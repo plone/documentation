@@ -7,6 +7,11 @@ Upgrading Plone 4.x to 5.0
 
    Instructions and tips for upgrading to a newer Plone version.
 
+.. notes::
+
+   If you want to upgrade addons to Plone 5, also see: ../../../develop/addons/upgrade_to_50.rst
+
+
 .. contents:: :local:
 
 Changes due to implemented PLIPS
@@ -83,6 +88,11 @@ Example:
 
 plone.app.multilingual
 ======================
+
+.. note::
+
+   The preferred translation addon for Plone 5 is plone.app.multilingual.
+   This package supersedes LinguaPlone.
 
 ..  warning::
 

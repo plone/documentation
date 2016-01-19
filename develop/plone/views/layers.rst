@@ -184,7 +184,6 @@ More information
 
 * https://pypi.python.org/pypi/plone.browserlayer
 
-* See example in `LinguaPlone <https://github.com/plone/Products.LinguaPlone/blob/master/Products/LinguaPlone/profiles/default/browserlayer.xml>`_.
 
 Add-on layer for changing existing behavior
 -------------------------------------------

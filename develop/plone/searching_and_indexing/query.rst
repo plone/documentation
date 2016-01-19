@@ -355,7 +355,7 @@ Example::
         (Pdb) for i in data.items(): print i
         ('Title', ['ulkomuseon', 'tarinaopastukset'])
         ('effectiveRange', (21305115, 278752140))
-        ('object_provides', ['Products.CMFCore.interfaces._content.IDublinCore', 'Products.ATContentTypes.interface.interfaces.IHistoryAware', 'AccessControl.interfaces.IOwned', 'OFS.interfaces.ITraversable', 'plone.portlets.interfaces.ILocalPortletAssignable', 'Products.Archetypes.interfaces._base.IBaseObject', 'zope.annotation.interfaces.IAttributeAnnotatable', 'vs.event.interfaces.IVSEvent', 'Products.CMFCore.interfaces._content.IMutableMinimalDublinCore', 'OFS.interfaces.IPropertyManager', 'OFS.interfaces.IZopeObject', 'AccessControl.interfaces.IRoleManager', 'zope.annotation.interfaces.IAnnotatable', 'Acquisition.interfaces.IAcquirer', 'Products.ATContentTypes.interface.event.IATEvent', 'OFS.interfaces.ICopySource', 'Products.LinguaPlone.interfaces.ITranslatable', 'Products.ATContentTypes.interface.interfaces.ICalendarSupport', 'Products.ATContentTypes.interface.interfaces.IATContentType', 'plone.app.iterate.interfaces.IIterateAware', 'Products.Archetypes.interfaces._base.IBaseContent', 'Products.CMFCore.interfaces._content.ICatalogableDublinCore', 'Products.CMFDynamicViewFTI.interface._base.IBrowserDefault', 'Products.Archetypes.interfaces._referenceable.IReferenceable', 'plone.locking.interfaces.ITTWLockable', 'plone.app.imaging.interfaces.IBaseObject', 'persistent.interfaces.IPersistent', 'webdav.interfaces.IDAVResource', 'AccessControl.interfaces.IPermissionMappingSupport', 'OFS.interfaces.ISimpleItem', 'plone.app.kss.interfaces.IPortalObject', 'plone.app.kss.interfaces.IContentish', 'archetypes.schemaextender.interfaces.IExtensible', 'App.interfaces.IUndoSupport', 'OFS.interfaces.IManageable', 'App.interfaces.IPersistentExtra', 'Products.CMFCore.interfaces._content.IMutableDublinCore', 'Products.Archetypes.interfaces._athistoryaware.IATHistoryAware', 'dateable.kalends.IRecurringEvent', 'OFS.interfaces.IItem', 'zope.interface.Interface', 'OFS.interfaces.IFTPAccess', 'Products.CMFDynamicViewFTI.interface._base.ISelectableBrowserDefault', 'webdav.interfaces.IWriteLock', 'Products.CMFCore.interfaces._content.IMinimalDublinCore', 'Products.CMFCore.interfaces._content.IDynamicType', 'Products.CMFCore.interfaces._content.IContentish'])
+        ('object_provides', ['Products.CMFCore.interfaces._content.IDublinCore', 'Products.ATContentTypes.interface.interfaces.IHistoryAware', 'AccessControl.interfaces.IOwned', 'OFS.interfaces.ITraversable', 'plone.portlets.interfaces.ILocalPortletAssignable', 'Products.Archetypes.interfaces._base.IBaseObject', 'zope.annotation.interfaces.IAttributeAnnotatable', 'vs.event.interfaces.IVSEvent', 'Products.CMFCore.interfaces._content.IMutableMinimalDublinCore', 'OFS.interfaces.IPropertyManager', 'OFS.interfaces.IZopeObject', 'AccessControl.interfaces.IRoleManager', 'zope.annotation.interfaces.IAnnotatable', 'Acquisition.interfaces.IAcquirer', 'Products.ATContentTypes.interface.event.IATEvent', 'OFS.interfaces.ICopySource', 'Products.ATContentTypes.interface.interfaces.ICalendarSupport', 'Products.ATContentTypes.interface.interfaces.IATContentType', 'plone.app.iterate.interfaces.IIterateAware', 'Products.Archetypes.interfaces._base.IBaseContent', 'Products.CMFCore.interfaces._content.ICatalogableDublinCore', 'Products.CMFDynamicViewFTI.interface._base.IBrowserDefault', 'Products.Archetypes.interfaces._referenceable.IReferenceable', 'plone.locking.interfaces.ITTWLockable', 'plone.app.imaging.interfaces.IBaseObject', 'persistent.interfaces.IPersistent', 'webdav.interfaces.IDAVResource', 'AccessControl.interfaces.IPermissionMappingSupport', 'OFS.interfaces.ISimpleItem', 'plone.app.kss.interfaces.IPortalObject', 'plone.app.kss.interfaces.IContentish', 'archetypes.schemaextender.interfaces.IExtensible', 'App.interfaces.IUndoSupport', 'OFS.interfaces.IManageable', 'App.interfaces.IPersistentExtra', 'Products.CMFCore.interfaces._content.IMutableDublinCore', 'Products.Archetypes.interfaces._athistoryaware.IATHistoryAware', 'dateable.kalends.IRecurringEvent', 'OFS.interfaces.IItem', 'zope.interface.Interface', 'OFS.interfaces.IFTPAccess', 'Products.CMFDynamicViewFTI.interface._base.ISelectableBrowserDefault', 'webdav.interfaces.IWriteLock', 'Products.CMFCore.interfaces._content.IMinimalDublinCore', 'Products.CMFCore.interfaces._content.IDynamicType', 'Products.CMFCore.interfaces._content.IContentish'])
         ('Type', u'VSEvent')
         ('id', 'ulkomuseon-tarinaopastukset')
         ('cmf_uid', 2)
@@ -446,14 +446,6 @@ Example of how to bypass language check::
 
     all_content_brains = portal_catalog(Language="")
 
-Some older LinguaPlone versions, which are still using ``LanguageIndex`` to
-keep language information in portal_catalog() may require::
-
-    all_content_brains = portal_catalog(Language="all")
-
-More information
-
-* http://plone.293351.n2.nabble.com/Products-LinguaPlone-LanguageIndex-vs-FieldIndex-td5554729.html#a5747819
 
 Bypassing Expired content check
 ================================
@@ -811,7 +803,7 @@ You can query by language::
 
 .. note ::
 
-        Products.LinguaPlone must be installed.
+        plone.app.multilingual must be installed.
 
 Boolean queries (AdvancedQuery)
 =========================================
