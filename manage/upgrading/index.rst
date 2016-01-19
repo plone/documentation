@@ -1,6 +1,6 @@
-======================
+===================
 Plone Upgrade Guide
-======================
+===================
 
 .. admonition:: Description
 
@@ -15,7 +15,6 @@ Plone Upgrade Guide
 
     intro
     preparations
-    plone4_minor_upgrade
     addon_upgrade
     troubleshooting
     version_specific_migration/index

@@ -100,7 +100,6 @@ develop/plone/i18n/language.rst:460: [broken] http://plone.org/products/archgenx
 develop/plone/i18n/language.rst:212: [broken] https://github.com/plone/plone.app.i18n/tree/master/plone/app/i18n/locales/browser/languageselector.pt: <urlopen error [Errno -2] Name or service not known>
 develop/plone/i18n/translating_content.rst:680: [broken] https://svn.plone.org/svn/collective/raptus.multilanguagefields/trunk/raptus/multilanguagefields/samples/: HTTP Error 404: Not Found
 develop/plone/i18n/translating_content.rst:65: [broken] http://n2.nabble.com/languageIndependent-fields-not-updated-td2430489.html: <urlopen error [Errno -2] Name or service not known>
-develop/plone/i18n/translating_content.rst:63: [broken] https://pypi.python.org/pypi/Products.LinguaPlone/3.1a2#language-independent-fields: <urlopen error [Errno -2] Name or service not known>
 develop/plone/i18n/translating_content.rst:166: [broken] https://pypi.python.org/pypi/redturtle.smartlink/: <urlopen error [Errno -2] Name or service not known>
 develop/plone/images/content.rst:33: [broken] https://github.com/plone/Products.CMFPlone/tree/master/Products/CMFPlone/profiles/default/types/Image.xml: HTTP Error 404: Not Found
 develop/plone/images/content.rst:87: [broken] http://plone.293351.n2.nabble.com/Register-browser-view-for-image-scales-tp5626267p5626267.html: <urlopen error [Errno -2] Name or service not known>
@@ -147,7 +146,6 @@ develop/plone/persistency/transactions.rst:32: [broken] http://www.zope.org/Memb
 develop/plone/searching_and_indexing/catalog.rst:323: [broken] http://svn.zope.org/Zope/trunk/src/Products/ZCatalog/ZCatalog.py?rev=96262&view=auto: timed out
 develop/plone/searching_and_indexing/indexing.rst:218: [broken] http://maurits.vanrees.org/weblog/archive/2009/12/catalog: HTTP Error 500: Internal Server Error
 develop/plone/searching_and_indexing/indexing.rst:74: [broken] https://mail.zope.org/pipermail/zope-cmf/2007-March/025664.html: <urlopen error [Errno -2] Name or service not known>
-develop/plone/searching_and_indexing/query.rst:456: [broken] http://plone.293351.n2.nabble.com/Products-LinguaPlone-LanguageIndex-vs-FieldIndex-td5554729.html#a5747819: Anchor 'a5747819' not found
 develop/plone/searching_and_indexing/query.rst:795: [broken] http://www.ifpeople.net/fairsource/courses/material/apiPlone_en: <urlopen error [Errno -2] Name or service not known>
 develop/plone/security/permission_lists.rst:95: [broken] http://markmail.org/thread/3izsoh2ligthfcou: <urlopen error [Errno -2] Name or service not known>
 develop/plone/security/permissions.rst:107: [broken] http://api.plone.org/CMF/1.5.4/private/AccessControl.Role.RoleManager-class.html: HTTP Error 404: Not Found

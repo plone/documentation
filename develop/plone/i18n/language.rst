@@ -1,6 +1,10 @@
-====================
+==================
 Language functions
-====================
+==================
+
+.. note::
+
+    TODO: rework this section.
 
 .. admonition:: Description
 
@@ -171,232 +175,21 @@ Using ``GenericSetup`` and ``propertiestool.xml``
        </object>
     </object>
 
-On ``LinguaPlone``-enabled sites, using GenericSetup XML
-``portal_languages.xml``
-
-.. code-block:: xml
-
-    <?xml version="1.0"?>
-    <object>
-     <default_language value="fi"/>
-     <use_path_negotiation value="False"/>
-     <use_cookie_negotiation value="True"/>
-     <use_request_negotiation value="False"/>
-     <use_cctld_negotiation value="False"/>
-     <use_combined_language_codes value="False"/>
-     <display_flags value="True"/>
-     <start_neutral value="False"/>
-     <supported_langs>
-      <element value="en"/>
-      <element value="fi"/>
-     </supported_langs>
-    </object>
-
 
 Customizing language selector
 =============================
 
-Multilingual Plone has two kinds of language selector viewlets:
-
-* Plone vanilla
-
-* LinguaPlone -  LinguaPlone has its own language selector which replaces
-  the default Plone selector if the add on product is installed.
-
-
-More information
-
-* https://github.com/plone/plone.app.i18n/blob/master/plone/app/i18n/locales/browser/selector.py
-
-* https://github.com/plone/plone.app.i18n/blob/master/plone/app/i18n/locales/browser/languageselector.pt
-
-* https://github.com/plone/Products.LinguaPlone/blob/master/Products/LinguaPlone/browser/selector.py
-
 Making language flags point to different top level domains
 ----------------------------------------------------------
 
-If you use multiple domain names for different languages it is often
-desirable to make the language selector point to a different domain. Search
-engines do not really like the dynamic language switchers and will index
-switching links, messing up your site search results.
+If you use multiple domain names for different languages it is often desirable to make the language selector point to a different domain.
+Search engines do not really like the dynamic language switchers and will index switching links, messing up your site search results.
 
-Example
+Example: TODO
 
-.. code-block:: html
-
-    <tal:language
-        tal:define="available view/available;
-                    languages view/languages;
-                    showFlags view/showFlags;">
-
-
-        <ul id="portal-languageselector"
-            tal:condition="python:available and len(languages)>=2">
-            <tal:language repeat="lang languages">
-            <li tal:define="code lang/code;
-                            selected lang/selected"
-                tal:attributes="class python: selected and 'currentLanguage' or '';">
-
-                    <a href=""
-                       tal:condition="python:code =='fi'"
-                       tal:define="flag lang/flag|nothing;
-                                   name lang/name"
-                       tal:attributes="href string:http://www.twinapex.fi;
-                                       title name">
-                        <tal:flag condition="python:showFlags and flag">
-                            <img
-                                 width="14"
-                                 height="11"
-                                 alt=""
-                                 tal:attributes="src string:${view/portal_url}${flag};
-                                                 title python: name;
-                                                 class python: selected and 'currentItem' or '';" />
-                        </tal:flag>
-                        <tal:nonflag condition="python:not showFlags or not flag"
-                                     replace="name">language name</tal:nonflag>
-                    </a>
-
-                    <a href=""
-                       tal:condition="python:code =='en'"
-                       tal:define="flag lang/flag|nothing;
-                                   name lang/name"
-                       tal:attributes="href string:http://www.twinapex.com;
-                                       title name">
-                        <tal:flag condition="python:showFlags and flag">
-                            <img
-                                 width="14"
-                                 height="11"
-                                 alt=""
-                                 tal:attributes="src string:${view/portal_url}${flag};
-                                                 title python: name;
-                                                 class python: selected and 'currentItem' or '';" />
-                        </tal:flag>
-                        <tal:nonflag condition="python:not showFlags or not flag"
-                                     replace="name">language name</tal:nonflag>
-                    </a>&nbsp;
-
-            </li>
-            </tal:language>
-        </ul>
-    </tal:language>
-
-
-Custom language negotiator
-==========================
-
-Below some example code.
-
-``languages.py``::
-
-        """ Custom language negotiator based on hostname.
-        """
-
-        from Products.PloneLanguageTool import LanguageTool
-
-        # These are default languages available when hostname cannot be solved
-        all_languages = [ "fi", "en" ]
-
-        def get_host_name(request):
-            """ Extract host name in virtual host safe manner
-
-            @param request: HTTPRequest object, assumed contains environ dictionary
-
-            @return: Host DNS name, as requested by client. Lowercased, no port part.
-            """
-
-            if "HTTP_X_FORWARDED_HOST" in request.environ:
-                # Virtual host
-                host = request.environ["HTTP_X_FORWARDED_HOST"]
-            elif "HTTP_HOST" in request.environ:
-                # Direct client request
-                host = request.environ["HTTP_HOST"]
-            else:
-                host = None
-                return host
-
-            # separate to domain name and port sections
-            host=host.split(":")[0].lower()
-
-            return host
-
-
-        def get_language(domain_name):
-            """
-            @param domain_name: Full qualified domain name of HTTP request
-            """
-
-            if domain_name.endswith(".mobi") or domain_name.endswith(".com"):
-                return "en"
-            elif domain_name.endswith(".fi"):
-                return "fi"
-            else:
-                return "en"
-
-        def getCcTLDLanguages(self):
-            """
-            Monkey-patched top level domain language negotiator.
-
-            This will be installed by collective.monkeypatcher.
-            """
-
-            if not hasattr(self, 'REQUEST'):
-                return None
-
-            request = self.REQUEST
-
-            # Could not extract hostname
-            hostname = get_host_name(request)
-
-            if not hostname:
-                return all_languages
-
-            # Limit available languages based on hostname
-            langs = [ get_language(hostname) ]
-
-            return langs
-
-        # Also we need to fix a bug present in Plone 3.3.5
-        #
-        #    @memoize
-        #    def language(self):
-        #        # TODO Looking for lower-case language is wrong, the negotiator
-        #        # machinery uses uppercase LANGUAGE. We cannot change this as long
-        #        # as we don't ship with a newer PloneLanguageTool which respects
-        #        # the content language, though.
-        #        return self.request.get('language', None) or \
-        #                aq_inner(self.context).Language() or self.default_language()
-
-        from plone.memoize.view import memoize, memoize_contextless
-
-        def working_portal_state_language(self):
-                return self.request.get('LANGUAGE', None) or \
-                        self.request.get('language', None) or \
-                        aq_inner(self.context).Language() or \
-                        self.default_language()
-
-        working_portal_state_language = memoize(working_portal_state_language)
-
-``configure.zcml``
-
-.. code-block:: xml
-
-  <!-- Use collective.monkeypatcher to introduce our custom language negotiation phase -->
-  <monkey:patch
-        description="Add custom TLD language resolution"
-        class="Products.PloneLanguageTool.LanguageTool"
-        original="getCcTLDLanguages"
-        replacement=".languages.getCcTLDLanguages"
-        />
-
-  <monkey:patch
-        description="Fix Plone 3.3.5 bug"
-        class="plone.app.layout.globals.portal.PortalState"
-        original="language"
-        replacement=".languages.working_portal_state_language"
-        />
 
 Login-aware language negotiation
-==========================================
+================================
 
 By default, language negotiation happens before authentication.
 Therefore, if you wish to use authenticated credentials in the negotiation,

@@ -1,11 +1,16 @@
-=========================================================
+==========================
 Upgrading Plone 4.x to 5.0
-=========================================================
+==========================
 
 
 .. admonition:: Description
 
    Instructions and tips for upgrading to a newer Plone version.
+
+.. notes::
+
+   If you want to upgrade addons to Plone 5, also see: ../../../develop/addons/upgrade_to_50.rst
+
 
 .. contents:: :local:
 
@@ -61,7 +66,7 @@ Linkintegrity in Plone 5
 
 
 Changed imports and functions
-========================================
+=============================
 
 
 Products.CMFPlone.interfaces.IFactoryTool
@@ -83,6 +88,11 @@ Example:
 
 plone.app.multilingual
 ======================
+
+.. note::
+
+   The preferred translation addon for Plone 5 is plone.app.multilingual.
+   This package supersedes LinguaPlone.
 
 ..  warning::
 
@@ -110,7 +120,7 @@ There are 3 different parts to the migration from LinguaPlone to plone.app.multi
 
 
 Archetypes
-============
+==========
 
 Plone 5 now uses dexterity as the content type engine instead of Archetypes.
 
@@ -226,7 +236,7 @@ This defines the compiled resource used in production mode.
 
 
 But, it's a bit more work
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, we know. We tried very hard to figure out the easiest way to modernize Plone's JavaScript development stack.
 The old, sequential inclusion is not useful these days.
