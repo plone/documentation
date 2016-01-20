@@ -369,11 +369,11 @@ Versioning scheme
 For software versions, use a sequence-based versioning scheme, which is
 `compatible with setuptools <http://pythonhosted.org/setuptools/setuptools.html#specifying-your-project-s-version>`_::
 
-    MAJOR.MINOR[.MICRO][STATUS]
+    MAJOR.MINOR[.MICRO][.STATUS]
 
 The way, setuptools interprets versions is intuitive::
 
-    1.0 < 1.1dev < 1.1a1 < 1.1a2 < 1.1b < 1.1rc1 < 1.1 < 1.1.1
+    1.0 < 1.1.dev < 1.1.a1 < 1.1.a2 < 1.1.b < 1.1.rc1 < 1.1 < 1.1.1
 
 You can test it with setuptools::
 
