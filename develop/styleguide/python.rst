@@ -382,6 +382,12 @@ You can test it with setuptools::
     ... < parse_version('1.1.a1') < parse_version('1.1.a2')
     ... < parse_version('1.1.b') < parse_version('1.1.rc1')
     ... < parse_version('1.1') < parse_version('1.1.1')
+    True
+
+``dev`` and ``dev0`` are treated as the same::
+
+    >>> parse_version('1.1.dev') == parse_version('1.1.dev0')
+    True
 
 Setuptools recommends to seperate parts with a dot. The website about `semantic
 versioning <http://semver.org/>`_ is also worth a read.
