@@ -105,13 +105,14 @@ virtualenv*
 Libraries
 ---------
 
-* libz (dev)
-* libjpeg (dev)*
-* readline (dev)*
 * libexpat (dev)
+* libfreetype6 (dev)
+* libjpeg (dev)*
 * libssl or openssl (dev)
 * libxml2 >= 2.7.8 (dev)*
 * libxslt >= 1.1.26 (dev)*
+* libz (dev)
+* readline (dev)*
 
 Plone 4.1
 =========
