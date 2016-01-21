@@ -93,7 +93,7 @@ Install the operating system software and libraries needed to run Plone
 
 .. code-block:: console
 
-    sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+    sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev libfreetype6-dev
 
 .. note::
 
