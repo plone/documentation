@@ -58,12 +58,11 @@ System libraries
 
 For any install, the development versions of:
 
-* libfreetype6
-* libjpeg
 * libssl
-* libxml2/libxslt
 * libz
+* libjpeg
 * readline
+* libxml2/libxslt
 
 If you're using the System Python, add:
 
