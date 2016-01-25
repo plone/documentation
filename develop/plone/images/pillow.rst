@@ -2,15 +2,7 @@
 Pillow (PIL Fork)
 =================
 
-Plone uses internally Pillow a fork of PIL (Python Imaging Library)
-for low level image manipulation and decoding.
-
-`Pillow <https://pypi.python.org/pypi/Pillow>`_ was created to offer better multi-OS installation support. Specifically it offers:
-
-- Setuptools compatibility
-- Hosting (and mirroring) by PyPI (vs. off site)
-- Windows eggs
-- Bug fixes (many of which simply add vendor-specific library directories to the compiler's search path.)
+Plone uses `Pillow <https://pypi.python.org/pypi/Pillow>`_, a fork of the Python Imaging Library (PIL) for low-level image manipulation and decoding, particularly for GIF, JPEG and PNG image formats.
 
 Installing Pillow
 =================
@@ -19,7 +11,7 @@ For instructions how to install Pillow and its dependencies, please read:
 
 https://pillow.readthedocs.org/en/latest/installation.html
 
-
+Note particularly the dependencies on the development packages of libjpeg and libz. Other image format support may be required for special projects, but libjpeg and libz are required for GIF, JPEG and PNG support.
 
 
 
