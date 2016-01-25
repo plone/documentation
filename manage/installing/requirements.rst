@@ -114,7 +114,8 @@ Libraries
 * libxslt >= 1.1.26 (dev)*
 
 
-
+You may also need to install dependencies needed by `Pillow <https://pillow.readthedocs.org/en/latest/>`_ a fork of the Python Image Libary.
+For further information please read: https://pillow.readthedocs.org/en/latest/installation.html
 
 Minimal build
 =============
