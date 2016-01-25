@@ -309,23 +309,21 @@ About imports
 Grouping and sorting
 --------------------
 
-Since Plone has such a huge code base, we don't want to lose developer time
-figuring out into which group some import goes (standard lib?, external
-package?, etc.). So we just sort everything alphabetically and insert one blank
-line between ``from foo import bar`` and ``import baz`` blocks. Conditional imports
-come last. Again, we *do not* distinguish between what is standard lib,
-external package or internal package in order to save time and avoid the hassle
-of explaining which is which.
+Since Plone has such a huge code base, we don't want to lose developer time figuring out into which group some import goes (standard lib?, external package?, etc.).
+So we just sort everything alphabetically, case insensitive and insert one blank line between ``from foo import bar`` and ``import baz`` blocks.
+Conditional imports come last.
+
+Again, we *do not* distinguish between what is standard lib, external package or internal package in order to save time and avoid the hassle of explaining which is which.
 
 .. sourcecode:: python
 
     # GOOD
     from __future__ import division
     from Acquisition import aq_inner
+    from Products.CMFCore.WorkflowCore import WorkflowException
+    from Products.CMFCore.interfaces import ISiteRoot
     from plone.api import portal
     from plone.api.exc import MissingParameterError
-    from Products.CMFCore.interfaces import ISiteRoot
-    from Products.CMFCore.WorkflowCore import WorkflowException
 
     import pkg_resources
     import random
