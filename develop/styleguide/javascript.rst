@@ -162,7 +162,7 @@ lines are wrongly assumed to be executed within a block.
 Binding the "this" variable versus assigning to "self"
 ------------------------------------------------------
 
-One of the deficiencies in Javascript is that callback functions are not
+One of the deficiencies in JavaScript is that callback functions are not
 bound to the correct or expected context (as referenced with the ``this`` variable). In
 `ES2015 <https://babeljs.io/docs/learn-es2015/>`__, this problem is
 solved by using so-called arrow functions for callbacks.
@@ -222,7 +222,7 @@ For example:
 Use named functions
 -------------------
 
-Javascript has both named functions and unnamed functions.
+JavaScript has both named functions and unnamed functions.
 
 ::
 
@@ -262,7 +262,7 @@ Custom events
 -------------
 
 A pattern can send custom events for either internal purposes, or as a
-hook for third party javascript. Since IE8 is still supported
+hook for third party JavaScript. Since IE8 is still supported
 `CustomEvent <http://dochub.io/#dom/customevent>`__ can not be used.
 Instead you must send custom events using `jQuery's trigger
 function <http://api.jquery.com/trigger/>`__. Event names must follow
