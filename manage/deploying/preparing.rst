@@ -73,6 +73,10 @@ Without the system Python (Unified Installer builds Python):
 
 build-essential (gcc/make)
 
+You may also need to install dependencies needed by `Pillow <https://pillow.readthedocs.org/en/latest/>`_ a fork of the Python Image Libary.
+For further information please read: https://pillow.readthedocs.org/en/latest/installation.html
+
+
 Optional libraries
 ++++++++++++++++++
 
