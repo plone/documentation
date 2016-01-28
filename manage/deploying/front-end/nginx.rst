@@ -1,6 +1,6 @@
-=======
+======
  Nginx
-=======
+======
 
 .. admonition:: Description
 
@@ -18,7 +18,7 @@ Nginx is an modern alternative server to Apache.
 * It handles HTTPS.
 
 Minimal Nginx front end configuration for Plone on Ubuntu/Debian Linux
-=======================================================================
+======================================================================
 
 This is a minimal configuration to run nginx on Ubuntu/Debian in front of a Plone site.
 These instructions are *not* for configurations where one uses the buildout configuration tool to build a static Nginx server.
@@ -111,7 +111,7 @@ The example above works with Plone 4.x and up (including TinyMCE) but it very wi
 *  http://www.w3.org/TR/CSP/
 
 Buildout and recipe
-====================
+===================
 
 If, and only if, you cannot use a platform install of nginx you may use the recipe and buildout example below to get started.
 
@@ -127,7 +127,7 @@ When you change the configuration of nginx in buildout you probably don't want t
     bin/buildout -c production.cfg install balancer
 
 Config test
-============
+===========
 
 Assuming you have a buildout nginx section called ``balancer``::
 
@@ -138,7 +138,7 @@ Assuming you have a buildout nginx section called ``balancer``::
     configuration file /srv/plone/isleofback/parts/balancer/balancer.conf test is successful
 
 Deployment configuration
-=========================
+========================
 
 `gocept.nginx <https://pypi.python.org/pypi/gocept.nginx/>`_ supports a special deployment configuration where you manually configure all directories.
 One important reason why you might wish to do this, is to change the location of the ``pid`` file.
@@ -183,7 +183,7 @@ Then you can use the following cycle to update the configuration::
 
 
 Manually killing nginx
-=======================
+======================
 
 You have lost ``PID`` file, or the recorded ``PID`` does not match the real ``PID`` any longer.  Use buildout's starter script as a search key:
 
@@ -245,7 +245,7 @@ More info
 * https://stackoverflow.com/questions/7947030/nginx-no-www-to-www-and-www-to-no-www
 
 Permanent redirect
-===================
+==================
 
 Below is an example redirect rule::
 
@@ -262,7 +262,7 @@ Below is an example redirect rule::
     You can add more specific matches after location /.
 
 Cleaning up query string
---------------------------
+------------------------
 
 By default, nginx includes all trailing ``HTTP GET`` query parameters in the redirect.
 You can disable this behavior by adding a trailing ?::
@@ -302,11 +302,8 @@ More info on nginx redirects
 * http://scott.yang.id.au/2007/04/do-you-need-permalink-redirect/
 
 
-
-
-
 Make nginx aware where the request came from
-=============================================
+============================================
 
 If you set up nginx to run in front of Zope, and set up a virtual host with it like this::
 
@@ -331,18 +328,6 @@ To solve this problem correct your configuration to be like this::
                     proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
             }
     }
-
-
-PHP with nginx and PHP-FPM
-===========================
-
-If you are coming from Apache world, you may be used to the scenario where Apache handles all php-related stuff.
-With nginx, it's a bit different: nginx does not automatically spawn FCGI processes, so you must start them separately.
-In fact, FCGI is a lot like proxying, which means that PHP-FPM will run as a separate server and all we need to do is to forward the request to it.
-
-A detailed tutorial on how to set it all up, configure and run it can be found here:
-
-* http://alasdoo.com/2010/12/xdv-plone-and-phpbb-under-one-nginx-roof/
 
 
 SSI: server-side include
@@ -413,7 +398,7 @@ Here is a configuration that sets up the filtering and turns on SSI for a specif
 
 
 Session affinity
-=================
+================
 
 If you intend to use nginx for session balancing between ZEO processes, you need to be aware of session affinity.
 By default, ZEO processes don't share session data.
@@ -422,7 +407,7 @@ If you have site functionality which stores user-specific data on the server, le
 Make sure that your :doc:`Zope session cookie </develop/plone/sessions/cookies>` are not cleared by any front-end server (nginx, Varnish).
 
 By using IP addresses
--------------------------
+---------------------
 
 This is the most reliable way. nginx will balance each incoming request to a front end client by the request's source IP address.
 
@@ -431,7 +416,7 @@ This method is reliable as long as nginx can correctly extract IP address from t
 * http://wiki.nginx.org/NginxHttpUpstreamModule#ip_hash
 
 By using cookies
-------------------
+----------------
 
 These instructions assume you are installing nginx via buildout.
 
@@ -547,7 +532,7 @@ For instructions how to use SSL for all authenticated traffic see this blog-post
 * http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
 
 Setting log files
-=============================
+=================
 
 nginx.conf example::
 
