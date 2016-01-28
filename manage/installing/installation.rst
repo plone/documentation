@@ -316,6 +316,21 @@ LibXML2/LibXSLT Versions
 
 Don't worry about this if you're using an installer.
 
+Docker-based installation (platform independent)
+------------------------------------------------
+
+Prerequisites: `Docke engine <https://docs.docker.com/engine/installation/>` installed on your host(s).
+
+There is still no official Plone docker Image however you can use the community-based `eeacms/plone <https://hub.docker.com/r/eeacms/plone/>` which is flexible enough to be configured for all kind of setups, even cluster multi-host setups. It automates and facilitate the entire installation process via single commands, since the docker image is prebuild.
+
+For a basic installation:
+
+$ docker run -p 8080:8080 eeacms/plone
+
+The above will first download the images (first time) and than exposing plone on the host port 8080. Now go to http://<yourserverip>:8080 to see Plone in action.
+
+For more information and configuration options see `README file on guthub <https://github.com/eea/eea.docker.plone>`.
+
 Entering debug mode after installation
 ======================================
 
