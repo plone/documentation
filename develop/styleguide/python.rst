@@ -348,6 +348,7 @@ Add the following::
 
 To either ``.isort.cfg`` or changing the header from ``[settings]`` to ``[isort]`` and putting it on ``setup.cfg``.
 
+You can also use `plone.recipe.codeanalysis <http://pypi.python.org/pypi/plone.recipe.codeanalysis>`_ with the `flake8-isort <https://pypi.python.org/pypi/flake8-isort>`_ plugin enabled to check for it.
 
 Declaring dependencies
 ======================
