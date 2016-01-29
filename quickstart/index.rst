@@ -13,8 +13,7 @@ Online demo sites
 If you're just curious to see how Plone looks, without any modifications, there are a few online demo sites that can help you.
 Both `plone5demo.quintagroup.com <http://plone5demo.quintagroup.com/>`_ and `plone5.veit-schiele.de/ <https://plone5.veit-schiele.de/>`_ provide you with a Plone 5 site that is re-set every day.
 
-An interesting approach was developed by David Bain: `Installing Plone 5 on Cloud9 IDE <http://blog.dbain.com/2015/09/installing-plone-5-on-cloud9-ide.html>`_ . That way, you can set up your own demo (or even very-light-weight production) Plone, which makes it a good fit to have Plone with your choice of add-ons be tested by your department or other group.
-
+Another interesting approach to try out Plone is to install it in a cloud service. That way, you can set up your own demo (or even very-light-weight production) Plone, which makes it a good fit to have Plone with your choice of add-ons be tested by your department or other group. Here are two blog posts that show you how to do this: `Plone on a free-tier Heroku <http://blog.niteoweb.com/dear-plone-welcome-to-year-2014/>`_ by Nejc Zupan and `Installing Plone 5 on Cloud9 IDE <http://blog.dbain.com/2015/09/installing-plone-5-on-cloud9-ide.html>`_ by David Bain.
 
 
 Plone on your own machine
