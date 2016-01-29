@@ -334,6 +334,20 @@ external package or internal package in order to save time and avoid the hassle 
     else:
         HAS_DEXTERITY = True
 
+`isort <http://pypi.python.org/pypi/isort>`_,
+a python tool to sort imports can be configured to sort exactly as described above.
+
+Add the following::
+
+    [settings]
+    force_alphabetical_sort=True
+    force_single_line=True
+    lines_after_imports=2
+    line_length=200
+    not_skip=__init__.py
+
+To either ``.isort.cfg`` or changing the header from ``[settings]`` to ``[isort]`` and putting it on ``setup.cfg``.
+
 
 Declaring dependencies
 ======================
