@@ -309,13 +309,10 @@ About imports
 Grouping and sorting
 --------------------
 
-Since Plone has such a huge code base, we don't want to lose developer time
-figuring out into which group some import goes (standard lib?, external
-package?, etc.). So we just sort everything alphabetically and insert one blank
-line between ``from foo import bar`` and ``import baz`` blocks. Conditional imports
-come last. Again, we *do not* distinguish between what is standard lib,
-external package or internal package in order to save time and avoid the hassle
-of explaining which is which.
+Since Plone has such a huge code base,
+we don't want to lose developer time figuring out into which group some import goes (standard lib?, external package?, etc.).
+So we just sort everything alphabetically case insensitive and insert one blank line between ``from foo import bar`` and ``import baz`` blocks. Conditional imports come last. Again, we *do not* distinguish between what is standard lib,
+external package or internal package in order to save time and avoid the hassle of explaining which is which.
 
 .. sourcecode:: python
 
@@ -337,6 +334,21 @@ of explaining which is which.
     else:
         HAS_DEXTERITY = True
 
+`isort <http://pypi.python.org/pypi/isort>`_,
+a python tool to sort imports can be configured to sort exactly as described above.
+
+Add the following::
+
+    [settings]
+    force_alphabetical_sort=True
+    force_single_line=True
+    lines_after_imports=2
+    line_length=200
+    not_skip=__init__.py
+
+To either ``.isort.cfg`` or changing the header from ``[settings]`` to ``[isort]`` and putting it on ``setup.cfg``.
+
+You can also use `plone.recipe.codeanalysis <http://pypi.python.org/pypi/plone.recipe.codeanalysis>`_ with the `flake8-isort <https://pypi.python.org/pypi/flake8-isort>`_ plugin enabled to check for it.
 
 Declaring dependencies
 ======================
