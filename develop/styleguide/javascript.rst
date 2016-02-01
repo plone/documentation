@@ -1,12 +1,10 @@
 JavaScript styleguide
 =====================
 
-*NOTE: Plone doesn't yet use any of the new
-`ES2015 <https://babeljs.io/docs/learn-es2015/>`__ features.*
+*NOTE: Plone doesn't yet use any of the new `ES2015 <https://babeljs.io/docs/learn-es2015/>`__ features.*
 
-Many of the style guide recommendations here come from Douglas
-Crockford's seminal book `Javascript, the good
-parts <http://shop.oreilly.com/product/9780596517748.do>`__.
+Many of the style guide recommendations here come from Douglas Crockford's seminal book `Javascript, the good parts <http://shop.oreilly.com/product/9780596517748.do>`__.
+
 
 Indentation
 -----------
@@ -14,10 +12,10 @@ Indentation
 Indentation is an important aid for readability and comprehension.
 When editing a file, please keep to the convention already established.
 
-In `Patternslib <http://patternslib.com>`_ we indent 4 spaces as suggested by
-Douglas Crockford in *Javascript, the good parts*.
+In `Patternslib <http://patternslib.com>`_ we indent 4 spaces as suggested by Douglas Crockford in *Javascript, the good parts*.
 
 The `Mockup <https://github.com/plone/mockup>` patterns on the other hand indent 2 spaces.
+
 
 Naming of variables, classes and functions
 ------------------------------------------
@@ -36,6 +34,7 @@ For example:
         ...
     }
 
+
 jQuery objects are prefixed with $
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -47,6 +46,7 @@ For example:
 
     var divs = document.getElementsByTagName('div'); // List of DOM elements
     var $divs = $('div'); // jQuery object
+
 
 Spaces around operators
 -----------------------
@@ -69,14 +69,13 @@ An exception is when they appear inside for-loop expressions, for example:
         // do something
     }
 
-Generally though, rather err on the side of adding spaces, since they
-make the code much more readable.
+Generally though, rather err on the side of adding spaces, since they make the code much more readable.
+
 
 Constants are written in ALL\_CAPS
 ----------------------------------
 
-Identifiers that denote constant values should be written in all capital
-letters, with underscores between words.
+Identifiers that denote constant values should be written in all capital letters, with underscores between words.
 
 For example:
 
@@ -85,13 +84,11 @@ For example:
     var SECONDS_IN_HOUR = 3600; // constant
     var seconds_since_click = 0; // variable
 
+
 Function declaration and invocation
 -----------------------------------
 
-In his book, *Javascript, the good parts*, Douglas Crockford suggests
-that function names and the brackets that come afterwards should be
-separated with a space, to indicate that it's a declaration and not a
-function call or instantiation.
+In his book, *Javascript, the good parts*, Douglas Crockford suggests that function names and the brackets that come afterwards should be separated with a space, to indicate that it's a declaration and not a function call or instantiation.
 
 ::
 
@@ -101,22 +98,23 @@ function call or instantiation.
 
     update(model); // function call
 
-This practice however doesn't appear to be very common and is also not
-used consistently throughout the codebase. It might however be
-useful sometimes, to reduce confusion.
+This practice however doesn't appear to be very common and is also not used consistently throughout the codebase.
+It might however be useful sometimes, to reduce confusion.
+
 
 Checking for equality
 ---------------------
 
-Javascript has a strict ``===`` and less strict ``==`` equality
-operator. The stricter operator also does type checking. To avoid subtle
-bugs when doing comparisons, always use the strict equality check.
+Javascript has a strict ``===`` and less strict ``==`` equality operator.
+The stricter operator also does type checking.
+To avoid subtle bugs when doing comparisons, always use the strict equality check.
+
 
 Curly brackets
 --------------
 
-Curly brackets must appear on the same lines as the ``if`` and ``else``
-keywords. The closing curly bracket appears on its own line.
+Curly brackets must appear on the same lines as the ``if`` and ``else`` keywords.
+The closing curly bracket appears on its own line.
 
 For example:
 
@@ -131,13 +129,12 @@ For example:
         }
     }
 
+
 Always enclose blocks in curly brackets
 ---------------------------------------
 
-When writing an a block such as an ``if`` or ``while`` statement, always
-use curly brackets around that block of code. Even when not strictly
-required by the compiler (for example if its only one line inside the
-``if`` statement).
+When writing an a block such as an ``if`` or ``while`` statement, always use curly brackets around that block of code.
+Even when not strictly required by the compiler (for example if its only one line inside the ``if`` statement).
 
 For example, like this:
 
@@ -156,19 +153,16 @@ and **NOT** like this:
         this.updateRoomsList();
     somethingElse();
 
-This is to aid in readability and to avoid subtle bugs where certain
-lines are wrongly assumed to be executed within a block.
+This is to aid in readability and to avoid subtle bugs where certain lines are wrongly assumed to be executed within a block.
+
 
 Binding the "this" variable versus assigning to "self"
 ------------------------------------------------------
 
-One of the deficiencies in JavaScript is that callback functions are not
-bound to the correct or expected context (as referenced with the ``this`` variable). In
-`ES2015 <https://babeljs.io/docs/learn-es2015/>`__, this problem is
-solved by using so-called arrow functions for callbacks.
+One of the deficiencies in JavaScript is that callback functions are not bound to the correct or expected context (as referenced with the ``this`` variable).
+In `ES2015 <https://babeljs.io/docs/learn-es2015/>`__, this problem is solved by using so-called arrow functions for callbacks.
 
-However, while we're still writing ES5 code, we can use the ``.bind``
-method to bind the correct ``this`` context to the callback method.
+However, while we're still writing ES5 code, we can use the ``.bind`` method to bind the correct ``this`` context to the callback method.
 
 For example:
 
@@ -180,11 +174,11 @@ For example:
         this.$el.hide();
     }.bind(this), 1000);
 
+
 What about assigning the outer "this" to "self"?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A different way of solving the above problem is to assign the outer
-``this`` variable to ``self`` and then using ``self`` in the callback.
+A different way of solving the above problem is to assign the outer ``this`` variable to ``self`` and then using ``self`` in the callback.
 
 For example:
 
@@ -198,16 +192,12 @@ For example:
 
 This practice is commonly used in the Mockup patterns.
 
-It is however discouraged in Patternslib because it results
-in much longer functions due to the fact that callback functions can't
-be moved out of the containing function where ``self`` is defined.
+It is however discouraged in Patternslib because it results in much longer functions due to the fact that callback functions can't be moved out of the containing function where ``self`` is defined.
 
-Additionally, ``self`` is by default an alias for ``window``. If you
-forget to use ``var self``, there's the potential for bugs that can be
-difficult to track down.
+Additionally, ``self`` is by default an alias for ``window``.
+If you forget to use ``var self``, there's the potential for bugs that can be difficult to track down.
 
-Douglas Crockford and others suggest that the variable ``that`` be used
-instead, which is also the convention we follow in Patternslib.
+Douglas Crockford and others suggest that the variable ``that`` be used instead, which is also the convention we follow in Patternslib.
 
 For example:
 
@@ -218,6 +208,7 @@ For example:
     setTimeout(function () {
         that.$el.hide();
     }, 1000);
+
 
 Use named functions
 -------------------
@@ -232,9 +223,9 @@ JavaScript has both named functions and unnamed functions.
     // This is an unnamed function
     var foo = function() { };
 
-Unnamed functions are convenient, but result in unreadable call stacks
-and profiles. This makes debugging and profiling code unnecessarily
-hard. To fix this always use named functions for non-trivial functions.
+Unnamed functions are convenient, but result in unreadable call stacks and profiles.
+This makes debugging and profiling code unnecessarily hard.
+To fix this always use named functions for non-trivial functions.
 
 ::
 
@@ -242,12 +233,9 @@ hard. To fix this always use named functions for non-trivial functions.
         ...
     });
 
-An exception to this rule are trivial functions that do not call any
-other functions, such as functions passed to Array.filter or
-Array.forEach.
+An exception to this rule are trivial functions that do not call any other functions, such as functions passed to Array.filter or Array.forEach.
 
-Pattern methods must always be named, and the name should be prefixed
-with the pattern name to make them easy to recognize.
+Pattern methods must always be named, and the name should be prefixed with the pattern name to make them easy to recognize.
 
 ::
 
@@ -258,34 +246,29 @@ with the pattern name to make them easy to recognize.
         _onClick: function mypatternOnClick(e) { }
     };
 
+
 Custom events
 -------------
 
-A pattern can send custom events for either internal purposes, or as a
-hook for third party JavaScript. Since IE8 is still supported
-`CustomEvent <http://dochub.io/#dom/customevent>`__ can not be used.
-Instead you must send custom events using `jQuery's trigger
-function <http://api.jquery.com/trigger/>`__. Event names must follow
-the ``pat-<pattern name>-<event name>`` pattern.
+A pattern can send custom events for either internal purposes, or as a hook for third party JavaScript.
+Since IE8 is still supported `CustomEvent <http://dochub.io/#dom/customevent>`__ can not be used.
+Instead you must send custom events using `jQuery's trigger function <http://api.jquery.com/trigger/>`__.
+Event names must follow the ``pat-<pattern name>-<event name>`` pattern.
 
 ::
 
     $(el).trigger("pat-tooltip-open");
 
-The element must be dispatched from the element that caused something to
-happen, *not* from the elements that are changed as a result of an
-action.
+The element must be dispatched from the element that caused something to happen, *not* from the elements that are changed as a result of an action.
 
-All extra data must be passed via a single object. In a future Patterns
-release this will be moved to the ``detail`` property of a CustomEvent
-instance.
+All extra data must be passed via a single object.
+In a future Patterns release this will be moved to the ``detail`` property of a CustomEvent instance.
 
 ::
 
     $(el).trigger("pat-toggle-toggled", {value: new_value});
 
-Event listeners can access the provided data as an extra parameter
-passed to the event handler.
+Event listeners can access the provided data as an extra parameter passed to the event handler.
 
 ::
 
@@ -293,12 +276,11 @@ passed to the event handler.
     }
     $(".myclass").on("pat-toggle-toggled", onToggled);
 
+
 Event listeners
 ---------------
 
-All event listeners registered using
-`jQuery.fn.on <http://api.jquery.com/on/>`__ must be namespaced with
-``pat-<pattern name>``.
+All event listeners registered using `jQuery.fn.on <http://api.jquery.com/on/>`__ must be namespaced with ``pat-<pattern name>``.
 
 ::
 
@@ -306,13 +288,12 @@ All event listeners registered using
         $el.on("click.pat-mypattern", mypattern._onClick);
     }
 
+
 Storing arbitrary data
 ----------------------
 
-When using `jQuery.fn.data <http://api.jquery.com/data/>`__ the storage
-key must either be ``pat-<pattern name>`` if a single value is stored,
-or ``pat-<pattern name>-<name>`` if multiple values are stored. This
-prevents conflicts with other code.
+When using `jQuery.fn.data <http://api.jquery.com/data/>`__ the storage key must either be ``pat-<pattern name>`` if a single value is stored, or ``pat-<pattern name>-<name>`` if multiple values are stored.
+This prevents conflicts with other code.
 
 ::
 
