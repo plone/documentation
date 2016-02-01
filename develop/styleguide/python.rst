@@ -297,6 +297,7 @@ Grouping and sorting
 Since Plone has such a huge code base, we don't want to lose developer time figuring out into which group some import goes (standard lib?, external package?, etc.).
 So we just sort everything alphabetically case insensitive and insert one blank line between ``from foo import bar`` and ``import baz`` blocks.
 Conditional imports come last.
+Don't use multi-line imports but import each identifier from a module in a separate line.
 Again, we *do not* distinguish between what is standard lib, external package or internal package in order to save time and avoid the hassle of explaining which is which.
 
 .. sourcecode:: python
@@ -304,6 +305,8 @@ Again, we *do not* distinguish between what is standard lib, external package or
     # GOOD
     from __future__ import division
     from Acquisition import aq_inner
+    from datetime import datetime
+    from datetime import timedelta
     from plone.api import portal
     from plone.api.exc import MissingParameterError
     from Products.CMFCore.interfaces import ISiteRoot
@@ -376,7 +379,7 @@ You can test it with setuptools::
     >>> parse_version('1.1.dev') == parse_version('1.1.dev0')
     True
 
-Setuptools recommends to seperate parts with a dot.
+Setuptools recommends to separate parts with a dot.
 The website about `semantic versioning <http://semver.org/>`_ is also worth a read.
 
 
