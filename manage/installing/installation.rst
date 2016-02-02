@@ -137,13 +137,13 @@ Extract the downloaded file
 
 .. code-block:: console
 
-    tar -xf Plone-5.0-UnifiedInstaller.tgz
- 
+    tar -xf Plone-5.0.2-UnifiedInstaller.tgz
+
 Go the folder containing installer script
 
 .. code-block:: console
 
-    cd Plone-5.0-UnifiedInstaller
+    cd Plone-5.0.2-UnifiedInstaller
 
 .. note::
 
