@@ -14,6 +14,16 @@ Upgrading Plone 4.x to 5.0
 
 .. contents:: :local:
 
+
+General information
+===================
+
+- Before you upgrade read :doc:`../into.rst` and :doc:`../preparations.rst`.
+- Always upgrade from the latest version of 4.x to the latest version of 5.x (at the time of writing 4.3.7 to 5.0.2). This will resolve many migration-specific issues.
+- If you have problems don't be afraid to ask for help on http://community.plone.org
+- There is a video of a talk "How to upgrade sites to Plone 5": https://youtu.be/bQ-IpO-7F00?t=1m17s (slides: http://de.slideshare.net/derschmock/upgrade-to-plone-5)
+
+
 Changes due to implemented PLIPS
 ================================
 
