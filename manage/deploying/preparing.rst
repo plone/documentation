@@ -63,6 +63,7 @@ For any install, the development versions of:
 * libjpeg
 * readline
 * libxml2/libxslt
+* freetype
 
 If you're using the System Python, add:
 
@@ -105,42 +106,43 @@ Use ``apt-get install``. The matching package names are:
 * libxml2-dev
 * libxslt-dev
 * python-dev
-
+* libfreetype6-dev
 
 Fedora
 ******
 
 Using ``dnf install``:
 
-gcc-c++
-patch
-openssl-devel
-libjpeg-devel
-libxslt-devel
-readline-devel
-make
-which
-python-devel
-wv
-poppler-utils
-
+* gcc-c++
+* patch
+* openssl-devel
+* libjpeg-devel
+* libxslt-devel
+* readline-devel
+* make
+* which
+* python-devel
+* wv
+* poppler-utils
+* freetype-devel
 
 CentOS
 ******
 
 Using ``yum install``:
 
-gcc-c++
-patch
-openssl-devel
-libjpeg-devel
-libxslt-devel
-readline-devel
-make
-which
-python-devel
-wv
-poppler-utils
+* gcc-c++
+* patch
+* openssl-devel
+* libjpeg-devel
+* libxslt-devel
+* readline-devel
+* make
+* which
+* python-devel
+* wv
+* poppler-utils
+* freetype-devel
 
 OpenSUSE
 ********
@@ -156,6 +158,7 @@ Using ``zypper in``
 * libopenssl-devel
 * libexpat-devel
 * man
+* freetype-devel
 
 --build-python will be needed as the system Python 2.7 is missing many standard modules.
 
@@ -169,12 +172,13 @@ Using ``pacman -S``
 * libxslt
 * libjpeg-turbo
 * openssl
+* freetype2
 
 OS X
 ****
 
 Installing XCode and activating the optional command-line utilities will give you the basic GNU tools environment you need to install Plone with the Unified Installer.
-You may also use MacPorts (the BSD ports mechanism, tailored to OS X) to install libjpeg, libxslt and readline. If you do, remember to keep your ports up-to-date, as Apple's updates won't do it for you.
+You may also use MacPorts (the BSD ports mechanism, tailored to OS X) to install libjpeg, libxslt, freetype and readline. If you do, remember to keep your ports up-to-date, as Apple's updates won't do it for you.
 
 Creating a Plone user
 ~~~~~~~~~~~~~~~~~~~~~
