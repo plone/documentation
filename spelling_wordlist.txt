@@ -51,6 +51,7 @@ gif
 gil
 gists
 github
+GitHub
 Glick
 Gmail
 gnupg
@@ -71,6 +72,7 @@ ini
 init
 inline
 irc
+JavaScript
 javascript
 jbot
 jenkins
