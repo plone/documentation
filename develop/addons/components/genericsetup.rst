@@ -281,7 +281,46 @@ Custom installer code (``setuphandlers.py``)
 Besides out-of-the-box XML steps which easily provide both install and uninstall,
 GenericSetup provides a way to run a custom Python code when your
 add-on product is installed and uninstalled.
-This is not very straightforward process, though.
+This is not a very straightforward process, though.
+
+.. note::
+
+    An easier way may be possible for you.
+    GenericSetup 1.8.2 (not yet released as of this writing)
+    has an option to point to a function to run before or after applying all import steps for your profile.
+    If you do not need to support older versions,
+    this is the easiest way.
+
+    In ``configure.zcml``::
+
+        <configure
+            xmlns="http://namespaces.zope.org/zope"
+            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+            i18n_domain="your.package">
+
+          <genericsetup:registerProfile
+              name="default"
+              title="My Package"
+              directory="profiles/default"
+              description="A useful package"
+              provides="Products.GenericSetup.interfaces.EXTENSION"
+              pre_handler="your.package.setuphandlers.run_before"
+              post_handler="your.package.setuphandlers.run_after"
+              />
+
+        </configure>
+
+    In ``setuphandlers.py``::
+
+        def run_before(context):
+            # This is run before running the first import step of
+            # the default profile.  context is portal_setup.
+            pass
+
+        def run_after(context):
+            # This is run after running the last import step of
+            # the default profile.  context is portal_setup.
+            pass
 
 The best practice is to create a ``setuphandlers.py`` file
 which contains function ``setup_various()`` which runs required
