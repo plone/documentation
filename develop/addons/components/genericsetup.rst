@@ -332,7 +332,7 @@ For instance, if your import step depends on a content type to be installed firs
           title="your.package special import handlers"
           description=""
           handler="your.package.setuphandlers.setup_various">
-        <depends name="content" />
+        <depends name="typeinfo" />
       </genericsetup:importStep>
 
     </configure>
