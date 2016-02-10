@@ -184,12 +184,15 @@ Unit testing example::
     # Run the extended profile of the betahaus.emaillogin package.
     setup_tool.runAllImportStepsFromProfile('profile-betahaus.emaillogin:extended')
 
-Upgrade steps
-=============
 
-If you need to migrate data or settings on new add-on versions
+Missing upgrade procedure
+=========================
 
-* http://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on
+In the add-ons control panel you may see a warning that your add-on is
+`missing an upgrade procedure <http://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on>`_.
+
+This means you need to write some `Upgrade steps`_.
+
 
 Uninstall profile
 ==================
