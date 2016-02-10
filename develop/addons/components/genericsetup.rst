@@ -185,7 +185,7 @@ Unit testing example::
     setup_tool.runAllImportStepsFromProfile('profile-betahaus.emaillogin:extended')
 
 Upgrade steps
-==================
+=============
 
 If you need to migrate data or settings on new add-on versions
 
