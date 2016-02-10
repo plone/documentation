@@ -75,13 +75,11 @@ accordingly.
         information) is read during Plone start-up.
         If this file has problems your add-on might not appear in the installer control panel.
 
-* `GenericSetup tutorial <https://plone.org/documentation/tutorial/genericsetup>`_
+.. * Not publicly viewable anymore: `GenericSetup tutorial <https://plone.org/documentation/tutorial/genericsetup>`_
 
-* `GenericSetup product page <https://pypi.python.org/pypi/Products.GenericSetup/1.4.5>`_.
+* `GenericSetup product page <https://pypi.python.org/pypi/Products.GenericSetup>`_.
 
-* `Source code <http://svn.zope.org/Products.GenericSetup/trunk/Products/GenericSetup/README.txt?rev=87436&view=auto>`_.
-
-.. TODO:: should the link be specifically to rev=87436?
+* `Source code <https://github.com/zopefoundation/Products.GenericSetup>`_.
 
 
 Creating a profile
