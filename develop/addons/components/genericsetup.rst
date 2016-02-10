@@ -139,7 +139,8 @@ Add-on products may contain:
 
 For more information about custom import steps, see:
 
-* http://n2.nabble.com/indexing-of-content-created-by-Generic-Setup-tp4454703p4454703.html
+* http://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html
+
 
 Listing available profiles
 ==========================
