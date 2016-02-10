@@ -147,7 +147,7 @@ Listing available profiles
 
 Example::
 
-        # Run the default quick installer profile
+        # List all profiles know to the Plone instance.
         setup_tool = self.portal.portal_setup
 
         profiles = setup_tool.listProfileInfo()
@@ -167,10 +167,10 @@ Installing a profile
 
 This is usually unit test specific question how to enable certain add-ons for unit testing.
 
-PloneTestCase.setupPloneSite
-----------------------------
+plone.app.testing
+-----------------
 
-See *Running add-on installers and extensions profiles for unit tests*.
+See `Product and profile installation <http://docs.plone.org/external/plone.app.testing/docs/source/README.html#product-and-profile-installation>`_.
 
 Manually
 ---------
@@ -181,8 +181,8 @@ The profile name is in the format ``profile-${product name}:${profile id}``
 
 Unit testing example::
 
-    # Run the extended profile which will create email_catalog
-    setup_tool.runAllImportStepsFromProfile('profile-betahaus.emaillogin:exdended')
+    # Run the extended profile of the betahaus.emaillogin package.
+    setup_tool.runAllImportStepsFromProfile('profile-betahaus.emaillogin:extended')
 
 Upgrade steps
 ==================
