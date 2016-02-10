@@ -110,6 +110,18 @@ product.
 
     </configure>
 
+.. note ::
+
+    When you have more than one profile in your package,
+    the add-ons control panel needs to decide which one to use when you install it.
+    In Plone 5.0 and lower,
+    the profiles are sorted alphabetically by id,
+    and the first one is chosen.
+    So if you have profiles ``base`` and ``default``,
+    the ``base`` profile is installed.
+    Plone 5.1 is scheduled to prefer the ``default`` profile.
+    For more information on this plan,
+    see `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
 
 
 Add-on-specific issues
