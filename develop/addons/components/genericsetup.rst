@@ -211,10 +211,12 @@ GenericSetup profile can contain dependencies to other add-on product installers
 
 * `More information about GenericSetup dependencies <https://plone.org/products/plone/roadmap/195/>`_.
 
-For example, if you want to declare dependency to *collective.basket* add-on product, so that it
-is automatically installed when your add-on installed you can use the declaration below.
-This way, you can be sure that all layers, portlets, etc. features which require database changes
-are usable from *collective.basket* add-on products when your add-on product is run.
+For example, if you want to declare a dependency to the *collective.basket* add-on product,
+so that it is automatically installed when your add-on is installed,
+you can use the declaration below.
+This way,
+you can be sure that all layers, portlets, and other features which require database changes,
+are usable from the *collective.basket* add-on product when your add-on product is run.
 
 ``metadata.xml``:
 
@@ -253,20 +255,22 @@ are usable from *collective.basket* add-on products when your add-on product is 
 
 .. note::
 
-    The ``Products.*`` Python namespace needs to declare generic setup
-    dependencies specially:
-    You actually do not mention ``Products.xxx`` space.
+    For some old products in the ``Products.*`` Python namespace,
+    you must not include the full package name in the dependencies.
+    This is true when this product has registered its profile in Python instead of zcml,
+    and there it has used only part of its package name.
+    In most cases you *do* need to use the full ``Products.xxx`` name.
 
-To declare dependency to ``Products.Carousel``:
+To declare a dependency on the ``simple`` profile of ``Products.PluggableAuthService``:
 
 .. code-block:: xml
 
     <?xml version="1.0"?>
     <metadata>
       <version>1000</version>
-      <!-- Install Products.Carousel on the site when this add-on is installed -->
+      <!-- Install the simple PluggableAuthService profile on the site when this add-on is installed. -->
       <dependencies>
-        <dependency>profile-Carousel:default</dependency>
+        <dependency>profile-PluggableAuthService:simple</dependency>
       </dependencies>
     </metadata>
 
