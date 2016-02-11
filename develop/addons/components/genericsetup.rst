@@ -418,18 +418,48 @@ More information
 Overriding import step order
 ===============================
 
-You need ``import_steps.xml``.
+If you need to override the order of import steps in a package that is not yours,
+it might work if you `use an overrides.zcml <http://plone.293351.n2.nabble.com/Overriding-import-step-order-td2189638.html>`_.
 
-More information
-
-* http://plone.293351.n2.nabble.com/Overriding-import-step-order-td2189638.html
-
-* http://dev.communesplone.org/trac/browser/communesplone/urban/trunk/profiles/default/import_steps.xml?rev=5652
 
 Controlling the import step execution order
 -------------------------------------------
 
+If you only need to control the execution order of one of your own custom import steps,
+you can do this in your import step definition in zcml.
+To make sure the catalog and typeinfo steps are run before your own step,
+use this code:
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+        i18n_domain="poi">
+
+      <genericsetup:importStep
+          name="poi_various"
+          title="Poi various import handlers"
+          description=""
+          handler="Products.Poi.setuphandlers.import_various">
+        <depends name="catalog"/>
+        <depends name="typeinfo"/>
+      </gs:importStep>
+
+    </configure>
+
+.. note::
+
+    The name that you need, is usually the name of the related xml file,
+    but with the ``.xml`` stripped.
+    For the ``catalog.xml`` the import step name is ``catalog``.
+    But there are exceptions.
+    For the ``types.xml`` and the ``types`` directory,
+    the import step name is ``typeinfo``.
+    See `Plone GenericSetup Reference`_ for a list.
+
 * http://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html
+
 
 Upgrade steps
 =============
@@ -545,10 +575,12 @@ If you want to call workflow.xml use workflow::
 
         setup.runImportStepFromProfile(PROFILE_ID, 'workflow')
 
-The ids of the various default import steps are defined in the import_steps.xml of CMFDefault.
-visit it at http://svn.zope.org/CMF/branches/2.1/CMFDefault/profiles/default/import_steps.xml?logsort=date&rev=78624&view=markup
+The ids of the various default import steps are defined in several places.
+Some of the most used ones are here:
 
-XXX Fix the link above
+* https://github.com/zopefoundation/Products.CMFCore/blob/master/Products/CMFCore/exportimport/configure.zcml
+
+* https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/exportimport/configure.zcml
 
 After restarting Zope, your upgrade step should be visible in the ZMI: The
 *portal_setup* tool has a tab *Upgrades*. Select your product profile to see
