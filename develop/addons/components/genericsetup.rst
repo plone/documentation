@@ -478,14 +478,16 @@ GenericSetup upgrade step means non-technical people can do it as well. As it
 turns out, once you have the script, it's easy to put its code in an upgrade
 step.)
 
+
 Increment profile version
 -------------------------
 
-First increase the number of the version in the ``profiles/default/metadata.xml``. This version
-number should be an integer. Package version are different because they
-add sens like the status of the addon: is it stable, is it in dev, in beta,
-which branch it is. A profile version indicate only that you have to migrate
-data in the database.
+First increase the number of the version in the ``profiles/default/metadata.xml``.
+This version number should be an integer.
+Package version are different because they add sense like the status of the addon:
+is it stable, is it in dev, in beta, which branch is it.
+A profile version indicates only that you have to migrate data in the database.
+
 
 Add upgrade step
 ----------------
@@ -512,12 +514,12 @@ Next we add an upgrade step:
     </configure>
 
 
-* You can use a wildcard character for *source* to indicate an upgrade for any
-  previous version. To run the upgrade step only when upgrading from a specific
-  version, use that version's number.
+* You can use a wildcard character for *source* to indicate an upgrade for any previous version.
+  Since Products.GenericSetup 1.7.6 this works fine.
+  To run the upgrade step only when upgrading from a specific version, use that version's number.
 
-* A *sortkey* can be used to indicate the order in which upgrade steps are
-  run.
+* The optional *sortkey* can be used to indicate the order in which upgrade steps are run.
+
 
 Add upgrade code
 ----------------
@@ -656,6 +658,7 @@ More information
 
 * http://plone.293351.n2.nabble.com/Product-twice-in-quickinstaller-td5345492.html#a5345492
 
+
 Preventing uninstall
 ====================
 
@@ -675,7 +678,9 @@ Example:
 
 .. note ::
 
-    This example if for Extensions/install.py, old Plone 2 way of writing installers
+    This example is for Extensions/install.py, an old Plone 2 way of writing installers and uninstallers.
+    It is still working in Plone 5.0,
+    but will likely go away in Plone 5.1.
 
 
 
