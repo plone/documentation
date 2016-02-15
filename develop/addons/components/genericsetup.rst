@@ -275,6 +275,43 @@ To declare a dependency on the ``simple`` profile of ``Products.PluggableAuthSer
     </metadata>
 
 
+Metadata version numbers
+========================
+
+Some old packages may have a ``metadata.xml`` without version number,
+but this is considered bad practice.
+What should the version number in your ``metadata.xml`` be?
+This mostly matters when you are adding upgrade steps,
+See also the `Upgrade steps`_ section.
+Upgrade steps have a sort order in which they are executed.
+This used to be alphabetical sorting.
+When you had eleven upgrade steps, marked from 1 through 11,
+alphabetical sorting meant this order: 1, 10, 11, 2, 3, etc.
+If you are seeing this, then you are using an old version of GenericSetup.
+You want numerical sorting here, which is correctly done currently.
+Versions with dots work fine too.
+They get ordered just like they would when used for packages on PyPI.
+So far for the background information.
+
+Best practice for all versions of GenericSetup is this:
+
+- Start with 1000.
+  This avoids problems with ancient GenericSetup that used alphabetical sorting.
+
+- Simply increase the version by 1 each time you need a new metadata version.
+  So 1001, 1002, etc.
+
+- If your package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version.
+  There is simply no need.
+
+- If you make changes for a new major release, you should increase the metadata version significantly.
+  This leaves room for small metadata version increases on a maintenance branch.
+  Example:
+  You have branch master with version 1025.
+  You make backwards incompatible changes and you increase the version to 2000.
+  You create a maintenance branch where the next metadata version will be 1026.
+
+
 Custom installer code (``setuphandlers.py``)
 ============================================
 
