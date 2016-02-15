@@ -237,6 +237,10 @@ The possible options for a bundle are:
 
 - conditionalcomment: Conditional Comment for Internet Explorer hacks.
 
+- merge_with: Indicate in which of the bundle aggregations this bundle should be included.
+  The valid values for this option are ``default`` or ``logged-in``.
+  (:ref:`see below <resource_bundle_aggregation>`).
+
 
 The following are for pre-compiled bundles and are automatically set when the bundle is built Through-The-Web:
 
@@ -336,25 +340,36 @@ These are the ``Products.CMFPlone.resources`` API methods:
 
 - ``add_resource_on_request(request, bundle)``: Adds an individual resource to the current request by specifying its name.
 
-Bundle aggregation for production
-=================================
+.. _resource_bundle_aggregation:
 
-Principle
----------
+Aggregate Bundles for Production
+================================
 
-To reduce the amount of resources loaded in each page, Plone standard bundles are aggregated together.
+Plone defines several bundles.
+Add-ons that you include in your Plone site may also define bundles of their own.
+In production, *each* of these bundles will result in the loading of one JavaScript and one CSS file.
+To reduce the number of loaded files to an absolute minimum, we use *bundle aggregation".
 
-A first aggregation named `default` contains all the bundles that must be available everytime. It corresponds to 2 outputs (one JS and one CSS). A second aggregation named `logged-in` contains the bundles only needed for authenticated users. It also corresponds to 2 outputs (JS and CSS).
+There are two bundle aggregations available in Plone.
+A first aggregation named ``default`` contains all the bundles that must be available at all times.
+It creates 2 output files (one JavaScript and one CSS).
+A second aggregation named ``logged-in`` contains bundles only needed for authenticated users.
+It also creates 2 output files (one JavaScript and one CSS).
 
-The aggregation is triggered by a GenericSetup step depending on the `registry.xml` file.
-Any profile containing the `registry.xml` file will automatically refresh the current aggregations with the declared bundles.
+Aggregation of bundles is triggered by the ``registry.xml`` Generic Setup import step.
+Installing any profile containing a ``registry.xml`` file will automatically refresh the current aggregations.
+Any bundles declared in that file will be included, if they declare that they should be merged with one of the two available aggregations.
 
-As bundles can be defined or modified TTW, Plone will also provide a "Merge bundles for production" button in the Resource registry that allows to re-generate the aggregations.
+As bundles can be defined or modified Through-The-Web, Plone also provides a "Merge bundles for production" button in the Resource Registry.
+This allows us to re-generate the aggregations manually after any Through-The-Web modifications have been made.
 
-Declaring aggregation
----------------------
+Declare an Aggregation
+----------------------
 
-Custom bundles from an add-on or from a theme can be aggregated with the standard Plone bundles using the `merge_with` property. Its value can be `default` or `logged-in`.
+Custom bundles from an add-on or from a theme may be aggregated with the standard Plone bundles.
+To do so, use the ``merge_with`` option in your bundle declaration in ``registry.xml``.
+The valid values are ``default`` or ``logged-in``.
+If the ``merge_with`` option is not present or is empty, the bundle will not be aggregated and is published separately.
 
 .. code-block:: xml
 
@@ -364,9 +379,8 @@ Custom bundles from an add-on or from a theme can be aggregated with the standar
     ...
   </record>
 
-If the `merge_with` property is not defined or is empty, the bundle is not aggregated and is published separately.
-
-.. note:: If the `merge_with` property value is `default` or `logged-in`, the `expression` property will not be considered.
+.. note:: Bundles cannot be conditionally included in an aggregation.
+          If the value of the `merge_with` option is `default` or `logged-in`, the value of the `expression` option **will be ignored**.
 
 .. note:: In Development mode, aggregation is disabled, all bundles are published separately.
 
