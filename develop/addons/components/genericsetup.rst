@@ -195,7 +195,7 @@ This means you need to write some `Upgrade steps`_.
 
 
 Uninstall profile
-==================
+=================
 
 For the theory, see:
 `<http://blog.keul.it/2013/05/how-to-make-your-plone-add-on-products.html>`_
@@ -452,8 +452,9 @@ More information
 
 * http://maurits.vanrees.org/weblog/archive/2009/12/catalog (unrelated, but contains pointers)
 
+
 Overriding import step order
-===============================
+============================
 
 If you need to override the order of import steps in a package that is not yours,
 it might work if you `use an overrides.zcml <http://plone.293351.n2.nabble.com/Overriding-import-step-order-td2189638.html>`_.
