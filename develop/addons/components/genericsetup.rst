@@ -18,7 +18,7 @@ GenericSetup is an XML-based way to import and export Plone site configurations.
 It is mainly used to prepare the Plone site for add-on products, by:
 
 * registering CSS files,
-* registering Javascript files,
+* registering JavaScript files,
 * setting various properties,
 * registering portlets,
 * registering portal_catalog search query indexes,
