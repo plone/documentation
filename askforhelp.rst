@@ -26,7 +26,7 @@ Where to search:
 
 - :doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error messages - for enabling debug mode and common tracebacks.
 
-- `Github issue tracker <https://github.com/plone/Products.CMFPlone/issues>`_ - for known related issues
+- `GitHub issue tracker <https://github.com/plone/Products.CMFPlone/issues>`_ - for known related issues
 
 - `Documentation issue tracker <https://github.com/plone/documentation/issues>`_ - for documentation related issues
 
@@ -61,7 +61,7 @@ Keep in mind, that if you ask a question and all you hear is silence, it might b
 
 The big picture - An opening sentence should state the general problem that you wish to solve.
 
-**A snapshot of your environment** - For Plone and for other relevant products: provide version numbers. e.g., "I'm running Plone 4.0.1 under Python 2.6.4."
+**A snapshot of your environment** - For Plone and for other relevant products: provide version numbers. e.g., "I'm running Plone 5.0.2 under Python 2.7.10."
 
 **Steps to reproduce the issue** - Give information about your ideas of how this error appeared, what caused it or anything that could lead to reproducing the error on another computer. The expected result .
 
@@ -81,11 +81,11 @@ Here are couple of useful hints while connecting to IRC network:
 
     When I start Zope in debug mode I get the following log entry.
 
-    I pasted the log to pastie.org and here is the link for the log entry http://pastie.org/123123
+    I pasted the log to `pastie.org <http://pastie.org/>`_ and here is the link for the log entry http://pastie.org/123123
 
 - Be specific - tell us why you are trying to accomplish something and then tell us what the problem is. Here are some guidelines how to form a good question for Internet discussion.
 
-- Do not copy-paste text to chat. This disrupts other people chatting about other topics. Instead please paste the full traceback error log to pastie.org and then paste the link to your error log or code (from your browser's address bar) to the chat.
+- Do not copy-paste text to chat. This disrupts other people chatting about other topics. Instead please paste the full traceback error log to `pastie.org <http://pastie.org/>`_ and then paste the link to your error log or code (from your browser's address bar) to the chat.
 
 - Do not send direct messages to chat participants unless you have a clear reason to do so
 - Keep the chat window open at least 30 minutes so that someone has time to pick up your question. Be patient.
@@ -113,7 +113,7 @@ Here are couple of useful hints while connecting to IRC network:
 
   A question that is more likely to gain attention and a positive response:
 
-  "Hi, I'm using product XYZ on Plone 4.0.1, I have a problem with the feature that is supposed to doABC— I get error BlahBlahError — what might be wrong? Here is a link to the error log on pastie.org:http://pastie.org/123123"
+  "Hi, I'm using product XYZ on Plone 5.x.x, I have a problem with the feature that is supposed to doABC— I get error BlahBlahError — what might be wrong? Here is a link to the error log on pastie.org:http://pastie.org/123123"
 
 Tracebacks
 ----------
