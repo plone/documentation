@@ -147,7 +147,7 @@ This is how the ``++plone++static`` directory resource is configured:
     <plone:static
         directory="static"
         type="plone"
-        name="static"
+        name="myresources"
         />
 
 Now we can access the contents within the "static" folder by using the URL part ``++plone++myresources/`` and appending the path to the resource under "static".
@@ -164,7 +164,7 @@ A bundle is a set of resources.
 Bundles can group resources for different purposes - like the "plone" bundle for all users or "plone-logged-in" for logged-in users only.
 Only bundles are loaded in a Plone site (well, there is an exception. you can register individual resources to be loaded for a specific request via an API method. More on this later).
 
-For production environments you will want to compile your bundles and combine and minify all the necessary resources including their dependencies (which are now well defined) into a single JavaScript and CSS file.
+For production environments you will want to compile your bundles and combine and minify all the necessary resources including their dependencies (which can now be well defined thanks to requireJS) into a single JavaScript and CSS file.
 This minimizes the number of web requests and the payload of data sent over the network.
 In Production mode, only one or two files are included in the output: a JavaScript and a CSS file.
 
@@ -173,6 +173,8 @@ This can lead to a lot of requests and high response times, even though the Requ
 In development mode, modifications to the resources are instantly reflected without the need to compile any bundle beforehand.
 
 When developing an add-on you might want to create your own bundle. Alternatively, you can register your add-on code to be included in Plone's default ``plone`` bundle.
+
+.. TODO: this sounds like it would be possible to just add your resource to the plone bundle in registry.xml, but this in fact does not work. see https://github.com/plone/Products.CMFPlone/issues/1163
 
 If you need a bundle for a single page, you can define an extra bundle and only include it only there. The ``resourceregistry`` bundle for example is only used for the ``@@resourceregistry-controlpanel`` view. (see the section `Adding or removing bundles from a request`_ for more information)
 
@@ -315,6 +317,111 @@ Example:
     <value key="compile">False</value>
     <value key="enabled">True</value>
   </records>
+
+
+Optimized Bundles
+-----------------
+
+Plone Addons usually ship with pre-compiled bundles so they can be used out of the box.
+This leads to additional requests for each bundle's js and css files.
+In addition, resources of different bundles might depend on the same libraries (ie select2) which then get included multiple times raising the payload unnecessarily.
+Exception: jquery (and other deps listed in `stub_js_modules`) get omitted by the console build script - see `pull #1210 <https://github.com/plone/Products.CMFPlone/pull/1210>`_
+but they get added multiple times again when compiling ttw.
+.. XXX bloodbare told me that and i think this is the coresponding pull request. if compiling ttw ignores this setting a ticket should be created for that
+
+To optimize this you'll want to add all the needed resources to the `plone` and `plone-logged-in` bundle respectively.
+Due to the way requireJS works it's not possible to simply add resources to the existing bundles and re-compile them (see `ticket #1163 <https://github.com/plone/Products.CMFPlone/issues/1163>`_ for more information).
+
+
+Copy the content of ``++resource++plone.js`` and amend all required dependencies.
+
+.. code-block:: javascript
+
+  require([
+    'jquery',
+    'pat-registry',
+    'mockup-patterns-base',
+
+    'mockup-patterns-select2',
+    'mockup-patterns-pickadate',
+    'plone-patterns-toolbar',
+    'mockup-patterns-autotoc',
+    'mockup-patterns-cookietrigger',
+    'mockup-patterns-formunloadalert',
+    'mockup-patterns-preventdoublesubmit',
+    'mockup-patterns-formautofocus',
+    'mockup-patterns-markspeciallinks',
+    'mockup-patterns-modal',
+    'mockup-patterns-livesearch',
+    'mockup-patterns-contentloader',
+    'bootstrap-dropdown',
+    'bootstrap-collapse',
+    'bootstrap-tooltip',
+
+    // your additional dependencies here
+  ], function($, registry, Base) {
+  ...
+
+
+.. NOTE:
+   This has two implications:
+
+   * addons should not do any initialization in their bundle resource js, otherwhise we'd need to copy this code here
+
+   * integrators have to check this file on every plone-update (to make sure plone's dependencies are up to date)
+     and after every addon installation
+
+
+.. ATTENTION:: XXX
+   the example below needs to be implemented and verified to work
+
+
+Save this file to your policy package (``++plone++mysite/mysite.js``).
+
+Register the resource folder.
+
+.. code-block:: xml
+
+  <include package="plone.resource" file="meta.zcml"/>
+  <plone:static
+      directory="bundles"
+      type="plone"
+      name="mysite"
+      />
+
+And the resource:
+
+.. code-block:: xml
+
+  <records prefix="plone.resources/mysite-plone[-logged-in]"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++plone++my.site/plone.js</value>
+    <value key="css">
+      <element>++plone++my.site/plone.less</element>
+    </value>
+  </records>
+
+
+Recompile using the console script
+
+.. code-block::
+
+    bin/plone-compile-resources --site-id=myplonesite --bundle=XXX
+
+put compiled js and css into ++plone++my.site/plone.js/css
+
+.. XXX todo:
+
+    * nathan suggested to copy and register via overrides.zcml (see https://github.com/plone/Products.CMFPlone/issues/1163)
+
+      what's the benefit compared to separate file as done above?
+      probably not needin to define separate resources (including less files) but
+      simply re-compiling the plone ones
+
+
+    * XXX if i understand https://github.com/plone/Products.CMFPlone/pull/1174 correctly
+      this code is already taking care that the above resources can be properly cached.
+
 
 
 Adding or removing bundles from a request
