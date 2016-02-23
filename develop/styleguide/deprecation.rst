@@ -1,5 +1,5 @@
 ==========================
-Deprecation Best Prcatices
+Deprecation Best Practices
 ==========================
 
 
@@ -63,14 +63,14 @@ This is the same as moving a module, just create for each module a file.
 Deprecating methods and properties
 ==================================
 
-You can use the ``@deprecate`` decorator to deprecate methods in a module:
+You can use the ``@deprecate`` decorator from `zope.deprecation <http://docs.zope.org/zope.deprecation/api.html#deprecating-methods-and-properties>`_ to deprecate methods in a module:
 
 
 .. sourcecode:: python
 
     from zope.deprecation import deprecate
 
-    @deprecate
+    @deprecate('Old method is no longer supported, use new_method instead.')
     def old_method():
         return None
 
@@ -81,5 +81,5 @@ The ``deprecated`` wrapper method is for deprecating properties:
     from zope.deprecation import deprecate
 
     foo = None
-    foo = deprecated(foo, 'foo is no more')
+    foo = deprecated(foo, 'foo is no more, use bar instead')
 
