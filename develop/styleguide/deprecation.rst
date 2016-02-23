@@ -6,7 +6,7 @@ Deprecation Best Practices
 Why Deprecation
 ===============
 
-While refactoring code moving modules, functions, classes and methods is often needed.
+While refactoring code, moving modules, functions, classes and methods is often needed.
 To not break third party code imports from the old place or usage of old functions or methods must work for while.
 Deprecated methods are usually removed with the next major release of Plone.
 Following the `semantic versioning guideline <http://semver.org>`_ is recommended.
@@ -40,7 +40,7 @@ Given a package ``old.pkg`` with a module ``foo.py`` need to be moved to a packa
 
 `zope.deprecation <http://docs.zope.org/zope.deprecation/api.html#moving-modules>`_ offers a helper.
 
-1. Copy the ``foo.py`` as ``bar.py`` to the ``new.pkg``.
+1. Move the ``foo.py`` as ``bar.py`` to the ``new.pkg``.
 2. At the old place create a new ``foo.py`` and add to it
 
 .. sourcecode:: python
