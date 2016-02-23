@@ -12,6 +12,7 @@ They not only apply to code, but also documentation, naming conventions and othe
     javascript
     documentation
     naming
+    deprecation
     editor
 
 Some of the information here is taken from the :doc:`plone.api contributing guide </develop/plone.api/docs/contribute/conventions>`
