@@ -27,7 +27,7 @@ For details read `the official documentation <https://docs.python.org/2/library/
 
 In short it works like so
 
-   .. sourcecode:: python
+.. sourcecode:: python
 
        import warnings
        warnings.warn('deprecated', DeprecationWarning)
@@ -43,7 +43,7 @@ Given a package ``old.pkg`` with a module ``foo.py`` need to be moved to a packa
 1. Copy the ``foo.py`` as ``bar.py`` to the ``new.pkg``.
 2. At the old place create a new ``foo.py`` and add to it
 
-   .. sourcecode:: python
+.. sourcecode:: python
 
     from zope.deprecation import moved
     moved('new.pkg.bar', 'Version 2.0')
@@ -53,11 +53,33 @@ Now you can still import the namespace from ``bar`` at the old place, but get a 
     DeprecationWarning: old.pkg.foo has moved to new.pkg.bar.
     Import of old.pkg.foo will become unsupported in Version 2.0
 
+
 Moving Whole Packages
 =====================
 
 This is the same as moving a module, just create for each module a file.
 
 
+Deprecating methods and properties
+==================================
 
+You can use the ``@deprecate`` decorator to deprecate methods in a module:
+
+
+.. sourcecode:: python
+
+    from zope.deprecation import deprecate
+
+    @deprecate
+    def old_method():
+        return None
+
+The ``deprecated`` wrapper method is for deprecating properties:
+
+.. sourcecode:: python
+
+    from zope.deprecation import deprecate
+
+    foo = None
+    foo = deprecated(foo, 'foo is no more')
 
