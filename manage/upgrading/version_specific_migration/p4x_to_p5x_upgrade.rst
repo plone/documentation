@@ -27,6 +27,11 @@ General information
 Changes due to implemented PLIPS
 ================================
 
+PLIPs are PLone Improvement Proposals.
+These are about larger changes to Plone,
+discussed beforehand by the community.
+
+
 PLIP 13350 "Define extra member properties TTW"
 -----------------------------------------------
 
@@ -43,6 +48,33 @@ If you have some custom member properties in your Plone site, be aware that:
 
     When a custom field is defined in `userschema.xml`, its corresponding attribute is automatically created in the `portal_memberdata` tool, so there is no need to declare it in `memberdata_properties.xml`.
     `memberdata_properties.xml` will only handled attributes that are not related to the user profile form or the registration form.
+
+
+PLIP 13419 "Improvements for user ids and login names"
+------------------------------------------------------
+
+Since Plone 4.0 you could switch to using email as login in the security control panel.
+In Plone 5.0 some related improvements were made.
+When you are already using email as login,
+during the Plone 5.0 migration the login names will be transformed to lowercase.
+When the email addresses are not unique,
+for example you have both ``joe@example.org`` and ``JOE@example.org``,
+the migration will *fail*.
+
+Best is to fix this in your site in Plone 4,
+by changing email addresses or removing no longer needed users.
+When there are only a few users, you can do this manually.
+To assist you in sites with many users,
+in Plone 4.1 and higher,
+you can add the `collective.emaillogin4 <https://pypi.python.org/pypi/collective.emaillogin4>`_ package to the eggs of your Plone instance.
+With that package,
+even without installing it in the add-ons control panel,
+you can call the ``@@migrate-to-emaillogin`` page to look for duplicate email addresses.
+
+.. note::
+
+  This PLIP basically integrates the ``collective.emaillogin4`` package in Plone 5.
+
 
 
 Other PLIP changes
