@@ -777,6 +777,60 @@ For reference, visit: :doc:`Local Roles </develop/plone/security/local_roles>`.
 tinymce.xml
 -----------
 
+
+toolset.xml
+-----------
+
+This is used to add a tool to the site.
+
+.. warning::
+
+    This is an old way and should not be used in new code.
+    You should probably register a utility instead of a tool.
+    ``componentregistry.xml`` might be an alternative,
+    but registering a utility in zcml would be better.
+    If the utility needs configuration,
+    you can use ``registry.xml``.
+
+Example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <tool-setup>
+     <required tool_id="portal_atct"
+               class="Products.ATContentTypes.tool.atct.ATCTTool"/>
+     <required tool_id="portal_factory"
+               class="Products.ATContentTypes.tool.factory.FactoryTool"/>
+     <required tool_id="portal_metadata"
+               class="Products.ATContentTypes.tool.metadata.MetadataTool"/>
+    </tool-setup>
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <tool-setup>
+     <forbidden tool_id="portal_atct" />
+     <forbidden tool_id="portal_factory" />
+     <forbidden tool_id="portal_metadata" />
+    </tool-setup>
+
+.. note::
+
+  Adding a forbidden tool that was first required,
+  like in the example above,
+  is not yet supported.
+  See https://github.com/zopefoundation/Products.GenericSetup/pull/26
+
+.. automodule:: Products.GenericSetup.registry
+ :members: _ToolsetParser ToolsetRegistry
+
+.. automodule:: Products.GenericSetup.tool
+ :members: importToolset
+
+
 propertiestool.xml
 ------------------
 In the propertiestool.xml you can change all values of the portal_properties.
