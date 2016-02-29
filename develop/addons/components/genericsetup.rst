@@ -721,42 +721,53 @@ Example:
     but will likely go away in Plone 5.1.
 
 
-
-Plone GenericSetup Reference
-============================
-
-portlets.xml
-------------
-
-.. automodule:: plone.app.portlets.exportimport.portlets
-
-viewlets.xml
-------------
-
-.. automodule:: plone.app.viewletmanager.exportimport.storage
-
-cssregistry.xml
----------------
-
-see :ref:`resourceregistries`
-
-jsregistry.xml
+Best Practices
 --------------
 
-see :ref:`resourceregistries`
+When importing items such as property sheets,
+make sure not to override other profile settings:
+set the purge attribute to False.
+This will *add* the listed items to the property instead of resetting the property.
+Example:
 
-kssregistry.xml
----------------
+.. code-block:: xml
 
-see :ref:`resourceregistries`
+    <property name="metaTypesNotToList" type="lines" purge="False">
+      <element value="File"/>
+      <element value="Image"/>
+    </property>
 
-.. _resourceregistries:
+Only use the configuration that you need.
+When you export your site's configuration, it will include things that you don't need.
+For example,
+if you needed to change only the 'Allow anonymous to view about' property,
+this is what your propertiestool.xml should look like:
 
-Resource Registries
--------------------
+.. code-block:: xml
 
-.. automodule:: Products.ResourceRegistries.exportimport.resourceregistry
-  :members: ResourceRegistryNodeAdapter
+    <?xml version="1.0"?>
+    <object name="portal_properties" meta_type="Plone Properties Tool">
+      <object name="site_properties" meta_type="Plone Property Sheet">
+        <property name="allowAnonymousViewAbout" type="boolean">True</property>
+      </object>
+    </object
+
+.. original content from http://www.sixfeetup.com/company/technologies/plone-content-management-new/quick-reference-cards/swag/swag-images-files/generic_setup.pdf
+
+
+Generic Setup files
+===================
+
+
+actions.xml
+-----------
+
+
+contentrules.xml
+----------------
+
+.. automodule:: plone.app.contentrules.exportimport
+
 
 Content Generation
 ------------------
@@ -765,70 +776,34 @@ Content Generation
  :members: FolderishExporterImporter
 
 
-Generic Setup files
-===================
+cssregistry.xml
+---------------
 
-sharing.xml
------------
-
-The sharing.xml file let you add custom roles to the sharing tab.
-For reference, visit: :doc:`Local Roles </develop/plone/security/local_roles>`.
-
-tinymce.xml
------------
+see :ref:`resourceregistries`
 
 
-toolset.xml
------------
+jsregistry.xml
+--------------
 
-This is used to add a tool to the site.
+see :ref:`resourceregistries`
 
-.. warning::
 
-    This is an old way and should not be used in new code.
-    You should probably register a utility instead of a tool.
-    ``componentregistry.xml`` might be an alternative,
-    but registering a utility in zcml would be better.
-    If the utility needs configuration,
-    you can use ``registry.xml``.
+kssregistry.xml
+---------------
 
-Example:
+see :ref:`resourceregistries`
 
-.. code-block:: xml
+.. _resourceregistries:
 
-    <?xml version="1.0"?>
-    <tool-setup>
-     <required tool_id="portal_atct"
-               class="Products.ATContentTypes.tool.atct.ATCTTool"/>
-     <required tool_id="portal_factory"
-               class="Products.ATContentTypes.tool.factory.FactoryTool"/>
-     <required tool_id="portal_metadata"
-               class="Products.ATContentTypes.tool.metadata.MetadataTool"/>
-    </tool-setup>
 
-Uninstall example:
+metadata.xml
+------------
 
-.. code-block:: xml
 
-    <?xml version="1.0"?>
-    <tool-setup>
-     <forbidden tool_id="portal_atct" />
-     <forbidden tool_id="portal_factory" />
-     <forbidden tool_id="portal_metadata" />
-    </tool-setup>
+portlets.xml
+------------
 
-.. note::
-
-  Adding a forbidden tool that was first required,
-  like in the example above,
-  is not yet supported.
-  See https://github.com/zopefoundation/Products.GenericSetup/pull/26
-
-.. automodule:: Products.GenericSetup.registry
- :members: _ToolsetParser ToolsetRegistry
-
-.. automodule:: Products.GenericSetup.tool
- :members: importToolset
+.. automodule:: plone.app.portlets.exportimport.portlets
 
 
 propertiestool.xml
@@ -836,31 +811,6 @@ propertiestool.xml
 In the propertiestool.xml you can change all values of the portal_properties.
 
 take a look at: https://plone.org/documentation/manual/developer-manual/generic-setup/reference/properties-ref
-
-metadata.xml
-------------
-
-actions.xml
------------
-
-skins.xml
----------
-
-workflows.xml
--------------
-
-.. automodule:: Products.DCWorkflow.exportimport
-
-repositorytool.xml
-------------------
-
-.. autoclass:: Products.CMFEditions.exportimport.repository.RepositoryToolXMLAdapter
-
-
-contentrules.xml
-----------------
-
-.. automodule:: plone.app.contentrules.exportimport
 
 
 pluginregistry.xml
@@ -941,33 +891,94 @@ Now you can use ``pluginregistry.xml`` in your generic setup profiles:
     </plugin-registry>
 
 
-Best Practices
---------------
+repositorytool.xml
+------------------
 
-When importing items such as property sheets, make sure not to
-override other profile settings by setting the purge attribute to False.
-This will add the items listed to the property instead of resetting the
-property. Example:
+.. autoclass:: Products.CMFEditions.exportimport.repository.RepositoryToolXMLAdapter
 
-.. code-block:: xml
 
-    <property name="metaTypesNotToList" type="lines" purge="False">
-      <element value="File"/>
-      <element value="Image"/>
-    </property>
+Resource Registries
+-------------------
 
-Only use the configuration that you need. When you export your site's
-configuration, it will include things that you don't need. For example,
-if you needed to change only the 'Allow anonymous to view about'
-property, this is what your propertiestool.xml would look like:
+.. automodule:: Products.ResourceRegistries.exportimport.resourceregistry
+  :members: ResourceRegistryNodeAdapter
+
+
+sharing.xml
+-----------
+
+The sharing.xml file let you add custom roles to the sharing tab.
+For reference, visit: :doc:`Local Roles </develop/plone/security/local_roles>`.
+
+
+skins.xml
+---------
+
+
+tinymce.xml
+-----------
+
+
+toolset.xml
+-----------
+
+This is used to add a tool to the site.
+
+.. warning::
+
+    This is an old way and should not be used in new code.
+    You should probably register a utility instead of a tool.
+    ``componentregistry.xml`` might be an alternative,
+    but registering a utility in zcml would be better.
+    If the utility needs configuration,
+    you can use ``registry.xml``.
+
+Example:
 
 .. code-block:: xml
 
     <?xml version="1.0"?>
-    <object name="portal_properties" meta_type="Plone Properties Tool">
-      <object name="site_properties" meta_type="Plone Property Sheet">
-        <property name="allowAnonymousViewAbout" type="boolean">True</property>
-      </object>
-    </object
+    <tool-setup>
+     <required tool_id="portal_atct"
+               class="Products.ATContentTypes.tool.atct.ATCTTool"/>
+     <required tool_id="portal_factory"
+               class="Products.ATContentTypes.tool.factory.FactoryTool"/>
+     <required tool_id="portal_metadata"
+               class="Products.ATContentTypes.tool.metadata.MetadataTool"/>
+    </tool-setup>
 
-.. original content from http://www.sixfeetup.com/company/technologies/plone-content-management-new/quick-reference-cards/swag/swag-images-files/generic_setup.pdf
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <tool-setup>
+     <forbidden tool_id="portal_atct" />
+     <forbidden tool_id="portal_factory" />
+     <forbidden tool_id="portal_metadata" />
+    </tool-setup>
+
+.. note::
+
+  Adding a forbidden tool that was first required,
+  like in the example above,
+  is not yet supported.
+  See https://github.com/zopefoundation/Products.GenericSetup/pull/26
+
+.. automodule:: Products.GenericSetup.registry
+ :members: _ToolsetParser ToolsetRegistry
+
+.. automodule:: Products.GenericSetup.tool
+ :members: importToolset
+
+
+viewlets.xml
+------------
+
+.. automodule:: plone.app.viewletmanager.exportimport.storage
+
+
+workflows.xml
+-------------
+
+.. automodule:: Products.DCWorkflow.exportimport
