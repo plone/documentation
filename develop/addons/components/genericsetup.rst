@@ -722,11 +722,14 @@ Example:
 
 
 Best Practices
---------------
+==============
+
+The ``purge`` attribute
+-----------------------
 
 When importing items such as property sheets,
 make sure not to override other profile settings:
-set the purge attribute to False.
+set the ``purge`` attribute to False.
 This will *add* the listed items to the property instead of resetting the property.
 Example:
 
@@ -737,7 +740,31 @@ Example:
       <element value="Image"/>
     </property>
 
-Only use the configuration that you need.
+
+The ``remove`` attribute
+------------------------
+
+The ``remove`` attribute can be used to remove an item.
+
+.. code-block:: xml
+
+    <property name="allowAnonymousViewAbout" type="boolean" remove="true" />
+
+There are dangers:
+
+- Some importers do not support the ``remove`` keyword.
+  They ignore it and it add the item blindly.
+  This should be regarded as a bug in the importer.
+  Please report it.
+
+- Some importers check the truth value of the attribute, some just check the presence.
+  So ``remove="false"`` may mean the item stays and may mean it gets removed.
+  Best is to either use ``remove="true"`` or leave the entire keyword away.
+
+
+Only use the configuration that you need
+----------------------------------------
+
 When you export your site's configuration, it will include things that you don't need.
 For example,
 if you needed to change only the 'Allow anonymous to view about' property,
