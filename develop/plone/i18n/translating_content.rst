@@ -108,7 +108,7 @@ Grok directive
 
 In your content type class declaration::
 
-    from plone.multilingualbehavior import directives
+    from plone.app.multilingual.dx import directives
     directives.languageindependent('field')
 
 Supermodel
@@ -126,7 +126,7 @@ Native
 
 In your code::
 
-    from plone.multilingualbehavior.interfaces import ILanguageIndependentField
+    from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
     alsoProvides(ISchema['myField'], ILanguageIndependentField)
 
 Through the web
@@ -140,11 +140,11 @@ Language get/set via an unified adapter
 In order to access and modify the language of a content type regardless the
 type (Archetypes/Dexterity) there is a interface/adapter::
 
-    plone.multilingual.interfaces.ILanguage
+    plone.app.multilingual.interfaces.ILanguage
 
 You can use::
 
-    from plone.multilingual.interfaces import ILanguage
+    from plone.app.multilingual.interfaces import ILanguage
     language = ILanguage(context).get_language()
 
 or in case you want to set the language of a content::
@@ -155,7 +155,7 @@ ITranslationManager adapter
 ---------------------------
 
 The most interesting adapter that p.a.m. provides is:
-``plone.multilingual.interfaces.ITranslationManager``.
+``plone.app.multilingual.interfaces.ITranslationManager``.
 
 It adapts any ITranslatable object to provide convenience methods to manage
 the translations for that object.
@@ -165,7 +165,7 @@ Add a translation
 
 Given an object `obj` and we want to translate it to Catalan language ('ca')::
 
-    from plone.multilingual.interfaces import ITranslationManager
+    from plone.app.multilingual.interfaces import ITranslationManager
     ITranslationManager(obj).add_translation('ca')
 
 Register a translation for an already existing content
@@ -197,7 +197,7 @@ or::
 
     ITranslationManager(obj).has_translation('ca')
 
-For more information see: https://github.com/plone/plone.multilingual/blob/master/src/plone/multilingual/interfaces.py#L66
+For more information see: https://github.com/plone/plone.app.multilingual/blob/master/src/plone/app/multilingual/interfaces.py#L76
 
 
 
