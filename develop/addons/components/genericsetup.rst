@@ -790,6 +790,99 @@ actions.xml
 -----------
 
 
+componentregistry.xml
+---------------------
+
+Setup items in the local component registry of the Plone Site.
+The items can be adapters, subscribers, or utilities.
+This can also be done in zcml, which puts it in the global registry that is defined at startup.
+The difference is:
+when you put it in xml, the item is only added to a specific Plone Site when you install the package in the add-ons control panel.
+Both have their uses.
+
+Example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <componentregistry>
+      <adapters>
+         <adapter
+           for="archetypes.multilingual.interfaces.IArchetypesTranslatable"
+           provides="plone.app.multilingual.interfaces.ITranslationCloner"
+           factory="archetypes.multilingual.cloner.Cloner"
+         />
+      </adapters>
+      <subscribers>
+        <subscriber
+          for="archetypes.multilingual.interfaces.IArchetypesTranslatable
+               zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+          handler="archetypes.multilingual.subscriber.handler"
+          />
+      </subscribers>
+      <utilities>
+        <utility
+          interface="Products.ATContentTypes.interface.IATCTTool"
+          object="portal_atct"/>
+      </utilities>
+    </componentregistry>
+
+.. note::
+   A subscriber can either have a handler or a factory, not both.
+   A factory must have a provides and may have a name.
+   A subscriber will fail with a provides.
+
+.. note::
+    If something does not get added, its provider is probably blacklisted.
+    This list is defined by ``Products.GenericSetup.interfaces.IComponentsHandlerBlacklist`` utilities.
+    In standard Plone 5, these interfaces are blacklisted as providers:
+
+    - ``Products.GenericSetup.interfaces.IComponentsHandlerBlacklist``
+
+    - ``plone.portlets.interfaces.IPortletManager``
+
+    - ``plone.portlets.interfaces.IPortletManagerRenderer``
+
+    - ``plone.portlets.interfaces.IPortletType``
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <componentregistry>
+      <adapters>
+        <adapter
+          remove="true"
+          for="archetypes.multilingual.interfaces.IArchetypesTranslatable"
+          provides="plone.app.multilingual.interfaces.ITranslationCloner"
+          factory="archetypes.multilingual.cloner.Cloner"
+        />
+      </adapters>
+      <subscribers>
+        <subscriber
+          remove="true"
+          for="archetypes.multilingual.interfaces.IArchetypesTranslatable
+               zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+          handler="archetypes.multilingual.subscriber.handler"
+          />
+      </subscribers>
+      <utilities>
+        <utility
+          remove="true"
+          interface="Products.ATContentTypes.interface.IATCTTool"
+          object="portal_atct"/>
+      </utilities>
+    </componentregistry>
+
+.. note::
+    The presence of the ``remove`` keyword is enough.
+    Even if it is empty or contains ``false`` as value, the item is removed.
+
+.. automodule:: Products.GenericSetup.components
+  :members: ComponentRegistryXMLAdapter importComponentRegistry
+
+
 contentrules.xml
 ----------------
 
