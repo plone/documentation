@@ -109,6 +109,12 @@ This is an example of how a README.rst should look like:
     - Works out of the box, but can also be customized.
       After installation, you will find a new item in your site control panel where to set various options.
 
+    Supported Plone Versions
+    ------------------------
+
+    - [X] Plone 5.x
+    - [ ] Plone 4.x
+
 
     Examples
     --------
