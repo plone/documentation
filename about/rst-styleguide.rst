@@ -274,6 +274,19 @@ If syntax highlighting is not enabled for your code block, you probably have a s
 The full list of lexers and associated short names is here:
 http://pygments.org/docs/lexers/
 
+Images
+======
+
+reST supports an image directive:
+
+.. code-block:: rst
+
+  .. image:: /_static/plone_donut.png
+   (options)
+
+When used within Sphinx, the file name given (here plone_donut.png) must either be relative to the source file, or absolute which means that they are relative to the top source directory. For example, the file sketch/spam.rst could refer to the image _static/plone_donut.png as ../_static/plone_donut.png or /_static/plone_donut.png.
+
+
 Other Sphinx and restructured text source snippets
 ==================================================
 
@@ -376,6 +389,8 @@ Note:
 
    This is a TODO item
 
+You can find a brief introduction to reStructuredText (reST) on http://www.sphinx-doc.org/en/stable/rest.html
+
 Including gists
 ----------------
 
@@ -389,5 +404,5 @@ For including gists just use the *gist* directive
     .. gist:: https://gist.github.com/shomah4a/5149412
 
 .. note::
-  
+
     Since this documentation serves as source for various versions (html, PDF, Dash/Zeal, others), please **always** include a link to the gist under the gist directive.
