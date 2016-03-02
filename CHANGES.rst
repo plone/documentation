@@ -5,6 +5,7 @@ Changelog
 201603$
 =======
 
+- Improve docs about z3cfrom [do3cc]
 - Fixed wrong imports and old references to plone.multilingual [dmunicio]
 - Move Changelog out of the documentation [svx]
 - Added upgrade hint for migrate-to-emaillogin page [mauritsvanress]
