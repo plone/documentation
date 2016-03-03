@@ -5,6 +5,7 @@ Changelog
 201603$
 =======
 
+- Fix typo in zope deprecation docs [thet]
 - Improve docs about z3cfrom [do3cc]
 - Fixed wrong imports and old references to plone.multilingual [dmunicio]
 - Move Changelog out of the documentation [svx]
