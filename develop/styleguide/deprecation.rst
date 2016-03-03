@@ -219,7 +219,7 @@ The ``deprecated`` wrapper method is for deprecating properties:
 
 .. sourcecode:: python
 
-    from zope.deprecation import deprecate
+    from zope.deprecation import deprecated
 
     foo = None
     foo = deprecated(foo, 'foo is no more, use bar instead')
