@@ -91,7 +91,14 @@ Example::
     # get_local_roles() return sequence like ( ("userid1", ("rolename1", "rolename2")), ("userid2", ("rolename1") )
     roles = context.get_local_roles()
 
+The ``getRolesInContext()`` method returns the list of roles assigned to the user, including local roles assigned in the context of the passed-in object and both local roles assigned directly to the user and those assigned to the user's groups.
 
+Example::
+
+    from Products.CMFCore.utils import getToolByName
+    pm = getToolByName(context, 'portal_membership')
+    roles_in_context = pm.getAuthenticatedMember().getRolesInContext(context)
+          
 Deleting local roles
 ====================
 
