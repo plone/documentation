@@ -5,17 +5,18 @@ Changelog
 201603$
 =======
 
-- Fix typo in zope deprecation docs [thet]
-- Improve docs about z3cfrom [do3cc]
+- Added mention about etRolesInContext to /security/local_roles [tkimnguyen]
+- Fixed typo in zope deprecation docs [thet]
+- Improved docs about z3cfrom [do3cc]
 - Fixed wrong imports and old references to plone.multilingual [dmunicio]
-- Move Changelog out of the documentation [svx]
+- Moved Changelog out of the documentation [svx]
 - Added upgrade hint for migrate-to-emaillogin page [mauritsvanress]
-- Improve/Update docs about resource registry [cewing]
-- Add Deprecation Best Practices [thet] [jensens]
+- Improved docs about resource registry [cewing]
+- Added Deprecation Best Practices [thet] [jensens]
 - Minor additions and a typo fixes [jensens]
-- Add information on how to deprecate methods and properties [thet]
-- Replace tutorial link with a current working one [staeff]
-- Add note about advanced settings tab only for current theme [thet]
+- Added information on how to deprecate methods and properties [thet]
+- Replaced tutorial link with a current working one [staeff]
+- Added note about advanced settings tab only for current theme [thet]
 
 
 
