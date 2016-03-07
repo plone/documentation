@@ -281,7 +281,7 @@ reST supports an image directive:
 
 .. code-block:: rst
 
-  .. image:: /_static/plone_donut.png
+  .. image:: ../_static/plone_donut.png
    (options)
 
 When used within Sphinx, the file name given (here plone_donut.png) must either be relative to the source file, or absolute which means that they are relative to the top source directory. For example, the file sketch/spam.rst could refer to the image _static/plone_donut.png as ../_static/plone_donut.png or /_static/plone_donut.png.
