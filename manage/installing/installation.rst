@@ -93,7 +93,7 @@ Install the operating system software and libraries needed to run Plone
 
 .. code-block:: console
 
-    sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+    $ sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
 .. note::
 
@@ -105,7 +105,7 @@ You will probably also want these optional system packages for handling of PDF a
 
 .. code-block:: console
 
-    sudo apt-get install libreadline-dev wv poppler-utils
+    $ sudo apt-get install libreadline-dev wv poppler-utils
 
 .. note::
 
@@ -113,7 +113,7 @@ You will probably also want these optional system packages for handling of PDF a
 
 If you're planning on developing with Plone, install git version control support::
 
-    sudo apt-get install git
+    $ sudo apt-get install git
 
 
 
@@ -128,7 +128,7 @@ Substitute the latest version number for 5.0 in the instructions below.
 
 .. code-block:: console
 
-    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.2/+download/Plone-5.0.2-UnifiedInstaller.tgz
+    $ wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.2/+download/Plone-5.0.2-UnifiedInstaller.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -137,13 +137,13 @@ Extract the downloaded file
 
 .. code-block:: console
 
-    tar -xf Plone-5.0.2-UnifiedInstaller.tgz
+    $ tar -xf Plone-5.0.2-UnifiedInstaller.tgz
 
 Go the folder containing installer script
 
 .. code-block:: console
 
-    cd Plone-5.0.2-UnifiedInstaller
+    $ cd Plone-5.0.2-UnifiedInstaller
 
 .. note::
 
@@ -154,9 +154,9 @@ Run script
 
 .. code-block:: console
 
-  ./install.sh
+  $ ./install.sh
 
-Please follow the instructions on the screen 
+Please follow the instructions on the screen
 
 .. image:: /_static/install_gui_1.png
    :alt: Shows installer welcome message
@@ -166,7 +166,7 @@ We choose here for the ``standalone`` mode
 .. image:: /_static/install_gui_2.png
    :alt: Shows menu to choose between standalone and zeo
 
-Accept the default installation target or change the path 
+Accept the default installation target or change the path
 
 .. image:: /_static/install_gui_3.png
    :alt: Shows menu to set installation target
@@ -207,8 +207,8 @@ If you're using this Plone install for development, add the common development t
 
 .. code-block:: console
 
-    cd ~/Plone/zinstance
-    bin/buildout -c develop.cfg
+    $ cd ~/Plone/zinstance
+    $ bin/buildout -c develop.cfg
 
 You'll need to add the "-c develop.cfg" again each time you run buildout, or you'll lose the extra development tools.
 
@@ -219,8 +219,8 @@ If you're developing, start Plone in foreground mode for a test run (you'll see 
 
 .. code-block:: console
 
-    cd ~/Plone/zinstance
-    bin/plonectl fg
+    $ cd ~/Plone/zinstance
+    $ bin/plonectl fg
 
 When you start Plone in the foreground, it runs in debug mode, which is much slower than production mode since it reloads templates for every request.
 
@@ -228,15 +228,15 @@ For evaluation, instead use:
 
 .. code-block:: console
 
-    cd ~/Plone/zinstance
-    bin/plonectl start
+    $ cd ~/Plone/zinstance
+    $ bin/plonectl start
 
 Use
 
 .. code-block:: console
 
-    cd ~/Plone/zinstance
-    bin/plonectl stop
+    $ cd ~/Plone/zinstance
+    $ bin/plonectl stop
 
 to stop the instance.
 
