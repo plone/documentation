@@ -226,10 +226,11 @@ For example, to specify XML:
 
 .. code-block:: rst
 
-   .. code-block:: console
+   .. code-block:: shell
 
-      # A comment
-      sh myscript.sh
+      # Start Plone in foreground mode for a test run
+      cd ~/Plone/zinstance
+      bin/plonectl fg
 
 ... or a buildout.cfg:
 
