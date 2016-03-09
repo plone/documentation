@@ -5,6 +5,8 @@ Changelog
 201603$
 =======
 
+- Updated python-styleguide [thet]
+- Fixed wording in contribute_to_translations [svx]
 - Added mention about etRolesInContext to /security/local_roles [tkimnguyen]
 - Fixed typo in zope deprecation docs [thet]
 - Improved docs about z3cfrom [do3cc]
