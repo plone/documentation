@@ -1058,6 +1058,69 @@ Resource Registries
   :members: ResourceRegistryNodeAdapter
 
 
+rolemap.xml
+-----------
+
+In ``rolemap.xml`` you define new roles and grant permissions.
+Both are optional.
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <rolemap>
+      <roles>
+        <role name="Anonymous"/>
+        <role name="Authenticated"/>
+        <role name="Manager"/>
+        <role name="Site Administrator"/>
+        <role name="Member"/>
+        <role name="Owner"/>
+        <role name="Reviewer"/>
+        <role name="Reader" />
+        <role name="Editor" />
+        <role name="Contributor" />
+      </roles>
+      <permissions>
+        <permission name="Pass the bridge"
+                    acquire="True">
+          <role name="Manager"/>
+          <role name="Site Administrator"/>
+        </permission>
+      </permissions>
+    </rolemap>
+
+The roles above are the standard roles in Plone 5.
+In your profile you only need to list other roles.
+
+The permission must already exist on the Zope level,
+otherwise you get an error when installing your profile::
+
+  ValueError: The permission <em>Pass the bridge</em> is invalid.
+
+A permission is created on the Zope level when it is used in code.
+See :doc:`Creating permissions </develop/plone/security>`.
+
+When a role in a permission does not exist, it is silently ignored.
+The roles listed in a permission are not added.
+They replace all existing roles.
+
+With ``acquire="true"`` (or ``True``, ``yes``, ``1``) roles are also acquired from the Zope root.
+
+.. note::
+
+    There is no uninstall version for ``rolemap.xml``.
+    ``purge`` and ``remove`` are not supported.
+    You can set different values for a permission if this makes sense in your case.
+    This will reset the permission to the same settings as on the Zope level:
+
+    .. code-block:: xml
+
+        <permission name="Pass the bridge" acquire="True" />
+
+.. automodule:: Products.GenericSetup.rolemap
+ :members: importRolemap RolemapImportConfigurator
+
+
 sharing.xml
 -----------
 
