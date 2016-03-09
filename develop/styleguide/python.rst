@@ -29,7 +29,7 @@ If you absolutely need to break this rule, append ``# noPEP8`` to the offending 
 .. note::
     The line length rule also applies to non-python source files, such as ``.zcml`` files, but is a bit more relaxed there.
     It explicitly **does not** aply to documentation ``.rst`` files.
-    For ``.rst`` files including the package documentation but also ``README.rst``, ``CHANGES.rst`` and doctests, use *semantic* linebreaks and add a line break at each sentence.
+    For ``.rst`` files including the package documentation but also ``README.rst``, ``CHANGES.rst`` and doctests, use *semantic* linebreaks and add a line break after each sentence.
     See the :doc:`REST styleguide </about/rst-styleguide.html#line-length-translations>`_ for the reasoning behind it.
 
 
