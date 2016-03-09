@@ -919,6 +919,40 @@ see :ref:`resourceregistries`
 metadata.xml
 ------------
 
+This is a special one.
+The ``metadata.xml`` file is read during Plone start-up.
+If this file has problems your add-on might not appear in the installer control panel.
+The ``metadata.xml`` file contains add-on dependency and version information.
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <metadata>
+     <version>1000</version>
+     <dependencies>
+       <dependency>profile-collective.basket:default</dependency>
+     </dependencies>
+    </metadata>
+
+The dependencies are optional.
+
+There is no import step that reads this file.
+The ``portal_setup`` tool uses this information when installing a profile.
+It installs the profiles that are listed as dependencies, before installing your own profile.
+Since ``Products.GenericSetup`` 1.8.0, dependency profiles that are already installed, are not installed again.
+Instead, their upgrade steps, are applied, if they have them.
+
+After your profile is installed, ``portal_setup`` stores the version number.
+This is used when determining if any upgrade steps are available for your profile.
+
+When you search for ``metadata.xml`` in the documentation, you will find more information in context.
+
+.. note::
+
+    There is no uninstall version of ``metadata.xml``.
+    An ``uninstall`` profile can have its own ``metadata.xml`` with a version and even profiles.
+    But for dependencies no ``purge`` or ``remove`` keyword is supported.
+
 
 portlets.xml
 ------------
