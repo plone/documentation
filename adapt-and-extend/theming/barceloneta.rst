@@ -143,3 +143,62 @@ You can develop a custom Diazo based theme and use the Barceloneta theme only fo
     </rules>
 
 You can define your own Diazo bundle (JavaScript and Less/CSS) in your manifest.cfg file by using the options ``development-js``, ``production-js``, ``development-css`` and ``production-css``. This bundle will not be included in the backend theme.
+
+Inheriting a new theme from Barceloneta
+---------------------------------------
+
+.. note:: based on `Customize Plone 5 default theme on the fly <http://datakurre.pandala.org/2015/05/customize-plone-5-default-theme-on-fly.html>`_ by Asko Soukka.
+
+If you do not want to build a complete theme from scratch, you can use Barceloneta and just make small changes.
+
+Create a new theme in the theming editor containing the following files:
+
+- ``manifest.cfg``, declaring your theme:
+
+.. code-block:: ini
+
+    [theme]
+    title = mytheme
+    description =
+    development-css = /++theme++mytheme/styles.less
+    production-css = /++theme++mytheme/styles.css
+
+- ``rules.xml``, including the Barceloneta rules:
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <rules
+        xmlns="http://namespaces.plone.org/diazo"
+        xmlns:css="http://namespaces.plone.org/diazo/css"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:xi="http://www.w3.org/2001/XInclude">
+
+      <!-- Import Barceloneta rules -->
+      <xi:include href="++theme++barceloneta/rules.xml" />
+
+      <rules css:if-content="#visual-portal-wrapper">
+        <!-- Placeholder for your own additional rules -->
+      </rules>
+
+    </rules>
+
+- a copy of ``index.html`` from Barceloneta (this one cannot be imported or inherited, it must be local to your theme).
+
+- ``style.less``, importing Barceloneta style:
+
+.. code-block:: css
+
+    /* Import Barceloneta styles */
+    @import "++theme++barceloneta/less/barceloneta.plone.less";
+
+    /* Customize whatever you want */
+    @plone-sitenav-bg: pink;
+    @plone-sitenav-link-hover-bg: darken(pink, 20%);
+    .plone-nav > li > a {
+      color: @plone-text-color;
+    }
+
+Then you have to compile ``style.less`` to obtain your ``style.css`` file using the "Build CSS" button.
+
+Now your theme is ready. You can keep it in the theming editor, or you can export it and put the files in your theme add-on.
