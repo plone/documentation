@@ -110,7 +110,7 @@ results.
 but does not
 support all the same parameters; e.g. ``object_provides`` is not supported.
 See the `ContentFilter class
-<http://svn.zope.org/Products.CMFCore/trunk/Products/CMFCore/PortalFolder.py?view=markup>`_
+<https://github.com/plone/Products.CMFCore/blob/2.3.0/Products/CMFCore/PortalFolder.py#L201>`_
 for details.
 
 Example::
