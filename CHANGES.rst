@@ -5,6 +5,9 @@ Changelog
 201603$
 =======
 
+- Fixed broken links, typos and rst syntax in about/contributing [svx]
+- Fixed broken link to docs about ContentFilter class [do3cc]
+- Added docs about 'theming' based on barceloneta [ebrehault]
 - Updated python-styleguide [thet]
 - Fixed wording in contribute_to_translations [svx]
 - Added mention about etRolesInContext to /security/local_roles [tkimnguyen]
