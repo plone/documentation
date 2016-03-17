@@ -28,9 +28,8 @@ Download Plone
 
 Plone is available for Microsoft Windows, Mac OSX X, Linux and BSD operating systems.
 
-`Download the latest Plone release <https://plone.org/products/plone/latest_release>`_.
+`Download the latest Plone 4 release <https://launchpad.net/plone/4.3>`_.
 
-Binary installers are available for Windows and OS X.
 Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer. "Unified" refers to its ability to install on most Unix workalikes.
 
 Plone installation requirements
