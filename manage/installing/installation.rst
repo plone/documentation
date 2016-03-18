@@ -176,7 +176,7 @@ Choose a password option
 .. image:: /_static/install_gui_4.png
    :alt: Shows password menu
 
-Controll the settings to make sure everything is as you want it
+Control the settings to make sure everything is as you want it
 
 .. image:: /_static/install_gui_5.png
    :alt: Show overview about password and target dir
