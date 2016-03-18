@@ -16,8 +16,10 @@ Through the Web
 ~~~~~~~~~~~~~~~
 
 -  Add @@manage-viewlets to your site URL.
+   For example http://mysite.com/@@manage-viewlets
 -  If you want to move viewlets that only appear on a page, be sure to
    append @@manage-viewlets to the URL of the page.
+   For example http://mysite.com/myfolder/mypage/@@manage-viewlets
 -  You will find that you can move, hide or remove viewlets with this
    method, but that you cannot move them from one viewlet manager to
    another.
@@ -30,10 +32,10 @@ Moving or removing viewlets is part of your site configuration:
 -  Add or edit [your theme package]/profiles/default/viewlets.xml
 
 You'll find general information about the site configuration in the
-`Configuration <https://plone.org/documentation/manual/theme-reference/elements/buildingblocks/configuration>`_\ section
+`Configuration <https://plone.org/documentation/manual/theme-reference/elements/buildingblocks/configuration>`_ section
 of this manual. It's worth reading this through before you launch in
 here, as configuring viewlets and viewlet managers can be a bit tricky.
-It will tell you
+It will tell you:
 
 -  how you can get the Generic Setup tool to write out the configuration
    for you
@@ -46,7 +48,7 @@ interface and inspect the resulting configuration.
 Removing a viewlet from a viewlet manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can't do anything more than hide your viewlet in the viewlet manager
+You can't do anything more than hiding your viewlets in the viewlet manager
 
 ::
 
