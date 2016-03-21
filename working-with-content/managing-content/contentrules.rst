@@ -138,11 +138,12 @@ In this example, you're going to create a content rule that will send an email a
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/contentrules-add.png
                ...  css=#content
-
        Click button  css=#form-buttons-save
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/contentrules-conditions.png
                ...  css=#content
+       Click button  name=form.button.Save
+
 
     assign rule
         Go to  ${PLONE_URL}/news
