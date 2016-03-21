@@ -153,7 +153,7 @@ Why this is a good idea:
 
 - It reduces the effort in theming. In most cases your users will never see edit, sharing, sitesetup or other aspects of the Plone backend UI. Making those screens work with a new theme is a lot of work.
 - The backend pages can include a lot of add on functionality which might be hard to integrate. This might not be tested for integration into third-party themes.
-- Barceloneta has been tested for UI and to some extend accessibility. Retheming it 
+- Barceloneta has been tested for UI and to some extend accessibility. Retheming could make the UI harder to use for editor.
 - The backend UI is more likely to change between versions. Theming it means your theme will have to change too.
 
 How this works:
