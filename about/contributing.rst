@@ -118,7 +118,9 @@ If possible please make sure to fill in the missing bits, for example
 
     Fixes #1234
 
-    Improves: Style-guide about rst syntax
+    Improves:
+
+    -  Style-guide about rst syntax
 
     Changes proposed in this pull request: Unified usage of '..code-block:: shell' as best practices
 
