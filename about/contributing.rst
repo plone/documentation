@@ -102,9 +102,29 @@ Pull request checklist
 
 Making a good pull request makes life easier for everybody:
 
-* The title and description of a pull request MUST be descriptive and need to reflect the changes. So please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
+* The title and description of a pull request **MUST** be descriptive and need to reflect the changes. So please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
 
 If you can state for which versions of Plone your submissions are valid, that would be awesome.
+
+We use a template which creates a default form for pull requests
+
+.. image:: /_static/pr-template.png
+   :align: center
+   :alt: Picture of Pull request template
+
+If possible please make sure to fill in the missing bits, for example
+
+.. code-block:: shell
+
+    Fixes #1234
+
+    Improves:
+
+    -  Style-guide about rst syntax
+
+    Changes proposed in this pull request: Unified usage of '..code-block:: shell' as best practices
+
+
 
 Editing the documentation using git
 ===================================
