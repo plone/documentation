@@ -144,6 +144,22 @@ You can develop a custom Diazo based theme and use the Barceloneta theme only fo
 
 You can define your own Diazo bundle (JavaScript and Less/CSS) in your manifest.cfg file by using the options ``development-js``, ``production-js``, ``development-css`` and ``production-css``. This bundle will not be included in the backend theme.
 
+Why this is a good idea:
+
+- It reduces the effort in theming. In most cases your users will never see edit, sharing, sitesetup or other aspects of the Plone backend UI. Making those screens work with a new theme is a lot of work.
+- The backend pages can include a lot of add on functionality which might be hard to integrate. This might not be tested for integration into third-party themes.
+- Barceloneta has been tested for UI and to some extend accessibility. Retheming it 
+- The backend UI is more likely to change between versions. Theming it means your theme will have to change too.
+
+How this works:
+
+- there is a body class tag "frontend". This appears when current view or page is unprotected or only protected by a "can view" permisission. In most cases this your "view" of an object, and some extra pages like contact-us, login_form etc. Almost everything else is protected by other permissions and are therefore intended to be used by logged in users.
+- ++theme++barceloneta/backend.xml is mainly the same as the normal barceloneteta rules except for a few exceptions. 
+  - It will only apply theming when body.frontend is not present
+  - it disables all popups. This makes it possible to switch theme using just the toolbar
+  - it removes headers, footers and most "theme" elements from backend pages. 
+
+
 Inheriting a new theme from Barceloneta
 ---------------------------------------
 
