@@ -108,7 +108,7 @@ If you can state for which versions of Plone your submissions are valid, that wo
 
 We use a template which creates a default form for pull requests
 
-.. image:: /_static/improve_docs_prs.png
+.. image:: /_static/pr-template.png
    :align: center
    :alt: Picture of Pull request template
 
