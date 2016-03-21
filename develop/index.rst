@@ -2,25 +2,15 @@ Developing for Plone
 ====================
 
 
-Developing add-ons
-------------------
-
 .. toctree::
    :maxdepth: 2
 
    addons/index
 
-Programming with Plone
-----------------------
-
 .. toctree::
    :maxdepth: 2
 
    plone/index
-
-
-Debugging Plone
----------------
 
 .. toctree::
    :maxdepth: 2
@@ -28,17 +18,11 @@ Debugging Plone
    debugging/index
 
 
-Testing Plone
--------------
-
 .. toctree::
    :maxdepth: 2
 
    testing/index
 
-
-Developing for Plone Core
--------------------------
 
 .. toctree::
    :maxdepth: 4
