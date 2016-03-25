@@ -753,7 +753,7 @@ The ``remove`` attribute can be used to remove an item.
 There are dangers:
 
 - Some importers do not support the ``remove`` keyword.
-  They ignore it and it add the item blindly.
+  They ignore it and add the item blindly.
   This should be regarded as a bug in the importer.
   Please report it.
 
