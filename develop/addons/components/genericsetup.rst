@@ -1156,7 +1156,7 @@ Example:
   It can also contain a specific skin, for example ``Plone Default``, ``Sunburst Theme``, ``Plone Classic Theme``.
 
 You can set a few properties on the ``portal_skins`` object.
-``Products.CMFPlone`` set good defaults:
+``Products.CMFPlone`` sets good defaults which you should keep:
 
 .. code-block:: xml
 
