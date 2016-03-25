@@ -396,7 +396,7 @@ Example of removing all Plone-related cookies, besides ones dealing with the log
 
       if (req.http.Cookie) {
           # (logged in user, status message - NO session storage or language cookie)
-          set req.http.Cookie = ";" req.http.Cookie;
+          set req.http.Cookie = ";" + req.http.Cookie;
           set req.http.Cookie = regsuball(req.http.Cookie, "; +", ";");
           set req.http.Cookie = regsuball(req.http.Cookie, ";(statusmessages|__ac|_ZopeId|__cp)=", "; \1=");
           set req.http.Cookie = regsuball(req.http.Cookie, ";[^ ][^;]*", "");
