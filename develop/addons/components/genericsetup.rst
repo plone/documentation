@@ -1131,6 +1131,83 @@ For reference, visit: :doc:`Local Roles </develop/plone/security/local_roles>`.
 skins.xml
 ---------
 
+Skins are old fashioned, so you may not need this.
+The more modern way is: use browser views and static directories.
+But skins are still installed by several packages.
+
+Example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_skins" meta_type="Plone Skins Tool">
+     <object name="ATContentTypes" meta_type="Filesystem Directory View"
+        directory="Products.ATContentTypes:skins/ATContentTypes"/>
+     <skin-path name="*">
+      <layer name="ATContentTypes" insert-after="custom"/>
+     </skin-path>
+    </object>
+
+- The ``object`` is added to the Contents tab of ``portal_skins``.
+
+- The ``layer`` is added to one or more skin selections on the Properties tab of ``portal_skins``.
+
+- The ``skin-path`` name is usually ``*`` to add the skin layer to all skin selections (old style themes in ``portal_skins``).
+  It can also contain a specific skin, for example ``Plone Default``, ``Sunburst Theme``, ``Plone Classic Theme``.
+
+You can set a few properties on the ``portal_skins`` object.
+``Products.CMFPlone`` set good defaults:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_skins"
+       meta_type="Plone Skins Tool"
+       default_skin="Plone Default"
+       allow_any="False"
+       cookie_persistence="False"
+       request_varname="plone_skin">
+    </object>
+
+- The ``meta_type`` should always be ``Plone Skins Tool`` or be removed.
+  It is ignored.
+
+- ``default_skin`` is the name of the default skin selection.
+
+- ``allow_any`` indicates whether users are allowed to use arbitrary skin paths.
+
+- ``cookie_persistence`` indicates whether the skins cookie is persistent or not.
+
+- ``request_varname`` gets the variable name to look for in the request.
+
+The ``allow_any``, ``cookie_persistence`` and ``request_varname`` options are old functionality and seem not well supported anymore.
+No cookie is set.
+You can choose a skin path even when ``allow_any`` is false.
+
+The idea is:
+if you have the Sunburst Theme as default,
+and also have the Plone Classic Theme available,
+you can view the site in the classic theme by visiting this link:
+http://localhost:8080/Plone?plone_skin=Plone%20Classic%20Theme
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_skins" meta_type="Plone Skins Tool">
+     <object name="ATContentTypes" remove="true" />
+     <skin-path name="*">
+      <layer name="ATContentTypes" remove="true" />
+     </skin-path>
+    </object>
+
+.. note::
+
+    For removing the layer ``remove=""`` is sufficient.
+    For removing the object ``remove="true"`` is required.
+    Recommended is to use the full ``remove="true"`` in both cases.
+
 
 tinymce.xml
 -----------
