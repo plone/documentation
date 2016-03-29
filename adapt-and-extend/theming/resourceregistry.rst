@@ -395,6 +395,11 @@ expression
     A TALES expression.
     If the expression evaluates as ``True``, the bundle will be included.
 
+merge_with
+    Indicate in which of the bundle aggregations this bundle should be included.
+    The valid values for this option are ``default`` or ``logged-in``.
+    (:ref:`see below <resource_bundle_aggregation>`).
+
 conditionalcomment
     Provide a conditional comment for Internet Explorer hacks.
 
@@ -671,6 +676,49 @@ Here is the API method to do so (from ``Products.CMFPlone.resources``):
     The value provided for ``resource`` must be the name of a resource.
     The named resource will be added to the current request.
 
+.. _resource_bundle_aggregation:
+
+Aggregate Bundles for Production
+================================
+
+Plone defines several bundles.
+Add-ons that you include in your Plone site may also define bundles of their own.
+In production, *each* of these bundles will result in the loading of one JavaScript and one CSS file.
+To reduce the number of loaded files to an absolute minimum, we use *bundle aggregation".
+
+There are two bundle aggregations available in Plone.
+A first aggregation named ``default`` contains all the bundles that must be available at all times.
+It creates 2 output files (one JavaScript and one CSS).
+A second aggregation named ``logged-in`` contains bundles only needed for authenticated users.
+It also creates 2 output files (one JavaScript and one CSS).
+
+Aggregation of bundles is triggered by the ``registry.xml`` Generic Setup import step.
+Installing any profile containing a ``registry.xml`` file will automatically refresh the current aggregations.
+Any bundles declared in that file will be included, if they declare that they should be merged with one of the two available aggregations.
+
+As bundles can be defined or modified Through-The-Web, Plone also provides a "Merge bundles for production" button in the Resource Registry.
+This allows us to re-generate the aggregations manually after any Through-The-Web modifications have been made.
+
+Declare an Aggregation
+----------------------
+
+Custom bundles from an add-on or from a theme may be aggregated with the standard Plone bundles.
+To do so, use the ``merge_with`` option in your bundle declaration in ``registry.xml``.
+The valid values are ``default`` or ``logged-in``.
+If the ``merge_with`` option is not present or is empty, the bundle will not be aggregated and is published separately.
+
+.. code-block:: xml
+
+  <records prefix="plone.bundles/my-bundle"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="merge_with">logged-in</value>
+    ...
+  </record>
+
+.. note:: Bundles cannot be conditionally included in an aggregation.
+          If the value of the `merge_with` option is `default` or `logged-in`, the value of the `expression` option **will be ignored**.
+
+.. note:: In Development mode, aggregation is disabled, all bundles are published separately.
 
 Diazo Bundles
 =============
