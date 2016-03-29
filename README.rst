@@ -27,7 +27,7 @@ If you want to build the full documentation locally please follow the `build ins
 
 Note that this is *not* needed to make smaller edits, and not recommended just to **read** the documentation, but is recommended when doing larger scale edits.
 
-This is tested with Debian, Ubuntu and OSX.
+This is tested with `Debian <https://www.debian.org/>`_, `Ubuntu <http://www.ubuntu.com/>`_, `Fedora <https://getfedora.org/>`_ and `OSX <https://www.apple.com/osx/>`_.
 
 License
 -------

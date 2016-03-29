@@ -18,7 +18,7 @@ GenericSetup is an XML-based way to import and export Plone site configurations.
 It is mainly used to prepare the Plone site for add-on products, by:
 
 * registering CSS files,
-* registering Javascript files,
+* registering JavaScript files,
 * setting various properties,
 * registering portlets,
 * registering portal_catalog search query indexes,
@@ -75,13 +75,11 @@ accordingly.
         information) is read during Plone start-up.
         If this file has problems your add-on might not appear in the installer control panel.
 
-* `GenericSetup tutorial <https://plone.org/documentation/tutorial/genericsetup>`_
+.. * Not publicly viewable anymore: `GenericSetup tutorial <https://plone.org/documentation/tutorial/genericsetup>`_
 
-* `GenericSetup product page <https://pypi.python.org/pypi/Products.GenericSetup/1.4.5>`_.
+* `GenericSetup product page <https://pypi.python.org/pypi/Products.GenericSetup>`_.
 
-* `Source code <http://svn.zope.org/Products.GenericSetup/trunk/Products/GenericSetup/README.txt?rev=87436&view=auto>`_.
-
-.. TODO:: should the link be specifically to rev=87436?
+* `Source code <https://github.com/zopefoundation/Products.GenericSetup>`_.
 
 
 Creating a profile
@@ -112,6 +110,18 @@ product.
 
     </configure>
 
+.. note ::
+
+    When you have more than one profile in your package,
+    the add-ons control panel needs to decide which one to use when you install it.
+    In Plone 5.0 and lower,
+    the profiles are sorted alphabetically by id,
+    and the first one is chosen.
+    So if you have profiles ``base`` and ``default``,
+    the ``base`` profile is installed.
+    Plone 5.1 is scheduled to prefer the ``default`` profile.
+    For more information on this plan,
+    see `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
 
 
 Add-on-specific issues
@@ -129,14 +139,15 @@ Add-on products may contain:
 
 For more information about custom import steps, see:
 
-* http://n2.nabble.com/indexing-of-content-created-by-Generic-Setup-tp4454703p4454703.html
+* http://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html
+
 
 Listing available profiles
 ==========================
 
 Example::
 
-        # Run the default quick installer profile
+        # List all profiles know to the Plone instance.
         setup_tool = self.portal.portal_setup
 
         profiles = setup_tool.listProfileInfo()
@@ -156,10 +167,10 @@ Installing a profile
 
 This is usually unit test specific question how to enable certain add-ons for unit testing.
 
-PloneTestCase.setupPloneSite
-----------------------------
+plone.app.testing
+-----------------
 
-See *Running add-on installers and extensions profiles for unit tests*.
+See `Product and profile installation <http://docs.plone.org/external/plone.app.testing/docs/source/README.html#product-and-profile-installation>`_.
 
 Manually
 ---------
@@ -170,18 +181,21 @@ The profile name is in the format ``profile-${product name}:${profile id}``
 
 Unit testing example::
 
-    # Run the extended profile which will create email_catalog
-    setup_tool.runAllImportStepsFromProfile('profile-betahaus.emaillogin:exdended')
+    # Run the extended profile of the betahaus.emaillogin package.
+    setup_tool.runAllImportStepsFromProfile('profile-betahaus.emaillogin:extended')
 
-Upgrade steps
-==================
 
-If you need to migrate data or settings on new add-on versions
+Missing upgrade procedure
+=========================
 
-* http://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on
+In the add-ons control panel you may see a warning that your add-on is
+`missing an upgrade procedure <http://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on>`_.
+
+This means you need to write some `Upgrade steps`_.
+
 
 Uninstall profile
-==================
+=================
 
 For the theory, see:
 `<http://blog.keul.it/2013/05/how-to-make-your-plone-add-on-products.html>`_
@@ -197,10 +211,12 @@ GenericSetup profile can contain dependencies to other add-on product installers
 
 * `More information about GenericSetup dependencies <https://plone.org/products/plone/roadmap/195/>`_.
 
-For example, if you want to declare dependency to *collective.basket* add-on product, so that it
-is automatically installed when your add-on installed you can use the declaration below.
-This way, you can be sure that all layers, portlets, etc. features which require database changes
-are usable from *collective.basket* add-on products when your add-on product is run.
+For example, if you want to declare a dependency to the *collective.basket* add-on product,
+so that it is automatically installed when your add-on is installed,
+you can use the declaration below.
+This way,
+you can be sure that all layers, portlets, and other features which require database changes,
+are usable from the *collective.basket* add-on product when your add-on product is run.
 
 ``metadata.xml``:
 
@@ -239,22 +255,61 @@ are usable from *collective.basket* add-on products when your add-on product is 
 
 .. note::
 
-    The ``Products.*`` Python namespace needs to declare generic setup
-    dependencies specially:
-    You actually do not mention ``Products.xxx`` space.
+    For some old products in the ``Products.*`` Python namespace,
+    you must not include the full package name in the dependencies.
+    This is true when this product has registered its profile in Python instead of zcml,
+    and there it has used only part of its package name.
+    In most cases you *do* need to use the full ``Products.xxx`` name.
 
-To declare dependency to ``Products.Carousel``:
+To declare a dependency on the ``simple`` profile of ``Products.PluggableAuthService``:
 
 .. code-block:: xml
 
     <?xml version="1.0"?>
     <metadata>
       <version>1000</version>
-      <!-- Install Products.Carousel on the site when this add-on is installed -->
+      <!-- Install the simple PluggableAuthService profile on the site when this add-on is installed. -->
       <dependencies>
-        <dependency>profile-Carousel:default</dependency>
+        <dependency>profile-PluggableAuthService:simple</dependency>
       </dependencies>
     </metadata>
+
+
+Metadata version numbers
+========================
+
+Some old packages may have a ``metadata.xml`` without version number,
+but this is considered bad practice.
+What should the version number in your ``metadata.xml`` be?
+This mostly matters when you are adding upgrade steps,
+See also the `Upgrade steps`_ section.
+Upgrade steps have a sort order in which they are executed.
+This used to be alphabetical sorting.
+When you had eleven upgrade steps, marked from 1 through 11,
+alphabetical sorting meant this order: 1, 10, 11, 2, 3, etc.
+If you are seeing this, then you are using an old version of GenericSetup.
+You want numerical sorting here, which is correctly done currently.
+Versions with dots work fine too.
+They get ordered just like they would when used for packages on PyPI.
+So far for the background information.
+
+Best practice for all versions of GenericSetup is this:
+
+- Start with 1000.
+  This avoids problems with ancient GenericSetup that used alphabetical sorting.
+
+- Simply increase the version by 1 each time you need a new metadata version.
+  So 1001, 1002, etc.
+
+- If your package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version.
+  There is simply no need.
+
+- If you make changes for a new major release, you should increase the metadata version significantly.
+  This leaves room for small metadata version increases on a maintenance branch.
+  Example:
+  You have branch master with version 1025.
+  You make backwards incompatible changes and you increase the version to 2000.
+  You create a maintenance branch where the next metadata version will be 1026.
 
 
 Custom installer code (``setuphandlers.py``)
@@ -263,7 +318,46 @@ Custom installer code (``setuphandlers.py``)
 Besides out-of-the-box XML steps which easily provide both install and uninstall,
 GenericSetup provides a way to run a custom Python code when your
 add-on product is installed and uninstalled.
-This is not very straightforward process, though.
+This is not a very straightforward process, though.
+
+.. note::
+
+    An easier way may be possible for you.
+    GenericSetup 1.8.2 (not yet released as of this writing)
+    has an option to point to a function to run before or after applying all import steps for your profile.
+    If you do not need to support older versions,
+    this is the easiest way.
+
+    In ``configure.zcml``::
+
+        <configure
+            xmlns="http://namespaces.zope.org/zope"
+            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+            i18n_domain="your.package">
+
+          <genericsetup:registerProfile
+              name="default"
+              title="My Package"
+              directory="profiles/default"
+              description="A useful package"
+              provides="Products.GenericSetup.interfaces.EXTENSION"
+              pre_handler="your.package.setuphandlers.run_before"
+              post_handler="your.package.setuphandlers.run_after"
+              />
+
+        </configure>
+
+    In ``setuphandlers.py``::
+
+        def run_before(context):
+            # This is run before running the first import step of
+            # the default profile.  context is portal_setup.
+            pass
+
+        def run_after(context):
+            # This is run after running the last import step of
+            # the default profile.  context is portal_setup.
+            pass
 
 The best practice is to create a ``setuphandlers.py`` file
 which contains function ``setup_various()`` which runs required
@@ -291,13 +385,31 @@ Also you need to register this custom import step in ``configure.zcml``
         xmlns="http://namespaces.zope.org/zope"
         xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
-      <!-- Register the import step -->
       <genericsetup:importStep
           name="your.package"
           title="your.package special import handlers"
           description=""
           handler="your.package.setuphandlers.setup_various"
           />
+
+    </configure>
+
+You can run other steps before yours by using the ``depends`` directive.
+For instance, if your import step depends on a content type to be installed first, you must use:
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+      <genericsetup:importStep
+          name="your.package"
+          title="your.package special import handlers"
+          description=""
+          handler="your.package.setuphandlers.setup_various">
+        <depends name="typeinfo" />
+      </genericsetup:importStep>
 
     </configure>
 
@@ -340,21 +452,52 @@ More information
 
 * http://maurits.vanrees.org/weblog/archive/2009/12/catalog (unrelated, but contains pointers)
 
+
 Overriding import step order
-===============================
+============================
 
-You need ``import_steps.xml``.
+If you need to override the order of import steps in a package that is not yours,
+it might work if you `use an overrides.zcml <http://plone.293351.n2.nabble.com/Overriding-import-step-order-td2189638.html>`_.
 
-More information
-
-* http://plone.293351.n2.nabble.com/Overriding-import-step-order-td2189638.html
-
-* http://dev.communesplone.org/trac/browser/communesplone/urban/trunk/profiles/default/import_steps.xml?rev=5652
 
 Controlling the import step execution order
 -------------------------------------------
 
+If you only need to control the execution order of one of your own custom import steps,
+you can do this in your import step definition in zcml.
+To make sure the catalog and typeinfo steps are run before your own step,
+use this code:
+
+.. code-block:: xml
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+        i18n_domain="poi">
+
+      <genericsetup:importStep
+          name="poi_various"
+          title="Poi various import handlers"
+          description=""
+          handler="Products.Poi.setuphandlers.import_various">
+        <depends name="catalog"/>
+        <depends name="typeinfo"/>
+      </gs:importStep>
+
+    </configure>
+
+.. note::
+
+    The name that you need, is usually the name of the related xml file,
+    but with the ``.xml`` stripped.
+    For the ``catalog.xml`` the import step name is ``catalog``.
+    But there are exceptions.
+    For the ``types.xml`` and the ``types`` directory,
+    the import step name is ``typeinfo``.
+    See `Plone GenericSetup Reference`_ for a list.
+
 * http://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html
+
 
 Upgrade steps
 =============
@@ -373,14 +516,16 @@ GenericSetup upgrade step means non-technical people can do it as well. As it
 turns out, once you have the script, it's easy to put its code in an upgrade
 step.)
 
+
 Increment profile version
 -------------------------
 
-First increase the number of the version in the ``profiles/default/metadata.xml``. This version
-number should be an integer. Package version are different because they
-add sens like the status of the addon: is it stable, is it in dev, in beta,
-which branch it is. A profile version indicate only that you have to migrate
-data in the database.
+First increase the number of the version in the ``profiles/default/metadata.xml``.
+This version number should be an integer.
+Package version are different because they add sense like the status of the addon:
+is it stable, is it in dev, in beta, which branch is it.
+A profile version indicates only that you have to migrate data in the database.
+
 
 Add upgrade step
 ----------------
@@ -407,12 +552,12 @@ Next we add an upgrade step:
     </configure>
 
 
-* You can use a wildcard character for *source* to indicate an upgrade for any
-  previous version. To run the upgrade step only when upgrading from a specific
-  version, use that version's number.
+* You can use a wildcard character for *source* to indicate an upgrade for any previous version.
+  Since Products.GenericSetup 1.7.6 this works fine.
+  To run the upgrade step only when upgrading from a specific version, use that version's number.
 
-* A *sortkey* can be used to indicate the order in which upgrade steps are
-  run.
+* The optional *sortkey* can be used to indicate the order in which upgrade steps are run.
+
 
 Add upgrade code
 ----------------
@@ -470,10 +615,12 @@ If you want to call workflow.xml use workflow::
 
         setup.runImportStepFromProfile(PROFILE_ID, 'workflow')
 
-The ids of the various default import steps are defined in the import_steps.xml of CMFDefault.
-visit it at http://svn.zope.org/CMF/branches/2.1/CMFDefault/profiles/default/import_steps.xml?logsort=date&rev=78624&view=markup
+The ids of the various default import steps are defined in several places.
+Some of the most used ones are here:
 
-XXX Fix the link above
+* https://github.com/zopefoundation/Products.CMFCore/blob/master/Products/CMFCore/exportimport/configure.zcml
+
+* https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/exportimport/configure.zcml
 
 After restarting Zope, your upgrade step should be visible in the ZMI: The
 *portal_setup* tool has a tab *Upgrades*. Select your product profile to see
@@ -549,6 +696,7 @@ More information
 
 * http://plone.293351.n2.nabble.com/Product-twice-in-quickinstaller-td5345492.html#a5345492
 
+
 Preventing uninstall
 ====================
 
@@ -568,7 +716,9 @@ Example:
 
 .. note ::
 
-    This example if for Extensions/install.py, old Plone 2 way of writing installers
+    This example is for Extensions/install.py, an old Plone 2 way of writing installers and uninstallers.
+    It is still working in Plone 5.0,
+    but will likely go away in Plone 5.1.
 
 
 

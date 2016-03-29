@@ -10,7 +10,7 @@ Introduction
 
 
 What does it mean to upgrade Plone?
-========================================================
+===================================
 
 This document covers the procedures and issues involved in upgrading an existing Plone installation. This involves both the upgrading of the program set, and migration of the site itself.
 
@@ -30,7 +30,7 @@ For unsupported versions from the year 2009 and before, see older versions of th
 
 
 A note about version numbering and terminology
-========================================================
+==============================================
 
 Since the Plone 2.5 release, Plone has a policy that increases the version number to a .0 on every major release. This means that when we say a *major release*, we are referring to a x.0 release, whereas a minor release has the version numbering 4.3.7 or 5.1.0
 

@@ -114,7 +114,8 @@ Libraries
 * libxslt >= 1.1.26 (dev)*
 
 
-
+You may also need to install dependencies needed by `Pillow <https://pillow.readthedocs.org/en/latest/>`_ a fork of the Python Image Libary.
+For further information please read: https://pillow.readthedocs.org/en/latest/installation.html
 
 Minimal build
 =============
@@ -128,7 +129,7 @@ With complete requirements in place, a barebones Plone install may be created wi
     ~/$ cd Plone-5
     ~/Plone-5$ virtualenv-2.7 zinstance
     ~/Plone-5$ cd zinstance
-    ~/Plone-5/zinstance bin/pip install zc.buildout
+    ~/Plone-5/zinstance$ bin/pip install zc.buildout
     ~/Plone-5/zinstance$
      echo """
     [buildout]

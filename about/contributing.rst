@@ -38,11 +38,11 @@ Basically, all we need is your written confirmation that you are agreeing your c
 Workflow
 ========
 
-The documentation is hosted on github. And there are tools hooked directly into it:
+The documentation is hosted on GitHub. And there are tools hooked directly into it:
 
 * there are branches for the different versions of Plone, see :ref:`plone-versions`.
 
-* translation hooks with Transifex are in place
+* translation hooks with `Transifex <https://www.transifex.com/>`_ are in place.
 
 * some external documentation is pulled in, to collect all the documentation in one place.
 
@@ -84,9 +84,9 @@ This is the recommended way for smaller changes, and for people who are not fami
 - **Edit** files using GitHub's text editor in your web browser
 - Fill in the **Commit changes**-textbox at the end of the page telling why you did the changes. Press the **Commit changes**-button next to it when done.
 - Then head to the green *New pull request*-button (e.g. by navigating to your fork's root and clicking "Pull requests" on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text. Just press **New pull request** button, finally click "Send pull request".
-- Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on Github.
+- Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on GitHub.
 - For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
-- You will receive a message when your request has been integrated into the documentation. At that moment, feel free to delete the copy of the documentation you created under your account on github. Next time you contribute, just fork again. That way you'll always have a fresh copy of the documentation to work on.
+- You will receive a message when your request has been integrated into the documentation. At that moment, feel free to delete the copy of the documentation you created under your account on GitHub. Next time you contribute, just fork again. That way you'll always have a fresh copy of the documentation to work on.
 
 
 Before you make a pull request
@@ -102,9 +102,29 @@ Pull request checklist
 
 Making a good pull request makes life easier for everybody:
 
-* The title and description of a pull request MUST be descriptive and need to reflect the changes. So please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
+* The title and description of a pull request **MUST** be descriptive and need to reflect the changes. So please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
 
 If you can state for which versions of Plone your submissions are valid, that would be awesome.
+
+We use a template which creates a default form for pull requests
+
+.. image:: /_static/pr-template.png
+   :align: center
+   :alt: Picture of Pull request template
+
+If possible please make sure to fill in the missing bits, for example
+
+.. code-block:: shell
+
+    Fixes #1234
+
+    Improves:
+
+    -  Style-guide about rst syntax
+
+    Changes proposed in this pull request: Unified usage of '..code-block:: shell' as best practices
+
+
 
 Editing the documentation using git
 ===================================

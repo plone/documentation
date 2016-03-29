@@ -369,10 +369,6 @@ You can provide an uncached version of the site for editors:
 
 * http://serverfault.com/questions/297541/varnish-cached-and-non-cached-subdomains/297547#297547
 
-Varnish and I18N
-================
-
-For older sites using LinguaPlone see `cache issues related to LinguaPlone <http://docs.plone.org/4/en/develop/plone/i18n/cache.html>`_.
 
 Sanitizing cookies
 ==================
@@ -400,7 +396,7 @@ Example of removing all Plone-related cookies, besides ones dealing with the log
 
       if (req.http.Cookie) {
           # (logged in user, status message - NO session storage or language cookie)
-          set req.http.Cookie = ";" req.http.Cookie;
+          set req.http.Cookie = ";" + req.http.Cookie;
           set req.http.Cookie = regsuball(req.http.Cookie, "; +", ";");
           set req.http.Cookie = regsuball(req.http.Cookie, ";(statusmessages|__ac|_ZopeId|__cp)=", "; \1=");
           set req.http.Cookie = regsuball(req.http.Cookie, ";[^ ][^;]*", "");

@@ -9,7 +9,7 @@ Querying
 .. contents :: :local:
 
 Introduction
-========================
+============
 
 *Querying* is the action to retrieve data from search indexes.  In Plone's
 case this usually means querying content items using the ``portal_catalog``
@@ -166,7 +166,7 @@ object\_provides
 
 
 Brain result id
-========================
+===============
 
 Result ID (RID) is given with the brain object and you can use this ID to query
 further info about the object from the catalog.
@@ -177,7 +177,7 @@ Example::
         872272330
 
 Brain result path
-========================
+=================
 
 Brain result path can be extraced as string using ``getPath()`` method::
 
@@ -186,7 +186,7 @@ Brain result path can be extraced as string using ``getPath()`` method::
 
 
 Brain object schema
-========================
+===================
 
 To see what metadata columns a brain object contain, you can access
 this information from ``__record_schema__`` attribute which is a dict.
@@ -238,7 +238,7 @@ which is equivalent to ``obj.absolute_url()``.
 
 
 getObject() and unrestrictedSearchResults() permission checks
-----------------------------------------------------------------------
+-------------------------------------------------------------
 
 You cannot call getObject() for a restricted result, even in trusted code.
 
@@ -277,7 +277,7 @@ So a good way to achieve this would be:
 
 
 Sorting and limiting the number of results
-=============================================
+==========================================
 
 To sort the results, use the sort\_on and sort\_order arguments.
 The sort\_on argument accepts any available index, even if you're
@@ -327,7 +327,7 @@ Example of how to sort by id::
 
 
 Text format
-========================
+===========
 
 Since most indexes use Archetypes accessors to index the field value,
 the returned text is UTF-8 encoded. This is a limitation
@@ -343,7 +343,7 @@ To get unicode value for e.g. title you need to do the following::
         pass
 
 Accessing indexed data
-========================
+======================
 
 Normally you don't get copy of indexed data with brains, only metadata.
 You can still access the raw indexed data if you know what you are doing
@@ -355,7 +355,7 @@ Example::
         (Pdb) for i in data.items(): print i
         ('Title', ['ulkomuseon', 'tarinaopastukset'])
         ('effectiveRange', (21305115, 278752140))
-        ('object_provides', ['Products.CMFCore.interfaces._content.IDublinCore', 'Products.ATContentTypes.interface.interfaces.IHistoryAware', 'AccessControl.interfaces.IOwned', 'OFS.interfaces.ITraversable', 'plone.portlets.interfaces.ILocalPortletAssignable', 'Products.Archetypes.interfaces._base.IBaseObject', 'zope.annotation.interfaces.IAttributeAnnotatable', 'vs.event.interfaces.IVSEvent', 'Products.CMFCore.interfaces._content.IMutableMinimalDublinCore', 'OFS.interfaces.IPropertyManager', 'OFS.interfaces.IZopeObject', 'AccessControl.interfaces.IRoleManager', 'zope.annotation.interfaces.IAnnotatable', 'Acquisition.interfaces.IAcquirer', 'Products.ATContentTypes.interface.event.IATEvent', 'OFS.interfaces.ICopySource', 'Products.LinguaPlone.interfaces.ITranslatable', 'Products.ATContentTypes.interface.interfaces.ICalendarSupport', 'Products.ATContentTypes.interface.interfaces.IATContentType', 'plone.app.iterate.interfaces.IIterateAware', 'Products.Archetypes.interfaces._base.IBaseContent', 'Products.CMFCore.interfaces._content.ICatalogableDublinCore', 'Products.CMFDynamicViewFTI.interface._base.IBrowserDefault', 'Products.Archetypes.interfaces._referenceable.IReferenceable', 'plone.locking.interfaces.ITTWLockable', 'plone.app.imaging.interfaces.IBaseObject', 'persistent.interfaces.IPersistent', 'webdav.interfaces.IDAVResource', 'AccessControl.interfaces.IPermissionMappingSupport', 'OFS.interfaces.ISimpleItem', 'plone.app.kss.interfaces.IPortalObject', 'plone.app.kss.interfaces.IContentish', 'archetypes.schemaextender.interfaces.IExtensible', 'App.interfaces.IUndoSupport', 'OFS.interfaces.IManageable', 'App.interfaces.IPersistentExtra', 'Products.CMFCore.interfaces._content.IMutableDublinCore', 'Products.Archetypes.interfaces._athistoryaware.IATHistoryAware', 'dateable.kalends.IRecurringEvent', 'OFS.interfaces.IItem', 'zope.interface.Interface', 'OFS.interfaces.IFTPAccess', 'Products.CMFDynamicViewFTI.interface._base.ISelectableBrowserDefault', 'webdav.interfaces.IWriteLock', 'Products.CMFCore.interfaces._content.IMinimalDublinCore', 'Products.CMFCore.interfaces._content.IDynamicType', 'Products.CMFCore.interfaces._content.IContentish'])
+        ('object_provides', ['Products.CMFCore.interfaces._content.IDublinCore', 'Products.ATContentTypes.interface.interfaces.IHistoryAware', 'AccessControl.interfaces.IOwned', 'OFS.interfaces.ITraversable', 'plone.portlets.interfaces.ILocalPortletAssignable', 'Products.Archetypes.interfaces._base.IBaseObject', 'zope.annotation.interfaces.IAttributeAnnotatable', 'vs.event.interfaces.IVSEvent', 'Products.CMFCore.interfaces._content.IMutableMinimalDublinCore', 'OFS.interfaces.IPropertyManager', 'OFS.interfaces.IZopeObject', 'AccessControl.interfaces.IRoleManager', 'zope.annotation.interfaces.IAnnotatable', 'Acquisition.interfaces.IAcquirer', 'Products.ATContentTypes.interface.event.IATEvent', 'OFS.interfaces.ICopySource', 'Products.ATContentTypes.interface.interfaces.ICalendarSupport', 'Products.ATContentTypes.interface.interfaces.IATContentType', 'plone.app.iterate.interfaces.IIterateAware', 'Products.Archetypes.interfaces._base.IBaseContent', 'Products.CMFCore.interfaces._content.ICatalogableDublinCore', 'Products.CMFDynamicViewFTI.interface._base.IBrowserDefault', 'Products.Archetypes.interfaces._referenceable.IReferenceable', 'plone.locking.interfaces.ITTWLockable', 'plone.app.imaging.interfaces.IBaseObject', 'persistent.interfaces.IPersistent', 'webdav.interfaces.IDAVResource', 'AccessControl.interfaces.IPermissionMappingSupport', 'OFS.interfaces.ISimpleItem', 'plone.app.kss.interfaces.IPortalObject', 'plone.app.kss.interfaces.IContentish', 'archetypes.schemaextender.interfaces.IExtensible', 'App.interfaces.IUndoSupport', 'OFS.interfaces.IManageable', 'App.interfaces.IPersistentExtra', 'Products.CMFCore.interfaces._content.IMutableDublinCore', 'Products.Archetypes.interfaces._athistoryaware.IATHistoryAware', 'dateable.kalends.IRecurringEvent', 'OFS.interfaces.IItem', 'zope.interface.Interface', 'OFS.interfaces.IFTPAccess', 'Products.CMFDynamicViewFTI.interface._base.ISelectableBrowserDefault', 'webdav.interfaces.IWriteLock', 'Products.CMFCore.interfaces._content.IMinimalDublinCore', 'Products.CMFCore.interfaces._content.IDynamicType', 'Products.CMFCore.interfaces._content.IContentish'])
         ('Type', u'VSEvent')
         ('id', 'ulkomuseon-tarinaopastukset')
         ('cmf_uid', 2)
@@ -446,17 +446,9 @@ Example of how to bypass language check::
 
     all_content_brains = portal_catalog(Language="")
 
-Some older LinguaPlone versions, which are still using ``LanguageIndex`` to
-keep language information in portal_catalog() may require::
-
-    all_content_brains = portal_catalog(Language="all")
-
-More information
-
-* http://plone.293351.n2.nabble.com/Products-LinguaPlone-LanguageIndex-vs-FieldIndex-td5554729.html#a5747819
 
 Bypassing Expired content check
-================================
+===============================
 
 Plone and portal_catalog have a mechanism to list only
 active (non-expired) content by default.
@@ -474,7 +466,7 @@ See also::
 
 
 None as query parameter
-========================
+=======================
 
 .. warning ::
 
@@ -486,13 +478,14 @@ None as query parameter
 
 
 Query by path
-================
+=============
 
 ExtendedPathIndex_ is the index used for content object paths.
 The *path* index stores the physical path of the objects.
 
-** Warning: ** If you ever rename your Plone site instance, the path
-   index needs to be completely rebuilt.
+.. warning::
+   If you ever rename your Plone site instance,
+   the path index needs to be completely rebuilt.
 
 Example::
 
@@ -684,7 +677,7 @@ The following view snippet allows you to get one random item on the site::
 
 
 Querying FieldIndexes by Range
-==================================
+==============================
 The following examples demonstrate how to do range based queries.
 This is useful if you want to find the "minimum" or "maximum" values
 of something, the example assumes that there is an index called 'getPrice'.
@@ -811,10 +804,10 @@ You can query by language::
 
 .. note ::
 
-        Products.LinguaPlone must be installed.
+        plone.app.multilingual must be installed.
 
 Boolean queries (AdvancedQuery)
-=========================================
+===============================
 
 AdvancedQuery is an add-on product for Zope's ZCatalog providing queries
 using boolean logic. AdvancedQuery is developer level product,
@@ -948,7 +941,7 @@ Other parameters can be manipulated the same way:
 
 
 Accessing metadata
-======================
+==================
 
 Metadata is collected from the object during cataloging and is copied to brain object
 for faster access (no need to wake up the actual object from the database).
@@ -999,7 +992,7 @@ Below is a fail-safe example for a metadata access::
 	and can be written up without waking up the object.
 
 Fuzzy search
-===============
+============
 
 * https://pypi.python.org/pypi/c2.search.fuzzy/
 
@@ -1021,7 +1014,7 @@ Example::
 
 
 Performance
-========================
+===========
 
 The following community mailing list blog posts is very insightful about the performance characteristics
 of Plone search and indexing:
@@ -1029,7 +1022,7 @@ of Plone search and indexing:
 * http://plone.293351.n2.nabble.com/Advice-for-site-with-very-large-number-of-objects-millions-tp5513207p5529103.html
 
 Batching
-==========
+========
 
 .. TODO:: Complete writeup
 
@@ -1040,7 +1033,7 @@ Example::
 * orphan - the next page will be combined with the current page if it does not contain more than orphan elements
 
 Walking through all content
-=============================
+===========================
 
 ``portal_catalog()`` call without search parameters will return all indexed
 site objects.
@@ -1084,7 +1077,7 @@ More info:
 * http://blog.mfabrik.com/2011/02/17/finding-arbitary-html-snippets-on-plone-content-pages/
 
 Other notes
-============
+===========
 
 * `Indexing tutorial <https://plone.org/documentation/tutorial/using-portal_catalog/tutorial-all-pages>`_ on plone.org
 

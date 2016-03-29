@@ -34,4 +34,3 @@ Contents
     language
     translating_content
     contribute_to_translations
-    cache

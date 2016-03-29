@@ -12,17 +12,15 @@ Content Rules are a powerful mechanism to automate dealing with content. There a
 
 **Define the rule**
 
-# create and name a new rule, specifying what triggers it to execute
-# then narrow it down, by using conditions, to execute only on the content items you want
-# and select the action or actions that should be taken
+#. create and name a new rule, specifying what triggers it to execute
+#. then narrow it down, by using conditions, to execute only on the content items you want
+#. and select the action or actions that should be taken
 
 Afterwards, you end up with a ready-to-go, named Content Rule. But by default it will not execute yet; there is one more step to take:
 
 **Apply it** to a portion of your site. Or to the whole site, if you so choose to.
 
 Why is the setting up of a Content Rule separated from the application? Because you may want to have different content rules applied to different parts of your site.
-
-
 
 
 Triggers, conditions, actions
@@ -88,12 +86,9 @@ The following **actions** are available by default:
 - Transition workflow state
 - Send email
 
-
 .. note::
 
-   Content Rules are extendable. There are add-ons available that will create new actions, conditions or triggers, and you can also write your own. An example would be an action that tweets each time a News article is published, or will alert you if an event will start next week. A search on `https://pypi.python.org <https://pypi.python.org>`_ for "contentrules will show you some examples."
-
-
+   Content Rules are extendable. There are add-ons available that will create new actions, conditions or triggers, and you can also write your own. An example would be an action that tweets each time a News article is published, or will alert you if an event will start next week. A search on `https://pypi.python.org <https://pypi.python.org>`_ for "contentrules" will show you some examples.
 
 
 Creating and Defining Content Rules
@@ -104,7 +99,7 @@ How to define content rules using the triggers and actions included in Plone
 Creating a Rule
 ---------------
 
-Content rules are created globally through the Plone Control Pane ("site setup" link) and then selected from the Rules tab for the desired folder (or at the Plone site root if you want the rule applied site-wide).
+Content rules are created globally through the Plone Control Panel ("site setup" link) and then selected from the Rules tab for the desired folder (or at the Plone site root if you want the rule applied site-wide).
 
 In this example, you're going to create a content rule that will send an email any time a Page type is modified.
 
@@ -143,11 +138,12 @@ In this example, you're going to create a content rule that will send an email a
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/contentrules-add.png
                ...  css=#content
-
        Click button  css=#form-buttons-save
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/contentrules-conditions.png
                ...  css=#content
+       Click button  name=form.button.Save
+
 
     assign rule
         Go to  ${PLONE_URL}/news
@@ -159,13 +155,11 @@ In this example, you're going to create a content rule that will send an email a
               ...  css=#content
               ...  css=div.plone-toolbar-container
 
-
 .. figure:: ../../_robot/contentrules-start.png
    :align: center
    :alt: Content Rules overview
 
 If no content rules exist, the only option is an "Add content rule" button. Click that.
-
 
 An "Add Rule" form comes up. Enter a descriptive title -- for this example, use: "Send Email when any Page is Modified". Enter a description if desired.
 
@@ -174,8 +168,6 @@ For the "Triggering event" select "Object modified". Leave "Enabled" checked, an
 .. figure:: ../../_robot/contentrules-add.png
    :align: center
    :alt: Content Rules overview
-
-
 
 Click the "Save" button. At this point, you have essentially created a "container" for the content rule.
 
@@ -189,19 +181,12 @@ Next you'll further define the trigger and actions for this rule.
 Defining conditions and actions
 ===============================
 
-
-
 After creating a content rule, you need to actually define the specific conditions of the trigger and actions that will occur based on those conditions.
-
-
 
 **For the condition:**
 
         - By default, "Content type" is selected and since you want a trigger only for Pages, just click on the "Add" button.
         - From the "Add Content Type Condition" page, select "Page" and click on "Save"
-
-
-
 
 **For the action:**
 
@@ -212,13 +197,9 @@ After creating a content rule, you need to actually define the specific conditio
         - "Email recipients" is the To: address; enter a valid email address
         - For the "Message" enter what you want for the body of the email
 
-
 - Click the "Save" button
 
-
-
 Congratulations, you have created a working content rule!
-
 
 In the next section, you'll learn how easy it is to apply this content rule to any part (or all) of your Plone site.
 
@@ -230,7 +211,9 @@ Now that you've set up a content rule, how does it actually get used?
 
 At this point, you have successfully created a content rule. However, this content rule isn't actually in use until it has been assigned and enabled on one or more folders.
 
-- Navigate to the folder where you want the content rule to be in effect. This can be any folder on the Plone site or it can be for the entire Plone site ("Home"). In this example we're going to the "News" folder.
+- Navigate to the folder where you want the content rule to be in effect.
+  This can be any folder on the Plone site or it can be for the entire Plone site ("Home").
+  In this example we're going to the "News" folder.
 - Click on the "Rules" tab. From there you will see a drop down menu of possible content rules:
 
 .. figure:: ../../_robot/contentrules-assign.png
@@ -239,9 +222,7 @@ At this point, you have successfully created a content rule. However, this conte
 
 - Select the desired content rule ("Send Email..." in this example) and click on the "Add" button.
 
-
 - By default, the rule has now been applied to the current folder only as indicated by the symbol in the "Enabled here" column indicates.
-
 
 There will be several buttons near the bottom. Tick the check box for the rule you want ("Send Email...") and then click on either "Apply to subfolders"  button. Now this content rule will also apply to any subfolder that exist now or are created in the future.
 If you wish to have this rule apply to all the subfolders but not to the current folder, then tick the check box next to the rule and click on the "Disable" button.
@@ -268,17 +249,11 @@ Furthermore, you can say if you want rules to be *cascading* or not. An example:
    So be **very** careful when using cascading rulesets!
 
 
-
-
-
-
-
 Things to note when "navigating" with assigned content rules
---------------------------------------------------------------
+------------------------------------------------------------
 
 The "Edit Content Rule" page uses a 'related items' like display ("Assignments") for listing all the locations where the rule is assigned.
 From there, you can go directly to that folder's Rules tab by clicking on the Title of that folder. Note that there is no indication in the Assignments section if the Rule is applied to subfolders or not.
-
 
 If you're on a folder that has the rule assigned to it directly (e.g. it's NOT a subfolder of a folder that has the rule assigned), you can get directly to the "Edit Content Rule" page from the Rules tab by clicking on the Title of that rule (which is always a link).
 

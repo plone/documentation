@@ -109,7 +109,7 @@ Language cookie
 Disable it by *Use cookie for manual override* setting in
 ``portal_languages``.
 
-Also, language cookie has a special lifecycle when LinguaPlone is installed.
+Also, language cookie has a special lifecycle when plone.app.multilingual is installed.
 This may affect your front-end web server caching. If configured improperly,
 the language cookie gets set on images and static assets like CSS HTTP responses.
 
