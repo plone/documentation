@@ -18,7 +18,7 @@ Another interesting approach to try out Plone is to install it in a cloud servic
 Plone on your own machine
 =========================
 
-You can find the download options at `plone.org/try-five <https://plone.org/try-five>`_
+You can find the download options at `plone.org/download <https://plone.org/download>`_
 
 The recommended and best supported way to deploy Plone, both for laptops as well as servers, is the Unified Installer.
 It can provide you both with a single instance with developer tools installed, as well as with multiple failover clients running against a database server.
