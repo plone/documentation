@@ -264,7 +264,7 @@ Setting the highlighting mode for the whole document:
 
 .. code-block:: rst
 
-   .. highlight:: console
+   .. highlight:: shell
 
    All code blocks in this doc use console highlighting by default::
 
