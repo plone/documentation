@@ -10,7 +10,7 @@ Quickstart
 Online demo sites
 =================
 
-Online demo sites allow users to experience the look and feel of Plone as well as check out its ease of use and features. These sites let users log in using a variety of roles so they can see the difference between what users, editors, and administrators see when working in Plone. You can find a list of available online demo sites at the `Try Plone section <http://plone.com/try-plone>`_ on `plone.com <http://plone.com>`_.
+Online demo sites allow users to experience the look and feel of Plone as well as check out its ease of use and features. These sites let users log in using a variety of roles so they can see the difference between what users, editors, and administrators see when working in Plone. You can find a list of available online demo sites at the `Try Plone section <https://plone.com/try-plone>`_ on `plone.com <https://plone.com>`_.
 
 Another interesting approach to try out Plone is to install it in a cloud service. That way, you can set up your own demo (or even very-light-weight production) Plone, which makes it a good fit to have Plone with your choice of add-ons be tested by your department or other group. Here are two blog posts that show you how to do this: `Plone on a free-tier Heroku <http://blog.niteoweb.com/dear-plone-welcome-to-year-2014/>`_ by Nejc Zupan and `Installing Plone 5 on Cloud9 IDE <http://blog.dbain.com/2015/09/installing-plone-5-on-cloud9-ide.html>`_ by David Bain.
 
