@@ -126,7 +126,7 @@ Download the latest Plone unified installer
 Download from `the plone.org download page <http://plone.org/download>`_ to your server using wget command. Curl also works.
 Substitute the latest version number for 5.0 in the instructions below.
 
-.. code-block:: console
+.. code-block:: shell
 
     wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.2/+download/Plone-5.0.2-UnifiedInstaller.tgz
 
@@ -135,13 +135,13 @@ Run the Plone installer in standalone mode
 
 Extract the downloaded file
 
-.. code-block:: console
+.. code-block:: shell
 
     tar -xf Plone-5.0.2-UnifiedInstaller.tgz
 
 Go the folder containing installer script
 
-.. code-block:: console
+.. code-block:: shell
 
     cd Plone-5.0.2-UnifiedInstaller
 
@@ -152,7 +152,7 @@ Go the folder containing installer script
 
 Run script
 
-.. code-block:: console
+.. code-block:: shell
 
   ./install.sh
 
@@ -205,7 +205,7 @@ Install the Plone developer tools
 
 If you're using this Plone install for development, add the common development tool set.
 
-.. code-block:: console
+.. code-block:: shell
 
     cd ~/Plone/zinstance
     bin/buildout -c develop.cfg
@@ -217,7 +217,7 @@ Start Plone
 
 If you're developing, start Plone in foreground mode for a test run (you'll see potential errors in the console):
 
-.. code-block:: console
+.. code-block:: shell
 
     cd ~/Plone/zinstance
     bin/plonectl fg
@@ -226,14 +226,14 @@ When you start Plone in the foreground, it runs in debug mode, which is much slo
 
 For evaluation, instead use:
 
-.. code-block:: console
+.. code-block:: shell
 
     cd ~/Plone/zinstance
     bin/plonectl start
 
 Use
 
-.. code-block:: console
+.. code-block:: shell
 
     cd ~/Plone/zinstance
     bin/plonectl stop
