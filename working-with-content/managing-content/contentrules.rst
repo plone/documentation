@@ -142,6 +142,8 @@ In this example, you're going to create a content rule that will send an email a
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/contentrules-conditions.png
                ...  css=#content
+       Wait until element is visible
+       ...  name=form.button.Save
        Click button  name=form.button.Save
 
 
