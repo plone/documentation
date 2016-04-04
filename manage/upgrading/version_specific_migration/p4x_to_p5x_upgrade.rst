@@ -235,7 +235,7 @@ Registration changes
 Prior to Plone 5, JavaScript files were added to the registry by using a `Generic Setup Profile <http://docs.plone.org/develop/addons/components/genericsetup.html>`_ and including a jsregistry.xml file to it.
 This would add your JavaScript to the registry, with some options and potentially set ordering.
 
-In Plone 5.0, Plone will still recognize these jsregistry.xml files. Plone tries to provide a shim for them. It does this is by adding all jsregistry.xml JavaScripts into the "plone-legacy" Resource Registry bundle. This bundle simply includes a global jQuery object and includes the resources in sequential order after it.
+In Plone 5.0, Plone will still recognize these jsregistry.xml files. Plone tries to provide a shim for them. It does this by adding all jsregistry.xml JavaScripts into the "plone-legacy" Resource Registry bundle. This bundle simply includes a global jQuery object and includes the resources in sequential order after it.
 
 However, you should consider at least migrating your resources as described in https://github.com/collective/example.p4p5 to gain control over your dependencies or if you want to keep backward compatibility to older Plone versions in your Add-ons.
 
