@@ -2,8 +2,8 @@
 Changelog
 =========
 
-201603$
-=======
+20160330
+========
 
 - Improved styleguide [svx]
 - Fixed robot tests [polyester]
