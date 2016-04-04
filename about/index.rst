@@ -17,5 +17,3 @@ Changelog
 
 .. toctree::
     :maxdepth: 2
-
-    history/20150518
