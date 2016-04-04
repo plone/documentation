@@ -9,7 +9,7 @@ Upgrading Plone 4.x to 5.0
 
 .. notes::
 
-   If you want to upgrade addons to Plone 5, also see: ../../../develop/addons/upgrade_to_50.rst
+   If you want to upgrade add-ons to Plone 5, also see: ../../../develop/addons/upgrade_to_50.rst
 
 
 .. contents:: :local:
@@ -127,8 +127,8 @@ social media changes
 imaging changes
 ~~~~~~~~~~~~~~~
 
-loggin setting changes
-~~~~~~~~~~~~~~~~~~~~~~
+login setting changes
+~~~~~~~~~~~~~~~~~~~~~
 
 
 Changed imports and functions
@@ -145,10 +145,10 @@ Example:
 .. code-block:: python
 
     try:
-        # plone 4
+        # Plone 4
         from Products.CMFPlone.interfaces import IFactoryTool
     except ImportError:
-        # plone 5
+        # Plone 5
         from Products.ATContentTypes.interfaces.factory import IFactoryTool
 
 
@@ -157,20 +157,20 @@ plone.app.multilingual
 
 .. note::
 
-   The preferred translation addon for Plone 5 is plone.app.multilingual.
+   The preferred translation add-on for Plone 5 is plone.app.multilingual.
    This package supersedes LinguaPlone.
 
 ..  warning::
 
-    This is still work in progess
+    This is still work in progress
 
 There are 3 different parts to the migration from LinguaPlone to plone.app.multilingual:
 
-* From LP to PAM 2.X - on Plone4 and than to Plone5 (PAM 3.X)
+* From LP to PAM 2.X - on Plone 4 and than to Plone 5 (PAM 3.X)
 
   See: https://github.com/plone/plone.app.multilingual/issues/181
 
-* From PAM 1.X to 2.X - on Plone4 and than to Plone5 (PAM 3.X)
+* From PAM 1.X to 2.X - on Plone 4 and than to Plone 5 (PAM 3.X)
 
   Step 1: plone.multilingual is merged into plone.app.multilingual. Imports in your custom code needs to be changed:
   See:https://github.com/plone/plone.app.multilingual/issues/181#issuecomment-141661848
@@ -179,7 +179,7 @@ There are 3 different parts to the migration from LinguaPlone to plone.app.multi
 
   Step 3: TODO
 
-* From PAM 2.X on Plone4 to Plone5 (PAM 3.X)
+* From PAM 2.X on Plone 4 to Plone 5 (PAM 3.X)
 
   Step 1: plone.multilingual is merged into plone.app.multilingual. Imports in your custom code needs to be changed: See:https://github.com/plone/plone.app.multilingual/issues/181#issuecomment-141661848
   https://github.com/plone/Products.CMFPlone/issues/1187
@@ -235,10 +235,10 @@ Registration changes
 Prior to Plone 5, JavaScript files were added to the registry by using a `Generic Setup Profile <http://docs.plone.org/develop/addons/components/genericsetup.html>`_ and including a jsregistry.xml file to it.
 This would add your JavaScript to the registry, with some options and potentially set ordering.
 
-In Plone 5.0, Plone will still recognize these jsregistry.xml files.
-Plone tries to provide a shim for those that are stubborn to migrate.
-How it does this is by adding all jsregistry.xml JavaScripts into a "plone-legacy" Resource Registry bundle.
-This bundle simply includes a global jQuery object and includes the resources in sequential order after it.
+In Plone 5.0, Plone will still recognize these jsregistry.xml files. Plone tries to provide a shim for them. It does this by adding all jsregistry.xml JavaScripts into the "plone-legacy" Resource Registry bundle. This bundle simply includes a global jQuery object and includes the resources in sequential order after it.
+
+However, you should consider at least migrating your resources as described in https://github.com/collective/example.p4p5 to gain control over your dependencies or if you want to keep backward compatibility to older Plone versions in your Add-ons.
+
 
 Old style jsregistry.xml
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -317,9 +317,9 @@ Updating non-AMD scripts
 If you are not including your JavaScript in the Resource Registries and just need it to work alongside Plone's JavaScript because you're manually including the JavaScript files in one way or another(page templates, themes), there are a number of techniques available to read on the web that describe how to make your scripts conditionally work with AMD.
 
 For the sake of this post, I will describe one technique used in Plone core to fix the JavaScript.
-The change we'll be investigating can be seen with `in a commit to plone.app.registry <https://github.com/plone/plone.app.registry/commit/ad904f2d55ea6e45bb983f1fcc12ead7a191f50a>`_. plone.app.registry has a control panel that allows some ajax searching and modals for editing settings.
+The change we'll be investigating can be seen with `in a commit to plone.app.registry <https://github.com/plone/plone.app.registry/commit/ad904f2d55ea6e45bb983f1fcc12ead7a191f50a>`_. plone.app.registry has a control panel that allows some Ajax searching and modals for editing settings.
 
-To utilize the dependency management that AMD provides and have the javascript depend on jQuery, we can wrap the script in an AMD `require` function.
+To utilize the dependency management that AMD provides and have the JavaScript depend on jQuery, we can wrap the script in an AMD `require` function.
 This function allows you to define a set of dependencies and a function that takes as arguments, those dependencies you defined. After the dependencies are loaded, the function you defined is called.
 
 Example:
@@ -338,7 +338,7 @@ Example:
 
 Here, the two dependencies we have are jQuery and the pattern registry.
 I will not get into the pattern registry as it's off topic for this discussion--it is basically a registry of JavaScript components.
-The necessity for using it here is with ajax calls and binding new DOM elements dynamically added to the page.
+The necessity for using it here is with Ajax calls and binding new DOM elements dynamically added to the page.
 
 Additionally, above this `require` call, I provide some backward compatible code that you can inspect.
 It's not necessary in this case but I added it to show how someone could make their script work when requirejs was available and when it was not.
@@ -350,7 +350,7 @@ Caveats
 Compilation
 ~~~~~~~~~~~
 
-Prior to Plone 5, when a resource was changed or added to the javascript registry, the registry would automatically re-compile all your JavaScript files.
+Prior to Plone 5, when a resource was changed or added to the JavaScript registry, the registry would automatically re-compile all your JavaScript files.
 
 In switching to AMD, the compile step is much more resource intensive.
 It takes so long, there is no way we could do this real-time.
@@ -368,7 +368,7 @@ This is due to the way we build JavaScript with AMD.
 
 Instead we have Python helper-methods in the Resource Registry to add custom JS and CSS to your views or forms.
 
-Instead of useing the legacy fill-slot like this (Plone 4):
+Instead of using the legacy fill-slot like this (Plone 4):
 
 ..  code-block:: xml
 
@@ -574,7 +574,7 @@ If you want to disable_folder_sections, you will want to set `plone.generate_tab
 Generic Setup
 -------------
 
-All settings for control panels are stored in the registry.xml Generic Setup file. This file can be exported through the ZMI (Zope Management Interface). Go to the Plone Site Setup, choose "Management Interface" from the "Advanced" section. Click on "portal_setup". Go to the "export" tab. Choose the "Export the configuration registry schemata" checkbox and click the "Export selected steps" button. The registry.xml file will contain entries like this::
+All settings for control panels are stored in the registry.xml Generic Setup file. This file can be exported through the ZMI (Zope Management Interface). Go to the Plone Site Setup, choose "Management Interface" from the "Advanced" section. Click on "portal_setup". Go to the "export" tab. Choose the "Export the configuration registry schemata" check-box and click the "Export selected steps" button. The registry.xml file will contain entries like this::
 
   <record name="plone.available_editors"
           interface="Products.CMFPlone.interfaces.controlpanel.IEditingSchema" field="available_editors">
@@ -650,7 +650,7 @@ Language Control Panel
 ----------------------
 
 All settings were managed with the tool `portal_languages` and with the GenericSetup file portal_languages.xml.
-Now these attributes are managed with plone properties.
+Now these attributes are managed with Plone properties.
 As Plone 5 has full migration during an upgrade, please perform the upgrade and export the registry settings in GenericSetup to get the right settings.
 If you access attributes directly in your code, you must change your accessors. You know already how to get attributes from the `portal_languages` tool. The new attributes can be accessed via plone.api as described above.
 
@@ -696,7 +696,7 @@ Mail Control Panel
 ------------------
 
 All settings were managed with the tool `MailHost` and with the GenericSetup file portal_languages.xml.
-Now these attributes are managed with plone properties.
+Now these attributes are managed with Plone properties.
 As Plone 5 has full migration during an upgrade, please perform the upgrade and export the registry settings in GenericSetup to get the right settings.
 If you access attributes directly in your code, you must change your accessors. You know already how to get attributes from the `portal_languages` tool. The new attributes can be accessed via plone.api as described above.
 
