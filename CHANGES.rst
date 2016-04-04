@@ -5,6 +5,11 @@ Changelog
 201603$
 =======
 
+- Improved styleguide [svx]
+- Fixed robot tests [polyester]
+- Fixed pep8 of example code [laulaz]
+- Fixed links to plone.org [svx]
+- Fixed #546 [svx]
 - Fixed broken links, typos and rst syntax in about/contributing [svx]
 - Fixed broken link to docs about ContentFilter class [do3cc]
 - Added docs about 'theming' based on barceloneta [ebrehault]
