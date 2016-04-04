@@ -91,7 +91,7 @@ Instructions are tested for the *Ubuntu 14.04 Long Term Support* release.
 Install the operating system software and libraries needed to run Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
@@ -103,7 +103,7 @@ Install the operating system software and libraries needed to run Plone
 
 You will probably also want these optional system packages for handling of PDF and Office files:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo apt-get install libreadline-dev wv poppler-utils
 
@@ -111,13 +111,11 @@ You will probably also want these optional system packages for handling of PDF a
 
     **libreadline-dev** is only necessary if you wish to build your own python rather than use your system's python 2.7.
 
-If you're planning on developing with Plone, install git version control support::
+If you're planning on developing with Plone, install git version control support
+
+.. code-block:: shell
 
     sudo apt-get install git
-
-
-
-
 
 
 Download the latest Plone unified installer
@@ -128,7 +126,7 @@ Substitute the latest version number for 5.0 in the instructions below.
 
 .. code-block:: shell
 
-    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.2/+download/Plone-5.0.2-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.3/+download/Plone-5.0.3-UnifiedInstaller.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -137,13 +135,13 @@ Extract the downloaded file
 
 .. code-block:: shell
 
-    tar -xf Plone-5.0.2-UnifiedInstaller.tgz
+    tar -xf Plone-5.0.3-UnifiedInstaller.tgz
 
 Go the folder containing installer script
 
 .. code-block:: shell
 
-    cd Plone-5.0.2-UnifiedInstaller
+    cd Plone-5.0.3-UnifiedInstaller
 
 .. note::
 
@@ -156,7 +154,7 @@ Run script
 
   ./install.sh
 
-Please follow the instructions on the screen 
+Please follow the instructions on the screen
 
 .. image:: /_static/install_gui_1.png
    :alt: Shows installer welcome message
@@ -166,7 +164,7 @@ We choose here for the ``standalone`` mode
 .. image:: /_static/install_gui_2.png
    :alt: Shows menu to choose between standalone and zeo
 
-Accept the default installation target or change the path 
+Accept the default installation target or change the path
 
 .. image:: /_static/install_gui_3.png
    :alt: Shows menu to set installation target
