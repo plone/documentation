@@ -2,6 +2,15 @@
 Changelog
 =========
 
+20160405
+========
+
+- Fix #584 [svx]
+- Update install docs to 5.0.3 [svx]
+- Fix #579 [rnixx] [svx]
+- Fix #583 [polyester]
+- Fix 'Feedback widget' [svx]
+
 20160330
 ========
 
