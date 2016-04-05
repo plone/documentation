@@ -13,7 +13,7 @@ Introduction
 
 Plone supports image content in several forms:
 
-standlone content type
+stand-alone content type
     As stand-alone content type, images will be visible in the sitemap.
     This is the case for the default ``Image`` content type, but you can create custom content types with similar properties.
 
@@ -61,7 +61,7 @@ If you want to have your custom content type behave like the stock Plone ``Image
 Accessing images
 ================
 
-Both  - Dexterity and Archetypes - are offering the same traverseable ``@@images`` view.
+Both - Dexterity and Archetypes - are offering the same traversable ``@@images`` view.
 It can be used from page templates and Python code to provide access to the image and different image scales for image fields on content.
 
 The code for image access and scales for Dexterity based content is handled by `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_. Old Archetypes based content image scales is handled by `plone.app.imaging <https://plone.org/products/plone.app.imaging>`_.
@@ -83,7 +83,7 @@ Predefined image scales from the configuration settings are accessed this way::
 
     http://yoursite/imagecontent/@@images/FIELDNAME/SCALENAME
 
-You might find URLS of custom (on-the-fly) image scales accessed this way (see below)::
+You might find URLs of custom (on-the-fly) image scales accessed this way (see below)::
 
     http://yoursite/imagecontent/@@images/FIELDNAME/CUSTOM_SCALE_UID.jpg
 
