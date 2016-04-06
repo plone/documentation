@@ -57,7 +57,7 @@ you manually insert line breaks after full stops, commas,
 or upon "grammatical" boundaries
 (and not merely word ones).
 
-But again, do not be afraid to use more than 80 characters.
+Do not be afraid to use more than 80 characters.
 
 
 Document page format
@@ -156,7 +156,7 @@ Headings style guide
 
 ReStructured text and Sphinx enable any style you would prefer for the various heading level you would need.
 For example, underlining level 1 headings with ``.``, level 2 headings with ``#`` and level 3 headings with ``|`` is perfectly valid as far as ``docutils`` is concerned.
-But not for a human documentation maintainer.
+Unfortunately this is not the same for a human documentation maintainer.
 
 In order to have consistent heading styles in all files that make this great document, it is recommended to follow strictly the rules stated in the Sphinx manual here: http://sphinx-doc.org/rest.html#sections
 
@@ -180,7 +180,7 @@ As individual files do not have so called "parts" or "chapters", the headings wo
 Links
 =====
 
-Sphinx can use two link styles, inline and via a link at the end of the page. Please only use inline links like this:
+Sphinx can use two link styles, inline and via a link at the end of the page. Please **do not** separate the link and the target definition, please **only** use inline links like this:
 
 .. code-block:: rst
 
