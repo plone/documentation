@@ -11,10 +11,13 @@ The easiest way to read this documentation is online at http://docs.plone.org
 
 There is also build in support for `opensearch <http://www.opensearch.org/Home>`_ that means you can search http://docs.plone.org right away from your browser bar, if your bowser supports that.
 
-`This video <https://www.youtube.com/watch?v=J9gkjO_Xvxs>`_ shows an example on how to add http://docs.plone.org to Firefox.  
+`This video <https://www.youtube.com/watch?v=J9gkjO_Xvxs>`_ shows an example on how to add http://docs.plone.org to Firefox.
 
 Offline
 =======
+
+.. note::
+  With the release of Plone 5.1 we will not provide docsets for Dash/Zeal anymore !! In place of these we will provide a html version as tar.gz for offline use !
 
 If you used to use `Dash <http://kapeli.com/dash>`_ or `Zeal <http://zealdocs.org/download.html>`_, you can do that for `Plone <https://plone.org>`_ too. We have compiled docsets for Plone 3, Plone 4 and Plone 5.
 
