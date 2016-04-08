@@ -1484,6 +1484,194 @@ Uninstall example:
  :members: importToolset
 
 
+typeinfo: types.xml and types folder
+------------------------------------
+
+.. note::
+
+    The name of this import step is ``typeinfo``.
+
+Partial example from ``plone.app.contenttypes``:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object meta_type="Plone Types Tool" name="portal_types">
+     <object meta_type="Dexterity FTI" name="Collection" />
+     <object meta_type="Dexterity FTI" name="Document" />
+     <object meta_type="Dexterity FTI" name="Folder" />
+     <object meta_type="Dexterity FTI" name="Link" />
+     <object meta_type="Dexterity FTI" name="File" />
+     <object meta_type="Dexterity FTI" name="Image" />
+     <object meta_type="Dexterity FTI" name="News Item" />
+     <object meta_type="Dexterity FTI" name="Event" />
+     <object name="Plone Site"
+         meta_type="Factory-based Type Information with dynamic views"/>
+    </object>
+
+This adds content types in the ``portal_types`` tool.
+The ``meta_type`` can be:
+
+- ``Dexterity FTI`` for Dexterity content.
+  This is probably what you want.
+- ``Factory-based Type Information with dynamic views`` for Archetypes content and for the Plone Site itself
+- ``Factory-based Type Information`` for Archetypes content that does not need dynamic views,
+  so the ability to choose a view in the ``display`` menu.
+
+The ``types.xml`` should be accompanied by a ``types`` folder with details information on the new types.
+If you are editing an already existing type, then ``types.xml`` is not needed:
+a file in the ``types`` folder is enough.
+
+If the object name in ``types.xml`` is ``Collection`` then you must add a file ``types/Collection.xml``.
+This file is in ``plone.app.contenttypes``:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="Collection"
+       meta_type="Dexterity FTI"
+       i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+      <!-- Basic metadata -->
+      <property name="title" i18n:translate="">Collection</property>
+      <property name="description"
+        i18n:translate="">Collection</property>
+      <property name="global_allow">True</property>
+      <property name="filter_content_types">False</property>
+      <property name="allowed_content_types" />
+      <property name="allow_discussion">False</property>
+      <property name="add_permission">plone.app.contenttypes.addCollection</property>
+      <property name="klass">plone.app.contenttypes.content.Collection</property>
+      <property name="schema"></property>
+      <property name="model_source"></property>
+      <property name="model_file">plone.app.contenttypes.schema:collection.xml</property>
+      <property name="behaviors" purge="false">
+        <element value="plone.app.content.interfaces.INameFromTitle"/>
+        <element value="plone.app.contenttypes.behaviors.collection.ICollection"/>
+        <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/>
+        <element value="plone.app.dexterity.behaviors.id.IShortName"/>
+        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
+        <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
+        <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
+        <element value="plone.app.relationfield.behavior.IRelatedItems"/>
+        <element value="plone.app.lockingbehavior.behaviors.ILocking" />
+      </property>
+
+      <!-- View information -->
+      <property name="default_view">listing_view</property>
+      <property name="default_view_fallback">False</property>
+      <property name="view_methods">
+        <element value="listing_view"/>
+        <element value="summary_view"/>
+        <element value="tabular_view"/>
+        <element value="full_view"/>
+        <element value="album_view"/>
+        <element value="event_listing"/>
+      </property>
+
+      <!-- Method aliases -->
+      <alias from="(Default)" to="(dynamic view)"/>
+      <alias from="edit" to="@@edit"/>
+      <alias from="sharing" to="@@sharing"/>
+      <alias from="view" to="(selected layout)" />
+
+      <!-- Actions -->
+      <action title="View" action_id="view" category="object" condition_expr=""
+        url_expr="string:${object_url}" visible="True">
+        <permission value="View"/>
+      </action>
+
+      <action title="Edit" action_id="edit" category="object" condition_expr=""
+        url_expr="string:${object_url}/edit" visible="True">
+        <permission value="Modify portal content"/>
+      </action>
+
+    </object>
+
+For comparison, here is the ``types.xml`` from ``plone.app.collection`` which has an old style Archetypes Collection:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_types">
+       <!-- We remove the existing FTI since it could be Dexterity-based and would
+            not be compatible in that case.  You get this error when installing:
+            ValueError: undefined property 'content_meta_type' -->
+      <object name="Collection" remove="True"/>
+      <object name="Collection"
+              meta_type="Factory-based Type Information with dynamic views" />
+    </object>
+
+And here is the ``types/Collection.xml`` from ``plone.app.collection``:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="Collection"
+       meta_type="Factory-based Type Information with dynamic views"
+       i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+      <property name="title" i18n:translate="">Collection</property>
+      <property name="description"
+        i18n:translate="">Collection of searchable information</property>
+      <property name="icon_expr"></property>
+      <property name="content_meta_type">Collection</property>
+      <property name="product">plone.app.collection</property>
+      <property name="factory">addCollection</property>
+      <property name="immediate_view">standard_view</property>
+      <property name="global_allow">True</property>
+      <property name="filter_content_types">True</property>
+      <property name="allowed_content_types"/>
+      <property name="allow_discussion">False</property>
+      <property name="default_view">standard_view</property>
+      <property name="view_methods">
+        <element value="standard_view" />
+        <element value="summary_view" />
+        <element value="all_content" />
+        <element value="tabular_view" />
+        <element value="thumbnail_view" />
+      </property>
+      <alias from="(Default)" to="(dynamic view)" />
+      <alias from="edit" to="atct_edit" />
+      <alias from="sharing" to="@@sharing" />
+      <alias from="view" to="(selected layout)" />
+      <action title="View" action_id="view" category="object" condition_expr=""
+        url_expr="string:${object_url}/" visible="True">
+        <permission value="View" />
+      </action>
+      <action title="Edit" action_id="edit" category="object" condition_expr=""
+        url_expr="string:${object_url}/edit" visible="True">
+        <permission value="Modify portal content" />
+      </action>
+    </object>
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_types">
+      <object name="Collection" remove="true"/>
+    </object>
+
+.. note::
+
+    The ``remove`` keyword is supported for actions.
+    ``remove=""`` is enough, but recommended is to use ``remove="true"``.
+
+    The ``view_methods`` property is a list that is always imported fresh.
+    Elements that are not in the list, are removed.
+    If you only want to add an element and want to keep any existing elements,
+    you can tell it not to purge:
+
+    .. code-block:: xml
+
+       <property name="view_methods" purge="False">
+         <element value="new_view" />
+       </property>
+
+    This does not work for the ``allowed_content_types``: they are always purged.
+
+
 viewlets.xml
 ------------
 
