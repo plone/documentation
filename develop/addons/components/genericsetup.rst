@@ -1258,6 +1258,7 @@ Uninstall example:
   like in the example above,
   is not yet supported.
   See https://github.com/zopefoundation/Products.GenericSetup/pull/26
+  This is scheduled for inclusion in Products.GenericSetup 1.8.3.
 
 .. automodule:: Products.GenericSetup.registry
  :members: _ToolsetParser ToolsetRegistry
