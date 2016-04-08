@@ -1041,6 +1041,39 @@ The ``difftypes`` in standard Plone 5 are:
  :members: DiffToolXMLAdapter
 
 
+factorytool.xml
+---------------
+
+This is deprecated.
+It is only needed for Archetypes content types.
+It makes sure when you start adding a content item but don't finish it,
+that no half created item lingers.
+This is not needed for Dexterity items.
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_factory" meta_type="Plone Factory Tool">
+      <factorytypes>
+        <type portal_type="Document"/>
+        <type portal_type="Event"/>
+        <type portal_type="File"/>
+        <type portal_type="Folder"/>
+        <type portal_type="Image"/>
+        <type portal_type="Link"/>
+        <type portal_type="News Item"/>
+        <type portal_type="Topic"/>
+      </factorytypes>
+    </object>
+
+.. note::
+
+    The ``remove`` keyword is not supported.
+
+.. automodule:: Products.ATContentTypes.exportimport.factorytool
+  :members: PortalFactoryXMLAdapter
+
+
 jsregistry.xml
 --------------
 
