@@ -1126,6 +1126,51 @@ When you search for ``metadata.xml`` in the documentation, you will find more in
     But for dependencies no ``purge`` or ``remove`` keyword is supported.
 
 
+portal_atct.xml
+---------------
+
+This is deprecated.
+It was used mostly for Archetypes Topics, the old Collections.
+Since Plone 4.2 you can use new style Collections.
+Please use those.
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <atcttool
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+     <topic_indexes i18n:domain="plone">
+      <index name="allowedRolesAndUsers"
+         description="The roles and users with View permission on an item"
+         enabled="False" friendlyName="Internal Security"
+         i18n:attributes="description; friendlyName" />
+      <index name="created" description="The time and date an item was created"
+         enabled="True" friendlyName="Creation Date"
+         i18n:attributes="description; friendlyName">
+       <criteria>ATFriendlyDateCriteria</criteria>
+       <criteria>ATDateRangeCriterion</criteria>
+      </index>
+     </topic_indexes>
+     <topic_metadata i18n:domain="plone">
+      <metadata name="created"
+         description="The time and date an item was created"
+         enabled="False" friendlyName="Creation Date"
+         i18n:attributes="description; friendlyName" />
+     </topic_metadata>
+     <property name="title">ATContentTypes Tool</property>
+     <property name="image_types">
+      <element value="Image"/>
+      <element value="News Item"/>
+     </property>
+     <property name="folder_types">
+      <element value="Image"/>
+     </property>
+     <property name="album_batch_size">30</property>
+     <property name="album_image_scale">thumb</property>
+     <property name="single_image_scale">preview</property>
+    </atcttool>
+
+
 portlets.xml
 ------------
 
