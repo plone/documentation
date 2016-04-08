@@ -975,6 +975,72 @@ cssregistry.xml
 see :ref:`resourceregistries`
 
 
+diff_tool.xml
+-------------
+
+This is the configuration from ``plone.app.contenttypes``:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object>
+      <difftypes>
+        <type portal_type="Document">
+          <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
+        <type portal_type="Event">
+          <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
+        <type portal_type="File">
+          <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
+        <type portal_type="Folder">
+          <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
+        <type portal_type="Image">
+          <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
+        <type portal_type="Link">
+          <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
+        <type portal_type="News Item">
+          <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
+      </difftypes>
+    </object>
+
+This configures how the difference between two versions of a field are shown on the history tab.
+The configuration is stored in the ``portal_diff`` tool.
+
+For Archetypes content, you need a different ``difftype``:
+
+.. code-block:: xml
+
+    <type portal_type="Document">
+      <field name="any" difftype="Compound Diff for AT types"/>
+    </type>
+
+A new ``difftype`` can be registered by calling ``Products.CMFDiffTool.CMFDiffTool.registerDiffType``.
+The ``difftypes`` in standard Plone 5 are:
+
+- ``Lines Diff``
+- ``Compound Diff for AT types``
+- ``Binary Diff``
+- ``Field Diff`
+- ``List Diff``
+- ``HTML Diff``
+- ``Compound Diff for Dexterity types``
+
+.. note::
+
+    There is no uninstall version.
+    The ``remove`` keyword is not supported.
+    The ``portal_diff`` tool does not show configuration for portal_types that no longer exist.
+
+.. automodule:: Products.CMFDiffTool.exportimport.difftool
+ :members: DiffToolXMLAdapter
+
+
 jsregistry.xml
 --------------
 
