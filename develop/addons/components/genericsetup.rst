@@ -896,6 +896,79 @@ Content Generation
  :members: FolderishExporterImporter
 
 
+controlpanel.xml
+----------------
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object
+        name="portal_controlpanel"
+        xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+        i18n:domain="plone.app.caching">
+
+      <configlet
+          title="Caching"
+          action_id="plone.app.caching"
+          appId="plone.app.caching"
+          category="plone-advanced"
+          condition_expr=""
+          icon_expr="string:$portal_url/++resource++plone.app.caching.gif"
+          url_expr="string:${portal_url}/@@caching-controlpanel"
+          visible="True"
+          i18n:attributes="title">
+        <permission>Manage portal</permission>
+      </configlet>
+
+    </object>
+
+This creates an action in the Site Setup control panel in Plone.
+Actions are bundled in categories.
+The only categories supported in standard Plone 5 are:
+
+- ``Member`` (My Preferences)
+- ``Plone`` (Plone Configuration)
+- ``plone-advanced`` (Advanced)
+- ``plone-content`` (Content)
+- ``plone-general`` (General)
+- ``plone-security`` (Security)
+- ``plone-users`` (Users)
+- ``Products`` (Add-on Configuration)
+
+Any other categories are not displayed in the overview control panel.
+Note that in Plone 4, only ``Member``, ``Plone`` and ``Products`` were supported.
+For add-ons, the category ``Products`` is recommended.
+
+The ``action_id`` must be unique over all categories.
+
+Only one permission is allowed.
+
+You can use your own i18n domain.
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_controlpanel">
+      <configlet action_id="plone.app.caching" remove="true" />
+    </object>
+
+.. note::
+
+    The action is removed if the ``remove`` keyword is ``true``.
+    Upper or lower case does not matter.
+
+    The action is visible if the ``visible`` keyword is ``true``.
+    Upper or lower case does not matter.
+
+.. automodule:: Products.CMFPlone.exportimport.controlpanel
+ :members: ControlPanelXMLAdapter
+
+.. automodule:: Products.CMFPlone.PloneControlPanel
+ :members: PloneControlPanel
+
+
 cssregistry.xml
 ---------------
 
