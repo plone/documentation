@@ -2,6 +2,14 @@
 Changelog
 =========
 
+20160409
+========
+
+- Improve chapter about image handling [jensens]
+- Improve rst style guide [svx]
+- Fix 588 [svx]
+- Fix 582 [svx]
+
 20160405
 ========
 
