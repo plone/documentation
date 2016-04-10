@@ -108,8 +108,8 @@ the ``bin/`` folder:
 
     ...
 
-    environment=
-        PTS_LANGUAGES=en fi
+    environment-vars =
+        PTS_LANGUAGES en fi
 
     #
     # Create a launcher script which will start one Zope instance in debug mode
