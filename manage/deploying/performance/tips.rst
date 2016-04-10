@@ -71,7 +71,7 @@ Add ``PTS_LANGUAGES`` to ``buildout.cfg`` to declare which .po files are loaded 
         [instance]
         ...
         environment-vars =
-            PTS_LANGUAGES=en fi
+            PTS_LANGUAGES en fi
 
 Upgrade DateTime
 ----------------
