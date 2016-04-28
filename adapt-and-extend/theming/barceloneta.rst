@@ -185,7 +185,7 @@ Create a new theme in the theming editor containing the following files:
 
 - a copy of ``index.html`` from Barceloneta (this one cannot be imported or inherited, it must be local to your theme).
 
-- ``style.less``, importing Barceloneta style:
+- ``styles.less``, importing Barceloneta styles:
 
 .. code-block:: css
 
@@ -199,6 +199,6 @@ Create a new theme in the theming editor containing the following files:
       color: @plone-text-color;
     }
 
-Then you have to compile ``style.less`` to obtain your ``style.css`` file using the "Build CSS" button.
+Then you have to compile ``styles.less`` to obtain your ``styles.css`` file using the "Build CSS" button.
 
 Now your theme is ready. You can keep it in the theming editor, or you can export it and put the files in your theme add-on.
