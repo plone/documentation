@@ -48,7 +48,7 @@ Other related packages you might want to take a closer look
 
 * Handling image and file fields with `plone.namedfile <https://github.com/plone/plone.namedfile>`_
 
-* Configuring forms with `plone.form.directives <https://pypi.python.org/pypi/plone.directives.form>`_
+* Configuring forms with `plone.directives.form <https://pypi.python.org/pypi/plone.directives.form>`_
 
 ``z3c.form`` big picture
 ========================
@@ -2244,9 +2244,9 @@ Validators are best added in the schema itself.
 * If you are using plain ``z3c.form``,
   you can check the `validators documentation <http://packages.python.org/z3c.form/validator.html>`_.
 
-* The plone.form.directives package provides convenient
+* The plone.directives.form package provides convenient
   `decorators for form validators <https://pypi.python.org/pypi/plone.directives.form#validators>`_.
-  If you use ``plone.form.directives`` validators, make sure your package
+  If you use ``plone.directives.form`` validators, make sure your package
   is `grokked <http://docs.plone.org/4/en/appendices/grok.html>`_
   (otherwise validators are not registered).
 
