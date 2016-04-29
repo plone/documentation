@@ -1387,8 +1387,8 @@ Example, a button that only shows when a condition is met::
         self.status = "Event deleted."
 
 
-Manipulating form buttons programatically
------------------------------------------
+Manipulating form buttons programmatically
+------------------------------------------
 
 You want to manipulate buttons if you want to hide buttons dynamically,
 manipulate labels, etc.
