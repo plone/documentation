@@ -208,7 +208,7 @@ If you're using this Plone install for development, add the common development t
     cd ~/Plone/zinstance
     bin/buildout -c develop.cfg
 
-You'll need to add the "-c develop.cfg" again each time you run buildout, or you'll lose the extra development tools.
+You'll need to add the “-c develop.cfg” again each time you run buildout, or you'll lose the extra development tools.
 
 Start Plone
 ~~~~~~~~~~~
@@ -259,7 +259,7 @@ For automatic start-up when your server boots up, init scripts, etc.
 please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 
-Installing Plone using RPMs, .dev, ... packages
+Installing Plone using RPMs, .dev, … packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not supported by Plone community. Plone dependencies can and should be installed via your operating system package manager, to profit from security updates and maintenance, but not Plone itself. The packages that have been offered in the past via apt, yup, port etcetera tend to be unmaintained, old and unsuitable.
@@ -295,7 +295,7 @@ Please use the installer from the download page `<http://plone.org/products/plon
 Installing Plone from source on OS X
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Installation via the Unified Installer or buildout is very similar to Unix.
+Installation via the Unified Installer or buildout is similar to Unix.
 However, you will need to install a command-line build environment. To get a free build kit from Apple, do one of the following:
 
 * Download gcc and command-line tools from
