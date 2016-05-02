@@ -1349,7 +1349,7 @@ The default ``z3c.form.form.AddForm`` and ``z3c.form.form.EditForm``
 :guilabel:`Add` and :guilabel:`Save` button handler calls are good code
 examples.
 
-* http://svn.zope.org/z3c.form/trunk/src/z3c/form/form.py?rev=114824&view=auto
+* https://github.com/zopefoundation/z3c.form/blob/master/src/z3c/form/form.py
 
 If you created a form based on another form, the buttons defined on that other form get lost.
 To prevent that, you must explicitly add the buttons of the base class in your form class::
