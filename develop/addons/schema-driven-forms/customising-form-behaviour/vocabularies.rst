@@ -183,8 +183,8 @@ Here is an example that returns our pizza types:
 
         return SimpleVocabulary(terms)
 
-Here, we have defined a function acting as the*IContextSourceBinder*, as
-specified via the @*grok.provider()* decorator. This looks up the
+Here, we have defined a function acting as the *IContextSourceBinder*, as
+specified via the *@grok.provider()* decorator. This looks up the
 registry and looks for the record we created with *registry.xml* above
 (remember to re-install the product in the Add-on control panel or the
 *portal\_quickinstaller* tool if you modify this file). We then use the
@@ -252,7 +252,7 @@ initialised with the registry key
             return SimpleVocabulary(terms)
 
 Notice how in our first implementation, the function *provided* the
-*IContextSourceBinder*interface, but the class here *implements* it.
+*IContextSourceBinder* interface, but the class here *implements* it.
 This is because the function was the context source binder callable
 itself. Conversely, the class is a factory that creates
 *IContextSourceBinder* objects, which in turn are callable.
