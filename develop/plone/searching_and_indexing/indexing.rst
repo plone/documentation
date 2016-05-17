@@ -384,7 +384,7 @@ Some interesting columns
 
 * getRemoteURL: Where to go when the object is clicked
 
-* getIcon: Which content type icon is used for this object in the navigation
+* getIcon: Since Plone 5.02 - Boolean value which is set to True, when item has or is an image (used for showing thumbs in lists, portlets, etc. ). Content-type-icons (aka portaltype-icons) ( e.g.: for folder, document, news item etc.) are rendered as fontello fonts since Plone 5.0. 
 
 * exclude_from_nav: If True the object won't appear in sitemap, navigation tree
 
