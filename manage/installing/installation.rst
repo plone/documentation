@@ -31,7 +31,7 @@ Download Plone
 Plone is available for Mac OSX X, Linux and BSD operating systems.
 For Windows, we currently advise running Plone 5 in a virtualmachine or Vagrant image. We anticipate having a binary windows installer for later releases.
 
-`Download the latest Plone release <http://plone.org/products/plone/latest_release>`_.
+`Download the latest Plone release <https://plone.org/download>`_.
 
 From here, you can also find links to the Vagrant install kit (if you wish to install Plone for evaluation or development on a Windows, OS X or any other machine that supports VirtualBox and Vagrant).
 
