@@ -197,7 +197,7 @@ Plone resources
 Zope resources
 ---------------
 
-* `Zope source code in version control system <http://svn.zope.org/>`_.
+* `Zope source code in version control system <https://github.com/zopefoundation>`_.
 
 * `Zope 2 book <http://docs.zope.org/zope2/zope2book/>`_. This describes old
   Zope 2 technologies. The book is mostly good for explaining some old things,
