@@ -786,8 +786,81 @@ Generic Setup files
 ===================
 
 
+actionicons.xml
+---------------
+
+This is **deprecated**.
+Plone 5 no longer reads this file.
+The icons should go in ``actions.xml`` directly.
+
+
 actions.xml
 -----------
+
+Install actions in the ``portal_actions`` tool.
+
+Example:
+
+.. code-block:: xml
+
+  <?xml version="1.0"?>
+  <object name="portal_actions" meta_type="Plone Actions Tool"
+          xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+    <object name="object_buttons" meta_type="CMF Action Category">
+      <object name="iterate_checkin" meta_type="CMF Action" i18n:domain="plone">
+        <property name="title" i18n:translate="">Check in</property>
+        <property name="description" i18n:translate=""></property>
+        <property name="url_expr">string:${object_url}/@@content-checkin</property>
+        <property name="icon_expr">string:${portal_url}/++resource++checkout.png</property>
+        <property name="available_expr">python:path('object/@@iterate_control').checkin_allowed()</property>
+        <property name="permissions">
+          <element value="View"/>
+        </property>
+        <property name="visible">True</property>
+      </object>
+    </object>
+  </object>
+
+These actions are used in various parts of Plone.
+These are the object categories in standard Plone:
+
+``document_actions``:
+    Document actions, like rss and print.
+
+``site_actions``:
+    Site actions, like sitemap, accessibility, contact.
+
+``object``:
+    Object tabs, like contents, sharing tab.
+
+``object_buttons``:
+    Object buttons, like delete, rename.
+
+``portal_tabs``:
+    Portal tabs, like Home.
+
+``user``:
+    User actions, like preferences, login, join.
+
+For adding controlpanel actions, see controlpanel.xml_ instead.
+
+You can use your own i18n domain.
+
+The objects support ``insert-before`` and ``insert-after`` for inserting the action object before or after another action object.
+
+For removing, use ``remove="true"`` (or ``True``).
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_actions" meta_type="Plone Actions Tool"
+            xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+      <object name="object_buttons" meta_type="CMF Action Category">
+        <object name="iterate_checkin" remove="true" />
+      </object>
+    </object>
 
 
 componentregistry.xml
