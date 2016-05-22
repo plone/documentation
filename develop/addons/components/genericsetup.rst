@@ -1335,6 +1335,57 @@ Now you can use ``pluginregistry.xml`` in your generic setup profiles:
     </plugin-registry>
 
 
+registry.xml
+------------
+
+This edits the configuration registry.
+
+Example for adding all records of an interface:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <registry>
+      <records interface="plone.app.iterate.interfaces.IIterateSettings" />
+    </registry>
+
+Example for adding an individual record:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <registry>
+      <record name="my.package.timeout">
+        <field type="plone.registry.field.Int">
+          <title>Timeout</title>
+          <min>0</min>
+        </field>
+        <value>100</value>
+      </record>
+    </registry>
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <registry>
+      <records interface="plone.app.iterate.interfaces.IIterateSettings" remove="true" />
+      <record name="my.package.timeout" remove="true" />
+    </registry>
+
+.. autoclass:: plone.app.registry.exportimport.handler.RegistryImporter
+
+The item is removed if the ``remove`` keyword is ``true``.
+Upper or lower case does not matter.
+
+Existing values of lists are purged by default.
+The values are not purged if the ``purge`` keyword is ``false``.
+Upper or lower case does not matter.
+
+For more examples, see the `plone.app.registry documentation <https://pypi.python.org/pypi/plone.app.registry#using-genericsetup-to-manipulate-the-registry>`_.
+
+
 repositorytool.xml
 ------------------
 
