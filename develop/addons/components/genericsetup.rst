@@ -1244,6 +1244,63 @@ Please use those.
     </atcttool>
 
 
+portal_placeful_workflow: portal_placeful_workflow.xml and portal_placeful_workflow directory
+---------------------------------------------------------------------------------------------
+
+This install or configures a placeful workflow.
+For this to work, you must install Workflow Policy Support (CMFPlacefulWorkflow) in the add-ons.
+This add-on is included in standard Plone, but not activated.
+
+Standard ``portal_placeful_workflow.xml`` from ``Products.CMFPlacefulWorkflow``:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_placeful_workflow" meta_type="Placeful Workflow Tool">
+      <property name="title"></property>
+      <property name="max_chain_length" type="int">1</property>
+      <object name="intranet" meta_type="WorkflowPolicy"/>
+      <object name="old-plone" meta_type="WorkflowPolicy"/>
+      <object name="one-state" meta_type="WorkflowPolicy"/>
+      <object name="simple-publication" meta_type="WorkflowPolicy"/>
+    </object>
+
+Standard ``portal_placeful_workflow/simple-publication.xml`` from ``Products.CMFPlacefulWorkflow``:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="simple-publication" meta_type="WorkflowPolicy">
+      <property name="title">Simple publication</property>
+      <bindings>
+       <default>
+         <bound-workflow workflow_id="simple_publication_workflow"/>
+       </default>
+       <type default_chain="true" type_id="Document"/>
+       <type default_chain="true" type_id="Event"/>
+       <type type_id="File">
+       </type>
+       <type default_chain="true" type_id="Folder"/>
+       <type type_id="Image">
+       </type>
+       <type default_chain="true" type_id="Link"/>
+       <type default_chain="true" type_id="News Item"/>
+       <type default_chain="true" type_id="Collection"/>
+      </bindings>
+    </object>
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0"?>
+    <object name="portal_placeful_workflow" meta_type="Placeful Workflow Tool">
+      <object name="old-plone" meta_type="WorkflowPolicy" remove="true" />
+    </object>
+
+The import handler is in ``Products.CMFPlacefulWorkflow.exportimport.importWorkflowPolicies``.
+
+
 portlets.xml
 ------------
 
