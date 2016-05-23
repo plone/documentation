@@ -38,7 +38,7 @@ Note that given login field isn't necessarily the username. For example,
 `betahaus.emaillogin <https://pypi.python.org/pypi/betahaus.emaillogin>`_ add-on authenticates users by their email addresses.
 
 Credential extraction will go through all plug-ins registered for
-`PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.txt>`_ system.
+`PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.rst>`_ system.
 
 The first found login/password pair attempt will be used for user authentication.
 
