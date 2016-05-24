@@ -807,6 +807,87 @@ this is what your ``propertiestool.xml`` should look like:
 .. original content from http://www.sixfeetup.com/company/technologies/plone-content-management-new/quick-reference-cards/swag/swag-images-files/generic_setup.pdf
 
 
+i18n domains in GenericSetup xml files
+--------------------------------------
+
+In your GenericSetup profile you can have several xml files.
+In some of these it makes sense to do translations.
+In most of those cases you must use the ``plone`` domain, but in some you can use your own domain.
+Note that you are always allowed to use the ``plone`` domain, but if the xml file supports a separate domain it is best to use that.
+
+- ``actions.xml``: use **your own** domain.
+  Example::
+
+    <object name="ducktest" meta_type="CMF Action" i18n:domain="collective.ducks">
+      <property name="title" i18n:translate="">Duck Test</property>
+      <property name="description" i18n:translate="">Action: test a duck</property>
+      ...
+    </object>
+
+  Note that when you go to the portal_actions tools in the ZMI, you will see an i18n domain specified for each action.
+
+- ``catalog.xml``: no i18n needed
+
+- ``componentregistry.xml``: no i18n needed
+
+- ``contenttyperegistry.xml``: no i18n needed
+
+- ``controlpanel.xml``: use **your own** domain.
+  Example::
+
+    <?xml version="1.0"?>
+    <object name="portal_controlpanel" meta_type="Plone Control Panel Tool"
+            i18n:domain="collective.ducks" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+      <configlet title="Duck Configuration Panel" action_id="Duck" appId="Duck"
+                 category="Products" condition_expr=""
+                 icon_expr="string:$portal_url/duck_icon.png"
+                 url_expr="string:${portal_url}/prefs_install_products_form"
+                 visible="True" i18n:attributes="title">
+        <permission>Manage portal</permission>
+      </configlet>
+    </object>
+
+- ``cssregistry.xml``: no i18n needed
+
+- ``diff_tool.xml``: no i18n needed
+
+- ``factorytool.xml``: no i18n needed
+
+- ``jsregistry.xml``: no i18n needed
+
+- ``kssregistry.xml``: no i18n needed
+
+- ``mailhost.xml``: no i18n needed
+
+- ``memberdata_properties.xml``: no i18n needed
+
+- ``metadata.xml``: no i18n needed
+
+- ``portal_atct.xml``: use the **plone** domain.
+  Note that this has no influence on the Collections panel in Site Setup.
+  It is only used on the edit and criteria pages of an old-style Collection.
+
+- ``portlets.xml``: use the **plone** domain.
+
+- ``properties.xml``: no i18n needed
+
+- ``propertiestool.xml``: no i18n needed
+
+- ``rolemap.xml``: no i18n needed
+
+- ``skins.xml``: no i18n needed
+
+- ``toolset.xml``: no i18n needed
+
+- ``types``: use **your own** domain
+
+- ``viewlets.xml``: no i18n needed
+
+- ``workflows: use the **plone** domain
+
+.. original content from http://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4
+
+
 Generic Setup files
 ===================
 
