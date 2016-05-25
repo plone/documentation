@@ -901,10 +901,9 @@ Generic Setup files
 actionicons.xml
 ---------------
 
-.. note::
+.. deprecated:: 4.0.
 
-    This is deprecated.
-    Plone 5 no longer reads this file.
+    Plone 5 no longer even reads this file, because ``Products.CMFActionIcons`` is not included.
     The icons should go in ``actions.xml`` directly.
 
 
@@ -1160,11 +1159,13 @@ Code is in ``Products.CMFPlone.exportimport.controlpanel`` and ``Products.CMFPlo
 cssregistry.xml
 ---------------
 
-.. note::
+.. deprecated:: 5.0.
 
-    This is deprecated in Plone 5.
+    This still works in Plone 5, but it is deprecated.
 
-See :ref:`resourceregistries`.
+For the old way, see: :doc:`Front-end: templates, CSS and Javascript </adapt-and-extend/theming/templates_css/index>`.
+
+For the new way, see: doc:`Plone 5 Resource Registry </adapt-and-extend/theming/resourceregistry>`.
 
 
 diff_tool.xml
@@ -1266,21 +1267,21 @@ Code is in ``Products.ATContentTypes.exportimport.factorytool``.
 jsregistry.xml
 --------------
 
-.. note::
+.. deprecated:: 5.0.
 
-    This is deprecated in Plone 5.
+    This still works in Plone 5, but it is deprecated.
 
-See :ref:`resourceregistries`.
+For the old way, see: :doc:`Front-end: templates, CSS and Javascript </adapt-and-extend/theming/templates_css/index>`.
+
+For the new way, see: doc:`Plone 5 Resource Registry </adapt-and-extend/theming/resourceregistry>`.
 
 
 kssregistry.xml
 ---------------
 
-.. note::
+.. deprecated:: 4.3
 
-    This is deprecated in Plone 4.3.
-
-See :ref:`resourceregistries`.
+    Instead of these Kinetic Style Sheets you should use javascript.
 
 
 metadata.xml
@@ -1324,11 +1325,10 @@ When you search for ``metadata.xml`` in the documentation, you will find more in
 portal_atct.xml
 ---------------
 
-.. note::
+.. deprecated:: 4.2
 
-    This is deprecated.
-    It was used mostly for Archetypes Topics, the old Collections.
-    Since Plone 4.2 you can use new style Collections.
+    This was used for Archetypes Topics, the old-style Collections.
+    Since Plone 4.2 you can use new-style Collections.
     Please use those.
 
 .. code-block:: xml
@@ -1438,9 +1438,8 @@ Code is in ``plone.app.portlets.exportimport.portlets``.
 propertiestool.xml
 ------------------
 
-.. note::
+.. deprecated:: 5.0
 
-    This is deprecated in Plone 5.
     Most properties are now handled in the configuration registry and can be configured in ``registry.xml``.
 
 In ``propertiestool.xml`` you can change all values of the ``portal_properties`` tool.
@@ -1651,20 +1650,6 @@ The default configuration in Plone is:
 Code is in ``Products.CMFEditions.exportimport.repository``.
 
 
-.. _resourceregistries:
-
-Resource Registries
--------------------
-
-.. note::
-
-    This is deprecated in Plone 5.
-
-Code is in ``Products.ResourceRegistries.exportimport.resourceregistry``.
-
-See: :doc:`Front-end: templates, CSS and Javascript </adapt-and-extend/theming/templates_css/index>`.
-
-
 rolemap.xml
 -----------
 
@@ -1819,9 +1804,9 @@ Uninstall example:
 tinymce.xml
 -----------
 
-.. note::
+.. deprecated:: 5.0
 
-    This is deprecated in Plone 5: it is done in ``registry.xml`` instead.
+    Since Plone 5.0 this is done in ``registry.xml`` instead.
     The fields are defined in ``Products.CMFPlone.interfaces.controlpanel``.
 
 Import TinyMCE settings.
