@@ -498,7 +498,7 @@ Upgrade steps
 
 You can define upgrade steps to run code when someone upgrades your product from version *x* to *y*.
 
-As an example, let's say that the new version of YOUR.PRODUCT defines a *price* field on a content type *MyType* to be a string, but previously (version 1.1 and earlier) it was a float.
+As an example, let's say that the new version of your.package defines a *price* field on a content type *MyType* to be a string, but previously (version 1.1 and earlier) it was a float.
 Code that uses this field and assumes it to be a float will break after the upgrade, so you'd like to automatically convert existing values for the field to string.
 
 Obviously, you could do this very quickly in a simple script, but having a GenericSetup upgrade step means non-technical people can do it as well.
@@ -525,16 +525,16 @@ Next we add an upgrade step:
     <configure
         xmlns="http://namespaces.zope.org/zope"
         xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-        i18n_domain="YOUR.PRODUCT">
+        i18n_domain="your.package">
 
       <genericsetup:upgradeStep
           title="Convert Price to strings"
           description="Price was previously a float field, it should be converted to string"
           source="1000"
           destination="1100"
-          handler="YOUR.PRODUCT.upgrades.convert_price_to_string"
+          handler="your.package.upgrades.convert_price_to_string"
           sortkey="1"
-          profile="YOUR.PRODUCT:default"
+          profile="your.package:default"
           />
 
     </configure>
@@ -555,7 +555,7 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
     from plone import api
     import logging
 
-    PROFILE_ID = 'profile-YOUR.PRODUCT:default'
+    PROFILE_ID = 'profile-your.package:default'
 
 
     def convert_price_to_string(context, logger=None):
@@ -569,7 +569,7 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
 
         if logger is None:
             # Called as upgrade step: define our own logger.
-            logger = logging.getLogger('YOUR.PRODUCT')
+            logger = logging.getLogger('your.package')
 
         # Run the catalog.xml step as that may have defined new metadata
         # columns.  We could instead add <depends name="catalog"/> to
