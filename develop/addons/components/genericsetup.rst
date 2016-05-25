@@ -87,16 +87,21 @@ XML files for the ``default`` profile go in the ``profiles/default`` folder insi
 
     </configure>
 
-.. note ::
 
-    When you have more than one profile in your package,
-    the add-ons control panel needs to decide which one to use when you install it.
-    In Plone 5.0 and lower,
-    the profiles are sorted alphabetically by id,
-    and the first one is chosen.
-    So if you have profiles ``base`` and ``default``,
-    the ``base`` profile is installed.
-    Plone 5.1 is scheduled to prefer the ``default`` profile.
+Multiple profiles
+-----------------
+
+When you have more than one profile in your package,
+the add-ons control panel needs to decide which one to use when you install it.
+In Plone 5.0 and lower,
+the profiles are sorted alphabetically by id,
+and the first one is chosen.
+So if you have profiles ``base`` and ``default``,
+the ``base`` profile is installed.
+
+.. versionadded:: 5.1
+
+    When there is a profile with name ``default``, this is taken as the profile for installation.
     For more information on this plan,
     see `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
 
@@ -134,12 +139,26 @@ Example::
     for profile in profiles:
        print str(profile)
 
-Results::
+Sample results:
 
-    {'product': 'PluggableAuthService', 'description': 'Content for an empty PAS (plugins registry only).', 'for': <InterfaceClass Products.PluggableAuthService.interfaces.authservice.IPluggableAuthService>, 'title': 'Empty PAS Content Profile', 'version': 'PluggableAuthService-1.5.3', 'path': 'profiles/empty', 'type': 1, 'id': 'PluggableAuthService:empty'}
-    {'product': 'Products.CMFDefault', 'description': u'Profile for a default CMFSite.', 'for': <InterfaceClass Products.CMFCore.interfaces._content.ISiteRoot>, 'title': u'CMFDefault Site', 'version': 'CMF-2.1.1', 'path': u'profiles/default', 'type': 1, 'id': u'Products.CMFDefault:default'}
-    {'product': 'Products.CMFPlone', 'description': u'Profile for a default Plone.', 'for': <InterfaceClass Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot>, 'title': u'Plone Site', 'version': u'3.1.7', 'path': u'/home/moo/sits/parts/plone/CMFPlone/profiles/default', 'type': 1, 'id': u'Products.CMFPlone:plone'}
-    {'product': 'Products.Archetypes', 'description': u'Extension profile for default Archetypes setup.', 'for': None, 'title': u'Archetypes', 'version': u'1.5.7', 'path': u'/home/moo/sits/parts/plone/Archetypes/profiles/default', 'type': 2, 'id': u'Products.Archetypes:Archetypes'}
+.. code-block:: python
+
+    {'product': 'PluggableAuthService',
+     'description': 'Content for an empty PAS (plugins registry only).',
+     'for': <InterfaceClass Products.PluggableAuthService.interfaces.authservice.IPluggableAuthService>,
+     'title': 'Empty PAS Content Profile',
+     'version': 'PluggableAuthService-1.5.3',
+     'path': 'profiles/empty',
+     'type': 1,
+     'id': 'PluggableAuthService:empty'}
+    {'product': 'Products.CMFPlone',
+     'description': u'Profile for a default Plone.',
+     'for': <InterfaceClass Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot>,
+     'title': u'Plone Site',
+     'version': u'3.1.7',
+     'path': u'/home/moo/sits/parts/plone/CMFPlone/profiles/default',
+     'type': 1,
+     'id': u'Products.CMFPlone:plone'}
     ...
 
 
@@ -167,7 +186,7 @@ Unit testing example::
     # Run the extended profile of the betahaus.emaillogin package.
     setup_tool.runAllImportStepsFromProfile('profile-betahaus.emaillogin:extended')
 
-.. note::
+.. versionadded:: 4.3.8
 
     Since Products.GenericSetup 1.8.0 (Plone 4.3.8, Plone 5.0.0) the ``profile-`` part is optional.
     The code can handle both.
@@ -198,10 +217,12 @@ Uninstalling has various parts:
 2. CMFQuickInstaller looks in ``Extensions/install.py`` for an uninstall method and runs it.
    Various add-ons have added an uninstall method and simply let it apply an ``uninstall`` profile.
 
-3. CMFQuickInstaller 3.0.9 (Plone 4.3.7 and higher) makes the second part a bit easier.
-   If the uninstall method is not found, it looks for a profile with id ``uninstall`` and applies it.
+.. versionadded:: 4.3.7
 
-.. note::
+    CMFQuickInstaller 3.0.9 (Plone 4.3.7 and higher) makes the second part a bit easier.
+    If the uninstall method is not found, it looks for a profile with id ``uninstall`` and applies it.
+
+.. versionadded:: 5.1
 
     Plone 5.1 is scheduled to not use the CMFQuickInstaller, but always apply an ``uninstall`` profile.
     For more information on this plan,
@@ -738,8 +759,7 @@ Example:
             if reinstall == False:
                 raise BadRequest('This product cannot be uninstalled!')
 
-
-.. note ::
+.. deprecated:: 5.1
 
     This example is for Extensions/install.py, an old Plone 2 way of writing installers and uninstallers.
     It is still working in Plone 5.0, but will likely go away in Plone 5.1.
