@@ -585,9 +585,9 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
         for brain in brains:
             current_price = brain.getPrice
             if type(current_price) != type('a string'):
-                voorstelling = brain.getObject()
-                voorstelling.setPrice(str(current_price))
-                voorstelling.reindexObject()
+                obj = brain.getObject()
+                obj.setPrice(str(current_price))
+                obj.reindexObject()
                 count += 1
 
         setup.runImportStepFromProfile(PROFILE_ID, 'catalog')
