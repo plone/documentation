@@ -54,7 +54,7 @@ This import will read XML files and change the Plone database accordingly.
     The ``metadata.xml`` file (add-on dependency and version information) is read during Plone start-up.
     If this file has problems, your add-on might not appear in the installer control panel.
 
-.. * Not publicly viewable anymore: `GenericSetup tutorial <https://plone.org/documentation/tutorial/genericsetup>`_
+.. * Not publicly viewable anymore: `GenericSetup tutorial <https://old.plone.org/documentation/tutorial/genericsetup>`_
 
 * `GenericSetup product page <https://pypi.python.org/pypi/Products.GenericSetup>`_.
 
@@ -510,8 +510,8 @@ Increment profile version
 
 First increase the number of the version in the ``profiles/default/metadata.xml``.
 This version number should be an integer.
-Package version are different because they add sense like the status of the addon:
-is it stable, is it in dev, in beta, which branch is it.
+Package version are different because they add sense like the status of the add-on:
+is it stable, is it in development, in beta, which branch is it.
 A profile version indicates only that you have to migrate data in the database.
 
 
