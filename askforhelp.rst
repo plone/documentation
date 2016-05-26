@@ -9,8 +9,8 @@ Guidelines and Examples
 If you need help with an error or problem: before asking the question, please take a few minutes to read the guidelines below. It is important to know how to state questions, because once you learn it, answers will come much faster.
 
 
-Asking help on discussion forums and mailing lists
---------------------------------------------------
+Asking help on support and discussion forums
+--------------------------------------------
 
 By stating a **well-phrased question** you increase the likelihood of fast and helpful response to your question.
 
@@ -22,9 +22,11 @@ Where to search:
 
 - Google - Before asking for help, make a Google search with related keywords. Pick meaningful keywords from the log entry.
 
-- `StackOverflow <http://stackoverflow.com/questions/tagged/plone?sort=faq>`_ - some FAQs are maintained here.
+- `Plone Community Forums <https://community.plone.org/>`_ - help and discussion forums
 
-- :doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error messages - for enabling debug mode and common tracebacks.
+- `StackOverflow <http://stackoverflow.com/questions/tagged/plone?sort=faq>`_ - some FAQs are maintained here
+
+- :doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error messages - for enabling debug mode and common tracebacks
 
 - `GitHub issue tracker <https://github.com/plone/Products.CMFPlone/issues>`_ - for known related issues
 
@@ -33,8 +35,6 @@ Where to search:
 If at any point you see any kind of error message (including error codes) – put them in the topic. Never write anything like “I see some error message”. Be specific.
 
 See  :doc:`Basic troubleshooting </manage/troubleshooting/basic>` in case of an error
-
-Follow the structure of the forum by creating your topic in a proper location (subforum). If you are in doubt where to create your topic, post to the `general questions <https://plone.org/support/forums/general>`_ forum.
 
 Follow the netiquette while visiting and writing on forum or mailing list (give respect = get respect). This includes:
 
@@ -61,7 +61,7 @@ Keep in mind, that if you ask a question and all you hear is silence, it might b
 
 The big picture - An opening sentence should state the general problem that you wish to solve.
 
-**A snapshot of your environment** - For Plone and for other relevant products: provide version numbers. e.g., "I'm running Plone 5.0.2 under Python 2.7.10."
+**A snapshot of your environment** - For Plone and for other relevant products: provide version numbers. e.g., "I'm running Plone 5.0.4 under Python 2.7.11."
 
 **Steps to reproduce the issue** - Give information about your ideas of how this error appeared, what caused it or anything that could lead to reproducing the error on another computer. The expected result .
 
