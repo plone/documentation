@@ -49,7 +49,7 @@ Then, install the platform's build kit, nginx, and supervisor:
 Step 2: Install Plone
 ---------------------
 
-Please take some time and read the cheapter about :doc:`installation </manage/installing/installing/index>`.
+Please take some time and read the chapter about :doc:`installation </manage/installing/installing/index>`.
 
 .. note::
 
