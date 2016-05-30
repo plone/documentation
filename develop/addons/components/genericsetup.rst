@@ -27,7 +27,7 @@ GenericSetup is mostly used to apply an add-on's specific changes to the site co
 
 GenericSetup XML files are usually in a ``profiles/default`` folder inside the add-on package.
 
-All run-time through-the-web (TTW) configurable items, like viewlets order through ``/@@manage-viewlets`` page, are made repeatable using GenericSetup profile files.
+All run-time through-the-web (:term:`TTW`) configurable items, like viewlets order through ``/@@manage-viewlets`` page, are made repeatable using GenericSetup profile files.
 
 You do not need to hand-edit GenericSetup profile files.
 You can always change the configuration options through Plone or using the Zope Management Interface, and then you export the resulting profile as an XML file, using the *Export* tab in the ``portal_setup`` ZMI tool.
