@@ -86,8 +86,7 @@ You can register such an adapter in ``configure.zcml``
 
         <adapter
             for="Products.CMFCore.interfaces.IFolderish
-                 Products.CMFDefault.interfaces.ICMFDefaultSkin
-                plone.dexterity.interfaces.IDexterityFTI"
+                 plone.dexterity.interfaces.IDexterityFTI"
             provides="zope.publisher.interfaces.browser.IBrowserPage"
             factory=".flexicontent.AddView"
             name="your.app.flexiblecontent"
