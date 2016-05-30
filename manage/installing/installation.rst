@@ -2,12 +2,6 @@
  Installation
 ==============
 
-.. admonition:: Description
-
-    Installation instructions for Plone for various operating systems and situations.
-
-.. contents:: :local:
-
 .. highlight:: console
 
 
@@ -58,11 +52,6 @@ Plone can run on all popular desktop or server operating systems, including Linu
 
 * You can install Plone locally on your own computer for development and test drive
 
-Ubuntu / Debian
----------------
-
-We describe Ubuntu/Debian installation in detail as an example of installation on a common Linux distribution.
-The only difference for most other systems would be in package-manager commands and package names. See :doc:`Plone installation requirements <requirements>` for package names and commands on other platforms.
 
 Installing Plone using the Unified UNIX Installer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,36 +75,64 @@ The resulting installation is self-contained, does not touch system files, and i
 
 If you are not familiar with UNIX operating system command line you might want to study this `Linux shell tutorial <http://linuxcommand.org/learning_the_shell.php>`_ first.
 
-Instructions are tested for the *Ubuntu 14.04 Long Term Support* release.
 
 Install the operating system software and libraries needed to run Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: shell
+.. example-code::
+    .. code-block:: Ubuntu
 
-    sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+        sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+
+    .. code-block:: Fedora
+
+        sudo dnf install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
+
+   .. code-block:: CentOS
+
+        sudo yum install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
+
 
 .. note::
 
-    If the **sudo** command is not recognized or does not work you don't have administrator rights to Ubuntu / Debian operating system.
+    If the **sudo** command is not recognized or does not work you don't have administrator rights on your operating system.
     Please contact your server vendor or consult the operating system support forum.
 
 
 You will probably also want these optional system packages for handling of PDF and Office files:
 
-.. code-block:: shell
+.. example-code::
+    .. code-block:: Ubuntu
 
-    sudo apt-get install libreadline-dev wv poppler-utils
+        sudo apt-get install libreadline-dev wv poppler-utils
+
+    .. code-block:: Fedora
+
+        sudo dnf install readline-devel wv poppler-utils
+
+    .. code-block:: CentOS
+
+        sudo yum install readline-devel wv poppler-utils
 
 .. note::
 
-    **libreadline-dev** is only necessary if you wish to build your own python rather than use your system's python 2.7.
+    **libreadline-dev** or **readline-devel** is only necessary if you wish to build your own python rather than use your system's python 2.7.
 
 If you're planning on developing with Plone, install git version control support
 
-.. code-block:: shell
+.. example-code::
+    .. code-block:: Ubuntu
 
-    sudo apt-get install git
+        sudo apt-get install git
+
+    .. code-block:: Fedora
+
+        sudo dnf install git
+
+    .. code-block:: CentOS
+
+        sudo yum install git
+
 
 
 Download the latest Plone unified installer
