@@ -4,7 +4,7 @@
 
 .. admonition:: Description
 
-    GenericSetup is a framework to modify the Plone site during add-on product installation and uninstallation.
+    GenericSetup is a framework to modify the Plone site during add-on package installation and uninstallation.
     It provides XML-based rules to change the site settings easily.
 
 .. contents :: :local:
@@ -14,7 +14,7 @@ Introduction
 
 GenericSetup is an XML-based way to import and export Plone site configurations.
 
-It is mainly used to prepare the Plone site for add-on products, by:
+It is mainly used to prepare the Plone site for add-on packages, by:
 
 * registering CSS files,
 * registering JavaScript files,
@@ -23,19 +23,18 @@ It is mainly used to prepare the Plone site for add-on products, by:
 * registering portal_catalog search query indexes,
 * ...and so on...
 
-GenericSetup is mostly used to apply add-on-specific changes to the site configuration, and to enable add-on-specific behavior when the add-on installer is run.
+GenericSetup is mostly used to apply an add-on's specific changes to the site configuration and to enable specific behaviors when the add-on installer is run.
 
-GenericSetup XML files are usually in a ``profiles/default`` folder inside the add-on product.
+GenericSetup XML files are usually in a ``profiles/default`` folder inside the add-on package.
 
-All run-time configurable items, like viewlets order through ``/@@manage-viewlets`` page, are made repeatable using GenericSetup profile files.
+All run-time through-the-web (TTW) configurable items, like viewlets order through ``/@@manage-viewlets`` page, are made repeatable using GenericSetup profile files.
 
 You do not need to hand-edit GenericSetup profile files.
-You can always change the configuration options through Plone or using the Zope Management Interface.
-Then you can export the resulting profile as an XML file, using the *Export* tab in the ``portal_setup`` ZMI tool.
+You can always change the configuration options through Plone or using the Zope Management Interface, and then you export the resulting profile as an XML file, using the *Export* tab in the ``portal_setup`` ZMI tool.
 
 Directly editing XML profile files does not change anything on the site, even after Zope restart.
-This is because run-time configurable items are stored in the database.
-If you edit profile files, you need reimport edited files using the ``portal_setup`` tool or rerun the add-on product installer in Plone control panel.
+This is because run-time TTW configurable items are stored in the database.
+If you edit profile files, you need to either reimport the edited files using the ``portal_setup`` tool or fully rerun the add-on package installer in Plone control panel.
 This import will read XML files and change the Plone database accordingly.
 
 .. note::
@@ -47,7 +46,7 @@ This import will read XML files and change the Plone database accordingly.
 
     Relationship between ZCML and site-specific behavior is usually done using :doc:`layers </develop/plone/views/layers>`.
     ZCML directives, like viewlets and views, are registered to be active only on a certain layer using ``layer`` attribute.
-    When GenericSetup XML is imported through ``portal_setup``, or the product add-on installer is run for a Plone site, the layer is activated for the particular site only, enabling all views registered for this layer.
+    When GenericSetup XML is imported through ``portal_setup``, or the add-on package installer is run for a Plone site, the layer is activated for the particular site only, enabling all views registered for this layer.
 
 .. note ::
 
@@ -56,7 +55,7 @@ This import will read XML files and change the Plone database accordingly.
 
 .. * Not publicly viewable anymore: `GenericSetup tutorial <https://old.plone.org/documentation/tutorial/genericsetup>`_
 
-* `GenericSetup product page <https://pypi.python.org/pypi/Products.GenericSetup>`_.
+* `GenericSetup package page <https://pypi.python.org/pypi/Products.GenericSetup>`_.
 
 * `GenericSetup source code <https://github.com/zopefoundation/Products.GenericSetup>`_.
 
@@ -64,24 +63,24 @@ This import will read XML files and change the Plone database accordingly.
 Creating a profile
 ==================
 
-You use ``<genericsetup>`` directive in your add-on product's ``configure.zcml``.
+You use ``<genericsetup>`` directive in your add-on package's ``configure.zcml``.
 The name for the default profile executed by the Plone add-on installer is ``default``.
 If you need different profiles, for example for unit testing, you can declare them here.
 
-XML files for the ``default`` profile go in the ``profiles/default`` folder inside your add-on product.
+XML files for the ``default`` profile go in the ``profiles/default`` folder inside your add-on package.
 
 .. code-block:: xml
 
     <configure
         xmlns="http://namespaces.zope.org/zope"
         xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-        i18n_domain="gomobile.mobile">
+        i18n_domain="your.addonpackage">
 
       <genericsetup:registerProfile
           name="default"
-          title="Plone Go Mobile"
+          title="your.addonpackage (installation profile)"
           directory="profiles/default"
-          description='Mobile CMS add-on'
+          description='Your add-on package installation profile'
           provides="Products.GenericSetup.interfaces.EXTENSION"
           />
 
@@ -91,7 +90,7 @@ XML files for the ``default`` profile go in the ``profiles/default`` folder insi
 Multiple profiles
 -----------------
 
-When you have more than one profile in your package,
+When you have more than one profile in your add-on package,
 the add-ons control panel needs to decide which one to use when you install it.
 In Plone 5.0 and lower,
 the profiles are sorted alphabetically by id,
@@ -109,9 +108,9 @@ the ``base`` profile is installed.
 Add-on-specific issues
 ======================
 
-Add-on products may contain:
+Add-on packages may contain:
 
-* A default GenericSetup XML profile which is automatically run when the product is installed using the quick-installer.
+* A default GenericSetup XML profile which is automatically run when the package is installed using the quick-installer.
   The profile name is usually ``default``.
 
 * Other profiles which the user may install using the ``portal_setup`` *Import* tab, or which can be manually enabled for unit tests.
@@ -179,12 +178,12 @@ Manually
 
 You might want to install profiles manually if they need to be enabled only for certain tests.
 
-The profile name is in the format ``profile-${product name}:${profile id}``
+The profile name is in the format ``profile-${package_name}:${profile id}``
 
 Unit testing example::
 
-    # Run the extended profile of the betahaus.emaillogin package.
-    setup_tool.runAllImportStepsFromProfile('profile-betahaus.emaillogin:extended')
+    # Run the extended profile of the "your.addonpackage" package.
+    setup_tool.runAllImportStepsFromProfile('profile-your.addonpackage:extended')
 
 .. versionadded:: 4.3.8
 
@@ -195,7 +194,7 @@ Unit testing example::
 Missing upgrade procedure
 =========================
 
-In the add-ons control panel you may see a warning that your add-on is `missing an upgrade procedure <http://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on>`_.
+In the Add-ons control panel you may see a warning that your add-on package is `missing an upgrade procedure <http://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on>`_.
 This means you need to write some `Upgrade steps`_.
 
 
@@ -210,7 +209,7 @@ Uninstalling has various parts:
 
 1. CMFQuickInstaller keeps a list of *some* items that were added during install of an add-on, for example css files in the registry.
    During uninstall, these items are automatically removed.
-   This works okay, but it only undoes a subset of the changes made by the add-on.
+   This works okay, but it only undoes a subset of the changes made by the add-on package.
    There have been problems where items were removed that should not have been removed, especially when add-on authors were not aware of this automatic removal.
    Best practice is to write your own uninstall code.
 
@@ -232,13 +231,12 @@ Uninstalling has various parts:
 Dependencies
 ============
 
-GenericSetup profile can contain dependencies to other add-on product installers and profiles.
-For example, if you want to declare a dependency to the *collective.basket* add-on product,
-so that it is automatically installed when your add-on is installed,
-you can use the declaration below.
-This way,
-you can be sure that all layers, portlets, and other features which require database changes,
-are usable from the *collective.basket* add-on product when your add-on product is run.
+GenericSetup profile can contain dependencies to other add-on package
+installers and profiles. For example, if you want to declare a dependency to
+the *your.addonpackage* package, so that it is automatically installed when
+your add-on is installed, you can use the declaration below.
+This way you can be sure that all layers, portlets and other features which
+require database changes are usable from *your.addonpackage* when it is run.
 
 ``metadata.xml``:
 
@@ -248,19 +246,19 @@ are usable from the *collective.basket* add-on product when your add-on product 
     <metadata>
      <version>1000</version>
      <dependencies>
-       <dependency>profile-collective.basket:default</dependency>
+       <dependency>profile-your.addonpackage:default</dependency>
      </dependencies>
     </metadata>
 
-*collective.basket* declares the profile in its configure.zcml:
+*your.addonpackage* declares the profile in its configure.zcml:
 
 .. code-block:: xml
 
     <genericsetup:registerProfile
         name="default"
-        title="collective.basket"
+        title="your.addonpackage"
         directory="profiles/default"
-        description='Collector portlet framework'
+        description='Your add-on package installation profile'
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
@@ -270,14 +268,14 @@ are usable from the *collective.basket* add-on product when your add-on product 
     Unlike other GenericSetup XML files,
     ``metadata.xml`` is read on the start-up and this read is cached.
     Always restart Plone after editing ``metadata.xml``.
-    If your ``metadata.xml`` file contains syntax errors or dependencies to a missing or non-existent product (e.g. due to a typo in a name) your add-on will disappear from the installation control panel.
+    If your ``metadata.xml`` file contains syntax errors or dependencies to a missing or non-existent package (e.g. due to a typo in a name) your add-on will disappear from the installation control panel.
 
 .. note::
 
-    For some old products in the ``Products.*`` Python namespace,
+    For some old add-ons in the ``Products.*`` Python namespace,
     you must not include the full package name in the dependencies.
-    This is true when this product has registered its profile in Python instead of zcml,
-    and there it has used only part of its package name.
+    This is true when this add-on has registered its profile in Python instead
+    of zcml, and there it has used only part of its package name.
     In most cases you *do* need to use the full ``Products.xxx`` name.
 
 To declare a dependency on the ``simple`` profile of ``Products.PluggableAuthService``:
@@ -297,7 +295,7 @@ To declare a dependency on the ``simple`` profile of ``Products.PluggableAuthSer
 Metadata version numbers
 ========================
 
-Some old packages may have a ``metadata.xml`` without version number,
+Some old add-on packages may have a ``metadata.xml`` without version number,
 but this is considered bad practice.
 What should the version number in your ``metadata.xml`` be?
 This mostly matters when you are adding upgrade steps,
@@ -320,7 +318,7 @@ Best practice for all versions of GenericSetup is this:
 - Simply increase the version by 1 each time you need a new metadata version.
   So 1001, 1002, etc.
 
-- If your package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version.
+- If your add-on package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version.
   There is simply no need.
 
 - If you make changes for a new major release, you should increase the metadata version significantly.
@@ -337,7 +335,7 @@ Custom installer code (``setuphandlers.py``)
 ============================================
 
 Besides out-of-the-box XML steps which easily provide both install and uninstall,
-GenericSetup provides a way to run custom Python code when your add-on product is installed and uninstalled.
+GenericSetup provides a way to run custom Python code when your add-on package is installed and uninstalled.
 This is not a very straightforward process, though.
 
 .. note::
@@ -352,16 +350,16 @@ This is not a very straightforward process, though.
         <configure
             xmlns="http://namespaces.zope.org/zope"
             xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-            i18n_domain="your.package">
+            i18n_domain="your.addonpackage">
 
           <genericsetup:registerProfile
               name="default"
-              title="My Package"
+              title="Your Add-on Package"
               directory="profiles/default"
               description="A useful package"
               provides="Products.GenericSetup.interfaces.EXTENSION"
-              pre_handler="your.package.setuphandlers.run_before"
-              post_handler="your.package.setuphandlers.run_after"
+              pre_handler="your.addonpackage.setuphandlers.run_before"
+              post_handler="your.addonpackage.setuphandlers.run_after"
               />
 
         </configure>
@@ -373,7 +371,7 @@ This is not a very straightforward process, though.
             # the default profile.  context is portal_setup.
             # If you need the same context as you would get in
             # an import step, like setup_various below, do this:
-            profile_id = 'profile-your.package:default'
+            profile_id = 'profile-your.addonpackage:default'
             good_old_context = context._getImportContext(profile_id)
             ...
 
@@ -389,8 +387,8 @@ This function is registered as a custom ``genericsetup:importStep`` in XML.
 
     When you write a custom ``importStep``, remember to write uninstallation code as well.
 
-However, the trick is that all GenericSetup import steps, including your custom step, are run for *every* add-on product when they are installed.
-Thus, if your need to run code which is specific **during your add-on install only** you need to use a marker text file which is checked by the GenericSetup context.
+However, the trick is that all GenericSetup import steps, including your custom step, are run for *every* add-on package when they are installed.
+Thus, if your need to run code which is **specific to your add-on install only** you need to use a marker text file which is checked by the GenericSetup context.
 
 Also you need to register this custom import step in ``configure.zcml``:
 
@@ -401,10 +399,10 @@ Also you need to register this custom import step in ``configure.zcml``:
         xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
       <genericsetup:importStep
-          name="your.package"
-          title="your.package special import handlers"
+          name="your.addonpackage"
+          title="your.addonpackage special import handlers"
           description=""
-          handler="your.package.setuphandlers.setup_various"
+          handler="your.addonpackage.setuphandlers.setup_various"
           />
 
     </configure>
@@ -419,10 +417,10 @@ For instance, if your import step depends on a content type to be installed firs
         xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
 
       <genericsetup:importStep
-          name="your.package"
-          title="your.package special import handlers"
+          name="your.addonpackage"
+          title="your.addonpackage special import handlers"
           description=""
-          handler="your.package.setuphandlers.setup_various">
+          handler="your.addonpackage.setuphandlers.setup_various">
         <depends name="typeinfo" />
       </genericsetup:importStep>
 
@@ -435,7 +433,7 @@ For instance, if your import step depends on a content type to be installed firs
     __docformat__ = "epytext"
 
     def run_custom_code(site):
-        """Run custom add-on product installation code to modify Plone
+        """Run custom add-on package installation code to modify Plone
            site object and others
 
         @param site: Plone site
@@ -447,8 +445,8 @@ For instance, if your import step depends on a content type to be installed firs
         """
 
         # We check from our GenericSetup context whether we are running
-        # add-on installation for your product or any other proudct
-        if context.readDataFile('your.package.marker.txt') is None:
+        # add-on installation for your package or any other
+        if context.readDataFile('your.addonpackage.marker.txt') is None:
             # Not your add-on
             return
 
@@ -457,7 +455,7 @@ For instance, if your import step depends on a content type to be installed firs
         run_custom_code(portal)
 
 And add a dummy text file
-``your.package/your/package/profiles/default/your.package.marker.txt``::
+``your.addonpackage/your/addonpackage/profiles/default/your.addonpackage.marker.txt``::
 
     This text file can contain any content - it just needs to be present
 
@@ -517,9 +515,9 @@ use this code:
 Upgrade steps
 =============
 
-You can define upgrade steps to run code when someone upgrades your product from version *x* to *y*.
+You can define upgrade steps to run code when someone upgrades your package from version *x* to *y*.
 
-As an example, let's say that the new version of your.package defines a *price* field on a content type *MyType* to be a string, but previously (version 1.1 and earlier) it was a float.
+As an example, let's say that the new version of your.addonpackage defines a *price* field on a content type *MyType* to be a string, but previously (version 1.1 and earlier) it was a float.
 Code that uses this field and assumes it to be a float will break after the upgrade, so you'd like to automatically convert existing values for the field to string.
 
 Obviously, you could do this very quickly in a simple script, but having a GenericSetup upgrade step means non-technical people can do it as well.
@@ -546,16 +544,16 @@ Next we add an upgrade step:
     <configure
         xmlns="http://namespaces.zope.org/zope"
         xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-        i18n_domain="your.package">
+        i18n_domain="your.addonpackage">
 
       <genericsetup:upgradeStep
           title="Convert Price to strings"
           description="Price was previously a float field, it should be converted to string"
           source="1000"
           destination="1100"
-          handler="your.package.upgrades.convert_price_to_string"
+          handler="your.addonpackage.upgrades.convert_price_to_string"
           sortkey="1"
-          profile="your.package:default"
+          profile="your.addonpackage:default"
           />
 
     </configure>
@@ -576,7 +574,7 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
     from plone import api
     import logging
 
-    PROFILE_ID = 'profile-your.package:default'
+    PROFILE_ID = 'profile-your.addonpackage:default'
 
 
     def convert_price_to_string(context, logger=None):
@@ -590,7 +588,7 @@ The code for the upgrade method itself is best placed in a *upgrades.py* module:
 
         if logger is None:
             # Called as upgrade step: define our own logger.
-            logger = logging.getLogger('your.package')
+            logger = logging.getLogger('your.addonpackage')
 
         # Run the catalog.xml step as that may have defined new metadata
         # columns.  We could instead add <depends name="catalog"/> to
@@ -633,7 +631,7 @@ Some of the most used ones are here:
 
 After restarting Zope, your upgrade step should be visible in the ZMI:
 the ``portal_setup`` tool has a tab ``Upgrades``.
-Select your product profile to see which upgrade steps Zope knows about for your product.
+Select your package profile to see which upgrade steps Zope knows about for your add-on.
 
 
 upgradeDepends
@@ -646,7 +644,7 @@ In an upgrade step you can apply a specific import step from your profile:
     <genericsetup:upgradeDepends
         source="3900"
         destination="4000"
-        profile="project.policy:default"
+        profile="your.addonpackage:default"
         title="Apply rolemap.xml.
                This is implicitly taken from the profile this upgradeStep is defined for."
         import_steps="rolemap" />
@@ -658,7 +656,7 @@ You can apply multiple steps, separated by a space:
     <genericsetup:upgradeDepends
         source="3900"
         destination="4000"
-        profile="project.policy:default"
+        profile="your.addonpackage:default"
         import_steps="cssregistry jsregistry" />
 
 You can apply steps from a different profile:
@@ -668,9 +666,9 @@ You can apply steps from a different profile:
     <genericsetup:upgradeDepends
         source="3900"
         destination="4000"
-        profile="project.policy:default"
+        profile="your.addonpackage:default"
         title="Apply skins.xml from our plone4 profile"
-        import_profile="project.policy:plone4"
+        import_profile="your.addonpackage:plone4"
         import_steps="skins" />
 
 You can apply a complete profile:
@@ -680,9 +678,9 @@ You can apply a complete profile:
     <genericsetup:upgradeDepends
         source="3900"
         destination="4000"
-        profile="project.policy:default"
+        profile="your.addonpackage:default"
         title="Install our complete cache profile"
-        import_profile="project.policy:cache" />
+        import_profile="your.addonpackage:cache" />
 
 
 Combining upgrade steps
@@ -698,7 +696,7 @@ Here is an example of many upgrade steps you can have to achieve on a site polic
     <genericsetup:upgradeSteps
         source="3900"
         destination="4000"
-        profile="project.policy:default">
+        profile="your.addonpackage:default">
 
       <genericsetup:upgradeStep
           title="Upgrade addons"
@@ -714,13 +712,13 @@ Here is an example of many upgrade steps you can have to achieve on a site polic
 
       <genericsetup:upgradeDepends
           title="Apply skins.xml from our plone4 profile"
-          import_profile="project.policy:plone4"
+          import_profile="your.addonpackage:plone4"
           import_steps="skins"
           />
 
       <genericsetup:upgradeDepends
           title="Install our complete cache profile"
-          import_profile="project.policy:cache"
+          import_profile="your.addonpackage:cache"
           />
 
       <genericsetup:upgradeDepends
@@ -732,11 +730,11 @@ Here is an example of many upgrade steps you can have to achieve on a site polic
     </genericsetup:upgradeSteps>
 
 
-Add-on product appears twice in the installer list
-===================================================
+Add-on package appears twice in the installer list
+==================================================
 
-This happens if you are developing your own add-on and keep changing things.
-You have an error in your add-on product ZCML code which causes portal_quickinstaller to have two entries.
+This usually happens if you are developing your own add-on and keep changing things.
+You have an error in your add-on package ZCML code which causes portal_quickinstaller to have two entries.
 
 More information
 
@@ -746,7 +744,7 @@ More information
 Preventing uninstall
 ====================
 
-You might want to prevent your add-on product uninstall for some reason.
+You might want to prevent your add-on package uninstall for some reason.
 
 Example:
 
@@ -757,7 +755,7 @@ Example:
 
         def uninstall(self, reinstall):
             if reinstall == False:
-                raise BadRequest('This product cannot be uninstalled!')
+                raise BadRequest('This package cannot be uninstalled!')
 
 .. deprecated:: 5.1
 
@@ -838,7 +836,7 @@ Note that you are always allowed to use the ``plone`` domain, but if the xml fil
 - ``actions.xml``: use **your own** domain.
   Example::
 
-    <object name="ducktest" meta_type="CMF Action" i18n:domain="collective.ducks">
+    <object name="ducktest" meta_type="CMF Action" i18n:domain="your.addonpackage">
       <property name="title" i18n:translate="">Duck Test</property>
       <property name="description" i18n:translate="">Action: test a duck</property>
       ...
@@ -857,10 +855,10 @@ Note that you are always allowed to use the ``plone`` domain, but if the xml fil
 
     <?xml version="1.0"?>
     <object name="portal_controlpanel" meta_type="Plone Control Panel Tool"
-            i18n:domain="collective.ducks" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-      <configlet title="Duck Configuration Panel" action_id="Duck" appId="Duck"
+            i18n:domain="your.addonpackage" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+      <configlet title="Your Add-on Package Configuration Panel" action_id="your.addonpackage" appId="your.addonpackage"
                  category="Products" condition_expr=""
-                 icon_expr="string:$portal_url/duck_icon.png"
+                 icon_expr="string:$portal_url/your_addonpackage_icon.png"
                  url_expr="string:${portal_url}/prefs_install_products_form"
                  visible="True" i18n:attributes="title">
         <permission>Manage portal</permission>
@@ -1001,7 +999,7 @@ Uninstall example:
 browserlayer.xml
 ----------------
 
-This registers a specific browser layer, which allows components to be available only when your addon package is installed.
+This registers a specific browser layer, which allows components to be available only when your add-on package is installed.
 
 .. code-block:: xml
 
@@ -1027,7 +1025,7 @@ componentregistry.xml
 ---------------------
 
 Setup items in the local component registry of the Plone Site.
-The items can be adapters, subscribers, or utilities.
+The items can be adapters, subscribers or utilities.
 This can also be done in zcml, which puts it in the global registry that is defined at startup.
 The difference is:
 when you put it in xml, the item is only added to a specific Plone Site when you install the package in the add-ons control panel.
@@ -1334,7 +1332,7 @@ metadata.xml
 
 This is a special one.
 The ``metadata.xml`` file is read during Plone start-up.
-If this file has problems your add-on might not appear in the installer control panel.
+If this file has problems your add-on package might not appear in the installer control panel.
 The ``metadata.xml`` file contains add-on dependency and version information.
 
 .. code-block:: xml
@@ -1343,7 +1341,7 @@ The ``metadata.xml`` file contains add-on dependency and version information.
     <metadata>
       <version>1000</version>
       <dependencies>
-        <dependency>profile-collective.basket:default</dependency>
+        <dependency>profile-your.addonpackage:default</dependency>
       </dependencies>
     </metadata>
 
@@ -1419,8 +1417,7 @@ portal_placeful_workflow
 This handles the ``portal_placeful_workflow.xml`` file and the ``portal_placeful_workflow`` directory.
 
 This install or configures a placeful workflow.
-For this to work, you must install Workflow Policy Support (CMFPlacefulWorkflow) in the add-ons.
-This add-on is included in standard Plone, but not activated.
+For this to work, you must install Workflow Policy Support (CMFPlacefulWorkflow) in the Add-ons control panel. This package is included in standard Plone, but does not come installed by default.
 
 Standard ``portal_placeful_workflow.xml`` from ``Products.CMFPlacefulWorkflow``:
 
@@ -1616,7 +1613,7 @@ Example for adding an individual record:
 
     <?xml version="1.0"?>
     <registry>
-      <record name="my.package.timeout">
+      <record name="your.addonpackage.timeout">
         <field type="plone.registry.field.Int">
           <title>Timeout</title>
           <min>0</min>
@@ -1632,7 +1629,7 @@ Uninstall example:
     <?xml version="1.0"?>
     <registry>
       <records interface="plone.app.iterate.interfaces.IIterateSettings" remove="true" />
-      <record name="my.package.timeout" remove="true" />
+      <record name="your.addonpackage.timeout" remove="true" />
     </registry>
 
 The item is removed if the ``remove`` keyword is ``true``.
@@ -1770,7 +1767,7 @@ skins.xml
 
 Skins are old fashioned, so you may not need this.
 The more modern way is: use browser views and static directories.
-But skins are still installed by several packages.
+But skins are still installed by several add-on packages.
 
 Example:
 
