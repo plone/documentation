@@ -998,6 +998,31 @@ Uninstall example:
     You can use your own i18n domain.
 
 
+browserlayer.xml
+----------------
+
+This registers a specific browser layer, which allows components to be available only when your addon package is installed.
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <layers>
+      <layer name="your.addonpackage"
+          interface="your.addonpackage.interfaces.IYourAddonPackageLayer" />
+    </layers>
+
+For removing, use ``remove="true"`` (or ``True``).
+
+Uninstall example:
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <layers>
+      <layer name="your.addonpackage" remove="true" />
+    </layers>
+
+
 componentregistry.xml
 ---------------------
 
