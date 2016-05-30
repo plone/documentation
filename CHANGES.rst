@@ -2,6 +2,27 @@
 Changelog
 =========
 
+2016053$
+========
+
+- Improve documentaion about dexterity AddCoustomView and ZCML [terapyon]
+- Imporve 'ask for help' docs [svx]
+- Improve wording and rst on various places [svx]
+- Improve docs about GenericSetup [mauritsvanrees]
+- Fix link [icemac]
+- Cleanup grok [staeff]
+- Update index.rst [fgrcon]
+- Fix various links [polyester]
+- Fix various links [gforcada]
+- Fix various typos [svx]
+- Fix various typos [gforcada]
+- Fix various typos [sverbois]
+- Fix various typos [staeff]
+- Add more docs about ZCML registration features [davidjb]
+- Various typo fixes [jianaijun]
+
+
+
 20160409
 ========
 
@@ -167,4 +188,3 @@ Changelog
 - **Sublime helpers**
 
         *@polyester* added more documentation about Sublime add-ons for writing good documentation.
-
