@@ -207,7 +207,7 @@ Unregistering utilities
 Removing persistent local utilities
 ===================================
 
-* https://plone.org/documentation/kb/manually-removing-local-persistent-utilities
+* :doc:`/manage/troubleshooting/manual-remove-utility`
 * http://blog.fourdigits.nl/removing-a-persistent-local-utility
 * http://blog.fourdigits.nl/removing-a-persistent-local-utility-part-ii
 
