@@ -5,8 +5,12 @@ Changelog
 2016053$
 ========
 
-- Improve documentaion about dexterity AddCoustomView and ZCML [terapyon]
-- Imporve 'ask for help' docs [svx]
+- Made isort.cfg more readable by adding spaces [mauritsvanrees]
+- Various .rst style fixes [svx]
+- Add documentation about browserlayer.xml [davilima6]
+- Add better examples for installation on various operating systems [svx]
+- Improve documentation about dexterity AddCoustomView and ZCML [terapyon]
+- Improve 'ask for help' docs [svx]
 - Improve wording and rst on various places [svx]
 - Improve docs about GenericSetup [mauritsvanrees]
 - Fix link [icemac]
