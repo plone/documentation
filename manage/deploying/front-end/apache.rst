@@ -21,14 +21,16 @@ traffic to your internet domain.
 
 Here are quick instructions for Ubuntu / Debian.
 
-Install required software::
+Install required software:
+
+.. code-block:: shell
 
 	sudo apt-get install apache2
 	sudo a2enmod rewrite
 	sudo a2enmod proxy
 	sudo a2enmod proxy_http
 	sudo a2enmod headers
-        sudo /etc/init.d/apache2 restart
+    sudo /etc/init.d/apache2 restart
 
 Add virtual host config file ``/etc/apache2/sites-enabled/yoursite.conf``.
 Assuming *Plone* is your site id in Zope Management Interface (capital lettering do matter) and your
@@ -60,8 +62,7 @@ domain name is ``yoursite.com`` (note with or without www matters, see below)::
 	    </Proxy>
 
             RewriteEngine on
-	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/yoursite.com:80/Plone/VirtualHostRoot/$1 [P,L]
-
+            RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/%{HTTP_HOST}:80/Plone/VirtualHostRoot/$1 [P,L]
 	</VirtualHost>
 
         <VirtualHost *>
@@ -72,16 +73,22 @@ domain name is ``yoursite.com`` (note with or without www matters, see below)::
 
 Eventually you have one virtual host configuration file per one domain on your server.
 
-Restart apache::
+Restart apache:
+
+.. code-block:: shell
 
       sudo apache2ctl configtest
       sudo apache2ctl restart
 
-Check that Plone responds::
+Check that Plone responds:
+
+.. code-block:: console
 
       http://yoursite.com:8080/Plone
 
-Check that Apache responds::
+Check that Apache responds:
+
+.. code-block:: console
 
       http://yoursite.com
 
@@ -96,13 +103,17 @@ For more information, see
 
 *  http://www.w3.org/TR/CSP/
 
-For an SSL configuration, just modify the rewrite rule from::
+For an SSL configuration, just modify the rewrite rule from
 
-	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/yoursite.com:80/Plone/VirtualHostRoot/$1 [P,L]
+.. code-block:: console
 
-to::
+	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/%{HTTP_HOST}:80/Plone/VirtualHostRoot/$1 [P,L]
 
-	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/https/yoursite.com:443/Plone/VirtualHostRoot/$1 [P,L]
+to
+
+.. code-block:: console
+
+	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/https/%{HTTP_HOST}:443/Plone/VirtualHostRoot/$1 [P,L]
 
 inside an SSL-enabled Apache virtual host definition.
 
@@ -119,7 +130,7 @@ You don't want to hinder the performance of the other sites when doing Apache co
 
 The correct procedure to restart Apache is (on Ubuntu/Debian Linux)
 
-.. code-block:: console
+.. code-block:: shell
 
         # Check that config files are working after editing them
         apache2ctl configtest
@@ -134,7 +145,9 @@ www-redirects
 If you wish to force people to use your site with or without www prefix you can use the rules below.
 Note that setting this kind of rule is very useful from the search engine optimization point of view also.
 
-Example in <VirtualHost> section to redirect www.site.com -> site.com::
+Example in <VirtualHost> section to redirect www.site.com -> site.com
+
+.. code-block:: console
 
   <VirtualHost 127.0.0.1:80>
 
@@ -149,7 +162,9 @@ Example in <VirtualHost> section to redirect www.site.com -> site.com::
 
            </IfModule>
 
-Example in <VirtualHost> section to redirect site.com -> www.site.com::
+Example in <VirtualHost> section to redirect site.com -> www.site.com
+
+.. code-block:: console
 
   <VirtualHost 127.0.0.1:80>
 
@@ -182,7 +197,9 @@ Proxying other site under Plone URI space
 The following rule can be used to put a static web site to sit in the same URI space with Plone.
 Put these rules **before** VirtualHost ProxyPass.
 
-Examples::
+Examples:
+
+.. code-block:: console
 
    ProxyPass /othersite/ http://www.some.other.domain.com/othersite/
    ProxyPassReverse /othersite/ http://www.some.other.domain.com/othersite/
@@ -193,7 +210,9 @@ Reverse proxy host
 By default, host name is correctly delivered from Apache to Plone.
 Otherwise you might see all your HTTP requests coming from localhost, Apache.
 
-You need::
+You need
+
+.. code-block:: console
 
         ProxyPreserveHost On
 
@@ -210,7 +229,7 @@ This is useful if you migrate to a Plone from some legacy technology and you sti
 
 * Modify Apache configuration so that URLs still being used are redirected to the old server with alternative name, Put in this rewrite
 
-::
+.. code-block:: console
 
           <location /media>
                   RedirectMatch /media/(.*)$ http://www2.site.fi/media/$1
@@ -236,11 +255,15 @@ First you need to enable the relevant Apache modules::
 
 * mod_cache, mod_diskcache
 
-On Debian this is::
+On Debian this is
+
+.. code-block:: shell
 
 	sudo a2enmod
 
-Then you can add to your virtual host configuration::
+Then you can add to your virtual host configuration:
+
+.. code-block:: console
 
   # Disk cache configuration
   CacheEnable disk /
@@ -262,11 +285,15 @@ Use UNIX *wget* command. -S flag will display request headers.
 
 Remember to do different request for HTML, CSS, JS and image payloads - the cache rules might not be the same.
 
-HTTP example::
+HTTP example:
+
+.. code-block:: shell
 
         cd /tmp
 
         wget --cache=off -S http://production.yourorganizationinternational.org/yourorganizationlogotemplate.gif
+
+.. code-block:: console
 
         HTTP request sent, awaiting response...
           HTTP/1.1 200 OK
@@ -284,7 +311,9 @@ HTTP example::
         Length: 4837 (4.7K) [image/gif]
         Saving to: `yourorganizationlogotemplate.gif.14'
 
-HTTPS example::
+HTTPS example:
+
+.. code-block:: shell
 
          cd /tmp
          wget --cache=off --no-check-certificate -S https://production.yourorganizationinternational.org/
@@ -293,7 +322,9 @@ HTTPS example::
 Flushing cache
 --------------
 
-Manually cleaning Apache disk cache::
+Manually cleaning Apache disk cache:
+
+.. code-block:: shell
 
 	sudo -i
 	cd /var/cache/yoursite
@@ -327,7 +358,9 @@ More information about how to set a sticky session cookie if you need to support
 
 * http://opensourcehacker.com/2011/04/15/sticky-session-load-balancing-with-apache-and-mod_balancer-on-ubuntu-linux/
 
-Example::
+Example:
+
+.. code-block:: console
 
         <VirtualHost 123.123.123.123:443>
 
@@ -393,7 +426,7 @@ Enabling gzip compression
 
 Enabling gzip compression in Apache will make your web sites respond much more quickly for your web site users and will reduce the amount of bandwidth used by your web sites.
 
-Instructions for enabling gzip in Apache: 
+Instructions for enabling gzip in Apache:
 
 * https://varvy.com/pagespeed/enable-compression.html
 * http://httpd.apache.org/docs/2.2/mod/mod_deflate.html
