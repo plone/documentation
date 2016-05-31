@@ -5,6 +5,7 @@ Changelog
 2016053$
 ========
 
+- Update documentation about add-on installation [svx]
 - Made isort.cfg more readable by adding spaces [mauritsvanrees]
 - Various .rst style fixes [svx]
 - Add documentation about browserlayer.xml [davilima6]
