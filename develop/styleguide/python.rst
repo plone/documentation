@@ -327,11 +327,11 @@ Again, we *do not* distinguish between what is standard lib, external package or
 Add the following::
 
     [settings]
-    force_alphabetical_sort=True
-    force_single_line=True
-    lines_after_imports=2
-    line_length=200
-    not_skip=__init__.py
+    force_alphabetical_sort = True
+    force_single_line = True
+    lines_after_imports = 2
+    line_length = 200
+    not_skip = __init__.py
 
 To either ``.isort.cfg`` or changing the header from ``[settings]`` to ``[isort]`` and putting it on ``setup.cfg``.
 
@@ -413,4 +413,3 @@ Concrete Rules
 - Do not put too much logic in ZPT (use `Views <http://developer.plone.org/views/index.html>`_ instead!)
 
 - Remember to add `i18n <http://developer.plone.org/i18n/index.html>`_ tags in ZPTs and Python code.
-
