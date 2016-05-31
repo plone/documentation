@@ -2,9 +2,8 @@
  Glossary
 ==========
 
-This is a glossary for some definitions used in this documentation and still heavily under construction.
+This is a glossary for some definitions used in this documentation and still under construction.
 
-It incorporates the original `glossary on plone.org <https://plone.org/documentation/glossary>`_.
 
 .. glossary:: :sorted:
 
@@ -23,10 +22,7 @@ It incorporates the original `glossary on plone.org <https://plone.org/documenta
         application domains. The reStructuredText parser is a component of
         `Docutils <http://docutils.sourceforge.net/index.html>`_.
 
-        reStructuredText is a revision and reinterpretation of the
-        `StructuredText <https://plone.org/documentation/glossary/stx>`_ and
-        `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_
-        lightweight markup systems.
+        reStructuredText is a revision and reinterpretation of the :term:`StructuredText`_ and `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_ lightweight markup systems.
 
     slug
         A :term:`ZCML` *slug* is a one-line file created in a Zope instance's
@@ -54,6 +50,7 @@ It incorporates the original `glossary on plone.org <https://plone.org/documenta
         directory.
 
     STX
+    StructuredText
         Structured Text is a simple markup technique that is useful when you
         don't want to resort to HTML for creating web content. It uses
         indenting for structure, and other markup for formatting. It has
