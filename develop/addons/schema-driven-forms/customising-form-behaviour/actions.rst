@@ -87,7 +87,7 @@ Updating button properties
 As with regular widgets, it is sometimes useful to set properties on
 buttons after they have been instantiated by *z3c.form*. One common
 requirement is to add a CSS class to the button. The standard edit form
-in *plone.directives.form* does this, for example, to add Plone’s
+in *plone.dexterity* does this, for example, to add Plone’s
 standard CSS classes. The usual approach is to override
 *updateActions()*, which is called during the form update cycle:
 
