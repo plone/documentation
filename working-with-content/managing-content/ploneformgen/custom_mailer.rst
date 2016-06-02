@@ -73,4 +73,4 @@ Example script
     source = "noreply@example.com"
     receipt = "info@example.com"
 
-    mailhost.secureSend(message, receipt, source, subject=subject, subtype='plain', charset="utf-8", debug=False, )
+    mailhost.send(message, receipt, source, subject=subject, charset="utf-8", )
