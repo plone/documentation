@@ -57,7 +57,7 @@ you manually insert line breaks after full stops, commas,
 or upon "grammatical" boundaries
 (and not merely word ones).
 
-But again, do not be afraid to use more than 80 characters.
+Do not be afraid to use more than 80 characters.
 
 
 Document page format
@@ -156,7 +156,7 @@ Headings style guide
 
 ReStructured text and Sphinx enable any style you would prefer for the various heading level you would need.
 For example, underlining level 1 headings with ``.``, level 2 headings with ``#`` and level 3 headings with ``|`` is perfectly valid as far as ``docutils`` is concerned.
-But not for a human documentation maintainer.
+Unfortunately this is not the same for a human documentation maintainer.
 
 In order to have consistent heading styles in all files that make this great document, it is recommended to follow strictly the rules stated in the Sphinx manual here: http://sphinx-doc.org/rest.html#sections
 
@@ -180,7 +180,7 @@ As individual files do not have so called "parts" or "chapters", the headings wo
 Links
 =====
 
-Sphinx can use two link styles, inline and via a link at the end of the page. Please only use inline links like this:
+Sphinx can use two link styles, inline and via a link at the end of the page. Please **do not** separate the link and the target definition, please **only** use inline links like this:
 
 .. code-block:: rst
 
@@ -226,10 +226,11 @@ For example, to specify XML:
 
 .. code-block:: rst
 
-   .. code-block:: console
+   .. code-block:: shell
 
-      # A comment
-      sh myscript.sh
+      # Start Plone in foreground mode for a test run
+      cd ~/Plone/zinstance
+      bin/plonectl fg
 
 ... or a buildout.cfg:
 
@@ -263,7 +264,7 @@ Setting the highlighting mode for the whole document:
 
 .. code-block:: rst
 
-   .. highlight:: console
+   .. highlight:: shell
 
    All code blocks in this doc use console highlighting by default::
 
@@ -273,6 +274,19 @@ If syntax highlighting is not enabled for your code block, you probably have a s
 
 The full list of lexers and associated short names is here:
 http://pygments.org/docs/lexers/
+
+Images
+======
+
+reST supports an image directive:
+
+.. code-block:: rst
+
+  .. image:: ../_static/plone_donut.png
+   (options)
+
+When used within Sphinx, the file name given (here plone_donut.png) must either be relative to the source file, or absolute which means that they are relative to the top source directory. For example, the file sketch/spam.rst could refer to the image _static/plone_donut.png as ../_static/plone_donut.png or /_static/plone_donut.png.
+
 
 Other Sphinx and restructured text source snippets
 ==================================================
@@ -376,6 +390,8 @@ Note:
 
    This is a TODO item
 
+You can find a brief introduction to reStructuredText (reST) on http://www.sphinx-doc.org/en/stable/rest.html
+
 Including gists
 ----------------
 
@@ -389,5 +405,5 @@ For including gists just use the *gist* directive
     .. gist:: https://gist.github.com/shomah4a/5149412
 
 .. note::
-  
+
     Since this documentation serves as source for various versions (html, PDF, Dash/Zeal, others), please **always** include a link to the gist under the gist directive.

@@ -30,13 +30,10 @@ purely for aesthetic effect.
 
 ::
 
-    from five import grok
-    from plone.supermodel import model
-    from plone.directives import form
-
-    from zope import schema
-
     from example.dexterityforms.interfaces import MessageFactory as _
+    from plone.autoform import directives as form
+    from plone.supermodel import model
+    from zope import schema
 
     ...
 

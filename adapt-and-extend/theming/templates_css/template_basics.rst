@@ -501,7 +501,7 @@ element using extra slots defined in Plone's ``main_template.pt``.
 
 Note that these media files do not participate in
 :doc:`portal_css </adapt-and-extend/theming/templates_css/css>` or
-:doc:`portal_javascript </develop/addons/javascript>`
+:doc:`portal_javascript </develop/addons/javascript/index>`
 resource compression.
 
 Extra slots are:

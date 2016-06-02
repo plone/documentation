@@ -38,7 +38,7 @@ Note that given login field isn't necessarily the username. For example,
 `betahaus.emaillogin <https://pypi.python.org/pypi/betahaus.emaillogin>`_ add-on authenticates users by their email addresses.
 
 Credential extraction will go through all plug-ins registered for
-`PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.txt>`_ system.
+`PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.rst>`_ system.
 
 The first found login/password pair attempt will be used for user authentication.
 
@@ -314,7 +314,7 @@ For each set of extracted credentials, try to authenticate
 a user;  accumulate a list of the IDs of such users over all
 our authentication and extraction plugins.
 
-``PluggableAuthService`` may use :doc:`ZCacheable </manage/deploying/testing_tuning/performance/ramcache>`
+``PluggableAuthService`` may use :doc:`ZCacheable </manage/deploying/performance/ramcache>`
 pattern to see if the user data exists already in the cache, based on
 any extracted credentials, instead of actually checking whether
 the credentials are valid or not. PluggableAuthService must

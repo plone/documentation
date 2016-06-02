@@ -35,11 +35,9 @@ Installation
 
 The suggest method to install Varnish is to use your OS package manager.
 
-* You can install using packages (RPM/DEB) - consult your operating system instructions.
+* You can install using packages (DEB) - consult your operating system instructions.
 
 * For more up to date packages for Debian you could check: https://www.varnish-cache.org/installation/debian
-
-* For more up to date packages for RedHat (RPM Based) you could check: https://www.varnish-cache.org/installation/redhat
 
 * You can install backports
 
@@ -53,7 +51,7 @@ Management console
 ==================
 
 ``varnishadm``
---------------------------------------------
+--------------
 
 You can access Varnish admin console on your server by::
 
@@ -371,10 +369,6 @@ You can provide an uncached version of the site for editors:
 
 * http://serverfault.com/questions/297541/varnish-cached-and-non-cached-subdomains/297547#297547
 
-Varnish and I18N
-================
-
-For older sites using LinguaPlone see `cache issues related to LinguaPlone <http://docs.plone.org/4/en/develop/plone/i18n/cache.html>`_.
 
 Sanitizing cookies
 ==================
@@ -402,7 +396,7 @@ Example of removing all Plone-related cookies, besides ones dealing with the log
 
       if (req.http.Cookie) {
           # (logged in user, status message - NO session storage or language cookie)
-          set req.http.Cookie = ";" req.http.Cookie;
+          set req.http.Cookie = ";" + req.http.Cookie;
           set req.http.Cookie = regsuball(req.http.Cookie, "; +", ";");
           set req.http.Cookie = regsuball(req.http.Cookie, ";(statusmessages|__ac|_ZopeId|__cp)=", "; \1=");
           set req.http.Cookie = regsuball(req.http.Cookie, ";[^ ][^;]*", "");
@@ -665,8 +659,8 @@ Example::
 
     sub vcl_init {
         new cluster1 = directors.round_robin();
-        cluster1.add_backend(site1);    # Backend site1 defined above
-        cluster1.add_backend(site2);    # Backend site2 defined above
+        cluster1.add_backend(app1);    # Backend app1 defined above
+        cluster1.add_backend(app2);    # Backend app2 defined above
     }
 
 

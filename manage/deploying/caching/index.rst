@@ -29,5 +29,6 @@ These days, the favorite and recommended program for that is called "Varnish".
 .. toctree::
     :maxdepth: 2
 
+    caching
     varnish3
     varnish4

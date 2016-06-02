@@ -73,6 +73,10 @@ Without the system Python (Unified Installer builds Python):
 
 build-essential (gcc/make)
 
+You may also need to install dependencies needed by `Pillow <https://pillow.readthedocs.org/en/latest/>`_ a fork of the Python Image Libary.
+For further information please read: https://pillow.readthedocs.org/en/latest/installation.html
+
+
 Optional libraries
 ++++++++++++++++++
 
@@ -102,8 +106,27 @@ Use ``apt-get install``. The matching package names are:
 * libxslt-dev
 * python-dev
 
-Fedora/CentOS
-*************
+
+Fedora
+******
+
+Using ``dnf install``:
+
+gcc-c++
+patch
+openssl-devel
+libjpeg-devel
+libxslt-devel
+readline-devel
+make
+which
+python-devel
+wv
+poppler-utils
+
+
+CentOS
+******
 
 Using ``yum install``:
 
@@ -116,6 +139,8 @@ readline-devel
 make
 which
 python-devel
+wv
+poppler-utils
 
 OpenSUSE
 ********

@@ -286,7 +286,7 @@ Python code::
 
         def do_stuff(self):
 
-            msgid = _(u"search_results_found_msg", default=u"Found ${results} results", mapping={ u"results" : len(self.contents)})
+            msgid = _(u"search_results_found_msg", default=u"Found ${results} results", mapping={u"results": len(self.contents)})
 
             # Use inherited translate() function to get the final text string
             translated = self.context.translate(msgid)

@@ -112,7 +112,7 @@ If you run into this issue, here's an easy upgrade step to fix it::
 		addAttributeUUID(obj, None)
 		obj.reindexObject(idxs=['UID'])
 
-		if index % 100:
+		if index % 100 == 0:
 		    # Commit every 100 items
 		    transaction.commit()
 
@@ -160,7 +160,7 @@ Use lookupObject() in reference catalog.
 	>>> site.reference_catalog.lookupObject('ce380ef0f10a85beb864025928e1819b')
 	<ATBTreeFolder at /test/events>
 
-*None* will be returned if there is content item with matching UID (the item has been deleted).
+*None* will be returned if there is no content item matching the specified UID.
 
 
 

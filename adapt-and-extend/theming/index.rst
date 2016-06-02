@@ -56,7 +56,7 @@ Plone 5 is shipped with an all new default theme called Barceloneta. It's based 
 
 .. toctree::
    :maxdepth: 1
-
+   resourceregistry
    barceloneta
 
 

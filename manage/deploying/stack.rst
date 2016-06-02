@@ -91,7 +91,7 @@ How many ZEO clients, how much memory?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It's typical to allocate roughly one ZEO client for every processor core you have available.
-However, there are lots of trade-offs, and many clients will eat RAM rapidly. :doc:`About Instances, Threads and RAM consumption </manage/deploying/testing_tuning/performance/instancesthreads>` is a good guide to the issues involved.
+However, there are lots of trade-offs, and many clients will eat RAM rapidly. :doc:`About Instances, Threads and RAM consumption </manage/deploying/performance/instancesthreads>` is a good guide to the issues involved.
 
 Sticky sessions
 ~~~~~~~~~~~~~~~
@@ -175,12 +175,6 @@ Set a basic profile by making a choice from this menu. Then use ``Change setting
 
 Enable caching
     Turn this on, and you'll get some immediate improvement in cache efficacy -- including browser caches. Tune it up for your particular needs with the other panes in this configuration panel.
-
-Enable GZip compression
-    GZip compression is one of those rare total wins. Turning it on will cause Plone to compress most text resources before transmitting them.
-    All modern browsers know how to uncompress them. You'll save bandwidth and speed up your effective page delivery for a tiny hit on CPU load.
-
-    Why wouldn't you turn on Gzip compression? The best reason is because you may wish to instead handle this via your web server (nginx/Apache) or reverse proxy. Threading issues tend to be much better handled by a good proxy than by Zope/Plone. Also, the same gzip settings can handle Zope/Plone and other web apps.
 
 **Caching Proxies**
 

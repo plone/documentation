@@ -10,19 +10,15 @@ Quickstart
 Online demo sites
 =================
 
-If you're just curious to see how Plone looks, without any modifications, there are a few online demo sites that can help you.
-Both `plone5demo.quintagroup.com <http://plone5demo.quintagroup.com/>`_ and `plone5.veit-schiele.de/ <https://plone5.veit-schiele.de/>`_ provide you with a Plone 5 site that is re-set every day.
+Online demo sites allow users to experience the look and feel of Plone as well as check out its ease of use and features. These sites let users log in using a variety of roles so they can see the difference between what users, editors, and administrators see when working in Plone. You can find a list of available online demo sites at the `Try Plone section <https://plone.com/try-plone>`_ on `plone.com <https://plone.com>`_.
 
-Do note that Plone 5 is currently still in beta/RC status.
-
-An interesting approach was developed by Nejc Zupan: `Plone on a free-tier Heroku <http://www.niteoweb.com/blog/dear-plone-welcome-to-2014>`_ . That way, you can set up your own demo (or even very-light-weight production) Plone, which makes it a good fit to have Plone with your choice of add-ons be tested by your department or other group.
-
+Another interesting approach to try out Plone is to install it in a cloud service. That way, you can set up your own demo (or even very-light-weight production) Plone, which makes it a good fit to have Plone with your choice of add-ons be tested by your department or other group. Here are two blog posts that show you how to do this: `Plone on a free-tier Heroku <http://blog.niteoweb.com/dear-plone-welcome-to-year-2014/>`_ by Nejc Zupan and `Installing Plone 5 on Cloud9 IDE <http://blog.dbain.com/2015/09/installing-plone-5-on-cloud9-ide.html>`_ by David Bain.
 
 
 Plone on your own machine
 =========================
 
-You can find the download options at `plone.org/try-five <https://plone.org/try-five>`_
+You can find the download options at `plone.org/download <https://plone.org/download>`_
 
 The recommended and best supported way to deploy Plone, both for laptops as well as servers, is the Unified Installer.
 It can provide you both with a single instance with developer tools installed, as well as with multiple failover clients running against a database server.

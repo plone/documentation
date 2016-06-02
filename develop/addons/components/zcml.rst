@@ -50,7 +50,7 @@ configuration files using the ``<include>`` directive.
 
 * ZCML is always interpreted during Plone start-up.
 
-* Your :doc:`unit test </manage/deploying/testing_tuning/testing_and_debugging/unit_testing>` may need to
+* Your :doc:`unit test </develop/testing/unit_testing>` may need to
   manually include ZCML.
 
 * :doc:`Funny exception error messages occur if Plone is started in the
@@ -163,14 +163,31 @@ First, include the namespace at the top of the :term:`ZCML` file::
 Examples
 --------
 
-conditionally run for package::
+Conditionally run ZCML based upon the installation status of a package::
 
     <include zcml:condition="installed some.package" package=".package" />
     <include zcml:condition="not-installed some.package" package=".otherpackage" />
 
-conditionally run for feature::
+Conditionally run ZCML based upon the presence of a feature::
 
     <include zcml:condition="have plone-4" package=".package" />
     <include zcml:condition="not-have plone-4" package=".otherpackage" />
 
+Registering features
+--------------------
 
+To register that a feature is present, include the ``xmlns:meta`` namespace at
+the top of your :term:`ZCML` file (typically ``meta.zcml`` in a package), and
+define a ``<meta:provides>`` element with your feature's name, like so::
+
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:zcml="http://namespaces.zope.org/zcml"
+        xmlns:meta="http://namespaces.zope.org/meta">
+        ...
+        <meta:provides feature="my-feature-name" />
+        ...
+    </configure>
+
+Once registered, you can now use ``zcml:condition="have my-feature-name"`` to
+register ZCML configuration that is requires this feature be available.

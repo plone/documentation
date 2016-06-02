@@ -21,14 +21,16 @@ traffic to your internet domain.
 
 Here are quick instructions for Ubuntu / Debian.
 
-Install required software::
+Install required software:
+
+.. code-block:: shell
 
 	sudo apt-get install apache2
 	sudo a2enmod rewrite
 	sudo a2enmod proxy
 	sudo a2enmod proxy_http
 	sudo a2enmod headers
-        sudo /etc/init.d/apache2 restart
+    sudo /etc/init.d/apache2 restart
 
 Add virtual host config file ``/etc/apache2/sites-enabled/yoursite.conf``.
 Assuming *Plone* is your site id in Zope Management Interface (capital lettering do matter) and your
@@ -60,8 +62,7 @@ domain name is ``yoursite.com`` (note with or without www matters, see below)::
 	    </Proxy>
 
             RewriteEngine on
-	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/yoursite.com:80/Plone/VirtualHostRoot/$1 [P,L]
-
+            RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/%{HTTP_HOST}:80/Plone/VirtualHostRoot/$1 [P,L]
 	</VirtualHost>
 
         <VirtualHost *>
@@ -72,16 +73,22 @@ domain name is ``yoursite.com`` (note with or without www matters, see below)::
 
 Eventually you have one virtual host configuration file per one domain on your server.
 
-Restart apache::
+Restart apache:
+
+.. code-block:: shell
 
       sudo apache2ctl configtest
       sudo apache2ctl restart
 
-Check that Plone responds::
+Check that Plone responds:
+
+.. code-block:: console
 
       http://yoursite.com:8080/Plone
 
-Check that Apache responds::
+Check that Apache responds:
+
+.. code-block:: console
 
       http://yoursite.com
 
@@ -96,13 +103,17 @@ For more information, see
 
 *  http://www.w3.org/TR/CSP/
 
-For an SSL configuration, just modify the rewrite rule from::
+For an SSL configuration, just modify the rewrite rule from
 
-	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/yoursite.com:80/Plone/VirtualHostRoot/$1 [P,L]
+.. code-block:: console
 
-to::
+	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/http/%{HTTP_HOST}:80/Plone/VirtualHostRoot/$1 [P,L]
 
-	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/https/yoursite.com:443/Plone/VirtualHostRoot/$1 [P,L]
+to
+
+.. code-block:: console
+
+	    RewriteRule ^/(.*) http://localhost:8080/VirtualHostBase/https/%{HTTP_HOST}:443/Plone/VirtualHostRoot/$1 [P,L]
 
 inside an SSL-enabled Apache virtual host definition.
 
@@ -119,7 +130,7 @@ You don't want to hinder the performance of the other sites when doing Apache co
 
 The correct procedure to restart Apache is (on Ubuntu/Debian Linux)
 
-.. code-block:: console
+.. code-block:: shell
 
         # Check that config files are working after editing them
         apache2ctl configtest
@@ -134,7 +145,9 @@ www-redirects
 If you wish to force people to use your site with or without www prefix you can use the rules below.
 Note that setting this kind of rule is very useful from the search engine optimization point of view also.
 
-Example in <VirtualHost> section to redirect www.site.com -> site.com::
+Example in <VirtualHost> section to redirect www.site.com -> site.com
+
+.. code-block:: console
 
   <VirtualHost 127.0.0.1:80>
 
@@ -149,7 +162,9 @@ Example in <VirtualHost> section to redirect www.site.com -> site.com::
 
            </IfModule>
 
-Example in <VirtualHost> section to redirect site.com -> www.site.com::
+Example in <VirtualHost> section to redirect site.com -> www.site.com
+
+.. code-block:: console
 
   <VirtualHost 127.0.0.1:80>
 
@@ -182,7 +197,9 @@ Proxying other site under Plone URI space
 The following rule can be used to put a static web site to sit in the same URI space with Plone.
 Put these rules **before** VirtualHost ProxyPass.
 
-Examples::
+Examples:
+
+.. code-block:: console
 
    ProxyPass /othersite/ http://www.some.other.domain.com/othersite/
    ProxyPassReverse /othersite/ http://www.some.other.domain.com/othersite/
@@ -193,7 +210,9 @@ Reverse proxy host
 By default, host name is correctly delivered from Apache to Plone.
 Otherwise you might see all your HTTP requests coming from localhost, Apache.
 
-You need::
+You need
+
+.. code-block:: console
 
         ProxyPreserveHost On
 
@@ -210,7 +229,7 @@ This is useful if you migrate to a Plone from some legacy technology and you sti
 
 * Modify Apache configuration so that URLs still being used are redirected to the old server with alternative name, Put in this rewrite
 
-::
+.. code-block:: console
 
           <location /media>
                   RedirectMatch /media/(.*)$ http://www2.site.fi/media/$1
@@ -225,17 +244,26 @@ Virtual hosting Apache configuration generator
 Caching images
 ---------------
 
-You can force caching of content types on apache
+First of all, there are much better caching solutions for Plone than Apache's mod_cache, see the :doc:`Guide to caching </manage/deploying/caching/index>`.
 
-First you need to enable Apache modules::
+One important thing to know about mod_cache is that by default it caches Set-Cookie headers. Most likely, this is not what you want when using it with Plone, so you should use the CacheIgnoreHeaders directive to strip Set-Cookie headers from cached objects.
+Have a close look at the official `Apache documentation <http://httpd.apache.org/docs/current/mod/mod_cache.html>`_) and also read the comments at the bottom, they are very informative - even more so in the `2.2 version <http://httpd.apache.org/docs/2.2/mod/mod_cache.html>`_.
+
+If you cannot avoid using mod_cache, you can configure disk based Apache caching as follows:
+
+First you need to enable the relevant Apache modules::
 
 * mod_cache, mod_diskcache
 
-On Debian this is::
+On Debian this is
+
+.. code-block:: shell
 
 	sudo a2enmod
 
-Then you can add to your virtual host configuration::
+Then you can add to your virtual host configuration:
+
+.. code-block:: console
 
   # Disk cache configuration
   CacheEnable disk /
@@ -244,42 +272,11 @@ Then you can add to your virtual host configuration::
   #CacheDefaultExpire 1
   #CacheMaxExpire 7200
   CacheDirLength 2
+  # the next line is important, see above
+  CacheIgnoreHeaders Set-Cookie
 
-Then install go to *Cache Configration* (Plone 4.1+)
+Then go to *Cache Configration* (Plone 4.1+)
 and configure `the caching options <https://pypi.python.org/pypi/plone.app.caching>`_.
-
-Unsetting language cookie for media content
-============================================
-
-Media like content can confuse and break language selector on multilingual sites.
-
-By default, Plone sets I18N_LANGUAGE cookie on
-
-* All page requests
-
-* All ATImage requests
-
-Even if images are often language neutral, they still set I18N_LANGUAGE cookie on HTTP response.
-This is problematic if image gets cached and the user switches the language using the language selector.
-This happens when you enforce caching using Apache level rules (instead of using Products.CacheSetup or similar product).
-The user browsers received cached HTTP response image for the image and it contains Set-Cookie: I18N_LANGUAGE header for the wrong language -> browser language choice by cookie is reset.
-
-A workaround is to force language cookie off from media like content::
-
-  SetEnvIfNoCase Request_URI "\.(?:gif|jpe?g|png|css|js)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_preview(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_large(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_small(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_thumb(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image_mini(/)$" language-neutral
-  SetEnvIfNoCase Request_URI "image*$" language-neutral
-  SetEnvIfNoCase Request_URI "navImage_small(/)$" language-neutral
-  # Any URL having image in it
-  SetEnvIfNoCase Request_URI "^.*image*" language-neutral
-
-
-  Header unset Set-Cookie env=language-neutral
-
 
 Testing cache headers
 ---------------------
@@ -288,11 +285,15 @@ Use UNIX *wget* command. -S flag will display request headers.
 
 Remember to do different request for HTML, CSS, JS and image payloads - the cache rules might not be the same.
 
-HTTP example::
+HTTP example:
+
+.. code-block:: shell
 
         cd /tmp
 
         wget --cache=off -S http://production.yourorganizationinternational.org/yourorganizationlogotemplate.gif
+
+.. code-block:: console
 
         HTTP request sent, awaiting response...
           HTTP/1.1 200 OK
@@ -310,7 +311,9 @@ HTTP example::
         Length: 4837 (4.7K) [image/gif]
         Saving to: `yourorganizationlogotemplate.gif.14'
 
-HTTPS example::
+HTTPS example:
+
+.. code-block:: shell
 
          cd /tmp
          wget --cache=off --no-check-certificate -S https://production.yourorganizationinternational.org/
@@ -319,7 +322,9 @@ HTTPS example::
 Flushing cache
 --------------
 
-Manually cleaning Apache disk cache::
+Manually cleaning Apache disk cache:
+
+.. code-block:: shell
 
 	sudo -i
 	cd /var/cache/yoursite
@@ -353,9 +358,11 @@ More information about how to set a sticky session cookie if you need to support
 
 * http://opensourcehacker.com/2011/04/15/sticky-session-load-balancing-with-apache-and-mod_balancer-on-ubuntu-linux/
 
-Example::
+Example:
 
-        <VirtualHost 123.123.123:443>
+.. code-block:: console
+
+        <VirtualHost 123.123.123.123:443>
 
           ServerName  production.yourorganization.org
           ServerAdmin rocks@mfabrik.com
@@ -383,6 +390,10 @@ Example::
             BalancerMember http://127.0.0.1:13002/
             BalancerMember http://127.0.0.1:13003/
             BalancerMember http://127.0.0.1:13004/
+            # Use Pending Request Counting Algorithm (s. http://httpd.apache.org/docs/current/mod/mod_lbmethod_bybusyness.html).
+            # This will reduce latencies that occur as a result of long running requests temporarily blocking a ZEO client.
+            # You will need to install the separate mod_lbmethod_bybusyness module in Apache 2.4.
+            ProxySet lbmethod=bybusyness
           </Proxy>
 
           # Note: You might want to disable this URL of being public
@@ -398,16 +409,26 @@ Example::
           ProxyPass             / balancer://lbyourorganization/http://localhost/VirtualHostBase/https/production.yourorganization.org:443/yourorganization_plone_site/VirtualHostRoot/
           ProxyPassReverse      / balancer://lbyourorganization/http://localhost/VirtualHostBase/https/production.yourorganization.org:443/yourorganization_plone_site/VirtualHostRoot/
 
-          # Disk cache configuration
+          # Disk cache configuration, if you really must use Apache for caching
           CacheEnable disk /
-	  # Must point to www-data writable directly which depends on OS
+          # Must point to www-data writable directly which depends on OS
           CacheRoot "/var/cache/yourorganization-production"
           CacheLastModifiedFactor 0.1
+          CacheIgnoreHeaders Set-Cookie
 
           # Debug header flags all requests coming from this server
           Header append X-YourOrganization-Production yes
 
         </VirtualHost>
 
+Enabling gzip compression
+-------------------------
+
+Enabling gzip compression in Apache will make your web sites respond much more quickly for your web site users and will reduce the amount of bandwidth used by your web sites.
+
+Instructions for enabling gzip in Apache:
+
+* https://varvy.com/pagespeed/enable-compression.html
+* http://httpd.apache.org/docs/2.2/mod/mod_deflate.html
 
 

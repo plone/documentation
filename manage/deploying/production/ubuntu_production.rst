@@ -38,7 +38,7 @@ First step with any new server is to update the already installed system librari
 .. code-block:: console
 
     sudo apt-get update
-    sudo apt-get dist-upgrade
+    sudo apt-get upgrade
 
 Then, install the platform's build kit, nginx, and supervisor:
 
@@ -49,27 +49,11 @@ Then, install the platform's build kit, nginx, and supervisor:
 Step 2: Install Plone
 ---------------------
 
-Check `http://plone.org/products/plone <http://plone.org/products/plone>`_. Follow the `Download` link to get to the latest release. Copy the URL for the `Unified Installer`. Substitute that URL below:
-
-.. code-block:: console
-
-    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0rc1/+download/Plone-5.0rc1-UnifiedInstaller.tgz
-
-Unpack, change into the unpack directory and run the installer:
-
-.. code-block:: console
-
-    tar -xf Plone-5.0rc1-UnifiedInstaller.tgz
-    cd Plone-5.0rc1-UnifiedInstaller
-    sudo ./install.sh
-
-This will install Plone to /usr/local/Plone. There are installer options to put it elsewhere, and the install script will guide you through them. Use ``install.sh --help`` to see all command-line switches.
-
-
+Please take some time and read the chapter about :doc:`installation </manage/installing/installing/index>`.
 
 .. note::
 
-    Note that this is `root` installation. The installer will create special system users to build and run Plone.
+    Note that this is `root` installation `sudo ./install.sh`. The installer will create special system users to build and run Plone.
 
 .. note::
 
@@ -80,7 +64,7 @@ If you hit an "lxml" error during installation (ie the log shows "Error: Couldn'
 
 When the install completes, you'll be shown the preset administrative password. Record it. If you lose it, you may see it again:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo cat /usr/local/Plone/zeocluster/adminPassword.txt
 
@@ -89,7 +73,7 @@ Step 3: Set Plone to start with the server
 
 We're going to use `supervisor` to start Plone with the server. To do so, we'll create a supervisor configuration file:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo vi /etc/supervisor/conf.d/plone5.conf
 
@@ -109,7 +93,7 @@ Specify that supervisor should start the database server and client1 automatical
 When that file is saved you're set to start on server start.
 To start immediately, tell supervisor about the new components:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo supervisorctl
     supervisor> reread
@@ -133,7 +117,7 @@ We're going to use nginx as a reverse proxy. Virtual hosting will be established
 
 We'll set up nginx by adding a new configuration file:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo vi /etc/nginx/sites-available/plone5.conf
 
@@ -173,14 +157,14 @@ And save.
 
 Enable the new nginx site configuration:
 
-.. code-block:: console
+.. code-block:: shell
 
     cd /etc/nginx/sites-enabled
     sudo ln -s /etc/nginx/sites-available/plone5.conf
 
 And, tell nginx to reload the configuration:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo service nginx configtest
     sudo service nginx reload
@@ -192,7 +176,7 @@ Step 6: Set up packing and backup
 
 We want the Zope database to be packed weekly. We'll do so by setting up a `cron` job:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo vi /etc/cron.d/zeopack
 
@@ -208,7 +192,7 @@ And save.
 
 Let's also create a daily snapshot of the database:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo vi /etc/cron.d/plonebackup
 
@@ -229,7 +213,7 @@ We're going to use Postfix. There are lots of alternatives.
 
 Add the Postfix package and edit its main configuration file:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo apt-get install postfix
     sudo vi /etc/postfix/main.cf
@@ -249,7 +233,7 @@ Change the bottom section to turn off general mail in::
 
 Tell postfix to restart:
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo /etc/init.d/postfix restart
 
@@ -260,23 +244,24 @@ You *must* set up a firewall. But, you may be handling that outside the system, 
 
 If you want to use a software firewall on the machine, you may use `ufw` to simplify rule setup.
 
-.. code-block:: console
+.. code-block:: shell
 
     sudo apt-get install ufw
     sudo ufw limit 22/tcp
     sudo ufw allow 80/tcp
+    sudo ufw allow 443/tcp
     sudo ufw enable
 
 .. note::
 
-    This blocks everything but SSH and HTTP.
+    This blocks everything but SSH and HTTP(S).
 
 So, you may be wondering, how do you do Zope Management Interface administration?
 SSH port forwarding will allow you to build a temporary encrypted tunnel from your workstation to the server.
 
 Execute on your workstation the command:
 
-.. code-block:: console
+.. code-block:: shell
 
     ssh yourloginid@www.yourhostname.com -L:8080:localhost:8080
 

@@ -16,7 +16,9 @@ To add a page, use the *Add new...* menu for a folder:
    Show add new page menu
        Go to  ${PLONE_URL}
 
-       Click link  css=#plone-contentmenu-factories a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-factories
+       Click element  css=span.icon-plone-contentmenu-factories
 
        Wait until element is visible
        ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
@@ -45,7 +47,7 @@ Select **Page** from the menu, and you'll see the *Add Page* screen:
        Click link  document
 
        Wait until element is visible
-       ...  css=#form-widgets-IDublinCore-title
+       ...  css=#mceu_16-body
 
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-pages_add-form.png

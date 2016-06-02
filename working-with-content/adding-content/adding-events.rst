@@ -17,7 +17,9 @@ Use the *Add new...* menu for a folder to add an event:
    Show add new event menu
        Go to  ${PLONE_URL}
 
-       Click link  css=#plone-contentmenu-factories a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-factories
+       Click element  css=span.icon-plone-contentmenu-factories
 
        Wait until element is visible
        ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
@@ -49,8 +51,7 @@ Select **Event** from the drop-down menu, and you'll see the rather large *Add E
        Click link  event
 
        Wait until element is visible
-       ...  css=#form-widgets-IDublinCore-title
-
+       ...  css=#mceu_16-body
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-events_add-form.png
        ...  css=#content

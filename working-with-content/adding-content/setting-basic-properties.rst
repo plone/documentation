@@ -18,7 +18,9 @@ Any content item, when clicked by a user with edit rights for the item, will sho
    Show basic properties tab
        Go to  ${PLONE_URL}
 
-       Click link  css=#plone-contentmenu-factories a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-factories
+       Click element  css=span.icon-plone-contentmenu-factories
 
        Wait until element is visible
        ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
@@ -170,6 +172,15 @@ and other similar controls:
 .. figure:: ../../_robot/settingspanel.png
    :align: center
    :alt: Settings panel
+
+You can allow users to edit the "Short name" of content items.
+
+.. note::
+
+    The "Short Name" is part of the URL of a content item.
+    That means that no special characters or spaces are allowed in it.
+    For experienced web editors, it can be handy to manipulate the Short Name directly in order to generate more memorable or shorter URL's.
+
 
 Recommendations
 ---------------

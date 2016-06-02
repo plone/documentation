@@ -54,7 +54,6 @@ function:
 
 ::
 
-    from five import grok
     from plone.supermodel import model
 
     from zope.interface import Invalid
@@ -103,6 +102,7 @@ function:
                 value_type=schema.Choice(values=[_(u'Margherita'), _(u'Pepperoni'), _(u'Hawaiian')])
             )
 
+
 Notice how the *postcodeConstraint()*function is passed a value (a
 unicode string in this case, since the field is a *TextLine*), which we
 validate. If we consider the value to be invalid, we raise an *Invalid*
@@ -122,54 +122,74 @@ modify multiple schemata.
 z3c.form’s field widget validators address these shortcomings. These are
 specific to the form; by contrast, constraints are a feature of
 *zope.interface* interfaces and apply in other scenarios where
-interfaces are used as well. *plone.directives.form* provides a
-convenience decorator for creating simple field validators.
+interfaces are used as well.
 
 For example:
 
 ::
 
-    from five import grok
-    from plone.supermodel import model
     from plone.directives import form
-
-    from zope.interface import Invalid
-    from zope import schema
-    from z3c.form import button
-
-    from Products.CMFCore.interfaces import ISiteRoot
-    from Products.statusmessages.interfaces import IStatusMessage
-
     from example.dexterityforms.interfaces import MessageFactory as _
+    from plone.supermodel import model
+    from z3c.form import validator
+    from zope import schema
+    import zope.component
+    import zope.interface
 
     ...
 
 
+    @form.validator.validator(field=IPizzaOrder['phone_number'])
     class IPizzaOrder(model.Schema):
 
-        ...
+        phone_number = schema.TextLine(
+            title=_(u"Phone number"),
+            description=_(u"Your phone number in international format. E.g. +44 12 123 1234"),
+            required=False,
+            default=u"")
 
-    class OrderForm(form.SchemaForm):
 
-        ...
+    class PhoneNumberValidator(validator.SimpleFieldValidator):
+        """ z3c.form validator class for international phone numbers """
 
-    @form.validator.validator(field=IPizzaOrder['name'])
-    def validateName(value):
-        """Ensure names have a space (indicating a first name and surname)
-        """
+        def validate(self, value):
+            """ Validate international phone number on input """
+            super(PhoneNumberValidator, self).validate(value)
 
-        if ' ' not in value:
-            raise Invalid(_(u"Please give a full name"))
+            allowed_characters = "+- () / 0123456789"
 
-The *@form.validator.validator()* decorator registers a validator adapter. When
-the validation is invoked, the decorated function will be called with
-the field’s value as an argument and given an opportunity to raise a
-validation error, much like the constraint above. Again like the
-constraint, the default validator is called first, so things like the
-required flag and indeed any custom constraint are processed first.
+            if value != None:
 
-The *@form.validator.validator()* decorator can take keyword arguments to make the
-validator more specific or more generic. The valid values are:
+                value = value.strip()
+
+                if value == "":
+                    # Assume empty string = no input
+                    return
+
+                # The value is not required
+                for c in value:
+                    if c not in allowed_characters:
+                        raise zope.interface.Invalid(_(u"Phone number contains bad characters"))
+
+                if len(value) < 7:
+                    raise zope.interface.Invalid(_(u"Phone number is too short"))
+
+
+    # Set conditions for which fields the validator class applies
+    validator.WidgetValidatorDiscriminators(PhoneNumberValidator, field=IPizzaOrder['phone_number'])
+
+    # Register the validator so it will be looked up by z3c.form machinery
+    zope.component.provideAdapter(PhoneNumberValidator)
+
+
+This registers an adapter, extending the SimpleFieldValidator base
+class, and calling the superclass version of validate() to gain the
+default validation logic. In the validate() method, we can use variables
+like self.context, self.request, self.view, self.field and self.widget
+to access the adapted objects. The WidgetValidatorDiscriminators class
+takes care of preparing the adapter discriminators.
+
+The valid values for WidgetValidatorDiscriminators are:
 
 context
     The form’s context, typically an interface. This allows a validator
@@ -190,56 +210,7 @@ widget
 It is important to realise that if we don’t specify the *field*
 discriminator, or if we pass a field type instead of an instance, the
 validator will be used for all fields in the form (of the given type).
-Also note how we had to define the constraint function before the form
-schema interface (since it was referenced in the schema itself), but we
-define this validator after the schema and form, since here we need the
-interface to have been defined before we use it.
 
-Advanced field widget validators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-z3c.form validators are in fact a little more powerful than what we have
-seen above. A validator is registered as a multi-adapter providing
-*z3c.form.interfaces.IValidator* and adapting the objects *(context,
-request, view, field, widget)*, corresponding to the discriminants seen
-above. You may wish to register an adapter directly instead of using the
-*@form.validator.validator()* decorator if you:
-
--  want to skip the default validation of field properties like
-   *required* or *min*/*max*
--  need to access the context, request, form, field and/or widget
-   instances to validate the value
-
-We won’t show a full example here, but as an outline, consider the
-following code snippet:
-
-::
-
-    from five import grok
-    from plone.supermodel import model
-    from plone.directives import form
-
-    from z3c.form import validator
-
-    ...
-
-    class SampleValidator(validator.SimpleFieldValidator):
-
-        def validate(self, value):
-            super(SampleValidator, self).validate(value)
-
-            # validate here
-
-    validator.WidgetValidatorDiscriminators(SampleValidator, field=IPizzaOrder['orderItems'], view=OrderForm)
-    grok.global_adapter(SampleValidator)
-
-This registers an adapter, extending the SimpleFieldValidator base
-class, and calling the superclass version of validate() to gain the
-default validation logic. In the validate() method, we can use variables
-like self.context, self.request, self.view, self.field and self.widget
-to access the adapted objects. The WidgetValidatorDiscriminators class
-takes care of preparing the adapter discriminators. It takes the same
-keyword arguments as *@form.validator.validator()* seen above.
 
 Form-level validation
 ---------------------
@@ -274,18 +245,10 @@ For example:
 
 ::
 
-    from five import grok
-    from plone.supermodel import model
-    from plone.directives import form
-
-    from zope.interface import invariant, Invalid
-    from zope import schema
-    from z3c.form import button
-
-    from Products.CMFCore.interfaces import ISiteRoot
-    from Products.statusmessages.interfaces import IStatusMessage
-
     from example.dexterityforms.interfaces import MessageFactory as _
+    from plone.supermodel import model
+    from zope import schema
+    from zope.interface import invariant, Invalid
 
     ...
 
@@ -395,30 +358,24 @@ two examples to our action handler.
 
 ::
 
-    from five import grok
+    from example.dexterityforms.interfaces import MessageFactory as _
     from plone.supermodel import model
-    from plone.directives import form
-
-    from zope.interface import invariant, Invalid
-    from zope import schema
-
-    from z3c.form import button
-    from z3c.form.interfaces import ActionExecutionError, WidgetActionExecutionError
-
     from Products.CMFCore.interfaces import ISiteRoot
     from Products.statusmessages.interfaces import IStatusMessage
-
-    from example.dexterityforms.interfaces import MessageFactory as _
-
+    from z3c.form.interfaces import ActionExecutionError, WidgetActionExecutionError
+    from zope import schema
+    from zope.interface import invariant, Invalid
+    import plone.autoform
+    import z3c.form
 
     ...
 
 
-    class OrderForm(form.SchemaForm):
+    class OrderForm(plone.autoform.form.AutoExtensibleForm, z3c.form.form.Form):
 
         ...
 
-        @button.buttonAndHandler(_(u'Order'))
+        @z3c.form.button.buttonAndHandler(_(u'Order'))
         def handleApply(self, action):
             data, errors = self.extractData()
 
@@ -428,7 +385,9 @@ two examples to our action handler.
                 if len(data['address1']) < 2 and len(data['address2']) < 2:
                     raise ActionExecutionError(Invalid(_(u"Please provide a valid address")))
                 elif len(data['address1']) < 2 and len(data['address2']) > 10:
-                    raise WidgetActionExecutionError('address2', Invalid(u"Please put the main part of the address in the first field"))
+                    raise WidgetActionExecutionError(
+                        'address2',
+                        Invalid(u"Please put the main part of the address in the first field"))
 
             if errors:
                 self.status = self.formErrorsMessage

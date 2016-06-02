@@ -37,6 +37,17 @@ Add your package to buildout
 
 Edit your ``buildout.cfg`` file to add the package to your ``egg`` list and your ``develop`` list. Run buildout.
 
+
+The Plone Collective
+--------------------
+
+This is an organization for developers of Plone add-ons to work collectively. Software that is released in here follows a simple, collaborative model: every member can contribute to every project.
+
+This means you will have the best chance of having other people contributing to your add-on. So when your add-on is generic enough to be useful to other people, please consider to release it here.
+
+`Read more on how to become a member of the Plone Collective <https://collective.github.io/>`_
+
+
 Releasing your package
 ----------------------
 
@@ -48,12 +59,13 @@ Releasing your package
 Working with Javascript
 -----------------------
 
+**NOTE** working with JavaScript has changed considerably in Plone 5. Read the note at the beginning of the document.
+
 .. toctree::
    :maxdepth: 2
 
-   javascript
+   javascript/index
 
-   javascript_standards
 
    ajax
 
@@ -71,12 +83,10 @@ Background
 
    schema-driven-forms/index
 
-Example
--------
+Training
+--------
 
-.. toctree::
-   :maxdepth: 2
+A number of Plone trainers have joined forces to create completely open  `Training materials <http://training.plone.org/5>`_.
 
-   helloworld/index
-
-Also make sure to check out the `Training material <http://training.plone.org>`_
+While following a real-life course is the best way to get up to speed with Plone, the material is also very useful for self-study.
+You will find separate chapters on creating packages, writing your own theme and much more here.

@@ -1,5 +1,5 @@
-Programming Plone
-=================
+Programming with Plone
+======================
 
 .. toctree::
    :maxdepth: 2

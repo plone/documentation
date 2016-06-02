@@ -66,6 +66,14 @@ and you are deleting badly behaved objects::
     # app.folder_sits.sitsngta._delObject("examples", suppress_events=True)
     import transaction ; transaction.commit()
 
+Bypassing link integrity check
+------------------------------
+
+Plone 5 handles deleting an item in its user interface only;
+there's no longer need to bypass link integrity programmatically.
+
+For more information check the documentation of `plone.app.linkintegrity <https://pypi.python.org/pypi/plone.app.linkintegrity/3.0>`_.
+
 Deleting all content in a folder
 ================================
 
@@ -79,70 +87,6 @@ This can be a bit tricky. An example::
         # so we cannot give it tuple returned by objectIds()
         ids = list(ids)
         folder.manage_delObjects(ids)
-
-Bypassing link integrity check
-===============================
-
-If link integrity checks has been enabled in the site setup, you cannot
-delete objects which themselves are link targets or if their children
-are link targets.
-
-Instead, a ``LinkIntegrityException`` will be raised.
-The ``LinkIntegrityException`` contains information identifying
-the content which could not be deleted.
-
-The ``plone.app.linkintegrity.browser.remote`` module contains
-code which allows you to delete the object in any case.
-It catches the exception, modifies the HTTP request
-to contain a marker interface allowing delete to happen
-and then replays the transaction.
-
-In case the link integrity check fails for ``manage_delObjects()``,
-you will be shown a confirmation dialog. The original request payload
-gets pickled and is stored encoded in the HTML form.
-
-When the user presses confirm, the original request gets unpickled
-from the ``HTTP POST`` payload. Then the view modifies the Zope publisher
-so that it will play the original unpickled ``HTTP POST``
-with the marker interface
-"Do not care about link integrity breaches" turned on.
-
-Here is an sample batch delete code which tries to work around the link
-integrity check::
-
-    from zope.component import queryUtility
-    from Products.CMFCore.interfaces import IPropertiesTool
-
-    # We need to disable link integrity check,
-    # because it cannot handle several delete calls in
-    # one request
-    ptool = queryUtility(IPropertiesTool)
-    props = getattr(ptool, 'site_properties', None)
-    old_check = props.getProperty('enable_link_integrity_checks', False)
-    props.enable_link_integrity_checks = False
-
-    for b in items:
-        count += 1
-        obj = b.getObject()
-        logger.info("Deleting:" + obj.absolute_url() + " " + str(obj.created()))
-
-        try:
-            obj.aq_parent.manage_delObjects([obj.getId()])
-        except Exception, e:
-            # E.g. linkintegrityerror or some other
-            logger.error("Could not remove item:" + obj.absolute_url())
-            logger.exception(e)
-            continue
-
-        if count % transaction_threshold == 0:
-            # Prevent transaction becoming too large (memory buffer)
-            # by committing now and then
-            logger.info("Committing transaction")
-            transaction.commit()
-
-    props.enable_link_integrity_checks = old_check
-
-    logger.info(msg)
 
 Fail safe deleting
 ===================
@@ -163,7 +107,7 @@ The best way to clean up bad objects on your site is via a
 in which case remember to commit the transaction
 after removing the broken objects.
 
-Purging site from old content
+Purging old content from site 
 ========================================
 
 This term:`ZMI` script allows you to find content items of certain type and

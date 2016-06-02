@@ -24,7 +24,9 @@ In the toolbar, for any content type --folders, images, pages, etc., and any spe
    Show state menu
        Go to  ${PLONE_URL}/samplepage
 
-       Click link  css=#plone-contentmenu-workflow a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-workflow
+       Click element  css=span.icon-plone-contentmenu-workflow
 
        Wait until element is visible
        ...  css=#plone-contentmenu-workflow li.plone-toolbar-submenu-header
@@ -74,7 +76,9 @@ The menu choices in the state menu will change accordingly:
    Show sendback
        Go to  ${PLONE_URL}/samplepage
 
-       Click link  css=#plone-contentmenu-workflow a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-workflow
+       Click element  css=span.icon-plone-contentmenu-workflow
 
        Wait until element is visible
        ...  css=#plone-contentmenu-workflow li.plone-toolbar-submenu-header
@@ -83,7 +87,9 @@ The menu choices in the state menu will change accordingly:
 
        Go to  ${PLONE_URL}/samplepage
 
-       Click link  css=#plone-contentmenu-workflow a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-workflow
+       Click element  css=span.icon-plone-contentmenu-workflow
 
        Wait until element is visible
        ...  css=#plone-contentmenu-workflow li.plone-toolbar-submenu-header

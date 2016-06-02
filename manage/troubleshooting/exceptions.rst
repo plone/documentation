@@ -1259,33 +1259,6 @@ delete all "too eggs" from ``eggs/`` and ``src/`` folders.
 
 **Solution 2**: Upgrade your site to Plone.
 
-LinguaPlone: ImportError: cannot import name permissions
----------------------------------------------------------
-
-**Traceback**::
-
-	File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/viewlets/selector.py", line 12, in <module>
-	  from Products.LinguaPlone.interfaces import ITranslatable
-	File "/home/moo/code/finnmall/finnmall/eggs/Products.LinguaPlone-3.1-py2.6.egg/Products/LinguaPlone/__init__.py", line 3, in <module>
-	  from Products.LinguaPlone import permissions
-	ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/parts/instance/etc/site.zcml", line 15.2-15.55
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/parts/instance/etc/package-includes/001-abita.policy-configure.zcml", line 1.0-1.56
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.policy/abita/policy/configure.zcml", line 8.4-8.37
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/configure.zcml", line 9.2-9.32
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/configure.zcml", line 10.2-10.33
-	    ZopeXMLConfigurationError: File "/home/moo/code/finnmall/finnmall/src/abita.theme/abita/theme/browser/viewlets/configure.zcml", line 6.2-11.6
-	    ImportError: cannot import name permissions
-
-This seems to be Plone 4 issue of some sort.
-Import Products.ATContentTypes before importing LinguagePlone.
-
-.. seealso::
-    * https://plone.org/products/linguaplone/issues/253
-    * https://plone.org/products/linguaplone/issues/253
-
-.. note::
-
-   The standard multilingual solution for Plone 5 is :doc:`plone.app.multilingual </external/plone.app.multilingual/README>`, which has upgrade steps from LinguaPlone.
 
 NameError: name 'test' is not defined
 -------------------------------------
@@ -1448,7 +1421,7 @@ this to NotFound error.
 
 
 **Solution**:
-* Put :doc:`pdb break statement </manage/deploying/testing_tuning/testing_and_debugging/pdb>` to the beginning of the __init__() method of your view. Then step through view code to see where the exception is raisen.
+* Put :doc:`pdb break statement </develop/debugging/pdb>` to the beginning of the __init__() method of your view. Then step through view code to see where the exception is raised.
 * If your view does not have __init__() method, then copy the source code __init__() method to your view class from the first parent class which has a view
 
 POSKeyError
@@ -1693,7 +1666,6 @@ TraversalError: No traversable adapter found
 
     ...
     * Module ZPublisher.Publish, line 202, in publish_module_standard
-    * Module Products.LinguaPlone.patches, line 66, in new_publish
     * Module ZPublisher.Publish, line 150, in publish
     * Module Zope2.App.startup, line 221, in zpublisher_exception_hook
     * Module ZPublisher.Publish, line 119, in publish
@@ -1714,6 +1686,7 @@ This traceback is followed by long dump of template code internals.
 Usual cause: Some add-on product fails to initialize.
 
 **Solution**: Start Zope in foreground mode (bin/instance fg) to see which product fails.
+
 
 TypeError: 'ExtensionClass.ExtensionClass' object is not iterable
 ------------------------------------------------------------------

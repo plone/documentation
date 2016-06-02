@@ -17,8 +17,9 @@ Choose "Collection" in the *Add new...* menu for a folder to start defining your
 
    Show add collection menu
        Go to  ${PLONE_URL}
-
-       Click link  css=#plone-contentmenu-factories a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-factories
+       Click element  css=span.icon-plone-contentmenu-factories
        Wait until element is visible
        ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
 
@@ -46,6 +47,8 @@ Select **Collection** from the drop-down menu, and you'll see the *Add Collectio
    Show new collection add form
        Page should contain element  collection
        Click link  collection
+       Wait until element is visible
+       ...  css=#mceu_16-body
        Capture and crop page screenshot
        ...  ${CURDIR}/../../_robot/adding-collections_add-form.png
        ...  css=#content

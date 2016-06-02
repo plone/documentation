@@ -441,9 +441,7 @@ for the default item) in page templates:
                                hasattr(folder['carousel'],
                                'carouselText')">xxx</div>
 
-More info:
 
-* See :doc:`plone_context_state helper </develop/addons/helloworld/extend/content>`
 
 Checking if an item is the site front page
 --------------------------------------------

@@ -42,8 +42,9 @@ Then from the "Actions" menu, select "Check out":
    Show how to checkout
           Go to  ${PLONE_URL}/front-page
 
-          Page should contain element  css=#plone-contentmenu-actions a
-          Click link  css=#plone-contentmenu-actions a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-actions
+       Click element  css=span.icon-plone-contentmenu-actions
           Wait until element is visible
           ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
 
@@ -59,8 +60,9 @@ Then from the "Actions" menu, select "Check out":
 
           Go to  ${PLONE_URL}/front-page
 
-          Page should contain element  css=#plone-contentmenu-actions a
-          Click link  css=#plone-contentmenu-actions a
+       Wait until element is visible
+       ...  css=span.icon-plone-contentmenu-actions
+       Click element  css=span.icon-plone-contentmenu-actions
           Wait until element is visible
           ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
           Click link  css=#plone-contentmenu-actions-iterate_checkout
@@ -127,8 +129,9 @@ simply choose "Check-in" from the "Actions" drop-down menu:
      Show check-in option
          Go to  ${PLONE_URL}/copy_of_front-page
 
-          Page should contain element  css=#plone-contentmenu-actions a
-          Click link  css=#plone-contentmenu-actions a
+          Wait until element is visible
+          ...  css=span.icon-plone-contentmenu-actions
+          Click element  css=span.icon-plone-contentmenu-actions
           Wait until element is visible
           ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
 
@@ -180,8 +183,9 @@ If for any reason it becomes necessary to cancel a check out and **you don't wan
      Show cancel checkout
          Go to  ${PLONE_URL}/copy_of_front-page
 
-          Page should contain element  css=#plone-contentmenu-actions a
-          Click link  css=#plone-contentmenu-actions a
+          Wait until element is visible
+          ...  css=span.icon-plone-contentmenu-actions
+          Click element  css=span.icon-plone-contentmenu-actions
           Wait until element is visible
           ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
 

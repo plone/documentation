@@ -16,7 +16,7 @@ Introduction
 
         Plone code is somewhat ugly and expects you to have real HTTP request lifecycle
         to do many things. For command line scripts, you need to mock up this and mocking
-        up ofter fails. Instead of trying to create a pure command-line script,
+        up often fails. Instead of trying to create a pure command-line script,
         just create a browser view and call that browser view usings wget or
         lynx or similar command line HTTP tool.
 
@@ -53,8 +53,9 @@ Starting interactive interpreter
 --------------------------------
 
 The *bin/instance debug* command starts an interactive interpreter with the Zope application server and
-database loaded. To have persistent utilities loaded, you should also provide the id of your Plone site.
-The following example assumes you have a plone site named "Plone"
+database loaded. You can provide the id of your Plone site with the -O flag to have it available under the
+name *obj* and to load :doc:`persistent utilities </develop/addons/components/utilities>`_. The following example assumes 
+the site is named "Plone". For more infos about command-line options use *bin/instance help debug*.
 
 Example::
 

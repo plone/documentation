@@ -9,8 +9,8 @@ Guidelines and Examples
 If you need help with an error or problem: before asking the question, please take a few minutes to read the guidelines below. It is important to know how to state questions, because once you learn it, answers will come much faster.
 
 
-Asking help on discussion forums and mailing lists
---------------------------------------------------
+Asking help on support and discussion forums
+--------------------------------------------
 
 By stating a **well-phrased question** you increase the likelihood of fast and helpful response to your question.
 
@@ -22,19 +22,19 @@ Where to search:
 
 - Google - Before asking for help, make a Google search with related keywords. Pick meaningful keywords from the log entry.
 
-- `StackOverflow <http://stackoverflow.com/questions/tagged/plone?sort=faq>`_ - some FAQs are maintained here.
+- `Plone Community Forums <https://community.plone.org/>`_ - help and discussion forums
 
-- :doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error messages - for enabling debug mode and common tracebacks.
+- `StackOverflow <http://stackoverflow.com/questions/tagged/plone?sort=faq>`_ - some FAQs are maintained here
 
-- `Github issue tracker <https://github.com/plone/Products.CMFPlone/issues>`_ - for known related issues
+- :doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error messages - for enabling debug mode and common tracebacks
+
+- `GitHub issue tracker <https://github.com/plone/Products.CMFPlone/issues>`_ - for known related issues
 
 - `Documentation issue tracker <https://github.com/plone/documentation/issues>`_ - for documentation related issues
 
 If at any point you see any kind of error message (including error codes) – put them in the topic. Never write anything like “I see some error message”. Be specific.
 
 See  :doc:`Basic troubleshooting </manage/troubleshooting/basic>` in case of an error
-
-Follow the structure of the forum by creating your topic in a proper location (subforum). If you are in doubt where to create your topic, post to the `general questions <https://plone.org/support/forums/general>`_ forum.
 
 Follow the netiquette while visiting and writing on forum or mailing list (give respect = get respect). This includes:
 
@@ -61,7 +61,7 @@ Keep in mind, that if you ask a question and all you hear is silence, it might b
 
 The big picture - An opening sentence should state the general problem that you wish to solve.
 
-**A snapshot of your environment** - For Plone and for other relevant products: provide version numbers. e.g., "I'm running Plone 4.0.1 under Python 2.6.4."
+**A snapshot of your environment** - For Plone and for other relevant products: provide version numbers. e.g., "I'm running Plone 5.0.4 under Python 2.7.11."
 
 **Steps to reproduce the issue** - Give information about your ideas of how this error appeared, what caused it or anything that could lead to reproducing the error on another computer. The expected result .
 
@@ -81,11 +81,11 @@ Here are couple of useful hints while connecting to IRC network:
 
     When I start Zope in debug mode I get the following log entry.
 
-    I pasted the log to pastie.org and here is the link for the log entry http://pastie.org/123123
+    I pasted the log to `pastie.org <http://pastie.org/>`_ and here is the link for the log entry http://pastie.org/123123
 
 - Be specific - tell us why you are trying to accomplish something and then tell us what the problem is. Here are some guidelines how to form a good question for Internet discussion.
 
-- Do not copy-paste text to chat. This disrupts other people chatting about other topics. Instead please paste the full traceback error log to pastie.org and then paste the link to your error log or code (from your browser's address bar) to the chat.
+- Do not copy-paste text to chat. This disrupts other people chatting about other topics. Instead please paste the full traceback error log to `pastie.org <http://pastie.org/>`_ and then paste the link to your error log or code (from your browser's address bar) to the chat.
 
 - Do not send direct messages to chat participants unless you have a clear reason to do so
 - Keep the chat window open at least 30 minutes so that someone has time to pick up your question. Be patient.
@@ -113,7 +113,7 @@ Here are couple of useful hints while connecting to IRC network:
 
   A question that is more likely to gain attention and a positive response:
 
-  "Hi, I'm using product XYZ on Plone 4.0.1, I have a problem with the feature that is supposed to doABC— I get error BlahBlahError — what might be wrong? Here is a link to the error log on pastie.org:http://pastie.org/123123"
+  "Hi, I'm using product XYZ on Plone 5.x.x, I have a problem with the feature that is supposed to doABC— I get error BlahBlahError — what might be wrong? Here is a link to the error log on pastie.org:http://pastie.org/123123"
 
 Tracebacks
 ----------

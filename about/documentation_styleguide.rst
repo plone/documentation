@@ -63,11 +63,12 @@ For including documentation into docs.plone.org, **please** follow these guideli
 * If you want to include images and screenshots, you should place them into /docs/resources/ , along with other resources like PDF's, audio, video, etcetera.
   (*Yes! Make more screenshots, we love you! But do remember, .png or .jpg as file formats, no .gif please*)
 
-* Include a /docs/LICENSE.rst with a short description of the license, and /docs/LICENSE.GPL for the legalese.
-
 * Please do not symlink to, or use the *include* directive on files that live outside your '/docs' directory.
 
 * Please do not use 'autodoc' to include comments of your code.
+
+* The '/docs' directory should contain **only** content related to documentation, please do **not** put the license here.
+  A LICENSE.rst with a short description of the license, and LICENSE.GPL for the legalese should go into the top level of your package next to your README.rst
 
 * Please follow this :doc:`ReST styleguide <rst-styleguide>` and use **semantic linefeeds**.
   Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.

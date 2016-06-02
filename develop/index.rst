@@ -1,91 +1,54 @@
 Developing for Plone
 ====================
 
-
-Developing add-ons
-------------------
+An overview of all documentation for developers, both for writing your own add-ons and for working with Plone itself.
 
 .. toctree::
    :maxdepth: 2
 
-   addons/index
-
-Programming with Plone
-----------------------
+   Developing add-ons for Plone <addons/index>
 
 .. toctree::
    :maxdepth: 2
 
-   plone/index
-
-Developing for Plone Core
--------------------------
-
+   Programming with Plone <plone/index>
 
 .. toctree::
    :maxdepth: 2
 
-   coredev/docs/index
-
-Dev helper packages
----------------------
-
-plone.app.testing
-^^^^^^^^^^^^^^^^^
+   Debugging <debugging/index>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   /external/plone.app.testing/docs/source/index
+   Writing tests <testing/index>
 
-plone.api
-^^^^^^^^^
 
-.. toctree::
-   :maxdepth: 1
-
-   plone.api/docs/index
-
-plone.app.multilingual
-^^^^^^^^^^^^^^^^^^^^^^
+Developing for Plone Core follows similar patterns, but it requires you to sign the Plone Contributor license.
+The process is documented here.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   /external/plone.app.multilingual/README
 
-plone.app.contenttypes
-^^^^^^^^^^^^^^^^^^^^^^
+   The process for developing for Plone core <coredev/docs/index>
 
-.. toctree::
-   :maxdepth: 1
-
-   /external/plone.app.contenttypes/docs/README
-
-plone.app.contentlisting
-^^^^^^^^^^^^^^^^^^^^^^^^
+Writing proper code and documentation that others can expand upon is vital.
+As Plone community, we stick to the following style guides, and ask that all developers and documentation writers do the same.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   /external/plone.app.contentlisting/docs/README
-
-plone.app.robotframework
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. toctree::
-   :maxdepth: 1
-
-   /external/plone.app.robotframework/docs/source/index
+   Plone style guides <styleguide/index>
 
 
-Importing content from other systems
-------------------------------------
+Importing content from other systems often requires the help of tools to get content out from various sources and into Plone. A number of these tools exist.
 
 .. toctree::
    :maxdepth: 2
 
    import/index
+
 
 Tutorials
 ----------
@@ -106,4 +69,52 @@ This training was created to teach about Mockup, the new Frontend library for Pl
 .. toctree::
    :maxdepth: 1
 
+
+Selected Plone core package documentation
+-----------------------------------------
+
+plone.api
+^^^^^^^^^
+plone.api is the recommended way of accessing Plone's functionality in your own code.
+
+.. toctree::
+   :maxdepth: 2
+
+   full plone.api documentaton <plone.api/docs/index>
+
+plone.app.multilingual
+^^^^^^^^^^^^^^^^^^^^^^
+The default solution to create multilingual content.
+
+.. toctree::
+   :maxdepth: 1
+
+   /external/plone.app.multilingual/README
+
+plone.app.contenttypes
+^^^^^^^^^^^^^^^^^^^^^^
+The default dexterity-based content types, since Plone 5.
+
+.. toctree::
+   :maxdepth: 1
+
+   /external/plone.app.contenttypes/docs/README
+
+plone.app.contentlisting
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 1
+
+   /external/plone.app.contentlisting/README
+
+plone.app.event
+^^^^^^^^^^^^^^^
+
+The calendar framework for Plone, default since Plone 5.
+
+.. toctree::
+   :maxdepth: 1
+
+   plone.app.event documentation </external/plone.app.event/docs/index>
 

@@ -32,14 +32,14 @@ More information about ZODB
 * `API documentation <http://zodb.readthedocs.org/en/latest/api.html>`_
 
 Database files
-===============
+==============
 
 Usually Plone's database is configured to file ``var/filestorage/Data.fs``
 and uploaded files can be found as BLOBs in ``var/blobstorage``.
 
 
 Object database features
-===========================
+========================
 
 The ZODB is an object database.  It makes very easy to store different kinds of
 contentish data in a graph, supporting subclassing (something which SQL often
@@ -71,7 +71,7 @@ To work around the ZODB interoperability problems, products like
 database.
 
 Query and searching
---------------------
+-------------------
 
 ZODB does not provide query services as is
 i.e. there is no SELECT statement.
@@ -93,7 +93,7 @@ This gives some benefits
   using reference_catalog)
 
 Data model
-------------
+----------
 
 There is no hardwired way for describe
 data in ZODB database.
@@ -117,7 +117,7 @@ how to define a model for the data to be stored
 in ZODB database.
 
 Transactions and committing
---------------------------------------
+---------------------------
 
 `This in-depth SO answer <http://stackoverflow.com/questions/11254384/when-to-commit-data-in-zodb/>`_
 explains how committing works in ZODB.
@@ -133,7 +133,7 @@ Browsing
 You can explore ZODB with-in Plone using `ZODBBrowser <https://plone.org/products/zodbbrowser>`_.
 
 Packing database
-=====================
+================
 
 As ZODB is append-only database it remembers all its history unless packed. Packing will erase undo history.
 
@@ -142,13 +142,13 @@ As ZODB is append-only database it remembers all its history unless packed. Pack
 * `Packing is similar to VACUUM in PostgreSQL <http://stackoverflow.com/questions/11254384/when-to-commit-data-in-zodb/>`_
 
 Packing through-the-web
-----------------------------
+-----------------------
 
 Manual packing can be executed through Zope Control Panel (not Plone control panel)
 in Zope application server root (not Plone site root) in ZMI.
 
 Packing from command line
-----------------------------
+-------------------------
 
 `plone.recipe.zeoserver <https://github.com/plone/plone.recipe.zeoserver/>`_ buildout recipe provides command called ``bin/zeopack``
 inside buildout.
@@ -184,19 +184,17 @@ script from your ``buildout/bin`` folder::
 For more information, see :doc:`command-line scripts </develop/plone/misc/commandline>`.
 
 Visualizing object graphs
-====================================
+=========================
 
-* http://blog.hannosch.eu/2009/05/visualizing-persistent-structure-of.html
-
-* http://david.wglick.org/2009/visualizing-the-zodb-with-graphviz/
+* http://glicksoftware.com/blog/visualizing-the-zodb-with-graphviz
 
 Cache size
-===========
+==========
 
 * `Understanding ZODB cache size option <https://mail.zope.org/pipermail/zodb-dev/2010-March/013199.html>`_
 
 Integrity checks
-=================
+================
 
 Especially when you back-up a Data.fs file, it is useful to run integrity checks for the transferred files.
 
@@ -212,14 +210,14 @@ and there are no problems due to low level disk corruption or bit flip.
         for a long time.
 
 Restart and cache warm-up
-===========================
+=========================
 
 Discussion why Plone is slow after restart
 
 * https://mail.zope.org/pipermail/zodb-dev/2013-March/014935.html
 
 Recovering old data
-======================
+===================
 
 Instructions for undoing deleted data and fixing broken databases.
 

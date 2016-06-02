@@ -4,21 +4,21 @@
 
 .. admonition:: Description
 
-        Here is some info for basic Plone troubleshooting, especially with add-on modules-
+        Here is some info for basic Plone troubleshooting, especially with add-on modules
 
 .. contents :: :local:
 
 Start Plone as foreground / debug mode
 ----------------------------------------
 
-Plone runs on the top of Zope application service. Zope is a Python process and will appear
-as "python ....." in your task manager process list.
+Plone runs on the top of Zope application service.
+Zope is a Python process and will appear as "python ....." in your task manager process list.
 
 Zope will report any problems with code when it is launched in foreground mode (attached to a terminal).
 
 * Basic command-line knowledge is needed in order to proceed
 
-First stop Zope if it's running as a background process
+First stop Zope if it is running as a background process
 
 * On Windows: use Plone Control Panel or Windows Control Panel Services section to shutdown Plone first
 
@@ -40,10 +40,15 @@ or Windows command-line command (note that Plone location may depend on where yo
 to start Plone.
 
 All errors will be printed into the terminal.
-The error is printed as Python *traceback*. It is important to copy-paste all lines of this traceback,
-not just the last line.
+The error is printed as Python *traceback*.
+It is important to copy-paste all lines of this traceback, not just the last line.
 
-If there is no start up error you will see the line
+If there is no start up error you will see the line::
+
+  INFO Zope Ready to handle requests
+
+as the last line of the startup sequence.
+
 
 No such file or directory: 'zope.conf'
 +++++++++++++++++++++++++++++++++++++++++
@@ -61,7 +66,7 @@ Re-run buildout and see what's wrong.
 Dropping into pdb
 +++++++++++++++++++++++
 
-If you need to inspect start-up errors in Python's :doc:`debugger </manage/deploying/testing_tuning/testing_and_debugging/pdb>`.
+If you need to inspect start-up errors in Python's :doc:`debugger </develop/debugging/pdb>`.
 
 Activate Python configuration associated with your ``bin/instance`` script:
 
@@ -111,9 +116,7 @@ Plone response looks like this::
     <head>
     <base href="http://xxx.fi:9980/" />
 
-If you get the answer from Plone (based on HTTP response headers) then
-Plone is running and you have problem elsewhere in your firewall/server/
-front-end web server configuration.
+If you get the answer from Plone (based on HTTP response headers) then Plone is running and you have problem elsewhere in your firewall/server/front-end web server configuration.
 
 Consult your operating system manual for fixing your problem.
 
@@ -121,8 +124,8 @@ Cleaning up bad add-on uninstalls
 ------------------------------------
 
 Many low quality Plone add-ons do not uninstall cleanly.
-You need to remove persistent objects from site database *after* add-on uninstall
-while *code is still in buildout*.
+
+You need to remove persistent objects from the site database *after* add-on uninstall while *code is still in buildout*.
 
 Otherwise your Plone site may not
 
@@ -132,16 +135,14 @@ Otherwise your Plone site may not
 
 * Migrate to new version
 
-For more information see
+For more information see :doc:`manual-remove-utility`
 
-* https://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
 
 Not able to log in
 ------------------
 
-It might happen that you start your instance with an empty database and you are
-not able to log in even if you are absolutely sure about your password. If you work
-on localhost throw away the localhost related cookies in your browser and restart.
+It might happen that you start your instance with an empty database and you are not able to log in even if you are absolutely sure about your password.
+If you work on localhost throw away the localhost related cookies in your browser and restart.
 
 If you have lost the Zope Admin Password you can create an emergency user:
 
