@@ -2,9 +2,11 @@
 Changelog
 =========
 
-2016053$
+20160606
 ========
 
+- Improve documentation about PFG custom mailer [terapyon]
+- Update documentation about forms in add-ons [staeff]
 - Update documentation about add-on installation [svx]
 - Made isort.cfg more readable by adding spaces [mauritsvanrees]
 - Various .rst style fixes [svx]
