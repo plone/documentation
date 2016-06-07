@@ -13,7 +13,7 @@ Introduction
 
 Plone supports TinyMCE (default), and CKEditor and others through external add-ons.
 
-In Plone 5, TinyMCE and the Plone integration is provided by the `Mockup project <https://github.com/plone/mockup>`_. In Plone 4, the integration package was called Products.TinyMCE
+In Plone 5, TinyMCE and the Plone integration is provided by the `Mockup project <https://github.com/plone/mockup>`_.
 
 Disabling HTML filtering and safe HTML transformation
 ------------------------------------------------------
@@ -177,8 +177,8 @@ Plug-in configuration goes to ``registry.xml`` GS profile with the record:
   </record>
 
 
-Customizing existing plug-in
-----------------------------
+Customizing existing plugin
+---------------------------
 
 * Go to the Resource Registry control panel
 
@@ -199,9 +199,11 @@ Overriding plug-in resources
 You can also override CSS, HTML (.htm.pt templates) with ``z3c.jbot``
 as instructed above.
 
-Example::
+Example:
 
-        jbot/Products.CMFPlone.static.components.tinymce-builded.js.tinymce.plugins.autosave.plugin.js
+.. code-block:: bash
+
+  jbot/Products.CMFPlone.static.components.tinymce-builded.js.tinymce.plugins.autosave.plugin.js
 
 .. warning ::
 
