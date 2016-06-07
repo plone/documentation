@@ -72,4 +72,4 @@ For a Flickr slideshow, and most other embeds, switch into HTML editing mode and
 
 .. note::
 
-  To allow completely arbitrary HTML codes, see `David Glick's blogpost <http://glicksoftware.com/blog/disable-html-filtering>`_
+  To allow completely arbitrary HTML codes, see :doc:`WYSIWYG text editing and TinyMCE </develop/plone/forms/wysiwyg>` and `David Glick's blogpost <http://glicksoftware.com/blog/disable-html-filtering>`_.
