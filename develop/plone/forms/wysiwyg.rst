@@ -37,8 +37,13 @@ If you need to put a `<script>` tag on your content text in TinyMCE you can disa
 
     tal:define="dummy python:checkPermission('Modify portal content', context) and request.RESPONSE.setHeader('X-XSS-Protection', '0');"
 
+**Step 3:** Add script tag to the list of `extended_valid_elements` of TinyMCE. Go to the Control Panel, TinyMCE settings, Advanced tab. Add to the Other settings field::
+
+  {"extended_valid_elements": "script[language|type|src]"}
+
 More info
 
+* https://www.tinymce.com/docs/configure/content-filtering/#extended_valid_elements
 * http://glicksoftware.com/blog/disable-html-filtering
 
 
