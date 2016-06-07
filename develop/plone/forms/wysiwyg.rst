@@ -1,6 +1,6 @@
-====================================
+================================
 WYSIWYG text editing and TinyMCE
-====================================
+================================
 
 .. admonition:: Description
 
@@ -35,16 +35,26 @@ If you need to put a `<script>` tag on your content text in TinyMCE you can disa
 
 **Step 2:** Set the "X-XSS-Protection: 0" response header. This can be done in your frontend webserver such as apache or nginx. Alternatively, if you only need to disable the protection for users who have permission to edit, you can add this to the site’s main_template:
 
+.. code-block:: bash
+
     tal:define="dummy python:checkPermission('Modify portal content', context) and request.RESPONSE.setHeader('X-XSS-Protection', '0');"
+
+**Step 3:** Add script tag to the list of `extended_valid_elements` of TinyMCE. Go to the Control Panel, TinyMCE settings, Advanced tab. Add to the Other settings field:
+
+.. code-block:: bash
+
+  {"extended_valid_elements": "script[language|type|src]"}
+
 
 More info
 
+* https://www.tinymce.com/docs/configure/content-filtering/#extended_valid_elements
 * http://glicksoftware.com/blog/disable-html-filtering
 
 
 
 Content linking
----------------------
+---------------
 
 Plone offers many kind of support and enhancements in site internal content linking
 
@@ -66,7 +76,7 @@ links where shown on the other page as the original context.
    You might need to turn on *Linking by UID* setting on in the site setup if you are migrating from older Plone sites.
 
 Editor preferences
----------------------
+------------------
 
 Plone supports user text changeable editor. The active editor is stored in
 the :doc:`user preferences </develop/plone/members/member_profile>`.
@@ -77,7 +87,7 @@ The rich text widget can also support optional input formats besides
 HTML: structured text and so on.
 
 Text format selector
-=====================
+====================
 
 The format selector itself is rendered by ``wysiwyg_support.pt`` macros
 which is Plone core
@@ -85,7 +95,7 @@ which is Plone core
 * https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/skins/plone_wysiwyg/wysiwyg_support.pt
 
 Applying styles only edit view
---------------------------------
+------------------------------
 
 You can use TinyMCE body selector make your CSS class have different styles in view and edit modes (inside TinyMCE)
 
@@ -121,21 +131,21 @@ In your add-on code, all TinyMCE options in the control panel can be exported an
 
 
 Rich text transformations
----------------------------
+-------------------------
 
 * :doc:`/external/plone.app.dexterity/docs/advanced/rich-text-markup-transformations`
 
 * https://pypi.python.org/pypi/plone.app.textfield
 
 
-Hacking TinyMCE Javascript
----------------------------
+Hacking TinyMCE JavaScript
+--------------------------
 
 All JavaScript is built and compiled with Plone 5's new Resource Registry.
 
 
 TinyMCE plug-ins
-------------------
+----------------
 
 The TinyMCE control panel has the ability to provide custom plugins. Custom plugins
 map to the http://www.tinymce.com/wiki.php/Configuration:external_plugins setting.
@@ -147,7 +157,7 @@ compatibility layer for TinyMCE 3.
 
 
 Adding a new plug-in
-------------------------------------
+---------------------
 
 Here are instructions how to add new plugins to TinyMCE
 
@@ -168,7 +178,7 @@ Plug-in configuration goes to ``registry.xml`` GS profile with the record:
 
 
 Customizing existing plug-in
-------------------------------------
+----------------------------
 
 * Go to the Resource Registry control panel
 
@@ -184,7 +194,7 @@ Customizing existing plug-in
 
 
 Overriding plug-in resources
-===================================
+============================
 
 You can also override CSS, HTML (.htm.pt templates) with ``z3c.jbot``
 as instructed above.

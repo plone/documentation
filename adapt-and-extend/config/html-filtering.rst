@@ -34,7 +34,7 @@ Plone filters out many tags for a good reason:
 they can be abused by your site users to create privilege escalation attacks.
 
 If you have untrusted people allowed to create content on your Plone site, then a malicious person could create some "nasty" Javascript in some content, then trick a person with Admin rights into viewing that content.
-That "nasty" Javascript can now do HTTP requests to interact with the Plone site with the full Admin rights granted to the trusted user.
+That "nasty" JavaScript can now do HTTP requests to interact with the Plone site with the full Admin rights granted to the trusted user.
 
 *Bottom line: do not use this technique to enable embeddable content in your Plone site unless you are certain that you trust all users who are allowed to create content in your site.*
 
@@ -72,4 +72,4 @@ For a Flickr slideshow, and most other embeds, switch into HTML editing mode and
 
 .. note::
 
-  To allow completely arbitrary HTML codes, see `David Glick's blogpost <http://glicksoftware.com/blog/disable-html-filtering>`_
+  To allow completely arbitrary HTML codes, see :doc:`WYSIWYG text editing and TinyMCE </develop/plone/forms/wysiwyg>` and `David Glick's blogpost <http://glicksoftware.com/blog/disable-html-filtering>`_.
