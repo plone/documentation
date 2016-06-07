@@ -1,6 +1,6 @@
-====================================
+=================================
 WYSIWYG text editing and TinyMCE
-====================================
+=================================
 
 .. admonition:: Description
 
@@ -13,10 +13,10 @@ Introduction
 
 Plone supports TinyMCE (default), and CKEditor and others through external add-ons.
 
-In Plone 5, TinyMCE and the Plone integration is provided by the `Mockup project <https://github.com/plone/mockup>`_. In Plone 4, the integration package was called Products.TinyMCE
+In Plone 5, TinyMCE and the Plone integration is provided by the `Mockup project <https://github.com/plone/mockup>`_.
 
 Disabling HTML filtering and safe HTML transformation
-------------------------------------------------------
+-----------------------------------------------------
 
 By default Plone does HTML filtering to prevent `cross-site scripting <http://en.wikipedia.org/wiki/Cross-site_scripting>`_
 attacks. This will make Plone to strip away from HTML
@@ -37,7 +37,9 @@ If you need to put a `<script>` tag on your content text in TinyMCE you can disa
 
     tal:define="dummy python:checkPermission('Modify portal content', context) and request.RESPONSE.setHeader('X-XSS-Protection', '0');"
 
-**Step 3:** Add script tag to the list of `extended_valid_elements` of TinyMCE. Go to the Control Panel, TinyMCE settings, Advanced tab. Add to the Other settings field::
+**Step 3:** Add script tag to the list of `extended_valid_elements` of TinyMCE. Go to the Control Panel, TinyMCE settings, Advanced tab. Add to the Other settings field:
+
+.. code-block:: bash
 
   {"extended_valid_elements": "script[language|type|src]"}
 
@@ -49,7 +51,7 @@ More info
 
 
 Content linking
----------------------
+---------------
 
 Plone offers many kind of support and enhancements in site internal content linking
 
@@ -71,7 +73,7 @@ links where shown on the other page as the original context.
    You might need to turn on *Linking by UID* setting on in the site setup if you are migrating from older Plone sites.
 
 Editor preferences
----------------------
+------------------
 
 Plone supports user text changeable editor. The active editor is stored in
 the :doc:`user preferences </develop/plone/members/member_profile>`.
@@ -82,7 +84,7 @@ The rich text widget can also support optional input formats besides
 HTML: structured text and so on.
 
 Text format selector
-=====================
+====================
 
 The format selector itself is rendered by ``wysiwyg_support.pt`` macros
 which is Plone core
@@ -90,7 +92,7 @@ which is Plone core
 * https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/skins/plone_wysiwyg/wysiwyg_support.pt
 
 Applying styles only edit view
---------------------------------
+------------------------------
 
 You can use TinyMCE body selector make your CSS class have different styles in view and edit modes (inside TinyMCE)
 
@@ -133,14 +135,14 @@ Rich text transformations
 * https://pypi.python.org/pypi/plone.app.textfield
 
 
-Hacking TinyMCE Javascript
----------------------------
+Hacking TinyMCE JavaScript
+--------------------------
 
 All JavaScript is built and compiled with Plone 5's new Resource Registry.
 
 
-TinyMCE plug-ins
-------------------
+TinyMCE plugins
+---------------
 
 The TinyMCE control panel has the ability to provide custom plugins. Custom plugins
 map to the http://www.tinymce.com/wiki.php/Configuration:external_plugins setting.
@@ -152,7 +154,7 @@ compatibility layer for TinyMCE 3.
 
 
 Adding a new plug-in
-------------------------------------
+--------------------
 
 Here are instructions how to add new plugins to TinyMCE
 
@@ -173,7 +175,7 @@ Plug-in configuration goes to ``registry.xml`` GS profile with the record:
 
 
 Customizing existing plug-in
-------------------------------------
+----------------------------
 
 * Go to the Resource Registry control panel
 
@@ -189,12 +191,14 @@ Customizing existing plug-in
 
 
 Overriding plug-in resources
-===================================
+============================
 
 You can also override CSS, HTML (.htm.pt templates) with ``z3c.jbot``
 as instructed above.
 
-Example::
+Example:
+
+.. code-block:: bash
 
         jbot/Products.CMFPlone.static.components.tinymce-builded.js.tinymce.plugins.autosave.plugin.js
 
