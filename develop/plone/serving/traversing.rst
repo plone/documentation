@@ -4,7 +4,7 @@
 
 .. admonition:: Description
 
-    Plone content is organized to a tree. Traversing means looking up
+    Plone content is organized as a tree. Traversing means looking up
     content from this tree by path. When HTTP request hits a Plone
     server, Plone will traverse the corresponding content item
     and its view function by URI.
@@ -33,7 +33,7 @@ Traversal can happen in two places:
 When an HTTP request is being published the traversing happens in
 ``ZPublisher.BaseRequest.traverse``
 
-* http://svn.zope.org/Zope/trunk/src/ZPublisher/BaseRequest.py?rev=122282&view=auto
+* https://github.com/zopefoundation/Zope/blob/master/src/ZPublisher/BaseRequest.py
 
 ... but Zope includes other traversers, like ``unrestrictedTraverse()`` in
 the OFS module.  Different traversing methods behave differently and may
