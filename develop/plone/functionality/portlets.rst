@@ -15,7 +15,7 @@ Portlets are editable boxes in the left and right side bar of Plone user interfa
 Add-ons allow portlets in other parts in of the user interface too, like above and below the content.
 
 This document contains quick how-to information only.
-Please visit the `Portlets reference manual <http://docs/plone.org/4/en/old-reference-manuals/portlets/index.html>`_ for in-depth information.
+Please visit the `Portlets reference manual <http://docs.plone.org/4/en/old-reference-manuals/portlets/index.html>`_ for in-depth information.
 
 Related add-ons and packages
 ------------------------------
