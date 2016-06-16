@@ -51,6 +51,6 @@ Example PloneFormGen script adapter (using proxy role Manager)::
 
     for email in emails:
       try:
-        mailhost.secureSend(message, email, source, subject=subject, subtype='plain', charset="utf-8", debug=False, From=source)
+        mailhost.send(message, email, source, subject=subject, charset="utf-8", )
       except Exception:
         pass
