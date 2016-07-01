@@ -17,26 +17,18 @@ your translation directly.
 You can also update a po file online and make a pull request.
 
 
-Updating translations for Plone 4.2
-===================================
-
-To do.
-
-
-Updating translations for Plone 4.3
-===================================
+Updating translations for Plone 5
+=================================
 
 If you want to test your latest translation with unreleased packages
 containing i18n fixes for Plone 4, get the buildout like this:
 
 .. code-block:: shell
 
-    git clone -b 4.2 git://github.com/plone/buildout.coredev.git
+    git clone -b 5.0 git://github.com/plone/buildout.coredev.git
     cd buildout.coredev
     python2.7 bootstrap.py
     bin/buildout -c experimental/i18n.cfg
-    rm .mr.developer.cfg
-    ln -s experimental/.mr.developer.cfg
     bin/instance fg
 
 To update the buildout later:
@@ -56,13 +48,6 @@ Here you have the following directories:
 
 - ``locales`` used for core Plone translations.
 - ``locales-addons`` used for some addons packages.
-- ``locales-future`` used for Plone 5 packages. The po files can change
-  really often. The translations will normally be merged to the locales
-  directory when Plone 5 will be released. This directory is not included in
-  ``plone.app.locales`` 4.x releases. For developers: if you want to add a
-  Plone 5 package to this directory, you can add it to the ``plone5``
-  variable in ``experimental/i18n.cfg``, don't forget to add a line in
-  ``[sources]`` if it's missing.
 
 Open the po file with poedit, kbabel or any other i18n tool. For example for
 French:
@@ -106,6 +91,12 @@ Press button *Create Pull request*. Fill it in.
 The request will appear for *plone.app.locales* authors.
 If it does not get merged in timely manner, poke people on the #plone IRC channel
 or the mailing list below (sometimes requests go unnoticed).
+
+If you want to resync the po files
+==================================
+
+If you want to resync the po files, see the documentation in
+src/plone.app.locales/utils/README.txt
 
 Support
 =======
