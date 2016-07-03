@@ -80,10 +80,6 @@ Python instead, here's how::
         # Return (id, title) pairs
         return [ (id, portal_types[id].title) for id in prepared_types ]
 
-.. note:: 
-
-    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
-
 Creating a new content type
 ============================
 
@@ -192,11 +188,13 @@ to create their content types more easily.
 Dexterity
 ---------
 
-* https://plone.org/products/dexterity
+* http://docs.plone.org/external/plone.app.dexterity/docs/
 
 * Core feature
 
 * Use Dexterity control panel in site setup
+
+* Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone>`
 
 Plomino (Archetypes-based add-on)
 ---------------------------------
