@@ -22,10 +22,7 @@ with Plone 4.
 mr.bob templates
 ================
 
-Please see :doc:`ZopeSkel page </develop/addons/bobtemplates.plone/README>` for project skeleton templates for Dexterity.
-
-
-
+Please see :doc:`bobtemplates.plone page </develop/addons/bobtemplates.plone/README>` for project skeleton templates for Dexterity.
 
 Content creation permissions
 =============================
