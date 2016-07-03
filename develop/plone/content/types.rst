@@ -17,7 +17,7 @@ Plone has two kind of content types subsystems:
 
 * :doc:`Dexterity </develop/plone/content/dexterity>`-based (new)
 
-* See also Plomino (later in this document).
+See also Plomino (later in this document).
 
 Flexible architecture allows other kinds of content type subsystems as well.
 
