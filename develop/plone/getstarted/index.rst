@@ -90,10 +90,6 @@ See the :doc:`Installing add-on packages using buildout
 Creating your first add-on
 --------------------------
 
-.. note ::
-
-	Replace ZopeSkel and paster with bobtemplates !!
-
 Since Python egg package structure is little bit complex, to get started with your first add-on you can create a code skeleton (scaffold) for it using :doc:`bobtemplates for Plone </develop/addons/bobtemplates.plone/README>`.
 
 * Mr.Bob with the bobtemplates.plone generates a basic Python egg package with some Plone files in-place.
@@ -105,10 +101,6 @@ Since Python egg package structure is little bit complex, to get started with yo
 * You start your Plone instance in debug mode.
 
 * You install your add-on through ``Add/remove add-ons``
-
-.. note ::
-
-	Remove Plone 3 and ZopeSkel stuff
 
 If you want to create a package with Dexterity content types please read about :doc:`Setting up a Dexterity project</external/plone.app.dexterity/docs/prerequisite>`.
 
