@@ -2,6 +2,13 @@
 Changelog
 =========
 
+
+Unreleased
+==========
+
+- Add documentation about TinyMCE styles and formats [davilima6]
+
+
 20160606
 ========
 
@@ -29,7 +36,6 @@ Changelog
 - Various typo fixes [jianaijun]
 
 
-
 20160409
 ========
 
@@ -37,6 +43,7 @@ Changelog
 - Improve rst style guide [svx]
 - Fix 588 [svx]
 - Fix 582 [svx]
+
 
 20160405
 ========
@@ -46,6 +53,7 @@ Changelog
 - Fix #579 [rnixx] [svx]
 - Fix #583 [polyester]
 - Fix 'Feedback widget' [svx]
+
 
 20160330
 ========
@@ -72,7 +80,6 @@ Changelog
 - Added information on how to deprecate methods and properties [thet]
 - Replaced tutorial link with a current working one [staeff]
 - Added note about advanced settings tab only for current theme [thet]
-
 
 
 20151208
