@@ -2,6 +2,41 @@
 Changelog
 =========
 
+
+Unreleased
+==========
+
+- Add documentation about TinyMCE styles and formats [davilima6]
+
+
+20160606
+========
+
+- Improve documentation about PFG custom mailer [terapyon]
+- Update documentation about forms in add-ons [staeff]
+- Update documentation about add-on installation [svx]
+- Made isort.cfg more readable by adding spaces [mauritsvanrees]
+- Various .rst style fixes [svx]
+- Add documentation about browserlayer.xml [davilima6]
+- Add better examples for installation on various operating systems [svx]
+- Improve documentation about dexterity AddCoustomView and ZCML [terapyon]
+- Improve 'ask for help' docs [svx]
+- Improve wording and rst on various places [svx]
+- Improve docs about GenericSetup [mauritsvanrees]
+- Fix link [icemac]
+- Cleanup grok [staeff]
+- Update index.rst [fgrcon]
+- Fix various links [polyester]
+- Fix various links [gforcada]
+- Fix various typos [svx]
+- Fix various typos [gforcada]
+- Fix various typos [sverbois]
+- Fix various typos [staeff]
+- Add more docs about ZCML registration features [davidjb]
+- Various typo fixes [jianaijun]
+
+
+
 20160409
 ========
 
@@ -9,6 +44,7 @@ Changelog
 - Improve rst style guide [svx]
 - Fix 588 [svx]
 - Fix 582 [svx]
+
 
 20160405
 ========
@@ -18,6 +54,7 @@ Changelog
 - Fix #579 [rnixx] [svx]
 - Fix #583 [polyester]
 - Fix 'Feedback widget' [svx]
+
 
 20160330
 ========
@@ -44,7 +81,6 @@ Changelog
 - Added information on how to deprecate methods and properties [thet]
 - Replaced tutorial link with a current working one [staeff]
 - Added note about advanced settings tab only for current theme [thet]
-
 
 
 20151208

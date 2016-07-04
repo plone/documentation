@@ -113,7 +113,7 @@ You can use TinyMCE body selector make your CSS class have different styles in v
                 display: block;
         }
 
-        .mceContentBody .column-breaker {
+        .mce-content-body .column-breaker {
                 color: red;
                 border: 1px dashed red;
                 display: block;
@@ -123,11 +123,87 @@ You can use TinyMCE body selector make your CSS class have different styles in v
 
         Firefox does not actually support column breaks, so this was useful headaching experience.
 
+
 Customizing TinyMCE options
 ----------------------------
 
+Plone 4 uses TinyMCE 3. Plone 5 upgraded to TinyMCE 4, which works with a new concept called formats and therefore a new syntax for inline styles: `Your Custom Format's Title|custom_format_id|custom_icon_id`.
+
+.. note ::
+
+        The icon id will be suffixed and used as a CSS class, so you can hook styles to the `.mce-ico.mce-i-custom_icon_id` selector. For block styles there are no icon hooks so you register them similarly to inline styles but omitting the last part, that is, the icon). That's different from Plone 4's `tinymce.xml`, where you specify `Your Custom Format's Title|tag|custom-css-class`.
+
+This means that after defining styles by associating format titles and ids, you need to define each format by using the `Formats` field. There's already a default JSON structure, so if you add your custom entry after `discreet`, you will end up with:
+
+.. code-block:: json
+
+    {
+        "clearfix": {
+            "classes": "clearfix",
+            "block": "div"
+        },
+        "discreet": {
+            "inline": "span",
+            "classes": "discreet"
+        },
+        "custom_format_id": {
+            "block": "div",
+            "classes": "custom-css-class additional-class-1 additional-class-2"
+        }
+    }
+
+Available format options are described in https://www.tinymce.com/docs/configure/content-formatting/#formatparameters
+
 In your add-on code, all TinyMCE options in the control panel can be exported and imported
-:doc:`using GenericSetup, portal_setup and registy.xml </develop/addons/components/genericsetup>`.
+:doc:`using GenericSetup, portal_setup and registry.xml </develop/addons/components/genericsetup>`. For instance, you could add the following records to your `registry.xml`:
+
+.. code-block:: xml
+
+  <records interface="Products.CMFPlone.interfaces.ITinyMCESchema" prefix="plone">
+    <value key="block_styles" purge="False">
+      <element>Your Custom Format's Title|custom_format_id</element>
+    </value>
+    <value key="inline_styles" purge="False">
+      <element>Your Custom Format's Title|custom_format_id|custom_format_id</element>
+    </value>
+    <value key="formats">
+    {
+      "clearfix": {
+        "block": "div",
+        "classes": "clearfix"
+      },
+      "discreet": {
+        "inline": "span",
+        "classes": "discreet"
+      },
+      "custom_format_id": {
+        "block": "div",
+        "classes": "custom-css-class"
+      }
+    }
+    </value>
+  </records>
+
+Alternatively you can define "Quick access custom formats", namely those accessible directly in the first level of the `Formats` menu (instead of inside of `Inline` or `Blocks` styles submenus). You can do this by providing information in the more generic `Other Settings` field, located in the TinyMCE's control panel `Advanced` tab, instead of in the `formats` field, so ending up with:
+
+.. code-block:: xml
+
+  <records interface="Products.CMFPlone.interfaces.ITinyMCESchema" prefix="plone">
+    <value key="other_settings">
+    {
+      "style_formats": [
+        {
+          "title": "Quick access custom format",
+          "inline": "span",
+          "attributes": {
+            "class": "custom-css-class"
+          }
+        }
+      ],
+      "style_formats_merge": "True"
+    }
+    </value>
+  </records>
 
 
 Rich text transformations
