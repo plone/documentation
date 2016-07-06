@@ -66,7 +66,7 @@ A Bucket is the smallest unit of data
 which is written to the database once. Buckets are loaded lazily: BTree only loads
 buckets storing values of keys being accessed.
 
-BTree tries to put as much data as possible data into one bucket.
+BTree tries to put as much data as possible into one bucket.
 When one value in a bucket is changed, the whole bucket must be rewritten to the disk.
 
 `Default bucket size is 30 objects <http://svn.zope.org/ZODB/trunk/src/BTrees/_OOBTree.c?rev=25186&view=markup>`_.
