@@ -53,14 +53,14 @@ Check `https://plone.org/products/plone <https://plone.org/products/plone>`_. Fo
 
 .. code-block:: console
 
-    wget https://launchpad.net/plone/4.3/4.3.9/+download/Plone-4.3.9-UnifiedInstaller.tgz
+    wget https://launchpad.net/plone/4.3/4.3.10/+download/Plone-4.3.10-UnifiedInstaller.tgz
 
 Unpack, change into the unpack directory and run the installer:
 
 .. code-block:: console
 
-    tar xf Plone-4.3.9-UnifiedInstaller.tgz
-    cd Plone-4.3.9-UnifiedInstaller/
+    tar xf Plone-4.3.10-UnifiedInstaller.tgz
+    cd Plone-4.3.10-UnifiedInstaller/
     sudo ./install.sh zeo
 
 This will install Plone to /usr/local/Plone. There are installer options to put it elsewhere. Run `./install.sh`` with no arguments to get options.

@@ -123,12 +123,12 @@ If you're planning on developing with Plone, install git version control support
 Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download from `the plone.org download page <https://plone.org/download>`_ to your server using wget command. Curl also works.
-Substitute the latest version number for 4.3.9 in the instructions below.
+Download from `the plone.org download page <https://plone.org/download>`_ to your server using :command: wget command. :command: Curl also works.
+Substitute the latest version number for 4.3.10 in the instructions below.
 
 .. code-block:: console
 
-    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.9/+download/Plone-4.3.9-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/4.3/4.3.10/+download/Plone-4.3.10-UnifiedInstaller.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -137,11 +137,11 @@ Run the Plone installer in standalone mode
 
     # Extract the downloaded file
     #
-    tar -xf Plone-4.3.9-UnifiedInstaller.tgz
+    tar -xf Plone-4.3.10-UnifiedInstaller.tgz
     #
     # Go the folder containing installer script
     #
-    cd Plone-4.3.9-UnifiedInstaller
+    cd Plone-4.3.10-UnifiedInstaller
     #
     # Run script
     ./install.sh standalone
