@@ -12,20 +12,20 @@ Storage
 Introduction
 ------------
 
-This page explains details how ZODB stores data. The information here
-is important to know to understand Plone database behavior and how to optimize your application.
+This page explains the details how data is stored in the ZODB. The information here
+is important to understand Plones database behavior and how to optimize your application.
 
 Pickling
 --------
 
-ZODB is object oriented database. All data in ZODB is `pickled Python objects <http://docs.python.org/library/pickle.html>`_.
-Pickle is object serialization module for Python.
+ZODB is an object oriented database. All data in the ZODB are stored as `pickled Python objects <http://docs.python.org/library/pickle.html>`_.
+Pickle is the object serialization module in Pythons standard library.
 
-* Each time object is read and it is not cached, object is read from ZODB data storage and unpickled
+* Each time an object is read and it is not cached, object is read from the ZODB data storage and unpickled
 
-* Each time object is written, it is pickled and transaction machinery appends it to ZODB data storage
+* Each time an object is written, it is pickled and transaction machinery appends it to the ZODB data storage
 
-Pickle format is series of bytes. Here is example what it does look like::
+Pickle format is a series of bytes. Here is an example what it looks like::
 
 	>>> import pickle
 	>>> data = { "key" : "value" }
@@ -55,19 +55,19 @@ is any pickleable Python object or primitive you store in your database.
 
 `ZODB data structure interfaces <http://svn.zope.org/ZODB/trunk/src/BTrees/Interfaces.py?rev=88776&view=markup>`_.
 
-`Using BTrees example from Zope Docs <http://zodb.org/documentation/articles/ZODB2.html#using-btrees>`_.
+`Using BTrees example from Zope Docs <http://www.zodb.org/en/latest/documentation/articles/ZODB2.html#using-btrees>`_.
 
 Buckets
 -------
 
 BTree stores data in buckets (`OOBucket <http://docs.zope.org/zope3/Code/BTrees/OOBTree/OOBucket/index.html>`_).
 
-Bucket is the smallest unit of data
+A Bucket is the smallest unit of data
 which is written to the database once. Buckets are loaded lazily: BTree only loads
 buckets storing values of keys being accessed.
 
-BTree tries to stick as much data into one bucket once as possible.
-When one value in bucket is changed the whole bucket must be rewritten to the disk.
+BTree tries to put as much data as possible data into one bucket.
+When one value in a bucket is changed, the whole bucket must be rewritten to the disk.
 
 `Default bucket size is 30 objects <http://svn.zope.org/ZODB/trunk/src/BTrees/_OOBTree.c?rev=25186&view=markup>`_.
 
@@ -78,12 +78,12 @@ Plone has two kinds of fundamental way to store data:
 
 * Attribute storage (stores values directly in the pickled objects).
 
-* Annotation storage (OOBTree based). Plone objects have attribute __annotations__ which is
-  OOBtree for storing objects in name-conflict free way.
+* Annotation storage (OOBTree based). Plone objects have attribute __annotations__ which is an
+  OOBtree for storing objects in a name-conflict free way.
 
-When storing objects in annotation storage, reading object
-values need at least one extra database look up to load the first bucket
-of OOBTree.
+When objects are stored in the annotation storage, reading object
+values needs at least one extra database look up to load the first bucket
+of the OOBTree.
 
 If the value is going to be used frequently, and especially if it is read when viewing the content object,
 storing it in an attribute is more efficient than storing it in an annotation.
