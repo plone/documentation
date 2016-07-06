@@ -1,6 +1,6 @@
-=======================
+=============
  Installation
-=======================
+=============
 
 .. admonition:: Description
 
@@ -348,11 +348,11 @@ Ideally, install these via system packages or ports. If that's not possible, use
 Don't worry about this if you're using an installer.
 
 Entering debug mode after installation
-=======================================
+======================================
 
 When you have Plone installed and want to start development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
 
 Installer source code
-======================
+=====================
 
 * https://github.com/plone/Installers-UnifiedInstaller
