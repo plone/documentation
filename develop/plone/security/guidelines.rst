@@ -6,10 +6,10 @@ Programming Guidelines
 Use of structure in page templates
 ------------------------------------
 
-Do not use the `structure` page template feature with unfiltered input. This can lead to
-XSS attacks.
+Do not use the `structure` page template feature with unfiltered input.
+This can lead to XSS attacks.
 
-Example potentially dangerous page template snipper::
+Example potentially dangerous page template snippet::
 
   <figcaption tal:content="structure context/image_caption" />
 
@@ -19,8 +19,7 @@ The reason this snippet is dangerous is because `image_caption` is not filtered 
 Manual filtering
 ~~~~~~~~~~~~~~~~
 
-If you need to use structure with unfiltered input, you can manually run plone's output
-filtering engine on arbitrary html.
+If you need to use structure with unfiltered input, you can manually run plone's output filtering engine on arbitrary html.
 
 Example::
 
@@ -36,12 +35,10 @@ Example::
 Persistent traversable object methods
 -------------------------------------
 
-Any persistent objects that can be traversed to(by accessing them via url), needs to have
-careful consideration when writing methods.
+Any persistent objects that can be traversed to (by accessing them via url), needs to have careful consideration when writing methods.
 
-A legacy artifact of Zope2 is that it automatically published methods with doc strings. If
-you forgot to specify permissions on a persistent traversable object, and it does writes on
-the database or discloses information it should not, you could be causing a security issue.
+A legacy artifact of Zope2 is that it automatically published methods with doc strings.
+If you forgot to specify permissions on a persistent traversable object, and it does writes on the database or discloses information it should not, you could be causing a security issue.
 
 
 Do not::
@@ -101,5 +98,5 @@ Do not(underscorejs)::
 Other considerations
 ~~~~~~~~~~~~~~~~~~~~
 
-Many modern frameworks are safe by default. For example, it is difficult to render untrusted,
-raw HTML in the ReactJS framework.
+Many modern frameworks are safe by default.
+For example, it is difficult to render untrusted, raw HTML in the ReactJS framework.
