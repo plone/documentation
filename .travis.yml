@@ -20,7 +20,6 @@ before_script:
 - echo '[general]' > docutils.conf
 - echo 'report_level = 5' >> docutils.conf
 script:
-- make screenshots
 - LANGS=en make html
 after_script:
 cache:
