@@ -66,6 +66,9 @@ Then from the "Actions" menu, select "Check out":
           Wait until element is visible
           ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
           Click link  css=#plone-contentmenu-actions-iterate_checkout
+          Wait until element is visible
+          ...  name=form.button.Checkout
+          Click button  name=form.button.Checkout
           Element should be visible  css=.portalMessage
           Update element style  portal-footer  display  none
 
