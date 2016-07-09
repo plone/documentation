@@ -6,6 +6,7 @@ Changelog
 Unreleased
 ==========
 
+- Add security guidelines for developers[vangheem]
 - Overhaul of vocabularies section. [jensens]
 - Remove Deliverance info for theming and refer to diazo.org deployment [fredvd]
 - Improve ReStructuredText Style Guide [svx]
