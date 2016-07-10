@@ -276,6 +276,17 @@ For example, to specify XML:
         File "<stdin>", line 1, in <module>
       ZeroDivisionError: integer division or modulo by zero
 
+... or JavaScript:
+
+.. code-block:: javascript
+
+    .. code-block:: javascript
+
+    var $el = $('<div/>');
+    var value = '<script>alert("hi")</script>';
+    $el.text(value);
+    $('body').append($el);
+
 Setting the highlighting mode for the whole document:
 
 .. code-block:: rst
