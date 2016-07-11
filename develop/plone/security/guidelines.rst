@@ -43,7 +43,7 @@ If you forgot to specify permissions on a persistent traversable object, and it 
 
 Do not:
 
-code-block:: python
+.. code-block:: python
 
     class MyContent(DexterityItem):
         def foobar(self):
@@ -52,7 +52,7 @@ code-block:: python
 
 Do this:
 
-code-block:: python
+.. code-block:: python
 
     class MyContent(DexterityItem):
         def foobar(self):
@@ -61,7 +61,7 @@ code-block:: python
 
 Or this:
 
-code-block:: python
+.. code-block:: python
 
     class MyContent(DexterityItem):
         security = ClassSecurityInfo()
@@ -80,7 +80,7 @@ If you build HTML from user input, make sure to always escape the input.
 
 A common pitfall in jQuery will look like this:
 
-code-block:: javascript
+.. code-block:: javascript
 
     var value = '<script>alert("hi")</script>';
     $('body').append($(value));
@@ -88,7 +88,7 @@ code-block:: javascript
 
 By default, jQuery is not safe. To do the previous example in jQuery, you could:
 
-code-block:: javascript
+.. code-block:: javascript
 
     var $el = $('<div/>');
     var value = '<script>alert("hi")</script>';
@@ -98,13 +98,13 @@ code-block:: javascript
 
 In underscorejs templates make sure to use:
 
-code-block:: javascript
+.. code-block:: javascript
 
     <%- … %>
 
 Do not(underscorejs):
 
-code-block:: javascript
+.. code-block:: javascript
 
     <%= … %>
 
