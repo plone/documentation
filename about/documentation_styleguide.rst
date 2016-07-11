@@ -74,6 +74,8 @@ For including documentation into docs.plone.org, **please** follow these guideli
   Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
   PEP8 is for Python files, not for ReStructuredText.
 
+* Please follow our :doc: `word choice <word_choice>`.
+
 * Usage of `Sphinx <http://sphinx-doc.org/>`_ within your project is optional, but if you want your add-on to (also) be documented for instance on `Read The Docs <https://readthedocs.org/>`_ it is highly recommended. Put the associated Makefile and conf.py into the /docs directory.
 
 
