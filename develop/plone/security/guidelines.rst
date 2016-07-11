@@ -4,7 +4,7 @@ Programming Guidelines
 
 
 Use of structure in page templates
-------------------------------------
+----------------------------------
 
 Do not use the `structure` page template feature with unfiltered input.
 This can lead to XSS attacks.
@@ -19,7 +19,7 @@ The reason this snippet is dangerous is because `image_caption` is not filtered 
 Manual filtering
 ~~~~~~~~~~~~~~~~
 
-If you need to use structure with unfiltered input, you can manually run plone's output filtering engine on arbitrary html.
+If you need to use structure with unfiltered input, you can manually run Plone's output filtering engine on arbitrary html.
 
 Example::
 
@@ -35,27 +35,33 @@ Example::
 Persistent traversable object methods
 -------------------------------------
 
-Any persistent objects that can be traversed to (by accessing them via url), needs to have careful consideration when writing methods.
+Any persistent objects that can be traversed to (by accessing them via URL), needs to have careful consideration when writing methods.
 
 A legacy artifact of Zope2 is that it automatically published methods with doc strings.
 If you forgot to specify permissions on a persistent traversable object, and it does writes on the database or discloses information it should not, you could be causing a security issue.
 
 
-Do not::
+Do not:
+
+code-block:: python
 
     class MyContent(DexterityItem):
         def foobar(self):
             """My doc string. This method is public!"""
             self.x = 'foobar'  # mutation
 
-Do this::
+Do this:
+
+code-block:: python
 
     class MyContent(DexterityItem):
         def foobar(self):
             # My doc string.
             self.x = 'foobar'  # mutation
 
-Or this::
+Or this:
+
+code-block:: python
 
     class MyContent(DexterityItem):
         security = ClassSecurityInfo()
@@ -72,13 +78,17 @@ This isn't a Plone specific guideline, this is for ALL JavaScript people write a
 
 If you build HTML from user input, make sure to always escape the input.
 
-A common pitfall in jQuery will look like this::
+A common pitfall in jQuery will look like this:
+
+code-block:: javascript
 
     var value = '<script>alert("hi")</script>';
     $('body').append($(value));
 
 
-By default, jQuery is not safe. To do the previous example in jQuery, you could::
+By default, jQuery is not safe. To do the previous example in jQuery, you could:
+
+code-block:: javascript
 
     var $el = $('<div/>');
     var value = '<script>alert("hi")</script>';
@@ -86,11 +96,15 @@ By default, jQuery is not safe. To do the previous example in jQuery, you could:
     $('body').append($el);
 
 
-In underscorejs templates make sure to use::
+In underscorejs templates make sure to use:
+
+code-block:: javascript
 
     <%- … %>
 
-Do not(underscorejs)::
+Do not(underscorejs):
+
+code-block:: javascript
 
     <%= … %>
 
