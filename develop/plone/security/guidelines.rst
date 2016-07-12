@@ -23,7 +23,9 @@ Manual filtering
 
 If you need to use structure with unfiltered input, you can manually run Plone's output filtering engine on arbitrary html.
 
-Example::
+Example:
+
+.. code-block:: python
 
     from plone import api
 
