@@ -275,7 +275,7 @@ The new registration will look something like:
     </registry>
 
 Notice how I've now added the deps property of "jquery".
-This is not necessary--I'm just giving an example that this script needs a global jquery available.
+This is not necessary -- I'm just giving an example that this script needs a global jQuery available.
 
 This alone will not get your JavaScript included however.
 In order to modernize our JavaScript stack, Plone needed to make some changes with how it included JavaScript.
