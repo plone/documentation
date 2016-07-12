@@ -9,9 +9,11 @@ Use of structure in page templates
 Do not use the `structure` page template feature with unfiltered input.
 This can lead to XSS attacks.
 
-Example potentially dangerous page template snippet::
+Example potentially dangerous page template snippet:
 
-  <figcaption tal:content="structure context/image_caption" />
+.. code-block:: xml
+
+    <figcaption tal:content="structure context/image_caption" />
 
 The reason this snippet is dangerous is because `image_caption` is not filtered input/output.
 
