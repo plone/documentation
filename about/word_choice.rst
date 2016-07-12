@@ -27,3 +27,5 @@ The following table lists the preferred word or phrase choice.
 +---------------------+--------------------------+
 | **JavaScript**      | Javascript, javascript   |
 +---------------------+--------------------------+
+| **jQuery**          | jquery                   |
++---------------------+--------------------------+
