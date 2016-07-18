@@ -24,7 +24,7 @@ What viewlets do
 
 * Viewlets are managed using /@@manage-viewlets page
 
-* Viewlets can shown and hidden through-the-web
+* Viewlets can be shown and hidden through-the-web
 
 * Viewlets can be reordered (limited to reordering within container in Plone 3.x)
 
