@@ -194,7 +194,7 @@ Dexterity
 
 * Use Dexterity control panel in site setup
 
-* Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone>`
+* Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
 Plomino (Archetypes-based add-on)
 ---------------------------------
@@ -286,4 +286,3 @@ The default addable types are the types that are addable when
 ``constrainTypesMode`` is ``0`` (i.e not enabled).
 
 For more information, see **Products/CMFPlone/interfaces/constraints.py**
-
