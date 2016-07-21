@@ -1,6 +1,6 @@
-===============
-Rest Styleguide
-===============
+============================
+ReStructuredText Style Guide
+============================
 
 .. admonition:: Description
 
@@ -26,7 +26,7 @@ Line length & translations
 
 Documentation is not code. Repeat after us: **Documentation is not code.**
 
-Therefore, documentation should **not** follow PEP8 or other arbitrary conventions.
+Therefore, documentation should **not** follow `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ or other arbitrary conventions.
 
 .. note::
 
@@ -104,7 +104,7 @@ Each page should contain, in this order:
       This text will go to Plone's pages description field. It will appear in the search engine listings for the page.
 
 The *contents* directive will cause Sphinx to generate the *Table of Contents* shortcut links at the start of the page.
-Using the *local* option excludes the page itself and ToC title from the listing:
+Using the *local* option excludes the page itself and `ToC <http://www.sphinx-doc.org/en/stable/markup/toctree.html>`_ title from the listing:
 
 .. code-block:: rst
 
@@ -139,7 +139,7 @@ Each section (folder) must contain
 
 * A single paragraph summarizing what this section is all about. This will be mapped to Plone folder description.
 
-* Sphinx toctree directive, maxdepth 2. Each ``.rst`` file in the folder should
+* Sphinx `toctree <http://www.sphinx-doc.org/en/stable/markup/toctree.html>`_  directive, maxdepth 2. Each ``.rst`` file in the folder should
   be linked to this toctree.
 
 .. code-block:: rst
@@ -154,7 +154,7 @@ Each section (folder) must contain
 Headings style guide
 ====================
 
-ReStructured text and Sphinx enable any style you would prefer for the various heading level you would need.
+reStructuredText and Sphinx enable any style you would prefer for the various heading level you would need.
 For example, underlining level 1 headings with ``.``, level 2 headings with ``#`` and level 3 headings with ``|`` is perfectly valid as far as ``docutils`` is concerned.
 Unfortunately this is not the same for a human documentation maintainer.
 
@@ -297,7 +297,7 @@ Setting the highlighting mode for the whole document:
 
       some shell commands
 
-If syntax highlighting is not enabled for your code block, you probably have a syntax error and Pygments will fail silently.
+If syntax highlighting is not enabled for your code block, you probably have a syntax error and `Pygments <http://pygments.org>`_ will fail silently.
 
 The full list of lexers and associated short names is here:
 http://pygments.org/docs/lexers/
