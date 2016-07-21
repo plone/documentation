@@ -6,6 +6,7 @@ Changelog
 Unreleased
 ==========
 
+- Improve ReStructuredText Style Guide [svx]
 - Add documentation about TinyMCE styles and formats [davilima6]
 
 
