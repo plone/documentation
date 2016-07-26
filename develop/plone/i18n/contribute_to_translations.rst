@@ -21,7 +21,7 @@ Updating translations for Plone 5
 =================================
 
 If you want to test your latest translation with unreleased packages
-containing i18n fixes for Plone 4, get the buildout like this:
+containing i18n fixes for Plone 5, get the buildout like this:
 
 .. code-block:: shell
 
