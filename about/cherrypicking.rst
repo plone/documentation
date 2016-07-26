@@ -30,7 +30,7 @@ do the following to bring those changes to branch 5.0
     git cherry-pick abcdef
     git push
 
-If it should go to branch even more branches, repeat the last three steps above.
+If it should go to even more branches, repeat the last three steps above.
 
 If there are more than one single commit in the pull request,
 repeat the :command:`cherry-pick` command as many times as needed.
