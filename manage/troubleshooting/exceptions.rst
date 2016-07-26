@@ -1760,7 +1760,7 @@ is problematic and does not uninstall cleanly.
 * Hope your site works again
 
 .. seealso::
-    * https://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
+    * :doc:`/manage/troubleshooting/manual-remove-utility`
     * http://opensourcehacker.com/2011/06/01/plone-4-upgrade-results-and-steps/
     * https://pypi.python.org/pypi/wildcard.fixpersistentutilities
 
@@ -2069,9 +2069,9 @@ You should see a warning in logs giving you a hint when running add-on installer
 
     2011-05-29 16:40:25 INFO GenericSetup.toolset Class Products.Notifica.NotificaTool.NotificaTool not found for tool notifica_tool
 
-**Solution**: see informatin below (Removing portal tools part)
+**Solution**: see information below (Removing portal tools part)
 
-* https://plone.org/documentation/kb/manually-removing-local-persistent-utilities/
+* :doc:`/manage/troubleshooting/manual-remove-utility`
 
 Example: start site debug shell::
 
