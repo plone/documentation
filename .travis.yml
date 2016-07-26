@@ -13,6 +13,7 @@ before_install:
 - cd ..
 install:
 - git clone https://github.com/plone/papyrus ../papyrus && cd ../papyrus
+- virtualenv . && source bin/activate
 - mkdir -p source && ln -s ../../documentation source/documentation
 - pip install zc.buildout
 - bin/buildout -N -t 3 buildout:eggs-directory=../eggs buildout:checkout=documentation sources:documentation="git https://github.com/plone/documentation egg=false" versions:plone.app.robotframework=0.9.14
