@@ -50,7 +50,7 @@ More specifically, data is usually stored as Object Oriented Binary Tree
 `OOBtree <http://docs.zope.org/zope3/Code/BTrees/OOBTree/OOBTree/index.html>`_
 which provides a Python object as key and Python object value mappings. Key is the object id in the parent container as a string, and value is any pickleable Python object or primitive you store in your database.
 
-`ZODB data structure interfaces <http://svn.zope.org/ZODB/trunk/src/BTrees/Interfaces.py?rev=88776&view=markup>`_.
+`ZODB data structure interfaces <https://github.com/zopefoundation/BTrees/blob/master/BTrees/Interfaces.py>`_.
 
 `Using BTrees example from Zope Docs <http://www.zodb.org/en/latest/documentation/articles/ZODB2.html#using-btrees>`_.
 
@@ -65,7 +65,7 @@ Buckets are loaded lazily: BTree only loads buckets storing values of keys being
 BTree tries to put as much data as possible into one bucket.
 When one value in a bucket is changed, the whole bucket must be rewritten to the disk.
 
-`Default bucket size is 30 objects <http://svn.zope.org/ZODB/trunk/src/BTrees/_OOBTree.c?rev=25186&view=markup>`_.
+`Default bucket size is 30 objects <https://github.com/zopefoundation/BTrees/blob/master/BTrees/_OOBTree.c#L27>`_.
 
 Storing as attribute vs. storing in BTree
 -----------------------------------------
