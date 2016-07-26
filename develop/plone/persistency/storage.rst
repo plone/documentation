@@ -90,7 +90,8 @@ BLOBs are large binary objects like files or images.
 
 BLOBs are supported since ZODB 3.8.x. 
 
-When you use BLOB interface to store and retrieve data, they are stored physically as files on your file systems. A File system, as the name says, was designed to handle files and has far better performance on large binary data than sticking the data into ZODB.
+When you use BLOB interface to store and retrieve data, they are stored physically as files on your file systems.
+A file system, as the name says, was designed to handle files and has far better performance on large binary data than sticking the data into ZODB.
 
 BLOBs are streamable which means that you can start serving the file from the beginning of the file to HTTP wire without needing to buffer the whole data to the memory first (slow).
 
