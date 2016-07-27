@@ -1,57 +1,104 @@
 Theming Plone
 =============
 
-.. admonition:: Intro
 
-   The current best-practice way to theme a Plone site is by using an engine called "Diazo".
-   This allows designers to design a theme in just plain, flat HTML, CSS (and javascript, if wanted) and then to hook that into the Plone backend to fill it with sophisticated content.
+Introduction
+------------
 
-   The easiest way to do this is to use "plone.app.theming". But if you need to integrate Plone with other back-end servers, legacy systems, or any webservice, you can use Diazo to all combine it in a unified look & feel.
+The documentation about theming a Plone site is organized by scenarios. The way you can do things depends on your use case. Reade the following scenarios and decide where to start.
 
+We should reuse this:
 
-
-.. toctree::
-   :maxdepth: 2
-
-   theme_product
-
-
-.. toctree::
-   :maxdepth: 2
+* https://github.com/plone/documentation/issues/350
+* https://github.com/collective?utf8=✓&query=diazo
+* https://github.com/TH-code/diazoframework.plone
+* https://github.com/TH-code/diazotheme.bootstrap
+* http://docs.diazo.org/en/latest/
 
 
-   /external/plone.app.theming/docs/index
-   /external/diazo/docs/index
+Theming through the web
++++++++++++++++++++++++
+
+This tutorial will show you how you can change the look and feel of Plone through the web without writing a line of code.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
+   theming-through-the-web
+
+
+Customize the Barceloneta default theme
++++++++++++++++++++++++++++++++++++++++
+
+This tutorial shows how to customize the new Plone default theme. You can make minor customizations up to changing templates and layout.
+
+.. toctree::
+   :maxdepth: 1
+
+   customize-barceloneta
+
+
+Create a theme based on a website template
+++++++++++++++++++++++++++++++++++++++++++
+
+This tutorial shows how to create an theme based on a static HTML/CSS website template. We download a Bootstrap theme and use it for anonymous users.
+
+.. toctree::
+   :maxdepth: 1
+
+   theme-with-static-website-template
+
+
+New default theme Barceloneta
+---------------------------------
+
+Plone 5 is shipped with an all new default theme called Barceloneta. It's based on Twitter Bootstrap and use its grid system for example.
+
+.. toctree::
+   :maxdepth: 1
    resourceregistry
    barceloneta
 
-An older (Plone 4.2) quick guide which may help to understand Diazo better:
+
+Links and other resources
+--------------------------------
+
+Since there are many ways to do things in Plone there is a lot of other documentation. Have a look at the following sections.
+
+plone.app.theming Manual
+++++++++++++++++++++++++
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   quick_test
+   /external/plone.app.theming/docs/index
 
 
-Using Diazo is also possible as a standalone service. That makes it possible to include several back-end applications under one 'look'
+Diazo theme engine guide
+++++++++++++++++++++++++
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+
+   /external/diazo/docs/index
+
+
+JS/CSS Resources
+++++++++++++++++
+
+.. toctree::
+   :maxdepth: 1
+
+   resources
+
+
+Include back-end applications with Deliverance
+++++++++++++++++++++++++++++++++++++++++++++++
+
+Using Diazo is also possible as a standalone service. That makes it possible to include several back-end applications under 
+one 'look'
+
+.. toctree::
+   :maxdepth: 1
 
    deliverance
-
-General information on the stylesheets and other resources in Plone
-
-.. toctree::
-   :maxdepth: 2
-
-   templates_css/index
-
-.. note ::
-
-    Up to version 4.1, Plone was using an older style of theming. Using that is not considered *best practice* anymore.
-    See `older versions of these docs <http://docs.plone.org/4/en/adapt-and-extend/theming/old_style_theming.html>`_ if you need the information.
