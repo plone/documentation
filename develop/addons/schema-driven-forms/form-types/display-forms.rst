@@ -38,7 +38,7 @@ Display forms are used much like standard views. For example:
 
 ::
 
-    from give import grok
+    from five import grok
     from plone.supermodel import model
     from plone.directives import dexterity, form
 
