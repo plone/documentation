@@ -5,7 +5,7 @@ Barceloneta theme
 Barceloneta is the name of the Plone 5 default theme.
 It's named after the `Barcelona beach and neighbourhood <https://en.wikipedia.org/wiki/La_Barceloneta,_Barcelona>`_.
 Barceloneta is a Diazo theme made from scratch using modern frontend technologies.
-It's responsive and spans throught all the Plone UI including the CMS backend part.
+It's responsive and spans through all the Plone UI including the CMS backend part.
 
 It's based on Bootstrap 3, but it's not dependent of it in any way.
 Although it reuses some of the structure and good practices of the original Bootstrap, it has its own personality and is fully adapted to Plone.
