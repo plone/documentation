@@ -6,6 +6,7 @@ Changelog
 Unreleased
 ==========
 
+- Remove Deliverance info for theming and refer to diazo.org deployment [fredvd]
 - Improve ReStructuredText Style Guide [svx]
 - Add documentation about TinyMCE styles and formats [davilima6]
 
