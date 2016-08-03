@@ -6,6 +6,7 @@ Changelog
 Unreleased
 ==========
 
+- Add security guidelines for developers[vangheem]
 - Add documentation about TinyMCE styles and formats [davilima6]
 
 
