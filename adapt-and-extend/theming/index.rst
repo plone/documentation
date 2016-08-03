@@ -37,12 +37,10 @@ An older (Plone 4.2) quick guide which may help to understand Diazo better:
    quick_test
 
 
-Using Diazo is also possible as a standalone service. That makes it possible to include several back-end applications under one 'look'
-
-.. toctree::
-   :maxdepth: 2
-
-   deliverance
+    Using Diazo is also possible as a standalone service. Normally the Diazo theme transformation is running inside the Plone process. But you can compile the Diazo rules to low level XSLT and let a webserver
+    do the actual transformation, or run the Diazo transformations in a wsgi enabled service. 
+    If you want this advnced stand alone set up, please take a look at documentaiton on `www.diazo.org <http://www.diazo.org>`_, especially the
+    `Compilation <http://docs.diazo.org/en/latest/compiler.html>`_ and `Deployment <http://docs.diazo.org/en/latest/deployment.html>`_ chapters. 
 
 General information on the stylesheets and other resources in Plone
 
