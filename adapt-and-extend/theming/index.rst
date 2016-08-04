@@ -3,7 +3,7 @@ Theming Plone
 
 .. admonition:: Intro
 
-   The current best-practice way to theme a Plone site is by using an engine called "Diazo".
+   The current best-practice way to theme a Plone site is by using an engine called `"Diazo" <http://www.diazo.org>`_.
    This allows designers to design a theme in just plain, flat HTML, CSS (and JavaScript, if wanted) and then to hook that into the Plone backend to fill it with sophisticated content.
 
    The easiest way to do this is to use "plone.app.theming". But if you need to integrate Plone with other back-end servers, legacy systems, or any webservice, you can use Diazo to all combine it in a unified look & feel.
@@ -37,10 +37,10 @@ An older (Plone 4.2) quick guide which may help to understand Diazo better:
    quick_test
 
 
-    Using Diazo is also possible as a standalone service. Normally the Diazo theme transformation is running inside the Plone process. But you can compile the Diazo rules to low level XSLT and let a webserver
-    do the actual transformation, or run the Diazo transformations in a wsgi enabled service.
-    If you want this advanced stand alone set up, please take a look at documentation on `www.diazo.org <http://www.diazo.org>`_, especially the
-    `Compilation <http://docs.diazo.org/en/latest/compiler.html>`_ and `Deployment <http://docs.diazo.org/en/latest/deployment.html>`_ chapters.
+Using Diazo is also possible as a standalone service. Normally the Diazo theme transformation is running inside the Plone process. But you can compile the Diazo rules to low level XSLT and let a webserver
+do the actual transformation, or run the Diazo transformations in a wsgi enabled service.
+If you want this advanced stand alone set up, please take a look at documentation on `www.diazo.org <http://www.diazo.org>`_, especially the
+`Compilation <http://docs.diazo.org/en/latest/compiler.html>`_ and `Deployment <http://docs.diazo.org/en/latest/deployment.html>`_ chapters.
 
 General information on the stylesheets and other resources in Plone
 
