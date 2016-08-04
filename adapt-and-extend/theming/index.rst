@@ -38,7 +38,7 @@ An older (Plone 4.2) quick guide which may help to understand Diazo better:
 
 
 Using Diazo is also possible as a standalone service. Normally the Diazo theme transformation is running inside the Plone process. But you can compile the Diazo rules to low level XSLT and let a webserver
-do the actual transformation, or run the Diazo transformations in a wsgi enabled service.
+do the actual transformation, or run the Diazo transformations in a `WSGI <https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface>`_ enabled service.
 If you want this advanced stand alone set up, please take a look at documentation on `www.diazo.org <http://www.diazo.org>`_, especially the
 `Compilation <http://docs.diazo.org/en/latest/compiler.html>`_ and `Deployment <http://docs.diazo.org/en/latest/deployment.html>`_ chapters.
 
