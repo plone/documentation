@@ -1086,15 +1086,15 @@ of your form class
 
 .. code-block:: python
 
-    from zope.app.pagetemplate import ViewPageTemplateFile as Z3ViewPageTemplateFile
+    from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile as Z3ViewPageTemplateFile
     from z3c.form.interfaces import INPUT_MODE
 
     class AddForm(DefaultAddForm):
 
-        def updateWidgets(self):
+        def updateWidgets(self, prefix=None):
             """ """
             # Call parent to set-up initial widget data
-            DefaultAddForm.updateWidgets(self)
+            DefaultAddForm.updateWidgets(self, prefix=prefix)
 
             # Note we need to be discreet to different form modes (view, edit, hidden)
             if self.fields["sections"].mode == INPUT_MODE:
