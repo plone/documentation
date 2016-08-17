@@ -8,6 +8,26 @@ Unreleased
 
 - Remove Deliverance info for theming and refer to diazo.org deployment [fredvd]
 - Add documentation about TinyMCE styles and formats [davilima6]
+- Improve documentation about TinyMCE [sneridagh]
+- Fix various links and typos [gforcada]
+- Fix various links and typos [staeff]
+- Fix various links and typos [fgrcon]
+- Fix various links and typos [polyester]
+- Fix various links and typos [svx]
+- Various .rst style fixes [svx]
+- Fix #641 [svx]
+- Improve documentation about PFG mailer [terapyon]
+- Update documentation about how to contribute to i18n translation for Plone 5 [vincentfretin]
+- Cleanup and remove old notes in docs [gforcada]
+- Improve and update documentation about how to develop content types [gforcada]
+- Add documentation on how to cherry-pick [gforcada]
+- Improve Style-guide [svx]
+- Fix robot test for working with content section [polyester]
+- Add documentation about word choice [svx]
+- Improve documentation about storage [polyester]
+- Fix example for overriding widget's template [pgrunewald]
+
+
 
 
 20160606
