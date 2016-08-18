@@ -70,11 +70,11 @@ For including documentation into docs.plone.org, **please** follow these guideli
 * The '/docs' directory should contain **only** content related to documentation, please do **not** put the license here.
   A LICENSE.rst with a short description of the license, and LICENSE.GPL for the legalese should go into the top level of your package next to your README.rst
 
-* Please follow this :doc:`ReST styleguide <rst-styleguide>` and use **semantic linefeeds**.
+* Please follow this :doc:`rst-styleguide` and use **semantic linefeeds**.
   Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
   PEP8 is for Python files, not for ReStructuredText.
 
-* Please follow our :doc: `word choice <word_choice>`.
+* Please follow our :doc:`word_choice`.
 
 * Usage of `Sphinx <http://sphinx-doc.org/>`_ within your project is optional, but if you want your add-on to (also) be documented for instance on `Read The Docs <https://readthedocs.org/>`_ it is highly recommended. Put the associated Makefile and conf.py into the /docs directory.
 
