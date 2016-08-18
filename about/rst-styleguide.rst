@@ -1,5 +1,5 @@
 ===============
-Rest Styleguide
+ReST Styleguide
 ===============
 
 .. admonition:: Description
