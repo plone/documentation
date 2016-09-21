@@ -283,7 +283,7 @@ New code:
 
 
 All deprecated methods
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Some of these were mentioned already.
 
@@ -326,7 +326,7 @@ You should switch to the new methods instead:
 
 
 INonInstallable
----------------
+~~~~~~~~~~~~~~~
 
 There used to be one ``INonInstallable`` interface in ``CMFPlone`` (for hiding profiles) and another one in ``CMFQuickInstallerTool`` (for hiding products).
 In the new situation, these are combined in the one from CMFPlone.
