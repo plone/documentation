@@ -32,6 +32,16 @@ Upgrading to Plone 5.0
 
    upgrade_to_50
 
+
+Upgrading to Plone 5.1
+----------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   upgrade_to_51
+
+
 Add your package to buildout
 ----------------------------
 
