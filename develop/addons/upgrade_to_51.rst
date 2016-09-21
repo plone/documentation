@@ -152,10 +152,6 @@ New code:
 
     qi.install_product('Products.CMFPlacefulWorkflow')
 
-.. @FWT: When a Product registers its profile in Python code instead of zcml, it might get registered without ``Products.`` in the name.
-   Do we still wish to support this?
-   My vote: no.
-
 
 isProductInstalled
 ~~~~~~~~~~~~~~~~~~
@@ -189,8 +185,6 @@ New code:
     qi.install_product(product_name)
 
 Note that no keyword arguments are accepted.
-
-.. @FWT: We might keep ``omit_snapshots`` and ``blacklisted_steps`` if we really want.
 
 
 installProducts
