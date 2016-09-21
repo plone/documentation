@@ -23,6 +23,16 @@ In other cases you may need to write custom installer code (setuphandlers.py).
 See the :doc:`GenericSetup documentation </develop/addons/components/genericsetup>`.
 
 
+default profile
+~~~~~~~~~~~~~~~
+
+Historically, when your add-on had multiple profiles, their names would be sorted alphabetically and the first one would be taken as the installation profile.
+It was always recommended to use ``default`` as name of this first profile.
+
+Since Plone 5.1, when there is a ``default`` profile, it is always used as the installation profile, regardless of other profile names.
+Exception: when this ``default`` profile is marked in an ``INonInstallable`` utility, it is ignored and Plone falls back to using the first from the alphabetical sorting.
+
+
 Uninstall
 ~~~~~~~~~
 
