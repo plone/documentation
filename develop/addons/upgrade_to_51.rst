@@ -45,6 +45,22 @@ This was always only partial, so you could not rely on it to fully cleanup the s
 Since plone 5.1 this cleanup is no longer done.
 It is best practice to create an uninstall profile for all your packages.
 
+If you were relying on this automatic cleanup, you need to add extra files to clean it up yourself.
+You need to do that when your default profile contains one of these files:
+
+- ``actions.xml``
+- ``componentregistry.xml``
+- ``contenttyperegistry.xml``.
+  This seems rarely used.
+  Note: the `contenttyperegistry import step <https://github.com/zopefoundation/Products.CMFCore/blob/2.2.10/Products/CMFCore/exportimport/contenttyperegistry.py#L73>`_ only supports adding, not removing.
+  So you may need to improve that code based on the old `CMFQuickInstallerTool code <https://github.com/plone/Products.CMFQuickInstallerTool/blob/3.0.13/Products/CMFQuickInstallerTool/InstalledProduct.py#L364>`_.
+- ``cssregistry.xml``
+- ``jsregistry.xml``
+- ``skins.xml``
+- ``toolset.xml``
+- ``types.xml``
+- ``workflows.xml``
+
 When there is no uninstall profile, the add-ons control panel will give a warning.
 An uninstall profile is a profile that is registered with the name ``uninstall``.
 For an example, see https://github.com/plone/plone.app.multilingual/tree/master/src/plone/app/multilingual/profiles/uninstall
