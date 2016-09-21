@@ -212,6 +212,12 @@ When you deactivate an add-on in the control panel, Plone looks for a profile wi
     If there is no ``uninstall`` profile, a warning is displayed before installing the add-on.
     If you do activate the add-on, no deactivate button will be shown.
 
+.. versionadded:: 5.1
+
+    The add-ons control panel no longer does an automatic partial cleanup,
+    for example removing added skins and css resources.
+    This was always only partial, so you could not rely on it to fully cleanup the site.
+
 .. note::
 
     This method works in Plone 4.3.7 and higher.
