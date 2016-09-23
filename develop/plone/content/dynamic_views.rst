@@ -194,6 +194,7 @@ Getting active layout
     >>> self.portal.folder.getLayout()
     'atct_album_view'
 
+.. _set-default-view-programmatically-label:
 
 Changing default view programmatically
 ======================================
@@ -278,20 +279,55 @@ Add to your content type class::
 Setting a view using marker interfaces
 ======================================
 
-If you need to have a view for few individual content items only, it
-is best to do this using marker interfaces.
+If you need to have a view for few individual content items only,
+it is best to do this using marker interfaces.
 
-* Register a view against a marker interface
+Create a marker interface in python:
 
-* Assign this marker interface to a content item using the Zope
-  Management Interface (:term:`ZMI`)
+.. code-block:: python
 
-For more info, see
+    from zope.interface import Interface
+    
+    class IMyMarkerInterface(Interface):
+        """Used to create a specific view for a generic content type"""
 
-* http://www.netsight.co.uk/blog/2010/5/21/setting-a-default-view-of-a-folder-in-plone
+Register the marker interface with ZCML, see :doc:`marker interfaces </develop/addons/components/interfaces>`:
 
-* :doc:`marker interfaces </develop/addons/components/interfaces>`
+.. code-block:: xml
 
+     <interface interface="my.package.interfaces.IMyMarkerInterface" />
+
+Register the view against a marker interface:
+
+.. code-block:: xml
+
+       <browser:page
+         class="my.package.browser.views.MySpecificView"
+         for="my.package.interfaces.IMyMarkerInterface"
+         layer="my.package.interfaces.IBrowserLayer"
+         name="my-custom-view"
+         permission="zope2.View"
+         template="view.pt"
+       />
+
+* Assign this marker interface to a content item using the Zope Management Interface
+  (:term:`ZMI`, via the Interfaces tab)
+  or with python code:
+  
+.. code-block:: python
+
+    from my.package.interfaces import IMyMarkerInterface
+    from plone import api
+    from Products.Five.utilities.interfaces import IMarkerInterfaces
+
+    portal = api.portal.get()
+    folder = portal['my-folder']
+    adapter = IMarkerInterfaces(folder)
+    adapter.update(add=(IMyMarkerInterface, ))
+
+* If the view should be the default view for that given object,
+  add a ``layout`` property with value ``my-custom-view``.
+  To do the same with python, see :ref:`set-default-view-programmatically-label`.
 
 Migration script from default view to another
 ==============================================
