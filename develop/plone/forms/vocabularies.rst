@@ -4,9 +4,8 @@ Vocabularies
 
 .. admonition:: Description
 
-        Vocabularies are lists of (value -> human readable title) pairs used
-        by e.g. selection drop downs. zope.schema provides
-        tools to programmatically construct their vocabularies.
+    Vocabularies are lists of (value -> human readable title) pairs used by e.g. selection drop downs.
+    ``zope.schema`` provides tools to programmatically construct their vocabularies.
 
 .. contents :: :local:
 
@@ -15,136 +14,139 @@ Introduction
 
 Vocabularies specify options for choice fields.
 
-Vocabularies are normally described using
-zope.schema.vocabulary.SimpleVocabulary
-and zope.schema.vocabulary.SimpleTerm objects.
-`See the source code <http://svn.zope.org/zope.schema/trunk/src/zope/schema/vocabulary.py?rev=75170&view=auto>`_.
+Vocabularies are normally described using ``zope.schema.vocabulary.SimpleVocabulary`` and ``zope.schema.vocabulary.SimpleTerm``  objects.
+`See the source code <https://github.com/zopefoundation/zope.schema/blob/master/src/zope/schema/vocabulary.py>`_.
 
 Vocabulary terms
-=======================
+================
 
-zope.schema defines different vocabulary term possibilities.
+``zope.schema`` defines different vocabulary term possibilities.
 
-A term is an entry in the vocabulary. The term has a value. Most terms are tokenised terms which also have a token, and some terms are titled, meaning they have a title that is different to the token.
+A term is an entry in the vocabulary.
+The term has a value.
+Most terms are tokenised terms which also have a token.
+Some terms are titled, meaning they have a title that is different to the token.
 
-In ``SimpleTerm`` instances
+``SimpleTerm`` instances
 
-* ``SimpleTerm.token`` must be an ASCII string. It is the value passed with the request when the form is submitted. A token must uniquely identify a term.
+    ``SimpleTerm.token`` must be an ASCII string.
+    It is the value passed with the request when the form is submitted.
+    A token must uniquely identify a term.
 
-* ``SimpleTerm.value`` is the actual value stored on the object. This is not passed to the browser or used in the form. The value is often a unicode string, but can be any type of object.
+    ``SimpleTerm.value`` is the actual value stored on the object.
+    This is not passed to the browser or used in the form.
+    The value is often a unicode string, but can be any type of object.
 
-* ``SimpleTerm.title`` is a unicode string or translatable message. It is used in the form.
+    ``SimpleTerm.title`` is a unicode string or translatable message.
+    It is used for display in the form.
 
-Some info::
-
-    class ITerm(Interface):
-        """Object representing a single value in a vocabulary."""
-
-        value = Attribute(
-            "value", "The value used to represent vocabulary term in a field.")
-
-
-    class ITokenizedTerm(ITerm):
-        """Object representing a single value in a tokenized vocabulary.
-        """
-
-        # TODO: There should be a more specialized field type for this.
-        token = Attribute(
-            "token",
-            """Token which can be used to represent the value on a stream.
-
-            The value of this attribute must be a non-empty 7-bit string.
-            Control characters are not allowed.
-            """)
-
-    class ITitledTokenizedTerm(ITokenizedTerm):
-        """A tokenized term that includes a title."""
-
-        title = TextLine(title=_(u"Title"))
+For further details please read the `interfaces specification <https://github.com/zopefoundation/zope.schema/blob/master/src/zope/schema/interfaces.py#L583>`_
 
 .. note ::
 
-        If you need international texts please note that
-        only title is, and should be, translated. Value and token
-        should always carry the same value.
+    If you need international texts please note that only title is, and should be, translated.
+    Value and token must always carry the same value.
+
 
 Creating a vocabulary
 =====================
 
-Example::
+**Example 1** - form a list of tuples:
 
-    from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+.. code-block:: python
 
-    items = [ ("value1", u"This is label for item"), ("value2", u"This is label for value 2")]
-
-    terms = [ SimpleTerm(value=pair[0], token=pair[0], title=pair[1]) for pair in items ]
-
-    vocabulary = SimpleVocabulary(terms)
-
-Example 2::
-
-    from plone.directives import form
-
-    from zope import schema
+    from zope.schema.vocabulary import SimpleTerm
     from zope.schema.vocabulary import SimpleVocabulary
 
-    myVocabulary = SimpleVocabulary.fromItems((
-        (u"Foo", "id_foo"),
-        (u"Bar", "id_bar")))
+    items = [ ('value1', u'This is label for item'), ('value2', u'This is label for value 2')]
+    terms = [ SimpleTerm(value=pair[0], token=pair[0], title=pair[1]) for pair in items ]
+
+    myVocabulary = SimpleVocabulary(terms)
+
+
+**Example 2** - using the vocabulary from (1):
+
+.. code-block:: python
+
+    from plone.supermodel import form
+    from zope import schema
 
     class ISampleSchema(form.Schema):
 
-        contentMedias = schema.Choice(vocabulary=myVocabulary,
-                                      title=u"Test choice")
+        contentMedias = schema.Choice(
+            title=u'Test choice'
+            vocabulary=myVocabulary,
+        )
 
-Stock vocabularies
------------------------
+**Example 3** - create a vocabulary from a list of values:
 
-Some vocabularies Plone provides out of the box
+.. code-block:: python
 
-* :doc:`Some common named vocabularies </external/plone.app.dexterity/docs/advanced/vocabularies>`
+      values = ['foo', 'bar', 'baz']
+      other_vocabulary = SimpleVocabulary.fromValues(values)
 
-* `Thumbnail size vocabulary (TinyMCE) <https://github.com/plone/Products.TinyMCE/blob/master/Products/TinyMCE/vocabularies.py>`_
 
-Creating vocabulary from list of objects
-------------------------------------------
+**Example 4** - registering as a reusable component, a named utility.
 
-Here is one example where value = title in term::
+First a vocabulary factory needs to be created.
 
-      SimpleVocabulary.fromValues('%s.%s.%s' % (at['package'],at['meta_type'],at['portal_type']) for at in list_of_ats)"
+.. code-block:: python
+
+    from zope.schema.interfaces import IVocabularyFactory
+    from zope.interface import provider
+
+    @provider(IVocabularyFactory)
+    def myvocabulary_factory(context):
+        return myvocabulary
+
+
+It has to be registered in ZCML as a utility:
+
+.. code-block:: xml
+
+    <utility
+      component=".vocab.myvocabulary_factory"
+      name="example.myvocabulary"
+    />
+
 
 Retrieving a vocabulary
 =========================
 
-zope.schema's SimpleVocabulary objects are retrieved via factories registered as utilities.
+``zope.schema``'s SimpleVocabulary objects are retrieved via factories registered as utilities.
 
-To get one, use zope.component's getUtility::
+To get one, use zope.component's getUtility:
+
+.. code-block:: python
 
     from zope.component import getUtility
     from zope.schema.interfaces import IVocabularyFactory
 
-    factory = getUtility(IVocabularyFactory, name)
-    vocabulary = factory(context)
+    factory = getUtility(IVocabularyFactory, 'example.myvocabulary')
+    vocabulary = factory()
 
 
 Getting a term
 ==============
 
-By term value::
+By term value
 
-    # Returns SimpleTerm object by value look-up
-    term = vocabulary.getTerm("value1")
+.. code-block:: python
 
-    print "Term value is %s token is %s and title is %s" + (term.value, term.token, term.title)
+    term = vocabulary.getTerm('value1')
+    value, token, term =  (term.value, term.token, term.title)
+
 
 Listing a vocabulary
 ====================
 
-Example::
+Example - Iterate vocabulary SimpleTerm objects:
 
- for term in vocabulary:
-    # Iterate vocabulary SimpleTerm objects
-    print term.value + ": " + term.title
+.. code-block:: python
+
+    for term in vocabulary:
+        print(term.value, term.token, term.title)
+
 
 Dynamic vocabularies
 -----------------------
@@ -332,7 +334,7 @@ Complex example 2
 
         return SimpleVocabulary(terms)
 
-	
+
 For another example, see the :doc:`Dynamic sources </external/plone.app.dexterity/docs/advanced/vocabularies>`
 chapter in the Dexterity manual.
 
@@ -360,5 +362,5 @@ Then you can refer to vocabulary by its name::
 
 For more information see:
 
-* `vocabularies API doc <http://docs.zope.org/zope3/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/vocabulary/index.html>`_ 
+* `vocabularies API doc <http://docs.zope.org/zope3/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/vocabulary/index.html>`_
 * `zope.component docs <https://raw.githubusercontent.com/zopefoundation/zope.component/master/docs/zcml.rst>`_
