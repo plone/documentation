@@ -123,6 +123,7 @@ Example::
         from zope.component import getUtility, queryUtility, queryMultiAdapter
 
         from Products.CMFCore.utils import getToolByName
+        from Products.CMFPlone.utils import get_installer
 
         from gomobile.mobile.tests.base import BaseTestCase
         from gomobile.mobile.behaviors import IMobileBehavior, mobile_behavior_factory,  MobileBehaviorStorage
@@ -149,13 +150,13 @@ Example::
                 annotations = IAnnotations(doc)
 
             def uninstall(self, name="gomobile.mobile"):
-                qi = self.portal.portal_quickinstaller
+                qi = get_installer(self.portal)
 
                 try:
-                    qi.uninstallProducts([name])
+                    qi.uninstall_product(name)
                 except:
                     pass
-                qi.installProduct(name)
+                qi.install_product(name)
 
             def test_annotations(self):
                 """ Check that uninstaller cleans up annotations from the docs
@@ -172,4 +173,3 @@ Example::
             suite = unittest.TestSuite()
             suite.addTest(unittest.makeSuite(TestUninstall))
             return suite
-

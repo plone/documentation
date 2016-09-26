@@ -92,17 +92,17 @@ Multiple profiles
 
 When you have more than one profile in your add-on package,
 the add-ons control panel needs to decide which one to use when you install it.
-In Plone 5.0 and lower,
-the profiles are sorted alphabetically by id,
-and the first one is chosen.
-So if you have profiles ``base`` and ``default``,
-the ``base`` profile is installed.
+Since Plone 5.1, when there is a ``default`` profile, it is always used as the installation profile, regardless of other profile names.
+Exception: when this ``default`` profile is marked in an ``INonInstallable`` utility, it is ignored and Plone falls back to using the first from the alphabetical sorting.
 
-.. versionadded:: 5.1
+.. note::
 
-    When there is a profile with name ``default``, this is taken as the profile for installation.
-    For more information on this plan,
-    see `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
+    In Plone 5.0 and lower,
+    the profiles are sorted alphabetically by id,
+    and the first one is chosen.
+    So if you have profiles ``base`` and ``default``,
+    the ``base`` profile is installed.
+    It is recommended to let ``default`` be the alphabetically first profile.
 
 
 Add-on-specific issues
@@ -205,27 +205,24 @@ For the theory, see `<http://blog.keul.it/2013/05/how-to-make-your-plone-add-on-
 
 For an example, see the `collective.pdfpeek source code <https://github.com/collective/collective.pdfpeek/tree/master/collective/pdfpeek/profiles>`_.
 
-Uninstalling has various parts:
-
-1. CMFQuickInstaller keeps a list of *some* items that were added during install of an add-on, for example css files in the registry.
-   During uninstall, these items are automatically removed.
-   This works okay, but it only undoes a subset of the changes made by the add-on package.
-   There have been problems where items were removed that should not have been removed, especially when add-on authors were not aware of this automatic removal.
-   Best practice is to write your own uninstall code.
-
-2. CMFQuickInstaller looks in ``Extensions/install.py`` for an uninstall method and runs it.
-   Various add-ons have added an uninstall method and simply let it apply an ``uninstall`` profile.
-
-.. versionadded:: 4.3.7
-
-    CMFQuickInstaller 3.0.9 (Plone 4.3.7 and higher) makes the second part a bit easier.
-    If the uninstall method is not found, it looks for a profile with id ``uninstall`` and applies it.
+When you deactivate an add-on in the control panel, Plone looks for a profile with the name ``uninstall`` and applies it.
 
 .. versionadded:: 5.1
 
-    Plone 5.1 is scheduled to not use the CMFQuickInstaller, but always apply an ``uninstall`` profile.
-    For more information on this plan,
-    see `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
+    If there is no ``uninstall`` profile, a warning is displayed before installing the add-on.
+    If you do activate the add-on, no deactivate button will be shown.
+
+.. versionadded:: 5.1
+
+    The add-ons control panel no longer does an automatic partial cleanup,
+    for example removing added skins and css resources.
+    This was always only partial, so you could not rely on it to fully cleanup the site.
+
+.. note::
+
+    This method works in Plone 4.3.7 and higher.
+    If you need to support older versions, you may need to write an ``Extensions/install.py`` file with an ``uninstall`` method.
+    See older versions of this document for more information.
 
 
 Dependencies
