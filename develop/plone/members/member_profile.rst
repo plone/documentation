@@ -17,10 +17,10 @@ can edit himself on his user account page.
 For more info, see:
 
 ``MemberDataTool``
-    http://svn.zope.org/Products.CMFCore/trunk/Products/CMFCore/MemberDataTool.py?rev=110418&view=auto
+    https://github.com/zopefoundation/Products.CMFCore/blob/master/Products/CMFCore/MemberDataTool.py
 
 ``MemberData`` class
-    http://svn.zope.org/Products.CMFCore/trunk/Products/CMFCore/MemberDataTool.py?rev=110418&view=auto
+    https://github.com/zopefoundation/Products.CMFCore/blob/master/Products/CMFCore/MemberDataTool.py
 
 PlonePAS subclasses and extends MemberData and MemberDataTool.
 
