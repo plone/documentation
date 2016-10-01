@@ -6,6 +6,7 @@ Changelog
 20160818
 ========
 
+- Add security guidelines for developers[vangheem]
 - Remove Deliverance info for theming and refer to diazo.org deployment [fredvd]
 - Add documentation about TinyMCE styles and formats [davilima6]
 - Improve documentation about TinyMCE [sneridagh]

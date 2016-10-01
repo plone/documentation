@@ -13,6 +13,7 @@ Zope provides various built-in security facilities
 .. toctree::
     :maxdepth: 1
 
+    guidelines
     permissions
     permission_lists
     standard_permissions
@@ -22,4 +23,3 @@ Zope provides various built-in security facilities
     dynamic_roles
     sandboxing
     selinux
-
