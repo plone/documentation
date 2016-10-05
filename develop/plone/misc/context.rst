@@ -142,7 +142,7 @@ information or configuration here. Tools include e.g.:
 .. warning::
     Portal tools are deprecated and are phased out and being replaced by
     `utilities <develop/addons/components/utilities.html>`_. The
-    `Removal of selected portal tools <https://dev.plone.org/ticket/13770>`_
+    `Removal of selected portal tools <https://github.com/plone/Products.CMFPlone/pull/138>`_
     PLIP is created to migrate from tools to utilities.
 
 
