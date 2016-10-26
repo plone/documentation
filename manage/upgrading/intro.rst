@@ -36,3 +36,17 @@ Since the Plone 2.5 release, Plone has a policy that increases the version numbe
 
 In addition to the general procedure there are :doc:`version-specific migration guides </manage/upgrading/version_specific_migration/index>`. These guides contain more specific instructions and valuable information that has been collected from real-life migration cases.
 
+
+No large leaps
+==============
+
+It is advisable to not make large leaps in version numbers.
+A single upgrade should not try to bridge multiple major version numbers.
+Going from Plone 4.0 to Plone 5.1 is fine.
+But if you are at Plone 2.5 and want to upgrade to the latest Plone 5, you should approach this in several steps:
+
+- First upgrade from Plone 2.5 to the latest Plone 3 version (3.3.6).
+
+- Then upgrade from Plone 3 to the latest Plone 4 version.
+
+- Then upgrade from Plone 4 to the latest Plone 5 version.
