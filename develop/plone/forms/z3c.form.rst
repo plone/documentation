@@ -2169,8 +2169,6 @@ Validators
 Introduction
 ------------
 
-Please read `Dexterity manual validators chapter <https://plone.org/products/dexterity/documentation/manual/schema-driven-forms/customising-form-behaviour/referencemanual-all-pages>`_.
-
 There are three kind of validation hooks you can use with z3c.form
 
 * zope.schema field parameter specific
@@ -2181,37 +2179,38 @@ There are three kind of validation hooks you can use with z3c.form
 
 * z3c.form (validation is bound to the form instance)
 
+
 Field specific internal validators
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you define your field with *zope.schema*
-you can enable flags for field internal validation.
+When you define your field with *zope.schema* you can enable flags for field internal validation.
 This include e.g.
 
 * ``required`` is field required on the form or not
 
 * ``min`` and ``max`` for number based fields
 
-Example::
+Example:
+
+.. code:: python
 
     class LocalizationOfStenosisForm(form.Schema):
 
         degreeOfStenosis = schema.Float(
-            title=u"Degree of stenosis %",
+            title=u'Degree of stenosis %',
             required=False,
             min=0.0,
             max=100.0
-            )
+        )
 
 For available internal validation options, see the field source code in zope.schema package.
 
 Constraint validators
 ^^^^^^^^^^^^^^^^^^^^^
 
-zope.schema fields take a callable argument ``constraint``
-which defines a Python function validating the incoming value.
+zope.schema fields take a callable argument ``constraint`` which defines a Python function validating the incoming value.
 
-Example::
+.. code:: python
 
     import zope.interface
 
@@ -2224,7 +2223,7 @@ Example::
 
          lastName = zope.schema.TextLine(
              title=u'Last Name',
-             description=u"The person's last name.",
+             description=u'The person's last name.',
              default=u'',
              required=True,
              constraint=lastNameConstraint)
@@ -2234,27 +2233,31 @@ For more information, see ``zope.schema`` documentation.
 Invariant validators
 ^^^^^^^^^^^^^^^^^^^^
 
-TODO: Are invariants useful with z3c.form??
+Invariants validator do validations between fields.
+They are checked after the single field validations are processed.
+
+Example: With invariants it is possible to check if ``start`` date is before ``end`` date:
+
+.. code:: python
+
+    from zope.interface import Invalid
+    from zope.interface import invariant
+
+    @provider(IFormFieldProvider)
+    class ISomeDates(form.Schema):
+
+        @invariant
+        def start_before_end(data):
+            if data.start > data.end:
+                raise Invalid(_(u'Start must be before end!'))
+
 
 Form widget validators
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Validators are best added in the schema itself.
+Example: How to use widget specific validators with ``z3c.form``:
 
-* If you are using plain ``z3c.form``,
-  you can check the `validators documentation <http://packages.python.org/z3c.form/validator.html>`_.
-
-* The plone.directives.form package provides convenient
-  `decorators for form validators <https://pypi.python.org/pypi/plone.directives.form#validators>`_.
-  If you use ``plone.directives.form`` validators, make sure your package
-  is `grokked <http://docs.plone.org/4/en/appendices/grok.html>`_
-  (otherwise validators are not registered).
-
-.. note::
-
-   using Grok is not recommended anymore!
-
-Example: How to use widget specific validators with ``z3c.form``::
+.. code:: python
 
     from z3c.form import validator
     import zope.component
@@ -2262,45 +2265,60 @@ Example: How to use widget specific validators with ``z3c.form``::
     class IZohoContactForm(form.Schema):
         """ Form field definitions for Zoho contact forms """
 
-        phone_number = schema.TextLine(title=_(u"Phone number"),
-                                       description=_(u"Your phone number in international format. E.g. +44 12 123 1234"),
-                                       required=False,
-                                       default=u"")
+        phone_number = schema.TextLine(
+            title=_(u'Phone number'),
+            description=_(u'Your phone number in international format. E.g. +44 12 123 1234'),
+                        required=False,
+                        default=u''
+            )
 
     class PhoneNumberValidator(validator.SimpleFieldValidator):
         """ z3c.form validator class for international phone numbers """
 
         def validate(self, value):
             """ Validate international phone number on input """
-            allowed_characters = "+- () / 0123456789"
+            allowed_characters = '+- () / 0123456789'
 
-            if value != None:
+            if value is None:
+                return
 
-                value = value.strip()
+            value = value.strip()
 
-                if value == "":
-                    # Assume empty string = no input
-                    return
+            if not value:
+                # Assume empty string = no input
+               return
 
-                # The value is not required
-                for c in value:
-                    if c not in allowed_characters:
-                        raise zope.interface.Invalid(_(u"Phone number contains bad characters"))
+            # The value is not required
+            for ch in value:
+                if ch not in allowed_characters:
+                    raise zope.interface.Invalid(
+                        _(u'Phone number contains bad characters')
+                    )
 
-                if len(value) < 7:
-                    raise zope.interface.Invalid(_(u"Phone number is too short"))
+            if len(value) < 7:
+                raise zope.interface.Invalid(_(u'Phone number is too short'))
 
-    # Set conditions for which fields the validator class applies
-    validator.WidgetValidatorDiscriminators(PhoneNumberValidator, field=IZohoContactForm['phone_number'])
+    # Set conditions for which fields the validator class applies.
+    # This is convinience and in fact does the same as an @adapter decorator
+    # on the PhoneNumberValidator class with the needed interfaces/classes
+    validator.WidgetValidatorDiscriminators(
+        PhoneNumberValidator,
+        field=IZohoContactForm['phone_number']
+    )
 
-    # Register the validator so it will be looked up by z3c.form machinery
+In ``configure.zcml`` add an adapter registration like so:
 
-    zope.component.provideAdapter(PhoneNumberValidator)
+.. code:: xml
+
+    <adapter factory=".myform.PhoneNumberValidator" />
+
 
 More info
 
+* original documentation: ``z3c.form`` `validators documentation <http://packages.python.org/z3c.form/validator.html>`_.
 * http://docs.plone.org/develop/addons/schema-driven-forms/customising-form-behaviour/validation.html#field-widget-validators
 * http://www.jowettenterprises.com/blog/an-image-dimension-validator-for-plone-4
+
 
 Custom field specific validation in form action handlers and update()
 ---------------------------------------------------------------------
@@ -2310,33 +2328,38 @@ Custom field specific validation in form action handlers and update()
 Customizing and translating error messages
 ------------------------------------------
 
-If you want to custom error messages on per-field level::
+If you want to custom error messages on per-field level:
+
+.. code:: python
 
     from zope.schema._bootstrapinterfaces import RequiredMissing
     RequiredMissingErrorMessage = error.ErrorViewMessage(_(u'Required value is missing.'), error=RequiredMissing, field=IEmailFormSchema['email'])
     zope.component.provideAdapter(RequiredMissingErrorMessage, name='message')
 
-Leave ``field`` parameter out if you want the new error message to apply to
-all fields.
+Leave ``field`` parameter out if you want the new error message to apply to all fields.
 
 
 Read-only and disabled fields
 -----------------------------
 
-Read-only fields are not rendered in form edit mode::
+Read-only fields are not rendered in form edit mode:
+
+.. code:: python
 
     courseModeAccordion = schema.TextLine(
-            title=u"Courses by mode accordion",
-            default=u"Automatically from database",
-            readonly=True
-            )
+        title=u"Courses by mode accordion",
+        default=u"Automatically from database",
+        readonly=True
+    )
 
 If the widget mode is ``display`` then it is rendered as in form view mode,
-so that the user cannot edit::
+so that the user cannot edit:
+
+.. code:: python
 
     form.mode(courseModeAccordion="display")
     courseModeAccordion = schema.TextLine(
-            title=u"Courses by mode accordion",
-            default=u"Automatically from database",
-            )
+        title=u"Courses by mode accordion",
+        default=u"Automatically from database",
+    )
 
