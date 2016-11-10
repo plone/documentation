@@ -33,7 +33,7 @@ GenericSetup profile (add-on folder profiles/default).
 Model the workflow online
 =========================
 
-Go to 'http:yourhost.com:8080/yourPloneSiteName/portal_workflows/manage_main', copy and paste
+Go to 'http:yourhost.com:8080/yourPloneSiteName/portal_workflow/manage_main', copy and paste
 'simple_publication_workflow', to have a skeleton for start-off, rename 'copy_of_simple_publication_workflow'
 to 'your_workflow' or add a new workflow via the dropdwon-menu and have a tabula rasa.
 
@@ -44,7 +44,7 @@ Add and remove states and transitions, assign permissions etc.
 Putting it in your product
 ==========================
 Go to 'http:yourhost.com:8080/yourPloneSiteName/portal_setup/manage_exportSteps', check 'Workflow Tool' and hit
-'Export selected steps', unzip the downloaded file and put the definitions.xml-file in
+'Export selected steps', unzip the downloaded file and put the definition.xml-file in
 'your/product/profiles/default/workflows/your_workflow/' (you'll need to create the latter two directories).
 
 
