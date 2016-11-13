@@ -248,7 +248,7 @@ We refer it in our page template instead of ``here/main_template``::
 
                 <metal:block define-slot="content">
                     <div metal:define-macro="content"
-                        tal:define="show_border context/@@plone/showEditableBorder; show_border python:show_border and not ajax_load"
+                        tal:define="show_border context/@@plone/showToolbar; show_border python:show_border and not ajax_load"
                         tal:attributes="class python:show_border and 'documentEditable' or ''">
 
                         <div metal:use-macro="context/global_statusmessage/macros/portal_message">
