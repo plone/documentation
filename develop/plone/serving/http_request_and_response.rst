@@ -764,7 +764,7 @@ Cross-origin resource sharing (CORS)
 
 .. _WSGI: http://ivory.idyll.org/articles/wsgi-intro/what-is-wsgi.html
 
-.. _ZServer: https://github.com/zopefoundation/Zope/blob/master/src/ZServer/README.txt
+.. _ZServer: https://github.com/zopefoundation/ZServer/blob/master/src/ZServer/README.txt
 
 .. _Medusa: http://www.amk.ca/python/code/medusa.html
 
