@@ -81,9 +81,9 @@ one of the components wants to have a different version of this dependency.
 
 Example::
 
-      Installing.
-      Getting section zeoserver.
-      Initializing part zeoserver.
+    Installing.
+    Getting section zeoserver.
+    Initializing part zeoserver.
     Error: There is a version conflict.
     We already have: zope.component 3.8.0
     but five.localsitemanager 1.1 requires 'zope.component<3.6dev'.
@@ -91,7 +91,7 @@ Example::
 If your buildout is fetching strange versions:
 
 * try running buildout in verbose mode: ``bin/buildout -vvv``
-* Use dumppickedversions (below)
+* Use ``show-picked-versions`` (below)
 * Manually pin down version in the ``[versions]`` section of your buildout.
 
 Further reading:
@@ -100,54 +100,21 @@ Further reading:
 
 * http://www.uwosh.edu/ploneprojects/documentation/how-tos/how-to-use-buildout-to-pin-product-versions
 
-Dump picked versions
+Show picked versions
 --------------------
 
-This buildout extension will automatically dump picked Python egg versions
-to a file.
+In order to show which versions were picked by buildout - or in other words, versions were not pinned anywhere -
+use this feature.
 
 Add to your ``buildout.cfg``:
 
 .. code-block:: cfg
 
-    extensions = buildout.dumppickedversions
-    dump-picked-versions-file = versions.cfg
-
-More information
-^^^^^^^^^^^^^^^^
-
-* `dumppickedversions <https://pypi.python.org/pypi/buildout.dumppickedversions>`_
-
-Good-py service
----------------
-
-Good-py contains some good known versions sets. These are most convenient to
-use if you are using complex configuration of add-ons that you are not
-familiar with.
-
-Some good-py configurations take a Plone version as a paremeter.
-
-Example:
-
-.. code-block:: cfg
-
     [buildout]
-    extends =
-        base.cfg
-        http://dist.plone.org/release/3.3.5/versions.cfg
-        http://good-py.appspot.com/release/dexterity/1.0-next?plone=3.3.5
-
-Or:
-
-.. code-block:: cfg
-
-    extends =
-        http://dist.plone.org/release/4.0/versions.cfg
-        http://good-py.appspot.com/release/dexterity/1.0b2?plone=4.0
-
+    show-picked-versions
 
 Extracting version numbers from instance script
-=================================================
+===============================================
 
 Example::
 
@@ -157,44 +124,9 @@ More info
 
 * http://davidjb.com/blog/2011/06/extracting-a-buildout-versions-cfg-from-a-zope-instance-script/
 
-Plone 3.1
-=========
-
-Plone 3.1 and earlier are not eggified.
-Below are links how to keep Plone 3.1 and earlier buildouts running.
-
-See:
-
-* http://www.netsight.co.uk/blog/resurrecting-old-plone-3-buildouts
-
-
-
-
-Common pindowns
-===============
-
-Here is a pindown example from 2010/02:
-
-.. code-block:: cfg
-
-    [versions]
-    # zope.app.catalog 3.6.0 requires zope.index 3.5.0
-    # zope.index 3.5.0 requires 'ZODB3>=3.8.0b1'
-    # This will conflict with the fake ZODB egg.
-    zope.app.catalog = 3.5.2
-    zope.component = 3.5.1
-    plone.app.z3cform=0.4.2
-    plone.recipe.zope2instance = 3.6
-    zope.sendmail = 3.6.0
-    Products.PluggableAuthService = 1.6.2
-    plone.z3cform = 0.5.8
-    five.intid=0.4.2
-    plone.reload = 0.11
-    Products.GenericSetup = 1.5.0
-
 
 Getting distribution for ``distribute``
-========================================
+=======================================
 
 You try to run buildout, but it is stuck in a loop::
 
@@ -601,7 +533,7 @@ uses this version or above::
 
 
 UnboundLocalError: local variable 'clients' referenced before assignment
-==========================================================================
+========================================================================
 
 Example traceback when running buildout::
 
@@ -620,7 +552,7 @@ Solution: Your buildout contains leftovers from the past. Remove ``clients`` var
 in ``[unifiedinstaller]`` section.
 
 Couldn't install: BTrees 4.0.5
-===============================
+==============================
 
 Example::
 
@@ -659,7 +591,7 @@ Try install manually the core buildout part where you have ``fake-eggs`` defined
 
 
 error: None
-============
+===========
 
 This means .tar.gz is corrupted::
 
