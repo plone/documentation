@@ -83,7 +83,7 @@ Example::
 If your buildout is fetching strange versions:
 
 * try running buildout in verbose mode: ``bin/buildout -vvv``
-* Use dumppickedversions (below)
+* Use ``show-picked-versions`` (see below)
 * Manually pin down version in the ``[versions]`` section of your buildout.
 
 Further reading:
@@ -92,39 +92,22 @@ Further reading:
 
 * http://www.uwosh.edu/ploneprojects/documentation/how-tos/how-to-use-buildout-to-pin-product-versions
 
-Dump picked versions
+Show picked versions
 --------------------
 
-This buildout extension will automatically dump picked Python egg versions
-to a file.
+In order to show which versions were picked by buildout - 
+or in other words, versions were not pinned anywhere - 
+use this feature.
+
+Buildout will automatically show automatically picked Python egg versions at the end of the output. 
+The output may be copy pasted in your versions section.
 
 Add to your ``buildout.cfg``:
 
 .. code-block:: cfg
 
-    extensions = buildout.dumppickedversions
-    dump-picked-versions-file = versions.cfg
-
-More information
-^^^^^^^^^^^^^^^^
-
-* `dumppickedversions <https://pypi.python.org/pypi/buildout.dumppickedversions>`_
-
-Good-py service
----------------
-
-Good-py contains some good known versions sets. These are most convenient to use if you are using complex configuration of add-ons that you are not familiar with.
-
-Some good-py configurations take a Plone version as a paremeter.
-
-Example:
-
-
-.. code-block:: cfg
-
-    extends =
-        http://dist.plone.org/release/4.0/versions.cfg
-        http://good-py.appspot.com/release/dexterity/1.0b2?plone=4.0
+    [buildout]    
+    show-picked-versions
 
 
 Extracting version numbers from instance script
