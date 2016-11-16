@@ -99,7 +99,7 @@ In order to show which versions were picked by buildout -
 or in other words, versions were not pinned anywhere - 
 use this feature.
 
-Buildout will automatically show automatically picked Python egg versions at the end of the output. 
+Buildout will show automatically picked Python egg versions at the end of the output. 
 The output may be copy pasted in your versions section.
 
 Add to your ``buildout.cfg``:
