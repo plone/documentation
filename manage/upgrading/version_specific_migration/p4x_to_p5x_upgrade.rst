@@ -511,7 +511,7 @@ Normally, you do not modify or access these records. Instead you change the sett
 +--------------------+-----------------------------------+-----------------------------------------+
 | site_properties    | disable_nonfolderish_sections     | **REMOVED**                             |
 +--------------------+-----------------------------------+-----------------------------------------+
-| site_properties    | typesUseViewActionInListings      | **TBD**                                 |
+| site_properties    | typesUseViewActionInListings      | plone.types_use_view_action_in_listings |
 +--------------------+-----------------------------------+-----------------------------------------+
 | site_properties    | verify_login_name                 | plone.verify_login_name                 |
 +--------------------+-----------------------------------+-----------------------------------------+
