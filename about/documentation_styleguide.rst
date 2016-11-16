@@ -116,7 +116,7 @@ This is an example of how a README.rst should look like:
     ------------------------
 
     - Plone 5.0
-    - Plone 4.4
+    - Plone 4.3
 
 
     Examples
