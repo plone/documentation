@@ -563,7 +563,7 @@ Normally, you do not modify or access these records. Instead you change the sett
 +--------------------+-----------------------------------+-----------------------------------------+
 
 disable_folder_sections
-"""""""""""""""""""""""
+-----------------------
 
 This property has been removed and the logic is different.
 You can influence the portal tab generation with the property `plone.generate_tabs`
