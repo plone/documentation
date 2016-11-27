@@ -19,7 +19,7 @@ Social Media metadata
    :alt: Social Media setup configuration
 
 
-Enabling this setting will add social media meta-tags (Facebook OpenGraph and Twitter) to pages, so that when you share a Plone webpage on services like Facebook and Twitter, links and images will be better formatted.
+Enabling this setting will add social media meta tags (Facebook OpenGraph and Twitter) to pages, so that when you share a Plone webpage on services like Facebook and Twitter, links and images will be better formatted.
 
 .. note::
 
