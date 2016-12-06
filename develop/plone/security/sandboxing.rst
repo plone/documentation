@@ -45,7 +45,7 @@ For further information, read
 Whitelisting modules for RestrictedPython import
 ---------------------------------------------------
 
-* https://plone.org/documentation/kb/using-unauthorized-modules-in-scripts
+* http://stackoverflow.com/questions/18389606/how-do-i-allow-through-the-web-controller-python-scripts-to-import-otherwise-res
 
 Traversing special cases
 -------------------------
