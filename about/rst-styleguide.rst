@@ -300,7 +300,7 @@ Setting the highlighting mode for the whole document:
 If syntax highlighting is not enabled for your code block, you probably have a syntax error and `Pygments <http://pygments.org>`_ will fail silently.
 
 The full list of lexers and associated short names is here:
-http://pygments.org/docs/lexers/
+
 
 Images
 ======
