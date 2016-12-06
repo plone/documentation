@@ -8,8 +8,6 @@
 
 .. contents:: :local:
 
-
-
 Reaching the documentation team
 ===============================
 
@@ -27,7 +25,7 @@ Feedback
 
 We love your feedback! In order to improve the documentation we need your feedback and your help.
 
-If you have already a GitHub account, please do not hesitate to open a ticket on `GitHub <https://github.com/plone/documentation/issues>`_ .
+If you have already a GitHub account, please do not hesitate to open a ticket in our `issue tracker <https://github.com/plone/documentation/issues>`_ .
 
 If you do not have one, please use the 'Feedback' widget on http://docs.plone.org.
 
@@ -35,6 +33,20 @@ If you do not have one, please use the 'Feedback' widget on http://docs.plone.or
    :align: center
    :alt: Picture of feedback widget
 
+Tickets
+=======
+
+Open documentation issues are tracked in our `issue tracker <https://github.com/plone/documentation/issues>`_.
+
+If you have already a `GitHub <https://github.com>`_ account and you find something missing or wrong in the docs, please open a ticket.
+
+If you would like to contribute to the documentation and looking for a starting point, please browse to our `issue board <https://github.com/plone/documentation/projects/1?fullscreen=true>`_.
+Issues are sorted into different levels from easy to advanced. Picking an easy one is a great way to get started.
+
+.. note::
+
+    Working on issues takes time and energy, in order to make it as pleasant as possible for everyone, meaning for you and the reviewer we would like to ask you kindly to make yourself familiar with our
+    style-guides for :doc:`documentation </about/documentation_styleguide>` and :doc:`reStructuredText [reST]</about/rst-styleguide>`.
 
 License
 =======
@@ -71,6 +83,7 @@ If you don't get feedback on your pull request in a day please come to #plone-do
 The main goal of this process is not to annoy you. On the contrary, we **love** your contributions.
 
 But the documentation team also wants to keep the documentation in good shape.
+
 
 
 .. _plone-versions:
@@ -161,7 +174,6 @@ Translation
 ===========
 
 We use `Transifex <https://www.transifex.com/>`_ for translation.
-Thanks to that it is really easy to contribute to translation.
 
 Quick start:
 ------------
