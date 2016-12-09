@@ -9,7 +9,7 @@ Standard permissions and roles
 .. contents:: :local:
 
 Standard permissions
-~~~~~~~~~~~~~~~~~~~~
+====================
 
 The standard permissions can be found in ``AccessControl``s and ``Product.CMFCore``\’s ``permissions.zcml``.
 Here, you will find a short ``id`` (also known as the *Zope 3 permission id*) and a longer ``title`` (also known as the *Zope 2 permission title*).
@@ -53,7 +53,7 @@ The Zope 2 permission title is shown in parentheses.
     controlling the ability to publish or reject content.
 
 Standard roles
-~~~~~~~~~~~~~~~
+==============
 
 As with permissions, it is easy to create custom roles
 (use the ``rolemap.xml`` GenericSetup import step – see ``CMFPlone``\’s version of this file for an example), although you should use the standard roles where possible.
@@ -98,17 +98,17 @@ where they appear under more user friendly pseudonyms.
 
 :guilabel:`Reader`, aka :guilabel:`Can view`,
     confers the right to view content.
-    As a role of thumb,
+    As a rule of thumb,
     the :guilabel:`Reader` role should have the :guilabel:`View` and :guilabel:`Access contents information` permissions if the :guilabel:`Owner` roles does.
 
 :guilabel:`Editor`, aka :guilabel:`Can edit`,
     confers the right to edit content.
-    As a role of thumb,
+    As a rule of thumb,
     the :guilabel:`Editor` role should have the :guilabel:`Modify portal content` permission if the :guilabel:`Owner` roles does.
 
 :guilabel:`Contributor`, aka :guilabel:`Can add`,
     confers the right to add new content.
-    As a role of thumb,
+    As a rule of thumb,
     the:guilabel: `Contributor` role should have the `Add:guilabel: portal content` permission
     and any type-specific add permissions globally
     (i.e. granted in ``rolemap.xml``),
