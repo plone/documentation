@@ -4,39 +4,34 @@ Upgrade tips
 
 .. admonition:: Description
 
-        Advanced tips for upgrading Plone.
+        Advanced tips for upgrading Plone. 
+        
+        Some of the information on this page is for Plone 4, which used the Archetypes content type framework. Plone 5.x uses the Dexterity content type framework.
 
 General Tips
 ============
 
-This guide contains some tips for Plone upgrades. For more Information, see
-also the `Official Plone upgrade guide <https://plone.org/documentation/manual/upgrade-guide>`_
+This guide contains some tips for Plone upgrades. For more information, see
+also the `official Plone upgrade guide <http://docs.plone.org/manage/upgrading/index.html>`_
 
 
-Recommended set-up
-------------------
+Recommended setup
+-----------------
 
-* Test upgrade on your local development computer first.
+* Test the upgrade on your local development computer first.
 
-* Create two buildouts. One for the old Plone version (your existing buildout)
-  and one for new version.
+* Create two buildouts: one for the old Plone version (your existing buildout)
+  and one for the new version.
 
-* Prepare the migration in old buildout. After all preparations are done, copy
-  Data.fs to new buildout and run plone_migration tool there.
-
-
-Clear catalog
--------------
-
-Before moving the Data.fs to new version, clear all site portal_catalog
-information.
+* Prepare the migration in the old buildout. After all preparations are done, copy
+  the Data.fs and blobstorage to the new buildout and run plone_migration tool there.
 
 
 Fix persistent utilities
 ------------------------
 
 You might need to clean up some leftovers from uninstalled add-ons which have
-not performed a clean uninstall.
+not cleanly uninstalled.
 
 Use this utility:
 
