@@ -70,6 +70,8 @@ Asking for help in online chat
 
 The Plone community uses `online chat <https://plone.org/support/chat>`_, specifically `Gitter <https://gitter.im/plone/public>`_ and traditional Plone IRC chat at the  `#plone <irc://irc.freenode.net/#plone>`_ IRC channel on the freenode IRC network.
 
+(To use Gitter you must log in using a free GitHub or Twitter account, which allows you to receive notifications when there is a response to your question. IRC does not require you to log in, but you will receive notifications of responses only while you remain connected).
+
 Here are useful hints for using online chat:
 
 - Remember that chat participants are volunteers; they are not paid to provide support.
