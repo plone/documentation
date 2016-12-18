@@ -6,21 +6,21 @@ Asking for help
 Guidelines and Examples
 =======================
 
-If you need help with an error or problem: before asking the question, please take a few minutes to read the guidelines below. It is important to know how to state questions, because once you learn it, answers will come much faster.
+If you need help with an error or problem: before asking the question, please take a few minutes to read the guidelines below. It is important to know how to state questions, because once you learn it, you will get better answers back more quickly.
 
 
 Asking help on support and discussion forums
 --------------------------------------------
 
-By stating a **well-phrased question** you increase the likelihood of fast and helpful response to your question.
+By stating a **well-phrased question** you increase the likelihood of fast and helpful responses to your question.
 
 Here are some general key rules users need to follow in creating a new topic.
 
-- ALWAYS start with searching, that means, before you create a topic. Most of your questions were probably already answered by someone else in the past. Save your and our time by searching the web first.
+- ALWAYS start with searching before you ask a question. Most of your questions were probably already answered by someone else in the past. Save your and our time by searching the web first.
 
 Where to search:
 
-- Google - Before asking for help, make a Google search with related keywords. Pick meaningful keywords from the log entry.
+- Google - Before asking for help, make a Google search with related keywords. Pick meaningful keywords from the log entry. Sometimes searching for the entire error message works!
 
 - `Plone Community Forums <https://community.plone.org/>`_ - help and discussion forums
 
@@ -32,13 +32,13 @@ Where to search:
 
 - `Documentation issue tracker <https://github.com/plone/documentation/issues>`_ - for documentation related issues
 
-If at any point you see any kind of error message (including error codes) – put them in the topic. Never write anything like “I see some error message”. Be specific.
+If at any point you see any kind of error message (including error codes) – put them in your question. Never write anything like “I see some error message”. Be specific.
 
 See  :doc:`Basic troubleshooting </manage/troubleshooting/basic>` in case of an error
 
-Follow the netiquette while visiting and writing on forum or mailing list (give respect = get respect). This includes:
+Follow netiquette while visiting and writing on forum or mailing list (give respect = get respect). This includes:
 
-- Be patient – Sometimes the problem cannot be solved within minutes or hours. You might need to bump the topic few times till an experienced person comes to the site and sees it but usually if you do not see any response after 24h it probably means we cannot answer your question.
+- Be patient – sometimes the problem cannot be solved within minutes or hours. You might need to bump the topic few times until an experienced person comes to the site and sees it, but usually if you do not see any response after a day or two it probably means we do not know the answer to your question, or perhaps your question needs to include more detail.
 - Do not use bad words. Respect others and what they are doing.
 - Do not completely edit/erase your posts after you posted them on the forum (except for small corrections - they are allowed) Remember that once you sent them, they belong to the community and shall be used by anyone who needs it.
 
@@ -63,17 +63,18 @@ The big picture - An opening sentence should state the general problem that you 
 
 **A snapshot of your environment** - For Plone and for other relevant products: provide version numbers. e.g., "I'm running Plone 5.0.4 under Python 2.7.11."
 
-**Steps to reproduce the issue** - Give information about your ideas of how this error appeared, what caused it or anything that could lead to reproducing the error on another computer. The expected result .
+**Steps to reproduce the issue** - Give information about your ideas of how this error appeared, what caused it or anything that could lead to reproducing the error on another computer, including your buildout.cfg, versions.cfg, version numbers of installed add-ons, detailed command lines, the complete error message stack. Mention your expected result.
 
-Asking help in real time chat (IRC)
------------------------------------
+Asking for help in online chat
+------------------------------
 
-Plone community real time chat is at the  `#plone <irc://irc.freenode.net/#plone>`_ IRC channel on the freenode IRC network.
+The Plone community uses `online chat <https://plone.org/support/chat>`_, specifically `Gitter <https://gitter.im/plone/public>`_ and traditional Plone IRC chat at the  `#plone <irc://irc.freenode.net/#plone>`_ IRC channel on the freenode IRC network.
 
-If you're not already familiar with IRC, you can visit the `support area <https://plone.org/support>`_, which offers a web page that connects you to our chat room right in your web browser.
+(To use Gitter you must log in using a free GitHub or Twitter account, which allows you to receive notifications when there is a response to your question. IRC does not require you to log in, but you will receive notifications of responses only while you remain connected).
 
+Here are useful hints for using online chat:
 
-Here are couple of useful hints while connecting to IRC network:
+- Remember that chat participants are volunteers; they are not paid to provide support.
 
 - Do not ask permission to ask a question, but directly start the conversation having the all necessary input. Follow the example below:
 
@@ -96,9 +97,9 @@ Here are couple of useful hints while connecting to IRC network:
 
 - There are many people discussing simultaneously - if you address a message to a particular person, use his or her nick name. Hint: you can use Tab key to autocomplete nick name after typing few letters.
 
-- IRC is a real-time communication tool. Keep in mind, that since you write something, and send it, it cannot be taken back.
+- Chat is a real-time communication tool. Keep in mind, that since you write something, and send it, it cannot be taken back.
 
-- Try to respond to all questions other users have. IRC is much more fluent and faster than forum, so don’t worry if you forget about putting something in the first message – you can still keep up.
+- Try to respond to all questions other users have. Chat is much more fluid and dynamic than the forum, so don’t worry if you forget about putting something in the first message – you can still keep up.
 
 - Do not worry if you are not fluent in English - Plone is a global community, and people will usually try to ask you more detailed questions in a way that the message gets through.
 
@@ -107,7 +108,7 @@ Here are couple of useful hints while connecting to IRC network:
 
   **Examples**
 
-  An ineffective IRC question:
+  An ineffective chat question:
 
   "Anyone here using product XYZ? Anyone here have problems installing XYZ?"
 
@@ -120,9 +121,9 @@ Tracebacks
 
 When there is an error, a Python program always products a traceback, a complete information where the application was when the error happened. To help you with an error, a complete traceback log is needed, not just the last line which says something like "AttributeError".
 
-Copy full tracebacks to your message (discussion forums) or pastie.org link (IRC). The most reliable way to get the traceback output is to start Plone (Zope application server) on foreground mode in your terminal / command line.
+Copy full tracebacks to your message (discussion forums) or pastie.org link (chat). The most reliable way to get the traceback output is to start Plone (Zope application server) in foreground mode in your terminal / command line (see these `debugging tips <http://docs.plone.org/manage/troubleshooting/basic.html>`_)
 
-First, shutdown Plone if it's running as service / background process. Then start Plone on foreground mode.
+First, shut down Plone if it's running as a service / background process. Then start Plone in foreground mode.
 
 On Linux, OSX or similar systems this is (navigate to Plone folder first):
 
