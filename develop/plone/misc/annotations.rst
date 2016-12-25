@@ -2,9 +2,9 @@
 
 .. index:: ! annotation
 
-=============
+============
  Annotations
-=============
+============
 
 .. admonition:: Description
 
@@ -307,7 +307,7 @@ classes so your data need your source code.
 That makes your code hard to uninstall (have to keep the code BBB + cleaning
 up the DB by walking throw all objects)
 
-So here is an other pattern to store data in annotations: Use already existing
+Another pattern to store data in annotations: Use already existing
 persistent base code instead of creating your own.
 
 Please use one of theses:

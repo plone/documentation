@@ -1,6 +1,6 @@
-===================
+================
  Listing objects
-===================
+================
 
 .. admonition:: Description
 
@@ -143,12 +143,12 @@ Plone applies some default rules for ``listFolderContents()``
   appear in the listing.
 
 Why does ``folder_listing`` not list my contents?
-====================================================
+=================================================
 
 The site search settings (*Site Setup*--> *Search*) modifies the way
 ``folder_listing`` works.
 
-So for example, if you specifify that you do not want to search objects
+If you specifify that you do not want to search objects
 of type *Page*, they will not appear in ``folder_listing`` anymore.
 
 From `this thread <http://lists.plone.org/pipermail/plone-product-developers/2012-March/thread.html#11436>`_.
@@ -173,7 +173,7 @@ a method on the folder::
 
 
 Enforcing manual sort order
-==============================
+===========================
 
 Below is an example of how to order content items by their manual sort order
 (the one you create via drag and drop on the contents tab)::
@@ -204,7 +204,7 @@ Below is an example of how to order content items by their manual sort order
 
 
 Getting object ids
-===================
+==================
 
 If you need to get ids only, use the ``objectIds()`` method,
 or ``keys()`` in Plone 4. This is a fast method::
@@ -223,7 +223,7 @@ or ``keys()`` in Plone 4. This is a fast method::
     so on ...
 
 Getting non-contentish Zope objects
-=====================================
+===================================
 
 In some special cases, it is necessary to manipulate non-contentish Zope objects.
 
@@ -238,13 +238,13 @@ not just Plone content objects::
 
 
 Checking for the existence of a particular object id
-=====================================================
+====================================================
 
 If you want to know whether the folder has a certain item or not,
 you can use the following snippet.
 
 Plone 4
---------
+-------
 
 Use ``has_key``::
 
@@ -253,28 +253,10 @@ Use ``has_key``::
     else:
         # Does not exist
 
-Plone 3
---------
-
-There is a special case for Large Plone Folders (BTree-based).
-The following is optimal code, but you can simplify it if you don't need to
-check if the folder is a ``BTreeFolder``::
-
-    # Use the BTreeFolder API if possible
-    myid = "index_html"
-
-    if base_hasattr(context, 'has_key'):
-        # BTreeFolder's has_key returns numeric values
-        return context.has_key(myid) and True or False
-    elif myid in context.objectIds():
-    # "elif myid in context:" in Plone 4 or newer
-        return True
-    else:
-        return False
 
 
 Listing the folder items using ``portal_catalog``
-==================================================
+=================================================
 
 This should be your preferred method for querying folder items.
 ``portal_catalog`` searches are fast,
@@ -348,10 +330,10 @@ Plone filtering rules. This example is taken from
     return contents
 
 Count of content items
-=======================
+======================
 
 Counting items using ``getFolderContents``
--------------------------------------------
+------------------------------------------
 
 The least expensive call for this, if you have tens of items, is to call
 ``len()`` on the result of calling ``getFolderContents()``, which is a

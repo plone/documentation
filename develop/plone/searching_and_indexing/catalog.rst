@@ -21,7 +21,7 @@ where ZCatalog comes in.
 Searching, for example, requires being able to query content on
 structured data such as dates or workflow states. Additionally,
 query results often need to be sorted based on structured data of
-some sort. So when it comes to searching it is very valuable to
+some sort. When it comes to searching it is very valuable to
 treat our free-form persistent ZODB objects as if they were more
 tabular. ZCatalog indexes do exactly this.
 

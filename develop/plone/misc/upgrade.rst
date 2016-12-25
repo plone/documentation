@@ -186,7 +186,7 @@ more suitable.
 Keep in mind that this script was successfully used in a situation where no
 possible collisions existed between correctly-migrated comments Creators' full
 names and user IDs (the code looks up the Creator in the hope of finding a
-valid Plone member).  So, if you had a situation where you had some correctly
+valid Plone member).  If you had a situation where you had some correctly
 migrated comments written by a user with ID ``david`` and full name of
 ``Administrator``, and also had a user with the ID of ``Administrator``, then
 this script may not be suitable.  In the test situation, the three attributes

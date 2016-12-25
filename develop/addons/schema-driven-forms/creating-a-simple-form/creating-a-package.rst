@@ -1,5 +1,6 @@
+==================
 Creating a package
-====================
+==================
 
 **Giving our forms a home**
 
@@ -38,7 +39,7 @@ You will find there various useful things:
  * even a robot test runner
  * and a releaser
 
-That is everything you need for development. So let us use this buildout.
+That is everything you need for development. Let us use this buildout.
 
 .. code-block:: bash
 

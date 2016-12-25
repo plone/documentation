@@ -4,7 +4,7 @@ Python styleguide
 
 
 Introduction
-==============
+============
 
 We've modeled the following rules and recommendations based on the following documents:
 
@@ -295,7 +295,7 @@ Grouping and sorting
 --------------------
 
 Since Plone has such a huge code base, we don't want to lose developer time figuring out into which group some import goes (standard lib?, external package?, etc.).
-So we just sort everything alphabetically case insensitive and insert one blank line between ``from foo import bar`` and ``import baz`` blocks.
+We sort everything alphabetically case insensitive and insert one blank line between ``from foo import bar`` and ``import baz`` blocks.
 Conditional imports come last.
 Don't use multi-line imports but import each identifier from a module in a separate line.
 Again, we *do not* distinguish between what is standard lib, external package or internal package in order to save time and avoid the hassle of explaining which is which.

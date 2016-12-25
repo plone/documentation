@@ -1,6 +1,6 @@
-===============
+======
  Views
-===============
+======
 
 .. admonition:: Description
 
@@ -9,7 +9,7 @@
 .. contents:: :local:
 
 Introduction
-=============
+============
 
 Plone/Zope uses a *view* pattern to output dynamically generated HTML pages.
 
@@ -129,7 +129,7 @@ For example, if you want to override the *Tabular* view of a *Folder*,
 you find out that it is registered as the handler for
 ``/folder_tabular_view``.
 
-So you look for both ``folder_tabular_view`` old-style page templates and
+You look for both ``folder_tabular_view`` old-style page templates and
 ``@@folder_tabular_view`` BrowserView ZCML registrations in the Plone
 source tree |---| it can be either.
 

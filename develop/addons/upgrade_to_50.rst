@@ -3,7 +3,7 @@ Upgrade a custom add-on to Plone 5.0
 ====================================
 
 Archetypes
-----------
+==========
 
 If your add-on depends on Archetypes, you will need some parts of ``Products.ATContentTypes``.
 Those parts will be declared by the profile "Archetypes-tools without content-types". It must be added to your ``profiles/default/metadata.xml`` that way::
@@ -14,7 +14,7 @@ Those parts will be declared by the profile "Archetypes-tools without content-ty
     </dependencies>
 
 JS/CSS bundle
--------------
+=============
 
 Plone 5 does not use ``portal_css`` and ``portal_javascript`` anymore.
 The add-on resources will have to be provided into a bundle.
@@ -47,10 +47,10 @@ Add a file named ``registry.xml`` in your profile, containing:
 
 
 CSRF protection
----------------
+===============
 
 Plone 5 provides a CSRF protection mechanism. This mechanism is integrated into the different Plone frameworks.
-So if your add-on only uses default Dexterity or Archetypes features, you are safe.
+If your add-on only uses default Dexterity or Archetypes features, you are safe.
 
 But any custom redirection or form submission will have to include a token provided by ``plone.protect``.
 
@@ -71,7 +71,7 @@ But any custom redirection or form submission will have to include a token provi
 
 
 plone.app.stagingbehavior
--------------------------
+=========================
 
 plone.app.stagingbehavior was used to enable versioning functionality for Dexterity-based content types.
 It allowed you to perform the checkout and checkin operations to work on a copy of your original content on Plone 4.
