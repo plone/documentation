@@ -1,6 +1,6 @@
-====================
+==============
  Dynamic views
-====================
+==============
 
 .. contents:: :local:
 
@@ -27,7 +27,7 @@ The default view can be also a content item picked from the folder.
 Available content item types can be managed from the: Site Setup Control Panel -> Content Rules (site.com/@@content-controlpanel) -> Select your new type from the drop down menu -> Click the "Can be used as default page" checkbox. 
 
 Permission for changing the view template of an item
--------------------------------------------------------
+----------------------------------------------------
 
 A user needs the :guilabel:`Modify view template` permission to use the
 dynamic view dropdown.
@@ -180,7 +180,7 @@ returns the list of known layouts in the following format::
     ('folder_listing', 'Standard view'),
     ('product_listing', u'Product listing')]
 
-So to see if your view is available, check it against the ids from that
+To see if your view is available, check it against the ids from that
 result::
 
     layout_ids = [id for id, title in self.portal.folder.getAvailableLayouts() ]

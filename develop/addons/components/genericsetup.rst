@@ -1,6 +1,6 @@
-============================================================
+=======================================================
  Add-on installation and export framework: GenericSetup
-============================================================
+=======================================================
 
 .. admonition:: Description
 
@@ -10,7 +10,7 @@
 .. contents :: :local:
 
 Introduction
-=============
+============
 
 GenericSetup is an XML-based way to import and export Plone site configurations.
 
@@ -21,7 +21,7 @@ It is mainly used to prepare the Plone site for add-on packages, by:
 * setting various properties,
 * registering portlets,
 * registering portal_catalog search query indexes,
-* ...and so on...
+* ... etc ...
 
 GenericSetup is mostly used to apply an add-on's specific changes to the site configuration and to enable specific behaviors when the add-on installer is run.
 
@@ -100,7 +100,7 @@ Exception: when this ``default`` profile is marked in an ``INonInstallable`` uti
     In Plone 5.0 and lower,
     the profiles are sorted alphabetically by id,
     and the first one is chosen.
-    So if you have profiles ``base`` and ``default``,
+    If you have profiles ``base`` and ``default``,
     the ``base`` profile is installed.
     It is recommended to let ``default`` be the alphabetically first profile.
 
@@ -216,7 +216,7 @@ When you deactivate an add-on in the control panel, Plone looks for a profile wi
 
     The add-ons control panel no longer does an automatic partial cleanup,
     for example removing added skins and css resources.
-    This was always only partial, so you could not rely on it to fully cleanup the site.
+    This was always only partial, you could not rely on it to fully cleanup the site.
 
 .. note::
 
@@ -230,7 +230,7 @@ Dependencies
 
 GenericSetup profile can contain dependencies to other add-on package
 installers and profiles. For example, if you want to declare a dependency to
-the *your.addonpackage* package, so that it is automatically installed when
+the *your.addonpackage* package, that it is automatically installed when
 your add-on is installed, you can use the declaration below.
 This way you can be sure that all layers, portlets and other features which
 require database changes are usable from *your.addonpackage* when it is run.
@@ -305,7 +305,6 @@ If you are seeing this, then you are using an old version of GenericSetup.
 You want numerical sorting here, which is correctly done currently.
 Versions with dots work fine too.
 They get ordered just like they would when used for packages on PyPI.
-So far for the background information.
 
 Best practice for all versions of GenericSetup is this:
 
@@ -313,7 +312,7 @@ Best practice for all versions of GenericSetup is this:
   This avoids problems with ancient GenericSetup that used alphabetical sorting.
 
 - Simply increase the version by 1 each time you need a new metadata version.
-  So 1001, 1002, etc.
+  For example: 1001, 1002, etc.
 
 - If your add-on package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version.
   There is simply no need.
@@ -515,7 +514,7 @@ Upgrade steps
 You can define upgrade steps to run code when someone upgrades your package from version *x* to *y*.
 
 As an example, let's say that the new version of your.addonpackage defines a *price* field on a content type *MyType* to be a string, but previously (version 1.1 and earlier) it was a float.
-Code that uses this field and assumes it to be a float will break after the upgrade, so you'd like to automatically convert existing values for the field to string.
+Code that uses this field and assumes it to be a float will break after the upgrade, you'd like to automatically convert existing values for the field to string.
 
 Obviously, you could do this very quickly in a simple script, but having a GenericSetup upgrade step means non-technical people can do it as well.
 As it turns out, once you have the script, it's easy to put its code in an upgrade step.
@@ -798,7 +797,7 @@ There are dangers:
   Please report it.
 
 - Some importers check the truth value of the attribute, some just check the presence.
-  So ``remove="false"`` may mean the item stays and may mean it gets removed.
+  ``remove="false"`` may mean the item stays and may mean it gets removed.
   Best is to either use ``remove="true"`` or leave the entire keyword away.
 
 
@@ -1762,7 +1761,7 @@ For reference, visit: :doc:`Local Roles </develop/plone/security/local_roles>`.
 skins.xml
 ---------
 
-Skins are old fashioned, so you may not need this.
+Skins are old fashioned, you may not need this.
 The more modern way is: use browser views and static directories.
 But skins are still installed by several add-on packages.
 
@@ -1937,7 +1936,7 @@ The ``meta_type`` can be:
   This is probably what you want.
 - ``Factory-based Type Information with dynamic views`` for Archetypes content and for the Plone Site itself
 - ``Factory-based Type Information`` for Archetypes content that does not need dynamic views,
-  so the ability to choose a view in the ``display`` menu.
+  the ability to choose a view in the ``display`` menu.
 
 The ``types.xml`` should be accompanied by a ``types`` folder with details information on the new types.
 If you are editing an already existing type, then ``types.xml`` is not needed:

@@ -4,13 +4,13 @@ Upgrade a custom add-on to Plone 5.1
 
 
 Installation code
------------------
+=================
 
 See `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_ for a discussion of this change.
 
 
 From CMFQuickInstallerTool to GenericSetup
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================================
 
 The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code in ``Extensions/install.py`` or  ``Extensions/Install.py``.
 If you have such code, you must switch to a GenericSetup profile.
@@ -24,7 +24,7 @@ See the :doc:`GenericSetup documentation </develop/addons/components/genericsetu
 
 
 default profile
-~~~~~~~~~~~~~~~
+===============
 
 Historically, when your add-on had multiple profiles, their names would be sorted alphabetically and the first one would be taken as the installation profile.
 It was always recommended to use ``default`` as name of this first profile.
@@ -34,7 +34,7 @@ Exception: when this ``default`` profile is marked in an ``INonInstallable`` uti
 
 
 Uninstall
-~~~~~~~~~
+=========
 
 An uninstall profile is not required, but it is highly recommended.
 
@@ -53,7 +53,7 @@ You need to do that when your default profile contains one of these files:
 - ``contenttyperegistry.xml``.
   This seems rarely used.
   Note: the `contenttyperegistry import step <https://github.com/zopefoundation/Products.CMFCore/blob/2.2.10/Products/CMFCore/exportimport/contenttyperegistry.py#L73>`_ only supports adding, not removing.
-  So you may need to improve that code based on the old `CMFQuickInstallerTool code <https://github.com/plone/Products.CMFQuickInstallerTool/blob/3.0.13/Products/CMFQuickInstallerTool/InstalledProduct.py#L364>`_.
+  You may need to improve that code based on the old `CMFQuickInstallerTool code <https://github.com/plone/Products.CMFQuickInstallerTool/blob/3.0.13/Products/CMFQuickInstallerTool/InstalledProduct.py#L364>`_.
 - ``cssregistry.xml``
 - ``jsregistry.xml``
 - ``skins.xml``
@@ -67,7 +67,7 @@ For an example, see https://github.com/plone/plone.app.multilingual/tree/master/
 
 
 Don't use portal_quickinstaller
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===============================
 
 Old code:
 
@@ -135,7 +135,7 @@ and they may accept less arguments or differently named arguments.
 
 
 Products namespace
-~~~~~~~~~~~~~~~~~~
+==================
 
 There used to be special handling for the Products namespace.
 Not anymore.
@@ -154,7 +154,7 @@ New code:
 
 
 isProductInstalled
-~~~~~~~~~~~~~~~~~~
+==================
 
 Old code:
 
@@ -170,7 +170,7 @@ New code:
 
 
 installProduct
-~~~~~~~~~~~~~~
+==============
 
 Old code:
 
@@ -188,7 +188,7 @@ Note that no keyword arguments are accepted.
 
 
 installProducts
-~~~~~~~~~~~~~~~
+===============
 
 This was removed.
 You should iterate over a list of products instead.
@@ -210,7 +210,7 @@ New code:
 
 
 uninstallProducts
-~~~~~~~~~~~~~~~~~
+=================
 
 Old code:
 
@@ -229,7 +229,7 @@ If you want to uninstall multiple products, you must call this method multiple t
 
 
 reinstallProducts
-~~~~~~~~~~~~~~~~~
+=================
 
 This was removed.
 Reinstalling is usually not a good idea: you should use an upgrade step instead.
@@ -237,7 +237,7 @@ If you really need to, you can uninstall and install if you want.
 
 
 getLatestUpgradeStep
-~~~~~~~~~~~~~~~~~~~~
+====================
 
 Old code:
 
@@ -253,7 +253,7 @@ New code:
 
 
 upgradeProduct
-~~~~~~~~~~~~~~
+==============
 
 Old code:
 
@@ -269,7 +269,7 @@ New code:
 
 
 isDevelopmentMode
-~~~~~~~~~~~~~~~~~
+=================
 
 This was a helper method that had got nothing to with the quick installer.
 
@@ -293,7 +293,7 @@ New code:
 
 
 All deprecated methods
-~~~~~~~~~~~~~~~~~~~~~~
+======================
 
 Some of these were mentioned already.
 
@@ -336,7 +336,7 @@ You should switch to the new methods instead:
 
 
 INonInstallable
-~~~~~~~~~~~~~~~
+===============
 
 There used to be one ``INonInstallable`` interface in ``CMFPlone`` (for hiding profiles) and another one in ``CMFQuickInstallerTool`` (for hiding products).
 In the new situation, these are combined in the one from CMFPlone.

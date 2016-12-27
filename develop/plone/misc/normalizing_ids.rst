@@ -1,6 +1,6 @@
-=================
+================
  Normalizing ids
-=================
+================
 
 .. admonition:: Description
 
@@ -9,7 +9,7 @@
 .. contents:: :local:
 
 Introduction
----------------
+============
 
 Normalizers turns arbitrary string (with unicode letters) to machine friendly ASCII ids.
 Plone provides different id normalizers.
@@ -77,7 +77,7 @@ folderish object that will contain our new object.::
     from zope.container.interfaces import INameChooser
 
     # For the NameChooser to work, it needs our object to already exist.
-    # So we create our object with a temporary but unique id. Seconds since
+    # We create our object with a temporary but unique id. Seconds since
     # epoch will do.
     oid = container.invokeFactory(portal_type, id=time.time())
 

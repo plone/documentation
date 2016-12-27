@@ -1,6 +1,6 @@
------------------------------------
+==============================
 Available permissions in Plone
------------------------------------
+==============================
 
 .. admonition:: Description
 
@@ -9,7 +9,7 @@ Available permissions in Plone
 .. contents :: local
 
 Listing different available permissions
-----------------------------------------
+=======================================
 
 Each permission name is a string.
 
@@ -41,7 +41,7 @@ Example using UNIX grep tool:
 	grep -C 3 -Ri --include=*.zcml "<permission" *
 
 Useful permissions
-------------------
+==================
 
 Permissions are shown by their verbose name in the :term:`ZMI`.
 
@@ -79,7 +79,7 @@ If you create your own content type, create a custom add permission for it.
 
 To reference a permission in code, you need the name as a string.
 Using strings is a bad convention, all common permissions have a constant in Products.CMFCore.permissions.
-So to perform a permission check propery, you do something like this::
+To perform a permission check propery, you do something like this::
 
     from AccessControl import getSecurityManager
     from AccessControl import Unauthorized
