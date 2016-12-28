@@ -41,7 +41,6 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
   Shared hosting is not supported unless the shared hosting company says Plone is good to go.
 
 
-
 How to install Plone
 ====================
 
@@ -283,7 +282,7 @@ Not supported by Plone community. Plone dependencies can and should be installed
 
 
 Microsoft Windows
------------------
+=================
 
 Installing Plone on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -298,7 +297,7 @@ If you wish to develop Plone on Windows you need to set-up a working MingW envir
 
 
 OSX
----
+===
 
 Installing Plone using VirtualBox/Vagrant install kit or VirtualBox appliance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -327,7 +326,7 @@ After either of these steps, you immediately should be able to install Plone usi
 Proceed as with Linux.
 
 LibXML2/LibXSLT Versions
-------------------------
+========================
 
 Don't worry about this if you're using an installer.
 
