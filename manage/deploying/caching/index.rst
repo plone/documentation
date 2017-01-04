@@ -30,5 +30,4 @@ These days, the favorite and recommended program for that is called "Varnish".
     :maxdepth: 2
 
     caching
-    varnish3
     varnish4
