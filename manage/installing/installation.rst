@@ -16,14 +16,28 @@ That server is installed automatically by the install process.
 
 .. warning::
 
-    We strongly advise against installing Plone via OS packages or ports.
-    There is no .rpm, .deb, or BSD port that is supported by the Plone community. Plone dependencies can and should be installed via package or port -- but not Plone itself.
+	We strongly advise against installing Plone via OS packages or ports.
+
+	There is no .rpm, .deb, or BSD port that is supported by the Plone community.
+
+	Plone dependencies can and should be installed via package or port -- but not Plone itself.
+
+.. note::
+
+	For installiing and running Plone on CentOS, please make sure that you have enough Memory
+	and Swap.
+
+	If you use the Unified Installer on CentOS, make sure that you have at least 1024 MB of Memory.
+
+	Building lxml is resource consuming.
 
 Download Plone
 ==============
 
 Plone is available for Mac OSX X, Linux and BSD operating systems.
-For Windows, we currently advise running Plone 5 in a virtualmachine or Vagrant image. We anticipate having a binary windows installer for later releases.
+For Windows, we currently advise running Plone 5 in a virtualmachine or Vagrant image.
+
+We anticipate having a binary windows installer for later releases.
 
 `Download the latest Plone release <https://plone.org/download>`_.
 
@@ -57,9 +71,9 @@ Installing Plone using the Unified UNIX Installer
 
 .. note::
 
-  Running Plone in **production** will normally also entail other software for optimal security and performance, like a front-end webserver, caching, and firewall.
+	Running Plone in **production** will normally also entail other software for optimal security and performance, like a front-end webserver, caching, and firewall.
 
-  See :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` , and you may also be interested in :doc:`automated full-stack deployment </external/ansible-playbook/docs/index>`.
+	See :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` , and you may also be interested in :doc:`automated full-stack deployment </external/ansible-playbook/docs/index>`.
 
 This recipe is good for:
 
@@ -79,70 +93,73 @@ Install the operating system software and libraries needed to run Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. example-code::
-    .. code-block:: Ubuntu
+	.. code-block:: Ubuntu
 
-        sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+		sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
-    .. code-block:: Fedora
+	.. code-block:: Fedora
 
-        sudo dnf install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
+		sudo dnf install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
 
    .. code-block:: CentOS
 
-        sudo yum install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
+		sudo yum install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
 
 
 .. note::
 
-    If the **sudo** command is not recognized or does not work you don't have administrator rights on your operating system.
-    Please contact your server vendor or consult the operating system support forum.
+	If the **sudo** command is not recognized or does not work you don't have administrator rights on your operating system.
+	Please contact your server vendor or consult the operating system support forum.
 
 
 You will probably also want these optional system packages for handling of PDF and Office files:
 
 .. example-code::
-    .. code-block:: Ubuntu
+	.. code-block:: Ubuntu
 
-        sudo apt-get install libreadline-dev wv poppler-utils
+		sudo apt-get install libreadline-dev wv poppler-utils
 
-    .. code-block:: Fedora
+	.. code-block:: Fedora
 
-        sudo dnf install readline-devel wv poppler-utils
+		sudo dnf install readline-devel wv poppler-utils
 
-    .. code-block:: CentOS
+	.. code-block:: CentOS
 
-        sudo yum install readline-devel wv poppler-utils
+		sudo yum install readline-devel wv poppler-utils
 
 .. note::
 
-    **libreadline-dev** or **readline-devel** is only necessary if you wish to build your own python rather than use your system's python 2.7.
+	**libreadline-dev** or **readline-devel** is only necessary if you wish to build your own python rather than use your system's python 2.7.
 
 If you're planning on developing with Plone, install git version control support
 
 .. example-code::
-    .. code-block:: Ubuntu
+	.. code-block:: Ubuntu
 
-        sudo apt-get install git
+		sudo apt-get install git
 
-    .. code-block:: Fedora
+	.. code-block:: Fedora
 
-        sudo dnf install git
+		sudo dnf install git
 
-    .. code-block:: CentOS
+	.. code-block:: CentOS
 
-        sudo yum install git
+		sudo yum install git
 
 
 
 Download the latest Plone unified installer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download from `the plone.org download page <http://plone.org/download>`_ to your server using wget command. Curl also works.
+Download from `the plone.org download page <http://plone.org/download>`_ to your server using wget command.
+
+Curl also works.
+
 Substitute the latest version number for 5.0 in the instructions below.
 
 .. code-block:: shell
 
-    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.4/+download/Plone-5.0.4-UnifiedInstaller.tgz
+	wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.4/+download/Plone-5.0.4-UnifiedInstaller.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,13 +168,13 @@ Extract the downloaded file
 
 .. code-block:: shell
 
-    tar -xf Plone-5.0.4-UnifiedInstaller.tgz
+	tar -xf Plone-5.0.4-UnifiedInstaller.tgz
 
 Go the folder containing installer script
 
 .. code-block:: shell
 
-    cd Plone-5.0.4-UnifiedInstaller
+	cd Plone-5.0.4-UnifiedInstaller
 
 .. note::
 
@@ -221,8 +238,8 @@ If you're using this Plone install for development, add the common development t
 
 .. code-block:: shell
 
-    cd ~/Plone/zinstance
-    bin/buildout -c develop.cfg
+	cd ~/Plone/zinstance
+	bin/buildout -c develop.cfg
 
 You'll need to add the “-c develop.cfg” again each time you run buildout, or you'll lose the extra development tools.
 
@@ -233,8 +250,8 @@ If you're developing, start Plone in foreground mode for a test run (you'll see 
 
 .. code-block:: shell
 
-    cd ~/Plone/zinstance
-    bin/plonectl fg
+	cd ~/Plone/zinstance
+	bin/plonectl fg
 
 When you start Plone in the foreground, it runs in debug mode, which is much slower than production mode since it reloads templates for every request.
 
@@ -242,15 +259,15 @@ For evaluation, instead use:
 
 .. code-block:: shell
 
-    cd ~/Plone/zinstance
-    bin/plonectl start
+	cd ~/Plone/zinstance
+	bin/plonectl start
 
 Use
 
 .. code-block:: shell
 
-    cd ~/Plone/zinstance
-    bin/plonectl stop
+	cd ~/Plone/zinstance
+	bin/plonectl stop
 
 to stop the instance.
 
@@ -262,7 +279,7 @@ You've got Plone
 
 Now take a look at your Plone site by visiting the following address in your webbrowser::
 
-    http://yourserver:8080
+	http://yourserver:8080
 
 The greeting page will let you create a new site.
 For this you need the login credentials printed to your terminal earlier, also available at ``~/Plone/zinstance/adminPassword.txt``.
@@ -278,7 +295,7 @@ please see the :doc:`deployment guide </manage/deploying/production/index>`.
 Installing Plone using RPMs, .dev, … packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Not supported by Plone community. Plone dependencies can and should be installed via your operating system package manager, to profit from security updates and maintenance, but not Plone itself. The packages that have been offered in the past via apt, yup, port etcetera tend to be unmaintained, old and unsuitable.
+Not supported by Plone community. Plone dependencies can and should be installed via your operating system package manager, to profit from security updates and maintenance, but not Plone itself. The packages that have been offered in the past via apt, yum, dnf, port etcetera tend to be unmaintained, old and unsuitable.
 
 
 Microsoft Windows
@@ -312,7 +329,8 @@ Installing Plone from source on OS X
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Installation via the Unified Installer or buildout is similar to Unix.
-However, you will need to install a command-line build environment. To get a free build kit from Apple, do one of the following:
+However, you will need to install a command-line build environment.
+To get a free build kit from Apple, do one of the following:
 
 * Download gcc and command-line tools from
   https://developer.apple.com/downloads/. This will require an Apple
