@@ -7,11 +7,11 @@ It's named after the `Barcelona beach and neighbourhood <https://en.wikipedia.or
 Barceloneta is a Diazo theme made from scratch using modern frontend technologies.
 It's responsive and spans through all the Plone UI including the CMS backend part.
 
-It's based on Bootstrap 3, but it's not dependent of it in any way.
+It's based on `Bootstrap <https://getbootstrap.com/>`_ 3, but it's not dependent of it in any way.
 Although it reuses some of the structure and good practices of the original Bootstrap, it has its own personality and is fully adapted to Plone.
 
 Structure
----------
+=========
 
 Barceloneta uses `LESS <http://lesscss.org/>`_ as a pre-processor to generate the resultant stylesheet.
 The LESS resources live in the `plonetheme.barceloneta egg <https://github.com/plone/plonetheme.barceloneta/tree/master/plonetheme/barceloneta/theme/less>`_ in the ``plonetheme/barceloneta/theme/less`` directory::
@@ -81,14 +81,14 @@ The LESS resources live in the `plonetheme.barceloneta egg <https://github.com/p
 They are divided by base styling, layout, function, components and views, so they could be easily reusable and extended from other themes.
 The main LESS resource that imports all the others is ``barceloneta.plone.less``.
 
-It has a set of LESS variables that can be overriden either through the web using the Theming control panel or by reusing it in your own theme.
+It has a set of LESS variables that can be overriden either through the web using the `Theming control panel <http://docs.plone.org/external/plone.app.theming/docs/index.html#using-the-control-panel>`_ or by reusing it in your own theme.
 They include colors, sizes, fonts and other useful parameters.
 
-Barceloneta makes use of the new Diazo bundle to expose its resources to Plone using the Resource Registries.
+Barceloneta makes use of the new `Diazo bundle <http://docs.plone.org/adapt-and-extend/theming/resourceregistry.html#id26>`_ to expose its resources to Plone using the Resource Registries.
 As it is a pure Diazo theme, it keeps a low profile being Plone agnostic and only containing the theme itself.
 
 Changes from previous versions of Plone
----------------------------------------
+=======================================
 
 Regarding markup and comparing to the previous versions of Plone, Barceloneta introduced lots of changes in the default Plone markup to modernize it and make it more accessible.
 There are few parts of rendering Plone that were not updated.
@@ -97,7 +97,7 @@ However, any class or id that was stripped away from Plone was done with the pur
 Whenever possible additional classes and ids were introduced being always domain namespaced ``plone-*``.
 
 Register LESS resources profile
--------------------------------
+===============================
 
 Barceloneta provides an optional GenericSetup profile that allows you to easily reuse the resources from the LESS files of your theme.
 This is done by registering all the Barceloneta LESS resources as Plone Resource Registries resources.
@@ -116,7 +116,7 @@ This profile is called ``plonetheme.barceloneta:registerless`` and can be import
 
 
 Using the barceloneta theme only for the backend
-------------------------------------------------
+================================================
 
 You can develop a custom Diazo based theme and use the Barceloneta theme only for the backend like follows shown below:
 
@@ -143,6 +143,41 @@ You can develop a custom Diazo based theme and use the Barceloneta theme only fo
     </rules>
 
 You can define your own Diazo bundle (JavaScript and Less/CSS) in your manifest.cfg file by using the options ``development-js``, ``production-js``, ``development-css`` and ``production-css``. This bundle will not be included in the backend theme.
+
+
+Current issues
+--------------
+
+You will still need to include a minimal plone bundle in your theme for rendering the toolbar correctly.
+It is intented in future versions of Plone that this will be available by default and be very minimal making no assumptions about the JS or CSS of your frontend theme so as not to conflict with it.
+
+Why this is a good idea
+^^^^^^^^^^^^^^^^^^^^^^^
+
+- It reduces the effort in theming.
+⁻ In most cases your users will never see edit, sharing, sitesetup or other aspects of the Plone backend UI.
+- Making those screens work with a new theme is a lot of work.
+- The backend pages can include a lot of add on functionality which might be hard to integrate.
+- This might not be tested for integration into third-party themes.
+- Barceloneta has been tested for UI and to some extend accessibility.
+- Retheming could make the UI harder to use for editor.
+- The backend UI is more likely to change between versions.
+- Theming it means your theme will have to change too.
+
+How this works
+^^^^^^^^^^^^^^
+
+- There is a body class tag "frontend".
+- This appears when current view or page is unprotected or only protected by a "can view" permisission.
+- In most cases this your "view" of an object, and some extra pages like contact-us, login_form etc.
+- Almost everything else is protected by other permissions and are therefore intended to be used by logged in users.
+- ``++theme++barceloneta/backend.xml`` is mainly the same as the normal barceloneteta rules except for a few exceptions:
+
+  - It will only apply theming when body.frontend is not present
+  - Except it will include the toolbar regardless if body.frontend is there or not.
+  - It disables all popups. This makes it possible to switch theme using just the toolbar
+  - It removes headers, footers and most "theme" elements from backend pages.
+
 
 Inheriting a new theme from Barceloneta
 ---------------------------------------
