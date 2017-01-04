@@ -4,9 +4,8 @@ Varnish 4.x
 
 .. admonition:: Description
 
-    Varnish is a caching front-end server. This document has notes on how to use Varnish with Plone.
-    If you're using Varnish 2.x or 3.x, then you want to look into :doc:`Varnish 3.x </manage/deploying/caching/varnish3>`
-
+    Varnish is a caching front-end server.
+    This document has notes on how to use Varnish with Plone.
 
 .. contents:: :local:
 
@@ -26,26 +25,22 @@ To use Varnish with Plone
 
 * Add Plone virtual hosting rule to the default varnish configuration
 
-.. note ::
-
-    After a radically change of VCL language in Varnish 3.x (Jun 2011), again we had radical changes in the Varnish 4.x (Apr 2014) syntax of VCL language and command line tools.
-
 Installation
 ============
 
-The suggest method to install Varnish is to use your OS package manager.
+The recommended method to install Varnish is by using your OS package manager.
 
-* You can install using packages (DEB) - consult your operating system instructions.
+Varnish is distributed in the Debian and Ubuntu package repositories.
 
-* For more up to date packages for Debian you could check: https://www.varnish-cache.org/installation/debian
+.. code-block:: console
 
-* You can install backports
+    $ sudo apt-get update
+    $ sudo apt-get install varnish
 
-* You can install using buildout
+For installation instructions on other operating systems check: https://www.varnish-cache.org/releases/index.html
 
-Buildout examples
-
-* https://pypi.python.org/pypi/plone.recipe.varnish
+You can also install Varnish using Buildout.
+For examples check: https://pypi.python.org/pypi/plone.recipe.varnish
 
 Management console
 ==================
@@ -347,8 +342,6 @@ Example::
 
         return (deliver);
     }
-
-For VCL examples Varnish 2.x or 3.x, you will want to look into :doc:`Varnish 3.x </manage/deploying/caching/varnish3>`
 
 Varnishd port and IP address to listen
 ======================================
