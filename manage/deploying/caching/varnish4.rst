@@ -343,6 +343,58 @@ Example::
         return (deliver);
     }
 
+
+Load balancing
+==============
+
+Load balancing increases performance and resilience.
+Varnish ``vmod_directors`` module enables load balancing using a concept called "directors".
+
+A director is a group of several backend servers.
+A backend server is a server providing the content Varnish will accelerate.
+
+Varnish supports the following directors:
+
+round-robin
+    Picks backends in a round-robin fashion.
+fallback
+    Try each of the added backends in turn, and return the first one that is healthy.
+hash
+    Chooses the backend server by computing the hash of a string.
+random
+    Distributes load over the backends using a weighted random probability distribution.
+
+The following example shows how to configure round-robin load balancing of 2 Plone instances.
+
+.. code-block::
+
+    import directors;
+
+    backend instance1 {
+        .host = "localhost";
+        .port = "8081";
+    }
+
+    backend instance2 {
+        .host = "localhost";
+        .port = "8082";
+    }
+
+    sub vcl_init {
+        new plone = directors.round_robin();
+        plone.add_backend(instance1);
+        plone.add_backend(instance2);
+    }
+
+    sub vcl_recv {
+        set req.backend_hint = plone.backend();
+    }
+
+For more information, see:
+
+* https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html
+* https://www.varnish-cache.org/docs/trunk/reference/vmod_directors.generated.html
+
 Varnishd port and IP address to listen
 ======================================
 
@@ -623,50 +675,3 @@ More info
 ---------
 
 * https://www.varnish-cache.org/docs/4.0/users-guide/purging.html
-
-Round-robin balancing
-=====================
-
-Varnish can do round-robin load balancing internally.
-Use this if you want to distribute CPU-intensive load between several ZEO front end client instances, each listening on its own port.
-
-Example::
-
-    # Round-robin between two ZEO front end clients
-
-    backend app1 {
-        .host = "localhost";
-        .port = "8080";
-    }
-
-    backend app2 {
-        .host = "localhost";
-        .port = "8081";
-    }
-
-    # Directors have been moved to the vmod_directors
-    # To make directors (backend selection logic) easier to extend, the directors are now defined in loadable VMODs.
-    # Setting a backend for future fetches in vcl_recv is now done as bellow, is an example redirector based on round-robin requests.
-
-    import directors;
-
-    sub vcl_init {
-        new cluster1 = directors.round_robin();
-        cluster1.add_backend(app1);    # Backend app1 defined above
-        cluster1.add_backend(app2);    # Backend app2 defined above
-    }
-
-
-    sub vcl_recv {
-        if (req.http.host ~ "(www\.|www2\.)?app\.fi(:[0-9]+)?$") {
-            set req.backend_hint = cluster1.backend();
-            set req.url = "/VirtualHostBase/http/" + req.http.host + ":80/app/app/VirtualHostRoot" + req.url;
-        }
-
-        ...
-    }
-
-More info
----------
-
-* https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html
