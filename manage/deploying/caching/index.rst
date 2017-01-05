@@ -39,5 +39,4 @@ Here, you will find documentation on both. Remember, they work best together.
 .. toctree::
     :maxdepth: 2
 
-    varnish3
     varnish4

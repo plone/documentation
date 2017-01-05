@@ -5,7 +5,6 @@ Varnish 4.x
 .. admonition:: Description
 
     Varnish is a caching front-end server. This document has notes on how to use Varnish with Plone.
-    If you're using Varnish 2.x or 3.x, then you want to look into :doc:`Varnish 3.x </manage/deploying/caching/varnish3>`
 
 
 .. contents:: :local:
@@ -25,10 +24,6 @@ To use Varnish with Plone
 * Learn how to install and configure Varnish
 
 * Add Plone virtual hosting rule to the default varnish configuration
-
-.. note ::
-
-    After a radically change of VCL language in Varnish 3.x (Jun 2011), again we had radical changes in the Varnish 4.x (Apr 2014) syntax of VCL language and command line tools.
 
 Installation
 ============
@@ -349,8 +344,6 @@ Example::
 
         return (deliver);
     }
-
-For VCL examples Varnish 2.x or 3.x, you will want to look into :doc:`Varnish 3.x </manage/deploying/caching/varnish3>`
 
 Varnishd port and IP address to listen
 ======================================
