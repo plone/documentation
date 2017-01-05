@@ -4,8 +4,8 @@ Varnish 4.x
 
 .. admonition:: Description
 
-    Varnish is a caching front-end server. This document has notes on how to use Varnish with Plone.
-
+    Varnish is a caching front-end server.
+    This document has notes on how to use Varnish with Plone.
 
 .. contents:: :local:
 
@@ -28,21 +28,19 @@ To use Varnish with Plone
 Installation
 ============
 
-The suggest method to install Varnish is to use your OS package manager.
+The recommended method to install Varnish is by using your OS package manager.
 
-* You can install using packages (RPM/DEB) - consult your operating system instructions.
+Varnish is distributed in the Debian and Ubuntu package repositories.
 
-* For more up to date packages for Debian you could check: https://www.varnish-cache.org/installation/debian
+.. code-block:: console
 
-* For more up to date packages for RedHat (RPM Based) you could check: https://www.varnish-cache.org/installation/redhat
+    $ sudo apt-get update
+    $ sudo apt-get install varnish
 
-* You can install backports
+For installation instructions on other operating systems check: https://www.varnish-cache.org/releases/index.html
 
-* You can install using buildout
-
-Buildout examples
-
-* https://pypi.python.org/pypi/plone.recipe.varnish
+You can also install Varnish using Buildout.
+For examples check: https://pypi.python.org/pypi/plone.recipe.varnish
 
 Management console
 ==================
