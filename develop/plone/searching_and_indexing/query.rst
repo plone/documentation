@@ -436,15 +436,39 @@ the objects without triggering a security exception::
 Bypassing language check
 ========================
 
-.. note::
+.. note ::
 
         All portal_catalog() queries are limited to the selected language of
         the current user. You need to explicitly bypass the language check if you
         want to do multilingual queries.
 
-Example of how to bypass language check::
+Language is only a factor when a multilingual product is installed - which 
+basically comes down to one of the venerable ``LinguaPlone`` or the more modern 
+``plone.app.multilingual``. Bypassing the language check depends on which of 
+these you are using.
+
+In LinguaPlone and plone.app.multilingual 1.x (what you would probably use in 
+versions 4.3 or earlier of Plone), a patch is applied to the portal_catalog.  
+To bypass this add the parameter ``Language='all'`` to your catalog query like
+so::
 
     all_content_brains = portal_catalog(Language="")
+
+``plone.app.multilingual`` creates Root Language Folders for each of your site's 
+languages and keeps ("jails") content within the appropriate folders. Each Root 
+Language Folder is also a NavigationRoot, so the portal_catalog is effectively
+limited to searches in the users current language.
+This means that the way to bypass this is to add the parameter ``path='/'` to 
+your catalog query like so::
+
+    all_content_brains = portal_catalog(path='/')
+
+.. note ::
+ 
+         Although the language folders are also marked to be INavigationRoot, 
+         in LinguaPlone the language of the content is not enforced inside the 
+	 language folder (in plone.app.multilingual there's a subscriber that 
+	 moves the content to the appropriate folder).
 
 
 Bypassing Expired content check
