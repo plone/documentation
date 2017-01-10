@@ -463,6 +463,13 @@ your catalog query like so::
 
     all_content_brains = portal_catalog(path='/')
 
+.. note ::
+ 
+         Although the language folders are also marked to be INavigationRoot, 
+         in LinguaPlone the language of the content is not enforced inside the 
+	 language folder (in plone.app.multilingual there's a subscriber that 
+	 moves the content to the appropriate folder).
+
 
 Bypassing Expired content check
 ===============================
