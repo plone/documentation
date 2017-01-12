@@ -15,3 +15,4 @@ Production
 
     restarts
     ubuntu_production
+    status_check
