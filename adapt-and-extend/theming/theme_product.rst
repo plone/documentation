@@ -7,7 +7,7 @@ Introduction
 
 Creating a theme product with the Diazo inline editor is an easy way to start and to test, but it is not a solid long term solution.
 
-Even if ``plone.app.theming`` allows to import and export a Diazo theme as a ZIP archive, it might be prefereable to manage your theme into an actual Plone product.
+Even if ``plone.app.theming`` allows to import and export a Diazo theme as a ZIP archive, it might be prefereable to manage your theme in an actual Plone product.
 
 One of the most obvious reason is it will allow you to override Plone elements that are not accessible from the pure Diazo features (like overloading content views templates, viewlets, configuration settings, etc.).
 
@@ -144,14 +144,14 @@ Here you can build your Diazo theme. For details how to do that, look at :doc:`p
 Override Plone BrowserViews with jbot
 -------------------------------------
 
-A large part of the Plone UI are provided by BrowserView or Viewlet templates.
+A large part of the Plone UI is provided by BrowserView or Viewlet templates.
 
 That is the case for viewlets (all the blocks you can see when you call the url
 ``./@@manage-viewlets``).
 
 .. note:: to override them from the ZMI, you can go to ``./portal_view_customizations``.
 
-To overrides them from your theme product, the easiest way is to use
+To override them from your theme product, the easiest way is to use
 ``z3c.jbot`` (Just a Bunch of Templates).
 
 Since jbot is already included in the skeleton, you can just start using it, by putting in ``src/plonetheme/tango/browser/overrides/`` all the templates you want to override.
