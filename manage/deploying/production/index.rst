@@ -14,3 +14,4 @@ Production
     restarts
     ubuntu_production
     securitybestpractices
+    status_check
