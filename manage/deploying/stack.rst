@@ -46,6 +46,13 @@ If Plone/Zope has a built-in web server, why do you need another?
   requests to different, best-of-breed components. They’re also great for
   quickly serving static resources.
 
+* The bare Zope server is fine for development, but does not have the strong security and forensic mechanisms of HTTP servers like nginx or Apache. **Zope/Plone is not meant to be exposed to the Internet without a guarding reverse-proxy server.**
+
+* You may wish to use Zope and Plone as part of a hybrid system with other best of breed components providing parts of your web site.
+  For example, Plone is not really meant for the kind of database applications that require a relational solution.
+  A good, general-purpose web server like Apache or Nginx serves as a great mechanism for dispatching different requests to different, best-of-breed components.
+  They’re also great for quickly serving static resources.
+
 * Even in the simplest installation, it’s usually desirable to do some URL
   rewriting to map URLs to data in different ways. This is nearly mandatory
   when building a hybrid system.
@@ -269,7 +276,12 @@ using swap space for Zope processes.
 
 **Caching operations / Detailed settings**
 
+<<<<<<< HEAD
 This is where you attach caching rules to resource types, and refine the
 caching rules. In general, stick with one of the profile settings (from
 **Import settings**) unless you're prepared to immerse yourself in caching
 detail.
+=======
+This is where you attach caching rules to resource types, and refine the caching rules.
+In general, stick with one of the profile settings (from **Import settings**) unless you're prepared to immerse yourself in caching detail.
+>>>>>>> dc87f4e... Strengthen recommendation against using bare zope http for production
