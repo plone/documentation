@@ -30,6 +30,8 @@ Apache or Nginx answers those request and forwards them to Plone. It does so by 
 
 If Plone/Zope has a built-in web server, why do you need another?
 
+* The bare Zope server is fine for development, but does not have the strong security and forensic mechanisms of HTTP servers like nginx or Apache. **Zope/Plone is not meant to be exposed to the Internet without a guarding reverse-proxy server.**
+
 * You may wish to use Zope and Plone as part of a hybrid system with other best of breed components providing parts of your web site.
   For example, Plone is not really meant for the kind of database applications that require a relational solution.
   A good, general-purpose web server like Apache or Nginx serves as a great mechanism for dispatching different requests to different, best-of-breed components.
