@@ -150,7 +150,7 @@ rst
 rsync
 runtime
 Runyan
-Salesforce)
+Salesforce
 scp
 screenshot
 screenshots
