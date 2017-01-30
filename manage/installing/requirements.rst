@@ -120,14 +120,25 @@ Minimal build
 
 With complete requirements in place, a barebones Plone install may be created with a few steps.
 
+Create a directory called Plone-5 and enter it:
+
 .. code-block:: shell
 
     mkdir Plone-5
     cd Plone-5
-    Plone-5$ virtualenv-2.7 zinstance
-    Plone-5$ cd zinstance
-    Plone-5/zinstance$ bin/pip install zc.buildout
-    Plone-5/zinstance$
+
+Run the steps to create a virtual python environment (virtualenv) and install zc.buildout:
+
+.. code-block:: shell
+
+    virtualenv-2.7 zinstance
+    cd zinstance
+    bin/pip install zc.buildout
+
+Create a ``buildout.cfg`` file:
+
+.. code-block:: shell
+
     echo """
     [buildout]
     extends =
@@ -145,7 +156,12 @@ With complete requirements in place, a barebones Plone install may be created wi
         Pillow
 
     """ > buildout.cfg
-    Plone-5/zinstance$ bin/buildout
+
+Run buildout:
+
+.. code-block:: shell
+
+    /bin/buildout
 
 This will start a long download and build process ...
 
@@ -155,7 +171,7 @@ After it finished you can start Plone in foreground-mode with:
 
 .. code-block:: shell
 
-    Plone-5/zinstance$ bin/instance fg
+    bin/instance fg
 
 You can stop it with ``ctrl + c``.
 
@@ -163,9 +179,9 @@ Start and stop this Plone-instance in production-mode like this;
 
 .. code-block:: shell
 
-    Plone-5/zinstance$ bin/instance start
+    bin/instance start
 
-    Plone-5/zinstance$ bin/instance stop
+    bin/instance stop
 
 Plone will run on port 8080 and can be accessed via http://localhost:8080.
 Use login id "admin" and password "admin" for initial login so you can create a site.
