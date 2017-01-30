@@ -903,7 +903,7 @@ criteria:
    simple subobjects that can be set using simple Python expressions.
  * These queries are apparently much faster to execute, as well as
  * much easier to understand, and
- * content-type agnostic in the sense that they are no longer tied to
+ * content type agnostic in the sense that they are no longer tied to
    ArcheTypes.
 
 The easiest way to get into these queries is to grab a debug shell

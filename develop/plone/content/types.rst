@@ -251,7 +251,7 @@ If ``setConstrainTypesMode`` is ``1``, then only the types enabled by using
 
 The types specified by ``setLocallyAllowedTypes`` must be a subset
 of the allowable
-types specified in the content-type's FTI (Factory Type Information) in the
+types specified in the content type's FTI (Factory Type Information) in the
 ``portal_types`` tool.
 
 If you want the types to appear in the :guilabel:

@@ -6,7 +6,7 @@ Archetypes
 ----------
 
 If your add-on depends on Archetypes, you will need some parts of ``Products.ATContentTypes``.
-Those parts will be declared by the profile "Archetypes-tools without content-types". It must be added to your ``profiles/default/metadata.xml`` that way::
+Those parts will be declared by the profile "Archetypes-tools without content types". It must be added to your ``profiles/default/metadata.xml`` that way::
 
     <dependencies>
         <dependency>profile-Products.ATContentTypes:base</dependency>

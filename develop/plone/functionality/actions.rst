@@ -177,10 +177,10 @@ site editor may set it from Display menu. For more information see
 Dynamic Views.
 
 
-Content-type specific actions
+Content type specific actions
 -------------------------------
 
-Content-type specific actions can be registered in portal_types.
+Content type specific actions can be registered in portal_types.
 Actions are viewable and editable in Zope Management Interface under portal_types.
 After editing actions,
 content type XML can be  exported and placed to your content type add-on product.
