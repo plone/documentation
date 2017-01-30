@@ -34,7 +34,7 @@ dynamic view dropdown.
 If you want to restrict this ability,
 grant or revoke this permission as appropriate.
 
-This can be useful for some content-types like Dexterity ones, where
+This can be useful for some content types like Dexterity ones, where
 dynamic views are enabled by default, and the easiest way to disable
 them is using this permission.
 
@@ -356,7 +356,7 @@ Method aliases
 =================
 
 Method aliases allow you to redirect basic actions (view, edit) to
-content-type specific views.  Aliases are configured in ``portal_types``.
+content type specific views.  Aliases are configured in ``portal_types``.
 
 Other resources
 ================
