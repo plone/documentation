@@ -232,7 +232,7 @@ package, `plone.indexer <https://pypi.python.org/pypi/plone.indexer>`_,
 which provides a series of primitives to delegate indexing operations
 to adapters.
 
-Let's say you have a content-type providing the interface
+Let's say you have a content type providing the interface
 ``IMyType``. To define an indexer for your type which takes the
 first 10 characters from the body text, just type (assuming the
 attribute's name is 'text'):
@@ -262,11 +262,11 @@ class providing the required ``IIndexer`` interface.
 
 To learn more about the *plone.indexer* package, read `its doctest <http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt>`_.
 
-For more info about how to create content-types, refer to the :doc:`developing add-ons section </develop/addons/index>`.
-For older Archetypes content-types, see the `Plone 4 documentention on Archetypes <http://docs.plone.org/4/en/old-reference-manuals/archetypes/index.html>`_
+For more info about how to create content types, refer to the :doc:`developing add-ons section </develop/addons/index>`.
+For older Archetypes content types, see the `Plone 4 documentention on Archetypes <http://docs.plone.org/4/en/old-reference-manuals/archetypes/index.html>`_
 
 **Important note:** If you want to adapt an
-Archetypes content-type like Event or News Item, take into account
+Archetypes content type like Event or News Item, take into account
 you will have to feed the ``indexer`` decorator with the Zope 3
 interfaces defined in ``Products.ATContentTypes.interface.*``
 files, not with the deprecated Zope 2 ones into the
@@ -384,7 +384,7 @@ Some interesting columns
 
 * getRemoteURL: Where to go when the object is clicked
 
-* getIcon: Since Plone 5.0.2 - Boolean value which is set to :guilabel:``True``, when item has or is an image (used for showing thumbs in lists, portlets, etc. ). Content-type-icons (aka portaltype-icons) ( e.g.: for folder, document, news item etc.) are rendered as fontello fonts since Plone 5.0. 
+* getIcon: Since Plone 5.0.2 - Boolean value which is set to :guilabel:``True``, when item has or is an image (used for showing thumbs in lists, portlets, etc. ). Content type icons (aka portaltype-icons) ( e.g.: for folder, document, news item etc.) are rendered as fontello fonts since Plone 5.0. 
 
 * exclude_from_nav: If True the object won't appear in sitemap, navigation tree
 

@@ -1,7 +1,7 @@
-Custom Content-Types
+Custom Content Types
 ====================
 
-The recommended way to develop new custom content-types is by using :term:`Dexterity`. You'll find the full manual here.
+The recommended way to develop new custom content types is by using :term:`Dexterity`. You'll find the full manual here.
 
 .. toctree::
    :maxdepth: 1
