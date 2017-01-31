@@ -53,7 +53,7 @@ Back up your Plone site
 
     It's important to back up your Plone site.
 
-You will find an :doc:`how-to on backing up your Plone site here </manage/deploying/backup>`.
+You will find a :doc:`how-to on backing up your Plone site here </manage/deploying/backup>`.
 
 Setup a test environment to rehearse the upgrade
 ================================================
