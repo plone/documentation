@@ -610,6 +610,11 @@ More info:
 Log rotate and chroot
 ---------------------
 
+.. note::
+
+    In this example we are using the package 'shroot'
+    Please make sure that you have it installed
+
 ``chroot``'ed environments don't usually get their own cron.
 In this case you can trigger the log rotate from the parent system.
 
@@ -618,7 +623,7 @@ Add in the parent ``/etc/cron.daily/yourchrootname-logrotate``
 .. code-block:: bash
 
     #!/bin/sh
-    chroot -c yoursitenet -u root -r logrotate /etc/logrotate.conf
+    schroot -c yoursitenet -u root -r logrotate /etc/logrotate.conf
 
 Log rotate generation via buildout using UNIX logrotate command
 ---------------------------------------------------------------
