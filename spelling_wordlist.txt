@@ -54,7 +54,6 @@ gif
 gil
 gists
 github
-Github
 Glick
 Gmail
 gnupg
