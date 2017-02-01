@@ -3,17 +3,25 @@ Reviewing PLIPs
 
 Expectations
 ------------
-A good PLIP review takes about 4 hours so please plan accordingly. When you are done, if you have access to core please commit the review to the plips folder and reference the PLIP in your commit message. If you do not have access, please attach your review to the PLIP ticket itself.
+A good PLIP review takes about 4 hours so please plan accordingly. When you are done,
+if you have access to core please commit the review to the plips folder and reference the PLIP in your commit message.
+If you do not have access, please attach your review to the PLIP ticket itself.
 
 Setting up the environment
 --------------------------
-Follow the instructions on `setting up a development environment <https://dev.plone.org/wiki/DevelopmentEnvironment>`_ for "Getting the Code". You will need to checkout the branch to which the PLIP is assigned. Instead of running the buildout with the default buildout file, you will run the config specific to that plip::
+Follow the instructions on `setting up a development environment <https://dev.plone.org/wiki/DevelopmentEnvironment>`_ for "Getting the Code".
+You will need to checkout the branch to which the PLIP is assigned.
 
-  > ./bin/buildout -c plips/plipXXXX.cfg
+Instead of running the buildout with the default buildout file, you will run the config specific to that plip
+
+.. code-block:: shell
+
+    ./bin/buildout -c plips/plipXXXX.cfg
 
 Functionality Review
 --------------------
-There are several things that could be addressed in a PLIP review depending on the nature of the PLIP itself. This is by no means an exhaustive list, but a place to start. Things to think about when reviewing:
+There are several things that could be addressed in a PLIP review depending on the nature of the PLIP itself.
+This is by no means an exhaustive list, but a place to start. Things to think about when reviewing:
 
 General
 -------
@@ -42,7 +50,12 @@ Documentation Issues
  * Is the corresponding documentation for the end user, be it developer or plone user, sufficient?
  * Is the change itself properly documented?
 
-Please report bugs/issues in Trac as you would for any Plone bug. Reference the PLIP in the bug, assign to its implementor, and add a tag for the PLIP in the form of plip-xxx. This way the implementor can find help if he needs it. Please also prioritize the ticket. The PLIP will not be merged until all blockers and critical bugs are fixed.
+Please report bugs/issues on `GitHub <https://github.com/plone/Products.CMFPlone/issues>`_ as you would for any Plone bug.
+Reference the PLIP in the bug,assign to its implementor, and add a tag for the PLIP in the form of plip-xxx.
+
+This way the implementor can find help if he needs it. Please also prioritize the ticket.
+
+The PLIP will not be merged until all blockers and critical bugs are fixed.
 
 Code Review
 -----------
@@ -54,10 +67,10 @@ Python
  * Does the code adhere to PEP8 standards (more or less)?
  * Are they importing deprecated modules?
 
-Javascript
+JavaScript
 ^^^^^^^^^^
- * Does the javascript meet our set of javascript standards? See :doc:`/develop/addons/javascript_standards`
- * Does the Javascript work in all currently supported browsers? Is it performant?
+ * Does the JavaScript meet our set of JavaScript standards? See :doc:`/develop/addons/javascript_standards`
+ * Does the JavaScript work in all currently supported browsers? Is it performant?
 
 ME/TAL
 ^^^^^^
@@ -66,8 +79,3 @@ ME/TAL
  * Are there any deprecated or old style ME/TAL lines of code such as using DateTime?
  * Is the rendered html standards compliant? Are ids and classes used appropriately?
 
-Example PLIP Reviews
-^^^^^^^^^^^^^^^^^^^^
- * https://svn.plone.org/svn/plone/buildouts/plone-coredev/branches/4.1/plips/plip9352-review-davisagli.txt
- * https://svn.plone.org/svn/plone/buildouts/plone-coredev/branches/4.1/plips/plip10886-review-cah190.txt
- * https://svn.plone.org/svn/plone/buildouts/plone-coredev/branches/4.1/plips/plip9352-review-rossp.txt
