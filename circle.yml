@@ -1,3 +1,8 @@
+general:
+  branches:
+    only:
+      - 5.1
+
 machine:
   services:
     - docker
