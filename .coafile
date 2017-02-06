@@ -1,0 +1,5 @@
+[WG]
+bears = WriteGoodLintBear
+allow_so_beginning = False
+files = **/*.rst
+

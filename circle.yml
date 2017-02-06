@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker pull testthedocs/ttd.coala
+
+test:
+  override:
+    - docker run -it -v "${PWD}"/docs:/source:rw testthedocs/ttd.coala '-c=/source/.coafile' -C WG
+
