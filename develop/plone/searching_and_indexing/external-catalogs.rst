@@ -19,7 +19,7 @@ To hook into the catalog one can implement the IIndexingQueueProcessor
 
 
 .. versionadded:: 5.1
-   For Plone < 5.1 you need to use the
+   For Plone versions **before 5.1** you need to use the
    `interfaces from collective.indexing <https://github.com/plone/collective.indexing/blob/master/src/collective/indexing/interfaces.py>`_ package!
 
 
