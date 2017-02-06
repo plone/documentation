@@ -838,7 +838,7 @@ For hiding widgets there, you have to access the group in the update method like
                 if 'xxx' in group.widgets:
                     group.widgets['xxx'].mode = z3c.form.interfaces.HIDDEN_MODE
 
-groups itself is a list like object, you can also remove a complete group by just removing it from the group dictionary.
+groups itself is a list like object, you can also remove a complete group by removing it from the group dictionary.
 
 Unprefixing widgets
 -------------------
@@ -1398,7 +1398,7 @@ Buttons are stored in ``buttons`` class attribute.
 .. warning::
 
     Button storage is shared between all form instances,
-    so do not mutate its content. Instead create a copy
+    do not mutate its content. Instead create a copy
     of it if you wish to have form-specific changes.
 
 Reading buttons

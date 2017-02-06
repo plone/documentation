@@ -35,7 +35,7 @@ Javascript for web statistics support
 Display publication date
     Show the date a content item was published in the byline.
 Icon visibility
-    Controls whether to show different icons for different types of content. Can be really useful for content editors, but distracting for anonymous visitors. So you can set it to show only for logged-in users.
+    Controls whether to show different icons for different types of content. Can be useful for content editors, but distracting for anonymous visitors. You can set it to show only for logged-in users.
 Toolbar position
     On modern wide-screen monitors, having the Toolbar to the side provides most usable space. But some people prefer it to be on the top of their screen.
 Site based relative URL for toolbar Logo

@@ -1,6 +1,6 @@
-===========================
+====================
 Conceptual Overview
-===========================
+====================
 
 An explanation of Plone as a content management system
 
@@ -9,8 +9,9 @@ What is Plone?
 
 Plone is a content management system (CMS) which you can use to build a
 web site. With Plone, ordinary people can contribute content to a web
-site without the help of a computer geek. Plone runs over the Web, too,
-so you don't need to install any special software on your computer.
+site without the help of a computer geek. Plone runs over the Web, too.
+
+You don't need to install any special software on your computer.
 The word *content* is meant to be general, because you can publish so
 many types of information, including:
 
@@ -68,7 +69,7 @@ dedicated to the task:
 
 The diagram shows the many cables that connect individual server
 computers to the Internet, across fast network connections. Your Plone
-site is just software and database storage software installed on one of
+site is software and database storage software installed on one of
 the individual server computers. As you type or click on your computer,
 data is sent up and down the networking cables and communication
 channels of the Internet to interact with your Plone software

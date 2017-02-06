@@ -12,8 +12,8 @@ About Instances and Threads, Performance and RAM consumption
 Introduction
 ------------
 
-In a usal production Zope/Plone setup there are some tunings possible. So you
-googled a bit and found that, for a certain size of site, you need more than
+In a usual production Zope/Plone setup there are some tunings possible. So you
+searched a bit and found that, for a certain size of site, you need more than
 one Zope-instance and use `HAproxy`_ or `Pound`_ to load-balance between them.
 Then you may ask yourself: How many instances do I need? Next you see there
 is value "threads per instance" and wonder about the different
@@ -34,7 +34,7 @@ home-grown add-ons: This rule may not apply.
 In this case you need to figure out yourself. It's more important to understand
 the mechanism behind than sticking to a rule.
 
-With recent, faster hardware and the (sometimes odd) behaviour of virtual
+With recent, faster hardware and the (sometimes odd) behavior of virtual
 machines (which can be very very different dependent on the kind of VM) this
 needs slight or major adjustment.
 
@@ -113,7 +113,7 @@ into four kinds of systems:
 
 If you deal with logged in users there is no easy way to cache html-pages
 (highly recommended anyway for all static items) in a reverse proxy cache (i.e.
-`Varnish`_) in front of Plone. So Zope has much more work rendering pages. To
+`Varnish`_) in front of Plone. Zope has much more work rendering pages. To
 render pages, objects need to be loaded form the database. Loading is expensive.
 If an object is already in the DB RAM cache it decreases the time to render a
 page significantly. So in a setup with lots of logged in users we need to take

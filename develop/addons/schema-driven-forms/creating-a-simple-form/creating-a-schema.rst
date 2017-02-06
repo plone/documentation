@@ -1,3 +1,4 @@
+=================
 Creating a schema
 =================
 
@@ -6,7 +7,7 @@ Creating a schema
 With the form package created and installed, we can create our form
 schema. Later in this manual, we will cover in more detail how you
 can perform to configure custom widgets, set up hidden fields and
-so onimperatively in Python code.
+onimperatively in Python code.
 
 The example we’ll use for this form is a pizza ordering form. We’ll
 build on this form over the coming sections, so if you look at the

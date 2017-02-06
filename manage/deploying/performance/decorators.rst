@@ -1,6 +1,6 @@
-=================
+================
 Cache decorators
-=================
+================
 
 .. admonition:: Description
 
@@ -55,7 +55,8 @@ Timeout caches
 ==============
 
 The @ram.cache decorator takes a function argument and calls it to get a value.
-So long as that value is unchanged, the cached result of the decorated function is returned.
+
+As long as that value is unchanged, the cached result of the decorated function is returned.
 This makes it easy to set a timeout cache::
 
     from plone.memoize import ram
@@ -67,7 +68,8 @@ This makes it easy to set a timeout cache::
         # will not be called more than once an hour
 
 time.time() returns the time in seconds as a floating point number. "//" is Python's integer division.
-So, the result of ``time() // (60 * 60)`` only changes once an hour.
+
+The result of ``time() // (60 * 60)`` only changes once an hour.
 ``args`` passed are ignored.
 
 
@@ -195,7 +197,7 @@ one:
 
         @view.memoize
         def my_expensive_method():
-            """We just call the private method here and memoize the result.
+            """We call the private method here and memoize the result.
             """
             return self._my_expensive_method()
 

@@ -1,3 +1,4 @@
+=============
 Adding Events
 =============
 
@@ -78,8 +79,11 @@ From the top, we have the following fields:
 -  *Event body text* (visual editor panel)
 -  Change note
 
-Note that only three fields, title and start and end date and time, are required.
-So, although this is a large input panel, if you are in a hurry, just type in the title and the start and end times and save.
+.. note::
+
+   Only three fields, title and start and end date and time, are required.
+
+Although this is a large input panel, if you are in a hurry, type in the title and the start and end times and save.
 Of course, if you have the other information, you should type it in.
 
 One part of the panel needs a bit more explanation: the event start and end times.

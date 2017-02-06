@@ -1,3 +1,4 @@
+===========
 Folder View
 ===========
 
@@ -92,7 +93,7 @@ Plone will display a message in these cases, along the lines of "You are editing
 
 **Learn to not ignore, but read those messages!**
 
-Just remember: when setting properties, ask yourself the question: *do I want to do this on the Folder, or just on this one content item that is contained in the Folder?*
+Remember: when setting properties, ask yourself the question: *do I want to do this on the Folder, or just on this one content item that is contained in the Folder?*
 
 
 
@@ -101,6 +102,6 @@ Lastly, the display view setting should be used with care, because it can do two
 - It changes the behavior of folders, from acting as simple containers to acting as direct links to content, if you select an individual content item as default view.
 - Changing the view can radically alter the way the information is presented to users. If you select "Album view" on a folder with no images, it may appear the content is gone, since there are no images to show, although of course the information is still there. Or your perfectly written introductory page is suddenly replaced by a boring tabular display.
 
-So, while the "Display" menu is one of the most powerful features of Plone, it is wise to note for yourself which was the previous view - before you change it - so you can quickly change it back when needed.
+While the "Display" menu is one of the most powerful features of Plone, it is wise to note for yourself which was the previous view - before you change it - so you can quickly change it back when needed.
 
 

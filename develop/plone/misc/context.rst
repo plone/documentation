@@ -13,9 +13,9 @@ IPortalState and IContextState
 ==============================
 
 ``IPortalState`` defines ``IContextState`` view-like interfaces
-to access miscellaneous information useful for the
-rendering of the current page. The views are cached properly,
-so they should access the information quite effectively.
+to access miscellaneous information useful for the rendering of the current page.
+
+The views are cached properly, they should access the information effectively.
 
 * ``IPortalState`` is mapped as the ``plone_portal_state`` name view.
 

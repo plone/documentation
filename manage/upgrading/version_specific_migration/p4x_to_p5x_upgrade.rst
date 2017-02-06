@@ -235,7 +235,7 @@ Registration changes
 Prior to Plone 5, JavaScript files were added to the registry by using a `Generic Setup Profile <http://docs.plone.org/develop/addons/components/genericsetup.html>`_ and including a jsregistry.xml file to it.
 This would add your JavaScript to the registry, with some options and potentially set ordering.
 
-In Plone 5.0, Plone will still recognize these jsregistry.xml files. Plone tries to provide a shim for them. It does this by adding all jsregistry.xml JavaScripts into the "plone-legacy" Resource Registry bundle. This bundle simply includes a global jQuery object and includes the resources in sequential order after it.
+In Plone 5.0, Plone will still recognize these jsregistry.xml files. Plone tries to provide a shim for them. It does this by adding all jsregistry.xml JavaScripts into the "plone-legacy" Resource Registry bundle. This bundle includes a global jQuery object and includes the resources in sequential order after it.
 
 However, you should consider at least migrating your resources as described in https://github.com/collective/example.p4p5 to gain control over your dependencies or if you want to keep backward compatibility to older Plone versions in your Add-ons.
 
@@ -281,7 +281,8 @@ This alone will not get your JavaScript included however.
 In order to modernize our JavaScript stack, Plone needed to make some changes with how it included JavaScript.
 All we've done so far is define a resource.
 In order for a resource to be included, it needs to be part of a bundle. A bundle defines a set of resources that should be compiled together and distributed to the browser.
-So you either need to add your resource to an existing bundle or create your own bundle.
+
+You either need to add your resource to an existing bundle or create your own bundle.
 
 In this post, we'll describe the process of creating your own bundle. Again, we use registry.xml for configuration:
 
@@ -391,7 +392,7 @@ In Plone 5 it’s recommended to instead use the new Python methods you can find
 
 This is better than always loading a resource or bundle for your whole site.
 
-Only bundles can be conditionally included. So if you have a resource that needs to be conditionally included, it will likely need its own bundle.
+Only bundles can be conditionally included. If you have a resource that needs to be conditionally included, it will likely need its own bundle.
 
 
 Control Panel
@@ -615,7 +616,7 @@ Now we an get and set all fields of the schema above like::
   >>> search_settings.enable_livesearch
   True
 
-If you want to change a setting, just change the attribute::
+If you want to change a setting, change the attribute::
 
   >>> search_settings.enable_livesearch = False
 
@@ -937,7 +938,7 @@ metaTypesNotToList
 The new setting is on ``Products.CMFPlone.interfaces.controlpanel.INavigationSchema.displayed_types`` and it works the other way around.
 
 Instead of blacklisting content types it whitelists them,
-so if you don't want your content type to show there's nothing to do.
+if you don't want your content type to show there's nothing to do.
 
 typesLinkToFolderContentsInFC
 -----------------------------

@@ -39,7 +39,7 @@ You may also use "here/memberFullName" to get the member's name, and "here/membe
 
 .. note::
 
-    memberEmail, memberFullName and memberId are just a convenience facility of PloneFormGen. They are not part of the Plone API.
+    memberEmail, memberFullName and memberId are a convenience facility of PloneFormGen. They are not part of the Plone API.
 
 Q. Where is the encryption option?
 ==================================
@@ -52,15 +52,15 @@ Do you see an encryption field set title? If so, you've found the option. If not
 Don't forget that after you install GnuPG, you'll need to restart Zope or refresh your PFG product.
 Where is the save-data adapter?
 
-Q. I've just added a form folder, and the action adapter list only includes "None" and "Mailer". Where is the save-data adapter?
-================================================================================================================================
+Q. I've added a form folder, and the action adapter list includes "None" and "Mailer". Where is the save-data adapter?
+======================================================================================================================
 
 You need to add it to the folder via the add-item drop-down.
 
 A mailer adapter is in the "sample" form created when you add a form folder because it's probably the most common use. Other adapters need to be added.
 
-Q. Why are these action adapters content types? Why aren't they just built into the form folder?
-================================================================================================
+Q. Why are these action adapters content types? Why aren't they built into the form folder?
+===========================================================================================
 
 There are several reasons. One is that doing it this way makes it easy to copy configured action adapters from one form to another.
 How do I specify a recipient e-mail address?
@@ -72,7 +72,7 @@ The error is occurring because PloneFormGen doesn't have a recipient address to 
 
 To fix this, choose the contents tab of your PFG form folder. Navigate to the mailer and use its edit tab. Choose the "addressing" fieldset and specify a recipient address.
 
-By the way, if the recipient address isn't specified, PFG tries to use the e-mail address of the form folder's owner. So, you'll only see this error if you've failed to set an e-mail address in personal preferences.
+By the way, if the recipient address isn't specified, PFG tries to use the e-mail address of the form folder's owner. You'll see this error if you've failed to set an e-mail address in personal preferences.
 
 PloneFormGen missing from Add list?
 ===================================
@@ -99,7 +99,7 @@ Q. Dynamically populate selection fields?
 
 Can I dynamically populate selection and/or multi-selection fields in PloneFormGen?
 
-Yes, just use the [overrides] panel of the field's edit view to set an Options Vocabulary.
+Yes, use the [overrides] panel of the field's edit view to set an Options Vocabulary.
 
 It should be a TALES expression that evaluates as a list of value/label lists (tuples are also OK).
 
@@ -107,7 +107,7 @@ For example, let's say that we wanted a selection field populated with option va
 
     python: (('1','one'), ('2','two'), ('3','three'), ('4','four'))
 
-It's unlikely, though, that you'll be able to do what you need in a single line of TALES. So, a more typical use would be to create a python script that returns a sequence of value/label sequences. If you put that script in your form folder, you can just fill in::
+It's unlikely, though, that you'll be able to do what you need in a single line of TALES. A more typical use would be to create a python script that returns a sequence of value/label sequences. If you put that script in your form folder, you can fill in::
 
     here/myscriptid
 
@@ -132,7 +132,7 @@ Script Adapter" in the 1.1 alpha and end your code with::
 Use a "From" address other than the site address?
 =================================================
 
-One stock-field is called replyto and contains a valid email address. I want this address to be in the From: line - not just in Reply-To:. So I could fill in a TALES expression to overwrite the default sender-address. But what's the correct TALES expression for that?
+One stock-field is called replyto and contains a valid email address. I want this address to be in the From: line - not just in Reply-To:. I could fill in a TALES expression to overwrite the default sender-address. But what's the correct TALES expression for that?
 
 By default, PloneFormGen's mailer sends mail with the "From" address set to the site's global "From" address (specified in site setup / Portal Settings). That's the standard return address for portal-generated mail, but you may wish to use another.
 
