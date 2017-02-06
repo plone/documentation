@@ -14,4 +14,5 @@ Search keys are matched against the indexed catalog copies to return the indexed
     catalog
     indexing
     query
+    external-catalogs
 
