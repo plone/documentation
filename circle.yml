@@ -9,5 +9,5 @@ dependencies:
 
 test:
   override:
-    - docker run -it -v "${PWD}"/docs:/source:rw testthedocs/ttd.coala '-c=/source/.coafile' -C WG
+    - docker run -it -v "${PWD}":/source:rw testthedocs/ttd.coala '-c=/source/.coafile' -C WG
 
