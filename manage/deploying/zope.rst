@@ -10,8 +10,6 @@ Zope Application Server
 
 .. contents:: :local:
 
-.. highlight:: console
-
 Introduction
 ============
 
@@ -37,22 +35,26 @@ The zeoserver part must be running before you may directly use a client command:
     bin/zeoserver start
     bin/client1 help
 
-Adding users from command-line (reset admin password)
-=====================================================
+Adding users from command-line
+==============================
+
+In case you need to reset/recover the ``admin`` password/access.
+
+.. note::
+
+    You cannot override an existing ``admin`` user, so you probably want to
+add ``admin2``.
 
 You need to do this when you forget the admin password or the database is
 damaged.
 
-Add user with Zope Manager permissions::
+Add user with Zope Manager permissions
+
+.. code-block:: shell
 
     bin/instance stop # stop the site first
-    bin/instance adduser <user_name> <user_password>
+    bin/instance adduser $USERNAME $PASSWORD
     bin/instance start
-
-You need to stop the site first.
-
-You also cannot override an existing ``admin`` user, so you probably want to
-add ``admin2``.
 
 More info
 
@@ -125,13 +127,13 @@ the ``bin/`` folder:
 
 And now you can start your **development** Zope as:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/debug-instance fg
 
 And your main Zope instance stays in production mode:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/instance
 
@@ -199,7 +201,7 @@ development copy of a site from a live server.
 
 ``copy-plone-site.sh``
 
-.. code-block:: sh
+.. code-block:: bash
 
     #!/bin/sh
     #
@@ -264,13 +266,13 @@ efficient multicore bzip2 compressor, before copying:
 
 Then copy to your own computer:
 
-.. code-block:: console
+.. code-block:: shell
 
     scp unixuser@server.com:/tmp/Data.fs.tar.bz2 .
 
 ... or using ``rsync`` which can resume:
 
-.. code-block:: console
+.. code-block:: shell
 
     rsync -av --progress --inplace --partial user@server.com:/tmp/Data.fs.tar.bz2 .
 
@@ -292,7 +294,7 @@ Below is a sample script which will clean a Plone site in-place.
 
 .. note::
 
-    Because sensitive data varies depending on your site this script is just
+    Because sensitive data varies depending on your site this script is
     an example.
 
 How to use:
@@ -317,7 +319,7 @@ The sample ``clean.py``:
 .. code-block:: python
 
     """ Pack Plone database size and clean sensitive data.
-        This makes output ideal as a developent drop.
+        This makes output ideal as a development drop.
 
         It also resets all kinds of users password to "admin".
 
@@ -554,7 +556,7 @@ To add a log rotation configuration file for Plone add a file
 
 The file contains:
 
-.. code-block:: sh
+.. code-block:: bash
 
     # This is the path + selector for the log files
     /srv/plone/yoursite/Plone/zinstance/var/log/instance*.log {
@@ -608,12 +610,17 @@ More info:
 Log rotate and chroot
 ---------------------
 
+.. note::
+
+    In this example we are using the package 'shroot'
+    Please make sure you have it installed
+
 ``chroot``'ed environments don't usually get their own cron.
 In this case you can trigger the log rotate from the parent system.
 
 Add in the parent ``/etc/cron.daily/yourchrootname-logrotate``
 
-.. code-block:: sh
+.. code-block:: bash
 
     #!/bin/sh
     schroot -c yoursitenet -u root -r logrotate /etc/logrotate.conf
@@ -675,5 +682,3 @@ Adding multiple file storage mount points
 -----------------------------------------
 
 * https://pypi.python.org/pypi/collective.recipe.filestorage
-
-

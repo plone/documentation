@@ -33,14 +33,19 @@ If you do not have one, please use the 'Feedback' widget on http://docs.plone.or
    :align: center
    :alt: Picture of feedback widget
 
-Tickets
-=======
+Reporting Issues
+================
 
-Open documentation issues are tracked in our `issue tracker <https://github.com/plone/documentation/issues>`_.
+Documentation Issues
+--------------------
+
+Documentation issues are tracked in our `issue tracker <https://github.com/plone/documentation/issues>`_.
 
 If you have already a `GitHub <https://github.com>`_ account and you find something missing or wrong in the docs, please open a ticket.
 
-If you would like to contribute to the documentation and looking for a starting point, please browse to our `issue board <https://github.com/plone/documentation/projects/1?fullscreen=true>`_.
+If you would like to contribute to the documentation and looking for a starting point,
+please browse to our `issue board <https://github.com/plone/documentation/projects/1?fullscreen=true>`_.
+
 Issues are sorted into different levels from easy to advanced. Picking an easy one is a great way to get started.
 
 .. note::
@@ -48,15 +53,37 @@ Issues are sorted into different levels from easy to advanced. Picking an easy o
     Working on issues takes time and energy, in order to make it as pleasant as possible for everyone, meaning for you and the reviewer we would like to ask you kindly to make yourself familiar with our
     style-guides for :doc:`documentation </about/documentation_styleguide>` and :doc:`reStructuredText [reST]</about/rst-styleguide>`.
 
+Plone Issues
+------------
+
+If you think your bug involves a core component of Plone, check to see if that component
+has its own repository at `GitHub <https://github.com/plone>`_.
+
+If it does, use the component's issue tracker to submit your bug report.
+If the component does not have its own repository there, submit your bug report
+in `the catch-all CMFPlone tracker on GitHub <https://github.com/plone/Products.CMFPlone/issues>`_.
+
+Note: after figuring out where to post your report, but before doing so,
+please search the issue tracker to ensure this issue hasn't already been reported and that it hasn't already been fixed in a later version of the component.
+
+You can also find a `overview <https://plone.org/support/bugs>`_ about that on `plone.org <https://plone.org>`_.
+
+
+
 License
 =======
 
 The Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
-If you want to contribute to this documentation, you can do so directly by making a pull request, if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_.
+If you want to contribute to this documentation, you can do so directly by making a pull request,
+if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_.
 
-If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team, for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net
-Basically, all we need is your written confirmation that you are agreeing your contribution can be under Creative Commons. You can also add in a comment with your pull request "I, <full name>, agree to have this published under Creative Commons 4.0 International BY".
+If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team,
+for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net
+
+Basically, all we need is your written confirmation that you are agreeing your contribution can be under Creative Commons.
+
+You can also add in a comment with your pull request "I, <full name>, agree to have this published under Creative Commons 4.0 International BY".
 
 
 Workflow
@@ -74,9 +101,13 @@ For these reasons, it is important we keep the documentation coherent.
 Therefore, we follow a simple workflow, which we ask all contributors to respect:
 
 
-Please  **DO NOT** commit to master directly. Even for the smallest and most trivial fix. **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
+Please  **DO NOT** commit to master directly. Even for the smallest and most trivial fix.
 
-Your pull requests may be checked for spelling, and clarity. Don't hesitate to contribute also if English is not your first language, we will try to be helpful in corrections without being annoying.
+**ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
+
+
+Your pull requests may be checked for spelling, and clarity.
+Don't hesitate to contribute also if English is not your first language, we will try to be helpful in corrections without being annoying.
 
 If you don't get feedback on your pull request in a day please come to #plone-docs and ask.
 

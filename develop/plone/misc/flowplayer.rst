@@ -20,7 +20,7 @@ Plone integration exists as an add-on product:
 Creating a custom Flowplayer
 ==============================
 
-Here is a walkthrough how to create a custom content-type with a video field
+Here is a walkthrough how to create a custom content type with a video field
 which plays the uploaded video using Flowplayer in a page template with
 parameters you define.
 

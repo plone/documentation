@@ -58,7 +58,7 @@ Releasing your package
 
    releasing
 
-Working with Javascript
+Working with JavaScript
 =======================
 
 .. note::
