@@ -1,6 +1,6 @@
-=====================
+===================
  Image-like content
-=====================
+===================
 
 .. admonition:: Description
 
@@ -71,7 +71,7 @@ Using direct URLs
 -----------------
 
 If your image field is a primary field, like at the default ``Image`` content type,
-then access works by simply calling the url without any view::
+then access works by calling the url without any view::
 
     http://yoursite/imagecontent
 
@@ -123,7 +123,7 @@ It implements the ``plone.app.imaging.interfaces.IImageScaling`` interface, thus
     returns metadata for the requested scale from the storage
 
 ``images`` is in fact a view (a multi-adapter between context and request),
-so we can use ``plone.api.content.get_view`` for lookup:
+we can use ``plone.api.content.get_view`` for lookup:
 
 .. code-block:: python
 

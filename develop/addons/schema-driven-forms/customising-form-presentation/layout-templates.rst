@@ -1,9 +1,10 @@
+=================
 Layout templates
-===================
+=================
 
 **Creating a custom layout for our form**
 
-So far, we have relied on Plone (in fact, *plone.app.z3cform*) to supply
+To this point, we have relied on Plone (in fact, *plone.app.z3cform*) to supply
 a default template for our forms. This uses the default Plone form
 markup, which is consistent with that used in other forms in Plone. For
 many forms, this is all we need. However, it is sometimes useful to

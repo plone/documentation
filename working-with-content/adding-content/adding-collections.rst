@@ -1,5 +1,6 @@
+==================
 Adding collections
-========================
+==================
 
 Collections (formerly called Smart Folders) are virtual containers of
 lists of items found by doing a specialized search.
@@ -80,11 +81,12 @@ Apart from the usual fields, the interesting part starts with the **Search terms
 You can pick all *meta-data* that Plone has on content items as criteria.
 By combining more criteria, you can create sophisticated queries, which will be automatically updated.
 
-So your collection can search for all items of types ``Page`` and ``News Item`` that have a Tag of ``Sport``, created in the last 3 months.
+Your collection can search for all items of types ``Page`` and ``News Item`` that have a Tag of ``Sport``, created in the last 3 months.
 Or all ``Events`` that have a Start date in the next month.
 
 The possibilities are endless, and Plone will always show the results according to the criteria.
-So if you create a new content item later with the tag of "Sport", it will automatically show up in the collection you have just defined.
+
+If you create a new content item later with the tag of "Sport", it will automatically show up in the collection you have just defined.
 
 History
 -------

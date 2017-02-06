@@ -5,12 +5,14 @@ Preparing to install Plone
 ----------------------------
 
 Plone and Zope are generally not available via platform package or port systems.
-So, you can’t say “apt-get install plone” to add it to a Debian server.
+
+You can’t “apt-get install plone” to add it to a Debian server.
 (There are packages and ports out there, if you search hard enough to find them. But don’t do it: they’ve generally had a poor record for maintenance.)
 
 This means that you typically need to build Plone (compiling source code to binary components) on your target server.
 Binary installers for Plone are available for Windows and OS X, but not for Linux and BSD systems.
-And, the OS X binary installer isn’t really meant for production use - though it’s great for theme and add-on development and testing.
+
+The OS X binary installer isn’t meant for production use - though it’s great for theme and add-on development and testing.
 
 A build environment for Plone requires two sets of components:
 
@@ -179,7 +181,7 @@ You may also use MacPorts (the BSD ports mechanism, tailored to OS X) to install
 Creating a Plone user
 ~~~~~~~~~~~~~~~~~~~~~
 
-While testing or developing for Plone, you may have just used an installation in a home directory, owned by yourself.
+While testing or developing for Plone, you may have used an installation in a home directory, owned by yourself.
 That is not suitable for a production environment.
 Plone's security record is generally excellent, however there have been - and probably will be again in the future - vulnerabilities that allow an attacker to execute arbitrary commands with the privileges of the process owner.
 To reduce this kind of risk, Plone - and all other processes that allow Internet connections - should be run with user identities that have the minimum privileges necessary to maintain their data and write logs.

@@ -1,6 +1,6 @@
-=================
- Member profiles
-=================
+===============
+Member profiles
+===============
 
 .. contents:: :local:
 
@@ -225,9 +225,9 @@ Run it::
 
 .. note::
 
-        The script does not work through the :term:`ZMI`
-        as member properties do not have proper security declarations,
-        so no changes are permitted.
+    The script does not work through the :term:`ZMI`
+    as member properties do not have proper security declarations,
+    meaning, no changes are permitted.
 
 Password reset requests
 ========================

@@ -1,5 +1,6 @@
+================================
 Visual Design of Plone Web Sites
-=====================================
+================================
 
 Plone allows web site administrators and designers the ability to create unique site designs.
 Here's an overview of the Plone layout, and some design examples.
@@ -50,7 +51,7 @@ Also, the "left" and "right" areas may be shown after the "main" area when using
 This technique is known as *responsive design*, and can be easily implemented using Plone.
 The default theme for Plone 5 uses this method already.
 
-So, what does a Plone web site look like?
+What does a Plone web site look like?
 Traditionally, the out-of-the-box look is like that shown at the top of this page, with
 header, menu, columns, and a footer.
 But using the flexible "Diazo" theme engine of Plone, each aspect can be made to look any way the designer chooses, and can also be shown different depending on the device of the visitor.

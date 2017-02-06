@@ -18,7 +18,8 @@ On its own, it will already speed up response time quite dramatically.
 You simply have to enable it, use the default values provided, and you will have a faster site.
 
 You can also tweak the settings to get better performance. There is always a little trade-off to be made here, so-called 'strong' caching will be faster, but it may mean that visitors get older content.
-So, it is usually best to set up 'strong' caching for things that don't change often, like CSS and javascript files, and 'weak' caching for actual texts.
+
+It is usually best to set up 'strong' caching for things that don't change often, like CSS and javascript files, and 'weak' caching for actual texts.
 You can also 'invalidate' content automatically when you update a piece of content, so that the front-end server knows it has to get a fresh copy when you edit a piece of content.
 
 But plone.app.caching works even better together with a dedicated front-end cache, a program that is specialized in doing this work.

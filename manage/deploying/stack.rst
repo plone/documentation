@@ -30,14 +30,14 @@ Apache or Nginx answers those request and forwards them to Plone. It does so by 
 
 If Plone/Zope has a built-in web server, why do you need another?
 
-* The bare Zope server is fine for development, but does not have the strong security and forensic mechanisms of HTTP servers like nginx or Apache. **Zope/Plone is not meant to be exposed to the Internet without a guarding reverse-proxy server.**
+* The bare Zope server is fine for development, but does not have the strong security and forensic mechanisms of HTTP servers like Nginx or Apache. **Zope/Plone is not meant to be exposed to the Internet without a guarding reverse-proxy server.**
 
 * You may wish to use Zope and Plone as part of a hybrid system with other best of breed components providing parts of your web site.
   For example, Plone is not really meant for the kind of database applications that require a relational solution.
   A good, general-purpose web server like Apache or Nginx serves as a great mechanism for dispatching different requests to different, best-of-breed components.
   They’re also great for quickly serving static resources.
 
-* Even in the simplest installation, it’s usually desirable to do some URL rewriting to map URLs to data in different ways.
+* Even in the simplest installation, it’s desirable to do some URL rewriting to map URLs to data in different ways.
   This is nearly mandatory when building a hybrid system.
 
 * Plone does not have built-in SSL support. A general-purpose web server will have a hardened SSL layer and a mechanism for handling certificates.
@@ -121,7 +121,8 @@ The general solution for this is to set the maximum connections per back-end ZEO
 For haproxy, this is the maxconn setting for the listen directive.
 This is only a rule of thumb.
 ZEO clients actually spawn threads as needed to return blobs, and are very efficient at that.
-So, how severely you limit connections per client should depend on your balance of page to blob serves.
+
+How severely you limit connections per client should depend on your balance of page to blob serves.
 
 Server-side HTTP caching
 ------------------------
@@ -160,7 +161,7 @@ Out of the box, Plone is very conservative. It assumes that currency is critical
 You may tune this up considerably by installing the *HTTP Caching* add on via the Plone control panel, then using the * caching* configlet to set cache rules.
 
 The *HTTP Caching* add on is shipped with Plone, but not activated.
-So, you don't need to add it to your buildout packages.
+You don't need to add it to your buildout packages.
 Just activate it and go.
 By the way, the package that does the work is ``plone.app.caching``, and that's how it's often discussed.
 
@@ -183,7 +184,7 @@ Enable caching
 Think of this as the Varnish/Squid settings page, as it's mainly concerned with cache purging, which is typically not supported by web server proxy caches.
 
 Cache purging is when an application server sends a message to a proxy cache to tell it that a resource needs refreshing.
-Cache purging is generally only desirable when you're using more aggressive caching rules.
+Cache purging is generally desirable when you're using more aggressive caching rules.
 If you are not setting rules to cache pages and other dynamic content, you don't need to worry about cache purging.
 
 Caching dynamic resources like pages and trying to purge them on change is the dark, difficult side of caching.

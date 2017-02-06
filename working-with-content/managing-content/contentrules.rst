@@ -187,7 +187,7 @@ After creating a content rule, you need to actually define the specific conditio
 
 **For the condition:**
 
-        - By default, "Content type" is selected and since you want a trigger only for Pages, just click on the "Add" button.
+        - By default, "Content type" is selected and since you want a trigger only for Pages, click on the "Add" button.
         - From the "Add Content Type Condition" page, select "Page" and click on "Save"
 
 **For the action:**
@@ -231,7 +231,7 @@ If you wish to have this rule apply to all the subfolders but not to the current
 
 .. note ::
 
-    Note: that the "Enabled here" column is empty for this rule now. You will need to explicitly use the "Enable" button to re-active this rule for the current folder; just using the "Apply to current folder only" button will NOT re-enable the content rule.
+    Note: that the "Enabled here" column is empty for this rule now. You will need to explicitly use the "Enable" button to re-active this rule for the current folder; using the "Apply to current folder only" button will NOT re-enable the content rule.
 
     Basically, the "Apply to subfolders" and "Apply to current folder only" can be thought of as toggles.
     You can test this rule now by creating a new Page or modifying an existing Page. Once you click on "Save" for that Page, an email will be sent.
@@ -248,7 +248,8 @@ Furthermore, you can say if you want rules to be *cascading* or not. An example:
 
    As you can imagine, it is entirely possible to create never-ending loops this way: Rule1 moves newly published files in Folder1 to Folder2. But Rule2, which is active in Folder2, unpublishes any newly moves files, and then copies them into Folder1. And so it goes round and round...
 
-   So be **very** careful when using cascading rulesets!
+
+   Be careful when using cascading rulesets!
 
 
 Things to note when "navigating" with assigned content rules

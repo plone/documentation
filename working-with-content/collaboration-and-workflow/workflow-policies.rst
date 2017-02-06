@@ -41,7 +41,7 @@ This is a web site administrator task.
 
 There are two main ways to set workflow policies: by content type or by area of the site. Our newspaper may set their "Editorial Review Policy" on the content type "Article", whereas they may have another workflow for Images since they go through a different process of review and approval.
 
-But it is also possible to have different workflows for different sections of the website. So the "Letters to the Editor" section may have a different workflow.
+But it is also possible to have different workflows for different sections of the website. The "Letters to the Editor" section may have a different workflow.
 
 The web site administrator would use control panels of Plone to specify where on the web site the "Editorial Review Policy" applies, site-wide or to a subsection.
 

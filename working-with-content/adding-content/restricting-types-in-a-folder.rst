@@ -1,3 +1,4 @@
+=============================
 Restricting Types in a Folder
 =============================
 
@@ -7,7 +8,7 @@ The Add new... menu has a choice for restricting the content types that can be a
 
 Restricting types available for adding to a folder is the simplest way to control content creation on a Plone web site.
 You may want to restrict content types if your site is going to be worked on by several people.
-In this way you can enforce good practices such as putting just images in the images folder, or having your "News" items all in the same folder.
+In this way you can enforce good practices such as putting images in the images folder, or having your "News" items all in the same folder.
 
 .. note::
 
@@ -87,7 +88,8 @@ Likewise an "Company Events" folder could be created to hold only the Event cont
 If left this way, content creators would be forced (or a single web site owner) to follow this strict scheme.
 
 Perhaps some flexibility is desired for images, though. By checking the Image content type under the *Secondary types* heading for the "Company Events" folder, images could be added if really needed, by using the *More...* submenu, which would appear when this mechanism is in place.
-So, the *Secondary types* will be allowed, but be a little more hidden when adding content.
+
+The *Secondary types* will be allowed, but be a little more hidden when adding content.
 That way, you still have flexibility without confusing part-time editors with too many options.
 
 Some people prefer a heterogeneous mix of content across the web site, with no restrictions.

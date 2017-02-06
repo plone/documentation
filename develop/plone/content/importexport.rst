@@ -1,6 +1,6 @@
-========================================
+================================
  Importing and exporting content
-========================================
+================================
 
 .. admonition:: Description
 
@@ -66,7 +66,7 @@ The following add-ons make it useful in a Plone context:
   See the site for some example configs for migration.
 * `transmogrify.dexterity <https://github.com/collective/transmogrify.dexterity>`_ provides some blueprints relevant to Dexterity types,
   and has some default pipelines for you to use.
-* `collective.jsonmigrator <https://github.com/collective/collective.jsonmigrator>`_ is particularly useful when the old site is not able to install collective.transmogrifier, as collective.jsonmigrator has a very low level of dependencies for that end of the migration.
+* `collective.jsonmigrator <https://github.com/collective/collective.jsonmigrator>`_ is particularly useful when the old site is not able to install collective.transmogrifier, as collective.jsonmigrator has a low level of dependencies for that end of the migration.
 
 transmogrify.dexterity: CSV import
 ==================================
@@ -112,7 +112,7 @@ Manually rename or move the folder on source or target to change its location.
         The instructions here requires quintagroup.transmogrify version 0.4 or later.
 
 Source site
-+++++++++++
+-----------
 
 Execute these actions on the source Plone site.
 
@@ -171,7 +171,7 @@ In log you should see entries running like::
                    0 were discarded in some section
 
 Target site
-+++++++++++
+-----------
 
 Execute these actions on the target Plone site.
 
@@ -195,13 +195,13 @@ but no content is created.
 
 .. note ::
 
-       Currently export/import is not perfect. For example, ZMI content type icons  are currently
-       lost in the process. It is recommended to do a test run on a staging server
-       before doing this process on a production server.
-       Also, the item order in the folder is being lost.
+    Currently export/import is not perfect. For example, ZMI content type icons  are currently
+    lost in the process. It is recommended to do a test run on a staging server
+    before doing this process on a production server.
+    Also, the item order in the folder is being lost.
 
 More information
-++++++++++++++++
+----------------
 
 * :doc:`How to perform portal_catalog queries </develop/plone/searching_and_indexing/query>`
 
@@ -214,7 +214,7 @@ collective.jsonmigrator
 
 collective.jsonmigrator is basically a collective.transmogrifier pipeline that pulls Plone content from to JSON views on an old site and writes it into your new site.
 It's major advantage is that the JSON view product: collective.jsonify is very low on dependencies (basically just simplejson),
-so it can be installed on very old Plone sites that would be difficult if not impossible to install collective.transmogrifier into.
+it can be installed on old Plone sites that would be difficult if not impossible to install collective.transmogrifier into.
 
 See:
 

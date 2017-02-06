@@ -1,6 +1,6 @@
-================
- Listing objects
-================
+===============
+Listing objects
+===============
 
 .. admonition:: Description
 
@@ -16,7 +16,7 @@ depending on whether:
 
 * you want to get all items, or only items visible for the currently logged in user;
 
-* you want to get hold of the item objects themselves or just indexed
+* you want to get hold of the item objects themselves or indexed
   metadata
   (the latter is faster);
 
@@ -219,8 +219,7 @@ or ``keys()`` in Plone 4. This is a fast method::
     ``objectIds()`` and ``keys()`` will return ids for raw Zope 2 objects
     too,
     not just Plone content.  If you call ``objectIds()`` on the portal root
-    object, you will get objects like ``acl_users``, ``portal_workflow`` and
-    so on ...
+    object, you will get objects like ``acl_users``, ``portal_workflow`` etc ...
 
 Getting non-contentish Zope objects
 ===================================

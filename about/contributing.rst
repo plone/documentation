@@ -105,6 +105,7 @@ Please  **DO NOT** commit to master directly. Even for the smallest and most tri
 
 **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
 
+
 Your pull requests may be checked for spelling, and clarity.
 Don't hesitate to contribute also if English is not your first language, we will try to be helpful in corrections without being annoying.
 
