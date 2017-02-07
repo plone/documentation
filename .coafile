@@ -3,3 +3,7 @@ bears = WriteGoodLintBear
 allow_so_beginning = False
 files = **/*.rst
 
+[LC]
+bears = LineCountBear
+max_lines_per_file = 1000
+files = **/*.rst
