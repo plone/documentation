@@ -585,7 +585,7 @@ original.
           name="register"
           class=".customregistration.CustomRegistrationForm"
           permission="zope2.View"
-          layer="..interfaces.IExamplePolicy"
+          for="Products.CMFPlone.Portal.PloneSite"
           />
     </configure>
 
