@@ -5,6 +5,9 @@ general:
       - 4.3
       - 5.0
 
+    only:
+      - 5.1
+
 machine:
   services:
     - docker
