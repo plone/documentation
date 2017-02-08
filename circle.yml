@@ -1,0 +1,20 @@
+general:
+  branches:
+    ignore:
+      - 3.3
+      - 4.3
+      - 5.0
+
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker pull testthedocs/ttd.coala
+
+test:
+  override:
+    - docker run -it -v "${PWD}":/source:rw testthedocs/ttd.coala '-c=/source/.coafile' -C WG
+
