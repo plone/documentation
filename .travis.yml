@@ -5,8 +5,7 @@ sudo: false
 before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
-- curl -O http://www.abisource.com/downloads/enchant/1.6.0/enchant-1.6.0.tar.gz
-- tar xzvf enchant-1.6.0.tar.gz
+- curl -SLk https://www.abisource.com/downloads/enchant/1.6.0/enchant-1.6.0.tar.gz | tar xvz
 - cd enchant-1.6.0
 - ./configure --prefix=`pwd`
 - make install
