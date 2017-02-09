@@ -1,8 +1,7 @@
-=====================
- Dashboard
-=====================
+=========
+Dashboard
+=========
 
-.. contents :: :local:
 
 Introduction
 --------------

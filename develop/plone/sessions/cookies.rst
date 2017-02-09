@@ -1,15 +1,14 @@
-==============
+=======
 Cookies
-==============
+=======
 
 .. admonition:: Description
 
     Handling session and other cookies in Plone
 
-.. contents:: :local:
 
 Introduction
-=================
+============
 
 Setting and getting cookies
 
@@ -18,7 +17,7 @@ Setting and getting cookies
 * http://stackoverflow.com/questions/1034252/how-do-you-get-and-set-cookies-in-zope-and-plone
 
 Reading cookies
-==================
+===============
 
 Usually you want to read incoming cookies sent by the browser.
 
@@ -32,7 +31,7 @@ Setting cookies
 See `HTTPResponse.setCookie() <https://github.com/zopefoundation/Zope/blob/master/src/ZPublisher/HTTPResponse.py#L241>`_.
 
 Modifying HTTP response cookies
-===================================
+===============================
 
 You might want to tune up or clean cookies after some other part of Plone code has set them.
 You can do this in :doc:`post-publication event handler </develop/plone/serving/http_request_and_response>`.

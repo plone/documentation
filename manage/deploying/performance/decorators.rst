@@ -7,7 +7,6 @@ Cache decorators
     How to use the Python decorator pattern to cache the result values of
     your computationally expensive method calls.
 
-.. contents:: :local:
 
 Introduction
 ============

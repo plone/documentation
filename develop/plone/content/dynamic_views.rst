@@ -2,7 +2,6 @@
  Dynamic views
 ==============
 
-.. contents:: :local:
 
 .. admonition:: Description
 

@@ -1,12 +1,12 @@
-======
- ZCML
-======
+===
+ZCML
+====
 
 .. admonition:: Description
 
     What Plone programmers should know about ZCML.
 
-.. contents :: :local:
+
 
 Introduction
 ============

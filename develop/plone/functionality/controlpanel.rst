@@ -1,16 +1,15 @@
-=============================
- Site setup and configuration
-=============================
+============================
+Site setup and configuration
+============================
 
 .. admonition:: Description
 
     How to create settings for your add-on product and how to
     programmatically add new Plone control panel entries.
 
-.. contents:: :local:
 
 Introduction
-=============
+============
 
 This documentation tells you how to create new "configlets" to
 Plone site setup control panel.
@@ -23,7 +22,7 @@ Configlets can be created in two ways:
 
 
 ``plone.app.registry``
-=======================
+======================
 
 ``plone.app.registry`` is the state of the art way to add settings for your
 Plone 4.x+ add-ons.

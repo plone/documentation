@@ -59,7 +59,6 @@ Testing a clean uninstall
 
         How to test that your Plone add-on uninstalls cleanly
 
-.. contents:: :local:
 
 Introduction
 ------------

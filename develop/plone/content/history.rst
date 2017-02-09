@@ -2,7 +2,6 @@
 History and versioning
 ======================
 
-.. contents :: :local:
 
 Introduction
 ------------

@@ -1,20 +1,19 @@
-========
- Apache
-========
+======
+Apache
+======
 
 .. admonition:: Description
 
         Tips and guides for hosting Plone with Apache web server.
 
-.. contents :: :local:
 
 Introduction
-------------
+============
 
 Here are useful information and snippets when hosting Plone behind Apache.
 
 Installing Apache front-end for Plone
----------------------------------------
+=====================================
 
 Apache runs on port 80. Plone runs on port 8080. Apache accepts all HTTP
 traffic to your internet domain.

@@ -1,13 +1,12 @@
-================
+=========
 Utilities
-================
+=========
 
 .. admonition:: Description
 
     Utility design pattern in Zope 3 allows easily overridable singleton class instances
     for your code.
 
-.. contents:: :local:
 
 Introduction
 ============

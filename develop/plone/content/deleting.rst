@@ -1,13 +1,12 @@
-===========
+========
 Deleting
-===========
+========
 
 .. admonition:: Description
 
     Deleting content items in Plone programmatically.
     How link integrity checks work and how (and when!) to avoid them.
 
-.. contents:: :local:
 
 Introduction
 ============
@@ -32,7 +31,7 @@ Or::
     parent.manage_delObjects([context.getId()])
 
 Permissions
--------------
+-----------
 
 The user must have Zope 2 *Delete objects* permission on the *content item* being
 deleted. This is checked in ``Products.CMFPlone.PloneFolder.manage_delObjects()``.
@@ -54,7 +53,7 @@ Example how to check for this permission::
         pass
 
 Bypassing permissions
--------------------------
+---------------------
 
 This is handy if you work e.g. in a :doc:`debug shell </develop/plone/misc/commandline>`
 and you are deleting badly behaved objects::

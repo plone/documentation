@@ -1,20 +1,19 @@
-======
+====
 AJAX
-======
+====
 
 .. admonition:: Description
 
     Creating AJAX programming logic in Plone.
 
-.. contents:: :local:
 
 Introduction
-=================
+============
 
 ´AJAX <http://en.wikipedia.org/wiki/Ajax_%28programming%29>`_ (an acronym for Asynchronous JavaScript and XML) is a group of interrelated web development techniques used on the client-side to create asynchronous web applications.
 
 JSON views and loading data via AJAX
-===================================================
+====================================
 
 The best way to output JSON for AJAX call endpoints is to use Python's dict structure and convert
 it to JSON using Python ``json.dumps()`` call.
@@ -32,7 +31,7 @@ AJAX loader
 * https://github.com/miohtama/silvuple/blob/master/silvuple/static/main.js#L247
 
 Cross-Origin Resource Sharing (CORS) proxy view
-====================================================================
+===============================================
 
 Old web browsers do not support `Allow-acces-origin HTTP header <https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS>`_
 needed to do cross-domain AJAX requests (IE6, IE7).
@@ -47,7 +46,7 @@ Below is an example how to work around this for jQuery getJSON() calls by
 
 This example is for Plone, but the code is easily port to other web frameworks.
 
-.. note ::
+.. note::
 
         This is not a full example code. Basic Python and Javascript skills are needed
         to interpret and adapt the code for your use case.
@@ -219,7 +218,7 @@ Registering the view in ZCML:
 
 
 Speeding up AJAX loaded content HTML
-====================================================================
+====================================
 
 By observing Plone's ``main_template.pt``, having a True value on the ``ajax_load`` request key means some parts of the page aren't displayed, hence the speed:
 

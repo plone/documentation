@@ -6,7 +6,6 @@
 
     How to programmatically create, read, edit and delete site members.
 
-.. contents:: :local:
 
 Introduction
 ============

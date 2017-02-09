@@ -6,7 +6,6 @@
 
     Dexterity content subsystem for Plone: info for the developers.
 
-.. contents:: :local:
 
 Introduction
 ============

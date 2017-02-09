@@ -1,12 +1,11 @@
-=========================
- Eventish content types
-=========================
+======================
+Eventish content types
+======================
 
 .. admonition:: Description
 
     Creating and programming event and eventish content types in Plone
 
-.. contents:: :local:
 
 Introduction
 ============

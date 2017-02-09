@@ -7,7 +7,6 @@ Vocabularies
     Vocabularies are lists of (value -> human readable title) pairs used by e.g. selection drop downs.
     ``zope.schema`` provides tools to programmatically construct their vocabularies.
 
-.. contents :: :local:
 
 Introduction
 ------------
@@ -42,7 +41,7 @@ Some terms are titled, meaning they have a title that is different to the token.
 
 For further details please read the `interfaces specification <https://github.com/zopefoundation/zope.schema/blob/master/src/zope/schema/interfaces.py#L583>`_
 
-.. note ::
+.. note::
 
     If you need international texts please note that only title is, and should be, translated.
     Value and token must always carry the same value.

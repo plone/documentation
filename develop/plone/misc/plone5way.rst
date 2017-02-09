@@ -1,10 +1,10 @@
+=============================
 Looking ahead towards Plone 5
 =============================
 
 Concerns regarding removal of portal_skins and reliance on browser views
 ------------------------------------------------------------------------
 
-.. contents:: :local:
 
 Specific Things We Like to Do with portal_skins
 -----------------------------------------------

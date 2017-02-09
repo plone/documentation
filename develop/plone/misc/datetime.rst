@@ -1,12 +1,11 @@
-=======================
- Zope DateTime
-=======================
+=============
+Zope DateTime
+=============
 
 .. admonition:: Description
 
         Using Zope DateTime class in Plone programming
 
-.. contents :: :local:
 
 Introduction
 ------------
@@ -37,7 +36,7 @@ Since Plone 4
 * If such string is not available the default is taken from portal_properties / site_properties
 
 Formatting examples
-=====================
+===================
 
 US example::
 

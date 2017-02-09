@@ -13,7 +13,6 @@
     It is also possible to use this approach with dexterity; for that,
     use the ``dexterity.membrane`` add-on.
 
-.. contents :: :local:
 
 Introduction
 ============

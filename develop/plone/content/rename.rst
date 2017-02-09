@@ -1,12 +1,11 @@
-=========================================
- Renaming content
-=========================================
+================
+Renaming content
+================
 
 .. admonition:: Description
 
         How to programmatically rename Plone content items
 
-.. contents :: :local:
 
 Introduction
 ------------

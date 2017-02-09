@@ -6,7 +6,6 @@
 
     How to deal with permissions making your code permission-aware in Plone
 
-.. contents:: :local:
 
 Introduction
 ============

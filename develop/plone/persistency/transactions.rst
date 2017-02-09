@@ -1,11 +1,10 @@
-================
+============
 Transactions
-================
+============
 
-.. contents:: :local:
 
 Introduction
-==============
+============
 
 Plone uses the
 `ZODB database <http://en.wikipedia.org/wiki/Zope_Object_database>`_ which
