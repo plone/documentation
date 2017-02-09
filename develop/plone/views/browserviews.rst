@@ -590,7 +590,7 @@ original.
           />
     </configure>
 
-.. Note::
+Note::
 
         We've retained the permissions and marker interface of the original view.
         You may provide a specific permission or marker interface in lieu of these
