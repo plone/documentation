@@ -8,7 +8,6 @@ Zope Application Server
     This document covers control and configuration of parts
     of the application server.
 
-.. contents:: :local:
 
 Introduction
 ============

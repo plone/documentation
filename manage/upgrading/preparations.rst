@@ -6,7 +6,6 @@ Preparations
 
    Things to do before you migrate Plone.
 
-.. contents:: :local:
 
 Gather information
 ==================

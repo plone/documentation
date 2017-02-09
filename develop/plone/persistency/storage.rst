@@ -6,7 +6,6 @@ Storage
 
         What kind of different storages (storing backends) ZODB has and how to use them.
 
-.. contents :: :local:
 
 Introduction
 ------------

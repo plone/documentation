@@ -1,16 +1,15 @@
-=========
- Catalogs
-=========
+========
+Catalogs
+========
 
 .. admonition:: Description
 
    A brief introduction to ZCatalogs, the Catalog Tool and what
    they're used for.
 
-.. contents:: :local:
 
-Why ZCatalogs?
---------------
+Why ZCatalogs
+=============
 
 Plone is built on the CMF, which uses the ZODB to store content in
 a very free-form manner with arbitrary hierarchy and a lot of
@@ -47,7 +46,7 @@ with Plone since the 3.0 release, is what you're looking for. See
 `Boolean queries (AdvancedQuery)`_ for a brief introduction.
 
 Quick start
------------
+===========
 
 Every ZCatalog is composed of indexes and metadata. Indexes are
 fields you can search by, and metadata are copies of the contents

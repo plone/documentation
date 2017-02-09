@@ -1,15 +1,14 @@
-===========================================
- SQL
-===========================================
+===
+SQL
+===
 
 .. admonition:: Description
 
         Using SQL databases (MySQL, PostgreSQL, others) in Plone
 
-.. contents :: :local:
 
 Introduction
-===============
+============
 
 If you are building the codebase Plone behaves as any other Python application.
 
@@ -22,7 +21,7 @@ Example Python SQL libraries
 * http://www.sqlalchemy.org/
 
 ZSQL
-============
+====
 
 ZSQL is something probably written before you knew what SQL is.
 Never ever use ZSQL in new code. It's not following any modern best practices

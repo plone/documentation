@@ -6,7 +6,6 @@ Upgrading Plone 5 within 5.x.x series dot minor releases
 
    Steps for minor upgrades within the Plone 5 Major Release.
 
-.. contents:: :local:
 
 
 .. warning::

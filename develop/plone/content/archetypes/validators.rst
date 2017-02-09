@@ -1,21 +1,20 @@
-==========================
- Validators
-==========================
+==========
+Validators
+==========
 
-.. contents :: :local:
 
 Introduction
--------------
+============
 
 This page has tips how to validate fields defined in Archetypes schema.
 
 List of default validators
-----------------------------
+==========================
 
 * https://github.com/plone/Products.validation/blob/master/Products/validation/validators/BaseValidators.py
 
 Creating a validator
------------------------
+====================
 
 A custom validator should return True if valid, or an error string if validation fails.
 This is especially important to remember when chaining validators together.

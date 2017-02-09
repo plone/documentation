@@ -6,7 +6,6 @@
 
     How to debug and fix ZODB database problems in Plone
 
-.. contents:: :local:
 
 Introduction
 =============

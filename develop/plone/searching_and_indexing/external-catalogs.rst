@@ -8,8 +8,6 @@ Using external catalogs
     Add-ons like collective.solr use that to hook into the catalog API and do some Indexing outside of Plone in Solr,
     which increases performance and flexibility of indexing a lot.
 
-.. contents :: :local:
-
 
 Implement IIndexingQueueProcessor
 ---------------------------------

@@ -1,8 +1,6 @@
-===============
- RAM cache
-===============
-
-.. contents:: :local:
+=========
+RAM Cache
+=========
 
 Introduction
 ============
@@ -10,7 +8,7 @@ Introduction
 The RAM cache is a Zope facility to create custom in-process caches.
 
 Using memcached backend
-=========================
+=======================
 
 By default, Zope uses an in-process memory cache. It is possible to replace
 this with ``memcached``.
@@ -43,7 +41,7 @@ RamCache instance in the ZMI with a new instance of ``MemcachedManager``
 * https://pypi.python.org/pypi/Products.MemcachedManager
 
 Using custom RAM cache
-=======================
+======================
 
 You want to use a custom cache if you think cache size or saturation will
 pose problems.

@@ -6,7 +6,6 @@ ReStructuredText Style Guide
 
    How to write content for the Plone Documentation.
 
-.. contents:: :local:
 
 Introduction
 ============
@@ -103,12 +102,6 @@ Each page should contain, in this order:
 
       This text will go to Plone's pages description field. It will appear in the search engine listings for the page.
 
-The *contents* directive will cause Sphinx to generate the *Table of Contents* shortcut links at the start of the page.
-Using the *local* option excludes the page itself and `ToC <http://www.sphinx-doc.org/en/stable/markup/toctree.html>`_ title from the listing:
-
-.. code-block:: rst
-
-   .. contents:: :local:
 
 Introduction paragraph: A brief overview:
 

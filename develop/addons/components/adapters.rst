@@ -1,8 +1,7 @@
-=================
- Adapters
-=================
+========
+Adapters
+========
 
-.. contents:: :local:
 
 Introduction
 ============

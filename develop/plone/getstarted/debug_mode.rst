@@ -1,13 +1,12 @@
-==========================
+===========
  Debug mode
-==========================
+===========
 
 .. admonition:: Description
 
     Plone can be put in the debug mode where one can diagnose start up failures and
     any changes to CSS, Javascript and page templates take effect immediately.
 
-.. contents:: :local:
 
 Introduction
 ===============
@@ -40,7 +39,7 @@ In **debug mode**
 
 * Plone reloads CSS, Javascript and .pt files when the page is refreshed
 
-.. note ::
+.. note::
 
      Plone does not reload .py or .zcml files in the debug mode by default.
 
@@ -91,7 +90,8 @@ This quick start has been tested on Windows 7.  Installation remains the same on
 3. The installer will launch your Plone instance when it finishes.  To connect, direct your browser to: http://localhost:8080
 
 .. note::
-   In the buildout bin directory you'll find the executable files to control Plone instance.
+
+    In the buildout bin directory you'll find the executable files to control Plone instance.
 
 
 Starting and Stopping Plone
@@ -100,7 +100,8 @@ Starting and Stopping Plone
 If your Plone instance is shutdown you can start and control it from the command prompt.
 
 .. note::
-   To control Plone you need to execute your command prompt as an administrator.
+
+    To control Plone you need to execute your command prompt as an administrator.
 
 In the command prompt enter the following command to access your buildout directory
 (the varies according to Plone version)::

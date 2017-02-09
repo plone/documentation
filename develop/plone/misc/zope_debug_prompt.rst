@@ -1,12 +1,11 @@
-===================================
+=================
 Zope debug prompt
-===================================
+================
 
 .. admonition:: Description
 
     Interacting with Plone from the Zope debug prompt.
 
-.. contents :: :local:
 
 Introduction
 ============

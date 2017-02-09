@@ -4,7 +4,6 @@ Getting started
 
 How to get started with Plone development.
 
-.. contents:: :local:
 
 Introduction
 ------------

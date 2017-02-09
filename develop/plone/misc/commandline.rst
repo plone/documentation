@@ -1,18 +1,17 @@
-===========================================
- Command-line interaction and scripting
-===========================================
+======================================
+Command-line interaction and scripting
+======================================
 
 .. admonition:: Description
 
         How to run command-line Python scripts, timed jobs (cron)
         and batch jobs against Plone sites and Zope application server.
 
-.. contents :: :local:
 
 Introduction
 ------------
 
-.. warning ::
+.. warning::
 
         Plone code is somewhat ugly and expects you to have real HTTP request lifecycle
         to do many things. For command line scripts, you need to mock up this and mocking
@@ -54,16 +53,16 @@ Starting interactive interpreter
 
 The *bin/instance debug* command starts an interactive interpreter with the Zope application server and
 database loaded. You can provide the id of your Plone site with the -O flag to have it available under the
-name *obj* and to load :doc:`persistent utilities </develop/addons/components/utilities>`_. The following example assumes 
+name *obj* and to load :doc:`persistent utilities </develop/addons/components/utilities>`_. The following example assumes
 the site is named "Plone". For more infos about command-line options use *bin/instance help debug*.
 
 Example::
 
-        bin/instance -OPlone debug
+    bin/instance -OPlone debug
 
-.. note ::
+.. note::
 
-        The instance must be stopped in order to run this.
+    The instance must be stopped in order to run this.
 
 Running scripts
 ---------------
