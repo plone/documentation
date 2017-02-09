@@ -6,7 +6,6 @@
 
    How to write and submit content for the Plone Documentation.
 
-.. contents:: :local:
 
 
 

@@ -1,13 +1,13 @@
-============================================================
- Add-on installation and export framework: GenericSetup
-============================================================
+
+======================================================
+Add-on installation and export framework: GenericSetup
+======================================================
 
 .. admonition:: Description
 
     GenericSetup is a framework to modify the Plone site during add-on package installation and uninstallation.
     It provides XML-based rules to change the site settings easily.
 
-.. contents :: :local:
 
 Introduction
 =============
@@ -48,7 +48,7 @@ This import will read XML files and change the Plone database accordingly.
     ZCML directives, like viewlets and views, are registered to be active only on a certain layer using ``layer`` attribute.
     When GenericSetup XML is imported through ``portal_setup``, or the add-on package installer is run for a Plone site, the layer is activated for the particular site only, enabling all views registered for this layer.
 
-.. note ::
+.. note::
 
     The ``metadata.xml`` file (add-on dependency and version information) is read during Plone start-up.
     If this file has problems, your add-on might not appear in the installer control panel.

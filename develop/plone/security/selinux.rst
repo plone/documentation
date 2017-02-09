@@ -6,7 +6,6 @@ Using SELinux with Plone
 
     Tutorial on using SELinux with Plone, using Plone 4.3 and RedHat Linux 6.3.
 
-.. contents:: :local:
 
 Introduction
 ============

@@ -2,7 +2,6 @@
  Member profiles
 =================
 
-.. contents:: :local:
 
 .. admonition:: Description
 

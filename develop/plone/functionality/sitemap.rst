@@ -1,8 +1,7 @@
-==========================
- Sitemap protocol
-==========================
+================
+Sitemap protocol
+================
 
-.. contents :: :local:
 
 Introduction
 -------------

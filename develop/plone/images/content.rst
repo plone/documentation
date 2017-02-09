@@ -6,7 +6,6 @@
 
     How to programmatically manipulate images on your Plone site.
 
-.. contents :: :local:
 
 Introduction
 ============

@@ -2,9 +2,6 @@
 Status check
 ============
 
-.. contents:: :local:
-
-
 Introduction
 ============
 

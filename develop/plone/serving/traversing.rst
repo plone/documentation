@@ -1,6 +1,6 @@
-===============
+===========
  Traversing
-===============
+===========
 
 .. admonition:: Description
 
@@ -9,7 +9,6 @@
     server, Plone will traverse the corresponding content item
     and its view function by URI.
 
-.. contents:: :local:
 
 Introduction
 ============

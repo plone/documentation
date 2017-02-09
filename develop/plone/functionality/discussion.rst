@@ -1,13 +1,12 @@
-==========================
- Discussion and comments
-==========================
+=======================
+Discussion and comments
+=======================
 
 .. admonition:: Description
 
         How to control commenting and discussion in Plone programmatically
 
 
-.. contents :: :local:
 
 Introduction
 --------------

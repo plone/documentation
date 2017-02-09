@@ -1,8 +1,6 @@
-===============================================
- Changing Portal Transforms Settings via Python
-===============================================
-
-.. contents :: :local:
+==============================================
+Changing Portal Transforms Settings via Python
+==============================================
 
 Introduction
 ------------

@@ -1,12 +1,11 @@
-=================
- Normalizing ids
-=================
+===============
+Normalizing ids
+===============
 
 .. admonition:: Description
 
 	How to convert arbitrary text input to URL/CSS/file/programming safe ids.
 
-.. contents:: :local:
 
 Introduction
 ---------------

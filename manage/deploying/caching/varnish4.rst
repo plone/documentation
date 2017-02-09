@@ -7,10 +7,6 @@ Varnish 4.x
     Varnish is a caching front-end server.
     This document has notes on how to use Varnish with Plone.
 
-.. contents:: :local:
-
-.. highlight:: console
-
 Introduction
 ============
 

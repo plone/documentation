@@ -6,8 +6,6 @@ Copying a Plone site
 
    Quick instructions on how to create a copy of a Plone installation.
 
-.. contents:: :local:
-
 
 Introduction
 ============

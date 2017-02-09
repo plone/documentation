@@ -1,16 +1,15 @@
-====================
+==================
 Translated content
-====================
+==================
 
 .. admonition:: Description
 
     Translating content items in Plone, creating translations
     programmatically and working with translators.
 
-.. contents:: :local:
 
 Introduction
-=============
+============
 
 Plone ships out of the box with a multilingual solution for translating user generated content.
 

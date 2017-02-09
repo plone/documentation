@@ -1,8 +1,8 @@
-=======================
- Contact forms
-=======================
+=============
+Contact forms
+=============
 
-.. contents :: :local:
+
 
 Introduction
 ------------

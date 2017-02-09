@@ -6,7 +6,6 @@ WYSIWYG text editing and TinyMCE
 
         WYSIWYG text field editor programming in Plone.
 
-.. contents :: :local:
 
 Introduction
 ------------

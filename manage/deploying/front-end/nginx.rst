@@ -6,7 +6,6 @@
 
     Using the nginx web server to host Plone sites
 
-.. contents:: :local:
 
 Introduction
 ============

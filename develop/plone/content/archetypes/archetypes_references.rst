@@ -1,16 +1,15 @@
----------------------------
+==========================
 Archetypes ReferenceFields
----------------------------
+==========================
 
 .. admonition:: Description
 
     Using ReferenceField to have references to other Archetypes content
     items in Plone.
 
-.. contents:: :local:
 
 Introduction
--------------
+============
 
 Archetypes comes with a kind of field called ReferenceField which is used
 to store references to other Archetypes objects, or any object providing the

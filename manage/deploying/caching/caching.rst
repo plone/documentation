@@ -2,8 +2,6 @@
 Caching rules
 =============
 
-.. contents :: :local:
-
 .. admonition:: Description
 
     How to program front end caching server (Varnish, Apache) to cache the
@@ -43,14 +41,14 @@ operations here:
 
 * https://github.com/plone/plone.app.caching/blob/master/plone/app/caching/operations/default.py
 
-.. note ::
+.. note::
 
         You usually don't need to override the operation classes itself.
         ``plone.app.caching`` provides web UI to override parameters, like
         timeout, for each rule, on the *Detailed settings* tab in
         cache control panel (Create per-ruleset parameters link).
 
-.. note ::
+.. note::
 
         Plone 3 has its own, older, caching mechanisms.
 
@@ -67,7 +65,7 @@ Our front page is subject to moderate changes as new content comes in, but
 the changes are not time critical, so we define a one hour timeout for
 caching the front page.
 
-.. note ::
+.. note::
 
         Currently, setting caching rules for view classes is not supported
         through the web, but using ZCML or Python is the way to go.
@@ -116,13 +114,13 @@ control panel, we'll:
 * on the *Detailed settings* tab we'll use the *Create per-ruleset* command
   to override timeout to be 1h instead of default 24h for *Homepage*.
 
-.. warning ::
+.. warning::
 
         Do not enable the Zope RAM cache for page templates. Somehow, at
         some point, you will end up having some bad page HTML in Zope's
         internal cache and you have no idea how to clear it.
 
-.. note ::
+.. note::
 
         If you are testing the rule on a local computer first, remember
         to re-do caching control panels in the production environment,
@@ -137,7 +135,7 @@ Testing the rule
 * then we'll test the rule in the production environment with Varnish to see
   that Varnish picks up ``Expires`` header
 
-.. note ::
+.. note::
 
         To test ``plone.app.caching`` rules you need to run the site in
         production mode (not in the foreground).  Otherwise

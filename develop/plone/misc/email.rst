@@ -1,12 +1,11 @@
-==============================
- Sending email
-==============================
+=============
+Sending email
+=============
 
 .. admonition:: Description
 
         How to programmatically send email in Plone
 
-.. contents :: :local:
 
 Introduction
 ============

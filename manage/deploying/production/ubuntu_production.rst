@@ -6,10 +6,9 @@ Tutorial: Installing Plone for Production on Ubuntu
 
     A step-by-step guide to installing Plone 5.x on a recent Ubuntu LTS [14.04] server installation.
 
-.. contents:: :local:
 
 Introduction
-------------
+============
 
 This tutorial walks you step-by-step through a minimum responsible installation of Plone for production on a recent Ubuntu LTS server.
 
@@ -18,7 +17,7 @@ The installation includes Plone itself; nginx for a reverse-proxy; a send-only m
 This minimal install will work for production for a smaller Plone site, and will provide a good base for scaling up for a larger site.
 
 Requirements
-^^^^^^^^^^^^
+------------
 
 1. A clean installation of a recent Ubuntu server. The tutorial has been tested on cloud and virtual box servers. The install described here will run in 512 MB RAM. More RAM will be needed for larger or busy sites.
 
@@ -29,7 +28,7 @@ Requirements
 4. An Internet connection.
 
 Step 1: Platform preparation
-----------------------------
+============================
 
 Get to the point where you can ssh to the server as a non-root user and use `sudo` to gain root permissions.
 
@@ -47,7 +46,7 @@ Then, install the platform's build kit, nginx, and supervisor:
     sudo apt-get install build-essential python-dev libjpeg-dev libxslt-dev supervisor nginx
 
 Step 2: Install Plone
----------------------
+=====================
 
 Please take some time and read the chapter about :doc:`installation </manage/installing/installing/index>`.
 
@@ -69,9 +68,11 @@ When the install completes, you'll be shown the preset administrative password. 
     sudo cat /usr/local/Plone/zeocluster/adminPassword.txt
 
 Step 3: Set Plone to start with the server
-------------------------------------------
+==========================================
+
 
 We're going to use `supervisor` to start Plone with the server. To do so, we'll create a supervisor configuration file:
+
 
 .. code-block:: shell
 
@@ -106,12 +107,12 @@ To start immediately, tell supervisor about the new components:
     plone5server                     RUNNING    pid 32326, uptime 0:00:08
 
 Step 4: Create a Plone site
----------------------------
+===========================
 
 At this point, you should be able to open a web browser and point it to port 8080 on your new server. Do so, and use your administrative password to create a Plone site with the id "Plone". (Feel free to use a different ID, just remember it below when you set up virtual hosting rules.)
 
 Step 5: Set up virtual hosting
-------------------------------
+==============================
 
 We're going to use nginx as a reverse proxy. Virtual hosting will be established by rewrite rules. You need two bits of information: 1) the hostname you want to use (for which DNS records should already be set up); 2) the id of the Plone site you created.
 
@@ -172,7 +173,7 @@ And, tell nginx to reload the configuration:
 Try out your virtual hosting.
 
 Step 6: Set up packing and backup
----------------------------------
+=================================
 
 We want the Zope database to be packed weekly. We'll do so by setting up a `cron` job:
 
@@ -205,7 +206,7 @@ Add the contents below, adjust the time, and save::
     This snapshot will give you a stable copy of the database at a particular time. You'll need a separate strategy to backup the server's file system, including the snapshot.
 
 Step 7: Add a send-only Mail Transfer Agent
--------------------------------------------
+===========================================
 
 You don't need this step if you have an MTA on another server, or are using a mail-send service. If you don't have that available, this step will create a localhost, port 25, MTA that you may use with Plone's mail setup.
 
@@ -238,7 +239,7 @@ Tell postfix to restart:
     sudo /etc/init.d/postfix restart
 
 Step 8: Set up a firewall
--------------------------
+=========================
 
 You *must* set up a firewall. But, you may be handling that outside the system, for example via AWS security groups.
 
@@ -256,7 +257,7 @@ If you want to use a software firewall on the machine, you may use `ufw` to simp
 
     This blocks everything but SSH and HTTP(S).
 
-So, you may be wondering, how do you do Zope Management Interface administration?
+You may be wondering, how do you do Zope Management Interface administration?
 SSH port forwarding will allow you to build a temporary encrypted tunnel from your workstation to the server.
 
 Execute on your workstation the command:
@@ -268,7 +269,7 @@ Execute on your workstation the command:
 Now, ask for http://localhost:8080/ in your workstation web browser, and you'll be looking at the ZMI root.
 
 Scaling up
-----------
+==========
 
 This installation will do well on a minimum server configuration (512MB RAM).
 If you've a larger site, buy more memory and set up reverse-proxy caching and load balancing.
