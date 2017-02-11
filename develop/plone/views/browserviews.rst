@@ -36,14 +36,14 @@ the view code. From Zope's point of view, even a function would be
 sufficient, as it is a callable.
 
 More information
-----------------
+================
 
 * `Mastering Plone Training <http://training.plone.org/5/>`_ has several chapters on views.
 
 
 
 View components
----------------
+===============
 
 Views are Zope Component Architecture (:term:`ZCA`) *multi-adapter
 registrations*.
@@ -159,8 +159,7 @@ This shows how to create and register view in a Zope 3 manner.
 Creating a view
 ---------------
 
-First, create your add-on product using
-:doc:`Dexterity project template </develop/addons/bobtemplates.plone/README>`.
+Create your add-on product using :doc:`Dexterity project template </develop/addons/bobtemplates.plone/README>`.
 
 Python logic code
 `````````````````
@@ -254,9 +253,8 @@ The following example registers a new view (see below for comments):
    ``configure.zcml`` to use ``browser`` configuration directives.
 
 
-The view in question is not registered against any
-:doc:`layer </develop/plone/views/layers>`, so it is immediately available after
-restart without need to run :doc:`Add/remove in Site setup </develop/addons/components/genericsetup>`.
+The view in question is not registered against any :doc:`layer </develop/plone/views/layers>`,
+so it is immediately available after restart without need to run :doc:`Add/remove in Site setup </develop/addons/components/genericsetup>`.
 
 Page template
 `````````````
@@ -442,14 +440,12 @@ The Python constructor method of the view, ``__init__()``, is special.
 You should never try to put your code there. Instead, use helper method or
 lazy construction design pattern if you need to set-up view variables.
 
-The ``__init__()`` method of the view might not have an
-:doc:`acquisition chain </develop/plone/serving/traversing>` available, meaning that it
-does not know the parent or hierarchy where the view is.
+The ``__init__()`` method of the view might not have an :doc:`acquisition chain </develop/plone/serving/traversing>`
+available, meaning that it does not know the parent or hierarchy where the view is.
+
 This information is set after the constructor have been run.
-All Plone code which relies on acquisition chain, which means
-almost all Plone helper code, does not work in ``__init__()``.
-Thus, the called Plone API methods return ``None`` or tend to throw
-exceptions.
+All Plone code which relies on acquisition chain, which means almost all Plone helper code, does not work in ``__init__()``.
+Thus, the called Plone API methods return ``None`` or tend to throw exceptions.
 
 Layers
 ------
@@ -472,7 +468,7 @@ For more information, see
 * :doc:`browser layers </develop/plone/views/layers>`
 
 Register and unregister view directly using zope.component architecture
--------------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 Example how to register::
 
@@ -511,8 +507,9 @@ If you need to produce non-(X)HTML output, here are some resources:
 Zope ViewPageTemplateFile vs. Five ViewPageTemplateFile
 =======================================================
 
-.. warning:: There are two different classes that share the same
-   ``ViewPageTemplateFile`` name.
+.. warning::
+
+    There are two different classes that share the same ``ViewPageTemplateFile`` name.
 
 * Zope  `BrowserView source code <http://svn.zope.org/zope.publisher/trunk/src/zope/publisher/browser.py?rev=101538&view=auto>`_.
 
@@ -583,10 +580,17 @@ original.
       <browser:page
           name="register"
           class=".customregistration.CustomRegistrationForm"
-          permission="zope2.View"
-          layer="..interfaces.IExamplePolicy"
+          permission="cmf.AddPortalMember"
+          for="plone.app.layout.navigation.interfaces.INavigationRoot"
+          layer="example.policy.interfaces.IExamplePolicy"
           />
     </configure>
+
+.. note::
+
+    We've retained the permissions and marker interface of the original view.
+    You may provide a specific permission or marker interface instead of these
+    as your product requires.
 
 * Create ``browser/customregistration.py``::
 
@@ -599,8 +603,8 @@ original.
 Helper views
 ============
 
-Not all views need to return HTML output, or output at all. Views can be
-used as helpers in the code to provide APIs to objects. Since views
+Not all views need to return HTML output, or output at all.
+Views can beused as helpers in the code to provide APIs to objects. Since views
 can be overridden using layers, a view is a natural plug-in point which an
 add-on product can customize or override in a conflict-free manner.
 
@@ -610,9 +614,9 @@ view methods directly from a page template, not only from Python code.
 More information
 ----------------
 
-* :doc:`Context helpers </develop/plone/misc/context>`
+- :doc:`Context helpers </develop/plone/misc/context>`
 
-* :doc:`Expressions </develop/plone/functionality/expressions>`
+- :doc:`Expressions </develop/plone/functionality/expressions>`
 
 Historical perspective
 -----------------------
@@ -627,13 +631,13 @@ Helper views also get around the following limitations:
 
 .. Note::
 
-        Using ``RestrictedPython`` scripts (creating Python through the
-        :term:`ZMI`) and Zope 2 Extension modules is discouraged.
-        The same functionality can be achieved with helper views, with less
-        potential pitfalls.
+    Using ``RestrictedPython`` scripts (creating Python through the
+    :term:`ZMI`) and Zope 2 Extension modules is discouraged.
+    The same functionality can be achieved with helper views, with less
+    potential pitfalls.
 
 Reusing view template snippets or embedding another view
-=============================================================
+========================================================
 
 To use the same template code several times you can either:
 
@@ -709,7 +713,7 @@ template will not be translated.
     </div>
 
 Accessing a view instance in code
-===================================
+=================================
 
 You need to get access to the view in your code if you are:
 
@@ -720,7 +724,7 @@ Below are two different approaches for that.
 
 
 By using ``getMultiAdapter()``
--------------------------------
+------------------------------
 
 This is the most efficient way in Python.
 
@@ -740,7 +744,7 @@ Example::
 
 
 By using traversal
--------------------
+------------------
 
 Traversal is slower than directly calling ``getMultiAdapter()``.  However,
 traversal is readily available in templates and ``RestrictedPython``
@@ -803,7 +807,7 @@ template in the current context.
                               target_obj.getDefaultLayout())()
 
 Listing available views
-========================
+=======================
 
 This is useful for debugging purposes::
 
@@ -829,7 +833,7 @@ How to filter out views which provide a certain interface::
 
 
 Default view of a content item
-===============================
+==============================
 
 Objects have views for default, view, edit, and so on.
 
@@ -877,7 +881,7 @@ by configuring it via ZCML like so::
 
 
 Views and automatic member variable acquisition wrapping
-==========================================================
+========================================================
 
 View class instances will automatically assign themselves as a parent for all member
 variables. This is because ``five`` package based views inherit from ``Acquisition.Implicit`` base class.
