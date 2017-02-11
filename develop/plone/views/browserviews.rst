@@ -254,12 +254,12 @@ The following example registers a new view (see below for comments):
 
 
 The view in question is not registered against any :doc:`layer </develop/plone/views/layers>`,
-so it is immediately available after restart without need to run :doc:`Add/remove in Site setup </develop/addons/components/genericsetup>`.
+it is immediately available after restart without need to run :doc:`Add/remove in Site setup </develop/addons/components/genericsetup>`.
 
 Page template
 `````````````
 
-Then create a :doc:`page template for your view. </adapt-and-extend/theming/templates_css/template_basics>`.
+Create a :doc:`page template for your view. </adapt-and-extend/theming/templates_css/template_basics>`.
 Create a file ``myview.pt`` file in ``yourcompany.app/yourcompany/app/browser/templates``
 and add the template:
 
@@ -277,7 +277,7 @@ and add the template:
 
 	</html>
 
-Now when you restart to Plone (or use :doc:`auto-restart add-on </develop/plone/getstarted/index>`)
+When you restart to Plone (or use :doc:`auto-restart add-on </develop/plone/getstarted/index>`)
 the view should be available through your browser.
 
 Accessing your newly created view
@@ -412,7 +412,7 @@ Several templates per view
 --------------------------
 
 You can bind several templates to one view and render them individually.
-This is very useful for reusable templating, or when you subclass
+This is useful for reusable templating, or when you subclass
 your functional views.
 
 Example using `five.grok`_::
@@ -460,8 +460,7 @@ A layer is in use when:
 * a theme which defines that layer is active, or
 * if a specific add-on product which defines that layer is installed.
 
-You should normally register your views against a certain
-layer in your own code.
+You should register your views against a certain layer in your own code.
 
 For more information, see
 
@@ -655,7 +654,7 @@ To use the same template code several times you can either:
     This is because macros are hardwired to the TAL template language, and
     referring to them outside templates is difficult.
 
-    Also, if you ever need to change the template language, or mix in other
+    If you ever need to change the template language, or mix in other
     template languages, you can do it much more easily when templates are a
     feature of a pure Python based view, and not vice versa.
 
@@ -701,7 +700,7 @@ non-escaping HTML embedding.
         <div tal:condition="python:context.Description().decode('utf-8') != u'None'" tal:replace="structure context/Description" />
     </div>
 
-The ``summarybox.pt`` itself is just a piece of HTML code without the
+The ``summarybox.pt`` itself is a piece of HTML code without the
 Plone decoration frame (``main_template/master`` etc. macros).  Make sure
 that you declare the ``i18n:domain`` again, or the strings in this
 template will not be translated.
