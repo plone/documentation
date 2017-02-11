@@ -419,7 +419,7 @@ Example using `five.grok`_::
 
 	class CourseTimetables(grok.View):
 
-	    # For communicating state variables from Python code to Javascript
+	    # For communicating state variables from Python code to JavaScript
 	    jsHeaderTemplate = grok.PageTemplateFile("templates/course-timetables-fees-js-snippet.pt")
 
 	    def renderJavascript(self):

@@ -42,7 +42,7 @@ Possible through-the-web changes are:
 
 * Customize ``portal_skins`` layer theme files in portal_skins
 
-* Uploading Javascript files, CSS files and images through Zope management
+* Uploading JavaScript files, CSS files and images through Zope management
   interface and registering using ``portal_css`` and ``portal_javascripts``
 
 Through the code changes

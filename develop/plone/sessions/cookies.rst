@@ -26,7 +26,7 @@ Example::
     self.request.cookies.get("cookie_name", "default_value_if_cookie_not_set")
 
 Setting cookies
-=====================
+===============
 
 See `HTTPResponse.setCookie() <https://github.com/zopefoundation/Zope/blob/master/src/ZPublisher/HTTPResponse.py#L241>`_.
 
@@ -93,7 +93,7 @@ Typical Plone cookies::
 	__cp="x%25DA%2515%258AA%250A%25800%250C%2504%25A3%25A0%25E0E%257CF%25FF%25E4%2529%2587%25801%25D5B%25B3-%25F8%257B%25D3%25C3%250E%25CC%25B0i%2526%2522%258D%25D19%2505%25D2%2512%25C0P%25DF%2502%259D%25AB%253E%250C%2514_%25C3%25CAu%258B%25C0%258Fq%2511s%25E8k%25EC%250AH%25FE%257C%258Fh%25AD%25B3qm.9%252B%257E%25FD%25D1%2516%25B3"; Path=/
 
 Zope session cookie
-------------------------
+-------------------
 
 This cookie looks like::
 
@@ -102,7 +102,7 @@ This cookie looks like::
 It is set first time when session data is written.
 
 Language cookie
------------------------
+---------------
 
 ``I18N_LANGUAGE`` is set by ``portal_languages`` tool.
 Disable it by *Use cookie for manual override* setting in
@@ -115,14 +115,14 @@ the language cookie gets set on images and static assets like CSS HTTP responses
 * http://stackoverflow.com/questions/5715216/why-plone-3-sets-language-cookie-to-css-js-registry-files-and-how-to-get-rid-o
 
 Session cookie lifetime
-=========================
+=======================
 
 Setting session cookie lifetime
 
 * https://plone.org/documentation/kb/cookie-duration
 
 Sanitizing cookies for the cache
-====================================
+================================
 
 You don't want to store HTTP responses with cookies in a front end cache
 server, because this would be a leak of other users' information.
@@ -135,7 +135,7 @@ Note that cookies can be set:
 
 * by the server (Plone itself)
 
-* on the client side, by Javascript (Google Analytics)
+* on the client side, by JavaScript (Google Analytics)
 
 ... so you might need to clean cookies for both incoming HTTP requests and
 HTTP responses.

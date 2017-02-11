@@ -42,7 +42,7 @@ See :doc:`installation instructions </manage/installing/installation>` for how t
 suitable for development.
 
 Non-programming approaches for customizing Plone
--------------------------------------------------
+------------------------------------------------
 
 If you lack programming skill or resources, you can still get some things done in Plone:
 
@@ -55,14 +55,14 @@ If you lack programming skill or resources, you can still get some things done i
 However, for heavy customization, Python, JavaScript, TAL page templates and CSS programming is needed.
 
 Enabling debug mode
---------------------
+-------------------
 
 By default, Plone runs in a *production mode* where changed files in the file system
 are not reflected in the served HTML. When you start developing Plone you need to
 first :doc:`put it into a debug mode </develop/plone/getstarted/debug_mode>`.
 
 Plone add-ons as Python packages
----------------------------------
+--------------------------------
 
 Plone sites can be customized by installing *Plone add-ons*, which add or customize functionality.
 You can install existing add-ons that others have developed or you can develop and install your own add-ons.
@@ -154,7 +154,7 @@ Development mode restarts
 
 Plone must be started in the development mode using ``bin/instance fg`` command. Then
 
-* Javascript files are in debug mode and automatically loaded when you hit refresh
+* JavaScript files are in debug mode and automatically loaded when you hit refresh
 
 * CSS files are in debug mode and automatically loaded when you hit refresh
 

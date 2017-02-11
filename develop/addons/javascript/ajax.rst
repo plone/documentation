@@ -18,7 +18,7 @@ JSON views and loading data via AJAX
 The best way to output JSON for AJAX call endpoints is to use Python's dict structure and convert
 it to JSON using Python ``json.dumps()`` call.
 
-You should pass the AJAX target URLs to your Javascript using the settings passing pattern explained above.
+You should pass the AJAX target URLs to your JavaScript using the settings passing pattern explained above.
 
 Examples
 
@@ -48,10 +48,10 @@ This example is for Plone, but the code is easily port to other web frameworks.
 
 .. note::
 
-        This is not a full example code. Basic Python and Javascript skills are needed
+        This is not a full example code. Basic Python and JavaScript skills are needed
         to interpret and adapt the code for your use case.
 
-Javascript example
+JavaScript example
 
 .. code-block:: javascript
 
@@ -222,7 +222,7 @@ Speeding up AJAX loaded content HTML
 
 By observing Plone's ``main_template.pt``, having a True value on the ``ajax_load`` request key means some parts of the page aren't displayed, hence the speed:
 
-* No CSS or Javascript from ``<head />`` tag is loaded
+* No CSS or JavaScript from ``<head />`` tag is loaded
 
 * Nothing from the ``plone.portaltop`` ViewletManager, such as the personal bar, searchbox, logo and main menu
 

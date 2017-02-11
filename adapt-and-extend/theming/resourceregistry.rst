@@ -30,7 +30,7 @@ The new Plone 5 Resource Registry uses `RequireJS <http://requirejs.org/>`_ to a
 Because RequireJS uses the AMD approach, these modules and their dependencies can be served in an uncompiled form during development and then compiled and minified Through-The-Web for use in production.
 This allows a "development mode" where changes in JavaScript source files are reflected in the browser in near real-time.
 
-It is also possible in the new Resource Registry to provide bundles with simple Javascript that does not make use of AMD.
+It is also possible in the new Resource Registry to provide bundles with simple JavaScript that does not make use of AMD.
 See :ref:`bundle_example_non_amd` below for an example of such a bundle.
 
 CSS and Less
@@ -599,7 +599,7 @@ Non-AMD Bundles
 
 Sometimes it may be useful to register a simple javascript without using the AMD pattern.
 An example of such a bundle is provided in the `example.p4p5 <https://github.com/collective/example.p4p5>`_ package.
-In this case, there is a simple Javascript which appends a status div to a chart (``example/p4p5/browser/static/chart.js``):
+In this case, there is a simple JavaScript which appends a status div to a chart (``example/p4p5/browser/static/chart.js``):
 
 .. code-block:: javascript
 
@@ -617,9 +617,9 @@ In this case, there is a simple Javascript which appends a status div to a chart
         chart.append('<div class="inprogress" style="width:'+inprogress_rate+'%">&nbsp;</div>');
     });
 
-In this case, the Javascript is dependent only on a global `$` which is expected to be bound to jQuery.
+In this case, the JavaScript is dependent only on a global `$` which is expected to be bound to jQuery.
 Plone provides this in the ``plone`` bundle, so that is the only dependency we need to specify.
-For such a case, the package can register this javascript in ``jsregistry.xml`` for Plone versions before 5.0.
+For such a case, the package can register this JavaScript in ``jsregistry.xml`` for Plone versions before 5.0.
 And in Plone 5, the following bundle record added in ``registry.xml`` will do the trick (``example/p4p5/profiles/plone5/registry.xml``):
 
 .. code-block:: xml
@@ -635,7 +635,7 @@ And in Plone 5, the following bundle record added in ``registry.xml`` will do th
     </records>
 
 Notice that this bundle provides *no resources*.
-The Javascript file from the package is provided as the value of the ``jscompilation`` option.
+The JavaScript file from the package is provided as the value of the ``jscompilation`` option.
 The CSS file is likewise provided as a pre-compiled value.
 Finally the value of the ``compile`` option is set to ``False``.
 This ensures that the Resource Registry will make no attempt to re-compile this bundle.

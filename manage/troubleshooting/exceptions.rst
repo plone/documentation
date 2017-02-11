@@ -1,6 +1,6 @@
-==================================
+================================
 Exceptions and common tracebacks
-==================================
+================================
 
 .. admonition:: Description
 
@@ -511,7 +511,7 @@ BadRequest: The id "xxx" is invalid - it is already in use.
 Try portal_catalog rebuild as a fix.
 
 ComponentLookupError: cmf.ManagePortal
-----------------------------------------
+--------------------------------------
 
 **Traceback**::
 
@@ -530,7 +530,7 @@ Example::
 
 
 Content status history won't render - traceback is content path reversed
---------------------------------------------------------------------------
+------------------------------------------------------------------------
 
 **Traceback**::
 
@@ -614,7 +614,7 @@ Some possible causes:
     https://bugs.launchpad.net/zope2/+bug/176566
 
 ERROR ZODB.Connection Couldn't load state for 0x00
----------------------------------------------------
+--------------------------------------------------
 
 **Traceback**::
 
@@ -649,7 +649,7 @@ ERROR ZODB.Connection Couldn't load state for 0x00
     http://plonechix.blogspot.com/2009/12/definitive-guide-to-poskeyerror.html
 
 Error _restore_index() when starting instance / ZEO server
------------------------------------------------------------
+----------------------------------------------------------
 
 **Traceback**::
 
@@ -698,7 +698,7 @@ Error _restore_index() when starting instance / ZEO server
 **Solution**: Remove Data.fs.index file. The index will be rebuilt on the launch.
 
 Error: Incorrect padding
--------------------------
+------------------------
 
 **Traceback**::
 
@@ -720,7 +720,7 @@ cookies / auth info to Zope.
 **Solution**: Clear browser cache, cookies, etc.
 
 Exception: Type name not specified in createObject
----------------------------------------------------
+--------------------------------------------------
 
 **Traceback**::
 
@@ -741,7 +741,7 @@ Exception: Type name not specified in createObject
 .. TODO:: Complete
 
 ExpatError: portlets.xml: unbound prefix
------------------------------------------
+----------------------------------------
 
 **Traceback**::
 
@@ -873,7 +873,7 @@ ImportError: Inappropriate file type for dynamic loading
 run bootstrap, run buildout.
 
 ImportError: No module named PIL
----------------------------------
+--------------------------------
 
 **Traceback**::
 
@@ -923,7 +923,7 @@ Install PIL for your development Python environment::
         easy_install http://dist.repoze.org/PIL-1.1.6.tar.gz
 
 ImportError: No module named html
-----------------------------------
+---------------------------------
 
 **Traceback**::
 
@@ -1090,7 +1090,7 @@ Potential candidates which need to be added manually:
     http://www.mail-archive.com/setup@lists.plone.org/msg03988.html
 
 InvalidInterface: Concrete attribute
--------------------------------------
+------------------------------------
 
 **Traceback**::
 
@@ -1117,7 +1117,7 @@ InvalidInterface: Concrete attribute
 	        value_type=zope.schema.Choice(vocabulary="plone.app.vocabularies.PortalTypes")),   # <---- This is the guilty comma
 
 Iteration over non-sequence in _normalizeargs
-----------------------------------------------
+---------------------------------------------
 
 Case 1
 ~~~~~~
@@ -1278,7 +1278,7 @@ would need to be written as::
     tal:attributes="class python:here.Format() in ('text/structured', 'text/x-rst', ) and 'stx' + kss_class or 'plain' + kss_class"
 
 NotFound error (Page not found) when accessing @@manage-portlets
---------------------------------------------------------------------
+----------------------------------------------------------------
 
 If you get *Page not found* error when accessing @@manage-portlets the first thing
 you need to do is to enable logging of NotFound exceptions in ZMI in error_log.
@@ -1359,7 +1359,7 @@ In this case you can see that portlet type "collective.easytemplate.TemplatedPor
 * Make sure you use <include package=".portlets" /> in your code
 
 Manually removing the portlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have a traceback like this::
 
@@ -1397,7 +1397,7 @@ It usually means that there is a portlet in your content which product code has 
 Reinstall the add-on providing the portlet, remove the portlet and then uninstall the add-on again.
 
 NotFound while accessing a BrowserView based view
---------------------------------------------------
+-------------------------------------------------
 
 **Traceback**::
 
@@ -1473,7 +1473,7 @@ then you can remove it afterwards::
         transaction.commit()
 
 RuntimeError: maximum recursion depth exceeded (Archetypes field problem)
---------------------------------------------------------------------------
+-------------------------------------------------------------------------
 
 **Traceback**::
 
@@ -1602,7 +1602,7 @@ what expression causes the exception. However if this only happens with unit tes
 manually injected to ``zope.tales.expression`` module.
 
 TraversalError: @@standard_macros
-----------------------------------
+---------------------------------
 
 **Traceback**::
 
@@ -1660,7 +1660,7 @@ TraversalError: @@standard_macros
         self.subforms = [editform, addform]
 
 TraversalError: No traversable adapter found
----------------------------------------------
+--------------------------------------------
 
 **Traceback**::
 
@@ -1689,7 +1689,7 @@ Usual cause: Some add-on product fails to initialize.
 
 
 TypeError: 'ExtensionClass.ExtensionClass' object is not iterable
-------------------------------------------------------------------
+-----------------------------------------------------------------
 
 **Traceback**::
 
@@ -1721,7 +1721,7 @@ In this example traceback the missing add-on is Products.Carousel which provides
 **Solution**: Install the missing add-on(s)
 
 TypeError: 'NoneType' object is not callable during upgrade
-------------------------------------------------------------
+-----------------------------------------------------------
 
 **Traceback**::
 
@@ -1765,7 +1765,7 @@ is problematic and does not uninstall cleanly.
     * https://pypi.python.org/pypi/wildcard.fixpersistentutilities
 
 TypeError: argument of type 'NoneType' is not iterable
----------------------------------------------------------
+------------------------------------------------------
 
 **Traceback**::
 
@@ -1783,7 +1783,7 @@ TypeError: argument of type 'NoneType' is not iterable
 in *portal_migrations* under ZMI.
 
 TypeError: len() of unsized object in smtplib
-----------------------------------------------
+---------------------------------------------
 
 **Traceback**::
 
@@ -1820,7 +1820,7 @@ TypeError: len() of unsized object in smtplib
     http://plone.293351.n2.nabble.com/Plone-3-3-5-sending-emails-len-of-unsized-object-error-NO-ESMTP-PASSWORD-tp5415484p5415484.html
 
 Unauthorized: The object is marked as private
-----------------------------------------------
+---------------------------------------------
 
 **Traceback**::
 
@@ -1859,8 +1859,8 @@ chain parents to properly determine permissions.
         return view
 
 
-Unknown message (kss optimized for production mode) in Javascript console
---------------------------------------------------------------------------
+Unknown message (kss optimized for production mode) in JavaScript console
+-------------------------------------------------------------------------
 
 This is a KSS error message. KSS is an technology used in Plone 3
 and started to be phased out in Plone 4.

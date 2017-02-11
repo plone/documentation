@@ -1,6 +1,6 @@
-==================
+=================
  Creating objects
-==================
+=================
 
 .. admonition:: Description
 
@@ -194,13 +194,13 @@ folder and only moves it to the real folder when it is first saved.
     ``portal_factory.isTemporary(obj)``.
 
 Restricting creating on content types
-======================================
+=====================================
 
 Plone can restrict which content types are available for creation in a
 folder via the :guilabel:`Add...` menu.
 
 Restricting available types per content type
------------------------------------------------
+--------------------------------------------
 
 ``portal_types`` defines which content types can be created inside a
 folderish content type.  By default, all content types which have the
@@ -268,14 +268,14 @@ programmable logic regarding which types are addable and which not.
 
 
 Other restrictions
----------------------
+------------------
 
 See this discussion thread:
 
 * http://plone.293351.n2.nabble.com/Folder-constraints-not-applicable-to-custom-content-types-tp6073100p6074327.html
 
 Creating OFS objects
-==========================
+====================
 
 Zope has facilities for basic folder and contained objects using the
 `IObjectManager definition <http://svn.zope.org/Zope/trunk/src/OFS/interfaces.py?rev=96262&view=auto>`_
@@ -284,7 +284,7 @@ your custom lightweight, Plone-free, persistent data.
 
 
 Object construction life cycle
-==========================================
+==============================
 
 .. note::
 
@@ -362,7 +362,7 @@ See:
 * `Notes Zope types mechanism <http://www.zope.org/Products/CMF/docs/devel/taming_types_tool/view>`_
 
 Content does not show in :guilabel:`Add` menu, or ``Unauthorized`` errors
-==============================================================================
+=========================================================================
 
 These instructions are for Archetypes content to debug issues
 when creating custom content types which somehow fail to become creatable.
@@ -403,14 +403,14 @@ drop-down menu.  Here are some tips for debugging.
   types defined and ``registerType()`` call are imported in ``__init__py``.
 
 Link to creation page
-=========================
+=====================
 
 * The :guilabel:`Add...` menu contains links for creating individual content types.
   Copy the URLs that you see there.
 
 * If you want to the user to have a choice about which content type to
   create, you can link to ``/folder_factories`` page. (This is also the
-  creation page when Javascript is disabled).
+  creation page when JavaScript is disabled).
 
 Populating folder on creation
 =============================

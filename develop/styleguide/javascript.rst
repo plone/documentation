@@ -1,27 +1,28 @@
+=====================
 JavaScript styleguide
 =====================
 
 *NOTE: Plone doesn't yet use any of the new `ES2015 <https://babeljs.io/docs/learn-es2015/>`__ features.*
 
-Many of the style guide recommendations here come from Douglas Crockford's seminal book `Javascript, the good parts <http://shop.oreilly.com/product/9780596517748.do>`__.
+Many of the style guide recommendations here come from Douglas Crockford's seminal book `JavaScript, the good parts <http://shop.oreilly.com/product/9780596517748.do>`__.
 
 
 Indentation
------------
+===========
 
 Indentation is an important aid for readability and comprehension.
 When editing a file, please keep to the convention already established.
 
-In `Patternslib <http://patternslib.com>`_ we indent 4 spaces as suggested by Douglas Crockford in *Javascript, the good parts*.
+In `Patternslib <http://patternslib.com>`_ we indent 4 spaces as suggested by Douglas Crockford in *JavaScript, the good parts*.
 
 The `Mockup <https://github.com/plone/mockup>` patterns on the other hand indent 2 spaces.
 
 
 Naming of variables, classes and functions
-------------------------------------------
+==========================================
 
 Underscores or camelCase?
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 We use ``camelCase`` for function names and ``underscores_names`` for variables names.
 
@@ -36,7 +37,7 @@ For example:
 
 
 jQuery objects are prefixed with $
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 We prefix jQuery objects with the $ sign, to distinguish them from normal DOM elements.
 
@@ -88,7 +89,7 @@ For example:
 Function declaration and invocation
 -----------------------------------
 
-In his book, *Javascript, the good parts*, Douglas Crockford suggests that function names and the brackets that come afterwards should be separated with a space, to indicate that it's a declaration and not a function call or instantiation.
+In his book, *JavaScript, the good parts*, Douglas Crockford suggests that function names and the brackets that come afterwards should be separated with a space, to indicate that it's a declaration and not a function call or instantiation.
 
 ::
 
@@ -105,7 +106,7 @@ It might however be useful sometimes, to reduce confusion.
 Checking for equality
 ---------------------
 
-Javascript has a strict ``===`` and less strict ``==`` equality operator.
+JavaScript has a strict ``===`` and less strict ``==`` equality operator.
 The stricter operator also does type checking.
 To avoid subtle bugs when doing comparisons, always use the strict equality check.
 

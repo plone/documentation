@@ -285,14 +285,14 @@ This is a glossary for some definitions used in this documentation and still und
         replaces the default CMF content types in Plone 2.1 onwards.
 
     ResourceRegistries
-        A piece of Plone infrastructure that allows CSS/Javascript
+        A piece of Plone infrastructure that allows CSS/JavaScript
         declarations to be contained in separate, logical files before
-        ultimately being appended to the existing Plone CSS/Javascript files
+        ultimately being appended to the existing Plone CSS/JavaScript files
         on page delivery. Primarily enables Product authors to "register"
-        new CSS/Javascript without needing to touch Plone's templates, but
-        also allows for selective inclusion of CSS/Javascript files and
+        new CSS/JavaScript without needing to touch Plone's templates, but
+        also allows for selective inclusion of CSS/JavaScript files and
         reduces page load by minimizing individual calls to separate blocks
-        of CSS/Javascript files. Found in the :term:`ZMI` under
+        of CSS/JavaScript files. Found in the :term:`ZMI` under
         ``portal_css`` and ``portal_javascript``.
 
     Collective

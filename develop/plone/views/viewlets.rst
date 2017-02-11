@@ -741,10 +741,10 @@ a page specific CSS files.
 <head> viewlets
 ---------------
 
-You can register custom Javascript or CSS files to HTML <head> section using viewlets.
+You can register custom JavaScript or CSS files to HTML <head> section using viewlets.
 
 Below is an head.pt which will be injected in <head>. This examples shows how to dynamically generate
-``<script>`` elements. 
+``<script>`` elements.
 
 .. code-block:: html
 
@@ -767,7 +767,7 @@ Then you register it against viewlet manager ``plone.app.layout.viewlets.interfa
 viewlet.py code::
 
         class FacebookConnectJavascriptViewlet(LikeButtonOnConnectFacebookBaseViewlet):
-            """ This will render Facebook Javascript load in <head>.
+            """ This will render Facebook JavaScript load in <head>.
 
             <head> section is retrofitted only if the viewlet is enabled.
 
@@ -786,7 +786,7 @@ viewlet.py code::
                 """
                 @return: Should this viewlet be rendered on this page.
                 """
-                # Some logic based self.context here whether Javascript should be included on this page or not
+                # Some logic based self.context here whether JavaScript should be included on this page or not
                 return True
 
 

@@ -1,11 +1,11 @@
-============================================================
-Front-end: templates, CSS and Javascript
-============================================================
+========================================
+Front-end: templates, CSS and JavaScript
+========================================
 
 Instructions and information for front-end development for Plone CMS.
 
-This includes creating page templates, managing Javascript and CSS assets
-and writing Javascript for Plone.
+This includes creating page templates, managing JavaScript and CSS assets
+and writing JavaScript for Plone.
 
 .. toctree::
     :maxdepth: 1

@@ -56,7 +56,8 @@ current development changes block.
 Git commit message style guide
 ==============================
 
-`Tim Pope's post on Git commit message style <http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>`_ is widely considered the gold standard:
+`Tim Pope's post on Git commit message style <http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>`_
+is widely considered the gold standard:
 
 ::
 
@@ -80,5 +81,5 @@ Git commit message style guide
       single space, with blank lines in between, but conventions vary here
     - Use a hanging indent
 
-`Github flavored markdown <http://github.github.com/github-flavored-markdown/>`_ is also useful in commit messages.
+`GitHub flavored markdown <http://github.github.com/github-flavored-markdown/>`_ is also useful in commit messages.
 

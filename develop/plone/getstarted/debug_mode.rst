@@ -5,18 +5,18 @@
 .. admonition:: Description
 
     Plone can be put in the debug mode where one can diagnose start up failures and
-    any changes to CSS, Javascript and page templates take effect immediately.
+    any changes to CSS, JavaScript and page templates take effect immediately.
 
 
 Introduction
-===============
+============
 
 By default when you start Plone you start it in a **production mode**.
 
 * Plone is faster
 
-* CSS and Javascript files are *merged* instead of causing multiple HTTP request to load these assets.
-  CSS and Javascript behavior is different in production versus debug mode, especially with files with syntax errors
+* CSS and JavaScript files are *merged* instead of causing multiple HTTP request to load these assets.
+  CSS and JavaScript behavior is different in production versus debug mode, especially with files with syntax errors
   because of merging.
 
 * Plone does not reload changed files from the disk
@@ -34,10 +34,10 @@ In **debug mode**
 
 * Plone is slower
 
-* CSS and Javascript files are read file-by-file so line numbers match on the actual files on the disk.
+* CSS and JavaScript files are read file-by-file so line numbers match on the actual files on the disk.
   (*portal_css* and *portal_javascript* is set to debug mode when Plone is started in debug mode)
 
-* Plone reloads CSS, Javascript and .pt files when the page is refreshed
+* Plone reloads CSS, JavaScript and .pt files when the page is refreshed
 
 .. note::
 
@@ -48,19 +48,19 @@ Reloading Python code
 
 Reloading Python code automatically can be enabled with `sauna.reload add-on <https://pypi.python.org/pypi/sauna.reload/>`_.
 
-Javascript and CSS issues with production mode
+JavaScript and CSS issues with production mode
 ==============================================
 
 See **portal_css** and **portal_javascript** in ZMI to inspect how your scripts are bundled.
 
-Make sure your Javascript and CSS files are valid, mergeable and compressable. If they
+Make sure your JavaScript and CSS files are valid, mergeable and compressable. If they
 are not then you can tweak the settings for individual file in the corresponding
 management tool.
 
 Refresh issues
 ==============
 
-Plone **production mode** should re-read CSS and Javascript files on Plone start-up.
+Plone **production mode** should re-read CSS and JavaScript files on Plone start-up.
 
 Possible things to debug and force refresh of static assets
 
@@ -181,7 +181,7 @@ in debug mode or not.::
         # Zope is in debug mode
 
 .. note::
-   There is a difference between Zope being in debug mode and the Javascript
+   There is a difference between Zope being in debug mode and the JavaScript
    and CSS resource registries being in debug mode (although they will
    automatically be set to debug mode if you start Zope in debug mode).
 

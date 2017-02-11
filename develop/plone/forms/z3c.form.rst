@@ -985,7 +985,7 @@ Adding a CSS class
 
 Widgets have a method ``addClass()`` to add extra CSS classes.
 This is useful if you have
-Javascript/JQuery associated with your special form::
+JavaScript/JQuery associated with your special form::
 
     widget.addClass("myspecialwidgetclass")
 

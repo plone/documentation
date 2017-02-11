@@ -29,7 +29,7 @@ Test if object exists in folder::
         self.assertNotIn('object_id', self.portal.objectIds())
 
 
-Javascript registered::
+JavaScript registered::
 
     def test_js_available(self):
         jsreg = getattr(self.portal, 'portal_javascripts')

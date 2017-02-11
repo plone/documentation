@@ -1,3 +1,4 @@
+=========================
 Introduction and overview
 =========================
 
@@ -32,7 +33,7 @@ The configuration area is divided into several parts, leading to further setup s
    Many add-ons also come with their own setup area, you will also find these here after you have installed and activated them.
 
 General
--------
+=======
 
 Date and Time
     This sets up the :doc:`date and time related settings like timezone <date-and-time>`
@@ -60,7 +61,7 @@ TinyMCE
     Settings for :doc:`the text editor <tinymce>`. Enable spell and grammar checking, add extra CSS classes for editors to use, etc.
 
 Content
--------
+=======
 
 Content Rules
     Set up :doc:`automated mechanisms <content-rules>` to act on content when certain events occur. You can get an email when somebody adds a new item in a specific folder, and much more.
@@ -77,13 +78,13 @@ Dexterity Content types
 
 
 Users
------
+=====
 
 Users and Groups
     :doc:`Create, define, delete and otherwise control <users-groups>` the users that can log in. Define groups and assign users to them, and define which properties (like email, address, or job position in your organisation) you would like to store.
 
 Security
---------
+========
 
 HTML Filtering
     Set :doc:`which kind of tags <html-filtering>` you will allow users to enter. Malicious users, or users whose computer is infected by malware, can enter unwanted or dangerous content. Here you can finely choose what is acceptible and what now.
@@ -93,7 +94,7 @@ Error log
     This will :doc:`list errors and exceptions <errors>` that may have occurred recently. You can inspect them and store them, if wanted. These can point to potential problems with missing content, but also clues on security related matters.
 
 Advanced
---------
+========
 
 .. note::
 
@@ -108,7 +109,7 @@ Caching
 Configuration Registry
     Provides :doc:`direct acces to all system variables <configuration-registry>`. Handle with care.
 Resource Registries
-    Provides :doc:`direct access to Javascript, CSS and LESS resources <resource-registries>`.
+    Provides :doc:`direct access to JavaScript, CSS and LESS resources <resource-registries>`.
 
 
 

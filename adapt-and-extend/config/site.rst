@@ -30,7 +30,7 @@ Expose Dublin Core metadata
     This option allows information per content item, like Description, Tags, Author and others, to be shown to and ranked by search engines. It can help improve your search ranking, provided you fill in those fields with correct information.
 Expose sitemap.xml.gz
     Almost always a good idea on a public website. It will make life for search engines easier, meaning they can better index your content.
-Javascript for web statistics support
+JavaScript for web statistics support
     To gather information for web analytics like Piwik (an open-source self-hosted option) or Google Analytics you can paste the required snippet of code here. Be aware that this can have legal implications (so-called "cookie laws") in some countries.
 Display publication date
     Show the date a content item was published in the byline.

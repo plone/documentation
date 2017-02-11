@@ -32,7 +32,7 @@ they can be standalone ("old style", circa 2001).
 .. note::
 
     The rationale for moving away from standalone page templates is that
-    the page template code becomes easily cluttered with inline Python
+    the page template code becomes cluttered with inline Python
     code. This makes templates hard to customize or override.  New style
     templates provide better separation with view logic (Python code)
     and HTML generation (page template).
@@ -412,7 +412,7 @@ default is assumed. Three types are standard:
 They are generally useful, and not limited to use in Page Templates.
 For example, they are widely used in various other parts of Plone:
 
-* CSS and Javascript registries, to decide whether to include a
+* CSS and JavaScript registries, to decide whether to include a
   particular file;
 * Action conditions, to decide whether to show or hide action link;
 * Workflow security guards, to decide whether to allow a workflow state
@@ -516,7 +516,7 @@ Extra slots are:
     <tal:comment replace="nothing"> This is deprecated, please use style_slot instead. </tal:comment>
     <metal:cssslot define-slot="css_slot" />
 
-    <tal:comment replace="nothing"> A slot where you can insert javascript in the header from a template </tal:comment>
+    <tal:comment replace="nothing"> A slot where you can insert JavaScript in the header from a template </tal:comment>
     <metal:javascriptslot define-slot="javascript_head_slot" />
 
 Example use:

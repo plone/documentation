@@ -65,7 +65,7 @@ Helper view template:
                 </a>
         </tal:video>
 
-        <!-- Helper for Javascript which is used to determine location of
+        <!-- Helper for JavaScript which is used to determine location of
             Flowplayer resource files -->
         <span class="flowplayer-site-url" style="display:none" tal:content="context/portal_url" />
 
@@ -94,7 +94,7 @@ Using the view:
     </div>
 
 
-Javascript, registered in ``portal_javascripts``, doing the magic:
+JavaScript, registered in ``portal_javascripts``, doing the magic:
 
 .. xxx: In the following, some keys are not quoted (playlist, fullscreen). Is that OK?
 

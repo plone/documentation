@@ -1201,7 +1201,7 @@ cssregistry.xml
 
     This still works in Plone 5, but it is deprecated.
 
-For the old way, see: :doc:`Front-end: templates, CSS and Javascript </adapt-and-extend/theming/templates_css/index>`.
+For the old way, see: :doc:`Front-end: templates, CSS and JavaScript </adapt-and-extend/theming/templates_css/index>`.
 
 For the new way, see: doc:`Plone 5 Resource Registry </adapt-and-extend/theming/resourceregistry>`.
 
@@ -1309,7 +1309,7 @@ jsregistry.xml
 
     This still works in Plone 5, but it is deprecated.
 
-For the old way, see: :doc:`Front-end: templates, CSS and Javascript </adapt-and-extend/theming/templates_css/index>`.
+For the old way, see: :doc:`Front-end: templates, CSS and JavaScript </adapt-and-extend/theming/templates_css/index>`.
 
 For the new way, see: doc:`Plone 5 Resource Registry </adapt-and-extend/theming/resourceregistry>`.
 

@@ -1,9 +1,9 @@
 Introduction
-=================
+============
 
 Introduction to TinyMCE.
 
-TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor.
+TinyMCE is a platform independent web based JavaScript HTML WYSIWYG editor.
 What this means is that it will let you create html content on your web site.
 
 TinyMCE supports most modern operating systems and browsers.

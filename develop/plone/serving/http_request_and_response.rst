@@ -196,7 +196,7 @@ HTTP ``POST`` varibles are available in ``request.form``::
 There is no difference in accessing ``GET`` and ``POST`` variables.
 
 Request body
-----------------
+------------
 The request body can be retrieved from the HTTPRequest_ object by using the get method with the key ``BODY``::
 
     print request.get('BODY')  # Prints the content of the request body
@@ -503,9 +503,9 @@ You can lock the status to not let other change the status later in the process
 
     response.redirect(new_url, lock=True)
 
-**Javascript redirects**
+**JavaScript redirects**
 
-You can invoke this Javascript redirect trick from a page template head slot
+You can invoke this JavaScript redirect trick from a page template head slot
 in a hacky way
 
 .. code-block: html

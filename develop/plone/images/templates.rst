@@ -1,6 +1,6 @@
-=========================
+========================
 Images in page templates
-=========================
+========================
 
 .. admonition:: Description
 
@@ -8,7 +8,7 @@ Images in page templates
 
 
 Putting a static image into a page template
-=============================================
+===========================================
 
 Here is an example how to create an ``<img>`` tag in a ``.pt`` file:
 
@@ -90,7 +90,7 @@ The image URLs, from the browser point of view, would be:
 ... which **prevents the browser from caching the image**.
 
 Registering static media folders in your add-on product
-=========================================================
+=======================================================
 
 Zope 3 resource directory
 -------------------------
@@ -122,7 +122,7 @@ Also see :doc:`Resource folders </adapt-and-extend/theming/templates_css/resourc
 
 
 Rendering Image content items
-======================================
+=============================
 
 You can refer to ``ATImage`` object's content data download by adding
 ``/image`` to the URL:
@@ -137,7 +137,7 @@ providing traversable hooks to access image download:
 * https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py
 
 Rendering ``ImageField``
-=========================
+========================
 
 Archetypes's ``ImageField`` maps its data to the content object at attribute
 which is the field's name.
@@ -157,7 +157,7 @@ See ``ImageField`` for more information:
 * https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/Field.py
 
 ``tag()`` method
-==================
+================
 
 .. note::
 
@@ -215,7 +215,7 @@ For ``ATImage``, those are in
 <https://github.com/plone/Products.ATContentTypes/blob/master/Products/ATContentTypes/content/image.py>`_.
 
 Lightbox style image pop-ups
-====================================
+============================
 
 Plone comes with `plone.app.jquerytools <https://pypi.python.org/pypi/plone.app.jquerytools>`_ which offers easy integration
 for lightbox style image pop-ups.
@@ -265,7 +265,7 @@ Related view page template file
 
         </div>
 
-And then we activate all this in a Javascript using ``prepOverlay()`` from ``plone.app.jquerytools``
+And then we activate all this in a JavaScript using ``prepOverlay()`` from ``plone.app.jquerytools``
 
 .. code-block:: javascript
 
@@ -315,7 +315,7 @@ Example TAL code... render list of content items and extract one image from each
 
     </dd>
 
-Then use the the following Javascript to boostrap the cycling
+Then use the the following JavaScript to boostrap the cycling
 
 .. code-block:: javascript
 
