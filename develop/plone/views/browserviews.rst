@@ -584,10 +584,17 @@ original.
       <browser:page
           name="register"
           class=".customregistration.CustomRegistrationForm"
-          permission="zope2.View"
-          layer="..interfaces.IExamplePolicy"
+          permission="cmf.AddPortalMember"
+          for="plone.app.layout.navigation.interfaces.INavigationRoot"
+          layer="example.policy.interfaces.IExamplePolicy"
           />
     </configure>
+
+.. note::
+
+        We've retained the permissions and marker interface of the original view.
+        You may provide a specific permission or marker interface instead of these
+        as your product requires.
 
 * Create ``browser/customregistration.py``::
 
