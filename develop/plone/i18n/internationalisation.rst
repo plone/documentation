@@ -7,8 +7,6 @@ Translating text strings
     Translating Python and TAL template source code text strings using
     the term:`gettext` framework and other Plone/Zope term:`i18n` facilities.
 
-.. contents:: :local:
-
 Introduction
 ============
 

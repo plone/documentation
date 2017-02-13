@@ -1,16 +1,15 @@
-==================
+================
 Files and images
-==================
+================
 
 .. admonition:: Description
 
     How to program files and image fields for ``z3c.forms`` and Dexterity
     content types
 
-.. contents:: :local:
 
 Introduction
-=============
+============
 
 This chapter discuss about file uploads and downloads using
 zope.schema based forms and content with :doc:`Dexterity content subsystem </develop/plone/content/dexterity>`.
@@ -198,7 +197,7 @@ Create a module named *importusers.py*, and add the following code to it::
 
 
 File field contents
-===========================
+===================
 
 Example::
 
@@ -407,7 +406,7 @@ Example (``plone.app.headeranimation``)::
             return stream_iterator
 
 ``POSKeyError`` on missing blob
-=================================
+===============================
 
 A ``POSKeyError`` is raised when you try to access blob *attributes*, but
 the actual file is not available on the disk. You can still load the blob
@@ -471,7 +470,7 @@ See also
 * https://pypi.python.org/pypi/experimental.gracefulblobmissing/
 
 Widget download URLs
-=========================
+====================
 
 Some things you might want to keep in mind when playing with forms and
 images:
@@ -484,7 +483,7 @@ If your form content is something else than traversable context object then
 you must fix file download URLs manually.
 
 Migrating custom content for blobs
-====================================
+==================================
 
 Some hints how to migrate your custom content:
 

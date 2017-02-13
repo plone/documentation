@@ -8,10 +8,9 @@ Converting one Content Type into another
     content from the source content type and adding it to the new content
     type.
 
-.. contents:: local
 
 Converting Pages into News Items
-=======================================
+================================
 
 In this example we take a folder of *Pages* (meta type: ``Document``)
 and create *News Items* from them::

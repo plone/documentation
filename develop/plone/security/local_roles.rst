@@ -6,8 +6,6 @@ Local roles
 
     Creating and setting local roles of Plone members programmatically.
 
-.. contents:: :local:
-
 Introduction
 ============
 
@@ -69,7 +67,7 @@ manage the particular role.
 
 
 Setting local role
-===================
+==================
 
 ``manage_setLocalRoles`` is defined in `AccessControl.rolemanager.RoleManager <https://github.com/zopefoundation/AccessControl/blob/master/src/AccessControl/rolemanager.py#L339>`_.
 
@@ -98,7 +96,7 @@ Example::
     from Products.CMFCore.utils import getToolByName
     pm = getToolByName(context, 'portal_membership')
     roles_in_context = pm.getAuthenticatedMember().getRolesInContext(context)
-          
+
 Deleting local roles
 ====================
 

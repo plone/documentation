@@ -1,16 +1,14 @@
-==========================
- Debug mode
-==========================
+===========
+Debug mode
+==========
 
 .. admonition:: Description
 
     Plone can be put in the debug mode where one can diagnose start up failures and
     any changes to CSS, Javascript and page templates take effect immediately.
 
-.. contents:: :local:
-
 Introduction
-===============
+============
 
 By default when you start Plone you start it in a **production mode**.
 
@@ -40,7 +38,7 @@ In **debug mode**
 
 * Plone reloads CSS, Javascript and .pt files when the page is refreshed
 
-.. note ::
+.. note::
 
      Plone does not reload .py or .zcml files in the debug mode by default.
 

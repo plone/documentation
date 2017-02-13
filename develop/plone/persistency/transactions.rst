@@ -1,11 +1,9 @@
-================
+============
 Transactions
-================
-
-.. contents:: :local:
+============
 
 Introduction
-==============
+============
 
 Plone uses the
 `ZODB database <http://en.wikipedia.org/wiki/Zope_Object_database>`_ which
@@ -100,7 +98,7 @@ It is possible to perform actions before and after transaction is written to
 the database.
 
 See transaction documentation about
-`before commit hooks <http://zodb.readthedocs.org/en/latest/transactions.html#before-commit-hook>`_ and 
+`before commit hooks <http://zodb.readthedocs.org/en/latest/transactions.html#before-commit-hook>`_ and
 `after commit hooks <http://zodb.readthedocs.org/en/latest/transactions.html#after-commit-hooks>`_.
 
 

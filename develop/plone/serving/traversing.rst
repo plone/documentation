@@ -1,6 +1,6 @@
-===============
- Traversing
-===============
+==========
+Traversing
+==========
 
 .. admonition:: Description
 
@@ -8,8 +8,6 @@
     content from this tree by path. When HTTP request hits a Plone
     server, Plone will traverse the corresponding content item
     and its view function by URI.
-
-.. contents:: :local:
 
 Introduction
 ============

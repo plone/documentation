@@ -1,14 +1,12 @@
-===================
- TAL page templates
-===================
+==================
+TAL page templates
+==================
 
 .. admonition:: Description
 
     Plone uses Zope Page Templates (:term:`ZPT`). This document contains
     references to this template language and generally available templates,
     macros and views you can use to build your Plone add-on product.
-
-.. contents:: :local:
 
 Introduction
 =============
@@ -103,7 +101,7 @@ Overriding a template using z3c.jbot
        ./archetypes.kss-1.6.0-py2.6.egg/archetypes/kss/browser/view_field_wrapper.pt
        ...
 
-   .. Note::
+   .. note::
 
        Your ``eggs/`` folder may contain several versions of the same egg
        if you have re-run buildout or upgraded Plone.

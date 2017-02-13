@@ -1,12 +1,10 @@
-====================
- Resource folders
-====================
+================
+Resource folders
+================
 
 .. admonition:: Description
 
     How to use resource directories to expose static media files (css, js, other) in your Plone add-on product
-
-.. contents:: :local:
 
 Introduction
 =============

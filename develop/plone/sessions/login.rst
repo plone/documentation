@@ -1,12 +1,10 @@
-===================
- Login and logout
-===================
+================
+Login and logout
+================
 
 .. admonition:: Description
 
 	Login and logout related programming activities in Plone
-
-.. contents:: :local:
 
 Introduction
 -------------
@@ -14,7 +12,7 @@ Introduction
 This chapter contains login and logout related code snippets.
 
 Login entry points
---------------------
+------------------
 
 There are two login points in Plone
 
@@ -85,7 +83,7 @@ Authenticating the user
 ------------------------
 
 Using username and password
-===============================
+===========================
 
 Authenticating the user will check that username and password are correct.
 
@@ -93,8 +91,7 @@ Pluggable Authentication Service (acl_users under site root)
 will go through all authentication plug-ins and return the first successful
 authenticated users.
 
-Read more in
-`PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.txt>`_.
+Read more in `PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.txt>`_.
 
 Unit test example::
 
@@ -108,7 +105,7 @@ Unit test example::
 
 
 Using username only
-===============================
+===================
 
 Useful for sudo style logins.
 
@@ -257,12 +254,12 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
 
 
 Post-logout actions
-----------------------
+-------------------
 
 Products.PlonePAS.tools.membership fires ``Products.PlonePAS.events.UserLoggedOutEvent``
 when the user logs out via *Log out* menu item.
 
-.. note ::
+.. note::
 
 	You cannot catch session timeout events this way... only explicit logout
 	action.
@@ -326,7 +323,7 @@ More info
 * https://github.com/plone/plone.app.ldap/blob/master/plone/app/ldap/ploneldap/util.py
 
 PAS cache settings
-=====================
+==================
 
 Here is a short view snippet to set PAS cache state::
 
@@ -408,7 +405,7 @@ Here is a short view snippet to set PAS cache state::
 
 
 Login as another user ("sudo")
--------------------------------
+------------------------------
 
 If you need to login to production system another user and you do not know the password,
 there is an add-on product for it
@@ -425,7 +422,7 @@ Getting logged in users
 .. TODO:: Was somewhere, but can't find where.
 
 Locking user account after too many retries
-----------------------------------------------
+-------------------------------------------
 
 For security reasons, you might want to locking users after too many tries of logins.
 This protects user accounts against brute force attacks.
@@ -433,7 +430,7 @@ This protects user accounts against brute force attacks.
 * https://github.com/collective/Products.LoginLockout/tree/master/Products/LoginLockout
 
 Hyperlinks to authenticated Plone content in Microsoft Office
----------------------------------------------------------------------------
+-------------------------------------------------------------
 
 Microsoft Office applications (in the first instance Word and Excel), have
 been observed to attempt to resolve hyperlinks once clicked, prior to sending
@@ -518,7 +515,7 @@ More details can be found in this presentation from Plone Open Garden 2013:
 * http://www.youtube.com/watch?v=-FLQxeD5_1M
 
 Preventing duplicate logins from different browsers
---------------------------------------------------------
+---------------------------------------------------
 
 * http://stackoverflow.com/questions/2562385/limit-concurrent-user-logins-in-plone-zope
 

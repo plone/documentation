@@ -1,14 +1,11 @@
-============
- References
-============
+==========
+References
+==========
 
 .. admonition:: Description
 
     Inter-content references in Plone are done using the
     ``reference_catalog`` tool.
-
-.. contents:: :local:
-
 
 Introduction
 ==============

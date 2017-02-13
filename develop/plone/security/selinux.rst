@@ -6,8 +6,6 @@ Using SELinux with Plone
 
     Tutorial on using SELinux with Plone, using Plone 4.3 and RedHat Linux 6.3.
 
-.. contents:: :local:
-
 Introduction
 ============
 
@@ -230,8 +228,8 @@ In order for any \*NIX process to work some basic requirements must be met. Appl
     userdom_use_inherited_user_ptys(plonectl_exec_t)
     miscfiles_read_localization(plonectl_exec_t)
 
-Zope/PLONE
-------------------
+Zope/Plone
+----------
 
 After running the plonectl commands (fg, start, stop) several times, and adding the required rules you should end up with something like following. First you will have a large amount of require stanzas for the rule compiler, and then an intermediate amount of rules: ::
 

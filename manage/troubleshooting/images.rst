@@ -6,10 +6,9 @@
 
         Problems with imaging libraries, image loading and image scaling.
 
-.. contents:: :local:
 
 How to test see if your Python Imaging set-up works
-======================================================
+===================================================
 
 Example how to check if Python, Python Imaging Library (PIL) and
 libjpeg are correctly working together.
@@ -37,9 +36,9 @@ No Python exceptions should be risen.
 
 
 Images are not loading
-=======================
+======================
 
-Plone is not loading images or resized images are not available is usually caused by broken PIL installation: PIL used by the Python version that Plone is using does not have proper native libraries (libjpeg etcetera) available to perform imaging operations.
+Plone is not loading images or resized images are not available is caused by broken PIL installation: PIL used by the Python version that Plone is using does not have proper native libraries (libjpeg etcetera) available to perform imaging operations.
 
 Solution: install the required native libraries for your operating system.
 

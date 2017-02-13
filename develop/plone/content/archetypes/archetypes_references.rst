@@ -1,13 +1,12 @@
----------------------------
+==========================
 Archetypes ReferenceFields
----------------------------
+==========================
 
 .. admonition:: Description
 
     Using ReferenceField to have references to other Archetypes content
     items in Plone.
 
-.. contents:: :local:
 
 Introduction
 -------------

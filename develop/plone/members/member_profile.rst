@@ -1,8 +1,6 @@
-=================
- Member profiles
-=================
-
-.. contents:: :local:
+===============
+Member profiles
+===============
 
 .. admonition:: Description
 

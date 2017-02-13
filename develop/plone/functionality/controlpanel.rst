@@ -1,13 +1,11 @@
-=============================
- Site setup and configuration
-=============================
+============================
+Site setup and configuration
+============================
 
 .. admonition:: Description
 
     How to create settings for your add-on product and how to
     programmatically add new Plone control panel entries.
-
-.. contents:: :local:
 
 Introduction
 =============

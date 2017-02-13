@@ -6,10 +6,8 @@
 
     How to debug and fix ZODB database problems in Plone
 
-.. contents:: :local:
-
 Introduction
-=============
+============
 
 This document contains information to fix and debug ZODB databases with Plone.
 

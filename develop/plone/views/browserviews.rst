@@ -1,12 +1,10 @@
-===============
- Views
-===============
+=====
+Views
+=====
 
 .. admonition:: Description
 
     Rendering HTML pages in Plone using the Zope 3 *view* pattern.
-
-.. contents:: :local:
 
 Introduction
 =============

@@ -1,14 +1,11 @@
-==================
+=================
 Customizing Plone
-==================
-
-.. contents:: :local:
+=================
 
 Introduction
 ============
 
-Plone can be customized in two different ways,
-depending on which kind of component you are trying to change:
+Plone can be customized in two different ways, depending on which kind of component you are trying to change:
 
 * Through-the-web.
 

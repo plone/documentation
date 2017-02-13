@@ -8,9 +8,6 @@ Plone Security Best Practices
 
    These are security recommendations that should be used in production environments and in exposed staging and developments environments.
 
-.. contents:: :local:
-
-
 
 
 No software is perfect, and new attacks are constantly being developed as technology and browsers evolve.

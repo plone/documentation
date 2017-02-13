@@ -1,8 +1,6 @@
-====================
- Dynamic views
-====================
-
-.. contents:: :local:
+=============
+Dynamic views
+=============
 
 .. admonition:: Description
 
@@ -24,7 +22,7 @@ By default, Plone comes with dynamic views for:
 
 The default view can be also a content item picked from the folder.
 
-Available content item types can be managed from the: Site Setup Control Panel -> Content Rules (site.com/@@content-controlpanel) -> Select your new type from the drop down menu -> Click the "Can be used as default page" checkbox. 
+Available content item types can be managed from the: Site Setup Control Panel -> Content Rules (site.com/@@content-controlpanel) -> Select your new type from the drop down menu -> Click the "Can be used as default page" checkbox.
 
 Permission for changing the view template of an item
 -------------------------------------------------------
@@ -253,7 +251,7 @@ Another example how to use this::
 
 .. TODO:: Bare except?
 
-Setting the default page can be done by calling the ``setDefaultPage`` on the folder, passing id of the default 
+Setting the default page can be done by calling the ``setDefaultPage`` on the folder, passing id of the default
 page::
 
     folder.setDefaultPage("my_content_id")
@@ -287,7 +285,7 @@ Create a marker interface in python:
 .. code-block:: python
 
     from zope.interface import Interface
-    
+
     class IMyMarkerInterface(Interface):
         """Used to create a specific view for a generic content type"""
 
@@ -313,7 +311,7 @@ Register the view against a marker interface:
 * Assign this marker interface to a content item using the Zope Management Interface
   (:term:`ZMI`, via the Interfaces tab)
   or with python code:
-  
+
 .. code-block:: python
 
     from my.package.interfaces import IMyMarkerInterface

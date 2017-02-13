@@ -2,8 +2,6 @@
 Interfaces
 ==========
 
-.. contents:: :local:
-
 Introduction
 =============
 

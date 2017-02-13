@@ -2,8 +2,6 @@
 Frequently Asked Questions
 ==========================
 
-.. contents:: :local:
-
 Q. How can I make a date/time field default to current time?
 ============================================================
 
@@ -39,7 +37,7 @@ You may also use "here/memberFullName" to get the member's name, and "here/membe
 
 .. note::
 
-    memberEmail, memberFullName and memberId are just a convenience facility of PloneFormGen. They are not part of the Plone API.
+    memberEmail, memberFullName and memberId are a convenience facility of PloneFormGen. They are not part of the Plone API.
 
 Q. Where is the encryption option?
 ==================================

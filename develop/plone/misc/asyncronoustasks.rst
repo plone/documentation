@@ -7,8 +7,6 @@
 
         How to run background tasks or cron jobs with Zope
 
-.. contents:: :local:
-
 Cron jobs
 =========
 
