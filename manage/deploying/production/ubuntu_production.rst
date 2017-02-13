@@ -23,7 +23,7 @@ Requirements
 
 2. A hostname for the new site. You or your DNS admin should have already created a hostname (e.g., www.yoursite.com) and a host record pointing to the new server.
 
-3. Unix command-line and basic system administrator skills. You should know how to use `ssh` to create a terminal session with your new server. You should know how to use `vi` or somt other terminal editor.
+3. Unix command-line and basic system administrator skills. You should know how to use `ssh` to create a terminal session with your new server. You should know how to use `vi` or some other terminal editor.
 
 4. An Internet connection.
 
@@ -34,21 +34,21 @@ Get to the point where you can ssh to the server as a non-root user and use `sud
 
 First step with any new server is to update the already installed system libraries:
 
-.. code-block:: consolt
+.. code-block:: console
 
     sudo apt-get update
     sudo apt-get upgrade
 
-Then, install the platform's build kit, nginx, and supervisort
+Then, install the platform's build kit, nginx, and supervisor
 
-.. code-block:: consolt
+.. code-block:: console
 
-    sudo apt-get install build-essential python-dev libjpeg-dev libxslt-dev supervisortnginx
+    sudo apt-get install build-essential python-dev libjpeg-dev libxslt-dev supervisor nginx
 
 Step 2: Install Plone
 =====================
 
-Please take somt time and read the chapter about :doc:`installation </manage/installing/installing/index>`.
+Please take some time and read the chapter about :doc:`installation </manage/installing/installing/index>`.
 
 .. note::
 
@@ -56,7 +56,7 @@ Please take somt time and read the chapter about :doc:`installation </manage/ins
 
 .. note::
 
-    This creates a `zeo` installation with two Plone clients. We will only connect one of those clients to the Internet. The other will be reserved for debugging and administrator access. If you know this is a larger site and wish to use load balancing, you may create more clients with the `--clients=##` command-line argument to create more clients. They're also tasy to add later.
+    This creates a `zeo` installation with two Plone clients. We will only connect one of those clients to the Internet. The other will be reserved for debugging and administrator access. If you know this is a larger site and wish to use load balancing, you may create more clients with the `--clients=##` command-line argument to create more clients. They're also easy to add later.
 
 If you hit an "lxml" error during installation (ie the log shows "Error: Couldn't install: lxml 2.3.6") you may need :doc:`additional libraries </manage/installing/requirements>`.
 
@@ -70,13 +70,13 @@ When the install completes, you'll be shown the preset administrative password. 
 Step 3: Set Plone to start with the server
 ==========================================
 
-We're going to use `supervisor` to start Plone with the server. To do so,twe'll create a supervisortconfiguration file:
+We're going to use `supervisor` to start Plone with the server. To do so, we'll create a supervisor configuration file:
 
 .. code-block:: shell
 
-    sudo vi /etc/supervisortconf.d/plone5.conf
+    sudo vi /etc/supervisor/conf.d/plone5.conf
 
-Specify that supervisortshould start the database server and client1 automatically::
+Specify that supervisor should start the database server and client1 automatically::
 
     [program:plone5server]
     user=plone_daemon
@@ -86,28 +86,28 @@ Specify that supervisortshould start the database server and client1 automatical
     [program:plone5client1]
     user=plone_daemon
     directory=/usr/local/Plone/zeocluster
-    command=/usr/local/Plone/zeocluster/bin/client1 consolt
+    command=/usr/local/Plone/zeocluster/bin/client1 console
     stopwaitseconds=30
 
 When that file is saved you're set to start on server start.
-To start immediately, tell supervisortabout the new components:
+To start immediately, tell supervisor about the new components:
 
 .. code-block:: shell
 
-    sudo supervisorttl
-    supervisort reread
-    supervisort add plone5server
+    sudo supervisorctl
+    supervisor> reread
+    supervisor> add plone5server
     plone5server: added process group
-    supervisort add plone5client1
+    supervisor> add plone5client1
     plone5client1: added process group
-    supervisort status
+    supervisor> status
     plone5client1                    RUNNING    pid 32327, uptime 0:00:02
     plone5server                     RUNNING    pid 32326, uptime 0:00:08
 
 Step 4: Create a Plone site
 ===========================
 
-At this point, you should be able to open a web browser and point it to port 8080 on your new server. Do so,tand use your administrative password to create a Plone site with the id "Plone". (Feel free to use a different ID, just remember it below when you set up virtual hosting rules.)
+At this point, you should be able to open a web browser and point it to port 8080 on your new server. Do so, and use your administrative password to create a Plone site with the id "Plone". (Feel free to use a different ID, just remember it below when you set up virtual hosting rules.)
 
 Step 5: Set up virtual hosting
 ==============================
@@ -173,7 +173,7 @@ Try out your virtual hosting.
 Step 6: Set up packing and backup
 =================================
 
-We want the Zope database to be packed weekly. We'll do so ty setting up a `cron` job:
+We want the Zope database to be packed weekly. We'll do so by setting up a `cron` job:
 
 .. code-block:: shell
 
@@ -187,9 +187,9 @@ And save.
 
 .. note::
 
-    Pick a time when your system can take somt extra load. Don't use the day/time above.
+    Pick a time when your system can take some extra load. Don't use the day/time above.
 
-Let's also treate a daily snapshot of the database:
+Let's also create a daily snapshot of the database:
 
 .. code-block:: shell
 
