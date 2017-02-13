@@ -1,12 +1,10 @@
-===============================================
- HTML manipulation and transformations
-===============================================
+=====================================
+HTML manipulation and transformations
+=====================================
 
 .. admonition:: Description
 
     How to programmatically rewrite HTML in Plone.
-
-.. contents:: :local:
 
 Introduction
 ============

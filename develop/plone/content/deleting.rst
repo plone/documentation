@@ -1,13 +1,11 @@
-===========
+========
 Deleting
-===========
+========
 
 .. admonition:: Description
 
     Deleting content items in Plone programmatically.
     How link integrity checks work and how (and when!) to avoid them.
-
-.. contents:: :local:
 
 Introduction
 ============
@@ -107,7 +105,7 @@ The best way to clean up bad objects on your site is via a
 in which case remember to commit the transaction
 after removing the broken objects.
 
-Purging old content from site 
+Purging old content from site
 ========================================
 
 This term:`ZMI` script allows you to find content items of certain type and

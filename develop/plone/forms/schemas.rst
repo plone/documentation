@@ -1,13 +1,11 @@
-==================================
+===========================
 Modelling using zope.schema
-==================================
+===========================
 
 .. admonition:: Description
 
     zope.schema package provide a storage-neutral way to define Python object
     models with validators.
-
-.. contents:: :local:
 
 Introduction
 ============
@@ -41,7 +39,7 @@ The basic unit of data model declaration is the *field*, which specifies what
 kind of data each Python attribute can hold.
 
 More info
-----------------
+---------
 
 * `zope.schema <https://pypi.python.org/pypi/zope.schema>`_ on PyPi
 

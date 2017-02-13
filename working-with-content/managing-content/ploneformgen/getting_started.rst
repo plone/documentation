@@ -6,10 +6,8 @@ Getting Started with PloneFormGen
 
     Learn the basics of creating web forms with PloneFormGen
 
-.. contents:: :local:
-
 Introduction
-===============
+============
 
 :doc:`Please read general PloneFormGen information first </working-with-content/managing-content/ploneformgen//index>`
 

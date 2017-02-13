@@ -1,13 +1,11 @@
-=========
- Catalogs
-=========
+========
+Catalogs
+========
 
 .. admonition:: Description
 
    A brief introduction to ZCatalogs, the Catalog Tool and what
    they're used for.
-
-.. contents:: :local:
 
 Why ZCatalogs?
 --------------

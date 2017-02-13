@@ -1,12 +1,11 @@
-========================================
- Importing and exporting content
-========================================
+===============================
+Importing and exporting content
+===============================
 
 .. admonition:: Description
 
-        Importing and exporting content between Plone sites and other CMS systems
+    Importing and exporting content between Plone sites and other CMS systems
 
-.. contents:: :local:
 
 Introduction
 ------------
@@ -107,9 +106,9 @@ If you limit source content by path you can effectively export single folder onl
 The recipe described here assumes the exported and imported site have the same path for the folder.
 Manually rename or move the folder on source or target to change its location.
 
-.. note ::
+.. note::
 
-        The instructions here requires quintagroup.transmogrify version 0.4 or later.
+    The instructions here requires quintagroup.transmogrify version 0.4 or later.
 
 Source site
 +++++++++++
@@ -193,12 +192,12 @@ completes even if the target site would not able to process incoming content.
 If there is a serious problem the import seems to complete successfully,
 but no content is created.
 
-.. note ::
+.. note::
 
-       Currently export/import is not perfect. For example, ZMI content type icons  are currently
-       lost in the process. It is recommended to do a test run on a staging server
-       before doing this process on a production server.
-       Also, the item order in the folder is being lost.
+    Currently export/import is not perfect. For example, ZMI content type icons  are currently
+    lost in the process. It is recommended to do a test run on a staging server
+    before doing this process on a production server.
+    Also, the item order in the folder is being lost.
 
 More information
 ++++++++++++++++

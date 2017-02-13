@@ -1,14 +1,12 @@
-=================================
- Slidehows and carousels
-=================================
+=======================
+Slidehows and carousels
+=======================
 
 .. admonition:: Description
 
         How to use annotation design pattern to store
         arbitrary values on Python objects (Plone site,
         HTTP request) for storage and caching purposes.
-
-.. contents:: :local:
 
 Introduction
 ==============

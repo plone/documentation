@@ -6,8 +6,6 @@ Files
 
     Using files with Archetype field
 
-.. contents:: local
-
 Download URL for files for ATFile content
 =========================================
 

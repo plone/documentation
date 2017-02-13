@@ -1,13 +1,10 @@
-================================
+====================
 Copying a Plone site
-================================
+====================
 
 .. admonition:: Description
 
    Quick instructions on how to create a copy of a Plone installation.
-
-.. contents:: :local:
-
 
 Introduction
 ============

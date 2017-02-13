@@ -6,8 +6,6 @@ How to contribute to Plone core translations
 
     How to contribute to the Plone translations.
 
-.. contents:: :local:
-
 Introduction
 ============
 

@@ -6,8 +6,6 @@ Simple SQL CRUD with PloneFormGen
 
     A step-by-step lesson in using PloneFormGen to read, insert and update rows in a single SQL table.
 
-.. contents:: :local:
-
 Introduction
 ============
 
@@ -15,7 +13,7 @@ One of the goals of PloneFormGen is that it should be useful for simple update o
 
 This tutorial covers the use of PloneFormGen to update and insert rows in a single-table SQL database.
 
-The simple application we'll develop here would need quite a bit of polishing before you'd wish to expose it to the public, but it will demonstrate the basic techniques.
+The simple application we'll develop here would need a bit of polishing before you'd wish to expose it to the public, but it will demonstrate the basic techniques.
 
 Skills required to understand this tutorial include:
 

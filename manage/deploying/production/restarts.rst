@@ -1,8 +1,6 @@
-============================
- Automatic Plone (re)starts
-============================
-
-.. contents:: :local:
+==========================
+Automatic Plone (re)starts
+==========================
 
 Introduction
 ============

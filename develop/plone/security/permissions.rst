@@ -1,12 +1,10 @@
-==================
- Permissions
-==================
+===========
+Permissions
+===========
 
 .. admonition:: Description
 
     How to deal with permissions making your code permission-aware in Plone
-
-.. contents:: :local:
 
 Introduction
 ============
@@ -32,7 +30,7 @@ attribute of view declaration. For more information see :doc:`views
 </develop/plone/views/browserviews>`.
 
 Debugging permission errors: Verbose Security
-================================================
+=============================================
 
 You can turn on ``verbose-security`` option in buildout to get better traceback info when
 you encounter a permission problem on the site (you are presented a login dialog).
@@ -53,7 +51,7 @@ More info
 * https://pypi.python.org/pypi/plone.recipe.zope2instance
 
 Checking if the logged-in user has a permission
-====================================================
+===============================================
 
 The following code checks whether the logged in user
 has a certain permission for some object.
@@ -78,7 +76,7 @@ has a certain permission for some object.
 
 
 Checking whether a specific role has a permission
-==================================================
+=================================================
 
 The following example uses the ``rolesOfPermission()`` method to check
 whether the *Authenticated* role has a permission on a certain folder on the
@@ -105,7 +103,7 @@ it was written for use in a :term:`ZMI` template::
 
 
 Permission Access
-==================
+=================
 
 Objects that are manageable :term:`TTW` inherit from
 `RoleManager  <http://api.plone.org/CMF/1.5.4/private/AccessControl.Role.RoleManager-class.html>`_.

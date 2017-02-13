@@ -8,8 +8,6 @@ ZODB Database
     independently in-process, clustered over network or over another database
     engine, like SQL.
 
-.. contents:: :local:
-
 Introduction
 ============
 
@@ -95,14 +93,11 @@ This gives some benefits
 Data model
 ----------
 
-There is no hardwired way for describe
-data in ZODB database.
+There is no hardwired way for describe data in ZODB database.
 
-Subclasses of ZODB ``persistent.Persistent``
-class will have all their attributes and referred objects
+Subclasses of ZODB ``persistent.Persistent`` class will have all their attributes and referred objects
 written to the database using Python pickle mechanism.
-Lists and dictionaries will be automatically
-converted to persistent versions.
+Lists and dictionaries will be automatically converted to persistent versions.
 
 There are currently three primary ways to define data models in Plone
 

@@ -1,13 +1,11 @@
-=======
+======
 Events
-=======
+======
 
 .. admonition:: Description
 
         How to add event hooks to your Plone code to perform actions when
         something happens on a Plone site.
-
-.. contents:: :local:
 
 Introduction
 ============

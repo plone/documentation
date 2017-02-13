@@ -1,13 +1,12 @@
-==================
- Creating objects
-==================
+================
+Creating objects
+================
 
 .. admonition:: Description
 
     Creating and controlling creation of Plone content items
     programmatically.
 
-.. contents:: :local:
 
 Creating content objects
 ========================
@@ -269,14 +268,14 @@ programmable logic regarding which types are addable and which not.
 
 
 Other restrictions
----------------------
+------------------
 
 See this discussion thread:
 
 * http://plone.293351.n2.nabble.com/Folder-constraints-not-applicable-to-custom-content-types-tp6073100p6074327.html
 
 Creating OFS objects
-==========================
+====================
 
 Zope has facilities for basic folder and contained objects using the
 `IObjectManager definition <http://svn.zope.org/Zope/trunk/src/OFS/interfaces.py?rev=96262&view=auto>`_
@@ -285,7 +284,7 @@ your custom lightweight, Plone-free, persistent data.
 
 
 Object construction life cycle
-==========================================
+==============================
 
 .. note::
 

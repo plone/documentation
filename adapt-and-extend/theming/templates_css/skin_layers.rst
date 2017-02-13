@@ -8,7 +8,6 @@ Skin layers
         adding overridable templates and media resources to Plone
         packages.
 
-.. contents:: :local:
 
 Introduction
 ------------

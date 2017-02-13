@@ -1,8 +1,6 @@
-===============
+==========
  RAM cache
-===============
-
-.. contents:: :local:
+==========
 
 Introduction
 ============
@@ -10,7 +8,7 @@ Introduction
 The RAM cache is a Zope facility to create custom in-process caches.
 
 Using memcached backend
-=========================
+=======================
 
 By default, Zope uses an in-process memory cache. It is possible to replace
 this with ``memcached``.

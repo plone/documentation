@@ -6,7 +6,6 @@ Standard permissions and roles
 
     Technical overview of Plones standard permissions and roles.
 
-.. contents:: :local:
 
 Standard permissions
 ~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +52,7 @@ The Zope 2 permission title is shown in parentheses.
     controlling the ability to publish or reject content.
 
 Standard roles
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 As with permissions, it is easy to create custom roles
 (use the ``rolemap.xml`` GenericSetup import step – see ``CMFPlone``\’s version of this file for an example), although you should use the standard roles where possible.

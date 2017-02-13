@@ -1,13 +1,11 @@
-====================
+==================
 Translated content
-====================
+==================
 
 .. admonition:: Description
 
     Translating content items in Plone, creating translations
     programmatically and working with translators.
-
-.. contents:: :local:
 
 Introduction
 =============

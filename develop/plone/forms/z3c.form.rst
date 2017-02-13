@@ -8,7 +8,6 @@ z3c.form library
     It is the recommended way to create complex Python-driven forms for
     Plone 4 and later versions.
 
-.. contents:: :local:
 
 Introduction
 =============

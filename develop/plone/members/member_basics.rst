@@ -1,12 +1,10 @@
-=============================
+====================
  Member manipulation
-=============================
+====================
 
 .. admonition:: Description
 
     How to programmatically create, read, edit and delete site members.
-
-.. contents:: :local:
 
 Introduction
 ============
@@ -263,7 +261,7 @@ Example::
     portal_groups.addPrincipalToGroup(member.getUserName(), "companies")
 
 Removing a user from a group
-------------------------------
+----------------------------
 
 Example::
 
@@ -285,7 +283,7 @@ In Plone 4 you have to use::
 
 
 Checking whether a user exists
-===============================
+==============================
 
 Example::
 
@@ -300,7 +298,7 @@ See also:
 
 
 Creating users
-===============
+==============
 
 Use the ``portal_registration`` tool. Example (browserview)::
 

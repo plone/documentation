@@ -1,14 +1,12 @@
-============
- Sessions
-============
+========
+Sessions
+========
 
 .. admonition:: Description
 
 	How Plone handles anonymous and logged-in user sessions.
 	How to store and retrieve session data variables programmatically.
 
-.. contents:: :local:
-	
 Introduction
 ============
 
@@ -66,7 +64,7 @@ If you need to refer to the session id, you can query for it::
 
 
 Initial construction of session data
-======================================
+====================================
 
 The example below creates a session data variable when it is accessed for
 the first time. For the subsequent accesses, the same object is returned.
@@ -111,7 +109,7 @@ Example::
                 return None
 
 Deleting session data
-======================
+=====================
 
 Example::
 
@@ -129,18 +127,18 @@ Example::
             return
         del session['getpaid.cart']
 
-	
+
 Session data and unit testing
 =============================
 
 * Please see http://article.gmane.org/gmane.comp.web.zope.plone.user/104243
 
 Using Plone authentication cookie in other systems
-====================================================
+==================================================
 
 * http://stackoverflow.com/questions/12167202/how-to-wrap-plone-authentication-around-a-third-party-servlet/12171528#comment16307483_12171528
 
 Exploring Plone session configuration
-======================================
+=====================================
 
 * http://stackoverflow.com/questions/12211682/how-to-export-plone-session-configuration

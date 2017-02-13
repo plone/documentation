@@ -12,9 +12,6 @@ Upgrading Plone 4.x to 5.0
    If you want to upgrade add-ons to Plone 5, also see: ../../../develop/addons/upgrade_to_50.rst
 
 
-.. contents:: :local:
-
-
 General information
 ===================
 

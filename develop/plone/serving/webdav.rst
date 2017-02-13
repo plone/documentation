@@ -1,13 +1,11 @@
-=======
- WebDAV
-=======
+======
+WebDAV
+======
 
 .. admonition:: Description
 
     WebDAV is a protocol to manage your site directly from MS Windows
     Explorer, Mac OS, Linux and so on. Plone supports WebDAV without add-ons, and Plone responds to WebDAV requests out of the box.
-
-.. contents:: :local:
 
 Introduction
 ============

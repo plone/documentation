@@ -1,6 +1,6 @@
-====================
- Status messages
-====================
+===============
+Status messages
+===============
 
 Status messages are session-bound information which allow the user
 to see notifications when the page is rendered next time.
@@ -8,8 +8,6 @@ to see notifications when the page is rendered next time.
 Status messages are stored session in safely manner which prevents
 Cross-Site Scripting attacks which might occur due to delivering
 message information as HTTP GET query parameters.
-
-.. contents:: :local:
 
 Setting a status message
 ------------------------
