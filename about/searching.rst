@@ -6,6 +6,7 @@ Searching the documentation
 
    Tools for searching in the documentation.
 
+.. contents:: :local:
 
 Firefox
 =======

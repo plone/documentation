@@ -6,6 +6,7 @@
 
         Here is some info for basic Plone troubleshooting, especially with add-on modules
 
+.. contents :: :local:
 
 Start Plone as foreground / debug mode
 ----------------------------------------

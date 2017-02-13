@@ -1,7 +1,8 @@
-================
-Performance Tips
-================
+===============================
+ Performance tips
+===============================
 
+.. contents :: :local:
 
 .. admonition:: Description
 
@@ -9,7 +10,7 @@ Performance Tips
     customizations faster.
 
 Profiling Plone
-===============
+===========================
 
 * https://pypi.python.org/pypi/collective.profiler/
 
@@ -56,14 +57,14 @@ Tuning complex configurations
 http://www.lovelysystems.com/the-decathlon-of-computer-science/
 
 Reducing memory usage
-=====================
+=======================
 
 These tips are especially critical when running Plone on low-memory virtual
 private server (VPS). But using the memory tips below, and some filesystem and operating system tweaks,
 it is also perfectly possible to run Plone on an ARM-based Android stick, or a Raspberry Pi. See http://polyester.github.io/
 
 Disable extra languages
------------------------
+-------------------------
 
 Add ``PTS_LANGUAGES`` to ``buildout.cfg`` to declare which .po files are loaded on the start-up::
 
@@ -80,7 +81,7 @@ known side effects on all Plone 4.1.x and 4.2.x sites, but can give up to a 20-2
 
 
 Large files
-===========
+============
 
 How to offload blob processing from Zope:
 
@@ -106,7 +107,7 @@ There are some tricks you can use here:
 * https://pypi.python.org/pypi/collective.beaker/
 
 ZServer thread count
-====================
+======================
 
 This specifies how many requests one ZEO front-end client (ZServer) can
 handle.
@@ -122,7 +123,7 @@ Adjust it::
 
 Find good value by doing performance testing for your site.
 
-.. note::
+.. note ::
 
     Increasing thread count is useful if your Plone site does
     server-to-server traffic and your Plone site needs to wait for the other
@@ -133,7 +134,7 @@ More info:
 * https://pypi.python.org/pypi/plone.recipe.zope2instance
 
 XSendFile
-=========
+============
 
 XSendFile is an enhancement over HTTP front end proxy protocol which allows
 offloading of file uploads and downloads to the front end web server.

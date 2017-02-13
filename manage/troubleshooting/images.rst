@@ -6,6 +6,7 @@
 
         Problems with imaging libraries, image loading and image scaling.
 
+.. contents:: :local:
 
 How to test see if your Python Imaging set-up works
 ======================================================

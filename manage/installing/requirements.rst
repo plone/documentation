@@ -6,6 +6,7 @@ Plone Installation Requirements
 
     Requirements for installing Plone. Details the tools and libraries (dependencies) required to install Plone.
 
+.. contents:: :local:
 
 Hosting requirements
 ====================

@@ -1,11 +1,12 @@
-==========
-Flowplayer
-==========
+========================
+ Flowplayer
+========================
 
 .. admonition :: Description
 
     Using Flowplayer video player in your Plone add-ons.
 
+.. contents :: :local:
 
 Introduction
 ============

@@ -6,6 +6,7 @@ Backing up your Plone deployment
 
    Strategies for backing up operating Plone installations.
 
+.. contents:: :local:
 
 A guide to determining what to back up and how to back it up and restore it
 safely.

@@ -6,6 +6,7 @@ HTTP request and response
 
     Accessing and manipulating Zope's HTTP request and response objects programmatically.
 
+.. contents :: :local:
 
 Introduction
 ============

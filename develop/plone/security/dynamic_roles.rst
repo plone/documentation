@@ -2,6 +2,7 @@
  Dynamic roles
 ===============
 
+.. contents :: :local:
 
 Introduction
 ---------------

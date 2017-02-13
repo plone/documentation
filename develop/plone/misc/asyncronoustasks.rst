@@ -1,11 +1,13 @@
-===========================
-Clock and asyncronous tasks
-===========================
+============================
+ Clock and asyncronous tasks
+============================
 
 
 .. admonition:: Description
 
         How to run background tasks or cron jobs with Zope
+
+.. contents:: :local:
 
 Cron jobs
 =========

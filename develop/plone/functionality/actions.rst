@@ -1,11 +1,12 @@
-=======
-Actions
-=======
+==============
+ Actions
+==============
 
 .. admonition:: Description
 
         Creating and using portal_actions mechanism
 
+.. contents :: :local:
 
 Introduction
 ------------

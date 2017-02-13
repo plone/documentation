@@ -2,6 +2,7 @@
 Frequently Asked Questions
 ==========================
 
+.. contents:: :local:
 
 Q. How can I make a date/time field default to current time?
 ============================================================

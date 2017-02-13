@@ -1,12 +1,14 @@
-=========
+============
  Sessions
-=========
+============
 
 .. admonition:: Description
 
 	How Plone handles anonymous and logged-in user sessions.
 	How to store and retrieve session data variables programmatically.
 
+.. contents:: :local:
+	
 Introduction
 ============
 

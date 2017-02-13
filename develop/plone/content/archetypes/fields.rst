@@ -6,6 +6,7 @@ Fields and widgets
 
         How to read, add, remove and create fields and widgets available for Archetypes content types.
 
+.. contents :: :local:
 
 Introduction
 ------------

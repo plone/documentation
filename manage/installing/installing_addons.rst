@@ -10,6 +10,9 @@ Legacy systems are not covered in these instructions.
    Not all add-ons have currently (status: 2015-10-31) been upgraded to work with Plone 5. Take care when trying on add-ons. If an add-on has not yet received a Plone 5-compatible release, it may be that there is already a so-called 'branch' of the sourcecode that is being worked upon, or it may be that the add-on has been superseded. See the "further help" section.
 
 
+.. contents:: :local:
+
+
 Introduction
 ------------
 

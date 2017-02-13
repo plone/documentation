@@ -1,15 +1,17 @@
-==========
-References
-==========
+============
+ References
+============
 
 .. admonition:: Description
 
     Inter-content references in Plone are done using the
     ``reference_catalog`` tool.
 
+.. contents:: :local:
+
 
 Introduction
-============
+==============
 
 Plone uses a persistent tool called ``reference_catalog`` to store
 (Archetypes) object references.  It is used by the out-of-the-box "Related
@@ -24,7 +26,7 @@ different indexes and metadata.
 The ``reference_catalog`` is defined in `ReferenceEngine.py <https://github.com/plone/Products.Archetypes/blob/master/Products/Archetypes/ReferenceEngine.py>`_.
 
 Using references
-================
+=================
 
 Here is an example how to use reference field to make
 *programme* -> *researcher* references, and how to do reverse look-ups for

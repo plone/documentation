@@ -10,6 +10,7 @@ Language functions
 
     Accessing and changing the language state of Plone programmatically.
 
+.. contents:: :local:
 
 Introduction
 ============

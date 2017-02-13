@@ -1,12 +1,13 @@
-================
-Python debugging
-================
+=====================
+ Python debugging
+=====================
 
 .. admonition:: Description
 
     Using Python command-line debugger (``pdb``) to debug Plone and Python
     applications.
 
+.. contents:: :local:
 
 Introduction
 ============

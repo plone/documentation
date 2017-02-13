@@ -6,6 +6,7 @@ Documentation Styleguide
 
     A guide to write Documentation for Plone and for Plone Add-ons
 
+.. contents:: :local:
 
 Introduction
 ============

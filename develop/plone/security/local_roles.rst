@@ -6,6 +6,7 @@ Local roles
 
     Creating and setting local roles of Plone members programmatically.
 
+.. contents:: :local:
 
 Introduction
 ============

@@ -8,6 +8,7 @@ Vocabularies
         by e.g. selection drop downs. zope.schema provides
         tools to programmatically construct their vocabularies.
 
+.. contents :: :local:
 
 Introduction
 ------------
@@ -34,12 +35,38 @@ In ``SimpleTerm`` instances
 
 * ``SimpleTerm.title`` is a unicode string or translatable message. It is used in the form.
 
-For further details please read the `interfaces specification <https://github.com/zopefoundation/zope.schema/blob/master/src/zope/schema/interfaces.py#L583>`_
+Some info::
 
-.. note::
+    class ITerm(Interface):
+        """Object representing a single value in a vocabulary."""
 
-    If you need international texts please note that only title is, and should be, translated.
-    Value and token must always carry the same value.
+        value = Attribute(
+            "value", "The value used to represent vocabulary term in a field.")
+
+
+    class ITokenizedTerm(ITerm):
+        """Object representing a single value in a tokenized vocabulary.
+        """
+
+        # TODO: There should be a more specialized field type for this.
+        token = Attribute(
+            "token",
+            """Token which can be used to represent the value on a stream.
+
+            The value of this attribute must be a non-empty 7-bit string.
+            Control characters are not allowed.
+            """)
+
+    class ITitledTokenizedTerm(ITokenizedTerm):
+        """A tokenized term that includes a title."""
+
+        title = TextLine(title=_(u"Title"))
+
+.. note ::
+
+        If you need international texts please note that
+        only title is, and should be, translated. Value and token
+        should always carry the same value.
 
 Creating a vocabulary
 =====================
@@ -305,7 +332,7 @@ Complex example 2
 
         return SimpleVocabulary(terms)
 
-
+	
 For another example, see the :doc:`Dynamic sources </external/plone.app.dexterity/docs/advanced/vocabularies>`
 chapter in the Dexterity manual.
 
@@ -333,5 +360,5 @@ Then you can refer to vocabulary by its name::
 
 For more information see:
 
-* `vocabularies API doc <http://docs.zope.org/zope3/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/vocabulary/index.html>`_
+* `vocabularies API doc <http://docs.zope.org/zope3/ZCML/http_co__sl__sl_namespaces.zope.org_sl_zope/vocabulary/index.html>`_ 
 * `zope.component docs <https://raw.githubusercontent.com/zopefoundation/zope.component/master/docs/zcml.rst>`_

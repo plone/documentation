@@ -7,6 +7,7 @@ Files and images
     How to program files and image fields for ``z3c.forms`` and Dexterity
     content types
 
+.. contents:: :local:
 
 Introduction
 =============
@@ -14,7 +15,7 @@ Introduction
 This chapter discuss about file uploads and downloads using
 zope.schema based forms and content with :doc:`Dexterity content subsystem </develop/plone/content/dexterity>`.
 
-.. note::
+.. note ::
 
     These instructions apply for Plone 4 and forward. These instructions
     does not apply for Archetypes content or PloneFormGen.

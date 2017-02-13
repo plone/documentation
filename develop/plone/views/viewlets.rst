@@ -1,12 +1,13 @@
-========
-Viewlets
-========
+=========
+ Viewlets
+=========
 
 .. admonition:: Description
 
         Viewlets are parts of the page in Plone page rendering process.
         You can create, hide and shuffle them freely.
 
+.. contents :: :local:
 
 Introduction
 ------------

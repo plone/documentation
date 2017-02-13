@@ -6,6 +6,7 @@ Standard permissions and roles
 
     Technical overview of Plones standard permissions and roles.
 
+.. contents:: :local:
 
 Standard permissions
 ~~~~~~~~~~~~~~~~~~~~

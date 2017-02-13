@@ -1,11 +1,12 @@
-========
-Portlets
-========
+==========================
+ Portlets
+==========================
 
 .. admonition:: Description
 
         Programmatical manipulation of portlets in Plone.
 
+.. contents :: :local:
 
 Introduction
 ------------

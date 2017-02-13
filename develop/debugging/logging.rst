@@ -6,6 +6,7 @@ Logging
 
         How to write log output from your Plone add-on program code
 
+.. contents:: :local:
 
 Introduction
 -------------

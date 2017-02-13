@@ -2,6 +2,7 @@
  Unit testing
 =================
 
+.. contents :: :local:
 
 Introduction
 ============

@@ -1,7 +1,8 @@
-=======
-XML-RPC
-=======
+==================
+ XML-RPC
+==================
 
+.. contents :: :local:
 
 .. admonition:: Description
 
@@ -20,7 +21,7 @@ Example::
        # Call remote method
        path = xmlrpclib.ServerProxy(target).getPhysicalPath()
 
-.. warning::
+.. warning ::
 
         Zope object handles are not transferable across function call boundaries.
         Thus, you can only call functions with primitive arguments. If you
@@ -50,12 +51,12 @@ ZPublisher client
 XML-RPC does not marshal objects reliable between remote calls.
 Getting the real remote object can be done with ZPublisher.Client.Object.
 
-.. note::
+.. note ::
 
         This approach works only for Python clients and
         needs Zope libraries available at the client side.
 
-.. warning::
+.. warning ::
 
         Zope object handles are not transferable across function call boundaries.
         Thus, you can only call functions with primitive arguments. If you
@@ -68,7 +69,7 @@ Getting the real remote object can be done with ZPublisher.Client.Object.
 
 
 Web Services API for Plone (wsapi4plone)
-----------------------------------------
+--------------------------------------------
 
 This is an add-on product exposes more methods available through Zope's
 XML-RPC api.
@@ -76,7 +77,7 @@ XML-RPC api.
 *  https://plone.org/products/wsapi4plone.core
 
 Importing an Image Using WSAPI
-==============================
+================================
 
 In the following example we retrieve, from the 'Pictures' folder, an image called 'red-wine-glass.jpg',
 post it to a folder called 'ministries' and give it the name 'theimage'.

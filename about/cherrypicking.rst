@@ -6,6 +6,7 @@ Add your changes to multiple branches
 
    How to cherry-pick your changes from one branch to another branch.
 
+.. contents:: :local:
 
 As this documentation is kept for multiple Plone versions,
 there are times when a pull request should be merged to more than one branch.

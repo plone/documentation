@@ -7,6 +7,7 @@ Modelling using zope.schema
     zope.schema package provide a storage-neutral way to define Python object
     models with validators.
 
+.. contents:: :local:
 
 Introduction
 ============

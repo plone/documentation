@@ -2,9 +2,10 @@
 Interfaces
 ==========
 
+.. contents:: :local:
 
 Introduction
-============
+=============
 
 Interfaces define what methods an object provides.
 Plone extensively uses interfaces to define APIs between
@@ -19,7 +20,7 @@ details like color, material, etc. can vary.
 See `zope.interface package README <https://pypi.python.org/pypi/zope.interface>`_.
 
 Common interfaces
-=================
+==================
 
 Some interfaces are commonly used throughout Plone.
 

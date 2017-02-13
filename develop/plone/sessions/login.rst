@@ -6,6 +6,7 @@
 
 	Login and logout related programming activities in Plone
 
+.. contents:: :local:
 
 Introduction
 -------------

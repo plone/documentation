@@ -6,6 +6,7 @@
 
     How to programmatically generate folder listings in Plone.
 
+.. contents:: :local:
 
 Introduction
 ============

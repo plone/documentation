@@ -1,6 +1,6 @@
-==================
-TAL page templates
-==================
+===================
+ TAL page templates
+===================
 
 .. admonition:: Description
 
@@ -8,6 +8,7 @@ TAL page templates
     references to this template language and generally available templates,
     macros and views you can use to build your Plone add-on product.
 
+.. contents:: :local:
 
 Introduction
 =============

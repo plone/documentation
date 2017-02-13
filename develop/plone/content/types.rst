@@ -1,11 +1,12 @@
-=============
+=================
 Content types
-=============
+=================
 
 .. admonition:: Description
 
 	Plone's content type subsystems and creating new content types programmatically.
 
+.. contents:: :local:
 
 Introduction
 =============

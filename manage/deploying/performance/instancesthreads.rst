@@ -2,6 +2,8 @@
 About Instances and Threads, Performance and RAM consumption
 ============================================================
 
+.. contents :: :local:
+
 .. admonition:: Description
 
     Understanding how instances-per-core, threads-per-instance and ZODB-caches

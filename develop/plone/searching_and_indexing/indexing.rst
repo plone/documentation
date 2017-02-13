@@ -7,6 +7,7 @@ Indexes and metadata
         How to program your custom fields and data queries
         through portal_catalog.
 
+.. contents :: :local:
 
 What does indexing mean?
 ------------------------

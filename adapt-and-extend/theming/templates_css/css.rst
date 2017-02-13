@@ -1,15 +1,16 @@
-===
+====
 CSS
-===
+====
 
 .. admonition:: Description
 
     Creating and registering CSS files for Plone and Plone add-on products.
     CSS-related Python functionality.
 
+.. contents:: :local:
 
 Introduction
-============
+==============
 
 This page has Plone-specific CSS instructions.
 
@@ -19,7 +20,7 @@ but ``portal_css`` does CSS file compression and merging automatically if
 used.
 
 View all Plone HTML elements
-============================
+==============================
 
 To test Plone HTML element rendering go to ``test_rendering`` page on your site::
 

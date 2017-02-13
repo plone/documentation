@@ -7,6 +7,7 @@
     Creating and controlling creation of Plone content items
     programmatically.
 
+.. contents:: :local:
 
 Creating content objects
 ========================

@@ -6,6 +6,7 @@ Querying
 
     How to programmatically search and query content from a Plone site.
 
+.. contents :: :local:
 
 Introduction
 ============

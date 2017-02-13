@@ -1,18 +1,19 @@
-============================
+==============================
 Content identification (ids)
-============================
+==============================
 
 .. admonition:: Description
 
     Different ids, UIDs, integer ids or whatever can identify your Plone
     content and give access to it.
 
+.. contents:: :local:
 
 Introduction
-============
+=============
 
 Id
-==
+====
 
 Content id generally refers the item id **within the folder**. Together with folder path this
 identifies the content in unique way.
@@ -40,7 +41,7 @@ Plone uses UUIDs for
 UIDs are available for Archetypes content and unified UUIDs for both Archetypes and
 Dexterity content items since ``plone.app.dexterity`` version 1.1.
 
-.. note::
+.. note ::
 
 	If you have pre-Dexterity 1.1 content items you must run a migration step in portal_setup to
 	give them UUIDs.

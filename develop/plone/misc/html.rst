@@ -1,11 +1,12 @@
-=====================================
-HTML manipulation and transformations
-=====================================
+===============================================
+ HTML manipulation and transformations
+===============================================
 
 .. admonition:: Description
 
     How to programmatically rewrite HTML in Plone.
 
+.. contents:: :local:
 
 Introduction
 ============
@@ -16,7 +17,7 @@ for all HTML DOM manipulation in Python.
 Plone is no exception.
 
 Converting HTML to plain text
-=============================
+===============================
 
 The most common use case is to override ``SearchableText()`` to return
 HTML content for portal_catalog for indexing.
@@ -24,7 +25,7 @@ HTML content for portal_catalog for indexing.
 * http://stackoverflow.com/questions/6956326/custom-searchabletext-and-html-fields-in-plone
 
 Converting plain text to HTML
-=============================
+==============================
 
 You can use ``portal_transforms`` to do plain text -> HTML conversion.
 

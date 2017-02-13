@@ -10,6 +10,7 @@ Plone 5 Resource Registry
     It also allows developers to create JavaScript and CSS bundles Through-The-Web for a low barrier to entry.
     This chapter will help you to gain a basic understanding of the new Resource Registry.
 
+.. contents:: :local:
 
 
 Introduction to Plone 5 resources

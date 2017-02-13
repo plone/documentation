@@ -8,6 +8,7 @@ ZODB Database
     independently in-process, clustered over network or over another database
     engine, like SQL.
 
+.. contents:: :local:
 
 Introduction
 ============

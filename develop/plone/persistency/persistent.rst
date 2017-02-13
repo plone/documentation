@@ -1,6 +1,6 @@
-==================
-Persistent objects
-==================
+====================
+ Persistent objects
+====================
 
 .. admonition:: Description
 
@@ -10,6 +10,7 @@ Persistent objects
         some of special properties, like with containers, when you deal with persistent
         objects programmatically.
 
+.. contents:: :local:
 
 Introduction
 ------------

@@ -1,9 +1,11 @@
-====
-WSGI
-====
+======
+ WSGI
+======
+
+.. contents :: :local:
 
 Introduction
-============
+------------
 
 WSGI is Python standard for hosting Python web services.
 
@@ -13,7 +15,7 @@ WSGI is Python standard for hosting Python web services.
 
 
 Plone and WSGI
-==============
+-----------------
 
 Collection of inks about this topic, since this is a very special topic we also link to documentation about WSGI and Plone 4 for reference.
 

@@ -1,6 +1,6 @@
-=================
+===============================
 Quick Test Recipe
-=================
+===============================
 
 .. admonition:: Description
 
@@ -11,6 +11,7 @@ Quick Test Recipe
 
     The goal of this recipe is to help you confirm that everything is working. The theme resources for this recipe are hosted on a github page (http://pigeonflight.github.io).
 
+.. contents:: :local:
 
 Ingredients
 ============

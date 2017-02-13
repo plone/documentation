@@ -1,11 +1,12 @@
-=========
-Workflows
-=========
+============
+ Workflows
+============
 
 .. admonition:: Description
 
         Programming workflows in Plone.
 
+.. contents :: :local:
 
 Introduction
 -------------

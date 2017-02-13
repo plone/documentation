@@ -1,7 +1,8 @@
-======================
-Helper views and tools
-======================
+============================
+ Helper views and tools
+============================
 
+.. contents:: :local:
 
 Introduction
 ============

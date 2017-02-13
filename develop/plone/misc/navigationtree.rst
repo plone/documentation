@@ -1,7 +1,8 @@
-================
-Navigation trees
-================
+====================================
+ Navigation trees
+====================================
 
+.. contents :: :local:
 
 .. admonition:: Description
 

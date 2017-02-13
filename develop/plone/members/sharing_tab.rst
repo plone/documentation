@@ -13,6 +13,7 @@ TODO: remove this file, eventually move code example to a "cookbook" section.
 
         Customizing the sharing feature of Plone
 
+.. contents :: :local:
 
 Introduction
 -------------

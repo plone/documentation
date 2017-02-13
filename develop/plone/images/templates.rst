@@ -6,6 +6,7 @@ Images in page templates
 
     How to link to images in page templates in Plone.
 
+.. contents:: :local:
 
 Putting a static image into a page template
 =============================================

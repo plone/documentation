@@ -2,6 +2,7 @@
  Unicode encoding and decoding
 ================================
 
+.. contents :: :local:
 
 Introduction: Why unicode is difficult?
 =========================================

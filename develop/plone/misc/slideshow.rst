@@ -1,6 +1,6 @@
-=======================
-Slidehows and carousels
-=======================
+=================================
+ Slidehows and carousels
+=================================
 
 .. admonition:: Description
 
@@ -8,9 +8,10 @@ Slidehows and carousels
         arbitrary values on Python objects (Plone site,
         HTTP request) for storage and caching purposes.
 
+.. contents:: :local:
 
 Introduction
-============
+==============
 
 Header slideshows
 
@@ -21,7 +22,7 @@ AJAX'y image pop-ups
 * https://plone.org/products/pipbox
 
 Migrate Products.Slideshow to Products.Carousel
-===============================================
+==================================================
 
 Here is a sample migration code to transform your site
 from one add-on to another.

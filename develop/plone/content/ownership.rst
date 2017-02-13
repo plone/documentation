@@ -1,7 +1,8 @@
-====================
-Ownership of content
-====================
+=======================
+ Ownership of content
+=======================
 
+.. contents :: :local:
 
 .. admonition:: Description
 
@@ -43,7 +44,7 @@ Example::
     home_folder.changeOwnership(user, recursive=False)
     home_folder.reindexObjectSecurity()
 
-.. warning::
+.. warning ::
 
         This only changes the owner attribute, not the role assignments. You
         need to change those too.
@@ -53,7 +54,7 @@ Example how to add ownership for additional user using local roles::
     home_folder.manage_setLocalRoles(username, ["Owner",])
     home_folder.reindexObjectSecurity()
 
-.. note::
+.. note ::
 
         This does not update Dublin Core metadata fields like
         creator.
@@ -64,7 +65,7 @@ Contributors
 Contributors is an automatically managed list where persons, who have been editing in the past,
 real names are listed. Contributors data is available as Python list of real names.
 
-.. note::
+.. note ::
 
         Contributors does not store user references, because one might want to maintain
         contributor data even after the user has been deleted.

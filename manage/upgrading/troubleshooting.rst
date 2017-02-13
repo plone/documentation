@@ -6,6 +6,7 @@ Troubleshooting
 
    What to do when a problem occurs during a Plone upgrade.
 
+.. contents:: :local:
 
 When a problem occurs during the migration we recommend that you take the following steps.
 

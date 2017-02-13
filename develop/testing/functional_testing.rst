@@ -8,6 +8,7 @@ Functional testing
         browser to load pages from your site and fill in
         forms automatically.
 
+.. contents :: :local:
 
 Introduction
 ------------

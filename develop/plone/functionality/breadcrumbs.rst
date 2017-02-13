@@ -1,6 +1,6 @@
-======================
-Breadcrumbs (path bar)
-======================
+==========================
+ Breadcrumbs (path bar)
+==========================
 
 .. admonition:: Description
 
@@ -8,6 +8,7 @@ Breadcrumbs (path bar)
     This document shows some example code how to create breadcrumbs
     programmatically.
 
+.. contents :: :local:
 
 Navigation level sensitive breadcrumbs
 =======================================

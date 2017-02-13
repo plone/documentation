@@ -6,6 +6,7 @@
 
         Importing and exporting content between Plone sites and other CMS systems
 
+.. contents:: :local:
 
 Introduction
 ------------
