@@ -188,7 +188,7 @@ Add-on layer for changing existing behavior
 
 You can also use layers to modify the behavior of plone or another Add-on.
 
-To make sure that your own view is used, your Layer must be mor specific than the layer where original view is registered.
+To make sure that your own view is used, your Layer must be more specific than the layer where original view is registered.
 
 For example, some z3cform things register their views on the ``IPloneFormLayer`` from plone.app.z3cform.interfaces.
 
