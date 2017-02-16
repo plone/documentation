@@ -415,13 +415,13 @@ You can provide an uncached version of the site for editors:
 Sanitizing cookies
 ==================
 
-Any cookie set on the server side (session cookie) or on the client-side (e.g. Google Analytics Javascript cookies) is poison for caching the anonymous visitor content.
+Any cookie set on the server side (session cookie) or on the client-side (e.g. Google Analytics JavaScript cookies) is poison for caching the anonymous visitor content.
 
 HTTP caching needs to deal with both HTTP request and response cookie handling
 
 * HTTP request *Cookie* header. The browser sending HTTP request
   with ``Cookie`` header confuses Varnish cache look-up. This header can be
-  set by Javascript also, not just by the server.
+  set by JavaScript also, not just by the server.
   ``Cookie`` can be preprocessed in varnish's ``vcl_recv`` step.
 
 * HTTP response ``Set-Cookie`` header.
@@ -476,7 +476,7 @@ An example how to purge Google cookies only and allow other cookies by default::
 
     sub vcl_recv {
         # Remove Google Analytics cookies - will prevent caching of anon content
-        # when using GA Javascript. Also you will lose the information of
+        # when using GA JavaScript. Also you will lose the information of
         # time spend on the site etc..
         if (req.http.cookie) {
            set req.http.Cookie = regsuball(req.http.Cookie, "__utm.=[^;]+(; )?", "");
