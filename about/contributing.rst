@@ -84,7 +84,6 @@ Basically, all we need is your written confirmation that you are agreeing your c
 
 You can also add in a comment with your pull request "I, <full name>, agree to have this published under Creative Commons 4.0 International BY".
 
-
 Workflow
 ========
 
@@ -102,7 +101,7 @@ Therefore, we follow a simple workflow, which we ask all contributors to respect
 
 Please  **DO NOT** commit to master directly. Even for the smallest and most trivial fix.
 
-**ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
+**ALWAYS** open a pull request and ask somebody else to merge your contribution. **NEVER** merge it yourself.
 
 
 Your pull requests may be checked for spelling, and clarity.
@@ -113,7 +112,6 @@ If you don't get feedback on your pull request in a day please come to #plone-do
 The main goal of this process is not to annoy you. On the contrary, we **love** your contributions.
 
 But the documentation team also wants to keep the documentation in good shape.
-
 
 
 .. _plone-versions:
@@ -225,7 +223,3 @@ Getting started
 * Choose your language
 
 * Click on the right *Join Team*
-
-
-
-
