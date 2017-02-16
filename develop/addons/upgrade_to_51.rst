@@ -10,13 +10,13 @@ See `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_ for a 
 
 
 From CMFQuickInstallerTool to GenericSetup
-==========================================
+------------------------------------------
 
 The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code in ``Extensions/install.py`` or  ``Extensions/Install.py``.
 If you have such code, you must switch to a GenericSetup profile.
 
-GenericSetup is already the prefered way of writing installation code since Plone 3.
-If you really must use the old way, you can still use the ``portal_quickinstaller`` in the Zope Management Interface.
+GenericSetup is already the preferred way of writing installation code since Plone 3.
+If you must use the old way, you can still use the ``portal_quickinstaller`` in the Zope Management Interface.
 
 In a lot of cases, you can configure ``xml`` files instead of using Python code.
 In other cases you may need to write custom installer code (setuphandlers.py).
@@ -24,7 +24,7 @@ See the :doc:`GenericSetup documentation </develop/addons/components/genericsetu
 
 
 default profile
-===============
+---------------
 
 Historically, when your add-on had multiple profiles, their names would be sorted alphabetically and the first one would be taken as the installation profile.
 It was always recommended to use ``default`` as name of this first profile.
@@ -34,7 +34,7 @@ Exception: when this ``default`` profile is marked in an ``INonInstallable`` uti
 
 
 Uninstall
-=========
+---------
 
 An uninstall profile is not required, but it is highly recommended.
 
@@ -42,8 +42,8 @@ Until Plone 5.0 the CMFQuickInstallerTool used to do an automatic partial cleanu
 for example removing added skins and css resources.
 This was always only partial, so you could not rely on it to fully cleanup the site.
 
-Since plone 5.1 this cleanup is no longer done.
-It is best practice to create an uninstall profile for all your packages.
+Since Plone 5.1 this cleanup is no longer done.
+Best practice is to create an uninstall profile for all your packages.
 
 If you were relying on this automatic cleanup, you need to add extra files to clean it up yourself.
 You need to do that when your default profile contains one of these files:
@@ -67,7 +67,7 @@ For an example, see https://github.com/plone/plone.app.multilingual/tree/master/
 
 
 Don't use portal_quickinstaller
-===============================
+-------------------------------
 
 Old code:
 
@@ -126,16 +126,15 @@ If you need it in a page template:
 
 .. code-block:: python
 
-    tal:define="qi context/@@installer"
+   tal:define="qi context/@@installer"
 
-Warning:
-since the code really does different things than before,
-the method names were changed
-and they may accept less arguments or differently named arguments.
+.. warning::
+
+   Since the code really does different things than before, the method names were changed and they may accept less arguments or differently named arguments.
 
 
 Products namespace
-==================
+------------------
 
 There used to be special handling for the Products namespace.
 Not anymore.
@@ -154,7 +153,7 @@ New code:
 
 
 isProductInstalled
-==================
+------------------
 
 Old code:
 
@@ -170,7 +169,7 @@ New code:
 
 
 installProduct
-==============
+--------------
 
 Old code:
 
@@ -188,7 +187,7 @@ Note that no keyword arguments are accepted.
 
 
 installProducts
-===============
+---------------
 
 This was removed.
 You should iterate over a list of products instead.
@@ -206,11 +205,11 @@ New code:
 
     product_list = ['package.one', 'package.two']
     for product_name in product_list:
-        qi.install_product(product_name)
+       qi.install_product(product_name)
 
 
 uninstallProducts
-=================
+-----------------
 
 Old code:
 
@@ -229,15 +228,15 @@ If you want to uninstall multiple products, you must call this method multiple t
 
 
 reinstallProducts
-=================
+-----------------
 
 This was removed.
 Reinstalling is usually not a good idea: you should use an upgrade step instead.
-If you really need to, you can uninstall and install if you want.
+If you need to, you can uninstall and install if you want.
 
 
 getLatestUpgradeStep
-====================
+--------------------
 
 Old code:
 
@@ -253,7 +252,7 @@ New code:
 
 
 upgradeProduct
-==============
+--------------
 
 Old code:
 
@@ -269,7 +268,7 @@ New code:
 
 
 isDevelopmentMode
-=================
+-----------------
 
 This was a helper method that had got nothing to with the quick installer.
 
@@ -289,11 +288,11 @@ New code:
 
 .. note::
 
-    The new code works already since Plone 4.3.
+   The new code works already since Plone 4.3.
 
 
 All deprecated methods
-======================
+----------------------
 
 Some of these were mentioned already.
 
@@ -336,7 +335,7 @@ You should switch to the new methods instead:
 
 
 INonInstallable
-===============
+---------------
 
 There used to be one ``INonInstallable`` interface in ``CMFPlone`` (for hiding profiles) and another one in ``CMFQuickInstallerTool`` (for hiding products).
 In the new situation, these are combined in the one from CMFPlone.
