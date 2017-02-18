@@ -1,6 +1,6 @@
-==================================
- Contributing to the documentation
-==================================
+=================================
+Contributing to the documentation
+=================================
 
 .. admonition:: Description
 
@@ -59,9 +59,14 @@ For these reasons, it is important we keep the documentation coherent.
 Therefore, we follow a simple workflow, which we ask all contributors to respect:
 
 
-Please  **DO NOT** commit to master directly. Even for the smallest and most trivial fix. **ALWAYS** open a pull request and ask somebody else to merge your code. **NEVER** merge it yourself.
+Please  **DO NOT** commit to master directly. Even for the smallest and most trivial fix.
 
-Your pull requests may be checked for spelling, and clarity. So don't hesitate to contribute also if English is not your first language, we will try to be helpful in corrections without being annoying.
+**ALWAYS** open a pull request and ask somebody else to merge your contribution.
+
+**NEVER** merge it yourself.
+
+Your pull requests may be checked for spelling, and clarity.
+Don't hesitate to contribute also if English is not your first language, we will try to be helpful in corrections without being annoying.
 
 If you don't get feedback on your pull request in a day please come to #plone-docs and ask.
 
@@ -80,7 +85,9 @@ The documentation for the different versions (Plone 3, Plone 4, Plone 5) are org
 The *default* branch points to the current version of Plone.
 
 Documentation changes that are valid for multiple versions of Plone can be done by making multiple pull requests, or by :doc:`cherry-picking </about/cherrypicking>` which may be easier to do when branches are widely different.
-When all this seems alien and strange, just note in your pull request that you think this is valid for other versions of Plone as well, and the documentation team will take care of doing the technical stuff.
+
+When you are not sure, note in your pull request that you think this is valid for other versions of Plone as well,
+and the documentation team will take care.
 
 
 Editing the documentation on GitHub
@@ -92,7 +99,7 @@ This is the recommended way for smaller changes, and for people who are not fami
 - Press the **Fork** button. This will create your own personal copy of the documentation.
 - **Edit** files using GitHub's text editor in your web browser
 - Fill in the **Commit changes**-textbox at the end of the page telling why you did the changes. Press the **Commit changes**-button next to it when done.
-- Then head to the green *New pull request*-button (e.g. by navigating to your fork's root and clicking "Pull requests" on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text. Just press **New pull request** button, finally click "Send pull request".
+- Then head to the green *New pull request*-button (e.g. by navigating to your fork's root and clicking "Pull requests" on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text. Press **New pull request** button, finally click "Send pull request".
 - Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on GitHub.
 - For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
 - You will receive a message when your request has been integrated into the documentation. At that moment, feel free to delete the copy of the documentation you created under your account on GitHub. Next time you contribute, just fork again. That way you'll always have a fresh copy of the documentation to work on.
@@ -102,8 +109,8 @@ Before you make a pull request
 ==============================
 
 * Check for typos. Again, do not let this discourage you if English is not your first language, but simple typing errors can usually be found with spellcheckers
-* Make sure that all links you put in are valid.
-* Check that you are using valid restructured text.
+* Make sure that all links you put in are **valid**.
+* Check that you are using **valid** restructured text.
 
 
 Pull request checklist
@@ -111,7 +118,8 @@ Pull request checklist
 
 Making a good pull request makes life easier for everybody:
 
-* The title and description of a pull request **MUST** be descriptive and need to reflect the changes. So please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
+* The title and description of a pull request **MUST** be descriptive and need to reflect the changes.
+  Please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
 
 If you can state for which versions of Plone your submissions are valid, that would be awesome.
 
@@ -138,8 +146,7 @@ If possible please make sure to fill in the missing bits, for example
 Editing the documentation using git
 ===================================
 
-This is the recommended method of editing the documentation for
-advanced users.
+This is the recommended method of editing the documentation for advanced users.
 
 * Learn about `Sphinx <http://sphinx-doc.org/>`_ and `restructured text
   <http://sphinx-doc.org/rest.html>`_.
