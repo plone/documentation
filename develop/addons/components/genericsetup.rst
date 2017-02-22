@@ -1,16 +1,14 @@
-============================================================
- Add-on installation and export framework: GenericSetup
-============================================================
+======================================================
+Add-on installation and export framework: GenericSetup
+======================================================
 
 .. admonition:: Description
 
     GenericSetup is a framework to modify the Plone site during add-on package installation and uninstallation.
-    It provides XML-based rules to change the site settings easily.
-
-.. contents :: :local:
+    It provides XML-based rules to change the site settings.
 
 Introduction
-=============
+============
 
 GenericSetup is an XML-based way to import and export Plone site configurations.
 
@@ -25,7 +23,7 @@ It is mainly used to prepare the Plone site for add-on packages, by:
 
 GenericSetup is mostly used to apply an add-on's specific changes to the site configuration and to enable specific behaviors when the add-on installer is run.
 
-GenericSetup XML files are usually in a ``profiles/default`` folder inside the add-on package.
+GenericSetup XML files are in a ``profiles/default`` folder inside the add-on package.
 
 All run-time through-the-web (:term:`TTW`) configurable items, like viewlets order through ``/@@manage-viewlets`` page, are made repeatable using GenericSetup profile files.
 
@@ -39,19 +37,19 @@ This import will read XML files and change the Plone database accordingly.
 
 .. note::
 
-    Difference between ZCML and GenericSetup
+   Difference between ZCML and GenericSetup:
+   ZCML changes affect loaded Python code in **all** sites inside Zope whereas GenericSetup XML files affect only one Plone site and its database.
 
-    ZCML changes affect loaded Python code in **all** sites inside Zope whereas GenericSetup XML files affect only one Plone site and its database.
-    GenericSetup XML files are always database changes.
+   GenericSetup XML files are always database changes.
 
-    Relationship between ZCML and site-specific behavior is usually done using :doc:`layers </develop/plone/views/layers>`.
-    ZCML directives, like viewlets and views, are registered to be active only on a certain layer using ``layer`` attribute.
-    When GenericSetup XML is imported through ``portal_setup``, or the add-on package installer is run for a Plone site, the layer is activated for the particular site only, enabling all views registered for this layer.
+   Relationship between ZCML and site-specific behavior is usually done using :doc:`layers </develop/plone/views/layers>`.
+   ZCML directives, like viewlets and views, are registered to be active only on a certain layer using ``layer`` attribute.
+   When GenericSetup XML is imported through ``portal_setup``, or the add-on package installer is run for a Plone site, the layer is activated for the particular site only, enabling all views registered for this layer.
 
-.. note ::
+.. note::
 
-    The ``metadata.xml`` file (add-on dependency and version information) is read during Plone start-up.
-    If this file has problems, your add-on might not appear in the installer control panel.
+   The ``metadata.xml`` file (add-on dependency and version information) is read during Plone start-up.
+   If this file has problems, your add-on might not appear in the installer control panel.
 
 .. * Not publicly viewable anymore: `GenericSetup tutorial <https://old.plone.org/documentation/tutorial/genericsetup>`_
 
@@ -97,13 +95,6 @@ the profiles are sorted alphabetically by id,
 and the first one is chosen.
 So if you have profiles ``base`` and ``default``,
 the ``base`` profile is installed.
-
-.. versionadded:: 5.1
-
-    When there is a profile with name ``default``, this is taken as the profile for installation.
-    For more information on this plan,
-    see `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
-
 
 Add-on-specific issues
 ======================
@@ -187,8 +178,8 @@ Unit testing example::
 
 .. versionadded:: 4.3.8
 
-    Since Products.GenericSetup 1.8.0 (Plone 4.3.8, Plone 5.0.0) the ``profile-`` part is optional.
-    The code can handle both.
+   Since Products.GenericSetup 1.8.0 (Plone 4.3.8, Plone 5.0.0) the ``profile-`` part is optional.
+   The code can handle both.
 
 
 Missing upgrade procedure
@@ -220,13 +211,6 @@ Uninstalling has various parts:
 
     CMFQuickInstaller 3.0.9 (Plone 4.3.7 and higher) makes the second part a bit easier.
     If the uninstall method is not found, it looks for a profile with id ``uninstall`` and applies it.
-
-.. versionadded:: 5.1
-
-    Plone 5.1 is scheduled to not use the CMFQuickInstaller, but always apply an ``uninstall`` profile.
-    For more information on this plan,
-    see `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
-
 
 Dependencies
 ============
@@ -265,18 +249,20 @@ require database changes are usable from *your.addonpackage* when it is run.
 
 .. warning::
 
-    Unlike other GenericSetup XML files,
-    ``metadata.xml`` is read on the start-up and this read is cached.
-    Always restart Plone after editing ``metadata.xml``.
-    If your ``metadata.xml`` file contains syntax errors or dependencies to a missing or non-existent package (e.g. due to a typo in a name) your add-on will disappear from the installation control panel.
+   Unlike other GenericSetup XML files,
+   ``metadata.xml`` is read on the start-up and this read is cached.
+   Always restart Plone after editing ``metadata.xml``.
+   If your ``metadata.xml`` file contains syntax errors or dependencies to a missing or
+   non-existent package (e.g. due to a typo in a name) your add-on will disappear from the installation control panel.
 
 .. note::
 
-    For some old add-ons in the ``Products.*`` Python namespace,
-    you must not include the full package name in the dependencies.
-    This is true when this add-on has registered its profile in Python instead
-    of zcml, and there it has used only part of its package name.
-    In most cases you *do* need to use the full ``Products.xxx`` name.
+   For some old add-ons in the ``Products.*`` Python namespace,
+   you must not include the full package name in the dependencies.
+   This is true when this add-on has registered its profile in Python instead
+   of zcml, and there it has used only part of its package name.
+
+   In most cases you *do* need to use the full ``Products.xxx`` name.
 
 To declare a dependency on the ``simple`` profile of ``Products.PluggableAuthService``:
 
@@ -295,31 +281,29 @@ To declare a dependency on the ``simple`` profile of ``Products.PluggableAuthSer
 Metadata version numbers
 ========================
 
-Some old add-on packages may have a ``metadata.xml`` without version number,
-but this is considered bad practice.
+Some old add-on packages may have a ``metadata.xml`` without version number, but this is considered bad practice.
 What should the version number in your ``metadata.xml`` be?
-This mostly matters when you are adding upgrade steps,
-See also the `Upgrade steps`_ section.
+This mostly matters when you are adding upgrade steps, See also the `Upgrade steps`_ section.
 Upgrade steps have a sort order in which they are executed.
+
 This used to be alphabetical sorting.
-When you had eleven upgrade steps, marked from 1 through 11,
-alphabetical sorting meant this order: 1, 10, 11, 2, 3, etc.
+When you had eleven upgrade steps, marked from 1 through 11, alphabetical sorting meant this order: 1, 10, 11, 2, 3, etc.
 If you are seeing this, then you are using an old version of GenericSetup.
+
 You want numerical sorting here, which is correctly done currently.
 Versions with dots work fine too.
+
 They get ordered just like they would when used for packages on PyPI.
-So far for the background information.
 
 Best practice for all versions of GenericSetup is this:
 
 - Start with 1000.
   This avoids problems with ancient GenericSetup that used alphabetical sorting.
 
-- Simply increase the version by 1 each time you need a new metadata version.
+- Increase the version by 1 each time you need a new metadata version.
   So 1001, 1002, etc.
 
-- If your add-on package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version.
-  There is simply no need.
+- If your add-on package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version, there is no need for that.
 
 - If you make changes for a new major release, you should increase the metadata version significantly.
   This leaves room for small metadata version increases on a maintenance branch.
@@ -334,60 +318,62 @@ Best practice for all versions of GenericSetup is this:
 Custom installer code (``setuphandlers.py``)
 ============================================
 
-Besides out-of-the-box XML steps which easily provide both install and uninstall,
+Besides out-of-the-box XML steps which provide both install and uninstall,
 GenericSetup provides a way to run custom Python code when your add-on package is installed and uninstalled.
-This is not a very straightforward process, though.
+This is not a straightforward process, though.
 
 .. note::
 
-    An easier way may be possible for you.
-    GenericSetup 1.8.2 has an option to point to a function to run before or after applying all import steps for your profile.
-    If you do not need to support older versions,
-    this is the easiest way.
+   An easier way may be possible for you.
+   GenericSetup 1.8.2 has an option to point to a function to run before or after applying all import steps for your profile.
+   If you do not need to support older versions, this is the easiest way.
 
-    In ``configure.zcml``::
+In ``configure.zcml``::
 
-        <configure
-            xmlns="http://namespaces.zope.org/zope"
-            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-            i18n_domain="your.addonpackage">
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+        i18n_domain="your.addonpackage">
 
-          <genericsetup:registerProfile
-              name="default"
-              title="Your Add-on Package"
-              directory="profiles/default"
-              description="A useful package"
-              provides="Products.GenericSetup.interfaces.EXTENSION"
-              pre_handler="your.addonpackage.setuphandlers.run_before"
-              post_handler="your.addonpackage.setuphandlers.run_after"
-              />
+        <genericsetup:registerProfile
+            name="default"
+            title="Your Add-on Package"
+            directory="profiles/default"
+            description="A useful package"
+            provides="Products.GenericSetup.interfaces.EXTENSION"
+            pre_handler="your.addonpackage.setuphandlers.run_before"
+            post_handler="your.addonpackage.setuphandlers.run_after"
+            />
 
         </configure>
 
-    In ``setuphandlers.py``::
+In ``setuphandlers.py``::
 
-        def run_before(context):
-            # This is run before running the first import step of
-            # the default profile.  context is portal_setup.
-            # If you need the same context as you would get in
-            # an import step, like setup_various below, do this:
-            profile_id = 'profile-your.addonpackage:default'
-            good_old_context = context._getImportContext(profile_id)
-            ...
+    def run_before(context):
+        # This is run before running the first import step of
+        # the default profile.  context is portal_setup.
+        # If you need the same context as you would get in
+        # an import step, like setup_various below, do this:
+        profile_id = 'profile-your.addonpackage:default'
+        good_old_context = context._getImportContext(profile_id)
+        ...
 
-        def run_after(context):
-            # This is run after running the last import step of
-            # the default profile.  context is portal_setup.
-            ...
+    def run_after(context):
+        # This is run after running the last import step of
+        # the default profile.  context is portal_setup.
+        ...
 
-The best practice is to create a ``setuphandlers.py`` file which contains a function ``setup_various()`` which runs the required Python code to make changes to Plone site object.
+The best practice is to create a ``setuphandlers.py`` file which contains a function ``setup_various()``
+which runs the required Python code to make changes to Plone site object.
+
 This function is registered as a custom ``genericsetup:importStep`` in XML.
 
 .. note::
 
-    When you write a custom ``importStep``, remember to write uninstallation code as well.
+   When you write a custom ``importStep``, remember to write uninstallation code as well.
 
-However, the trick is that all GenericSetup import steps, including your custom step, are run for *every* add-on package when they are installed.
+The trick is that all GenericSetup import steps, including your custom step, are run for *every* add-on package when they are installed.
+
 Thus, if your need to run code which is **specific to your add-on install only** you need to use a marker text file which is checked by the GenericSetup context.
 
 Also you need to register this custom import step in ``configure.zcml``:
@@ -454,12 +440,11 @@ For instance, if your import step depends on a content type to be installed firs
 
         run_custom_code(portal)
 
-And add a dummy text file
-``your.addonpackage/your/addonpackage/profiles/default/your.addonpackage.marker.txt``::
+And add a dummy text file ``your.addonpackage/your/addonpackage/profiles/default/your.addonpackage.marker.txt``::
 
     This text file can contain any content - it just needs to be present
 
-More information
+More information:
 
 * http://keeshink.blogspot.com/2009/02/creating-portal-content-in.html
 
@@ -476,10 +461,8 @@ it might work if you `use an overrides.zcml <http://plone.293351.n2.nabble.com/O
 Controlling the import step execution order
 -------------------------------------------
 
-If you only need to control the execution order of one of your own custom import steps,
-you can do this in your import step definition in zcml.
-To make sure the catalog and typeinfo steps are run before your own step,
-use this code:
+If you need to control the execution order of one of your own custom import steps, you can do this in your import step definition in zcml.
+To make sure the catalog and typeinfo steps are run before your own step, use this code:
 
 .. code-block:: xml
 
@@ -501,13 +484,12 @@ use this code:
 
 .. note::
 
-    The name that you need, is usually the name of the related xml file,
-    but with the ``.xml`` stripped.
-    For the ``catalog.xml`` the import step name is ``catalog``.
-    But there are exceptions.
-    For the ``types.xml`` and the ``types`` directory,
-    the import step name is ``typeinfo``.
-    See the section on `Generic Setup files`_ for a list.
+   The name that you need, is usually the name of the related xml file, but with the ``.xml`` stripped.
+   For the ``catalog.xml`` the import step name is ``catalog``.
+   But there are exceptions.
+   For the ``types.xml`` and the ``types`` directory, the import step name is ``typeinfo``.
+
+   See the section on `Generic Setup files`_ for a list.
 
 * http://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html
 
@@ -517,10 +499,13 @@ Upgrade steps
 
 You can define upgrade steps to run code when someone upgrades your package from version *x* to *y*.
 
-As an example, let's say that the new version of your.addonpackage defines a *price* field on a content type *MyType* to be a string, but previously (version 1.1 and earlier) it was a float.
-Code that uses this field and assumes it to be a float will break after the upgrade, so you'd like to automatically convert existing values for the field to string.
+As an example, let's say that the new version of your.addonpackage defines a *price* field on a content type *MyType*
+to be a string, but previously (version 1.1 and earlier) it was a float.
 
-Obviously, you could do this very quickly in a simple script, but having a GenericSetup upgrade step means non-technical people can do it as well.
+Code that uses this field and assumes it to be a float will break after the upgrade,
+so you'd like to automatically convert existing values for the field to string.
+
+You could do this in a simple script, but having a GenericSetup upgrade step means non-technical people can do it as well.
 As it turns out, once you have the script, it's easy to put its code in an upgrade step.
 
 
@@ -629,8 +614,7 @@ Some of the most used ones are here:
 
 * https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/exportimport/configure.zcml
 
-After restarting Zope, your upgrade step should be visible in the ZMI:
-the ``portal_setup`` tool has a tab ``Upgrades``.
+After restarting Zope, your upgrade step should be visible in the ZMI: the ``portal_setup`` tool has a tab ``Upgrades``.
 Select your package profile to see which upgrade steps Zope knows about for your add-on.
 
 
@@ -687,7 +671,8 @@ Combining upgrade steps
 -----------------------
 
 You can create many upgrade steps under one migration.
-This is useful when you want to have the ability to re-run some parts of the migration and make your code more re-useable (for example cook css resource of your theme).
+This is useful when you want to have the ability to re-run some parts of the migration
+and make your code more re-useable (for example cook css resource of your theme).
 
 Here is an example of many upgrade steps you can have to achieve on a site policy:
 
@@ -736,7 +721,7 @@ Add-on package appears twice in the installer list
 This usually happens if you are developing your own add-on and keep changing things.
 You have an error in your add-on package ZCML code which causes portal_quickinstaller to have two entries.
 
-More information
+More information:
 
 * http://plone.293351.n2.nabble.com/Product-twice-in-quickinstaller-td5345492.html#a5345492
 
@@ -757,12 +742,6 @@ Example:
             if reinstall == False:
                 raise BadRequest('This package cannot be uninstalled!')
 
-.. deprecated:: 5.1
-
-    This example is for Extensions/install.py, an old Plone 2 way of writing installers and uninstallers.
-    It is still working in Plone 5.0, but will likely go away in Plone 5.1.
-    In Plone 5.1 you can decide not to create an uninstall profile.
-
 
 Best Practices
 ==============
@@ -770,9 +749,9 @@ Best Practices
 The ``purge`` attribute
 -----------------------
 
-When importing items such as property sheets,
-make sure not to override other profile settings:
+When importing items such as property sheets, make sure not to override other profile settings:
 set the ``purge`` attribute to False.
+
 This will *add* the listed items to the property instead of resetting the property.
 Example:
 
@@ -800,17 +779,16 @@ There are dangers:
   This should be regarded as a bug in the importer.
   Please report it.
 
-- Some importers check the truth value of the attribute, some just check the presence.
+- Some importers check the truth value of the attribute, some check the presence.
   So ``remove="false"`` may mean the item stays and may mean it gets removed.
   Best is to either use ``remove="true"`` or leave the entire keyword away.
 
 
-Only use the configuration that you need
-----------------------------------------
+Use the configuration that you need
+-----------------------------------
 
 When you export your site's configuration, it will include things that you don't need.
-For example,
-if you only need to change the 'Allow anonymous to view about' property,
+For example, if you need to change the 'Allow anonymous to view about' property,
 this is what your ``propertiestool.xml`` should look like:
 
 .. code-block:: xml
@@ -842,7 +820,7 @@ Note that you are always allowed to use the ``plone`` domain, but if the xml fil
       ...
     </object>
 
-  Note that when you go to the portal_actions tools in the ZMI, you will see an i18n domain specified for each action.
+Note, that when you go to the portal_actions tools in the ZMI, you will see an i18n domain specified for each action.
 
 - ``catalog.xml``: no i18n needed
 
@@ -851,7 +829,8 @@ Note that you are always allowed to use the ``plone`` domain, but if the xml fil
 - ``contenttyperegistry.xml``: no i18n needed
 
 - ``controlpanel.xml``: use **your own** domain.
-  Example::
+
+Example::
 
     <?xml version="1.0"?>
     <object name="portal_controlpanel" meta_type="Plone Control Panel Tool"
@@ -882,8 +861,11 @@ Note that you are always allowed to use the ``plone`` domain, but if the xml fil
 - ``metadata.xml``: no i18n needed
 
 - ``portal_atct.xml``: use the **plone** domain.
-  Note that this has no influence on the Collections panel in Site Setup.
-  It is only used on the edit and criteria pages of an old-style Collection.
+
+.. note::
+
+   This has no influence on the Collections panel in Site Setup.
+   It is only used on the edit and criteria pages of an old-style Collection.
 
 - ``portlets.xml``: use the **plone** domain.
 
@@ -909,11 +891,11 @@ Note that you are always allowed to use the ``plone`` domain, but if the xml fil
 Generic Setup files
 ===================
 
-.. note:
+.. note::
 
-    When you are developing, changes you make to an xml file are immediately available when you apply the profile.
-    You don't need to restart your Plone instance.
-    Exception: for changes to ``metadata.xml`` you *do* need to restart Plone.
+   When you are developing, changes you make to an xml file are immediately available when you apply the profile.
+   You don't need to restart your Plone instance.
+   Exception: for changes to ``metadata.xml`` you *do* need to restart Plone.
 
 
 actionicons.xml
@@ -921,8 +903,8 @@ actionicons.xml
 
 .. deprecated:: 4.0.
 
-    Plone 5 no longer even reads this file, because ``Products.CMFActionIcons`` is not included.
-    The icons should go in ``actions.xml`` directly.
+   Plone 5 no longer even reads this file, because ``Products.CMFActionIcons`` is not included.
+   The icons should go in ``actions.xml`` directly.
 
 
 actions.xml
@@ -993,7 +975,7 @@ Uninstall example:
 
 .. note::
 
-    You can use your own i18n domain.
+   You can use your own i18n domain.
 
 
 browserlayer.xml
@@ -1059,22 +1041,24 @@ Example:
     </componentregistry>
 
 .. note::
+
    A subscriber can either have a handler or a factory, not both.
    A factory must have a provides and may have a name.
    A subscriber will fail with a provides.
 
 .. note::
-    If something does not get added, its provider is probably blacklisted.
-    This list is defined by ``Products.GenericSetup.interfaces.IComponentsHandlerBlacklist`` utilities.
-    In standard Plone 5, these interfaces are blacklisted as providers:
 
-    - ``Products.GenericSetup.interfaces.IComponentsHandlerBlacklist``
+   If something does not get added, its provider is probably blacklisted.
+   This list is defined by ``Products.GenericSetup.interfaces.IComponentsHandlerBlacklist`` utilities.
+   In standard Plone 5, these interfaces are blacklisted as providers:
 
-    - ``plone.portlets.interfaces.IPortletManager``
+   - ``Products.GenericSetup.interfaces.IComponentsHandlerBlacklist``
 
-    - ``plone.portlets.interfaces.IPortletManagerRenderer``
+   - ``plone.portlets.interfaces.IPortletManager``
 
-    - ``plone.portlets.interfaces.IPortletType``
+   - ``plone.portlets.interfaces.IPortletManagerRenderer``
+
+   - ``plone.portlets.interfaces.IPortletType``
 
 Uninstall example:
 
@@ -1186,15 +1170,15 @@ Uninstall example:
 
 .. note::
 
-    The action is removed if the ``remove`` keyword is ``true``.
-    Upper or lower case does not matter.
+   The action is removed if the ``remove`` keyword is ``true``.
+   Upper or lower case does not matter.
 
-    The action is visible if the ``visible`` keyword is ``true``.
-    Upper or lower case does not matter.
+   The action is visible if the ``visible`` keyword is ``true``.
+   Upper or lower case does not matter.
 
 .. note::
 
-    You can use your own i18n domain.
+   You can use your own i18n domain.
 
 Code is in ``Products.CMFPlone.exportimport.controlpanel`` and ``Products.CMFPlone.PloneControlPanel``.
 
@@ -1204,7 +1188,7 @@ cssregistry.xml
 
 .. deprecated:: 5.0.
 
-    This still works in Plone 5, but it is deprecated.
+   This still works in Plone 5, but it is deprecated.
 
 For the old way, see: :doc:`Front-end: templates, CSS and Javascript </adapt-and-extend/theming/templates_css/index>`.
 
@@ -1269,9 +1253,9 @@ The ``difftypes`` in standard Plone 5 are:
 
 .. note::
 
-    There is no uninstall version.
-    The ``remove`` keyword is not supported.
-    The ``portal_diff`` tool does not show configuration for portal_types that no longer exist.
+   There is no uninstall version.
+   The ``remove`` keyword is not supported.
+   The ``portal_diff`` tool does not show configuration for portal_types that no longer exist.
 
 Code is in ``Products.CMFDiffTool.exportimport.difftool``.
 
@@ -1279,9 +1263,8 @@ Code is in ``Products.CMFDiffTool.exportimport.difftool``.
 factorytool.xml
 ---------------
 
-This is only needed for Archetypes content types.
-It makes sure when you start adding a content item but don't finish it,
-that no half created item lingers.
+This is needed for Archetypes content types.
+It makes sure when you start adding a content item but don't finish it, that no half created item lingers.
 This is not needed for Dexterity items.
 
 .. code-block:: xml
@@ -1302,7 +1285,7 @@ This is not needed for Dexterity items.
 
 .. note::
 
-    The ``remove`` keyword is not supported.
+   The ``remove`` keyword is not supported.
 
 Code is in ``Products.ATContentTypes.exportimport.factorytool``.
 
@@ -1312,7 +1295,7 @@ jsregistry.xml
 
 .. deprecated:: 5.0.
 
-    This still works in Plone 5, but it is deprecated.
+   This still works in Plone 5, but it is deprecated.
 
 For the old way, see: :doc:`Front-end: templates, CSS and Javascript </adapt-and-extend/theming/templates_css/index>`.
 
@@ -1324,7 +1307,7 @@ kssregistry.xml
 
 .. deprecated:: 4.3
 
-    Instead of these Kinetic Style Sheets you should use javascript.
+   Instead of these Kinetic Style Sheets you should use javascript.
 
 
 metadata.xml
@@ -1360,9 +1343,9 @@ When you search for ``metadata.xml`` in the documentation, you will find more in
 
 .. note::
 
-    There is no uninstall version of ``metadata.xml``.
-    An ``uninstall`` profile can have its own ``metadata.xml`` with a version and even profiles.
-    But for dependencies no ``purge`` or ``remove`` keyword is supported.
+   There is no uninstall version of ``metadata.xml``.
+   An ``uninstall`` profile can have its own ``metadata.xml`` with a version and even profiles.
+   But for dependencies no ``purge`` or ``remove`` keyword is supported.
 
 
 portal_atct.xml
@@ -1370,9 +1353,9 @@ portal_atct.xml
 
 .. deprecated:: 4.2
 
-    This was used for Archetypes Topics, the old-style Collections.
-    Since Plone 4.2 you can use new-style Collections.
-    Please use those.
+   This was used for Archetypes Topics, the old-style Collections.
+   Since Plone 4.2 you can use new-style Collections.
+   Please use those.
 
 .. code-block:: xml
 
@@ -1482,7 +1465,7 @@ propertiestool.xml
 
 .. deprecated:: 5.0
 
-    Most properties are now handled in the configuration registry and can be configured in ``registry.xml``.
+   Most properties are now handled in the configuration registry and can be configured in ``registry.xml``.
 
 In ``propertiestool.xml`` you can change all values of the ``portal_properties`` tool.
 Example:
@@ -1515,11 +1498,9 @@ pluginregistry.xml
 ------------------
 
 This configures PAS plugin orderings and active plugins. It isn't part of Plone
-itself, it is used by other frameworks and can be used in Plone with a little
-extra configuration.
+itself, it is used by other frameworks and can be used in Plone with a little extra configuration.
 
-First, you need a monkey patch in your ``__init__.py``` to point the importer at
-where Plone keeps its PAS plugins.
+First, you need a monkey patch in your ``__init__.py``` to point the importer at where Plone keeps its PAS plugins.
 
 .. code-block:: python
 
@@ -1596,7 +1577,7 @@ This edits the configuration registry.
 
 .. note::
 
-    The name of this import step is ``plone.app.registry``, **not** ``registry``.
+   The name of this import step is ``plone.app.registry``, **not** ``registry``.
 
 Example for adding all records of an interface:
 
@@ -1726,8 +1707,7 @@ Both are optional.
 The roles above are the standard roles in Plone 5.
 In your profile you only need to list other roles.
 
-The permission must already exist on the Zope level,
-otherwise you get an error when installing your profile::
+The permission must already exist on the Zope level, otherwise you get an error when installing your profile::
 
   ValueError: The permission <em>Pass the bridge</em> is invalid.
 
@@ -1742,10 +1722,10 @@ With ``acquire="true"`` (or ``True``, ``yes``, ``1``) roles are also acquired fr
 
 .. note::
 
-    There is no uninstall version for ``rolemap.xml``.
-    ``purge`` and ``remove`` are not supported.
-    You can set different values for a permission if this makes sense in your case.
-    This will reset the permission to the same settings as on the Zope level:
+   There is no uninstall version for ``rolemap.xml``.
+   ``purge`` and ``remove`` are not supported.
+   You can set different values for a permission if this makes sense in your case.
+   This will reset the permission to the same settings as on the Zope level:
 
     .. code-block:: xml
 
@@ -1818,11 +1798,8 @@ The ``allow_any``, ``cookie_persistence`` and ``request_varname`` options are ol
 No cookie is set.
 You can choose a skin path even when ``allow_any`` is false.
 
-The idea is:
-if you have the Sunburst Theme as default,
-and also have the Plone Classic Theme available,
-you can view the site in the classic theme by visiting this link:
-http://localhost:8080/Plone?plone_skin=Plone%20Classic%20Theme
+If you have the Sunburst Theme as default, and also have the Plone Classic Theme available,
+you can view the site in the classic theme by visiting this link: http://localhost:8080/Plone?plone_skin=Plone%20Classic%20Theme
 
 Uninstall example:
 
@@ -1838,9 +1815,9 @@ Uninstall example:
 
 .. note::
 
-    For removing the layer ``remove=""`` is sufficient.
-    For removing the object ``remove="true"`` is required.
-    Recommended is to use the full ``remove="true"`` in both cases.
+   For removing the layer ``remove=""`` is sufficient.
+   For removing the object ``remove="true"`` is required.
+   Recommended is to use the full ``remove="true"`` in both cases.
 
 
 tinymce.xml
@@ -1863,12 +1840,10 @@ This is used to add a tool to the site.
 
 .. warning::
 
-    This is an old way and should not be used in new code.
-    You should probably register a utility instead of a tool.
-    ``componentregistry.xml`` might be an alternative,
-    but registering a utility in zcml would be better.
-    If the utility needs configuration,
-    you can use ``registry.xml``.
+   This is an old way and should not be used in new code.
+   You should probably register a utility instead of a tool.
+   ``componentregistry.xml`` might be an alternative, but registering a utility in zcml would be better.
+   If the utility needs configuration, you can use ``registry.xml``.
 
 Example:
 
@@ -1897,7 +1872,7 @@ Uninstall example:
 
 .. note::
 
-  Adding a forbidden tool that was first required, like in the example above, is only supported since Products.GenericSetup 1.8.3.
+   Adding a forbidden tool that was first required, like in the example above, is only supported since Products.GenericSetup 1.8.3.
 
 Code is in:
 
@@ -1913,7 +1888,7 @@ This handles the ``types.xml`` file and the ``types`` directory.
 
 .. note::
 
-    The name of this import step is ``typeinfo``, **not** ``types``.
+   The name of this import step is ``typeinfo``, **not** ``types``.
 
 Partial example from ``plone.app.contenttypes``:
 
@@ -1943,8 +1918,7 @@ The ``meta_type`` can be:
   so the ability to choose a view in the ``display`` menu.
 
 The ``types.xml`` should be accompanied by a ``types`` folder with details information on the new types.
-If you are editing an already existing type, then ``types.xml`` is not needed:
-a file in the ``types`` folder is enough.
+If you are editing an already existing type, then ``types.xml`` is not needed, a file in the ``types`` folder is enough.
 
 If the object name in ``types.xml`` is ``Collection`` then you must add a file ``types/Collection.xml``.
 This file is in ``plone.app.contenttypes``:
@@ -2079,13 +2053,12 @@ Uninstall example:
 
 .. note::
 
-    The ``remove`` keyword is supported for actions.
-    ``remove=""`` is enough, but recommended is to use ``remove="true"``.
+   The ``remove`` keyword is supported for actions.
+   ``remove=""`` is enough, but recommended is to use ``remove="true"``.
 
-    The ``view_methods`` property is a list that is always imported fresh.
-    Elements that are not in the list, are removed.
-    If you only want to add an element and want to keep any existing elements,
-    you can tell it not to purge:
+   The ``view_methods`` property is a list that is always imported fresh.
+   Elements that are not in the list, are removed.
+   If you only want to add an element and want to keep any existing elements, you can tell it not to purge:
 
     .. code-block:: xml
 
@@ -2097,7 +2070,7 @@ Uninstall example:
 
 .. note::
 
-    You can use your own i18n domain.
+   You can use your own i18n domain.
 
 
 viewlets.xml
