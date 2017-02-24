@@ -37,7 +37,7 @@ Plone installation requirements
 
 See :doc:`Plone installation requirements <requirements>` for detailed requirements.
 
-* You need at a dedicated or virtual private server (VPS) with 512 MB RAM available.
+* You need at least a dedicated or virtual private server (VPS) with 512 MB RAM available.
   Shared hosting is not supported unless the shared hosting company says Plone is good to go.
 
 
