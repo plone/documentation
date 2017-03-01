@@ -10,18 +10,17 @@ Querying
 Introduction
 ============
 
-*Querying* is the action to retrieve data from search indexes.  In Plone's
-case this usually means querying content items using the ``portal_catalog``
-tool.  Plone uses the :doc:`portal_catalog </develop/plone/searching_and_indexing/catalog>`
-tool to perform most content-related queries. Special catalogs, like
-``reference_catalog``, exist, for specialized and optimized queries.
+*Querying* is the action to retrieve data from search indexes.
+In Plone's case this usually means querying content items using the ``portal_catalog`` tool.
+
+Plone uses the :doc:`portal_catalog </develop/plone/searching_and_indexing/catalog>`
+tool to perform most content-related queries. Special catalogs, like ``reference_catalog``, exist, for specialized and optimized queries.
 
 
 Accesing the ``portal_catalog`` tool
 ====================================
 
-Plone queries are performed using ``portal_catalog`` persistent tool which
-is available as an persistent object at the site root.
+Plone queries are performed using ``portal_catalog`` persistent tool which is available as an persistent object at the site root.
 
 Example::
 
@@ -65,10 +64,11 @@ To search for something and get the resulting brains, write::
    defined for the catalog.
 
 Where ``kwargs`` is a dictionary of index names and their associated query
-values. Only the indexes that you care about need to be included. This is
-really useful if you have variable searching criteria, for example, coming
-from a form where the users can select different fields to search for. For
-example::
+values.
+Only the indexes that you care about need to be included.
+This is really useful if you have variable searching criteria, for example, coming
+from a form where the users can select different fields to search for.
+For example::
 
     results = catalog.searchResults({'portal_type': 'Event', 'review_state': 'pending'})
 
@@ -95,19 +95,20 @@ The catalog tool queries return an iterable of catalog brain objects.
 As mentioned previously, brains contain a subset of the actual content
 object information. The available subset is defined by the metadata
 columns in portal_catalog. You can see available metadata columns on
-the portal_catalog "Metadata" tab in ZMI. For more information, see :doc:`indexing </develop/plone/searching_and_indexing/indexing>`.
+the portal_catalog "Metadata" tab in Management Interface.
+For more information, see :doc:`indexing </develop/plone/searching_and_indexing/indexing>`.
 
 
 Available indexes
 -----------------
 
 To see the full list of available indexes in your catalog, open the
-ZMI (which usually means navigating to *http://yoursiteURL/manage*)
+Management Interface (which usually means navigating to *http://yoursiteURL/manage*)
 look for the *portal\_catalog* object tool in the root of your
-Plone site and check the *Indexes* tab. Note that there are
-different types of indexes, and each one admits different types of
-search parameters, and behaves differently. For example,
-*FieldIndex* and *KeywordIndex* support sorting, but *ZCTextIndex*
+Plone site and check the *Indexes* tab.
+Note that there are different types of indexes, and each one admits different types of
+search parameters, and behaves differently.
+For example, *FieldIndex* and *KeywordIndex* support sorting, but *ZCTextIndex*
 doesn't. To learn more about indexes, see
 `The Zope Book, Searching and Categorizing Content <http://docs.zope.org/zope2/zope2book/SearchingZCatalog.html>`_.
 
@@ -441,32 +442,32 @@ Bypassing language check
         the current user. You need to explicitly bypass the language check if you
         want to do multilingual queries.
 
-Language is only a factor when a multilingual product is installed - which 
-basically comes down to one of the venerable ``LinguaPlone`` or the more modern 
-``plone.app.multilingual``. Bypassing the language check depends on which of 
+Language is only a factor when a multilingual product is installed - which
+basically comes down to one of the venerable ``LinguaPlone`` or the more modern
+``plone.app.multilingual``. Bypassing the language check depends on which of
 these you are using.
 
-In LinguaPlone and plone.app.multilingual 1.x (what you would probably use in 
-versions 4.3 or earlier of Plone), a patch is applied to the portal_catalog.  
+In LinguaPlone and plone.app.multilingual 1.x (what you would probably use in
+versions 4.3 or earlier of Plone), a patch is applied to the portal_catalog.
 To bypass this add the parameter ``Language='all'`` to your catalog query like
 so::
 
     all_content_brains = portal_catalog(Language="")
 
-``plone.app.multilingual`` creates Root Language Folders for each of your site's 
-languages and keeps ("jails") content within the appropriate folders. Each Root 
+``plone.app.multilingual`` creates Root Language Folders for each of your site's
+languages and keeps ("jails") content within the appropriate folders. Each Root
 Language Folder is also a NavigationRoot, so the portal_catalog is effectively
 limited to searches in the users current language.
-This means that the way to bypass this is to add the parameter ``path='/'` to 
+This means that the way to bypass this is to add the parameter ``path='/'` to
 your catalog query like so::
 
     all_content_brains = portal_catalog(path='/')
 
 .. note ::
- 
-         Although the language folders are also marked to be INavigationRoot, 
-         in LinguaPlone the language of the content is not enforced inside the 
-	 language folder (in plone.app.multilingual there's a subscriber that 
+
+         Although the language folders are also marked to be INavigationRoot,
+         in LinguaPlone the language of the content is not enforced inside the
+	 language folder (in plone.app.multilingual there's a subscriber that
 	 moves the content to the appropriate folder).
 
 
@@ -650,7 +651,7 @@ To get all catalog brains of certain content type on the whole site::
 
         campaign_brains = self.context.portal_catalog(portal_type="News Item")
 
-To see available type names, visit in portal_types tool in ZMI.
+To see available type names, visit in portal_types tool in Management Interface.
 
 Query published items
 =====================
@@ -664,7 +665,7 @@ Example::
 
 
 review_state is a portal_catalog index which reads portal_workflow variable "review_state".
-For more information, see what portal_workflow tool *Content* tab in ZMI contains.
+For more information, see what portal_workflow tool *Content* tab in Management Interface contains.
 
 Getting a random item
 =====================
@@ -1064,7 +1065,7 @@ site objects.
 Here is an example how to crawl through Plone content to search HTML
 snippets. This can be done by rendering every content object and check
 whether certain substrings exists the output HTML This snippet can be
-executed through-the-web in Zope Management Interface.
+executed through-the-web in Management Interface.
 
 This kind of scripting is especially useful if you need to find old links or
 migrate some text / HTML snippets in the content itself. There might be

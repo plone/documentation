@@ -1,6 +1,6 @@
-=======
- RSS
-=======
+===
+RSS
+===
 
 .. admonition:: Description
 
@@ -71,7 +71,7 @@ Linking the RSS feed to site action links
 *Site actions* is the top right link slot on the Plone site.
 By default, Plone site wide RSS link will appear there if enabled.
 
-* Go to portal_actions in ZMI
+* Go to portal_actions in the Management Interface
 
 * Go to */portal_actions/site_actions/rss*
 

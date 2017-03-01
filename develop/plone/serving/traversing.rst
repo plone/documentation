@@ -43,7 +43,7 @@ Object ids
 
 Each content object has an id string which identifies the object in the
 parent container.  The id string is visible in the browser address bar when
-you view the object.  Ids are also visible in the Zope Management interface.
+you view the object.  Ids are also visible in the Management Interface.
 
 Besides id strings, the content objects have Unique Identifiers, or UID_,
 which do not change even if the object is moved or renamed.
@@ -70,7 +70,7 @@ Example::
 Exploring Zope application server
 =================================
 
-You can use the Zope Management interface to explore the content of your
+You can use the Management Interface to explore the content of your
 Zope application server:
 
 * Sites
@@ -79,8 +79,8 @@ Zope application server:
 
 * ...and so on
 
-The ZMI does not expose individual attributes. It only exposes traversable
-content objects.
+The Management Interface does not expose individual attributes.
+It only exposes traversable content objects.
 
 Attribute traversing
 ====================

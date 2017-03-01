@@ -19,7 +19,7 @@ The form folder creates a form from all the contained field content objects.
 Final disposition of form input is handled via plug-in action products.
 
 Action adapters included with this release include a mailer, a save-data adapter that saves input in tab-separated format for later download,
-and a custom-script adapter that makes it possible to script simple actions without recourse to the Zope Management Interface.
+and a custom-script adapter that makes it possible to script simple actions without recourse to the Management Interface.
 
 To make it easy to get started, newly created form folders are pre-populated to act as a simple e-mail response form.
 

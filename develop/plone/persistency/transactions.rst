@@ -99,7 +99,7 @@ It is possible to perform actions before and after transaction is written to
 the database.
 
 See transaction documentation about
-`before commit hooks <http://zodb.readthedocs.org/en/latest/transactions.html#before-commit-hook>`_ and 
+`before commit hooks <http://zodb.readthedocs.org/en/latest/transactions.html#before-commit-hook>`_ and
 `after commit hooks <http://zodb.readthedocs.org/en/latest/transactions.html#after-commit-hooks>`_.
 
 
@@ -112,7 +112,8 @@ Undoing transactions
 =======================
 
 Everything that has happened on Plone site can be undoed through the *Undo*
-tab in ZMI, in site root. By default you can undo latest 20 transactions.
+tab in the Management Interface, in site root.
+By default you can undo latest 20 transactions.
 
 If you need to raise this limit just replace all numbers of ``20``
 with higher value in file ``App/Undo.py``, restart site and now you can undo more transactions.

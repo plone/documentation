@@ -4,14 +4,13 @@ Actions
 
 .. admonition:: Description
 
-        Creating and using portal_actions mechanism
+   Creating and using portal_actions mechanism
 
 
 Introduction
 ------------
 
-Plone has concept of actions which refer the end user functionality associated with site
-or content objects:
+Plone has concept of actions which refer the end user functionality associated with site or content objects:
 
 * View, edit, sharing etc. are actions
 
@@ -186,7 +185,7 @@ Content type specific actions
 -------------------------------
 
 Content type specific actions can be registered in portal_types.
-Actions are viewable and editable in Zope Management Interface under portal_types.
+Actions are viewable and editable in the Management Interface under portal_types.
 After editing actions,
 content type XML can be  exported and placed to your content type add-on product.
 
@@ -254,7 +253,7 @@ Example::
         """
 
         # getActionObject takes parameter category/action id
-        # For ids and categories please refer to portal_actins in ZMI
+        # For ids and categories please refer to portal_actins in the Management Interface
         actionInformation = portal.portal_actions.getActionObject("document_actions/rss")
 
         # See ActionInformation.py / ActionInformation for available edits

@@ -15,8 +15,8 @@ Here are useful information and snippets when hosting Plone behind Apache.
 Installing Apache front-end for Plone
 =====================================
 
-Apache runs on port 80. Plone runs on port 8080. Apache accepts all HTTP
-traffic to your internet domain.
+Apache runs on port 80.
+Plone runs on port 8080. Apache accepts all HTTP traffic to your internet domain.
 
 Here are quick instructions for Ubuntu / Debian.
 
@@ -32,7 +32,7 @@ Install required software:
     sudo /etc/init.d/apache2 restart
 
 Add virtual host config file ``/etc/apache2/sites-enabled/yoursite.conf``.
-Assuming *Plone* is your site id in Zope Management Interface (capital lettering do matter) and your
+Assuming *Plone* is your site id in the Management Interface (capital lettering do matter) and your
 domain name is ``yoursite.com`` (note with or without www matters, see below)::
 
         UseCanonicalName On
@@ -243,9 +243,12 @@ Virtual hosting Apache configuration generator
 Caching images
 ---------------
 
-First of all, there are much better caching solutions for Plone than Apache's mod_cache, see the :doc:`Guide to caching </manage/deploying/caching/index>`.
+There are much better caching solutions for Plone than Apache's mod_cache, see the :doc:`Guide to caching </manage/deploying/caching/index>`.
 
-One important thing to know about mod_cache is that by default it caches Set-Cookie headers. Most likely, this is not what you want when using it with Plone, so you should use the CacheIgnoreHeaders directive to strip Set-Cookie headers from cached objects.
+One important thing to know about mod_cache is that by default it caches Set-Cookie headers.
+Most likely, this is not what you want when using it with Plone, so you should use the CacheIgnoreHeaders
+directive to strip Set-Cookie headers from cached objects.
+
 Have a close look at the official `Apache documentation <http://httpd.apache.org/docs/current/mod/mod_cache.html>`_) and also read the comments at the bottom, they are very informative - even more so in the `2.2 version <http://httpd.apache.org/docs/2.2/mod/mod_cache.html>`_.
 
 If you cannot avoid using mod_cache, you can configure disk based Apache caching as follows:

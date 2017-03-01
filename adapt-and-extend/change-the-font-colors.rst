@@ -56,7 +56,7 @@ To make life easier for yourself, you might like to open a second tab or
 browser window at this point - you can then quickly switch back to the
 first tab to see your changes.
 
-Go to Site Setup > Zope Management Interface and click portal\_skins
+Go to Site Setup > Management Interface and click portal\_skins
 
 Use the Find option in the tabs across the top to locate
 ploneCustom.css:
@@ -102,7 +102,7 @@ commenting syntax applies
 delete (or, if you want to keep a note of what you did, rename) your
 version of ploneCustom.css, you'll find it here:
 
--  Site Setup > Zope Management Interface > portal\_skins > custom
+-  Site Setup > Management Interface > portal\_skins > custom
 -  you can choose the delete or rename options - try renaming to
    ploneCustom.css.old
 -  you can then go back to the beginning of the process of locating and

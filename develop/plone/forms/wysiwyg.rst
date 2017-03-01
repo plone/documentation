@@ -30,7 +30,7 @@ If you need to put a `<script>` tag on your content text in TinyMCE you can disa
 
         If you don't trust all of your site editors, then this will open your site for an attack.
 
-**Step 1:** Turn off Plone’s safe_html transform. Go to /portal_transforms/safe_html in the ZMI, and enter a 1 in the ‘disable_transform’ box. This prevents Plone from removing tags and attributes while rendering rich text.
+**Step 1:** Turn off Plone’s safe_html transform. Go to /portal_transforms/safe_html in the Management Interface, and enter a 1 in the ‘disable_transform’ box. This prevents Plone from removing tags and attributes while rendering rich text.
 
 **Step 2:** Set the "X-XSS-Protection: 0" response header. This can be done in your frontend webserver such as apache or nginx. Alternatively, if you only need to disable the protection for users who have permission to edit, you can add this to the site’s main_template:
 

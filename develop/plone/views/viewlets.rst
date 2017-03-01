@@ -4,8 +4,8 @@ Viewlets
 
 .. admonition:: Description
 
-        Viewlets are parts of the page in Plone page rendering process.
-        You can create, hide and shuffle them freely.
+   Viewlets are parts of the page in Plone page rendering process.
+   You can create, hide and shuffle them freely.
 
 
 Introduction
@@ -53,7 +53,7 @@ Finding viewlets
 There are two through-the-web tools to start looking what viewlets are available on your installation. The
 available viewlets may depend on installed Plone version and installed add-ons.
 
-* The ``portal_view_customizations`` tool in ZMI will show you viewlet registrations (and the viewlet managers they are registered for). As with views, you can hover over the viewlet name to see where it is registered in a tool tip.
+* The ``portal_view_customizations`` tool in the Management Interface will show you viewlet registrations (and the viewlet managers they are registered for). As with views, you can hover over the viewlet name to see where it is registered in a tool tip.
 
 * To discover the name of a particular viewlet, you can use the ``@@manage-viewlets`` view, e.g. http://localhost:8080/plone/@@manage-viewlets.
 
@@ -349,9 +349,9 @@ Conditionally rendering viewlets
 There are two primary methods to render viewlets only on some pages
 
 * Register viewlet against some marker interface or content type class -
-  the viewlet is rendered on this content type only. You can
-  use :doc:`dynamic marker interfaces </develop/addons/components/interfaces>`
-  to toggle interface on some individual pages through ZMI
+  the viewlet is rendered on this content type only.
+  You can use :doc:`dynamic marker interfaces </develop/addons/components/interfaces>`
+  to toggle interface on some individual pages through the Management Interface.
 
 * Hard-code a condition to your viewlet in Python code.
 

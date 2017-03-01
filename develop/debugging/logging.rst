@@ -4,7 +4,7 @@ Logging
 
 .. admonition:: Description
 
-        How to write log output from your Plone add-on program code
+   How to write log output from your Plone add-on program code.
 
 
 Introduction
@@ -31,7 +31,7 @@ The site error log service
 --------------------------
 
 Plone sites contain error log service which is located as *error_log* in the site root. It logs site exceptions and makes
-the tracebacks accessible from Plone control panel and ZMI.
+the tracebacks accessible from Plone control panel and the Management Interface.
 
 The service is somewhat archaic and can log exceptions only, not plain error messages.
 

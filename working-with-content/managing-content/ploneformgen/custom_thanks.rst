@@ -4,20 +4,21 @@ Customizing an individual thanks page
 
 .. admonition :: Description
 
-    It's not hard to customize the thanks page for an individual form. This trick is particularly useful for purposes like adding 'pay now' buttons.
+    It's not hard to customize the thanks page for an individual form.
+    This trick is particularly useful for purposes like adding 'pay now' buttons.
 
-If you can tolerate a little work in the Zope Management Interface, you'll find it very easy to customize the Thanks Page for an individual form.
+If you can tolerate a little work in the Management Interface, you'll find it very easy to customize the Thanks Page for an individual form.
 
 The steps:
 
 
 1. Create your form;
 
-2. Bring up the Zope Management Interface; navigate to portal_skins/PloneFormGen;
+2. Bring up the Management Interface; navigate to portal_skins/PloneFormGen;
 
 3. Open the fp_thankspage_view template; push the Customize button; this puts an editable copy of the thanks page template in your custom skin folder.
 
-4. Step back to the Custom folder listing (still in the ZMI); cut the fp_thankspage_view template;
+4. Step back to the Custom folder listing (still in the Management Interface); cut the fp_thankspage_view template;
 
 5. Navigate to your form folder; paste it there.
 
@@ -25,4 +26,6 @@ The steps:
 
  .. note::
 
-    Note: If there is already an fp_thankspage_view template in your custom skin folder (perhaps because you've already customized the template for the site), you'll be cutting and pasting a new copy.
+    Note: If there is already an fp_thankspage_view template in your custom skin folder
+    (perhaps because you've already customized the template for the site),
+    you'll be cutting and pasting a new copy.

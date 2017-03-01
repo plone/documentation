@@ -170,9 +170,8 @@ specific front-end instance
 by using direct port access. Note that ``parts`` folder structure is pruned
 on each buildout run.
 
-When files are placed on the server to correct folder,
-the :guilabel:`Import/Export` tab in the :term:`ZMI` will pick them
-up in the selection drop down. You do not need to restart Zope.
+When files are placed on the server to correct folder, the :guilabel:`Import/Export` tab
+in the Management Interface will pick them up in the selection drop down. You do not need to restart Zope.
 
 More information
 

@@ -10,13 +10,11 @@ About Instances and Threads, Performance and RAM consumption
 Introduction
 ------------
 
-In a usual production Zope/Plone setup there are some tunings possible. So you
-searched a bit and found that, for a certain size of site, you need more than
-one Zope-instance and use `HAproxy`_ or `Pound`_ to load-balance between them.
-Then you may ask yourself: How many instances do I need? Next you see there
-is value "threads per instance" and wonder about the different
-recommendations: Only one thread or two, or four? And how does it effect
-memory usage?
+In a usual production Zope/Plone setup there are some tunings possible.
+For a certain size of site, you need more than one Zope-instance and use `HAproxy`_ or `Pound`_ to load-balance between them.
+Then you may ask yourself: How many instances do I need?
+Next you see there is value "threads per instance" and wonder about the different
+recommendations: Only one thread or two, or four? And how does it effect memory usage?
 
 Rule Of The Thumb
 -----------------
@@ -60,7 +58,7 @@ Memory Cache:
   loaded from the DB - and the process of unpickling is still expensive.
 
   An instance may never get enough load so that all available threads are used
-  concurrently. In this case you may find in the ZMI (Zope-root -> Control_Panel
+  concurrently. In this case you may find in the Management Interface (Zope-root -> Control_Panel
   -> Database -> Main DB) that there are only 2 connections, but you have 4
   threads. That's because there were never 4 connections used in parallel.
 

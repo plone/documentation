@@ -103,8 +103,8 @@ Refer this field in site_feedback_template.pt::
 
 .. note::
 
-        As a crude hack we add new field to the very bottom of the email, as everything side <div i18n:translate>
-        is replaced from translation catalogs.
+   As a crude hack we add new field to the very bottom of the email, as everything side <div i18n:translate>
+   is replaced from translation catalogs.
 
 Replacing the site contact form with a content object
 -----------------------------------------------------
@@ -115,7 +115,7 @@ content editors can alter. Naming your content item ``contact-info``
 works because Zope traversal will find your content item before the
 page template. However Plone won't allow a new piece of content to be
 named ``contact-info`` since that's a reserved identifier, so the
-trick is to rename it in the ZMI from the Plone-generated
+trick is to rename it in the Management Interface from the Plone-generated
 ``contact-info-1`` back to ``contact-info``.
 
 This works for ``accessibility-info`` too.

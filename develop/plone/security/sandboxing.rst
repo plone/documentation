@@ -1,29 +1,23 @@
-=================================
+===============================
 Sandboxing and RestrictedPython
-=================================
+===============================
 
 .. admonition:: Description
 
-        Legacy Plone code uses RestrictedPython sandboxing to secure
-        each module and class functions. This documentation
-        tells how it happens.
-
-.. contents :: local
+   Legacy Plone code uses RestrictedPython sandboxing to secure each module and class functions.
 
 Introduction
 -------------
 
 Plone has two sandboxing modes
 
-* Unrestricted: Python code is executed normally and the code can access the full
-  Zope application server environment. This includes other site instances too.
-  This is generally what happens when you write your own add-on and
-  add views for it.
+* Unrestricted: Python code is executed normally and the code can access the full Zope application server environment.
+  This includes other site instances too.
+  This is generally what happens when you write your own add-on and add views for it.
 
 * Restricted (RestrictedPython): scripts and evalutions are specially compiled, have limited Python
   language functionality and every function call is checked against the security manager.
-  This is what happens when you try to add Python code or customize
-  page templates through Zope Management Interface.
+  This is what happens when you try to add Python code or customize page templates through the Management Interface.
 
 Restricted execution is enabled only for **through-the-web** scripts and **legacy code**:
 
@@ -33,10 +27,10 @@ Restricted execution is enabled only for **through-the-web** scripts and **legac
 
 * Script (Python) code is executed (plone_skins layer Python scripts and old style form management)
 
-.. note ::
+.. note::
 
-        RestrictedPython was bad idea and mostly causes headache. Avoid through-the-web
-        Zope scripts if possible.
+   RestrictedPython was bad idea and mostly causes headache.
+   Avoid through-the-web Zope scripts if possible.
 
 For further information, read
 

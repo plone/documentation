@@ -35,7 +35,7 @@ RAM Cache
 The RAM cache is used e.g. as a rendered template cache backend.
 
 You can add ``MemcachedManager`` to your Zope setup, and replace the
-RamCache instance in the ZMI with a new instance of ``MemcachedManager``
+RamCache instance in the Management Interface with a new instance of ``MemcachedManager``
 (keep the id the same).
 
 * https://pypi.python.org/pypi/Products.MemcachedManager

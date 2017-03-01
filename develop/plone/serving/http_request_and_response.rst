@@ -220,7 +220,7 @@ Dumping all headers::
     for name, value in request.environ.items():
         print "%s: %s" % (name, value)
 
-A simple ZMI Python script to dump all HTTP request headers::
+A Management Interface Python script to dump all HTTP request headers::
 
     from StringIO import StringIO
 
@@ -620,7 +620,7 @@ Create a file ``redirect.py`` and add the code below. Remember to add
             Call a custom TTW script and allow it to handle redirects.
 
 
-            Use Zope Management Interface to add a ``Script (Python)`` item named ``redirect_handler``
+            Use the Management Interface to add a ``Script (Python)`` item named ``redirect_handler``
             to your site root - you can edit this script in fly to change the redirects.
 
             * Redirect script must contain ``url`` in its parameter list
@@ -674,8 +674,8 @@ Create a file ``redirect.py`` and add the code below. Remember to add
                     raise Redirect, value
 
 
-Then an example ``redirect_handler`` script added through ZMI. Remember
-to add ``url`` to the *Parameter List* field of TTW interface::
+Then an example ``redirect_handler`` script added through the Management Interface.
+Remember to add ``url`` to the *Parameter List* field of TTW (through the web) interface::
 
         if "blaablaa" in url:
             return "http://webandmobile.mfabrik.com"

@@ -19,12 +19,12 @@ Upgrade add-on products
     - Perform product-specific upgrade procedures (if any).
     - You will find these in the documentation of each product.
 
-Should the ``/prefs_install_products_form`` be unreachable, you should try doing the add-on upgrades from the ZMI.
-Navigate to the quickinstaller in the ZMI, and reinstall or upgrade products that are shown to be outdated.
+Should the ``/prefs_install_products_form`` be unreachable, you should try doing the add-on upgrades from the Management Interface.
+Navigate to the quickinstaller in the Management Interface, and reinstall or upgrade products that are shown to be outdated.
 
 .. note::
 
-   Be careful when updating add-ons through the ZMI.
+   Be careful when updating add-ons through the Management Interface.
    It may show outdated themes as well with a hint to update.
    If you do that, the updated theme will activate itself, overriding your current theme.
    If this happens, re-enable your theme in the theming panel.

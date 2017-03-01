@@ -45,7 +45,7 @@ For the security reasons, this option is disabled by default.
 * Restart Plone properly after buildout ``bin/plonectl stop && bin/plonectl start``
 
 * remove the ``Unauthorized`` exception from the list of ignored exceptions inside
-  the ``error_log`` object within the Plone root folder through the ZMI
+  the ``error_log`` object within the Plone root folder through the Management Interface
 
 More info
 
@@ -82,7 +82,7 @@ Checking whether a specific role has a permission
 The following example uses the ``rolesOfPermission()`` method to check
 whether the *Authenticated* role has a permission on a certain folder on the
 site. The weirdness of the method interface is explained by the fact that
-it was written for use in a :term:`ZMI` template::
+it was written for use in a Management Interface template::
 
     def checkDBPermission(self):
         from zope.app.component.hooks import getSite

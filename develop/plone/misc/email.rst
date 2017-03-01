@@ -29,7 +29,7 @@ queue.
 .. note::
   Using a mail queue is recommended for production sites.
 
-To enable the queue, go to the ZMI and the MailHost tool. Here, check the "Use
+To enable the queue, go to the Management Interface and the MailHost tool. Here, check the "Use
 mail queue" setting and set the "Queue directory". The queue directory is given
 as an absolute path on your server, must have a maildir layout (it needs the
 directories 'cur', new' and 'tmp' in it) and must be writeable by the system

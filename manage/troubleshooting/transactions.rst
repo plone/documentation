@@ -281,7 +281,7 @@ causing a database write.
 
 Symptoms:
 
-* Your Undo tab in ZMI will be full of entries, one added per
+* Your Undo tab in the Management Interface will be full of entries, one added per
   page request.
 
 * If you run the server in single Zope server mode, it is slow.

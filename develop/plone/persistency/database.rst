@@ -144,7 +144,7 @@ Packing through-the-web
 -----------------------
 
 Manual packing can be executed through Zope Control Panel (not Plone control panel)
-in Zope application server root (not Plone site root) in ZMI.
+in Zope application server root (not Plone site root) in the Management Interface.
 
 Packing from command line
 -------------------------

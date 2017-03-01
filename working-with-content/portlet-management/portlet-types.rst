@@ -97,8 +97,8 @@ Classic
 =======
 
 A Classic Portlet is refers to the way portlets were used in older version of Plone, prior to Plone 3.
-You must create a Page Template in the ZMI and properly set the path and macro to enable the portlet.
-This requires technical knowledege of both TALES and the ZMI.
+You must create a Page Template in the Management Interface and properly set the path and macro to enable the portlet.
+This requires technical knowledege of both TALES and the Management Interface.
 
 .. warning::
 

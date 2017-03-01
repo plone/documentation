@@ -14,8 +14,8 @@ Creating a dynamic field default means to have a form field's initial value chan
 
     Please note that it's easy to make a mistake when working with TALES fields that will cause an error when you try to display your form. Stay calm! Take note of the error message, and return to the field edit form to fix it. Don't be scared of this kind of error.
 
-A quick example
-===============
+Example
+=======
 
 Let's say you wish to put the member's id in a string field default. You may do that with the TALES expression::
 
@@ -87,7 +87,7 @@ If you need to dynamically set several fields, you may do it with one script. Ca
 
 Set the form fields by putting them in the request/form dictionary. Make sure you don't overwrite anything that's already in the dictionary, as that is probably previously submitted input.
 
-For example, we could create a Python Script (using the ZMI) in the form folder:
+For example, we could create a Python Script (using the Management Interface) in the form folder:
 
 .. code-block:: python
 

@@ -80,6 +80,6 @@ All in all, this allows sophisticated setups, where some content items just foll
 
    **Defining your own workflows**
 
-   It is no problem to define your own workflows. By default, however, that involves a trip to the :doc:`ZMI Management Interface <management-interface>` which is not incredibly userfriendly, and defining new workflows is a task best left for your Site Administrator or other specialist.
+   It is no problem to define your own workflows. By default, however, that involves a trip to the :doc:`Management Interface <management-interface>` which is not incredibly userfriendly, and defining new workflows is a task best left for your Site Administrator or other specialist.
 
    There are several add-ons, however, like `plone.app.workflowmanager <https://github.com/plone/plone.app.workflowmanager>`_ that will present a graphical tool to define workflows.

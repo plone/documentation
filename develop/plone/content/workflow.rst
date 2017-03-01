@@ -23,7 +23,7 @@ For more information, see
 Creating workflows
 ------------------
 
-The recommended method is to use the portal_workflow user interface in the Zope Management Interface
+The recommended method is to use the portal_workflow user interface in the Management Interface
 to construct the workflow through-the-web and then you can export it using GenericSetup's portal_setup tool.
 
 Include necessary parts from exported workflows.xml and workflows folder in your add-on product
@@ -102,7 +102,7 @@ Disabling workflow for a content type
 If a content type doesn't have a workflow it uses its parent container security settings.
 By default, content types Image and File have no workflow.
 
-Workflows can be disabled by setting the workflow setting empty in portal_workflow in ZMI.
+Workflows can be disabled by setting the workflow setting empty in portal_workflow in the Management Interface.
 
 Example how to do it with GenericSetup *workflows.xml*
 
@@ -123,8 +123,7 @@ Example how to do it with GenericSetup *workflows.xml*
 Updating security settings after changing workflow
 ==================================================
 
-Through the web this would be done by going to
-ZMI > portal_workflow > update security settings
+Through the web this would be done by going to the Management Interface > portal_workflow > update security settings
 
 To update security settings programmatically use the method updateRoleMappings.
 The snippet below demonstrates this::

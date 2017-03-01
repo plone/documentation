@@ -4,16 +4,14 @@ Available permissions in Plone
 
 .. admonition:: Description
 
-        What Zope security permissions you have available for your Plone coding
-
-.. contents :: local
+   What Zope security permissions you have available for your Plone coding
 
 Listing different available permissions
 =======================================
 
 Each permission name is a string.
 
-To see available permissions, click Security tab at your site root in Zope Management Interface.
+To see available permissions, click Security tab at your site root in the Management Interface.
 
 In programming, use pseudoconstants instead of permission string values:
 
@@ -43,7 +41,7 @@ Example using UNIX grep tool:
 Useful permissions
 ==================
 
-Permissions are shown by their verbose name in the :term:`ZMI`.
+Permissions are shown by their verbose name in the Management Interface.
 
 ``View``
     This governs whether you are allowed to view some content.

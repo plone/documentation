@@ -4,24 +4,20 @@ Expressions
 
 .. admonition:: Description
 
-    Expressions are string templates or Python expressions
-    which are used in various places in Plone for templates,
-    action conditions
-    and URL generation.
+    Expressions are string templates or Python expressions which are used in various places in Plone for templates,
+    action conditions and URL generation.
 
 
 Introduction
 ============
 
 Expressions are part of :term:`TAL`, the Template Attribute Language.
-They are used in Zope Page Templates (:term:`ZPT`) and
-as part of workflow definitions, among other things.
-You might want to use expressions in your own add-on product
-to provide user-written conditions for viewlet visibility,
+They are used in Zope Page Templates (:term:`ZPT`) and as part of workflow definitions, among other things.
+
+You might want to use expressions in your own add-on product to provide user-written conditions for viewlet visibility,
 portlets, dynamic text, etc.
 
-The authoritative reference is
-`Appendix C: Zope Page Templates Reference <http://docs.zope.org/zope2/zope2book/AppendixC.html>`_
+The authoritative reference is `Appendix C: Zope Page Templates Reference <http://docs.zope.org/zope2/zope2book/AppendixC.html>`_
 of the `Zope 2 Book <http://docs.zope.org/zope2/zope2book/index.html>`_
 
 Expressions are used in:
@@ -326,12 +322,9 @@ Through-the-web scripts
 
    Move TTW script info to its own chapter.
 
-The Zope Management Interface allows one to create,
-edit and execute
-:doc:`RestrictedPython sandboxed scripts </develop/plone/security/sandboxing>`
-directly through the web management interface. This functionality
-is generally discouraged nowadays in the favor of
-:doc:`view classes </develop/plone/views/browserviews>`.
+The Management Interface allows one to create, edit and execute :doc:`RestrictedPython sandboxed scripts </develop/plone/security/sandboxing>`
+directly through the web management interface.
+This functionality is generally discouraged nowadays in the favor of :doc:`view classes </develop/plone/views/browserviews>`.
 
 Creating a TTW Python script in an add-on installer
 -----------------------------------------------------
