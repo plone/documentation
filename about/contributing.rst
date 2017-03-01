@@ -26,9 +26,9 @@ We love your feedback! In order to improve the documentation we need your feedba
 
 If you have already a GitHub account, please do not hesitate to open a ticket in our `issue tracker <https://github.com/plone/documentation/issues>`_ .
 
-If you do not have one, please use the 'Feedback' widget on http://docs.plone.org.
+If you do not have one, please use the 'Feedback' widget on `docs.plone.org <http://docs.plone.org>`_ .
 
-.. image:: /_static/feedback.png
+.. image:: /_static/feedback_widget_right.png
    :align: center
    :alt: Picture of feedback widget
 
