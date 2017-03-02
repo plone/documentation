@@ -10,7 +10,7 @@ Actions
 Introduction
 ------------
 
-Plone has concept of actions which refer the end user functionality associated with site or content objects:
+Plone has concept of actions which connect the end user functionality associated with site or content objects:
 
 * View, edit, sharing etc. are actions
 

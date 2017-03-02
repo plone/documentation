@@ -14,8 +14,7 @@ Local roles allows user accounts to have special privileges
 for a folder and its children.
 
 By default Plone has roles like ``Contributor``, ``Reader``, ``Editor``, etc.
-and you can view these on the :guilabel:`Sharing` tab
-and in Management Interface :guilabel:`Security` tab.
+You can view these on the :guilabel:`Sharing` tab and in the Management Interface :guilabel:`Security` tab.
 
 Good introduction to roles:
 `Basic Roles and Permissions in Plone <http://www.sixfeetup.com/blog/basic-roles-and-permissions-in-plone>`_
@@ -189,7 +188,7 @@ Set your breakpoint in ``Products.PlonePAS.plugins.local_role.LocalRolesManager.
 and ``Products.PlonePAS.plugins.role.GroupAwareRoleManager.getRolesForPrincipal()``.
 There you see how roles for a given context are being resolved.
 
-Check the ``acl_users.portal_role_manager`` tool via the Management Interface.
+Check the ``acl_users.portal_role_manager`` via the Management Interface.
 
 Please see the `zopyx.plone.cassandra <https://pypi.python.org/pypi/zopyx.plone.cassandra>`_ add-on product.
 

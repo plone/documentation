@@ -6,19 +6,20 @@ Introduction
 ------------
 
 If you have to change some portal_transforms settings you can't use a Generic
-Setup config file for this (as of 2010-03-25, Products.PortalTransforms 2.0b4).
-But you can change it with python and a Generic Setup import step. Here's how
-to do it.
+Setup config file for this.
+But you can change it with python and a Generic Setup import step.
 
-.. warning:: Security: The configuration shown below allows users to use nasty HTML tags which can be a security issue if not used carefully.
+.. warning::
 
-Let's say we have a plone package called MY.PACKAGE.
+   Security: The configuration shown below allows users to use nasty HTML tags which can be a security issue if not used carefully.
+
+Let's say we have a Plone package called MY.PACKAGE.
 
 Writing an Generic Setup Import Step Method
 -------------------------------------------
 
-This setup method is defined in MY.PACKAGE/setuphandlers.py. It configures the
-safe_html portal_transform a bit less paranoid about nasty tags and valid_tags,
+This setup method is defined in MY.PACKAGE/setuphandlers.py.
+It configures the safe_html portal_transform a bit less paranoid about nasty tags and valid_tags,
 so that content managers are allowed to insert iframe, object, embed, param,
 script, style, tags and more into the TinyMCE editor::
 
@@ -97,13 +98,12 @@ so:::
       </import-step>
     </import-steps>
 
-And create the File
-MY.PACKAGE/MYPROFILESDIR/PROFILENAME/MY.PACKAGE-PROFILENAME.txt, so that this
+Create the File ``MY.PACKAGE/MYPROFILESDIR/PROFILENAME/MY.PACKAGE-PROFILENAME.txt``, so that this
 import step is not run for any profile but just for this one.
 
 
 Calling the Import Step Method in Management Interface, portal_setup
 --------------------------------------------------------------------
 
-Goto your site's portal_setup in Management Interface, select your registered profile and import
-the import step "MY.PACKAGE portal_transforms setup". That's it.
+Go to your site's portal_setup in Management Interface, select your registered profile and import
+the import step "MY.PACKAGE portal_transforms setup".

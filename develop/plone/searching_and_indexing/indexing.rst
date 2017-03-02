@@ -79,7 +79,7 @@ Viewing indexes and indexed data
 Indexed data
 ^^^^^^^^^^^^
 
-You can do this through portal_catalog tool in the Management Interface.
+You can do this through portal_catalog in the Management Interface.
 
 * Click portal_catalog in the portal root
 
