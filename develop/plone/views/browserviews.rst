@@ -631,7 +631,7 @@ Helper views also get around the following limitations:
 .. Note::
 
     Using ``RestrictedPython`` scripts (creating Python through the
-    :term:`ZMI`) and Zope 2 Extension modules is discouraged.
+    Management Interface) and Zope 2 Extension modules is discouraged.
     The same functionality can be achieved with helper views, with less
     potential pitfalls.
 

@@ -149,7 +149,9 @@ A large part of the Plone UI is provided by BrowserView or Viewlet templates.
 That is the case for viewlets (all the blocks you can see when you call the url
 ``./@@manage-viewlets``).
 
-.. note:: to override them from the ZMI, you can go to ``./portal_view_customizations``.
+.. note::
+
+   To override them from the Management Interface, you can go to ``./portal_view_customizations``.
 
 To override them from your theme product, the easiest way is to use
 ``z3c.jbot`` (Just a Bunch of Templates).
@@ -159,7 +161,9 @@ But you will need to name them by prefixing the template name by its complete pa
 
 For instance, to override ``colophon.pt`` from plone.app.layout, knowing this template in a subfolder named ``viewlets``, you need to name it ``plone.app.layout.viewlets.colophon.pt``.
 
-.. note:: ZMI > portal_view_customizations is an handy way to find the template path.
+.. note::
+
+   Management Interface > portal_view_customizations is a handy way to find the template path.
 
 You can now restart Zope and re-install your product from the Plone control panel (Site Setup > Add-ons).
 

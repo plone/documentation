@@ -12,7 +12,7 @@ Introduction
 
 Goal: you want to import and export content between Plone sites.
 
-* If both sites have identical version and add-on product configuration you can use Zope Management Interface export/import
+* If both sites have identical version and add-on product configuration you can use the Management Interface export/import
 
 * If they don't (e.g. have different Plone version on source and target site),
   you need to use add-on products to export and import the content to a common
@@ -25,7 +25,7 @@ Zope 2 can import/export parts of the site in .zexp format. This is basically Py
 
 To export objects from a site to another, do the following:
 
-* In the Zope Management Interface, navigate to the Folder, which holds the object to be exported.
+* In the Management Interface, navigate to the Folder, which holds the object to be exported.
 
 * Tick the checkbox for a object to be exported.
 
@@ -37,7 +37,7 @@ To export objects from a site to another, do the following:
 
 * Zope .zexp to *youranothersite*/var/instance/import folder
 
-* Go to ZMI root of your another site
+* Go to the Management Interface root of your other site
 
 * Press Import / Export
 
@@ -150,7 +150,7 @@ You might want to remove other, unneeded blueprints from the export ``pipeline``
 For example, ``portletexporter`` may cause problems if the source and target site
 do not have the same portlet code.
 
-Go to *Zope Management Interface* > *portal_setup* > *Export* tab. Check Content (transmogrifier) step.
+Go to the *Management Interface* > *portal_setup* > *Export* tab. Check Content (transmogrifier) step.
 Press *Export Selected Steps* at the bottom of the page. Now a .tar.gz file will be downloaded.
 
 During the export process ``instance.log`` file is updated with status info. You might want to follow
@@ -182,7 +182,7 @@ Open target site ``instance.log`` file for monitoring the import process
 
         tail -f var/log/instance.log
 
-Go to *Zope Management Interface* > *portal_setup* > *Import* tab.
+Go to the *Management Interface* > *portal_setup* > *Import* tab.
 
 Choose downloaded ``setup_toolxxx.tar.gz`` file at the bottom of the page,
 for *Import uploaded tarball* input.
@@ -194,7 +194,8 @@ but no content is created.
 
 .. note ::
 
-    Currently export/import is not perfect. For example, ZMI content type icons  are currently
+    Currently export/import is not perfect.
+    For example, the Management Interface content type icons  are currently
     lost in the process. It is recommended to do a test run on a staging server
     before doing this process on a production server.
     Also, the item order in the folder is being lost.

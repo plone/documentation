@@ -1,6 +1,6 @@
-==============
- Sharing
-==============
+=======
+Sharing
+=======
 
 TODO: remove this file, eventually move code example to a "cookbook" section.
 
@@ -45,8 +45,8 @@ The sample code
 * Gives view access to the logged in users through sharing
 
 Example is provided as Zope External Method. Create External Method
-in the target parent folder through ZMI. Then run "Test"
-for this external method in ZMI.
+in the target parent folder through the Management Interface.
+Then run "Test" for this external method in the Management Interface.
 
 ::
 

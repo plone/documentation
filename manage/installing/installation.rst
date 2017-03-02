@@ -24,7 +24,7 @@ That server is installed automatically by the install process.
 
 .. note::
 
-	For installiing and running Plone on CentOS, please make sure that you have enough Memory
+	For installing and running Plone on CentOS, please make sure that you have enough Memory
 	and Swap.
 
 	If you use the Unified Installer on CentOS, make sure that you have at least 1024 MB of Memory.
@@ -71,7 +71,8 @@ Installing Plone using the Unified UNIX Installer
 
 .. note::
 
-	Running Plone in **production** will normally also entail other software for optimal security and performance, like a front-end webserver, caching, and firewall.
+    Running Plone in **production** will normally also entail other software for optimal security and performance,
+    like a front-end webserver, caching, and firewall.
 
 	See :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` , and you may also be interested in :doc:`automated full-stack deployment </external/ansible-playbook/docs/index>`.
 
@@ -178,7 +179,8 @@ Go the folder containing installer script
 
 .. note::
 
-  This will run the installer without any extra options, like setting passwords, setting the install path or anything else, for a full overview over all the possible options use ``./install.sh --help``.
+   This will run the installer without any extra options, like setting passwords,
+   setting the install path or anything else, for a full overview over all the possible options use ``./install.sh --help``.
 
 
 Run script
@@ -223,7 +225,7 @@ Wait till the installer is done
 
 
 The default admin credentials will be printed to the console, and saved in the file adminPassword.txt in the resulting install.
-You can change this password after logging in to the Zope Management Interface.
+You can change this password after logging in to the Management Interface.
 
 .. note::
 

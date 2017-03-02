@@ -51,11 +51,10 @@ Reloading Python code automatically can be enabled with `sauna.reload add-on <ht
 JavaScript and CSS issues with production mode
 ==============================================
 
-See **portal_css** and **portal_javascript** in ZMI to inspect how your scripts are bundled.
+See **portal_css** and **portal_javascript** in the Management Interface to inspect how your scripts are bundled.
 
-Make sure your JavaScript and CSS files are valid, mergeable and compressable. If they
-are not then you can tweak the settings for individual file in the corresponding
-management tool.
+Make sure your JavaScript and CSS files are valid, mergeable and compressable.
+If they are not then you can tweak the settings for individual file in the corresponding management tool.
 
 Refresh issues
 ==============

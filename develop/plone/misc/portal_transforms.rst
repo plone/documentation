@@ -102,8 +102,8 @@ MY.PACKAGE/MYPROFILESDIR/PROFILENAME/MY.PACKAGE-PROFILENAME.txt, so that this
 import step is not run for any profile but just for this one.
 
 
-Calling the Import Step Method in ZMI, portal_setup
----------------------------------------------------
+Calling the Import Step Method in Management Interface, portal_setup
+--------------------------------------------------------------------
 
-Goto your site's portal_setup in ZMI, select your registered profile and import
+Goto your site's portal_setup in Management Interface, select your registered profile and import
 the import step "MY.PACKAGE portal_transforms setup". That's it.

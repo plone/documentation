@@ -23,7 +23,7 @@ By default, Plone comes with dynamic views for:
 
 The default view can be also a content item picked from the folder.
 
-Available content item types can be managed from the: Site Setup Control Panel -> Content Rules (site.com/@@content-controlpanel) -> Select your new type from the drop down menu -> Click the "Can be used as default page" checkbox. 
+Available content item types can be managed from the: Site Setup Control Panel -> Content Rules (site.com/@@content-controlpanel) -> Select your new type from the drop down menu -> Click the "Can be used as default page" checkbox.
 
 Permission for changing the view template of an item
 ----------------------------------------------------
@@ -106,7 +106,7 @@ Note that you don't need to copy the whole ``Folder.xml`` / ``Topic.xml``
 from ``Products/CMFPlone/profiles/default/types``.
 Including the changed ``view_methods`` in the XML code is enough.
 
-You can also change this through portal_types in the ZMI.
+You can also change this through portal_types in the Management Interface.
 
 .. note::
 
@@ -252,7 +252,7 @@ Another example how to use this::
 
 .. TODO:: Bare except?
 
-Setting the default page can be done by calling the ``setDefaultPage`` on the folder, passing id of the default 
+Setting the default page can be done by calling the ``setDefaultPage`` on the folder, passing id of the default
 page::
 
     folder.setDefaultPage("my_content_id")
@@ -286,7 +286,7 @@ Create a marker interface in python:
 .. code-block:: python
 
     from zope.interface import Interface
-    
+
     class IMyMarkerInterface(Interface):
         """Used to create a specific view for a generic content type"""
 
@@ -309,10 +309,9 @@ Register the view against a marker interface:
          template="view.pt"
        />
 
-* Assign this marker interface to a content item using the Zope Management Interface
-  (:term:`ZMI`, via the Interfaces tab)
-  or with python code:
-  
+* Assign this marker interface to a content item using the Management Interface, via the Interfaces tab
+  or with Python code:
+
 .. code-block:: python
 
     from my.package.interfaces import IMyMarkerInterface
@@ -332,8 +331,8 @@ Migration script from default view to another
 ==============================================
 
 Below is a script snippet which allows you to change the default view
-for all folders to another type. You can execute the script through
-the :term:`ZMI` as a Python Script.
+for all folders to another type.
+You can execute the script through the Management Interface as a Python script.
 
 Script code::
 

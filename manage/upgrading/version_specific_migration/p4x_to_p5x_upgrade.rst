@@ -39,7 +39,7 @@ If you have some custom member properties in your Plone site, be aware that:
 
 - extra attributes defined in `memberdata_properties.xml` will be preserved, but they will not be automatically shown in the user profile form or the registration form,
 - if you have implemented some custom forms in order to display your custom member attributes, they will not work anymore as `plone.app.users` is now based on `z3c.form`.
-  You can easily replace them by declaring their schema in `userschema.xml`.
+  You can replace them by declaring their schema in `userschema.xml`.
 
 .. note::
 
@@ -58,14 +58,11 @@ When the email addresses are not unique,
 for example you have both ``joe@example.org`` and ``JOE@example.org``,
 the migration will *fail*.
 
-Best is to fix this in your site in Plone 4,
-by changing email addresses or removing no longer needed users.
+Best is to fix this in your site in Plone 4, by changing email addresses or removing no longer needed users.
 When there are only a few users, you can do this manually.
-To assist you in sites with many users,
-in Plone 4.1 and higher,
+To assist you in sites with many users, in Plone 4.1 and higher,
 you can add the `collective.emaillogin4 <https://pypi.python.org/pypi/collective.emaillogin4>`_ package to the eggs of your Plone instance.
-With that package,
-even without installing it in the add-ons control panel,
+With that package, even without installing it in the add-ons control panel,
 you can call the ``@@migrate-to-emaillogin`` page to look for duplicate email addresses.
 
 .. note::
@@ -77,7 +74,7 @@ you can call the ``@@migrate-to-emaillogin`` page to look for duplicate email ad
 Other PLIP changes
 ------------------
 
-PLIPs that resulted in changes that will have to be documented in this upgrade-guide. Check back soon for updates!
+PLIPs that resulted in changes that will have to be documented in this upgrade-guide.
 
 
 plone.api
@@ -395,7 +392,8 @@ Only bundles can be conditionally included. If you have a resource that needs to
 Control Panel
 =============
 
-In Plone 4.x, the Plone configuration settings have been stored as portal properties spread across the ZMI. In Plone 5, those settings are all stored as plone.app.registry entries in registry.xml.
+In Plone 4.x, the Plone configuration settings have been stored as portal properties spread across the Management Interface.
+In Plone 5, those settings are all stored as plone.app.registry entries in registry.xml.
 
 There are now sections in the control panel, this can be set from the controlpanel.xml. See the current definitions for more information.
 
@@ -572,7 +570,11 @@ If you want to disable_folder_sections, you will want to set `plone.generate_tab
 Generic Setup
 -------------
 
-All settings for control panels are stored in the registry.xml Generic Setup file. This file can be exported through the ZMI (Zope Management Interface). Go to the Plone Site Setup, choose "Management Interface" from the "Advanced" section. Click on "portal_setup". Go to the "export" tab. Choose the "Export the configuration registry schemata" check-box and click the "Export selected steps" button. The registry.xml file will contain entries like this::
+All settings for control panels are stored in the registry.xml Generic Setup file. This file can be exported through the Management Interface.
+Go to the Plone Site Setup, choose "Management Interface" from the "Advanced" section.
+Click on "portal_setup". Go to the "export" tab.
+Choose the "Export the configuration registry schemata" check-box and click the "Export selected steps" button.
+The registry.xml file will contain entries like this::
 
   <record name="plone.available_editors"
           interface="Products.CMFPlone.interfaces.controlpanel.IEditingSchema" field="available_editors">

@@ -16,7 +16,8 @@ To effectively write more complex overrides, you're going to need to know how to
 
 Here's a quick recipe that will help you examine the form input contained in the request.
 
-*   Jump into the ZMI and navigate to your PFG Form Folder. Inside it, create a Page Template named showrequest. Now, just before </body>, add::
+*   Jump into the Management Interface and navigate to your PFG Form Folder.
+    Inside it, create a Page Template named showrequest. Now, just before </body>, add::
 
         <div tal:replace="structure request" />
 

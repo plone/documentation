@@ -372,8 +372,8 @@ errors in the complex content type setup chain and security limitations.
 The consequence is that you don't see your content type in the :guilabel:`Add`
 drop-down menu.  Here are some tips for debugging.
 
-* Is your product broken due to Python import time errors? Check
-  :term:`ZMI`: :guilabel:`Control panel` -> :guilabel:`Products`.
+* Is your product broken due to Python import time errors?
+  Check the Management Interface: :guilabel:`Control panel` -> :guilabel:`Products`.
   Turn on Zope debugging mode to trace import errors.
 
 * Have you rerun the quick installer (``GenericSetup``) after
@@ -383,21 +383,21 @@ drop-down menu.  Here are some tips for debugging.
   ``__init__.py`` ``ContentInit()`` call.
 
 * Does it show up in the portal factory?
-  Check :term:`ZMI`: :guilabel:`portal_factory` and ``factorytool.xml``.
+  Check the Management Interface: :guilabel:`portal_factory` and ``factorytool.xml``.
 
-* Is it corretly registered as a portal type and implictly addable? Check
-  :term:`ZMI`: :guilabel:`portal_types`.
+* Is it corretly registered as a portal type and implictly addable?
+  Check the Management Interface: :guilabel:`portal_types`.
   Check ``default/profiles/type/yourtype.xml``.
 
-* Does it have correct product name defined? Check :term:`ZMI`:
-  :guilabel:`portal_types`.
+* Does it have correct product name defined?
+  Check the Management Interface: :guilabel:`portal_types`.
 
-* Does it have a proper factory method? Check :term:`ZMI`:
-  :guilabel:`portal_types`.
+* Does it have a proper factory method?
+  Check Management Interface: :guilabel:`portal_types`.
   Check Zope logs for ``_queryFactory`` and import errors.
 
-* Does it register itself with Archetypes? Check :term:`ZMI`:
-  :guilabel:`archetypes_tool`.
+* Does it register itself with Archetypes?
+  Check the Management Interface: :guilabel:`archetypes_tool`.
   Make sure that you have ``ContentInit`` properly run in your
   ``__init__.py``. Make sure that all modules having Archetypes content
   types defined and ``registerType()`` call are imported in ``__init__py``.
@@ -552,7 +552,7 @@ I don't see titles in the navigation, only ids
 
 You may notice that the new generated content's title appears to be set to its
 id. In this case, the catalog needs to be updated. You can do this through the
-ZMI, in ``portal_catalog``.
+Management Interface, in ``portal_catalog``.
 
 You could automate this process by adding a GS import step in configure.zcml, which looks like this::
 

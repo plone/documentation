@@ -441,7 +441,7 @@ possible cause:
 
 * For some reason kupu library tool may not be removed in the upgrade step that removed kupu.
 
-**Solution**: Go to the ZMI and delete the kupu library tool manually.
+**Solution**: Go to the Management Interface and delete the kupu library tool manually.
 
 AttributeError: set_stripped_combinations
 -----------------------------------------
@@ -471,7 +471,7 @@ possible cause:
 
 * For some reason kupu library tool may not be removed in the upgrade step that removed kupu.
 
-**Solution**: Go to the ZMI and delete the kupu library tool manually.
+**Solution**: Go to the Management Interface and delete the kupu library tool manually.
 
 BadRequest: The id "xxx" is invalid - it is already in use.
 ------------------------------------------------------------------
@@ -1123,7 +1123,7 @@ Case 1
 ~~~~~~
 
 The following log trace will appear when you try to render
-the site, but you can access ZMI normally::
+the site, but you can access the Management Interface normally::
 
     2009-09-23 20:47:18 WARNING OFS.Uninstalled Could not import class 'IPloneCommentsLayer' from module 'quintagroup.plonecomments.interfaces'
     2009-09-23 20:47:18 ERROR Zope.SiteErrorLog 1253728038.160.534632167217 http://localhost:9444/XXX
@@ -1281,7 +1281,7 @@ NotFound error (Page not found) when accessing @@manage-portlets
 ----------------------------------------------------------------
 
 If you get *Page not found* error when accessing @@manage-portlets the first thing
-you need to do is to enable logging of NotFound exceptions in ZMI in error_log.
+you need to do is to enable logging of NotFound exceptions in the Management Interface in error_log.
 
 After that reload @@manage-portlets.
 
@@ -1780,7 +1780,7 @@ TypeError: argument of type 'NoneType' is not iterable
 	TypeError: argument of type 'NoneType' is not iterable
 
 **Reason** Plone 3 > Plone 4 migration has not been run. Run the migration
-in *portal_migrations* under ZMI.
+in *portal_migrations* under the Management Interface.
 
 TypeError: len() of unsized object in smtplib
 ---------------------------------------------

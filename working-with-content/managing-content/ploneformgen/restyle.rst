@@ -26,7 +26,9 @@ The underlying Archetypes form generator surrounds every form element with a <di
 
 That's more than enough ID and Class selectors to do pretty much anything in the way of visual formatting.
 
-How do we get the CSS into the form's page? You could add it to the site's css, but there's a much easier way. Using the ZMI, create an object of type File inside your form folder. Set its Content Type to "text/plain" and give it the ID "newstyle".
+How do we get the CSS into the form's page? You could add it to the site's css, but there's a much easier way.
+Using the Management Interface, create an object of type File inside your form folder.
+Set its Content Type to "text/plain" and give it the ID "newstyle".
 
 Let's turn the label for the comments field green. Just fill in the big text field on your file with:
 

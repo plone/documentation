@@ -8,7 +8,7 @@ Adding a JavaScript event handler to a form
 
 There are two basic steps to injecting JavaScript into a PFG form:
 
-1. Use the Zope Management Interface to create a text file (object type: file; mimetype: text/plain) either inside the form folder or in a skin folder;
+1. Use the Management Interface to create a text file (object type: file; mimetype: text/plain) either inside the form folder or in a skin folder;
 
 2. Use the form folder's edit / overrides pane, header injection field to tell PFG to inject it into the form.
 
@@ -21,8 +21,8 @@ Let's look at the second step first. Let's say that your JavaScript file is name
 
 in the header injections override field.
 
-The JavaScript
-==============
+JavaScript
+==========
 
 There are a couple of considerations here:
 
@@ -56,7 +56,8 @@ This accomplishes a couple of things: 1) it sets the code up to run once the pag
 An alternative injection
 ========================
 
-If you want to use a separate JavaScript file that is actual JS (no ``script`` tags) and will be shared among forms, just use the header injection override like this::
+If you want to use a separate JavaScript file that is actual JS (no ``script`` tags) and will be shared among forms,
+use the header injection override like this::
 
     string:<script src="form_scripts.js" />
 

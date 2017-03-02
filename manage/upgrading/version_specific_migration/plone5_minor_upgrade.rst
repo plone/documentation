@@ -72,7 +72,8 @@ When buildout finishes running, restart your Plone instance:
 Migration
 =========
 
-Visit your Zope instance's ZMI (http://yoursite:8080). You will see a message prompting you to run Plone's migration script for each site in your instance:
+Visit your Management Interface (http://yoursite:8080).
+You will see a message prompting you to run Plone's migration script for each site in your instance:
 
 ``This site configuration is outdated and needs to be upgraded.``
 

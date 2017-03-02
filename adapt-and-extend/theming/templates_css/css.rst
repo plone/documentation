@@ -13,9 +13,8 @@ Introduction
 
 This page has Plone-specific CSS instructions.
 
-In Plone, most CSS files are managed by the ``portal_css`` tool via the
-:term:`ZMI`. Page templates can still import CSS files directly,
-but ``portal_css`` does CSS file compression and merging automatically if
+In Plone, most CSS files are managed by the ``portal_css`` tool via the Management Interface.
+Page templates can still import CSS files directly, but ``portal_css`` does CSS file compression and merging automatically if
 used.
 
 View all Plone HTML elements

@@ -106,10 +106,10 @@ The best way to clean up bad objects on your site is via a
 in which case remember to commit the transaction
 after removing the broken objects.
 
-Purging old content from site 
-========================================
+Purging old content from site
+=============================
 
-This term:`ZMI` script allows you to find content items of certain type and
+This Management Interface script allows you to find content items of certain type and
 delete them if they are created too long ago::
 
     # Delete FeedfeederItem content items which are more than three months old

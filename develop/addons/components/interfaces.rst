@@ -7,14 +7,12 @@ Introduction
 ============
 
 Interfaces define what methods an object provides.
-Plone extensively uses interfaces to define APIs between
-different subsystems. They provide a more consistent and declarative
-way to define bridges between two different things, when duck-typing
-is not enough.
+Plone extensively uses interfaces to define APIs between different subsystems.
+They provide a more consistent and declarative way to define bridges between two different things,
+when duct taping is not enough.
 
 An interface defines the shape of a hole where different pieces fit.
-The shape of the piece is defined by the interface, but the implementation
-details like color, material, etc. can vary.
+The shape of the piece is defined by the interface, but the implementation details like color, material, etc. can vary.
 
 See `zope.interface package README <https://pypi.python.org/pypi/zope.interface>`_.
 
@@ -241,7 +239,7 @@ Dynamic marker interfaces
 ==========================
 
 Zope allows to you to dynamically turn on and off interfaces on any content
-objects through the :term:`ZMI`.
+objects through the Management Interface.
 Browse to any object and visit the :guilabel:`Interfaces` tab.
 
 Marker interfaces might need to be explicitly declared using the
@@ -249,7 +247,7 @@ Marker interfaces might need to be explicitly declared using the
 
 .. code-block:: xml
 
-    <!-- Declare marker interface, so that it is available in ZMI -->
+    <!-- Declare marker interface, so that it is available in the Management Interface -->
     <interface interface="mfabrik.app.interfaces.promotion.IPromotionsPage" />
 
 .. note::

@@ -6,24 +6,22 @@ Database packing
     The Plone database does not automatically prune deleted content.
     You must periodically pack the database to reclaim space.
 
-Zope's object database does not immediately remove objects when they are
-deleted. Instead, they are just marked inactive. This has advantages: it
-supplies a knowledgeable administrator with the ability to undo transactions
-on an emergency basis. However, this means that the disk space consumed by
-your object database will grow with every transaction.
+Zope's object database does not immediately remove objects when they are deleted.
+Instead, they are just marked inactive.
+This has advantages: it supplies a knowledgeable administrator with the ability to undo transactions
+on an emergency basis.
+However, this means that the disk space consumed by your object database will grow with every transaction.
 
-*Packing* the database reclaims the space previously consumed by deleted
-objects. You *must* periodically pack your database, or it will eventually
-consume all available disk space. Fortunately, packing is an easy and
-reliable operation. It also may be done while the system is live.
+*Packing* the database reclaims the space previously consumed by deleted objects.
+You *must* periodically pack your database, or it will eventually consume all available disk space.
+It also may be done while the system is live.
 
 Setting up packing
 ------------------
 
-On a development or testing installation, packing will be an infrequent
-need. You may initiate a packing operation via the Zope Management Interface
-Control Panel. It will allow you to set the number of days of transactions
-you wish to keep in the undo stack.
+On a development or testing installation, packing will be an infrequent need.
+You may initiate a packing operation via the Management Interface.
+It will allow you to set the number of days of transactions you wish to keep in the undo stack.
 
 On a production system, you should pack the database via a command-line
 utility: bin/zeopack in your buildout directory.
@@ -31,16 +29,16 @@ utility: bin/zeopack in your buildout directory.
 *zeopack* is installed automatically by the plone.recipe.zeoserver recipe
 that generates the zeoserver (database server component).
 
-You may set packing options for zeopack by setting attributes in the
-zeoserver part of your buildout. For example::
+You may set packing options for zeopack by setting attributes in the zeoserver part of your buildout.
+
+For example::
 
     [zeoserver]
     recipe = plone.recipe.zeoserver
     ...
     pack-days = 3
 
-Will (after buildout is run), cause bin/zeopack to conserve three days of
-undo history during the pack operation.
+Will (after buildout is run), cause bin/zeopack to conserve three days of undo history during the pack operation.
 
 Other options include:
 

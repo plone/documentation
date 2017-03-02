@@ -4,8 +4,8 @@ Indexes and metadata
 
 .. admonition:: Description
 
-        How to program your custom fields and data queries
-        through portal_catalog.
+   How to program your custom fields and data queries
+   through portal_catalog.
 
 
 What does indexing mean?
@@ -16,7 +16,7 @@ Plone stores available indexes in the database.
 You can create them through-the-web and inspect existing indexes
 in portal_catalog on Index tab.
 
-The Catalog Tool can be configured through the ZMI or
+The Catalog Tool can be configured through the Management Interface or
 programatically in Python but current best practice in the CMF
 world is to use GenericSetup to configure it using the declarative
 *catalog.xml* file. The GenericSetup profile for Plone, for
@@ -79,7 +79,7 @@ Viewing indexes and indexed data
 Indexed data
 ^^^^^^^^^^^^
 
-You can do this through portal_catalog tool in ZMI.
+You can do this through portal_catalog tool in the Management Interface.
 
 * Click portal_catalog in the portal root
 
@@ -139,7 +139,7 @@ Creating an index through the web
 This method is suitable during development time - you can create an index
 to your Plone database locally.
 
-* Go ZMI
+* Go to the Management Interface
 
 * Click portal_catalog
 
@@ -383,7 +383,7 @@ Some interesting columns
 
 * getRemoteURL: Where to go when the object is clicked
 
-* getIcon: Since Plone 5.0.2 - Boolean value which is set to :guilabel:``True``, when item has or is an image (used for showing thumbs in lists, portlets, etc. ). Content type icons (aka portaltype-icons) ( e.g.: for folder, document, news item etc.) are rendered as fontello fonts since Plone 5.0. 
+* getIcon: Since Plone 5.0.2 - Boolean value which is set to :guilabel:``True``, when item has or is an image (used for showing thumbs in lists, portlets, etc. ). Content type icons (aka portaltype-icons) ( e.g.: for folder, document, news item etc.) are rendered as fontello fonts since Plone 5.0.
 
 * exclude_from_nav: If True the object won't appear in sitemap, navigation tree
 
@@ -448,7 +448,7 @@ added to ``SearchableText``
         This method is called by portal_catalog to populate its SearchableText index.
         """
 
-        # Test this by enable pdb here and run catalog rebuild in ZMI
+        # Test this by enable pdb here and run catalog rebuild in the Management Interface
         # xxx
 
         # Speed up string concatenation ops by using a buffer

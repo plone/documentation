@@ -127,7 +127,7 @@ Tools
 =====
 
 Tools are persistent utility classes available in the site root.
-They are visible in the :term:`ZMI`, and sometimes expose useful
+They are visible in the Management Interface, and sometimes expose useful
 information or configuration here. Tools include e.g.:
 
 ``portal_catalog``

@@ -76,7 +76,7 @@ By the way, if the recipient address isn't specified, PFG tries to use the e-mai
 PloneFormGen missing from Add list?
 ===================================
 
-I installed the release of PloneFormGen in my Products directory in Plone 2.5.x, and neither the ZMI (/Control_Panel/Products) nor Plone (Quick Installer) seemed to recognize it after restarting my Zope.
+I installed the release of PloneFormGen in my Products directory in Plone 2.5.x, and neither the Management Interface (/Control_Panel/Products) nor Plone (Quick Installer) seemed to recognize it after restarting my Zope.
 
 Zope has probably encountered an error in the course of loading the product.
 

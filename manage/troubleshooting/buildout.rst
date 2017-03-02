@@ -56,7 +56,7 @@ They are harmless.
 The reason: Buildout uses a Python tool called ``setuptools`` internally to install the packages.
 Setuptools scans all ``.py`` files inside the Python package and assumes they are Python modules.
 However, Plone has something called :doc:`RestrictedPython </develop/plone/security/sandboxing>`.
-RestrictedPython allows untrusted users to execute Python code in Plone (Python Scripts in the :term:`ZMI`).
+RestrictedPython allows untrusted users to execute Python code in Plone (Python Scripts in the Management Interface).
 RestrictedPython scripts use slightly modified Python syntax compared to plain Python modules.
 
 Setuptools does not know which files are normal ``.py`` and which files are RestrictedPython and tries to interpret them all using standard Python
@@ -95,18 +95,18 @@ Further reading:
 Show picked versions
 --------------------
 
-In order to show which versions were picked by buildout - 
-or in other words, versions were not pinned anywhere - 
+In order to show which versions were picked by buildout -
+or in other words, versions were not pinned anywhere -
 use this feature.
 
-Buildout will show automatically picked Python egg versions at the end of the output. 
+Buildout will show automatically picked Python egg versions at the end of the output.
 The output may be copy pasted in your versions section.
 
 Add to your ``buildout.cfg``:
 
 .. code-block:: cfg
 
-    [buildout]    
+    [buildout]
     show-picked-versions
 
 
@@ -519,4 +519,4 @@ If you got the error ``Couldn't install: lxml 3.4.4`` while using the Plone 5.0 
 
     xcode-select --install
 
-then re-run ``bin/buildout``. 
+then re-run ``bin/buildout``.

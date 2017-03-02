@@ -71,7 +71,7 @@ second, because retrieving a catalog brain doesn't wake up the
 objects themselves, avoiding a huge performance hit.
 
 To see the ZCatalogs in action, fire up your favourite browser and
-open the ZMI. You'll see an object in the root of your Plone site
+open the Management Interface. You'll see an object in the root of your Plone site
 named *portal\_catalog*. This is the Catalog Tool, a Plone tool
 (like the Membership Tool or the Quickinstaller Tool) based on
 ZCatalogs created by default in every Plone site which indexes all
@@ -95,7 +95,7 @@ types and more. There you can also add and remove indexes and
 metadata fields. If you're working on a test environment, you can
 use this manager view to play with the catalog, but beware indexes
 and metadata are usually added through GenericSetup and not using
-the ZMI.
+the Management Interface.
 
 
 Other catalogs
@@ -301,7 +301,7 @@ archetype_tool maintains map between content types and catalogs which are intere
 When object is modified through Archetypes mechanisms, Archetypes post change notification
 to all catalogs enlisted.
 
-See *Catalogs* tab on archetype_tool in Zope Management Interface.
+See *Catalogs* tab on archetype_tool in Management Interface.
 
 Map an catalog for an new type
 ------------------------------

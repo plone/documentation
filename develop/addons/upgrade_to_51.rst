@@ -16,7 +16,7 @@ The add-ons control panel in Plone 5.1 no longer supports installation or uninst
 If you have such code, you must switch to a GenericSetup profile.
 
 GenericSetup is already the preferred way of writing installation code since Plone 3.
-If you must use the old way, you can still use the ``portal_quickinstaller`` in the Zope Management Interface.
+If you must use the old way, you can still use the ``portal_quickinstaller`` in the Management Interface.
 
 In a lot of cases, you can configure ``xml`` files instead of using Python code.
 In other cases you may need to write custom installer code (setuphandlers.py).

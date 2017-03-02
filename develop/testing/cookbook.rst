@@ -91,7 +91,7 @@ Manual procedure
 
 * Uninstall add-on
 
-* Export Plone site through ZMI as zexp
+* Export Plone site through the Management Interface as zexp
 
 * Create another Plone site from vanilla buildout (no any add-ons installed)
 

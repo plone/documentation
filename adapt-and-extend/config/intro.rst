@@ -103,7 +103,9 @@ Advanced
 Maintenance
     :doc:`Maintenance for the back-end database <maintenance>`. You can check the size of the database, and regularly *pack* it to keep it in optimal condition.
 Management Interface
-    This will take you to the :doc:`ZMI, or Zope Management Interface <management-interface>`. In normal use, there is no need to go here. **Experts only**. But should you require access to the underlying software stack, here it is.
+    This will take you to the :doc:`Management Interface <management-interface>`.
+    In normal use, there is no need to go here. **Experts only**.
+    But should you require access to the underlying software stack, here it is.
 Caching
     Here you can :doc:`enable and fine-tune <caching>` Plone's caching settings. This can have a great beneficial effect on the speed of your site, but make sure to read the documentation first.
 Configuration Registry

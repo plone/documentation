@@ -105,13 +105,13 @@ Plone's Unified Installer uses this scheme.
 
 Zope is an application server that provides the foundation for your Plone instance.
 It has done a lot about application security and provides a fine grained permission setting.
-But nowadays in the context of Plone the ZMI is only used by users who have a "Zope Manager" role, which gives full access to everything in Zope.
+But nowadays in the context of Plone the Management Interface is only used by users who have a "Zope Manager" role, which gives full access to everything in Zope.
 
-The ZMI was created before JavaScript exploits were common, so it did not implement security against exploits like CSRF.
+The Management Interface was created before JavaScript exploits were common, so it did not implement security against exploits like CSRF.
 
 You should use a user with Zope Manager role only if the permissions are really needed, such as when initially creating a Plone site.
 
-While using the ZMI, we recommend disabling JavaScript in your browser.
+While using the Management Interface, we recommend disabling JavaScript in your browser.
 
 
 
@@ -140,8 +140,8 @@ Access control
 --------------
 
 
-Your Zope ZMI should not be available via the production domain.
-The following rules will block all common ZMI pages
+Your Management Interface should not be available via the production domain.
+The following rules will block all common Management Interface pages
 
 
 For Apache httpd (2.2 syntax)
@@ -192,11 +192,11 @@ Always use as strict security headers as possible:
     object-src 'self' cdn.example.com www.example.com *.example.com;
 
 
-Use caution when using SSH tunnels to access ZMI
-------------------------------------------------
+Use caution when using SSH tunnels to access Management Interface
+-----------------------------------------------------------------
 
 
-Once  you have stripped down access to your ZMI via your normal domain URLs, take care you don’t accidentally bypass the security by allowing CSRF hijacking via an SSH tunnel.
+Once  you have stripped down access to your Management Interface via your normal domain URLs, take care you don’t accidentally bypass the security by allowing CSRF hijacking via an SSH tunnel.
 http://127.0.0.1:8080/ and http://localhost:8080/ are common attack vectors via JavaScript. Make sure you close all other browser tabs (or open a different browser, e.g. Firefox when you normally use Safari) when accessing these URL’s.
 Always close the SSH tunnel after you are done with maintenance.
 Alternatively consider using a dedicated manage domain.

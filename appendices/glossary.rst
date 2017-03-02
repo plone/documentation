@@ -1,6 +1,6 @@
-==========
- Glossary
-==========
+========
+Glossary
+========
 
 This is a glossary for some definitions used in this documentation and still under construction.
 
@@ -103,12 +103,13 @@ This is a glossary for some definitions used in this documentation and still und
         customizations.
 
     ZMI
-        The *Zope Management Interface*. Zope has a built in Management
-        Interface that is accessible through the web. Accessing is as simple
-        as appending ``/manage`` to your URL, for example:
+        The *Management Interface*.
+        A Management Interface that is accessible through the web.
+        Accessing it is as simple as appending ``/manage`` to your URL, for example:
         ``http://localhost/manage`` - or visiting Plone Setup and clicking
-        the *Zope Management Interface* link (Click 'View' to go back to the
-        Plone site). Be careful in there, though - it's the "geek view" of
+        the *Management Interface* link (Click 'View' to go back to the
+        Plone site).
+        Be careful in there, though - it's the "geek view" of
         things, and is not straightforward, nor does it protect you from
         doing stupid things. :)
 

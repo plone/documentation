@@ -15,7 +15,7 @@ for a folder and its children.
 
 By default Plone has roles like ``Contributor``, ``Reader``, ``Editor``, etc.
 and you can view these on the :guilabel:`Sharing` tab
-and in :term:`ZMI` :guilabel:`Security` tab.
+and in Management Interface :guilabel:`Security` tab.
 
 Good introduction to roles:
 `Basic Roles and Permissions in Plone <http://www.sixfeetup.com/blog/basic-roles-and-permissions-in-plone>`_
@@ -97,7 +97,7 @@ Example::
     from Products.CMFCore.utils import getToolByName
     pm = getToolByName(context, 'portal_membership')
     roles_in_context = pm.getAuthenticatedMember().getRolesInContext(context)
-          
+
 Deleting local roles
 ====================
 
@@ -189,7 +189,7 @@ Set your breakpoint in ``Products.PlonePAS.plugins.local_role.LocalRolesManager.
 and ``Products.PlonePAS.plugins.role.GroupAwareRoleManager.getRolesForPrincipal()``.
 There you see how roles for a given context are being resolved.
 
-Check the ``acl_users.portal_role_manager`` tool via the :term:`ZMI`.
+Check the ``acl_users.portal_role_manager`` tool via the Management Interface.
 
 Please see the `zopyx.plone.cassandra <https://pypi.python.org/pypi/zopyx.plone.cassandra>`_ add-on product.
 

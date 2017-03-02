@@ -176,7 +176,7 @@ before storing::
     user_object._setPassword("secret")
 
 You may also use the ``portal_registrations`` tool. This method is
-security-checked and may be used from ZMI scripts::
+security-checked and may be used from Management Interface scripts::
 
     rtool = context.portal_registration
     rtool.editMember(id, properties={}, password="secret")

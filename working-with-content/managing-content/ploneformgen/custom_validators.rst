@@ -4,13 +4,17 @@ Creating custom validators
 
 .. admonition :: Description
 
-    PloneFormGen allows you to create a custom field-input validator by specifying a TALES expression that will be used to validate input when it's submitted. This how-to explains what that means, and offers a few examples.
+    PloneFormGen allows you to create a custom field-input validator by specifying a TALES expression that will be used to validate input when it's submitted.
+    This how-to explains what that means, and offers a few examples.
 
-`Template Attribute Language Expression Syntax` (TALES) is a simple notation that allows determination of a value via path (as in path/to/object), string or Python expressions. It is used in `Zope's Template Attribute Language` (TAL), and is ubiquitous in Plone templates. This how-to does not teach you TALES; for that, try the `Zope Page Templates Reference <http://www.plope.com/Books/2_7Edition/AppendixC.stx#1-10>`_.
+`Template Attribute Language Expression Syntax` (TALES) is a simple notation that allows determination of a value via path (as in path/to/object), string or Python expressions.
+It is used in `Zope's Template Attribute Language` (TAL), and is ubiquitous in Plone templates.
+This how-to does not teach you TALES; for that, try the `Zope Page Templates Reference <http://www.plope.com/Books/2_7Edition/AppendixC.stx#1-10>`_.
 
 .. warning::
 
-    Please note that it's easy to make a mistake when working with TALES fields that will cause an error when you try to display your form. Stay calm! Take note of the error message, and return to the field edit form to fix it. Don't be scared of this kind of error.
+    Please note that it's easy to make a mistake when working with TALES fields that will cause an error when you try to display your form.
+    Take note of the error message, and return to the field edit form to fix it. Don't be scared of this kind of error.
 
 The rules for writing a validator are:
 
@@ -22,14 +26,18 @@ The rules for writing a validator are:
 
 * Don't change the value variable. It won't do you any good.
 
-A simple example
-================
+Example
+=======
 
-Let's say that you are operating a restaurant that serves only dishes containing spam. You may wish to check to make sure that the input to a string or text field contains "spam". You may do that with by setting a custom validator that reads::
+Let's say that you are operating a restaurant that serves only dishes containing spam.
+You may wish to check to make sure that the input to a string or text field contains "spam".
+You may do that with by setting a custom validator that reads::
 
     python: 'spam' not in value and 'Input must include spam.'
 
-The odd logic comes from the need to return `False` for valid input. Look at a couple of examples of validation in action with literal strings. Remember, we want to force spam on the user:
+The odd logic comes from the need to return `False` for valid input.
+Look at a couple of examples of validation in action with literal strings.
+Remember, we want to force spam on the user:
 
 .. code-block:: pycon
 
@@ -75,7 +83,9 @@ modules
 Using a Python script
 =====================
 
-You'll be frustrated fast if you try to do anything smart in a single TALES expression. If you need to do something more complicated, add a Python Script to your form folder and call it via TALES. For example, if you added a script with the id includesSpam, you could call it with the expression::
+You'll be frustrated fast if you try to do anything smart in a single TALES expression.
+If you need to do something more complicated, add a Python Script to your form folder and call it via TALES.
+For example, if you added a script with the id includesSpam, you could call it with the expression::
 
     python: folder.includesSpam(value)
 
@@ -93,4 +103,7 @@ which will include form input.)
 
 .. note::
 
-    Python scripts are not the same as the Custom Script Adapter. The latter is meant to make it easy to add a custom adapter that's processed in the same way as the mail or save-data adapter. Python scripts are just simple Python code fragments that act like functions. They are added via the Zope Management Interface
+    Python scripts are not the same as the Custom Script Adapter.
+    The latter is meant to make it easy to add a custom adapter that's processed in the same way as the mail or save-data adapter.
+    Python scripts Python code fragments that act like functions.
+    They are added via the Management Interface.
