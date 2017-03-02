@@ -29,7 +29,7 @@ GenericSetup XML files are usually in a ``profiles/default`` folder inside the a
 All run-time through-the-web (:term:`TTW`) configurable items, like viewlets order through ``/@@manage-viewlets`` page, are made repeatable using GenericSetup profile files.
 
 You do not need to hand-edit GenericSetup profile files.
-You can always change the configuration options through Plone or using the Management Interface, and then you export the resulting profile as an XML file, using the *Export* tab in the ``portal_setup`` Management Interface.
+You can always change the configuration options through Plone or using the Management Interface, and then you export the resulting profile as an XML file, using the *Export* tab in ``portal_setup`` accessible from the Management Interface.
 
 Directly editing XML profile files does not change anything on the site, even after Zope restart.
 This is because run-time TTW configurable items are stored in the database.
@@ -837,7 +837,7 @@ Note that you are always allowed to use the ``plone`` domain, but if the xml fil
       ...
     </object>
 
-  Note that when you go to the portal_actions tools in the Management Interface, you will see an i18n domain specified for each action.
+  Note that when you go to the portal_actions tool in the Management Interface, you will see an i18n domain specified for each action.
 
 - ``catalog.xml``: no i18n needed
 

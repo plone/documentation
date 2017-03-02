@@ -163,7 +163,7 @@ For instance, to override ``colophon.pt`` from plone.app.layout, knowing this te
 
 .. note::
 
-   Management Interface > portal_view_customizations is an handy way to find the template path.
+   Management Interface > portal_view_customizations is a handy way to find the template path.
 
 You can now restart Zope and re-install your product from the Plone control panel (Site Setup > Add-ons).
 

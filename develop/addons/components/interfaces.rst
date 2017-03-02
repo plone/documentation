@@ -8,8 +8,8 @@ Introduction
 
 Interfaces define what methods an object provides.
 Plone extensively uses interfaces to define APIs between different subsystems.
-They provide a more consistent and declarative way to define bridges between two different things, when duck-typing
-is not enough.
+They provide a more consistent and declarative way to define bridges between two different things,
+when duct taping is not enough.
 
 An interface defines the shape of a hole where different pieces fit.
 The shape of the piece is defined by the interface, but the implementation details like color, material, etc. can vary.

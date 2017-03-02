@@ -512,7 +512,7 @@ Example (mfabrik/rstpage/archetypes/fields.py)::
 Automatically generating description based on body text
 --------------------------------------------------------
 
-Below is a through-the-web (ttw) Python Script which you can drop to any Plone through the Management Interface.
+Below is a through-the-web (TTW) Python Script which you can drop into through the Management Interface.
 
 Use case: People are lazy to write descriptions (as in Dublin Core metadata).
 You can generate some kind of description by taking the few first sentences of the text.
@@ -522,7 +522,7 @@ This is not perfect, but this is way better than empty description.
 This script will provide one-time operation to automatically generate content item descriptions based on their body text
 by taking the first three sentences.
 
-The script will provide logging output to standard Plone log (var/log and stdout if Plone is run in the debug mode).
+The script will provide logging output to standard Plone log (var/log and stdout if Plone is run in debug mode).
 
 Example code::
 

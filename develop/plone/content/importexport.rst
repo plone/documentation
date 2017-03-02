@@ -37,7 +37,7 @@ To export objects from a site to another, do the following:
 
 * Zope .zexp to *youranothersite*/var/instance/import folder
 
-* Go to the Management Interface root of your another site
+* Go to the Management Interface root of your other site
 
 * Press Import / Export
 

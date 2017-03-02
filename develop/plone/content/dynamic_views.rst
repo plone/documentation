@@ -310,7 +310,7 @@ Register the view against a marker interface:
        />
 
 * Assign this marker interface to a content item using the Management Interface, via the Interfaces tab
-  or with python code:
+  or with Python code:
 
 .. code-block:: python
 
@@ -332,7 +332,7 @@ Migration script from default view to another
 
 Below is a script snippet which allows you to change the default view
 for all folders to another type.
-You can execute the script through the Management Interface as a Python Script.
+You can execute the script through the Management Interface as a Python script.
 
 Script code::
 

@@ -105,7 +105,7 @@ This is a glossary for some definitions used in this documentation and still und
     ZMI
         The *Management Interface*.
         A Management Interface that is accessible through the web.
-        Accessing is as simple as appending ``/manage`` to your URL, for example:
+        Accessing it is as simple as appending ``/manage`` to your URL, for example:
         ``http://localhost/manage`` - or visiting Plone Setup and clicking
         the *Management Interface* link (Click 'View' to go back to the
         Plone site).
