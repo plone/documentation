@@ -2,7 +2,9 @@
 JavaScript styleguide
 =====================
 
-*NOTE: Plone doesn't yet use any of the new `ES2015 <https://babeljs.io/docs/learn-es2015/>`__ features.*
+.. note:: 
+
+  Plone doesn't yet use any of the new `ES2015 <https://babeljs.io/docs/learn-es2015/>`__ features.
 
 Many of the style guide recommendations here come from Douglas Crockford's seminal book `JavaScript, the good parts <http://shop.oreilly.com/product/9780596517748.do>`__.
 
@@ -15,7 +17,7 @@ When editing a file, please keep to the convention already established.
 
 In `Patternslib <http://patternslib.com>`_ we indent 4 spaces as suggested by Douglas Crockford in *JavaScript, the good parts*.
 
-The `Mockup <https://github.com/plone/mockup>` patterns on the other hand indent 2 spaces.
+The `Mockup <https://github.com/plone/mockup>`_ patterns on the other hand we indent 2 spaces.
 
 
 Naming of variables, classes and functions
