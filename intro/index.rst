@@ -37,7 +37,7 @@ Need to be sure your website is accessible? Plone meets or exceeds US Government
 
 **Worried about security?** As an open source product, a large number of developers frequently scrutinize the code for any potential security issues.
 This proactive approach is better than the wait-and-see approach in proprietary software that relies on keeping security issues a secret instead of resolving them outright.
-Based on Python and the Zope libraries, Plone has a technological edge that has has helped it attain the best security track record of any major CMS (Source: `CVE <http://cve.mitre.org/>`_).
+Based on Python and the Zope libraries, Plone has a technological edge that has helped it attain the best security track record of any major CMS (Source: `CVE <http://cve.mitre.org/>`_).
 In fact, security is a major reason why many CMS users are switching to Plone.
 
 
