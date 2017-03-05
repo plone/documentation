@@ -83,7 +83,7 @@ modules
 Using a Python script
 =====================
 
-You'll be frustrated fast if you try to do anything smart in a single TALES expression.
+You'll be quickly frustrated if you try to do anything smart in a single TALES expression.
 If you need to do something more complicated, add a Python Script to your form folder and call it via TALES.
 For example, if you added a script with the id includesSpam, you could call it with the expression::
 

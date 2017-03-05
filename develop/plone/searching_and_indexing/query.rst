@@ -20,7 +20,7 @@ tool to perform most content-related queries. Special catalogs, like ``reference
 Accesing the ``portal_catalog`` tool
 ====================================
 
-Plone queries are performed using ``portal_catalog`` persistent tool which is available as an persistent object at the site root.
+Plone queries are performed using ``portal_catalog`` which is available as an persistent object at the site root.
 
 Example::
 
@@ -651,7 +651,7 @@ To get all catalog brains of certain content type on the whole site::
 
         campaign_brains = self.context.portal_catalog(portal_type="News Item")
 
-To see available type names, visit in portal_types tool in Management Interface.
+To see available type names, visit portal_types in the Management Interface.
 
 Query published items
 =====================
@@ -1065,7 +1065,7 @@ site objects.
 Here is an example how to crawl through Plone content to search HTML
 snippets. This can be done by rendering every content object and check
 whether certain substrings exists the output HTML This snippet can be
-executed through-the-web in Management Interface.
+executed through-the-web in the Management Interface.
 
 This kind of scripting is especially useful if you need to find old links or
 migrate some text / HTML snippets in the content itself. There might be

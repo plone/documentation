@@ -4,12 +4,12 @@ PloneFormGen
 
 .. admonition :: Description
 
-        PloneFormGen allows you to build and maintain convenience forms through Plone edit interface.
+   PloneFormGen allows you to build and maintain convenience forms through Plone edit interface.
 
 Introduction
 ------------
 
-*PloneFormGen* is a Plone add-on Product that provides a generic Plone form generator using fields, widgets and validators from Archetypes.
+*PloneFormGen* is a Plone add-on that provides a generic Plone form generator using fields, widgets and validators from Archetypes.
 Use it to build simple, one-of-a-kind, web forms that save or mail form input.
 
 To build a web form, create a form folder, then add form fields as contents.

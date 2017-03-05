@@ -112,7 +112,7 @@ Undoing transactions
 =======================
 
 Everything that has happened on Plone site can be undoed through the *Undo*
-tab in the Management Interface, in site root.
+tab in the Management Interface, in the site root.
 By default you can undo latest 20 transactions.
 
 If you need to raise this limit just replace all numbers of ``20``
