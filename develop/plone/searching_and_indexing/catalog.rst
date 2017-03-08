@@ -11,92 +11,68 @@ Catalogs
 Why ZCatalogs
 =============
 
-Plone is built on the CMF, which uses the ZODB to store content in
-a very free-form manner with arbitrary hierarchy and a lot of
-flexibility in general. For some content use cases, however, it is
-very useful to treat content as more ordered, or tabular. This is
-where ZCatalog comes in.
+Plone uses the ZODB to store content in a very free-form manner with arbitrary hierarchy and a lot of flexibility in general.
+For some content use cases, however, it is very useful to treat content as more ordered, or tabular.
+This is where ZCatalog comes in.
 
-Searching, for example, requires being able to query content on
-structured data such as dates or workflow states. Additionally,
-query results often need to be sorted based on structured data of
-some sort. When it comes to searching it is very valuable to
-treat our free-form persistent ZODB objects as if they were more
-tabular. ZCatalog indexes do exactly this.
+Searching, for example, requires being able to query content on structured data such as dates or workflow states.
+Additionally, query results often need to be sorted based on structured data of some sort.
+When it comes to searching it is very valuable to treat our free-form persistent ZODB objects as if they were more tabular.
+ZCatalog indexes do exactly this.
 
-Since the ZCatalog is in the business of treating content as
-tabular when it isn't necessarily so, it is very tolerant of any
-missing data or exceptions when indexing. For example, Plone
-includes "start" and "end" indexes to support querying events on
-their start and end dates.  When a page is indexed, however, it
-doesn't have start or end dates.  Since the ZCatalog is tolerant,
-it doesn't raise any exception when indexing the start or end dates
-on a page. Instead it simply doesn't include pages in those
-indexes. As such, it is appropriate to use indexes in the catalog
-to support querying or sorting when not all content provides the
-data indexed.
+Since the ZCatalog is in the business of treating content as tabular when it isn't necessarily so,
+it is very tolerant of any missing data or exceptions when indexing.
+For example, Plone includes "start" and "end" indexes to support querying events on their start and end dates.
+When a page is indexed, however, it doesn't have start or end dates.
+Since the ZCatalog is tolerant, it doesn't raise any exception when indexing the start or end dates on a page.
+Instead it simply doesn't include pages in those indexes.
+As such, it is appropriate to use indexes in the catalog to support querying or sorting when not all content provides the data indexed.
 
 This manual is intended to be a brief start guide to ZCatalogs,
-specially aimed to tasks specific to Plone, and will not treat
-advanced ZCatalogs concepts in depth. If you want to learn more
-about ZCatalogs in the context of Zope, please refer to
-`The Zope Book, Searching and Categorizing Content`_. If you want
-to perform advanced searches, `AdvancedQuery`_, which is included
-with Plone since the 3.0 release, is what you're looking for. See
-`Boolean queries (AdvancedQuery)`_ for a brief introduction.
+specially aimed to tasks specific to Plone,
+and will not treat advanced ZCatalogs concepts in depth.
+If you want to learn more about ZCatalogs in the context of Zope,
+please refer to `The Zope Book, Searching and Categorizing Content`_.
+
 
 Quick start
 ===========
 
-Every ZCatalog is composed of indexes and metadata. Indexes are
-fields you can search by, and metadata are copies of the contents
-of certain fields which can be accessed without waking up the
-associated content object.
+Every ZCatalog is composed of indexes and metadata.
+Indexes are fields you can search by,
+and metadata are copies of the contents of certain fields which can be accessed without waking up the associated content object.
 
-Most indexes are also metadata fields. For example, you can search
-objects by *Title* and then display the *Title* of each object
-found without fetching them, but note not all indexes need to be
-part of metadata.
+Most indexes are also metadata fields.
+For example, you can search objects by *Title* and then display the *Title* of each object found without fetching them,
+but note not all indexes need to be part of metadata.
 
-When you search inside the catalog, what you get as a result is a
-list of elements known as brains. Brains have one attribute for
-each metadata field defined in the catalog, in addition to some
-methods to retrieve the underlying object and its location.
-Metadata values for each brain are saved in the metadata table of
-the catalog upon the (re)indexing of each object.
+When you search inside the catalog,
+what you get as a result is a list of elements known as brains.
+Brains have one attribute for each metadata field defined in the catalog,
+in addition to some methods to retrieve the underlying object and its location.
+Metadata values for each brain are saved in the metadata table of the catalog upon the (re)indexing of each object.
 
-Brains are said to be lazy for two reasons; first, because they are
-only created 'just in time' as your code requests each result, and
-second, because retrieving a catalog brain doesn't wake up the
-objects themselves, avoiding a huge performance hit.
+Brains are said to be lazy for two reasons;
+first, because they are only created 'just in time' as your code requests each result,
+and second, because retrieving a catalog brain doesn't wake up (or load) the objects themselves, avoiding a huge performance hit.
 
-To see the ZCatalogs in action, fire up your favourite browser and
-open the Management Interface. You'll see an object in the root of your Plone site
-named *portal\_catalog*. This is the Catalog Tool, a Plone tool
-(like the Membership Tool or the Quickinstaller Tool) based on
-ZCatalogs created by default in every Plone site which indexes all
-the created content.
+To see the ZCatalogs in action, use your favorite browser and open the Management Interface.
+You'll see an object in the root of your Plone site named *portal\_catalog*.
+This is the Catalog Tool, a Plone tool based on ZCatalog created by default in every Plone site which indexes all the created content.
 
 Open it and click the *Catalog* tab, at the top of the screen.
 There you can see the full list of currently indexed objects,
-filter them by path, and update and remove entries. If you click on
-any entry, a new tab (or window) will open showing the metadata and
-index values for the selected indexed object. Note that most fields
-are "duplicated" in the *Index Contents* and *Metadata Contents*
-tables, but its contents have different formats, because, as it was
-said earlier, indexes are meant to search by them, and metadata to
-retrieve certain attributes from the content object without waking
-it up.
+filter them by path, and update and remove entries.
+If you click on any entry, a new tab (or window) will open showing the metadata and index values for the selected indexed object.
+Note that most fields are "duplicated" in the *Index Contents* and *Metadata Contents* tables,
+but its contents have different formats.
+This is because indexes are meant to search in,
+and metadata to retrieve certain attributes from the content object without waking it up.
 
-Back to the management view of the Catalog Tool, if you click the
-*Indexes* or the *Metadata* tab you'll see the full list of
-currently available indexes and metadata fields, respectively, its
-types and more. There you can also add and remove indexes and
-metadata fields. If you're working on a test environment, you can
-use this manager view to play with the catalog, but beware indexes
-and metadata are usually added through GenericSetup and not using
-the Management Interface.
-
+Back to the management view of the Catalog Tool,
+if you click the *Indexes* or the *Metadata* tab you'll see the full list of currently available indexes and metadata fields with its types and more. There you can also add and remove indexes and metadata fields.
+If you're working in a test environment, you can use this manager view for playing with the catalog,
+but beware indexes and metadata are usually added through GenericSetup and not using the Management Interface.
 
 Other catalogs
 --------------
