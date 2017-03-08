@@ -11,6 +11,7 @@ Unreleased
 - Remove Deliverance info for theming and refer to diazo.org deployment [fredvd]
 - Improve ReStructuredText Style Guide [svx]
 - Add documentation about TinyMCE styles and formats [davilima6]
+- Overhaul large parts of query.rst 'How to programmatically search and query content from a Plone site.' [jensens]
 
 
 20160606
