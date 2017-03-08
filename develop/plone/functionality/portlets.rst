@@ -4,7 +4,7 @@ Portlets
 
 .. admonition:: Description
 
-        Programmatical manipulation of portlets in Plone.
+   Programmatical manipulation of portlets in Plone.
 
 
 Introduction
@@ -13,11 +13,11 @@ Introduction
 Portlets are editable boxes in the left and right side bar of Plone user interface.
 Add-ons allow portlets in other parts in of the user interface too, like above and below the content.
 
-This document contains quick how-to information only.
+This document is a short introduction.
 Please visit the `Portlets reference manual <http://docs.plone.org/4/en/old-reference-manuals/portlets/index.html>`_ for in-depth information.
 
 Related add-ons and packages
-------------------------------
+----------------------------
 
 You might want to check these before starting to write your own portlet -
 for ready solution, for examples, for inspiration.
@@ -39,11 +39,9 @@ for ready solution, for examples, for inspiration.
 Creating a portlet
 ------------------
 
-* You need a paster-compatible product skeleton created using *paster create -t plone* or
-  *paster create -t archetypes* commands.
+* You need a paster-compatible product skeleton created using *paster create -t plone* or *paster create -t archetypes* commands.
 
-* Use project specific paster command *paster addcontent portlet* to create a code
-  skeleton for your new portlet.
+* Use project specific paster command *paster addcontent portlet* to create a code skeleton for your new portlet.
 
 .. deprecated:: may_2015
     Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>` instead
@@ -56,7 +54,7 @@ You can subclass a portlet to create a new portlet type with your enhanced funct
 * `subclassing portlets <http://docs/plone.org/4/en/old-reference-manuals/portlets/appendix/subclassing.html>`_
 
 Using z3c.form in portlets
------------------------------
+--------------------------
 
 :doc:`z3c.form </develop/plone/forms/z3c.form>` is a modern form library for Plone. The out of the box Plone portlets
 use older *zope.formlib*.
@@ -66,7 +64,7 @@ Discussion related to the matter
 * http://stackoverflow.com/questions/5174905/can-i-use-z3c-form-on-plone-portlets-instead-of-zope-formlib
 
 Overriding portlet rendering
--------------------------------
+----------------------------
 
 Use ``<plone:portletRenderer>`` directive.
 Specify 1) layer, 2) template and/or 3) class 4) portlet interface.
@@ -94,12 +92,12 @@ More information
 
 
 update() and render()
------------------------
+---------------------
 
 These methods should honour `zope.contentprovider.interfaces.IContentProvider call contract <https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py>`_.
 
 available property
--------------------
+------------------
 
 The portlet renderer can define available property to hint the portlet manager when the portlet should be rendered.
 
@@ -142,7 +140,7 @@ which have been assigned to the portal root::
                 print "Found portlet assignment:" + id + " " + str(assignment)
 
 Looking up a portlet by id
------------------------------
+--------------------------
 
 Here are some tips how to extract the portlet id data in the portlet
 renderer to pass around to be consumed elsewhere.
@@ -969,5 +967,3 @@ Other resources and examples
 * `Static text portlet <https://github.com/plone/plone.portlet.static/blob/master/plone/portlet/static/>`_.
 
 * `Templated portlet <https://github.com/collective/collective.easytemplate/blob/master/collective/easytemplate/browser/portlets/templated.py>`_
-
-
