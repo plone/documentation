@@ -7,15 +7,15 @@ Helper tools for writing Documentation
    Tools and Plugins which will help to write documentation.
 
 
-Online tools:
--------------
+Online tools
+============
 
 - `rst.ninjs.org <http://rst.ninjs.org/>`_ and a fork with more Sphinx support at `livesphinx.herokuapp.com <http://livesphinx.herokuapp.com/>`_
 - `notex.ch <https://www.notex.ch/>`_
 
 
-Offline tools:
----------------
+Offline tools
+=============
 
 **ReText** is a handy editor for **.rst** and **.md** formats.
 On Ubuntu and Debian-based systems all you have to do is
@@ -66,8 +66,8 @@ A viewer for ReStructuredText documents that renders them on the fly.
 
     pip install restview
 
-Language tools:
----------------
+Language tools
+==============
 
 These tools can help you to check for grammatical mistakes and typos, you should always use a spell checker anyway!
 
