@@ -8,7 +8,9 @@ This tutorial discusses what content rules are and how to configure and use them
 Helicopter view
 ===============
 
-Content Rules are a powerful mechanism to automate dealing with content. There are several steps, that follow one another:
+Content Rules are a powerful mechanism to automate dealing with content.
+
+There are several steps, that follow one another:
 
 **Define the rule**
 
@@ -26,12 +28,13 @@ Why is the setting up of a Content Rule separated from the application? Because 
 Triggers, conditions, actions
 =============================
 
-A general overview as to what makes up a content rule, some sample use cases, and who can set up and use content rules.
+A general overview what makes up a content rule, some sample use cases, and who can set up and use content rules.
 
 **What is a content rule?**
 
 A content rule will automatically perform an action when certain events (known as "triggers") take place.
-For example, you can set up a content rule to send an email (the action) whenever certain (or any) content is added to a specific folder (the trigger).
+
+You can set up a content rule to send an email (the action) whenever certain (or any) content is added to a specific folder (the trigger).
 
 **Other use cases for content rules**
 
@@ -88,7 +91,9 @@ The following **actions** are available by default:
 
 .. note::
 
-   Content Rules are extendable. There are add-ons available that will create new actions, conditions or triggers, and you can also write your own. An example would be an action that tweets each time a News article is published, or will alert you if an event will start next week. A search on `https://pypi.python.org <https://pypi.python.org>`_ for "contentrules" will show you some examples.
+   Content Rules are extendable.
+
+   There are add-ons available that will create new actions, conditions or triggers, and you can also write your own.
 
 
 Creating and Defining Content Rules
@@ -226,15 +231,26 @@ At this point, you have successfully created a content rule. However, this conte
 
 - By default, the rule has now been applied to the current folder only as indicated by the symbol in the "Enabled here" column indicates.
 
-There will be several buttons near the bottom. Tick the check box for the rule you want ("Send Email...") and then click on either "Apply to subfolders"  button. Now this content rule will also apply to any subfolder that exist now or are created in the future.
+There will be several buttons near the bottom.
+
+Tick the check box for the rule you want ("Send Email...") and then click on either "Apply to subfolders"  button.
+
+Now this content rule will also apply to any subfolder that exist now or are created in the future.
+
 If you wish to have this rule apply to all the subfolders but not to the current folder, then tick the check box next to the rule and click on the "Disable" button.
 
-.. note ::
+.. note::
 
-    Note: that the "Enabled here" column is empty for this rule now. You will need to explicitly use the "Enable" button to re-active this rule for the current folder; using the "Apply to current folder only" button will NOT re-enable the content rule.
+    The "Enabled here" column is empty for this rule now.
 
-    Basically, the "Apply to subfolders" and "Apply to current folder only" can be thought of as toggles.
-    You can test this rule now by creating a new Page or modifying an existing Page. Once you click on "Save" for that Page, an email will be sent.
+    You will need to explicitly use the "Enable" button to re-active this rule for the current folder;
+    using the "Apply to current folder only" button will **NOT** re-enable the content rule.
+
+    The ``Apply to subfolders`` and ``Apply to current folder only`` can be thought of as toggles.
+
+    You can test this rule now by creating a new Page or modifying an existing Page.
+
+    Once you click on ``Save`` for that Page, an email will be sent.
 
 
 Managing Multiple Rules
@@ -242,24 +258,31 @@ Managing Multiple Rules
 
 For each rule, you can say if additional rules should be applied after it, or if it is the end of the pipeline.
 
-Furthermore, you can say if you want rules to be *cascading* or not. An example: the first ContentRule is triggered for a content item, which is then moved to a folder. But, in this folder, another ContentRule is active, which will operate on any new content item that gets moved into that folder. *Cascade* means that yes, the second rule should be applied.
+Furthermore, you can say if you want rules to be *cascading* or not.
+
+An example: the first ContentRule is triggered for a content item, which is then moved to a folder. But, in this folder, another ContentRule is active, which will operate on any new content item that gets moved into that folder. *Cascade* means that yes, the second rule should be applied.
 
 .. note::
 
-   As you can imagine, it is entirely possible to create never-ending loops this way: Rule1 moves newly published files in Folder1 to Folder2. But Rule2, which is active in Folder2, unpublishes any newly moves files, and then copies them into Folder1. And so it goes round and round...
+   It is entirely possible to create never-ending loops this way: Rule1 moves newly published files in Folder1 to Folder2.
 
+   But Rule2, which is active in Folder2, unpublishes any newly moves files, and then copies them into Folder1. And so it goes round and round...
 
    Be careful when using cascading rulesets!
 
 
-Things to note when "navigating" with assigned content rules
-------------------------------------------------------------
+"Navigating" with assigned content rules
+----------------------------------------
 
 The "Edit Content Rule" page uses a 'related items' like display ("Assignments") for listing all the locations where the rule is assigned.
-From there, you can go directly to that folder's Rules tab by clicking on the Title of that folder. Note that there is no indication in the Assignments section if the Rule is applied to subfolders or not.
+From there, you can go directly to that folder's Rules tab by clicking on the Title of that folder.
 
-If you're on a folder that has the rule assigned to it directly (e.g. it's NOT a subfolder of a folder that has the rule assigned), you can get directly to the "Edit Content Rule" page from the Rules tab by clicking on the Title of that rule (which is always a link).
+Note that there is no indication in the Assignments section if the Rule is applied to subfolders or not.
 
-Alternately, if you're on a folder that has the rule assigned from a folder higher up in the hierarchy, clicking on the rule Title link will take you to the folder's Rules tab where the rule has been explicitly assigned.
+If you're on a folder that has the rule assigned to it directly (e.g. it's NOT a subfolder of a folder that has the rule assigned),
+you can get directly to the "Edit Content Rule" page from the Rules tab by clicking on the Title of that rule (which is always a link).
+
+Alternately, if you're on a folder that has the rule assigned from a folder higher up in the hierarchy,
+clicking on the rule Title link will take you to the folder's Rules tab where the rule has been explicitly assigned.
 
 If from the Rules tab, a rule is listed at active, then the assignment of that rule is being managed from a parent folder.
