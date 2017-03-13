@@ -13,8 +13,9 @@ dependencies:
   override:
     - docker info
     - docker pull testthedocs/ttd.coala
+    - docker pull testthedocs/plone-lint
 
 test:
   override:
     - docker run -it -v "${PWD}":/source:rw testthedocs/ttd.coala '-c=/source/.coafile' -C WG
-
+    - docker run -it -v "${PWD}":/srv/docs:rw -v $(pwd)/.ttd-lintrc:/srv/.ttd-lintrc testthedocs/plone-lint
