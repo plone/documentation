@@ -1,6 +1,6 @@
-==================================
- Contributing to the documentation
-==================================
+=================================
+Contributing to the documentation
+=================================
 
 .. admonition:: Description
 
@@ -49,7 +49,8 @@ Issues are sorted into different levels from easy to advanced. Picking an easy o
 
 .. note::
 
-    Working on issues takes time and energy, in order to make it as pleasant as possible for everyone, meaning for you and the reviewer we would like to ask you kindly to make yourself familiar with our
+    Working on issues takes time and energy, to make it as pleasant as possible for everyone,
+    meaning for you and the reviewer we would like to ask you kindly to make yourself familiar with our
     style-guides for :doc:`documentation </about/documentation_styleguide>` and :doc:`reStructuredText [reST]</about/rst-styleguide>`.
 
 Plone Issues
@@ -78,7 +79,7 @@ If you want to contribute to this documentation, you can do so directly by makin
 if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_.
 
 If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team,
-for instance via the `mailinglist <http://sourceforge.net/p/plone/mailman/plone-docs/>`_ or directly send a mail to plone-docs@lists.sourceforge.net
+for instance via our `community space <https://community.plone.org/c/documentation/>`_.
 
 Basically, all we need is your written confirmation that you are agreeing your contribution can be under Creative Commons.
 
@@ -123,8 +124,11 @@ The documentation for the different versions (Plone 3, Plone 4, Plone 5) are org
 
 The *default* branch points to the current version of Plone.
 
-Documentation changes that are valid for multiple versions of Plone can be done by making multiple pull requests, or by :doc:`cherry-picking </about/cherrypicking>` which may be easier to do when branches are widely different.
-When all this seems alien and strange, just note in your pull request that you think this is valid for other versions of Plone as well, and the documentation team will take care of doing the technical stuff.
+Documentation changes that are valid for multiple versions of Plone can be done by making multiple pull requests, or by :doc:`cherry-picking </about/cherrypicking>`
+which may be easier to do when branches are widely different.
+
+When all this seems complicated, note in your pull request that you think this is valid for other versions of Plone as well,
+and the documentation team will take care.
 
 
 Editing the documentation on GitHub
