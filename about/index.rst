@@ -8,5 +8,6 @@ About this documentation
     contributing
     documentation_styleguide
     rst-styleguide
+    word_choice
     helper_tools
     searching
