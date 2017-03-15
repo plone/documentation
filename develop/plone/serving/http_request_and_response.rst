@@ -302,7 +302,7 @@ Request port
 
 It is possible to extract the Zope instance port from the request.  This is
 useful e.g. for debugging purposes if you have multiple ZEO front ends running,
-and you want to identify them easily::
+and you want to identify them::
 
     port = request.get("SERVER_PORT", None)
 
@@ -584,13 +584,13 @@ Below is an example how to install an event handler which checks in the site
 root for a TTW Python script and if such exist it asks it to provide a HTTP
 redirect.
 
-This behavior allows you to write site-wide redirects easily
+This behavior allows you to write site-wide redirects
 
 * In Python (thank god no Apache regular expressions)
 
 * Redirects can access Plone content items
 
-* You can easily have some redirects migrated from the old (non-Plone) sites
+* You can have some redirects migrated from the old (non-Plone) sites
 
 Add the event subscriber to ``configure.zcml``:
 

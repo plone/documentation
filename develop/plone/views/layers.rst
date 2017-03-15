@@ -4,8 +4,7 @@ Layers
 
 .. admonition:: Description
 
-    Layers allow you to easily enable and disable views and other site
-    functionality based on installed add-ons and themes.
+   Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes.
 
 
 Introduction

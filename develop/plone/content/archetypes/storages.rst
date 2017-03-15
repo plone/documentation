@@ -24,7 +24,7 @@ persistent entity. A bucket usually holds a small number of items. Buckets
 are loaded on request and as needed compared to using native Python
 datatypes.
 
-It is safe to assume that you can fit few variables to one bucket easily.
+It is safe to assume that you can fit few variables to one bucket.
 
 You also might want to define ``ATFieldProperty`` accessor if you are using
 this storage.  This allows you to read the object value using standard

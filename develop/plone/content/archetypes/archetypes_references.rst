@@ -40,7 +40,7 @@ Archetypes reference fields just store the UID (Universal Object Identifier)
 of an object providing the ``IReferenceable`` interface. Continuing with the
 example above, you will usually use the regular field API (getters/setters).
 
-You can get the UID of a referenceable object easily::
+Get the UID of a referenceable object::
 
     >>> areferenceableobject_uid = areferenceableobject.UID()
 

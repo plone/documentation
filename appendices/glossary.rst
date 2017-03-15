@@ -301,7 +301,7 @@ This is a glossary for some definitions used in this documentation and still und
         and other add-ons, and is a useful place to find the very latest
         code for hundreds of add-ons to Plone. Developers of new Plone
         Products are encouraged to share their code via the Collective so
-        that others can easily find it, use it, and contribute fixes and
+        that others can find it, use it, and contribute fixes and
         improvements.
 
     Sprint

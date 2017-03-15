@@ -78,7 +78,7 @@ The LESS resources live in the `plonetheme.barceloneta egg <https://github.com/p
     ├── variables.plone.less
     └── views.plone.less
 
-They are divided by base styling, layout, function, components and views, so they could be easily reusable and extended from other themes.
+They are divided by base styling, layout, function, components and views, so they could be reusable and extended from other themes.
 The main LESS resource that imports all the others is ``barceloneta.plone.less``.
 
 It has a set of LESS variables that can be overriden either through the web using the `Theming control panel <http://docs.plone.org/external/plone.app.theming/docs/index.html#using-the-control-panel>`_ or by reusing it in your own theme.
@@ -99,7 +99,7 @@ Whenever possible additional classes and ids were introduced being always domain
 Register LESS resources profile
 ===============================
 
-Barceloneta provides an optional GenericSetup profile that allows you to easily reuse the resources from the LESS files of your theme.
+Barceloneta provides an optional GenericSetup profile that allows you to reuse the resources from the LESS files of your theme.
 This is done by registering all the Barceloneta LESS resources as Plone Resource Registries resources.
 This profile is called ``plonetheme.barceloneta:registerless`` and can be imported from an external theme GenericSetup profile ``metadata.xml`` like:
 

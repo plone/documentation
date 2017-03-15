@@ -48,10 +48,12 @@ At the bottom area (often known as "footer") it has links to social media, legal
 Nowadays, since the rise of mobile devices like tablets and smartphones, websites quite often look different depending on the screen size.
 On a smartphone, the navigation is often contracted into a single icon that expands when the user touches it.
 Also, the "left" and "right" areas may be shown after the "main" area when using a smartphone.
-This technique is known as *responsive design*, and can be easily implemented using Plone.
+
+This technique is known as *responsive design*, and can be implemented using Plone.
 The default theme for Plone 5 uses this method already.
 
 What does a Plone web site look like?
-Traditionally, the out-of-the-box look is like that shown at the top of this page, with
-header, menu, columns, and a footer.
+
+Traditionally, the out-of-the-box look is like that shown at the top of this page, with header, menu, columns, and a footer.
+
 But using the flexible "Diazo" theme engine of Plone, each aspect can be made to look any way the designer chooses, and can also be shown different depending on the device of the visitor.

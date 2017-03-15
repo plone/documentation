@@ -28,7 +28,7 @@ Transmogrify
 By far the most flexible tool available is something called **collective.transmogrifier**.
 
 .. note::
-	
+
 	A transmogrifier is fictional device used for transforming one object into another object. The term was coined by Bill Waterson of Calvin and Hobbes fame.
 
 In principle, what it does is to allow you to lay a 'pipeline', whereby an object (a piece of content) is transported. At each part of the pipeline, you can perform various operations on it: extract, change, add metadata, etcetera. These operations are in the form of so-called 'blueprints'.
@@ -53,7 +53,7 @@ Transmogrify helpers
 
 Various add-ons exist to make working with transmogrify easier:
 
-- `mr.migrator <https://pypi.python.org/pypi/mr.migrator>`_ is a way to easily lay pipelines
+- `mr.migrator <https://pypi.python.org/pypi/mr.migrator>`_ is a way to lay pipelines
 - `funnelweb <https://pypi.python.org/pypi/funnelweb>`_ helps to parse static sites, and crawl external sites
 - `parse2plone <https://pypi.python.org/pypi/parse2plone>`_ is meant to get HTML content from the file system into Plone
 

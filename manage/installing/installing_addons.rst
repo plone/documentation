@@ -106,7 +106,7 @@ As mentioned above, always make sure to test add-ons, and see if you have the ri
 
 It is **standard, and highly recommended practice** to pick specific versions of add-ons. This practice is called "pinning".
 
-If you don't *pin* a specific version, a run of ``bin/buildout`` might download a newer version of an add-on, that in turn might depend on newer other software. This can easily lead to breakage of your site.
+If you don't *pin* a specific version, a run of ``bin/buildout`` might download a newer version of an add-on, that in turn might depend on newer other software. This can lead to breakage of your site.
 
 Therefore, always put the specific version number of the add-on into the section of buildout.cfg called "versions", or into the separate file "versions.cfg" if your buildout has one.
 An example of version-pinning would be to have:
@@ -123,7 +123,7 @@ When :doc:`upgrading add-ons </manage/upgrading/addon_upgrade>` also don't just 
 Installing development version of add-on packages
 -------------------------------------------------
 
-If you need to use the latest development version of an add-on package you can easily get the source in your development installation using the buildout extension `mr.developer <https://pypi.python.org/pypi/mr.developer>`_.
+If you need to use the latest development version of an add-on package you can get the source in your development installation using the buildout extension `mr.developer <https://pypi.python.org/pypi/mr.developer>`_.
 
 'mr.developer' can install, or *checkout* from various places: github, gitlab, subversion, private repositories etcetera.
 You can pick specific tags and branches to checkout.

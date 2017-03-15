@@ -654,10 +654,10 @@ Here is a no-warranty hack how to prevent ``folder_listing`` if needed::
 Complex folder listings and filtering
 ======================================
 
-The following example is for a very complex folder listing view.
+The following example is for a complex folder listing view.
+
 You can call view methods to returns the listed items themselves and render
-the HTML in another view --- this allows you to recycle this listing code
-easily.
+the HTML in another view --- this allows you to recycle this listing code.
 
 The view does the various sanity checks that normal Plone item listings do:
 

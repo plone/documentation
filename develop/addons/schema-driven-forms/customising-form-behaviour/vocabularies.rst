@@ -147,7 +147,7 @@ This is simply a callable (usually a function or an object with a
 *\_\_call\_\_* method) that provides the *IContextSourceBinder*
 interface and takes a *context* parameter. The *context* argument is the
 context of the form view. The callable should return a vocabulary, which
-is most easily achieved by using the *SimpleVocabulary* class from
+is achieved by using the *SimpleVocabulary* class from
 *zope.schema*.
 
 Here is an example that returns our pizza types:
@@ -225,7 +225,7 @@ Sometimes, it is useful to parameterise the source. For example, we
 could generalise the pizza source to work with any registry value
 containing a sequence, by passing the registry key as an argument. This
 would allow us to create many similar vocabularies and call upon them in
-code easily.
+code.
 
 This degree of generalisation is probably overkill for our use case, but
 to illustrate the point, we’ll outline the solution below.

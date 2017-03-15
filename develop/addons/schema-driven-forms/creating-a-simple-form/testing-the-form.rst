@@ -21,7 +21,7 @@ control panel. This should also install the product called *Plone
 z3c.form support* (from the *plone.app.z3cform* package) as a
 dependency.
 
-We haven’t created any links to the form yet (though you could easily do
+We haven’t created any links to the form yet (though you could do
 so in a content item or portlet by inserting a manually-entered URL),
 but the form can be visited by going to the *@@order-pizza* view on the
 Plone site root, e.g.:

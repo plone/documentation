@@ -31,7 +31,7 @@ See also `zope.i18n on pypi <https://pypi.python.org/pypi/zope.i18n>`_
 * Translations are stored in the ``locales`` folder of your application.
   Example: ``locales/fi/LC_MESSAGES/your.app.po``
 
-* Has `zope.i18nmessageid <https://pypi.python.org/pypi/zope.i18nmessageid>`_ package, which provides a string-like class which allows storing the translation domain with translatable text strings easily.
+* Has `zope.i18nmessageid <https://pypi.python.org/pypi/zope.i18nmessageid>`_ package, which provides a string-like class which allows storing the translation domain with translatable text strings.
 
 * ``.po`` files must usually be manually converted to ``.mo`` binary files every time the translations are updated.  See :term:`i18ndude`. (It is also possible to set an environment variable to trigger recompilation of ``.mo`` files; see below.)
 

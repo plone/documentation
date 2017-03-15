@@ -24,7 +24,7 @@ Check your links
 ----------------
 
 - `collective.linkcheck <https://pypi.python.org/pypi/collective.linkcheck>`_ provides link validity checking and reporting.
-- although you may also want to keep this out of Plone itself, and run an external linkchecker regularly. `This Linkchecker <http://wummel.github.io/linkchecker/>`_ is open source, available for multiple platforms and can be easily scripted.
+- although you may also want to keep this out of Plone itself, and run an external linkchecker regularly. `This Linkchecker <http://wummel.github.io/linkchecker/>`_ is open source, available for multiple platforms and can be scripted.
 
 Better images
 --------------
