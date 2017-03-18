@@ -55,3 +55,52 @@ What does a Plone web site look like?
 Traditionally, the out-of-the-box look is like that shown at the top of this page, with
 header, menu, columns, and a footer.
 But using the flexible "Diazo" theme engine of Plone, each aspect can be made to look any way the designer chooses, and can also be shown different depending on the device of the visitor.
+
+
+Icons and Preview Images (aka Thumbs)
+-------------------------------------
+
+**Icons** are used to highlight actions, options etc. in menu bars, property sheets and the like:
+
+.. figure:: /_static/icons.png
+   :align: center
+   :alt: Icons used in Plone user interface
+
+
+   
+Furthermore **icons** can be used to help to visually identify **content types** in any kind of listing or tables.
+For the content type *File* mime type icons are used to visualize the format of the given file.
+
+This feature is adjustable to a very high degree. There are default settings which can be configured in the `Site Configuration panel </adapt-and-extend/config/site.html>`_.
+This default settings can be overidden for each content item (edit: settings) or portlet respectively. 
+
+
+.. figure:: /_static/icons2.png
+   :align: center
+   :alt: Content type icons
+
+   
+**Preview Images (or thumbnails, thumbs)**  for image items or any other content items which have a lead image
+(or teaser image) can be shown in any listing or table. 
+Additional to the same configuraion options for icons above you can define default sizes for the preview images for, tables, lists or portlets and also overwrite these settings individually.  
+
+
+.. figure:: /_static/thumbs-example-1.png
+   :align: center
+   :alt: Example: preview images and icons with different settings
+   
+
+Depending on the default settings for table views the  content view of a folder will show preview images or not:
+
+   
+.. figure:: /_static/contents-with-thumbs-suppressed.png
+   :align: center
+   :alt: Example: content view with thumbs not shown
+
+   
+.. figure:: /_static/contents-with128x128.png
+   :align: center
+   :alt: Example: content view with thumbs  shown
+   
+   
+The second option (here with image size set to 128x128) is very handy whenever you need to rearrange a big number of images whith mkore or less meaningless title. 

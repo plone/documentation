@@ -11,7 +11,8 @@ Unreleased
 - Remove Deliverance info for theming and refer to diazo.org deployment [fredvd]
 - Improve ReStructuredText Style Guide [svx]
 - Add documentation about TinyMCE styles and formats [davilima6]
-
+- Documentation for Thumbs and Iconhandling in Plone 
+  https://github.com/plone/Products.CMFPlone/issues/1734 [fgrcon]
 
 20160606
 ========
