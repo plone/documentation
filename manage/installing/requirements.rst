@@ -18,6 +18,7 @@ To run a Plone based web site on your own server you need:
 
 Plone requires several system libraries.
 These need to be installed by a user with root access.
+If you would like to install Plone using a consumer hosting service, you must ensure that the service includes SSH and root access. 
 
 Operating system
 ----------------
@@ -35,19 +36,23 @@ Plone has been successfully installed on:
 
 * Windows
 
-To install on Windows, it is strongly recommended to use the Plone Windows
-Installer. Otherwise, you will need `Cygwin <http://www.cygwin.com>`_ to
-provide a \*nix build environment.
-
 Hardware (or virtual environment) requirements
 ----------------------------------------------
 
-The hardware requirements below give a rough estimation of the minimum hardware setup needed for a Plone server.
+The hardware requirements below give a rough estimate of the minimum hardware setup needed for a Plone server.
 
 Add-on products and caching solutions may increase RAM requirements.
 
-One Zope application server is able to run several Plone sites with the same software configuration.
-This lowers the requirements when hosting multiple sites on the same server.
+A single Plone installation is able to run many Plone sites.
+This makes it easy to host multiple sites on the same server.
+
+Plone runs on
+
+* Raspberry Pi
+* Windows PCs
+* Macs
+* servers
+* cloud services such as Amazon, Rackspace, and Linode
 
 Minimum requirements
 ~~~~~~~~~~~~~~~~~~~~
