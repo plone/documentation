@@ -25,7 +25,6 @@ Operating system
 
 Plone has been successfully installed on:
 
-
 * Nearly every popular Linux distribution;
 
 * Nearly every popular BSD distribution
@@ -46,12 +45,15 @@ Add-on products and caching solutions may increase RAM requirements.
 A single Plone installation is able to run many Plone sites.
 This makes it easy to host multiple sites on the same server.
 
-Plone runs on
+Plone runs on:
 
 * Raspberry Pi
+* Chromebooks
 * Windows PCs
 * Macs
 * servers
+* containers such as Docker
+* virtual machines such as Vagrant
 * cloud services such as Amazon, Rackspace, and Linode
 
 Minimum requirements
@@ -72,8 +74,10 @@ Recommended
 All Plone versions
 ==================
 
-A complete GNU build kit including GCC including gcc, gmake, patch, tar,
+For UNIX-based platforms, Plone requires Python and a complete GNU build kit including GCC including gcc, gmake, patch, tar,
 gunzip, bunzip2, wget.
+
+For Windows, Plone requires Python and Visual C++.
 
 Most required libraries listed below must be installed as development versions (dev).
 
@@ -119,76 +123,3 @@ Libraries
 You may also need to install dependencies needed by `Pillow <https://pillow.readthedocs.org/en/latest/>`_ a fork of the Python Image Libary.
 For further information please read: https://pillow.readthedocs.org/en/latest/installation.html
 
-Minimal build
-=============
-
-With complete requirements in place, a barebones Plone install may be created with a few steps.
-
-Create a directory called Plone-5 and enter it:
-
-.. code-block:: shell
-
-    mkdir Plone-5
-    cd Plone-5
-
-Run the steps to create a virtual python environment (virtualenv) and install zc.buildout:
-
-.. code-block:: shell
-
-    virtualenv-2.7 zinstance
-    cd zinstance
-    bin/pip install zc.buildout
-
-Create a ``buildout.cfg`` file:
-
-.. code-block:: shell
-
-    echo """
-    [buildout]
-    extends =
-        http://dist.plone.org/release/5-latest/versions.cfg
-
-    parts =
-        instance
-
-    [instance]
-    recipe = plone.recipe.zope2instance
-    user = admin:admin
-    http-address = 8080
-    eggs =
-        Plone
-        Pillow
-
-    """ > buildout.cfg
-
-Run buildout:
-
-.. code-block:: shell
-
-    /bin/buildout
-
-This will start a long download and build process ...
-
-Errors like ``SyntaxError: ("'return' outside function"..."`` may be ignored.
-
-After it finished you can start Plone in foreground-mode with:
-
-.. code-block:: shell
-
-    bin/instance fg
-
-You can stop it with ``ctrl + c``.
-
-Start and stop this Plone-instance in production-mode like this;
-
-.. code-block:: shell
-
-    bin/instance start
-
-    bin/instance stop
-
-Plone will run on port 8080 and can be accessed via http://localhost:8080.
-Use login id "admin" and password "admin" for initial login so you can create a site.
-
-This build would be adequate for a quick evaluation installation.
-For a production or development installation, use one of `Plone's installers <https://plone.org/products/plone>`_.
