@@ -74,10 +74,19 @@ Recommended
 All Plone versions
 ==================
 
-For UNIX-based platforms, Plone requires Python and a complete GNU build kit including GCC including gcc, gmake, patch, tar,
-gunzip, bunzip2, wget.
+What follows is an overview of Plone's overall software requirements.
+Each Plone installer (Unified Installer, Vagrant/VirtualBox, Windows buildout) will manage its dependencies and requirements differently. 
 
-For Windows, Plone requires Python and Visual C++.
+Windows
+-------
+
+Plone requires Python and Visual C++.
+
+UNIX-based platforms
+--------------------
+
+Plone requires Python and a complete GNU build kit including GCC including gcc, gmake, patch, tar,
+gunzip, bunzip2, wget.
 
 Most required libraries listed below must be installed as development versions (dev).
 
