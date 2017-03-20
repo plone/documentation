@@ -2,9 +2,6 @@
  Installation
 ==============
 
-.. highlight:: console
-
-
 Introduction
 ============
 
@@ -67,14 +64,14 @@ Plone can run on all popular desktop or server operating systems, including Linu
 
 
 Installing Plone using the Unified UNIX Installer
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------
 
 .. note::
 
     Running Plone in **production** will normally also entail other software for optimal security and performance,
     like a front-end webserver, caching, and firewall.
 
-	See :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` , and you may also be interested in :doc:`automated full-stack deployment </external/ansible-playbook/docs/index>`.
+    See :doc:`Deploying and installing Plone in production </manage/deploying/production/index>` , and you may also be interested in :doc:`automated full-stack deployment </external/ansible-playbook/docs/index>`.
 
 This recipe is good for:
 
@@ -94,9 +91,13 @@ Install the operating system software and libraries needed to run Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. example-code::
-	.. code-block:: Ubuntu
+	.. code-block:: Ubuntu 14.04
 
-		sudo apt-get install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+		sudo apt install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+
+	.. code-block:: Ubuntu 16.04
+
+		sudo apt install python2.7 python2.7-dev python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
 	.. code-block:: Fedora
 
@@ -110,6 +111,7 @@ Install the operating system software and libraries needed to run Plone
 .. note::
 
 	If the **sudo** command is not recognized or does not work you don't have administrator rights on your operating system.
+
 	Please contact your server vendor or consult the operating system support forum.
 
 
@@ -118,7 +120,7 @@ You will probably also want these optional system packages for handling of PDF a
 .. example-code::
 	.. code-block:: Ubuntu
 
-		sudo apt-get install libreadline-dev wv poppler-utils
+		sudo apt install libreadline-dev wv poppler-utils
 
 	.. code-block:: Fedora
 
@@ -137,7 +139,7 @@ If you're planning on developing with Plone, install git version control support
 .. example-code::
 	.. code-block:: Ubuntu
 
-		sudo apt-get install git
+		sudo apt install git
 
 	.. code-block:: Fedora
 
