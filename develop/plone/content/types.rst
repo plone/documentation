@@ -181,8 +181,7 @@ Creating types by hand is not worth the trouble.
 Creating new content types through-the-web
 =============================================
 
-There exist solutions for non-programmers and Plone novices
-to create their content types more easily.
+There are solutions for non-programmers and Plone novices to create their content types.
 
 Dexterity
 ---------

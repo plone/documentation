@@ -5,7 +5,7 @@ Add-on installation and export framework: GenericSetup
 .. admonition:: Description
 
     GenericSetup is a framework to modify the Plone site during add-on package installation and uninstallation.
-    It provides XML-based rules to change the site settings easily.
+    It provides XML-based rules to change the site settings.
 
 
 Introduction
@@ -329,7 +329,7 @@ Best practice for all versions of GenericSetup is this:
 Custom installer code (``setuphandlers.py``)
 ============================================
 
-Besides out-of-the-box XML steps which easily provide both install and uninstall,
+Besides out-of-the-box XML steps which provide both install and uninstall,
 GenericSetup provides a way to run custom Python code when your add-on package is installed and uninstalled.
 This is not a very straightforward process, though.
 

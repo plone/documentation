@@ -44,7 +44,7 @@ Below is an example how to work around this for jQuery getJSON() calls by
   to make server-to-server call and return it as it would be a local call, thus
   working around cross-domain restriction
 
-This example is for Plone, but the code is easily port to other web frameworks.
+This example is for Plone, but the code is portable to other web frameworks.
 
 .. note::
 

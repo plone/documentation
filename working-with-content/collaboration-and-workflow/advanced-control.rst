@@ -73,7 +73,7 @@ The next field, *Include contained items*, is a check box for controlling whethe
 
 **This is an important check box**.
 
-It lets you easily change the availability of an entire section of a website.
+It lets you change the availability of an entire section of a website.
 For example, the "Documentation" folder could contain four subfolders, with images, files, and other content that has been kept *private* during the initial work to build up this content.
 All of it could be immediately made public -- it could be *published* -- by checking this box and checking *Publish* at the bottom before saving.
 

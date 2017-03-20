@@ -365,7 +365,7 @@ Easiest way to test the policy is to label for instance the Python executable as
     # chcon system_u:object_r:plonectl_t:s0 python2.7
     # setenforce Enforcing
 
-This can easily be refined into automated testing. Other forms such as Portlet inside running Plone process can also be used for testing.
+This can be refined into automated testing. Other forms such as Portlet inside running Plone process can also be used for testing.
 
 Deploying the policy
 ====================

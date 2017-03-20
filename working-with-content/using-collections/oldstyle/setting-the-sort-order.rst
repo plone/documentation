@@ -36,7 +36,7 @@ make the Collection very easy to browse for the site visitor.
 Sorting by State will display results grouped by the publishing state.
 Since there are only two States in the default configuration of Plone,
 there will only be Published and Private items. We can use this to
-separate all pages on our site and easily see what we have that is
+separate all pages on our site and see what we have that is
 public (Published) and what we are hiding from the public eye (Private).
 
 **Category**

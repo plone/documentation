@@ -405,7 +405,7 @@ ZCML
 AJAX full-size image loading for album views
 ----------------------------------------------
 
-Plone album views can be easily converted to pop-up image viewing with PipBox.
+Plone album views can be converted to pop-up image viewing with PipBox.
 
 Put the following to portal_properties / pipbox_properties
 

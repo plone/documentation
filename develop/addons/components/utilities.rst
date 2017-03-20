@@ -4,8 +4,7 @@ Utilities
 
 .. admonition:: Description
 
-    Utility design pattern in Zope 3 allows easily overridable singleton class instances
-    for your code.
+    Utility design pattern in Zope 3 allows overridable singleton class instances for your code.
 
 
 Introduction

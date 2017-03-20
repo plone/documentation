@@ -31,7 +31,8 @@ This is why this mode is called anonymous: anyone can do it just by surfing norm
 .. note::
 
     **Pro tip**: you can use two different browsers (like Firefox and Chrome), and *not*  log in with one of them.
-    That way you can easily compare how visitors will see your site, and you can spot content that is not yet published.
+
+    That way you can compare how visitors will see your site, and you can spot content that is not yet published.
 
 Note the presence of the *log in* link in the screen image below.
 If there is a *log in* link showing, you haven't logged in -- and you are surfing the web site anonymously, as seen in the following screen capture of a new Plone web site:

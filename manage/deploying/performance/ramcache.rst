@@ -103,7 +103,7 @@ Example::
     # 2) The result cleaned HTML is cached in RAM
     #
     # We do not persistently want to store cleaned HTML,
-    # since our cleaner might be b0rked and we want to easily
+    # since our cleaner might be b0rked and we want to
     # regenerate cleaned HTML when needed.
     #
 
@@ -179,8 +179,8 @@ It takes optional backends which must be explicitly set::
             pas.ZCacheable_setManagerId(manager_id="RAMCache")
         getLDAPPlugin().ZCacheable_setManagerId(manager_id="RAMCache")
 
-The ``RAMCache`` above is per thread. You cannot clear this cache for all
-ZEO clients easily.
+The ``RAMCache`` above is per thread.
+Clearing this cache for all ZEO clients is hard.
 
 Some hints:
 

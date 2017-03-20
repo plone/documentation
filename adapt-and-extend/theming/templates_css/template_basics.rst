@@ -495,7 +495,7 @@ This blanks out the ``column_one_slot`` and ``column_two_slot`` slots.
 Head slots
 ================
 
-You can easily include per-template CSS and JavaScript in the ``<head>``
+You can include per-template CSS and JavaScript in the ``<head>``
 element using extra slots defined in Plone's ``main_template.pt``.
 
 Note that these media files do not participate in

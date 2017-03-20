@@ -85,8 +85,8 @@ This gives some benefits
 * The backend to perform queries is flexible - you
   can plug-in custom indexes
 
-* portal_catalog default catalog is used to all content items
-  to provide basic CMS functionality easily
+* portal_catalog default catalog is used for all content items
+  to provide basic CMS functionality
 
 * You can have optimized catalogs for specialized data (e.g. reference look-ups
   using reference_catalog)

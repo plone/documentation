@@ -655,7 +655,7 @@ To use the same template code several times you can either:
     referring to them outside templates is difficult.
 
     If you ever need to change the template language, or mix in other
-    template languages, you can do it much more easily when templates are a
+    template languages, you can do better when templates are a
     feature of a pure Python based view, and not vice versa.
 
 Here is an example of how to have a view snippet which can be used by
