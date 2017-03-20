@@ -25,7 +25,7 @@ Line length & translations
 
 Documentation is not code. Repeat after us: **Documentation is not code.**
 
-Therefore, documentation should **not** follow `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ or other arbitrary conventions.
+Documentation should **not** follow `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ or other arbitrary conventions.
 
 .. note::
 
@@ -149,9 +149,10 @@ Headings style guide
 
 reStructuredText and Sphinx enable any style you would prefer for the various heading level you would need.
 For example, underlining level 1 headings with ``.``, level 2 headings with ``#`` and level 3 headings with ``|`` is perfectly valid as far as ``docutils`` is concerned.
+
 Unfortunately this is not the same for a human documentation maintainer.
 
-In order to have consistent heading styles in all files that make this great document, it is recommended to follow strictly the rules stated in the Sphinx manual here: http://sphinx-doc.org/rest.html#sections
+For having consistent heading styles in all files it is recommended to follow strictly the rules stated in the `Sphinx manual <http://sphinx-doc.org/rest.html#sections>`_.
 
 As individual files do not have so called "parts" or "chapters", the headings would be underlined like this:
 
@@ -300,9 +301,12 @@ reST supports an image directive:
 .. code-block:: rst
 
   .. image:: ../_static/plone_donut.png
-   (options)
+     :alt: Picture of Plone Donut
 
-When used within Sphinx, the file name given (here plone_donut.png) must either be relative to the source file, or absolute which means that they are relative to the top source directory. For example, the file sketch/spam.rst could refer to the image _static/plone_donut.png as ../_static/plone_donut.png or /_static/plone_donut.png.
+When used within Sphinx, the file name given (here plone_donut.png) must either be relative to the source file,
+or absolute which means that they are relative to the top source directory.
+
+For example, the file sketch/spam.rst could refer to the image _static/plone_donut.png as ../_static/plone_donut.png or /_static/plone_donut.png.
 
 
 Other Sphinx and restructured text source snippets
@@ -423,4 +427,4 @@ For including gists just use the *gist* directive
 
 .. note::
 
-    Since this documentation serves as source for various versions (html, PDF, Dash/Zeal, others), please **always** include a link to the gist under the gist directive.
+    Since this documentation serves as source for various versions (html, PDF, others), please **always** include a link to the gist under the gist directive.
