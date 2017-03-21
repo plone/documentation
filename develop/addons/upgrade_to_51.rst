@@ -386,3 +386,33 @@ When you do not need them both, you can let the other return an empty list, or y
         @implementer(INonInstallable)
         class NonInstallable(object):
             ...
+
+
+Retina image scales
+===================
+
+In the Image Handling Settings control panel in Site Setup, you can configure Retina mode for extra sharp images.
+When you enable this, it will result in image tags like this, for improved viewing on Retina screens:
+
+.. code-block:: html
+
+    <img src="....jpeg" alt="alt text" title="some title" class="image-tile"
+         srcset="...jpeg 2x, ...jpeg 3x" height="64" width="48">
+
+To benefit from this new feature, you must use the ``tag`` method of image scales:
+
+.. code-block:: html
+
+    <img tal:define="images obj/@@images"
+         tal:replace="structure python:images.scale('image', scale='tile').tag(css_class='image-tile')">
+
+If you are iterating over a list of image brains, you should use the new ``@@image_scale`` view of the portal or the navigation root.
+This will cache the result in memory, which avoids waking up the objects the next time.
+
+.. code-block:: html
+
+    <tal:block define="image_scale portal/@@image_scale">
+        <tal:results tal:repeat="brain batch">
+            <img tal:replace="structure python:image_scale.tag(item, 'image', scale='tile', css_class='image-tile')">
+        </tal:results>
+    </tal:block>
