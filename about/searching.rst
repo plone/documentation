@@ -10,7 +10,7 @@ Searching the documentation
 Firefox
 =======
 
-`docs.plone.org <https://docs.plone.org>`_ is supporting `OpenSearch <http://www.opensearch.org/Home>`_.
+Our `documentation <https://docs.plone.org>`_ is supporting `OpenSearch <http://www.opensearch.org/Home>`_.
 
 With this it is possible to search `docs.plone.org <https://docs.plone.org>`_ with put the Firefox search bar.
 
