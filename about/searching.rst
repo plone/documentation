@@ -2,7 +2,7 @@
 Searching the documentation
 ===========================
 
-. admonition:: Description
+.. admonition:: Description
 
    Tools for searching in the documentation.
 
@@ -10,9 +10,9 @@ Searching the documentation
 Firefox
 =======
 
-`http://docs.plone.org <http://docs.plone.org>`_ is supporting `OpenSearch <http://www.opensearch.org/Home>`_.
+`docs.plone.org <https://docs.plone.org>`_ is supporting `OpenSearch <http://www.opensearch.org/Home>`_.
 
-With this it is possible to search `http://docs.plone.org <http://docs.plone.org>`_ with put the Firefox search bar.
+With this it is possible to search `docs.plone.org <https://docs.plone.org>`_ with put the Firefox search bar.
 
 Watch the `video <https://www.youtube.com/watch?v=J9gkjO_Xvxs>`_ .
 
