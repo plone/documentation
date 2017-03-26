@@ -44,7 +44,7 @@ Mail
 Navigation
     Configure :doc:`how navigation is constructed <navigation>`. Which content types should appear in navigation, should folders on the top level become tabs, and which workflows to show.
 Site
-    Various :doc:`site wide settings <site>`: Site name, logo, metadata, settings for search engines and more.
+    Various :doc:`site wide settings <site>`: Site name, logo, metadata, default settings for handling of icons and preview images, settings for search engines and more.
 Add-ons
     :doc:`Activate and deactivate <add-ons>` add-ons that enhance Plone's functionality.
 Search
