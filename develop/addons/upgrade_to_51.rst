@@ -386,7 +386,138 @@ When you do not need them both, you can let the other return an empty list, or y
         @implementer(INonInstallable)
         class NonInstallable(object):
             ...
+.. _content-type-icons-changed
 
+Content type icons
+==================
+Since Plone 3 there have been several breaking changes relating to content type icon rendering.
+
+**Plone 3**
+
+Content type icons where rendered as HTML tags, which were rendered with methods from plone.app.layout.icon ...:
+
+.. code-block:: html
+
+   <span class="contenttype-document summary">
+          <img width="16" height="16" src="http://192.168.1.230:8322/Plone/document_icon.gif" alt="Page">
+          <a href="http://192.168.1.230:8322/Plone/front-page" class="state-published url">Welcome to Plone</a>
+   </span>
+   
+  
+.. note::
+
+    Related code in plone.app.layout  (especially `getIcon()` and  `IContentIcon`) and other locations was more then deprecated - it is obsolete and confusing and is getting removed.
+    The catalog metadata item getIcon used to be a string containing the file name of the appropriate icon (unused since Plone 4).
+    
+    Since Plone 5.02 the catalog metadata item **getIcon** is reused for another purpose.
+    Now it is boolean and it is set to `True` for items which are images or have an image property (e.g. a lead image).
+    
+
+
+**Plone 4**
+
+Content type icons are rendered as background images using a sprite image and css:
+
+.. code-block:: html
+
+   <span class="summary">
+         <a href="http://192.168.1.230:8412/Plone/front-page" class="contenttype-document state-published url">Welcome to Plone</a>
+   </span>
+   
+   .icons-on .contenttype-document {
+       background: no-repeat transparent 0px 4px url(contenttypes-sprite.png);
+
+**Plone 5**
+
+Content type icons are rendered as ¸`fontello fonts <http://fontello.com/>`_ using css elements *before* or *after*.
+
+.. code-block:: html
+
+   <span class="summary" title="Document">
+        <a href="http://192.168.1.230:8082/Plone/front-page"
+             class="contenttype-document state-published url"
+             title="Document">Welcome to Plone</a>
+   </span>
+   
+   body#visual-portal-wrapper.pat-plone .outer-wrapper [class*="contenttype-"]:before, .plone-modal-body [class*="contenttype-"]:before {
+       font-family: "Fontello";
+       font-size: 100%;
+       padding: 0;
+       margin: 0;
+       position: relative;
+       left: inherit;
+       display: inline-block;
+       color: inherit;
+       width: 20px;
+       height: 20px;
+       text-align: center;
+       margin-right: 6px;
+       content: '\e834';
+   }
+
+Example from plonetheme.barceloneta/plonetheme/barceloneta/theme/less/contents.plone.less:
+
+.. code-block:: 
+
+     body#visual-portal-wrapper.pat-plone .outer-wrapper, .plone-modal-body{
+      [class*="contenttype-"]:before {
+         font-family:"Fontello"; font-size: 100%;
+         padding: 0; margin:0; position: relative; left: inherit; display: inline-block; color: inherit;
+         width: 20px; height: 20px; text-align: center; margin-right: @plone-padding-base-vertical;
+         content: '\e834';
+      }
+      .contenttype-folder:before {  content: '\e801';}
+      .contenttype-document:before {   content: '\e80e';}
+      .contenttype-file:before {   content: none;}
+      .contenttype-link:before {    content: '\e806';}
+      .contenttype-image:before {      content: '\e810';}
+      .contenttype-collection:before {content: '\e808';}
+      .contenttype-event:before {      content: '\e809';}
+      .contenttype-news-item:before {  content: '\e80f';}
+   }
+The wildcard definition :code:`[class*="contenttype-"]:before ....content: '\e834'` renders the default icon for dexterity content types for all dexterity items 
+which have no specific css rule (e.g. custom dexterity content types). 
+
+
+The rule :code:`.contenttype-file:before {   content: none;}` prevents rendering a fontello font for **file** type items (e.g. *.pdf, *.docx, etc..).
+
+Instead a **mimetype icon** (fetched from the mime type registry) is rendered as html tag ( - there would be too many fonts needed for all the mime types)in affected templates e.g. in plone.app.contenttypes.browser.templates.listing.pt:
+
+.. code-block:: 
+   <span class="summary" tal:attributes="title item_type">
+     <a tal:condition="python:item_type == 'File' and showicons" 
+       tal:attributes="href item_link;
+                       class string:$item_type_class $item_wf_state_class url;
+                       title item_type">
+       <image class="mime-icon" 
+               tal:attributes="src item/MimeTypeIcon">
+     </a>
+     <a tal:attributes="href item_link;
+                          class string:$item_type_class $item_wf_state_class url;
+                          title item_type"
+         tal:content="item_title">Item Title
+     </a>
+    .....
+   </span>
+          .
+
+.. image:: /_static/content-type-icons.png
+   :align: center
+   :alt: content type icons
+
+The design decision to use Fontello fonts throws up the question how to easily create custom fonts for new created custom dexterity items.
+
+A workaround for that is to use an icon url in the :before clause.
+For the custom dexterity type *dx1* you might add the line :code:`.contenttype-dx1:before {content: url('dx1_icon.png')}` to your less file and place the icon file in to the same folder.
+
+Preview Images (Thumbs)
+=======================
+
+Preview images (aka thumbs) can be shown in listings, tables and portlets. 
+
+
+.. TODO::
+   to be ctd.
 
 Retina image scales
 ===================
