@@ -14,7 +14,7 @@ Blending the creativity and speed of open source with a technologically advanced
 
 
 **The Plone community** is an incredibly diverse group that bridges many types and sizes of organizations, many countries and languages, and everything from technical novices to hardcore programmers.
-Out of that diversity comes an attention to detail in code, function, user interface and ease of use that makes Plone one of the top 2% of open source projects worldwide. (Source: `Ohloh <http://www.ohloh.net/>`_)
+Out of that diversity comes an attention to detail in code, function, user interface and ease of use that makes Plone one of the top 2% of open source projects worldwide. (Source: `Black Duck Open Hub <https://www.openhub.net/>`_)
 
 
 **Plone's intellectual property** and trademarks are protected by the non-profit `Plone Foundation <https://plone.org/about/foundation>`_.
@@ -24,7 +24,7 @@ This means that Plone's future is not in the hands of any one person or company.
 **Thousands of websites** across large and small businesses, education, government, non-profits, sciences, media and publishing are using Plone to solve their content management needs.
 This is supported by a global network of `over 300 solution providers <https://plone.org/support/providers>`_ in more than 50 countries.
 Looking for a hosting provider to host your Plone site for you?
-You can find a list of providers and consultants on `plone.org <https://plone.org/support/hosting-providers>`_.
+You can find a list of providers and consultants on `plone.org <http://plone.com/providers>`_.
 
 **We are very proud to be known by the company we keep.**
 Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell, the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments - all use Plone.
