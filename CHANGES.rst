@@ -12,6 +12,9 @@ Unreleased
 - Improve ReStructuredText Style Guide [svx]
 - Add documentation about TinyMCE styles and formats [davilima6]
 
+- New metadata catalog column `mime_type`
+  https://github.com/plone/Products.CMFPlone/issues/1995
+  [fgrcon]
 
 20160606
 ========
