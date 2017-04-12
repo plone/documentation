@@ -13,21 +13,21 @@ Introduction
 `Python logging package <http://docs.python.org/library/logging.html>`_ is used to log from Plone.
 
 
-Viewing logs in real time
+Viewing Logs In Real Time
 -------------------------
 
 The best way to trace log messages when developing, is start the Zope instance in foreground mode. Log messages are printed to the console (stdout).
 
-You can of course also view the logs from the logfile::
+You can of course also view the logs from the logfile
 
-.. code-block:: console
+.. code-block:: shell
 
-     tail -f var/log/instance.log
+   tail -f var/log/instance.log
 
-Press CTRL+C to abort.
+Press ``CTRL+C`` to abort.
 
 
-The site error log service
+The Site Error Log Service
 --------------------------
 
 Plone sites contain error log service which is located as *error_log* in the site root. It logs site exceptions and makes
@@ -36,24 +36,28 @@ the tracebacks accessible from Plone control panel and the Management Interface.
 The service is somewhat archaic and can log exceptions only, not plain error messages.
 
 
-Log level
+Log Level
 ---------
 
 Default log level is ``INFO``. To enable more verbose logging, edit ``buildout.cfg``,
 
-Change log level by editing ``[instance]`` section ``event-log-level``::
+Change log level by editing ``[instance]`` section ``event-log-level``
 
-        [instance]
-        event-log-level = debug
+.. code-block:: shell
+
+   [instance]
+   event-log-level = debug
 
 More information
 
 * https://pypi.python.org/pypi/plone.recipe.zope2instance
 
-Logging from Python code
+Logging From Python Code
 ------------------------
 
-Example::
+Example
+
+.. code-block:: console
 
     import logging
 
@@ -62,11 +66,11 @@ Example::
     class MySomething(object):
         ...
         def function(self):
-            logger.info("Reached function()")
+        logger.info("Reached function()")
             ...
 
-Logging from page templates and RestrictedPython scripts
---------------------------------------------------------
+Logging From Page Templates And RestrictedPython Scripts 
+---------------------------------------------------------
 
 Python ``logging`` module doesn't provide Zope 2 security assertations
 and does not work in :doc:`RestrictedPython Python scripts </develop/plone/security/sandboxing>`.
@@ -77,7 +81,7 @@ Example::
 
     context.plone_log("This is so fun")
 
-Forcing log level and output
+Forcing Log Level And Output
 ----------------------------
 
 The following snippet forces the log level of Python logging for the duration of the process
@@ -94,7 +98,7 @@ by modifying the root logger object::
         handler.setFormatter(formatter)
         root_logger.addHandler(handler)
 
-Temporarily capturing log output
+Temporarily Capturing Log Output
 ----------------------------------
 
 You can capture Python logging output temporarily to a string buffer.
@@ -274,6 +278,3 @@ transaction_note()
 Leave a note on Zope's *History* tab.
 
 * https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/utils.py#L382
-
-
-
