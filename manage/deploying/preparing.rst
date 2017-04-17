@@ -98,6 +98,7 @@ Debian/Ubuntu
 Use ``apt-get install``. The matching package names are:
 
 * build-essential
+* libreetype6-dev
 * libssl-dev
 * libz-dev
 * libjpeg-dev
@@ -117,6 +118,7 @@ patch
 openssl-devel
 libjpeg-devel
 libxslt-devel
+freetype-devel
 readline-devel
 make
 which
@@ -135,6 +137,7 @@ patch
 openssl-devel
 libjpeg-devel
 libxslt-devel
+freetype-devel
 readline-devel
 make
 which
@@ -151,6 +154,7 @@ Using ``zypper in``
 * make
 * readline-devel
 * libjpeg-devel
+* freetype-devel
 * zlib-devel
 * patch
 * libopenssl-devel
@@ -167,6 +171,7 @@ Using ``pacman -S``
 * base-devel
 * libxml2
 * libxslt
+* freetype2
 * libjpeg-turbo
 * openssl
 
