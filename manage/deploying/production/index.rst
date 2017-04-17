@@ -12,6 +12,7 @@ Production
     :maxdepth: 2
 
     restarts
+    vps_services
     ubuntu_production
     securitybestpractices
     status_check
