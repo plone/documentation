@@ -52,7 +52,7 @@ If you are using Mac, you will have to turn on the terminal and type in:
 
 .. code-block:: shell
 
-	ssh root@[your-droplet-ip-adress]
+    ssh root@[your-droplet-ip-adress]
 
 It will ask you to fill in your password. When you created a droplet, an email should be sent to you. 
 It contains the password for your droplet. Use this password to log in to your droplet through the terminal. 
@@ -67,7 +67,7 @@ When you are done with it, make sure that you are in the /root directory. Instal
 
 .. code-block:: shell
 
-	wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.7/+download/Plone-5.0.7-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.7/+download/Plone-5.0.7-UnifiedInstaller.tgz
 
 Run the Unified Installer and follow the instruction in the Ubuntu Production.
 
@@ -92,7 +92,7 @@ When you are in, make sure that you are at the root directory and download the U
 
 .. code-block:: shell
 
-	wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.7/+download/Plone-5.0.7-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.7/+download/Plone-5.0.7-UnifiedInstaller.tgz
 
 Run the Unified Installer and follow the instruction here
 
@@ -105,24 +105,24 @@ Cannot install lxml==3.5.0
 
 .. code-block:: shell
 
-	Getting distribution for 'lxml==3.5.0'.
-	x86_64-linux-gnu-gcc: internal compiler error: Killed (program cc1)
-	Please submit a full bug report,
-	with preprocessed source if appropriate.
-	See <file:///usr/share/doc/gcc-5/README.Bugs> for instructions.
-	/tmp/easy_install-2kIfB2/lxml-3.5.0/temp/xmlXPathInitjW78Bn.c:2:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
-	 main (int argc, char **argv) {
-	 ^
-	Building lxml version 3.5.0.
-	Building without Cython.
-	Using build configuration of libxslt 1.1.28
-	Compile failed: command 'x86_64-linux-gnu-gcc' failed with exit status 4
-	error: Setup script exited with error: command 'x86_64-linux-gnu-gcc' failed with exit status 4
-	An error occurred when trying to install lxml 3.5.0. Look above this message for any errors that were output by easy_install.
-	While:
-	  Installing instance.
-	  Getting distribution for 'lxml==3.5.0'.
-	Error: Couldn't install: lxml 3.5.0
+    Getting distribution for 'lxml==3.5.0'.
+    x86_64-linux-gnu-gcc: internal compiler error: Killed (program cc1)
+    Please submit a full bug report,
+    with preprocessed source if appropriate.
+    See <file:///usr/share/doc/gcc-5/README.Bugs> for instructions.
+    /tmp/easy_install-2kIfB2/lxml-3.5.0/temp/xmlXPathInitjW78Bn.c:2:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+     main (int argc, char **argv) {
+     ^
+    Building lxml version 3.5.0.
+    Building without Cython.
+    Using build configuration of libxslt 1.1.28
+    Compile failed: command 'x86_64-linux-gnu-gcc' failed with exit status 4
+    error: Setup script exited with error: command 'x86_64-linux-gnu-gcc' failed with exit status 4
+    An error occurred when trying to install lxml 3.5.0. Look above this message for any errors that were output by easy_install.
+    While:
+      Installing instance.
+      Getting distribution for 'lxml==3.5.0'.
+    Error: Couldn't install: lxml 3.5.0
 
 This error will show up when you use the Unified Installer with the $5/month plan on Digital Ocean. 
 You will need to have the $10/month in order to run the Unified Installer.
