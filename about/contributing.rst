@@ -7,7 +7,7 @@ Contributing to the documentation
    How to write and submit content for the Plone Documentation.
 
 
-Reaching the documentation team
+Reaching The Documentation Team
 ===============================
 
 The Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
@@ -42,10 +42,7 @@ Documentation issues are tracked in our `issue tracker <https://github.com/plone
 
 If you have already a `GitHub <https://github.com>`_ account and you find something missing or wrong in the docs, please open a ticket.
 
-If you would like to contribute to the documentation and looking for a starting point,
-please browse to our `issue board <https://github.com/plone/documentation/projects/1?fullscreen=true>`_.
-
-Issues are sorted into different levels from easy to advanced. Picking an easy one is a great way to get started.
+Issues are sorted into different levels from easy to advanced. Picking an "easy" one is a great way to get started.
 
 .. note::
 
@@ -67,7 +64,6 @@ Note: after figuring out where to post your report, but before doing so,
 please search the issue tracker to ensure this issue hasn't already been reported and that it hasn't already been fixed in a later version of the component.
 
 You can also find a `overview <https://plone.org/support/bugs>`_ about that on `plone.org <https://plone.org>`_.
-
 
 
 License
@@ -117,7 +113,7 @@ But the documentation team also wants to keep the documentation in good shape.
 
 .. _plone-versions:
 
-Documentation for different versions of Plone
+Documentation For Different Versions Of Plone
 =============================================
 
 The documentation for the different versions (Plone 3, Plone 4, Plone 5) are organized in branches inside the `Plone Documentation <https://github.com/plone/documentation>`_
@@ -131,22 +127,23 @@ When all this seems complicated, note in your pull request that you think this i
 and the documentation team will take care.
 
 
-Editing the documentation on GitHub
+Editing The Documentation On GitHub
 ===================================
 
 This is the recommended way for smaller changes, and for people who are not familiar with Git.
 
 - Go to `Plone Documentation <https://github.com/plone/documentation>`_ on  GitHub.
-- Press the **Fork** button. This will create your own personal copy of the documentation.
+- Press the :guilabel:`Fork` button. This will create your own personal copy of the documentation.
 - **Edit** files using GitHub's text editor in your web browser
-- Fill in the **Commit changes**-textbox at the end of the page telling why you did the changes. Press the **Commit changes**-button next to it when done.
-- Then head to the green *New pull request*-button (e.g. by navigating to your fork's root and clicking "Pull requests" on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text. Just press **New pull request** button, finally click "Send pull request".
+- Fill in the :guilabel:`Commit changes`-textbox at the end of the page telling why you did the changes. Press the :guilabel:`Commit changes`-button next to it when done.
+- Then head to the green :guilabel:`New pull request`-button (e.g. by navigating to your fork's root and clicking :guilabel:`Pull requests` on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text.
+ Press :guilabel:`New pull request`-button, finally click :guilabel:`Send pull request`.
 - Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on GitHub.
 - For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
 - You will receive a message when your request has been integrated into the documentation. At that moment, feel free to delete the copy of the documentation you created under your account on GitHub. Next time you contribute, just fork again. That way you'll always have a fresh copy of the documentation to work on.
 
 
-Before you make a pull request
+Before You Make A Pull Request
 ==============================
 
 * Check for typos. Again, do not let this discourage you if English is not your first language, but simple typing errors can usually be found with spellcheckers
@@ -154,7 +151,7 @@ Before you make a pull request
 * Check that you are using valid restructured text.
 
 
-Pull request checklist
+Pull Request Checklist
 ======================
 
 Making a good pull request makes life easier for everybody:
@@ -177,13 +174,13 @@ If possible please make sure to fill in the missing bits, for example
 
     Improves:
 
-    -  Style-guide about rst syntax
+    -  Style-guide about reST syntax
 
     Changes proposed in this pull request: Unified usage of '..code-block:: shell' as best practices
 
 
 
-Editing the documentation using git
+Editing The Documentation Using Git
 ===================================
 
 This is the recommended method of editing the documentation for
@@ -207,7 +204,7 @@ Translation
 
 We use `Transifex <https://www.transifex.com/>`_ for translation.
 
-Quick start:
+Quick Start:
 ------------
 
 * Browse to: https://www.transifex.com/projects/p/plone-doc/ and choose your language.
@@ -215,15 +212,15 @@ Quick start:
 * Click on the right *Join Team*
 
 
-Getting started
+Getting Started
 ---------------
 
 * Go to: https://www.transifex.com/signin/
 
 * Go to: https://www.transifex.com/projects/p/plone-doc/
 
-* Click on: `HELP TRANSLATE PLONE DOCUMENTATION <https://www.transifex.com/signup/?join_project=plone-doc>`_
+* Click on: :guilabel:`HELP TRANSLATE PLONE DOCUMENTATION`
 
 * Choose your language
 
-* Click on the right *Join Team*
+* Click on the right :guilabel:`Join Team`
