@@ -20,7 +20,7 @@ This chapter explains the basics of editing, and updating to the *Plone Document
   Please, don't use .gif, because the PDF-generating software has issues with that.
 
 
-Line length & translations
+Line Length & Translations
 ==========================
 
 Documentation is not code. Repeat after us: **Documentation is not code.**
@@ -59,12 +59,12 @@ or upon "grammatical" boundaries
 Do not be afraid to use more than 80 characters.
 
 
-Document page format
+Document Page Format
 ====================
 
 Here are some Sphinx coding conventions used in the documentation.
 
-Tab policy
+Tab Policy
 ----------
 
 * Indentation 4 spaces
@@ -73,14 +73,14 @@ Tab policy
 
 * No trailing whitespaces
 
-Headings and filenames
+Headings And Filenames
 ----------------------
 
 * For the headings, capitalize the first letter only
 
 * For the filenames, use_underscore_naming_style
 
-Page structure
+Page Structure
 --------------
 
 Each page should contain, in this order:
@@ -121,7 +121,7 @@ A number of paragraphs: The actual content of the document page:
 
    Below is the list of documentation and references we'd like to see
 
-Section structure
+Section Structure
 -----------------
 
 Each section (folder) must contain
@@ -144,8 +144,8 @@ Each section (folder) must contain
       chapter2
       chapter3
 
-Headings style guide
-====================
+Headings
+========
 
 reStructuredText and Sphinx enable any style you would prefer for the various heading level you would need.
 For example, underlining level 1 headings with ``.``, level 2 headings with ``#`` and level 3 headings with ``|`` is perfectly valid as far as ``docutils`` is concerned.
@@ -158,6 +158,10 @@ As individual files do not have so called "parts" or "chapters", the headings wo
 
 .. code-block:: rst
 
+   ======
+   Header
+   ======
+   ...
    Heading 1
    =========
    ...
@@ -168,7 +172,7 @@ As individual files do not have so called "parts" or "chapters", the headings wo
    ^^^^^^^^^
    ...
    Heading 4
-   `````````
+   """""""""
    ...
 
 Links
@@ -198,7 +202,7 @@ The directive's sole argument is interpreted as the topic title; the next line m
         the body of the topic, and are
         interpreted as body elements.
 
-Syntax highlighting
+Syntax Highlighting
 ===================
 
 Sphinx does syntax highlighting using the `Pygments <http://pygments.org/>`_
@@ -309,7 +313,7 @@ or absolute which means that they are relative to the top source directory.
 For example, the file sketch/spam.rst could refer to the image _static/plone_donut.png as ../_static/plone_donut.png or /_static/plone_donut.png.
 
 
-Other Sphinx and restructured text source snippets
+Other Sphinx And ReStructured Text Source Snippets
 ==================================================
 
 Italics:
@@ -413,7 +417,7 @@ Note:
 
 You can find a brief introduction to reStructuredText (reST) on http://www.sphinx-doc.org/en/stable/rest.html
 
-Including gists
+Including Gists
 ----------------
 
 Sometimes it is handy to include `gists <https://help.github.com/articles/about-gists/>`_.
