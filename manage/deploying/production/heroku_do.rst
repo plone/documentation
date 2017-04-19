@@ -12,7 +12,7 @@ Introduction
 
 There are many ways to deploy a Plone site. 
 However, we sometimes would want to deploy our Plone sites for testing and developing Plone before we can find services that fit our needs.
-Therefore, this tutorial will show how to deploy Plone on Heroku and Digital Ocean, which are the popular platforms for development.
+Therefore, this tutorial will show how to deploy Plone on Heroku and Digital Ocean, which are popular platforms for development.
 
 
 Deploying your Plone site on Heroku
@@ -80,12 +80,11 @@ Digital Ocean is a service that provides VPS and root access for users,
 which makes it very convenient since there are services that do not give full control over the VPS.
 We will use this platform for our tutorial since Digital Ocean is cheap and reliable.
 
-
 Setting up accounts and droplets
 ^^^^^^^^^
 
-First of all, we will need to set up your Digital Ocean account at `Digital Ocean <https://www.digitalocean.com/>`_. 
-Use our email and email password to sign up.
+First of all, we will need to set up your Digital Ocean account at `Digital Ocean <https://www.digitalocean.com/>`_, 
+using our email and email password to sign up.
 
 After having your account ready, we will need to create a droplet.
 A droplet is the way Digital Ocean calls its own Virtual Private Server (VPS). 
@@ -113,7 +112,6 @@ In addition, this plan also prevents some errors that we might get into while de
 .. note::
     In case you want to deploy your app on a specific domain name, you can learn how to set it up at `Digital Ocean documentation <https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean>`_
 
-
 Sign in to your Droplet 
 ^^^^^^^^^
 
@@ -127,14 +125,14 @@ If you are using Mac or Linux environment, you will have to turn on the terminal
     ssh root@[your-droplet-ip-adress]
 
 It will ask you to fill in your password. When you created a droplet, an email should be sent to you. 
-It contains the password for your droplet. Use this password to log in to your droplet through the terminal and change your password.
+It contains the password for your droplet. 
+Use this password to log in to your droplet through the terminal and change your password.
 
 When you are done with it, make sure that you are in the /root directory. Install the Unified Installer 
 
 .. code-block:: shell
 
     wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.7/+download/Plone-5.0.7-UnifiedInstaller.tgz
-
 
 Windows
 `````````
@@ -149,7 +147,6 @@ Log in to your droplet with the password from the email that you received.
     :alt: Windows putty setup
 
 When you are done, it shold ask you to change the password.
-
 
 Deploy Plone to VPS
 ^^^^^^^^^
@@ -180,7 +177,8 @@ After the installer has successfully installed Plone on our VPS, we will run the
     $ ./bin/instance fg
 
 We now can see that our Plone app is running at [your-droplet-id]:8080.
-For more information on how to make the app run along with the server, follow from step 3 :doc:`Ubuntu Production deployment </manage/deploying/production/ubuntu_production>`.
+For more information on how to make the app run along with the server, 
+follow from step 3 :doc:`Ubuntu Production deployment </manage/deploying/production/ubuntu_production>`.
 
 .. note::
     You will have to replace the path specified in step 3 with your Plone app path. In this case, it should be /opt/plone/zinstance
