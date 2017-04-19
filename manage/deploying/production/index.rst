@@ -13,6 +13,6 @@ Production
 
     restarts
     ubuntu_production
-    vps_services
+    heroku_do
     securitybestpractices
     status_check
