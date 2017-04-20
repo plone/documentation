@@ -35,7 +35,7 @@ Think about it this way:
 Each sentence in the documentation can be turned into a .po string.
 Breaking sentences with linebreaks would mean a translator will only see part of the sentence, making it impossible to translate.
 
-Documentation structure & styleguide
+Documentation Structure & Styleguide
 ====================================
 
 For including documentation into docs.plone.org, **please** follow these guidelines:
@@ -86,13 +86,14 @@ For including documentation into docs.plone.org, **please** follow these guideli
 .. _styleguide-readme-example:
 
 
-README example
+README Example
 ==============
 
 This is an example of how a README.rst should look like:
 
 .. code-block:: rst
 
+    =====================
     collective.fancystuff
     =====================
 
@@ -104,7 +105,7 @@ This is an example of how a README.rst should look like:
 
 
     Features
-    --------
+    ========
 
     - Be awesome
     - Make things fancier
@@ -113,7 +114,7 @@ This is an example of how a README.rst should look like:
 
 
     Examples
-    --------
+    ========
 
     This add-on can be seen in action at the following sites:
     - http://fancysite.com
@@ -121,22 +122,22 @@ This is an example of how a README.rst should look like:
 
 
     Documentation
-    -------------
+    =============
 
     Full documentation for end users can be found in the "docs" folder.
     It is also available online at http://docs.plone.org/foo/bar
 
 
     Translations
-    ------------
+    ============
 
     This product has been translated into
 
-    - Klingon (thanks, K'Plai)
+    - German
 
 
     Installation
-    ------------
+    ============
 
     Install collective.fancystuff by adding it to your buildout:
 
@@ -153,20 +154,20 @@ This is an example of how a README.rst should look like:
 
 
     Contribute
-    ----------
+    ==========
 
-    - Issue Tracker: github.com/collective/collective.fancystuff/issues
-    - Source Code: github.com/collective/collective.fancystuff
-    - Documentation: docs.plone.org/foo/bar
+    - Issue Tracker: https://github.com/collective/collective.fancystuff/issues
+    - Source Code: https://github.com/collective/collective.fancystuff
+    - Documentation: https://docs.plone.org/foo/bar
 
     Support
-    -------
+    =======
 
     If you are having issues, please let us know.
     We have a mailing list located at: project@example.com
 
     License
-    -------
+    =======
 
     The project is licensed under the GPLv2.
 
@@ -174,7 +175,7 @@ This is an example of how a README.rst should look like:
 
 .. _styleguide-changes-example:
 
-Tracking changes
+Tracking Changes
 ================
 
 Feature-level changes to code are tracked inside ``CHANGES.rst``.
@@ -210,7 +211,7 @@ current development changes block.
 
 .. _styleguide-toc-example:
 
-Table of Contents for your documentation
+Table Of Contents For Your Documentation
 ========================================
 
 Make sure all .rst files are referenced with a Table of Contents directive, like this example:
@@ -227,4 +228,3 @@ Make sure all .rst files are referenced with a Table of Contents directive, like
 
 
 (note: the files themselves will have an extension of .rst, but you don't specify that extension in the toctree directive)
-

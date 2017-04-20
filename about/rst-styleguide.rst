@@ -50,11 +50,8 @@ Take this example paragraph::
     if you wish to use the automatic binding and rebinding functionality,
     the DOM approach is more straightforward and hassle-free.
 
-Notice how it's easier to just reshuffle sentences and add stuff if,
-instead of using your editor "autowrap" feature,
-you manually insert line breaks after full stops, commas,
-or upon "grammatical" boundaries
-(and not merely word ones).
+Notice how it's easier to just reshuffle sentences and add stuff if, instead of using your editor "autowrap" feature,
+you manually insert line breaks after full stops, commas, or upon "grammatical" boundaries (and not merely word ones).
 
 Do not be afraid to use more than 80 characters.
 
@@ -158,22 +155,22 @@ As individual files do not have so called "parts" or "chapters", the headings wo
 
 .. code-block:: rst
 
-   ======
-   Header
-   ======
-   ...
-   Heading 1
-   =========
-   ...
-   Heading 2
-   ---------
-   ...
-   Heading 3
-   ^^^^^^^^^
-   ...
-   Heading 4
-   """""""""
-   ...
+   ===
+   One
+   ===
+
+   Two
+   ===
+
+   Three
+   -----
+
+   Four
+   ~~~~
+
+   Five
+   ^^^^
+
 
 Links
 =====
@@ -182,7 +179,7 @@ Sphinx can use two link styles, inline and via a link at the end of the page. Pl
 
 .. code-block:: rst
 
-    `Example <http://example.com>`_
+   `Example <https://example.com>`_
 
 otherwise the URL is not attached to the context it is used in, and that makes it harder for translators to use the right expressions.
 
@@ -190,9 +187,13 @@ otherwise the URL is not attached to the context it is used in, and that makes i
 Topic
 =====
 
-A topic is like a block quote with a title, or a self-contained section with no subsections. Use the "topic" directive to indicate a self-contained idea that is separate from the flow of the document. Topics may occur anywhere a section or transition may occur. Body elements and topics may not contain nested topics.
+A topic is like a block quote with a title, or a self-contained section with no subsections.
 
-The directive's sole argument is interpreted as the topic title; the next line must be blank. All subsequent lines make up the topic body, interpreted as body elements. For example:
+Use the "topic" directive to indicate a self-contained idea that is separate from the flow of the document. Topics may occur anywhere a section or transition may occur. Body elements and topics may not contain nested topics.
+
+The directive's sole argument is interpreted as the topic title; the next line must be blank.
+
+All subsequent lines make up the topic body, interpreted as body elements. For example:
 
 .. code-block:: rst
 
@@ -205,8 +206,7 @@ The directive's sole argument is interpreted as the topic title; the next line m
 Syntax Highlighting
 ===================
 
-Sphinx does syntax highlighting using the `Pygments <http://pygments.org/>`_
-library.
+Sphinx does syntax highlighting using the `Pygments <http://pygments.org/>`_ library.
 
 You can specify different highlighting for a code block using the following syntax::
 
@@ -368,8 +368,8 @@ Bullet list:
 
 .. code-block:: rst
 
-    * First bullet
-    * Second bullet with `a link <http://opensourcehacker.com>`_
+   * First bullet
+   * Second bullet with `a link <http://opensourcehacker.com>`_
 
 Warning:
 

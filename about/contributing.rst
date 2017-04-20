@@ -1,6 +1,6 @@
-=================================
-Contributing to the documentation
-=================================
+=====================
+Writing Documentation
+=====================
 
 .. admonition:: Description
 
@@ -13,8 +13,6 @@ Reaching The Documentation Team
 The Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
 To reach this team for any questions please contact
 
-* *#plone-docs* IRC channel on irc.freenode.net
-
 * `Documentation <https://community.plone.org/category/documentation>`_ category on community.plone.org.
 
 For news and updates you can also follow `PloneDocs <https://twitter.com/plonedocs>`_ on twitter.
@@ -22,7 +20,7 @@ For news and updates you can also follow `PloneDocs <https://twitter.com/plonedo
 Feedback
 ========
 
-We love your feedback! In order to improve the documentation we need your feedback and your help.
+We need your feedback to make the documentation better !
 
 If you have already a GitHub account, please do not hesitate to open a ticket in our `issue tracker <https://github.com/plone/documentation/issues>`_ .
 
@@ -42,7 +40,7 @@ Documentation issues are tracked in our `issue tracker <https://github.com/plone
 
 If you have already a `GitHub <https://github.com>`_ account and you find something missing or wrong in the docs, please open a ticket.
 
-Issues are sorted into different levels from easy to advanced. Picking an "easy" one is a great way to get started.
+One of the best ways to start contributing is to pick one of the tickets labeled `First Timer <https://github.com/plone/documentation/labels/First%20Timers>`_.
 
 .. note::
 
