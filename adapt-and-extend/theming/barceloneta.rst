@@ -155,7 +155,7 @@ Why this is a good idea
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 - It reduces the effort in theming.
-⁻ In most cases your users will never see edit, sharing, sitesetup or other aspects of the Plone backend UI.
+- In most cases your users will never see edit, sharing, sitesetup or other aspects of the Plone backend UI.
 - Making those screens work with a new theme is a lot of work.
 - The backend pages can include a lot of add on functionality which might be hard to integrate.
 - This might not be tested for integration into third-party themes.

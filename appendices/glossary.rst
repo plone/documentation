@@ -1,6 +1,6 @@
-==========
- Glossary
-==========
+========
+Glossary
+========
 
 This is a glossary for some definitions used in this documentation and still under construction.
 
@@ -22,7 +22,7 @@ This is a glossary for some definitions used in this documentation and still und
         application domains. The reStructuredText parser is a component of
         `Docutils <http://docutils.sourceforge.net/index.html>`_.
 
-        reStructuredText is a revision and reinterpretation of the :term:`StructuredText`_ and `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_ lightweight markup systems.
+        reStructuredText is a revision and reinterpretation of the :term:`StructuredText` and `Setext <http://docutils.sourceforge.net/mirror/setext.html>`_ lightweight markup systems.
 
     slug
         A :term:`ZCML` *slug* is a one-line file created in a Zope instance's
@@ -549,7 +549,6 @@ This is a glossary for some definitions used in this documentation and still und
 
     toolbar
          Plone uses a toolbar to have quick access to the content management functions. On a standard instance, this will appear on the left of your screen. However, your site administrator might change this to have a horizontal layout, and it will appear hidden at first when using a smaller-screen device like a phone or tablet.
-
 
     Diazo
           The standard way to theme Plone sites from Plone 5 onwards. It consists in essence of a static 'theme' mockup of your website, with HTML, CSS and JavaScript files, and a set of rules that will 'switch in' the dynamic content from Plone into the theme.

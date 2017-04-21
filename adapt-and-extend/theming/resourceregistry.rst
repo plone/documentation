@@ -682,7 +682,7 @@ Aggregate Bundles for Production
 Plone defines several bundles.
 Add-ons that you include in your Plone site may also define bundles of their own.
 In production, *each* of these bundles will result in the loading of one JavaScript and one CSS file.
-To reduce the number of loaded files to an absolute minimum, we use *bundle aggregation".
+To reduce the number of loaded files to an absolute minimum, we use "bundle aggregation".
 
 There are two bundle aggregations available in Plone.
 A first aggregation named ``default`` contains all the bundles that must be available at all times.

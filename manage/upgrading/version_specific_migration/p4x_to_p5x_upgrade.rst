@@ -7,7 +7,7 @@ Upgrading Plone 4.x to 5.0
 
    Instructions and tips for upgrading to a newer Plone version.
 
-.. notes::
+.. note::
 
    If you want to upgrade add-ons to Plone 5, also see: ../../../develop/addons/upgrade_to_50.rst
 
@@ -508,7 +508,7 @@ Normally, you do not modify or access these records. Instead you change the sett
 +--------------------+-----------------------------------+-----------------------------------------+
 | site_properties    | disable_nonfolderish_sections     | **REMOVED**                             |
 +--------------------+-----------------------------------+-----------------------------------------+
-| site_properties    | typesUseViewActionInListings      | plone.types_use_view_action_in_listings |                                 |
+| site_properties    | typesUseViewActionInListings      | plone.types_use_view_action_in_listings |
 +--------------------+-----------------------------------+-----------------------------------------+
 | site_properties    | verify_login_name                 | plone.verify_login_name                 |
 +--------------------+-----------------------------------+-----------------------------------------+
@@ -560,7 +560,7 @@ Normally, you do not modify or access these records. Instead you change the sett
 +--------------------+-----------------------------------+-----------------------------------------+
 
 disable_folder_sections
-"""""""""""""""""""""""
+-----------------------
 
 This property has been removed and the logic is different.
 You can influence the portal tab generation with the property `plone.generate_tabs`

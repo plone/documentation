@@ -4,7 +4,7 @@ Login and logout
 
 .. admonition:: Description
 
-	Login and logout related programming activities in Plone
+    Login and logout related programming activities in Plone
 
 Introduction
 -------------
@@ -91,7 +91,7 @@ Pluggable Authentication Service (acl_users under site root)
 will go through all authentication plug-ins and return the first successful
 authenticated users.
 
-Read more in `PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.txt>`_.
+Read more in `PlonePAS <https://github.com/plone/Products.PlonePAS/blob/master/README.rst>`_.
 
 Unit test example::
 

@@ -65,9 +65,7 @@ Working with Javascript
    :maxdepth: 2
 
    javascript/index
-
-
-   ajax
+   javascript/ajax
 
 Background
 ----------

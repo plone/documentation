@@ -363,7 +363,7 @@ random
 
 The following example shows how to configure round-robin load balancing of 2 Plone instances.
 
-.. code-block::
+.. code-block:: text
 
     import directors;
 

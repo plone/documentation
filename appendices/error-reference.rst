@@ -1,5 +1,5 @@
 Error Reference
-=================
+===============
 
 .. toctree::
    :maxdepth: 2
