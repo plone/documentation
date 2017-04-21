@@ -52,7 +52,7 @@ Plone Issues
 ------------
 
 If you think your bug involves a core component of Plone, check to see if that component
-has its own repository at `GitHub <https://github.com/plone>`_.
+has its own repository under the `Plone organization on GitHub <https://github.com/plone>`_.
 
 If it does, use the component's issue tracker to submit your bug report.
 If the component does not have its own repository there, submit your bug report
@@ -135,7 +135,7 @@ This is the recommended way for smaller changes, and for people who are not fami
 - **Edit** files using GitHub's text editor in your web browser
 - Fill in the :guilabel:`Commit changes`-textbox at the end of the page telling why you did the changes. Press the :guilabel:`Commit changes`-button next to it when done.
 - Then head to the green :guilabel:`New pull request`-button (e.g. by navigating to your fork's root and clicking :guilabel:`Pull requests` on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text.
- Press :guilabel:`New pull request`-button, finally click :guilabel:`Send pull request`.
+  Press :guilabel:`New pull request`-button, finally click :guilabel:`Send pull request`.
 - Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on GitHub.
 - For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
 - You will receive a message when your request has been integrated into the documentation. At that moment, feel free to delete the copy of the documentation you created under your account on GitHub. Next time you contribute, just fork again. That way you'll always have a fresh copy of the documentation to work on.
