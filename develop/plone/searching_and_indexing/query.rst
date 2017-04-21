@@ -6,6 +6,8 @@ Querying
 
     How to programmatically search and query content from a Plone site.
 
+.. contents::
+  :local:
 
 Introduction
 ============
@@ -477,9 +479,8 @@ Following is useful in unit test debugging.
 Bypassing query security check
 ==============================
 
-.. note ::
-
-    Security: All portal_catalog queries are limited to the current user permissions by default.
+.. note::
+   Security: All portal_catalog queries are limited to the current user permissions by default.
 
 If you want to bypass this restriction, use the unrestrictedSearchResults() method.
 
@@ -498,10 +499,9 @@ With ``unrestrictedSearchResults()`` you need also a special way to get access t
 Bypassing language check
 ========================
 
-.. note ::
-
-    All portal_catalog() queries are limited to the selected language of the current user.
-    You need to explicitly bypass the language check if you want to do multilingual queries.
+.. note::
+   All portal_catalog() queries are limited to the selected language of the current user.
+   You need to explicitly bypass the language check if you want to do multilingual queries.
 
 Language is only a factor when a multilingual product is installed - which basically comes down to one of the venerable ``LinguaPlone`` or the more modern ``plone.app.multilingual``.
 Bypassing the language check depends on which of these you are using.
@@ -523,16 +523,15 @@ This means that the way to bypass this is to add the query parameter ``path='/'`
     all_content_brains = portal_catalog(path='/')
 
 .. note ::
-
-    Although in LinguaPlone eventually the language folders are also marked to be an INavigationRoot.
-    The language of the content is not enforced inside the language folder.
-    In plone.app.multilingual there's a subscriber that moves the content to the appropriate folder.
+   Although in LinguaPlone eventually the language folders are also marked to be an INavigationRoot.
+   The language of the content is not enforced inside the language folder.
+   In plone.app.multilingual there's a subscriber that moves the content to the appropriate folder.
 
 
 Bypassing Expired content check
 ===============================
 
-Plone its portal_catalog have a mechanism to list only active (non-expired) content by default.
+Plone and its portal_catalog have a mechanism to list only active (non-expired) content by default.
 
 Below is an example of how the expired content check is made::
 
@@ -543,21 +542,18 @@ Below is an example of how the expired content check is made::
 
     contents = context.portal_catalog.queryCatalog(show_inactive=show_inactive)
 
-See also::
+See also:
 
-* :doc:`Listing </content/listing>`
-
+* :doc:`Listing <../content/listing>`
 
 None as query parameter
 =======================
 
-.. warning ::
+.. warning::
+   Usually if you pass in None as the query value, it will match all the objects instead of zero objects.
 
-        Usually if you pass in None as the query value, it will match all the objects instead of zero objects.
-
-.. note ::
-
-        Querying for None values is possible with AdvancedQuery_ (see below).
+.. note::
+   Querying for None values is possible with AdvancedQuery_ (see below).
 
 
 Query by path
@@ -701,10 +697,9 @@ Caveats
 
 (Originally from `this tutorial <https://plone.org/documentation/how-to/query-portal_catalog-for-interfaces>`_.)
 
-.. note ::
-
-    Looks like query by Products.CMFCore.interfaces._content.IFolderish does not seem to work in Plone 4.1
-    as this implementation information is not populated in portal_catalog.
+.. note::
+   Looks like query by Products.CMFCore.interfaces._content.IFolderish does not seem to work in Plone 4.1
+   as this implementation information is not populated in portal_catalog.
 
 Query by content type
 =====================
@@ -888,9 +883,8 @@ You can query by language::
 
         portal_catalog({"Language":"en"})
 
-.. note ::
-
-        plone.app.multilingual must be installed.
+.. note::
+   plone.app.multilingual must be installed.
 
 Boolean queries (AdvancedQuery)
 ===============================
@@ -935,16 +929,14 @@ Example::
 
     return self.context.portal_catalog.evalAdvancedQuery(query)
 
-.. note ::
+.. note::
+   Plone 3 ships with AdvancedQuery but it is not part of Plone. Always declare
+   AdvancedQuery dependency in your egg's setup.py install_requires.
 
-	Plone 3 ships with AdvancedQuery but it is not part of Plone. Always declare
-	AdvancedQuery dependency in your egg's setup.py install_requires.
-
-.. warning ::
-
-	AdvancedQuery does not necessarily apply the same automatic limitations which normal
-	portal_catalog() queries do, like language and expiration date.
-	Always check your query code against these limitations.
+.. warning::
+   AdvancedQuery does not necessarily apply the same automatic limitations which normal
+   portal_catalog() queries do, like language and expiration date.
+   Always check your query code against these limitations.
 
 More information
 
@@ -995,12 +987,12 @@ Discovering the query:
     >>> tq.selectedViewFields()
     [
         ('Title', u'Title'),
-	('Creator', 'Creator'),
-	('Type', u'Item Type'),
-	('ModificationDate', u'Modification Date'),
-	('ExpirationDate', u'Expiration Date'),
-	('getId', u'Short Name'),
-	('getObjSize', u'Size')
+        ('Creator', 'Creator'),
+        ('Type', u'Item Type'),
+        ('ModificationDate', u'Modification Date'),
+        ('ExpirationDate', u'Expiration Date'),
+        ('getId', u'Short Name'),
+        ('getObjSize', u'Size')
     ]
 
 This output should be pretty self-explaining: This query finds objects
@@ -1072,10 +1064,9 @@ Below is a fail-safe example for a metadata access::
             scale = "tile" # 64x64
             return field.tag(context, scale=scale)
 
-.. note ::
-
-	This is for example purposes only - the code above is working, but not optimal,
-	and can be written up without waking up the object.
+.. note::
+   This is for example purposes only - the code above is working, but not optimal,
+   and can be written up without waking up the object.
 
 Fuzzy search
 ============

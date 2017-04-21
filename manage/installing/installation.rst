@@ -1,6 +1,9 @@
-==============
- Installation
-==============
+============
+Installation
+============
+
+.. highlight:: console
+
 
 Introduction
 ============
@@ -12,19 +15,17 @@ Plone runs as an application on the Zope application server.
 That server is installed automatically by the install process.
 
 .. warning::
+   We strongly advise against installing Plone via OS packages or ports.
 
-	We strongly advise against installing Plone via OS packages or ports.
+   There is no .rpm, .deb, or BSD port that is supported by the Plone community.
 
-	There is no .rpm, .deb, or BSD port that is supported by the Plone community.
-
-	Plone dependencies can and should be installed via package or port -- but not Plone itself.
+   Plone dependencies can and should be installed via package or port -- but not Plone itself.
 
 .. note::
+   For installing and running Plone on CentOS, please make sure that you have enough Memory
+   and Swap.
 
-	For installing and running Plone on CentOS, please make sure that you have enough Memory
-	and Swap.
-
-	If you use the Unified Installer on CentOS, make sure that you have at least 1024 MB of Memory.
+   If you use the Unified Installer on CentOS, make sure that you have at least 1024 MB of Memory.
 
 	Building lxml is resource consuming.
 
@@ -91,63 +92,61 @@ Install the operating system software and libraries needed to run Plone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. example-code::
-	.. code-block:: Ubuntu 14.04
+   .. code-block:: Ubuntu 14.04
 
-		sudo apt install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+      sudo apt install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
-	.. code-block:: Ubuntu 16.04
+   .. code-block:: Ubuntu 16.04
 
-		sudo apt install python2.7 python2.7-dev python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+      sudo apt install python2.7 python2.7-dev python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
-	.. code-block:: Fedora
+   .. code-block:: Fedora
 
-		sudo dnf install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
+      sudo dnf install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
 
    .. code-block:: CentOS
 
-		sudo yum install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
+      sudo yum install gcc-c++ patch openssl-devel libjpeg-devel libxslt-devel make which python-devel
 
 
 .. note::
+   If the **sudo** command is not recognized or does not work you don't have administrator rights on your operating system.
 
-	If the **sudo** command is not recognized or does not work you don't have administrator rights on your operating system.
-
-	Please contact your server vendor or consult the operating system support forum.
+   Please contact your server vendor or consult the operating system support forum.
 
 
 You will probably also want these optional system packages for handling of PDF and Office files:
 
 .. example-code::
-	.. code-block:: Ubuntu
+   .. code-block:: Ubuntu
 
-		sudo apt install libreadline-dev wv poppler-utils
+      sudo apt install libreadline-dev wv poppler-utils
 
-	.. code-block:: Fedora
+   .. code-block:: Fedora
 
-		sudo dnf install readline-devel wv poppler-utils
+      sudo dnf install readline-devel wv poppler-utils
 
-	.. code-block:: CentOS
+   .. code-block:: CentOS
 
-		sudo yum install readline-devel wv poppler-utils
+      sudo yum install readline-devel wv poppler-utils
 
 .. note::
-
-	**libreadline-dev** or **readline-devel** is only necessary if you wish to build your own python rather than use your system's python 2.7.
+   **libreadline-dev** or **readline-devel** is only necessary if you wish to build your own python rather than use your system's python 2.7.
 
 If you're planning on developing with Plone, install git version control support
 
 .. example-code::
-	.. code-block:: Ubuntu
+   .. code-block:: Ubuntu
 
-		sudo apt install git
+       sudo apt install git
 
-	.. code-block:: Fedora
+   .. code-block:: Fedora
 
-		sudo dnf install git
+      sudo dnf install git
 
-	.. code-block:: CentOS
+   .. code-block:: CentOS
 
-		sudo yum install git
+      sudo yum install git
 
 
 
@@ -162,7 +161,7 @@ Substitute the latest version number for 5.0 in the instructions below.
 
 .. code-block:: shell
 
-	wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.4/+download/Plone-5.0.4-UnifiedInstaller.tgz
+    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.4/+download/Plone-5.0.4-UnifiedInstaller.tgz
 
 Run the Plone installer in standalone mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -171,17 +170,16 @@ Extract the downloaded file
 
 .. code-block:: shell
 
-	tar -xf Plone-5.0.4-UnifiedInstaller.tgz
+    tar -xf Plone-5.0.4-UnifiedInstaller.tgz
 
 Go the folder containing installer script
 
 .. code-block:: shell
 
-	cd Plone-5.0.4-UnifiedInstaller
+    cd Plone-5.0.4-UnifiedInstaller
 
 .. note::
-
-   This will run the installer without any extra options, like setting passwords,
+   This will run the installer without any extra options, like setting passwords, 
    setting the install path or anything else, for a full overview over all the possible options use ``./install.sh --help``.
 
 
@@ -242,8 +240,8 @@ If you're using this Plone install for development, add the common development t
 
 .. code-block:: shell
 
-	cd ~/Plone/zinstance
-	bin/buildout -c develop.cfg
+    cd ~/Plone/zinstance
+    bin/buildout -c develop.cfg
 
 You'll need to add the “-c develop.cfg” again each time you run buildout, or you'll lose the extra development tools.
 
@@ -254,8 +252,8 @@ If you're developing, start Plone in foreground mode for a test run (you'll see 
 
 .. code-block:: shell
 
-	cd ~/Plone/zinstance
-	bin/plonectl fg
+    cd ~/Plone/zinstance
+    bin/plonectl fg
 
 When you start Plone in the foreground, it runs in debug mode, which is much slower than production mode since it reloads templates for every request.
 
@@ -263,15 +261,15 @@ For evaluation, instead use:
 
 .. code-block:: shell
 
-	cd ~/Plone/zinstance
-	bin/plonectl start
+    cd ~/Plone/zinstance
+    bin/plonectl start
 
 Use
 
 .. code-block:: shell
 
-	cd ~/Plone/zinstance
-	bin/plonectl stop
+    cd ~/Plone/zinstance
+    bin/plonectl stop
 
 to stop the instance.
 
@@ -283,7 +281,7 @@ You've got Plone
 
 Now take a look at your Plone site by visiting the following address in your webbrowser::
 
-	http://yourserver:8080
+    http://yourserver:8080
 
 The greeting page will let you create a new site.
 For this you need the login credentials printed to your terminal earlier, also available at ``~/Plone/zinstance/adminPassword.txt``.
@@ -297,9 +295,13 @@ please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 
 Installing Plone using RPMs, .dev, … packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Not supported by Plone community. Plone dependencies can and should be installed via your operating system package manager, to profit from security updates and maintenance, but not Plone itself. The packages that have been offered in the past via apt, yum, dnf, port etcetera tend to be unmaintained, old and unsuitable.
+Not supported by Plone community.
+Plone dependencies can and should be installed via your operating system package manager,
+to profit from security updates and maintenance,
+but not Plone itself.
+The packages that have been offered in the past via apt, yum, dnf, port etcetera tend to be unmaintained, old and unsuitable.
 
 
 Microsoft Windows
@@ -358,6 +360,6 @@ Entering debug mode after installation
 When you have Plone installed and want to start development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
 
 Installer source code
-======================
+=====================
 
 * https://github.com/plone/Installers-UnifiedInstaller

@@ -173,7 +173,7 @@ See `Product and profile installation <http://docs.plone.org/external/plone.app.
 
 
 Manually
----------
+--------
 
 You might want to install profiles manually if they need to be enabled only for certain tests.
 
@@ -896,7 +896,7 @@ Note that you are always allowed to use the ``plone`` domain, but if the xml fil
 
 - ``viewlets.xml``: no i18n needed
 
-- ``workflows: use the **plone** domain
+- ``workflows``: use the **plone** domain
 
 .. original content from http://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4
 
@@ -1120,7 +1120,7 @@ Content Generation
 Code is in ``Products.GenericSetup.content``:
 
 .. automodule:: Products.GenericSetup.content
- :members: FolderishExporterImporter
+  :members: FolderishExporterImporter
 
 
 controlpanel.xml
@@ -1747,7 +1747,7 @@ With ``acquire="true"`` (or ``True``, ``yes``, ``1``) roles are also acquired fr
         <permission name="Pass the bridge" acquire="True" />
 
 .. automodule:: Products.GenericSetup.rolemap
- :members: importRolemap RolemapImportConfigurator
+  :members: importRolemap RolemapImportConfigurator
 
 
 sharing.xml

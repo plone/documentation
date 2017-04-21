@@ -51,7 +51,7 @@ Add an entry every time you add/remove a feature, fix a bug, etc. on top of the
 current development changes block.
 
 
-.. _git_commit_message_style_guide
+.. _git_commit_message_style_guide:
 
 Git commit message style guide
 ==============================

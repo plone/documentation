@@ -1,12 +1,11 @@
-===========
- Debug mode
-===========
+==========
+Debug mode
+==========
 
 .. admonition:: Description
 
     Plone can be put in the debug mode where one can diagnose start up failures and
     any changes to CSS, JavaScript and page templates take effect immediately.
-
 
 Introduction
 ============
@@ -70,8 +69,6 @@ Possible things to debug and force refresh of static assets
 * Make sure you are not using *plone.app.caching* and doing caching forever
 * Use `hard browser refresh <http://support.mozilla.org/en-US/questions/746138>`_ to override local cache
 
-
-
 Starting Plone in debug mode on Microsoft Windows
 =================================================
 
@@ -89,9 +86,7 @@ This quick start has been tested on Windows 7.  Installation remains the same on
 3. The installer will launch your Plone instance when it finishes.  To connect, direct your browser to: http://localhost:8080
 
 .. note::
-
-    In the buildout bin directory you'll find the executable files to control Plone instance.
-
+   In the buildout bin directory you'll find the executable files to control Plone instance.
 
 Starting and Stopping Plone
 ---------------------------
@@ -99,8 +94,7 @@ Starting and Stopping Plone
 If your Plone instance is shutdown you can start and control it from the command prompt.
 
 .. note::
-
-    To control Plone you need to execute your command prompt as an administrator.
+   To control Plone you need to execute your command prompt as an administrator.
 
 In the command prompt enter the following command to access your buildout directory
 (the varies according to Plone version)::
@@ -139,7 +133,6 @@ To create your site, fill in this form and click the *Create Plone Site* button.
 
 Congratulations! You should be now logged in as an admin to your new Plone instance and you'll see the front page of Plone.
 
-
 Starting Plone in debug mode on UNIX
 ====================================
 
@@ -168,7 +161,6 @@ If you have ZEO cluster mode installation you can start individual processes in 
     bin/client1 fg &  # Start ZEO front end client 1 (usually port 8080)
     # bin/client2 fg  # For debugging issues it is often enough to start client1
 
-
 Determining programmatically whether Zope is in debug mode
 ==========================================================
 
@@ -183,8 +175,4 @@ in debug mode or not.::
    There is a difference between Zope being in debug mode and the JavaScript
    and CSS resource registries being in debug mode (although they will
    automatically be set to debug mode if you start Zope in debug mode).
-
-
-
-
 
