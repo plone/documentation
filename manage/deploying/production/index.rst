@@ -13,6 +13,6 @@ Production
 
     restarts
     ubuntu_production
-    heroku_do
+    digitalocean_deployment
     securitybestpractices
     status_check
