@@ -28,14 +28,14 @@ After having your account ready, we will need to create a droplet.
 A droplet is the way Digital Ocean calls its own Virtual Private Server (VPS). 
 Click on the Create Droplet button on the right corner of the screen.
 
-.. image:: ../images/create_droplet.png
+.. image:: /_static/create_droplet.png
     :align: center
     :alt: Create droplet
 
 We will be redicrect to the droplet selection page. 
 In here, we need to check the OS for your Droplet. In this tutorial, we choose the Ubuntu 16.04 OS for our VPS.
 
-.. image:: ../images/create_dropletos.png
+.. image:: /_static/create_dropletos.png
     :align: center
     :alt: Choose droplet OS
 
@@ -43,7 +43,7 @@ After that, we need to choose the plan for your Droplet.
 Usually, we will use the $10/month since it provides good space for caching.
 In addition, this plan also prevents some errors that we might get into while deploying our Plone sites.
 
-.. image:: ../images/create_dropletsize.png
+.. image:: /_static/create_dropletsize.png
     :align: center
     :alt: Choose droplet size
 
@@ -80,7 +80,7 @@ Run the setup. When you are done, start Putty.
 Use your droplet ip address, port 22 and hit enter. It should open a linux terminal for you to fill in your username and password.
 Log in to your droplet with the password from the email that you received.
 
-.. image:: ../images/winputty.png
+.. image:: /_static/winputty.png
     :align: center
     :alt: Windows putty setup
 
@@ -157,7 +157,7 @@ After finishing the setup, you can resize the droplet to 5$/month plan if you wa
 The Installer does not generate all the Plone files
 ---------------------------------------------------
 
-.. image:: ../images/errorDO.png
+.. image:: /_static/errorDO.png
     :align: center
     :alt: droplet installation error
 
