@@ -12,7 +12,7 @@ In this way you can enforce good practices such as putting images in the images 
 
 .. note::
 
-   Setting restrictions in the very top level, also know as the *root* of the website, is restricted to site administrators.
+   Setting restrictions in the very top level, also known as the *root* of the website, is restricted to site administrators.
    That is because this will influence the navigation, and may lead to unwanted side effects.
 
 First, select the last choice in the *Add new...* menu called *Restrictions...*:
@@ -49,7 +49,7 @@ There are three choices shown for restricting types in the folder:
 - Select manually
 
 The default choice, to use the setting of the parent folder.
-That means when you create a folder and restrict the types that can be added, any subfolders created in the folder will automatically carry the restrictions.
+That means when you create a folder and restrict the types that can be added, any subfolders created in the folder will automatically carry these restrictions.
 
 The second choice is a way to reset to the default, unrestricted setting.
 
