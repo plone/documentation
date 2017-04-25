@@ -35,7 +35,7 @@ The latest release of Plone also comes as a Virtualbox / Vagrant image.
 This will install a fully-working Plone for you in a virtual machine, but integrated with the host so that all your favourite Windows editing and development tools work.
 If you want to develop with Plone on a Windows machine, that would be your easiest option.
 
-For OS X users we also advise to use virtual machines for casual testing, and the installation of the Universal .
+For OS X users we also advise to use virtual machines for casual testing, and the installation of the Universal.
 The Unified Installer works just fine under OS X, but does require use of the terminal.
 
 You can find all information on using these different options at the :doc:`Installation </manage/installing/index>` chapter in the "Managing, Administration" section of these docs.
