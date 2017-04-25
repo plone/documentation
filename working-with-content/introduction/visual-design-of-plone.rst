@@ -1,5 +1,5 @@
 ================================
-Visual Design of Plone Web Sites
+Visual Design Of Plone Web Sites
 ================================
 
 Plone allows web site administrators and designers the ability to create unique site designs.
