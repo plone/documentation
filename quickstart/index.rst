@@ -25,7 +25,7 @@ It can provide you both with a single instance with developer tools installed, a
 
 What this means it that it will scale from quick evaluation to development to deployment, which will make your experience easier.
 
-The catch is that the Unified Installer works on Linux and Unix-like systems (including OS X and other BSD's), not Windows.
+The catch is that the Unified Installer works on Linux and Unix-like systems (including macOS and other BSD's), not Windows.
 For Windows, there is a currently no binary installer for Plone 5 available, though we anticipate to have one in the future.
 In all honesty it must be said that this is not the ideal way to work with Plone if you want to *develop* with it.
 A large portion of the toolchain is not readily available on Windows environments.
@@ -35,8 +35,8 @@ The latest release of Plone also comes as a Virtualbox / Vagrant image.
 This will install a fully-working Plone for you in a virtual machine, but integrated with the host so that all your favourite Windows editing and development tools work.
 If you want to develop with Plone on a Windows machine, that would be your easiest option.
 
-For OS X users we also advise to use virtual machines for casual testing, and the installation of the Universal.
-The Unified Installer works just fine under OS X, but does require use of the terminal.
+For macOS users we also advise to use virtual machines for casual testing, and the installation of the Universal.
+The Unified Installer works just fine under macOS, but does require use of the terminal.
 
 You can find all information on using these different options at the :doc:`Installation </manage/installing/index>` chapter in the "Managing, Administration" section of these docs.
 
