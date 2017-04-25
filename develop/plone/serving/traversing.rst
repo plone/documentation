@@ -445,24 +445,17 @@ for the default item) in page templates:
 Checking if an item is the site front page
 --------------------------------------------
 
-Example code below::
+Example:
+
+.. code:: python
 
     from zope.component import getMultiAdapter
-    from plone.app.layout.navigation.interfaces import INavigationRoot
 
-    def isFrontPage(self):
-        """
-        Check if the viewlet is on a front page.
+    def is_front_page(self):
+        """Check if we are in the context of a front page."""
+        context_helper = getMultiAdapter((self.context, self.request), name='plone_context_state')
+        return context_helper.is_portal_root()
 
-        Handle canonical paths correctly.
-        """
-        # Get path with "Default content item" wrapping applied
-        context_helper = getMultiAdapter((self.context, self.request), name="plone_context_state")
-        canonical = context_helper.canonical_object()
-
-        path = canonical.absolute_url_path()
-
-        return INavigationRoot.providedBy(canonical)
 
 Custom traversal
 =================
