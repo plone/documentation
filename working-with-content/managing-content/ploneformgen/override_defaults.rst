@@ -8,7 +8,7 @@ Overriding field defaults dynamically
 
 Creating a dynamic field default means to have a form field's initial value change with context. We might, for example, wish to use a member's e-mail address, which would vary with the user. Or, we might be looking up some data via a catalog or RDBMS query, and wish to supply that to the user for correction.
 
-`Template Attribute Language Expression Syntax` (TALES) is a simple notation that allows determination of a value via path (as in path/to/object), string or Python expressions. It is used in `Zope's Template Attribute Language` (TAL), and is ubiquitous in Plone templates. This how-to does not teach you TALES; for that, try the `Zope Page Templates Reference <http://www.plope.com/Books/2_7Edition/AppendixC.stx#1-10>`_.
+`Template Attribute Language Expression Syntax` (TALES) is a simple notation that allows determination of a value via path (as in path/to/object), string or Python expressions. It is used in `Zope's Template Attribute Language` (TAL), and is ubiquitous in Plone templates. This how-to does not teach you TALES; for that, try the `Zope Page Templates Reference <https://docs.zope.org/zope2/zope2book/AppendixC.html>`_.
 
 .. warning::
 
@@ -81,6 +81,7 @@ You'll be frustrated fast if you try to do anything smart in a single TALES expr
     folder/getEmail
 
 Make sure your script returns the value you wish to use as a field default, in the appropriate format.
+
 Setting Many Defaults With One Script
 
 If you need to dynamically set several fields, you may do it with one script. Call the script by specifying it in the Form Setup Script field of the form folder's overrides fieldset.
