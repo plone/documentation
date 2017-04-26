@@ -7,7 +7,7 @@ Working Copy lets you have two versions of your content in parallel.
 
 .. note::
 
-  When a Plone site is first created, there a number of additional features that can be enabled, including "Working Copy".
+  When a Plone site is first created, there are a number of additional features that can be enabled, including "Working Copy".
   If the Plone site you are using doesn't show the "Check out" option under the Actions menu, you will need to contact your site manager and request that "Working Copy Support (Iterate)" be installed.
 
 
