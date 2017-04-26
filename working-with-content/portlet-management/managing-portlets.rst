@@ -45,7 +45,7 @@ There are three locations where portlets can be put: to the left, to the right, 
    :align: center
    :alt: Where to find the Portlet menu on the Toolbar
 
-From here, you choose which region you want to work on. In the example below, we are working on the "footerportlets"
+From here, you choose which region you want to work on. In the example below, we are working on the "footer portlets"
 
 .. note::
 
@@ -74,7 +74,7 @@ Each type of Portlet will have different configuration options available to it.
 Rearranging Portlets
 --------------------
 
-To Rearrange your Portlets, simply click the **up or down arrow**.
+To rearrange your Portlets, simply click the **up or down arrow**.
 This will affect the order your Portlets are displayed on the page.
 
 Removing Portlets
