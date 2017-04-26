@@ -64,7 +64,7 @@ when combined with other criteria.
 To specify a Location, simply click the **Add button**, which will pop
 up a new window showing you a directory of your site. If we follow our
 example and want to search the About Us section of our site, we would
-click the InsertÂ button next to the About Us folder.
+click the Insert button next to the About Us folder.
 
 You can open folders to view content contained within them either by
 clicking the Browse button or directly on the title of the folder you
@@ -80,7 +80,7 @@ specify and searches the Title, Description, and Body of all objects and
 returns **any that have the word or phrase you specify**. This is useful
 when you want to find objects that have to deal with a certain thing,
 especially if the word or phrase appears across many content types.
-Using LearnPlone.Org as an example, if I want to create a Collection
+Using training.plone.org as an example, if I want to create a Collection
 that displays all objects that reference the word Collections, I would
 use the Search Text criterion and specify *collections*. All Tutorials,
 Videos, Glossary items, etc with *collections* in the Title,
@@ -97,7 +97,7 @@ specifying this field, when you create an object you can create a web of
 related content that will reference each other (think of a "see also"
 kind of function). When you have done this, you can use the Related To
 criterion in a Collection to display anything related to a specific
-object.****
+object.
 
 In this case we have specified that there are pages related to Our
 Staff, History, and the About Us Homepage. By selecting one or multiple
