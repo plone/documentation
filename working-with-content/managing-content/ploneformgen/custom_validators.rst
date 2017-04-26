@@ -9,7 +9,7 @@ Creating custom validators
 
 `Template Attribute Language Expression Syntax` (TALES) is a simple notation that allows determination of a value via path (as in path/to/object), string or Python expressions.
 It is used in `Zope's Template Attribute Language` (TAL), and is ubiquitous in Plone templates.
-This how-to does not teach you TALES; for that, try the `Zope Page Templates Reference <http://www.plope.com/Books/2_7Edition/AppendixC.stx#1-10>`_.
+This how-to does not teach you TALES; for that, try the `Zope Page Templates Reference <https://docs.zope.org/zope2/zope2book/AppendixC.html>`_.
 
 .. warning::
 
