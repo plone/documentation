@@ -47,6 +47,7 @@ Database table & form
 =====================
 
 In this step, we create a simple database table and a matching form.
+
 The database
 
 Hope you're not feeling too ambitious at the moment, because this is going to be a demonstration table. It's going to have three columns:
@@ -131,6 +132,7 @@ Your form will now store its input into your SQL table! Add a few rows to check 
 Reading a Row, Filling in the Fields
 
 If we want to update records, we're going to have to get rows from our SQL table and use the columns to populate our form fields.
+
 The SQL
 
 Now, use the Management Interface to create, inside your form folder, a Z SQL Method named testReadRow. Set up the following parameters:
@@ -148,6 +150,7 @@ Then, add the SQL Code:
         <dtml-sqltest uid type="int">
 
 The <dtml-sqltest ...> operator is a safe way to use user input for an SQL "where" test. The default test is "=".
+
 The Script
 
 Let's wrap this method in a simple Python script that will selectively use it. Create a Python Script with the id formSetup and the Python:
