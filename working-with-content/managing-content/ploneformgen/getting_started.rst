@@ -132,13 +132,13 @@ Many field types have the same information on their edit screen. Here's an expla
 Field label
     The title of the field.
 Field help
-    Some text you can provide to the form submitter to help them figure out what you're asking for.
+    Some text you can provide to the form submitters to help them figure out what you're asking for.
 Required
     Is this a required field?
 Hidden
     Is this a hidden field? This is useful for passing data back to yourself.
 Default
-    You can supply a defult value that the form submitter can change if they wish.
+    You can supply a defult value that the form submitters can change if they wish.
 
 Other types of information can be defined for other field types, and we will cover those as they come up. Since we're talking about the string field, let's take a moment to talk about validation.
 
@@ -154,7 +154,7 @@ PloneFormGen editing environment
 
 Note that PloneFormGen has both an *Edit* tab and a *QuickEdit* tab on the taskbar. The *Edit* mode mainly allows you to edit major settings for the entire form. The *QuickEdit* mode allows you to interactively edit the form. It's much a much easier way to add, edit, delete and reorder fields.
 
-In *QuickEdit* mode, you may add fields by dragging them from the toolkit at the right side of the page and dropping it into the target position in the form.
+In *QuickEdit* mode, you may add fields by dragging them from the toolkit at the right side of the page and dropping them into the target position in the form.
 
 If you want to see the form the way that your site visitors would, you can click on View in the taskbar. Likewise you can get to the editing environment from the normal view, by clicking the *QuickEdit* tab in the taskbar.
 
@@ -186,7 +186,7 @@ Text Field
 
     How to add a text box for collecting comments or other text.
 
-A *Text field* is like a string field except that it's a large box instead of a single line. You can change the size of the field by adjusting theRows and Max Lengthparameters.
+A *Text field* is like a string field except that it's a large box instead of a single line. You can change the size of the field by adjusting the Rows and Max Length parameters.
 
 Rows controls the vertical height of the text box. Max Length controls the number of characters the site visitor can input at a time. If you want to limit a Comments text box to short comments, you might choose 500 characters as the limit.
 
@@ -208,7 +208,7 @@ Selection field
 
 As before, you must be in your Form Folder to add additional fields. Choose *Selection Field* from the list in the Add New drop-down menu or the QuickEdit toolkit.
 
-In addition to the regulars like *Field Label* and *Field Help*, there is *Options* and *Presentation Widget* to consider.
+In addition to the regulars like *Field Label* and *Field Help*, there are *Options* and *Presentation Widget* to consider.
 
 Options
 -------
@@ -243,14 +243,14 @@ Multi-select
 
 Multi-select is very similar to a Selection Field except that you have an additional widget (the checkbox) and your site visitors can choose many options from one list.
 
-If you plan to use the Selection List widget for a multi-select field, it is helpful to include a note about the Control key in Field Help. In order to actually choose more than one option in the list, you must hold down the control key (CRTL) on your keyboard and then click to select/de-select options. Because of this, it is most often the best choice to use the Checkbox widget instead of Selection List for a multi-select field.
+If you plan to use the Selection List widget for a multi-select field, it is helpful to include a note about the Control key in Field Help. In order to actually choose more than one option in the list, you must hold down the control key (CTRL) on your keyboard and then click to select/de-select options. Because of this, it is most often the best choice to use the Checkbox widget instead of Selection List for a multi-select field.
 
 The Thank You Page
 ==================
 
 .. admonition:: Description
 
-    How to customize the page a site visitor sees after submitted the form.
+    How to customize the page a site visitor sees after having submitted the form.
 
 After a site visitor has filled out your form and clicks submit, they will see a page thanking them for their input. Look in your Form Folder and you should already see a Thank You page in the contents.
 
@@ -291,7 +291,7 @@ The Mailer Adapter
 Overview
 --------
 
-Adapters control what happens to the form data that your site visitors submit the form. The Mailer Adapter will send form data to an email address or addresses of your choosing. The Save Data Adapter will save the results in your Form Folder so that you can export any time you wish. You can even use adapters concurrently to get the functionality of both.
+Adapters control what happens to the form data that your site visitors submit with the form. The Mailer Adapter will send form data to an email address or addresses of your choosing. The Save Data Adapter will save the results in your Form Folder so that you can export them any time you wish. You can even use adapters concurrently to get the functionality of both.
 
 Configuring the mailer adapter
 ==============================
@@ -302,7 +302,7 @@ Go ahead and edit the Mailer Adapter in the form editing environment. The first 
 
 From here you can do three things:
 
-* Change the Title of your Mailer Adapter (really no reason to unless you have more than one)
+* Change the Title of your Mailer Adapter (really no reason to, unless you have more than one)
 * Choose a recipient name
 * Choose a recipient email address
 
@@ -311,7 +311,7 @@ Addressing
 
 Now notice the tabs [default] [addressing] and so on. Click on [addressing].
 
-The *Addressing* screen allows you to make selections about other recipients any dynamically populate the *From* and *Reply-to* fields directly from form data.
+The *Addressing* screen allows you to make selections about other recipients and dynamically populate the *From* and *Reply-to* fields directly from form data.
 
 Message
 -------
