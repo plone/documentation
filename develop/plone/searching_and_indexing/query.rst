@@ -6,7 +6,8 @@ Querying
 
     How to programmatically search and query content from a Plone site.
 
-.. contents :: :local:
+.. contents::
+  :local:
 
 Introduction
 ============
@@ -119,34 +120,28 @@ Title
 Description
     The description field of the content.
 Subject
-    The keywords used to categorize the content. Example:
-    ::
+    The keywords used to categorize the content. Example::
 
         catalog.searchResults(Subject=('cats', 'dogs'))
 
 portal\_type
     As its name suggests, search for content whose portal type is
-    indicated. For example:
-    ::
+    indicated. For example::
 
         catalog.searchResults(portal_type='News Item')
 
-    You can also specify several types using a list or tuple format:
-
-    ::
+    You can also specify several types using a list or tuple format::
 
         catalog.searchResults(portal_type=('News Item', 'Event'))
 
 review\_state
-    The current workflow review state of the content. For example:
-    ::
+    The current workflow review state of the content. For example::
 
         catalog.searchResults(review_state='pending')
 
 object\_provides
     From Plone 3, you can search by the interface provided by the
-    content. Example:
-    ::
+    content. Example::
 
         from Products.MyProduct.path.to import IIsCauseForCelebration
         catalog(object_provides=IIsCauseForCelebration.__identifier__)
@@ -416,7 +411,7 @@ Following is useful in unit test debugging::
 Bypassing query security check
 ==============================
 
-.. note ::
+.. note::
 
         Security: All portal_catalog queries are limited to the current user permissions by default.
 
@@ -436,7 +431,7 @@ the objects without triggering a security exception::
 Bypassing language check
 ========================
 
-.. note ::
+.. note::
 
         All portal_catalog() queries are limited to the selected language of
         the current user. You need to explicitly bypass the language check if you
@@ -458,17 +453,17 @@ so::
 languages and keeps ("jails") content within the appropriate folders. Each Root 
 Language Folder is also a NavigationRoot, so the portal_catalog is effectively
 limited to searches in the users current language.
-This means that the way to bypass this is to add the parameter ``path='/'` to 
+This means that the way to bypass this is to add the parameter ``path='/'`` to 
 your catalog query like so::
 
     all_content_brains = portal_catalog(path='/')
 
-.. note ::
+.. note::
  
-         Although the language folders are also marked to be INavigationRoot, 
-         in LinguaPlone the language of the content is not enforced inside the 
-	 language folder (in plone.app.multilingual there's a subscriber that 
-	 moves the content to the appropriate folder).
+    Although the language folders are also marked to be INavigationRoot, 
+    in LinguaPlone the language of the content is not enforced inside the 
+    language folder (in plone.app.multilingual there's a subscriber that 
+    moves the content to the appropriate folder).
 
 
 Bypassing Expired content check
@@ -484,19 +479,19 @@ Below is an example of how the expired content check is made::
 
         contents = context.portal_catalog.queryCatalog(show_inactive=show_inactive)
 
-See also::
+See also:
 
-* :doc:`Listing </content/listing>`
+* :doc:`Listing <../content/listing>`
 
 
 None as query parameter
 =======================
 
-.. warning ::
+.. warning::
 
         Usually if you pass in None as the query value, it will match all the objects instead of zero objects.
 
-.. note ::
+.. note::
 
         Querying for None values is possible with AdvancedQuery_ (see below).
 
@@ -639,7 +634,7 @@ Caveats
 
 (Originally from `this tutorial <https://plone.org/documentation/how-to/query-portal_catalog-for-interfaces>`_.)
 
-.. note ::
+.. note::
 
     Looks like query by Products.CMFCore.interfaces._content.IFolderish does not seem to work in Plone 4.1
     as this implementation information is not populated in portal_catalog.
@@ -826,7 +821,7 @@ You can query by language::
 
         portal_catalog({"Language":"en"})
 
-.. note ::
+.. note::
 
         plone.app.multilingual must be installed.
 
@@ -873,16 +868,16 @@ Example::
 
     return self.context.portal_catalog.evalAdvancedQuery(query)
 
-.. note ::
+.. note::
 
-	Plone 3 ships with AdvancedQuery but it is not part of Plone. Always declare
-	AdvancedQuery dependency in your egg's setup.py install_requires.
+    Plone 3 ships with AdvancedQuery but it is not part of Plone. Always declare
+    AdvancedQuery dependency in your egg's setup.py install_requires.
 
-.. warning ::
+.. warning::
 
-	AdvancedQuery does not necessarily apply the same automatic limitations which normal
-	portal_catalog() queries do, like language and expiration date.
-	Always check your query code against these limitations.
+    AdvancedQuery does not necessarily apply the same automatic limitations which normal
+    portal_catalog() queries do, like language and expiration date.
+    Always check your query code against these limitations.
 
 More information
 
@@ -933,12 +928,12 @@ Discovering the query:
     >>> tq.selectedViewFields()
     [
         ('Title', u'Title'),
-	('Creator', 'Creator'),
-	('Type', u'Item Type'),
-	('ModificationDate', u'Modification Date'),
-	('ExpirationDate', u'Expiration Date'),
-	('getId', u'Short Name'),
-	('getObjSize', u'Size')
+        ('Creator', 'Creator'),
+        ('Type', u'Item Type'),
+        ('ModificationDate', u'Modification Date'),
+        ('ExpirationDate', u'Expiration Date'),
+        ('getId', u'Short Name'),
+        ('getObjSize', u'Size')
     ]
 
 This output should be pretty self-explaining: This query finds objects
@@ -1010,10 +1005,10 @@ Below is a fail-safe example for a metadata access::
             scale = "tile" # 64x64
             return field.tag(context, scale=scale)
 
-.. note ::
+.. note::
 
-	This is for example purposes only - the code above is working, but not optimal,
-	and can be written up without waking up the object.
+    This is for example purposes only - the code above is working, but not optimal,
+    and can be written up without waking up the object.
 
 Fuzzy search
 ============

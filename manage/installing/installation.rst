@@ -1,6 +1,6 @@
-==============
- Installation
-==============
+============
+Installation
+============
 
 .. highlight:: console
 
@@ -277,13 +277,10 @@ please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 
 Installing Plone using RPMs, .dev, … packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not supported by Plone community. Plone dependencies can and should be installed via your operating system package manager, to profit from security updates and maintenance, but not Plone itself. The packages that have been offered in the past via apt, yup, port etcetera tend to be unmaintained, old and unsuitable.
 
-
-Microsoft Windows
------------------
 
 Installing Plone on Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -298,10 +295,10 @@ If you wish to develop Plone on Windows you need to set-up a working MingW envir
 
 
 OSX
----
+^^^
 
 Installing Plone using VirtualBox/Vagrant install kit or VirtualBox appliance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the recommended method if you want to try Plone for the first time.
 
@@ -310,7 +307,7 @@ Please use the installer from the download page `<http://plone.org/products/plon
 
 
 Installing Plone from source on OS X
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Installation via the Unified Installer or buildout is similar to Unix.
 However, you will need to install a command-line build environment. To get a free build kit from Apple, do one of the following:
@@ -327,7 +324,7 @@ After either of these steps, you immediately should be able to install Plone usi
 Proceed as with Linux.
 
 LibXML2/LibXSLT Versions
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Don't worry about this if you're using an installer.
 
@@ -337,6 +334,6 @@ Entering debug mode after installation
 When you have Plone installed and want to start development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
 
 Installer source code
-======================
+=====================
 
 * https://github.com/plone/Installers-UnifiedInstaller
