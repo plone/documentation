@@ -35,4 +35,4 @@ Add the following code to your buildout.cfg to install collective.recaptcha and 
 
 * Re-run bin/buildout and relaunch your zope/plone instance.
 * Open the PortalQuickinstaller or plone control panel and install (or reinstall if already installed) PloneFornGen.
-* Open the PloneFormGen configlet in the Plone control Panel and fill in the fields with your Public and Private Keys of your ReCaptcha Account. Obtain keys from `reCaptcha.net <http://www.google.com/recaptcha/intro/invisible.html>`_.
+* Open the PloneFormGen configlet in the Plone control Panel and fill in the fields with your Public and Private Keys of your ReCaptcha Account. Obtain keys from `reCaptcha.net <https://www.google.com/recaptcha/intro/invisible.html>`_.
