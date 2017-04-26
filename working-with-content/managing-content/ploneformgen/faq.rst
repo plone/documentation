@@ -62,7 +62,6 @@ Q. Why are these action adapters content types? Why aren't they built into the f
 ===========================================================================================
 
 There are several reasons. One is that doing it this way makes it easy to copy configured action adapters from one form to another.
-How do I specify a recipient e-mail address?
 
 Q. When I attempt to submit a form, I get an AssertionError "You must specify a recipient e-mail address in the mail adapter."
 ==============================================================================================================================
@@ -115,7 +114,7 @@ in your Options Vocabulary field.
 Q. Could a selection field in a FormFolder be used to redirect?
 ===============================================================
 
-I have created a custom FormFolder, using PloneFormGen. Within the FormFolder, I have created a page and added a selection field with value/label pairs equivalent to: path (url) | company department -->i.e. http://my.site/reports/accounting|Accounting I am wondering if it is possible to create an action override that would 'redirect_to' the 'selected' value in the selection field, something like: 'redirect_to:string: ' If so, how might I access the value from the selection field?
+I have created a custom FormFolder, using PloneFormGen. Within the FormFolder, I have created a page and added a selection field with value/label pairs equivalent to: path (url) | company department --> i.e. http://my.site/reports/accounting|Accounting I am wondering if it is possible to create an action override that would 'redirect_to' the 'selected' value in the selection field, something like: 'redirect_to:string: ' If so, how might I access the value from the selection field?
 
 For the redirection, just put something like::
 
@@ -153,14 +152,14 @@ Q. Can I integrate my favorite field/widget?
 I'd like to integrate a new field/widget into PloneFormGen so that it will be useful as a form field in a PFG form.
 
 PFG is designed to allow this, but it's going to take some programming by you or the field developer. See the PFG "examples" directory for a heavily commented, really working, example of integrating a third-party field into PloneFormGen without touching the PFG or field code.
-How do I save the uploaded file from "file field"?
+
 
 Q. Captcha field is not accessible?
 ===================================
 
-Or, not always readable for some people with low vision, or using mobile this type of control is strongly blocking
+Or, not always readable for some people with low vision, or when using mobile phones this type of control is strongly blocking
 
-To effectively replace a Captcha, just add a text field mandatory (must match the size of two char. Max.) That can be called eg 'Filter' as help text with the following question: "to avoid spam can you answer this question: 7+2-1 = ?
+To effectively replace a Captcha, just add a mandatory text field (must match the size of two chars. max.) That can be called e.g. 'Filter' as help text with the following question: "to avoid spam can you answer this question: 7+2-1 = ?
 
 Next, modify the object and choose the menu 'overrides' and fill in the "custom validator" by this expression::
 
