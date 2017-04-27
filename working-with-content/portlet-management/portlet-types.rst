@@ -4,7 +4,7 @@ Portlet Types
 
 Descriptions of each Portlet Type
 
-There are several different types of Portlets to chose from.
+There are several different types of Portlets to choose from.
 
 .. note::
 
