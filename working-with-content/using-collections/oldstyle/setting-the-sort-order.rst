@@ -51,7 +51,7 @@ specified any Categories, then sorting by Categories will do nothing.
 
 The Related To Sort Order will actually apply a criterion to your
 Collection. It limits to the results to only those that have Related To
-information Specified on their properties.
+information specified on their properties.
 
 Text
 ----
@@ -78,8 +78,8 @@ Baker listed first followed by those of Jane Smith.
 **Title**
 
 Sorting by Title will display the results in alphabetical order, by
-the object Titles.
+the object titles.
 
 Next we will cover the Dates that we skipped over in this section as
-well as the Criteria Field Section.
+well as the Criteria Field section.
 
