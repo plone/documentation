@@ -1,5 +1,5 @@
 ============================
-Content identification (ids)
+Content Identification (ids)
 ============================
 
 .. admonition:: Description
@@ -14,8 +14,9 @@ Introduction
 Id
 ==
 
-Content id generally refers the item id **within the folder**. Together with folder path this
-identifies the content in unique way.
+Content id generally refers the item id **within the folder**.
+
+Together with folder path this identifies the content in unique way.
 
 Naturally, this id changes when the content is renamed or moved.
 
@@ -24,8 +25,7 @@ Use :doc:`traversing </develop/plone/serving/traversing>` to resolve object by p
 UID and UUID
 =============
 
-UID is a unique, non-human-readable identifier for a content object which stays
-on the object even if the object is moved.
+UID is a unique, non-human-readable identifier for a content object which stays on the object even if the object is moved.
 
 Plone uses UUIDs for
 
@@ -37,8 +37,7 @@ Plone uses UUIDs for
 
 * UUID is supported by Archetypes and Dexterity both and you should use this for new projects
 
-UIDs are available for Archetypes content and unified UUIDs for both Archetypes and
-Dexterity content items since ``plone.app.dexterity`` version 1.1.
+UIDs are available for Archetypes content and unified UUIDs for both Archetypes and Dexterity content items since ``plone.app.dexterity`` version 1.1.
 
 .. note::
 
@@ -80,10 +79,14 @@ More info:
 * http://stackoverflow.com/questions/8618917/portal-catalog-unique-ids-for-both-archetypes-and-dexterity-content
 
 
-UUID Acquisition problem with Dexterity Content Types
+UUID Acquisition Problem With Dexterity Content Types
 =====================================================
 
-Make sure your Dexterity content type has the `plone.app.referenceablebehavior.interfaces.IReferenceable <https://github.com/plone/plone.app.referenceablebehavior/blob/master/plone/app/referenceablebehavior/interfaces.py>`_ behavior enabled. If not, when querying for an object's UUID, you will get its parent UUID. Then you can end up with a lot of objects with the same UUID as their parent.
+Make sure your Dexterity content type has the `plone.app.referenceablebehavior.interfaces.IReferenceable <https://github.com/plone/plone.app.referenceablebehavior/blob/master/plone/app/referenceablebehavior/interfaces.py>`_ behavior enabled.
+
+If not, when querying for an object's UUID, you will get its parent UUID.
+
+Then you can end up with a lot of objects with the same UUID as their parent.
 
 If you run into this issue, here's an easy upgrade step to fix it::
 
@@ -120,52 +123,19 @@ If you run into this issue, here's an easy upgrade step to fix it::
 
 
 Make sure to have the IReferenceable behavior listed in the content type XML definition before running the upgrade step.
-Also note that this upgrade step will recalculate the UUID for all "my.custom.content.type" objects.
+
+.. note::
+
+    This upgrade step will recalculate the UUID for all "my.custom.content.type" objects.
 
 
 intids
 ========
 
-Integer ids ("intids") are fast look-up ids provided by ``plone.app.intid``
-and ``five.intid`` packages.  Instead of relying on globally unique
-identifier strings (UIDs) they use 64-bit integers, making low-level
-resolution faster.
+Integer ids ("intids") are fast look-up ids provided by ``plone.app.intid`` and ``five.intid`` packages.
+
+Instead of relying on globally unique identifier strings (UIDs) they use 64-bit integers, making low-level resolution faster.
 
 * https://github.com/plone/plone.app.intid
 
 * http://stackoverflow.com/questions/8629390/how-to-use-intids
-
-Archetypes
-===========
-
-This info only for Plone 3.x projects.
-
-Getting the object's UID
-===========================
-
-Use UID() accessor function
-
-Example how to get UID of *events* folder::
-
-	>>> site.events.UID()
-	'ce380ef0f10a85beb864025928e1819b'
-
-
-Looking up object by UID
-===========================
-
-Use lookupObject() in reference catalog.
-
-	>>> site.reference_catalog.lookupObject('ce380ef0f10a85beb864025928e1819b')
-	<ATBTreeFolder at /test/events>
-
-*None* will be returned if there is no content item matching the specified UID.
-
-
-
-
-
-
-
-
-
