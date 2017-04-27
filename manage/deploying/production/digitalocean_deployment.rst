@@ -39,7 +39,7 @@ In here, we need to check the OS for your Droplet. In this tutorial, we choose t
 .. image:: /_static/create_dropletos.png
     :alt: Choose droplet OS
 
-After that, we need to choose the plan for your Droplet. 
+After that, we need to choose the plan for our Droplet. 
 Usually, we will use the $10/month since it provides good space for caching.
 In addition, this plan also prevents some errors that we might get into while deploying our Plone sites.
 
@@ -62,8 +62,8 @@ If you are using Mac or Linux environment, you will have to turn on the terminal
 
     ssh root@[your-droplet-ip-adress]
 
-It will ask you to fill in your password. When you created a droplet, an email should be sent to you. 
-It contains the password for your droplet. 
+It will ask you to fill in your password. When you created a droplet, an email should be sent to you, 
+which contains the password for your droplet. 
 Use this password to log in to your droplet through the terminal and change your password.
 
 Windows
@@ -71,7 +71,8 @@ Windows
 
 On Windows, you will have to download `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_.
 Run the setup. When you are done, start Putty.
-Use your droplet ip address, port 22 and hit enter. It should open a linux terminal for you to fill in your username and password.
+Use your droplet ip address, port 22 and hit enter. 
+It should open a linux terminal for you to fill in your username and password.
 Log in to your droplet with the password from the email that you received.
 
 .. image:: /_static/winputty.png
