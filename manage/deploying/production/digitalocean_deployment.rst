@@ -1,6 +1,6 @@
-======================================
-Deploy your Plone app to Digital Ocean
-======================================
+=================================
+Deploy Plone app to Digital Ocean
+=================================
 
 .. admonition:: Description
 
@@ -17,7 +17,8 @@ which is a popular platform for development.
 
 In addition, Digital Ocean is a service that provides VPS and root access for users, 
 which makes it very convenient since there are services that do not give full control over the VPS.
-Since it is cheap and reliable, we will choose Digital Ocean for our development environment in this tutorial
+Because it is cheap and reliable, we will choose Digital Ocean for our development environment in this tutorial
+
 
 Setting up accounts and droplets
 ================================
@@ -47,6 +48,7 @@ In addition, this plan also prevents some errors that we might get into while de
 
 .. note::
     In case you want to deploy your app using a specific domain name, you can learn how to set it up at `Digital Ocean documentation <https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean>`_.
+
 
 Sign in to your Droplet 
 =======================
@@ -83,22 +85,12 @@ Log in to your droplet with the password from the email that you received.
 
 When you are done, it shold ask you to change the password.
 
+
 Deploy Plone to VPS
 ===================
 
 When you are in, make sure that you are at the root directory and download the Unified Installer
-
-.. code-block:: shell
-
-    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.7/+download/Plone-5.0.7-UnifiedInstaller.tgz
-    tar -xf Plone-5.0.7-UnifiedInstaller.tgz
-
-Run the the Unified Installer
-
-.. code-block:: shell
-
-    cd Plone-5.0.7-UnifiedInstaller
-    ./install.sh $OPTION
+by following the instruction at :doc:`Installing Plone </manage/installing/installation>`.
 
 .. note::
     For deployment on Digital Ocean, you should run the Installer with default installation path, which is /opt/plone
@@ -119,6 +111,7 @@ follow from step 3 :doc:`Ubuntu Production deployment </manage/deploying/product
     You will have to replace the path specified in step 3 with your Plone app path. In this case, it should be /opt/plone/zinstance
 
 When you finish step 5, you should have your Plone app running at [your-host-name].com.
+
 
 Common errors
 =============
