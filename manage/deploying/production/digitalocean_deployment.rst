@@ -11,20 +11,20 @@ Introduction
 ============
 
 There are many ways to deploy a Plone site. 
-However, we sometimes would want to deploy our Plone sites for testing and developing Plone before we can find services that fit our needs.
+However, we sometimes would want to deploy our Plone sites for testing and developing Plone before we can find services that fit our need.
 Therefore, this tutorial will show how to deploy Plone on Digital Ocean, 
 which is a popular platform for development.
 
 In addition, Digital Ocean is a service that provides VPS and root access for users, 
 which makes it very convenient since there are services that do not give full control over the VPS.
-Because it is cheap and reliable, we will choose Digital Ocean for our development environment in this tutorial
+Because it is cheap and reliable, we will choose Digital Ocean for our development environment in this tutorial.
 
 
 Setting up accounts and droplets
 ================================
 
 First of all, we will need to set up your Digital Ocean account at `Digital Ocean <https://www.digitalocean.com/>`_, 
-using our email and email password to sign up.
+using our **email** and **email password** to sign up.
 
 After having your account ready, we will need to create a droplet.
 A droplet is the way Digital Ocean calls its own Virtual Private Server (VPS). 
@@ -66,12 +66,6 @@ It will ask you to fill in your password. When you created a droplet, an email s
 It contains the password for your droplet. 
 Use this password to log in to your droplet through the terminal and change your password.
 
-When you are done with it, make sure that you are in the /root directory. Install the Unified Installer 
-
-.. code-block:: shell
-
-    wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.7/+download/Plone-5.0.7-UnifiedInstaller.tgz
-
 Windows
 -------
 
@@ -89,8 +83,8 @@ When you are done, it shold ask you to change the password.
 Deploy Plone to VPS
 ===================
 
-When you are in, make sure that you are at the root directory and download the Unified Installer
-by following the instruction at :doc:`Installing Plone </manage/installing/installation>`.
+When you are in, make sure that you are at the root directory then
+start installing Plone by following the instruction at :doc:`Installing Plone </manage/installing/installation>`.
 
 .. note::
     For deployment on Digital Ocean, you should run the Installer with default installation path, which is /opt/plone
