@@ -1,27 +1,24 @@
 =============
-Caching rules
+Caching Rules
 =============
 
 .. admonition:: Description
 
-    How to program front end caching server (Varnish, Apache) to cache the
-    content from Plone site and thus make it faster.
+    How to program front end caching server (Varnish, Apache) to cache the content from Plone site.
 
 
 Introduction
 ============
 
-Plone caching is configured using the
-`plone.app.caching <https://pypi.python.org/pypi/plone.app.caching>`_ add-on.
-It supplies a web user interface for cache configuration and default caching
-rules for Plone.
+Plone caching is configured using the `plone.app.caching <https://pypi.python.org/pypi/plone.app.caching>`_ add-on.
 
-Using only the web user interface, ``plone.app.caching`` is very flexible
-already.  This document mainly deals how you can combine
-``plone.app.caching`` with your custom code.
+It supplies a web user interface for cache configuration and default caching rules for Plone.
 
-Internally ``plone.app.caching`` uses
-`z3c.caching <https://pypi.python.org/pypi/z3c.caching/>`_ which defines
+Using only the web user interface, ``plone.app.caching`` is very flexible already.
+
+This document mainly deals how you can combine ``plone.app.caching`` with your custom code.
+
+Internally ``plone.app.caching`` uses `z3c.caching <https://pypi.python.org/pypi/z3c.caching/>`_ which defines
 programming level ZCML directives to create your cache rules.
 
 ``plone.app.caching`` does both:
@@ -35,45 +32,35 @@ out-of-the-box content views and item. See:
 
 * https://github.com/plone/plone.app.caching/blob/master/plone/app/caching/caching.zcml
 
-The caching operations (strong, moderate, weak) are defined in Python code
-itself, as they have quite tricky conditions. You can find the default
-operations here:
+The caching operations (strong, moderate, weak) are defined in Python code itself, as they have quite tricky conditions.
+
+You can find the default operations here:
 
 * https://github.com/plone/plone.app.caching/blob/master/plone/app/caching/operations/default.py
 
 .. note::
 
-        You usually don't need to override the operation classes itself.
-        ``plone.app.caching`` provides web UI to override parameters, like
-        timeout, for each rule, on the *Detailed settings* tab in
-        cache control panel (Create per-ruleset parameters link).
+    You usually don't need to override the operation classes itself.
+    ``plone.app.caching`` provides web UI to override parameters, like timeout, for each rule, on the *Detailed settings* tab in
+    cache control panel (Create per-ruleset parameters link).
 
-.. note::
-
-        Plone 3 has its own, older, caching mechanisms.
-
-
-Setting per-view cache rules
+Setting Per-view Cache Rules
 ============================
 
-Here is an example how you can define a cache rules for your custom view
-class.  In this example we want to cache our site front page in Varnish,
-because is is very complex, and wakes up a lot of ZODB objects. The front
-page is programmed using :doc:`BrowserView </develop/plone/views/browserviews>`.
+Here is an example how you can define a cache rules for your custom view class.
+In this example we want to cache our site front page in Varnish, because is is very complex, and wakes up a lot of ZODB objects.
 
-Our front page is subject to moderate changes as new content comes in, but
-the changes are not time critical, so we define a one hour timeout for
+The front page is programmed using :doc:`BrowserView </develop/plone/views/browserviews>`.
+
+Our front page is subject to moderate changes as new content comes in, but the changes are not time critical, so we define a one hour timeout for
 caching the front page.
 
 .. note::
 
-        Currently, setting caching rules for view classes is not supported
-        through the web, but using ZCML or Python is the way to go.
+    Currently, setting caching rules for view classes is not supported through the web, but using ZCML or Python is the way to go.
 
-In our case we are also using "a dummy cache" which does not provide purging
-through Plone |---| the only way to purge the front-end proxy is to do it
-from the Varnish control panel.  But that is OK, because if something bad
-ends up being cached, it will be gone in one hour.
+In our case we are also using "a dummy cache" which does not provide purging through Plone |---| the only way to purge the front-end proxy
+is to do it from the Varnish control panel.
 
 Here is our ``configure.zcml`` for our custom add-on ``browser`` package:
 
@@ -106,46 +93,40 @@ Here is our ``configure.zcml`` for our custom add-on ``browser`` package:
 
     </configure>
 
-After defining the rule and checking that the rule appears in the caching
-control panel, we'll:
+After defining the rule and checking that the rule appears in the caching control panel, we'll:
 
 * assign *Moderate caching* operation to *Homepage*;
 
-* on the *Detailed settings* tab we'll use the *Create per-ruleset* command
-  to override timeout to be 1h instead of default 24h for *Homepage*.
+* on the *Detailed settings* tab we'll use the *Create per-ruleset* command to override timeout to be 1h instead of default 24h for *Homepage*.
 
 .. warning::
 
-        Do not enable the Zope RAM cache for page templates. Somehow, at
-        some point, you will end up having some bad page HTML in Zope's
-        internal cache and you have no idea how to clear it.
+    Do not enable the Zope RAM cache for page templates.
+
+    You will end up having some bad page HTML in Zope's internal cache and you have no idea how to clear it.
 
 .. note::
 
-        If you are testing the rule on a local computer first, remember
-        to re-do caching control panels in the production environment,
-        as they are stored in the database.
+    If you are testing the rule on a local computer first, remember to re-do caching control panels in the production environment,
+    as they are stored in the database.
 
-Testing the rule
+Testing The Rule
 ----------------
 
-* First, we'll test the rule on our local development computer to make sure
-  that it loads;
+* First, we'll test the rule on our local development computer to make sure that it loads;
 
-* then we'll test the rule in the production environment with Varnish to see
-  that Varnish picks up ``Expires`` header
+* then we'll test the rule in the production environment with Varnish to see that Varnish picks up ``Expires`` header
 
 .. note::
 
-        To test ``plone.app.caching`` rules you need to run the site in
-        production mode (not in the foreground).  Otherwise
-        ``plone.app.caching`` is disabled.
+    To test ``plone.app.caching`` rules you need to run the site in production mode (not in the foreground).
+    Otherwise ``plone.app.caching`` is disabled.
 
-Here is an example showing how to test loading the page using the ``wget``
-UNIX command-line utility (discard the retrieved document and print the HTTP
-response headers)::
+Here is an example of using the ``wget`` UNIX command-line utility (discard the retrieved document and print the HTTP response headers)
 
-    $ wget --output-document=/dev/null --server-response http://localhost:8080/
+.. code-block:: shell
+
+    wget --output-document=/dev/null --server-response http://localhost:8080/
 
 The output looks like this::
 
@@ -167,14 +148,14 @@ The output looks like this::
       Content-Type: text/html;charset=utf-8
     Length: 42780 (42K) [text/html]
 
-We see that ``X-Cache-Operation`` and ``X-Cache-Rule`` from
-``plone.app.caching`` debug info are present, so we know that it is setting
-HTTP headers correctly, so that the front end server (Varnish) will receive
-the appropriate directives.
+We see that ``X-Cache-Operation`` and ``X-Cache-Rule`` from ``plone.app.caching`` debug info are present, so we know that it is setting
+HTTP headers correctly, so that the front end server (Varnish) will receive the appropriate directives.
 
-After deploying the change in the production environment, we'll check
-Varnish is picking up the rule. We fetch the page twice: first run is *cold*
-(not yet cached), the second run should be cached::
+After deploying the change in the production environment, we'll check Varnish is picking up the rule.
+
+We fetch the page twice: first run is *cold* (not yet cached), the second run should be cached
+
+.. code-block:: shell
 
     wget --output-document=/dev/null --server-response http://www.site.com/courses
     wget --output-document=/dev/null --server-response http://www.site.com/courses
@@ -206,23 +187,23 @@ We'll see that you have **two** numbers on line from Varnish::
 
     X-Varnish: 72735907 72735905
 
-These are Varnish internal timestamps: when the request was pulled to the
-cache and when it was served. If you see only one number on subsequent
-requests it means that Varnish is not caching the request (because it's
-fetching the page from Plone every time). If you see two numbers you know it
-is OK (and you can feel the speed).
+These are Varnish internal timestamps: when the request was pulled to the cache and when it was served.
+
+If you see only one number on subsequent requests it means that Varnish is not caching the request (because it's fetching the page from Plone every time).
+
+If you see two numbers you know it is OK (and you can feel the speed).
 
 More info:
 
 * http://stackoverflow.com/questions/6170962/plone-app-caching-for-front-page-only
 
 
-Creating a "cache forever" view
+Creating A "Cache Forever" View
 ===============================
 
-You might create views which generate or produce resources (images, JS, CSS)
-in-fly. If you refer this views always through content unique URL
-you can cache the view result forever.
+You might create views which generate or produce resources (images, JS, CSS) in-fly.
+
+If you refer this views always through content unique URL you can cache the view result forever.
 
 This can be done
 
