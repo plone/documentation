@@ -253,18 +253,14 @@ ZCML. Assuming you've put the code above into a file named
 
        <adapter name="description" factory=".indexers.mytype_description" />
 
-And that's all! Easy, wasn't it?
 
 Note you can omit the ``for`` attribute because you passed this to
 the ``@indexer`` decorator, and you can omit the ``provides``
 attribute because the thing returned by the decorator is actually a
 class providing the required ``IIndexer`` interface.
 
-To learn more about the *plone.indexer* package, read
-`its doctest`_.
 
-For more info about how to create content-types, refer to the
-`Archetypes Developer Manual`_.
+For more info about how to create content-types, refer to the :doc:`Archetypes Developer Manual </develop/plone/content/archetypes/index>`.
 
 **Important note:** If you want to adapt a out-of-the-box
 Archetypes content-type like Event or News Item, take into account
@@ -630,7 +626,3 @@ Other
 .. _ExtendedPathIndex: https://github.com/plone/Products.ExtendedPathIndex/blob/master/README.txt
 
 .. _PluginxIndexes: http://svn.zope.org/Zope/trunk/src/Products/PluginIndexes/
-
-.. _its doctest: http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt
-
-.. _Archetypes Developer Manual: https://plone.org/documentation/manual/developer-manual/archetypes
