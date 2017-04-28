@@ -31,7 +31,7 @@ Create a Plone 5 theme product skeleton with mrbob::
 
    $ mrbob -O plonetheme.tango bobtemplates:plone_addon
 
-It will ask you some question::
+It will ask you some questions::
 
    --> What kind of package would you like to create? Choose between 'Basic', 'Dexterity', and 'Theme'. [Basic]: Theme
 
