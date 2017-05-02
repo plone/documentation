@@ -35,7 +35,7 @@ User setup
    :alt: Users setup configuration
 
 Here you can search for existing users, and add a new user.
-When you search for an existing user you can edit their properties (if you have the Manager role)
+When you search for existing users you can edit their properties (if you have the Manager role)
 
 
 .. note::
