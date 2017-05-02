@@ -18,7 +18,7 @@ Here is an example how to create an ``<img>`` tag in a ``.pt`` file:
 
 Let's break this down:
 
-* Obviously we are rendering an ``<img>`` tag.
+* We are rendering an ``<img>`` tag.
 
 * The ``src`` attribute is dynamically generated using a :term:`TALES`
   expression.
