@@ -33,7 +33,7 @@ Making these configuration changes has serious security implications for your si
 Plone filters out many tags for a good reason:
 they can be abused by your site users to create privilege escalation attacks.
 
-If you have untrusted people allowed to create content on your Plone site, then a malicious person could create some "nasty" JavaScript in some content, then trick a person with Admin rights into viewing that content.
+If you have allowed untrusted people to create content on your Plone site, then a malicious person could create some "nasty" JavaScript in some content, then trick a person with Admin rights into viewing that content.
 That "nasty" JavaScript can now do HTTP requests to interact with the Plone site with the full Admin rights granted to the trusted user.
 
 *Bottom line: do not use this technique to enable embeddable content in your Plone site unless you are certain that you trust all users who are allowed to create content in your site.*

@@ -44,7 +44,7 @@ Intranet/Extranet workflow
     Meant for intranets, where the majority of users is logged in.
     Some content can be 'externally published' so it is available to anonymous visitors as well.
 No Workflow
-    In this one, items 'inherit' the state of their parent folder. If a certain type of content has the "No Workflow" workflow, it will be published if the folder where it lives is published, and privat if the folder where it lives is private.
+    In this one, items 'inherit' the state of their parent folder. If a certain type of content has the "No Workflow" workflow, it will be published if the folder where it lives is published, and private if the folder where it lives is private.
 
 
 All of these workflows can be assigned on a per-contenttype base.
