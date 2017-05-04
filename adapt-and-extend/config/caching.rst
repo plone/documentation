@@ -23,11 +23,11 @@ Caching
    :alt: caching configuration
 
 
-**Caching** is the process where information is kept in a temporary store, to deliver to the visitor more quickly.
+**Caching** is the process where information is kept in a temporary store, to deliver it to the visitor more quickly.
 
-It is always a balancing act between the 'freshness' of the content, and speed.
+It is always a balancing act between the 'freshness' of the content, and speed of display.
 
-Enabling caching here withing Plone is highly recommended, but fine-tuning it can be more of an art than a science.
+Enabling caching here within Plone is highly recommended, but fine-tuning it can be more of an art than a science.
 
 Plone comes with a fairly conservative, but highly effective set of defaults. Importing those settings is your best course of action in almost all cases.
 
