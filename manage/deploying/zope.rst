@@ -41,8 +41,7 @@ In case you need to reset/recover the ``admin`` password/access.
 
 .. note::
 
-    You cannot override an existing ``admin`` user, so you probably want to
-add ``admin2``.
+    You cannot override an existing ``admin`` user, so you probably want to add ``admin2``.
 
 You need to do this when you forget the admin password or the database is
 damaged.
