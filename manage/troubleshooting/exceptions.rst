@@ -2147,3 +2147,35 @@ This enables ``z3c.form`` widgets on a Plone site.
 **Solution**: *portal_setup* > *Import*. Choose profile *Plone z3cform support*.
 and import. The layer gets properly inserted to your site database.
 
+
+ImportError: cannot import name datetime
+----------------------------------------
+
+**Traceback**::
+
+        (zinstance) [vagrant@dev Plone-5.0.7]$ ./zinstance/bin/plonectl start
+    instance: Traceback (most recent call last):
+      File "/home/vagrant/src/Plone-5.0.7/zinstance/bin/instance", line 259, in <module>
+        import plone.recipe.zope2instance.ctl
+      File "/home/vagrant/src/Plone-5.0.7/buildout-cache/eggs/plone.recipe.zope2instance-4.2.22-py2.7.egg/plone/__init__.py", line 2, in <module>
+        __import__('pkg_resources').declare_namespace(__name__)
+      File "/home/vagrant/src/Plone-5.0.7/zinstance/lib/python2.7/site-packages/pkg_resources/__init__.py", line 35, in <module>
+        import plistlib
+      File "/usr/lib64/python2.7/plistlib.py", line 62, in <module>
+        import datetime
+      File "/home/vagrant/src/Plone-5.0.7/buildout-cache/eggs/DateTime-4.0.1-py2.7.egg/datetime/__init__.py", line 14, in <module>
+        from .DateTime import DateTime
+      File "/home/vagrant/src/Plone-5.0.7/buildout-cache/eggs/DateTime-4.0.1-py2.7.egg/datetime/DateTime.py", line 24, in <module>
+        from datetime import datetime
+      File "/home/vagrant/src/Plone-5.0.7/buildout-cache/eggs/DateTime-4.0.1-py2.7.egg/datetime/datetime.py", line 24, in <module>
+        from datetime import datetime
+    ImportError: cannot import name datetime
+
+**Reason**: You are running Plone in a virtual machine (docker, vagrant) on a case sensitive (or rather case unaware) file system (Mac OSX).
+The system is getting confused between ``DateTime`` and ``datetime`` because it gets the wrong information from the host system.
+
+**Solution**: Make sure you are not using shared folders that get written to by both systems.
+Or at least do not put packages there.
+
+.. seealso::
+    https://community.plone.org/t/plone-5-0-7-unifiedinstaller-importerror-issue/3986
