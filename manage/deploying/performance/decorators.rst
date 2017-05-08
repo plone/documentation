@@ -138,7 +138,9 @@ Caching using global HTTP request
 This example uses the
 `five.globalrequest package <https://pypi.python.org/pypi/five.globalrequest>`_
 for caching. Values are stored on the thread-local ``HTTPRequest`` object
-which lasts for the transaction lifecycle::
+which lasts for the transaction lifecycle:
+
+.. code-block:: python
 
     from zope.globalrequest import getRequest
     from zope.annotation.interfaces import IAnnotations
