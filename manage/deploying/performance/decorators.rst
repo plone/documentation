@@ -11,7 +11,7 @@ Cache decorators
 Introduction
 ============
 
-Cache decorators are convenient methods caching of function return values.
+Cache decorators are convenient methods for caching function return values.
 
 Use them like this::
 
@@ -79,7 +79,7 @@ This pattern shows how to avoid recalculating the same value repeatedly
 during the lifecycle of an HTTP request.
 
 Caching on BrowserViews
-------------------------
+-----------------------
 
 This is useful if the same view/utility is going to be called many times
 from different places during the same HTTP request.
@@ -108,7 +108,7 @@ package provides necessary decorators for ``BrowserView``-based classes.
             return "something"
 
 Caching on Archetypes accessors
----------------------------------
+-------------------------------
 
 If you have a custom
 :doc:`Archetypes accessor method </develop/plone/content/archetypes/fields>`,
@@ -134,7 +134,7 @@ Example::
         return data
 
 Caching using global HTTP request
-----------------------------------
+---------------------------------
 
 This example uses the
 `five.globalrequest package <https://pypi.python.org/pypi/five.globalrequest>`_
