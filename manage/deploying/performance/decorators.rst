@@ -174,12 +174,12 @@ which lasts for the transaction lifecycle:
 Testing memoized methods inside browser views
 =============================================
 
-While testing browser views memoized methods you could find out that calling
+While testing browser views memoized methods, you could find out that calling
 a method multiple times inside a test could result in getting the same result
-over and over, no mater what the parameters are, because you have the same
+over and over, no matter what the parameters are, because you have the same
 context and request inside the test and the result is being cached.
 
-One approach to by-pass this is to put your code logic inside a private method
+One approach to bypass this is to put your code logic inside a private method
 while memoizing a public method with the same name that only calls the private
 one:
 
@@ -210,6 +210,4 @@ Other resources
 
 * `plone.memoize source code <https://github.com/plone/plone.memoize/blob/master/plone/memoize/>`_
 
-* `zope.app.cache source code <http://svn.zope.org/zope.app.cache/trunk/src/zope/app/cache/>`_
-
-
+* `zope.app.cache source code <https://pypi.python.org/pypi/zope.app.cache>`_
