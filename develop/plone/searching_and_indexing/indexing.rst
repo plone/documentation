@@ -281,64 +281,53 @@ The difference with metadata is that
 
 * You store always a value copy as is
 
-To create metadata colums in your ``catalog.xml`` add::
+To create metadata colums in your ``catalog.xml`` add:
 
-	<?xml version="1.0"?>
-	<object name="portal_catalog" meta_type="Plone Catalog Tool">
+.. code-block:: xml
 
-		<!-- Add a new metadata column which will read from context.getSignificant() function -->
-		<column value="getSignificant"/>
-
-	</object>
+    <?xml version="1.0"?>
+    <object name="portal_catalog" meta_type="Plone Catalog Tool">
+      <!-- Add a new metadata column which will read from context.getSignificant() function -->
+      <column value="getSignificant"/>
+    </object>
 
 
 When indexing happens and how to reindex manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Content item reindexing is run when
-
-Plone calls reindexObject() if
+Content indexing happens automatically if:
 
 * The object is modified by the user using the standard edit forms
 
 * portal_catalog rebuild is run (from *Advanced* tab)
 
-* If you add a new
-  index you need to run :doc:`Rebuild catalog </develop/plone/searching_and_indexing/catalog>`
-  to get the existing values from content objects to new index.
-
-* You might also want to call :doc:`reindexObject()
-  </develop/plone/searching_and_indexing/catalog>` method  manually in some
-  cases. This method is defined in the `ICatalogAware <http://svn.zope.org/Products.CMFCore/trunk/Products/CMFCore/interfaces/_content.py?rev=91414&view=auto>`_ interface.
-
-
-
-You must call reindexObject() if you
+You must call ``reindexObject()`` manually if you:
 
 * Directly call object field mutators
 
-* Otherwise directly change object data
+* Otherwise directly change any object data
+
+``reindexObject()`` method takes the optional argument *idxs* which will list the changed indexes.
+If *idxs* is not given, all related indexes are updated even though they were not changed.
+
+Example:
+
+.. code-block:: python
+
+    obj.setTitle('Foobar')
+    # update only the index associated with this change
+    obj.reindexObject(idxs=['Title'])
+
+If you add a new index you need to run :doc:`Rebuild catalog </develop/plone/searching_and_indexing/catalog>` to get the existing values from content objects into the new index.
+
+Also, if you modify security related parameters (permissions), you need to call ``reindexObjectSecurity()``.
+
+Check the thread `Best practices on reindexing the catalog <https://community.plone.org/t/best-practices-on-reindexing-the-catalog/4157>`_ for more tips on how to reduce memory consumption and speed up the process.
 
 .. warning::
 
     **Unit test warning:** Usually Plone reindexes modified objects at the end of each request (each transaction).
     If you modify the object yourself you are responsible to notify related catalogs about the new object data.
-
-
-reindexObject() method takes the optional argument *idxs* which will list the changed indexes.
-If idxs is not given, all related indexes are updated even though they were not changed.
-
-Example::
-
-    object.setTitle("Foobar")
-
-    # Object.reindexObject() method is called to reflect the changed data in portal_catalog.
-    # In our example, we change the title. The new title is not updated in the navigation,
-    # since the navigation tree and folder listing pulls object title from the catalog.
-
-    object.reindexObject(idxs=["Title"])
-
-Also, if you modify security related parameters (permissions), you need to call reindexObjectSecurity().
 
 
 Index types
