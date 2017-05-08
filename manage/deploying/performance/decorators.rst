@@ -11,7 +11,7 @@ Cache decorators
 Introduction
 ============
 
-Cache decorators are convenient methods caching of function return values.
+Cache decorators are convenient methods for caching function return values.
 
 Use them like this::
 
@@ -53,7 +53,7 @@ Example::
 Timeout caches
 ==============
 
-The @ram.cache decorator takes a function argument and calls it to get a value.
+The ``@ram.cache`` decorator takes a function argument and calls it to get a value.
 
 As long as that value is unchanged, the cached result of the decorated function is returned.
 This makes it easy to set a timeout cache::
@@ -66,7 +66,7 @@ This makes it easy to set a timeout cache::
         # very expensive operation,
         # will not be called more than once an hour
 
-time.time() returns the time in seconds as a floating point number. "//" is Python's integer division.
+`time.time() <https://docs.python.org/2/library/time.html#time.time>`_ returns the time in seconds as a floating point number. ``//`` is Python's integer division.
 
 The result of ``time() // (60 * 60)`` only changes once an hour.
 ``args`` passed are ignored.
@@ -79,13 +79,12 @@ This pattern shows how to avoid recalculating the same value repeatedly
 during the lifecycle of an HTTP request.
 
 Caching on BrowserViews
-------------------------
+-----------------------
 
 This is useful if the same view/utility is going to be called many times
 from different places during the same HTTP request.
 
-The `plone.memoize.view <https://github.com/plone/plone.memoize/blob/master/plone/memoize/view.txt>`_
-package provides necessary decorators for ``BrowserView``-based classes.
+The `plone.memoize.view <https://github.com/plone/plone.memoize/blob/master/plone/memoize/view.rst>`_ package provides necessary decorators for ``BrowserView``-based classes.
 
 .. code-block:: python
 
@@ -108,7 +107,7 @@ package provides necessary decorators for ``BrowserView``-based classes.
             return "something"
 
 Caching on Archetypes accessors
----------------------------------
+-------------------------------
 
 If you have a custom
 :doc:`Archetypes accessor method </develop/plone/content/archetypes/fields>`,
@@ -134,12 +133,14 @@ Example::
         return data
 
 Caching using global HTTP request
-----------------------------------
+---------------------------------
 
 This example uses the
 `five.globalrequest package <https://pypi.python.org/pypi/five.globalrequest>`_
 for caching. Values are stored on the thread-local ``HTTPRequest`` object
-which lasts for the transaction lifecycle::
+which lasts for the transaction lifecycle:
+
+.. code-block:: python
 
     from zope.globalrequest import getRequest
     from zope.annotation.interfaces import IAnnotations
@@ -173,12 +174,12 @@ which lasts for the transaction lifecycle::
 Testing memoized methods inside browser views
 =============================================
 
-While testing browser views memoized methods you could find out that calling
+While testing browser views memoized methods, you could find out that calling
 a method multiple times inside a test could result in getting the same result
-over and over, no mater what the parameters are, because you have the same
+over and over, no matter what the parameters are, because you have the same
 context and request inside the test and the result is being cached.
 
-One approach to by-pass this is to put your code logic inside a private method
+One approach to bypass this is to put your code logic inside a private method
 while memoizing a public method with the same name that only calls the private
 one:
 
@@ -209,6 +210,4 @@ Other resources
 
 * `plone.memoize source code <https://github.com/plone/plone.memoize/blob/master/plone/memoize/>`_
 
-* `zope.app.cache source code <http://svn.zope.org/zope.app.cache/trunk/src/zope/app/cache/>`_
-
-
+* `zope.app.cache source code <https://pypi.python.org/pypi/zope.app.cache>`_
