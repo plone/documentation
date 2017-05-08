@@ -53,7 +53,7 @@ Example::
 Timeout caches
 ==============
 
-The @ram.cache decorator takes a function argument and calls it to get a value.
+The ``@ram.cache`` decorator takes a function argument and calls it to get a value.
 
 As long as that value is unchanged, the cached result of the decorated function is returned.
 This makes it easy to set a timeout cache::
@@ -66,7 +66,7 @@ This makes it easy to set a timeout cache::
         # very expensive operation,
         # will not be called more than once an hour
 
-time.time() returns the time in seconds as a floating point number. "//" is Python's integer division.
+`time.time() <https://docs.python.org/2/library/time.html#time.time>`_ returns the time in seconds as a floating point number. ``//`` is Python's integer division.
 
 The result of ``time() // (60 * 60)`` only changes once an hour.
 ``args`` passed are ignored.
