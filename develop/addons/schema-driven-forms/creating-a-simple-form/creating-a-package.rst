@@ -1,19 +1,19 @@
 ==================
-Creating a package
+Creating A Package
 ==================
 
 **Giving our forms a home**
 
-For the purposes of this tutorial, we will create a simple package that
-adds the necessary dependencies. If you have an existing package that
-requires a form, you should be able to add the same dependencies.
+For the purposes of this tutorial, we will create a simple package that adds the necessary dependencies.
+
+If you have an existing package that requires a form, you should be able to add the same dependencies.
 
 For details about creating new packages, see
 :doc:`Bootstrapping Plone add-on development </develop/addons/bobtemplates.plone/README>`.
 
 .. note::
 
-    Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
+   Using paster is deprecated instead you should use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
 
 
 .. deprecated:: may_2015
@@ -21,9 +21,9 @@ For details about creating new packages, see
 
 First, we create a new package in src:
 
-.. code-block:: bash
+.. code-block:: shell
 
-    $ ../bin/mrbob -O example.form bobtemplates:plone_addon
+   ../bin/mrbob -O example.form bobtemplates:plone_addon
 
 We create a package from the *Basic* template for Plone *5.0-latest*.
 
@@ -41,20 +41,21 @@ You will find there various useful things:
 
 That is everything you need for development. Let us use this buildout.
 
-.. code-block:: bash
+.. code-block:: shell
 
-    $ cd example.form/
-    $ python bootstrap-buildout.py
-    $ bin/buildout
+    cd example.form/
+    python bootstrap-buildout.py
+    bin/buildout
 
 Let us test it!
 
-.. code-block:: bash
+.. code-block:: shell
 
-    $ bin/test -s example.form
-    $ bin/test -s example.form -t test_example.robot --all
+    bin/test -s example.form
+    bin/test -s example.form -t test_example.robot --all
 
 Our package shall add a form to our Plone site. We use plone.app.z3cform to develop the form.
+
 That is why we add it to install_requires in setup.py
 
 .. code-block:: py
@@ -131,8 +132,9 @@ and add plone.app.z3cform's import step to our profile's metadata.xml for an aut
         </dependencies>
     </metadata>
 
-Obviously, we have omitted large parts of the buildout configuration
-here. The important things to note are:
+We have omitted large parts of the buildout configuration here.
+
+The important things to note are:
 
 -  We have created a plone 5 add-on using mr.bob.
 -  We have tested the egg in a Plone test environment using the

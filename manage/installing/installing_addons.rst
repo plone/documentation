@@ -31,7 +31,7 @@ What do you need to know in order to install add-ons for Plone?
 Discovering Plone add-ons and other python packages
 ---------------------------------------------------
 
-The community maintains a list of Popular Plone Add-ons <https://plone.org/download/add-ons/>`_ .
+The community maintains a list of Popular Plone `Add-ons <https://plone.org/download/add-ons/>`_ .
 
 However, not all Plone packages out there are listed here.
 
@@ -50,7 +50,7 @@ Background
 Plone installations are managed using :term:`Buildout`.
 Plone add-ons are distributed as Python modules, also known as eggs.
 
-- Popular Plone Add-ons <https://plone.org/download/add-ons/>`_ contains a overview about popular add-ons for `Plone <https://plone.org>`_ .
+- Popular Plone `Add-ons <https://plone.org/download/add-ons/>`_ contains a overview about popular add-ons for `Plone <https://plone.org>`_ .
 - Add-on file downloads are hosted on the `PyPi Python package repository <https://pypi.python.org/pypi>`_ - along with many other Python software modules.
 - the buildout.cfg file in your Plone configuration defines which add-ons are available for your sites to install in Site Setup > Add-ons control panel
 - the bin/buildout command (or bin/buildout.exe on Windows) in your Plone installation reads buildout.cfg and automatically downloads required packages when run - you do not need to download any Plone add-ons manually

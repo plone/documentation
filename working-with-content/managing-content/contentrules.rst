@@ -14,7 +14,7 @@ There are several steps, that follow one another:
 
 **Define the rule**
 
-#. create and name a new rule, specifying what triggers it to execute
+#. create and name a new rule, specifying what triggers it to be executed
 #. then narrow it down, by using conditions, to execute only on the content items you want
 #. and select the action or actions that should be taken
 
@@ -104,7 +104,7 @@ How to define content rules using the triggers and actions included in Plone
 Creating a Rule
 ---------------
 
-Content rules are created globally through the Plone Control Panel ("site setup" link) and then selected from the Rules tab for the desired folder (or at the Plone site root if you want the rule applied site-wide).
+Content rules are created globally through the Plone Control Panel ("Site Setup" link) and then selected from the Rules tab for the desired folder (or at the Plone site root if you want the rule applied site-wide).
 
 In this example, you're going to create a content rule that will send an email any time a Page type is modified.
 
@@ -256,9 +256,9 @@ If you wish to have this rule apply to all the subfolders but not to the current
 Managing Multiple Rules
 =======================
 
-For each rule, you can say if additional rules should be applied after it, or if it is the end of the pipeline.
+For each rule, you can define if additional rules should be applied after it, or if it is the end of the pipeline.
 
-Furthermore, you can say if you want rules to be *cascading* or not.
+Furthermore, you can specify if you want rules to be *cascading* or not.
 
 An example: the first ContentRule is triggered for a content item, which is then moved to a folder. But, in this folder, another ContentRule is active, which will operate on any new content item that gets moved into that folder. *Cascade* means that yes, the second rule should be applied.
 
@@ -266,7 +266,7 @@ An example: the first ContentRule is triggered for a content item, which is then
 
    It is entirely possible to create never-ending loops this way: Rule1 moves newly published files in Folder1 to Folder2.
 
-   But Rule2, which is active in Folder2, unpublishes any newly moves files, and then copies them into Folder1. And so it goes round and round...
+   But Rule2, which is active in Folder2, unpublishes any newly moved files, and then copies them into Folder1. And so it goes round and round...
 
    Be careful when using cascading rulesets!
 

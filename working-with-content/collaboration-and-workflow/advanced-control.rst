@@ -77,7 +77,7 @@ It lets you change the availability of an entire section of a website.
 For example, the "Documentation" folder could contain four subfolders, with images, files, and other content that has been kept *private* during the initial work to build up this content.
 All of it could be immediately made public -- it could be *published* -- by checking this box and checking *Publish* at the bottom before saving.
 
-Likewise, the *Submit for publication* choice would be used on a web site where editors controlled ultimate publication.
+Likewise, the *Submit for publication* choice would be used on a web site where editors control ultimate publication.
 
 And you can do the reverse, of course: make an entire section *private*.
 For example, if an automobile rental agency decided to remove a car model from its fleet, an entire section of their website devoted to this car model, with several subfolders full of pages, images, and files, could be set to *private*.

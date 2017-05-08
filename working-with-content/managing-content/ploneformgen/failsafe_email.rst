@@ -1,7 +1,7 @@
 Fail-safe email sending
 -------------------------
 
-By default if SMTP server rejects the message send by PloneFormGen
+By default if SMTP server rejects the message sent by PloneFormGen
 the page will crash with an exception. Possible reasons for SMTP failure are
 
 * SMTP server is down
@@ -10,8 +10,8 @@ the page will crash with an exception. Possible reasons for SMTP failure are
 
 * SMTP server spam protection is giving false positives for your email sending attempts
 
-If you have a situation where gathering the data is critical
-the following process is appropriate
+If you have a situation where gathering the data is critical, 
+the following process is appropriate:
 
 * Use save data adapter to save results
 

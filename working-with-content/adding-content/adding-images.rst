@@ -9,7 +9,10 @@ Adding images to a Plone web site is a basic task that may involve a little work
 
 .. note::
 
-    **Remember to use web-standard file formats for all images. Acceptable formats include: JPG, JPEG, GIF, and PNG. Do not use BMP or TIFF formats as these are not widely supported by web browsers, and can lead to slower websites**
+    **Remember to use web-standard file formats for all images.
+    Acceptable formats include: JPG, JPEG, GIF, and PNG.
+
+    Do not use BMP or TIFF formats as these are not widely supported by web browsers, and can lead to slower websites.**
 
 
 When you are ready to upload an image, use the *Add new...* drop-down menu.
@@ -78,7 +81,10 @@ Let's look at the three input fields individually:
    file to upload.
 
 For images, at a minimum, you will browse your local computer for the image file, then click **Save** at the bottom to upload the image to the Plone web site.
+
 You'll have to wait a few seconds for the upload to complete.
 A preview of the uploaded image will be shown when the upload has finished.
 
-Images and files that you upload into Plone have their IDs (URLs) based on the title that you give to the image (instead of the file name of the image or file). However, if you leave the title empty, the name of the item will default to the name of the file.
+Images and files that you upload into Plone have their IDs (URLs) based on the title that you give to the image (instead of the file name of the image or file).
+
+However, if you leave the title empty, the name of the item will default to the name of the file.

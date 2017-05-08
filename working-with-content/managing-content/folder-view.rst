@@ -63,7 +63,7 @@ And often the most useful, yet also more difficult to understand:
 .. note::
 
    The standard folder views are often used as the starting point for more elaborate views, that will reflect the purpose of the website.
-   At the very least, these views are often customized with CSS or :term:`Diazo` rules, to show specific information about the content types shown. Many add-ons will provide extra folder views, to properly display any special content items that these add-ons provide. Some widely used add-ons provide a so-called 'faceted search' display, which is designed to quicly find your way around large numbers of content.
+   At the very least, these views are often customized with CSS or :term:`Diazo` rules, to show specific information about the content types shown. Many add-ons will provide extra folder views, to properly display any special content items that these add-ons provide. Some widely used add-ons provide a so-called 'faceted search' display, which is designed to quickly find your way around large numbers of content.
 
    Therefore, you will likely see more possibilities in this menu if you are working on a real-life site.
 

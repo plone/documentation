@@ -118,8 +118,7 @@ also known as groups. The schema forms support a property *autoGroups*
 which default to *False*. When set to *True*, the primary schema will be
 used as the primary fieldset, and each schema in *additional\_schemata*
 will become its own fieldset. The schema name will become the fieldset
-name, and its docstring will become its description. This is obviously
-somewhat inflexible, but can be useful for certain forms where the
-fieldsets need to be dynamically looked up.
+name, and its docstring will become its description. This is somewhat inflexible,
+but can be useful for certain forms where the fieldsets need to be dynamically looked up.
 
 

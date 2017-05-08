@@ -42,7 +42,7 @@ Therefore an image in a private folder will be private;  an image in a public fo
 It is possible to bypass this inheritance of a folder's workflow state by contained images and files.
 
 One of the workflows shipped with Plone by default is called "Single State Workflow".
-To change the workflow for all Image content items, go to Type Settings on the Site Setup page.
+To change the workflow for all Image content items, go to Content Settings on the Site Setup page.
 Select *Image* (or *File*) in the top dropdown menu, and then "Single State Workflow" from the *New workflow* dropdown menu.
 Once you click *Apply changes*, all Image content items will acquire the new workflow, and in particular, they will all be in published state, and will not inherit the containing folder's workflow state.
 
