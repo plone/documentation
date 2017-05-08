@@ -84,7 +84,7 @@ Caching on BrowserViews
 This is useful if the same view/utility is going to be called many times
 from different places during the same HTTP request.
 
-The `plone.memoize.view <https://github.com/plone/plone.memoize/>`_ package provides necessary decorators for ``BrowserView``-based classes.
+The `plone.memoize.view <https://github.com/plone/plone.memoize/blob/master/plone/memoize/view.rst>`_ package provides necessary decorators for ``BrowserView``-based classes.
 
 .. code-block:: python
 
