@@ -7,6 +7,8 @@ Command-line interaction and scripting
         How to run command-line Python scripts, timed jobs (cron)
         and batch jobs against Plone sites and Zope application server.
 
+.. contents::
+  :local:
 
 Introduction
 ------------
@@ -112,7 +114,7 @@ You probably need to spoof your :doc:`security credentials </develop/plone/secur
         Instance must be stopped in order to run this.
 
 Cron and timed jobs
----------------------
+-------------------
 
 Cron is UNIX clock daemon for timed tasks.
 
@@ -303,7 +305,7 @@ More info
 * http://wiki.zope.org/zope2/HowToFakeREQUESTInDebugger
 
 Creating Plone site in buildout
------------------------------------
+-------------------------------
 
 You can pre-generate the site from the buildout run.
 
@@ -318,7 +320,7 @@ allows you to run long-running command line jobs over a crappy Internet
 connection.
 
 Start new screen
-=================
+================
 
 Type command::
 
@@ -331,7 +333,7 @@ If you have sudo'ed to another user you first need to run::
 * http://dbadump.blogspot.com/2009/04/start-screen-after-sudo-su-to-another.html
 
 Attach to an existing screen
-=============================
+============================
 
 Type command::
 

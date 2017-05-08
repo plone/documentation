@@ -179,7 +179,7 @@ Moving Whole Modules
 
 Given a package ``old.pkg`` with a module ``foo.py`` need to be moved to a package ``new.pkg`` as ``bar.py``.
 
-`zope.deprecation <http://docs.zope.org/zope.deprecation/api.html#moving-modules>`_ offers a helper.
+`zope.deprecation Moving modules <http://docs.zope.org/zope.deprecation/api.html#moving-modules>`_ offers a helper.
 
 1. Move the ``foo.py`` as ``bar.py`` to the ``new.pkg``.
 2. At the old place create a new ``foo.py`` and add to it
@@ -204,7 +204,7 @@ This is the same as moving a module, just create for each module a file.
 Deprecating methods and properties
 ==================================
 
-You can use the ``@deprecate`` decorator from `zope.deprecation <http://docs.zope.org/zope.deprecation/api.html#deprecating-methods-and-properties>`_ to deprecate methods in a module:
+You can use the ``@deprecate`` decorator from `zope.deprecation Deprecating methods and properties <http://docs.zope.org/zope.deprecation/api.html#deprecating-methods-and-properties>`_ to deprecate methods in a module:
 
 
 .. sourcecode:: python

@@ -46,7 +46,7 @@ In case you need to reset/recover the ``admin`` password/access.
 You need to do this when you forget the admin password or the database is
 damaged.
 
-Add user with Zope Manager permissions
+Add user with Zope Manager permissions.
 
 .. code-block:: shell
 
