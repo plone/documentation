@@ -219,4 +219,4 @@ Other resources
 
 * `plone.memoize source code <https://github.com/plone/plone.memoize/blob/master/plone/memoize/>`_.
 
-* `zope.app.cache source code <http://svn.zope.org/zope.app.cache/trunk/src/zope/app/cache/>`_
+* `zope.app.cache source code <https://pypi.python.org/pypi/zope.app.cache>`_
