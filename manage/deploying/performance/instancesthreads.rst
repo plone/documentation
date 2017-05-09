@@ -4,7 +4,7 @@ About Instances and Threads, Performance and RAM consumption
 
 .. admonition:: Description
 
-    Understanding how instances-per-core, threads-per-instance and ZODB-caches
+    Understanding how instances per core, threads per instance and ZODB caches
     are influencing performance.
 
 Introduction
@@ -16,19 +16,21 @@ Then you may ask yourself: How many instances do I need?
 Next you see there is value "threads per instance" and wonder about the different
 recommendations: Only one thread or two, or four? And how does it effect memory usage?
 
-Rule Of The Thumb
------------------
+Rule of Thumb
+-------------
 
-A good **rule-of-the-thumb** for a common setup was and still is: **two
-instances per core, two threads per instance, adjust the number of objects in
-the ZODB cache to a number that your memory is used.**
+A good **rule-of-thumb** for a common setup was (and still is) **two
+instances per core, two threads per instance, and adjust the number of objects in
+the ZODB cache to a number that your memory uses.**
 
-**But attention!** If your setup gets more complex, if you have several logged
-in users or only anonymous users, if you use official, fancy, specific or
-home-grown add-ons: This rule may not apply.
+This rule may not apply when any of the following scenarios exist:
 
-In this case you need to figure out yourself. It's more important to understand
-the mechanism behind than sticking to a rule.
+* your setup gets more complex
+* you have several logged in users
+* you have only anonymous users
+* you use official, fancy, specific or home-grown add-ons
+
+In any of these scenarios, you will need to figure it out yourself. It's more important to understand the mechanism behind performance than following a set rule.
 
 With recent, faster hardware and the (sometimes odd) behavior of virtual
 machines (which can be very very different dependent on the kind of VM) this
