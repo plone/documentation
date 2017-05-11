@@ -14,7 +14,7 @@ Profiling Plone
 * https://pypi.python.org/pypi/collective.profiler/
 
 Optimizing ZEO and threads
-===========================
+==========================
 
 For multicore systems, which basically all production systems nowadays are,
 you might want to optimize Python threading vs. processes. You may also tune
@@ -39,28 +39,12 @@ Memcached provides a more scalable session backend.
 For more information, see
 `lovely.session add-on product <https://pypi.python.org/pypi/lovely.session/0.2.2>`_.
 
-Input/output performance of the server
-======================================
-
-http://plope.com/Members/chrism/iostat_debugging
-
-Summary::
-
-    <mcdonc> well, the example has await at about 40X svctime.. that's pretty shitty
-    <mcdonc> i mean that box was useless
-
-
-Tuning complex configurations
-=============================
-
-http://www.lovelysystems.com/the-decathlon-of-computer-science/
-
 Reducing memory usage
 =====================
 
 These tips are especially critical when running Plone on low-memory virtual
 private server (VPS). But using the memory tips below, and some filesystem and operating system tweaks,
-it is also perfectly possible to run Plone on an ARM-based Android stick, or a Raspberry Pi. See http://polyester.github.io/
+it is also perfectly possible to run Plone on an ARM-based Android stick or a Raspberry Pi. See http://polyester.github.io/
 
 Disable extra languages
 -----------------------
@@ -90,13 +74,13 @@ How to offload blob processing from Zope:
 Sessions and performance
 ========================
 
-Write transactions much worse performance-wise than read transactions.
+Write transactions have much worse performance than read transactions.
 
 By default, every login is a write transaction. Also, Plone needs to update
 the logged-in user's session timestamp once in a while to keep the session
 active.
 
-With a high amount of users, you may start seeing many ``ConflictErrors``
+With a high amount of users, you may start to see many ``ConflictErrors``
 (read conflicts) with ZODB.
 
 There are some tricks you can use here:
@@ -111,7 +95,7 @@ ZServer thread count
 This specifies how many requests one ZEO front-end client (ZServer) can
 handle.
 
-The default set by buildout default is 2.
+buildout sets the default to 2.
 
 Adjust it::
 
@@ -120,11 +104,11 @@ Adjust it::
         ....
         zserver-threads = 5
 
-Find good value by doing performance testing for your site.
+Find a good value by doing performance testing for your site.
 
 .. note::
 
-    Increasing thread count is useful if your Plone site does
+    Increasing the thread count is useful if your Plone site does
     server-to-server traffic and your Plone site needs to wait for the other
     end, thus blocking Zope threads.
 
