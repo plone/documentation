@@ -1,16 +1,16 @@
-======
- Nginx
-======
+=====
+Nginx
+=====
 
 .. admonition:: Description
 
-    Using the nginx web server to host Plone sites
+    Using the nginx web server to host Plone sites.
 
 
 Introduction
 ============
 
-Nginx is an modern alternative server to Apache.
+Nginx is a modern alternative server to Apache.
 
 * It acts as a proxy server and load balancer in front of Zope.
 * It handles rewrite rules.
@@ -26,15 +26,17 @@ These instructions are *not* for configurations where one uses the buildout conf
 
 * We use :term:`VirtualHostMonster` to pass the original protocol and hostname to Plone. VirtualHostMonster provides a way to rewrite the request path.
 
-* We also need to rewrite the request path, because you want to site be served from port 80 root (/), but Plone sites are nested in the Zope application server as paths */site1*, */site2* etc.
+* We also need to rewrite the request path, because you want the site be served from the port 80 root (``/``), where Plone sites are nested in the Zope application server as paths, for example, ``/site1``, ``/site2``, and so on.
 
 * You don't need to configure VirtualHostMonster in Plone/Zope in any way, because all the installers will automatically install one for you. Nginx configuration is all you need to touch.
 
-* The URL passed to VirtualHostMonster is the URL Plone uses to construct links in the template (``portal_url`` in the code, also used by content ``absolute_url()`` method). If your site loads without CSS styles usually it is a sign that VirtualHostMonster URL is incorrectly written -- Plone uses the URL to link stylesheets also.
+* The URL passed to VirtualHostMonster is the URL Plone uses to construct links in the template (``portal_url`` in the code, also used by content ``absolute_url()`` method). If your site loads without CSS styles, usually it is a sign that the VirtualHostMonster URL is incorrectly written. Plone uses the URL to link stylesheets also.
 
-* Plone itself contains a mini web server (Medusa) which serves the requests from port 8080 -- Nginx acts simple as a HTTP proxy between Medusa and outgoing port 80 traffic.  Nginx does not spawn Plone process or anything like that, but Plone processes are externally controlled, usually by buildout-created ``bin/instance`` and ``bin/plonectl`` commands, or by a ``supervisor`` instance.
+* Plone itself contains a mini web server (Medusa) which serves the requests from port 8080. Nginx acts as a HTTP proxy between Medusa and outgoing port 80 traffic.  Nginx does not spawn Plone process or anything like that, but Plone processes are externally controlled, usually by buildout-created ``bin/instance`` and ``bin/plonectl`` commands, or by a ``supervisor`` instance.
 
-Create file ``/etc/nginx/sites-available/yoursite.conf`` with contents::
+Create the file ``/etc/nginx/sites-available/yoursite.conf`` with the following contents:
+
+.. code-block:: nginx
 
     # This adds security headers
     add_header X-Frame-Options "SAMEORIGIN";
@@ -79,7 +81,7 @@ Then enable the site by creating a symbolic link::
     cd /etc/nginx/sites-enabled
     ln -s ../sites-available/yoursite.conf .
 
-See that your nginx configuration is valid::
+Verify that your nginx configuration is valid::
 
     /etc/init.d/nginx configtest
 
@@ -87,32 +89,34 @@ See that your nginx configuration is valid::
     configuration file /etc/nginx/nginx.conf test is successful
     nginx.
 
-Alternatively your system might not provide ``configtest`` command and then
-you can test config with::
+If your system does not provide the ``configtest`` command, then you can test the configuration with::
 
     /usr/sbin/nginx
 
-If the config was OK then restart::
+If the configuration is OK, then restart nginx::
 
     /etc/init.d/nginx restart
 
 More info:
 
-* http://wiki.mediatemple.net/w/%28ve%29:Configure_virtual_hosts_with_Nginx_on_Ubuntu
+* https://mediatemple.net/community/products/developer/204405534/install-nginx-on-ubuntu#3
 
-* http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
+* https://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
 
 Content Security Policy (CSP) prevents a wide range of attacks, including cross-site scripting and other cross-site injections, but
 the CSP header setting may require careful tuning.
-To enable it, replace the Content-Security-Policy-Report-Only by Content-Security-Policy.
-The example above works with Plone 4.x and up (including TinyMCE) but it very wide. You may need to adjust it if you want to make CSP more restrictive or use additional Plone Products. For more information, see
+To enable it, replace the ``Content-Security-Policy-Report-Only`` by ``Content-Security-Policy``.
+The example above works with Plone 4.x and up (including TinyMCE) but it is very general.
+You may need to adjust it if you want to make CSP more restrictive or use additional Plone Products.
+For more information, see:
 
-*  http://www.w3.org/TR/CSP/
+* https://www.w3.org/TR/CSP/
+
 
 Buildout and recipe
 ===================
 
-If, and only if, you cannot use a platform install of nginx you may use the recipe and buildout example below to get started.
+If, and only if, you cannot use a platform install of nginx, you may use the recipe and buildout example below to get started.
 
 * http://www.martinaspeli.net/articles/an-uber-buildout-for-a-production-plone-server
 
@@ -121,7 +125,7 @@ If, and only if, you cannot use a platform install of nginx you may use the reci
 A buildout will download, install and configure nginx from scratch.
 The buildout file contains an nginx configuration which can use template variables from ``buildout.cfg`` itself.
 
-When you change the configuration of nginx in buildout you probably don't want to rerun the whole buildout, but only the nginx part of it::
+When you change the configuration of nginx in buildout, you probably don't want to rerun the whole buildout, but only the nginx part of it::
 
     bin/buildout -c production.cfg install balancer
 
@@ -286,7 +290,7 @@ Example::
 
 
 More info
-----------
+---------
 
 nginx location matching rules
 
@@ -330,7 +334,7 @@ To solve this problem correct your configuration to be like this::
 
 
 SSI: server-side include
-==========================
+========================
 
 In order to include external content in a page (XDV), we must set up nginx to make these includes for us.
 For including external content we will use the SSI (server-side include) method, which means that on each request nginx will get the needed external content, put it in place and only then return the response.
