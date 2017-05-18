@@ -1,5 +1,5 @@
 ======================================
-Helper tools for writing Documentation
+Helper Tools For Writing Documentation
 ======================================
 
 .. admonition:: Description
@@ -7,17 +7,17 @@ Helper tools for writing Documentation
    Tools and Plugins which will help to write documentation.
 
 
-Online tools
+Online Tools
 ============
 
 - `rst.ninjs.org <http://rst.ninjs.org/>`_ and a fork with more Sphinx support at `livesphinx.herokuapp.com <http://livesphinx.herokuapp.com/>`_
 - `notex.ch <https://www.notex.ch/>`_
 
 
-Offline tools
+Offline Tools
 =============
 
-**ReText** is a handy editor for **.rst** and **.md** formats.
+**ReText** is a editor for **.rst** and **.md** formats.
 On Ubuntu and Debian-based systems all you have to do is
 
 .. code-block:: shell
@@ -37,25 +37,24 @@ See also the `online version <http://johnmacfarlane.net/pandoc/try/>`_.
 
 **Sublime Text** has a number of plugins for rst highlighting and snippets, install via the Sublime package installer.
 
-Very useful is `Restructured Text Snippets <https://packagecontrol.io/packages/Restructured%20Text%20(RST)%20Snippets>`_, which has automated header creation, html preview and more. It even makes creating tables in ReST tolerable.
-**Highly recommended**.
+`Restructured Text Snippets <https://packagecontrol.io/packages/Restructured%20Text%20(RST)%20Snippets>`_, which has automated header creation, html preview and more.
 
 The *SublimeLinter* framework also comes with two plugins: `sublimelinter-rst <https://packagecontrol.io/packages/SublimeLinter-rst>`_ will error check RST files, and `write good <https://packagecontrol.io/packages/SublimeLinter-contrib-write-good>`_ checks your English for writing style.
 
 When not using the Snippets, but you still want to check how the html would look, `OmniMarkupPreviewer <https://sublime.wbond.net/packages/OmniMarkupPreviewer>`_  is a live previewer/exporter for markup files (markdown, rst, creole, textile...).
 
-Watch `the video <https://www.youtube.com/watch?v=3fWLuqyc3Oc>`_ on youtube.
+Watch `the video <https://www.youtube.com/watch?v=3fWLuqyc3Oc>`_ on YouTube.
 
-**Emacs** has a nice `rst-mode <http://docutils.sourceforge.net/docs/user/emacs.html>`_.
+**Emacs** has a `rst-mode <http://docutils.sourceforge.net/docs/user/emacs.html>`_.
 This mode comes with some Emacs distros. Try ``M-x rst-mode`` in your Emacs and enjoy syntax coloration, underlining a heading with ``^C ^A``
 
-Another nice tool for Emacs is `Flycheck <https://flycheck.readthedocs.org/en/latest/index.html>`_.
+Another tool for Emacs is `Flycheck <https://flycheck.readthedocs.org/en/latest/index.html>`_.
 
 **Eclipse** users can install **ReST Editor** through the Eclipse
 Marketplace.
 
 **Vim** does syntax highlighting for RST files.
-There is a nice plugin called `vim-markdown <https://github.com/plasticboy/vim-markdown>`_.
+There is a plugin called `vim-markdown <https://github.com/plasticboy/vim-markdown>`_.
 
 If you prefer a more *advanced* plugin with enhanced functionalities you could use `Riv <https://github.com/Rykka/riv.vim>`_.
 
@@ -66,7 +65,7 @@ A viewer for ReStructuredText documents that renders them on the fly.
 
     pip install restview
 
-Language tools
+Language Tools
 ==============
 
 These tools can help you to check for grammatical mistakes and typos, you should always use a spell checker anyway!
@@ -75,5 +74,4 @@ These tools can help you to check for grammatical mistakes and typos, you should
 See `www.languagetool.org <https://www.languagetool.org/>`_.
 
 **After the Deadline** `is a language checker for the web <http://www.afterthedeadline.com/>`_.
-This handy tool is also available in your Plone sites, by the way, see the :doc:`conent quality </working-with-content/content-quality/index>` section
-
+This tool is also available in your Plone sites, see the :doc:`content quality </working-with-content/content-quality/index>` section
