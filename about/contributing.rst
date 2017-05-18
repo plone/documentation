@@ -93,6 +93,7 @@ The documentation is hosted on GitHub. And there are tools hooked directly into 
 For these reasons, it is important we keep the documentation coherent.
 Therefore, we follow a simple workflow, which we ask all contributors to respect:
 
+- If you work on a `ticket <https://github.com/plone/documentation/issues>`_, assign yourself to it.
 
 - Please **DO NOT** commit to master directly. Even for the smallest and most trivial fix.
 
