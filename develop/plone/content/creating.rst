@@ -4,11 +4,10 @@
 
 .. admonition:: Description
 
-    Creating and controlling creation of Plone content items
-    programmatically.
+    Creating and controlling creation of Plone content items programmatically.
 
 
-Creating content objects
+Creating Content Objects
 ========================
 
 Permission-aware way (Dexterity)
@@ -30,8 +29,8 @@ Permission-aware way (Archetypes and Dexterity)
 -----------------------------------------------
 
 ``invokeFactory()`` is available on all folderish content objects.
-``invokeFactory()`` calls the ``portal_factory`` persistent utility to
-create content item.
+
+``invokeFactory()`` calls the ``portal_factory`` persistent utility to create content item.
 
 Example::
 
@@ -117,9 +116,9 @@ logged in users when creating the content item, do as follows::
 
 .. note::
 
-    The function above only bypasses the content item construction permission
-    check.  It does not bypass checks for setting field values for initially
-    created content.
+    The function above only bypasses the content item construction permission check.
+
+    It does not bypass checks for setting field values for initially created content.
 
 There is also an alternative way::
 
@@ -190,21 +189,20 @@ folder and only moves it to the real folder when it is first saved.
 
 .. note::
 
-    To see if content is still temporary, use
-    ``portal_factory.isTemporary(obj)``.
+    To see if content is still temporary, use ``portal_factory.isTemporary(obj)``.
 
-Restricting creating on content types
+Restricting Creating On Content Types
 =====================================
 
 Plone can restrict which content types are available for creation in a
-folder via the :guilabel:`Add...` menu.
+folder via the :guilabel:`Add` menu.
 
 Restricting available types per content type
 --------------------------------------------
 
-``portal_types`` defines which content types can be created inside a
-folderish content type.  By default, all content types which have the
-``global_allow`` property set can be added.
+``portal_types`` defines which content types can be created inside a folderish content type.
+
+By default, all content types which have the ``global_allow`` property set can be added.
 
 The behavior can be controlled with ``allowed_content_types`` setting.
 
@@ -240,8 +238,7 @@ would be something like ``profiles/default/types/YourType.xml``::
 Restricting available types per folder instance
 -----------------------------------------------
 
-In the UI, you can access this feature via the :guilabel:`Add...` menu
-:guilabel:`Restrict` option.
+In the UI, you can access this feature via the :guilabel:`Add` menu :guilabel:`Restrict` option.
 
 Type contraining is managed by the ``ATContentTypes`` product:
 
@@ -405,7 +402,7 @@ drop-down menu.  Here are some tips for debugging.
 Link to creation page
 =====================
 
-* The :guilabel:`Add...` menu contains links for creating individual content types.
+* The :guilabel:`Add` menu contains links for creating individual content types.
   Copy the URLs that you see there.
 
 * If you want to the user to have a choice about which content type to
