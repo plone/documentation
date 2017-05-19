@@ -74,7 +74,7 @@ Since two different datetime object types are used, you need to often convert be
 
 You can convert Zope DateTime objects to datetime objects like so::
 
-        from DateTime import DateTime
+        from DateTime import DateTime, asdatetime
         zope_DT = DateTime() # this is now.
         python_dt = zope_DT.asdatetime()
 
