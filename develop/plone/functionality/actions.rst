@@ -51,7 +51,13 @@ Here is a page template example
 Creating actions through-the-web
 ---------------------------------
 
-Visit portal_actions in ZMI.
+You can manage the actions from Site Setup using the Actions control panel.
+
+This control panel lists all the existing actions, grouped by category. Any action can be modified (using the **Edit** button), or removed (using the **Delete** button). The **Add** button allows to create a new action.
+
+To re-order actions, click **Edit** and change the position parameter value.
+
+To move an action to another category, click **Edit** and change the category parameter value.
 
 Exporting and importing all portal_actions
 =============================================
