@@ -127,7 +127,7 @@ The buildout file contains an nginx configuration which can use template variabl
 
 When you change the configuration of nginx in buildout, you probably don't want to rerun the whole buildout, but only the nginx part of it:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/buildout -c production.cfg install balancer
 
@@ -136,7 +136,7 @@ Config test
 
 Assuming you have a buildout nginx section called ``balancer``:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/balancer configtest
 
@@ -178,13 +178,13 @@ Example deployment configuration in ``production.cfg``:
 
 Install this part:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/buildout -c production.cfg install balancer
 
 Then you can use the following cycle to update the configuration:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/balancer-nginx-balancer start
     # Update config in buildout
@@ -200,7 +200,7 @@ Manually killing nginx
 
 If you have lost the ``PID`` file, or the recorded ``PID`` does not match the real ``PID`` any longer, then use buildout's starter script as a search key:
 
-.. code-block:: console
+.. code-block:: shell
 
     (hardy_i386)isleofback@isleofback:~$ bin/balancer reload
     Reloading nginx
@@ -228,7 +228,7 @@ Debugging nginx
 
 Set nginx logging to debug mode:
 
-.. code-block:: console
+.. code-block:: shell
 
     error_log ${buildout:directory}/var/log/balancer-error.log debug;
 
@@ -454,7 +454,7 @@ These instructions assume you are installing nginx via buildout.
 
 Manually extract ``nginx-sticky-module`` under ``src``:
 
-.. code-block:: console
+.. code-block:: shell
 
     cd src
     wget https://code.google.com/p/nginx-sticky-module/downloads/list
@@ -470,14 +470,14 @@ Then add it to the ``nginx-build`` part in buildout:
 
 Now test reinstalling nginx in buildout:
 
-.. code-block:: console
+.. code-block:: shell
 
     mv parts/nginx-build/ parts/nginx-build-old # Make sure full rebuild is done
     bin/buildout install nginx-build
 
 See that it compiles without errors. Here is the line for compiling sticky:
 
-.. code-block:: console
+.. code-block:: shell
 
     gcc -c -O -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter \
         -Wunused-function -Wunused-variable -Wunused-value -Werror -g  \
@@ -504,25 +504,25 @@ Now add ``sticky`` to the load-balancer section of the nginx configuration:
 
 Reinstall nginx balancer configuration and start-up scripts:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/buildout install balancer
 
 Make sure that the generated configuration is ok:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/nginx-balancer configtest
 
 Restart nginx:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/nginx-balancer stop ;bin/nginx-balancer start
 
 Check that some (non-anonymous) page has the ``route`` cookie set:
 
-.. code-block:: console
+.. code-block:: shell
 
     Huiske-iMac:tmp moo$ wget -S http://yoursite.com/sisalto/saariselka-infoa
     --2011-03-21 21:31:40--  http://yoursite.com/sisalto/saariselka-infoa
