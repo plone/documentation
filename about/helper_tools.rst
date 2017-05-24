@@ -17,7 +17,7 @@ Online Tools
 Offline Tools
 =============
 
-**ReText** is a editor for **.rst** and **.md** formats.
+**ReText** is an editor for **.rst** and **.md** formats.
 On Ubuntu and Debian-based systems all you have to do is
 
 .. code-block:: shell
