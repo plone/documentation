@@ -41,7 +41,7 @@ uncomment the line pointing to dist.plone.org, so it looks like this:
     extends =
     base.cfg
     # versions.cfg
-    http://dist.plone.org/release/5.3-latest/versions.cfg
+    http://dist.plone.org/release/5.1-latest/versions.cfg
 
 Save your changes.
 
