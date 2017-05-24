@@ -1,6 +1,6 @@
-============
+===========
 Varnish 4.x
-============
+===========
 
 .. admonition:: Description
 
@@ -73,14 +73,14 @@ More info
 * http://opensourcehacker.com/2013/02/07/varnish-shell-singleliners-reload-config-purge-cache-and-test-hits/
 
 Quit console
--------------
+------------
 
 Quit command::
 
    quit
 
 Purging the cache
-------------------
+-----------------
 
 This will remove all entries from the Varnish cache::
 
@@ -93,8 +93,8 @@ Or remove all entries of JPG from the Varnish cache::
 Loading new VCL to live Varnish
 ===============================
 
-More often than not, it is beneficial to load new configuration without bringing the cache down for maintenance.
-Using this method also checks the new VCL for syntax errors before activating it.
+More often than not, it is beneficial to load a new configuration without bringing the cache down for maintenance.
+Using this method also checks the new Varnish Configuration Language (VCL) for syntax errors before activating it.
 Logging in to Varnish CLI requires the ``varnishadm`` tool, the address of the management interface, and the secret file for authentication.
 
 See the ``varnishadm`` man-page for details.
@@ -112,7 +112,7 @@ Opening a new CLI connection to the Varnish console, in a system-wide Varnish in
 
     varnishadm -T localhost:6082 -S /etc/varnish/secret
 
-You can dynamically load and parse a new VCL config file to memory::
+You can dynamically load and parse a new VCL file to memory::
 
     vcl.load <name> <file>
 
@@ -126,7 +126,7 @@ For example::
     vcl.load defconf1 /etc/varnish/default.vcl
 
 ``vcl.load`` will load and compile the new configuration.
-Compilation will fail and report on syntax errors.
+Compilation will fail and report on syntax errors, if any exist.
 Now that the new configuration has been loaded, it can be activated with::
 
     vcl.use newconf_1
@@ -193,7 +193,7 @@ Example::
 
     # To make sure that people have upgraded their VCL to the current version,
     # Varnish now requires the first line of VCL to indicate the VCL version number
-    vcl 4.0;
+    vcl 4.1;
 
     #
     # This backend never responds... we get hit in the case of bad virtualhost name
@@ -344,7 +344,7 @@ Load balancing
 ==============
 
 Load balancing increases performance and resilience.
-Varnish ``vmod_directors`` module enables load balancing using a concept called "directors".
+The Varnish ``vmod_directors`` module enables load balancing using a concept called "directors".
 
 A director is a group of several backend servers.
 A backend server is a server providing the content Varnish will accelerate.
@@ -394,7 +394,7 @@ For more information, see:
 Varnishd port and IP address to listen
 ======================================
 
-You give IP address(s) and ports for Varnish to listen to on the ``varnishd`` command line using -a switch.
+You give IP addresses and ports for Varnish to listen to on the ``varnishd`` command line using the ``-a`` switch.
 Edit ``/etc/default/varnish``::
 
     DAEMON_OPTS="-a 192.168.1.1:80 \
@@ -416,20 +416,20 @@ Sanitizing cookies
 
 Any cookie set on the server side (session cookie) or on the client-side (e.g. Google Analytics JavaScript cookies) is poison for caching the anonymous visitor content.
 
-HTTP caching needs to deal with both HTTP request and response cookie handling
+HTTP caching needs to deal with both HTTP request and response cookie handling.
 
-* HTTP request *Cookie* header. The browser sending HTTP request
-  with ``Cookie`` header confuses Varnish cache look-up. This header can be
+* HTTP request *Cookie* header. A browser sending an HTTP request
+  with a ``Cookie`` header confuses Varnish cache look-up. This header can be
   set by JavaScript also, not just by the server.
-  ``Cookie`` can be preprocessed in varnish's ``vcl_recv`` step.
+  ``Cookie`` can be preprocessed in Varnish's ``vcl_recv`` step.
 
 * HTTP response ``Set-Cookie`` header.
   This sets a server-side cookie. If your server is setting
-  cookies Varnish does not cache these responses by default.
+  cookies, Varnish does not cache these responses by default.
   However, this might be desirable
-  behavior if e.g. multi-lingual content is served from one URL with
+  behavior if, for example, multi-lingual content is served from one URL with
   language cookies.
-  ``Set-Cookie`` can be post-processed in varnish's ``vcl_fetch`` step.
+  ``Set-Cookie`` can be post-processed in Varnish's ``vcl_fetch`` step.
 
 Example of removing all Plone-related cookies, besides ones dealing with the logged in users (content authors)::
 
@@ -471,7 +471,7 @@ Example of removing all Plone-related cookies, besides ones dealing with the log
     }
 
 
-An example how to purge Google cookies only and allow other cookies by default::
+An example of how to purge Google cookies only and allow other cookies by default::
 
     sub vcl_recv {
         # Remove Google Analytics cookies - will prevent caching of anon content
@@ -488,7 +488,7 @@ An example how to purge Google cookies only and allow other cookies by default::
 Debugging cookie issues
 -----------------------
 
-Use the following snippet to set a HTTP response debug header to see what the backend server sees as cookie after ``vcl_recv`` clean-up regexes::
+Use the following snippet to set a HTTP response debug header to see what the backend server sees as the cookie after ``vcl_recv`` clean-up regexes::
 
     sub vcl_backend_response {
 
@@ -535,12 +535,12 @@ And then test with ``wget``::
 More info
 ---------
 
-* https://www.varnish-software.com/blog/adding-headers-gain-insight-vcl
+* https://info.varnish-software.com/blog/adding-headers-gain-insight-vcl
 
 Plone Language cookie (I18N_LANGUAGE)
 -------------------------------------
 
-This cookie could be removed in ``vcl_fetch`` response post-processing (how?).
+This cookie could be removed in ``vcl_fetch`` response post-processing.
 However, a better solution is to disable this cookie in the backend itself: in this case in Plone's ``portal_languages`` tool.
 Disable it by :guilabel:`Use cookie for manual override` setting in ``portal_languages``.
 
@@ -549,13 +549,13 @@ More info
 
 * :doc:`Plone cookies documentation </develop/plone/sessions/cookies>`
 
-* https://www.varnish-cache.org/docs/4.0/users-guide/increasing-your-hitrate.html#cookies
+* https://www.varnish-cache.org/docs/4.1/users-guide/increasing-your-hitrate.html#cookies
 
 Do not cache error pages
 ========================
 
 You can make sure that Varnish does not accidentally cache error pages.
-E.g. it would cache front page when the site is down::
+For example, Varnish could cache the front page when the site is down, and we want to prevent that::
 
     sub vcl_backend_response {
         if (beresp.status >= 500 && beresp.status < 600) {
@@ -573,9 +573,9 @@ E.g. it would cache front page when the site is down::
 Custom and full cache purges
 ============================
 
-Below is an example how to create an action to purge the whole Varnish cache.
+Below is an example of how to create an action to purge the whole Varnish cache.
 
-First you need to allow ``HTTP PURGE`` request in ``default.vcl`` from ``localhost``.
+First you need to allow an ``HTTP PURGE`` request in ``default.vcl`` from ``localhost``.
 We'll create a special ``PURGE`` command which takes URLs to be purged out of the cache in a special header::
 
     acl purge {
@@ -670,4 +670,4 @@ Registering the view in ZCML:
 More info
 ---------
 
-* https://www.varnish-cache.org/docs/4.0/users-guide/purging.html
+* https://www.varnish-cache.org/docs/4.1/users-guide/purging.html
