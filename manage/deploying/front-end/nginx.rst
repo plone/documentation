@@ -106,7 +106,7 @@ More info:
 Content Security Policy (CSP) prevents a wide range of attacks, including cross-site scripting and other cross-site injections, but
 the CSP header setting may require careful tuning.
 To enable it, replace the ``Content-Security-Policy-Report-Only`` by ``Content-Security-Policy``.
-The example above works with Plone 4.x and up (including TinyMCE) but it is very general.
+The example above works with Plone 4.x and up (including TinyMCE) but it is general.
 You may need to adjust it if you want to make CSP more restrictive or use additional Plone Products.
 For more information, see:
 
