@@ -77,6 +77,6 @@ You will see a message prompting you to run Plone's migration script for each si
 
 ``This site configuration is outdated and needs to be upgraded.``
 
-Click ``Upgrade`` button next to the site and the upgrade will run.
+Click :guilabel:`Upgrade` button next to the site and the upgrade will run.
 
-Check the *Dry Run* checkbox if you want to test the migration before you execute it.
+Check :guilabel:`Dry Run` if you want to test the migration before you execute it.
