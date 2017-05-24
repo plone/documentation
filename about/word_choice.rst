@@ -1,10 +1,11 @@
 ===========
-Word choice
+Word Choice
 ===========
 
 The following table lists the preferred word or phrase choice.
 
-**Preferred word choice**
+Preferred Word Choice
+=====================
 
 +-------------------------------+--------------------------+
 | **Word**                      | **Do not use**           |
@@ -31,3 +32,12 @@ The following table lists the preferred word or phrase choice.
 +-------------------------------+--------------------------+
 | **Management Interface**      | ZMI                      |
 +-------------------------------+--------------------------+
+
+Words To Avoid
+==============
+
+- very
+- just
+- easy
+- simple
+- obviously
