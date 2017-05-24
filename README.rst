@@ -31,7 +31,7 @@ License
 =======
 
 The *content* of the documentation is licensed under `CC BY 4.0 <http://creativecommons.org/licenses/by/4.0/>`_
-by the `Plone Foundation <https://plone.org/foundation>`_
+by the `Plone Foundation <https://plone.org/foundation>`_.
 
 The software project to *generate* the docs is licensed under the GPLv2.
 
