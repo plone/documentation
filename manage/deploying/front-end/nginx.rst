@@ -1,16 +1,16 @@
-======
- Nginx
-======
+=====
+Nginx
+=====
 
 .. admonition:: Description
 
-    Using the nginx web server to host Plone sites
+    Using the nginx web server to host Plone sites.
 
 
 Introduction
 ============
 
-Nginx is an modern alternative server to Apache.
+Nginx is a modern alternative server to Apache.
 
 * It acts as a proxy server and load balancer in front of Zope.
 * It handles rewrite rules.
@@ -26,15 +26,17 @@ These instructions are *not* for configurations where one uses the buildout conf
 
 * We use :term:`VirtualHostMonster` to pass the original protocol and hostname to Plone. VirtualHostMonster provides a way to rewrite the request path.
 
-* We also need to rewrite the request path, because you want to site be served from port 80 root (/), but Plone sites are nested in the Zope application server as paths */site1*, */site2* etc.
+* We also need to rewrite the request path, because you want the site be served from the port 80 root (``/``), where Plone sites are nested in the Zope application server as paths, for example, ``/site1``, ``/site2``, and so on.
 
 * You don't need to configure VirtualHostMonster in Plone/Zope in any way, because all the installers will automatically install one for you. Nginx configuration is all you need to touch.
 
-* The URL passed to VirtualHostMonster is the URL Plone uses to construct links in the template (``portal_url`` in the code, also used by content ``absolute_url()`` method). If your site loads without CSS styles usually it is a sign that VirtualHostMonster URL is incorrectly written -- Plone uses the URL to link stylesheets also.
+* The URL passed to VirtualHostMonster is the URL Plone uses to construct links in the template (``portal_url`` in the code, also used by content ``absolute_url()`` method). If your site loads without CSS styles, usually it is a sign that the VirtualHostMonster URL is incorrectly written. Plone uses the URL to link stylesheets also.
 
-* Plone itself contains a mini web server (Medusa) which serves the requests from port 8080 -- Nginx acts simple as a HTTP proxy between Medusa and outgoing port 80 traffic.  Nginx does not spawn Plone process or anything like that, but Plone processes are externally controlled, usually by buildout-created ``bin/instance`` and ``bin/plonectl`` commands, or by a ``supervisor`` instance.
+* Plone itself contains a mini web server (Medusa) which serves the requests from port 8080. Nginx acts as a HTTP proxy between Medusa and outgoing port 80 traffic.  Nginx does not spawn Plone process or anything like that, but Plone processes are externally controlled, usually by buildout-created ``bin/instance`` and ``bin/plonectl`` commands, or by a ``supervisor`` instance.
 
-Create file ``/etc/nginx/sites-available/yoursite.conf`` with contents::
+Create the file ``/etc/nginx/sites-available/yoursite.conf`` with the following contents:
+
+.. code-block:: nginx
 
     # This adds security headers
     add_header X-Frame-Options "SAMEORIGIN";
@@ -79,7 +81,7 @@ Then enable the site by creating a symbolic link::
     cd /etc/nginx/sites-enabled
     ln -s ../sites-available/yoursite.conf .
 
-See that your nginx configuration is valid::
+Verify that your nginx configuration is valid::
 
     /etc/init.d/nginx configtest
 
@@ -87,32 +89,34 @@ See that your nginx configuration is valid::
     configuration file /etc/nginx/nginx.conf test is successful
     nginx.
 
-Alternatively your system might not provide ``configtest`` command and then
-you can test config with::
+If your system does not provide the ``configtest`` command, then you can test the configuration with::
 
     /usr/sbin/nginx
 
-If the config was OK then restart::
+If the configuration is OK, then restart nginx::
 
     /etc/init.d/nginx restart
 
 More info:
 
-* http://wiki.mediatemple.net/w/%28ve%29:Configure_virtual_hosts_with_Nginx_on_Ubuntu
+* https://mediatemple.net/community/products/developer/204405534/install-nginx-on-ubuntu#3
 
-* http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
+* https://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
 
 Content Security Policy (CSP) prevents a wide range of attacks, including cross-site scripting and other cross-site injections, but
 the CSP header setting may require careful tuning.
-To enable it, replace the Content-Security-Policy-Report-Only by Content-Security-Policy.
-The example above works with Plone 4.x and up (including TinyMCE) but it very wide. You may need to adjust it if you want to make CSP more restrictive or use additional Plone Products. For more information, see
+To enable it, replace the ``Content-Security-Policy-Report-Only`` by ``Content-Security-Policy``.
+The example above works with Plone 4.x and up (including TinyMCE) but it is general.
+You may need to adjust it if you want to make CSP more restrictive or use additional Plone Products.
+For more information, see:
 
-*  http://www.w3.org/TR/CSP/
+* https://www.w3.org/TR/CSP/
+
 
 Buildout and recipe
 ===================
 
-If, and only if, you cannot use a platform install of nginx you may use the recipe and buildout example below to get started.
+If, and only if, you cannot use a platform install of nginx, you may use the recipe and buildout example below to get started.
 
 * http://www.martinaspeli.net/articles/an-uber-buildout-for-a-production-plone-server
 
@@ -121,14 +125,18 @@ If, and only if, you cannot use a platform install of nginx you may use the reci
 A buildout will download, install and configure nginx from scratch.
 The buildout file contains an nginx configuration which can use template variables from ``buildout.cfg`` itself.
 
-When you change the configuration of nginx in buildout you probably don't want to rerun the whole buildout, but only the nginx part of it::
+When you change the configuration of nginx in buildout, you probably don't want to rerun the whole buildout, but only the nginx part of it:
+
+.. code-block:: shell
 
     bin/buildout -c production.cfg install balancer
 
 Config test
 ===========
 
-Assuming you have a buildout nginx section called ``balancer``::
+Assuming you have a buildout nginx section called ``balancer``:
+
+.. code-block:: shell
 
     bin/balancer configtest
 
@@ -140,11 +148,13 @@ Deployment configuration
 ========================
 
 `gocept.nginx <https://pypi.python.org/pypi/gocept.nginx/>`_ supports a special deployment configuration where you manually configure all directories.
-One important reason why you might wish to do this, is to change the location of the ``pid`` file.
+One important reason why you might wish to do this is to change the location of the ``pid`` file.
 Normally this file would be created in ``parts``, which is deleted and recreated when you re-run buildout.
 This interferes with reliably restarting nginx, since the pid file may have been deleted since startup. In this case, you need to manually kill nginx to get things back on track.
 
-Example deployment configuration in ``production.cfg``::
+Example deployment configuration in ``production.cfg``:
+
+.. code-block:: ini
 
     # Define folder and file locations for nginx called "balancer"
     # If deployment= is set on gocept.nginx recipe it uses
@@ -166,11 +176,15 @@ Example deployment configuration in ``production.cfg``::
             error_log ${buildout:directory}/var/log/balancer-error.log;
             worker_processes 1;
 
-Install this part::
+Install this part:
+
+.. code-block:: shell
 
     bin/buildout -c production.cfg install balancer
 
-Then you can use the following cycle to update the configuration::
+Then you can use the following cycle to update the configuration:
+
+.. code-block:: shell
 
     bin/balancer-nginx-balancer start
     # Update config in buildout
@@ -184,9 +198,9 @@ Then you can use the following cycle to update the configuration::
 Manually killing nginx
 ======================
 
-You have lost ``PID`` file, or the recorded ``PID`` does not match the real ``PID`` any longer.  Use buildout's starter script as a search key:
+If you have lost the ``PID`` file, or the recorded ``PID`` does not match the real ``PID`` any longer, then use buildout's starter script as a search key:
 
-.. code-block:: console
+.. code-block:: shell
 
     (hardy_i386)isleofback@isleofback:~$ bin/balancer reload
     Reloading nginx
@@ -212,16 +226,20 @@ You have lost ``PID`` file, or the recorded ``PID`` does not match the real ``PI
 Debugging nginx
 ===============
 
-Set nginx logging to debug mode::
+Set nginx logging to debug mode:
+
+.. code-block:: shell
 
     error_log ${buildout:directory}/var/log/balancer-error.log debug;
 
 www-redirect
 ============
 
-Below is an example how to do a basic *yourdomain.com -> www.yourdomain.com* redirect.
+Below is an example of how to do a basic *yourdomain.com -> www.yourdomain.com* redirect.
 
-Put the following in your ``gocept.nginx`` configuration::
+Put the following in your ``gocept.nginx`` configuration:
+
+.. code-block:: nginx
 
     http {
         ....
@@ -232,7 +250,9 @@ Put the following in your ``gocept.nginx`` configuration::
                 rewrite ^(.*)$  $scheme://${hosts:main}$1 redirect;
         }
 
-Hosts are configured in a separate buildout section::
+Hosts are configured in a separate buildout section:
+
+.. code-block:: ini
 
         [hosts]
         # Hostnames for servers
@@ -246,7 +266,9 @@ More info
 Permanent redirect
 ==================
 
-Below is an example redirect rule::
+Below is an example redirect rule:
+
+.. code-block:: nginx
 
     # Redirect old Google front page links.
     # Redirect event to new Plone based systems.
@@ -257,14 +279,16 @@ Below is an example redirect rule::
 
 .. note::
 
-    Nginx location match evaluation rules are not always top-down.
-    You can add more specific matches after location /.
+    Nginx ``location match`` evaluation rules are not always top-down.
+    You can add more specific matches after ``location /``.
 
 Cleaning up query string
 ------------------------
 
 By default, nginx includes all trailing ``HTTP GET`` query parameters in the redirect.
-You can disable this behavior by adding a trailing ?::
+You can disable this behavior by adding a trailing ``?``:
+
+.. code-block:: nginx
 
     location /tapahtumat.php {
             rewrite ^ http://${hosts:main}/no_ugly_query_string? permanent;
@@ -275,7 +299,9 @@ Matching incoming query string
 
 The ``location`` directive does not support query strings.  Use the ``if`` directive from the HTTP rewrite module.
 
-Example::
+Example:
+
+.. code-block:: nginx
 
     location /index.php {
             # index.php?id=5
@@ -286,25 +312,26 @@ Example::
 
 
 More info
-----------
+---------
 
 nginx location matching rules
 
-* http://wiki.nginx.org/NginxHttpCoreModule#location
+* http://nginx.org/en/docs/http/ngx_http_core_module.html#location
 
-nginx redirect module docs
+nginx rewrite module docs
 
-* http://wiki.nginx.org/NginxHttpRewriteModule
+* http://nginx.org/en/docs/http/ngx_http_rewrite_module.html
 
 More info on nginx redirects
 
-* http://scott.yang.id.au/2007/04/do-you-need-permalink-redirect/
-
+* https://scott.yang.id.au/2007/04/do-you-need-permalink-redirect.html
 
 Make nginx aware where the request came from
 ============================================
 
-If you set up nginx to run in front of Zope, and set up a virtual host with it like this::
+If you set up nginx to run in front of Zope, and set up a virtual host with it like this:
+
+.. code-block:: nginx
 
     server {
             server_name demo.webandmobile.mfabrik.com;
@@ -315,7 +342,9 @@ If you set up nginx to run in front of Zope, and set up a virtual host with it l
     }
 
 Zope will always get the request from ``127.0.0.1:8080`` and not from the actual host, due to the redirection.
-To solve this problem correct your configuration to be like this::
+To solve this problem, correct your configuration to be like this:
+
+.. code-block:: nginx
 
     server {
             server_name demo.webandmobile.mfabrik.com;
@@ -330,11 +359,13 @@ To solve this problem correct your configuration to be like this::
 
 
 SSI: server-side include
-==========================
+========================
 
 In order to include external content in a page (XDV), we must set up nginx to make these includes for us.
-For including external content we will use the SSI (server-side include) method, which means that on each request nginx will get the needed external content, put it in place and only then return the response.
-Here is a configuration that sets up the filtering and turns on SSI for a specific location::
+For including external content we will use the SSI (server-side include) method, which means that on each request nginx will get the needed external content, put it in place, and only then return the response.
+Here is a configuration that sets up the filtering and turns on SSI for a specific location:
+
+.. code-block:: nginx
 
     server {
             listen 80;
@@ -401,7 +432,7 @@ Session affinity
 
 If you intend to use nginx for session balancing between ZEO processes, you need to be aware of session affinity.
 By default, ZEO processes don't share session data.
-If you have site functionality which stores user-specific data on the server, let's say an ecommerce site shopping cart, you must always redirect users to the same ZEO client process or they will have 1/number of processes chance to see the orignal data.
+If you have site functionality which stores user-specific data on the server—let's say an ecommerce site shopping cart—you must always redirect users to the same ZEO client process or they will have 1/number of processes chance to see the original data.
 
 Make sure that your :doc:`Zope session cookie </develop/plone/sessions/cookies>` are not cleared by any front-end server (nginx, Varnish).
 
@@ -410,9 +441,9 @@ By using IP addresses
 
 This is the most reliable way. nginx will balance each incoming request to a front end client by the request's source IP address.
 
-This method is reliable as long as nginx can correctly extract IP address from the configuration.
+This method is reliable as long as nginx can correctly extract the IP address from the configuration.
 
-* http://wiki.nginx.org/NginxHttpUpstreamModule#ip_hash
+* http://nginx.org/en/docs/http/ngx_http_upstream_module.html#ip_hash
 
 By using cookies
 ----------------
@@ -423,7 +454,7 @@ These instructions assume you are installing nginx via buildout.
 
 Manually extract ``nginx-sticky-module`` under ``src``:
 
-.. code-block:: console
+.. code-block:: shell
 
     cd src
     wget https://code.google.com/p/nginx-sticky-module/downloads/list
@@ -439,14 +470,14 @@ Then add it to the ``nginx-build`` part in buildout:
 
 Now test reinstalling nginx in buildout:
 
-.. code-block:: console
+.. code-block:: shell
 
     mv parts/nginx-build/ parts/nginx-build-old # Make sure full rebuild is done
     bin/buildout install nginx-build
 
-See that it compiles without errors. Here is the line of compiling sticky:
+See that it compiles without errors. Here is the line for compiling sticky:
 
-.. code-block:: console
+.. code-block:: shell
 
     gcc -c -O -pipe  -O -W -Wall -Wpointer-arith -Wno-unused-parameter \
         -Wunused-function -Wunused-variable -Wunused-value -Werror -g  \
@@ -454,7 +485,7 @@ See that it compiles without errors. Here is the line of compiling sticky:
         -I objs -I src/http -I src/http/modules -I src/mail \
         -o objs/addon/nginx-sticky-module-1.0-rc2/ngx_http_sticky_module.o
 
-Now add ``sticky`` to the load-balancer section of nginx config:
+Now add ``sticky`` to the load-balancer section of the nginx configuration:
 
 .. code-block:: ini
 
@@ -471,27 +502,27 @@ Now add ``sticky`` to the load-balancer section of nginx config:
                 server ${hosts:client3}:${ports:client3} max_fails=3 fail_timeout=30s;
             }
 
-Reinstall nginx balancer configs and start-up scripts:
+Reinstall nginx balancer configuration and start-up scripts:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/buildout install balancer
 
 Make sure that the generated configuration is ok:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/nginx-balancer configtest
 
 Restart nginx:
 
-.. code-block:: console
+.. code-block:: shell
 
     bin/nginx-balancer stop ;bin/nginx-balancer start
 
 Check that some (non-anonymous) page has the ``route`` cookie set:
 
-.. code-block:: console
+.. code-block:: shell
 
     Huiske-iMac:tmp moo$ wget -S http://yoursite.com/sisalto/saariselka-infoa
     --2011-03-21 21:31:40--  http://yoursite.com/sisalto/saariselka-infoa
@@ -515,10 +546,9 @@ Check that some (non-anonymous) page has the ``route`` cookie set:
 
 Now test it by doing session-related activity and see that your shopping cart is not "lost".
 
-More info
+More info:
 
 * http://code.google.com/p/nginx-sticky-module/source/browse/trunk/README
-
 
 * http://nathanvangheem.com/news/nginx-with-built-in-load-balancing-and-caching
 
@@ -526,14 +556,16 @@ More info
 Securing Plone-Sites with https and nginx
 =========================================
 
-For instructions how to use SSL for all authenticated traffic see this blog-post:
+For instructions on how to use SSL for all authenticated traffic, see this blog-post:
 
-* http://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
+* https://www.starzel.de/blog/securing-plone-sites-with-https-and-nginx
 
 Setting log files
 =================
 
-nginx.conf example::
+nginx.conf example:
+
+.. code-block:: nginx
 
     worker_processes 2;
     error_log /srv/site/Plone/zinstance/var/log/nginx-error.log warn;
@@ -552,7 +584,9 @@ Proxy Caching
 
 Nginx can do rudimentary proxy caching.
 It may be good enough for your needs.
-Turn on proxy caching by adding to your nginx.conf or a separate conf.d/proxy_cache.conf::
+Turn on proxy caching by adding to your ``nginx.conf`` or a separate ``conf.d/proxy_cache.conf``:
+
+.. code-block:: nginx
 
     ##
     # common caching setup; use "proxy_cache off;" to override
@@ -577,23 +611,23 @@ Turn on proxy caching by adding to your nginx.conf or a separate conf.d/proxy_ca
     proxy_http_version              1.1;
     add_header X-Cache-Status $upstream_cache_status;
 
-Create a /var/www/cache directory owned by your nginx user (usually www-data).
+Create a ``/var/www/cache`` directory owned by your nginx user (usually ``www-data``).
 
 Limitations:
 
-* Nginx does not support the vary header.
-  That's why we use proxy_cache_bypass to turn off the cache for all authenticated users.
+* Nginx does not support the ``vary`` header.
+  That's why we use ``proxy_cache_bypass`` to turn off the cache for all authenticated users.
 
-* Nginx does not support the s-maxage cache-control directive. Only max-age.
+* Nginx does not support the ``s-maxage`` cache-control directive. Only ``max-age``.
   This means that moderate caching will do nothing. However, strong caching works and will cause all your static resources and registry items to be cached.
   Don't underestimate how valuable that is.
 
 Enabling gzip compression
 =========================
 
-Enabling gzip compression in Nginx will make your web sites respond much more quickly for your web site users and will reduce the amount of bandwidth used by your web sites.
+Enabling gzip compression in nginx will make your web sites respond much more quickly for your web site users and will reduce the amount of bandwidth used by your web sites.
 
-Instructions for enabling gzip in Nginx: 
+Instructions for enabling gzip in nginx:
 
 * https://varvy.com/pagespeed/enable-compression.html
 * https://www.nginx.com/resources/admin-guide/compression-and-decompression/
