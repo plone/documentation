@@ -41,26 +41,24 @@ You can find the default operations here:
 .. note::
 
     You usually don't need to override the operation classes itself.
-    ``plone.app.caching`` provides web UI to override parameters, like timeout, for each rule, on the *Detailed settings* tab in
-    cache control panel (Create per-ruleset parameters link).
+    ``plone.app.caching`` provides a web UI to override parameters, like timeout, for each rule on the *Detailed settings* tab in
+    the cache control panel (Create per-ruleset parameters link).
 
 Setting Per-view Cache Rules
 ============================
 
-Here is an example how you can define a cache rules for your custom view class.
-In this example we want to cache our site front page in Varnish, because is is very complex, and wakes up a lot of ZODB objects.
+Here is an example for how you can define cache rules for your custom view class.
+In this example we want to cache our site front page in Varnish, because is is very complex, and loads a lot of ZODB objects.
 
 The front page is programmed using :doc:`BrowserView </develop/plone/views/browserviews>`.
 
-Our front page is subject to moderate changes as new content comes in, but the changes are not time critical, so we define a one hour timeout for
-caching the front page.
+Our front page is subject to moderate changes as new content comes in, but the changes are not time critical, so we define a one hour timeout for caching the front page.
 
 .. note::
 
     Currently, setting caching rules for view classes is not supported through the web, but using ZCML or Python is the way to go.
 
-In our case we are also using "a dummy cache" which does not provide purging through Plone |---| the only way to purge the front-end proxy
-is to do it from the Varnish control panel.
+In our case we are also using "a dummy cache" which does not provide purging through Plone. The only way to purge the front-end proxy is to use the Varnish control panel.
 
 Here is our ``configure.zcml`` for our custom add-on ``browser`` package:
 
@@ -97,13 +95,13 @@ After defining the rule and checking that the rule appears in the caching contro
 
 * assign *Moderate caching* operation to *Homepage*;
 
-* on the *Detailed settings* tab we'll use the *Create per-ruleset* command to override timeout to be 1h instead of default 24h for *Homepage*.
+* on the *Detailed settings* tab, we'll use the *Create per-ruleset* command to override the default timeout of "24h" to be "1h" for *Homepage*.
 
 .. warning::
 
     Do not enable the Zope RAM cache for page templates.
 
-    You will end up having some bad page HTML in Zope's internal cache and you have no idea how to clear it.
+    You will end up having some bad page HTML in Zope's internal cache and you will have no idea of how to clear it.
 
 .. note::
 
@@ -113,13 +111,13 @@ After defining the rule and checking that the rule appears in the caching contro
 Testing The Rule
 ----------------
 
-* First, we'll test the rule on our local development computer to make sure that it loads;
+* First we'll test the rule on our local development computer to make sure that it loads;
 
-* then we'll test the rule in the production environment with Varnish to see that Varnish picks up ``Expires`` header
+* then we'll test the rule in the production environment with Varnish to see that Varnish picks up the ``Expires`` header.
 
 .. note::
 
-    To test ``plone.app.caching`` rules you need to run the site in production mode (not in the foreground).
+    To test ``plone.app.caching`` rules, you need to run the site in production mode (not in the foreground).
     Otherwise ``plone.app.caching`` is disabled.
 
 Here is an example of using the ``wget`` UNIX command-line utility (discard the retrieved document and print the HTTP response headers)
@@ -148,12 +146,12 @@ The output looks like this::
       Content-Type: text/html;charset=utf-8
     Length: 42780 (42K) [text/html]
 
-We see that ``X-Cache-Operation`` and ``X-Cache-Rule`` from ``plone.app.caching`` debug info are present, so we know that it is setting
-HTTP headers correctly, so that the front end server (Varnish) will receive the appropriate directives.
+We see that ``X-Cache-Operation`` and ``X-Cache-Rule`` from ``plone.app.caching`` debug info are present.
+We understand that it is setting HTTP headers correctly, and that the front end server (Varnish) will receive the appropriate directives.
 
-After deploying the change in the production environment, we'll check Varnish is picking up the rule.
+After deploying the change in the production environment, we'll check whether Varnish is picking up the rule.
 
-We fetch the page twice: first run is *cold* (not yet cached), the second run should be cached
+We fetch the page twice. The first run is *cold* (not yet cached), and the second run should be cached.
 
 .. code-block:: shell
 
@@ -183,15 +181,15 @@ The output::
       Connection: keep-alive
     Length: 43466 (42K) [text/html]
 
-We'll see that you have **two** numbers on line from Varnish::
+Notice that you have **two** numbers in the header from Varnish::
 
     X-Varnish: 72735907 72735905
 
-These are Varnish internal timestamps: when the request was pulled to the cache and when it was served.
+These are Varnish internal timestamps: when the request was pulled into the cache, and when it was served.
 
-If you see only one number on subsequent requests it means that Varnish is not caching the request (because it's fetching the page from Plone every time).
+If you see only one number on subsequent requests, then it means that Varnish is not caching the request because it's fetching the page from Plone every time.
 
-If you see two numbers you know it is OK (and you can feel the speed).
+If you see two numbers, then you know it is OK (and you can feel the speed).
 
 More info:
 
@@ -201,16 +199,16 @@ More info:
 Creating A "Cache Forever" View
 ===============================
 
-You might create views which generate or produce resources (images, JS, CSS) in-fly.
+You might create views which generate or produce resources (images, JS, CSS) on the fly.
 
-If you refer this views always through content unique URL you can cache the view result forever.
+If you always refer these views through a content unique URL, you can cache the view result forever.
 
-This can be done
+This can be done as follows.
 
-* Using blob._p_mtime, or similar, to get the modified timestamp of the related content item.
-  All persistent ZODB objects have _p_mtime
+* Using ``blob._p_mtime`` or similar to get the modified timestamp of the related content item.
+  All persistent ZODB objects have ``_p_mtime``.
 
-* Setting *plone.stableResource* ruleset on the view
+* Setting a *plone.stableResource* ruleset on the view.
 
 Related ZCML
 
@@ -226,8 +224,8 @@ Related ZCML
        <include package="plone.app.caching" />
 
        <!-- Because we generate the image URL containing image modified timestamp,
-            the URL is always stable and when image changes the URL changes.
-            Thus, we can use strong caching (cache URL forever)
+            the URL is always stable, and when the image changes, then the URL changes.
+            Thus we can use strong caching (cache URL forever).
          -->
 
        <cache:ruleset
@@ -239,7 +237,6 @@ Related ZCML
      </configure>
 
 Related view code:
-
 
 .. code-block:: python
 
@@ -269,7 +266,7 @@ Related view code:
             portlet = mapping[name]
             image = getattr(portlet, imageId, None)
             if not image:
-                # Ohops?
+                # oops?
                 return ""
 
             # Set content type and length headers
@@ -278,13 +275,13 @@ Related view code:
             # Push data to the downstream clients
             return stream_data(image)
 
-When we refer to the view in ``<img src>`` we use modified time parameter:
+When we refer to the view in ``<img src>``, we use the modified time parameter:
 
 .. code-block:: python
 
     def getImageURL(self, imageDesc):
         """
-        :return: The URL where the image can be downloaded from.
+        :return: The URL from where the image can be downloaded.
 
         """
         context = self.context.aq_inner
@@ -311,5 +308,3 @@ Related ZCML registration:
         permission="zope.Public"
         class=".views.ImagePortletImageDownload"
         />
-
-.. |---| unicode:: U+02014 .. em dash
