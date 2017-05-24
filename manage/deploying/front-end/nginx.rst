@@ -154,7 +154,7 @@ This interferes with reliably restarting nginx, since the pid file may have been
 
 Example deployment configuration in ``production.cfg``:
 
-.. code-block:: nginx
+.. code-block:: ini
 
     # Define folder and file locations for nginx called "balancer"
     # If deployment= is set on gocept.nginx recipe it uses
