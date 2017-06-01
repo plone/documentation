@@ -81,3 +81,9 @@ The version of plone.app.iterate used in Plone 5 implements this already making 
 You should remove any hard dependency on plone.app.stagingbehavior from your add-on to avoid issues.
 
 See https://github.com/collective/collective.cover/pull/577/files for an example on how to achieve that.
+
+Content type icons
+==================
+
+A major breaking change from Plone 4.x to Plone 5 is how content type icons are handled.
+See :ref:content-type-icons-changed` for details. 
