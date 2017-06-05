@@ -115,7 +115,14 @@ Extracting version numbers from instance script
 
 Example::
 
-    cat bin/instance | grep eggs | sed -r 's#.*eggs/(.*)-py2.[0-9].*#\1#g' | sed -r 's#-# = #g' | sed -r 's#_#-#g' | grep -E ' = [0-9\.]' | xargs -0 echo -e "[versions]\n" | sed -r 's#^\s+##g' > versions-extracted.cfg; cat versions-extracted.cfg
+    cat bin/instance | \
+        grep eggs | \
+        sed -r 's#.*eggs/(.*)-py2.[0-9].*#\1#g' | \
+        sed -r 's#-# = #g' | \
+        sed -r 's#_#-#g' | \
+        grep -E ' = [0-9\.]' | \
+        xargs -0 echo -e "[versions]\n" | \
+        sed -r 's#^\s+##g' > versions-extracted.cfg; cat versions-extracted.cfg
 
 More info
 
