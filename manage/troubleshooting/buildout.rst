@@ -107,7 +107,7 @@ Add to your ``buildout.cfg``:
 .. code-block:: cfg
 
     [buildout]
-    show-picked-versions
+    show-picked-versions = true
 
 
 Extracting version numbers from instance script
