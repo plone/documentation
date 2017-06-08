@@ -2,16 +2,21 @@
 Install Plone Using A Minimal Buildout
 ======================================
 
-With complete requirements in place, a Plone install may be created with a few steps.
+.. note ::
 
-Create a directory called Plone-5 and enter it:
+   This example is adequate for a quick evaluation.
+
+   **Do not use it in production !**
+
+
+Create a directory called `Plone-5` and enter it:
 
 .. code-block:: shell
 
    mkdir Plone-5
    cd Plone-5
 
-Run the steps to create a virtual python environment (virtualenv) and install zc.buildout:
+Create a virtual python environment (`virtualenv <https://virtualenv.pypa.io/en/stable/>`_) and install `zc.buildout <https://pypi.python.org/pypi/zc.buildout>`_:
 
 .. code-block:: shell
 
@@ -47,9 +52,9 @@ Run buildout:
 
    /bin/buildout
 
-This will start a long download and build process ...
+This will start a long download and build process.
 
-Errors like SyntaxError: ("'return' outside function"..." may be ignored.
+You can ignore Errors like ``SyntaxError: ("'return' outside function"..."``.
 
 After it finished you can start Plone in foreground-mode with:
 
@@ -57,7 +62,7 @@ After it finished you can start Plone in foreground-mode with:
 
    bin/instance fg
 
-You can stop it with ctrl + c.
+You can stop it with ``ctrl + c``.
 
 Start and stop this Plone-instance in production-mode like this;
 
@@ -67,7 +72,6 @@ Start and stop this Plone-instance in production-mode like this;
 
    bin/instance stop
 
-Plone will run on port 8080 and can be accessed via http://localhost:8080. Use login id "admin" and password "admin" for initial login so you can create a site.
+Plone will run on port 8080 you can access your install via http://localhost:8080.
 
-This build would be adequate for a quick evaluation installation. For a production or development installation, use one of Plone's installers.
-
+Use login id "admin" and password "admin" for initial login so you can create a site.
