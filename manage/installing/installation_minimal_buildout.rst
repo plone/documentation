@@ -50,7 +50,7 @@ Run buildout:
 
 .. code-block:: shell
 
-   /bin/buildout
+   ./bin/buildout
 
 This will start a long download and build process.
 
@@ -60,7 +60,7 @@ After it finished you can start Plone in foreground-mode with:
 
 .. code-block:: shell
 
-   bin/instance fg
+   ./bin/instance fg
 
 You can stop it with ``ctrl + c``.
 
@@ -68,9 +68,9 @@ Start and stop this Plone-instance in production-mode like this;
 
 .. code-block:: shell
 
-   bin/instance start
+   ./bin/instance start
 
-   bin/instance stop
+   ./bin/instance stop
 
 Plone will run on port 8080 you can access your install via http://localhost:8080.
 
