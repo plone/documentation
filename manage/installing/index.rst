@@ -6,5 +6,6 @@ Installing Plone
 
    requirements
    installation
+   installation_minimal_buildout
    installing_addons
    hotfixes
