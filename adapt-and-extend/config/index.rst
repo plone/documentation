@@ -11,6 +11,7 @@ Site Setup
    mail
    navigation
    site
+   portal-tabs
    add-ons
    search
    discussion
