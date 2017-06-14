@@ -1,15 +1,15 @@
 ====================================
-Upgrade a custom add-on to Plone 5.1
+Upgrade A Custom Add-on To Plone 5.1
 ====================================
 
 
-Installation code
+Installation Code
 =================
 
 See `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_ for a discussion of this change.
 
 
-From CMFQuickInstallerTool to GenericSetup
+From CMFQuickInstallerTool To GenericSetup
 ------------------------------------------
 
 The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code in ``Extensions/install.py`` or  ``Extensions/Install.py``.
@@ -23,7 +23,7 @@ In other cases you may need to write custom installer code (setuphandlers.py).
 See the :doc:`GenericSetup documentation </develop/addons/components/genericsetup>`.
 
 
-default profile
+Default Profile
 ---------------
 
 Historically, when your add-on had multiple profiles, their names would be sorted alphabetically and the first one would be taken as the installation profile.
@@ -40,6 +40,7 @@ An uninstall profile is not required, but it is highly recommended.
 
 Until Plone 5.0 the CMFQuickInstallerTool used to do an automatic partial cleanup,
 for example removing added skins and css resources.
+
 This was always only partial, so you could not rely on it to fully cleanup the site.
 
 Since Plone 5.1 this cleanup is no longer done.
@@ -52,8 +53,11 @@ You need to do that when your default profile contains one of these files:
 - ``componentregistry.xml``
 - ``contenttyperegistry.xml``.
   This seems rarely used.
-  Note: the `contenttyperegistry import step <https://github.com/zopefoundation/Products.CMFCore/blob/2.2.10/Products/CMFCore/exportimport/contenttyperegistry.py#L73>`_ only supports adding, not removing.
+
+.. note::
+  The `contenttyperegistry import step <https://github.com/zopefoundation/Products.CMFCore/blob/2.2.10/Products/CMFCore/exportimport/contenttyperegistry.py#L73>`_ only supports adding, not removing.
   You may need to improve that code based on the old `CMFQuickInstallerTool code <https://github.com/plone/Products.CMFQuickInstallerTool/blob/3.0.13/Products/CMFQuickInstallerTool/InstalledProduct.py#L364>`_.
+
 - ``cssregistry.xml``
 - ``jsregistry.xml``
 - ``skins.xml``
@@ -63,10 +67,11 @@ You need to do that when your default profile contains one of these files:
 
 When there is no uninstall profile, the add-ons control panel will give a warning.
 An uninstall profile is a profile that is registered with the name ``uninstall``.
-For an example, see https://github.com/plone/plone.app.multilingual/tree/master/src/plone/app/multilingual/profiles/uninstall
+
+See https://github.com/plone/plone.app.multilingual/tree/master/src/plone/app/multilingual/profiles/uninstall
 
 
-Don't use portal_quickinstaller
+Don't Use portal_quickinstaller
 -------------------------------
 
 Old code:
@@ -519,11 +524,11 @@ Preview images (aka thumbs) can be shown in listings, tables and portlets.
 .. TODO::
    to be ctd.
 
-Retina image scales
+HiDPI Image Scales
 ===================
 
-In the Image Handling Settings control panel in Site Setup, you can configure Retina mode for extra sharp images.
-When you enable this, it will result in image tags like this, for improved viewing on Retina screens:
+In the Image Handling Settings control panel in Site Setup, you can configure HiDPI mode for extra sharp images.
+When you enable this, it will result in image tags like this, for improved viewing on HiDPI screens:
 
 .. code-block:: html
 
