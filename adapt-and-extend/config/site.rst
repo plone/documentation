@@ -50,13 +50,13 @@ No thumbs in summary views
    Suppress thumbs in all summary views; this default can be overriden individually
 No thumbs in table views
    Suppress thumbs in all tableviews and in folder contents view; this default can be overriden individually
-Thumb size for portlets
+Thumb scale for portlets
    Choose from a pull down populated by available scales defined in the :doc:`Image handling control panel<image-handling.rst>`. This default can be overriden individually
-Thumb size for listings
+Thumb scale for listings
    E.g. for standard view; this default can be overriden individually
-Thumb size for tables
+Thumb scale for tables
    E.g. for tabular view,  this default can be overriden individually. **This setting is also used for the folder content listing (can not be overridden).**
-Thumb size for summary view
+Thumb scale for summary view
    This default can be overriden individually
 Toolbar position
     On modern wide-screen monitors, having the Toolbar to the side provides most usable space. But some people prefer it to be on the top of their screen.
