@@ -69,7 +69,7 @@ buildout. It should look just similiar to the packages buildout.
     [code-analysis]
     recipe = plone.recipe.codeanalysis
     directory = ${buildout:directory}/src/example
-    flake8-exclude = bootstrap.py,bootstrap-buildout.py,docs,*.egg.,omelette
+    flake8-exclude = docs,*.egg.,omelette
     flake8-max-complexity = 15
     flake8-extensions =
         flake8-blind-except

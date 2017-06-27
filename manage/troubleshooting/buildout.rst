@@ -341,6 +341,10 @@ Solution: update the ``zc.buildout`` installed in your system Python:
 
     easy_install -U zc.buildout
 
+.. note::
+
+   Or better, use virtualenv! **TODO LINK TO THE VIRTUALENV SECTION**
+
 An error occurred when trying to install lxml - error: Setup script exited with error: command 'gcc' failed with exit status 1
 ==============================================================================================================================
 
@@ -411,6 +415,9 @@ If you get::
 
 Rerun ``bootstrap.py`` with the correct Python interpreter.
 
+.. note::
+
+   Or better, use virtualenv! **TODO LINK TO THE VIRTUALENV SECTION**
 
 Error: Picked: <some.package> = <some.version>
 ==============================================
@@ -479,7 +486,9 @@ uses this version or above::
 
        sudo /srv/plone/python/python-2.7/bin/easy_install -U Distribute
 
+.. note::
 
+   Or better, use virtualenv! **TODO LINK TO THE VIRTUALENV SECTION**
 
 UnboundLocalError: local variable 'clients' referenced before assignment
 ==========================================================================

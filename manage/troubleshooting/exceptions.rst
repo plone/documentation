@@ -990,6 +990,9 @@ Then as the non-root re-bootstrap the buildout using non-system wide Python::
 
 ... and after this it should no longer pull the bad system lxml.
 
+.. note::
+
+   Or better, use virtualenv! **TODO LINK TO THE VIRTUALENV SECTION**
 
 ImportError: No module named pkgutil
 ------------------------------------
