@@ -22,4 +22,5 @@ While we are updating this documentation, you should also look at the following 
 
    intro
    ajax
+   data-attributes
 
