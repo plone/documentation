@@ -2,7 +2,7 @@
 Plone Upgrade Guide
 ===================
 
-.. admonition:: Description
+.. topic:: Description
 
     Instructions and tips for upgrading to a newer Plone version.
 
