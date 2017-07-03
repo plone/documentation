@@ -237,3 +237,11 @@ Create a new theme in the theming editor containing the following files:
 Then you have to compile ``styles.less`` to obtain your ``styles.css`` file using the "Build CSS" button.
 
 Now your theme is ready. You can keep it in the theming editor, or you can export it and put the files in your theme add-on.
+
+This approach applies to both FS based and TTW based themes.
+Even when working with a FS bases theme, you can compile your less files using the theming editor: the theming editor allows to inspect FS-based themes and the Build CSS button will return the resulting CSS so you can copy/paste it into your sources.
+
+.. note:: even if this approach is probably fine for a quick fix in a FS theme, it might be painful at start when you develop the all theme. In that case, 2 approaches:
+
+    - either work directly in a TTW theme, entirely with the theming editor, and we you are done, export it as a zip and put it in your sources
+    - either put the barceloneta resources in your theme temporarily, change the LESS import path (like @import "++theme++barceloneta/less/barceloneta.plone.less";) temporarily, and when you are done, clean that up.
