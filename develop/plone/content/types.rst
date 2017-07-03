@@ -4,7 +4,15 @@ Content types
 
 .. admonition:: Description
 
-	Plone's content type subsystems and creating new content types programmatically.
+   Plone's content type subsystems and creating new content types programmatically.
+
+.. note::
+
+   While using Archetypes is fully supported in the Plone 5.x series, the recommendation is to
+   use Dexterity content types for any new development.
+
+   Archetypes support will be removed from core Plone in version 6.
+
 
 
 Introduction
