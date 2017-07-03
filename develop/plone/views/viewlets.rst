@@ -2,24 +2,26 @@
 Viewlets
 ========
 
-.. admonition:: Description
+.. topic:: Description
 
    Viewlets are parts of the page in Plone page rendering process.
    You can create, hide and shuffle them freely.
 
 
 Introduction
-------------
+============
 
 Viewlets are view snippets which will render a part of the HTML page.
+
 Viewlets provide conflict-free way to contribute new user-interface actions and
 HTML snippets to Plone pages.
 
-Each viewlet is associated with a viewlet manager. To add viewlets to your HTML code you first need
-to add them to a viewlet manager, which allows you to shuffle viewlets around through-the-web.
+Each viewlet is associated with a viewlet manager.
+
+To add viewlets to your HTML code you first need to add them to a viewlet manager, which allows you to shuffle viewlets around through-the-web.
 
 What viewlets do
-================
+----------------
 
 * Viewlets are managed using /@@manage-viewlets page
 
