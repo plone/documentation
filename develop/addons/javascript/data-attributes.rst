@@ -2,9 +2,9 @@
 Custom data attributes
 ======================
 
-.. admonition:: Description
+.. topic:: Description
 
-        How to add custom data attributes on the ``<body>`` tag.
+   How to add custom data attributes on the ``<body>`` tag.
 
 Plone adds a few data attributes on the ``<body>`` element.
 It's a handy way to pass some information to JavaScript.
@@ -12,11 +12,13 @@ It's a handy way to pass some information to JavaScript.
 This way, the JavaScript code is made more flexible and the values can be changed on the fly through the web.
 
 Add custom data attributes
---------------------------
+==========================
+
 There's two ways to add custom data attributes to Plone:
 
 Plone registry
-^^^^^^^^^^^^^^
+--------------
+
 Add the key and values needed on ``plone.patternoptions`` registry key.
 
 .. note::
@@ -25,7 +27,8 @@ Add the key and values needed on ``plone.patternoptions`` registry key.
    This is the standard way to configure/tweak mockup/patternslib patterns (hence the ``pat-`` prefix)
 
 Adapter
-^^^^^^^
+-------
+
 If the ``data-pat-`` prefix does not suite you, or you want complete freedom on what to add,
 you can create a ZCA adapter.
 
@@ -65,5 +68,4 @@ Python:
                 'data-another-data': 'another-value',
             }
 
-And that's it,
-as soon as you reload Plone (due to the ZCML changes) there should be two new data attributes on the ``<body>`` element.
+As soon as you reload Plone (due to the ZCML changes) there should be two new data attributes on the ``<body>`` element.
