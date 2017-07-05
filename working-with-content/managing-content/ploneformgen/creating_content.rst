@@ -1,12 +1,12 @@
 =========================
-Creating content from PFG
+Creating Content From PFG
 =========================
 
-.. admonition :: Description
+.. topic :: Description
 
     This how-to covers simple creation of portal content from PloneFormGen. We'll create web pages from sample form submissions.
 
- A question that's come up frequently on IRC and the Plone users' mailing list is "How do I create an event, news item, page, or some other content item from PloneFormGen? It's common that there's some security need or extra content needed that prevents just using Plone's "add item."
+ A question that's come up frequently on Gitter and the Plone forum is "How do I create an event, news item, page, or some other content item from PloneFormGen? It's common that there's some security need or extra content needed that prevents just using Plone's "add item."
 
 This is actually very easy if you know a little Python and are willing to learn something about the content items you want to create.
 
