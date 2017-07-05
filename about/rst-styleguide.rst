@@ -2,15 +2,9 @@
 ReStructuredText Style Guide
 ============================
 
-.. admonition:: Description
+.. topic:: Description
 
-   How to write content for the Plone Documentation.
-
-
-Introduction
-============
-
-This chapter explains the basics of editing, and updating to the *Plone Documentation*.
+   This page gives writing style guidelines for the Kubernetes documentation. These are guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 
 .. note::

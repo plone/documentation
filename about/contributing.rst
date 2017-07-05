@@ -1,124 +1,44 @@
-=====================
-Writing Documentation
-=====================
+=================================
+Contributing To The Documentation
+=================================
 
-.. admonition:: Description
+.. topic:: Description
 
-   How to write and submit content for the Plone Documentation.
-
-
-Reaching The Documentation Team
-===============================
-
-The Plone community runs a documentation team which is responsible for keeping the Plone documentation coherent.
-To reach this team for any questions please contact
-
-* `Documentation <https://community.plone.org/category/documentation>`_ category on community.plone.org.
-
-For news and updates you can also follow `PloneDocs <https://twitter.com/plonedocs>`_ on twitter.
-
-Reporting Issues
-================
-
-Documentation Issues
---------------------
-
-Documentation issues are tracked in our `issue tracker <https://github.com/plone/documentation/issues>`_.
-
-If you have already a `GitHub <https://github.com>`_ account and you find something missing or wrong in the docs, please open a ticket.
-
-One of the best ways to start contributing is to pick one of the tickets labeled `First Timer <https://github.com/plone/documentation/labels/First%20Timers>`_.
+   This document describes what documentation contributors should follow to ensure consistency throughout all publications.
 
 .. note::
 
-    Working on issues takes time and energy, to make it as pleasant as possible for everyone,
-    meaning for you and the reviewer we would like to ask you kindly to make yourself familiar with our
-    style-guides for :doc:`documentation </about/documentation_styleguide>` and :doc:`reStructuredText [reST]</about/rst-styleguide>`.
+   Don't hesitate to contribute also if English is not your first language !
 
-Plone Issues
-------------
-
-If you think your bug involves a core component of Plone, check to see if that component
-has its own repository under the `Plone organization on GitHub <https://github.com/plone>`_.
-
-If it does, use the component's issue tracker to submit your bug report.
-If the component does not have its own repository there, submit your bug report
-in `the catch-all CMFPlone tracker on GitHub <https://github.com/plone/Products.CMFPlone/issues>`_.
-
-Note: after figuring out where to post your report, but before doing so,
-please search the issue tracker to ensure this issue hasn't already been reported and that it hasn't already been fixed in a later version of the component.
-
-You can also find a `overview <https://plone.org/support/bugs>`_ about that on `plone.org <https://plone.org>`_.
-
-
-License
-=======
-
-The Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
-
-If you want to contribute to this documentation, you can do so directly by making a pull request,
-if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_.
-
-If you haven't filled in a Contributor Agreement, you can still contribute. Contact the Documentation team,
-for instance via our `community space <https://community.plone.org/c/documentation/>`_.
-
-Basically, all we need is your written confirmation that you are agreeing your contribution can be under Creative Commons.
-
-You can also add in a comment with your pull request "I, <full name>, agree to have this published under Creative Commons 4.0 International BY".
-
-Workflow
+Overview
 ========
 
-The documentation is hosted on GitHub. And there are tools hooked directly into it:
+The documentation is hosted on `GitHub <https://github.com/plone/documentation>`_.
 
-* there are branches for the different versions of Plone, see :ref:`plone-versions`.
+* There are branches for the different versions of Plone, see :ref:`plone-versions`.
 
-* translation hooks with `Transifex <https://www.transifex.com/>`_ are in place.
+* Some external documentation is pulled in, to collect all the documentation in one place.
 
-* some external documentation is pulled in, to collect all the documentation in one place.
 
-For these reasons, it is important we keep the documentation coherent.
-Therefore, we follow a simple workflow, which we ask all contributors to respect:
 
-- If you work on a `ticket <https://github.com/plone/documentation/issues>`_, assign yourself to it.
+General Guidelines
+==================
 
-- Please **DO NOT** commit to master directly. Even for the smallest and most trivial fix.
+Please follow these general guidelines.
+
+- **DO NOT** commit to master directly. Even for the smallest and most trivial fix.
 
 - **ALWAYS** open a pull request and ask somebody else to merge your contribution.
 
 - **NEVER** merge it yourself.
 
+- If you work on a `ticket <https://github.com/plone/documentation/issues>`_, assign yourself to it.
+
 - Create 'small' pull requests, one per each file, these are easier and faster to review, think *quality over quantity* ! 
 
-Your pull requests may be checked for spelling, and clarity.
 
-Don't hesitate to contribute also if English is not your first language, we will try to be helpful in corrections without being annoying.
-
-If you don't get feedback on your pull request in a day please come to #plone-docs and ask.
-
-The main goal of this process is not to annoy you. On the contrary, we **love** your contributions.
-
-But the documentation team also wants to keep the documentation in good shape.
-
-
-.. _plone-versions:
-
-Documentation For Different Versions Of Plone
-=============================================
-
-The documentation for the different versions (Plone 3, Plone 4, Plone 5) are organized in branches inside the `Plone Documentation <https://github.com/plone/documentation>`_
-
-The *default* branch points to the current version of Plone.
-
-Documentation changes that are valid for multiple versions of Plone can be done by making multiple pull requests, or by :doc:`cherry-picking </about/cherrypicking>`
-which may be easier to do when branches are widely different.
-
-When all this seems complicated, note in your pull request that you think this is valid for other versions of Plone as well,
-and the documentation team will take care.
-
-
-Editing The Documentation On GitHub
-===================================
+Editing On GitHub
+=================
 
 This is the recommended way for smaller changes, and for people who are not familiar with Git.
 
@@ -169,17 +89,18 @@ If possible please make sure to fill in the missing bits, for example
     Changes proposed in this pull request: Unified usage of '..code-block:: shell' as best practices
 
 
-
 Editing The Documentation Using Git
 ===================================
 
 This is the recommended method of editing the documentation for
 advanced users.
 
+If you are already a member of the Plone organisation on GitHub, create a branch in the `documentation repository <gttps://github.com/plone/documentation>`_.
+
+If you are not a member you can also create a `fork <https://help.github.com/articles/fork-a-repo>`_ of the documentation repository into your own repository.
+
 * Learn about `Sphinx <http://sphinx-doc.org/>`_ and `restructured text
   <http://sphinx-doc.org/rest.html>`_.
-
-* `Fork <https://help.github.com/articles/fork-a-repo>`_ the documentation source files into your own repository
 
 * Edit the file(s) which you want to update.
 
@@ -189,28 +110,4 @@ advanced users.
 
 For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
 
-Translation
-===========
 
-We use `Transifex <https://www.transifex.com/>`_ for translation.
-
-Quick Start:
-------------
-
-* Browse to: https://www.transifex.com/projects/p/plone-doc/ and choose your language.
-
-* Click on the right *Join Team*
-
-
-Getting Started
----------------
-
-* Go to: https://www.transifex.com/signin/
-
-* Go to: https://www.transifex.com/projects/p/plone-doc/
-
-* Click on: :guilabel:`HELP TRANSLATE PLONE DOCUMENTATION`
-
-* Choose your language
-
-* Click on the right :guilabel:`Join Team`
