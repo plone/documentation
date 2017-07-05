@@ -187,7 +187,7 @@ advanced users.
 
 * Commit your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request.
 
-For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
+For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`Helper tools </about/helper_tools>`.
 
 Translation
 ===========
@@ -197,7 +197,7 @@ We use `Transifex <https://www.transifex.com/>`_ for translation.
 Quick Start:
 ------------
 
-* Browse to: https://www.transifex.com/projects/p/plone-doc/ and choose your language.
+* Browse to: https://www.transifex.com/plone/plone5/ and choose your language.
 
 * Click on the right *Join Team*
 
@@ -207,7 +207,7 @@ Getting Started
 
 * Go to: https://www.transifex.com/signin/
 
-* Go to: https://www.transifex.com/projects/p/plone-doc/
+* Go to: https://www.transifex.com/plone/plone5/
 
 * Click on: :guilabel:`HELP TRANSLATE PLONE DOCUMENTATION`
 
