@@ -1,5 +1,5 @@
 ===============
-Asking for help
+Asking For Help
 ===============
 
 
@@ -9,8 +9,8 @@ Guidelines and Examples
 If you need help with an error or problem: before asking the question, please take a few minutes to read the guidelines below. It is important to know how to state questions, because once you learn it, you will get better answers back more quickly.
 
 
-Asking help on support and discussion forums
---------------------------------------------
+Support And Discussion Forums
+-----------------------------
 
 By stating a **well-phrased question** you increase the likelihood of fast and helpful responses to your question.
 
@@ -42,7 +42,7 @@ Follow netiquette while visiting and writing on forum or mailing list (give resp
 - Do not use bad words. Respect others and what they are doing.
 - Do not completely edit/erase your posts after you posted them on the forum (except for small corrections - they are allowed) Remember that once you sent them, they belong to the community and shall be used by anyone who needs it.
 
-How to write a good topic
+How To Write A Good Topic
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Keep in mind, that if you ask a question and all you hear is silence, it might be a good indicator that something is wrong with your topic. Read the hints below and try to match your topic with specified pattern.
@@ -65,12 +65,10 @@ The big picture - An opening sentence should state the general problem that you 
 
 **Steps to reproduce the issue** - Give information about your ideas of how this error appeared, what caused it or anything that could lead to reproducing the error on another computer, including your buildout.cfg, versions.cfg, version numbers of installed add-ons, detailed command lines, the complete error message stack. Mention your expected result.
 
-Asking for help in online chat
-------------------------------
+Online Chat
+-----------
 
-The Plone community uses `online chat <https://plone.org/support/chat>`_, specifically `Gitter <https://gitter.im/plone/public>`_ and traditional Plone IRC chat at the  `#plone <irc://irc.freenode.net/#plone>`_ IRC channel on the freenode IRC network.
-
-(To use Gitter you must log in using a free GitHub or Twitter account, which allows you to receive notifications when there is a response to your question. IRC does not require you to log in, but you will receive notifications of responses only while you remain connected).
+The Plone community uses `online chat <https://plone.org/support/chat>`_, specifically `Gitter <https://gitter.im/plone/public>`_.
 
 Here are useful hints for using online chat:
 
@@ -141,9 +139,6 @@ On Windows command prompt this is
 Zope outputs all debug information to the console where it was started in foreground mode. When the error happens, the full traceback is printed to the console as well.
 
 If Zope does not start in foreground mode it means that your add-on configuration is bad and you need to fix it and the related traceback is printed as well. In production mode, Zope ignores all add-ons which fail to load.
-
-
-
 
 Credits
 ^^^^^^^

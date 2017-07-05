@@ -1,6 +1,6 @@
-=======
-License
-=======
+===================================
+License For The Plone Documentation
+===================================
 
 The Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
 
