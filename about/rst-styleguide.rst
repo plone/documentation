@@ -95,7 +95,7 @@ Each page should contain, in this order:
 
 .. code-block:: rst
 
-   .. admonition:: Description
+   .. topic:: Description
 
       This text will go to Plone's pages description field. It will appear in the search engine listings for the page.
 
