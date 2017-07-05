@@ -108,6 +108,6 @@ If you are not a member you can also create a `fork <https://help.github.com/art
 
 * Commit your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request.
 
-For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
+For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`Helper tools </about/helper_tools>`.
 
 
