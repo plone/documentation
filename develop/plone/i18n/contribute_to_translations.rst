@@ -1,8 +1,8 @@
 ============================================
-How to contribute to Plone core translations
+How To Contribute To Plone Core Translations
 ============================================
 
-.. admonition:: Description
+.. topic:: Description
 
     How to contribute to the Plone translations.
 
@@ -11,13 +11,14 @@ Introduction
 ============
 
 You might want to have write access to https://github.com/collective/plone.app.locales to be able to commit your translation directly.
-For that, `join the collective github organization <https://collective.github.io/>`_.
 
-Meanwhile,
-you can fork the repository and work from there (more about it below).
+For that, `join the collective GitHub organization <https://collective.github.io/>`_.
 
-Updating translations
+You can fork the repository and work from there (more about it below).
+
+Updating Translations
 =====================
+
 If you want to test your latest translation with unreleased packages containing i18n fixes,
 get the buildout like this:
 
@@ -47,9 +48,10 @@ To update your translation, you can go there:
 Here you have the following directories:
 
 - ``locales`` used for core Plone translations.
-- ``locales-addons`` used for some addons packages.
+- ``locales-addons`` used for some add-ons packages.
 
-Open the po file with poedit, kbabel or any other i18n tool.
+Open the po file with `poedit <https://poedit.net/>`_, `kbabel <http://docs.translatehouse.org/projects/localization-guide/en/latest/guide/kbabel.html>`_ or any other i18n tool.
+
 For example for French:
 
 .. code-block:: shell
@@ -58,8 +60,8 @@ For example for French:
 
 Please do a ``git pull`` before editing a po file to be sure you have the latest version.
 
-Committing directly (commit access)
------------------------------------
+Committing Directly
+-------------------
 
 You can commit your translation from this locales directory:
 
@@ -69,28 +71,27 @@ You can commit your translation from this locales directory:
     git push
 
 
-Creating a pull request (no commit access)
-------------------------------------------
+Creating A Pull Request
+-----------------------
 
 If you do not have commit access on GitHub `collective group <https://github.com/collective>`_,
 you can do the following:
 
 - Login to GitHub.
 - Go to GitHub `plone.app.locales <https://github.com/collective/plone.app.locales>`_
-- Press *Fork*.
+- Press :guilabel:`Fork`.
   Now GitHub creates a copy of ``plone.app.locales`` package for you.
 - Then on your computer in ``plone.app.locales`` do a special git push to your own repository::
 
     git push git@github.com:YOURUSERNAMEHERE/plone.app.locales.git
 
 - Go to GitHub ``https://github.com/YOURUSERNAME/plone.app.locales``
-- Press button *Create Pull request*.
+- Press :guilabel:`Create Pull request`.
   Fill it in.
 
 The request will appear for *plone.app.locales* authors.
-If it does not get merged in timely manner,
-ask on `Plone forums <https://community.plone.org/c/development/i18nl10n>`_,
-or the other support channels see below.
+
+If it does not get merged in timely manner, ask on `Plone forums <https://community.plone.org/c/development/i18nl10n>`_.
 
 Support
 =======
