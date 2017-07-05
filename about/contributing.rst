@@ -17,19 +17,6 @@ To reach this team for any questions please contact
 
 For news and updates you can also follow `PloneDocs <https://twitter.com/plonedocs>`_ on twitter.
 
-Feedback
-========
-
-We need your feedback to make the documentation better !
-
-If you have already a GitHub account, please do not hesitate to open a ticket in our `issue tracker <https://github.com/plone/documentation/issues>`_ .
-
-If you do not have one, please use the 'Feedback' widget on `docs.plone.org <http://docs.plone.org>`_ .
-
-.. image:: /_static/feedback_widget_right.png
-   :align: center
-   :alt: Picture of feedback widget
-
 Reporting Issues
 ================
 
