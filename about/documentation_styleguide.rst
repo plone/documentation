@@ -87,42 +87,6 @@ Put the associated Makefile and conf.py into the /docs directory.
    If you use `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ to generate the layout of your add-on, the recommended files will already be there, and in the right place. You'll still have to write the content, though.
 
 
-.. _styleguide-changes-example:
-
-Tracking Changes
-================
-
-Feature-level changes to code are tracked inside ``CHANGES.rst``.
-The title of the ``CHANGES.rst`` file should be ``Changelog``.
-Example:
-
-.. sourcecode:: rst
-
-    Changelog
-    =========
-
-    1.0.0-dev (Unreleased)
-    ----------------------
-
-    - Added feature Z.
-      [github_userid1]
-
-    - Removed Y.
-      [github_userid2]
-
-
-    1.0.0-alpha.1 (yyyy-mm-dd)
-    --------------------------
-
-    - Fixed Bug X.
-      [github_userid1]
-
-
-Add an entry every time you add/remove a feature, fix a bug, etc. on top of the
-current development changes block.
-
-
-
 .. _styleguide-toc-example:
 
 Table Of Contents For Your Documentation
@@ -141,4 +105,6 @@ Make sure all .rst files are referenced with a Table of Contents directive, like
       how_to_contribute
 
 
-(note: the files themselves will have an extension of .rst, but you don't specify that extension in the toctree directive)
+.. note::
+
+   The files themselves will have an extension of .rst, but you don't specify that extension in the toctree directive.
