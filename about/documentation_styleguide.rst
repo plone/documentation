@@ -2,7 +2,7 @@
 Documentation Styleguide
 ========================
 
-.. admonition:: Description
+.. topic:: Description
 
     A guide to write Documentation for Plone and for Plone Add-ons
 

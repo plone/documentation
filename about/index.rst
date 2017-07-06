@@ -9,6 +9,7 @@ About
     issues
     documentation_styleguide
     rst-styleguide
+    readme-examplee
     word_choice
     helper_tools
     license
