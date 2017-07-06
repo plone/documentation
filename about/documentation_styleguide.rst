@@ -4,7 +4,7 @@ Documentation Styleguide
 
 .. topic:: Description
 
-    A guide to write Documentation for Plone and for Plone Add-ons
+   A guide to write Documentation for Plone and for Plone Add-ons
 
 
 Introduction
@@ -22,7 +22,9 @@ Further advantages of following this guide:
 Tone
 ----
 
-Guides should be informational, but friendly. Use the active voice whenever possible, and contractions and pronouns are acceptable (in particular, the use of you in regards to the reader).
+Guides should be informational, but friendly.
+
+Use the active voice whenever possible, and contractions and pronouns are acceptable (in particular, the use of you in regards to the reader).
 
 Use common sense – if a term is related to a high-level concept that fewer people would know, then take a sentence or two to explain it.
 
@@ -33,6 +35,7 @@ It needs to be translatable. No, not into PHP, but into Chinese, Catalan, Klingo
 Think about it this way:
 
 Each sentence in the documentation can be turned into a .po string.
+
 Breaking sentences with linebreaks would mean a translator will only see part of the sentence, making it impossible to translate.
 
 Documentation Structure & Styleguide
@@ -75,102 +78,13 @@ For including documentation into docs.plone.org, **please** follow these guideli
 
 * Please follow our :doc:`word_choice`.
 
-* Usage of `Sphinx <http://sphinx-doc.org/>`_ within your project is optional, but if you want your add-on to (also) be documented for instance on `Read The Docs <https://readthedocs.org/>`_ it is highly recommended. Put the associated Makefile and conf.py into the /docs directory.
+* Usage of `Sphinx <http://sphinx-doc.org/>`_ within your project is optional, but if you want your add-on to (also) be documented for instance on `Read The Docs <https://readthedocs.org/>`_ it is highly recommended.
+Put the associated Makefile and conf.py into the /docs directory.
 
 
 .. note::
 
    If you use `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ to generate the layout of your add-on, the recommended files will already be there, and in the right place. You'll still have to write the content, though.
-
-
-.. _styleguide-readme-example:
-
-
-README Example
-==============
-
-This is an example of how a README.rst should look like:
-
-.. code-block:: rst
-
-    =====================
-    collective.fancystuff
-    =====================
-
-    collective.fancystuff will make your Plone site more fancy.
-    It can do cool things, and will make the task of keeping your site fancy a lot easier.
-
-    The main audience for this are people who run a chocolate factory.
-    But it also is useful for organisations planning on world domination.
-
-
-    Features
-    ========
-
-    - Be awesome
-    - Make things fancier
-    - Works out of the box, but can also be customized.
-      After installation, you will find a new item in your site control panel where to set various options.
-
-
-    Examples
-    ========
-
-    This add-on can be seen in action at the following sites:
-    - http://fancysite.com
-    - http://fluffystuff.org
-
-
-    Documentation
-    =============
-
-    Full documentation for end users can be found in the "docs" folder.
-    It is also available online at http://docs.plone.org/foo/bar
-
-
-    Translations
-    ============
-
-    This product has been translated into
-
-    - German
-
-
-    Installation
-    ============
-
-    Install collective.fancystuff by adding it to your buildout:
-
-       [buildout]
-
-        ...
-
-        eggs =
-            collective.fancystuff
-
-
-    and then running "bin/buildout"
-
-
-
-    Contribute
-    ==========
-
-    - Issue Tracker: https://github.com/collective/collective.fancystuff/issues
-    - Source Code: https://github.com/collective/collective.fancystuff
-    - Documentation: https://docs.plone.org/foo/bar
-
-    Support
-    =======
-
-    If you are having issues, please let us know.
-    We have a mailing list located at: project@example.com
-
-    License
-    =======
-
-    The project is licensed under the GPLv2.
-
 
 
 .. _styleguide-changes-example:
