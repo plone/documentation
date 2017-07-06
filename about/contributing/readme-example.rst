@@ -2,9 +2,9 @@
 README Example
 ==============
 
-.. _styleguide-readme-example:
+.. topic::
 
-This is an example of how a README.rst should look like:
+   This is an example of how a README.rst should look like:
 
 .. code-block:: rst
 

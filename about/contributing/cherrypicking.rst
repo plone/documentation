@@ -1,8 +1,8 @@
 =====================================
-Add your changes to multiple branches
+Add Your Changes To Multiple Branches
 =====================================
 
-.. admonition:: Description
+.. topic:: Description
 
    How to cherry-pick your changes from one branch to another branch.
 

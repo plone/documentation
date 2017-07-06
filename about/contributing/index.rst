@@ -9,16 +9,16 @@ Contributing To The Documentation
 .. note::
 
    Contributing to the docs is a excellent way to get involved, meet the community and to improve Plone !
-   
+
    Don't hesitate to contribute also if English is not your first language !
- 
+
 
 Overview
 ========
 
 The documentation is hosted on `GitHub <https://github.com/plone/documentation>`_.
 
-* There are branches for the different versions of Plone, see :doc:`versions`.
+* There are branches for the different :doc:`versions <versions>` of Plone.
 
 * Some external documentation is pulled in, to collect all the documentation in one place.
 
@@ -77,6 +77,7 @@ Before You Make A Pull Request
 * Check that you are using valid restructured text.
 
 
+
 Pull Request Checklist
 ======================
 
@@ -105,8 +106,8 @@ If possible please make sure to fill in the missing bits, for example
     Changes proposed in this pull request: Unified usage of '..code-block:: shell' as best practices
 
 
-Editing The Documentation Using Git
-===================================
+Editing The Docs Using Git
+==========================
 
 This is the recommended method of editing the documentation for
 advanced users.
@@ -124,6 +125,19 @@ If you are not a member you can also create a `fork <https://help.github.com/art
 
 * Commit your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request.
 
-For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`Helper tools </about/helper_tools>`.
+For more information about writing documentation please read the :doc:`styleguide <documentation_styleguide>` and the docs about :doc:`Helper tools <helper_tools>`.
 
+.. toctree::
+   :hidden:
+
+   documentation_styleguide
+   rst-styleguide
+   helper_tools
+   versions
+   word_choice
+   readme-example
+   changelog-example
+   cherrypicking
+   issues
+   translation
 

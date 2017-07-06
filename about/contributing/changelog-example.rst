@@ -1,11 +1,14 @@
-.. _styleguide-changes-example:
-
+================
 Tracking Changes
 ================
 
+.. topic:: Description
+
+   This is a example of a changelog.
+
 Feature-level changes to code are tracked inside ``CHANGES.rst``.
-T
-he title of the ``CHANGES.rst`` file should be ``Changelog``.
+
+The title of the ``CHANGES.rst`` file should be ``Changelog``.
 
 Example:
 
