@@ -8,14 +8,17 @@ Contributing To The Documentation
 
 .. note::
 
+   Contributing to the docs is a excellent way to get involved, meet the community and to improve Plone !
+   
    Don't hesitate to contribute also if English is not your first language !
+ 
 
 Overview
 ========
 
 The documentation is hosted on `GitHub <https://github.com/plone/documentation>`_.
 
-* There are branches for the different versions of Plone, see :ref:`plone-versions`.
+* There are branches for the different versions of Plone, see :doc:`versions`.
 
 * Some external documentation is pulled in, to collect all the documentation in one place.
 
@@ -37,26 +40,39 @@ Please follow these general guidelines.
 - Create 'small' pull requests, one per each file, these are easier and faster to review, think *quality over quantity* ! 
 
 
-Editing On GitHub
+Edit In The Cloud
 =================
+
+Head over to the `documentation repository <https://github.com/plone/documentation>`_.
+
+You can then click the :guilabel:`Fork` button in the upper-right area of the screen to create a copy of our site in your GitHub account called a fork.
+
+
+Make any changes you want in your fork, and when you are ready to send those changes to us, go to the index page for your fork and click New Pull Request to let us know about it.
+
+#. Fill in the text-box :guilabel:`Commit changes` at the end of the page telling why you did the changes.
+#. Press the button :guilabel:`Commit changes` next to it when you are done.
+#. Head to the green :guilabel:`New pull request` button (e.g. by navigating to your fork's root and clicking :guilabel:`Pull requests` on the right menu-bar.
+#. Click :guilabel:`Send pull request`.
 
 This is the recommended way for smaller changes, and for people who are not familiar with Git.
 
-- Go to `Plone Documentation <https://github.com/plone/documentation>`_ on  GitHub.
-- Press the :guilabel:`Fork` button. This will create your own personal copy of the documentation.
-- **Edit** files using GitHub's text editor in your web browser
-- Fill in the :guilabel:`Commit changes`-textbox at the end of the page telling why you did the changes. Press the :guilabel:`Commit changes`-button next to it when done.
-- Then head to the green :guilabel:`New pull request`-button (e.g. by navigating to your fork's root and clicking :guilabel:`Pull requests` on the right menu-bar, or directly via https://github.com/yourGitHubUserName/documentation/pulls), you won't need to fill in any additional text.
-  Press :guilabel:`New pull request`-button, finally click :guilabel:`Send pull request`.
-- Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on GitHub.
-- For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`this </about/helper_tools>`.
-- You will receive a message when your request has been integrated into the documentation. At that moment, feel free to delete the copy of the documentation you created under your account on GitHub. Next time you contribute, just fork again. That way you'll always have a fresh copy of the documentation to work on.
+Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on GitHub.
+
+For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`our docs about helper tools </about/helper_tools>`.
+
+You will receive a message when your request has been integrated into the documentation.
+
+At that moment, feel free to delete the copy of the documentation you created under your account on GitHub.
+
+Next time you contribute, fork again.
+That way you'll always have a fresh copy of the documentation to work on.
 
 
 Before You Make A Pull Request
 ==============================
 
-* Check for typos. Again, do not let this discourage you if English is not your first language, but simple typing errors can usually be found with spellcheckers
+* Before you commit your changes, it’s a good idea to run a spell check.
 * Make sure that all links you put in are valid.
 * Check that you are using valid restructured text.
 
@@ -66,7 +82,7 @@ Pull Request Checklist
 
 Making a good pull request makes life easier for everybody:
 
-* The title and description of a pull request **MUST** be descriptive and need to reflect the changes. So please say "grammar fixes on the intro page" or "new page: feature x explained as a user story"
+* The title and description of a pull request should be descriptive and need to reflect the changes.
 
 If you can state for which versions of Plone your submissions are valid, that would be awesome.
 
@@ -95,7 +111,7 @@ Editing The Documentation Using Git
 This is the recommended method of editing the documentation for
 advanced users.
 
-If you are already a member of the Plone organisation on GitHub, create a branch in the `documentation repository <gttps://github.com/plone/documentation>`_.
+If you are already a member of the Plone organization on GitHub, create a branch in the `documentation repository <gttps://github.com/plone/documentation>`_.
 
 If you are not a member you can also create a `fork <https://help.github.com/articles/fork-a-repo>`_ of the documentation repository into your own repository.
 
