@@ -2,21 +2,19 @@
 ReStructuredText Style Guide
 ============================
 
-.. admonition:: Description
+.. topic:: Description
 
-   How to write content for the Plone Documentation.
+   This page gives writing style guidelines for the Kubernetes documentation.
 
-
-Introduction
-============
-
-This chapter explains the basics of editing, and updating to the *Plone Documentation*.
+   These are guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 
 .. note::
 
   All pages should be in ReStructured Text, and have a .rst extension.
+  
   Images should be in .png, or .jpg format.
+  
   Please, don't use .gif, because the PDF-generating software has issues with that.
 
 
@@ -33,7 +31,9 @@ Documentation should **not** follow `PEP8 <https://www.python.org/dev/peps/pep-0
 
   Your sentences will become .po strings, to be translated.
 
-  Now, think about how translations would work if the translator can only see an arbitrary part of a sentence. Translating is hard enough without creating additional problems...
+  Now, think about how translations would work if the translator can only see an arbitrary part of a sentence.
+
+  Translating is hard enough without creating additional problems...
 
 If you want to keep short lines:
 
@@ -105,7 +105,7 @@ Introduction paragraph: A brief overview:
 .. code-block:: rst
 
    Introduction
-   ------------
+   ============
 
    This chapter will describe the basics of how to contribute to this document.
 
@@ -175,7 +175,9 @@ As individual files do not have so called "parts" or "chapters", the headings wo
 Links
 =====
 
-Sphinx can use two link styles, inline and via a link at the end of the page. Please **do not** separate the link and the target definition, please **only** use inline links like this:
+Sphinx can use two link styles, inline and via a link at the end of the page.
+
+Please **do not** separate the link and the target definition, please **only** use inline links like this:
 
 .. code-block:: rst
 
@@ -189,7 +191,8 @@ Topic
 
 A topic is like a block quote with a title, or a self-contained section with no subsections.
 
-Use the "topic" directive to indicate a self-contained idea that is separate from the flow of the document. Topics may occur anywhere a section or transition may occur. Body elements and topics may not contain nested topics.
+Use the "topic" directive to indicate a self-contained idea that is separate from the flow of the document.
+Topics may occur anywhere a section or transition may occur. Body elements and topics may not contain nested topics.
 
 The directive's sole argument is interpreted as the topic title; the next line must be blank.
 
@@ -337,9 +340,8 @@ Inline code highlighting:
 .. note::
 
    These Python objects are rendered as hyperlinks if the symbol is mentioned in a relevant directive.
-   See
-   http://sphinx-doc.org/domains.html and
-   http://sphinx-doc.org/ext/autodoc.html
+
+   See http://sphinx-doc.org/domains.html and http://sphinx-doc.org/ext/autodoc.html
 
 Making an external link (note the underscore at the end):
 
