@@ -1,19 +1,19 @@
-===================
-Preparing the Server
+====================
+Preparing The Server
 ====================
 
-Preparing to install Plone
+Preparing To Install Plone
 ==========================
 
 Plone and Zope are generally not available via platform package or port systems.
 
 You can’t “apt-get install plone” to add it to a Debian server.
-(There are packages and ports out there, if you search hard enough to find them. But don’t do it: they’ve generally had a poor record for maintenance.)
+(There are packages and ports out there, if you search hard enough to find them.
+
+Do not do it: they’ve generally had a poor record for maintenance.)
 
 This means that you typically need to build Plone (compiling source code to binary components) on your target server.
-Binary installers for Plone are available for Windows and OS X, but not for Linux and BSD systems.
 
-The OS X binary installer isn’t meant for production use - though it’s great for theme and add-on development and testing.
 
 A build environment for Plone requires two sets of components:
 
@@ -26,7 +26,7 @@ A build environment for Plone requires two sets of components:
 It's generally best to install as many of these components as you can via platform packages or ports.
 That way, you'll be able to use your platform's automated mechanisms to keep these up-to-date, particularly with security fixes.
 
-System python?
+System Python?
 --------------
 
 Plone's Unified Installer will install a suitable Python for you.
@@ -34,9 +34,10 @@ However, you may wish to use your system's Python if it meets Plone's requiremen
 Plone 5 requires Python 2.7.
 
 If you choose to use the system Python, you'll want to use virtualenv to create a virtual Python environment to isolate the Zope/Plone install from system Python packages.
-The Unified Installer will automatically do this for you. If you're not using the Unified Installer, learn to use virtualenv.
+The Unified Installer will automatically do this for you.
+If you're not using the Unified Installer, learn to use virtualenv.
 
-Basic build components
+Basic Build Components
 ----------------------
 
 All installs will require the basic GNU build and archive tools: gcc, g++, gmake, gnu tar, gunzip, bunzip2 and patch.
@@ -50,7 +51,9 @@ System Python
 ~~~~~~~~~~~~~
 
 If you're using your system's Python, you will need to install the Python development headers so that you'll be able to build new Python components.
+
 On Debian/Ubuntu systems, this is usually the python-dev package.
+
 Port installs will automatically include the required python.h requirement as part of their build process.
 
 If you're using your system Python, you will not need the readline and libssl development packages mentioned below.
@@ -92,7 +95,7 @@ To get PDFs and common office automation formats indexed, add:
 Development versions are not needed for these.
 
 
-Platform notes
+Platform Notes
 ~~~~~~~~~~~~~~
 
 Debian/Ubuntu
@@ -189,21 +192,26 @@ OS X
 Installing XCode and activating the optional command-line utilities will give you the basic GNU tools environment you need to install Plone with the Unified Installer.
 You may also use MacPorts (the BSD ports mechanism, tailored to OS X) to install libjpeg, libxslt and readline. If you do, remember to keep your ports up-to-date, as Apple's updates won't do it for you.
 
-Creating a Plone user
+Creating a Plone User
 ---------------------
 
 While testing or developing for Plone, you may have used an installation in a home directory, owned by yourself.
 That is not suitable for a production environment.
+
 Plone's security record is generally excellent, however there have been - and probably will be again in the future - vulnerabilities that allow an attacker to execute arbitrary commands with the privileges of the process owner.
+
 To reduce this kind of risk, Plone - and all other processes that allow Internet connections - should be run with user identities that have the minimum privileges necessary to maintain their data and write logs.
 
 In a Unix-workalike environment, the most common way of accomplishing this is to create a special user identity under which you will run Plone/Zope.
+
 That user identity should ideally have no shell, no login rights, and write permissions adequate only to change files in its ./var directory.
 
 The ideal is hard to achieve, but it's a good start to create an unprivileged "plone" user, then use "sudo -u plone command" to install Plone and run buildout.
-This is basically what the Unified Installer will do for you if you run its install program via sudo. The installer uses root privileges to create a "plone" user (if one doesn't exist), then drops them before running buildout.
 
-.. admonition:: Don't run buildout as root!
+This is what the Unified Installer will do for you if you run its install program via sudo.
+The installer uses root privileges to create a "plone" user (if one doesn't exist), then drops them before running buildout.
+
+.. warning:: Don't run buildout as root!
 
     Don't use bare "sudo" or a root login to run buildout.
     Buildout fetches components from the Python Package Index and other repositories.
