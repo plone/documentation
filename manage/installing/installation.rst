@@ -44,7 +44,7 @@ From here, you can also find links to the Vagrant install kit (if you wish to in
 Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer.
 "Unified" refers to its ability to install on most Unix workalikes.
 
-Plone installation requirements
+Plone Installation Requirements
 ===============================
 
 See :doc:`Plone installation requirements <requirements>` for detailed requirements.
@@ -53,7 +53,7 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
   Shared hosting is not supported unless the shared hosting company says Plone is good to go.
 
 
-How to install Plone
+How To Install Plone
 ====================
 
 Plone can run on all popular desktop or server operating systems, including Linux, OS X, BSD and Microsoft Windows.
@@ -64,8 +64,8 @@ Plone can run on all popular desktop or server operating systems, including Linu
 * You can install Plone locally on your own computer for development and test drive
 
 
-Installing Plone using the Unified UNIX Installer
--------------------------------------------------
+Plone Unified UNIX Installer
+----------------------------
 
 .. note::
 
@@ -88,15 +88,11 @@ The resulting installation is self-contained, does not touch system files, and i
 If you are not familiar with UNIX operating system command line you might want to study this `Linux shell tutorial <http://linuxcommand.org/learning_the_shell.php>`_ first.
 
 
-Install the operating system software and libraries needed to run Plone
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install Requirements
+~~~~~~~~~~~~~~~~~~~~
 
 .. example-code::
-   .. code-block:: Ubuntu 14.04
-
-      sudo apt install python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
-
-   .. code-block:: Ubuntu 16.04
+   .. code-block:: Ubuntu
 
       sudo apt install python2.7 python2.7-dev python-setuptools python-dev build-essential libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
@@ -150,8 +146,8 @@ If you're planning on developing with Plone, install git version control support
 
 
 
-Download the latest Plone unified installer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download The Latest Plone Installer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download from `the plone.org download page <http://plone.org/download>`_ to your server using wget command.
 
@@ -163,8 +159,8 @@ Substitute the latest version number for 5.0 in the instructions below.
 
     wget --no-check-certificate https://launchpad.net/plone/5.0/5.0.4/+download/Plone-5.0.4-UnifiedInstaller.tgz
 
-Run the Plone installer in standalone mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Plone Installer In Standalone Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Extract the downloaded file
 
@@ -233,8 +229,8 @@ You can change this password after logging in to the Management Interface.
    setting is not effective after Plone has been started for the first time.
    Changing this setting does not do any good.
 
-Install the Plone developer tools
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install Plone Developer Tools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you're using this Plone install for development, add the common development tool set.
 
@@ -276,7 +272,7 @@ to stop the instance.
 By default, Plone will listen to port 8080 on available network interfaces.
 The port may be changed by editing buildout.cfg and re-running buildout.
 
-You've got Plone
+You've Got Plone
 ~~~~~~~~~~~~~~~~
 
 Now take a look at your Plone site by visiting the following address in your webbrowser::
@@ -294,8 +290,8 @@ For automatic start-up when your server boots up, init scripts, etc.
 please see the :doc:`deployment guide </manage/deploying/production/index>`.
 
 
-Installing Plone using RPMs, .dev, … packages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing Plone Using RPM, Deb Packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not supported by Plone community.
 Plone dependencies can and should be installed via your operating system package manager,
@@ -307,7 +303,7 @@ The packages that have been offered in the past via apt, yum, dnf, port etcetera
 Microsoft Windows
 =================
 
-Installing Plone on Windows
+Installing Plone On Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For Plone 5, there currently is no binary installer. We recommend using the `Vagrant kit <https://github.com/plone/plonedev.vagrant>`__
@@ -319,11 +315,11 @@ For the Plone 4.3 series, there is a `binary installer <https://plone.org/produc
 If you wish to develop Plone on Windows you need to set-up a working MingW environment (this can be somewhat painful if you aren't used to it).
 
 
-OSX
-===
+macOS
+=====
 
-Installing Plone using VirtualBox/Vagrant install kit or VirtualBox appliance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+VirtualBox/Vagrant
+^^^^^^^^^^^^^^^^^^
 
 This is the recommended method if you want to try Plone for the first time.
 
@@ -331,8 +327,8 @@ Please use the installer from the download page `<http://plone.org/products/plon
 
 
 
-Installing Plone from source on OS X
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing Plone On macOS
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Installation via the Unified Installer or buildout is similar to Unix.
 However, you will need to install a command-line build environment.
@@ -354,12 +350,12 @@ LibXML2/LibXSLT Versions
 
 Don't worry about this if you're using an installer.
 
-Entering debug mode after installation
-======================================
+Debug Mode
+==========
 
 When you have Plone installed and want to start development you need do :doc:`enter debug mode </develop/plone/getstarted/debug_mode>`.
 
-Installer source code
+Installer Source Code
 =====================
 
 * https://github.com/plone/Installers-UnifiedInstaller
