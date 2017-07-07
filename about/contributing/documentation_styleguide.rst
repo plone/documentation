@@ -4,7 +4,7 @@ Documentation Styleguide
 
 .. topic:: Description
 
-   A guide to write Documentation for Plone and for Plone Add-ons
+   A guide on how to write Documentation for Plone and for Plone Add-ons
 
 
 Introduction
@@ -28,18 +28,60 @@ Use the active voice whenever possible, and contractions and pronouns are accept
 
 Use common sense – if a term is related to a high-level concept that fewer people would know, then take a sentence or two to explain it.
 
-**Your documentation is not code.**
+Avoid using "we" users are more engaged with documentation when you use second person (that is, you address the user as “you”).
 
-It needs to be translatable. No, not into PHP, but into Chinese, Catalan, Klingon, ...
+Writing in second person has the following advantages:
 
-Think about it this way:
+- Second person promotes a friendly tone by addressing users directly.
 
-Each sentence in the documentation can be turned into a .po string.
+- Using second person with the imperative mood (in which the subject you is understood) and active voice helps to eliminate wordiness and confusion about who or what initiates an action, especially in procedural steps.
 
-Breaking sentences with linebreaks would mean a translator will only see part of the sentence, making it impossible to translate.
+Line Length
+-----------
 
-Documentation Structure & Styleguide
-====================================
+- Please do not follow `PEP8 <https://www.python.org/dev/peps/pep-0008/#maximum-line-length>`_ maximum line length standard.
+
+- Keep sentences short and sentences and understandable .
+
+- Use `semantic linefeeds <http://rhodesmill.org/brandon/2012/one-sentence-per-line/>`_ when you are editing.
+
+- Keep in mind that your sentences will become .po strings, for translation.
+
+
+This will greatly improve the editing and maintenance of your documents.
+
+Take this example paragraph::
+
+    Patterns can take options in two ways:
+    from the DOM or via the jQuery interface.
+    It is highly recommended to use the DOM interface,
+    since it offers a lot more flexibility compared to the jQuery approach.
+    
+    Also, if you wish to use the automatic binding and rebinding functionality,
+    the DOM approach is more straightforward and hassle-free.
+
+Please do not follow `PEP8 <https://www.python.org/dev/peps/pep-0008/#maximum-line-length>`_ maximum line length standard.
+
+Limiting lines to a maximum of 79 characters
+
+Tab Policy
+----------
+
+* Indentation 4 spaces
+
+* No hard tabs
+
+* No trailing whitespaces
+
+Headings And Filenames
+----------------------
+
+* Start capitals – capitalization of all words, regardless of the part of speech.
+
+* For the filenames, use-dash-naming-style
+
+Documentation Structure
+=======================
 
 For including documentation into docs.plone.org, **please** follow these guidelines:
 
@@ -51,7 +93,7 @@ For including documentation into docs.plone.org, **please** follow these guideli
   - README.rst   This should be a **short** description of your add-on, not the entire documentation!
     See the :ref:`styleguide-readme-example`
 
-  - CHANGES.rst  This should track the feature changes in your add-on, see :ref:`styleguide-changes-example`
+  - CHANGES.rst  This should track the feature changes in your add-on, see :doc:`changelog-example`
 
   - CONTRIBUTORS.rst  This should list the people writing, translating and otherwise contributing
 
@@ -63,7 +105,6 @@ For including documentation into docs.plone.org, **please** follow these guideli
 * use relative links for internal links within your /docs/ directory, to include images for instance.
 
 * If you want to include images and screenshots, you should place them into /docs/resources/ , along with other resources like PDF's, audio, video, etcetera.
-  (*Yes! Make more screenshots, we love you! But do remember, .png or .jpg as file formats, no .gif please*)
 
 * Please do not symlink to, or use the *include* directive on files that live outside your '/docs' directory.
 
@@ -89,22 +130,4 @@ Put the associated Makefile and conf.py into the /docs directory.
 
 .. _styleguide-toc-example:
 
-Table Of Contents For Your Documentation
-========================================
 
-Make sure all .rst files are referenced with a Table of Contents directive, like this example:
-
-.. code-block:: rst
-
-   .. toctree::
-      :maxdepth: 2
-
-      quickstart
-      working_examples
-      absolutely_all_options_explained
-      how_to_contribute
-
-
-.. note::
-
-   The files themselves will have an extension of .rst, but you don't specify that extension in the toctree directive.

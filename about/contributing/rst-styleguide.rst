@@ -1,59 +1,22 @@
-============================
-ReStructuredText Style Guide
-============================
+==========================
+General Writing Guidelines
+==========================
 
 .. topic:: Description
 
-   This page gives writing style guidelines for the Kubernetes documentation.
+   This page explains reST writing guidelines for the Plone documentation.
 
-   These are guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+   Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 
-.. note::
+Overview
+========
 
-  All pages should be in ReStructured Text, and have a .rst extension.
+- All pages should be in ReStructured Text, and have a .rst extension.
   
-  Images should be in .png, or .jpg format.
+- Images should be in .png, or .jpg format.
   
-  Please, don't use .gif, because the PDF-generating software has issues with that.
-
-
-Line Length & Translations
-==========================
-
-Documentation is not code. Repeat after us: **Documentation is not code.**
-
-Documentation should **not** follow `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_ or other arbitrary conventions.
-
-.. note::
-
-  **Remember :** This documentation is set up so it is fully translatable by using standard tools like transifex.
-
-  Your sentences will become .po strings, to be translated.
-
-  Now, think about how translations would work if the translator can only see an arbitrary part of a sentence.
-
-  Translating is hard enough without creating additional problems...
-
-If you want to keep short lines:
-
-Use `semantic linefeeds <http://rhodesmill.org/brandon/2012/one-sentence-per-line/>`_
-when you are editing restructured text (or any other interpreted rich text format) because it will greatly improve the editing and maintenance of your documents.
-
-Take this example paragraph::
-
-    Patterns can take options in two ways:
-    from the DOM or via the jQuery interface.
-    It is highly recommended to use the DOM interface,
-    since it offers a lot more flexibility compared to the jQuery approach.
-    Also,
-    if you wish to use the automatic binding and rebinding functionality,
-    the DOM approach is more straightforward and hassle-free.
-
-Notice how it's easier to just reshuffle sentences and add stuff if, instead of using your editor "autowrap" feature,
-you manually insert line breaks after full stops, commas, or upon "grammatical" boundaries (and not merely word ones).
-
-Do not be afraid to use more than 80 characters.
+- Please, don't use .gif, because the PDF-generating software has issues with that.
 
 
 Document Page Format
@@ -61,21 +24,27 @@ Document Page Format
 
 Here are some Sphinx coding conventions used in the documentation.
 
-Tab Policy
-----------
 
-* Indentation 4 spaces
+Table Of Contents
+-----------------
 
-* No hard tabs
+Make sure all .rst files are referenced with a Table of Contents directive, like this example:
 
-* No trailing whitespaces
+.. code-block:: rst
 
-Headings And Filenames
-----------------------
+   .. toctree::
+      :maxdepth: 2
 
-* For the headings, capitalize the first letter only
+      quickstart
+      working_examples
+      absolutely_all_options_explained
+      how_to_contribute
 
-* For the filenames, use_underscore_naming_style
+
+.. note::
+
+   The files themselves will have an extension of .rst, but you don't specify that extension in the toctree directive.
+
 
 Page Structure
 --------------
@@ -90,33 +59,23 @@ Each page should contain, in this order:
    Writing and updating this document
    ==================================
 
-* The description of the page, which will appear in Plone's *Description* Dublin Core metadata field.
-  This created using the reST *admonition* directive. A single paragraph of text consisting of 1-3 sentences is recommended, so that the same text fits into the search engine results (Google):
+* A single paragraph of text consisting of 1-3 sentences is recommended, so that the same text fits into the search engine results:
 
 .. code-block:: rst
 
    .. topic:: Description
 
-      This text will go to Plone's pages description field. It will appear in the search engine listings for the page.
+      This text will go to Plone's pages description field.
 
 
-Introduction paragraph: A brief overview:
+A number of paragraphs: The actual content of the document page:
 
 .. code-block:: rst
 
    Introduction
    ============
 
-   This chapter will describe the basics of how to contribute to this document.
-
-A number of paragraphs: The actual content of the document page:
-
-.. code-block:: rst
-
-   Contributions needed
-   --------------------
-
-   Below is the list of documentation and references we'd like to see
+   Below is the list of documentation and references.
 
 Section Structure
 -----------------
@@ -144,10 +103,8 @@ Each section (folder) must contain
 Headings
 ========
 
-reStructuredText and Sphinx enable any style you would prefer for the various heading level you would need.
-For example, underlining level 1 headings with ``.``, level 2 headings with ``#`` and level 3 headings with ``|`` is perfectly valid as far as ``docutils`` is concerned.
-
-Unfortunately this is not the same for a human documentation maintainer.
+Readers use the table of contents or scan through the headings to find the required content.
+Therefore, headings must reflect the information that the readers search.
 
 For having consistent heading styles in all files it is recommended to follow strictly the rules stated in the `Sphinx manual <http://sphinx-doc.org/rest.html#sections>`_.
 
@@ -186,42 +143,15 @@ Please **do not** separate the link and the target definition, please **only** u
 otherwise the URL is not attached to the context it is used in, and that makes it harder for translators to use the right expressions.
 
 
-Topic
-=====
-
-A topic is like a block quote with a title, or a self-contained section with no subsections.
-
-Use the "topic" directive to indicate a self-contained idea that is separate from the flow of the document.
-Topics may occur anywhere a section or transition may occur. Body elements and topics may not contain nested topics.
-
-The directive's sole argument is interpreted as the topic title; the next line must be blank.
-
-All subsequent lines make up the topic body, interpreted as body elements. For example:
-
-.. code-block:: rst
-
-    .. topic:: Topic Title
-
-        Subsequent indented lines comprise
-        the body of the topic, and are
-        interpreted as body elements.
-
 Syntax Highlighting
 ===================
 
 Sphinx does syntax highlighting using the `Pygments <http://pygments.org/>`_ library.
 
-You can specify different highlighting for a code block using the following syntax::
-
-    With two colons you start a code block using the default highlighter::
-
-        # Some Python code here
-        # The language defaults to Python, we don't need to set it
-        if 1 == 2:
-            pass
-
-
 You can specify the language used for syntax highlighting by using the ``code-block`` directive:
+
+Python
+------
 
 .. code-block:: rst
 
@@ -231,36 +161,8 @@ You can specify the language used for syntax highlighting by using the ``code-bl
            # This is Python code
            pass
 
-For example, to specify XML:
-
-.. code-block:: rst
-
-   .. code-block:: xml
-
-       <somesnippet>Some XML</somesnippet>
-
-... or UNIX shell:
-
-.. code-block:: rst
-
-   .. code-block:: shell
-
-      # Start Plone in foreground mode for a test run
-      cd ~/Plone/zinstance
-      bin/plonectl fg
-
-... or a buildout.cfg:
-
-.. code-block:: rst
-
-   .. code-block:: ini
-
-      [some-part]
-      # A random part in the buildout
-      recipe = collective.recipe.foo
-      option = value
-
-... or interactive Python:
+Interactive Python
+------------------
 
 .. code-block:: rst
 
@@ -277,7 +179,39 @@ For example, to specify XML:
         File "<stdin>", line 1, in <module>
       ZeroDivisionError: integer division or modulo by zero
 
-... or JavaScript:
+XML
+---
+
+.. code-block:: rst
+
+   .. code-block:: xml
+
+       <somesnippet>Some XML</somesnippet>
+
+UNIX Shell
+----------
+
+.. code-block:: rst
+
+   .. code-block:: shell
+
+      bin/plonectl fg
+
+INI Files
+---------
+
+.. code-block:: rst
+
+   .. code-block:: ini
+
+      [some-part]
+      # A random part in the buildout
+      recipe = collective.recipe.foo
+      option = value
+
+
+JavaScript
+----------
 
 .. code-block:: javascript
 
@@ -288,15 +222,6 @@ For example, to specify XML:
     $el.text(value);
     $('body').append($el);
 
-Setting the highlighting mode for the whole document:
-
-.. code-block:: rst
-
-   .. highlight:: shell
-
-   All code blocks in this doc use console highlighting by default::
-
-      some shell commands
 
 If syntax highlighting is not enabled for your code block, you probably have a syntax error and `Pygments <http://pygments.org>`_ will fail silently.
 

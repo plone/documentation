@@ -2,7 +2,7 @@
 README Example
 ==============
 
-.. topic::
+.. topic:: Description
 
    This is an example of how a README.rst should look like:
 
@@ -16,7 +16,7 @@ README Example
     It can do cool things, and will make the task of keeping your site fancy a lot easier.
 
     The main audience for this are people who run a chocolate factory.
-    But it also is useful for organisations planning on world domination.
+    But it also is useful for organizations planning on world domination.
 
 
     Features
