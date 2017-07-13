@@ -22,3 +22,4 @@
     sitemap
     discussion
     contactform
+    toolbar
