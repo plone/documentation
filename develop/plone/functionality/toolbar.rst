@@ -4,7 +4,7 @@ Toolbar
 
 .. topic:: Description
 
-   How to deal with permissions making your code permission-aware in Plone.
+   How to configure and extend the toolbar
 
 
 Visibility Of The Default Toolbar
