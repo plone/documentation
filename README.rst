@@ -2,7 +2,7 @@
 This Is The Official Plone Documentation
 ========================================
 
-You can read the documentation on `docs.plone.org <http://docs.plone.org>`_.
+You can read the documentation on docs.plone.org.
 
 Contribute
 ==========
@@ -13,7 +13,8 @@ If you want to contribute please make sure to read:
 - `Our docs style-guide <https://docs.plone.org/about/documentation_styleguide.html>`_
 - `Our reST style-guide <https://docs.plone.org/about/rst-styleguide.html>`_
 
-One of the best ways to start contributing is to pick one of the tickets labeled `First Timer <https://github.com/plone/documentation/labels/First%20Timers>`_.
+One of the best ways to start contributing is to pick one of the tickets labeled
+`First Timer <https://github.com/plone/documentation/labels/First%20Timers>`_.
 
 
 - Issue Tracker: `https://github.com/plone/documentation/issues <https://github.com/plone/documentation/issues>`_
