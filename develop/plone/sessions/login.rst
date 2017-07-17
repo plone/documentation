@@ -170,7 +170,7 @@ a custom folder after he/she logs in (overrides standard Plone login behavior)
     from AccessControl import getSecurityManager
     from zope.interface import Interface
     from zope.component import getUtility
-    from zope.app.component.hooks import getSite
+    from zope.component.hooks import getSite
     from zope.globalrequest import getRequest
 
     # CMFCore imports
@@ -328,7 +328,7 @@ PAS cache settings
 Here is a short view snippet to set PAS cache state::
 
     from Products.Five.browser import BrowserView
-    from zope.app.component.hooks import getSite
+    from zope.component.hooks import getSite
 
     from Products.CMFCore.utils import getToolByName
 
