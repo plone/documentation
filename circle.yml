@@ -20,5 +20,5 @@ dependencies:
 
 test:
   override:
-    - docker run -it --rm -v "${PWD}":/srv testthedocs/ttd-coala
+    - docker run -it -v "${PWD}":/srv testthedocs/ttd-coala
     - docker run -it -v "${PWD}":/srv/docs:rw -v $(pwd)/.ttd-lintrc:/srv/.ttd-lintrc testthedocs/plone-lint
