@@ -1,10 +1,5 @@
 general:
   branches:
-    ignore:
-      - 3.3
-      - 4.3
-      - 5.0
-
     only:
       - 5.1
 
