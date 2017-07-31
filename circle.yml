@@ -1,7 +1,9 @@
 general:
   branches:
-    only:
-      - 5.1
+    ignore:
+      - 5.0
+      - 4.3
+      - 3.3
 
 machine:
   services:
