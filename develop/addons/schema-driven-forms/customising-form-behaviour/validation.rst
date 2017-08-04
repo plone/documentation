@@ -10,6 +10,7 @@ For “submit” type buttons, that typically means showing error messages next 
 For “cancel” type buttons, the validation is normally skipped entirely.
 
 Form validation takes two forms:
+
 - Field-level validation, pertaining to the value of an individual field, and form-level validation, pertaining to the form as a whole.
 - Form-level validation is less common, but can be useful if fields have complex inter-dependencies.
 
@@ -17,8 +18,10 @@ Field-level validation
 ----------------------
 
 The simplest field-level validation is managed by the fields themselves.
+
 All fields support a *required* attribute, defaulting to *True*.
 The default field validator will return an error if a required field is not filled in.
+
 Some fields also support more specific properties that affect validation:
 
 -  Text fields like *Bytes*, *BytesLine*, *ASCII*, *ASCIILine*, *Text* and *TextLine*,
@@ -282,6 +285,7 @@ Widget manager validators
 
 Invariants have most of the same benefits and draw-backs as constraints:
 they are easy to write, but require modifications to the schema interface, and cannot be generalised beyond the interface.
+
 Not surprisingly therefore, *z3c.form* provides another option, in the form of a widget manager validator.
 This is a multi-adapter for *(context, request, view, schema, widget manager*) providing *z3c.form.interfaces.IManagerValidator*.
 The default simply checks invariants, although you can register your own override.
@@ -313,8 +317,8 @@ We have already seen the most common pattern for invoking validation in our hand
 
             # ...
 
-Notice how we call *extractData()*:
-It returns both
+Notice, how we call *extractData()*, it returns both:
+
 - a dictionary of the submitted data (for valid fields, converted to the underlying field value type) and
 - a dictionary of errors (which is empty if all fields are valid).
 
@@ -380,4 +384,4 @@ Notice how we perform the check after the *extractData()* call, but before the p
 This is to ensure all relevant errors are displayed to the user.
 Also, note that whilst the invariant is passed an object providing the schema interface, the *data* dictionary is just that - a dictionary.
 Hence, we use “dot notation” (*data.address1*) to access the value of a field in the invariant,
-but “index notation” (*data[‘address1’]*)**to access the value of a field in the handler.
+but “index notation” (*data[‘address1’]*) to access the value of a field in the handler.
