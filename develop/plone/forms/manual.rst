@@ -65,7 +65,8 @@ Page template code, name the file ``yourview.pt``:
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
               lang="en"
               metal:use-macro="here/main_template/macros/master"
-              i18n:domain="ora.objects">
+              i18n:domain="ora.objects"
+              tal:define="foo view/update">
         <body>
             <div metal:fill-slot="main">
                 <tal:main-macro metal:define-macro="main">
@@ -79,10 +80,9 @@ Page template code, name the file ``yourview.pt``:
                         </p>
 
 
-                        <form action="@@yourviewname" method="POST"
-                              tal:define="foo view/update">
+                        <form action="@@yourviewname" method="POST">
                                 <button type="submit" name="button-name">
-                                        Pres me
+                                        Press me
                                 </button>
                         </form>
 
