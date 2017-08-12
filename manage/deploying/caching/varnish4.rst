@@ -457,17 +457,18 @@ Example of removing all Plone-related cookies, besides ones dealing with the log
         # (like images)
 
         if (beresp.ttl <= 0s
-                || beresp.http.Set-Cookie
-                || beresp.http.Surrogate-control ~ "no-store"
-                || (!beresp.http.Surrogate-Control && beresp.http.Cache-Control ~ "no-cache|no-store|private")
-                || beresp.http.Vary == "*") {
-                        /* * Mark as "Hit-For-Pass" for the next 2 minutes */
-                        set beresp.ttl = 120s;
-                        set beresp.uncacheable = true;
+            || beresp.http.Set-Cookie
+            || beresp.http.Surrogate-control ~ "no-store"
+            || (!beresp.http.Surrogate-Control && beresp.http.Cache-Control ~ "no-cache|no-store|private")
+            || beresp.http.Vary == "*") {
+
+            /* * Mark as "Hit-For-Pass" for the next 2 minutes */
+            set beresp.grace = 120s;
+            set beresp.uncacheable = true;
+
+            return (deliver);
         }
 
-        set beresp.grace = 120s;
-        return (deliver);
     }
 
 
@@ -493,17 +494,18 @@ Use the following snippet to set a HTTP response debug header to see what the ba
     sub vcl_backend_response {
 
         /* Use to see what cookies go through our filtering code to the server */
-        set beresp.http.X-Varnish-Cookie-Debug = "Cleaned request cookie: " + req.http.Cookie;
+        set beresp.http.X-Varnish-Cookie-Debug = "Cleaned request cookie: " + bereq.http.Cookie;
 
-        if (beresp.ttl <= 0s ||
-            beresp.http.Set-Cookie ||
-            beresp.http.Vary == "*") {
-            /*
-             * Mark as "Hit-For-Pass" for the next 2 minutes
-             */
-            # hit_for_pass objects are created using beresp.uncacheable
-            set beresp.uncacheable = true;
+        if (beresp.ttl <= 0s
+            || beresp.http.Set-Cookie
+            || beresp.http.Surrogate-control ~ "no-store"
+            || (!beresp.http.Surrogate-Control && beresp.http.Cache-Control ~ "no-cache|no-store|private")
+            || beresp.http.Vary == "*") {
+
+            /* * Mark as "Hit-For-Pass" for the next 2 minutes */
             set beresp.ttl = 120s;
+            set beresp.uncacheable = true;
+
             return (deliver);
         }
     }
@@ -558,13 +560,9 @@ You can make sure that Varnish does not accidentally cache error pages.
 For example, Varnish could cache the front page when the site is down, and we want to prevent that::
 
     sub vcl_backend_response {
+        # Don't cache 50x responses
         if (beresp.status >= 500 && beresp.status < 600) {
-            unset beresp.http.Cache-Control;
-            set beresp.http.Cache-Control = "no-cache, max-age=0, must-revalidate";
-            set beresp.ttl = 0s;
-            set beresp.http.Pragma = "no-cache";
-            set beresp.uncacheable = true;
-            return(deliver);
+            return (abandon);
         }
         ...
     }
