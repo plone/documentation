@@ -42,8 +42,14 @@ For details about rejected or posponed PLIPs see https://github.com/plone/Produc
 and https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/
 
 
-Know Issues
-===========
+Upgrading
+=========
+
+To run the upgrade to 5.1 follow the links on top of the controlpanel or the ZMI to the form `/@@plone-upgrade`
+
+
+Known Issues
+============
 
 Catalog-Errors During Upgrades
 ------------------------------
