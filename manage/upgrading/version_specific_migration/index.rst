@@ -12,4 +12,5 @@ Version-specific migration procedures and tips
 
    plone5_minor_upgrade
    p4x_to_p5x_upgrade
+   upgrade_to_51
 
