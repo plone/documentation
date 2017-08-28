@@ -554,3 +554,30 @@ This will cache the result in memory, which avoids waking up the objects the nex
             <img tal:replace="structure python:image_scale.tag(item, 'image', scale='tile', css_class='image-tile')">
         </tal:results>
     </tal:block>
+
+
+Assimilate collective.indexing
+==============================
+
+With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_ the operations for indexing,
+reindexing and unindexing are queued, optimized and only processed at the end of the transaction.
+
+Only one indexing operation is done per object on any transaction.
+Some tests and features might expect that objects are being indexed/reindexed/unindexed right away.
+
+You can force processing the queue directly in your code with to work around this:
+
+.. code-block:: python
+
+    from Products.CMFCore.indexing import processQueue
+    processQueue()
+
+For an example of a test that needed a change see https://github.com/plone/plone.app.upgrade/pull/75/files
+
+You can also disable queuing alltogether by setting the environment-variable `CATALOG_OPTIMIZATION_DISABLED` to `1`:
+
+.. code-block:: bash
+
+    CATALOG_OPTIMIZATION_DISABLED=1 ./bin/instance start
+
+It is a good idea to try this when your tests are failing in Plone 5.1.

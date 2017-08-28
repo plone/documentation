@@ -63,28 +63,4 @@ You can disable queuing altogether by setting the environment-variable `CATALOG_
 
     CATALOG_OPTIMIZATION_DISABLED=1 ./bin/instance start
 
-Here is a example of a traceback that happened when migrating topics from Archetypes to Dexterity that can be prevented with this:
-
-.. code-block::
-
-    (...)
-      Module plone.app.contenttypes.migration.browser, line 227, in __call__
-      Module plone.app.contenttypes.migration.topics, line 702, in migrate_topics
-      Module Products.contentmigration.basemigrator.walker, line 144, in go
-      Module Products.contentmigration.basemigrator.walker, line 177, in migrate
-      Module Products.contentmigration.walker, line 64, in walk
-      Module Products.ZCatalog.CatalogBrains, line 93, in getObject
-      Module Products.ZCatalog.CatalogBrains, line 57, in getPath
-      Module Products.ZCatalog.ZCatalog, line 518, in getpath
-    KeyError: 487546660
-
-It is a good idea to set `CATALOG_OPTIMIZATION_DISABLED=1` when upgrading or migrating.
-
-You can also force processing the queue directly in your code with:
-
-.. code-block:: python
-
-    from Products.CMFCore.indexing import processQueue
-    processQueue()
-
-For an example see https://github.com/plone/plone.app.upgrade/pull/75/files
+It is a good idea to set `CATALOG_OPTIMIZATION_DISABLED=1` when upgrading if you get error messages related to the catalog.
