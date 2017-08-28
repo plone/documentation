@@ -45,11 +45,8 @@ and https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGi
 Know Issues
 ===========
 
-Migration From Archetypes To Dexterity
---------------------------------------
-
-Catalog-Errors In Tests
-~~~~~~~~~~~~~~~~~~~~~~~
+Catalog-Errors During Upgrades
+------------------------------
 
 With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_ the operations for indexing,
 reindexing and unindexing are queued, optimized and only processed at the end of the transaction.
