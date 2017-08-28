@@ -9,16 +9,17 @@ Upgrading Plone 5.0 to 5.1
 
 .. note::
 
-   If you want to upgrade add-ons to Plone 5.1, also see: ../../../develop/addons/upgrade_to_51.rst
+   If you want to upgrade add-ons to Plone 5.1, please see :doc:`/develop/addons/upgrade_to_51.rst`
 
-General information
+General Information
 ===================
 
 - Before you upgrade read :doc:`../into.rst` and :doc:`../preparations.rst`.
-- Always upgrade from the latest version of 5.0.x to the latest version of 5.1.x. This will resolve many migration-specific issues.
-- If you have problems don't be afraid to ask for help on http://community.plone.org
+- Always upgrade from the latest version of 5.0.x to the latest version of 5.1.x.
+  This will resolve many migration-specific issues.
+- If you have problems don't be afraid to ask for help on https://community.plone.org
 
-Changes between Plone 5.0 and 5.1
+Changes Between Plone 5.0 And 5.1
 =================================
 
 The following Plone Improvement Proposals have been implemented for 5.1:
@@ -37,20 +38,28 @@ The following Plone Improvement Proposals have been implemented for 5.1:
 * `Registry Improvements <https://github.com/plone/Products.CMFPlone/issues/1484>`_
 * `Cleanup and enhance icon and thumb aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
 
-For details about rejected or posponed PLIPs see https://github.com/plone/Products.CMFPlone/projects/1 and https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/
+For details about rejected or posponed PLIPs see https://github.com/plone/Products.CMFPlone/projects/1
+and https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/
 
 
-Know issues
+Know Issues
 ===========
 
-Catalog-Errors in tests or the migration from Archetypes to Dexterity
----------------------------------------------------------------------
+Migration From Archetypes To Dexterity
+--------------------------------------
 
-With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_ the operations for indexing, reindexing and unindexing are queued, optimized and only processed at the end of the transaction. Only one indexing operation is done per object on any transaction. Some tests and features might expect that objects are being indexed/reindexed/unindexed right away.
+Catalog-Errors In Tests
+~~~~~~~~~~~~~~~~~~~~~~~
 
-You can disable queuing alltogether by setting the environment-variable `CATALOG_OPTIMIZATION_DISABLED` to `1`:
+With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_ the operations for indexing,
+reindexing and unindexing are queued, optimized and only processed at the end of the transaction.
 
-.. code-block:: bash
+Only one indexing operation is done per object on any transaction.
+Some tests and features might expect that objects are being indexed/reindexed/unindexed right away.
+
+You can disable queuing altogether by setting the environment-variable `CATALOG_OPTIMIZATION_DISABLED` to `1`:
+
+.. code-block:: console
 
     CATALOG_OPTIMIZATION_DISABLED=1 ./bin/instance start
 
@@ -69,7 +78,7 @@ Here is a example of a traceback that happened when migrating topics from Archet
       Module Products.ZCatalog.ZCatalog, line 518, in getpath
     KeyError: 487546660
 
-It is probably a good idea to set `CATALOG_OPTIMIZATION_DISABLED=1` when upgrading or migrating.
+It is a good idea to set `CATALOG_OPTIMIZATION_DISABLED=1` when upgrading or migrating.
 
 You can also force processing the queue directly in your code with:
 
