@@ -33,7 +33,7 @@ The following Plone Improvement Proposals have been implemented for 5.1:
 * `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * Use lxml cleaner for savehtml transforms
 * `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
-* `Retina image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
+* `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
 * `Registry Improvements <https://github.com/plone/Products.CMFPlone/issues/1484>`_
 * `Cleanup and enhance icon and thumb aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
 
