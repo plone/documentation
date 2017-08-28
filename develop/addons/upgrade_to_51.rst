@@ -395,6 +395,7 @@ When you do not need them both, you can let the other return an empty list, or y
 
 Content type icons
 ==================
+
 Since Plone 3 there have been several breaking changes relating to content type icon rendering.
 
 **Plone 3**
@@ -407,16 +408,16 @@ Content type icons where rendered as HTML tags, which were rendered with methods
           <img width="16" height="16" src="http://192.168.1.230:8322/Plone/document_icon.gif" alt="Page">
           <a href="http://192.168.1.230:8322/Plone/front-page" class="state-published url">Welcome to Plone</a>
    </span>
-   
-  
+
+
 .. note::
 
     Related code in plone.app.layout  (especially `getIcon()` and  `IContentIcon`) and other locations was more then deprecated - it is obsolete and confusing and is getting removed.
     The catalog metadata item getIcon used to be a string containing the file name of the appropriate icon (unused since Plone 4).
-    
+
     Since Plone 5.02 the catalog metadata item **getIcon** is reused for another purpose.
     Now it is boolean and it is set to `True` for items which are images or have an image property (e.g. a lead image).
-    
+
 
 
 **Plone 4**
@@ -428,7 +429,7 @@ Content type icons are rendered as background images using a sprite image and cs
    <span class="summary">
          <a href="http://192.168.1.230:8412/Plone/front-page" class="contenttype-document state-published url">Welcome to Plone</a>
    </span>
-   
+
    .icons-on .contenttype-document {
        background: no-repeat transparent 0px 4px url(contenttypes-sprite.png);
 
@@ -443,7 +444,7 @@ Content type icons are rendered as ¸`fontello fonts <http://fontello.com/>`_ us
              class="contenttype-document state-published url"
              title="Document">Welcome to Plone</a>
    </span>
-   
+
    body#visual-portal-wrapper.pat-plone .outer-wrapper [class*="contenttype-"]:before, .plone-modal-body [class*="contenttype-"]:before {
        font-family: "Fontello";
        font-size: 100%;
@@ -462,7 +463,7 @@ Content type icons are rendered as ¸`fontello fonts <http://fontello.com/>`_ us
 
 Example from plonetheme.barceloneta/plonetheme/barceloneta/theme/less/contents.plone.less:
 
-.. code-block:: 
+.. code-block::
 
      body#visual-portal-wrapper.pat-plone .outer-wrapper, .plone-modal-body{
       [class*="contenttype-"]:before {
@@ -480,21 +481,22 @@ Example from plonetheme.barceloneta/plonetheme/barceloneta/theme/less/contents.p
       .contenttype-event:before {      content: '\e809';}
       .contenttype-news-item:before {  content: '\e80f';}
    }
-The wildcard definition :code:`[class*="contenttype-"]:before ....content: '\e834'` renders the default icon for dexterity content types for all dexterity items 
-which have no specific css rule (e.g. custom dexterity content types). 
 
+The wildcard definition :code:`[class*="contenttype-"]:before ....content: '\e834'` renders the default icon for dexterity content types for all dexterity items
+which have no specific css rule (e.g. custom dexterity content types).
 
 The rule :code:`.contenttype-file:before {   content: none;}` prevents rendering a fontello font for **file** type items (e.g. *.pdf, *.docx, etc..).
 
 Instead a **mimetype icon** (fetched from the mime type registry) is rendered as html tag ( - there would be too many fonts needed for all the mime types)in affected templates e.g. in plone.app.contenttypes.browser.templates.listing.pt:
 
-.. code-block:: 
+.. code-block::
+
    <span class="summary" tal:attributes="title item_type">
-     <a tal:condition="python:item_type == 'File' and showicons" 
+     <a tal:condition="python:item_type == 'File' and showicons"
        tal:attributes="href item_link;
                        class string:$item_type_class $item_wf_state_class url;
                        title item_type">
-       <image class="mime-icon" 
+       <image class="mime-icon"
                tal:attributes="src item/MimeTypeIcon">
      </a>
      <a tal:attributes="href item_link;
@@ -518,7 +520,7 @@ For the custom dexterity type *dx1* you might add the line :code:`.contenttype-d
 Preview Images (Thumbs)
 =======================
 
-Preview images (aka thumbs) can be shown in listings, tables and portlets. 
+Preview images (aka thumbs) can be shown in listings, tables and portlets.
 
 
 .. TODO::
