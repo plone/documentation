@@ -12,7 +12,9 @@ See `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_ for a 
 From CMFQuickInstallerTool To GenericSetup
 ------------------------------------------
 
-The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code in ``Extensions/install.py`` or  ``Extensions/Install.py``.
+The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code
+in ``Extensions/install.py`` or  ``Extensions/Install.py``.
+
 If you have such code, you must switch to a GenericSetup profile.
 
 GenericSetup is already the preferred way of writing installation code since Plone 3.
@@ -20,17 +22,23 @@ If you must use the old way, you can still use the ``portal_quickinstaller`` in 
 
 In a lot of cases, you can configure ``xml`` files instead of using Python code.
 In other cases you may need to write custom installer code (setuphandlers.py).
+
 See the :doc:`GenericSetup documentation </develop/addons/components/genericsetup>`.
 
 
 Default Profile
 ---------------
 
-Historically, when your add-on had multiple profiles, their names would be sorted alphabetically and the first one would be taken as the installation profile.
+Historically, when your add-on had multiple profiles,their names would be sorted alphabetically
+and the first one would be taken as the installation profile.
+
 It was always recommended to use ``default`` as name of this first profile.
 
-Since Plone 5.1, when there is a ``default`` profile, it is always used as the installation profile, regardless of other profile names.
-Exception: when this ``default`` profile is marked in an ``INonInstallable`` utility, it is ignored and Plone falls back to using the first from the alphabetical sorting.
+Since Plone 5.1, when there is a ``default`` profile, it is always used as the installation profile,
+regardless of other profile names.
+
+Exception: when this ``default`` profile is marked in an ``INonInstallable`` utility,
+it is ignored and Plone falls back to using the first from the alphabetical sorting.
 
 
 Uninstall
@@ -39,7 +47,7 @@ Uninstall
 An uninstall profile is not required, but it is highly recommended.
 
 Until Plone 5.0 the CMFQuickInstallerTool used to do an automatic partial cleanup,
-for example removing added skins and css resources.
+for example removing added skins and CSS resources.
 
 This was always only partial, so you could not rely on it to fully cleanup the site.
 
@@ -47,6 +55,7 @@ Since Plone 5.1 this cleanup is no longer done.
 Best practice is to create an uninstall profile for all your packages.
 
 If you were relying on this automatic cleanup, you need to add extra files to clean it up yourself.
+
 You need to do that when your default profile contains one of these files:
 
 - ``actions.xml``
@@ -55,8 +64,10 @@ You need to do that when your default profile contains one of these files:
   This seems rarely used.
 
 .. note::
-  The `contenttyperegistry import step <https://github.com/zopefoundation/Products.CMFCore/blob/2.2.10/Products/CMFCore/exportimport/contenttyperegistry.py#L73>`_ only supports adding, not removing.
-  You may need to improve that code based on the old `CMFQuickInstallerTool code <https://github.com/plone/Products.CMFQuickInstallerTool/blob/3.0.13/Products/CMFQuickInstallerTool/InstalledProduct.py#L364>`_.
+
+   The `contenttyperegistry import step <https://github.com/zopefoundation/Products.CMFCore/blob/2.2.10/Products/CMFCore/exportimport/contenttyperegistry.py#L73>`_ only supports adding, not removing.
+
+   You may need to improve that code based on the old `CMFQuickInstallerTool code <https://github.com/plone/Products.CMFQuickInstallerTool/blob/3.0.13/Products/CMFQuickInstallerTool/InstalledProduct.py#L364>`_.
 
 - ``cssregistry.xml``
 - ``jsregistry.xml``
@@ -71,8 +82,8 @@ An uninstall profile is a profile that is registered with the name ``uninstall``
 See https://github.com/plone/plone.app.multilingual/tree/master/src/plone/app/multilingual/profiles/uninstall
 
 
-Don't Use portal_quickinstaller
--------------------------------
+Do Not Use portal_quickinstaller
+--------------------------------
 
 Old code:
 
@@ -135,10 +146,11 @@ If you need it in a page template:
 
 .. warning::
 
-   Since the code really does different things than before, the method names were changed and they may accept less arguments or differently named arguments.
+   Since the code really does different things than before,
+   the method names were changed and they may accept less arguments or differently named arguments.
 
 
-Products namespace
+Products Namespace
 ------------------
 
 There used to be special handling for the Products namespace.
@@ -188,7 +200,10 @@ New code:
 
     qi.install_product(product_name)
 
-Note that no keyword arguments are accepted.
+.. note::
+
+
+   No keyword arguments are accepted.
 
 
 installProducts
@@ -296,7 +311,7 @@ New code:
    The new code works already since Plone 4.3.
 
 
-All deprecated methods
+All Deprecated Methods
 ----------------------
 
 Some of these were mentioned already.
@@ -342,7 +357,9 @@ You should switch to the new methods instead:
 INonInstallable
 ---------------
 
-There used to be one ``INonInstallable`` interface in ``CMFPlone`` (for hiding profiles) and another one in ``CMFQuickInstallerTool`` (for hiding products).
+There used to be one ``INonInstallable`` interface in ``CMFPlone`` (for hiding profiles) and
+another one in ``CMFQuickInstallerTool`` (for hiding products).
+
 In the new situation, these are combined in the one from CMFPlone.
 
 Sample usage:
@@ -393,7 +410,7 @@ When you do not need them both, you can let the other return an empty list, or y
             ...
 .. _content-type-icons-changed
 
-Content type icons
+Content Type Icons
 ==================
 
 Since Plone 3 there have been several breaking changes relating to content type icon rendering.
@@ -412,7 +429,9 @@ Content type icons where rendered as HTML tags, which were rendered with methods
 
 .. note::
 
-    Related code in plone.app.layout  (especially `getIcon()` and  `IContentIcon`) and other locations was more then deprecated - it is obsolete and confusing and is getting removed.
+    Related code in plone.app.layout  (especially `getIcon()` and  `IContentIcon`) and other locations was
+    more then deprecated - it is obsolete and confusing and is getting removed.
+
     The catalog metadata item getIcon used to be a string containing the file name of the appropriate icon (unused since Plone 4).
 
     Since Plone 5.02 the catalog metadata item **getIcon** is reused for another purpose.
@@ -463,7 +482,7 @@ Content type icons are rendered as ¸`fontello fonts <http://fontello.com/>`_ us
 
 Example from plonetheme.barceloneta/plonetheme/barceloneta/theme/less/contents.plone.less:
 
-.. code-block::
+.. code-block:: less
 
      body#visual-portal-wrapper.pat-plone .outer-wrapper, .plone-modal-body{
       [class*="contenttype-"]:before {
@@ -482,12 +501,16 @@ Example from plonetheme.barceloneta/plonetheme/barceloneta/theme/less/contents.p
       .contenttype-news-item:before {  content: '\e80f';}
    }
 
-The wildcard definition :code:`[class*="contenttype-"]:before ....content: '\e834'` renders the default icon for dexterity content types for all dexterity items
-which have no specific css rule (e.g. custom dexterity content types).
+The wildcard definition :code:`[class*="contenttype-"]:before ....content: '\e834'`
+renders the default icon for dexterity content types for all dexterity items
+which have no specific CSS rule (e.g. custom dexterity content types).
 
-The rule :code:`.contenttype-file:before {   content: none;}` prevents rendering a fontello font for **file** type items (e.g. *.pdf, *.docx, etc..).
+The rule :code:`.contenttype-file:before {   content: none;}` prevents rendering
+a fontello font for **file** type items (e.g. *.pdf, *.docx, etc..).
 
-Instead a **mimetype icon** (fetched from the mime type registry) is rendered as html tag ( - there would be too many fonts needed for all the mime types)in affected templates e.g. in plone.app.contenttypes.browser.templates.listing.pt:
+Instead a **mimetype icon** (fetched from the mime type registry) is rendered as HTML
+tag ( - there would be too many fonts needed for all the mime types)in affected templates
+e.g. in plone.app.contenttypes.browser.templates.listing.pt:
 
 .. code-block::
 
@@ -508,23 +531,23 @@ Instead a **mimetype icon** (fetched from the mime type registry) is rendered as
    </span>
           .
 
-.. image:: /_static/content-type-icons.png
+.. image:: ../../_static/content-type-icons.png
    :align: center
    :alt: content type icons
 
-The design decision to use Fontello fonts throws up the question how to easily create custom fonts for new created custom dexterity items.
+The design decision to use Fontello fonts throws up the question
+how to easily create custom fonts for new created custom dexterity items.
 
-A workaround for that is to use an icon url in the :before clause.
-For the custom dexterity type *dx1* you might add the line :code:`.contenttype-dx1:before {content: url('dx1_icon.png')}` to your less file and place the icon file in to the same folder.
+A workaround for that is to use an icon URL in the :before clause.
+For the custom dexterity type *dx1* you might add the line
+:code:`.contenttype-dx1:before {content: url('dx1_icon.png')}` to your less
+file and place the icon file in to the same folder.
 
 Preview Images (Thumbs)
 =======================
 
 Preview images (aka thumbs) can be shown in listings, tables and portlets.
 
-
-.. TODO::
-   to be ctd.
 
 HiDPI Image Scales
 ===================
@@ -544,7 +567,9 @@ To benefit from this new feature, you must use the ``tag`` method of image scale
     <img tal:define="images obj/@@images"
          tal:replace="structure python:images.scale('image', scale='tile').tag(css_class='image-tile')">
 
-If you are iterating over a list of image brains, you should use the new ``@@image_scale`` view of the portal or the navigation root.
+If you are iterating over a list of image brains, you should
+use the new ``@@image_scale`` view of the portal or the navigation root.
+
 This will cache the result in memory, which avoids waking up the objects the next time.
 
 .. code-block:: html
@@ -559,8 +584,9 @@ This will cache the result in memory, which avoids waking up the objects the nex
 Assimilate collective.indexing
 ==============================
 
-With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_ the operations for indexing,
-reindexing and unindexing are queued, optimized and only processed at the end of the transaction.
+With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_
+the operations for indexing, reindexing and unindexing are queued,
+optimized and only processed at the end of the transaction.
 
 Only one indexing operation is done per object on any transaction.
 Some tests and features might expect that objects are being indexed/reindexed/unindexed right away.
