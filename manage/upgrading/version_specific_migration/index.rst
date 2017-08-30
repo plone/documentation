@@ -10,6 +10,7 @@ Version-specific migration procedures and tips
 .. toctree::
    :maxdepth: 2
 
-   plone5_minor_upgrade
    p4x_to_p5x_upgrade
+   plone5_minor_upgrade
+   upgrade_to_51
 
