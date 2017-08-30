@@ -9,12 +9,12 @@ Upgrading Plone 5.0 to 5.1
 
 .. note::
 
-   If you want to upgrade add-ons to Plone 5.1, please see :doc:`/develop/addons/upgrade_to_51.rst`
+   If you want to upgrade add-ons to Plone 5.1, please see :doc:`/develop/addons/upgrade_to_51`
 
 General Information
 ===================
 
-- Before you upgrade read :doc:`../into.rst` and :doc:`../preparations.rst`.
+- Before you upgrade read :doc:`../intro` and :doc:`../preparations`.
 - Always upgrade from the latest version of 5.0.x to the latest version of 5.1.x.
   This will resolve many migration-specific issues.
 - If you have problems don't be afraid to ask for help on https://community.plone.org
