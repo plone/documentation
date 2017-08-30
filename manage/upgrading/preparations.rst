@@ -7,7 +7,7 @@ Preparations
    Things to do before you migrate Plone.
 
 
-Gather information
+Gather Information
 ==================
 
 - Read the "What's new in..." for your relevant Plone version, and read the release notes.
@@ -45,7 +45,7 @@ Gather information
 
     - These files are important because they may contain important last minute information and might be more specific than the relevant sections of this reference manual.
 
-Back up your Plone site
+Back Up Your Plone Site
 =======================
 
 .. note::
@@ -54,7 +54,7 @@ Back up your Plone site
 
 You will find a :doc:`how-to on backing up your Plone site here </manage/deploying/backup>`.
 
-Setup a test environment to rehearse the upgrade
+Setup A Test Environment To Rehearse The Upgrade
 ================================================
 
 .. note::

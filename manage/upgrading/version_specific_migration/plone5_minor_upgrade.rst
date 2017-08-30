@@ -51,13 +51,13 @@ Upgrading
 
 Stop your Plone instance:
 
-.. code-block:: shell
+.. code-block:: console
 
     bin/plonectl stop
 
 Rerun buildout:
 
-.. code-block:: shell
+.. code-block:: console
 
     bin/buildout
 
@@ -65,7 +65,7 @@ This may take a some time, as Plone downloads new releases.
 
 When buildout finishes running, restart your Plone instance:
 
-.. code-block:: shell
+.. code-block:: console
 
      bin/plonectl start
 
