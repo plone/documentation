@@ -607,3 +607,27 @@ You can also disable queuing alltogether by setting the environment-variable `CA
     CATALOG_OPTIMIZATION_DISABLED=1 ./bin/instance start
 
 It is a good idea to try this when your tests are failing in Plone 5.1.
+
+
+CMFDefault removal
+==================
+
+CMFDefault was removed with Plone 5.0 but some addons still depend on in.
+If your addon depends on CMFDefault you need to include a specific
+zcml snippet.
+
+.. code-block:: xml
+     
+  <include package="Products.CMFPlone" file="meta-bbb.zcml" />
+
+You can either do this by putting the above snippet as first declaration
+into the `configure.zcml` of your policy addon or by including it
+via buildout:
+
+.. code-block:: cfg
+
+  [instance]
+  ...
+  zcml +=
+     Products.CMFPlone-meta:meta-bbb.zcml
+  ...
