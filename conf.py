@@ -52,7 +52,7 @@ extensions = [
 dash_name = 'Plone_5'
 dash_icon_file = 'source/documentation/_static/logo.png'
 
-# This is our wordlist with know words, like Github or Plone ...
+# This is our wordlist with know words, like GitHub or Plone ...
 spelling_word_list_filename= 'spelling_wordlist.txt'
 spelling_ignore_pypi_package_names=True
 
@@ -102,24 +102,30 @@ trademark_name = "Plone"
 #
 # The versions appearing in the version drop-down. We use 'newest first'
 # You should set the selected_version in the html_theme_options further in the file.
-version = [
-    '5',
-    '4',
-    '3',
-]
+version = '5, 4, 3'
 # The full version, including alpha/beta/rc tags.
 release = '5.0'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['README.rst', '_*.rst',
-                    'external/plone.api/docs/CHANGES.rst',
-                    'develop/plone-coredev/es/*',
-                    'develop/plone-coredev/pt_BR',
-                    '_locales/*',
-                    'external/Products.TinyMCE/docs/source/contributors.rst',
-                    '**/CHANGES.rst',
-                    '**/LICENSE.rst',]
+exclude_patterns = [
+    'bin/*',
+    '.tox/*',
+    '.git/*',
+    '*.egg-info/*',
+    '.github/*',
+    '_build/*',
+    '.*',
+    'README.rst',
+    '_*.rst',
+    'external/plone.api/docs/CHANGES.rst',
+    'develop/plone-coredev/es/*',
+    'develop/plone-coredev/pt_BR',
+    '_locales/*',
+    'external/Products.TinyMCE/docs/source/contributors.rst',
+    '**/CHANGES.rst',
+    '**/LICENSE.rst',
+]
 
 # Announce that we have a opensearch plugin
 html_use_opensearch = 'http://docs.plone.org'
