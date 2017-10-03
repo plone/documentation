@@ -200,7 +200,7 @@ Example, scale down (crop) to 300x200:
     scale_util = api.content.get_view('images', context, request)
     tag = scale_util.tag('leadimage', width=300, height=200, direction='down')
 
-Attention: The generated URL is based on a genrated UID which points to the current scaled down version of the image.
+Attention: The generated URL is based on a generated UID which points to the current scaled down version of the image.
 After modification of the content type the scale is not updated,
 but a new URL to the new scale will be generated.
 But the generated UID will be reused for the same upload, so one version is scaled only once.
