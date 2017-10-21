@@ -32,7 +32,7 @@ The following Plone Improvement Proposals have been implemented for 5.1:
 * `Add support for conditionally import registry records  <https://github.com/plone/Products.CMFPlone/issues/1406>`_
 * `Auto-Rotation for Images <https://github.com/plone/Products.CMFPlone/issues/1673>`_
 * `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_
-* Use lxml cleaner for savehtml transforms
+* `Use lxml cleaner for savehtml transforms <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
 * `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
 * `Registry Improvements <https://github.com/plone/Products.CMFPlone/issues/1484>`_
