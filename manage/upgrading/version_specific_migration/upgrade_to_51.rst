@@ -19,28 +19,6 @@ General Information
   This will resolve many migration-specific issues.
 - If you have problems don't be afraid to ask for help on https://community.plone.org
 
-Changes Between Plone 5.0 And 5.1
-=================================
-
-The following Plone Improvement Proposals have been implemented for 5.1:
-
-* `Meta bundles generation`_
-* `Portal actions control panel`_
-* `Add direct link from a group name on Sharing tab to that group's member list <https://github.com/plone/Products.CMFPlone/issues/1310>`_
-* `Remove plone.app.openid from core <https://github.com/plone/Products.CMFPlone/issues/1659>`_
-* `Get rid of portal_quickinstaller <https://github.com/plone/Products.CMFPlone/issues/1340>`_
-* `Add support for conditionally import registry records  <https://github.com/plone/Products.CMFPlone/issues/1406>`_
-* `Auto-Rotation for Images <https://github.com/plone/Products.CMFPlone/issues/1673>`_
-* `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_
-* `Use lxml cleaner for savehtml transforms <https://github.com/plone/Products.CMFPlone/issues/1343>`_
-* `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
-* `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
-* `Registry Improvements <https://github.com/plone/Products.CMFPlone/issues/1484>`_
-* `Cleanup and enhance icon and thumb aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
-
-For details about rejected or posponed PLIPs see https://github.com/plone/Products.CMFPlone/projects/1
-and https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/
-
 
 Upgrading
 =========
@@ -48,10 +26,14 @@ Upgrading
 To run the upgrade to 5.1 follow the links on top of the controlpanel or the ZMI to the form `/@@plone-upgrade`
 
 
-Major changes
-=============
+Changes Between Plone 5.0 And 5.1
+=================================
 
-These are details of the major changes that are in Plone 5.1 through the PLIP (Plone Improvement Proposal) process.
+The following PLIPs (Plone Improvement Proposals) have been implemented for 5.1:
+
+.. contents::
+  :depth: 1
+  :local:
 
 Meta bundles generation
 -----------------------
@@ -94,6 +76,28 @@ For developers
 ^^^^^^^^^^^^^^
 
 Nothing changes.
+
+Other PLIPs
+-----------
+
+.. TODO: write upgrade information for the following PLIPs and move them to the list above.
+
+* `Meta bundles generation`_
+* `Portal actions control panel`_
+* `Add direct link from a group name on Sharing tab to that group's member list <https://github.com/plone/Products.CMFPlone/issues/1310>`_
+* `Remove plone.app.openid from core <https://github.com/plone/Products.CMFPlone/issues/1659>`_
+* `Get rid of portal_quickinstaller <https://github.com/plone/Products.CMFPlone/issues/1340>`_
+* `Add support for conditionally import registry records  <https://github.com/plone/Products.CMFPlone/issues/1406>`_
+* `Auto-Rotation for Images <https://github.com/plone/Products.CMFPlone/issues/1673>`_
+* `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_
+* `Use lxml cleaner for savehtml transforms <https://github.com/plone/Products.CMFPlone/issues/1343>`_
+* `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
+* `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
+* `Registry Improvements <https://github.com/plone/Products.CMFPlone/issues/1484>`_
+* `Cleanup and enhance icon and thumb aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
+
+For details about rejected or postponed PLIPs see the `github PLIP project <https://github.com/plone/Products.CMFPlone/projects/1>`_
+and the `Framework Team PLIP status sheet <https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/>`_.
 
 
 Known Issues
