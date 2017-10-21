@@ -25,7 +25,7 @@ Changes Between Plone 5.0 And 5.1
 The following Plone Improvement Proposals have been implemented for 5.1:
 
 * `Meta bundles generation`_
-* `Portal actions control panel <https://github.com/plone/Products.CMFPlone/issues/1342>`_
+* `Portal actions control panel`_
 * `Add direct link from a group name on Sharing tab to that group's member list <https://github.com/plone/Products.CMFPlone/issues/1310>`_
 * `Remove plone.app.openid from core <https://github.com/plone/Products.CMFPlone/issues/1659>`_
 * `Get rid of portal_quickinstaller <https://github.com/plone/Products.CMFPlone/issues/1340>`_
@@ -78,6 +78,22 @@ To make use of this, you should register your resource bundle to merge with the 
   </records>
 
 See :ref:`Aggregate Bundles for Production <resource_bundle_aggregation>`.
+
+Portal actions control panel
+----------------------------
+
+This is `PLIP 1342 <https://github.com/plone/Products.CMFPlone/issues/1342>`_.
+
+For end users
+^^^^^^^^^^^^^
+
+You can manage the actions from Site Setup using the Actions control panel.
+See :ref:`Creating actions through-the-web <create_actions_ttw>`.
+
+For developers
+^^^^^^^^^^^^^^
+
+Nothing changes.
 
 
 Known Issues
