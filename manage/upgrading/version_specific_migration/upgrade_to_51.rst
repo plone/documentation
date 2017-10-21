@@ -24,7 +24,7 @@ Changes Between Plone 5.0 And 5.1
 
 The following Plone Improvement Proposals have been implemented for 5.1:
 
-* `Meta bundles generation <https://github.com/plone/Products.CMFPlone/issues/1277>`_
+* `Meta bundles generation`_
 * `Portal actions control panel <https://github.com/plone/Products.CMFPlone/issues/1342>`_
 * `Add direct link from a group name on Sharing tab to that group's member list <https://github.com/plone/Products.CMFPlone/issues/1310>`_
 * `Remove plone.app.openid from core <https://github.com/plone/Products.CMFPlone/issues/1659>`_
@@ -46,6 +46,38 @@ Upgrading
 =========
 
 To run the upgrade to 5.1 follow the links on top of the controlpanel or the ZMI to the form `/@@plone-upgrade`
+
+
+Major changes
+=============
+
+These are details of the major changes that are in Plone 5.1 through the PLIP (Plone Improvement Proposal) process.
+
+Meta bundles generation
+-----------------------
+
+This is `PLIP 1277 <https://github.com/plone/Products.CMFPlone/issues/1277>`_.
+
+For end users
+^^^^^^^^^^^^^
+
+Pages will load faster because JavaScript and CSS resources are bundled.
+An anonymous user will usually get one JavaScript file and one CSS file, instead of multiple.
+
+For developers
+^^^^^^^^^^^^^^
+
+To make use of this, you should register your resource bundle to merge with the ``default`` or ``loggedin`` bundle.
+
+.. code-block:: python
+
+  <records prefix="plone.bundles/my-addon"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="merge_with">default</value>
+    ...
+  </records>
+
+See :ref:`Aggregate Bundles for Production <resource_bundle_aggregation>`.
 
 
 Known Issues
