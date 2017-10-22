@@ -69,7 +69,11 @@ This is `PLIP 1342 <https://github.com/plone/Products.CMFPlone/issues/1342>`_.
 For end users
 ^^^^^^^^^^^^^
 
-You can manage the actions from Site Setup using the Actions control panel.
+A new control panel allows site administrators to manage the default portal actions.
+These are for example site menus, user menus, footer links, etcetera.
+It also allows to add custom ones.
+Actions can be re-ordered, and can be hidden or displayed.
+
 See :ref:`Creating actions through-the-web <create_actions_ttw>`.
 
 For developers
