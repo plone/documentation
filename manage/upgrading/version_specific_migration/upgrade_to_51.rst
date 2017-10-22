@@ -77,12 +77,27 @@ For developers
 
 Nothing changes.
 
+
+Direct link on Sharing tab from group name member list
+------------------------------------------------------
+
+This is `PLIP 1310 <https://github.com/plone/Products.CMFPlone/issues/1310>`_.
+
+For end users
+^^^^^^^^^^^^^
+
+When a Group is shown on the Sharing page, you can click on the group name to go to the list of members of that group.
+
+For developers
+^^^^^^^^^^^^^^
+
+Nothing changes.
+
 Other PLIPs
 -----------
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `Add direct link from a group name on Sharing tab to that group's member list <https://github.com/plone/Products.CMFPlone/issues/1310>`_
 * `Remove plone.app.openid from core <https://github.com/plone/Products.CMFPlone/issues/1659>`_
 * `Get rid of portal_quickinstaller <https://github.com/plone/Products.CMFPlone/issues/1340>`_
 * `Add support for conditionally import registry records  <https://github.com/plone/Products.CMFPlone/issues/1406>`_
