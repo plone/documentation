@@ -1,8 +1,6 @@
 Adding Images
 =============
 
-.. include:: ../../_robot.rst
-
 Adding images to a Plone web site is a basic task that may involve a little work on your local computer, but is essential, because photographs, maps, and custom graphics are so important on web sites.
 
 :doc:`preparing-images-for-the-web`
@@ -17,52 +15,12 @@ Adding images to a Plone web site is a basic task that may involve a little work
 
 When you are ready to upload an image, use the *Add new...* drop-down menu.
 
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show add new image menu
-       Go to  ${PLONE_URL}
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-factories
-       Click element  css=span.icon-plone-contentmenu-factories
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
-
-       Mouse over  image
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/adding-images_add-menu.png
-       ...  css=div.plone-toolbar-container
-       ...  css=#plone-contentmenu-factories ul
-
-
 .. figure:: ../../_robot/adding-images_add-menu.png
    :align: center
    :alt: add-new-menu.png
 
 
 After clicking to add an **Image**, you'll see the *Add Image* panel:
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show new image edit form
-       Page should contain element  image
-       Click link  image
-
-       Wait until element is visible
-       ...  css=#form-widgets-title
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/adding-images_add-form.png
-       ...  css=#content
 
 .. figure:: ../../_robot/adding-images_add-form.png
    :align: center

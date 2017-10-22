@@ -2,27 +2,6 @@
 Inserting Links
 ===============
 
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show TinyMCE insert links
-       Go to  ${PLONE_URL}
-       Click element  css=#contentview-edit a
-       Wait until element is visible
-       ...  css=#mceu_16-body
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/tinymce-linkbutton.png
-       ...  css=#mceu_14
-
-       Click element  css=#mceu_14 button
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/tinymce-linkdialog.png
-       ...  css=div.plone-modal-content
-
 Select a word or phrase and click on the *Insert/edit link* icon:
 
 .. figure:: ../../_robot/tinymce-linkbutton.png

@@ -1,23 +1,9 @@
 Deleting Items
 ===================
 
-.. include:: ../../_robot.rst
-
 Items may be deleted from a folder with ease.
 
 Sometimes it is necessary to delete a content item. Again, the easiest way to do this is by using "Contents" on the Toolbar.
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Edit folder
-       Go to  ${PLONE_URL}
-       Click element  css=#contentview-folderContents a
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-delete.png
-       ...  css=#content
 
 .. figure:: ../../_robot/foldercontents-delete.png
    :align: center

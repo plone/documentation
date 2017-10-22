@@ -2,8 +2,6 @@
 Restricting Types in a Folder
 =============================
 
-.. include:: ../../_robot.rst
-
 The Add new... menu has a choice for restricting the content types that can be added to the folder.
 
 Restricting types available for adding to a folder is the simplest way to control content creation on a Plone web site.
@@ -16,27 +14,6 @@ In this way you can enforce good practices such as putting images in the images 
    That is because this will influence the navigation, and may lead to unwanted side effects.
 
 First, select the last choice in the *Add new...* menu called *Restrictions...*:
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show restrictions
-       Go to  ${PLONE_URL}/news
-
-       Click link  css=#plone-contentmenu-factories a
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
-
-       Mouse over  plone-contentmenu-settings
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/show-restrictions.png
-       ...  css=div.plone-toolbar-container
-       ...  css=#plone-contentmenu-factories ul
 
 .. figure:: ../../_robot/show-restrictions.png
    :align: center
@@ -54,22 +31,6 @@ That means when you create a folder and restrict the types that can be added, an
 The second choice is a way to reset to the default, unrestricted setting.
 
 The last choice allows selection from a list of available types:
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Menu restrictions
-       Go to  ${PLONE_URL}/news/folder_constraintypes_form
-
-       Click element  form-widgets-constrain_types_mode
-
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/menu-restrictions.png
-       ...  css=#main-container
-
 
 .. figure:: ../../_robot/menu-restrictions.png
    :align: center

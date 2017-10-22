@@ -1,19 +1,6 @@
 Mail Configuration
 ==================
 
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show Mail setup screen
-       Go to  ${PLONE_URL}/@@mail-controlpanel
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/mail-setup.png
-       ...  css=#content
-
 .. figure:: ../../_robot/mail-setup.png
    :align: center
    :alt: Mail setup configuration

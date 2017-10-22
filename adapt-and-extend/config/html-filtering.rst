@@ -6,20 +6,6 @@ Enabling HTML embed codes
 
     You can set up Plone so it will not allow you to paste the code necessary to embed videos, slideshows or music players from popular websites such as Flickr, YouTube, Google Maps and MySpace. Learn how to adjust the HTML filtering to achieve the desired level of safety versus convenience.
 
-
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show HTML filter setup screen
-       Go to  ${PLONE_URL}/@@filter-controlpanel
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/filter-setup.png
-       ...  css=#content
-
 .. figure:: ../../_robot/filter-setup.png
    :align: center
    :alt: HTML filter setup configuration

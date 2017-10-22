@@ -1,8 +1,6 @@
 Working Copy
 ==================
 
-.. include:: ../../_robot_iterate.rst
-
 Working Copy lets you have two versions of your content in parallel.
 
 .. note::
@@ -32,53 +30,6 @@ Using "Check out"
 First, navigate to the page you want to check out.
 Then from the "Actions" menu, select "Check out":
 
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-
-
-   Show how to checkout
-          Go to  ${PLONE_URL}/front-page
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-actions
-       Click element  css=span.icon-plone-contentmenu-actions
-          Wait until element is visible
-          ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
-
-          Mouse over  css=#plone-contentmenu-actions-iterate_checkout
-          Update element style  portal-footer  display  none
-
-          Capture and crop page screenshot
-               ...  ${CURDIR}/../../_robot/working-copy_checkout.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
-
-   Show checkout notification
-
-          Go to  ${PLONE_URL}/front-page
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-actions
-       Click element  css=span.icon-plone-contentmenu-actions
-          Wait until element is visible
-          ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
-          Click link  css=#plone-contentmenu-actions-iterate_checkout
-          Wait until element is visible
-          ...  name=form.button.Checkout
-          Click button  name=form.button.Checkout
-          Element should be visible  css=.portalMessage
-          Update element style  portal-footer  display  none
-
-          Capture and crop page screenshot
-               ...  ${CURDIR}/../../_robot/working-copy_checkout-notification.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
-
-
-
 .. figure:: ../../_robot/working-copy_checkout.png
         :align: center
         :alt:
@@ -89,9 +40,6 @@ copy:
 .. figure:: ../../_robot/working-copy_checkout-notification.png
        :align: center
        :alt:
-
-.. code:: robotframework
-
 
 
 Now you're free to edit your own local copy of a published document.
@@ -104,18 +52,6 @@ subsequently lost from) the published version while you edit your copy.
      :align: center
      :alt:
 
-.. code:: robotframework
-
-     Show locked original
-         Go to  ${PLONE_URL}/front-page
-
-         Element should be visible  css=#plone-lock-status
-         Update element style  portal-footer  display  none
-
-         Capture and crop page screenshot
-           ...  ${CURDIR}/../../_robot/working-copy_locked.png
-           ...  css=#content-header
-           ...  css=div.plone-toolbar-container
 
 Using "Check in"
 ----------------
@@ -127,33 +63,6 @@ simply choose "Check-in" from the "Actions" drop-down menu:
        :align: center
        :alt:
 
-.. code:: robotframework
-
-     Show check-in option
-         Go to  ${PLONE_URL}/copy_of_front-page
-
-          Wait until element is visible
-          ...  css=span.icon-plone-contentmenu-actions
-          Click element  css=span.icon-plone-contentmenu-actions
-          Wait until element is visible
-          ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
-
-          Mouse over  css=#plone-contentmenu-actions-iterate_checkin
-          Update element style  portal-footer  display  none
-          Capture and crop page screenshot
-               ...  ${CURDIR}/../../_robot/working-copy_checkin.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
-
-          Click link  css=#plone-contentmenu-actions-iterate_checkin
-
-          Element should be visible  css=#checkin_message
-          Update element style  portal-footer  display  none
-
-          Capture and crop page screenshot
-               ...  ${CURDIR}/../../_robot/working-copy_checkin-form.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
 
 You will then be prompted to enter a Check-in message.
 Fill it out and click on "Check in":
@@ -180,34 +89,6 @@ If for any reason it becomes necessary to cancel a check out and **you don't wan
        :align: center
        :alt:
 
-
-.. code:: robotframework
-
-     Show cancel checkout
-         Go to  ${PLONE_URL}/copy_of_front-page
-
-          Wait until element is visible
-          ...  css=span.icon-plone-contentmenu-actions
-          Click element  css=span.icon-plone-contentmenu-actions
-          Wait until element is visible
-          ...  css=#plone-contentmenu-actions li.plone-toolbar-submenu-header
-
-          Mouse over  css=#plone-contentmenu-actions-iterate_checkout_cancel
-          Update element style  portal-footer  display  none
-          Capture and crop page screenshot
-               ...  ${CURDIR}/../../_robot/working-copy_cancel-checkout.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
-
-          Click link  css=#plone-contentmenu-actions-iterate_checkout_cancel
-
-          Element should be visible  css=.destructive
-          Update element style  portal-footer  display  none
-
-          Capture and crop page screenshot
-               ...  ${CURDIR}/../../_robot/working-copy_cancel-checkout-form.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
 
 You will prompted to confirm the "Cancel checkout" or to "Keep checkout":
 

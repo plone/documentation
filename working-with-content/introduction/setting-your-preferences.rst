@@ -10,46 +10,9 @@ After logging in, your full name will show on the :term:`toolbar`.
 
 Click on your name to open the sub-menu, then click on the *Preferences* link to go to your personal area:
 
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-
-   Show menubar
-       Go to  ${PLONE_URL}
-
-       Click link  css=#portal-personaltools a
-
-       Wait until element is visible
-       ...  css=#portal-personaltools li.plone-toolbar-submenu-header
-
-       Mouse over  personaltools-preferences
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/show-preferences.png
-       ...  css=div.plone-toolbar-container
-       ...  css=li.plone-toolbar-submenu-header
-
 .. figure:: ../../_robot/show-preferences.png
    :align: center
    :alt: Show Preferences
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-
-   Show personal preferences
-       Go to  ${PLONE_URL}/@@personal-preferences
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/personal-preferences.png
-       ...  css=#main-container
-
 
 .. figure:: /../../_robot/personal-preferences.png
    :align: center
@@ -68,19 +31,6 @@ Personal information
 --------------------
 
 Now let's switch over to the "Personal Information" tab:
-
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show personal information
-       Go to  ${PLONE_URL}/@@personal-information
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/personal-information.png
-       ...  css=#main-container
 
 
 .. figure:: ../../_robot/personal-information.png
@@ -108,19 +58,6 @@ The last tab allows you to change your password.
 .. note::
 
    Plone is used by a variety of organisations. Some of these have centralized policies on where you can change your password, because this might also involve your access to other computer resources. In those cases, this screen might have been disabled.
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show personal information
-       Go to  ${PLONE_URL}/@@change-password
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/change-password.png
-       ...  css=#main-container
-
 
 .. figure:: ../../_robot/change-password.png
    :align: center

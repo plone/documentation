@@ -1,28 +1,6 @@
 Inserting Images
 =====================
 
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show TinyMCE image
-       Go to  ${PLONE_URL}
-       Click element  css=#contentview-edit a
-       Wait until element is visible
-       ...  css=#mceu_16-body
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/tinymce-imgbutton.png
-       ...  css=#mceu_15
-
-       Click element  css=#mceu_15 button
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/tinymce-imgdialog.png
-       ...  css=div.plone-modal-content
-
-
 The TinyMCE editor allows you to insert image files stored in Plone into your document, using the Image button on the TinyMCE toolbar:
 
 .. figure:: ../../_robot/tinymce-imgbutton.png

@@ -1,8 +1,6 @@
 Plone User Accounts and Roles
 =============================
 
-.. include:: ../../_robot_anon.rst
-
 Plone web sites come in many flavors, ranging from personal websites
 with one user to community, organization, or business websites that could have hundreds of users.
 Each person who adds content to a Plone web site has their own user account.
@@ -37,27 +35,6 @@ This is why this mode is called anonymous: anyone can do it just by surfing norm
 Note the presence of the *log in* link in the screen image below.
 If there is a *log in* link showing, you haven't logged in -- and you are surfing the web site anonymously, as seen in the following screen capture of a new Plone web site:
 
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Keywords ***
-
-   Highlight link
-       [Arguments]  ${locator}
-       Update element style  ${locator}  padding  0.5em
-       Highlight  ${locator}
-
-   *** Test Cases ***
-
-   Take annotated screenshot
-       Go to  ${PLONE_URL}
-       Highlight link  css=#personaltools-login
-       Capture and crop page screenshot
-       ...    ${CURDIR}/../../_robot/anonymous-surfing.png
-       ...    css=#content-header
-       ...    css=#above-content-wrapper
-
 .. figure:: ../../_robot/anonymous-surfing.png
    :alt: anonymous surfing
    :align: center
@@ -75,27 +52,6 @@ Compare the screen image below, captured after a user called "Jane Doe" has logg
 A toolbar has appeared on the left, which has a number of icons and actions that she can perform on the site content.
 At the bottom of the toolbar, her name is mentioned.
 A submenu opens when she clicks on this, allowing her to log out and perform various other options.
-
-
-.. code:: robotframework
-   :class: hidden
-
-       Enable autologin as  Manager
-       ${user_id} =  Translate  user_id
-       ...  default=jane-doe
-       ${user_fullname} =  Translate  user_fullname
-       ...  default=Jane Doe
-       Create user  ${user_id}  Member  fullname=${user_fullname}
-       Set autologin username  ${user_id}
-
-   *** Test Cases ***
-
-   Take logged in screenshot
-       Go to  ${PLONE_URL}
-       Capture and crop page screenshot
-       ...    ${CURDIR}/../../_robot/loggedin-surfing.png
-       ...    css=#above-content-wrapper
-       ...    css=div.plone-toolbar-container
 
 .. figure:: ../../_robot/loggedin-surfing.png
    :align: center
