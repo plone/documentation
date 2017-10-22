@@ -12,6 +12,10 @@ Introduction
 
 Zope provides transparent XML-RPC support for any traversable object.
 
+.. warning::
+
+        It is highly recommended to use the `plone.restapi <https://plonerestapi.readthedocs.io/en/latest/>`_ instead.
+
 Example::
 
        # URL to the object
@@ -62,8 +66,6 @@ Getting the real remote object can be done with ZPublisher.Client.Object.
         need to call function with object arguments you need to create
         server side helper code first.
 
-* http://svn.zope.org/Zope/tags/ajung-final-zpt-integration-before-merge-savepoint/utilities/load_site.py?rev=67269&view=auto
-
 * http://maurits.vanrees.org/weblog/archive/2009/10/lighting-talks-friday#id2
 
 
@@ -73,7 +75,7 @@ Web Services API for Plone (wsapi4plone)
 This is an add-on product exposes more methods available through Zope's
 XML-RPC api.
 
-*  https://plone.org/products/wsapi4plone.core
+*  https://pythonhosted.org/wsapi4plone.core
 
 Importing an Image Using WSAPI
 ==============================
@@ -96,13 +98,10 @@ post it to a folder called 'ministries' and give it the name 'theimage'.
 
     output = client.get_object(client.post_object(myimage))
 
-For more information see `wsapi4plone.core <https://plone.org/products/wsapi4plone.core/>`_ add-on product adds XML-RPC operations
+For more information see `wsapi4plone.core <https://pythonhosted.org/wsapi4plone.core/>`_ add-on product adds XML-RPC operations
 support for Plone.
 
+.. warning::
 
+        The wsapi4plone.core is not maintained any more.
 
-
-More information
-----------------
-
-* http://www.zope.org/Members/Amos/XML-RPC
