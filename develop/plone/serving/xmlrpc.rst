@@ -12,20 +12,25 @@ Introduction
 
 Zope provides transparent XML-RPC support for any traversable object.
 
-Example::
+.. warning::
 
-       # URL to the object
-       target = 'http://localhost:8080/plone'
+   It is highly recommended to use the `plone.restapi <https://plonerestapi.readthedocs.io/en/latest/>`_ instead.
 
-       # Call remote method
-       path = xmlrpclib.ServerProxy(target).getPhysicalPath()
+.. code-block:: python
+
+   # URL to the object
+   target = 'http://localhost:8080/plone'
+
+   # Call remote method
+   path = xmlrpclib.ServerProxy(target).getPhysicalPath()
 
 .. warning::
 
-        Zope object handles are not transferable across function call boundaries.
-        Thus, you can only call functions with primitive arguments. If you
-        need to call function with object arguments you need to create
-        server side helper code first.
+   Zope object handles are not transferable across function call boundaries.
+   Thus, you can only call functions with primitive arguments.
+
+   If you need to call function with object arguments you need to create
+   server side helper code first.
 
 For more information see
 
@@ -35,34 +40,35 @@ Authentication
 ---------------
 
 The simplest way to authenticate the user for XML-RPC calls
-is to embed HTTP Basic Auth data to URL::
+is to embed HTTP Basic Auth data to URL
 
-       # URL to the object
-       target = 'http://admin:admin@localhost:8080/plone'
+.. code-block:: python
 
-       # Call remote method
-       path = xmlrpclib.ServerProxy(target).getPhysicalPath()
+   # URL to the object
+   target = 'http://admin:admin@localhost:8080/plone'
+
+   # Call remote method
+   path = xmlrpclib.ServerProxy(target).getPhysicalPath()
 
 
 ZPublisher client
-------------------------------------------------------
+-----------------
 
 XML-RPC does not marshal objects reliable between remote calls.
 Getting the real remote object can be done with ZPublisher.Client.Object.
 
 .. note::
 
-        This approach works only for Python clients and
-        needs Zope libraries available at the client side.
+   This approach works only for Python clients and
+   needs Zope libraries available at the client side.
 
 .. warning::
 
-        Zope object handles are not transferable across function call boundaries.
-        Thus, you can only call functions with primitive arguments. If you
-        need to call function with object arguments you need to create
-        server side helper code first.
+   Zope object handles are not transferable across function call boundaries.
+   Thus, you can only call functions with primitive arguments.
 
-* http://svn.zope.org/Zope/tags/ajung-final-zpt-integration-before-merge-savepoint/utilities/load_site.py?rev=67269&view=auto
+   If you need to call function with object arguments you need to create
+   server side helper code first.
 
 * http://maurits.vanrees.org/weblog/archive/2009/10/lighting-talks-friday#id2
 
@@ -73,7 +79,7 @@ Web Services API for Plone (wsapi4plone)
 This is an add-on product exposes more methods available through Zope's
 XML-RPC api.
 
-*  https://plone.org/products/wsapi4plone.core
+*  https://pythonhosted.org/wsapi4plone.core
 
 Importing an Image Using WSAPI
 ==============================
@@ -81,7 +87,7 @@ Importing an Image Using WSAPI
 In the following example we retrieve, from the 'Pictures' folder, an image called 'red-wine-glass.jpg',
 post it to a folder called 'ministries' and give it the name 'theimage'.
 
-::
+.. code-block:: python
 
     import os
     from xmlrpclib import ServerProxy
@@ -96,13 +102,9 @@ post it to a folder called 'ministries' and give it the name 'theimage'.
 
     output = client.get_object(client.post_object(myimage))
 
-For more information see `wsapi4plone.core <https://plone.org/products/wsapi4plone.core/>`_ add-on product adds XML-RPC operations
+For more information see `wsapi4plone.core <https://pythonhosted.org/wsapi4plone.core/>`_ add-on product adds XML-RPC operations
 support for Plone.
 
+.. warning::
 
-
-
-More information
-----------------
-
-* http://www.zope.org/Members/Amos/XML-RPC
+   The wsapi4plone.core is not maintained any more.
