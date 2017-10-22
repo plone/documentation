@@ -116,14 +116,13 @@ If you are already a member of the Plone organization on GitHub, create a branch
 
 If you are not a member you can also create a `fork <https://help.github.com/articles/fork-a-repo>`_ of the documentation repository into your own repository.
 
-* Learn about `Sphinx <http://sphinx-doc.org/>`_ and `restructured text
-  <http://sphinx-doc.org/rest.html>`_.
+* Learn about `Sphinx <http://www.sphinx-doc.org/en/stable/>`_ and `reStructuredText <http://www.sphinx-doc.org/en/stable/rest.html>`_.
 
 * Edit the file(s) which you want to update.
 
 * Check that you do not have any syntax errors or typos
 
-* Commit your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open `pull <https://help.github.com/articles/using-pull-requests>`_ request.
+* Commit your changes and `create <https://help.github.com/articles/creating-a-pull-request>`_ and open a `pull <https://help.github.com/articles/using-pull-requests>`_ request.
 
 For more information about writing documentation please read the :doc:`styleguide <documentation_styleguide>` and the docs about :doc:`Helper tools <helper_tools>`.
 
