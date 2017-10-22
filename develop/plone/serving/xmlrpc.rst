@@ -14,22 +14,23 @@ Zope provides transparent XML-RPC support for any traversable object.
 
 .. warning::
 
-        It is highly recommended to use the `plone.restapi <https://plonerestapi.readthedocs.io/en/latest/>`_ instead.
+   It is highly recommended to use the `plone.restapi <https://plonerestapi.readthedocs.io/en/latest/>`_ instead.
 
-Example::
+.. code-block:: python
 
-       # URL to the object
-       target = 'http://localhost:8080/plone'
+   # URL to the object
+   target = 'http://localhost:8080/plone'
 
-       # Call remote method
-       path = xmlrpclib.ServerProxy(target).getPhysicalPath()
+   # Call remote method
+   path = xmlrpclib.ServerProxy(target).getPhysicalPath()
 
 .. warning::
 
-        Zope object handles are not transferable across function call boundaries.
-        Thus, you can only call functions with primitive arguments. If you
-        need to call function with object arguments you need to create
-        server side helper code first.
+   Zope object handles are not transferable across function call boundaries.
+   Thus, you can only call functions with primitive arguments.
+
+   If you need to call function with object arguments you need to create
+   server side helper code first.
 
 For more information see
 
@@ -39,32 +40,35 @@ Authentication
 ---------------
 
 The simplest way to authenticate the user for XML-RPC calls
-is to embed HTTP Basic Auth data to URL::
+is to embed HTTP Basic Auth data to URL
 
-       # URL to the object
-       target = 'http://admin:admin@localhost:8080/plone'
+.. code-block:: python
 
-       # Call remote method
-       path = xmlrpclib.ServerProxy(target).getPhysicalPath()
+   # URL to the object
+   target = 'http://admin:admin@localhost:8080/plone'
+
+   # Call remote method
+   path = xmlrpclib.ServerProxy(target).getPhysicalPath()
 
 
 ZPublisher client
-------------------------------------------------------
+-----------------
 
 XML-RPC does not marshal objects reliable between remote calls.
 Getting the real remote object can be done with ZPublisher.Client.Object.
 
 .. note::
 
-        This approach works only for Python clients and
-        needs Zope libraries available at the client side.
+   This approach works only for Python clients and
+   needs Zope libraries available at the client side.
 
 .. warning::
 
-        Zope object handles are not transferable across function call boundaries.
-        Thus, you can only call functions with primitive arguments. If you
-        need to call function with object arguments you need to create
-        server side helper code first.
+   Zope object handles are not transferable across function call boundaries.
+   Thus, you can only call functions with primitive arguments.
+
+   If you need to call function with object arguments you need to create
+   server side helper code first.
 
 * http://maurits.vanrees.org/weblog/archive/2009/10/lighting-talks-friday#id2
 
@@ -83,7 +87,7 @@ Importing an Image Using WSAPI
 In the following example we retrieve, from the 'Pictures' folder, an image called 'red-wine-glass.jpg',
 post it to a folder called 'ministries' and give it the name 'theimage'.
 
-::
+.. code-block:: python
 
     import os
     from xmlrpclib import ServerProxy
@@ -103,5 +107,4 @@ support for Plone.
 
 .. warning::
 
-        The wsapi4plone.core is not maintained any more.
-
+   The wsapi4plone.core is not maintained any more.
