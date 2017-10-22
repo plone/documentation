@@ -82,8 +82,6 @@ Other PLIPs
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `Meta bundles generation`_
-* `Portal actions control panel`_
 * `Add direct link from a group name on Sharing tab to that group's member list <https://github.com/plone/Products.CMFPlone/issues/1310>`_
 * `Remove plone.app.openid from core <https://github.com/plone/Products.CMFPlone/issues/1659>`_
 * `Get rid of portal_quickinstaller <https://github.com/plone/Products.CMFPlone/issues/1340>`_
