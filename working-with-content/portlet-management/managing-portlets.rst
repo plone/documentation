@@ -11,36 +11,6 @@ There are three locations where portlets can be put: to the left, to the right, 
 
    There is still a relevance to these different locations, even on mobile devices: as a rule of thumb, the 'left' portlets will be displayed **before** the main content, and the 'right' portlets afterwards, with the 'footer' portlets last.
 
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show portlet management
-       Go to  ${PLONE_URL}
-       Click link  css=#plone-contentmenu-portletmanager a
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-portletmanager li.plone-toolbar-submenu-header
-
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/portlet-menu.png
-       ...  css=div.plone-toolbar-container
-       ...  css=#content-header
-
-   Show right portlets
-       Go to  ${PLONE_URL}/@@topbar-manage-portlets/plone.footerportlets
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/portlet-footer.png
-       ...  css=#content
-
-
-
 .. figure:: ../../_robot/portlet-menu.png
    :align: center
    :alt: Where to find the Portlet menu on the Toolbar

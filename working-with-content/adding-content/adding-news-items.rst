@@ -1,56 +1,15 @@
 Adding News Items
 ======================
 
-.. include:: ../../_robot.rst
-
 Plone web sites have a built-in system for publishing news items.
 
 Use the *Add new...* menu for a folder to add a news item:
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show add new news-item menu
-       Go to  ${PLONE_URL}
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-factories
-       Click element  css=span.icon-plone-contentmenu-factories
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
-
-       Mouse over  news-item
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/adding-news-items_add-menu.png
-       ...  css=div.plone-toolbar-container
-       ...  css=#plone-contentmenu-factories ul
 
 .. figure:: ../../_robot/adding-news-items_add-menu.png
    :align: center
    :alt: add-new-news-item-menu.png
 
 You will see the *Add News Item* panel:
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show new news-item edit form
-       Page should contain element  news-item
-       Click link  news-item
-
-       Wait until element is visible
-       ...  css=#mceu_16-body
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/adding-news-items_add-form.png
-       ...  css=#content
 
 .. figure:: ../../_robot/adding-news-items_add-form.png
    :align: center

@@ -11,19 +11,6 @@ Theming
     The "Advanced settings" tab always configures the current active theme.
     If you change the theme, previously changed settings from another theme are lost.
 
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show Theme setup screen
-       Go to  ${PLONE_URL}/@@theming-controlpanel
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/theme-setup.png
-       ...  css=#content
-
 .. figure:: ../../_robot/theme-setup.png
    :align: center
    :alt: Theme configuration

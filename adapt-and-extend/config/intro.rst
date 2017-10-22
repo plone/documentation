@@ -5,19 +5,6 @@ Introduction and overview
 
 This screen, which is available for the roles ``Site Admin`` and ``Manager``, is where you can configure most aspects of your website.
 
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show Site setup screen
-       Go to  ${PLONE_URL}/@@overview-controlpanel
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/site-overview.png
-       ...  css=#content
-
 .. figure:: ../../_robot/site-overview.png
    :align: center
    :alt: Site setup configuration

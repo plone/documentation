@@ -1,36 +1,9 @@
 Adding New Content
 ==================
 
-
-.. include:: ../../_robot.rst
-
-
 A general overview of how to add new content items in Plone, including definitions of each standard content type
 
 New content items are added via the **Add New . . .** drop-down menu:
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show add new content menu
-       Go to  ${PLONE_URL}
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-factories
-       Click element  css=span.icon-plone-contentmenu-factories
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
-
-       Mouse over  document
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/adding-content_add-menu.png
-       ...  css=div.plone-toolbar-container
-       ...  css=#plone-contentmenu-factories ul
 
 .. figure:: ../../_robot/adding-content_add-menu.png
    :align: center

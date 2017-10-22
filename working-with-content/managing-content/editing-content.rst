@@ -1,8 +1,6 @@
 Editing Content
 ===============
 
-.. include:: ../../_robot.rst
-
 Editing Plone content works the same as adding content -- usually the data entry and configuration panels for the content are the same for editing as for adding.
 
 Of course, when we edit an item of content, the item already exists.
@@ -16,20 +14,6 @@ The *Edit* panel for a Page shows the title, description and text areas.
 
     If you do wish to give a description, which is a generally a good idea, the description can be text only -- there is no opportunity for setting styling of text, such as bold, italics, or other formatting. This keeps the descriptions of Plone content items as simple as possible, and is also required by the :term:`Dublin Core` standard.
 
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Edit folder
-       Go to  ${PLONE_URL}
-       Click element  css=#contentview-edit a
-       Wait until element is visible
-       ...  css=#mceu_16-body
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/edit-page.png
-       ...  css=#content
 
 .. figure:: ../../_robot/edit-page.png
    :align: center

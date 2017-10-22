@@ -5,40 +5,6 @@ The publication control system for Plone is very flexible, starting with basic s
 
 In the toolbar, for any content type --folders, images, pages, etc., and any specialized content types -- there is an item for publication state. This *state* menu has settings for controlling publication state:
 
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Create sample content
-       Go to  ${PLONE_URL}
-
-       ${item} =  Create content  type=Document
-       ...  id=samplepage  title=Sample Page
-       ...  description=The long wait is now over
-       ...  text=<p>Our new site is built with Plone.</p>
-
-
-   Show state menu
-       Go to  ${PLONE_URL}/samplepage
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-workflow
-       Click element  css=span.icon-plone-contentmenu-workflow
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-workflow li.plone-toolbar-submenu-header
-
-       Mouse over  workflow-transition-publish
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/workflow-basic.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
-
 .. figure:: ../../_robot/workflow-basic.png
    :align: center
    :alt: basic workflow menu
@@ -69,38 +35,6 @@ submission for the situation, or for the more typical reason that the content it
 After a content item has been *published*, it may be *retracted*, to change the state back to *public draft* state, or *sent back* to
 private, if desired.
 The menu choices in the state menu will change accordingly:
-
-.. code:: robotframework
-   :class: hidden
-
-   Show sendback
-       Go to  ${PLONE_URL}/samplepage
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-workflow
-       Click element  css=span.icon-plone-contentmenu-workflow
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-workflow li.plone-toolbar-submenu-header
-
-       click link  workflow-transition-submit
-
-       Go to  ${PLONE_URL}/samplepage
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-workflow
-       Click element  css=span.icon-plone-contentmenu-workflow
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-workflow li.plone-toolbar-submenu-header
-
-       Mouse over  workflow-transition-reject
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/workflow-reject.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
 
 .. figure:: ../../_robot/workflow-reject.png
    :align: center

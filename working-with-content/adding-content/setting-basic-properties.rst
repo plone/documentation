@@ -1,40 +1,11 @@
 Setting Basic Properties
 ========================
 
-.. include:: ../../_robot.rst
-
 The tab panels available on each content item has fields for basic information.
 The more data you can provide, the better Plone can help in making the content available to the relevant visitors.
 
 Any content item, when clicked by a user with edit rights for the item, will show a set of tabs at the top for setting basic properties:
 
-
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show basic properties tab
-       Go to  ${PLONE_URL}
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-factories
-       Click element  css=span.icon-plone-contentmenu-factories
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
-
-       Page should contain element  document
-       Click link  document
-       Update element style  portal-footer  display  none
-
-       Wait until element is visible
-       ...  css=#form-widgets-IDublinCore-title
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/basicpropertiestabs.png
-       ...  css=nav.autotoc-nav
 
 .. figure:: ../../_robot/basicpropertiestabs.png
    :align: center
@@ -55,18 +26,6 @@ Plone can use this metadata in a multitude of ways.
 
 Here is the *Categorization* panel, shown for a page content item (would be the same for other content types):
 
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show edit page categorization
-       Click link  Categorization
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/editpagecategorization.png
-       ...  css=#content-core
-
 .. figure:: ../../_robot/editpagecategorization.png
    :align: center
    :alt: Edit page categorization
@@ -85,18 +44,6 @@ The *Location* field is a geographic location, suitable for use with mapping sys
 The *Language* choice normally would default to the site setting, but on multilingual web sites, different languages could be used in a mix of content.
 
 The *Dates* panel has fields for the publishing date and the expiration date, effectively start and stop dates for the content if you wish to set them:
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show datessettings
-       Click link  Dates
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/datessettings.png
-       ...  css=#content-core
 
 .. figure:: ../../_robot/datessettings.png
    :align: center
@@ -134,18 +81,6 @@ The *Ownership* panel has three free-form fields for listing creators,
 contributors, and information about copyright or ownership rights to the
 content:
 
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show ownershippanel
-       Click link  Ownership
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/ownershippanel.png
-       ...  css=#content-core
-
 .. figure:: ../../_robot/ownershippanel.png
    :align: center
    :alt: Ownership Panel
@@ -154,20 +89,6 @@ The *Settings* panel has fields that may vary a bit from content type to
 content type, but generally there are input fields controlling whether
 or not the item appears in navigation, or if there are comments allowed,
 and other similar controls:
-
-
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show settingspanel
-       Click link  Settings
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/settingspanel.png
-       ...  css=#content-core
 
 .. figure:: ../../_robot/settingspanel.png
    :align: center

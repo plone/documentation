@@ -4,30 +4,6 @@ Folder View
 
 Folders have the "Display" item on the Toolbar, which controls the different ways of showing folder contents.
 
-
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show display menu
-       Go to  ${PLONE_URL}
-
-       Click link  css=#plone-contentmenu-display a
-
-       Wait until element is visible
-       ...  css=#plone-contentmenu-display li.plone-toolbar-submenu-header
-
-
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/display-menu.png
-               ...  css=#content-header
-               ...  css=div.plone-toolbar-container
-
 .. figure:: ../../_robot/display-menu.png
    :align: center
    :alt: Display menu

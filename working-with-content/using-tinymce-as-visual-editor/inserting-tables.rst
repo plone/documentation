@@ -1,25 +1,6 @@
 Inserting Tables
 ================
 
-.. include:: ../../_robot.rst
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show TinyMCE insert tables
-       Go to  ${PLONE_URL}
-       Click element  css=#contentview-edit a
-       Wait until element is visible
-       ...  css=#mceu_16-body
-
-       Click element  css=#mceu_21 button
-       Mouse over  css=#mceu_44
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/tinymce-table.png
-       ...  css=#content
-
 Tables are handy for tabular data and lists.
 
 To add a table, put your cursor where you want it and click the *Table* dropdown menu.

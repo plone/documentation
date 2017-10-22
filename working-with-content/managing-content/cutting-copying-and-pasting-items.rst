@@ -1,8 +1,6 @@
 Cutting, Copying and Pasting Items
 =======================================
 
-.. include:: ../../_robot.rst
-
 Cut, copy, and paste operations involve moving one or more items from one folder to another.
 
 Cut/Paste
@@ -16,18 +14,6 @@ Or, as time goes by, you decide that reordering content will make your site easi
 Whatever the reason, Plone makes it easy to transfer individual content items, or even whole folders containing hundreds of items, to another location. All internal links will still work. Plone will even redirect external links (where other websites have linked to this content item directly) in most cases. This mechanism can break, however, if you create a new item with the same title and same location as the one you moved.
 
 The easiest way to move content is by using "Contents" on the Toolbar.
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Edit folder
-       Go to  ${PLONE_URL}
-       Click element  css=#contentview-folderContents a
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-cutpaste.png
-       ...  css=#content
 
 .. figure:: ../../_robot/foldercontents-cutpaste.png
    :align: center

@@ -1,59 +1,16 @@
 Adding Files
 ============
 
-.. include:: ../../_robot.rst
-
 Files of various types can be uploaded to Plone web sites.
 
 Choose file in the *Add new...* menu for a folder to upload a file:
 
-
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show add files menu
-       Go to  ${PLONE_URL}
-
-       Wait until element is visible
-       ...  css=span.icon-plone-contentmenu-factories
-       Click element  css=span.icon-plone-contentmenu-factories
-       Wait until element is visible
-       ...  css=#plone-contentmenu-factories li.plone-toolbar-submenu-header
-
-       Mouse over  file
-       Update element style  portal-footer  display  none
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/adding-files_add-menu.png
-       ...  css=div.plone-toolbar-container
-       ...  css=#plone-contentmenu-factories ul
 
 .. figure:: ../../_robot/adding-files_add-menu.png
    :align: center
    :alt: add-new-menu.png
 
 Select **File** from the drop-down menu, and you'll see the *Add File* panel:
-
-
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Show new file add form
-       Page should contain element  file
-       Click link  file
-
-       Wait until element is visible
-       ...  css=#form-widgets-title
-
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/adding-files_add-form.png
-       ...  css=#content
 
 .. figure:: ../../_robot/adding-files_add-form.png
    :align: center

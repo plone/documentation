@@ -1,68 +1,11 @@
 Folder Contents
 ====================
 
-.. include:: ../../_robot.rst
-
 The Contents item on the Toolbar shows a list of items in a folder.
 It is the place for simple item-by-item actions and for bulk actions such as copy,
 cut, paste, move, reorder, etc.
 
 The Contents tab for folders is like "File Manager" or "My Computer" system utilities in Windows and Linux desktops and the "Finder" in Mac OS X, with similar functionality.
-
-
-.. code:: robotframework
-   :class: hidden
-
-   *** Test Cases ***
-
-   Edit folder
-       Go to  ${PLONE_URL}
-       Click element  css=#contentview-folderContents a
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents.png
-       ...  css=#content
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-columns.png
-       ...  css=#btn-attribute-columns
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-selected.png
-       ...  css=#btn-selected-items
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-rearrange.png
-       ...  css=#btn-rearrange
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-rearrange.png
-       ...  css=#btn-rearrange
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-upload.png
-       ...  css=#btn-upload
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-cut.png
-       ...  css=#btn-cut
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-copy.png
-       ...  css=#btn-copy
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-paste.png
-       ...  css=#btn-paste
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-delete.png
-       ...  css=#btn-delete
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-rename.png
-       ...  css=#btn-rename
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-tags.png
-       ...  css=#btn-tags
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-state.png
-       ...  css=#btn-workflow
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-properties.png
-       ...  css=#btn-properties
-       Capture and crop page screenshot
-       ...  ${CURDIR}/../../_robot/foldercontents-searchbox.png
-       ...  css=#filter
 
 .. figure:: ../../_robot/foldercontents.png
    :align: center
