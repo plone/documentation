@@ -200,6 +200,43 @@ For the ``have`` and ``not-have`` conditions, the following features are defined
   A Plone version will define all previous features as well.
   If ``have plone-43`` is true, this means you are on Plone 4.3 or Plone 5 or higher.
 
+More Configuration Registry Improvements
+----------------------------------------
+
+This is `PLIP 1484 <https://github.com/plone/Products.CMFPlone/issues/1484>`_.
+
+For end users
+^^^^^^^^^^^^^
+
+In the Configuration Registry control panel, you can import, export, add and delete records.
+
+You can use the Configuration Registry control panel's Export tab to export the entire registry into a single XML file.
+When you click the Export Now button, a file named ``registry.xml`` will be downloaded to your computer.
+
+.. image:: https://raw.githubusercontent.com/plone/plone.app.registry/master/docs/configuration_registry_export_screenshot.jpg
+   :alt: How to export the entire registry
+
+To import registry entries, use the Configuration Registry control panel's Import tab, use the Choose File button to select an XML file from your computer containing the registry entries, then press the Import File button.
+
+.. image:: https://raw.githubusercontent.com/plone/plone.app.registry/master/docs/configuration_registry_import_screenshot.jpg
+   :alt: How to import a registry file
+
+You can add individual registry records using the Configuration Registry control panel's "Add new record" tab.
+Enter the registry record's name, (human readable) title, select a data type, and optionally check the Required box if the record must have a value.
+Then press the "Add field" button.
+
+.. image:: https://raw.githubusercontent.com/plone/plone.app.registry/master/docs/configuration_registry_add_record_screenshot.jpg
+   :alt: How to add a registry record
+
+For developers
+^^^^^^^^^^^^^^
+
+Instead of storing registry entries in a single, large ``registry.xml`` file, you can have Generic Setup load and process registry entries from multiple files.
+This makes it easier to manage and organize the registry entries provided by your applications and add-ons.
+
+Your add-on should include a folder named ``registry`` in its profile folder, for example ``profiles/default/registry``.
+Any XML files in that folder will be read and processed by the registry the same way it would have read and processed a single ``registry.xml`` file in the ``profiles/default`` folder.
+The registry will process both the ``registry.xml`` file and the contents of a ``registry`` folder, if both exist.
 
 Other PLIPs
 -----------
@@ -211,7 +248,6 @@ Other PLIPs
 * `Use lxml cleaner for savehtml transforms <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
 * `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
-* `Registry Improvements <https://github.com/plone/Products.CMFPlone/issues/1484>`_
 * `Cleanup and enhance icon and thumb aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
 
 For details about rejected or postponed PLIPs see the `github PLIP project <https://github.com/plone/Products.CMFPlone/projects/1>`_
