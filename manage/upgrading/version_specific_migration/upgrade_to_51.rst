@@ -101,12 +101,32 @@ For developers
 
 Nothing changes.
 
+OpenID removed from core
+------------------------
+
+This is `PLIP 1659 <https://github.com/plone/Products.CMFPlone/issues/1659>`_.
+
+For end users
+^^^^^^^^^^^^^
+
+Nothing changes.
+
+For developers
+^^^^^^^^^^^^^^
+
+The ``plone.app.openid`` package is no longer shipped with Plone.
+This was rarely used.
+Nowadays there are better and more flexible implementations for OpenID supporting many other protocols, like the more widespread OAuth2.
+See for example `pas.plugins.authomatic <https://pypi.org/project/pas.plugins.authomatic/>`_.
+
+``plone.app.openid`` is still available as an add-on package, but is no longer maintained by core developers.
+If you want to use this in your site, you must add ``plone.app.openid`` to the buildout eggs.
+
 Other PLIPs
 -----------
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `Remove plone.app.openid from core <https://github.com/plone/Products.CMFPlone/issues/1659>`_
 * `Get rid of portal_quickinstaller <https://github.com/plone/Products.CMFPlone/issues/1340>`_
 * `Add support for conditionally import registry records  <https://github.com/plone/Products.CMFPlone/issues/1406>`_
 * `Auto-Rotation for Images <https://github.com/plone/Products.CMFPlone/issues/1673>`_
