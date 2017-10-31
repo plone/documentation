@@ -122,12 +122,37 @@ See for example `pas.plugins.authomatic <https://pypi.org/project/pas.plugins.au
 ``plone.app.openid`` is still available as an add-on package, but is no longer maintained by core developers.
 If you want to use this in your site, you must add ``plone.app.openid`` to the buildout eggs.
 
+portal_quickinstaller deprecated
+--------------------------------
+
+This is `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
+
+For end users
+^^^^^^^^^^^^^
+
+Nothing changes.
+
+For developers
+^^^^^^^^^^^^^^
+
+The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code
+in ``Extensions/install.py`` or  ``Extensions/Install.py``.
+If you have such code, you must switch to a GenericSetup profile.
+GenericSetup is already the preferred way of writing installation code since Plone 3.
+If you must use the old way, you can still use the ``portal_quickinstaller`` in the Management Interface.
+
+The ``portal_quickinstaller`` is scheduled to go away completely in Plone 6.
+
+.. TODO: the next reference does not work, and I do not see why.  [Maurits]
+
+For more information on changes to profiles and the add-ons control panel, see the add-on :ref:`Installation code <addon_installation_code>` upgrade docs.
+
+
 Other PLIPs
 -----------
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `Get rid of portal_quickinstaller <https://github.com/plone/Products.CMFPlone/issues/1340>`_
 * `Add support for conditionally import registry records  <https://github.com/plone/Products.CMFPlone/issues/1406>`_
 * `Auto-Rotation for Images <https://github.com/plone/Products.CMFPlone/issues/1673>`_
 * `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_

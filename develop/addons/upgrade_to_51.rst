@@ -3,6 +3,8 @@ Upgrade A Custom Add-on To Plone 5.1
 ====================================
 
 
+.. _addon_installation_code:
+
 Installation Code
 =================
 
@@ -617,7 +619,7 @@ If your addon depends on CMFDefault you need to include a specific
 zcml snippet.
 
 .. code-block:: xml
-     
+
   <include package="Products.CMFPlone" file="meta-bbb.zcml" />
 
 You can either do this by putting the above snippet as first declaration
