@@ -41,13 +41,13 @@ Meta bundles generation
 This is `PLIP 1277 <https://github.com/plone/Products.CMFPlone/issues/1277>`_.
 
 For end users
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Pages will load faster because JavaScript and CSS resources are bundled.
 An anonymous user will usually get one JavaScript file and one CSS file, instead of multiple.
 
 For developers
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 To make use of this, you should register your resource bundle to merge with the ``default`` or ``loggedin`` bundle.
 
@@ -67,7 +67,7 @@ Portal actions control panel
 This is `PLIP 1342 <https://github.com/plone/Products.CMFPlone/issues/1342>`_.
 
 For end users
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 A new control panel allows site administrators to manage the default portal actions.
 These are for example site menus, user menus, footer links, etcetera.
@@ -79,7 +79,7 @@ Actions can be re-ordered, and can be hidden or displayed.
 See :ref:`Creating actions through-the-web <create_actions_ttw>`.
 
 For developers
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Nothing changes.
 
@@ -90,14 +90,14 @@ Direct link on Sharing tab from group name member list
 This is `PLIP 1310 <https://github.com/plone/Products.CMFPlone/issues/1310>`_.
 
 For end users
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 When a Group is shown on the Sharing page, you can click on the group name to go to the list of members of that group.
 
 .. image:: images/sharing_group_link.png
 
 For developers
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Nothing changes.
 
@@ -107,12 +107,12 @@ OpenID removed from core
 This is `PLIP 1659 <https://github.com/plone/Products.CMFPlone/issues/1659>`_.
 
 For end users
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Nothing changes.
 
 For developers
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The ``plone.app.openid`` package is no longer shipped with Plone.
 This was rarely used.
@@ -128,12 +128,12 @@ portal_quickinstaller deprecated
 This is `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
 
 For end users
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Nothing changes.
 
 For developers
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code
 in ``Extensions/install.py`` or  ``Extensions/Install.py``.
@@ -151,12 +151,12 @@ Conditionally import configuration registry records
 This is `PLIP 1406 <https://github.com/plone/Products.CMFPlone/issues/1406>`_.
 
 For end users
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 Nothing changes.
 
 For developers
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Importable records in ``registry.xml`` can be marked as conditional with the ``condition`` attribute, which supports the following condition values:
 
@@ -206,7 +206,7 @@ More Configuration Registry Improvements
 This is `PLIP 1484 <https://github.com/plone/Products.CMFPlone/issues/1484>`_.
 
 For end users
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 In the Configuration Registry control panel, you can import, export, add and delete records.
 
@@ -229,7 +229,7 @@ Then press the "Add field" button.
    :alt: How to add a registry record
 
 For developers
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Instead of storing registry entries in a single, large ``registry.xml`` file, you can have Generic Setup load and process registry entries from multiple files.
 This makes it easier to manage and organize the registry entries provided by your applications and add-ons.
