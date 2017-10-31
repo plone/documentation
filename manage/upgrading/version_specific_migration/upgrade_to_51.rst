@@ -145,13 +145,67 @@ The ``portal_quickinstaller`` is scheduled to go away completely in Plone 6.
 
 For more information on changes to profiles and the add-ons control panel, see the add-on :ref:`Installation code <addon_installation_code>` upgrade docs.
 
+Conditionally import configuration registry records
+---------------------------------------------------
+
+This is `PLIP 1406 <https://github.com/plone/Products.CMFPlone/issues/1406>`_.
+
+For end users
+^^^^^^^^^^^^^
+
+Nothing changes.
+
+For developers
+^^^^^^^^^^^^^^
+
+Importable records in ``registry.xml`` can be marked as conditional with the ``condition`` attribute, which supports the following condition values:
+
+* ``installed my.package``, which causes record to be imported only when python module ``my.package`` is available to be imported.
+
+* ``not-installed my.package``, which causes record to be imported only when python module ``my.package`` is *not* available to be imported.
+
+* ``have my-feature``, which causes record to be imported only when ZCML feature flag ``my-feature`` has been registered (Zope2 only).
+
+* ``not-have my-feature``, which causes record to be imported only when ZCML feature flag ``my-feature`` has *not* been registered (Zope2 only).
+
+For example, the following ``registry.xml`` step in the GenericSetup profile of your policy product, would only import records when module ``my.package`` is available:
+
+.. code-block:: xml
+
+  <registry>
+    <records interface="my.package.interfaces.IZooSettings"
+             condition="installed my.package">
+      <value key="entryPrice">40</value>
+      <value key="messageOfTheDay">We've got lions and tigers!</value>
+    </records>
+  </registry>
+
+.. note::
+
+  This feature is actually already available since Plone 5.0.7.
+
+For the ``have`` and ``not-have`` conditions, the following features are defined in Plone for seeing which Plone version is used:
+
+- ``plone-4``
+- ``plone-41``
+- ``plone-42``
+- ``plone-43``
+- ``plone-5``
+- ``plone-51``
+- ``plone-52``
+
+.. note::
+
+  These feature definitions have been defined since Plone 4.1.
+  A Plone version will define all previous features as well.
+  If ``have plone-43`` is true, this means you are on Plone 4.3 or Plone 5 or higher.
+
 
 Other PLIPs
 -----------
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `Add support for conditionally import registry records  <https://github.com/plone/Products.CMFPlone/issues/1406>`_
 * `Auto-Rotation for Images <https://github.com/plone/Products.CMFPlone/issues/1673>`_
 * `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * `Use lxml cleaner for savehtml transforms <https://github.com/plone/Products.CMFPlone/issues/1343>`_
