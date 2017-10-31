@@ -410,7 +410,8 @@ When you do not need them both, you can let the other return an empty list, or y
         @implementer(INonInstallable)
         class NonInstallable(object):
             ...
-.. _content-type-icons-changed
+
+.. _content-type-icons-changed:
 
 Content Type Icons
 ==================
@@ -514,7 +515,7 @@ Instead a **mimetype icon** (fetched from the mime type registry) is rendered as
 tag ( - there would be too many fonts needed for all the mime types)in affected templates
 e.g. in plone.app.contenttypes.browser.templates.listing.pt:
 
-.. code-block::
+.. code-block:: html
 
    <span class="summary" tal:attributes="title item_type">
      <a tal:condition="python:item_type == 'File' and showicons"

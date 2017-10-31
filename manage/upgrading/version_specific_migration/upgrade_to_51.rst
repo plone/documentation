@@ -143,8 +143,6 @@ If you must use the old way, you can still use the ``portal_quickinstaller`` in 
 
 The ``portal_quickinstaller`` is scheduled to go away completely in Plone 6.
 
-.. TODO: the next reference does not work, and I do not see why.  [Maurits]
-
 For more information on changes to profiles and the add-ons control panel, see the add-on :ref:`Installation code <addon_installation_code>` upgrade docs.
 
 
