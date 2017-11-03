@@ -950,7 +950,7 @@ User and Groups Control Panel
 
 Plone 5.x
 
-.. code-block:: pyton
+.. code-block:: python
 
    >>> from Products.CMFPlone.interfaces import IUserGroupsSettingsSchema
    >>> usergroups_settings = registry.forInterface(IUserGroupsSettingsSchema, prefix='plone')
