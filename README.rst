@@ -41,8 +41,9 @@ We have a community space at: `community.plone.org/c/documentation <https://comm
 License
 =======
 
-The *content* of the documentation is licensed under the `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_ by the `Plone Foundation <https://plone.org>`_
+The *content* of the documentation is licensed under the
+`Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_ by the `Plone Foundation <https://plone.org>`_
 
 The software project to *generate* the docs is licensed under the GPLv2.
 
-maintained by the Plone Docs-Team
+Maintained by the Plone Docs-Team.
