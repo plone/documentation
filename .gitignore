@@ -10,5 +10,3 @@ develop/plone.api
 develop/addons/bobtemplates.plone
 .project
 _build
-/.tox/
-/*egg-info/

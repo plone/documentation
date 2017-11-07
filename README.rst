@@ -21,12 +21,6 @@ One of the best ways to start contributing is to pick one of the tickets labeled
 - Source Code: `https://github.com/plone/documentation <https://github.com/plone/documentation>`_
 - Documentation: `docs.plone.org <https://docs.plone.org>`_
 
-Local build of documentation
-============================
-
-To make a local build of the documentation run the ``tox`` command in package root.
-The HTML will be generated in ``_build/docs/html/``.
-
 Support
 =======
 
