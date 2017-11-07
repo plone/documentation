@@ -2,9 +2,6 @@
 Preparing The Server
 ====================
 
-Preparing To Install Plone
-==========================
-
 Plone and Zope are generally not available via platform package or port systems.
 
 You can’t “apt-get install plone” to add it to a Debian server.
@@ -103,7 +100,7 @@ Debian/Ubuntu
 
 .. note::
 
-   If you want to use System Python Packages with Ubuntu 16.04 you need to install them:
+   If you want to use System Python Packages with Ubuntu 16.04 you need to install:
 
    - pyhon2.7
    - python2.7-dev
@@ -128,17 +125,17 @@ Fedora
 
 Using ``dnf install``:
 
-gcc-c++
-patch
-openssl-devel
-libjpeg-devel
-libxslt-devel
-readline-devel
-make
-which
-python-devel
-wv
-poppler-utils
+* gcc-c++
+* patch
+* openssl-devel
+* libjpeg-devel
+* libxslt-devel
+* readline-devel
+* make
+* which
+* python-devel
+* wv
+* poppler-utils
 
 
 CentOS
@@ -146,17 +143,17 @@ CentOS
 
 Using ``yum install``:
 
-gcc-c++
-patch
-openssl-devel
-libjpeg-devel
-libxslt-devel
-readline-devel
-make
-which
-python-devel
-wv
-poppler-utils
+* gcc-c++
+* patch
+* openssl-devel
+* libjpeg-devel
+* libxslt-devel
+* readline-devel
+* make
+* which
+* python-devel
+* wv
+* poppler-utils
 
 OpenSUSE
 ++++++++
@@ -173,7 +170,7 @@ Using ``zypper in``
 * libexpat-devel
 * man
 
---build-python will be needed as the system Python 2.7 is missing many standard modules.
+``--build-python`` will be needed as the system Python 2.7 is missing many standard modules.
 
 Arch Linux
 ++++++++++
@@ -190,7 +187,9 @@ OS X
 ++++
 
 Installing XCode and activating the optional command-line utilities will give you the basic GNU tools environment you need to install Plone with the Unified Installer.
-You may also use MacPorts (the BSD ports mechanism, tailored to OS X) to install libjpeg, libxslt and readline. If you do, remember to keep your ports up-to-date, as Apple's updates won't do it for you.
+You may also use MacPorts (the BSD ports mechanism, tailored to OS X) to install libjpeg, libxslt and readline.
+
+If you do, remember to keep your ports up-to-date, as Apple's updates won't do it for you.
 
 Creating a Plone User
 ---------------------
