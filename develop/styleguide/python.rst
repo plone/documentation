@@ -8,12 +8,12 @@ Introduction
 
 We've modeled the following rules and recommendations based on the following documents:
 
- * `PEP8 <http://www.python.org/dev/peps/pep-0008>`__
- * `PEP257 <http://www.python.org/dev/peps/pep-0257>`_
- * `Rope project <http://rope.sourceforge.net/overview.html>`_
- * `Google Style Guide <http://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`_
- * `Pylons Coding Style <http://docs.pylonsproject.org/en/latest/community/codestyle.html>`_
- * `Tim Pope on Git commit messages <http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>`__
+* `PEP8 <http://www.python.org/dev/peps/pep-0008>`__
+* `PEP257 <http://www.python.org/dev/peps/pep-0257>`_
+* `Rope project <http://rope.sourceforge.net/overview.html>`_
+* `Google Style Guide <http://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`_
+* `Pylons Coding Style <http://docs.pylonsproject.org/en/latest/community/codestyle.html>`_
+* `Tim Pope on Git commit messages <http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>`__
 
 
 Line length
@@ -21,16 +21,18 @@ Line length
 
 All Python code in this package should be PEP8 valid.
 This includes adhering to the 80-char line length.
-If you absolutely need to break this rule, append ``# noPEP8`` to the offending line to skip it in syntax checks.
+If you absolutely need to break this rule, append ``  # noqa: E501`` to the offending line to skip it in syntax checks.
 
 .. note::
     Configuring your editor to display a line at 79th column helps a lot here and saves time.
 
 .. note::
     The line length rule also applies to non-python source files, such as ``.zcml`` files, but is a bit more relaxed there.
-    It explicitly **does not** aply to documentation ``.rst`` files.
-    For ``.rst`` files including the package documentation but also ``README.rst``, ``CHANGES.rst`` and doctests, use *semantic* linebreaks and add a line break after each sentence.
-    See the :doc:`REST styleguide </about/rst-styleguide.html#line-length-translations>` for the reasoning behind it.
+
+.. note::
+    The rule explicitly **does not apply to documentation** ``.rst`` files.
+    For ``.rst`` files including the package documentation but also ``README.rst``, ``CHANGES.rst`` and doctests, use *semantic line-breaks* and add a line break after each sentence.
+    See the :doc:` documentation styleguide </about/contributing/documentation_styleguide>` for the reasoning behind it.
 
 
 Breaking lines
@@ -43,11 +45,14 @@ Based on code we love to look at (Pyramid, Requests, etc.), we allow the followi
    .. sourcecode:: python
 
        foo = do_something(
-           very_long_argument='foo', another_very_long_argument='bar')
+           very_long_argument='foo', 
+           another_very_long_argument='bar',
+       )
 
        # For functions the ): needs to be placed on the following line
        def some_func(
-           very_long_argument='foo', another_very_long_argument='bar'
+           very_long_argument='foo', 
+           another_very_long_argument='bar',
        ):
 
 2. If this still doesn't fit the 80-char limit, break into multiple lines.
@@ -216,12 +221,13 @@ String formatting
 
 As per http://docs.python.org/2/library/stdtypes.html#str.format, we should prefer the new style string formatting (``.format()``) over the old one (``% ()``).
 
-Also use numbering, like so:
+Also use numbering or keyword arguments, like so:
 
 .. sourcecode:: python
 
     # GOOD
     print "{0} is not {1}".format(1, 2)
+    print "{bar} is not {foo}".format(foo=1, bar=2)
 
 
 and *not* like this:
