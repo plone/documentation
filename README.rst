@@ -29,7 +29,7 @@ these are accessible and straightforward.
 
 - Issue Tracker: `https://github.com/plone/documentation/issues <https://github.com/plone/documentation/issues>`_
 - Source Code: `https://github.com/plone/documentation <https://github.com/plone/documentation>`_
-- Documentation: `docs.plone.org <https://docs.plone.org>`_
+- Documentation: `Website <https://docs.plone.org>`_
 
 Support
 =======
