@@ -1,3 +1,4 @@
+=======
 Caching
 =======
 
@@ -13,9 +14,9 @@ It is always a balancing act between the 'freshness' of the content, and speed o
 
 Enabling caching here within Plone is highly recommended, but fine-tuning it can be more of an art than a science.
 
-Plone comes with a fairly conservative, but highly effective set of defaults. Importing those settings is your best course of action in almost all cases.
+Plone comes with a fairly conservative, but highly effective set of defaults.
+Importing those settings is your best course of action in almost all cases.
 
-Plone's internal caching works even better when used together with an external cache, such as Varnish.
+Plone's internal caching works even better when used together with an external cache, such as `Varnish <https://varnish-cache.org/>`_.
 
 See the :doc:`Guide to caching </manage/deploying/caching/index>` for more information.
-

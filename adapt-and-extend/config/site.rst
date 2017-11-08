@@ -1,3 +1,4 @@
+==================
 Site Configuration
 ==================
 
@@ -17,7 +18,7 @@ Expose Dublin Core metadata
 Expose sitemap.xml.gz
     Almost always a good idea on a public website. It will make life for search engines easier, meaning they can better index your content.
 JavaScript for web statistics support
-    To gather information for web analytics like Piwik (an open-source self-hosted option) or Google Analytics you can paste the required snippet of code here. Be aware that this can have legal implications (so-called "cookie laws") in some countries.
+    To gather information for web analytics like Piwik (an open source self-hosted option) or Google Analytics you can paste the required snippet of code here. Be aware that this can have legal implications ("cookie laws") in some countries.
 Display publication date
     Show the date a content item was published in the byline.
 Icon visibility

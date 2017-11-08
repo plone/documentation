@@ -10,7 +10,7 @@ Add Your Changes To Multiple Branches
 As this documentation is kept for multiple Plone versions,
 there are times when a pull request should be merged to more than one branch.
 
-Follow these simple steps to do so.
+Follow these steps to do so:
 
 Make the changes targeting the latest release and create a pull request.
 

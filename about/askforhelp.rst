@@ -6,7 +6,9 @@ Asking For Help
 Guidelines and Examples
 =======================
 
-If you need help with an error or problem: before asking the question, please take a few minutes to read the guidelines below. It is important to know how to state questions, because once you learn it, you will get better answers back more quickly.
+If you need help with an error or problem: before asking the question, please take a few minutes to read the guidelines below.
+
+It is important to know how to state questions, because once you learn it, you will get better answers back more quickly.
 
 
 Support And Discussion Forums
@@ -16,11 +18,20 @@ By stating a **well-phrased question** you increase the likelihood of fast and h
 
 Here are some general key rules users need to follow in creating a new topic.
 
-- ALWAYS start with searching before you ask a question. Most of your questions were probably already answered by someone else in the past. Save your and our time by searching the web first.
+- Always start with searching before you ask a question.
+   Most of your questions were probably already answered by someone else in the past.
+
+   Save your and our time by searching the web first.
+
+How to search:
+
+- Pick meaningful keywords from the log entry.
+- Sometimes searching for the entire error message works!
 
 Where to search:
 
-- Google - Before asking for help, make a Google search with related keywords. Pick meaningful keywords from the log entry. Sometimes searching for the entire error message works!
+- Google - Before asking for help, make a Google search with related keywords.
+
 
 - `Plone Community Forums <https://community.plone.org/>`_ - help and discussion forums
 
@@ -32,32 +43,43 @@ Where to search:
 
 - `Documentation issue tracker <https://github.com/plone/documentation/issues>`_ - for documentation related issues
 
-If at any point you see any kind of error message (including error codes) – put them in your question. Never write anything like “I see some error message”. Be specific.
+If at any point you see any kind of error message (including error codes) – put them in your question.
+Please do not write anything like “I see some error message”.
+Be specific.
 
 See  :doc:`Basic troubleshooting </manage/troubleshooting/basic>` in case of an error
 
 Follow netiquette while visiting and writing on forum or mailing list (give respect = get respect). This includes:
 
-- Be patient – sometimes the problem cannot be solved within minutes or hours. You might need to bump the topic few times until an experienced person comes to the site and sees it, but usually if you do not see any response after a day or two it probably means we do not know the answer to your question, or perhaps your question needs to include more detail.
-- Do not use bad words. Respect others and what they are doing.
-- Do not completely edit/erase your posts after you posted them on the forum (except for small corrections - they are allowed) Remember that once you sent them, they belong to the community and shall be used by anyone who needs it.
+- Be patient – sometimes the problem cannot be solved within minutes or hours.
+ You might need to bump the topic few times until an experienced person comes to the site and sees it, but usually if you do not see any response after a day or two it probably means we do not know the answer to your question, or perhaps your question needs to include more detail.
+
+- Do not use bad words.
+ Respect others and what they are doing.
+
+
+- Do not completely edit/erase your posts after you posted them on the forum (except for small corrections - they are allowed).
+ Remember that once you sent them, they belong to the community and shall be used by anyone who needs it.
 
 How To Write A Good Topic
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Keep in mind, that if you ask a question and all you hear is silence, it might be a good indicator that something is wrong with your topic. Read the hints below and try to match your topic with specified pattern.
+Keep in mind, that if you ask a question and all you hear is silence, it might be a good indicator that something is wrong with your topic.
 
-**Subject lines:** most people will read a message only if it appears to be intelligent. Your subject line is your sales pitch, so you should make your subject line specific and easy to understand.
+Read the hints below and try to match your topic with specified pattern.
+
+**Subject lines:** most people will read a message only if it appears to be intelligent.
+Your subject line is your sales pitch, so you should make your subject line specific and clear to understand.
 
 .. note::
 
-  **A poor subject line:**
+   **A poor subject line:**
 
-  GET METHOD!! URGENT HELP!!!!
+   GET METHOD!! URGENT HELP!!!!
 
-  **A better subject line:**
+   **A better subject line:**
 
-  FooError in Passing GET variables to FormController
+   FooError in Passing GET variables to FormController
 
 The big picture - An opening sentence should state the general problem that you wish to solve.
 
@@ -127,14 +149,14 @@ On Linux, OSX or similar systems this is (navigate to Plone folder first):
 
 .. code-block:: console
 
-  bin/instance fg
+   bin/instance fg
 
 On Windows command prompt this is
 
 .. code-block:: console
 
-  cd "C:\Program Files\Plone"
-  bin\buildout.exe fg
+   cd "C:\Program Files\Plone"
+   bin\buildout.exe fg
 
 Zope outputs all debug information to the console where it was started in foreground mode. When the error happens, the full traceback is printed to the console as well.
 
