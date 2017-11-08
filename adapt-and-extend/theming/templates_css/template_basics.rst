@@ -1,33 +1,28 @@
 ==================
-TAL page templates
+TAL Page Templates
 ==================
 
 .. admonition:: Description
 
-    Plone uses Zope Page Templates (:term:`ZPT`). This document contains
-    references to this template language and generally available templates,
+    Plone uses Zope Page Templates (:term:`ZPT`). This document contains references to this template language and generally available templates,
     macros and views you can use to build your Plone add-on product.
 
 
 Introduction
 =============
 
-Plone uses `Zope Page Templates <http://docs.zope.org/zope2/zope2book/AppendixC.html>`_,
-consisting of the three related standards:
-Template Attribute Language (:term:`TAL`),
-TAL Expression Syntax (:term:`TALES`),
-and Macro Expansion TAL (:term:`METAL`).
+Plone uses `Zope Page Templates <http://docs.zope.org/zope2/zope2book/AppendixC.html>`_, consisting of the three related standards:
+* Template Attribute Language (:term:`TAL`)
+* TAL Expression Syntax (:term:`TALES`)
+* Macro Expansion TAL (:term:`METAL`).
 
 A normal full Plone HTML page consists of:
 
-* the *master template*, defining the overall layout of the page,
-* *slots*, defined by the master template, and filled by the object being
-  published,
+* the *master template*, defining the overall layout of the page
+* *slots*, defined by the master template, and filled by the object being published,
 * :doc:`viewlets and Viewlet managers </develop/plone/views/viewlets>`.
 
-Templates can be associated with Python view classes
-(also known as "new style", circa 2008) or
-they can be standalone ("old style", circa 2001).
+Templates can be associated with Python view classes (also known as "new style", circa 2008) or they can be standalone ("old style", circa 2001).
 
 .. note::
 
@@ -40,10 +35,14 @@ they can be standalone ("old style", circa 2001).
 
 The MIME-Type
 =============
-Basically a document file got a mime-type. This is also important for Plone Templates if you don't want to export to text/html.
+Basically a document file got a mime-type.
+This is also important for Plone Templates if you don't want to export to text/html.
+
 If you want to export to a XML File you have to change the mime-type because otherwise the browser won't recognize the file as an XML.
 At the moment Plone supports text/html which is the default value. And text/xml.
-You got 2 opportunities to change this value. If you customize a template you got an input box which called "Content-Type".
+You got 2 opportunities to change this value.
+If you customize a template you got an input box which called "Content-Type".
+
 The other Way is to create a file named by your template name and extend the name by `.metadata`.
 
  Example:
@@ -681,5 +680,3 @@ More info
 .. _sane_plone_addon_template:
    https://github.com/miohtama/sane_plone_addon_template
 .. |---| unicode:: U+02014 .. em dash
-
-

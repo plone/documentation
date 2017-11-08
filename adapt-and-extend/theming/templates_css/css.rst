@@ -20,9 +20,7 @@ used.
 View all Plone HTML elements
 ============================
 
-To test Plone HTML element rendering go to ``test_rendering`` page on your site::
-
-    http://localhost:8080/Plone/test_rendering
+To test Plone HTML element rendering go to ``test_rendering`` page on your site *http://localhost:8080/Plone/test_rendering*.
 
 It will output a styled list of all commonly used Plone user interface elements.
 
@@ -75,8 +73,9 @@ Example ``profiles/default/cssregistry.xml``:
 
     </object>
 
-In this case there should be a registered resource directory named
-yourproduct.something. In the directory should be a file yourstylesheet.css.
+In this case there should be a registered resource directory named *yourproduct.something*.
+In the directory should be a file yourstylesheet.css.
+
 If you have registered the stylesheet directly in zcml
 
     <browser:resource
@@ -91,18 +90,16 @@ then id must be
 Expressions
 -----------
 
-The ``expression`` attribute of ``portal_css`` defines when your CSS file is
-included on an HTML page.  For more information see
-:doc:`expressions documentation </develop/plone/functionality/expressions>`.
+The ``expression`` attribute of ``portal_css`` defines when your CSS file is included on an HTML page.
+
+For more information see :doc:`expressions documentation </develop/plone/functionality/expressions>`.
 
 Inserting CSS as last into anonymous bundles
 ---------------------------------------------
 
 Plone compresses and merges CSS files to *bundles*.
 
-For Plone 3.x, the optimal place to put CSS file available to all users is
-after ``ploneKss.css``, as in the example above, to override rules in
-earlier files.
+
 
 .. TODO:: Also for Plone 4.x?
 

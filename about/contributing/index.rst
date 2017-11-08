@@ -18,7 +18,7 @@ Overview
 
 The documentation is hosted on `GitHub <https://github.com/plone/documentation>`_.
 
-* There are branches for the different :doc:`versions <versions>` of Plone.
+* Different branches for the different :doc:`versions <versions>` of Plone.
 
 * Some external documentation is pulled in, to collect all the documentation in one place.
 
@@ -37,7 +37,7 @@ Please follow these general guidelines.
 
 - If you work on a `ticket <https://github.com/plone/documentation/issues>`_, assign yourself to it.
 
-- Create 'small' pull requests, one per each file, these are easier and faster to review, think *quality over quantity* ! 
+- Create 'small' pull requests, one per each file, these are easier and faster to review, think *quality over quantity* !
 
 
 Edit In The Cloud
@@ -52,7 +52,7 @@ Make any changes you want in your fork, and when you are ready to send those cha
 
 #. Fill in the text-box :guilabel:`Commit changes` at the end of the page telling why you did the changes.
 #. Press the button :guilabel:`Commit changes` next to it when you are done.
-#. Head to the green :guilabel:`New pull request` button (e.g. by navigating to your fork's root and clicking :guilabel:`Pull requests` on the right menu-bar.
+#. Head to the green :guilabel:`New pull request` button (e.g., by navigating to your fork's root and clicking :guilabel:`Pull requests` on the right menu-bar.
 #. Click :guilabel:`Send pull request`.
 
 This is the recommended way for smaller changes, and for people who are not familiar with Git.
@@ -139,4 +139,3 @@ For more information about writing documentation please read the :doc:`styleguid
    cherrypicking
    issues
    translation
-

@@ -4,7 +4,7 @@ Resource folders
 
 .. admonition:: Description
 
-    How to use resource directories to expose static media files (css, js, other) in your Plone add-on product
+    How to use resource directories to expose static media files (CSS, JavaScript, other) in your Plone add-on product
 
 
 Introduction
@@ -12,7 +12,8 @@ Introduction
 
 Resource folders are the Zope Toolkit way to expose static media files to Plone URL mapping.
 
-Resource folders provide a mechanism which allows conflict free way to have static media files mapped to Plone URL space.  Each URL is prefixed with ``++resource++your.package`` resource identified.
+Resource folders provide a mechanism which allows conflict free way to have static media files mapped to Plone URL space.
+Each URL is prefixed with ``++resource++your.package`` resource identified.
 
 ZCML resourceDirectory
 ======================

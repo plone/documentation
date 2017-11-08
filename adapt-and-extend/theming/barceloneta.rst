@@ -1,13 +1,16 @@
 =================
-Barceloneta theme
+Barceloneta Theme
 =================
 
 Barceloneta is the name of the Plone 5 default theme.
+
 It's named after the `Barcelona beach and neighbourhood <https://en.wikipedia.org/wiki/La_Barceloneta,_Barcelona>`_.
+
 Barceloneta is a Diazo theme made from scratch using modern frontend technologies.
 It's responsive and spans through all the Plone UI including the CMS backend part.
 
 It's based on `Bootstrap <https://getbootstrap.com/>`_ 3, but it's not dependent of it in any way.
+
 Although it reuses some of the structure and good practices of the original Bootstrap, it has its own personality and is fully adapted to Plone.
 
 Structure
@@ -87,20 +90,22 @@ They include colors, sizes, fonts and other useful parameters.
 Barceloneta makes use of the new `Diazo bundle <http://docs.plone.org/adapt-and-extend/theming/resourceregistry.html#id26>`_ to expose its resources to Plone using the Resource Registries.
 As it is a pure Diazo theme, it keeps a low profile being Plone agnostic and only containing the theme itself.
 
-Changes from previous versions of Plone
-=======================================
 
-Regarding markup and comparing to the previous versions of Plone, Barceloneta introduced lots of changes in the default Plone markup to modernize it and make it more accessible.
+Regarding markup and comparing to the previous versions of Plone,
+Barceloneta introduced lots of changes in the default Plone markup to modernize it and make it more accessible.
+
 There are few parts of rendering Plone that were not updated.
 
-However, any class or id that was stripped away from Plone was done with the purpose of making upgrades and adaptations of existing Diazo themes easy.
+Any class or id that was stripped away from Plone was done with the purpose of making upgrades and adaptations of existing Diazo themes uncomplicated.
 Whenever possible additional classes and ids were introduced being always domain namespaced ``plone-*``.
 
-Register LESS resources profile
-===============================
+Register LESS Resources
+=======================
 
 Barceloneta provides an optional GenericSetup profile that allows you to reuse the resources from the LESS files of your theme.
+
 This is done by registering all the Barceloneta LESS resources as Plone Resource Registries resources.
+
 This profile is called ``plonetheme.barceloneta:registerless`` and can be imported from an external theme GenericSetup profile ``metadata.xml`` like:
 
 .. code-block:: xml
@@ -142,14 +147,18 @@ You can develop a custom Diazo based theme and use the Barceloneta theme only fo
         </rules>
     </rules>
 
-You can define your own Diazo bundle (JavaScript and Less/CSS) in your manifest.cfg file by using the options ``development-js``, ``production-js``, ``development-css`` and ``production-css``. This bundle will not be included in the backend theme.
+You can define your own Diazo bundle (JavaScript and Less/CSS) in your manifest.cfg file by using the options
+``development-js``, ``production-js``, ``development-css`` and ``production-css``.
+
+This bundle will not be included in the backend theme.
 
 
-Current issues
+Current Issues
 --------------
 
-You will still need to include a minimal plone bundle in your theme for rendering the toolbar correctly.
-It is intented in future versions of Plone that this will be available by default and be very minimal making no assumptions about the JS or CSS of your frontend theme so as not to conflict with it.
+You will still need to include a minimal Plone bundle in your theme for rendering the toolbar correctly.
+It is intended in future versions of Plone that this will be available by default and be very minimal making no assumptions about
+the JavaScript or CSS of your frontend theme so as not to conflict with it.
 
 Why this is a good idea
 ^^^^^^^^^^^^^^^^^^^^^^^

@@ -4,16 +4,13 @@ Skin layers
 
 .. admonition:: Description
 
-        Skin layers are a legacy Plone 2 technology, still is use, for
-        adding overridable templates and media resources to Plone
-        packages.
+    Skin layers are a legacy Plone 2 technology, still is use, for adding overridable templates and media resources to Plone packages.
 
 
 Introduction
-------------
+============
 
-Skin layers, portal_skins and CMFCore.SkinsTool are the old-fashioned
-way to manage Plone templates.
+Skin layers, portal_skins and CMFCore.SkinsTool are the old-fashioned way to manage Plone templates.
 
 * Each Plone theme has set of folders it will pick from portal_skins. These sets
   are defined in portal_skins -> properties.
@@ -23,8 +20,8 @@ way to manage Plone templates.
 * Skin layers can be reordered through-the-web in portal_skins -> properties
 
 
-Defining a skin layer
----------------------
+Defining A Skin Layer
+=====================
 
 Skin files are placed in the *skins* folder of your add-on product.
 
@@ -44,7 +41,9 @@ The structure looks like this:
 
 * ...
 
-GenericSetup skins.xml::
+GenericSetup skins.xml
+
+.. code-block:: xml
 
     <?xml version="1.0"?>
     <object name="portal_skins" meta_type="Plone Skins Tool">
@@ -55,7 +54,9 @@ GenericSetup skins.xml::
       </skin-path>
     </object>
 
-ZCML to register the layer::
+ZCML to register the layer
+
+.. code-block:: xml
 
     <configure
         ...
@@ -113,7 +114,9 @@ Testing templates
 
 Below is some example code how templates behave.
 
-Example::
+Example:
+
+.. code-block:: python
 
     (Pdb) doc
     <ATDocument at /plone/doc>
@@ -209,5 +212,3 @@ https://gist.github.com/silviot/5402869. It is a WorksForMe quality script; repl
 and run it with::
 
     bin/instance run export_skin_folder.py
-
-
