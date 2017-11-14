@@ -238,12 +238,37 @@ Your add-on should include a folder named ``registry`` in its profile folder, fo
 Any XML files in that folder will be read and processed by the registry the same way it would have read and processed a single ``registry.xml`` file in the ``profiles/default`` folder.
 The registry will process both the ``registry.xml`` file and the contents of a ``registry`` folder, if both exist.
 
+
+Auto-Rotation for Images
+------------------------
+
+This is `PLIP 1673 <https://github.com/plone/Products.CMFPlone/issues/1673>`_.
+
+For end users
+~~~~~~~~~~~~~
+
+Photos can contain metadata (``exif`` data) about rotation.
+When you upload an image, Plone now uses this metadata to show the image properly rotated.
+
+Additionally, there is basic support for ``tiff`` images.
+Previously, you could only upload them as simple files.
+Now you can upload them as proper images, and they get scales (in the form of ``jpeg`` images).
+
+For developers
+~~~~~~~~~~~~~~
+
+The ``plone.namedfile`` package was partially restructured.
+If you are using utility functions or internal methods from this package, you should check that your code still works.
+
+The `piexif <http://piexif.readthedocs.io/en/latest/>`_ was added as dependency.
+
+
+
 Other PLIPs
 -----------
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `Auto-Rotation for Images <https://github.com/plone/Products.CMFPlone/issues/1673>`_
 * `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * `Use lxml cleaner for savehtml transforms <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
