@@ -262,6 +262,26 @@ If you are using utility functions or internal methods from this package, you sh
 
 The `piexif <http://piexif.readthedocs.io/en/latest/>`_ was added as dependency.
 
+Faster indexing
+---------------
+
+This is `PLIP 1343 <https://github.com/plone/Products.CMFPlone/issues/1343>`_.
+
+For end users
+~~~~~~~~~~~~~
+
+Adding or editing a document is faster, because care was taken to avoid duplicate indexing operations.
+
+For developers
+~~~~~~~~~~~~~~
+
+The `collective.indexing <https://pypi.python.org/pypi/collective.indexing>`_ package was merged into the core of Plone.
+This makes sure that objects are only indexed once per transaction.
+
+It also gives hooks for calling external indexers, like Solr and Elasticsearch.
+See :ref:`Using external catalogs <using_external_catalogs>`.
+
+There is a workaround when you get `Catalog-Errors During Upgrades`_.
 
 
 Other PLIPs
@@ -269,7 +289,6 @@ Other PLIPs
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * `Use lxml cleaner for savehtml transforms <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
 * `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
@@ -285,8 +304,7 @@ Known Issues
 Catalog-Errors During Upgrades
 ------------------------------
 
-With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_ the operations for indexing,
-reindexing and unindexing are queued, optimized and only processed at the end of the transaction.
+With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_ the operations for indexing, reindexing and unindexing are queued, optimized and only processed at the end of the transaction.
 
 Only one indexing operation is done per object on any transaction.
 Some tests and features might expect that objects are being indexed/reindexed/unindexed right away.
