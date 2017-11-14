@@ -301,12 +301,35 @@ Instead of the obsolete ``SGMLParser``, the ``lxml`` library is used.
 This might give slightly different results.
 
 
+Easily change default search order
+----------------------------------
+
+This is `PLIP 1600 <https://github.com/plone/Products.CMFPlone/issues/1600>`_.
+
+For end users
+~~~~~~~~~~~~~
+
+On the search page, results are by default sorted by relevance.
+Visitors could already choose a different sort order each time.
+New is that a site administrator can choose a different default.
+In Site Setup, go to the Search Settings and set the *Sort on* field.
+Options are: relevance, date (newest first) and alphabetically.
+
+.. note::
+
+  This feature was backported and is actually already available since Plone 4.3.12.
+  It is not in Plone 5.0 though.
+
+For developers
+~~~~~~~~~~~~~~
+
+If you need to directly interact with this feature in code, you can use the ``Products.CMFPlone.interfaces.ISearchSchema.sort_on`` registry field.
+
 Other PLIPs
 -----------
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
 * `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
 * `Cleanup and enhance icon and thumb aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
 
