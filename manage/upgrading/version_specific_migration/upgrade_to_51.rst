@@ -283,13 +283,29 @@ See :ref:`Using external catalogs <using_external_catalogs>`.
 
 There is a workaround when you get `Catalog-Errors During Upgrades`_.
 
+Use lxml cleaner for safehtml transforms
+----------------------------------------
+
+This is `PLIP 1441 <https://github.com/plone/Products.CMFPlone/issues/1441>`_
+
+For end users
+~~~~~~~~~~~~~
+
+Nothing changes.
+
+For developers
+~~~~~~~~~~~~~~
+
+The transform for making html safe (like removing ``script`` tags) got a big cleanup.
+Instead of the obsolete ``SGMLParser``, the ``lxml`` library is used.
+This might give slightly different results.
+
 
 Other PLIPs
 -----------
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `Use lxml cleaner for savehtml transforms <https://github.com/plone/Products.CMFPlone/issues/1343>`_
 * `Easily change default search order <https://github.com/plone/Products.CMFPlone/issues/1600>`_
 * `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
 * `Cleanup and enhance icon and thumb aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
