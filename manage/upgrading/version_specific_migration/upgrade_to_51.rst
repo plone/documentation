@@ -35,18 +35,18 @@ The following PLIPs (Plone Improvement Proposals) have been implemented for 5.1:
   :depth: 1
   :local:
 
-Meta bundles generation
+Meta Bundles Generation
 -----------------------
 
 This is `PLIP 1277 <https://github.com/plone/Products.CMFPlone/issues/1277>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 Pages will load faster because JavaScript and CSS resources are bundled.
 An anonymous user will usually get one JavaScript file and one CSS file, instead of multiple.
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 To make use of this, you should register your resource bundle to merge with the ``default`` or ``loggedin`` bundle.
@@ -61,12 +61,12 @@ To make use of this, you should register your resource bundle to merge with the 
 
 See :ref:`Aggregate Bundles for Production <resource_bundle_aggregation>`.
 
-Portal actions control panel
+Portal Actions Control Panel
 ----------------------------
 
 This is `PLIP 1342 <https://github.com/plone/Products.CMFPlone/issues/1342>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 A new control panel allows site administrators to manage the default portal actions.
@@ -78,40 +78,40 @@ Actions can be re-ordered, and can be hidden or displayed.
 
 See :ref:`Creating actions through-the-web <create_actions_ttw>`.
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 Nothing changes.
 
 
-Direct link on Sharing tab from group name member list
+Direct Link On Sharing Tab From Group Name Member List
 ------------------------------------------------------
 
 This is `PLIP 1310 <https://github.com/plone/Products.CMFPlone/issues/1310>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 When a Group is shown on the Sharing page, you can click on the group name to go to the list of members of that group.
 
 .. image:: images/sharing_group_link.png
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 Nothing changes.
 
-OpenID removed from core
+OpenID Removed From Core
 ------------------------
 
 This is `PLIP 1659 <https://github.com/plone/Products.CMFPlone/issues/1659>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 Nothing changes.
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 The ``plone.app.openid`` package is no longer shipped with Plone.
@@ -122,17 +122,17 @@ See for example `pas.plugins.authomatic <https://pypi.org/project/pas.plugins.au
 ``plone.app.openid`` is still available as an add-on package, but is no longer maintained by core developers.
 If you want to use this in your site, you must add ``plone.app.openid`` to the buildout eggs.
 
-portal_quickinstaller deprecated
+portal_quickinstaller Deprecated
 --------------------------------
 
 This is `PLIP 1340 <https://github.com/plone/Products.CMFPlone/issues/1340>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 Nothing changes.
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code
@@ -145,17 +145,17 @@ The ``portal_quickinstaller`` is scheduled to go away completely in Plone 6.
 
 For more information on changes to profiles and the add-ons control panel, see the add-on :ref:`Installation code <addon_installation_code>` upgrade docs.
 
-Conditionally import configuration registry records
+Conditionally Import Configuration Registry Records
 ---------------------------------------------------
 
 This is `PLIP 1406 <https://github.com/plone/Products.CMFPlone/issues/1406>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 Nothing changes.
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 Importable records in ``registry.xml`` can be marked as conditional with the ``condition`` attribute, which supports the following condition values:
@@ -205,7 +205,7 @@ More Configuration Registry Improvements
 
 This is `PLIP 1484 <https://github.com/plone/Products.CMFPlone/issues/1484>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 In the Configuration Registry control panel, you can import, export, add and delete records.
@@ -228,7 +228,7 @@ Then press the "Add field" button.
 .. image:: https://raw.githubusercontent.com/plone/plone.app.registry/master/docs/configuration_registry_add_record_screenshot.jpg
    :alt: How to add a registry record
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 Instead of storing registry entries in a single, large ``registry.xml`` file, you can have Generic Setup load and process registry entries from multiple files.
@@ -239,12 +239,12 @@ Any XML files in that folder will be read and processed by the registry the same
 The registry will process both the ``registry.xml`` file and the contents of a ``registry`` folder, if both exist.
 
 
-Auto-Rotation for Images
+Auto-Rotation For Images
 ------------------------
 
 This is `PLIP 1673 <https://github.com/plone/Products.CMFPlone/issues/1673>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 Photos can contain metadata (``exif`` data) about rotation.
@@ -254,7 +254,7 @@ Additionally, there is basic support for ``tiff`` images.
 Previously, you could only upload them as simple files.
 Now you can upload them as proper images, and they get scales (in the form of ``jpeg`` images).
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 The ``plone.namedfile`` package was partially restructured.
@@ -262,17 +262,17 @@ If you are using utility functions or internal methods from this package, you sh
 
 The `piexif <http://piexif.readthedocs.io/en/latest/>`_ was added as dependency.
 
-Faster indexing
+Faster Indexing
 ---------------
 
 This is `PLIP 1343 <https://github.com/plone/Products.CMFPlone/issues/1343>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 Adding or editing a document is faster, because care was taken to avoid duplicate indexing operations.
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 The `collective.indexing <https://pypi.python.org/pypi/collective.indexing>`_ package was merged into the core of Plone.
@@ -281,19 +281,19 @@ This makes sure that objects are only indexed once per transaction.
 It also gives hooks for calling external indexers, like Solr and Elasticsearch.
 See :ref:`Using external catalogs <using_external_catalogs>`.
 
-There is a workaround when you get `Catalog-Errors During Upgrades`_.
+There is a workaround when you get `Catalog Errors During Upgrades`_.
 
-Use lxml cleaner for safehtml transforms
+Use lxml Cleaner For Safehtml Transforms
 ----------------------------------------
 
 This is `PLIP 1441 <https://github.com/plone/Products.CMFPlone/issues/1441>`_
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 Nothing changes.
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 The transform for making html safe (like removing ``script`` tags) got a big cleanup.
@@ -301,12 +301,12 @@ Instead of the obsolete ``SGMLParser``, the ``lxml`` library is used.
 This might give slightly different results.
 
 
-Easily change default search order
+Easily Change Default Search Order
 ----------------------------------
 
 This is `PLIP 1600 <https://github.com/plone/Products.CMFPlone/issues/1600>`_.
 
-For end users
+For End Users
 ~~~~~~~~~~~~~
 
 On the search page, results are by default sorted by relevance.
@@ -320,7 +320,7 @@ Options are: relevance, date (newest first) and alphabetically.
   This feature was backported and is actually already available since Plone 4.3.12.
   It is not in Plone 5.0 though.
 
-For developers
+For Developers
 ~~~~~~~~~~~~~~
 
 If you need to directly interact with this feature in code, you can use the ``Products.CMFPlone.interfaces.ISearchSchema.sort_on`` registry field.
@@ -330,8 +330,8 @@ Other PLIPs
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `HiDPI image scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
-* `Cleanup and enhance icon and thumb aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
+* `HiDPI Image Scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
+* `Cleanup And Enhance Icon And Thumb Aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
 
 For details about rejected or postponed PLIPs see the `github PLIP project <https://github.com/plone/Products.CMFPlone/projects/1>`_
 and the `Framework Team PLIP status sheet <https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/>`_.
@@ -340,7 +340,7 @@ and the `Framework Team PLIP status sheet <https://docs.google.com/spreadsheets/
 Known Issues
 ============
 
-Catalog-Errors During Upgrades
+Catalog Errors During Upgrades
 ------------------------------
 
 With the PLIP `assimilate collective.indexing <https://github.com/plone/Products.CMFPlone/issues/1343>`_ the operations for indexing, reindexing and unindexing are queued, optimized and only processed at the end of the transaction.
