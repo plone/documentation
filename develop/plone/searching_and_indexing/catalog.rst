@@ -93,17 +93,40 @@ Besides, the main portal catalog, the site contains other catalogs.
 Manually indexing object to a catalog
 -------------------------------------
 
-The default content object.reindexObject() is defined in
-`CMFCatalogAware <http://svn.zope.org/Products.CMFCore/trunk/Products/CMFCore/CMFCatalogAware.py?rev=102742&view=auto>`_
-and will update the object data to portal_catalog.
+The default content ``obj.reindexObject()`` is defined in
+`CMFCatalogAware <https://github.com/zopefoundation/Products.CMFCore/blob/2.2/Products/CMFCore/CMFCatalogAware.py#L78-L88>`_
+and will update the object data to ``portal_catalog``.
+
+If you don't need to reindex all the indexes you can speed up quite a bit by being more selective:
+
+.. code-block:: python
+
+    obj.reindexObject(idxs=['some_index'])
+
+You can use the ``portal_catalog`` directly if you need to update more than one object:
+
+.. code-block:: python
+
+    from plone import api
+
+    catalog = api.portal.get_tool('portal_catalog')
+    catalog.catalog_object(obj, idxs=['some_index'])
+
+If it's only an index that needs to be updated and not catalog metadata you can speed up even more like this:
+
+.. code-block:: python
+
+    catalog.catalog_object(obj, idxs=['some_index'], update_metadata=False)
 
 If your code uses additional catalogs, you need to manually update cataloged values after the object has been modified.
 
-Example::
+.. code-block:: python
 
     # Update email_catalog which mantains loggable email addresses
-    email_catalog = self.portal.email_catalog
-    email_catalog.reindexObject(myuserobject)
+    email_catalog = api.portal.get_tool('email_catalog')
+    email_catalog.catalog_object(obj)
+
+For more information and tips on how to speed up the indexing process see `Best practices on reindexing the catalog <https://community.plone.org/t/best-practices-on-reindexing-the-catalog/4157>`_ on the Plone Community Forum.
 
 Manually uncatalog object to a catalog
 --------------------------------------
