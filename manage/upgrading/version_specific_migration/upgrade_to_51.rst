@@ -325,12 +325,67 @@ For Developers
 
 If you need to directly interact with this feature in code, you can use the ``Products.CMFPlone.interfaces.ISearchSchema.sort_on`` registry field.
 
+HiDPI Image Scales
+------------------
+
+This is `PLIP 1483 <https://github.com/plone/Products.CMFPlone/issues/1483>`_.
+
+For End Users
+~~~~~~~~~~~~~
+
+HiDPI stands for High Dots Per Image.
+In the Image Handling Settings control panel in Site Setup, you can configure HiDPI mode for extra sharp images.
+Monitors that support this, will show the extra sharp images, others will fall back to showing the standard image.
+
+By default it is disabled.
+You can enable it for showing double density (``2x``) or double and triple density (``2x, 3x``).
+The monitor of the visitor will show the best available density.
+
+For Developers
+~~~~~~~~~~~~~~
+
+When you enable this, it will result in image tags like this, for improved viewing on HiDPI screens:
+
+.. code-block:: html
+
+    <img src="....jpeg" alt="alt text" title="some title" class="image-tile"
+         srcset="...jpeg 2x, ...jpeg 3x" height="64" width="48">
+
+A fun way to check that this is effective, is by using two monitors connected to the same computer.
+Empty the cache of your browser and open the network tab of your browser.
+Load a page with an image on a standard monitor and you will see that a small image is downloaded.
+Drag the page to the second, HiDPI-capable monitor, and you will see that a second, larger image is downloaded.
+
+The Plone templates use this feature when available.
+To benefit from this new feature in add-on code, you must use the ``tag`` method of image scales:
+
+.. code-block:: html
+
+    <img tal:define="images obj/@@images"
+         tal:replace="structure python:images.scale('image', scale='tile').tag(css_class='image-tile')">
+
+If you are iterating over a list of image brains, you should
+use the new ``@@image_scale`` view of the portal or the navigation root.
+
+This will cache the result in memory, which avoids waking up the objects the next time.
+
+.. code-block:: html
+
+    <tal:block define="image_scale portal/@@image_scale">
+        <tal:results tal:repeat="brain batch">
+            <img tal:replace="structure python:image_scale.tag(item, 'image', scale='tile', css_class='image-tile')">
+        </tal:results>
+    </tal:block>
+
+.. note::
+
+    Images added in the TinyMCE editor do not currently benefit from this feature.
+
 Other PLIPs
 -----------
 
 .. TODO: write upgrade information for the following PLIPs and move them to the list above.
 
-* `HiDPI Image Scales <https://github.com/plone/Products.CMFPlone/issues/1483>`_
 * `Cleanup And Enhance Icon And Thumb Aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
 
 For details about rejected or postponed PLIPs see the `github PLIP project <https://github.com/plone/Products.CMFPlone/projects/1>`_

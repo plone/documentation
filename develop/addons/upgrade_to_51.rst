@@ -563,7 +563,7 @@ When you enable this, it will result in image tags like this, for improved viewi
     <img src="....jpeg" alt="alt text" title="some title" class="image-tile"
          srcset="...jpeg 2x, ...jpeg 3x" height="64" width="48">
 
-To benefit from this new feature, you must use the ``tag`` method of image scales:
+To benefit from this new feature in add-on code, you must use the ``tag`` method of image scales:
 
 .. code-block:: html
 
