@@ -397,12 +397,33 @@ This will cache the result in memory, which avoids waking up the objects the nex
 
     Images added in the TinyMCE editor do not currently benefit from this feature.
 
-Other PLIPs
------------
+Cleanup And Enhance Icon And Thumb Aspects
+------------------------------------------
 
-.. TODO: write upgrade information for the following PLIPs and move them to the list above.
+This is `PLIP 1734 <https://github.com/plone/Products.CMFPlone/issues/1734>`_.
 
-* `Cleanup And Enhance Icon And Thumb Aspects <https://github.com/plone/Products.CMFPlone/issues/1734>`_
+For End Users
+~~~~~~~~~~~~~
+
+The Site Control Panel now has more detailed options for handling icons and thumbnails.
+You can switch off showing thumbs in portlets, list views, summary views or table views.
+And if you show them, you can set a different scale for each.
+
+.. image:: /_static/site-control-panel-icon-thumb-settings.png
+    :align: center
+    :alt: Site control panel with icon and thumb settings
+
+For Developers
+~~~~~~~~~~~~~~
+
+For the current best way of showing icons for a custom content type, see :ref:`Content Type Icons <content-type-icons-changed>`.
+
+If you want to allow editors to suppress showing thumbs or icons in individual folders, or to override the thumb size in listings, you should enable the ``plone.thumb_icon`` behavior.
+This is the ``plone.app.contenttypes.behaviors.thumb_icon.IThumbIconHandling`` interface.
+Your folderish content types should either use the templates from ``plone.app.contenttypes`` or look there for seeing how to properly handle icons and thumbs.
+
+Rejected And Postponed PLIPs
+----------------------------
 
 For details about rejected or postponed PLIPs see the `github PLIP project <https://github.com/plone/Products.CMFPlone/projects/1>`_
 and the `Framework Team PLIP status sheet <https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/>`_.
