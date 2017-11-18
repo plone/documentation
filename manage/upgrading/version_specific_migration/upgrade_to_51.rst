@@ -341,6 +341,22 @@ By default it is disabled.
 You can enable it for showing double density (``2x``) or double and triple density (``2x, 3x``).
 The monitor of the visitor will show the best available density.
 
+Compare this low resolution image:
+
+.. image:: /_static/plip_hidpi_low_resolution.png
+    :align: center
+    :alt: Example: low resolution
+
+with this high resolution image:
+
+.. image:: /_static/plip_hidpi_high_resolution.png
+    :align: center
+    :alt: Example: low resolution
+
+.. note::
+    These pictures are copyright Johannes Raggam.
+    They show the "Which Hat Tower" in Minneapolis
+
 For Developers
 ~~~~~~~~~~~~~~
 
