@@ -457,7 +457,7 @@ Content type icons are rendered as background images using a sprite image and cs
 
 **Plone 5**
 
-Content type icons are rendered as ¸`fontello fonts <http://fontello.com/>`_ using css elements *before* or *after*.
+Content type icons are rendered as `fontello fonts <http://fontello.com/>`_ using css elements *before* or *after*.
 
 .. code-block:: html
 
@@ -509,11 +509,11 @@ renders the default icon for dexterity content types for all dexterity items
 which have no specific CSS rule (e.g. custom dexterity content types).
 
 The rule :code:`.contenttype-file:before {   content: none;}` prevents rendering
-a fontello font for **file** type items (e.g. *.pdf, *.docx, etc..).
+a fontello font for **file** type items (e.g. ``*.pdf``, ``*.docx``, etc..).
 
-Instead a **mimetype icon** (fetched from the mime type registry) is rendered as HTML
-tag ( - there would be too many fonts needed for all the mime types)in affected templates
-e.g. in plone.app.contenttypes.browser.templates.listing.pt:
+Instead a **mimetype icon** (fetched from the mime type registry) is rendered as HTML tag
+(there would be too many fonts needed for all the mime types) in affected templates
+e.g. in ``plone.app.contenttypes.browser.templates.listing.pt``:
 
 .. code-block:: html
 
