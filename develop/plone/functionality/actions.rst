@@ -46,6 +46,8 @@ Here is a page template example
                </tal:actions>
          </ul>
 
+.. _create_actions_ttw:
+
 Creating actions through-the-web
 ---------------------------------
 
@@ -373,4 +375,3 @@ on move.
 Plone internal clipboard relies on the presence of Zope 2 session (different from authentication session).
 Paste action fails silenlty (is missing) if ``_ZopeId`` session cookie does not work correctly on your
 web server.
-

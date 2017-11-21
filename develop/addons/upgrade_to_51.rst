@@ -3,6 +3,8 @@ Upgrade A Custom Add-on To Plone 5.1
 ====================================
 
 
+.. _addon_installation_code:
+
 Installation Code
 =================
 
@@ -408,7 +410,8 @@ When you do not need them both, you can let the other return an empty list, or y
         @implementer(INonInstallable)
         class NonInstallable(object):
             ...
-.. _content-type-icons-changed
+
+.. _content-type-icons-changed:
 
 Content Type Icons
 ==================
@@ -454,7 +457,7 @@ Content type icons are rendered as background images using a sprite image and cs
 
 **Plone 5**
 
-Content type icons are rendered as ¸`fontello fonts <http://fontello.com/>`_ using css elements *before* or *after*.
+Content type icons are rendered as `fontello fonts <http://fontello.com/>`_ using css elements *before* or *after*.
 
 .. code-block:: html
 
@@ -506,13 +509,13 @@ renders the default icon for dexterity content types for all dexterity items
 which have no specific CSS rule (e.g. custom dexterity content types).
 
 The rule :code:`.contenttype-file:before {   content: none;}` prevents rendering
-a fontello font for **file** type items (e.g. *.pdf, *.docx, etc..).
+a fontello font for **file** type items (e.g. ``*.pdf``, ``*.docx``, etc..).
 
-Instead a **mimetype icon** (fetched from the mime type registry) is rendered as HTML
-tag ( - there would be too many fonts needed for all the mime types)in affected templates
-e.g. in plone.app.contenttypes.browser.templates.listing.pt:
+Instead a **mimetype icon** (fetched from the mime type registry) is rendered as HTML tag
+(there would be too many fonts needed for all the mime types) in affected templates
+e.g. in ``plone.app.contenttypes.browser.templates.listing.pt``:
 
-.. code-block::
+.. code-block:: html
 
    <span class="summary" tal:attributes="title item_type">
      <a tal:condition="python:item_type == 'File' and showicons"
@@ -560,7 +563,7 @@ When you enable this, it will result in image tags like this, for improved viewi
     <img src="....jpeg" alt="alt text" title="some title" class="image-tile"
          srcset="...jpeg 2x, ...jpeg 3x" height="64" width="48">
 
-To benefit from this new feature, you must use the ``tag`` method of image scales:
+To benefit from this new feature in add-on code, you must use the ``tag`` method of image scales:
 
 .. code-block:: html
 
@@ -617,7 +620,7 @@ If your addon depends on CMFDefault you need to include a specific
 zcml snippet.
 
 .. code-block:: xml
-     
+
   <include package="Products.CMFPlone" file="meta-bbb.zcml" />
 
 You can either do this by putting the above snippet as first declaration

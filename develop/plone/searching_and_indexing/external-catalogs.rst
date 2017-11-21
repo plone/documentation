@@ -1,3 +1,5 @@
+.. _using_external_catalogs:
+
 =======================
 Using external catalogs
 =======================
