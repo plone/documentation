@@ -13,5 +13,6 @@ Production
 
     restarts
     ubuntu_production
+    digitalocean_deployment
     securitybestpractices
     status_check
