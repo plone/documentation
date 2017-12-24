@@ -1,31 +1,31 @@
 ==============================
-Available permissions in Plone
+Available Permissions In Plone
 ==============================
 
 .. admonition:: Description
 
    What Zope security permissions you have available for your Plone coding
 
-Listing different available permissions
+Listing Different Available Permissions
 =======================================
 
 Each permission name is a string.
 
 To see available permissions, click Security tab at your site root in the Management Interface.
 
-In programming, use pseudoconstants instead of permission string values:
+In programming, use pseudo-constants instead of permission string values:
 
-* See `CMFCore.permissions <http://svn.zope.org/Products.CMFCore/trunk/Products/CMFCore/permissions.py?rev=94487&view=markup>`_
+* See `CMFCore.permissions <https://github.com/zopefoundation/Products.CMFCore/blob/master/Products/CMFCore/permissions.py>`_
 
-* See `AccessControl.Permissions <http://svn.zope.org/Zope/trunk/src/AccessControl/Permissions.py?rev=96262&view=markup>`_
+* See `AccessControl.Permissions <https://github.com/zopefoundation/AccessControl/blob/master/src/AccessControl/Permissions.py>`_
 
 For available ZCML permission mappings see:
 
-* `Products/Five/permissions.zcml <http://svn.zope.org/Zope/trunk/src/Products/Five/permissions.zcml?rev=99146&view=markup>`_
+* `Products/Five/permissions.zcml <https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/permissions.zcml>`_
 
 	* Permissions such as ``cmf.ModifyPortalContent``, ``zope2.View``
 
-* `zope/security/permissions.zcml <http://svn.zope.org/zope.security/trunk/src/zope/security/permissions.zcml?rev=97988&view=markup>`_
+* `zope/security/permissions.zcml <https://github.com/zopefoundation/zope.security/blob/master/src/zope/security/permissions.zcml>`_
 
 	* ``zope.Public``
 
@@ -38,7 +38,7 @@ Example using UNIX grep tool:
 
 	grep -C 3 -Ri --include=*.zcml "<permission" *
 
-Useful permissions
+UsefulPpermissions
 ==================
 
 Permissions are shown by their verbose name in the Management Interface.
