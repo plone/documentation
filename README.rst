@@ -9,9 +9,9 @@ Contribute
 
 If you want to contribute please make sure to read:
 
-- `Our documentation about contributing <http://docs.plone.org/about/contributing.html>`_
-- `Our docs style-guide <https://docs.plone.org/about/documentation_styleguide.html>`_
-- `Our reST style-guide <https://docs.plone.org/about/rst-styleguide.html>`_
+- `Our documentation about contributing <https://docs.plone.org/about/contributing/index.html>`_
+- `Our docs style-guide <https://docs.plone.org/about/contributing/documentation_styleguide.html>`_
+- `Our reST style-guide <https://docs.plone.org/about/contributing/rst-styleguide.html>`_
 
 One of the best ways to start contributing to the documentation is to pick one of the tickets labeled
 `First Timer <https://github.com/plone/documentation/labels/First%20Timers>`_.
