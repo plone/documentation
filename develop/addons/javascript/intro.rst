@@ -9,12 +9,15 @@ Introduction
 .. note::
 
    This part of the documentation is **under construction**.
-   Important parts for adding JavaScript to addons can be found in the documentation about the :doc:`Plone 5 Resource Registry </adapt-and-extend/theming/resourceregistry>`.
-   You should also look at the JavaScript part of the official `plone training <http://training.plone.org/5/javascript/index.html>`_.
+   Important parts for adding JavaScript to addons can be found in the documentation here:
+
+- the :doc:`Plone 5 Resource Registry </adapt-and-extend/theming/resourceregistry>`.
+- `plone training <http://training.plone.org/5/javascript/index.html>`_.
+
    While we are updating this documentation, you should also look at the following blogposts:
 
-   - `Updating JavaScript for Plone 5 <https://www.nathanvangheem.com/news/updating-javascript-for-plone-5>`_
-   - `Customizing JavaScript pattern options in Plone 5 <https://www.nathanvangheem.com/news/customizing-javascript-pattern-options-in-plone-5>`_
+- `Updating JavaScript for Plone 5 <https://www.wildcardcorp.com/blog/updating-javascript-for-plone-5>`_
+- `Customizing JavaScript pattern options in Plone 5 <https://www.wildcardcorp.com/blog/customizing-javascript-pattern-settings-in-plone-5>`_
 
 
 For JavaScript and CSS development, Plone 5 makes extensive use of tools like Bower, Grunt, RequireJS and Less for an optimized development process.
