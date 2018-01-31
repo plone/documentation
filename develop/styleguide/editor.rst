@@ -1,4 +1,4 @@
-How to set up your editor
+How To Set Up Your Editor
 =========================
 
 
@@ -9,16 +9,16 @@ You only need to install the plugin for your editor of choice, and add the follo
 .. code-block:: ini
 
     [*]
-    indent_style = space
+    charset = utf-8
     end_of_line = lf
+    indent_style = space
     insert_final_newline = true
     trim_trailing_whitespace = true
-    charset = utf-8
 
-    [{*.py,*.cfg}]
+    [*.{cfg,py}]
     indent_size = 4
 
-    [{*.html,*.dtml,*.pt,*.zpt,*.xml,*.zcml,*.js}]
+    [*.{css,dtml,html,js,pt,xml,zcml,zpt}]
     indent_size = 2
 
     [Makefile]
@@ -28,5 +28,5 @@ You only need to install the plugin for your editor of choice, and add the follo
 dotfiles
 --------
 
-Some Plone developers use dotfiles similar to these: `plone.dotfiles <https://github.com/plone/plone.dotfiles>`_. This might inspire you with your own dotfiles/configuration settings.
-
+Some Plone developers use dotfiles similar to these: `plone.dotfiles <https://github.com/plone/plone.dotfiles>`_.
+This might inspire you with your own dotfiles/configuration settings.

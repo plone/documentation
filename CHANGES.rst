@@ -5,7 +5,7 @@ Changelog
 
 Unreleased
 ==========
-- Documentation for Thumbs and Iconhandling in Plone 
+- Documentation for Thumbs and Iconhandling in Plone
   https://github.com/plone/Products.CMFPlone/issues/1995
   [fgrcon]
 - New metadata catalog column `mime_type`
@@ -16,6 +16,7 @@ Unreleased
 - Remove Deliverance info for theming and refer to diazo.org deployment [fredvd]
 - Improve ReStructuredText Style Guide [svx]
 - Add documentation about TinyMCE styles and formats [davilima6]
+- Improve Editor Guide [tmassman]
 
 
 20160606
