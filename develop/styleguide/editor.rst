@@ -1,4 +1,4 @@
-How to set up your editor
+How To Set Up Your Editor
 =========================
 
 
@@ -28,5 +28,5 @@ You only need to install the plugin for your editor of choice, and add the follo
 dotfiles
 --------
 
-Some Plone developers use dotfiles similar to these: `plone.dotfiles <https://github.com/plone/plone.dotfiles>`_. This might inspire you with your own dotfiles/configuration settings.
-
+Some Plone developers use dotfiles similar to these: `plone.dotfiles <https://github.com/plone/plone.dotfiles>`_.
+This might inspire you with your own dotfiles/configuration settings.
