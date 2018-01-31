@@ -15,10 +15,10 @@ You only need to install the plugin for your editor of choice, and add the follo
     trim_trailing_whitespace = true
     charset = utf-8
 
-    [{*.py,*.cfg}]
+    [*.{cfg,py}]
     indent_size = 4
 
-    [{*.html,*.dtml,*.pt,*.zpt,*.xml,*.zcml,*.js}]
+    [*.{css,dtml,html,js,pt,xml,zcml,zpt}]
     indent_size = 2
 
     [Makefile]
