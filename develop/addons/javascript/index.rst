@@ -13,8 +13,8 @@ Important parts for adding JavaScript to add-ons can be found in the documentati
 
 While we are updating this documentation, you should also look at the following blog posts:
 
-- `Updating JavaScript for Plone 5 <https://www.nathanvangheem.com/news/updating-javascript-for-plone-5>`_
-- `Customizing JavaScript pattern options in Plone 5 <https://www.nathanvangheem.com/news/customizing-javascript-pattern-options-in-plone-5>`_
+- `Updating JavaScript for Plone 5 <https://www.wildcardcorp.com/blog/updating-javascript-for-plone-5>`_
+- `Customizing JavaScript pattern options in Plone 5 <https://www.wildcardcorp.com/blog/customizing-javascript-pattern-settings-in-plone-5>`_
 
 
 .. toctree::
