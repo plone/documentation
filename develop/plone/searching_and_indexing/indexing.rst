@@ -1,11 +1,10 @@
 ====================
-Indexes and metadata
+Indexes And Metadata
 ====================
 
 .. admonition:: Description
 
-   How to program your custom fields and data queries
-   through portal_catalog.
+   How to program your custom fields and data queries through portal_catalog.
 
 
 What does indexing mean?
@@ -13,13 +12,14 @@ What does indexing mean?
 
 Indexing is the action to make object data search-able.
 Plone stores available indexes in the database.
-You can create them through-the-web and inspect existing indexes
-in portal_catalog on Index tab.
+
+You can create them through-the-web and inspect existing indexes in portal_catalog on Index tab.
 
 The Catalog Tool can be configured through the Management Interface or
 programatically in Python but current best practice in the CMF
 world is to use GenericSetup to configure it using the declarative
-*catalog.xml* file. The GenericSetup profile for Plone, for
+*catalog.xml* file.
+The GenericSetup profile for Plone, for
 example, uses the *CMFPlone/profiles/default/catalog.xml* XML data
 file to configure the Catalog Tool when a Plone site is created. It
 is fairly readable so taking a quick look through it can be very
@@ -61,7 +61,7 @@ include the following *profiles/default/catalog.xml*:
       the import step for a *catalog.xml* is run a second time (for example
       when you reinstall the product), the indexes specified will be
       destroyed, losing all currently indexed entries, and then re-created
-      fresh (and empty!). If you want to workaround this behaviour, you can
+      fresh (and empty!). If you want to workaround this behavior, you can
       either update the catalog afterwards or add the indexes yourself in
       Python code using a custom import handler.
 
@@ -73,7 +73,7 @@ include the following *profiles/default/catalog.xml*:
       * https://mail.zope.org/pipermail/zope-cmf/2007-March/025664.html
 
 
-Viewing indexes and indexed data
+Viewing Indexes And Indexed Data
 --------------------------------
 
 Indexed data
@@ -87,7 +87,7 @@ You can do this through portal_catalog in the Management Interface.
 
 * Click any object
 
-Indexes and metadata columns
+Indexes And Metadata Columns
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Available indexes are stored in the database, not in Python code.
@@ -98,12 +98,12 @@ To see what indexes your site has
 * Click *Indexes* and *Metadata* tabs
 
 
-Creating an index
+Creating An Index
 -----------------
 
 To perform queries on custom data, you need to add the corresponding index to portal_catalog first.
 
-E.g. If your :doc:`Archetypes </develop/plone/content/types>` content type has a field::
+For example, if your :doc:`Archetypes </develop/plone/content/types>` content type has a field::
 
 		schema = [
 
@@ -129,11 +129,10 @@ See more information about :doc:`accessor methods </develop/plone/content/archet
 
 .. note ::
 
-	If you want to create an index for content type you do not
-	control yourself or if you want to do some custom logic in your indexer,
-	please see *Custom index method* below.
+   If you want to create an index for content type you do not control yourself or if you want to do some custom logic in your indexer,
+   please see *Custom index method* below.
 
-Creating an index through the web
+Creating An Index Through The Web
 ---------------------------------
 
 This method is suitable during development time - you can create an index
@@ -156,8 +155,8 @@ to your Plone database locally.
 You can use Archetypes accessors methods directly as an indexed attribute.
 In example we use ``getMyCustomValue`` for AT field ``customValue``.
 
-The type of index you need depends on what kind queries you need to do on the data. E.g.
-direct value matching, ranged date queries, free text search, etc. need different kind of indexes.
+The type of index you need depends on what kind queries you need to do on the data.
+For example, direct value matching, ranged date queries, free text search, etc. need different kind of indexes.
 
 * After this you can query portal_catalog::
 
@@ -166,7 +165,7 @@ direct value matching, ranged date queries, free text search, etc. need differen
                 print brain["getMyCustomValue"]
 
 
-Adding index using add-on product installer
+Adding Index Using Add-on Product Installer
 -------------------------------------------
 
 You need to have your own add-on product which
@@ -192,16 +191,14 @@ It is more cumbersome, however.
 
 .. warning ::
 
-	There is a known issue of indexed data getting pruned
-	when an add-on product is reinstalled. If you want to avoid
-	this then you need to create new indexes in add-on
-	installer custom setup step (Python code).
+   There is a known issue of indexed data getting pruned when an add-on product is reinstalled.
+
+   If you want to avoid this then you need to create new indexes in add-on installer custom setup step (Python code).
 
 
 The example below is not safe for data prune on reinstall.
 This file is ``profiles/default/catalog.xml``
-It installs a new index called ``revisit_date``
-of DateIndex type.
+It installs a new index called ``revisit_date`` of DateIndex type.
 
 .. code-block:: xml
 
@@ -216,20 +213,18 @@ For more information see
 
 * http://maurits.vanrees.org/weblog/archive/2009/12/catalog
 
-Custom index methods
+Custom Index Methods
 --------------------
 
 The `plone.indexer <https://pypi.python.org/pypi/plone.indexer>`_ package provides method to create custom indexing functions.
 
-Sometimes you want to index "virtual" attributes of an object
-computed from existing ones, or just want to customize the way
-certain attributes are indexed, for example, saving only the 10
+Sometimes you want to index "virtual" attributes of an object computed from existing ones,
+or you want to customize the way certain attributes are indexed, for example, saving only the 10
 first characters of a field instead of its whole content.
 
 To do so in an elegant and flexible way, Plone>=3.3 includes a new
 package, `plone.indexer <https://pypi.python.org/pypi/plone.indexer>`_,
-which provides a series of primitives to delegate indexing operations
-to adapters.
+which provides a series of primitives to delegate indexing operations to adapters.
 
 Let's say you have a content type providing the interface
 ``IMyType``. To define an indexer for your type which takes the
@@ -252,26 +247,25 @@ ZCML. Assuming you've put the code above into a file named
 
        <adapter name="description" factory=".indexers.mytype_description" />
 
-And that's all! Easy, wasn't it?
 
-Note you can omit the ``for`` attribute because you passed this to
-the ``@indexer`` decorator, and you can omit the ``provides``
-attribute because the thing returned by the decorator is actually a
-class providing the required ``IIndexer`` interface.
+.. note::
+
+   You can omit the ``for`` attribute because you passed this to the ``@indexer`` decorator,
+   and you can omit the ``provides`` attribute because the thing returned by the decorator is actually a
+   class providing the required ``IIndexer`` interface.
 
 To learn more about the *plone.indexer* package, read `its doctest <http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt>`_.
 
 For more info about how to create content types, refer to the :doc:`developing add-ons section </develop/addons/index>`.
 For older Archetypes content types, see the `Plone 4 documentention on Archetypes <http://docs.plone.org/4/en/old-reference-manuals/archetypes/index.html>`_
 
-**Important note:** If you want to adapt an
-Archetypes content type like Event or News Item, take into account
-you will have to feed the ``indexer`` decorator with the Zope 3
-interfaces defined in ``Products.ATContentTypes.interface.*``
-files, not with the deprecated Zope 2 ones into the
-``Products.ATContentTypes.interfaces`` file.
+.. important::
 
-Creating a metadata column
+   If you want to adapt an Archetypes content type like Event or News Item, take into account
+   you will have to feed the ``indexer`` decorator with the Zope 3 interfaces defined in ``Products.ATContentTypes.interface.*``
+   files, not with the deprecated Zope 2 ones into the ``Products.ATContentTypes.interfaces`` file.
+
+Creating A Metadata Column
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The same rules and methods apply for metadata columns as creating index above.
@@ -292,7 +286,7 @@ To create metadata colums in your ``catalog.xml`` add:
     </object>
 
 
-When indexing happens and how to reindex manually
+When Indexing Happens And How To Reindex Manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Content indexing happens automatically if:
@@ -318,22 +312,25 @@ Example:
     # update only the index associated with this change
     obj.reindexObject(idxs=['Title'])
 
-If you add a new index you need to run :doc:`Rebuild catalog </develop/plone/searching_and_indexing/catalog>` to get the existing values from content objects into the new index.
+If you add a new index you need to run :doc:`Rebuild catalog </develop/plone/searching_and_indexing/catalog>`
+to get the existing values from content objects into the new index.
 
 Also, if you modify security related parameters (permissions), you need to call ``reindexObjectSecurity()``.
 
-Check the thread `Best practices on reindexing the catalog <https://community.plone.org/t/best-practices-on-reindexing-the-catalog/4157>`_ for more tips on how to reduce memory consumption and speed up the process.
+Check the thread `Best practices on reindexing the catalog <https://community.plone.org/t/best-practices-on-reindexing-the-catalog/4157>`_
+for more tips on how to reduce memory consumption and speed up the process.
 
 .. warning::
 
-    **Unit test warning:** Usually Plone reindexes modified objects at the end of each request (each transaction).
-    If you modify the object yourself you are responsible to notify related catalogs about the new object data.
+   **Unit test warning:** Usually Plone reindexes modified objects at the end of each request (each transaction).
+   If you modify the object yourself you are responsible to notify related catalogs about the new object data.
 
 
-Index types
+Index Types
 -----------
 
-Zope 2 product `PluginIndexes <https://github.com/zopefoundation/Products.ZCatalog/tree/master/src/Products/PluginIndexes>`_ defines various portal_catalog index types used by Plone.
+Zope 2 product `PluginIndexes <https://github.com/zopefoundation/Products.ZCatalog/tree/master/src/Products/PluginIndexes>`_
+defines various portal_catalog index types used by Plone.
 
 * FieldIndex stores values as is
 
@@ -347,7 +344,7 @@ Zope 2 product `PluginIndexes <https://github.com/zopefoundation/Products.ZCatal
 * `ExtendedPathIndex <https://github.com/plone/Products.ExtendedPathIndex>`_ is used for indexing content object locations.
 
 
-Default Plone indexes and metadata columns
+Default Plone Indexes And Metadata Columns
 ------------------------------------------
 
 Some interesting indexes
@@ -372,18 +369,18 @@ Some interesting columns
 
 * getRemoteURL: Where to go when the object is clicked
 
-* getIcon: **This might be confusing:** 
+* getIcon: **This might be confusing:**
            Since Plone 5.0.2 - **getIcon is a boolean value which is set to ``True``, when the item is an image ore has an image property (named image)
-           e.g.: lead image or teaser image).** The value of getIcon is used for showing previoew images (thumbs) in lists, tables, content view, portlets, etc.). 
-           
+           e.g.: lead image or teaser image).** The value of getIcon is used for showing preview images (thumbs) in lists, tables, content view, portlets, etc.).
+
            Content type icons (aka portaltype-icons) ( e.g.: for folder, document, news item etc.) are now rendered as fontello fonts since Plone 5.0.
-           Mime type icons are read from the mime type registry for all file content types instead a fontello font (since Plone 5.1) 
+           Mime type icons are read from the mime type registry for all file content types instead a fontello font (since Plone 5.1)
 
 * exclude_from_nav: If True the object won't appear in sitemap, navigation tree
 
 * mime_type: Since Plone 5.1: Mime type information for content items where applicable (file, image, custom types,...) e.g.: ``text/plain``, ``image/jpeg``, ``application/pdf`` ...
 
-Custom sorting by title
+Custom Sorting By Title
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 sortable_title is type of FieldIndex (raw value) and normal ``Title`` index is type of searchable text.
@@ -421,10 +418,11 @@ Related ``configure.zcml``
 
 
 
-Full-text searching
+Full-text Searching
 -------------------
 
 Plone provides special index called ``SearchableText`` which is used on the site full-text search.
+
 Your content types can override ``SearchableText`` index with custom method to populate this index
 with the text they want to go into full-text searching.
 
