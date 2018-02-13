@@ -56,7 +56,7 @@ Take this example paragraph::
     from the DOM or via the jQuery interface.
     It is highly recommended to use the DOM interface,
     since it offers a lot more flexibility compared to the jQuery approach.
-    
+
     Also, if you wish to use the automatic binding and rebinding functionality,
     the DOM approach is more straightforward and hassle-free.
 

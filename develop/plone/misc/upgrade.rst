@@ -4,8 +4,8 @@ Upgrade tips
 
 .. admonition:: Description
 
-        Advanced tips for upgrading Plone. 
-        
+        Advanced tips for upgrading Plone.
+
         Some of the information on this page is for Plone 4, which used the Archetypes content type framework. Plone 5.x uses the Dexterity content type framework.
 
 General Tips

@@ -69,7 +69,7 @@ Example
         logger.info("Reached function()")
             ...
 
-Logging From Page Templates And RestrictedPython Scripts 
+Logging From Page Templates And RestrictedPython Scripts
 ---------------------------------------------------------
 
 Python ``logging`` module doesn't provide Zope 2 security assertations

@@ -113,7 +113,7 @@ You might need to add additional setup.py options to get your tests work
 Creating unit tests
 ====================
 
-For any new test suites, you should be using `plone.app.testing`, your next step should be to 
+For any new test suites, you should be using `plone.app.testing`, your next step should be to
 `read the documentation </external/plone.app.testing/docs/source>`.
 
 You may come across `Products.PloneTestCase <https://pypi.python.org/pypi/Products.PloneTestCase>` in older code.

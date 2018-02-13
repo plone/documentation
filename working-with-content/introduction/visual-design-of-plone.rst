@@ -70,12 +70,12 @@ Content Type Icons
    :alt: Icons used in Plone user interface
 
 
-   
+
 Furthermore **icons** can be used to help to visually identify **content types** in any kind of listing or tables.
 For the content type *File* mime type icons are used to visualize the format of the given file.
 
 This feature is adjustable to a very high degree. There are default settings which can be configured in the :doc:`Site Configuration panel </adapt-and-extend/config/site>`.
-This default settings can be overidden for each content item (edit: settings) or portlet respectively. 
+This default settings can be overidden for each content item (edit: settings) or portlet respectively.
 
 
 .. image:: /_static/icons2.png
@@ -85,26 +85,26 @@ This default settings can be overidden for each content item (edit: settings) or
 Preview Images (aka Thumbnails, Thumbs)
 ---------------------------------------
 **Preview Images (or thumbnails, thumbs)**  for image items or any other content items which have a lead image
-(or teaser image) can be shown in any listing or table. 
-Additional to the same configuraion options for icons above you can define default sizes for the preview images for, tables, lists or portlets and also overwrite these settings individually.  
+(or teaser image) can be shown in any listing or table.
+Additional to the same configuraion options for icons above you can define default sizes for the preview images for, tables, lists or portlets and also overwrite these settings individually.
 
 
 .. image:: /_static/thumbs-example-1.png
    :align: center
    :alt: Example: preview images and icons with different settings
-   
+
 
 Depending on the default settings for table views the  content view of a folder will show preview images or not:
 
-   
+
 .. image:: /_static/contents-with-thumbs-suppressed.png
    :align: center
    :alt: Example: content view with thumbs not shown
 
-   
+
 .. image:: /_static/contents-with128x128.png
    :align: center
    :alt: Example: content view with thumbs  shown
-   
-   
-The second option (here with image size set to 128x128) is very handy whenever you need to rearrange a big number of images whith mkore or less meaningless title. 
+
+
+The second option (here with image size set to 128x128) is very handy whenever you need to rearrange a big number of images whith mkore or less meaningless title.

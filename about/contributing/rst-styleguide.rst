@@ -13,9 +13,9 @@ Overview
 ========
 
 - All pages should be in ReStructured Text, and have a .rst extension.
-  
+
 - Images should be in .png, or .jpg format.
-  
+
 - Please, don't use .gif, because the PDF-generating software has issues with that.
 
 

@@ -45,13 +45,13 @@ Based on code we love to look at (Pyramid, Requests, etc.), we allow the followi
    .. sourcecode:: python
 
        foo = do_something(
-           very_long_argument='foo', 
+           very_long_argument='foo',
            another_very_long_argument='bar',
        )
 
        # For functions the ): needs to be placed on the following line
        def some_func(
-           very_long_argument='foo', 
+           very_long_argument='foo',
            another_very_long_argument='bar',
        ):
 
