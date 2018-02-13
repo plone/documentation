@@ -18,7 +18,7 @@ To run a Plone based web site on your own server you need:
 
 Plone requires several system libraries.
 These need to be installed by a user with root access.
-If you would like to install Plone using a consumer hosting service, you must ensure that the service includes SSH and root access. 
+If you would like to install Plone using a consumer hosting service, you must ensure that the service includes SSH and root access.
 
 Operating system
 ----------------
@@ -75,7 +75,7 @@ All Plone versions
 ==================
 
 What follows is an overview of Plone's overall software requirements.
-Each Plone installer (Unified Installer, Vagrant/VirtualBox, Windows buildout) will manage its dependencies and requirements differently. 
+Each Plone installer (Unified Installer, Vagrant/VirtualBox, Windows buildout) will manage its dependencies and requirements differently.
 
 Windows
 -------

@@ -2,7 +2,7 @@
 JavaScript styleguide
 =====================
 
-.. note:: 
+.. note::
 
   Plone doesn't yet use any of the new `ES2015 <https://babeljs.io/docs/learn-es2015/>`__ features.
 

@@ -51,9 +51,9 @@ Note the use of the common jQuery idiom:
         ...
     });
 
-This accomplishes a couple of things: 
+This accomplishes a couple of things:
 
-1. it sets the code up to run once the page is loaded; 
+1. it sets the code up to run once the page is loaded;
 
 2. it aliases "jQuery" to "$" so that we may use common jQuery shorthand.
 

@@ -10,7 +10,7 @@ Storage
 Introduction
 ------------
 
-This page explains the details how data is stored in the ZODB. 
+This page explains the details how data is stored in the ZODB.
 The information here is important to understand Plone's database behavior and how to optimize your application.
 
 Pickling
@@ -87,7 +87,7 @@ BLOBs
 
 BLOBs are large binary objects like files or images.
 
-BLOBs are supported since ZODB 3.8.x. 
+BLOBs are supported since ZODB 3.8.x.
 
 When you use BLOB interface to store and retrieve data, they are stored physically as files on your file systems.
 A file system, as the name says, was designed to handle files and has far better performance on large binary data than sticking the data into ZODB.

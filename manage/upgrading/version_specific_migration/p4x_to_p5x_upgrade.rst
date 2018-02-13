@@ -53,7 +53,7 @@ If you have some custom member properties in your Plone site, be aware that:
     When a custom field is defined in `userschema.xml`,
     its corresponding attribute is automatically created in the `portal_memberdata` tool,
     so there is no need to declare it in `memberdata_properties.xml`.
-    
+
     `memberdata_properties.xml` will only handled attributes that are not related to the user profile form or the registration form.
 
 
