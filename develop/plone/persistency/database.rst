@@ -222,11 +222,5 @@ Instructions for undoing deleted data and fixing broken databases.
 
 * http://www.zopatista.com/plone/2008/12/18/saving-the-day-recovering-lost-objects
 
-ZODB tips and tricks
-====================
-
-Please see
-
-* https://plone.org/events/regional/nola05/collateral/Chris%20McDonough-ZODB%20Tips%20and%20Tricks.pdf
 
 .. |---| unicode:: U+02014 .. em dash
