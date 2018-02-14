@@ -62,7 +62,7 @@ Take this example paragraph::
 
 Please do not follow `PEP8 <https://www.python.org/dev/peps/pep-0008/#maximum-line-length>`_ maximum line length standard.
 
-Limiting lines to a maximum of 79 characters
+Limiting lines to a maximum of 130 characters
 
 Tab Policy
 ----------
