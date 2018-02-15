@@ -13,7 +13,7 @@ Introduction
 Plone supports image content in several forms:
 
 stand-alone content type
-    As stand-alone content type, images will be visible in the sitemap.
+    As stand-alone content type, images will be visible in the sitemap (configurable via the Navigation control panel).
     This is the case for the default ``Image`` content type, but you can create custom content types with similar properties.
 
 image field
@@ -39,7 +39,7 @@ Custom image content type
 
 If you want to have your custom content type behave like the stock Plone ``Image`` content type:
 
-* Inherit from the content class ``plone.app.contenttype.content.Image`` and use the xml schema from that class.
+* Inherit from the content class ``plone.app.contenttype.content.Image`` and use the XML schema from that class.
 
 * When writing the ``GenericSetup`` XML of your type,
   follow the example of `Image.xml <https://github.com/plone/plone.app.contenttypes/blob/master/plone/app/contenttypes/profiles/default/types/Image.xml>`_.
@@ -60,7 +60,7 @@ If you want to have your custom content type behave like the stock Plone ``Image
 Accessing images
 ================
 
-Both - Dexterity and Archetypes - are offering the same traversable ``@@images`` view.
+Both Dexterity and Archetypes offer the same traversable ``@@images`` view.
 It can be used from page templates and Python code to provide access to the image and different image scales for image fields on content.
 
 The code for image access and scales for Dexterity based content is handled by `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_. Old Archetypes based content image scales is handled by `plone.app.imaging <https://plone.org/products/plone.app.imaging>`_.
@@ -69,8 +69,8 @@ The code for image access and scales for Dexterity based content is handled by `
 Using direct URLs
 -----------------
 
-If your image field is a primary field, like at the default ``Image`` content type,
-then access works by calling the url without any view::
+If your image field is a primary field, such as for the default ``Image`` content type,
+you access the image by calling the URL without specifying a view::
 
     http://yoursite/imagecontent
 
@@ -78,7 +78,7 @@ The generic way to access any image on your content is an URL like so::
 
     http://yoursite/imagecontent/@@images/FIELDNAME
 
-Predefined image scales from the configuration settings are accessed this way::
+Predefined image scales from the configuration registry settings are accessed this way::
 
     http://yoursite/imagecontent/@@images/FIELDNAME/SCALENAME
 
@@ -86,16 +86,22 @@ You might find URLs of custom (on-the-fly) image scales accessed this way (see b
 
     http://yoursite/imagecontent/@@images/FIELDNAME/CUSTOM_SCALE_UID.jpg
 
-Examples 1,
+Example 1,
 show the original image from the ``plone.leadimage`` behavior::
 
     http://yoursite/imagecontent/@@images/leadimage
 
-Examples 2,
+Example 2,
 show the scale ``mini`` from the field ``custom_image``::
 
     http://yoursite/imagecontent/@@images/custom_image/mini
 
+Determining the image scales available
+--------------------------------------
+
+To find out which image scales are available in a particular Plone site, go to the Configuration Registry control panel and filter by ``allowed_sizes``.
+
+The value of the ``plone.allowed_sizes`` registry entry will be something like ``[u'high 1400:1400', u'large 768:768', u'preview 400:400', u'mini 200:200', u'thumb 128:128', u'tile 64:64', u'icon 32:32', u'listing 16:16']``, so your available scales will be ``high``, ``large``, ``preview``, ``mini``, ``thumb``, ``tile``, ``icon``, and ``listing``.
 
 Access by creating tags programmatically
 ----------------------------------------

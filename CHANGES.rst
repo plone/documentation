@@ -5,6 +5,8 @@ Changelog
 
 Unreleased
 ==========
+- explain how to find available image scales
+  [tkimnguyen]
 - Documentation for Thumbs and Iconhandling in Plone
   https://github.com/plone/Products.CMFPlone/issues/1995
   [fgrcon]
