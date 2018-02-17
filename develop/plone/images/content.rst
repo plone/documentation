@@ -99,9 +99,13 @@ show the scale ``mini`` from the field ``custom_image``::
 Determining the image scales available
 --------------------------------------
 
-To find out which image scales are available in a particular Plone site, go to the Configuration Registry control panel and filter by ``allowed_sizes``.
+To find out or change which image scales are available in a particular Plone site, go to the Image Handling control panel.
 
-The value of the ``plone.allowed_sizes`` registry entry will be something like ``[u'high 1400:1400', u'large 768:768', u'preview 400:400', u'mini 200:200', u'thumb 128:128', u'tile 64:64', u'icon 32:32', u'listing 16:16']``, so your available scales will be ``high``, ``large``, ``preview``, ``mini``, ``thumb``, ``tile``, ``icon``, and ``listing``.
+.. figure:: /_static/image_handling_control_panel.png
+   :align: center
+   :alt: the Image Handling control panel
+
+You can also use the Configuration Registry control panel and filter by ``allowed_sizes``. The value of the ``plone.allowed_sizes`` registry entry will be something like ``[u'high 1400:1400', u'large 768:768', u'preview 400:400', u'mini 200:200', u'thumb 128:128', u'tile 64:64', u'icon 32:32', u'listing 16:16']``, so your available scales will be ``high``, ``large``, ``preview``, ``mini``, ``thumb``, ``tile``, ``icon``, and ``listing``.
 
 Access by creating tags programmatically
 ----------------------------------------
