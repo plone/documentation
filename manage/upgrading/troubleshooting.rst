@@ -67,10 +67,10 @@ Eliminate products and customizations that are not part of the problem.
 This makes it easier for others to reproduce the problem and it increases your chances of meeting others with the same problem or even a solution.
 The more complex your story is, the more likely that it is unique to your situation and in-penetrable to others.
 
-Ask for help on a mailing list
-==============================
+Ask for help
+============
 
-:doc:`Ask for help </askforhelp>` on the `Plone setup list <https://plone.org/support>`_. Be sure to:
+:doc:`Ask for help </askforhelp>` in the `Plone support channels <https://plone.org/support>`_. Be sure to:
 
 * Provide relevant source code for your customizations that are part of the problem.
 * Describe the exact configuration, software versions, migration history, error messages and so on.
