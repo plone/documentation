@@ -154,11 +154,10 @@ Here is an example that returns our pizza types:
 
 ::
 
-    from five import grok
     from plone.supermodel import model
     from plone.directives import form
 
-    from zope.component import queryUtility
+    from zope.component import queryUtility,provider
 
     from zope import schema
 
@@ -169,7 +168,7 @@ Here is an example that returns our pizza types:
 
     ...
 
-    @grok.provider(IContextSourceBinder)
+    @provider(IContextSourceBinder)
     def availablePizzas(context):
         registry = queryUtility(IRegistry)
 
@@ -184,7 +183,7 @@ Here is an example that returns our pizza types:
         return SimpleVocabulary(terms)
 
 Here, we have defined a function acting as the *IContextSourceBinder*, as
-specified via the *@grok.provider()* decorator. This looks up the
+specified via the *@provider()* decorator. This looks up the
 registry and looks for the record we created with *registry.xml* above
 (remember to re-install the product in the Add-on control panel or the
 *portal\_quickinstaller* tool if you modify this file). We then use the
@@ -235,8 +234,10 @@ initialised with the registry key
 
 ::
 
+    from zope.interface import implementer
+    
+    @implementer
     class RegistrySource(object):
-        grok.implements(IContextSourceBinder)
 
         def __init__(self, key):
             self.key = key
@@ -298,19 +299,18 @@ creating a named utility providing *IVocabularyFactory*, like so:
 
 ::
 
-    from five import grok
     from zope.component import queryUtility
 
     from zope import schema
+    from zope.interface import implementer
     from zope.schema.interfaces import IVocabularyFactory
 
     from zope.schema.vocabulary import SimpleVocabulary
 
     from plone.registry.interfaces import IRegistry
 
-
+    @implementer
     class PizzasVocabulary(object):
-        grok.implements(IVocabularyFactory)
 
         def __call__(self, context):
             registry = queryUtility(IRegistry)
