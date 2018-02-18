@@ -153,9 +153,6 @@ Dynamic vocabularies
 Dynamic vocabularies' values may change run-time.
 They are usually generated based on some context data.
 
-Note that the examples below need grok package installed and <grok:grok package="...">
-directive in configure.zcml.
-
 Complete example with portal_catalog query, vocabulary creation and form
 
 ::
@@ -167,8 +164,7 @@ Complete example with portal_catalog query, vocabulary creation and form
         and then this vocabulary is used in Dexterity form.
 
     """
-
-    from five import grok
+    from zope.component import provider
     from plone.directives import form
 
     from zope import schema
@@ -186,7 +182,7 @@ Complete example with portal_catalog query, vocabulary creation and form
         terms = [ SimpleTerm(value=pair[0], token=pair[0], title=pair[1]) for pair in items ]
         return terms
 
-    @grok.provider(IContextSourceBinder)
+    @provider(IContextSourceBinder)
     def course_source(context):
         """
         Populate vocabulary with values from portal_catalog.
@@ -230,13 +226,7 @@ Complete example with portal_catalog query, vocabulary creation and form
         name = schema.TextLine(
                 title=u"Your name",
             )
-
-        courses = schema.List(title=u"Promoted courses",
-                              required=False,
-                              value_type=schema.Choice(source=course_source)
-                              )
-
-    class MyForm(form.SchemaForm):
+class MyForm(form.SchemaForm):
         """ Define Form handling
 
         This form can be accessed as http://yoursite/@@my-form
@@ -250,6 +240,12 @@ Complete example with portal_catalog query, vocabulary creation and form
         ignoreContext = True
 
         @button.buttonAndHandler(u'Ok')
+        courses = schema.List(title=u"Promoted courses",
+                              required=False,
+                              value_type=schema.Choice(source=course_source)
+                              )
+
+    
         def handleApply(self, action):
             data, errors = self.extractData()
             if errors:
@@ -273,9 +269,8 @@ Complex example 2
 
 .. code-block:: python
 
-
-    from five import grok
-    from zope.schema.interfaces import IContextSourceBinder
+    from zope.component import provider
+    from zope.schema.interfaces import IContextSourceBinder,implementer
     from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
     from Products.CMFCore.utils import getToolByName
     from plone.i18n.normalizer import idnormalizer
@@ -286,7 +281,7 @@ Complex example 2
         return terms
 
 
-    @grok.provider(IContextSourceBinder)
+    @provider(IContextSourceBinder)
     def area_source(context):
         """
         Populate vocabulary with values from portal_catalog.
