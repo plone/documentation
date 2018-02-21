@@ -99,7 +99,7 @@ Resyncing translations
 
 When an i18n fix is done in the code, you need to regenerate the pot file and resync the po files from this pot file.
 
-There is a *bin/i18n* command to resync the po files for the different i18n domains. `Read more on this doc how to use it `<
+There is a *bin/i18n* command to resync the po files for the different i18n domains. `Read more on this doc how to use it <
 https://github.com/collective/plone.app.locales/blob/master/utils/README.txt>`_.
 
 To release a new plone.app.locales version, `please read this doc <https://github.com/collective/plone.app.locales/blob/master/utils/RELEASING.rst>`_
