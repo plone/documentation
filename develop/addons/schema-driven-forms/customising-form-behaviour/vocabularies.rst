@@ -157,7 +157,8 @@ Here is an example that returns our pizza types:
     from plone.supermodel import model
     from plone.directives import form
 
-    from zope.component import queryUtility,provider
+    from zope.component import queryUtility
+    from zope.component import provider
 
     from zope import schema
 
