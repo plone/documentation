@@ -24,12 +24,13 @@ get the buildout like this:
 
 .. code-block:: shell
 
-    git clone git://github.com/plone/buildout.coredev.git
-    cd buildout.coredev
-    python2.7 bootstrap.py
+    cd ~/buildouts # or wherever you want to put things
+    git clone -b 5.1 https://github.com/plone/buildout.coredev ./plone5devel
+    virtualenv --no-site-packages plone5devpy
+    cd plone5devel
+    ../plone5devpy/bin/pip install -r requirements.txt
+    ../plone5devpy/bin/buildout bootstrap
     bin/buildout -c experimental/i18n.cfg
-    rm .mr.developer.cfg
-    ln -s experimental/.mr.developer.cfg
     bin/instance fg
 
 To update the buildout later:
@@ -92,6 +93,16 @@ you can do the following:
 The request will appear for *plone.app.locales* authors.
 
 If it does not get merged in timely manner, ask on `Plone forums <https://community.plone.org/c/development/i18nl10n>`_.
+
+Resyncing translations
+======================
+
+When an i18n fix is done in the code, you need to regenerate the pot file and resync the po files from this pot file.
+
+There is a *bin/i18n* command to resync the po files for the different i18n domains. `Read more on this doc how to use it `<
+https://github.com/collective/plone.app.locales/blob/master/utils/README.txt>`_.
+
+To release a new plone.app.locales version, `please read this doc <https://github.com/collective/plone.app.locales/blob/master/utils/RELEASING.rst>`_
 
 Support
 =======
