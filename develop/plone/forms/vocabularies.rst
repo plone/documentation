@@ -270,7 +270,8 @@ Complex example 2
 .. code-block:: python
 
     from zope.component import provider
-    from zope.schema.interfaces import IContextSourceBinder,implementer
+    from zope.schema.interfaces import IContextSourceBinder
+    from zope.schema.interfaces import implementer
     from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
     from Products.CMFCore.utils import getToolByName
     from plone.i18n.normalizer import idnormalizer
