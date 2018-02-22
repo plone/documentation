@@ -32,14 +32,11 @@ That server is installed automatically by the install process.
 Download Plone
 ==============
 
-Plone is available for Mac OSX X, Linux and BSD operating systems.
-For Windows, we currently advise running Plone 5 in a virtualmachine or Vagrant image.
-
-We anticipate having a binary windows installer for later releases.
+Plone is available for macOS, Windows, Linux and BSD operating systems.
 
 `Download the latest Plone release <https://plone.org/download>`_.
 
-From here, you can also find links to the Vagrant install kit (if you wish to install Plone for evaluation or development on a Windows, OS X or any other machine that supports VirtualBox and Vagrant).
+From here, you can also find links to the Vagrant install kit (if you wish to install Plone for evaluation or development on a Windows, macOS or any other machine that supports VirtualBox and Vagrant).
 
 Installation on Linux, BSD and other Unix workalikes requires a source code installation, made easy by our Unified Installer.
 "Unified" refers to its ability to install on most Unix workalikes.
@@ -56,8 +53,7 @@ See :doc:`Plone installation requirements <requirements>` for detailed requireme
 How To Install Plone
 ====================
 
-Plone can run on all popular desktop or server operating systems, including Linux, OS X, BSD and Microsoft Windows.
-(Note: currently there is no binary installer for Plone 5 on Windows, we recommend using the `Vagrant kit <https://github.com/plone/plonedev.vagrant>`__)
+Plone can run on all popular desktop or server operating systems, including Linux, macOS, BSD and Microsoft Windows.
 
 * You can install Plone on a server for production usage
 
@@ -306,13 +302,9 @@ Microsoft Windows
 Installing Plone On Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For Plone 5, there currently is no binary installer. We recommend using the `Vagrant kit <https://github.com/plone/plonedev.vagrant>`__
-
-We anticipate offering a binary installer for Windows at a later moment.
+For Plone 5, you have the `Windows installer <https://github.com/plone/WinPloneInstaller/>`_ or the `Vagrant kit <https://github.com/plone/plonedev.vagrant>`__
 
 For the Plone 4.3 series, there is a `binary installer <https://plone.org/products/plone/releases/4.3.6>`_.
-
-If you wish to develop Plone on Windows you need to set-up a working MingW environment (this can be somewhat painful if you aren't used to it).
 
 
 macOS
