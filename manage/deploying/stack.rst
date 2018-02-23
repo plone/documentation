@@ -59,7 +59,17 @@ Its principle limitation is that it will make use of only a single processor and
 The Zope application server allows us to divide the chores of rendering web pages (very CPU-intensive) from those of maintaining the file-system database.
 Further, we may have as many page rendering clients as we wish, all using a single database server.
 
-The components of this mechanism, Zope Enterprise Objects (ZEO) are:
+The components of this mechanism, Zope Enterprise Objects (ZEO), are ZEO clients and ZEO servers.
+
+How ZEO Works
+
+    A metaphor of a restaurant helps to explain the way ZEO works.
+
+    In this metaphor, you can think of Plone as a chef who needs to cook meals to serve them to customers (the meals are web pages, and the customers are visitors to your website). The cook needs to get ingredients to make a meal, and those ingredients (page contents, menu listings, etc) are in a refrigerator (our database). If Plone is running without ZEO, then every time a new meal needs to be made, the chef has to go to the refrigerator to get ingredients. This takes time, and means that only one meal can be cooked at a time.
+
+    Now, imagine if there were a chef’s assistant who can run and get the ingredients for the chef. The cool part is that when you have a chef’s assistant, you can have lots of chefs all cooking meals, and the assistant can make it more efficient to get each of them the ingredients they need. More chefs cooking more meals means that more customers can get served in the same amount of time, and the process of getting ingredients for them is more efficient.
+
+    The ZEO server is that chef’s assistant in our metaphor. It allows us to run multiple instances of Plone in front of a single database, and makes it possible to serve many many more pages to more customers in the same amount of time.
 
 ZEO Clients
     Web servers in themselves, which answer requests for pages, gather page component objects from the database server, render pages and return them to the requestor.
