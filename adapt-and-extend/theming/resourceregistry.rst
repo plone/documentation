@@ -1,53 +1,61 @@
-=========================
-Plone 5 Resource Registry
-=========================
+=================
+Resource Registry
+=================
 
 .. admonition:: Description
 
     Plone 5 has modernized the JavaScript and CSS development experience by incorporating tools like Bower, Grunt, RequireJS and Less.
     JavaScript and CSS resources for core Plone and add-on packages are managed in the new Plone 5 Resource Registry.
+
     The Resource Registry was completely rewritten in Plone 5 to support a new dependency-based approach built on RequireJS.
     It also allows developers to create JavaScript and CSS bundles Through-The-Web for a low barrier to entry.
+
     This chapter will help you to gain a basic understanding of the new Resource Registry.
 
 
 
-Introduction to Plone 5 resources
+Introduction To Plone 5 Resources
 =================================
 
 Plone 5 introduces new concepts for working with JavaScript and CSS in Plone.
 
-JavaScript and AMD
+JavaScript And AMD
 ------------------
 
 Prior to Plone 5, JavaScript resources in Plone have been registered with the ``portal_javascripts`` tool using the Generic Setup import step ``jsregistry.xml``.
 This approach allowed a developer to specify the order in which individual JavaScript resources were loaded into an HTML page, and controlled compiling and minifying these resources for production into a minimal set of files.
+
 As the use of JavaScript in front-end development expanded, this model proved insufficient to solve complex dependency management issues.
 At the same time, developments in the JavaScript community led to a new approach to handling complex dependencies.
 
 Starting in Plone 5, we use a new `module <http://requirejs.org/docs/why.html>`_-based solution on the `Asynchronous Module Definition <http://requirejs.org/docs/whyamd.html>`_ (AMD) approach.
+
 The new Plone 5 Resource Registry uses `RequireJS <http://requirejs.org/>`_ to allow developers to define individual JavaScript modules and the dependencies they will require.
+
 Because RequireJS uses the AMD approach, these modules and their dependencies can be served in an uncompiled form during development and then compiled and minified Through-The-Web for use in production.
 This allows a "development mode" where changes in JavaScript source files are reflected in the browser in near real-time.
 
 It is also possible in the new Resource Registry to provide bundles with simple JavaScript that does not make use of AMD.
 See :ref:`bundle_example_non_amd` below for an example of such a bundle.
 
-CSS and Less
+CSS And Less
 ------------
 
 Modern web development relies on CSS (Cascading Style Sheets).
-In order to support complex CSS, "preprocessors" have developed that allow a more programmatic way of defining styles and sharing common elements.
+To support complex CSS, "preprocessors" have developed that allow a more programmatic way of defining styles and sharing common elements.
+
 Plone 5 has chosen to use the `Less CSS preprocessor <http://lesscss.org/>`_ because it is compiled by JavaScript tools, which fit with the new Plone Resource Registry.
+
 Less provides nice features like inheritance, scoping, functions, mixins and variables, which are not available in pure CSS.
 
 
-Resources and Bundles
+Resources And Bundles
 ---------------------
 
 In the Plone 5 Resource Registry, JavaScript and CSS are organized into :ref:`resources <resource_registry_resources>` and :ref:`bundles <resource_registry_bundles>`.
 A resource consists of one JavaScript and either none, one or multiple Less or CSS files.
 A bundle combines several resources into a single unit that is used in a webpage.
+
 In "development mode" the resources for a bundle may be served individually and unminified to facilitate development.
 In "production mode" a bundle's resources are compiled and minified to minimize the number of requests needed to deliver the bundle to a client.
 
@@ -63,17 +71,23 @@ A resource may contain at most one JavaScript file and zero or more CSS/Less fil
 RequireJS identifies resources by name.
 
 Resources - as well as :ref:`bundles <resource_registry_bundles>` - are registered with a ``records`` element in the ``registry.xml`` Generic Setup import step.
+
 The Plone 5 Resource Registry reads these ``records`` and builds RequireJS configuration for compiling resources into :ref:`bundles <resource_registry_bundles>`.
 
 A resource record element must have two attributes: "prefix" and "interface".
 The value of "interface" must be ``Products.CMFPlone.interfaces.IResourceRegistry``.
+
 The value of "prefix" must begin with ``plone.resources/`` followed by a unique value that will be used by RequireJS as the **name** of the resource.
+
 To ensure that your bundle has a unique name, we suggest that you use the name of your package.
+
 You should convert dots to dashes to conform to RequireJS naming standards.
 See below for :ref:`some examples <resource_example_records>` of different types of resource records.
 
 JavaScript resources registered should conform to the RequireJS module pattern.
-However, we can also include non-module, legacy resources which do not make use of the RequireJS ``define`` and ``require`` methods.
+
+We can also include non-module, legacy resources which do not make use of the RequireJS ``define`` and ``require`` methods.
+
 If you must register such resources, use the :ref:`shim options <resource_shim_options>` defined below.
 
 .. _resource_standard_options:
@@ -95,6 +109,7 @@ url
     See below for :ref:`an example <resource_url_option>`.
 
 For these options, the URL you provide as a value must point to a file in a :doc:`resource folder <templates_css/resourcefolders>`.
+
 Optionally, you may choose to register a directory in your package using the :ref:`++plone++static <plone_static_traversal_namespace>` traversal namespace.
 
 
@@ -104,8 +119,10 @@ Shim Resources
 --------------
 
 If the JavaScript you wish to register does not follow the RequireJS module pattern (using ``define`` and ``require``), you may still register it in a resource.
+
 You will need to use the ``shim`` options for your resource record.
 We refer to this kind of JavaScript as "legacy", as it doesn't follow our proposed best practices.
+
 For more information on configuring shims in RequireJS, see: http://requirejs.org/docs/api.html#config-shim
 
 export
@@ -125,7 +142,7 @@ Example Resource Records
 
 Here are some examples of different types of resource records (all examples below are from ``Products.CMFPlone``).
 
-An example of a resource record for a single javascript module:
+An example of a resource record for a single JavaScript module:
 
 .. code-block:: xml
 
@@ -172,7 +189,9 @@ An example of a resource combining JavaScript and Less/CSS:
         <value key="deps">picker</value>
     </records>
 
-.. note:: Please note that because a resource may contain at most one JavaScript file, the url for that file is placed directly into the ``<value key="js" />`` option.
+.. note::
+
+   Please note that because a resource may contain at most one JavaScript file, the url for that file is placed directly into the ``<value key="js" />`` option.
           However, as a resource may contain any number of CSS/Less files, each url must be added to the ``<value key="css" />`` in an ``<element />`` tag.
 
 .. _resource_url_option:
@@ -180,7 +199,7 @@ An example of a resource combining JavaScript and Less/CSS:
 The URL Resource Option
 ***********************
 
-The URL option allows you to define the base url for loading other resources needed by your JavaScript.
+The URL option allows you to define the base URL for loading other resources needed by your JavaScript.
 
 In the following example from the ``mockup`` package, the ``url`` option is used to register a URL base from which an XML template may be loaded.
 The name of the resource is set as ``mockup-patterns-structure``.
@@ -200,6 +219,7 @@ In the resource is register in ``registry.xml`` (from  ``Products.CMFPlone``):
     </records>
 
 Then in ``mockup/configure.zcml`` we register a resource directory called ``mockup``.
+
 The resource traversal namespace ``++resource++mockup`` points to the filesystem directory ``mockup/patterns``.
 
 .. code-block:: xml
@@ -210,7 +230,9 @@ The resource traversal namespace ``++resource++mockup`` points to the filesystem
 
 
 Finally, in ``mockup/patterns/structure/js/views/actionmenu.js``, we can list a `text dependency <http://requirejs.org/docs/api.html#text>`_.
-The url base for the dependency is listed as ``mockup-patterns-structure-url``.
+
+The URL base for the dependency is listed as ``mockup-patterns-structure-url``.
+
 The path that follows will be resolved from the registered resource directory set in the URL option for this resource record: ``mockup/patterns/structure``.
 
 .. code-block:: js
@@ -240,6 +262,7 @@ Shim Resource Examples
 **********************
 
 Here is an example of a resource record using shim options (from ``Products.CMFPlone.profiles.dependencies``).
+
 Here, the variable ``tinyMCE`` is exported as an attribute of ``window``, the global JavaScript namespace.
 The ``init`` option is used to define a simple function that will be executed when the ``tinymce.js`` JavaScript file has been loaded.
 
@@ -273,20 +296,23 @@ All resources named in ``deps`` must also be registered with the Plone 5 Resourc
         <value key="deps">underscore,jquery</value>
     </records>
 
-Default resources in Plone
+Default Resources In Plone
 --------------------------
 
 Plone 5 ships with a list of Mockup and Bower components for Plone 5's new UI.
+
 These resources can be found in the static folder (``Products.CMFPlone.static``), where you can also find the `bower.json <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json>`_ file.
+
 These resources are preconfigured in the registry (`registry.xml <https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml>`_ in ``Products.CMFPlone.profiles.dependencies``).
 
 .. _plone_static_traversal_namespace:
 
-The ++plone++ traversal namespace
+The ++plone++ Traversal Namespace
 ---------------------------------
 
 We have a new ``plone.resource`` based traversal namespace called ``++plone++``.
 Plone registers the ``Products.CMFPlone.static`` folder for this traversal namespace.
+
 Resource contained in this namespace can be stored in the ZODB (where they are looked up first, by default) or in the filesystem.
 This allows us to customize filesystem based resources Through-The-Web.
 One advantage of this new namespace over the existing ``++resource++`` and ``++theme++`` namespaces is that you may override resources in this namespace one file at a time, rather than needing to override the entire directory.
@@ -303,13 +329,16 @@ To configure a directory in your package, add the following ZCML:
         />
 
 Now we can access the contents of the "static" folder in your package by using a URL that starts with ``++plone++myresources/``.
+
 Additional path segments in your URL will be resolved within the "static" folder in your package.
+
 For example, ``++plone++myresources/js/my-package.js`` will correspond to ``static/js/my-package.js`` within your package.
 
 .. note::
 
-    When providing static resources (JavaScript/Less/CSS) for Plone 5's resource registry, use ``plone.resource`` based resources instead of Zope's browser resources.
-    The latter are cached heavily and you won't get your changes compiled into bundles, even after Zope restarts.
+   When providing static resources (JavaScript/Less/CSS) for Plone 5's resource registry, use ``plone.resource`` based resources instead of Zope's browser resources.
+
+   The latter are cached heavily and you won't get your changes compiled into bundles, even after Zope restarts.
 
 
 .. _resource_registry_bundles:
@@ -319,13 +348,16 @@ Bundles
 
 A bundle combines multiple :ref:`resources <resource_registry_resources>` into a single unit, identified by a name.
 Bundles can be used to group resources for different purposes.
+
 For example, the "plone" bundle provides resources that could be of use to any client, but the "plone-logged-in" bundle supplies resources needed only for those who are logged in to the Plone site.
 
 Generally speaking, when a Plone page is delivered to a client, only bundles will be loaded.
 There are exceptions, you can register individual resources to be loaded for a specific request via an API method.
+
 We will discuss this :ref:`a bit later <bundles_request_api>`.
 
 Like :ref:`resources <resource_registry_resources>`, bundles are registered with a ``records`` element in the ``registry.xml`` Generic Setup import step.
+
 A bundle record element must have two attributes: "prefix" and "interface".
 The value of "interface" must be ``Products.CMFPlone.interfaces.IBundleRegistry``.
 The value of "prefix" must begin with ``plone.bundles/`` followed by a unique value that will be used as the name of the bundle.
@@ -350,12 +382,14 @@ For example, the ``resourceregistry`` bundle is only used for the ``@@resourcere
 
     To avoid this, use the ``stub_js_modules`` option for your bundle record listed in :ref:`resource_bundle_options` below.
 
-Development vs. Production Mode
+Development VS. Production Mode
 -------------------------------
 
 In development mode, each bundle loads all of its resources individually.
 This allows modifications to resources to be immediately available.
+
 You do not need to compile any bundles beforehand.
+
 You should be aware that this feature does lead to a lot of requests and slow response times, even though RequireJS loads dependencies asynchronously.
 
 In production environments you will compile your bundles to combine and minify all the necessary resources into a single JavaScript and CSS file.
@@ -467,7 +501,7 @@ Use the tool you prefer create a compiled version of your bundle.
 Your bundle registration must provide a URL for the "jscompilation" and "csscompilation" options.
 Your compiled files must be in the filesystem locations that are indicated by these values.
 
-Default Plone bundles
+Default Plone Bundles
 ---------------------
 
 There are three main bundles defined by Plone:
@@ -485,11 +519,12 @@ plone-legacy:
 
 .. _bundles_legacy_bundle:
 
-The legacy bundle
+The Legacy Bundle
 -----------------
 
 The legacy bundle exists to support packages with code that does not work with the new Plone 5 Resource Registry.
 Code that cannot be migrated to use RequireJS can be included in the legacy bundle.
+
 Code that uses RequireJS in a way which is incompatible with Plone's use of it (e.g. it's using its own RequireJS setup) can be included in the legacy bundle.
 
 .. note::
@@ -536,6 +571,7 @@ This is a good example of using a single resource with a ``require`` call to bun
 
 The record for the ``plone-legacy`` bundle names the only javascript resource left in Plone that does not work with the Resource registry.
 Note that any JavaScript or CSS registered with the old ``portal_javascripts`` or ``portal_css`` tools will be included automatically in this bundle.
+
 Note too that the ``plone-legacy`` bundle declares a dependency on the ``plone`` bundle, which ensures only that the ``plone`` bundle will be loaded into the page before this one.
 
 .. code-block:: xml
@@ -642,7 +678,7 @@ This ensures that the Resource Registry will make no attempt to re-compile this 
 
 .. _bundles_request_api:
 
-Controlling Resource and Bundle Rendering
+Controlling Resource And Bundle Rendering
 =========================================
 
 To control whether a bundle is included in a rendered page, we have already discussed several options.
@@ -677,7 +713,7 @@ Here is the API method to do so (from ``Products.CMFPlone.resources``):
 
 .. _resource_bundle_aggregation:
 
-Aggregate Bundles for Production
+Aggregate Bundles For Production
 ================================
 
 Plone defines several bundles.
@@ -698,7 +734,7 @@ Any bundles declared in that file will be included, if they declare that they sh
 As bundles can be defined or modified Through-The-Web, Plone also provides a "Merge bundles for production" button in the Resource Registry.
 This allows us to re-generate the aggregations manually after any Through-The-Web modifications have been made.
 
-Declare an Aggregation
+Declare An Aggregation
 ----------------------
 
 Custom bundles from an add-on or from a theme may be aggregated with the standard Plone bundles.
@@ -804,7 +840,7 @@ However, scripts included in this fashion receive none of the dependency managem
 The ``plone-legacy`` bundle includes a global jQuery object and then includes bundled resources in order.
 The ``define`` and ``require`` APIs from RequireJS are unset before the ``plone-legacy`` bundle is included, and then re-defined after.
 
-Updating non-AMD scripts
+Updating non-AMD Scripts
 ------------------------
 
 To take advantage of the dependency management of the new Resource Registry, you should upgrade your existing JavaScript files to use the AMD pattern.
@@ -862,7 +898,7 @@ It is normal behavior.
 Keeping it in mind can save you headaches.
 
 
-Including non-RequireJS scripts in a Diazo theme
+Including non-RequireJS Scripts In A Diazo Theme
 ------------------------------------------------
 
 We have already described how to add resources to the legacy bundle.
