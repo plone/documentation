@@ -489,7 +489,9 @@ You will find the ``plone-compile-resources`` script in your buildout ``bin`` di
 Once the script has been created you may invoke it.
 You will need to provide options indicating the ID of the Plone site in which your package is installed, and the name of the bundle you wish to compile:
 
-    ./bin/plone-compile-resources --site-id=myplonesite --bundle=mybundle
+.. code-block:: console
+
+   ./bin/plone-compile-resources --site-id=myplonesite --bundle=mybundle
 
 This script will start up your Plone site, extract the required information and compile the bundle.
 Because of this, you will need to stop a Plone instance before running this script.
