@@ -62,8 +62,6 @@ This documentation is for:
 .. toctree::
    :maxdepth: 1
 
-   license
-
    askforhelp
 
    unreleased
