@@ -73,6 +73,7 @@ Pretty printing objects
 
 Example::
 
+    >>> from pprint import pprint as pp
     >>> pp folder.__dict__
     {
       '_Access_contents_information_Permission': ['Anonymous',
@@ -170,6 +171,7 @@ Dumping incoming HTTP GET or HTTP POST::
 
 Executing code on the context of the current stack frame::
 
+    (Pdb) from pprint import pprint as pp
     (Pdb) pp my_tags
     ['bar', 'barbar']
 
@@ -194,10 +196,17 @@ Instead of getting "We're sorry there seems to be an error..." page you get
 a pdb prompt which allows you to debug the exception. This is also
 known as post-mortem debugging.
 
-This can be achieved with ` `Products.PDBDebugMode`` add-on.
+This can be achieved with ``Products.PDBDebugMode`` add-on. By using this
+add-on, you have a ``/@@pdb`` view that you can call on any context too.
+
 
 * https://pypi.python.org/pypi/Products.PDBDebugMode
 
+.. note ::
+
+    Remember that this add-on hooks into the "error_log" exception handling.
+    If you don't want to enter into pdb when an specific exception is raised,
+    like ``Unauthorized``, you should edit it in the ZMI.
 
 .. note ::
 
@@ -229,3 +238,93 @@ debug prompt.
 For more information see
 
 * http://docs.python.org/library/pdb.html
+
+
+Interactive debugging in your ``bin/{client1|instance}`` (command line)
+=======================================================================
+
+You can use interactive debugging via ``bin/{client1|instance} debug`` (use the name of the instance script you're using in your buildout). It gives you an interactive Python interpreter with access to Zope's root object (bound to "app"). In the interpreter, you can do "normal" Python debugging.
+
+
+Alternatives to ``pdb``
+=======================
+
+Some of these options (like ``q``) are complementary to ``pdb`` itself. We suggest you to try the alternatives here, some features (like tab completion and syntax highlighting) are really hard to live without after getting used to them.
+
+ipdb
+----
+
+ipdb exports functions to access the IPython debugger, which features tab completion, syntax highlighting, better tracebacks, better introspection with the same interface as the pdb module. If you install iw.debug with ipdb, you can call ipdb in any object of your instance, just by adding /ipdb to any url.
+
+* https://pypi.python.org/pypi/ipdb
+* https://pypi.python.org/pypi/iw.debug
+
+pdbpp
+-----
+
+This module is an extension of the pdb module of the standard library. It is meant to be fully compatible with its predecessor, yet it introduces a number of new features to make your debugging experience as nice as possible. pdb++ is meant to be a drop-in replacement for pdb.
+
+- colorful TAB completion of Python expressions (through fancycompleter)
+- optional syntax highlighting of code listings (through pygments)
+- sticky mode
+- several new commands to be used from the interactive (Pdb++) prompt
+- smart command parsing (hint: have you ever typed r or c at the prompt to print the value of some variable?)
+- additional convenience functions in the pdb module, to be used from your program
+
+* https://pypi.python.org/pypi/pdbpp
+
+debug
+-----
+
+Instead of ``import pdb;pdb.set_trace()`` you can use just use ``import debug``, then it automatically enters into ipdb. You can do ``/bin/instance debug`` and then call ``import debug`` as well.
+
+* https://pypi.python.org/pypi/debug
+
+pudb
+----
+It's an alternative to pdb with a curses interface. Its goal is to provide all the niceties of modern GUI-based debuggers in a more lightweight and keyboard-friendly package. PuDB allows you to debug code right where you write and test it–in a terminal. If you’ve worked with the excellent (but nowadays ancient) DOS-based Turbo Pascal or C tools, PuDB’s UI might look familiar.
+
+- Syntax-highlighted source, the stack, breakpoints and variables are all visible at once and continuously updated. This helps you be more aware of what’s going on in your program. Variable displays can be expanded, collapsed and have various customization options.
+- Simple, keyboard-based navigation using single keystrokes makes debugging quick and easy. PuDB understands cursor-keys and Vi shortcuts for navigation. Other keys are inspired by the corresponding pdb commands.
+- Use search to find relevant source code, or use “m” to invoke the module browser that shows loaded modules, lets you load new ones and reload existing ones.
+- Breakpoints can be set just by pointing at a source line and hitting “b” and then edited visually in the breakpoints window. Or hit “t” to run to the line under the cursor.
+- Drop to a Python shell in the current environment by pressing “!”.
+- PuDB places special emphasis on exception handling. A post-mortem mode makes it easy to retrace a crashing program’s last steps.
+- IPython integration (see wiki)
+
+* https://pypi.python.org/pypi/pudb
+
+q
+-
+
+Quick and dirty debugging output. All output goes to /tmp/q, which you can watch with this shell command: ``tail -f /tmp/q``. That way you can print variables, functions, etc. Check it's documentation for more examples.
+
+* https://pypi.python.org/pypi/q
+
+
+Debugging page templates
+========================
+
+Since Plone 5, Chameleon (five.pt) is used for the TAL engine. When using Chameleon, we can use the following snippet to debug page templates:
+
+Example::
+
+    <?python locals().update(econtext); import pdb; pdb.set_trace() ?>
+
+However, this doesn't work in skin templates and in TTW templates. If you want a full explanation of how this snippet works (specially about the econtext variable), check https://www.starzel.de/blog/magic-templates-in-plone-5.
+
+
+Debugging ZMI Python Script
+===========================
+
+If you install https://pypi.python.org/pypi/Products.enablesettrace in your instance, you can import pdb inside a Python Script.
+
+
+Browser Extensions
+==================
+
+If you need to call ``/@@reload`` (if you installed plone.reload) or ``?diazo`` on your current Plone, you can use the Plone Reloader extension.
+
+* https://chrome.google.com/webstore/detail/plone-reloader/bcdahfmmenfikninekekpbncgdkdlapl
+
+This extension displays the plone.reload form in a popup so you can easily reload your current Plone instance code without switching to another tab. It also provides buttons to open diazo off/debug urls.
