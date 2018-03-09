@@ -81,7 +81,7 @@ Create a file ``description.py`` and add the following code::
               portal_transforms = api.portal.get_tool(name='portal_transforms')
 
               # Output here is a single <p> which contains <br /> for newline
-              data = portal_transforms.convertTo('text/html', text, mimetype='text/-x-web-intelligent')
+              data = portal_transforms.convertTo('text/html', text, mimetype='text/x-web-intelligent')
               html = data.getData()
               return html
 
