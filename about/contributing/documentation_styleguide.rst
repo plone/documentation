@@ -47,6 +47,8 @@ Line Length
 
 - Keep in mind that your sentences will become .po strings, for translation.
 
+- One sentence per line.
+
 
 This will greatly improve the editing and maintenance of your documents.
 
@@ -62,7 +64,7 @@ Take this example paragraph::
 
 Please do not follow `PEP8 <https://www.python.org/dev/peps/pep-0008/#maximum-line-length>`_ maximum line length standard.
 
-Limiting lines to a maximum of 130 characters
+Limiting lines to a maximum of 130 characters.
 
 Tab Policy
 ----------
