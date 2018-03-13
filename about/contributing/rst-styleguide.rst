@@ -56,7 +56,7 @@ Each page should contain, in this order:
 .. code-block:: rst
 
    ==================================
-   Writing and updating this document
+   Writing And Updating This Document
    ==================================
 
 * A single paragraph of text consisting of 1-3 sentences is recommended, so that the same text fits into the search engine results:
