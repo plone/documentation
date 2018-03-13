@@ -127,7 +127,10 @@ Put the associated Makefile and conf.py into the /docs directory.
 
 .. note::
 
-   If you use `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ to generate the layout of your add-on, the recommended files will already be there, and in the right place. You'll still have to write the content, though.
+   If you use `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ to generate the layout of your add-on,
+   the recommended files will already be there, and in the right place.
+
+   You'll still have to write the content, though.
 
 
 .. _styleguide-toc-example:
