@@ -23,6 +23,13 @@ Zope 2 import / export
 
 Zope 2 can import/export parts of the site in .zexp format. This is basically Python pickle data of the exported objects. The data is a raw dump of Python internal data structures, which means that the source and the target Plone versions must be compatible. For example, a export from Plone 3 to Plone 4 is not possible.
 
+.. note ::
+
+    This method is applicable under very limited circumstances. 
+    Also note that for large Plone sites, the .zexp files generated is quite large,
+    which could lead to memory errors. 
+    It is recommended to use this method only after trying other, more general methods.
+
 To export objects from a site to another, do the following:
 
 * In the Management Interface, navigate to the Folder, which holds the object to be exported.
