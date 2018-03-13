@@ -27,7 +27,10 @@ If it does, use the component's issue tracker to submit your bug report.
 If the component does not have its own repository there, submit your bug report
 in `the catch-all CMFPlone tracker on GitHub <https://github.com/plone/Products.CMFPlone/issues>`_.
 
-Note: after figuring out where to post your report, but before doing so,
-please search the issue tracker to ensure this issue hasn't already been reported and that it hasn't already been fixed in a later version of the component.
+.. note::
+
+   After figuring out where to post your report, but before doing so,
+   please search the issue tracker to ensure this issue hasn't already been reported
+   and that it hasn't already been fixed in a later version of the component.
 
 You can also find a `overview <https://plone.org/support/bugs>`_ about that on `plone.org <https://plone.org>`_.
