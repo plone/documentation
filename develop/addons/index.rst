@@ -68,7 +68,6 @@ Working with JavaScript
    :maxdepth: 2
 
    javascript/index
-   javascript/ajax
 
 Background
 ==========
