@@ -1,35 +1,40 @@
 ==================
-Files and images
+Files And Images
 ==================
 
 .. admonition:: Description
 
-    How to program files and image fields for ``z3c.forms`` and Dexterity content types
+   How to program files and image fields for ``z3c.forms`` and Dexterity content types.
 
 
 Introduction
 =============
 
-This chapter discuss about file uploads and downloads using ``zope.schema`` based forms and content with :doc:`Dexterity content subsystem </develop/plone/content/dexterity>`.
+This chapter discuss about file uploads and downloads using ``zope.schema`` based
+forms and content with :doc:`Dexterity content subsystem </develop/plone/content/dexterity>`.
 
 .. note::
 
-    These instructions apply for Plone 5 and forward.
-    These instructions do not apply for Archetypes content or PloneFormGen.
+   These instructions apply for Plone 5 and forward.
+   These instructions do not apply for Archetypes content or PloneFormGen.
 
 For more introduction information, see:
 
 * :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/advanced/files-and-images>`
 
-Simple content item file or image field
+Simple Content Item File Or Image Field
 =========================================
 
 * * :doc:`Dexterity developer manual </external/plone.app.dexterity/docs/advanced/files-and-images>`
 
-Example: simple CSV file upload form
-====================================
+Example
+-------
+
+Simple CSV file Upload Form
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_ is used for the upload field.
+
 Then the the upload is accepted and the file processed.
 
 A view with the form is registered using the ``configure.zcml`` file.
@@ -53,7 +58,7 @@ A view with the form is registered using the ``configure.zcml`` file.
 
     </configure>
 
-Create a module named *importcsv.py*, and add the following code to it::
+Create a module named *importcsv.py*, and add the following code to it
 
 .. code-block:: python
 
@@ -132,12 +137,12 @@ Create a module named *importcsv.py*, and add the following code to it::
                 )
 
 
-Programatically filling a field with content
-===========================================
+Programmatically Filling A Field With Content
+=============================================
 
 Given a field ``plone.namedfile.field.NamedBlobFile`` named ``some_file``.
 
-It can be filled programatically with data by creating a blob first.
+It can be filled programmatically with data by creating a blob first.
 
 .. code-block:: python
 
@@ -154,17 +159,18 @@ It can be set on some persistent context, like an arbitary dexterity content typ
     context.some_file = blob_data
 
 
-Getting download URLs
+Getting Download URLs
 =====================
 
-Simple download URL
--------------------
+Simple Download URLs
+--------------------
 
-In order to create a download link for file and image fields of Dexterity content types the ``@@download`` view can be used.
+To create a download link for file and image fields of Dexterity content types
+the ``@@download`` view can be used.
 
 The common schema is ``http://host/path/to/filecontent/@@download/FIELDNAME``.
 
-In order to get a URL containing the original filename it may be appended this way:
+To get a URL containing the original filename it may be appended this way:
 ``http://host/path/to/filecontent/@@download/FIELDNAME/FILENAME.EXT``.
 
 As in the example below, the original uploaded filename may be used.
@@ -185,13 +191,15 @@ But a new/custom filename is fine too.
       </a>
     </tal:if>
 
-Timestamped download URL example
---------------------------------
+Timestamped Download URL
+------------------------
 
-You need to expose file content to the site user through a view and then refer to the URL of the view in your HTML template.
+You need to expose file content to the site user through a view
+and then refer to the URL of the view in your HTML template.
+
 There are some tricks you need to keep in mind:
 
-* All file download URLs should be timestamped, or the reupload file change
+* All file download URLs should be timestamped, or the re-upload file change
   will not be reflected in the browser.
 
 * You might want to serve different file types from different URLs and set special HTTP headers for them.
@@ -257,12 +265,14 @@ Example:
         )
 
 
-Streaming file data example
-===========================
+Streaming File Data
+===================
 
 File data is delivered to the browser as a stream.
 The view function returns a streaming iterator instead of raw data.
-This greatly reduces the latency and memory usage when the file should not be buffered as a whole to memory before sending.
+
+This greatly reduces the latency and memory usage when the file should
+not be buffered as a whole to memory before sending.
 
 Example of a streaming browser view:
 
@@ -306,13 +316,13 @@ Example of a streaming browser view:
             return stream_data(blob)
 
 
-``POSKeyError`` on missing blob
-=================================
+POSKeyError On Missing Blob
+===========================
 
 A ``POSKeyError`` is raised when you try to access blob *attributes*,
 but the actual file is not available on the disk.
-You can still load the blob object itself fine
-(as it's being stored in the ZODB, not on the filesystem).
+
+You can still load the blob object itself fine (as it's being stored in the ZODB, not on the filesystem).
 
 Example traceback snippet::
 
@@ -328,9 +338,12 @@ Example traceback snippet::
     Module ZODB.blob, line 623, in loadBlob
     POSKeyError: 'No blob file'
 
-This might occur for example because you have copied the ``Data.fs`` file to another computer, but not (all) blob files.
+This might occur for example because you have copied the ``Data.fs`` file to another computer,
+but not (all) blob files.
 
-You probably want to catch ``POSKeyError`` s and return something more sane instead::
+You probably want to catch ``POSKeyError`` s and return something more sane instead
+
+.. code-block:: python
 
     from plone.namedfile.utils import set_headers
     from plone.namedfile.utils import stream_data
@@ -384,8 +397,8 @@ See also
 
 * https://pypi.python.org/pypi/experimental.gracefulblobmissing/
 
-Widget download URLs
-=========================
+Widget Download URLs
+====================
 
 Some things you might want to keep in mind when playing with forms and images:
 
@@ -396,7 +409,7 @@ Some things you might want to keep in mind when playing with forms and images:
 If your form content is something else than traversable context object then you must fix file download URLs manually.
 
 
-Migrating custom content for blobs
+Migrating Custom Content For Blobs
 ====================================
 
 Some hints how to migrate your custom content:
@@ -404,15 +417,16 @@ Some hints how to migrate your custom content:
 * http://plone.293351.n2.nabble.com/plone-4-upgrade-blob-and-large-files-tp5500503p5500503.html
 
 
-Form encoding
+Form Encoding
 =============
 
 .. warning::
 
-    Make sure that all forms containing file content are posted as ``enctype="multipart/form-data"``.
-    If you don't do this, Zope decodes request ``POST`` values as string input and you get either empty strings or filenames as your file content data.
-    The older ``plone.app.z3cform`` templates do not necessarily declare ``enctype``,
-    meaning that you need to use a custom page template file for forms doing uploads.
+   Make sure that all forms containing file content are posted as ``enctype="multipart/form-data"``.
+   If you don't do this, Zope decodes request ``POST`` values as string input and you get either empty strings or filenames as your file content data.
+
+   The older ``plone.app.z3cform`` templates do not necessarily declare ``enctype``,
+   meaning that you need to use a custom page template file for forms doing uploads.
 
 Example correct form header:
 
