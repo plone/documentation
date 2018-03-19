@@ -213,14 +213,14 @@ INI Files
 JavaScript
 ----------
 
-.. code-block:: javascript
+.. code-block:: rst
 
     .. code-block:: javascript
 
-    var $el = $('<div/>');
-    var value = '<script>alert("hi")</script>';
-    $el.text(value);
-    $('body').append($el);
+       var $el = $('<div/>');
+       var value = '<script>alert("hi")</script>';
+       $el.text(value);
+       $('body').append($el);
 
 
 If syntax highlighting is not enabled for your code block, you probably have a syntax error and `Pygments <http://pygments.org>`_ will fail silently.
