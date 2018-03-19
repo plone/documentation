@@ -253,15 +253,30 @@ Connstring download URLs
 Simple example
 ----------------
 
-In Dexterity you can specify a ``@@download`` field for content types:
+In order to create a download link for file and image fields of Dexterity content types the ``@@download`` view can be used.
+
+The common schema is ``http://host/path/to/filecontent/@@download/FIELDNAME``.
+
+In order to get a URL containing the original filename it may be appended this way:
+``http://host/path/to/filecontent/@@download/FIELDNAME/FILENAME.EXT``.
+
+As in the example below, the original uploaded filename may be used.
+But a new/custom filename is fine too.
 
 .. code-block:: html
 
-    <!-- Render link to video file if it's uploaded to this context item -->
-    <tal:video define="video nocall:context/videoFile"
-        tal:condition="nocall:video">
-        <a class="flow-player" tal:attributes="href string:${context/absolute_url}/@@download/videoFile/${video/filename}"></a>
-    </tal:video>
+    <!--
+      Precondition: Custom content type with a "video_file" field.
+                    Flowplayer JavaScript installed.
+      Renders: Link to video file, only if it's uploaded to this context item.
+    -->
+    <tal:if define="video_file nocall:context/video_file"
+            tal:condition="nocall:video_file">
+      <a class="flow-player"
+         tal:attributes="href string:${context/absolute_url}/@@download/video_file/${video_file/filename}">
+        Video
+      </a>
+    </tal:if>
 
 Complex example
 ---------------
