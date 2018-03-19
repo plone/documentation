@@ -19,7 +19,7 @@ Unreleased
 - Improve ReStructuredText Style Guide [svx]
 - Add documentation about TinyMCE styles and formats [davilima6]
 - Improve Editor Guide [tmassman]
-- Improve Files and images/ Connstring download URLs/ Simple example. [jensens]
+- Overhaul of Files and images chapter. [jensens]
 
 
 20160606
