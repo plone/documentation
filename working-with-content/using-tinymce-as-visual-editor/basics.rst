@@ -5,7 +5,7 @@ Basic options of TinyMCE.
 
 The default TinyMCE editor will look like this:
 
-.. figure:: https://user-images.githubusercontent.com/33842949/37874357-1c1af78a-304b-11e8-9f8f-b01f8a01ef53.png
+.. figure:: ../../_robot/tinymce.png
    :align: center
    :alt:
 
