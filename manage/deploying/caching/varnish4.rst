@@ -192,8 +192,9 @@ An example with two separate Plone installations (Zope standalone mode) behind V
 Example::
 
     # To make sure that people have upgraded their VCL to the current version,
-    # Varnish now requires the first line of VCL to indicate the VCL version number
-    vcl 4.1;
+    # Varnish now requires the first line of VCL to indicate the VCL version number.
+    # VCL 4.1 does not compatible with Varnish < 6
+    vcl 4.0;
 
     #
     # This backend never responds... we get hit in the case of bad virtualhost name
