@@ -1,6 +1,6 @@
-------------
+============
 Vocabularies
-------------
+============
 
 .. admonition:: Description
 
@@ -13,7 +13,7 @@ Introduction
 
 Vocabularies specify options for choice fields.
 
-Vocabularies are normally described using ``zope.schema.vocabulary.SimpleVocabulary`` and ``zope.schema.vocabulary.SimpleTerm``  objects.
+Vocabularies are normally described using ``zope.schema.vocabulary.SimpleVocabulary`` and ``zope.schema.vocabulary.SimpleTerm`` objects.
 `See the source code <https://github.com/zopefoundation/zope.schema/blob/master/src/zope/schema/vocabulary.py>`_.
 
 Vocabulary terms
@@ -245,7 +245,7 @@ class MyForm(form.SchemaForm):
                               value_type=schema.Choice(source=course_source)
                               )
 
-    
+
         def handleApply(self, action):
             data, errors = self.extractData()
             if errors:

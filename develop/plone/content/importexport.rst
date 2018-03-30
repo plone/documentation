@@ -1,6 +1,6 @@
-================================
- Importing and exporting content
-================================
+===============================
+Importing And Exporting Content
+===============================
 
 .. admonition:: Description
 
@@ -25,9 +25,9 @@ Zope 2 can import/export parts of the site in .zexp format. This is basically Py
 
 .. note ::
 
-    This method is applicable under very limited circumstances. 
+    This method is applicable under very limited circumstances.
     Also note that for large Plone sites, the .zexp files generated is quite large,
-    which could lead to memory errors. 
+    which could lead to memory errors.
     It is recommended to use this method only after trying other, more general methods.
 
 To export objects from a site to another, do the following:

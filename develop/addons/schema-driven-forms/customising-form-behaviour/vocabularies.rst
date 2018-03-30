@@ -1,3 +1,4 @@
+============
 Vocabularies
 ============
 
@@ -236,7 +237,7 @@ initialised with the registry key
 ::
 
     from zope.interface import implementer
-    
+
     @implementer
     class RegistrySource(object):
 
