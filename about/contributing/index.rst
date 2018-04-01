@@ -59,7 +59,7 @@ This is the recommended way for smaller changes, and for people who are not fami
 
 Your changes are now queued for review under project's `Pull requests <https://github.com/plone/documentation/pulls>`_ tab on GitHub.
 
-For more information about writing documentation please read the :doc:`styleguide </about/documentation_styleguide>` and also :doc:`our docs about helper tools </about/helper_tools>`.
+For more information about writing documentation please read the :doc:`styleguide <documentation_styleguide>` and also :doc:`our docs about helper tools <helper_tools>`.
 
 You will receive a message when your request has been integrated into the documentation.
 
