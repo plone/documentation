@@ -166,7 +166,7 @@ created, last_modified, effective, expires, start, end
         import datetime
 
         catalog.searchResults(
-            created={'expired': datetime.datetime.now(), range='max')
+            expired={'query': datetime.datetime.now(), range='max')
         }
 
 object\_provides
