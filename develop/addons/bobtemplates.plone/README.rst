@@ -28,11 +28,11 @@ bobtemplates introduction
 
 To create a package like ``collective.myaddon``::
 
-    $ mrbob -O collective.myaddon bobtemplates:plone_addon
+    $ mrbob bobtemplates.plone:addon -O src/collective.myaddon
 
 You can also create a package with nested namespace::
 
-    $ mrbob -O collective.foo.myaddon bobtemplates:plone_addon
+    $ mrbob bobtemplates.plone:addon -O src/collective.foo.myaddon
 
 
 Options
@@ -114,7 +114,7 @@ Use in a buildout
 This creates a mrbob-executeable in your bin-directory.
 Call it from the ``src``-directory of your Plone project like this.::
 
-    $ ../bin/mrbob -O collective.foo bobtemplates:plone_addon
+    $ ../bin/mrbob bobtemplates.plone:addon -O src/collective.myaddon
 
 
 Installation in a virtualenv
@@ -128,7 +128,7 @@ You can also install ``bobtemplates.plone`` in a virtualenv.::
 
 Now you can use it like this::
 
-    $ mrbob -O collective.foo bobtemplates:plone_addon
+    $ mrbob bobtemplates.plone:addon -O src/collective.myaddon
 
 See `mr.bob`_ documentation for further information.
 
