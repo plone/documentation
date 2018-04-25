@@ -226,7 +226,8 @@ Complete example with portal_catalog query, vocabulary creation and form
         name = schema.TextLine(
                 title=u"Your name",
             )
-class MyForm(form.SchemaForm):
+
+    class MyForm(form.SchemaForm):
         """ Define Form handling
 
         This form can be accessed as http://yoursite/@@my-form
