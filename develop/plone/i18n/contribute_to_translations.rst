@@ -107,5 +107,4 @@ To release a new plone.app.locales version, `please read this doc <https://githu
 Support
 =======
 
-Please ask questions on the `plone-i18n mailing-list <https://plone.org/support/forums/i18n>`_,
-or the `Plone Gitter online chat <https://gitter.im/plone/public>`_.
+Please ask questions on the Plone Community Forum category `Translations and i18n/l10 <https://community.plone.org/c/development/i18nl10n>`_.
