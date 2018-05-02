@@ -160,7 +160,7 @@ Event types
 
 ``zope.lifecycleevent.IObjectCreatedEvent``
     is fired for all Zopeish objects when they are being created (they don't
-    necessarily need to be content objects).
+    necessarily need to be content objects) or being copied (IObjectCopiedEvent).
 
 .. warning::
 
@@ -216,7 +216,7 @@ Some delete event transactions are rolled back.
 --------------
 
 ``zope.lifecycleevent.IObjectCopiedEvent``
-    is triggered when an object is copied.
+    is triggered when an object is copied (will also fire IObjectCreatedEvent event code).
 
 *Workflow* events
 -----------------
