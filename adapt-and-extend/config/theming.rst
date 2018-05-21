@@ -1,10 +1,11 @@
+=======
 Theming
 =======
 
 .. note::
 
-    Please note that this control panel page will never be themed.
-    This is a safety measure, so that even when a Theme is not working correctly you can get back to this screen to disable or edit it.
+   Please note that this control panel page will never be themed.
+   This is a safety measure, so that even when a Theme is not working correctly you can get back to this screen to disable or edit it.
 
 .. note::
 

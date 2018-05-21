@@ -1,5 +1,5 @@
 =========================
-Introduction and overview
+Introduction And Overview
 =========================
 
 
@@ -99,10 +99,3 @@ Configuration Registry
     Provides :doc:`direct acces to all system variables <configuration-registry>`. Handle with care.
 Resource Registries
     Provides :doc:`direct access to JavaScript, CSS and LESS resources <resource-registries>`.
-
-
-
-
-
-
-

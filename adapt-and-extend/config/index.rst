@@ -1,3 +1,4 @@
+==========
 Site Setup
 ==========
 
@@ -35,8 +36,3 @@ Site Setup
    caching
    configuration-registry
    resource-registries
-
-
-
-
-

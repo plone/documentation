@@ -14,7 +14,7 @@ One of the best ways to start contributing is to pick one of the tickets labeled
 .. note::
 
     Working on issues takes time and energy, to make it as pleasant as possible for everyone,
-    meaning for you and the reviewer we would like to ask you kindly to make yourself familiar with our
+    meaning for you and the reviewer we would like to ask you to make yourself familiar with our
     style-guides for :doc:`documentation </about/documentation_styleguide>` and :doc:`reStructuredText [reST]</about/rst-styleguide>`.
 
 Plone Issues

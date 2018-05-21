@@ -1,4 +1,5 @@
-Language settings
+=================
+Language Settings
 =================
 
 
@@ -23,6 +24,6 @@ Should you have multiple languages, and plone.app.multilingual, enabled, you can
 
 .. note::
 
-    These are important choices, which are hard to change after you have made them, so think about them carefully when setting up multilingual sites.
+   These are important choices, which are hard to change after you have made them, so think about them carefully when setting up multilingual sites.
 
 The Plone community has much experience with multilingual sites, so do not hesitate to ask for advice on one of the support channels, see "Further help resources" in the footer of this website.

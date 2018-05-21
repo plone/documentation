@@ -1,4 +1,5 @@
-Syndication settings
+====================
+Syndication Settings
 ====================
 
 .. figure:: ../../_robot/syndication-setup.png

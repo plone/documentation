@@ -20,7 +20,7 @@ Offline Tools
 **ReText** is an editor for **.rst** and **.md** formats.
 On Ubuntu and Debian-based systems all you have to do is
 
-.. code-block:: shell
+.. code-block:: console
 
    apt-get install retext
 
@@ -28,7 +28,7 @@ On Ubuntu and Debian-based systems all you have to do is
 **Pandoc** If you have existing documentation, you may want to check out `pandoc <http://johnmacfarlane.net/pandoc/>`_ , the "swiss army knife" of document conversions. For instance, it can create valid rst files from Markdown and many other formats.
 On Ubuntu you can install it via apt
 
-.. code-block:: shell
+.. code-block:: console
 
     apt-get install pandoc
 
@@ -61,7 +61,7 @@ If you prefer a more *advanced* plugin with enhanced functionalities you could u
 **Restview** `ReStructuredText viewer <https://pypi.python.org/pypi/restview>`_
 A viewer for ReStructuredText documents that renders them on the fly.
 
-.. code-block:: shell
+.. code-block:: console
 
     pip install restview
 

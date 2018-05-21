@@ -1,12 +1,13 @@
-Templating in TinyMCE
+=====================
+Templating In TinyMCE
 =====================
 
 TinyMCE in Plone 5 is adapted to allow templating engine for its content.
 
 Right now parametrized templates are not implemented.
 
-How to enable it
-----------------
+Enable
+======
 
 * On Control Panel -> TinyMCE -> Toolbar -> custom plugins add::
 
@@ -16,8 +17,8 @@ How to enable it
 
     undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | unlink plonelink ploneimage | template
 
-How to configure which templates are available
-----------------------------------------------
+Configure Templates
+===================
 
 For each template we need a file available on the browser, we assume for this
 example to use a diazo file at ++theme+example/templates/template.html with
@@ -52,7 +53,3 @@ In order to define it::
             "description": "Title with three columns."
         }
     ]
-
-
-
-
