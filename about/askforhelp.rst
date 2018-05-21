@@ -62,7 +62,7 @@ Follow netiquette while visiting and writing on forum or mailing list (give resp
  Remember that once you sent them, they belong to the community and shall be used by anyone who needs it.
 
 How To Write A Good Topic
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 Keep in mind, that if you ask a question and all you hear is silence, it might be a good indicator that something is wrong with your topic.
 
@@ -163,7 +163,7 @@ Zope outputs all debug information to the console where it was started in foregr
 If Zope does not start in foreground mode it means that your add-on configuration is bad and you need to fix it and the related traceback is printed as well. In production mode, Zope ignores all add-ons which fail to load.
 
 Credits
-^^^^^^^
+-------
 
 This how-to originated as an informal, user-friendly alternative to Eric Raymond's `How to Ask Questions the Smart Way <http://www.catb.org/~esr/faqs/smart-questions.html>`_. ESR's doc is long and offensive, though once you realize that ESR is your crusty old merchant-marine uncle it can be fun and helpful.
 

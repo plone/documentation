@@ -35,4 +35,4 @@ If there are more than one single commit in the pull request,
 repeat the :command:`cherry-pick` command as many times as needed.
 
 .. note::  If the cherry-pick fails to apply the commit cleanly,
-   you can use a diff tool to see what's the problem and solve it as usually you do with code.
+   you can use a diff tool to see what's the problem and solve it as you do with code.

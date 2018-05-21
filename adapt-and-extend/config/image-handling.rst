@@ -1,4 +1,5 @@
-Image handling
+==============
+Image Handling
 ==============
 
 .. figure:: ../../_robot/imaging-setup.png

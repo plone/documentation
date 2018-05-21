@@ -1,3 +1,4 @@
+===================
 Resource Registries
 ===================
 
@@ -8,8 +9,8 @@ The Resource Registry allows access to JavaScript, CSS and LESS resources.
    :alt: Resource Registry
 
 
-LESS variables
---------------
+LESS Variables
+==============
 
 Particularly useful are the many LESS variables that affect the theme of a site:
 

@@ -1,3 +1,4 @@
+=============
 Date and Time
 =============
 
@@ -13,5 +14,6 @@ That way, dates and times will be converted to their time zone.
 .. note::
 
    This can be convenient, but potentially confusing.
+
    Imagine you are announcing a spectacular Event on your site: a gala fundraiser at the Ritz Theatre, Thursday, 21.00 hours.
    Logged-in visitors who are yet to travel from their timezone to your grand event will see the starting time in their own timezone.

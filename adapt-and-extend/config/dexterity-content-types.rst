@@ -1,3 +1,4 @@
+=======================
 Dexterity Content Types
 =======================
 
@@ -8,4 +9,4 @@ Dexterity Content Types
 
 TODO:
 
-Documentation for TTW *("through the web")* configuration of dexterity content types is under development.
+Documentation for TTW *("Through The Web")* configuration of dexterity content types is under development.
