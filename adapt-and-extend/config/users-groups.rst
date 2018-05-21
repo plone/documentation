@@ -35,7 +35,7 @@ it's useful to connect Roles (who have permissions) to Groups rather than to ind
 Settings For Many Users/Groups
 ==============================
 
-These options will simply optimize the presentation of users and groups according to the size of your website.
+These options will optimize the presentation of users and groups according to the size of your website.
 
 If you have thousands or hundreds of thousands of users, you don't want to see them in a list.
 You will be presented with a searchbox instead.
