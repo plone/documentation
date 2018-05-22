@@ -160,4 +160,4 @@ buildout::
         </mailing-logger>
 
 For complete detail on configuration, see the
-`mailinglogger documentation <http://packages.python.org/mailinglogger/mailinglogger.html>`_.
+`mailinglogger documentation <http://mailinglogger.readthedocs.io/en/latest/>`_.
