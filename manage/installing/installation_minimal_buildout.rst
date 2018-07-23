@@ -42,7 +42,6 @@ Create a buildout.cfg file:
   http-address = 8080
   eggs =
       Plone
-      Pillow
 
   """ > buildout.cfg
 
