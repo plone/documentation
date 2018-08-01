@@ -56,7 +56,7 @@ General information CSS and other resources in Plone:
 
    templates_css/index
 
-..note ::
+.. note::
 
    Up to version 4.1, Plone was using an older style of theming.
    Using that is **not** considered best practice anymore.
