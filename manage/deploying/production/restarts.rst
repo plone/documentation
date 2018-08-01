@@ -1,6 +1,6 @@
-===========================
- Automatic Plone (re)starts
-===========================
+==========================
+Automatic Plone (re)starts
+==========================
 
 
 Introduction
@@ -8,9 +8,9 @@ Introduction
 
 Tips on how to automatically start Plone on server boot.
 
-This manual assumes, that you have installed Plone via the Unified-Installer as ``root install``.
+This manual assumes that you have installed Plone via the Unified-Installer as ``root install``.
 
-If you did a different install, please adjust the examples below to your own needs, the user as which you are running Plone may be different for example.
+If you used a different installation method, please adjust the examples below to your own needs. For example, the user as which you run Plone may be different.
 
 plonectl script
 ===============
@@ -22,13 +22,13 @@ The general-purpose ``plonectl`` control command for Plone installations is:
     yourbuildoutfolder/bin/plonectl
 
 ``yourbuildoutfolder`` is the topmost folder of your Plone installation.
-It will always contain a buildout.cfg file and a bin directory.
+It will always contain a ``buildout.cfg`` file and a ``bin`` directory.
 
 The ``plonectl`` command is a convenience script that controls standalone or cluster configurations.
 In a standalone installation, this will restart the ``instance`` part.
-In a ZEO cluster install it will restart the zeoserver and client parts.
+In a ZEO cluster install, it will restart the zeoserver and client parts.
 
-If you have installed Plone in production mode, the Plone server components are meant to be run as a special user, usually ``plone_daemon``. (In older versions, this was typically ``plone``.) In this case, the start, stop and restart commands are:
+If you have installed Plone in production mode, the Plone server components are meant to be run as a special user, usually ``plone_daemon``. (In older versions, this was typically ``plone``.) In this case, the start, stop, and restart commands are:
 
 .. code-block:: sh
 
@@ -45,34 +45,36 @@ Starting on boot
 ================
 
 It is best practice to start Plone service if the server is rebooted.
-This way your site will automatically recover from power loss etc.
+This way your site will automatically recover from power loss and other causes.
 
 On a Linux or BSD system, you have two major alternatives to arrange automatic starting for a production install:
 
-1. A process-control system, like supervisor.
+1. A process control system, like supervisor.
 
-2) Through init.d (BSD rc.d) scripts.
+2. Through ``init.d`` (BSD ``rc.d``) scripts.
 
 Using supervisor
 ----------------
 
-`supervisor <http://supervisord.org/>`_ is a general-purpose process-control system that is well-known and highly recommended in the Plone community.
+`supervisor <http://supervisord.org/>`_ is a general-purpose process control system that is well-known and highly recommended in the Plone community.
 
-Process-control systems generally run their controlled programs as subprocesses.
+Process control systems generally run their controlled programs as subprocesses.
 This means that the controlled program must not detach itself from the console (daemonize).
 
-Zope/Plone's "start" command does not work for this purpose.
+Zope/Plone's ``start`` command does not work for this purpose.
 Instead use ``console``.
-Do not use ``fg`` which turns on debug switches that will dramatically slow your site.
+Do not use ``fg``, which turns on debug switches that will dramatically slow your site.
 
-Supervisor is well-documented, easy to set up, and included as an instalable package with popular Linux and BSD distributions.
+Supervisor is well-documented, easy to set up, and included as an installable package with popular Linux and BSD distributions.
 
 Debian LSBInitScripts
 ---------------------
 
-Short documentation about how to make an Init Script LSB
+The following section describes how to make an Init Script LSB.
 
-This example will start a plone site on boot::
+This example will start a Plone site on boot:
+
+.. code-block:: sh
 
    #!/bin/sh
    ### BEGIN INIT INFO
@@ -92,16 +94,20 @@ This example will start a plone site on boot::
 
    su - plone_daemon -c "/usr/local/Plone/zeocluster/bin/plonectl start"
 
-Save this script as ``start_plone.sh`` in /etc/init.d and make it executable.
+Save this script as ``start_plone.sh`` in ``/etc/init.d`` and make it executable.
 
-add the script to dependency-based booting::
+Add the script to dependency-based booting:
+
+.. code-block:: sh
 
     insserv start_plone.sh
 
-Where ``start_plone.sh`` is an executable init script placed in /etc/init.d,
-insserv will produce no output if everything went OK. Examine the error code in $? if you want to be sure.
+Where ``start_plone.sh`` is an executable init script placed in ``/etc/init.d``,
+``insserv`` will produce no output if everything went OK. Examine the error code in ``$?`` if you want to be sure.
 
-This another example (/etc/init.d/plone)::
+This is another example (``/etc/init.d/plone``):
+
+.. code-block:: sh
 
     #!/bin/sh
 
@@ -180,14 +186,16 @@ This another example (/etc/init.d/plone)::
 
 Make sure to read:
 
-http://wiki.debian.org/LSBInitScripts
+https://wiki.debian.org/LSBInitScripts
 
 Upstart
 -------
-Upstart is an event-based replacement for the /sbin/init daemon which handles starting of tasks and services during boot, stopping them during shutdown and supervising them while the system is running.
+Upstart is an event-based replacement for the ``/sbin/init`` daemon which handles starting of tasks and services during boot, stopping them during shutdown, and supervising them while the system is running.
 It was originally developed for the Ubuntu distribution, but is intended to be suitable for deployment in all Linux distributions as a replacement for the venerable System-V init.
 
-Example of a *plone.conf* file in */etc/init/* -> */etc/init/plone.conf*::
+Example of a ``plone.conf`` file in ``/etc/init/`` -> ``/etc/init/plone.conf``:
+
+.. code-block:: sh
 
         # Plone - Web-Content Management System
         #
@@ -207,16 +215,20 @@ Example of a *plone.conf* file in */etc/init/* -> */etc/init/plone.conf*::
 
 Make sure to read: http://upstart.ubuntu.com/
 
-Also check the original source of this sample file: http://chrigl.de/blogentries/my-plone-configuration
+Also check the original source of this sample file: http://chrigl.de/posts/2011/11/10/my-plone-configuration.html
 
-The above sample has not been extensively tested and is intended for use with in a zeocluster configuration.
+The above sample has not been extensively tested and is intended for use in a zeocluster configuration.
 To use the above sample for a normal (non-root) user installation, replace the last line with:
+
+.. code-block:: sh
 
         exec /home/$USERID/Plone/plonectl start
 
 Systemd
 -------
-Create services file *plone.service* in */etc/systemd/system*::
+Create a services file ``plone.service`` in ``/etc/systemd/system``:
+
+.. code-block:: ini
 
     [Unit]
     Description=Plone content management system
@@ -231,27 +243,37 @@ Create services file *plone.service* in */etc/systemd/system*::
     [Install]
     WantedBy=multi-user.target
 
-Make systemd take notice of it::
+Make ``systemd`` aware of it:
+
+.. code-block:: sh
 
     systemctl daemon-reload
 
-Activate a service immediately::
+Activate a service immediately:
+
+.. code-block:: sh
 
     systemctl start plone.service
 
-Check status of service::
+Check status of a service:
+
+.. code-block:: sh
 
     systemctl status plone.service
 
-Enable a service to be started on bootup::
+Enable a service to be started on bootup:
+
+.. code-block:: sh
 
     systemctl enable plone.service
 
-More detailed log information::
+More detailed log information:
+
+.. code-block:: sh
 
     systemd-journalctl -a
 
-Make sure to read: http://www.freedesktop.org/wiki/Software/systemd/
+Make sure to read: https://www.freedesktop.org/wiki/Software/systemd/
 
 
 Crontab
@@ -259,7 +281,9 @@ Crontab
 
 These instructions apply for Debian-based Linuxes.
 
-Example crontab of *yourploneuser*::
+Example crontab of *yourploneuser*:
+
+.. code-block:: console
 
     @reboot /usr/local/Plone/zeocluster/bin/plonectl start
 
@@ -271,5 +295,3 @@ For Debian-based Linuxes, add the following line to the ``/etc/rc.local`` script
 .. code-block:: sh
 
     /usr/local/Plone/zeocluster/bin/plonectl restart
-
-
