@@ -1,6 +1,6 @@
-===========================
- Automatic Plone (re)starts
-===========================
+==========================
+Automatic Plone (re)starts
+==========================
 
 
 Introduction
