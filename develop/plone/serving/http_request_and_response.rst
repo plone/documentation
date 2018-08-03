@@ -765,7 +765,7 @@ Cross-origin resource sharing (CORS)
 
 .. _ZServer: https://github.com/zopefoundation/ZServer/blob/master/src/ZServer/README.txt
 
-.. _Medusa: http://www.amk.ca/python/code/medusa.html
+.. _Medusa: https://web.archive.org/web/20110714080523/http://www.amk.ca/python/code/medusa.html
 
 .. _ZPublisher: http://www.python.org/
 
