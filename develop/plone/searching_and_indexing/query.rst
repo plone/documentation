@@ -87,13 +87,13 @@ For example, coming from a form where the users can select different fields to s
 It is worth pointing out at this point that the indexes that you include are treated as a logical AND, rather than OR.
 In other words, the query above will find all the items that are both an Event, AND in the review state of pending.
 
-Additionally, you can call the catalog tool directly, which is exactly the same to calling ``catalog.searchResults()``::
+Additionally, you can call the catalog tool directly, which is exactly the same to calling ``catalog.searchResults()``:
 
 .. code-block:: python
 
     results = catalog(portal_type='Event')
 
-If you call portal_catalog() without arguments it will return all indexed content objects::
+If you call portal_catalog() without arguments it will return all indexed content objects:
 
 .. code-block:: python
 
@@ -490,7 +490,7 @@ If you want to bypass this restriction, use the unrestrictedSearchResults() meth
     for i in portal_catalog.unrestrictedSearchResults():
         print i.getURL()
 
-With ``unrestrictedSearchResults()`` you need also a special way to get access to the objects without triggering a security exception::
+With ``unrestrictedSearchResults()`` you need also a special way to get access to the objects without triggering a security exception:
 
 .. code-block:: python
 
@@ -533,7 +533,7 @@ Bypassing Expired content check
 
 Plone and its portal_catalog have a mechanism to list only active (non-expired) content by default.
 
-Below is an example of how the expired content check is made::
+Below is an example of how the expired content check is made:
 
 .. code-block:: python
 
@@ -630,7 +630,7 @@ Attributes of record objects
   'and', 'or'
 
 Below is an example of matching any of multiple values gives as a Python list in KeywordIndex.
-It queries all event types and recurrence_days KeywordIndex must match any of the given dates::
+It queries all event types and recurrence_days KeywordIndex must match any of the given dates:
 
 .. code-block:: python
 
