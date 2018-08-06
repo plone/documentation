@@ -318,9 +318,9 @@ code
 Additional info
 ----------------
 
-* `ZCatalog source code <http://svn.zope.org/Zope/trunk/src/Products/ZCatalog/ZCatalog.py?rev=96262&view=auto>`_.
+* `ZCatalog source code <https://github.com/zopefoundation/Products.ZCatalog/blob/master/src/Products/ZCatalog/ZCatalog.py>`_.
 
-* http://wyden.com/plone/basics/searching-the-catalog
+* `Searching the Catalog <https://web.archive.org/web/20140401005054/https://wyden.com/plone/basics/searching-the-catalog>`_ by Wyden Silvan
 
 
 .. _The Zope Book, Searching and Categorizing Content: http://docs.zope.org/zope2/zope2book/SearchingZCatalog.html
