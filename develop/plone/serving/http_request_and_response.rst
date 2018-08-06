@@ -224,8 +224,6 @@ A Management Interface Python script to dump all HTTP request headers::
 
     from StringIO import StringIO
 
-    # Import a standard function, and get the HTML request and response objects.
-    from Products.PythonScripts.standard import html_quote
     request = container.REQUEST
     response =  request.response
 
