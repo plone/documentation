@@ -119,7 +119,7 @@ For any new test suites, you should be using `plone.app.testing`, your next step
 You may come across `Products.PloneTestCase <https://pypi.python.org/pypi/Products.PloneTestCase>` in older code.
 Also interesting is `ZopeTestCase <http://www.zope.org/Members/shh/ZopeTestCaseWiki/ApiReference>`.
 
-Miscallaneous hints
+Miscellaneous hints
 ===================
 
 Setting log level in unit tests
