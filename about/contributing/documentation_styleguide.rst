@@ -41,7 +41,7 @@ Line Length
 
 - Please do not follow `PEP8 <https://www.python.org/dev/peps/pep-0008/#maximum-line-length>`_ maximum line length standard.
 
-- Keep sentences short and sentences and understandable .
+- Keep sentences short and understandable.
 
 - Use `semantic linefeeds <http://rhodesmill.org/brandon/2012/one-sentence-per-line/>`_ when you are editing.
 
