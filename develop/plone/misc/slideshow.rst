@@ -14,7 +14,7 @@ Introduction
 
 Header slideshows
 
-* `Products.Carousel <https://plone.org/products/carousel/>`_
+* `Products.Carousel <https://pypi.org/project/Products.Carousel/>`_
 
 AJAX'y image pop-ups
 
