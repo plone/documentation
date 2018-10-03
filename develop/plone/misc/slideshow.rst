@@ -17,7 +17,7 @@ Header slideshows
 
 AJAX'y image pop-ups
 
-* https://plone.org/products/pipbox
+* `Products.pipbox <https://pypi.org/project/Products.pipbox/>`_
 
 Migrate Products.Slideshow to Products.Carousel
 ==================================================
