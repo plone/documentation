@@ -9,7 +9,7 @@ Migrating Plone 5.2 to Python 3
 
 .. note::
 
-   This is work in progress. To go on with documenting the process or help improve the involved scripts/tools
+   This is work in progress. To continue with documenting the process or help improve the involved scripts/tools
    please have a look at the following resources:
 
    * https://github.com/plone/Products.CMFPlone/issues/2525
@@ -18,7 +18,7 @@ Migrating Plone 5.2 to Python 3
      https://github.com/frisi/coredev52multipy/tree/zodbupdate
 
 
-Plone 5.2 can be ran on Python 2 and Python 3. To use Python 3 you need to `migrate your database <Database Migration>`_ first.
+Plone 5.2 can be ran on Python 2 and Python 3. To use Python 3 you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
 
 
 
@@ -27,7 +27,8 @@ Database Migration
 ==================
 
 
-ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without being modified before. (See `Why do i have to migrate my database?`_ for technical background).
+ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without being modified before. 
+(See `Why do i have to migrate my database?`_ for technical background).
 
 
 Database Upgrade procedure
@@ -37,12 +38,12 @@ TODO: provided sections for these steps that explain them in more detail.
 
 
 * Upgrade your site to Plone 5.2 running on Python 2 first
-  (see xxx ref to docs)
+  (see :doc:`upgrade_to_52`)
 
 * Backup your database!
 
-* Run scripts to prepare content for migration
-  https://github.com/plone/Products.CMFPlone/issues/2575
+* Run scripts to prepare the content for migration
+  `https://github.com/plone/Products.CMFPlone/issues/2575 <https://github.com/plone/Products.CMFPlone/issues/2575>`_
 
 
 * Migrate your database using zodbupdate
@@ -61,10 +62,8 @@ TODO: provided sections for these steps that explain them in more detail.
 Why do i have to migrate my database?
 -------------------------------------
 
-TODO: Explain why it is necessary to do a migration, add explanation given in https://blog.gocept.com/2018/06/07/migrate-a-zope-zodb-data-fs-to-python-3/ here.
-
-
-To understand the problem that arises when migrating a zodb from python2 to python3, this `introduction <https://blog.gocept.com/2018/06/07/migrate-a-zope-zodb-data-fs-to-python-3/>`_ and the following example helped me a lot.
+To understand the problem that arises when migrating a zodb from python2 to python3, 
+this `introduction <https://blog.gocept.com/2018/06/07/migrate-a-zope-zodb-data-fs-to-python-3/>`_ and the following example will help.
 
 
 When pickling an object the datatypes and values are stored.
@@ -141,7 +140,8 @@ When reading a pickle created with python2 with python3 that contains non-ascii
 characters in a field declared with OPTCODE `STRING` python3 is trying to interpret it as python3 string (py2 unicode)
 and we might end up getting a UnicodeDecodeError for this pickle in ZODB.serialize
 
-::
+
+.. code-block:: bash
 
     $ python3
     >>> b'\xc3\x9cml\xc3\xa4ut'.decode('ascii')
@@ -152,7 +152,7 @@ and we might end up getting a UnicodeDecodeError for this pickle in ZODB.seriali
 
 Or when utf-8 encoded byte-strings are interpreted as unicode we do not get an error but mangled non-ascii characters
 
-::
+.. code-block:: bash
 
     $ python3
     >>> print('\xdcml\xe4ut')
@@ -168,12 +168,13 @@ Custom Content Types
 
 TODO: Not yet sure if custom types need to provide additional mappings for zodbupdate.
 
-Example PR that adds them: https://github.com/zopefoundation/Products.PythonScripts/pull/19
+Here is an example Pull Request that adds them: `https://github.com/zopefoundation/Products.PythonScripts/pull/19 <https://github.com/zopefoundation/Products.PythonScripts/pull/19>`_
 
 workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or utf-8
 
+.. code-block:: bash
 
-bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
+    bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
 
 
 
@@ -197,9 +198,11 @@ add zodbupdate to buildout eggs::
 
 Migrate database so it can be read using Python 3.
 
-.. ATTENTION:: This migrates our database in place. Make sure to make a backup before!
+.. warning:: 
 
-::
+    This migrates our database in place. Make sure to make a backup before!
+
+.. code-block:: bash
 
     cd $BUILDOUT
     bin/instance stop
@@ -214,27 +217,25 @@ Downtime
 This step actually requires to take your site offline or into read-only mode.
 
 
-Some thoughts on doing upgrades w/o downtime we had in a hangout:
+Some thoughts on doing upgrades w/o downtime that came up in a hangout during a coding sprint in October 2018:
 
 
-jim mentions downtime. would try to leaverage zrs replication protocol, secondary server with converted data. it would probably be a tirival change to zrs.
-
-for relstorage jim mentions a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
-
-david thought out loud about
+- jim mentions downtime. would try to leverage the zrs replication protocol, secondary server with converted data.
+  It would probably be a trivial change to zrs.
+- for relstorage jim mentions a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
+- david thought out loud about
 
 
 
 Prepare the migration
 ---------------------
 
-if you have custom content types and addons, it is a good idea to first test the migration on a staging server.
+If you have custom content types and addons, it is a good idea to first test the migration on a staging server.
 
 
-Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for
-attributes containing string values that could possibly break when converted to python3
+Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3
 
-::
+.. code-block:: bash
 
     bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
     # this might be possible with zodbupdate (https://github.com/zopefoundation/zodbupdate/issues/10)
@@ -245,5 +246,3 @@ Test Migration
 --------------
 
 anaylze the database to make sure all records can be opened when running python 3
-
-https://github.com/zopefoundation/zodbupdate/issues/11
