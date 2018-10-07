@@ -22,6 +22,13 @@ Plone 5.2 can be ran on Python 2 and Python 3. To use Python 3 you need to `migr
 
 
 
+Make custom packages Python 3 ready
+===================================
+
+XXX @pbauer has some documentation on this in google docs
+
+
+
 
 Database Migration
 ==================
