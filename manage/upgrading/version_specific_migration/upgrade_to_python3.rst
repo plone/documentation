@@ -27,7 +27,7 @@ Database Migration
 ==================
 
 
-ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without being modified before. 
+ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without being modified before.
 (See `Why do i have to migrate my database?`_ for technical background).
 
 
@@ -62,7 +62,7 @@ TODO: provided sections for these steps that explain them in more detail.
 Why do i have to migrate my database?
 -------------------------------------
 
-To understand the problem that arises when migrating a zodb from python2 to python3, 
+To understand the problem that arises when migrating a zodb from python2 to python3,
 this `introduction <https://blog.gocept.com/2018/06/07/migrate-a-zope-zodb-data-fs-to-python-3/>`_ and the following example will help.
 
 
@@ -198,7 +198,7 @@ add zodbupdate to buildout eggs::
 
 Migrate database so it can be read using Python 3.
 
-.. warning:: 
+.. warning::
 
     This migrates our database in place. Make sure to make a backup before!
 
@@ -223,7 +223,7 @@ Some thoughts on doing upgrades w/o downtime that came up in a hangout during a 
 - jim mentions downtime. would try to leverage the zrs replication protocol, secondary server with converted data.
   It would probably be a trivial change to zrs.
 - for relstorage jim mentions a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
-- david thought out loud about
+- david thought out loud about taking down downtime: do conversion at read time....
 
 
 
