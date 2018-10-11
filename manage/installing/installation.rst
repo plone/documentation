@@ -304,7 +304,7 @@ Installing Plone On Windows
 
 Beginning with Plone 5.1.4, the Unified Installer will install Plone on Windows 10.
 Windows installation instructions vary from Linux/Unix instructions!
-See the `Windows-specific installation instructions <https://github.com/plone/Installers-UnifiedInstaller/blob/master/docs/windows.rst> that are included with the installer.
+See the `Windows-specific installation instructions <https://github.com/plone/Installers-UnifiedInstaller/blob/master/docs/windows.rst>`_ that are included with the installer.
 
 For earlier versions of Plone 5, you have the `Windows installer <https://github.com/plone/WinPloneInstaller/>`_ or the `Vagrant kit <https://github.com/plone/plonedev.vagrant>`__
 
