@@ -13,4 +13,6 @@ Version-specific migration procedures and tips
    p4x_to_p5x_upgrade
    plone5_minor_upgrade
    upgrade_to_51
+   upgrade_to_52
+   upgrade_to_python3
 
