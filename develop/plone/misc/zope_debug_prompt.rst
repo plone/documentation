@@ -1,6 +1,6 @@
 =================
-Zope debug prompt
-================
+Zope Debug Prompt
+=================
 
 .. admonition:: Description
 
