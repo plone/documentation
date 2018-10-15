@@ -110,7 +110,7 @@ You can see available metadata columns on the portal_catalog "Metadata" tab in M
 For more information, see :doc:`indexing </develop/plone/searching_and_indexing/indexing>`.
 
 
-Available indexes
+Available Indexes
 -----------------
 
 To see the full list of available indexes in your catalog
@@ -191,7 +191,7 @@ object\_provides
     these new types will also show up in your query.
 
 
-Brain result id
+Brain Result Id
 ===============
 
 Result ID (RID) is given with the brain object and you can use this ID to query
@@ -202,7 +202,7 @@ Example::
         (Pdb) brain.getRID()
         872272330
 
-Brain result path
+Brain Result Path
 =================
 
 Brain result path can be extraced as string using ``getPath()`` method::
@@ -211,7 +211,7 @@ Brain result path can be extraced as string using ``getPath()`` method::
         /site/sisalto/ajankohtaista
 
 
-Brain object schema
+Brain Object Schema
 ===================
 
 To see what metadata columns a brain object contain,
@@ -337,7 +337,7 @@ It is possible to order to sort first in order of ``portal_type`` and second for
         sort_order='ascending'
     )
 
-.. Note::
+.. note::
 
     If you sort on something, the result will not contain items which aren't in the sort index.
     I.e. if you sort on ``start`` only items will be found having a ``start`` date, like events.
@@ -380,7 +380,7 @@ Example of how to sort by id:
     )
 
 
-Text format
+Text Format
 ===========
 
 Indexes use direct attribute access (Dexterity) and so return they the raw value.
@@ -405,7 +405,7 @@ Accessing indexed data
 Normally you don't get copy of indexed data with brains, only metadata.
 You can still access the raw indexed data if you know what you are doing by using RID of the brain object.
 
-.. Note::
+.. note::
 
     This is a very rare use case and documented here for completeness.
 
