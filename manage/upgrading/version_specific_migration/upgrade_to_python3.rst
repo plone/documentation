@@ -252,4 +252,4 @@ Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.
 Test Migration
 --------------
 
-anaylze the database to make sure all records can be opened when running python 3
+- analyze the database to make sure all records can be opened when running python 3
