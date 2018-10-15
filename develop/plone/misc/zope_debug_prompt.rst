@@ -1,6 +1,6 @@
 =================
-Zope debug prompt
-================
+Zope Debug Prompt
+=================
 
 .. admonition:: Description
 
@@ -18,7 +18,7 @@ Some things that you can do through the debug prompt:
 - Update objects in bulk, as opposed to one at a time through the user interface.
 - Produce reports or export data from objects
 
-This is very similar to the Python debug prompt (just entering ``python`` at the command line) and the same whitespace restrictions apply.
+This is similar to the Python debug prompt (entering ``python`` at the command line) and the same whitespace restrictions apply.
 
 Cautions
 ========
@@ -40,7 +40,9 @@ Starting the debug prompt interactively
 
 This assumes that you are running Plone in a ZEO configuration on a \*NIX server, and your Zope clients run as the ``plone_daemon`` user.
 
-After logging into your server, start the debug prompt with::
+After logging into your server, start the debug prompt with
+
+.. code-block:: console
 
     sudo -u plone_daemon /path/to/zope/bin/client1 debug
 
