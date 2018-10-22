@@ -10,7 +10,7 @@ Documentation Styleguide
 Introduction
 ============
 
-Having a 'best practices' approach for writing your documentation will benefit the users and the community at large.
+Having a "best practices" approach for writing your documentation will benefit the users and the community at large.
 
 Even better: when there is a clear structure and style for your documentation, the chances that other people will help improve the documentation increase!
 
@@ -24,11 +24,16 @@ Tone
 
 Guides should be informational, but friendly.
 
-Use the active voice whenever possible, and contractions and pronouns are acceptable (in particular, the use of you in regards to the reader).
+Use the active voice whenever possible.
+Pronouns are acceptable (in particular, the use of "you" in regards to the reader).
+
+Avoid contractions, and spell out the words.
+For example, use "do not" instead of "don't".
+See also :doc:`/about/contributing/word_choice`.
 
 Use common sense – if a term is related to a high-level concept that fewer people would know, then take a sentence or two to explain it.
 
-Avoid using "we" users are more engaged with documentation when you use second person (that is, you address the user as “you”).
+Avoid using "we" users are more engaged with documentation when you use second person (that is, you address the user as "you").
 
 Writing in second person has the following advantages:
 
