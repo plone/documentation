@@ -84,7 +84,7 @@ Here are useful hints for using online chat:
 
     I pasted the log to `pastie.org <http://pastie.org/>`_ and here is the link for the log entry http://pastie.org/123123
 
-- Be specific - tell us why you are trying to accomplish something and then tell us what the problem is. Here are some guidelines how to form a good question for Internet discussion.
+- Be specific - tell us why you are trying to accomplish something and then tell us what the problem is. Here are some guidelines on how to form a good question for Internet discussion.
 
 - Do not copy-paste text to chat. This disrupts other people chatting about other topics. Instead please paste the full traceback error log to `pastie.org <http://pastie.org/>`_ and then paste the link to your error log or code (from your browser's address bar) to the chat.
 
@@ -93,7 +93,7 @@ Here are useful hints for using online chat:
 
 - Do not repeat yourself - people might be busy or not able to help with your problem.  Silence doesn't mean we're ignoring you, it means that nobody is online right now who knows the answer to your question.
 
-- Do not overuse CAPS-LOCK writing, since it is considered shouting and nobody likes when others shout at them. Do not use excessive exclamation marks (!!!) or question marks (???) as it makes you look unprofessional and discourages to help you.
+- Do not overuse CAPS-LOCK writing, since it is considered shouting and nobody likes when others shout at them. Do not use excessive exclamation marks (!!!) or question marks (???) as it makes you look unprofessional and discourages others to help you.
 
 - There are many people discussing simultaneously - if you address a message to a particular person, use his or her nick name. Hint: you can use Tab key to autocomplete nick name after typing few letters.
 
@@ -119,7 +119,7 @@ Here are useful hints for using online chat:
 Tracebacks
 ----------
 
-When there is an error, a Python program always products a traceback, a complete information where the application was when the error happened. To help you with an error, a complete traceback log is needed, not just the last line which says something like "AttributeError".
+When there is an error, a Python program always produces a traceback, a complete information where the application was when the error happened. To help you with an error, a complete traceback log is needed, not just the last line which says something like "AttributeError".
 
 Copy full tracebacks to your message (discussion forums) or pastie.org link (chat). The most reliable way to get the traceback output is to start Plone (Zope application server) in foreground mode in your terminal / command line (see these `debugging tips <http://docs.plone.org/manage/troubleshooting/basic.html>`_)
 
