@@ -23,7 +23,7 @@ Out of that diversity comes an attention to detail in code, function, user inter
 This means that Plone's future is not in the hands of any one person or company.
 
 
-**Thousands of websites** across large and small businesses, education, government, non-profits, sciences, media and publishing are using Plone to solve their content management needs.
+**Thousands of websites** across large and small businesses, education, government, non-profits, sciences, media, and publishing are using Plone to solve their content management needs.
 
 This is supported by a global network of `over 300 solution providers <https://plone.com/providers>`_ in more than 50 countries.
 
@@ -33,8 +33,8 @@ You can find a list of providers and consultants on `plone.com <https://plone.co
 **We are very proud to be known by the company we keep.**
 Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell, the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments - all use Plone.
 
-**Plone is open on many levels.** It runs on Linux, Windows, Mac OS X, FreeBSD and Solaris - and offers a straightforward installation to get you up and running in minutes.
-It has been translated into more than 40 languages, and is developed with an unflinching emphasis on usability and standards compliance.
+**Plone is open on many levels.** It runs on Linux, Windows, Mac OS X, FreeBSD, and Solaris - and offers a straightforward installation to get you up and running in minutes.
+It has been translated into more than 40 languages and is developed with an unflinching emphasis on usability and standards compliance.
 
 **Need a CMS that integrates** with Active Directory, Salesforce, LDAP, SQL, Web Services. LDAP or Oracle? Plone does.
 Need to be sure your website is accessible? Plone meets or exceeds US Government 508 and the WCAG 2.0 standards.
@@ -66,4 +66,4 @@ The founders of Plone-the-Software (Alan Runyan and Alexander Limi) were listeni
 
 Plone-the-Band `broke up in 2001 <http://en.wikipedia.org/wiki/Plone_%28band%29>`_, but Plone-the-Software lives on.
 
-Plone is pronounced in the same manner as the word "grown". It is not spelled out when you say it, and is not an abbreviation for anything.
+Plone is pronounced in the same manner as the word "grown". It is not spelled out when you say it and is not an abbreviation for anything.
