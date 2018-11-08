@@ -57,7 +57,7 @@ Create the file ``/etc/nginx/sites-available/yoursite.conf`` with the following 
     server {
         listen 80;
         server_name yoursite.com;
-        rewrite ^/(.*) http://www.yoursite.com/$1 permanent;
+        return 301 http://www.yoursite.com$request_uri;
     }
 
     server {
@@ -246,8 +246,7 @@ Put the following in your ``gocept.nginx`` configuration:
         server {
                 listen ${hosts:balancer}:${ports:balancer};
                 server_name ${hosts:main-alias};
-                access_log off;
-                rewrite ^(.*)$  $scheme://${hosts:main}$1 redirect;
+                return 301 $scheme://${hosts:main}$request_uri;
         }
 
 Hosts are configured in a separate buildout section:
@@ -261,7 +260,7 @@ Hosts are configured in a separate buildout section:
 
 More info
 
-* https://stackoverflow.com/questions/7947030/nginx-no-www-to-www-and-www-to-no-www
+* https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/#taxing-rewrites
 
 Permanent redirect
 ==================
