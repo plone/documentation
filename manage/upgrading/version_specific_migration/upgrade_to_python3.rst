@@ -21,11 +21,175 @@ Migrating Plone 5.2 to Python 3
 Plone 5.2 can be ran on Python 2 and Python 3. To use Python 3 you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
 
 
-
 Make custom packages Python 3 ready
 ===================================
 
-XXX @pbauer has some documentation on this in google docs
+Principles
+----------
+
+    * You should support Python 2 and 3 with the same codebase
+    * Plone 5.2 supports Python 2.7, Python 3.6 and Python 3.7
+    * We use `six <https://six.readthedocs.io>`_ and 
+      `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards python 3.
+
+First steps of addons
+---------------------
+
+    1. Prepare Addon to be ported, i.e. add it to the coredev buildout
+    2. Install modernize and run it on the code
+    3. Use precompile
+    4. Start the instance
+    5. Run tests
+    7. Update package information
+
+1. Preparation
+--------------
+
+Open a ticket 'Add support for Python 3' in the GitHub repo of the Addon and
+create a new branch named **python3** as well.
+
+Use the coredev buildout to have setup that contains everything needed for the Python 3 porting of an Addon.
+Here are the steps that are needed to do that:
+
+.. code-block:: shell
+
+    # Clone coredev and use branch 5.2:
+    git clone git@github.com:plone/buildout.coredev.git coredev_py3
+    cd coredev_py3
+    git checkout 5.2
+    # Create a py3 virtualenv with either Python 3.6 or 3.7 (they are very similar):
+    python3.7 -m venv .
+    # Install buildout:
+    ./bin/pip install -r requirements.txt
+
+
+After that you create a **local.cfg** file in the root of the buildout to add the Addon to the buildout.
+Add you package should contain similar content to the following example.
+Exchange **collective.package** with the name of the Addon you want to port.
+
+.. code-block:: ini
+
+    [buildout]
+    extends = buildout-py3.cfg
+
+    always-checkout = true
+
+    custom-eggs +=
+        collective.package
+
+    test-eggs +=
+        collective.package [test]
+
+    auto-checkout +=
+        collective.package
+
+    [sources]
+    collective.package = git git@github.com:collective/collective.package.git branch=python3
+
+With the file in place,
+you can run buildout and the source of the Addon package will be checked out to the `src` folder.
+
+.. code-block:: shell
+
+    ./bin/buildout -c local.cfg
+
+Now everything is prepared to work on the migration of the package.
+
+2. Automated fixing with modernize
+----------------------------------
+
+**python-modernize** is an automated fixer, that prepares Python 2 to be ready for Python 3.
+After using it,
+there might is still a bit of manual work to do for you,
+because there are problems that it can not fix and it also can make change that are not really needed.
+So check the changes after you ran this tool.
+
+**python-modernize** will warn you,
+when it is not sure what to do with a possible problem. 
+Check this `Cheat Sheet <http://python-future.org/compatible_idioms.html>`_  with idioms
+for writing Python 2-3 compatible code.
+
+For certain fixes **python-modernize** adds an import of the compatibility library **six** to your code.
+If this happens,
+you might need to fix the order of imports in your file.
+Check the `Python Styleguide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
+for information about the order of imports.
+
+Installation
+~~~~~~~~~~~~
+
+Install `modernize <https://pypi.python.org/pypi/modernize>`_ into your Python 3 environment with **pip**.
+
+.. code-block:: shell
+
+    ./bin/pip install modernize
+
+Usage
+~~~~~
+
+The following command runs on fixer on all python files.
+
+.. code-block:: shell
+
+    ./bin/python-modernize -x libmodernize.fixes.fix_import  src/collective.package
+
+.. note::
+
+    The *-x* option is used to exclude certain fixers.
+    The one that adds `from __future__ import absolute_import` should not be used.
+    See ``./bin/python-modernize -l`` for a complete list of fixers and
+    the `Documentation <https://python-modernize.readthedocs.io/en/latest/fixers.html>`_ about them.
+
+The following command applies all fixes the the files in-place:
+
+.. code-block:: shell
+
+    $ ./bin/python-modernize -wn -x libmodernize.fixes.fix_import  src/collective.package
+
+After you ran the command above you can start to tweak what **modernizer** did not get right.
+
+3. Use precompile
+-----------------
+
+You can make use of `plone.recipe.precompiler <https://github.com/plone/plone.recipe.precompiler>`_ to identify syntax errors quickly.
+This recipe compiles all python code already at buildout-time, not at run-time.
+You will see right away, when there is some illegal syntax.
+
+Add the following line(s) to the section [buildout] in  **local.cfg** and
+run `./bin/buildout -c local.cfg` to enable and use **precompile**.
+
+.. code-block:: ini
+
+    parts +=
+    precompiler
+
+4. Start the instance
+---------------------
+
+As a next step we recommend that you try to start the instance with your Addon.
+If it works and you can install the Addon,
+you can some prelimenary manual testing to check for big, obvious issues.
+
+5. Run tests
+------------
+
+.. code-block:: shell
+
+    $ ./bin/test --all -s collective.package
+
+Hopefully there are not many issues with the code left at this point.
+Here is a list of helpful references on the topic of porting Python 2 to Python 3.
+
+    - https://portingguide.readthedocs.io/en/latest/index.html
+    - https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
+    - http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html
+    - https://docs.djangoproject.com/en/1.11/topics/python3/
+    - http://docs.ansible.com/ansible/latest/dev_guide/developing_python3.html
+    - https://docs.python.org/2/library/doctest.html#debugging
+
+TBD: Run tests on travis for testing matrix 2.7, 3.6, 3.7
+
+6. Update Addon information
 
 
 
