@@ -240,7 +240,7 @@ Prepare the migration
 If you have custom content types and addons, it is a good idea to first test the migration on a staging server.
 
 
-Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3
+Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
 
 .. code-block:: bash
 
@@ -252,4 +252,14 @@ Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.
 Test Migration
 --------------
 
-- analyze the database to make sure all records can be opened when running python 3
+You can use the following command to check, that all records in the database can be successfully loaded.
+
+.. code-block:: bash
+
+    bin/instance verifydb
+
+The output should look like this::
+
+    ...
+    INFO:zodbverify:Scanning ZODB...
+    INFO:zodbverify:Done! Scanned 5999 records. Found 0 records that could not be loaded.

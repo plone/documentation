@@ -178,9 +178,9 @@ How this works
 
 - There is a body class tag "frontend".
 - This appears when current view or page is unprotected or only protected by a "can view" permisission.
-- In most cases this your "view" of an object, and some extra pages like contact-us, login_form etc.
+- In most cases this is your "view" of an object, and some extra pages like contact-us, login_form etc.
 - Almost everything else is protected by other permissions and are therefore intended to be used by logged in users.
-- ``++theme++barceloneta/backend.xml`` is mainly the same as the normal barceloneteta rules except for a few exceptions:
+- ``++theme++barceloneta/backend.xml`` is mainly the same as the normal Barceloneta rules except for a few exceptions:
 
   - It will only apply theming when body.frontend is not present
   - Except it will include the toolbar regardless if body.frontend is there or not.

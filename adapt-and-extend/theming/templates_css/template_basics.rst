@@ -200,8 +200,7 @@ We refer it in our page template instead of ``here/main_template``::
             checkPermission nocall: context/portal_membership/checkPermission;
             site_properties context/portal_properties/site_properties;
             ajax_load request/ajax_load | nothing;
-            ajax_include_head request/ajax_include_head | nothing;
-            dummy python:request.RESPONSE.setHeader('X-UA-Compatible', 'IE=edge,chrome=1');"
+            ajax_include_head request/ajax_include_head | nothing;"
         tal:attributes="lang lang;">
 
     <head>

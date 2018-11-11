@@ -4,7 +4,7 @@ Skin layers
 
 .. admonition:: Description
 
-    Skin layers are a legacy Plone 2 technology, still is use, for adding overridable templates and media resources to Plone packages.
+    Skin layers are a legacy Plone 2 technology, still in use, for adding overridable templates and media resources to Plone packages.
 
 
 Introduction
@@ -178,19 +178,12 @@ Available skin layers are directly exposed as :doc:`traversable </develop/plone/
         ChangeSet
         DELETE
         ...
-        plone_3rdParty
-        plone_content
-        plone_deprecated
-        plone_ecmascript
         plone_form_scripts
-        plone_forms
         plone_images
-        plone_login
-        plone_portlets
         plone_prefs
         plone_scripts
-        plone_styles
         plone_templates
+        plone_wysiwyg
 
 ``portal_skins.getSkinSelections()`` will list available skins.
 

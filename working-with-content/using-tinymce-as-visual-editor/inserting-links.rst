@@ -31,7 +31,7 @@ The Upload tab lets you upload a PDF or Office document or other file. It will b
 External Link
 =============
 
-When linking to external sites, make sure you include the *complete* link, including the "http\/\/" or "https:\/\/" part, otherwise it will be interpreted as a *relative* link within your own site. Again, you can set a Target and Title.
+When linking to external sites, make sure you include the *complete* link, including the "http:\/\/" or "https:\/\/" part, otherwise it will be interpreted as a *relative* link within your own site. Again, you can set a Target and Title.
 Opinions differ on whether you should open an external link in a new window or not; ask if your organisation has a policy on this.
 
 
