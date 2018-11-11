@@ -7,19 +7,6 @@ Migrating Plone 5.2 to Python 3
 
    Instructions and tips for running Plone 5.2 with Python 3
 
-.. note::
-
-   This is work in progress. To continue with documenting the process or help improve the involved scripts/tools
-   please have a look at the following resources:
-
-   * https://github.com/plone/Products.CMFPlone/issues/2525
-
-   * documentation on setting up an environment to test the migration:
-     https://github.com/frisi/coredev52multipy/tree/zodbupdate
-
-
-Plone 5.2 can be ran on Python 2 and Python 3. To use Python 3 you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
-
 
 Make custom packages Python 3 ready
 ===================================
@@ -27,19 +14,19 @@ Make custom packages Python 3 ready
 Principles
 ----------
 
-    * You should support Python 2 and 3 with the same codebase
+    * You should support Python 2 and 3 with the same codebase to allow it to be used in existing versions of Plone.
     * Plone 5.2 supports Python 2.7, Python 3.6 and Python 3.7
     * We use `six <https://six.readthedocs.io>`_ and
-      `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards python 3.
+      `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards Python 3.
 
 First steps of add-ons
 ----------------------
 
-    1. Prepare add-on to be ported, i.e. add it to the coredev buildout
+    1. Prepare add-on to be ported, i.e. add it to a buildout running Plone 5.2 on Python 3
     2. Install modernize and run it on the code
-    3. Use precompile
-    4. Start the instance
-    5. Run tests
+    3. Use precompile to find syntax-errors
+    4. Start the instance and find more errors like import-errors
+    5. Run and fix all tests
     7. Update package information
 
 1. Preparation
@@ -48,7 +35,7 @@ First steps of add-ons
 Open a ticket 'Add support for Python 3' in the GitHub repo of the add-on and
 create a new branch named **python3** as well.
 
-Use the coredev buildout to have setup that contains everything needed for the Python 3 porting of an add-on.
+Until Plone 5.2 is released you can use the coredev buildout to have setup that contains everything needed for the Python 3 porting of an add-on.
 Here are the steps that are needed to do that:
 
 .. code-block:: shell
@@ -63,10 +50,14 @@ Here are the steps that are needed to do that:
     ./bin/pip install -r requirements.txt
 
 
-After that you create a file called **local.cfg** in the root of the buildout.
+After that you create a file called `local.cfg` in the root of the buildout.
 This file will be used to add your add-on to the buildout.
 Add your package like in the following example.
-Exchange **collective.package** with the name of the add-on you want to port.
+Exchange `collective.package` with the name of the add-on you want to port.
+
+.. note::
+
+   This example expects a branch `python3` for the package to exists. Adopt it to you use-case.
 
 .. code-block:: ini
 
@@ -87,8 +78,8 @@ Exchange **collective.package** with the name of the add-on you want to port.
     [sources]
     collective.package = git git@github.com:collective/collective.package.git branch=python3
 
-With the file in place,
-you can run buildout and the source of the add-on package will be checked out to the `src` folder.
+With the file in place, run buildout.
+Then the source of the add-on package will be checked out into the `src` folder.
 
 .. code-block:: shell
 
@@ -99,18 +90,18 @@ Now everything is prepared to work on the migration of the package.
 2. Automated fixing with modernize
 ----------------------------------
 
-**python-modernize** is an automated fixer, that prepares Python 2 to be ready for Python 3.
+`python-modernize` is an automated fixer, that prepares Python 2 to be ready for Python 3.
 After using it,
 there might is still a bit of manual work to do for you,
 because there are problems that it can not fix and it also can make change that are not really needed.
-So check the changes after you ran this tool.
+So check all changes after you ran this tool.
 
-**python-modernize** will warn you,
+`python-modernize` will warn you,
 when it is not sure what to do with a possible problem.
 Check this `Cheat Sheet <http://python-future.org/compatible_idioms.html>`_  with idioms
 for writing Python 2-3 compatible code.
 
-For certain fixes **python-modernize** adds an import of the compatibility library **six** to your code.
+For certain fixes `python-modernize` adds an import of the compatibility library `six` to your code.
 If this happens,
 you might need to fix the order of imports in your file.
 Check the `Python Styleguide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
@@ -119,7 +110,7 @@ for information about the order of imports.
 Installation
 ~~~~~~~~~~~~
 
-Install `modernize <https://pypi.python.org/pypi/modernize>`_ into your Python 3 environment with **pip**.
+Install `modernize <https://pypi.python.org/pypi/modernize>`_ into your Python 3 environment with `pip`.
 
 .. code-block:: shell
 
@@ -147,7 +138,7 @@ The following command applies all fixes the the files in-place:
 
     $ ./bin/python-modernize -wn -x libmodernize.fixes.fix_import  src/collective.package
 
-After you ran the command above you can start to tweak what **modernizer** did not get right.
+After you ran the command above you can start to tweak what `modernizer` did not get right.
 
 3. Use precompile
 -----------------
@@ -156,20 +147,20 @@ You can make use of `plone.recipe.precompiler <https://github.com/plone/plone.re
 This recipe compiles all Python code already at buildout-time, not at run-time.
 You will see right away, when there is some illegal syntax.
 
-Add the following line(s) to the section `[buildout]` in  **local.cfg** and
-run `./bin/buildout -c local.cfg` to enable and use **precompile**.
+Add the following line(s) to the section `[buildout]` in  `local.cfg` and
+run `./bin/buildout -c local.cfg` to enable and use `precompile`.
 
 .. code-block:: ini
 
-    parts +=
-    precompiler
+    parts += precompiler
 
 4. Start the instance
 ---------------------
 
 As a next step we recommend that you try to start the instance with your add-on.
-If it works and you can install the add-on,
-you can do some prelimenary manual testing to check for big, obvious issues.
+This will fail on all import-errors (e.g. relative imports that are not allowed in Python 3)
+If it works you can try to install the add-on.
+You need to fix all issues that appear and do some prelimenary manual testing to check for big, obvious issues.
 
 5. Run tests
 ------------
@@ -188,16 +179,35 @@ Here is a list of helpful references on the topic of porting Python 2 to Python 
     - https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
     - https://docs.python.org/2/library/doctest.html#debugging
 
-TBD: Run tests on travis for testing matrix 2.7, 3.6, 3.7
 
 6. Update add-on information
 
+TDB
 
+* Update classifiers
+* Add changenote
+
+
+6. Create a test-setup that tests in Python 2 and Python 3
+
+TBD: Run tests on travis for testing matrix 2.7, 3.6, 3.7
 
 
 Database Migration
 ==================
 
+.. note::
+
+   This is work in progress. To continue with documenting the process or help improve the involved scripts/tools
+   please have a look at the following resources:
+
+   * Provide Migration-Story for ZODB with Plone from Python 2 to 3: https://github.com/plone/Products.CMFPlone/issues/2525
+
+   * Documentation on setting up an environment to test the migration:
+     https://github.com/frisi/coredev52multipy/tree/zodbupdate
+
+Plone 5.2 can be run on Python 2 and Python 3.
+To use a existing project in Python 3 you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
 
 ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without being modified before.
 (See `Why do i have to migrate my database?`_ for technical background).
@@ -227,7 +237,6 @@ TODO: provided sections for these steps that explain them in more detail.
 
 
 * Testing / Debugging
-
 
 
 
