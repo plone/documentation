@@ -18,7 +18,7 @@ One of the best ways to start contributing to the documentation is to pick one o
 
 Please do not misinterpret ``First Timer`` as ``easy`` !
 
-``First Timer`` does not always mean, that these tickets are suited for *beginner* or people who are new
+``First Timer`` does not always mean that these tickets are suited for *beginners* or people who are new
 to Plone.
 
 For some of them you will need to know Python, Plone or Operating Systems.
