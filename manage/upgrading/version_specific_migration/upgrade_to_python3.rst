@@ -14,10 +14,10 @@ Make custom packages Python 3 ready
 Principles
 ----------
 
-    * You should support Python 2 and 3 with the same codebase to allow it to be used in existing versions of Plone.
-    * Plone 5.2 supports Python 2.7, Python 3.6 and Python 3.7
-    * We use `six <https://six.readthedocs.io>`_ and
-      `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards Python 3.
+* You should support Python 2 and 3 with the same codebase to allow it to be used in existing versions of Plone.
+* Plone 5.2 supports Python 2.7, Python 3.6 and Python 3.7
+* We use `six <https://six.readthedocs.io>`_ and
+  `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards Python 3.
 
 First steps of add-ons
 ----------------------
@@ -94,10 +94,10 @@ Now everything is prepared to work on the migration of the package.
 ----------------------------------
 
 ``python-modernize`` is a utility that automatically prepares Python 2 code for porting to Python 3.
-After running python-modernize, there may be manual work ahead.
-There are problems that python-modernize can not fix on its own.
+After running ``python-modernize``, there is manual work ahead.
+There are some problems that ``python-modernize`` can not fix on its own.
 It also might make changes that are not really needed.
-Review the changes after you run this tool.
+You need to closely review all changes after you run this tool.
 
 ``python-modernize`` will warn you,
 when it is not sure what to do with a possible problem.
@@ -105,10 +105,9 @@ Check this `Cheat Sheet <http://python-future.org/compatible_idioms.html>`_  wit
 for writing Python 2-3 compatible code.
 
 ``python-modernize`` adds an import of the compatibility library ``six`` if needed.
-The import is added as last import,
-therefor it is necessary to reorder the imports.
+The import is added as the last import,
+therefore it is often necessary to reorder the imports.
 The easiest way is to use ``isort``.
-See example command below.
 Check the `Python Styleguide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
 for information about the order of imports and an example config for ``isort``.
 
@@ -182,7 +181,13 @@ You need to fix all issues that appear and do some preliminary manual testing to
     $ ./bin/test --all -s collective.package
 
 Hopefully there are not many issues with the code left at this point.
-Here is a list of helpful references on the topic of porting Python 2 to Python 3.
+
+TBD: Document the most frequent issues when porting to Python 3
+
+
+.. seealso::
+
+    Here is a list of helpful references on the topic of porting Python 2 to Python 3.
 
     - https://portingguide.readthedocs.io/en/latest/index.html
     - https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
@@ -195,7 +200,7 @@ Here is a list of helpful references on the topic of porting Python 2 to Python 
 6. Update add-on information
 ----------------------------
 
-Add the following entries of the classifiers list in setup.py:
+Add the following three entries of the classifiers list in setup.py:
 
 .. code-block:: python
 
@@ -206,9 +211,13 @@ Add the following entries of the classifiers list in setup.py:
 
 Make an entry on the CHANGES.rst file.
 
-6. Create a test-setup that tests in Python 2 and Python 3
 
-TBD: Run tests on travis for testing matrix 2.7, 3.6, 3.7
+7. Create a test-setup that tests in Python 2 and Python 3
+----------------------------------------------------------
+
+TBD: Run tests on with `tox` on travis for Python 2.7, 3.6 and 3.7
+
+A example for a tox-setup can be found in https://github.com/collective/collective.ifttt/pull/82
 
 
 Database Migration
@@ -411,7 +420,7 @@ Migrate database so it can be read using Python 3.
 
 
 Downtime
-''''''''
+--------
 
 This step actually requires to take your site offline or into read-only mode.
 
