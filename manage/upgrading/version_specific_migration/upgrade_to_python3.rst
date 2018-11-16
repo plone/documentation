@@ -65,7 +65,7 @@ Exchange ``collective.package`` with the name of the add-on you want to port.
 .. code-block:: ini
 
     [buildout]
-    extends = buildout-py3.cfg
+    extends = buildout.cfg
 
     always-checkout = true
 
