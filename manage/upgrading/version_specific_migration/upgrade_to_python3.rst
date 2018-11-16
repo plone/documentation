@@ -7,35 +7,237 @@ Migrating Plone 5.2 to Python 3
 
    Instructions and tips for running Plone 5.2 with Python 3
 
-.. note::
-
-   This is work in progress. To continue with documenting the process or help improve the involved scripts/tools
-   please have a look at the following resources:
-
-   * https://github.com/plone/Products.CMFPlone/issues/2525
-
-   * documentation on setting up an environment to test the migration:
-     https://github.com/frisi/coredev52multipy/tree/zodbupdate
-
-
-Plone 5.2 can be ran on Python 2 and Python 3. To use Python 3 you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
-
-
 
 Make custom packages Python 3 ready
 ===================================
 
-XXX @pbauer has some documentation on this in google docs
+Principles
+----------
+
+* You should support Python 2 and 3 with the same codebase to allow it to be used in existing versions of Plone.
+* Plone 5.2 supports Python 2.7, Python 3.6 and Python 3.7
+* We use `six <https://six.readthedocs.io>`_ and
+  `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards Python 3.
+
+First steps of add-ons
+----------------------
+
+#. Prepare add-on to be ported, i.e. add it to a buildout running Plone 5.2 on Python 3
+#. Install modernize and run it on the code
+#. Use precompile to find syntax errors
+#. Start the instance and find more errors like import errors
+#. Run and fix all tests
+#. Update package information
+
+1. Preparation
+--------------
+
+In the GitHub repo of the add-on:
+* Open a ticket with the title "Add support for Python 3" .
+* Create a new branch named ``python3``.
+
+Until Plone 5.2 is released, you can use the coredev buildout setup.
+It contains everything for porting an add-on to Python 3.
+Follow these steps:
+
+.. code-block:: shell
+
+    # Clone coredev and use branch 5.2:
+    git clone git@github.com:plone/buildout.coredev.git coredev_py3
+    cd coredev_py3
+    git checkout 5.2
+    # Create a py3 virtual environment with either Python 3.6 or 3.7 (they are very similar):
+    python3.7 -m venv .
+    # Install buildout:
+    ./bin/pip install -r requirements.txt
 
 
+Next create a file called ``local.cfg`` in the root of the buildout.
+This file will be used to add your add-on to the buildout.
+Add your package like in the following example.
+Exchange ``collective.package`` with the name of the add-on you want to port.
+
+.. note::
+
+    This example expects a branch with the name ``python3`` to exist for the package.
+    Adapt it for your use case.
+
+.. code-block:: ini
+
+    [buildout]
+    extends = buildout-py3.cfg
+
+    always-checkout = true
+
+    custom-eggs +=
+        collective.package
+
+    test-eggs +=
+        collective.package [test]
+
+    auto-checkout +=
+        collective.package
+
+    [sources]
+    collective.package = git git@github.com:collective/collective.package.git branch=python3
+
+With the file in place, run buildout.
+Then the source of the add-on package will be checked out into the ``src`` folder.
+
+.. code-block:: shell
+
+    ./bin/buildout -c local.cfg
+
+Now everything is prepared to work on the migration of the package.
+
+2. Automated fixing with modernize
+----------------------------------
+
+``python-modernize`` is a utility that automatically prepares Python 2 code for porting to Python 3.
+After running ``python-modernize``, there is manual work ahead.
+There are some problems that ``python-modernize`` can not fix on its own.
+It also might make changes that are not really needed.
+You need to closely review all changes after you run this tool.
+
+``python-modernize`` will warn you,
+when it is not sure what to do with a possible problem.
+Check this `Cheat Sheet <http://python-future.org/compatible_idioms.html>`_  with idioms
+for writing Python 2-3 compatible code.
+
+``python-modernize`` adds an import of the compatibility library ``six`` if needed.
+The import is added as the last import,
+therefore it is often necessary to reorder the imports.
+The easiest way is to use ``isort``.
+Check the `Python Styleguide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
+for information about the order of imports and an example config for ``isort``.
+
+
+Installation
+~~~~~~~~~~~~
+
+Install `modernize <https://pypi.python.org/pypi/modernize>`_ into your Python 3 environment with ``pip``.
+
+.. code-block:: shell
+
+    ./bin/pip install modernize
+
+Usage
+~~~~~
+
+The following command runs an import fixer on all Python files.
+
+.. code-block:: shell
+
+    ./bin/python-modernize -x libmodernize.fixes.fix_import  src/collective.package
+
+.. note::
+
+    The ``-x`` option is used to exclude certain fixers.
+    The one that adds ``from __future__ import absolute_import`` should not be used.
+    See ``./bin/python-modernize -l`` for a complete list of fixers and
+    the `Documentation <https://python-modernize.readthedocs.io/en/latest/fixers.html>`_ about them.
+
+The following commands applies all fixes to the files:
+
+.. code-block:: shell
+
+    ./bin/python-modernize -wn -x libmodernize.fixes.fix_import  src/collective.package
+
+You can use ``isort`` to fix the order of imports:
+
+.. code-block:: shell
+
+    ./bin/isort src/collective.package
+
+After you run the command above, you can fix what ``modernizer`` did not get right.
+
+3. Use precompile
+-----------------
+
+You can make use of `plone.recipe.precompiler <https://github.com/plone/plone.recipe.precompiler>`_ to identify syntax errors quickly.
+This recipe compiles all Python code already at buildout-time, not at run-time.
+You will see right away when there is some illegal syntax.
+
+Add the following line to the section ``[buildout]`` in ``local.cfg``.
+Then run ``./bin/buildout -c local.cfg`` to enable and use ``precompile``.
+
+.. code-block:: ini
+
+    parts += precompiler
+
+4. Start the instance
+---------------------
+
+As a next step we recommend that you try to start the instance with your add-on.
+This will fail on all import errors (e.g. relative imports that are not allowed in Python 3).
+If it works you can try to install the add-on.
+You need to fix all issues that appear and do some preliminary manual testing to check for big, obvious issues.
+
+5. Run tests
+------------
+
+.. code-block:: shell
+
+    $ ./bin/test --all -s collective.package
+
+Hopefully there are not many issues with the code left at this point.
+
+TBD: Document the most frequent issues when porting to Python 3
+
+
+.. seealso::
+
+    Here is a list of helpful references on the topic of porting Python 2 to Python 3.
+
+    - https://portingguide.readthedocs.io/en/latest/index.html
+    - https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
+    - http://getpython3.com/diveintopython3/
+    - https://docs.djangoproject.com/en/1.11/topics/python3/
+    - https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
+    - https://docs.python.org/2/library/doctest.html#debugging
+
+
+6. Update add-on information
+----------------------------
+
+Add the following three entries of the classifiers list in setup.py:
+
+.. code-block:: python
+
+    "Framework :: Plone :: 5.2",
+    ...
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+
+Make an entry on the CHANGES.rst file.
+
+
+7. Create a test-setup that tests in Python 2 and Python 3
+----------------------------------------------------------
+
+TBD: Run tests on with `tox` on travis for Python 2.7, 3.6 and 3.7
+
+A example for a tox-setup can be found in https://github.com/collective/collective.ifttt/pull/82
 
 
 Database Migration
 ==================
 
+.. note::
+
+   This is work in progress. To continue with documenting the process or help improve the involved scripts/tools
+   please have a look at the following resources:
+
+   * Provide Migration-Story for ZODB with Plone from Python 2 to 3: https://github.com/plone/Products.CMFPlone/issues/2525
+
+   * Documentation on setting up an environment to test the migration:
+     https://github.com/frisi/coredev52multipy/tree/zodbupdate
+
+Plone 5.2 can be run on Python 2 and Python 3.
+To use an existing project in Python 3, you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
 
 ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without being modified before.
-(See `Why do i have to migrate my database?`_ for technical background).
+(See `Why do I have to migrate my database?`_ for technical background).
 
 
 Database Upgrade procedure
@@ -62,7 +264,6 @@ TODO: provided sections for these steps that explain them in more detail.
 
 
 * Testing / Debugging
-
 
 
 
@@ -219,7 +420,7 @@ Migrate database so it can be read using Python 3.
 
 
 Downtime
-''''''''
+--------
 
 This step actually requires to take your site offline or into read-only mode.
 
@@ -237,7 +438,7 @@ Some thoughts on doing upgrades w/o downtime that came up in a hangout during a 
 Prepare the migration
 ---------------------
 
-If you have custom content types and addons, it is a good idea to first test the migration on a staging server.
+If you have custom content types and add-ons, it is a good idea to first test the migration on a staging server.
 
 
 Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
