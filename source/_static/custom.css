@@ -1,0 +1,28 @@
+a.reference {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+/* Prepend indicator to shell examples */
+.highlight-shell pre:before {
+    content: '$ ';
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Prepend indicator to shell examples */
+.highlight-console pre:before {
+    content: '$ ';
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Set width for main body to 900*/
+div.body {
+    min-width: 450px;
+    max-width: 900px;
+}
