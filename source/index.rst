@@ -10,4 +10,5 @@ This is a community-maintained manual for the `Plone <https://plone.org>`_ conte
    :caption: Contribute:
 
    contributing/style-guide
+   contributing/ask-for-help
    license
