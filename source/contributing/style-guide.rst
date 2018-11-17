@@ -1,6 +1,6 @@
-==================
-Writing Guidelines
-==================
+================
+Style Guidelines
+================
 
 .. admonition:: Abstract
 

@@ -9,5 +9,5 @@ This is a community-maintained manual for the `Plone <https://plone.org>`_ conte
    :maxdepth: 2
    :caption: Contribute:
 
-   contributing/writing-guide
+   contributing/style-guide
    license
