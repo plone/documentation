@@ -64,7 +64,8 @@ Follow netiquette while visiting and writing on forum or mailing list (give resp
 
 - You might need to bump the topic few times until an experienced person comes to the site and sees it.
 
-- If you do not see any response after a day or two it probably means we do not know the answer to your question, or perhaps your question needs to include more detail.
+- If you do not see any response after a day or two it probably means we do not know the answer to your question,
+  or perhaps your question needs to include more detail.
 
 - Do not use bad words.
   Respect others and what they are doing.
@@ -131,9 +132,10 @@ Here are useful hints for using online chat:
 
   When I start Zope in debug mode I get the following log entry.
 
-  I pasted the log to `pastie.org <http://pastie.org/>`_ and here is the link for the log entry http://pastie.org/123123
+  I pasted the log to `pastie.org <http://pastie.org/>`_ and here is the link for the log entry (post the link).
 
-- Be specific - tell us why you are trying to accomplish something and then tell us what the problem is. Here are some guidelines how to form a good question for Internet discussion.
+- Be specific - tell us why you are trying to accomplish something and then tell us what the problem is.
+  Here are some guidelines how to form a good question for Internet discussion.
 
 - Do not copy-paste text to chat.
   This disrupts other people chatting about other topics.
@@ -150,7 +152,7 @@ Here are useful hints for using online chat:
 - Do not overuse CAPS-LOCK writing, since it is considered shouting and nobody likes when others shout at them.
   Do not use excessive exclamation marks (!!!) or question marks (???) as it makes you look unprofessional and discourages to help you.
 
-- There are many people discussing simultaneously - if you address a message to a particular person, use his or her nick name. Hint: you can use Tab key to autocomplete nick name after typing few letters.
+- There are many people discussing simultaneously - if you address a message to a particular person, use his or her nick name.
 
 - Chat is a real-time communication tool.
   Keep in mind, that since you write something, and send it, it cannot be taken back.
@@ -158,7 +160,8 @@ Here are useful hints for using online chat:
 - Try to respond to all questions other users have.
   Chat is much more fluid and dynamic than the forum, do not worry if you forget about putting something in the first message – you can still keep up.
 
-- Do not worry if you are not fluent in English - Plone is a global community, people will usually try to ask you more detailed questions in a way that the message gets through.
+- Do not worry if you are not fluent in English - Plone is a global community.
+  People will usually try to ask you more detailed questions in a way that the message gets through.
 
 
 .. admonition:: Example
@@ -174,12 +177,14 @@ Here are useful hints for using online chat:
 
   I get error BlahBlahError — what might be wrong?
 
-  Here is a link to the error log on pastie.org:http://pastie.org/123123"
+  Here is a link to the error log on pastie.org: (post the link)"
 
 Tracebacks
 ----------
 
-When there is an error, a Python program always products a traceback, a complete information where the application was when the error happened. To help you with an error, a complete traceback log is needed, not just the last line which says something like "AttributeError".
+When there is an error, a Python program always products a traceback, a complete information where the application was when the error happened.
+
+To help you with an error, a complete traceback log is needed, not just the last line which says something like "AttributeError".
 
 Copy full tracebacks to your message (discussion forums) or pastie.org link (chat). The most reliable way to get the traceback output is to start Plone (Zope application server) in foreground mode in your terminal / command line (see these `debugging tips <http://docs.plone.org/manage/troubleshooting/basic.html>`_)
 
@@ -198,9 +203,13 @@ On Windows command prompt this is
    cd "C:\Program Files\Plone"
    bin\buildout.exe fg
 
-Zope outputs all debug information to the console where it was started in foreground mode. When the error happens, the full traceback is printed to the console as well.
+Zope outputs all debug information to the console where it was started in foreground mode.
+When the error happens, the full traceback is printed to the console as well.
 
-If Zope does not start in foreground mode it means that your add-on configuration is bad and you need to fix it and the related traceback is printed as well. In production mode, Zope ignores all add-ons which fail to load.
+If Zope does not start in foreground mode it means that your add-on configuration is bad.
+You need to fix it and the related traceback is printed as well.
+
+In production mode, Zope ignores all add-ons which fail to load.
 
 Credits
 -------

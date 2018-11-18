@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 
 # Get version form VERSION
-VERSION := $(shell cat VERSION)
+#VERSION := $(shell cat VERSION)
 DOCKER := $(bash docker)
 
 # We like colors
@@ -49,3 +49,32 @@ check_release_version:
 
 .PHONY: release
 release: check_release_version build tag_latest push ## Combine steps to make release
+
+.PHONY: check-sphinx
+check-sphinx: ## Run Sphinx in nitpicky mode
+	@echo "$(YELLOW)==> Checking Sphinx build files ...$(RESET)"
+	@rm -rf source/_build
+	@docker run --rm -v "${PWD}/source":/build/docs:rw testthedocs/ttd-sphinx debug-strict
+
+.PHONY: check-links
+check-links: ## Run linkcheck, ignoring "localhost"
+	@echo "$(YELLOW)==> Running Linkcheck ...$(RESET)"
+	@rm -rf source/_build
+	@docker run -it -v "${PWD}/source":/srv/test testthedocs/ttd-linkcheck
+
+.PHONY: check-toctree
+check-toctree: ## Checks for for multiple :numbered: entries in toctrees
+	@echo "$(YELLOW)==> Checking toctree entries ...$(RESET)"
+	@docker run -it -v "${PWD}/source":/build/docs testthedocs/ttd-toctree
+
+.PHONY: check-spaces
+check-spaces: ## Checks for trailing spaces on line ends
+	@echo "$(YELLOW)==> Checking for trailing spaces on line ends ...$(RESET)"
+	@rm -rf source/_build
+	@docker run -it -v "${PWD}/source":/build/docs testthedocs/ttd-ts
+
+.PHONY: check-rst
+check-rst: ## Runs docs8, rst checks
+	@echo "$(YELLOW)==> Running doc8 checks against rst files ...$(RESET)"
+	@rm -rf source/_build
+	docker run -it -v "${PWD}/source":/srv/data testthedocs/ttd-doc8
