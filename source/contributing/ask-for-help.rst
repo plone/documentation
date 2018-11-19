@@ -43,9 +43,9 @@ Where to search:
 
 - `Plone Community Forums <https://community.plone.org/>`_ - help and discussion forums
 
-- `StackOverflow <http://stackoverflow.com/questions/tagged/plone?sort=faq>`_ - some FAQs are maintained here
+- `StackOverflow <https://stackoverflow.com/questions/tagged/plone?sort=faq>`_ - some FAQs are maintained here
 
-- :doc:`Troubleshooting </manage/troubleshooting/index>` tips and common error messages - for enabling debug mode and common tracebacks
+- `Troubleshooting <https://docs.plone.org/manage/troubleshooting/index.html>`_ tips and common error messages - for enabling debug mode and common tracebacks
 
 - `GitHub issue tracker <https://github.com/plone/Products.CMFPlone/issues>`_ - for known related issues
 
@@ -56,7 +56,7 @@ If at any point you see any kind of error message (including error codes) – pu
 Please do not write anything like “I see some error message”.
 Be specific.
 
-See  :doc:`Basic troubleshooting </manage/troubleshooting/basic>` in case of an error
+See `Basic troubleshooting <https://docs.plone.org/manage/troubleshooting/basic.html>`_ in case of an error
 
 Follow netiquette while visiting and writing on forum or mailing list (give respect = get respect). This includes:
 

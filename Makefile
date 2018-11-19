@@ -63,7 +63,7 @@ check-links: ## Run linkcheck, ignoring "localhost"
 	@docker run -it -v "${PWD}/source":/srv/test testthedocs/ttd-linkcheck
 
 .PHONY: check-toctree
-check-toctree: ## Checks for for multiple :numbered: entries in toctrees
+check-toctree: ## Checks for for multiple "numbered" entries in toctrees
 	@echo "$(YELLOW)==> Checking toctree entries ...$(RESET)"
 	@docker run -it -v "${PWD}/source":/build/docs testthedocs/ttd-toctree
 
@@ -78,3 +78,6 @@ check-rst: ## Runs docs8, rst checks
 	@echo "$(YELLOW)==> Running doc8 checks against rst files ...$(RESET)"
 	@rm -rf source/_build
 	docker run -it -v "${PWD}/source":/srv/data testthedocs/ttd-doc8
+
+.PHONY: checks
+checks: check-rst check-toctree check-links check-sphinx ## Runs collection of checks against the docs
