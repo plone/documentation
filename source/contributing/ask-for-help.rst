@@ -132,7 +132,7 @@ Here are useful hints for using online chat:
 
   When I start Zope in debug mode I get the following log entry.
 
-  I pasted the log to `pastie.org <http://pastie.org/>`_ and here is the link for the log entry (post the link).
+  I pasted the log to `pastie.org <https://pastie.org/>`_ and here is the link for the log entry (post the link).
 
 - Be specific - tell us why you are trying to accomplish something and then tell us what the problem is.
   Here are some guidelines how to form a good question for Internet discussion.
@@ -140,7 +140,7 @@ Here are useful hints for using online chat:
 - Do not copy-paste text to chat.
   This disrupts other people chatting about other topics.
 
-- Please paste the full traceback error log to `pastie.org <http://pastie.org/>`_ and then paste the link to your error log or code (from your browser's address bar) to the chat.
+- Please paste the full traceback error log to `pastie.org <https://pastie.org/>`_ and then paste the link to your error log or code (from your browser's address bar) to the chat.
 
 - Do not send direct messages to chat participants unless you have a clear reason to do so.
 
@@ -186,7 +186,8 @@ When there is an error, a Python program always products a traceback, a complete
 
 To help you with an error, a complete traceback log is needed, not just the last line which says something like "AttributeError".
 
-Copy full tracebacks to your message (discussion forums) or pastie.org link (chat). The most reliable way to get the traceback output is to start Plone (Zope application server) in foreground mode in your terminal / command line (see these `debugging tips <http://docs.plone.org/manage/troubleshooting/basic.html>`_)
+Copy full tracebacks to your message (discussion forums) or pastie.org link (chat). The most reliable way to get the traceback output is to start Plone (Zope application server)
+in foreground mode in your terminal / command line (see these `debugging tips <https://docs.plone.org/manage/troubleshooting/basic.html>`_)
 
 First, shut down Plone if it's running as a service / background process. Then start Plone in foreground mode.
 
@@ -216,4 +217,4 @@ Credits
 
 This how-to originated as an informal, user-friendly alternative to Eric Raymond's `How to Ask Questions the Smart Way <http://www.catb.org/~esr/faqs/smart-questions.html>`_. ESR's doc is long and offensive, though once you realize that ESR is your crusty old merchant-marine uncle it can be fun and helpful.
 
-The error report format is adapted from Joel Spolsky's comments on bug tracking, e.g., in `Joel on Software <http://www.joelonsoftware.com/articles/fog0000000029.html>`_.
+The error report format is adapted from Joel Spolsky's comments on bug tracking, e.g., in `Joel on Software <https://www.joelonsoftware.com/articles/fog0000000029.html>`_.

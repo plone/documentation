@@ -2,7 +2,7 @@
 Documentation License
 =====================
 
-The Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <http://creativecommons.org/licenses/by/4.0/>`_.
+The Plone Documentation by `Plone Foundation <https://plone.org>`_ is licensed under a `Creative Commons Attribution 4.0 International License <https://creativecommons.org/licenses/by/4.0/>`_.
 
 If you want to contribute to this documentation, you can do so directly by making a pull request,
 if you have filled out a `Contributor Agreement <https://plone.org/foundation/contributors-agreement>`_.

@@ -93,7 +93,7 @@ Each section (folder) must contain
 * A single paragraph summarizing what this section is all about.
   This will be mapped to Plone folder description.
 
-* Sphinx `toctree <http://www.sphinx-doc.org/en/stable/markup/toctree.html>`_  directive, maxdepth 2. Each ``.rst`` file in the folder should
+* Sphinx `toctree <https://www.sphinx-doc.org/en/stable/markup/toctree.html>`_  directive, maxdepth 2. Each ``.rst`` file in the folder should
   be linked to this toctree.
 
 .. code-block:: rst
@@ -303,7 +303,7 @@ Making an external link (note the underscore at the end):
 
 .. code-block:: rst
 
-   `This is an external link to <http://opensourcehacker.com>`_
+   `This is an external link to <https://opensourcehacker.com>`_
 
 Making an internal link:
 
@@ -327,7 +327,7 @@ Bullet list:
 .. code-block:: rst
 
    * First bullet
-   * Second bullet with `a link <http://opensourcehacker.com>`_
+   * Second bullet with `a link <https://opensourcehacker.com>`_
 
 Warning:
 
@@ -363,4 +363,4 @@ Note:
 
    This is a note box (blue)
 
-You can find a brief introduction to reStructuredText (reST) on http://www.sphinx-doc.org/en/stable/rest.html.
+You can find a brief introduction to reStructuredText (reST) on https://www.sphinx-doc.org/en/stable/rest.html.
