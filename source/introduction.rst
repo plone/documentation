@@ -40,7 +40,7 @@ This is supported by a global network of `over 300 solution providers <https://p
 Looking for a hosting provider to host your Plone site for you?
 You can find a list of providers and consultants on `plone.com <https://plone.com/providers>`_.
 
-**We are very proud to be known by the company we keep.**
+**We are proud to be known by the company we keep.**
 Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell,
 the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments - all use Plone.
 
