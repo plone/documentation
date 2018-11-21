@@ -29,8 +29,12 @@ This will create the HTML files under *source/_build/html*.
 Notes
 =====
 
-Be aware that for the time being (till we official announce and publish this branch) we use a
-custom *robots.txt* to disallow crawling.
+- Be aware that for the time being (till we official announce and publish this branch) we use a
+  custom *robots.txt* to disallow crawling.
+
+- For the time being (rewriting and restructuring) we use the ``todo`` directice to produce a list of *ToDo Items* under *_build/html/todo.html*.
+  This add-on and setup will be removed at a certain point !
+
 
 Support
 =======
