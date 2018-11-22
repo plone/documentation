@@ -10,6 +10,7 @@ This is a community-maintained manual for the `Plone <https://plone.org>`_ conte
    :caption: About:
 
    introduction
+   quickstart
 
 .. toctree::
    :hidden:
