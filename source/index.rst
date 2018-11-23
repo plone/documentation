@@ -15,6 +15,13 @@ This is a community-maintained manual for the `Plone <https://plone.org>`_ conte
 .. toctree::
    :hidden:
    :maxdepth: 2
+   :caption: Install:
+
+   install/installation
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
    :caption: Contribute:
 
    contributing/issues
