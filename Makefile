@@ -87,7 +87,7 @@ check-style: ## Runs vale style-checks (Plone wording style-guide) against the d
 .PHONY: check-text
 check-text: ## Runs textlint against the docs
 	@echo "$(YELLOW)==>Running textlint checks ...$(RESET)"
-	@docker run -it -v "${PWD}/source":/srv ttdt:latest *
+	@docker run -it -v "${PWD}/source":/srv testthedocs/ttd-textlint *
 
 .PHONY: checks
 checks: check-rst check-toctree check-links check-sphinx ## Runs collection of checks against the docs
