@@ -43,7 +43,7 @@ Where to search:
 
 - `Plone Community Forums <https://community.plone.org/>`_ - help and discussion forums
 
-- `StackOverflow <https://stackoverflow.com/questions/tagged/plone?sort=faq>`_ - some FAQs are maintained here
+- `Stack Overflow <https://stackoverflow.com/questions/tagged/plone?sort=faq>`_ - some FAQs are maintained here
 
 - `Troubleshooting <https://docs.plone.org/manage/troubleshooting/index.html>`_ tips and common error messages - for enabling debug mode and common tracebacks
 
@@ -144,7 +144,8 @@ Here are useful hints for using online chat:
 
 - Do not send direct messages to chat participants unless you have a clear reason to do so.
 
-- Keep the chat window open at least 30 minutes so that someone has time to pick up your question. Be patient.
+- Keep the chat window open at least 30 minutes so that someone has time to pick up your question.
+  Be patient.
 
 - Do not repeat yourself - people might be busy or not able to help with your problem.
   Silence does not mean we are ignoring you, it means that nobody is online right now who knows the answer to your question.

@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "rst"
+  ],
+  "rules": {
+    "max-number-of-lines": {
+        "max" : 800
+    },
+    "common-misspellings": {
+        // Misspellings to be ignored (case-insensitive)
+        "ignore": []
+    }
+  }
+}

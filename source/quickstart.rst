@@ -23,7 +23,7 @@ You can find a list of available online demo sites at the `Try Plone section <ht
 
 Another interesting approach to try out Plone is to install it in a cloud service.
 
-That way, you can set up your own demo (or even very-light-weight production) Plone,
+That way, you can set up your own demo (or even light-weight production) Plone,
 which makes it a good fit to have Plone with your choice of add-ons be tested by your department or other group.
 
 Here are two blog posts that show you how to do this: `Plone on a free-tier Heroku <http://blog.niteoweb.com/dear-plone-welcome-to-year-2014/>`_

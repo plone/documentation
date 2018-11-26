@@ -44,7 +44,7 @@ You can find a list of providers and consultants on `plone.com <https://plone.co
 Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Novell,
 the State Universities of Pennsylvania and Utah, as well as the Brazilian and New Zealand governments - all use Plone.
 
-**Plone is open on many levels.** It runs on Linux, Windows, Mac OS X, FreeBSD and Solaris - and offers a straightforward installation to get you up and running in minutes.
+**Plone is open on many levels.** It runs on Linux, Windows, macOS X, FreeBSD and Solaris - and offers a straightforward installation to get you up and running in minutes.
 It has been translated into more than 40 languages, and is developed with an unflinching emphasis on usability and standards compliance.
 
 **Need a CMS that integrates** with Active Directory, Salesforce, LDAP, SQL, Web Services. LDAP or Oracle? Plone does.
@@ -73,7 +73,8 @@ What Does Plone Mean? How Is It Pronounced?
 
 *Does the word Plone mean anything, and where does it come from? Why is Plone called Plone?*
 
-The word Plone originally comes from the electronic band Plone that used to exist on the Warp record label. The music is playful and minimalistic.
+The word Plone originally comes from the electronic band Plone that used to exist on the Warp record label.
+The music is playful and minimalistic.
 
 The founders of Plone-the-Software (Alan Runyan and Alexander Limi) were listening to Plone-the-Band
 when they met (as well as during the initial coding/design of Plone) - and one of the original quotes floating around
