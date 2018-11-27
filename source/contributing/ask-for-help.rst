@@ -88,6 +88,8 @@ Most people will read a message only if it appears to be intelligent.
 
 Your subject line is your sales pitch, you should make your subject line specific and clear to understand.
 
+.. vale off
+
 .. admonition:: Example
 
    **A poor subject line:**
@@ -97,6 +99,8 @@ Your subject line is your sales pitch, you should make your subject line specifi
    **A better subject line:**
 
    FooError in Passing GET variables to FormController
+
+.. vale on
 
 The big picture - An opening sentence should state the general problem that you wish to solve.
 
@@ -150,8 +154,12 @@ Here are useful hints for using online chat:
 - Do not repeat yourself - people might be busy or not able to help with your problem.
   Silence does not mean we are ignoring you, it means that nobody is online right now who knows the answer to your question.
 
+.. vale off
+
 - Do not overuse CAPS-LOCK writing, since it is considered shouting and nobody likes when others shout at them.
   Do not use excessive exclamation marks (!!!) or question marks (???) as it makes you look unprofessional and discourages to help you.
+
+.. vale on
 
 - There are many people discussing simultaneously - if you address a message to a particular person, use his or her nick name.
 

@@ -85,7 +85,7 @@ Any deployment of Plone as a real-world site will usually entail setting up some
 In almost all cases, you will want to have a webserver like Nginx or Apache in front, and a cache like Varnish to optimize response times.
 
 Depending on your needs, you might also want redundant, high-availability options like ha-proxy,
-and monitoring tools to keep an eye on things and notify you when trouble arises.
+and monitoring tools to monitor things and notify you when trouble arises.
 
 A good selection of these tools is described  in the `Guide to deploying and installing Plone in production <https://docs.plone.org/manage/index.html>`_.
 
