@@ -42,7 +42,11 @@ def setup(app):
 # ones.
 extensions = [
         'sphinx.ext.todo',
+        'sphinx_sitemap',
         ]
+
+# Site base url, needed for sitemap add-on
+site_url = 'https://docs.plone.org'
 
 # Generate ToDo list during developing
 todo_include_todos = True
