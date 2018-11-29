@@ -1,0 +1,6 @@
+kubernetes
+docker
+rkt
+mesos
+coreos
+AppVeyor

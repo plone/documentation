@@ -98,7 +98,7 @@ Alternative Ways To Deploy
 
 The Unified Installer itself is based on `buildout <http://www.buildout.org>`_.
 
-If you're working with Plone, it is a good idea to get familiar with this tool and the relation with other Python module management tools.
+If you are working with Plone, it is a good idea to get familiar with this tool and the relation with other Python module management tools.
 
 Buildout can be used in a variety of ways, and many people use it to tweak their own development-instances and/or deployment instances.
 See `starzel.buildout <https://github.com/starzel/buildout>`_ for a rather maximized example.

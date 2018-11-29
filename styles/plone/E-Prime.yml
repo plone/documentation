@@ -4,9 +4,9 @@ ignorecase: true
 level: suggestion
 tokens:
   - am
-  - are
+    #- are
   - aren't
-  - be
+    #- be
   - been
   - being
   - he's
@@ -14,7 +14,7 @@ tokens:
   - here's
   - how's
   - i'm
-  - is
+    #  - is
   - isn't
   - she's
   - that's

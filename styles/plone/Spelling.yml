@@ -1,0 +1,11 @@
+extends: spelling
+message: "Did you really mean '%s'?"
+level: error
+custom: true
+ignore:
+  - plone/tech-terms/security.txt
+  - plone/tech-terms/devops.txt
+  - plone/tech-terms/general.txt
+  - plone/tech-terms/techwriting.txt
+  - plone/tech-terms/mobile.txt
+  - plone/tech-terms/plone.txt
