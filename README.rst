@@ -35,6 +35,7 @@ Notes
 - For the time being (rewriting and restructuring) we use the ``todo`` directice to produce a list of *ToDo Items* under *_build/html/todo.html*.
   This add-on and setup will be removed at a certain point !
 
+- Spell checking is done against US English !
 
 Support
 =======
