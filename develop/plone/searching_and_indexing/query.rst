@@ -166,8 +166,8 @@ created, last_modified, effective, expires, start, end
         import datetime
 
         catalog.searchResults(
-            expired={'query': datetime.datetime.now(), range='max')
-        }
+            expires={'query': datetime.datetime.now(), 'range': 'max'}
+        )
 
 object\_provides
     You can search by the interface provided by the content.
