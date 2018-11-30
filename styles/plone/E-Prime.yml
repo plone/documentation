@@ -7,7 +7,7 @@ tokens:
     #- are
   - aren't
     #- be
-  - been
+    #- been
   - being
   - he's
   - here's
@@ -20,10 +20,10 @@ tokens:
   - that's
   - there's
   - they're
-  - was
+    #- was
   - wasn't
   - we're
-  - were
+    #- were
   - weren't
   - what's
   - where's

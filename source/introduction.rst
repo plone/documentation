@@ -15,14 +15,14 @@ Introduction
 What Is Plone
 =============
 
-**A powerful, flexible Content Management Solution that is easy to install, use and extend.**
+**A powerful, flexible Content Management Solution that is uncomplicated to install, use and extend.**
 
 Plone lets non-technical people create and maintain information for a public website or an intranet using only a web browser.
 
-Plone is easy to understand and use - allowing users to be productive in just half an hour
+Plone is straightforward to understand and use - allowing users to be productive in just half an hour
 - yet offers a wealth of community-developed add-ons and extensibility to keep meeting your needs for years to come.
 
-Blending the creativity and speed of open source with a technologically advanced `Python <https://www.python.org/>`_ back-end, Plone offers superior security without sacrificing power or extensibility.
+Blending the creativity and speed of open source with a technologically advanced `Python <https://www.python.org/>`_ back end, Plone offers superior security without sacrificing power or extensibility.
 
 **The Plone community** is an incredibly diverse group that bridges many types and sizes of organizations,
 many countries and languages, and everything from technical novices to hardcore programmers.
@@ -59,7 +59,7 @@ In fact, security is a major reason why many CMS users are switching to Plone.
 
 The market is full of open source content management systems, so it is important to do your homework before choosing one for your organization.
 
-Remember that a simple CMS may work out great to start with, but lead to problems with scaling or migration when you need more capability than it can provide.
+Remember that a less powerful CMS may work out great to start with, but lead to problems with scaling or migration when you need more capability than it can provide.
 
 At the other end of the spectrum, a powerful CMS can be so difficult to learn and maintain that it never gains acceptance to users.
 Make sure the CMS you choose meets your needs today without compromising future growth.

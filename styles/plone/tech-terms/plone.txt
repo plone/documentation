@@ -8,3 +8,7 @@ zeo
 Nejc
 Zupan
 Bain
+Zope
+lxml
+ons
+minimalistic

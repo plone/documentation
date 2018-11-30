@@ -16,4 +16,5 @@ swap:
   simple: "'straightforward', 'uncomplicated', or 'clear'"
   easy: "'effortless','straightforward', 'uncomplicated', or 'manageable'"
   retina: "'HiDPI'"
+  webserver: "'web server'"
   #javascript: "'JavaScript'"

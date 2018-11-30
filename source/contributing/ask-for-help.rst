@@ -200,7 +200,7 @@ in foreground mode in your terminal / command line (see these `debugging tips <h
 
 First, shut down Plone if it's running as a service / background process. Then start Plone in foreground mode.
 
-On Linux, OSX or similar systems this is (navigate to Plone folder first):
+On Linux, macOS or similar systems this is (navigate to Plone folder first):
 
 .. code-block:: shell
 

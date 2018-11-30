@@ -14,5 +14,5 @@ Please, contact the Documentation team, for instance via our `community space <h
 
 We need your written confirmation that you are agreeing your contribution can be under Creative Commons.
 
-You can also add in a comment with your pull request "I, <full name>, agree to have this published under Creative Commons 4.0 International BY".
+You can also add in a comment with your pull request "I, <full name>, agree to have this published under Creative Commons 4.0 International BY."
 

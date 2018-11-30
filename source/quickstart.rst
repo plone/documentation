@@ -52,7 +52,7 @@ In all honesty it must be said that this is not the ideal way to work with Plone
 
 A large portion of the toolchain is not readily available on Windows environments.
 
-There is a highly workable alternative: Using **virtual machines**.
+As alternative, use **virtual machines**.
 
 The latest release of Plone also comes as a VirtualBox / Vagrant image.
 
@@ -81,10 +81,10 @@ Or, head straight to `plone.org/download <https://plone.org/download>`_ to get s
 Deployment
 ==========
 
-Any deployment of Plone as a real-world site will usually entail setting up some more software.
-In almost all cases, you will want to have a webserver like Nginx or Apache in front, and a cache like Varnish to optimize response times.
+Any deployment of Plone as a real-world site will entail setting up some more software.
+In almost all cases, you will want to have a web server like Nginx or Apache in front, and a cache like Varnish to optimize response times.
 
-Depending on your needs, you might also want redundant, high-availability options like ha-proxy,
+Depending on your needs, you also want redundant, high-availability options like ha-proxy,
 and monitoring tools to monitor things and notify you when trouble arises.
 
 A good selection of these tools is described  in the `Guide to deploying and installing Plone in production <https://docs.plone.org/manage/index.html>`_.
@@ -110,7 +110,7 @@ See `starzel.buildout <https://github.com/starzel/buildout>`_ for a rather maxim
 
 Besides that, there are many people deploying Plone as part of other deployment tools, be they Ansible, Salt, Chef, Puppet or the like.
 
-If you are familiar with these, you will most likely find others in the Plone community that share your enthusiasm.
+If you are familiar with these, you will find others in the Plone community that share your enthusiasm.
 
-There is an `Ansible playbook <https://github.com/plone/ansible-playbook>`_, maintained by the Plone community,
+The Plone community maintains an `Ansible playbook <https://github.com/plone/ansible-playbook>`_,
 that can completely provision a remote machine to run a full-stack, production-ready Plone server with all the bells and whistles.
