@@ -22,6 +22,7 @@ Create a virtual python environment (`virtualenv <https://virtualenv.pypa.io/en/
 
    virtualenv-2.7 zinstance
    cd zinstance
+   source bin/activate
    bin/pip install zc.buildout
 
 Create a buildout.cfg file:
