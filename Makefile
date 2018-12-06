@@ -90,5 +90,13 @@ check-text: ## Runs textlint against the docs
 	@echo "$(YELLOW)==>Running textlint checks ...$(RESET)"
 	@docker run -it -v "${PWD}/source":/srv testthedocs/ttd-textlint *
 
+.PHONY: check-html
+check-html: ## Runs validation checks against HTML
+	@echo "$(YELLOW)==>Running HTML tests ...$(RESET)"
+	#@rm -rf source/_build
+	#@docker run --rm -v "${PWD}/source":/build/docs:rw testthedocs/ttd-sphinx html
+	#@docker run -it -v "${PWD}/source":/build/docs testthedocs/ttd-htmltest
+
+
 .PHONY: checks
 checks: check-rst check-toctree check-links check-sphinx ## Runs collection of checks against the docs
