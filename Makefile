@@ -92,7 +92,8 @@ check-text: ## Runs textlint against the docs
 
 .PHONY: check-html
 check-html: ## Runs validation checks against HTML
-	@echo "$(YELLOW)==>Running HTML tests ...$(RESET)"
+	# Use ttd-linkcheck here
+	#@echo "$(YELLOW)==>Running HTML tests ...$(RESET)"
 	#@rm -rf source/_build
 	#@docker run --rm -v "${PWD}/source":/build/docs:rw testthedocs/ttd-sphinx html
 	#@docker run -it -v "${PWD}/source":/build/docs testthedocs/ttd-htmltest

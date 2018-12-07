@@ -13,6 +13,7 @@ Style Guidelines
    :depth: 1
    :backlinks: none
 
+
 Overview
 ========
 
@@ -22,6 +23,10 @@ Overview
 
 - Please, don't use .gif, because the PDF-generating software has issues with that.
 
+
+.. todo::
+
+   Add new docs about writing style and explain checks, etc, etc
 
 Document Page Format
 ====================
