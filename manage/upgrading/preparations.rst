@@ -21,7 +21,7 @@ Gather Information
   - Read the release notes for the Plone release you are upgrading to, in particular:
   - What version of Python is required?
   - What version of Zope is required?
-  - Do you need any new python libraries?
+  - Do you need any new Python libraries?
   - Make sure all the add-on products you are using have updated to support the version of Plone you are upgrading to.
 
   - Start with the third-party products that are in use on your site.
@@ -33,7 +33,7 @@ Gather Information
 
 .. note::
 
-    Zope has it's own migration guidelines, which you will find in the release notes of the version you are migrating to.
+    Zope has its own migration guidelines, which you will find in the release notes of the version you are migrating to.
 
     If Plone is being upgraded at the same time as a Zope version, Plone will usually handle the Zope upgrade with its own migration script.
 
