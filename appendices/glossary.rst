@@ -197,7 +197,7 @@ This is a glossary for some definitions used in this documentation and still und
         look for *homepage* in *B*, doesn't find it, and goes back up to
         *A*, where it's found. The reality, inevitably, is more complex than
         this. For the whole story, see the `Acquisition chapter in the Zope
-        Book <http://www.plope.com/Books/2_7Edition/Acquisition.stx>`_.
+        Book <https://zope.readthedocs.io/en/latest/zope2book/Acquisition.html>`_.
 
     Kupu
         Kupu was the user-friendly graphical HTML editor component that used
