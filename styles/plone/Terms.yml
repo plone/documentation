@@ -1,3 +1,4 @@
+---
 extends: substitution
 message: Prefer %s over '%s.'
 level: warning
@@ -17,4 +18,4 @@ swap:
   easy: "'effortless','straightforward', 'uncomplicated', or 'manageable'"
   retina: "'HiDPI'"
   webserver: "'web server'"
-  #javascript: "'JavaScript'"
+  # javascript: "'JavaScript'"
