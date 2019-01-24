@@ -8,3 +8,7 @@ To Do
 - Move content out of source
 - Improve Makefile
 
+This And That
+=============
+
+docker org for vale: #@docker run --rm -it -v "${PWD}/styles":/styles --rm -v "${PWD}/source":/docs -w /docs jdkato/vale .

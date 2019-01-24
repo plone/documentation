@@ -82,8 +82,7 @@ check-rst: ## Runs docs8, rst checks
 .PHONY: check-style
 check-style: ## Runs vale style-checks (Plone wording style-guide) against the docs
 	@echo "$(YELLOW)==>Running wording style checks ...$(RESET)"
-	@docker run --rm -it -v "${PWD}/styles":/styles --rm -v "${PWD}/source":/docs -w /docs jdkato/vale .
-	#@docker run --rm -it -v "${PWD}/styles":/srv/styles --rm -v "${PWD}/source":/srv testthedocs/plone-vale:latest
+	@docker run --rm -it -v "${PWD}/styles":/styles --rm -v "${PWD}/source":/docs -w /docs testthedocs/plone-vale:latest
 
 .PHONY: check-text
 check-text: ## Runs textlint against the docs
