@@ -273,7 +273,7 @@ You've Got Plone
 
 Now take a look at your Plone site by visiting the following address in your webbrowser::
 
-    http://yourserver:8080
+    http://localhost:8080
 
 The greeting page will let you create a new site.
 For this you need the login credentials printed to your terminal earlier, also available at ``~/Plone/zinstance/adminPassword.txt``.
