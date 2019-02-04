@@ -189,6 +189,37 @@ This will fail on all import errors (e.g. relative imports that are not allowed 
 If it works you can try to install the add-on.
 You need to fix all issues that appear and do some preliminary manual testing to check for big, obvious issues.
 
+Common issues:
+~~~~~~~~~~~~~~
+
+This kind of error message
+
+.. code-block:: shell
+
+   TypeError: Class advice impossible in Python3.  Use the @implementer class decorator instead.
+   
+tells you that there is a class that is using an ``implements`` statement which needs to be replaced by the ``@implementer`` decorator.
+
+Example, this kind of code:
+
+.. code-block:: python
+
+   from zope.interface import implements
+
+   class Group(form.BaseForm):
+      implements(interface.IGroup)
+      …
+
+needs to be replaced with:
+
+.. code-block:: python
+
+   from zope.interface import implementer
+
+   @implementer(interfaces.IGroup)
+   class Group(form.BaseForm):
+      …
+
 5. Run tests
 ------------
 
