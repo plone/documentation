@@ -174,9 +174,6 @@ Then run ``./bin/buildout -c local.cfg`` to enable and use ``precompile``.
 
     parts += precompiler
     
-.. note::
-
-    If you use coredev (see Section 1), then precompile will already be included. You will not have to add anything to your buildout.
 
 4. Start the instance
 ---------------------
