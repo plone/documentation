@@ -192,6 +192,9 @@ You need to fix all issues that appear and do some preliminary manual testing to
 Common issues:
 ~~~~~~~~~~~~~~
 
+1. Class advice
+*************** 
+
 This kind of error message
 
 .. code-block:: shell
