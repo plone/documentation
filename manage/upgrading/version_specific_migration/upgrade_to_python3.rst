@@ -91,6 +91,14 @@ Then the source of the add-on package will be checked out into the ``src`` folde
 
 Now everything is prepared to work on the migration of the package.
 
+However, it is a good idea to now try
+
+.. code-block:: shell
+
+    ./bin/instance fg
+    
+and check if your instance starts up already. If it does not start up, you will get some hints about what needs to be fixed from the error messages that you see.  
+
 2. Automated fixing with modernize
 ----------------------------------
 
