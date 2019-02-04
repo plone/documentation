@@ -193,7 +193,7 @@ Common issues:
 ~~~~~~~~~~~~~~
 
 1. Class advice
-*************** 
+^^^^^^^^^^^^^^^
 
 This kind of error message
 
