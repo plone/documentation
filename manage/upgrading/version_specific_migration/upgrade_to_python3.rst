@@ -69,6 +69,7 @@ Exchange ``collective.package`` with the name of the add-on you want to port.
     extends = buildout.cfg
 
     always-checkout = true
+    allow-picked-versions = true
 
     custom-eggs +=
         collective.package
@@ -85,6 +86,20 @@ Exchange ``collective.package`` with the name of the add-on you want to port.
 With the file in place, run buildout.
 Then the source of the add-on package will be checked out into the ``src`` folder.
 
+.. note::
+
+    You could also add Products.PDBDebugMode and plone.reload to your development-tools:
+
+    .. code-block:: ini
+
+        custom-eggs +=
+            Products.PDBDebugMode [zodb]
+            plone.reload
+
+        [sources]
+        Products.PDBDebugMode = git ${remotes:collective}/Products.PDBDebugMode.git pushurl=${remotes:collective_push}/Products.PDBDebugMode.git branch=python3
+
+
 .. code-block:: shell
 
     ./bin/buildout -c local.cfg
@@ -96,8 +111,8 @@ However, it is a good idea to now try
 .. code-block:: shell
 
     ./bin/instance fg
-    
-and check if your instance starts up already. If it does not start up, you will get some hints about what needs to be fixed from the error messages that you see.  
+
+and check if your instance starts up already. If it does not start up, you will get some hints about what needs to be fixed from the error messages that you see.
 
 2. Automated fixing with modernize
 ----------------------------------
@@ -173,13 +188,13 @@ Then run ``./bin/buildout -c local.cfg`` to enable and use ``precompile``.
 .. code-block:: ini
 
     parts += precompiler
-    
+
 Precompile will be run every time you run buildout. If you want to avoid running the complete buildout every time, you can use the ``install`` keyword of buildout like this as a shortcut:
 
 .. code-block:: shell
 
     ./bin/buildout -c local.cfg  install precompiler
-    
+
 
 4. Start the instance
 ---------------------
@@ -200,7 +215,7 @@ This kind of error message
 .. code-block:: shell
 
    TypeError: Class advice impossible in Python3.  Use the @implementer class decorator instead.
-   
+
 tells you that there is a class that is using an ``implements`` statement which needs to be replaced by the ``@implementer`` decorator.
 
 Example, this kind of code:
@@ -210,8 +225,8 @@ Example, this kind of code:
    from zope.interface import implements
 
    class Group(form.BaseForm):
-      implements(interface.IGroup)
-      …
+       implements(interface.IGroup)
+       …
 
 needs to be replaced with:
 
@@ -221,7 +236,21 @@ needs to be replaced with:
 
    @implementer(interfaces.IGroup)
    class Group(form.BaseForm):
-      …
+       …
+
+The same is the case for `provides(IFoo)` and some other Class advices. These need to be replaced with their respective decorators like `@provider`.
+
+2. SyntaxError on importing async
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In Python 3.7 you can no longer have a module called `async` (see https://github.com/celery/celery/issues/4849). You need to rename all such files, folders or packages (like zc.async and plone.app.async).
+
+
+3. Relative imports
+^^^^^^^^^^^^^^^^^^^
+
+Relative imports like `import permissions` are no longer permitted. Use `from collective.package import permissions` or `from . import permissions` (not recommended)
+
 
 5. Run tests
 ------------
