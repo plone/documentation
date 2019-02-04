@@ -174,6 +174,12 @@ Then run ``./bin/buildout -c local.cfg`` to enable and use ``precompile``.
 
     parts += precompiler
     
+Precompile will be run every time you run buildout. If you want to avoid running the complete buildout every time, you can use the ``install`` keyword of buildout like this as a shortcut:
+
+.. code-block:: shell
+
+    ./bin/buildout -c local.cfg  install precompiler
+    
 
 4. Start the instance
 ---------------------
