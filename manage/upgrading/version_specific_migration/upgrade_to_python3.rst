@@ -469,7 +469,15 @@ Example assuming Python2 installation in folder py2 and Python3 installation in 
 Downtime
 --------
 
+When running the Database Migration in Python3 on the target installation there is no Downtime.
+
+
+
+Custom Content Types
+--------------------
+
 When running the Database Migration in Python3 there is most certainly no need to provide additional mappings for zodbupdate.
+
 
 
 Test Migration
