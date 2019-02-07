@@ -448,85 +448,28 @@ Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an e
 
 
 
-
-Custom Content Types
---------------------
-
-TODO: Not yet sure if custom types need to provide additional mappings for zodbupdate.
-
-Here is an example Pull Request that adds them: `https://github.com/zopefoundation/Products.PythonScripts/pull/19 <https://github.com/zopefoundation/Products.PythonScripts/pull/19>`_
-
-workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or UTF-8
-
-.. code-block:: bash
-
-    bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
-
-
-
-Migrate Database Using Zodbupdate
+Migrate Database using zodbupdate
 ---------------------------------
 
-add zodbupdate to buildout eggs::
+Use the 'convert-in-py3' branch of zodbupdate.
+The 'convert-in-py3' branch is already implemented in buildout.coredev.
 
-    [zodbupdate]
-    recipe = zc.recipe.egg
-    eggs =
-        ${buildout:eggs}
-        zodbupdate
-        zodb.py3migrate
+The Database Migration is run in the Python3 installation of Plone5.2 after the Database is copied there.
 
-    scripts =
-        zodb-py3migrate-analyze
-        zodbupdate
-
-
-
-Migrate database, so it can be read using Python 3.
-
-.. warning::
-
-    This migrates our database in place. Make sure to make a backup before!
+Example assuming Python2 installation in folder py2 and Python3 installation in folder py3::
 
 .. code-block:: bash
 
-    cd $BUILDOUT
-    bin/instance stop
-    cp var/filestorage/Data.fs var/filestorage/Data.fs-back
-    bin/zodbupdate --pack --convert-py3 --file var/filestorage/Data.fs
+    rm -rf py3/var/*storage
+    cp -r py2/var/*storage py3/var/
+    py3/bin/zodbupdate --convert-py3 --file py3/var/filestorage/Data.fs --encoding=utf8
 
 
 
 Downtime
 --------
 
-This step actually requires to take your site offline or into read-only mode.
-
-
-Some thoughts on doing upgrades w/o downtime that came up in a hangout during a coding sprint in October 2018:
-
-
-- Jim mentions downtime. Would try to leverage the ZRS replication protocol, secondary server with converted data.
-  It would probably be a trivial change to ZRS.
-- For relstorage Jim mentions a ZRS equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
-- David thought out loud about taking down downtime: do conversion at read time....
-
-
-
-Prepare The Migration
----------------------
-
-If you have custom content types and add-ons, it is a good idea to first test the migration on a staging server.
-
-
-Analyze existing objects in the ZODB.
-List classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that may break when converted to Python3.
-
-.. code-block:: bash
-
-    bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
-    # this might be possible with zodbupdate (https://github.com/zopefoundation/zodbupdate/issues/10)
-
+When running the Database Migration in Python3 there is most certainly no need to provide additional mappings for zodbupdate.
 
 
 Test Migration
@@ -543,3 +486,62 @@ The output should look like this::
     ...
     INFO:zodbverify:Scanning ZODB...
     INFO:zodbverify:Done! Scanned 5999 records. Found 0 records that could not be loaded.
+
+
+
+Running zodbupdate in Python2 installation
+------------------------------------------
+
+In an older Version of zodbupdate the Database Migration is run in Python2 installation of Plone5.2.
+
+add zodbupdate to buildout eggs::
+
+    [zodbupdate]
+    recipe = zc.recipe.egg
+    eggs =
+        ${buildout:eggs}
+        zodbupdate
+        zodb.py3migrate
+
+    scripts =
+        zodb-py3migrate-analyze
+        zodbupdate
+
+
+
+Prepare zodbupdate in Python2 installation
+------------------------------------------
+
+
+TODO: Not yet sure if custom types need to provide additional mappings for zodbupdate.
+
+
+If you have custom content types and add-ons, it is a good idea to first test the migration on a staging server.
+
+
+Here is an example Pull Request that adds them: `https://github.com/zopefoundation/Products.PythonScripts/pull/19 <https://github.com/zopefoundation/Products.PythonScripts/pull/19>`_
+
+
+Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
+workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or utf-8
+
+.. code-block:: bash
+
+    bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
+    # this might be possible with zodbupdate (https://github.com/zopefoundation/zodbupdate/issues/10)
+
+
+
+Downtime in Python2 installation
+--------------------------------
+
+This step actually requires to take your site offline or into read-only mode.
+
+
+Some thoughts on doing upgrades w/o downtime that came up in a hangout during a coding sprint in October 2018:
+
+
+- jim mentions downtime. would try to leverage the zrs replication protocol, secondary server with converted data.
+  It would probably be a trivial change to zrs.
+- for relstorage jim mentions a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
+- david thought out loud about taking down downtime: do conversion at read time....
