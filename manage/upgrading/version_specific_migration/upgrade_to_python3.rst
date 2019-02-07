@@ -456,7 +456,7 @@ The 'convert-in-py3' branch is already implemented in buildout.coredev.
 
 The Database Migration is run in the Python3 installation of Plone5.2 after the Database is copied there.
 
-Example assuming Python2 installation in folder py2 and Python3 installation in folder py3::
+Example assuming Python2 installation in folder py2 and Python3 installation in folder py3.
 
 .. code-block:: bash
 
