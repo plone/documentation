@@ -8,7 +8,7 @@ Migrating Plone 5.2 to Python 3
    Instructions and tips for running Plone 5.2 with Python 3
 
 
-Make custom packages Python 3 ready
+Make Custom Packages Python 3 Ready
 ===================================
 
 Principles
@@ -19,7 +19,7 @@ Principles
 * We use `six <https://six.readthedocs.io>`_ and
   `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards Python 3.
 
-First steps of add-ons
+First Steps Of Add-Ons
 ----------------------
 
 #. Prepare add-on to be ported, i.e. add it to a buildout running Plone 5.2 on Python 3
@@ -29,10 +29,10 @@ First steps of add-ons
 #. Run and fix all tests
 #. Update package information
 
-1. Preparation
---------------
+1 Preparation
+-------------
 
-In the GitHub repo of the add-on:
+In the GitHub repository of the add-on:
 
 * Open a ticket with the title "Add support for Python 3" .
 * Create a new branch named ``python3``.
@@ -88,7 +88,7 @@ Then the source of the add-on package will be checked out into the ``src`` folde
 
 .. note::
 
-    You could also add Products.PDBDebugMode and plone.reload to your development-tools:
+    You can also add Products.PDBDebugMode and plone.reload to your development-tools:
 
     .. code-block:: ini
 
@@ -114,13 +114,13 @@ However, it is a good idea to now try
 
 and check if your instance starts up already. If it does not start up, you will get some hints about what needs to be fixed from the error messages that you see.
 
-2. Automated fixing with modernize
-----------------------------------
+2 Automated Fixing With Modernize
+---------------------------------
 
 ``python-modernize`` is a utility that automatically prepares Python 2 code for porting to Python 3.
 After running ``python-modernize``, there is manual work ahead.
 There are some problems that ``python-modernize`` can not fix on its own.
-It also might make changes that are not really needed.
+It also can make changes that are not really needed.
 You need to closely review all changes after you run this tool.
 
 ``python-modernize`` will warn you,
@@ -132,8 +132,8 @@ for writing Python 2-3 compatible code.
 The import is added as the last import,
 therefore it is often necessary to reorder the imports.
 The easiest way is to use ``isort``.
-Check the `Python Styleguide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
-for information about the order of imports and an example config for ``isort``.
+Check the `Python style guide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
+for information about the order of imports and an example configuration for ``isort``.
 
 
 Installation
@@ -175,8 +175,8 @@ You can use ``isort`` to fix the order of imports:
 
 After you run the command above, you can fix what ``modernizer`` did not get right.
 
-3. Use precompile
------------------
+3 Use Precompile
+----------------
 
 You can make use of `plone.recipe.precompiler <https://github.com/plone/plone.recipe.precompiler>`_ to identify syntax errors quickly.
 This recipe compiles all Python code already at buildout-time, not at run-time.
@@ -196,7 +196,7 @@ Precompile will be run every time you run buildout. If you want to avoid running
     ./bin/buildout -c local.cfg  install precompiler
 
 
-4. Start the instance
+4 Start The Instance
 ---------------------
 
 As a next step we recommend that you try to start the instance with your add-on.
@@ -204,11 +204,11 @@ This will fail on all import errors (e.g. relative imports that are not allowed 
 If it works you can try to install the add-on.
 You need to fix all issues that appear and do some preliminary manual testing to check for big, obvious issues.
 
-Common issues:
+Common Issues:
 ~~~~~~~~~~~~~~
 
-1. Class advice
-^^^^^^^^^^^^^^^
+A - Class Advice
+^^^^^^^^^^^^^^^^
 
 This kind of error message
 
@@ -240,26 +240,26 @@ needs to be replaced with:
 
 The same is the case for `provides(IFoo)` and some other Class advices. These need to be replaced with their respective decorators like `@provider`.
 
-2. SyntaxError on importing async
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+B - Syntax Error On Importing Async
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In Python 3.7 you can no longer have a module called `async` (see https://github.com/celery/celery/issues/4849). You need to rename all such files, folders or packages (like zc.async and plone.app.async).
 
 
-3. Relative imports
-^^^^^^^^^^^^^^^^^^^
+C - Relative Imports
+^^^^^^^^^^^^^^^^^^^^
 
 Relative imports like `import permissions` are no longer permitted. Use `from collective.package import permissions` or `from . import permissions` (not recommended)
 
 
-5. Run tests
+5 Run Tests
 ------------
 
 .. code-block:: shell
 
     $ ./bin/test --all -s collective.package
 
-Hopefully there are not many issues with the code left at this point.
+With any luck, there are not many issues with the code left at this point.
 
 TBD: Document the most frequent issues when porting to Python 3
 
@@ -276,8 +276,8 @@ TBD: Document the most frequent issues when porting to Python 3
     - https://docs.python.org/2/library/doctest.html#debugging
 
 
-6. Update add-on information
-----------------------------
+6 Update Add On Information
+---------------------------
 
 Add the following three entries of the classifiers list in setup.py:
 
@@ -291,12 +291,12 @@ Add the following three entries of the classifiers list in setup.py:
 Make an entry on the CHANGES.rst file.
 
 
-7. Create a test-setup that tests in Python 2 and Python 3
+7 Create A Test Setup That Tests In Python 2 And Python 3
 ----------------------------------------------------------
 
 TBD: Run tests on with `tox` on travis for Python 2.7, 3.6 and 3.7
 
-A example for a tox-setup can be found in https://github.com/collective/collective.ifttt/pull/82
+An example for a tox-setup can be found in https://github.com/collective/collective.ifttt/pull/82
 
 
 Database Migration
@@ -315,11 +315,11 @@ Database Migration
 Plone 5.2 can be run on Python 2 and Python 3.
 To use an existing project in Python 3, you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
 
-ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without being modified before.
+ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without modifying it before.
 (See `Why do I have to migrate my database?`_ for technical background).
 
 
-Database Upgrade procedure
+Database Upgrade Procedure
 --------------------------
 
 TODO: provided sections for these steps that explain them in more detail.
@@ -336,9 +336,9 @@ TODO: provided sections for these steps that explain them in more detail.
 
 * Migrate your database using zodbupdate
 
-  - add script to buildout
+  - Add script to buildout
 
-  - run it
+  - Run it
 
 
 
@@ -346,16 +346,16 @@ TODO: provided sections for these steps that explain them in more detail.
 
 
 
-Why do i have to migrate my database?
+Why Do I Have To Migrate My Database
 -------------------------------------
 
-To understand the problem that arises when migrating a zodb from python2 to python3,
+To understand the problem that arises when migrating a ZODB from Python2 to Python3,
 this `introduction <https://blog.gocept.com/2018/06/07/migrate-a-zope-zodb-data-fs-to-python-3/>`_ and the following example will help.
 
 
 When pickling an object the datatypes and values are stored.
 
-Python2 strings get STRING, and unicode gets UNICODE
+Python2 strings get STRING, and Unicode gets UNICODE
 
 ::
 
@@ -423,9 +423,8 @@ the byte string as SHORT_BINBYTES and the string (py2 unicode) as BINUNICODE
     highest protocol among opcodes = 3
 
 
-When reading a pickle created with python2 with python3 that contains non-ascii
-characters in a field declared with OPTCODE `STRING` python3 is trying to interpret it as python3 string (py2 unicode)
-and we might end up getting a UnicodeDecodeError for this pickle in ZODB.serialize
+Python3 will wrongly interpret a pickle created with Python2 that contains non-ascii characters in a field declared with OPTCODE `STRING`.
+In that case we may end up with a UnicodeDecodeError for this pickle in ZODB.serialize
 
 
 .. code-block:: bash
@@ -437,7 +436,7 @@ and we might end up getting a UnicodeDecodeError for this pickle in ZODB.seriali
     UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 0: ordinal not in range(128)
 
 
-Or when utf-8 encoded byte-strings are interpreted as unicode we do not get an error but mangled non-ascii characters
+Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an error but mangled non-ascii characters
 
 .. code-block:: bash
 
@@ -457,7 +456,7 @@ TODO: Not yet sure if custom types need to provide additional mappings for zodbu
 
 Here is an example Pull Request that adds them: `https://github.com/zopefoundation/Products.PythonScripts/pull/19 <https://github.com/zopefoundation/Products.PythonScripts/pull/19>`_
 
-workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or utf-8
+workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or UTF-8
 
 .. code-block:: bash
 
@@ -465,7 +464,7 @@ workflow: analyze, read sourcecode, add pdb to see which values are passed to at
 
 
 
-Migrate Database using zodbupdate
+Migrate Database Using Zodbupdate
 ---------------------------------
 
 add zodbupdate to buildout eggs::
@@ -483,7 +482,7 @@ add zodbupdate to buildout eggs::
 
 
 
-Migrate database so it can be read using Python 3.
+Migrate database, so it can be read using Python 3.
 
 .. warning::
 
@@ -507,20 +506,21 @@ This step actually requires to take your site offline or into read-only mode.
 Some thoughts on doing upgrades w/o downtime that came up in a hangout during a coding sprint in October 2018:
 
 
-- jim mentions downtime. would try to leverage the zrs replication protocol, secondary server with converted data.
-  It would probably be a trivial change to zrs.
-- for relstorage jim mentions a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
-- david thought out loud about taking down downtime: do conversion at read time....
+- Jim mentions downtime. Would try to leverage the ZRS replication protocol, secondary server with converted data.
+  It would probably be a trivial change to ZRS.
+- For relstorage Jim mentions a ZRS equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
+- David thought out loud about taking down downtime: do conversion at read time....
 
 
 
-Prepare the migration
+Prepare The Migration
 ---------------------
 
 If you have custom content types and add-ons, it is a good idea to first test the migration on a staging server.
 
 
-Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
+Analyze existing objects in the ZODB.
+List classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that may break when converted to Python3.
 
 .. code-block:: bash
 
