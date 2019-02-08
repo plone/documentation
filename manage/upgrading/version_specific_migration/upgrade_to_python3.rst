@@ -161,7 +161,7 @@ The following command runs an import fixer on all Python files.
     See ``./bin/python-modernize -l`` for a complete list of fixers and
     the `Documentation <https://python-modernize.readthedocs.io/en/latest/fixers.html>`_ about them.
 
-The following commands applies all fixes to the files:
+The following command applies all fixes to the files:
 
 .. code-block:: shell
 
