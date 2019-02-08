@@ -145,6 +145,13 @@ Install `modernize <https://pypi.python.org/pypi/modernize>`_ into your Python 3
 
     ./bin/pip install modernize
 
+Install `isort <https://pypi.python.org/pypi/isort>`_ into your Python 3 environment with ``pip``.
+
+.. code-block:: shell
+
+    ./bin/pip install isort
+
+
 Usage
 ~~~~~
 
