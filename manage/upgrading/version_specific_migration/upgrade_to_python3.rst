@@ -5,7 +5,7 @@ Migrating Plone 5.2 to Python 3
 
 .. admonition:: Description
 
-   Instructions and tips for running Plone 5.2 with Python 3
+   Instructions and tips for porting Plone projects to Python 3
 
 
 Make Custom Packages Python 3 Ready
@@ -19,15 +19,16 @@ Principles
 * We use `six <https://six.readthedocs.io>`_ and
   `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards Python 3.
 
-First Steps Of Add-Ons
-----------------------
+In general you should follow these steps to port add-ons:
 
-#. Prepare add-on to be ported, i.e. add it to a buildout running Plone 5.2 on Python 3
-#. Install modernize and run it on the code
+#. Prepare buildout for the add-on to be ported
+#. Update code with python-modernize
 #. Use precompile to find syntax errors
-#. Start the instance and find more errors like import errors
+#. Start the instance and find more errors
+#. Test functionality manually
 #. Run and fix all tests
 #. Update package information
+
 
 1 Preparation
 -------------
@@ -113,6 +114,7 @@ However, it is a good idea to now try
     ./bin/instance fg
 
 and check if your instance starts up already. If it does not start up, you will get some hints about what needs to be fixed from the error messages that you see.
+
 
 2 Automated Fixing With Modernize
 ---------------------------------
@@ -209,10 +211,15 @@ Precompile will be run every time you run buildout. If you want to avoid running
 As a next step we recommend that you try to start the instance with your add-on.
 This will fail on all import errors (e.g. relative imports that are not allowed in Python 3).
 If it works you can try to install the add-on.
-You need to fix all issues that appear and do some preliminary manual testing to check for big, obvious issues.
 
-Common Issues:
-~~~~~~~~~~~~~~
+You need to fix all issues that appear before you can do manual testing to check for big, obvious issues.
+
+
+Common Issues during startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following issues will abort your startup and you need to fix them before you are able to test the functionality by hand or run tests.
+
 
 A - Class Advice
 ^^^^^^^^^^^^^^^^
@@ -247,43 +254,48 @@ needs to be replaced with:
 
 The same is the case for `provides(IFoo)` and some other Class advices. These need to be replaced with their respective decorators like `@provider`.
 
-B - Syntax Error On Importing Async
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Python 3.7 you can no longer have a module called `async` (see https://github.com/celery/celery/issues/4849). You need to rename all such files, folders or packages (like zc.async and plone.app.async).
-
-
-C - Relative Imports
+B - Relative Imports
 ^^^^^^^^^^^^^^^^^^^^
 
 Relative imports like `import permissions` are no longer permitted. Use `from collective.package import permissions` or `from . import permissions` (not recommended)
 
 
-5 Run Tests
+C - Syntax Error On Importing Async
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In Python 3.7 you can no longer have a module called `async` (see https://github.com/celery/celery/issues/4849). You need to rename all such files, folders or packages (like zc.async and plone.app.async).
+
+
+5 Test functionality manually
+-----------------------------
+
+Now that the instance is running you should do the following and fix all errors as the appear.
+
+* Install the addon
+* Test basic functionality (e.g. adding and editing content-types and views)
+* Uninstall the addon
+
+For this step you should have ``Products.PDBDebugMode`` installed. It will make fixing any issues much easier.
+
+
+6 Run Tests
 ------------
 
 .. code-block:: shell
 
     $ ./bin/test --all -s collective.package
 
-With any luck, there are not many issues with the code left at this point.
+Remember that you can run ``./bin/test -s collective.package -D`` to find yourself in a pdb when a error happens.
 
-TBD: Document the most frequent issues when porting to Python 3
+With some luck, there are not too many issues with the code left at this point.
 
-
-.. seealso::
-
-    Here is a list of helpful references on the topic of porting Python 2 to Python 3.
-
-    - https://portingguide.readthedocs.io/en/latest/index.html
-    - https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
-    - http://getpython3.com/diveintopython3/
-    - https://docs.djangoproject.com/en/1.11/topics/python3/
-    - https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
-    - https://docs.python.org/2/library/doctest.html#debugging
+It you are unlucky you have to fix Doctests. These should be changed so that Python 3 is the default. (e.g. text is represented as ``'foo'`` and not ``u'foo'`` and bytes are represented as ``b'bar'`` and not as ``'bar'``). Search for examples of ``Py23DocChecker`` in Plone's packages to find a pattern which allows updated doctests to pass in Python 2.
 
 
-6 Update Add On Information
+
+
+7 Update Add On Information
 ---------------------------
 
 Add the following three entries of the classifiers list in setup.py:
@@ -298,12 +310,49 @@ Add the following three entries of the classifiers list in setup.py:
 Make an entry on the CHANGES.rst file.
 
 
-7 Create A Test Setup That Tests In Python 2 And Python 3
+8 Create A Test Setup That Tests In Python 2 And Python 3
 ----------------------------------------------------------
 
 TBD: Run tests on with `tox` on travis for Python 2.7, 3.6 and 3.7
 
 An example for a tox-setup can be found in https://github.com/collective/collective.ifttt/pull/82
+
+
+9 Frequent Issues
+-----------------
+
+Text and Bytes
+~~~~~~~~~~~~~~
+
+This is by far the biggest issue when porting to Python 3. Read https://portingguide.readthedocs.io/en/latest/strings.html to be prepared.
+
+As a rule of thumb you can assume that in Python 3 everything should be text and only in very rare cases you need to handle bytes.
+
+``python-modernize`` will **not** fix all your text/bytes issues, it simply replace all cases of ``unicode`` with ``six.text_type``. You need to make sure that the code you are porting will remainunchanged in py2 and (at least in most cases) use text in py3.
+
+Try to modify the code in such a way that when dropping support for py2 you will be able to delete while lines. Example
+
+.. code-block:: python
+
+   if six.PY2 and isinstance(value, six.text_type):
+       value = value.encode('utf8')
+   do_something(value)
+
+You can use the helper-methods ``safe_text`` and ``safe_bytes`` (``safe_unicode`` and ``safe_encode`` in Plone 5.1).
+
+
+
+
+.. seealso::
+
+    Here is a list of helpful references on the topic of porting Python 2 to Python 3.
+
+    - https://portingguide.readthedocs.io/en/latest/index.html
+    - https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
+    - http://getpython3.com/diveintopython3/
+    - https://docs.djangoproject.com/en/1.11/topics/python3/
+    - https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
+    - https://docs.python.org/2/library/doctest.html#debugging
 
 
 Database Migration
