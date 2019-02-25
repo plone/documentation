@@ -5,10 +5,10 @@ Migrating Plone 5.2 to Python 3
 
 .. admonition:: Description
 
-   Instructions and tips for running Plone 5.2 with Python 3
+   Instructions and tips for porting Plone projects to Python 3
 
 
-Make custom packages Python 3 ready
+Make Custom Packages Python 3 Ready
 ===================================
 
 Principles
@@ -19,20 +19,22 @@ Principles
 * We use `six <https://six.readthedocs.io>`_ and
   `modernize <https://pypi.python.org/pypi/modernize>`_ to do the first steps towards Python 3.
 
-First steps of add-ons
-----------------------
+In general you should follow these steps to port add-ons:
 
-#. Prepare add-on to be ported, i.e. add it to a buildout running Plone 5.2 on Python 3
-#. Install modernize and run it on the code
+#. Prepare buildout for the add-on to be ported
+#. Update code with python-modernize
 #. Use precompile to find syntax errors
-#. Start the instance and find more errors like import errors
+#. Start the instance and find more errors
+#. Test functionality manually
 #. Run and fix all tests
 #. Update package information
 
-1. Preparation
---------------
 
-In the GitHub repo of the add-on:
+1 Preparation
+-------------
+
+In the GitHub repository of the add-on:
+
 * Open a ticket with the title "Add support for Python 3" .
 * Create a new branch named ``python3``.
 
@@ -68,6 +70,7 @@ Exchange ``collective.package`` with the name of the add-on you want to port.
     extends = buildout.cfg
 
     always-checkout = true
+    allow-picked-versions = true
 
     custom-eggs +=
         collective.package
@@ -84,19 +87,42 @@ Exchange ``collective.package`` with the name of the add-on you want to port.
 With the file in place, run buildout.
 Then the source of the add-on package will be checked out into the ``src`` folder.
 
+.. note::
+
+    You can also add Products.PDBDebugMode and plone.reload to your development-tools:
+
+    .. code-block:: ini
+
+        custom-eggs +=
+            Products.PDBDebugMode [zodb]
+            plone.reload
+
+        [sources]
+        Products.PDBDebugMode = git ${remotes:collective}/Products.PDBDebugMode.git pushurl=${remotes:collective_push}/Products.PDBDebugMode.git branch=python3
+
+
 .. code-block:: shell
 
     ./bin/buildout -c local.cfg
 
 Now everything is prepared to work on the migration of the package.
 
-2. Automated fixing with modernize
-----------------------------------
+However, it is a good idea to now try
+
+.. code-block:: shell
+
+    ./bin/instance fg
+
+and check if your instance starts up already. If it does not start up, you will get some hints about what needs to be fixed from the error messages that you see.
+
+
+2 Automated Fixing With Modernize
+---------------------------------
 
 ``python-modernize`` is a utility that automatically prepares Python 2 code for porting to Python 3.
 After running ``python-modernize``, there is manual work ahead.
 There are some problems that ``python-modernize`` can not fix on its own.
-It also might make changes that are not really needed.
+It also can make changes that are not really needed.
 You need to closely review all changes after you run this tool.
 
 ``python-modernize`` will warn you,
@@ -108,8 +134,8 @@ for writing Python 2-3 compatible code.
 The import is added as the last import,
 therefore it is often necessary to reorder the imports.
 The easiest way is to use ``isort``.
-Check the `Python Styleguide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
-for information about the order of imports and an example config for ``isort``.
+Check the `Python style guide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
+for information about the order of imports and an example configuration for ``isort``.
 
 
 Installation
@@ -120,6 +146,13 @@ Install `modernize <https://pypi.python.org/pypi/modernize>`_ into your Python 3
 .. code-block:: shell
 
     ./bin/pip install modernize
+
+Install `isort <https://pypi.python.org/pypi/isort>`_ into your Python 3 environment with ``pip``.
+
+.. code-block:: shell
+
+    ./bin/pip install isort
+
 
 Usage
 ~~~~~
@@ -137,7 +170,7 @@ The following command runs an import fixer on all Python files.
     See ``./bin/python-modernize -l`` for a complete list of fixers and
     the `Documentation <https://python-modernize.readthedocs.io/en/latest/fixers.html>`_ about them.
 
-The following commands applies all fixes to the files:
+The following command applies all fixes to the files:
 
 .. code-block:: shell
 
@@ -151,8 +184,8 @@ You can use ``isort`` to fix the order of imports:
 
 After you run the command above, you can fix what ``modernizer`` did not get right.
 
-3. Use precompile
------------------
+3 Use Precompile
+----------------
 
 You can make use of `plone.recipe.precompiler <https://github.com/plone/plone.recipe.precompiler>`_ to identify syntax errors quickly.
 This recipe compiles all Python code already at buildout-time, not at run-time.
@@ -165,40 +198,105 @@ Then run ``./bin/buildout -c local.cfg`` to enable and use ``precompile``.
 
     parts += precompiler
 
-4. Start the instance
+Precompile will be run every time you run buildout. If you want to avoid running the complete buildout every time, you can use the ``install`` keyword of buildout like this as a shortcut:
+
+.. code-block:: shell
+
+    ./bin/buildout -c local.cfg  install precompiler
+
+
+4 Start The Instance
 ---------------------
 
 As a next step we recommend that you try to start the instance with your add-on.
 This will fail on all import errors (e.g. relative imports that are not allowed in Python 3).
 If it works you can try to install the add-on.
-You need to fix all issues that appear and do some preliminary manual testing to check for big, obvious issues.
 
-5. Run tests
+You need to fix all issues that appear before you can do manual testing to check for big, obvious issues.
+
+
+Common Issues during startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following issues will abort your startup and you need to fix them before you are able to test the functionality by hand or run tests.
+
+
+A - Class Advice
+^^^^^^^^^^^^^^^^
+
+This kind of error message
+
+.. code-block:: shell
+
+   TypeError: Class advice impossible in Python3.  Use the @implementer class decorator instead.
+
+tells you that there is a class that is using an ``implements`` statement which needs to be replaced by the ``@implementer`` decorator.
+
+Example, this kind of code:
+
+.. code-block:: python
+
+   from zope.interface import implements
+
+   class Group(form.BaseForm):
+       implements(interface.IGroup)
+       …
+
+needs to be replaced with:
+
+.. code-block:: python
+
+   from zope.interface import implementer
+
+   @implementer(interfaces.IGroup)
+   class Group(form.BaseForm):
+       …
+
+The same is the case for `provides(IFoo)` and some other Class advices. These need to be replaced with their respective decorators like `@provider`.
+
+
+B - Relative Imports
+^^^^^^^^^^^^^^^^^^^^
+
+Relative imports like `import permissions` are no longer permitted. Use `from collective.package import permissions` or `from . import permissions` (not recommended)
+
+
+C - Syntax Error On Importing Async
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In Python 3.7 you can no longer have a module called `async` (see https://github.com/celery/celery/issues/4849). You need to rename all such files, folders or packages (like zc.async and plone.app.async).
+
+
+5 Test functionality manually
+-----------------------------
+
+Now that the instance is running you should do the following and fix all errors as the appear.
+
+* Install the addon
+* Test basic functionality (e.g. adding and editing content-types and views)
+* Uninstall the addon
+
+For this step you should have ``Products.PDBDebugMode`` installed. It will make fixing any issues much easier.
+
+
+6 Run Tests
 ------------
 
 .. code-block:: shell
 
     $ ./bin/test --all -s collective.package
 
-Hopefully there are not many issues with the code left at this point.
+Remember that you can run ``./bin/test -s collective.package -D`` to find yourself in a pdb when a error happens.
 
-TBD: Document the most frequent issues when porting to Python 3
+With some luck, there are not too many issues with the code left at this point.
 
-
-.. seealso::
-
-    Here is a list of helpful references on the topic of porting Python 2 to Python 3.
-
-    - https://portingguide.readthedocs.io/en/latest/index.html
-    - https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
-    - http://getpython3.com/diveintopython3/
-    - https://docs.djangoproject.com/en/1.11/topics/python3/
-    - https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
-    - https://docs.python.org/2/library/doctest.html#debugging
+It you are unlucky you have to fix Doctests. These should be changed so that Python 3 is the default. (e.g. text is represented as ``'foo'`` and not ``u'foo'`` and bytes are represented as ``b'bar'`` and not as ``'bar'``). Search for examples of ``Py23DocChecker`` in Plone's packages to find a pattern which allows updated doctests to pass in Python 2.
 
 
-6. Update add-on information
-----------------------------
+
+
+7 Update Add On Information
+---------------------------
 
 Add the following three entries of the classifiers list in setup.py:
 
@@ -212,12 +310,49 @@ Add the following three entries of the classifiers list in setup.py:
 Make an entry on the CHANGES.rst file.
 
 
-7. Create a test-setup that tests in Python 2 and Python 3
+8 Create A Test Setup That Tests In Python 2 And Python 3
 ----------------------------------------------------------
 
 TBD: Run tests on with `tox` on travis for Python 2.7, 3.6 and 3.7
 
-A example for a tox-setup can be found in https://github.com/collective/collective.ifttt/pull/82
+An example for a tox-setup can be found in https://github.com/collective/collective.ifttt/pull/82
+
+
+9 Frequent Issues
+-----------------
+
+Text and Bytes
+~~~~~~~~~~~~~~
+
+This is by far the biggest issue when porting to Python 3. Read https://portingguide.readthedocs.io/en/latest/strings.html to be prepared.
+
+As a rule of thumb you can assume that in Python 3 everything should be text and only in very rare cases you need to handle bytes.
+
+``python-modernize`` will **not** fix all your text/bytes issues, it simply replace all cases of ``unicode`` with ``six.text_type``. You need to make sure that the code you are porting will remainunchanged in py2 and (at least in most cases) use text in py3.
+
+Try to modify the code in such a way that when dropping support for py2 you will be able to delete while lines. Example
+
+.. code-block:: python
+
+   if six.PY2 and isinstance(value, six.text_type):
+       value = value.encode('utf8')
+   do_something(value)
+
+You can use the helper-methods ``safe_text`` and ``safe_bytes`` (``safe_unicode`` and ``safe_encode`` in Plone 5.1).
+
+
+
+
+.. seealso::
+
+    Here is a list of helpful references on the topic of porting Python 2 to Python 3.
+
+    - https://portingguide.readthedocs.io/en/latest/index.html
+    - https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
+    - http://getpython3.com/diveintopython3/
+    - https://docs.djangoproject.com/en/1.11/topics/python3/
+    - https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
+    - https://docs.python.org/2/library/doctest.html#debugging
 
 
 Database Migration
@@ -236,11 +371,11 @@ Database Migration
 Plone 5.2 can be run on Python 2 and Python 3.
 To use an existing project in Python 3, you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
 
-ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without being modified before.
+ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without modifying it before.
 (See `Why do I have to migrate my database?`_ for technical background).
 
 
-Database Upgrade procedure
+Database Upgrade Procedure
 --------------------------
 
 TODO: provided sections for these steps that explain them in more detail.
@@ -257,9 +392,9 @@ TODO: provided sections for these steps that explain them in more detail.
 
 * Migrate your database using zodbupdate
 
-  - add script to buildout
+  - Add script to buildout
 
-  - run it
+  - Run it
 
 
 
@@ -267,16 +402,16 @@ TODO: provided sections for these steps that explain them in more detail.
 
 
 
-Why do i have to migrate my database?
+Why Do I Have To Migrate My Database
 -------------------------------------
 
-To understand the problem that arises when migrating a zodb from python2 to python3,
+To understand the problem that arises when migrating a ZODB from Python2 to Python3,
 this `introduction <https://blog.gocept.com/2018/06/07/migrate-a-zope-zodb-data-fs-to-python-3/>`_ and the following example will help.
 
 
 When pickling an object the datatypes and values are stored.
 
-Python2 strings get STRING, and unicode gets UNICODE
+Python2 strings get STRING, and Unicode gets UNICODE
 
 ::
 
@@ -344,9 +479,8 @@ the byte string as SHORT_BINBYTES and the string (py2 unicode) as BINUNICODE
     highest protocol among opcodes = 3
 
 
-When reading a pickle created with python2 with python3 that contains non-ascii
-characters in a field declared with OPTCODE `STRING` python3 is trying to interpret it as python3 string (py2 unicode)
-and we might end up getting a UnicodeDecodeError for this pickle in ZODB.serialize
+Python3 will wrongly interpret a pickle created with Python2 that contains non-ascii characters in a field declared with OPTCODE `STRING`.
+In that case we may end up with a UnicodeDecodeError for this pickle in ZODB.serialize
 
 
 .. code-block:: bash
@@ -358,7 +492,7 @@ and we might end up getting a UnicodeDecodeError for this pickle in ZODB.seriali
     UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 0: ordinal not in range(128)
 
 
-Or when utf-8 encoded byte-strings are interpreted as unicode we do not get an error but mangled non-ascii characters
+Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an error but mangled non-ascii characters
 
 .. code-block:: bash
 
@@ -370,83 +504,35 @@ Or when utf-8 encoded byte-strings are interpreted as unicode we do not get an e
 
 
 
-
-Custom Content Types
---------------------
-
-TODO: Not yet sure if custom types need to provide additional mappings for zodbupdate.
-
-Here is an example Pull Request that adds them: `https://github.com/zopefoundation/Products.PythonScripts/pull/19 <https://github.com/zopefoundation/Products.PythonScripts/pull/19>`_
-
-workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or utf-8
-
-.. code-block:: bash
-
-    bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
-
-
-
 Migrate Database using zodbupdate
 ---------------------------------
 
-add zodbupdate to buildout eggs::
+Use the 'convert-in-py3' branch of zodbupdate.
+The 'convert-in-py3' branch is already implemented in buildout.coredev.
 
-    [zodbupdate]
-    recipe = zc.recipe.egg
-    eggs =
-        ${buildout:eggs}
-        zodbupdate
-        zodb.py3migrate
+The Database Migration is run in the Python3 installation of Plone5.2 after the Database is copied there.
 
-    scripts =
-        zodb-py3migrate-analyze
-        zodbupdate
-
-
-
-Migrate database so it can be read using Python 3.
-
-.. warning::
-
-    This migrates our database in place. Make sure to make a backup before!
+Example assuming Python2 installation in folder py2 and Python3 installation in folder py3.
 
 .. code-block:: bash
 
-    cd $BUILDOUT
-    bin/instance stop
-    cp var/filestorage/Data.fs var/filestorage/Data.fs-back
-    bin/zodbupdate --pack --convert-py3 --file var/filestorage/Data.fs
+    rm -rf py3/var/*storage
+    cp -r py2/var/*storage py3/var/
+    py3/bin/zodbupdate --convert-py3 --file py3/var/filestorage/Data.fs --encoding=utf8
 
 
 
 Downtime
 --------
 
-This step actually requires to take your site offline or into read-only mode.
-
-
-Some thoughts on doing upgrades w/o downtime that came up in a hangout during a coding sprint in October 2018:
-
-
-- jim mentions downtime. would try to leverage the zrs replication protocol, secondary server with converted data.
-  It would probably be a trivial change to zrs.
-- for relstorage jim mentions a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
-- david thought out loud about taking down downtime: do conversion at read time....
+When running the Database Migration in Python3 on the target installation there is no Downtime.
 
 
 
-Prepare the migration
----------------------
+Custom Content Types
+--------------------
 
-If you have custom content types and add-ons, it is a good idea to first test the migration on a staging server.
-
-
-Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
-
-.. code-block:: bash
-
-    bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
-    # this might be possible with zodbupdate (https://github.com/zopefoundation/zodbupdate/issues/10)
+When running the Database Migration in Python3 there is most certainly no need to provide additional mappings for zodbupdate.
 
 
 
@@ -464,3 +550,62 @@ The output should look like this::
     ...
     INFO:zodbverify:Scanning ZODB...
     INFO:zodbverify:Done! Scanned 5999 records. Found 0 records that could not be loaded.
+
+
+
+Running zodbupdate in Python2 installation
+------------------------------------------
+
+In an older Version of zodbupdate the Database Migration is run in Python2 installation of Plone5.2.
+
+add zodbupdate to buildout eggs::
+
+    [zodbupdate]
+    recipe = zc.recipe.egg
+    eggs =
+        ${buildout:eggs}
+        zodbupdate
+        zodb.py3migrate
+
+    scripts =
+        zodb-py3migrate-analyze
+        zodbupdate
+
+
+
+Prepare zodbupdate in Python2 installation
+------------------------------------------
+
+
+TODO: Not yet sure if custom types need to provide additional mappings for zodbupdate.
+
+
+If you have custom content types and add-ons, it is a good idea to first test the migration on a staging server.
+
+
+Here is an example Pull Request that adds them: `https://github.com/zopefoundation/Products.PythonScripts/pull/19 <https://github.com/zopefoundation/Products.PythonScripts/pull/19>`_
+
+
+Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
+workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or utf-8
+
+.. code-block:: bash
+
+    bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
+    # this might be possible with zodbupdate (https://github.com/zopefoundation/zodbupdate/issues/10)
+
+
+
+Downtime in Python2 installation
+--------------------------------
+
+This step actually requires to take your site offline or into read-only mode.
+
+
+Some thoughts on doing upgrades w/o downtime that came up in a hangout during a coding sprint in October 2018:
+
+
+- jim mentions downtime. would try to leverage the zrs replication protocol, secondary server with converted data.
+  It would probably be a trivial change to zrs.
+- for relstorage jim mentions a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
+- david thought out loud about taking down downtime: do conversion at read time....
