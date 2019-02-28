@@ -306,6 +306,14 @@ With some luck, there are not too many issues with the code left at this point.
 It you are unlucky you have to fix Doctests. These should be changed so that Python 3 is the default. (e.g. text is represented as ``'foo'`` and not ``u'foo'`` and bytes are represented as ``b'bar'`` and not as ``'bar'``). Search for examples of ``Py23DocChecker`` in Plone's packages to find a pattern which allows updated doctests to pass in Python 2.
 
 
+Test your code against buildout.coredev on Jenkins (https://jenkins.plone.org/view/Add-ons/). 
+There are jobs set up for 4.3, 5.1 and 5.2 with Python 2.
+And there are two jobs that run tests for 5.2 with Python 3.6 and Python 3.7.
+Log into the jenkins website (top right) and click on the job you want to run.
+Choose the link 'Build with parameters' in the left menu on the left hand side.
+Fill the fields ADDON_URL and ADDON_BRANCH with your repo url and the branch name 
+(python3 if you followed this instructions). 
+Start the build with the 'Build' button.
 
 
 7 Update Add On Information
