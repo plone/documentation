@@ -361,8 +361,16 @@ Try to modify the code in such a way that when dropping support for py2 you will
 
 You can use the helper-methods ``safe_text`` and ``safe_bytes`` (``safe_unicode`` and ``safe_encode`` in Plone 5.1).
 
+``python-modernize`` also does not touch the import statement ``from StringIO import StringIO`` even though
+this is only works in Python 2. 
+You have the check whether you are dealing textual or binary data and use the according import statement from ``six`` (https://pythonhosted.org/six/#six.StringIO)
 
+.. code-block:: python
 
+   # For textual data
+   from six import StringIO
+   # For binary data
+   from six import BytesIO
 
 .. seealso::
 
