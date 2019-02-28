@@ -89,13 +89,21 @@ Then the source of the add-on package will be checked out into the ``src`` folde
 
 .. note::
 
-    You can also add Products.PDBDebugMode and plone.reload to your development-tools:
+    You can also add ``Products.PDBDebugMode`` and ``plone.reload`` to your development-tools. For ``Products.PDBDebugMode`` you currently need a source-checkout though.
 
     .. code-block:: ini
 
         custom-eggs +=
+            collective.package
             Products.PDBDebugMode [zodb]
             plone.reload
+
+        test-eggs +=
+            collective.package [test]
+
+        auto-checkout +=
+            collective.package
+            Products.PDBDebugMode
 
         [sources]
         Products.PDBDebugMode = git ${remotes:collective}/Products.PDBDebugMode.git pushurl=${remotes:collective_push}/Products.PDBDebugMode.git branch=python3
@@ -107,13 +115,13 @@ Then the source of the add-on package will be checked out into the ``src`` folde
 
 Now everything is prepared to work on the migration of the package.
 
-However, it is a good idea to now try
+However, for small or simple packages it is a good idea to now try
 
 .. code-block:: shell
 
     ./bin/instance fg
 
-and check if your instance starts up already. If it does not start up, you will get some hints about what needs to be fixed from the error messages that you see.
+and check if your instance starts up already. If it does not start up, you should continue with the next steps instead of trying to fix each issue as it appears.
 
 
 2 Automated Fixing With Modernize
