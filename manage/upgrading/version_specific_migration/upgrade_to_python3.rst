@@ -89,13 +89,14 @@ Then the source of the add-on package will be checked out into the ``src`` folde
 
 .. note::
 
-    You can also add ``Products.PDBDebugMode`` and ``plone.reload`` to your development-tools. For ``Products.PDBDebugMode`` you currently need a source-checkout though.
+    You can also add some development-tools like ``Products.PDBDebugMode`` and ``plone.reload`` to your buildout. For some you currently need a source-checkout though.
 
     .. code-block:: ini
 
         custom-eggs +=
             collective.package
-            Products.PDBDebugMode [zodb]
+            Products.PDBDebugMode
+            Products.PrintingMailHost
             plone.reload
 
         test-eggs +=
@@ -104,9 +105,11 @@ Then the source of the add-on package will be checked out into the ``src`` folde
         auto-checkout +=
             collective.package
             Products.PDBDebugMode
+            Products.PrintingMailHost
 
         [sources]
-        Products.PDBDebugMode = git ${remotes:collective}/Products.PDBDebugMode.git pushurl=${remotes:collective_push}/Products.PDBDebugMode.git branch=python3
+        Products.PDBDebugMode = git ${remotes:collective}/Products.PDBDebugMode.git pushurl=${remotes:collective_push}/Products.PDBDebugMode.git branch=master
+        Products.PrintingMailHost = git ${remotes:collective}/Products.PrintingMailHost.git pushurl=${remotes:collective_push}/Products.PrintingMailHost branch=master
 
 
 .. code-block:: shell
