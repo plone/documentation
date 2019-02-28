@@ -7,6 +7,7 @@ To Do
 - plone-vale container should include all checks (ttd)
 - Move content out of source
 - Improve Makefile
+- Check why the "link" check is here not working
 
 This And That
 =============

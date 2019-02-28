@@ -4,6 +4,8 @@ Plone Documentation
 
 This is the community-maintained manual for the `Plone <https://plone.org>`_ content management system.
 
+Click `here <https://plone.org>`_ link.
+
 .. toctree::
    :hidden:
    :maxdepth: 2
