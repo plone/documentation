@@ -148,6 +148,8 @@ The easiest way is to use ``isort``.
 Check the `Python style guide for Plone <https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting>`_
 for information about the order of imports and an example configuration for ``isort``.
 
+If ``six`` is used in the code,
+make sure, that ``six`` is added to the install_requires list in ``setup.py`` of the package. 
 
 Installation
 ~~~~~~~~~~~~
