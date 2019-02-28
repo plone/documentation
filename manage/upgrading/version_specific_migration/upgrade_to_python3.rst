@@ -105,12 +105,12 @@ Then the source of the add-on package will be checked out into the ``src`` folde
         auto-checkout +=
             collective.package
             Products.PDBDebugMode
-            Products.PrintingMailHost
 
         [sources]
         Products.PDBDebugMode = git ${remotes:collective}/Products.PDBDebugMode.git pushurl=${remotes:collective_push}/Products.PDBDebugMode.git branch=master
-        Products.PrintingMailHost = git ${remotes:collective}/Products.PrintingMailHost.git pushurl=${remotes:collective_push}/Products.PrintingMailHost branch=master
 
+        [versions]
+        Products.PrintingMailHost = 1.1.1
 
 .. code-block:: shell
 
