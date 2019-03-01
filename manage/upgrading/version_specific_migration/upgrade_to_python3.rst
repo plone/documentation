@@ -306,13 +306,12 @@ These should be changed so that Python 3 is the default.
 For example, string types (or text) should be represented as ``'foo'``, not ``u'foo'``, and bytes types (or data) should be represented as ``b'bar'``, not ``'bar'``.
 Search for examples of ``Py23DocChecker`` in Plone's packages to find a pattern which allows updated doctests to pass in Python 2.
 
-Test your code against `buildout.coredev on Jenkins <https://jenkins.plone.org/view/Add-ons/>`_.
-There are jobs set up for 4.3, 5.1, and 5.2 with Python 2.
-And there are two jobs that run tests for 5.2 with Python 3.6 and Python 3.7.
-Log in to the Jenkins website (top right) and click on the job you want to run.
-Choose the link "Build with parameters" in the left menu on the left-hand side.
-Fill the fields "ADDON_URL" and "ADDON_BRANCH" with your repository's URL and the branch name ("python3" if you followed these instructions).
-Start the build with the "Build" button.
+*   Test your code against `buildout.coredev on Jenkins <https://jenkins.plone.org/view/Add-ons/>`_.
+*   Note there are jobs set up for Plone 4.3, 5.1, and 5.2 on Python 2, and two jobs that run tests for Plone 5.2 on Python 3.6 and Python 3.7.
+*   Log in to the Jenkins website (top right) and click on the job you want to run.
+*   Choose the link "Build with parameters" in the left menu on the left-hand side.
+*   Fill the fields "ADDON_URL" and "ADDON_BRANCH" with your repository's URL and the branch name ("python3" if you followed these instructions).
+*   Start the build with the "Build" button.
 
 
 7 Update Add On Information
