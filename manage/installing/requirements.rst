@@ -113,6 +113,8 @@ Python
 ------
 
 Python 2.7 (dev), built with support for expat (xml.parsers.expat), zlib and ssl.
+With Plone 5.2 or greater, Python 2.7.14, 3.6, and 3.7 are supported.
+See :doc:`manage/upgrading/version_specific_migration/upgrade_to_python3` for Plone 5.2 requirements.
 (Python XML support may be a separate package on some platforms.)*
 
 virtualenv*
