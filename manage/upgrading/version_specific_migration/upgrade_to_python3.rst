@@ -323,7 +323,7 @@ Add the following three entries of the classifiers list in setup.py:
 .. code-block:: python
 
     "Framework :: Plone :: 5.2",
-    ...
+    # ...
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
 
