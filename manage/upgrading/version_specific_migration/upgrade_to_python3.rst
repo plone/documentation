@@ -310,7 +310,7 @@ Search for examples of ``Py23DocChecker`` in Plone's packages to find a pattern 
 *   Log in to the Jenkins website (top right) and click on the job you want to run.
 *   Choose the link "Build with parameters" in the left menu on the left-hand side.
 *   Fill the fields "ADDON_URL" and "ADDON_BRANCH" with your repository's URL and the branch name ("python3" if you followed these instructions).
-*   Start the build with the "Build" button.
+*   Start the build with the :guilabel:`Build` button.
 
 
 7 Update Add On Information
