@@ -45,31 +45,23 @@ Line Length
 -----------
 
 - Please do not follow `PEP8 <https://www.python.org/dev/peps/pep-0008/#maximum-line-length>`_ maximum line length standard.
-
-- Keep sentences short and understandable.
-
-- Use `semantic linefeeds <http://rhodesmill.org/brandon/2012/one-sentence-per-line/>`_ when you are editing.
-
-- Keep in mind that your sentences will become .po strings, for translation.
+  Documentation is narrative text and images, not Python code.
 
 - One sentence per line.
 
+- Keep sentences short and understandable.
 
-This will greatly improve the editing and maintenance of your documents.
+- Keep in mind that your sentences will become .po strings for translation.
+
+This will greatly improve the editing and maintenance of your documentation.
 
 Take this example paragraph::
 
-    Patterns can take options in two ways:
-    from the DOM or via the jQuery interface.
-    It is highly recommended to use the DOM interface,
-    since it offers a lot more flexibility compared to the jQuery approach.
+    Patterns can take options in two ways: from the DOM or via the jQuery interface.
+    It is highly recommended to use the DOM interface, since it offers a lot more flexibility compared to the jQuery approach.
 
-    Also, if you wish to use the automatic binding and rebinding functionality,
-    the DOM approach is more straightforward and hassle-free.
+    Also if you wish to use the automatic binding and rebinding functionality, the DOM approach is more straightforward and hassle-free.
 
-Please do not follow `PEP8 <https://www.python.org/dev/peps/pep-0008/#maximum-line-length>`_ maximum line length standard.
-
-Limiting lines to a maximum of 130 characters.
 
 Tab Policy
 ----------
