@@ -92,29 +92,27 @@ Then the source of the add-on package will be checked out into the ``src`` folde
 
 .. note::
 
-    You can also add some development tools like `Products.PDBDebugMode <https://pypi.org/project/Products.PDBDebugMode/>`_ and `plone.reload <https://pypi.org/project/plone.reload/>`_ to your buildout.
-    For some development tools, you currently need a `source checkout <https://training.plone.org/5/mastering-plone/buildout_1.html>`_ though.
+    You can also add development tools like `Products.PDBDebugMode <https://pypi.org/project/Products.PDBDebugMode/>`_, `plone.reload <https://pypi.org/project/plone.reload/>`_ and `Products.PrintingMailHost <https://pypi.org/project/Products.PrintingMailHost/>`_ to your buildout.
+
+    Especially ``Products.PDBDebugMode`` will help a lot with issues during porting to Python 3.
 
     .. code-block:: ini
 
         custom-eggs +=
             collective.package
             Products.PDBDebugMode
-            Products.PrintingMailHost
             plone.reload
+            Products.PrintingMailHost
 
         test-eggs +=
             collective.package [test]
 
         auto-checkout +=
             collective.package
-            Products.PDBDebugMode
-
-        [sources]
-        Products.PDBDebugMode = git ${remotes:collective}/Products.PDBDebugMode.git pushurl=${remotes:collective_push}/Products.PDBDebugMode.git branch=master
 
         [versions]
         Products.PrintingMailHost = 1.1.1
+        Products.PDBDebugMode = 1.4
 
 .. code-block:: shell
 
