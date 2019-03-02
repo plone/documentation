@@ -38,7 +38,7 @@ Example using UNIX grep tool:
 
 	grep -C 3 -Ri --include=*.zcml "<permission" *
 
-UsefulPpermissions
+Useful Permissions
 ==================
 
 Permissions are shown by their verbose name in the Management Interface.
