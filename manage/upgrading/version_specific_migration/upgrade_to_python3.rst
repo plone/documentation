@@ -118,7 +118,7 @@ Then the source of the add-on package will be checked out into the ``src`` folde
 
 Now everything is prepared to work on the migration of the package.
 
-However, for small packages or packages that have few dependencies, it is a good idea to try starting your instance now.
+For small packages or packages that have few dependencies, it is a good idea to try starting your instance now.
 
 .. code-block:: shell
 
