@@ -271,7 +271,7 @@ B - Relative Imports
 ^^^^^^^^^^^^^^^^^^^^
 
 Relative imports like ``import permissions`` are no longer permitted.
-Use ``from collective.package import permissions`` or ``from . import permissions`` (not recommended).
+Instead use fully qualified import paths such as ``from collective.package import permissions``.
 
 
 C - Syntax Error On Importing Async
