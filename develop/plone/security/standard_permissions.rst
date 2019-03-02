@@ -85,7 +85,7 @@ The standard roles in Plone are:
 
 :guilabel:`Reviewer`
      which represents content reviewers separately from site administrators.
-     It is possible to grant the :guilabel:`Reviewer` role locally on the :guilabel:`Sharing`` tab,
+     It is possible to grant the :guilabel:`Reviewer` role locally on the :guilabel:`Sharing` tab,
      where it is shown as :guilabel:`Can review`.
 
 :guilabel:`Member`
@@ -108,7 +108,7 @@ where they appear under more user friendly pseudonyms.
 :guilabel:`Contributor`, aka :guilabel:`Can add`,
     confers the right to add new content.
     As a rule of thumb,
-    the:guilabel: `Contributor` role should have the `Add:guilabel: portal content` permission
+    the :guilabel:`Contributor` role should have the :guilabel:`Add portal content` permission
     and any type-specific add permissions globally
     (i.e. granted in ``rolemap.xml``),
     although these permissions are sometimes managed in workflow as well.
