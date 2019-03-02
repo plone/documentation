@@ -345,8 +345,10 @@ Text and Bytes
 This is by far the biggest issue when porting to Python 3.
 Read the `Conservative Python 3 Porting Guide, Strings <https://portingguide.readthedocs.io/en/latest/strings.html>`_ to be prepared.
 
-As a rule of thumb, you can assume that in Python 3 everything should be text.
-Only in very rare cases you need to handle bytes.
+.. note::
+
+    As a rule of thumb, you can assume that in Python 3 everything should be text.
+    Only in very rare cases will you need to handle bytes.
 
 ``python-modernize`` will **not** fix all your text/bytes issues.
 It only replaces all cases of ``unicode`` with ``six.text_type``.
