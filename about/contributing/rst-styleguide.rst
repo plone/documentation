@@ -256,6 +256,16 @@ Strong:
 
    This **word** is in bold text.
 
+Labels for graphical user interfaces (GUI), including buttons, menu items, form controls, and links.
+
+.. code-block:: rst
+
+    Click the :guilabel:`Submit` button.
+
+The above reStructuredText renders as follows.
+
+Click the :guilabel:`Submit` button.
+
 Inline code highlighting:
 
 .. code-block:: rst
