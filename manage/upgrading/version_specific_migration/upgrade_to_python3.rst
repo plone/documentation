@@ -89,7 +89,7 @@ Then the source of the add-on package will be checked out into the ``src`` folde
 .. note::
 
     You can also add some development tools like `Products.PDBDebugMode <https://pypi.org/project/Products.PDBDebugMode/>`_ and `plone.reload <https://pypi.org/project/plone.reload/>`_ to your buildout.
-    For some you currently need a source checkout though.
+    For some you currently need a `source checkout <https://training.plone.org/5/mastering-plone/buildout_1.html>`_ though.
 
     .. code-block:: ini
 
