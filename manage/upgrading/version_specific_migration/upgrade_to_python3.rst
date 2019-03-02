@@ -296,7 +296,7 @@ For this step it is recommended that you have installed ``Products.PDBDebugMode`
 
     $ ./bin/test --all -s collective.package
 
-Remember that you can run ``./bin/test -s collective.package -D`` to enter a pdb session when an error occurs.
+Remember that you can run ``./bin/test -s collective.package -D`` to enter a ``pdb`` session when an error occurs.
 
 With some luck, there will not be too many issues left with the code at this point.
 
