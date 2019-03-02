@@ -241,7 +241,7 @@ This kind of error message:
 
 tells you that there is a class that is using an ``implements`` statement which needs to be replaced by the ``@implementer`` decorator.
 
-For example, this kind of code:
+For example, code that is written as follows:
 
 .. code-block:: python
 
