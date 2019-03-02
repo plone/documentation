@@ -37,6 +37,11 @@ In the GitHub repository of the add-on:
 * Open a ticket with the title "Add support for Python 3".
 * Create a new branch named ``python3``.
 
+.. warning::
+
+    The following section is valid until the final release of Plone 5.2.
+    Upon the final release of Plone 5.2, something else will take its place.
+
 Until Plone 5.2 is released, you can use the coredev buildout setup.
 It contains everything for porting an add-on to Python 3.
 Follow these steps:
@@ -51,7 +56,6 @@ Follow these steps:
     python3.7 -m venv .
     # Install buildout:
     ./bin/pip install -r requirements.txt
-
 
 Next create a file called ``local.cfg`` in the root of the buildout.
 This file will be used to add your add-on to the buildout.
