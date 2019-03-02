@@ -286,8 +286,7 @@ Now that the instance is running you should do the following and fix all errors 
 * Test basic functionality (e.g., adding and editing content-types and views).
 * Uninstall the add-on.
 
-For this step you should have ``Products.PDBDebugMode`` installed.
-It will make fixing any issues much easier.
+For this step it is recommended that you have installed ``Products.PDBDebugMode`` to help debug and fix issues.
 
 
 6 Run Tests
