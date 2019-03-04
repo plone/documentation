@@ -7,9 +7,6 @@ Upgrading Plone 5.1 to 5.2
 
    Instructions and tips for upgrading to Plone 5.2
 
-.. note::
-
-   If you want to upgrade add-ons to Plone 5.2, please see :doc:`/develop/addons/upgrade_to_52`
 
 General Information
 ===================
@@ -18,6 +15,8 @@ General Information
 - Always upgrade from the latest version of 5.1.x to the latest version of 5.2.x.
   This will resolve many migration-specific issues.
 - If you have problems don't be afraid to ask for help on https://community.plone.org
+
+This upgrade is different from all others before since Plone 5.2 supports Python 2 and Python 3. To migrate a existing database from Python 2 to Python 3 you need to run a Database-migration while the site is not running. See below for details.
 
 
 Upgrading
@@ -30,3 +29,283 @@ Changes Between Plone 5.1 And 5.2
 =================================
 
 The following PLIPs (Plone Improvement Proposals) have been implemented for 5.2:
+
+
+Python 3 Support
+----------------
+
+Plone 5.2 supports Python 3.6 and 3.7 as well as Python 2.7.
+
+This is `PLIP 2368 <https://github.com/plone/Products.CMFPlone/issues/2368>`_.
+
+For End Users
+~~~~~~~~~~~~~
+
+Nothing changes.
+
+For Developers
+~~~~~~~~~~~~~~
+
+All custom code and add-ons needs to support Python 3. Existing databases need to be upgraded as well.
+
+The migration to Python 3 follows these steps:
+
+#. Upgrade addons and code to Plone 5.2 while running Python 2.7.
+#. Upgrade the Database to Plone 5.2 while running Python 2.7. To run that upgrade follow the links on top of the controlpanel or the ZMI to the form `/@@plone-upgrade`
+#. Drop any remaining Archetypes-dependencies. Migrate these to Dexterity instead.
+#. Port addons and custom code to Python 3 without the existing database.
+#. Migrate the database using ``zodbupdate``. If you are working on a new project (i.e. without a existing database) you can skip the last step.
+
+See :doc:`/manage/version-specific-migration/upgrade_to_python3` for details about porting code and database to Python 3.
+
+
+Zope 4.0
+--------
+
+Zope runs on top of Zope 4.0 instead of Zope 2.13.x.
+
+This is `PLIP 1351 <https://github.com/plone/Products.CMFPlone/issues/1351>`_.
+
+For End Users
+~~~~~~~~~~~~~
+
+This has no changes for Editors. Admins may notice that the ZMI has a new bootstrap-based theme and some controlpanels have moved.
+
+For Developers
+~~~~~~~~~~~~~~
+
+There are a lot of changes in Zope. For details please see:
+
+* `What’s new in Zope 4.0 <https://zope.readthedocs.io/en/latest/WHATSNEW.html>`_
+* `Changelog for alpha-versions <https://github.com/zopefoundation/Zope/blob/4.0a6/CHANGES.rst>`_
+* `Changelog for beta-versions <https://zope.readthedocs.io/en/latest/changes.html>`_
+
+Many of the changes in Zope had effects on Plone that had been addressed. For most add-ons though the changes have little to no effect.
+
+Some tools from CMFCore are now utilities and can also be accessed as such. Example:
+
+.. code-block:: python
+
+    # old
+    from Products.CMFCore.utils import getToolByName
+    wf_tool = getToolByName(self.context, 'portal_workflow')
+
+    # new
+    from Products.CMFCore.interfaces import IWorkflowTool
+    from zope.component import getUtility
+    wf_tool = getUtility(IWorkflowTool)
+
+
+The deprecated module ``Globals`` was removed. Example:
+
+.. code-block:: python
+
+    # old:
+    import Globals
+    develoment_mode = Globals.DevelopmentMode
+
+    # new
+    from App.config import getConfiguration
+    develoment_mode = getConfiguration().debug_mode
+
+Functional tests using the zope.testbrowser now use ``WebTest`` instead of ``mechanize``. That means that tests that used interal methods of mechanize need to be updated.
+
+
+WSGI
+----
+
+This is a result of the PLIP for Python 3. Plone 5.2 by default uses the WSGI-Server ``waitress`` to
+
+For End Users
+~~~~~~~~~~~~~
+
+Nothing changes.
+
+For Developers
+~~~~~~~~~~~~~~
+
+By default Plone uses ``waitress`` instead of ``ZServer`` as a http-server since ``ZServer`` will not ported to Python 3. Only when running on Python 2 you can still decide to use ``ZServer`` by setting ``wsgi = off`` in the buildout-part that configures the instance with ``plone.recipe.zope2instance``.
+
+Some options that used to configure ``ZServer`` are no longer available in ``plone.recipe.zope2instance`` when running on ``WSGI``. Check https://pypi.org/project/plone.recipe.zope2instance for details.
+
+
+plone.restapi
+-------------
+
+This is `PLIP 2177 <https://github.com/plone/Products.CMFPlone/issues/2177>`_.
+
+For End Users
+~~~~~~~~~~~~~
+
+Nothing changes.
+
+For Developers
+~~~~~~~~~~~~~~
+
+You can now use a RESTful hypermedia API for Plone to build modern JavaScript front-ends on top of Plone.
+
+See https://plonerestapi.readthedocs.io/en/latest/ for details.
+
+
+New navigation with dropdown
+----------------------------
+
+This is `PLIP 2516 <https://github.com/plone/Products.CMFPlone/issues/2516>`_.
+
+
+For End Users
+~~~~~~~~~~~~~
+
+Site-Administrators can use the navigation controlpanel (``/@@navigation-controlpanel``) to configure the dropdown-navigation.
+
+
+For Developers
+~~~~~~~~~~~~~~
+
+For upgraded sites the dropdown-navigation is disabled by default, for new sites it is set to display 3 levels.
+
+The code for the global navigation has moved to ``plone.app.layout.navigation.navtree.NavTreeProvider`` and the template ``plone.app.layout/plone/app/layout/viewlets/sections.pt`` has changed. Overrides of the previous navigation may no longer work and need to be updated.
+
+Developers who used addons or custom code for a dropdown-navigation should consider migrating to the new navigation since it is extremely fast, accessible and implemented almost entirely with css and html.
+
+
+Merge Products.RedirectionTool into core
+----------------------------------------
+
+This is `PLIP 1486 <https://github.com/plone/Products.CMFPlone/issues/1486>`_.
+
+For End Users
+~~~~~~~~~~~~~
+
+Site-Administrators can use the URL Management controlpanel (``/@@redirection-controlpanel``) to manage and add alternative URLs.
+
+
+For Developers
+~~~~~~~~~~~~~~
+
+Since the add-on ``Products.RedirectionTool`` has been merged into Plone you should to remove it before the upgrade if you used it.
+
+
+New Login
+---------
+
+This is `PLIP 2092 <https://github.com/plone/Products.CMFPlone/issues/2092>`_.
+
+
+For End Users
+~~~~~~~~~~~~~
+
+Nothing changes.
+
+
+For Developers
+~~~~~~~~~~~~~~
+
+Overrides of any of the templates or python-scripts that dealt with login or logout need to be changed.
+
+The login has moved from skin-based system to browser-views. You can use ``z3c.jbot`` to overides for templates and use the component-architecture to override the views. The main code is now in ``Products.CMFPlone.browser.login.login.LoginForm``.
+
+You can customize the location a user will be redirected to after loggin with an adapter. Here is a example:
+
+.. code-block:: python
+
+    from plone import api
+    from Products.CMFPlone.interfaces import IRedirectAfterLogin
+    from Products.CMFPlone.utils import safe_unicode
+    from zope.interface import implementer
+
+
+    @implementer(IRedirectAfterLogin)
+    class RedirectAfterLoginAdapter(object):
+
+        def __init__(self, context, request):
+            self.context = context
+            self.request = request
+
+        def __call__(self, came_from=None, is_initial_login=False):
+            if 'Reviewer' in api.user.get_roles():
+                api.portal.show_message(u'Get to work!', self.request)
+                came_from = self.context.portal_url() + '/@@full_review_list'
+            else:
+                user = api.user.get_current()
+                fullname = safe_unicode(user.getProperty('fullname'))
+                api.portal.show_message(u'Nice to see you again, {0}!'.format(fullname), self.request)
+            if not came_from:
+                came_from = self.context.portal_url()
+            return came_from
+
+Then register the adapter through ZCML:
+
+.. code-block:: xml
+
+    <adapter
+        factory="your.addon.adapters.RedirectAfterLoginAdapter"
+        for="OFS.interfaces.ITraversable
+             zope.publisher.interfaces.IRequest"
+        />
+
+This adapter adapts context and request, thus you can modify these according to your needs. You can also write similar adapters for ``IInitialLogin`` and ``IForcePasswordChange``.
+
+
+Deprecate Archetypes
+--------------------
+
+This is `PLIP 2390 <https://github.com/plone/Products.CMFPlone/issues/2390>`_.
+
+
+For End Users
+~~~~~~~~~~~~~
+
+Nothing changes.
+
+For Developers
+~~~~~~~~~~~~~~
+
+In Plone 5.2 Archetypes is only available if you run Python 2.7 and if you add it to your dependencies.
+
+You can add it by either adding ``Products.ATContentTypes`` to the list of your addons or by using the `extra` ``archetypes`` with the egg ``Plone`` in your bildout:
+
+.. code-block:: ini
+
+    [instance]
+    recipe = plone.recipe.zope2instance
+    eggs =
+        Plone[archetypes]
+        your.addon
+
+Instead of using Archetypes in Plone 5.2 you should consider migrating to Dexterity which is also a hard requirement to be able to use Python 3. See https://github.com/plone/plone.app.contenttypes#migration for details on the migration from Archetypes to Dexterity.
+
+
+
+Remove support for old style resource registries
+------------------------------------------------
+
+This is `PLIP 1742 <https://github.com/plone/Products.CMFPlone/issues/1742>`_.
+
+
+For End Users
+~~~~~~~~~~~~~
+
+Nothing changes.
+
+For Developers
+~~~~~~~~~~~~~~
+
+TODO
+
+
+Restructure CMFPlone static resources
+-------------------------------------
+
+This is `PLIP 1653 <https://github.com/plone/Products.CMFPlone/issues/1653>`_.
+
+
+For End Users
+~~~~~~~~~~~~~
+
+Nothing changes.
+
+For Developers
+~~~~~~~~~~~~~~
+
+TODO
