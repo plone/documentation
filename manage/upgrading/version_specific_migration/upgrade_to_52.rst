@@ -193,7 +193,7 @@ For Developers
 
 Since the add-on ``Products.RedirectionTool`` has been merged into Plone, you should remove it.
 You can either uninstall it before upgrading to Plone 5.2, or remove the product from the eggs and let the upgrade code from Plone remove it.
-Any alternative urls (aliases) that you have added manually, will be kept.
+Any alternative URLs (aliases) that you have added manually will be kept.
 
 
 New Login
