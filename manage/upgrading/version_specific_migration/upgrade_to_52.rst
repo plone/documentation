@@ -14,7 +14,7 @@ General Information
 - Before you upgrade read :doc:`../intro` and :doc:`../preparations`.
 - Always upgrade from the latest version of 5.1.x to the latest version of 5.2.x.
   This will resolve many migration-specific issues.
-- If you have problems, don't be afraid to ask for help on `Plone Community <https://community.plone.org>`_.
+- If you have problems, do not be afraid to ask for help on `Plone Community <https://community.plone.org>`_.
 
 
 Upgrading
