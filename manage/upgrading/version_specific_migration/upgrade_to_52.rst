@@ -57,7 +57,7 @@ Existing databases need to be upgraded as well.
 The migration to Python 3 follows these steps:
 
 #. Upgrade add-ons and code to Plone 5.2 while running Python 2.7.
-#. Upgrade the Database to Plone 5.2 while running Python 2.7. To run that upgrade follow the links on top of the controlpanel or the ZMI to the form `/@@plone-upgrade`
+#. Upgrade the Database to Plone 5.2 while running Python 2.7. To run that upgrade follow the links on top of the control panel or the ZMI to the form `/@@plone-upgrade`
 #. Drop any remaining Archetypes-dependencies. Migrate these to Dexterity instead.
 #. Port add-ons and custom code to Python 3 without the existing database.
 #. Migrate the database using ``zodbupdate``. If you are working on a new project (i.e. without a existing database) you can skip the last step.
@@ -75,7 +75,7 @@ This is `PLIP 1351 <https://github.com/plone/Products.CMFPlone/issues/1351>`_.
 For End Users
 ~~~~~~~~~~~~~
 
-This has no changes for Editors. Admins will notice that the ZMI has a new bootstrap-based theme and some controlpanels have moved.
+This has no changes for Editors. Admins will notice that the ZMI has a new bootstrap-based theme and some control panels have moved.
 
 For Developers
 ~~~~~~~~~~~~~~
@@ -162,7 +162,7 @@ This is `PLIP 2516 <https://github.com/plone/Products.CMFPlone/issues/2516>`_.
 For End Users
 ~~~~~~~~~~~~~
 
-Site-Administrators can use the navigation controlpanel (``/@@navigation-controlpanel``) to configure the dropdown-navigation.
+Site-Administrators can use the navigation control panel (``/@@navigation-controlpanel``) to configure the dropdown-navigation.
 
 
 For Developers
