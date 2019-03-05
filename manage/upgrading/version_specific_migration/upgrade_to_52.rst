@@ -5,7 +5,7 @@ Upgrading Plone 5.1 to 5.2
 
 .. admonition:: Description
 
-   Instructions and tips for upgrading to Plone 5.2
+   Instructions and tips for upgrading to Plone 5.2.
 
 
 General Information
@@ -14,15 +14,17 @@ General Information
 - Before you upgrade read :doc:`../intro` and :doc:`../preparations`.
 - Always upgrade from the latest version of 5.1.x to the latest version of 5.2.x.
   This will resolve many migration-specific issues.
-- If you have problems don't be afraid to ask for help on https://community.plone.org
+- If you have problems, don't be afraid to ask for help on `Plone Community <https://community.plone.org>`_.
 
-This upgrade is different from all others before since Plone 5.2 supports Python 2 and Python 3. To migrate a existing database from Python 2 to Python 3 you need to run a Database-migration while the site is not running. See below for details.
+This upgrade is different from all others before since Plone 5.2 supports Python 2 and Python 3.
+To migrate an existing database from Python 2 to Python 3, you need to run a database migration while the site is not running.
+See below for details.
 
 
 Upgrading
 =========
 
-To run the upgrade to 5.2 follow the links on top of the controlpanel or the ZMI to the form `/@@plone-upgrade`
+To run the upgrade to 5.2, follow the links on top of the control panel or the ZMI to the form ``/@@plone-upgrade``.
 
 
 Changes Between Plone 5.1 And 5.2
@@ -46,14 +48,15 @@ Nothing changes.
 For Developers
 ~~~~~~~~~~~~~~
 
-All custom code and add-ons needs to support Python 3. Existing databases need to be upgraded as well.
+All custom code and add-ons need to support Python 3.
+Existing databases need to be upgraded as well.
 
 The migration to Python 3 follows these steps:
 
-#. Upgrade addons and code to Plone 5.2 while running Python 2.7.
+#. Upgrade add-ons and code to Plone 5.2 while running Python 2.7.
 #. Upgrade the Database to Plone 5.2 while running Python 2.7. To run that upgrade follow the links on top of the controlpanel or the ZMI to the form `/@@plone-upgrade`
 #. Drop any remaining Archetypes-dependencies. Migrate these to Dexterity instead.
-#. Port addons and custom code to Python 3 without the existing database.
+#. Port add-ons and custom code to Python 3 without the existing database.
 #. Migrate the database using ``zodbupdate``. If you are working on a new project (i.e. without a existing database) you can skip the last step.
 
 See :doc:`/manage/version-specific-migration/upgrade_to_python3` for details about porting code and database to Python 3.
@@ -166,7 +169,7 @@ For upgraded sites the dropdown-navigation is disabled by default, for new sites
 
 The code for the global navigation has moved to ``plone.app.layout.navigation.navtree.NavTreeProvider`` and the template ``plone.app.layout/plone/app/layout/viewlets/sections.pt`` has changed. Overrides of the previous navigation may no longer work and need to be updated.
 
-Developers who used addons or custom code for a dropdown-navigation should consider migrating to the new navigation since it is extremely fast, accessible and implemented almost entirely with css and html.
+Developers who used add-ons or custom code for a dropdown-navigation should consider migrating to the new navigation since it is extremely fast, accessible and implemented almost entirely with css and html.
 
 
 Merge Products.RedirectionTool into core
@@ -177,13 +180,13 @@ This is `PLIP 1486 <https://github.com/plone/Products.CMFPlone/issues/1486>`_.
 For End Users
 ~~~~~~~~~~~~~
 
-Site-Administrators can use the URL Management controlpanel (``/@@redirection-controlpanel``) to manage and add alternative URLs.
+Site-Administrators can use the URL Management control panel (``/@@redirection-controlpanel``) to manage and add alternative URLs.
 
 
 For Developers
 ~~~~~~~~~~~~~~
 
-Since the add-on ``Products.RedirectionTool`` has been merged into Plone you should to remove it before the upgrade if you used it.
+Since the add-on ``Products.RedirectionTool`` has been merged into Plone, you should remove it before the upgrade if you previously used it.
 
 
 New Login
@@ -201,11 +204,14 @@ Nothing changes.
 For Developers
 ~~~~~~~~~~~~~~
 
-Overrides of any of the templates or python-scripts that dealt with login or logout need to be changed.
+Overrides of any templates or Python scripts that dealt with login or logout need to be changed.
 
-The login has moved from skin-based system to browser-views. You can use ``z3c.jbot`` to overides for templates and use the component-architecture to override the views. The main code is now in ``Products.CMFPlone.browser.login.login.LoginForm``.
+The login has moved from skin-based system to browser views.
+You can use ``z3c.jbot`` to override templates and use the component architecture to override the views.
+The main code is now in ``Products.CMFPlone.browser.login.login.LoginForm``.
 
-You can customize the location a user will be redirected to after loggin with an adapter. Here is a example:
+You can customize the location to which a user will be redirected after login with an adapter.
+Here is an example:
 
 .. code-block:: python
 
@@ -244,7 +250,8 @@ Then register the adapter through ZCML:
              zope.publisher.interfaces.IRequest"
         />
 
-This adapter adapts context and request, thus you can modify these according to your needs. You can also write similar adapters for ``IInitialLogin`` and ``IForcePasswordChange``.
+This adapter adapts context and request, thus you can modify these according to your needs.
+You can also write similar adapters for ``IInitialLogin`` and ``IForcePasswordChange``.
 
 
 Deprecate Archetypes
@@ -263,7 +270,7 @@ For Developers
 
 In Plone 5.2 Archetypes is only available if you run Python 2.7 and if you add it to your dependencies.
 
-You can add it by either adding ``Products.ATContentTypes`` to the list of your addons or by using the `extra` ``archetypes`` with the egg ``Plone`` in your bildout:
+You can add it by either adding ``Products.ATContentTypes`` to the list of your add-ons or by using the "extra" ``archetypes`` with the egg ``Plone`` in your buildout:
 
 .. code-block:: ini
 
@@ -273,8 +280,9 @@ You can add it by either adding ``Products.ATContentTypes`` to the list of your 
         Plone[archetypes]
         your.addon
 
-Instead of using Archetypes in Plone 5.2 you should consider migrating to Dexterity which is also a hard requirement to be able to use Python 3. See https://github.com/plone/plone.app.contenttypes#migration for details on the migration from Archetypes to Dexterity.
-
+Instead of using Archetypes in Plone 5.2, you should consider migrating to Dexterity.
+Dexterity is also a hard requirement to be able to use Python 3.
+See `plone.app.contenttypes documentation on Migration <https://github.com/plone/plone.app.contenttypes#migration>`_ for details on the migration from Archetypes to Dexterity.
 
 
 Remove support for old style resource registries
