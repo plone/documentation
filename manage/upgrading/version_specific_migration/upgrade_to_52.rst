@@ -308,9 +308,10 @@ Nothing changes.
 For Developers
 ~~~~~~~~~~~~~~
 
-Support for old-style resource registries (`cssregistry.xml` and `jsregistry.xml`) was removed completely along with the tools `portal_css` or `porta_javascript`.
+Support for old-style resource registries (``cssregistry.xml`` and ``jsregistry.xml``) was removed completely along with the tools ``portal_css`` or ``portal_javascript``.
 
-You need to add resources using the new Resource Registry. See :ref:`resources <resource_registry_resources>` for detailed instructions.
+You need to add resources using the new Resource Registry.
+See :ref:`resources <resource_registry_resources>` for detailed instructions.
 
 
 Restructure CMFPlone static resources
