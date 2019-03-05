@@ -16,15 +16,13 @@ General Information
   This will resolve many migration-specific issues.
 - If you have problems, don't be afraid to ask for help on `Plone Community <https://community.plone.org>`_.
 
-This upgrade is different from all others before since Plone 5.2 supports Python 2 and Python 3.
-To migrate an existing database from Python 2 to Python 3, you need to run a database migration while the site is not running.
-See below for details.
-
 
 Upgrading
 =========
 
-To run the upgrade to 5.2, follow the links on top of the control panel or the ZMI to the form ``/@@plone-upgrade``.
+This upgrade is different from previous upgrades because Plone 5.2 supports Python 2 and Python 3. The upgrade to 5.2 needs to be done in Python 2.7 and is not different that previous migrations. To run the upgrade to 5.2, follow the links on top of the control panel or the ZMI to the form ``/@@plone-upgrade``.
+
+If you also want to upgrade from Python 2 to 3 with a existing database, you need to run a additional database migration while the site is not running. See the section **Python 3 Support** below for details about that.
 
 
 Changes Between Plone 5.1 And 5.2
@@ -72,7 +70,7 @@ This is `PLIP 1351 <https://github.com/plone/Products.CMFPlone/issues/1351>`_.
 For End Users
 ~~~~~~~~~~~~~
 
-This has no changes for Editors. Admins may notice that the ZMI has a new bootstrap-based theme and some controlpanels have moved.
+This has no changes for Editors. Admins will notice that the ZMI has a new bootstrap-based theme and some controlpanels have moved.
 
 For Developers
 ~~~~~~~~~~~~~~
@@ -180,13 +178,17 @@ This is `PLIP 1486 <https://github.com/plone/Products.CMFPlone/issues/1486>`_.
 For End Users
 ~~~~~~~~~~~~~
 
-Site-Administrators can use the URL Management control panel (``/@@redirection-controlpanel``) to manage and add alternative URLs.
+Site-Administrators can use the *URL Management* control panel (``/@@redirection-controlpanel``) to manage and add alternative URLs including bulk upload of alternative urls.
+
+As a Editor, you can see a *URL Management* link in the actions menu of a content item, and add or remove alternative urls for this specific content item.
 
 
 For Developers
 ~~~~~~~~~~~~~~
 
-Since the add-on ``Products.RedirectionTool`` has been merged into Plone, you should remove it before the upgrade if you previously used it.
+Since the add-on ``Products.RedirectionTool`` has been merged into Plone, you should remove it.
+You can either uninstall it before upgrading to Plone 5.2, or remove the product from the eggs and let the upgrade code from Plone remove it.
+Any alternative urls (aliases) that you have added manually, will be kept.
 
 
 New Login
@@ -280,9 +282,11 @@ You can add it by either adding ``Products.ATContentTypes`` to the list of your 
         Plone[archetypes]
         your.addon
 
-Instead of using Archetypes in Plone 5.2, you should consider migrating to Dexterity.
-Dexterity is also a hard requirement to be able to use Python 3.
-See `plone.app.contenttypes documentation on Migration <https://github.com/plone/plone.app.contenttypes#migration>`_ for details on the migration from Archetypes to Dexterity.
+.. note::
+
+    Instead of using Archetypes in Plone 5.2, you should consider migrating to Dexterity.
+    Dexterity is also a hard requirement to be able to use Python 3.
+    See `plone.app.contenttypes documentation on Migration <https://github.com/plone/plone.app.contenttypes#migration>`_ for details on the migration from Archetypes to Dexterity.
 
 
 Remove support for old style resource registries
@@ -299,7 +303,9 @@ Nothing changes.
 For Developers
 ~~~~~~~~~~~~~~
 
-TODO
+Support for old-style resource registries (`cssregistry.xml` and `jsregistry.xml`) was removed completely along with the tools `portal_css` or `porta_javascript`.
+
+You need to add resources using the new Resource Registry. See :ref:`resources <resource_registry_resources>` for detailed instructions.
 
 
 Restructure CMFPlone static resources
