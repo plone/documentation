@@ -183,9 +183,9 @@ This is `PLIP 1486 <https://github.com/plone/Products.CMFPlone/issues/1486>`_.
 For End Users
 ~~~~~~~~~~~~~
 
-Site-Administrators can use the *URL Management* control panel (``/@@redirection-controlpanel``) to manage and add alternative URLs including bulk upload of alternative urls.
+Site-Administrators can use the :guilabel:`URL Management` control panel (``/@@redirection-controlpanel``) to manage and add alternative URLs including bulk upload of alternative urls.
 
-As a Editor, you can see a *URL Management* link in the actions menu of a content item, and add or remove alternative urls for this specific content item.
+As an Editor, you can see the :guilabel:`URL Management` link in the :guilabel:`actions` menu of a content item, and add or remove alternative URLs for this specific content item.
 
 
 For Developers
