@@ -20,9 +20,12 @@ General Information
 Upgrading
 =========
 
-This upgrade is different from previous upgrades because Plone 5.2 supports Python 2 and Python 3. The upgrade to 5.2 needs to be done in Python 2.7 and is not different that previous migrations. To run the upgrade to 5.2, follow the links on top of the control panel or the ZMI to the form ``/@@plone-upgrade``.
+This upgrade is different from previous upgrades because Plone 5.2 supports Python 2 and Python 3.
+The upgrade to 5.2 needs to be done in Python 2.7 and is not different that previous migrations.
+To run the upgrade to 5.2, follow the links on top of the control panel or the ZMI to the form ``/@@plone-upgrade``.
 
-If you also want to upgrade from Python 2 to 3 with a existing database, you need to run a additional database migration while the site is not running. See the section **Python 3 Support** below for details about that.
+If you also want to upgrade from Python 2 to 3 with a existing database, you need to run a additional database migration while the site is not running.
+See the section :ref:`python-3-support` below for details about that.
 
 
 Changes Between Plone 5.1 And 5.2
@@ -30,6 +33,8 @@ Changes Between Plone 5.1 And 5.2
 
 The following PLIPs (Plone Improvement Proposals) have been implemented for 5.2:
 
+
+.. _python-3-support:
 
 Python 3 Support
 ----------------
