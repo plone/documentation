@@ -193,7 +193,7 @@ You can use ``isort`` to fix the order of imports:
 
 .. code-block:: shell
 
-    ./bin/isort src/collective.package
+    ./bin/isort -rc src/collective.package
 
 After you run the command above, you can fix what ``modernizer`` did not get right.
 
