@@ -6,6 +6,10 @@ Migrating Plone 5.2 to Python 3
 .. admonition:: Description
 
    Instructions and tips for porting Plone projects to Python 3
+   
+.. note::
+
+   If you want to upgrade add-ons to Python 3, the list of all plone packages that still need to be ported can be found on the  `Github board tracking Python 3 porting progress of Plone Addons <https://github.com/orgs/collective/projects/1>`_
 
 
 Make Custom Packages Python 3 Ready
