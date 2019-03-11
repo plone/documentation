@@ -407,8 +407,10 @@ Database Migration
    * Documentation on setting up an environment to test the migration:
      https://github.com/frisi/coredev52multipy/tree/zodbupdate
 
-Plone 5.2 can be run on Python 2 and Python 3. For new projects you can start with a Python 3 with a fresh database.
-To use an existing project in Python 3 though, you need to migrate your existing database first. This section explains how to do that.
+Plone 5.2 can be run on Python 2 and Python 3.
+For new projects you can start with a Python 3 with a fresh database.
+To use an existing project in Python 3 though, you need to migrate your existing database first.
+This section explains how to do that.
 
 ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without modifying it before.
 (See `Why do I have to migrate my database?`_ for technical background).
@@ -530,7 +532,7 @@ Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an e
 TODO: Add some info on how `zodbupdate` changes these pickles during the migration and how and in which cases the default-encoding is used.
 
 
-Prepare your buildout for migrating the database to Python 3
+Prepare Your Buildout For Migrating The Database To Python 3
 ------------------------------------------------------------
 
 You need to add the package :py:mod:`zodbupdate` to your buildout.
@@ -557,13 +559,15 @@ Depending on your buildout this could look like this:
     zodbupdate = git https://github.com/zopefoundation/zodbupdate.git pushurl=git@github.com:zopefoundation/zodbupdate.git branch=convert-in-py3
 
 
-This adds a new buildout-part `zodbupdate` and uses a checkout of the branch `convert-in-py3` of :py:mod:`zodbupdate`. The branch is necessary until https://github.com/zopefoundation/zodbupdate/pull/14 is merged. The coredev also uses this branch.
+This adds a new buildout-part `zodbupdate` and uses a checkout of the branch `convert-in-py3` of :py:mod:`zodbupdate`.
+The branch is necessary until https://github.com/zopefoundation/zodbupdate/pull/14 is merged. The coredev also uses this branch.
 
 After re-running buildout you will now have a new executable `./bin/zodbupdate`.
 
 .. warning::
 
-    Do not try to start Plone in Python 3 with the old database before migrating it! Trying to that will result in a traceback like this:
+    Do not try to start Plone in Python 3 with the old database before migrating it!
+    Trying to that will result in a traceback like this:
 
     .. code-block::
 
@@ -585,9 +589,10 @@ Migrate Database using zodbupdate
 
 Make sure you use the branch `convert-in-py3` of :py:mod:`zodbupdate`.
 
-The migration of the database is run on Plone 5.2 in Python 3. It is expected to work equally in Python 3.6 and 3.7.
+The migration of the database is run on Plone 5.2 in Python 3.
+It is expected to work equally in Python 3.6 and 3.7.
 
-Run the migration by passing the oprtation to undertake (`convert-py3`), the location of the database and the fallback-encoding.
+Run the migration by passing the operation to undertake (`convert-py3`), the location of the database and the fallback-encoding.
 
 .. code-block:: console
 
@@ -608,7 +613,7 @@ Ideally the output is similar to this:
     Loaded 1 decode rules from Products.ZopeVersionControl:decodes
     Committing changes (#1).
 
-Afterwards you can start your instance in Python 3 and test if wverything works as expected.
+Afterwards you can start your instance in Python 3 and test if everything works as expected.
 
 .. note::
 
@@ -703,12 +708,16 @@ To work around this comment out the lines offending lines in `plone/app/upgrade/
 
 
 
-Migration logs errors and warnings
+Migration Logs Errors And Warnings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If there are log-messages during the migration or during verifydb that does not necessarily mean that the migration did not work or that your database is broken. For example if you migrated from Plone 4 to Plone 5 and then from Archetypes to Dexterity it is very likely that items in the database cannot be loaded because packages like `Products.Archetypes`, `plone.app.blob` or `plone.app.imaging` are not available. These items are most likely remains that were not removed properly but are not used. If your site otherwise works fine you can choose to ignore these issues.
+If there are log-messages during the migration or during verifydb that does not necessarily mean that the migration did not work or that your database is broken. 
+For example if you migrated from Plone 4 to Plone 5 and then from Archetypes to Dexterity it is very likely that items in the database cannot be loaded because packages like `Products.Archetypes`, `plone.app.blob` or `plone.app.imaging` are not available.
+These items are most likely remains that were not removed properly but are not used.
+If your site otherwise works fine you can choose to ignore these issues.
 
-Here is the output of a migration start started in Plone 4 with Archetypes. The site still works nicely in Plone 5.2 on Python 3.7 despite the warnings and errors::
+Here is the output of a migration start started in Plone 4 with Archetypes.
+The site still works nicely in Plone 5.2 on Python 3.7 despite the warnings and errors::
 
     Updating magic marker for var/filestorage/Data.fs
     Loaded 2 decode rules from AccessControl:decodes
@@ -787,7 +796,7 @@ Here is the output of a migration start started in Plone 4 with Archetypes. The 
     }
 
 
-Broken values in ZCTextIndex
+Broken Values In ZCTextIndex
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some indexes of the type `ZCTextIndex` may hold invalid data which results in a traceback like this::
@@ -819,12 +828,12 @@ Some indexes of the type `ZCTextIndex` may hold invalid data which results in a 
 Updating the catalog will update the index and make the error go away.
 
 
-Running zodbupdate in Python 2
+Running Zodbupdate In Python 2
 ------------------------------
 
 If the approach to run :py:mod:`zodbupdate` in Python 3 does not work you could try the older approach to migrate the database in Python 2.7.
 
-Prepare buildout
+Prepare Buildout
 ~~~~~~~~~~~~~~~~
 
 To do so add zodbupdate to buildout eggs without using the branch `convert-in-py3`:
@@ -854,7 +863,7 @@ To do so add zodbupdate to buildout eggs without using the branch `convert-in-py
     zodbupdate = git https://github.com/zopefoundation/zodbupdate.git pushurl=git@github.com:zopefoundation/zodbupdate.git branch=convert-in-py3
 
 
-Prepare zodbupdate in Python 2 installation
+Prepare Zodbupdate In Python 2 Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before migrating you need to analyze the existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
