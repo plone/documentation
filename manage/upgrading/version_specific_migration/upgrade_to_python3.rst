@@ -890,7 +890,7 @@ Then you can migrate the database as described above with the exception that you
 Downtime
 --------
 
-Some thoughts on doing upgrades w/o downtime that came up in a hangout during a coding sprint in October 2018:
+Some thoughts on doing upgrades without downtime that came up in a Hangout during a coding sprint in October 2018:
 
 - You can try to leverage the zrs replication protocol, where the secondary server has the converted data. It would probably be a trivial change to zrs to get this to work.
 - For relstorage there is a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
