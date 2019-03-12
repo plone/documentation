@@ -31,6 +31,7 @@ In general you should follow these steps to port add-ons:
 #. Test functionality manually.
 #. Run and fix all tests.
 #. Update package information.
+#. Update package buildout and test-setup
 
 
 1 Preparation
@@ -319,6 +320,9 @@ Search for examples of ``Py23DocChecker`` in Plone's packages to find a pattern 
 *   Fill the fields :guilabel:`ADDON_URL` and :guilabel:`ADDON_BRANCH` with your repository's URL and the branch name ("python3" if you followed these instructions).
 *   Start the build with the :guilabel:`Build` button.
 
+.. note::
+
+
 
 7 Update Add On Information
 ---------------------------
@@ -338,9 +342,19 @@ Make an entry in the ``CHANGES.rst`` file.
 8 Create A Test Setup That Tests In Python 2 And Python 3
 ----------------------------------------------------------
 
-TBD: Run tests with ``tox`` on Travis for Python 2.7, 3.6, and 3.7.
+You need to update the buildout of the add-on you are migrating to also support Plone 5.2 and Python 3.
+Since the buildout of most add-ons are different we cannot offer advice that works for all add-ons.
 
-An example for a ``tox`` setup can be found in https://github.com/collective/collective.ifttt/pull/82.
+But it is be a good idea to create a empty new package with :py:mod:`bobtemplates.plone` and either copy the code of the add-on in there or the new skeleton-files into the old add-on. The least you can do is look at the files created by :py:mod:`bobtemplates.plone` and copy whatever is appropriate to the add-on you are working on.
+
+.. code-block::
+
+    $ ./bin/pip install bobtemplates.plone
+    $ ./bin/mrbob -O some.addon bobtemplates.plone:addon
+
+Always use the newest version of :py:mod:`bobtemplates.plone`!
+
+Add-ons created like this contain a setup that allows testing in Python 2 and Python 3 and various Plone versions locally and on travis-ci using :py:mod:`tox`. Look at the files `tox.ini` and `travis.yml`.
 
 
 9 Frequent Issues
@@ -711,7 +725,7 @@ To work around this comment out the lines offending lines in `plone/app/upgrade/
 Migration Logs Errors And Warnings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If there are log-messages during the migration or during verifydb that does not necessarily mean that the migration did not work or that your database is broken. 
+If there are log-messages during the migration or during verifydb that does not necessarily mean that the migration did not work or that your database is broken.
 For example if you migrated from Plone 4 to Plone 5 and then from Archetypes to Dexterity it is very likely that items in the database cannot be loaded because packages like `Products.Archetypes`, `plone.app.blob` or `plone.app.imaging` are not available.
 These items are most likely remains that were not removed properly but are not used.
 If your site otherwise works fine you can choose to ignore these issues.
