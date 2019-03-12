@@ -6,7 +6,7 @@ Migrating Plone 5.2 to Python 3
 .. admonition:: Description
 
    Instructions and tips for porting Plone projects to Python 3
-   
+
 .. note::
 
    If you want to upgrade add-ons to Python 3, the list of all Plone packages that still need to be ported can be found on the  GitHub project board `Python 3 porting state for Plone add-ons <https://github.com/orgs/collective/projects/1>`_.
@@ -31,6 +31,7 @@ In general you should follow these steps to port add-ons:
 #. Test functionality manually.
 #. Run and fix all tests.
 #. Update package information.
+#. Update package buildout and test-setup
 
 
 1 Preparation
@@ -319,6 +320,9 @@ Search for examples of ``Py23DocChecker`` in Plone's packages to find a pattern 
 *   Fill the fields :guilabel:`ADDON_URL` and :guilabel:`ADDON_BRANCH` with your repository's URL and the branch name ("python3" if you followed these instructions).
 *   Start the build with the :guilabel:`Build` button.
 
+.. note::
+
+
 
 7 Update Add On Information
 ---------------------------
@@ -338,9 +342,19 @@ Make an entry in the ``CHANGES.rst`` file.
 8 Create A Test Setup That Tests In Python 2 And Python 3
 ----------------------------------------------------------
 
-TBD: Run tests with ``tox`` on Travis for Python 2.7, 3.6, and 3.7.
+You need to update the buildout of the add-on you are migrating to also support Plone 5.2 and Python 3.
+Since the buildout of most add-ons are different we cannot offer advice that works for all add-ons.
 
-An example for a ``tox`` setup can be found in https://github.com/collective/collective.ifttt/pull/82.
+But it is be a good idea to create a empty new package with :py:mod:`bobtemplates.plone` and either copy the code of the add-on in there or the new skeleton-files into the old add-on. The least you can do is look at the files created by :py:mod:`bobtemplates.plone` and copy whatever is appropriate to the add-on you are working on.
+
+.. code-block::
+
+    $ ./bin/pip install bobtemplates.plone
+    $ ./bin/mrbob -O some.addon bobtemplates.plone:addon
+
+Always use the newest version of :py:mod:`bobtemplates.plone`!
+
+Add-ons created like this contain a setup that allows testing in Python 2 and Python 3 and various Plone versions locally and on travis-ci using :py:mod:`tox`. Look at the files `tox.ini` and `travis.yml`.
 
 
 9 Frequent Issues
@@ -408,7 +422,9 @@ Database Migration
      https://github.com/frisi/coredev52multipy/tree/zodbupdate
 
 Plone 5.2 can be run on Python 2 and Python 3.
-To use an existing project in Python 3, you need to `migrate your database <https://github.com/zopefoundation/zodbupdate/issues/11>`_ first.
+For new projects you can start with a Python 3 with a fresh database.
+To use an existing project in Python 3 though, you need to migrate your existing database first.
+This section explains how to do that.
 
 ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without modifying it before.
 (See `Why do I have to migrate my database?`_ for technical background).
@@ -417,27 +433,15 @@ ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be
 Database Upgrade Procedure
 --------------------------
 
-TODO: provided sections for these steps that explain them in more detail.
+In short you need to follow these steps to migrate your database:
 
-
-* Upgrade your site to Plone 5.2 running on Python 2 first
-  (see :doc:`upgrade_to_52`)
-
-* Backup your database!
-
-* Run scripts to prepare the content for migration
-  `https://github.com/plone/Products.CMFPlone/issues/2575 <https://github.com/plone/Products.CMFPlone/issues/2575>`_
-
-
-* Migrate your database using zodbupdate
-
-  - Add script to buildout
-
-  - Run it
-
-
-
-* Testing / Debugging
+#. Upgrade your site to Plone 5.2 running on Python 2 first.
+   (see :doc:`upgrade_to_52`)
+#. Make sure your code and all add-ons that you use work in Python 3.
+   (see the section above)
+#. Backup your database!
+#. Prepare your buildout for migrating the database to Python 3.
+#. Migrate your database using :py:mod:`zodbupdate`
 
 
 
@@ -447,10 +451,9 @@ Why Do I Have To Migrate My Database
 To understand the problem that arises when migrating a ZODB from Python2 to Python3,
 this `introduction <https://blog.gocept.com/2018/06/07/migrate-a-zope-zodb-data-fs-to-python-3/>`_ and the following example will help.
 
-
 When pickling an object the datatypes and values are stored.
 
-Python2 strings get STRING, and Unicode gets UNICODE
+In Python 2 strings get STRING, and Unicode gets UNICODE
 
 ::
 
@@ -482,8 +485,7 @@ Python2 strings get STRING, and Unicode gets UNICODE
        84: .    STOP
     highest protocol among opcodes = 0
 
-Python3 does not allow non-ascii characters in bytes and the pickle declares
-the byte string as SHORT_BINBYTES and the string (py2 unicode) as BINUNICODE
+Python 3 does not allow non-ascii characters in bytes and the pickle declares the byte string as SHORT_BINBYTES and the string (py2 unicode) as BINUNICODE
 
 ::
 
@@ -518,8 +520,8 @@ the byte string as SHORT_BINBYTES and the string (py2 unicode) as BINUNICODE
     highest protocol among opcodes = 3
 
 
-Python3 will wrongly interpret a pickle created with Python2 that contains non-ascii characters in a field declared with OPTCODE `STRING`.
-In that case we may end up with a UnicodeDecodeError for this pickle in ZODB.serialize
+Python 3 will wrongly interpret a pickle created with Python 2 that contains non-ascii characters in a field declared with OPTCODE `STRING`.
+In that case we may end up with a `UnicodeDecodeError` for this pickle in `ZODB.serialize`
 
 
 .. code-block:: bash
@@ -530,8 +532,7 @@ In that case we may end up with a UnicodeDecodeError for this pickle in ZODB.ser
       File "<stdin>", line 1, in <module>
     UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 0: ordinal not in range(128)
 
-
-Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an error but mangled non-ascii characters
+Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an error but mangled non-ascii characters:
 
 .. code-block:: bash
 
@@ -542,109 +543,368 @@ Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an e
     ÃmlÃ¤ut
 
 
+TODO: Add some info on how `zodbupdate` changes these pickles during the migration and how and in which cases the default-encoding is used.
+
+
+Prepare Your Buildout For Migrating The Database To Python 3
+------------------------------------------------------------
+
+You need to add the package :py:mod:`zodbupdate` to your buildout.
+
+Depending on your buildout this could look like this:
+
+.. code-block:: ini
+
+    [buildout]
+
+    parts =+
+        zodbupdate
+
+    auto-checkout +=
+        zodbupdate
+
+    [zodbupdate]
+    recipe = zc.recipe.egg
+    eggs =
+        zodbupdate
+        ${buildout:eggs}
+
+    [sources]
+    zodbupdate = git https://github.com/zopefoundation/zodbupdate.git pushurl=git@github.com:zopefoundation/zodbupdate.git branch=convert-in-py3
+
+
+This adds a new buildout-part `zodbupdate` and uses a checkout of the branch `convert-in-py3` of :py:mod:`zodbupdate`.
+The branch is necessary until https://github.com/zopefoundation/zodbupdate/pull/14 is merged. The coredev also uses this branch.
+
+After re-running buildout you will now have a new executable `./bin/zodbupdate`.
+
+.. warning::
+
+    Do not try to start Plone in Python 3 with the old database before migrating it!
+    Trying to that will result in a traceback like this:
+
+    .. code-block::
+
+        Traceback (most recent call last):
+          File "/Users/pbauer/workspace/projectx/parts/instance/bin/interpreter", line 279, in <module>
+            exec(compile(__file__f.read(), __file__, "exec"))
+          File "/Users/pbauer/.cache/buildout/eggs/Zope-4.0b8-py3.7.egg/Zope2/Startup/serve.py", line 219, in <module>
+            sys.exit(main() or 0)
+
+          [...]
+
+          File "/Users/pbauer/.cache/buildout/eggs/ZODB-5.5.1-py3.7.egg/ZODB/FileStorage/FileStorage.py", line 1619, in read_index
+            raise FileStorageFormatError(name)
+        ZODB.FileStorage.FileStorage.FileStorageFormatError: /Users/pbauer/workspace/projectx/var/filestorage/Data.fs
+
 
 Migrate Database using zodbupdate
 ---------------------------------
 
-Use the 'convert-in-py3' branch of zodbupdate.
-The 'convert-in-py3' branch is already implemented in buildout.coredev.
+Make sure you use the branch `convert-in-py3` of :py:mod:`zodbupdate`.
 
-The Database Migration is run in the Python3 installation of Plone5.2 after the Database is copied there.
+The migration of the database is run on Plone 5.2 in Python 3.
+It is expected to work equally in Python 3.6 and 3.7.
 
-Example assuming Python2 installation in folder py2 and Python3 installation in folder py3.
+Run the migration by passing the operation to undertake (`convert-py3`), the location of the database and the fallback-encoding.
 
-.. code-block:: bash
+.. code-block:: console
 
-    rm -rf py3/var/*storage
-    cp -r py2/var/*storage py3/var/
-    py3/bin/zodbupdate --convert-py3 --file py3/var/filestorage/Data.fs --encoding=utf8
+    ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding=utf8
 
+Depending on the size of you database this can take a while.
 
+Ideally the output is similar to this:
 
-Downtime
---------
+.. code-block:: console
 
-When running the Database Migration in Python3 on the target installation there is no Downtime.
+    $ ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding=utf8
+    Updating magic marker for var/filestorage/Data.fs
+    Ignoring index for /Users/pbauer/workspace/projectx/var/filestorage/Data.fs
+    Loaded 2 decode rules from AccessControl:decodes
+    Loaded 12 decode rules from OFS:decodes
+    Loaded 2 decode rules from Products.PythonScripts:decodes
+    Loaded 1 decode rules from Products.ZopeVersionControl:decodes
+    Committing changes (#1).
 
+Afterwards you can start your instance in Python 3 and test if everything works as expected.
 
+.. note::
 
-Custom Content Types
---------------------
+    The blobstorage (holding binary data of files and images) will not be changed or even be read during the migration since the blobs only contain the raw binary data of the file/image.
 
-When running the Database Migration in Python3 there is most certainly no need to provide additional mappings for zodbupdate.
+.. note::
 
+    The fallback-encoding should always be `utf8` and will be used when porting database-entries of classes where no encoding is specified in a `[zodbupdate.decode]` mapping in the package that holds the base-class.
 
 
 Test Migration
 --------------
 
-You can use the following command to check, that all records in the database can be successfully loaded.
+You can use the following command to check if all records in the database can be successfully loaded:
 
 .. code-block:: bash
 
     bin/instance verifydb
 
-The output should look like this::
+The output should look like this:
 
-    ...
-    INFO:zodbverify:Scanning ZODB...
-    INFO:zodbverify:Done! Scanned 5999 records. Found 0 records that could not be loaded.
+.. code-block:: bash
+
+        $ ./bin/instance verifydb
+
+        INFO:Zope:Ready to handle requests
+        INFO:zodbverify:Scanning ZODB...
+        INFO:zodbverify:Done! Scanned 7781 records. Found 0 records that could not be loaded.
+
+Most likely you will have additional log-messages, warnings and even errors.
+
+.. note::
+
+    You can use the debug-mode with `./bin/instance verifydb -D` which will drop you in a pdb each time a database-entry cannnot be unpickled so you can inspect it and figure out if that is a real issue or not.
+
+    Before you start debugging you should read the following section on Troubleshooting because in many cases you can ignore the warnings.
+
+
+Troubleshooting
+---------------
+
+
+ModuleNotFoundError: No module named 'PloneLanguageTool'
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There were cases when the migration aborted with a import-error like this::
+
+    An error occured
+    Traceback (most recent call last):
+      File "/Users/pbauer/.cache/buildout/eggs/plone.app.upgrade-2.0.22-py3.7.egg/plone/app/upgrade/__init__.py", line 120, in <module>
+        from Products.PloneLanguageTool import interfaces  # noqa F811
+    ModuleNotFoundError: No module named 'PloneLanguageTool'
+
+    During handling of the above exception, another exception occurred:
+
+    Traceback (most recent call last):
+      File "/Users/pbauer/workspace/stiftung_py3/src-mrd/zodbupdate/src/zodbupdate/main.py", line 201, in main
+        updater()
+      File "/Users/pbauer/workspace/stiftung_py3/src-mrd/zodbupdate/src/zodbupdate/update.py", line 82, in __call__
+        new = self.processor.rename(current)
+      File "/Users/pbauer/workspace/stiftung_py3/src-mrd/zodbupdate/src/zodbupdate/serialize.py", line 333, in rename
+        data = unpickler.load()
+      File "/Users/pbauer/workspace/stiftung_py3/src-mrd/zodbupdate/src/zodbupdate/serialize.py", line 199, in __find_global
+        return find_global(*self.__update_symb(klass_info), Broken=ZODBBroken)
+      File "/Users/pbauer/workspace/stiftung_py3/src-mrd/zodbupdate/src/zodbupdate/serialize.py", line 177, in __update_symb
+        symb = find_global(*symb_info, Broken=ZODBBroken)
+      File "/Users/pbauer/.cache/buildout/eggs/ZODB-5.5.1-py3.7.egg/ZODB/broken.py", line 204, in find_global
+        __import__(modulename)
+      File "/Users/pbauer/.cache/buildout/eggs/plone.app.upgrade-2.0.22-py3.7.egg/plone/app/upgrade/__init__.py", line 127, in <module>
+        'Products.PloneLanguageTool.LanguageTool',
+    AttributeError: type object 'LanguageTool' has no attribute 'LanguageTool'
+    Stopped processing, due to: type object 'LanguageTool' has no attribute 'LanguageTool'
+    Traceback (most recent call last):
+      File "/Users/pbauer/.cache/buildout/eggs/plone.app.upgrade-2.0.22-py3.7.egg/plone/app/upgrade/__init__.py", line 120, in <module>
+        from Products.PloneLanguageTool import interfaces  # noqa F811
+    ModuleNotFoundError: No module named 'PloneLanguageTool'
+
+To work around this comment out the lines offending lines in `plone/app/upgrade/__init__.py` (do not forget to uncomment them after the migration!)
+
+.. code-block:: python
+
+    # try:
+    #     from Products.PloneLanguageTool import interfaces  # noqa F811
+    # except ImportError:
+    #     alias_module('Products.PloneLanguageTool.interfaces', bbb)
+    #     alias_module('Products.PloneLanguageTool', bbbd)
+    #     __import__(
+    #         'Products.PloneLanguageTool.LanguageTool',
+    #     ).PloneLanguageTool.LanguageTool = __import__(
+    #         'Products.PloneLanguageTool.LanguageTool',
+    #     ).PloneLanguageTool.LanguageTool.LanguageTool
 
 
 
-Running zodbupdate in Python2 installation
-------------------------------------------
+Migration Logs Errors And Warnings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In an older Version of zodbupdate the Database Migration is run in Python2 installation of Plone5.2.
+If there are log-messages during the migration or during verifydb that does not necessarily mean that the migration did not work or that your database is broken.
+For example if you migrated from Plone 4 to Plone 5 and then from Archetypes to Dexterity it is very likely that items in the database cannot be loaded because packages like `Products.Archetypes`, `plone.app.blob` or `plone.app.imaging` are not available.
+These items are most likely remains that were not removed properly but are not used.
+If your site otherwise works fine you can choose to ignore these issues.
 
-add zodbupdate to buildout eggs::
+Here is the output of a migration start started in Plone 4 with Archetypes.
+The site still works nicely in Plone 5.2 on Python 3.7 despite the warnings and errors::
+
+    Updating magic marker for var/filestorage/Data.fs
+    Loaded 2 decode rules from AccessControl:decodes
+    Loaded 12 decode rules from OFS:decodes
+    Loaded 2 decode rules from Products.PythonScripts:decodes
+    Loaded 1 decode rules from Products.ZopeVersionControl:decodes
+    Warning: Missing factory for App.Product ProductFolder
+    Warning: Missing factory for Products.Archetypes.ReferenceEngine ReferenceCatalog
+    Warning: Missing factory for Products.Archetypes.ArchetypeTool ArchetypeTool
+    Warning: Missing factory for Products.PloneLanguageTool.LanguageTool LanguageTool
+    Warning: Missing factory for Products.Archetypes.UIDCatalog UIDCatalog
+    Warning: Missing factory for Products.CMFPlone.MetadataTool MetadataTool
+    Warning: Missing factory for Products.CMFDefault.MetadataTool MetadataSchema
+    Warning: Missing factory for Products.Archetypes.ReferenceEngine ReferenceBaseCatalog
+    Warning: Missing factory for Products.ATContentTypes.tool.atct ATCTTool
+    Warning: Missing factory for Products.ATContentTypes.tool.topic TopicIndex
+    Warning: Missing factory for Products.ResourceRegistries.tools.CSSRegistry CSSRegistryTool
+    Warning: Missing factory for Products.ResourceRegistries.tools.CSSRegistry Stylesheet
+    Warning: Missing factory for Products.PasswordResetTool.PasswordResetTool PasswordResetTool
+    New implicit rule detected copy_reg _reconstructor to copyreg _reconstructor
+    New implicit rule detected __builtin__ object to builtins object
+    Warning: Missing factory for Products.CMFPlone.CalendarTool CalendarTool
+    Warning: Missing factory for Products.CMFPlone.InterfaceTool InterfaceTool
+    Warning: Missing factory for Products.CMFPlone.ActionIconsTool ActionIconsTool
+    Warning: Missing factory for Products.CMFActionIcons.ActionIconsTool ActionIcon
+    Warning: Missing factory for Products.Archetypes.UIDCatalog UIDBaseCatalog
+    Warning: Missing factory for Products.CMFPlone.UndoTool UndoTool
+    Warning: Missing factory for Products.TinyMCE.utility TinyMCE
+    Warning: Missing factory for Products.ResourceRegistries.tools.JSRegistry JSRegistryTool
+    Warning: Missing factory for Products.ResourceRegistries.tools.JSRegistry JavaScript
+    Warning: Missing factory for Products.CMFPlone.FactoryTool FactoryTool
+    New implicit rule detected copy_reg __newobj__ to copyreg __newobj__
+    Warning: Missing factory for Products.ATContentTypes.tool.metadata MetadataTool
+    Warning: Missing factory for Products.ATContentTypes.interfaces.interfaces IATCTTool
+    New implicit rule detected Products.CMFPlone.DiscussionTool DiscussionTool to OFS.SimpleItem SimpleItem
+    Warning: Missing factory for Products.CMFDefault.MetadataTool ElementSpec
+    Warning: Missing factory for Products.CMFDefault.MetadataTool MetadataElementPolicy
+    New implicit rule detected plone.app.folder.nogopip GopipIndex to plone.folder.nogopip GopipIndex
+    Warning: Missing factory for Products.ATContentTypes.content.folder ATFolder
+    Warning: Missing factory for Products.Archetypes.BaseUnit BaseUnit
+    Warning: Missing factory for Products.ATContentTypes.content.document ATDocument
+    Warning: Missing factory for plone.app.blob.content ATBlob
+    Warning: Missing factory for plone.app.blob.interfaces IATBlobImage
+    Warning: Missing factory for Products.ATContentTypes.interfaces.image IATImage
+    Warning: Missing factory for Products.ATContentTypes.interfaces.image IImageContent
+    Warning: Missing factory for plone.app.blob.field BlobWrapper
+    Warning: Missing factory for plonetheme.stiftung.portlets.news Assignment
+    Warning: Missing factory for plonetheme.stiftung.portlets.linkportlet Assignment
+    New implicit rule detected plone.app.portlets.portlets.events Assignment to plone.app.event.portlets.portlet_events Assignment
+    Warning: Missing factory for Products.Archetypes.ReferenceEngine Reference
+    Warning: Missing factory for Products.ATContentTypes.content.link ATLink
+    Warning: Missing factory for Products.ATContentTypes.content.newsitem ATNewsItem
+    Warning: Missing factory for Products.Archetypes.Field Image
+    Warning: Missing factory for plone.app.imaging.scale ImageScale
+    Warning: Missing factory for webdav.LockItem LockItem
+    Warning: Missing factory for plone.app.blob.interfaces IATBlobFile
+    Warning: Missing factory for Products.ATContentTypes.interfaces.file IATFile
+    Warning: Missing factory for Products.ATContentTypes.interfaces.file IFileContent
+    Error: cannot pickle modified record: Can't pickle <class 'Products.ResourceRegistries.tools.JSRegistry.JavaScript'>: attribute lookup Products.ResourceRegistries.tools.JSRegistry.JavaScript failed
+    Warning: Missing factory for plone.app.collection.collection Collection
+    Warning: Missing factory for collective.flowplayer.media VideoInfo
+    Error: cannot pickle modified record: Can't pickle <class 'Products.ResourceRegistries.tools.CSSRegistry.Stylesheet'>: attribute lookup Products.ResourceRegistries.tools.CSSRegistry.Stylesheet failed
+    Warning: Missing factory for Products.ResourceRegistries.interfaces.settings IResourceRegistriesSettings
+    Warning: Missing factory for collective.js.jqueryui.controlpanel IJQueryUICSS
+    Warning: Missing factory for collective.js.jqueryui.controlpanel IJQueryUIPlugins
+    Warning: Missing factory for wildcard.media.content Video
+    Committing changes (#1).
+
+    Found new rules: {
+     'Products.CMFPlone.DiscussionTool DiscussionTool': 'OFS.SimpleItem SimpleItem',
+     '__builtin__ object': 'builtins object',
+     'copy_reg __newobj__': 'copyreg __newobj__',
+     'copy_reg _reconstructor': 'copyreg _reconstructor',
+     'plone.app.folder.nogopip GopipIndex': 'plone.folder.nogopip GopipIndex',
+     'plone.app.portlets.portlets.events Assignment': 'plone.app.event.portlets.portlet_events Assignment',
+    }
+
+
+Broken Values In ZCTextIndex
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Some indexes of the type `ZCTextIndex` may hold invalid data which results in a traceback like this::
+
+    2019-03-11 17:06:37,622 ERROR   [portlets:38][waitress] Error while determining renderer availability of portlet ('context' '/Plone' 'events'): cannot use a string pattern on a bytes-like object
+    Traceback (most recent call last):
+      File "/Users/pbauer/.cache/buildout/eggs/plone.portlets-2.3.1-py3.7.egg/plone/portlets/manager.py", line 119, in _lazyLoadPortlets
+        isAvailable = renderer.available
+      File "/Users/pbauer/.cache/buildout/eggs/plone.app.event-3.2.2-py3.7.egg/plone/app/event/portlets/portlet_events.py", line 141, in available
+        return self.data.count > 0 and len(self.events)
+      File "/Users/pbauer/.cache/buildout/eggs/plone.app.event-3.2.2-py3.7.egg/plone/app/event/portlets/portlet_events.py", line 189, in events
+        expand=True, limit=data.count, **query
+      File "/Users/pbauer/.cache/buildout/eggs/plone.app.event-3.2.2-py3.7.egg/plone/app/event/base.py", line 151, in get_events
+        sort, sort_reverse)
+      File "/Users/pbauer/.cache/buildout/eggs/plone.app.event-3.2.2-py3.7.egg/plone/app/event/base.py", line 220, in filter_and_resort
+        idx = catalog.getIndexDataForRID(brain.getRID())
+      File "/Users/pbauer/.cache/buildout/eggs/Products.ZCatalog-4.2-py3.7.egg/Products/ZCatalog/ZCatalog.py", line 556, in getIndexDataForRID
+        return self._catalog.getIndexDataForRID(rid)
+      File "/Users/pbauer/.cache/buildout/eggs/Products.ZCatalog-4.2-py3.7.egg/Products/ZCatalog/Catalog.py", line 469, in getIndexDataForRID
+        result[name] = self.getIndex(name).getEntryForObject(rid, "")
+      File "/Users/pbauer/.cache/buildout/eggs/Products.ZCatalog-4.2-py3.7.egg/Products/ZCTextIndex/ZCTextIndex.py", line 214, in getEntryForObject
+        word_ids = self.index.get_words(documentId)
+      File "/Users/pbauer/.cache/buildout/eggs/Products.ZCatalog-4.2-py3.7.egg/Products/ZCTextIndex/BaseIndex.py", line 106, in get_words
+        return WidCode.decode(self._docwords[docid])
+      File "/Users/pbauer/.cache/buildout/eggs/Products.ZCatalog-4.2-py3.7.egg/Products/ZCTextIndex/WidCode.py", line 93, in decode
+        return [get(p) or _decode(p) for p in _prog.findall(code)]
+    TypeError: cannot use a string pattern on a bytes-like object
+
+Updating the catalog will update the index and make the error go away.
+
+
+Running Zodbupdate In Python 2
+------------------------------
+
+If the approach to run :py:mod:`zodbupdate` in Python 3 does not work you could try the older approach to migrate the database in Python 2.7.
+
+Prepare Buildout
+~~~~~~~~~~~~~~~~
+
+To do so add zodbupdate to buildout eggs without using the branch `convert-in-py3`:
+
+.. code-block:: ini
+
+    [buildout]
+
+    parts =+
+        zodbupdate
+
+    auto-checkout +=
+        zodbupdate
 
     [zodbupdate]
     recipe = zc.recipe.egg
     eggs =
-        ${buildout:eggs}
         zodbupdate
         zodb.py3migrate
+        ${buildout:eggs}
 
     scripts =
         zodb-py3migrate-analyze
         zodbupdate
 
+    [sources]
+    zodbupdate = git https://github.com/zopefoundation/zodbupdate.git pushurl=git@github.com:zopefoundation/zodbupdate.git branch=convert-in-py3
 
 
-Prepare zodbupdate in Python2 installation
-------------------------------------------
+Prepare Zodbupdate In Python 2 Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Before migrating you need to analyze the existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
 
-TODO: Not yet sure if custom types need to provide additional mappings for zodbupdate.
-
-
-If you have custom content types and add-ons, it is a good idea to first test the migration on a staging server.
-
-
-Here is an example Pull Request that adds them: `https://github.com/zopefoundation/Products.PythonScripts/pull/19 <https://github.com/zopefoundation/Products.PythonScripts/pull/19>`_
-
-
-Analyze existing objects in the ZODB and list classes with missing `[zodbupdate.decode]` mapping for attributes containing string values that could possibly break when converted to python3.
-workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or utf-8
+Workflow: analyze, read sourcecode, add pdb to see which values are passed to attribute to decide whether to use bytes or utf-8
 
 .. code-block:: bash
 
-    bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
+    ./bin/zodb-py3migrate-analyze py2/var/filestorage/Data.fs -b py2/var/blobstorage -v
     # this might be possible with zodbupdate (https://github.com/zopefoundation/zodbupdate/issues/10)
 
+If you need to add additional mappings to packages here is an example Pull Request that adds them: `https://github.com/zopefoundation/Products.PythonScripts/pull/19 <https://github.com/zopefoundation/Products.PythonScripts/pull/19>`_
+
+Migrate
+~~~~~~~
+
+Then you can migrate the database as described above with the exception that you cannot specify a default-encoding:
+
+.. code-block:: bash
+
+    ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs
 
 
-Downtime in Python2 installation
---------------------------------
+Downtime
+--------
 
-This step actually requires to take your site offline or into read-only mode.
+Some thoughts on doing upgrades without downtime that came up in a Hangout during a coding sprint in October 2018:
 
-
-Some thoughts on doing upgrades w/o downtime that came up in a hangout during a coding sprint in October 2018:
-
-
-- jim mentions downtime. would try to leverage the zrs replication protocol, secondary server with converted data.
-  It would probably be a trivial change to zrs.
-- for relstorage jim mentions a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
-- david thought out loud about taking down downtime: do conversion at read time....
+- You can try to leverage the zrs replication protocol, where the secondary server has the converted data. It would probably be a trivial change to zrs to get this to work.
+- For relstorage there is a zrs equivalent for relstorage: http://www.newtdb.org/en/latest/topics/following.html
