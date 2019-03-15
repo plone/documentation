@@ -669,6 +669,23 @@ Most likely you will have additional log-messages, warnings and even errors.
 Troubleshooting
 ---------------
 
+Data.fs.index broken
+~~~~~~~~~~~~~~~~~~~~
+
+Delete `Data.fs.index` before migrating or you will get this error during migrating::
+
+    $ ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding=utf8
+    Updating magic marker for var/filestorage/Data.fs
+    loading index
+    Traceback (most recent call last):
+      File "/home/erral/downloads/eggs/ZODB-5.5.1-py3.6.egg/ZODB/FileStorage/FileStorage.py", line 465, in _restore_index
+        info = fsIndex.load(index_name)
+      File "/home/erral/downloads/eggs/ZODB-5.5.1-py3.6.egg/ZODB/fsIndex.py", line 134, in load
+        v = unpickler.load()
+    UnicodeDecodeError: 'ascii' codec can't decode byte 0x80 in position 249: ordinal not in range(128)
+
+This error can be safely ignored.
+
 
 ModuleNotFoundError: No module named 'PloneLanguageTool'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -813,7 +830,7 @@ The site still works nicely in Plone 5.2 on Python 3.7 despite the warnings and 
 Broken Values In ZCTextIndex
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Some indexes of the type `ZCTextIndex` may hold invalid data which results in a traceback like this::
+After the migration some indexes of the type `ZCTextIndex` may hold invalid data which results in a traceback like this::
 
     2019-03-11 17:06:37,622 ERROR   [portlets:38][waitress] Error while determining renderer availability of portlet ('context' '/Plone' 'events'): cannot use a string pattern on a bytes-like object
     Traceback (most recent call last):
@@ -839,7 +856,136 @@ Some indexes of the type `ZCTextIndex` may hold invalid data which results in a 
         return [get(p) or _decode(p) for p in _prog.findall(code)]
     TypeError: cannot use a string pattern on a bytes-like object
 
-Updating the catalog will update the index and make the error go away.
+Updating the catalog will update the index and the error should go away.
+
+This is fixed in https://github.com/plone/plone.app.event/pull/303
+
+
+Error when creating or updating relations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When creating or updating relations in a migrated site a error might happen.
+The cause is `self.root_oid` in `KeyReferenceToPersistent` being text, not bytes. This is probably caused by the `_p_oid` of some `z3c.relationfield.relation.RelationValue` objects being text instead of bytes.
+
+Here is the traceback::
+
+    Traceback (innermost last):
+      Module ZPublisher.WSGIPublisher, line 142, in transaction_pubevents
+      Module ZPublisher.WSGIPublisher, line 295, in publish_module
+      Module ZPublisher.WSGIPublisher, line 229, in publish
+      Module ZPublisher.mapply, line 85, in mapply
+      Module Products.PDBDebugMode.wsgi_runcall, line 60, in pdb_runcall
+      Module plone.z3cform.layout, line 63, in __call__
+      Module plone.z3cform.layout, line 47, in update
+      Module plone.dexterity.browser.edit, line 58, in update
+      Module plone.z3cform.fieldsets.extensible, line 65, in update
+      Module plone.z3cform.patch, line 30, in GroupForm_update
+      Module z3c.form.group, line 145, in update
+      Module plone.app.z3cform.csrf, line 22, in execute
+      Module z3c.form.action, line 98, in execute
+      Module z3c.form.button, line 315, in __call__
+      Module z3c.form.button, line 170, in __call__
+      Module plone.dexterity.browser.edit, line 30, in handleApply
+      Module z3c.form.group, line 126, in applyChanges
+      Module zope.event, line 32, in notify
+      Module zope.component.event, line 27, in dispatch
+      Module zope.component._api, line 124, in subscribers
+      Module zope.interface.registry, line 442, in subscribers
+      Module zope.interface.adapter, line 607, in subscribers
+      Module zope.component.event, line 36, in objectEventNotify
+      Module zope.component._api, line 124, in subscribers
+      Module zope.interface.registry, line 442, in subscribers
+      Module zope.interface.adapter, line 607, in subscribers
+      Module z3c.relationfield.event, line 80, in updateRelations
+      Module z3c.relationfield.event, line 23, in addRelations
+      Module z3c.relationfield.event, line 141, in _setRelation
+      Module zc.relation.catalog, line 557, in index_doc
+      Module zc.relation.catalog, line 486, in _indexNew
+      Module zc.relation.catalog, line 588, in _getValuesAndTokens
+      Module z3c.relationfield.relation, line 33, in from_id
+      Module plone.app.relationfield.monkey, line 13, in get_from_object
+      Module z3c.relationfield.relation, line 126, in _object
+      Module zope.intid, line 85, in getObject
+      Module five.intid.keyreference, line 128, in __call__
+      Module five.intid.keyreference, line 108, in wrapped_object
+      Module five.intid.keyreference, line 101, in root
+      Module ZODB.Connection, line 247, in get
+      Module ZODB.mvccadapter, line 143, in load
+      Module ZODB.FileStorage.FileStorage, line 564, in loadBefore
+      Module ZODB.FileStorage.FileStorage, line 521, in _lookup_pos
+      Module ZODB.fsIndex, line 108, in __getitem__
+    AssertionError
+
+This is not yet properly solved. A solution may be https://github.com/plone/five.intid/pull/7
+
+
+Cannot edit content with old revisions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When editing content that had existing versions from before the migration (i.e. `plone.app.versioningbehavior` is enabled) a traceback happens. While unpickling the previous revision this happens because `webdav.LockItem.LockItem` is no longer there::
+
+    2019-03-14 11:47:09,738 ERROR [Zope.SiteErrorLog:250][waitress] http://lcoalhost:8080/Plone/foo/@@edit
+    Traceback (innermost last):
+      Module ZPublisher.WSGIPublisher, line 142, in transaction_pubevents
+      Module ZPublisher.WSGIPublisher, line 295, in publish_module
+      Module ZPublisher.WSGIPublisher, line 229, in publish
+      Module ZPublisher.mapply, line 85, in mapply
+      Module ZPublisher.WSGIPublisher, line 57, in call_object
+      Module plone.z3cform.layout, line 63, in __call__
+      Module plone.z3cform.layout, line 47, in update
+      Module plone.dexterity.browser.edit, line 58, in update
+      Module plone.z3cform.fieldsets.extensible, line 65, in update
+      Module plone.z3cform.patch, line 30, in GroupForm_update
+      Module z3c.form.group, line 145, in update
+      Module plone.app.z3cform.csrf, line 22, in execute
+      Module z3c.form.action, line 98, in execute
+      Module z3c.form.button, line 315, in __call__
+      Module z3c.form.button, line 170, in __call__
+      Module plone.dexterity.browser.edit, line 30, in handleApply
+      Module z3c.form.group, line 126, in applyChanges
+      Module zope.event, line 32, in notify
+      Module zope.component.event, line 27, in dispatch
+      Module zope.component._api, line 124, in subscribers
+      Module zope.interface.registry, line 442, in subscribers
+      Module zope.interface.adapter, line 607, in subscribers
+      Module zope.component.event, line 36, in objectEventNotify
+      Module zope.component._api, line 124, in subscribers
+      Module zope.interface.registry, line 442, in subscribers
+      Module zope.interface.adapter, line 607, in subscribers
+      Module plone.app.versioningbehavior.subscribers, line 53, in create_version_on_save
+      Module Products.CMFEditions.CopyModifyMergeRepositoryTool, line 470, in isUpToDate
+      Module Products.CMFEditions.ArchivistTool, line 400, in isUpToDate
+      Module Products.CMFEditions.ZVCStorageTool, line 304, in getModificationDate
+      Module Products.CMFEditions.ZVCStorageTool, line 262, in retrieve
+      Module Products.ZopeVersionControl.Repository, line 461, in getVersionOfResource
+      Module Products.ZopeVersionControl.Version, line 99, in copyState
+      Module Products.ZopeVersionControl.Version, line 108, in stateCopy
+      Module Products.ZopeVersionControl.Version, line 56, in cloneByPickle
+      Module ZODB.broken, line 331, in __reduce__
+    ZODB.broken.BrokenModified: <persistent broken webdav.LockItem.LockItem instance b'\x00\x00\x00\x00\x00=\xf0_'>
+
+Workaround: Disable content revisions and delete old revisions:
+
+.. warning::
+
+    The workaround will delete all the revisions in your Plone site, so be careful!
+
+* Go to `/Plone/portal_purgepolicy/manage_propertiesForm` and set 0 to the number of stored revisions.
+* Stop the instance, start it in debug mode and delete all old revisions:
+
+  .. code-block:: bash
+
+      $ ./bin/instance debug
+
+      from zope.site.hooks import setSite
+      app.Plone.portal_historiesstorage._shadowStorage._storage.clear()
+      app.Plone.portal_historiesstorage.zvc_repo._histories.clear()
+      import transaction
+      transaction.commit()
+      Ctrl-D
+
+See https://github.com/plone/Products.CMFPlone/issues/2800
+
 
 
 Running Zodbupdate In Python 2
