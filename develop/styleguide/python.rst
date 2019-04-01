@@ -27,12 +27,12 @@ If you absolutely need to break this rule, append ``  # noqa: E501`` to the offe
     Configuring your editor to display a line at 79th column helps a lot here and saves time.
 
 .. note::
-    The line length rule also applies to non-python source files, such as ``.zcml`` files, but is a bit more relaxed there.
+    The line length rule also applies to non-Python source files, such as ``.zcml`` files, but is a bit more relaxed there.
 
 .. note::
     The rule explicitly **does not apply to documentation** ``.rst`` files.
-    For ``.rst`` files including the package documentation but also ``README.rst``, ``CHANGES.rst`` and doctests, use *semantic line-breaks* and add a line break after each sentence.
-    See the :doc:` documentation styleguide </about/contributing/documentation_styleguide>` for the reasoning behind it.
+    For ``.rst`` files including the package documentation but also ``README.rst``, ``CHANGES.rst``, and doctests, add a line break after each sentence.
+    See the :doc:` documentation styleguide </about/contributing/documentation_styleguide>` for more information.
 
 
 Breaking lines
