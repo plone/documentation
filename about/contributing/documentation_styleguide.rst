@@ -80,54 +80,48 @@ Headings And Filenames
 * For the filenames, use-dash-naming-style
 
 Documentation Structure
-=======================
+-----------------------
 
-For including documentation into docs.plone.org, **please** follow these guidelines:
-
-
-* All documentation should be written in **valid** `ReStructuredText <http://docutils.sourceforge.net/rst.html>`_  There are some :doc:`helper_tools` available.
+* All documentation should be written in **valid** `reStructuredText <http://docutils.sourceforge.net/rst.html>`_.
+  There are some :doc:`helper_tools` available.
 
 * The top level of your package should contain the following documentation-related files:
 
-  - README.rst   This should be a **short** description of your add-on, not the entire documentation!
-    See the :ref:`styleguide-readme-example`
+  - ``README.rst`` — This should be a **short** description of your add-on, not the entire documentation!
+    See the :ref:`styleguide-readme-example`.
 
-  - CHANGES.rst  This should track the feature changes in your add-on, see :doc:`changelog-example`
+  - ``CHANGES.rst`` — This should track the feature changes in your add-on.
+    See :doc:`changelog-example`.
 
-  - CONTRIBUTORS.rst  This should list the people writing, translating and otherwise contributing
+  - ``CONTRIBUTORS.rst`` — This should list the people writing, translating, and otherwise contributing to your package.
 
-* All of your (longer) end-user documentation should go into the /docs subdirectory. Feel free to split your documentation into separate files, or even further subdirectories if it helps clarity.
+* All of your (longer) end-user documentation should go into the ``/docs/`` subdirectory.
+  Feel free to split your documentation into separate files, or even further subdirectories, if it helps clarity.
 
-* Make **absolutely** sure there is a start page called index.rst.
-  It is also usually a *really* good idea to have that include a Table of Content, see :ref:`styleguide-toc-example`
+* Make **absolutely** sure there is a start page called ``index.rst``.
+  It is also a *really* good idea to have that include a Table of Contents.
+  See :ref:`styleguide-toc-example`.
 
-* use relative links for internal links within your /docs/ directory, to include images for instance.
+* Use relative links for internal links within your ``/docs/`` directory when referencing images, for instance.
 
-* If you want to include images and screenshots, you should place them into /docs/resources/ , along with other resources like PDF's, audio, video, etcetera.
+* If you want to include images and screenshots, you should place them into ``/docs/resources/``, along with other resources, such as PDFs, audio, video, and so on.
 
-* Please do not symlink to, or use the *include* directive on files that live outside your '/docs' directory.
+* Please do not symlink to, or use the ``include`` directive on, files that live outside your ``/docs/`` directory.
 
-* Please do not use 'autodoc' to include comments of your code.
+* Please do not use ``autodoc`` to include comments of your code.
 
-* The '/docs' directory should contain **only** content related to documentation, please do **not** put the license here.
-  A LICENSE.rst with a short description of the license, and LICENSE.GPL for the legalese should go into the top level of your package next to your README.rst
+* The ``/docs/`` directory should contain content **only** related to documentation.
+  Please do **not** put the license here.
+  A ``LICENSE.rst`` with a short description of the license, and ``LICENSE.GPL`` for the legalese should go into the top level of your package next to your ``README.rst``.
 
-* Please follow this :doc:`rst-styleguide` and use **semantic linefeeds**.
-  Do **not** break your sentences into half with newlines because you somehow think you should follow PEP8.
-  PEP8 is for Python files, not for ReStructuredText.
-
-* Please follow our :doc:`word_choice`.
-
-* Usage of `Sphinx <http://sphinx-doc.org/>`_ within your project is optional, but if you want your add-on to (also) be documented for instance on `Read The Docs <https://readthedocs.org/>`_ it is highly recommended.
-Put the associated Makefile and conf.py into the /docs directory.
+* Usage of `Sphinx <http://sphinx-doc.org/>`_ within your project is optional, but if you want your add-on to (also) be documented, for instance on `Read The Docs <https://readthedocs.org/>`_, it is highly recommended.
+  Put the associated ``Makefile`` and ``conf.py`` into the ``/docs/`` directory.
 
 
 .. note::
 
-   If you use `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ to generate the layout of your add-on,
-   the recommended files will already be there, and in the right place.
-
-   You'll still have to write the content, though.
+   If you use `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ to generate the layout of your add-on, the recommended files will already be there, and in the right place.
+   You will still have to write the content, though.
 
 
 .. _styleguide-toc-example:
