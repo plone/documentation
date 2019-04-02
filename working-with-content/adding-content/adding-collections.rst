@@ -1,5 +1,5 @@
 ==================
-Adding collections
+Adding Collections
 ==================
 
 Collections (formerly called Smart Folders) are virtual containers of
