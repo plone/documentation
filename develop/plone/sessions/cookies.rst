@@ -2,71 +2,73 @@
 Cookies
 =======
 
-.. admonition:: Description
+.. topic:: Description
 
-    Handling session and other cookies in Plone
+    Handling cookies in Plone
 
 
 Introduction
 ============
 
-Setting and getting cookies
+Cookies in Plone are read from the request and set on the response.
+There is an API for cookie handling.
+Reading the raw cookie direct from the request header is still possible, but not needed.
+Same is valid for setting cookies on the response.
 
-* http://www.dieter.handshake.de/pyprojects/zope/book/chap3.html
-
-* http://stackoverflow.com/questions/1034252/how-do-you-get-and-set-cookies-in-zope-and-plone
 
 Reading cookies
 ===============
 
-Usually you want to read incoming cookies sent by the browser.
+Incoming cookies are sent by the browser in the request header.
+The incoming request was already parsed by the publisher.
+Cookies are available as ``cookies`` mapping variable on the request.
 
-Example::
+.. code-block:: python
 
     self.request.cookies.get("cookie_name", "default_value_if_cookie_not_set")
 
 Setting cookies
 ===============
 
-See `HTTPResponse.setCookie() <https://github.com/zopefoundation/Zope/blob/master/src/ZPublisher/HTTPResponse.py#L241>`_.
+Setting cookies is done on the response.
+Each cookie name there can be a new or an existing one.
+When sending the request, the information is turned into a properly formatted `Set-Cookie` header.
 
-Modifying HTTP response cookies
-===============================
+.. code-block:: python
 
-You might want to tune up or clean cookies after some other part of Plone code has set them.
-You can do this in :doc:`post-publication event handler </develop/plone/serving/http_request_and_response>`.
+    self.request.response.setCookie("cookie_name", "cookie_value")
 
-Example ``cleancookies.py`` (needs ZCML subscriber registration too)::
+A cookie may have `cookie-attributes <https://en.wikipedia.org/wiki/HTTP_cookie#Cookie_attributes>`_ set.
+Those are passed as keyword arguments to ``setCookie``.
+Turning a cookie into a non-session cookie requires a expires='date' keyword,
+limiting the cookie to a path is a path='/somepath' keyword to the `setCookie()` method.
+The usual browser cookie rules apply here.
 
-    """
+.. code-block:: python
 
-        Clean I18N cookies from non-HTML responses so that e.g. Image
-        content, which has language set, and is cross-linked across page,
-        don't inadvertiately change the langauge.
-
-    """
-
-    from zope.interface import Interface
-    from zope.component import adapter
-    from plone.postpublicationhook.interfaces import IAfterPublicationEvent
+    self.request.response.setCookie(
+        "cookie_name",
+        "cookie_value",
+        quoted=False,  # default is True
+        attribute_on_cookie="attribute value",
+        another_attribute="another attribute value",
+    )
 
 
-    @adapter(Interface, IAfterPublicationEvent)
-    def clean_language(object, event):
-        """ Clean up cookies after HTTPResponse object has been constructed completely.
+Clearing cookies
+================
 
-        Post-publication handler.
-        """
-        request = event.request
+If a cookie needs to be removed, the browser has to be told to expire it.
+The ``expireCookie`` method does this.
+It always set ``max_age`` to ``0`` and the ``expires`` date to the past.
+Additional the cookie value will be set to ``deleted``.
 
-        #print "%s %s" % (request["URL"], request.response.cookies)
+.. code-block:: python
 
-        # All non-HTML payloads
-        if not request.response.headers["content-type"].startswith("text/html"):
-            # Rip-off I18N_language cookie
-            if "I18N_LANGUAGE" in request.response.cookies:
-                print "Cleaned up cookie for %s" % request["URL"]
-                del request.response.cookies["I18N_LANGUAGE"]
+    self.request.response.expireCookie("cookie_name")
+
+The method allows additional attributes to be passed as kwargs, similar to ``setCookie``.
+Except ``max_age``, ``expires`` and ``value`` all is allowed, like `path` or other cookie attributes.
 
 
 Default Plone cookies
@@ -92,6 +94,13 @@ Typical Plone cookies::
 	# Plone copy-paste clipboard
 	__cp="x%25DA%2515%258AA%250A%25800%250C%2504%25A3%25A0%25E0E%257CF%25FF%25E4%2529%2587%25801%25D5B%25B3-%25F8%257B%25D3%25C3%250E%25CC%25B0i%2526%2522%258D%25D19%2505%25D2%2512%25C0P%25DF%2502%259D%25AB%253E%250C%2514_%25C3%25CAu%258B%25C0%258Fq%2511s%25E8k%25EC%250AH%25FE%257C%258Fh%25AD%25B3qm.9%252B%257E%25FD%25D1%2516%25B3"; Path=/
 
+Authentication cookie
+---------------------
+
+The ``__ac`` cookie is set by the PluggableAuthentication service after login.
+For better and more secure control over the cookie `plone.session <https://pypi.org/project/plone.session/>`_ can be used.
+
+
 Zope session cookie
 -------------------
 
@@ -105,8 +114,7 @@ Language cookie
 ---------------
 
 ``I18N_LANGUAGE`` is set by ``portal_languages`` tool.
-Disable it by *Use cookie for manual override* setting in
-``portal_languages``.
+Disable it by *Use cookie for manual override* setting in ``portal_languages``.
 
 Also, language cookie has a special lifecycle when plone.app.multilingual is installed.
 This may affect your front-end web server caching. If configured improperly,
@@ -124,12 +132,11 @@ Setting session cookie lifetime
 Sanitizing cookies for the cache
 ================================
 
-You don't want to store HTTP responses with cookies in a front end cache
-server, because this would be a leak of other users' information.
+You don't want to store HTTP responses with cookies in a front end cache server,
+because this would be a leak of other users' information.
 
-Don't cache pages with cookies set. Also with multilingual sites it makes
-sense to have unique URLs for different translations as this greatly
-simplifies caching (you can ignore language cookie).
+Don't cache pages with cookies set.
+Also with multilingual sites it makes sense to have unique URLs for different translations as this greatly simplifies caching (you can ignore language cookie).
 
 Note that cookies can be set:
 
@@ -137,10 +144,54 @@ Note that cookies can be set:
 
 * on the client side, by JavaScript (Google Analytics)
 
-... so you might need to clean cookies for both incoming HTTP requests and
-HTTP responses.
+... so you might need to clean cookies for both incoming HTTP requests and HTTP responses.
 
 :doc:`More info in Varnish section of this manual </manage/deploying/caching/varnish3>`.
+
+
+Late cleanup of HTTP response cookies
+=====================================
+
+You might want to tune up or clean cookies after some other part of Plone code has set them.
+You can do this after all processing is done and before the transaction is committed.
+Subscribing to `ZPublisher.interfaces.IPubBeforeCommit` event
+
+Put the code below in a ``cleancookies.py``.
+
+.. code-block:: python
+
+    """Clean I18N cookies from non-HTML responses so that e.g. Image content,
+    which has language set, and is cross-linked across page,
+    don't inadvertiately change the language.
+    """
+
+    from zope.interface import Interface
+    from zope.component import adapter
+    from ZPublisher.interfaces import IPubBeforeCommit
+
+
+    @adapter(Interface, IAfterPublicationEvent)
+    def clean_language(object, event):
+        """ Clean up cookies after HTTPResponse object has been constructed completely.
+
+        Post-publication handler.
+        """
+        request = event.request
+
+        # All non-HTML payloads
+        if (
+            not event.request.response.headers["content-type"].startswith("text/html"):
+            and "I18N_LANGUAGE" in request.response.cookies
+        ):
+            del request.response.cookies["I18N_LANGUAGE"]
+
+
+Register the `clean_language` function as a subscriber in ZCML:
+
+.. code-block:: xml
+
+    <subscriber handler=".cleancookies.clean_language" />
+
 
 Signing cookies
 =================
