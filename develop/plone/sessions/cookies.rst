@@ -11,9 +11,9 @@ Introduction
 ============
 
 Cookies in Plone are read from the request and set on the response.
-There is an API for cookie handling.
+There are methods on request and response for cookie handling.
 Reading the raw cookie direct from the request header is still possible, but not needed.
-Same is valid for setting cookies on the response.
+Same is valid for setting or expiring cookies on the response.
 
 
 Reading cookies
@@ -32,7 +32,7 @@ Setting cookies
 
 Setting cookies is done on the response.
 Each cookie name there can be a new or an existing one.
-When sending the request, the information is turned into a properly formatted `Set-Cookie` header.
+When sending the request, the information is turned into a properly formatted ``Set-Cookie`` header.
 
 .. code-block:: python
 
@@ -40,8 +40,8 @@ When sending the request, the information is turned into a properly formatted `S
 
 A cookie may have `cookie-attributes <https://en.wikipedia.org/wiki/HTTP_cookie#Cookie_attributes>`_ set.
 Those are passed as keyword arguments to ``setCookie``.
-Turning a cookie into a non-session cookie requires a expires='date' keyword,
-limiting the cookie to a path is a path='/somepath' keyword to the `setCookie()` method.
+Turning a cookie into a non-session cookie requires an ``expires='date'`` keyword and value.
+Limiting the cookie to a path requires a ``path='/somepath'`` keyword and value for the ``setCookie()`` method.
 The usual browser cookie rules apply here.
 
 .. code-block:: python
@@ -60,15 +60,15 @@ Clearing cookies
 
 If a cookie needs to be removed, the browser has to be told to expire it.
 The ``expireCookie`` method does this.
-It always set ``max_age`` to ``0`` and the ``expires`` date to the past.
-Additional the cookie value will be set to ``deleted``.
+It always sets ``max_age`` to ``0`` and the ``expires`` date to the past.
+Additionally the cookie value will be set to ``deleted``.
 
 .. code-block:: python
 
     self.request.response.expireCookie("cookie_name")
 
 The method allows additional attributes to be passed as kwargs, similar to ``setCookie``.
-Except ``max_age``, ``expires`` and ``value`` all is allowed, like `path` or other cookie attributes.
+Except ``max_age``, ``expires`` and ``value`` all is allowed, like ``path`` or other cookie attributes.
 
 
 Default Plone cookies
@@ -132,10 +132,9 @@ Setting session cookie lifetime
 Sanitizing cookies for the cache
 ================================
 
-You don't want to store HTTP responses with cookies in a front end cache server,
-because this would be a leak of other users' information.
+You do not want to store HTTP responses with cookies in a front end cache server, because this would be a leak of other users' information.
 
-Don't cache pages with cookies set.
+Do not cache pages with cookies set.
 Also with multilingual sites it makes sense to have unique URLs for different translations as this greatly simplifies caching (you can ignore language cookie).
 
 Note that cookies can be set:
@@ -152,17 +151,15 @@ Note that cookies can be set:
 Late cleanup of HTTP response cookies
 =====================================
 
-You might want to tune up or clean cookies after some other part of Plone code has set them.
-You can do this after all processing is done and before the transaction is committed.
-Subscribing to `ZPublisher.interfaces.IPubBeforeCommit` event
+You can do this after all processing is done and before the transaction is committed by subscribing to the ``ZPublisher.interfaces.IPubBeforeCommit`` event.
 
-Put the code below in a ``cleancookies.py``.
+Put the code below in a file ``cleancookies.py``.
 
 .. code-block:: python
 
-    """Clean I18N cookies from non-HTML responses so that e.g. Image content,
-    which has language set, and is cross-linked across page,
-    don't inadvertiately change the language.
+    """Clean I18N cookies from non-HTML responses.
+    E.g. Image content, which has language set, and is cross-linked across page,
+    do not inadvertently change the language.
     """
 
     from zope.interface import Interface
