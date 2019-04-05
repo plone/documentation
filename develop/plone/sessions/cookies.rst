@@ -98,7 +98,7 @@ Authentication cookie
 ---------------------
 
 The ``__ac`` cookie is set by the PluggableAuthentication service after login.
-For better and more secure control over the cookie `plone.session <https://pypi.org/project/plone.session/>`_ can be used.
+For better and more secure control over the cookie and its lifetime `plone.session <https://pypi.org/project/plone.session/>`_ can be used.
 
 
 Zope session cookie
@@ -113,21 +113,18 @@ It is set first time when session data is written.
 Language cookie
 ---------------
 
-``I18N_LANGUAGE`` is set by ``portal_languages`` tool.
-Disable it by *Use cookie for manual override* setting in ``portal_languages``.
+The cookie ``I18N_LANGUAGE`` is set by Plone ``portal_languages`` tool.
+
+The cookie can be disabled.
+Be aware, after disabling the cookie, language switching using the language selector viewlet is no longer functional.
+To disable the cookie, untick the checkbox :guilabel:`Use cookie for manual override` in Plone controlpanel :guilabel:`Language` under :guilabel:`Negotiation Scheme`.
 
 Also, language cookie has a special lifecycle when plone.app.multilingual is installed.
-This may affect your front-end web server caching. If configured improperly,
-the language cookie gets set on images and static assets like CSS HTTP responses.
+This may affect your front-end web server caching.
+If configured improperly, the language cookie gets set on images and static assets like CSS HTTP responses.
 
 * http://stackoverflow.com/questions/5715216/why-plone-3-sets-language-cookie-to-css-js-registry-files-and-how-to-get-rid-o
 
-Session cookie lifetime
-=======================
-
-Setting session cookie lifetime
-
-* https://plone.org/documentation/kb/cookie-duration
 
 Sanitizing cookies for the cache
 ================================
