@@ -67,8 +67,9 @@ Additionally the cookie value will be set to ``deleted``.
 
     self.request.response.expireCookie("cookie_name")
 
-The method allows additional attributes to be passed as kwargs, similar to ``setCookie``.
-Except ``max_age``, ``expires`` and ``value`` all is allowed, like ``path`` or other cookie attributes.
+The method ``expireCookie`` allows additional attributes to be passed as keyword arguments, similar to ``setCookie``.
+Above mentioned ``max_age``, ``expires`` and ``value`` are not allowed.
+A common key and value pair used here is ``path``.
 
 
 Default Plone cookies
