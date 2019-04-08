@@ -32,7 +32,7 @@ Setting cookies
 
 Setting cookies is done on the response.
 Each cookie name there can be a new or an existing one.
-When sending the request, the information is turned into a properly formatted ``Set-Cookie`` header.
+When sending the response, the information is turned into a properly formatted ``Set-Cookie`` header.
 
 .. code-block:: python
 
