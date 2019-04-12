@@ -115,10 +115,6 @@ Then the source of the add-on package will be checked out into the ``src`` folde
         auto-checkout +=
             collective.package
 
-        [versions]
-        Products.PrintingMailHost = 1.1.1
-        Products.PDBDebugMode = 1.4
-
 .. code-block:: shell
 
     ./bin/buildout -c local.cfg
