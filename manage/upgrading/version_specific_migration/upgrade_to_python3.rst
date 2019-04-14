@@ -168,7 +168,7 @@ Install ``isort`` into your Python 3 environment with ``pip``.
 Usage
 ~~~~~
 
-The following command runs an import fixer on all Python files.
+The following command is a dry-run. I shows all changes that ``modernize`` would make.
 
 .. code-block:: shell
 
@@ -192,7 +192,7 @@ You can use ``isort`` to fix the order of imports:
 
     ./bin/isort -rc src/collective.package
 
-After you run the command above, you can fix what ``modernizer`` did not get right.
+After you run the commands above, you need to review all changes and fix what ``modernizer`` did not get right.
 
 3 Use ``precompiler``
 ---------------------
