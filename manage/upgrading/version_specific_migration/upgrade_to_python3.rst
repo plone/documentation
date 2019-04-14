@@ -566,11 +566,10 @@ Depending on your buildout this could look like this:
         ${buildout:eggs}
 
     [sources]
-    zodbupdate = git https://github.com/zopefoundation/zodbupdate.git pushurl=git@github.com:zopefoundation/zodbupdate.git branch=convert-in-py3
+    zodbupdate = git https://github.com/zopefoundation/zodbupdate.git pushurl=git@github.com:zopefoundation/zodbupdate.git branch=master
 
 
-This adds a new buildout-part `zodbupdate` and uses a checkout of the branch `convert-in-py3` of :py:mod:`zodbupdate`.
-The branch is necessary until https://github.com/zopefoundation/zodbupdate/pull/14 is merged. The coredev also uses this branch.
+This adds a new buildout-part ``zodbupdate``. The coredev already has this part.
 
 After re-running buildout you will now have a new executable `./bin/zodbupdate`.
 
@@ -596,8 +595,6 @@ After re-running buildout you will now have a new executable `./bin/zodbupdate`.
 
 Migrate Database using zodbupdate
 ---------------------------------
-
-Make sure you use the branch `convert-in-py3` of :py:mod:`zodbupdate`.
 
 The migration of the database is run on Plone 5.2 in Python 3.
 It is expected to work equally in Python 3.6 and 3.7.
