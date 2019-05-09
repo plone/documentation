@@ -93,8 +93,6 @@ Management Interface
     This will take you to the :doc:`Management Interface <management-interface>`.
     In normal use, there is no need to go here. **Experts only**.
     But should you require access to the underlying software stack, here it is.
-Caching
-    Here you can :doc:`enable and fine-tune <caching>` Plone's caching settings. This can have a great beneficial effect on the speed of your site, but make sure to read the documentation first.
 Configuration Registry
     Provides :doc:`direct acces to all system variables <configuration-registry>`. Handle with care.
 Resource Registries
