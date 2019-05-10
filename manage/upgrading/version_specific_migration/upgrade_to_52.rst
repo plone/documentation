@@ -68,7 +68,7 @@ See :doc:`/manage/version-specific-migration/upgrade_to_python3` for details abo
 Zope 4.0
 --------
 
-Zope runs on top of Zope 4.0 instead of Zope 2.13.x.
+Plone runs on top of Zope 4.0 instead of Zope 2.13.x.
 
 This is `PLIP 1351 <https://github.com/plone/Products.CMFPlone/issues/1351>`_.
 
