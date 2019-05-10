@@ -5,6 +5,8 @@ Changelog
 
 Unreleased
 ==========
+
+- Update the ZODB py2-py3 migration guide and move to own document [jensens]
 - explain how to find available image scales
   [tkimnguyen]
 - Documentation for Thumbs and Iconhandling in Plone

@@ -15,4 +15,5 @@ Version-specific migration procedures and tips
    upgrade_to_51
    upgrade_to_52
    upgrade_to_python3
+   upgrade_zodb_to_python3
 
