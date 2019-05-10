@@ -120,7 +120,8 @@ Functional tests using the zope.testbrowser now use ``WebTest`` instead of ``mec
 WSGI
 ----
 
-This is a result of the PLIP for Python 3. Plone 5.2 by default uses the WSGI-Server ``waitress`` to
+This is a result of the PLIP for Python 3.
+Plone 5.2 by default uses the WSGI-Server `waitress <https://docs.pylonsproject.org/projects/waitress/en/stable/>`_.
 
 For End Users
 ~~~~~~~~~~~~~
@@ -130,9 +131,11 @@ Nothing changes.
 For Developers
 ~~~~~~~~~~~~~~
 
-By default Plone uses ``waitress`` instead of ``ZServer`` as a http-server since ``ZServer`` will not ported to Python 3. Only when running on Python 2 you can still decide to use ``ZServer`` by setting ``wsgi = off`` in the buildout-part that configures the instance with ``plone.recipe.zope2instance``.
+By default Plone uses ``waitress`` instead of ``ZServer`` as a HTTP-server since ``ZServer`` will not ported to Python 3.
+Only when running on Python 2 you can still decide to use ``ZServer`` by setting ``wsgi = off`` in the buildout-part that configures the instance with ``plone.recipe.zope2instance``.
 
-Some options that used to configure ``ZServer`` are no longer available in ``plone.recipe.zope2instance`` when running on ``WSGI``. Check https://pypi.org/project/plone.recipe.zope2instance for details.
+Some options that used to configure ``ZServer`` are no longer available in ``plone.recipe.zope2instance`` when running on ``WSGI``.
+Check https://pypi.org/project/plone.recipe.zope2instance for details.
 
 
 plone.restapi
@@ -149,6 +152,7 @@ For Developers
 ~~~~~~~~~~~~~~
 
 You can now use a RESTful hypermedia API for Plone to build modern JavaScript front-ends on top of Plone.
+Also, the REST-api can be used to import or export data.
 
 See https://plonerestapi.readthedocs.io/en/latest/ for details.
 
@@ -170,7 +174,8 @@ For Developers
 
 For upgraded sites the dropdown-navigation is disabled by default, for new sites it is set to display 3 levels.
 
-The code for the global navigation has moved to ``plone.app.layout.navigation.navtree.NavTreeProvider`` and the template ``plone.app.layout/plone/app/layout/viewlets/sections.pt`` has changed. Overrides of the previous navigation may no longer work and need to be updated.
+The code for the global navigation has moved to ``plone.app.layout.navigation.navtree.NavTreeProvider`` and the template ``plone.app.layout/plone/app/layout/viewlets/sections.pt`` has changed.
+Overrides of the previous navigation may no longer work and need to be updated.
 
 Developers who used add-ons or custom code for a dropdown-navigation should consider migrating to the new navigation since it is extremely fast, accessible and implemented almost entirely with css and html.
 
@@ -255,7 +260,7 @@ Then register the adapter through ZCML:
         factory="your.addon.adapters.RedirectAfterLoginAdapter"
         for="OFS.interfaces.ITraversable
              zope.publisher.interfaces.IRequest"
-        />
+    />
 
 This adapter adapts context and request, thus you can modify these according to your needs.
 You can also write similar adapters for ``IInitialLogin`` and ``IForcePasswordChange``.
@@ -328,4 +333,4 @@ Nothing changes.
 For Developers
 ~~~~~~~~~~~~~~
 
-TODO
+All JavaScript related code is now located in ``plone.staticresources``.
