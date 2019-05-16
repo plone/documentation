@@ -90,6 +90,6 @@ files using -a (archive) flag.
    rsync -av --compress-level=9 var/blobstorage plone@server.com:/srv/plone/site/var
    
 Upgrading a Plone Site
-===========================
-Install the new Plone version in another directory, and then copy in your Data.fs and blobstorage folders from the old site you're upgrading
+======================
+Install the new Plone version in another directory, then copy your ''Data.fs'' and ''blobstorage'' folders from the old site you are upgrading.
 
