@@ -91,5 +91,5 @@ files using -a (archive) flag.
    
 Upgrading a Plone Site
 ======================
-Install the new Plone version in another directory, then copy your ''Data.fs'' and ''blobstorage'' folders from the old site you are upgrading.
+To upgrade Plone, see :doc:`manage/upgrading`.
 
