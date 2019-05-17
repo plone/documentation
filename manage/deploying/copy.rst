@@ -88,3 +88,7 @@ files using -a (archive) flag.
 .. code-block:: shell
 
    rsync -av --compress-level=9 var/blobstorage plone@server.com:/srv/plone/site/var
+   
+Upgrading a Plone Site
+======================
+To upgrade Plone, see :doc:`manage/upgrading`.
