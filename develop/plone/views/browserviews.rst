@@ -510,9 +510,9 @@ Zope ViewPageTemplateFile vs. Five ViewPageTemplateFile
 
     There are two different classes that share the same ``ViewPageTemplateFile`` name.
 
-* Zope  `BrowserView source code <http://svn.zope.org/zope.publisher/trunk/src/zope/publisher/browser.py?rev=101538&view=auto>`_.
+* Zope  `BrowserView source code <https://github.com/zopefoundation/zope.publisher/blob/master/src/zope/publisher/browser.py>`_.
 
-* `Five version  <http://svn.zope.org/Zope/trunk/src/Products/Five/browser/__init__.py?rev=96262&view=markup>`_.
+* `Five version  <https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/browser/__init__.py>`_.
   `Products.Five`_ is a way to access some Zope 3 technologies from the Zope
   2 codebase, which is used by Plone.
 
