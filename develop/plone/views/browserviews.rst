@@ -907,7 +907,7 @@ One workaround to avoid this mess is to use aq_inner when accessing self.obj val
 * http://stackoverflow.com/a/11755348/315168
 
 .. _Products.Five:
-   http://svn.zope.org/Zope/trunk/src/Products/Five/README.txt?view=markup
+   https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt
 .. _five.grok: https://pypi.python.org/pypi/five.grok
 .. _collective.recipe.omelette:
    https://pypi.python.org/pypi/collective.recipe.omelette
