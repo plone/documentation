@@ -241,7 +241,7 @@ Run the migration by
 
 .. code-block:: console
 
-    ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding utf8 --encoding-fallbacks latin1
+    ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding utf8 --encoding-fallback latin1
 
 Depending on the size of you database this can take a while.
 
