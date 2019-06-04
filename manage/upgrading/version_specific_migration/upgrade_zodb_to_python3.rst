@@ -177,7 +177,7 @@ Depending on your buildout this could look like this:
 
     [instance]
     eggs +=
-        zodbverfiy
+        zodbverify
 
     [zodbupdate]
     recipe = zc.recipe.egg
