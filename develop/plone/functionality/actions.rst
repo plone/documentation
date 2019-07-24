@@ -365,6 +365,13 @@ You might want to have different actions for different site sections or folders.
 
 * http://plone.293351.n2.nabble.com/Custom-portal-tabs-per-subsection-tp5747768p5747768.html
 
+Custom object and object_buttons actions per portal type
+--------------------------------------------------------
+
+If you need to override or customize an action from ``object_buttons`` that still uses ``CMFFormController`` for a specific ``portal_type``, check:
+
+* https://stackoverflow.com/questions/11218272/plone-reacting-to-object-removal/11225447#11225447
+
 Copy, cut and paste
 ----------------------
 
