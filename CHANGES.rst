@@ -3,8 +3,8 @@ Changelog
 =========
 
 
-Unreleased
-==========
+20190728
+========
 
 - Update the ZODB py2-py3 migration guide and move to own document [jensens]
 - explain how to find available image scales

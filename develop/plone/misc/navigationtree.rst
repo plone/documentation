@@ -44,7 +44,7 @@ Excluding items in the navigation tree
 Your navigation tree strategy must define method ``nodeFilter()``
 which can check for portal_catalog metadata column ``exclude_from_nav``.
 
-Example (from Products.CMFPlone.broser.navtree)::
+Example (from Products.CMFPlone.browser.navtree)::
 
     class SitemapNavtreeStrategy(NavtreeStrategyBase):
 
