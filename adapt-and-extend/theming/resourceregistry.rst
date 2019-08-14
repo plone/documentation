@@ -483,7 +483,8 @@ You will find the ``plone-compile-resources`` script in your buildout ``bin`` di
 
     [resources]
     recipe = zc.recipe.egg
-    eggs = Products.CMFPlone
+    eggs = 
+        plone.staticresources
     scripts = plone-compile-resources
 
 Once the script has been created you may invoke it.
