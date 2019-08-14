@@ -117,6 +117,11 @@ To use the language version globally, it has to be declared first.
 
 .. code-block :: console
 
+    pyenv install 3.7.4
+    pyenv global 3.7.4
+
+Plone CLI
+=========
 
 We use Plone CLI here to work with Plone.
 Plone CLI is a command line interface for creating Plone packages, as also for building and starting Plone.
@@ -130,8 +135,8 @@ It pulls released Python packages from the `Python Package Index <https://pypi.o
 
 .. code-block :: console
 
-    $ pip install --upgrade pip
-    $ pip install plonecli --user
+    pip install --upgrade pip
+    pip install plonecli --user
 
 Bash Auto Completion
 --------------------
@@ -141,9 +146,21 @@ To activate the autocomplete function for Plone CLI, again the ``.bashrc`` docum
 Open editor.
 
 .. code-block :: console
-=======
-    pyenv install 3.7.4
-    pyenv global 3.7.4
+
+    nano .bashrc
+
+Code to insert.
+
+.. code-block :: bash
+
+    . ~/.local/bin/plonecli_autocomplete.sh
+
+Afterwards, the script has to be applied again.
+
+.. code-block :: console
+
+    source .bashrc
+
 
 Plone CLI
 =========
@@ -239,7 +256,7 @@ After that, the page can be built.
 
     plonecli build
 
- The start Plone, so that it can be accessed from the webbrowser run:
+To start Plone, so that it can be accessed from the webbrowser run:
 
 .. code-block :: console
 
@@ -250,5 +267,5 @@ Now, in Windows in your browser of choice got to `http://locahost:8080/ <http://
 To apply future changes to your configuration (buildout), run
 
 .. code-block :: console
-    
-    plonecli build
+
+    plonecli buildout
