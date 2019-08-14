@@ -55,7 +55,7 @@ Because most distributions just deliver an outdated catalog within the download,
 
 .. code-block :: console
 
-    $ sudo apt update && sudo apt upgrade
+    sudo apt update && sudo apt upgrade
 
 Windows does not update any components of a Linux subsystem, all have to be carried out manually!
 
@@ -69,20 +69,20 @@ Install Pyenv
 -------------
 
 To install Pyenv, use the command below in the Ubuntu shell.
-After completing the download, the shell has to be restarted in order to take over all changes.
+After completing the download, the shell has to be restarted to take over all changes.
 
 .. code-block :: console
 
-    $ curl https://pyenv.run | bash
+    curl https://pyenv.run | bash
 
 Configure Paths
 ---------------
 
-In order to set the right paths for certain activities and enable Pyenv local environment, edit the file ".bashrc" in Ubuntu using the "nano" editor command.
+To set the right paths for certain activities and enable Pyenv local environment, edit the file ".bashrc" in Ubuntu using the "nano" editor command.
 
 .. code-block :: console
 
-    $ nano .bashrc
+    nano .bashrc
 
 After opening the document, at the end (bottom of code) 3 lines have to be appended:
 
@@ -97,7 +97,7 @@ To apply the changes, save the document and activate them by typing the followin
 
 .. code-block :: console
 
-    $ source .bashrc
+    source .bashrc
 
 Install Python
 --------------
@@ -117,11 +117,6 @@ To use the language version globally, it has to be declared first.
 
 .. code-block :: console
 
-    $ pyenv install 3.7.4
-    $ pyenv global 3.7.4
-
-Plone CLI
-=========
 
 We use Plone CLI here to work with Plone.
 Plone CLI is a command line interface for creating Plone packages, as also for building and starting Plone.
@@ -146,8 +141,38 @@ To activate the autocomplete function for Plone CLI, again the ``.bashrc`` docum
 Open editor.
 
 .. code-block :: console
+=======
+    pyenv install 3.7.4
+    pyenv global 3.7.4
 
-    $ nano .bashrc
+Plone CLI
+=========
+
+We use Plone CLI here to work with Plone.
+Plone CLI is a command line interface for creating Plone packages, as also for building and starting Plone.
+Plone CLI need to be installed on the subsystem by typing the following command.
+
+It is installed as a global user-package, so that it can be used for several projects.
+Plone CLI's newest release will be pulled immediately.
+While at it we install also the latest Pip first.
+Pip is a Python package installer.
+It pulls released Python packages from the `Python Package Index <https://pypi.org/>`_ and installs them in the current Python environment.
+
+.. code-block :: console
+
+    pip install --upgrade pip
+    pip install plonecli --user
+
+Bash Auto Completion
+--------------------
+
+To activate the autocomplete function for Plone CLI, again the ``.bashrc`` document has to be opened and a path is inserted ate the bottom of the so far code.
+
+Open editor.
+
+.. code-block :: console
+
+    nano .bashrc
 
 Code to insert.
 
@@ -159,7 +184,7 @@ Afterwards, the script has to be applied again.
 
 .. code-block :: console
 
-    $ source .bashrc
+    source .bashrc
 
 Creating A Plone Add-on
 -----------------------
@@ -177,8 +202,8 @@ Plone CLI asks some question to be answered before creating the custom addon.
 
 .. code-block :: console
 
-    $ cd /mnt/c/Plone-Projects
-    $ plonecli create addon collective.example
+    cd /mnt/c/Plone-Projects
+    plonecli create addon collective.example
 
 Edit and build add-on
 ---------------------
@@ -187,18 +212,18 @@ To add features to the add-on, its directory has to be entered.
 
 .. code-block :: console
 
-    $ cd /mnt/c/Plone-Projects/collective.example
+    cd /mnt/c/Plone-Projects/collective.example
 
 Then several featuers can be added, for example:
 
 .. code-block :: console
 
-    $ plonecli add behavior
-    $ plonecli add content_type
-    $ plonecli add theme
-    $ plonecli add view
-    $ plonecli add viewlet
-    $ plonecli add vocabulary
+    plonecli add behavior
+    plonecli add content_type
+    plonecli add theme
+    plonecli add view
+    plonecli add viewlet
+    plonecli add vocabulary
 
 For more information consult the `Plone CLI documentation <https://pypi.org/project/plonecli/>`_.
 
@@ -206,23 +231,24 @@ To build the Plone project some additional libraries have to be installed in the
 
 .. code-block :: console
 
-    $ sudo apt install python3-dev libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
+    sudo apt install python3-dev libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
 
 After that, the page can be built.
 
 .. code-block :: console
 
-    $ plonecli build
+    plonecli build
 
  The start Plone, so that it can be accessed from the webbrowser run:
 
 .. code-block :: console
 
-    $ plonecli serve
+    plonecli serve
 
 Now, in Windows in your browser of choice got to `http://locahost:8080/ <http://locahost:8080/>`_ and go on creating a Site and use Plone.
 
 To apply future changes to your configuration (buildout), run
 
 .. code-block :: console
-    $ plonecli build
+    
+    plonecli build
