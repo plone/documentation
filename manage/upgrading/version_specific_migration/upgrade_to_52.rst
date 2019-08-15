@@ -82,7 +82,7 @@ For Developers
 
 There are a lot of changes in Zope. For details please see:
 
-* `What’s new in Zope 4.0 <https://zope.readthedocs.io/en/latest/WHATSNEW.html>`_
+* `What’s new in Zope 4.0 <https://zope.readthedocs.io/en/latest/zope4/news.html>`_
 * `Changelog for alpha-versions <https://github.com/zopefoundation/Zope/blob/4.0a6/CHANGES.rst>`_
 * `Changelog for beta-versions <https://zope.readthedocs.io/en/latest/changes.html>`_
 
