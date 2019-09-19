@@ -510,9 +510,9 @@ Zope ViewPageTemplateFile vs. Five ViewPageTemplateFile
 
     There are two different classes that share the same ``ViewPageTemplateFile`` name.
 
-* Zope  `BrowserView source code <http://svn.zope.org/zope.publisher/trunk/src/zope/publisher/browser.py?rev=101538&view=auto>`_.
+* Zope  `BrowserView source code <https://github.com/zopefoundation/zope.publisher/blob/master/src/zope/publisher/browser.py>`_.
 
-* `Five version  <http://svn.zope.org/Zope/trunk/src/Products/Five/browser/__init__.py?rev=96262&view=markup>`_.
+* `Five version  <https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/browser/__init__.py>`_.
   `Products.Five`_ is a way to access some Zope 3 technologies from the Zope
   2 codebase, which is used by Plone.
 
@@ -907,7 +907,7 @@ One workaround to avoid this mess is to use aq_inner when accessing self.obj val
 * http://stackoverflow.com/a/11755348/315168
 
 .. _Products.Five:
-   http://svn.zope.org/Zope/trunk/src/Products/Five/README.txt?view=markup
+   https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt
 .. _five.grok: https://pypi.python.org/pypi/five.grok
 .. _collective.recipe.omelette:
    https://pypi.python.org/pypi/collective.recipe.omelette
