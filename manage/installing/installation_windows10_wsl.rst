@@ -4,12 +4,12 @@ Installing Plone on a Windows 10 Linux Subsystem for Development
 
 A manual for installing a `Plone CLI <https://pypi.org/project/plonecli/>`_ (and Python 3) based development environment into a Windows Linux Subsystem (WSL) under Windows 10.
 Ubuntu is used as the Linux distribution.
-It is possible to edit the addons created by Plone CLI with an IDE of your choice under Windows.
+It is possible to edit the add-ons created by Plone CLI with an IDE of your choice under Windows.
 
 Introduction
 ============
 
-The following tutorial will lead you trought all the steps to install and use Plone CLI on your Windows device.
+The following tutorial will lead you through all the steps to install and use Plone CLI on your Windows device.
 
 Ubuntu
 ======
@@ -111,6 +111,8 @@ To install them, a sudo (superuser do) command (with password, configured when s
     sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
     xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+    
+    
 
 In this case, Python version 3.7.4 is installed.
 To use the language version globally, it has to be declared first.
@@ -215,7 +217,7 @@ I.e. create in Windows a folder ``C:\Plone-Projects`` and in Linux it is located
 
 Under Ubuntu use the ``cd`` command following with the path chosen to install in.
 After entering the path, the add-on can be created.
-Plone CLI asks some question to be answered before creating the custom addon.
+Plone CLI asks some question to be answered before creating the custom add-on.
 
 .. code-block :: console
 
@@ -248,21 +250,21 @@ To build the Plone project some additional libraries have to be installed in the
 
 .. code-block :: console
 
-    sudo apt install python3-dev libssl-dev libxml2-dev libxslt1-dev libbz2-dev libjpeg62-dev
-
+    sudo apt install python3-dev libxml2-dev libxslt1-dev libjpeg62-dev
+    
 After that, the page can be built.
 
 .. code-block :: console
 
     plonecli build
 
-To start Plone, so that it can be accessed from the webbrowser run:
+To start Plone so that it can be accessed from the web browser run:
 
 .. code-block :: console
 
     plonecli serve
 
-Now, in Windows in your browser of choice got to `http://locahost:8080/ <http://locahost:8080/>`_ and go on creating a Site and use Plone.
+Now in Windows in your browser of choice go to `http://locahost:8080/ <http://locahost:8080/>`_ and go on creating a Site and use Plone.
 
 To apply future changes to your configuration (buildout), run
 
