@@ -76,8 +76,8 @@ The code handles both Archetypes and Dexterity subsystems' content types.
 .. note::
 
     Fixing Dexterity blobs with this code has never been tested -
-    please feel free to update the code in collective.developermanual
-    on GitHub if you find it not working properly.
+    please feel free to update the following code example
+    if you find it not working properly.
 
 
 The code, ``fixblobs.py``::
