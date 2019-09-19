@@ -169,7 +169,7 @@ Depending on your buildout this could look like this:
 
     [buildout]
 
-    parts =+
+    parts +=
         zodbupdate
 
     auto-checkout +=
