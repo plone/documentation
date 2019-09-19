@@ -2,7 +2,7 @@
 Installing Plone on a Windows 10 Linux Subsystem for Development
 ================================================================
 
-A manual for installing a `Plone CLI <https://pypi.org/project/plonecli/>`_ (and Python 3) based development environment into a Windows Linux Subsystem (WSL) under Windows 10.
+This document is a manual for installing a `Plone CLI <https://pypi.org/project/plonecli/>`_ (and Python 3) based development environment into a Windows Linux Subsystem (WSL) under Windows 10.
 Ubuntu is used as the Linux distribution.
 It is possible to edit the add-ons created by Plone CLI with an IDE of your choice under Windows.
 
