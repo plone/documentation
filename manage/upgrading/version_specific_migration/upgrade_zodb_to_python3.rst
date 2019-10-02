@@ -33,7 +33,7 @@ In short you need to follow these steps to migrate your database:
 #. Make sure your code and all add-ons that you use work in Python 3.
    (see :doc:`upgrade_to_python3`)
 #. Backup your database!
-#. Pack your database.
+#. **Pack** your database to **0 days** (`zodbupdate` won't update your database history and will leave old objects in place and you won't be able to pack your database in the future).
 #. In your old buildout under Python 2, verify your database integrity using :py:mod:`zodbverify`.
    Solve integrity problems, if there are any.
 #. Prepare your buildout for migrating the database to Python 3
