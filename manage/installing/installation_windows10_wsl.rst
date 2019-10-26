@@ -109,7 +109,7 @@ To install them, a sudo (superuser do) command (with password, configured when s
 
     sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
-    xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+    xz-utils tk-dev libffi-dev liblzma-dev python-openssl git python3-dev libxml2-dev libxslt1-dev libjpeg62-dev
 
 In this case, Python version 3.7.4 is installed.
 To use the language version globally, it has to be enabled first.
@@ -200,13 +200,12 @@ Creating A Plone Add-on
 
 Before creating an add-on, the correct path has to be chosen.
 
-To edit the code under Windows and execute it under Ubuntu with Plone CLI, a shared place accessible from both systems is needed.
+To edit the code via Windows and execute it under Ubuntu with Plone CLI, a shared place accessible from both systems is needed.
 
 Under Ubuntu this location is ``/mnt/c/`` for the Windows C-drive.
-I.e. create in Windows a folder ``C:\Plone-Projects`` and in Linux it is located under ``/mnt/c/Plone-Projects``.
+I.e. create a folder in Windows ``C:\Plone-Projects``. In Linux it is located under ``/mnt/c/Plone-Projects``.
 
-Under Ubuntu use the ``cd`` command following with the path chosen to install in.
-After entering the path, the add-on can be created.
+In the Ubuntu shell use the ``cd`` command following with the path chosen to create the addon in.
 Plone CLI asks some question to be answered before creating the custom add-on.
 
 .. code-block :: console
@@ -223,7 +222,7 @@ To add features to the add-on, its directory has to be entered.
 
     cd /mnt/c/Plone-Projects/collective.example
 
-Then several featuers can be added, for example:
+Then, several featuers can be added. For example:
 
 .. code-block :: console
 
@@ -236,13 +235,7 @@ Then several featuers can be added, for example:
 
 For more information consult the `Plone CLI documentation <https://pypi.org/project/plonecli/>`_.
 
-To build the Plone project some additional libraries have to be installed in the Ubuntu system.
-
-.. code-block :: console
-
-    sudo apt install python3-dev libxml2-dev libxslt1-dev libjpeg62-dev
-    
-After that, the page can be built.
+Build a package.
 
 .. code-block :: console
 
@@ -254,7 +247,7 @@ To start Plone so that it can be accessed from the web browser run:
 
     plonecli serve
 
-Now in Windows in your browser of choice go to `http://locahost:8080/ <http://locahost:8080/>`_ and go on creating a Site and use Plone.
+Now in Windows in your browser visit `http://locahost:8080/ <http://locahost:8080/>`_ and go on creating a Site using Plone.
 
 To apply future changes to your configuration (buildout), run
 
