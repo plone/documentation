@@ -46,8 +46,8 @@ To install the downloaded package, execute the following command.
 Setting Up Ubuntu
 -----------------
 
-After installing the application, it can be found in the startmenu or in the apps, or can be found by searching it.
-After starting up Ubuntu, it take some time to process futher installation steps and establish the needed components.
+After installing the application, it can be found in the startmenu or in the apps, or by searching it.
+After starting Ubuntu, it take some time to process futher installation steps and establish the needed components.
 An username and password is required, indepentend of the Windows user data.
 
 Because most distributions just deliver an outdated catalog within the download, it is recommended to instantly update the packet.
@@ -62,7 +62,7 @@ Windows does not update any components of a Linux subsystem, all have to be carr
 Latest Python On Ubuntu
 =======================
 
-Our Linux operating system is installed to author software, so here an explaination how to install the programming language Python.
+Our Linux operating system is installed to author software, so here an explaination how to install Python.
 To install one or more Python versions on the subsystem, a certain management application for it called Pyenv has to be installed.
 
 Install Pyenv
@@ -78,13 +78,13 @@ After completing the download, the shell has to be restarted to take over all ch
 Configure Paths
 ---------------
 
-To set the right paths for certain activities and enable Pyenv local environment, edit the file ".bashrc" in Ubuntu using the "nano" editor command.
+To set the right paths for certain activities and to enable Pyenv local environment, edit the file ".bashrc".
 
 .. code-block :: console
 
     nano .bashrc
 
-After opening the document, at the end (bottom of code) 3 lines have to be appended:
+After opening the document, at the bottom of the code 3 lines have to be appended:
 
 .. code-block :: bash
 
@@ -93,8 +93,7 @@ After opening the document, at the end (bottom of code) 3 lines have to be appen
     eval "$(pyenv virtualenv-init -)"
 
 The path is important insofar, because further commands can executed if the paths, where they have to be tapped, are known.
-To apply the changes, save the document and activate them by typing the following into the Ubuntu shell.
-
+To apply the changes, save the document and apply them.
 .. code-block :: console
 
     source .bashrc
@@ -103,7 +102,7 @@ Install Python
 --------------
 
 After finishing the setup, it is possible to install the needed version of Python in Ubuntu.
-Before installing Python, the system need to be prepared with a C-compiler and some libraries.
+Before installing Python, the system needs to be prepared with a C-compiler and some libraries.
 To install them, a sudo (superuser do) command (with password, configured when setting up Ubuntu shell) is needed.
 
 .. code-block :: console
@@ -111,11 +110,9 @@ To install them, a sudo (superuser do) command (with password, configured when s
     sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
     xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
-    
-    
 
 In this case, Python version 3.7.4 is installed.
-To use the language version globally, it has to be declared first.
+To use the language version globally, it has to be enabled first.
 
 .. code-block :: console
 
@@ -125,14 +122,10 @@ To use the language version globally, it has to be declared first.
 Plone CLI
 =========
 
-We use Plone CLI here to work with Plone.
+We use Plone CLI to work with Plone.
 Plone CLI is a command line interface for creating Plone packages, as also for building and starting Plone.
-Plone CLI need to be installed on the subsystem by typing the following command.
 
-It is installed as a global user-package, so that it can be used for several projects.
-Plone CLI's newest release will be pulled immediately.
-While at it we install also the latest Pip first.
-Pip is a Python package installer.
+Before,the latest version of pip has to be installed.
 It pulls released Python packages from the `Python Package Index <https://pypi.org/>`_ and installs them in the current Python environment.
 
 .. code-block :: console
@@ -143,21 +136,18 @@ It pulls released Python packages from the `Python Package Index <https://pypi.o
 Bash Auto Completion
 --------------------
 
-To activate the autocomplete function for Plone CLI, again the ``.bashrc`` document has to be opened and a path is inserted ate the bottom of the so far code.
-
-Open editor.
+To activate the autocomplete function for Plone CLI, again open the .bashrc file and fill in the following path at the end of the document.
 
 .. code-block :: console
 
     nano .bashrc
 
-Code to insert.
 
 .. code-block :: bash
 
     . ~/.local/bin/plonecli_autocomplete.sh
 
-Afterwards, the script has to be applied again.
+Afterwards, the change has to be applied again.
 
 .. code-block :: console
 
