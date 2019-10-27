@@ -10,3 +10,4 @@ develop/plone.api
 develop/addons/bobtemplates.plone
 .project
 _build
+settings.json

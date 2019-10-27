@@ -9,3 +9,4 @@ Installing Plone
    installation_minimal_buildout
    installing_addons
    hotfixes
+   installation_windows10_wsl
