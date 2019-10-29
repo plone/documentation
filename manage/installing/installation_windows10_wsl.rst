@@ -18,7 +18,7 @@ Pre Settings
 ------------
 
 Before installing the shell to later configure in, the first thing to do is to enable the optional feature for a subsystem on windows.
-Therefor, the programm Windows PowerShell has to be launched (as administrator! - right-click the application and choose "launch as admin").
+Therefor, the programm Windows PowerShell has to be launched (as administrator! - right-click the application and choose :guilabel:`launch as admin`).
 Do not launch the Powershell ISE application, because it won't work.
 In the shell the following command has to be entered.
 
@@ -78,7 +78,7 @@ After completing the download, the shell has to be restarted to take over all ch
 Configure Paths
 ---------------
 
-To set the right paths for certain activities and to enable Pyenv local environment, edit the file ".bashrc".
+To set the right paths for certain activities and to enable Pyenv local environment, edit the file ``~/.bashrc``.
 
 .. code-block :: console
 
@@ -94,6 +94,7 @@ After opening the document, at the bottom of the code 3 lines have to be appende
 
 The path is important insofar, because further commands can executed if the paths, where they have to be tapped, are known.
 To apply the changes, save the document and apply them.
+
 .. code-block :: console
 
     source .bashrc
@@ -118,40 +119,6 @@ To use the language version globally, it has to be enabled first.
 
     pyenv install 3.7.4
     pyenv global 3.7.4
-
-Plone CLI
-=========
-
-We use Plone CLI to work with Plone.
-Plone CLI is a command line interface for creating Plone packages, as also for building and starting Plone.
-
-Before,the latest version of pip has to be installed.
-It pulls released Python packages from the `Python Package Index <https://pypi.org/>`_ and installs them in the current Python environment.
-
-.. code-block :: console
-
-    pip install --upgrade pip
-    pip install plonecli --user
-
-Bash Auto Completion
---------------------
-
-To activate the autocomplete function for Plone CLI, again open the .bashrc file and fill in the following path at the end of the document.
-
-.. code-block :: console
-
-    nano .bashrc
-
-
-.. code-block :: bash
-
-    . ~/.local/bin/plonecli_autocomplete.sh
-
-Afterwards, the change has to be applied again.
-
-.. code-block :: console
-
-    source .bashrc
 
 
 Plone CLI
@@ -203,10 +170,11 @@ Before creating an add-on, the correct path has to be chosen.
 To edit the code via Windows and execute it under Ubuntu with Plone CLI, a shared place accessible from both systems is needed.
 
 Under Ubuntu this location is ``/mnt/c/`` for the Windows C-drive.
-I.e. create a folder in Windows ``C:\Plone-Projects``. In Linux it is located under ``/mnt/c/Plone-Projects``.
+I.e. create a folder in Windows ``C:\Plone-Projects``.
+In Linux it is located under ``/mnt/c/Plone-Projects``.
 
 In the Ubuntu shell use the ``cd`` command following with the path chosen to create the addon in.
-Plone CLI asks some question to be answered before creating the custom add-on.
+Plone CLI asks some questions to be answered before creating the custom add-on.
 
 .. code-block :: console
 
