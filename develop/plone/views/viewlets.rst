@@ -104,6 +104,10 @@ A viewlet manager can be rendered in a page template code using the following ex
 
   <div tal:replace="structure provider:viewletmanagerid" />
 
+.. note::
+
+    If you get a ``ContentProviderLookupError: viewletmanagerid`` you are trying to render a Plone page frame in a context which has no acquisition chain properly set up. Check `exceptions documentation <https://docs.plone.org/manage/troubleshooting/exceptions.html#contentproviderlookuperror-plone-htmlhead>`_ for more details.
+
 Each viewlet manager allows you to shuffle viewlets inside a viewlet manager.
 This is done by using ``/@@manage-viewlets`` view. These settings
 are stored in the site database, so a good practice is to export ``viewlets.xml``
