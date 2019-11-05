@@ -170,7 +170,7 @@ Before creating an add-on, the correct path has to be chosen.
 To edit the code via Windows and execute it under Ubuntu with Plone CLI, a shared place accessible from both systems is needed.
 
 Under Ubuntu this location is ``/mnt/c/`` for the Windows C-drive.
-I.e. create a folder in Windows ``C:\Plone-Projects``.
+Create a folder in Windows ``C:\Plone-Projects``.
 In Linux it is located under ``/mnt/c/Plone-Projects``.
 
 In the Ubuntu shell use the ``cd`` command following with the path chosen to create the addon in.
