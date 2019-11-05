@@ -18,7 +18,7 @@ Pre Settings
 ------------
 
 Before installing the shell to later configure in, the first thing to do is to enable the optional feature for a subsystem on windows.
-Therefor, the programm Windows PowerShell has to be launched (as administrator! - right-click the application and choose :guilabel:`launch as admin`).
+Therefor, the program Windows PowerShell has to be launched (as administrator! - right-click the application and choose :guilabel:`launch as admin`).
 Do not launch the Powershell ISE application, because it won't work.
 In the shell the following command has to be entered.
 
