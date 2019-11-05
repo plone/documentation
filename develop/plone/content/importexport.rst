@@ -23,7 +23,7 @@ Zope 2 import / export
 
 Zope 2 can import/export parts of the site in .zexp format. This is basically Python pickle data of the exported objects. The data is a raw dump of Python internal data structures, which means that the source and the target Plone versions must be compatible. For example, a export from Plone 3 to Plone 4 is not possible.
 
-.. note ::
+.. note::
 
     This method is applicable under very limited circumstances.
     Also note that for large Plone sites, the .zexp files generated is quite large,
@@ -113,7 +113,7 @@ If you limit source content by path you can effectively export single folder onl
 The recipe described here assumes the exported and imported site have the same path for the folder.
 Manually rename or move the folder on source or target to change its location.
 
-.. note ::
+.. note::
 
         The instructions here requires quintagroup.transmogrify version 0.4 or later.
 
@@ -199,7 +199,7 @@ completes even if the target site would not able to process incoming content.
 If there is a serious problem the import seems to complete successfully,
 but no content is created.
 
-.. note ::
+.. note::
 
     Currently export/import is not perfect.
     For example, the Management Interface content type icons  are currently

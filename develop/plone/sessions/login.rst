@@ -260,7 +260,7 @@ Post-logout actions
 Products.PlonePAS.tools.membership fires ``Products.PlonePAS.events.UserLoggedOutEvent``
 when the user logs out via *Log out* menu item.
 
-.. note ::
+.. note::
 
 	You cannot catch session timeout events this way... only explicit logout
 	action.

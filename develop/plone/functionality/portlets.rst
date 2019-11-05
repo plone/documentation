@@ -432,7 +432,7 @@ How to get your portlet HTML::
     def render_portlet(context, request, view, manager, assignmentId):
         """ Render a portlet defined in external location.
 
-        .. note ::
+        .. note::
 
             Portlets can be idenfied by id (not user visible)
             or interface (portlet class). This method supports look up
@@ -913,7 +913,7 @@ More info
 Fixing relative links for static text portlets
 -------------------------------------------------
 
-.. note ::
+.. note::
 
     This should be no longer issue with Plone 4.1 and TinyMCE 1.3+ when using UID
     links.

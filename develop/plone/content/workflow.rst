@@ -156,7 +156,7 @@ Filtering content item list by workflow state
 Here is an example how to iterate through content item list
 and let through only content items having certain state.
 
-.. note ::
+.. note::
 
         Usually you don't want to do this, but use content
         aware folder listing method or portal_catalog query

@@ -202,7 +202,7 @@ and there are no problems due to low level disk corruption or bit flip.
 
 * http://wiki.zope.org/ZODB/FileStorageBackup
 
-.. note ::
+.. note::
 
         It is recommended best practice to run integrity against your Data.fs regularly.
         This is the only way to detect corruption which would otherwise go unnoticed

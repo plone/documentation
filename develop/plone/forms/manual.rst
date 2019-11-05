@@ -113,7 +113,7 @@ Then::
 
 will return integer 30 instead of string "30".
 
-.. note ::
+.. note::
 
         This behavior is hard-coded to ZPublisher and cannot be extended or disabled. The recommendation is
         not to use it, but do the conversion of data-types yourself or use a more high-level

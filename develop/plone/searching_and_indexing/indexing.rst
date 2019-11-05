@@ -127,7 +127,7 @@ make queries based on it later.
 
 See more information about :doc:`accessor methods </develop/plone/content/archetypes/fields>`.
 
-.. note ::
+.. note::
 
    If you want to create an index for content type you do not control yourself or if you want to do some custom logic in your indexer,
    please see *Custom index method* below.

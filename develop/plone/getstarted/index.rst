@@ -128,7 +128,7 @@ The changes are moved to production through version control system like Git or S
 Plone add-on features
 ---------------------
 
-.. note ::
+.. note::
 
 	Explain that Archetypes are old and basically there to support upgraded sites, but that new development should use Dexterity, maybe remove them even ?
 

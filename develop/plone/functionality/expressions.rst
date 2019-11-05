@@ -309,7 +309,7 @@ We execute a Python snippet which
 * Otherwise we return an empty string and TAL won't output this attribute (TODO: has TAL some special support for
   CHECKED and SELECTED attributes)
 
-.. note ::
+.. note::
 
     Python 2.6, Plone 4+ syntax
 

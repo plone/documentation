@@ -2,7 +2,7 @@
 Install Plone Using A Minimal Buildout
 ======================================
 
-.. note ::
+.. note::
 
    This example is adequate for a quick evaluation.
 
