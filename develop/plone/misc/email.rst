@@ -88,7 +88,7 @@ This can be called with a ``member`` object and the ``portal_url``::
 For more complete examples (with i18n support, etc.) see the password reset
 modules (particularly ``Products.remember.tools.registration``).
 
-.. note ::
+.. note::
 
     If you don't need to have third parties to override your email templates
     it might be cleaned to use Python string templates, as XML based TAL

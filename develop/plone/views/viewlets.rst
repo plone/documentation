@@ -115,7 +115,7 @@ using ``portal_setup`` and then include the necessary bits of this ``viewlets.xm
 with your add-on installer so that when your add-on is installed, the viewlet
 configuration is changed accordingly.
 
-.. note ::
+.. note::
 
     You cannot move viewlets between viewlet managers.
     I know it sucks, but life is hard and Plone is harder.
@@ -141,7 +141,7 @@ comes from ``plone.app.viewletmanager.manager.OrderedViewletManager``.
 In this example we put two viewlets in a new viewlet manager so that we can
 properly CSS float then and close this float.
 
-.. note ::
+.. note::
 
     This example uses extensive Python module nesting: plonetheme.yourtheme.browser.viewlets is just too deep.
     You really don't need to do some many levels,

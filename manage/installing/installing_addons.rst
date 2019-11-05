@@ -78,7 +78,7 @@ of eggs:
         Products.PloneFormGen
         collective.supercool
 
-.. note ::
+.. note::
 
     The above example works for the buildout created by the unified installer.
     If you however have a custom buildout you might need to add the egg to the *eggs* list in the *[instance]* section rather than adding it in the *[buildout]* section.
@@ -142,11 +142,11 @@ For managing the sources it is recommended to create a `sources.cfg` which you c
 
 Adding add-on package names to the **auto-checkout** list will make buildout check out the source to the `src` directory upon next buildout run.
 
-.. note ::
+.. note::
 
     It is not recommended to use `auto-checkout = *`, especially when you extend from a big list of sources, such as the plonesource.org list.
 
-.. note ::
+.. note::
 
     The `auto-checkout` option only checks out the source.
     It is also required to add the package to the `eggs` list for getting it installed, see above.

@@ -339,7 +339,7 @@ Setting test browser headers
 Headers must be passed to underlying PublisherMechanizeBrowser instance
 and test browser must be constructed based on this instance.
 
-.. note ::
+.. note::
 
         When passing parameters to PublisherMechanizeBrowser.addheaders HTTP prefix will be automatically added
         to header name.

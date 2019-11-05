@@ -95,7 +95,7 @@ The following will force the object to use the most up-to-date version in the tr
 A conflict error will be raised if the version of ob read by the transaction isn't
 current when the transaction is committed.
 
-.. note ::
+.. note::
 
         ZODB versions older than 3.10.0b5 do not support this feature.
 

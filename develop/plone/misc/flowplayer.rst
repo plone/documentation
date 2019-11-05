@@ -180,7 +180,7 @@ Needed CSS:
             height: 180px;
     }
 
-.. note ::
+.. note::
 
     if your player is not displayed on the page load, but is displayed
     after you click somewhere to the player container area, be sure

@@ -70,7 +70,7 @@ The recommended method for linking the content is *Linking by UID* since *Produc
 This solves issues with earlier Plone versions where the link targets become invalid when a HTML textfield with relative
 links where shown on the other page as the original context.
 
-.. note ::
+.. note::
 
    You might need to turn on *Linking by UID* setting on in the site setup if you are migrating from older Plone sites.
 
@@ -118,7 +118,7 @@ You can use TinyMCE body selector make your CSS class have different styles in v
                 display: block;
         }
 
-.. note ::
+.. note::
 
         Firefox does not actually support column breaks, so this was useful headaching experience.
 
@@ -128,7 +128,7 @@ Customizing TinyMCE options
 
 Plone 4 uses TinyMCE 3. Plone 5 upgraded to TinyMCE 4, which works with a new concept called formats and therefore a new syntax for inline styles: `Your Custom Format's Title|custom_format_id|custom_icon_id`.
 
-.. note ::
+.. note::
 
         The icon id will be suffixed and used as a CSS class, so you can hook styles to the `.mce-ico.mce-i-custom_icon_id` selector. For block styles there are no icon hooks so you register them similarly to inline styles but omitting the last part, that is, the icon). That's different from Plone 4's `tinymce.xml`, where you specify `Your Custom Format's Title|tag|custom-css-class`.
 

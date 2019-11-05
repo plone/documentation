@@ -414,7 +414,7 @@ Album view <a> click handler::
     {type:'overlay', subtype:'image', selector:'.photoAlbumEntry a', urlmatch:'/view$', urlreplace:'/image_large'}
 
 
-.. note ::
+.. note::
 
         portal_javascript must be in debug mode while testing different Products.PipBox handlers.
 

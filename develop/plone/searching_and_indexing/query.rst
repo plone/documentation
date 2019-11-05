@@ -522,7 +522,7 @@ This means that the way to bypass this is to add the query parameter ``path='/'`
 
     all_content_brains = portal_catalog(path='/')
 
-.. note ::
+.. note::
    Although in LinguaPlone eventually the language folders are also marked to be an INavigationRoot.
    The language of the content is not enforced inside the language folder.
    In plone.app.multilingual there's a subscriber that moves the content to the appropriate folder.

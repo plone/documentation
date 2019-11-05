@@ -89,7 +89,7 @@ view magic)::
     >>> request["URL"]
     'http://m.localhost:8080/site/matkailijallefolder/@@frontpage'
 
-.. note ::
+.. note::
 
         URLs, as accessed above, do not contain query string.
 
@@ -105,7 +105,7 @@ E.g. if you go to ``http://localhost:8080/site?something=foobar``::
 
 If the query string is not present in the HTTP request, it is an empty string.
 
-.. note ::
+.. note::
 
     You can also use the ``request.form`` dictionary to access parsed query
     string content.
@@ -304,11 +304,11 @@ and you want to identify them::
 
     port = request.get("SERVER_PORT", None)
 
-.. note ::
+.. note::
 
     The ``SERVER_PORT`` variable returns the port number as a string, not an integer.
 
-.. note ::
+.. note::
 
     This port number is not the one visible to the external traffic (port 80, HTTP)
 

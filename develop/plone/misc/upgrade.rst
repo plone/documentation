@@ -37,7 +37,7 @@ Use this utility:
 
 * https://pypi.python.org/pypi/wildcard.fixpersistentutilities
 
-.. note :: Perform this against old buildout
+.. note:: Perform this against old buildout
 
 
 Content Upgrades

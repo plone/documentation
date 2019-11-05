@@ -109,7 +109,7 @@ Script could look like::
 
 You probably need to spoof your :doc:`security credentials </develop/plone/security/permissions>`.
 
-.. note ::
+.. note::
 
         Instance must be stopped in order to run this.
 
@@ -127,7 +127,7 @@ Alternatively, you can use
 
 * Use Zope clock daemon
 
-.. note ::
+.. note::
 
         For long running batch processes it is must that you run your
         site in ZEO mode. Otherwise the batch job will block the site
