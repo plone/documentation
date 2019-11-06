@@ -48,7 +48,7 @@ Setting Up Ubuntu
 
 After installing the application, it can be found in the startmenu or in the apps, or by searching it.
 After starting Ubuntu, it take some time to process futher installation steps and establish the needed components.
-An username and password is required, indepentend of the Windows user data.
+An username and password is required, independend of the Windows user data.
 
 Because most distributions just deliver an outdated catalog within the download, it is recommended to instantly update the packet.
 (You should execute the steps regulary to keep the system up to date).
@@ -142,7 +142,7 @@ It pulls released Python packages from the `Python Package Index <https://pypi.o
 Bash Auto Completion
 --------------------
 
-To activate the autocomplete function for Plone CLI, again the ``.bashrc`` document has to be opened and a path is inserted ate the bottom of the so far code.
+To activate the autocomplete function for Plone CLI, again the ``.bashrc`` document has to be opened and a path is inserted at the bottom of the so far code.
 
 Open editor.
 
@@ -190,7 +190,7 @@ To add features to the add-on, its directory has to be entered.
 
     cd /mnt/c/Plone-Projects/collective.example
 
-Then, several featuers can be added. For example:
+Then, several featueres may be added. For example:
 
 .. code-block :: console
 
@@ -203,7 +203,7 @@ Then, several featuers can be added. For example:
 
 For more information consult the `Plone CLI documentation <https://pypi.org/project/plonecli/>`_.
 
-Build a package.
+Install and build Plone.
 
 .. code-block :: console
 
@@ -215,7 +215,7 @@ To start Plone so that it can be accessed from the web browser run:
 
     plonecli serve
 
-Now in Windows in your browser visit `http://locahost:8080/ <http://locahost:8080/>`_ and go on creating a Site using Plone.
+Now in Windows in your browser visit `http://localhost:8080/ <http://locahost:8080/>`_ and go on creating a Site using Plone.
 
 To apply future changes to your configuration (buildout), run
 
