@@ -393,7 +393,7 @@ For example:
 You can use the helper methods ``safe_text`` and ``safe_bytes`` (``safe_unicode`` and ``safe_encode`` in Plone 5.1).
 
 ``python-modernize`` also does not touch the import statement ``from StringIO import StringIO`` even though this works only in Python 2.
-You have to check whether you are dealing with text or binary data and use the appropriate import statement from ``six`` (https://pythonhosted.org/six/#six.StringIO).
+You have to check whether you are dealing with text or binary data and use the appropriate import statement from ``six`` (https://six.readthedocs.io/#six.StringIO).
 
 .. code-block:: python
 
