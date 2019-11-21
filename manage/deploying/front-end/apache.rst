@@ -43,6 +43,7 @@ domain name is ``yoursite.com`` (note with or without ``www`` matters, see below
     <VirtualHost *>
         ServerAlias yoursite.com
         ServerSignature On
+        AllowEncodedSlashes NoDecode
 
         Header set X-Frame-Options "SAMEORIGIN"
         Header set Strict-Transport-Security "max-age=15768000; includeSubDomains"
@@ -70,6 +71,7 @@ domain name is ``yoursite.com`` (note with or without ``www`` matters, see below
         ServerAlias   *
         ServerRoot    /var/www
         ServerSignature On
+        AllowEncodedSlashes NoDecode
     </VirtualHost>
 
 Ultimately you will have one virtual host configuration file per domain on your server.
@@ -152,6 +154,7 @@ Example in <VirtualHost> section to redirect www.site.com -> site.com
 
         ServerName site.com
         ServerAlias www.site.com
+        AllowEncodedSlashes NoDecode
 
         <IfModule mod_rewrite.c>
             RewriteEngine On
@@ -167,6 +170,7 @@ Example in <VirtualHost> section to redirect site.com -> www.site.com
 
         ServerName site.com
         ServerAlias www.site.com
+        AllowEncodedSlashes NoDecode
 
         <IfModule mod_rewrite.c>
             RewriteEngine On
@@ -371,6 +375,7 @@ Example:
         ServerName  production.yourorganization.org
         ServerAdmin rocks@mfabrik.com
 
+        AllowEncodedSlashes NoDecode
         SSLEngine On
         SSLCertificateFile /etc/apache2/ssl-keys/yourorganization.org.cer
         SSLCertificateKeyFile /etc/apache2/ssl-keys/yourorganization.org.key
