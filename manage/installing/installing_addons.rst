@@ -140,16 +140,13 @@ For managing the sources it is recommended to create a `sources.cfg` which you c
         Products.PloneFormGen
         collective.supercool
 
-Adding add-on package names to the **auto-checkout** list will make buildout check out the source to the `src` directory upon next buildout run.
+Adding the add-on package names to the **auto-checkout** list and running buildout will only "check out" that is, copy, the packages to your `src` directory. To get these packages installed, it is necessary to add the package names to the `eggs` list as described above: "Installing add-ons using buildout".
+
 
 .. note::
 
     It is not recommended to use `auto-checkout = *`, especially when you extend from a big list of sources, such as the plonesource.org list.
-
-.. note::
-
-    The `auto-checkout` option only checks out the source.
-    It is also required to add the package to the `eggs` list for getting it installed, see above.
+    
 
 After creating a `sources.cfg` you need to make sure that it gets loaded by the `buildout.cfg`.
 This is done by adding it to the `extends` list in your `buildout.cfg`:
