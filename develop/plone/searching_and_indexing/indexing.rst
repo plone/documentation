@@ -183,7 +183,7 @@ You can create an index
 
 * Create indexes in Python code of add-on custom import step.
 
-* As a prerequisitement, your add-on product must have
+* As a prerequisite, your add-on product must have
   :doc:`GenericSetup profile support </develop/addons/components/genericsetup>`.
 
 This way is repeatable: index gets created every time an add-on product is installed.
