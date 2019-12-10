@@ -14,11 +14,11 @@ Introduction
 
 Header slideshows
 
-* `Products.Carousel <https://plone.org/products/carousel/>`_
+* `Products.Carousel <https://pypi.org/project/Products.Carousel/>`_
 
 AJAX'y image pop-ups
 
-* https://plone.org/products/pipbox
+* `Products.pipbox <https://pypi.org/project/Products.pipbox/>`_
 
 Migrate Products.Slideshow to Products.Carousel
 ===============================================
