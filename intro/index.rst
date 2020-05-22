@@ -36,7 +36,7 @@ Organizations as diverse as NASA, Oxfam, Amnesty International, Nokia, eBay, Nov
 **Plone is open on many levels.** It runs on Linux, Windows, Mac OS X, FreeBSD and Solaris - and offers a straightforward installation to get you up and running in minutes.
 It has been translated into more than 40 languages, and is developed with an unflinching emphasis on usability and standards compliance.
 
-**Need a CMS that integrates** with Active Directory, Salesforce, LDAP, SQL, Web Services. LDAP or Oracle? Plone does.
+**Need a CMS that integrates** with Active Directory, Salesforce, LDAP, SQL, Web Services or Oracle? Plone does.
 Need to be sure your website is accessible? Plone meets or exceeds US Government 508 and the WCAG 2.0 standards.
 
 **Worried about security?** As an open source product, a large number of developers frequently scrutinize the code for any potential security issues.
