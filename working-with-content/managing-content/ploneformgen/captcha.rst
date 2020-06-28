@@ -13,7 +13,7 @@ When PFG is installed in a Plone instance via add/remove products, it will look 
 
 If you are using collective.recaptcha, you need to take the additional step of setting your public/private keypair. You get these by setting up an account at recaptcha.net. The account is free. You may specify your keypair in the PFG configlet in your site settings.
 
-If you add a captcha facility *after* installing PFG, to enable captcha support, you will need to add `FormCaptchaField` as an allowed content type to `FormFolder` in `portal_types` or reinstall PFG (via add/remove products).
+If you add a CAPTCHA facility *after* installing PFG, to enable CAPTCHA support you will need to add ``FormCaptchaField`` as an allowed content type to ``FormFolder`` in ``portal_types`` or reinstall PFG via :menuselection:`Site Setup > Add-ons`.
 
 .. note::
 
