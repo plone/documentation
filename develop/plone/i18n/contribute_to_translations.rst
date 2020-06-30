@@ -25,11 +25,9 @@ get the buildout like this:
 .. code-block:: shell
 
     cd ~/buildouts # or wherever you want to put things
-    git clone -b 5.1 https://github.com/plone/buildout.coredev ./plone5devel
-    virtualenv --no-site-packages plone5devpy
+    git clone -b 5.2 https://github.com/plone/buildout.coredev ./plone5devel
     cd plone5devel
-    ../plone5devpy/bin/pip install -r requirements.txt
-    ../plone5devpy/bin/buildout bootstrap
+    ./bootstrap.sh
     bin/buildout -c experimental/i18n.cfg
     bin/instance fg
 
@@ -38,7 +36,7 @@ To update the buildout later:
 .. code-block:: shell
 
     git pull
-    bin/develop up -f
+    bin/buildout -c experimental/i18n.cfg
 
 To update your translation, you can go there:
 
