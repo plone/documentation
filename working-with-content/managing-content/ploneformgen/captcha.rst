@@ -13,6 +13,8 @@ When PFG is installed in a Plone instance via add/remove products, it will look 
 
 If you are using collective.recaptcha, you need to take the additional step of setting your public/private keypair. You get these by setting up an account at recaptcha.net. The account is free. You may specify your keypair in the PFG configlet in your site settings.
 
+If you add a CAPTCHA facility *after* installing PFG, to enable CAPTCHA support you will need to add ``FormCaptchaField`` as an allowed content type to ``FormFolder`` in ``portal_types`` or reinstall PFG via :menuselection:`Site Setup > Add-ons`.
+
 .. note::
 
     If you add a captcha facility *after* installing PFG, you will need to reinstall PFG (via add/remove products) to enable captcha support.
@@ -34,5 +36,5 @@ Add the following code to your buildout.cfg to install collective.recaptcha and 
         ...
 
 * Re-run bin/buildout and relaunch your zope/plone instance.
-* Open the PortalQuickinstaller or plone control panel and install (or reinstall if already installed) PloneFornGen.
+* Open the PortalQuickInstaller or plone control panel and install (or reinstall if already installed) PloneFormGen.
 * Open the PloneFormGen configlet in the Plone control Panel and fill in the fields with your Public and Private Keys of your ReCaptcha Account. Obtain keys from `reCaptcha.net <https://www.google.com/recaptcha/intro/invisible.html>`_.
