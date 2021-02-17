@@ -15,7 +15,7 @@ To see available permissions, click Security tab at your site root in the Manage
 
 In programming, use pseudo-constants instead of permission string values:
 
-* See `CMFCore.permissions <https://github.com/zopefoundation/Products.CMFCore/blob/master/Products/CMFCore/permissions.py>`_
+* See `CMFCore.permissions <https://github.com/zopefoundation/Products.CMFCore/blob/master/src/Products/CMFCore/permissions.py>`_
 
 * See `AccessControl.Permissions <https://github.com/zopefoundation/AccessControl/blob/master/src/AccessControl/Permissions.py>`_
 
