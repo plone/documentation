@@ -10,9 +10,9 @@ We've modeled the following rules and recommendations based on the following doc
 
 * `PEP8 <http://www.python.org/dev/peps/pep-0008>`__
 * `PEP257 <http://www.python.org/dev/peps/pep-0257>`_
-* `Rope project <http://rope.sourceforge.net/overview.html>`_
-* `Google Style Guide <http://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`_
-* `Pylons Coding Style <http://docs.pylonsproject.org/en/latest/community/codestyle.html>`_
+* `Rope project <https://github.com/python-rope/rope/blob/master/docs/overview.rst>`_
+* `Google Style Guide <https://google.github.io/styleguide/pyguide.html>`_
+* `Pylons Coding Style <https://pylonsproject.org/community-coding-style-standards.html>`_
 * `Tim Pope on Git commit messages <http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>`__
 
 
