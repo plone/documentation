@@ -5,6 +5,9 @@ Changelog
 Unreleased
 ==========
 
+- Fix link to ZTK ZCML style guide.
+  [thet]
+
 - New documentation how to develop on Windows 10 with WSL [nilshofer]
 - Fix #1109 Update import statement in example 'Bypassing permission checks' [1letter]
 - Fix broken link [ale-rt]

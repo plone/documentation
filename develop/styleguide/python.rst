@@ -138,7 +138,7 @@ Indentation
 
 For Python files, we stick with the `PEP 8 recommondation <http://www.python.org/dev/peps/pep-0008/#indentation>`_: Use 4 spaces per indentation level.
 
-For ZCML and XML (GenericSetup) files, we recommend the `Zope Toolkit's coding style on ZCML <http://docs.zope.org/zopetoolkit/codingstyle/zcml-style.html>`_::
+For ZCML and XML (GenericSetup) files, we recommend the `Zope Toolkit's coding style on ZCML <https://zopetoolkit.readthedocs.io/en/latest/codingstyle/zcml-style.html>`_::
 
   Indentation of 2 characters to show nesting, 4 characters to list attributes on separate lines.
   This distinction makes it easier to see the difference between attributes and nested elements.
