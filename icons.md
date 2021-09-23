@@ -78,3 +78,11 @@ SVG Files are avaiblae as resource.
 ```
 ++plone++bootstrap-icons/lightning.svg
 ```
+
+## Fallback
+
+* There is a Plone icon defined as fallback if icon name is not found
+* There are fallback groups e.g. for [mimetype icons](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_mimetype.xml)
+* JPEG icon is e.g. mimetype-image/jpeg
+* You can register specific icons
+* If there is no specific icon mmimetype-image is used as fallback
