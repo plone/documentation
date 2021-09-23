@@ -1,3 +1,3 @@
-# Plone Classic UI Theming from scratch
+# Plone Classic UI Theming with Diazo
 
 Theming based on Diazo.

@@ -36,6 +36,7 @@ Icons are shipped via plone.staticresources. Check out the [package.json](https:
 * Setup profile to install icon font
 * Usage as known from e.g. Font Awesome
 
+
 # Iconresolver
 
 ## Get Icon URL

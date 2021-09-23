@@ -8,4 +8,4 @@ TODO
 * Minor CSS changes via controlpanel (TTW)
 * Theming based on Barceloneta
 * Theming from scratch (without dependencies)
-* Thiming with Diazo
+* Theming with Diazo

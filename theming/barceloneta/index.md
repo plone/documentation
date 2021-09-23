@@ -1,6 +1,4 @@
-# TTW Customizations in Plone 6 Classic UI
-
-Small CSS changes via control panel in Plone 6 Classic UI's custom.css.
+# Plone Classic UI Theming based on Barceloneta
 
 * TODO
 * SCSS
