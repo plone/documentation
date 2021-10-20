@@ -367,7 +367,7 @@ portal_catalog query takes *sort_on* argument which tells the index used for sor
 
 Sorting is supported only on FieldIndexes and some derived indexes.
 Due to the nature of searchable text indexes (they index split text, not strings) they cannot be used for sorting.
-For example, to do sorting by title, an index called *sortable_tite* should be used.
+For example, to do sorting by title, an index called *sortable_title* should be used.
 
 Example of how to sort by id:
 
