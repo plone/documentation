@@ -34,7 +34,7 @@ Example products:
 
 * https://pypi.python.org/pypi/collective.gtags
 
-* https://plone.org/products/collective.habla
+* https://pypi.org/project/collective.habla/
 
 * https://pypi.python.org/pypi/collective.xdv
 
