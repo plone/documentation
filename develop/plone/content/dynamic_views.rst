@@ -361,4 +361,4 @@ Other resources
 
 * https://plone.org/documentation/how-to/how-to-create-and-set-a-custom-homepage-template-using-generic-setup
 
-* `CMFDynamicView plone.org product page <https://plone.org/products/cmfdynamicviewfti/>`_
+* `Products.CMFDynamicViewFTI on GitHub <https://github.com/plone/Products.CMFDynamicViewFTI>`_
