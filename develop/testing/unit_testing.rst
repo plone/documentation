@@ -129,7 +129,9 @@ Unit tests disable logging to stdout.
 Some important messages may go unnoticed during the unit test development.
 To reveal these messages, change the log level from ``INFO`` to ``DEBUG``.
 
-To enable logging to stdout do add the following to your test setup code::
+To enable logging to stdout, add the following to your test setup code.
+
+.. code-block:: python
 
     import logging
     import sys
