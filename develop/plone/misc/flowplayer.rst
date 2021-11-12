@@ -14,7 +14,7 @@ Flowplayer is a GPL'ed Flash-based video player.
 
 Plone integration exists as an add-on product:
 
-* https://plone.org/products/collective-flowplayer
+* https://github.com/collective/collective.flowplayer
 
 Creating a custom Flowplayer
 ==============================
