@@ -127,7 +127,7 @@ Setting log level in unit tests
 
 Unit tests disable logging to stdout.
 Some important messages may go unnoticed during the unit test development.
-You may also want to set the loglevel from ``INFO`` to ``DEBUG``.
+To reveal these messages, change the log level from ``INFO`` to ``DEBUG``.
 
 To enable logging to stdout do add the following to your test setup code::
 
