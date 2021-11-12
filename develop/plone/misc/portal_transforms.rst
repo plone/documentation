@@ -24,61 +24,43 @@ so that content managers are allowed to insert iframe, object, embed, param,
 script, style, tags and more into the TinyMCE editor::
 
     import logging
-    from plone import api
-    from Products.PortalTransforms.Transform import make_config_persistent
 
-    logger = logging.getLogger('MY.PACKAGE.setuphandlers')
+    logger = logging.getLogger("MY.PACKAGE.setuphandlers")
 
     def isNotThisProfile(context, marker_file):
         return context.readDataFile(marker_file) is None
 
     def setup_portal_transforms(context):
-        if isNotThisProfile(context, 'MY.PACKAGE-PROFILENAME.txt'): return
+        if isNotThisProfile(context, "MY.PACKAGE-PROFILENAME.txt"): return
 
-        logger.info('Updating portal_transform safe_html settings')
+        logger.info("Updating portal_transform safe_html settings")
 
-        tid = 'safe_html'
+        registry = getUtility(IRegistry, context=portal)
+        settings = registry.forInterface(IFilterSchema, prefix="plone")
 
-        pt = api.portal.get_tool(name='portal_transforms')
-        if not tid in pt.objectIds(): return
+        settings.nasty_tags = ["meta"]
+        settings.valid_tags = [
+            "code", "meter", "tbody", "style", "img", "title", "tt", "tr",
+            "param", "li", "source", "tfoot", "th", "td", "dl", "blockquote",
+            "big", "dd", "kbd", "dt", "p", "small", "output", "div", "em",
+            "datalist", "hgroup", "video", "rt", "canvas", "rp", "sub", "bdo",
+            "sup", "progress", "body", "acronym", "base", "br", "address",
+            "article", "strong", "ol", "script", "caption", "dialog", "col",
+            "h1", "h2, "h3", "h4", "h5", "h6", "header", "table", "span",
+            "area", "mark", "dfn", "var", "cite", "thead", "head", "hr",
+            "link", "ruby", "b", "colgroup", "keygen", "ul", "del", "iframe",
+            "embed", "pre", "figure", "ins", "aside", "html", "nav", "details",
+            "samp", "map", "object", "a", "footer", "i", "q", "command",
+            "time", "audio", "section", "abbr"]
 
-        trans = pt[tid]
+Alternatively, you could use the plone.api to achieve the same result:::
 
-        tconfig = trans._config
-        tconfig['class_blacklist'] = []
-        tconfig['nasty_tags'] = {'meta': '1'}
-        tconfig['remove_javascript'] = 0
-        tconfig['stripped_attributes'] = ['lang', 'valign', 'halign', 'border',
-                                         'frame', 'rules', 'cellspacing',
-                                         'cellpadding', 'bgcolor']
-        tconfig['stripped_combinations'] = {}
-        tconfig['style_whitelist'] = ['text-align', 'list-style-type', 'float',
-                                      'width', 'height', 'padding-left',
-                                      'padding-right'] # allow specific styles for
-                                                       # TinyMCE editing
-        tconfig['valid_tags'] = {
-            'code': '1', 'meter': '1', 'tbody': '1', 'style': '1', 'img': '0',
-            'title': '1', 'tt': '1', 'tr': '1', 'param': '1', 'li': '1',
-            'source': '1', 'tfoot': '1', 'th': '1', 'td': '1', 'dl': '1',
-            'blockquote': '1', 'big': '1', 'dd': '1', 'kbd': '1', 'dt': '1',
-            'p': '1', 'small': '1', 'output': '1', 'div': '1', 'em': '1',
-            'datalist': '1', 'hgroup': '1', 'video': '1', 'rt': '1', 'canvas': '1',
-            'rp': '1', 'sub': '1', 'bdo': '1', 'sup': '1', 'progress': '1',
-            'body': '1', 'acronym': '1', 'base': '0', 'br': '0', 'address': '1',
-            'article': '1', 'strong': '1', 'ol': '1', 'script': '1', 'caption': '1',
-            'dialog': '1', 'col': '1', 'h2': '1', 'h3': '1', 'h1': '1', 'h6': '1',
-            'h4': '1', 'h5': '1', 'header': '1', 'table': '1', 'span': '1',
-            'area': '0', 'mark': '1', 'dfn': '1', 'var': '1', 'cite': '1',
-            'thead': '1', 'head': '1', 'hr': '0', 'link': '1', 'ruby': '1',
-            'b': '1', 'colgroup': '1', 'keygen': '1', 'ul': '1', 'del': '1',
-            'iframe': '1', 'embed': '1', 'pre': '1', 'figure': '1', 'ins': '1',
-            'aside': '1', 'html': '1', 'nav': '1', 'details': '1', 'u': '1',
-            'samp': '1', 'map': '1', 'object': '1', 'a': '1', 'footer': '1',
-            'i': '1', 'q': '1', 'command': '1', 'time': '1', 'audio': '1',
-            'section': '1', 'abbr': '1'}
-        make_config_persistent(tconfig)
-        trans._p_changed = True
-        trans.reload()
+    from plone import api
+
+    custom_nasty_tags = [u"meta]
+    custom_valid_tags = [u"code", u"meter", u"tbody", ...]
+    api.portal.set_registry_record("plone.nasty_tags", custom_nasty_tags)
+    api.portal.set_registry_record("plone.valid_tags", custom_valid_tags)
 
 
 Registering the Import Step Method with Generic Setup
