@@ -26,7 +26,7 @@ for ready solution, for examples, for inspiration.
 
 * https://github.com/collective/collective.portletalias
 
-* https://plone.org/products/contentwellportlets
+* https://github.com/collective/Products.ContentWellPortlets
 
 * https://github.com/miohtama/imageportlet
 
