@@ -486,7 +486,7 @@ not public and will appear in the review list)::
 
 More info:
 
-* :doc:`Creating content from PFG`</working-with-content/managing/content/ploneformgen/creating_content>
+* :doc:`Creating content from PFG </working-with-content/managing-content/ploneformgen/creating_content>`
 
 
 Creating content using Generic Setup
