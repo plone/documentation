@@ -48,7 +48,7 @@ If you lack programming skill or resources, you can still get some things done i
 
 * `Plomino is a a powerful and flexible web-based application builder for Plone <http://www.plomino.net>`_
 
-* `PloneFormGen allows you to build forms in a web browser <https://plone.org/products/ploneformgen>`_
+* `PloneFormGen allows you to build forms in a web browser <https://pypi.org/project/Products.PloneFormGen/>`_
 
 * Plone comes with through-the-web Dexterity content type editor
 
@@ -78,8 +78,8 @@ Using Buildout involves using the ``buildout.cfg`` configuration file and the ``
 Finding and installing add-on packages
 --------------------------------------
 
-Plone add-ons can be found at the `plone.org Products
-<https://plone.org/products>`_ page or at the  `PyPI (the Python
+Plone add-ons can be found at the `plone.org Add-ons
+<https://plone.org/download/add-ons>`_ page or at the  `PyPI (the Python
 Package index) <https://pypi.python.org>`_.
 
 See the :doc:`Installing add-on packages using buildout

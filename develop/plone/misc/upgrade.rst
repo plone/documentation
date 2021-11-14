@@ -114,15 +114,6 @@ Install plone.app.discussion manually
    *Site Setup*
 
 
-Migrate existing comments
--------------------------
-
-Follow the instructions regarding `How to migrate comments to
-plone.app.discussion
-<https://plone.org/products/plone.app.discussion/documentation/how-to/how-to-migrate-comments-to-plone.app.discussion>`_
-to migrate existing Plone comments.
-
-
 Fixing Creator details on existing comments
 -------------------------------------------
 

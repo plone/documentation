@@ -301,7 +301,7 @@ to have the same id as a view::
 
 More info
 
-* https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
+* :doc:`Custom views </external/plone.app.dexterity/docs/custom-views>`
 
 Content slots
 -------------

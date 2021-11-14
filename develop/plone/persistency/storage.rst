@@ -98,7 +98,7 @@ SQL values
 ----------
 
 Plone's Archetypes subsystem supports storing individual Archetypes fields in SQL database.
-This is mainly `an integration feature <http://plone.293351.n2.nabble.com/Work-with-Contents-in-SQL-database-td5868800.html>`_. Read more about this in `Archetypes manual <https://plone.org/products/archetypes/documentation/old/ArchetypesDeveloperGuide/index_html#advanced-storage-manual>`_.
+This is mainly `an integration feature <http://plone.293351.n2.nabble.com/Work-with-Contents-in-SQL-database-td5868800.html>`_. Read more about this in `Archetypes manual <https://docs.plone.org/4/en/old-reference-manuals/archgenxml/index.html>`_.
 
 Transaction sizes
 -----------------

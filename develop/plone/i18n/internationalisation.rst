@@ -633,7 +633,7 @@ Other
 
 * http://reinout.vanrees.org/weblog/2007/12/14/translating-schemata-names.html
 
-* https://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
+* https://docs.plone.org/4/en/old-reference-manuals/archgenxml/index.html
 
 * http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
 

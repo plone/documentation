@@ -582,8 +582,6 @@ Or just do it using GenericSetup like a sane person:
 
 * https://plone.org/documentation/manual/developer-manual/generic-setup/reference/portlets
 
-* https://plone.org/products/plone/roadmap/203
-
 Creating a new portlet manager
 ----------------------------------
 

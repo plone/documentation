@@ -248,7 +248,7 @@ Other
 
 * http://blogs.ingeniweb.com/blogs/user/7/tag/i18ndude/
 
-* https://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
+* https://docs.plone.org/4/en/old-reference-manuals/archgenxml/index.html
 
 
 

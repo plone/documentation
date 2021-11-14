@@ -486,9 +486,8 @@ not public and will appear in the review list)::
 
 More info:
 
-* https://plone.org/products/ploneformgen/documentation/how-to/creating-content-from-pfg
+* :doc:`Creating content from PFG`</working-with-content/managing/content/ploneformgen/creating_content>
 
-* https://plone.org/products/ploneformgen/documentation/how-to/creating-content-from-pfg
 
 Creating content using Generic Setup
 ====================================
