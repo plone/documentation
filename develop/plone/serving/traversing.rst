@@ -401,9 +401,6 @@ The navigation root check has the same mechanism as the site root check::
     else:
         # Up navigation and breadcrumbs
 
-More info
-
-* https://plone.org/products/plone/roadmap/234
 
 Getting Zope application server handle
 ======================================

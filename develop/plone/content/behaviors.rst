@@ -2,9 +2,9 @@
  Behaviors
 ==============
 
-Behaviors allow you the extend the functionality of existing content.
+Behaviors allow you to extend the functionality of existing content.
 
-* `Tutorial <https://plone.org/products/dexterity/documentation/manual/behaviors>`_
+* :doc:`Tutorial </external/plone.app.dexterity/docs/index>`
 
 * `Source code <https://github.com/plone/plone.behavior/blob/master/plone/behavior/>`_
 

@@ -308,8 +308,6 @@ See the `Windows-specific installation instructions <https://github.com/plone/In
 
 For earlier versions of Plone 5, you have the `Windows installer <https://github.com/plone/WinPloneInstaller/>`_ or the `Vagrant kit <https://github.com/plone/plonedev.vagrant>`__
 
-For the Plone 4.3 series, there is a `binary installer <https://plone.org/products/plone/releases/4.3.6>`_.
-
 An alternative to directly running Plone 5 on Windows is to use the official Windows Subsystem Linux (WSL, formerly also known as LXSS).
 For details on installation and usage consult the chapter :doc:`Installing Plone on a Windows 10 Linux Subsystem for Development </manage/installing/installation_windows10_wsl>`.
 
@@ -322,7 +320,7 @@ VirtualBox/Vagrant
 
 This is the recommended method if you want to try Plone for the first time.
 
-Please use the installer from the download page `<http://plone.org/products/plone/releases>`_.
+Please use the installer from the download page `<https://plone.org/download>`_.
 
 
 

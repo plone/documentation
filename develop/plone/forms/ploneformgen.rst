@@ -21,7 +21,7 @@ Action adapters included with this release include a mailer, a save-data adapter
 
 To make it easy to get started, newly created form folders are pre-populated to act as a simple e-mail response form.
 
-* `PloneFormGen product page <https://plone.org/products/ploneformgen>`_
+* `PloneFormGen product page <https://pypi.org/project/Products.PloneFormGen/>`_
 
 * :doc:`PloneFormGen documentation and tutorials </working-with-content/managing-content/ploneformgen/index>`
 

@@ -129,7 +129,7 @@ explains how committing works in ZODB.
 Browsing
 ========
 
-You can explore ZODB with-in Plone using `ZODBBrowser <https://plone.org/products/zodbbrowser>`_.
+You can explore ZODB within Plone using `ZODBBrowser <https://pypi.org/project/zodbbrowser/>`_.
 
 Packing database
 ================
