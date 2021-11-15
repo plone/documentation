@@ -49,7 +49,7 @@ The add-on package in this case is called
 `silvuple <https://github.com/miohtama/silvuple>`_.
 
 In ``buildout.cfg``, make sure you have the ``extends`` line for
-Dexterity (see the :doc:`Dexterity installation guide </external/plone.app.dexterity/docs/install>`
+Dexterity (see the :doc:`Dexterity installation guide </external/plone.app.dexterity/docs/install>`)
 
 ``setup.py``::
 

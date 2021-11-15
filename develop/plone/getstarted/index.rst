@@ -46,7 +46,7 @@ Non-programming approaches for customizing Plone
 
 If you lack programming skill or resources, you can still get some things done in Plone:
 
-* `Plomino is a a powerful and flexible web-based application builder for Plone <http://www.plomino.net>`_
+* `Plomino is a a powerful and flexible web-based application builder for Plone <https://github.com/plomino/Plomino/wiki>`_
 
 * `PloneFormGen allows you to build forms in a web browser <https://pypi.org/project/Products.PloneFormGen/>`_
 
@@ -79,8 +79,8 @@ Finding and installing add-on packages
 --------------------------------------
 
 Plone add-ons can be found at the `plone.org Add-ons
-<https://plone.org/download/add-ons>`_ page or at the  `PyPI (the Python
-Package index) <https://pypi.python.org>`_.
+<https://plone.org/download/add-ons>`_ page or at the `PyPI (the Python
+Package Index) <https://pypi.python.org>`_.
 
 See the :doc:`Installing add-on packages using buildout
 </manage/installing/installing_addons>` section for more details.

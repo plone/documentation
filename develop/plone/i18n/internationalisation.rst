@@ -631,10 +631,10 @@ See the *Overriding Translations* section of Maurits van Rees's `blog entry on P
 Other
 =====
 
-* http://reinout.vanrees.org/weblog/2007/12/14/translating-schemata-names.html
+* https://reinout.vanrees.org/weblog/2007/12/14/translating-schemata-names.html
 
 * https://docs.plone.org/4/en/old-reference-manuals/archgenxml/index.html
 
-* http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
+* https://web.archive.org/web/20170810113554/http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
 
 

@@ -4,7 +4,7 @@
 
 Behaviors allow you to extend the functionality of existing content.
 
-* :doc:`Tutorial</external/plone.app.dexterity/docs/index>`
+* :doc:`Tutorial </external/plone.app.dexterity/docs/index>`
 
 * `Source code <https://github.com/plone/plone.behavior/blob/master/plone/behavior/>`_
 

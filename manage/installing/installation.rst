@@ -320,7 +320,7 @@ VirtualBox/Vagrant
 
 This is the recommended method if you want to try Plone for the first time.
 
-Please use the installer from the download page `<http://plone.org/download>`_.
+Please use the installer from the download page `<https://plone.org/download>`_.
 
 
 
