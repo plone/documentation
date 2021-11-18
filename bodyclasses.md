@@ -5,7 +5,7 @@ Contained is a feature to plugin in own body-classes using named adapters.
 
 Create a class like so:
 
-```Python:
+```Python
 from plone.app.layout.globals.interfaces import IBodyClassAdapter
 
 @implementer(IBodyClassAdapter)
