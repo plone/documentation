@@ -23,7 +23,7 @@ class CustomBodyClasses(object):
 Then register the adapter in ZCML:
 
 ```XML
-<adapteer
+<adapter
     factory=".custombodyclasses.CustomBodyClasses"
     for="* *"
     name="myproject-customclasses"
