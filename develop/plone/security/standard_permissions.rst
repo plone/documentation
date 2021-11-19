@@ -26,6 +26,9 @@ As a rule of thumb:
 The most commonly used permission are shown below.
 The Zope 2 permission title is shown in parentheses.
 
+``zope.Public`` (:guilabel:`Public`)
+    special permission indicating unconditional access, public resources are always accessible;
+
 ``zope2.View`` (:guilabel:`View`)
     used to control access to the standard view of a content item;
 
