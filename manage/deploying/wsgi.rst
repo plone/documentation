@@ -17,4 +17,5 @@ WSGI is Python standard for hosting Python web services.
 Plone 4 and WSGI
 -----------------
 
-* http://comments.gmane.org/gmane.comp.web.zope.plone.devel/23886
+WSGI is not officially supported by either Zope2 or Plone 4.
+There is code in ZPublisher that should work but it has minimal documentation and should be viewed as experimental.
