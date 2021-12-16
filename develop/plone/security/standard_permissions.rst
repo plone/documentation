@@ -10,7 +10,7 @@ Standard permissions and roles
 Standard permissions
 ====================
 
-The standard permissions can be found in ``AccessControl``s and ``Product.CMFCore``\’s ``permissions.zcml``.
+The standard permissions can be found in ``AccessControl``\'s and ``Product.CMFCore``\’s ``permissions.zcml``.
 Here, you will find a short ``id`` (also known as the *Zope 3 permission id*) and a longer ``title`` (also known as the *Zope 2 permission title*).
 For historical reasons, some areas in Plone use the id, whilst others use the title.
 As a rule of thumb:
