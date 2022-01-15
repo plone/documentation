@@ -6,9 +6,9 @@ These instructions and resources will help you develop Classic-UI pages.
 
 * Chameleon Page Templates
     * Introduction
-    * bla
-    * bla
-    * bla
+    * blah
+    * blah
+    * blah
 * Skin Layers
 * [DTML](dtml.md)
 
