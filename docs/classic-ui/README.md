@@ -13,7 +13,7 @@ See the following example
 ├── index.md
 └── install.md
 ```
-Use a file called `index.md` for creating a index (if needed)
+Use a file called `index.md` for creating an index (if needed)
 
 ```shell
 ➜ cat index.md
