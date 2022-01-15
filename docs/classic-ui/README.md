@@ -1,6 +1,6 @@
 # Plone Classic UI Docs
 
-- All documentation should be written in [CommonMark](https://commonmark.org/) Markdown.
+- All documentation should be written in Markdown.
 - If possible, please structure into dirs, this will make it easier to build a structure later.
 
 See the following example
