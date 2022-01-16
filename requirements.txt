@@ -1,0 +1,10 @@
+Sphinx>=4.3.2
+jsx-lexer
+lesscpy
+linkify-it-py
+myst-parser
+sphinx-book-theme
+sphinx-copybutton
+sphinx-togglebutton
+sphinxcontrib-spelling
+sphinxext-opengraph
