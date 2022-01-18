@@ -1,19 +1,19 @@
 # Plone 6 Documentation
 
 ```{toctree}
-:caption: Documentation Overview
 :maxdepth: 2
 :hidden: true
 
-backend/*
-classic-ui/*
-contributing/*
+backend/index
+classic-ui/index
+contributing/index
 ```
 
+
+
 ```{toctree}
-:caption: Plone Documentation
+:caption: Appendices
 :maxdepth: 1
-:hidden: true
 
 glossary
 ```
