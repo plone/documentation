@@ -51,24 +51,9 @@
         <option value="all">All Trainings</option>
         {% for id, title in 
           [
-          ['mastering-plone', 'Mastering Plone'],
-          ['mastering-plone-5', 'Mastering Plone 5'],
-          ['volto','Volto'],
-          ['voltohandson','Volto Hands-On'],
-          ['voltoaddons','Volto Add-Ons'],
-          ['react','ReactJS'],
-          ['testing','Testing'],
-          ['theming','Theming'],
-          ['javascript','Javascript'],
-          ['deployment','Deployment'],
-          ['ttw','TTW'],
-          ['solr','Solr'],
-          ['workflow','Workflow'],
-          ['angular','Angular'],
-          ['transmogrifier','Transmogrifier'],
-          ['advanced-python','Advanced Python'],
-          ['gatsby','Gatsby'],
-          ['wsgi','WSGI'],
+          ["backend","Backend"],
+          ["classic-ui","Classic UI"],
+          ["contributing","Contributing"],
           ] %}
           <option value="{{id}}">{{ title }}</option>
         {% endfor %}

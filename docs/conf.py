@@ -194,16 +194,16 @@ html_theme_options = {
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = '%(project)s v%(release)s' % {'project': project, 'release': release}
+html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
 
 # If false, no index is generated.
 html_use_index = True
 
 
-
+# -- Options for HTML help output -------------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PloneDocumentation'
+htmlhelp_basename = "PloneDocumentation"
 
 
 # -- Options for LaTeX output -------------------------------------------------
@@ -211,10 +211,10 @@ htmlhelp_basename = 'PloneDocumentation'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual])
 latex_documents = [
-    ('index', 'PloneDocumentation.tex', u'Plone Documentation',
-     u'The Plone community', 'manual'),
+    ("index", "PloneDocumentation.tex", "Plone Documentation",
+     "The Plone community", "manual"),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo = "../source/documentation/_static/logo_2x.png"
+latex_logo = "_static/logo_2x.png"
