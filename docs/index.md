@@ -9,8 +9,6 @@ classic-ui/index
 contributing/index
 ```
 
-
-
 ```{toctree}
 :caption: Appendices
 :maxdepth: 1
