@@ -49,7 +49,7 @@ Any method below is acceptable, but are listed in order of most likely to get a 
 As a convenience, at the top right of every page, there is a GitHub navigation menu.
 Tap, click, or hover over the GitHub Octocat icon for options.
 
-```{image} _static/github-navigation.png
+```{image} /_static/github-navigation.png
 :alt: GitHub navigation menu 
 ```
 
