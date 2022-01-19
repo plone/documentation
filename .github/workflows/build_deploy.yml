@@ -4,7 +4,7 @@ name: Build and deploy Plone 6 documentation to 6-dev.docs.plone.org
 on:
   push:
     branches:
-      - '6-dev'
+      - "6-dev"
 
 jobs:
   build_deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
