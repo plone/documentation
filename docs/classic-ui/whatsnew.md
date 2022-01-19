@@ -1,3 +1,11 @@
+---
+html_meta:
+  "description": ""
+  "property=og:description": ""
+  "property=og:title": ""
+  "keywords": ""
+---
+
 (classic-ui-whatsnew-label)=
 
 # What's new in Plone 6 Classic UI

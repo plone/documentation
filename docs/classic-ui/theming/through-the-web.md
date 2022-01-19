@@ -1,3 +1,11 @@
+---
+html_meta:
+  "description": ""
+  "property=og:description": ""
+  "property=og:title": ""
+  "keywords": ""
+---
+
 (classic-ui-through-the-web-label)=
 
 # Through-the-web (TTW) Theme Customization in Plone 6 Classic UI

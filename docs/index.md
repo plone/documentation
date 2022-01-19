@@ -1,3 +1,13 @@
+---
+html_meta:
+  "description": ""
+  "property=og:description": ""
+  "property=og:title": ""
+  "keywords": ""
+---
+
+(index-label)=
+
 # Plone 6 Documentation
 
 ```{toctree}

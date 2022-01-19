@@ -1,3 +1,11 @@
+---
+html_meta:
+  "description": ""
+  "property=og:description": ""
+  "property=og:title": ""
+  "keywords": ""
+---
+
 (classic-ui-theming-barceloneta-label)=
 
 # Plone Classic UI Theming Based on Barceloneta
