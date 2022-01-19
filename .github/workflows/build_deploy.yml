@@ -1,0 +1,47 @@
+
+name: Build and deploy Plone 6 documentation to 6-dev.docs.plone.org
+
+on:
+  push:
+    branches:
+      - '6-dev'
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -q -r requirements.txt -c constraints.txt
+
+      - name: Run spellcheck
+        run: make spellcheck
+
+      - name: Run linkcheck
+        run: make linkcheck
+
+#      - name: Prepare deploy
+#        run: make deploy
+#
+#      - name: Deploy to server
+#        id: deploy
+#        uses: Pendect/action-rsyncer@v1.1.0
+#        env:
+#          DEPLOY_KEY: ${{secrets.DEPLOY_KEY_TRAINING}}
+#        with:
+#          flags: '-avzr --delete'
+#          options: ''
+#          ssh_options: '-p ${{secrets.DEPLOY_PORT}}'
+#          src: '_build/html/'
+#          dest: '${{secrets.DEPLOY_USER_TRAINING}}@${{secrets.DEPLOY_SERVER_TRAINING}}:${{secrets.DEPLOY_PATH_TRAINING}}/5'
+#
+#      - name: Display status from deploy
+#        run: echo "${{ steps.deploy.outputs.status }}"
