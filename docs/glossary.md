@@ -231,10 +231,10 @@ Docutils
 
 reStructuredText
     [reStructuredText (rST)](https://docutils.sourceforge.io/rst.html) is an easy-to-read, what-you-see-is-what-you-get plaintext markup syntax and parser system.
-    The Training documentation was written in reStructuredText originally, then converted to {term}`MyST` in 2021.
+    The Plone 6 Documentation was written in reStructuredText originally, then converted to {term}`MyST` in 2022.
 
 MyST
-    [Markedly Structured Text (MyST)](https://myst-parser.readthedocs.io/en/latest/) is a rich and extensible flavor of Markdown, for authoring training documentation.
+    [Markedly Structured Text (MyST)](https://myst-parser.readthedocs.io/en/latest/) is a rich and extensible flavor of Markdown, for authoring Plone Documentation.
 
 Markdown
     [Markdown](https://daringfireball.net/projects/markdown/) is a text-to-HTML conversion tool for web writers.

@@ -6,7 +6,7 @@ html_meta:
 
 # General Guide to Writing Documentation
 
-This guide provides general help for writing documentation for Plone Trainings.
+This guide provides general help for writing documentation for Plone.
 
 
 ## MyST, reStructuredText, and Markdown

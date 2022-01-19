@@ -79,7 +79,7 @@ Contributors to the Plone Documentation may perform one or many roles.
 
 ## Documentation quality requirements
 
-We use GitHub Actions with every pull request to enforce Training documentation quality.
+We use GitHub Actions with every pull request to enforce Plone Documentation quality.
 We recommend that you build the documentation locally to catch errors and warnings early on.
 See {doc}`setup-build` for instructions for how to set up and build the documentation and to run quality checks.
 

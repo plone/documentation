@@ -90,7 +90,7 @@ To validate spelling, run the following command.
 make spellcheck
 ```
 
-Open `/_build/spellcheck/` for each training's misspellings.
+Open `/_build/spellcheck/` for misspellings.
 
 Because it is difficult to automate good English grammar and syntax, we do not strictly enforce it.
 We also understand that contributors might not be fluent in English.

@@ -87,7 +87,7 @@ See {ref}`authors-english-label` for configuration.
 make spellcheck
 ```
 
-Open `/_build/spellcheck/` for each training's misspellings.
+Open `/_build/spellcheck/` for misspellings.
 
 
 ### `html_meta`
