@@ -1,15 +1,20 @@
+(classic-ui-recipes-label)=
+
 # Recipes
 
+This chapter provides several recipes to working with the Classic UI in Plone 6.
 
+
+(classic-ui-recipes-add-custom-classes-to-body-label)=
 
 ## Add custom classes to the `body` element
 
-Body classes are generated in the `LayoutPolicy.bodyClass` method in module `plone.app.layout.globals.layout`.
-Contained is a feature to plugin in own body-classes using named adapters.
+Body classes are generated in the `LayoutPolicy.bodyClass` method in the module `plone.app.layout.globals.layout`.
+It allows you to create your own body-classes using named adapters.
 
-Create a class like so:
+First create a class as follows.
 
-```Python
+```python
 from plone.app.layout.globals.interfaces import IBodyClassAdapter
 
 @implementer(IBodyClassAdapter)
@@ -21,12 +26,11 @@ class CustomBodyClasses(object):
 
     def get_classes(self, template, view):
         return ["additional-class", "another-css-class"]
-
 ```
 
-Then register the adapter in ZCML:
+Then register the adapter in ZCML.
 
-```XML
+```xml
 <adapter
     factory=".custombodyclasses.CustomBodyClasses"
     for="* *"
