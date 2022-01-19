@@ -70,7 +70,7 @@ linkcheck_ignore = [
     r"http://localhost:\d+",
     r"http://127.0.0.1",
     # r"http://example.com",
-    # r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
+    r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
 ]
 linkcheck_anchors = False
 linkcheck_timeout = 10

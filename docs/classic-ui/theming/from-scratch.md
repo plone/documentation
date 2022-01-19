@@ -19,7 +19,6 @@ Theming based on a filesystem package without any dependency.
 
 * Create a theme package as explained here.
 * Remove what you do not need
-* Add [package.json](https://github.com/collective/plonetheme.munich/blob/master/package.json)
 * Overrides
 * Static files
 
