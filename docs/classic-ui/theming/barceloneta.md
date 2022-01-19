@@ -1,34 +1,44 @@
-# Plone Classic UI Theming based on Barceloneta
+(classic-ui-theming-barceloneta-label)=
+
+# Plone Classic UI Theming Based on Barceloneta
+
+```{todo}
+This page is only an outline and needs a lot of work.
+```
 
 * Use of SCSS
-* Colors, fonts and sizes via variable changable
-* Properties for shadows, rounded corners, gradients, etc.
-* plonetheme.barceloneta npm package for includes
-* bobtemplates.plone template
-* Theming is based on Bootstrap 5
+* Colors, fonts and sizes via variable changeable
+* Properties for shadows, rounded corners, gradients.
+* `plonetheme.barceloneta` npm package for includes
+* `bobtemplates.plone` template
+* Theming is based on Twitter Bootstrap 5
 * We used Bootstrap markup in templates
 * We used Bootstrap components wherever possible
-* Most of look and feel can be touched via Bootstrap's variables
+* Most of the look and feel can be changed via Bootstrap's variables
 * Hint: order is important in SCSS
 
 
-# Theme Package
+(classic-ui-theming-barceloneta-theme-package-label)=
+
+## Theme Package
 
 * Generated theme package can be uploaded as ZIP-file
 
 
-# Theme Structure
+(classic-ui-theming-barceloneta-theme-structure-label)=
 
-## base.scss
+## Theme Structure
+
+### `base.scss`
 
 * Basices required for backend
 
-## barceloneta.scss
+### `barceloneta.scss`
 
 * Barceloneta Theme basis
 
 
-# npm Package
+## npm Package
 
 * npm package with files required for Plone
 * dependencies required by theme to compile
@@ -36,14 +46,14 @@
 
 # Bootstrap Components
 
-* Default components are extended with some custom components (e.g. dropdown menu)
-* We use Boostrap variables in this cases
+* Default components are extended with some custom components, such as a select or dropdown menu.
+* We use Boostrap variables in these cases.
 
 
 # Add-Ons and Templates
 
-Make live easy with...
+Make life easy with...
 
 * use Bootstrap markup
 * use Bootstrap components
-* use Bootsrap variables
+* use Bootstrap variables

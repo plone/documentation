@@ -34,7 +34,7 @@ This provides an option to customize the contenttype and Plone UI icons by overr
 - [Plone UI](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
 
 
-(classic-ui-icons-registration-label)=
+(classic-ui-icons-contextual-icons-label)=
 
 ## Contextual Icons
 

@@ -2,6 +2,10 @@
 
 # Through-the-web (TTW) Theme Customization in Plone 6 Classic UI
 
+```{todo}
+This page is only an outline and needs a lot of work.
+```
+
 TTW customization is useful when you need to make small CSS changes.
 Theme changes can be made via control panels or by updating Plone 6 Classic UI's `custom.css`.
 Other theming methods should be used for larger customizations or entire website designs.

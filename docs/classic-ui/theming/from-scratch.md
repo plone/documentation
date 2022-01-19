@@ -1,4 +1,10 @@
+(classic-ui-theming-from-scratch-label)=
+
 # Plone Classic UI Theming based on Barceloneta
+
+```{todo}
+This page is only an outline and needs a lot of work.
+```
 
 Theming based on a filesystem package without any dependency.
 
@@ -9,23 +15,23 @@ Theming based on a filesystem package without any dependency.
 * No Diazo needed
 
 
-# Theme Package
+## Theme Package
 
 * Create a theme package as explained here.
-* Temove what you do not need
+* Remove what you do not need
 * Add [package.json](https://github.com/collective/plonetheme.munich/blob/master/package.json)
 * Overrides
 * Static files
 
 
-# Static Files
+## Static Files
 
 Register directory to keep static files
 
 File: src/plonetheme/munich/browser/configure.zcml
 Directory: src/plonetheme/munich/browser/static
 
-```
+```xml
 <!-- Publish static files -->
 <plone:static
     name="plonetheme.munich"
@@ -34,14 +40,14 @@ Directory: src/plonetheme/munich/browser/static
     />
 ```
 
-# Theme
+## Theme
 
-## Manifest
+### Manifest
 
 * Manifest for your theme
 * Keep rules empty to disable Diazo
 
-```
+```ini
 [theme]
 title = Munich Theme
 description = A modernized Plone 6 theme
@@ -51,9 +57,9 @@ prefix = /++theme++plonetheme.munich
 doctype = <!DOCTYPE html>
 ```
 
-## Bundle Registration
+### Bundle Registration
 
-```
+```xml
 <?xml version="1.0"?>
 <registry
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
@@ -70,11 +76,11 @@ doctype = <!DOCTYPE html>
 </registry>
 ```
 
-## Theme Registration
+### Theme Registration
 
 Register your theme via theme.xml
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <theme>
   <name>munich</name>
@@ -82,24 +88,24 @@ Register your theme via theme.xml
 </theme>
 ```
 
-## Compile the bundle
+### Compile the bundle
 
 * Compile SASS to SCSS
 
 Install all requirements and dependencies from package.json:
 
-```
+```shell
 yarn install
 ```
 
 Build the actual bundle:
 
-```
+```shell
 yarn dist
 ```
 
 
-# Theming
+### Theming
 
 * Make use of Bootstrap [variables](https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss)
 * Tweak basic settings like rounded corners, shadows, etc.
@@ -107,14 +113,15 @@ yarn dist
 * Define your own stuff
 * Import Boostrap (as basis)
 
-## Templates
+
+#### Templates
 
 * Add z3c.jbot overrides
 * Copy Templates to customize
 * Add custom views for your story
 
 
-# Available Themes
+### Available Themes
 
 * plonetheme.tokyo (mobile first, onw column)
 * plonetheme.munic (minimalistic)

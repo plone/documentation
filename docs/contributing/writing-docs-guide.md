@@ -43,10 +43,10 @@ The following are frequently used snippets and examples.
 ##### Link to a Chapter or Page
 
 ```md
-We created an add-on in the last chapter {doc}`/mastering-plone/volto_custom_addon`.
+Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
 ```
 
-We created an add-on in the last chapter {doc}`/mastering-plone/volto_custom_addon`.
+Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
 
 
 (writing-docs-guide-link-heading-label)=

@@ -1,3 +1,5 @@
+(classic-ui-whatsnew-label)=
+
 # What's new in Plone 6 Classic UI
 
 - HTML markup is now based on [Twitter Bootstrap 5](https://getbootstrap.com/).

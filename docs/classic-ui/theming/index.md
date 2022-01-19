@@ -1,11 +1,14 @@
-# Plone Classic UI Theming
+# Plone 6 Classic UI Theming
 
-TODO
+```{todo}
+This page is only an outline and needs a lot of work.
+```
 
-# Contents
+```{toctree}
+:maxdepth: 2
 
-* Basics and Requirements
-* Minor CSS changes via controlpanel (TTW)
-* Theming based on Barceloneta
-* Theming from scratch (without dependencies)
-* Theming with Diazo
+barceloneta
+diazo
+from-scratch
+through-the-web
+```
