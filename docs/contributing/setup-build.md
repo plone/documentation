@@ -66,23 +66,6 @@ make html
 Open `/_build/html/index.html` in a web browser.
 
 
-(setup-build-make-presentation-label)=
-
-### `presentation`
-
-`presentation` is an abbreviated version of the documentation.
-It is designed for projectors which are typically low resolution and have limited screen space.
-Trainers may present this version using a projector during a training.
-
-```shell
-make presentation
-```
-
-Open `/_build/presentation/index.html` in a web browser.
-
-Authors should read {ref}`authors-presentation-markup-label` for how to write markup for the presentation build.
-
-
 ### `linkcheck`
 
 `linkcheck` checks all links.
@@ -92,7 +75,7 @@ See {ref}`authors-linkcheck-label` for configuration.
 make linkcheck
 ```
 
-Open `/_build/presentation/output.txt` for a list of broken links.
+Open `/_build/linkcheck/output.txt` for a list of broken links.
 
 
 ### `spellcheck`

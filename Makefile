@@ -44,10 +44,6 @@ html: ## Build html
 manual:
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html -t manual . manual
 
-.PHONY: presentation
-presentation: ## Build html for presentation
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html -t presentation . $(BUILDDIR)/presentation
-
 .PHONY: dirhtml
 dirhtml:
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml

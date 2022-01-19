@@ -3,7 +3,7 @@ html_meta:
   "description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
   "property=og:description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
   "property=og:title": "Authors Guide"
-  "keywords": "Plone, Documentation, SEO, meta, presentation, exercises, solutions, spellcheck, linkcheck, lexer"
+  "keywords": "Plone, Documentation, SEO, meta, exercises, solutions, spellcheck, linkcheck, lexer"
 ---
 
 (authors-guide-label)=
@@ -134,7 +134,7 @@ To validate links, run the following command.
 make linkcheck
 ```
 
-Open `/_build/presentation/output.txt` for a list of broken links.
+Open `/_build/linkcheck/output.txt` for a list of broken links.
 
 ```{danger}
 Please do not abuse `linkcheck_ignore`.
