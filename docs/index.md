@@ -12,6 +12,9 @@ contributing/index
 ```{toctree}
 :caption: Appendices
 :maxdepth: 1
+:hidden: true
 
 glossary
 ```
+
+{ref}`genindex`
