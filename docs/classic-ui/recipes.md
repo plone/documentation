@@ -1,4 +1,8 @@
-# Add custom classes to the `body` element
+# Recipes
+
+
+
+## Add custom classes to the `body` element
 
 Body classes are generated in the `LayoutPolicy.bodyClass` method in module `plone.app.layout.globals.layout`.
 Contained is a feature to plugin in own body-classes using named adapters.
