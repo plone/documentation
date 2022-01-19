@@ -1,6 +1,6 @@
 (classic-ui-index-label)=
 
-# Plone Classic UI
+# Classic UI
 
 ```{todo}
 Perhaps some of this introduction should be an include, so we don't have to repeat ourselves?
