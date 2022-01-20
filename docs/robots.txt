@@ -1,4 +1,7 @@
-# By default we allow robots to access all areas of our site
-# already accessible to anonymous users
+# Disallow all user agents from the following directories and files
 User-agent: *
-Allow: /
+Disallow: /_sources/
+Disallow: /.doctrees/
+Disallow: /*.txt$
+Disallow: /.buildinfo$
+Disallow: /.objects.inv$
