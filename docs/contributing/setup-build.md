@@ -36,9 +36,7 @@ Clone the Plone Documentation repository, then create and activate a virtual env
 ```shell
 git clone https://github.com/plone/documentation.git
 cd documentation
-python -m venv .
-source bin/activate
-pip install -r requirements.txt
+make build
 ```
 
 
