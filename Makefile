@@ -31,6 +31,9 @@ build:  ## Set up training: Install requirements
 	python3 -m venv . || virtualenv --clear --python=python3 .
 	bin/python -m pip install --upgrade pip
 	bin/pip install -r requirements.txt
+	@echo
+	@echo "Please activate your Python virtual environment with"
+	@echo "source bin/activate"
 
 .PHONY: html
 html: ## Build html
@@ -185,7 +188,7 @@ test: clean linkcheck spellcheck  ## Run linkcheck, spellcheck
 deploy: clean html
 
 .PHONY: livehtml
-livehtml:
+livehtml:  ## Rebuild Sphinx documentation on changes, with live-reload in the browser
 	cd "$(DOCS_DIR)" && sphinx-autobuild \
 		--ignore "*.swp" \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
