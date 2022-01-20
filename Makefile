@@ -168,7 +168,6 @@ spellcheck: ## Run spellcheck
 	@echo "Spellcheck is finished; look for any errors in the above output " \
 		" or in $(BUILDDIR)/spellcheck/ ."
 
-
 .PHONY: html_meta
 html_meta:
 	python ./docs/addMetaData.py
@@ -182,17 +181,14 @@ doctest:
 .PHONY: test
 test: clean linkcheck spellcheck  ## Run linkcheck, spellcheck
 
-.PHONY: test
-testlight: clean spellcheck  ## Run spellcheck
-
 .PHONY: deploy
 deploy: clean html
-
-.PHONY: all
-all: clean spellcheck linkcheck html ## Run checks and build html
 
 .PHONY: livehtml
 livehtml:
 	cd "$(DOCS_DIR)" && sphinx-autobuild \
 		--ignore "*.swp" \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
+
+.PHONY: all
+all: clean spellcheck linkcheck html ## Run checks and build html
