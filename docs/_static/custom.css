@@ -120,7 +120,7 @@ div.section {
 #search-form input[type="submit"] {
   margin-right: 1rem;
 }
-ul.search .title_training::before {
+ul.search .title_doc_section::before {
   content: ' – ';
 }
 p.search-summary {

@@ -78,11 +78,11 @@ var Search = {
           var query = params.q[0];
           $('input[name="q"]')[0].value = query;
           $('input[name="q"]')[1].value = query;
-          if (params.training) {
-            var training = params.training[0];
-            $('select[name="training"]')[0].value = training;
+          if (params.doc_section) {
+            var doc_section = params.doc_section[0];
+            $('select[name="doc_section"]')[0].value = doc_section;
           }
-          this.performSearch(query, training);
+          this.performSearch(query, doc_section);
       }
   },
 
@@ -136,7 +136,7 @@ var Search = {
   /**
    * perform a search for something (or wait until index is loaded)
    */
-  performSearch : function(query, training) {
+  performSearch : function(query, doc_section) {
     // create the required interface elements
     this.out = $('#search-results');
     this.title = $('').appendTo(this.out);
@@ -149,7 +149,7 @@ var Search = {
 
     // index already loaded, the browser was quick!
     if (this.hasIndex()) {
-      this.query(query, training);
+      this.query(query, doc_section);
     } else {
       this.deferQuery(query);
     }
@@ -158,7 +158,7 @@ var Search = {
   /**
    * execute search (requires search index to be loaded)
    */
-  query : function(query, training) {
+  query : function(query, doc_section) {
     var i;
 
     // stem the searchterms and add them to the correct list
@@ -227,15 +227,15 @@ var Search = {
         results[i][4] = Scorer.score(results[i]);
     }
 
-    // Filter results by training
-    if (training && training !== 'all') {
+    // Filter results by doc_section
+    if (doc_section && doc_section !== 'all') {
       results = results.filter(result => {
-        let condition = result[0].split('/')[0] === training;
+        let condition = result[0].split('/')[0] === doc_section;
         return condition
       })
     }
 
-    // Enrich item with parent training title
+    // Enrich item with parent doc_section title
     for (i = 0; i < results.length; i++) 
       results[i][6] = results[i][6] || 'TODO Documentation title';
 
@@ -287,7 +287,7 @@ var Search = {
             linkUrl +
             highlightstring + item[2]).html(item[1]));
         
-        listItem.append($('<span class="title_training">' + item[6] + '</span>'));
+        listItem.append($('<span class="title_doc_section">' + item[6] + '</span>'));
 
         if (item[3]) {
           listItem.append($('<span> (' + item[3] + ')</span>'));
@@ -505,7 +505,7 @@ var Search = {
         function getParentTitle(f) {
           let parentdocname = docnames[f].split('/')[0] + '/index';
           let parentID = docnames.indexOf(parentdocname);
-          let title = parentID === -1 ? 'Training' : titles[parentID];
+          let title = parentID === -1 ? 'Plone Documentation' : titles[parentID];
           return title
         }
         results.push([docnames[file], titles[file], '', null, score, filenames[file], getParentTitle(file)]);
@@ -545,7 +545,7 @@ var Search = {
 $(document).ready(function() {
   Search.init();
 
-  $('select[name="training"]').change(function() {
+  $('select[name="doc_section"]').change(function() {
     this.form.submit();
   });
 });
