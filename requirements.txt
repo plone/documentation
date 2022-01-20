@@ -1,5 +1,4 @@
-# See https://github.com/sphinx-doc/sphinx/issues/10121
-Sphinx>=4.3.2,<4.4.0
+Sphinx
 jsx-lexer
 lesscpy
 linkify-it-py
