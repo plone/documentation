@@ -1,0 +1,4 @@
+# By default we allow robots to access all areas of our site
+# already accessible to anonymous users
+User-agent: *
+Allow: /

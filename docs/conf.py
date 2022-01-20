@@ -96,6 +96,13 @@ exclude_patterns = [
     "**/LICENSE.rst",
 ]
 
+html_extra_path = [
+    "robots.txt",
+]
+
+html_static_path = [
+    "_static",
+]
 
 # -- Options for myST markdown conversion to html -----------------------------
 
