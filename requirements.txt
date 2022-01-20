@@ -3,6 +3,7 @@ jsx-lexer
 lesscpy
 linkify-it-py
 myst-parser
+sphinx-autobuild
 sphinx-book-theme
 sphinx-copybutton
 sphinx-togglebutton

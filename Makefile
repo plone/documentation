@@ -190,3 +190,9 @@ deploy: clean html
 
 .PHONY: all
 all: clean spellcheck linkcheck html ## Run checks and build html
+
+.PHONY: livehtml
+livehtml:
+	cd "$(DOCS_DIR)" && sphinx-autobuild \
+		--ignore "*.swp" \
+		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
