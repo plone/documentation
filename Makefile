@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+SPHINXBUILD   = ../bin/sphinx-build
 PAPER         =
 DOCS_DIR      = ./docs/
 BUILDDIR      = ../_build/
@@ -26,11 +26,9 @@ help: ## This help message
 clean: ## Clean build directory
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/*
 
-bin/python bin/pip: ## Create virtual Python environment
-	python3 -m venv . || virtualenv --clear --python=python3 .
-
 .PHONY: build
 build:  ## Set up training: Install requirements
+	python3 -m venv . || virtualenv --clear --python=python3 .
 	bin/python -m pip install --upgrade pip
 	bin/pip install -r requirements.txt
 
