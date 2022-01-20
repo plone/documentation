@@ -1,5 +1,5 @@
 {
-  "name": "Plone Documentation",
+  "name": "documentation",
   "version": "6.0-dev",
   "description": "======== Plone Documentation ========",
   "main": "index.js",
