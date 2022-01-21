@@ -4,4 +4,4 @@ Disallow: /_sources/
 Disallow: /.doctrees/
 Disallow: /*.txt$
 Disallow: /.buildinfo$
-Disallow: /.objects.inv$
+Disallow: /objects.inv$
