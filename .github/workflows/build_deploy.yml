@@ -1,5 +1,5 @@
 
-name: Build and deploy Plone 6 documentation to 6-dev.docs.plone.org
+name: Build and deploy Plone 6 documentation to 6-dev-docs.plone.org
 
 on:
   push:
