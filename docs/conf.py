@@ -67,7 +67,7 @@ pygments_style = "sphinx"
 # Ignore localhost
 linkcheck_ignore = [
     # TODO: Before release, clean up any links to ignore
-    r"http://localhost:\d+",
+    r"http://localhost",
     r"http://127.0.0.1",
     r"https://www.linode.com/",
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
