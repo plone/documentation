@@ -222,7 +222,7 @@ You can search the [Pygments issue tracker](https://github.com/pygments/pygments
 
 ## Synchronize the Browser While Editing
 
-Use `sphinx-autobuild` view the Makefile to view changes in the browser while editing documentation.
+Use `sphinx-autobuild` to view changes in the browser while editing documentation.
 
 ```shell
 make livehtml
