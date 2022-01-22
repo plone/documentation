@@ -39,13 +39,13 @@ bin/python:
 	bin/python -m pip install --upgrade pip
 	bin/pip install -r requirements.txt
 
-submodules/volto:
+submodules/volto/index.md:
 	# git submodule add git@github.com:plone/volto.git submodules/volto
 	git submodule init
-	ln -s ../submodules/volto/docs/source ./docs/volto
+	git submodule update
 
 .PHONY: deps
-deps: bin/python submodules/volto
+deps: bin/python submodules/volto/index.md
 
 .PHONY: html
 html: deps		# Build html
