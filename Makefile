@@ -1,7 +1,5 @@
 # Makefile for Sphinx documentation
-#
 
-# Now we can activate virtualenv
 SHELL=bash
 .DEFAULT_GOAL = all
 
@@ -35,9 +33,6 @@ build:		## Set up training: Install requirements
 	python3 -m venv . || virtualenv --clear --python=python3 .
 	bin/python -m pip install --upgrade pip
 	bin/pip install -r requirements.txt
-	@echo
-	@echo "Please activate your Python virtual environment with"
-	@echo "source bin/activate"
 
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
