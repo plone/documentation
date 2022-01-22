@@ -10,3 +10,6 @@ pyvenv.cfg
 /_build
 *~
 lib64
+
+# symlinked from submodule
+docs/volto
