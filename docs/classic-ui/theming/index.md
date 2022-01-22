@@ -1,11 +1,24 @@
-# Plone Classic UI Theming
+---
+html_meta:
+  "description": ""
+  "property=og:description": ""
+  "property=og:title": ""
+  "keywords": ""
+---
 
-TODO
+(classic-ui-theming-index-label)=
 
-# Contents
+# Plone 6 Classic UI Theming
 
-* Basics and Requirements
-* Minor CSS changes via controlpanel (TTW)
-* Theming based on Barceloneta
-* Theming from scratch (without dependencies)
-* Theming with Diazo
+```{todo}
+This page is only an outline and needs a lot of work.
+```
+
+```{toctree}
+:maxdepth: 2
+
+barceloneta
+diazo
+from-scratch
+through-the-web
+```

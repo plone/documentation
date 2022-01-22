@@ -1,0 +1,19 @@
+{% extends "!page.html" %}
+
+{%- block htmltitle %}
+<title>{{ title|striptags|e }}{%- for parent in parents %} – {{ parent.title }}{%- endfor %}{{ titlesuffix }}</title>
+{%- endblock %}
+
+{% block footer %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".toggle > *").hide();
+            $(".toggle .admonition-title").show();
+            $(".toggle .admonition-title").click(function() {
+                $(this).parent().children().not(".admonition-title").toggle(400);
+                $(this).parent().children(".admonition-title").toggleClass("open");
+            })
+        });
+    </script>
+
+{% endblock %}

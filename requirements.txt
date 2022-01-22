@@ -1,0 +1,12 @@
+Sphinx
+jsx-lexer
+lesscpy
+linkify-it-py
+myst-parser
+sphinx-autobuild
+sphinx-book-theme
+sphinx-copybutton
+sphinx-sitemap
+sphinx-togglebutton
+sphinxcontrib-spelling
+sphinxext-opengraph
