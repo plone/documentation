@@ -204,9 +204,6 @@ livehtml: submodules/volto		## Rebuild Sphinx documentation on changes, with liv
 .PHONY: all
 all: clean spellcheck linkcheck html ## Run checks and build html
 
-.PHONY: activate
-activate:
-
 submodules/volto:
 	# git submodule add git@github.com:plone/volto.git submodules/volto
 	git submodule init
