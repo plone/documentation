@@ -1,6 +1,10 @@
 # Makefile for Sphinx documentation
 #
 
+# Now we can activate virtualenv
+SHELL=bash
+.DEFAULT_GOAL = all
+
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
@@ -35,8 +39,12 @@ build:  ## Set up training: Install requirements
 	@echo "Please activate your Python virtual environment with"
 	@echo "source bin/activate"
 
+bin/python:	build
+	@echo
+
 .PHONY: html
-html: ## Build html
+html: bin/python		# Build html
+	source bin/activate; \
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -195,3 +203,15 @@ livehtml:  ## Rebuild Sphinx documentation on changes, with live-reload in the b
 
 .PHONY: all
 all: clean spellcheck linkcheck html ## Run checks and build html
+
+.PHONY: activate
+activate:
+
+submodules/volto:
+	# git submodule add git@github.com:plone/volto.git submodules/volto
+	git submodule init
+	ln -s ../submodules/volto/docs/source ./docs/volto
+
+.PHONY: serve-docs
+serve-docs:		## Start an HTTP server for docs
+	python -m http.server --directory ./_build/html

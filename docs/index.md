@@ -16,6 +16,7 @@ html_meta:
 
 backend/index
 classic-ui/index
+volto/plone6index
 contributing/index
 ```
 

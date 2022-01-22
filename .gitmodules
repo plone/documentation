@@ -1,0 +1,3 @@
+[submodule "submodules/volto"]
+	path = submodules/volto
+	url = git@github.com:plone/volto.git

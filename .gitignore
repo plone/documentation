@@ -8,3 +8,5 @@
 package-lock.json
 pyvenv.cfg
 /_build
+*~
+lib64
