@@ -6,6 +6,7 @@ myst-parser
 sphinx-autobuild
 sphinx-book-theme
 sphinx-copybutton
+sphinx-sitemap
 sphinx-togglebutton
 sphinxcontrib-spelling
 sphinxext-opengraph
