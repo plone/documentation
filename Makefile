@@ -43,7 +43,7 @@ bin/python:	build
 	@echo
 
 .PHONY: html
-html: bin/python		# Build html
+html: submodules/volto bin/python		# Build html
 	source bin/activate; \
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
@@ -196,7 +196,7 @@ test: clean linkcheck spellcheck  ## Run linkcheck, spellcheck
 deploy: clean html
 
 .PHONY: livehtml
-livehtml:  ## Rebuild Sphinx documentation on changes, with live-reload in the browser
+livehtml: submodules/volto		## Rebuild Sphinx documentation on changes, with live-reload in the browser
 	cd "$(DOCS_DIR)" && sphinx-autobuild \
 		--ignore "*.swp" \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
