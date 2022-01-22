@@ -3,8 +3,6 @@
 SHELL=bash
 .DEFAULT_GOAL = all
 
-CWD = $(pwd)
-
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = $(realpath bin/sphinx-build)
@@ -37,14 +35,12 @@ build:		## Set up training: Install requirements
 	bin/pip install -r requirements.txt
 
 bin/python:
-	cd $(CWD); \
 	python3 -m venv . || virtualenv --clear --python=python3 .; \
 	bin/python -m pip install --upgrade pip; \
 	bin/pip install -r requirements.txt
 
 docs/volto:
 	# git submodule add git@github.com:plone/volto.git submodules/volto
-	cd $(CWD); \
 	git submodule init; \
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
