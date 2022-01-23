@@ -6,6 +6,7 @@ SHELL=bash
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = $(realpath bin/sphinx-build)
+SPHINXAUTOBUILD   = $(realpath bin/sphinx-autobuild)
 PAPER         =
 DOCS_DIR      = ./docs/
 BUILDDIR      = ../_build/
@@ -202,7 +203,7 @@ deploy: clean html
 
 .PHONY: livehtml
 livehtml: deps		## Rebuild Sphinx documentation on changes, with live-reload in the browser
-	cd "$(DOCS_DIR)" && sphinx-autobuild \
+	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
 		--ignore "*.swp" \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
