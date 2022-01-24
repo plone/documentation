@@ -1,6 +1,5 @@
 # Makefile for Sphinx documentation
-SHELL           = bash
-.DEFAULT_GOAL   = all
+.DEFAULT_GOAL   = help
 
 # You can set these variables from the command line.
 SPHINXOPTS      ?=
@@ -28,15 +27,17 @@ help: ## This help message
 clean: ## Clean build directory
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/*
 
+.PHONY: distclean
+distclean:
+	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/*
+	rm -rf ./bin/ ./lib/ ./lib64 ./include
+
 .PHONY: build
-build:		## Set up training: Install requirements
-	python3 -m venv . || virtualenv --clear --python=python3 .
-	bin/python -m pip install --upgrade pip
-	bin/pip install -r requirements.txt
+build: distclean bin/python ## Set up training: Install requirements
 
 bin/python:
-	python3 -m venv . || virtualenv --clear --python=python3 .; \
-	bin/python -m pip install --upgrade pip; \
+	python3 -m venv . || virtualenv --clear --python=python3 .
+	bin/python -m pip install --upgrade pip
 	bin/pip install -r requirements.txt
 
 docs/volto:
@@ -49,7 +50,7 @@ docs/volto:
 deps: bin/python docs/volto
 
 .PHONY: html
-html: deps		# Build html
+html: deps # Build html
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -164,21 +165,21 @@ changes: deps
 	@echo "The overview file is in $(BUILDDIR)/changes."
 
 .PHONY: linkcheck
-linkcheck: deps		## Run linkcheck
+linkcheck: deps ## Run linkcheck
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
 
 .PHONY: linkcheckbroken
-linkcheckbroken: deps		## Run linkcheck and show only broken links
+linkcheckbroken: deps ## Run linkcheck and show only broken links
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' egrep -wi broken --color=auto
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
 
 .PHONY: spellcheck
-spellcheck: deps		## Run spellcheck
+spellcheck: deps ## Run spellcheck
 	cd $(DOCS_DIR) && LANGUAGE=$* $(SPHINXBUILD) -b spelling -j 4 $(ALLSPHINXOPTS) $(BUILDDIR)/spellcheck/$*
 	@echo
 	@echo "Spellcheck is finished; look for any errors in the above output " \
@@ -201,14 +202,10 @@ test: clean linkcheck spellcheck  ## Run linkcheck, spellcheck
 deploy: clean html
 
 .PHONY: livehtml
-livehtml: deps		## Rebuild Sphinx documentation on changes, with live-reload in the browser
+livehtml: deps ## Rebuild Sphinx documentation on changes, with live-reload in the browser
 	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
 		--ignore "*.swp" \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: all
 all: clean spellcheck linkcheck html ## Run checks and build html
-
-.PHONY: serve-docs
-serve-docs: html		## Start an HTTP server for docs
-	python -m http.server --directory ./_build/html
