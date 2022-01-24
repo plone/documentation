@@ -1,5 +1,6 @@
 # Makefile for Sphinx documentation
 .DEFAULT_GOAL   = help
+SHELL=bash
 
 # You can set these variables from the command line.
 SPHINXOPTS      ?=
