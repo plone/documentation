@@ -7,6 +7,9 @@
 {% block footer %}
     <script type="text/javascript">
         $(document).ready(function() {
+            if ($.trim($(".topbar-contents .bd-toc").html()) === "") {
+                $(".topbar-contents .bd-toc").css("visibility", "hidden");
+            }
             $(".toggle > *").hide();
             $(".toggle .admonition-title").show();
             $(".toggle .admonition-title").click(function() {
