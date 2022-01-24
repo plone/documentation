@@ -50,7 +50,7 @@ docs/volto:
 deps: bin/python docs/volto
 
 .PHONY: html
-html: deps # Build html
+html: # Build html
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
