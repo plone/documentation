@@ -1,15 +1,15 @@
 # Makefile for Sphinx documentation
 
-SHELL=bash
-.DEFAULT_GOAL = all
+SHELL           = bash
+.DEFAULT_GOAL   = all
 
 # You can set these variables from the command line.
-SPHINXOPTS    =
-SPHINXBUILD   = $(realpath bin/sphinx-build)
-SPHINXAUTOBUILD   = $(realpath bin/sphinx-autobuild)
-PAPER         =
-DOCS_DIR      = ./docs/
-BUILDDIR      = ../_build/
+SPHINXOPTS      =
+SPHINXBUILD     = $(realpath bin/sphinx-build)
+SPHINXAUTOBUILD = $(realpath bin/sphinx-autobuild)
+PAPER           =
+DOCS_DIR        = ./docs/
+BUILDDIR        = ../_build/
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
