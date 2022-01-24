@@ -21,14 +21,14 @@ count_files = {
     "modified": 0,
     "unmodified": 0,
 }
-docs_dir = './docs' if os.path.isdir('./docs') else '.'
+docs_dir = "./docs" if os.path.isdir("./docs") else "."
 
 for root, dirs, files in os.walk(docs_dir):
     for name in files:
         if name.endswith(".md"):
             filename = os.path.join(root, name)
             # print(filename)
-            with open(filename, 'r+') as f:
+            with open(filename, "r+") as f:
                 data = f.read()
                 if not data.startswith(metadata_check):
                     f.seek(0)
