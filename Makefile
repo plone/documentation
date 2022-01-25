@@ -55,7 +55,7 @@ html: deps  ## Build html
 
 .PHONY: manual
 manual: deps
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html -t manual . manual
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html -t manual . $(BUILDDIR)/manual
 
 .PHONY: dirhtml
 dirhtml: deps
