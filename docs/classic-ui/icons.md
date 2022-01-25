@@ -67,7 +67,9 @@ For example the copy icon is named `plone.icon.plone-copy`.
 
 ## Customization
 
-```{todo}
+```{admonition} TODO
+:class: warning
+
 Add content for this section
 ```
 
@@ -79,7 +81,9 @@ Add content for this section
 
 ## Icon font
 
-```{todo}
+```{admonition} TODO
+:class: warning
+
 Add content for this section
 ```
 
@@ -91,7 +95,9 @@ Add content for this section
 
 ## Iconresolver
 
-```{todo}
+```{admonition} TODO
+:class: warning
+
 What is `iconresolver`?
 Add to Glossary.
 ```

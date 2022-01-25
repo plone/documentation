@@ -10,7 +10,9 @@ html_meta:
 
 # Through-the-web (TTW) Theme Customization in Plone 6 Classic UI
 
-```{todo}
+```{admonition} TODO
+:class: warning
+
 This page is only an outline and needs a lot of work.
 ```
 
@@ -34,7 +36,9 @@ It is shipped as the last resource after all other CSS files.
 It can be used to override default CSS, sometimes with the use of the CSS property `!important` or specific CSS selectors.
 
 
-```{todo}
+```{admonition} TODO
+:class: warning
+
 Provide usage.
 Provide navigation through {menuselection}`Site Setup --> Theming` or {guilabel}`Button Name`.
 Add screenshots.
@@ -48,7 +52,9 @@ Add screenshots.
 Plone uses Twitter Bootstrap's CSS variables.
 They are used to tweak colors, fonts, spacing, and other CSS attributes.
 
-```{todo}
+```{admonition} TODO
+:class: warning
+
 Provide usage.
 ```
 

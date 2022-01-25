@@ -10,7 +10,9 @@ html_meta:
 
 # Plone Classic UI Theming based on Barceloneta
 
-```{todo}
+```{admonition} TODO
+:class: warning
+
 This page is only an outline and needs a lot of work.
 ```
 

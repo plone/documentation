@@ -10,7 +10,9 @@ html_meta:
 
 # Plone 6 Classic UI Theming
 
-```{todo}
+```{admonition} TODO
+:class: warning
+
 This page is only an outline and needs a lot of work.
 ```
 
