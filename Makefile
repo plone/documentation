@@ -19,7 +19,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 
 # Add the following 'help' target to your Makefile
-# And add help text after each target name starting with '\#\#'
+# And add help text after each target name starting with '#'
 .PHONY: help
 help:  # This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -48,7 +48,7 @@ docs/volto:
 deps: bin/python docs/volto  # Create Python virtual environment, install requirements, pull in Volto submodule
 
 .PHONY: html
-html:  # Build html
+html: deps  # Build html
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
