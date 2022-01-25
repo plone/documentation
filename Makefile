@@ -19,17 +19,17 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 
 # Add the following 'help' target to your Makefile
-# And add help text after each target name starting with '#'
+# And add help text after each target name starting with '\#\#'
 .PHONY: help
 help:  # This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: clean
-clean:  # Clean docs build directory
+clean:  ## Clean docs build directory
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
 
 .PHONY: distclean
-distclean:  # Clean docs build directory and Python virtual environment
+distclean:  ## Clean docs build directory and Python virtual environment
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
 	rm -rf ./bin/ ./lib/ ./lib64 ./include ./pyvenv.cfg
 
@@ -45,10 +45,10 @@ docs/volto:
 	ln -s ../submodules/volto/docs/source ./docs/volto
 
 .PHONY: deps
-deps: bin/python docs/volto  # Create Python virtual environment, install requirements, pull in Volto submodule
+deps: bin/python docs/volto  ## Create Python virtual environment, install requirements, pull in Volto submodule
 
 .PHONY: html
-html: deps  # Build html
+html: deps  ## Build html
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -163,28 +163,28 @@ changes: deps
 	@echo "The overview file is in $(BUILDDIR)/changes."
 
 .PHONY: linkcheck
-linkcheck: deps  # Run linkcheck
+linkcheck: deps  ## Run linkcheck
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
 
 .PHONY: linkcheckbroken
-linkcheckbroken: deps  # Run linkcheck and show only broken links
+linkcheckbroken: deps  ## Run linkcheck and show only broken links
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' egrep -wi broken --color=auto
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
 
 .PHONY: spellcheck
-spellcheck: deps  # Run spellcheck
+spellcheck: deps  ## Run spellcheck
 	cd $(DOCS_DIR) && LANGUAGE=$* $(SPHINXBUILD) -b spelling -j 4 $(ALLSPHINXOPTS) $(BUILDDIR)/spellcheck/$*
 	@echo
 	@echo "Spellcheck is finished; look for any errors in the above output " \
 		" or in $(BUILDDIR)/spellcheck/ ."
 
 .PHONY: html_meta
-html_meta: deps  # Add meta data headers to all Markdown pages
+html_meta: deps  ## Add meta data headers to all Markdown pages
 	python ./docs/addMetaData.py
 
 .PHONY: doctest
@@ -194,16 +194,16 @@ doctest: deps
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
 .PHONY: test
-test: clean linkcheck spellcheck  # Clean docs build, then run linkcheck, spellcheck
+test: clean linkcheck spellcheck  ## Clean docs build, then run linkcheck, spellcheck
 
 .PHONY: deploy
 deploy: clean html
 
 .PHONY: livehtml
-livehtml: deps  # Rebuild Sphinx documentation on changes, with live-reload in the browser
+livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in the browser
 	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
 		--ignore "*.swp" \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: all
-all: clean spellcheck linkcheck html  # Clean docs build, then run linkcheck and spellcheck, and build html
+all: clean spellcheck linkcheck html  ## Clean docs build, then run linkcheck and spellcheck, and build html
