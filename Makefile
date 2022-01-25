@@ -31,10 +31,7 @@ clean:  # Clean docs build directory
 .PHONY: distclean
 distclean:  # Clean docs build directory and Python virtual environment
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/*
-	rm -rf ./bin/ ./lib/ ./lib64 ./include
-
-.PHONY: build
-build: distclean bin/python ## Set up training: Install requirements
+	rm -rf ./bin/ ./lib/ ./lib64 ./include ./pyvenv.cfg
 
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
