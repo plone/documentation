@@ -39,7 +39,6 @@ bin/python:
 	bin/pip install -r requirements.txt
 
 docs/volto:
-	# git submodule add git@github.com:plone/volto.git submodules/volto
 	git submodule init; \
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
