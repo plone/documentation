@@ -2,14 +2,10 @@
 /bin
 /include
 /lib
-/node_modules
 
 # Generated files
-package-lock.json
 pyvenv.cfg
 /_build
-*~
-lib64
 
 # symlinked from submodule
 docs/volto
