@@ -220,11 +220,12 @@ These branches may change as we get closer to a production release.
     make linkcheck
     ```
 
-1.  Back in `submodules/volto`, commit your changes.
+1.  Back in `submodules/volto`, commit and push your changes to the remote.
 
     ```shell
     git add <files>
     git commit -m "My commit message"
+    git push
     ```
 
 1.  Now return to the project root directory, and update the submodule to point to the commit you just made, and push your changes to the remote repository.
