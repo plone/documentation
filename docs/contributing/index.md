@@ -67,7 +67,7 @@ First discuss whether you should perform any work.
 Any method below is acceptable, but are listed in order of most likely to get a response.
 
 - Search for open issues in [`documentation`](https://github.com/plone/documentation/issues) or [`volto`](https://github.com/plone/volto/issues) and comment on them.
-- Create a new issue in [`documentation`](https://github.com/plone/documentation/issues/new/choose) or [`volto`](https://github.com/plone/documentation/volto/new/choose).
+- Create a new issue in [`documentation`](https://github.com/plone/documentation/issues) or [`volto`](https://github.com/plone/volto/issues).
 - Discuss during conferences, trainings, and other Plone events.
 - Ask on the [Plone Community Forum, Documentation topic](https://community.plone.org/c/documentation/13).
 - Ask in the [Plone chat on Discord](https://discord.com/invite/zFY3EBbjaj).

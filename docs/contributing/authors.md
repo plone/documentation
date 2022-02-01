@@ -34,7 +34,7 @@ To make it easier for other contributors to work with your project, update the f
 -   `Makefile` targets  `docs/my_package` and `deps`
 -   The documentation section {ref}`contributing-documentation-and-volto-label`
 
-Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6-dev`](https://github.com/plone/documentation/compare/6-dev...my_package).
+Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6-dev`](https://github.com/plone/documentation/compare).
 
 
 (authors-html-meta-data-label)=
