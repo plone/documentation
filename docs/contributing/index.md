@@ -113,7 +113,7 @@ This practice differs depending on whether you are making contributions to only 
 
 (contributing-documentation-only-label)=
 
-### Working with only the `documentation` repository
+### Working with only the `plone/documentation` repository
 
 This section describes how to make contributions to files in the `documentation` repository only, and excludes `volto` files.
 
