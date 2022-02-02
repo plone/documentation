@@ -115,7 +115,7 @@ This practice differs depending on whether you are making contributions to only 
 
 ### Working with only the `plone/documentation` repository
 
-This section describes how to make contributions to files in the `documentation` repository only, and excludes `volto` files.
+This section describes how to make contributions to files in the `plone/documentation` repository only, and excludes `plone/volto/docs` files.
 
 1.  From the project root directory, synch your local `6-dev` branch with its remote.
     You might need to resolve conflicts.
