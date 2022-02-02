@@ -237,9 +237,8 @@ These branches may change as we get closer to a production release.
     git push
     ```
 
-1.  Visit the GitHub `volto` repository, and [create a pull request](https://github.com/plone/volto/compare) against the branch `plone6-docs`.
-1.  Members who subscribe to the repository will receive a notification and review your request.
-
+1.  Visit the GitHub `plone/volto` repository, and [create a pull request](https://github.com/plone/volto/compare) against the branch `plone6-docs`.
+1.  Members who subscribe to the `plone/volto` repository will receive a notification and review your request.
 
 
 (contributing-code-of-conduct-label)=
