@@ -170,11 +170,11 @@ This section describes how to make contributions to files in the `plone/document
 
 (contributing-documentation-and-volto-label)=
 
-### Working with both the `documentation` and `volto` repositories
+### Working with both the `plone/documentation` and `plone/volto` repositories
 
-When you want to edit files within the `docs/volto` subdirectory, the process is slightly different.
+When you want to edit the Volto documentation — the files within the `docs/volto` subdirectory — the process is slightly different.
 We use git submodules to manage multiple repositories.
-We imported the `volto` repository into the `documentation` repository as described in {doc}`setup-build`.
+We imported the `plone/volto` repository into the `plone/documentation` repository as described in {doc}`setup-build`.
 
 ```{important}
 We currently use the branches `plone/documentation@6-dev` and `plone/volto@plone6-docs` as the main branches for developing Plnoe 6 Documentation.
