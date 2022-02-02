@@ -177,7 +177,7 @@ We use git submodules to manage multiple repositories.
 We imported the `plone/volto` repository into the `plone/documentation` repository as described in {doc}`setup-build`.
 
 ```{important}
-We currently use the branches `plone/documentation@6-dev` and `plone/volto@plone6-docs` as the main branches for developing Plnoe 6 Documentation.
+We currently use the branches `plone/documentation@6-dev` and `plone/volto@plone6-docs` as the main branches for developing Plone 6 Documentation.
 These branches may change as we get closer to a production release.
 ```
 
