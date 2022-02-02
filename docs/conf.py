@@ -206,7 +206,7 @@ html_title = "%(project)s v%(release)s" % {"project": project, "release": releas
 html_use_index = True
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6-dev-docs.plone.org"
+html_baseurl = "https://6.dev-docs.plone.org"
 
 # -- Options for HTML help output -------------------------------------------------
 
