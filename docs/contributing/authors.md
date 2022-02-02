@@ -15,28 +15,6 @@ It covers configuring quality checks and syntax for writing markup that is of pa
 For general markup syntax, see {doc}`writing-docs-guide`.
 
 
-(authors-import-docs-submodule-label)=
-
-## Importing external docs with submodules
-
-To add an external package to Plone Documentation, we use git submodules.
-We did this with Volto documentation.
-Your package must be available under the Plone GitHub organization.
-
-Inside the repository `plone/documentation`, add a git submodule that points to your project.
-
-```shell
-git submodule add git@github.com:plone/my_package.git submodules/my_package
-```
-
-To make it easier for other contributors to work with your project, update the following files, using `volto` as a model.
- 
--   `Makefile` targets  `docs/my_package` and `deps`
--   The documentation section {ref}`contributing-documentation-and-volto-label`
-
-Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6-dev`](https://github.com/plone/documentation/compare).
-
-
 (authors-html-meta-data-label)=
 
 ## HTML and Open Graph Metadata
