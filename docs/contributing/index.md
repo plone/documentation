@@ -168,9 +168,9 @@ This section describes how to make contributions to files in the `plone/document
 1.  Members who subscribe to the repository will receive a notification and review your request.
 
 
-(contributing-documentation-and-volto-label)=
+(contributing-editing-volto-documentation-label)=
 
-### Working with both the `plone/documentation` and `plone/volto` repositories
+### Editing Volto documentation
 
 If you want to edit the Volto documentation — the files within the `docs/volto` subdirectory — the process is slightly different.
 We use git submodules to manage multiple repositories.
