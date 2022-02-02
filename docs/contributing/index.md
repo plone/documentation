@@ -259,4 +259,5 @@ hidden: true
 setup-build
 writing-docs-guide
 authors
+admins
 ```
