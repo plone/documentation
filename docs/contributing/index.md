@@ -172,7 +172,7 @@ This section describes how to make contributions to files in the `plone/document
 
 ### Working with both the `plone/documentation` and `plone/volto` repositories
 
-When you want to edit the Volto documentation — the files within the `docs/volto` subdirectory — the process is slightly different.
+If you want to edit the Volto documentation — the files within the `docs/volto` subdirectory — the process is slightly different.
 We use git submodules to manage multiple repositories.
 We imported the `plone/volto` repository into the `plone/documentation` repository as described in {doc}`setup-build`.
 
