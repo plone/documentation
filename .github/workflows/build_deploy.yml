@@ -21,11 +21,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -q -r requirements.txt
 
-      - name: Run spellcheck
-        run: make spellcheck
+      # - name: Run spellcheck
+      #   run: make spellcheck
 
-      - name: Run linkcheck
-        run: make linkcheck
+      # - name: Run linkcheck
+      #   run: make linkcheck
 
       - name: Prepare deploy
         run: make deploy
