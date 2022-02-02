@@ -31,6 +31,6 @@ git submodule add git@github.com:plone/my_package.git submodules/my_package
 To make it easier for other contributors to work with your project, update the following files, using `volto` as a model.
  
 -   `Makefile` targets  `docs/my_package` and `deps`
--   The documentation section {ref}`contributing-documentation-and-volto-label`
+-   The documentation section {ref}`editing-volto-documentation-label`
 
 Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6-dev`](https://github.com/plone/documentation/compare).
