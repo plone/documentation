@@ -181,7 +181,7 @@ We currently use the branches `plone/documentation@6-dev` and `plone/volto@plone
 These branches may change as we get closer to a production release.
 ```
 
-1.  From the project root directory, synch your local `6-dev` branch with its remote.
+1.  From the project root directory, sync your local `6-dev` branch with its remote.
     You might need to resolve conflicts.
 
     ```shell
@@ -195,7 +195,7 @@ These branches may change as we get closer to a production release.
     cd submodules/volto
     ```
 
-1.  Update the submodule, and synch your local `plone6-docs` branch with its remote.
+1.  Update the submodule, and sync your local `plone6-docs` branch with its remote.
     You might need to resolve conflicts.
 
     ```shell
