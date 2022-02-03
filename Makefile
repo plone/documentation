@@ -210,7 +210,7 @@ netlify:
 	git submodule init; \
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 
 .PHONY: all
 all: clean spellcheck linkcheck html  ## Clean docs build, then run linkcheck and spellcheck, and build html
