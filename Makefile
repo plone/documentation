@@ -206,7 +206,7 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 
 .PHONY: netlifyreqs
 netlifyreqs:
-	apt install python3.8-venv
+	sudo apt install python3.8-venv
 
 .PHONY: netlify
 netlify: netlifyreqs html
