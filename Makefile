@@ -207,7 +207,9 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 .PHONY: netlify
 netlify:
 	pip install -r requirements.txt
-	docs/volto
+	git submodule init; \
+	git submodule update; \
+	ln -s ../submodules/volto/docs/source ./docs/volto
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 
 .PHONY: all
