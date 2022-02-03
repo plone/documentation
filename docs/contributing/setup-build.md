@@ -31,13 +31,13 @@ brew install enchant
 sudo apt-get install enchant
 ```
 
-Clone the Plone Documentation repository, then create a Python virtual environment, install project dependencies, and activate the virtual environment.
+Clone the Plone Documentation repository, and change your working directory into the cloned project.
+Then with a single command using `Makefile`, create a Python virtual environment, install project dependencies, pull in Volto documentation as a git submodule, build the docs, and view the results in a web browser by opening `/_build/html/index.html`.
 
 ```shell
 git clone https://github.com/plone/documentation.git
 cd documentation
-make build
-source bin/activate
+make html
 ```
 
 
@@ -47,22 +47,35 @@ source bin/activate
 
 All build and check documentation commands use the file `Makefile`.
 
-To see all available builds:
+To see the most frequently used builds, use the following command.
 
 ```shell
-make
+make help
 ```
+
+Else you can open `Makefile` to see other build formats, including PDF.
 
 
 ### `html`
 
-`html` is the long narrative version used for the online documentation and by the trainer.
+`html` is the HTML version of the documentation.
 
 ```shell
 make html
 ```
 
 Open `/_build/html/index.html` in a web browser.
+
+
+### `livehtml`
+
+`livehtml` rebuilds Sphinx documentation on changes, with live-reload in the browser.
+
+```shell
+make livehtml
+```
+
+Open http://0.0.0.0:8000/ in a web browser.
 
 
 ### `linkcheck`
