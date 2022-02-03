@@ -204,5 +204,12 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		--ignore "*.swp" \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
+.PHONY: netlifyreqs
+netlifyreqs:
+	apt install python3.8-venv
+
+.PHONY: netlify
+netlify: netlifyreqs html
+
 .PHONY: all
 all: clean spellcheck linkcheck html  ## Clean docs build, then run linkcheck and spellcheck, and build html
