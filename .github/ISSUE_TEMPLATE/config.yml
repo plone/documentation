@@ -1,0 +1,7 @@
+contact_links:
+  - name: Get support
+    url: https://community.plone.org/
+    about: Get support for Plone in the Community Forum.
+  - name: Chat
+    url: https://discord.gg/zFY3EBbjaj
+    about: Chat with the Documentation Team on Discord.
