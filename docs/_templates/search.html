@@ -51,9 +51,9 @@
         <option value="all">All Documentation</option>
         {% for id, title in 
           [
-          ["backend","Backend"],
-          ["classic-ui","Classic UI"],
-          ["contributing","Contributing"],
+            ["backend","Backend"],
+            ["classic-ui","Classic UI"],
+            ["contributing","Contributing"],
           ] %}
           <option value="{{id}}">{{ title }}</option>
         {% endfor %}
@@ -75,4 +75,17 @@
     {% endif %}
     </div>
   {% endblock %}
+{% endblock %}
+
+
+{% block footer %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".topbar-contents .bd-toc").html()) === "") {
+                $(".topbar-contents .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
 {% endblock %}

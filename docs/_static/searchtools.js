@@ -544,9 +544,6 @@ var Search = {
 
 $(document).ready(function() {
   Search.init();
-  if ($.trim($(".topbar-contents .bd-toc").html()) === "") {
-    $(".topbar-contents .bd-toc").css("visibility", "hidden");
-  }
   $('select[name="doc_section"]').change(function() {
     this.form.submit();
   });
