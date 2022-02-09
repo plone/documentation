@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>file</title>
+    <g id="file" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="plone" transform="translate(4.000000, 0.000000)" fill="#1C95D3">
+            <path d="M0,-1.77635684e-15 L0,30 L22.001,30 L22.001,8.586 L13.414,-1.77635684e-15 L0,-1.77635684e-15 Z M2.001,2 L12.001,2 L12.001,10 L20.001,10 L20.001,28 L2.001,28 L2.001,2 Z M14,3.414 L18.586,8 L14,8 L14,3.414 Z" id="Shape"></path>
+            <path d="M4.0004,23.9997 L18.0004,23.9997 L18.0004,21.9997 L4.0004,21.9997 L4.0004,23.9997 Z M4.0004,19.9997 L18.0004,19.9997 L18.0004,17.9997 L4.0004,17.9997 L4.0004,19.9997 Z M4.0004,15.9997 L11.0004,15.9997 L11.0004,13.9997 L4.0004,13.9997 L4.0004,15.9997 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
