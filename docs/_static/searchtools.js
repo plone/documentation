@@ -308,7 +308,6 @@ var Search = {
           linkUrl +
           highlightstring + item[2]).html(item[1]));
         
-        // headline.append($('<span class="title_doc_section">' + item[6] + '</span>'));
         listItem.append(headline);
 
         if (item[3]) {
@@ -531,12 +530,11 @@ var Search = {
         // for better ranking, we should calculate ranking by using words statistics like basic tf-idf...
         var score = $u.max($u.map(fileMap[file], function(w){return scoreMap[file][w]}));
 
-        function get1stLevelAncestor(f) {
-          let parentdocname = docnames[f].split('/')[0] + '/index';
-          let parentID = docnames.indexOf(parentdocname);
-          let title = parentID === -1 ? title_documentation : titles[parentID];
-          return title
-        }
+        /**
+         * Return array with titles of ancestors of file.
+         * @param {number} idx - The index of the result item in global list of files
+         * @returns array
+         */
         function getParentTitles(idx) {
           let path = docnames[idx]
 
