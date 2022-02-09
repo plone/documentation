@@ -75,14 +75,12 @@ var Search = {
 
   init : function() {
       var params = $.getQueryParameters();
+      let doc_section = params.doc_section ? params.doc_section[0] : 'all';
+      $('input[id="doc_section_' + doc_section + '"]').prop("checked", true)
       if (params.q) {
           var query = params.q[0];
           $('input[name="q"]')[0].value = query;
           $('input[name="q"]')[1].value = query;
-          if (params.doc_section) {
-            var doc_section = params.doc_section[0];
-            $('select[name="doc_section"]')[0].value = doc_section;
-          }
           this.performSearch(query, doc_section);
       }
   },
@@ -234,7 +232,7 @@ var Search = {
 
     // Enrich item with parent doc_section title
     for (i = 0; i < results.length; i++) 
-      results[i][6] = results[i][6] || 'TODO Documentation title';
+      results[i][6] = results[i][6] || 'Plone Documentation';
 
     // now sort the results by score (in opposite order of appearance, since the
     // display function below uses pop() to retrieve items) and then
@@ -255,24 +253,21 @@ var Search = {
     });
 
     function _getBreadcrumbs(item, linkUrl) {
-      let path = item[0];
       let parentTitles = item[6];
-      let markup = path.split('/')
+      let path = item[0].split('/')
         .slice(0, -1);
-      markup = markup.map((el, index) => {
+      path = path.map((el, index) => {
         return {
-          "path": markup.slice(0, index+1).join('/'),
+          "path": path.slice(0, index+1).join('/'),
           "title": parentTitles[index]
         }
       })
-      markup = markup
-        .map((el) => {
-            let foo = `<a href="/${el.path}"> ${el.title}</a>`
-            return foo;
+      let markup = path
+        .map((el, idx) => {
+            return idx===0 ? `<a href="/${el.path}"><b>${el.title}</b></a>` : `<a href="/${el.path}">${el.title}</a>` 
           })
       markup.push(`<span class="lastbreadcrumb">${item[1]}</span>`)
-      markup = markup.join('<span class="pathseparator">&gt;</span>');
-      return markup
+      return markup.join('<span class="pathseparator">&gt;</span>');
     }
 
     // Print the results.
@@ -587,7 +582,14 @@ var Search = {
 
 $(document).ready(function() {
   Search.init();
-  $('select[name="doc_section"]').change(function() {
+  $('#q').focus();
+  $('input[name="doc_section"]').change(function() {
     this.form.submit();
   });
+  
+  function clearSearchField() {
+    $('#q').val('');
+    this.form.submit();
+  }
+  $( "button.clear_search" ).on( "click", clearSearchField );
 });
