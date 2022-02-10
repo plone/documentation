@@ -264,7 +264,7 @@ var Search = {
       })
       let markup = path
         .map((el, idx) => {
-            return idx===0 ? `<a href="/${el.path}"><b>${el.title}</b></a>` : `<a href="/${el.path}">${el.title}</a>` 
+            return `<a href="/${el.path}">${el.title}</a>` 
           })
       markup.push(`<span class="lastbreadcrumb">${item[1]}</span>`)
       return markup.join('<span class="pathseparator">&gt;</span>');

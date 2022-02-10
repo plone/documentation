@@ -14,12 +14,15 @@ pre {
   box-shadow: none;
 }
 a,
-a:visited {
+a:visited,
+main.bd-content #main-content a,
+main.bd-content #main-content a:visited {
   color: #2980b9;
 }
-a:hover {
-  color: #176aa1;
-  text-decoration: underline;
+a:hover,
+main.bd-content #main-content a:hover {
+  color: #1a567e;
+  text-decoration: none;
 }
 ul {
   list-style-type: square;
@@ -152,8 +155,14 @@ p.search-summary {
   list-style-type: none;
   padding-left: 0;
 }
+#search-results ul li,
+ul.search li {
+  margin-bottom: 2rem;
+  padding: 0;
+  background-image: none;
+}
 #search-results ul li h3 {
-  margin: 0.75rem 0 .5rem;
+  margin: 0.4rem 0 .5rem;
   font-size: 1.5rem;
 }
 #search-results ul li .breadcrumbs {
@@ -171,17 +180,6 @@ p.search-summary {
   overflow: hidden;              /* "overflow"-Wert darf nicht "visible" sein */
 
   text-overflow: ellipsis;
-}
-#search-results ul li,
-ul.search li {
-  margin-bottom: 2rem;
-  padding: 2px 0 5px 4rem;
-  background-image: url(file.svg);
-  background-blend-mode: hue;
-  background-color: violetred;
-  background-repeat: no-repeat;
-  background-position: 0px 8px;
-  background-size: 56px;
 }
 ul.search li p.context {
   margin-left: 0;
