@@ -1,3 +1,10 @@
+:root {
+  /* Add Font Awesome 5 icon and color for todo */
+  --pst-icon-clipboard-list: '\f46d';
+  --pst-icon-admonition-todo: var(--pst-icon-clipboard-list);
+  --pst-color-admonition-todo:  161 , 46, 233;
+}
+
 .visuallyhidden {
   display: none;
 }
@@ -99,16 +106,16 @@ div.section {
 /* admonition todo */
 .admonition.admonition-todo,
 div.admonition.admonition-todo {
-  border-color: rgba(var(--pst-color-admonition-warning),1);
+  border-color: rgba(var(--pst-color-admonition-todo),1);
 }
 .admonition.admonition-todo > .admonition-title,
 div.admonition.admonition-todo > .admonition-title {
-  background-color: rgba(var(--pst-color-admonition-warning),.1);
+  background-color: rgba(var(--pst-color-admonition-todo),.1);
 }
 .admonition.admonition-todo > .admonition-title::before,
 div.admonition.admonition-todo > .admonition-title::before {
-  color: rgba(var(--pst-color-admonition-warning),1);
-  content: var(--pst-icon-admonition-warning);
+  color: rgba(var(--pst-color-admonition-todo),1);
+  content: var(--pst-icon-admonition-todo);
 }
 
 
