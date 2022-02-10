@@ -73,6 +73,7 @@ div.section {
   margin-bottom: 5rem;
 }
 
+/* admonitions */
 .admonition {
   border-radius: 0;
   border: none;
@@ -95,6 +96,21 @@ div.section {
 .admonition.toggle .admonition-title.open::after {
   content: "\f107";
 }
+/* admonition todo */
+.admonition.admonition-todo,
+div.admonition.admonition-todo {
+  border-color: rgba(var(--pst-color-admonition-warning),1);
+}
+.admonition.admonition-todo > .admonition-title,
+div.admonition.admonition-todo > .admonition-title {
+  background-color: rgba(var(--pst-color-admonition-warning),.1);
+}
+.admonition.admonition-todo > .admonition-title::before,
+div.admonition.admonition-todo > .admonition-title::before {
+  color: rgba(var(--pst-color-admonition-warning),1);
+  content: var(--pst-icon-admonition-warning);
+}
+
 
 .topic {
   padding: 1.5em 1em .5em 1em;
