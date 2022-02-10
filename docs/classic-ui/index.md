@@ -10,9 +10,7 @@ html_meta:
 
 # Classic UI
 
-```{admonition} TODO
-:class: warning
-
+```{todo}
 Perhaps some of this introduction should be an include, so we don't have to repeat ourselves?
 ```
 
