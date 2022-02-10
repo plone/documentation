@@ -9,6 +9,7 @@
  *
  */
 
+var title_documentation = 'Plone Documentation';
 
 if (!Scorer) {
   /**
@@ -74,14 +75,12 @@ var Search = {
 
   init : function() {
       var params = $.getQueryParameters();
+      let doc_section = params.doc_section ? params.doc_section[0] : 'all';
+      $('input[id="doc_section_' + doc_section + '"]').prop("checked", true)
       if (params.q) {
           var query = params.q[0];
           $('input[name="q"]')[0].value = query;
           $('input[name="q"]')[1].value = query;
-          if (params.doc_section) {
-            var doc_section = params.doc_section[0];
-            $('select[name="doc_section"]')[0].value = doc_section;
-          }
           this.performSearch(query, doc_section);
       }
   },
@@ -199,10 +198,6 @@ var Search = {
     }
     var highlightstring = '?highlight=' + $.urlencode(hlterms.join(" "));
 
-    // console.debug('SEARCH: searching for:');
-    // console.info('required: ', searchterms);
-    // console.info('excluded: ', excluded);
-
     // prepare search
     var terms = this._index.terms;
     var titleterms = this._index.titleterms;
@@ -237,7 +232,7 @@ var Search = {
 
     // Enrich item with parent doc_section title
     for (i = 0; i < results.length; i++) 
-      results[i][6] = results[i][6] || 'TODO Documentation title';
+      results[i][6] = results[i][6] || 'Plone Documentation';
 
     // now sort the results by score (in opposite order of appearance, since the
     // display function below uses pop() to retrieve items) and then
@@ -257,8 +252,25 @@ var Search = {
       }
     });
 
+    function _getBreadcrumbs(item, linkUrl) {
+      let parentTitles = item[6];
+      let path = item[0].split('/')
+        .slice(0, -1);
+      path = path.map((el, index) => {
+        return {
+          "path": path.slice(0, index+1).join('/'),
+          "title": parentTitles[index]
+        }
+      })
+      let markup = path
+        .map((el, idx) => {
+            return `<a href="/${el.path}">${el.title}</a>` 
+          })
+      markup.push(`<span class="lastbreadcrumb">${item[1]}</span>`)
+      return markup.join('<span class="pathseparator">&gt;</span>');
+    }
 
-    // print the results
+    // Print the results.
     var resultCount = results.length;
     function displayNextItem() {
       // results left, load the summary and display it
@@ -283,11 +295,15 @@ var Search = {
           requestUrl = DOCUMENTATION_OPTIONS.URL_ROOT + item[0] + DOCUMENTATION_OPTIONS.FILE_SUFFIX;
           linkUrl = item[0] + DOCUMENTATION_OPTIONS.LINK_SUFFIX;
         }
-        listItem.append($('<a/>').attr('href',
-            linkUrl +
-            highlightstring + item[2]).html(item[1]));
+        let breadcrumbs = _getBreadcrumbs(item, linkUrl);
+        breadcrumbs = $("<div class='breadcrumbs'>" + breadcrumbs + "</div>");
+        listItem.append(breadcrumbs);
+        let headline = $('<h3/>');
+        headline.append($('<a/>').attr('href',
+          linkUrl +
+          highlightstring + item[2]).html(item[1]));
         
-        listItem.append($('<span class="title_doc_section">' + item[6] + '</span>'));
+        listItem.append(headline);
 
         if (item[3]) {
           listItem.append($('<span> (' + item[3] + ')</span>'));
@@ -321,9 +337,9 @@ var Search = {
         Search.stopPulse();
         Search.title.text(_('Search Results'));
         if (!resultCount)
-          Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly and that you\'ve selected enough categories.'));
+          Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly. Searching for multiple words only shows matches that contain all words.'));
         else
-            Search.status.text(_('Search finished, found %s page(s) matching the search query.').replace('%s', resultCount));
+            Search.status.text(_('Found %s page(s) matching the search query.').replace('%s', resultCount));
         Search.status.fadeIn(500);
       }
     }
@@ -344,7 +360,9 @@ var Search = {
     var results = [];
 
     for (var prefix in objects) {
-      for (var name in objects[prefix]) {
+      for (var iMatch = 0; iMatch != objects[prefix].length; ++iMatch) {
+        var match = objects[prefix][iMatch];
+        var name = match[4];
         var fullname = (prefix ? prefix + '.' : '') + name;
         var fullnameLower = fullname.toLowerCase()
         if (fullnameLower.indexOf(object) > -1) {
@@ -358,7 +376,6 @@ var Search = {
           } else if (parts[parts.length - 1].indexOf(object) > -1) {
             score += Scorer.objPartialMatch;
           }
-          var match = objects[prefix][name];
           var objname = objnames[match[1]][2];
           var title = titles[match[0]];
           // If more than one term searched for, we require other words to be
@@ -496,19 +513,40 @@ var Search = {
           break;
         }
       }
-
       // if we have still a valid result we can add it to the result list
       if (valid) {
+        /**
+         * file: index
+         * docnames: array of paths
+         * titles: array of titles
+         */
+
         // select one (max) score for the file.
         // for better ranking, we should calculate ranking by using words statistics like basic tf-idf...
         var score = $u.max($u.map(fileMap[file], function(w){return scoreMap[file][w]}));
-        function getParentTitle(f) {
-          let parentdocname = docnames[f].split('/')[0] + '/index';
-          let parentID = docnames.indexOf(parentdocname);
-          let title = parentID === -1 ? 'Plone Documentation' : titles[parentID];
-          return title
+
+        /**
+         * Return array with titles of ancestors of file.
+         * @param {number} idx - The index of the result item in global list of files
+         * @returns array
+         */
+        function getParentTitles(idx) {
+          let path = docnames[idx]
+
+          let foo = path.split('/').slice(0, -1);
+          foo = foo.map((el, index) => {
+            return `${foo.slice(0, index+1).join('/')}/index`
+          })
+      
+          let parentTitles = foo.map(el => {
+            let parentId = docnames.indexOf(el);
+            let title = parentId === -1 ? title_documentation : titles[parentId];
+            return title
+          })
+          return parentTitles
         }
-        results.push([docnames[file], titles[file], '', null, score, filenames[file], getParentTitle(file)]);
+
+        results.push([docnames[file], titles[file], '', null, score, filenames[file], getParentTitles(file)]);
       }
     }
     return results;
@@ -544,10 +582,14 @@ var Search = {
 
 $(document).ready(function() {
   Search.init();
-  if ($.trim($(".topbar-contents .bd-toc").html()) === "") {
-    $(".topbar-contents .bd-toc").css("visibility", "hidden");
-  }
-  $('select[name="doc_section"]').change(function() {
+  $('#q').focus();
+  $('input[name="doc_section"]').change(function() {
     this.form.submit();
   });
+  
+  function clearSearchField() {
+    $('#q').val('');
+    this.form.submit();
+  }
+  $( "button.clear_search" ).on( "click", clearSearchField );
 });

@@ -40,24 +40,58 @@
     </p>
   {% endblock %}
   {% block searchbox %}
-    <form action="" method="get" id="search-form">
-      <label for="q" class="visuallyhidden">Search string</label>
-      <input type="text" name="q" id="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      
-      <input type="submit" value="{{ _('search') }}" />
+    <form
+      action=""
+      method="get"
+      id="search-form"
+      class=""
+      >
+      <div class="row">
+        <div class="input-group col-xl-8 mb-2">
+          <input
+            type="text" name="q" id="q"
+            class="form-control"
+            placeholder="Search the docs…"
+            aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+          <label for="q" class="sr-only">Search string</label>
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">{{ _('search') }}</button>
+          </div>
+          <div class="input-group-append">
+            <button
+              type="button"
+              class="clear_search btn btn-secondary"
+            >{{ _('reset') }}</button>
+          </div>
+        </div>
+      </div>
 
-      <label for="doc_section" class="visuallyhidden">Filter by section</label>
-      <select name="doc_section" id="doc_section">
-        <option value="all">All Documentation</option>
-        {% for id, title in 
-          [
-          ["backend","Backend"],
-          ["classic-ui","Classic UI"],
-          ["contributing","Contributing"],
-          ] %}
-          <option value="{{id}}">{{ title }}</option>
-        {% endfor %}
-      </select>
+      <div class="form row mb-2">
+        <label for="doc_section" class="col sr-only">Filter by section</label>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="doc_section" id="doc_section_all" value="all">
+            <label class="form-check-label" for="doc_section_all">
+              All Documentation
+            </label>
+          </div>
+          {% for id, title in
+            [
+              ["backend","Backend"],
+              ["classic-ui","Classic UI"],
+              ["volto","Frontend"],
+              ["contributing","Contributing"],
+            ] %}
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="doc_section" id="doc_section_{{id}}" value="{{id}}">
+              <label class="form-check-label" for="doc_section_{{id}}">
+                {{title}}
+              </label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
       <span id="search-progress" style="padding-left: 10px"></span>
     </form>
   {% endblock %}
@@ -75,4 +109,17 @@
     {% endif %}
     </div>
   {% endblock %}
+{% endblock %}
+
+
+{% block footer %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".topbar-contents .bd-toc").html()) === "") {
+                $(".topbar-contents .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
 {% endblock %}
