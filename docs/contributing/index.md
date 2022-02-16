@@ -1,6 +1,8 @@
 ---
 html_meta:
-  "description": "Contributing to Plone Documentation."
+  "description": "Contributing to Plone Documentation"
+  "property=og:description": "Contributing to Plone Documentation"
+  "property=og:title": "Contributing to Plone Documentation"
   "keywords": "Plone, Plone Contributor Agreement, License, Code of Conduct"
 ---
 
