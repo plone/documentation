@@ -1,19 +1,33 @@
-# Plone 6 Documentation
+# Plone Documentation
 
-This is the repository for Plone 6 Documentation.
+This is the repository for Plone Documentation.
 
-Browse the documentation at https://docs.plone.org/.
+
+## Plone 6
+
+Browse the Plone 6 Documentation at https://6.dev-docs.plone.org/.
+
+Active development on the Plone 6 Documentation takes place on the branch [`6-dev`](https://github.com/plone/documentation/tree/6-dev).
+
+
+## Plone 5.2
+
+Browse the Plone 5.2 Documentation at https://docs.plone.org/.
+
+Development on the Plone 5.2 Documentation takes place on the branch [`5.2`](https://github.com/plone/documentation/tree/5.2).
 
 
 ## Overview
 
-The community is writing best practice guides, reference guides, installation instructions, and everything you need to know to enjoy working with Plone 6. 
+The community is writing guides, installation instructions, and everything you need to know to enjoy working with Plone 6.
 
 
 ## Contribute
 
+- [Contributing to Plone 6 Documentation](https://6.dev-docs.plone.org/contributing/index.html)
+- [Release Plone 6 docs Project Board](https://github.com/orgs/plone/projects/12)
 - [Issue Tracker](https://github.com/plone/documentation/issues)
-- [Source Code](https://github.com/plone/documentation)
+- [Source Code](https://github.com/plone/documentation/tree/6-dev)
 
 
 ## Support
