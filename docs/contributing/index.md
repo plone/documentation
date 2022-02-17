@@ -179,7 +179,7 @@ We use git submodules to manage multiple repositories.
 We imported the `plone/volto` repository into the `plone/documentation` repository as described in {doc}`setup-build`.
 
 ```{important}
-We currently use the branches `plone/documentation@6-dev` and `plone/volto@plone6-docs` as the main branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@6-dev` and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
 These branches may change as we get closer to a production release.
 ```
 
@@ -197,16 +197,16 @@ These branches may change as we get closer to a production release.
     cd submodules/volto
     ```
 
-1.  Update the submodule, and sync your local `plone6-docs` branch with its remote.
+1.  Update the submodule, and sync your local `master` branch with its remote.
     You might need to resolve conflicts.
 
     ```shell
     git submodule update
-    git checkout plone6-docs
+    git checkout master
     git pull
     ```
 
-1.  Create a new branch from `volto/plone6-docs`.
+1.  Create a new branch from `volto/master`.
 
     ```shell
     git checkout -b <new_branch>
@@ -239,7 +239,7 @@ These branches may change as we get closer to a production release.
     git push
     ```
 
-1.  Visit the GitHub `plone/volto` repository, and [create a pull request](https://github.com/plone/volto/compare) against the branch `plone6-docs`.
+1.  Visit the GitHub `plone/volto` repository, and [create a pull request](https://github.com/plone/volto/compare) against the branch `master`.
 1.  Members who subscribe to the `plone/volto` repository will receive a notification and review your request.
 
 
