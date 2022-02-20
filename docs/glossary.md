@@ -129,17 +129,22 @@ record
     Records are basic dictionaries.
 
 Project (Volto)
-    The product of running `create-volto-app`, a customizable instance of Volto.
+    The product of running the package `@plone/generator-volto`, resulting in a customizable instance of Volto.
 
 Add-on (Volto)
-    A JavaScript package that integrates with Volto's configuration registry.
+    A JavaScript package that integrates with Volto's configuration registry and is able to enhance, extend, and customize it.
 
 Add-on configuration loader (Volto)
     A function with signature `config => config`.
+    It gets the Volto Configuration registry, and it must return it back after mutating it.
+    It is similar to Generic Setup profiles in Plone Backend.
+    An add-on must provide a default configuration loader that is always loaded when Volto runs.
+    An add-on can have multiple configuration loaders, and they can be loaded optionally from the Volto configuration.
 
 Configuration registry (Volto)
-    A singleton object modeled using JavaScript modules, accessible from the Volto
-    project using the `~/config` path.
+    A singleton object modeled using JavaScript modules.
+    It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
+    It contains the configuration of the Volto app.
 
 Shadowing (Volto)
     Webpack provides an "alias" mechanism, where the path for a module can be aliased to another module.
@@ -204,7 +209,7 @@ Scoped packages
     Namespace for JavaScript packages, they provide a way to avoid naming conflicts for common package names.
 
 middleware (Redux)
-    Custom wrappers for the Redux store dispatch methods. 
+    Custom wrappers for the Redux store dispatch methods.
     They allow customizing the behavior of the data flow inside the redux store.
 
 hooks (React)
@@ -242,8 +247,8 @@ Markdown
 fence
     A method to extend basic MyST syntax.
     You can define a directive with backticks (`` ` ``) followed by a reStructuredText directive in curly brackets (`{}`), and a matching number of closing backticks.
-    You can also nest fences by increasing the number of backticks. 
-    
+    You can also nest fences by increasing the number of backticks.
+
     `````md
     ````{warning}
     There be dragons!
@@ -252,7 +257,7 @@ fence
     ```
     ````
     `````
-    
+
     ````{warning}
     There be dragons!
     ```{important}
