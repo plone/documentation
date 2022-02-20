@@ -1,4 +1,4 @@
 [submodule "submodules/volto"]
 	path = submodules/volto
 	url = https://github.com/plone/volto.git
-	branch = plone6-docs
+	branch = master
