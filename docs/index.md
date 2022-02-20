@@ -15,7 +15,7 @@ html_meta:
 :hidden: true
 
 backend/index
-volto/plone6index
+volto/index
 classic-ui/index
 contributing/index
 ```
