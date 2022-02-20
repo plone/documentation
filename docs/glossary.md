@@ -129,21 +129,21 @@ record
     Records are basic dictionaries.
 
 Project (Volto)
-    The product of running `@plone/generator-volto` package, a customizable instance of Volto.
+    The product of running the package `@plone/generator-volto`, resulting in a customizable instance of Volto.
 
 Add-on (Volto)
-    A JavaScript package that integrates with Volto's configuration registry and is able to enhance, extend and customize it.
+    A JavaScript package that integrates with Volto's configuration registry and is able to enhance, extend, and customize it.
 
 Add-on configuration loader (Volto)
     A function with signature `config => config`.
-    It gets the Volto Configuration registry and it must return it back after mutating it.
+    It gets the Volto Configuration registry, and it must return it back after mutating it.
     It is similar to Generic Setup profiles in Plone Backend.
-    An add-on must provide a default one, that is always loaded when Volto runs.
-    An add-on can have multiple of them, and they can be loaded optionally from the Volto configuration.
+    An add-on must provide a default configuration loader that is always loaded when Volto runs.
+    An add-on can have multiple configuration loaders, and they can be loaded optionally from the Volto configuration.
 
 Configuration registry (Volto)
-    A singleton object modeled using JavaScript modules, accessible from the Volto
-    project by importing `@plone/volto/config` module (`import registry from '@plone/volto/config'`).
+    A singleton object modeled using JavaScript modules.
+    It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
     It contains the configuration of the Volto app.
 
 Shadowing (Volto)
