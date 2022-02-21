@@ -217,9 +217,11 @@ These branches may change as we get closer to a production release.
 
     ```shell
     # Optionally clean the builds to avoid cache issues
-    make clean
-    make html
-    make linkcheck
+    # Note that for the Volto docs only, we use "docs-" as a prefix for make targets
+    # because it has so many of them and to avoid a conflict with the core application.
+    make docs-clean
+    make docs-html
+    make docs-linkcheck
     ```
 
 1.  Back in `submodules/volto`, commit and push your changes to the remote.
