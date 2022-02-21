@@ -131,9 +131,14 @@ myst_enable_extensions = [
 #
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html
 #
+# Note that Plone Documentation imports documentation from several remote repositories.
+# These projects need to build their docs as part of their CI/CD and testing.
+# We use Intersphinx to resolve targets when either the individual project's or
+# the entire Plone Documentation is built.
 intersphinx_mapping = {
-    "training": ("https://training.plone.org/5/", None),
+    "plone": ("https://6.dev-docs.plone.org/", None),  # for imported packages
     "python": ("https://docs.python.org/3/", None),
+    "training": ("https://training.plone.org/5/", None),
 }
 
 
