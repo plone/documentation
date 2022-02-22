@@ -27,13 +27,13 @@ This frontend is now called "Classic UI".
 
 Choosing one frontend over another depends on several factors.
 
-Classic UI would be a better choice for the following situations. 
+Classic UI would be a better choice for the following situations.
 
 -   Reason 1
 -   Reason 2
 -   Reason N
 
-The default frontend Volto would be a better choice for the following situations. 
+The default frontend Volto would be a better choice for the following situations.
 
 -   Reason 1
 -   Reason 2
@@ -55,6 +55,7 @@ viewlets
 forms
 portlets
 csrf
+images
 icons
 recipes
 whatsnew
