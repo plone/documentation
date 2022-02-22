@@ -1,101 +1,118 @@
 ---
 html_meta:
-  "description": ""
-  "property=og:description": ""
-  "property=og:title": ""
-  "keywords": ""
+  "description": "Image resolution and scaling in Plone Classic UI"
+  "property=og:description": "Image resolution and scaling in Plone Classic UI"
+  "property=og:title": "Image resolving and scaling"
+  "keywords": "Plone, Classic UI, classic-ui, image, resize, scale"
 ---
 
 (classic-ui-images-label)=
 
 # Image resolving and scaling
 
-Image scaling is done in plone.namedfile.scaling and most interesting the ImageScaling view.
+Image scaling is done in `plone.namedfile.scaling`, specifically in the `ImageScaling` view.
+
+
+(classic-ui-images-image-tag-label)=
 
 ## Image tag
 
-To get a HTML tag for an scaled image, you can use the ImageScaling view as follow:
+To get an HTML tag for a scaled image, you can use the `ImageScaling` view as follows:
 
 ```python
 from plone import api
 
-scale_util = api.content.get_view('images', context, request)
-tag = scale_util.tag('leadimage', scale='mini')
+scale_util = api.content.get_view("images", context, request)
+tag = scale_util.tag("leadimage", scale="mini")
 ```
 
-or to get a specific size:
+To get a specific image size:
 
 ```python
 from plone import api
 
-scale_util = api.content.get_view('images', context, request)
-tag = scale_util.tag('leadimage', width="600", height="200")
+scale_util = api.content.get_view("images", context, request)
+tag = scale_util.tag("leadimage", width="600", height="200")
 ```
 
-The first argument is the field name, followed by one of the following arguments:
+The complete list of arguments with their default values is shown in the following example.
 
-	fieldname=None,
-        scale=None,
-        height=None,
-        width=None,
-        direction="thumbnail",
+```python
+from plone import api
 
+scale_util = api.content.get_view("images", context, request)
+tag = scale_util.tag(
+    fieldname=None,
+    scale=None,
+    height=None,
+    width=None,
+    direction="thumbnail"
+)
+```
+
+
+(classic-ui-images-image-scaling-no-tag-creation-label)=
 
 ## Image scaling without tag creation
 
-To just get the scaling infos, without creating a HTML tag, you can use the ImageScaling view as follow:
+To get the scaling information only without creating an HTML tag, you can use the `ImageScaling` view as follows:
 
 ```python
 from plone import api
 
-scale_util = api.content.get_view('images', context, request)
-image_scale = scale_util.scale('leadimage', scale='mini')
-print(image_scale.url)  # http://localhost:8080/Plone/enl/@@images/3d182f34-8773-4f20-a79d-8774c3151b7e.jpeg
-print(image_scale.width)  # 200
-print(image_scale.height)  # 110
+scale_util = api.content.get_view("images", context, request)
+image_scale = scale_util.scale("leadimage", scale="mini")
+print(image_scale.url)
+print(image_scale.width)
+print(image_scale.height)
 ```
 
-the most important properties:
+This will produce the following output:
 
-- data
-- fieldname
-- height
-- mimetype
-- srcset
-- srcset_attribute
-- tag
-- uid
-- url
-- width
+```console
+http://localhost:8080/Plone/enl/@@images/3d182f34-8773-4f20-a79d-8774c3151b7e.jpeg
+200
+110
+```
 
-You can get a tag from this point too:
-```python
+The most important properties are the following:
+
+-   `data`
+-   `fieldname`
+-   `height`
+-   `mimetype`
+-   `srcset`
+-   `srcset_attribute`
+-   `tag`
+-   `uid`
+-   `url`
+-   `width`
+
+At this point, you can also get an HTML tag, since you have created an instance of `api.content.get_view` in `scale_util`:
+
+```pycon
 >>> print(image_scale.tag)
 
 <img src="http://localhost:8080/Plone/news/newsitem1/@@images/9f676d46-0cb3-4512-a831-a5db4079bdfa.jpeg" alt="News Item 1!" title="News Item 1" height="21" width="32" srcset="http://localhost:8080/Plone/news/newsitem1/@@images/4a68513c-cffd-4de0-8a35-80627945b80f.jpeg 2x, http://localhost:8080/Plone/news/newsitem1/@@images/c32929c6-cb89-4ce7-846f-38adf29c09a4.jpeg 3x" />
 ```
 
-or to get a specific size:
+You can also get an HTML tag with a specific size:
 
 ```python
 from plone import api
 
-scale_util = api.content.get_view('images', context, request)
-tag = scale_util.scale('leadimage', width="600", height="200")
+scale_util = api.content.get_view("images", context, request)
+tag = scale_util.scale("leadimage", width="600", height="200")
 ```
 
-The first argument is the field name, followed by one of the following arguments:
 
-	fieldname=None,
-        scale=None,
-        height=None,
-        width=None,
-        direction="thumbnail",
+(classic-ui-images-scaling-direction-deprecated-in-favor-of-label)=
 
-## Scaling direction / mode
+## Scaling `direction` deprecated in favor of `mode`
 
-The actual scaling is done in plone.scale:
-In plone scale the `direction` argument is deprecated in favor of `mode` and values are converted as follow:
+The actual scaling is done in `plone.scale`.
+In Plone 6 in `plone.scale`, the `direction` argument is deprecated in favor of `mode`.
+The values should be converted as follows:
 
 direction values | mode values
 -----------------|------------
@@ -106,9 +123,13 @@ up | cover
 keep | scale
 thumbnail | scale
 
-For now plone.namedfile is still expecting the direction argument with the old values.
+For now `plone.namedfile` still expects the `direction` argument with the old values.
+
+
+(classic-ui-images-label)=
 
 ## Permissions
 
-The ImageScaling view is checking explicitly the permissions the current user has, in case you want to access objects which are normally not accessible to the current user, you have to override the validate_access method in ImageScale. In Products.EasyNewsletter you can find an example of that.
-
+The `ImageScaling` view explicitly checks the permissions of the current user.
+If you want to access objects which are normally not accessible to the current user, then you have to override the `validate_access` method in `ImageScale`.
+In `Products.EasyNewsletter` you can find an example of that.
