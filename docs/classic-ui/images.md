@@ -107,3 +107,8 @@ keep | scale
 thumbnail | scale
 
 For now plone.namedfile is still expecting the direction argument with the old values.
+
+## Permissions
+
+The ImageScaling view is checking explicitly the permissions the current user has, in case you want to access objects which are normally not accessible to the current user, you have to override the validate_access method in ImageScale. In Products.EasyNewsletter you can find an example of that.
+
