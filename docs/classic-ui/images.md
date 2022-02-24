@@ -126,7 +126,7 @@ thumbnail | scale
 For now `plone.namedfile` still expects the `direction` argument with the old values.
 
 
-(classic-ui-images-label)=
+(classic-ui-images-permissions-label)=
 
 ## Permissions
 
