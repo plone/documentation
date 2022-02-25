@@ -170,16 +170,16 @@ This section describes how to make contributions to files in the `plone/document
 1.  Members who subscribe to the repository will receive a notification and review your request.
 
 
-(contributing-editing-volto-documentation-label)=
+(contributing-editing-external-package-documentation-label)=
 
-### Editing Volto documentation
+### Editing external package documentation
 
-If you want to edit the Volto documentation — the files within the `docs/volto` subdirectory — the process is slightly different.
+If you want to edit documentation of imported external packages, the process is slightly different.
 We use git submodules to manage multiple repositories.
-We imported the `plone/volto` repository into the `plone/documentation` repository as described in {doc}`setup-build`.
+We imported the external repositories the `plone/documentation` repository as described in {doc}`setup-build`.
 
 ```{important}
-We currently use the branches `plone/documentation@6-dev` and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@6-dev`, `plone/plone.restapi@plone6docs`, and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
 These branches may change as we get closer to a production release.
 ```
 
@@ -191,40 +191,48 @@ These branches may change as we get closer to a production release.
     git pull
     ```
 
-1.  Change your working directory from the project root directory to `submodules/volto`.
+1.  Change your working directory to the imported package's directory under `submodules/`.
 
     ```shell
+    # choose one
+    cd submodules/plone.restapi
     cd submodules/volto
     ```
 
-1.  Update the submodule, and sync your local `master` branch with its remote.
+1.  Update the submodule, and sync your local development branch with its remote.
     You might need to resolve conflicts.
 
     ```shell
     git submodule update
+
+    # For plone.restapi
+    git checkout plone6docs
+
+    # For volto
     git checkout master
+
     git pull
     ```
 
-1.  Create a new branch from `volto/master`.
+1.  Create a new branch from the development branch.
 
     ```shell
     git checkout -b <new_branch>
     ```
 
-1.  Make edits to files in `docs/volto` using your favorite editor, and save, preview, and test.
+1.  Make edits to files in `docs/<external_package>` using your favorite editor, and save, preview, and test.
     You must run and pass the builds `html` and `linkcheck` without causing new errors.
 
     ```shell
-    # Optionally clean the builds to avoid cache issues
-    # Note that for the Volto docs only, we use "docs-" as a prefix for make targets
-    # because it has so many of them and to avoid a conflict with the core application.
+    # Optionally clean the builds to avoid cache issues.
+    # Note that for the external packages' documentation only,
+    # we use "docs-" as a prefix for make targets to avoid a conflicts.
     make docs-clean
     make docs-html
     make docs-linkcheck
     ```
 
-1.  Back in `submodules/volto`, commit and push your changes to the remote.
+1.  Back in `submodules/<external_package>`, commit and push your changes to the remote.
 
     ```shell
     git add <files>
@@ -236,13 +244,20 @@ These branches may change as we get closer to a production release.
 
     ```shell
     cd ../..
+
+    # For plone.restapi
+    git add submodules/plone.restapi
+    git commit -m "Update submodules/plone.restapi tip"
+
+    # For volto
     git add submodules/volto
     git commit -m "Update submodules/volto tip"
+
     git push
     ```
 
-1.  Visit the GitHub `plone/volto` repository, and [create a pull request](https://github.com/plone/volto/compare) against the branch `master`.
-1.  Members who subscribe to the `plone/volto` repository will receive a notification and review your request.
+1.  Visit the GitHub `plone/<external_package>` repository, and create a pull request against the development branch.
+1.  Members who subscribe to the `plone/<external_package>` repository will receive a notification and review your request.
 
 
 (contributing-code-of-conduct-label)=
