@@ -43,8 +43,13 @@ docs/volto:
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
 
+docs/restapi:
+	git submodule init; \
+	git submodule update; \
+	ln -s ../submodules/plone.restapi/docs ./docs/plone.restapi
+
 .PHONY: deps
-deps: bin/python docs/volto  ## Create Python virtual environment, install requirements, pull in Volto submodule
+deps: bin/python docs/volto docs/restapi  ## Create Python virtual environment, install requirements, and finally initialize or update the volto and plone.restapi submodules.
 
 .PHONY: html
 html: deps  ## Build html
