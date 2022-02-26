@@ -17,6 +17,7 @@ html_meta:
 backend/index
 volto/index
 classic-ui/index
+plone.restapi/index
 contributing/index
 ```
 

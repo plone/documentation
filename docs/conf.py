@@ -84,6 +84,7 @@ spelling_ignore_pypi_package_names = True
 # The suffix of source filenames.
 source_suffix = {
     ".md": "markdown",
+    ".rst": "restructuredtext",
 }
 
 # The master toctree document.
