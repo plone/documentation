@@ -49,7 +49,7 @@ docs/restapi:
 	ln -s ../submodules/plone.restapi/docs/source ./docs/plone.restapi
 
 .PHONY: deps
-deps: bin/python docs/volto docs/restapi  ## Create Python virtual environment, install requirements, and finally initialize or update the volto and plone.restapi submodules.
+deps: bin/python docs/volto docs/restapi  ## Create Python virtual environment, install requirements, initialize or update the volto and plone.restapi submodules, and finally create symlinks to the documentation source.
 
 .PHONY: html
 html: deps  ## Build html
