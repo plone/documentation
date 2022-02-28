@@ -46,7 +46,7 @@ docs/volto:
 docs/restapi:
 	git submodule init; \
 	git submodule update; \
-	ln -s ../submodules/plone.restapi/docs/source ./docs/plone.restapi.docs
+	ln -s ../submodules/plone.restapi/docs/source ./docs/plone.restapi.docs; \
 	ln -s ../submodules/plone.restapi/src/plone/restapi/tests/http-examples ./docs/plone.restapi.http-examples
 
 .PHONY: deps
