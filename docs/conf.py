@@ -48,6 +48,8 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_copybutton",
     "sphinx_sitemap",
+    "sphinxcontrib.httpdomain",
+    "sphinxcontrib.httpexample",
     "sphinxcontrib.spelling",
     "sphinxext.opengraph",
 ]
