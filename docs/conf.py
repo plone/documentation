@@ -99,6 +99,8 @@ exclude_patterns = [
     "spelling_wordlist.txt",
     "**/CHANGES.rst",
     "**/LICENSE.rst",
+    "**/CONTRIBUTORS.rst",
+    "plone.restapi.docs/ideas",
 ]
 
 html_extra_path = [

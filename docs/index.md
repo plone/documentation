@@ -10,6 +10,8 @@ html_meta:
 
 # Plone 6 Documentation
 
+This website is the HTML documentation of Plone, an open source, enterprise-level content management system.
+
 ```{toctree}
 :maxdepth: 2
 :hidden: true
@@ -17,7 +19,7 @@ html_meta:
 backend/index
 volto/index
 classic-ui/index
-plone.restapi/index
+plone.restapi.docs/index
 contributing/index
 ```
 
