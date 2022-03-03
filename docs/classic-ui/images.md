@@ -97,7 +97,7 @@ You can directly create an HTML tag from `image_scale`:
 <img src="http://localhost:8080/Plone/news/newsitem1/@@images/9f676d46-0cb3-4512-a831-a5db4079bdfa.jpeg" alt="News Item 1!" title="News Item 1" height="21" width="32" srcset="http://localhost:8080/Plone/news/newsitem1/@@images/4a68513c-cffd-4de0-8a35-80627945b80f.jpeg 2x, http://localhost:8080/Plone/news/newsitem1/@@images/c32929c6-cb89-4ce7-846f-38adf29c09a4.jpeg 3x" />
 ```
 
-You can also get an HTML tag with a specific size:
+Instead of using the configured named scales you can also get an HTML tag with any specific size in pixels:
 
 ```python
 from plone import api
