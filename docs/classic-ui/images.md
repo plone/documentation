@@ -5,7 +5,6 @@ html_meta:
   "property=og:title": "Image resolving and scaling"
   "keywords": "Plone, Classic UI, classic-ui, image, resize, scale"
 ---
-****
 (classic-ui-images-label)=
 
 # Image handling
