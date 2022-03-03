@@ -107,9 +107,15 @@ To get the scaling information only without creating an HTML tag, you can use th
 from plone import api
 
 scale_util = api.content.get_view("images", context, request)
+<<<<<<< HEAD
 # on the following line "image" is the field name.
 # The default Image content types field name is "image".
 image_scale = scale_util.scale("image", scale="mini")
+=======
+# The default `Image` content type's field name is "image".
+# On the following line of code, "leadimage" is the field name.
+image_scale = scale_util.scale("leadimage", scale="mini")
+>>>>>>> 58481e400f28d62b1ad48bdf33572b2710c6f81c
 print(image_scale.url)
 print(image_scale.width)
 print(image_scale.height)
@@ -144,7 +150,7 @@ You can directly create an HTML tag from `image_scale`:
 <img src="http://localhost:8080/Plone/news/newsitem1/@@images/9f676d46-0cb3-4512-a831-a5db4079bdfa.jpeg" alt="News Item 1!" title="News Item 1" height="21" width="32" srcset="http://localhost:8080/Plone/news/newsitem1/@@images/4a68513c-cffd-4de0-8a35-80627945b80f.jpeg 2x, http://localhost:8080/Plone/news/newsitem1/@@images/c32929c6-cb89-4ce7-846f-38adf29c09a4.jpeg 3x" />
 ```
 
-Instead of using the configured named scales you can also get an HTML tag with any specific size in pixels:
+Instead of using the configured named scales, you can get an HTML tag with any specific size in pixels:
 
 ```python
 from plone import api
@@ -205,18 +211,32 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 
 (classic-ui-images-scaling-direction-deprecated-in-favor-of-label)=
 
+<<<<<<< HEAD
 ## Scaling `direction`
 
 The default direction is `thumbnail`.
+=======
+## Scaling `direction` to be deprecated in favor of `mode`
+
+```{attention}
+In the upcoming release of Plone 6.0, in `plone.scale` the `direction` argument will be deprecated in favor of `mode`.
+
+`plone.scale` will continue to do scaling, but the values should be converted in your code as follows:
+>>>>>>> 58481e400f28d62b1ad48bdf33572b2710c6f81c
 
 Other options are:
 
+<<<<<<< HEAD
 * scale-crop-to-fit
 * down
 * scale-crop-to-fill
 * up
 * keep
 * thumbnail
+=======
+Until the final release of Plone 6.0, continue to use `plone.namedfile` with the `direction` argument and its values.
+```
+>>>>>>> 58481e400f28d62b1ad48bdf33572b2710c6f81c
 
 
 (classic-ui-images-permissions-label)=
@@ -224,4 +244,9 @@ Other options are:
 ## Permissions
 
 The `ImageScaling` view explicitly checks the permissions of the current user.
+<<<<<<< HEAD
 To access image scales which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
+=======
+To access image scales, which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
+In `Products.EasyNewsletter` you can find an example of that.
+>>>>>>> 58481e400f28d62b1ad48bdf33572b2710c6f81c
