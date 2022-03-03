@@ -89,7 +89,7 @@ The most important properties are the following:
 -   `url`
 -   `width`
 
-At this point, you can also get an HTML tag, since you have created an instance of `api.content.get_view` in `scale_util`:
+You can directly create an HTML tag from `image_scale`:
 
 ```pycon
 >>> print(image_scale.tag())
