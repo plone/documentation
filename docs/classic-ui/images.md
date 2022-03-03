@@ -92,7 +92,7 @@ The most important properties are the following:
 At this point, you can also get an HTML tag, since you have created an instance of `api.content.get_view` in `scale_util`:
 
 ```pycon
->>> print(image_scale.tag)
+>>> print(image_scale.tag())
 
 <img src="http://localhost:8080/Plone/news/newsitem1/@@images/9f676d46-0cb3-4512-a831-a5db4079bdfa.jpeg" alt="News Item 1!" title="News Item 1" height="21" width="32" srcset="http://localhost:8080/Plone/news/newsitem1/@@images/4a68513c-cffd-4de0-8a35-80627945b80f.jpeg 2x, http://localhost:8080/Plone/news/newsitem1/@@images/c32929c6-cb89-4ce7-846f-38adf29c09a4.jpeg 3x" />
 ```
