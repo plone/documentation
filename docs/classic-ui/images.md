@@ -61,6 +61,7 @@ To get the scaling information only without creating an HTML tag, you can use th
 from plone import api
 
 scale_util = api.content.get_view("images", context, request)
+# on the following line "leadimage" is the field name. The default Image content types field name is "image".
 image_scale = scale_util.scale("leadimage", scale="mini")
 print(image_scale.url)
 print(image_scale.width)
