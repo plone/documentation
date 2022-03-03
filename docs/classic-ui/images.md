@@ -132,5 +132,5 @@ For now `plone.namedfile` still expects the `direction` argument with the old va
 ## Permissions
 
 The `ImageScaling` view explicitly checks the permissions of the current user.
-If you want to access objects which are normally not accessible to the current user, then you have to override the `validate_access` method in `ImageScale`.
+To access image scales which are normally not accessible to the current user override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
 In `Products.EasyNewsletter` you can find an example of that.
