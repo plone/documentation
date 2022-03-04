@@ -5,22 +5,26 @@ html_meta:
   "property=og:title": "Image resolving and scaling"
   "keywords": "Plone, Classic UI, classic-ui, image, resize, scale"
 ---
+
 (classic-ui-images-label)=
 
 # Image handling
 
-The default content types and behaviors are using a `plone.namedfile.NamedBlobImage` field for all images.
+The default content types and behaviors use the field `plone.namedfile.NamedBlobImage` for all images.
 
-For this fields, image scaling and HTML tag creation is provided by the `plone.namedfile.scaling` module, specifically in the [`ImageScaling`](https://github.com/plone/plone.namedfile/blob/ecf33a2bc7a8c61888909bc383b3e08d80888e43/plone/namedfile/scaling.py#L350) view.
+For this field, image scaling and HTML tag creation is provided by the `plone.namedfile.scaling` module, specifically in the [`ImageScaling`](https://github.com/plone/plone.namedfile/blob/ecf33a2bc7a8c61888909bc383b3e08d80888e43/plone/namedfile/scaling.py#L350) view.
 
-Given a Dexterity content type named `news-item1` with a `plone.namedfile.NamedBlobImage` field named `image`, we can use the following API's to access the image scales and manage scales.
+Given a Dexterity content type named `news-item1` with a `plone.namedfile.NamedBlobImage` field named `image`, we can use the following APIs to access the image scales and manage scales.
+
 ```{note}
 We will use the image object as context in the following examples.
 ```
 
+(classic-ui-images-default-scales-label)=
+
 ## Default scales
 
-Plone allows you in the `/@@imaging-controlpanel` to configure which scales are available and what dimensions they should have. By default we have the following scales configured:
+In `/@@imaging-controlpanel` Plone allows you to configure which scales are available and what dimensions they should have. By default we have the following scales configured:
 
 * large 768:768
 * preview 400:400
@@ -30,32 +34,41 @@ Plone allows you in the `/@@imaging-controlpanel` to configure which scales are 
 * icon 32:32
 * listing 16:16
 
-You can add or change scale as you like.
+You can add or change scales as you like.
 
+
+(classic-ui-images-image-resolving-by-uri-label)=
 
 ## Image resolving by URI
 
 Plone can resolve an image scale via URI in different ways.
 
+
+(classic-ui-images-by-field-and-scale-name-label)=
+
 ### By field and scale name
 
 Given our `news-item1` with the field `image`, we can get the name scale `thumb` as follows:
 
-http://localhost:8080/Plone/news-item1/@@images/image/thumb
+`http://localhost:8080/Plone/news-item1/@@images/image/thumb`
 
 To get the original image, you can leave out the scale:
 
-http://localhost:8080/Plone/news-item1/@@images/image
+`http://localhost:8080/Plone/news-item1/@@images/image`
 
 
+(classic-ui-images-by-cacheable-scale-uid-name-label)=
 
 ### By cacheable scale UID name
 
-When an image scale was created, it will be cached under the name `UID.jpeg` in the object annotations and can be resolved by it as follows:
+When an image scale is created, it will be cached under the name `UID.jpeg` in the object annotations.
+It can be resolved as follows:
 
-http://localhost:8080/Plone/news-item1/@@images/3d182f34-8773-4f20-a79d-8774c3151b7e.jpeg
+`http://localhost:8080/Plone/news-item1/@@images/3d182f34-8773-4f20-a79d-8774c3151b7e.jpeg`
 
-This very useful for caching URL's in Varnish or the Browser. In case the scale definitions have changed, they will be saved again under a different UID, so that the URL will change and enforce the Browser or a cache proxy like Varnish to fetch it again.
+This is useful for caching URLs in Varnish or the browser.
+In case the uploaded image or scale definitions have changed, they will be saved again under a different UID.
+This changes the URL and forces either the browser, or a cache proxy such as Varnish, to fetch it again.
 
 
 (classic-ui-images-image-tag-label)=
@@ -95,6 +108,8 @@ tag = scale_util.tag(
 )
 ```
 
+If you pass additional kwargs to `tag`, they become attributes on `tag`.
+
 
 (classic-ui-images-image-scaling-no-tag-creation-label)=
 
@@ -106,8 +121,8 @@ To get the scaling information only without creating an HTML tag, you can use th
 from plone import api
 
 scale_util = api.content.get_view("images", context, request)
-# on the following line "image" is the field name.
-# The default Image content types field name is "image".
+# The default `Image` content type's field name is "image".
+# On the following line of code, "image" is the field name.
 image_scale = scale_util.scale("image", scale="mini")
 print(image_scale.url)
 print(image_scale.width)
@@ -152,9 +167,12 @@ scale_util = api.content.get_view("images", context, request)
 tag = scale_util.scale("image", width="600", height="200")
 ```
 
+(classic-ui-images-using-image_scale0-in-templates-label)=
+
 ### Using image_scale in templates
 
-You could use the URL-variant from above, but that would be an an uncached version. To create a cached scale in a page template you can do the following:
+You could use the URL-variant from above, but that would be an uncached version.
+To create a cached scale in a page template you can do the following:
 
 ```xml
 <div tal:define="scale_view context/@@images;
@@ -167,7 +185,7 @@ You could use the URL-variant from above, but that would be an an uncached versi
 </div>
 ```
 
-or you can just get the HTML tag back and replace the current tag with it:
+Or you can get the HTML tag back, and replace the current tag with it:
 
 ```xml
 <div tal:define="scale_view context/@@images">
@@ -175,13 +193,15 @@ or you can just get the HTML tag back and replace the current tag with it:
 </div>
 ```
 
-You can also provide the following keyword arguments to set title, alt, css_class for the generated tag:
+You can also provide the following keyword arguments to set `title`, `alt`, or `css_class` for the generated tag:
 
 ```xml
 <div tal:define="scale_view context/@@images">
   <img tal:replace="structured python: scale_view.tag('banner', 'mini', title='The Banner', alt='Alternative text', css_class='banner')">
 </div>
 ```
+
+(classic-ui-images-get-image_scale-by-cached-uid-name-label)=
 
 ### Get image_scale by cached UID name
 
@@ -202,7 +222,7 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 ```
 
 
-(classic-ui-images-scaling-direction-deprecated-in-favor-of-label)=
+(classic-ui-images-scaling-direction-label)=
 
 ## Scaling `direction`
 
@@ -210,12 +230,12 @@ The default direction is `thumbnail`.
 
 Other options are:
 
-* scale-crop-to-fit
-* down
-* scale-crop-to-fill
-* up
-* keep
-* thumbnail
+* `down`
+* `keep`
+* `scale-crop-to-fill`
+* `scale-crop-to-fit`
+* `thumbnail`
+* `up`
 
 
 (classic-ui-images-permissions-label)=
@@ -223,4 +243,4 @@ Other options are:
 ## Permissions
 
 The `ImageScaling` view explicitly checks the permissions of the current user.
-To access image scales which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
+To access image scales, which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
