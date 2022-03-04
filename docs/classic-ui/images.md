@@ -61,7 +61,8 @@ To get the original image, you can leave out the scale:
 
 ### By cacheable scale UID name
 
-When an image scale is created, it will be cached under the name `UID.jpeg` in the object annotations.
+When an image scale is created, it will be cached under the name `UID.EXT` (i.e. `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
+Scaling keeps the uploaded formats, except for TIFF which ends up as JPEG.
 It can be resolved as follows:
 
 `http://localhost:8080/Plone/news-item1/@@images/3d182f34-8773-4f20-a79d-8774c3151b7e.jpeg`
