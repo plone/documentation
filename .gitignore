@@ -9,3 +9,4 @@ pyvenv.cfg
 
 # symlinked from submodule
 docs/volto
+/lib64
