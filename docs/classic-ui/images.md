@@ -68,8 +68,8 @@ It can be resolved as follows:
 `http://localhost:8080/Plone/news-item1/@@images/3d182f34-8773-4f20-a79d-8774c3151b7e.jpeg`
 
 This is useful for caching URLs in Varnish or the browser.
-In case the uploaded image or scale definitions have changed, they will be saved again under a different UID.
-This changes the URL and forces either the browser, or a cache proxy such as Varnish, to fetch it again. When a scale has changed, the old stored entry in the annotation will be deleted after 24h.
+In case the uploaded image or scale definitions have changed, they will be saved again under a different UID. This changes the URL and forces either the browser, or a cache proxy such as Varnish, to fetch it again.
+When a scale has changed, the old stored entry in the annotation will be deleted after 24h. If one changes an image which is used in multiple pages, the updated versions will only be shown after a restart of the Plone instance, saving the pages again or after 24h.
 
 
 (classic-ui-images-image-tag-label)=
