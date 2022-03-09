@@ -71,6 +71,7 @@ linkcheck_ignore = [
     r"http://localhost",
     r"http://0.0.0.0",
     r"http://127.0.0.1",
+    r"https://www.linode.com",
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
     # Ignore specific anchors
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
