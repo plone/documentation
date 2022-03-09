@@ -74,7 +74,7 @@ linkcheck_ignore = [
     r"https://www.linode.com/",
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
 ]
-linkcheck_anchors = False
+linkcheck_anchors = True  # Required for RazzleJS
 linkcheck_timeout = 10
 
 # This is our wordlist with known words, like Github or Plone ...
