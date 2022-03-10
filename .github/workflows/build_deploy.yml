@@ -30,6 +30,30 @@ jobs:
       - name: Prepare deploy
         run: make deploy
 
+      # node setup
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        working-directory: submodules/volto
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # node cache
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        working-directory: submodules/volto
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        working-directory: submodules/volto
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: StoryBook build
+        run: cd submodules/volto && yarn && yarn build-storybook -o _build/html/storybook
+
       - name: Deploy to server
         id: deploy
         uses: Pendect/action-rsyncer@v1.1.0

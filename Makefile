@@ -211,6 +211,11 @@ netlify:
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	make storybook
+
+.PHONY: storybook
+storybook:
+	cd submodules/volto && yarn && yarn build-storybook -o ../../_build/html/storybook
 
 .PHONY: all
 all: clean spellcheck linkcheck html  ## Clean docs build, then run linkcheck and spellcheck, and build html
