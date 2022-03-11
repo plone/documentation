@@ -270,7 +270,7 @@ You may wish to register an adapter directly instead of using the ``@form.valida
     zope.component.provideAdapter(PhoneNumberValidator)
 
 
-This registers an adapter, extending the SimpleFieldValidator base class, and calling the superclass version of validate() to gain the default validation logic.
+This registers an adapter, extending the SimpleFieldValidator base class, and calling the superclass version of ``validate()`` to gain the default validation logic.
 In the validate() method, we can use variables like self.context, self.request, self.view, self.field and self.widget to access the adapted objects.
 The WidgetValidatorDiscriminators class takes care of preparing the adapter discriminators.
 
