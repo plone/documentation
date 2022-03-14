@@ -71,7 +71,7 @@ This is useful for caching URLs in Varnish or the browser.
 In case the uploaded image or scale definitions have changed, they will be saved again under a different UID.
 This changes the URL and forces either the browser, or a cache proxy such as Varnish, to fetch it again.
 When a scale has changed, the old stored entry in the annotation will be deleted after 24 hours.
-If one changes an image which is used in multiple pages, the updated versions will only be shown after a restart of the Plone instance, saving the pages again or after 24h.
+If one changes an image which is used in multiple pages, the updated versions will only be shown after a restart of the Plone instance, saving the pages again, or after 24 hours.
 
 
 (classic-ui-images-image-tag-label)=
