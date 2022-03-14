@@ -2,6 +2,7 @@
 /bin
 /include
 /lib
+/lib64
 
 # Generated files
 pyvenv.cfg
@@ -9,4 +10,3 @@ pyvenv.cfg
 
 # symlinked from submodule
 docs/volto
-/lib64
