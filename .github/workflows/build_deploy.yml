@@ -51,7 +51,7 @@ jobs:
 
 
       - name: StoryBook build
-        run: cd submodules/volto && yarn && yarn build-storybook -o _build/html/storybook
+        run: cd submodules/volto && yarn && yarn build-storybook -o ../../_build/html/storybook
 
       - name: Deploy to server
         id: deploy
