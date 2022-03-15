@@ -481,7 +481,7 @@ Below is a complex example how to expose viewlets without going through a viewle
             # Create viewlet and put it to the acquisition chain
             # Viewlet need initialization parameters: context, request, view
             try:
-                viewlet = factory(context, request, self, None).__of__(context)
+                viewlet = factory(context, request, self, None)
             except TypeError:
                 # Bad constructor call parameters
                 raise RuntimeError(
