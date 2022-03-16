@@ -1,3 +1,5 @@
+[![Testing Status](https://github.com/plone/documentation/actions/workflows/test.yml/badge.svg?branch=6-dev "Testing Status")](https://github.com/plone/documentation/actions/workflows/test.yml)
+
 # Plone Documentation
 
 This is the repository for Plone Documentation.
