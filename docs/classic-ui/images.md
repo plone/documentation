@@ -70,6 +70,8 @@ It can be resolved as follows:
 This is useful for caching URLs in Varnish or the browser.
 In case the uploaded image or scale definitions have changed, they will be saved again under a different UID.
 This changes the URL and forces either the browser, or a cache proxy such as Varnish, to fetch it again.
+When a scale has changed, the old stored entry in the annotation will be deleted after 24 hours.
+If one changes an image which is used in multiple pages, the updated versions will only be shown after a restart of the Plone instance, saving the pages again, or after 24 hours.
 
 
 (classic-ui-images-image-tag-label)=
@@ -91,7 +93,7 @@ To get a specific image size:
 from plone import api
 
 scale_util = api.content.get_view("images", context, request)
-tag = scale_util.tag("image", width="600", height="200")
+tag = scale_util.tag("image", width=600, height=200)
 ```
 
 The complete list of arguments with their default values is shown in the following example.
@@ -165,7 +167,7 @@ Instead of using the configured named scales, you can get an HTML tag with any s
 from plone import api
 
 scale_util = api.content.get_view("images", context, request)
-tag = scale_util.scale("image", width="600", height="200")
+tag = scale_util.scale("image", width=600, height=200)
 ```
 
 (classic-ui-images-using-image_scale0-in-templates-label)=
