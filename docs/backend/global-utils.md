@@ -12,7 +12,7 @@ html_meta:
 The following are global functions defined in `CMFPlone` and `plone.app.layout`.
 
 - `portal_state`
-- context_state
+- `context_state`
 - plone_view
 
 
