@@ -12,7 +12,7 @@ For convenience Plone defines a couple of global variables often used in templat
 
 - [portal_state](backend-global-utils-portal-state-label)
 - [`context_state`](backend-global-utils-context-state-label)
-- [plone_view](backend-global-utils-plone-view-label)
+- [`plone_view`](backend-global-utils-plone-view-label)
 - icons
 - lang
 - portal_url
