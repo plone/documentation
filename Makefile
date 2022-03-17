@@ -41,7 +41,7 @@ bin/python:
 docs/volto:
 	git submodule init; \
 	git submodule update; \
-	ln -s ../submodules/volto/docs/source ./docs/volto
+	ln -s ../submodules/volto/docs ./docs/volto
 
 .PHONY: deps
 deps: bin/python docs/volto  ## Create Python virtual environment, install requirements, pull in Volto submodule
@@ -209,7 +209,7 @@ netlify:
 	pip install -r requirements.txt
 	git submodule init; \
 	git submodule update; \
-	ln -s ../submodules/volto/docs/source ./docs/volto
+	ln -s ../submodules/volto/docs ./docs/volto
 	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	make storybook
 
