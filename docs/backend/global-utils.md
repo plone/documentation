@@ -9,7 +9,7 @@ html_meta:
 
 # Global utils and helpers
 
-Global functions defined in CMFPlone and plone.app.layout.
+The following are global functions defined in `CMFPlone` and `plone.app.layout`.
 
 - portal_state
 - context_state
