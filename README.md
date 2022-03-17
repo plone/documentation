@@ -1,3 +1,5 @@
+[![Testing Status](https://github.com/plone/documentation/actions/workflows/test.yml/badge.svg?branch=6-dev "Testing Status")](https://github.com/plone/documentation/actions/workflows/test.yml)
+
 # Plone Documentation
 
 This is the repository for Plone Documentation.
@@ -32,8 +34,7 @@ The community is writing guides, installation instructions, and everything you n
 
 ## Support
 
-If you are having issues, please let us know by opening an issue in our [Issue Tracker](https://github.com/plone/training/issues) or asking a question on our
-[Community Space](https://community.plone.org).
+If you have issues, please open an issue in our [Issue Tracker](https://github.com/plone/documentation/issues) or ask a question on our [Community Forum, Documentation category](https://community.plone.org/c/documentation/13).
 
 
 ## Training
