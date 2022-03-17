@@ -165,7 +165,7 @@ def friendly_types():
 
 (backend-global-utils-context-state-label)=
 
-## context_state
+## `context_state`
 
 ```python
 def current_page_url():
