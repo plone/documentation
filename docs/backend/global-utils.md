@@ -18,7 +18,7 @@ The following are global functions defined in `CMFPlone` and `plone.app.layout`.
 
 (backend-global-utils-plone-view-label)=
 
-## plone_view
+## `plone_view`
 
 ```python
 def getCurrentUrl():
