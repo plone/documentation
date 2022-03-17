@@ -3,7 +3,7 @@ html_meta:
   "description": "Convenience global Plone variables in templates"
   "property=og:description": "Convenience global Plone variables in templates"
   "property=og:title": "Global variables in templates"
-  "keywords": ""
+  "keywords": "Plone, Classic UI, global variables, templates"
 ---
 
 # Global variables in templates
