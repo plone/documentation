@@ -117,7 +117,7 @@ def patterns_settings():
 
 (backend-global-utils-portal-state-label)=
 
-## portal_state
+## `portal_state`
 
 ```python
 def portal():
