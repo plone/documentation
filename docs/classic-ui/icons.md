@@ -47,7 +47,8 @@ Plone ships with the following icon registrations by default.
 - [Toolbar](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
 
 The icons above are made available as Plone resources.
-For example, the lightning icon's resource path is `++plone++bootstrap-icons/lightning.svg`. One could register another icon set under a new name, for example `++plone++fontawesome-icons` and override the registrations above to use them.
+For example, the lightning icon's resource path is `++plone++bootstrap-icons/lightning.svg`.
+One could register another icon set under a new name, for example `++plone++fontawesome-icons`, and override the registrations above to use them.
 
 
 (classic-ui-icons-contextual-icons-label)=
