@@ -35,7 +35,8 @@ See the file [package.json](https://github.com/plone/plone.staticresources/blob/
 ## Registration
 
 Icons are registered in Plone's registry.
-This provides an option to customize the contenttype and Plone UI icons by overriding icons via XML. Plone ships with the following icon registrations by default.
+This provides an option to customize the content type and Plone UI icons by overriding icons via XML.
+Plone ships with the following icon registrations by default.
 
 - [Bootstrap](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_bootstrap.xml)
 - [Content Type](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_contenttype.xml)
