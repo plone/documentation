@@ -64,7 +64,7 @@ To use a different icon than the system default, you can override the registrati
 
 ## Icon expression
 
-```{note}
+```{todo}
 How does this work? We need an example here!
 ```
 
