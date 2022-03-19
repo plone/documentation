@@ -141,7 +141,7 @@ if(baseUrl){
 }
 ```
 
-[Mockup](https://github.com/plone/mockup) provides an iconResolver function, defined in core/utils.js,  which does this the same way and has a fallback for demo and testing.
+[Mockup](https://github.com/plone/mockup) provides an `iconResolver` function, defined in `core/utils.js`,  which does this the same way and has a fallback for demo and testing.
 
 
 
