@@ -93,7 +93,8 @@ It can be used via URL or via Python as shown below.
 
 ### Get icon URL via Python expression
 
-The `url` method of `@@iconresolver` view returns the actual url to the SVG icon. The iconresolver view is globally available in templates under the name `icons`.
+The `url` method of the `@@iconresolver` view returns the actual URL to the SVG icon.
+The icon resolver view is globally available in templates under the name `icons`.
 This can be used in a template for an `img` tag:
 
 ```xml
