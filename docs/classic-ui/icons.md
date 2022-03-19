@@ -56,7 +56,7 @@ One could register another icon set under a new name, for example `++plone++font
 ## Contextual Icons
 
 Plone defines contextual icons, which are used in specific places in a website.
-For example we have an icon registered under the name `plone.icon.plone-copy` in https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml which points to the bootstrap clipboard-plus icon `++plone++bootstrap-icons/clipboard-plus.svg`.
+For example we have an icon registered under the name `plone.icon.plone-copy` in https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml which points to the bootstrap `clipboard-plus` icon `++plone++bootstrap-icons/clipboard-plus.svg`.
 To use a different icon than the system default, you can override the registration for `plone.icon.plone-copy` with another icon path.
 
 
