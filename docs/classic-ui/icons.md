@@ -111,7 +111,7 @@ This can be used in a template for an `img` tag:
 The tag method is used with `tal:replace`.
 It returns an SVG image.
 Inline icons can be styled via CSS.
-`tag_class` and `tag_alt` is used to pass in custom classes and an `alt` text.
+`tag_class` and `tag_alt` are used to pass in custom classes and an `alt` text.
 
 ```xml
 <tal:icon
