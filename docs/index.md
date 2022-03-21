@@ -19,7 +19,7 @@ This website is the HTML documentation of Plone, an open source, enterprise-leve
 backend/index
 volto/index
 classic-ui/index
-plone.restapi.docs/index
+plone.restapi/docs/source/index
 contributing/index
 ```
 

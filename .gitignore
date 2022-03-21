@@ -9,5 +9,4 @@ pyvenv.cfg
 
 # symlinked from submodule
 docs/volto
-docs/plone.restapi.docs
-docs/plone.restapi.http-examples
+docs/plone.restapi
