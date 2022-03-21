@@ -98,9 +98,17 @@ master_doc = "index"
 exclude_patterns = [
     "spelling_wordlist.txt",
     "**/CHANGES.rst",
-    "**/LICENSE.rst",
     "**/CONTRIBUTORS.rst",
-    "plone.restapi.docs/ideas",
+    "**/LICENSE.rst",
+    "**/README.rst",
+    "plone.restapi/.*",
+    "plone.restapi/bin",
+    "plone.restapi/docs/source/ideas",
+    "plone.restapi/include",
+    "plone.restapi/lib",
+    "plone.restapi/news",
+    "plone.restapi/performance",
+    "plone.restapi/src",
 ]
 
 html_extra_path = [
