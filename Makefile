@@ -175,7 +175,7 @@ linkcheck: deps  ## Run linkcheck
 
 .PHONY: linkcheckbroken
 linkcheckbroken: deps  ## Run linkcheck and show only broken links
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' egrep -wi broken --color=auto
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=auto
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
@@ -217,6 +217,11 @@ netlify:
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s "../submodules/plone.restapi" "./docs/plone.restapi"
 	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	make storybook
+
+.PHONY: storybook
+storybook:
+	cd submodules/volto && yarn && yarn build-storybook -o ../../_build/html/storybook
 
 .PHONY: all
 all: clean spellcheck linkcheck html  ## Clean docs build, then run linkcheck and spellcheck, and build html
