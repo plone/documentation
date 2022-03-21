@@ -215,6 +215,7 @@ netlify:
 	git submodule init; \
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
+	ln -s "../submodules/plone.restapi" "./docs/plone.restapi"
 	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 
 .PHONY: all
