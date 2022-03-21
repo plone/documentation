@@ -69,12 +69,12 @@ pygments_style = "sphinx"
 # Options for the linkcheck builder
 # Ignore localhost
 linkcheck_ignore = [
-    # TODO: Before release, clean up any links to ignore
     r"http://localhost",
     r"http://0.0.0.0",
     r"http://127.0.0.1",
     r"https://www.linode.com/",
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
+    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=master",  # plone.restapi
 ]
 linkcheck_anchors = False
 linkcheck_timeout = 10
