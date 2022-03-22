@@ -63,13 +63,14 @@ See {doc}`setup-build` for instructions for how to set up and build the document
 Contributions are managed through git repositories on GitHub.
 
 - [documentation](https://github.com/plone/documentation)
+- [plone.restapi](https://github.com/plone/plone.restapi)
 - [volto](https://github.com/plone/volto)
 
 First discuss whether you should perform any work.
 Any method below is acceptable, but are listed in order of most likely to get a response.
 
-- Search for open issues in [`documentation`](https://github.com/plone/documentation/issues) or [`volto`](https://github.com/plone/volto/issues) and comment on them.
-- Create a new issue in [`documentation`](https://github.com/plone/documentation/issues) or [`volto`](https://github.com/plone/volto/issues).
+- Search for open issues in [`documentation`](https://github.com/plone/documentation/issues), [`plone.restapi`](https://github.com/plone/plone.restapi/issues), or [`volto`](https://github.com/plone/volto/issues) and comment on them.
+- Create a new issue in [`documentation`](https://github.com/plone/documentation/issues), [`plone.restapi`](https://github.com/plone/plone.restapi/issues), or [`volto`](https://github.com/plone/volto/issues).
 - Discuss during conferences, trainings, and other Plone events.
 - Ask on the [Plone Community Forum, Documentation topic](https://community.plone.org/c/documentation/13).
 - Ask in the [Plone chat on Discord](https://discord.com/invite/zFY3EBbjaj).
@@ -110,14 +111,14 @@ Quick edits for minor issues, such as typographical errors, misspellings, and En
 For large edits, first follow the instructions in {doc}`setup-build`.
 
 Once you have your environment set up, then you can follow the standard practice for making a pull request.
-This practice differs depending on whether you are making contributions to only the core `documentation` files or `volto` files as well.
+This practice differs depending on whether you are making contributions to only the core `documentation` files, or `plone.restapi` and `volto` files as well.
 
 
 (contributing-documentation-only-label)=
 
 ### Working with only the `plone/documentation` repository
 
-This section describes how to make contributions to files in the `plone/documentation` repository only, and excludes `plone/volto/docs` files.
+This section describes how to make contributions to files in the `plone/documentation` repository only, and excludes files in `submodules/plone.restapi/docs` and `submodules/volto/docs`.
 
 1.  From the project root directory, sync your local `6-dev` branch with its remote.
     You might need to resolve conflicts.
