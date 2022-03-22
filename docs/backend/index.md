@@ -12,7 +12,7 @@ html_meta:
 
 ```{toctree}
 :maxdepth: 2
-
+controlpanels
 content-types
 behaviors
 annotations
