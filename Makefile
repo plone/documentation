@@ -43,8 +43,13 @@ docs/volto:
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
 
+docs/restapi:
+	git submodule init; \
+	git submodule update; \
+	ln -s "../submodules/plone.restapi" "./docs/plone.restapi"
+
 .PHONY: deps
-deps: bin/python docs/volto  ## Create Python virtual environment, install requirements, pull in Volto submodule
+deps: bin/python docs/volto docs/restapi  ## Create Python virtual environment, install requirements, initialize or update the volto and plone.restapi submodules, and finally create symlinks to the documentation source.
 
 .PHONY: html
 html: deps  ## Build html
@@ -210,6 +215,7 @@ netlify:
 	git submodule init; \
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
+	ln -s "../submodules/plone.restapi" "./docs/plone.restapi"
 	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	make storybook
 

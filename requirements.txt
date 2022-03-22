@@ -1,6 +1,6 @@
 docutils<0.17,>=0.15  # sphinx-book-theme 0.2.0 has requirement docutils<0.17,>=0.15
 Sphinx
-jsx-lexer
+jsx-lexer  # volto
 lesscpy
 linkify-it-py
 myst-parser
@@ -9,5 +9,7 @@ sphinx-book-theme
 sphinx-copybutton
 sphinx-sitemap
 sphinx-togglebutton
+sphinxcontrib.httpdomain  # plone.restapi
+sphinxcontrib.httpexample  # plone.restapi
 sphinxcontrib-spelling
 sphinxext-opengraph

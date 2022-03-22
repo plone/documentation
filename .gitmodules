@@ -2,3 +2,7 @@
 	path = submodules/volto
 	url = https://github.com/plone/volto.git
 	branch = master
+[submodule "submodules/plone.restapi"]
+	path = submodules/plone.restapi
+	url = https://github.com/plone/plone.restapi.git
+	branch = plone6docs
