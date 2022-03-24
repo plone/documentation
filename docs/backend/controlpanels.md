@@ -39,5 +39,4 @@ To manually register a view as a contropanel, add the following registration to 
           <permission>Manage portal</permission>
     </configlet>
   </object>
-  
 ```
