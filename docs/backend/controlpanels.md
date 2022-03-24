@@ -11,7 +11,7 @@ html_meta:
 # Controlpanels
 
 ## Adding a control panel
-To add a controlpanel to your add-on you can use [`plonecli`](https://pypi.org/project/plonecli/) follows:
+To add a control panel to your add-on, you can use [`plonecli`](https://pypi.org/project/plonecli/) as follows:
 
 ```shell
 plonecli add controlpanel
