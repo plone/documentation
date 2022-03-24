@@ -16,7 +16,7 @@ To add a controlpanel to your add-on you can use [`plonecli`](https://pypi.org/p
 ```shell
 plonecli add controlpanel
 ```
-This will create the controlpanel python file in the controlpanel's folder where you can define your controlpanel schema fields. 
+This will create the control panel Python file in the control panel's folder where you can define your control panel schema fields. 
 
 ## Registering a Controlpanel
 To manually register a view as a contropanel, add the following registration to your `/profiles/default/controlpanel.xml`.
