@@ -1,14 +1,14 @@
 ---
 html_meta:
-  "description": ""
-  "property=og:description": ""
-  "property=og:title": ""
-  "keywords": ""
+  "description": "How to add a Control Panel"
+  "property=og:description": "How to add a Control Panel"
+  "property=og:title": "Add Control Panel"
+  "keywords": "Plone, Add, Control Panel"
 ---
 
 (backend-controlpanels-label)=
 
-# Controlpanels
+# Control panels
 
 ## Adding a control panel
 To add a control panel to your add-on, you can use [`plonecli`](https://pypi.org/project/plonecli/) as follows:
@@ -23,12 +23,12 @@ To manually register a view as a control panel, add the following registration t
 ```xml
   <?xml version="1.0"?>
   <object
-      name="portal_controlpanel"
+      name="portal_control-panel"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="lmu.behavior">
     <configlet
-      title="Some Controlpanel"
-      action_id="collective.example.some_controlpanel"
+      title="Some Control Panel"
+      action_id="collective.example.some_control-panel"
       appId="collective.example"
       category="Products"
       condition_expr=""
