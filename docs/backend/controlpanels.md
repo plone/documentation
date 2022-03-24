@@ -19,7 +19,7 @@ plonecli add controlpanel
 This will create the control panel Python file in the control panel's folder where you can define your control panel schema fields. 
 
 ## Registering a Controlpanel
-To manually register a view as a contropanel, add the following registration to your `/profiles/default/controlpanel.xml`.
+To manually register a view as a control panel, add the following registration to your `/profiles/default/controlpanel.xml`.
 ```xml
   <?xml version="1.0"?>
   <object
