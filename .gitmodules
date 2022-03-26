@@ -5,4 +5,4 @@
 [submodule "submodules/plone.restapi"]
 	path = submodules/plone.restapi
 	url = https://github.com/plone/plone.restapi.git
-	branch = plone6docs
+	branch = master

@@ -180,7 +180,7 @@ We use git submodules to manage multiple repositories.
 We imported the external repositories the `plone/documentation` repository as described in {doc}`setup-build`.
 
 ```{important}
-We currently use the branches `plone/documentation@6-dev`, `plone/plone.restapi@plone6docs`, and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@6-dev`, `plone/plone.restapi@master`, and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
 These branches may change as we get closer to a production release.
 ```
 
@@ -207,7 +207,7 @@ These branches may change as we get closer to a production release.
     git submodule update
 
     # For plone.restapi
-    git checkout plone6docs
+    git checkout master
 
     # For volto
     git checkout master
