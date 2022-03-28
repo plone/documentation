@@ -51,7 +51,9 @@ span.linenos {
 p.ploneorglink img {
   vertical-align: bottom;
 }
-dt:target, span.highlighted {
+dt:target,
+span.highlighted,
+ul.search li span.highlighted {
   background-color: #7ddf4493;
 }
 
