@@ -167,6 +167,7 @@ ul.search li {
   margin-bottom: 2rem;
   padding: 0;
   background-image: none;
+  border-bottom: none;
 }
 #search-results ul li h3 {
   margin: 0.4rem 0 .5rem;
