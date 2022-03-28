@@ -145,6 +145,13 @@ div.admonition.admonition-todo > .admonition-title::before {
 }
 
 /* Search */
+
+/* Show search form. It is hidden by default. */
+#search-documentation,
+#search-documentation~form,
+#search-documentation~p {
+ display:block;
+}
 ul.search {
   margin-left: 0;
 }
