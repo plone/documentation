@@ -5,7 +5,7 @@ lesscpy
 linkify-it-py
 myst-parser
 sphinx-autobuild
-sphinx-book-theme
+sphinx-book-theme<=0.3.99
 sphinx-copybutton
 sphinx-sitemap
 sphinx-togglebutton

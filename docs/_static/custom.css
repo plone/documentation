@@ -51,7 +51,9 @@ span.linenos {
 p.ploneorglink img {
   vertical-align: bottom;
 }
-dt:target, span.highlighted {
+dt:target,
+span.highlighted,
+ul.search li span.highlighted {
   background-color: #7ddf4493;
 }
 
@@ -145,6 +147,13 @@ div.admonition.admonition-todo > .admonition-title::before {
 }
 
 /* Search */
+
+/* Show search form. It is hidden by default. */
+#search-documentation,
+#search-documentation~form,
+#search-documentation~p {
+ display:block;
+}
 ul.search {
   margin-left: 0;
 }
@@ -160,6 +169,7 @@ ul.search li {
   margin-bottom: 2rem;
   padding: 0;
   background-image: none;
+  border-bottom: none;
 }
 #search-results ul li h3 {
   margin: 0.4rem 0 .5rem;
