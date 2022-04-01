@@ -43,7 +43,7 @@ docs/volto:
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
 
-docs/restapi:
+docs/plone.restapi:
 	git submodule init; \
 	git submodule update; \
 	ln -s "../submodules/plone.restapi" "./docs/plone.restapi"
