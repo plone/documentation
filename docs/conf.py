@@ -53,8 +53,6 @@ extensions = [
     "sphinxcontrib.spelling",
     "sphinxext.opengraph",
     # plone.api
-    # 'sphinx.ext.doctest',
-    # 'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
     'sphinx.ext.autosummary',
 ]
