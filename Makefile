@@ -222,7 +222,7 @@ netlify:
 	pip install -r requirements.txt
 	git submodule init; \
 	git submodule update; \
-	bin/pip install -e submodules/plone.api[test]; \
+	pip install -e submodules/plone.api[test]; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s "../submodules/plone.restapi" "./docs/plone.restapi"
 	ln -s "../submodules/plone.api/docs" "./docs/plone.api"
