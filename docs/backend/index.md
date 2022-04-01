@@ -26,7 +26,7 @@ security
 workflows
 search
 zodb
-../plone.api/index.md
+../plone.api/index.rst
 plone-restapi
 sending-email
 upgrading/index
