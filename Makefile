@@ -33,6 +33,7 @@ distclean:  ## Clean docs build directory and Python virtual environment
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
 	rm -rf ./bin/ ./lib/ ./lib64 ./include ./pyvenv.cfg
 
+
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
 	bin/python -m pip install --upgrade pip
@@ -58,6 +59,7 @@ docs/plone.api:
 
 .PHONY: deps
 deps: bin/python docs/volto docs/plone.restapi docs/plone.api  ## Create Python virtual environment, install requirements, initialize or update the volto and plone.restapi submodules, and finally create symlinks to the documentation source.
+
 
 .PHONY: html
 html: deps  ## Build html
