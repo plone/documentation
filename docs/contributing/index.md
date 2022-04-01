@@ -196,8 +196,9 @@ These branches may change as we get closer to a production release.
 
     ```shell
     # choose one
-    cd submodules/plone.restapi
     cd submodules/volto
+    cd submodules/plone.restapi
+    cd submodules/plone.api
     ```
 
 1.  Update the submodule, and sync your local development branch with its remote.
@@ -206,11 +207,14 @@ These branches may change as we get closer to a production release.
     ```shell
     git submodule update
 
+    # For volto
+    git checkout master
+
     # For plone.restapi
     git checkout master
 
-    # For volto
-    git checkout master
+    # For plone.api
+    git checkout integration-in-plone-docs-6
 
     git pull
     ```
@@ -246,13 +250,17 @@ These branches may change as we get closer to a production release.
     ```shell
     cd ../..
 
+    # For volto
+    git add submodules/volto
+    git commit -m "Update submodules/volto tip"
+
     # For plone.restapi
     git add submodules/plone.restapi
     git commit -m "Update submodules/plone.restapi tip"
 
-    # For volto
-    git add submodules/volto
-    git commit -m "Update submodules/volto tip"
+    # For plone.api
+    git add submodules/plone.api
+    git commit -m "Update submodules/plone.api tip"
 
     git push
     ```
