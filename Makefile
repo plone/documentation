@@ -222,6 +222,7 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 .PHONY: netlify
 netlify:
 	pip install -r requirements.txt
+	pip install -r requirements-netlify.txt
 	git submodule init; \
 	git submodule update; \
 	pip install -e submodules/plone.api[test]; \
