@@ -220,11 +220,11 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: netlify
-netlify:
-	pip install -r requirements.txt
+netlify: bin/python
+	bin/pip install -r requirements.txt
 	git submodule init; \
 	git submodule update; \
-	pip install -e submodules/plone.api[test]; \
+	bin/pip install -e submodules/plone.api[test]; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
