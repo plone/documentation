@@ -1,2 +1,1 @@
-# plone.z3cform==1.1.3
 plone-autoform<=1.99
