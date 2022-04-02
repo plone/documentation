@@ -39,16 +39,6 @@ bin/python:
 	bin/python -m pip install --upgrade pip
 	bin/pip install -r requirements.txt
 
-docs/volto:
-	git submodule init; \
-	git submodule update; \
-	ln -s ../submodules/volto/docs/source ./docs/volto
-
-docs/plone.restapi:
-	git submodule init; \
-	git submodule update; \
-	ln -s ../submodules/plone.restapi ./docs/plone.restapi
-
 docs/plone.api:
 	git submodule init; \
 	git submodule update; \
@@ -56,6 +46,16 @@ docs/plone.api:
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
 	@echo
 	@echo "Documentation of plone.api initialized."
+
+docs/plone.restapi:
+	git submodule init; \
+	git submodule update; \
+	ln -s ../submodules/plone.restapi ./docs/plone.restapi
+
+docs/volto:
+	git submodule init; \
+	git submodule update; \
+	ln -s ../submodules/volto/docs/source ./docs/volto
 
 .PHONY: deps
 deps: bin/python docs/volto docs/plone.restapi docs/plone.api ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
