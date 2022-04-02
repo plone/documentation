@@ -2,7 +2,7 @@
 html_meta:
   "description": "How to add a Control Panel"
   "property=og:description": "How to add a Control Panel"
-  "property=og:title": "Add Control Panel"
+  "property=og:title": "Control panels"
   "keywords": "Plone, Add, Control Panel"
 ---
 
