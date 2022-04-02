@@ -3,6 +3,8 @@
   --pst-icon-clipboard-list: '\f46d';
   --pst-icon-admonition-todo: var(--pst-icon-clipboard-list);
   --pst-color-admonition-todo:  161 , 46, 233;
+  --target-color: #b9ee9e;
+  --codeblock-color: #aad993;
 }
 
 .visuallyhidden {
@@ -54,7 +56,7 @@ p.ploneorglink img {
 dt:target,
 span.highlighted,
 ul.search li span.highlighted {
-  background-color: #7ddf4493;
+  background-color: var(--target-color);
 }
 
 .bd-sidebar .nav ul {
@@ -124,6 +126,9 @@ div.admonition.admonition-todo > .admonition-title {
 div.admonition.admonition-todo > .admonition-title::before {
   color: rgba(var(--pst-color-admonition-todo),1);
   content: var(--pst-icon-admonition-todo);
+}
+.admonition-github-only.admonition {
+  display: none;
 }
 
 
@@ -298,4 +303,32 @@ span.guilabel, span.menuselection {
   font-weight: bold;
   font-style: italic;
   white-space: nowrap;
+}
+
+
+/*
+ * extensions
+ */
+
+/* definitions */
+dl.py.function {
+  margin-bottom: 5rem;
+}
+dl.py.function > dt {
+  background-color: var(--codeblock-color);
+  padding: 4px 5px;
+}
+dl.py.function > dt:target {
+  background-color: var(--target-color);  
+}
+dl.field-list > dt {
+  padding-left: 0;
+}
+
+/* code blocks */
+div.viewcode-block:target {
+  padding: 10px 10px;
+  background-color: var(--codeblock-color);
+  border-top: 1px solid var(--codeblock-color);
+  border-bottom: 1px solid var(--codeblock-color);
 }

@@ -63,14 +63,15 @@ See {doc}`setup-build` for instructions for how to set up and build the document
 Contributions are managed through git repositories on GitHub.
 
 - [documentation](https://github.com/plone/documentation)
+- [plone.api](https://github.com/plone/plone.api)
 - [plone.restapi](https://github.com/plone/plone.restapi)
 - [volto](https://github.com/plone/volto)
 
 First discuss whether you should perform any work.
 Any method below is acceptable, but are listed in order of most likely to get a response.
 
-- Search for open issues in [`documentation`](https://github.com/plone/documentation/issues), [`plone.restapi`](https://github.com/plone/plone.restapi/issues), or [`volto`](https://github.com/plone/volto/issues) and comment on them.
-- Create a new issue in [`documentation`](https://github.com/plone/documentation/issues), [`plone.restapi`](https://github.com/plone/plone.restapi/issues), or [`volto`](https://github.com/plone/volto/issues).
+- Search for open issues in [`documentation`](https://github.com/plone/documentation/issues), [`plone.api`](https://github.com/plone/plone.api/issues), [`plone.restapi`](https://github.com/plone/plone.restapi/issues), or [`volto`](https://github.com/plone/volto/issues) and comment on them.
+- Create a new issue in [`documentation`](https://github.com/plone/documentation/issues), [`plone.api`](https://github.com/plone/plone.api/issues), [`plone.restapi`](https://github.com/plone/plone.restapi/issues), or [`volto`](https://github.com/plone/volto/issues).
 - Discuss during conferences, trainings, and other Plone events.
 - Ask on the [Plone Community Forum, Documentation topic](https://community.plone.org/c/documentation/13).
 - Ask in the [Plone chat on Discord](https://discord.com/invite/zFY3EBbjaj).
@@ -111,14 +112,14 @@ Quick edits for minor issues, such as typographical errors, misspellings, and En
 For large edits, first follow the instructions in {doc}`setup-build`.
 
 Once you have your environment set up, then you can follow the standard practice for making a pull request.
-This practice differs depending on whether you are making contributions to only the core `documentation` files, or `plone.restapi` and `volto` files as well.
+This practice differs depending on whether you are making contributions to only the core `documentation` files, or `plone.api`, `plone.restapi` and `volto` files as well.
 
 
 (contributing-documentation-only-label)=
 
 ### Working with only the `plone/documentation` repository
 
-This section describes how to make contributions to files in the `plone/documentation` repository only, and excludes files in `submodules/plone.restapi/docs` and `submodules/volto/docs`.
+This section describes how to make contributions to files in the `plone/documentation` repository only, and excludes files in `submodules/plone.api/docs`, `submodules/plone.restapi/docs` and `submodules/volto/docs`.
 
 1.  From the project root directory, sync your local `6-dev` branch with its remote.
     You might need to resolve conflicts.
@@ -176,11 +177,11 @@ This section describes how to make contributions to files in the `plone/document
 ### Editing external package documentation
 
 If you want to edit documentation of imported external packages, the process is slightly different.
-We use git submodules to manage multiple repositories.
+We use `git submodules` to manage multiple repositories.
 We imported the external repositories the `plone/documentation` repository as described in {doc}`setup-build`.
 
 ```{important}
-We currently use the branches `plone/documentation@6-dev`, `plone/plone.restapi@master`, and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@6-dev`, `plone/plone.api@integration-in-plone-docs-6`, `plone/plone.restapi@master`, and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
 These branches may change as we get closer to a production release.
 ```
 
@@ -195,7 +196,8 @@ These branches may change as we get closer to a production release.
 1.  Change your working directory to the imported package's directory under `submodules/`.
 
     ```shell
-    # choose one
+    # Choose one.
+    cd submodules/plone.api
     cd submodules/plone.restapi
     cd submodules/volto
     ```
@@ -206,10 +208,13 @@ These branches may change as we get closer to a production release.
     ```shell
     git submodule update
 
-    # For plone.restapi
+    # for plone.api
+    git checkout integration-in-plone-docs-6
+
+    # for plone.restapi
     git checkout master
 
-    # For volto
+    # for volto
     git checkout master
 
     git pull
@@ -246,11 +251,15 @@ These branches may change as we get closer to a production release.
     ```shell
     cd ../..
 
-    # For plone.restapi
+    # for plone.api
+    git add submodules/plone.api
+    git commit -m "Update submodules/plone.api tip"
+
+    # for plone.restapi
     git add submodules/plone.restapi
     git commit -m "Update submodules/plone.restapi tip"
 
-    # For volto
+    # for Volto
     git add submodules/volto
     git commit -m "Update submodules/volto tip"
 

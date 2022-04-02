@@ -6,3 +6,7 @@
 	path = submodules/plone.restapi
 	url = https://github.com/plone/plone.restapi.git
 	branch = master
+[submodule "submodules/plone.api"]
+	path = submodules/plone.api
+	url = https://github.com/plone/plone.api.git
+	branch = integration-in-plone-docs-6

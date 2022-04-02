@@ -11,3 +11,4 @@ pyvenv.cfg
 # symlinked from submodule
 docs/volto
 docs/plone.restapi
+docs/plone.api
