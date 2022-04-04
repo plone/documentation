@@ -254,6 +254,12 @@ var Search = {
 
     function _getBreadcrumbs(item, linkUrl) {
       let parentTitles = item[6];
+      let ploneApiTitles = [
+        "A Plone API",
+        "List of all API methods with descriptions"
+      ];
+      // ugly hack for plone.api documentation integrated via git submodule
+      parentTitles = Array.isArray(parentTitles) ? parentTitles : ploneApiTitles;      
       let path = item[0].split('/')
         .slice(0, -1);
       path = path.map((el, index) => {
