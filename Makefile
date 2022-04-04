@@ -51,11 +51,15 @@ docs/plone.restapi:
 	git submodule init; \
 	git submodule update; \
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
+	@echo
+	@echo "Documentation of plone.restapi initialized."
 
 docs/volto:
 	git submodule init; \
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
+	@echo
+	@echo "Documentation of volto initialized."
 
 .PHONY: deps
 deps: bin/python docs/volto docs/plone.restapi docs/plone.api ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
