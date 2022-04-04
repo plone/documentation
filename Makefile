@@ -42,7 +42,7 @@ bin/python:
 docs/plone.api:
 	git submodule init; \
 	git submodule update; \
-	bin/pip install -e submodules/plone.api[test]; \
+	bin/pip install -e submodules/plone.api/"[test]"; \
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
 	@echo
 	@echo "Documentation of plone.api initialized."
