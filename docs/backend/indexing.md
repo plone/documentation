@@ -108,10 +108,8 @@ It is enabled on your content type, if the `plone.textindexer` behavior is enabl
 #### Registering a custom field converter
 
 
-By default, a field is converted to a searchable text by rendering the widget
-in display mode and transforming the result to text/plain. However, if you need
-to convert your custom field in a different way, you only have to provide a
-more specific converter multi-adapter.
+By default, a field is converted to a searchable text by rendering the widget in display mode and transforming the result to `text/plain`. 
+However, if you need to convert your custom field in a different way, you only have to provide a more specific converter multi-adapter.
 
 Convert multi-adapter specification:
 
