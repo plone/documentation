@@ -147,8 +147,7 @@ ZCML:
 </configure>
 ```
 
-There is already an adapter for converting NamedFiles properly. It's registered
-only if `plone.namedfile` is installed.
+There is already an adapter for converting files properly. 
 
 
 
