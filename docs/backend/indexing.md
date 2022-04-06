@@ -101,9 +101,8 @@ you can mark the field searchable by using `indexer:searchable="true"`:
 ```
 
 
-Your SearchableText indexer includes now your custom field on your behavior, as
-soon you enable it in your content type, where `IDexterityTextIndexer` behavior
-is enabled too.
+Your SearchableText indexer includes now your custom field on your behavior. 
+It is enabled on your content type, if the `plone.textindexer` behavior is enabled there too.
 
 
 #### Registering a custom field converter
