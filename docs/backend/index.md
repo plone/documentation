@@ -25,6 +25,7 @@ users-groups
 security
 workflows
 search
+indexing
 zodb
 ../plone.api/index.rst
 plone-restapi

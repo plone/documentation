@@ -10,3 +10,8 @@ html_meta:
 
 # Content Types
 
+
+```{todo}
+Describe how to add a content type (Python/XML) including FTI settings.
+Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter and will be referenced frome examples here.
+```
