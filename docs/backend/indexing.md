@@ -31,8 +31,7 @@ The `SearchableText` is a `ZCTextIndex` for indexing full text and is used by de
 
 To add other fields to the `SearchableText`, one can use the `plone.app.dexterity.textindexer`.
 
-For enabling the indexer just add the behavior to the list of behaviors of your
-content types.
+For enabling the indexer just add the behavior to the list of behaviors of your content types.
 
 In your *profiles/default/types/YOURTYPE.xml* add the behavior::
 
