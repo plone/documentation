@@ -48,8 +48,8 @@ In your *profiles/default/types/YOURTYPE.xml* add the behavior::
     </object>
 
 
-Now you need to mark the fields you want to have in your SearchableText. This
-can be done with the searchable directive:
+Now you need to mark the fields you want to have in your SearchableText. 
+This  can be done with the searchable directive:
 
 ```python
 from plone.app.dexterity import textindexer
