@@ -214,7 +214,8 @@ html_theme_options = {
     # "google_analytics_id": "UA-1907133-6",
     "path_to_docs": "docs",
     "repository_url": "https://github.com/plone/documentation",
-    "repository_branch": "main",
+    # TODO: Going live: Switch "repository_branch" to 'main' (Github buttons in header)
+    "repository_branch": "6-dev",
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
