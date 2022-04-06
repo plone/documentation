@@ -130,7 +130,7 @@ from plone.app.dexterity.textindexer.interfaces import IDexterityTextIndexFieldC
 from my.package.interfaces import IMyFancyField
 from plone.dexterity.interfaces import IDexterityContent
 from z3c.form.interfaces import IWidget
-from zope.component import adapts
+from zope.component import adapter
 from zope.interface import implementer
 
 @implementer(IDexterityTextIndexFieldConverter)
