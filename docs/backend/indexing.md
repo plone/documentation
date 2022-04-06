@@ -167,7 +167,7 @@ additional data:
 
 ```python
 from plone.app.dexterity import textindexer
-from zope.component import adapts
+from zope.component import adapter
 from zope.interface import implementer
 
 
