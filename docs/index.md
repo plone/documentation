@@ -16,10 +16,10 @@ This website is the HTML documentation of Plone, an open source, enterprise-leve
 :maxdepth: 2
 :hidden: true
 
-backend/index
 volto/index
-classic-ui/index
 plone.restapi/docs/source/index
+backend/index
+classic-ui/index
 contributing/index
 ```
 
