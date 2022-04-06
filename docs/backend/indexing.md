@@ -154,9 +154,8 @@ There is already an adapter for converting files properly.
 #### Extending indexed data
 
 
-Sometimes you need to extend the SearchableText with additional data which is
-not stored in a field. It's possible to register a named adapter which provides
-additional data:
+Sometimes you need to extend the SearchableText with additional data which is not stored in a field. 
+It is possible to register a named adapter which provides additional data:
 
 ```python
 from plone.app.dexterity import textindexer
