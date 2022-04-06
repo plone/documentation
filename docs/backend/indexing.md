@@ -134,8 +134,8 @@ from zope.component import adapts
 from zope.interface import implementer
 
 @implementer(IDexterityTextIndexFieldConverter)
+@adapter(IDexterityContent, IMyFancyField, IWidget)
 class CustomFieldConverter(DefaultDexterityTextIndexFieldConverter):
-    adapts(IDexterityContent, IMyFancyField, IWidget)
 
     def convert(self):
             # implement your custom converter
