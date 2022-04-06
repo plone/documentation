@@ -163,11 +163,9 @@ from zope.component import adapter
 from zope.interface import implementer
 
 
-implementer(textindexer.IDynamicTextIndexExtender)
-
-
+@implementer(textindexer.IDynamicTextIndexExtender)
+@adapter(IMyBehavior)
 class MySearchableTextExtender(object):
-    adapts(IMyBehavior)
 
     def __init__(self, context):
         self.context = context
