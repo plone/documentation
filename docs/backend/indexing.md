@@ -72,8 +72,7 @@ from plone.app.dexterity.textindexer import utils
 utils.searchable(ICategorization, 'categorization')
 ```
 
-The `title` and `description` on `plone.app.dexterity`'s `IBasic` behavior
-are marked as searchable by default.
+The `title` and `description` on `plone.app.dexterity`'s `IBasic` behavior are marked as searchable by default.
 For marking them as no longer searchable, there is a utility function:
 
 ```python
