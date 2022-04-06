@@ -63,8 +63,7 @@ class IMyBehavior(Schema):
 
 ```
 
-If you want to mark fields of an existing 3rd party behavior, it can be
-done using this utility function:
+If you want to mark fields of an existing 3rd party behavior, it can be done using this utility function:
 
 ```python
 from plone.app.dexterity.behaviors.metadata import ICategorization
