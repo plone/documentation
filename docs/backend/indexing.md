@@ -29,7 +29,7 @@ The most important indexes are described in the following sections.
 ## `SearchableText`
 
 The `SearchableText` is a `ZCTextIndex` for indexing full text.
-It is used by default for Dublin core fields such as Title, Description, and Text.
+It is used by default for Dublin Core fields such as `Title`, `Description`, and `Text`.
 
 
 (backend-indexing-textindexer-label)=
