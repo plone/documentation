@@ -319,7 +319,7 @@ dl.py.function > dt {
   padding: 4px 5px;
 }
 dl.py.function > dt:target {
-  background-color: var(--target-color);  
+  background-color: var(--target-color);
 }
 dl.field-list > dt {
   padding-left: 0;

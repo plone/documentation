@@ -231,7 +231,7 @@ var Search = {
     }
 
     // Enrich item with parent doc_section title
-    for (i = 0; i < results.length; i++) 
+    for (i = 0; i < results.length; i++)
       results[i][6] = results[i][6] || 'Plone Documentation';
 
     // now sort the results by score (in opposite order of appearance, since the
@@ -259,7 +259,7 @@ var Search = {
         "List of all API methods with descriptions"
       ];
       // ugly hack for plone.api documentation integrated via git submodule
-      parentTitles = Array.isArray(parentTitles) ? parentTitles : ploneApiTitles;      
+      parentTitles = Array.isArray(parentTitles) ? parentTitles : ploneApiTitles;
       let path = item[0].split('/')
         .slice(0, -1);
       path = path.map((el, index) => {
@@ -270,7 +270,7 @@ var Search = {
       })
       let markup = path
         .map((el, idx) => {
-            return `<a href="/${el.path}">${el.title}</a>` 
+            return `<a href="/${el.path}">${el.title}</a>`
           })
       markup.push(`<span class="lastbreadcrumb">${item[1]}</span>`)
       return markup.join('<span class="pathseparator">&gt;</span>');
@@ -308,7 +308,7 @@ var Search = {
         headline.append($('<a/>').attr('href',
           linkUrl +
           highlightstring + item[2]).html(item[1]));
-        
+
         listItem.append(headline);
 
         if (item[3]) {
@@ -543,7 +543,7 @@ var Search = {
           foo = foo.map((el, index) => {
             return `${foo.slice(0, index+1).join('/')}/index`
           })
-      
+
           let parentTitles = foo.map(el => {
             let parentId = docnames.indexOf(el);
             let title = parentId === -1 ? title_documentation : titles[parentId];
@@ -592,7 +592,7 @@ $(document).ready(function() {
   $('input[name="doc_section"]').change(function() {
     this.form.submit();
   });
-  
+
   function clearSearchField() {
     $('#q').val('');
     this.form.submit();
