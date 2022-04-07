@@ -80,13 +80,10 @@ The iconresolver take's an icon name (without the `plone.icon.` prefix) like `pl
 
 ```
 http://localhost:8080/Plone/@@iconresolver/plone-copy
-```
-
-```
 http://localhost:8080/Plone/@@iconresolver/align-center
 ```
 
-It can be used via URL or via Python as shown below.
+The iconresolver can be used via URL or via Python as shown in section {ref}`classic-ui-icons-iconresolver-get-icon-url-label` and {ref}`classic-ui-icons-iconresolver-get-icon-tag-label`.
 
 
 (classic-ui-icons-iconresolver-get-icon-url-label)=
