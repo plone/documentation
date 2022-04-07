@@ -47,7 +47,8 @@ Plone ships with the following icon registrations by default.
 - [Toolbar](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
 
 The icons above are made available as Plone resources.
-For example, the icon registered as `lightning` (in XML with prefix full name is `plone.icon.lighting`) resource path is `++plone++bootstrap-icons/lightning.svg`.
+For example, the icon registered as `lightning` has the resource path of `++plone++bootstrap-icons/lightning.svg`.
+In XML, with its prefix, its full name is `plone.icon.lighting`.
 One could register another icon set under a new name, for example `++plone++fontawesome-icons`, and override the registrations above to use them.
 
 
@@ -55,8 +56,9 @@ One could register another icon set under a new name, for example `++plone++font
 
 ## Contextual Icons
 
-Plone defines contextual icons, which are used in specific places in a website.
-For example we have an icon registered under the name `plone.icon.plone-copy` in https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml which points to the bootstrap `clipboard-plus` icon `++plone++bootstrap-icons/clipboard-plus.svg`.
+Plone defines contextual icons which are used in specific places in a website.
+For example, we have an icon registered under the name `plone.icon.plone-copy` in `https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml`.
+It points to the bootstrap `clipboard-plus` icon `++plone++bootstrap-icons/clipboard-plus.svg`.
 To use a different icon than the system default, you can override the registration for `plone.icon.plone-copy` with another icon path.
 
 
@@ -68,27 +70,27 @@ To use a different icon than the system default, you can override the registrati
 How does this work? We need an example here!
 ```
 
-- The field `icon_expression` is used again to define icons for actions, contenttypes, and other purposes.
+- The field `icon_expression` is used again to define icons for actions, content types, and other purposes.
 - Use the icon name for icon expressions.
 
 
-(classic-ui-icons-iconresolver-label)=
+(classic-ui-icons-icon-resolver-label)=
 
-## Iconresolver
+## Icon resolver
 
-The iconresolver take's an icon name (without the `plone.icon.` prefix) like `plone-copy` or `align-center` and resolves it to an actual icon.
+The icon resolver takes an icon's name without the `plone.icon.` prefix, such as `plone-copy` or `align-center`, and resolves it to the URL of an actual icon.
 
 ```
 http://localhost:8080/Plone/@@iconresolver/plone-copy
 http://localhost:8080/Plone/@@iconresolver/align-center
 ```
 
-The iconresolver can be used via URL or via Python as shown in section {ref}`classic-ui-icons-iconresolver-get-icon-url-label` and {ref}`classic-ui-icons-iconresolver-get-icon-tag-label`.
+The icon resolver can be used to get an icon's URL or an inline icon (or tag) via a Python expression as shown in the sections {ref}`classic-ui-icons-icon-resolver-get-icon-url-label` and {ref}`classic-ui-icons-icon-resolver-get-icon-tag-label`.
 
 
-(classic-ui-icons-iconresolver-get-icon-url-label)=
+(classic-ui-icons-icon-resolver-get-icon-url-label)=
 
-### Get icon URL via Python expression
+### Get an icon's URL via Python expression
 
 The `url` method of the `@@iconresolver` view returns the actual URL to the SVG icon.
 The icon resolver view is globally available in templates under the name `icons`.
@@ -101,7 +103,7 @@ This can be used in a template for an `img` tag:
 ```
 
 
-(classic-ui-icons-iconresolver-get-icon-tag-label)=
+(classic-ui-icons-icon-resolver-get-icon-tag-label)=
 
 ### Get an inline icon (tag) via Python expression
 
@@ -118,11 +120,13 @@ Inline icons can be styled via CSS.
   tal:replace="structure python:icons.tag('archive', tag_class='custom-class', tag_alt='foobar')" />
 ```
 
-### Get inline icon (tag) in a template via traverse
+
+### Get inline icon (tag) in a template via traversal
 
 ```xml
 <tal:icon tal:replace="structure icons/alarm" />
 ```
+
 
 ### Get an inline icon (tag) in JavaScript
 
@@ -138,9 +142,9 @@ if(baseUrl){
 }
 ```
 
-[Mockup](https://github.com/plone/mockup) provides an `iconResolver` function, defined in `core/utils.js`,  which does this the same way and has a fallback for demo and testing.
-
-
+[Mockup](https://github.com/plone/mockup) provides an `iconResolver` function, defined in `core/utils.js`
+This function resolves icons the same way.
+It also has a fallback for demo and testing.
 
 
 (classic-ui-icons-iconresolver-fallback-label)=
@@ -151,6 +155,6 @@ There is a Plone icon defined as `fallback` if the name of the icon cannot be fo
 
 Fallbacks are grouped, such as [`mimetype icons`](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_mimetype.xml).
 
-For example, the JPEG icon is in this group and is in the mimetype group and is named `mimetype-image/jpeg`.
+For example, the JPEG icon is in this group, as well as the mimetype group, and is named `mimetype-image/jpeg`.
 You can also register specific image icons.
 If there is no specific icon in that group, then `mimetype-image` is used as the fallback.
