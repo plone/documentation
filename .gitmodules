@@ -9,4 +9,4 @@
 [submodule "submodules/plone.api"]
 	path = submodules/plone.api
 	url = https://github.com/plone/plone.api.git
-	branch = integration-in-plone-docs-6
+	branch = master
