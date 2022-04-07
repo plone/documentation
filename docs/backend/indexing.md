@@ -21,7 +21,7 @@ The most important index types are the following.
 - `BooleanIndex`
 - `ZCTextIndex`
 
-The most important indexes are described in the following sectiosn.
+The most important indexes are described in the following sections.
 
 
 (backend-indexing-searchabletext-label)=
