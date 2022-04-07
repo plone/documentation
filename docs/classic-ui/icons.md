@@ -1,14 +1,14 @@
 ---
 html_meta:
-  "description": ""
-  "property=og:description": ""
-  "property=og:title": ""
-  "keywords": ""
+  "description": "Icon registration and resolving in Plone Classic UI"
+  "property=og:description": "Icon registration and resolving in Plone Classic UI"
+  "property=og:title": "Icon registration and resolving"
+  "keywords": "Plone, Classic UI, classic-ui, icons, svg"
 ---
 
 (classic-ui-icons-label)=
 
-# Icons in Plone 6 Classic UI
+# Icons
 
 This sections describes how to work with icons in Plone 6 Classic UI.
 Examples include the following.
@@ -35,99 +35,112 @@ See the file [package.json](https://github.com/plone/plone.staticresources/blob/
 ## Registration
 
 Icons are registered in Plone's registry.
-This provides an option to customize the contenttype and Plone UI icons by overriding icons via XML.
+This provides an option to customize the content type and Plone UI icons by overriding icons via XML.
+Plone ships with the following icon registrations by default.
 
-- [Bootstrap icons](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_bootstrap.xml)
-- [contenttypes](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_contenttype.xml)
-- [Plone UI](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
+- [Bootstrap](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_bootstrap.xml)
+- [Content Type](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_contenttype.xml)
+- [Mimetype](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_mimetype.xml)
+- [Language Flags](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_language_flags.xml)
+- [Country Flags](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_country_flags.xml)
+- [Plone](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
+- [Toolbar](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
+
+The icons above are made available as Plone resources.
+For example, the icon registered as `lightning` (in XML with prefix full name is `plone.icon.lighting`) resource path is `++plone++bootstrap-icons/lightning.svg`.
+One could register another icon set under a new name, for example `++plone++fontawesome-icons`, and override the registrations above to use them.
 
 
 (classic-ui-icons-contextual-icons-label)=
 
 ## Contextual Icons
 
-We can define contextual icons to be used in specific places in a website while preserving the default system icons to be used elsewhere throughout the site.
-To use a different icon than the system default, you would override it without touching the system icon.
- 
-You should avoid replacing system icons because it may result in an inconsistent user interface.
-
-The specific icon name is based on the usage in the system.
-For example the copy icon is named `plone.icon.plone-copy`.
+Plone defines contextual icons, which are used in specific places in a website.
+For example we have an icon registered under the name `plone.icon.plone-copy` in https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml which points to the bootstrap `clipboard-plus` icon `++plone++bootstrap-icons/clipboard-plus.svg`.
+To use a different icon than the system default, you can override the registration for `plone.icon.plone-copy` with another icon path.
 
 
 (classic-ui-icons-icon-expression-label)=
 
 ## Icon expression
 
+```{todo}
+How does this work? We need an example here!
+```
+
 - The field `icon_expression` is used again to define icons for actions, contenttypes, and other purposes.
 - Use the icon name for icon expressions.
-
-
-(classic-ui-icons-customization-label)=
-
-## Customization
-
-```{todo}
-Add content for this section
-```
-
-- Add custom icons
-- Override some of the icons
-
-
-(classic-ui-icons-icon-font-label)=
-
-## Icon font
-
-```{todo}
-Add content for this section
-```
-
-- Set up a profile to install the icon font.
-- Use Font Awesome as an example.
 
 
 (classic-ui-icons-iconresolver-label)=
 
 ## Iconresolver
 
-```{todo}
-What is `iconresolver`?
-Add to Glossary.
+The iconresolver take's an icon name (without the `plone.icon.` prefix) like `plone-copy` or `align-center` and resolves it to an actual icon.
+
 ```
+http://localhost:8080/Plone/@@iconresolver/plone-copy
+http://localhost:8080/Plone/@@iconresolver/align-center
+```
+
+The iconresolver can be used via URL or via Python as shown in section {ref}`classic-ui-icons-iconresolver-get-icon-url-label` and {ref}`classic-ui-icons-iconresolver-get-icon-tag-label`.
 
 
 (classic-ui-icons-iconresolver-get-icon-url-label)=
 
-### Get Icon URL
+### Get icon URL via Python expression
 
-URL method of `@@icons` view returns the actual URL to the SVG icon.
-This can be used in an HTML `img` tag, for example.
+The `url` method of the `@@iconresolver` view returns the actual URL to the SVG icon.
+The icon resolver view is globally available in templates under the name `icons`.
+This can be used in a template for an `img` tag:
 
 ```xml
-<img src="" tal:attributes="src python:icons.url('alarm')" class="custom-class" alt="foo" />
+<img class="custom-class"
+    alt="foo"
+    src="${python:icons.url('alarm')}" />
 ```
 
 
 (classic-ui-icons-iconresolver-get-icon-tag-label)=
 
-### Get Icon Tag
+### Get an inline icon (tag) via Python expression
 
 The tag method is used with `tal:replace`.
 It returns an SVG image.
 Inline icons can be styled via CSS.
-`tag_class` and `tag_alt` is used to pass in custom classes and an `alt` text.
+`tag_class` and `tag_alt` are used to pass in custom classes and an `alt` text.
 
 ```xml
-<tal:icon tal:replace="structure python:icons.tag('archive', tag_class='custom-class', tag_alt='foobar')" />
+<tal:icon
+  tal:replace="structure python:icons.tag('alarm')" />
+
+<tal:icon
+  tal:replace="structure python:icons.tag('archive', tag_class='custom-class', tag_alt='foobar')" />
 ```
 
-(classic-ui-icons-iconresolver-resource-path-label)=
+### Get inline icon (tag) in a template via traverse
 
-### Resource Path
+```xml
+<tal:icon tal:replace="structure icons/alarm" />
+```
 
-SVG files are available from the resource path.
-For example, the lightning icon's resource path is `++plone++bootstrap-icons/lightning.svg`.
+### Get an inline icon (tag) in JavaScript
+
+```js
+const baseUrl = $("body").attr("data-portal-url");
+let icon = null;
+if(baseUrl){
+    const url = baseUrl + "/@@iconresolver";
+    if (url) {
+        const resp = await fetch(`${url}/${name}`);
+        icon = await resp.text();
+    }
+}
+```
+
+[Mockup](https://github.com/plone/mockup) provides an `iconResolver` function, defined in `core/utils.js`,  which does this the same way and has a fallback for demo and testing.
+
+
 
 
 (classic-ui-icons-iconresolver-fallback-label)=
