@@ -155,6 +155,6 @@ There is a Plone icon defined as `fallback` if the name of the icon cannot be fo
 
 Fallbacks are grouped, such as [`mimetype icons`](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_mimetype.xml).
 
-For example, the JPEG icon is in this group, as well as the mimetype group, and is named `mimetype-image/jpeg`.
+For example, the JPEG icon is in this group, as well as the `mimetype` group, and is named `mimetype-image/jpeg`.
 You can also register specific image icons.
 If there is no specific icon in that group, then `mimetype-image` is used as the fallback.
