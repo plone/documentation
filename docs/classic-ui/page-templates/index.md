@@ -1,4 +1,4 @@
-# Page Templates in Plone Classic-UI
+# Page Templates in Plone Classic UI
 
 These instructions and resources will help you develop Classic-UI pages.
 
