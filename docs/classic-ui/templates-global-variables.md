@@ -45,7 +45,7 @@ It is basically a short cut for:
 
 ## `checkPermission`
 
-`checkPermission` will return the checkPermission method from portal_membership tool.
+`checkPermission` will return the `checkPermission` method from `portal_membership` tool.
 
 It can be used as follows to check for user permissions in templates:
 
