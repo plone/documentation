@@ -48,13 +48,12 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_copybutton",
     "sphinx_sitemap",
-    "sphinxcontrib.httpdomain",
-    "sphinxcontrib.httpexample",
+    "sphinxcontrib.httpdomain",  # plone.restapi
+    "sphinxcontrib.httpexample",  # plone.restapi
     "sphinxcontrib.spelling",
     "sphinxext.opengraph",
-    # plone.api
-    'sphinx.ext.viewcode',
-    'sphinx.ext.autosummary',
+    "sphinx.ext.viewcode",  # plone.api
+    "sphinx.ext.autosummary",  # plone.api
 ]
 
 
@@ -141,8 +140,18 @@ myst_enable_extensions = [
     "linkify",  # Identify “bare” web URLs and add hyperlinks.
     "colon_fence",  # You can also use ::: delimiters to denote code fences,\
                     #  instead of ```.
+    "substitution",  # plone.restapi \
+        # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
 ]
 
+myst_substitutions = {
+    "postman_basic_auth": "![](_static/img/postman_basic_auth.png)",
+    "postman_headers": "![](_static/img/postman_headers.png)",
+    "postman_request": "![](_static/img/postman_request.png)",
+    "postman_response": "![](_static/img/postman_response.png)",
+    "postman_retain_headers": "![](_static/img/postman_retain_headers.png)",
+    "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
+}
 
 # -- Intersphinx configuration ----------------------------------
 
