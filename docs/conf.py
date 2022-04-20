@@ -115,7 +115,7 @@ exclude_patterns = [
     "**/README.rst",
     "plone.restapi/.*",
     "plone.restapi/bin",
-    "plone.restapi/docs/source/ideas",
+    "plone.restapi/ideas",
     "plone.restapi/include",
     "plone.restapi/lib",
     "plone.restapi/news",
