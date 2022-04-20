@@ -19,7 +19,7 @@ annotations
 vocabularies
 fields
 widgets
-plone-view-utils
+global-utils
 portal-actions
 users-groups
 security
