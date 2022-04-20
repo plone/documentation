@@ -247,3 +247,83 @@ Other options are:
 
 The `ImageScaling` view explicitly checks the permissions of the current user.
 To access image scales, which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
+
+
+## srcset configuration
+
+In `/@@imaging-controlpanel` Plone allows you to define srcset's.
+A srcset can help the Browser to serve the best fitting image for the current users situation.
+Which image scale is best for the user can be decided on different metrics.
+
+
+### viewport size
+
+The first is metric would be the viewport size.
+
+```json
+{
+  "scale": "large",
+  "media": "(max-width:800px)"
+},
+{
+  "scale": "larger"
+}
+```
+
+With this definition the Browser will use the large scale (800px) when the viewport size is max 800px.
+When the viewport size is greater then 800px, the Browser will use the larger scale (1000px).
+
+
+### Pixel density
+
+Another metric is the pixel density of the users screen.
+This metric defines how many DPI per pixel the Screen is using.
+
+```json
+{
+  "scale": "huge",
+  "media": "(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)"
+},
+{
+  "scale": "large"
+}
+```
+
+With this definition the Browser will use the huge scale (1600px) when the screen has a density of 192 DPI per pixel also knows as `2x`.
+We use here two different media queries to also support older Safari versions.
+Mobile devices with Safari like iPhones are still only supporting the old non-standard media query.
+If you don't care about IE support you can also use `min-resolution: 2dppx` which is closer to `2x`.
+The most common variants are:
+
+- `1x`: 96 DPI per pixel
+- `1.25x`: 120 DPI per pixel
+- `1.5x`: 144 DPI per pixel
+- `2x`: 192 DPI per pixel
+- `3x`: 288 DPI per pixel
+
+
+### Combining viewport size and pixel density
+
+It is also possible to combine the two metrics.
+
+```json
+{
+  "scale": "great",
+  "media": "(max-width:799px) and (min-resolution: 144dpi), (max-width:799px) and (-webkit-min-device-pixel-ratio: 1.5)"
+},
+{
+  "scale": "large",
+  "media": "(max-width:799px)"
+},
+{
+  "scale": "huge",
+  "media": "(min-width:800px) and (min-resolution: 144dpi), (max-width:800px) and (-webkit-min-device-pixel-ratio: 1.5)"
+},
+{
+  "scale": "larger",
+  "media": "(min-width:800px)"
+},
+{
+  "scale": "huge"
+}
+```
