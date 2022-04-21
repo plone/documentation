@@ -270,10 +270,10 @@ Open Graph
     For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook.
 
 srcset
-    The [HTMLImageElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement) property `srcset` is a string which identifies one or more image candidate strings, separated using commas `,`.
+    The [`HTMLImageElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement) property `srcset` is a string which identifies one or more image candidate strings, separated using commas `,`.
     Each image candidate string specifies image resources to display in web pages under given circumstances.
 
-    ```seealso
+    ```{seealso}
     https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset
     ```
 
@@ -282,7 +282,7 @@ DPI
     Represents the number of [dots per inch](https://en.wikipedia.org/wiki/Dots_per_inch).
     Screens typically contain 72 or 96 dots per inch.
 
-    ```seealso
+    ```{seealso}
     https://developer.mozilla.org/en-US/docs/Web/CSS/resolution#dpi
     ```
 ```

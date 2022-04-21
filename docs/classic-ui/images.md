@@ -251,7 +251,7 @@ To access image scales, which are normally not accessible to the current user, o
 
 ## `srcset` configuration
 
-In `/@@imaging-controlpanel` Plone allows you to define HTML `srcset` attributes.
+In `/@@imaging-controlpanel` Plone allows you to define HTML {term}`srcset` attributes.
 A `srcset` can help the browser serve the best fitting image for the current users situation.
 Which image scale is best for the user can be decided on different metrics.
 
@@ -277,7 +277,7 @@ When the viewport width is greater than 800 pixels, the browser will use the lar
 ### Pixel density
 
 Another metric is the pixel density of the user's screen.
-This metric denotes the pixel density, or resolution, of an output device in dots per inch (DPI).
+This metric denotes the pixel density, or resolution, of an output device in {term}`dots per inch` (DPI).
 
 ```json
 {
