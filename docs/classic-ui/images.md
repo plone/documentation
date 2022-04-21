@@ -277,7 +277,7 @@ When the viewport width is greater than 800 pixels, the browser will use the lar
 ### Pixel density
 
 Another metric is the pixel density of the users screen.
-This metric defines how many DPI per pixel the Screen is using.
+This metric denotes the pixel density, or resolution, of an output device in dots per inch (DPI).
 
 ```json
 {
