@@ -295,7 +295,7 @@ Mobile devices with Safari-like iPhones only support the old non-standard media 
 If you don't care about IE support you can also use `min-resolution: 2dppx` which is closer to `2x`.
 The most common variants are:
 
-- `1x`: 96 DPI per pixel
+- `1x`: 96 DPI
 - `1.25x`: 120 DPI per pixel
 - `1.5x`: 144 DPI per pixel
 - `2x`: 192 DPI per pixel
