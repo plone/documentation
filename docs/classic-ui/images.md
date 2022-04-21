@@ -249,10 +249,10 @@ The `ImageScaling` view explicitly checks the permissions of the current user.
 To access image scales, which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
 
 
-## srcset configuration
+## `srcset` configuration
 
-In `/@@imaging-controlpanel` Plone allows you to define srcset's.
-A srcset can help the Browser to serve the best fitting image for the current users situation.
+In `/@@imaging-controlpanel` Plone allows you to define HTML `srcset` attributes.
+A `srcset` can help the browser serve the best fitting image for the current users situation.
 Which image scale is best for the user can be decided on different metrics.
 
 
@@ -270,14 +270,14 @@ The first is metric would be the viewport size.
 }
 ```
 
-With this definition the Browser will use the large scale (800px) when the viewport size is max 800px.
-When the viewport size is greater then 800px, the Browser will use the larger scale (1000px).
+With this definition the browser will use the `large` scale when the viewport's width is 800 pixels or fewer.
+When the viewport width is greater than 800 pixels, the browser will use the larger scale `1000px`.
 
 
 ### Pixel density
 
 Another metric is the pixel density of the users screen.
-This metric defines how many DPI per pixel the Screen is using.
+This metric denotes the pixel density, or resolution, of an output device in dots per inch (DPI).
 
 ```json
 {
@@ -289,13 +289,13 @@ This metric defines how many DPI per pixel the Screen is using.
 }
 ```
 
-With this definition the Browser will use the huge scale (1600px) when the screen has a density of 192 DPI per pixel also knows as `2x`.
+With this definition the browser will use the `huge` scale of 1600 pixels when the screen has a density of 192 DPI, also knows as `2x`.
 We use here two different media queries to also support older Safari versions.
-Mobile devices with Safari like iPhones are still only supporting the old non-standard media query.
-If you don't care about IE support you can also use `min-resolution: 2dppx` which is closer to `2x`.
+Mobile devices with Safari-like iPhones only support the old non-standard media query.
+If you do not care about IE support, you can use `min-resolution: 2dppx`, which is closer to `2x`.
 The most common variants are:
 
-- `1x`: 96 DPI per pixel
+- `1x`: 96 DPI
 - `1.25x`: 120 DPI per pixel
 - `1.5x`: 144 DPI per pixel
 - `2x`: 192 DPI per pixel
