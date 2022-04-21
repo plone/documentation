@@ -251,7 +251,7 @@ To access image scales, which are normally not accessible to the current user, o
 
 ## `srcset` configuration
 
-In `/@@imaging-controlpanel` Plone allows you to define srcset's.
+In `/@@imaging-controlpanel` Plone allows you to define HTML `srcset` attributes.
 A srcset can help the Browser to serve the best fitting image for the current users situation.
 Which image scale is best for the user can be decided on different metrics.
 
