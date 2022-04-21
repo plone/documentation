@@ -296,10 +296,10 @@ If you do not care about IE support, you can use `min-resolution: 2dppx`, which 
 The most common variants are:
 
 - `1x`: 96 DPI
-- `1.25x`: 120 DPI per pixel
-- `1.5x`: 144 DPI per pixel
-- `2x`: 192 DPI per pixel
-- `3x`: 288 DPI per pixel
+- `1.25x`: 120 DPI
+- `1.5x`: 144 DPI
+- `2x`: 192 DPI
+- `3x`: 288 DPI
 
 
 ### Combining viewport size and pixel density
