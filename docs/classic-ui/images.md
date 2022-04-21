@@ -271,7 +271,7 @@ The first is metric would be the viewport size.
 ```
 
 With this definition the Browser will use the large scale (800px) when the viewport size is max 800px.
-When the viewport size is greater then 800px, the Browser will use the larger scale (1000px).
+When the viewport width is greater than 800 pixels, the browser will use the larger scale `1000px`.
 
 
 ### Pixel density
