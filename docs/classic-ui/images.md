@@ -249,7 +249,7 @@ The `ImageScaling` view explicitly checks the permissions of the current user.
 To access image scales, which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
 
 
-## srcset configuration
+## `srcset` configuration
 
 In `/@@imaging-controlpanel` Plone allows you to define srcset's.
 A srcset can help the Browser to serve the best fitting image for the current users situation.
