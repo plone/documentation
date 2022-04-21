@@ -291,7 +291,7 @@ This metric defines how many DPI per pixel the Screen is using.
 
 With this definition the browser will use the `huge` scale of 1600 pixels when the screen has a density of 192 DPI, also knows as `2x`.
 We use here two different media queries to also support older Safari versions.
-Mobile devices with Safari like iPhones are still only supporting the old non-standard media query.
+Mobile devices with Safari-like iPhones only support the old non-standard media query.
 If you don't care about IE support you can also use `min-resolution: 2dppx` which is closer to `2x`.
 The most common variants are:
 
