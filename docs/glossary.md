@@ -268,4 +268,21 @@ fence
 Open Graph
     The [Open Graph protocol](https://ogp.me/) enables any web page to become a rich object in a social graph.
     For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook.
+
+srcset
+    The [`HTMLImageElement`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement) property `srcset` is a string which identifies one or more image candidate strings, separated using commas `,`.
+    Each image candidate string specifies image resources to display in web pages under given circumstances.
+
+    ```{seealso}
+    https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset
+    ```
+
+dots per inch
+DPI
+    Represents the number of [dots per inch](https://en.wikipedia.org/wiki/Dots_per_inch).
+    Screens typically contain 72 or 96 dots per inch.
+
+    ```{seealso}
+    https://developer.mozilla.org/en-US/docs/Web/CSS/resolution#dpi
+    ```
 ```
