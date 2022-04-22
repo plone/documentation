@@ -38,7 +38,8 @@ In `/@@imaging-controlpanel` Plone allows you to configure which scales are avai
 * icon 32:32
 * listing 16:16
 
-You can add or change scales as you like. The scales are defined in `plone.base.interfaces.controlpanel`.
+You can add or change scales as you like.
+The scales are defined in `plone.base.interfaces.controlpanel`.
 
 
 (classic-ui-images-image-resolving-by-uri-label)=
