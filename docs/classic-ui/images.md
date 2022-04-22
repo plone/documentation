@@ -26,15 +26,20 @@ We will use the image object as context in the following examples.
 
 In `/@@imaging-controlpanel` Plone allows you to configure which scales are available and what dimensions they should have. By default we have the following scales configured:
 
-* large 768:768
-* preview 400:400
-* mini 200:200
+* huge 1600:65536
+* great 1200:65536
+* larger 1000:65536
+* large 800:65536
+* teaser 600:65536
+* preview 400:65536
+* mini 200:65536
 * thumb 128:128
 * tile 64:64
 * icon 32:32
 * listing 16:16
 
 You can add or change scales as you like.
+The scales are defined in `plone.base.interfaces.controlpanel`.
 
 
 (classic-ui-images-image-resolving-by-uri-label)=
