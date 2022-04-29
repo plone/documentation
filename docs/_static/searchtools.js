@@ -232,7 +232,7 @@ var Search = {
 
     // Enrich item with parent doc_section title
     for (i = 0; i < results.length; i++) 
-      results[i][6] = results[i][6] || 'Plone Documentation';
+      results[i][6] = results[i][6] || title_documentation;
 
     // now sort the results by score (in opposite order of appearance, since the
     // display function below uses pop() to retrieve items) and then
