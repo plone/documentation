@@ -240,6 +240,15 @@ ul.search li p.context {
   padding: 0 0.7rem;
 }
 
+/* header-article */
+div.header-article__label {
+  display: flex;
+  align-items: center;
+  margin: 0 auto 0 1em;
+  font-size: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
 /* submenu */
 .bd-toc {
