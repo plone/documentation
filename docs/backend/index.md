@@ -12,7 +12,6 @@ html_meta:
 
 ```{toctree}
 :maxdepth: 2
-installation
 control-panels
 content-types
 behaviors
