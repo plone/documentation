@@ -41,7 +41,8 @@ make html
 ```
 
 ```{note}
-If you are using an M1 Mac to build the documentation, there is currently an issue with pyenchant that throws an error that the enchant library can't be found. This happens for example if you installed your Python with pyenv. 
+If you are using an M1 Mac to build the documentation, there is currently [an issue with pyenchant](https://github.com/pyenchant/pyenchant/issues/265) that throws an error that the enchant library can't be found.
+This happens for example if you installed your Python with pyenv. 
 A workaround until pyenchant is fixed is to run `export PYENCHANT_LIBRARY_PATH=/opt/homebrew/lib/libenchant-2.dylib` in the terminal session before you execute `make html`.
 in the terminal session before you execute `make html`.
 ```
