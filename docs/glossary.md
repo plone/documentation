@@ -286,3 +286,15 @@ DPI
     https://developer.mozilla.org/en-US/docs/Web/CSS/resolution#dpi
     ```
 ```
+
+Docker
+    [Docker](https://docker.com) is an open platform for developing, shipping, and running applications using containers.
+
+RelStorage
+    [RelStorage](https://relstorage.readthedocs.io) is a storage implementation for ZODB that stores pickles in a relational database.
+
+ZEO
+    [ZEO](https://zeo.readthedocs.io) is a client-server storage for ZODB for sharing a single storage among many clients.
+
+PostgreSQL
+    [PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database.
