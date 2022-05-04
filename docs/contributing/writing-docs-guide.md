@@ -253,6 +253,18 @@ Keep sentences short and understandable.
 This will greatly improve the editing and maintenance of your documentation.
 
 
+##### Moving/Renaming docs
+
+If possible renaming or moving docs should only be done if absolutely necessary since this will cause links to become invalid. 
+
+To prevent this a redirect from the old location of the document to the new location should be created. This can be done by editing the variable `redirects` in `docs/conf.py`. This variable contains a list of redirects:
+```python
+redirects = {
+    "<source>": "<target>",
+}
+```
+This will create a redirect from `<source>` to `<target>`. `<source>` and `<target>` are the name and relative path of the document without the file extension. `<source>` does not need to exist as a file. There is no check if `<target`> exists. 
+
 ## General Documentation Writing References
 
 - [Write the Docs - Documentation Guide](https://www.writethedocs.org/guide/)
