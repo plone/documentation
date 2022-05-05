@@ -14,6 +14,13 @@ This section focuses on installing Plone 6 for the developer, tester, or contrib
 
 For trying out Plone 6, visit our official demonstration site located at:
 
+```{toctree}
+:maxdepth: 2
+:hidden: true
+
+containers/index
+```
+
 https://6.demo.plone.org/
 
 ```{todo}
@@ -171,7 +178,7 @@ Choose either Volto or Classic UI for the frontend.
     ```
 
 -   For a Plone Classic UI frontend, click {guilabel}`Create Classic Plone site`.
-    
+
 Submit the form and your backend is ready.
 
 If you created a Plone site with a Classic UI frontend, then you have completed installation.
