@@ -1,10 +1,19 @@
-# Nginx, Frontend, Backend, ZEO
+---
+html_meta:
+  "description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
+  "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
+  "property=og:title": "Nginx, Frontend, Backend, ZEO container example"
+  "keywords": "Plone 6, Container, Docker, Nginx, Frontend, Backend, ZEO"
+---
+
+# Nginx, Frontend, Backend, ZEO container example
 
 Very simple setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
 
+
 ## Setup
 
-Create an empty project directory named `nginx-volto-plone-zeo`
+Create an empty project directory named `nginx-volto-plone-zeo`.
 
 ```shell
 mkdir nginx-volto-plone-zeo
@@ -15,6 +24,7 @@ Change into your project directory.
 ```shell
 cd nginx-volto-plone-zeo
 ```
+
 
 ### nginx configuration
 
@@ -65,9 +75,10 @@ server {
 }
 ```
 
-### Service configuration with docker-compose
 
-Now, let's create a `docker-compose.yml` file:
+### Service configuration with `docker-compose`
+
+Now let's create a `docker-compose.yml` file:
 
 ```yaml
 version: "3"
@@ -114,30 +125,34 @@ volumes:
   data: {}
 ```
 
+
 ## Build the project
 
-Start the stack with `docker-compose` (or `docker compose` for newer versions)
+Start the stack with `docker-compose`.
 
 ```shell
 docker-compose up -d
 ```
 
-This will pulls the needed images, and starts Plone.
+This pulls the needed images and starts Plone.
+
 
 ## Access Plone via Browser
 
 After startup, go to `http://plone.localhost/` and you should see the site.
 
+
 ## Increase the number of backends
 
-To use two containers for backend, run `docker-compose` with `--scale`
+To use two containers for the backend, run `docker-compose` with `--scale`.
 
 ```shell
 docker-compose up --scale backend=2
 ```
 
+
 ## Shutdown and cleanup
 
-The command docker-compose down removes the containers and default network, but preserves the Plone database.
+The command `docker-compose down` removes the containers and default network, but preserves the Plone database.
 
-The command docker-compose down --volumes removes the containers, default network, and the Plone database.
+The command `docker-compose down --volumes` removes the containers, default network, and the Plone database.
