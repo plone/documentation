@@ -261,74 +261,123 @@ A `srcset` can help the browser serve the best fitting image for the current use
 Which image scale is best for the user can be decided on different metrics.
 
 
-### viewport size
+### default configuration
 
-The first is metric would be the viewport size.
-
-```json
-{
-  "scale": "large",
-  "media": "(max-width:800px)"
-},
-{
-  "scale": "larger"
-}
-```
-
-With this definition the browser will use the `large` scale when the viewport's width is 800 pixels or fewer.
-When the viewport width is greater than 800 pixels, the browser will use the larger scale `1000px`.
-
-
-### Pixel density
-
-Another metric is the pixel density of the user's screen.
-This metric denotes the pixel density, or resolution, of an output device in {term}`dots per inch` (DPI).
+The default configuration covers image size optimization and will provide the Browser with the needed information to load the optimal image.
 
 ```json
 {
-  "scale": "huge",
-  "media": "(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)"
-},
-{
-  "scale": "large"
+    "large": {
+        "title": "Large",
+        "sourceset": [
+            {"scale": "larger"},
+        ],
+    },
+    "medium": {
+        "title": "Medium",
+        "sourceset": [
+            {"scale": "teaser"},
+        ],
+    },
+    "small": {
+        "title": "Small",
+        "sourceset": [
+            {"scale": "preview"},
+        ],
+    },
 }
 ```
 
-With this definition the browser will use the `huge` scale of 1600 pixels when the screen has a density of 192 DPI, also knows as `2x`.
-We use here two different media queries to also support older Safari versions.
-Mobile devices with Safari-like iPhones only support the old non-standard media query.
-If you do not care about IE support, you can use `min-resolution: 2dppx`, which is closer to `2x`.
-The most common variants are:
+### optional settings
 
-- `1x`: 96 DPI
-- `1.25x`: 120 DPI
-- `1.5x`: 144 DPI
-- `2x`: 192 DPI
-- `3x`: 288 DPI
+By default for every srcset all available scales will be included. That mean
 
-
-### Combining viewport size and pixel density
-
-It is also possible to combine the two metrics.
+To exclude some scales completely from the srcset definition, one can use `excludeScales`:
 
 ```json
 {
-  "scale": "great",
-  "media": "(max-width:799px) and (min-resolution: 144dpi), (max-width:799px) and (-webkit-min-device-pixel-ratio: 1.5)"
-},
-{
-  "scale": "large",
-  "media": "(max-width:799px)"
-},
-{
-  "scale": "huge",
-  "media": "(min-width:800px) and (min-resolution: 144dpi), (max-width:800px) and (-webkit-min-device-pixel-ratio: 1.5)"
-},
-{
-  "scale": "larger",
-  "media": "(min-width:800px)"
-},
-{
-  "scale": "huge"
+    "excludedScales": ["tile", "icon", "listing"],
+    "large": {
+        "title": "Large",
+        "sourceset": [
+            {"scale": "larger"},
+        ],
+    },
 }
 ```
+
+to restrict the list of used scales inside of a srcset, one can set the `additionalScales` parameter with an array of allowed scales.
+Without this parameter all scales which are not globally excluded scales will be used.
+
+```json
+    "small": {
+        "title": "Small",
+        "sourceset": [
+            {
+              "scale": "preview",
+              "additionalScales": ["large", "larger", "great", "huge"],
+            },
+        ],
+    },
+```
+
+This means the generated srcset will contain the scales from preview up to huge, but not mini for example.
+Another benefit here is that we can define two different source tags with different scales for [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction).
+This means will force the Browser to deliver a different image for smaller screens.
+
+Let's have a look at a more advanced configuration:
+
+```json
+{
+    "excludedScales": ["tile", "icon", "listing"],
+    "large": {
+        "title": "Large",
+        "sourceset": [
+            {"scale": "larger"},
+        ],
+    },
+    "medium": {
+        "title": "Medium",
+        "sourceset": [
+            {
+              "scale": "teaser",
+              "additionalScales": ["large", "larger", "great", "huge"],
+            },
+            {
+              "scale": "mobile_crop",
+              "additionalScales": ["mobile_crop_highres"],
+            },
+        ],
+    },
+    "small": {
+        "title": "Small",
+        "sourceset": [
+            {"scale": "preview"},
+        ],
+    },
+}
+
+```
+
+which will result in a srcset like this, for a medium image:
+
+```json
+<picture>
+  <source media="(min-width:800px)"
+    srcset="https://picsum.photos/id/1011/400 400w,
+            https://picsum.photos/id/1011/800 800w,
+            https://picsum.photos/id/1011/1000 1000w,
+            https://picsum.photos/id/1011/1200 1200w,
+            https://picsum.photos/id/1011/1600 1600w
+    "
+    sizes="400px">
+  <source media="(max-width:799px)"
+    srcset="https://picsum.photos/id/1012/800 800w,
+            https://picsum.photos/id/1012/1000 1000w
+    "
+    sizes="96vw">
+  <img src="https://picsum.photos/id/1011/400" width="400px" height="400px">
+</picture>
+```
+
+
