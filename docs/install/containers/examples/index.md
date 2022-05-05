@@ -16,6 +16,7 @@ nginx-volto-plone
 nginx-volto-plone-zeo
 nginx-volto-plone-postgresql
 nginx-plone
+haproxy-plone-zeo
 ```
 
 Examples of projects running Plone using `docker-compose`.
@@ -26,3 +27,4 @@ Examples of projects running Plone using `docker-compose`.
 | [nginx-volto-plone-zeo](nginx-volto-plone-zeo) | Stack with nginx, Frontend, Backend and ZEO server |
 | [nginx-volto-plone-postgresql](nginx-volto-plone-postgresql) | Stack with nginx, Frontend, Backend and PostgreSQL DB |
 | [nginx-plone](nginx-plone) | Stack with nginx, and Backend (Plone Classic) |
+| [haproxy-plone-zeo](haproxy-plone-zeo) | Stack with haproxy, Backend and ZEO server |
