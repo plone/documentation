@@ -1,10 +1,19 @@
-# Nginx, Plone Classic
+---
+html_meta:
+  "description": "Simple Plone 6 setup with one backend and data being persisted in a Docker volume."
+  "property=og:description": "Simple Plone 6 setup with one backend and data being persisted in a Docker volume."
+  "property=og:title": "Nginx, Plone Classic container example"
+  "keywords": "Plone 6, Container, Docker, Nginx, Plone Classic"
+---
+
+# Nginx, Plone Classic container example
 
 Simple setup with one backend and data being persisted in a Docker volume.
 
+
 ## Setup
 
-Create an empty project directory named `nginx-plone`
+Create an empty project directory named `nginx-plone`.
 
 ```shell
 mkdir nginx-plone
@@ -15,6 +24,7 @@ Change into your project directory.
 ```shell
 cd nginx-plone
 ```
+
 
 ### nginx configuration
 
@@ -40,9 +50,10 @@ server {
 }
 ```
 
-### Service configuration with docker-compose
 
-Now, let's create a `docker-compose.yml` file:
+### Service configuration with `docker-compose`
+
+Now let's create a `docker-compose.yml` file:
 
 ```yaml
 version: "3"
@@ -71,22 +82,25 @@ volumes:
   data: {}
 ```
 
+
 ## Build the project
 
-Start the stack with `docker-compose` (or `docker compose` for newer versions)
+Start the stack with `docker-compose`.
 
 ```shell
 docker-compose up -d
 ```
 
-This will pulls the needed images, and starts Plone.
+This pulls the needed images and starts Plone.
+
 
 ## Access Plone via Browser
 
 After startup, go to `http://plone.localhost/` and you should see the site.
 
+
 ## Shutdown and cleanup
 
-The command docker-compose down removes the containers and default network, but preserves the Plone database.
+The command `docker-compose down` removes the containers and default network, but preserves the Plone database.
 
-The command docker-compose down --volumes removes the containers, default network, and the Plone database.
+The command `docker-compose down --volumes` removes the containers, default network, and the Plone database.

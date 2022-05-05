@@ -3,13 +3,16 @@ html_meta:
   "description": "Using plone/plone-zeo image"
   "property=og:description": "Using plone/plone-zeo image"
   "property=og:title": "Plone ZEO image"
-  "keywords": "Plone 6, install, installation, docker, containers"
+  "keywords": "Plone 6, install, installation, docker, containers, plone/plone-zeo"
 ---
-# plone/plone-zeo
 
-A ZEO Server [Docker](https://docker.com) image using Python 3 and [pip](https://pip.pypa.io/en/stable/).
+# `plone/plone-zeo`
+
+A ZEO Server [Docker](https://www.docker.com/) image using Python 3 and [pip](https://pip.pypa.io/en/stable/).
+
 
 ## Using this image
+
 
 ### Simple usage
 
@@ -18,6 +21,7 @@ Run a container exposing port 8100:
 ```shell
 docker run -p 8100:8100 plone/plone-zeo:latest
 ```
+
 
 ### Docker-compose
 
@@ -60,17 +64,18 @@ We encourage users of the `Plone` images to familiarize themselves with the opti
 
 [The Docker documentation](https://docs.docker.com/) is a good starting point for understanding the different storage options and variations.
 
+
 ## Configuration
+
 
 ### Main variables
 
-| Environment variable                      | ZEO  option                    | Default value                   |
-| ----------------------------------------- | ------------------------------ | ------------------------------- |
-| ZEO_PORT                                  | address                        | 8100                            |
-| ZEO_READ_ONLY                             | read-only                      | false                           |
-| ZEO_INVALIDATION_QUEUE_SIZE               | invalidation-queue-size        | 100                             |
-| ZEO_PACK_KEEP_OLD                         | pack-keep-old                  | true                            |
-
+| Environment variable | ZEO option | Default value |
+| --- | --- | --- |
+| `ZEO_PORT` | `address` | `8100` |
+| `ZEO_READ_ONLY` | `read-only` | `false` |
+| `ZEO_INVALIDATION_QUEUE_SIZE` | `invalidation-queue-size` | `100` |
+| `ZEO_PACK_KEEP_OLD` | `pack-keep-old` | `true` |
 
 In case you need to configure an option not present in the environment variables, we suggest you to create a new image based on the default one:
 
@@ -81,9 +86,11 @@ COPY mylocalconfig /app/etc/zeo.conf
 ```
 And then build the new image and start the container.
 
+
 ## Versions
 
-For a complete list of tags and versions, visit the [plone/plone-zeo page on dockerhub](https://hub.docker.com/r/plone/plone-zeo)
+For a complete list of tags and versions, visit the [`plone/plone-zeo` page on Docker Hub](https://hub.docker.com/r/plone/plone-zeo).
+
 
 ## Contribute
 

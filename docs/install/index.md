@@ -251,7 +251,7 @@ You have completed the installation of Plone 6 with Volto for its frontend.
 Welcome to Plone 6!
 
 
-(install-index-create-volto-project-label)=
+(install-index-additional-references-label)=
 
 ## Additional references
 
