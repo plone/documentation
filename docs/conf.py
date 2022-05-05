@@ -219,8 +219,7 @@ todo_include_todos = True
 html_use_opensearch = "https://docs.plone.org"
 
 html_theme_options = {
-    # TODO: Either get a separate GA ID or enable this one once it is in production.
-    # "google_analytics_id": "UA-1907133-6",
+    "google_analytics_id": "G-P8NCTB796E",
     "path_to_docs": "docs",
     "repository_url": "https://github.com/plone/documentation",
     "repository_branch": "main",
