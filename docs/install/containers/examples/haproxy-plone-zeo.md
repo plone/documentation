@@ -10,10 +10,11 @@ html_meta:
 
 Very simple setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
 
+HAProxy is used for load balancing in this example.
+
 ## Setup
 
 Create a directory for your project, and inside it create a `docker-compose.yml` file that starts your Plone instance and the ZEO instance with volume mounts for data persistence.
-HAProxy is used for load balancing in this example.
 
 ```yaml
 version: "3"
