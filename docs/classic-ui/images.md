@@ -340,11 +340,13 @@ Let's have a look at a more advanced configuration:
         "title": "Medium",
         "sourceset": [
             {
-              "scale": "teaser",
+             "scale": "teaser",
+              "media": "(min-width: 769px)",
               "additionalScales": ["large", "larger", "great", "huge"],
             },
             {
               "scale": "mobile_crop",
+              "media": "(max-width: 768px)",
               "additionalScales": ["mobile_crop_highres"],
             },
         ],
