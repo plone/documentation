@@ -16,7 +16,9 @@ This website is the HTML documentation of Plone, an open source, enterprise-leve
 :maxdepth: 2
 :hidden: true
 
+overview/index
 install/index
+deployment/index
 volto/index
 plone.restapi/docs/source/index
 backend/index
