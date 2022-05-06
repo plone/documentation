@@ -77,8 +77,9 @@ The following Plone images are available.
 -   [`plone/plone-backend`](https://github.com/plone/plone-backend)
 -   [`plone/plone-frontend`](https://github.com/plone/plone-frontend) (Volto)
 -   [`plone/plone-haproxy`](https://github.com/plone/plone-haproxy)
+-   [`plone/plone-zeo`](https://github.com/plone/plone-zeo)
 
-See their README files for installation and configuration instructions.
+See the [Containers](containers/index) page for installation and configuration instructions.
 
 
 (install-index-manual-installation-method-label)=
