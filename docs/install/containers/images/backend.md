@@ -207,7 +207,7 @@ Used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 | --- | --- | --- |
 | `ADDONS` | A space separated list of python libraries to install | [Add-ons](#add-ons) |
 | `DEVELOP` | A space separated list of python libraries to install in editable mode | [Developing packages](#developing-packages) |
-| `PIP_PARAMS` | Parameters used in `pip` installation commands | |
+| `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
 
 
 #### Add-ons
