@@ -131,7 +131,7 @@ volumes:
 
 | Environment variable | Description | RelStorage option | Default value |
 | --- | --- | --- | --- |
-| `RELSTORAGE_DSN` | [PostgreSQL DSN](#postgresql-dsn) for the database interface | | |
+| `RELSTORAGE_DSN` | {ref}`containers-images-backend-postgresql-dsn-label` for the database interface | | |
 | `RELSTORAGE_NAME` | RelStorage option | `name` | `storage` |
 | `RELSTORAGE_READ_ONLY` | RelStorage option | `read-only` | `off` |
 | `RELSTORAGE_KEEP_HISTORY` | RelStorage option | `keep-history` | `true` |
@@ -152,6 +152,9 @@ volumes:
 Currently this image supports only the configuration of a PostgreSQL backend via configuration variables.
 If you need to use MySQL or Oracle, we recommend that you extend this image and overwrite the `/app/etc/relstorage.conf` file.
 ```
+
+
+(containers-images-backend-postgresql-dsn-label)=
 
 #### PostgreSQL DSN
 
@@ -207,10 +210,12 @@ These variables are used to configure [CORS](https://developer.mozilla.org/en-US
 
 | Environment variable | Description | Details |
 | --- | --- | --- |
-| `ADDONS` | A space separated list of python libraries to install | [Add-ons](#add-ons) |
-| `DEVELOP` | A space separated list of python libraries to install in editable mode | [Developing packages](#developing-packages) |
+| `ADDONS` | A space separated list of python libraries to install | {ref}`containers-images-backend-add-ons-label` |
+| `DEVELOP` | A space separated list of python libraries to install in editable mode | {ref}`containers-images-backend-developing-packages-label` |
 | `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
 
+
+(containers-images-backend-add-ons-label)=
 
 #### Add-ons
 
@@ -232,6 +237,8 @@ We advise against using this feature on production environments.
 In this case, extend the image as explained before.
 ```
 
+
+(containers-images-backend-developing-packages-label)=
 
 ### Developing packages variable
 
