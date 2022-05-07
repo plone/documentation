@@ -8,7 +8,7 @@ html_meta:
 
 # `plone/plone-backend`
 
-Plone backend [Docker](https://www.docker.com/) images using Python 3 and [pip](https://pip.pypa.io/en/stable/) built on .
+This chapter covers Plone backend [Docker](https://www.docker.com/) images using Python 3 and [pip](https://pip.pypa.io/en/stable/).
 
 
 ## Using this image
@@ -89,13 +89,14 @@ We advise against using this feature on production environments.
 
 | Environment variable | Description | ZEO option | Default value |
 | --- | --- | --- | --- |
-| `ZEO_ADDRESS` | URL of the zeo interface, `host:port` |  |  |
+| `ZEO_ADDRESS` | URL of the ZEO interface, `host:port` |  |  |
 | `ZEO_SHARED_BLOB_DIR` | ZEO option |`name` | `off` |
 | `ZEO_READ_ONLY` | ZEO option |`read-only` | `false` |
 | `ZEO_CLIENT_READ_ONLY_FALLBACK` | ZEO option |`read-only-fallback` | `false` |
 | `ZEO_STORAGE` | ZEO option |`storage` | `1` |
 | `ZEO_CLIENT_CACHE_SIZE` | ZEO option | `cache-size` | `128MB` |
 | `ZEO_DROP_CACHE_RATHER_VERIFY` | ZEO option | `drop-cache-rather-verify` | `false` |
+
 
 #### Example
 
@@ -128,10 +129,9 @@ volumes:
 
 ### Relational Database variables
 
-
 | Environment variable | Description | RelStorage option | Default value |
 | --- | --- | --- | --- |
-| `RELSTORAGE_DSN` | [PostgreSQL DSN](#postgresql-dsn) for the database interface | | |
+| `RELSTORAGE_DSN` | {ref}`containers-images-backend-postgresql-dsn-label` for the database interface | | |
 | `RELSTORAGE_NAME` | RelStorage option | `name` | `storage` |
 | `RELSTORAGE_READ_ONLY` | RelStorage option | `read-only` | `off` |
 | `RELSTORAGE_KEEP_HISTORY` | RelStorage option | `keep-history` | `true` |
@@ -153,6 +153,9 @@ Currently this image supports only the configuration of a PostgreSQL backend via
 If you need to use MySQL or Oracle, we recommend that you extend this image and overwrite the `/app/etc/relstorage.conf` file.
 ```
 
+
+(containers-images-backend-postgresql-dsn-label)=
+
 #### PostgreSQL DSN
 
 A valid PostgreSQL DSN is a list of parameters separated with whitespace.
@@ -161,6 +164,7 @@ A typical DSN looks like the following:
 ```console
 dbname='zodb' user='username' host='localhost' password='pass'
 ```
+
 
 #### Example
 
@@ -185,8 +189,8 @@ services:
       POSTGRES_DB: plone
     ports:
     - "5432:5432"
-
 ```
+
 
 ### CORS variables
 
@@ -199,16 +203,19 @@ services:
 | `CORS_ALLOW_HEADERS` | A comma separated list of request headers allowed to be sent by the client, for example `X-My-Header` | `Accept,Authorization,Content-Type,X-Custom-Header` |
 | `CORS_MAX_AGE` | Indicates how long the results of a preflight request can be cached | `3600` |
 
-Used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+These variables are used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+
 
 ### Add-on variables
 
 | Environment variable | Description | Details |
 | --- | --- | --- |
-| `ADDONS` | A space separated list of python libraries to install | [Add-ons](#add-ons) |
-| `DEVELOP` | A space separated list of python libraries to install in editable mode | [Developing packages](#developing-packages) |
+| `ADDONS` | A space separated list of python libraries to install | {ref}`containers-images-backend-add-ons-label` |
+| `DEVELOP` | A space separated list of python libraries to install in editable mode | {ref}`containers-images-backend-developing-packages-label` |
 | `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
 
+
+(containers-images-backend-add-ons-label)=
 
 #### Add-ons
 
@@ -231,7 +238,9 @@ In this case, extend the image as explained before.
 ```
 
 
-#### Developing packages
+(containers-images-backend-developing-packages-label)=
+
+### Developing packages variable
 
 It is possible to install local packages instead of packages from pip.
 To do so, pass the `DEVELOP` environment variable with a space separated list of paths to Python packages to be installed.
@@ -250,7 +259,6 @@ docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.p
 ```{warning}
 We advise against using this feature on production environments.
 ```
-
 
 
 ## Extending from this image
@@ -300,7 +308,8 @@ error: [Errno 13] Permission denied: '/app/lib/python3.9/site-packages/eea'
 
 ### Multiple containers with ZEO
 
-This image supports ZEO clusters as a simple way to allow horizontal scaling of the backend. Check the example page: {doc}`/volto/configuration/environmentvariables`.
+This image supports ZEO clusters as a simple way to allow horizontal scaling of the backend.
+Check the example page: {doc}`/volto/configuration/environmentvariables`.
 
 
 ## Versions

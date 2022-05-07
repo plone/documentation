@@ -1,16 +1,18 @@
 ---
 html_meta:
-  "description": "Simple Plone 6 setup with scalable backend and data being persisted in a Zeo volume."
-  "property=og:description": "Simple Plone 6 setup with scalable backend and data being persisted in a Zeo volume."
-  "property=og:title": "HAproxy, Backend, ZEO container example"
-  "keywords": "Plone 6, Container, Docker, HAproxy, Zeo"
+  "description": "Simple Plone 6 setup with scalable backend and data being persisted in a ZEO volume."
+  "property=og:description": "Simple Plone 6 setup with scalable backend and data being persisted in a ZEO volume."
+  "property=og:title": "HAProxy, Backend, ZEO container example"
+  "keywords": "Plone 6, Container, Docker, HAProxy, ZEO"
 ---
 
-# Haproxy, Backend, ZEO container example
+# HAProxy, Backend, ZEO container example
 
-Very simple setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
+This example is a very simple setup with one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
 
-HAProxy is used for load balancing in this example.
+{term}`HAProxy` is used for load balancing in this example.
+We will use the image [`plone/plone-haproxy`](https://github.com/plone/plone-haproxy).
+
 
 ## Setup
 
@@ -58,20 +60,28 @@ volumes:
   data: {}
 ```
 
+
 ## Build the project with multiple backends
 
-Run `docker-compose up -d --scale backend=4` from your project directory.
+Run `docker compose up -d --scale backend=4` from your project directory.
+
 
 ## Access Plone via Browser
 
-Point your browser at `http://localhost:8080`, using the username and password combination of `admin` and `admin`, and you should see the default Plone site creation page.
+Point your browser at `http://localhost:8080`.
+Login using the username and password combination of `admin` and `admin`.
+You should see the default Plone site creation page.
+
 
 ## Access HAProxy Stats Page via Browser
 
-Point your browser at `http://localhost:1936`, using the username and password combination of `admin` and `admin`, and you should see HAProxy statistics for your Plone cluster.
+Point your browser at `http://localhost:1936`.
+Login using the username and password combination of `admin` and `admin`.
+You should see HAProxy statistics for your Plone cluster.
+
 
 ## Shutdown and cleanup
 
-The command `docker-compose down` removes the containers and default network, but preserves the Plone database.
+The command `docker compose down` removes the containers and default network, but preserves the Plone database.
 
-The command `docker-compose down --volumes` removes the containers, default network, and the Plone database.
+The command `docker compose down --volumes` removes the containers, default network, and the Plone database.

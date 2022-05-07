@@ -8,13 +8,10 @@ html_meta:
 
 # `plone/plone-frontend`
 
-Plone 6 default frontend [Docker](https://www.docker.com/) image using Node.
+This chapter covers the Plone 6 default frontend [Docker](https://www.docker.com/) image using Node.
 The frontend is written using React and requires a Plone backend to be running and accessible.
 
 This image is **not a base image** to be extended in your projects, but an example of the Plone user experience out of the box.
-
-
-## Using this image
 
 
 ## Configuration Variables
@@ -25,36 +22,64 @@ This image is **not a base image** to be extended in your projects, but an examp
 
 | Environment variable | Description | Example |
 | --- | --- | --- |
-| `RAZZLE_API_PATH` | Used to generate frontend calls to the backend. Needs to be a public url accessible by client browser | `http://api.site.org/++api++/` |
-| `RAZZLE_INTERNAL_API_PATH` | Used by the middleware to construct requests to the backend. It can be a non-public address | `http://backend:8080/Plone` |
-| `VOLTO_ROBOTSTXT` | Override the `robots.txt` file | `"User-agent: *\nDisallow: "` |
+| `RAZZLE_API_PATH` | Used to generate frontend calls to the backend. Needs to be a public URL accessible by client browser. | `http://api.site.org/++api++/` |
+| `RAZZLE_INTERNAL_API_PATH` | Used by the middleware to construct requests to the backend. It can be a non-public address. | `http://backend:8080/Plone` |
+| `VOLTO_ROBOTSTXT` | Override the `robots.txt` file. | `"User-agent: *\nDisallow: "` |
 
 ```{note}
 For an extensive list of environment variables used by the frontend, visit {doc}`/volto/configuration/environmentvariables`.
 ```
 
-## As an example for your volto project
 
-To use this image as an example of a docker image for your own volto project, you will need to copy the [`Dockerfile`](https://github.com/plone/plone-frontend/blob/main/Dockerfile) file in your project.
+## Using as an example for your Volto project
 
-In the `Dockerfile` file, replace the `yo @plone/volto` command with the `COPY . /build/plone-frontend` command.
-
-### Create a custom entrypoint
-
-The `plone-frontend` docker image does not have a custom entrypoint file, so for any commands you need to run on docker container start, you will need to create it.
-
-After creating the `entrypoint.sh` file, make sure it has execute permission by running `chmod 755 entrypoint.sh`.
+To use this image as an example of a Docker image for your own Volto project, you will need to edit the file `Dockerfile` in your project.
+`Dockerfile` is pulled from the root of the [`plone/plone-frontend`](https://github.com/plone/plone-frontend/) repository.
 
 ```{note}
-Do not forget to add the `exec "$@"` command at the end of the `entrypoint.sh` file, to run the default `yarn start` command.
+The examples for `Dockerfile` in this documentation use Volto 15.x.
+You might need to adapt the examples for more recent releases.
 ```
 
-In the `Dockerfile` you will need to add this 2 commands to make the docker container run it on start:
+In `Dockerfile` replace the `yo @plone/volto` command with the `COPY . /build/plone-frontend` command.
 
-```Dockerfile
-COPY entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
+```diff
+   # Generate new volto app
+-  RUN yo @plone/volto \
++  RUN COPY . /build/plone-frontend \
+     plone-frontend \
 ```
+
+### Create a custom entry point
+
+The `plone-frontend` Docker image does not have a custom entry point file.
+For any commands you need to run when starting your Docker container, you will need to create it.
+
+After creating the `entrypoint.sh` file, make sure it has the execute permission:
+
+```shell
+chmod 755 entrypoint.sh
+```
+
+```{note}
+Do not forget to add the `exec "$@"` command at the end of the `entrypoint.sh` file to run the default `yarn start` command.
+```
+
+In the `Dockerfile` you will need to add two commands to make the Docker container run `entrypoint.sh` on start:
+
+```diff
+      --no-interactive
++ 
++ COPY entrypoint.sh /
+  
+  RUN cd plone-frontend \
+```
+
+```diff
+  CMD ["yarn", "start:prod"]
++ ENTRYPOINT ["/entrypoint.sh"]
+```
+
 
 ### Build
 
@@ -64,9 +89,10 @@ Build your new image.
 docker build . -t myfrontend:latest -f Dockerfile
 ```
 
+
 ### Start it
 
-You can use it in this `docker-compose.yml` file 
+You can use it in the following `docker-compose.yml` file.
 
 ```yaml
 version: "3"
@@ -98,10 +124,12 @@ services:
       - backend
 ```
 
-To start, run
+To start, run the following command.
+
 ```shell
-docker-compose up -d
+docker compose up -d
 ```     
+
 
 ## Versions
 

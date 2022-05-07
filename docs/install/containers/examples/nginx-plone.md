@@ -2,15 +2,15 @@
 html_meta:
   "description": "Simple Plone 6 setup with one backend and data being persisted in a Docker volume."
   "property=og:description": "Simple Plone 6 setup with one backend and data being persisted in a Docker volume."
-  "property=og:title": "Nginx, Plone Classic container example"
-  "keywords": "Plone 6, Container, Docker, Nginx, Plone Classic"
+  "property=og:title": "nginx, Plone Classic container example"
+  "keywords": "Plone 6, Container, Docker, nginx, Plone Classic"
 ---
 
-# Nginx, Plone Classic container example
+# nginx, Plone Classic container example
 
-Simple setup with one backend and data being persisted in a Docker volume.
+This example is a simple setup with one backend and data being persisted in a Docker volume.
 
-Nginx in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
+{term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
 
 
 ## Setup
@@ -53,11 +53,11 @@ server {
 ```
 
 ```{note}
-`http://plone.localhost/` is the url you will be using to access the website.
-You can either use `localhost`, or add it in your `etc/hosts` file or DNS to point to the docker host IP.
+`http://plone.localhost/` is the URL you will be using to access the website.
+You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
 ```
 
-### Service configuration with `docker-compose`
+### Service configuration with Docker Compose
 
 Now let's create a `docker-compose.yml` file:
 
@@ -91,10 +91,10 @@ volumes:
 
 ## Build the project
 
-Start the stack with `docker-compose`.
+Start the stack with `docker compose`.
 
 ```shell
-docker-compose up -d
+docker compose up -d
 ```
 
 This pulls the needed images and starts Plone.
@@ -107,6 +107,6 @@ After startup, go to `http://plone.localhost/` and you should see the site.
 
 ## Shutdown and cleanup
 
-The command `docker-compose down` removes the containers and default network, but preserves the Plone database.
+The command `docker compose down` removes the containers and default network, but preserves the Plone database.
 
-The command `docker-compose down --volumes` removes the containers, default network, and the Plone database.
+The command `docker compose down --volumes` removes the containers, default network, and the Plone database.
