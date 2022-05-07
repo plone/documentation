@@ -10,7 +10,8 @@ html_meta:
 
 This example is a very simple setup with one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
 
-Nginx in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
+{term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
+
 
 ## Setup
 
@@ -80,6 +81,7 @@ server {
 `http://plone.localhost/` is the url you will be using to access the website.
 You can either use `localhost`, or add it in your `etc/hosts` file or DNS to point to the docker host IP.
 ```
+
 
 ### Service configuration with `docker-compose`
 
