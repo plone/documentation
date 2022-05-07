@@ -1,12 +1,12 @@
 ---
 html_meta:
-  "description": "Simple Plone 6 setup with scalable backend and data being persisted in a Zeo volume."
-  "property=og:description": "Simple Plone 6 setup with scalable backend and data being persisted in a Zeo volume."
-  "property=og:title": "HAproxy, Backend, ZEO container example"
-  "keywords": "Plone 6, Container, Docker, HAproxy, Zeo"
+  "description": "Simple Plone 6 setup with scalable backend and data being persisted in a ZEO volume."
+  "property=og:description": "Simple Plone 6 setup with scalable backend and data being persisted in a ZEO volume."
+  "property=og:title": "HAProxy, Backend, ZEO container example"
+  "keywords": "Plone 6, Container, Docker, HAProxy, ZEO"
 ---
 
-# Haproxy, Backend, ZEO container example
+# HAProxy, Backend, ZEO container example
 
 Very simple setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
 

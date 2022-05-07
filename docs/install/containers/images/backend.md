@@ -89,7 +89,7 @@ We advise against using this feature on production environments.
 
 | Environment variable | Description | ZEO option | Default value |
 | --- | --- | --- | --- |
-| `ZEO_ADDRESS` | URL of the zeo interface, `host:port` |  |  |
+| `ZEO_ADDRESS` | URL of the ZEO interface, `host:port` |  |  |
 | `ZEO_SHARED_BLOB_DIR` | ZEO option |`name` | `off` |
 | `ZEO_READ_ONLY` | ZEO option |`read-only` | `false` |
 | `ZEO_CLIENT_READ_ONLY_FALLBACK` | ZEO option |`read-only-fallback` | `false` |
