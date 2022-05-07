@@ -10,7 +10,7 @@ html_meta:
 
 This example is a very simple setup with one or more backend instances accessing a Postgres server and data being persisted in a Docker volume.
 
-{term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
+{term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
 
 
 ## Setup
