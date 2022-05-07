@@ -78,8 +78,8 @@ server {
 ```
 
 ```{note}
-`http://plone.localhost/` is the url you will be using to access the website.
-You can either use `localhost`, or add it in your `etc/hosts` file or DNS to point to the docker host IP.
+`http://plone.localhost/` is the URL you will be using to access the website.
+You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
 ```
 
 
