@@ -297,4 +297,7 @@ ZEO
 
 PostgreSQL
     [PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database.
+
+HAProxy
+    [HAProxy](https://www.haproxy.org/) is a free, very fast and reliable reverse-proxy offering high availability, load balancing, and proxying for TCP and HTTP-based applications.
 ```
