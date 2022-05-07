@@ -8,7 +8,7 @@ html_meta:
 
 # `plone/plone-backend`
 
-Plone backend [Docker](https://www.docker.com/) images using Python 3 and [pip](https://pip.pypa.io/en/stable/) built on .
+This chapter covers Plone backend [Docker](https://www.docker.com/) images using Python 3 and [pip](https://pip.pypa.io/en/stable/).
 
 
 ## Using this image
@@ -97,6 +97,7 @@ We advise against using this feature on production environments.
 | `ZEO_CLIENT_CACHE_SIZE` | ZEO option | `cache-size` | `128MB` |
 | `ZEO_DROP_CACHE_RATHER_VERIFY` | ZEO option | `drop-cache-rather-verify` | `false` |
 
+
 #### Example
 
 ```yaml
@@ -127,7 +128,6 @@ volumes:
 
 
 ### Relational Database variables
-
 
 | Environment variable | Description | RelStorage option | Default value |
 | --- | --- | --- | --- |
@@ -162,6 +162,7 @@ A typical DSN looks like the following:
 dbname='zodb' user='username' host='localhost' password='pass'
 ```
 
+
 #### Example
 
 ```yaml
@@ -185,8 +186,8 @@ services:
       POSTGRES_DB: plone
     ports:
     - "5432:5432"
-
 ```
+
 
 ### CORS variables
 
@@ -199,7 +200,8 @@ services:
 | `CORS_ALLOW_HEADERS` | A comma separated list of request headers allowed to be sent by the client, for example `X-My-Header` | `Accept,Authorization,Content-Type,X-Custom-Header` |
 | `CORS_MAX_AGE` | Indicates how long the results of a preflight request can be cached | `3600` |
 
-Used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+These variables are used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+
 
 ### Add-on variables
 
@@ -231,7 +233,7 @@ In this case, extend the image as explained before.
 ```
 
 
-#### Developing packages
+### Developing packages variable
 
 It is possible to install local packages instead of packages from pip.
 To do so, pass the `DEVELOP` environment variable with a space separated list of paths to Python packages to be installed.
@@ -250,7 +252,6 @@ docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.p
 ```{warning}
 We advise against using this feature on production environments.
 ```
-
 
 
 ## Extending from this image
@@ -300,7 +301,8 @@ error: [Errno 13] Permission denied: '/app/lib/python3.9/site-packages/eea'
 
 ### Multiple containers with ZEO
 
-This image supports ZEO clusters as a simple way to allow horizontal scaling of the backend. Check the example page: {doc}`/volto/configuration/environmentvariables`.
+This image supports ZEO clusters as a simple way to allow horizontal scaling of the backend.
+Check the example page: {doc}`/volto/configuration/environmentvariables`.
 
 
 ## Versions
