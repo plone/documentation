@@ -8,7 +8,7 @@ html_meta:
 
 # Nginx, Frontend, Backend, PostgreSQL container example
 
-Very simple setup with only one or more backend instances accessing a Postgres server and data being persisted in a Docker volume.
+This example is a very simple setup with only one or more backend instances accessing a Postgres server and data being persisted in a Docker volume.
 
 Nginx in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
 

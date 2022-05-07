@@ -8,7 +8,7 @@ html_meta:
 
 # Nginx, Plone Classic container example
 
-Simple setup with one backend and data being persisted in a Docker volume.
+This example is a simple setup with one backend and data being persisted in a Docker volume.
 
 Nginx in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
 
