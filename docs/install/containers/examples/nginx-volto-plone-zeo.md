@@ -2,11 +2,11 @@
 html_meta:
   "description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
   "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
-  "property=og:title": "Nginx, Frontend, Backend, ZEO container example"
-  "keywords": "Plone 6, Container, Docker, Nginx, Frontend, Backend, ZEO"
+  "property=og:title": "nginx, Frontend, Backend, ZEO container example"
+  "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, ZEO"
 ---
 
-# Nginx, Frontend, Backend, ZEO container example
+# nginx, Frontend, Backend, ZEO container example
 
 This example is a very simple setup with one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
 

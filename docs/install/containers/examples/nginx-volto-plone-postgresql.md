@@ -2,15 +2,15 @@
 html_meta:
   "description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
   "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
-  "property=og:title": "Nginx, Frontend, Backend, PostgreSQL container example"
-  "keywords": "Plone 6, Container, Docker, Nginx, Frontend, Backend, PostgreSQL, "
+  "property=og:title": "nginx, Frontend, Backend, PostgreSQL container example"
+  "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, PostgreSQL, "
 ---
 
-# Nginx, Frontend, Backend, PostgreSQL container example
+# nginx, Frontend, Backend, PostgreSQL container example
 
 This example is a very simple setup with one or more backend instances accessing a Postgres server and data being persisted in a Docker volume.
 
-Nginx in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
+{term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
 
 
 ## Setup
@@ -81,6 +81,7 @@ server {
 `http://plone.localhost/` is the url you will be using to access the website.
 You can either use `localhost`, or add it in your `etc/hosts` file or DNS to point to the docker host IP.
 ```
+
 
 ### Service configuration with `docker-compose`
 

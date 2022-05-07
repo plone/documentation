@@ -2,15 +2,15 @@
 html_meta:
   "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
   "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
-  "property=og:title": "Nginx, Frontend, Backend container example"
-  "keywords": "Plone 6, Container, Docker, Nginx, Frontend, Backend"
+  "property=og:title": "nginx, Frontend, Backend container example"
+  "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend"
 ---
 
-# Nginx, Frontend, Backend container example
+# nginx, Frontend, Backend container example
 
 This example is a very simple setup with one backend and data being persisted in a Docker volume.
 
-Nginx in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
+{term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
 
 ## Setup
 
