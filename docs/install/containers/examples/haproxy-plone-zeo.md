@@ -60,17 +60,25 @@ volumes:
   data: {}
 ```
 
+
 ## Build the project with multiple backends
 
 Run `docker-compose up -d --scale backend=4` from your project directory.
 
+
 ## Access Plone via Browser
 
-Point your browser at `http://localhost:8080`, using the username and password combination of `admin` and `admin`, and you should see the default Plone site creation page.
+Point your browser at `http://localhost:8080`.
+Login using the username and password combination of `admin` and `admin`.
+You should see the default Plone site creation page.
+
 
 ## Access HAProxy Stats Page via Browser
 
-Point your browser at `http://localhost:1936`, using the username and password combination of `admin` and `admin`, and you should see HAProxy statistics for your Plone cluster.
+Point your browser at `http://localhost:1936`.
+Login using the username and password combination of `admin` and `admin`.
+You should see HAProxy statistics for your Plone cluster.
+
 
 ## Shutdown and cleanup
 
