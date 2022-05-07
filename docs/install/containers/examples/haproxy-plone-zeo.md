@@ -8,7 +8,7 @@ html_meta:
 
 # HAProxy, Backend, ZEO container example
 
-This example is a very simple setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
+This example is a very simple setup with one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
 
 {term}`HAProxy` is used for load balancing in this example.
 We will use the image [`plone/plone-haproxy`](https://github.com/plone/plone-haproxy).

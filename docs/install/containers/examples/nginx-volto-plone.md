@@ -8,7 +8,7 @@ html_meta:
 
 # Nginx, Frontend, Backend container example
 
-This example is a very simple setup with only one backend and data being persisted in a Docker volume.
+This example is a very simple setup with one backend and data being persisted in a Docker volume.
 
 Nginx in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/").
 
