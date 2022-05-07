@@ -63,7 +63,7 @@ volumes:
 
 ## Build the project with multiple backends
 
-Run `docker-compose up -d --scale backend=4` from your project directory.
+Run `docker compose up -d --scale backend=4` from your project directory.
 
 
 ## Access Plone via Browser
@@ -82,6 +82,6 @@ You should see HAProxy statistics for your Plone cluster.
 
 ## Shutdown and cleanup
 
-The command `docker-compose down` removes the containers and default network, but preserves the Plone database.
+The command `docker compose down` removes the containers and default network, but preserves the Plone database.
 
-The command `docker-compose down --volumes` removes the containers, default network, and the Plone database.
+The command `docker compose down --volumes` removes the containers, default network, and the Plone database.

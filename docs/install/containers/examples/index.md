@@ -19,7 +19,7 @@ nginx-plone
 haproxy-plone-zeo
 ```
 
-Examples of projects running Plone using `docker-compose`.
+Examples of projects running Plone using `docker compose`.
 
 | Project example | Description |
 | --- | --- |

@@ -23,7 +23,7 @@ docker run -p 8100:8100 plone/plone-zeo:latest
 ```
 
 
-### Docker-compose
+### Service configuration with Docker Compose
 
 Create a directory for your project, and inside it create a `docker-compose.yml` file that starts your Plone instance and the ZEO instance with volume mounts for data persistence:
 
@@ -51,7 +51,7 @@ volumes:
   data: {}
 ```
 
-Now, run `docker-compose up -d` from your project directory.
+Now, run `docker compose up -d` from your project directory.
 
 Point your browser at http://localhost:8080 and you should see the default Plone site creation page.
 

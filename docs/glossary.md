@@ -289,6 +289,9 @@ DPI
 Docker
     [Docker](https://www.docker.com/) is an open platform for developing, shipping, and running applications using containers.
 
+Docker Compose
+    [Docker Compose](https://docs.docker.com/compose/) is a tool for defining and running multi-container Docker applications.
+
 RelStorage
     [RelStorage](https://relstorage.readthedocs.io/en/latest/) is a storage implementation for ZODB that stores pickles in a relational database.
 

@@ -100,7 +100,7 @@ services:
 
 To start, run
 ```shell
-docker-compose up -d
+docker compose up -d
 ```     
 
 ## Versions
