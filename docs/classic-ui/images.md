@@ -258,12 +258,11 @@ To access image scales, which are normally not accessible to the current user, o
 
 In `/@@imaging-controlpanel` Plone allows you to define HTML {term}`srcset` attributes.
 A `srcset` can help the browser serve the best fitting image for the current users situation.
-Which image scale is best for the user can be decided on different metrics.
 
 
 ### default configuration
 
-The default configuration covers image size optimization and will provide the Browser with the needed information to load the optimal image.
+The default configuration covers `image size optimization` and will provide the Browser with the needed information to load the optimal image.
 
 ```json
 {
@@ -290,13 +289,35 @@ The default configuration covers image size optimization and will provide the Br
 
 ### optional settings
 
-By default for every srcset all available scales will be included. That mean
-
-To exclude some scales completely from the srcset definition, one can use `excludeScales`:
+The `sourceset` property is an array and can have more than one entry.
+If we have the following two entries, the `image_srcset` outputfilter will generate one source-tag for each entry and an additional img-tag from the last entry.
 
 ```json
 {
-    "excludedScales": ["tile", "icon", "listing"],
+    "medium": {
+        "title": "Large",
+        "sourceset": [
+            {
+              "scale": "mobile_crop",
+              "media": "(max-width: 768px)",
+              "additionalScales": ["mobile_crop_highres"],
+            },
+            {
+             "scale": "teaser",
+              "media": "(min-width: 769px)",
+              "additionalScales": ["large", "larger", "great", "huge"],
+            }
+        ],
+    },
+}
+```
+
+#### Filtering scales
+
+By default for every `srcset` all available scales will be included in the `srcset`.
+
+```json
+{
     "large": {
         "title": "Large",
         "sourceset": [
@@ -306,7 +327,7 @@ To exclude some scales completely from the srcset definition, one can use `exclu
 }
 ```
 
-to restrict the list of used scales inside of a srcset, one can set the `additionalScales` parameter with an array of allowed scales.
+to restrict the list of used scales inside of a `srcset`, one can set the `additionalScales` parameter with an array of allowed scales.
 Without this parameter all scales which are not globally excluded scales will be used.
 
 ```json
@@ -321,15 +342,20 @@ Without this parameter all scales which are not globally excluded scales will be
     },
 ```
 
-This means the generated srcset will contain the scales from preview up to huge, but not mini for example.
-Another benefit here is that we can define two different source tags with different scales for [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction).
-This means will force the Browser to deliver a different image for smaller screens.
+This means the generated `srcset` will contain the scales from `preview` up to `huge`, but not `mini` for example.
+
+
+### Art direction
+
+With `image size optimization` the browser is able to choose the optimal image for each situation.
+But we have no control lover which scale the browser will actually use.
+To force the Browser to use a zoomed version of an image for smaller screens we can use media queries.
+The technique is called [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction).
 
 Let's have a look at a more advanced configuration:
 
 ```json
 {
-    "excludedScales": ["tile", "icon", "listing"],
     "large": {
         "title": "Large",
         "sourceset": [
@@ -340,15 +366,15 @@ Let's have a look at a more advanced configuration:
         "title": "Medium",
         "sourceset": [
             {
-             "scale": "teaser",
-              "media": "(min-width: 769px)",
-              "additionalScales": ["large", "larger", "great", "huge"],
-            },
-            {
               "scale": "mobile_crop",
               "media": "(max-width: 768px)",
               "additionalScales": ["mobile_crop_highres"],
             },
+            {
+             "scale": "teaser",
+              "media": "(min-width: 769px)",
+              "additionalScales": ["large", "larger", "great", "huge"],
+            }
         ],
     },
     "small": {
@@ -363,23 +389,27 @@ Let's have a look at a more advanced configuration:
 
 which will result in a srcset like this, for a medium image:
 
-```json
+```html
 <picture>
-  <source media="(min-width:800px)"
-    srcset="https://picsum.photos/id/1011/400 400w,
-            https://picsum.photos/id/1011/800 800w,
-            https://picsum.photos/id/1011/1000 1000w,
-            https://picsum.photos/id/1011/1200 1200w,
-            https://picsum.photos/id/1011/1600 1600w
-    "
-    sizes="400px">
-  <source media="(max-width:799px)"
-    srcset="https://picsum.photos/id/1012/800 800w,
-            https://picsum.photos/id/1012/1000 1000w
-    "
-    sizes="96vw">
-  <img src="https://picsum.photos/id/1011/400" width="400px" height="400px">
+  <source media="(max-width: 677px)"
+          srcset="resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/mobile_crop 800w,
+                  resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/mobile_crop_highres 1600w">
+  <source media="(min-width: 678px)"
+          srcset="resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/teaser 600w,
+                  resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/large 800w,
+                  resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/larger 1000w,
+                  resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/great 1200w">
+  <img alt="Alternative text"
+       class="image-richtext image-size-medium"
+       loading="lazy"
+       src="resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/teaser"
+       width="600"
+       height="400">
 </picture>
 ```
 
+```{note}
+Please notate that this example has the `resolve_uid_and_caption` filter disabled, to see the scale names better.
+The real src-urls look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`
+```
 
