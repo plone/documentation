@@ -212,7 +212,7 @@ doctest: deps
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
 .PHONY: test
-test: clean linkcheck spellcheck  ## Clean docs build, then run linkcheck, spellcheck
+test: clean linkcheckbroken spellcheck  ## Clean docs build, then run linkcheck, spellcheck
 
 .PHONY: deploy
 deploy: clean html
