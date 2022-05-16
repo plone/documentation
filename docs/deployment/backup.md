@@ -6,6 +6,4 @@ html_meta:
   "keywords": "Plone, Backup, Restore"
 ---
 
-
-
 # Backup and Restore

@@ -3,12 +3,15 @@ html_meta:
   "description": "Install Plone 6"
   "property=og:description": "Install Plone 6"
   "property=og:title": "Install Plone 6"
-  "keywords": "Plone 6, install, installation, installing, buildout, pip, docker"
+  "keywords": "Plone 6, install, installation, installing"
 ---
 
 (install-index-label)=
 
 # Install Plone 6
+
+
+
 
 ## Getting started
 
@@ -19,6 +22,7 @@ html_meta:
 
 
 ## Caveat that Plone is a large project and source installs are non-trivial
+
 
 
 

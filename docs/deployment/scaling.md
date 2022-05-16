@@ -6,12 +6,22 @@ html_meta:
   "keywords": "Plone, scaling, high availability"
 ---
 
-
-
 # Scaling
+
+
+
 
 ## Traffic
 
+
+
+
 ## High availability
 
+
+
+
 ## Caching
+
+
+

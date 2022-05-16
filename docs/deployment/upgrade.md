@@ -6,11 +6,17 @@ html_meta:
   "keywords": "Plone, upgrade"
 ---
 
-
-
 # Plone 6 upgrade guide
+
+
 
 
 ## from 5.x
 
+
+
+
 ## from 6.x
+
+
+
