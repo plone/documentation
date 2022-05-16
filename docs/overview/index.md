@@ -26,7 +26,7 @@ html_meta:
 
 
 
-### 'Traditional' server side rendered HTML pages
+### Traditional server side rendered HTML pages
 
 
 
