@@ -254,34 +254,49 @@ The `ImageScaling` view explicitly checks the permissions of the current user.
 To access image scales, which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
 
 
-## `srcset` configuration
+(classic-ui-images-responsive-image-support)=
+## Responsive image support
 
-In `/@@imaging-controlpanel` Plone allows you to define HTML {term}`srcset` attributes.
-A `srcset` can help the browser serve the best fitting image for the current users situation.
+Plone supports the generation of picture tags with `srcset`'s for image optimization.
+Additionally you can define `media queries` for {ref}`classic-ui-images-responsive-image-support-art-direction` and further optimization.
+
+The configuration allows to define different picture variants, like `Large`, `Medium`, `Small`.
+Users can choose from them in editors like TinyMCE and Developers can use them in templates.
+
+
+(classic-ui-images-responsive-image-support-picture-variants)=
+### Picture variants
+
+In `/@@imaging-controlpanel` Plone allows you to define picture variants with a list of available image scales.
+These are used for HTML {term}`srcset` attributes.
+A `srcset` attribute can help the browser to serve the best fitting image size for the current users situation.
 
 
 ### default configuration
 
-The default configuration covers `image size optimization` and will provide the Browser with the needed information to load the optimal image.
+The default configuration covers `image size optimization` and will provide the Browser with the needed information to load the optimal image size.
 
 ```json
 {
     "large": {
         "title": "Large",
         "sourceset": [
-            {"scale": "larger"},
+            "scale": "larger",
+            "additionalScales": ["preview", "teaser", "large", "great", "huge"],
         ],
     },
     "medium": {
         "title": "Medium",
         "sourceset": [
-            {"scale": "teaser"},
+            "scale": "teaser",
+            "additionalScales": ["preview", "large", "larger", "great"],
         ],
     },
     "small": {
         "title": "Small",
         "sourceset": [
-            {"scale": "preview"},
+            "scale": "preview",
+            "additionalScales": ["preview", "large", "larger"],
         ],
     },
 }
@@ -312,6 +327,7 @@ If we have the following two entries, the `image_srcset` outputfilter will gener
 }
 ```
 
+(classic-ui-images-responsive-image-support-filtering-scales)=
 #### Filtering scales
 
 By default for every `srcset` all available scales will be included in the `srcset`.
@@ -345,11 +361,32 @@ Without this parameter all scales which are not globally excluded scales will be
 This means the generated `srcset` will contain the scales from `preview` up to `huge`, but not `mini` for example.
 
 
+(classic-ui-images-responsive-image-support-picture-variant-in-editor)=
+#### Hiding a picture variant in editors
+
+It is possible to hide a picture variant in editors.
+This is useful when you want to define a picture variant to be used in templates only.
+
+```json
+    "leadimage": {
+        "title": "Lead image",
+        "sourceset": [
+            {
+              "scale": "preview",
+              "additionalScales": ["large", "larger"],
+              "hideInEditor": True,
+            },
+        ],
+    },
+```
+
+
+(classic-ui-images-responsive-image-support-art-direction)=
 ### Art direction
 
 With `image size optimization` the browser is able to choose the optimal image for each situation.
-But we have no control lover which scale the browser will actually use.
-To force the Browser to use a zoomed version of an image for smaller screens we can use media queries.
+But we have no control over which scale the browser will actually use.
+For example to force the Browser to use a zoomed version of an image for smaller screens we can use media queries.
 The technique is called [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction).
 
 Let's have a look at a more advanced configuration:
