@@ -17,7 +17,9 @@ html_meta:
 
 What do you want to do?
 
--   [Try a demo now](https://6.demo.plone.org/).
+-   Try a demo now.
+    -   [Plone 6 with Volto frontend](https://6.demo.plone.org/)
+    -   [Plone 5.2.x with Barceloneta frontend](https://demo.plone.org/)
 -   [Run Plone in containers](containers/index) (why use containers here.)
 -   [Install Plone from source](source) (Why? To develop Plone add-ons or contribute to Plone packages, and more details.)
 
