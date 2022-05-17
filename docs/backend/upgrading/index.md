@@ -16,4 +16,5 @@ html_meta:
 :hidden:
 
 v60
+upgrade-to-volto
 ```
