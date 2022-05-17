@@ -6,21 +6,22 @@ html_meta:
   "keywords": "Plone, History"
 ---
 
+(overview-history-1-label)=
+
 # History of Plone 
 
 
-
+(overview-history-2-label)=
 
 ## Python / Zope
 
 
-
+(overview-history-3-label)=
 
 ## CMF / Plone
 
 
-
+(overview-history-4-label)=
 
 ## Headless / SPA
-
 
