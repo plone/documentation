@@ -41,6 +41,21 @@ html_meta:
 ### Explain frontend-backend terms
 
 
+(overview-8-label)=
+
+### Security
+
+
+(overview-9-label)=
+
+### Accessibility (a11y)
+
+
+(overview-10-label)=
+
+### Internationalization (i18n)
+
+
 
 ```{toctree}
 :maxdepth: 2
