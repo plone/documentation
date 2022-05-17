@@ -22,7 +22,7 @@ Not 100% sure...
 Plone 6 comes with a new default frontend, called Volto.
 Volto is written in React and uses `plone.restapi` to communicate with the backend.
 When creating a new site in Plone 6 you have the option to choose between creating a Volto site and a Classic Plone site.
-This is because there are some non-trivial differences between the configuration of a Classic Plone and a Volto site.
+This choice is presented because there are some non-trivial differences between their configurations.
 
 This document discusses these differences and tells admins and developers how to modify their existing Plone site to be compatible with Volto.
 Pre-requisites: The site needs to be upgraded to Plone 6 before
