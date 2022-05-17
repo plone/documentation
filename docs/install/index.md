@@ -18,8 +18,8 @@ html_meta:
 What do you want to do?
 
 -   [Try a demo now](https://6.demo.plone.org/).
--   Run Plone in containers (why use containers here..)
--   Develop Plone add-ons or contribute to Plone packages → Install Plone from source
+-   [Run Plone in containers](containers/index) (why use containers here.)
+-   [Install Plone from source](source) (Why? To develop Plone add-ons or contribute to Plone packages, and more details.)
 
 
 (install-index-system-requirements-label)=
