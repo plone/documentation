@@ -289,6 +289,9 @@ DPI
 Docker
     [Docker](https://www.docker.com/) is an open platform for developing, shipping, and running applications using containers.
 
+Docker Compose
+    [Docker Compose](https://docs.docker.com/compose/) is a tool for defining and running multi-container Docker applications.
+
 RelStorage
     [RelStorage](https://relstorage.readthedocs.io/en/latest/) is a storage implementation for ZODB that stores pickles in a relational database.
 
@@ -297,4 +300,10 @@ ZEO
 
 PostgreSQL
     [PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database.
+
+HAProxy
+    [HAProxy](https://www.haproxy.org/) is a free, very fast and reliable reverse-proxy offering high availability, load balancing, and proxying for TCP and HTTP-based applications.
+
+nginx
+    [nginx](https://docs.nginx.com/nginx/) (pronounced "engine x") is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 ```

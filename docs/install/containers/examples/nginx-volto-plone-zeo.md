@@ -2,13 +2,15 @@
 html_meta:
   "description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
   "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
-  "property=og:title": "Nginx, Frontend, Backend, ZEO container example"
-  "keywords": "Plone 6, Container, Docker, Nginx, Frontend, Backend, ZEO"
+  "property=og:title": "nginx, Frontend, Backend, ZEO container example"
+  "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, ZEO"
 ---
 
-# Nginx, Frontend, Backend, ZEO container example
+# nginx, Frontend, Backend, ZEO container example
 
-Very simple setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
+This example is a very simple setup with one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
+
+{term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
 
 
 ## Setup
@@ -75,8 +77,13 @@ server {
 }
 ```
 
+```{note}
+`http://plone.localhost/` is the URL you will be using to access the website.
+You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
+```
 
-### Service configuration with `docker-compose`
+
+### Service configuration with Docker Compose
 
 Now let's create a `docker-compose.yml` file:
 
@@ -128,10 +135,10 @@ volumes:
 
 ## Build the project
 
-Start the stack with `docker-compose`.
+Start the stack with `docker compose`.
 
 ```shell
-docker-compose up -d
+docker compose up -d
 ```
 
 This pulls the needed images and starts Plone.
@@ -144,15 +151,15 @@ After startup, go to `http://plone.localhost/` and you should see the site.
 
 ## Increase the number of backends
 
-To use two containers for the backend, run `docker-compose` with `--scale`.
+To use two containers for the backend, run `docker compose` with `--scale`.
 
 ```shell
-docker-compose up --scale backend=2
+docker compose up --scale backend=2
 ```
 
 
 ## Shutdown and cleanup
 
-The command `docker-compose down` removes the containers and default network, but preserves the Plone database.
+The command `docker compose down` removes the containers and default network, but preserves the Plone database.
 
-The command `docker-compose down --volumes` removes the containers, default network, and the Plone database.
+The command `docker compose down --volumes` removes the containers, default network, and the Plone database.
