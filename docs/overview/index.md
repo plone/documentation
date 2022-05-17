@@ -6,38 +6,39 @@ html_meta:
   "keywords": "Plone 6, overview"
 ---
 
+(overview-label)=
+
 # Plone 6 overview 
 
 
-
+(overview-2-label)=
 
 ## Key concepts of Plone
 
 
-
+(overview-3-label)=
 
 ### Web content management system
 
 
-
+(overview-4-label)=
 
 ### Add-ons
 
 
-
+(overview-5-label)=
 
 ### Traditional server side rendered HTML pages
 
 
-
+(overview-6-label)=
 
 ### Headless CMS with JavaScript frontend through a REST API
 
 
+(overview-7-label)=
 
-
-### Explain frontend-backend terms.
-
+### Explain frontend-backend terms
 
 
 
