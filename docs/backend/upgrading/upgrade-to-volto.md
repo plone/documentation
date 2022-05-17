@@ -110,5 +110,6 @@ It is recommended to use the default settings, but you can choose to skip some o
 If you are migrating an existing site to Plone 6 using [{py:mod}`collective.exportimport`](https://pypi.org/project/collective.exportimport) and want to use Volto in the new site, then you do not need to use the form `@@migrate_to_volto`.
 you do not need to use the form `@@migrate_to_volto`.
 
-All the changes documented above can be done efficiently during export and import and are discussed [here](https://github.com/collective/collective.exportimport/issues/133).
+All the changes documented above can be done efficiently during export and import.
+[Read details](https://github.com/collective/collective.exportimport/issues/133).
 ```
