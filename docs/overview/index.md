@@ -44,6 +44,7 @@ html_meta:
 
 ```{toctree}
 :maxdepth: 2
+:hidden:
 
 history
 ```
