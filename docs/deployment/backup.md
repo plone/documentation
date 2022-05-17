@@ -6,4 +6,6 @@ html_meta:
   "keywords": "Plone, Backup, Restore"
 ---
 
+(deployment-backup-restore-label)=
+
 # Backup and Restore

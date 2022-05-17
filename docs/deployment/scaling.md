@@ -6,22 +6,22 @@ html_meta:
   "keywords": "Plone, scaling, high availability"
 ---
 
+(deployment-scaling-label)=
+
 # Scaling
 
 
-
+(deployment-scaling-traffic-label)=
 
 ## Traffic
 
 
-
+(deployment-scaling-high-availability-label)=
 
 ## High availability
 
 
-
+(deployment-scaling-caching-label)=
 
 ## Caching
-
-
 

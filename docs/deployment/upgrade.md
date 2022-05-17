@@ -6,17 +6,17 @@ html_meta:
   "keywords": "Plone, upgrade"
 ---
 
+(deployment-upgrade-guide-label)=
+
 # Plone 6 upgrade guide
 
 
+(deployment-upgrade-guide-from-5.x-label)=
+
+## From 5.x
 
 
-## from 5.x
+(deployment-upgrade-guide-from-6.x-label)=
 
-
-
-
-## from 6.x
-
-
+## From 6.x
 
