@@ -24,7 +24,8 @@ Volto is written in React and uses `plone.restapi` to communicate with the backe
 When creating a new site in Plone 6 you have the option to choose between creating a Volto site and a Classic Plone site.
 This choice is presented because there are some non-trivial differences between their configurations.
 
-This document discusses these differences and tells admins and developers how to modify their existing Plone site to be compatible with Volto.
+This document discusses these differences.
+It also informs administrators and developers of how to migrate their existing Plone 6 site with Classic UI for its frontend to instead become compatible with Volto for its frontend.
 Pre-requisites: The site needs to be upgraded to Plone 6 before
 
 Plone provides a form `/@@migrate_to_volto` that allows you to run all the required changes to your existing site to make it compatible with Volto.
