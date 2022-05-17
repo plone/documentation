@@ -18,6 +18,26 @@ As an overview, you will perform the following steps in order.
 1.  Install the Plone frontend (Volto) with node.
 
 
+(install-source-system-requirements-label)=
+
+## System requirements
+
+To install Plone 6, you must satisfy system requirements.
+
+```{todo}
+Add any missing requirements, including disk space.
+```
+
+-   2GB if using a container image, 4GB RAM if installing manually.
+-   Disk space (TBD).
+-   Either a UNIX-like operating system—such as Linux, Ubuntu, macOS—or Windows.
+    For Windows, it is a good idea to use [Windows Subsystem for Linux (WSL)](https://docs.microsoft.com/en-us/windows/wsl/).
+    We strongly recommend using a recent version of your operating system released within the last 3 years.
+    Older systems might not be supported.
+-   Python 3.7, 3.8, or 3.9.
+-   [Other?]
+
+
 (install-source-2-label)=
 
 ## Backend source / frontend source explanation
