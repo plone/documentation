@@ -1,23 +1,14 @@
 ---
 html_meta:
-  "description": "Upgrading to Volto"
-  "property=og:description": "Upgrading to Volto"
-  "property=og:title": "Upgrading to Volto"
-  "keywords": "Upgrading, Plone 6, Volto"
+  "description": "Migrate to Volto"
+  "property=og:description": "Migrate to Volto"
+  "property=og:title": "Migrate to Volto"
+  "keywords": "Migrating, Upgrading, Plone 6, Volto"
 ---
 
-(backend-upgrading-to-volto-label)=
+(backend-migrate-to-volto-label)=
 
-```{todo}
-Is this "upgrading" or "migrating"? It seems to be a migration more than an upgrade. Please clarify.
-
-Technically it is a migration since the version of Plone does not get changed and it is no upgrade-step.
-It could be called a upgrade though because Volto is the new default frontend.
-Not 100% sure...
-```
-
-
-# Upgrading to Volto
+# Migrate to Volto
 
 Plone 6 comes with a new default frontend, called Volto.
 Volto is written in React and uses `plone.restapi` to communicate with the backend.
@@ -26,30 +17,22 @@ This choice is presented because there are some non-trivial differences between 
 
 This document discusses these differences.
 It also informs administrators and developers of how to migrate their existing Plone 6 site with Classic UI for its frontend to instead become compatible with Volto for its frontend.
+
 ```important
 As a pre-requisite, your Plone site must be [upgraded to Plone 6](v60) before migrating to Volto for the frontend.
 ```
 
 Plone provides a form `/@@migrate_to_volto` that allows you to run all the required changes to your existing site to make it compatible with Volto.
+
 You can access this form in the browser when you are logged-in as an administrator by opening `http://localhost:8080/Plone/@@migrate_to_volto` (where `localhost` is your server, `8080` the port that Plone is running on and `Plone` is the name of the Plone instance).
 
 After upgrading an existing site to Plone 6 (see {doc}`v60`) there will also appear a message **You can prepare your site for Volto, the default frontend of Plone 6!** with a link to that form.
-
-
 
 ```{warning}
 Test all migrations thoroughly before applying them on a production environment!
 
 A site that is make compatible with Volto will be accessible with Plone Classic UI, but it will behave differently.
 For example, editors can only effectively work with the content using Volto because html is no longer editable in the TinyMCE editor.
-```
-
-```{todo}
-`{py:mod}` does not link to the Python modules (see https://deploy-preview-1254--6-dev-docs-plone-org.netlify.app/backend/upgrading/upgrade_to_volto.html).
-
-We could either use inline literals as shown in the suggestion, or we could link to their Glossary entry (or create one), GitHub repo, PyPI project, or relevant chapter in the docs. Which do you think is best?
-
-I like `{py:mod}` because it is semantic and renders like a inline-literal. We don't require link in these cases.
 ```
 
 The required steps are:
