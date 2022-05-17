@@ -15,10 +15,11 @@ html_meta:
 
 ## Getting started
 
-* What do you want to do?
-  * Try a demo now
-  * Run Plone in containers (why use containers here..)
-  * Develop Plone add-ons or contribute to Plone packages → Install Plone from source
+What do you want to do?
+
+-   [Try a demo now](https://6.demo.plone.org/).
+-   Run Plone in containers (why use containers here..)
+-   Develop Plone add-ons or contribute to Plone packages → Install Plone from source
 
 
 (install-index-system-requirements-label)=
