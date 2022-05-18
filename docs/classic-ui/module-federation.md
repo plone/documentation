@@ -9,3 +9,56 @@ html_meta:
 (classic-ui-module-federation-in-mockup-label)=
 
 # Module Federation in Mockup
+
+## Introduction
+
+For a general introduction see: https://webpack.js.org/concepts/module-federation/
+
+Module Federation allows to share dependencies between bundles. 
+Each bundle includes the whole set of dependencies.
+However, if multiple bundles have the same dependencies they are only loaded once.
+
+For example, if bundle A and B both depend on jQuery and bundle A has already loaded it, bundle B can just reuse the already loaded jQuery file.
+But if only bundle B is loaded, it uses its own bundled version of the jQuery library.
+
+There is a host bundle - in the fictional example above our bundle "A".
+In Plone the host bundle is the main mockup bundle.
+Addons can add bundles called "remotes" which are initialized for module federation by the host bundle.
+
+## Using module federation
+
+Starting with the webpack configuration that you get when creating a barceloneta theme package via [plonecli][1], add the following:
+
+- Create a new entry point ``index.js`` which only imports the normal entry point.
+
+```
+import("./patterns");
+```
+
+- Add the module federation plugin in webpack.config.js. There is a configuration factory `mf_config` which you can use for that. Add the following line near the top of the file:
+
+```
+const mf_config = require("@patternslib/patternslib/webpack/webpack.mf");
+```
+
+Then find the following line:
+
+```
+    config = patternslib_config(env, argv, config, ["mockup"]);
+```
+
+Below this line add the following:
+
+```
+    config.plugins.push(
+        mf_config({
+            filename: "myaddon-remote.min.js",
+            package_json: package_json,
+            remote_entry: config.entry["myaddon.min"],
+        })
+    );
+```
+
+Replace `myaddon-remote.min.js` with the file name you want to use for your remote bundle. Replace `myaddon.min` with the corresponding key in `config.entry` that points to your `index.js`.
+
+[1]: https://pypi.org/project/plonecli/
