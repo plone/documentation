@@ -10,29 +10,35 @@ html_meta:
 
 # Migrate to Volto
 
-Plone 6 comes with a new default frontend, called Volto.
-Volto is written in React and uses `plone.restapi` to communicate with the backend.
-When creating a new site in Plone 6 you have the option to choose between creating a default Plone site (that will use Volto) and a Classic Plone site.
+Plone 6 comes with a new default frontend called {term}`Volto`.
+Volto is written in React and uses {py:mod}`plone.restapi` to communicate with the backend.
+
+When creating a new Plone 6 site, you may choose between frontends.
+
+-   Volto - {guilabel}`Create a new Plone site`, the default option
+-   {term}`Classic UI` - {guilabel}`Create Classic Plone site`
+-   {guilabel}`Advanced`
+
 This choice is presented because there are some non-trivial differences between their configurations.
-
 This document discusses these differences.
-It also informs administrators and developers of how to migrate their existing Plone 6 site with Classic UI for its frontend to instead become compatible with Volto for its frontend.
+It also informs administrators and developers of how to migrate their existing Plone 6 site with Classic UI to instead become compatible with Volto for its frontend.
 
-```important
+```{important}
 As a pre-requisite, your Plone site must be [upgraded to Plone 6](v60) before migrating to Volto for the frontend.
 ```
 
 Plone provides a form `/@@migrate_to_volto` that allows you to run all the required changes to your existing site to make it compatible with Volto.
 
-You can access this form in the browser when you are logged-in as an administrator by opening `http://localhost:8080/Plone/@@migrate_to_volto` (where `localhost` is your server, `8080` the port that Plone is running on and `Plone` is the name of the Plone instance).
+You can access this form in the browser when you are logged in as an administrator.
+Open `http://localhost:8080/Plone/@@migrate_to_volto`, where `localhost` is your hostname, `8080` is the port on which Plone runs, and `Plone` is the name of the Plone instance.
 
-Additionally, after upgrading an existing site to Plone 6 (see {doc}`v60`) a message will appear, **You can prepare your site for Volto, the default frontend of Plone 6!**, with a link to that form.
+Additionally, after upgrading an existing site to Plone 6 (see {doc}`v60`), a message will appear, **You can prepare your site for Volto, the default frontend of Plone 6!**, with a link to that form.
 
 ```{warning}
 Test all migrations thoroughly before applying them on a production environment!
 
 A site that is made compatible with Volto will be accessible with Plone Classic UI, but it will behave differently.
-For example, editors can only effectively work with the content using Volto because html is no longer editable in the TinyMCE editor.
+For example, editors can only effectively work with the content using Volto because HTML is no longer editable in the TinyMCE editor used in Classic UI.
 ```
 
 The required steps are:
@@ -70,7 +76,7 @@ The required steps are:
     This step turns all folders into folderish pages.
     If the folder shows a listing of the content, an appropriate listing block will be added.
     If the folder shows a default page, then it will be handled in the next step.
-    You can re-enable Folders by checking the box *Implicitly addable?* in ``/portal_types/Folder/manage_propertiesForm``.
+    You can re-enable Folders by checking the box {guilabel}`Implicitly addable?` in ``/portal_types/Folder/manage_propertiesForm``.
 
 1.  **Default Pages of Folders are merged with the Folderish Pages that replace the Folder**
 
@@ -85,9 +91,9 @@ The required steps are:
     In Volto adding Collections is disabled by default.
     Instead folderish pages with listing blocks are used.
     This step turns all collections into folderish pages.
-    The criteria of the collection are uses to configure a listing block in that page.
+    The criteria of the collection are used to configure a listing block in that page.
 
-It is recommended to use the default settings, but you can choose to skip some of the migration steps in the form.
+It is recommended to use the default settings, but you can choose to skip some migration steps in the form.
 
 ```{note}
 If you are migrating an existing site to Plone 6 using [{py:mod}`collective.exportimport`](https://pypi.org/project/collective.exportimport) and want to use Volto in the new site, then you do not need to use the form `@@migrate_to_volto`.
