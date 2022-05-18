@@ -306,4 +306,20 @@ HAProxy
 
 nginx
     [nginx](https://docs.nginx.com/nginx/) (pronounced "engine x") is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
+
+Volto
+    [Volto](https://github.com/plone/volto) is a React-based frontend for the Plone CMS.
+    It is the default user interface for Plone 6.
+
+    The other frontend is {term}`Classic UI`.
+
+Classic UI
+    Classic UI is a secondary frontend for Plone 6.
+    It is integrated with [Products.CMFPlone](https://github.com/plone/Products.CMFPlone/).
+    Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
+    It is based on Twitter Bootstrap 5.
+    It uses [Mockup](https://github.com/plone/mockup/) as its JavaScript stack.
+    [View Mockup's patterns](https://plone.github.io/mockup/dev/). 
+
+    The other frontend is {term}`Volto`.
 ```
