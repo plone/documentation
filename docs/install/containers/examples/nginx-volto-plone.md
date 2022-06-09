@@ -60,12 +60,6 @@ server {
           proxy_pass http://frontend;
       }
 
-      location ~ /(@@download|@@images|@@ical_view) {
-          rewrite ^(.*) /VirtualHostBase/http/$server_name/Plone/VirtualHostRoot$1 break;
-          proxy_pass http://backend;
-          break;
-      }
-
       proxy_set_header        Host $host;
       proxy_set_header        X-Real-IP $remote_addr;
       proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
