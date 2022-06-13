@@ -26,7 +26,7 @@ In Plone the host bundle is the main mockup bundle.
 Addons can add bundles called "remotes" which are initialized for module federation by the host bundle.
 
 ## Using module federation
-
+This instruction is for you if you created an add-on with a Mockup pattern and you want to include the respective Javascript code in your theme code.
 Starting with the webpack configuration that you get when creating a barceloneta theme package via [plonecli][1], add the following:
 
 - Create a new entry point ``index.js`` which only imports the normal entry point.
