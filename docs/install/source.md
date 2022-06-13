@@ -180,15 +180,62 @@ pip install -r requirements.txt
 We could now build and run Zope / Plone with one command `make run`.
 
 
+### Checkout add-on
+
+TODO checkout an add-on for development
+
+
 ### Pin a Plone package to a higher version
 
 % TODO describe how to modify constraints of Plone
 
+If you  want to override the constraints of Plone, this section is for you.
+
+Pin the version of a Plone package in {file}`mx.ini`:
+
+```ini
+[settings]
+# constraints of Plone packages
+version-overrides =
+    plone.api>=2.0.0a3
+```
+
+Apply the changes and install the package with the modified version with:
+
+```shell
+make install
+```
+
+Under the hood happens a creation of a new constraints file and an installation with pip. See the step-by-step chapter for more info: {ref}`install-source-checkout-and-pin`.
+
+Et voilà. Zope can be restarted with `make run`.
 
 
-### Checkout a Plone package or add-on
+### Checkout a Plone package
 
 % TODO describe how to checkout packages (Plone package or add-on)
+
+If you want to checkout a Plone package (not add-on) for development, this section is for you.
+
+Add the Plone package you want to checkout in {file}`mx.ini`.
+
+```ini
+[plone.restapi]
+url = git@github.com:plone/plone.restapi.git
+branch = master
+extras = test
+```
+
+Apply the changes and install the package with the modified version with:
+
+```shell
+make install
+```
+
+Under the hood happens a creation of a new constraints file and an installation with pip. See the step-by-step chapter for more info: {ref}`install-source-checkout-and-pin`.
+
+Et voilà. Zope can be restarted with `make run`.
+
 
 ### Build and start your instance
 
@@ -200,13 +247,6 @@ make run
 
 Head over to http://localhost:8080/ and see that Plone is running.\
 You can now [create a Plone instance](install-source-create-plone-site-label) and enable the add-on `my.awesome.addon` in {guilabel}`Site Setup` [http://localhost:8080/Plone/prefs_install_products_form](http://localhost:8080/Plone/prefs_install_products_form).
-
-
-
-
-
-
-
 
 
 
