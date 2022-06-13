@@ -242,7 +242,7 @@ plone.api>=2.0.0a3
 Unfortunatly pip does not allow this way of overwriting constraints. 
 
 `mxdev` is made for assembling Plone constraints with your needs of version pinning or source checkouts.\
-It reads your {file}`constraints.txt`, fetches the constraints of Plone and writes a {file}`constraints-mxdev.txt` which combines the constraints. Comments on which Plone constraint is modified asure the readability.
+It reads your {file}`constraints.txt`, fetches the constraints of Plone and writes a {file}`constraints-mxdev.txt` which combines the constraints. Comments on which Plone constraint is modified assure the readability.
 % TODO language: 'readability'?
 
 mxdev operates on three files to tell pip which packages to install with which version.
