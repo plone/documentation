@@ -215,7 +215,6 @@ This is MyST syntax for term ``{term}`React` ``
 This is MyST syntax for term ``{term}`React` ``
 
 
-
 ##### Glossary terms
 
 Add a term to the {ref}`glossary-label`, located at {file}`/glossary.md`.
@@ -234,6 +233,21 @@ Using {term}`React` makes frontends fun again!
 
 Using {term}`React` makes frontends fun again!
 
+
+#### Toggle paragraph (Exercises / FAQ)
+
+````{admonition} This is a title
+:class: toggle
+
+```{code-block} python
+:linenos:
+:emphasize-lines: 1, 3
+
+a = 2
+print("my 1st line")
+print(f"my {a}nd line")
+```
+````
 
 
 ## Abridged Plone Documentation Styleguide

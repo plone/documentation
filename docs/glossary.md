@@ -32,6 +32,12 @@ Barceloneta
 CMS
     Content Management System
 
+cookiecutter
+    A command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
+
+cookiecutter-zope-instance
+    cookiecutter-zope-instance is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
+
 CSS
     Cascading Style Sheets (CSS) is a stylesheet language used for describing the (most of the times visual) representation of web pages.
 
@@ -41,6 +47,15 @@ Grunt
 
 Less
     A dynamic stylesheet language that can be compiled into {term}`CSS` (Cascading Style Sheets).
+
+mxdev
+    mxdev [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, of which you only want to develop some.\
+    It builds on top of the idea to have stable version constraints and then develop from a VCS on top of it.\
+    As part of above use-case sometimes versions of the stable constraints need an override with a different (i.e. newer) version.\
+    https://github.com/mxstack/mxdev
+
+mxmake
+    TODO mxmake glossary term description
 
 NPM
     npm is a package manager for the JavaScript programming language.
