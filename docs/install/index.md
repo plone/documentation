@@ -68,4 +68,5 @@ System requirements depend upon your choice of installation method:
 
 containers/index
 source
+source-step-by-step
 ```

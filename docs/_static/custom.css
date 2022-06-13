@@ -155,6 +155,11 @@ div.admonition.admonition-todo>.admonition-title::before {
   display: none;
 }
 
+/* admonition margin */
+.admonition.margin ul,
+.admonition.margin ol {
+  padding-left: 1rem;
+}
 
 .topic {
   padding: 1.5em 1em .5em 1em;
