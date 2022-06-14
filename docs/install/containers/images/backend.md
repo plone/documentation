@@ -81,7 +81,7 @@ We advise against using this feature on production environments.
 ### ZOPE variables
 
 | Environment variable | Description | Default value |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | `ZODB_CACHE_SIZE` | database cache size | `50000` |
 
 
