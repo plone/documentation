@@ -234,10 +234,37 @@ Using {term}`React` makes frontends fun again!
 Using {term}`React` makes frontends fun again!
 
 
-#### Toggle paragraph (Exercises / FAQ)
+#### Toggle paragraph (Exercise solution / FAQ)
 
-````{admonition} This is a title
+Text snippets can be hidden with the option to show. Wrap it in an `admonition` and add the `class` `toggle`.
+
+`````
+````{admonition} f-strings can make your life easier
 :class: toggle
+
+To use formatted string literals, begin a string with f or F before the opening quotation mark or triple quotation mark.
+Inside this string, you can write a Python expression between { and } characters that can refer to variables or literal values.
+
+```{code-block} python
+:linenos:
+:emphasize-lines: 1, 3
+
+a = 2
+print("my 1st line")
+print(f"my {a}nd line")
+```
+````
+`````
+
+Be aware to increase the number of backticks if you include directives like a `code-block`.
+
+This would be rendered as:
+
+````{admonition} f-strings can make your life easier
+:class: toggle
+
+To use formatted string literals, begin a string with f or F before the opening quotation mark or triple quotation mark.
+Inside this string, you can write a Python expression between { and } characters that can refer to variables or literal values.
 
 ```{code-block} python
 :linenos:
