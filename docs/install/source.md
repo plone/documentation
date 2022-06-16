@@ -244,7 +244,7 @@ Checkout an add-on
 
 
 
-version pinning / constraints
+Pin version of a Plone package / constraints
 : A version can **not** be pinned in constraints.txt if the package is mentionend in the constraints of Plone.
   Any other package version could be pinned in constraints.txt.
   A summary of section {ref}`install-source-checkout-and-pin` for a clean and well documented set up of your Zope/Plone installation:
@@ -497,9 +497,6 @@ Visit [http://localhost:3000](http://localhost:3000/) in your browser to see you
 Congratulations!
 You have completed the installation of Plone 6 with Volto frontend.
 Welcome to Plone 6!
-
-<!-- TODO Add here the tasks from chapter step-by-step:
-  pin Plone package version, checkout Plone package, etc -->
 
 
 <!-- TODO I have now my local environment with add-ons. How do I deploy? -->
