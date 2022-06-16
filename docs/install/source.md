@@ -1,61 +1,76 @@
 ---
 html_meta:
-  "description": "Install Plone 6 from source"
-  "property=og:description": "Install Plone 6 from source"
-  "property=og:title": "Install Plone 6 from source"
-  "keywords": "Plone 6, install, buildout, pip, Docker, source"
+  "description": "Install Plone 6 from scratch – the installer"
+  "property=og:description": "Install Plone 6 from scratch – the installer"
+  "property=og:title": "Install Plone from scratch"
+  "keywords": "Plone, Plone 6, install, pip, scratch, source, buildout"
 ---
 
 
 (install-source-1-label)=
 
-# Install Plone from Source
+# Install Plone from Scratch
 
-Installation from source is for development and it is reasonable for deployment with full control.
+Installation from scratch is for development and it is reasonable for deployment with full control.
 
 As an overview, you will perform the following steps in order.
 
-1.  [Install](install-source-install-backend-pip-label) the Plone backend.
-1.  [Create](install-source-create-plone-site-label) a Plone instance, choosing between an instance, configured either for the Plone frontend or the Plone Classic UI.
-1.  [Install the Plone frontend](install-source-volto-frontend-label).
+1. [Install the Plone backend](install-source-install-backend-pip-label).
+1. [Create a Plone instance](install-source-create-plone-site-label).
+  Choose between an instance configured either for the Plone frontend or the Plone Classic UI.
+1. [Install the Plone frontend](install-source-volto-frontend-label).
 
 
-(install-source-2-label)=
+(install-source-components)=
 
-## Short explanation of backend components
+## Short explanation of components and processes running
 
-Skip to {ref}`install-source-install-backend-pip-label` if you know it.
+There are three processes continuously running when you have a working Plone 6 website:
+
+1. A frontend web application running in your browser (JavaScript)
+1. A Node.js server process that delivers the JavaScript to the client and does
+   Server Side Rendering (SSR) of your pages on first request (JavaScript, the
+   Razzle package is used for SSR)
+1. A Plone server process that stores and delivers all content through a REST API (Python)
+
+In case you decide for Plone Classic UI, you waive to the first two components and restrict to Plone which provides the Plone Classic frontend.
+
+
+(install-source-backend-components-label)=
+
+## Short explanation of Plone backend components
 
 ```{todo}
-short explanation of backend components:
-- Zope instance
+short explanation of backend components and how they interact
+- {term}`Zope` instance
 - Plone instance
-- wsgi
+- {term}`WSGI`
+- REST API
 ```
+
 
 (install-source-install-backend-pip-label)=
 
 ## Installation backend
 
-We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxstack` and other fancy helpers.
+We install the Plone backend with {term}`pip`, {term}`mxdev` and other fancy helpers.
 
-You are maybe familiar with a `buildout` Plone installation. The installation with `zc.buildout` was the way to go for Plone 5. Plone 6 prefers to be installed with `pip`.
+You are probably familiar with a `buildout` Plone installation. The installation with `zc.buildout` was the way to go for Plone 5. Plone 6 prefers to be installed with {term}`pip`.
 
 
 (install-source-system-requirements-label)=
 
 ### System requirements
 
--   Python 3.7, 3.8, 3.9 or 3.10.
--   Raspi or more disk and CPU
+- Raspberry Pi or more disk and CPU
 
 
 (install-source-prerequisites-label)=
 
 ### Pre-requisites for the installation 
 
-- Python
-- [Discord](https://discord.com/channels/786421998426521600/786421998426521603) account to say "Hello Plonistas! I installed Plone with pip, cookiecutter-zope-instance and mxstack. And I like it."
+- Python 3.7, 3.8, 3.9 or 3.10.
+- [Discord](https://discord.com/channels/786421998426521600/786421998426521603) account to say "Hello Plonistas! I installed Plone with pip, cookiecutter-zope-instance and mxdev. And I like it."
 
 
 
@@ -63,11 +78,13 @@ You are maybe familiar with a `buildout` Plone installation. The installation wi
 
 ### Installation – jump in and enfold the beauty
 
-```{admonition} Under the hood
-:class: margin
-
-Go to {ref}`install-source-stepbystep-start-label` if you want to develop and want to know the details.
+```{note}
+There will be one single cookiecutter template to install both backend and frontend.
+By now the chapter {ref}`install-source-stepbystep-start-label` is for you.
+It explains the installation of the backend with `pip`.
 ```
+
+<!-- TODO Add installation steps for future cookiecutter template 'cookiecutter-plone-starter' https://github.com/collective/cookiecutter-plone-starter/
 
 Create a new directory to hold your project, make it your current directory, then issue the following commands in a shell session.
 
@@ -97,18 +114,11 @@ You can now run `cookiecutter` to create a Zope instance sceleton with configura
 cookiecutter https://github.com/bluedynamics/plone-kickstarter
 ```
 
-
-
-
-
-
 ```{todo}
 - Documentation driven implementation: plone-kickstarter: configure with mxmake [on top of] / [enhancing with scripts like test and check and you name it] mxdev.
 - Move bluedynamics/plone-kickstarter to plone/plone-kickstarter in Plone repo?
 - See mxmake in action:  https://github.com/rohberg/Plone_mxmake_example  for ONE single Makefile, ONE single requirements, ONE single constraints
 ```
-
-
 
 Answer the prompts with:
 
@@ -133,126 +143,168 @@ We are now working with `make`. All available commands are listed with
 `make help`.
 
 We could now build and run Zope / Plone with one command `make run`.\
-Instead we customize the setting with additional add-ons and constraints of a Plone package and a checkout of a Plone package.
-
-First, a look on the generated directory content:
-
-`instance.yaml`
-: Load add-ons, configure the storage, etc..
-
-`requirements.txt`
-: List your add-ons to be installed with `pip`.
-
-`mx.ini`
-: Constraints and checkouts of Plone packages. Configure scripts like `test` to be generated.
-
-`constraints.txt`
-: Basic constraints of Plone, constraints of add-ons
-
-### Add add-ons
-
-% TODO describe how to add add-ons
-
-Two steps are needed: pip install the code and configure Zope / Plone to use the Python package code of the add-ons.
-
-Add the add-ons you want to use to {file}`instance.yaml`. This configures Zope / Plone to load the configuration of your add-ons.
-
-```yaml
-
-    load_zcml:
-        package_includes: ['my.awesome.addon']
-```
-
-Add the add-on you want to use to your `requirements.txt` and pip install it.
-
-`requirements.txt`:
-
-```ini
-my.awesome.addon
-```
-
-Run:
-
-```shell
-pip install -r requirements.txt
-```
-
-We could now build and run Zope / Plone with one command `make run`.
+Instead we customize the setting with additional add-ons and constraints of a Plone package and a checkout of a Plone package. -->
 
 
-### Checkout add-on
+(install-source-tweak-backend-installation-label)=
 
-TODO checkout an add-on for development
+### Tasks on your backend installation from scratch
+
+Adding an add-on
+: Add a line with the name of your add-on to `requirements.txt` and add it to {ref}`instance.yaml<install-source-cookiecutter-zope-instance-presets-label>`, then install with pip and apply cookiecutter:
+
+  {file}`requirements.txt`:
+
+  ```
+  collective.easyform
+  ```
+
+  {file}`instance.yml`:
+
+  ```yaml
+  default_context:
+      load_zcml:
+          package_includes: ['collective.easyform']
+  ```
+
+  ```shell
+  cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
+  mxdev -c mx.ini
+  pip install -r requirements-mxdev.txt
+  ```
+
+Pin version of an add-on
+: Pin the version in {file}`constraints.txt`:
+
+  ```
+  collective.easyform==3.1.0
+  ```
+
+  Add the add-on to {file}`requirements.txt`:
+
+  ```
+  collective.easyform
+  ```
+
+  Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
+
+  ```yaml
+  default_context:
+      load_zcml:
+          package_includes: ['collective.easyform']
+  ```
+
+  Apply your changes and install:
+
+  ```shell
+  cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
+  mxdev -c mx.ini
+  pip install -r requirements-mxdev.txt
+  ```
 
 
-### Pin a Plone package to a higher version
+Checkout an add-on
+: Configure the repository address and branch in {file}`constraints.txt`:
 
-% TODO describe how to modify constraints of Plone
+  ```
+  collective.bookmarks @ https://github.com/collective/collective.bookmarks/archive/refs/heads/master.zip
+  ```
 
-If you  want to override the constraints of Plone, this section is for you.
+  Add the add-on to {file}`requirements.txt`:
 
-Pin the version of a Plone package in {file}`mx.ini`:
+  ```
+  collective.bookmarks
+  ```
 
-```ini
-[settings]
-# constraints of Plone packages
-version-overrides =
-    plone.api>=2.0.0a3
-```
+  Checkout with {file}`mx.ini`:
 
-Apply the changes and install the package with the modified version with:
+  ```ini
+  [collective.bookmarks]
+  url=git@github.com:collective/collective.bookmarks.git
+  branch=master
+  extras = test
+  mxmake-test-path = src
+  ```
 
-```shell
-make install
-```
+  Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
 
-Under the hood happens a creation of a new constraints file and an installation with pip. See the step-by-step chapter for more info: {ref}`install-source-checkout-and-pin`.
+  ```yaml
+  default_context:
+      load_zcml:
+          package_includes: ['collective.bookmarks']
+  ```
 
-Et voilà. Zope can be restarted with `make run`.
+  Apply your changes and install:
 
-
-### Checkout a Plone package
-
-% TODO describe how to checkout packages (Plone package or add-on)
-
-If you want to checkout a Plone package (not add-on) for development, this section is for you.
-
-Add the Plone package you want to checkout in {file}`mx.ini`.
-
-```ini
-[plone.restapi]
-url = git@github.com:plone/plone.restapi.git
-branch = master
-extras = test
-```
-
-Apply the changes and install the package with the modified version with:
-
-```shell
-make install
-```
-
-Under the hood happens a creation of a new constraints file and an installation with pip. See the step-by-step chapter for more info: {ref}`install-source-checkout-and-pin`.
-
-Et voilà. Zope can be restarted with `make run`.
+  ```shell
+  cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
+  mxdev -c mx.ini
+  pip install -r requirements-mxdev.txt
+  ```
 
 
-### Build and start your instance
 
-We can now build and run Zope / Plone with one command:
+version pinning / constraints
+: A version can **not** be pinned in constraints.txt if the package is mentionend in the constraints of Plone.
+  Any other package version could be pinned in constraints.txt.
+  A summary of section {ref}`install-source-checkout-and-pin` for a clean and well documented set up of your Zope/Plone installation:
 
-```shell
-make run
-```
+  Pin the version of a Plone package in {file}`mx.ini`:
 
-Head over to http://localhost:8080/ and see that Plone is running.\
-You can now [create a Plone instance](install-source-create-plone-site-label) and enable the add-on `my.awesome.addon` in {guilabel}`Site Setup` [http://localhost:8080/Plone/prefs_install_products_form](http://localhost:8080/Plone/prefs_install_products_form).
+  ```ini
+  [settings]
+  # constraints of Plone packages
+  version-overrides =
+      plone.api>=2.0.0a3
+  ```
 
+  Apply the changes and install the package with the modified version by running `mxdev` and `pip`:
+
+  ```shell
+  mxdev -c mx.ini
+  pip install -r requirements-mxdev.txt
+  ```
+
+
+Checkout a Plone package
+: If you want to checkout a Plone package (not add-on) for development, this section is for you.
+
+  Add the Plone package you want to check out in {file}`mx.ini`.
+
+  ```ini
+  [plone.restapi]
+  url = git@github.com:plone/plone.restapi.git
+  branch = master
+  extras = test
+  ```
+
+  Apply the changes and install the package with the modified version with:
+
+  ```shell
+  mxdev -c mx.ini
+  pip install -r requirements-mxdev.txt
+  ```
+
+  Restart Zope with
+
+  ```shell
+  runwsgi instance/etc/zope.ini
+  ```
+
+
+Build and start your instance
+: Build and run Zope / Plone with one command:
+
+  ```shell
+  runwsgi instance/etc/zope.ini
+  ```
+
+  Head over to http://localhost:8080/ and see that Plone is running.
 
 
 (install-source-deprecated-label)=
 
-## Deprecated installation methods
+## Deprecated backend installation methods
 
 
 (install-source-install-backend-buildout-label)=
@@ -293,8 +345,6 @@ Then [create a Plone instance](install-source-create-plone-site-label).
 ````
 
 
-
-
 (install-source-create-plone-site-label)=
 
 ## Create a Plone instance
@@ -316,104 +366,156 @@ Submit the form and your backend is ready.
 - If you created a Plone site with a Volto frontend, continue with the next steps in section {ref}`install-source-volto-frontend-label`.
 
 
-
-
-
-
-```{todo}
-TODO I have now my local environment with add-ons. How do I deploy?
-```
-
-
-
-
-
-
 (install-source-volto-frontend-label)=
 
 ## Volto frontend
 
-We recommend that you read the chapter {ref}`frontend-getting-started-installing-volto-label` for details.
+Now that you installed your backend and decided to go with the ReactJS frontend, the next steps explain how to generate a Volto project.
 
-% TODO strip all to official Plone 6 frontend installation ()
+Instead navigate to {doc}`/classic-ui/index` if you do not want a ReactJs based frontend, but prefer to go with a Plone Classic frontend.
+
+<!-- TODO strip all down to official Plone 6 frontend installation (from scratch. no docker) (https://6.dev-docs.plone.org/volto/getting-started/install.html#installing-volto) -->
+
 
 (install-source-nvm-node-version-manager-label)=
 
-### `nvm`, the Node Version Manager
+### Install nvm (NodeJS version manager)
 
-We recommend that you install [`nvm`, or Node Version Manager](https://github.com/nvm-sh/nvm).
-This makes it possible to switch to any version of [`node` (Node.JS)](https://nodejs.org/en/) and [`npm` (Node Package Manager)](https://www.npmjs.com/) for any project on which you might work.
+If you have a working Node JavaScript development already set up on your machine or you prefer
+another management tool to install/maintain node this step is not needed. If you have less
+experience with setting up JavaScript, it's a good idea to integrate nvm for development, as
+it provides easy access to any NodeJS released version.
 
--   On Linux: `apt-get install nvm`
--   On Mac: `brew install nvm`
--   Or use the installation procedure detailed in the [nvm documentation](https://github.com/nvm-sh/nvm)
+1.  Open a terminal console and type:
 
-With `nvm` installed, you can use it to install and use a supported version of `node` and `npm` using the following shell commands.
+    ```bash
+    touch ~/.bash_profile
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash
+    ```
 
-```shell
-nvm install 16
-nvm use 16
-```
+    (Please check the latest available version of nvm on the [main README](https://github.com/nvm-sh/nvm)
+
+1.  Close the terminal and open a new one or execute:
+
+    ```bash
+    source ~/.bash_profile
+    ```
+
+1.  Test it:
+
+    ```bash
+    nvm version
+    ```
+
+1.  Install any active LTS version of NodeJS (https://nodejs.org/en/about/releases/):
+
+    ```{note}
+    :class: margin
+    Volto supports currently active NodeJS LTS versions based on [NodeJS
+    Releases page](https://nodejs.org/en/about/releases/), starting with Node 14 LTS.
+    ```
+
+    ```bash
+    nvm install 16
+    nvm use 16
+    ```
+
+1.  Test NodeJS:
+
+    ```bash
+    node -v
+    ```
 
 
 (install-source-install-yarn-label)=
 
-### Install Yarn
+### Install Yarn (NodeJS package manager)
 
-Volto requires [Yarn Classic](https://classic.yarnpkg.com/lang/en/), a dependency manager for JavaScript code.
-Install Yarn with the following command.
+Install the Yarn Classic version (not the 2.x one!), of the popular node package manager.
 
-```shell
-npm install --global yarn
+```{tip}
+:class: margin
+As alternative, you can install `yarn` using several approaches too, depending on the
+platform you are on. Take a look at the original `yarn`
+[documentation](https://classic.yarnpkg.com/lang/en/) for a list of them.
 ```
+
+1. Open a terminal and type:
+
+    ```bash
+    curl -o- -L https://yarnpkg.com/install.sh | bash
+    ```
+
+1. Test it, running:
+
+    ```bash
+    yarn -v
+    ```
 
 
 (install-source-create-volto-project-label)=
 
 ### Create a Volto project
 
-Create a Volto project using the following shell command.
+Use the project generator helper utility.
 
-```shell
-npm init yo @plone/volto
-```
+1.  Open a terminal and execute:
 
-This will take some time ☕️.
-Toward the end of the process, it will ask you for a project name.
-Enter the name of your project, using only lowercase letters.
-It will create a directory with this name.
-Go to that directory and start the frontend with the following command.
+    ```bash
+    $ npm install -g yo @plone/generator-volto
+    $ yo @plone/volto
+    ```
 
-```shell
-yarn start
-```
+    ````{tip}
+    :class: margin
+    You can run the generator with parameters to tailor your requirements.
 
-In your browser, visit [http://localhost:3000](http://localhost:3000/).
+    ```bash
+    yo @plone/volto --help
+    ```
+
+    or take a look at the [README](https://github.com/plone/volto/blob/master/packages/generator-volto/README.md) for more information.
+    ````
+
+1.  Answer to the prompted questions and provide the name of the new app (folder) to be created. For the sake of this documentation, provide `myvoltoproject` as project name then.
+
+1.  Change directory to the newly created folder `myvoltoapp` (or the one you've chosen):
+    ```bash
+    cd myvoltoapp
+    ```
+
+    Then start Volto with:
+
+    ```bash
+    yarn start
+    ```
+
+    This command will build an in-memory bundle and execute Volto in development mode.
+
+Visit [http://localhost:3000](http://localhost:3000/) in your browser to see your new Plone 6 website.
 
 Congratulations!
-You have completed the installation of Plone 6 with Volto for its frontend.
+You have completed the installation of Plone 6 with Volto frontend.
 Welcome to Plone 6!
 
+<!-- TODO Add here the tasks from chapter step-by-step:
+  pin Plone package version, checkout Plone package, etc -->
 
-(install-source-additional-references-label)=
 
-## References
-
-% TODO clean up references
-
-- [Installation instructions from the Mastering Plone 6 training](https://training.plone.org/5/mastering-plone/installation.html)
-- {ref}`frontend-getting-started-installing-volto-label`
-- [Community post](https://community.plone.org/t/our-pip-based-development-workflow-for-plone/14562) on work in progress with [`plone-kickstarter`](https://github.com/bluedynamics/plone-kickstarter) and [`mxdev`](https://github.com/bluedynamics/mxdev).
+<!-- TODO I have now my local environment with add-ons. How do I deploy? -->
 
 
 (install-source-tools-label)=
 
 ## Tools
 
+- {term}`pip`
 - {term}`mxdev`
-- {term}`mxmake`
-- {term}`cookiecutter`
-- {term}`cookiecutter-zope-instance`
+% Future cookiecutter template for backend and frontend
+% - {term}`cookiecutter-plone-starter`
+- {term}`Yarn`
+
+<!-- TODO Update used tools -->
 
 
 ## Footnotes

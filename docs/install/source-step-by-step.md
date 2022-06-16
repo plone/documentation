@@ -1,29 +1,33 @@
 ---
 html_meta:
-  "description": "Install Plone 6 from source for the one who wants to look under the hood"
-  "property=og:description": "Install Plone 6 from source for the one who wants to look under the hood"
-  "property=og:title": "Install Plone 6 from source step by step"
-  "keywords": "Plone 6, install, buildout, pip, mxdev, mxmake, cookiecutter, source, Zope"
+  "description": "Install Plone 6 backend from scratch for the one who wants to look under the hood"
+  "property=og:description": "Install Plone 6 backend from scratch for the one who wants to look under the hood"
+  "property=og:title": "Install Plone backend from Scratch – Step by Step"
+  "keywords": "Plone, Plone 6, install, backend, pip, mxdev, mxmake, cookiecutter, source, Zope, buildout"
 ---
 
 
 (install-source-stepbystep-start-label)=
 
-# Install Plone Backend from Source – Step by Step
+# Install Plone backend from Scratch – Step by Step
 
-For system requirements and Pre-requisites for the installation see {ref}`install-source-system-requirements-label`.
 
-We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxstack` and other fancy helpers.
+(install-source-stepbystep-backend-start-label)=
+
+## Backend
+
+For system requirements and pre-requisites for the installation see {ref}`install-source-system-requirements-label`.
+
+We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxdev` and other fancy helpers.
+
+```{note}
+There will be one single cookiecutter template to install both backend and frontend from scratch. You will find the instructions on {ref}`install-source-installation-jump-label`. That chapter is for you if you want to develop and want to jump in with all steps prepared by an overall cookiecutter. The subsequent sections explain the installation of the backend step by step. You will learn the details of the installation included in the future overall cookiecutter.
+```
 
 
 (install-source-installation-steps-label)=
 
 ### Installation steps
-
-```{admonition} Jump in!
-:class: margin
-Go to {ref}`install-source-installation-jump-label` if you want to develop and want to jump in with all steps prepared by an overall cookiecutter.
-```
 
 Create a new directory to hold your project, make it your current directory, then issue the following commands in a shell session.
 
@@ -118,14 +122,15 @@ You can stop the instance later with {kbd}`ctrl-esc`.
 If you now open the browser with http://localhost:8080/, you see that you already can create a Plone instance.
 Before doing this, we configure our Zope instance for blobs, configure add-ons, etc..
 For the configuration, you have two options:
-- manual configuration of site.zcml and zope.conf
-- use of helper `cookiecutter-zope-instance`
+- manual configuration of site.zcml and zope.conf (^[Configuring and Running Zope](https://zope.readthedocs.io/en/latest/operation.html))
+- apply `cookiecutter-zope-instance`
 
 (install-source-cookiecutter-zope-instance-label)=
 
 #### Cookiecutter Zope instance
 
-`Cookiecutter` creates projects from project templates. `cookiecutter-zope-instance` is such a template that allows to create a complete Zope configuration. Zope configuration means: blob storage, type of file storage (Zope style or relational database), ZEO, you name it.
+`Cookiecutter` creates projects from project templates.
+{term}`cookiecutter-zope-instance` is such a template that allows to create a complete Zope configuration. Zope configuration means: blob storage, type of file storage (Zope style or relational database), ZEO, you name it.
 
 Install cookiecutter:
 
@@ -133,7 +138,7 @@ Install cookiecutter:
 pip install cookiecutter
 ```
 
-You could now run `cookiecutter` to create a Zope instance sceleton with configuraton with the following command, which would prompt you for parameter values.
+You could now run `cookiecutter` to create a Zope instance sceleton including configuration with the following command. It prompts you for parameter values.
 
 ```shell
 cookiecutter https://github.com/plone/cookiecutter-zope-instance
@@ -150,7 +155,7 @@ default_context:
     initial_user_password: 'admin'
 
     load_zcml:
-        package_includes: ['my.awesome.addon']
+        package_includes: ['collective.easyform']
 
     db_storage: direct
 ```
@@ -160,11 +165,11 @@ Find more [options of cookiecutter `cookiecutter-zope-instance`](https://github.
 The file {file}`instance.yaml` allows to set some presets.
 Add-ons are listed here, but need to be installed with pip.
 The documented installation of add-ons with pip is achieved via a {file}`requirements.txt` file.
-An add-on like for example `my.awesome.addon` is listed in\
+An add-on like for example `collective.easyform` is listed in\
 `requirements.txt`:
 
 ```
-my.awesome.addon
+collective.easyform
 ```
 
 Install your requirements:
@@ -218,11 +223,11 @@ runwsgi instance/etc/zope.ini
 ```
 
 Head over to http://localhost:8080/ and see that Plone is running.
-You could now create a Plone instance {ref}`install-source-create-plone-site-label` and enable the add-on `my.awesome.addon` in {guilabel}`Site Setup` [http://localhost:8080/Plone/prefs_install_products_form](http://localhost:8080/Plone/prefs_install_products_form).
+You could now create a Plone instance {ref}`install-source-create-plone-site-label` and enable the add-on `collective.easyform` in {guilabel}`Site Setup` [http://localhost:8080/Plone/prefs_install_products_form](http://localhost:8080/Plone/prefs_install_products_form).
 
 If you want to run Plone with some add-ons, you are ready with the installation of the backend.\
 If you decided to go with the Plone Classic UI this is also your frontend.\
-If you decided to go with the Plone Volto frontend, then section {ref}`install-source-volto-frontend-label` shows your next steps.
+If you decided to go with the Plone Volto frontend, then section {ref}`install-source-volto-frontend-label` explains your next steps.
 
 If you want to develop a Plone package, then the subsequent section is for you.
 
@@ -267,7 +272,7 @@ collective.easyform
 collective.easyform==3.4.5
 ```
 
-{file}`sources.ini`
+{file}`mx.ini`
 
 ```ini
 [settings]
@@ -281,7 +286,7 @@ branch = master
 extras = test
 ```
 
-A run of mxdev reads {file}`requirements.txt` and {file}`sources.ini`, and writes new combined requirements in {file}`constraints-mxdev.txt` and writes new constraints in {file}`constraints-mxdev.txt` according to {file}`source.ini`:
+A run of mxdev reads {file}`requirements.txt`, {file}`constraints.txt` and {file}`mx.ini`, and writes new combined requirements in {file}`requirements-mxdev.txt` and writes new constraints in {file}`constraints-mxdev.txt` according to {file}`mx.ini`:
 
 - 'version-overrides' in [settings]
 - checkout settings in [packagename] sections
@@ -296,11 +301,11 @@ Create
 
   - {file}`requirements.txt`
   - {file}`constraints.txt`
-  - {file}`sources.ini`
+  - {file}`mx.ini`
 
   ```shell
   pip install mxdev
-  mxdev -c sources.ini
+  mxdev -c mx.ini
   pip install -r requirements-mxdev.txt
   runwsgi instance/etc/zope.ini
   ```
@@ -309,10 +314,10 @@ Create
 So with the three files above, run `mxdev` with:
 
 ```shell
-mxdev -c sources.ini
+mxdev -c mx.ini
 ```
 
-You are now ready to install your packages with `pip` and the new constraints file:
+You are now ready to install your packages with `pip` and the new requirements file:
 
 ```shell
 pip install -r requirements-mxdev.txt
@@ -325,24 +330,7 @@ runwsgi instance/etc/zope.ini
 ```
 
 ```{note}
-You have seen how `mxdev` helps with versions and checkouts. It can do a lot more for you. See {ref}`install-source-tools-label` for more information.
+You have seen how `mxdev` helps with versions and checkouts. It can do a lot more for you. See [mxdev](https://github.com/mxstack/mxdev) for more information.
 ```
 
-You can now continue with {ref}`install-source-create-plone-site-label`.
-
-
-(install-source-tweak-backend-installation-label)=
-
-### Tasks on your installation from source
-
-Adding an add-on
-: Add a line with the name of your add-on to `requirements.txt` and add it to {ref}`instance.yaml<install-source-cookiecutter-zope-instance-presets-label>`, then install with pip and apply cookiecutter:
-
-  ```shell
-  pip install -r requirements.txt
-  cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-  ```
-
-version pinning / constraints
-: A version can **not** be pinned in requirements.txt if the package is mentionend in the constraints of Plone.
-  Any other package version could be pinned in requirements.txt. Instead see section {ref}`install-source-checkout-and-pin` for a clean and well documented set up of your Zope/Plone installation.
+You can now continue with chapter {ref}`install-source-create-plone-site-label`.
