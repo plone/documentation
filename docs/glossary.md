@@ -23,7 +23,7 @@ Barceloneta
 CMS
     Content Management System
 
-cookiecutter
+Cookiecutter
     A command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
     [See Cookiecutter's documentation](https://cookiecutter.readthedocs.io/en/stable/).
 
