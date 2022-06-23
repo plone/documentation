@@ -67,12 +67,26 @@ pip
     pip is the package installer for Python.
     See [tool recommendations](https://packaging.python.org/en/latest/guides/tool-recommendations/) for more information.
 
+pm2
+    [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
+
+REST API
+    TODO REST API in general. TODO REST API of Plone.
+
 S3
     [Amazon Web Services S3](https://aws.amazon.com/s3/).
     Object storage built to store and retrieve any amount of data from anywhere.
 
 TTW
     Through-The-Web, changes in the browser.
+
+
+
+
+% TODO sort subsequent glossary terms alphabetically
+
+
+
 
 
 
