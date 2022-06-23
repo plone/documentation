@@ -243,7 +243,7 @@ Text snippets can be hidden with the option to show. Wrap it in an `admonition` 
 :class: toggle
 
 To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
-Inside this string, you can write a Python expression between { and } characters that can refer to variables or literal values.
+Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
 
 ```{code-block} python
 :linenos:
