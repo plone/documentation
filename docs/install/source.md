@@ -46,6 +46,8 @@ short explanation of backend components and how they interact
 - Plone instance
 - {term}`WSGI`
 - REST API
+
+Application server {term}`Zope` is working hard. {term}`Plone` provides the CMS stuff. {term}`WSGI` fills the gap between Python app Zope and web server. {term}`REST API` is the interface to request the Plone backend from thin air. The frontend {term}`Volto` does request this interface. Voilà.
 ```
 
 
@@ -78,7 +80,7 @@ You are probably familiar with a `buildout` Plone installation. The installation
 
 ### Installation – jump in and enfold the beauty
 
-```{note}
+```{important}
 There will be one single cookiecutter template to install both backend and frontend.
 By now the chapter {ref}`install-source-stepbystep-start-label` is for you.
 It explains the installation of the backend with `pip`.
@@ -150,7 +152,9 @@ Instead we customize the setting with additional add-ons and constraints of a Pl
 
 ### Tasks on your backend installation from scratch
 
-Adding an add-on
+You have installed Plone with `pip` like explained above or in {ref}`install-source-stepbystep-start-label`.
+
+Add an add-on
 : Add a line with the name of your add-on to `requirements.txt` and add it to {ref}`instance.yaml<install-source-cookiecutter-zope-instance-presets-label>`, then install with pip and apply cookiecutter:
 
   {file}`requirements.txt`:
@@ -173,7 +177,7 @@ Adding an add-on
   pip install -r requirements-mxdev.txt
   ```
 
-Pin version of an add-on
+Pin the version of an add-on
 : Pin the version in {file}`constraints.txt`:
 
   ```
@@ -204,13 +208,7 @@ Pin version of an add-on
 
 
 Checkout an add-on
-: Configure the repository address and branch in {file}`constraints.txt`:
-
-  ```
-  collective.bookmarks @ https://github.com/collective/collective.bookmarks/archive/refs/heads/master.zip
-  ```
-
-  Add the add-on to {file}`requirements.txt`:
+: Add the add-on to {file}`requirements.txt`:
 
   ```
   collective.bookmarks
@@ -244,7 +242,7 @@ Checkout an add-on
 
 
 
-Pin version of a Plone package / constraints
+Pin the version of a Plone package / constraints
 : A version can **not** be pinned in constraints.txt if the package is mentionend in the constraints of Plone.
   Any other package version could be pinned in constraints.txt.
   A summary of section {ref}`install-source-checkout-and-pin` for a clean and well documented set up of your Zope/Plone installation:
@@ -300,6 +298,8 @@ Build and start your instance
   ```
 
   Head over to http://localhost:8080/ and see that Plone is running.
+
+  Your instance is running in foreground. For a deamon, see section {ref}`install-source-process-manger`.
 
 
 (install-source-deprecated-label)=
@@ -500,6 +500,61 @@ Welcome to Plone 6!
 
 
 <!-- TODO I have now my local environment with add-ons. How do I deploy? -->
+
+
+(install-source-process-manger)=
+
+## Process manager (he/she/you)
+
+Run, stop, restart your backend and frontend and more with one command. In the background, for production. Get to know process manager {term}`pm2`!
+
+
+Create an overall process configuration file {file}`pm2.config.js`:
+
+```js
+let apps = [
+    {
+      name   : "plone_backend_tutorial",
+      script: 'runwsgi instance/etc/zope.ini',
+      cwd: 'backend'
+    },
+    {
+      name   : "plone_frontend_tutorial",
+      script: 'yarn build && yarn start:prod',
+      cwd: 'frontend'
+    }
+  ];
+
+module.exports = { apps: apps };
+
+```
+
+Start all with:
+
+```shell
+pm2 start pm2.config.js
+```
+
+See processes managed by `pm2` (running and not running):
+
+```shell
+pm2 l
+```
+
+![List processes with 'pm2 l'](/_static/illustration/pm2.png)
+
+Restart e.g. the backend process with:
+
+```shell
+pm2 start plone_backend_tutorial
+```
+
+Stop e.g. the backend process with:
+
+```shell
+pm2 stop plone_backend_tutorial
+```
+
 
 
 (install-source-tools-label)=

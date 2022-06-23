@@ -121,13 +121,14 @@ You can stop the instance later with {kbd}`ctrl-esc`.
 
 If you now open the browser with http://localhost:8080/, you see that you already can create a Plone instance.
 Before doing this, we configure our Zope instance for blobs, configure add-ons, etc..
+
 For the configuration, you have two options:
 - manual configuration of site.zcml and zope.conf (^[Configuring and Running Zope](https://zope.readthedocs.io/en/latest/operation.html))
 - apply `cookiecutter-zope-instance`
 
 (install-source-cookiecutter-zope-instance-label)=
 
-#### Cookiecutter Zope instance
+#### Generate Plone / Zope configuration with cookiecutter
 
 `Cookiecutter` creates projects from project templates.
 {term}`cookiecutter-zope-instance` is such a template that allows to create a complete Zope configuration. Zope configuration means: blob storage, type of file storage (Zope style or relational database), ZEO, you name it.
@@ -165,7 +166,7 @@ Find more [options of cookiecutter `cookiecutter-zope-instance`](https://github.
 The file {file}`instance.yaml` allows to set some presets.
 Add-ons are listed here, but need to be installed with pip.
 The documented installation of add-ons with pip is achieved via a {file}`requirements.txt` file.
-An add-on like for example `collective.easyform` is listed in\
+We list an add-on like for example `collective.easyform` in\
 `requirements.txt`:
 
 ```
@@ -180,7 +181,7 @@ pip install -r requirements.txt
 
 You have done two things so far: You installed your add-on packages and you have prepared an initializing file to roll out a Zope / Plone project, configured to load your installed add-on packages.
 
-You are now ready to apply your cookiecutter:
+You are now ready to apply `cookiecutter`to generate the Zope configuration:
 
 ```shell
 cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
@@ -288,7 +289,7 @@ extras = test
 
 A run of mxdev reads {file}`requirements.txt`, {file}`constraints.txt` and {file}`mx.ini`, and writes new combined requirements in {file}`requirements-mxdev.txt` and writes new constraints in {file}`constraints-mxdev.txt` according to {file}`mx.ini`:
 
-- 'version-overrides' in [settings]
+- 'version-overrides' in section [settings]
 - checkout settings in [packagename] sections
 
 
@@ -311,9 +312,10 @@ Create
   ```
 ````
 
-So with the three files above, run `mxdev` with:
+So with the three files above, install and run `mxdev` with:
 
 ```shell
+pip install mxdev
 mxdev -c mx.ini
 ```
 
