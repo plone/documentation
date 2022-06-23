@@ -153,7 +153,7 @@ cookiecutter https://github.com/plone/cookiecutter-zope-instance
 (install-source-cookiecutter-zope-instance-presets-label)=
 
 Instead we prepare a file {file}`instance.yaml` with the parameters we want to set. 
-A minimal example is (add options as needed):
+A minimal example with one add-on configured is (add options as needed):
 
 ```yaml
 default_context:
