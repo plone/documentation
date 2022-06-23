@@ -57,7 +57,9 @@ Application server {term}`Zope` is working hard. {term}`Plone` provides the CMS 
 
 We install the Plone backend with {term}`pip`, {term}`mxdev` and other fancy helpers.
 
-You are probably familiar with a `buildout` Plone installation. The installation with `zc.buildout` was the way to go for Plone 5. Plone 6 prefers to be installed with {term}`pip`.
+If you used Plone before, you are probably familiar with a `buildout` Plone installation. 
+The installation with `zc.buildout` was the way to go for Plone 5. 
+Plone 6 prefers to be installed with {term}`pip`, which is the mainstream package installer for Python.
 
 
 (install-source-system-requirements-label)=
