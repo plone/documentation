@@ -242,7 +242,7 @@ If you want to develop a Plone package, then the subsequent section is for you.
 
 #### Checkout or version pinning of a Plone package
 
-If you want to checkout a Plone package (not add-on) for development or just want to override the constraints of Plone, then a first attempt would be to define constraints with a {file}`constraints.txt` to tell pip to install a different version of a Plone package.
+If you want to checkout a Plone Core package for development or just want to override the constraints of Plone, then a first attempt would be to define constraints with a {file}`constraints.txt` to tell pip to install a different version of a Plone package.
 
 ```
 # constraints.txt with unresolvable version conflict
