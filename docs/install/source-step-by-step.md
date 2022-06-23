@@ -123,8 +123,8 @@ If you now open the browser with http://localhost:8080/, you see that you alread
 Before doing this, we configure our Zope instance for blobs, configure add-ons, etc..
 
 For the configuration, you have two options:
-- manual configuration of site.zcml and zope.conf (^[Configuring and Running Zope](https://zope.readthedocs.io/en/latest/operation.html))
-- apply `cookiecutter-zope-instance`
+1. *manual* configuration by editing {file}`site.zcml` and {file}`zope.conf` (^[Configuring and Running Zope](https://zope.readthedocs.io/en/latest/operation.html))
+2. *generate* configuration by applying `cookiecutter-zope-instance`
 
 (install-source-cookiecutter-zope-instance-label)=
 
