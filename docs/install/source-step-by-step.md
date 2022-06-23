@@ -130,7 +130,7 @@ For the configuration, you have two options:
 
 #### Generate Plone / Zope configuration with cookiecutter
 
-`Cookiecutter` creates projects from project templates.
+{term}`Cookiecutter` creates projects from project templates.
 {term}`cookiecutter-zope-instance` is such a template that allows to create a complete Zope configuration. Zope configuration means: blob storage, type of file storage (Zope style or relational database), ZEO, you name it.
 
 Install cookiecutter:
