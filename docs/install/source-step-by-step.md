@@ -117,8 +117,6 @@ runwsgi ./etc/zope.ini
 
 You can stop the instance later with {kbd}`ctrl-esc`.
 
-% TODO How to start the Zope instance in background.
-
 If you now open the browser with http://localhost:8080/, you see that you already can create a Plone instance.
 Before doing this, we configure our Zope instance for blobs, configure add-ons, etc..
 
