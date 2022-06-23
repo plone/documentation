@@ -265,7 +265,7 @@ Pin the version of a Plone package / constraints
 
 
 Checkout a Plone package
-: If you want to checkout a Plone package (not add-on) for development, this section is for you.
+: If you want to checkout a Plone Core package for development, this section is for you.
 
   Add the Plone package you want to check out in {file}`mx.ini`.
 
