@@ -256,7 +256,7 @@ print(f"my {a}nd line")
 ````
 `````
 
-Be aware to increase the number of backticks if you include directives like a `code-block`.
+You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as admonitions and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
 
 This would be rendered as:
 
