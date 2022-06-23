@@ -369,7 +369,7 @@ elementEditor
 
 
 WSGI
-    The Web Server Gateway Interface (WSGI, pronounced whiskey) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
+    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
 
 ZEO
     [ZEO](https://zeo.readthedocs.io/) is a client-server storage for ZODB for sharing a single storage among many clients.
