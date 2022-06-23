@@ -192,7 +192,7 @@ You are now ready to apply `cookiecutter`to generate the Zope configuration:
 cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
 ```
 
-```{list-table} Cookiecutter options
+```{list-table} Cookiecutter options used here
 :header-rows: 1
 
 * - Option
