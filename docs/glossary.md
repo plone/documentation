@@ -78,7 +78,7 @@ S3
     Object storage built to store and retrieve any amount of data from anywhere.
 
 TTW
-    Through-The-Web, changes in the browser.
+    Through-The-Web allows editing or customizing a Plone site through a web browser.
 
 
 
