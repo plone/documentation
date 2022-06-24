@@ -132,7 +132,7 @@ Project (Volto)
     The product of running the package `@plone/generator-volto`, resulting in a customizable instance of Volto.
 
 Add-on (Volto)
-    A JavaScript package that integrakmkmkmktes with Volto's configuration registry and is able to enhance, extend, and customize it.
+    A JavaScript package that integrates with Volto's configuration registry and is able to enhance, extend, and customize it.
 
 Add-on configuration loader (Volto)
     A function with signature `config => config`.
