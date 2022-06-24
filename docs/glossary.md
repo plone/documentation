@@ -10,7 +10,7 @@ html_meta:
 
 # Glossary
 
-``````{glossary}
+```{glossary}
 :sorted: true
 
 AWS
