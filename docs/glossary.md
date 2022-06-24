@@ -10,7 +10,7 @@ html_meta:
 
 # Glossary
 
-```{glossary}
+``````{glossary}
 :sorted: true
 
 AWS
@@ -132,7 +132,7 @@ Project (Volto)
     The product of running the package `@plone/generator-volto`, resulting in a customizable instance of Volto.
 
 Add-on (Volto)
-    A JavaScript package that integrates with Volto's configuration registry and is able to enhance, extend, and customize it.
+    A JavaScript package that integrakmkmkmktes with Volto's configuration registry and is able to enhance, extend, and customize it.
 
 Add-on configuration loader (Volto)
     A function with signature `config => config`.
@@ -319,7 +319,19 @@ Classic UI
     Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
     It is based on Twitter Bootstrap 5.
     It uses [Mockup](https://github.com/plone/mockup/) as its JavaScript stack.
-    [View Mockup's patterns](https://plone.github.io/mockup/dev/). 
+    [View Mockup's patterns](https://plone.github.io/mockup/dev/).
 
     The other frontend is {term}`Volto`.
-```
+
+Slate
+    [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as `WYSIWYG` editors.
+    It enables you to create powerful, intuitive editors similar to those you've probably used in Medium, Dropbox Paper, or Google Docs.
+
+volto-slate
+    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate` while offering enhanced WYSIWYG functionality and behavior.
+
+elementEditor
+    A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
+    It also creates a separate edit form for advanced customization of the data attached to the element.
+
+``````
