@@ -59,5 +59,6 @@ csrf
 images
 icons
 recipes
+translations
 whatsnew
 ```
