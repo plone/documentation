@@ -75,7 +75,7 @@ services:
     - "80:80"
 
   backend:
-    image: plone/plone-backend:6.0.0a4
+    image: plone/plone-backend:6.0.0a6
     environment:
       SITE: Plone
       TYPE: classic
