@@ -503,7 +503,7 @@ Welcome to Plone 6!
 
 (install-source-process-manger)=
 
-## Process manager (he/she/you)
+## Process manager
 
 Run, stop, restart your backend and frontend and more with one command. In the background, for production. Get to know process manager {term}`pm2`!
 
