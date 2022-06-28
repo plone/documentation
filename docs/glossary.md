@@ -48,7 +48,7 @@ Linode
 
 mxdev
     [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, of which you only want to develop some.
-    It builds on top of the idea to have stable version constraints and then develop from a VCS on top of it.
+    It is designed for developers who use stable version constraints, then layer their customizations on top of that base while using a version control system.
     This design allows developers to override their base package constraints with a customized or newer version.
 
 mxmake

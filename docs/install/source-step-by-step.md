@@ -168,9 +168,6 @@ default_context:
     db_storage: direct
 ```
 
-
-
-
 Add-ons are listed here to be loaded by `Zope` app. As python packages they also need to be installed with pip.
 The documented installation of add-ons with pip is achieved via a {file}`requirements.txt` file.
 We list an add-on like for example `collective.easyform` in\
