@@ -137,7 +137,7 @@ Choose from 1, 2 [1]: 1
 requirements_out [requirements-mxdev.txt]: 
 admin_user [admin]: 
 admin_password []: admin
-plone_version [6.0.0a2]: 6.0.0a4
+plone_version [6.0.0a2]: 6.0.0a6
 listen [localhost:8080]: 
 ```
 
