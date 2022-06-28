@@ -40,15 +40,9 @@ In case you decide for Plone Classic UI, you waive to the first two components a
 
 ## Short explanation of Plone backend components
 
-```{todo}
-short explanation of backend components and how they interact
-- {term}`Zope` instance
-- Plone instance
-- {term}`WSGI`
-- REST API
+% TODO Review short explanation of backend components and how they interact
 
-Application server {term}`Zope` is working hard. {term}`Plone` provides the CMS stuff. {term}`WSGI` fills the gap between Python app Zope and web server. {term}`REST API` is the interface to request the Plone backend from thin air. The frontend {term}`Volto` does request this interface. Voilà.
-```
+Application server {term}`Zope` with its database {term}`ZODB` provides the base for a content management framework. `Plone` supplies a content management framework with the infrastructure for defining content type schemata, workflows, and more. {term}`WSGI` fills the gap between Python app Zope and web server. {term}`REST API` is the interface to request the Plone backend from thin air. The frontend {term}`Volto` does request this interface. Voilà.
 
 
 (install-source-install-backend-pip-label)=
