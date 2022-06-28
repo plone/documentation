@@ -495,7 +495,10 @@ You have completed the installation of Plone 6 with Volto frontend.
 Welcome to Plone 6!
 
 
-<!-- TODO I have now my local environment with add-ons. How do I deploy? -->
+<!-- TODO I have now my local environment with add-ons. How do I deploy? 
+- instructions, configuration, secrets with Ansible
+- orchestrating processes with pm2 https://pm2.keymetrics.io/ see Volto chapters
+-->
 
 
 (install-source-process-manger)=
@@ -558,10 +561,13 @@ pm2 stop plone_backend_tutorial
 ## Tools
 
 - {term}`pip`
+- {term}`cookiecutter`
+- {term}`cookiecutter-zope-instance`
 - {term}`mxdev`
+- {term}`Yarn`
+- {term}`pm2`
 % Future cookiecutter template for backend and frontend
 % - {term}`cookiecutter-plone-starter`
-- {term}`Yarn`
 
 <!-- TODO Update used tools -->
 
