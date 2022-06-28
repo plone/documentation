@@ -105,7 +105,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:6.0.0a4
+    image: plone/plone-backend:6.0.0a6
     environment:
       SITE: Plone
       RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"

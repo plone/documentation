@@ -9,7 +9,7 @@ html_meta:
 
 (install-source-1-label)=
 
-# Install from source for development 
+# Install from source for development
 
 As an overview, you will perform the following steps in order.
 
@@ -96,7 +96,7 @@ Paste the following configuration information into it.
 
 ```ini
 [buildout]
-extends = https://dist.plone.org/release/6.0.0a4/versions.cfg
+extends = https://dist.plone.org/release/6.0.0a6/versions.cfg
 parts = instance
 
 [instance]
@@ -112,7 +112,7 @@ Install Plone with the following shell commands.
 # Create a Python virtual environment in the current directory
 python3.9 -m venv .
 # Install the latest Plone 6 requirements with pip
-bin/pip install -r https://dist.plone.org/release/6.0.0a4/requirements.txt
+bin/pip install -r https://dist.plone.org/release/6.0.0a6/requirements.txt
 # Run buildout to install Plone 6
 bin/buildout
 # Start the Plone instance
@@ -132,7 +132,7 @@ python3.9 -m venv .
 # Update Python package management tools
 bin/pip install -U pip setuptools wheel
 # Install Plone 6 with constrained requirements with pip
-bin/pip install Plone -c https://dist.plone.org/release/6.0.0a4/constraints.txt
+bin/pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
 # Create a Plone 6 site with the given username and password in the current directory
 bin/mkwsgiinstance -u admin:admin -d .
 # Initialize Zope
