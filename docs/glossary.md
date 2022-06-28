@@ -80,17 +80,6 @@ S3
 TTW
     Through-The-Web allows editing or customizing a Plone site through a web browser.
 
-
-
-
-% TODO sort subsequent glossary terms alphabetically
-
-
-
-
-
-
-
 Amazon Opsworks
     [AWS OpsWorks](https://aws.amazon.com/opsworks/) is a configuration management service that uses Chef, an automation platform that treats server configurations as code.
 
@@ -364,9 +353,6 @@ volto-slate
 elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
     It also creates a separate edit form for advanced customization of the data attached to the element.
-
-
-
 
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
