@@ -1,15 +1,15 @@
 ---
 html_meta:
-  "description": "Install Plone 6 backend from scratch for the one who wants to look under the hood"
-  "property=og:description": "Install Plone 6 backend from scratch for the one who wants to look under the hood"
-  "property=og:title": "Install Plone backend from Scratch – Step by Step"
-  "keywords": "Plone, Plone 6, install, backend, pip, mxdev, mxmake, cookiecutter, source, Zope, buildout"
+  "description": "Install Plone 6 backend from its packages for the one who wants to look under the hood"
+  "property=og:description": "Install Plone 6 backend from its packages for the one who wants to look under the hood"
+  "property=og:title": "Install Plone backend from its Packages – Step by Step"
+  "keywords": "Plone, Plone 6, install, backend, pip, mxdev, mxmake, cookiecutter, packages, source, Zope, buildout"
 ---
 
 
 (install-source-stepbystep-start-label)=
 
-# Install Plone backend from Scratch – Step by Step
+# Install Plone backend from its Packages – Step by Step
 
 
 (install-source-stepbystep-backend-start-label)=
@@ -21,7 +21,7 @@ For system requirements and pre-requisites for the installation see {ref}`instal
 We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxdev` and other fancy helpers.
 
 ```{note}
-There will be one single cookiecutter template to install both backend and frontend from scratch. You will find the instructions on {ref}`install-source-installation-jump-label`. That chapter is for you if you want to develop and want to jump in with all steps prepared by an overall cookiecutter. The subsequent sections explain the installation of the backend step by step. You will learn the details of the installation included in the future overall cookiecutter.
+There will be one single cookiecutter template to install both backend and frontend from its packages. You will find the instructions on {ref}`install-source-installation-jump-label`. That chapter is for you if you want to develop and want to jump in with all steps prepared by an overall cookiecutter. The subsequent sections explain the installation of the backend step by step. You will learn the details of the installation included in the future overall cookiecutter.
 ```
 
 
@@ -48,8 +48,6 @@ pip install -U pip wheel
 :class: margin toggle
 The Plone packages and dependencies are installed in trees.
 
-% TODO Why in trees?
-
 ```
 venv/lib/Python3.x/
 site-packages/
@@ -74,7 +72,6 @@ pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
 ````{admonition} mkwsgiinstance's minimal Zope configuration
 :class: margin toggle
 `mkwsgiinstance` creates a home with a minimal configuration for a Zope instance.
-No blob storage, etc. is defined so far.
 
 ```
 ┌── etc/
@@ -132,11 +129,10 @@ For the configuration, you have two options:
 {term}`cookiecutter-zope-instance` is such a template that allows to create a complete Zope configuration. 
 Zope configuration means:
 
-- type of storage: direct filestorage/blobs, relational database, ZEO, you name it.
-- ports, 
-- threads/caches,
-- debugging/profiling options, 
-- ...
+- type of storage: direct filestorage/blobs, relational database, ZEO, you name it
+- ports
+- threads/caches
+- debugging/profiling options
 
 Install cookiecutter:
 
@@ -152,8 +148,14 @@ cookiecutter https://github.com/plone/cookiecutter-zope-instance
 
 (install-source-cookiecutter-zope-instance-presets-label)=
 
-Instead we prepare a file {file}`instance.yaml` with the parameters we want to set. 
-A minimal example with one add-on configured is (add options as needed):
+Instead we prepare a configuration file {file}`instance.yaml` with the parameters we want to set. 
+In this section we will learn how to configure our `Zope` / `Plone` installation via `instance.yaml`.
+A minimal example with one add-on configured:
+
+```{note}
+:class: margin
+Reference of configuration options of [`cookiecutter-zope-instance`](https://github.com/plone/cookiecutter-zope-instance#options).
+```
 
 ```yaml
 default_context:
@@ -166,10 +168,10 @@ default_context:
     db_storage: direct
 ```
 
-Find more [options of cookiecutter `cookiecutter-zope-instance`](https://github.com/plone/cookiecutter-zope-instance#options).
 
-The file {file}`instance.yaml` allows to set some presets.
-Add-ons are listed here, but need to be installed with pip.
+
+
+Add-ons are listed here to be loaded by `Zope` app. As python packages they also need to be installed with pip.
 The documented installation of add-ons with pip is achieved via a {file}`requirements.txt` file.
 We list an add-on like for example `collective.easyform` in\
 `requirements.txt`:
@@ -186,7 +188,7 @@ pip install -r requirements.txt
 
 You have done two things so far: You installed your add-on packages and you have prepared an initializing file to roll out a Zope / Plone project, configured to load your installed add-on packages.
 
-You are now ready to apply `cookiecutter`to generate the Zope configuration:
+You are now ready to apply `cookiecutter` to generate the Zope configuration:
 
 ```shell
 cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
@@ -225,7 +227,7 @@ Summed up tasks and commands after creating a Zope instance with {ref}`mkwsgiins
 It's time to start the new Zope instance.
 
 ```shell
-runwsgi instance/etc/zope.ini
+runwsgi -v instance/etc/zope.ini
 ```
 
 Head over to http://localhost:8080/ and see that Plone is running.
@@ -253,10 +255,12 @@ plone.api>=2.0.0a3
 Unfortunatly pip does not allow this way of overwriting constraints. 
 
 `mxdev` is made for assembling Plone constraints with your needs of version pinning or source checkouts.\
-It reads your {file}`constraints.txt`, fetches the constraints of Plone and writes a {file}`constraints-mxdev.txt` which combines the constraints. Comments on which Plone constraint is modified assure the readability.
-% TODO language: 'readability'?
+It reads your {file}`requirements.txt` and so your {file}`constraints.txt`, fetches the requirements/constraints of Plone and writes the files {file}`requirements-mxdev.txt` and {file}`constraints-mxdev.txt`. 
+Both are containing the combined requirements and constraints, but modified according to the configuration in {file}`mx.ini`. 
+The generated files are transparent about where constraints were fetched from and comments are added when a modification was necessary.
 
-mxdev operates on three files to tell pip which packages to install with which version.
+In summary, mxdev operates on three files to tell pip which packages to install with which version.
+A minimal example set of files would look like the following.
 
 {file}`requirements.txt`
 

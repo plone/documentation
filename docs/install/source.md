@@ -1,17 +1,17 @@
 ---
 html_meta:
-  "description": "Install Plone 6 from scratch – the installer"
-  "property=og:description": "Install Plone 6 from scratch – the installer"
-  "property=og:title": "Install Plone from scratch"
-  "keywords": "Plone, Plone 6, install, pip, scratch, source, buildout"
+  "description": "Install Plone 6 from its packages – the installer"
+  "property=og:description": "Install Plone 6 from its packages – the installer"
+  "property=og:title": "Install Plone from its Packages"
+  "keywords": "Plone, Plone 6, install, pip, packages, source, buildout"
 ---
 
 
 (install-source-1-label)=
 
-# Install Plone from Scratch
+# Install Plone from its Packages
 
-Installation from scratch is for development and it is reasonable for deployment with full control.
+Installation from its packages is for development and it is reasonable for deployment with full control.
 
 As an overview, you will perform the following steps in order.
 
@@ -152,7 +152,7 @@ Instead we customize the setting with additional add-ons and constraints of a Pl
 
 (install-source-tweak-backend-installation-label)=
 
-### Tasks on your backend installation from scratch
+### Tasks on your backend installation from its packages
 
 You have installed Plone with `pip` like explained above or in {ref}`install-source-stepbystep-start-label`.
 
@@ -376,7 +376,7 @@ Now that you installed your backend and decided to go with the ReactJS frontend,
 
 Instead navigate to {doc}`/classic-ui/index` if you do not want a ReactJs based frontend, but prefer to go with a Plone Classic frontend.
 
-<!-- TODO strip all down to official Plone 6 frontend installation (from scratch. no docker) (https://6.dev-docs.plone.org/volto/getting-started/install.html#installing-volto) -->
+<!-- TODO strip all down to official Plone 6 frontend installation (from its packages. no docker) (https://6.dev-docs.plone.org/volto/getting-started/install.html#installing-volto) -->
 
 
 (install-source-nvm-node-version-manager-label)=
