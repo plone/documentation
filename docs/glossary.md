@@ -17,23 +17,24 @@ AWS
     [Amazon Web Services](https://aws.amazon.com/) offers reliable, scalable, and inexpensive cloud computing services.
     Free to join, pay only for what you use.
 
-Linode
-    [Linode.com](https://www.linode.com/) is an American privately owned virtual private server provider company based in Galloway, New Jersey, United States.
-
-DigitalOcean
-    [DigitalOcean, Inc.](https://www.digitalocean.com/) is an American cloud infrastructure provider headquartered in New York City with data centers worldwide.
-
-ZODB
-    [A native object database for Python](https://zodb.org/en/latest/).
-
 Barceloneta
     The default theme for Plone 5.
 
 CMS
     Content Management System
 
+Cookiecutter
+    A command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
+    [See Cookiecutter's documentation](https://cookiecutter.readthedocs.io/en/stable/).
+
+cookiecutter-zope-instance
+    [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
+
 CSS
     Cascading Style Sheets (CSS) is a stylesheet language used for describing the (most of the times visual) representation of web pages.
+
+DigitalOcean
+    [DigitalOcean, Inc.](https://www.digitalocean.com/) is an American cloud infrastructure provider headquartered in New York City with data centers worldwide.
 
 Grunt
     The JavaScript Task Runner.
@@ -42,20 +43,42 @@ Grunt
 Less
     A dynamic stylesheet language that can be compiled into {term}`CSS` (Cascading Style Sheets).
 
+Linode
+    [Linode.com](https://www.linode.com/) is an American privately owned virtual private server provider company based in Galloway, New Jersey, United States.
+
+mxdev
+    [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, of which you only want to develop some.
+    It is designed for developers who use stable version constraints, then layer their customizations on top of that base while using a version control system.
+    This design allows developers to override their base package constraints with a customized or newer version.
+
+mxmake
+    mxmake helps create development environments for Python projects based on [make](https://www.gnu.org/software/make) and [mxdev](https://github.com/mxstack/mxdev).
+
+NFS
+    [Network File System](https://en.wikipedia.org/wiki/Network_File_System).
+
+
 NPM
     npm is a package manager for the JavaScript programming language.
     It is the default package manager for the JavaScript runtime environment Node.js.
     Also a registry of JavaScript packages, similar to PyPI.
 
-TTW
-    Through-The-Web, changes in the browser.
+pip
+    pip is the package installer for Python.
+    See [tool recommendations](https://packaging.python.org/en/latest/guides/tool-recommendations/) for more information.
+
+pm2
+    [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
+
+REST API
+    TODO REST API in general. TODO REST API of Plone.
 
 S3
     [Amazon Web Services S3](https://aws.amazon.com/s3/).
     Object storage built to store and retrieve any amount of data from anywhere.
 
-NFS
-    [Network File System](https://en.wikipedia.org/wiki/Network_File_System).
+TTW
+    Through-The-Web allows editing or customizing a Plone site through a web browser.
 
 Amazon Opsworks
     [AWS OpsWorks](https://aws.amazon.com/opsworks/) is a configuration management service that uses Chef, an automation platform that treats server configurations as code.
@@ -196,7 +219,7 @@ mrs-developer
     As a byproduct of its update operations, it also automatically adjusts `jsconfig.json`, which is used by Volto to configure webpack aliases.
 
 Yarn
-    A popular JavaScript package manager similar to NPM.
+    [Yarn](https://classic.yarnpkg.com/) is a JavaScript package manager.
 
 Hydration (SSR)
     After loading an HTML page generated with SSR in the browser, React can "populate" the existing DOM elements, recreate and attach their coresponding components.
@@ -295,9 +318,6 @@ Docker Compose
 RelStorage
     [RelStorage](https://relstorage.readthedocs.io/en/latest/) is a storage implementation for ZODB that stores pickles in a relational database.
 
-ZEO
-    [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
-
 PostgreSQL
     [PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database.
 
@@ -334,4 +354,15 @@ elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
     It also creates a separate edit form for advanced customization of the data attached to the element.
 
+WSGI
+    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
+
+ZEO
+    [ZEO](https://zeo.readthedocs.io/) is a client-server storage for ZODB for sharing a single storage among many clients.
+
+ZODB
+    [A native object database for Python](https://zodb.org/).
+
+Zope
+    [Zope](https://zope.readthedocs.io/) is a Python-based application server for building secure and highly scalable web applications.
 ```
