@@ -355,14 +355,31 @@ elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
     It also creates a separate edit form for advanced customization of the data attached to the element.
 
+i18n
+internationalization
+    "i18n" is shorthand for "internationalization" (the letter "I", 18 letters, the letter "N").
+     It refers to the process of preparing a program so that it can be used in multiple languages without further altering the source code.
+      Plone is fully internationalized.
+
+gettext
+    UNIX standard software translation tool.
+    See https://www.gnu.org/software/gettext/.
+
+.po
+    The file format used by the gettext translation system.
+    See https://www.gnu.org/software/hello/manual/gettext/PO-Files.html.
+
+i18ndude
+    Support tool to create and update message catalogs from instrumented source code.
+
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
 
 ZEO
-    [ZEO](https://zeo.readthedocs.io/) is a client-server storage for ZODB for sharing a single storage among many clients.
+    [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
 
 ZODB
-    [A native object database for Python](https://zodb.org/).
+    [A native object database for Python](https://zodb.org/en/latest/).
 
 Zope
     [Zope](https://zope.readthedocs.io/) is a Python-based application server for building secure and highly scalable web applications.
