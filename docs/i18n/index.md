@@ -34,6 +34,6 @@ They are separated into two parts:
 internationalization
 language
 translating-content
-contribute-to-translations
+contributing-translations
 ```
 
