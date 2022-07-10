@@ -583,7 +583,7 @@ And then you can refer to the dynamic part by its name:
 #: ./skins/gomobiletheme_basic/search.pt:46
 #: ./skins/gomobiletheme_plone3/search.pt:46
 msgid "search_form_heading"
-msgstr "Hae sivustolta ${site_title}
+msgstr "Hae sivustolta ${site_title}"
 ```
 
 ```{seealso}
