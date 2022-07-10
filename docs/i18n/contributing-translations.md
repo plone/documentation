@@ -98,7 +98,7 @@ If you do not have commit access on GitHub [collective group](https://github.com
 
 The request will appear for `plone.app.locales` authors.
 
-If it does not get merged in a timely manner, ask on the Plone Community Forum category [Translations and i18n/l10n](https://community.plone.org/c/development/i18nl10n).
+If it does not get merged in a timely manner, ask on the Plone Community Forum category [Translations and i18n/l10n](https://community.plone.org/c/development/i18nl10n/42).
 
 
 ## Resyncing translations
@@ -113,4 +113,4 @@ To release a new `plone.app.locales` version, [read `RELEASING.rst`](https://git
 
 ## Support
 
-Please ask questions on the Plone Community Forum category [Translations and i18n/l10n](https://community.plone.org/c/development/i18nl10n).
+Please ask questions on the Plone Community Forum category [Translations and i18n/l10n](https://community.plone.org/c/development/i18nl10n/42).
