@@ -372,6 +372,9 @@ gettext
 i18ndude
     Support tool to create and update message catalogs from instrumented source code.
 
+manual .po entries
+    Entries which cannot be detected by an automatic code scan.
+
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
 
@@ -382,5 +385,5 @@ ZODB
     [A native object database for Python](https://zodb.org/en/latest/).
 
 Zope
-    [Zope](https://zope.readthedocs.io/) is a Python-based application server for building secure and highly scalable web applications.
+    [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 ```
