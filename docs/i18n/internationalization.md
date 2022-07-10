@@ -388,7 +388,7 @@ Do not use `easy_install i18ndude`.
 `i18ndude` depends on various Zope packages, and pulling them in to your system-wide Python configuration could be dangerous, due to potential conflicts with corresponding, but different, versions of the same packages used with Plone.
 
 ```{seealso}
-https://markmail.org/message/gru5oaxdl452ekh6#query:+page:1+mid:m22a2ap4xwtwogs5+state:results
+https://markmail.org/message/ugq72cftmju4xgjh
 ```
 ````
 
