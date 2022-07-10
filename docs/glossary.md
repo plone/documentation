@@ -350,4 +350,7 @@ gettext
 
 i18ndude
     Support tool to create and update message catalogs from instrumented source code.
+
+manual .po entries
+    Entries which cannot be detected by an automatic code scan.
 ```
