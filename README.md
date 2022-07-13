@@ -1,8 +1,18 @@
-[![Testing Status](https://github.com/plone/documentation/actions/workflows/test.yml/badge.svg?branch=6-dev "Testing Status")](https://github.com/plone/documentation/actions/workflows/test.yml)
+# `5.2-myst` branch of Plone Documentation
 
-# Plone Documentation
+This branch `5.2-myst` in the repository for Plone Documentation.
 
-This is the repository for Plone Documentation.
+Its purpose is to facilitate contributors to fill gaps in the Plone 6 documentation, using Plone 5.2 documentation as a base.
+
+This branch contains the original reStructuredText files from Plone 5.2 and converted MyST files for `plone/documentation`.
+ 
+The conversion was performed using the following command.
+
+```shell
+rst2myst convert --no-colon-fences 5.2-myst/**/*.rst
+```
+
+No cleanup was performed.
 
 
 ## Plone 6
