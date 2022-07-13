@@ -1,0 +1,4 @@
+# Content rules
+
+- [User manual](https://plone.org/documentation/tutorial/creating-content-rule-conditions-and-actions/)
+- [Developer manual](https://plone.org/documentation/how-to/content-rules)

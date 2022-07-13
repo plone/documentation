@@ -1,0 +1,12 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search">
+<ShortName>Plone</ShortName>
+<Description>PloneDocs</Description>
+<InputEncoding>utf-8</InputEncoding>
+<Image width="16" height="16" type="image/x-icon">https://plone.org/favicon.ico</Image>
+<moz:UpdateInterval>7</moz:UpdateInterval>
+<moz:UpdateUrl>http://docs.plone.org/_static_plone.xml</moz:UpdateUrl>
+<moz:IconUpdateUrl>https://plone.org/favicon.ico</moz:IconUpdateUrl>
+<moz:SearchForm>http://docs.plone.org/search.html</moz:SearchForm>
+<Url type="text/html" method="GET" template="http://docs.plone.org/search.html?q={searchTerms}">
+</Url>
+</OpenSearchDescription>
