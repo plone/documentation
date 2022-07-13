@@ -1,6 +1,6 @@
 # `5.2-myst` branch of Plone Documentation
 
-This branch `5.2-myst` in the repository for Plone Documentation.
+This is the branch `5.2-myst` in the repository for Plone Documentation.
 
 Its purpose is to facilitate contributors to fill gaps in the Plone 6 documentation, using Plone 5.2 documentation as a base.
 
