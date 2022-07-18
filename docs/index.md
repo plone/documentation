@@ -18,6 +18,7 @@ This website is the HTML documentation of Plone, an open source, enterprise-leve
 
 overview/index
 install/index
+upgrade/index
 deployment/index
 volto/index
 plone.restapi/docs/source/index
