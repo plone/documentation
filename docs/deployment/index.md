@@ -20,6 +20,5 @@ Intro to chapter "deployment"
 
 provision
 scaling
-upgrade
 backup
 ```
