@@ -29,27 +29,27 @@ Addons can add bundles called "remotes" which are initialized for module federat
 This instruction is for you if you created an add-on with a Mockup pattern and you want to include the respective JavaScript code in your theme code.
 Starting with the webpack configuration that you get when creating a barceloneta theme package via [plonecli][1], add the following:
 
-- Create a new entry point ``index.js`` which only imports the normal entry point.
+- Create a new entry point `index.js` which only imports the normal entry point.
 
-```
+```js
 import("./patterns");
 ```
 
 - Add the module federation plugin in webpack.config.js. There is a configuration factory `mf_config` which you can use for that. Add the following line near the top of the file:
 
-```
+```js
 const mf_config = require("@patternslib/dev/webpack/webpack.mf");
 ```
 
 Then find the following line:
 
-```
+```js
     config = patternslib_config(env, argv, config, ["mockup"]);
 ```
 
 Below this line add the following:
 
-```
+```js
     config.plugins.push(
         mf_config({
             filename: "myaddon-remote.min.js",
@@ -63,13 +63,13 @@ Replace `myaddon-remote.min.js` with the file name you want to use for your remo
 
 [1]: https://pypi.org/project/plonecli/
 
-## Special case: global modules ``jQuery`` and ``Bootstrap``
+## Special case: global modules `jQuery` and `Bootstrap`
 
 In order to preserve compatibility with older addons and JavaScript implementations,
-the modules ``jQuery`` and ``Bootstrap`` are stored in the  global ``window`` namespace.
+the modules `jQuery` and `Bootstrap` are stored in the  global `window` namespace.
 So constructs like the following are still working:
 
-```
+```js
     (function($) {
         // JS code which uses $
     })(jQuery);
