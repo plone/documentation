@@ -2,13 +2,13 @@
 html_meta:
   "description": "Install Plone 6"
   "property=og:description": "Install Plone 6"
-  "property=og:title": "Install Plone 6"
+  "property=og:title": "Install"
   "keywords": "Plone 6, install, overview"
 ---
 
 (install-index-label)=
 
-# Install Plone 6
+# Install
 
 
 (install-index-getting-started-label)=

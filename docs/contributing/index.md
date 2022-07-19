@@ -2,13 +2,13 @@
 html_meta:
   "description": "Contributing to Plone Documentation"
   "property=og:description": "Contributing to Plone Documentation"
-  "property=og:title": "Contributing to Plone Documentation"
+  "property=og:title": "Contributing to Documentation"
   "keywords": "Plone, Plone Contributor Agreement, License, Code of Conduct"
 ---
 
 (contributing-index-label)=
 
-# Contributing to Plone Documentation
+# Contributing to Documentation
 
 This document describes how to contribute to Plone Documentation.
 

@@ -2,13 +2,13 @@
 html_meta:
   "description": "Plone 6 upgrade Guide"
   "property=og:description": "Plone 6 upgrade guide"
-  "property=og:title": "Plone 6 upgrade guide"
+  "property=og:title": "Upgrade guide"
   "keywords": "Plone, upgrade"
 ---
 
 (upgrade-guide-label)=
 
-# Plone 6 upgrade guide
+# Upgrade guide
 
 This guide will help the developer upgrade their Plone installation to version 6.x.
 
