@@ -2,7 +2,7 @@
 html_meta:
   "description": "Plone 6 upgrade Guide"
   "property=og:description": "Plone 6 upgrade guide"
-  "property=og:title": "Upgrade guide"
+  "property=og:title": "Plone 6 upgrade guide"
   "keywords": "Plone, upgrade"
 ---
 

@@ -1,8 +1,8 @@
 ---
 html_meta:
-  "description": "Deployment of Plone"
-  "property=og:description": "Deployment of Plone"
-  "property=og:title": "Deployment"
+  "description": "Deployment of Plone 6"
+  "property=og:description": "Deployment of Plone 6"
+  "property=og:title": "Deployment of Plone 6"
   "keywords": "Plone, deployment, automation"
 ---
 

@@ -2,7 +2,7 @@
 html_meta:
   "description": "Install Plone 6"
   "property=og:description": "Install Plone 6"
-  "property=og:title": "Install"
+  "property=og:title": "Install Plone 6"
   "keywords": "Plone 6, install, overview"
 ---
 

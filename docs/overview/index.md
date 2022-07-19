@@ -2,7 +2,7 @@
 html_meta:
   "description": "Plone 6 overview"
   "property=og:description": "Plone 6 overview"
-  "property=og:title": "Overview"
+  "property=og:title": "Plone 6 overview"
   "keywords": "Plone 6, overview"
 ---
 
