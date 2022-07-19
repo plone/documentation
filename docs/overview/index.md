@@ -8,7 +8,7 @@ html_meta:
 
 (overview-label)=
 
-# Plone 6 overview 
+# Overview
 
 
 (overview-2-label)=

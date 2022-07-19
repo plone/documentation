@@ -8,7 +8,7 @@ html_meta:
 
 (upgrade-guide-label)=
 
-# Plone 6 upgrade guide
+# Upgrade guide
 
 This guide will help the developer upgrade their Plone installation to version 6.x.
 

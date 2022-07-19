@@ -1,14 +1,14 @@
 ---
 html_meta:
-  "description": "Deployment of Plone"
-  "property=og:description": "Deployment of Plone"
-  "property=og:title": "Deployment of Plone"
+  "description": "Deployment of Plone 6"
+  "property=og:description": "Deployment of Plone 6"
+  "property=og:title": "Deployment of Plone 6"
   "keywords": "Plone, deployment, automation"
 ---
 
 (deployment-label)=
 
-# Deployment of Plone
+# Deployment
 
 ```{todo}
 Intro to chapter "deployment"

@@ -8,7 +8,7 @@ html_meta:
 
 (install-index-label)=
 
-# Install Plone 6
+# Install
 
 
 (install-index-getting-started-label)=
