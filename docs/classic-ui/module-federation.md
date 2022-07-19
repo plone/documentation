@@ -14,9 +14,9 @@ html_meta:
 
 For a general introduction see: https://webpack.js.org/concepts/module-federation/
 
-Module Federation allows to share dependencies between bundles. 
+Module Federation allows to share dependencies between bundles.
 Each bundle includes the whole set of dependencies.
-However, if multiple bundles have the same dependencies they are only loaded once.
+However, if multiple bundles have the same dependencies they are loaded only once.
 
 For example, if bundle A and B both depend on jQuery and bundle A has already loaded it, bundle B can just reuse the already loaded jQuery file.
 But if only bundle B is loaded, it uses its own bundled version of the jQuery library.
@@ -38,7 +38,7 @@ import("./patterns");
 - Add the module federation plugin in webpack.config.js. There is a configuration factory `mf_config` which you can use for that. Add the following line near the top of the file:
 
 ```
-const mf_config = require("@patternslib/patternslib/webpack/webpack.mf");
+const mf_config = require("@patternslib/dev/webpack/webpack.mf");
 ```
 
 Then find the following line:
@@ -62,3 +62,16 @@ Below this line add the following:
 Replace `myaddon-remote.min.js` with the file name you want to use for your remote bundle. Replace `myaddon.min` with the corresponding key in `config.entry` that points to your `index.js`.
 
 [1]: https://pypi.org/project/plonecli/
+
+## Special case: global modules ``jQuery`` and ``Bootstrap``
+
+In order to preserve compatibility with older addons and JavaScript implementations,
+the modules ``jQuery`` and ``Bootstrap`` are stored in the  global ``window`` namespace.
+So constructs like the following are still working:
+
+```
+    (function($) {
+        // JS code which uses $
+    })(jQuery);
+```
+
