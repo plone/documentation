@@ -36,7 +36,9 @@ Starting with the webpack configuration that you get when creating a Barceloneta
 import("./patterns");
 ```
 
-- Add the module federation plugin in webpack.config.js. There is a configuration factory `mf_config` which you can use for that. Add the following line near the top of the file:
+Next add the module federation plugin in `webpack.config.js`.
+There is a configuration factory `mf_config` which you can use for that.
+Add the following line near the top of the file:
 
 ```js
 const mf_config = require("@patternslib/dev/webpack/webpack.mf");
