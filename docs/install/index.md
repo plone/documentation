@@ -28,7 +28,9 @@ What do you want to do?
 
 ## Choose an installation method
 
-% TODO Explanation when to choose which installation method: container vs installation from its packages. Combination for backend and frontend?
+```{todo}
+Explanation when to choose which installation method: container vs installation from its packages. Combination for backend and frontend?
+```
 
 Developers may choose to install Plone from either [the official container images](containers/index) or [source](source).
 
@@ -69,6 +71,6 @@ System requirements depend upon your choice of installation method:
 :hidden: true
 
 containers/index
-source
-source-step-by-step
+installation-from-packages
+installation-backend-from-packages-step-by-step
 ```

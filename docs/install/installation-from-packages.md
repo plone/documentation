@@ -49,7 +49,7 @@ Application server {term}`Zope` with its database {term}`ZODB` provides the base
 
 ## Installation backend
 
-We install the Plone backend with {term}`pip`, {term}`mxdev` and other fancy helpers.
+We install the Plone backend with {term}`pip`, {term}`mxdev` and other developer tools.
 
 If you used Plone before, you are probably familiar with a `buildout` Plone installation. 
 The installation with `zc.buildout` was the way to go for Plone 5. 
@@ -78,18 +78,17 @@ Plone 6 prefers to be installed with {term}`pip`, which is the mainstream packag
 
 ```{important}
 There will be one single cookiecutter template to install both backend and frontend.
-By now the chapter {ref}`install-source-stepbystep-start-label` is for you.
+By now the chapter {ref}`installation-backend-from-packages-step-by-step-start-label` is for you.
 It explains the installation of the backend with `pip`.
 ```
 
-<!-- TODO Add installation steps for future cookiecutter template 'cookiecutter-plone-starter' https://github.com/collective/cookiecutter-plone-starter/
+```{todo} Add installation steps for future cookiecutter template 'cookiecutter-plone-starter' https://github.com/collective/cookiecutter-plone-starter/
 
-Create a new directory to hold your project, make it your current directory, then issue the following commands in a shell session.
-
-Create a Python virtual environment in the current directory.
+Create a new directory to hold your project and make it your current directory.
+Issue the following commands in a shell session to create a Python virtual environment in the current directory.
 
 ```shell
-python3.9 -m venv venv
+python -m venv venv
 source venv/bin/activate
 ```
 
@@ -141,14 +140,14 @@ We are now working with `make`. All available commands are listed with
 `make help`.
 
 We could now build and run Zope / Plone with one command `make run`.\
-Instead we customize the setting with additional add-ons and constraints of a Plone package and a checkout of a Plone package. -->
+Instead we customize the setting with additional add-ons and constraints of a Plone package and a checkout of a Plone package. ``-->``
 
 
 (install-source-tweak-backend-installation-label)=
 
 ### Tasks on your backend installation from its packages
 
-You have installed Plone with `pip` like explained above or in {ref}`install-source-stepbystep-start-label`.
+You have installed Plone with `pip` like explained above or in {ref}`installation-backend-from-packages-step-by-step-start-label`.
 
 Add an add-on
 : Add a line with the name of your add-on to `requirements.txt` and add it to {ref}`instance.yaml<install-source-cookiecutter-zope-instance-presets-label>`, then install with pip and apply cookiecutter:
@@ -495,10 +494,11 @@ You have completed the installation of Plone 6 with Volto frontend.
 Welcome to Plone 6!
 
 
-<!-- TODO I have now my local environment with add-ons. How do I deploy? 
+```{todo}
+Now I have my local environment with add-ons. How do I deploy? 
 - instructions, configuration, secrets with Ansible
 - orchestrating processes with pm2 https://pm2.keymetrics.io/ see Volto chapters
--->
+```
 
 
 (install-source-process-manger)=
@@ -568,8 +568,6 @@ pm2 stop plone_backend_tutorial
 - {term}`pm2`
 % Future cookiecutter template for backend and frontend
 % - {term}`cookiecutter-plone-starter`
-
-<!-- TODO Update used tools -->
 
 
 ## Footnotes

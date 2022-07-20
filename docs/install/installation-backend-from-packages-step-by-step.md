@@ -2,39 +2,37 @@
 html_meta:
   "description": "Install Plone 6 backend from its packages for the one who wants to look under the hood"
   "property=og:description": "Install Plone 6 backend from its packages for the one who wants to look under the hood"
-  "property=og:title": "Install Plone backend from its Packages – Step by Step"
+  "property=og:title": "Install Plone backend from its Packages – Step-by-step"
   "keywords": "Plone, Plone 6, install, backend, pip, mxdev, mxmake, cookiecutter, packages, source, Zope, buildout"
 ---
 
 
-(install-source-stepbystep-start-label)=
+(installation-backend-from-packages-step-by-step-start-label)=
 
-# Install Plone backend from its Packages – Step by Step
-
-
-(install-source-stepbystep-backend-start-label)=
-
-## Backend
+# Install Plone backend from its Packages – Step-by-step
 
 For system requirements and pre-requisites for the installation see {ref}`install-source-system-requirements-label`.
 
-We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxdev` and other fancy helpers.
+We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxdev` and other developer tools.
 
 ```{note}
-There will be one single cookiecutter template to install both backend and frontend from its packages. You will find the instructions on {ref}`install-source-installation-jump-label`. That chapter is for you if you want to develop and want to jump in with all steps prepared by an overall cookiecutter. The subsequent sections explain the installation of the backend step by step. You will learn the details of the installation included in the future overall cookiecutter.
+There will be one single cookiecutter template to install both backend and frontend from its packages.
+You will find the instructions on {ref}`install-source-installation-jump-label`.
+That chapter is for you if you want to develop and want to jump in with all steps prepared by an overall cookiecutter.
+The subsequent sections explain the installation of the backend step-by-step.
+You will learn the details of the installation included in the future overall cookiecutter.
 ```
 
 
-(install-source-installation-steps-label)=
+(installation-backend-from-packages-installation-steps-label)=
 
-### Installation steps
+## Installation steps
 
-Create a new directory to hold your project, make it your current directory, then issue the following commands in a shell session.
-
-Create a Python virtual environment in the current directory.
+Create a new directory to hold your project and make it your current directory.
+Next issue the following commands in a shell session to create a Python virtual environment in the current directory.
 
 ```shell
-python3.9 -m venv venv
+python -m venv venv
 source venv/bin/activate
 ```
 
@@ -49,9 +47,10 @@ pip install -U pip wheel
 The Plone packages and dependencies are installed in trees.
 
 ```
-venv/lib/Python3.x/
-site-packages/
-┌── plone/
+venv/lib/python3.x/site-packages
+│
+…
+├── plone
 │   ├── …
 │   ├── app/
 │       ├── caching/
@@ -69,9 +68,8 @@ Install Plone 6 with constrained requirements using `pip`.
 pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
 ```
 
-````{admonition} mkwsgiinstance's minimal Zope configuration
+:::{admonition} <span>`mkwsgiinstance` creates a home with a minimal configuration for a Zope instance.</span>
 :class: margin toggle
-`mkwsgiinstance` creates a home with a minimal configuration for a Zope instance.
 
 ```
 ┌── etc/
@@ -84,11 +82,11 @@ pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
     ├── log/
     └── REAMDME.txt/
 ```
-````
+:::
+
+(installation-backend-from-packages-step-by-step-mkwsgiinstance)=
 
 Create a Zope instance with the given username and password in the current directory.
-
-(install-source-mkwsgiinstance)=
 
 ```shell
 mkwsgiinstance -u admin:admin -d .
@@ -98,7 +96,7 @@ mkwsgiinstance -u admin:admin -d .
 :class: margin
 
 ```shell
-python3.9 -m venv venv
+python -m venv venv
 source venv/bin/activate
 pip install -U pip wheel
 pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
@@ -112,10 +110,10 @@ Start the Zope instance.
 runwsgi ./etc/zope.ini
 ```
 
+It will take a few seconds to start the Zope instance.
 You can stop the instance later with {kbd}`ctrl-esc`.
 
-If you now open the browser with http://localhost:8080/, you see that you already can create a Plone instance.
-Before doing this, we configure our Zope instance for blobs, configure add-ons, etc..
+Before creating a Plone site on http://localhost:8080/, we configure our Zope instance for blobs, configure add-ons, etc..
 
 For the configuration, you have two options:
 1. *manual* configuration by editing {file}`site.zcml` and {file}`zope.conf` (^[Configuring and Running Zope](https://zope.readthedocs.io/en/latest/operation.html))
@@ -123,7 +121,7 @@ For the configuration, you have two options:
 
 (install-source-cookiecutter-zope-instance-label)=
 
-#### Generate Plone / Zope configuration with cookiecutter
+### Generate Plone / Zope configuration with cookiecutter
 
 {term}`Cookiecutter` creates projects from project templates.
 {term}`cookiecutter-zope-instance` is such a template that allows to create a complete Zope configuration. 
@@ -239,7 +237,7 @@ If you want to develop a Plone package, then the subsequent section is for you.
 
 (install-source-checkout-and-pin)=
 
-#### Checkout or version pinning of a Plone package
+### Checkout or version pinning of a Plone package
 
 If you want to checkout a Plone Core package for development or just want to override the constraints of Plone, then a first attempt would be to define constraints with a {file}`constraints.txt` to tell pip to install a different version of a Plone package.
 

@@ -47,7 +47,7 @@ Linode
     [Linode.com](https://www.linode.com/) is an American privately owned virtual private server provider company based in Galloway, New Jersey, United States.
 
 mxdev
-    [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, of which you only want to develop some.
+    [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, and you want to develop only some of those packages.
     It is designed for developers who use stable version constraints, then layer their customizations on top of that base while using a version control system.
     This design allows developers to override their base package constraints with a customized or newer version.
 
@@ -348,7 +348,7 @@ Slate
     It enables you to create powerful, intuitive editors similar to those you've probably used in Medium, Dropbox Paper, or Google Docs.
 
 volto-slate
-    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate` while offering enhanced WYSIWYG functionality and behavior.
+    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced WYSIWYG functionality and behavior.
 
 elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
@@ -358,11 +358,11 @@ WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
 
 ZEO
-    [ZEO](https://zeo.readthedocs.io/) is a client-server storage for ZODB for sharing a single storage among many clients.
+    [ZEO](https://zeo.readthedocs.io/en/latest) is a client-server storage for ZODB for sharing a single storage among many clients.
 
 ZODB
-    [A native object database for Python](https://zodb.org/).
+    [A native object database for Python](https://zodb.org/en/latest/).
 
 Zope
-    [Zope](https://zope.readthedocs.io/) is a Python-based application server for building secure and highly scalable web applications.
+    [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 ```
