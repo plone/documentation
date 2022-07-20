@@ -15,7 +15,7 @@ html_meta:
 Webpack's documentation on [Module Federation](https://webpack.js.org/concepts/module-federation/).
 ```
 
-Module Federation allows to share dependencies between bundles.
+Module Federation allows sharing of dependencies between bundles.
 Each bundle includes the whole set of dependencies.
 However, if multiple bundles have the same dependencies they are loaded only once.
 
