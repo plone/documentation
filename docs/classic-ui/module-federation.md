@@ -22,7 +22,7 @@ However, if multiple bundles have the same dependencies they are loaded only onc
 For example, if bundle A and B both depend on jQuery and bundle A has already loaded it, bundle B can just reuse the already loaded jQuery file.
 But if only bundle B is loaded, it uses its own bundled version of the jQuery library.
 
-There is a host bundle - in the fictional example above our bundle "A".
+There is a host bundle, as in the fictional example above, our bundle A.
 In Plone the host bundle is the main mockup bundle.
 Addons can add bundles called "remotes" which are initialized for module federation by the host bundle.
 
