@@ -24,7 +24,7 @@ But if only bundle B is loaded, it uses its own bundled version of the jQuery li
 
 There is a host bundle, as in the fictional example above, our bundle A.
 In Plone the host bundle is the main mockup bundle.
-Addons can add bundles called "remotes" which are initialized for module federation by the host bundle.
+Add-ons can add bundles called "remotes" which are initialized for module federation by the host bundle.
 
 ## Using module federation
 This instruction is for you if you created an add-on with a Mockup pattern and you want to include the respective JavaScript code in your theme code.
