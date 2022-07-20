@@ -30,7 +30,7 @@ Add-ons can add bundles called "remotes" which are initialized for module federa
 The following instructions are for you if you created an add-on with a Mockup pattern and you want to include the respective JavaScript code in your theme code.
 Starting with the webpack configuration that you get when creating a Barceloneta theme package via [plonecli][1], add the following:
 
-- Create a new entry point `index.js` which only imports the normal entry point.
+Create a new entry point `index.js` which only imports the normal entry point.
 
 ```js
 import("./patterns");
