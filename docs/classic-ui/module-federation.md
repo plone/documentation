@@ -62,7 +62,8 @@ Below this line add the following:
     );
 ```
 
-Replace `myaddon-remote.min.js` with the file name you want to use for your remote bundle. Replace `myaddon.min` with the corresponding key in `config.entry` that points to your `index.js`.
+Replace `myaddon-remote.min.js` with the file name you want to use for your remote bundle.
+Replace `myaddon.min` with the corresponding key in `config.entry` that points to your `index.js`.
 
 [1]: https://pypi.org/project/plonecli/
 
