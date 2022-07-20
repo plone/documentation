@@ -11,7 +11,9 @@ html_meta:
 # Module Federation in Mockup
 
 
-For a general introduction see: https://webpack.js.org/concepts/module-federation/
+```{seealso}
+Webpack's documentation on [Module Federation](https://webpack.js.org/concepts/module-federation/).
+```
 
 Module Federation allows to share dependencies between bundles.
 Each bundle includes the whole set of dependencies.
