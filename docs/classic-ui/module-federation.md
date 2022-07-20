@@ -69,7 +69,7 @@ Replace `myaddon.min` with the corresponding key in `config.entry` that points t
 
 ## Special case: global modules `jQuery` and `Bootstrap`
 
-In order to preserve compatibility with older addons and JavaScript implementations,
+In order to preserve compatibility with older add-ons and JavaScript implementations,
 the modules `jQuery` and `Bootstrap` are stored in the  global `window` namespace.
 So constructs like the following are still working:
 
