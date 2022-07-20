@@ -54,6 +54,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
+    "sphinx_reredirects",
 ]
 
 
@@ -265,3 +266,8 @@ latex_documents = [
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 latex_logo = "_static/logo_2x.png"
+
+
+redirects = {
+#   "<source>":"<target>",
+}
