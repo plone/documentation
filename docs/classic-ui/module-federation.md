@@ -10,7 +10,6 @@ html_meta:
 
 # Module Federation in Mockup
 
-## Introduction
 
 For a general introduction see: https://webpack.js.org/concepts/module-federation/
 
