@@ -44,6 +44,16 @@ Add the following line near the top of the file:
 const mf_config = require("@patternslib/dev/webpack/webpack.mf");
 ```
 
+Import all the dependencies you want to share.
+Potentially these are the ones from Patternslib, Mockup and your own dependencies.
+You can just add the Patternslib and Mockup dependencies, even if you are not using them.
+
+```js
+const package_json = require("./package.json");
+const package_json_mockup = require("@plone/mockup/package.json");
+const package_json_patternslib = require("@patternslib/patternslib/package.json");
+```
+
 Then find the following line:
 
 ```js
@@ -55,17 +65,29 @@ Below this line add the following:
 ```js
     config.plugins.push(
         mf_config({
+            name: "myaddon",
             filename: "myaddon-remote.min.js",
-            package_json: package_json,
             remote_entry: config.entry["myaddon.min"],
+            dependencies: {
+                ...package_json_patternslib.dependencies,
+                ...package_json_mockup.dependencies,
+                ...package_json.dependencies,
+            },
         })
     );
 ```
 
-Replace `myaddon-remote.min.js` with the file name you want to use for your remote bundle.
-Replace `myaddon.min` with the corresponding key in `config.entry` that points to your `index.js`.
+Replace the name `myaddon` with your addon bundle's name (any unique name will do...),
+replace the filename `myaddon-remote.min.js` with the file name you want to use for your remote bundle,
+and replace `myaddon.min` with the corresponding key in `config.entry` that points to your `index.js`.
+
+For a full but simple example, see the Patterns generator [pat-PATTERN-TEMPLATE][2] or any other Pattern addon in the patternslib GitHub organisation.
+For a complex example with Mockup integration see [plone.app.mosaic][3] and [Mockup][4] itself.
 
 [1]: https://pypi.org/project/plonecli/
+[2]: https://github.com/Patternslib/pat-PATTERN_TEMPLATE/blob/master/webpack.config.js
+[3]: https://github.com/plone/plone.app.mosaic/blob/master/webpack.config.js
+[4]: https://github.com/plone/mockup/blob/master/webpack.config.js
 
 ## Special case: global modules `jQuery` and `Bootstrap`
 
