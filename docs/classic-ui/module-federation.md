@@ -57,7 +57,7 @@ const package_json_patternslib = require("@patternslib/patternslib/package.json"
 Then find the following line:
 
 ```js
-    config = patternslib_config(env, argv, config, ["mockup"]);
+    config = patternslib_config(env, argv, config, ["@plone/mockup"]);
 ```
 
 Below this line add the following:
