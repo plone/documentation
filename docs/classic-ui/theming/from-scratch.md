@@ -1,14 +1,15 @@
 ---
-html_meta:
-  "description": ""
-  "property=og:description": ""
-  "property=og:title": ""
-  "keywords": ""
+myst:
+  html_meta:
+    "description": ""
+    "property=og:description": ""
+    "property=og:title": "Plone Classic UI Theming Independent of an Existing Theme"
+    "keywords": ""
 ---
 
 (classic-ui-theming-from-scratch-label)=
 
-# Plone Classic UI Theming Independent of an Existing Theme
+# Theming Independent of an Existing Theme
 
 ```{todo}
 This page is only an outline and needs a lot of work.
