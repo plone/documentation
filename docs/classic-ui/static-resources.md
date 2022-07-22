@@ -23,3 +23,7 @@ For this, we need to register static resources.
 
 ## Loading order of resources
 
+
+```{note}
+Some explanation is done here: {ref}`classic-ui-theming-from-scratch-theme-label`
+```
