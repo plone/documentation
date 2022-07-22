@@ -69,9 +69,9 @@ In the `Dockerfile` you will need to add two commands to make the Docker contain
 
 ```diff
       --no-interactive
-+ 
++
 + COPY entrypoint.sh /
-  
+
   RUN cd plone-frontend \
 ```
 
@@ -99,7 +99,7 @@ version: "3"
 services:
 
   backend:
-    image: plone/plone-backend:6.0.0a4
+    image: plone/plone-backend:6.0.0a6
     # Plone 5.2 series can be used too
     # image: plone/plone-backend:5.2.7
     ports:
@@ -128,7 +128,7 @@ To start, run the following command.
 
 ```shell
 docker compose up -d
-```     
+```
 
 
 ## Versions

@@ -106,6 +106,14 @@ div.section {
   margin-bottom: 5rem;
 }
 
+div.section div.section {
+  margin-bottom: 5rem;
+}
+
+div.section div.section div.section {
+  margin-bottom: 2rem;
+}
+
 /* admonitions */
 .admonition {
   border-radius: 0;
@@ -155,6 +163,11 @@ div.admonition.admonition-todo>.admonition-title::before {
   display: none;
 }
 
+/* admonition margin */
+.admonition.margin ul,
+.admonition.margin ol {
+  padding-left: 1rem;
+}
 
 .topic {
   padding: 1.5em 1em .5em 1em;
