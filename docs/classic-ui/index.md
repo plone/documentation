@@ -49,6 +49,7 @@ This chapter is a developer reference manual for working with Classic UI.
 
 theming/index
 static-resources
+mockup-patterns
 templates
 templates-global-variables
 views
