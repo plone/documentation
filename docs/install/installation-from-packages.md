@@ -356,7 +356,7 @@ You can change this, but then you need to change some Volto frontend configurati
 
 Submit the form and your backend is ready.
 
-- If you created a Plone site with a Classic UI frontend, then you have completed the installation. Nearly. Enable your add-ons [^enable-add-ons].
+- If you created a Plone site with a Classic UI frontend, then you have completed the installation. Nearly. Enable your add-ons.[^enable-add-ons]
 
 - If you created a Plone site with a Volto frontend, continue with the next steps in section {ref}`install-source-volto-frontend-label`.
 
@@ -569,7 +569,5 @@ pm2 stop plone_backend_tutorial
 % Future cookiecutter template for backend and frontend
 % - {term}`cookiecutter-plone-starter`
 
-
-## Footnotes
 
 [^enable-add-ons]: enable add-ons (non-Plone-core packages) in {guilabel}`Site Setup` [http://localhost:8080/Plone/prefs_install_products_form](http://localhost:8080/Plone/prefs_install_products_form).
