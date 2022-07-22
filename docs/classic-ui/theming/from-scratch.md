@@ -8,7 +8,7 @@ html_meta:
 
 (classic-ui-theming-from-scratch-label)=
 
-# Plone Classic UI Theming based on Barceloneta
+# Plone Classic UI Theming Independent of an Existing Theme
 
 ```{todo}
 This page is only an outline and needs a lot of work.
