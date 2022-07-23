@@ -234,15 +234,13 @@ Using {term}`React` makes frontends fun again!
 Using {term}`React` makes frontends fun again!
 
 
-#### Toggle paragraph (Exercise solution / FAQ)
+#### Nesting directives
 
-Text snippets can be hidden with the option to show. Wrap it in an `admonition` and add the `class` `toggle`.
+You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as [admonitions](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#admonitions) and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
 
 `````
-````{admonition} f-strings can make your life easier
-:class: toggle
-
-To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
+````{tip}
+To use formatted string literals ("f-strings"), begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
 Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
 
 ```{code-block} python
@@ -256,14 +254,10 @@ print(f"my {a}nd line")
 ````
 `````
 
-You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as admonitions and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
-
 This would be rendered as:
 
-````{admonition} f-strings can make your life easier
-:class: toggle
-
-To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
+````{tip}
+To use formatted string literals ("f-strings"), begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
 Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
 
 ```{code-block} python
