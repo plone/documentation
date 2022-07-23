@@ -24,7 +24,7 @@ CMS
     Content Management System
 
 Cookiecutter
-    A command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
+    A command-line utility that creates projects from cookiecutters (project templates), for example, creating a Python package project from a Python package project template.
     [See Cookiecutter's documentation](https://cookiecutter.readthedocs.io/en/stable/).
 
 cookiecutter-zope-instance
@@ -52,7 +52,7 @@ mxdev
     This design allows developers to override their base package constraints with a customized or newer version.
 
 mxmake
-    mxmake helps create development environments for Python projects based on [make](https://www.gnu.org/software/make) and [mxdev](https://github.com/mxstack/mxdev).
+    [mxmake](https://github.com/mxstack/mxmake) helps create development environments for Python projects based on [make](https://www.gnu.org/software/make) and [mxdev](https://github.com/mxstack/mxdev).
 
 NFS
     [Network File System](https://en.wikipedia.org/wiki/Network_File_System).
@@ -347,7 +347,7 @@ Slate
     [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as `WYSIWYG` editors.
     It enables you to create powerful, intuitive editors similar to those you've probably used in Medium, Dropbox Paper, or Google Docs.
 
-volto-slate
+`volto-slate`
     `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced WYSIWYG functionality and behavior.
 
 elementEditor
