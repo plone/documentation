@@ -29,7 +29,8 @@ What do you want to do?
 ## Choose an installation method
 
 ```{todo}
-Explanation when to choose which installation method: container vs installation from its packages. Combination for backend and frontend?
+Add an explanation for choosing an installation method: container versus installation from packages.
+Is there a combination for backend and frontend using a cookiecutter?
 ```
 
 Developers may choose to install Plone from either [the official container images](containers/index) or [packages](installation-from-packages).
