@@ -71,7 +71,9 @@ pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 
 REST API
-    TODO REST API in general. TODO REST API of Plone.
+    ```{todo}
+    REST API in general. REST API of Plone.
+    ```
 
 S3
     [Amazon Web Services S3](https://aws.amazon.com/s3/).
