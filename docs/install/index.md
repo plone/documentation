@@ -51,7 +51,9 @@ Developers may choose to install Plone from either [the official container image
 The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
 They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
 Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
+
 The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
+
 This option is the quickest method to install and develop for Plone 6 and its packages.
 
 :::{card}
@@ -63,11 +65,17 @@ This option is the quickest method to install and develop for Plone 6 and its pa
 
 ### Packages
 
-There may be some cases where using a Plone 6 image is not practical or desired.
-You might want to use an SQL database that is not PostgreSQL, or you might use a deployment workflow that has specific requirements.
+There may be some cases where using a Plone 6 image and containers is not practical or desired.
+
+-   You use an SQL database that is not PostgreSQL.
+-   You develop custom applications, themes, and add-ons for Plone.
+-   You use a deployment workflow that has specific requirements.
+
 For these situations, Plone 6 may be installed from its packages.
-This method takes longer.
+
 It might be a challenge if you bump up against system requirements, or need to resolve conflicts between required packages.
+
+This method takes longer than using containers.
 
 :::{card}
 :link: installation-from-packages
