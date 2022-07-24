@@ -33,10 +33,10 @@ Although there are many container engine tools for developing, managing, and run
 
 (install-containers-index-system-requirements-label)=
 
-### System Requirements
+### System requirements
 
 ```{todo}
-Add System Requirements
+Add system requirements
 ```
 
 

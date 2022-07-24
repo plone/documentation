@@ -31,7 +31,7 @@ workflows
 search
 indexing
 zodb
-../plone.api/index.rst
+../plone.api/index
 plone-restapi
 sending-email
 upgrading/index
