@@ -296,7 +296,7 @@ The default configuration covers `image size optimization` and will provide the 
         "title": "Small",
         "sourceset": [
             "scale": "preview",
-            "additionalScales": ["preview", "large", "larger"],
+            "additionalScales": ["large", "larger"],
         ],
     },
 }
