@@ -183,9 +183,9 @@ graphviz_output_format = "svg"
 
 # -- OpenGraph configuration ----------------------------------
 
-ogp_site_url = "https://docs.plone.org/"
+ogp_site_url = "https://6.dev-docs.plone.org/"
 ogp_description_length = 200
-ogp_image = "https://docs.plone.org/_static/Plone_logo_square.png"
+ogp_image = "https://6.dev-docs.plone.org/_static/Plone_logo_square.png"
 ogp_site_name = "Plone Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
@@ -219,8 +219,7 @@ todo_include_todos = True
 html_use_opensearch = "https://docs.plone.org"
 
 html_theme_options = {
-    # TODO: Either get a separate GA ID or enable this one once it is in production.
-    # "google_analytics_id": "UA-1907133-6",
+    "google_analytics_id": "G-P8NCTB796E",
     "path_to_docs": "docs",
     "repository_url": "https://github.com/plone/documentation",
     "repository_branch": "main",

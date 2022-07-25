@@ -215,7 +215,6 @@ This is MyST syntax for term ``{term}`React` ``
 This is MyST syntax for term ``{term}`React` ``
 
 
-
 ##### Glossary terms
 
 Add a term to the {ref}`glossary-label`, located at {file}`/glossary.md`.
@@ -234,6 +233,48 @@ Using {term}`React` makes frontends fun again!
 
 Using {term}`React` makes frontends fun again!
 
+
+#### Toggle paragraph (Exercise solution / FAQ)
+
+Text snippets can be hidden with the option to show. Wrap it in an `admonition` and add the `class` `toggle`.
+
+`````
+````{admonition} f-strings can make your life easier
+:class: toggle
+
+To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
+Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
+
+```{code-block} python
+:linenos:
+:emphasize-lines: 1, 3
+
+a = 2
+print("my 1st line")
+print(f"my {a}nd line")
+```
+````
+`````
+
+You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as admonitions and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
+
+This would be rendered as:
+
+````{admonition} f-strings can make your life easier
+:class: toggle
+
+To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
+Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
+
+```{code-block} python
+:linenos:
+:emphasize-lines: 1, 3
+
+a = 2
+print("my 1st line")
+print(f"my {a}nd line")
+```
+````
 
 
 ## Abridged Plone Documentation Styleguide

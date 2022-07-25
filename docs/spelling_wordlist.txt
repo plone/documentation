@@ -13,6 +13,8 @@ ary
 Aspeli
 ATContentTypes
 autoform
+backend
+Backend
 bakula
 barceloneta
 Barceloneta
@@ -135,7 +137,7 @@ grep
 Groundwire
 gruntfile
 Gunicorn
-haproxy
+HAProxy
 Herstory
 hg
 homebrew
@@ -271,6 +273,7 @@ Portlet
 portlets
 Portlets
 POSIX
+PostgreSQL
 postrelease
 pre
 precompiler
@@ -290,6 +293,7 @@ Rees
 refactor
 Reinout
 release
+Relstorage
 renderers
 repo
 requirejs
@@ -382,6 +386,7 @@ urls
 usenames
 username
 Username
+utf
 uuid
 uWSGI
 validator
@@ -428,6 +433,8 @@ youtube
 zc
 ZCatalog
 zcml
+zeo
+ZEO
 zeoclients
 zeoserver
 zexp
