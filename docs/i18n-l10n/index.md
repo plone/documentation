@@ -146,5 +146,6 @@ translating-text-strings
 language-negotiation
 translating-content
 contributing-translations
+resync-translations
 ```
 
