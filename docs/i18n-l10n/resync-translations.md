@@ -8,9 +8,9 @@ html_meta:
 
 (resync-translations-label)=
 
-## Resync translations
+## Resync translations in Plone back-end
 
-Plone po files need to be updated each time a new string is added into Plone interface, or each time one of those strings is updated.
+Plone po files need to be updated each time a new string is added into Plone interface, or each time one of those strings is updated. Those translations are not only used in Plone Classic, but many of them are also exposed through the REST API to Volto.
 
 Usually Translations team handles the update of those po files so you don't need to worry about it. Here we will explain the procedure to update such files.
 
@@ -84,3 +84,21 @@ fullrelease
 6. Check that the release is published on pypi: https://pypi.org/project/plone.app.locales/
 
 7. Inform the release manager about the new version
+
+## Resync of translations in Volto
+
+In Volto, the GitHub test setup warns a developer when her new bits require regenerating the translation file. This is done running a yarn script as follows:
+
+```bash
+yarn i18n
+```
+
+This will update the po files and will leave them ready to be translated by translators.
+
+## Create a new release of Volto with the new translations
+
+The Volto release process requires running the same yarn script as in the previous step to convert the translations in po files to the JSON files that Volto uses to render the user interface.
+
+```bash
+yarn i18n
+```
