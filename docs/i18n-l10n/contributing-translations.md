@@ -1,7 +1,7 @@
 ---
 html_meta:
-  "description": "How to contribute to the Plone translations."
-  "property=og:description": "How to contribute to the Plone translations."
+  "description": "How to contribute to Plone core translations."
+  "property=og:description": "How to contribute to Plone core translations."
   "property=og:title": "Contributing Plone Core Translations"
   "keywords": "Plone, Internationalization, i18n, language, translation, localization"
 ---
