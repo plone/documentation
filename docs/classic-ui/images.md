@@ -257,7 +257,7 @@ To access image scales, which are normally not accessible to the current user, o
 (classic-ui-images-responsive-image-support)=
 ## Responsive image support
 
-Plone supports the generation of picture tags with `srcset`'s for image optimization.
+Plone supports the generation of picture tags with `srcset`s for image optimization.
 Additionally you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
 
 The configuration allows you to define different picture variants, such as `Large`, `Medium`, or `Small`.
