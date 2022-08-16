@@ -384,7 +384,7 @@ This is useful when you want to define a picture variant to be used in templates
 (classic-ui-images-responsive-image-support-art-direction)=
 ### Art direction
 
-With `image size optimization` the browser is able to choose the optimal image for each situation.
+With image size optimization, the browser is able to choose the optimal image for each display size.
 But we have no control over which scale the browser will actually use.
 For example to force the Browser to use a zoomed version of an image for smaller screens we can use media queries.
 The technique is called [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction).
