@@ -447,6 +447,6 @@ This will result in a `srcset` as in the following example for a medium image:
 
 ```{note}
 Please note that this example has the `resolve_uid_and_caption` filter disabled to see the scale names better.
-The real src-urls look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`
+The real `src` URLs look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`.
 ```
 
