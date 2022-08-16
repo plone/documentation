@@ -424,7 +424,7 @@ Let's have a look at a more advanced configuration:
 
 ```
 
-which will result in a srcset like this, for a medium image:
+This will result in a `srcset` as in the following example for a medium image:
 
 ```html
 <picture>
