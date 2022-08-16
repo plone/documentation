@@ -269,7 +269,7 @@ Users can choose from them in editors like TinyMCE and Developers can use them i
 
 In `/@@imaging-controlpanel` Plone allows you to define picture variants with a list of available image scales.
 These are used for HTML {term}`srcset` attributes.
-A `srcset` attribute can help the browser to serve the best fitting image size for the current users situation.
+A `srcset` attribute can help the browser to serve the best fitting image size for the current user's display.
 
 
 ### default configuration
