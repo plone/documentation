@@ -5,6 +5,7 @@ Changelog
 Unreleased
 ==========
 
+- Fix browser view example to make view names consistent [ebrehault]
 - Fix link to ZTK ZCML style guide.
   [thet]
 
