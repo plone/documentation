@@ -342,7 +342,7 @@ Example: this ZCML configuration:
 
     <browser:page
         for="*"
-        name="test"
+        name="myview"
         permission="zope2.Public"
         class=".views.MyView"
         />
@@ -360,7 +360,7 @@ is equal to this ZCML configuration::
 
     <browser:page
         for="*"
-        name="test"
+        name="myview"
         permission="zope2.Public"
         class=".views.MyView"
         template="my-template.pt"
