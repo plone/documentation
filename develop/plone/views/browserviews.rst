@@ -216,7 +216,7 @@ The following example registers a new view (see below for comments):
 
         <browser:page
               for="*"
-              name="test"
+              name="myview"
               permission="zope2.Public"
               class=".views.MyView"
               />
@@ -231,9 +231,9 @@ The following example registers a new view (see below for comments):
 
 ``name``
     is the name by which the view is exposed to traversal and
-    ``getMultiAdapter()`` look-ups. If your view's name is ``test``, then
+    ``getMultiAdapter()`` look-ups. If your view's name is ``myview``, then
     you can render it in the browser by calling
-    http://yourhost/site/page/@@test
+    http://yourhost/site/page/@@myview
 
 ``permission``
     is the permission needed to access the view.
