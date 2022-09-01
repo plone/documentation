@@ -33,7 +33,7 @@ This means that the language change links on the top of the page will only have 
 
 Going to the @@language-controlpanel the site administrator has multiple options with which can influence the working of the site. 
 
-For instance, by default the "Always show language selector" option is not enabled, but it is required if the user wants to offer the language change in the interface. Goingo to the "Negotiation scheme" in the same configuration page, the Site Administrator can influence how Plone will decide which language to present to each user. 
+For instance, by default the "Always show language selector" option is not enabled, but it is required if the user wants to offer the language change in the interface. Going to the "Negotiation scheme" in the same configuration page, the Site Administrator can influence how Plone will decide which language to present to each user. 
 
 For instance, if the site is being presented in a subfolder with the language code (think of www.domain.com/en) or in subdomain (think of en.domain.com), Plone can be configured to take that subfolder or domain language code and select that language to present to the user.
 
@@ -51,7 +51,7 @@ When plone.app.multilingual is enabled, Plone creates the so called `Language Ro
 
 For example, if 'en' and 'es' are enabled, Plone will create www.domain.com/en and www.domain.com/es, and Plone will assume that all the content below 'en' is in English and all content below 'es' is in Spanish, so it will rely on that assumption to present the user interface in those languages when the user is browsing those parts of the site.
 
-As we will see in the (translating-content-label)= section, Plone will set a special view for the Plone root object called `@@language-switcher` whose implementation lies on `plone.app.multilngual.browser.switcher.LanguageSwitcher`. This language switcher will only rely on the user preferred language to decide where to send the user when she visits the root of the site.
+As we will see in the (translating-content-label)= section, Plone will set a special view for the Plone root object called `@@language-switcher` whose implementation lies on `plone.app.multilingual.browser.switcher.LanguageSwitcher`. This language switcher will only rely on the user preferred language to decide where to send the user when she visits the root of the site.
 
 If an integrator wants to modify this behavior to always send a user to a given language, or wants to negotiate the language selection in some other way (using the domain, a cookie, or some other techniques), she will have to override that `@@language-swicher` view, or will have to write her own view and set it as the `default view method` in the `Plone Site` object configuration in `www.domain.com/portal_types/Plone Site/manage_workspace`
 
