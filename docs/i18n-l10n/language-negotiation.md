@@ -73,6 +73,7 @@ To obey the cookie the setting, {guilabel}`Use cookie for manual override` shoul
 
 Building websites with user interfaces in multiple languages is complicated due to the different expectations of the users and the difficulty of the configuration.
 
+As we will see in the (translating-content-label)= section, Plone will set a special view for the Plone root object called `@@language-switcher` whose implementation lies on `plone.app.multilingual.browser.switcher.LanguageSwitcher`. This language switcher will only rely on the user preferred language to decide where to send the user when she visits the root of the site.
 
 (language-negotiation-plone.app.multilingual-is-enabled-label)=
 
