@@ -144,7 +144,7 @@ This makes it very flexible for limiting relateable items by type, path, date, a
 
 Setting the mode of the widget to `search` makes it easier to select from the content that result form your catalog-query instead of having to navigate through your content-tree.
 
-The problem is that in the default mode of the Related Items wisget items that are in container s are not shown unless you add thes types of contaibers to the query.
+The problem is that in the default mode of the Related Items widget items that are in containers are not shown unless you add these types of containers to the query.
 
 Therefore is is recommended to use CatalogSource only in in `search` mode.
 
@@ -257,7 +257,7 @@ class IHaveMinions(model.Schema):
 
 ## RelationFields through the web or in xml
 
-It is surprisingly easy to create RelationFields through the web
+It is surprisingly easy to create RelationFields through the web.
 
 - Using the Dexterity schema editor, add a new field and select _Relation List_ or _Relation Choice_, depending on whether you want to relate to multiple items or not.
 - When configuring the field you can even select the content type the relation should be limited to.
@@ -301,7 +301,7 @@ RelationList:
 Support for `StaticCatalogVocabulary` in Volto is currently still missing.
 ```
 
-Often the standard widget for relations is not what you want since it can be hard to navigate to the content you want to relate to.
+Often the standard widget for relations is not what you want since it can be hard to navigate to the content you want to relate to and the search-mode of the default widget is not suitable for all use-cases.
 
 If you want to use checkboxes, radiobuttons or a selection-dropdown you need to use `StaticCatalogVocabulary` instead of `CatalogSource` to specify your options.
 
@@ -317,10 +317,7 @@ from z3c.relationfield.schema import RelationChoice
 relationchoice_field_select = RelationChoice(
     title="RelationChoice with Select Widget",
     vocabulary=StaticCatalogVocabulary(
-        {
-            "portal_type": ["Document", "Event"],
-            "review_state": "published",
-        }
+        {"portal_type": ["Document", "Event"]}
     ),
     required=False,
 )
@@ -351,7 +348,8 @@ relationlist_field_ajax_select = RelationList(
             {
                 "portal_type": ["Document", "Event"],
                 "review_state": "published",
-            }
+            },
+            title_template="{brain.Type}: {brain.Title} at {path}",  # Custom item rendering!
         )
     ),
     required=False,
@@ -359,15 +357,9 @@ relationlist_field_ajax_select = RelationList(
 directives.widget(
     "relationlist_field_ajax_select",
     AjaxSelectFieldWidget,
-    vocabulary=StaticCatalogVocabulary(
-        {
-            "portal_type": ["Document", "Event", "Folder"],
-        },
-        title_template="{brain.Type}: {brain.Title} at {path}",
-    ),  # Custom item rendering
-    pattern_options={  # Options for Select2
-        "minimumInputLength": 2,  # - Don't query until at least two characters have been typed
-        "ajax": {"quietMillis": 500},  # - Wait 500ms after typing to make query
+    pattern_options={  # Some options for Select2
+        "minimumInputLength": 2,  # Don't query until at least two characters have been typed
+        "ajax": {"quietMillis": 500},  # Wait 500ms after typing to make query
     },
 )
 ```
