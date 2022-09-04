@@ -11,6 +11,9 @@ myst:
 
 # Content Types
 
+```{seealso}
+See the chapter {ref}`training:dexterity1-label` from the Mastering Plone 6 Training
+```
 
 ```{todo}
 Describe how to add a content type (Python/XML) including FTI settings.

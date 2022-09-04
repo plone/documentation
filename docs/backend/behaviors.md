@@ -11,3 +11,7 @@ myst:
 
 # Behaviors
 
+
+```{seealso}
+See the chapter {ref}`training:behaviors1-label` from the Mastering Plone 6 Training
+```

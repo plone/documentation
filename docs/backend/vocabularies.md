@@ -11,3 +11,6 @@ myst:
 
 # Vocabularies
 
+```{seealso}
+See the chapter {ref}`training:vocabularies-label` from the Mastering Plone 6 Training
+```

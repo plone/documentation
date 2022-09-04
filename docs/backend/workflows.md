@@ -11,3 +11,6 @@ myst:
 
 # Workflows
 
+```{seealso}
+See the training {ref}`training:workflow-label`
+```

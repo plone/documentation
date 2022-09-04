@@ -11,7 +11,9 @@ myst:
 
 # Fields
 
-
+```{seealso}
+See the chapter {ref}`training:dexterity-reference-label` from the Mastering Plone 6 Training
+```
 
 (backend-fields-schema-label)=
 
