@@ -269,3 +269,10 @@ latex_documents = [
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 latex_logo = "_static/logo_2x.png"
+
+
+# suggest edit link
+# remark: {{ file_name }} is mandatory in "edit_page_url_template"
+html_context = {
+    "edit_page_url_template": "https://6.dev-docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
+}
