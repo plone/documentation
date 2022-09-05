@@ -2,7 +2,7 @@
 html_meta:
   "description": "Internationalization (i18n) and localization (l10n) in Plone 6"
   "property=og:description": "Internationalization (i18n) and localization (l10n) in Plone 6"
-  "property=og:title": "Internationalization (i18n)"
+  "property=og:title": "Internationalization (i18n) and localization (l10n) in Plone 6"
   "keywords": "Plone, Internationalization, i18n, language, translation, localization"
 ---
 
