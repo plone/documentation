@@ -84,7 +84,7 @@ Tap, click, or hover over the GitHub Octocat icon for options.
 :alt: GitHub navigation menu 
 ```
 
-You can use this menu to quickly navigate to the `documentation` source repository, open an issue, or suggest an edit to the current document.
+You can use this menu to quickly navigate to the `documentation` source repository or open an issue.
 Note that this navigation convenience is provided only for the `documentation` repository.
 
 
