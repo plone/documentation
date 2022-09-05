@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
-  "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
-  "property=og:title": "nginx, Frontend, Backend container example"
-  "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend"
+myst:
+  html_meta:
+    "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
+    "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
+    "property=og:title": "nginx, Frontend, Backend container example"
+    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend"
 ---
 
 # nginx, Frontend, Backend container example

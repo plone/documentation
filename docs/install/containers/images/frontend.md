@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Using plone/plone-frontend image"
-  "property=og:description": "Using plone/plone-frontend image"
-  "property=og:title": "Plone Frontend image"
-  "keywords": "Plone 6, install, installation, docker, containers, plone/plone-frontend"
+myst:
+  html_meta:
+    "description": "Using plone/plone-frontend image"
+    "property=og:description": "Using plone/plone-frontend image"
+    "property=og:title": "Plone Frontend image"
+    "keywords": "Plone 6, install, installation, docker, containers, plone/plone-frontend"
 ---
 
 # `plone/plone-frontend`

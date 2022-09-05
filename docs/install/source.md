@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Install Plone 6 from its packages – the installer"
-  "property=og:description": "Install Plone 6 from its packages – the installer"
-  "property=og:title": "Install Plone from its Packages"
-  "keywords": "Plone, Plone 6, install, pip, packages, source, buildout"
+myst:
+  html_meta:
+    "description": "Install Plone 6 from its packages – the installer"
+    "property=og:description": "Install Plone 6 from its packages – the installer"
+    "property=og:title": "Install Plone from its Packages"
+    "keywords": "Plone, Plone 6, install, pip, packages, source, buildout"
 ---
 
 

@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Terms and definitions used throughout the Plone Documentation."
-  "property=og:description": "Terms and definitions used throughout the Plone Documentation."
-  "property=og:title": "Glossary"
-  "keywords": "Plone, documentation, glossary, term, definition"
+myst:
+  html_meta:
+    "description": "Terms and definitions used throughout the Plone Documentation."
+    "property=og:description": "Terms and definitions used throughout the Plone Documentation."
+    "property=og:title": "Glossary"
+    "keywords": "Plone, documentation, glossary, term, definition"
 ---
 
 (glossary-label)=

@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "This website is the HTML documentation of Plone, an open source, enterprise-level content management system."
-  "property=og:description": "This website is the HTML documentation of Plone, an open source, enterprise-level content management system."
-  "property=og:title": "Plone 6 Documentation"
-  "keywords": "Plone 6, content management system, CMS, open source, Documentation, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
+myst:
+  html_meta:
+    "description": "This website is the HTML documentation of Plone, an open source, enterprise-level content management system."
+    "property=og:description": "This website is the HTML documentation of Plone, an open source, enterprise-level content management system."
+    "property=og:title": "Plone 6 Documentation"
+    "keywords": "Plone 6, content management system, CMS, open source, Documentation, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
 ---
 
 (index-label)=

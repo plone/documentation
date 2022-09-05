@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Icon registration and resolving in Plone Classic UI"
-  "property=og:description": "Icon registration and resolving in Plone Classic UI"
-  "property=og:title": "Icon registration and resolving"
-  "keywords": "Plone, Classic UI, classic-ui, icons, svg"
+myst:
+  html_meta:
+    "description": "Icon registration and resolving in Plone Classic UI"
+    "property=og:description": "Icon registration and resolving in Plone Classic UI"
+    "property=og:title": "Icon registration and resolving"
+    "keywords": "Plone, Classic UI, classic-ui, icons, svg"
 ---
 
 (classic-ui-icons-label)=

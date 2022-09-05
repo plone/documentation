@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
-  "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
-  "property=og:title": "nginx, Frontend, Backend, PostgreSQL container example"
-  "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, PostgreSQL, "
+myst:
+  html_meta:
+    "description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
+    "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
+    "property=og:title": "nginx, Frontend, Backend, PostgreSQL container example"
+    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, PostgreSQL, "
 ---
 
 # nginx, Frontend, Backend, PostgreSQL container example
