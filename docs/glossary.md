@@ -370,5 +370,7 @@ Zope
 ZPT
     Zope Page Template is a template language for Python.
 
+plonecli
+    The plonecli helps developers to create Plone add-on's in a modular and reproducable way.
 
 ```
