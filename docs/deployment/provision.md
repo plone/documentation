@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Provisioning of Plone 6"
-  "property=og:description": "Provisioning of Plone 6"
-  "property=og:title": "Provisioning of Plone 6"
-  "keywords": "Plone, Provision"
+myst:
+  html_meta:
+    "description": "Provisioning of Plone 6"
+    "property=og:description": "Provisioning of Plone 6"
+    "property=og:title": "Provisioning of Plone 6"
+    "keywords": "Plone, Provision"
 ---
 
 (deployment-provisioning-label)=

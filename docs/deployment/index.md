@@ -1,14 +1,15 @@
 ---
-html_meta:
-  "description": "Deployment of Plone"
-  "property=og:description": "Deployment of Plone"
-  "property=og:title": "Deployment of Plone"
-  "keywords": "Plone, deployment, automation"
+myst:
+  html_meta:
+    "description": "Deployment of Plone 6"
+    "property=og:description": "Deployment of Plone 6"
+    "property=og:title": "Deployment of Plone 6"
+    "keywords": "Plone, deployment, automation"
 ---
 
 (deployment-label)=
 
-# Deployment of Plone
+# Deployment
 
 ```{todo}
 Intro to chapter "deployment"
@@ -20,6 +21,5 @@ Intro to chapter "deployment"
 
 provision
 scaling
-upgrade
 backup
 ```

@@ -1,14 +1,15 @@
 ---
-html_meta:
-  "description": "Install Plone 6"
-  "property=og:description": "Install Plone 6"
-  "property=og:title": "Install Plone 6"
-  "keywords": "Plone 6, install, overview"
+myst:
+  html_meta:
+    "description": "Install Plone 6"
+    "property=og:description": "Install Plone 6"
+    "property=og:title": "Install Plone 6"
+    "keywords": "Plone 6, install, overview"
 ---
 
 (install-index-label)=
 
-# Install Plone 6
+# Install
 
 
 (install-index-getting-started-label)=
@@ -21,12 +22,14 @@ What do you want to do?
     -   [Plone 6 with Volto frontend](https://6.demo.plone.org/)
     -   [Plone 5.2.x with Barceloneta frontend](https://demo.plone.org/)
 -   [Run Plone in containers](containers/index) (why use containers here.)
--   [Install Plone from source](source) (Why? To develop Plone add-ons or contribute to Plone packages, and more details.)
+-   {doc}`source` (contribute to Plone packages, develop add-ons, or install Plone with full control)
 
 
 (install-index-choose-installation-method-label)=
 
 ## Choose an installation method
+
+% TODO Explanation when to choose which installation method: container vs installation from its packages. Combination for backend and frontend?
 
 Developers may choose to install Plone from either [the official container images](containers/index) or [source](source).
 
@@ -59,7 +62,7 @@ Perhaps merge the subsequent section into this section?
 System requirements depend upon your choice of installation method:
 
 -   [Use container images](containers/index)
--   [Install from source](source)
+-   {doc}`source`
 
 
 ```{toctree}
@@ -68,4 +71,5 @@ System requirements depend upon your choice of installation method:
 
 containers/index
 source
+source-step-by-step
 ```

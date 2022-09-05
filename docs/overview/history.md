@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "History of Plone"
-  "property=og:description": "History of Plone"
-  "property=og:title": "History of Plone"
-  "keywords": "Plone, History"
+myst:
+  html_meta:
+    "description": "History of Plone"
+    "property=og:description": "History of Plone"
+    "property=og:title": "History of Plone"
+    "keywords": "Plone, History"
 ---
 
 (overview-history-1-label)=
