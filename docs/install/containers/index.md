@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Using Plone 6 with containers"
-  "property=og:description": "Using Plone 6 with containers"
-  "property=og:title": "Containers"
-  "keywords": "Plone 6, install, installation, Docker, containers"
+myst:
+  html_meta:
+    "description": "Using Plone 6 with containers"
+    "property=og:description": "Using Plone 6 with containers"
+    "property=og:title": "Containers"
+    "keywords": "Plone 6, install, installation, Docker, containers"
 ---
 
 (install-containers-label)=

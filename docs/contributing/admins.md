@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
-  "property=og:description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
-  "property=og:title": "Administrators Guide"
-  "keywords": "Plone, Documentation, automated deployments, hosting, automated testing, importing external packages"
+myst:
+  html_meta:
+    "description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
+    "property=og:description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
+    "property=og:title": "Administrators Guide"
+    "keywords": "Plone, Documentation, automated deployments, hosting, automated testing, importing external packages"
 ---
 
 (administrators-guide-label)=
