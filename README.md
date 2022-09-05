@@ -31,12 +31,12 @@ The community is writing guides, installation instructions, and everything you n
 - [Issue Tracker](https://github.com/plone/documentation/issues)
 - [Source Code](https://github.com/plone/documentation/tree/6-dev)
 
-```{admonition} Contributing to Volto documentation, plone.api and plone.restapi documentation
+### Contributing to Volto documentation, plone.api and plone.restapi documentation
+
 The main part of the Plone documentation resides in this repository.
 So you are contributing here. But we also include documentation of some Plone core packages: Volto, plone.api and plone.restapi.
 If you want to contribute to them, you are welcome to do so, then please open pull requests in their repository.
 Here is the explanation on how to contribute to the documentation of the mentioned packages: [Editing external package documentation](https://6.dev-docs.plone.org/contributing/index.html#contributing-editing-external-package-documentation-label)
-```
 
 ## Support
 
