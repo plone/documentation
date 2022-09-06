@@ -11,8 +11,8 @@ html_meta:
 # Translating text strings
 
 ```{todo}
-This entire chapter contains cruft dating back to Plone 3 in some parts.
-It is perfectly fine to purge obsolete information.
+This chapter may contains outdated or incorrect information.
+Please submit a pull request to make a correction.
 ```
 
 ```{note}
@@ -21,44 +21,47 @@ This chapter concerns only *code-level* translations of text strings.
 For *user-generated content* translations, see {doc}`translating-content`.
 ```
 
-# Translating text strings
-
-This chapter describes how to translate Python and TAL template source code text strings using
-the {term}`gettext` framework and other Plone/Zope {term}`i18n` facilities.
+This chapter describes how to translate Python and TAL template source code text strings using the {term}`gettext` framework and other Plone/Zope {term}`i18n` facilities.
 
 Plone internally uses the UNIX standard {term}`gettext` tool to perform {term}`i18n`.
+
+
+(translating-text-strings-zope.i18n-label)=
 
 ## `zope.i18n`
 
 The package `zope.i18n` implements several APIs related to internationalization and localization.
 
 -   Follows {term}`gettext` best practices.
--   Translations are stored in the `locales` folder of your application.
-    Example: `locales/fi/LC_MESSAGES/your.app.po`
--   Uses the package [`zope.i18nmessageid`](https://pypi.org/project/zope.i18nmessageid/)
+-   Translations are stored in the `locales` folder of your application, such as `locales/fi/LC_MESSAGES/your.app.po`.
+-   Uses the package [`zope.i18nmessageid`](https://pypi.org/project/zope.i18nmessageid/).
     This provides a string-like class which allows storing the translation domain with translatable text strings.
--   `.po` files must usually be manually converted to `.mo` binary files every time the translations are updated.
+-   {term}`PO file`s must usually be manually converted to binary {term}`MO file`s every time the translations are updated.
     See {term}`i18ndude`.
-    It is also possible to set an environment variable to trigger recompilation of `.mo` files.
-    See {ref}`i18n-i18ndude-label` below for details.
+    It is also possible to set an environment variable to trigger recompilation of MO files.
+    See {ref}`translating-text-strings-i18ndude-label` below for details.
 
 ```{seealso}
 [`zope.i18n` on PyPI](https://pypi.org/project/zope.i18n/)
 ```
 
 Plone searches only the filename and path for the translation files.
-Information in the `.po` file headers is ignored.
+Information in the PO file headers is ignored.
 
+
+(translating-text-strings-generating-a-.pot-template-file-for-your-packages-label)=
 
 ### Generating a `.pot` template file for your packages
 
 [`i18ndude`](https://pypi.org/project/i18ndude/) should be used to create a script which searches particular packages for translation strings.
 
-If you have created you addon using [bobtemplates.plone](https://pypi.org/project/bobtemplates.plone/) you will already have a `update.sh` script inside your package and an `update_locale` script in your buildout to extract the messages from your code.
+If you have created your add-on using [bobtemplates.plone](https://pypi.org/project/bobtemplates.plone/), then you will already have a script `update.sh` inside your package and a script `update_locale` in your buildout to extract the messages from your code.
 
-After running that script a new `domain.pot` file will be created in your `locales` directory where all the messages will be saved. 
+After running that script, a new `domain.pot` file will be created in your `locales` directory where all the messages will be saved. 
 
-To have those messages translated into some languages, you will need to create a language directory inside the `locales` directory, and a `LC_MESSAGES` directory inside it. This follows the `gettext` standard. After doing that, the directory structure will be as follows:
+To have those messages translated into some languages, you will need to create a language directory inside the `locales` directory, and a `LC_MESSAGES` directory inside it.
+This follows the gettext standard.
+After doing that, the directory structure will be as follows.
 
 ```console
 ./locales/en/LC_MESSAGES/domain.po
@@ -68,9 +71,9 @@ To have those messages translated into some languages, you will need to create a
 
 You will need to provide your translations in those `domain.po` files. 
 
-If you add new strings in your package, you will only need to run the `update.sh` script to update all language files with the new strings or remove the old ones.
+If you add, update, or remove strings in your package, you will need to run only the `update.sh` script to update all language files.
 
-You also need to have the following ZCML entry to signal Plone that the files stored in the `locales` folder follow the gettext standard and it needs to use them when requesting translated strings:
+You also need to have the following ZCML entry to signal Plone that the files stored in the `locales` folder follow the gettext standard and that it needs to use them when requesting translated strings.
 
 ```xml
 <configure xmlns:i18n="http://namespaces.zope.org/i18n">
@@ -79,9 +82,15 @@ You also need to have the following ZCML entry to signal Plone that the files st
 ```
 
 
+(translating-text-strings-marking-translatable-strings-in-python-label)=
+
 ### Marking translatable strings in Python
 
-You will need to declare you own `MessageFactory` which is a callable and marks strings with a translation domain. `MessageFactory` is usually declared in the main `__init__.py` file of your package and imported from wherever is needed in your package. `_` is the standard name that is used in `gettext` to identify the translation function, and the previous scripts will use that assumption to identify translatable strings.
+You will need to declare you own `MessageFactory`.
+This is a callable that marks strings with a translation domain.
+`MessageFactory` is usually declared in the main `__init__.py` file of your package.
+It is imported from wherever it is needed in your package.
+`_` is the standard name that is used in gettext to identify the translation function, and the previous scripts will use that assumption to identify translatable strings.
 
 ```python
 from zope.i18nmessageid import MessageFactory
@@ -90,8 +99,7 @@ from zope.i18nmessageid import MessageFactory
 _ = MessageFactory('youpackage.name')
 ```
 
-
-After the setup above, you can use the message factory to mark strings with translation domains.
+Now you can use the message factory to mark strings with translation domains.
 
 ```python
 from your.app.package import _
@@ -105,7 +113,7 @@ The object will still look like a string:
 u'My text'
 ```
 
-But in reality it is a `zope.i18nmessageid.message.Message` object:
+But in reality, it is a `zope.i18nmessageid.message.Message` object:
 
 ```pycon
 >>> my_translatable_text.__class__
@@ -115,7 +123,7 @@ But in reality it is a `zope.i18nmessageid.message.Message` object:
 'your.app.package'
 ```
 
-To see the translation in python code you will need to manually call the `translate` function in `zope.i18n`:
+To see the translation in Python code you will need to manually call the `translate` function in `zope.i18n`:
 
 ```pycon
 >>> from zope.i18n import translate
@@ -124,9 +132,11 @@ u"The text of the translation." # This is the corresponding msgstr from the .po 
 ```
 
 
+(translating-text-strings-marking-translatable-strings-in-tal-page-templates-label)=
+
 ### Marking translatable strings in TAL page templates
 
-Declare the XML namespace `i18n` and translation domain at the beginning of your template, at the first element.
+Declare the XML namespace `i18n` and translation domain at the beginning of your template, in the first element.
 
 ```html
 <div id="mobile-header" xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="plomobile">
@@ -144,8 +154,10 @@ It will use the text content of the element as `msgid`.
 Use attributes `i18n:translate`, `i18n:attributes`, and so on.
 For examples, look at any core Plone `.pt` files.
 
-This `i18n:translate` will hook into the translation machinery, and will look up the corresponding translated string to the one stated there, looking in the relevant `domain.po` file corresponding to the `i18n:domain` stated in the file and the language negotiated by Plone.
+The `i18n:translate` attribute will hook into the translation machinery, and will look up the corresponding translated string to the one stated there, while looking in the relevant `domain.po` file corresponding to the `i18n:domain` stated in the file and the language negotiated by Plone.
 
+
+(translating-text-strings-automatically-translated-message-ids-label)=
 
 ### Automatically translated message IDs
 
@@ -162,9 +174,12 @@ Since `my_translateable_text` is a `zope.i18nmessageid.message.Message` instance
 ```
 
 
+(translating-text-strings-manually-translated-message-ids-label)=
+
 ### Manually translated message IDs
 
-If you need to manipulate translated text outside page templates, you need to perform the final translation manually. For instance this is needed when you are building human readable strings in python code, for instance when creating some messages that are sent by e-mail to the end user.
+If you need to manipulate translated text outside page templates, then you need to perform the final translation manually.
+This is needed when you are building human-readable strings in Python code, for example when creating some messages that are sent by email to the end user.
 
 Translation always needs context.
 That means under which site the translation happens.
@@ -184,6 +199,9 @@ translated = translate(msgid, context=getRequest())
 # translated is now u"Käännetty teksti" (in Finnish)
 ```
 
+
+(translating-text-strings-non-python-message-ids-label)=
+
 ### Non-Python message IDs
 
 There are other message ID markers in code outside the Python domain that have their own mechanisms:
@@ -192,6 +210,8 @@ There are other message ID markers in code outside the Python domain that have t
 -   GenericSetup XML
 -   TAL page templates
 
+
+(translating-text-strings-translation-string-substitution-label)=
 
 ## Translation string substitution
 
@@ -223,15 +243,15 @@ class SomeView(BrowserView):
 ```
 
 
-(i18n-i18ndude-label)=
+(translating-text-strings-i18ndude-label)=
 
 ## `i18ndude`
 
-{term}`i18ndude` is a developer-oriented command-line utility to manage `.po` and `.mo` files.
+{term}`i18ndude` is a developer-oriented command-line utility to manage PO and MO files.
 
-Usually you build our own shell script wrapper around `i18ndude` to automate generation of `.mo` files of your package's `.po` files.
+Usually you build our own shell script wrapper around `i18ndude` to automate generation of MO files from your package's PO files.
 
-Plone will automatically compile all po files to mo on start up if an specific environment variable is enabled. 
+Plone will automatically compile all PO files to MO files on start up if a specific environment variable is enabled.
 
 In your `buildout.cfg` in the part using `plone.recipe.zope2instance`, you can set an environment variable for this.
 
@@ -241,10 +261,14 @@ environment-vars =
 ```
 
 Note that the value does not matter.
-The code in `zope.i18n` looks for the existence of the variable and does not care what is its value.
+The code in `zope.i18n` looks for the mere existence of the variable, and does not care what is its value.
 
-If you do not add that environment variable, you will need to provide the mo files in your package. To ease this and if you use [zest.releaser](https://pypi.org/project/zest.releaser/) to publish your packages, you can use [zest.pocompile](https://pypi.org/project/zest.pocompile/) a script that hooks into the release process and builds the mo files for you.
+If you do not add that environment variable, you will need to provide the MO files in your package.
+To make this easier, and if you use [zest.releaser](https://pypi.org/project/zest.releaser/) to publish your packages, you can use [zest.pocompile](https://pypi.org/project/zest.pocompile/).
+This script hooks into the release process and builds the MO files for you.
 
+
+(translating-text-strings-installing-i18ndude-label)=
 
 ### Installing i18ndude
 
@@ -278,9 +302,11 @@ server:mfabrik.plonezohointegration moo$ ../../bin/i18ndude
 ```
 
 
+(translating-text-strings-setting-up-folder-structure-for-finnish-and-english-label)=
+
 ### Setting up folder structure for Finnish and English
 
-Example:
+Start by creating folders to hold the translation files.
 
 ```console
 mkdir locales
@@ -291,6 +317,8 @@ mkdir locales/en/LC_MESSAGES
 ```
 
 
+(translating-text-strings-creating-.pot-base-file-label)=
+
 ### Creating `.pot` base file
 
 Example:
@@ -300,7 +328,9 @@ i18ndude rebuild-pot --pot locales/mydomain.pot --create your.app.package .
 ```
 
 
-### Manual `.po` entries
+(translating-text-strings-manual-.po-entries-label)=
+
+### Manual PO entries
 
 `i18ndude` scans source `.py` and `.pt` files for translatable text strings.
 On some occasions this is not enough, for example, when you dynamically generate message IDs in your code.
@@ -327,6 +357,8 @@ msgstr ""
 ```
 
 
+(translating-text-strings-dynamic-content-label)=
+
 ## Dynamic content
 
 If your HTML template has dynamic content similar to the following:
@@ -335,13 +367,13 @@ If your HTML template has dynamic content similar to the following:
 <h1 i18n:translate="search_form_heading">Search from <span tal:content="context/@@plone_portal_state/portal_title" /></h1>
 ```
 
-…then it will produce a `.po` entry like this:
+…then it will produce a PO entry like this:
 
 ```po
 msgstr "Hae sivustolta <span>${DYNAMIC_CONTENT}</span>"
 ```
 
-You need to give the name to the dynamic part so the po file can handle it like a variable:
+You need to give the name to the dynamic part so the PO file can handle it like a variable:
 
 ```html
 <h1 i18n:translate="search_form_heading">
@@ -365,9 +397,11 @@ https://web.archive.org/web/20131018150303/http://permalink.gmane.org/gmane.comp
 ```
 
 
+(translating-text-strings-overriding-translations-label)=
+
 ## Overriding translations
 
-If you need to change a translation from a `.po` file, you could create a new Python package and register your own `.po` files.
+If you need to change a translation from a PO file, you could create a new Python package and register your own PO files.
 
 To do this, create the package and add a `locales` directory in there, along the lines of what [plone.app.locales](https://pypi.org/project/plone.app.locales/) does.
 Then you can add your own translations in the language that you need.
