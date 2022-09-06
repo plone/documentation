@@ -396,6 +396,15 @@ gettext
     UNIX standard software translation tool.
     See https://www.gnu.org/software/gettext/.
 
+LRF
+Language Root Folder
+    A content-type that contains the translated content for a specified language.
+    For example, an LRF located at your site root for English would be `www.domain.com/en`, where `en` represents the LRF.
+
+LIF
+Language Independent Folder
+    A folder containing static assets, such as images and files, for a given language.
+
 PO file
 `.po`
     Portable Object (PO) file.
