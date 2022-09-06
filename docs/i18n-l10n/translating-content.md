@@ -116,7 +116,7 @@ The language control panel provides several ways to configure this widget:
         This option will send the user to the selected language, but it will present a "No translation for this content" page, allowing the user to go to some other language or keep browsing that site, while informing the user that there is no such content in that language.
 
         ```{todo}
-        This option appears to not work as documented in the [Plone 6 Classic UI demo](https://6-classic.demo.plone.org/@@language-controlpanel).
+        This option appears to not work as documented in the Plone 6 Classic UI demo's Language control panel.
         ```
 
 
