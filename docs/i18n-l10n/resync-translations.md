@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "How to create po files from source code."
-  "property=og:description": "How to create po files from source code."
-  "property=og:title": "Resync translations"
-  "keywords": "Plone, Internationalization, i18n, language, translate, content, localization"
+myst:
+  html_meta:
+    "description": "How to create po files from source code."
+    "property=og:description": "How to create po files from source code."
+    "property=og:title": "Resync translations"
+    "keywords": "Plone, Internationalization, i18n, language, translate, content, localization"
 ---
 
 (resync-translations-label)=
