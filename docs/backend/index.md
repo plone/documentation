@@ -33,7 +33,6 @@ search
 indexing
 zodb
 ../plone.api/index.rst
-plone-restapi
 sending-email
 upgrading/index
 ```
