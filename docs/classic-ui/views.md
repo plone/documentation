@@ -1,19 +1,17 @@
 ---
 myst:
   html_meta:
-    "description": "Rendering HTML pages in Plone using the Zope 3 view pattern"
-    "property=og:description": "Rendering HTML pages in Plone using the Zope 3 view pattern."
+    "description": "Rendering HTML pages in Plone using the Zope view pattern"
+    "property=og:description": "Rendering HTML pages in Plone using the Zope view pattern."
     "property=og:title": "Views"
-    "keywords": ""
+    "keywords": "views,browser view,templates"
 ---
 
 (classic-ui-views-label)=
 
 # Views
 
-Plone classic UI is using a *view* pattern to output dynamically generated HTML pages.
-
-*Views* are the basic elements of modern Python web frameworks. A view runs code to setup Python variables for a rendering template. Output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
+`Views` are the basic elements of modern Python web frameworks. A view runs code to setup Python variables for a rendering template.The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
 
 Views are usually a combination of:
 
@@ -23,7 +21,7 @@ Views are usually a combination of:
 Templates should kept simple and logic kept in a separate Python file. This enhances readability and makes components more reusable. You can override the Python logic or the template file, or both.
 
 When you are working with Plone, the most common view type is `BrowserView`
-from the [Products.Five](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt) package. Other view types are `DefaultView` from [plone.dexterity] and `CollectionView` from [plone.app.contenttypes] package.
+from the [Products.Five](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt) package. Other view types are `DefaultView` from [plone.dexterity](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/view.py) and `CollectionView` from [plone.app.contenttypes](https://github.com/plone/plone.app.contenttypes/blob/master/plone/app/contenttypes/browser/collection.py) package.
 
 Each `BrowserView` class is a Python callable.
 The `BrowserView.__call__()` method acts as an entry point to executing
@@ -36,7 +34,7 @@ This shows how to create and register view in Plone.
 
 ### Creating a view
 
-Create your add-on package using [plonecli](https://pypi.org/project/plonecli/):
+Create your add-on package using {term}`plonecli`:
 
 ```shell
 
@@ -98,6 +96,10 @@ method which `__call__()` or view users can explicitly call.
 
 #### Registering a view
 
+```{todo}
+Fix references in this section
+```
+
 Zope 3 views are registered in {term}`ZCML`, an XML-based configuration
 language.  `plonecli` did the following registration in `src/collective/awesomeaddon/views/configure.zcml` for you.
 
@@ -143,7 +145,6 @@ The following example registers a new view (see below for comments):
   <http://yourhost/site/page/@@myview>
 
 `permission`
-
 : is the permission needed to access the view.
   When an HTTP request comes in, the currently logged in user's access
   rights in the current context are checked against this permission.
@@ -163,8 +164,7 @@ You need to declare the `browser` namespace in your
 `configure.zcml` to use `browser` configuration directives.
 ```
 
-The view in question is registered against a {doc}`layer </develop/plone/views/layers>`,
-it is not immediately available after restart, until you run {doc}`Add/remove in Site setup </develop/addons/components/genericsetup>`.
+The view in question is registered against a {ref}`classic-ui-layers-label`, it will be available after restart, after you run {doc}`Add/remove in Site setup </develop/addons/components/genericsetup>`.
 
 
 #### Page template
@@ -221,6 +221,10 @@ http://localhost:8080/Plone/news/@@my-view
 ```
 
 ### Content slots
+
+```{todo}
+Fix references in this section
+```
 
 Available {doc}`slot </adapt-and-extend/theming/templates_css/template_basics>`
 options you can use for `<metal fill-slot="">` in your template which
@@ -348,6 +352,10 @@ And then in the template call:
 
 #### View `__init__()` method special cases
 
+```{todo}
+Fix references in this section
+```
+
 The Python constructor method of the view, `__init__()`, is special.
 You should almost never try to put your code there. Instead, use the `_call__()` method or further helper methods called from it.
 
@@ -360,7 +368,7 @@ Thus, the called Plone API methods return `None` or tend to throw exceptions.
 
 ### Layers
 
-Views can be registered against a specific *layer* interface.
+Views can be registered against a specific {ref}`layer <classic-ui-layers-label>` interface.
 This means that views are only looked up if the specified layer is in use.
 Since one Zope application server can contain multiple Plone sites, layers
 are used to determine which Python code is in effect for a given Plone site.
@@ -372,9 +380,8 @@ A layer is in use when:
 
 You should register your views against a certain layer in your own code.
 
-For more information, see
+For more information, read the {ref}`classic-ui-layers-label` chapter.
 
-- {doc}`browser layers </develop/plone/views/layers>`
 
 ### Register and unregister view directly using zope.component architecture
 
@@ -431,16 +438,16 @@ If you need to override templates in core Plone or in an existing add-on, you ca
 
 ### Overriding a template using z3c.jbot
 
-1. First of all, make sure that your customization add-on supports [z3c.jbot](https://pypi.python.org/pypi/z3c.jbot).
+  1. First of all, make sure that your customization add-on supports [z3c.jbot](https://pypi.python.org/pypi/z3c.jbot).
   Add-on packages created by plonecli have an `overrides` folder in the `browser` folder where you can
   drop in your new `.pt` files.
 
 2. Locate the template you need to override in Plone source tree.
   You can do this by searching the in all installed packages for `.pt` files. If you are using buildout with the `collective.recipe.omelette` recipe, a good folder to search in is `./parts/omelette`.
 
-  Below is an example UNIX `find` command to find `.pt` files.
+Below is an example UNIX `find` command to find `.pt` files.
 
-  You can also use Windows Explorer file search or similar tools:
+You can also use Windows Explorer file search or similar tools:
 
   ```shell
   $ find -L ./parts/omelette -name "*.pt"
@@ -469,13 +476,7 @@ If you need to override templates in core Plone or in an existing add-on, you ca
   ...
   ```
 
-  ```{Note}
-
-  ```
-
-3. Make a copy of the `.pt` file you want to override.
-
-  To override a particular file, first determine its canonical filename. It’s defined as the path relative to the package within which the file is located; directory separators are replaced with dots.
+3. Make a copy of the `.pt` file you want to override. To override a particular file, first determine its canonical filename. It’s defined as the path relative to the package within which the file is located; directory separators are replaced with dots.
 
   Suppose you want to override: `plone/app/layout/viewlets/logo.pt`
 
@@ -486,61 +487,82 @@ If you need to override templates in core Plone or in an existing add-on, you ca
 
   Make your changes in the new `.pt` file.
 
-  ```{warning}
-  After overriding the template for the first time (adding the file to the `templates/` folder) you need to restart Plone. [z3c.jbot] scans new overrides only during the restart.
+  ```{note}
+  After overriding the template for the first time (adding the file to the `overrides` folder) you need to restart Plone. [z3c.jbot](https://pypi.python.org/pypi/z3c.jbot) scans new overrides only during the restart.
   ```
 
-After the file is in place, changes to the file are instantly picked up:
-the template code is re-read on every HTTP request {{ --- }} just hit enter in
-your browser location bar. (Hitting enter in the location bar is quicker
-than hitting {guilabel}`Refresh`, which also reloads CSS and JS files.)
+After the file is in place, changes to the file are instantly picked up. The template code is re-read on every HTTP request.
 
 If you want to override an already overridden template, read here:
-\<<http://stackoverflow.com/questions/16209392/how-can-i-override-an-already-overriden-template-by-jbot>>
 
-More info:
+http://stackoverflow.com/questions/16209392/how-can-i-override-an-already-overriden-template-by-jbot
 
-- <https://pypi.python.org/pypi/z3c.jbot/>
 
-Follow instructions how to {doc}`use z3c.jbot
-</adapt-and-extend/theming/templates_css/template_basics>` to override templates.
+## Overriding a view class
 
-### Overriding view class
+In this example we override the `@@register` form from the
+`plone.app.users` package, creating a custom form which subclasses the
+original. Given you have a Plone add-on packages created with {term}`plonecli`. You'll have the following browser layer interface and it's registration in `profiles/default/browserlayer.xml` already in place.
 
-Here is a short introduction on finding how existing views are defined.
+- Create an interface in `interfaces.py`:
 
-First, you go to `portal_types` to see what views have been registered for
-a particular content type.
+  ```
+  from plone.theme.interfaces import IDefaultPloneLayer
 
-For example, if you want to override the *Tabular* view of a *Folder*,
-you find out that it is registered as the handler for
-`/folder_tabular_view`.
+  class ICollectiveAwesomeaddon(IDefaultPloneLayer):
+      """ A marker interface for the theme layer
+      """
+  ```
 
-You look for both `folder_tabular_view` old-style page templates and
-`@@folder_tabular_view` BrowserView ZCML registrations in the Plone
-source tree {{ --- }} it can be either.
+- Then create `profiles/default/browserlayer.xml`:
 
-Example of how to search for this using UNIX tools (assuming that
-[collective.recipe.omelette](https://pypi.python.org/pypi/collective.recipe.omelette) is in use, to keep included code together):
-
-```console
-# find old style .pt files:
-find parts/omelette -follow -name "folder_tabular_view*"
-# find new style view registrations in ZCML files:
-grep -ri --include="\*.zcml" folder_tabular_view parts/omelette
+```xml
+<layers>
+  <layer
+    name="collective.awesomeaddon"
+    interface="collective.awesomeaddon.interfaces.ICollectiveAwesomeaddon"
+  />
+</layers>
 ```
 
-The `folder_tabular_view` is found in
-the {doc}`skin layer </adapt-and-extend/theming/templates_css/skin_layers>`
-called `plone_content` in the CMFPlone product.
+- Create `views/configure.zcml`:
 
-More info:
+```xml
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.awesomeaddon">
 
-- {doc}`How to override old style page templates </adapt-and-extend/theming/templates_css/skin_layers>`
+  <browser:page
+      name="register"
+      class=".customregistration.CustomRegistrationForm"
+      permission="cmf.AddPortalMember"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      layer="collective.awesomeaddon.interfaces.ICollectiveAwesomeaddon"
+      />
 
+</configure>
+```
 
+```{note}
+We've retained the permissions and marker interface of the original view.
+You may provide a specific permission or marker interface instead of these
+as your product requires.
+```
 
+- Create `views/customregistration.py`:
 
+  ```
+  from plone.app.users.browser.register import RegistrationForm
+
+  class CustomRegistrationForm(RegistrationForm):
+      """ Subclass the standard registration form
+      """
+  ```
+
+```{note}
+You can also add a view to your package via {term}`plonecli` and place the Python code and ZCML registration in the generated view files as shown above. This way you also have a test for the view generated.
+```
 
 
 
@@ -559,6 +581,10 @@ The Mastering Plone Training has several chapters on views.
 
 ## Anatomy of a view
 
+```{todo}
+Fix references in this section
+```
+
 Views are Zope Component Architecture ({term}`ZCA`) *multi-adapter
 registrations*.
 
@@ -567,18 +593,18 @@ instead of traversing, if the name to be traversed is prefixed with `@@`.
 
 Views are resolved with three inputs:
 
-*context*
+`context`
 
 : Any class/interface for which the view applies. If not given, `zope.interface.Interface`
   is used (corresponds to a registration `for="*"`). Usually this is a content item
   instance.
 
-*request*
+`request`
 
 : The current HTTP request. Interface
   `zope.publisher.interfaces.browser.IBrowserRequest` is used.
 
-*layer*
+`layer`
 
 : Theme layer and addon layer interface. If not given,
   `zope.publisher.interfaces.browser.IDefaultBrowserLayer` is used.
@@ -615,72 +641,6 @@ However, in the most of cases
 
 Views rendering page snippets and parts can be subclasses of zope.publisher.browser.BrowserView directly
 as snippets might not need acquisition support which adds some overhead to the rendering process.
-
-## Overriding a view class in a product
-
-Most of the code in this section is copied from a [tutorial by Martin Aspeli
-(on slideshare.net)](http://www.slideshare.net/wooda/martin-aspeli-extending-and-customising-plone-3).
-The main change is that, at least for Plone 4, the interface should subclass
-`plone.theme.interfaces.IDefaultPloneLayer` instead of
-`zope.interface.Interface`.
-
-In this example we override the `@@register` form from the
-`plone.app.users` package, creating a custom form which subclasses the
-original.
-
-- Create an interface in `interfaces.py`:
-
-  ```
-  from plone.theme.interfaces import IDefaultPloneLayer
-
-  class IExamplePolicy(IDefaultPloneLayer):
-      """ A marker interface for the theme layer
-      """
-  ```
-
-- Then create `profiles/default/browserlayer.xml`:
-
-```xml
-<layers>
-  <layer
-    name="example.policy.layer"
-    interface="example.policy.interfaces.IExamplePolicy"
-  />
-</layers>
-```
-
-- Create `browser/configure.zcml`:
-
-```xml
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="example.policy">
-  <browser:page
-      name="register"
-      class=".customregistration.CustomRegistrationForm"
-      permission="cmf.AddPortalMember"
-      for="plone.app.layout.navigation.interfaces.INavigationRoot"
-      layer="example.policy.interfaces.IExamplePolicy"
-      />
-</configure>
-```
-
-```{note}
-We've retained the permissions and marker interface of the original view.
-You may provide a specific permission or marker interface instead of these
-as your product requires.
-```
-
-- Create `browser/customregistration.py`:
-
-  ```
-  from plone.app.users.browser.register import RegistrationForm
-
-  class CustomRegistrationForm(RegistrationForm):
-      """ Subclass the standard registration form
-      """
-  ```
 
 ## Helper views
 
@@ -912,17 +872,19 @@ views = [ view.factory for view in views if IBlocksView.implementedBy(view.facto
 
 ### Default view of a content item
 
+```{todo}
+Fix references in this section
+```
+
 Objects have views for default, view, edit, and so on.
 
-The distinction between the *default* and *view* views are that for files,
-the default can be *download*.
+The distinction between the `default` and `view` views are that for files,
+the default can be `download`.
 
 The default view ...
 
-- This view is configured in {doc}`portal_types </develop/plone/content/types>`.
-- This view is rendered when a content item is called {{ --- }} even though
-  they are objects, they have the `__call__()` Python method
-  defined.
+- This view is configured in {ref}`backend-content-types-label`.
+- This view is rendered when a content item is called --- even though they are objects, they have the `__call__()` Python method defined.
 
 If you need to get a content item's view for page
 rendering explicitly, you can do it as follows:
