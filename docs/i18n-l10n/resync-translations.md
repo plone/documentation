@@ -9,6 +9,11 @@ myst:
 
 (resync-translations-label)=
 
+# Resync translations
+
+This chapter discussions how to resynchronize translations in both the backend and frontend, and how to make releases for each.
+
+
 ## Resync translations in the Plone backend
 
 Plone {term}`PO file`s need to be updated each time a new string is added into the Plone interface or each time one of those strings is updated.
