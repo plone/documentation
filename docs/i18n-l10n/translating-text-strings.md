@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Translating text strings in Plone"
-  "property=og:description": "Translating text strings in Plone"
-  "property=og:title": "Translating text strings"
-  "keywords": "Plone, Internationalization, i18n, language, translation, localization"
+myst:
+  html_meta:
+    "description": "Translating text strings in Plone"
+    "property=og:description": "Translating text strings in Plone"
+    "property=og:title": "Translating text strings"
+    "keywords": "Plone, Internationalization, i18n, language, translation, localization"
 ---
 
 (translating-text-strings-label)=
