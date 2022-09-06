@@ -373,4 +373,17 @@ ZPT
 plonecli
     The plonecli helps developers to create Plone add-on's in a modular and reproducable way.
 
+ZCA
+    Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming. It is very well suited to developing large Python software systems. The ZCA is not specific to the Zope web application server: it can be used for developing any Python application. Maybe it should be called as Python Component Architecture. For more info read this: https://muthukadan.net/docs/zca.html
+
+LAYER
+    A layer or also called browser layer is a marker interface and used in ZCML configurations. Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes.
+
+JSON
+    JSON (JavaScript Object Notation, pronounced /ˈdʒeɪsən/; also /ˈdʒeɪˌsɒn/) is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values). https://en.wikipedia.org/wiki/JSON
+
+HTTPRequest
+    The HTTPRequest object contains infos about the current request, which includes also browser layers.
+
+
 ```
