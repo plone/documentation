@@ -85,7 +85,7 @@ For example, if `en` and `es` are enabled, Plone will create `www.domain.com/en`
 Plone will assume that all the content below `en` is in English, and all content below `es` is in Spanish.
 It will rely on that assumption to present the user interface in those languages when the user is browsing those parts of the site.
 
-As we will see in the {ref}`translating-content-label` chapter, Plone will set a special view for the Plone root object called `@@language-switcher` whose implementation relies on `plone.app.multilngual.browser.switcher.LanguageSwitcher`.
+As we will see in the {ref}`translating-content-label` chapter, Plone will set a special view for the Plone root object called `@@language-switcher` whose implementation relies on `plone.app.multilingual.browser.switcher.LanguageSwitcher`.
 This language switcher will only rely on the user preferred language to decide where to send the user when they visit the root of the site.
 
 An integrator may want to modify this behavior to always send a user to a given language, or to negotiate the language selection in some other way, such as using the domain, a cookie, or some other techniques.
