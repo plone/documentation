@@ -15,10 +15,6 @@ This section may contain incorrect information.
 If you find errors, please submit a pull request to correct them.
 ```
 
-```{admonition} Description
-Accessing and changing the language state of Plone programmatically.
-```
-
 Language negotiation is a function of the HTTP protocol.
 It lets a server choose among several language versions of a page based on the URL and preference information sent by the browser.
 
