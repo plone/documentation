@@ -18,6 +18,19 @@ Views are usually a combination of:
 - a Python class, which performs the user interface logic setup, and
 - corresponding {ref}`plone:classic-ui-templates-label`, or direct Python string output.
 
+```{eval-rst}
+.. graphviz::
+  :align: center
+
+   digraph viewstructure {
+      {
+        node [margin=5,shape=box]
+      }
+      ZCML -> {Python, Template};
+   }
+```
+
+
 Templates should kept simple and logic kept in a separate Python file. This enhances readability and makes components more reusable. You can override the Python logic or the template file, or both.
 
 When you are working with Plone, the most common view type is `BrowserView`
