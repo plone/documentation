@@ -19,17 +19,13 @@ Browse the Plone 5.2 Documentation at https://docs.plone.org/.
 Development on the Plone 5.2 Documentation takes place on the branch [`5.2`](https://github.com/plone/documentation/tree/5.2).
 
 
-## Overview
-
-The community is writing guides, installation instructions, and everything you need to know to enjoy working with Plone 6.
-
-
 ## Contribute
 
 - [Contributing to Plone 6 Documentation](https://6.dev-docs.plone.org/contributing/index.html)
 - [Release Plone 6 docs Project Board](https://github.com/orgs/plone/projects/12)
 - [Issue Tracker](https://github.com/plone/documentation/issues)
 - [Source Code](https://github.com/plone/documentation/tree/6-dev)
+
 
 ### Contributing to frontend (Volto), `plone.api`, and `plone.restapi` documentation
 
@@ -38,13 +34,17 @@ Those packages include:
 
 - [`volto`](https://github.com/plone/volto)
 - [`plone.api`](https://github.com/plone/plone.api)
-- [`plone.restapi`(https://github.com/plone/plone.restapi)
+- [`plone.restapi`](https://github.com/plone/plone.restapi)
+
 To contribute documentation, please open a pull request in the appropriate repository.
 For details, see [Editing external package documentation](https://6.dev-docs.plone.org/contributing/index.html#contributing-editing-external-package-documentation-label).
 
+
 ## Support
 
-If you have issues, please open an issue in our [Issue Tracker](https://github.com/plone/documentation/issues) or ask a question on our [Community Forum, Documentation category](https://community.plone.org/c/documentation/13).
+For technical support for **Plone documentation only**, please ask a question on our [Community Forum, Documentation category](https://community.plone.org/c/documentation/13).
+
+For technical support for **Plone in general**, please ask a question on our [Community Forum](https://community.plone.org/) in the appropriate category.
 
 
 ## Training
