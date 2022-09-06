@@ -48,17 +48,18 @@ This chapter is a developer reference manual for working with Classic UI.
 ```{toctree}
 :maxdepth: 2
 
-theming/index
+csrf
+forms
+icons
+images
+layers
+portlets
+recipes
 static-resources
 templates
 templates-global-variables
-views
+theming/index
 viewlets
-forms
-portlets
-csrf
-images
-icons
-recipes
+views
 whatsnew
 ```
