@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "A content type is a kind of object that can store information and is editable by users."
+    "property=og:description": "A content type is a kind of object that can store information and is editable by users."
+    "property=og:title": "Content Types"
+    "keywords": "Content Types"
 ---
 
 (backend-content-types-label)=
@@ -12,10 +12,15 @@ myst:
 # Content Types
 
 ```{seealso}
-See the chapter {ref}`training:dexterity1-label` from the Mastering Plone 6 Training
+See the chapter {ref}`training:dexterity1-label` from the Mastering Plone 6 Training.
+```
+
+```{todo}
+Contribute to this documentation!
+See issue [Backend > Content Types needs content](https://github.com/plone/documentation/issues/1303).
 ```
 
 ```{todo}
 Describe how to add a content type (Python/XML) including FTI settings.
-Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter and will be referenced frome examples here.
+Fields, Widgets, Vocabularies aso are descripted in detail in their own chapter and will be referenced frome examples here.
 ```
