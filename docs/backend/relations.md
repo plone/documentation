@@ -1,10 +1,12 @@
 ---
 html_meta:
-  "description": ""
-  "property=og:description": ""
-  "property=og:title": ""
-  "keywords": ""
+  "description": "Relations allow developers to model relationships between objects without using links or a hierarchy."
+  "property=og:description": "Relations allow developers to model relationships between objects without using links or a hierarchy."
+  "property=og:title": "Relations"
+  "keywords": "Relations"
 ---
+
+(relations-label)=
 
 # Relations
 
@@ -13,6 +15,9 @@ You can model relationships between content items by placing them in a hierarchy
 Relations allow developers to model relationships between objects without using links or a hierarchy. The behavior {py:class}`plone.app.relationfield.behavior.IRelatedItems` provides the field {guilabel}`Related Items` in the tab {guilabel}`Categorization`. That field simply says `a` is somehow related to `b`.
 
 By using custom relations you can model your data in a much more meaningful way.
+
+
+(relations-creating-and-configuring-relations-in-a-schema-label)=
 
 ## Creating and configuring relations in a schema
 
@@ -51,7 +56,10 @@ minions = RelationList(
 
 We can see that the [code for the behavior IRelatedItems](https://github.com/plone/plone.app.relationfield/blob/master/plone/app/relationfield/behavior.py) does exactly the same.
 
-### Controlling what to relate to
+
+(relations-controlling-relation-targets-label)=
+
+### Controlling relation targets
 
 The best way to control wich item should be relatable to is to configure the widget with `directives.widget()`.
 In the following example you can only relate to Documents:
@@ -76,7 +84,10 @@ directives.widget(
 )
 ```
 
-### Configure the RelatedItemsFieldWidget
+
+(relations-configure-the-relateditemsfieldwidget-label)=
+
+### Configure the `RelatedItemsFieldWidget`
 
 ```{note}
 These settings only have a effect in Plone 6 Classic.
@@ -129,6 +140,9 @@ directives.widget(
 )
 ```
 
+
+(relations-using-the-search-mode-of-the-related-items-widget-label)=
+
 ### Using the search mode of the Related Items Widget
 
 ```{note}
@@ -180,6 +194,9 @@ directives.widget(
 
 Search mode of RelationWidget
 ```
+
+
+(relations-define-favorite-locations-label)=
 
 ### Define Favorite Locations
 
@@ -255,6 +272,9 @@ class IHaveMinions(model.Schema):
         )
 ```
 
+
+(relations-relationfields-through-the-web-or-in-xml-label)=
+
 ## RelationFields through the web or in xml
 
 It is surprisingly easy to create RelationFields through the web.
@@ -294,6 +314,9 @@ RelationList:
   </value_type>
 </field>
 ```
+
+
+(relations-using-different-widgets-for-relations-label)=
 
 ## Using different widgets for relations
 
@@ -371,6 +394,8 @@ directives.widget(
 Relationlist Field with AJAXSelect
 
 
+(relations-accessing-and-displaying-related-items-label)=
+
 ## Accessing and displaying related items
 
 To display related items you can use the render method of the default widget e.g.:
@@ -403,6 +428,9 @@ class EvilMastermindView(BrowserView):
 
 This returns the related items so that you will able to render them anyhow you like.
 
+
+(relations-inspecting-relations-label)=
+
 ## Inspecting relations
 
 You Plone 6 Classic you can inspect all relations and backrelations in your site using the control panel `/@@inspect-relations`.
@@ -416,7 +444,12 @@ The relations controlpanel
 In Plone 5 this is available through the addon [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers).
 
 
+(relations-programming-with-relations-label)=
+
 ## Programming with relations
+
+
+(relations-programming-with-relations-plone-6-label)=
 
 ### Plone 6
 
@@ -454,15 +487,21 @@ api.relation.delete(source=portal["bob"])
 See the chapter {ref}`plone:chapter-relation` of the docs for `plone.api`  for more details.
 
 
+(relations-programming-with-relations-plone-5.2-and-older-label)=
+
 ### Plone 5.2 and older
 
 In older Plone-Versions you can use [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers) to create and read relations and backrelations in a very similar way.
 
 
-### Restapi
+(relations-programming-with-relations-rest-api-label)=
+
+### REST API
 
 A restapi endpoint to create, read, and delete relations and backrelations will be part of `plone.restapi`. See https://github.com/plone/plone.restapi/issues/1432
 
+
+(relations-relationfields-without-relations-label)=
 
 ## Relationfields without relations
 
@@ -516,6 +555,8 @@ directives.widget(
 For control panels this is the best way to store relations since you cannot store `RelationValue` objects in the registry.
 ```
 
+(relations-the-stack-label)=
+
 ## The stack
 
 Relations are based on [zc.relation](https://pypi.org/project/zc.relation/).
@@ -562,6 +603,9 @@ But using real relations and the catalog allows for very powerful things.
 The simplest concrete advantage is the possibility to see what links to your object.
 
 The built-in linkintegrity feature of Plone 5 is also implemented using relations.
+
+
+(relations-relationvalues-label)=
 
 ### RelationValues
 
