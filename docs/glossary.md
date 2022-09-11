@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Terms and definitions used throughout the Plone Documentation."
-  "property=og:description": "Terms and definitions used throughout the Plone Documentation."
-  "property=og:title": "Glossary"
-  "keywords": "Plone, documentation, glossary, term, definition"
+myst:
+  html_meta:
+    "description": "Terms and definitions used throughout the Plone Documentation."
+    "property=og:description": "Terms and definitions used throughout the Plone Documentation."
+    "property=og:title": "Glossary"
+    "keywords": "Plone, documentation, glossary, term, definition"
 ---
 
 (glossary-label)=
@@ -370,6 +371,24 @@ ZPT
     Zope Page Template is a template language for Python.
 
 plonecli
-    The plonecli helps developers to create Plone add-on's in a modular and reproducable way.
+    The plonecli helps developers to create Plone add-ons in a modular and reproducible way.
 
+ZCA
+    Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
+    It is very well suited to developing large Python software systems.
+    The ZCA is not specific to the Zope web application server.
+    It can be used for developing any Python application.
+    Maybe it should be called Python Component Architecture.
+    For more info read: https://muthukadan.net/docs/zca.html
+
+Layer
+    A layer, or also called browser layer, is a marker interface and used in ZCML configurations.
+    Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes.
+
+JSON
+    JSON (JavaScript Object Notation, pronounced /ˈdʒeɪsən/; also /ˈdʒeɪˌsɒn/) is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values).
+    https://en.wikipedia.org/wiki/JSON
+
+HTTPRequest
+    The HTTPRequest object contains informatino about the current request, which includes also browser layers.
 ```

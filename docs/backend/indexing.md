@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Using Plone's catalog to index content and make it searchable."
-  "property=og:description": "Using Plone's catalog to index content and make it searchable."
-  "property=og:title": "Indexing"
-  "keywords": "Plone, indexing, indexes, indexer, catalog, searching, FieldIndex, KeywordIndex, DateIndex, DateRangeIndex, BooleanIndex, ZCTextIndex, SearchableText, textindexer"
+myst:
+  html_meta:
+    "description": "Using Plone's catalog to index content and make it searchable."
+    "property=og:description": "Using Plone's catalog to index content and make it searchable."
+    "property=og:title": "Indexing"
+    "keywords": "Plone, indexing, indexes, indexer, catalog, searching, FieldIndex, KeywordIndex, DateIndex, DateRangeIndex, BooleanIndex, ZCTextIndex, SearchableText, textindexer"
 ---
 
 (backend-indexing-label)=

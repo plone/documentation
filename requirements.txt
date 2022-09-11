@@ -1,5 +1,6 @@
-docutils<0.17,>=0.15  # sphinx-book-theme 0.2.0 has requirement docutils<0.17,>=0.15
 Sphinx
+docutils<0.17,>=0.15  # sphinx-book-theme 0.2.0 has requirement docutils<0.17,>=0.15
+graphviz
 jsx-lexer  # volto
 lesscpy
 linkify-it-py

@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Rendering HTML pages in Plone using the Zope 3 view pattern"
-  "property=og:description": "Rendering HTML pages in Plone using the Zope 3 view pattern."
-  "property=og:title": "Views"
-  "keywords": ""
+myst:
+  html_meta:
+    "description": "Rendering HTML pages in Plone using the Zope view pattern"
+    "property=og:description": "Rendering HTML pages in Plone using the Zope view pattern."
+    "property=og:title": "Views"
+    "keywords": "views,browser view,templates"
 ---
 
 (classic-ui-views-label)=

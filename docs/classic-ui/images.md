@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Image resolving and scaling in Plone Classic UI"
-  "property=og:description": "Image resolving and scaling in Plone Classic UI"
-  "property=og:title": "Image Handling"
-  "keywords": "Plone, Classic UI, classic-ui, image, resize, scale"
+myst:
+  html_meta:
+    "description": "Image resolving and scaling in Plone Classic UI"
+    "property=og:description": "Image resolving and scaling in Plone Classic UI"
+    "property=og:title": "Image Handling"
+    "keywords": "Plone, Classic UI, classic-ui, image, resize, scale"
 ---
 
 (classic-ui-images-label)=
