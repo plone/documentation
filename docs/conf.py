@@ -57,7 +57,7 @@ extensions = [
     "sphinx.ext.graphviz",
 ]
 
-graphviz_output_format = 'svg'
+graphviz_output_format = "svg"
 
 # If true, the Docutils Smart Quotes transform, originally based on SmartyPants
 # (limited to English) and currently applying to many languages, will be used
