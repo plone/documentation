@@ -391,4 +391,14 @@ JSON
 
 HTTPRequest
     The HTTPRequest object contains informatino about the current request, which includes also browser layers.
+
+interface
+    An interface is a mechanism for labeling objects as conforming to a given API or contract.
+    Interfaces define what methods an object provides.
+    Plone extensively uses interfaces to define APIs between different subsystems.
+    
+    ```{seealso}
+    See also https://zopeinterface.readthedocs.io/en/latest/.
+    ```
+    
 ```
