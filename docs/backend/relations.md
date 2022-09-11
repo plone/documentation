@@ -1,20 +1,27 @@
 ---
-html_meta:
-  "description": "Relations allow developers to model relationships between objects without using links or a hierarchy."
-  "property=og:description": "Relations allow developers to model relationships between objects without using links or a hierarchy."
-  "property=og:title": "Relations"
-  "keywords": "Relations"
+myst:
+  html_meta:
+    "description": "Relations allow developers to model relationships between objects without using links or a hierarchy."
+    "property=og:description": "Relations allow developers to model relationships between objects without using links or a hierarchy."
+    "property=og:title": "Relations"
+    "keywords": "Relations"
 ---
 
 (relations-label)=
 
 # Relations
 
-You can model relationships between content items by placing them in a hierarchy (e.g. a folder _speakers_ containing the (folderish) speakers and within each speaker the talks) or by linking them to each other in Richtext fields. But where would you then store a talk that two speakers give together?
+You can model relationships between content items by placing them in a hierarchy.
+For example, a folder `speakers` could contain the (folderish) speakers.
+Each speaker would contain their talks.
+Or speakers could be linked to each other in rich text fields.
+But where would you then store a talk that two speakers give together?
 
-Relations allow developers to model relationships between objects without using links or a hierarchy. The behavior {py:class}`plone.app.relationfield.behavior.IRelatedItems` provides the field {guilabel}`Related Items` in the tab {guilabel}`Categorization`. That field simply says `a` is somehow related to `b`.
+Relations allow developers to model relationships between objects without using links or a hierarchy.
+The behavior {py:class}`plone.app.relationfield.behavior.IRelatedItems` provides the field {guilabel}`Related Items` in the tab {guilabel}`Categorization`.
+That field simply says `a` is somehow related to `b`.
 
-By using custom relations you can model your data in a much more meaningful way.
+By using custom relations, you can model your data in a much more meaningful way.
 
 
 (relations-creating-and-configuring-relations-in-a-schema-label)=
@@ -54,15 +61,15 @@ minions = RelationList(
 )
 ```
 
-We can see that the [code for the behavior IRelatedItems](https://github.com/plone/plone.app.relationfield/blob/master/plone/app/relationfield/behavior.py) does exactly the same.
+We can see that the [code for the behavior `IRelatedItems`](https://github.com/plone/plone.app.relationfield/blob/master/plone/app/relationfield/behavior.py) does exactly the same thing.
 
 
 (relations-controlling-relation-targets-label)=
 
 ### Controlling relation targets
 
-The best way to control wich item should be relatable to is to configure the widget with `directives.widget()`.
-In the following example you can only relate to Documents:
+The best way to control which item should be relatable is to configure the widget with `directives.widget()`.
+In the following example you can only relate to `Documents`:
 
 ```{code-block} python
 :emphasize-lines: 12
@@ -90,12 +97,15 @@ directives.widget(
 ### Configure the `RelatedItemsFieldWidget`
 
 ```{note}
-These settings only have a effect in Plone 6 Classic.
+These settings only have an effect in Plone 6 Classic UI.
 ```
 
 With `pattern_options` you can further configure the widget.
 
-In the following example you can specify a) where to start browsing using the _pattern-option_ `basePath` and and b) to leave the dropwdown open using `closeOnSelect`.
+In the following example, you can specify `pattern_options`:
+
+-   where to start browsing using the `basePath`, and
+-   whether to leave the select menu open using `closeOnSelect`.
 
 ```{code-block} python
 :emphasize-lines: 11
@@ -118,7 +128,8 @@ directives.widget(
 )
 ```
 
-`basePath` can also be a method. In this exmaple we use the helper-method `plone.app.multilingual.browser.interfaces.make_relation_root_path`.
+`basePath` can also be a method.
+In this example, we use the helper method `plone.app.multilingual.browser.interfaces.make_relation_root_path`.
 
 ```{code-block} python
 :emphasize-lines: 13
@@ -146,21 +157,20 @@ directives.widget(
 ### Using the search mode of the Related Items Widget
 
 ```{note}
-These settings only have a effect in Plone 6 Classic.
+These settings only have an effect in Plone 6 Classic UI.
 ```
 
-So far we only used the vocabulary `plone.app.vocabularies.Catalog` that returns the full content tree.
-
-Alternatively you can use `CatalogSource` to specify a catalog query that only return the values from the query.
+So far we only used the vocabulary `plone.app.vocabularies.Catalog`, which returns the full content tree.
+Alternatively you can use `CatalogSource` to specify a catalog query that only returns the values from the query.
 
 You can pass to `CatalogSource` the same arguments you use for catalog queries.
-This makes it very flexible for limiting relateable items by type, path, date, and so on.
+This makes it very flexible for limiting relatable items by type, path, date, and so on.
 
-Setting the mode of the widget to `search` makes it easier to select from the content that result form your catalog-query instead of having to navigate through your content-tree.
+Setting the mode of the widget to `search` makes it easier to select from the content that results from your catalog query instead of having to navigate through your content tree.
 
-The problem is that in the default mode of the Related Items widget items that are in containers are not shown unless you add these types of containers to the query.
+The problem is that, in the default mode of the Related Items widget, items that are in containers are not shown unless you add these types of containers to the query.
 
-Therefore is is recommended to use CatalogSource only in in `search` mode.
+Therefore, it is recommended to use `CatalogSource` only in `search` mode.
 
 ```{code-block} python
 :emphasize-lines: 10
@@ -177,7 +187,7 @@ directives.widget(
     "speakers",
     RelatedItemsFieldWidget,
     pattern_options={
-        "baseCriteria": [  # This is a optimization that limits the catalog-query
+        "baseCriteria": [  # This is an optimization that limits the catalog query
             {
                 "i": "portal_type",
                 "o": "plone.app.querystring.operation.selection.any",
@@ -214,7 +224,8 @@ directives.widget(
 )
 ```
 
-`favorites` can also be a method that takes the current context. Here is a full example as a behavior:
+`favorites` can also be a method that takes the current context.
+Here is a complete example as a behavior:
 
 ```{code-block} python
 :linenos:
@@ -235,17 +246,17 @@ def minion_favorites(context):
     minions_path = "/".join(portal["minions"].getPhysicalPath())
     one_eyed_minions_path = "/".join(portal["one-eyed-minions"].getPhysicalPath())
     return [
-            {
-                "title": "Current Content",
-                "path": "/".join(context.getPhysicalPath())
-            }, {
-                "title": "Minions",
-                "path": minions_path,
-            }, {
-                "title": "One eyed minions",
-                "path": one_eyed_minions_path,
-            }
-        ]
+        {
+            "title": "Current Content",
+            "path": "/".join(context.getPhysicalPath())
+        }, {
+            "title": "Minions",
+            "path": minions_path,
+        }, {
+            "title": "One eyed minions",
+            "path": one_eyed_minions_path,
+        }
+    ]
 
 
 @provider(IFormFieldProvider)
@@ -273,18 +284,18 @@ class IHaveMinions(model.Schema):
 ```
 
 
-(relations-relationfields-through-the-web-or-in-xml-label)=
+(relations-create-relation-fields-through-the-web-or-in-xml-label)=
 
-## RelationFields through the web or in xml
+## Create relation fields through the web or in XML
 
-It is surprisingly easy to create RelationFields through the web.
+You can create relation fields through the web and edit their XML.
 
-- Using the Dexterity schema editor, add a new field and select _Relation List_ or _Relation Choice_, depending on whether you want to relate to multiple items or not.
-- When configuring the field you can even select the content type the relation should be limited to.
+- Using the Dexterity schema editor, add a new field and select {guilabel}`Relation List` or {guilabel}`Relation Choice` for its {guilabel}`Field type`, depending on whether you want to relate to multiple items or a single item.
+- When configuring the field, you can even select the content type to which the relation should be limited.
 
-When you click on `Edit XML field model` you will see the fields in the XML schema:
+When you click on {guilabel}`Edit XML field model`, you will see the fields in the XML schema:
 
-RelationChoice:
+`RelationChoice`:
 
 ```{code-block} python
 :linenos:
@@ -296,7 +307,7 @@ RelationChoice:
 </field>
 ```
 
-RelationList:
+`RelationList`:
 
 ```{code-block} python
 :linenos:
@@ -321,15 +332,17 @@ RelationList:
 ## Using different widgets for relations
 
 ```{todo}
-Support for `StaticCatalogVocabulary` in Volto is currently still missing.
+Support for `StaticCatalogVocabulary` in Volto is currently missing.
+See issues https://github.com/plone/volto/issues/3355 and https://github.com/plone/volto/issues/3439.
 ```
 
-Often the standard widget for relations is not what you want since it can be hard to navigate to the content you want to relate to and the search-mode of the default widget is not suitable for all use-cases.
+Often the standard widget for relations is not what you want.
+It can be hard to navigate to the content to which you want to relate, and the search mode of the default widget is not suitable for all use cases.
 
-If you want to use checkboxes, radiobuttons or a selection-dropdown you need to use `StaticCatalogVocabulary` instead of `CatalogSource` to specify your options.
+If you want to use checkboxes, radio buttons, or a select menu, you need to use `StaticCatalogVocabulary` instead of `CatalogSource` to specify your options.
 
 ```{code-block} python
-:emphasize-lines: 8, 18
+:emphasize-lines: 1, 8
 :linenos:
 
 from plone.app.vocabularies.catalog import StaticCatalogVocabulary
@@ -389,28 +402,30 @@ directives.widget(
 
 ```{figure} /_static/relationliste_ajax.png
 :alt: Relationlist Field with AJAXSelect
-```
 
 Relationlist Field with AJAXSelect
+```
 
 
 (relations-accessing-and-displaying-related-items-label)=
 
 ## Accessing and displaying related items
 
-To display related items you can use the render method of the default widget e.g.:
+To display related items, you can use the `render` method of the default widget.
 
-```html
+```xml
 <div tal:content="structure view/w/evil_mastermind/render" />
 ```
 
-This would render the related items like this:
+This would render the related items as shown:
 
 ```{figure} https://user-images.githubusercontent.com/453208/77223704-4b714100-6b5f-11ea-855b-c6e209f1c25c.png
 :alt: Default rendering of a RelationList (since Plone 5.2.2)
+
+Default rendering of a RelationList (since Plone 5.2.2)
 ```
 
-If you want to access and render relations yourself you can use the Plone add-on [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers) and add a method like in the following example.
+If you want to access and render relations yourself, you can use the Plone add-on [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers), and add a method as in the following example.
 
 ```{code-block} python
 :linenos:
@@ -426,22 +441,22 @@ class EvilMastermindView(BrowserView):
         return relapi.relations(self.context, "underlings")
 ```
 
-This returns the related items so that you will able to render them anyhow you like.
+This returns the related items so that you will be able to render them any way you like.
 
 
 (relations-inspecting-relations-label)=
 
 ## Inspecting relations
 
-You Plone 6 Classic you can inspect all relations and backrelations in your site using the control panel `/@@inspect-relations`.
+In Plone 6 Classic UI, you can inspect all relations and backrelations in your site using the control panel {guilabel}`Relations` at the browser path `/@@inspect-relations`.
 
 ```{figure} /_static/inspect-relations.png
-:alt: The relations controlpanel
+:alt: The Relations controlpanel
 
-The relations controlpanel
+The Relations controlpanel
 ```
 
-In Plone 5 this is available through the addon [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers).
+In Plone 5 this is available through the add-on [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers).
 
 
 (relations-programming-with-relations-label)=
@@ -453,7 +468,7 @@ In Plone 5 this is available through the addon [collective.relationhelpers](http
 
 ### Plone 6
 
-Since Plone 6 `plone.api` has methods to create, read, and delete relations and backrelations.
+Since Plone 6, `plone.api` has methods to create, read, and delete relations and backrelations.
 
 ```{code-block} python
 :linenos:
@@ -484,30 +499,32 @@ from plone import api
 api.relation.delete(source=portal["bob"])
 ```
 
-See the chapter {ref}`plone:chapter-relation` of the docs for `plone.api`  for more details.
+See the chapter {ref}`plone:chapter-relation` of the docs for `plone.api` for more details.
 
 
 (relations-programming-with-relations-plone-5.2-and-older-label)=
 
 ### Plone 5.2 and older
 
-In older Plone-Versions you can use [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers) to create and read relations and backrelations in a very similar way.
+In older Plone versions, you can use [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers) to create and read relations and backrelations in a very similar way.
 
 
 (relations-programming-with-relations-rest-api-label)=
 
 ### REST API
 
-A restapi endpoint to create, read, and delete relations and backrelations will be part of `plone.restapi`. See https://github.com/plone/plone.restapi/issues/1432
+A REST API endpoint to create, read, and delete relations and backrelations will be part of `plone.restapi`.
+See https://github.com/plone/plone.restapi/issues/1432
 
 
-(relations-relationfields-without-relations-label)=
+(relations-relation-fields-without-relations-label)=
 
-## Relationfields without relations
+## Relation fields without relations
 
-A light-weight alternative to using relations is to store a UUID of the object you want to link to. Obviously you will loose the option to query the relation-catalog for these but you could create a custom index for that purpose.
+A light-weight alternative to using relations is to store a UUID of the object to which you want to link.
+Obviously you will lose the option to query the relation catalog for these, but you could create a custom index for that purpose.
 
-The trick is to use `Choice` and `List` instead of `RelationChoice` or `RelationList` and configure the field to use `RelatedItemsFieldWidget`:
+The trick is to use `Choice` and `List` instead of `RelationChoice` or `RelationList`, and configure the field to use `RelatedItemsFieldWidget`:
 
 ```{code-block} python
 :linenos:
@@ -525,7 +542,8 @@ uuid_choice_field = schema.Choice(
 directives.widget("uuid_choice_field", RelatedItemsFieldWidget)
 ```
 
-Again you can use `StaticCatalogVocabulary` if you want to use alternative widgets. The following example uses Checkboxes:
+Again you can use `StaticCatalogVocabulary`, if you want to use alternative widgets.
+The following example uses checkboxes:
 
 ```{code-block} python
 :linenos:
@@ -552,7 +570,7 @@ directives.widget(
 ```
 
 ```{note}
-For control panels this is the best way to store relations since you cannot store `RelationValue` objects in the registry.
+For control panels, this is the best way to store relations because you cannot store `RelationValue` objects in the registry.
 ```
 
 (relations-the-stack-label)=
@@ -565,58 +583,64 @@ It allows complex relationships and searches along them.
 Because of this functionality, the package is a bit complicated.
 
 The package `zc.relation` provides its own catalog, a relation catalog.
-This is a storage optimized for the queries needed.
-`zc.relation` is sort of an outlier with regards to Zope documentation. It has extensive documentation, with a good level of doctests for explaining things.
+This is storage optimized for the queries needed.
+`zc.relation` is sort of an outlier with regard to Zope documentation.
+It has extensive documentation, with a good level of doctests for explaining things.
 
 You can use `zc.relation` to store the objects and its relations directly into the catalog.
 But the additional packages that make up the relation functionality don't use the catalog this way.
 
-We want to work with schemas to get auto generated forms.
+We want to work with schemas to get automatically generated forms.
 The logic for this is provided by the package [z3c.relationfield](https://pypi.org/project/z3c.relationfield/).
-This package contains the RelationValue object and everything needed to define a relation schema, and all the code that is necessary to automatically update the catalog.
+This package contains the `RelationValue` object and everything needed to define a relation schema, and all the code that is necessary to automatically update the catalog.
 
-A RelationValue Object does not reference all objects directly.
-For the target, it uses an id it gets from the `IntId` Utility. This id allows direct recovery of the object. The source object stores it directly.
+A `RelationValue` object does not reference all objects directly.
+For the target, it uses an ID it gets from the `IntId` utility.
+This ID allows direct recovery of the object.
+The source object stores it directly.
 
-Widgets are provided by `plone.app.z3cform` and some converters are provided by `plone.app.relationfield`.
+Widgets are provided by `plone.app.z3cform`, and some converters are provided by `plone.app.relationfield`.
 The widget that Plone uses can also store objects directly.
 Because of this, the following happens when saving a relation via a form:
 
-1. The HTML shows some nice representation of selectable objects.
-2. When the user submits the form, selected items are submitted by their UUIDs.
-3. The Widget retrieves the original object with the UUID.
-4. Some datamanager gets another unique ID from an IntID Tool.
-5. The same datamanager creates a RelationValue from this id, and stores this relation value on the source object.
-6. Some Event handlers update the catalogs.
+1.  The HTML shows some nice representation of selectable objects.
+2.  When the user submits the form, selected items are submitted by their UUIDs.
+3.  The Widget retrieves the original object with the UUID.
+4.  Some data manager gets another unique ID from an IntID Tool.
+5.  The same data manager creates a `RelationValue` from this ID, and stores this relation value on the source object.
+6.  Some event handlers update the catalogs.
 
-You could delete a Relation like this `delattr(rel.from_object, rel.from_attribute)`
-
-This is a terrible idea by the way, because when you define in your schema that one can store multiple RelationValues, your Relation is stored in a list on this attribute.
+You could delete a relation using `delattr(rel.from_object, rel.from_attribute)`.
+This is a terrible idea.
+When you define in your schema that one can store multiple `RelationValue`s, your relation is stored in a list on this attribute.
 
 Relations depend on a lot of infrastructure to work.
-This infrastructure in turn depends a lot on event handlers being thrown properly.
-When this is not the case things can break.
+This infrastructure in turn depends a lot on event handlers being called properly.
+When this is not the case, things can break.
 Because of this, there is a method `isBroken` which you can use to check if the target is available.
 
-There are alternatives to using Relations. You could instead just store the UUID of an object.
+There are alternatives to using relations.
+You could instead just store the UUID of an object.
 But using real relations and the catalog allows for very powerful things.
 The simplest concrete advantage is the possibility to see what links to your object.
 
-The built-in linkintegrity feature of Plone 5 is also implemented using relations.
+The built-in `linkintegrity` feature of Plone 5 is also implemented using relations.
 
 
 (relations-relationvalues-label)=
 
-### RelationValues
+### `RelationValue`s
 
-RelationValue objects have a fairly complete API.
-For both target and source, you can receive the IntId, the object and the path.
-On a RelationValue, the terms `source` and `target` aren't used. Instead, they are `from` and `to`.
-So the API for getting the target is:
+`RelationValue` objects have a fairly complete API.
+For both target and source, you can receive the `IntId`, the `object`, and the `path`.
+On a `RelationValue`, the terms `source` and `target` are not used.
+Instead, they are `from` and `to`.
+Thus the API for getting the target uses:
 
-- `to_id`
-- `to_path`
-- `to_object`
+-   `to_id`
+-   `to_path`
+-   `to_object`
 
-In addition, the relation value knows under which attribute it has been stored as `from_attribute`. It is usually the name of the field with which the relation is created.
-But it can also be the name of a relation that is created by code, e.g. linkintegrity relations (`isReferencing`) or the relation between a working copy and the original (`iterate-working-copy`).
+In addition, the relation value knows under which attribute it has been stored as `from_attribute`.
+It is usually the name of the field with which the relation is created.
+But it can also be the name of a relation that is created by code, for example, through linkintegrity relations (`isReferencing`) or the relation between a working copy and the original (`iterate-working-copy`).
