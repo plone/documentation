@@ -3,11 +3,11 @@ myst:
   html_meta:
     "description": "Convenience global Plone variables in templates"
     "property=og:description": "Convenience global Plone variables in templates"
-    "property=og:title": "Global variables in templates"
+    "property=og:title": "Template Global Variables"
     "keywords": "Plone, Classic UI, global variables, templates"
 ---
 
-# Global variables in templates
+# Template Global Variables 
 
 For convenience Plone defines a couple of global variables often used in templates.
 
