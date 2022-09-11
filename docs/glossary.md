@@ -387,10 +387,13 @@ Layer
 
 JSON
     JSON (JavaScript Object Notation, pronounced /ˈdʒeɪsən/; also /ˈdʒeɪˌsɒn/) is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values).
-    https://en.wikipedia.org/wiki/JSON
+
+    ```{seealso}
+    See also https://en.wikipedia.org/wiki/JSON.
+    ```
 
 HTTPRequest
-    The HTTPRequest object contains informatino about the current request, which includes also browser layers.
+    The HTTPRequest object contains information about the current request, which also includes browser layers.
 
 interface
     An interface is a mechanism for labeling objects as conforming to a given API or contract.
