@@ -11,23 +11,25 @@ myst:
 
 # Views
 
-`Views` are the basic elements of modern Python web frameworks. A view runs code to setup Python variables for a rendering template.The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
+`Views` are the basic elements of modern Python web frameworks.
+A view runs code to setup Python variables for a rendering template.
+The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
 
 Views are usually a combination of:
 
-- a Python class, which performs the user interface logic setup, and
-- corresponding {ref}`plone:classic-ui-templates-label`, or direct Python string output.
+-   a Python class, which performs the user interface logic setup, and
+-   corresponding {ref}`plone:classic-ui-templates-label`, or direct Python string output.
 
 ```{eval-rst}
 .. graphviz::
-  :align: center
+    :align: center
 
-   digraph viewstructure {
+    digraph viewstructure {
       {
         node [margin=5,shape=box]
       }
       ZCML -> {Python, Template};
-   }
+    }
 ```
 
 
@@ -1001,7 +1003,3 @@ return self.obj.absolute_url() # Acquistion chain messed up, getPhysicalPath() f
 One workaround to avoid this mess is to use aq_inner when accessing self.obj values:
 
 - <http://stackoverflow.com/a/11755348/315168>
-
-
-
-
