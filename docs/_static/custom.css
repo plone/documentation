@@ -408,3 +408,9 @@ div.viewcode-block:target {
   border-top: 1px solid var(--codeblock-color);
   border-bottom: 1px solid var(--codeblock-color);
 }
+
+/* Fix paragraphs in list items. */
+#main-content ol > li > p,
+#main-content ul > li > p {
+  margin-bottom: 1em;
+}
