@@ -104,7 +104,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:6.0.0a6
+    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
     environment:
       SITE: Plone
     volumes:

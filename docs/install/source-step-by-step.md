@@ -67,7 +67,7 @@ site-packages/
 Install Plone 6 with constrained requirements using `pip`.
 
 ```shell
-pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
+pip install Plone -c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 ```
 
 ````{admonition} mkwsgiinstance's minimal Zope configuration
@@ -102,7 +102,7 @@ mkwsgiinstance -u admin:admin -d .
 python3.9 -m venv venv
 source venv/bin/activate
 pip install -U pip wheel
-pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
+pip install Plone -c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 mkwsgiinstance -u admin:admin -d .
 ```
 ````
@@ -246,7 +246,7 @@ If you want to checkout a Plone Core package for development or just want to ove
 
 ```
 # constraints.txt with unresolvable version conflict
--c https://dist.plone.org/release/6.0.0a6/constraints.txt
+-c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 plone.api>=2.0.0a3
 ```
 
@@ -274,7 +274,7 @@ collective.easyform
 {file}`constraints.txt`
 
 ```ini
--c https://dist.plone.org/release/6.0.0a6/constraints.txt
+-c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 
 # constraints of add-ons
 collective.easyform==3.4.5
