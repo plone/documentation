@@ -480,5 +480,4 @@ interface
     ```{seealso}
     See also https://zopeinterface.readthedocs.io/en/latest/.
     ```
-    
 ```

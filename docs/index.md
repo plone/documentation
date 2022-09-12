@@ -25,6 +25,7 @@ volto/index
 plone.restapi/docs/source/index
 backend/index
 classic-ui/index
+i18n-l10n/index
 contributing/index
 ```
 

@@ -59,7 +59,7 @@ Consult [Get Docker](https://docs.docker.com/get-docker/) for details.
 First start the Plone Backend, naming it `plone6-backend` and creating a site with its default configuration, using the following command.
 
 ```shell
-docker run --name plone6-backend -e SITE=Plone -e CORS_ALLOW_ORIGIN='*' -d -p 8080:8080 plone/plone-backend:6.0.0a6
+docker run --name plone6-backend -e SITE=Plone -e CORS_ALLOW_ORIGIN='*' -d -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_VERSION}
 ```
 
 Now start the Plone Frontend, linking it to the `plone6-backend`:
