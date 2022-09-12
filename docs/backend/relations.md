@@ -94,11 +94,13 @@ directives.widget(
 
 (relations-configure-the-relateditemsfieldwidget-label)=
 
-### Configure the `RelatedItemsFieldWidget`
+### Configure the relations-widget
 
 ```{note}
 These settings only have an effect in Plone 6 Classic UI.
 ```
+
+`RelatedItemsFieldWidget` is the python-class of the default widget used by relation fields.
 
 With `pattern_options` you can further configure the widget.
 
@@ -122,7 +124,7 @@ directives.widget(
     "relationlist_field",
     RelatedItemsFieldWidget,
     pattern_options={
-        "basePath": ",
+        "basePath": "",
         "closeOnSelect": False,  # Leave dropdown open for multiple selection
     },
 )
@@ -154,7 +156,7 @@ directives.widget(
 
 (relations-using-the-search-mode-of-the-related-items-widget-label)=
 
-### Using the search mode of the Related Items Widget
+### Using the search mode of the relations-widget
 
 ```{note}
 These settings only have an effect in Plone 6 Classic UI.
@@ -168,7 +170,7 @@ This makes it very flexible for limiting relatable items by type, path, date, an
 
 Setting the mode of the widget to `search` makes it easier to select from the content that results from your catalog query instead of having to navigate through your content tree.
 
-The problem is that, in the default mode of the Related Items widget, items that are in containers are not shown unless you add these types of containers to the query.
+The problem is that, in the default mode of the relations-widget, items that are in containers are not shown unless you add these types of containers to the query.
 
 Therefore, it is recommended to use `CatalogSource` only in `search` mode.
 
@@ -366,9 +368,9 @@ directives.widget(
 The field should then look like this:
 
 ```{figure} /_static/relation_select.png
-:alt: RelationList field with select widget
+:alt: RelationChoice field with select widget
 
-RelationList field with select widget
+RelationChoice field with select widget
 ```
 
 Another example is the `AjaxSelectFieldWidget` that only queries the catalog for results if you start typing:
