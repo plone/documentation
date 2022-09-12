@@ -130,7 +130,8 @@ html_extra_path = [
 
 html_static_path = [
     "_static",
-    "volto/_static",
+    "volto/_static/standards.png",
+    "volto/_static/tooltip_plugin.png",
 ]
 
 # -- Options for myST markdown conversion to html -----------------------------
