@@ -374,6 +374,7 @@ plonecli
     The plonecli helps developers to create Plone add-ons in a modular and reproducible way.
 
 ZCA
+Zope Component Architecture
     Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
     It is very well suited to developing large Python software systems.
     The ZCA is not specific to the Zope web application server.
