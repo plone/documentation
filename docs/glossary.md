@@ -99,7 +99,7 @@ CloudFormation
 
 Travis CI
     Travis CI is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.
-    Open source projects may be tested with limited runs via [travis-ci.org](https://travis-ci.org).
+    Open source projects may be tested with limited runs via [travis-ci.com](https://www.travis-ci.com).
 
 Solr
     [Solr](https://solr.apache.org/) is a popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
@@ -355,17 +355,92 @@ elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
     It also creates a separate edit form for advanced customization of the data attached to the element.
 
+i18n
+internationalization
+Internationalization
+    Internationalization is the process of preparing an application for displaying content in languages and formats specifically to the audience.
+    Developers and template authors usually internationalize the application.
+    "i18n" is shorthand for "internationalization" (the letter "I", 18 letters, the letter "N").
+    Plone is fully internationalized.
+    
+    ```{seealso}
+    {term}`localization`
+    ```
+
+l10n
+localization
+Localization
+    Localization is the process of writing the translations of text and local formats for an application that has already been internationalized.
+    Formats include dates, times, numbers, time zones, and currency.
+    Translators usually localize the application.
+    "l10n" is shorthand for "localization" (the letter "L", 10 letters, the letter "N").
+    Plone is fully localized.
+
+    ```{seealso}
+    {term}`internationalization`
+    ```
+
+locale
+    A locale is an identifier, such as a {term}`language tag`, for a specific set of cultural preferences for some country, together with all associated translations targeted to the same native language.
+
+language tag
+    A language tag is a string used as an identifier for a language.
+    A language tag may have one or more subtags.
+    The basic form of a language tag is `LANGUAGE-[SUBTAG]`.
+    
+    ```{seealso}
+    -   W3C article [Language tags in HTML and XML](https://www.w3.org/International/articles/language-tags/)
+    -   W3C Working Draft [Language Tags and Locale Identifiers for the World Wide Web](https://www.w3.org/TR/ltli/)
+    ```
+
+gettext
+    UNIX standard software translation tool.
+    See https://www.gnu.org/software/gettext/.
+
+LRF
+Language Root Folder
+    A content-type that contains the translated content for a specified language.
+    For example, an LRF located at your site root for English would be `www.domain.com/en`, where `en` represents the LRF.
+
+LIF
+Language Independent Folder
+    A folder containing static assets, such as images and files, for a given language.
+
+PO file
+`.po`
+    Portable Object (PO) file.
+    The file format used by the {term}`gettext` translation system.
+    See https://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/PO-Files.html.
+
+PO template file
+`.pot`
+    Portable Object (PO) template file, not yet oriented towards any particular language.
+
+MO file
+`.mo`
+    Machine Object file.
+    The binary message file compiled from the {term}`.po` message file.
+
+i18ndude
+    Support tool to create and update message catalogs from instrumented source code.
+
+manual `.po` entries
+    Entries which cannot be detected by an automatic code scan.
+
+react-intl
+    A library that is part of [Format.JS](https://formatjs.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
+
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
 ZEO
-    [ZEO](https://zeo.readthedocs.io/) is a client-server storage for ZODB for sharing a single storage among many clients.
+    [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
 
 ZODB
-    [A native object database for Python](https://zodb.org/).
+    [A native object database for Python](https://zodb.org/en/latest/).
 
 Zope
-    [Zope](https://zope.readthedocs.io/) is a Python-based application server for building secure and highly scalable web applications.
+    [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 
 ZPT
     Zope Page Template is a template language for Python.
