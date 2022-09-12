@@ -32,6 +32,26 @@ brew install enchant
 sudo apt-get install enchant
 ```
 
+```{note}
+If you are using an M1 Mac to build the documentation, there is currently [an issue with pyenchant](https://github.com/pyenchant/pyenchant/issues/265) that throws an error that the enchant library can't be found.
+This happens for example if you install Python 3 with `pyenv` in the default M1 architecture (aarch64), so without following instructions to use Rosetta2 x86 emulation.
+A workaround until pyenchant is fixed is to run `export PYENCHANT_LIBRARY_PATH=/opt/homebrew/lib/libenchant-2.dylib` in the terminal session before you execute `make html`.
+```
+
+Install [Graphviz](https://graphviz.org/download/) for graph visualization.
+
+**macOS**
+
+```shell
+brew install graphviz
+```
+
+**Ubuntu**
+
+```shell
+sudo apt-get install graphviz
+```
+
 Clone the Plone Documentation repository, and change your working directory into the cloned project.
 Then with a single command using `Makefile`, create a Python virtual environment, install project dependencies, pull in Volto documentation as a git submodule, build the docs, and view the results in a web browser by opening `/_build/html/index.html`.
 
@@ -39,12 +59,6 @@ Then with a single command using `Makefile`, create a Python virtual environment
 git clone https://github.com/plone/documentation.git
 cd documentation
 make html
-```
-
-```{note}
-If you are using an M1 Mac to build the documentation, there is currently [an issue with pyenchant](https://github.com/pyenchant/pyenchant/issues/265) that throws an error that the enchant library can't be found.
-This happens for example if you install Python 3 with `pyenv` in the default M1 architecture (aarch64), so without following instructions to use Rosetta2 x86 emulation.
-A workaround until pyenchant is fixed is to run `export PYENCHANT_LIBRARY_PATH=/opt/homebrew/lib/libenchant-2.dylib` in the terminal session before you execute `make html`.
 ```
 
 (setup-build-available-documentation-builds-label)=
