@@ -69,7 +69,7 @@ We can see that the [code for the behavior `IRelatedItems`](https://github.com/p
 ### Controlling relation targets
 
 The best way to control which item should be relatable is to configure the widget with `directives.widget()`.
-In the following example you can only relate to `Documents`:
+In the following example you can only relate to `Documents` and `Events`:
 
 ```{code-block} python
 :emphasize-lines: 12
