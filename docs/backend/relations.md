@@ -77,13 +77,13 @@ In the following example you can only relate to `Documents` and `Events`:
 
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 
-relationchoice_field = RelationChoice(
-    title="Relationchoice field",
-    vocabulary="plone.app.vocabularies.Catalog",
+relationlist_field = RelationList(
+    title="Relationlist field for Documents and Events",
+    value_type=RelationChoice(vocabulary="plone.app.vocabularies.Catalog"),
     required=False,
 )
 directives.widget(
-    "relationchoice_field",
+    "relationlist_field",
     RelatedItemsFieldWidget,
     pattern_options={
         "selectableTypes": ["Document", "Event"],
