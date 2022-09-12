@@ -381,6 +381,7 @@ ZCA
     Maybe it should be called Python Component Architecture.
     For more info read: https://muthukadan.net/docs/zca.html
 
+browser layer
 Layer
     A layer, or also called browser layer, is a marker interface and used in ZCML configurations.
     Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes.
