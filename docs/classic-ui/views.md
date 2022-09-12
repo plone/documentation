@@ -32,36 +32,45 @@ Views are usually a combination of:
     }
 ```
 
+Templates should kept simple.
+Logic should be kept in a separate Python file.
+This enhances readability and makes components more reusable.
+You can override the Python logic, the template file, or both.
 
-Templates should kept simple and logic kept in a separate Python file. This enhances readability and makes components more reusable. You can override the Python logic or the template file, or both.
-
-When you are working with Plone, the most common view type is `BrowserView`
-from the [Products.Five](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt) package. Other view types are `DefaultView` from [plone.dexterity](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/view.py) and `CollectionView` from [plone.app.contenttypes](https://github.com/plone/plone.app.contenttypes/blob/master/plone/app/contenttypes/browser/collection.py) package.
+When you are working with Plone, the most common view type is `BrowserView` from the package [Products.Five](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt).
+Other view types include `DefaultView` from [plone.dexterity](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/view.py) and `CollectionView` from [plone.app.contenttypes](https://github.com/plone/plone.app.contenttypes/blob/master/plone/app/contenttypes/browser/collection.py).
 
 Each `BrowserView` class is a Python callable.
-The `BrowserView.__call__()` method acts as an entry point to executing
-the view code. From Zope's point of view, even a function would be
-sufficient, as it is a callable.
+The `BrowserView.__call__()` method acts as an entry point to executing the view code.
+From Zope's point of view, even a function would be sufficient, as it is a callable.
+
+
+(classic-ui-creating-and-registering-a-view-label)=
 
 ## Creating and registering a view
 
-This shows how to create and register view in Plone.
+This section shows how to create and register a view in Plone.
+
+
+(classic-ui-creating-a-view-label)=
 
 ### Creating a view
 
 Create your add-on package using {term}`plonecli`:
 
 ```shell
-
-$ plonecli create addon collective.awesomeaddon
+plonecli create addon collective.awesomeaddon
 ```
 
-then change the directory into the created package and add a view:
+Then change the directory into the created package, and add a view:
 
 ```shell
-
-$ plonecli add view
+cd collective.awesomeaddon
+plonecli add view
 ```
+
+
+(classic-ui-python-logic-code-label)=
 
 #### Python logic code
 
@@ -108,6 +117,9 @@ contexts, probably wasting a lot of time.
 Instead, use a pattern where you have a `setup()` or similar
 method which `__call__()` or view users can explicitly call.
 ```
+
+
+(classic-ui-registering-a-view-label)=
 
 #### Registering a view
 
@@ -182,6 +194,8 @@ You need to declare the `browser` namespace in your
 The view in question is registered against a {ref}`classic-ui-layers-label`, it will be available after restart, after you run {doc}`Add/remove in Site setup </develop/addons/components/genericsetup>`.
 
 
+(classic-ui-page-template-label)=
+
 #### Page template
 
 Depending on how you answered the questions, `plonecli` was creating a {ref}`template <plone:classic-ui-templates-label>` for you.
@@ -211,6 +225,9 @@ Depending on how you answered the questions, `plonecli` was creating a {ref}`tem
 
 When you restart Plone, and activate your add-on, the view should be available through your browser.
 
+
+(classic-ui-accessing-your-newly-created-view-label)=
+
 #### Accessing your newly created view
 
 Now you can access your view within the news folder:
@@ -234,6 +251,9 @@ to have the same id as a view:
 ```
 http://localhost:8080/Plone/news/@@my-view
 ```
+
+
+(classic-ui-content-slots-label)=
 
 ### Content slots
 
@@ -266,6 +286,9 @@ inherits from `<html metal:use-macro="context/main_template/macros/master">`:
 : A slot for inserting content above the title; may be useful in conjunction with
   content-core slot if you wish to use the stock content-title provided by the
   main template.
+
+
+(classic-ui-relationship-between-views-and-templates-label)=
 
 ### Relationship between views and templates
 
@@ -334,6 +357,8 @@ class MyView(BrowserView):
 ```
 
 
+(classic-ui-several-templates-per-view-label)=
+
 ### Several templates per view
 
 You can bind several templates to one view and render them individually.
@@ -365,6 +390,9 @@ And then in the template call:
 <div tal:replace="structure view/render_template2">
 ```
 
+
+(classic-ui-view-init-method-special-cases-label)=
+
 #### View `__init__()` method special cases
 
 ```{todo}
@@ -380,6 +408,9 @@ available, meaning that it does not know the parent or hierarchy where the view 
 This information is set after the constructor have been run.
 All Plone code which relies on acquisition chain, which means almost all Plone helper code, does not work in `__init__()`.
 Thus, the called Plone API methods return `None` or tend to throw exceptions.
+
+
+(classic-ui-layers-label)=
 
 ### Layers
 
@@ -398,7 +429,9 @@ You should register your views against a certain layer in your own code.
 For more information, read the {ref}`classic-ui-layers-label` chapter.
 
 
-### Register and unregister view directly using zope.component architecture
+(classic-ui-register-and-unregister-view-directly-using-zope.component-architecture-label)=
+
+### Register and unregister view directly using `zope.component` architecture
 
 Example how to register:
 
@@ -429,6 +462,9 @@ gsm.unregisterAdapter(factory=TestingRedirectHandler,
                       name="redirect_handler")
 ```
 
+
+(classic-ui-customizing-views-label)=
+
 ## Customizing views
 
 To customize existing Plone core or add-on views you have different options.
@@ -437,6 +473,9 @@ To customize existing Plone core or add-on views you have different options.
 - Sometimes you need to change the related Python view class code also.
   In this case, you override the Python class by using your own add-on which
   installs a view class replacement using an add-on specific `browser layer`.
+
+
+(classic-ui-overriding-view-template-label)=
 
 ### Overriding view template
 
@@ -451,7 +490,10 @@ If you need to override templates in core Plone or in an existing add-on, you ca
   viewlets, old style page templates and portlets.
   In fact it can override any `.pt` file in the Plone source tree, except the main_template.pt.
 
-### Overriding a template using z3c.jbot
+
+(classic-ui-overriding-a-template-using-z3c.jbot-label)=
+
+### Overriding a template using `z3c.jbot`
 
   1. First of all, make sure that your customization add-on supports [z3c.jbot](https://pypi.python.org/pypi/z3c.jbot).
   Add-on packages created by plonecli have an `overrides` folder in the `browser` folder where you can
@@ -512,6 +554,8 @@ If you want to override an already overridden template, read here:
 
 http://stackoverflow.com/questions/16209392/how-can-i-override-an-already-overriden-template-by-jbot
 
+
+(classic-ui-overriding-a-view-class-label)=
 
 ## Overriding a view class
 
@@ -580,10 +624,7 @@ You can also add a view to your package via {term}`plonecli` and place the Pytho
 ```
 
 
-
-
-
-
+(classic-ui-guided-information-label)=
 
 ## Guided information
 
@@ -593,6 +634,8 @@ The Mastering Plone Training has several chapters on views.
 - {ref}`training:views2-label`
 - {ref}`training:views3-label`
 
+
+(classic-ui-anatomy-of-a-view-label)=
 
 ## Anatomy of a view
 
@@ -657,6 +700,9 @@ However, in the most of cases
 Views rendering page snippets and parts can be subclasses of zope.publisher.browser.BrowserView directly
 as snippets might not need acquisition support which adds some overhead to the rendering process.
 
+
+(classic-ui-helper-views-label)=
+
 ## Helper views
 
 Not all views need to return HTML output, or output at all.
@@ -667,10 +713,16 @@ add-on product can customize or override in a conflict-free manner.
 View methods are exposed to page templates and such, so you can also call
 view methods directly from a page template, not only from Python code.
 
+
+(classic-ui-more-information-label)=
+
 ### More information
 
 - {doc}`Context helpers </develop/plone/misc/context>`
 - {doc}`Expressions </develop/plone/functionality/expressions>`
+
+
+(classic-ui-historical-perspective-label)=
 
 ### Historical perspective
 
@@ -688,6 +740,9 @@ Management Interface) and Zope 2 Extension modules is discouraged.
 The same functionality can be achieved with helper views, with less
 potential pitfalls.
 ```
+
+
+(classic-ui-reusing-view-template-snippets-or-embedding-another-view-label)=
 
 ## Reusing view template snippets or embedding another view
 
@@ -765,6 +820,9 @@ template will not be translated.
 </div>
 ```
 
+
+(classic-ui-accessing-a-view-instance-in-code-label)=
+
 ## Accessing a view instance in code
 
 You need to get access to the view in your code if you are:
@@ -773,6 +831,9 @@ You need to get access to the view in your code if you are:
 - calling a view from your unit test code.
 
 Below are two different approaches for that.
+
+
+(classic-ui-by-using-getmultiadapter-label)=
 
 ### By using `getMultiAdapter()`
 
@@ -793,6 +854,9 @@ def getView(context, request, name):
     view = view.__of__(context)
     return view
 ```
+
+
+(classic-ui-by-using-traversal-label)=
 
 ### By using traversal
 
@@ -829,6 +893,9 @@ by using the `@@`-notation in traversing.
 </div>
 ```
 
+
+(classic-ui-use-a-skin-based-template-in-a-five-view-label)=
+
 ### Use a skin-based template in a Five view
 
 Use `aq_acquire(object, template_name)`.
@@ -856,7 +923,13 @@ class TelescopeView(BrowserView):
                           target_obj.getDefaultLayout())()
 ```
 
+
+(classic-ui-advanced-label)=
+
 ## Advanced
+
+
+(classic-ui-listing-available-views-label)=
 
 ### Listing available views
 
@@ -869,6 +942,9 @@ from zope.publisher.interfaces.browser import IBrowserRequest
 # views is generator of zope.component.registry.AdapterRegistration objects
 views = registration.getViews(IBrowserRequest)
 ```
+
+
+(classic-ui-listing-all-views-of-certain-type-label)=
 
 #### Listing all views of certain type
 
@@ -884,6 +960,9 @@ views = registration.getViews(IBrowserRequest)
 # Filter out all classes which implement a certain interface
 views = [ view.factory for view in views if IBlocksView.implementedBy(view.factory) ]
 ```
+
+
+(classic-ui-default-view-of-a-content-item-label)=
 
 ### Default view of a content item
 
@@ -916,6 +995,9 @@ More info:
 - {doc}`Context helpers and utilities </develop/plone/misc/context>`
 - <http://plone.293351.n2.nabble.com/URL-to-content-view-tp6028204p6028204.html>
 
+
+(classic-ui-allowing-the-contentmenu-on-non-default-views-label)=
+
 ### Allowing the contentmenu on non-default views
 
 In general, the contentmenu (where the actions, display views, factory types,
@@ -932,6 +1014,9 @@ by configuring it via ZCML like so:
   <implements interface="plone.app.layout.globals.interfaces.IViewView" />
 </class>
 ```
+
+
+(classic-ui-zope-viewpagetemplatefile-vs-five-viewpagetemplatefile-label)=
 
 ## Zope ViewPageTemplateFile vs. Five ViewPageTemplateFile
 
@@ -965,6 +1050,8 @@ The difference is that the *Five* version supports:
 - Some subsystems, notably the `z3c.form` package, expect the Zope 3
   version of `ViewPageTemplateFile` instances.
 
+
+(classic-ui-views-and-automatic-member-variable-acquisition-wrapping-label)=
 
 ### Views and automatic member variable acquisition wrapping
 
