@@ -374,7 +374,7 @@ This is useful when you want to define a picture variant to be used in templates
             {
               "scale": "preview",
               "additionalScales": ["large", "larger"],
-              "hideInEditor": True,
+              "hideInEditor": true,
             },
         ],
     },
