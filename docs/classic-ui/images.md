@@ -344,7 +344,7 @@ By default, for every `srcset`, all available scales will be included in the `sr
 ```
 
 To restrict the list of used scales inside of a `srcset`, you can set the `additionalScales` parameter with an array of allowed scales.
-Without this parameter all scales which are not globally excluded scales will be used.
+Without this parameter, all scales which are not globally excluded scales will be used.
 
 ```json
     "small": {
