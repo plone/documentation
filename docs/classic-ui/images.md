@@ -302,7 +302,7 @@ The default configuration covers image size optimization and will provide the br
 }
 ```
 
-### optional settings
+### Optional settings
 
 The `sourceset` property is an array and can have more than one entry.
 If we have the following two entries, the `image_srcset` outputfilter will generate one source-tag for each entry and an additional img-tag from the last entry.
