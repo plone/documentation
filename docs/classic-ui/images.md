@@ -274,7 +274,7 @@ A `srcset` attribute can help the browser to serve the best fitting image size f
 
 ### Default configuration
 
-The default configuration covers `image size optimization` and will provide the Browser with the needed information to load the optimal image size.
+The default configuration covers image size optimization and will provide the browser with the needed information to load the optimal image size.
 
 ```json
 {
