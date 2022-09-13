@@ -358,7 +358,7 @@ Without this parameter, all scales which are not globally excluded scales will b
     },
 ```
 
-This means the generated `srcset` will contain the scales from `preview` up to `huge`, but not `mini` for example.
+This means the generated `srcset` will contain the scales from `preview` up to `huge`, but not `mini`, for example.
 
 
 (classic-ui-images-responsive-image-support-picture-variant-in-editor)=
