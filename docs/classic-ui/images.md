@@ -330,7 +330,7 @@ If we have the following two entries, the `image_srcset` outputfilter will gener
 (classic-ui-images-responsive-image-support-filtering-scales)=
 #### Filtering scales
 
-By default for every `srcset` all available scales will be included in the `srcset`.
+By default, for every `srcset`, all available scales will be included in the `srcset`.
 
 ```json
 {
