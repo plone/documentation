@@ -272,7 +272,7 @@ These are used for HTML {term}`srcset` attributes.
 A `srcset` attribute can help the browser to serve the best fitting image size for the current user's display.
 
 
-### default configuration
+### Default configuration
 
 The default configuration covers `image size optimization` and will provide the Browser with the needed information to load the optimal image size.
 
