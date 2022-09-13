@@ -25,7 +25,8 @@ We will use the image object as context in the following examples.
 
 ## Default scales
 
-In `/@@imaging-controlpanel` Plone allows you to configure which scales are available and what dimensions they should have. By default we have the following scales configured:
+In `/@@imaging-controlpanel` Plone allows you to configure which scales are available and what dimensions they should have.
+By default, we have the following scales configured:
 
 * huge 1600:65536
 * great 1200:65536
@@ -176,9 +177,9 @@ scale_util = api.content.get_view("images", context, request)
 tag = scale_util.scale("image", width=600, height=200)
 ```
 
-(classic-ui-images-using-image_scale0-in-templates-label)=
+(classic-ui-images-using-image_scale-in-templates-label)=
 
-### Using image_scale in templates
+### Using `image_scale` in templates
 
 You could use the URL-variant from above, but that would be an uncached version.
 To create a cached scale in a page template you can do the following:
@@ -212,9 +213,10 @@ You can also provide the following keyword arguments to set `title`, `alt`, or `
 
 (classic-ui-images-get-image_scale-by-cached-uid-name-label)=
 
-### Get image_scale by cached UID name
+### Get `image_scale` by cached UID name
 
-If you only have the cached image name from an URL and need to get the image scale, unfortunately you can't use restrictedTraverse(), as this will not be able to resolve the scale. But you can use this workaround, by calling the `publishTraverse` method in `ImageScaling` directly:
+If you only have the cached image name from an URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
+But you can use this workaround, by calling the `publishTraverse` method in `ImageScaling` directly:
 
 ```python
 import re
@@ -256,16 +258,18 @@ To access image scales, which are normally not accessible to the current user, o
 
 
 (classic-ui-images-responsive-image-support)=
+
 ## Responsive image support
 
 Plone supports the generation of picture tags with `srcset`s for image optimization.
-Additionally you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
+Additionally, you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
 
 The configuration allows you to define different picture variants, such as `Large`, `Medium`, or `Small`.
-Users can choose from them in editors like TinyMCE and Developers can use them in templates.
+Users can choose from them in editors, such as TinyMCE, and developers can use them in templates.
 
 
 (classic-ui-images-responsive-image-support-picture-variants)=
+
 ### Picture variants
 
 In `/@@imaging-controlpanel` Plone allows you to define picture variants with a list of available image scales.
@@ -273,9 +277,11 @@ These are used for HTML {term}`srcset` attributes.
 A `srcset` attribute can help the browser to serve the best fitting image size for the current user's display.
 
 
+(classic-ui-images-responsive-image-support-default-configuration-label)=
+
 ### Default configuration
 
-The default configuration covers image size optimization and will provide the browser with the needed information to load the optimal image size.
+The default configuration covers image size optimization, and will provide the browser with the needed information to load the optimal image size.
 
 ```json
 {
@@ -306,7 +312,7 @@ The default configuration covers image size optimization and will provide the br
 ### Optional settings
 
 The `sourceset` property is an array and can have more than one entry.
-If we have the following two entries, the `image_srcset` outputfilter will generate one `source` tag for each entry and an additional `img` tag from the last entry.
+If we have the following two entries, the `image_srcset` output filter will generate one `source` tag for each entry and an additional `img` tag from the last entry.
 
 ```json
 {
@@ -328,7 +334,9 @@ If we have the following two entries, the `image_srcset` outputfilter will gener
 }
 ```
 
+
 (classic-ui-images-responsive-image-support-filtering-scales)=
+
 #### Filtering scales
 
 By default, for every `srcset`, all available scales will be included in the `srcset`.
@@ -344,7 +352,7 @@ By default, for every `srcset`, all available scales will be included in the `sr
 }
 ```
 
-To restrict the list of used scales inside of a `srcset`, you can set the `additionalScales` parameter with an array of allowed scales.
+To restrict the list of used scales inside a `srcset`, you can set the `additionalScales` parameter with an array of allowed scales.
 Without this parameter, all scales which are not globally excluded scales will be used.
 
 ```json
@@ -363,6 +371,7 @@ This means the generated `srcset` will contain the scales from `preview` up to `
 
 
 (classic-ui-images-responsive-image-support-picture-variant-in-editor)=
+
 #### Hiding a picture variant in editors
 
 It is possible to hide a picture variant in editors.
@@ -383,6 +392,7 @@ This is useful when you want to define a picture variant to be used in templates
 
 
 (classic-ui-images-responsive-image-support-art-direction)=
+
 ### Art direction
 
 With image size optimization, the browser is able to choose the optimal image for each display size.
@@ -450,4 +460,3 @@ This will result in a `srcset` as in the following example for a medium image:
 Please note that this example has the `resolve_uid_and_caption` filter disabled to see the scale names better.
 The real `src` URLs look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`.
 ```
-
