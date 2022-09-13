@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Install Plone 6 from its packages – the installer"
-  "property=og:description": "Install Plone 6 from its packages – the installer"
-  "property=og:title": "Install Plone from its Packages"
-  "keywords": "Plone, Plone 6, install, pip, packages, source, buildout"
+myst:
+  html_meta:
+    "description": "Install Plone 6 from its packages – the installer"
+    "property=og:description": "Install Plone 6 from its packages – the installer"
+    "property=og:title": "Install Plone from its Packages"
+    "keywords": "Plone, Plone 6, install, pip, packages, source, buildout"
 ---
 
 
@@ -131,7 +132,7 @@ Choose from 1, 2 [1]: 1
 requirements_out [requirements-mxdev.txt]: 
 admin_user [admin]: 
 admin_password []: admin
-plone_version [6.0.0a2]: 6.0.0a6
+plone_version [6.0.0a2]: {PLONE_BACKEND_VERSION}
 listen [localhost:8080]: 
 ```
 
@@ -314,7 +315,7 @@ Paste the following configuration information into it.
 
 ```ini
 [buildout]
-extends = https://dist.plone.org/release/6.0.0a6/versions.cfg
+extends = https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/versions.cfg
 parts = instance
 
 [instance]
@@ -330,7 +331,7 @@ Install Plone with the following shell commands.
 # Create a Python virtual environment in the current directory
 python3.9 -m venv .
 # Install the latest Plone 6 requirements with pip
-bin/pip install -r https://dist.plone.org/release/6.0.0a6/requirements.txt
+bin/pip install -r https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/requirements.txt
 # Run buildout to install Plone 6
 bin/buildout
 # Start the Plone instance

@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Migrate to Volto"
-  "property=og:description": "Migrate to Volto"
-  "property=og:title": "Migrate to Volto"
-  "keywords": "Migrating, Upgrading, Plone 6, Volto"
+myst:
+  html_meta:
+    "description": "Migrate to Volto"
+    "property=og:description": "Migrate to Volto"
+    "property=og:title": "Migrate to Volto"
+    "keywords": "Migrating, Upgrading, Plone 6, Volto"
 ---
 
 (backend-migrate-to-volto-label)=

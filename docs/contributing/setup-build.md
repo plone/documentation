@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "How to set up the Plone Documentation locally"
-  "property=og:description": "How to set up the Plone Documentation locally"
-  "property=og:title": "Building and Checking the Quality of Documentation"
-  "keywords": "setup, build, documentation, quality, development, spellcheck, linkcheck"
+myst:
+  html_meta:
+    "description": "How to set up the Plone Documentation locally"
+    "property=og:description": "How to set up the Plone Documentation locally"
+    "property=og:title": "Building and Checking the Quality of Documentation"
+    "keywords": "setup, build, documentation, quality, development, spellcheck, linkcheck"
 ---
 
 (setup-build-label)=

@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
-  "property=og:description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
-  "property=og:title": "Authors Guide"
-  "keywords": "Plone, Documentation, SEO, meta, exercises, solutions, spellcheck, linkcheck, lexer"
+myst:
+  html_meta:
+    "description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
+    "property=og:description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
+    "property=og:title": "Authors Guide"
+    "keywords": "Plone, Documentation, SEO, meta, exercises, solutions, spellcheck, linkcheck, lexer"
 ---
 
 (authors-guide-label)=
@@ -19,7 +20,7 @@ For general markup syntax, see {doc}`writing-docs-guide`.
 
 ## HTML and Open Graph Metadata
 
-All documents must have an `html_meta` directive at the top of every page.
+All documents must have a `myst` topmatter key with an `html_meta` directive at the top of every page.
 When rendered to HTML, it inserts `<meta>` tags for improved search engine results and nicer social media posts.
 Authors should include at least `description`, `property=og:description`, `property=og:title`, and `keywords` meta tags.
 
@@ -28,11 +29,12 @@ Note that the content of the two tags `description` and `property=og:description
 
 ```md
 ---
-html_meta:
-  "description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
-  "property=og:description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
-  "property=og:title": "Authors Guide"
-  "keywords": "Plone, Documentation, SEO, meta, spellcheck, linkcheck, lexer"
+myst:
+  html_meta:
+    "description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
+    "property=og:description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
+    "property=og:title": "Authors Guide"
+    "keywords": "Plone, Documentation, SEO, meta, spellcheck, linkcheck, lexer"
 ---
 ```
 

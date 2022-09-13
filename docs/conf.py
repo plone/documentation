@@ -62,7 +62,7 @@ extensions = [
 # to convert quotes and dashes to typographically correct entities.
 # Note to maintainers: setting this to `True` will cause contractions and
 # hyphenated words to be marked as misspelled by spellchecker.
-smartquotes=False
+smartquotes = False
 
 # The name of the Pygments (syntax highlighting) style to use.
 # pygments_style = "sphinx.pygments_styles.PyramidStyle"
@@ -79,6 +79,7 @@ linkcheck_ignore = [
     # Ignore specific anchors
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://github.com/browserslist/browserslist#queries",
+    r"https://github.com/plone/cookiecutter-zope-instance#options",
     r"https://github.com/plone/plone.docker#for-basic-usage",
     r"https://github.com/plone/plone.rest#cors",
     r"https://github.com/plone/plone.volto/blob/6f5382c74f668935527e962490b81cb72bf3bc94/src/kitconcept/volto/upgrades.py#L6-L54",
@@ -128,6 +129,7 @@ html_extra_path = [
 
 html_static_path = [
     "_static",
+    "volto/_static/volto/img",
 ]
 
 # -- Options for myST markdown conversion to html -----------------------------
@@ -136,12 +138,12 @@ html_static_path = [
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
     "deflist",  # You will be able to utilise definition lists
-                # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
+    # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
     "linkify",  # Identify “bare” web URLs and add hyperlinks.
     "colon_fence",  # You can also use ::: delimiters to denote code fences,\
-                    #  instead of ```.
+    #  instead of ```.
     "substitution",  # plone.restapi \
-        # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
+    # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
 ]
 
 myst_substitutions = {
@@ -208,8 +210,7 @@ html_theme = "sphinx_book_theme"
 html_logo = "_static/logo.svg"
 html_favicon = "_static/favicon.ico"
 
-html_css_files = ["custom.css",
-                  ("print.css", {"media": "print"})]
+html_css_files = ["custom.css", ("print.css", {"media": "print"})]
 
 # See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
 todo_include_todos = True
@@ -258,10 +259,40 @@ htmlhelp_basename = "PloneDocumentation"
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual])
 latex_documents = [
-    ("index", "PloneDocumentation.tex", "Plone Documentation",
-     "The Plone community", "manual"),
+    (
+        "index",
+        "PloneDocumentation.tex",
+        "Plone Documentation",
+        "The Plone community",
+        "manual",
+    ),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 latex_logo = "_static/logo_2x.png"
+
+
+# suggest edit link
+# remark: {{ file_name }} is mandatory in "edit_page_url_template"
+html_context = {
+    "edit_page_url_template": "https://6.dev-docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
+}
+
+# An extension that allows replacements for code blocks that
+# are not supported in `rst_epilog` or other substitutions.
+# https://stackoverflow.com/a/56328457/2214933
+def source_replace(app, docname, source):
+    result = source[0]
+    for key in app.config.source_replacements:
+        result = result.replace(key, app.config.source_replacements[key])
+    source[0] = result
+
+# Dict of replacements.
+source_replacements = {
+    "{PLONE_BACKEND_VERSION}": "6.0.0b2",
+}
+
+def setup(app):
+   app.add_config_value('source_replacements', {}, True)
+   app.connect('source-read', source_replace)
