@@ -94,7 +94,7 @@ directives.widget(
 
 (relations-configure-the-relateditemsfieldwidget-label)=
 
-### Configure the relations-widget
+### Configure the relations widget
 
 ```{note}
 These settings only have an effect in Plone 6 Classic UI.
@@ -156,7 +156,7 @@ directives.widget(
 
 (relations-using-the-search-mode-of-the-related-items-widget-label)=
 
-### Using the search mode of the relations-widget
+### Using the search mode of the relations widget
 
 ```{note}
 These settings only have an effect in Plone 6 Classic UI.
@@ -170,7 +170,7 @@ This makes it very flexible for limiting relatable items by type, path, date, an
 
 Setting the mode of the widget to `search` makes it easier to select from the content that results from your catalog query instead of having to navigate through your content tree.
 
-The problem is that, in the default mode of the relations-widget, items that are in containers are not shown unless you add these types of containers to the query.
+The problem is that, in the default mode of the relations widget, items that are in containers are not shown unless you add these types of containers to the query.
 
 Therefore, it is recommended to use `CatalogSource` only in `search` mode.
 
