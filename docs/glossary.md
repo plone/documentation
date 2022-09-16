@@ -52,9 +52,6 @@ mxdev
     It is designed for developers who use stable version constraints, then layer their customizations on top of that base while using a version control system.
     This design allows developers to override their base package constraints with a customized or newer version.
 
-mxmake
-    mxmake helps create development environments for Python projects based on [make](https://www.gnu.org/software/make) and [mxdev](https://github.com/mxstack/mxdev).
-
 NFS
     [Network File System](https://en.wikipedia.org/wiki/Network_File_System).
 

@@ -113,12 +113,6 @@ You can now run `cookiecutter` to create a Zope instance sceleton with configura
 cookiecutter https://github.com/bluedynamics/plone-kickstarter
 ```
 
-```{todo}
-- Documentation driven implementation: plone-kickstarter: configure with mxmake [on top of] / [enhancing with scripts like test and check and you name it] mxdev.
-- Move bluedynamics/plone-kickstarter to plone/plone-kickstarter in Plone repo?
-- See mxmake in action:  https://github.com/rohberg/Plone_mxmake_example  for ONE single Makefile, ONE single requirements, ONE single constraints
-```
-
 Answer the prompts with:
 
 ```ini
@@ -218,7 +212,6 @@ Checkout an add-on
   url=git@github.com:collective/collective.bookmarks.git
   branch=master
   extras = test
-  mxmake-test-path = src
   ```
 
   Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
