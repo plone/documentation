@@ -100,7 +100,7 @@ directives.widget(
 These settings only have an effect in Plone 6 Classic UI.
 ```
 
-`RelatedItemsFieldWidget` is the python-class of the default widget used by relation fields.
+`RelatedItemsFieldWidget` is the Python class of the default widget used by relation fields.
 
 With `pattern_options` you can further configure the widget.
 
@@ -419,7 +419,7 @@ To display related items, you can use the `render` method of the default widget.
 <div tal:content="structure view/w/evil_mastermind/render" />
 ```
 
-This would render the related items as shown:
+This will render the related items as shown:
 
 ```{figure} https://user-images.githubusercontent.com/453208/77223704-4b714100-6b5f-11ea-855b-c6e209f1c25c.png
 :alt: Default rendering of a RelationList (since Plone 5.2.2)
@@ -516,7 +516,7 @@ In older Plone versions, you can use [collective.relationhelpers](https://pypi.o
 ### REST API
 
 A REST API endpoint to create, read, and delete relations and backrelations will be part of `plone.restapi`.
-See https://github.com/plone/plone.restapi/issues/1432
+See https://github.com/plone/plone.restapi/issues/1432.
 
 
 (relations-relation-fields-without-relations-label)=
@@ -597,7 +597,7 @@ The logic for this is provided by the package [z3c.relationfield](https://pypi.o
 This package contains the `RelationValue` object and everything needed to define a relation schema, and all the code that is necessary to automatically update the catalog.
 
 A `RelationValue` object does not reference all objects directly.
-For the target, it uses an ID it gets from the `IntId` utility.
+For the target, it uses an ID that it gets from the `IntId` utility.
 This ID allows direct recovery of the object.
 The source object stores it directly.
 
@@ -607,8 +607,8 @@ Because of this, the following happens when saving a relation via a form:
 
 1.  The HTML shows some nice representation of selectable objects.
 2.  When the user submits the form, selected items are submitted by their UUIDs.
-3.  The Widget retrieves the original object with the UUID.
-4.  Some data manager gets another unique ID from an IntID Tool.
+3.  The widget retrieves the original object with the UUID.
+4.  Some data manager gets another unique ID from the `IntID` utility.
 5.  The same data manager creates a `RelationValue` from this ID, and stores this relation value on the source object.
 6.  Some event handlers update the catalogs.
 
@@ -645,4 +645,4 @@ Thus the API for getting the target uses:
 
 In addition, the relation value knows under which attribute it has been stored as `from_attribute`.
 It is usually the name of the field with which the relation is created.
-But it can also be the name of a relation that is created by code, for example, through linkintegrity relations (`isReferencing`) or the relation between a working copy and the original (`iterate-working-copy`).
+But it can also be the name of a relation that is created by code, for example, through link integrity relations (`isReferencing`) or the relation between a working copy and the original (`iterate-working-copy`).

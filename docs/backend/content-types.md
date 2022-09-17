@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "A content type is a kind of object that can store information and is editable by users."
-    "property=og:description": "A content type is a kind of object that can store information and is editable by users."
+    "description": "A content type is an object that can store information and is editable by users."
+    "property=og:description": "A content type is an object that can store information and is editable by users."
     "property=og:title": "Content Types"
     "keywords": "Content Types"
 ---
@@ -22,5 +22,5 @@ See issue [Backend > Content Types needs content](https://github.com/plone/docum
 
 ```{todo}
 Describe how to add a content type (Python/XML) including FTI settings.
-Fields, Widgets, Vocabularies aso are descripted in detail in their own chapter and will be referenced frome examples here.
+Fields, Widgets, Vocabularies are also described in detail in their own chapters, and will be referenced from examples here.
 ```
