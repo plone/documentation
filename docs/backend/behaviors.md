@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Behaviors are re-usable bundles of functionality that can be enabled or disabled on a per-content type basis."
-    "property=og:description": "Behaviors are re-usable bundles of functionality that can be enabled or disabled on a per-content type basis."
+    "description": "Behaviors are reusable bundles of functionality that can be enabled or disabled on a per-content type basis."
+    "property=og:description": "Behaviors are reusable bundles of functionality that can be enabled or disabled on a per-content type basis."
     "property=og:title": "Behaviors"
     "keywords": "Behaviors"
 ---
