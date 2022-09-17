@@ -23,6 +23,7 @@ behaviors
 annotations
 vocabularies
 fields
+relations
 widgets
 global-utils
 portal-actions
