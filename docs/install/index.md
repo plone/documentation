@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Install Plone 6"
-  "property=og:description": "Install Plone 6"
-  "property=og:title": "Install Plone 6"
-  "keywords": "Plone 6, install, overview"
+myst:
+  html_meta:
+    "description": "Install Plone 6"
+    "property=og:description": "Install Plone 6"
+    "property=og:title": "Install Plone 6"
+    "keywords": "Plone 6, install, overview"
 ---
 
 (install-index-label)=

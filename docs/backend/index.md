@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": ""
-  "property=og:description": ""
-  "property=og:title": "Backend"
-  "keywords": "Plone 6, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
+myst:
+  html_meta:
+    "description": ""
+    "property=og:description": ""
+    "property=og:title": "Backend"
+    "keywords": "Plone 6, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
 ---
 
 (backend-index-label)=
@@ -22,6 +23,7 @@ behaviors
 annotations
 vocabularies
 fields
+relations
 widgets
 global-utils
 portal-actions

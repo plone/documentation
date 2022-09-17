@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Using plone/plone-backend image"
-  "property=og:description": "Using plone/plone-backend image"
-  "property=og:title": "Plone Backend image"
-  "keywords": "Plone 6, install, installation, docker, containers, backend, plone/plone-backend"
+myst:
+  html_meta:
+    "description": "Using plone/plone-backend image"
+    "property=og:description": "Using plone/plone-backend image"
+    "property=og:title": "Plone Backend image"
+    "keywords": "Plone 6, install, installation, docker, containers, backend, plone/plone-backend"
 ---
 
 # `plone/plone-backend`
@@ -17,7 +18,7 @@ This chapter covers Plone backend [Docker](https://www.docker.com/) images using
 ### Simple usage
 
 ```shell
-docker run -p 8080:8080 plone/plone-backend:6.0.0a6 start
+docker run -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
 
 Then point your browser at `http://localhost:8080`.
@@ -65,13 +66,13 @@ To recreate the Plone site when restarting the container, you can pass the `DELE
 Plone 6 example:
 
 ```shell
-docker run -p 8080:8080 -e ADDONS="eea.api.layout" -e SITE="Plone" -e PROFILES="eea.api.layout:default" plone/plone-backend:6.0.0a6
+docker run -p 8080:8080 -e ADDONS="eea.api.layout" -e SITE="Plone" -e PROFILES="eea.api.layout:default" plone/plone-backend:{PLONE_BACKEND_VERSION}
 ```
 
 Plone 6 Classic example:
 
 ```shell
-docker run -p 8080:8080 -e ADDONS="eea.facetednavigation" -e SITE="Plone" -e TYPE="classic" -e PROFILES="eea.facetednavigation:default" plone/plone-backend:6.0.0a6
+docker run -p 8080:8080 -e ADDONS="eea.facetednavigation" -e SITE="Plone" -e TYPE="classic" -e PROFILES="eea.facetednavigation:default" plone/plone-backend:{PLONE_BACKEND_VERSION}
 ```
 
 ```{warning}
@@ -105,7 +106,7 @@ version: "3"
 services:
 
   backend:
-    image: plone/plone-backend:6.0.0a6
+    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
     restart: always
     environment:
       ZEO_ADDRESS: zeo:8100
@@ -173,7 +174,7 @@ version: "3"
 services:
 
   backend:
-    image: plone/plone-backend:6.0.0a6
+    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
     environment:
       RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"
     ports:
@@ -223,13 +224,13 @@ It is possible to install add-ons during startup time in a container created usi
 To do so, pass the `ADDONS` environment variable with a space separated list of requirements to be added to the image:
 
 ```shell
-docker run -p 8080:8080 -e ADDONS="pas.plugins.authomatic" plone/plone-backend:6.0.0a6 start
+docker run -p 8080:8080 -e ADDONS="pas.plugins.authomatic" plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
 
 This approach also allows you to test Plone with a specific version of one of its core components
 
 ```shell
-docker run -p 8080:8080 -e ADDONS="plone.volto==3.1.0a3" plone/plone-backend:6.0.0a6 start
+docker run -p 8080:8080 -e ADDONS="plone.volto==3.1.0a3" plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
 
 ```{warning}
@@ -247,13 +248,13 @@ To do so, pass the `DEVELOP` environment variable with a space separated list of
 These packages will be installed with `pip install --editable`.
 
 ```shell
-docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" plone/plone-backend:6.0.0a6 start
+docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
 
 This approach also allows you to develop local packages by using a volume.
 
 ```shell
-docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.policy:/app/src/mysite.policy plone/plone-backend:6.0.0a6 start
+docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.policy:/app/src/mysite.policy plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
 
 ```{warning}
@@ -266,7 +267,7 @@ We advise against using this feature on production environments.
 In a directory create a  `Dockerfile` file:
 
 ```Dockerfile
-FROM plone/plone-backend:6.0.0a6
+FROM plone/plone-backend:{PLONE_BACKEND_VERSION}
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends gcc \

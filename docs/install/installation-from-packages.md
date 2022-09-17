@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Install Plone 6 from its packages – the installer"
-  "property=og:description": "Install Plone 6 from its packages – the installer"
-  "property=og:title": "Install Plone from its Packages"
-  "keywords": "Plone, Plone 6, install, pip, packages, source, buildout"
+myst:
+  html_meta:
+    "description": "Install Plone 6 from its packages – the installer"
+    "property=og:description": "Install Plone 6 from its packages – the installer"
+    "property=og:title": "Install Plone from its Packages"
+    "keywords": "Plone, Plone 6, install, pip, packages, source, buildout"
 ---
 
 
@@ -111,12 +112,6 @@ You can now run `cookiecutter` to create a Zope instance sceleton with configura
 cookiecutter https://github.com/bluedynamics/plone-kickstarter
 ```
 
-```{todo}
-- Documentation driven implementation: plone-kickstarter: configure with mxmake [on top of] / [enhancing with scripts like test and check and you name it] mxdev.
-- Move bluedynamics/plone-kickstarter to plone/plone-kickstarter in Plone repo?
-- See mxmake in action:  https://github.com/rohberg/Plone_mxmake_example  for ONE single Makefile, ONE single requirements, ONE single constraints
-```
-
 Answer the prompts with:
 
 ```ini
@@ -130,7 +125,7 @@ Choose from 1, 2 [1]: 1
 requirements_out [requirements-mxdev.txt]: 
 admin_user [admin]: 
 admin_password []: admin
-plone_version [6.0.0a2]: 6.0.0a6
+plone_version [6.0.0a2]: {PLONE_BACKEND_VERSION}
 listen [localhost:8080]: 
 ```
 
@@ -216,7 +211,6 @@ Checkout an add-on
   url=git@github.com:collective/collective.bookmarks.git
   branch=master
   extras = test
-  mxmake-test-path = src
   ```
 
   Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
@@ -313,7 +307,7 @@ Paste the following configuration information into it.
 
 ```ini
 [buildout]
-extends = https://dist.plone.org/release/6.0.0a6/versions.cfg
+extends = https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/versions.cfg
 parts = instance
 
 [instance]
@@ -329,7 +323,7 @@ Install Plone with the following shell commands.
 # Create a Python virtual environment in the current directory
 python3.9 -m venv .
 # Install the latest Plone 6 requirements with pip
-bin/pip install -r https://dist.plone.org/release/6.0.0a6/requirements.txt
+bin/pip install -r https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/requirements.txt
 # Run buildout to install Plone 6
 bin/buildout
 # Start the Plone instance

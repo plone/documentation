@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Install Plone 6 backend from its packages for the one who wants to look under the hood"
-  "property=og:description": "Install Plone 6 backend from its packages for the one who wants to look under the hood"
-  "property=og:title": "Install Plone backend from its Packages – Step-by-step"
-  "keywords": "Plone, Plone 6, install, backend, pip, mxdev, mxmake, cookiecutter, packages, source, Zope, buildout"
+myst:
+  html_meta:
+    "description": "Install Plone 6 backend from its packages for the one who wants to look under the hood"
+    "property=og:description": "Install Plone 6 backend from its packages for the one who wants to look under the hood"
+    "property=og:title": "Install Plone backend from its Packages – Step-by-step"
+    "keywords": "Plone, Plone 6, install, backend, pip, mxdev, cookiecutter, packages, source, Zope, buildout"
 ---
 
 
@@ -65,7 +66,7 @@ venv/lib/python3.x/site-packages
 Install Plone 6 with constrained requirements using `pip`.
 
 ```shell
-pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
+pip install Plone -c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 ```
 
 :::{admonition} <span>`mkwsgiinstance` creates a home with a minimal configuration for a Zope instance.</span>
@@ -88,6 +89,8 @@ pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
 
 Create a Zope instance with the given username and password in the current directory.
 
+(install-source-mkwsgiinstance)=
+
 ```shell
 mkwsgiinstance -u admin:admin -d .
 ```
@@ -99,7 +102,7 @@ mkwsgiinstance -u admin:admin -d .
 python -m venv venv
 source venv/bin/activate
 pip install -U pip wheel
-pip install Plone -c https://dist.plone.org/release/6.0.0a6/constraints.txt
+pip install Plone -c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 mkwsgiinstance -u admin:admin -d .
 ```
 ````
@@ -113,7 +116,7 @@ runwsgi ./etc/zope.ini
 It will take a few seconds to start the Zope instance.
 You can stop the instance later with {kbd}`ctrl-esc`.
 
-Before creating a Plone site on http://localhost:8080/, we configure our Zope instance for blobs, configure add-ons, etc..
+Before creating a Plone site on http://localhost:8080/, we configure our Zope instance for blobs, configure add-ons, and so on.
 
 For the configuration, you have two options:
 1. *manual* configuration by editing {file}`site.zcml` and {file}`zope.conf` (^[Configuring and Running Zope](https://zope.readthedocs.io/en/latest/operation.html))
@@ -243,7 +246,7 @@ If you want to checkout a Plone Core package for development or just want to ove
 
 ```
 # constraints.txt with unresolvable version conflict
--c https://dist.plone.org/release/6.0.0a6/constraints.txt
+-c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 plone.api>=2.0.0a3
 ```
 
@@ -271,7 +274,7 @@ collective.easyform
 {file}`constraints.txt`
 
 ```ini
--c https://dist.plone.org/release/6.0.0a6/constraints.txt
+-c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 
 # constraints of add-ons
 collective.easyform==3.4.5
