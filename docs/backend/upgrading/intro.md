@@ -91,7 +91,7 @@ Using [collective.exportimport](https://pypi.org/project/collective.exportimport
 
 ### Plone 5.2: Support for Python 3
 
-Plone 5.2 added support for Python 3 while Plone 6 dropped support for Python 2.
+Plone 5.2 added support for Python 3 while Plone 6.0 dropped support for Python 2.
 This means that you can use Plone 5.2 to upgrade to Python 3.
 
 This requires that you run Plone in Python 3 and only use code that supports Python 3. It also requires that you migrate the database in a separate step from Python 2 to 3 while Plone is not running.
@@ -100,8 +100,8 @@ See the chapters {ref}`migrating-52-to-python3-label` and {ref}`migrate-zodb-to-
 
 Using [collective.exportimport](https://pypi.org/project/collective.exportimport/) you can export content in Python 2 and import it in Python 3.
 
-### Plone6: Volto as new frontend
+### Plone 6.0: Volto as new frontend
 
-Plone 6 comes with a new default frontend called {term}`Volto` which is written in React and expects some subtle but important changes.
+Plone 6.0 comes with a new default frontend called {term}`Volto` which is written in React and expects some subtle but important changes.
 
 See {ref}`backend-migrate-to-volto-label` for these specialized migration-steps.
