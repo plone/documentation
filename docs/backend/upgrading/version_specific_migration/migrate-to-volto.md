@@ -9,7 +9,7 @@ myst:
 
 (backend-migrate-to-volto-label)=
 
-# Migrate to Volto
+# Migrating from Plone Classic to Volto
 
 Plone 6 comes with a new default frontend called {term}`Volto`.
 Volto is written in React and uses {py:mod}`plone.restapi` to communicate with the backend.

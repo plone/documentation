@@ -9,7 +9,7 @@ myst:
 
 (backend-upgrade-plone-v60-label)=
 
-# Upgrading to Plone 6.0
+# Upgrading Plone 5.2 to 6.0
 
 Plone 6.0 has seen the following major changes.
 Some may require changes in your setup.
