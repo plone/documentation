@@ -7,6 +7,8 @@ myst:
     "keywords": "Upgrading, ZODB, Python 3"
 ---
 
+(migrate-zodb-to-python3-label)=
+
 # Migrate a ZODB from Python 2.7 to Python 3
 
 ```{note}

@@ -7,6 +7,9 @@ myst:
     "keywords": "Upgrading, Python 3"
 ---
 
+
+(migrating-52-to-python3-label)=
+
 # Migrating Plone 5.2 to Python 3
 
 ```{admonition} Description
