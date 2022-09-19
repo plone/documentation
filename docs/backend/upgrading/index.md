@@ -7,15 +7,24 @@ myst:
     "keywords": ""
 ---
 
-(backend-upgrading-index-label)=
+(plone-upgrade-guide-label)=
 
-# Upgrading the Backend
+# Plone Upgrade Guide
+
+Instructions and tips for upgrading to a newer Plone version.
+
+This guide particularly focuses on
+[Unix-like](https://en.wikipedia.org/wiki/Unix-like) environments,
+though the stack discussion may be useful to everyone.
+
 
 ```{toctree}
-:caption: Upgrading the Backend
+:caption: Upgrade Guide
 :maxdepth: 2
-:hidden:
 
-v60
-migrate-to-volto
+intro
+preparations
+addon_upgrade
+troubleshooting
+version_specific_migration/index
 ```
