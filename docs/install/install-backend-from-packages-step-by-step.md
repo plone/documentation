@@ -8,13 +8,13 @@ myst:
 ---
 
 
-(installation-backend-from-packages-step-by-step-start-label)=
+(install-backend-from-packages-step-by-step-start-label)=
 
-# Install Plone backend from its Packages – Step-by-step
+# Install Plone backend from its packages – step-by-step
 
 For system requirements and pre-requisites for the installation see {ref}`install-source-system-requirements-label`.
 
-We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxdev` and other developer tools.
+We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxdev`, and other developer tools.
 
 ```{note}
 There will be one single cookiecutter template to install both backend and frontend from its packages.
@@ -25,7 +25,7 @@ You will learn the details of the installation included in the future overall co
 ```
 
 
-(installation-backend-from-packages-installation-steps-label)=
+(install-backend-from-packages-installation-steps-label)=
 
 ## Installation steps
 
@@ -85,11 +85,11 @@ pip install Plone -c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/cons
 ```
 :::
 
-(installation-backend-from-packages-step-by-step-mkwsgiinstance)=
+(install-backend-from-packages-step-by-step-mkwsgiinstance)=
 
 Create a Zope instance with the given username and password in the current directory.
 
-(install-source-mkwsgiinstance)=
+(install-packages-mkwsgiinstance)=
 
 ```shell
 mkwsgiinstance -u admin:admin -d .
@@ -122,7 +122,7 @@ For the configuration, you have two options:
 1. *manual* configuration by editing {file}`site.zcml` and {file}`zope.conf` (^[Configuring and Running Zope](https://zope.readthedocs.io/en/latest/operation.html))
 2. *generate* configuration by applying `cookiecutter-zope-instance`
 
-(install-source-cookiecutter-zope-instance-label)=
+(install-packages-cookiecutter-zope-instance-label)=
 
 ### Generate Plone / Zope configuration with cookiecutter
 
@@ -147,7 +147,7 @@ You could now run `cookiecutter` to create a Zope instance sceleton including co
 cookiecutter https://github.com/plone/cookiecutter-zope-instance
 ```
 
-(install-source-cookiecutter-zope-instance-presets-label)=
+(install-packages-cookiecutter-zope-instance-presets-label)=
 
 Instead we prepare a configuration file {file}`instance.yaml` with the parameters we want to set. 
 In this section we will learn how to configure our `Zope` / `Plone` installation via `instance.yaml`.
@@ -238,7 +238,7 @@ If you decided to go with the Plone Volto frontend, then section {ref}`install-s
 If you want to develop a Plone package, then the subsequent section is for you.
 
 
-(install-source-checkout-and-pin)=
+(install-packages-checkout-and-pin)=
 
 ### Checkout or version pinning of a Plone package
 

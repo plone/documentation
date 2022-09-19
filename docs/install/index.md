@@ -32,7 +32,7 @@ Choose a version.
 
 :::{grid-item-card} {octicon}`download;1.5em;sd-mr-1` Install
 
-Developers may choose to install Plone from either [the official container images](containers/index) or [packages](installation-from-packages).
+Developers may choose to install Plone from either [the official container images](containers/index) or [packages](install-from-packages).
 +++
 Help me [choose an installation method](install-index-choose-installation-method-label).
 :::
@@ -44,7 +44,7 @@ Help me [choose an installation method](install-index-choose-installation-method
 
 ## Choose an installation method
 
-Developers may choose to install Plone from either [the official container images](containers/index) or [packages](installation-from-packages).
+Developers may choose to install Plone from either [the official container images](containers/index) or [packages](install-from-packages).
 
 
 ### Containers
@@ -79,9 +79,9 @@ It might be a challenge if you bump up against system requirements, or need to r
 This method takes longer than using containers.
 
 :::{card}
-:link: installation-from-packages
+:link: install-from-packages
 :link-type: any
-{octicon}`package;1.5em;sd-mr-1` [Install Plone from its packages](installation-from-packages)
+{octicon}`package;1.5em;sd-mr-1` [Install Plone from its packages](install-from-packages)
 :::
 
 
@@ -100,6 +100,6 @@ System requirements depend upon your choice of installation method.
 :hidden: true
 
 containers/index
-installation-from-packages
-installation-backend-from-packages-step-by-step
+install-from-packages
+install-backend-from-packages-step-by-step
 ```
