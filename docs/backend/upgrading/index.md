@@ -1,22 +1,19 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Plone Upgrade Guide"
+    "property=og:description": "Plone Upgrade Guide"
+    "property=og:title": "Plone Upgrade Guide"
+    "keywords": "Plone Upgrade Guide"
 ---
 
 (plone-upgrade-guide-label)=
 
 # Plone Upgrade Guide
 
-Instructions and tips for upgrading to a newer Plone version.
+This section of the documentation gives instructions and tips for upgrading to a newer Plone version.
 
-This guide particularly focuses on
-[Unix-like](https://en.wikipedia.org/wiki/Unix-like) environments,
-though the stack discussion may be useful to everyone.
-
+This guide focuses on [Unix-like](https://en.wikipedia.org/wiki/Unix-like) environments, although the discussion may be useful for every platform.
 
 ```{toctree}
 :caption: Upgrade Guide
