@@ -80,6 +80,7 @@ linkcheck_ignore = [
     # Ignore specific anchors
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://github.com/browserslist/browserslist#queries",
+    r"https://github.com/nodejs/release#release-schedule",
     r"https://github.com/plone/cookiecutter-zope-instance#options",
     r"https://github.com/plone/plone.docker#for-basic-usage",
     r"https://github.com/plone/plone.rest#cors",
