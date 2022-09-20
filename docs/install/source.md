@@ -397,12 +397,12 @@ it provides easy access to any NodeJS released version.
     nvm version
     ```
 
-1.  Install any active LTS version of NodeJS (https://nodejs.org/en/about/releases/):
+1.  Install any active LTS version of NodeJS (https://github.com/nodejs/release#release-schedule):
 
     ```{note}
     :class: margin
     Volto supports currently active NodeJS LTS versions based on [NodeJS
-    Releases page](https://nodejs.org/en/about/releases/), starting with Node 14 LTS.
+    Releases page](https://github.com/nodejs/release#release-schedule), starting with Node 14 LTS.
     ```
 
     ```bash
