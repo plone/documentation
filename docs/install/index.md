@@ -101,6 +101,5 @@ System requirements depend upon your choice of installation method.
 
 containers/index
 install-from-packages
-install-backend-from-packages-step-by-step
 manage-add-ons-packages
 ```

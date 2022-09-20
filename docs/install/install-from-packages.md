@@ -177,7 +177,7 @@ make install
 
 This will take a few minutes.
 ☕️
-First the backend, then the frontend are installed.
+First the backend, then the frontend will be installed.
 At the start of the frontend installation part, you might see a prompt.
 
 ```console
