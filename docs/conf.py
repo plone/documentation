@@ -85,6 +85,7 @@ linkcheck_ignore = [
     r"https://github.com/plone/plone.docker#for-basic-usage",
     r"https://github.com/plone/plone.rest#cors",
     r"https://github.com/plone/plone.volto/blob/6f5382c74f668935527e962490b81cb72bf3bc94/src/kitconcept/volto/upgrades.py#L6-L54",
+    r"https://github.com/plone/volto/issues/new/choose",
     r"https://github.com/tc39/proposals/blob/HEAD/finished-proposals.md#finished-proposals",
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=master",  # plone.restapi
     r"https://github.com/plone/plone.restapi/blob/dde57b88e0f1b5f5e9f04e6a21865bc0dde55b1c/src/plone/restapi/services/content/add.py#L35-L61",  # plone.restapi
