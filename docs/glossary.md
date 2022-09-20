@@ -28,6 +28,9 @@ Cookiecutter
     A command-line utility that creates projects from cookiecutters (project templates), for example, creating a Python package project from a Python package project template.
     [See Cookiecutter's documentation](https://cookiecutter.readthedocs.io/en/stable/).
 
+cookiecutter-plone-starter
+    [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) is a framework for jumpstarting Plone 6 projects quickly.
+
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
 
@@ -440,4 +443,11 @@ ZODB
 
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
+
+Make
+make
+    [GNU Make](https://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files.
+
+    Make gets its knowledge of how to build your program from a file called the _makefile_, which lists each of the non-source files and how to compute it from other files.
+    When you write a program, you should write a makefile for it, so that it is possible to use Make to build and install the program.
 ```

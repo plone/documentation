@@ -12,17 +12,9 @@ myst:
 
 # Install Plone backend from its packages – step-by-step
 
-For system requirements and pre-requisites for the installation see {ref}`install-source-system-requirements-label`.
+For system requirements and pre-requisites for the installation see {ref}`install-packages-system-requirements-label`.
 
 We install the Plone backend with `pip`, `cookiecutter-zope-instance`, `mxdev`, and other developer tools.
-
-```{note}
-There will be one single cookiecutter template to install both backend and frontend from its packages.
-You will find the instructions on {ref}`install-source-installation-jump-label`.
-That chapter is for you if you want to develop and want to jump in with all steps prepared by an overall cookiecutter.
-The subsequent sections explain the installation of the backend step-by-step.
-You will learn the details of the installation included in the future overall cookiecutter.
-```
 
 
 (install-backend-from-packages-installation-steps-label)=
@@ -43,47 +35,12 @@ Update Python package management tools.
 pip install -U pip wheel
 ```
 
-````{admonition} packages tree
-:class: margin toggle
-The Plone packages and dependencies are installed in trees.
-
-```
-venv/lib/python3.x/site-packages
-│
-…
-├── plone
-│   ├── …
-│   ├── app/
-│       ├── caching/
-│       ├── content/
-│       └── …
-…   
-├── zope/
-│   ├── …
-```
-````
-
 Install Plone 6 with constrained requirements using `pip`.
 
 ```shell
 pip install Plone -c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
 ```
 
-:::{admonition} <span>`mkwsgiinstance` creates a home with a minimal configuration for a Zope instance.</span>
-:class: margin toggle
-
-```
-┌── etc/
-│   ├── site.zcml
-│   ├── zope.conf
-│   └── zope.ini
-├── inituser
-└── var/
-    ├── cache/
-    ├── log/
-    └── REAMDME.txt/
-```
-:::
 
 (install-backend-from-packages-step-by-step-mkwsgiinstance)=
 
