@@ -5,7 +5,7 @@ Instructions and tips for upgrading to a newer Plone version.
 ```
 
 ```{note}
-If you want to upgrade add-ons to Plone 5, also see {doc}`/develop/addons/upgrade_to_50`
+If you want to upgrade add-ons to Plone 5, also see {doc}`/develop/addons/upgrade-to-50`
 ```
 
 ## General Information

@@ -8,12 +8,12 @@ If your migration does not involve a version pair specified here, then you may f
 ```{toctree}
 :maxdepth: 2
 
-p4x_to_p5x_upgrade
-plone5_minor_upgrade
-upgrade_to_51
-upgrade_to_52
-upgrade_to_python3
-upgrade_zodb_to_python3
-upgrade_to_60
+p4x-to-p5x-upgrade
+plone5-minor-upgrade
+upgrade-to-51
+upgrade-to-52
+upgrade-to-python3
+upgrade-zodb-to-python3
+upgrade-to-60
 migrate-to-volto
 ```

@@ -14,7 +14,7 @@ Instructions and tips for upgrading to Plone 5.1
 ```
 
 ```{note}
-If you want to upgrade add-ons to Plone 5.1, please see {doc}`/develop/addons/upgrade_to_51`
+If you want to upgrade add-ons to Plone 5.1, please see {doc}`/develop/addons/upgrade-to-51`
 ```
 
 ## General Information
@@ -71,7 +71,7 @@ These are for example site menus, user menus, footer links, etcetera.
 It also allows to add custom ones.
 Actions can be re-ordered, and can be hidden or displayed.
 
-```{image} images/portal_actions_control_panel.png
+```{image} images/portal-actions-control-panel.png
 ```
 
 See {ref}`Creating actions through-the-web <create_actions_ttw>`.
@@ -88,7 +88,7 @@ This is [PLIP 1310](https://github.com/plone/Products.CMFPlone/issues/1310).
 
 When a Group is shown on the Sharing page, you can click on the group name to go to the list of members of that group.
 
-```{image} images/sharing_group_link.png
+```{image} images/sharing-group-link.png
 ```
 
 #### For Developers
@@ -309,14 +309,14 @@ The monitor of the visitor will show the best available density.
 
 Compare this low resolution image:
 
-```{image} /_static/plip_hidpi_low_resolution.png
+```{image} /_static/plip-hidpi-low-resolution.png
 :align: center
 :alt: 'Example: low resolution'
 ```
 
 with this high resolution image:
 
-```{image} /_static/plip_hidpi_high_resolution.png
+```{image} /_static/plip-hidpi-high-resolution.png
 :align: center
 :alt: 'Example: low resolution'
 ```

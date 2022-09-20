@@ -13,11 +13,11 @@ myst:
 
 Plone has several components, each of which have their own upgrade guides:
 
-- {ref}`plone-upgrade-guide-label`
-- [Volto Upgrade Guide](volto/upgrade-guide/index)
-- [plone.restapi Upgrade Guide](plone.restapi/docs/source/upgrade-guide)
+-   {doc}`../backend/upgrading/index`
+-   [Volto Upgrade Guide](volto/upgrade-guide/index)
+-   [plone.restapi Upgrade Guide](plone.restapi/docs/source/upgrade-guide)
 
 For Plone 6 the most relevant guides are:
 
-* {ref}`backend-upgrade-plone-v60-label`
-* {ref}`backend-migrate-to-volto-label`
+-   {doc}`../backend/upgrading/version-specific-migration/upgrade-to-60`
+-   {doc}`../backend/upgrading/version-specific-migration/migrate-to-volto`

@@ -35,9 +35,9 @@ ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be
 In short you need to follow these steps to migrate your database:
 
 01. Upgrade your site to Plone 5.2 running on Python 2 first.
-    (see {doc}`upgrade_to_52`)
+    (see {doc}`upgrade-to-52`)
 02. Make sure your code and all add-ons that you use work in Python 3.
-    (see {doc}`upgrade_to_python3`)
+    (see {doc}`upgrade-to-python3`)
 03. Backup your database!
 04. **Pack** your database to **0 days** (`zodbupdate` will not update your database history and will leave old objects in place and you will not be able to pack your database in the future).
 05. In your old buildout under Python 2, verify your database integrity using {py:mod}`zodbverify`.

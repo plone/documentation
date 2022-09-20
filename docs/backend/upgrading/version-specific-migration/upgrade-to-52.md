@@ -59,7 +59,7 @@ The migration to Python 3 follows these steps:
 4. Port add-ons and custom code to Python 3 without the existing database.
 5. Migrate the database using `zodbupdate`. If you are working on a new project (i.e. without a existing database) you can skip the last step.
 
-See {doc}`/manage/version-specific-migration/upgrade_to_python3` for details about porting code and database to Python 3.
+See {doc}`/manage/version-specific-migration/upgrade-to-python3` for details about porting code and database to Python 3.
 
 ### Zope 4.0
 

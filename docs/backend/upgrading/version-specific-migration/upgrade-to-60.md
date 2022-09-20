@@ -22,7 +22,7 @@ Some may require changes in your setup.
 Plone no longer ships with the `portal_quickinstaller` tool (`CMFQuickInstallerTool`).
 In existing sites, the standard upgrade will remove the tool.
 This is the final step in a deprecation path that started in Plone 5.1.
-Documentation on how to switch to GenericSetup and the new installer, can be seen in the old [Plone 5.1 upgrade guide](https://docs.plone.org/develop/addons/upgrade_to_51.html#installation-code).
+Documentation on how to switch to GenericSetup and the new installer, can be seen in the old [Plone 5.1 upgrade guide](https://docs.plone.org/develop/addons/upgrade-to-51.html#installation-code).
 
 See [PLIP 1775](https://github.com/plone/Products.CMFPlone/issues/1775).
 

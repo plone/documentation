@@ -24,7 +24,7 @@ though the stack discussion may be useful to everyone.
 
 intro
 preparations
-addon_upgrade
+add-on-upgrade
 troubleshooting
-version_specific_migration/index
+version-specific-migration/index
 ```
