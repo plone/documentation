@@ -162,7 +162,7 @@ See [PLIP 3061](https://github.com/plone/Products.CMFPlone/issues/3061).
 ## Python
 
 You may need to use a newer Python version.
-Supported Python versions are 3.7, 3.8, and 3.9.
+Supported Python versions are 3.8, 3.9 and 3.10.
 We recommend the most recent version.
 See https://www.python.org/downloads/ for which Python version is still supported by the Python community.
 
