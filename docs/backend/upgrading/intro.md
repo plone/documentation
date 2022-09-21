@@ -41,7 +41,7 @@ Plone has a policy that increases the version number to a .0 on every major rele
 
 This means that when we say a *major release*, we are referring to a x.0 release, whereas a minor release has the version numbering 4.3.14 or 5.1.0
 
-In addition to the general procedure there are {doc}`version-specific migration guides </manage/upgrading/version_specific_migration/index>`.
+In addition to the general procedure there are {doc}`version-specific migration guides </backend/upgrading/version_specific_migration/index>`.
 
 These guides contain more specific instructions and valuable information that has been collected from real-life migration cases.
 
