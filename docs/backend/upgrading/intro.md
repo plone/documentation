@@ -52,8 +52,8 @@ These guides contain more specific instructions and valuable information that ha
 A inplace migration means the content and settings of a Plone installation are being updated while Plone is running.
 These upgrades use a builtin tool and basically run upgrade-steps that are collected in [plone.app.upgrade](https://github.com/plone/plone.app.upgrade/).
 
-This approach is recommended for all upgrades of minor version and can work fine for most mayor upgrades.
-When dealing with mayor changes in Plone or with very large or complex installations a export-import based migration (see below) is often the better solution.
+This approach is recommended for all upgrades of minor version and can work fine for most major upgrades.
+When dealing with major changes in Plone or with very large or complex installations a export-import based migration (see below) is often the better solution.
 
 During in-place migrations it is advisable to **not make large leaps** in version numbers.
 A single upgrade should not try to bridge multiple major version numbers.
@@ -75,9 +75,9 @@ This approach allows you to migrate from Plone 4 to 6, from Python 2 to 3 and fr
 
 The recommended tool for this is https://github.com/collective/collective.exportimport. An alternative is transmogrifier (see the training {ref}`training:transmogrifier-label`)
 
-## Mayor Changes
+## Major Changes
 
-The following mayor changes in the history of Plone require special attention when migrating:
+The following major changes in the history of Plone require special attention when migrating:
 
 ### Plone 5.0: Dexterity replaces Archetypes
 
