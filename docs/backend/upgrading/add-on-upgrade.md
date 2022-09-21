@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "Upgrade Plone add-on products"
+    "property=og:description": "Upgrade Plone add-on products"
+    "property=og:title": "Upgrade Plone add-on products"
+    "keywords": "Upgrade, Plone, add-on, products"
+---
+
 # Upgrade add-on products
 
 ```{admonition} Description
