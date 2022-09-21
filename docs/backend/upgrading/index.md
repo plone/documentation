@@ -11,7 +11,7 @@ myst:
 
 # Plone Upgrade Guide
 
-This section of the documentation gives instructions and tips for upgrading to a newer Plone version.
+This part of the documentation describes how to upgrade an existing Plone installation.
 
 This guide focuses on [Unix-like](https://en.wikipedia.org/wiki/Unix-like) environments, although the discussion may be useful for every platform.
 
