@@ -21,15 +21,15 @@ When a site error occurs, or Zope fails to start, there's probably an informativ
 Locate [these log files](https://plone.org/documentation/faq/plone-logs) and inspect instance.log.
 Ignore irrelevant warnings and search for words such as error, exception and traceback (case-insensitive).
 
-When Zope doesn't start and there's no useful information in the log file, you can start Zope interactively and watch for error messages in the output::
+When Zope doesn't start and there's no useful information in the log file, you can start Zope interactively and watch for error messages in the output:
 
-```
+```bash
 bin/instance fg
 ```
 
 You may be able to find more information on the error messages in:
 
-- the {doc}`Version-specific migration tips </manage/upgrading/version_specific_migration/index>` for your version of Plone
+- the {doc}`Version-specific migration tips </backend/upgrading/version_specific_migration/index>` for your version of Plone
 - the {doc}`Error References </appendices/error-reference>`
 
 ## Test without customizations
@@ -41,11 +41,11 @@ Temporarily remove your customizations, for example by removing your layers from
 If the problem disappears, you'll need to double-check your customizations.
 It's usually best to copy the original files of the new version of Plone to your skin, and re-customize those.
 
-## Test without products
+## Test without add-ons
 
-Bugs or compatibility problems in products that you have installed may cause problems in Plone.
-Go to Site Setup > Add/Remove Products and remove (uninstall) all product that are not distributed with Plone.
-Remove the uninstalled products from the Products directory of your Zope instance.
+Bugs or compatibility problems in add-ons that you have installed may cause problems in Plone.
+Go to Site Setup > Add-ons and deactivate all add-ons that are not distributed with Plone.
+Remove the deactivated add-ons from the packages of your Zope instance.
 
 If the problem disappears, you'll need to doublecheck the offending product:
 
@@ -81,7 +81,7 @@ The more complex your story is, the more likely that it is unique to your situat
 
 Once you have investigated, analyzed, identified and confirmed the cause of your problem and you are convinced it's a bug (rather than an X-file), go to the appropriate bug tracker and report it:
 
-- Products: the README usually tells how to report bugs
+- Add-ons: the README usually tells how to report bugs
 - [Plone Issue Tracker](https://github.com/plone/Products.CMFPlone/issues)
 
 Do not use the bug trackers to ask for help.

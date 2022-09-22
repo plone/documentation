@@ -81,6 +81,7 @@ It just fixed a bug.
 A post on the Community forum, [Rules for Plone 6 development during the beta stage](https://community.plone.org/t/rules-for-plone-6-development-during-the-beta-stage/15432), discusses alpha and beta versioning.
 ```
 
+In addition to the general procedure there are {doc}`version-specific migration guides </manage/upgrading/version_specific_migration/index>`.
 
 (introduction-version-specific-upgrade-guides-label)=
 
@@ -90,6 +91,8 @@ In addition to the general upgrade procedure, there are {doc}`version-specific m
 
 These guides contain specific instructions and valuable information that has been collected from real-life migration cases.
 
+This approach is recommended for all upgrades of minor version and can work fine for most mayor upgrades.
+When dealing with mayor changes in Plone or with very large or complex installations a export-import based migration (see below) is often the better solution.
 
 (introduction-upgrade-strategies-label)=
 

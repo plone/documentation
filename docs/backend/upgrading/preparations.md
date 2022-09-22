@@ -20,10 +20,9 @@ This chapter lists things to do before you migrate Plone.
 ## Gather information
 
 -   Read the "What's new in..." for your relevant Plone version, and read the release notes.
-    You will find these in the {file}`CMFPlone` directory of the distribution of the new version of Plone.
+    You will find these in the [online directory of released versions on `dist.plone.org`](https://dist.plone.org/release/).
+    As an example, you can find the file [`RELEASE-NOTES.md` for 6.0.0b2](https://dist.plone.org/release/6.0.0b2/RELEASE-NOTES.md).
 
--   Make sure to check installed add-ons.
-    If you **do not** need certain add-ons anymore, deactivate and uninstall them.
 
 -   Check for dependencies.
 
@@ -44,21 +43,16 @@ This chapter lists things to do before you migrate Plone.
     
     -   If the newer version of Plone depends on a newer version of Zope, you will need to install that before proceeding with the Plone upgrade.
 
-        ```{note}
-        Zope has its own migration guidelines, which you will find in the release notes of the version you are migrating to.
-        
-        If Plone is being upgraded at the same time as a Zope version, Plone will usually handle the Zope upgrade with its own migration script.
-        ```
+```{seealso}
+Zope has its own documentation of migration guidelines.
+Of most interest for migration are the following.
 
--   Read the following files in the {file}`CMFPlone` directory of the distribution of the new version of Plone to which you want to update.
+-   [What's new](https://zope.readthedocs.io/en/latest/news.html) at a high level.
+-   [Migrating between Zope versions](https://zope.readthedocs.io/en/latest/migrations/index.html).
+-   [Detailed changelog](https://zope.readthedocs.io/en/latest/changes.html).
 
-    -   `README.txt`
-    
-    -   `INSTALL.txt`
-    
-    -   `UPGRADE.txt` (although this usually contains only the general procedure outlined above)
-
-    These files may contain important last-minute information, and might be more specific than the relevant sections of this reference manual.
+If Plone is being upgraded at the same time as a Zope version, Plone will usually handle the Zope upgrade with its own migration script.
+```
 
 
 (upgrade-back-up-your-Plone-site-label)=
