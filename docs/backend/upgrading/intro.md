@@ -81,7 +81,7 @@ It just fixed a bug.
 A post on the Community forum, [Rules for Plone 6 development during the beta stage](https://community.plone.org/t/rules-for-plone-6-development-during-the-beta-stage/15432), discusses alpha and beta versioning.
 ```
 
-In addition to the general procedure there are {doc}`version-specific migration guides </manage/upgrading/version_specific_migration/index>`.
+In addition to the general procedure there are {ref}`version-specific-upgrade-guide-label`.
 
 (introduction-version-specific-upgrade-guides-label)=
 

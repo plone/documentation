@@ -6,9 +6,9 @@ Steps for minor upgrades within the Plone 5 Major Release.
 
 ```{warning}
 Before performing any Plone upgrade, you should always have a complete backup of your site.
-See the {doc}`Preparations </manage/upgrading/preparations>` section of this manual for more details.
+See the {ref}`upgrade-preparations-label` section of this manual for more details.
 
-In addition, you should check the {doc}`Version-specific migration tips </manage/upgrading/version_specific_migration/index>`
+In addition, you should check the {ref}`version-specific-upgrade-guide-label`
 section of this manual for any notes that may apply to the specific version upgrade you're about to perform.
 ```
 

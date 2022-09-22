@@ -59,7 +59,7 @@ The migration to Python 3 follows these steps:
 4. Port add-ons and custom code to Python 3 without the existing database.
 5. Migrate the database using `zodbupdate`. If you are working on a new project (i.e. without a existing database) you can skip the last step.
 
-See {doc}`/manage/version-specific-migration/upgrade-to-python3` for details about porting code and database to Python 3.
+See {ref}`migrating-52-to-python3-label` for details about porting code and database to Python 3.
 
 ### Zope 4.0
 
@@ -273,7 +273,7 @@ Nothing changes.
 Support for old-style resource registries (`cssregistry.xml` and `jsregistry.xml`) was removed completely along with the tools `portal_css` or `portal_javascript`.
 
 You need to add resources using the new Resource Registry.
-See {ref}`resources <resource_registry_resources>` for detailed instructions.
+See https://docs.plone.org/adapt-and-extend/theming/resourceregistry.html#resources for detailed instructions.
 
 ### Restructure CMFPlone static resources
 

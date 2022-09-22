@@ -308,9 +308,6 @@ Search for examples of `Py23DocChecker` in Plone's packages to find a pattern wh
 - Fill the fields {guilabel}`ADDON_URL` and {guilabel}`ADDON_BRANCH` with your repository's URL and the branch name ("python3" if you followed these instructions).
 - Start the build with the {guilabel}`Build` button.
 
-```{note}
-```
-
 ### 7 Update Add On Information
 
 Add the following three entries of the classifiers list in setup.py:

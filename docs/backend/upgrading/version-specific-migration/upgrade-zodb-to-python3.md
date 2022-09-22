@@ -59,7 +59,7 @@ When pickling an object the datatypes and values are stored.
 
 In Python 2 strings get STRING, and Unicode gets UNICODE
 
-```
+```console
 $ python2
 Python 2.7.14 (default, Sep 23 2017, 22:06:14)
 >>> di=dict(int=23,str='Ümläut',unicode=u'Ümläut')
@@ -91,7 +91,7 @@ highest protocol among opcodes = 0
 
 Python 3 does not allow non-ascii characters in bytes and the pickle declares the byte string as SHORT_BINBYTES and the string (py2 unicode) as BINUNICODE
 
-```
+```console
 $ python3
 Python 3.6.3 (default, Oct  3 2017, 21:45:48)
 >>> di=dict(int=23,str=b'Ümläut',unicode='Ümläut')
@@ -126,7 +126,7 @@ highest protocol among opcodes = 3
 Python 3 will wrongly interpret a pickle created with Python 2 that contains non-ascii characters in a field declared with OPTCODE `STRING`.
 In that case we may end up with a `UnicodeDecodeError` for this pickle in `ZODB.serialize`
 
-```bash
+```console
 $ python3
 >>> b'\xc3\x9cml\xc3\xa4ut'.decode('ascii')
 Traceback (most recent call last):
@@ -136,7 +136,7 @@ UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 0: ordinal 
 
 Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an error but mangled non-ascii characters:
 
-```bash
+```console
 $ python3
 >>> print('\xdcml\xe4ut')
 Ümläut
@@ -271,13 +271,13 @@ If in doubt try `latin1` since this was in former times of Zope the default enco
 
 You can use the following command to check if all records in the database can be successfully loaded:
 
-```bash
+```console
 bin/instance zodbverify
 ```
 
 The output should look like this:
 
-```bash
+```console
 $ ./bin/instance zodbverify
 
 INFO:Zope:Ready to handle requests
@@ -299,7 +299,7 @@ Before you start debugging you should read the following section on Troubleshoot
 
 Delete `Data.fs.index` before migrating or you will get this error during migrating:
 
-```bash
+```console
 $ ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding=utf8
 Updating magic marker for var/filestorage/Data.fs
 loading index

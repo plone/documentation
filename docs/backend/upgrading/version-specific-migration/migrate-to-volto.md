@@ -25,7 +25,9 @@ This document discusses these differences.
 It also informs administrators and developers of how to migrate their existing Plone 6 site with Classic UI to instead become compatible with Volto for its frontend.
 
 ```{important}
-As a pre-requisite, your Plone site must be [upgraded to Plone 6](v60) before migrating to Volto for the frontend.
+
+As a pre-requisite, your Plone site must be {ref}`upgraded to Plone 6<backend-upgrade-plone-v60-label>` before migrating to Volto for the frontend.
+
 ```
 
 Plone provides a form `/@@migrate_to_volto` that allows you to run all the required changes to your existing site to make it compatible with Volto.
@@ -33,7 +35,7 @@ Plone provides a form `/@@migrate_to_volto` that allows you to run all the requi
 You can access this form in the browser when you are logged in as an administrator.
 Open `http://localhost:8080/Plone/@@migrate_to_volto`, where `localhost` is your hostname, `8080` is the port on which Plone runs, and `Plone` is the name of the Plone instance.
 
-Additionally, after upgrading an existing site to Plone 6 (see {doc}`v60`), a message will appear, **You can prepare your site for Volto, the default frontend of Plone 6!**, with a link to that form.
+Additionally, after upgrading an existing site to Plone 6 (see {ref}`backend-upgrade-plone-v60-label`), a message will appear, **You can prepare your site for Volto, the default frontend of Plone 6!**, with a link to that form.
 
 ```{warning}
 Test all migrations thoroughly before applying them on a production environment!

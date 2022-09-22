@@ -29,8 +29,8 @@ bin/instance fg
 
 You may be able to find more information on the error messages in:
 
-- the {doc}`Version-specific migration tips </backend/upgrading/version_specific_migration/index>` for your version of Plone
-- the {doc}`Error References </appendices/error-reference>`
+- the {doc}`Version-specific migration tips </backend/upgrading/version-specific-migration/index>` for your version of Plone
+- the https://docs.plone.org/appendices/error-reference.html
 
 ## Test without customizations
 
@@ -63,7 +63,7 @@ If the problem does not occur in a fresh site, the cause of your problem is most
 
 ## Make the problem reproducible
 
-Before you go out and {doc}`ask for help </askforhelp>`, you should be able to describe your problem in such a way that others can reproduce it in their environment.
+Before you go out and [ask for help](https://docs.plone.org/askforhelp.html), you should be able to describe your problem in such a way that others can reproduce it in their environment.
 
 Reduce the problem to the smallest possible domain.
 Eliminate products and customizations that are not part of the problem.
@@ -72,7 +72,7 @@ The more complex your story is, the more likely that it is unique to your situat
 
 ## Ask for help
 
-{doc}`Ask for help </askforhelp>` in the [Plone support channels](https://plone.org/support). Be sure to:
+[Ask for help](https://docs.plone.org/askforhelp.html) in the [Plone support channels](https://plone.org/support). Be sure to:
 
 - Provide relevant source code for your customizations that are part of the problem.
 - Describe the exact configuration, software versions, migration history, error messages and so on.

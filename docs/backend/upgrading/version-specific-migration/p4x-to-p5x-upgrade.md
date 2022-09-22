@@ -5,7 +5,7 @@ Instructions and tips for upgrading to a newer Plone version.
 ```
 
 ```{note}
-If you want to upgrade add-ons to Plone 5, also see {doc}`/develop/addons/upgrade-to-50`
+If you want to upgrade add-ons to Plone 5, also see {ref}`upgrading-addons-to-50-label`
 ```
 
 ## General Information
@@ -410,7 +410,7 @@ To have an icon for your control panel you must make sure that a css rule exists
 
 An example might be
 
-```css
+```
 .icon-controlpanel-MyPackage:before { content: ‘\e844’; }
 ```
 

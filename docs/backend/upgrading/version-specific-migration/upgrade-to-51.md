@@ -14,7 +14,7 @@ Instructions and tips for upgrading to Plone 5.1
 ```
 
 ```{note}
-If you want to upgrade add-ons to Plone 5.1, please see {doc}`/develop/addons/upgrade-to-51`
+If you want to upgrade add-ons to Plone 5.1, please see {ref}`upgrading-addons-to-51-label`
 ```
 
 ## General Information
@@ -58,7 +58,7 @@ To make use of this, you should register your resource bundle to merge with the 
 </records>
 ```
 
-See {ref}`Aggregate Bundles for Production <resource_bundle_aggregation>`.
+See https://docs.plone.org/adapt-and-extend/theming/resourceregistry.html#resource-bundle-aggregation.
 
 ### Portal Actions Control Panel
 
@@ -74,7 +74,7 @@ Actions can be re-ordered, and can be hidden or displayed.
 ```{image} images/portal-actions-control-panel.png
 ```
 
-See {ref}`Creating actions through-the-web <create_actions_ttw>`.
+See https://docs.plone.org/develop/plone/functionality/actions.html#creating-actions-through-the-web.
 
 #### For Developers
 
@@ -131,7 +131,7 @@ If you must use the old way, you can still use the `portal_quickinstaller` in th
 
 The `portal_quickinstaller` is scheduled to go away completely in Plone 6.
 
-For more information on changes to profiles and the add-ons control panel, see the add-on {ref}`Installation code <addon_installation_code>` upgrade docs.
+For more information on changes to profiles and the add-ons control panel, see the add-on {ref}`addon-installation-code` upgrade docs.
 
 ### Conditionally Import Configuration Registry Records
 
@@ -254,7 +254,7 @@ The [collective.indexing](https://pypi.python.org/pypi/collective.indexing) pack
 This makes sure that objects are only indexed once per transaction.
 
 It also gives hooks for calling external indexers, like Solr and Elasticsearch.
-See {ref}`Using external catalogs <using_external_catalogs>`.
+See https://docs.plone.org/develop/plone/searching_and_indexing/external-catalogs.html.
 
 There is a workaround when you get [Catalog Errors During Upgrades].
 
@@ -309,14 +309,14 @@ The monitor of the visitor will show the best available density.
 
 Compare this low resolution image:
 
-```{image} /_static/plip-hidpi-low-resolution.png
+```{image} images/plip_hidpi_low_resolution.png
 :align: center
 :alt: 'Example: low resolution'
 ```
 
 with this high resolution image:
 
-```{image} /_static/plip-hidpi-high-resolution.png
+```{image} images/plip_hidpi_high_resolution.png
 :align: center
 :alt: 'Example: low resolution'
 ```
@@ -375,7 +375,7 @@ The Site Control Panel now has more detailed options for handling icons and thum
 You can switch off showing thumbs in portlets, list views, summary views or table views.
 And if you show them, you can set a different scale for each.
 
-```{image} /_static/site-control-panel-icon-thumb-settings.png
+```{image} images/site-control-panel-icon-thumb-settings.png
 :align: center
 :alt: Site control panel with icon and thumb settings
 ```
