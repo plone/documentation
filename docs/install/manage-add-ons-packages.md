@@ -285,11 +285,6 @@ Apply your changes:
 make build-backend
 ```
 
-```{seealso}
-{ref}`install-source-checkout-and-pin`.
-```
-
-
 (manage-backend-checkout-a-plone-package-label)=
 
 ### Check out a Plone package
