@@ -185,7 +185,6 @@ make build-backend
 make start-backend
 ```
 
-
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
 
 Then click the {guilabel}`Install` button to complete installation of `collective.easyform`.
@@ -194,8 +193,6 @@ Return to the {guilabel}`Site Setup` control panel.
 At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a panel {guilabel}`easyform` to configure the add-on that we just installed.
 
 While visiting the home page, you can add a new `easyform` object.
-
-
 
 
 (manage-backend-pin-the-version-of-an-add-on)=
@@ -228,6 +225,10 @@ Apply your changes and restart backend:
 make build-backend
 make start-backend
 ```
+
+In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
+
+Update your add-on.
 
 
 (manage-backend-check-out-an-add-on)=
@@ -263,6 +264,10 @@ Apply your changes and restart backend:
 make build-backend
 make start-backend
 ```
+
+In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
+
+Update your add-on.
 
 
 (manage-backend-pin-the-version-of-a-plone-package-against-constraints-label)=
