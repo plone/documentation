@@ -373,4 +373,13 @@ build-dev: instance/etc/zope.ini ## pip install Plone packages
 -   Installs Plone core packages and add-ons according `mx.ini`, `requirements.txt` and `constraint.txt`
 
 You can configure your Zope instance as described in section {ref}`manage-common-management-tasks-label`.
-    
+
+
+```{todo}
+configuration frontend:
+
+- add an add-on
+- checkout an add-on for development with mrs.developer
+
+Add info here or link to respective frontend chapter.
+```
