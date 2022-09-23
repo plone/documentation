@@ -79,7 +79,7 @@ mkdir my_project
 cd my_project
 ```
 
-Run `cookiecutter` to create a Plone project skeleton using the cookiecutter {term}`cookiecutter-plone-starter` with the following command.
+Run `cookiecutter` to create a Plone project skeleton using the template {term}`cookiecutter-plone-starter` with the following command.
 
 ```shell
 cookiecutter https://github.com/collective/cookiecutter-plone-starter.git
@@ -274,6 +274,6 @@ Select the {guilabel}`Login` link to visit the login form, and enter the followi
 
 Now you can edit content or configure your Plone site.
 
-You can stop the site with {kbd}`ctrl-esc`.
+You can stop the site with {kbd}`ctrl-c`.
 
 Enjoy!
