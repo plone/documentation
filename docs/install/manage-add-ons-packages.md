@@ -329,60 +329,6 @@ runwsgi instance/etc/zope.ini
 In a web browser, visit http://localhost:8080/ to see that Plone is running.
 
 Your instance is running in the foreground.
-For a daemonized process, see the section {ref}`manage-backend-process-manager`.
-
-
-(manage-backend-process-manager)=
-
-### Process manager
-
-You can run, stop, or restart your backend and frontend, and more, with one command.
-{term}`pm2` is a daemon process manager, suitable for production environments.
-
-Create an overall process configuration file {file}`pm2.config.js` in the root of your project:
-
-```js
-let apps = [
-  {
-    name: "plone_backend_tutorial",
-    script: 'runwsgi instance/etc/zope.ini',
-    cwd: 'backend'
-  },
-  {
-    name: "plone_frontend_tutorial",
-    script: 'yarn build && yarn start:prod',
-    cwd: 'frontend'
-  }
-];
-module.exports = { apps: apps };
-```
-
-Start these processes with the following command.
-
-```shell
-pm2 start pm2.config.js
-```
-
-See processes managed by `pm2` (running and not running) with the following command.
-
-```shell
-pm2 l
-```
-
-![List processes with 'pm2 l'](/_static/illustration/pm2.png)
-
-Restart a named process with the following command.
-
-```shell
-pm2 start plone_backend_tutorial
-```
-
-Stop a named process with the following command.
-
-```shell
-pm2 stop plone_backend_tutorial
-```
-
 
 
 (manage-backend-installation-details-label)=
