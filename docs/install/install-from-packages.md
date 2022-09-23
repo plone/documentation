@@ -64,7 +64,7 @@ pip install --user --upgrade cookiecutter
 
 ## Install Plone 6
 
-We install Plone 6 with {term}`pip`, {term}`Cookiecutter`, {term}`make`, and other developer tools.
+We install Plone 6 with {term}`pip`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
 
 ```{note}
 We do not maintain documentation for installing Plone 6 or later with `buildout`.
