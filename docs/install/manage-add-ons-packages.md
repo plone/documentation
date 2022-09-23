@@ -180,7 +180,7 @@ For developing add-ons for the Plone frontend, Volto, see {doc}`volto/addons/ind
 
 (manage-the-problem-with-pip-label)=
 
-### The problem with pip
+### The problem with `pip`
 
 If you want to check out a Plone core package for development, or want to override the constraints of Plone, normally you would define constraints with a file {file}`constraints.txt` to tell `pip` to install a different version of a Plone package.
 
@@ -214,15 +214,17 @@ You must perform that step.
 ### `mxdev` example files
 
 A minimal example set of files for `mxdev` would look like the following.
+In this example, you will install an add-on `collective.easyform`.
 
 {file}`requirements.txt`
 
 ```ini
 -c constraints.txt
+-e src/project_title
 
-Plone
+zope.testrunner
 
-# List of add-ons that are needed.
+# Add required add-ons
 collective.easyform
 ```
 
@@ -230,42 +232,41 @@ collective.easyform
 
 ```ini
 -c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
-
-# constraints of add-ons
-collective.easyform==3.4.5
 ```
 
 {file}`mx.ini`
 
 ```ini
+; This is a mxdev configuration file
+; it can be used to override versions of packages already defined in the
+; constraints files and to add new packages from VCS like git.
+; to learn more about mxdev visit https://pypi.org/project/mxdev/
+
 [settings]
-# constraints of Plone packages
-version-overrides =
-    plone.api>=2.0.0a3
+; example how to override a package version
+; version-overrides =
+;     example.package==2.1.0a2
 
-[plone.restapi]
-url = git@github.com:plone/plone.restapi.git
-branch = master
-extras = test
+; example section to use packages from git
+; [example.contenttype]
+; url = https://github.com/collective/example.contenttype.git
+; pushurl = git@github.com:collective/example.contenttype.git
+; extras = test
+; branch = feature-7
 ```
 
-With these three files in your project, run `mxdev` with the following commands.
+With these three files in your project, you can generate package requirements and constraints files, and then install those packages.
 
 ```shell
-mxdev -c mx.ini
+make build-backend
 ```
 
-`mxdev` generates the files {file}`requirements-mxdev.txt` and {file}`constraints-mxdev.txt`.
-Now you can install your packages with `pip` and the new requirements file:
-
-```shell
-pip install -r requirements-mxdev.txt
-```
-
+The `make` target invokes `mxdev`, which generates the files {file}`requirements-mxdev.txt` and {file}`constraints-mxdev.txt`.
+It then invokes `pip` to install packages with the new requirements file.
 Finally, to reload the packages, restart your Zope instance/Plone site with the following command.
 
 ```shell
-runwsgi instance/etc/zope.ini
+make start-backend
 ```
 
 ```{seealso}
