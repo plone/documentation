@@ -255,7 +255,7 @@ default_context:
       package_includes: ['collective.bookmarks']
 ```
 
-Apply your changes and install:
+Apply your changes:
 
 ```shell
 make build-backend
@@ -279,11 +279,10 @@ version-overrides =
   plone.api>=2.0.0a3
 ```
 
-Apply the changes and install the package with the modified version by running `mxdev` and `pip`:
+Apply your changes:
 
 ```shell
-mxdev -c mx.ini
-pip install -r requirements-mxdev.txt
+make build-backend
 ```
 
 ```{seealso}
