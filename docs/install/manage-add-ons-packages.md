@@ -51,7 +51,7 @@ Zope is configured through the file {file}`instance.yaml` in your project.
 Modify the file as indicated.
 
 ```{code-block} yaml
-:emphasize-lines: 6-9
+:emphasize-lines: 8
 
 default_context:
     initial_user_name: 'admin'
