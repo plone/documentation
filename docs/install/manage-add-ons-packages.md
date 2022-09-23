@@ -274,12 +274,10 @@ default_context:
       package_includes: ['collective.easyform']
 ```
 
-Apply your changes and install:
+Apply your changes:
 
 ```shell
-cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-mxdev -c mx.ini
-pip install -r requirements-mxdev.txt
+make build-backend
 ```
 
 
@@ -307,12 +305,10 @@ default_context:
       package_includes: ['collective.easyform']
 ```
 
-Apply your changes and install:
+Apply your changes:
 
 ```shell
-cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-mxdev -c mx.ini
-pip install -r requirements-mxdev.txt
+make build-backend
 ```
 
 
@@ -346,9 +342,7 @@ default_context:
 Apply your changes and install:
 
 ```shell
-cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-mxdev -c mx.ini
-pip install -r requirements-mxdev.txt
+make build-backend
 ```
 
 
