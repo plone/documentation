@@ -28,33 +28,6 @@ It generates files for installing and configuring both the frontend and backend.
 For the backend, it uses [`cookiecutter-zope-instance`](https://github.com/plone/cookiecutter-zope-instance) to generate configuration files for a Zope WSGI instance.
 
 
-(manage-backend-installation-details-label)=
-
-## Backend installation details
-
-Inside your project, open `backend/Makefile`.
-The `make` target `instance/etc/zope.ini` performs several tasks.
-
-```makefile
-bin/pip:
-	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
-	python3 -m venv .
-	bin/pip install -U "pip" "wheel" "cookiecutter"
-
-instance/etc/zope.ini:	bin/pip
-	@echo "$(GREEN)==> Install Plone and create instance$(RESET)"
-	bin/pip install Plone -c https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt
-	bin/cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-	mkdir -p var/{filestorage,blobstorage,cache,log}
-```
-
--   Creates a virtual environment if one does not exist, then upgrades Python package management tools.
--   Installs Plone using a given `constraints.txt` file for a specific version using `pip`.
--   Creates or updates the Zope configuration from its `instance.yaml` file using `cookiecutter-zope-instance`.
--   Creates specified directories, if they do not exist.
-
-You can configure your Zope instance using `make` as described in the next section.
-    
 
 (manage-zope-configuration-with-cookiecutter-zope-instance-label)=
 
@@ -503,3 +476,38 @@ Stop a named process with the following command.
 ```shell
 pm2 stop plone_backend_tutorial
 ```
+
+
+
+(manage-backend-installation-details-label)=
+
+## Backend installation details
+
+Inside your project, open `backend/Makefile`.
+
+```makefile
+bin/pip:
+  @echo "$(GREEN)==> Setup Virtual Env$(RESET)"
+  python -m venv .
+  bin/pip install -U "pip" "wheel" "cookiecutter" "mxdev"
+
+instance/etc/zope.ini:  bin/pip
+  @echo "$(GREEN)==> Install Plone and create instance$(RESET)"
+  bin/cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
+  mkdir -p var/{filestorage,blobstorage,cache,log}
+
+build-dev: instance/etc/zope.ini ## pip install Plone packages
+  @echo "$(GREEN)==> Setup Build$(RESET)"
+  bin/mxdev -c mx.ini
+  bin/pip install -r requirements-mxdev.txt
+```
+
+/ `make build-backend`
+
+-   Creates a `Python` virtual environment if one does not exist, then upgrades Python package management tools.
+-   Creates or updates the Zope configuration from its `instance.yaml` file using `cookiecutter-zope-instance`.
+-   Creates specified directories, if they do not exist.
+-   Installs Plone core packages and add-ons according `mx.ini`, `requirements.txt` and `constraint.txt`
+
+You can configure your Zope instance using `make` as described in the next section.
+    
