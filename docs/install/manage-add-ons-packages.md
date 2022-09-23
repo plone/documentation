@@ -372,5 +372,5 @@ build-dev: instance/etc/zope.ini ## pip install Plone packages
 -   Creates specified directories, if they do not exist.
 -   Installs Plone core packages and add-ons according `mx.ini`, `requirements.txt` and `constraint.txt`
 
-You can configure your Zope instance using `make` as described in section {ref}`manage-common-management-tasks-label`.
+You can configure your Zope instance as described in section {ref}`manage-common-management-tasks-label`.
     
