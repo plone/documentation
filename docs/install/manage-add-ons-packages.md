@@ -330,10 +330,11 @@ Not every Plone core package needs and provides upgrade steps.
 
 ### Build and start your instance
 
-Build and run Plone with one command.
+Build and run Plone backend.
 
 ```shell
-runwsgi instance/etc/zope.ini
+make build-backend
+make start-backend
 ```
 
 In a web browser, visit http://localhost:8080/ to see that Plone is running.
