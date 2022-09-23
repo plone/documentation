@@ -178,10 +178,11 @@ default_context:
       package_includes: ['collective.easyform']
 ```
 
-Apply your changes:
+Apply your changes and restart backend:
 
 ```shell
 make build-backend
+make start-backend
 ```
 
 
@@ -221,10 +222,11 @@ default_context:
       package_includes: ['collective.easyform']
 ```
 
-Apply your changes:
+Apply your changes and restart backend:
 
 ```shell
 make build-backend
+make start-backend
 ```
 
 
@@ -255,12 +257,12 @@ default_context:
       package_includes: ['collective.bookmarks']
 ```
 
-Apply your changes:
+Apply your changes and restart backend:
 
 ```shell
 make build-backend
+make start-backend
 ```
-
 
 
 (manage-backend-pin-the-version-of-a-plone-package-against-constraints-label)=
@@ -279,10 +281,11 @@ version-overrides =
   plone.api>=2.0.0a3
 ```
 
-Apply your changes:
+Apply your changes and restart backend:
 
 ```shell
 make build-backend
+make start-backend
 ```
 
 (manage-backend-checkout-a-plone-package-label)=
@@ -300,17 +303,11 @@ branch = master
 extras = test
 ```
 
-Apply the changes and install the package with the modified version with the following.
+Apply your changes and restart backend:
 
 ```shell
-mxdev -c mx.ini
-pip install -r requirements-mxdev.txt
-```
-
-Restart Zope with the following command.
-
-```shell
-runwsgi instance/etc/zope.ini
+make build-backend
+make start-backend
 ```
 
 
