@@ -31,9 +31,9 @@ For the backend, it uses [`cookiecutter-zope-instance`](https://github.com/plone
 
 (manage-zope-configuration-with-cookiecutter-zope-instance-label)=
 
-## Zope configuration with `cookiecutter-zope-instance`
+## Configuration with `cookiecutter-zope-instance`
 
-You can configure your Zope instance's options, including the following.
+You can configure your instance's options, including the following.
 
 -   persistent storage: blobs, direct filestorage, relational database, ZEO, and so on
 -   ports
