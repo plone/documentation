@@ -81,16 +81,8 @@ cd my_project
 
 Run `cookiecutter` to create a Plone project skeleton using the cookiecutter {term}`cookiecutter-plone-starter` with the following command.
 
-````{todo}
-When the feature branch is merged, the following command should be replaced with:
-
-```
-cookiecutter https://github.com/collective/cookiecutter-plone-starter/
-```
-````
-
 ```shell
-cookiecutter https://github.com/collective/cookiecutter-plone-starter.git --checkout feature-4
+cookiecutter https://github.com/collective/cookiecutter-plone-starter.git
 ```
 
 You will be presented with a series of prompts.
