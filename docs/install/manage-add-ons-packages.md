@@ -375,11 +375,20 @@ build-dev: instance/etc/zope.ini ## pip install Plone packages
 You can configure your Zope instance as described in section {ref}`manage-common-management-tasks-label`.
 
 
-```{todo}
+````{todo}
 configuration frontend:
 
 - add an add-on
 - checkout an add-on for development with mrs.developer
 
 Add info here or link to respective frontend chapter.
+localhost:8050/volto/addons/index.html#configuring-a-volto-project-to-use-an-addon
+
+run
 ```
+make install-frontend
+make start-frontend
+```
+
+not: `make build-frontend`. Unfortunatly `build` means different things in frontend and backend. `build frontend` means production build. `build backend` means: apply changed configuration.
+````
