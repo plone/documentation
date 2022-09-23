@@ -293,6 +293,11 @@ make build-backend
 make start-backend
 ```
 
+Depending on the package whose version you are overriding, an upgrade step needs to be done in Plone control panel.
+In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
+Follow the upgrade information.
+Not every Plone core package needs and provides upgrade steps.
+
 (manage-backend-checkout-a-plone-package-label)=
 
 ### Check out a Plone package
@@ -314,6 +319,11 @@ Apply your changes and restart backend:
 make build-backend
 make start-backend
 ```
+
+Depending on the package whose version you are overriding, an upgrade step needs to be done in Plone control panel.
+In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
+Follow the upgrade information.
+Not every Plone core package needs and provides upgrade steps.
 
 
 (manage-backend-build-and-start-your-instance-label)=
