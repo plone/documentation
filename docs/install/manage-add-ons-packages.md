@@ -45,102 +45,6 @@ You can configure your instance's options, including the following.
 For a complete list of features, usage, and options, read [`cookiecutter-zope-instance`'s `README.rst`](https://github.com/plone/cookiecutter-zope-instance#readme).
 ```
 
-As an example of how to configure Zope, we will add the add-on `collective.easyform` to our Zope instance.
-
-Zope is configured through the file {file}`instance.yaml` in your project.
-Modify the file as indicated.
-
-```{code-block} yaml
-:emphasize-lines: 8
-
-default_context:
-    initial_user_name: 'admin'
-    initial_user_password: 'admin'
-
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
-
-    db_storage: direct
-```
-
-Add-ons are listed here under the `package_includes` key to be loaded by `Zope`.
-As Python packages, they also need to be installed with `pip`.
-`pip` can install Python packages by specifying them in a requirements file.
-In your Plone project directory, open and edit the file {file}`backend/requirements.txt` as indicated.
-
-```{code-block} text
-:emphasize-lines: 3
-
--r requirements/unreleased.txt
-src/project_title
-collective.easyform
-```
-
-```{seealso}
-Documentation of Python [Requirements File Format](https://pip.pypa.io/en/stable/reference/requirements-file-format/).
-```
-
-```{todo}
-There should be a new make target that does not require this dance of changing the working directory.
-```
-
-Then after specifying requirements, you can install them by changing your working directory to `backend`, and using the following command.
-
-```shell
-cd backend
-bin/pip install -r requirements.txt
-```
-
-Next you can use `cookiecutter` to generate the Zope configuration files.
-
-```shell
-bin/cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-```
-
-Let's break down that command.
-
-```{list-table} Table of Cookiecutter arguments
-:header-rows: 1
-
-* - Option
-  - Effect
-* - `-f`, `--overwrite-if-exists`
-  - Overwrite the contents of the output directory if it already exists.
-    Data in `var` stays untouched.
-* - `--no-input`
-  - Do not prompt for parameters and only use `cookiecutter.json` file content.
-* - `--config-file instance.yaml`
-  - User configuration file.
-```
-
-As we mentioned earlier in {ref}`manage-installation-details-label`, `cookiecutter-zope-instance` creates a directory {file}`instance` that contains your Zope and Plone instance configuration.
-This directory also contains persistent storage objects. During {doc}`install-from-packages`, when we ran the command `make start-backend`, the `Makefile` target ran the following command.
-
-```shell
-runwsgi -v instance/etc/zope.ini
-```
-
-That command loaded that instance's configuration, and started the Zope instance and our Plone site.
-However, if your site is still running in the backend shell session, the changes will not show up until you restart the Plone backend.
-If needed, stop your Plone backend with {kbd}`ctrl-c`.
-Then start the backend with the following command.
-
-```shell
-make start-backend
-```
-
-In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
-
-Then click the {guilabel}`Install` button to complete installation of `collective.easyform`.
-
-Return to the {guilabel}`Site Setup` control panel.
-At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a panel {guilabel}`easyform` to configure the add-on that we just installed.
-
-While visiting the home page, you can add a new `easyform` object.
-
 
 (manage-develop-packages-with-mxdev-label)=
 
@@ -279,6 +183,18 @@ Apply your changes:
 ```shell
 make build-backend
 ```
+
+
+In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
+
+Then click the {guilabel}`Install` button to complete installation of `collective.easyform`.
+
+Return to the {guilabel}`Site Setup` control panel.
+At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a panel {guilabel}`easyform` to configure the add-on that we just installed.
+
+While visiting the home page, you can add a new `easyform` object.
+
+
 
 
 (manage-backend-pin-the-version-of-an-add-on)=
