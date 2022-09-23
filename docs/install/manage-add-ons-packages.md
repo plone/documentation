@@ -228,7 +228,7 @@ make start-backend
 
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
 
-Update your add-on.
+At the top of the page, you should see an upgrade information. Update your add-on.
 
 
 (manage-backend-check-out-an-add-on)=
@@ -238,15 +238,15 @@ Update your add-on.
 Add the add-on to {file}`requirements.txt`:
 
 ```
-collective.bookmarks
+collective.easyform
 ```
 
 Check out with {file}`mx.ini`:
 
 ```ini
-[collective.bookmarks]
-url=git@github.com:collective/collective.bookmarks.git
-branch=master
+[collective.easyform]
+url=git@github.com:collective/collective.easyform.git
+branch=dev-branch-name
 extras = test
 ```
 
@@ -255,7 +255,7 @@ Add it to {file}`instance.yml` to let Zope know that this add-on should be loade
 ```yaml
 default_context:
   load_zcml:
-      package_includes: ['collective.bookmarks']
+      package_includes: ['collective.easyform']
 ```
 
 Apply your changes and restart backend:
@@ -267,7 +267,7 @@ make start-backend
 
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
 
-Update your add-on.
+Then click the {guilabel}`Install` button to complete installation of `collective.easyform`.
 
 
 (manage-backend-pin-the-version-of-a-plone-package-against-constraints-label)=
