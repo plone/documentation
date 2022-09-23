@@ -39,6 +39,7 @@ You may host multiple Plone sites on the same server.
 
 -   Python 3.8, 3.9, or 3.10.
 -   Cookiecutter
+-   mxdev
 -   Node.JS
 -   nvm
 -   Yarn
@@ -49,10 +50,10 @@ You may host multiple Plone sites on the same server.
 Installing Python is beyond the scope of this documentation.
 However, it is recommended to use a Python version manager, [`pyenv`](https://github.com/pyenv/pyenv) that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
 
-Install or upgrade {term}`Cookiecutter` in your user's Python:
+Install or upgrade {term}`Cookiecutter` and {term}`mxdev` in your user's Python:
 
 ```shell
-pip install --user --upgrade cookiecutter
+pip install --user --upgrade cookiecutter mxdev
 ```
 
 {ref}`Install nvm and Node.js documentation <frontend-getting-started-install-nvm-label>`.

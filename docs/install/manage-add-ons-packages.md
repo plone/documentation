@@ -249,10 +249,9 @@ branch = master
 extras = test
 ```
 
-With these three files in your project, install and run `mxdev` with the following commands.
+With these three files in your project, run `mxdev` with the following commands.
 
 ```shell
-pip install mxdev
 mxdev -c mx.ini
 ```
 
