@@ -38,8 +38,9 @@ You may host multiple Plone sites on the same server.
 ### Pre-requisites for installation
 
 -   Python 3.8, 3.9, or 3.10.
--   nvm
+-   Cookiecutter
 -   Node.JS
+-   nvm
 -   Yarn
 -   ```{todo}
     List any system libraries, such as `make`, `Xcode`, and so on.
@@ -47,6 +48,12 @@ You may host multiple Plone sites on the same server.
 
 Installing Python is beyond the scope of this documentation.
 However, it is recommended to use a Python version manager, [`pyenv`](https://github.com/pyenv/pyenv) that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
+
+Install or upgrade {term}`Cookiecutter` in your user's Python:
+
+```shell
+pip install --user --upgrade cookiecutter
+```
 
 {ref}`Install nvm and Node.js documentation <frontend-getting-started-install-nvm-label>`.
 
@@ -72,29 +79,18 @@ mkdir my_project
 cd my_project
 ```
 
-Issue the following commands in a shell session to create a Python virtual environment in the current directory.
+Run `cookiecutter` to create a Plone project skeleton using the cookiecutter {term}`cookiecutter-plone-starter` with the following command.
 
-```shell
-python -m venv venv
-source venv/bin/activate
+````{todo}
+When the feature branch is merged, the following command should be replaced with:
+
 ```
-
-Upgrade Python package management tools.
-
-```shell
-pip install --upgrade pip wheel
-```
-
-Install {term}`Cookiecutter`:
-
-```shell
-pip install cookiecutter
-```
-
-You can now run `cookiecutter` to create a Plone project skeleton using the cookiecutter {term}`cookiecutter-plone-starter` with the following command.
-
-```shell
 cookiecutter https://github.com/collective/cookiecutter-plone-starter/
+```
+````
+
+```shell
+cookiecutter https://github.com/collective/cookiecutter-plone-starter.git --checkout feature-4
 ```
 
 You will be presented with a series of prompts.
@@ -111,7 +107,7 @@ author [Plone Foundation]:
 email [collective@plone.org]: 
 python_package_name [project_title]: 
 plone_version [6.0.0b2]: 
-volto_version [16.0.0-alpha.34]: 
+volto_version [16.0.0-alpha.35]: 
 Select language_code:
 1 - en
 2 - de
@@ -129,18 +125,18 @@ Project Title generation
 Running sanity checks
   - Python: ✓
   - Node: ✓
-  - yo: Yeoman not found.
+  - yo: ✓
   - Docker: ✓
   - git: ✓
 
 Summary:
   - Plone version: 6.0.0b2
-  - Volto version: 16.0.0-alpha.34
-  - Output folder: /path-to/my_project/project-title
+  - Volto version: 16.0.0-alpha.35
+  - Output folder: /Users/stevepiercy/projects/Plone/documentation/ainstall/project-title
 
 Frontend codebase:
  - Install latest @plone/generator-volto
- - Generate frontend application with @plone/volto 16.0.0-alpha.34
+ - Generate frontend application with @plone/volto 16.0.0-alpha.35
 
 Backend codebase
  - Format generated code in the backend
