@@ -91,7 +91,7 @@ You must perform that step.
 ### `mxdev` example files
 
 A minimal example set of files for `mxdev` would look like the following.
-In this example, you will install an add-on `collective.easyform`.
+{ref}`manage-common-management-tasks-label` customize your `Plone` instance.
 
 {file}`requirements.txt`
 
