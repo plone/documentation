@@ -53,13 +53,7 @@ instance/etc/zope.ini:	bin/pip
 -   Creates or updates the Zope configuration from its `instance.yaml` file using `cookiecutter-zope-instance`.
 -   Creates specified directories, if they do not exist.
 
-As you may surmise, you can configure your Zope instance.
-You have two options for configuration.
-
-1.  *Generate* configuration by using `cookiecutter-zope-instance`.
-    The next section in this chapter, {ref}`manage-zope-configuration-with-cookiecutter-zope-instance-label`, covers this option.
-2.  *Manual* configuration by editing {file}`site.zcml` and {file}`zope.conf`.
-    This option is detailed in Zope's documentation in [Configuring and Running Zope](https://zope.readthedocs.io/en/latest/operation.html).
+You can configure your Zope instance using `make` as described in the next section.
     
 
 (manage-zope-configuration-with-cookiecutter-zope-instance-label)=
