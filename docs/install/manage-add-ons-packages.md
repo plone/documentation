@@ -243,30 +243,34 @@ In your web browser, and assuming you are currently logged in as `admin`, visit 
 
 ### Check out an add-on
 
-Add the add-on to {file}`requirements.txt`:
+Add the add-on in {file}`requirements.txt`:
 
 ```
 collective.easyform
 ```
 
-Check out with {file}`mx.ini`:
+In {file}`mx.ini`, specify the information to check out the add-on:
 
 ```ini
 [collective.easyform]
 url=git@github.com:collective/collective.easyform.git
 branch=dev-branch-name
-extras = test
+extras=test
 ```
 
 Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
 
 ```yaml
 default_context:
-  load_zcml:
-      package_includes: ['collective.easyform']
+    load_zcml:
+        package_includes: [
+            'project_title',
+            'collective.easyform',
+        ]
 ```
 
-Apply your changes and restart backend:
+Stop the backend with {kbd}`ctrl-c`.
+Then apply your changes and start the backend.
 
 ```shell
 make build-backend
