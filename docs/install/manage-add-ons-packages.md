@@ -164,7 +164,8 @@ We will also use Classic UI for the interface because some packages and add-ons 
 
 ### Add an add-on
 
-Add a line with the name of your add-on to `requirements.txt`
+Add a line with the name of your add-on in `requirements.txt`.
+This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
 
 ```
 collective.easyform
@@ -172,13 +173,19 @@ collective.easyform
 
 Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
 
-```yaml
+```{code-block} yaml
+:emphasize-lines: 3-6
 default_context:
-  load_zcml:
-      package_includes: ['collective.easyform']
+    load_zcml:
+        package_includes: [
+            'project_title',
+            'collective.easyform',
+        ]
 ```
 
-Apply your changes and restart backend:
+Stop the backend with {kbd}`ctrl-c`.
+Then apply your changes and start the backend.
+You do not need to stop the frontend.
 
 ```shell
 make build-backend
@@ -187,12 +194,11 @@ make start-backend
 
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
 
-Then click the {guilabel}`Install` button to complete installation of `collective.easyform`.
+Then click the {guilabel}`Install` button next to your add-on to complete installation of the add-on.
 
-Return to the {guilabel}`Site Setup` control panel.
-At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a panel {guilabel}`easyform` to configure the add-on that we just installed.
-
-While visiting the home page, you can add a new `easyform` object.
+Some add-ons have configuration options.
+To configure such add-ons, return to the {guilabel}`Site Setup` control panel.
+At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a control panel to configure the add-on that you just installed.
 
 
 (manage-backend-pin-the-version-of-an-add-on)=
