@@ -215,10 +215,6 @@ Starting server in PID 53838.
 2022-09-18 23:14:31,893 INFO    [waitress:486][MainThread] Serving on http://127.0.0.1:8080
 ```
 
-At this point, you could visit the Plone Classic UI interface at the URL http://localhost:8080.
-However it is strongly recommended to use the new Plone frontend, Volto, to gain many advantages, including easier content editing and development of components.
-Continue to the next section to do so.
-
 
 (install-packages-start-plone-frontend-label)=
 
