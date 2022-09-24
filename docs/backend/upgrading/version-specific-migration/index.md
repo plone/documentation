@@ -4,7 +4,7 @@ myst:
     "description": "Version-specific migration procedures and tips"
     "property=og:description": "Version-specific migration procedures and tips"
     "property=og:title": "Version-specific migration procedures and tips"
-    "keywords": "Upgrading, version, Plone"
+    "keywords": "Upgrading, version, Plone, migration"
 ---
 
 (version-specific-migration-procedures-and-tips-label)=
