@@ -17,9 +17,9 @@ In this section, we discuss details of the installation process so that you can 
 It also covers routine management tasks that a developer might perform.
 
 
-(manage-installation-details-label)=
+(manage-installation-details-with-cookiecutter-label)=
 
-## Installation details
+## Installation details with Cookiecutter
 
 {term}`Cookiecutter` creates projects from project templates.
 The cookiecutter [`cookiecutter-plone-starter`](https://github.com/collective/cookiecutter-plone-starter/) creates a Plone project that you can install using {term}`Make`.
