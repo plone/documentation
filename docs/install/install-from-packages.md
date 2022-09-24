@@ -206,13 +206,13 @@ make start-backend
 The Plone backend server starts up and emits messages to the console.
 
 ```console
-Starting application
-2022-09-18 23:14:27,119 INFO    [chameleon.config:38][MainThread] directory cache: /path-to/my_project/project-title/backend/instance/var/cache.
-2022-09-18 23:14:30,812 INFO    [plone.volto:22][MainThread] Aliasing collective.folderish classes to plone.volto classes.
-2022-09-18 23:14:31,889 INFO    [Zope:42][MainThread] Ready to handle requests
-Starting server in PID 53838.
-2022-09-18 23:14:31,893 INFO    [waitress:486][MainThread] Serving on http://[::1]:8080
-2022-09-18 23:14:31,893 INFO    [waitress:486][MainThread] Serving on http://127.0.0.1:8080
+2022-09-24 01:30:17,799 WARNING [ZODB.FileStorage:411][MainThread] Ignoring index for /<path-to-project>/my_project/project-title/backend/instance/var/filestorage/Data.fs
+2022-09-24 01:30:19,639 INFO    [chameleon.config:38][MainThread] directory cache: /<path-to-project>/my_project/project-title/backend/instance/var/cache.
+2022-09-24 01:30:23,680 INFO    [plone.volto:22][MainThread] Aliasing collective.folderish classes to plone.volto classes.
+2022-09-24 01:30:24,935 INFO    [Zope:42][MainThread] Ready to handle requests
+Starting server in PID 92714.
+2022-09-24 01:30:24,940 INFO    [waitress:486][MainThread] Serving on http://[::1]:8080
+2022-09-24 01:30:24,940 INFO    [waitress:486][MainThread] Serving on http://127.0.0.1:8080
 ```
 
 
