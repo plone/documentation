@@ -1,20 +1,18 @@
 ---
 myst:
   html_meta:
-    "description": "Version-specific upgrade guide"
-    "property=og:description": "Version-specific upgrade guide"
-    "property=og:title": "Version-specific upgrade guide"
-    "keywords": "Upgrading"
+    "description": "Version-specific migration procedures and tips"
+    "property=og:description": "Version-specific migration procedures and tips"
+    "property=og:title": "Version-specific migration procedures and tips"
+    "keywords": "Upgrading, version, Plone"
 ---
 
-(version-specific-upgrade-guide-label)=
+(version-specific-migration-procedures-and-tips-label)=
 
 # Version-specific migration procedures and tips
 
-```{admonition} Description
-In addition to the general procedure described in the previous sections, this section provides version-specific procedures and tips.
+In addition to the general procedure described in the previous chapters, the chapters in this part of the documentation provide version-specific procedures and tips.
 If your migration does not involve a version pair specified here, then you may follow the general procedures alone.
-```
 
 ```{toctree}
 :maxdepth: 2
