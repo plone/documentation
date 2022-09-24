@@ -4,7 +4,7 @@ myst:
     "description": "Manage add-ons, packages, and processes"
     "property=og:description": "Manage add-ons, packages, and processes"
     "property=og:title": "Manage add-ons, packages, and processes"
-    "keywords": "Plone 6, manage, backend, add-ons, packages, processes, cookiecutter, pm2, Zope"
+    "keywords": "Plone 6, manage, backend, add-ons, packages, processes, cookiecutter, Zope"
 ---
 
 
@@ -13,8 +13,7 @@ myst:
 # Manage add-ons, packages, and processes
 
 This chapter assumes you have previously {doc}`installed Plone from its packages <install-from-packages>`.
-That documented process is a streamlined version.
-In this section, we discuss details of the installation process, so that you can customize your Plone installation.
+In this section, we discuss details of the installation process so that you can customize your Plone installation.
 It also covers routine management tasks that a developer might perform.
 
 
