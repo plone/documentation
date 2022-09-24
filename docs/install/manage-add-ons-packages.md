@@ -84,12 +84,11 @@ The generated files indicate from where the constraints were fetched, and commen
 You must perform that step.
 
 
-(manage-mxdev-example-files-label)=
+(manage-mxdev-usage-overview-label)=
 
-### `mxdev` example files
+### `mxdev` usage overview
 
-A minimal example set of files for `mxdev` would look like the following.
-{ref}`manage-common-management-tasks-label` customize your `Plone` instance.
+The default set of files for `mxdev` is shown below.
 
 {file}`requirements.txt`
 
@@ -100,7 +99,7 @@ A minimal example set of files for `mxdev` would look like the following.
 zope.testrunner
 
 # Add required add-ons
-collective.easyform
+# collective.easyform
 ```
 
 {file}`constraints.txt`
@@ -130,23 +129,23 @@ collective.easyform
 ; branch = feature-7
 ```
 
-With these three files in your project, you can generate package requirements and constraints files, and then install those packages.
+You can edit these three files in your project as you need.
+Then you can generate package requirements and constraints files, and then install those packages, with one command.
 
 ```shell
 make build-backend
 ```
 
-The `make` target invokes `mxdev`, which generates the files {file}`requirements-mxdev.txt` and {file}`constraints-mxdev.txt`.
+`make build-backend` invokes `mxdev`, which generates the files {file}`requirements-mxdev.txt` and {file}`constraints-mxdev.txt`.
 It then invokes `pip` to install packages with the new requirements file.
-Finally, to reload the packages, restart your Zope instance/Plone site with the following command.
+
+To reload the packages, stop your Zope instance/Plone site with {kbd}`ctrl-c`, and start it with the following command.
 
 ```shell
 make start-backend
 ```
 
 ```{seealso}
-This was a brief overview of how `mxdev` helps with versions and checkouts.
-It can do a lot more.
 See the [documentation of `mxdev` in its README.rst](https://github.com/mxstack/mxdev/blob/main/README.rst) for complete information.
 ```
 
