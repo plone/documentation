@@ -73,10 +73,10 @@ Unfortunately `pip` does not allow overriding constraints this way.
 
 ### `mxdev` to the rescue!
 
-`mxdev` resolves Plone constraints with your needs for version pinning or source checkouts.
+`mxdev` resolves Plone constraints according to your needs for version pinning or source checkouts.
 It reads its configuration file {file}`mx.ini`, and your {file}`requirements.txt` and {file}`constraints.txt` files.
-Then it fetches the requirements and constraints of Plone
-Finally it writes new combined requirements in {file}`requirements-mxdev.txt` and new constraints in {file}`constraints-mxdev.txt`.
+Then it fetches the requirements and constraints of Plone.
+Finally, it writes new combined requirements in {file}`requirements-mxdev.txt` and new constraints in {file}`constraints-mxdev.txt`.
 Together these two files contain the combined requirements and constraints, but modified according to the configuration in {file}`mx.ini`.
 The generated files indicate from where the constraints were fetched, and comments are added when a modification was necessary.
 
