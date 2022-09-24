@@ -57,9 +57,9 @@ pip install --user --upgrade cookiecutter
 
 {ref}`Install Yarn documentation <frontend-getting-started-yarn-label>`.
 
-GNU make comes installed on most Linux distributions.
+{term}`Make` comes installed on most Linux distributions.
 On macOS, you must first [install Xcode](https://developer.apple.com/xcode/resources/), then install its command line tools.
-On Windows, it is strongly recommended to [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install), which will include GNU make.
+On Windows, it is strongly recommended to [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install), which will include `make`.
 
 
 (install-packages-install-label)=
@@ -81,10 +81,10 @@ mkdir my_project
 cd my_project
 ```
 
-Run `cookiecutter` to create a Plone project skeleton using the template {term}`cookiecutter-plone-starter` with the following command.
+Run `cookiecutter` to create a Plone project skeleton using the Cookiecutter {term}`cookiecutter-plone-starter` with the following command.
 
 ```shell
-cookiecutter https://github.com/collective/cookiecutter-plone-starter.git
+cookiecutter https://github.com/collective/cookiecutter-plone-starter
 ```
 
 You will be presented with a series of prompts.
@@ -126,7 +126,7 @@ Running sanity checks
 Summary:
   - Plone version: 6.0.0b2
   - Volto version: 16.0.0-alpha.35
-  - Output folder: /Users/stevepiercy/projects/Plone/documentation/ainstall/project-title
+  - Output folder: /<path-to-project>/my_project/project-title
 
 Frontend codebase:
  - Install latest @plone/generator-volto
