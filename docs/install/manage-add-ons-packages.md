@@ -44,11 +44,11 @@ For a complete list of features, usage, and options, read [`cookiecutter-zope-in
 ```
 
 
-(manage-develop-packages-with-mxdev-label)=
+(manage-plone-backend-packages-with-mxdev-label)=
 
-## Develop Plone backend packages with `mxdev`
+## Manage Plone backend packages with `mxdev`
 
-This section describes how to develop packages for Plone backend with `mxdev`.
+This section describes how to manage packages for the Plone backend with `mxdev`.
 
 For developing add-ons for the Plone frontend, Volto, see {doc}`volto/addons/index`.
 
