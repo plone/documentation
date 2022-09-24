@@ -22,30 +22,23 @@ This chapter lists things to do before you migrate Plone.
 -   Read the "What's new in..." for your relevant Plone version, and read the release notes.
     You will find these in the [online directory of released versions on `dist.plone.org`](https://dist.plone.org/release/).
     As an example, you can find the file [`RELEASE-NOTES.md` for 6.0.0b2](https://dist.plone.org/release/6.0.0b2/RELEASE-NOTES.md).
-
-
 -   Check for dependencies.
 
-    -   Read the release notes for the Plone release you are upgrading to, in particular:
-    
+    -   Read the release notes of the Plone release to which you are upgrading, in particular:
+
         -   What version of Python is required?
-        
         -   What version of Zope is required?
-        
         -   Do you need any new Python libraries?
-    
+
     -   Make sure all the add-on products you are using have been updated to support the version of Plone to which you are upgrading.
-    
     -   Start with the third-party products that are in use on your site.
         Verify that they have been updated or verified to work on the new version, and get them upgraded in your existing instance before you start the Plone/Zope/Python upgrade, if possible.
-    
     -   If Zope depends on a newer version of Python, install the new version of Python first.
-    
     -   If the newer version of Plone depends on a newer version of Zope, you will need to install that before proceeding with the Plone upgrade.
 
 ```{seealso}
 Zope has its own documentation of migration guidelines.
-Of most interest for migration are the following.
+Of most interest for migration are the following documents.
 
 -   [What's new](https://zope.readthedocs.io/en/latest/news.html) at a high level.
 -   [Migrating between Zope versions](https://zope.readthedocs.io/en/latest/migrations/index.html).
