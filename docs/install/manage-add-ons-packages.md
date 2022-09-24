@@ -10,7 +10,7 @@ myst:
 
 (manage-add-ons-packages-and-processes-label)=
 
-# Manage add-ons, packages, and processes
+# Manage add-ons and packages
 
 This chapter assumes you have previously {doc}`installed Plone from its packages <install-from-packages>`.
 In this section, we discuss details of the installation process so that you can customize your Plone installation.
