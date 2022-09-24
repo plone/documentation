@@ -27,8 +27,7 @@ It generates files for installing and configuring both the frontend and backend.
 For the backend, it uses [`cookiecutter-zope-instance`](https://github.com/plone/cookiecutter-zope-instance) to generate configuration files for a Zope WSGI instance.
 
 
-
-(manage-zope-configuration-with-cookiecutter-zope-instance-label)=
+(manage-configuration-with-cookiecutter-zope-instance-label)=
 
 ## Configuration with `cookiecutter-zope-instance`
 
