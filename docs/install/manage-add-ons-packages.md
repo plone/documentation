@@ -295,7 +295,7 @@ Pin the version of a Plone package in {file}`mx.ini`:
 [settings]
 # constraints of Plone packages
 version-overrides =
-  plone.api>=2.0.0a3
+    plone.api>=2.0.0a3
 ```
 
 Apply your changes and restart backend:
@@ -325,17 +325,17 @@ branch = master
 extras = test
 ```
 
-Apply your changes and restart backend:
+Stop the backend with {kbd}`ctrl-c`.
+Then apply your changes and start the backend.
 
 ```shell
 make build-backend
 make start-backend
 ```
 
-Depending on the package whose version you are overriding, an upgrade step needs to be done in Plone control panel.
+Depending on the package version you override, an upgrade step might need to be performed in the Plone control panel.
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
-Follow the upgrade information.
-Not every Plone core package needs and provides upgrade steps.
+Follow the upgrade information, if present.
 
 
 (manage-build-and-start-your-instance-label)=
