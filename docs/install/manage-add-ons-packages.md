@@ -201,7 +201,7 @@ To configure such add-ons, return to the {guilabel}`Site Setup` control panel.
 At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a control panel to configure the add-on that you just installed.
 
 
-(manage-backend-pin-the-version-of-an-add-on)=
+(manage-pin-the-version-of-an-add-on)=
 
 ### Pin the version of an add-on
 
@@ -239,7 +239,7 @@ make start-backend
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
 
 
-(manage-backend-check-out-an-add-on)=
+(manage-check-out-an-add-on)=
 
 ### Check out an add-on
 
@@ -278,7 +278,7 @@ In your web browser, and assuming you are currently logged in as `admin`, visit 
 Then click the {guilabel}`Install` button to complete installation of `collective.easyform`.
 
 
-(manage-backend-pin-the-version-of-a-plone-package-against-constraints-label)=
+(manage-pin-the-version-of-a-plone-package-against-constraints-label)=
 
 ### Pin the version of a Plone package against constraints
 
@@ -306,7 +306,7 @@ In your web browser, and assuming you are currently logged in as `admin`, visit 
 Follow the upgrade information.
 Not every Plone core package needs and provides upgrade steps.
 
-(manage-backend-checkout-a-plone-package-label)=
+(manage-checkout-a-plone-package-label)=
 
 ### Check out a Plone package
 
@@ -334,7 +334,7 @@ Follow the upgrade information.
 Not every Plone core package needs and provides upgrade steps.
 
 
-(manage-backend-build-and-start-your-instance-label)=
+(manage-build-and-start-your-instance-label)=
 
 ### Build and start your instance
 
@@ -350,7 +350,7 @@ In a web browser, visit http://localhost:8080/ to see that Plone is running.
 Your instance is running in the foreground.
 
 
-(manage-backend-installation-details-label)=
+(manage-installation-details-label)=
 
 ## Backend installation details
 
