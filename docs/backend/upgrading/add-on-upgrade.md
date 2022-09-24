@@ -7,6 +7,8 @@ myst:
     "keywords": "Upgrade, Plone, add-on, products"
 ---
 
+(upgrade-add-on-products-label)=
+
 # Upgrade add-on products
 
 This chapter describes the steps to migrate your third party products.
