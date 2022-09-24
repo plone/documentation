@@ -89,6 +89,7 @@ You must perform that step.
 ### `mxdev` usage overview
 
 The default set of files for `mxdev` is shown below.
+They are located in the `backend` directory of your project.
 
 {file}`requirements.txt`
 
