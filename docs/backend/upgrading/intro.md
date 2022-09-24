@@ -81,18 +81,16 @@ It just fixed a bug.
 A post on the Community forum, [Rules for Plone 6 development during the beta stage](https://community.plone.org/t/rules-for-plone-6-development-during-the-beta-stage/15432), discusses alpha and beta versioning.
 ```
 
-In addition to the general procedure there are {ref}`version-specific-upgrade-guide-label`.
 
 (introduction-version-specific-upgrade-guides-label)=
 
 ## Version-specific upgrade guides
 
 In addition to the general upgrade procedure, there are {doc}`version-specific migration guides <version-specific-migration/index>`.
-
 These guides contain specific instructions and valuable information that has been collected from real-life migration cases.
 
-This approach is recommended for all upgrades of minor version and can work fine for most mayor upgrades.
-When dealing with mayor changes in Plone or with very large or complex installations a export-import based migration (see below) is often the better solution.
+This approach is recommended for all upgrades of minor versions, and can work fine for most major upgrades.
+When dealing with major changes in Plone, or with very large or complex installations, an {ref}`export-import based migration <introduction-upgrade-strategies-export-import-migrations-label>` is often the better solution.
 
 (introduction-upgrade-strategies-label)=
 
@@ -104,7 +102,7 @@ When dealing with mayor changes in Plone or with very large or complex installat
 ### In-place migrations
 
 An in-place migration means the content and settings of a Plone installation are being updated while Plone is running.
-These upgrades use a built-in tool
+These upgrades use a built-in tool.
 They run upgrade steps that are collected in [plone.app.upgrade](https://github.com/plone/plone.app.upgrade/).
 
 This approach is recommended for all upgrades of feature (minor) versions.
@@ -150,7 +148,7 @@ The following major changes in the history of Plone require special attention wh
 
 With Plone 5.0 the default framework for content types switched from Archetypes to Dexterity.
 
-Until Plone 5.2.x there is a built-in migration from Archetypes to Dexterity, but it only supports Python 2.
+Up through Plone 5.2.x, there is a built-in migration from Archetypes to Dexterity, but it only supports Python 2.
 See [Migration](https://pypi.org/project/plone.app.contenttypes/2.2.3/#migration) in the latest stable release of `plone.app.contenttypes` for details on the migration of custom and default content types to Dexterity.
 
 Using [collective.exportimport](https://pypi.org/project/collective.exportimport/) you can export Archetypes content and import it as Dexterity content.
@@ -160,15 +158,15 @@ Using [collective.exportimport](https://pypi.org/project/collective.exportimport
 
 ### Plone 5.2: Support for Python 3
 
-Plone 5.2 added support for Python 3 while Plone 6.0 dropped support for Python 2.
+Plone 5.2 added support for Python 3, while Plone 6.0 dropped support for Python 2.
 This means that you can use Plone 5.2 to upgrade to Python 3.
 
 This requires that you run Plone in Python 3 and only use code that supports Python 3.
 It also requires that you migrate the database in a separate step from Python 2 to 3 while Plone is not running.
 
-See the chapters {ref}`migrating-52-to-python3-label` and {ref}`migrate-zodb-to-python3-label` for detailed information on these steps.
+See the chapters {doc}`version-specific-migration/upgrade-to-python3` and {doc}`version-specific-migration/upgrade-zodb-to-python3` for detailed information on these steps.
 
-Using [collective.exportimport](https://pypi.org/project/collective.exportimport/) you can export content in Python 2 and import it in Python 3.
+Using [collective.exportimport](https://pypi.org/project/collective.exportimport/), you can export content from Python 2 and import it in Python 3.
 
 
 (introduction-plone-6.0-volto-as-new-frontend-label)=
