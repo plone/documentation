@@ -42,9 +42,7 @@ You may host multiple Plone sites on the same server.
 -   Node.JS
 -   nvm
 -   Yarn
--   ```{todo}
-    List any system libraries, such as `make`, `Xcode`, and so on.
-    ```
+-   GNU make
 
 Installing Python is beyond the scope of this documentation.
 However, it is recommended to use a Python version manager, [`pyenv`](https://github.com/pyenv/pyenv) that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
@@ -58,6 +56,10 @@ pip install --user --upgrade cookiecutter
 {ref}`Install nvm and Node.js documentation <frontend-getting-started-install-nvm-label>`.
 
 {ref}`Install Yarn documentation <frontend-getting-started-yarn-label>`.
+
+GNU make comes installed on most Linux distributions.
+On macOS, you must first [install Xcode](https://developer.apple.com/xcode/resources/), then install its command line tools.
+On Windows, it is strongly recommended to [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install), which will include GNU make.
 
 
 (install-packages-install-label)=
