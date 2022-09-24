@@ -221,11 +221,15 @@ Add it to {file}`instance.yml` to let Zope know that this add-on should be loade
 
 ```yaml
 default_context:
-  load_zcml:
-      package_includes: ['collective.easyform']
+    load_zcml:
+        package_includes: [
+            'project_title',
+            'collective.easyform',
+        ]
 ```
 
-Apply your changes and restart backend:
+Stop the backend with {kbd}`ctrl-c`.
+Then apply your changes and start the backend.
 
 ```shell
 make build-backend
@@ -233,8 +237,6 @@ make start-backend
 ```
 
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
-
-At the top of the page, you should see an upgrade information. Update your add-on.
 
 
 (manage-backend-check-out-an-add-on)=
