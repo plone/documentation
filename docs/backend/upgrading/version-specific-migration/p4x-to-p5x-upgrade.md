@@ -1,11 +1,20 @@
-# Upgrading Plone 4.x To 5.0
+---
+myst:
+  html_meta:
+    "description": "Upgrading Plone 4.x To 5.0"
+    "property=og:description": "Upgrading Plone 4.x To 5.0"
+    "property=og:title": "Upgrading Plone 4.x To 5.0"
+    "keywords": "Upgrading, version, Plone, migration, 4.x, 5.0"
+---
 
-```{admonition} Description
-Instructions and tips for upgrading to a newer Plone version.
-```
+(upgrading-plone-4.x-to-5.0)=
 
-```{note}
-If you want to upgrade add-ons to Plone 5, also see {ref}`upgrading-addons-to-50-label`
+# Upgrading Plone 4.x to 5.0
+
+This chapter provides instructions and tips for upgrading Plone 4.x to 5.0.
+
+```{seealso}
+To upgrade add-ons to Plone 5, see also {doc}`upgrade-addons-to-50`.
 ```
 
 ## General Information
@@ -244,7 +253,7 @@ An old style Resource Registry would look like this:
 To migrate this to Plone 5, resource registrations are all done in the
 [Configuration Registry](https://pypi.python.org/pypi/plone.app.registry).
 
-#### New Style With registry.xml
+#### New Style With {file}`registry.xml`
 
 The new registration will look something like:
 
@@ -271,7 +280,7 @@ A bundle defines a set of resources that should be compiled together and distrib
 
 You either need to add your resource to an existing bundle or create your own bundle.
 
-In this post, we'll describe the process of creating your own bundle. Again, we use registry.xml for configuration:
+In this post, we'll describe the process of creating your own bundle. Again, we use {file}`registry.xml` for configuration:
 
 ```xml
 <records prefix="plone.bundles/foobar"
@@ -325,9 +334,9 @@ require([
   'pat-registry'
 ], function($, Registry) {
   'use strict';
-  ...
+  // ...
   // All my previous JavaScript file code here
-  ...
+  // ...
 });
 ```
 
@@ -395,7 +404,7 @@ If you have a resource that needs to be conditionally included, it will likely n
 ## Control Panel
 
 In Plone 4.x, the Plone configuration settings have been stored as portal properties spread across the Management Interface.
-In Plone 5, those settings are all stored as plone.app.registry entries in registry.xml.
+In Plone 5, those settings are all stored as plone.app.registry entries in {file}`registry.xml`.
 
 There are now sections in the control panel, this can be set from the controlpanel.xml.
 See the current definitions for more information.
@@ -433,7 +442,7 @@ ptools.site_properties.available editors
 
 Now you can access the property via get_registry_record()
 
-```python
+```pycon
 >>> from plone import api
 >>> api.portal.get_registry_record('plone.available_editors')
 ```
@@ -590,7 +599,7 @@ If you want to disable_folder_sections, you will want to set `plone.generate_tab
 
 ### Generic Setup
 
-All settings for control panels are stored in the registry.xml Generic Setup file.
+All settings for control panels are stored in the {file}`registry.xml` Generic Setup file.
 This file can be exported through the Management Interface.
 
 Go to the Plone Site Setup, choose {guilabel}`Management Interface` from the "Advanced" section.
@@ -599,7 +608,7 @@ Go to the "export" tab.
 Choose the {guilabel}`Export the configuration registry schemata` check-box and
 click the {guilabel}`Export selected steps` button.
 
-The registry.xml file will contain entries like this
+The {file}`registry.xml` file will contain entries like the following:
 
 ```xml
 <record name="plone.available_editors"
@@ -617,7 +626,7 @@ The registry.xml file will contain entries like this
 </record>
 ```
 
-Drop the settings you want to change into registry.xml in you Generic Setup profile folder.
+Drop the settings you want to change into {file}`registry.xml` in you Generic Setup profile folder.
 
 Re-install your add-on product and the settings will be available.
 
@@ -627,7 +636,7 @@ All Generic Setup settings can be looked up with Python code.
 
 First we lookup the registry utility
 
-```python
+```pycon
 >>> from zope.component import getUtility
 >>> from plone.registry.interfaces import IRegistry
 >>> registry = getUtility(IRegistry)
@@ -636,27 +645,27 @@ First we lookup the registry utility
 Now we use the schema 'ISearchSchema' to lookup for a RecordProxy object with
 all fields
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces import ISearchSchema
 >>> search_settings = registry.forInterface(ISearchSchema, prefix='plone')
 ```
 
 Now we an get and set all fields of the schema above like
 
-```python
+```pycon
 >>> search_settings.enable_livesearch
 True
 ```
 
 If you want to change a setting, change the attribute
 
-```python
+```pycon
 >>> search_settings.enable_livesearch = False
 ```
 
 Now the enable_livesearch should disabled
 
-```python
+```pycon
 >>> search_settings.enable_livesearch
 False
 ```
@@ -665,9 +674,9 @@ False
 
 Plone 5.x
 
-```python
- >>> from Products.CMFPlone.interfaces import IEditingSchema
- >>> editing_settings = registry.forInterface(IEditingSchema, prefix='plone')
+```pycon
+>>> from Products.CMFPlone.interfaces import IEditingSchema
+>>> editing_settings = registry.forInterface(IEditingSchema, prefix='plone')
 
 >>> editing_settings.default_editor
 u'TinyMCE'
@@ -729,7 +738,7 @@ The new attributes can be accessed via plone.api as described above.
 
 Plone 5.x
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces import ILanguageSchema
 >>> language_settings = registry.forInterface(ILanguageSchema, prefix='plone')
 
@@ -772,7 +781,7 @@ The new attributes can be accessed via plone.api as described above.
 
 Plone 5.x
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces import IMaintenanceSchema
 >>> maintenance_settings = registry.forInterface(IMaintenanceSchema, prefix='plone')
 
@@ -784,7 +793,7 @@ Plone 5.x
 
 Plone 5.x
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces import INavigationSchema
 >>> navigation_settings = registry.forInterface(INavigationSchema, prefix='plone')
 
@@ -811,7 +820,7 @@ True
 
 Plone 5.x
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces import ISearchSchema
 >>> search_settings = registry.forInterface(ISearchSchema, prefix='plone')
 
@@ -826,23 +835,23 @@ False
 
 Plone 4.x
 
-```python
- >>> portal = getSite()
- >>> portal_properties = getToolByName(portal, "portal_properties")
- >>> site_properties = portal_properties.site_properties
+```pycon
+>>> portal = getSite()
+>>> portal_properties = getToolByName(portal, "portal_properties")
+>>> site_properties = portal_properties.site_properties
 
 >>> portal.site_title = settings.site_title
- >>> portal.site_description = settings.site_description
- >>> site_properties.enable_sitemap = settings.enable_sitemap
- >>> site_properties.exposeDCMetaTags = settings.exposeDCMetaTags
- >>> site_properties.webstats_js = settings.webstats_js
+>>> portal.site_description = settings.site_description
+>>> site_properties.enable_sitemap = settings.enable_sitemap
+>>> site_properties.exposeDCMetaTags = settings.exposeDCMetaTags
+>>> site_properties.webstats_js = settings.webstats_js
 
- >>> settings.enable_sitemap -> plone.app.layout
+>>> settings.enable_sitemap -> plone.app.layout
 ```
 
 Plone 5.x
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces import ISiteSchema
 >>> site_settings = registry.forInterface(ISiteSchema, prefix='plone')
 
@@ -863,7 +872,7 @@ u''
 
 Plone 5.x
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces.controlpanel import IDateAndTimeSchema
 >>> tz_settings = registry.forInterface(IDateAndTimeSchema, prefix='plone')
 
@@ -874,7 +883,7 @@ Plone 5.x
 
 Plone 5.x
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces import IMarkupSchema
 >>> markup_settings = registry.forInterface(IMarkupSchema, prefix='plone')
 
@@ -889,7 +898,7 @@ u'text/html'
 
 Plone 5.x
 
-```python
+```pycon
 >>> from Products.CMFPlone.interfaces import IUserGroupsSettingsSchema
 >>> usergroups_settings = registry.forInterface(IUserGroupsSettingsSchema, prefix='plone')
 
@@ -945,8 +954,9 @@ browser_manager.getControl(name='form.widgets.IPublication.effective').value = '
 
 ### parentMetaTypesNotToQuery
 
+Old 4.x approach:
+
 ```xml
-# OLD 4.x approach
 <object name="portal_properties">
   <object name="navtree_properties">
     <property name="parentMetaTypesNotToQuery" purge="false">
@@ -956,10 +966,9 @@ browser_manager.getControl(name='form.widgets.IPublication.effective').value = '
 </object>
 ```
 
-Now in `registry.xml` should look like
+Now in Plone 5, {file}`registry.xml` should look like the following:
 
 ```xml
-# NEW in 5.0
 <?xml version="1.0"?>
 <registry>
   <record
@@ -975,14 +984,16 @@ Now in `registry.xml` should look like
 
 ### metaTypesNotToList
 
+Old 4.x approach:
+
 ```xml
-# OLD 4.x approach
 <?xml version="1.0"?>
 <object name="portal_properties">
   <object name="navtree_properties">
     <property name="metaTypesNotToList" purge="false">
       <element value="my.hidden.content.type" />
     </property>
+  </object>
 </object>
 ```
 
@@ -996,8 +1007,9 @@ if you don't want your content type to show there's nothing to do.
 
 ### typesLinkToFolderContentsInFC
 
+Old 4.x approach:
+
 ```xml
-# OLD 4.x approach
 <?xml version="1.0"?>
 <object name="portal_properties">
   <object name="site_properties">
@@ -1008,10 +1020,9 @@ if you don't want your content type to show there's nothing to do.
 </object>
 ```
 
-Now in `registry.xml` should look like
+Now in Plone 5, {file}`registry.xml` should look like the following:
 
 ```xml
-# NEW in Plone 5
 <record
     name="plone.types_use_view_action_in_listings"
     interface="Products.CMFPlone.interfaces.controlpanel.ITypesSchema"
@@ -1024,8 +1035,9 @@ Now in `registry.xml` should look like
 
 ### types_not_searched
 
+Old 4.x approach:
+
 ```xml
-# OLD 4.x approach
 <?xml version="1.0"?>
 <object name="portal_properties">
   <object name="site_properties">
@@ -1036,10 +1048,9 @@ Now in `registry.xml` should look like
 </object>
 ```
 
-Now in `registry.xml` should look like
+Now in Plone 5, {file}`registry.xml` should look like the following:
 
 ```xml
-# NEW in Plone 5
 <?xml version="1.0"?>
 <registry>
   <record
