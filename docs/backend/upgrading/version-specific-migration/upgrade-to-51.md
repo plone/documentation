@@ -27,7 +27,7 @@ If you want to upgrade add-ons to Plone 5.1, please see {doc}`upgrading-addons-t
 
 ## Upgrading
 
-To run the upgrade to 5.1, follow the links on top of the control panel, or in the ZMI visit `/@@plone-upgrade`.
+To run the upgrade to 5.1, follow the links at the top of the control panel or visit the ZMI for your site at `/@@plone-upgrade`.
 
 
 ## Changes between Plone 5.0 and 5.1
