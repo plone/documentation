@@ -26,7 +26,7 @@ If you want to upgrade add-ons to Python 3, the list of all Plone packages that 
 
 - You should support Python 2 and 3 with the same codebase to allow it to be used in existing versions of Plone.
 - Plone 5.2 supports Python 2.7, Python 3.6, and Python 3.7.
-- We use [six](https://six.readthedocs.io) and [modernize](https://pypi.python.org/pypi/modernize) to do the first steps towards Python 3.
+- We use [six](https://six.readthedocs.io) and [modernize](https://pypi.org/project/modernize) to do the first steps towards Python 3.
 
 In general you should follow these steps to port add-ons:
 
@@ -154,7 +154,7 @@ Check this [Cheat Sheet](http://python-future.org/compatible_idioms.html)  with 
 
 `python-modernize` adds an import of the compatibility library `six` if needed.
 The import is added as the last import, therefore it is often necessary to reorder the imports.
-The easiest way is to use [isort](https://pypi.python.org/pypi/isort), which does this for you automatically.
+The easiest way is to use [isort](https://pypi.org/project/isort), which does this for you automatically.
 Check the [Python style guide for Plone](https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting) for information about the order of imports and an example configuration for `isort`.
 
 If `six` is used in the code, make sure that `six` is added to the `install_requires` list in the `setup.py` of the package.

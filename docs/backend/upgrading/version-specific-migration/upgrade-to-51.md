@@ -279,7 +279,7 @@ Adding or editing a document is faster, because care was taken to avoid duplicat
 
 #### For Developers
 
-The [collective.indexing](https://pypi.python.org/pypi/collective.indexing) package was merged into the core of Plone.
+The [collective.indexing](https://pypi.org/project/collective.indexing) package was merged into the core of Plone.
 This makes sure that objects are only indexed once per transaction.
 
 It also gives hooks for calling external indexers, like Solr and Elasticsearch.

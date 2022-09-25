@@ -74,7 +74,7 @@ When the email addresses are not unique, for example you have both `joe@example.
 It is best is to fix this in your site in Plone 4
 Change email addresses or remove no longer needed users.
 When there are only a few users, you can do this manually.
-To assist you in sites with many users, in Plone 4.1 and higher, you can add the [collective.emaillogin4](https://pypi.python.org/pypi/collective.emaillogin4) package to the eggs of your Plone instance.
+To assist you in sites with many users, in Plone 4.1 and higher, you can add the [collective.emaillogin4](https://pypi.org/project/collective.emaillogin4) package to the eggs of your Plone instance.
 
 With that package, even without installing it in the add-ons control panel, you can call the `@@migrate-to-emaillogin` page to look for duplicate email addresses.
 
@@ -272,7 +272,7 @@ An old style Resource Registry would look like this:
 </object>
 ```
 
-To migrate this to Plone 5, resource registrations are all done in the [Configuration Registry](https://pypi.python.org/pypi/plone.app.registry).
+To migrate this to Plone 5, resource registrations are all done in the [Configuration Registry](https://pypi.org/project/plone.app.registry).
 
 
 #### New style with {file}`registry.xml`
