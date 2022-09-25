@@ -4,24 +4,28 @@ myst:
     "description": "Upgrading add-ons to Plone 5.0"
     "property=og:description": "Upgrading add-ons to Plone 5.0"
     "property=og:title": "Upgrading add-ons to Plone 5.0"
-    "keywords": "Upgrading, Plone 5.0"
+    "keywords": "Upgrading, Plone 5.0, add-ons"
 ---
 
 (upgrading-addons-to-50-label)=
 
 # Upgrade a custom add-on to Plone 5.0
 
+This chapter discusses how to upgrade a custom add-on to Plone 5.0.
+
 ## Archetypes
 
 If your add-on depends on Archetypes, you will need some parts of `Products.ATContentTypes`.
-Those parts will be declared by the profile "Archetypes-tools without content types". It must be added to your `profiles/default/metadata.xml` that way:
+Those parts will be declared by the profile "Archetypes-tools without content types".
+It must be added to your `profiles/default/metadata.xml` that way:
 
-```
+```xml
 <dependencies>
     <dependency>profile-Products.ATContentTypes:base</dependency>
     ...
 </dependencies>
 ```
+
 
 ## JS/CSS bundle
 
@@ -49,53 +53,56 @@ Add a file named `registry.xml` in your profile, containing:
 ```
 
 ````{note}
-This example assumes our JS and CSS are provided as browser resources, but if they are in our old `skins` folder, that would work too:
+This example assumes our JavaScript and CSS are provided as browser resources, but if they are in our old `skins` folder, that would work too:
 
-```
+```xml
 <value key="csscompilation">portal_skins/MyAddon/mycustom.css</value>
 ```
 ````
 
+
 ## CSRF protection
 
-Plone 5 provides a CSRF protection mechanism. This mechanism is integrated into the different Plone frameworks.
+Plone 5 provides a CSRF protection mechanism.
+This mechanism is integrated into the different Plone frameworks.
 If your add-on only uses default Dexterity or Archetypes features, you are safe.
 
 But any custom redirection or form submission will have to include a token provided by `plone.protect`.
 
-- in a template:
+-   In a template:
+  
+    ```xml
+    <span tal:replace="structure context/@@authenticator/authenticator"/>
+    ```
+  
+-   In a JavaScript:
+  
+    ```js
+    authenticator = context.restrictedTraverse("@@authenticator")
+    url = url + "?_authenticator="  + authenticator.token()
+    state.set(..., next_action='redirect_to:string:%s' % url)
+    ```
+  
+-   In a method:
+  
+    ```python
+    from plone.protect.utils import addTokenToUrl
+    url = addTokenToUrl(url)
+    ```
 
-  ```
-  <span tal:replace="structure context/@@authenticator/authenticator"/>
-  ```
+## `plone.app.stagingbehavior`
 
-- in a script:
-
-  ```
-  authenticator = context.restrictedTraverse("@@authenticator")
-  url = url + "?_authenticator="  + authenticator.token()
-  state.set(..., next_action='redirect_to:string:%s' % url)
-  ```
-
-- in a method:
-
-  ```
-  from plone.protect.utils import addTokenToUrl
-  url = addTokenToUrl(url)
-  ```
-
-## plone.app.stagingbehavior
-
-plone.app.stagingbehavior was used to enable versioning functionality for Dexterity-based content types.
+`plone.app.stagingbehavior` was used to enable versioning functionality for Dexterity-based content types.
 It allowed you to perform the checkout and checkin operations to work on a copy of your original content on Plone 4.
 
-The version of plone.app.iterate used in Plone 5 implements this already making that package obsolete
+The version of `plone.app.iterate` used in Plone 5 implements this already, making that package obsolete.
 
-You should remove any hard dependency on plone.app.stagingbehavior from your add-on to avoid issues.
+You should remove any hard dependency on `plone.app.stagingbehavior` from your add-on to avoid issues.
 
-See <https://github.com/collective/collective.cover/pull/577/files> for an example on how to achieve that.
+See https://github.com/collective/collective.cover/pull/577/files for an example of how to achieve that.
+
 
 ## Content type icons
 
 A major breaking change from Plone 4.x to Plone 5 is how content type icons are handled.
-See :ref:content-type-icons-changed\` for details.
+See {ref}`content-type-icons-changed` for details.
