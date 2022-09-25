@@ -7,7 +7,7 @@ myst:
     "keywords": "Upgrading, version, Plone, migration, 4.x, 5.0"
 ---
 
-(upgrading-plone-4.x-to-5.0)=
+(upgrading-plone-4.x-to-5.0-label)=
 
 # Upgrading Plone 4.x to 5.0
 
@@ -17,20 +17,27 @@ This chapter provides instructions and tips for upgrading Plone 4.x to 5.0.
 To upgrade add-ons to Plone 5, see also {doc}`upgrade-addons-to-50`.
 ```
 
-## General Information
 
-- Before you upgrade read {doc}`../intro` and {doc}`../preparations`.
-- Always upgrade from the latest version of 4.x to the latest version of 5.x (at the time of writing 4.3.7 to 5.0.2).
-  This will resolve many migration-specific issues.
-- If you have problems don't be afraid to ask for help on <http://community.plone.org>
-- There is a [video](https://youtu.be/bQ-IpO-7F00?t=1m17s) of a talk "How to upgrade sites to Plone 5" and
-  [slides](http://de.slideshare.net/derschmock/upgrade-to-plone-5).
+(upgrading-plone-4.x-to-5.0-general-information-label)=
 
-## Changes Due To Implemented PLIPS
+## General information
 
-PLIPs are PLone Improvement Proposals.
-These are about larger changes to Plone,
-discussed beforehand by the community.
+-   Before you upgrade, read {doc}`../intro` and {doc}`../preparations`.
+-   Always upgrade from the latest version of 4.x to the latest version of 5.x (4.3.20 to 5.2.9 at the time of writing).
+    This will resolve many migration-specific issues.
+-   If you have problems, ask for help on https://community.plone.org.
+-   The talk _How to upgrade sites to Plone 5_ has a [video](https://youtu.be/bQ-IpO-7F00?t=1m17s) and [slides](http://de.slideshare.net/derschmock/upgrade-to-plone-5).
+
+
+(upgrading-plone-4.x-to-5.0-changes-due-to-implemented-plips-label)=
+
+## Changes due to implemented PLIPs
+
+{term}`PLIP`s are **PL**one **I**mprovement **P**roposals.
+These are about larger changes to Plone, discussed beforehand by the community.
+
+
+(upgrading-plone-4.x-to-5.0-plip-13350-define-extra-member-properties-ttw-label)=
 
 ### PLIP 13350 "Define Extra Member Properties TTW"
 

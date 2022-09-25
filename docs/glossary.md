@@ -438,4 +438,9 @@ ZODB
 
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
+
+PLIP
+    PLIPs are **PL**one **I**mprovement **P**roposals.
+    These are about larger changes to Plone, discussed beforehand by the community.
+    PLIPs are tracked in the GitHub issue tracker for [`Products.CMFPlone`](https://github.com/plone/Products.CMFPlone/issues?q=label%3A%2203+type%3A+feature+%28plip%29%22+).
 ```
