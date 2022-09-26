@@ -430,7 +430,7 @@ Content type icons are rendered as background images using a sprite image and CS
 
 ### Plone 5
 
-Content type icons are rendered as [fontello fonts](http://fontello.com/) using CSS elements `before` or `after`.
+Content type icons are rendered as [fontello fonts](https://fontello.com/) using CSS elements `before` or `after`.
 
 ```html
 <span class="summary" title="Document">

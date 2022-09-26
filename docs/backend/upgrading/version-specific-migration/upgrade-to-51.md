@@ -14,7 +14,7 @@ myst:
 This chapter provides instructions and tips for upgrading to Plone 5.1 from Plone 5.0.
 
 ```{note}
-If you want to upgrade add-ons to Plone 5.1, please see {doc}`upgrading-addons-to-51`.
+If you want to upgrade add-ons to Plone 5.1, please see {doc}`upgrade-addons-to-51`.
 ```
 
 ## General information
@@ -264,7 +264,7 @@ Now you can upload them as proper images, and then get scales in the form of JPE
 The `plone.namedfile` package was partially restructured.
 If you are using utility functions or internal methods from this package, you should check that your code still works.
 
-The [piexif](http://piexif.readthedocs.io/en/latest/) was added as dependency.
+The [piexif](https://piexif.readthedocs.io/en/latest/) was added as dependency.
 
 
 ### Faster Indexing
@@ -432,7 +432,7 @@ Your folderish content types should either use the templates from `plone.app.con
 
 ### Rejected And Postponed PLIPs
 
-For details about rejected or postponed PLIPs see the [github PLIP project](https://github.com/plone/Products.CMFPlone/projects/1) and the [Framework Team PLIP status sheet](https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/).
+For details about rejected or postponed PLIPs see the [github PLIP project](https://github.com/plone/Products.CMFPlone/projects/1) and the [Framework Team PLIP status sheet](https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/edit).
 
 
 ## Known Issues

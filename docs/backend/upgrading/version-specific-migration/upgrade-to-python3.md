@@ -150,7 +150,7 @@ It also can make changes that are not really needed.
 You need to closely review all changes after you run this tool.
 
 `python-modernize` will warn you when it is not sure what to do with a possible problem.
-Check this [Cheat Sheet](http://python-future.org/compatible_idioms.html) with idioms for writing Python 2/3 compatible code.
+Check this [Cheat Sheet](https://python-future.org/compatible_idioms.html) with idioms for writing Python 2/3 compatible code.
 
 `python-modernize` adds an import of the compatibility library `six` if needed.
 The import is added as the last import, therefore it is often necessary to reorder the imports.
@@ -398,7 +398,7 @@ Here is a list of helpful references on the topic of porting Python 2 to Python 
 
 -   https://portingguide.readthedocs.io/en/latest/index.html
 -   https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
--   http://getpython3.com/diveintopython3/
+-   https://diveintopython3.net/
 -   https://docs.djangoproject.com/en/1.11/topics/python3/
 -   https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
 -   https://docs.python.org/2/library/doctest.html#debugging

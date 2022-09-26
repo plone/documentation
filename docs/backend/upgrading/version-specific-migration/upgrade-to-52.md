@@ -89,7 +89,7 @@ Admins will notice that the ZMI has a new Twitter Bootstrap-based theme, and som
 There are a lot of changes in Zope.
 For details please see the following documents.
 
--   [What's new in Zope 4.0](https://zope.readthedocs.io/en/latest/zope4/news.html)
+-   [What's new in Zope 4.0](https://zope.readthedocs.io/en/latest/news.html#what-s-new-in-zope-4)
 -   [Changelog for alpha versions](https://github.com/zopefoundation/Zope/blob/4.0a6/CHANGES.rst)
 -   [Changelog for beta versions](https://zope.readthedocs.io/en/latest/changes.html)
 
