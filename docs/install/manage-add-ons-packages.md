@@ -346,7 +346,9 @@ Follow the upgrade information, if present.
 
 ### Build and start your instance
 
-Build and run the Plone backend.
+Whenever you make changes to your backend configuration—for example, install an add-on, or override a Plone core package—then a build and restart is needed.
+First stop your Zope instance/Plone site with {kbd}`ctrl-c`.
+Then build and run the Plone backend.
 
 ```shell
 make build-backend
