@@ -158,7 +158,7 @@ Add-on (Volto)
 Add-on configuration loader (Volto)
     A function with signature `config => config`.
     It gets the Volto Configuration registry, and it must return it back after mutating it.
-    It is similar to Generic Setup profiles in Plone Backend.
+    It is similar to `GenericSetup` profiles in Plone Backend.
     An add-on must provide a default configuration loader that is always loaded when Volto runs.
     An add-on can have multiple configuration loaders, and they can be loaded optionally from the Volto configuration.
 

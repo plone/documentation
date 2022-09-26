@@ -236,7 +236,7 @@ Then press the {guilabel}`Add field` button.
 
 #### For Developers
 
-Instead of storing registry entries in a single, large {file}`registry.xml` file, you can have Generic Setup load and process registry entries from multiple files.
+Instead of storing registry entries in a single, large {file}`registry.xml` file, you can have `GenericSetup` load and process registry entries from multiple files.
 This makes it easier to manage and organize the registry entries provided by your applications and add-ons.
 
 Your add-on should include a folder named `registry` in its profile folder, for example `profiles/default/registry`.

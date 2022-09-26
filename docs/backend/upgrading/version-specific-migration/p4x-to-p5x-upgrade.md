@@ -44,7 +44,7 @@ These are about larger changes to Plone, discussed beforehand by the community.
 In Plone 5, the custom fields displayed in the user profile and registration forms are managed by `plone.schemaeditor`.
 
 They are dynamically editable from the Plone control panel.
-They can be imported from a Generic Setup profile file named `userschema.xml`.
+They can be imported from a `GenericSetup` profile file named `userschema.xml`.
 
 If you have some custom member properties in your Plone site, be aware of the following.
 
@@ -247,7 +247,7 @@ It also would combine and minify them for you in deployment mode.
 
 #### Registration Changes
 
-Prior to Plone 5, JavaScript files were added to the registry by using a [Generic Setup Profile](https://docs.plone.org/develop/addons/components/genericsetup.html) and including a `jsregistry.xml` file to it.
+Prior to Plone 5, JavaScript files were added to the registry by using a [`GenericSetup` Profile](https://docs.plone.org/develop/addons/components/genericsetup.html) and including a `jsregistry.xml` file to it.
 
 This would add your JavaScript to the registry, with some options and potentially set ordering.
 
@@ -552,9 +552,9 @@ In addition, you can control whether non-folders will create entries with the pr
 If you want to `disable_folder_sections`, you will want to set `plone.generate_tabs` to `False`.
 
 
-### Generic Setup
+### `GenericSetup`
 
-All settings for control panels are stored in the {file}`registry.xml` Generic Setup file.
+All settings for control panels are stored in the {file}`registry.xml` `GenericSetup` file.
 This file can be exported through the Management Interface.
 
 Go to the Plone Site Setup, choose {guilabel}`Management Interface` from the {guilabel}`Advanced` section.
@@ -580,14 +580,14 @@ The {file}`registry.xml` file will contain entries such as the following:
 </record>
 ```
 
-Drop the settings you want to change into {file}`registry.xml` in your Generic Setup profile folder.
+Drop the settings you want to change into {file}`registry.xml` in your `GenericSetup` profile folder.
 
 Reinstall your add-on product, and the settings will be available.
 
 
 ### Python Code
 
-All Generic Setup settings can be looked up with Python code.
+All `GenericSetup` settings can be looked up with Python code.
 
 First we look up the registry utility.
 
@@ -890,7 +890,7 @@ browser_manager.getControl(name='form.widgets.IPublication.effective').value = '
 
 ## Deprecation Of `portal_properties.xml`
 
-`portal_properties.xml` Generic Setup import step is now deprecated and has been moved to `plone.registry`.
+`portal_properties.xml` `GenericSetup` import step is now deprecated and has been moved to `plone.registry`.
 
 
 ### `parentMetaTypesNotToQuery`
