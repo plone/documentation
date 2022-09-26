@@ -441,7 +441,7 @@ To have an icon for your control panel, you must make sure that a CSS rule exist
 An example might be the following.
 
 ```css
-icon-controlpanel-MyPackage:before { content: ‘\e844’; }
+.icon-controlpanel-MyPackage:before { content: '\e844'; }
 ```
 
 The value you use for this CSS rule should identify one of the fontello icons included in Plone, or a font-based icon provided by your package itself.
