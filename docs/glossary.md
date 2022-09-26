@@ -25,8 +25,11 @@ CMS
     Content Management System
 
 Cookiecutter
-    A command-line utility that creates projects from cookiecutters (project templates), e.g. creating a Python package project from a Python package project template.
+    A command-line utility that creates projects from cookiecutters (project templates), for example, creating a Python package project from a Python package project template.
     [See Cookiecutter's documentation](https://cookiecutter.readthedocs.io/en/stable/).
+
+cookiecutter-plone-starter
+    [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) is a framework for jumpstarting Plone 6 projects quickly.
 
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
@@ -48,7 +51,7 @@ Linode
     [Linode.com](https://www.linode.com/) is an American privately owned virtual private server provider company based in Galloway, New Jersey, United States.
 
 mxdev
-    [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, of which you only want to develop some.
+    [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, and you want to develop only some of those packages.
     It is designed for developers who use stable version constraints, then layer their customizations on top of that base while using a version control system.
     This design allows developers to override their base package constraints with a customized or newer version.
 
@@ -69,7 +72,9 @@ pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 
 REST API
-    TODO REST API in general. TODO REST API of Plone.
+    ```{todo}
+    REST API in general. REST API of Plone.
+    ```
 
 S3
     [Amazon Web Services S3](https://aws.amazon.com/s3/).
@@ -345,8 +350,8 @@ Slate
     [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as `WYSIWYG` editors.
     It enables you to create powerful, intuitive editors similar to those you've probably used in Medium, Dropbox Paper, or Google Docs.
 
-volto-slate
-    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate` while offering enhanced WYSIWYG functionality and behavior.
+`volto-slate`
+    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced WYSIWYG functionality and behavior.
 
 elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
@@ -438,4 +443,11 @@ ZODB
 
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
+
+Make
+make
+    [GNU Make](https://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files.
+
+    Make gets its knowledge of how to build your program from a file called the _makefile_, which lists each of the non-source files and how to compute it from other files.
+    When you write a program, you should write a makefile for it, so that it is possible to use Make to build and install the program.
 ```

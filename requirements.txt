@@ -8,6 +8,7 @@ pydata-sphinx-theme<=0.8.99  # Build fails in 0.9.0. See https://github.com/plon
 sphinx-autobuild
 sphinx-book-theme==0.3.3  # Temporary pin until we can sort out HTML refactoring.
 sphinx-copybutton
+sphinx-design
 sphinx-sitemap
 sphinx-togglebutton
 sphinxcontrib.httpdomain  # plone.restapi
