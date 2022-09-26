@@ -4,7 +4,7 @@ myst:
     "description": "Upgrading a ZODB from Python 2 to Python 3"
     "property=og:description": "Upgrading a ZODB from Python 2 to Python 3"
     "property=og:title": "Upgrading a ZODB from Python 2 to Python 3"
-    "keywords": "Upgrading, ZODB, Python 3"
+    "keywords": "Upgrading, ZODB, Python 2, Python 3, ZODB, zodbupdate"
 ---
 
 (migrate-zodb-to-python3-label)=
@@ -15,49 +15,54 @@ myst:
 The process described here was successfully applied to several projects with its databases.
 Anyway, this is still work in progress.
 Any help to make this document better is appreciated.
-To continue with documenting the process or help improve the involved scripts/tools please have a look at the following resources:
+To continue with documenting the process, or help improve the involved scripts and tools. please have a look at the following resources:
 
-- Provide Migration-Story for ZODB with Plone from Python 2 to 3: <https://github.com/plone/Products.CMFPlone/issues/2525>
-- Documentation on setting up an environment to test the migration:
-  <https://github.com/frisi/coredev52multipy/tree/zodbupdate>
+-   Provide Migration-Story for ZODB with Plone from Python 2 to 3: https://github.com/plone/Products.CMFPlone/issues/2525
+-   Documentation on setting up an environment to test the migration:
+  https://github.com/frisi/coredev52multipy/tree/zodbupdate
 ```
 
 Plone 5.2 can be run on Python 2 and Python 3.
-For new projects you can start with a Python 3 with a fresh database.
+For new projects, you can start with Python 3 with a fresh database.
 To use an existing project in Python 3 though, you need to migrate your existing database first.
 This section explains how to do that.
 
-ZODB itself is compatible with Python 3 but a DB created in Python 2.7 cannot be used in Python 3 without modifying it before.
-(See [Why do I have to migrate my database?] for technical background).
+ZODB itself is compatible with Python 3, but a database created in Python 2.7 cannot be used in Python 3 without modifying it.
+See {ref}`why-do-i-have-to-migrate-my-database-label` for technical background.
 
-## Database Upgrade Procedure
 
-In short you need to follow these steps to migrate your database:
+## Database upgrade procedure
 
-01. Upgrade your site to Plone 5.2 running on Python 2 first.
-    (see {doc}`upgrade-to-52`)
-02. Make sure your code and all add-ons that you use work in Python 3.
-    (see {doc}`upgrade-to-python3`)
-03. Backup your database!
-04. **Pack** your database to **0 days** (`zodbupdate` will not update your database history and will leave old objects in place and you will not be able to pack your database in the future).
-05. In your old buildout under Python 2, verify your database integrity using {py:mod}`zodbverify`.
+Follow these steps to migrate your database.
+
+1.  Upgrade your site to Plone 5.2 running on Python 2 first.
+    See {doc}`upgrade-to-52`.
+2.  Make sure your code and all add-ons that you use work in Python 3.
+    See {doc}`upgrade-to-python3`.
+3.  Backup your database!
+4.  _Pack_ your database to _0 days_.
+    `zodbupdate` will not update your database history, will leave old objects in place, and you will not be able to pack your database in the future.
+5.  In your old buildout under Python 2, verify your database integrity using {py:mod}`zodbverify`.
     Solve integrity problems, if there are any.
-06. Prepare your buildout for migrating the database to Python 3
-07. Do **not** start the instance.
-08. Migrate your database using {py:mod}`zodbupdate`
-09. Verify your database integrity using {py:mod}`zodbverify`
+6.  Prepare your buildout for migrating the database to Python 3.
+7.  Do _not_ start the instance.
+8.  Migrate your database using {py:mod}`zodbupdate`.
+9.  Verify your database integrity using {py:mod}`zodbverify`.
     If there are any problems, solve them and redo the migration.
 10. Start the instance.
-11. Manually check if all works as expected
+11. Manually check if all works as expected.
 
-## Why Do I Have To Migrate My Database?
+
+(why-do-i-have-to-migrate-my-database-label)=
+
+## Why do I have to migrate my database?
 
 To understand the problem that arises when migrating a ZODB from Python 2 to Python 3,
 this [introduction](https://blog.gocept.com/2018/06/07/migrate-a-zope-zodb-data-fs-to-python-3/) and the following example will help.
 
-When pickling an object the datatypes and values are stored.
+When pickling an object, the data types and values are stored.
 
-In Python 2 strings get STRING, and Unicode gets UNICODE
+In Python 2, strings get `STRING`, and Unicode gets `UNICODE`.
 
 ```console
 $ python2
@@ -89,7 +94,7 @@ Python 2.7.14 (default, Sep 23 2017, 22:06:14)
 highest protocol among opcodes = 0
 ```
 
-Python 3 does not allow non-ascii characters in bytes and the pickle declares the byte string as SHORT_BINBYTES and the string (py2 unicode) as BINUNICODE
+Python 3 does not allow non-ASCII characters in bytes, the pickle declares the byte string as `SHORT_BINBYTES` and the string (Python 2 Unicode) as `BINUNICODE`.
 
 ```console
 $ python3
@@ -123,8 +128,8 @@ SyntaxError: bytes can only contain ASCII literal characters.
 highest protocol among opcodes = 3
 ```
 
-Python 3 will wrongly interpret a pickle created with Python 2 that contains non-ascii characters in a field declared with OPTCODE `STRING`.
-In that case we may end up with a `UnicodeDecodeError` for this pickle in `ZODB.serialize`
+Python 3 will wrongly interpret a pickle created with Python 2 that contains non-ASCII characters in a field declared with `OPTCODE` `STRING`.
+In that case, we may end up with a `UnicodeDecodeError` for this pickle in `ZODB.serialize`.
 
 ```console
 $ python3
@@ -134,7 +139,7 @@ Traceback (most recent call last):
 UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 0: ordinal not in range(128)
 ```
 
-Or when UTF-8 encoded byte-strings are interpreted as Unicode we do not get an error but mangled non-ascii characters:
+Or when UTF-8 encoded byte strings are interpreted as Unicode, we do not get an error, but mangled non-ASCII characters:
 
 ```console
 $ python3
@@ -144,24 +149,26 @@ $ python3
 ÃmlÃ¤ut
 ```
 
-## How zodbupdate solves the problem
 
-{py:mod}`zodbupdate` loads the ZODB and iterates on a low-level without actually loading the pickle over all pickle-data.
+## How `zodbupdate` solves the problem
+
+{py:mod}`zodbupdate` loads the ZODB and iterates on a low level without actually loading the pickle over all pickle data.
 
 It does:
 
-- Update magic marker to indicate the new format of the database.
-- Rename classes and modules with different locations.
-- Convert bytes to string or keep binary (according to rule-mappings).
-- Handle encoding-problems while doing bytes to string conversion and provide fallbacks for mixed encodings in DB.
+-   Update magic marker to indicate the new format of the database.
+-   Rename classes and modules with different locations.
+-   Convert bytes to string or keep binary (according to rule mappings).
+-   Handle encoding problems while doing bytes-to-string conversion, and provide fallbacks for mixed encodings in the database.
 
-## Prepare Your Buildout For Migrating The Database To Python 3
 
-You need to add {py:mod}`zodbverify` to your Python 2 buildouts ``` eggs = `` variable in the ``[instance] ``` section.
+## Prepare your buildout for migrating the database to Python 3
+
+You need to add {py:mod}`zodbverify` to your Python 2 buildout's `eggs =` variable in the `[instance]` section.
 
 You need to add the package {py:mod}`zodbupdate` and {py:mod}`zodbverify` to your Python 3 buildout.
 
-Depending on your buildout this could look like this:
+Depending on your buildout, this could look like the following.
 
 ```ini
 [buildout]
@@ -186,16 +193,16 @@ eggs =
 zodbupdate = git https://github.com/zopefoundation/zodbupdate.git pushurl=git@github.com:zopefoundation/zodbupdate.git branch=master
 ```
 
-This adds a new buildout-part `zodbupdate`.
-The coredev-buildout already has this part.
+This adds a new buildout part `zodbupdate`.
+The `coredev` buildout already has this part.
 
-After re-running buildout you will now have a new executable `./bin/zodbupdate`.
+After re-running buildout, you will now have a new executable `./bin/zodbupdate`.
 
 ````{warning}
 Do not try to start Plone in Python 3 with the old database before migrating it!
-Trying to that will destroy the database and result in a traceback like this:
+Trying to do that will destroy the database and result in a traceback, such as the following.
 
-```
+```console
 Traceback (most recent call last):
   File "/Users/pbauer/workspace/projectx/parts/instance/bin/interpreter", line 279, in <module>
     exec(compile(__file__f.read(), __file__, "exec"))
@@ -210,39 +217,40 @@ ZODB.FileStorage.FileStorage.FileStorageFormatError: /Users/pbauer/workspace/pro
 ```
 ````
 
-## Verify The Integrity of the Database in Python 2
+
+## Verify the integrity of the database in Python 2
 
 The preflight verification of the database is run on Plone 5.2 in Python 2.
-First check if all Python-pickles in the database can be loaded.
-In older and grown projects it is possible to have pickles in there pointing to classes long gone in code.
+First check if all Python pickles in the database can be loaded.
+In older and mature projects, it is possible to have pickles in there pointing to classes long gone from the code.
 Those may cause problems later.
 
 Call `./bin/instance zodbverify` in your Python 2.7 setup.
-If a problem pops up there is a debug mode with additional parameter `-D`, resulting in PDB with the pickle-data and a decompiled pickle in place to gather information about the source of the problem.
+If a problem pops up, there is a debug mode with additional parameter `-D`, resulting in PDB with the pickle-data and a decompiled pickle in place to gather information about the source of the problem.
 This enables solving the problem by either adding a stub class in the code or by deleting the object in the ZODB.
 
-## Migrate Database using zodbupdate
+
+## Migrate database using `zodbupdate`
 
 The migration of the database is run on Plone 5.2 in Python 3.
-It is expected to work equally in Python 3.6 and 3.7.
+It is expected to work the same in Python 3.6, 3.7, or 3.8.
 
-Run the migration by
+Run the migration with appropriate arguments.
 
-- passing the operation to undertake (`convert-py3`),
-- the location of the database,
-- the encoding expected and
-- optional, encoding fallbacks if the database contains mixed encodings.
+-   The operation to perform, `convert-py3`.
+-   The location of the database.
+-   The encoding expected.
+-   Optionally, encoding fallbacks, if the database contains mixed encodings.
 
-```console
+```shell
 ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding utf8 --encoding-fallback latin1
 ```
 
-Depending on the size of you database this can take a while.
+Depending on the size of your database, this can take a while.
 
-Ideally the output is similar to this:
+Ideally the output is similar to the following.
 
 ```console
-$ ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding=utf8
 Updating magic marker for var/filestorage/Data.fs
 Ignoring index for /Users/pbauer/workspace/projectx/var/filestorage/Data.fs
 Loaded 2 decode rules from AccessControl:decodes
@@ -253,54 +261,60 @@ Committing changes (#1).
 ```
 
 ```{note}
-The blobstorage (holding binary data of files and images) will not be changed or even be read during the migration since the blobs only contain the raw binary data of the file/image.
+The blob storage (holding binary data of files and images) will not be changed or even be read during the migration, because the blobs only contain the raw binary data of the file or image.
 ```
 
 ```{note}
-The encoding should always be `utf8` and will be used when porting database-entries of classes where no encoding is specified in a `[zodbupdate.decode]` mapping in the package that holds the base-class.
+The encoding should always be `utf8`, and will be used when porting database entries of classes where no encoding is specified in a `[zodbupdate.decode]` mapping in the package that holds the base class.
 ```
 
 ```{note}
 The encoding fallback is optional and should not be provided by default.
-If a `UnicodeDecodeError` occur, try to find out if the instance was configured with encodings different from `utf8`.
-Provides those as encodings as fallback.
-If in doubt try `latin1` since this was in former times of Zope the default encoding.
+If a `UnicodeDecodeError` occurs, try to find out if the instance was configured with encodings different from `utf8`.
+Provide those encodings as the `--encoding-fallback` argument.
+If in doubt, try `latin1`, since this was in former times of Zope the default encoding.
 ```
 
-## Test Migration
 
-You can use the following command to check if all records in the database can be successfully loaded:
+## Test migration
 
-```console
+You can use the following command to check if all records in the database can be successfully loaded.
+
+```shell
 bin/instance zodbverify
 ```
 
-The output should look like this:
+The output should look like the following.
 
 ```console
-$ ./bin/instance zodbverify
-
 INFO:Zope:Ready to handle requests
 INFO:zodbverify:Scanning ZODB...
 INFO:zodbverify:Done! Scanned 7781 records. Found 0 records that could not be loaded.
 ```
 
-Most likely you will have additional log-messages, warnings and even errors.
+Most likely you will have additional log messages, warnings, and even errors.
 
 ```{note}
-You can use the debug-mode with `./bin/instance zodbverify -D` which will drop you in a pdb each time a database-entry cannnot be unpickled so you can inspect it and figure out if that is a real issue or not.
+You can use the debug mode with `./bin/instance zodbverify -D`.
+This will drop you into a `pdb` session each time a database entry cannnot be unpickled
+You can inspect it, and figure out if that is a real issue or not.
 
-Before you start debugging you should read the following section on Troubleshooting because in many cases you can ignore the warnings.
+Before you start debugging you should read the following section on {ref}`troubleshooting-zodbverify-label`, because in many cases you can ignore the warnings.
 ```
+
+
+(troubleshooting-zodbverify-label)=
 
 ## Troubleshooting
 
-### Data.fs.index broken
+This section covers common issues when running `zodbverify`.
 
-Delete `Data.fs.index` before migrating or you will get this error during migrating:
+
+### `Data.fs.index` broken
+
+Delete `Data.fs.index` before migrating, or you will get the following error during migrating.
 
 ```console
-$ ./bin/zodbupdate --convert-py3 --file=var/filestorage/Data.fs --encoding=utf8
 Updating magic marker for var/filestorage/Data.fs
 loading index
 Traceback (most recent call last):
@@ -313,18 +327,20 @@ UnicodeDecodeError: 'ascii' codec can't decode byte 0x80 in position 249: ordina
 
 This error can be safely ignored.
 
-### Search/ Catalog raises errors
 
-If searches are failing and are raising errors, go to the ZMI of your Plone Site root.
-Select the `portal_catalog` and click on the `Advanced` tab.
-Select `Clear and Rebuild`.
-This may take a while!
+### Search/Catalog raises errors
 
-### ModuleNotFoundError: No module named PloneLanguageTool
+If searches are failing and are raising errors, go to the ZMI of your Plone site root.
+Select the {guilabel}`portal_catalog`, and click on the {guilabel}`Advanced` tab.
+Select {guilabel}`Clear and Rebuild`.
+This may take a while.
 
-There were cases when the migration aborted with a import-error like this:
 
-```
+### `ModuleNotFoundError: No module named PloneLanguageTool`
+
+There were cases when the migration aborted with an import error such as the following.
+
+```console
 An error occured
 Traceback (most recent call last):
   File "/Users/pbauer/.cache/buildout/eggs/plone.app.upgrade-2.0.22-py3.7.egg/plone/app/upgrade/__init__.py", line 120, in <module>
@@ -356,7 +372,8 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'PloneLanguageTool'
 ```
 
-To work around this comment out the lines offending lines in `plone/app/upgrade/__init__.py` (do not forget to uncomment them after the migration!)
+To work around this, comment out the lines offending lines in `plone/app/upgrade/__init__.py`.
+Remember to uncomment them after the migration!
 
 ```python
 # try:
@@ -371,17 +388,17 @@ To work around this comment out the lines offending lines in `plone/app/upgrade/
 #     ).PloneLanguageTool.LanguageTool.LanguageTool
 ```
 
-### Migration Logs Errors And Warnings
+### Migration logs errors and warnings
 
-If there are log-messages during the migration or during `zodbverify` that does not necessarily mean that the migration did not work or that your database is broken.
-For example if you migrated from Plone 4 to Plone 5 and then from Archetypes to Dexterity it is very likely that items in the database cannot be loaded because packages like `Products.Archetypes`, `plone.app.blob` or `plone.app.imaging` are not available.
-These items are most likely remains that were not removed properly but are not used.
-If your site otherwise works fine you can choose to ignore these issues.
+If there are log messages during the migration or during `zodbverify`, that does not necessarily mean the migration did not work, or that your database is broken.
+For example, if you migrated from Plone 4 to Plone 5, and then from Archetypes to Dexterity, it is very likely that items in the database cannot be loaded, because packages such as `Products.Archetypes`, `plone.app.blob`, or `plone.app.imaging` are not available.
+These items most likely remain, and were not removed properly and are not used.
+If your site otherwise works fine, you can choose to ignore these issues.
 
-Here is the output of a migration start started in Plone 4 with Archetypes.
+Here is the output of a migration started in Plone 4 with Archetypes.
 The site still works nicely in Plone 5.2 on Python 3.7 despite the warnings and errors:
 
-```
+```console
 Updating magic marker for var/filestorage/Data.fs
 Loaded 2 decode rules from AccessControl:decodes
 Loaded 12 decode rules from OFS:decodes
@@ -459,16 +476,17 @@ Found new rules: {
 }
 ```
 
-## Downtime
 
-Some thoughts on doing upgrades without downtime that came up in a Hangout during a coding sprint in October 2018:
+## Eliminating downtime
 
-- You can try to leverage the ZRS replication protocol, where the secondary server has the converted data.
-  It would probably be a trivial change to ZRS to get this to work.
-- For Relstorage there is a ZRS equivalent for Relstorage: <http://www.newtdb.org/en/latest/topics/following.html>
+You can try the following to have an upgrade without downtime.
 
-## Further Reading
+-   You can try to leverage the ZRS replication protocol, where the secondary server has the converted data.
+    It would probably be a trivial change to ZRS to get this to work.
+-   There is a [ZRS equivalent for Relstorage](https://www.newtdb.org/en/latest/topics/following.html).
 
-The Zope Documentation contains a [section about ZODB migration](https://zope.readthedocs.io/en/latest/zope4/migration/zodb.html)
 
-ZODB Database debugging: https://www.starzel.de/blog/zodb-debugging
+## Further reading
+
+-   The Zope Documentation contains a [section about ZODB migration](https://zope.readthedocs.io/en/latest/migrations/index.html).
+-   [ZODB Database debugging](https://www.starzel.de/blog/zodb-debugging)
