@@ -364,7 +364,7 @@ Your instance is running in the foreground.
 
 ## Backend installation details
 
-The `Makefile` at the root of you project invokes commands in `backend/Makefile`.
+The `Makefile` at the root of your project invokes commands in `backend/Makefile`.
 Here are excerpts from `backend/Makefile` to show details of the `make build-backend` command.
 
 ```makefile
