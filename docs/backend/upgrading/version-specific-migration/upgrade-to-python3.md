@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Upgrading to Python 3"
-    "property=og:description": "Upgrading to Python 3"
-    "property=og:title": "Upgrading to Python 3"
-    "keywords": "Upgrading, Python 3"
+    "description": "Upgrading to Python 3 in Plone 5.2"
+    "property=og:description": "Upgrading to Python 3 in Plone 5.2"
+    "property=og:title": "Upgrading to Python 3 in Plone 5.2"
+    "keywords": "Upgrading, Python 3, Plone 5.2"
 ---
 
 
@@ -12,34 +12,31 @@ myst:
 
 # Migrating Plone 5.2 to Python 3
 
-```{admonition} Description
-Instructions and tips for porting Plone projects to Python 3
+This chapter provides instructions and tips for porting Plone projects to Python 3.
+
+```{seealso}
+If you want to upgrade add-ons to Python 3, the list of all Plone packages that still need to be ported can be found on the GitHub project board [Python 3 porting state for Plone add-ons](https://github.com/orgs/collective/projects/1).
 ```
 
-```{note}
-If you want to upgrade add-ons to Python 3, the list of all Plone packages that still need to be ported can be found on the  GitHub project board [Python 3 porting state for Plone add-ons](https://github.com/orgs/collective/projects/1).
-```
+## Principles
 
-## Make Custom Packages Python 3 Ready
+-   You should support Python 2 and 3 with the same codebase to allow it to be used in existing versions of Plone.
+-   Plone 5.2 supports Python 2.7, Python 3.6, Python 3.7, and Python 3.8.
+-   We use [six](https://six.readthedocs.io) and [modernize](https://pypi.org/project/modernize) for the first steps toward Python 3.
 
-### Principles
+In general, you should follow these steps to port add-ons:
 
-- You should support Python 2 and 3 with the same codebase to allow it to be used in existing versions of Plone.
-- Plone 5.2 supports Python 2.7, Python 3.6, and Python 3.7.
-- We use [six](https://six.readthedocs.io) and [modernize](https://pypi.org/project/modernize) to do the first steps towards Python 3.
+1.  Prepare `buildout` for the add-on to be ported.
+2.  Update code with [python-modernize](https://python-modernize.readthedocs.io/en/latest/).
+3.  Use [plone.recipe.precompiler](https://github.com/plone/plone.recipe.precompiler) (also called `precompiler` for brevity) to find syntax errors.
+4.  Start the instance and find more errors.
+5.  Test functionality manually.
+6.  Run and fix all tests.
+7.  Update package information.
+8.  Update package buildout and test setup.
 
-In general you should follow these steps to port add-ons:
 
-1. Prepare `buildout` for the add-on to be ported.
-2. Update code with [python-modernize](https://python-modernize.readthedocs.io/en/latest/).
-3. Use [plone.recipe.precompiler](https://github.com/plone/plone.recipe.precompiler) (also called `precompiler` for brevity) to find syntax errors.
-4. Start the instance and find more errors.
-5. Test functionality manually.
-6. Run and fix all tests.
-7. Update package information.
-8. Update package buildout and test-setup
-
-### 1 Preparation
+## 1. Preparation
 
 In the GitHub repository of the add-on:
 
@@ -51,13 +48,13 @@ The following section is valid until the final release of Plone 5.2.
 Upon the final release of Plone 5.2, something else will take its place.
 ```
 
-#### Using Released Plone 5.2
+### Using Released Plone 5.2
 
 Usually it is fine to use the latest Plone 5.2 release.
 The version pins for the latest release can be found for pip at [https://dist.plone.org/release/5.2-latest/requirements.txt] and for buildout at [https://dist.plone.org/release/5.2-latest/versions.cfg].
 Install Plone with Python 3.6 or 3.7 and then add your addons as source using mr.developer\`.
 
-#### Using Core Development Buildout
+### Using Core Development Buildout
 
 With [buildout.coredev](https://github.com/plone/buildout.coredev) the latest development version of Plone can be used.
 It contains everything for porting an add-on to Python 3.
@@ -141,7 +138,7 @@ For small packages or packages that have few dependencies, it is a good idea to 
 
 If it does not start up, you should continue with the next steps instead of trying to fix each issue as it appears.
 
-### 2 Automated Fixing With Modernize
+## 2. Automated Fixing With Modernize
 
 `python-modernize` is a utility that automatically prepares Python 2 code for porting to Python 3.
 After running `python-modernize`, there is manual work ahead.
@@ -159,7 +156,7 @@ Check the [Python style guide for Plone](https://docs.plone.org/develop/stylegui
 
 If `six` is used in the code, make sure that `six` is added to the `install_requires` list in the `setup.py` of the package.
 
-#### Installation
+### Installation
 
 Install `modernize` into your Python 3 environment with `pip`.
 
@@ -173,7 +170,7 @@ Install `isort` into your Python 3 environment with `pip`.
 ./bin/pip install isort
 ```
 
-#### Usage
+### Usage
 
 The following command is a dry-run. I shows all changes that `modernize` would make.
 
@@ -201,7 +198,7 @@ You can use `isort` to fix the order of imports:
 
 After you run the commands above, you need to review all changes and fix what `modernizer` did not get right.
 
-### 3 Use `precompiler`
+## 3. Use `precompiler`
 
 You can make use of `plone.recipe.precompiler` to identify syntax errors quickly.
 This recipe compiles all Python code already at buildout-time, not at run-time.
@@ -221,7 +218,7 @@ If you want to avoid running the complete buildout every time, you can use the `
 ./bin/buildout -c local.cfg  install precompiler
 ```
 
-### 4 Start The Instance
+## 4. Start The Instance
 
 As a next step we recommend that you try to start the instance with your add-on.
 This will fail on all import errors (e.g., relative imports that are not allowed in Python 3).
@@ -229,12 +226,12 @@ If it works then you can try to install the add-on.
 
 You need to fix all issues that appear before you can do manual testing to check for big, obvious issues.
 
-#### Common Issues during startup
+### Common Issues during startup
 
 The following issues will abort your startup.
 You need to fix them before you are able to test the functionality by hand or run tests.
 
-##### A - Class Advice
+#### A - Class Advice
 
 This kind of error message:
 
@@ -265,17 +262,17 @@ class Group(form.BaseForm):
 The same is the case for `provides(IFoo)` and some other Class advices.
 These need to be replaced with their respective decorators like `@provider`.
 
-##### B - Relative Imports
+#### B - Relative Imports
 
 Relative imports like `import permissions` are no longer permitted.
 Instead use fully qualified import paths such as `from collective.package import permissions`.
 
-##### C - Syntax Error On Importing Async
+#### C - Syntax Error On Importing Async
 
 In Python 3.7 you can no longer have a module called `async` (see <https://github.com/celery/celery/issues/4849>).
 You need to rename all such files, folders or packages (like `zc.async` and `plone.app.async`).
 
-### 5 Test functionality manually
+## 5. Test functionality manually
 
 Now that the instance is running you should do the following and fix all errors as they appear.
 
@@ -285,7 +282,7 @@ Now that the instance is running you should do the following and fix all errors 
 
 For this step it is recommended that you have installed `Products.PDBDebugMode` to help debug and fix issues.
 
-### 6 Run Tests
+## 6. Run Tests
 
 ```shell
 $ ./bin/test --all -s collective.package
@@ -308,7 +305,7 @@ Search for examples of `Py23DocChecker` in Plone's packages to find a pattern wh
 - Fill the fields {guilabel}`ADDON_URL` and {guilabel}`ADDON_BRANCH` with your repository's URL and the branch name ("python3" if you followed these instructions).
 - Start the build with the {guilabel}`Build` button.
 
-### 7 Update Add On Information
+## 7. Update Add On Information
 
 Add the following three entries of the classifiers list in setup.py:
 
@@ -321,7 +318,7 @@ Add the following three entries of the classifiers list in setup.py:
 
 Make an entry in the `CHANGES.rst` file.
 
-### 8 Create A Test Setup That Tests In Python 2 And Python 3
+## 8. Create A Test Setup That Tests In Python 2 And Python 3
 
 You need to update the buildout of the add-on you are migrating to also support Plone 5.2 and Python 3.
 Since the buildout of most add-ons are different we cannot offer advice that works for all add-ons.
@@ -337,9 +334,9 @@ Always use the newest version of {py:mod}`bobtemplates.plone`!
 
 Add-ons created like this contain a setup that allows testing in Python 2 and Python 3 and various Plone versions locally and on travis-ci using {py:mod}`tox`. Look at the files `tox.ini` and `travis.yml`.
 
-### 9 Frequent Issues
+## 9. Frequent Issues
 
-#### Text and Bytes
+### Text and Bytes
 
 This is by far the biggest issue when porting to Python 3.
 Read the [Conservative Python 3 Porting Guide, Strings](https://portingguide.readthedocs.io/en/latest/strings.html) to be prepared.
@@ -377,10 +374,10 @@ from six import BytesIO
 ```{seealso}
 Here is a list of helpful references on the topic of porting Python 2 to Python 3.
 
-- <https://portingguide.readthedocs.io/en/latest/index.html>
-- <https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/>
-- <http://getpython3.com/diveintopython3/>
-- <https://docs.djangoproject.com/en/1.11/topics/python3/>
-- <https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html>
-- <https://docs.python.org/2/library/doctest.html#debugging>
+-   https://portingguide.readthedocs.io/en/latest/index.html
+-   https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
+-   http://getpython3.com/diveintopython3/
+-   https://docs.djangoproject.com/en/1.11/topics/python3/
+-   https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
+-   https://docs.python.org/2/library/doctest.html#debugging
 ```
