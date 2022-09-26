@@ -237,6 +237,9 @@ make start-backend
 ```
 
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
+An upgrade step might need to be performed in the Plone control panel.
+Follow the upgrade information, if present.
+Else click the {guilabel}`Install` button to complete installation of the add-on.
 
 
 (manage-check-out-an-add-on)=
@@ -278,8 +281,9 @@ make start-backend
 ```
 
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
-
-Then click the {guilabel}`Install` button to complete installation of `collective.easyform`.
+An upgrade step might need to be performed in the Plone control panel.
+Follow the upgrade information, if present.
+Else click the {guilabel}`Install` button to complete installation of the add-on.
 
 
 (manage-pin-the-version-of-a-plone-package-against-constraints-label)=
@@ -305,10 +309,10 @@ make build-backend
 make start-backend
 ```
 
-Depending on the package whose version you are overriding, an upgrade step needs to be done in Plone control panel.
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
-Follow the upgrade information.
-Not every Plone core package needs and provides upgrade steps.
+An upgrade step might need to be performed in the Plone control panel.
+Follow the upgrade information, if present.
+
 
 (manage-checkout-a-plone-package-label)=
 
@@ -333,8 +337,8 @@ make build-backend
 make start-backend
 ```
 
-Depending on the package version you override, an upgrade step might need to be performed in the Plone control panel.
 In your web browser, and assuming you are currently logged in as `admin`, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
+An upgrade step might need to be performed in the Plone control panel.
 Follow the upgrade information, if present.
 
 
