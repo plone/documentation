@@ -142,8 +142,8 @@ Nothing changes.
 #### For Developers
 
 The add-ons control panel in Plone 5.1 no longer supports installation or uninstallation code in `Extensions/install.py` or `Extensions/Install.py`.
-If you have such code, you must switch to a GenericSetup profile.
-GenericSetup is already the preferred way of writing installation code since Plone 3.
+If you have such code, you must switch to a `GenericSetup` profile.
+`GenericSetup` is already the preferred way of writing installation code since Plone 3.
 If you must use the old way, you can still use the `portal_quickinstaller` in the Management Interface.
 
 The `portal_quickinstaller` is scheduled to go away completely in Plone 6.
