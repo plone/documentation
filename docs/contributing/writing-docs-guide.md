@@ -235,15 +235,13 @@ Using {term}`React` makes frontends fun again!
 Using {term}`React` makes frontends fun again!
 
 
-#### Toggle paragraph (Exercise solution / FAQ)
+#### Nesting directives
 
-Text snippets can be hidden with the option to show. Wrap it in an `admonition` and add the `class` `toggle`.
+You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as [admonitions](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#admonitions) and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
 
 `````
-````{admonition} f-strings can make your life easier
-:class: toggle
-
-To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
+````{tip}
+To use formatted string literals ("f-strings"), begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
 Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
 
 ```{code-block} python
@@ -256,15 +254,11 @@ print(f"my {a}nd line")
 ```
 ````
 `````
-
-You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as admonitions and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
 
 This would be rendered as:
 
-````{admonition} f-strings can make your life easier
-:class: toggle
-
-To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
+````{tip}
+To use formatted string literals ("f-strings"), begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
 Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
 
 ```{code-block} python
@@ -276,6 +270,28 @@ print("my 1st line")
 print(f"my {a}nd line")
 ```
 ````
+
+
+### Extensions
+
+We use several extensions to enhance the presentation of Plone documentation.
+
+-   [`sphinx.ext.intersphinx`](https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html) provides linking between separate projects that use Sphinx for documentation.
+-   [`sphinx.ext.todo`](https://www.sphinx-doc.org/en/master/usage/extensions/todo.html) adds support for todo items.
+-   [`sphinx_copybutton`](https://sphinx-copybutton.readthedocs.io/en/latest/index.html)  adds a little "copy" button to the right of code blocks.
+-   [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/) adds grids, cards, icons, badges, buttons, tabs, and dropdowns.
+-   [`sphinx_sitemap`](https://pypi.org/project/sphinx-sitemap/) generates multiversion and multilanguage [sitemaps.org](https://www.sitemaps.org/protocol.html) compliant sitemaps.
+-   [`sphinxcontrib.httpdomain`](https://sphinxcontrib-httpdomain.readthedocs.io/en/stable/) provides a Sphinx domain for describing HTTP APIs.
+    It is used by Plone's {doc}`plone.restapi/docs/source/index`.
+-   [`sphinxcontrib.httpexample`](https://sphinxcontrib-httpexample.readthedocs.io/en/latest/) enhances `sphinxcontrib-httpdomain` by generating RESTful HTTP API call examples for different tools from a single HTTP request example.
+    Supported tools include [curl](https://curl.se/), [wget](https://www.gnu.org/software/wget/), [httpie](https://httpie.io/), and [python-requests](https://requests.readthedocs.io/en/latest/).
+    It is used by Plone's {doc}`plone.restapi/docs/source/index`.
+-   [`sphinxcontrib.spelling`](https://sphinxcontrib-spelling.readthedocs.io/en/latest/) provides spell checking. 
+-   [`sphinxext.opengraph`](https://pypi.org/project/sphinxext-opengraph/) generates [OpenGraph metadata](https://ogp.me/).
+-   [`sphinx.ext.viewcode`](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html) generates pages of source code modules and links between the source and the description.
+    It is used by {doc}`/plone.api/index`.
+-   [`sphinx.ext.autosummary`](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) generates function/method/attribute summary lists.
+    It is used by {doc}`/plone.api/index`.
 
 
 ## Abridged Plone Documentation Styleguide
