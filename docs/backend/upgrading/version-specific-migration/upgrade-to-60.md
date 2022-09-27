@@ -17,7 +17,7 @@ Some may require changes in your setup.
 
 (v60-removed-portal_quickinstaller-label)=
 
-## Removed portal_quickinstaller
+## Removed `portal_quickinstaller`
 
 Plone no longer ships with the `portal_quickinstaller` tool (`CMFQuickInstallerTool`).
 In existing sites, the standard upgrade will remove the tool.

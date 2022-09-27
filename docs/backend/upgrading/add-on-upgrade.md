@@ -30,8 +30,13 @@ This chapter describes the steps to migrate your third party products.
 -   Perform product-specific upgrade procedures, if any.
     You will find these in the documentation of each product.
 
-If `/prefs_install_products_form` is unreachable, you should try doing the add-on upgrades from the Management Interface.
-Navigate to the quickinstaller in the Management Interface, and reinstall or upgrade products that are shown to be outdated.
+If `/prefs_install_products_form` is unreachable, and you are using Plone 5.0.x or earlier, you should try doing the add-on upgrades from the Management Interface.
+Navigate to the `portal_quickinstaller` in the Management Interface at `/portal_quickinstaller/manage_installProductsForm`, and reinstall or upgrade products that are shown to be outdated.
+
+```{versiondeprecated} 5.1
+`portal_quickinstaller` was deprecated in Plone 5.1, and was removed in Plone 6.0.
+See [PLIP 1775](https://github.com/plone/Products.CMFPlone/issues/1775) and {ref}`upgrade-5.1-do-not-use-portal_quickinstaller-label` for Plone 5.1 and later.
+```
 
 ```{warning}
 Be careful when updating add-ons through the Management Interface.

@@ -129,7 +129,7 @@ See for example [pas.plugins.authomatic](https://pypi.org/project/pas.plugins.au
 If you want to use this in your site, you must add `plone.app.openid` to the buildout eggs.
 
 
-### portal_quickinstaller Deprecated
+### `portal_quickinstaller` Deprecated
 
 This is [PLIP 1340](https://github.com/plone/Products.CMFPlone/issues/1340).
 

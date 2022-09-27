@@ -85,6 +85,8 @@ An uninstall profile is a profile that is registered with the name `uninstall`.
 See https://github.com/plone/plone.app.multilingual/tree/master/src/plone/app/multilingual/profiles/uninstall.
 
 
+(upgrade-5.1-do-not-use-portal_quickinstaller-label)=
+
 ### Do Not Use `portal_quickinstaller`
 
 Old code:
