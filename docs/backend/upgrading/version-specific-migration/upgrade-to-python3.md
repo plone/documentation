@@ -46,11 +46,6 @@ In the GitHub repository of the add-on:
 
 ### Using released Plone 5.2
 
-```{warning}
-This section is valid until the final release of Plone 5.2.
-Upon the final release of Plone 5.2, something else will take its place.
-```
-
 Usually you can use the latest Plone 5.2 release.
 The version pins for the latest release can be found for `pip` at https://dist.plone.org/release/5.2-latest/requirements.txt and for `buildout` at https://dist.plone.org/release/5.2-latest/versions.cfg.
 Install Plone with Python 3.6, 3.7, or 3.8, and then add your add-ons as source using `mr.developer`.
