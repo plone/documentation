@@ -1,24 +1,29 @@
 ---
 myst:
   html_meta:
-    "description": "Migrate to Volto"
-    "property=og:description": "Migrate to Volto"
-    "property=og:title": "Migrate to Volto"
-    "keywords": "Migrating, Upgrading, Plone 6, Volto"
+    "description": "Migrating from Plone Classic UI to Volto"
+    "property=og:description": "Migrating from Plone Classic UI to Volto"
+    "property=og:title": "Migrating from Plone Classic UI to Volto"
+    "keywords": "Migrating, Upgrading, Plone 6, Volto, Classic UI"
 ---
 
 (backend-migrate-to-volto-label)=
 
-# Migrating from Plone Classic to Volto
+# Migrating from Plone Classic UI to Volto
 
 Plone 6 comes with a new default frontend called {term}`Volto`.
 Volto is written in React and uses {py:mod}`plone.restapi` to communicate with the backend.
 
 When creating a new Plone 6 site, you may choose between frontends.
 
--   Volto - {guilabel}`Create a new Plone site`, the default option
--   {term}`Classic UI` - {guilabel}`Create Classic Plone site`
--   {guilabel}`Advanced`
+-   Volto - {guilabel}`Create a new Plone site`, the default option.
+-   {term}`Classic UI` - {guilabel}`Create Classic Plone site`.
+-   {guilabel}`Advanced`.
+
+```{image} /_static/plone-classic-ui-landing-page.png
+:class: figure
+:alt: Plone Classic UI landing page
+```
 
 This choice is presented because there are some non-trivial differences between their configurations.
 This document discusses these differences.
