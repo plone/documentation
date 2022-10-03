@@ -127,6 +127,10 @@ exclude_patterns = [
     "plone.restapi/src",
 ]
 
+html_js_files = [
+    "patch_scrollToActive.js",
+]
+
 html_extra_path = [
     "robots.txt",
 ]
@@ -291,11 +295,13 @@ def source_replace(app, docname, source):
         result = result.replace(key, app.config.source_replacements[key])
     source[0] = result
 
+
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_VERSION}": "6.0.0b2",
 }
 
+
 def setup(app):
-   app.add_config_value('source_replacements', {}, True)
-   app.connect('source-read', source_replace)
+    app.add_config_value("source_replacements", {}, True)
+    app.connect("source-read", source_replace)
