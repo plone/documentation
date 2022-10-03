@@ -118,6 +118,7 @@ exclude_patterns = [
     "**/README.rst",
     "plone.restapi/.*",
     "plone.restapi/bin",
+    "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
     "plone.restapi/ideas",
     "plone.restapi/include",
     "plone.restapi/lib",
