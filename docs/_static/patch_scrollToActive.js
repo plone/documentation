@@ -26,24 +26,16 @@
  * Detect the active page in the sidebar, and scroll so that it is centered on
  * the screen.
  */
- var scrollToActive = () => {
-  var navbar = document.getElementById("site-navigation");
-  var navbar_scrollable = navbar.children[0];
-  var active_pages = navbar.querySelectorAll(".active");
-  var active_page = active_pages[active_pages.length - 1];
-  // Only scroll the navbar if the active link is lower than 50% of the page
-  if (
-    active_page !== undefined &&
-    active_page.offsetTop > $(window).height() * 0.5
-  ) {
-    navbar_scrollable.scrollTop =
-      active_page.offsetTop - $(window).height() * 0.2;
+
+var scrollToActive = () => {
+  let navbar_scrollable = $("#site-navigation").children()[0];
+  let active_navigation_item = $("#site-navigation .active").last();
+  if (active_navigation_item) {
+    if (active_navigation_item.offset().top > $(window).height() * 0.5) {
+      navbar_scrollable.scrollTop = active_navigation_item.offset().top - $(window).height() * 0.2;
+    }
   }
 };
 
 
 sbRunWhenDOMLoaded(scrollToActive);
-
-$(document).ready(function() {
-  console.debug("debug patch_scrollToActive")
-});
