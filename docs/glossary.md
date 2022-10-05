@@ -163,7 +163,7 @@ Add-on (Volto)
 Add-on configuration loader (Volto)
     A function with signature `config => config`.
     It gets the Volto Configuration registry, and it must return it back after mutating it.
-    It is similar to Generic Setup profiles in Plone Backend.
+    It is similar to `GenericSetup` profiles in Plone Backend.
     An add-on must provide a default configuration loader that is always loaded when Volto runs.
     An add-on can have multiple configuration loaders, and they can be loaded optionally from the Volto configuration.
 
@@ -450,6 +450,11 @@ make
 
     Make gets its knowledge of how to build your program from a file called the _makefile_, which lists each of the non-source files and how to compute it from other files.
     When you write a program, you should write a makefile for it, so that it is possible to use Make to build and install the program.
+
+PLIP
+    PLIPs are **PL**one **I**mprovement **P**roposals.
+    These are about larger changes to Plone, discussed beforehand by the community.
+    PLIPs are tracked in the GitHub issue tracker for [`Products.CMFPlone`](https://github.com/plone/Products.CMFPlone/issues?q=label%3A%2203+type%3A+feature+%28plip%29%22+).
 
 REST
     REST stands for [Representational State Transfer](https://en.wikipedia.org/wiki/Representational_state_transfer). It is a software architectural principle to create loosely coupled web APIs.
