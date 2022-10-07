@@ -530,7 +530,7 @@ In other words, this speeds up pages that contain lots of images.
 Add-on authors do not have to change anything, as this happens automatically.
 If you have a very special use case, you can influence this with some new adapters.
 
-```{note}
+````{note}
 When upgrading your Plone Site to Plone 6.0, the in-place migration finds all images in your site.
 It then adds the scale information to the catalog.
 This may take a long time.
@@ -541,6 +541,7 @@ export UPDATE_CATALOG_FOR_IMAGE_SCALES=0
 ```
 
 In that case, you are advised to add the `image_scales` column manually to the catalog later.
+````
 
 ```{seealso}
 [plone/plone.app.upgrade PR 292](https://github.com/plone/plone.app.upgrade/pull/292)
