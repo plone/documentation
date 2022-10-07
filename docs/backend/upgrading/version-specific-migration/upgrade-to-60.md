@@ -337,9 +337,9 @@ These are the needed changes:
  </property>
 ```
 
-- Search for any left-overs of `collective.dexteritytextindexer` in your code and replace it.
+- Search for any leftovers of `collective.dexteritytextindexer` in your code and replace it.
 
-The inline upgrade to Plone will replace the two versions of the old behavior with the new one in all content types.
+The in-place upgrade to Plone will replace the two versions of the old behavior with the new one in all content types.
 
 ```{seealso}
 [plone/Products.CMFPlone issue #2780](https://github.com/plone/Products.CMFPlone/issues/2780)
@@ -353,9 +353,9 @@ The inline upgrade to Plone will replace the two versions of the old behavior wi
 Within the Plone code base there are circular dependencies.
 Package A uses package B and package B uses package A.
 Specifically, `Products.CMFPlone` is the main package of Plone where everything comes together.
-It depends on a lot of Plone packages.
+`Products.CMFPlone` depends on a lot of Plone packages.
 But these packages often import code from `Products.CMFPlone`.
-This is done in such a way that it works, but it creates an unclear situation and makes it hard to debug errors when there is an error in this implicit dependency chain.
+This is done in such a way that it works, but it creates an unclear situation and makes it hard to debug errors when they occur in this implicit dependency chain.
 
 The solution in Plone 6.0 was to create a package called `plone.base`.
 Some often used code from `Products.CMFPlone` and other packages was moved here.
@@ -363,7 +363,7 @@ Backwards compatibility imports were kept in place, so this should not cause any
 You *will* get warnings in your logs, unless you have silenced them.
 For example when your code has `from Products.CMFPlone.utils import base_hasattr` you will see:
 
-```
+```console
 DeprecationWarning: base_hasattr is deprecated.
 Import from plone.base.utils instead (will be removed in Plone 7)
 ```
@@ -394,9 +394,9 @@ except ImportError:
 
 ## Support for modern image scales
 
-In Plone 5.2 these image scales were available, with scale name, width and height:
+In Plone 5.2 the following image scales were available, with scale name, width, and height:
 
-```
+```text
 large 768:768
 preview 400:400
 mini 200:200
@@ -408,7 +408,7 @@ listing 16:16
 
 Plone 6.0 changes them:
 
-```
+```text
 huge 1600:65536
 great 1200:65536
 larger 1000:65536
@@ -423,14 +423,14 @@ listing 16:16
 ```
 
 - The biggest scale now has a width of 1600 instead of 768.
-- The 'large' scale was made slightly bigger: from 768 to 800.
-- All scales above 'mini' have a height of 65536.
+- The `large` scale was made slightly bigger: from 768 to 800.
+- All scales above `mini` have a height of 65536.
   This does not mean you get an extremely high image.
   It means only the width is taken into account when resizing the image.
   This is a better fit for most modern themes.
 
 ```{note}
-The standard Plone upgrade only adds the completely new scales: huge, great, larger, teaser.
+The standard Plone upgrade only adds the completely new scales: `huge`, `great`, `larger`, and `teaser`.
 It leaves the other scales untouched.
 This is to avoid strange differences between old and new images.
 For example, old images would otherwise have a large scale with width 768, where for new images this would be width 800.
@@ -443,29 +443,29 @@ For example, old images would otherwise have a large scale with width 768, where
 
 (v60-pre-scaling-label)=
 
-## Image pre scaling
+## Image pre-scaling
 
-In Plone 6, we have made a split between generating a url for an image scale and actually scaling the image.
+In Plone 6, we have made a split between generating a URL for an image scale and actually scaling the image.
 Why would you want this?
 
-As an add-on author you create a template and you want to show an uploaded image with the preview scale.
+As an add-on author, you create a template and you want to show an uploaded image with the preview scale.
 The code would be like this:
 
-```
+```xml
 <img tal:define="images context/@@images"
      tal:replace="structure python:images.tag('image', scale='preview')" />
 ```
 
 In Plone 5 this creates a scale of the image, using the Pillow imaging library.
 In Plone 6, the scaled image is not yet created at this point.
-The scaled image is only created when (if) the browser actually requests the image.
+The scaled image is only created when the browser actually requests the image.
 
 This is good, because for various reasons, the browser may never actually ask for this scaled image.
 For example, the browser may be on a mobile phone with the images turned off to prevent using costly band width.
 Also, when the tag contains source sets for HiDPI or picture variants, the browser may see five possible images and only choose to download one of them.
 
-In Plone 6, when generating a tag for in this case the preview scale, a unique url is generated, and information for this scale is pre-registered.
-Only when the browser requests the scaled image at this url, does Plone generate the scale.
+In Plone 6, when generating a tag for, as in this case, the `preview` scale, a unique URL is generated, and information for this scale is pre-registered.
+Only when the browser requests the scaled image at this URL, does Plone generate the scale.
 This avoids generating image scales that never get used.
 
 This performance improvement makes two other image improvements possible.
@@ -491,7 +491,7 @@ Alternatively, you can explicitly use the new `pre` argument, but this will fail
 
 ```{note}
 There now is an image test page that shows several scales of an image, in various modes.
-In your browser to to an image and add `/@@images-test` to the end of the url.
+In your browser, go to an image, and add `/@@images-test` to the end of the URL.
 ```
 
 ```{seealso}
@@ -522,22 +522,25 @@ But if you want to use the responsive image support, you should use the `picture
 
 ## Store image scale info in catalog metadata
 
-When you add or edit an image, Plone 6 pre-registers all scales and stores info about them in the portal catalog.
-The catalog brain of an image then has all the needed information about each scale, especially the unique url and the width and height.
-This is used on lists of images to be able show a scale in a tag without waking up the image objects from the database.
-In other words: this speeds up pages that contain lots of images.
+When you add or edit an image, Plone 6 pre-registers all scales and stores information about them in the portal catalog.
+The catalog brain of an image then has all the needed information about each scale, especially the unique URL, width, and height.
+This is used on lists of images to be able to show a scale in a tag without waking up the image objects from the database.
+In other words, this speeds up pages that contain lots of images.
 
-Add-on authors do not have to change anything: this happens automatically.
+Add-on authors do not have to change anything, as this happens automatically.
 If you have a very special use case, you can influence this with some new adapters.
 
 ```{note}
-When upgrading your Plone Site to Plone 6.0, the inline migration finds all images in your site.
+When upgrading your Plone Site to Plone 6.0, the in-place migration finds all images in your site.
 It then adds the scale information to the catalog.
 This may take a long time.
 You can disable this with an environment variable:
-`export UPDATE_CATALOG_FOR_IMAGE_SCALES=0`
-In that case, you are advised to add the `image_scales` column manually to the catalog later.
+
+```shell
+export UPDATE_CATALOG_FOR_IMAGE_SCALES=0
 ```
+
+In that case, you are advised to add the `image_scales` column manually to the catalog later.
 
 ```{seealso}
 [plone/plone.app.upgrade PR 292](https://github.com/plone/plone.app.upgrade/pull/292)
