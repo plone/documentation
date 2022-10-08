@@ -295,3 +295,254 @@ The same change is needed for the no longer supported `includeDependenciesOverri
 -   [PLIP 3339](https://github.com/plone/Products.CMFPlone/issues/3339)
 -   [`plone.autoinclude`](https://github.com/plone/plone.autoinclude) documentation
 ```
+
+
+(v60-dexteritytextindexer-label)=
+
+## `collective.dexteritytextindexer` merged
+
+You can mark fields of a content type as searchable.
+You can then find an object in the search form by using any text from these fields.
+For this to work, you need to enable the `plone.textindexer` behavior on the content type.
+For more information, see {ref}`backend-indexing-textindexer-label`.
+
+In earlier Plone versions, this feature was available in the `collective.dexteritytextindexer` package.
+This was merged into Plone 6.0 core, with most code ending up in `plone.app.dexterity`.
+
+If you have an add-on or custom code that uses the old package, then this must be upgraded.
+These are the needed changes:
+
+- Remove `collective.dexteritytextindexer` from the `install_requires` in `setup.py`.
+- Update the Python code of your content type code, like this:
+
+```diff
+-from collective import dexteritytextindexer
++from plone.app.dexterity import textindexer
+ from plone.app.textfield import RichText
+ from plone.supermodel import model
+...
+ class IExampleType(model.Schema):
+-    dexteritytextindexer.searchable("text")
++    textindexer.searchable("text")
+     text = RichText(...)
+```
+
+- In the GenericSetup xml of your content type, use the new behavior:
+
+```diff
+ <property name="behaviors" purge="false">
+-  <element value="collective.dexteritytextindexer" />
+-  <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
++  <element value="plone.textindexer" />
+ </property>
+```
+
+- Search for any leftovers of `collective.dexteritytextindexer` in your code and replace it.
+
+The in-place upgrade to Plone will replace the two versions of the old behavior with the new one in all content types.
+
+```{seealso}
+[plone/Products.CMFPlone issue #2780](https://github.com/plone/Products.CMFPlone/issues/2780)
+```
+
+
+(v60-plone-base-label)=
+
+## `plone.base` package
+
+Within the Plone code base there are circular dependencies.
+Package A uses package B and package B uses package A.
+Specifically, `Products.CMFPlone` is the main package of Plone where everything comes together.
+`Products.CMFPlone` depends on a lot of Plone packages.
+But these packages often import code from `Products.CMFPlone`.
+This is done in such a way that it works, but it creates an unclear situation and makes it hard to debug errors when they occur in this implicit dependency chain.
+
+The solution in Plone 6.0 was to create a package called `plone.base`.
+Some often used code from `Products.CMFPlone` and other packages was moved here.
+Backwards compatibility imports were kept in place, so this should not cause any breakage in add-ons.
+You *will* get warnings in your logs, unless you have silenced them.
+For example when your code has `from Products.CMFPlone.utils import base_hasattr` you will see:
+
+```console
+DeprecationWarning: base_hasattr is deprecated.
+Import from plone.base.utils instead (will be removed in Plone 7)
+```
+
+If the add-on only needs to support Plone 6, you can change the code like this:
+
+```diff
+- from Products.CMFPlone.utils import base_hasattr
++ from plone.base.utils import base_hasattr
+```
+
+If the add-on needs to support both Plone 5 and 6, this works and avoids the warning:
+
+```python
+try:
+    from plone.base.utils import base_hasattr
+except ImportError:
+    # BBB for Plone 5
+    from Products.CMFPlone.utils import base_hasattr
+```
+
+```{seealso}
+[plone/Products.CMFPlone issue #3395](https://github.com/plone/Products.CMFPlone/issues/3395)
+```
+
+
+(v60-modern-image-scales-label)=
+
+## Support for modern image scales
+
+In Plone 5.2 the following image scales were available, with scale name, width, and height:
+
+```text
+large 768:768
+preview 400:400
+mini 200:200
+humb 128:128
+tile 64:64
+icon 32:32
+listing 16:16
+```
+
+Plone 6.0 changes them:
+
+```text
+huge 1600:65536
+great 1200:65536
+larger 1000:65536
+large 800:65536
+teaser 600:65536
+preview 400:65536
+mini 200:65536
+thumb 128:128
+tile 64:64
+icon 32:32
+listing 16:16
+```
+
+- The biggest scale now has a width of 1600 instead of 768.
+- The `large` scale was made slightly bigger: from 768 to 800.
+- All scales above `mini` have a height of 65536.
+  This does not mean you get an extremely high image.
+  It means only the width is taken into account when resizing the image.
+  This is a better fit for most modern themes.
+
+```{note}
+The standard Plone upgrade only adds the completely new scales: `huge`, `great`, `larger`, and `teaser`.
+It leaves the other scales untouched.
+This is to avoid strange differences between old and new images.
+For example, old images would otherwise have a large scale with width 768, where for new images this would be width 800.
+```
+
+```{seealso}
+[plone/Products.CMFPlone issue #3279](https://github.com/plone/Products.CMFPlone/issues/3279)
+```
+
+
+(v60-pre-scaling-label)=
+
+## Image pre-scaling
+
+In Plone 6, we have made a split between generating a URL for an image scale and actually scaling the image.
+Why would you want this?
+
+As an add-on author, you create a template and you want to show an uploaded image with the preview scale.
+The code would be like this:
+
+```xml
+<img tal:define="images context/@@images"
+     tal:replace="structure python:images.tag('image', scale='preview')" />
+```
+
+In Plone 5 this creates a scale of the image, using the Pillow imaging library.
+In Plone 6, the scaled image is not yet created at this point.
+The scaled image is only created when the browser actually requests the image.
+
+This is good, because for various reasons, the browser may never actually ask for this scaled image.
+For example, the browser may be on a mobile phone with the images turned off to prevent using costly band width.
+Also, when the tag contains source sets for HiDPI or picture variants, the browser may see five possible images and only choose to download one of them.
+
+In Plone 6, when generating a tag for, as in this case, the `preview` scale, a unique URL is generated, and information for this scale is pre-registered.
+Only when the browser requests the scaled image at this URL, does Plone generate the scale.
+This avoids generating image scales that never get used.
+
+This performance improvement makes two other image improvements possible.
+These follow in the sections directly below.
+
+Add-on authors do not *have* to change anything.
+But it is a good idea to check how you are using images, otherwise you miss out on this improvement.
+If you call the `tag` method like above, you are good.
+If you use the `scale` method and then use its `tag` method, then you should change:
+
+```diff
+  <img tal:define="images context/@@images"
+-      tal:replace="structure python:images.scale('image', scale='preview').tag()" />
++      tal:replace="structure python:images.tag('image', scale='preview')" />
+```
+
+Alternatively, you can explicitly use the new `pre` argument, but this will fail on Plone 5:
+
+```xml
+<img tal:define="images context/@@images"
+     tal:replace="structure python:images.scale('image', scale='preview', pre=True).tag()" />
+```
+
+```{note}
+There now is an image test page that shows several scales of an image, in various modes.
+In your browser, go to an image, and add `/@@images-test` to the end of the URL.
+```
+
+```{seealso}
+- [plone/plone.scale PR 57](https://github.com/plone/plone.scale/pull/57)
+- [plone/plone.namedfile PR 113](https://github.com/plone/plone.namedfile/pull/113)
+```
+
+
+(v60-responsive-image-support-label)=
+
+## Responsive image support
+
+Responsive image support was added with picture tags.
+For more information, see {ref}`classic-ui-images-responsive-image-support`.
+
+In an add-on nothing needs to be changed.
+But if you want to use the responsive image support, you should use the `picture` method:
+
+```diff
+  <img tal:define="images context/@@images"
+-      tal:replace="structure python:images.tag('image', scale='preview')" />
++      tal:replace="structure python:images.picture('image', picture_variant='small')" />
+```
+
+
+
+(v60-image-scale-catalog-label)=
+
+## Store image scale info in catalog metadata
+
+When you add or edit an image, Plone 6 pre-registers all scales and stores information about them in the portal catalog.
+The catalog brain of an image then has all the needed information about each scale, especially the unique URL, width, and height.
+This is used on lists of images to be able to show a scale in a tag without waking up the image objects from the database.
+In other words, this speeds up pages that contain lots of images.
+
+Add-on authors do not have to change anything, as this happens automatically.
+If you have a very special use case, you can influence this with some new adapters.
+
+````{note}
+When upgrading your Plone Site to Plone 6.0, the in-place migration finds all images in your site.
+It then adds the scale information to the catalog.
+This may take a long time.
+You can disable this with an environment variable:
+
+```shell
+export UPDATE_CATALOG_FOR_IMAGE_SCALES=0
+```
+
+In that case, you are advised to add the `image_scales` column manually to the catalog later.
+````
+
+```{seealso}
+[plone/plone.app.upgrade PR 292](https://github.com/plone/plone.app.upgrade/pull/292)
+```
