@@ -41,6 +41,7 @@ You may host multiple Plone sites on the same server.
 -   Cookiecutter
 -   Node.JS
 -   nvm
+-   Yeoman
 -   Yarn
 -   GNU make
 
@@ -54,6 +55,8 @@ pip install --user --upgrade cookiecutter
 ```
 
 {ref}`Install nvm and Node.js documentation <frontend-getting-started-install-nvm-label>`.
+
+{ref}`Install Yeoman documentation <frontend-getting-started-yeoman-label>`.
 
 {ref}`Install Yarn documentation <frontend-getting-started-yarn-label>`.
 
