@@ -205,6 +205,7 @@ Hot Module Replacement (HMR)
 
 Yeoman
     A popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
+    https://yeoman.io/
 
 CommonJS
     A JavaScript package standard, the equivalent of a Python wheel or egg.
