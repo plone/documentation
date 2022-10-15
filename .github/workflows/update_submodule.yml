@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
+        ref: esteele-build-docs
       
       # Pull latest plone.api
       - name: Pull latest plone.api
@@ -36,5 +37,8 @@ jobs:
         run: |
           git status
           git add submodules/plone.api submodules/plone.restapi submodules/volto
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git commit -m "Update submodules tip"
           git push
+
