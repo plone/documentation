@@ -1,0 +1,37 @@
+name: Get latest version of submodules and push back to 6-dev branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - uses: actions/checkout@v2
+      
+      # Pull latest plone.api
+      - name: Pull latest plone.api
+        run: |
+          cd submodules/plone.api
+          git pull
+
+      # Pull latest plone.restapi
+      - name: Pull latest plone.restapi
+        run: |
+          cd submodules/plone.restapi
+          git pull
+
+      # Pull latest Volto
+      - name: Pull latest Volto
+        run: |
+          cd submodules/volto
+          git pull
+
+      # Update, commit, and push
+      - name : Update tips
+        run: |
+          git status
+          git add submodules/plone.api submodules/plone.restapi submodules/volto
+          git commit -m "Update submodules tip"
+          git push
