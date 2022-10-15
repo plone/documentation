@@ -21,13 +21,13 @@ jobs:
       # Pull latest plone.restapi
       - name: Pull latest plone.restapi
         run: |
-          cd submodules/plone.restapi
+          cd ../plone.restapi
           git pull
 
       # Pull latest Volto
       - name: Pull latest Volto
         run: |
-          cd submodules/volto
+          cd ../volto
           git pull
 
       # Update, commit, and push
