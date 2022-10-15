@@ -229,7 +229,6 @@ todo_include_todos = True
 html_use_opensearch = "https://docs.plone.org"
 
 html_theme_options = {
-    "google_analytics_id": "G-P8NCTB796E",
     "path_to_docs": "docs",
     "repository_url": "https://github.com/plone/documentation",
     "repository_branch": "main",
