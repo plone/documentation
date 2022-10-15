@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "esteele-build-docs"
-      
+      - "6-dev"
+
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
