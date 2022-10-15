@@ -2,9 +2,6 @@ name: Get latest version of submodules and push back to 6-dev branch
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - "6-dev"
 
 jobs:
   build_deploy:
@@ -36,7 +33,6 @@ jobs:
       # Update, commit, and push
       - name : Update tips
         run: |
-          cd ../../
           git status
           git add submodules/plone.api submodules/plone.restapi submodules/volto
           git config user.name github-actions
