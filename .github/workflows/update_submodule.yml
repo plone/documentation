@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "esteele-build-docs"
+      - "6-dev"
 
 jobs:
   build_deploy:
@@ -13,7 +13,7 @@ jobs:
       # Checkout
       - uses: actions/checkout@v3
         with: 
-          ref: esteele-build-docs
+          ref: 6-dev
       
       # Pull latest plone.api
       - name: Pull latest plone.api
@@ -41,4 +41,3 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git diff --exit-code && git commit -m "Update submodules tip" && git push
-
