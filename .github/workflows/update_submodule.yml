@@ -2,9 +2,6 @@ name: Get latest version of submodules and push back to 6-dev branch
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - "6-dev"
 
 jobs:
   build_deploy:
