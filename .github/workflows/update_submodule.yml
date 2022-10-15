@@ -12,7 +12,8 @@ jobs:
     steps:
       # Checkout
       - uses: actions/checkout@v3
-        ref: esteele-build-docs
+        with: 
+          ref: esteele-build-docs
       
       # Pull latest plone.api
       - name: Pull latest plone.api
