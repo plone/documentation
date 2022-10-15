@@ -2,6 +2,9 @@ name: Get latest version of submodules and push back to 6-dev branch
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - "esteele-build-docs"
 
 jobs:
   build_deploy:
