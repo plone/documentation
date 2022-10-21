@@ -46,7 +46,7 @@ server {
   server_name  plone.localhost;
 
   location ~ /\+\+api\+\+($|/.*) {
-      rewrite ^/(\+\+api\+\+\/?)+($|/.*) /VirtualHostBase/http/$server_name/Plone/++api++/VirtualHostRoot/$1 break;
+      rewrite ^/(\+\+api\+\+\/?)+($|/.*) /VirtualHostBase/http/$server_name/Plone/++api++/VirtualHostRoot/$2 break;
       proxy_pass http://backend;
   }
 
