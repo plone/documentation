@@ -15,7 +15,7 @@ This is the community-maintained documentation for the Plone content management 
 
 This documentation is for:
 
-- Content editors who write, update, and order content on a site
+- Editors who write and update content on a site
 - Site administrators who install Plone and add-ons, and set up a site
 - Designers who create site themes
 - Deployers who configure servers for site hosting
