@@ -45,7 +45,25 @@ We encourage users of the `Plone` images to familiarize themselves with the opti
 | `SECURITY_POLICY_IMPLEMENTATION` | `security-policy-implementation` | `C` |
 | `VERBOSE_SECURITY` | `verbose-security` | `false` |
 | `DEFAULT_ZPUBLISHER_ENCODING` | `default-zpublisher-encoding` | `utf-8` |
+| `LISTEN_PORT` | (no equivalent) | `8080` |
 
+#### Listen port
+
+By default, the Zope process inside the container will listen on TCP port 8080.
+In certain circumstances — Kubernetes or Podman pods — there may be a need to run
+more than one Zope process within the network namespace, which would result in
+listen port clashes as two different processes within the same namespace attempt
+to listen to the same TCP port.
+
+In these cases, the variable `LISTEN_PORT` can be set to any particular port above
+1024 to ensure that the container will listen on the desired port.
+
+Plone 6 example:
+
+```shell
+# Makes Zope listen to port 8081 instead of the default 8080.
+docker run -p 8081:8081 -e LISTEN_PORT=8081 plone/plone-backend:{PLONE_BACKEND_VERSION}
+```
 
 ### Site creation variables
 
