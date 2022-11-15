@@ -316,7 +316,8 @@ docker run -p 8080:8080 myproject:latest start
 In the directory containing your `Dockerfile`, create a folder `etc/zope.conf.d`.
 Add your `zope.conf` configuration fragments there.
 
-Now add the following to your `Dockerfile`:
+Now add the following to your `Dockerfile`, before any `RUN`, `CMD` or `ENTRYPOINT`
+stanzas it may have, and after the `FROM` stanza:
 
 ```Dockerfile
 COPY /etc/zope.conf.d/*.conf /app/etc/zope.conf.d/
@@ -331,7 +332,8 @@ In the directory containing your `Dockerfile`, create a folder `etc/package-incl
 Add your ZCML configuration fragments (named `*-meta.zcml`, `*-configure.zcml`,
 `*-overrides.zcml`) as files in that folder.
 
-Now add the following to your `Dockerfile`:
+Now add the following to your `Dockerfile`, before any `RUN`, `CMD` or `ENTRYPOINT`
+stanzas it may have, and after the `FROM` stanza:
 
 ```Dockerfile
 COPY /etc/package-includes/*.zcml /app/etc/package-includes/
