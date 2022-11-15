@@ -70,7 +70,7 @@ docker run -p 8081:8081 -e LISTEN_PORT=8081 plone/plone-backend:{PLONE_BACKEND_V
 With the standard container, it is not possible to add configuration fragments to
 `zope.conf` directly or add extra ZCML, like it is with the `buildout` deployment
 method.  However, you can derive your own container image, and drop in configuration
-fragments.  See *Extending from this image* below for instructions.
+fragments.  See {ref}`backend-extending-from-this-image-label` below for instructions.
 
 ### Site creation variables
 
