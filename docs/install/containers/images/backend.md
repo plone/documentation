@@ -224,26 +224,28 @@ services:
 
 These variables are used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
-
-### Add-on variables
-
-| Environment variable | Description | Details |
-| --- | --- | --- |
-| `ADDONS` | A space separated list of python libraries to install | {ref}`containers-images-backend-add-ons-label` |
-| `DEVELOP` | A space separated list of python libraries to install in editable mode | {ref}`containers-images-backend-developing-packages-label` |
-| `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
-
-
 (containers-images-backend-add-ons-label)=
 
-#### Add-ons
+### Add-ons
 
-It is possible to install add-ons during startup time in a container created using this image.
-To do so, pass the `ADDONS` environment variable with a space separated list of requirements to be added to the image:
+It is possible to include add-ons during startup time in a container created using this image.
+
+```{warning}
+We advise against using this feature on production environments — the recommended method is to
+extend the official container images to include your desired add-ons in your own container.
+This has several advantages, among which is the certainty that your container will always
+run the exact add-on code you built into it.
+```
+
+To do so, pass the `ADDONS` environment variable with a space separated list of requirements to be added to the image
+(see below for documentation of the supported variables):
 
 ```shell
 docker run -p 8080:8080 -e ADDONS="pas.plugins.authomatic" plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
+
+After Plone has started, you can add your Plone site (if none exists yet) and install the added
+add-ons to your site.
 
 This approach also allows you to test Plone with a specific version of one of its core components
 
@@ -251,10 +253,13 @@ This approach also allows you to test Plone with a specific version of one of it
 docker run -p 8080:8080 -e ADDONS="plone.volto==3.1.0a3" plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
 
-```{warning}
-We advise against using this feature on production environments.
-In this case, extend the image as explained before.
-```
+#### Add-on variables
+
+| Environment variable | Description | Details |
+| --- | --- | --- |
+| `ADDONS` | A space separated list of python libraries to install | {ref}`containers-images-backend-add-ons-label` |
+| `DEVELOP` | A space separated list of python libraries to install in editable mode | {ref}`containers-images-backend-developing-packages-label` |
+| `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
 
 #### Adding configuration to `zope.conf` or additional ZCML
 
@@ -275,6 +280,11 @@ It is possible to install local packages instead of packages from pip.
 To do so, pass the `DEVELOP` environment variable with a space separated list of paths to Python packages to be installed.
 These packages will be installed with `pip install --editable`.
 
+```{warning}
+We advise against using this feature on production environments — the recommended method is to
+extend the official container images to include your desired add-ons in your own container.
+```
+
 ```shell
 docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
@@ -283,10 +293,6 @@ This approach also allows you to develop local packages by using a volume.
 
 ```shell
 docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.policy:/app/src/mysite.policy plone/plone-backend:{PLONE_BACKEND_VERSION} start
-```
-
-```{warning}
-We advise against using this feature on production environments.
 ```
 
 (backend-extending-from-this-image-label)=
