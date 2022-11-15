@@ -65,12 +65,12 @@ Plone 6 example:
 docker run -p 8081:8081 -e LISTEN_PORT=8081 plone/plone-backend:{PLONE_BACKEND_VERSION}
 ```
 
-#### Adding configuration to `zope.conf`
+#### Adding configuration to `zope.conf` or additional ZCML
 
-It is not possible to add configuration fragments to `zope.conf` directly, like
-it is with the `buildout` deployment method.  However, you can derive your own
-container image, and drop in configuration fragments.  See *Extending from this
-image* below for instructions.
+With the standard container, it is not possible to add configuration fragments to
+`zope.conf` directly or add extra ZCML, like it is with the `buildout` deployment
+method.  However, you can derive your own container image, and drop in configuration
+fragments.  See *Extending from this image* below for instructions.
 
 ### Site creation variables
 
@@ -324,6 +324,21 @@ COPY /etc/zope.conf.d/*.conf /app/etc/zope.conf.d/
 
 This ensures your fragments are deployed in the `zope.conf.d` folder, which then
 will be used to amend the `zope.conf` file prior to starting Plone.
+
+### Adding ZCML fragments
+
+In the directory containing your `Dockerfile`, create a folder `etc/package-includes`.
+Add your ZCML configuration fragments (named `*-meta.zcml`, `*-configure.zcml`,
+`*-overrides.zcml`) as files in that folder.
+
+Now add the following to your `Dockerfile`:
+
+```Dockerfile
+COPY /etc/package-includes/*.zcml /app/etc/package-includes/
+```
+
+Your ZCML fragments will be copied into the container and automatically included
+when Plone starts.
 
 ## Advanced usage
 
