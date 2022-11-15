@@ -321,6 +321,26 @@ And start a container.
 docker run -p 8080:8080 myproject:latest start
 ```
 
+### Changing default values of environment variables
+
+All the environment variables documented above are supported in your
+derived container's Dockerfile.  You can override the default values
+of variables as follows:
+
+```Dockerfile
+# Add environment variables before any CMD or ENTRYPOINT stanzas,
+# and after any FROM, RUN and COPY stanzas.
+ENV ZODB_CACHE_SIZE="120000"
+```
+
+Of course, you can always override these variables upon container
+start by using the Docker `docker run` argument `-e VAR=value`.
+
+Be aware that some variables are not intended to be used in production.
+Check the respective variable documentation above to determine whether
+you should use it, or use a different method to get the desired result
+in production.
+
 ### Adding `zope.conf` configuration fragments
 
 In the directory containing your `Dockerfile`, create a folder `etc/zope.conf.d`.
