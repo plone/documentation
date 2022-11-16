@@ -224,26 +224,28 @@ services:
 
 These variables are used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
-
-### Add-on variables
-
-| Environment variable | Description | Details |
-| --- | --- | --- |
-| `ADDONS` | A space separated list of python libraries to install | {ref}`containers-images-backend-add-ons-label` |
-| `DEVELOP` | A space separated list of python libraries to install in editable mode | {ref}`containers-images-backend-developing-packages-label` |
-| `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
-
-
 (containers-images-backend-add-ons-label)=
 
-#### Add-ons
+### Add-ons
 
-It is possible to install add-ons during startup time in a container created using this image.
-To do so, pass the `ADDONS` environment variable with a space separated list of requirements to be added to the image:
+It is possible to include add-ons during startup time in a container created using this image.
+
+```{warning}
+We advise against using this feature on production environments — the recommended method is to
+extend the official container images to include your desired add-ons in your own container.
+This has several advantages, among which is the certainty that your container will always
+run the exact add-on code you built into it.
+```
+
+To do so, pass the `ADDONS` environment variable with a space separated list of requirements to be added to the image
+(see below for documentation of the supported variables):
 
 ```shell
 docker run -p 8080:8080 -e ADDONS="pas.plugins.authomatic" plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
+
+After Plone has started, you can add your Plone site (if none exists yet) and install the added
+add-ons to your site.
 
 This approach also allows you to test Plone with a specific version of one of its core components
 
@@ -251,11 +253,24 @@ This approach also allows you to test Plone with a specific version of one of it
 docker run -p 8080:8080 -e ADDONS="plone.volto==3.1.0a3" plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
 
-```{warning}
-We advise against using this feature on production environments.
-In this case, extend the image as explained before.
-```
+#### Add-on variables
 
+| Environment variable | Description | Details |
+| --- | --- | --- |
+| `ADDONS` | A space separated list of python libraries to install | {ref}`containers-images-backend-add-ons-label` |
+| `DEVELOP` | A space separated list of python libraries to install in editable mode | {ref}`containers-images-backend-developing-packages-label` |
+| `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
+
+#### Adding configuration to `zope.conf` or additional ZCML
+
+Some Plone add-ons require changes to `zope.conf` or extra ZCML.
+
+With the standard container, it is not possible to add configuration fragments to
+`zope.conf` directly or add extra ZCML, like it is with the `buildout` deployment
+method.
+
+However, you can derive your own container image, and drop in configuration
+fragments.  See {ref}`backend-extending-from-this-image-label` below for instructions.
 
 (containers-images-backend-developing-packages-label)=
 
@@ -264,6 +279,11 @@ In this case, extend the image as explained before.
 It is possible to install local packages instead of packages from pip.
 To do so, pass the `DEVELOP` environment variable with a space separated list of paths to Python packages to be installed.
 These packages will be installed with `pip install --editable`.
+
+```{warning}
+We advise against using this feature on production environments — the recommended method is to
+extend the official container images to include your desired add-ons in your own container.
+```
 
 ```shell
 docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" plone/plone-backend:{PLONE_BACKEND_VERSION} start
@@ -275,10 +295,7 @@ This approach also allows you to develop local packages by using a volume.
 docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.policy:/app/src/mysite.policy plone/plone-backend:{PLONE_BACKEND_VERSION} start
 ```
 
-```{warning}
-We advise against using this feature on production environments.
-```
-
+(backend-extending-from-this-image-label)=
 
 ## Extending from this image
 
@@ -304,6 +321,56 @@ And start a container.
 docker run -p 8080:8080 myproject:latest start
 ```
 
+### Changing default values of environment variables
+
+All the environment variables documented above are supported in your
+derived container's Dockerfile.  You can override the default values
+of variables as follows:
+
+```Dockerfile
+# Add environment variables before any CMD or ENTRYPOINT stanzas,
+# and after any FROM, RUN and COPY stanzas.
+ENV ZODB_CACHE_SIZE="120000"
+```
+
+Of course, you can always override these variables upon container
+start by using the Docker `docker run` argument `-e VAR=value`.
+
+Be aware that some variables are not intended to be used in production.
+Check the respective variable documentation above to determine whether
+you should use it, or use a different method to get the desired result
+in production.
+
+### Adding `zope.conf` configuration fragments
+
+In the directory containing your `Dockerfile`, create a folder `etc/zope.conf.d`.
+Add your `zope.conf` configuration fragments there.
+
+Now add the following to your `Dockerfile`, before any `CMD` or `ENTRYPOINT`
+stanzas it may have, and after the `FROM` and any `RUN` stanzas:
+
+```Dockerfile
+COPY /etc/zope.conf.d/*.conf /app/etc/zope.conf.d/
+```
+
+This ensures your fragments are deployed in the `zope.conf.d` folder, which then
+will be used to amend the `zope.conf` file prior to starting Plone.
+
+### Adding ZCML fragments
+
+In the directory containing your `Dockerfile`, create a folder `etc/package-includes`.
+Add your ZCML configuration fragments (named `*-meta.zcml`, `*-configure.zcml`,
+`*-overrides.zcml`) as files in that folder.
+
+Now add the following to your `Dockerfile`, before any `CMD` or `ENTRYPOINT`
+stanzas it may have, and after the `FROM` and any `RUN` stanzas:
+
+```Dockerfile
+COPY /etc/package-includes/*.zcml /app/etc/package-includes/
+```
+
+Your ZCML fragments will be copied into the container and automatically included
+when Plone starts.
 
 ## Advanced usage
 
