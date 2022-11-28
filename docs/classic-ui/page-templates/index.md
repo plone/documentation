@@ -66,30 +66,131 @@ Your first journey in page templates will likely be overriding a Plone backend c
 
 `z3c.jbot` (https://pypi.org/project/z3c.jbot/ ) can override page templates (``.pt`` files) for views, viewlets, old style page templates and portlets. In fact, it can override any ``.pt`` file in the Plone source tree.
 
-Example:
+To override a particular file, first determine its canonical filename. It’s defined as the path relative to the package within which the file is located; directory separators are replaced with dots.
 
-existing template....
+As a simple example, to edit the default search page in Plone Classic we first find the existing template. In a fresh plone install, it's in the Products.CMFPlone  `/Products/CMFPlone/browser/templates/search.pt`  so our override file will be called `Products.CMFPlone.browser.templates.search.pt`
 
-copy it to your project (or your addon) and name it with a special name
+Create a new directory inside your local plone install for template overrides and copy the system `search.pt` into that directory, and rename it to  `Products.CMFPlone.browser.templates.search.pt`
 
-Edit it.
+```
+├─ PloneSite
+│  ├─ bin
+│  ├─ eggs
+│  │   └─Products.CMFPlone-version
+│  │     └Products
+│  │      └CMFPlone
+│  │       └browser
+│  │         └templates
+│  │           └search.pt  <--- override this 
+│  ├─ parts
+│  └─ mysite
+      ├─ configure.zcml
+      └─ template-overrides 
+         └─ Products.CMFPlone.browser.templates.search.pt <--- with this
+```
 
-Restart and done!
+In your configure.zcml, register the `template-overrides` directory with jbot
+
+```xml+genshi
+<include package="z3c.jbot" file="meta.zcml" />
+
+<browser:jbot
+    directory="template-overrides"
+    />
+```
+
+Now, edit your `Products.CMFPlone.browser.templates.search.pt` and see your changes on the plone search page.
+
+```{note}
+   The `<browser:jbot>` zcml should also contain a `layer` attribute for best practice.  see the z3c.jbot documentation and browser layers documentation
+```
 
 #### overriding with zcml
 
+Although not best practice, you can also quickly override templates by creating an `override.zcml` and adding your custom registration.  For the search page, this would be finding the ZCML entry for the search view in `Products/CMFPlone/browser/configure.zcml` and copying it into your own `overrides.zcml`, but change the `template=` attribute to point to your custom template.  The `class` also must change to become an absolute path to the original class path
+
+overrides.zcml
+```xml+genshi
+ <browser:page
+      name="search"
+      class="Products.CMFPlone.browser.search.Search"
+      permission="zope2.View"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      template="template-overrides/search.pt"
+      />
+```
+
 #### layering with zcml
+
+A better and much more flexable way to override templates, especially when developing add-ons, is to use a browser layer in your configure.zcml.  This is *highly* preferred to using an overrides.zcml file, but involves using a BrowserLayer Interface.  This is extremely easy and is best practice.
+
+configure.zcml
+```xml+genshi
+ <browser:page
+      name="search"
+      class="Products.CMFPlone.browser.search.Search"
+      permission="zope2.View"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      template="template-overrides/search.pt"
+      layer="my.addon.interfaces.IMyAddonLayer"
+      />
+```
 
 #### editing browser views
 
+Sometimes, when you look up a browser view's ZCML it does not have a `template` attribute.  In this case, the template is frequently hard-coded into the python browser view.  One example of this is in the control panel pages, where the templates are not added to `configure.zcml`  
+
+`@@actions-controlpanel` is found in `Products/CMFPlone/controlpanel/browser/actions.py`  
+
+```python
+from Products.Five import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
+class ActionListControlPanel(BrowserView):
+    """Control panel for the portal actions."""
+
+    template = ViewPageTemplateFile("actions.pt")
+```
+
+These are harder to override.  Best practice is to copy the python file (`actions.py` in this case) to your customizations folder and override the entire browser:page like above, pointing to your own `actions.py` and modifying that python code to find your new template `.pt` file
+
 
 ### Creating your own Templates
+
+If you create your own dexterity object, you probably want to display it on a web browser.  Without a template, a default view will come up using plone's built-in main template and default view for a content type.
+
 
 #### stand-alone templates
 
 ```{warning}
 Although templates can be 'stand alone' templates that render a Plone object directly, this is not best practice. A combination of a View and Page Template is the correct implementation.
 ```
+
+The simplest possible template is an html document:
+
+template.pt
+```html
+<html>
+<body>
+<h1> hello custom template </h1>
+</body>
+</html>
+```
+
+and registering it in ZCML: 
+
+```xml+genshi
+   <browser:page
+        for="*"
+        name="custom_template"
+        permission="zope.Public"
+        template="template.pt"
+    />
+```
+
+if you now go to any content item on your plone site, including the site itself, and add `custom_template` to the end of the url, the above html will display.
+
+This isn't very useful, but does show how Plone basically works.
 
 #### browser view templates
 
