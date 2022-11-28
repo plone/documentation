@@ -1,0 +1,14 @@
+# Dependencies
+/bin
+/include
+/lib
+/lib64
+
+# Generated files
+pyvenv.cfg
+/_build
+
+# symlinked from submodule
+docs/volto
+docs/plone.restapi
+docs/plone.api
