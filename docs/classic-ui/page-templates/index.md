@@ -5,7 +5,9 @@ These instructions and resources will help you develop classic-ui pages.
 When you visit the Plone backend with a web browser, you will reach the classic-ui.  These pages are generated with classic Plone browser views and page templates.
 
 This chapter covers developing page templates.   Browser views are documented in-depth in [views](../views.md)
-# Contents
+
+
+## Contents
 
 * Page Templates
    * Introduction
@@ -30,6 +32,7 @@ This chapter covers developing page templates.   Browser views are documented in
 
 ## Page Templates
 ### Introduction
+
 Plone Classic uses Zope Page Templates (ZPT or just PT).  These templates use well established and time-tested standards:   The *Template Attribute Language* (TAL),  *TAL Expression Syntax* (TALES), *Macro Expansion TAL* (METAL).
 
 From a python programmer's point of view, page templates are a tool to display a python object on the web, instead of simply what that object's `__repr__()` method would return. These template files always have a `.pt` file extension
@@ -75,12 +78,9 @@ This document is meant to simply describe the development of templates.
     Although templates can be 'stand alone' templates that render a Plone object directly, this is not best practice. A combination of a View and Page Template is the correct implementation.
 
 
-
 ### Language Reference
-
-
-
 ## Chameleon
+
 Chameleon is an HTML/XML template engine for Python.
 
 It’s designed to generate the document output of a web application, typically HTML markup or XML.
