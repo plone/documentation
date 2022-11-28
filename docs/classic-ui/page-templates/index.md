@@ -1,10 +1,10 @@
 # Page Templates in Plone Classic UI
 
-These instructions and resources will help you develop Classic-UI pages.
+These instructions and resources will help you develop classic-ui pages.
 
-When you visit the Plone backend with a web browser, you will reach the Classic-UI.  These pages are generated with Classic Plone Browser Views and Page Templates.
+When you visit the Plone backend with a web browser, you will reach the classic-ui.  These pages are generated with classic Plone browser views and page templates.
 
-This chapter covers developing Page Templates.   Browser views are documented in-depth in (another chapter)
+This chapter covers developing page templates.   Browser views are documented in-depth in [views](../views.md)
 # Contents
 
 * Page Templates
@@ -21,7 +21,6 @@ This chapter covers developing Page Templates.   Browser views are documented in
    * 
 
 * Chameleon
-    
     * blah
     * blah
     * blah
@@ -31,13 +30,13 @@ This chapter covers developing Page Templates.   Browser views are documented in
 
 ## Page Templates
 ### Introduction
-Plone uses Zope Page Templates.  These templates use well established and time-tested standards:   The *Template Attribute Language* (TAL),  *TAL Expression Syntax* (TALES), *Macro Expansion TAL* (METAL).
+Plone Classic uses Zope Page Templates (ZPT or just PT).  These templates use well established and time-tested standards:   The *Template Attribute Language* (TAL),  *TAL Expression Syntax* (TALES), *Macro Expansion TAL* (METAL).
 
-From a python programmer's point of view, Page Templates are a tool to display a python object on the web, instead of simply what `__repr__()` shows. These files always have a `.pt` file extension
+From a python programmer's point of view, page templates are a tool to display a python object on the web, instead of simply what that object's `__repr__()` method would return. These template files always have a `.pt` file extension
 
 A normal full Plone HTML page consists of:
 * the *master template* defining the overall layout of the page
-* *slots* defined by the master template, and filled by the object being published.
+* METAL *slots* defined by the master template, and filled by the object being published.
 * *viewlets* and *viewlet managers*
 * *tiles*
 
@@ -45,28 +44,28 @@ Page templates are most frequently describing an HTML document, but they can als
 
 Templates can actually render any mime type you find useful: markdown `.md` files, or latex, or `text/plain`
 
-You could, if you wanted, create a Page Template that rendered `application/json` but there are better ways to do that directly from a browser view.  
+You could, if you wanted, create a page template that rendered `application/json` but there are better ways to do that directly from a browser view.  
 
 The point here is that you are not limited to templates creating only HTML.
 
 
 ### Overriding Existing Templates
 
-Your first journey in page templates may be overriding a Plone Core template or a template from an add-on.  The recommended approach is to use [z3c.jbot](https://pypi.org/project/z3c.jbot/) and to put your customized templates onto the filesystem and version controlled.
+Your first journey in page templates may be overriding a Plone backend core template or a template from an add-on.  The recommended approach is to use [z3c.jbot](https://pypi.org/project/z3c.jbot/) and to put your customized templates onto the filesystem and version controlled.
 
 This document is meant to simply describe the development of templates.
 
-* `Create your own add-on`_
+* `Create your own add-on`
   which you can use to contain your page templates on the file system.
 
-* Use the `z3c.jbot`_ Plone helper add-on to override existing page
+* Use the `z3c.jbot` Plone helper add-on to override existing page
   templates.
-  This is provided in the `sane_plone_addon_template`_ add-in, no separate
+  This is provided in the `sane_plone_addon_template` add-in, no separate
   set-up needed.
 
-* `z3c.jbot`_ can override page templates (``.pt`` files) for views,
+* `z3c.jbot` can override page templates (``.pt`` files) for views,
   viewlets, old style page templates and portlets.
-  In fact it can override any ``.pt`` file in the Plone source tree.
+  In fact, it can override any ``.pt`` file in the Plone source tree.
 
 
 ### Creating your own Templates
@@ -88,7 +87,7 @@ It’s designed to generate the document output of a web application, typically 
 
 The complete documentation for Chameleon can be found at [https://chameleon.readthedocs.io/](https://chameleon.readthedocs.io/) 
 
-The language used is *page templates*, originally a Zope invention[^1]
+The language used is *page templates*, originally a Zope invention[^1].
 
 The template engine compiles templates into Python byte-code and is optimized for speed. For a complex template language, the performance is very good.
 
@@ -112,7 +111,7 @@ is simple enough to grasp from an example:
 </html>
 ```
 
-The ``${...}`` notation is short-hand for text insertion [3]_. The
+The ``${...}`` notation is shorthand for text insertion. The
 Python-expression inside the braces is evaluated and the result
 included in the output. By default, the string is escaped before
 insertion. To avoid this, use the ``structure:`` prefix:
@@ -182,12 +181,12 @@ The third language subset is the translation system (known as the
 Each translation message is marked up using ``i18n:translate`` and
 values can be mapped using ``i18n:name``. Attributes are marked for
 translation using ``i18n:attributes``. The template engine generates
-`gettext <http://www.gnu.org/s/gettext/>`_ translation strings from
+`gettext <http://www.gnu.org/s/gettext/>` translation strings from
 the markup::
 
   "You have ${amount} dollars in your account."
 
-If you use a web framework such as `Pyramid <https://trypyramid.com/>`_, the
+If you use a web framework such as `Pyramid <https://trypyramid.com/>`, the
 translation system is set up automatically and will negotiate on a *target
 language* based on the HTTP request or other parameter. If not, then
 you need to configure this manually.
