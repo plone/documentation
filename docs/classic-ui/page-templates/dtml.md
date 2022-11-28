@@ -1,6 +1,6 @@
 # DTML
 
-DTML technology has been phased out many years ago.
+Document Template Markup Language (DTML) technology has been phased out many years ago.
 
 Do not use it.
 
