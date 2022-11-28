@@ -12,7 +12,15 @@ This chapter covers developing page templates.   Browser views are documented in
 * Page Templates
    * Introduction
    * Overriding existing templates
+     * z3c.jbot
+     * overriding with zcml
+     * layering with zcml
+     * editing browser views 
    * Creating your own templates
+     * stand-alone templates
+     * browser view templates
+   * Advanced Concepts
+     *  calling templates in python
 * Language Reference
    * Template Expression Language (TAL)
    * Expressions (TALES)
@@ -22,10 +30,6 @@ This chapter covers developing page templates.   Browser views are documented in
    * ${..} Operator
    * 
 
-* Chameleon
-    * blah
-    * blah
-    * blah
 * Skin Layers
 * [DTML](dtml.md)
 
@@ -54,29 +58,47 @@ The point here is that you are not limited to templates creating only HTML.
 
 ### Overriding Existing Templates
 
-Your first journey in page templates may be overriding a Plone backend core template or a template from an add-on.  The recommended approach is to use [z3c.jbot](https://pypi.org/project/z3c.jbot/) and to put your customized templates onto the filesystem and version controlled.
+Your first journey in page templates will likely be overriding a Plone backend core template or a template from an add-on.  The recommended approach is to use [z3c.jbot](https://pypi.org/project/z3c.jbot/) and to put your customized templates onto the filesystem and version controlled.
 
-This document is meant to simply describe the development of templates.
 
-* `Create your own add-on`
-  which you can use to contain your page templates on the file system.
+#### z3c.jbot
 
-* Use the `z3c.jbot` Plone helper add-on to override existing page
-  templates.
-  This is provided in the `sane_plone_addon_template` add-in, no separate
-  set-up needed.
 
-* `z3c.jbot` can override page templates (``.pt`` files) for views,
-  viewlets, old style page templates and portlets.
-  In fact, it can override any ``.pt`` file in the Plone source tree.
+`z3c.jbot` (https://pypi.org/project/z3c.jbot/ ) can override page templates (``.pt`` files) for views, viewlets, old style page templates and portlets. In fact, it can override any ``.pt`` file in the Plone source tree.
+
+Example:
+
+existing template....
+
+copy it to your project (or your addon) and name it with a special name
+
+Edit it.
+
+Restart and done!
+
+#### overriding with zcml
+
+#### layering with zcml
+
+#### editing browser views
 
 
 ### Creating your own Templates
 
-!!! admonition 'note'
+#### stand-alone templates
 
-    Although templates can be 'stand alone' templates that render a Plone object directly, this is not best practice. A combination of a View and Page Template is the correct implementation.
+```{warning}
+Although templates can be 'stand alone' templates that render a Plone object directly, this is not best practice. A combination of a View and Page Template is the correct implementation.
+```
 
+#### browser view templates
+
+
+### Advanced Concepts
+
+#### calling templates in python
+
+#### passing data to templates
 
 ### Language Reference
 ## Chameleon
