@@ -1,0 +1,127 @@
+{#
+  basic/search.html
+  ~~~~~~~~~~~~~~~~~
+
+  Template for the search page.
+
+  :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.
+  :license: BSD, see LICENSE for details.
+#}
+{%- extends "layout.html" %}
+{% set title = _('Search') %}
+{% block header %}
+  <link rel="stylesheet/less" type="text/css" href="/_static/custom.css" />
+  <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+{% endblock %}
+{%- block scripts %}
+  {{ super() }}
+  <script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+  <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
+{%- endblock %}
+{% block extrahead %}
+  <script src="{{ pathto('searchindex.js', 1) }}" defer></script>
+  {{ super() }}
+{% endblock %}
+{% block body %}
+  <h1 id="search-documentation">{{ _('Search') }}</h1>
+  {% block scriptwarning %}
+    <div id="fallback" class="admonition warning">
+    <script>$('#fallback').hide();</script>
+    <p>
+      {% trans %}Please activate JavaScript to enable the search
+      functionality.{% endtrans %}
+    </p>
+    </div>
+  {% endblock %}
+  {% block searchtext %}
+    <p>
+      {% trans %}Searching for multiple words only shows matches that contain
+      all words.{% endtrans %}
+    </p>
+  {% endblock %}
+  {% block searchbox %}
+    <form
+      action=""
+      method="get"
+      id="search-form"
+      class=""
+      >
+      <div class="row">
+        <div class="input-group col-xl-8 mb-2">
+          <input
+            type="text" name="q" id="q"
+            class="form-control"
+            placeholder="Search the docs…"
+            aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+          <label for="q" class="sr-only">Search string</label>
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">{{ _('search') }}</button>
+          </div>
+          <div class="input-group-append">
+            <button
+              type="button"
+              class="clear_search btn btn-secondary"
+            >{{ _('reset') }}</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form row mb-2">
+        <label for="doc_section" class="col sr-only">Filter by section</label>
+        <div class="col">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="doc_section" id="doc_section_all" value="all">
+            <label class="form-check-label" for="doc_section_all">
+              All Documentation
+            </label>
+          </div>
+          {% for id, title in
+            [
+              ["backend","Backend"],
+              ["plone.api","plone.api"],
+              ["plone.restapi","plone.restapi"],
+              ["classic-ui","Classic UI"],
+              ["volto","Frontend"],
+              ["contributing","Contributing"],
+            ] %}
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="doc_section" id="doc_section_{{id}}" value="{{id}}">
+              <label class="form-check-label" for="doc_section_{{id}}">
+                {{title}}
+              </label>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <span id="search-progress" style="padding-left: 10px"></span>
+    </form>
+  {% endblock %}
+
+  {% block searchresults %}
+    <div id="search-results">
+    {% if search_results %}
+      <ul>
+      {% for href, caption, context in search_results %}
+        <li><a href="{{ pathto(item.href) }}">{{ caption }}</a>
+          <div class="context">{{ context|e }}</div>
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    </div>
+  {% endblock %}
+{% endblock %}
+
+
+{% block footer %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Hide empty sub menu.
+            if ($.trim($(".topbar-contents .bd-toc").html()) === "") {
+                $(".topbar-contents .bd-toc").css("visibility", "hidden");
+            }
+        });
+    </script>
+
+{% endblock %}

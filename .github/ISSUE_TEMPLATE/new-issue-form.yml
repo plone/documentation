@@ -1,0 +1,21 @@
+name: Report an Issue
+description: Report an issue with Plone Documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this issue report!
+  - type: checkboxes
+    id: plone-versions
+    attributes:
+      label: Plone Documentation versions affected
+      options:
+        - label: 5.x
+        - label: 6.x
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: If relevant, please include links to the affected resources, screenshots, and any other helpful information.
+    validations:
+      required: true

@@ -1,0 +1,1 @@
+See our [contributing guidelines](https://6.dev-docs.plone.org/contributing/index.html).
