@@ -48,6 +48,7 @@ This chapter is a developer reference manual for working with Classic UI.
 ```{toctree}
 :maxdepth: 2
 
+working-with-content
 theming/index
 static-resources
 templates
