@@ -4,7 +4,7 @@ Items may be deleted from a folder with ease.
 
 Sometimes it is necessary to delete a content item. Again, the easiest way to do this is by using "Contents" on the Toolbar.
 
-```{figure} ../../_robot/foldercontents-delete.png
+```{figure} /_static/working-with-content/robot/foldercontents-delete.png
 :align: center
 :alt: deleting content
 ```

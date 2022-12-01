@@ -4,14 +4,14 @@ Plone web sites have a built-in system for publishing news items.
 
 Use the *Add new...* menu for a folder to add a news item:
 
-```{figure} ../../_robot/adding-news-items_add-menu.png
+```{figure} /_static/working-with-content/robot/adding-news-items_add-menu.png
 :align: center
 :alt: add-new-news-item-menu.png
 ```
 
 You will see the *Add News Item* panel:
 
-```{figure} ../../_robot/adding-news-items_add-form.png
+```{figure} /_static/working-with-content/robot/adding-news-items_add-form.png
 :align: center
 :alt: true
 ```

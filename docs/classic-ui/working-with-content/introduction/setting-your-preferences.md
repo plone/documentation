@@ -10,12 +10,12 @@ After logging in, your full name will show on the {term}`toolbar`.
 
 Click on your name to open the sub-menu, then click on the *Preferences* link to go to your personal area:
 
-```{figure} ../../_robot/show-preferences.png
+```{figure} /_static/working-with-content/robot/show-preferences.png
 :align: center
 :alt: Show Preferences
 ```
 
-```{figure} /../../_robot/personal-preferences.png
+```{figure} /_static/working-with-content/robot/personal-preferences.png
 :align: center
 :alt: Personal Preferences
 ```
@@ -30,7 +30,7 @@ Date entry fields include:
 
 Now let's switch over to the "Personal Information" tab:
 
-```{figure} ../../_robot/personal-information.png
+```{figure} /_static/working-with-content/robot/personal-information.png
 :align: center
 :alt: Personal Information
 ```
@@ -52,7 +52,7 @@ The last tab allows you to change your password.
 Plone is used by a variety of organisations. Some of these have centralized policies on where you can change your password, because this might also involve your access to other computer resources. In those cases, this screen might have been disabled.
 ```
 
-```{figure} ../../_robot/change-password.png
+```{figure} /_static/working-with-content/robot/change-password.png
 :align: center
 :alt: Change Password
 ```

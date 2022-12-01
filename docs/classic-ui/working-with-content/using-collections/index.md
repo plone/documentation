@@ -7,6 +7,6 @@ Think of them as automatically updated queries, with criteria that you define. A
 ```{toctree}
 :maxdepth: 2
 
-newstyle/introduction-to-collections
-newstyle/creating_collections
+introduction-to-collections
+creating_collections
 ```

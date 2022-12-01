@@ -1,43 +1,43 @@
 ---
 substitutions:
   columns: |-
-    ```{image} ../../_robot/foldercontents-columns.png
+    ```{image} /_static/working-with-content/robot/foldercontents-columns.png
     ```
   copy: |-
-    ```{image} ../../_robot/foldercontents-copy.png
+    ```{image} /_static/working-with-content/robot/foldercontents-copy.png
     ```
   cut: |-
-    ```{image} ../../_robot/foldercontents-cut.png
+    ```{image} /_static/working-with-content/robot/foldercontents-cut.png
     ```
   delete: |-
-    ```{image} ../../_robot/foldercontents-delete.png
+    ```{image} /_static/working-with-content/robot/foldercontents-delete.png
     ```
   paste: |-
-    ```{image} ../../_robot/foldercontents-paste.png
+    ```{image} /_static/working-with-content/robot/foldercontents-paste.png
     ```
   properties: |-
-    ```{image} ../../_robot/foldercontents-properties.png
+    ```{image} /_static/working-with-content/robot/foldercontents-properties.png
     ```
   rearrange: |-
-    ```{image} ../../_robot/foldercontents-rearrange.png
+    ```{image} /_static/working-with-content/robot/foldercontents-rearrange.png
     ```
   rename: |-
-    ```{image} ../../_robot/foldercontents-rename.png
+    ```{image} /_static/working-with-content/robot/foldercontents-rename.png
     ```
   searchbox: |-
-    ```{image} ../../_robot/foldercontents-searchbox.png
+    ```{image} /_static/working-with-content/robot/foldercontents-searchbox.png
     ```
   selected: |-
-    ```{image} ../../_robot/foldercontents-selected.png
+    ```{image} /_static/working-with-content/robot/foldercontents-selected.png
     ```
   state: |-
-    ```{image} ../../_robot/foldercontents-state.png
+    ```{image} /_static/working-with-content/robot/foldercontents-state.png
     ```
   tags: |-
-    ```{image} ../../_robot/foldercontents-tags.png
+    ```{image} /_static/working-with-content/robot/foldercontents-tags.png
     ```
   upload: |-
-    ```{image} ../../_robot/foldercontents-upload.png
+    ```{image} /_static/working-with-content/robot/foldercontents-upload.png
     ```
 ---
 
@@ -49,7 +49,7 @@ cut, paste, move, reorder, etc.
 
 The Contents tab for folders is like "File Manager" or "My Computer" system utilities in Windows and Linux desktops and the "Finder" in Mac OS X, with similar functionality.
 
-```{figure} ../../_robot/foldercontents.png
+```{figure} /_static/working-with-content/robot/foldercontents.png
 :align: center
 :alt: folder contents
 ```

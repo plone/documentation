@@ -13,7 +13,7 @@ That is because this will influence the navigation, and may lead to unwanted sid
 
 First, select the last choice in the *Add new...* menu called *Restrictions...*:
 
-```{figure} ../../_robot/show-restrictions.png
+```{figure} /_static/working-with-content/robot/show-restrictions.png
 :align: center
 :alt: show restrictions.png
 ```
@@ -31,7 +31,7 @@ The second choice is a way to reset to the default, unrestricted setting.
 
 The last choice allows selection from a list of available types:
 
-```{figure} ../../_robot/menu-restrictions.png
+```{figure} /_static/working-with-content/robot/menu-restrictions.png
 :align: center
 :alt: menu for setting restrictions.png
 ```

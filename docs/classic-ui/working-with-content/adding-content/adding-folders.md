@@ -9,14 +9,14 @@ In Plone folders are essentially used the same way, except that they are created
 Folders are added by clicking the **Add new...** drop-down menu.
 Select **Folder** from the menu:
 
-```{figure} ../../_robot/adding-folders_add-menu.png
+```{figure} /_static/working-with-content/robot/adding-folders_add-menu.png
 :align: center
 :alt: add-new-menu.png
 ```
 
 You should now see the *Add Folder* screen:
 
-```{figure} ../../_robot/adding-folders_add-form.png
+```{figure} /_static/working-with-content/robot/adding-folders_add-form.png
 :align: center
 :alt: true
 ```

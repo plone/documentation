@@ -31,7 +31,7 @@ That way you can compare how visitors will see your site, and you can spot conte
 Note the presence of the *log in* link in the screen image below.
 If there is a *log in* link showing, you haven't logged in -- and you are surfing the web site anonymously, as seen in the following screen capture of a new Plone web site:
 
-```{figure} ../../_robot/anonymous-surfing.png
+```{figure} /_static/working-with-content/robot/anonymous-surfing.png
 :align: center
 :alt: anonymous surfing
 ```
@@ -49,7 +49,7 @@ A toolbar has appeared on the left, which has a number of icons and actions that
 At the bottom of the toolbar, her name is mentioned.
 A submenu opens when she clicks on this, allowing her to log out and perform various other options.
 
-```{figure} ../../_robot/loggedin-surfing.png
+```{figure} /_static/working-with-content/robot/loggedin-surfing.png
 :align: center
 :alt: Logged in surfing
 ```

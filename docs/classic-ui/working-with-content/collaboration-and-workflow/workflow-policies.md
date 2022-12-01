@@ -31,7 +31,7 @@ In the example of the newspaper web site, a workflow policy would be set up and 
 Then, reporters would create stories and send them up the line for
 review and approval:
 
-```{figure} /_static/workflowsteps.png
+```{figure} /_static/working-with-content/workflowsteps.png
 :align: center
 :alt: true
 ```

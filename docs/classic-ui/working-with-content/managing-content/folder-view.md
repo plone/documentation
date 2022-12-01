@@ -2,7 +2,7 @@
 
 Folders have the "Display" item on the Toolbar, which controls the different ways of showing folder contents.
 
-```{figure} ../../_robot/display-menu.png
+```{figure} /_static/working-with-content/robot/display-menu.png
 :align: center
 :alt: Display menu
 ```

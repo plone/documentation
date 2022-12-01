@@ -7,21 +7,21 @@ See the later section of the manual {doc}`../using-collections/index`
 
 Choose "Collection" in the *Add new...* menu for a folder to start defining your collection:
 
-```{figure} ../../_robot/adding-collections_add-menu.png
+```{figure} /_static/working-with-content/robot/adding-collections_add-menu.png
 :align: center
 :alt: add new collection menu image
 ```
 
 Select **Collection** from the drop-down menu, and you'll see the *Add Collection* panel:
 
-```{figure} ../../_robot/adding-collections_add-form.png
+```{figure} /_static/working-with-content/robot/adding-collections_add-form.png
 :align: center
 :alt: collection form
 ```
 
 Apart from the usual fields, the interesting part starts with the **Search terms**
 
-```{figure} ../../_robot/collection-criteria.png
+```{figure} /_static/working-with-content/robot/collection-criteria.png
 :align: center
 :alt: true
 ```

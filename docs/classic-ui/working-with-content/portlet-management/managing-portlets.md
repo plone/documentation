@@ -10,7 +10,7 @@ The "left", "right" and "footer" locations come from the classical website desig
 There is still a relevance to these different locations, even on mobile devices: as a rule of thumb, the 'left' portlets will be displayed **before** the main content, and the 'right' portlets afterwards, with the 'footer' portlets last.
 ```
 
-```{figure} ../../_robot/portlet-menu.png
+```{figure} /_static/working-with-content/robot/portlet-menu.png
 :align: center
 :alt: Where to find the Portlet menu on the Toolbar
 ```
@@ -21,7 +21,7 @@ From here, you choose which region you want to work on. In the example below, we
 The footer portlet region is new for Plone 5. If you have worked on previous versions of Plone: this is where you now can find (and edit) the colophon and other items.
 ```
 
-```{figure} ../../_robot/portlet-footer.png
+```{figure} /_static/working-with-content/robot/portlet-footer.png
 :align: center
 :alt: List of footer portlets
 ```

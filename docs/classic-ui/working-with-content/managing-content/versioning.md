@@ -26,7 +26,7 @@ Versioning keeps track of all kinds of edits: content, metadata, settings, etc.
 
 Once an item has been saved, you can see the **History** by clicking on the *clock* item in the Toolbar.
 
-```{figure} ../../_robot/content-history.png
+```{figure} /_static/working-with-content/robot/content-history.png
 :align: center
 :alt: History view of a content item
 ```

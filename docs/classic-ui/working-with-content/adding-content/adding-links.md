@@ -5,14 +5,14 @@ Having links as discrete items lets you do things like organizing them in folder
 
 Add a link by clicking the menu choice in the *Add new...* menu:
 
-```{figure} ../../_robot/adding-links_add-menu.png
+```{figure} /_static/working-with-content/robot/adding-links_add-menu.png
 :align: center
 :alt: add-new-menu.png
 ```
 
 You will see the Add\*Link\* panel:
 
-```{figure} ../../_robot/adding-links_add-form.png
+```{figure} /_static/working-with-content/robot/adding-links_add-form.png
 :align: center
 :alt: Adding links form
 ```

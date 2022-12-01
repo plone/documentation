@@ -4,7 +4,7 @@ A general overview of how to add new content items in Plone, including definitio
 
 New content items are added via the **Add New . . .** drop-down menu:
 
-```{figure} ../../_robot/adding-content_add-menu.png
+```{figure} /_static/working-with-content/robot/adding-content_add-menu.png
 :align: center
 :alt: add-new-menu.png
 ```
@@ -28,7 +28,7 @@ Event
   This content type has a function which allows the site visitor to add the event to their desktop calendar. This includes applications such as: Google Calendar, Outlook, Sunbird and others.
   To add a single event to your calendar, click on the iCal link next to the "Add event to calendar" text in the main view of the event item.
 
-  ```{figure} ../../_static/events-summary-chart.png
+  ```{figure} /_static/working-with-content/events-summary-chart.png
   :align: center
   :alt: events-summary-chart.png
   ```

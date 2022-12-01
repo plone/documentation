@@ -25,7 +25,7 @@ version as part of the document's version history.
 First, navigate to the page you want to check out.
 Then from the "Actions" menu, select "Check out":
 
-```{figure} ../../_robot/working-copy_checkout.png
+```{figure} /_static/working-with-content/robot/working-copy_checkout.png
 :align: center
 :alt: true
 ```
@@ -33,7 +33,7 @@ Then from the "Actions" menu, select "Check out":
 An info message will appear indicating you're now working with a working
 copy:
 
-```{figure} ../../_robot/working-copy_checkout-notification.png
+```{figure} /_static/working-with-content/robot/working-copy_checkout-notification.png
 :align: center
 :alt: true
 ```
@@ -44,7 +44,7 @@ else can edit that published version while you have a working copy
 checked out. This will prevent other changes from being made to (and
 subsequently lost from) the published version while you edit your copy.
 
-```{figure} ../../_robot/working-copy_locked.png
+```{figure} /_static/working-with-content/robot/working-copy_locked.png
 :align: center
 :alt: true
 ```
@@ -54,7 +54,7 @@ subsequently lost from) the published version while you edit your copy.
 When you are ready to have your edited copy replace the published one,
 simply choose "Check-in" from the "Actions" drop-down menu:
 
-```{figure} ../../_robot/working-copy_checkin.png
+```{figure} /_static/working-with-content/robot/working-copy_checkin.png
 :align: center
 :alt: true
 ```
@@ -62,7 +62,7 @@ simply choose "Check-in" from the "Actions" drop-down menu:
 You will then be prompted to enter a Check-in message.
 Fill it out and click on "Check in":
 
-```{figure} ../../_robot/working-copy_checkin-form.png
+```{figure} /_static/working-with-content/robot/working-copy_checkin-form.png
 :align: center
 :alt: true
 ```
@@ -78,14 +78,14 @@ If you inadvertently do so, however, don't panic. Just go back to your working c
 
 If for any reason it becomes necessary to cancel a check out and **you don't want to save any of your changes**, simply navigate to the working copy and select "Cancel check-out":
 
-```{figure} ../../_robot/working-copy_cancel-checkout.png
+```{figure} /_static/working-with-content/robot/working-copy_cancel-checkout.png
 :align: center
 :alt: true
 ```
 
 You will prompted to confirm the "Cancel checkout" or to "Keep checkout":
 
-```{figure} ../../_robot/working-copy_cancel-checkout-form.png
+```{figure} /_static/working-with-content/robot/working-copy_cancel-checkout-form.png
 :align: center
 :alt: true
 ```

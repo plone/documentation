@@ -2,7 +2,7 @@
 
 Using "Contents" on the Toolbar gives you the overview of a folder. From here, you can do manual reordering of items in a folder.
 
-```{figure} ../../_robot/foldercontents-reorder.png
+```{figure} /_static/working-with-content/robot/foldercontents-reorder.png
 :align: center
 :alt: reordering content
 

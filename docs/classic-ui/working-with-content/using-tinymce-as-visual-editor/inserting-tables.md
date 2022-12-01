@@ -4,7 +4,7 @@ Tables are handy for tabular data and lists.
 
 To add a table, put your cursor where you want it and click the *Table* dropdown menu.
 
-```{figure} ../../_robot/tinymce-table.png
+```{figure} /_static/working-with-content/robot/tinymce-table.png
 :align: center
 :alt: TinyMCE table
 ```

@@ -13,7 +13,7 @@ Whatever the reason, Plone makes it easy to transfer individual content items, o
 
 The easiest way to move content is by using "Contents" on the Toolbar.
 
-```{figure} ../../_robot/foldercontents-cutpaste.png
+```{figure} /_static/working-with-content/robot/foldercontents-cutpaste.png
 :align: center
 :alt: cutting and pasting content
 ```

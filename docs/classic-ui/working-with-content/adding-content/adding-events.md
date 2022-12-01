@@ -4,14 +4,14 @@ Plone web sites have a built-in system for managing and showing calendar events.
 
 Use the *Add new...* menu for a folder to add an event:
 
-```{figure} ../../_robot/adding-events_add-menu.png
+```{figure} /_static/working-with-content/robot/adding-events_add-menu.png
 :align: center
 :alt: add-new-menu.png
 ```
 
 Select **Event** from the drop-down menu, and you'll see the rather large *Add Event* panel:
 
-```{figure} ../../_robot/adding-events_add-form.png
+```{figure} /_static/working-with-content/robot/adding-events_add-form.png
 :align: center
 :alt: Adding events form
 ```

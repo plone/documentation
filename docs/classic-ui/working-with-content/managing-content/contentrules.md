@@ -100,7 +100,7 @@ In this example, you're going to create a content rule that will send an email a
 > - The first option, "Disable Globally", allows you to disable ALL content rules. This is the emergency brake, for when you have created rules that are not doing what you want.
 > - In the second section of the main page for Content Rules is where any existing content rules will be listed. There are also some checkboxes to filter them, which can be useful if there are many rules defined.
 
-```{figure} ../../_robot/contentrules-start.png
+```{figure} /_static/working-with-content/robot/contentrules-start.png
 :align: center
 :alt: Content Rules overview
 ```
@@ -111,7 +111,7 @@ An "Add Rule" form comes up. Enter a descriptive title -- for this example, use:
 
 For the "Triggering event" select "Object modified". Leave "Enabled" checked, and "Stop executing rules" and "Cascading rule" unchecked.
 
-```{figure} ../../_robot/contentrules-add.png
+```{figure} /_static/working-with-content/robot/contentrules-add.png
 :align: center
 :alt: Content Rules overview
 ```
@@ -120,7 +120,7 @@ Click the "Save" button. At this point, you have essentially created a "containe
 
 Next you'll further define the trigger and actions for this rule.
 
-```{figure} ../../_robot/contentrules-conditions.png
+```{figure} /_static/working-with-content/robot/contentrules-conditions.png
 :align: center
 :alt: Content Rules conditons and actions
 ```
@@ -160,7 +160,7 @@ At this point, you have successfully created a content rule. However, this conte
   In this example we're going to the "News" folder.
 - Click on the "Rules" tab. From there you will see a drop down menu of possible content rules:
 
-```{figure} ../../_robot/contentrules-assign.png
+```{figure} /_static/working-with-content/robot/contentrules-assign.png
 :align: center
 :alt: assign content rules
 ```

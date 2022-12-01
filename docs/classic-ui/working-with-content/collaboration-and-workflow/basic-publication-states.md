@@ -4,7 +4,7 @@ The publication control system for Plone is very flexible, starting with basic s
 
 In the toolbar, for any content type --folders, images, pages, etc., and any specialized content types -- there is an item for publication state. This *state* menu has settings for controlling publication state:
 
-```{figure} ../../_robot/workflow-basic.png
+```{figure} /_static/working-with-content/robot/workflow-basic.png
 :align: center
 :alt: basic workflow menu
 ```
@@ -35,7 +35,7 @@ After a content item has been *published*, it may be *retracted*, to change the 
 private, if desired.
 The menu choices in the state menu will change accordingly:
 
-```{figure} ../../_robot/workflow-reject.png
+```{figure} /_static/working-with-content/robot/workflow-reject.png
 :align: center
 :alt: basic workflow menu
 ```

@@ -13,7 +13,7 @@ The *Edit* panel for a Page shows the title, description and text areas.
 If you do wish to give a description, which is a generally a good idea, the description can be text only -- there is no opportunity for setting styling of text, such as bold, italics, or other formatting. This keeps the descriptions of Plone content items as simple as possible, and is also required by the {term}`Dublin Core` standard.
 ```
 
-```{figure} ../../_robot/edit-page.png
+```{figure} /_static/working-with-content/robot/edit-page.png
 :align: center
 :alt: Editing a page
 ```

@@ -4,7 +4,7 @@ What to expect when you log in to a Plone site
 
 When you visit a Plone web site anonymously, or are given the web address for site maintenance, you'll see a *log in* button in the top-right corner like this:
 
-```{figure} ../_robot/login-link.png
+```{figure} /_static/working-with-content/robot/login-link.png
 :align: center
 :alt: login link
 ```
@@ -15,7 +15,7 @@ Your site administrator may have *hidden* the login link, in which case you can 
 
 After clicking the *log in* link, you'll see an input panel where you can type in your user name and password:
 
-```{figure} ../_robot/login-popup.png
+```{figure} /_static/working-with-content/robot/login-popup.png
 :align: center
 :alt: login link
 ```

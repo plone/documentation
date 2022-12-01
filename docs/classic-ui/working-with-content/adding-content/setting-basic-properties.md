@@ -5,7 +5,7 @@ The more data you can provide, the better Plone can help in making the content a
 
 Any content item, when clicked by a user with edit rights for the item, will show a set of tabs at the top for setting basic properties:
 
-```{figure} ../../_robot/basicpropertiestabs.png
+```{figure} /_static/working-with-content/robot/basicpropertiestabs.png
 :align: center
 :alt: basicpropertiestabs.png
 ```
@@ -24,7 +24,7 @@ Plone can use this metadata in a multitude of ways.
 
 Here is the *Categorization* panel, shown for a page content item (would be the same for other content types):
 
-```{figure} ../../_robot/editpagecategorization.png
+```{figure} /_static/working-with-content/robot/editpagecategorization.png
 :align: center
 :alt: Edit page categorization
 ```
@@ -44,7 +44,7 @@ The *Language* choice normally would default to the site setting, but on multili
 
 The *Dates* panel has fields for the publishing date and the expiration date, effectively start and stop dates for the content if you wish to set them:
 
-```{figure} ../../_robot/datessettings.png
+```{figure} /_static/working-with-content/robot/datessettings.png
 :align: center
 :alt: Dates Settings
 ```
@@ -80,7 +80,7 @@ The *Ownership* panel has three free-form fields for listing creators,
 contributors, and information about copyright or ownership rights to the
 content:
 
-```{figure} ../../_robot/ownershippanel.png
+```{figure} /_static/working-with-content/robot/ownershippanel.png
 :align: center
 :alt: Ownership Panel
 ```
@@ -90,7 +90,7 @@ content type, but generally there are input fields controlling whether
 or not the item appears in navigation, or if there are comments allowed,
 and other similar controls:
 
-```{figure} ../../_robot/settingspanel.png
+```{figure} /_static/working-with-content/robot/settingspanel.png
 :align: center
 :alt: Settings panel
 ```

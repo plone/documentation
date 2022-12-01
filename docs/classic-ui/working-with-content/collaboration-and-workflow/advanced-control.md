@@ -4,14 +4,14 @@ The publication control system, under the advanced menu, has sophisticated featu
 
 The *state* Toolbar menu has an *advanced*... choice:
 
-```{figure} ../../_robot/workflow-advanced-menu.png
+```{figure} /_static/working-with-content/robot/workflow-advanced-menu.png
 :align: center
 :alt: advanced state menu
 ```
 
 which brings up the *advanced* state panel:
 
-```{figure} ../../_robot/workflow-advanced.png
+```{figure} /_static/working-with-content/robot/workflow-advanced.png
 :align: center
 :alt: advanced workflow options.
 ```

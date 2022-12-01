@@ -2,14 +2,14 @@
 
 The TinyMCE editor allows you to insert image files stored in Plone into your document, using the Image button on the TinyMCE toolbar:
 
-```{figure} ../../_robot/tinymce-imgbutton.png
+```{figure} /_static/working-with-content/robot/tinymce-imgbutton.png
 :align: center
 :alt: true
 ```
 
 Clicking this button launches the Insert Image dialog:
 
-```{figure} ../../_robot/tinymce-imgdialog.png
+```{figure} /_static/working-with-content/robot/tinymce-imgdialog.png
 :align: center
 :alt: true
 ```

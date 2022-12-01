@@ -4,7 +4,7 @@ Basic options of TinyMCE.
 
 The default TinyMCE editor will look like this:
 
-```{figure} ../../_robot/tinymce.png
+```{figure} /_static/working-with-content/robot/tinymce.png
 :align: center
 :alt: true
 ```

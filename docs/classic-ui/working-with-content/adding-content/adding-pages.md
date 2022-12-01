@@ -5,14 +5,14 @@ another.
 
 To add a page, use the *Add new...* menu for a folder:
 
-```{figure} ../../_robot/adding-pages_add-menu.png
+```{figure} /_static/working-with-content/robot/adding-pages_add-menu.png
 :align: center
 :alt: add-new-menu.png
 ```
 
 Select **Page** from the menu, and you'll see the *Add Page* screen:
 
-```{figure} ../../_robot/adding-pages_add-form.png
+```{figure} /_static/working-with-content/robot/adding-pages_add-form.png
 :align: center
 :alt: Adding pages form
 ```

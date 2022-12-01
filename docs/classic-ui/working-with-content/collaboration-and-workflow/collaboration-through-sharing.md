@@ -4,7 +4,7 @@ The Sharing item on the Toolbar empowers you to collaborate with other users thr
 
 Here, Jane Doe has created a Folder called "Documentation", and has clicked on the "Sharing" option.
 
-```{figure} ../../_robot/sharing-menu.png
+```{figure} /_static/working-with-content/robot/sharing-menu.png
 :align: center
 :alt: basic workflow menu
 ```

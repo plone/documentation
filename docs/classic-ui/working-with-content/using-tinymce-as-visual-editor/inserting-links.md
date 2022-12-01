@@ -2,14 +2,14 @@
 
 Select a word or phrase and click on the *Insert/edit link* icon:
 
-```{figure} ../../_robot/tinymce-linkbutton.png
+```{figure} /_static/working-with-content/robot/tinymce-linkbutton.png
 :align: center
 :alt: TinyMCE link button
 ```
 
 The Link dialog will appear:
 
-```{figure} ../../_robot/tinymce-linkdialog.png
+```{figure} /_static/working-with-content/robot/tinymce-linkdialog.png
 :align: center
 :alt: TinyMCE link dialog
 ```

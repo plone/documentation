@@ -29,7 +29,7 @@ When you set about creating Portlets that you want to propagate, be careful to t
 In this diagram, our Portlets are designated in blue underneath the Page
 title:
 
-```{figure} /_static/hierarchy.png
+```{figure} /_static/working-with-content/hierarchy.png
 :align: center
 
 Portlet Hierarchy

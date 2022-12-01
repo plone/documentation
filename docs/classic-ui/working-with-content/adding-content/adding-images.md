@@ -13,14 +13,14 @@ Do not use BMP or TIFF formats as these are not widely supported by web browsers
 
 When you are ready to upload an image, use the *Add new...* drop-down menu.
 
-```{figure} ../../_robot/adding-images_add-menu.png
+```{figure} /_static/working-with-content/robot/adding-images_add-menu.png
 :align: center
 :alt: add-new-menu.png
 ```
 
 After clicking to add an **Image**, you'll see the *Add Image* panel:
 
-```{figure} ../../_robot/adding-images_add-form.png
+```{figure} /_static/working-with-content/robot/adding-images_add-form.png
 :align: center
 :alt: Adding images form
 ```
