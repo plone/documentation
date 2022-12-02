@@ -99,13 +99,55 @@ Local component registry
 : Configuration is done in the profile {term}`GenericSetup` in a file `componentregistry.xml`.
   Attention, its syntax is complete different from ZCML.
 
-doen here -> TODO
-
 
 ### Utilities
 
-- basics
-- see also global-utils.md
+Utility classes provide site-wide utility objects or functions.
+Compared to "plain Python functions", utilities provide the advantage of being plug-in points without need of monkey-patching.
+
+They are registered by (marker) interfaces and optional with a name - then they are called named utilities.
+Accordingly, utilities can be looked up by name and/or interface.
+
+Site customization logic or add-on products can override utilities for enhanced or modified functionality.
+
+#### Global and Local Utilities
+
+Utilities can be
+
+global
+: registered during Zope start-up. Global utilities are registered in ZCML and affect all Zope application server and Plone site instances.
+
+local
+: registered at Plone site or add-on installer time for a certain site.
+: Local utilities are registered to persistent objects. The context of local utilities is stored in a thread-local variable which is set
+during traversal. Thus, when you ask for local utilities, they usually come from a persistent registry set up in the Plone site root object.
+
+#### Registering utility
+
+Utilities can be registered in two ways, either by providing a `factory` - a callable - which creates the object as result or by `component` - a ready to use object.
+Utilities factories are taking no constructor parameters.
+
+A utility factory can be provided by a
+- function: the function is called and it returns the utility object.
+- class: the class `__call__()` method itself acts as an factory and returns a new class instance.
+
+A utility component can be
+
+- a function which needs to provide an (marker) interface,
+- a global instance of a class implementing a (marker) interface or
+- in case of a local registry, a so called "local component" which persists as an object in the ZODB - and itself needs to provide a (marker) interface.
+
+Utilities may or may not have a name.
+
+A global utility is constructed when Plone is started and ZCML is read. (needs Verification)
+A local component is either a persistent object in the ZODB or constructed when (TODO: When? Traversal time? Lookup time?)
+
+```{note}
+If you need to use parameters like context or request, consider using views or adapters instead.
+```
+
+
+To learn about some important utilities in Plone, read the chapter  {ref}`global-utils`.
 
 ### Adapters
 
