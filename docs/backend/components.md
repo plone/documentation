@@ -4,7 +4,7 @@
 
 ### Overview
 
-The Zope Component Architecture - in short ZCA - is a Python framework for supporting component based design and programming utilizing the design patterns interface, adapter, abstract factory and obserser/publish subscribe.
+The Zope Component Architecture - in short ZCA - is a Python framework for supporting component based design and programming utilizing the design patterns interface, adapter, abstract factory and publish-subscribe.
 
 Plone logic is wired together by Zope Component Architecture.
 It provides the "enterprise business logic" engine for Plone.
@@ -12,19 +12,19 @@ It provides the "enterprise business logic" engine for Plone.
 The following high level concepts are the core of the ZCA:
 
 Interface
-: abstract definition of the intended public behavior of a object providing the interface.
+: Abstract definition of the intended public behavior of a object providing the interface.
 
 Adapter
-: specific implementation of an interface.
+: Specific implementation of an interface.
 : An adapter provides an interface on its own and adapts one or more objects with specific interfaces.
 
 Utility
-: specific implementation of an interface.
+: Specific implementation of an interface either as a singleton or factored on lookup.
 
 Events and subscribers
-: events are emitted and and a subscriber may listen to those events.
-: events provide an interface and subsribers are registered for specific interfaces.
-: events are only dispatched to subscribers matching the interface of the event.
+: Events are emitted and and a subscriber may listen to those events.
+: Events provide an interface and subsribers are registered for specific interfaces.
+: Events are only dispatched to subscribers matching the interface of the event.
 
 Registries
 : Adapters, utilities and subscribers are registered in registries.
@@ -42,7 +42,7 @@ In order to understand the Zope Component Architecture you need to understand th
 
 The interface pattern (formerly called so, modern it is called protocol pattern) is used to define the behavior of the adapter.
 
-> [...] ]a protocol or interface type[a] is a data type describing a set of method signatures, the implementations of which may be provided by multiple classes that are otherwise not necessarily related to each other.
+> [...] a protocol or interface type is a data type describing a set of method signatures, the implementations of which may be provided by multiple classes that are otherwise not necessarily related to each other.
 > A class which provides the methods listed in a protocol is said to adopt the protocol, or to implement the interface.
 > [Wikipedia, Protocol (object-oriented programming)](https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming))
 
@@ -72,8 +72,8 @@ The event system uses the Publish-subscribe pattern.
 
 ### Further reading
 
-- [zope componet](https://zopecomponent.readthedocs.io/en/latest/index.html) - official documentation
-- [A Comprehensive Guide to Zope Component Architecture](https://muthukadan.net/docs/zca.html#getting-started) Book by Baiju M
+- [zope component](https://zopecomponent.readthedocs.io/en/latest/index.html) - official documentation
+- [A Comprehensiv Guide to Zope Component Architecture](https://muthukadan.net/docs/zca.html#getting-started) Book by Baiju M
 
 
 ## Component Architecture in Plone
