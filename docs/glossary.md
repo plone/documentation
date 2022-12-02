@@ -365,7 +365,7 @@ Internationalization
     Developers and template authors usually internationalize the application.
     "i18n" is shorthand for "internationalization" (the letter "I", 18 letters, the letter "N").
     Plone is fully internationalized.
-    
+
     ```{seealso}
     {term}`localization`
     ```
@@ -390,7 +390,7 @@ language tag
     A language tag is a string used as an identifier for a language.
     A language tag may have one or more subtags.
     The basic form of a language tag is `LANGUAGE-[SUBTAG]`.
-    
+
     ```{seealso}
     -   W3C article [Language tags in HTML and XML](https://www.w3.org/International/articles/language-tags/)
     -   W3C Working Draft [Language Tags and Locale Identifiers for the World Wide Web](https://www.w3.org/TR/ltli/)
@@ -434,7 +434,7 @@ react-intl
     A library that is part of [Format.JS](https://formatjs.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
 
 WSGI
-    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
+    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
 ZEO
     [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
@@ -505,4 +505,10 @@ content rule
 trigger
     A trigger is an event in Plone that causes the execution of defined actions.
     Example triggers include object modified, user logged in, and workflow state changed.
+
+Zope Component Architecture
+ZCA
+    Python framework for supporting component based design and programming utilizing the design patterns interface, adapter, abstract factory and obserser/publish subscribe.
+
+
 ```
