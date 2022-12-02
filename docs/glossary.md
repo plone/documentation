@@ -510,5 +510,7 @@ Zope Component Architecture
 ZCA
     Python framework for supporting component based design and programming utilizing the design patterns interface, adapter, abstract factory and obserser/publish subscribe.
 
+DSL
+    Domain Specific Language
 
 ```

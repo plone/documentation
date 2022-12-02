@@ -16,21 +16,21 @@ Interface
 
 Adapter
 : Specific implementation of an interface.
-: An adapter provides an interface on its own and adapts one or more objects with specific interfaces.
+  An adapter provides an interface on its own and adapts one or more objects with specific interfaces.
 
 Utility
 : Specific implementation of an interface either as a singleton or factored on lookup.
 
 Events and subscribers
 : Events are emitted and and a subscriber may listen to those events.
-: Events provide an interface and subsribers are registered for specific interfaces.
-: Events are only dispatched to subscribers matching the interface of the event.
+  Events provide an interface and subsribers are registered for specific interfaces.
+  Events are only dispatched to subscribers matching the interface of the event.
 
 Registries
 : Adapters, utilities and subscribers are registered in registries.
-: Here the wiring is done.
-: Additional to the interface, a name might be provided for adapters and utilities (so called named adapters or named utilities).
-: Registration can be done in Python code or via ZCML, an XML dialect.
+  Here the wiring is done.
+  Additional to the interface, a name might be provided for adapters and utilities (so called named adapters or named utilities).
+  Registration can be done in Python code or via ZCML, an XML dialect.
 
 Lookup
 : The lookup functions are providing the logic to dynamically factor an adapter or utility matching the object that were feed in.
@@ -80,10 +80,27 @@ The event system uses the Publish-subscribe pattern.
 
 ### Registries
 
-TODO
+The component registry is used to register adapters, utilities and subscribers.
+On lookup it is used to find and initialize the matching adapter for the given object (or objects) - and name if given - to adapt, to find the right utility for an interface - and name if given -, and to call the matching subscribers for an event.
 
-- global (ZCML)
-- local (componentregistry.xml)
+We have two levels of registries:
+
+Global component registry
+: This registry always and globally available as a singleton.
+  Configuration is done - in Plone - using ZCML files (Zope configuration markup language) which is an {term}`XML`-{term}`DSL`.
+  Usually they are named `configure.zcml`, but they may include ZCML files name different.
+
+Local component registry
+: Each Plone site has its own local component registry.
+  If there are one, two or more Plone sites created in one database, each has its own local component registry.
+: The local registry is activated and registered on traversal time.
+  If a lookup in the local registry fails it falls back to lookup the global registry.
+  In theory registries can be stacked upon each other in several layers, but in practice in Plone we have two levels - local and global.
+: Configuration is done in the profile {term}`GenericSetup` in a file `componentregistry.xml`.
+  Attention, its syntax is complete different from ZCML.
+
+doen here -> TODO
+
 
 ### Utilities
 
@@ -92,11 +109,22 @@ TODO
 
 ### Adapters
 
-TODO
 
 - general
 - views, viewlets
 - forms
+- overriding
+  - adapters
+  - utilities
+  - views
+
+### Lookup
+
+- lookup adapter
+  - using the Interface as abstract factory
+  - using the API
+  - IRO, names ...
+- lookup an utility, names, singletons and factory based
 
 ### Events and Subscribers
 
