@@ -18,7 +18,12 @@ This document covers how to build the Plone Documentation and check it for quali
 
 ## Installation
 
-Install [Enchant](https://abiword.github.io/enchant/) to check spelling.
+Optionally install [Enchant](https://abiword.github.io/enchant/) to check spelling.
+
+```{todo}
+Due to the complexity of installing Enchant and the inability of its Python bindings in [pyenchant to properly spellcheck hyphenated words](https://github.com/pyenchant/pyenchant/issues/286) through the Sphinx extension [`sphinxcontrib-spelling`](https://github.com/sphinx-contrib/spelling), the [Plone Documentation Team](https://github.com/orgs/plone/teams/documentation-team/members) is [evaluating Vale as a replacement](https://github.com/plone/documentation/issues/1347).
+```
+
 
 **macOS**
 
