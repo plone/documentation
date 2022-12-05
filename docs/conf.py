@@ -44,6 +44,7 @@ templates_path = ["_templates"]
 extensions = [
     "myst_parser",
     "sphinx.ext.autodoc",
+    "sphinx.ext.ifconfig",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     "sphinx_copybutton",
@@ -306,3 +307,4 @@ source_replacements = {
 def setup(app):
     app.add_config_value("source_replacements", {}, True)
     app.connect("source-read", source_replace)
+    app.add_config_value("context", "documentation", "env")
