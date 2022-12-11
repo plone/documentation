@@ -73,7 +73,47 @@ Overall, behaviors are an important part of the Plone content management system 
 
 ## Adding or removing a behavior from a type
 
-Given you already have an add-on for customizations with a setup profile...
+There are two ways to add or remove a behavior on a type:
+
+- through the web using the control panel
+- using a custom add-on GenericSetup profile
+
+### Through the Web
+
+1. Go to the Site Setup and chose the Content Types control panel
+2. Select the type where you want to add or remove a behavior
+3. Then click on the Behaviors tab of the types settings.
+4. A list of all available behaviors appears.
+   Select or unselect the checkbox of the behavior you want to add to or remove from the type.
+5. Save the form by clicking on the Save button at the bottom of the page.
+
+### Using a GenericSetup profile
+
+Given you already have a custom add-on with a `profiles/default` directory.
+Given we created a custom behavior named `mybehavior.subtitle`.
+
+If you want to enable a behavior on an existing content type, create a new directory `types` under `profiles/default`.
+In there create a file named the same as the content type you want to change.
+In the example here, you want to add a behavior to the built-in Event type.
+The file to create is named `Event.xml` and it is a Factory Type Information definition.
+You need to change the behaviors configuration only so that all other parts can be omitted.
+This looks like so:
+
+```XML
+
+<?xml version="1.0"?>
+<object
+    i18n:domain="plone"
+    meta_type="Dexterity FTI"
+    name="Event"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <property name="behaviors" purge="false">
+    <element value="myproject.subtitle" />
+  </property>
+</object>
+```
+
+After you apply the profile (or uninstall and install the custom add-on), the behavior is available on the Event content type.
 
 ## How behaviors are working
 
@@ -247,7 +287,7 @@ This field is not displayed in most views.
 To display the data entered in this field you need to modify the page template and access the `price_net` field as `context.price_net` there.
 To access the `price_vat` and `price_gross` fields you need to get the adapter in your view class like so:
 
-```python
+```Python
 from .price import IPriceBehavior
 
 class SomeViewClass:
