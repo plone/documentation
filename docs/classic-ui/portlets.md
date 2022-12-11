@@ -18,9 +18,11 @@ In Plone, a portlet is a small, modular piece of content that can be displayed i
 The context is either the current part of the content hierarchy, the current user's group memberships, or the current content type.
 Thus, if a portlet was set on a folder, all contained items do display the portlet unless it is explicitly blocked.
 
-Portlets are highly customizable and can be used to display a wide variety of information. They can be added, removed, or rearranged on a web page by users with the appropriate permissions, allowing for a high degree of flexibility in the layout and content of a Plone site.
+Portlets are highly customizable and can be used to display a wide variety of information.
+They can be added, removed, or rearranged on a web page by users with the appropriate permissions, allowing for a high degree of flexibility in the layout and content of a Plone site.
 
-Plone comes with a number of built-in portlets, such as the news portlet, the events portlet, and the login portlet. In addition, developers can create custom portlets to display specific types of information or to provide specific functionality.
+Plone comes with several built-in portlets, such as the news portlet, the events portlet, and the login portlet.
+In addition, developers can create custom portlets to display specific types of information or to provide specific functionality.
 
 ## Adding a portlet to a page
 
@@ -32,17 +34,21 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
    This will open the "Manage portlets" screen.
 
 3. In the "Add portlets" menu, select the portlet that you want to add and click the "Add" button.
-  This will add the portlet to the list of "Portlets assigned here" on the screen.
+  This will open an edit form, now fill in the form.
 
 4. Click the "Save" button to save your changes and add the portlet to the web page.
-Note that you must have the appropriate permissions in order to add portlets to a web page. If you do not see the "Manage portlets" link, you may need to contact the site administrator to request access.
+   This adds the portlet to the list of "Portlets assigned here" on the screen.
+   Note that you must have the appropriate permissions to add portlets to a web page.
+   If you do not see the "Manage portlets" link, you may need to contact the site administrator to request access.
 
 5. Use the "Up" and "Down" arrows in the "Assigned portlets" section to change the order in which the portlets will be displayed on the web page.
+   The "Hide" button will deactivate the portlet.
+   The "X" button deletes the portlet.
 
 
 ## Writing a custom Portlet
 
-To create a portlet, you will need to write a Python class that defines the portlet and its behavior.
+To create a portlet, you will need to write Python classes that define the portlet and its behavior.
 This class should subclass the Portlet class from the `plone.portlets` package.
 
 Here is an example of a very simple portlet class ``my_portlet.py``:
@@ -176,4 +182,4 @@ These values should match the corresponding classes and interfaces defined in th
 
 This file registers the MyPortlet class as a portlet with Plone. It also specifies the portlet's name, title, description, and category.
 
-To get more example you can also look at the source code of the Plone core package `plone.app.porlets`, or of other Plone add-ons that include portlets for examples of how to write and register portlets.
+To get more examples you can also look at the source code of the Plone core package `plone.app.porlets`, or of other Plone add-ons that include portlets for examples of how to write and register portlets.
