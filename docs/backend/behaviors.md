@@ -11,10 +11,6 @@ myst:
 
 # Behaviors
 
-```{seealso}
-See the chapter {ref}`training:behaviors1-label` from the Mastering Plone 6 Training.
-```
-
 ## What are Behaviors in Plone
 
 In Plone, behaviors are a way to add additional, reusable functionality to content objects without modifying the objects themselves.
@@ -299,4 +295,10 @@ class SomeViewClass:
     def gross(self):
         adapter = IPriceBehavior(context)
         return adapter.price_gross
+```
+
+### Further reading on behaviors
+
+```{seealso}
+See the chapter {ref}`training:behaviors1-label` from the Mastering Plone 6 Training.
 ```
