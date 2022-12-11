@@ -297,6 +297,16 @@ class SomeViewClass:
         return adapter.price_gross
 ```
 
+### Creating a behavior with PloneCLI
+
+To add a behavior to your add-on, you can use PloneCLI as follows:
+
+```bash
+plonecli add behavior
+```
+
+This will create the behavior Python file in the `behaviors` folder where you can define your behaviors schema fields and registers the behavior in the `configure.zcml`.
+
 ### Further reading on behaviors
 
 ```{seealso}
