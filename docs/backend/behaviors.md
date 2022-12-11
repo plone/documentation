@@ -86,7 +86,7 @@ There are two ways to add or remove a behavior on a type:
 ### Using a GenericSetup profile
 
 Given you already have a custom add-on with a `profiles/default` directory.
-Given we created a custom behavior named `mybehavior.subtitle`.
+Given you created a custom behavior named `mybehavior.subtitle`.
 
 If you want to enable a behavior on an existing content type, create a new directory `types` under `profiles/default`.
 In there create a file named the same as the content type you want to change.
@@ -153,7 +153,7 @@ The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/bl
 
 ## Custom behaviors
 
-From the last section we can take away, that there are two main types of behaviors:
+From the last section you can take away, that there are two main types of behaviors:
 
 - Schema-only behaviors: These behaviors have only a schema with fields.
 
@@ -202,13 +202,13 @@ To display the data entered in this field you need to modify the page template a
 
 ### Creating a behavior with an adapter and factory
 
-Given we want to display a price with different content types.
+Given you want to display a price with different content types.
 The price is stored as the net value on the type as a floating point number.
-For display, we need at several places the VAT and the gross value.
+For display, you need at several places the VAT and the gross value.
 
-We create a schema with the net value for the form and attributes for the calculated values.
-We create an adapter to calculate the VAT and gross values.
-We need a marker interface to distinguish between context and adapter.
+You create a schema with the net value for the form and attributes for the calculated values.
+You create an adapter to calculate the VAT and gross values.
+You need a marker interface to distinguish between context and adapter.
 
 The Python code in a file `price.py` looks like so:
 
