@@ -11,12 +11,252 @@ myst:
 
 # Behaviors
 
-
 ```{seealso}
 See the chapter {ref}`training:behaviors1-label` from the Mastering Plone 6 Training.
 ```
 
-```{todo}
-Contribute to this documentation!
-See issue [Backend > Behaviors needs content](https://github.com/plone/documentation/issues/1302).
+## What are Behaviors in Plone
+
+In Plone, behaviors are a way to add additional, reusable functionality to content objects without modifying the objects themselves.
+Behaviors are essentially small chunks of code that can be plugged onto content objects to provide new features or capabilities.
+
+A Plone behavior could be used to
+
+- Add a set of form fields (on standard add and edit forms)
+- Enable a particular event handler
+- Enable one or more views, viewlets, or other UI components
+- Anything else which may be expressed in code via an adapter and/or marker interface.
+
+Behaviors can be added to content types on an as-needed basis, allowing for a high degree of flexibility and customization.
+
+Plone already provides lots of behaviors for the built-in content types.
+
+Other behaviors are implemented as add-on products, which can be installed and configured through the Plone control panel.
+Once a behavior has been installed, it can be applied to any content type by selecting it in the Dexterity configuration section of the Plone control panel.
+This allows the object to gain the additional functionality provided by the behavior.
+
+Overall, behaviors are an important part of the Plone content management system and allow for powerful customization and extensibility of content objects.
+
+## Built-in behaviors
+
+| short name  | Title            | Desription                    |
+|-------------|------------------|-------------------------------|
+| plone.allowdiscussion  | Allow discussion | Allow discussion on this item |
+| plone.basic  | Basic metadata | Adds title and description fields. |
+| plone.categorization  | Categorization | Adds keywords and language fields. |
+| plone.collection  | Collection | Adds collection behavior |
+| plone.publication  | Date range | Adds effective date and expiration date fields. |
+| plone.dublincore | Dublin Core metadata | Adds standard metadata fields (equals Basic metadata +    Categorization + Effective range + Ownership  |
+| plone.eventattendees  | Event Attendees | Attendees extension for Events. |
+| plone.eventbasic  | Event Basic | Basic Event schema. |
+| plone.eventcontact  | Event Contact | Contact extension for Events. |
+| plone.eventlocation  | Event Location | Location extension for Events. |
+| plone.eventrecurrence  | Event Recurrence | Recurrence extension for Events. |
+| plone.excludefromnavigation  | Exclude From navigation | Allow items to be excluded from navigation |
+| plone.constraintypes| Folder Addable Constrains | Restrict the content types that can be added to folderish   content |
+| plone. textindexer | Full-Text Indexing | Enables the enhanced full-text indexing for a content type. If a field in the schema is marked with the `searchable` directive, its content gets added to the    `SearchableText` index in the catalog |
+| plone.leadimage  | Lead Image | Adds image and image caption fields |
+| plone.locking  | Locking | Locking support for dexterity |
+| plone.translatable  | Multilingual Support | Make this content type multilingual aware. Multilingual support must be installed. |
+| plone.namefromfilename | Name from file name | Automatically generate short URL name for content based on its    primary field file name
+| plone.namefromtitle | Name from title | Automatically generate short URL name for content based on its initial    title
+| plone.navigationroot  | Navigation root | Make all items of this type a navigation root |
+| plone.nextpreviousenabled  | Next previous navigation | Enable next previous navigation for all items of this type |
+| plone.nextprevioustoggle  | Next previous navigation toggle | Allow items to have next previous navigation enabled |
+| plone.ownership  | Ownership | Adds creator, contributor, and rights fields. |
+| plone.relateditems  | Related items | Adds the ability to assign related items |
+| plone.richtext  | RichText | Adds richtext behavior |
+| plone.shortname  | Short name | Gives the ability to rename an item from its edit form. |
+| plone.tableofcontents  | Table of contents | Adds a table of contents |
+| plone.thumb_icon | Thumbs and icon handling | Options to suppress thumbs and/or icons and to override thumb   size in listings, tables etc.
+| plone.versioning  | Versioning | Versioning support with CMFEditions |
+
+## Adding or removing a behavior from a type
+
+Given you already have an add-on for customizations with a setup profile...
+
+## How behaviors are working
+
+At the most basic level, a behavior is like a conditional adapter.
+For a Dexterity content type, the default condition is, "is this behavior listed in the behaviors property in the FTI?"
+But the condition itself is an adapter; in rare cases, this can be overruled.
+When a behavior is enabled for a particular object, it will be possible to adapt that object to the behavior's interface.
+If the behavior is disabled, adaptation will fail.
+
+A behavior consists at the very least of an interface and some metadata, namely a name, title, and description.
+This is also called a schema-only interface
+
+In other cases, there is also a factory, akin to an adapter factory, which will be invoked to get an appropriate adapter when requested.
+This is usually just a class that looks like any other adapter factory, although it will tend to apply to Interface, IContentish, or a similarly broad context.
+
+Behaviors can specify a marker interface, which will be directly provided by instances for which the behavior is enabled.
+If you want to conditionally enable event handlers or view components, they can be registered for this marker interface.
+
+Some behaviors have no factory.
+In this case, the behavior interface and the marker interface must be the same.
+
+If a factory is given a marker interface different from the behavior interface must be declared!
+
+Behaviors are registered globally, using the `<plone.behavior />` ZCML directive.
+This results in, among other things, a named utility providing `plone.behavior.interfaces.IBehavior` being registered.
+This utility contains various information about the behavior, such as its name, title, interface, and (optional) factory and marker interface.
+
+The utility name is the name attribute of the behavior directive.
+Historically the full dotted name to the behavior interface is registered as name too, but usage is discouraged.
+
+
+Behaviors are named adapters.
+They adapt an interface, for which they are registered and they provide another interface with new functionality such as attributes and methods.
+
+Dexterity types are transparently looking up behaviors registered for a type.
+If a behavior provides new attributes it is provided as an attribute of the adapted object.
+
+```{seealso}
+The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/blob/master/README.rst) explains the concepts and different ways to register a behavior in detail.
+```
+
+## Custom behaviors
+
+From the last section we can take away, that there are two main types of behaviors:
+
+- Schema-only behaviors: These behaviors have only a schema with fields.
+
+- Full behaviors: A python class containing the logic of the behavior, an interface or schema defining the contract of the behavior, and a marker interface applied to the content type.
+
+### Creating a schema-only behavior
+
+Given you want to add a field `subtitle` to some existing content types of your custom add-on.
+
+You need to create a file `subtitle.py` in your addon like so:
+
+```python
+from plone.autoform.interfaces import IFormFieldProvider
+from plone.supermodel import model
+from zope import schema
+from zope.interface import provider
+
+
+@provider(IFormFieldProvider)
+class ISubtitleBehavior(model.Schema):
+    """Subtitle behavior."""
+
+    subtitle = schema.Text(
+        title="Subtitle",
+        description="A title to be displayed below the title",
+        default="",
+        required=False,
+    )
+```
+
+You need to add a ZCML snippet to the `configure.zcml` next to `subtitle.py` like so:
+
+```XML
+<plone:behavior
+      name="myproject.subtitle"
+      provides=".subtitle.ISubtitleBehavior"
+      title="Subtitle"
+  />
+```
+
+After a restart of Plone, the behavior can be added to the type in the Content Types control panel.
+The add and edit forms are containing a new field `Subtitle`.
+
+This field is not displayed in most views.
+To display the data entered in this field you need to modify the page template and access the field as `context.subtitle` there.
+
+### Creating a behavior with an adapter and factory
+
+Given we want to display a price with different content types.
+The price is stored as the net value on the type as a floating point number.
+For display, we need at several places the VAT and the gross value.
+
+We create a schema with the net value for the form and attributes for the calculated values.
+We create an adapter to calculate the VAT and gross values.
+We need a marker interface to distinguish between context and adapter.
+
+The Python code in a file `price.py` looks like so:
+
+```python
+from plone.autoform.interfaces import IFormFieldProvider
+from plone.supermodel import model
+from zope import schema
+from zope.interface import Attribute
+from zope.interface import implementer
+from zope.interface import Interface
+from zope.interface import provider
+
+
+@provider(IFormFieldProvider)
+class IPriceBehavior(model.Schema):
+    """Behavior: a price, VAT and gross."""
+
+    price_net = schema.Float(
+        title="Price (net)",
+        required=True,
+    )
+    price_vat = Attribute("VAT 20% of net price")
+    price_gross = Attribute("Price gross (net + VAT 20%")
+
+
+class IPriceMarker(Interface):
+    """Marker for content that has a price."""
+
+
+@implementer(IPriceBehavior)
+class PriceAdapter:
+    def __init__(self, context):
+        self.context = context
+
+    @property
+    def price_net(self):
+        """Getter, read from context and return back"""
+        return self.context.price_net
+
+    @price_net.setter
+    def price_net(self, value):
+        """Setter, called by the form, set on context"""
+        self.context.price_net = value
+
+    @property
+    def price_vat(self):
+        return self.price_net * 0.2
+
+    @property
+    def price_gross(self):
+        return self.price_net + self.price_vat
+
+```
+
+The registration in the `configure.zcml` looks like so:
+
+```XML
+  <plone:behavior
+      factory=".price.PriceAdapter"
+      for=".price.IPriceMarker"
+      marker=".price.IPriceMarker"
+      name="myproject.price"
+      provides=".price.IPriceBehavior"
+      title="Price with net, VAT and gross"
+  />
+  ```
+
+After a restart of Plone, the behavior can be added to the type in the Content Types control panel.
+The add and edit forms are containing a new field `Price (net)`.
+
+This field is not displayed in most views.
+To display the data entered in this field you need to modify the page template and access the `price_net` field as `context.price_net` there.
+To access the `price_vat` and `price_gross` fields you need to get the adapter in your view class like so:
+
+```python
+from .price import IPriceBehavior
+
+class SomeViewClass:
+
+    def vat(self):
+        adapter = IPriceBehavior(context)
+        return adapter.price_vat
+
+    def gross(self):
+        adapter = IPriceBehavior(context)
+        return adapter.price_gross
 ```
