@@ -182,4 +182,4 @@ These values should match the corresponding classes and interfaces defined in th
 
 This file registers the MyPortlet class as a portlet with Plone. It also specifies the portlet's name, title, description, and category.
 
-To get more examples you can also look at the source code of the Plone core package `plone.app.porlets`, or of other Plone add-ons that include portlets for examples of how to write and register portlets.
+To get more examples you can also look at the source code of the Plone core package (plone.app.portlets)[https://github.com/plone/plone.app.portlets], or of other Plone add-ons that include portlets for examples of how to write and register portlets.
