@@ -2,9 +2,9 @@
 myst:
   html_meta:
     "description": "Basic information about portlets in classic UI"
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "property=og:description": "Basic information about portlets in classic UI"
+    "property=og:title": "Portlets"
+    "keywords": "portlets"
 ---
 
 (classic-ui-portlets-label)=
@@ -14,6 +14,9 @@ myst:
 ## What is a Portlet?
 
 In Plone, a portlet is a small, modular piece of content that can be displayed in a specific area of a web page. Portlets are typically used to display information that is relevant to the current context, such as the latest news, upcoming events, or a list of related documents.
+
+The context is either the current part of the content hierarchy, the current user's group memberships, or the current content type.
+Thus, if a portlet was set on a folder, all contained items do display the portlet unless it is explicitly blocked.
 
 Portlets are highly customizable and can be used to display a wide variety of information. They can be added, removed, or rearranged on a web page by users with the appropriate permissions, allowing for a high degree of flexibility in the layout and content of a Plone site.
 
@@ -25,7 +28,7 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
 
 1. Navigate to the web page where you want to add the portlet.
 
-2. Click on the "Manage portlets" link in the toolbar of the page and select the region on the page to mofify.
+2. Click on the "Manage portlets" link in the toolbar of the page and select the region on the page to modify.
    This will open the "Manage portlets" screen.
 
 3. In the "Add portlets" menu, select the portlet that you want to add and click the "Add" button.
@@ -133,11 +136,12 @@ Here is the example for a simple page template ``my_portlet.pt``:
 </html>
 ```
 
-This portlet class defines a portlet with the title "My Portlet" and the name "my-portlet". When the portlet is rendered, it will use the template file `my_portlet.pt` to generate its HTML output that displays a greeting message..
+This portlet class defines a portlet with the title "My Portlet" and the name "my-portlet". When the portlet is rendered, it will use the template file `my_portlet.pt` to generate its HTML output that displays a greeting message.
 
-The message is set when the portlet is added, and can be edited in the portlet's edit form.
+The message is set when the portlet is added and can be edited in the portlet's edit form.
 
-To register this portlet with Plone, you will need to create a configure.zcml file that tells Plone about the portlet, and - after a restart - you can add it to a Plone page using the "manage portlets" screen. Here is an example configure.zcml file that registers the MyPortlet class defined above:
+To register this portlet with Plone, you will need to create a ``configure.zcml`` file that tells Plone about the portlet, and - after a restart - you can add it to a Plone page using the "manage portlets" screen.
+Here is an example ``configure.zcml`` file that registers the MyPortlet class defined above:
 
 ```XML
 <configure xmlns="http://namespaces.zope.org/zope"
