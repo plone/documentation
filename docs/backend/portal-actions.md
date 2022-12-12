@@ -11,8 +11,6 @@ myst:
 
 # Portal Actions
 
-## What are "Actions" in Plone
-
 Actions are links or buttons that allow users to perform specific actions on your site.
 These actions can be anything from viewing a content item to editing a page, to accessing a specific feature of your site.
 
@@ -23,7 +21,7 @@ Here the portal actions are described.
 
 Portal actions are typically displayed in the site's navigation menu or toolbar and can be accessed by users with the appropriate permissions.
 
-Portal actions are managed using the "Portal Actions" control panel in Plone.
+Portal actions are managed using the {guilabel}`Portal Actions` control panel in Plone.
 This control panel allows you to add, edit, and delete actions, as well as organize them into categories and control where they are available on your site.
 
 ## Anatomy of a Portal action
@@ -59,11 +57,19 @@ You can use the "Portal Actions" control panel to manage and organize your site'
 Several different action categories are used for different purposes.
 These categories include:
 
-- *Object Actions*: actions that are available when viewing a specific content item
-- *Object Buttons*: actions that are displayed as buttons when viewing a specific content item
-- *Portal Tabs*: actions that are displayed as tabs on the top of the page
-- *Site Actions*: actions that are available on every page of your site
-- *User Actions*: actions that are available to users when they are logged in to your site
+Object Actions
+: `Actions that are available when viewing a specific content item.`
+
+Object Buttons
+: `Actions that are displayed as buttons when viewing a specific content item.`
+Portal Tabs
+: `Actions that are displayed as tabs on the top of the page.`
+
+Site Actions
+: `Actions that are available on every page of your site`
+
+User Actions
+: `Actions that are available to users when they are logged in to your site`
 
 Each of these action categories serves a different purpose and is intended for use in specific areas of the site.
 For example, object actions are intended for actions that are specific to a particular content item, while site actions are intended for actions that are available on every page of your site.
@@ -80,19 +86,19 @@ See issue [Backend > missing chapter Expressions needs content](https://github.c
 
 ## Adding or editing portal actions
 
-To add or edit portal actions, you can use the "Portal Actions" control panel.
-To access this, log in to your Plone site as a user with the appropriate permissions, and then go to the "Site Setup" page.
-From there, click on the "Portal Actions" link in the "Plone Configuration" section.
+To add or edit portal actions, you can use the Portal Actions control panel.
+To access this, log in to your Plone site as a user with the appropriate permissions, and then go to the {guilabel}`Site Setup` page.
+From there, click on the {guilabel}`Portal Actions` link in the {guilabel}`Plone Configuration` section.
 
 Once you are on the "Actions" control panel, you will see a list of all the existing portal actions for your site.
-To add a new action, click on the "Add new action" button at the top of the page.
+To add a new action, click on the {guilabel}`Add new action` button at the top of the page.
 This will open a form where you can enter the details for your new action, such as the action name, URL, and any additional parameters.
 
 To edit an existing action, click on the action name in the list to open the action's details page.
 From there, you can edit the action's properties, such as the name, URL, and parameters.
 
 It's important to note that the ability to add or edit portal actions is only available to users with the appropriate permissions.
-If you do not have the necessary permissions, you will not be able to access the "Portal Actions" control panel.
+If you do not have the necessary permissions, you will not be able to access the Portal Actions control panel.
 
 ## Exporting or importing portal actions
 
@@ -104,9 +110,9 @@ You can cut out snippets from this file for creating `actions.xml` containing on
 
 To export all actions:
 
-- Go to "Site Setup" and choose "Management Interface"
-- Go to "portal_setup"
-- Click the tab "Export"
-- Choose "Actions Providers"
-- Click the "Export selected steps" button at the end of the page
+- Go to {guilabel}`Site Setup` and choose {guilabel}`Management Interface`
+- Go to {guilabel}`portal_setup`
+- Click the tab {guilabel}`Export`
+- Choose the checkbox {guilabel}`Actions Providers`
+- Click the button {guilabel}`Export selected steps` at the end of the page
 
