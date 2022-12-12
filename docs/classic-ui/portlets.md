@@ -30,19 +30,20 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
 1. Navigate to the web page where you want to add the portlet.
 
 2. Click on the {guilabel}`Manage portlets` link in the toolbar of the page and select the region on the page to modify.
-   This will open the "Manage portlets" screen.
+   This will open the screen to manage portlets for the current item.
+
+   Note that you must have the appropriate permissions to add portlets to a web page.
+   If you do not see the {guilabel}`Manage portlets` link, you may need to contact the site administrator to request access.
 
 3. In the {menuselection}`Add portlets` menu, select the portlet that you want to add, and click the {guilabel}`Add` button.
   This will open an edit form, now fill in the form.
 
-4. Click the "Save" button to save your changes and add the portlet to the web page.
-   This adds the portlet to the list of "Portlets assigned here" on the screen.
-   Note that you must have the appropriate permissions to add portlets to a web page.
-   If you do not see the "Manage portlets" link, you may need to contact the site administrator to request access.
+4. Click the {guilabel}`Save` button to save your changes and add the portlet to the web page.
+   This adds the portlet to the list of {guilabel}`Portlets assigned here` on the screen.
 
-5. Use the "Up" and "Down" arrows in the "Assigned portlets" section to change the order in which the portlets will be displayed on the web page.
-   The "Hide" button will deactivate the portlet.
-   The "X" button deletes the portlet.
+5. Use the {guilabel}`Up` and {guilabel}`Down` arrows in the {guilabel}`Assigned portlets` section to change the order in which the portlets will be displayed on the web page.
+   The {guilabel}`Hide` button will deactivate the portlet.
+   The {guilabel}`X` button deletes the portlet.
 
 
 ## Writing a custom Portlet
@@ -169,13 +170,26 @@ Here is an example ``configure.zcml`` file that registers the MyPortlet class de
 
 This file registers a portlet with the following properties:
 
-- *Title:* Example" Portlet"
-- *Description:* "A portlet that displays a greeting message"
-- *Add form:* "example.portlet.add"
-- *Edit form:* "example.portlet.edit"
-- *Assignment:* "example.portlet.Assignment"
-- *Renderer:* "example.portlet.Renderer"
-- *Schema:* "example.portlet.IExamplePortlet"
+Title
+: `Example" Portlet`
+
+Description
+: `A portlet that displays a greeting message`
+
+Add form
+: `example.portlet.add`
+
+Edit form
+: `example.portlet.edit`
+
+Assignment
+: `example.portlet.Assignment`
+
+Renderer
+: `example.portlet.Renderer`
+
+Schema
+: `example.portlet.IExamplePortlet`
 
 These values should match the corresponding classes and interfaces defined in the example code from the previous example.
 
