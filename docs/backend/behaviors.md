@@ -18,10 +18,11 @@ Behaviors are essentially small chunks of code that can be plugged onto content 
 
 A Plone behavior could be used to
 
-- Add a set of form fields (on standard add and edit forms)
-- Enable a particular event handler
-- Enable one or more views, viewlets, or other UI components
-- Anything else which may be expressed in code via an adapter and/or marker interface.
+- add a set of form fields (on standard add and edit forms),
+- add logic as part of the adapter,
+- enable a particular event handler,
+- enable one or more views, viewlets, or other UI components,
+- do anything else which may be expressed in code via an adapter and/or marker interface.
 
 Behaviors can be added to content types on an as-needed basis, allowing for a high degree of flexibility and customization.
 
@@ -71,17 +72,17 @@ Overall, behaviors are an important part of the Plone content management system 
 
 There are two ways to add or remove a behavior on a type:
 
-- through the web using the control panel
-- using a custom add-on GenericSetup profile
+- through the web using the control panel,
+- using a custom add-on GenericSetup profile.
 
 ### Through the Web
 
-1. Go to the Site Setup and chose the Content Types control panel
+1. Go to the {guilabel}`Site Setup` and chose the {guilable}`Content Types` control panel
 2. Select the type where you want to add or remove a behavior
-3. Then click on the Behaviors tab of the types settings.
+3. Then click on the {guilabel}`Behaviors` tab of the settings of the type.
 4. A list of all available behaviors appears.
    Select or unselect the checkbox of the behavior you want to add to or remove from the type.
-5. Save the form by clicking on the Save button at the bottom of the page.
+5. Save the form by clicking on the {guilabel}`Save` button at the bottom of the page.
 
 ### Using a GenericSetup profile
 
