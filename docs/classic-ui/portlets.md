@@ -11,7 +11,6 @@ myst:
 
 # Portlets
 
-## What is a Portlet?
 
 In Plone, a portlet is a small, modular piece of content that can be displayed in a specific area of a web page. Portlets are typically used to display information that is relevant to the current context, such as the latest news, upcoming events, or a list of related documents.
 
@@ -30,10 +29,10 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
 
 1. Navigate to the web page where you want to add the portlet.
 
-2. Click on the "Manage portlets" link in the toolbar of the page and select the region on the page to modify.
+2. Click on the {guilabel}`Manage portlets` link in the toolbar of the page and select the region on the page to modify.
    This will open the "Manage portlets" screen.
 
-3. In the "Add portlets" menu, select the portlet that you want to add and click the "Add" button.
+3. In the {menuselection}`Add portlets` menu, select the portlet that you want to add, and click the {guilabel}`Add` button.
   This will open an edit form, now fill in the form.
 
 4. Click the "Save" button to save your changes and add the portlet to the web page.
@@ -49,7 +48,7 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
 ## Writing a custom Portlet
 
 To create a portlet, you will need to write Python classes that define the portlet and its behavior.
-This class should subclass the Portlet class from the `plone.portlets` package.
+This class should subclass the `Portlet` class from the `plone.portlets` package.
 
 Here is an example of a very simple portlet class ``my_portlet.py``:
 
@@ -149,7 +148,7 @@ The message is set when the portlet is added and can be edited in the portlet's 
 To register this portlet with Plone, you will need to create a ``configure.zcml`` file that tells Plone about the portlet, and - after a restart - you can add it to a Plone page using the "manage portlets" screen.
 Here is an example ``configure.zcml`` file that registers the MyPortlet class defined above:
 
-```XML
+```xml
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:browser="http://namespaces.zope.org/browser"
            xmlns:plone="http://namespaces.plone.org/plone"
@@ -178,8 +177,8 @@ This file registers a portlet with the following properties:
 - *Renderer:* "example.portlet.Renderer"
 - *Schema:* "example.portlet.IExamplePortlet"
 
-These values should match the corresponding classes and interfaces defined in the example code from the previous answer.
+These values should match the corresponding classes and interfaces defined in the example code from the previous example.
 
-This file registers the MyPortlet class as a portlet with Plone. It also specifies the portlet's name, title, description, and category.
+This file registers the `MyPortlet` class as a portlet with Plone. It also specifies the portlet's name, title, description, and category.
 
-To get more examples you can also look at the source code of the Plone core package (plone.app.portlets)[https://github.com/plone/plone.app.portlets], or of other Plone add-ons that include portlets for examples of how to write and register portlets.
+For more examples of how to write and register portlets, look at the source code of the Plone core package [`plone.app.portlets`](https://github.com/plone/plone.app.portlets), or of other Plone add-ons that include portlets.
