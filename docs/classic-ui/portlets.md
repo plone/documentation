@@ -11,11 +11,15 @@ myst:
 
 # Portlets
 
+In Plone, a portlet is a small, modular visual element that can be added to a specific area of a web page, such as the right or left columns, or the footer.
+Portlets can be used to display a variety of information, such as the latest news, upcoming events, or a list of related documents.
+They can also be prepared to store their own set of fields, allowing users to add custom content to the portlet.
+Portlets are typically used to provide relevant information to users in the context of the current page, hierarchy, user, or group.
 
-In Plone, a portlet is a small, modular piece of content that can be displayed in a specific area of a web page. Portlets are typically used to display information that is relevant to the current context, such as the latest news, upcoming events, or a list of related documents.
-
-The context is either the current part of the content hierarchy, the current user's group memberships, or the current content type.
-Thus, if a portlet was set on a folder, all contained items do display the portlet unless it is explicitly blocked.
+Inheritance of Plone portlets allows for the automatic display of portlets in child items within the content hierarchy.
+This means that if a portlet is set on a parent folder, all child items within that folder will automatically display the portlet unless it is explicitly blocked.
+This can be useful for displaying consistent information throughout a section of the website, without having to individually set the portlet on each child item.
+The inheritance of portlets can be overridden at any level of the content hierarchy, allowing for fine-grained control over the display of portlets on the website.
 
 Portlets are highly customizable and can be used to display a wide variety of information.
 They can be added, removed, or rearranged on a web page by users with the appropriate permissions, allowing for a high degree of flexibility in the layout and content of a Plone site.
