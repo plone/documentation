@@ -11,5 +11,5 @@ develop/addons/bobtemplates.plone
 .project
 _build
 settings.json
-.vscode
+.vscode/
 
