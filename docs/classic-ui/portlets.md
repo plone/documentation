@@ -125,7 +125,7 @@ class EditForm(base.EditForm):
 
 ```
 
-Here is the example for a simple page template ``my_portlet.pt``:
+Here is the example for a simple page template `my_portlet.pt`:
 
 ```HTML
 <html
