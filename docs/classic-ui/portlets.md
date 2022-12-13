@@ -127,7 +127,7 @@ class EditForm(base.EditForm):
 
 Here is the example for a simple page template `my_portlet.pt`:
 
-```HTML
+```html
 <html
   xmlns="http://www.w3.org/1999/xhtml"
   xmlns:tal="http://xml.zope.org/namespaces/tal"
