@@ -72,14 +72,15 @@ Plone is easy to set up compared to other CMS'es in its category, extremely flex
 ## High Level Overview for Developers
 
 Plone is a content management platform with its backend written in Python.
-The backend builds upon Zope, an open source web application server and development system, and thus on the pluggable Zope Component Architecture (ZCA).
-The backend has up until version 6 served HTML based content, with advanced resource management on the server to add and bundle CSS and javascript.
+It is built on top of the open-source Zope web application server and development system. 
+Plone is making use of the pluggable Zope Component Architecture (ZCA) to provide a highly modular and extensible system.
+Up until version 6, Plone has used server-side rendering to generate HTML-based content, with advanced resource management features for adding and bundling CSS and JavaScript. 
+Additionally, Plone's use of the ZCA makes it easy to extend and custosize, allowing users to create unique, feature-rich websites that are tailored to their specific needs.
 
-With the release of Plone 6 there are now two out of the box supported configurations possible for a new Plone website.
-
-You can still use the Python based backend server to render the content server side and deliver html to the browser.
-This setup is referred to in the documentation as 'Classic UI' and has been supported by Plone since its release.
-For container based deployment you only need the plone-backend image, or a derivation with your customisations added.
+With the release of Plone 6, you now have the option to choose from two different out-of-the-box supported configurations when setting up a new Plone website.
+The Python-based backend server in Plone alone can still be used to render content server-side and deliver HTML to the browser, a setup that is referred to in the Plone documentation as "Classic UI". 
+This configuration has been supported by Plone since its initial release and is still available in the latest versions of the platform. 
+For container-based deployment, only the plone-backend image is required, or a derivative image with customisations added. 
 
 The default and advised configuration for new websites in Plone is to use our new React Based javascript frontend called 'Volto'.
 For this setup you still need to run the Python based backend server, but with the REST API enabled and an updated configuration profile.
@@ -99,9 +100,9 @@ https://training.plone.org/mastering-plone/what_is_plone.html
 (overview-5-label)=
 ## Deployment
 
-To run a public Plone website in production, you will also need to configure and run a reverse proxy (or ingress), arrange for SSL certificates (either from Let's Encrypt or manually), check persistenct of the content database and arrange for backups.
+To run a public Plone website in production, you will also need to configure and run a reverse proxy (or ingress), arrange for SSL certificates (either from Let's Encrypt or manually), guarantee persistence of the content database and arrange for backups.
 This is the domain of sysadmins and modern devops.
-Our documentation contains setup examples for these services but requires also experience and knowledge.
+Our documentation contains setup examples for these services but requires also generic experience and knowledge of these domains.
 
 
 (overview-6-label)=
