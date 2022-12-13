@@ -152,7 +152,7 @@ The message is set when the portlet is added and can be edited in the portlet's 
 
 To register this portlet with Plone, you will need to create a `configure.zcml` file that tells Plone about the portlet.
 After a restart, you can add it to a Plone page using the "manage portlets" screen.
-Here is an example ``configure.zcml`` file that registers the MyPortlet class defined above:
+Here is an example `configure.zcml` file that registers the `MyPortlet` class defined above:
 
 ```xml
 <configure xmlns="http://namespaces.zope.org/zope"
