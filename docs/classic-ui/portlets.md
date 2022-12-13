@@ -55,7 +55,7 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
 To create a portlet, you will need to write Python classes that define the portlet and its behavior.
 This class should subclass the `Portlet` class from the `plone.portlets` package.
 
-Here is an example of a very simple portlet class ``my_portlet.py``:
+Here is an example of a very simple portlet class `my_portlet.py`:
 
 ```python
 from plone.app.portlets.portlets import base
