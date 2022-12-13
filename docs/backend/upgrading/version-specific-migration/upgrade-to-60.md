@@ -184,7 +184,7 @@ The training documentation lists {doc}`three possible theming strategies <themin
 ## Python
 
 You may need to use a newer Python version.
-Supported Python versions are 3.8, 3.9, 3.10 and 3.11.
+Supported Python versions are 3.8, 3.9, 3.10, and 3.11.
 We recommend the most recent version.
 See https://www.python.org/downloads/ for which Python version is still supported by the Python community.
 
