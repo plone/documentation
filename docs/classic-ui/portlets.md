@@ -150,7 +150,8 @@ This portlet class defines a portlet with the title "My Portlet" and the name "m
 
 The message is set when the portlet is added and can be edited in the portlet's edit form.
 
-To register this portlet with Plone, you will need to create a ``configure.zcml`` file that tells Plone about the portlet, and - after a restart - you can add it to a Plone page using the "manage portlets" screen.
+To register this portlet with Plone, you will need to create a `configure.zcml` file that tells Plone about the portlet.
+After a restart, you can add it to a Plone page using the "manage portlets" screen.
 Here is an example ``configure.zcml`` file that registers the MyPortlet class defined above:
 
 ```xml
