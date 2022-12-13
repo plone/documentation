@@ -110,14 +110,13 @@ The new action should now appear in the actions listing under the selected categ
 You can now edit its settings by clicking its {guilabel}`Edit` button.
 
 To edit an existing action's settings, click its {guilabel}`Edit` button.
-From there, you can edit the action's properties, such as the name, URL, and parameters.
 
 It's important to note that the ability to add or edit portal actions is only available to users with the appropriate permissions.
-If you do not have the necessary permissions, you will not be able to access the Portal Actions control panel.
+If you do not have the necessary permissions, you will not be able to access the {guilabel}`Portal actions` control panel.
 
 ## Exporting or importing portal actions
 
-You can export action configuration to XML using the built-in GenericSetup export.
+You can export action configuration to XML using the built-in Generic Setup  Tool export.
 
 Then this XML can be imported again within a profile of an add-on package.
 Place the file as `actions.xml` in the profile of an add-on.
@@ -125,9 +124,10 @@ You can cut out snippets from this file for creating `actions.xml` containing on
 
 To export all actions:
 
-- Go to {guilabel}`Site Setup` and choose {guilabel}`Management Interface`
-- Go to {guilabel}`portal_setup`
-- Click the tab {guilabel}`Export`
-- Choose the checkbox {guilabel}`Actions Providers`
-- Click the button {guilabel}`Export selected steps` at the end of the page
+- Go to {guilabel}`Site Setup` and choose {guilabel}`Management Interface`.
+  You can also select {menuselection}`Advanced > Management Interface` from the Site Setup or any control panel.
+- Click {guilabel}`portal_setup`.
+- Click the tab {guilabel}`Export`.
+- Tick the checkbox {guilabel}`Actions Providers`.
+- Click the button {guilabel}`Export selected steps` at the end of the page.
 
