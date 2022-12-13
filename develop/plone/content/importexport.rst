@@ -365,7 +365,7 @@ export.py::
 
     def spoof_request(app):
         """
-        http://docs.plone.org/develop/plone/misc/commandline.html
+        https://5.docs.plone.org/develop/plone/misc/commandline.html
         """
         from AccessControl.SecurityManagement import newSecurityManager
         from AccessControl.SecurityManager import setSecurityPolicy

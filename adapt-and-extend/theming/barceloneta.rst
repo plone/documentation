@@ -84,10 +84,10 @@ The LESS resources live in the `plonetheme.barceloneta egg <https://github.com/p
 They are divided by base styling, layout, function, components and views, so they could be reusable and extended from other themes.
 The main LESS resource that imports all the others is ``barceloneta.plone.less``.
 
-It has a set of LESS variables that can be overriden either through the web using the `Theming control panel <http://docs.plone.org/external/plone.app.theming/docs/index.html#using-the-control-panel>`_ or by reusing it in your own theme.
+It has a set of LESS variables that can be overriden either through the web using the `Theming control panel <https://5.docs.plone.org/external/plone.app.theming/docs/index.html#using-the-control-panel>`_ or by reusing it in your own theme.
 They include colors, sizes, fonts and other useful parameters.
 
-Barceloneta makes use of the new `Diazo bundle <http://docs.plone.org/adapt-and-extend/theming/resourceregistry.html#id26>`_ to expose its resources to Plone using the Resource Registries.
+Barceloneta makes use of the new `Diazo bundle <https://5.docs.plone.org/adapt-and-extend/theming/resourceregistry.html#id26>`_ to expose its resources to Plone using the Resource Registries.
 As it is a pure Diazo theme, it keeps a low profile being Plone agnostic and only containing the theme itself.
 
 

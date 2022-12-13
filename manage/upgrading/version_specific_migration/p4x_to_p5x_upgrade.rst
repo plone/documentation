@@ -215,10 +215,10 @@ Resource Registry
 
 .. seealso::
 
-   http://docs.plone.org/adapt-and-extend/theming/resourceregistry.html
+   https://5.docs.plone.org/adapt-and-extend/theming/resourceregistry.html
 
 Plone 5 introduces some new concepts, for some, with working with JavaScript in Plone.
-Plone 5 utilizes Asynchronous Module Definition (AMD) with `requirejs <http://requirejs.org/>`_.
+Plone 5 utilizes Asynchronous Module Definition (AMD) with `requirejs <https://requirejs.org/>`_.
 
 We chose AMD over other module loading implementations(like commonjs) because AMD can be used in non-compiled form in the browser.
 
@@ -244,7 +244,7 @@ It also would combined and minify them for you in deployment mode.
 Registration Changes
 ~~~~~~~~~~~~~~~~~~~~
 
-Prior to Plone 5, JavaScript files were added to the registry by using a `Generic Setup Profile <http://docs.plone.org/develop/addons/components/genericsetup.html>`_ and including a jsregistry.xml file to it.
+Prior to Plone 5, JavaScript files were added to the registry by using a `Generic Setup Profile <https://5.docs.plone.org/develop/addons/components/genericsetup.html>`_ and including a jsregistry.xml file to it.
 
 This would add your JavaScript to the registry, with some options and potentially set ordering.
 

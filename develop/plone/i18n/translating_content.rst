@@ -18,7 +18,7 @@ For all practical purposes, you should use that package, plone.app.multilingual
 .. note::
 
     For earlier Plone versions, there were other solutions like LinguaPlone and raptus.multilanguageplone.
-    Refer to the `Plone 4 version of this document <http://docs.plone.org/4/en/develop/plone/i18n/translating_content.html>`_ if you need that information.
+    Refer to the `Plone 4 version of this document <https://4.docs.plone.org/develop/plone/i18n/translating_content.html>`_ if you need that information.
 
 
 

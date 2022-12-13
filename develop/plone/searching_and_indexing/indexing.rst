@@ -254,10 +254,10 @@ ZCML. Assuming you've put the code above into a file named
    and you can omit the ``provides`` attribute because the thing returned by the decorator is actually a
    class providing the required ``IIndexer`` interface.
 
-To learn more about the *plone.indexer* package, read `its doctest <http://dev.plone.org/plone/browser/plone.indexer/trunk/plone/indexer/README.txt>`_.
+To learn more about the *plone.indexer* package, read `its doctest <https://pypi.org/project/plone.indexer/>`_.
 
 For more info about how to create content types, refer to the :doc:`developing add-ons section </develop/addons/index>`.
-For older Archetypes content types, see the `Plone 4 documentention on Archetypes <http://docs.plone.org/4/en/old-reference-manuals/archetypes/index.html>`_
+For older Archetypes content types, see the `Plone 4 documentention on Archetypes <https://4.docs.plone.org/old-reference-manuals/archetypes/index.html>`_
 
 .. important::
 

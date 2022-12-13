@@ -175,7 +175,7 @@ This is usually unit test specific question how to enable certain add-ons for un
 plone.app.testing
 -----------------
 
-See `Product and profile installation <http://docs.plone.org/external/plone.app.testing/docs/source/README.html#product-and-profile-installation>`_.
+See `Product and profile installation <https://5.docs.plone.org/external/plone.app.testing/docs/source/README.html#product-and-profile-installation>`_.
 
 
 Manually

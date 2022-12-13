@@ -184,8 +184,8 @@ Enabling full body text in RSS feed
 
 See `this example <http://rudd-o.com/en/linux-and-free-software/a-hack-to-enable-full-text-feeds-in-plone>`_.
 
-Since Plone 4.1 this was added by efault in the RSS template, this can be enabled via the *Render body* setting in the RSS control panel in the site settings.
-For more info see https://docs.plone.org/adapt-and-extend/config/syndication.html
+Since Plone 4.1 this was added by default in the RSS template, this can be enabled via the *Render body* setting in the RSS control panel in the site settings.
+For more info see https://5.docs.plone.org/adapt-and-extend/config/syndication.html
 
 
 
