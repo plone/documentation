@@ -218,7 +218,7 @@ Resource Registry
    https://5.docs.plone.org/adapt-and-extend/theming/resourceregistry.html
 
 Plone 5 introduces some new concepts, for some, with working with JavaScript in Plone.
-Plone 5 utilizes Asynchronous Module Definition (AMD) with `requirejs <http://requirejs.org/>`_.
+Plone 5 utilizes Asynchronous Module Definition (AMD) with `requirejs <https://requirejs.org/>`_.
 
 We chose AMD over other module loading implementations(like commonjs) because AMD can be used in non-compiled form in the browser.
 

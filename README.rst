@@ -2,7 +2,7 @@
 This Is The Official Plone Documentation for version 5.x
 ========================================================
 
-You can read the documentation on `5.docs.plone.org <http://5.docs.plone.org>`_.
+You can read the documentation on `5.docs.plone.org <https://5.docs.plone.org>`_.
 
 Contribute
 ==========

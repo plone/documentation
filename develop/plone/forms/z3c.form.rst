@@ -2314,7 +2314,7 @@ In ``configure.zcml`` add an adapter registration like so:
 
 More info
 
-* original documentation: ``z3c.form`` `validators documentation <http://packages.python.org/z3c.form/validator.html>`_.
+* original documentation: ``z3c.form`` `validators documentation <https://pythonhosted.org/z3c.form/validator.html>`_.
 * https://5.docs.plone.org/develop/addons/schema-driven-forms/customising-form-behaviour/validation.html#field-widget-validators
 * http://www.jowettenterprises.com/blog/an-image-dimension-validator-for-plone-4
 

@@ -611,7 +611,7 @@ Example portlet manager viewlets.py::
 
         For more information see
 
-        * http://5.docs.plone.org/develop/plone/views/viewlets.html
+        * https://5.docs.plone.org/develop/plone/views/viewlets.html
 
     """
 
