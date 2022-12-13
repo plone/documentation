@@ -15,8 +15,8 @@ Actions are links or buttons that allow users to perform specific actions on you
 These actions can be anything from viewing a content item to editing a page, to accessing a specific feature of your site.
 
 ```{note}
-There are at least two providers for actions, the `portal_actions` tool and the content type actions defined in the several Factory Type Information's under the `portal_workflow` tool.
-Here the portal actions are described.
+Actions in Plone are provided by Action Providers. There are at least two providers for actions, the Portal Actions, provided by actions tool `portal_actions` (as it is named in the ZMI) and the content type actions defined by the several Factory Type Information's of the Types Tool `portal_types` (ZMI).
+Here only the portal actions are described.
 ```
 
 Portal actions are typically displayed in the site's navigation menu or toolbar and can be accessed by users with the appropriate permissions.
