@@ -183,7 +183,7 @@ Plone resources
 
 * `Plone source code in version control system <https://github.com/plone>`_.
 
-* `Plone API (in development) <http://docs.plone.org/develop/plone.api/docs/index.html>`_.
+* `Plone API (in development) <https://5.docs.plone.org/develop/plone.api/docs/index.html>`_.
 
 
 Zope resources

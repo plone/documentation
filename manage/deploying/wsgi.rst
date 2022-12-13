@@ -21,4 +21,4 @@ Collection of Links about this topic, since this is a very special topic we also
 
 * `Plone 5 with WSGI <https://blog.toms-projekte.de/run-plone-with-wsgi.html>`_
 
-* `Plone 5.2 uses Waitress instead of ZServer <https://docs.plone.org/manage/upgrading/version_specific_migration/upgrade_to_52.html#wsgi>`_
+* `Plone 5.2 uses Waitress instead of ZServer <https://5.docs.plone.org/manage/upgrading/version_specific_migration/upgrade_to_52.html#wsgi>`_

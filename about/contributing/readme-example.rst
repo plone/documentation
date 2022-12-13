@@ -40,7 +40,7 @@ README Example
     =============
 
     Full documentation for end users can be found in the "docs" folder.
-    It is also available online at http://docs.plone.org/foo/bar
+    It is also available online at https://5.docs.plone.org/foo/bar
 
 
     Translations
@@ -73,7 +73,7 @@ README Example
 
     - Issue Tracker: https://github.com/collective/collective.fancystuff/issues
     - Source Code: https://github.com/collective/collective.fancystuff
-    - Documentation: https://docs.plone.org/foo/bar
+    - Documentation: https://5.docs.plone.org/foo/bar
 
     Support
     =======

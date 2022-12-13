@@ -12,7 +12,7 @@ General Tips
 ============
 
 This guide contains some tips for Plone upgrades. For more information, see
-also the `official Plone upgrade guide <http://docs.plone.org/manage/upgrading/index.html>`_
+also the `official Plone upgrade guide <https://5.docs.plone.org/manage/upgrading/index.html>`_
 
 
 Recommended setup

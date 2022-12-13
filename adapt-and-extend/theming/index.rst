@@ -61,4 +61,4 @@ General information CSS and other resources in Plone:
    Up to version 4.1, Plone was using an older style of theming.
    Using that is **not** considered best practice anymore.
 
-   See `older versions of these docs <https://docs.plone.org/4/en/adapt-and-extend/theming/old_style_theming.html>`_ if you need the information.
+   See `older versions of these docs <https://4.docs.plone.org/adapt-and-extend/theming/old_style_theming.html>`_ if you need the information.

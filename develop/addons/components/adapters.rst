@@ -42,7 +42,7 @@ There are two kinds of adapters:
 Example adapters users
 -----------------------
 
-* `Theme specific adapters <http://docs.plone.org/4/en/old-reference-manuals/plone_3_theming/buildingblocks/components/themespecific.html>`_
+* `Theme specific adapters <https://4.docs.plone.org/old-reference-manuals/plone_3_theming/buildingblocks/components/themespecific.html>`_
 
 Registering an adapter
 ======================
