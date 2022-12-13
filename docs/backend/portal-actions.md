@@ -26,7 +26,7 @@ This control panel allows you to add, edit, and delete actions, as well as organ
 
 ## Anatomy of a Portal action
 
-A portal action in Plone consists of a few different components, including the category, title, description, URL, and control parameters.
+A portal action in Plone consists of a few settings, including the category, title, description, URL, and control parameters.
 
 The action title is the text that is displayed for the action in the site's navigation menu or toolbar.
 This text should be descriptive and indicate what the action does.
