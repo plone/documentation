@@ -85,7 +85,7 @@ class Assignment(base.Assignment):
     @property
     def title(self):
         """This property is used to give the title of the portlet in the
-        "manage portlets" screen. Heres, we use the message as a part of the title.
+        "manage portlets" screen. Here we use the message as a part of the title.
         """
         return f"Greeting: {self.message}"
 
