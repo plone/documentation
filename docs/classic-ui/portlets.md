@@ -39,8 +39,8 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
    Note that you must have the appropriate permissions to add portlets to a web page.
    If you do not see the {guilabel}`Manage portlets` link, you may need to contact the site administrator to request access.
 
-3. In the {menuselection}`Add portlets` menu, select the portlet that you want to add, and click the {guilabel}`Add` button.
-  This will open an edit form, now fill in the form.
+3. In the {menuselection}`Add portlets` menu, select the portlet type that you want to add, and click the {guilabel}`Add` button.
+  This will open a form to edit the settings for the selected portlet type.
 
 4. Click the {guilabel}`Save` button to save your changes and add the portlet to the web page.
    This adds the portlet to the list of {guilabel}`Portlets assigned here` on the screen.
@@ -48,6 +48,7 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
 5. Use the {guilabel}`Up` and {guilabel}`Down` arrows in the {guilabel}`Assigned portlets` section to change the order in which the portlets will be displayed on the web page.
    The {guilabel}`Hide` button will deactivate the portlet.
    The {guilabel}`X` button deletes the portlet.
+   These options will only appear at the root from which the object inherits its settings.
 
 
 ## Writing a custom Portlet
@@ -151,7 +152,7 @@ This portlet class defines a portlet with the title "My Portlet" and the name "m
 The message is set when the portlet is added and can be edited in the portlet's edit form.
 
 To register this portlet with Plone, you will need to create a `configure.zcml` file that tells Plone about the portlet.
-After a restart, you can add it to a Plone page using the "manage portlets" screen.
+After a restart, you can add it to a Plone page using the {guilabel}`Manage portlets` screen.
 Here is an example `configure.zcml` file that registers the `MyPortlet` class defined above:
 
 ```xml
@@ -176,7 +177,7 @@ Here is an example `configure.zcml` file that registers the `MyPortlet` class de
 This file registers a portlet with the following properties:
 
 Title
-: `Example" Portlet`
+: `Example Portlet`
 
 Description
 : `A portlet that displays a greeting message`
