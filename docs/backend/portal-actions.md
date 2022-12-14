@@ -108,7 +108,7 @@ To inspect or edit an existing action's settings, click its {guilabel}`Edit` but
 [insert screenshot from Steve here]
 
 To add a new action, click on the {guilabel}`Add new action` button at the top of the page.
-This will open a form where you can enter select its category and enter an arbitrary ID.
+This will open a form where you can select its category and enter an arbitrary ID.
 Click the {guilabel}`Add` button to add the action.
 The new action should now appear in the actions listing under the selected category.
 You can now edit its settings by clicking its {guilabel}`Edit` button.
