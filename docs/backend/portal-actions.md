@@ -120,7 +120,7 @@ If you do not have the necessary permissions, you will not be able to access the
 
 ## Exporting or importing portal actions
 
-You can export action configuration to XML using the built-in Generic Setup  Tool export.
+You can export action configuration to XML using the built-in Generic Setup Tool export.
 
 Then this XML can be imported again within a profile of an add-on package.
 Place the file as `actions.xml` in the profile of an add-on.
