@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Actions are links or buttons that allow users to perform specific actions on your site."
+    "property=og:description": "Actions are links or buttons that allow users to perform specific actions on your site."
+    "property=og:title": "Portal Actions"
+    "keywords": "Portal Actions, actions, Plone, backend"
 ---
 
 (backend-portal-actions-label)=
