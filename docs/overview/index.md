@@ -39,7 +39,7 @@ Plone works as a:
 Security is built into Plone's architecture from the ground up.
 Plone offers fine-grained permission control over content and actions.
 
-Plone is easy to set up compared to other CMS'es in its category, extremely flexible, and provides you with a system for managing web content that is ideal for project groups, communities, websites, extranets, and intranets.
+Plone is easy to set up compared to other CMSs in its category, extremely flexible, and provides you with a system for managing web content that is ideal for project groups, communities, websites, extranets, and intranets.
 
 - **Plone empowers content editors and web application developers.**
   The Plone Team includes usability experts who have made Plone easy and attractive for content managers to add, update, and maintain content.
