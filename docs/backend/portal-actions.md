@@ -106,7 +106,7 @@ You can also select {menuselection}`General > Actions` from the Site Setup or an
 Once you are on the {guilabel}`Portal actions` control panel, you will see a list of all the existing portal actions for your site.
 To inspect or edit an existing action's settings, click its {guilabel}`Edit` button.
 
-```{image} _static/backend/portal-actions-edit-settings.png
+```{image} /_static/backend/portal-actions-edit-settings.png
 :alt: Action Settings editing interface
 ```
 
