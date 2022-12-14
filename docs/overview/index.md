@@ -14,7 +14,7 @@ myst:
 
 Plone is a content management system (CMS) that is well-known for its user-friendly interface and robust security features. 
 With Plone, even non-technical users can easily create and manage the content for a public website or intranet using only a web browser. 
-Plone's intuitive interface and comprehensive set of features make it a popular choice for businesses, governments, universities and any organization  who need a reliable and easy-to-use CMS.
+Plone's intuitive interface and comprehensive set of features make it a popular choice for businesses, governments, universities, and any organization that needs a reliable and easy-to-use CMS.
 
 Plone has a long history and has been trusted by users around the world since its initial release on October 4, 2001. 
 Over the years, Plone has undergone many improvements and enhancements, making it a highly mature and stable CMS. 
