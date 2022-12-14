@@ -108,7 +108,7 @@ Our documentation contains setup examples for these services but requires also g
 (overview-6-label)=
 ## Good to know / What to know
 
-One of the key benefits of the new React based frontend for Plone 6 is that you can now customize and theme Plone extensively using HTML and Javascript using up to date frontend technologies without having having to set up a local Python development environment.
+One of the key benefits of the new React-based frontend for Plone 6 is that you can now customize and theme Plone extensively using HTML, CSS, and JavaScript using up-to-date frontend technologies without having having to set up a local Python development environment.
 The Plone backend can be run on a local developer machine in a container.
 
 Basic familiarity with programming in Python and managing Python modules/packages using virtualenv and pip is required to work on the backend code.
