@@ -23,7 +23,7 @@ Additionally, Plone is supported by a strong community of users and developers w
 Plone has the maturity, stability, and reliability of an application maintained by open source developers with decades of experience, while continually evolving and adapting to modern technology.
 
 Lots of customizations can be made trough-the-web, such as creating content types, themes, workflows, and much more.
-A full filesystem based development workflow is also possible.
+A full file system based development workflow is also possible.
 Plone can be extended and used as a framework on which to build custom CMS-like solutions.
 
 Plone works as a:
