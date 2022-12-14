@@ -20,6 +20,7 @@ There are at least two providers for actions.
 
 -   Portal actions, provided by the actions tool named `portal_actions` in the ZMI
 -   Content type actions defined by the Factory Type Information (FTI) of the Types Tool, and named `portal_types` in the ZMI
+
 Here only the portal actions are described.
 ```
 
