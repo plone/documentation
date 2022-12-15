@@ -13,8 +13,8 @@ myst:
 
 ## What are Behaviors in Plone
 
-In Plone, behaviors are a way to add additional, reusable functionality to content objects without modifying the objects themselves.
-Behaviors are essentially small chunks of code that can be plugged onto content objects to provide new features or capabilities.
+In Plone, behaviors are a way to add reusable functionality to content objects without modifying the objects themselves.
+Behaviors are essentially small chunks of code that can be plugged onto content types to provide new features or capabilities.
 
 A Plone behavior could be used to
 
@@ -29,8 +29,8 @@ Behaviors can be added to content types on an as-needed basis, allowing for a hi
 Plone already provides lots of behaviors for the built-in content types.
 
 Other behaviors are implemented as add-on products, which can be installed and configured through the Plone control panel.
-Once a behavior has been installed, it can be applied to any content type by selecting it in the Dexterity configuration section of the Plone control panel.
-This allows the object to gain the additional functionality provided by the behavior.
+Once a behavior has been installed, it can be applied to any content type by selecting it in the {guilabel}`Content Types` control panel.
+This allows items of this content type to gain the additional functionality provided by the behavior.
 
 Overall, behaviors are an important part of the Plone content management system and allow for powerful customization and extensibility of content objects.
 
@@ -67,37 +67,39 @@ Overall, behaviors are an important part of the Plone content management system 
 | plone.tableofcontents  | Table of contents | Adds a table of contents |
 | plone.thumb_icon | Thumbs and icon handling | Options to suppress thumbs and/or icons and to override thumb   size in listings, tables etc.
 | plone.versioning  | Versioning | Versioning support with CMFEditions |
+| volto.blocks  | Blocks | Enables Volto Blocks support |
+| volto.blocks.editable.layout  | Blocks (Editable Layout) | Enables Volto Blocks (editable layout) support |
 
-## Adding or removing a behavior from a type
+## Adding or removing a behavior from a content type
 
-There are two ways to add or remove a behavior on a type:
+There are two ways to add or remove a behavior on a content type:
 
-- through the web using the control panel,
-- using a custom add-on GenericSetup profile.
+- Through the web using the {guilabel}`Content Types` control panel.
+- Using a custom add-on GenericSetup profile.
 
 ### Through the Web
 
-1. Go to the {guilabel}`Site Setup` and chose the {guilable}`Content Types` control panel
-2. Select the type where you want to add or remove a behavior
-3. Then click on the {guilabel}`Behaviors` tab of the settings of the type.
+1. Go to the {guilabel}`Site Setup` and chose the {guilabel}`Content Types` control panel.
+2. Select the content type to which you want to add or remove a behavior.
+3. Then click on the {guilabel}`Behaviors` tab of the settings of the content type.
 4. A list of all available behaviors appears.
-   Select or unselect the checkbox of the behavior you want to add to or remove from the type.
+   Select or deselect the checkbox of the behavior you want to add to or remove from the type.
 5. Save the form by clicking on the {guilabel}`Save` button at the bottom of the page.
 
 ### Using a GenericSetup profile
 
-Given you already have a custom add-on with a `profiles/default` directory.
+Given you already have a custom add-on with a `profiles/default` directory, and you created a custom behavior named `mybehavior.subtitle`.
 Given you created a custom behavior named `mybehavior.subtitle`.
 
 If you want to enable a behavior on an existing content type, create a new directory `types` under `profiles/default`.
-In there create a file named the same as the content type you want to change.
-In the example here, you want to add a behavior to the built-in Event type.
-The file to create is named `Event.xml` and it is a Factory Type Information definition.
-You need to change the behaviors configuration only so that all other parts can be omitted.
+In the `types` directory, create a file named the same as the content type you want to change.
+In the example here, you want to add a behavior to the built-in Event content type.
+The file to create is named `Event.xml` and it is a {term}`Factory Type Information` (FTI) definition.
+You need to change only the behaviors configuration.
+All other parts can be ignored.
 This looks like so:
 
-```XML
-
+```xml
 <?xml version="1.0"?>
 <object
     i18n:domain="plone"
@@ -112,16 +114,16 @@ This looks like so:
 
 After you apply the profile (or uninstall and install the custom add-on), the behavior is available on the Event content type.
 
-## How behaviors are working
+## How behaviors work
 
-At the most basic level, a behavior is like a conditional adapter.
-For a Dexterity content type, the default condition is, "is this behavior listed in the behaviors property in the FTI?"
+At the most basic level, a behavior is like a conditional {term}`adapter`.
+For a content type, the default condition is, "is this behavior listed in the behaviors property in the FTI?"
 But the condition itself is an adapter; in rare cases, this can be overruled.
 When a behavior is enabled for a particular object, it will be possible to adapt that object to the behavior's interface.
 If the behavior is disabled, adaptation will fail.
 
 A behavior consists at the very least of an interface and some metadata, namely a name, title, and description.
-This is also called a schema-only interface
+This is also called a schema-only interface.
 
 In other cases, there is also a factory, akin to an adapter factory, which will be invoked to get an appropriate adapter when requested.
 This is usually just a class that looks like any other adapter factory, although it will tend to apply to Interface, IContentish, or a similarly broad context.
@@ -139,14 +141,14 @@ This results in, among other things, a named utility providing `plone.behavior.i
 This utility contains various information about the behavior, such as its name, title, interface, and (optional) factory and marker interface.
 
 The utility name is the name attribute of the behavior directive.
-Historically the full dotted name to the behavior interface is registered as name too, but usage is discouraged.
+Historically the full dotted name to the behavior interface is registered as its name, too, but this usage is discouraged.
 
 
 Behaviors are named adapters.
 They adapt an interface, for which they are registered and they provide another interface with new functionality such as attributes and methods.
 
-Dexterity types are transparently looking up behaviors registered for a type.
-If a behavior provides new attributes it is provided as an attribute of the adapted object.
+Content types transparently look up the behaviors registered for a content type.
+If a behavior provides new attributes, it is provided as an attribute of the adapted object.
 
 ```{seealso}
 The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/blob/master/README.rst) explains the concepts and different ways to register a behavior in detail.
@@ -154,17 +156,19 @@ The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/bl
 
 ## Custom behaviors
 
-From the last section you can take away, that there are two main types of behaviors:
+There are two types of behaviors:
 
-- Schema-only behaviors: These behaviors have only a schema with fields.
+Schema-only behaviors
+: These behaviors have only a schema with fields.
 
-- Full behaviors: A python class containing the logic of the behavior, an interface or schema defining the contract of the behavior, and a marker interface applied to the content type.
+Full behaviors
+: A python class containing the logic of the behavior, an interface or schema defining the contract of the behavior, and a marker interface applied to the content type.
 
 ### Creating a schema-only behavior
 
 Given you want to add a field `subtitle` to some existing content types of your custom add-on.
 
-You need to create a file `subtitle.py` in your addon like so:
+You need to create a file `subtitle.py` in your add-on:
 
 ```python
 from plone.autoform.interfaces import IFormFieldProvider
@@ -185,9 +189,9 @@ class ISubtitleBehavior(model.Schema):
     )
 ```
 
-You need to add a ZCML snippet to the `configure.zcml` next to `subtitle.py` like so:
+You need to add a ZCML snippet to the `configure.zcml` next to `subtitle.py`:
 
-```XML
+```xml
 <plone:behavior
       name="myproject.subtitle"
       provides=".subtitle.ISubtitleBehavior"
@@ -195,23 +199,23 @@ You need to add a ZCML snippet to the `configure.zcml` next to `subtitle.py` lik
   />
 ```
 
-After a restart of Plone, the behavior can be added to the type in the Content Types control panel.
-The add and edit forms are containing a new field `Subtitle`.
+After a restart of Plone, the behavior can be added to the content type in the {guilabel}`Content Types` control panel.
+The add and edit forms contain a new field `Subtitle`.
 
 This field is not displayed in most views.
-To display the data entered in this field you need to modify the page template and access the field as `context.subtitle` there.
+To display the data entered in this field, you need to modify the page template by adding the field `context.subtitle`.
 
 ### Creating a behavior with an adapter and factory
 
 Given you want to display a price with different content types.
 The price is stored as the net value on the type as a floating point number.
-For display, you need at several places the VAT and the gross value.
+For display, you need at several places the value added tax (VAT) and the gross value.
 
 You create a schema with the net value for the form and attributes for the calculated values.
 You create an adapter to calculate the VAT and gross values.
 You need a marker interface to distinguish between context and adapter.
 
-The Python code in a file `price.py` looks like so:
+Add Python code in the file `price.py`:
 
 ```python
 from plone.autoform.interfaces import IFormFieldProvider
@@ -277,12 +281,12 @@ The registration in the `configure.zcml` looks like so:
   />
   ```
 
-After a restart of Plone, the behavior can be added to the type in the Content Types control panel.
-The add and edit forms are containing a new field `Price (net)`.
+After a restart of Plone, the behavior can be added to the content type in the {guilabel}`Content Types` control panel.
+The add and edit forms contain a new field `Price (net)`.
 
 This field is not displayed in most views.
-To display the data entered in this field you need to modify the page template and access the `price_net` field as `context.price_net` there.
-To access the `price_vat` and `price_gross` fields you need to get the adapter in your view class like so:
+To display the data entered in this field, you need to modify the page template by adding the `price_net` field as `context.price_net`.
+To access the `price_vat` and `price_gross` fields, you need to get the adapter in your view class:
 
 ```Python
 from .price import IPriceBehavior
@@ -302,11 +306,11 @@ class SomeViewClass:
 
 To add a behavior to your add-on, you can use PloneCLI as follows:
 
-```bash
+```shell
 plonecli add behavior
 ```
 
-This will create the behavior Python file in the `behaviors` folder where you can define your behaviors schema fields and registers the behavior in the `configure.zcml`.
+This will create the behavior Python file in the `behaviors` folder, where you can define your behaviors schema fields, and registers the behavior in the `configure.zcml`.
 
 ### Further reading on behaviors
 
