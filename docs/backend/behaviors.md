@@ -69,6 +69,9 @@ Overall, behaviors are an important part of the Plone content management system 
 | plone.versioning  | Versioning | Versioning support with CMFEditions |
 | volto.blocks  | Blocks | Enables Volto Blocks support |
 | volto.blocks.editable.layout  | Blocks (Editable Layout) | Enables Volto Blocks (editable layout) support |
+| volot.navtitle  | Navigation title | Navigation title used in sections, menus and doormats |
+| volto.preview_image  | Preview Image | Preview image for listings |
+| volto.preview_image_link | Preview Image Link | Preview image for listings based on links |
 
 ## Adding or removing a behavior from a content type
 
