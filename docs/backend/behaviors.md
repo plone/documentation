@@ -32,6 +32,7 @@ Other behaviors are implemented as add-on products, which can be installed and c
 Once a behavior has been installed, it can be applied to any content type by selecting it in the {guilabel}`Content Types` control panel.
 This allows items of this content type to gain the additional functionality provided by the behavior.
 
+A key feature of behaviors is that they allow encapsulating functionality so that it can be reused for multiple content types without needing to reimplement it.
 Overall, behaviors are an important part of the Plone content management system and allow for powerful customization and extensibility of content objects.
 
 
