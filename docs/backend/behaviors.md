@@ -139,6 +139,8 @@ Based on the now-provided interface, i.e specific views can be registered with t
 In other cases, there is also an adapter factory (usually a class), which will be invoked (initialized) to get an appropriate adapter when requested.
 If an adapter factory is used an explicit marker interface is required.
 
+With an adapter factory in place, custom getters and setters for form fields can be implemented, or even new methods i.e. for calculations or to combine data can be added.
+
 ### Registration
 
 Behaviors are registered globally using the <plone.behavior /> {term}`ZCML` directive.
@@ -149,8 +151,6 @@ Internally, this directive registers a named utility that provides `plone.behavi
 Plone content objects have logic to look up the behaviors names registered from their types configuration, the Factory Type Information (FTI).
 At runtime, the logic provides the interface (or marker) from the behavior to the object.
 This dynamically provided interface enables the component architecture to react to this new interface by adding additional form fields, bindings events, enabling more specific views, and more.
-
-With an adapter factory in place, custom getters and setters for form fields can be implemented, or even new methods i.e. for calculations or to combine data can be added.
 
 ### Additional information
 
