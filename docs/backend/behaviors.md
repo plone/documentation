@@ -89,7 +89,6 @@ There are two ways to add or remove a behavior on a content type:
 ### Using a GenericSetup profile
 
 Given you already have a custom add-on with a `profiles/default` directory, and you created a custom behavior named `mybehavior.subtitle`.
-Given you created a custom behavior named `mybehavior.subtitle`.
 
 If you want to enable a behavior on an existing content type, create a new directory `types` under `profiles/default`.
 In the `types` directory, create a file named the same as the content type you want to change.
