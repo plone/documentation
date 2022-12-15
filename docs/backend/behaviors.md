@@ -19,8 +19,7 @@ Behaviors are essentially small chunks of code that can be plugged onto content 
 A Plone behavior could be used to
 
 - add a set of form fields (on standard add and edit forms),
-- add logic for how to read or write field values,
-- add logic for how to calculate values or fetch data from other sources,
+- add logic as part of the adapter,
 - enable a particular event handler,
 - enable one or more views, viewlets, or other UI components,
 - do anything else which may be expressed in code via an adapter and/or marker interface.
