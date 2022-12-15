@@ -23,7 +23,7 @@ Additionally, Plone is supported by a strong community of users and developers w
 Plone has the maturity, stability, and reliability of an application maintained by open source developers with decades of experience, while continually evolving and adapting to modern technology.
 
 Lots of customizations can be made through-the-web, such as creating content types, themes, workflows, and much more.
-A full file system based development workflow is also possible.
+A full file system based development workflow is possible and recommended for team work and deployment, backed by source code repositories.
 Plone can be extended and used as a framework on which to build custom CMS-like solutions.
 
 Plone works as a:
@@ -79,12 +79,13 @@ Additionally, Plone's use of a component architecture makes it easy to extend an
 
 With the release of Plone 6, you now have the option to choose from two different out-of-the-box supported configurations when setting up a new Plone website.
 The Python-based backend server in Plone can still be used alone to render content server-side and deliver HTML to the browser, a setup that is referred to in the Plone documentation as "Classic UI". 
-This configuration has been supported by Plone since its initial release and is still available in the latest version of the platform. 
+This configuration has been supported by Plone since its initial release and is still available in the latest version of the platform.
 For container-based deployment, only the `plone-backend` image is required.
 It may be used as a base image, adding customizations, to make a derivative image.
 
 The default and recommended configuration for new websites in Plone is the new React-based JavaScript frontend called "Volto".
 For this setup you still need to run the Python-based backend server, as well as enable the REST API, and update the configuration profile.
+These settings and profile are applied automatically when you select the `Create Plone Site` option in the Plone website creation form.
 In addition a separate NodeJS based frontend server will serve the JavaScript frontend resources and provide SSR with hydration.
 To deploy this setup using containers, you will need the `plone-frontend` image for the frontend server.
 
