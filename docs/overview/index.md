@@ -75,7 +75,7 @@ Plone is a content management platform with its backend written in Python.
 It is built on top of the open source Zope web application server and development system. 
 Plone makes use of the pluggable Zope Component Architecture (ZCA) to provide a highly modular and extensible system.
 Throughout its history, Plone has used server-side rendering to generate HTML-based content, with advanced resource management features for adding and bundling CSS and JavaScript. 
-Additionally, Plone's use of the ZCA makes it easy to extend and customize, allowing users to create unique, feature rich websites that are tailored to their specific needs.
+Additionally, Plone's use of a component architecture makes it easy to extend and customize, allowing users to create unique, feature rich websites that are tailored to their specific needs.
 
 With the release of Plone 6, you now have the option to choose from two different out-of-the-box supported configurations when setting up a new Plone website.
 The Python-based backend server in Plone can still be used alone to render content server-side and deliver HTML to the browser, a setup that is referred to in the Plone documentation as "Classic UI". 
