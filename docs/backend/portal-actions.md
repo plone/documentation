@@ -106,7 +106,7 @@ You can also select {menuselection}`General > Actions` from the Site Setup or an
 Once you are on the {guilabel}`Portal actions` control panel, you will see a list of all the existing portal actions for your site.
 To inspect or edit an existing action's settings, click its {guilabel}`Edit` button.
 
-```{image} ../_static/backend/portal-actions-edit-settings.png
+```{image} /_static/backend/control-panel-action-edit-settings.png
 :alt: Action Settings editing interface
 ```
 
@@ -115,8 +115,6 @@ This will open a form where you can select its category and enter an arbitrary I
 Click the {guilabel}`Add` button to add the action.
 The new action should now appear in the actions listing under the selected category.
 You can now edit its settings by clicking its {guilabel}`Edit` button.
-
-To edit an existing action's settings, click its {guilabel}`Edit` button.
 
 It's important to note that the ability to add or edit portal actions is only available to users with the appropriate permissions.
 If you do not have the necessary permissions, you will not be able to access the {guilabel}`Portal actions` control panel.
