@@ -80,7 +80,8 @@ Additionally, Plone's use of a component architecture makes it easy to extend an
 With the release of Plone 6, you now have the option to choose from two different out-of-the-box supported configurations when setting up a new Plone website.
 The Python-based backend server in Plone can still be used alone to render content server-side and deliver HTML to the browser, a setup that is referred to in the Plone documentation as "Classic UI". 
 This configuration has been supported by Plone since its initial release and is still available in the latest version of the platform. 
-For container-based deployment, only the `plone-backend` image is required, or a derivative image with customizations added. 
+For container-based deployment, only the `plone-backend` image is required.
+It may be used as a base image, adding customizations, to make a derivative image.
 
 The default and recommended configuration for new websites in Plone is the new React-based JavaScript frontend called "Volto".
 For this setup you still need to run the Python-based backend server, as well as enable the REST API, and update the configuration profile.
