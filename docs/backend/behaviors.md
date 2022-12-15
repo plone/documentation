@@ -53,7 +53,7 @@ Overall, behaviors are an important part of the Plone content management system 
 | plone.eventrecurrence  | Event Recurrence | Recurrence extension for Events. |
 | plone.excludefromnavigation  | Exclude From navigation | Allow items to be excluded from navigation |
 | plone.constraintypes| Folder Addable Constrains | Restrict the content types that can be added to folderish   content |
-| plone. textindexer | Full-Text Indexing | Enables the enhanced full-text indexing for a content type. If a field in the schema is marked with the `searchable` directive, its content gets added to the    `SearchableText` index in the catalog |
+| plone.textindexer | Full-Text Indexing | Enables the enhanced full-text indexing for a content type. If a field in the schema is marked with the `searchable` directive, its content gets added to the `SearchableText` index in the catalog |
 | plone.leadimage  | Lead Image | Adds image and image caption fields |
 | plone.locking  | Locking | Locking support for dexterity |
 | plone.translatable  | Multilingual Support | Make this content type multilingual aware. Multilingual support must be installed. |
