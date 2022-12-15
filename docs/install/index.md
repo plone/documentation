@@ -25,9 +25,9 @@ In this part of the documentation, you can find how to try Plone and how to choo
 
 Choose a version.
 
--   [Plone 6 with Volto frontend](https://6.demo.plone.org/)
--   [Plone 6 Classic UI (nightly build)](https://6-classic.demo.plone.org/en)
--   [Plone 5.2.x (stable) with Barceloneta frontend](https://demo.plone.org/)
+-   [Plone 6 with Volto frontend](https://demo.plone.org/)
+-   [Plone 6 Classic UI (nightly build)](https://classic.demo.plone.org/en)
+-   [Plone 5.2.x (stable) with Barceloneta frontend](https://52.demo.plone.org/)
 :::
 
 :::{grid-item-card} {octicon}`download;1.5em;sd-mr-1` Install
