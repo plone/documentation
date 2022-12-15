@@ -63,7 +63,7 @@ Plone is easy to set up compared to other CMSs in its category, extremely flexib
   In addition, Plone can be scripted using web standard solutions and open source languages.
 
 - **Plone is technology neutral.**
-  Plone can interoperate with most relational database systems—both open source and commercial—and runs on a vast array of platforms, including Linux, Windows, macOS, and BSD.
+  Plone can interoperate with most relational database systems—both open source and commercial—and runs on many platforms, including Linux, Windows, macOS, and BSD.
 
 
 
