@@ -146,17 +146,15 @@ With an adapter factory in place, custom getters and setters for form fields can
 Behaviors are registered globally using the <plone.behavior /> {term}`ZCML` directive.
 Internally, this directive registers a named utility that provides `plone.behavior.interfaces.IBehavior`, which contains combined information about the behavior such as its name, interface, factory/marker interface, and metadata.
 
+```{seealso}
+The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/blob/master/README.rst) explains the concepts and different ways to register a behavior in detail.
+```
+
 ### Lookup and provide
 
 Plone content objects have logic to look up the behaviors names registered from their types configuration, the Factory Type Information (FTI).
 At runtime, the logic provides the interface (or marker) from the behavior to the object.
 This dynamically provided interface enables the component architecture to react to this new interface by adding additional form fields, bindings events, enabling more specific views, and more.
-
-### Additional information
-
-```{seealso}
-The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/blob/master/README.rst) explains the concepts and different ways to register a behavior in detail.
-```
 
 ## Custom behaviors
 
