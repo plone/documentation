@@ -29,9 +29,9 @@ year = str(now.year)
 # built documents.
 #
 # The short X.Y version.
-version = "6.0-dev"
+version = "6.0"
 # The full version, including alpha/beta/rc tags.
-release = "6.0-dev"
+release = "6.0"
 
 # -- General configuration ----------------------------------------------------
 
