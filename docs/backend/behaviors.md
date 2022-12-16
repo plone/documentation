@@ -117,7 +117,7 @@ This looks like so:
 </object>
 ```
 
-After you apply the profile (or uninstall and install the custom add-on), the behavior is available on the Event content type.
+After you apply the profile (or uninstall and install the custom add-on), the behavior is effective on the Event content type.
 
 
 ## Custom behaviors
@@ -128,7 +128,7 @@ Schema-only behaviors
 : These behaviors have only a schema with fields.
 
 Full behaviors
-: A python class containing the logic of the behavior, an interface or schema defining the contract of the behavior, and a marker interface applied to the content type.
+: A python class containing the logic of the behavior, an interface or schema defining the contract of the behavior, and a marker interface applicable to a content type.
 
 ### Creating a schema-only behavior
 
