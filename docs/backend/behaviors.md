@@ -119,42 +119,6 @@ This looks like so:
 
 After you apply the profile (or uninstall and install the custom add-on), the behavior is available on the Event content type.
 
-## How behaviors work
-
-In Plone, behaviors can be globally enabled on content types at runtime.
-With add-ons, behaviors can even be enabled even on a single content object or for a whole subtree in the content hierarchy.
-
-### Interfaces and adapters
-
-When a behavior is enabled for a particular object, it will be possible to adapt that object to the behavior's interface.
-Otherwise, when the behavior is disabled, adaptation will fail or falls back to a more generic adapter, if any is registered.
-
-A behavior is at least a combination of an interface (also as a form field provider), metadata such as a name, title, and description, and sometimes an adapter factory with a marker interface.
-When a behavior is enabled, an interface is added to the content object to indicate its presence - it now provides the interface.
-
-Behaviors without an adapter factory can be used either as a simple marker or to provide additional form fields.
-In this case, adapting a content object with this interface returns the content object itself, because adapting an object that already provides the exact same interface returns the very same object.
-Based on the now-provided interface, i.e specific views can be registered with the content type, or event handlers can be registered to respond to specific actions.
-
-In other cases, there is also an adapter factory (usually a class), which will be invoked (initialized) to get an appropriate adapter when requested.
-If an adapter factory is used an explicit marker interface is required.
-
-With an adapter factory in place, custom getters and setters for form fields can be implemented, or even new methods i.e. for calculations or to combine data can be added.
-
-### Registration
-
-Behaviors are registered globally using the <plone.behavior /> {term}`ZCML` directive.
-Internally, this directive registers a named utility that provides `plone.behavior.interfaces.IBehavior`, which contains combined information about the behavior such as its name, interface, factory/marker interface, and metadata.
-
-```{seealso}
-The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/blob/master/README.rst) explains the concepts and different ways to register a behavior in detail.
-```
-
-### Lookup and provide
-
-Plone content objects have logic to look up the behaviors names registered from their types configuration, the Factory Type Information (FTI).
-At runtime, the logic provides the interface (or marker) from the behavior to the object.
-This dynamically provided interface enables the component architecture to react to this new interface by adding additional form fields, bindings events, enabling more specific views, and more.
 
 ## Custom behaviors
 
@@ -314,8 +278,50 @@ plonecli add behavior
 
 This will create the behavior Python file in the `behaviors` folder, where you can define your behaviors schema fields, and registers the behavior in the `configure.zcml`.
 
-### Further reading on behaviors
+### Further reading on working with behaviors
 
 ```{seealso}
 See the chapter {ref}`training:behaviors1-label` from the Mastering Plone 6 Training.
 ```
+
+## How behaviors work
+
+```{note}
+Skip this section if you do not want to dive deeper into the internals of behaviors.
+You do not *need* to know this, but it may help if you run into problems.
+```
+
+In Plone, behaviors can be globally enabled on content types at runtime.
+With add-ons, behaviors can even be enabled even on a single content object or for a whole subtree in the content hierarchy.
+
+### Interfaces and adapters
+
+When a behavior is enabled for a particular object, it will be possible to adapt that object to the behavior's interface.
+Otherwise, when the behavior is disabled, adaptation will fail or falls back to a more generic adapter, if any is registered.
+
+A behavior is at least a combination of an interface (also as a form field provider), metadata such as a name, title, and description, and sometimes an adapter factory with a marker interface.
+When a behavior is enabled, an interface is added to the content object to indicate its presence - it now provides the interface.
+
+Behaviors without an adapter factory can be used either as a simple marker or to provide additional form fields.
+In this case, adapting a content object with this interface returns the content object itself, because adapting an object that already provides the exact same interface returns the very same object.
+Based on the now-provided interface, i.e specific views can be registered with the content type, or event handlers can be registered to respond to specific actions.
+
+In other cases, there is also an adapter factory (usually a class), which will be invoked (initialized) to get an appropriate adapter when requested.
+If an adapter factory is used an explicit marker interface is required.
+
+With an adapter factory in place, custom getters and setters for form fields can be implemented, or even new methods i.e. for calculations or to combine data can be added.
+
+### Registration
+
+Behaviors are registered globally using the <plone.behavior /> {term}`ZCML` directive.
+Internally, this directive registers a named utility that provides `plone.behavior.interfaces.IBehavior`, which contains combined information about the behavior such as its name, interface, factory/marker interface, and metadata.
+
+```{seealso}
+The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/blob/master/README.rst) explains the concepts and different ways to register a behavior in detail.
+```
+
+### Lookup and provide
+
+Plone content objects have logic to look up the behaviors names registered from their types configuration, the Factory Type Information (FTI).
+At runtime, the logic provides the interface (or marker) from the behavior to the object.
+This dynamically provided interface enables the component architecture to react to this new interface by adding additional form fields, bindings events, enabling more specific views, and more.
