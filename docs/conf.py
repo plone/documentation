@@ -182,7 +182,7 @@ myst_substitutions = {
 # We use Intersphinx to resolve targets when either the individual project's or
 # the entire Plone Documentation is built.
 intersphinx_mapping = {
-    "plone": ("https://6.dev-docs.plone.org/", None),  # for imported packages
+    "plone": ("https://6.docs.plone.org/", None),  # for imported packages
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/5/", None),
 }
@@ -227,7 +227,7 @@ todo_include_todos = True
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://docs.plone.org"
+html_use_opensearch = "https://6.docs.plone.org"
 
 html_theme_options = {
     "path_to_docs": "docs",
