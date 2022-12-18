@@ -254,7 +254,7 @@ This field is not displayed in most views.
 To display the data entered in this field, you need to modify the page template by adding the `price_net` field as `context.price_net`.
 To access the `price_vat` and `price_gross` fields from a browser view, you need to get the adapter from the context of the view:
 
-```Python
+```python
 from .price import IPriceBehavior
 
 class SomeViewClass:
