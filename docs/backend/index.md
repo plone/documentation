@@ -32,6 +32,7 @@ security
 workflows
 search
 indexing
+components
 zodb
 ../plone.api/index
 sending-email
