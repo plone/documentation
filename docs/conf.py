@@ -29,9 +29,9 @@ year = str(now.year)
 # built documents.
 #
 # The short X.Y version.
-version = "6.0-dev"
+version = "6.0"
 # The full version, including alpha/beta/rc tags.
-release = "6.0-dev"
+release = "6.0"
 
 # -- General configuration ----------------------------------------------------
 
@@ -177,7 +177,7 @@ myst_substitutions = {
 # We use Intersphinx to resolve targets when either the individual project's or
 # the entire Plone Documentation is built.
 intersphinx_mapping = {
-    "plone": ("https://6.dev-docs.plone.org/", None),  # for imported packages
+    "plone": ("https://6.docs.plone.org/", None),  # for imported packages
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/5/", None),
 }
@@ -190,9 +190,9 @@ graphviz_output_format = "svg"
 
 # -- OpenGraph configuration ----------------------------------
 
-ogp_site_url = "https://6.dev-docs.plone.org/"
+ogp_site_url = "https://6.docs.plone.org/"
 ogp_description_length = 200
-ogp_image = "https://6.dev-docs.plone.org/_static/Plone_logo_square.png"
+ogp_image = "https://6.docs.plone.org/_static/Plone_logo_square.png"
 ogp_site_name = "Plone Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
@@ -222,7 +222,7 @@ todo_include_todos = True
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://docs.plone.org"
+html_use_opensearch = "https://6.docs.plone.org"
 
 html_theme_options = {
     "path_to_docs": "docs",
@@ -250,7 +250,7 @@ html_title = "%(project)s v%(release)s" % {"project": project, "release": releas
 html_use_index = True
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6.dev-docs.plone.org"
+html_baseurl = "https://6.docs.plone.org"
 
 # -- Options for HTML help output -------------------------------------------------
 
@@ -280,7 +280,7 @@ latex_logo = "_static/logo_2x.png"
 # suggest edit link
 # remark: {{ file_name }} is mandatory in "edit_page_url_template"
 html_context = {
-    "edit_page_url_template": "https://6.dev-docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
+    "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
 }
 
 # An extension that allows replacements for code blocks that
@@ -295,7 +295,7 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_VERSION}": "6.0.0b3",
+    "{PLONE_BACKEND_VERSION}": "6.0.0",
 }
 
 
