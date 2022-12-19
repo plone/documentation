@@ -21,11 +21,11 @@ This image is **not a base image** to be extended in your projects, but an examp
 ### Main variables
 
 
-| Environment variable | Description | Example |
-| --- | --- | --- |
-| `RAZZLE_API_PATH` | Used to generate frontend calls to the backend. Needs to be a public URL accessible by client browser. | `http://api.site.org/++api++/` |
-| `RAZZLE_INTERNAL_API_PATH` | Used by the middleware to construct requests to the backend. It can be a non-public address. | `http://backend:8080/Plone` |
-| `VOLTO_ROBOTSTXT` | Override the `robots.txt` file. | `"User-agent: *\nDisallow: "` |
+| Environment variable       | Description                                                                                            | Example                        |
+| -------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------ |
+| `RAZZLE_API_PATH`          | Used to generate frontend calls to the backend. Needs to be a public URL accessible by client browser. | `http://api.site.org/++api++/` |
+| `RAZZLE_INTERNAL_API_PATH` | Used by the middleware to construct requests to the backend. It can be a non-public address.           | `http://backend:8080/Plone`    |
+| `VOLTO_ROBOTSTXT`          | Override the `robots.txt` file.                                                                        | `"User-agent: *\nDisallow: "`  |
 
 ```{note}
 For an extensive list of environment variables used by the frontend, visit {doc}`/volto/configuration/environmentvariables`.
@@ -100,7 +100,7 @@ version: "3"
 services:
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     # Plone 5.2 series can be used too
     # image: plone/plone-backend:5.2.7
     ports:
