@@ -25,7 +25,5 @@ jobs:
       - name: Run tests with make test
         run: |
           make deps
-          find -L ./docs/ -type d \( -path "./docs/plone.restapi/lib/*" -o -path "./docs/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print
           VALEFILES=$(find -L ./docs/ -type d \( -path "./docs/plone.restapi/lib/*" -o -path "./docs/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
-          echo "$VALEFILES"
           make vale $VALEFILES
