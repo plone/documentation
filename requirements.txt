@@ -13,5 +13,4 @@ sphinx-sitemap
 sphinx-togglebutton
 sphinxcontrib.httpdomain  # plone.restapi
 sphinxcontrib.httpexample  # plone.restapi
-sphinxcontrib-spelling
 sphinxext-opengraph
