@@ -25,4 +25,6 @@ jobs:
       - name: Run tests with make test
         run: |
           echo "VALEFILES=$(find -L ./docs/ -type d \( -path ./docs/plone.restapi/lib/* -o -path "./docs/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)" >> $GITHUB_ENV
+          echo "${{ env.VALEFILES }}"
+          sudo vale sync
           make vale ${{ env.VALEFILES }}
