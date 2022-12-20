@@ -26,9 +26,11 @@ jobs:
         run: |
           git clone https://github.com/errata-ai/Microsoft.git
           mkdir ./styles/Microsoft
-          ls -alR ./Microsoft/Microsoft
-          pwd
-          cp –r ./Microsoft/Microsoft/ ./styles/Microsoft
+          find ./Microsoft/Microsoft/ -type f | while read fname; do
+            dirname=`dirname "$fname"`
+            filename=`basename "$fname"`
+            cp "${dirname}/$filename" "./styles/Microsoft"
+          done
           make deps
           VALEFILES=$(find -L ./docs/ -type d \( -path "./docs/plone.restapi/lib/*" -o -path "./docs/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
           make vale $VALEFILES
