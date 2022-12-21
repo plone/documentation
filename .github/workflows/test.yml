@@ -22,9 +22,11 @@ jobs:
           pip install -q -r requirements.txt
           sudo snap install --edge vale
 
-      - name: Run tests with make test and vale
+      - name: Run tests with make test
+        run: make test
+
+      - name: Run vale
         run: |
-          make test
           git clone https://github.com/errata-ai/Microsoft.git
           cp -r ./Microsoft/Microsoft ./styles
           VALEFILES=$(find -L ./docs/ -type d \( -path "./docs/plone.restapi/lib/*" -o -path "./docs/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
