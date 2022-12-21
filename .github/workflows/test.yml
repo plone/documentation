@@ -26,4 +26,5 @@ jobs:
         run: |
           make test
           VALEFILES=$(find -L ./docs/ -type d \( -path "./docs/plone.restapi/lib/*" -o -path "./docs/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
+          sudo vale sync
           make vale $VALEFILES
