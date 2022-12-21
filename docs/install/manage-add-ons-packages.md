@@ -61,7 +61,7 @@ If you want to check out a Plone core package for development, or want to overri
 
 ```
 # constraints.txt with unresolvable version conflict
--c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
+-c https://dist.plone.org/release/{PLONE_BACKEND_PATCH_VERSION}/constraints.txt
 plone.api>=2.0.0a3
 ```
 
@@ -106,7 +106,7 @@ zope.testrunner
 {file}`constraints.txt`
 
 ```ini
--c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
+-c https://dist.plone.org/release/{PLONE_BACKEND_PATCH_VERSION}/constraints.txt
 ```
 
 {file}`mx.ini`

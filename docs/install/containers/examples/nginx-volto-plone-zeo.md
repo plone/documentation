@@ -106,7 +106,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     environment:
       SITE: Plone
       ZEO_ADDRESS: db:8100
