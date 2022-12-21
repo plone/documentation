@@ -14,3 +14,4 @@ sphinx-togglebutton
 sphinxcontrib.httpdomain  # plone.restapi
 sphinxcontrib.httpexample  # plone.restapi
 sphinxext-opengraph
+wheel
