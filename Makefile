@@ -196,7 +196,6 @@ linkcheckbroken: deps  ## Run linkcheck and show only broken links
 
 .PHONY: vale
 vale: deps  ## Run Vale style, grammar, and spell checks
-	pwd
 	vale sync
 	vale --no-wrap $(VALEFILES)
 	@echo
