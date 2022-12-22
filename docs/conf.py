@@ -55,6 +55,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
+    "notfound.extension",
 ]
 
 
@@ -204,6 +205,12 @@ ogp_custom_meta_tags = [
 # -- sphinx_copybutton -----------------------
 copybutton_prompt_text = r"^ {0,2}\d{1,3}"
 copybutton_prompt_is_regexp = True
+
+
+# -- sphinx-notfound-page configuration ----------------------------------
+
+notfound_urls_prefix = None
+notfound_template = "404.html"
 
 
 # -- Options for HTML output -------------------------------------------------
