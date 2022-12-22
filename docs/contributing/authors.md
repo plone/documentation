@@ -4,7 +4,7 @@ myst:
     "description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
     "property=og:description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
     "property=og:title": "Authors Guide"
-    "keywords": "Plone, Documentation, SEO, meta, exercises, solutions, spellcheck, linkcheck, lexer"
+    "keywords": "Plone, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer"
 ---
 
 (authors-guide-label)=
@@ -34,7 +34,7 @@ myst:
     "description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
     "property=og:description": "Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors."
     "property=og:title": "Authors Guide"
-    "keywords": "Plone, Documentation, SEO, meta, spellcheck, linkcheck, lexer"
+    "keywords": "Plone, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer"
 ---
 ```
 
@@ -44,7 +44,7 @@ This renders in the HTML `<head>` section as follows.
 <meta content="Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors." name="description" />
 <meta content="Authors' guide to writing Plone Documentation. It covers configuring quality checks and syntax for writing markup that is of particular interest to authors." property="og:description" />
 <meta content="Authors Guide" property="og:title" />
-<meta content="Plone, Documentation, SEO, meta, spellcheck, linkcheck, lexer" name="keywords" />
+<meta content="Plone, Documentation, SEO, meta, Vale, spell, grammar, style, check, linkcheck, lexer" name="keywords" />
 ```
 
 Additional {term}`Open Graph` metadata is implemented through the Sphinx extension [`sphinxext-opengraph`](https://github.com/wpilibsuite/sphinxext-opengraph) and the [MyST `html_meta` directive](https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html#setting-html-metadata), which resolves to the [Docutils `meta` directive](https://docutils.sourceforge.io/docs/ref/rst/directives.html#metadata).
@@ -75,24 +75,22 @@ Open `/_build/html/index.html` in a web browser.
 
 (authors-english-label)=
 
-### American English Spelling, Grammar, and Syntax
+### American English Spelling, Grammar, and Syntax, and Style Guide
 
-Spellings are enforced through [`spellcheck`](https://sphinxcontrib-spelling.readthedocs.io/en/latest/index.html).
-We use the locale `en_US`.
+Spellings are enforced through [`Vale`](https://vale.sh/).
+Plone uses American English.
 
-Spelling is configured in {file}`Makefile`, {file}`docs/conf.py`, and {file}`docs/spelling_wordlist.txt`.
+Spelling is configured in {file}`Makefile`, {file}`.vale.ini`, and in files in `styles/Vocab/Plone/`.
 
-Authors should add new words and proper names using correct casing to {file}`docs/spelling_wordlist.txt`, sorted alphabetically.
+Authors should add new words and proper names using correct casing to {file}`styles/Vocab/Plone/accept.txt`, sorted alphabetically and case-insensitive.
 
-See [default settings and configuration options](https://sphinxcontrib-spelling.readthedocs.io/en/latest/customize.html).
+Vale also provides English grammar and syntax checking, as well as a Style Guide.
 
-To validate spelling, run the following command.
+To perform all these checks, run the following command.
 
 ```shell
-make spellcheck
+make vale
 ```
-
-Open `/_build/spellcheck/` for misspellings.
 
 Because it is difficult to automate good English grammar and syntax, we do not strictly enforce it.
 We also understand that contributors might not be fluent in English.

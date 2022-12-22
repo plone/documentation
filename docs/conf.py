@@ -52,7 +52,6 @@ extensions = [
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
-    "sphinxcontrib.spelling",
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
@@ -97,10 +96,6 @@ linkcheck_anchors = True
 linkcheck_timeout = 10
 linkcheck_retries = 2
 
-# This is our wordlist with known words, like Github or Plone ...
-spelling_word_list_filename = "spelling_wordlist.txt"
-spelling_ignore_pypi_package_names = True
-
 # The suffix of source filenames.
 source_suffix = {
     ".md": "markdown",
@@ -128,6 +123,7 @@ exclude_patterns = [
     "plone.restapi/news",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "volto/developer-guidelines/branch-policy.md",
 ]
 
 html_js_files = [
@@ -312,7 +308,8 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_VERSION}": "6.0.0b3",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.0.1",
 }
 
 
