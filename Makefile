@@ -36,7 +36,7 @@ distclean:  ## Clean docs build directory and Python virtual environment
 
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
-	bin/python -m pip install --upgrade pip
+	bin/pip install -r requirements-initial.txt
 	bin/pip install -r requirements.txt
 
 docs/plone.api:
@@ -226,6 +226,7 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 
 .PHONY: netlify
 netlify:
+	pip install -r requirements-initial.txt
 	pip install -r requirements.txt
 	pip install -r requirements-netlify.txt
 	git submodule init; \
