@@ -1,0 +1,19 @@
+{% extends "!page.html" %}
+
+{%- block htmltitle %}
+<title>{{ title|striptags|e }}{%- for parent in parents %} – {{ parent.title }}{%- endfor %}{{ titlesuffix }}</title>
+{%- endblock %}
+
+{% block body %}
+<div>
+    <h1>Page not found</h1>
+    <p>Unfortunately we couldn't find the content you were looking for.</p>
+</div>
+
+<style>
+    /* Hide empty sub menu. */
+    .sticky-top .bd-toc {
+        visibility: hidden;
+    }
+</style>
+{% endblock %}
