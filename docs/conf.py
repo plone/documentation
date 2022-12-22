@@ -225,6 +225,14 @@ todo_include_todos = True
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
 html_use_opensearch = "https://6.docs.plone.org"
 
+html_sidebars = {
+    "**": [
+        "sidebar-logo.html",
+        "search-field.html",
+        "sbt-sidebar-nav.html",
+    ]
+}
+
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/plone/documentation",
@@ -232,6 +240,10 @@ html_theme_options = {
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
+    "switcher": {
+        "json_url": "/_static/switcher.json",
+        "version_match": version,
+    },
     "extra_navbar": """
     <p class="ploneorglink">
         <a href="https://plone.org">
