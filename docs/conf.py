@@ -123,6 +123,7 @@ exclude_patterns = [
     "plone.restapi/news",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "volto/developer-guidelines/branch-policy.md",
 ]
 
 html_js_files = [
