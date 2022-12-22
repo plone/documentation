@@ -9,9 +9,9 @@ sphinx-autobuild
 sphinx-book-theme==0.3.3  # Temporary pin until we can sort out HTML refactoring.
 sphinx-copybutton
 sphinx-design
+sphinx-notfound-page
 sphinx-sitemap
 sphinx-togglebutton
 sphinxcontrib.httpdomain  # plone.restapi
 sphinxcontrib.httpexample  # plone.restapi
 sphinxext-opengraph
-sphinx-notfound-page
