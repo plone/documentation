@@ -9,7 +9,7 @@ myst:
 
 (setup-build-label)=
 
-# Building and Checking the Quality of Documentation
+# Building and checking the quality of documentation
 
 This document covers how to build the Plone Documentation and check it for quality.
 
