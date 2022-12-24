@@ -55,6 +55,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
+    "notfound.extension",
 ]
 
 
@@ -206,6 +207,12 @@ copybutton_prompt_text = r"^ {0,2}\d{1,3}"
 copybutton_prompt_is_regexp = True
 
 
+# -- sphinx-notfound-page configuration ----------------------------------
+
+notfound_urls_prefix = None
+notfound_template = "404.html"
+
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -309,7 +316,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.0.1",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.0.2",
 }
 
 
