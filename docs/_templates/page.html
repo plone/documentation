@@ -13,6 +13,12 @@
                 $(".sticky-top .bd-toc").css("visibility", "hidden");
             }
         });
+        $(document).keydown(function(event) {
+            if (event.ctrlKey && event.which == 75) {
+                event.preventDefault();
+                $('#search-input').focus();
+            }
+        });
     </script>
 
 {% endblock %}
