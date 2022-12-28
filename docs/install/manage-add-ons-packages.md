@@ -217,7 +217,7 @@ Add the add-on to {file}`requirements.txt`:
 collective.easyform
 ```
 
-Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
+Add it to {file}`instance.yaml` to let Zope know that this add-on should be loaded:
 
 ```yaml
 default_context:
@@ -261,7 +261,7 @@ branch=dev-branch-name
 extras=test
 ```
 
-Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
+Add it to {file}`instance.yaml` to let Zope know that this add-on should be loaded:
 
 ```yaml
 default_context:
