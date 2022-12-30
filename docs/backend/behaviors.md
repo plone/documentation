@@ -301,7 +301,7 @@ To explain interfaces and adapters, let's begin with an analogy using electrical
 
 An electrical outlet provides an interface through which electricity passes.
 When you travel to another country, you may need an outlet adapter for the outlet (the interface).
-For example, assume you have a device that has plug for Schuko outlets, and in Italy there are Type L outlets.
+For example, assume you have a device that has a plug for Schuko outlets, and in Italy there are Type L outlets.
 If we were to represent the behavior of choosing the correct power adapter in Plone, you would do the following.
 
 -  You need an electrical adapter for your Schuko plug.
