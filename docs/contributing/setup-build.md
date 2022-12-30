@@ -40,7 +40,7 @@ Vale also has [integrations](https://vale.sh/docs/integrations/guide/) with vari
 Plone documentation uses a file located at the root of the repository, `.vale.ini`, to configure Vale.
 This file allows overriding rules or changing their severity.
 
-The Plone Documentation Team selected the [Microsoft Writing Style Guide](https://docs.microsoft.com/en-us/style-guide/welcome/) for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences. 
+The Plone Documentation Team selected the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/) for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences. 
 
 ```{note}
 More corrections to spellings and Vale's configuration are welcome by submitting a pull request.
