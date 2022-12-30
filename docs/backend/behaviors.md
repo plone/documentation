@@ -11,8 +11,6 @@ myst:
 
 # Behaviors
 
-## What are Behaviors in Plone
-
 In Plone, behaviors are a way to add reusable functionality to content objects without modifying the objects themselves.
 Behaviors are essentially small chunks of code that can be plugged onto content types to provide new features or capabilities.
 
@@ -22,7 +20,7 @@ A Plone behavior could be used to
 - add logic as part of the adapter,
 - enable a particular event handler,
 - enable one or more views, viewlets, or other UI components,
-- do anything else which may be expressed in code via an adapter and/or marker interface.
+- do anything else which may be expressed in code via an adapter or marker interface.
 
 Behaviors can be added to content types on an as-needed basis, allowing for a high degree of flexibility and customization.
 
@@ -38,71 +36,82 @@ Overall, behaviors are an important part of the Plone content management system 
 
 ## Built-in behaviors
 
-| short name  | Title            | Desription                    |
-|-------------|------------------|-------------------------------|
-| plone.allowdiscussion  | Allow discussion | Allow discussion on this item |
-| plone.basic  | Basic metadata | Adds title and description fields. |
-| plone.categorization  | Categorization | Adds keywords and language fields. |
-| plone.collection  | Collection | Adds collection behavior |
-| plone.publication  | Date range | Adds effective date and expiration date fields. |
-| plone.dublincore | Dublin Core metadata | Adds standard metadata fields (equals Basic metadata +    Categorization + Effective range + Ownership  |
-| plone.eventattendees  | Event Attendees | Attendees extension for Events. |
-| plone.eventbasic  | Event Basic | Basic Event schema. |
-| plone.eventcontact  | Event Contact | Contact extension for Events. |
-| plone.eventlocation  | Event Location | Location extension for Events. |
-| plone.eventrecurrence  | Event Recurrence | Recurrence extension for Events. |
-| plone.excludefromnavigation  | Exclude From navigation | Allow items to be excluded from navigation |
-| plone.constraintypes| Folder Addable Constrains | Restrict the content types that can be added to folderish   content |
-| plone.textindexer | Full-Text Indexing | Enables the enhanced full-text indexing for a content type. If a field in the schema is marked with the `searchable` directive, its content gets added to the `SearchableText` index in the catalog |
-| plone.leadimage  | Lead Image | Adds image and image caption fields |
-| plone.locking  | Locking | Locking support for dexterity |
-| plone.translatable  | Multilingual Support | Make this content type multilingual aware. Multilingual support must be installed. |
-| plone.namefromfilename | Name from file name | Automatically generate short URL name for content based on its    primary field file name
-| plone.namefromtitle | Name from title | Automatically generate short URL name for content based on its initial    title
-| plone.navigationroot  | Navigation root | Make all items of this type a navigation root |
-| plone.nextpreviousenabled  | Next previous navigation | Enable next previous navigation for all items of this type |
-| plone.nextprevioustoggle  | Next previous navigation toggle | Allow items to have next previous navigation enabled |
-| plone.ownership  | Ownership | Adds creator, contributor, and rights fields. |
-| plone.relateditems  | Related items | Adds the ability to assign related items |
-| plone.richtext  | RichText | Adds richtext behavior |
-| plone.shortname  | Short name | Gives the ability to rename an item from its edit form. |
-| plone.tableofcontents  | Table of contents | Adds a table of contents |
-| plone.thumb_icon | Thumbs and icon handling | Options to suppress thumbs and/or icons and to override thumb   size in listings, tables etc.
-| plone.versioning  | Versioning | Versioning support with CMFEditions |
-| volto.blocks  | Blocks | Enables Volto Blocks support |
-| volto.blocks.editable.layout  | Blocks (Editable Layout) | Enables Volto Blocks (editable layout) support |
-| volto.head_title  | Head title field | Adds Head title field |
-| volto.navtitle  | Navigation title | Navigation title used in sections, menus and doormats |
-| volto.preview_image  | Preview Image | Preview image for listings |
-| volto.preview_image_link | Preview Image Link | Preview image for listings based on links |
+To view a complete list of built-in behaviors, browse to {guilabel}`Content Types` control panel, then click {guilabel}`Page` (or any other content type), then {guilabel}`Behaviors`.
+
+| short name | Title | Desription |
+|---|---|---|
+| `plone.allowdiscussion` | Allow discussion | Allow discussion on this item |
+| `plone.basic` | Basic metadata | Adds title and description fields. |
+| `volto.blocks` | Blocks | Enables Volto Blocks support |
+| `volto.blocks.editable.layout` | Blocks (Editable Layout) | Enables Volto Blocks (editable layout) support |
+| `plone.categorization` | Categorization | Adds keywords and language fields. |
+| `plone.collection` | Collection | Adds collection behavior |
+| `plone.publication` | Date range | Adds effective date and expiration date fields. |
+| `plone.dublincore` | Dublin Core metadata | Adds standard metadata fields (equals Basic metadata + Categorization + Effective range + Ownership |
+| `plone.eventattendees` | Event Attendees | Attendees extension for Events. |
+| `plone.eventbasic` | Event Basic | Basic Event schema. |
+| `plone.eventcontact` | Event Contact | Contact extension for Events. |
+| `plone.eventlocation` | Event Location | Location extension for Events. |
+| `plone.eventrecurrence` | Event Recurrence | Recurrence extension for Events. |
+| `plone.excludefromnavigation` | Exclude From navigation | Allow items to be excluded from navigation |
+| `plone.constraintypes` | Folder Addable Constrains | Restrict the content types that can be added to folderish   content |
+| `plone.textindexer` | Full-Text Indexing | Enables the enhanced full-text indexing for a content type. If a field in the schema is marked with the `searchable` directive, its content gets added to the `SearchableText` index in the catalog |
+| `volto.head_title` | Head title field | Adds Head title field |
+| `plone.leadimage` | Lead Image | Adds image and image caption fields |
+| `plone.locking` | Locking | Locking support for dexterity |
+| `plone.translatable` | Multilingual Support | Make this content type multilingual aware. Multilingual support must be installed. |
+| `plone.namefromfilename` | Name from file name | Automatically generate short URL name for content based on its    primary field file name
+| `plone.namefromtitle` | Name from title | Automatically generate short URL name for content based on its initial    title
+| `plone.navigationroot` | Navigation root | Make all items of this type a navigation root |
+| `volto.navtitle` | Navigation title | Navigation title used in sections, menus and doormats |
+| `plone.nextpreviousenabled` | Next previous navigation | Enable next previous navigation for all items of this type |
+| `plone.nextprevioustoggle` | Next previous navigation toggle | Allow items to have next previous navigation enabled |
+| `plone.ownership` | Ownership | Adds creator, contributor, and rights fields. |
+| `volto.preview_image` | Preview Image | Preview image for listings |
+| `volto.preview_image_link` | Preview Image Link | Preview image for listings based on links |
+| `plone.relateditems` | Related items | Adds the ability to assign related items |
+| `plone.richtext` | RichText | Adds richtext behavior |
+| `plone.shortname` | Short name | Gives the ability to rename an item from its edit form. |
+| `plone.tableofcontents` | Table of contents | Adds a table of contents |
+| `plone.thumb_icon` | Thumbs and icon handling | Options to suppress thumbs and/or icons and to override thumb   size in listings, tables etc.
+| `plone.versioning` | Versioning | Versioning support with CMFEditions |
+
+```{todo}
+For each behavior in the table above, one may view the source code of the checkbox (its `name` attribute) to view its Short Name.
+An issue has been created to better expose these in the user interface.
+[Control panel for Content Type > Behaviors short names not displayed to user Products.CMFPlone#3706](https://github.com/plone/Products.CMFPlone/issues/3706)
+```
 
 ## Adding or removing a behavior from a content type
 
 There are two ways to add or remove a behavior on a content type:
 
-- Through the web using the {guilabel}`Content Types` control panel.
-- Using a custom add-on GenericSetup profile.
+-   Through the web using the {guilabel}`Content Types` control panel.
+-   Using a custom add-on `GenericSetup` profile.
 
-### Through the Web
 
-1. Go to the {guilabel}`Site Setup` and chose the {guilabel}`Content Types` control panel.
-2. Select the content type to which you want to add or remove a behavior.
-3. Then click on the {guilabel}`Behaviors` tab of the settings of the content type.
-4. A list of all available behaviors appears.
-   Select or deselect the checkbox of the behavior you want to add to or remove from the type.
-5. Save the form by clicking on the {guilabel}`Save` button at the bottom of the page.
+### Through the web
 
-### Using a GenericSetup profile
+1.  Go to the {guilabel}`Site Setup` and chose the {guilabel}`Content Types` control panel.
+2.  Select the content type to which you want to add or remove a behavior.
+3.  Then click on the {guilabel}`Behaviors` tab of the settings of the content type.
+4.  A list of all available behaviors appears.
+    Select or deselect the checkbox of the behavior you want to add to or remove from the type.
+5.  Save the form by clicking on the {guilabel}`Save` button at the bottom of the page.
+
+
+### Using a `GenericSetup` profile
 
 Given you already have a custom add-on with a `profiles/default` directory, and you created a custom behavior named `mybehavior.subtitle`.
 
 If you want to enable a behavior on an existing content type, create a new directory `types` under `profiles/default`.
 In the `types` directory, create a file named the same as the content type you want to change.
-In the example here, you want to add a behavior to the built-in Event content type.
-The file to create is named `Event.xml` and it is a {term}`Factory Type Information` (FTI) definition.
-You need to change only the behaviors configuration.
+In the example here, you want to add a behavior to the built-in `Event` content type.
+Create a file named `Event.xml`.
+It is a {term}`Factory Type Information` (FTI) definition.
+You need to change only the behavior's configuration.
 All other parts can be ignored.
-This looks like so:
+The file `Event.xml` contains the following.
 
 ```xml
 <?xml version="1.0"?>
@@ -117,7 +126,7 @@ This looks like so:
 </object>
 ```
 
-After you apply the profile (or uninstall and install the custom add-on), the behavior is effective on the Event content type.
+After you apply the profile (or uninstall and install the custom add-on), the behavior is effective on the `Event` content type.
 
 
 ## Custom behaviors
@@ -128,9 +137,10 @@ Schema-only behaviors
 : These behaviors have only a schema with fields.
 
 Full behaviors
-: A python class containing the logic of the behavior, an interface or schema defining the contract of the behavior, and a marker interface applicable to a content type.
+: A Python class containing the logic of the behavior, an interface or schema defining the contract of the behavior, and a marker interface applicable to a content type.
 
-### Creating a schema-only behavior
+
+### Create a schema-only behavior
 
 Given you want to add a field `subtitle` to some existing content types of your custom add-on.
 
@@ -169,7 +179,7 @@ After a restart of Plone, the behavior can be added to the content type in the {
 The add and edit forms contain a new field `Subtitle`.
 
 This field is not displayed in most views.
-To display the data entered in this field, you need to modify the page template by adding the field `context.subtitle`.
+To display the entered data in this field, you need to modify the page template by adding the field `context.subtitle`.
 
 ### Creating a behavior with an adapter and factory
 
@@ -231,27 +241,26 @@ class PriceAdapter:
     @property
     def price_gross(self):
         return self.price_net + self.price_vat
-
 ```
 
-The registration in the `configure.zcml` looks like so:
+The registration in the `configure.zcml`:
 
-```XML
-  <plone:behavior
-      factory=".price.PriceAdapter"
-      for=".price.IPriceMarker"
-      marker=".price.IPriceMarker"
-      name="myproject.price"
-      provides=".price.IPriceBehavior"
-      title="Price with net, VAT and gross"
-  />
-  ```
+```xml
+<plone:behavior
+  factory=".price.PriceAdapter"
+  for=".price.IPriceMarker"
+  marker=".price.IPriceMarker"
+  name="myproject.price"
+  provides=".price.IPriceBehavior"
+  title="Price with net, VAT and gross"
+/>
+```
 
 After a restart of Plone, the behavior can be added to the content type in the {guilabel}`Content Types` control panel.
 The add and edit forms contain a new field `Price (net)`.
 
 This field is not displayed in most views.
-To display the data entered in this field, you need to modify the page template by adding the `price_net` field as `context.price_net`.
+To display the entered data in this field, you need to modify the page template by adding the `price_net` field as `context.price_net`.
 To access the `price_vat` and `price_gross` fields from a browser view, you need to get the adapter from the context of the view:
 
 (behavior-code-example)=
@@ -262,15 +271,15 @@ from .price import IPriceBehavior
 class SomeViewClass:
 
     def vat(self):
-        adapter = IPriceBehavior(context)
-        return adapter.price_vat
+        price_for_context = IPriceBehavior(context)
+        return price_for_context.price_vat
 
     def gross(self):
-        adapter = IPriceBehavior(context)
-        return adapter.price_gross
+        price_for_context = IPriceBehavior(context)
+        return price_for_context.price_gross
 ```
 
-### Creating a behavior with PloneCLI
+### Create a behavior with PloneCLI
 
 To add a behavior to your add-on, you can use PloneCLI as follows:
 
@@ -278,13 +287,15 @@ To add a behavior to your add-on, you can use PloneCLI as follows:
 plonecli add behavior
 ```
 
-This will create the behavior Python file in the `behaviors` folder, where you can define your behaviors schema fields, and registers the behavior in the `configure.zcml`.
+This will create the behavior Python file in the `behaviors` folder where you can define your behavior's schema fields, and registers the behavior in the `configure.zcml`.
+
 
 ### Further reading on working with behaviors
 
 ```{seealso}
 See the chapter {ref}`training:behaviors1-label` from the Mastering Plone 6 Training.
 ```
+
 
 ## How behaviors work
 
@@ -294,35 +305,39 @@ You do not *need* to know this, but it may help if you run into problems.
 ```
 
 In Plone, behaviors can be globally enabled on content types at runtime.
-With add-ons, behaviors can even be enabled even on a single content object or for a whole subtree in the content hierarchy.
+With add-ons, behaviors can be enabled even on a single content object or for a whole subtree in the content hierarchy.
+
 
 ### Interfaces and adapters
+
 To explain interfaces and adapters, let's begin with an analogy using electrical systems.
 
 An electrical outlet provides an interface through which electricity passes.
 When you travel to another country, you may need an outlet adapter for the outlet (the interface).
 For example, assume you have a device that has a plug for Schuko outlets, and in Italy there are Type L outlets.
-If we were to represent the behavior of choosing the correct power adapter in Plone, you would do the following.
+If we were to represent the behavior of choosing the correct outlet adapter in Plone, you would do the following.
 
--  You need an electrical adapter for your Schuko plug.
-  1. you look at the outlet and see it is TypeL.
-  2. you look in your box containing different adapters and choose one the correct electrical adapter to use, and
-  3. plug that into the wall outlet.
-  4. Finally you can use your Schuko providing device on an Italian TypeL outlet.
--  In Python you call `getAdapter(context, ISchuko)` (context is here the outlet) which then 
-   1. determine the type of interface provided by the `context` and as a result it finds `ITypeL`.
-   2. looks in the component registry if there is a class that adapts to `ITypeL` and at the same time provides the requested `ISchuko`.
-   3. initializes the adapter class with the context and return it as the result
-   4. Finally the `ISchuko` providing adapter can be used on a `ITypeL` providing context.
+-   You need an outlet adapter for your Schuko plug.
+    1.  You look at the outlet and see it is Type L.
+    2.  You look in your box containing different adapters and choose the correct outlet adapter to use.
+    3.  You plug that into the wall outlet.
+    4.  Finally, you can use your Schuko providing device on an Italian Type L outlet.
+-   In Python, you would call `getAdapter(context, ISchuko)` (context is here the outlet type), which would then do the following.
+    1.  Determine the type of interface provided by the `context`.
+        As a result, it finds `ITypeL` interface.
+    2.  Looks in the component registry if there is a class that adapts to `ITypeL`.
+        At the same time, it provides the requested `ISchuko` adapter.
+    3.  Initializes the adapter class with the context, and returns it as the result.
+    4.  Finally, the `ISchuko` providing adapter can be used on a `ITypeL` providing context.
 
 This process of choosing the right adapter based on the information of the context and the requested interface implements the design pattern of an abstract factory.
 
 Similarly, using the {ref}`behavior code example <behavior-code-example>` above:
 
--   You would call an abstract factory with `getAdapter(context, IPriceBehavior)` to get an adapter.
+-   You would call an abstract factory with `getAdapter(context, IPriceBehavior)` to get an adapter, `price_for_context`.
     Although it is an interface, it is more of a shortcut to factory usage.
--   The adapter that is specific to the given content type is assigned to the variable `adapter`.
-    Now you can use `adapter` for whatever you like.
+-   The adapter that is specific to the given content type is assigned to the variable `price_for_context`.
+    Now you can use `price_for_context` for whatever you like.
 
 When a behavior is enabled for a particular object, it will be possible to adapt that object to the behavior's interface.
 Otherwise, when the behavior is disabled, adaptation will fail or falls back to a more generic adapter, if any is registered.
@@ -353,6 +368,6 @@ The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/bl
 
 ### Lookup and provide
 
-Plone content objects have logic to look up the behaviors' names registered from their types' configuration, the Factory Type Information (FTI).
+Plone content objects have logic to look up the behaviors' names registered from their types' configuration, the {term}`Factory Type Information` (FTI).
 At runtime, the logic provides the interface (or marker) from the behavior to the object.
 This dynamically provided interface enables the component architecture to react to this new interface by adding additional form fields, bindings events, enabling more specific views, and more.
