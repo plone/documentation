@@ -29,9 +29,9 @@ year = str(now.year)
 # built documents.
 #
 # The short X.Y version.
-version = "6.0-dev"
+version = "6.0"
 # The full version, including alpha/beta/rc tags.
-release = "6.0-dev"
+release = "6.0"
 
 # -- General configuration ----------------------------------------------------
 
@@ -52,10 +52,10 @@ extensions = [
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
-    "sphinxcontrib.spelling",
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
+    "notfound.extension",
 ]
 
 
@@ -97,10 +97,6 @@ linkcheck_anchors = True
 linkcheck_timeout = 10
 linkcheck_retries = 2
 
-# This is our wordlist with known words, like Github or Plone ...
-spelling_word_list_filename = "spelling_wordlist.txt"
-spelling_ignore_pypi_package_names = True
-
 # The suffix of source filenames.
 source_suffix = {
     ".md": "markdown",
@@ -128,6 +124,7 @@ exclude_patterns = [
     "plone.restapi/news",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "volto/developer-guidelines/branch-policy.md",
 ]
 
 html_js_files = [
@@ -182,7 +179,7 @@ myst_substitutions = {
 # We use Intersphinx to resolve targets when either the individual project's or
 # the entire Plone Documentation is built.
 intersphinx_mapping = {
-    "plone": ("https://6.dev-docs.plone.org/", None),  # for imported packages
+    "plone": ("https://6.docs.plone.org/", None),  # for imported packages
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/5/", None),
 }
@@ -195,9 +192,9 @@ graphviz_output_format = "svg"
 
 # -- OpenGraph configuration ----------------------------------
 
-ogp_site_url = "https://6.dev-docs.plone.org/"
+ogp_site_url = "https://6.docs.plone.org/"
 ogp_description_length = 200
-ogp_image = "https://6.dev-docs.plone.org/_static/Plone_logo_square.png"
+ogp_image = "https://6.docs.plone.org/_static/Plone_logo_square.png"
 ogp_site_name = "Plone Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
@@ -208,6 +205,12 @@ ogp_custom_meta_tags = [
 # -- sphinx_copybutton -----------------------
 copybutton_prompt_text = r"^ {0,2}\d{1,3}"
 copybutton_prompt_is_regexp = True
+
+
+# -- sphinx-notfound-page configuration ----------------------------------
+
+notfound_urls_prefix = None
+notfound_template = "404.html"
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -227,7 +230,15 @@ todo_include_todos = True
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://docs.plone.org"
+html_use_opensearch = "https://6.docs.plone.org"
+
+html_sidebars = {
+    "**": [
+        "sidebar-logo.html",
+        "search-field.html",
+        "sbt-sidebar-nav.html",
+    ]
+}
 
 html_theme_options = {
     "path_to_docs": "docs",
@@ -236,6 +247,10 @@ html_theme_options = {
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
+    "switcher": {
+        "json_url": "/_static/switcher.json",
+        "version_match": version,
+    },
     "extra_navbar": """
     <p class="ploneorglink">
         <a href="https://plone.org">
@@ -255,7 +270,7 @@ html_title = "%(project)s v%(release)s" % {"project": project, "release": releas
 html_use_index = True
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6.dev-docs.plone.org"
+html_baseurl = "https://6.docs.plone.org"
 
 # -- Options for HTML help output -------------------------------------------------
 
@@ -285,7 +300,7 @@ latex_logo = "_static/logo_2x.png"
 # suggest edit link
 # remark: {{ file_name }} is mandatory in "edit_page_url_template"
 html_context = {
-    "edit_page_url_template": "https://6.dev-docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
+    "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
 }
 
 # An extension that allows replacements for code blocks that
@@ -300,7 +315,8 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_VERSION}": "6.0.0b3",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.0.2",
 }
 
 

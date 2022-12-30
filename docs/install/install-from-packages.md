@@ -95,16 +95,16 @@ You can accept the default values in square brackets (`[default-option]`) by hit
 For ease of documentation, we will use the default values.
 
 ```console
-You've downloaded /<path-to-cookiecutter>/cookiecutter-plone-starter before.
-  Is it okay to delete and re-download it? [yes]: 
+You've downloaded <path-to-cookiecutter>/cookiecutter-plone-starter before. Is it okay to delete and re-download it? [yes]: 
 project_title [Project Title]: 
 project_slug [project-title]: 
 description [A new project using Plone 6.]: 
 author [Plone Foundation]: 
 email [collective@plone.org]: 
 python_package_name [project_title]: 
-plone_version [6.0.0b2]: 
-volto_version [16.0.0-alpha.35]: 
+plone_version [6.0.0]: 
+volto_version [16.5.0]: 
+volto_generator_version [6.2.0]: 
 Select language_code:
 1 - en
 2 - de
@@ -127,13 +127,14 @@ Running sanity checks
   - git: ✓
 
 Summary:
-  - Plone version: 6.0.0b2
-  - Volto version: 16.0.0-alpha.35
-  - Output folder: /<path-to-project>/my_project/project-title
+  - Plone version: 6.0.0
+  - Volto version: 16.5.0
+  - Volto Generator version: 6.2.0
+  - Output folder: <path-to-project>/project-title
 
 Frontend codebase:
- - Install latest @plone/generator-volto
- - Generate frontend application with @plone/volto 16.0.0-alpha.35
+ - Installing @plone/generator-volto@6.2.0
+ - Generate frontend application with @plone/volto 16.5.0
 
 Backend codebase
  - Format generated code in the backend

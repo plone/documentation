@@ -22,8 +22,8 @@ jobs:
           pip install -q -r requirements.txt
           pip freeze
 
-      # - name: Run spellcheck
-      #   run: make spellcheck
+      # - name: Run Vale
+      #   run: make vale
 
       # - name: Run linkcheck
       #   run: make linkcheck
