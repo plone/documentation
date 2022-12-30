@@ -52,10 +52,10 @@ extensions = [
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
-    "sphinxcontrib.spelling",
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
+    "notfound.extension",
 ]
 
 
@@ -97,10 +97,6 @@ linkcheck_anchors = True
 linkcheck_timeout = 10
 linkcheck_retries = 2
 
-# This is our wordlist with known words, like Github or Plone ...
-spelling_word_list_filename = "spelling_wordlist.txt"
-spelling_ignore_pypi_package_names = True
-
 # The suffix of source filenames.
 source_suffix = {
     ".md": "markdown",
@@ -128,6 +124,7 @@ exclude_patterns = [
     "plone.restapi/news",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "volto/developer-guidelines/branch-policy.md",
 ]
 
 html_js_files = [
@@ -210,6 +207,12 @@ copybutton_prompt_text = r"^ {0,2}\d{1,3}"
 copybutton_prompt_is_regexp = True
 
 
+# -- sphinx-notfound-page configuration ----------------------------------
+
+notfound_urls_prefix = None
+notfound_template = "404.html"
+
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -229,6 +232,14 @@ todo_include_todos = True
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
 html_use_opensearch = "https://6.docs.plone.org"
 
+html_sidebars = {
+    "**": [
+        "sidebar-logo.html",
+        "search-field.html",
+        "sbt-sidebar-nav.html",
+    ]
+}
+
 html_theme_options = {
     "path_to_docs": "docs",
     "repository_url": "https://github.com/plone/documentation",
@@ -236,6 +247,10 @@ html_theme_options = {
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
+    "switcher": {
+        "json_url": "/_static/switcher.json",
+        "version_match": version,
+    },
     "extra_navbar": """
     <p class="ploneorglink">
         <a href="https://plone.org">
@@ -300,7 +315,8 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_VERSION}": "6.0.0",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.0.2",
 }
 
 
