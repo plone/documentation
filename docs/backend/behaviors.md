@@ -304,12 +304,18 @@ When you travel to another country, you may need an outlet adapter for the outle
 For example, assume you have a device that has plug for Schuko outlets, and in Italy there are Type L outlets.
 If we were to represent the behavior of choosing the correct power adapter in Plone, you would do the following.
 
--   Call `getAdapter(context, ITypeL)` to determine the type of adapter needed for the electric outlet's interface.
--   Call `getAdapter(context, ISchuko) to determine the type of adapter that will accept your device's plug.
--   You choose the correct electrical adapter to use, and plug that into the wall outlet.
-    This is similar to calling an abstract factory which returns the correct adapter to use.
-    This interface provides an ISchuko adapter.
--   Finally to use the new interface, you plug in your Schuko plug into the adapter to get power to your device.
+-  You need an electrical adapter for your Schuko plug.
+  1. you look at the outlet and see it is TypeL.
+  2. you look in your box containing different adapters and choose one the correct electrical adapter to use, and
+  3. plug that into the wall outlet.
+  4. Finally you can use your Schuko providing device on an Italian TypeL outlet.
+-  In Python you call `getAdapter(context, ISchuko)` (context is here the outlet) which then 
+   1. determine the type of interface provided by the `context` and as a result it finds `ITypeL`.
+   2. looks in the component registry if there is a class that adapts to `ITypeL` and at the same time provides the requested `ISchuko`.
+   3. initializes the adapter class with the context and return it as the result
+   4. Finally the `ISchuko` providing adapter can be used on a `ITypeL` providing context.
+
+This process of choosing the right adapter based on the information of the context and the requested interface implements the design pattern of an abstract factory.
 
 Similarly, using the {ref}`behavior code example <behavior-code-example>` above:
 
