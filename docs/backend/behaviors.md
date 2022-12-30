@@ -295,6 +295,26 @@ In Plone, behaviors can be globally enabled on content types at runtime.
 With add-ons, behaviors can even be enabled even on a single content object or for a whole subtree in the content hierarchy.
 
 ### Interfaces and adapters
+To explain interfaces and adapters, let's begin with an analogy using electrical systems.
+
+An electrical outlet provides an interface through which electricity passes.
+When you travel to another country, you may need an outlet adapter for the outlet (the interface).
+For example, assume you have a device that has plug for Schuko outlets, and in Italy there are Type L outlets.
+If we were to represent the behavior of choosing the correct power adapter in Plone, you would do the following.
+
+-   Call `getAdapter(context, ITypeL)` to determine the type of adapter needed for the electric outlet's interface.
+-   Call `getAdapter(context, ISchuko) to determine the type of adapter that will accept your device's plug.
+-   You choose the correct electrical adapter to use, and plug that into the wall outlet.
+    This is similar to calling an abstract factory which returns the correct adapter to use.
+    This interface provides an ISchuko adapter.
+-   Finally to use the new interface, you plug in your Schuko plug into the adapter to get power to your device.
+
+Similarly, using the {ref}`behavior code example <behavior-code-example>` above:
+
+-   You would call an abstract factory with `getAdapter(context, IPriceBehavior)` to get an adapter.
+    Although it is an interface, it is more of a shortcut to factory usage.
+-   The adapter that is specific to the given content type is assigned to the variable `adapter`.
+    Now you can use `adapter` for whatever you like.
 
 When a behavior is enabled for a particular object, it will be possible to adapt that object to the behavior's interface.
 Otherwise, when the behavior is disabled, adaptation will fail or falls back to a more generic adapter, if any is registered.
