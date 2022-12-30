@@ -505,4 +505,21 @@ content rule
 trigger
     A trigger is an event in Plone that causes the execution of defined actions.
     Example triggers include object modified, user logged in, and workflow state changed.
+
+FTI
+Factory Type Information
+    Factory type information (FTI) is responsible for content creation in the portal.
+    FTI is responsible for the following:
+
+    -   Which function is called when new content type is added.
+    -   Icons available for content types.
+    -   Creation views for content types.
+    -   Permission and security.
+    -   Whether discussion is enabled.
+    -   Providing the `factory_type_information` dictionary.
+        This is used elsewhere in the code (often in `__init__.py` of a product) to set the initial values for a ZODB Factory Type Information object (an object in the `portal_types` tool).
+    
+    ```{seealso}
+    [`FactoryTypeInformation` class source code](https://github.com/zopefoundation/Products.CMFCore/blob/361a30e0c72a15a21f88433b8d5fc49331f36728/src/Products/CMFCore/TypesTool.py#L431)
+    ```
 ```
