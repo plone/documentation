@@ -92,6 +92,7 @@ linkcheck_ignore = [
     r"https://github.com/tc39/proposals/blob/HEAD/finished-proposals.md#finished-proposals",
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=master",  # plone.restapi
     r"https://github.com/plone/plone.restapi/blob/dde57b88e0f1b5f5e9f04e6a21865bc0dde55b1c/src/plone/restapi/services/content/add.py#L35-L61",  # plone.restapi
+    r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 10

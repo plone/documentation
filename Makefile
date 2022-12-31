@@ -36,7 +36,7 @@ distclean:  ## Clean docs build directory and Python virtual environment
 
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
-	bin/python -m pip install --upgrade pip
+	bin/pip install -r requirements-initial.txt
 	bin/pip install -r requirements.txt
 
 docs/plone.api:
@@ -189,7 +189,7 @@ linkcheck: deps  ## Run linkcheck
 
 .PHONY: linkcheckbroken
 linkcheckbroken: deps  ## Run linkcheck and show only broken links
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | grep -wi "broken\|redirect" | GREP_COLORS='0;31' grep -vi "https://github.com/plone/volto/issues/" --color=auto || test $$? = 1
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=always | GREP_COLORS='0;31' grep -vi "https://github.com/plone/volto/issues/" --color=always && if test $$? = 0; then exit 1; fi || test $$? = 1
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
@@ -226,6 +226,7 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 
 .PHONY: netlify
 netlify:
+	pip install -r requirements-initial.txt
 	pip install -r requirements.txt
 	pip install -r requirements-netlify.txt
 	git submodule init; \
