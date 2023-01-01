@@ -204,8 +204,7 @@ Hot Module Replacement (HMR)
     A development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
 
 Yeoman
-    A popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
-    https://yeoman.io/
+    [Yeoman](https://yeoman.io/) is a popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
 
 CommonJS
     A JavaScript package standard, the equivalent of a Python wheel or egg.
@@ -447,6 +446,7 @@ Zope
 
 Make
 make
+GNU make
     [GNU Make](https://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files.
 
     Make gets its knowledge of how to build your program from a file called the _makefile_, which lists each of the non-source files and how to compute it from other files.
@@ -522,4 +522,11 @@ Factory Type Information
     ```{seealso}
     [`FactoryTypeInformation` class source code](https://github.com/zopefoundation/Products.CMFCore/blob/361a30e0c72a15a21f88433b8d5fc49331f36728/src/Products/CMFCore/TypesTool.py#L431)
     ```
+
+`nvm`
+Node Version Manager
+    [`nvm`](https://github.com/nvm-sh/nvm/blob/master/README.md) allows you to quickly install and use different versions of node via the command line.
+
+Node.js
+    [Node.js®](https://nodejs.org/en/) is an open-source, cross-platform JavaScript runtime environment.
 ```
