@@ -4,7 +4,7 @@ myst:
     "description": "How to protect Plone against CSRF attacks."
     "property=og:description": "How to protect Plone against CSRF attacks."
     "property=og:title": "Cross-Site Request Forgery protection in Plone"
-    "keywords": "CSRF, security, token, protection"
+    "keywords": "CSRF, security, token, protection, Cross-Site Request Forgery"
 ---
 
 (classic-ui-csrf-label)=
@@ -26,20 +26,20 @@ If the token is missing or invalid, the request is rejected.
 
 ## Auto protection
 
-In Plone, CSRF protection is done almost transparently by [plone.protect](https://pypi.org/project/plone.protect/).
+In Plone, CSRF protection is done almost transparently by [`plone.protect`](https://pypi.org/project/plone.protect/).
 One important aspect of `plone.protect` is that it performs the CSRF token validation at the database transaction commit time (at the end of the request), rather than at the beginning of the request.
 This means that the view can execute and make changes to the database, but the changes will not be persisted unless a valid CSRF token is present in the request.
 
-When a logged-in user requests a page, Plone automatically includes the CSRF token in all forms by applying a transform (using `plone.transformchain`) that adds a hidden field with the token.
+When a logged-in user requests a page, Plone automatically includes the CSRF token in all forms by applying a transform (using `plone.transformchain`) that adds a hidden input with its value set to the token.
 This includes, but is not limited to the following:
 
 - add and edit forms
-- control-panels
-- custom z3c-forms
+- control panels
+- custom z3c forms
 
 ## Manual protection
 
-To ensure that code that is not part of a database transaction, such as code that writes to an external API or a service that is not automatically included in the transaction mechanism, is protected, you will need to manually implement protection for that code.
+To ensure that code that is not part of a database transaction—such as code that writes to an external API or a service that is not automatically included in the transaction mechanism—is protected, you will need to manually implement protection for that code.
 
 `plone.protect` offers the `@protect` decorator.
 The decorator expects a callable to perform the check.
@@ -63,7 +63,7 @@ Usage example:
 
 ### HTTP POST check with `PostOnly`
 
-Checks whether the request is an HTTP POST and raise `Unauthorized` if not.
+Checks whether the request is an HTTP POST request, and raises `Unauthorized` if not.
 This helps to mitigate clicks on malicious links.
 
 Usage example:
@@ -78,7 +78,7 @@ def write_to_api_or_service(self):
     ...
 ```
 
-## How to add a CSRF-Token to a Link or Form
+## How to add a CSRF-token to a link or form
 
 To pass a token you need either to:
 
@@ -94,7 +94,7 @@ To add a token as an HTTP GET parameter to a link in a template, you can utilize
 </tal:authenticator>
 ```
 
-To add a hidden field with a token to a form in a template, the above view can be used too like this:
+To add a hidden field with a token to a form in a template, the above view can be used as follows:
 
 ```html
 <span tal:replace="structure context/@@authenticator/authenticator"/>
@@ -144,10 +144,12 @@ final_url = urlunparse(
 To allow certain objects to be modified and written to the database without protection, follow these steps:
 
 1. Identify the modified object as a single object in the database.
-2. If an attribute of the object is a "persistent" attribute (e.g., a PersistentDict or PersistentList instance, a BTree, or an annotation), use this instead.
+2. If an attribute of the object is a "persistent" attribute (for example, a `PersistentDict` or `PersistentList` instance, a `BTree`, or an `annotation`), use this instead.
 3. Use the `safeWrite` function to mark the object as safe for writing.
 
-Note: This is the preferred method for allowing modification and writing of specific objects to the database.
+```{note}
+This is the preferred method for allowing modification and writing of specific objects to the database.
+```
 
 ```python
 from plone.protect.utils import safeWrite
