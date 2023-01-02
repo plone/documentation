@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "How to protect Plone against CSRF attacks."
+    "property=og:description": "How to protect Plone against CSRF attacks."
+    "property=og:title": "Cross-Site Request Forgery protection in Plone"
+    "keywords": "CSRF, security, token, protection"
 ---
 
 (classic-ui-csrf-label)=
@@ -12,7 +12,8 @@ myst:
 # Cross-Site Request Forgery (CSRF)
 
 Cross-Site Request Forgery (CSRF or XSRF) is a type of web attack that allows an attacker to send malicious requests to a web application on behalf of a legitimate user.
-The attack works by tricking the user's web browser into sending a request to the web application that the user did not intentionally make. This can allow an attacker to perform actions on the web application without the user's knowledge or consent.
+The attack works by tricking the user's web browser into sending a request to the web application that the user did not intentionally make.
+This can allow an attacker to perform actions on the web application without the user's knowledge or consent.
 
 For example, consider a web application that allows users to transfer money between accounts.
 An attacker could craft a malicious link or form that, when clicked or submitted by a victim, would transfer money from the victim's account to the attacker's account.
@@ -38,16 +39,141 @@ This includes, but is not limited to the following:
 
 ## Manual protection
 
-TODO
-- protecting views
-- POST Only
-- adding a token to an URL for a link (in view code, in template code)
+To ensure that code that is not part of a database transaction, such as code that writes to an external API or a service that is not automatically included in the transaction mechanism, is protected, you will need to manually implement protection for that code.
 
-## Allowing writes in absence of a protecting token
+`plone.protect` offers the `@protect` decorator.
+The decorator expects a callable to perform the check.
+There are two checks implemented in `plone.protect`:
 
-TODO
-- marking the request to allow all writes
-- marking single modified objects explicit to allow them to persist
+### CSRF token check with `CheckAuthenticator`
+
+Checks whether a valid CSRF token is present in the request and raises `Unauthorized` if not.
+
+Usage example:
+
+```python
+  from plone.protect import CheckAuthenticator
+  from plone.protect import protec
+
+  @protect(CheckAuthenticator)
+  def write_to_api_or_service(self):
+      # code here
+      ...
+  ```
+
+### HTTP POST check with `PostOnly`
+
+Checks whether the request is an HTTP POST and raise `Unauthorized` if not.
+This helps to mitigate clicks on malicious links.
+
+Usage example:
+
+```python
+from plone.protect import PostOnly
+from plone.protect import protect
+
+@protect(PostOnly)
+def write_to_api_or_service(self):
+    # code here
+    ...
+```
+
+## How to add a CSRF-Token to a Link or Form
+
+To pass a token you need either to:
+
+- pass an HTTP GET parameter name `_authenticator` with the token as the value,
+- include a form field named `_authenticator` with the token as the value and submit it with the form, or
+- add an HTTP header named `X-CSRF-TOKEN` with the token as the value.
+
+To add a token as an HTTP GET parameter to a link in a template, you can utilize the authenticator view:
+
+```html
+<tal:authenticator tal:define="authenticator context/@@authenticator">
+  <a href="${python:context.absolute_url()}/myprotected_view?_authenticator=${token}" />
+</tal:authenticator>
+```
+
+To add a hidden field with a token to a form in a template, the above view can be used too like this:
+
+```html
+<span tal:replace="structure context/@@authenticator/authenticator"/>
+```
+
+In Python code, a helper function can be used:
+
+```python
+from plone.protect.authenticator import createToken
+
+token = createToken()
+```
+
+To add an authenticator token to an existing URL with query parameters:
+
+```python
+from plone.protect.authenticator import createToken
+from urllib.parse import urlencode
+from urllib.parse import urlparse
+from urllib.parse import urlunparse
+
+# The existing URL that you want to add a query parameter to
+url = f"https://www.example.com?param1=value1"
+
+# Parse the URL into its component parts
+parsed_url = urlparse(url)
+
+# Add the new query parameters to the 'query' component of the URL
+token_query = urlencode({'_authenticator': createToken()})
+new_query = f'{parsed_url.query}&{token_query}'
+
+# Reassemble the URL with the updated query string
+final_url = urlunparse(
+    (
+        parsed_url.scheme,
+        parsed_url.netloc,
+        parsed_url.path,
+        parsed_url.params,
+        new_query,
+        parsed_url.fragment)
+)
+```
+
+
+## How to allow writes in absence of a protecting token
+
+To allow certain objects to be modified and written to the database without protection, follow these steps:
+
+1. Identify the modified object as a single object in the database.
+2. If an attribute of the object is a "persistent" attribute (e.g., a PersistentDict or PersistentList instance, a BTree, or an annotation), use this instead.
+3. Use the `safeWrite` function to mark the object as safe for writing.
+
+Note: This is the preferred method for allowing modification and writing of specific objects to the database.
+
+```python
+from plone.protect.utils import safeWrite
+
+def some_fucntion(obj, request):
+    safeWrite(obj, request)
+    obj.foo = "bar"  # modify obj
+```
+
+If there are lots of modifications or it is not possible to identify the boundaries of the writes, the protection can be disabled for the whole current request.
+Then the request can be marked with the `IDisableCSRFProtection` marker interface.
+
+```python
+from plone.protect.interfaces import IDisableCSRFProtection
+from zope.interface import alsoProvides
+
+def some_function(request):
+    alsoProvides(request, IDisableCSRFProtection)
+    # modify the database here
+```
+
+Disabling all CSRF protection for the whole Plone instance is possible by starting Plone with the environment variable `PLONE_CSRF_DISABLED=true` set.
+This is not recommended but can be handy temporarily in special situations.
+
+
+## Further reading
 
 ```{seealso}
 The [README file of `plone.protect`](https://github.com/plone/plone.protect/blob/master/README.rst) explains the usage and also validation in detail.
