@@ -168,15 +168,19 @@ Add-on
 
 Volto configuration loader
     A function with signature `config => config`.
-    It gets the Volto Configuration registry, and it must return it back after mutating it.
-    It is similar to `GenericSetup` profiles in Plone Backend.
+    It gets the Volto configuration registry, and it must return it back after mutating it.
+    It is similar to `GenericSetup` profiles in the Plone backend.
     An add-on must provide a default configuration loader that is always loaded when Volto runs.
     An add-on can have multiple configuration loaders, and they can be loaded optionally from the Volto configuration.
 
-Configuration registry (Volto)
-    A singleton object modeled using JavaScript modules.
+Configuration registry
+    In Plone and in general, the configuration registry is where resources are registered for an application.
+
+    In Volto, it is a singleton object modeled using JavaScript modules.
     It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
     It contains the configuration of the Volto app.
+    
+    In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for Zope applications.
 
 Shadowing (Volto)
     Webpack provides an "alias" mechanism, where the path for a module can be aliased to another module.
