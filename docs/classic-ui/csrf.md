@@ -39,10 +39,15 @@ This includes, but is not limited to the following:
 ## Manual protection
 
 TODO
+- protecting views
+- POST Only
+- adding a token to an URL for a link (in view code, in template code)
 
 ## Allowing writes in absence of a protecting token
 
 TODO
+- marking the request to allow all writes
+- marking single modified objects explicit to allow them to persist
 
 ```{seealso}
 The [README file of `plone.protect`](https://github.com/plone/plone.protect/blob/master/README.rst) explains the usage and also validation in detail.
