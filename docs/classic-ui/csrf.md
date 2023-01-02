@@ -52,14 +52,14 @@ Checks whether a valid CSRF token is present in the request and raises `Unauthor
 Usage example:
 
 ```python
-  from plone.protect import CheckAuthenticator
-  from plone.protect import protec
+from plone.protect import CheckAuthenticator
+from plone.protect import protec
 
-  @protect(CheckAuthenticator)
-  def write_to_api_or_service(self):
-      # code here
-      ...
-  ```
+@protect(CheckAuthenticator)
+def write_to_api_or_service(self):
+    # code here
+    ...
+```
 
 ### HTTP POST check with `PostOnly`
 
