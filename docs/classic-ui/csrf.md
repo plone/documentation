@@ -152,7 +152,7 @@ Note: This is the preferred method for allowing modification and writing of spec
 ```python
 from plone.protect.utils import safeWrite
 
-def some_fucntion(obj, request):
+def some_function(obj, request):
     safeWrite(obj, request)
     obj.foo = "bar"  # modify obj
 ```
