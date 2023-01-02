@@ -34,6 +34,13 @@ cookiecutter-plone-starter
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
 
+CSRF
+Cross-Site Request Forgery
+    Cross-Site Request Forgery (CSRF or XSRF) is a type of web attack that allows an attacker to send malicious requests to a web application on behalf of a legitimate user.
+    The attack works by tricking the user's web browser into sending a request to the web application that the user did not intentionally make.
+    This can allow an attacker to perform actions on the web application without the user's knowledge or consent.
+    In Plone, CSRF protection is done almost transparently by [`plone.protect`](https://pypi.org/project/plone.protect/).
+
 CSS
     Cascading Style Sheets (CSS) is a stylesheet language used for describing the (most of the times visual) representation of web pages.
 
@@ -365,7 +372,7 @@ Internationalization
     Developers and template authors usually internationalize the application.
     "i18n" is shorthand for "internationalization" (the letter "I", 18 letters, the letter "N").
     Plone is fully internationalized.
-    
+
     ```{seealso}
     {term}`localization`
     ```
@@ -390,7 +397,7 @@ language tag
     A language tag is a string used as an identifier for a language.
     A language tag may have one or more subtags.
     The basic form of a language tag is `LANGUAGE-[SUBTAG]`.
-    
+
     ```{seealso}
     -   W3C article [Language tags in HTML and XML](https://www.w3.org/International/articles/language-tags/)
     -   W3C Working Draft [Language Tags and Locale Identifiers for the World Wide Web](https://www.w3.org/TR/ltli/)
@@ -434,7 +441,7 @@ react-intl
     A library that is part of [Format.JS](https://formatjs.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
 
 WSGI
-    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
+    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
 ZEO
     [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
@@ -518,7 +525,7 @@ Factory Type Information
     -   Whether discussion is enabled.
     -   Providing the `factory_type_information` dictionary.
         This is used elsewhere in the code (often in `__init__.py` of a product) to set the initial values for a ZODB Factory Type Information object (an object in the `portal_types` tool).
-    
+
     ```{seealso}
     [`FactoryTypeInformation` class source code](https://github.com/zopefoundation/Products.CMFCore/blob/361a30e0c72a15a21f88433b8d5fc49331f36728/src/Products/CMFCore/TypesTool.py#L431)
     ```
