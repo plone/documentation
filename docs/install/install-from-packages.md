@@ -21,7 +21,7 @@ When you want full control over development or deployment, installing Plone from
 
 The hardware requirements below give a rough estimate of the minimum hardware setup needed for a Plone server.
 
-Add-on products and caching solutions may increase RAM requirements.
+{term}`Add-on` products and caching solutions may increase RAM requirements.
 
 A single Plone installation is able to run many Plone sites.
 You may host multiple Plone sites on the same server.

@@ -154,11 +154,17 @@ record
     A Rapido app is able to store data as records.
     Records are basic dictionaries.
 
-Project (Volto)
-    The product of running the package `@plone/generator-volto`, resulting in a customizable instance of Volto.
+Add-on
+    An add-on in Plone extends its functionality.
+    It is code that is released as a package to make it easier to install.
 
-Add-on (Volto)
-    A JavaScript package that integrates with Volto's configuration registry and is able to enhance, extend, and customize it.
+    In Volto, an add-on is a JavaScript package.
+
+    In Plone core, an add-on is a Python package.
+
+    -   [Plone core add-ons](https://github.com/collective/awesome-plone#readme)
+    -   [Volto add-ons](https://github.com/collective/awesome-volto#readme)
+    -   [Add-ons tagged with the trove classifier `Framework :: Plone` on PyPI](https://pypi.org/search/?c=Framework+%3A%3A+Plone)
 
 Add-on configuration loader (Volto)
     A function with signature `config => config`.
