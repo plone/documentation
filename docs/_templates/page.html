@@ -14,7 +14,7 @@
             }
         });
         $(document).keydown(function(event) {
-            if (event.ctrlKey && event.which == 75) {
+            if ((event.ctrlKey || event.metaKey) && event.key == "k") {
                 event.preventDefault();
                 $('#search-input').focus();
             }
