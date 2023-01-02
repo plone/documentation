@@ -166,7 +166,7 @@ Add-on
     -   [Volto add-ons](https://github.com/collective/awesome-volto#readme)
     -   [Add-ons tagged with the trove classifier `Framework :: Plone` on PyPI](https://pypi.org/search/?c=Framework+%3A%3A+Plone)
 
-Add-on configuration loader (Volto)
+Volto configuration loader
     A function with signature `config => config`.
     It gets the Volto Configuration registry, and it must return it back after mutating it.
     It is similar to `GenericSetup` profiles in Plone Backend.
