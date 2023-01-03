@@ -260,9 +260,10 @@ JSX
 Scoped packages
     Namespace for JavaScript packages, they provide a way to avoid naming conflicts for common package names.
 
-middleware (Redux)
-    Custom wrappers for the Redux store dispatch methods.
-    They allow customizing the behavior of the data flow inside the redux store.
+Redux
+Redux middleware
+    Custom wrappers for the [Redux](https://redux.js.org/) store dispatch methods.
+    They allow customizing the behavior of the data flow inside the Redux store.
 
 hooks (React)
     Hooks are a React API that allow function components to use React features such as lifecycle methods, states, and so on.
