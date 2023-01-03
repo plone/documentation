@@ -212,13 +212,20 @@ Express
     A JavaScript HTTP server with a simple API to build custom applications.
     Volto uses it as its server.
 
-Server-Side Rendering (SSR)
-    When first loading any Plone page, users will get HTML markup that closely matches the final DOM structure of the React components used to render that page.
+SSR
+server-side rendering
+    When first loading any Plone page, SSR will send HTML markup that closely matches the final DOM structure of the React components used to render that page.
 
-Single Page Application (SPA)
+    More generally, when a client sends a request to an SSR page, the HTML for the page is created on the server on each request.
+    SSR enables a developer to customize a website per request and per user.
+    In addition, SSR can improve performance and search engine optimization (SEO) for a website.
+
+SPA
+Single Page Application
     A type of JavaScript application that aims to provide a better user experience by avoiding unnecessary reloading of the browser page, instead using AJAX to load backend information.
 
-Hot Module Replacement (HMR)
+HMR
+Hot Module Replacement
     A development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
 
 Yeoman
