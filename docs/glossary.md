@@ -214,9 +214,14 @@ Express
 
 SSR
 server-side rendering
-    When first loading any Plone page, SSR will send HTML markup that closely matches the final DOM structure of the React components used to render that page.
+    When a web browser or other HTTP client sends a request, the HTML markup for the page is created on the server, which sends a response consisting of HTML markup back to the client.
 
-    More generally, when a client sends a request to an SSR page, the HTML for the page is created on the server on each request.
+    In Volto, SSR returns HTML markup that closely matches the final DOM structure of the React components used to render that page, but it is not the complete page.
+    After the client loads the initial response, then the {term}`hydration` mechanism performs additional rendering on the client side, populating the DOM with additional HTML markup.
+
+    In Classic UI, SSR returns the complete page back to the client in the response.
+    In some rare cases, additional HTML snippets may be loaded, such as in overlays or dialogs.
+
     SSR enables a developer to customize a website per request and per user.
     In addition, SSR can improve performance and search engine optimization (SEO) for a website.
 
