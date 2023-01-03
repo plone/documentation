@@ -268,9 +268,9 @@ Redux middleware
 hooks
     [Hooks](https://reactjs.org/docs/hooks-overview.html) are a React API that allow function components to use React features, such as lifecycle methods, states, and so on.
 
-hoisting (Yarn)
-    An optimization provided by Yarn.
-    By default JavaScript packages will directly include dependencies inside their local node_modules.
+hoisting
+    [Hoisting](https://yarnpkg.com/advanced/lexicon#hoisting) is an optimization provided by Yarn.
+    By default JavaScript packages will directly include dependencies inside their local `node_modules`.
     By hoisting we're "lifting" these inner dependencies to the top level `node_modules` directory, and thus optimize the generated bundles.
     In case two dependencies have conflicting version dependencies of the same library, the hoisting will not be possible (for that conflicting dependency) and you'll see multiple instances of the same library in the bundle, or you'll see that the add-on receives its own `node_modules` folder.
 
