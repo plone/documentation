@@ -86,7 +86,7 @@ It may be used as a base image, adding customizations, to make a derivative imag
 The default and recommended configuration for new websites in Plone is the new React-based JavaScript frontend called "Volto".
 For this setup you still need to run the Python-based backend server, as well as enable the REST API, and update the configuration profile.
 These settings and profile are applied automatically when you select the {guilabel}`Create Plone Site` option in the Plone website creation form.
-In addition a separate NodeJS based frontend server will serve the JavaScript frontend resources and provide {term}`SSR` with hydration.
+In addition a separate NodeJS based frontend server will serve the JavaScript frontend resources and provide {term}`SSR` with {term}`hydration`.
 To deploy this setup using containers, you will need the `plone-frontend` image for the frontend server.
 
 Beginning with Plone 6, we now support two programming language stacks, one each for Python and JavaScript.
