@@ -195,7 +195,7 @@ shadowing
     By using this mechanism of file overrides, or component shadowing, Volto enables customization, similar to `z3c.jbot.`
 
 Razzle
-    A tool that simplifies SPA and {term}`SSR` configuration for React projects.
+    A tool that simplifies {term}`SPA` and {term}`SSR` configuration for React projects.
 
 Webpack
     A tool that loads and bundles code and web resources using loaders.
@@ -221,12 +221,12 @@ server-side rendering
     In addition, SSR can improve performance and search engine optimization (SEO) for a website.
 
 SPA
-Single Page Application
+single page application
     A type of JavaScript application that aims to provide a better user experience by avoiding unnecessary reloading of the browser page, instead using AJAX to load backend information.
 
 HMR
-Hot Module Replacement
-    A development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
+hot module replacement
+    [Hot module replacement](https://webpack.js.org/guides/hot-module-replacement/) (HMR) is a development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
 
 Yeoman
     A popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
