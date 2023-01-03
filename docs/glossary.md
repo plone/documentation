@@ -227,11 +227,18 @@ server-side rendering
 
 SPA
 single page application
-    A type of JavaScript application that aims to provide a better user experience by avoiding unnecessary reloading of the browser page, instead using AJAX to load backend information.
+    A type of JavaScript application that aims to provide a better user experience by avoiding unnecessary reloading of the browser page, instead using {term}`AJAX` to load backend information.
 
 HMR
 hot module replacement
     [Hot module replacement](https://webpack.js.org/guides/hot-module-replacement/) (HMR) is a development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
+
+Ajax
+AJAX
+Asynchronous JavaScript and XML
+    AJAX allows web applications to change parts of the page dynamically without reloading the entire page.
+    In Plone, after a page with JavaScript is loaded, the JavaScript will send an asynchronous request to the server.
+    The server will send a response back to the client, which is then rendered on the client side.
 
 Yeoman
     A popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
