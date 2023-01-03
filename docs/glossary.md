@@ -216,7 +216,7 @@ SSR
 server-side rendering
     When a web browser or other HTTP client sends a request, the HTML markup for the page is created on the server, which sends a response consisting of HTML markup back to the client.
 
-    In Volto, SSR returns HTML markup that closely matches the final DOM structure of the React components used to render that page, but it is not the complete page.
+    In Volto, SSR returns HTML markup that closely matches the final {term}`DOM` structure of the React components used to render that page, but it is not the complete page.
     After the client loads the initial response, then the {term}`hydration` mechanism performs additional rendering on the client side, populating the DOM with additional HTML markup.
 
     In Classic UI, SSR returns the complete page back to the client in the response.
@@ -224,6 +224,12 @@ server-side rendering
 
     SSR enables a developer to customize a website per request and per user.
     In addition, SSR can improve performance and search engine optimization (SEO) for a website.
+
+DOM
+Document Object Model
+    The Document Object Model (DOM) is a programming interface for web documents.
+    It represents the page so that programs can change the document structure, style, and content.
+    The DOM represents the document as nodes and objects; that way, programming languages, such as JavaScript and React, can interact with the page.
 
 SPA
 single page application
@@ -263,7 +269,7 @@ Yarn
     [Yarn](https://classic.yarnpkg.com/) is a JavaScript package manager.
 
 Hydration
-    After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing DOM elements, and recreate and attach their coresponding components.
+    After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing {term}`DOM` elements, and recreate and attach their coresponding components.
 
 JSX
     A dialect of JavaScript that resembles XML, it is transpiled by Babel to JavaScript functions.
