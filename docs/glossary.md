@@ -265,8 +265,8 @@ Redux middleware
     Custom wrappers for the [Redux](https://redux.js.org/) store dispatch methods.
     They allow customizing the behavior of the data flow inside the Redux store.
 
-hooks (React)
-    Hooks are a React API that allow function components to use React features such as lifecycle methods, states, and so on.
+hooks
+    [Hooks](https://reactjs.org/docs/hooks-overview.html) are a React API that allow function components to use React features, such as lifecycle methods, states, and so on.
 
 hoisting (Yarn)
     An optimization provided by Yarn.
