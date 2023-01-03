@@ -195,7 +195,7 @@ shadowing
     By using this mechanism of file overrides, or component shadowing, Volto enables customization, similar to `z3c.jbot.`
 
 Razzle
-    A tool that simplifies SPA and SSR configuration for React projects.
+    A tool that simplifies SPA and {term}`SSR` configuration for React projects.
 
 Webpack
     A tool that loads and bundles code and web resources using loaders.
