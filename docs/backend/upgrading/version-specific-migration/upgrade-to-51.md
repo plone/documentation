@@ -282,7 +282,7 @@ Adding or editing a document is faster, because care was taken to avoid duplicat
 The [collective.indexing](https://pypi.org/project/collective.indexing) package was merged into the core of Plone.
 This makes sure that objects are only indexed once per transaction.
 
-It also gives hooks for calling external indexers, like Solr and Elasticsearch.
+It also gives {term}`hooks` for calling external indexers, like Solr and Elasticsearch.
 See https://docs.plone.org/develop/plone/searching_and_indexing/external-catalogs.html.
 
 There is a workaround when you get {ref}`catalog-errors-during-upgrades-label`.

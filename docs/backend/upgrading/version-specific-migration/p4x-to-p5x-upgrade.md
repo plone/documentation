@@ -366,7 +366,7 @@ Here the two dependencies are jQuery and the pattern registry.
 We will not get into the pattern registry, as it is off-topic for this discussion.
 It is basically a registry of JavaScript components.
 
-The necessity for using it here is with AJAX calls and binding new DOM elements dynamically added to the page.
+The necessity for using it here is with AJAX calls and binding new {term}`DOM` elements dynamically added to the page.
 
 Additionally, above this `require` call, we provide some backward compatible code that you can inspect.
 
