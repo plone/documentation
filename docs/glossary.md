@@ -161,30 +161,48 @@ record
     A Rapido app is able to store data as records.
     Records are basic dictionaries.
 
-Project (Volto)
-    The product of running the package `@plone/generator-volto`, resulting in a customizable instance of Volto.
+Add-on
+    An add-on in Plone extends its functionality.
+    It is code that is released as a package to make it easier to install.
 
-Add-on (Volto)
-    A JavaScript package that integrates with Volto's configuration registry and is able to enhance, extend, and customize it.
+    In Volto, an add-on is a JavaScript package.
 
-Add-on configuration loader (Volto)
+    In Plone core, an add-on is a Python package.
+
+    -   [Plone core add-ons](https://github.com/collective/awesome-plone#readme)
+    -   [Volto add-ons](https://github.com/collective/awesome-volto#readme)
+    -   [Add-ons tagged with the trove classifier `Framework :: Plone` on PyPI](https://pypi.org/search/?c=Framework+%3A%3A+Plone)
+
+Volto configuration loader
     A function with signature `config => config`.
-    It gets the Volto Configuration registry, and it must return it back after mutating it.
-    It is similar to `GenericSetup` profiles in Plone Backend.
+    It gets the Volto configuration registry, and it must return it back after mutating it.
+    It is similar to `GenericSetup` profiles in the Plone backend.
     An add-on must provide a default configuration loader that is always loaded when Volto runs.
     An add-on can have multiple configuration loaders, and they can be loaded optionally from the Volto configuration.
 
-Configuration registry (Volto)
-    A singleton object modeled using JavaScript modules.
+Configuration registry
+    In Plone and in general, the configuration registry is where resources are registered for an application.
+
+    In Volto, it is a singleton object modeled using JavaScript modules.
     It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
     It contains the configuration of the Volto app.
+    
+    In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for Zope applications.
 
-Shadowing (Volto)
-    Webpack provides an "alias" mechanism, where the path for a module can be aliased to another module.
-    By using this mechanism Volto enables customization (file overrides), similar to `z3c.jbot.`
+component shadowing
+shadowing
+    Volto uses a technique called component shadowing to override an existing Volto component with our local custom version, without having to modify Volto's source code. 
+
+    Volto's source components are located in the filepath stem of `omelette/src/components/`.
+    Custom components that shadow Volto's source would be located in the filepath stem of `src/customizations/components/`.
+    Shadow components would have the same filepath as Volto's source compenents, excluding the stem.
+    Thus `omelette/src/components/theme/Header/Header.jsx` would be shadowed by `src/customizations/components/theme/Header/Header.jsx`.
+
+    Webpack provides an alias mechanism that allows component shadowing in Volto, where the path for a module can be aliased to another module.
+    By using this mechanism of file overrides, or component shadowing, Volto enables customization, similar to `z3c.jbot.`
 
 Razzle
-    A tool that simplifies SPA and SSR configuration for React projects.
+    A tool that simplifies {term}`SPA` and {term}`SSR` configuration for React projects.
 
 Webpack
     A tool that loads and bundles code and web resources using loaders.
@@ -201,14 +219,39 @@ Express
     A JavaScript HTTP server with a simple API to build custom applications.
     Volto uses it as its server.
 
-Server-Side Rendering (SSR)
-    When first loading any Plone page, users will get HTML markup that closely matches the final DOM structure of the React components used to render that page.
+SSR
+server-side rendering
+    When a web browser or other HTTP client sends a request, the HTML markup for the page is created on the server, which sends a response consisting of HTML markup back to the client.
 
-Single Page Application (SPA)
-    A type of JavaScript application that aims to provide a better user experience by avoiding unnecessary reloading of the browser page, instead using AJAX to load backend information.
+    In Volto, SSR returns HTML markup that closely matches the final {term}`DOM` structure of the React components used to render that page, but it is not the complete page.
+    After the client loads the initial response, then the {term}`hydration` mechanism performs additional rendering on the client side, populating the DOM with additional HTML markup.
 
-Hot Module Replacement (HMR)
-    A development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
+    In Classic UI, SSR returns the complete page back to the client in the response.
+    In some rare cases, additional HTML snippets may be loaded, such as in overlays or dialogs.
+
+    SSR enables a developer to customize a website per request and per user.
+    In addition, SSR can improve performance and search engine optimization (SEO) for a website.
+
+DOM
+Document Object Model
+    The Document Object Model (DOM) is a programming interface for web documents.
+    It represents the page so that programs can change the document structure, style, and content.
+    The DOM represents the document as nodes and objects; that way, programming languages, such as JavaScript and React, can interact with the page.
+
+SPA
+single page application
+    A type of JavaScript application that aims to provide a better user experience by avoiding unnecessary reloading of the browser page, instead using {term}`AJAX` to load backend information.
+
+HMR
+hot module replacement
+    [Hot module replacement](https://webpack.js.org/guides/hot-module-replacement/) (HMR) is a development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
+
+Ajax
+AJAX
+Asynchronous JavaScript and XML
+    AJAX allows web applications to change parts of the page dynamically without reloading the entire page.
+    In Plone, after a page with JavaScript is loaded, the JavaScript will send an asynchronous request to the server.
+    The server will send a response back to the client, which is then rendered on the client side.
 
 Yeoman
     A popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
@@ -232,8 +275,8 @@ mrs-developer
 Yarn
     [Yarn](https://classic.yarnpkg.com/) is a JavaScript package manager.
 
-Hydration (SSR)
-    After loading an HTML page generated with SSR in the browser, React can "populate" the existing DOM elements, recreate and attach their coresponding components.
+Hydration
+    After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing {term}`DOM` elements, and recreate and attach their coresponding components.
 
 JSX
     A dialect of JavaScript that resembles XML, it is transpiled by Babel to JavaScript functions.
@@ -242,16 +285,20 @@ JSX
 Scoped packages
     Namespace for JavaScript packages, they provide a way to avoid naming conflicts for common package names.
 
-middleware (Redux)
-    Custom wrappers for the Redux store dispatch methods.
-    They allow customizing the behavior of the data flow inside the redux store.
+Redux
+Redux middleware
+    Custom wrappers for the [Redux](https://redux.js.org/) store dispatch methods.
+    They allow customizing the behavior of the data flow inside the Redux store.
 
-hooks (React)
-    Hooks are a React API that allow function components to use React features such as lifecycle methods, states, and so on.
+hook
+hooks
+    In general, a hook in programming is a place in code that allows you to tap in to a module to either provide different behavior or to react when something happens.
 
-hoisting (Yarn)
-    An optimization provided by Yarn.
-    By default JavaScript packages will directly include dependencies inside their local node_modules.
+    **React [Hooks](https://reactjs.org/docs/hooks-overview.html)** are a React API that allow function components to use React features, such as lifecycle methods, states, and so on.
+
+hoisting
+    [Hoisting](https://yarnpkg.com/advanced/lexicon#hoisting) is an optimization provided by Yarn.
+    By default JavaScript packages will directly include dependencies inside their local `node_modules`.
     By hoisting we're "lifting" these inner dependencies to the top level `node_modules` directory, and thus optimize the generated bundles.
     In case two dependencies have conflicting version dependencies of the same library, the hoisting will not be possible (for that conflicting dependency) and you'll see multiple instances of the same library in the bundle, or you'll see that the add-on receives its own `node_modules` folder.
 
