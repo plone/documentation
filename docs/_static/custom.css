@@ -177,6 +177,16 @@ div.admonition.admonition-todo>.admonition-title::before {
 
 /* Search */
 
+#search-shortcut-page {
+  position: absolute;
+  right: 9.375rem;
+  top: 0.1875rem;
+  border-radius: 0.25em;
+  background: #d9eef9;
+  padding: 0.2em;
+  color: #4a4a4a;
+}
+
 /* Show search form. It is hidden by default. */
 #search-documentation,
 #search-documentation~form,
@@ -305,12 +315,25 @@ div.sidebar:not(.margin) .admonition {
   margin-right: .5em;
   background-color: #ffffff;
 }
+#search-shortcut-sidebar {
+  position: absolute;
+  right: 1.25rem;
+  border-radius: 0.25em;
+  background: #d9eef9;
+  padding: 0.2em;
+  color: #4a4a4a;
+  font-size: 1rem;
+}
 
 @media (min-width:768px) {
   div.sidebar:not(.margin) {
     width: 50%;
     margin-left: 1.5em;
     margin-right: -28%;
+  }
+
+  #search-shortcut-sidebar {
+    font-size: inherit;
   }
 }
 

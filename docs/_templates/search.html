@@ -53,6 +53,7 @@
             class="form-control"
             placeholder="Search the docs…"
             aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+            <span id="search-shortcut-page">⌘K</span>
           <label for="q" class="sr-only">Search string</label>
           <div class="input-group-append">
             <button type="submit" class="btn btn-primary">{{ _('search') }}</button>
@@ -122,6 +123,15 @@
                 $(".topbar-contents .bd-toc").css("visibility", "hidden");
             }
         });
+        
+      $('form.bd-search').css('visibility','hidden'); // Hide Sidebar Search field
+      if (navigator.platform.indexOf('Mac') === -1) $('#search-shortcut-page').html("^K"); // if OS isn't Mac change Visual indication of search field
+      $(document).keydown(function(event) {
+          if ((event.ctrlKey || event.metaKey) && event.key == "k") {
+            event.preventDefault();
+            $('#q').focus();
+          }
+      });
     </script>
 
 {% endblock %}
