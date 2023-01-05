@@ -123,7 +123,7 @@ url = f"https://www.example.com?param1=value1"
 parsed_url = urlparse(url)
 
 # Add the new query parameters to the 'query' component of the URL
-token_query = urlencode({'_authenticator': createToken()})
+token_query = urlencode({"_authenticator": createToken()})
 new_query = f'{parsed_url.query}&{token_query}'
 
 # Reassemble the URL with the updated query string
