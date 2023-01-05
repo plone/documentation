@@ -123,15 +123,6 @@
                 $(".topbar-contents .bd-toc").css("visibility", "hidden");
             }
         });
-        
-      $('form.bd-search').css('visibility','hidden'); // Hide Sidebar Search field
-      if (navigator.platform.indexOf('Mac') === -1) $('#search-shortcut-page').html("^K"); // if OS isn't Mac change Visual indication of search field
-      $(document).keydown(function(event) {
-          if ((event.ctrlKey || event.metaKey) && event.key == "k") {
-            event.preventDefault();
-            $('#q').focus();
-          }
-      });
     </script>
 
 {% endblock %}

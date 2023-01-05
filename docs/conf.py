@@ -130,6 +130,7 @@ exclude_patterns = [
 
 html_js_files = [
     "patch_scrollToActive.js",
+    "search_shortcut.js"
 ]
 
 html_extra_path = [
@@ -248,6 +249,7 @@ html_theme_options = {
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
+    "search_bar_text": "Search the docs…",
     "switcher": {
         "json_url": "/_static/switcher.json",
         "version_match": version,
