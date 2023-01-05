@@ -53,7 +53,7 @@ Usage example:
 
 ```python
 from plone.protect import CheckAuthenticator
-from plone.protect import protec
+from plone.protect import protect
 
 @protect(CheckAuthenticator)
 def write_to_api_or_service(self):
@@ -89,7 +89,7 @@ To pass a token you need either to:
 To add a token as an HTTP GET parameter to a link in a template, you can utilize the authenticator view:
 
 ```html
-<tal:authenticator tal:define="authenticator context/@@authenticator">
+<tal:authenticator tal:define="token context/@@authenticator/token">
   <a href="${python:context.absolute_url()}/myprotected_view?_authenticator=${token}" />
 </tal:authenticator>
 ```
