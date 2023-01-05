@@ -78,7 +78,7 @@ def write_to_api_or_service(self):
     ...
 ```
 
-## How to add a CSRF-token to a link or form
+## How to add a CSRF token to a link or form
 
 To pass a token you need either to:
 
