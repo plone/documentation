@@ -332,6 +332,10 @@ If we were to represent the behavior of choosing the correct outlet adapter in P
 
 This process of choosing the right adapter based on the information of the context and the requested interface implements the design pattern of an abstract factory.
 
+```{hint} The notation `ISchuko(context)` is a shortcut for `getAdapter(context, ISchuko)`. 
+It executes exactly the same logic behid the scenes with the same result.
+```
+
 Similarly, using the {ref}`behavior code example <behavior-code-example>` above:
 
 -   You would call an abstract factory with `getAdapter(context, IPriceBehavior)` to get an adapter, `price_for_context`.
