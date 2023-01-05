@@ -80,7 +80,7 @@ def write_to_api_or_service(self):
 
 ## How to add a CSRF token to a link or form
 
-To pass a token you need either to:
+To pass a CSRF token you need either to:
 
 - pass an HTTP GET parameter name `_authenticator` with the token as the value,
 - include a form field named `_authenticator` with the token as the value and submit it with the form, or
