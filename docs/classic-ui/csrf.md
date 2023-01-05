@@ -90,7 +90,7 @@ To add a token as an HTTP GET parameter to a link in a template, you can utilize
 
 ```html
 <tal:authenticator tal:define="token context/@@authenticator/token">
-  <a href="${python:context.absolute_url()}/myprotected_view?_authenticator=${token}" />
+  <a href="${python:context.absolute_url()}/myprotected_view?_authenticator=${token}" >Link to some view</a>
 </tal:authenticator>
 ```
 
