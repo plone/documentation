@@ -124,7 +124,7 @@ parsed_url = urlparse(url)
 
 # Add the new query parameters to the 'query' component of the URL
 token_query = urlencode({"_authenticator": createToken()})
-new_query = f'{parsed_url.query}&{token_query}'
+new_query = f"{parsed_url.query}&{token_query}"
 
 # Reassemble the URL with the updated query string
 final_url = urlunparse(
