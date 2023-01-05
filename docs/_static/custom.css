@@ -180,11 +180,13 @@ div.admonition.admonition-todo>.admonition-title::before {
 #search-shortcut-page {
   position: absolute;
   right: 9.375rem;
-  top: 0.1875rem;
+  top: 0.375rem;
   border-radius: 0.25em;
   background: #d9eef9;
-  padding: 0.2em;
+  padding: 0.1787rem 0.2813rem;
   color: #4a4a4a;
+  font-weight: 600;
+  line-height: 1.25rem;
 }
 
 /* Show search form. It is hidden by default. */
@@ -320,9 +322,11 @@ div.sidebar:not(.margin) .admonition {
   right: 1.25rem;
   border-radius: 0.25em;
   background: #d9eef9;
-  padding: 0.2em;
+  padding: 0.1787rem 0.2813rem;
   color: #4a4a4a;
   font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
 }
 
 @media (min-width:768px) {
