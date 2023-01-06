@@ -37,16 +37,37 @@ You may host multiple Plone sites on the same server.
 
 ### Pre-requisites for installation
 
--   Python 3.8, 3.9, or 3.10.
--   Cookiecutter
--   Node.JS
--   nvm
--   Yeoman
--   Yarn
--   GNU make
+-   [Python](https://www.python.org/downloads/) 3.8, 3.9, or 3.10.
+-   {term}`Cookiecutter`
+-   {term}`nvm`
+-   {term}`Node.js` LTS 16.x (see "Update" note)
+-   {term}`Yeoman`
+-   {term}`Yarn`
+-   {term}`GNU make`
+
+````{note}
+Update
+:   [Node.js 18 is in LTS state as of 2022-10-25](https://github.com/nodejs/release#release-schedule), and Node.js 16 is now in maintenance mode.
+    However, due to changes in internal SSL libraries, some Volto dependencies have been deprecated and need to be updated in order to continue working in Node.js 18, mainly [Webpack 4](https://github.com/webpack/webpack/issues/14532#issuecomment-947525539).
+    You can still use it, but Node.js should be run under a special flag: `NODE_OPTIONS=--openssl-legacy-provider`.
+
+    ```{seealso}
+    Volto's pull request, [Support Node 18](https://github.com/plone/volto/pull/3699).
+    ```
+````
+
+
+(install-prerequisites-python-label)=
+
+#### Python
 
 Installing Python is beyond the scope of this documentation.
 However, it is recommended to use a Python version manager, [`pyenv`](https://github.com/pyenv/pyenv) that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
+
+
+(install-prerequisites-cookiecutter-label)=
+
+#### Cookiecutter
 
 Install or upgrade {term}`Cookiecutter` in your user's Python:
 
@@ -54,15 +75,103 @@ Install or upgrade {term}`Cookiecutter` in your user's Python:
 pip install --user --upgrade cookiecutter
 ```
 
-{ref}`Install nvm and Node.js documentation <frontend-getting-started-install-nvm-label>`.
 
-{ref}`Install Yeoman documentation <frontend-getting-started-yeoman-label>`.
+(install-prerequisites-nvm-label)=
 
-{ref}`Install Yarn documentation <frontend-getting-started-yarn-label>`.
+#### nvm
+
+The following terminal session commands use `bash` for the shell.
+Adapt them for your flavor of shell.
+
+```{seealso}
+See the [`nvm` install and update script documentation](https://github.com/nvm-sh/nvm#install--update-script).
+For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish).
+```
+
+1.  Create your shell profile, if it does not exist.
+
+    ```shell
+    touch ~/.bash_profile
+    ```
+
+2.  Download and run the `nvm` install and update script, and pipe it into `bash`.
+
+    ```shell
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v{NVM_VERSION}/install.sh | bash
+    ```
+
+3.  Source your profile.
+    Alternatively close the session and open a new one.
+
+    ```shell
+    source ~/.bash_profile
+    ```
+
+4.  Verify that the `nvm` version is that which you just installed or updated:
+
+    ```shell
+    nvm --version
+    ```
+
+
+(install-prerequisites-nodejs-label)=
+
+#### Node.js
+
+1.  Install or update the supported LTS version of Node.js.
+    This command also activates that version.
+
+    ```shell
+    nvm install 16
+    ```
+
+2.  Verify that the supported version of Node.js is activated.
+
+    ```shell
+    node -v
+    ```
+
+
+(install-prerequisites-yeoman-label)=
+
+#### Yeoman
+
+Install {term}`Yeoman`.
+
+```shell
+npm install -g yo
+```
+
+
+(install-prerequisites-yarn-label)=
+
+#### Yarn
+
+Install the Yarn Classic version (not the latest 2.x one) using `npm`.
+
+1.  Open a terminal and type:
+
+    ```shell
+    npm install yarn@1
+    ```
+
+2.  Verify that Yarn v1.x.x is installed and activated.
+
+    ```shell
+    yarn -v
+    ```
+
+
+(install-prerequisites-make-label)=
+
+#### Make
 
 {term}`Make` comes installed on most Linux distributions.
 On macOS, you must first [install Xcode](https://developer.apple.com/xcode/resources/), then install its command line tools.
 On Windows, it is strongly recommended to [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install), which will include `make`.
+
+Finally, it is a good idea to update your system's version of `make`, because some distributions, especially macOS, have an outdated version.
+Use your favorite search engine or trusted online resource for how to update `make`.
 
 
 (install-packages-install-label)=
