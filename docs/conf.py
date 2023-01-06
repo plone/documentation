@@ -83,6 +83,7 @@ linkcheck_ignore = [
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://github.com/browserslist/browserslist#queries",
     r"https://github.com/nodejs/release#release-schedule",
+    r"https://github.com/nvm-sh/nvm#install--update-script",
     r"https://github.com/plone/cookiecutter-zope-instance#options",
     r"https://github.com/plone/plone.app.contenttypes#migration",
     r"https://github.com/plone/plone.docker#for-basic-usage",
@@ -318,6 +319,7 @@ def source_replace(app, docname, source):
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
     "{PLONE_BACKEND_PATCH_VERSION}": "6.0.0.2",
+    "{NVM_VERSION}": "0.39.3",
 }
 
 
