@@ -48,13 +48,20 @@
       >
       <div class="row">
         <div class="input-group col-xl-8 mb-2">
+          <label for="q" class="sr-only">Search string
+          </label>
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="shortcut">
+              <kbd>⌘</kbd>&nbsp;<kbd>K</kbd>
+            </span>
+          </div>
           <input
             type="search" name="q" id="q"
             class="form-control"
-            placeholder="Search the docs…"
-            aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-            <span id="search-shortcut-page">⌘K</span>
-          <label for="q" class="sr-only">Search string</label>
+            placeholder="{{ _(theme_search_bar_text) }}"
+            aria-labelledby="{{ _(theme_search_bar_text) }}"
+            value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+          />
           <div class="input-group-append">
             <button type="submit" class="btn btn-primary">{{ _('search') }}</button>
           </div>

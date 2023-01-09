@@ -177,23 +177,21 @@ div.admonition.admonition-todo>.admonition-title::before {
 
 /* Search */
 
-#search-shortcut-page {
-  position: absolute;
-  right: 156px;
-  top: 0.375rem;
-  border-radius: 0.25em;
-  background: #d9eef9;
-  padding: 0.1787rem 0.2813rem;
-  color: #4a4a4a;
-  font-weight: 600;
-  line-height: 1.25rem;
-}
-
 /* Show search form. It is hidden by default. */
 #search-documentation,
 #search-documentation~form,
 #search-documentation~p {
   display: block;
+}
+
+#shortcut.input-group-text {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-width: 2px;
 }
 
 ul.search {
@@ -244,6 +242,18 @@ ul.search li {
 
 ul.search li p.context {
   margin-left: 0;
+}
+
+/* Search form sidebar */
+
+.bd-search {
+  font-size: .8rem;
+}
+
+.bd-search input,
+.bd-search .input-group-text {
+  font-size: .8rem;
+  padding-left: .5em;
 }
 
 .pathseparator {
@@ -317,6 +327,7 @@ div.sidebar:not(.margin) .admonition {
   margin-right: .5em;
   background-color: #ffffff;
 }
+
 #search-shortcut-sidebar {
   position: absolute;
   right: 1.25rem;
