@@ -709,7 +709,7 @@ Helper views also get around the following limitations:
 -   Not being able to import Python modules.
 
 ```{note}
-Using `RestrictedPython` scripts (creating Python through the Management Interface) and Zope 2 Extension modules is discouraged.
+Using `RestrictedPython` scripts (creating Python through the Management Interface) and Zope Extension modules is discouraged.
 The same functionality can be achieved with helper views, with less potential pitfalls.
 ```
 
@@ -979,7 +979,7 @@ There are two different classes that share the same name `ViewPageTemplateFile`.
 
 -   Zope [`BrowserView` source code](https://github.com/zopefoundation/zope.publisher/blob/dea3d4757390d04f6a5b53e696f08d0cab5f6023/src/zope/publisher/browser.py#L958).
 -   [`Five` version](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/__init__.py#L20).
-    [`Products.Five`](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt) is a way to access some Zope 3 technologies from the Zope 2 codebase, which is used by Plone.
+    [`Products.Five`](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt) is a way to access some Zope 3 technologies from the Zope codebase, which is used by Plone.
 
 Compare the differences in code.
 
