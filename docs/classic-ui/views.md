@@ -724,8 +724,7 @@ To use the same template code several times you can either:
 -   share a `ViewPageTemplate` instance between views and using it several times.
 
 ```{Note}
-The Plone 2.x way of doing this with TAL template language macros is discouraged as a way to provide reusable functionality in your add-on product.
-This is because macros are hardwired to the TAL template language, and referring to them outside templates is difficult.
+The old way of doing this with TAL template language macros is discouraged as a way to provide reusable functionality in your add-on product. This is because macros are hardwired to the TAL template language, and referring to them outside templates is difficult.
 
 If you ever need to change the template language, or mix in other template languages, you can do better when templates are a feature of a pure Python based view, and not vice versa.
 ```
@@ -763,7 +762,7 @@ Then you can render the summary template in the main template associated with `P
 <div tal:replace="structure view/renderSummary" />
 
 <div class="description">
-    <div tal:condition="python:context.Description().decode('utf-8') != u'None'" tal:replace="structure context/Description" />
+    <div tal:condition="python:context.Description().decode('utf-8') != 'None'" tal:replace="structure context/Description" />
 </div>
 ```
 
@@ -978,7 +977,7 @@ There are two different classes that share the same name `ViewPageTemplateFile`.
 ```
 
 -   Zope [`BrowserView` source code](https://github.com/zopefoundation/zope.publisher/blob/dea3d4757390d04f6a5b53e696f08d0cab5f6023/src/zope/publisher/browser.py#L958).
--   [`Five` version](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/__init__.py#L20).
+-   [`Five` version](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/__init__.py#L20) with .
     [`Products.Five`](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt) is a way to access some Zope 3 technologies from the Zope codebase, which is used by Plone.
 
 Compare the differences in code.
@@ -999,7 +998,7 @@ The difference is that the `Five` version supports:
 -   The `provider:` TAL expression.
 -   Other Plone-specific TAL expression functions, such as `test()`.
 -   Usually, Plone code needs the `Five` version of `ViewPageTemplateFile`.
--   Some subsystems, notably the `z3c.form` package, expect the Zope 3 version of `ViewPageTemplateFile` instances.
+-   Some subsystems, notably the `z3c.form` package, expect the Zope 3 (not Five) version of `ViewPageTemplateFile` instances.
 
 
 (classic-ui-views-and-automatic-member-variable-acquisition-wrapping-label)=
