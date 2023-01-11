@@ -24,9 +24,8 @@ Layers ensure that only one add-on product can override the specific Plone insta
 Multiple Plone site instances can share the same ZCML and code files.
 
 Many ZCML directives take the optional `layer` parameter.
-See example [resourceDirectory](http://apidoc.zope.org/++apidoc++/ZCML/http_co__sl__sl_namespaces.zope.org_sl_browser/resourceDirectory/index.html).
-
 Layers are activated when an add-on product is installed or a certain theme is activated.
+You can find an example of the layer attribute in the Chapter {ref}`classic-ui-using-layers-label`.
 
 
 (classic-ui-using-layers-label)=
@@ -106,14 +105,14 @@ Theme layers can be created through the following steps.
     ```xml
     <object name="portal_skins" allow_any="False" cookie_persistence="False"
         default_skin="SitsSkin">
-    
+
         <!-- define skins-based folder objects here if any -->
-    
+
         <skin-path name="SitsSkin" based-on="Plone Default">
             <layer name="plone_skins_style_folder_name"
                 insert-before="*"/>
         </skin-path>
-    
+
     </object>
     ```
 
