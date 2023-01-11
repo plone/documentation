@@ -173,7 +173,8 @@ You need to declare the `browser` namespace in your `configure.zcml` to use `bro
 ```
 
 The view in question is registered against a {ref}`layer <classic-ui-layers-label>`.
-It will be available after restart, after you run {doc}`Add/remove in Site setup </develop/addons/components/genericsetup>`.
+It will be available after restart, after running the {ref}`GenericSetup profile <backend-config-registry-generic-setup-label>`.
+
 
 ```{todo}
 Fix the preceding link to "Add/remove in Site setup".
@@ -508,7 +509,7 @@ If you need to override templates in core Plone or in an existing add-on, you ca
     To override a particular file, first determine its canonical filename.
     It is defined as the path relative to the package within which the file is located.
     Directory separators are replaced with dots.
-    
+
     Suppose you want to override `plone/app/layout/viewlets/logo.pt`.
 
     You would use the filename `plone.app.layout.viewlets.logo.pt`.
@@ -540,7 +541,7 @@ As such, you will have the following browser layer interface and its registratio
 
     ```python
     from plone.theme.interfaces import IDefaultPloneLayer
-    
+
     class ICollectiveAwesomeaddon(IDefaultPloneLayer):
       """ A marker interface for the theme layer
       """
@@ -564,7 +565,7 @@ As such, you will have the following browser layer interface and its registratio
         xmlns="http://namespaces.zope.org/zope"
         xmlns:browser="http://namespaces.zope.org/browser"
         i18n_domain="collective.awesomeaddon">
-    
+
       <browser:page
           name="register"
           class=".customregistration.CustomRegistrationForm"
@@ -572,7 +573,7 @@ As such, you will have the following browser layer interface and its registratio
           for="plone.app.layout.navigation.interfaces.INavigationRoot"
           layer="collective.awesomeaddon.interfaces.ICollectiveAwesomeaddon"
           />
-    
+
     </configure>
     ```
 
@@ -585,7 +586,7 @@ As such, you will have the following browser layer interface and its registratio
 
     ```
     from plone.app.users.browser.register import RegistrationForm
-    
+
     class CustomRegistrationForm(RegistrationForm):
       """ Subclass the standard registration form
       """

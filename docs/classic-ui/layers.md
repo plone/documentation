@@ -59,6 +59,10 @@ Then views and viewlets from your product can be enabled on the site instance us
 
 If you want to override a view or a viewlet unconditionally for all sites without the add-on product installer support, you need to use `overrides.zcml`.
 
+```{todo}
+Explain how to use an `overrides.zcml`.
+```
+
 
 (classic-ui-creating-a-layer-label)=
 
