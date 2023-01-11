@@ -153,7 +153,7 @@ This section describes how to make contributions to files in the `plone/document
     ```
 
     ```{note}
-    Eventually the `spellcheck` build will be required, but not at this time.
+    Eventually the `vale` build will be required, but not at this time.
     We welcome improvements to the dictionary.
     ```
 

@@ -1,0 +1,30 @@
+name: Get latest version of submodules and push back to 6-dev branch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update_submodules:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout
+      - uses: actions/checkout@v3
+        with: 
+          ref: 6-dev
+          submodules: true
+
+      - name: Submodule update
+        run: |
+          git status
+          git submodule update --init --recursive
+          git submodule update --remote --recursive
+
+      - name: Commit updates
+        run: |
+          git status
+          git add submodules/plone.api submodules/plone.restapi submodules/volto
+          git status
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m "Update submo0dules tip" || echo "No changes to commit"
+          git push

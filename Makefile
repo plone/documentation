@@ -16,7 +16,7 @@ PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
-
+VALEFILES       := $(shell find -L $(DOCS_DIR) -type d \( -path $(DOCS_DIR)/plone.restapi/lib/* -o  -path $(DOCS_DIR)"/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
@@ -36,7 +36,7 @@ distclean:  ## Clean docs build directory and Python virtual environment
 
 bin/python:
 	python3 -m venv . || virtualenv --clear --python=python3 .
-	bin/python -m pip install --upgrade pip
+	bin/pip install -r requirements-initial.txt
 	bin/pip install -r requirements.txt
 
 docs/plone.api:
@@ -189,17 +189,17 @@ linkcheck: deps  ## Run linkcheck
 
 .PHONY: linkcheckbroken
 linkcheckbroken: deps  ## Run linkcheck and show only broken links
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=auto || test $$? = 1
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=always | GREP_COLORS='0;31' grep -vi "https://github.com/plone/volto/issues/" --color=always && if test $$? = 0; then exit 1; fi || test $$? = 1
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
 
-.PHONY: spellcheck
-spellcheck: deps  ## Run spellcheck
-	cd $(DOCS_DIR) && LANGUAGE=$* $(SPHINXBUILD) -b spelling -j 4 $(ALLSPHINXOPTS) $(BUILDDIR)/spellcheck/$*
+.PHONY: vale
+vale: deps  ## Run Vale style, grammar, and spell checks
+	vale sync
+	vale --no-wrap $(VALEFILES)
 	@echo
-	@echo "Spellcheck is finished; look for any errors in the above output " \
-		" or in $(BUILDDIR)/spellcheck/ ."
+	@echo "Vale is finished; look for any errors in the above output."
 
 .PHONY: html_meta
 html_meta: deps  ## Add meta data headers to all Markdown pages
@@ -212,7 +212,7 @@ doctest: deps
 	      "results in $(BUILDDIR)/doctest/output.txt."
 
 .PHONY: test
-test: clean linkcheckbroken spellcheck  ## Clean docs build, then run linkcheckbroken, spellcheck
+test: clean linkcheckbroken  ## Clean docs build, then run linkcheckbroken
 
 .PHONY: deploy
 deploy: clean html
@@ -226,6 +226,7 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 
 .PHONY: netlify
 netlify:
+	pip install -r requirements-initial.txt
 	pip install -r requirements.txt
 	pip install -r requirements-netlify.txt
 	git submodule init; \
@@ -241,4 +242,4 @@ storybook:
 	cd submodules/volto && yarn && yarn build-storybook -o ../../_build/html/storybook
 
 .PHONY: all
-all: clean spellcheck linkcheck html  ## Clean docs build, then run linkcheck and spellcheck, and build html
+all: clean vale linkcheck html  ## Clean docs build, then run vale and linkcheck, and build html
