@@ -13,13 +13,6 @@
             }
         });
 
-        // $("button[type='reset']").on('click',function () {
-        //     const formInputs = $('#search-form').find('.form-check-input');
-        //     if(formInputs.length) {
-        //         formInputs.prop('checked',false);
-        //         formInputs.find('#doc_section_all').prop('checked',true);
-        //     }
-        // });
     } else {
         $(document).keydown(function(event) {
             if ((event.ctrlKey || event.metaKey) && event.key == "k") {

@@ -189,6 +189,20 @@ div.admonition.admonition-todo>.admonition-title::before {
   padding-bottom: 0;
 }
 
+#search-form .search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-50%);
+  color: #a4a6a7;
+  left: 6.875rem;
+  z-index: 100;
+}
+
+#search-form .form-control {
+  border-radius: .2rem;
+  padding-left: 2.1875rem;
+}
+
 .form-control:focus {
   box-shadow: none;
   border-width: 2px;
@@ -248,6 +262,7 @@ ul.search li p.context {
 
 .bd-search .input-group {
   flex-direction: row-reverse;
+  align-items: center;
 }
 
 .bd-search {
@@ -258,6 +273,21 @@ ul.search li p.context {
 .bd-search .input-group-text {
   font-size: .8rem;
   padding-left: .5em;
+}
+
+.bd-search .input-group-append {
+  align-self: stretch;
+}
+
+.bd-search input {
+  padding-left: 2.1875rem;
+}
+
+.bd-search .search-icon {
+  position: absolute;
+  color: #a4a6a7;
+  left: .625rem;
+  z-index: 100;
 }
 
 .input-group-text kbd {

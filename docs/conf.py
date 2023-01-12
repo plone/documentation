@@ -223,7 +223,7 @@ html_theme = "sphinx_book_theme"
 html_logo = "_static/logo.svg"
 html_favicon = "_static/favicon.ico"
 
-html_css_files = ["custom.css", ("print.css", {"media": "print"})]
+html_css_files = ["custom.css", ("print.css", {"media": "print"}),"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"]
 
 # See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
 todo_include_todos = True
