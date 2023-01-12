@@ -413,12 +413,7 @@ And then in the template call:
 The Python constructor method of the view, `__init__()`, is special.
 You should almost never try to put your code there. Instead, use the `_call__()` method or further helper methods called from it.
 
-```{todo}
-Fix target for link "acquisition chain".
-Perhaps https://docs.plone.org/appendices/glossary.html#term-Acquisition or https://zope.readthedocs.io/en/latest/zopebook/Acquisition.html.
-```
-
-The `__init__()` method of the view might not have an {doc}`acquisition chain </develop/plone/serving/traversing>` available, meaning that it does not know the parent or hierarchy where the view is.
+The `__init__()` method of the view might not have an {ref}`acquisition chain <backend-traversing-label>` available, meaning that it does not know the parent or hierarchy where the view is.
 This also means that you don't have user information and permissions for the view.
 
 This information is set after the constructor has been run.
@@ -493,7 +488,7 @@ To customize existing Plone core or add-on views you have different options.
 
 ### Overriding view template
 
-The recommended approach to customize `.pt` files for Plone is to use a little helper called [z3c.jbot](https://pypi.python.org/pypi/z3c.jbot).
+The recommended approach to customize `.pt` files for Plone is to use a little helper called [z3c.jbot](https://pypi.python.org/project/z3c.jbot).
 
 If you need to override templates in core Plone or in an existing add-on, you can do the following:
 
@@ -566,7 +561,7 @@ If you need to override templates in core Plone or in an existing add-on, you ca
 After the file is in place, changes to the file are instantly picked up.
 The template code is re-read on every HTTP request.
 
-If you want to override an already overridden template, read [How can I override an already overriden template by jbot?](https://stackoverflow.com/q/16209392/2214933)
+If you want to override an already overridden template, read [How can I override an already overriden template by jbot?](https://stackoverflow.com/questions/16209392/2214933)
 
 
 (classic-ui-overriding-a-view-class-label)=
@@ -1075,5 +1070,5 @@ self.obj = self.context.reference_catalog.lookupObject(value)
 return self.obj.absolute_url()  # Acquistion chain messed up, getPhysicalPath() fails
 ```
 
-One workaround to avoid this mess is to use `aq_inner` when accessing `self.obj` values, as described in [Dealing with view implicit acquisition problems in Plone](https://stackoverflow.com/a/11755348/2214933).
+One workaround to avoid this mess is to use `aq_inner` when accessing `self.obj` values, as described in [Dealing with view implicit acquisition problems in Plone](https://stackoverflow.com/questions/11755348/2214933).
 
