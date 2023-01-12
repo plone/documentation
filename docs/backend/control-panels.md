@@ -43,3 +43,12 @@ To manually register a view as a control panel, add the following registration t
     </configlet>
   </object>
 ```
+
+```{seealso}
+See the chapter {ref}`training:controlpanel-label` from the Mastering Plone 6 Training.
+```
+
+```{todo}
+Contribute to this documentation!
+See issue [Backend > Control Panels needs content](https://github.com/plone/documentation/issues/1304).
+```

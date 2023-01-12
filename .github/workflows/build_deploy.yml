@@ -18,12 +18,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
+          pip install -q -r requirements-initial.txt
           pip install -q -r requirements.txt
           pip freeze
 
-      # - name: Run spellcheck
-      #   run: make spellcheck
+      # - name: Run Vale
+      #   run: make vale
 
       # - name: Run linkcheck
       #   run: make linkcheck

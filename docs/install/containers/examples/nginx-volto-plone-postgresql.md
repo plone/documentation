@@ -46,7 +46,7 @@ server {
   server_name  plone.localhost;
 
   location ~ /\+\+api\+\+($|/.*) {
-      rewrite ^/(\+\+api\+\+\/?)+($|/.*) /VirtualHostBase/http/$server_name/Plone/++api++/VirtualHostRoot/$1 break;
+      rewrite ^/(\+\+api\+\+\/?)+($|/.*) /VirtualHostBase/http/$server_name/Plone/++api++/VirtualHostRoot/$2 break;
       proxy_pass http://backend;
   }
 
@@ -106,7 +106,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     environment:
       SITE: Plone
       RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"

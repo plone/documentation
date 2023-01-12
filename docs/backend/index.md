@@ -23,6 +23,7 @@ behaviors
 annotations
 vocabularies
 fields
+relations
 widgets
 global-utils
 portal-actions
@@ -32,7 +33,7 @@ workflows
 search
 indexing
 zodb
-../plone.api/index.rst
+../plone.api/index
 sending-email
 upgrading/index
 ```

@@ -47,6 +47,7 @@ img {
 }
 
 figure img,
+img.figure,
 .figure img {
   box-shadow: 0 6px 24px 0 rgba(153, 153, 153, 0.3);
 }
@@ -124,22 +125,6 @@ div.section div.section div.section {
 
 .admonition .admonition-title {
   margin-bottom: 1.5rem !important;
-}
-
-.admonition.toggle .admonition-title {
-  cursor: pointer;
-  display: flex;
-}
-
-.admonition.toggle .admonition-title::after {
-  content: "\f105";
-  font-weight: 900;
-  font-family: "Font Awesome 5 Free";
-  margin-left: auto;
-}
-
-.admonition.toggle .admonition-title.open::after {
-  content: "\f107";
 }
 
 /* admonition todo */

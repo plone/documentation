@@ -34,10 +34,10 @@ Although there are many container engine tools for developing, managing, and run
 
 (install-containers-index-system-requirements-label)=
 
-### System Requirements
+### System requirements
 
 ```{todo}
-Add System Requirements
+Add system requirements
 ```
 
 
@@ -59,7 +59,7 @@ Consult [Get Docker](https://docs.docker.com/get-docker/) for details.
 First start the Plone Backend, naming it `plone6-backend` and creating a site with its default configuration, using the following command.
 
 ```shell
-docker run --name plone6-backend -e SITE=Plone -e CORS_ALLOW_ORIGIN='*' -d -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_VERSION}
+docker run --name plone6-backend -e SITE=Plone -e CORS_ALLOW_ORIGIN='*' -d -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
 ```
 
 Now start the Plone Frontend, linking it to the `plone6-backend`:
