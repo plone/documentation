@@ -238,32 +238,72 @@ http://localhost:8080/Plone/news/@@my-view
 
 (classic-ui-content-slots-label)=
 
-### Content slots
+### Template slots
 
-```{todo}
-Fix the following link to "slot".
+In the generated template above, we have a fill-slot attribute, which will fill the slot with the name `content-core`, which is defined in Plone's [main_template](https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/browser/templates/main_template.pt).
+The following list shows the available options for `<metal fill-slot="">` in your template.
+
+```{note}
+Please note that our template above inherits from `<html metal:use-macro="context/main_template/macros/master">`.
 ```
 
-The following list are the available {doc}`slot </adapt-and-extend/theming/templates_css/template_basics>`
-options for `<metal fill-slot="">` in your template.
-It inherits from `<html metal:use-macro="context/main_template/macros/master">`.
+#### Metadata in HEAD
 
-`content`
-: Render edit border yourself
+- `top_slot`
+  : Used to set parameters on the request, for example to deactivate the left and right columns or caching.
+    ```
+      <metal:block
+        fill-slot="top_slot"
+           tal:define="dummy python:request.set('disable_border',1);
+                       disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                       disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+    ```
+- `head_slot`
+  : Used to define HTML headers like link tags for RSS and CSS.
+- `style_slot`
+  : Used to define style tags to load CSS files.
+- `javascript_head_slot`
+  : Used to define script tags to load JavaScript in the header.
 
-`main`
-: Overrides the `main` slot in the main template.
-  You must render `title` and `description` yourself.
+```{note}
+Keep in mind that even though you can include CSS and JavaScript this way, most of the time you want to register it in the {rev}`Resource Registry <classic-ui-static-resources-label>`.
+```
 
-`content-title`
-: `title` and `description` prerendered for Plone version 4.x or greater.
+#### Global status message
 
-`content-core`
-: content body specific to your view for Plone version 4.x or greater.
+- `global_statusmessage`
+  : Used to fill in global status messages.
 
-`header`
-: A slot for inserting content above the title.
-  This may be useful in conjunction with the `content-core` slot if you wish to use the stock `content-title` provided by the main template.
+#### Content slots
+
+- `content`
+  : The content area, including the title, description, content-core and viewlets around them.
+
+  - `body`
+    : A slot inside the content macro.
+
+      - `main`
+        : Overrides the `main` slot in the main template.
+          You must render `title` and `description` yourself.
+
+          - `content-title`
+            : `title` and `description` prerendered for Plone version 4.x or greater.
+
+          - `content-description`
+
+          - `content-core`
+              : content body specific to your view for Plone version 4.x or greater.
+
+
+#### Asides / Portlets
+
+- `column_one_slot`
+
+  - `portlets_one_slot`
+
+- `column_two_slot`
+
+  - `portlets_two_slot`
 
 
 (classic-ui-relationship-between-views-and-templates-label)=
