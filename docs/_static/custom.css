@@ -367,27 +367,11 @@ div.sidebar:not(.margin) .admonition {
   background-color: #ffffff;
 }
 
-#search-shortcut-sidebar {
-  position: absolute;
-  right: 1.25rem;
-  border-radius: 0.25em;
-  background: #d9eef9;
-  padding: 0.1787rem 0.2813rem;
-  color: #4a4a4a;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-}
-
 @media (min-width:768px) {
   div.sidebar:not(.margin) {
     width: 50%;
     margin-left: 1.5em;
     margin-right: -28%;
-  }
-
-  #search-shortcut-sidebar {
-    font-size: inherit;
   }
 }
 
