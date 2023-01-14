@@ -69,7 +69,8 @@ The required steps are:
     ```shell
     docker run -it -p 5000:5000 plone/blocks-conversion-tool:latest
     ```
-
+    plone.volto pacakge provide a script `migrate_richtext_to_slate` that can help you migrate your richtext to slate or draftjs (see YOUR-SITE/@@migrate_richtext).
+    
     For more options read https://github.com/plone/blocks-conversion-tool.
 
 1.  **Pages, News Items, and Events are made folderish**
