@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Static resources in Plone 6"
+    "property=og:description": "Static resources in Plone 6"
+    "property=og:title": "Static resources in Plone 6"
+    "keywords": "Plone, static, resources"
 ---
 
 (classic-ui-static-resources-label)=
 
-# Static Resources
+# Static resources
 
 We often want to ship a website with a static resource, such as an image, icon, CSS, or JavaScript file.
 For this, we need to register static resources.
