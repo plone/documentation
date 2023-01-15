@@ -56,8 +56,8 @@ layers
 portlets
 recipes
 static-resources
+template-global-variables
 templates
-templates-global-variables
 theming/index
 viewlets
 views
