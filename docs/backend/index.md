@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": "Backend"
+    "description": "Plone 6 Backend"
+    "property=og:description": "Plone 6 Backend"
+    "property=og:title": "Plone 6 Backend"
     "keywords": "Plone 6, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
 ---
 

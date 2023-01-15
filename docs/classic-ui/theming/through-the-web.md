@@ -4,7 +4,7 @@ myst:
     "description": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
     "property=og:description": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
     "property=og:title": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
-    "keywords": ""
+    "keywords": "Plone 6, Classic UI, Through-the-web, TTW, theme, customization"
 ---
 
 (classic-ui-through-the-web-label)=
