@@ -286,7 +286,7 @@ Keep in mind that even though you can include CSS and JavaScript this way, most 
   You must render `title` and `description` yourself.
 
 `content-title`
-: `title` and `description` prerendered for Plone version 4.x or greater.
+: `title` and `description` prerendered.
 
 `content-description`
 : Content description for your view.
