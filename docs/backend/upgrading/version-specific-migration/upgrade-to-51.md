@@ -61,7 +61,7 @@ To make use of this, you should register your resource bundle to merge with the 
 ```
 
 ```{seealso}
-See https://docs.plone.org/adapt-and-extend/theming/resourceregistry.html#resource-bundle-aggregation.
+See https://5.docs.plone.org/adapt-and-extend/theming/resourceregistry.html#resource-bundle-aggregation.
 ```
 
 
@@ -81,7 +81,7 @@ Actions can be re-ordered, hidden, or displayed.
 ```
 
 ```{seealso}
-See https://docs.plone.org/develop/plone/functionality/actions.html#creating-actions-through-the-web.
+See https://5.docs.plone.org/develop/plone/functionality/actions.html#creating-actions-through-the-web.
 ```
 
 
@@ -283,7 +283,7 @@ The [collective.indexing](https://pypi.org/project/collective.indexing) package 
 This makes sure that objects are only indexed once per transaction.
 
 It also gives {term}`hooks` for calling external indexers, like Solr and Elasticsearch.
-See https://docs.plone.org/develop/plone/searching_and_indexing/external-catalogs.html.
+See https://5.docs.plone.org/develop/plone/searching_and_indexing/external-catalogs.html.
 
 There is a workaround when you get {ref}`catalog-errors-during-upgrades-label`.
 

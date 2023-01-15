@@ -219,7 +219,7 @@ See https://github.com/smcmahon/Products.PloneFormGen/blob/master/Products/Plone
 ## Resource registry
 
 ```{seealso}
-https://docs.plone.org/adapt-and-extend/theming/resourceregistry.html
+https://5.docs.plone.org/adapt-and-extend/theming/resourceregistry.html
 ```
 
 Plone 5 introduces some new concepts, for some, with working with JavaScript in Plone.
@@ -247,7 +247,7 @@ It also would combine and minify them for you in deployment mode.
 
 #### Registration Changes
 
-Prior to Plone 5, JavaScript files were added to the registry by using a [`GenericSetup` Profile](https://docs.plone.org/develop/addons/components/genericsetup.html) and including a `jsregistry.xml` file to it.
+Prior to Plone 5, JavaScript files were added to the registry by using a [`GenericSetup` Profile](https://5.docs.plone.org/develop/addons/components/genericsetup.html) and including a `jsregistry.xml` file to it.
 
 This would add your JavaScript to the registry, with some options and potentially set ordering.
 

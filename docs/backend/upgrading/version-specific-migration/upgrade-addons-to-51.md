@@ -32,7 +32,7 @@ If you must use the old way, you can still use the `portal_quickinstaller` in th
 In a lot of cases, you can configure XML files instead of using Python code.
 In other cases you may need to write custom installer code (`setuphandlers.py`).
 
-See https://docs.plone.org/develop/addons/components/genericsetup.
+See https://5.docs.plone.org/develop/addons/components/genericsetup.
 
 
 ### Default Profile
