@@ -2,9 +2,11 @@
 `plone.restapi`
 `plone.volto`
 Barceloneta
+buildout
 npm
 Plone
 Razzle
 RichText
+viewlet
 Volto
 Zope
