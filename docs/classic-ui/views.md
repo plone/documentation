@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Rendering HTML pages in Plone using the Zope view pattern"
+    "description": "Rendering HTML pages in Plone using the Zope view pattern."
     "property=og:description": "Rendering HTML pages in Plone using the Zope view pattern."
-    "property=og:title": "Views"
+    "property=og:title": "Views in Plone 6"
     "keywords": "views, browser view, templates, plonecli, acquisition, permissions, content, slots, Zope, Plone"
 ---
 
@@ -11,8 +11,8 @@ myst:
 
 # Views
 
-`Views` are the basic elements of modern Python web frameworks.
-A view runs code to setup Python variables for a rendering template.
+Views are the basic elements of modern Python web frameworks.
+A {term}`view` runs code to set up Python variables for a rendering template.
 The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
 
 Views are usually a combination of:
@@ -32,13 +32,13 @@ Views are usually a combination of:
     }
 ```
 
-Templates should kept simple.
+Templates should be kept simple.
 Logic should be kept in a separate Python file.
 This enhances readability and makes components more reusable.
 You can override the Python logic, the template file, or both.
 
-When you are working with Plone, the most common view type is `BrowserView` from the package [Products.Five](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt).
-Other view types include `DefaultView` from [plone.dexterity](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/view.py) and `CollectionView` from [plone.app.contenttypes](https://github.com/plone/plone.app.contenttypes/blob/master/plone/app/contenttypes/browser/collection.py).
+When you work with Plone, the most common view type is `BrowserView` from the package [`Products.Five`](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt).
+Other view types include `DefaultView` from [`plone.dexterity`](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/view.py) and `CollectionView` from [`plone.app.contenttypes`](https://github.com/plone/plone.app.contenttypes/blob/master/plone/app/contenttypes/browser/collection.py).
 
 Each `BrowserView` class is a Python callable.
 The `BrowserView.__call__()` method acts as an entry point to executing the view code.
@@ -155,7 +155,7 @@ See below for comments about what the code does.
 
 `name`
 : The name by which the view is exposed to traversal and `getMultiAdapter()` look-ups.
-  If your view's name is `myview`, then you can render it in the browser by calling http://yourhost/site/page/@@myview.
+  If your view's name is `myview`, then you can render it in the browser by calling `http://yourhost/site/page/@@myview`.
 
 `permission`
 : This is the permission needed to access the view.
@@ -173,12 +173,7 @@ You need to declare the `browser` namespace in your `configure.zcml` to use `bro
 ```
 
 The view in question is registered against a {ref}`layer <classic-ui-layers-label>`.
-It will be available after restart, after running the {ref}`GenericSetup profile <backend-config-registry-generic-setup-label>`.
-
-
-```{todo}
-Fix the preceding link to "Add/remove in Site setup".
-```
+It will be available after restart, after running the {ref}`GenericSetup profile <backend-configuration-registry-generic-setup-label>`.
 
 
 (classic-ui-page-template-label)=
@@ -240,70 +235,75 @@ http://localhost:8080/Plone/news/@@my-view
 
 ### Template slots
 
-In the generated template above, we have a fill-slot attribute, which will fill the slot with the name `content-core`, which is defined in Plone's [main_template](https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/browser/templates/main_template.pt).
+In the generated template above, we have a `fill-slot` attribute, which will fill the slot with the name `content-core`, which is defined in Plone's [main_template](https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/browser/templates/main_template.pt).
 The following list shows the available options for `<metal fill-slot="">` in your template.
 
 ```{note}
 Please note that our template above inherits from `<html metal:use-macro="context/main_template/macros/master">`.
 ```
 
-#### Metadata in HEAD
+#### Metadata in `head`
 
-- `top_slot`
-  : Used to set parameters on the request, for example to deactivate the left and right columns or caching.
-    ```
-      <metal:block
-        fill-slot="top_slot"
-           tal:define="dummy python:request.set('disable_border',1);
-                       disable_column_one python:request.set('disable_plone.leftcolumn',1);
-                       disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
-    ```
-- `head_slot`
-  : Used to define HTML headers like link tags for RSS and CSS.
-- `style_slot`
-  : Used to define style tags to load CSS files.
-- `javascript_head_slot`
-  : Used to define script tags to load JavaScript in the header.
+`top_slot`
+: Used to set parameters on the request, for example to deactivate the left and right columns or caching.
+
+  ```xml
+  <metal:block
+    fill-slot="top_slot"
+       tal:define="dummy python:request.set('disable_border',1);
+                   disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                   disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+  ```
+
+`head_slot`
+: Used to define HTML `head` elements, such as `link` tags for RSS and CSS.
+
+`style_slot`
+: Used to define `style` tags to load CSS files.
+
+`javascript_head_slot`
+: Used to define `script` tags to load JavaScript in the HTML `head` tag.
 
 ```{note}
-Keep in mind that even though you can include CSS and JavaScript this way, most of the time you want to register it in the {rev}`Resource Registry <classic-ui-static-resources-label>`.
+Keep in mind that even though you can include CSS and JavaScript this way, most of the time you should register it in the {ref}`resource registry <classic-ui-static-resources-label>`.
 ```
 
 #### Global status message
 
-- `global_statusmessage`
-  : Used to fill in global status messages.
+`global_statusmessage`
+: Used to fill in global status messages.
 
 #### Content slots
 
-- `content`
-  : The content area, including the title, description, content-core and viewlets around them.
+`content`
+: The content area, including the title, description, content-core and viewlets around them.
 
-  - `body`
-    : A slot inside the content macro.
+`body`
+: A slot inside the content macro.
 
-      - `main`
-        : Overrides the `main` slot in the main template.
-          You must render `title` and `description` yourself.
+`main`
+: Overrides the `main` slot in the main template.
+  You must render `title` and `description` yourself.
 
-          - `content-title`
-            : `title` and `description` prerendered for Plone version 4.x or greater.
+`content-title`
+: `title` and `description` prerendered for Plone version 4.x or greater.
 
-          - `content-description`
+`content-description`
+: Content description for your view.
 
-          - `content-core`
-              : content body specific to your view for Plone version 4.x or greater.
+`content-core`
+: Content body specific to your view for Plone version 4.x or greater.
 
 
-#### Asides / Portlets
+#### Asides and portlets
 
-- `column_one_slot`
+-   `column_one_slot`
 
-  - `portlets_one_slot`
+    -   `portlets_one_slot`
 
-- `column_two_slot`
+-   `column_two_slot`
 
-  - `portlets_two_slot`
+    -   `portlets_two_slot`
 
 
 (classic-ui-relationship-between-views-and-templates-label)=
@@ -413,7 +413,7 @@ And then in the template call:
 The Python constructor method of the view, `__init__()`, is special.
 You should almost never try to put your code there. Instead, use the `_call__()` method or further helper methods called from it.
 
-The `__init__()` method of the view might not have an {ref}`acquisition chain <backend-traversing-label>` available, meaning that it does not know the parent or hierarchy where the view is.
+The `__init__()` method of the view might not have an {ref}`acquisition chain <backend-traversing-label>` available, meaning that it does not know where is its parent or hierarchy.
 This also means that you don't have user information and permissions for the view.
 
 This information is set after the constructor has been run.
@@ -477,9 +477,9 @@ gsm.unregisterAdapter(factory=TestingRedirectHandler,
 
 ## Customizing views
 
-To customize existing Plone core or add-on views you have different options.
+To customize existing Plone core or add-on views, you have different options.
 
--   Usually you can simply override the related page template file (`.pt`).
+-   Usually you can override the related page template file (`.pt`).
 -   Sometimes you also need to change the related Python view class code.
     In this case, you override the Python class by using your own add-on which installs a view class replacement using an add-on specific {term}`browser layer`.
 
@@ -488,7 +488,7 @@ To customize existing Plone core or add-on views you have different options.
 
 ### Overriding view template
 
-The recommended approach to customize `.pt` files for Plone is to use a little helper called [z3c.jbot](https://pypi.python.org/project/z3c.jbot).
+The recommended approach to customize `.pt` files for Plone is to use a little helper called [`z3c.jbot`](https://pypi.org/project/z3c.jbot/).
 
 If you need to override templates in core Plone or in an existing add-on, you can do the following:
 
@@ -508,7 +508,7 @@ If you need to override templates in core Plone or in an existing add-on, you ca
 
 2.  Locate the template you need to override in the Plone source tree.
     You can do this by searching in all the installed packages for `.pt` files.
-    If you are using buildout with the `collective.recipe.omelette` recipe, a good folder to search in is `./parts/omelette`.
+    If you use buildout with the `collective.recipe.omelette` recipe, a good folder to search in is `./parts/omelette`.
 
     The following is an example UNIX `find` command to find `.pt` files.
     You can also use Windows Explorer file search or similar tools:
@@ -561,7 +561,7 @@ If you need to override templates in core Plone or in an existing add-on, you ca
 After the file is in place, changes to the file are instantly picked up.
 The template code is re-read on every HTTP request.
 
-If you want to override an already overridden template, read [How can I override an already overriden template by jbot?](https://stackoverflow.com/questions/16209392/2214933)
+If you want to override an already overridden template, read [How can I override an already overriden template by jbot?](https://stackoverflow.com/questions/16209392/how-can-i-override-an-already-overriden-template-by-jbot).
 
 
 (classic-ui-overriding-a-view-class-label)=
@@ -884,7 +884,7 @@ You can also do direct view look-ups and method calls in your template by using 
 
 (classic-ui-use-a-skin-based-template-in-a-five-view-label)=
 
-### Use a skin-based template in a Five view
+### Use a skin-based template in a `Five` view
 
 Use `aq_acquire(object, template_name)`.
 
@@ -953,12 +953,12 @@ views = [ view.factory for view in views if IBlocksView.implementedBy(view.facto
 
 ### Default view of a content item
 
-Objects have views for default, view, edit, and so on.
+Objects have views for `default`, `view`, `edit`, and so on.
 
 The distinction between the `default` and `view` views are that, for files, the default can be `download`.
 
--   The default view is configured in {ref}`backend-content-types-label`.
--   The default view is rendered when a content item is called.
+-   The `default` view is configured in {ref}`backend-content-types-label`.
+-   The `default` view is rendered when a content item is called.
     Even though they are objects, they have the `__call__()` Python method defined.
 
 If you need to explicitly get a content item's view for page rendering, you can do it as follows:
@@ -985,16 +985,12 @@ Specifically:
 
 (classic-ui-allowing-the-contentmenu-on-non-default-views-label)=
 
-### Allowing the `contentmenu` on non-default views
+### Allow the `contentmenu` on non-default views
 
-In general, the {guilabel}`contentmenu` (where the actions, display views, factory types,
-workflow, and other select menus are located) is not shown on non-default views.
+In general, the {guilabel}`contentmenu` (where the actions, display views, factory types, workflow, and other select menus are located) is not shown on non-default views.
 There are some exceptions, though.
 
-If you want to display the {guilabel}`contentmenu` in such non-default views, you have to
-mark them with the `IViewView` interface from `plone.app.layout`, either by letting
-the class provide `IViewView` by declaring it with `zope.component.implements` or
-by configuring it via ZCML as follows:
+If you want to display the {guilabel}`contentmenu` in such non-default views, you have to mark them with the `IViewView` interface from `plone.app.layout`, either by letting the class provide `IViewView` by declaring it with `zope.component.implements` or by configuring it via ZCML as follows:
 
 ```xml
 <class class="dotted.path.to.browser.view.class">
@@ -1005,15 +1001,14 @@ by configuring it via ZCML as follows:
 
 (classic-ui-zope-viewpagetemplatefile-vs-five-viewpagetemplatefile-label)=
 
-## Zope `ViewPageTemplateFile` vs. Five `ViewPageTemplateFile`
+## Zope `ViewPageTemplateFile` versus `Five` `ViewPageTemplateFile`
 
 ```{warning}
 There are two different classes that share the same name `ViewPageTemplateFile`.
 ```
 
 -   Zope [`BrowserView` source code](https://github.com/zopefoundation/zope.publisher/blob/dea3d4757390d04f6a5b53e696f08d0cab5f6023/src/zope/publisher/browser.py#L958).
--   [`Five` version](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/__init__.py#L20) with .
-    [`Products.Five`](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt) is a way to access some Zope 3 technologies from the Zope codebase, which is used by Plone.
+-   [`Five` version](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/__init__.py#L20) with [`Products.Five`](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt) is a way to access some Zope 3 technologies from the Zope codebase, which is used by Plone.
 
 Compare the differences in code.
 
@@ -1033,15 +1028,14 @@ The difference is that the `Five` version supports:
 -   The `provider:` TAL expression.
 -   Other Plone-specific TAL expression functions, such as `test()`.
 -   Usually, Plone code needs the `Five` version of `ViewPageTemplateFile`.
--   Some subsystems, notably the `z3c.form` package, expect the Zope 3 (not Five) version of `ViewPageTemplateFile` instances.
+-   Some subsystems, notably the `z3c.form` package, expect the Zope 3 (not `Five`) version of `ViewPageTemplateFile` instances.
 
 
 (classic-ui-views-and-automatic-member-variable-acquisition-wrapping-label)=
 
 ### Views and automatic member variable acquisition wrapping
 
-View class instances will automatically assign themselves as a parent for all member
-variables.
+View class instances will automatically assign themselves as a parent for all member variables.
 This is because `Five` package based views inherit from `Acquisition.Implicit` base class.
 
 For example, say you have a content item `Basket` with an `absolute_url()` of:
@@ -1070,5 +1064,4 @@ self.obj = self.context.reference_catalog.lookupObject(value)
 return self.obj.absolute_url()  # Acquistion chain messed up, getPhysicalPath() fails
 ```
 
-One workaround to avoid this mess is to use `aq_inner` when accessing `self.obj` values, as described in [Dealing with view implicit acquisition problems in Plone](https://stackoverflow.com/questions/11755348/2214933).
-
+One workaround to avoid this mess is to use `aq_inner` when accessing `self.obj` values, as described in [Dealing with view implicit acquisition problems in Plone](https://stackoverflow.com/questions/11753940/dealing-with-view-implicit-acquisition-problems-in-plone/11755348#11755348).

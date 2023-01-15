@@ -173,7 +173,7 @@ The changes to add-on layers are applied only when add-ons are installed or unin
 ```
 
 ```{seealso}
-https://pypi.python.org/project/plone.browserlayer
+https://pypi.org/project/plone.browserlayer/
 ```
 
 

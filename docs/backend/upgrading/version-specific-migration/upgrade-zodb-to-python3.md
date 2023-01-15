@@ -483,8 +483,8 @@ You can try the following to have an upgrade without downtime.
 
 -   You can try to leverage the ZRS replication protocol, where the secondary server has the converted data.
     It would probably be a trivial change to ZRS to get this to work.
--   There is a [ZRS equivalent for Relstorage](https://www.newtdb.org/en/latest/topics/following.html).
-
+-   There is a [ZRS equivalent for Relstorage](https://web.archive.org/web/20181014191206/https://www.newtdb.org/en/latest/topics/following.html).
+    Its repository is at https://github.com/newtdb/db.
 
 ## Further reading
 
