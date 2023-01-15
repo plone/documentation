@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Configuration Registry"
-    "property=og:description": "Configuration Registry"
-    "property=og:title": "Configuration Registry"
+    "description": "Configuration Registry in Plone 6"
+    "property=og:description": "Configuration Registry in Plone 6"
+    "property=og:title": "Configuration Registry in Plone 6"
     "keywords": "Plone 6, Configuration Registry, backend, plone.registry, plone.app.registry, GenericSetup"
 ---
 
@@ -15,7 +15,7 @@ myst:
 Explain how `plone.registry` / `plone.app.registry` and `GenericSetup` work together.
 Provide examples of how to import and export Plone settings.
 
-See 
+See https://github.com/plone/documentation/issues/1424
 ```
 
 (backend-configuration-registry-generic-setup-label)=
