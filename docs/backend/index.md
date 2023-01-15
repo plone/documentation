@@ -17,7 +17,7 @@ Insert introduction here.
 
 ```{toctree}
 :maxdepth: 2
-config-registry
+configuration-registry
 control-panels
 content-types
 behaviors
