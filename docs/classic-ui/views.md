@@ -413,7 +413,7 @@ And then in the template call:
 The Python constructor method of the view, `__init__()`, is special.
 You should almost never try to put your code there. Instead, use the `_call__()` method or further helper methods called from it.
 
-The `__init__()` method of the view might not have an {ref}`acquisition chain <backend-traversing-label>` available, meaning that it does not know where is its parent or hierarchy.
+The `__init__()` method of the view might not have an {ref}`acquisition chain <backend-traversal-label>` available, meaning that it does not know where is its parent or hierarchy.
 This also means that you don't have user information and permissions for the view.
 
 This information is set after the constructor has been run.
