@@ -3,8 +3,8 @@ myst:
   html_meta:
     "description": "Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes."
     "property=og:description": "Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes."
-    "property=og:title": "Layers"
-    "keywords": "layer, layers,browser layer, views, viewlets, portlets"
+    "property=og:title": "Layers in Plone 6"
+    "keywords": "layer, layers, browser layer, views, viewlets, portlets"
 ---
 
 (classic-ui-layers-label)=
@@ -18,7 +18,7 @@ Layers are useful in the following scenarios.
 -   Mobile browsing code is only active when the site is being browsed on a mobile phone.
 
 Layers are marker interfaces applied to the {term}`HTTPRequest` object.
-They are usually used in conjunction with {term}`ZCML` directives to dynamically activate various parts of the configuration, such as theme files or add-on product functionality.
+They are usually used in conjunction with Zope Configuration Mark-up Language ({term}`ZCML`) directives to dynamically activate various parts of the configuration, such as theme files or add-on product functionality.
 
 Layers ensure that only one add-on product can override the specific Plone instance functionality in your site at a time, while still allowing you to have possibly conflicting add-on products in your buildout and ZCML.
 Multiple Plone site instances can share the same ZCML and code files.
@@ -61,12 +61,16 @@ If you want to override a view or a viewlet unconditionally for all sites withou
 
 ```{todo}
 Explain how to use an `overrides.zcml`.
+
+See https://github.com/plone/documentation/issues/1426
 ```
 
 
 (classic-ui-creating-a-layer-label)=
 
 ## Creating a layer
+
+Developers can create layers for themes, extensions, behaviors, and other functions.
 
 
 (classic-ui-theme-layer-label)=
@@ -204,9 +208,9 @@ from zope.publisher.interfaces.browser import IBrowserRequest
 
 class INoHeaderLayer(IBrowserRequest):
     """ When applied to HTTP request object, header animations
-    or images are not rendered on this.
+    or images are not rendered on this layer.
 
-    If this layer is on request, do not render header images.
+    If this layer is on a request, do not render header images.
     This allows uncluttered editing of header animations and images.
     """
 
@@ -244,6 +248,8 @@ class EditHeaderAnimationsView(FormWrapper):
 (classic-ui-checking-active-layers-label)=
 
 ## Checking active layers
+
+This section describes a few strategies for developers to check active layers according to their type.
 
 
 (classic-ui-layers-are-activated-on-the-current-request-object-label)=
@@ -302,7 +308,7 @@ Layers are evaluated from zero index (highest priority) to the last index (lowes
 
 (classic-ui-testing-layers-label)=
 
-## Testing Layers
+## Testing layers
 
 Plone testing tool kits will not register layers for you.
 You have to do it yourself somewhere in the boilerplate code, as shown in the following example.
