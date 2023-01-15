@@ -9,7 +9,7 @@ myst:
 
 (setup-build-label)=
 
-# Building and Checking the Quality of Documentation
+# Building and checking the quality of documentation
 
 This document covers how to build the Plone Documentation and check it for quality.
 
@@ -48,25 +48,25 @@ This is an easy way to become a contributor to Plone.
 ```
 
 
-```{note}
-If you are using an M1 Mac to build the documentation, there is currently [an issue with pyenchant](https://github.com/pyenchant/pyenchant/issues/265) that throws an error that the enchant library can't be found.
-This happens for example if you install Python 3 with `pyenv` in the default M1 architecture (aarch64), so without following instructions to use Rosetta2 x86 emulation.
-A workaround until pyenchant is fixed is to run `export PYENCHANT_LIBRARY_PATH=/opt/homebrew/lib/libenchant-2.dylib` in the terminal session before you execute `make html`.
-```
+(setup-build-installation-graphviz-label)=
+
+### Graphviz
 
 Install [Graphviz](https://graphviz.org/download/) for graph visualization.
 
-**macOS**
-
+`````{tab-set}
+````{tab-item} macOS
 ```shell
 brew install graphviz
 ```
+````
 
-**Ubuntu**
-
+````{tab-item} Ubuntu
 ```shell
 sudo apt-get install graphviz
 ```
+````
+`````
 
 
 (setup-build-installation-clone-plone-documentation-label)=
