@@ -691,17 +691,17 @@ However, in most cases:
 Replace links to Plone 5.2 docs with links to Plone 6 docs.
 Specifically:
 
--   [TAL page template](https://docs.plone.org/adapt-and-extend/theming/templates_css/template_basics)
--   [interface](https://docs.plone.org/develop/addons/components/interfaces)
+-   [TAL page template](https://5.docs.plone.org/adapt-and-extend/theming/templates_css/template_basics)
+-   [interface](https://5.docs.plone.org/develop/addons/components/interfaces)
 ```
 
 -   Full Plone page views are a subclass of [`Products.Five.browser.BrowserView`](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/__init__.py#L20) which is a wrapper class.
     It wraps [`zope.publisher.browser.BrowserView`](https://github.com/zopefoundation/zope.publisher/blob/dea3d4757390d04f6a5b53e696f08d0cab5f6023/src/zope/publisher/browser.py#L958) and adds an acquisition (parent traversal) support for it.
--   Views have an attribute `index` which points to a [TAL page template](https://docs.plone.org/adapt-and-extend/theming/templates_css/template_basics) responsible for rendering the HTML code.
+-   Views have an attribute `index` which points to a [TAL page template](https://5.docs.plone.org/adapt-and-extend/theming/templates_css/template_basics) responsible for rendering the HTML code.
     You get the HTML output by doing `self.index()`.
     The page template gets a context argument `view` pointing to the view class instance.
     The `index` value is usually an instance of [`Products.Five.browser.pagetemplate.ViewPageTemplateFile`](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/pagetemplatefile.py#L35) for full Plone pages or [`zope.pagetemplate.pagetemplatefile.PageTemplateFile`](https://github.com/zopefoundation/zope.pagetemplate/blob/14ba59c98e12517b9f8abcdb24bc882bb435ed7c/src/zope/pagetemplate/pagetemplatefile.py#L43) for HTML snippets without using acquisition.
--   View classes should implement the [interface](https://docs.plone.org/develop/addons/components/interfaces)
+-   View classes should implement the [interface](https://5.docs.plone.org/develop/addons/components/interfaces)
   [`zope.browser.interfaces.IBrowserView`](https://github.com/zopefoundation/zope.browser/blob/1239c75e4e190df992bf34a88b4ead2c952afe86/src/zope/browser/interfaces.py#L27).
 
 Views that render page snippets and parts can be direct subclasses of `zope.publisher.browser.BrowserView`, as snippets might not need acquisition support which adds some overhead to the rendering process.
@@ -722,13 +722,13 @@ As such, you can call view methods directly from a page template, not only from 
 Replace links to Plone 5.2 docs with links to Plone 6 docs.
 Specifically:
 
--   [Helper views and tools](https://docs.plone.org/develop/plone/misc/context)
--   [Expressions](https://docs.plone.org/develop/plone/functionality/expressions)
+-   [Helper views and tools](https://5.docs.plone.org/develop/plone/misc/context)
+-   [Expressions](https://5.docs.plone.org/develop/plone/functionality/expressions)
 ```
 
 ```{seealso}
--   [Helper views and tools](https://docs.plone.org/develop/plone/misc/context)
--   [Expressions](https://docs.plone.org/develop/plone/functionality/expressions)
+-   [Helper views and tools](https://5.docs.plone.org/develop/plone/misc/context)
+-   [Expressions](https://5.docs.plone.org/develop/plone/functionality/expressions)
 ```
 
 
@@ -974,11 +974,11 @@ def viewURLFor(item):
 Replace links to Plone 5.2 docs to Plone 6 docs.
 Specifically:
 
--   [Helper views and tools](https://docs.plone.org/develop/plone/misc/context)
+-   [Helper views and tools](https://5.docs.plone.org/develop/plone/misc/context)
 ```
 
 ```{seealso}
--   [Helper views and tools](https://docs.plone.org/develop/plone/misc/context)
+-   [Helper views and tools](https://5.docs.plone.org/develop/plone/misc/context)
 -   [URL to content view](https://web.archive.org/web/20110529043150/http://plone.293351.n2.nabble.com/URL-to-content-view-td6028204.html)
 ```
 

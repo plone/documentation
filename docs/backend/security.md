@@ -13,14 +13,14 @@ myst:
 
 From Zope, Plone provides various built-in security facilities.
 
-[Security](https://docs.plone.org/develop/plone/security)
+[Security](https://5.docs.plone.org/develop/plone/security)
 
 
 (backend-security-permissions-label)=
 
 ## Permissions
 
-[Available Permissions In Plone](https://docs.plone.org/develop/plone/security/permission_lists)
+[Available Permissions In Plone](https://5.docs.plone.org/develop/plone/security/permission_lists)
 
 
 (backend-security-roles-label)=
@@ -37,7 +37,7 @@ From Zope, Plone provides various built-in security facilities.
 
 ### Local Roles
 
-[Local Roles](https://docs.plone.org/develop/plone/security/local_roles.html)
+[Local Roles](https://5.docs.plone.org/develop/plone/security/local_roles.html)
 
 
 (backend-security-sharing-label)=
