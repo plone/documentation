@@ -624,4 +624,9 @@ Node Version Manager
 
 Node.js
     [Node.js®](https://nodejs.org/en/) is an open-source, cross-platform JavaScript runtime environment.
+
+view
+    A view is the basic element of modern Python web frameworks.
+    A view runs code to set up Python variables for a rendering template.
+    The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
 ```
