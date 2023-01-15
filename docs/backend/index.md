@@ -30,7 +30,7 @@ global-utils
 portal-actions
 users-groups
 security
-traversing
+traversal-acquisition
 workflows
 search
 indexing
