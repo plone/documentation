@@ -1,6 +1,7 @@
 `plone.api`
 `plone.restapi`
 `plone.volto`
+backend
 Barceloneta
 buildout
 npm
