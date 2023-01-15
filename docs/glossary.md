@@ -629,4 +629,10 @@ view
     A view is the basic element of modern Python web frameworks.
     A view runs code to set up Python variables for a rendering template.
     The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
+
+traversal
+    Traversal is the process of determining the object that is the target of a request by examining the URL path of the request or in code, and looking up objects in the object hierarchy.
+
+acquisition
+    Acquisition is a mechanism that allows objects to inherit attributes from their parent objects in the object hierarchy.
 ```
