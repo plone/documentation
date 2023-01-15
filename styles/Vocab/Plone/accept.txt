@@ -5,8 +5,12 @@ Barceloneta
 buildout
 npm
 Plone
+portlet
+prerendered
 Razzle
+renderer
 RichText
+unregister
 viewlet
 Volto
 Zope
