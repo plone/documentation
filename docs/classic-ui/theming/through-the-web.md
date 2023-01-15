@@ -1,18 +1,19 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
+    "property=og:description": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
+    "property=og:title": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
+    "keywords": "Plone 6, Classic UI, Through-the-web, TTW, theme, customization"
 ---
 
 (classic-ui-through-the-web-label)=
 
-# Through-the-web (TTW) Theme Customization in Plone 6 Classic UI
+# Through-the-web (TTW) theme customization
 
 ```{todo}
 This page is only an outline and needs a lot of work.
+See https://github.com/plone/documentation/issues/1286
 ```
 
 TTW customization is useful when you need to make small CSS changes.
@@ -22,7 +23,7 @@ Other theming methods should be used for larger customizations or entire website
 
 (classic-ui-through-the-web-control-panels-label)=
 
-## Control Panels
+## Control panels
 
 You can make the following changes through control panels.
 
@@ -44,7 +45,7 @@ Add screenshots.
 
 (classic-ui-through-the-web-css-variables-label)=
 
-## CSS Variables
+## CSS variables
 
 Plone uses Twitter Bootstrap's CSS variables.
 They are used to tweak colors, fonts, spacing, and other CSS attributes.
@@ -54,10 +55,9 @@ Provide usage.
 ```
 
 
-
 (classic-ui-through-the-web-theming-control-panel-label)=
 
-## Theming Control Panel
+## Theming control panel
 
 The Theming control panel is limited to downloading and uploading themes.
 
@@ -69,10 +69,10 @@ The Theming control panel is limited to downloading and uploading themes.
 
 (classic-ui-through-the-web-restricted-python-label)=
 
-### Restricted Python
+### Restricted python
 
 
 (classic-ui-through-the-web-content-types-label)=
 
-### Content Types
+### Content types
 

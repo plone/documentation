@@ -114,7 +114,7 @@ Solr
     [Solr](https://solr.apache.org/) is a popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
 
 ZCML
-    The [Zope Configuration Mark-up Language](https://docs.plone.org/develop/addons/components/zcml.html).
+    The [Zope Configuration Mark-up Language](https://5.docs.plone.org/develop/addons/components/zcml.html).
 
 Diazo
     [Diazo theme engine guide](https://docs.diazo.org/en/latest/).
@@ -498,6 +498,47 @@ ZODB
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 
+ZPT
+    Zope Page Template is a template language for Python.
+
+plonecli
+    The plonecli helps developers to create Plone add-ons in a modular and reproducible way.
+
+ZCA
+Zope Component Architecture
+    Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
+    It is very well suited to developing large Python software systems.
+    The ZCA is not specific to the Zope web application server.
+    It can be used for developing any Python application.
+    Maybe it should be called Python Component Architecture.
+    ```{seealso}
+    See also https://muthukadan.net/docs/zca.html.
+    ```
+
+browser layer
+Layer
+    A layer—also called "browser layer"—is a marker interface and used in ZCML configurations.
+    Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes.
+
+JSON
+    JSON (JavaScript Object Notation, pronounced /ˈdʒeɪsən/; also /ˈdʒeɪˌsɒn/) is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute-value pairs and arrays (or other serializable values).
+
+    ```{seealso}
+    See also https://en.wikipedia.org/wiki/JSON.
+    ```
+
+`HTTPRequest`
+    The `HTTPRequest` object contains information about the current request, which also includes browser layers.
+
+interface
+    An interface is a mechanism for labeling objects as conforming to a given API or contract.
+    Interfaces define what methods an object provides.
+    Plone extensively uses interfaces to define APIs between different subsystems.
+    
+    ```{seealso}
+    See also https://zopeinterface.readthedocs.io/en/latest/.
+    ```
+
 Make
 make
 GNU make
@@ -515,7 +556,7 @@ REST
     REST stands for [Representational State Transfer](https://en.wikipedia.org/wiki/Representational_state_transfer). It is a software architectural principle to create loosely coupled web APIs.
 
 workflow
-    A concept in Plone (and other CMS's) whereby a content object can be in a number of states (private, public, etcetera) and uses transitions to change between them (e.g. "publish", "approve", "reject", "retract"). See the [Plone docs on Workflow](https://docs.plone.org/working-with-content/collaboration-and-workflow/)
+    A concept in Plone (and other CMS's) whereby a content object can be in a number of states (private, public, etcetera) and uses transitions to change between them (e.g. "publish", "approve", "reject", "retract"). See the [Plone docs on Workflow](https://5.docs.plone.org/working-with-content/collaboration-and-workflow/)
 
 HTTP-Request
 HTTP Request
@@ -583,4 +624,9 @@ Node Version Manager
 
 Node.js
     [Node.js®](https://nodejs.org/en/) is an open-source, cross-platform JavaScript runtime environment.
+
+view
+    A view is the basic element of modern Python web frameworks.
+    A view runs code to set up Python variables for a rendering template.
+    The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
 ```

@@ -1,68 +1,69 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Plone Classic UI theming based on Barceloneta"
+    "property=og:description": "Plone Classic UI theming based on Barceloneta"
+    "property=og:title": "Plone Classic UI theming based on Barceloneta"
+    "keywords": "Plone, Classic UI, theming, Barceloneta"
 ---
 
 (classic-ui-theming-barceloneta-label)=
 
-# Plone Classic UI Theming Based on Barceloneta
+# Classic UI theming based on Barceloneta
 
 ```{todo}
 This page is only an outline and needs a lot of work.
+See https://github.com/plone/documentation/issues/1286
 ```
 
-* Use of SCSS
-* Colors, fonts and sizes via variable changeable
-* Properties for shadows, rounded corners, gradients.
-* `plonetheme.barceloneta` npm package for includes
-* `bobtemplates.plone` template
-* Theming is based on Twitter Bootstrap 5
-* We used Bootstrap markup in templates
-* We used Bootstrap components wherever possible
-* Most of the look and feel can be changed via Bootstrap's variables
-* Hint: order is important in SCSS
+-   Use of SCSS
+-   Colors, fonts, and sizes via variables is changeable
+-   Properties for shadows, rounded corners, gradients.
+-   `plonetheme.barceloneta` npm package for includes
+-   `bobtemplates.plone` template
+-   Theming is based on Twitter Bootstrap 5
+-   We use Bootstrap markup in templates
+-   We use Bootstrap components wherever possible
+-   Most of the look and feel can be changed via Bootstrap's variables
+-   Hint: order is important in SCSS
 
 
 (classic-ui-theming-barceloneta-theme-package-label)=
 
-## Theme Package
+## Theme package
 
-* Generated theme package can be uploaded as ZIP-file
+-   Generated theme package can be uploaded as a .zip file.
 
 
 (classic-ui-theming-barceloneta-theme-structure-label)=
 
-## Theme Structure
+## Theme structure
 
 ### `base.scss`
 
-* Basices required for backend
+-   Basics required for backend
 
 ### `barceloneta.scss`
 
-* Barceloneta Theme basis
+-   Barceloneta theme basics
 
 
-## npm Package
+## npm package
 
-* npm package with files required for Plone
-* dependencies required by theme to compile
-
-
-# Bootstrap Components
-
-* Default components are extended with some custom components, such as a select or dropdown menu.
-* We use Boostrap variables in these cases.
+-   npm package with files required for Plone
+-   dependencies required by theme to compile
 
 
-# Add-Ons and Templates
+## Bootstrap components
+
+-   Default components are extended with some custom components, such as a select or dropdown menu.
+-   We use Boostrap variables in these cases.
+
+
+## Add-ons and templates
 
 Make life easy with...
 
-* use Bootstrap markup
-* use Bootstrap components
-* use Bootstrap variables
+-   use Bootstrap markup
+-   use Bootstrap components
+-   use Bootstrap variables
