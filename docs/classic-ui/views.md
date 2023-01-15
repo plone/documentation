@@ -561,7 +561,7 @@ If you need to override templates in core Plone or in an existing add-on, you ca
 After the file is in place, changes to the file are instantly picked up.
 The template code is re-read on every HTTP request.
 
-If you want to override an already overridden template, read [How can I override an already overriden template by jbot?](https://stackoverflow.com/questions/16209392/how-can-i-override-an-already-overriden-template-by-jbot).
+If you want to override an already overridden template, read [How can I override an already overridden template by jbot?](https://stackoverflow.com/questions/16209392/how-can-i-override-an-already-overridden-template-by-jbot).
 
 
 (classic-ui-overriding-a-view-class-label)=
