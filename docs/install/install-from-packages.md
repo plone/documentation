@@ -183,7 +183,7 @@ We install Plone 6 with {term}`pip`, {term}`Cookiecutter`, {term}`mxdev`, {term}
 ```{note}
 We do not maintain documentation for installing Plone 6 or later with `buildout`.
 For Plone 5, `buildout` was the preferred installation method.
-You can read the [documentation of how to install Plone 5 with `buildout`](https://docs.plone.org/manage/installing/installation_minimal_buildout.html), and adapt it to your needs for Plone 6.
+You can read the [documentation of how to install Plone 5 with `buildout`](https://5.docs.plone.org/manage/installing/installation_minimal_buildout.html), and adapt it to your needs for Plone 6.
 ```
 
 Create a new directory to hold your project, and make it your current directory.

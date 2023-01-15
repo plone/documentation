@@ -313,7 +313,7 @@ Nothing changes.
 Support for old-style resource registries (`cssregistry.xml` and `jsregistry.xml`) was removed completely, along with the tools `portal_css` or `portal_javascript`.
 
 You need to add resources using the new Resource Registry.
-See https://docs.plone.org/adapt-and-extend/theming/resourceregistry.html#resources for detailed instructions.
+See https://5.docs.plone.org/adapt-and-extend/theming/resourceregistry.html#resources for detailed instructions.
 
 
 ### Restructure `CMFPlone` static resources
