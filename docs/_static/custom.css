@@ -184,18 +184,17 @@ div.admonition.admonition-todo>.admonition-title::before {
   display: block;
 }
 
-#shortcut.input-group-text {
+#shortcut-page.input-group-text {
   padding-top: 0;
   padding-bottom: 0;
 }
 
 #search-form .search-icon {
   position: absolute;
-  top: 50%;
-  transform: translate(0,-50%);
   color: #a4a6a7;
-  left: 6.875rem;
+  left: 1.5625rem;
   z-index: 100;
+  align-self: center;
 }
 
 #search-form .form-control {
@@ -260,23 +259,19 @@ ul.search li p.context {
 
 /* Search form sidebar */
 
-.bd-search .input-group {
-  flex-direction: row-reverse;
-  align-items: center;
-}
-
 .bd-search {
   font-size: .8rem;
+}
+
+#shortcut.input-group-text {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .bd-search input,
 .bd-search .input-group-text {
   font-size: .8rem;
   padding-left: .5em;
-}
-
-.bd-search .input-group-append {
-  align-self: stretch;
 }
 
 .bd-search input {
@@ -288,6 +283,7 @@ ul.search li p.context {
   color: #a4a6a7;
   left: .625rem;
   z-index: 100;
+  align-self: center;
 }
 
 .input-group-text kbd {

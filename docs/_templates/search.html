@@ -50,26 +50,25 @@
         <div class="input-group col-xl-8 mb-2">
           <label for="q" class="sr-only">Search string
           </label>
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="shortcut">
-              <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
-            </span>
-          </div>
-          <i class="search-icon fa fa-search fa-lg" aria-hidden="true"></i>
+          <i class="fas fa-search fa-lg search-icon" aria-hidden="true"></i>
           <input
-            type="search" name="q" id="q"
-            class="form-control"
-            placeholder="{{ _(theme_search_bar_text) }}"
-            aria-labelledby="{{ _(theme_search_bar_text) }}"
-            value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+          type="search" name="q" id="q"
+          class="form-control"
+          placeholder="{{ _(theme_search_bar_text) }}"
+          aria-labelledby="{{ _(theme_search_bar_text) }}"
+          value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
           />
           <div class="input-group-append">
+            <span class="input-group-text" id="shortcut-page">
+              <kbd id="search-page-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+            </span>
+          </div>
+          <div class="input-group-append">
             <button
-              type="reset"
-              class="btn btn-light"
-            ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-            </svg></button>
+            type="button"
+            onclick="onReset()"
+            class="btn btn-danger"
+            ><i class="fas fa-times"></i></button>
           </div>
           <div class="input-group-append">
             <button type="submit" class="btn btn-primary">{{ _('search') }}</button>
