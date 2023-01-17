@@ -450,3 +450,9 @@ div.viewcode-block:target {
   border-top: 1px solid var(--codeblock-color);
   border-bottom: 1px solid var(--codeblock-color);
 }
+
+/* Fix paragraphs in list items. */
+#main-content ol > li > p:nth-child(n+2),
+#main-content ul > li > p:nth-child(n+2) {
+  margin-top: 1em;
+}

@@ -150,7 +150,7 @@ Check this [Cheat Sheet](https://python-future.org/compatible_idioms.html) with 
 `python-modernize` adds an import of the compatibility library `six` if needed.
 The import is added as the last import, therefore it is often necessary to reorder the imports.
 The easiest way is to use [isort](https://pypi.org/project/isort), which does this for you automatically.
-Check the [Python style guide for Plone](https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting) for information about the order of imports and an example configuration for `isort`.
+Check the [Python style guide for Plone](https://5.docs.plone.org/develop/styleguide/python.html#grouping-and-sorting) for information about the order of imports and an example configuration for `isort`.
 
 If `six` is used in the code, make sure that `six` is added to the `install_requires` list in the `setup.py` of the package.
 

@@ -44,7 +44,7 @@ Watch for error messages in the console.
 You may be able to find more information about the error messages in the following documents.
 
 -   {doc}`Version-specific migration tips </backend/upgrading/version-specific-migration/index>` for your version of Plone
--   [Error Reference](https://docs.plone.org/appendices/error-reference.html)
+-   [Error Reference](https://5.docs.plone.org/appendices/error-reference.html)
 
 ```{todo}
 See https://github.com/plone/documentation/issues/1323
