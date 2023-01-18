@@ -264,6 +264,10 @@ ul.search li p.context {
   font-size: .8rem;
 }
 
+.bd-search:focus-within #search-input {
+  border-radius: .25rem;
+}
+
 #shortcut.input-group-text {
   padding-top: 0;
   padding-bottom: 0;
@@ -277,6 +281,7 @@ ul.search li p.context {
 
 input#search-input {
   padding-left: 2.1875rem;
+  border-radius: .25rem 0 0 .25rem;
 }
 
 .search-icon {
