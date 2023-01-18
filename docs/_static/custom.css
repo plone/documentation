@@ -198,8 +198,8 @@ div.admonition.admonition-todo>.admonition-title::before {
   left: 1.5625rem;
 }
 
-#search-form .form-control {
-  border-radius: .2rem;
+input#q {
+  border-radius: .25rem 0 0 .25rem;
   padding-left: 2.1875rem;
 }
 
@@ -275,7 +275,7 @@ ul.search li p.context {
   padding-left: .5em;
 }
 
-.bd-search input {
+input#search-input {
   padding-left: 2.1875rem;
 }
 
