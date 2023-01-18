@@ -342,7 +342,10 @@ var Search = {
       else {
         Search.stopPulse();
         Search.title.text(_('Search Results'));
-        if (!resultCount)
+        if (query === '') {
+          Search.status.text(_('No query, no results.'));
+        }
+        else if (!resultCount)
           Search.status.text(_('Your search did not match any documents. Please make sure that all words are spelled correctly. Searching for multiple words only shows matches that contain all words.'));
         else
             Search.status.text(_('Found %s page(s) matching the search query.').replace('%s', resultCount));
