@@ -184,6 +184,11 @@ div.admonition.admonition-todo>.admonition-title::before {
   display: block;
 }
 
+#search-form:focus-within #shortcut-page,
+#search-form:focus-within #shortcut {
+  display: none;
+}
+
 #shortcut-page.input-group-text {
   padding-top: 0;
   padding-bottom: 0;

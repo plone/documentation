@@ -12,28 +12,12 @@
                 $('#q').focus();
             }
         });
-        
-        $('#q').focus(() => {
-            $('#shortcut-page').hide();
-        });
-        $('#q').blur(() => {
-            $('#shortcut-page').show();
-        });
-        
-        
     } else {
         $(document).keydown(function(event) {
             if ((event.ctrlKey || event.metaKey) && event.key == "k") {
                 event.preventDefault();
                 $('#search-input').focus();
             }
-        });
-
-        $('#search-input').focus(() => {
-            $('#shortcut').hide();
-        });
-        $('#search-input').blur(() => {
-            $('#shortcut').show();
         });
     }
     
