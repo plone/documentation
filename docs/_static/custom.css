@@ -185,7 +185,7 @@ div.admonition.admonition-todo>.admonition-title::before {
 }
 
 #search-form:focus-within #shortcut-page,
-#search-form:focus-within #shortcut {
+.bd-search:focus-within #shortcut {
   display: none;
 }
 
