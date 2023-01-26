@@ -24,6 +24,7 @@ blobstorage
 Bluebream
 boolean
 Bootstrap
+bootstrap
 browseable
 browserlayer
 Browserlayer
@@ -36,6 +37,7 @@ buildout
 buildouts
 Buildouts
 built-in
+built in
 bzr
 cano
 Casali
@@ -103,6 +105,7 @@ exe
 extendable
 extensibility
 Facebook
+facebook
 facettednavigation
 fallback
 faq
@@ -136,6 +139,7 @@ GitHub
 gitlab
 Glick
 Gmail
+gmail
 GmbH
 gnupg
 gomez
@@ -168,6 +172,7 @@ Intranet
 io
 iPhones
 IPython
+ipython
 irc
 ISocial
 issuecomment
@@ -178,6 +183,8 @@ javascript
 Javascript
 JavaScript
 javascripts
+js
+JS
 jbot
 jenkins
 Joomla
@@ -224,6 +231,7 @@ multiselect
 MVC
 mysite
 MySQL
+mysql
 Nagios
 namespace
 namespaces
@@ -252,6 +260,7 @@ Patternslib
 pbauer
 pdb
 PDF
+pdf
 Pellegrini
 pep8
 PEP8
@@ -303,6 +312,14 @@ quickinstaller
 Rapido
 Razzle
 ReactJS
+reactJS
+react.js
+React.JS
+React-JS
+react-js
+react js
+React JS
+React Js
 redmine
 Redux
 Rees
@@ -383,6 +400,8 @@ toc
 ToC
 toctree
 Todo
+todo
+todos
 Todos
 toLocalizedTime
 tomgross
@@ -397,6 +416,7 @@ trello
 ttw
 txt
 UI
+ui
 uid
 UML
 underscorejs
@@ -421,6 +441,7 @@ VirtualBox
 virtualenv
 virtualhost
 Volto
+volto
 votable
 voteable
 Vue
@@ -451,6 +472,7 @@ xvfb
 xxx
 yml
 youtube
+Youtube
 zc
 ZCatalog
 zcml
@@ -466,3 +488,16 @@ zopepy
 zopeskel
 zpt2
 Zupan
+Node Js
+node js
+Node Js
+node-js
+Node-js
+Node-JS
+Node-Js
+nodejs
+Nodejs
+NodeJs
+NodeJS
+nodeJS
+
