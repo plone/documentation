@@ -48,6 +48,27 @@ This is an easy way to become a contributor to Plone.
 ```
 
 
+(setup-build-installation-graphviz-label)=
+
+### Graphviz
+
+Install [Graphviz](https://graphviz.org/download/) for graph visualization.
+
+`````{tab-set}
+````{tab-item} macOS
+```shell
+brew install graphviz
+```
+````
+
+````{tab-item} Ubuntu
+```shell
+sudo apt-get install graphviz
+```
+````
+`````
+
+
 (setup-build-installation-clone-plone-documentation-label)=
 
 ### Clone `plone/documentation`
@@ -60,7 +81,6 @@ git clone https://github.com/plone/documentation.git
 cd documentation
 make html
 ```
-
 
 (setup-build-available-documentation-builds-label)=
 

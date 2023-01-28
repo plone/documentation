@@ -34,6 +34,13 @@ cookiecutter-plone-starter
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
 
+CSRF
+Cross-Site Request Forgery
+    Cross-Site Request Forgery (CSRF or XSRF) is a type of web attack that allows an attacker to send malicious requests to a web application on behalf of a legitimate user.
+    The attack works by tricking the user's web browser into sending a request to the web application that the user did not intentionally make.
+    This can allow an attacker to perform actions on the web application without the user's knowledge or consent.
+    In Plone, CSRF protection is done almost transparently by [`plone.protect`](https://pypi.org/project/plone.protect/).
+
 CSS
     Cascading Style Sheets (CSS) is a stylesheet language used for describing the (most of the times visual) representation of web pages.
 
@@ -107,7 +114,7 @@ Solr
     [Solr](https://solr.apache.org/) is a popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
 
 ZCML
-    The [Zope Configuration Mark-up Language](https://docs.plone.org/develop/addons/components/zcml.html).
+    The [Zope Configuration Mark-up Language](https://5.docs.plone.org/develop/addons/components/zcml.html).
 
 Diazo
     [Diazo theme engine guide](https://docs.diazo.org/en/latest/).
@@ -247,8 +254,7 @@ Asynchronous JavaScript and XML
     The server will send a response back to the client, which is then rendered on the client side.
 
 Yeoman
-    A popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
-    https://yeoman.io/
+    [Yeoman](https://yeoman.io/) is a popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
 
 CommonJS
     A JavaScript package standard, the equivalent of a Python wheel or egg.
@@ -412,7 +418,7 @@ Internationalization
     Developers and template authors usually internationalize the application.
     "i18n" is shorthand for "internationalization" (the letter "I", 18 letters, the letter "N").
     Plone is fully internationalized.
-    
+
     ```{seealso}
     {term}`localization`
     ```
@@ -437,7 +443,7 @@ language tag
     A language tag is a string used as an identifier for a language.
     A language tag may have one or more subtags.
     The basic form of a language tag is `LANGUAGE-[SUBTAG]`.
-    
+
     ```{seealso}
     -   W3C article [Language tags in HTML and XML](https://www.w3.org/International/articles/language-tags/)
     -   W3C Working Draft [Language Tags and Locale Identifiers for the World Wide Web](https://www.w3.org/TR/ltli/)
@@ -481,7 +487,7 @@ react-intl
     A library that is part of [Format.JS](https://formatjs.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
 
 WSGI
-    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
+    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
 ZEO
     [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
@@ -492,8 +498,50 @@ ZODB
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 
+ZPT
+    Zope Page Template is a template language for Python.
+
+plonecli
+    The plonecli helps developers to create Plone add-ons in a modular and reproducible way.
+
+ZCA
+Zope Component Architecture
+    Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
+    It is very well suited to developing large Python software systems.
+    The ZCA is not specific to the Zope web application server.
+    It can be used for developing any Python application.
+    Maybe it should be called Python Component Architecture.
+    ```{seealso}
+    See also https://muthukadan.net/docs/zca.html.
+    ```
+
+browser layer
+Layer
+    A layer—also called "browser layer"—is a marker interface and used in ZCML configurations.
+    Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes.
+
+JSON
+    JSON (JavaScript Object Notation, pronounced /ˈdʒeɪsən/; also /ˈdʒeɪˌsɒn/) is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute-value pairs and arrays (or other serializable values).
+
+    ```{seealso}
+    See also https://en.wikipedia.org/wiki/JSON.
+    ```
+
+`HTTPRequest`
+    The `HTTPRequest` object contains information about the current request, which also includes browser layers.
+
+interface
+    An interface is a mechanism for labeling objects as conforming to a given API or contract.
+    Interfaces define what methods an object provides.
+    Plone extensively uses interfaces to define APIs between different subsystems.
+    
+    ```{seealso}
+    See also https://zopeinterface.readthedocs.io/en/latest/.
+    ```
+
 Make
 make
+GNU make
     [GNU Make](https://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files.
 
     Make gets its knowledge of how to build your program from a file called the _makefile_, which lists each of the non-source files and how to compute it from other files.
@@ -508,7 +556,7 @@ REST
     REST stands for [Representational State Transfer](https://en.wikipedia.org/wiki/Representational_state_transfer). It is a software architectural principle to create loosely coupled web APIs.
 
 workflow
-    A concept in Plone (and other CMS's) whereby a content object can be in a number of states (private, public, etcetera) and uses transitions to change between them (e.g. "publish", "approve", "reject", "retract"). See the [Plone docs on Workflow](https://docs.plone.org/working-with-content/collaboration-and-workflow/)
+    A concept in Plone (and other CMS's) whereby a content object can be in a number of states (private, public, etcetera) and uses transitions to change between them (e.g. "publish", "approve", "reject", "retract"). See the [Plone docs on Workflow](https://5.docs.plone.org/working-with-content/collaboration-and-workflow/)
 
 HTTP-Request
 HTTP Request
@@ -565,8 +613,26 @@ Factory Type Information
     -   Whether discussion is enabled.
     -   Providing the `factory_type_information` dictionary.
         This is used elsewhere in the code (often in `__init__.py` of a product) to set the initial values for a ZODB Factory Type Information object (an object in the `portal_types` tool).
-    
+
     ```{seealso}
     [`FactoryTypeInformation` class source code](https://github.com/zopefoundation/Products.CMFCore/blob/361a30e0c72a15a21f88433b8d5fc49331f36728/src/Products/CMFCore/TypesTool.py#L431)
     ```
+
+`nvm`
+Node Version Manager
+    [`nvm`](https://github.com/nvm-sh/nvm/blob/master/README.md) allows you to quickly install and use different versions of node via the command line.
+
+Node.js
+    [Node.js®](https://nodejs.org/en/) is an open-source, cross-platform JavaScript runtime environment.
+
+view
+    A view is the basic element of modern Python web frameworks.
+    A view runs code to set up Python variables for a rendering template.
+    The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
+
+traversal
+    Traversal is the process of determining the object that is the target of a request by examining the URL path of the request or in code, and looking up objects in the object hierarchy.
+
+acquisition
+    Acquisition is a mechanism that allows objects to inherit attributes from their parent objects in the object hierarchy.
 ```
