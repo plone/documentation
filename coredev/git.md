@@ -7,31 +7,34 @@ myst:
     "keywords": ""
 ---
 
-% -*- coding: utf-8 -*-
+```{todo}
+I seriously question the value of this entire guide.
+I think it should be purged.
+Plone should not be in the business of teaching how to use git or GitHub.
+```
 
 # Working with Git and GitHub
 
-## The Plone Git workflow & branching model
+## The Plone Git workflow and branching model
 
 Our repository on GitHub has the following layout:
 
-- **feature branches**:
-  all development for new features must be done in dedicated branches, normally one branch per feature,
-- **main** or **master** **branch**:
-  when features get completed they are merged into the master branch;
-  bugfixes are commited directly on the master branch,
-- **tags**:
-  whenever we create a new release we tag the repository so we can later re-trace our steps, re-release versions, etc.
+-   **feature branches**:
+    All development for new features must be done in dedicated branches, normally one branch per feature.
+-   **main** or **master** **branch**:
+    when features get completed they are merged into the master branch; bugfixes are commited directly on the master branch,
+-   **tags**:
+    whenever we create a new release, we tag the repository so we can later retrace our steps, or rerelease versions.
 
-## Git Basics
 
-Some introductory definitions and concepts, if you are already familiar enough with Git,
-head to next section: {ref}`general-guidelines-label`.
+## Git basics
+
+Some introductory definitions and concepts, if you are already familiar enough with Git, head to next section: {ref}`general-guidelines-label`.
+
 
 ### Mental working model
 
-With Git (as well as all modern [DVCS](http://en.wikipedia.org/wiki/Distributed_revision_control)),
-distributing changes to others is a two steps process (contrary to traditional VCS like `svn`).
+With Git (as well as all modern [DVCS](http://en.wikipedia.org/wiki/Distributed_revision_control)), distributing changes to others is a two steps process (contrary to traditional VCS like `svn`).
 
 This way what on svn is a single `svn ci` in Git is two commands: `git commit` and `git push`.
 
@@ -44,6 +47,7 @@ Not a single commit anymore, but a series of them, meaning that all those fears,
 You can freely fix/change/remove/rework/update/... your commits afterwards.
 
 Push your changes whenever you are sure they are what you, and others, expect them to be.
+
 
 ### Concepts
 
@@ -63,28 +67,22 @@ tags
 
 `HEAD`
 
-: A pointer that always tells you where you are
-  (extremely useful when doing some operations).
+: A pointer that always tells you where you are (extremely useful when doing some operations).
 
 The index
 
 : A temporal staging storage with changes on files that are pending to be added to a commit.
-  If your Git output is colored,
-  green filenames are those in the index.
+  If your Git output is colored, green filenames are those in the index.
 
 Working tree
 
 : Your current modified files.
   This is the only place where you can loose your changes.
-  If your Git output is colored,
-  red filenames are those in the working tree.
+  If your Git output is colored, red filenames are those in the working tree.
 
 Stash
 
-: Temporal storage for changes,
-  again,
-  extremely useful in some scenarios,
-  see further below for examples.
+: Temporal storage for changes, again, extremely useful in some scenarios, see further below for examples.
 
 ### Branches
 
@@ -115,37 +113,31 @@ add
 
 : Add the given files to the index.
 
-  :::{note}
+  ```{note}
   **pro tip**: once a file is add via `git add` your changes will never be lost!
-  As long as you don't remove the `.git` folder,
-  even if you remove the file you just added,
-  the changes you made before doing `git add` are still there ready to be recovered at any time!
-  :::
+  As long as you don't remove the `.git` folder, even if you remove the file you just added, the changes you made before doing `git add` are still there ready to be recovered at any time!
+  ```
 
 status
 
 : Get an overview of the repository status.
 
-  If there are files on the index,
-  or files not tracked by Git,
-  or the status of your local branch with regards to the remote,
-  etc.
+  If there are files on the index, or files not tracked by Git, or the status of your local branch with regards to the remote, etc.
 
 diff
 
 : See the current changes made to the files already tracked by Git.
 
-  :::{note}
+  ```note}
   Fear not, if you used `git add SOME_FILE` and then `git diff` doesn't output anything you haven't lost your changes!
 
   Just try `git diff --cached`.
   Now you know how to see the working tree changes (`git diff`) and index changes (`git diff --cached`).
-  :::
+  ```
 
 commit
 
-: Create/record changes to the repository
-  (locally only, nothing is sent over the wire).
+: Create/record changes to the repository (locally only, nothing is sent over the wire).
 
 push
 
