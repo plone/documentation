@@ -57,6 +57,7 @@ extensions = [
     "sphinx.ext.autosummary",  # plone.api
     "sphinx.ext.graphviz",
     "notfound.extension",
+    "sphinxcontrib.video",
 ]
 
 graphviz_output_format = "svg"
@@ -153,6 +154,7 @@ myst_enable_extensions = [
     #  instead of ```.
     "substitution",  # plone.restapi \
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
+    "html_image",
 ]
 
 myst_substitutions = {
