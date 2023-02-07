@@ -15,6 +15,7 @@ We often want to ship a website with a static resource, such as an image, icon, 
 For this, we need to register static resources.
 
 
+(classic-ui-static-resources-registering-label)=
 ## Registering javascript and css
 
 To register a static resource in Plone 6, we need to use the `plone.base.interfaces.resources.IBundleRegistry` interface.
@@ -36,21 +37,6 @@ The js files have to be in the `browser/static` folder of your Plone 6 project.
 
 You can register a CSS resource in the same way.
   
-  ```xml 
-  <registry>
-    <records interface="plone.base.interfaces.resources.IBundleRegistry" prefix="plone.bundles/css">
-      <value key="enabled">True</value>
-      <value key="csscompilation">++plone++myproject.site/style.min.css</value>
-      <value key="jscompilation">++plone++myproject.site/javascript.min.js</value>
-      <value key="load_async">False</value> 
-      <value key="load_defer">False</value>
-      <value key="depends">plone</value>
-    </records>
-  </registry>
-  ```
-
-Registering a js file and a css file in the same bundle is also possible.
-
 ```xml
     <registry>
     <records interface="plone.base.interfaces.resources.IBundleRegistry" prefix="plone.bundles/css">
@@ -61,6 +47,20 @@ Registering a js file and a css file in the same bundle is also possible.
   </registry>
 ```
 
+Registering a js file and a css file in the same bundle is also possible.
+
+```xml 
+<registry>
+  <records interface="plone.base.interfaces.resources.IBundleRegistry" prefix="plone.bundles/css">
+    <value key="enabled">True</value>
+    <value key="csscompilation">++plone++myproject.site/style.min.css</value>
+    <value key="jscompilation">++plone++myproject.site/javascript.min.js</value>
+    <value key="load_async">False</value> 
+    <value key="load_defer">False</value>
+    <value key="depends">plone</value>
+  </records>
+</registry>
+```
 
 (classic-ui-static-resources-available-attributeslabel)=
 
