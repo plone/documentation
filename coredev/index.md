@@ -29,7 +29,7 @@ Please don't put the code reviewers at risk and by ignoring this.
 guidelines
 agreement
 culture
-intro
+getting-started-with-development
 documentation
 plips
 issues
