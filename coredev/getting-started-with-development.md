@@ -49,7 +49,7 @@ cd ./plone6devel
 ./bootstrap.sh
 ```
 
-If you run into issues in this process, please see {doc}`issues`.
+If you run into issues in this process, please see {doc}`troubleshooting`.
 
 This will run for a long time if it is your first pull (approximately 20 minutes).
 Once that is done pulling down eggs, you can start your new instance with:
