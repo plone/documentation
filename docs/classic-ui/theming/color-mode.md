@@ -1,14 +1,39 @@
-# Color theme toggler for Bootstrap 5
-With Bootstrap 5.3 a color-theme toggler is possible. 
-This is not provided by default and needs some custom code.
-Here is a small guide how to implement it into Plone 6.
+# Color Modes
+Bootstrap 5.3 has introduced [Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/).
+Here is a small guide how to implement color themes in Plone 6.
+
+## Preferred Color Modes
+You will need to add some Javascript functionality to set the Bootstrap theme to the user's preferred color scheme.
+Add the Javascript file to the `browser/static` folder of your Plone 6 project and register it in the `browser/profiles/default/registry` of your Plone 6 project.
+See [Registering Javascript and CSS](classic-ui-static-resources-registering-label) for more information.
+
+```js
+(() => {
+    'use strict'
+
+    // Set Bootstrap Theme to the preferred color scheme
+    const setPreferredTheme = () => {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-bs-theme', 'dark')
+        } else {
+            document.documentElement.setAttribute('data-bs-theme', 'light')
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        setPreferredTheme()
+    })
+})()
+```
 
 ## Toggle Button
-Add elements with `data-bs-theme-value`.
-If you want to add a theme toggler to your site, you can use the following elements:
+In order to switch color themes, corresponding elements with `data-bs-theme-value`
+attributes must be added to the DOM.
+Default Bootstrap 5.3 color themes include `light`, `dark` and `auto`.
+If you want to add a theme toggler to your site, you can use the following example:
 
 ```html
-<div class="btn-group">
+<div class="btn-group btn-group-sm">
   <button class="btn btn-secondary" data-bs-theme-value="light">
     Light
   </button>
@@ -18,74 +43,69 @@ If you want to add a theme toggler to your site, you can use the following eleme
 </div>
 ```
 
-## Javascript
+## Registering the Toggle Button
 
-The following Javascript is needed to make the toggler work. 
-It is based on the [Bootstrap 5.3 documentation](https://getbootstrap.com/docs/5.3/customize/color-modes/).
-The Javascript is added to the `browser/static` folder of your Plone 6 project and registered in the `browser/profiles/default/registry` of your Plone 6 project.
+You will need to add some Javascript functionality to the toggler.
+The following code snippet is based on the [Bootstrap 5.3 documentation](https://getbootstrap.com/docs/5.3/customize/color-modes/#javascript).
+
+Add the Javascript file to the `browser/static` folder of your Plone 6 project and register it in the `browser/profiles/default/registry` of your Plone 6 project.
 See [Registering Javascript and CSS](classic-ui-static-resources-registering-label) for more information.
 
 ```js
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
     'use strict'
 
-    const storedTheme = localStorage.getItem('theme');
+    const storedTheme = localStorage.getItem('theme')
 
     const getPreferredTheme = () => {
-        if (storedTheme) {
-            return storedTheme;
-        }
-
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      if (storedTheme) {
+        return storedTheme
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
     }
 
     const setTheme = function (theme) {
-        if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.setAttribute('data-bs-theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-bs-theme', theme);
-        }
-        const e = new CustomEvent('data-bs-theme-changed');
-        e.theme = theme;
-        document.dispatchEvent(e);
+      if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-bs-theme', 'dark')
+      } else {
+        document.documentElement.setAttribute('data-bs-theme', theme)
+      }
     }
 
-    setTheme(getPreferredTheme());
-
     const showActiveTheme = theme => {
-        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+      const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
 
-        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-            element.classList.remove('active');
-        });
-
-        btnToActive.classList.add('active');
+      document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+        element.classList.remove('active')
+      })
+      btnToActive.classList.add('active')
     }
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        if (storedTheme !== 'light' || storedTheme !== 'dark') {
-            setTheme(getPreferredTheme());
-        }
-    });
+      if (storedTheme !== 'light' || storedTheme !== 'dark') {
+        setTheme(getPreferredTheme())
+      }
+    })
 
-    showActiveTheme(getPreferredTheme());
+    window.addEventListener('DOMContentLoaded', () => {
+      setTheme(getPreferredTheme())
+      showActiveTheme(getPreferredTheme())
 
-    document.querySelectorAll('[data-bs-theme-value]')
+      document.querySelectorAll('[data-bs-theme-value]')
         .forEach(toggle => {
-            toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            const theme = toggle.getAttribute('data-bs-theme-value');
-            localStorage.setItem('theme', theme);
-            setTheme(theme);
-            showActiveTheme(theme);
-        });
-    });
-});
+          toggle.addEventListener('click', () => {
+            const theme = toggle.getAttribute('data-bs-theme-value')
+            localStorage.setItem('theme', theme)
+            setTheme(theme)
+            showActiveTheme(theme)
+          })
+        })
+    })
+})()
 ```
 
 ## Customize single elements
-
-You can customize single elements with the `data-bs-theme` attribute.
+Elements can be assigned a static theme using the `data-bs-theme` attribute.
 When set to a value the element will be rendered in the given theme, despite the global theme.
 For example:
 
