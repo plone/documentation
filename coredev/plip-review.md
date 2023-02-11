@@ -1,15 +1,16 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "PLIP review"
+    "property=og:description": "PLIP review"
+    "property=og:title": "PLIP review"
+    "keywords": "PLIP, review, Plone Improvement Proposal, Plone"
 ---
 
-% -*- coding: utf-8 -*-
+# PLIP review
 
-# Reviewing PLIPs
+A Plone Improvement Proposal (PLIP) is a formal process to propose a change to improve Plone.
+
 
 ## Expectations
 
