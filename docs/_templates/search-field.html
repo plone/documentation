@@ -1,0 +1,19 @@
+<form class="bd-search d-flex align-items-center" action="{{ pathto('search') }}" method="get">
+  <div class="input-group">
+    <label for="q" class="sr-only">Search string
+    </label>
+    <i class="fa fa-search fa-lg search-icon" aria-hidden="true"></i>
+    <input
+    type="search" name="q" id="search-input"
+    class="form-control"
+    placeholder="{{ _(theme_search_bar_text) }}"
+    aria-labelledby="{{ _(theme_search_bar_text) }}"
+    value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+    />
+    <div class="input-group-append">
+      <span class="input-group-text" id="shortcut">
+        <kbd id="search-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+      </span>
+    </div>
+  </div>
+</form>

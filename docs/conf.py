@@ -55,9 +55,12 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
+    "sphinx.ext.graphviz",
     "notfound.extension",
+    "sphinxcontrib.video",
 ]
 
+graphviz_output_format = "svg"
 
 # If true, the Docutils Smart Quotes transform, originally based on SmartyPants
 # (limited to English) and currently applying to many languages, will be used
@@ -129,15 +132,14 @@ exclude_patterns = [
     "volto/developer-guidelines/branch-policy.md",
 ]
 
-html_js_files = [
-    "patch_scrollToActive.js",
-]
+html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
 
 html_extra_path = [
     "robots.txt",
 ]
 
 html_static_path = [
+    "volto/_static",
     "_static",
 ]
 
@@ -153,6 +155,7 @@ myst_enable_extensions = [
     #  instead of ```.
     "substitution",  # plone.restapi \
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
+    "html_image",
 ]
 
 myst_substitutions = {
@@ -249,6 +252,7 @@ html_theme_options = {
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
+    "search_bar_text": "Search",
     "switcher": {
         "json_url": "/_static/switcher.json",
         "version_match": version,
@@ -318,7 +322,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.0.2",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.1",
     "{NVM_VERSION}": "0.39.3",
 }
 

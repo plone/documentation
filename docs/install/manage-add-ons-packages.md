@@ -147,7 +147,7 @@ make start-backend
 ```
 
 ```{seealso}
-See the [documentation of `mxdev` in its README.rst](https://github.com/mxstack/mxdev/blob/main/README.rst) for complete information.
+See the [documentation of `mxdev` in its README.md](https://github.com/mxstack/mxdev/blob/main/README.md) for complete information.
 ```
 
 
