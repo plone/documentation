@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "6-dev"
+      - "update_workflows"
 
 jobs:
   build_deploy:
