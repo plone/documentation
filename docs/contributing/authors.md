@@ -71,7 +71,7 @@ make vale
 
 Because it is difficult to automate good American English grammar and syntax, we do not strictly enforce it.
 We also understand that contributors might not be fluent in English.
-We encourage contributors to make a reasonable effort, and to seek help from community members who are fluent in English.
+We encourage contributors to make a reasonable effort, and to request a review of their pull request from community members who are fluent in English to fix grammar and syntax.
 Please ask!
 
 
