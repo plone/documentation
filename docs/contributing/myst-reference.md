@@ -11,7 +11,7 @@ myst:
 
 # MyST reference
 
-This chapter provides information and examples to write proper MyST syntax—with references to Sphinx extensions for their specific directives—in Plone Documentation.
+This chapter provides information and examples for how to write proper MyST syntax—with references to Sphinx extensions for their specific directives—in Plone Documentation.
 
 
 ## MyST, reStructuredText, and Markdown
