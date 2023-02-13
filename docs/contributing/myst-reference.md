@@ -107,6 +107,21 @@ Use `image` for anything but diagrams.
 
 Use `figure` for diagrams.
 
+Paths to images and figures must resolve in both the main documentation and the submodule's documentation, if present.
+
+For inline images, we use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
+Example syntax is shown below.
+
+```html
+You can copy <img alt="Copy icon" src="../../_images/copy.svg" class="inline"> blocks.
+```
+
+Note that the HTML attribute `class` must be set to `inline` to render the image inline at `1rem`. 
+
+The above syntax renders as shown below.
+
+> You can copy <img alt="Copy icon" src="../../_images/copy.svg" class="inline"> blocks.
+
 Images and figures should always include `alt` text.
 
 From [Web Accessibility In Mind (WebAIM)](https://webaim.org/techniques/alttext/):
@@ -164,6 +179,35 @@ Accessibility is part of the [Plone brand and identity](https://plone.org/access
     ⬭       View
     ➞       Flow
     ======  =======
+```
+
+
+#### Video
+
+To embed local videos, such as recordings of demonstrating the user interface, we require that the videos be saved as `.mp4` for greatest compatibility, usability, accessibility, and reduced file size.
+
+Avoid animated GIFs because they do not allow control of playback.
+
+Audio is not required, but may be helpful.
+If you include audio, it is helpful to include closed captions or a transcript.
+
+It is helpful to include overlays of key strokes, and mouse and other input gestures, to describe how to interact with the user interface.
+
+Paths to videos must resolve in both the main documentation and the submodule's documentation, if present.
+
+Example syntax is shown below.
+
+````
+```{video} /_static/user-manual/blocks/block-copy-cut.mp4
+    :width: 100%
+```
+````
+
+Note that the path must be absolute to support both submodules and the main documentation.
+The above MyST markup renders as shown below.
+
+```{video} /_static/user-manual/blocks/block-copy-cut.mp4
+    :width: 100%
 ```
 
 
