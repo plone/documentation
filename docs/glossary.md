@@ -186,12 +186,12 @@ Configuration registry
     In Volto, it is a singleton object modeled using JavaScript modules.
     It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
     It contains the configuration of the Volto app.
-    
+
     In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for Zope applications.
 
 component shadowing
 shadowing
-    Volto uses a technique called component shadowing to override an existing Volto component with our local custom version, without having to modify Volto's source code. 
+    Volto uses a technique called component shadowing to override an existing Volto component with our local custom version, without having to modify Volto's source code.
 
     Volto's source components are located in the filepath stem of `omelette/src/components/`.
     Custom components that shadow Volto's source would be located in the filepath stem of `src/customizations/components/`.
@@ -534,7 +534,7 @@ interface
     An interface is a mechanism for labeling objects as conforming to a given API or contract.
     Interfaces define what methods an object provides.
     Plone extensively uses interfaces to define APIs between different subsystems.
-    
+
     ```{seealso}
     See also https://zopeinterface.readthedocs.io/en/latest/.
     ```
@@ -635,4 +635,10 @@ traversal
 
 acquisition
     Acquisition is a mechanism that allows objects to inherit attributes from their parent objects in the object hierarchy.
+
+Varnish
+    [Varnish](https://varnish-cache.org) is a popular open-source web accelerator that is used to implement HTTP caching.
+
+Squid
+    [Squid Proxy](http://www.squid-cache.org/) is a popular open-source caching and forwarding web proxy server that can be used to improve the performance, security, and reliability of web applications.
 ```

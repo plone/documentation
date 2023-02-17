@@ -22,4 +22,5 @@ Intro to chapter "deployment"
 provision
 scaling
 backup
+caching/index
 ```
