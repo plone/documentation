@@ -21,6 +21,15 @@ This document covers how to build the Plone Documentation and check it for quali
 Installation of Plone 6 Documentation includes pre-requisites and the repository itself.
 
 
+(setup-build-installation-python-label)=
+
+### Python
+
+Python 3.8 or later is required.
+A more recent Python is preferred.
+Use your system's package manager or [pyenv](https://github.com/pyenv/pyenv) to install an appropriate version of Python.
+
+
 (setup-build-installation-vale-label)=
 
 ### Vale
