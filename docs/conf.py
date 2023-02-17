@@ -140,7 +140,7 @@ html_extra_path = [
 
 html_static_path = [
     "volto/_static",
-    "_static",
+    "_static",  # Last path wins. See https://github.com/plone/documentation/pull/1442
 ]
 
 # -- Options for myST markdown conversion to html -----------------------------
