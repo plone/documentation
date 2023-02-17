@@ -120,7 +120,7 @@ Note that the HTML attribute `class` must be set to `inline` to render the image
 
 The above syntax renders as shown below.
 
-> You can copy <img alt="Copy icon" src="../../_images/copy.svg" class="inline"> blocks.
+> You can copy <img alt="Copy icon" src="/_static/copy.svg" class="inline"> blocks.
 
 Images and figures should always include `alt` text.
 

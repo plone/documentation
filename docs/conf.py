@@ -140,7 +140,7 @@ html_extra_path = [
 
 html_static_path = [
     "volto/_static",
-    "_static",
+    "_static",  # Last path wins. See https://github.com/plone/documentation/pull/1442
 ]
 
 # -- Options for myST markdown conversion to html -----------------------------
@@ -214,7 +214,7 @@ copybutton_prompt_is_regexp = True
 
 # -- sphinx-notfound-page configuration ----------------------------------
 
-notfound_urls_prefix = None
+notfound_urls_prefix = ""
 notfound_template = "404.html"
 
 
