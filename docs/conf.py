@@ -214,7 +214,7 @@ copybutton_prompt_is_regexp = True
 
 # -- sphinx-notfound-page configuration ----------------------------------
 
-notfound_urls_prefix = None
+notfound_urls_prefix = ""
 notfound_template = "404.html"
 
 
