@@ -36,6 +36,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+<<<<<<< HEAD
 
       # node cache
       - name: Get yarn cache directory path
@@ -49,7 +50,21 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+=======
+>>>>>>> 19e935b4 (Bring back node caching)
 
+      # node cache
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        working-directory: submodules/volto
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
       - name: StoryBook build
         run: |
           cd submodules/volto 
