@@ -31,7 +31,7 @@ For global options such as turning caching on or off.
 
 Where you can control Plone's use of a caching proxy such or Varnish or a CDN.
 
-### `In-memory caache`
+### `In-memory cache`
 
 Where you can control Plone's use of in-memory cache.
 
