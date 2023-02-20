@@ -202,7 +202,7 @@ This works best with the "moderate caching" operation, and will not work well wi
 By setting this option, you can focus the other cache settings on the anonymous use case.
 
 Note that if you are using a caching proxy, you will need to set a Vary header of "X-Anonymous" or similar, and ensure that such a header is set in the proxy for logged in users (a blunter alternative is to use "Cookie" as the header, although this can have false positives).
-See the example Varnish and Squid configurations that come with this package for more details.
+See the example Varnish configuration that come with this package for more details.
 
 ### Request variables that prevent caching (`cacheStopRequestVariables`)
 

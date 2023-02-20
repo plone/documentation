@@ -638,7 +638,4 @@ acquisition
 
 Varnish
     [Varnish](https://varnish-cache.org) is a popular open-source web accelerator that is used to implement HTTP caching.
-
-Squid
-    [Squid Proxy](http://www.squid-cache.org/) is a popular open-source caching and forwarding web proxy server that can be used to improve the performance, security, and reliability of web applications.
 ```
