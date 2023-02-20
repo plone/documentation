@@ -1,3 +1,13 @@
+---
+myst:
+  html_meta:
+    "description": "Caching composite views in Plone"
+    "property=og:description": "Caching composite views in Plone"
+    "property=og:title": "Composite Views"
+    "keywords": "Plone, deployment, automation, caching"
+---
+
+(caching-composite-views-label)=
 # Composite views
 
 The term *composite view* refers to most of the page views that are visible on a Plone website, including views of content listings, content folders, many template views, and rarely also specific content items. 
