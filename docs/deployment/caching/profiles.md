@@ -20,9 +20,8 @@ The *Import settings* tab of the control panel allows you to import these cachin
 
 ## Default caching profiles
 
-`plone.app.caching` includes three default caching profiles.
-
-Two of these  profiles encapsulate the cache settings that are known to work well with a typical default Plone installation:
+`plone.app.caching` includes two default caching profiles.
+These  profiles encapsulate the cache settings that are known to work well with a typical default Plone installation:
 
 ### Without caching proxy
 
@@ -30,7 +29,7 @@ Settings useful for setups without a caching proxy.
 
 ### With caching proxy
 
-Settings useful for setups with a caching proxy such as Squid or Varnish.
+Settings useful for setups with a caching proxy such Varnish or a CDN.
 The only difference from the "without caching proxy" profile are some settings to enable proxy caching of files/images in content space and content feeds.
 
 ## Custom caching profiles

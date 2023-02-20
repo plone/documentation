@@ -29,7 +29,7 @@ In the Caching control panel, the tab `Change settings` is selected and inside o
 :alt: Caching Control Panel with caching disabled
 ```
 
-To enable caching, just click the checkbox:
+To enable caching, click the checkbox:
 
 ```{image} /_static/caching/ControlPanel-03.png
 :alt: Caching Control Panel with caching enabled

@@ -32,7 +32,7 @@ There are four general strategies for dealing with this:
 
 Since resources are cached in the proxy based on their URL, you can "invalidate" the cached copy by changing an item's URL when it is updated.
 
-This is the approach taken by Plone's resource management: In production mode, the links that are inserted into Plone's content pages for resource managed by Plone  contain a hash-based token, which changes when the main bundle file changes.
+This is the approach taken by Plone's resource management: Links that are inserted into Plone's content pages for resources managed by Plone  contain a hash-based token, which changes when the main bundle file changes.
 
 This approach has the benefit of also being able to "invalidate" content stored in a user's browser cache.
 
@@ -46,7 +46,7 @@ This is sometimes an acceptable policy for high-volume sites where most users do
 
 Given the proxy has cached a resource at `/logo.jpg`, and that object is modified.
 
-Then a PURGE request could be sent to the proxy (originating from Zope, not the client) with the same path to force the proxy to fetch a new version the next time the item is requested.
+Then a PURGE request could be sent to the proxy (originating from the backend, not the browser) with the same path to force the proxy to fetch a new version the next time the item is requested.
 
 ### Avoid caching
 
@@ -63,7 +63,7 @@ Nevertheless a "terse" policy allows caching for just a few seconds of all pages
 
 ## Purging a caching proxy
 
-Synchronous and asynchronous purging is enabled via [plone.cachepurging](https://pypi.org/project/plone.cachepurging).
+Synchronous and asynchronous purging is enabled via [plone.cachepurging](https://pypi.org/project/plone.cachepurging), which is installed as a dependency of `plone.app.caching`.
 
 In the control panel, you can configure the use of a proxy via various options, such as:
 

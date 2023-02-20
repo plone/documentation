@@ -1,19 +1,15 @@
 # Composite views
 
-A `composite view` is just a general term for most page views you see when you visit a Plone site.
+The term *composite view* refers to most of the page views that are visible on a Plone website, including views of content listings, content folders, many template views, and rarely also specific content items. 
 
-It includes all content item views, content folder views, and many template views.
+These views can be difficult to manage because of the various changes that may affect the final composite view. As a result, composite views are typically challenging to remove reliably from caching proxies. 
+To address this issue, the default caching profiles set headers that expire the cache immediately, which is known as *weak caching*.
 
-For our purposes, the distinguishing characteristic of composite views is the difficulty inherent in keeping track of all changes that might affect the final composited view.
+However, the inline resources linked to from the composite view, such as CSS, JavaScript, and images, can typically be cached effectively in proxies. As a result, caching proxies can improve the overall speed of most composite views, even if the page itself is not cached.
 
-Because of the difficulty of dependency tracking, composite views are often notoriously difficult to purge reliably from caching proxies so the default caching profiles set headers which expire the cache immediately (i.e. *weak caching*).
+For relatively stable composite views or views where some staleness is tolerable, it may be tempting to switch from *weak caching* to *terse caching* with the s-maxage expiration value set 60 seconds by default. 
 
-However, most of the inline resources linked to from the composite view (css, javascript, images, etc.) can be cached very well in proxy so the overall speed of most composite views will always be better with a caching proxy in front despite the page itself not being cached.
-
-For relatively stable composite views or for those views for which you can tolerate some potential staleness, you might be tempted to try switching from *weak caching* to *moderate caching* with the `s-maxage` expiration value set to some tolerable value but first make sure you understand the issues regarding "split view" caching (see below).
-
-A way to speedup a site with lots of composite view is to use "Terse" caching.
-
-It caches a page for just a small time (be default 10s in browser and 60s in the caching proxy).
-
-Thus the content is almost up to date, but on high load visitors are getting pages served from the cache.
+To increase the speed of a site that contains many composite views, a technique called "Terse" caching can be used. 
+Terse caching involves caching a page for a brief period, typically 10 seconds in the browser and 60 seconds in the caching proxy. 
+This ensures that the content is almost up to date, but during periods of high traffic, visitors may receive pages served from the cache.
+This technique can actually speed up a site during periods of high traffic compared to low traffic since, during high traffic, the request can be served from the cache instead of having to go to the backend.
