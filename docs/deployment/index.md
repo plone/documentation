@@ -17,7 +17,6 @@ Intro to chapter "deployment"
 
 ```{toctree}
 :maxdepth: 2
-:hidden: true
 
 provision
 scaling

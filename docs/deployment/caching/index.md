@@ -41,6 +41,5 @@ proxies
 ram-cache
 etags
 composite-views
-split-views
 restapi
 ```
