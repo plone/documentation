@@ -638,4 +638,8 @@ acquisition
 
 Varnish
     [Varnish](https://varnish-cache.org) is a popular open source web accelerator that is used to implement HTTP caching.
+
+Content Delivery Network
+CDN
+    A Content Delivery Network (CDN) is a network of servers located in various geographic regions that work together to deliver web content to users quickly and efficiently.
 ```
