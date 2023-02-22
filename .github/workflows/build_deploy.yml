@@ -17,6 +17,7 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: |
+          apt install graphviz
           pip install -q -r requirements-initial.txt
           pip install -q -r requirements.txt
           pip freeze
