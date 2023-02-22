@@ -1,143 +1,147 @@
 ---
 myst:
   html_meta:
-    "description": "Caching support for Rest API"
-    "property=og:description": "Caching support for Rest API"
-    "property=og:title": "Caching support for Rest API"
+    "description": "Caching support for Plone REST API"
+    "property=og:description": "Caching support for Plone REST API"
+    "property=og:title": "Caching support for Plone REST API"
     "keywords": "Plone, deployment, automation, caching"
 ---
 
 (caching-restapi-label)=
 
-# Rest API support
+# REST API support
+
+This chapter describes techniques to implement caching with the Plone REST API.
 
 ## Strategy
 
-Caching for anonymous users for all GET requests.
+This section desribes how to cache all GET requests from anonymous users.
 
-Remark: Some POST requests, like `@querystring`, should be turned into GET in order to better cache.
+```{note}
+Some POST requests, such as `@querystring`, should be turned into GET to improve cache.
+```
 
 We have endpoints following classic `plone.content.itemView` content and do not accept parameters.
 Those can be handled with the default rules, including purge.
 
-There are others delivering dynamic content, like search, impossible to purge.
-Those shall be cached using a shorttime cache (like some seconds to some minutes).
+There are others delivering dynamic content, such as search, which are impossible to purge.
+Those will be cached using a transient cache, lasting a few seconds or minutes.
 
-This get covered by the rulesetType `plone.content.dynamic`.
-It is configured to cache by default in browser 10sec, in caching-proxy 60 seconds.
-Its goal is primary to reduce the load/peak-load on the server.
-Also, it reduces the impact of loading the same endpoint more than one time in one page.
+This gets covered by the `rulesetType` `plone.content.dynamic`.
+By default it is configured to cache in the browser for 10 seconds, and in the caching proxy server for 60 seconds.
+Its primary goal is to reduce the load and peak-load on the server.
+Also it reduces the impact of loading the same endpoint more than one time in one page.
 
 
-## plone.restapi GET endpoints
+## `plone.restapi` GET endpoints
 
-And its environment and assignments:
+Environment and assignments:
 
-- `@actions`
+-   `@actions`
+j
+    -   Anonymous
+    -   rule `plone.content.dynamic` (might be influenced by other content)
+    -   purge
 
-  - Anonymous
-  - rule plone.content.dynamic (might be influenced by other content)
-  - purge
+-   `@addons`
 
-- `@addons`
+    -   Authenticated
+    -   no rule assignment
 
-  - Authenticated
-  - no rule assignment
+-   `@breadcrumbs`
 
-- `@breadcrumbs`
+    -   Anonymous
+    -   rule `plone.content.dynamic` (parent may change)
+    -   purge
 
-  - Anonymous
-  - rule plone.content.dynamic (parent may change)
-  - purge
+-   `@comments`
 
-- `@comments`
+    -   Anonymous
+    -   rule `plone.content.itemView`
+    -   purge
 
-  - Anonymous
-  - rule plone.content.itemView
-  - purge
+-   `/` (content)
 
-- `/` (content)
+    -   Anonymous
+    -   expander!
+    -   rule `plone.content.dynamic`
 
-  - Anonymous
-  - expander!
-  - rule plone.content.dynamic
+-   `@history`
 
-- `@history`
+    -   Authenticated
+    -   no rule assignment
 
-  - Authenticated
-  - no rule assignment
+-   `@lock`
 
-- `@lock`
+    -   Authenticated
+    -   no rule assignment
 
-  - Authenticated
-  - no rule assignment
+-   `@translations`
 
-- `@translations`
+    -   Anonymous
+    -   with parameters
+    -   rule `plone.content.dynamic`
 
-  - Anonymous
-  - with parameters
-  - rule plone.content.dynamic
+-   `@translations-locator`
 
-- `@translations-locator`
+    -   Authenticated
+    -   no rule assignment
 
-  - Authenticated
-  - no rule assignment
+-   `@navigation`
 
-- `@navigation`
+    -   Anonymous
+    -   with parameters
+    -   rule `plone.content.dynamic`
 
-  - Anonymous
-  - with parameters
-  - rule plone.content.dynamic
+-   `@querysources`
 
-- `@querysources`
+    -   Authenticated
+    -   with parameters
+    -   can not be cached
 
-  - Authenticated
-  - with parameters
-  - can not be cached
+-   `@querystring`
 
-- `@querystring`
+    -   Anonymous
+    -   (values on `IPloneSiteRoot` from registry)
+    -   rule `plone.content.dynamic`
 
-  - Anonymous
-  - (values on IPloneSiteRoot from registry)
-  - rule plone.content.dynamic
+-   `@querystring-search`
 
-- `@querystring-search`
+    -   is in `get.py` but configured as POST
+    -   Anonymous
+    -   with JSON body
+    -   can not be cached
 
-  - is in `get.py` BUT configured as POST
-  - Anonymous
-  - with json body
-  - can not be cached
+-   `@registry`
 
-- `@registry`
+    -   Authenticated
+    -   with subpath
+    -   no rule assignment
 
-  - Authenticated
-  - with subpath
-  - no rule assignment
+-   `@roles`
 
-- `@roles`
+    -   Authenticated
+    -   no rule assignment
 
-  - Authenticated
-  - no rule assignment
+-   `@search`
 
-- `@search`
+    -   Anonymous
+    -   with parameters
+    -   rule `plone.content.dynamic`
 
-  - Anonymous
-  - with parameters
-  - rule plone.content.dynamic
+-   `@sources`
 
-- `@sources`
+    -   Authenticated
+    -   no rule assignment
 
-  - Authenticated
-  - no rule assignment
+-   `@tiles`
 
-- `@tiles`
+    -   pre-deprecation
+    -   Anonymous
+    -   with subpath
+    -   no rule assignment
 
-  - pre-deprecation
-  - Anonymous
-  - with subpath
-  - no rule assignment
+-   `@types`
 
-- `@types`
-
-  - Authenticated
-  - no rule assignment
+    -   Authenticated
+    -   no rule assignment
