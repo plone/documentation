@@ -42,7 +42,7 @@ Where you can control Plone's use of in-memory cache.
 
 ### {guilabel}`Caching operation`
 
-Where caching rulesets (hints about views and resources used for caching purposes) can be associated with caching operations.
+Where caching {doc}`rulesets <rulesets-and-caching-operations>` (hints about views and resources used for caching purposes) can be associated with caching operations.
 
 Those either intercept a request to return a cached response, or modify a response to add cache control headers.
 

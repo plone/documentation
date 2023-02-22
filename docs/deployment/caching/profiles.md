@@ -79,9 +79,7 @@ At the time of writing, this includes:
 
 Default options for the various standard operations are found in the `registry.xml` file that is part of the standard installation profile for this product, in the directory `profiles/default`.
 
-The custom profile overrides a number of operation settings for specific rulesets (see below).
-
-For example:
+The custom profile overrides a number of operation settings for specific {doc}`rulesets <rulesets-and-caching-operations>`, as shown below.
 
 ```xml
     <record name="plone.app.caching.weakCaching.plone.content.itemView.ramCache">
