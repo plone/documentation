@@ -262,7 +262,7 @@ One way to do that is to set the global Zope logging level to `DEBUG` in `zope.c
 <eventlog>
       level DEBUG
       <logfile>
-      path <file_path_here>
+      path <file_path_here/>
       level DEBUG
       </logfile>
 </eventlog>
@@ -304,10 +304,10 @@ This adapter allows you to declare a ruleset for the *default view* of a given c
 Or for a class.
 
 ```xml
-    <cache:ruleset
-        ruleset="plone.content.itemView"
-        for=".content.MyContentType"
-        />
+<cache:ruleset
+    ruleset="plone.content.itemView"
+    for=".content.MyContentType"
+    />
 ```
 
 There are two reasons to do this.

@@ -49,14 +49,14 @@ This also hides the profile from Plone's {guilabel}`Add-ons` control panel.
 Here is an example from this package:
 
 ```xml
-    <genericsetup:registerProfile
-        name="with-caching-proxy"
-        title="With caching proxy"
-        description="Settings useful for setups with a caching proxy such as Squid or Varnish"
-        directory="profiles/with-caching-proxy"
-        provides="Products.GenericSetup.interfaces.EXTENSION"
-        for="plone.app.caching.interfaces.ICacheProfiles"
-        />
+<genericsetup:registerProfile
+    name="with-caching-proxy"
+    title="With caching proxy"
+    description="Settings useful for setups with a caching proxy such as Squid or Varnish"
+    directory="profiles/with-caching-proxy"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    for="plone.app.caching.interfaces.ICacheProfiles"
+    />
 ```
 
 The directory `profiles/with-caching-proxy` contains a single import step, `registry.xml`, containing settings to configure the ruleset to operation mapping, and setting options for various operations.
@@ -64,17 +64,17 @@ The directory `profiles/with-caching-proxy` contains a single import step, `regi
 At the time of writing, this includes:
 
 ```xml
-    <record name="plone.caching.interfaces.ICacheSettings.operationMapping">
-        <value purge="False">
-            <element key="plone.resource">plone.app.caching.strongCaching</element>
-            <element key="plone.stableResource">plone.app.caching.strongCaching</element>
-            <element key="plone.content.itemView">plone.app.caching.weakCaching</element>
-            <element key="plone.content.feed">plone.app.caching.moderateCaching</element>
-            <element key="plone.content.folderView">plone.app.caching.weakCaching</element>
-            <element key="plone.content.file">plone.app.caching.moderateCaching</element>
-            <element key="plone.content.dynamic">plone.app.caching.terseCaching</element>
-        </value>
-    </record>
+<record name="plone.caching.interfaces.ICacheSettings.operationMapping">
+    <value purge="False">
+        <element key="plone.resource">plone.app.caching.strongCaching</element>
+        <element key="plone.stableResource">plone.app.caching.strongCaching</element>
+        <element key="plone.content.itemView">plone.app.caching.weakCaching</element>
+        <element key="plone.content.feed">plone.app.caching.moderateCaching</element>
+        <element key="plone.content.folderView">plone.app.caching.weakCaching</element>
+        <element key="plone.content.file">plone.app.caching.moderateCaching</element>
+        <element key="plone.content.dynamic">plone.app.caching.terseCaching</element>
+    </value>
+</record>
 ```
 
 Default options for the various standard operations are found in the `registry.xml` file that is part of the standard installation profile for this product, in the directory `profiles/default`.
@@ -82,24 +82,24 @@ Default options for the various standard operations are found in the `registry.x
 The custom profile overrides a number of operation settings for specific {doc}`rulesets <rulesets-and-caching-operations>`, as shown below.
 
 ```xml
-    <record name="plone.app.caching.weakCaching.plone.content.itemView.ramCache">
-        <field ref="plone.app.caching.weakCaching.ramCache" />
-        <value>True</value>
-    </record>
+<record name="plone.app.caching.weakCaching.plone.content.itemView.ramCache">
+    <field ref="plone.app.caching.weakCaching.ramCache" />
+    <value>True</value>
+</record>
 ```
 
 This enables RAM caching for the "weak caching" operation for resources using the ruleset `plone.content.itemView`.
 The default is defined in the main `registry.xml` as shown below.
 
 ```xml
-    <record name="plone.app.caching.weakCaching.ramCache">
-        <field type="plone.registry.field.Bool">
-            <title>RAM cache</title>
-            <description>Turn on caching in Zope memory</description>
-            <required>False</required>
-        </field>
-        <value>False</value>
-    </record>
+<record name="plone.app.caching.weakCaching.ramCache">
+    <field type="plone.registry.field.Bool">
+        <title>RAM cache</title>
+        <description>Turn on caching in Zope memory</description>
+        <required>False</required>
+    </field>
+    <value>False</value>
+</record>
 ```
 
 Notice how we use a _field reference_ to avoid having to re-define the field.
