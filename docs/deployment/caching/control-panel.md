@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Control panel for Plone caching"
-    "property=og:description": "Control panel for Plone caching"
+    "description": "Caching control panel for Plone"
+    "property=og:description": "Caching control panel for Plone"
     "property=og:title": "Caching Control Panel"
     "keywords": "Plone, deployment, automation, caching"
 ---
@@ -13,51 +13,56 @@ myst:
 
 The Caching control panel in Plone's `Site Setup` supports a granular control of caching operations for a Plone site.
 
-```{image} /_static/caching/ControlPanel-02.png
-:alt: Plone Control Panel (Classic UI)
+````{card}
+```{image} /_static/caching/caching-disabled.png
+:alt: Caching Control Panel
+:target: /_static/caching/caching-disabled.png
 ```
++++
+_Caching Control Panel_
+````
 
 This control panel consists of four main tabs:
 
-## `Change settings`
+## {guilabel}`Change settings`
 
-Where you can control caching behaviour, it contains four fieldsets:
+Where you can control caching behaviour, it contains five fieldsets:
 
-### `Global settings`
+### {guilabel}`Global settings`
 
-For global options such as turning caching on or off.
+For global options, such as turning caching on or off.
 
-### `Caching proxies`
+### {guilabel}`Caching proxies`
 
-Where you can control Plone's use of a caching proxy such or Varnish or a CDN.
+Where you can control Plone's use of a caching proxy, such as Varnish or a CDN.
 
-### `In-memory cache`
+### {guilabel}`In-memory cache`
 
 Where you can control Plone's use of in-memory cache.
 
-### `Caching operation`
+### {guilabel}`Caching operation`
 
 Where caching rulesets (hints about views and resources used for caching purposes) can be associated with caching operations.
 
-Those either intercept a request to return a cached response, or modifies a response to add cache control headers.
+Those either intercept a request to return a cached response, or modify a response to add cache control headers.
 
-This is also where rulesets for legacy page templates (created through the web or the  portal_skins tool) are configured.
+This is also where rulesets for legacy page templates (created through the web or the  `portal_skins` tool) are configured.
 
-### `Detailed settings`
+### {guilabel}`Detailed settings`
 
 Where you can configure parameters for individual caching operations.
 
 
-## `Import settings`
+## {guilabel}`Import settings`
 
-Where you can import pre-defined profiles of cache settings
+Where you can import pre-defined profiles of cache settings.
 
-## `Purge caching proxy`
+## {guilabel}`Purge caching proxy`
 
 Where you can manually purge content from a caching proxy.
 
-This tab only appears if you have purging enabled under *Change settings*.
+This tab only appears if you have purging enabled under {guilabel}`Change settings`.
 
-## `RAM cache`
+## {guilabel}`RAM cache`
 
 Where you can view statistics about and purge the RAM cache.
