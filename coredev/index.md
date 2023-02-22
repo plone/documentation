@@ -1,32 +1,25 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Development of Plone"
+    "property=og:description": "Development of Plone"
+    "property=og:title": "Development of Plone"
+    "keywords": "Developing, Plone, Contributing"
 ---
 
-% -*- coding: utf-8 -*-
+# Development of Plone
 
-# Developing for Plone Core
+This part describes the process of development of Plone.
+It is primarily a technical resource for setting up your development environment, fixing bugs, and writing Plone Improvement Proposals (PLIPs).
 
-## Introduction
 
-This documentation describes the process for developing Plone.
-It is primarily a technical resource for setting up your core developer buildout, fixing bugs and writing plips.
+## Plone Contributor Agreement
 
-### STOP!
+You must sign the [Plone Contributor Agreement](https://plone.org/foundation/contributors-agreement).
 
-Legally, you can **NOT** contribute code unless you have signed the {doc}`contributor agreement <agreement>`.
+We can **NOT** accept pull requests from you until you have signed, returned, and been approved.
+Please don't put the code reviewers at risk and by ignoring this.
 
-This means that we can **NOT** accept pull requests from you unless this is done,
-please don't put the code reviewers at risk and do it anyways.
-
-Submitting the agreement is easy (and will soon be easier) and if you want quick access and are familiar with the community,
-go into {doc}`irc <culture>` and ask one of the repo admins to give you access with a scanned copy of the agreement.
-
-They will get you going as fast as possible!
 
 ## Contents
 
@@ -46,18 +39,26 @@ git
 package-dependencies
 ```
 
+
 ## Additional Material
 
-These are some documents using as reference for this documentation.
+These are some documents used as reference for this documentation.
 
 ```{toctree}
 :maxdepth: 1
 
-contributors_agreement_explained
+contributors-agreement-explained
 continous-integration
 roboto
 mrdeveloper
-plipreview
+plip-review
 ```
 
-Our coding style guides are located at the {doc}`Plone Style Guide </develop/styleguide/index>` section.
+```{todo}
+The style guides are ancient and need to be overhauled.
+```
+
+Documenation's style is guided by Vale and the Microsoft Style Guide.
+See [Contributing to Documentation](https://6.docs.plone.org/contributing/index.html#).
+
+Our coding style guides are located at the [Plone Style Guide](https://5.docs.plone.org/develop/styleguide/index.html section.
