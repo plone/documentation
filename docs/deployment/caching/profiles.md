@@ -15,36 +15,36 @@ All persistent configuration for the caching machinery is stored in the configur
 
 This can be modified using the `registry.xml` GenericSetup import step.
 
-The *Import settings* tab of the control panel allows you to import these caching profiles.
+The {guilabel}`Import settings` tab of the control panel allows you to import these caching profiles.
 
 
 ## Default caching profiles
 
 `plone.app.caching` includes two default caching profiles.
-These  profiles encapsulate the cache settings that are known to work well with a typical default Plone installation:
+These profiles encapsulate the cache settings that are known to work well with a typical default Plone installation:
 
-### Without caching proxy
+### {guilabel}`Without caching proxy`
 
 Settings useful for setups without a caching proxy.
 
-### With caching proxy
+### {guilabel}`With caching proxy`
 
-Settings useful for setups with a caching proxy such Varnish or a CDN.
-The only difference from the "without caching proxy" profile are some settings to enable proxy caching of files/images in content space and content feeds.
+Settings useful for setups with a caching proxy, such as Varnish or a CDN.
+The only difference from the {guilabel}`Without caching proxy` profile are some settings to enable proxy caching of files and images in content space and content feeds.
 
 ## Custom caching profiles
 
 Caching policies are often a compromise between speed and freshness.
 More aggressive caching often comes at the cost of increased risk of stale responses.
-The default profiles provided tend to err on the side of freshness over speed so there is some room for tweaking if greater speed is desired.
+The provided default profiles tend to err on the side of freshness over speed, leaving room for greater speed if desired.
 
 Customization may also be needed if third-party products are installed which require special treatment.
 Examine the HTTP response headers to determine whether the third-party product requires special treatment.
 Most simple cases probably can be solved by adding the content type or template to the appropriate mapping.
-More complicated cases, may require custom caching operations.
+More complicated cases may require custom caching operations.
 
 A GenericSetup profile used for caching should be registered for the `ICacheProfiles` marker interface to distinguish it from more general profiles used to install a product.
-This also hides the profile from Plone's Add-ons control panel.
+This also hides the profile from Plone's {guilabel}`Add-ons` control panel.
 
 Here is an example from this package:
 
@@ -59,9 +59,7 @@ Here is an example from this package:
         />
 ```
 
-The directory `profiles/with-caching-proxy` contains a single import step, `registry.xml`,
-containing settings to configure the ruleset to operation mapping,
-and setting options for various operations.
+The directory `profiles/with-caching-proxy` contains a single import step, `registry.xml`, containing settings to configure the ruleset to operation mapping, and setting options for various operations.
 
 At the time of writing, this includes:
 
@@ -93,7 +91,7 @@ For example:
 ```
 
 This enables RAM caching for the "weak caching" operation for resources using the ruleset `plone.content.itemView`.
-The default is defined in the main `registry.xml` as::
+The default is defined in the main `registry.xml` as shown below.
 
 ```xml
     <record name="plone.app.caching.weakCaching.ramCache">
@@ -106,10 +104,10 @@ The default is defined in the main `registry.xml` as::
     </record>
 ```
 
-Notice how we use a *field reference* to avoid having to re-define the field.
+Notice how we use a _field reference_ to avoid having to re-define the field.
 
-It may be useful looking at these bundled `registry.xml` for inspiration if you are building your own caching profile.
-Alternatively, you can export the registry from the `portal_setup` tool and pull out the records under the prefixes `plone.caching` and `plone.app.caching`.
+It may be useful to look at the bundled `registry.xml` for inspiration if you are building your own caching profile.
+Alternatively, you can export the registry from the `portal_setup` tool, and pull out the records under the prefixes `plone.caching` and `plone.app.caching`.
 
 Typically, `registry.xml` is all that is required, but you are free to add additional import steps if required.
 You can also add a `metadata.xml` and use the GenericSetup dependency mechanism to install other profiles on the fly.
