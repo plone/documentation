@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
       - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
@@ -17,7 +19,6 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: |
-          apt install graphviz
           pip install -q -r requirements-initial.txt
           pip install -q -r requirements.txt
           pip freeze
