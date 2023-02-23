@@ -59,6 +59,6 @@ The style guides are ancient and need to be overhauled.
 ```
 
 Documenation's style is guided by Vale and the Microsoft Style Guide.
-See [Contributing to Documentation](https://6.docs.plone.org/contributing/index.html#).
+See [Contributing to Documentation](https://6.docs.plone.org/contributing/index.html).
 
 Our coding style guides are located at the [Plone Style Guide](https://5.docs.plone.org/develop/styleguide/index.html section.
