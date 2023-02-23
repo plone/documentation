@@ -11,10 +11,10 @@ myst:
 
 This chapter describes how to troubleshoot development issues in Plone.
 
+
 ## Buildout issues
 
 Buildout can be frustrating for those unfamiliar with parsing through autistic robot language.
-
 These errors are almost always a quick fix, and a little bit of understanding goes a long way.
 
 
@@ -30,15 +30,11 @@ Let's take this one for example:
 ```
 
 Buildout has simply noticed that the version of buildout required by the file `bootstrap.py` you are trying to run does not match the version of buildout in your Python library.
-
 In the error above, your system has buildout 1.5.1 installed and the `bootstrap.py` file wants to run with 1.5.2.
 
 To fix, you have a couple options.
-
 First, you can force buildout to run with the version you already have installed by invoking the version tag.
-
 This tells your Plone `bootstrap.py` file to play nicely with the version that you already have installed.
-
 In the case of the error pasted above, that would be:
 
 ```shell
@@ -70,7 +66,7 @@ Hooray!
 `mr.developer` is never unhappy, except when it is.
 Although this technically isn't a buildout issue, it happens when running buildout, so I'm putting it under buildout issues.
 
-When working with the dev instance, especially with all the moving back and forth between GitHub and svn, you may have an old copy of a `src` package.
+When working with the dev instance, especially with all the moving back and forth between GitHub and Subversion, you may have an old copy of a `src` package.
 The error looks like:
 
 ```console
@@ -96,10 +92,10 @@ If buildout ends with warning you that some packages could not be downloaded, th
 This is bad and could cause all sorts of whack out errors when you start or try to run things because it never actually downloaded the package.
 
 There are two ways to get this error to go away.
+
 The first is to delete all instances of host filtering.
 Go through all the files and delete any lines which say `allow-hosts =` and `allow-hosts +=`.
 In theory, by restricting which hosts you download from, buildout will go faster.
-
 The point is that they are safely deletable.
 
 The second option is to allow the host that it is pointing to by adding something like this to your `.cfg`:
@@ -161,7 +157,9 @@ Delete {file}`mkzopeinstance.py` from {file}`bin/`, and rerun buildout to correc
 ### Can't open file '/Startup/run.py'
 
 Two possible fixes.
+
 If you use Python 2.4 by mistake, use 2.6 instead.
+
 Or you may need to make sure you run `bin/buildout …` after `bin/develop …`.
 Try removing {file}`parts/*`, {file}`bin/*`, {file}`.installed.cfg`, then re-bootstrap and re-run buildout, develop, buildout.
 
