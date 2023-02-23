@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Plone release process"
+    "property=og:description": "Plone release process"
+    "property=og:title": "Plone release process"
+    "keywords": "Plone, release, process"
 ---
 
-# The Plone release process
+# Plone release process
 
 This chapter describes the process to release Plone and its packages.
 
