@@ -34,7 +34,6 @@ documentation
 plips
 issues
 release
-updateme
 git
 package-dependencies
 ```
