@@ -62,7 +62,7 @@ docs/volto:
 	@echo "Documentation of volto initialized."
 
 .PHONY: deps
-deps: bin/python docs/volto docs/plone.restapi docs/plone.api ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
+deps: bin/python docs/volto docs/plone.restapi docs/plone.api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
 
 
 .PHONY: html
