@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Essential continuous integration practices"
+    "property=og:description": "Essential continuous integration practices"
+    "property=og:title": "Essential continuous integration practices"
+    "keywords": "Plone, continuous integration, best practices"
 ---
 
 # Essential continuous integration practices
@@ -21,11 +21,8 @@ Though, there are some essential rules that needs to be followed in order to ach
 Do not make things more complicated for the developer who is responsible for breaking the build.
 
 If the build breaks, the developer has to identify the cause of the breakage as soon as possible and should fix it.
-
 If we adopt this strategy, we will always be in the best position to find out what caused the breakage and fix it immediately.
-
 If one of the developers has made a check-in and broken the build as a result, we have the best chance of fixing the build if we have a clear look at the problem.
-
 Checking in further changes and triggering new builds will just lead to more problems.
 
 If the build is broken over a longer period of time (more than a couple of hours) you should either notify the developer who is responsible for the breakage, fix the problem yourself, or just revert the commit in order to be able to continue to work.
@@ -34,16 +31,15 @@ If the build is broken over a longer period of time (more than a couple of hours
 There is one exception to this rule.
 Sometimes there are changes or tests that depend on changes in other packages.
 If this is the case, there is no way around breaking a single build for a certain period of time.
-In this case run the all tests locally with all the changes and commit them within a time frame of 10 minutes.
+In this case run the all tests locally with all the changes and commit them within a time frame of ten minutes.
 ```
 
 
 ## 2) Always run all commit tests locally before committing
 
-Following this practice ensures the build stays green and other developers can continue to work without breaking the first rule.
+Following this practice ensures the build stays green, and other developers can continue to work without breaking the first rule.
 
 There might be changes that have been checked in before your last update from the version control that might lead to a build failure in Jenkins in combination with your changes.
-
 Therefore it is essential that you check out ({command}`git pull`) and run the tests again before you push your changes to GitHub.
 
 Furthermore, a common source of errors on check-in is to forget to add some files to the repository.
@@ -53,8 +49,7 @@ If you follow this rule and your local build passes, you can be sure that this i
 
 ## 3) Wait for commit tests to pass before moving on
 
-Always monitor the build's progress and fix the problem right away if it fails.
-
+Always monitor the build's progress, and fix the problem right away if it fails.
 You have a far better chance of fixing the build, if you just introduced a regression than later.
 Also another developer might have committed in the meantime (by breaking rule 1), making things more complicated for yours.
 
@@ -62,7 +57,6 @@ Also another developer might have committed in the meantime (by breaking rule 1)
 ## 4) Never go home on a broken build
 
 Taking into account the first rule of CI ("Don't check in on a broken build"), breaking the build essentially stops all other developers from working on it.
-
 Therefore going home on a broken build (or even on a build that has not finished yet) is **not** acceptable.
 It will prevent all the other developers to stop working on the build or fixing the errors that you introduced.
 
@@ -82,7 +76,6 @@ This way you will allow other developers to continue to work.
 ## 7) Don't comment out failing tests
 
 Once you begin to enforce the previous rule, the result is often that developers start commenting out failing tests in order to get the build passing again as quick as possible.
-
 While this impulse is understandable, it is **wrong**.
 
 The tests have been passing for a while and then start to fail.
@@ -95,7 +88,6 @@ You should always either fix the code (if a regression has been found), modify t
 
 If you commit a change and all the tests you wrote pass, but others break, the build is still broken.
 This also applies to tests that fail in `buildout.coredev` and don't belong directly to the package you worked on.
-
 This means that you have introduced a regression bug into the application.
 
 It is **your responsibility**—because you made the change—to fix all tests that are not passing as a result of your changes.
