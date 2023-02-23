@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": "Development of Plone"
-    "property=og:description": "Development of Plone"
-    "property=og:title": "Development of Plone"
+    "description": "Development in Plone"
+    "property=og:description": "Development in Plone"
+    "property=og:title": "Development in Plone"
     "keywords": "Developing, Plone, Contributing"
 ---
 
-# Development of Plone
+# Development in Plone
 
-This part describes the process of development of Plone.
+This part describes the process of development in Plone.
 It is primarily a technical resource for setting up your development environment, fixing bugs, and writing Plone Improvement Proposals (PLIPs).
 
 
@@ -17,8 +17,8 @@ It is primarily a technical resource for setting up your development environment
 
 You must sign the [Plone Contributor Agreement](https://plone.org/foundation/contributors-agreement).
 
-We can **NOT** accept pull requests from you until you have signed, returned, and been approved.
-Please don't put the code reviewers at risk and by ignoring this.
+We can **NOT** accept pull requests from you until you have signed and returned the Contributor Agreement, and been approved.
+Please don't put the code reviewers at risk by ignoring this requirement.
 
 
 ## Contents
@@ -40,7 +40,7 @@ package-dependencies
 ```
 
 
-## Additional Material
+## Additional material
 
 These are some documents used as reference for this documentation.
 
