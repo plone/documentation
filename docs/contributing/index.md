@@ -101,7 +101,7 @@ After your Plone Contributor Agreement has been approved, and you have been adde
     As in any open source project, you can start work on open issues at your convenience.
 
     ```{tip}
-    Working on documentation or on issues labeled with either `33 needs: docs` or `41 lvl: easy` are the two best ways for first-timers to contribute.
+    Working on documentation or on issues labeled with either `31 needs: help`, `33 needs: docs` or `41 lvl: easy` are the two best ways for first-timers to contribute.
     This is because first-timers have a fresh perspective that might be overlooked by old-timers.
     ```
 
