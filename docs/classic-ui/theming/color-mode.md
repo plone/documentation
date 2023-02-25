@@ -1,11 +1,28 @@
-# Color Modes
-Bootstrap 5.3 has introduced [Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/).
-Here is a small guide how to implement color themes in Plone 6.
+---
+myst:
+  html_meta:
+    "description": "Color modes in Plone Classic UI"
+    "property=og:description": "Color modes in Plone Classic UI"
+    "property=og:title": "Color modes in Plone Classic UI"
+    "keywords": "Plone, Classic UI, theming, color modes, Bootstrap, Twitter"
+---
 
-## Preferred Color Modes
-You will need to add some Javascript functionality to set the Bootstrap theme to the user's preferred color scheme.
-Add the Javascript file to the `browser/static` folder of your Plone 6 project and register it in the `browser/profiles/default/registry` of your Plone 6 project.
-See [Registering Javascript and CSS](classic-ui-static-resources-registering-label) for more information.
+(color-modes-label)=
+
+# Color modes
+
+Bootstrap 5.3 has introduced [Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/).
+This chapter is a guide for how to implement color themes in Plone 6.
+
+
+(preferred-color-modes-label)=
+
+## Preferred color modes
+
+You will need to add some JavaScript functionality to set the Bootstrap theme to the user's preferred color scheme.
+Add the JavaScript file to the `browser/static` folder of your Plone 6 project.
+Register it in the `browser/profiles/default/registry` of your Plone 6 project.
+See {ref}`classic-ui-static-resources-registering-label` for more information.
 
 ```js
 (() => {
@@ -26,11 +43,14 @@ See [Registering Javascript and CSS](classic-ui-static-resources-registering-lab
 })()
 ```
 
-## Toggle Button
-In order to switch color themes, corresponding elements with `data-bs-theme-value`
-attributes must be added to the DOM.
-Default Bootstrap 5.3 color themes include `light`, `dark` and `auto`.
-If you want to add a theme toggler to your site, you can use the following example:
+
+(toggle-button-label)=
+
+## Toggle button
+
+To switch color themes, corresponding elements with `data-bs-theme-value` attributes must be added to the DOM.
+Default Bootstrap 5.3 color themes include `light`, `dark`, and `auto`.
+If you want to add a theme toggler to your site, you can use the following example.
 
 ```html
 <div class="btn-group btn-group-sm">
@@ -43,13 +63,17 @@ If you want to add a theme toggler to your site, you can use the following examp
 </div>
 ```
 
-## Registering the Toggle Button
 
-You will need to add some Javascript functionality to the toggler.
+(register-the-toggle-button-label)=
+
+## Register the toggle button
+
+You will need to add some JavaScript functionality to the toggler.
 The following code snippet is based on the [Bootstrap 5.3 documentation](https://getbootstrap.com/docs/5.3/customize/color-modes/#javascript).
 
-Add the Javascript file to the `browser/static` folder of your Plone 6 project and register it in the `browser/profiles/default/registry` of your Plone 6 project.
-See [Registering Javascript and CSS](classic-ui-static-resources-registering-label) for more information.
+Add the JavaScript file to the `browser/static` folder of your Plone 6 project.
+Register it in the `browser/profiles/default/registry` of your Plone 6 project.
+See {ref}`classic-ui-static-resources-registering-label` for more information.
 
 ```js
 (() => {
@@ -104,10 +128,14 @@ See [Registering Javascript and CSS](classic-ui-static-resources-registering-lab
 })()
 ```
 
+
+(customize-single-elements-label)=
+
 ## Customize single elements
+
 Elements can be assigned a static theme using the `data-bs-theme` attribute.
-When set to a value the element will be rendered in the given theme, despite the global theme.
-For example:
+When set to a value, the element will be rendered in the given theme, overriding the global theme.
+See the following example.
 
 ```html
 <form data-bs-theme='light'>

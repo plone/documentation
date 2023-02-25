@@ -4,7 +4,7 @@ myst:
     "description": "Static resources in Plone 6"
     "property=og:description": "Static resources in Plone 6"
     "property=og:title": "Static resources in Plone 6"
-    "keywords": "Plone, static, resources"
+    "keywords": "Plone, static, resources, JavaScript, CSS"
 ---
 
 (classic-ui-static-resources-label)=
@@ -16,12 +16,13 @@ For this, we need to register static resources.
 
 
 (classic-ui-static-resources-registering-label)=
-## Registering javascript and css
+
+## Registering JavaScript and CSS
 
 To register a static resource in Plone 6, we need to use the `plone.base.interfaces.resources.IBundleRegistry` interface.
 
-The following example registers a Javascript resource in `browser/profiles/default/registry` of your Plone 6 project.
-The js files have to be in the `browser/static` folder of your Plone 6 project.
+The following example registers a JavaScript resource in `browser/profiles/default/registry` of your Plone 6 project.
+The JavaScript files have to be in the `browser/static` folder of your Plone 6 project.
 
 ```xml
 <registry>
@@ -47,7 +48,7 @@ You can register a CSS resource in the same way.
   </registry>
 ```
 
-Registering a js file and a css file in the same bundle is also possible.
+Registering a JavaScript file and a CSS file in the same bundle is also possible.
 
 ```xml 
 <registry>
@@ -62,6 +63,7 @@ Registering a js file and a css file in the same bundle is also possible.
 </registry>
 ```
 
+
 (classic-ui-static-resources-available-attributeslabel)=
 
 ## Available attributes
@@ -69,22 +71,25 @@ Registering a js file and a css file in the same bundle is also possible.
 The following attributes are available for registering a static resource:
 
 `enabled`
-:  Whether the bundle is enabled or not. If it is disabled, the bundle will not be loaded.
+:   Whether the bundle is enabled or not.
+    If it is disabled, the bundle will not be loaded.
 
 `jscompilation`
-:  The path to the compiled js file.
+:   The path to the compiled JavaScript file.
 
 `csscompilation`
-:  The path to the compiled css file.
+:   The path to the compiled CSS file.
 
 `depends`
-:  A list of bundles that this bundle depends on.
+:   A list of bundles that this bundle depends on.
 
 `load_async`
-:  Whether the bundle should be loaded asynchronously or not. *Only JS*
+:   Whether the bundle should be loaded asynchronously or not.
+    *Only JavaScript*
 
 `load_defer`
-:  Whether the bundle should be loaded deferred or not. *Only JS*
+:   Whether the bundle should be loaded deferred or not.
+    *Only JavaScript*
 
 
 (classic-ui-static-resources-loading-order-label)=
