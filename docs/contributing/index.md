@@ -9,7 +9,7 @@ myst:
 
 (contributing-index-label)=
 
-# Contributing to Documentation
+# Contributing to documentation
 
 This document describes how to contribute to Plone Documentation.
 
@@ -36,15 +36,15 @@ A copy of the license is included in the root of this repository.
 
 (contributing-roles-label)=
 
-## Contributor Roles
+## Contributor roles
 
 Contributors to the Plone Documentation may perform one or many roles.
 
 - **Plone users and developers** use this documentation because it is accurate and actively maintained.
   People in these roles typically contribute minor corrections.
-  They should read {doc}`setup-build` and {doc}`writing-docs-guide`.
+  They should read {doc}`setup-build` and {doc}`myst-reference`.
 - **Authors** create Plone Documentation.
-  They should read {doc}`setup-build` and {doc}`writing-docs-guide`.
+  They should read {doc}`setup-build` and {doc}`myst-reference`.
   They should also read {doc}`authors` for guidance and tips for writing good technical documentation.
 
 
@@ -287,7 +287,8 @@ hidden: true
 ---
 
 setup-build
-writing-docs-guide
 authors
+myst-reference
+sphinx-extensions
 admins
 ```

@@ -52,15 +52,13 @@ extensions = [
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
+    "sphinxcontrib.video",
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
     "sphinx.ext.graphviz",
     "notfound.extension",
-    "sphinxcontrib.video",
 ]
-
-graphviz_output_format = "svg"
 
 # If true, the Docutils Smart Quotes transform, originally based on SmartyPants
 # (limited to English) and currently applying to many languages, will be used
@@ -140,7 +138,7 @@ html_extra_path = [
 
 html_static_path = [
     "volto/_static",
-    "_static",
+    "_static",  # Last path wins. See https://github.com/plone/documentation/pull/1442
 ]
 
 # -- Options for myST markdown conversion to html -----------------------------
@@ -155,7 +153,7 @@ myst_enable_extensions = [
     #  instead of ```.
     "substitution",  # plone.restapi \
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
-    "html_image",
+    "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 ]
 
 myst_substitutions = {
@@ -214,7 +212,7 @@ copybutton_prompt_is_regexp = True
 
 # -- sphinx-notfound-page configuration ----------------------------------
 
-notfound_urls_prefix = None
+notfound_urls_prefix = ""
 notfound_template = "404.html"
 
 
