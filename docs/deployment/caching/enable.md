@@ -19,6 +19,8 @@ Even though cache support is available in Plone, it is **not enabled by default*
 It is highly recommended to configure caching for every new Plone site in production.
 
 
+(enable-caching-label)=
+
 ## Enable caching
 
 Enabling of caching is currently only supported in the Classic UI.

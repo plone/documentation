@@ -75,7 +75,7 @@ Only use this operation for stable resources that never change without changing 
 
 In the caching profiles `without-caching-proxy` and `with-caching-proxy`, this operation is mapped to the rulesets `plone.resource` and `plone.stableResource`, which causes the following headers to be added to the response:
 
-```http
+```text
 Last-Modified: <last-modified-date>
 Cache-Control: max-age=<seconds>, proxy-revalidate, public
 ```
@@ -97,14 +97,14 @@ In the caching profile `with-caching-proxy`, this operation is mapped to the rul
 
 #### `plone.content.feed`
 
-```http
+```text
 ETag: <etag-value>
 Cache-Control: max-age=0, s-maxage=<seconds>, must-revalidate
 ```
 
 #### `plone.content.file`
 
-```http
+```text
 Last-Modified: <last-modified-date>
 Cache-Control: max-age=0, s-maxage=<seconds>, must-revalidate
 ```
@@ -120,14 +120,14 @@ In the caching profile `without-caching-proxy`, this operation is mapped to the 
 
 #### `plone.content.itemView`, `plone.content.folderView`, `plone.content.feed`
 
-```http
+```text
 ETag: <etag-value>
 Cache-Control: max-age=0, must-revalidate, private
 ```
 
 ### plone.content.file
 
-```http
+```text
 Last-Modified: <last-modified-date>
 Cache-Control: max-age=0, must-revalidate, private
 ```
