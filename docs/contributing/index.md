@@ -93,7 +93,7 @@ After your Plone Contributor Agreement has been approved, and you have been adde
         -   [`plone.restapi`](https://github.com/plone/plone.restapi/issues)
         -   [`volto`](https://github.com/plone/volto/issues)
 
-    -   Discuss during conferences, trainings, and other Plone events.
+    -   Discuss during sprints, conferences, trainings, and other Plone events.
     -   Ask on the [Plone Community Forum, Documentation topic](https://community.plone.org/c/documentation/13).
     -   Ask in the [Plone chat on Discord](https://discord.com/invite/zFY3EBbjaj).
 
