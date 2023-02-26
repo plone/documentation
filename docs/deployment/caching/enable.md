@@ -58,7 +58,7 @@ Select options that are appropriate for your caching environment.
 :   Settings useful for setups with a caching proxy such as Varnish or a CDN
 
 {guilabel}`Without caching proxy`
-:   Settings useful for setups without a caching proxy such as Squid or Varnish
+:   Settings useful for setups without a caching proxy such as Varnish or a CDN
 
 {guilabel}`Take a snapshot of the site prior to importing new setting.`
 :   This allows rollback to a previous state via the `portal_setup` tool.
