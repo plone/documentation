@@ -55,7 +55,7 @@ _Import caching profiles control panel_
 Select options that are appropriate for your caching environment.
 
 {guilabel}`With caching proxy`
-:   Settings useful for setups with a caching proxy such as Squid or Varnish
+:   Settings useful for setups with a caching proxy such as Varnish or a CDN
 
 {guilabel}`Without caching proxy`
 :   Settings useful for setups without a caching proxy such as Squid or Varnish
