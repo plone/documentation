@@ -52,7 +52,7 @@ Here is an example from this package:
 <genericsetup:registerProfile
     name="with-caching-proxy"
     title="With caching proxy"
-    description="Settings useful for setups with a caching proxy such as Squid or Varnish"
+    description="Settings useful for setups with a caching proxy such as Varnish or a CDN"
     directory="profiles/with-caching-proxy"
     provides="Products.GenericSetup.interfaces.EXTENSION"
     for="plone.app.caching.interfaces.ICacheProfiles"
