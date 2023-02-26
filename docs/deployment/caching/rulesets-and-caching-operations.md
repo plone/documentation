@@ -11,6 +11,8 @@ myst:
 
 # Rulesets and caching operations
 
+This chapter requires that you first {ref}`import-a-caching-profile-label` and {ref}`enable-caching-label`.
+
 The caching infrastructure works on the principle of *rulesets* mapped to *caching operations*.
 
 A ruleset is basically just a name, and is normally applied in {term}`ZCML` by the author of a particular view.

@@ -19,6 +19,51 @@ Even though cache support is available in Plone, it is **not enabled by default*
 It is highly recommended to configure caching for every new Plone site in production.
 
 
+(import-a-caching-profile-label)=
+
+## Import a caching profile
+
+Importing a caching profile is currently only supported in the Classic UI.
+
+We recommend that you import a caching profile to start.
+You can always modify the profile later as needed.
+
+As an administrator, navigate to {guilabel}`Site Setup`.
+Under the {guilabel}`Advanced` heading or navigation item, select the <img alt="Caching" src="/_static/caching/icon-caching.svg" class="inline"> {guilabel}`Caching` control panel.
+
+````{card}
+```{image} /_static/caching/caching-disabled.png
+:alt: Caching Control Panel with caching disabled
+:target: /_static/caching/caching-disabled.png
+```
++++
+_Caching Control Panel with caching disabled_
+````
+
+From here click either the helpful link in the blue information box {guilabel}`importing a preconfigured set of caching rules` or the {guilabel}`Import settings` tab.
+You will see the {guilabel}`Import caching profiles` control panel.
+
+````{card}
+```{image} /_static/caching/import-caching-profiles.png
+:alt: Import caching profiles control panel
+:target: /_static/caching/import-caching-profiles.png
+```
++++
+_Import caching profiles control panel_
+````
+
+Select options that are appropriate for your caching environment.
+
+{guilabel}`With caching proxy`
+:   Settings useful for setups with a caching proxy such as Squid or Varnish
+
+{guilabel}`Without caching proxy`
+:   Settings useful for setups without a caching proxy such as Squid or Varnish
+
+{guilabel}`Take a snapshot of the site prior to importing new setting.`
+:   This allows rollback to a previous state via the `portal_setup` tool.
+
+
 (enable-caching-label)=
 
 ## Enable caching
