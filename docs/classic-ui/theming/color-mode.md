@@ -11,7 +11,7 @@ myst:
 
 # Color modes
 
-Bootstrap 5.3 has introduced [Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/).
+Bootstrap 5.3 has introduced [color modes](https://getbootstrap.com/docs/5.3/customize/color-modes/).
 This chapter is a guide for how to implement color modes in Plone 6.1.
 
 ```{versionadded} Plone 6.1
