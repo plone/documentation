@@ -318,5 +318,5 @@ There are two reasons to do this.
     In this case, you can either declare the ruleset on the type as shown above (in ZCML), or map the type name in the registry, using the GUI or GenericSetup.
     The former is more robust and certainly more natural if you are declaring other, more conventional rulesets in {term}`ZCML` already.
 -   You want to set the ruleset for a number of content types.
-    In fact, `plone.app.caching` already does this for you: The Archetypes base classes `BaseContent` and `BaseFolder` are assigned the rulesets `plone.content.itemView` and `plone.content.folderview`, respectively.
-    Ditto for Dexterity's `IDexterityItem` and `IDexterityContainer` interfaces.
+    In fact, `plone.app.caching` already does this for you.
+    Dexterity `IDexterityItem` and `IDexterityContainer` interfaces are assigned the rulesets `plone.content.itemView` and `plone.content.folderview`, respectively.
