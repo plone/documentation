@@ -153,4 +153,4 @@ See the following example.
 
 ## Using color modes in Plone 6.0
 
-To use color modes in Plone 6.0, manually include `barceloneta=3.1.0` and `plone.staticresources=2.1.0`, as described in {ref}`pin-the-version-of-an-add-on`.
+To use color modes in Plone 6.0, manually include `barceloneta=3.1.0` and `plone.staticresources=2.1.0`, as described in {ref}`manage-add-an-add-on`.
