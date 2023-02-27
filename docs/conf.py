@@ -79,6 +79,7 @@ linkcheck_ignore = [
     r"http://127.0.0.1",
     r"http://yoursite",
     r"https://www.linode.com",
+    r"https://github.com/orgs/plone/teams/developers",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
     # Ignore specific anchors
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
@@ -95,6 +96,7 @@ linkcheck_ignore = [
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=master",  # plone.restapi
     r"https://github.com/plone/plone.restapi/blob/dde57b88e0f1b5f5e9f04e6a21865bc0dde55b1c/src/plone/restapi/services/content/add.py#L35-L61",  # plone.restapi
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
+    r"^/_static/",
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 10
