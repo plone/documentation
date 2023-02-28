@@ -48,20 +48,29 @@
       >
       <div class="row">
         <div class="input-group col-xl-8 mb-2">
+          <label for="q" class="sr-only">Search string
+          </label>
           <input
-            type="text" name="q" id="q"
-            class="form-control"
-            placeholder="Search the docs…"
-            aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-          <label for="q" class="sr-only">Search string</label>
+          type="search" name="q" id="q"
+          class="form-control"
+          placeholder="{{ _(theme_search_bar_text) }}"
+          aria-labelledby="{{ _(theme_search_bar_text) }}"
+          value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+          />
           <div class="input-group-append">
-            <button type="submit" class="btn btn-primary">{{ _('search') }}</button>
+            <span class="input-group-text" id="shortcut-page">
+              <kbd id="search-page-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
+            </span>
           </div>
           <div class="input-group-append">
             <button
-              type="button"
-              class="clear_search btn btn-secondary"
-            >{{ _('reset') }}</button>
+            type="button"
+            onclick="onReset()"
+            class="btn btn-danger"
+            ><i class="fas fa-times"></i></button>
+          </div>
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-lg" aria-hidden="true"></i></button>
           </div>
         </div>
       </div>
@@ -70,7 +79,7 @@
         <label for="doc_section" class="col sr-only">Filter by section</label>
         <div class="col">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="doc_section" id="doc_section_all" value="all">
+            <input class="form-check-input" type="radio" name="doc_section" id="doc_section_all" value="all" checked>
             <label class="form-check-label" for="doc_section_all">
               All Documentation
             </label>

@@ -4,20 +4,14 @@
 <title>{{ title|striptags|e }}{%- for parent in parents %} – {{ parent.title }}{%- endfor %}{{ titlesuffix }}</title>
 {%- endblock %}
 
+
 {% block footer %}
     <script type="text/javascript">
         $(document).ready(function() {
             // Hide empty sub menu.
-            if ($.trim($(".topbar-contents .bd-toc").html()) === "") {
-                $(".topbar-contents .bd-toc").css("visibility", "hidden");
+            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
+                $(".sticky-top .bd-toc").css("visibility", "hidden");
             }
-            // Add toggle to exercise solutions (admonition with class 'toggle')
-            $(".toggle > *").hide();
-            $(".toggle .admonition-title").show();
-            $(".toggle .admonition-title").click(function() {
-                $(this).parent().children().not(".admonition-title").toggle(400);
-                $(this).parent().children(".admonition-title").toggleClass("open");
-            })
         });
     </script>
 

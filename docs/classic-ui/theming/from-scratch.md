@@ -1,37 +1,38 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": "Plone Classic UI Theming Independent of an Existing Theme"
-    "keywords": ""
+    "description": "Plone Classic UI theming from scratch"
+    "property=og:description": "Plone Classic UI theming from scratch"
+    "property=og:title": "Plone Classic UI theming from scratch"
+    "keywords": "Plone, Classic UI, theming, scratch"
 ---
 
 (classic-ui-theming-from-scratch-label)=
 
-# Theming Independent of an Existing Theme
+# Classic UI theming from scratch
 
 ```{todo}
 This page is only an outline and needs a lot of work.
+See https://github.com/plone/documentation/issues/1286
 ```
 
 Theming based on a filesystem package without any dependency.
 
-* Theming for Plone 6 Classic UI
-* Theme stored in a filesystem package
-* Built from scratch
-* No dependencies to Barceloneta
-* No Diazo needed
+-   Theming for Plone 6 Classic UI
+-   Theme stored in a filesystem package
+-   Built from scratch
+-   No dependencies to Barceloneta
+-   No Diazo needed
 
 
 (classic-ui-theming-from-scratch-package-label)=
 
 ## Theme Package
 
-* Create a theme package as explained here.
-* Remove what you do not need
-* Overrides
-* Static files
+-   Create a theme package as explained here.
+-   Remove what you do not need
+-   Overrides
+-   Static files
 
 
 (classic-ui-theming-from-scratch-static-files-label)=
@@ -40,8 +41,8 @@ Theming based on a filesystem package without any dependency.
 
 Register directory to keep static files
 
-File: src/plonetheme/munich/browser/configure.zcml
-Directory: src/plonetheme/munich/browser/static
+File: `src/plonetheme/munich/browser/configure.zcml`
+Directory: `src/plonetheme/munich/browser/static`
 
 ```xml
 <!-- Publish static files -->
@@ -59,8 +60,8 @@ Directory: src/plonetheme/munich/browser/static
 
 ### Manifest
 
-* Manifest for your theme
-* Keep rules empty to disable Diazo
+-   Manifest for your theme
+-   Keep rules empty to disable Diazo
 
 ```ini
 [theme]
@@ -72,7 +73,7 @@ prefix = /++theme++plonetheme.munich
 doctype = <!DOCTYPE html>
 ```
 
-### Bundle Registration
+### Bundle registration
 
 ```xml
 <?xml version="1.0"?>
@@ -91,7 +92,7 @@ doctype = <!DOCTYPE html>
 </registry>
 ```
 
-### Theme Registration
+### Theme registration
 
 Register your theme via theme.xml
 
@@ -105,7 +106,7 @@ Register your theme via theme.xml
 
 ### Compile the bundle
 
-* Compile SASS to SCSS
+-   Compile SASS to SCSS
 
 Install all requirements and dependencies from package.json:
 
@@ -122,22 +123,21 @@ yarn dist
 
 ### Theming
 
-* Make use of Bootstrap [variables](https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss)
-* Tweak basic settings like rounded corners, shadows, etc.
-* Set custom fonts
-* Define your own stuff
-* Import Boostrap (as basis)
+-   Make use of Bootstrap [variables](https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss)
+-   Tweak basic settings like rounded corners, shadows, and so on.
+-   Set custom fonts
+-   Define your own stuff
+-   Import Boostrap (as basis)
 
 
 #### Templates
 
-* Add z3c.jbot overrides
-* Copy Templates to customize
-* Add custom views for your story
+-   Add `z3c.jbot` overrides
+-   Copy templates to customize
+-   Add custom views for your story
 
 
-### Available Themes
+### Available themes
 
-* plonetheme.tokyo (mobile first, onw column)
-* plonetheme.munic (minimalistic)
-* plonetheme.berlin (based on Barceloneta)
+-   [`plonetheme.tokyo`](https://github.com/collective/plonetheme.tokyo/) (mobile first, one column)
+-   [`plonetheme.munich`](https://github.com/collective/plonetheme.munich/) (minimalistic)

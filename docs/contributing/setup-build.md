@@ -1,14 +1,15 @@
 ---
-html_meta:
-  "description": "How to set up the Plone Documentation locally"
-  "property=og:description": "How to set up the Plone Documentation locally"
-  "property=og:title": "Building and Checking the Quality of Documentation"
-  "keywords": "setup, build, documentation, quality, development, spellcheck, linkcheck"
+myst:
+  html_meta:
+    "description": "How to set up the Plone Documentation locally"
+    "property=og:description": "How to set up the Plone Documentation locally"
+    "property=og:title": "Building and Checking the Quality of Documentation"
+    "keywords": "setup, build, documentation, quality, development, Vale, spell, grammar, style, check, linkcheck"
 ---
 
 (setup-build-label)=
 
-# Building and Checking the Quality of Documentation
+# Building and checking the quality of documentation
 
 This document covers how to build the Plone Documentation and check it for quality.
 
@@ -17,19 +18,69 @@ This document covers how to build the Plone Documentation and check it for quali
 
 ## Installation
 
-Install [Enchant](https://abiword.github.io/enchant/) to check spelling.
+Installation of Plone 6 Documentation includes pre-requisites and the repository itself.
 
-**macOS**
 
-```shell
-brew install enchant
+(setup-build-installation-python-label)=
+
+### Python
+
+Python 3.8 or later is required.
+A more recent Python is preferred.
+Use your system's package manager or [pyenv](https://github.com/pyenv/pyenv) to install an appropriate version of Python.
+
+
+(setup-build-installation-vale-label)=
+
+### Vale
+
+Vale is a linter for narrative text.
+It checks spelling, English grammar, and style guides.
+Plone documentation uses a custom spelling dictionary, with accepted and rejected spellings in `styles/Vocab/Plone`.
+
+Use your operating system's package manager to [install Vale](https://vale.sh/docs/vale-cli/installation/).
+
+Vale also has [integrations](https://vale.sh/docs/integrations/guide/) with various IDEs.
+
+-   [JetBrains](https://vale.sh/docs/integrations/jetbrains/)
+-   [Vim](https://github.com/dense-analysis/ale)
+-   [VS Code](https://github.com/errata-ai/vale-vscode)
+
+Plone documentation uses a file located at the root of the repository, `.vale.ini`, to configure Vale.
+This file allows overriding rules or changing their severity.
+
+The Plone Documentation Team selected the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/) for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences. 
+
+```{note}
+More corrections to spellings and Vale's configuration are welcome by submitting a pull request.
+This is an easy way to become a contributor to Plone.
 ```
 
-**Ubuntu**
 
+(setup-build-installation-graphviz-label)=
+
+### Graphviz
+
+Install [Graphviz](https://graphviz.org/download/) for graph visualization.
+
+`````{tab-set}
+````{tab-item} macOS
 ```shell
-sudo apt-get install enchant
+brew install graphviz
 ```
+````
+
+````{tab-item} Ubuntu
+```shell
+sudo apt-get install graphviz
+```
+````
+`````
+
+
+(setup-build-installation-clone-plone-documentation-label)=
+
+### Clone `plone/documentation`
 
 Clone the Plone Documentation repository, and change your working directory into the cloned project.
 Then with a single command using `Makefile`, create a Python virtual environment, install project dependencies, pull in Volto documentation as a git submodule, build the docs, and view the results in a web browser by opening `/_build/html/index.html`.
@@ -38,12 +89,6 @@ Then with a single command using `Makefile`, create a Python virtual environment
 git clone https://github.com/plone/documentation.git
 cd documentation
 make html
-```
-
-```{note}
-If you are using an M1 Mac to build the documentation, there is currently [an issue with pyenchant](https://github.com/pyenchant/pyenchant/issues/265) that throws an error that the enchant library can't be found.
-This happens for example if you install Python 3 with `pyenv` in the default M1 architecture (aarch64), so without following instructions to use Rosetta2 x86 emulation.
-A workaround until pyenchant is fixed is to run `export PYENCHANT_LIBRARY_PATH=/opt/homebrew/lib/libenchant-2.dylib` in the terminal session before you execute `make html`.
 ```
 
 (setup-build-available-documentation-builds-label)=
@@ -95,16 +140,16 @@ make linkcheck
 Open `/_build/linkcheck/output.txt` for a list of broken links.
 
 
-### `spellcheck`
+### `vale`
 
-`spellcheck` checks the spelling of words.
+`vale` checks for American English spelling, grammar, syntax, and the Microsoft Developer Style Guide.
 See {ref}`authors-english-label` for configuration.
 
 ```shell
-make spellcheck
+make vale
 ```
 
-Open `/_build/spellcheck/` for misspellings.
+See the output on the console for suggestions.
 
 
 ### `html_meta`

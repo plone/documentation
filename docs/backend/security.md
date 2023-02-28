@@ -1,19 +1,26 @@
 ---
-html_meta:
-  "description": ""
-  "property=og:description": ""
-  "property=og:title": ""
-  "keywords": ""
+myst:
+  html_meta:
+    "description": "From Zope, Plone provides various built-in security facilities."
+    "property=og:description": "From Zope, Plone provides various built-in security facilities."
+    "property=og:title": "Security"
+    "keywords": "Security"
 ---
 
 (backend-security-label)=
 
 # Security
 
+From Zope, Plone provides various built-in security facilities.
+
+[Security](https://5.docs.plone.org/develop/plone/security)
+
 
 (backend-security-permissions-label)=
 
-## permissions
+## Permissions
+
+[Available Permissions In Plone](https://5.docs.plone.org/develop/plone/security/permission_lists)
 
 
 (backend-security-roles-label)=
@@ -29,6 +36,8 @@ html_meta:
 (backend-security-roles-local-label)=
 
 ### Local Roles
+
+[Local Roles](https://5.docs.plone.org/develop/plone/security/local_roles.html)
 
 
 (backend-security-sharing-label)=

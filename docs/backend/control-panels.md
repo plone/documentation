@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "How to add a Control Panel"
-  "property=og:description": "How to add a Control Panel"
-  "property=og:title": "Control panels"
-  "keywords": "Plone, Add, Control Panel"
+myst:
+  html_meta:
+    "description": "How to add a Control Panel"
+    "property=og:description": "How to add a Control Panel"
+    "property=og:title": "Control panels"
+    "keywords": "Plone, Add, Control Panel"
 ---
 
 (backend-controlpanels-label)=
@@ -41,4 +42,13 @@ To manually register a view as a control panel, add the following registration t
           <permission>Manage portal</permission>
     </configlet>
   </object>
+```
+
+```{seealso}
+See the chapter {ref}`training:controlpanel-label` from the Mastering Plone 6 Training.
+```
+
+```{todo}
+Contribute to this documentation!
+See issue [Backend > Control Panels needs content](https://github.com/plone/documentation/issues/1304).
 ```

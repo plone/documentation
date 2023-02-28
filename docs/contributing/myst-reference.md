@@ -1,16 +1,17 @@
 ---
-html_meta:
-  "description": "General Guide to Writing Documentation"
-  "property=og:description": "General Guide to Writing Documentation"
-  "property=og:title": "General Guide to Writing Documentation"
-  "keywords": "Documentation, Plone, Sphinx, MyST, reStructuredText, Markdown"
+myst:
+  html_meta:
+    "description": "MyST syntax reference with examples"
+    "property=og:description": "MyST syntax reference with examples"
+    "property=og:title": "MyST syntax reference with examples"
+    "keywords": "Documentation, Plone, Sphinx, MyST, reStructuredText, Markdown, syntax, examples"
 ---
 
-(contributing-writing-docs-guide)=
+(contributing-myst-reference)=
 
-# General Guide to Writing Documentation
+# MyST reference
 
-This guide provides general help for writing documentation for Plone.
+This chapter provides information and examples for how to write proper MyST syntax—with references to Sphinx extensions for their specific directives—in Plone Documentation.
 
 
 ## MyST, reStructuredText, and Markdown
@@ -25,26 +26,26 @@ MyST allows the use of a {term}`fence` and `{rst-eval}` to evaluate native reStr
 This may be useful when Markdown does not provide sufficient flexibility, such as for `figure`.
 
 
-### MyST Syntax Reference
+## MyST syntax reference
 
 The following are frequently used snippets and examples.
 
 ```{seealso}
 
-**Official MyST documentation**
+Official MyST documentation
 
 - [The MyST Syntax Guide](https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html)
 - [MyST Syntax Reference](https://myst-parser.readthedocs.io/en/latest/syntax/reference.html)
 ```
 
 
-#### Targets and Cross-Referencing
+### Targets and cross-referencing
 
 ```{seealso}
 [The MyST Syntax Guide > Targets and Cross-Referencing](https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html#targets-and-cross-referencing)
 ```
 
-##### Link to a Chapter or Page
+#### Link to a chapter or page
 
 ```md
 Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
@@ -53,26 +54,26 @@ Here is how to set up and build the documentation locally {doc}`/contributing/se
 Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
 
 
-(writing-docs-guide-link-heading-label)=
+(myst-reference-link-heading-label)=
 
-##### Link to a Heading
+#### Link to a heading
 
 ```md
-(writing-docs-guide-hello-heading-label)=
+(myst-reference-hello-heading-label)=
 
-###### Hello Heading
+##### Hello heading
 
-Read the section {ref}`writing-docs-guide-link-heading-label`.
+Read the section {ref}`myst-reference-link-heading-label`.
 ```
 
-(writing-docs-guide-hello-heading-label)=
+(myst-reference-hello-heading-label)=
 
-###### Hello Heading
+##### Hello heading
 
-Read the section {ref}`writing-docs-guide-hello-heading-label`.
+Read the section {ref}`myst-reference-hello-heading-label`.
 
 
-##### Link to an Arbitrary Location
+#### Link to an arbitrary location
 
 ```md
 (example-target-label)=
@@ -89,7 +90,7 @@ I have an HTML anchor above me.
 Click the link to visit {ref}`my text <example-target-label>`.
 
 
-##### Link to External Page
+#### Link to external page
 
 ```md
 Use [Shimmer](http://example.com) for cleaner whiter teeth.
@@ -98,13 +99,28 @@ Use [Shimmer](http://example.com) for cleaner whiter teeth.
 Use [Shimmer](http://example.com) for cleaner whiter teeth.
 
 
-##### Images and Figures
+#### Images and figures
 
 [Figures](https://docutils.sourceforge.io/docs/ref/rst/directives.html#figure) allow a caption and legend, whereas [images](https://docutils.sourceforge.io/docs/ref/rst/directives.html#images) do not.
 
 Use `image` for anything but diagrams.
 
 Use `figure` for diagrams.
+
+Paths to images and figures must resolve in both the main documentation and the submodule's documentation, if present.
+
+For inline images, we use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
+Example syntax is shown below.
+
+```html
+You can copy <img alt="Copy icon" src="../../_images/copy.svg" class="inline"> blocks.
+```
+
+Note that the HTML attribute `class` must be set to `inline` to render the image inline at `1rem`. 
+
+The above syntax renders as shown below.
+
+> You can copy <img alt="Copy icon" src="/_static/copy.svg" class="inline"> blocks.
 
 Images and figures should always include `alt` text.
 
@@ -166,7 +182,36 @@ Accessibility is part of the [Plone brand and identity](https://plone.org/access
 ```
 
 
-##### Code Block
+#### Video
+
+To embed local videos, such as recordings of demonstrating the user interface, we require that the videos be saved as `.mp4` for greatest compatibility, usability, accessibility, and reduced file size.
+
+Avoid animated GIFs because they do not allow control of playback.
+
+Audio is not required, but may be helpful.
+If you include audio, it is helpful to include closed captions or a transcript.
+
+It is helpful to include overlays of key strokes, and mouse and other input gestures, to describe how to interact with the user interface.
+
+Paths to videos must resolve in both the main documentation and the submodule's documentation, if present.
+
+Example syntax is shown below.
+
+````
+```{video} /_static/user-manual/blocks/block-copy-cut.mp4
+    :width: 100%
+```
+````
+
+Note that the path must be absolute to support both submodules and the main documentation.
+The above MyST markup renders as shown below.
+
+```{video} /_static/user-manual/blocks/block-copy-cut.mp4
+    :width: 100%
+```
+
+
+#### Code block
 
 A Python code snippet without reStructuredText options, using a simple fence.
 
@@ -206,7 +251,7 @@ print("my 1st line")
 print(f"my {a}nd line")
 ```
 
-##### Escape literal backticks inline
+#### Escape literal backticks inline
 
 ```md
 This is MyST syntax for term ``{term}`React` ``
@@ -215,7 +260,7 @@ This is MyST syntax for term ``{term}`React` ``
 This is MyST syntax for term ``{term}`React` ``
 
 
-##### Glossary terms
+#### Glossary terms
 
 Add a term to the {ref}`glossary-label`, located at {file}`/glossary.md`.
 
@@ -234,15 +279,13 @@ Using {term}`React` makes frontends fun again!
 Using {term}`React` makes frontends fun again!
 
 
-#### Toggle paragraph (Exercise solution / FAQ)
+### Nesting directives
 
-Text snippets can be hidden with the option to show. Wrap it in an `admonition` and add the `class` `toggle`.
+You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as [admonitions](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#admonitions) and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
 
 `````
-````{admonition} f-strings can make your life easier
-:class: toggle
-
-To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
+````{tip}
+To use formatted string literals ("f-strings"), begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
 Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
 
 ```{code-block} python
@@ -255,15 +298,11 @@ print(f"my {a}nd line")
 ```
 ````
 `````
-
-You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as admonitions and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
 
 This would be rendered as:
 
-````{admonition} f-strings can make your life easier
-:class: toggle
-
-To use formatted string literals, begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
+````{tip}
+To use formatted string literals ("f-strings"), begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
 Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
 
 ```{code-block} python
@@ -275,34 +314,3 @@ print("my 1st line")
 print(f"my {a}nd line")
 ```
 ````
-
-
-## Abridged Plone Documentation Styleguide
-
-Guides should be informational, but friendly.
-
-Address the reader by using "you" instead of "the user".
-
-Avoid contractions, and spell out the words.
-For example, use "do not" instead of "don't".
-
-Please do not follow PEP8 maximum line length standard.
-Documentation is narrative text and images, not Python code.
-
-Use one sentence per line.
-Keep sentences short and understandable.
-This will greatly improve the editing and maintenance of your documentation.
-
-
-## General Documentation Writing References
-
-- [Write the Docs - Documentation Guide](https://www.writethedocs.org/guide/)
-- [A Guide to Em Dashes, En Dashes, and Hyphens](https://www.merriam-webster.com/words-at-play/em-dash-en-dash-how-to-use)
-
-
-### English grammar, spelling, punctuation, and syntax
-
-Because it is difficult to automate good English grammar and syntax, we do not strictly enforce it.
-We also understand that contributors might not be fluent in English.
-We encourage contributors to make a reasonable effort, and to seek help from community members who are fluent in English.
-Please ask!
