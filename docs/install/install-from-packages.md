@@ -145,20 +145,23 @@ npm install -g yo
 
 (install-prerequisites-yarn-label)=
 
-#### Yarn
+#### Yarn 3
 
-Install the Yarn Classic version (not the latest 2.x one) using `npm`.
+Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
 
 1.  Open a terminal and type:
 
     ```shell
-    npm install yarn@1
+    npm install yarn@3
     ```
 
-2.  Verify that Yarn v1.x.x is installed and activated.
+2.  Verify that Yarn v3.x.x is installed and activated.
 
     ```shell
     yarn -v
+    ```
+    ```console
+    3.2.3
     ```
 
 
@@ -344,8 +347,6 @@ make start-frontend
 The Plone frontend server starts up and emits messages to the console.
 
 ```console
-yarn run v1.22.19
-$ razzle start
  WAIT  Compiling...
 
 
@@ -356,6 +357,7 @@ $ razzle start
   Compiled successfully in 9.62s
 
 ✅  Server-side HMR Enabled!
+sswp> Handling Hot Module Reloading
 Volto is running in SEAMLESS mode
 Using internal proxy: http://localhost:3000 -> http://localhost:8080/Plone
 🎭 Volto started at 0.0.0.0:3000 🚀
