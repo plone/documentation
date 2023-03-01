@@ -39,10 +39,10 @@ Official MyST documentation
 ```
 
 
-### Targets and cross-referencing
+### Cross-references
 
 ```{seealso}
-[The MyST Syntax Guide > Targets and Cross-Referencing](https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html#targets-and-cross-referencing)
+[The MyST Syntax Guide > Cross-references](https://myst-parser.readthedocs.io/en/latest/syntax/cross-referencing.html)
 ```
 
 #### Link to a chapter or page
@@ -281,7 +281,7 @@ Using {term}`React` makes frontends fun again!
 
 ### Nesting directives
 
-You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as [admonitions](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#admonitions) and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
+You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as [admonitions](https://myst-parser.readthedocs.io/en/latest/syntax/admonitions.html) and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
 
 `````
 ````{tip}
