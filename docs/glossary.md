@@ -272,7 +272,7 @@ mrs-developer
     As a byproduct of its update operations, it also automatically adjusts `jsconfig.json`, which is used by Volto to configure webpack aliases.
 
 Yarn
-    [Yarn](https://classic.yarnpkg.com/) is a JavaScript package manager.
+    [Yarn](https://yarnpkg.com/) is a JavaScript package manager.
 
 Hydration
     After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing {term}`DOM` elements, and recreate and attach their coresponding components.
