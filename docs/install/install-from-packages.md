@@ -159,6 +159,8 @@ Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
 
     ```shell
     yarn -v
+    ```
+    ```console
     3.2.3
     ```
 
