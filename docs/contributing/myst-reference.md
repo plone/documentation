@@ -108,10 +108,19 @@ Use `image` for anything but diagrams.
 
 Use `figure` for diagrams.
 
-When the documentation is in a submodule, paths to images and figures must resolve in both the main documentation and the submodule's documentation.
-In other words, don't use file-relative paths.
-Instead place static assets in `/_static/` and a subdirectory named after the part or page of the documentation, and use a root-relative path, such as `/_static/user-manual/block-left-add-icon.png`
-Configuration in the `conf.py` files for the main documentation and its submodules handle the resolution of root-relative paths for you.
+
+(static-assets-label)=
+
+#### Static assets
+
+When the documentation is in a submodule, paths to static assets—including, images, figures, and videos—must resolve in both the main documentation and the submodule's documentation.
+
+Inside the `docs` directory, place static assets in the `/_static/` directory, and preferably inside a subdirectory named after the part or page of the documentation.
+For example, in the `volto` submodule, inside its `src/docs` directory, place an image at `/_static/user-manual/block-left-add-icon.png`.
+In your markup, use that same `docs`-root-relative path for the target, such as `/_static/user-manual/block-left-add-icon.png`.
+Don't use file-relative paths.
+
+Configuration in the `conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
 
 
 #### Width of media
@@ -246,6 +255,7 @@ If you include audio, it is helpful to include closed captions or a transcript.
 It is helpful to include overlays of key strokes, and mouse and other input gestures, to describe how to interact with the user interface.
 
 Paths to videos must resolve in both the main documentation and the submodule's documentation, if present.
+See {ref}`static-assets-label` for details.
 
 Example MyST syntax is shown below.
 
@@ -256,6 +266,7 @@ Example MyST syntax is shown below.
 ````
 
 Note that the path must be absolute to support both submodules and the main documentation.
+Don't use file-relative paths.
 The above MyST markup renders as shown below.
 
 ```{video} /_static/user-manual/blocks/block-copy-cut.mp4
