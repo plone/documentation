@@ -99,7 +99,7 @@ Use [Shimmer](http://example.com) for cleaner whiter teeth.
 Use [Shimmer](http://example.com) for cleaner whiter teeth.
 
 
-#### Images and figures
+### Images and figures
 
 [Figures](https://docutils.sourceforge.io/docs/ref/rst/directives.html#figure) allow a caption and legend, whereas [images](https://docutils.sourceforge.io/docs/ref/rst/directives.html#images) do not.
 However we can {ref}`enhance images with cards <enhance-images-label>` to add a caption and more features.
@@ -111,7 +111,7 @@ Use `figure` for diagrams.
 Paths to images and figures must resolve in both the main documentation and the submodule's documentation, if present.
 
 
-##### Width of media
+#### Width of media
 
 The main content area of a page in the documentation is 743 pixels wide.
 When taking screenshots or videos, resize your browser window, or try to limit the width of your media to 740 pixels.
@@ -120,7 +120,7 @@ This will preserve legibility of images.
 
 (enhance-images-label)=
 
-##### Enhance images
+#### Enhance images
 
 We use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
 
@@ -149,7 +149,7 @@ _Caching Control Panel_
 ````
 
 
-##### Accessibility with `alt` text
+#### Accessibility with `alt` text
 
 From [Web Accessibility In Mind (WebAIM)](https://webaim.org/techniques/alttext/):
 
@@ -173,7 +173,7 @@ The following MyST example will display as shown below.
 ```
 
 
-##### Inline images
+#### Inline images
 
 For inline images, we use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
 Example syntax is shown below.
@@ -231,7 +231,7 @@ The following MyST example will display as shown below.
 ```
 
 
-#### Video
+### Video
 
 To embed local videos, such as recordings of demonstrating the user interface, we require that the videos be saved as `.mp4` for greatest compatibility, usability, accessibility, and reduced file size.
 
@@ -260,7 +260,7 @@ The above MyST markup renders as shown below.
 ```
 
 
-#### Diagrams and graphs with Graphviz
+### Diagrams and graphs with Graphviz
 
 We use [Graphviz](https://graphviz.org/download/) and its Sphinx extension [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) to render diagrams and graph visualizations.
 
@@ -293,7 +293,7 @@ The following MyST example will display as shown below.
 ```
 
 
-#### Code block
+### Code block
 
 A Python code snippet without reStructuredText options, using a simple fence.
 
@@ -333,7 +333,7 @@ print("my 1st line")
 print(f"my {a}nd line")
 ```
 
-#### Escape literal backticks inline
+### Escape literal backticks inline
 
 ```md
 This is MyST syntax for term ``{term}`React` ``
@@ -342,7 +342,7 @@ This is MyST syntax for term ``{term}`React` ``
 This is MyST syntax for term ``{term}`React` ``
 
 
-#### Glossary terms
+### Glossary terms
 
 Add a term to the {ref}`glossary-label`, located at {file}`/glossary.md`.
 
