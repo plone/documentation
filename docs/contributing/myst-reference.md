@@ -108,7 +108,10 @@ Use `image` for anything but diagrams.
 
 Use `figure` for diagrams.
 
-Paths to images and figures must resolve in both the main documentation and the submodule's documentation, if present.
+When the documentation is in a submodule, paths to images and figures must resolve in both the main documentation and the submodule's documentation.
+In other words, don't use file-relative paths.
+Instead place static assets in `/_static/` and a subdirectory named after the part or page of the documentation, and use a root-relative path, such as `/_static/user-manual/block-left-add-icon.png`
+Configuration in the `conf.py` files for the main documentation and its submodules handle the resolution of root-relative paths for you.
 
 
 #### Width of media
