@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Prerequisites for content types"
+    "property=og:description": "Prerequisites for content types"
+    "property=og:title": "Prerequisites for content types"
+    "keywords": "Plone, content types, prerequisites"
 ---
 
 # Prerequisites
 
-This portion of the Dexterity documentation is mainly intended to illuminate Dexterity features.
+This portion of the Dexterity documentation mainly intends to illuminate Dexterity features.
 If you would like an in-depth, step-by-step approach, we recommend you work through the [Mastering Plone](https://training.plone.org/) training.
 
 
@@ -58,7 +58,7 @@ We're going to build a package named `example.conference`.
 You may find a completed version of it in the [Collective repository](https://github.com/collective/example.conference).
 ```
 
-Typically, our content types will live in a separate package to our theme and other customizations.
+Typically, our content types will live in a separate package from our theme and other customizations.
 
 To create a new package, we can start with `mrbob` and the `dexterity` template.
 
@@ -75,13 +75,13 @@ We run the following from the `src/` directory
 
 and specify your target version of Plone and Python.
 This will create a directory named `example.conference` inside `./src` with the basic structure of a generic add-on.
-Now ["refine"](https://github.com/plone/bobtemplates.plone#provided-subtemplates) it for the creation of a content type
+Now ["refine"](https://github.com/plone/bobtemplates.plone#provided-subtemplates) it for the creation of a content type.
 
 ```shell
 ../bin/mrbob bobtemplates.plone:content_type -O example.conference
 ```
 
-Specify "Program" for your content type name, and "Container" as Dexterity base class (remember that Programs will contain Sessions).
+Specify `Program` for your content type name, and `Container` as the Dexterity base class (remember that Programs will contain Sessions).
 Choose not to use XML Model for this example.
 
 Now take a look at the `setup.py` file in your new package.
@@ -109,7 +109,7 @@ Now let's take a look at `configure.zcml` in the `examples/conference` directory
 Again, we want to note a few parts:
 
 ```xml
-<configure ...>
+<configure>
 
   <i18n:registerTranslations directory="locales" />
 
@@ -135,8 +135,6 @@ Again, we want to note a few parts:
       post_handler=".setuphandlers.uninstall"
       />
 
-  ...
-
 </configure>
 ```
 
@@ -146,7 +144,7 @@ The alternative would be to manually add a line, such as `<include package="plon
 The `include package=".browser"` directive loads additional ZCML configuration from the `browser` subdirectory.
 In turn, the `browser.resourceDirectory` command in that configuration file creates a directory for static resources that we want to make available through the web.
 
-Finally, we register a GenericSetup profile to make the type installable, which we will build up over the next several sections.
+Finally, we register a `GenericSetup` profile to make the type installable, which we will build up over the next several sections.
 
 When you've got your project tuned up, return to your `buildout/instance` directory and edit `buildout.cfg` to add `example.conference` to your eggs list, and `src/example.conference` to your `develop` sources list:
 
@@ -156,7 +154,7 @@ eggs =
 
     example.conference
 
-...
+
 develop =
 
     src/example.conference
