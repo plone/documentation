@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Designing with content types in Plone"
+    "property=og:description": "Designing with content types in Plone"
+    "property=og:title": "Designing with content types in Plone"
+    "keywords": "Plone, designing, content types"
 ---
 
 # Designing with content types
@@ -16,7 +16,7 @@ Plone uses the ZODB, an object database, instead of a relational database as its
 The ZODB is well suited to heterogeneous, loosely structured content such as web pages.
 
 Types in Plone are either containers or items (this distinction is sometimes called folderish versus non-folderish).
-A one-to-many type relationship is typically modelled as a container (the "one") containing many items (the "many"), although it is also possible to use references across the content hierarchy.
+A one-to-many type relationship is typically modeled as a container (the "one") containing many items (the "many"), although it is also possible to use references across the content hierarchy.
 
 Each type has a schema, which is a set of fields with related properties, such as a title, default value, constraints, and so on.
 The schema is used to generate forms and describe instances of the type.
@@ -26,11 +26,11 @@ When we attempt to solve a particular content management problem with Plone, we 
 For the purpose of this tutorial, we'll build a simple set of types to help conference organizers.
 We want to manage a program consisting of multiple sessions.
 Each session should be listed against a track, and have a time slot, a title, a description, and a presenter.
-We also want to manage bios for presenters.
+We also want to manage biographies for presenters.
 
 There are many ways to approach this, but here is one possible design:
 
--   A content type Presenter is used to represent presenter bios.
+-   A content type Presenter is used to represent presenter biographies.
     Fields include name, description, and professional experience.
 -   A content type Program represents a given conference program.
     Besides some basic metadata, it will list the available tracks.
