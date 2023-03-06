@@ -9,6 +9,8 @@ myst:
 
 # Content types developer manual
 
+This part of the documentation describes how to develop content types in Plone.
+
 ```{toctree}
 :maxdepth: 2
 
