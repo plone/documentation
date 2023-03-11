@@ -79,6 +79,7 @@ linkcheck_ignore = [
     r"http://127.0.0.1",
     r"http://yoursite",
     r"https://www.linode.com",
+    r"https://vhs-ehrenamtsportal.de", # SSLError(SSLCertVerificationError
     r"https://github.com/orgs/plone/teams/developers",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
     # Ignore specific anchors
@@ -99,8 +100,10 @@ linkcheck_ignore = [
     r"^/_static/",
 ]
 linkcheck_anchors = True
-linkcheck_timeout = 10
-linkcheck_retries = 2
+# linkcheck_timeout = 10
+# linkcheck_retries = 2
+linkcheck_timeout = 5
+linkcheck_retries = 1
 
 # The suffix of source filenames.
 source_suffix = {
@@ -186,7 +189,7 @@ myst_substitutions = {
 intersphinx_mapping = {
     "plone": ("https://6.docs.plone.org/", None),  # for imported packages
     "python": ("https://docs.python.org/3/", None),
-    "training": ("https://training.plone.org/5/", None),
+    "training": ("https://training.plone.org/", None),
 }
 
 
