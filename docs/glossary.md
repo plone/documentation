@@ -645,7 +645,8 @@ CDN
 
 unique identifier
 UID
-   UID is an abbreviation meaning "User Identifier." On a Unix-like operating system, it is a unique numerical identifier assigned to each user. The system uses the UID to identify the user and determine access permissions to files, directories, and other system resources.
+   UID is an acronym meaning "unique identifier".
+   A UID is an identifier that is guaranteed to be unique among all identifiers used for those objects and for a specific purpose.
 
 intid
     In Plone, a "intid" is an integer identifier that is used to uniquely identify content objects within a Plone site. Each content item in a Plone site is given a unique intid, which the system uses internally to monitor and manage content.
