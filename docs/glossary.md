@@ -649,5 +649,6 @@ UID
    A UID is an identifier that is guaranteed to be unique among all identifiers used for those objects and for a specific purpose.
 
 intid
-    In Plone, a "intid" is an integer identifier that is used to uniquely identify content objects within a Plone site. Each content item in a Plone site is given a unique intid, which the system uses internally to monitor and manage content.
+    In Plone, an integer identifier, or intid, is used to uniquely identify content objects within a Plone site.
+    Each content item in a Plone site is given a unique intid, which the system uses internally to monitor and manage content.
 ```
