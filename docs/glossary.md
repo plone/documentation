@@ -642,4 +642,10 @@ Varnish
 Content Delivery Network
 CDN
     A Content Delivery Network (CDN) is a network of servers located in various geographic regions that work together to deliver web content to users quickly and efficiently.
+
+UID
+   UID is an abbreviation meaning "User Identifier." On a Unix-like operating system, it is a unique numerical identifier assigned to each user. The system uses the UID to identify the user and determine access permissions to files, directories, and other system resources.
+
+intid
+    In Plone, a "intid" is an integer identifier that is used to uniquely identify content objects within a Plone site. Each content item in a Plone site is given a unique intid, which the system uses internally to monitor and manage content.
 ```
