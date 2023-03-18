@@ -642,4 +642,8 @@ Varnish
 Content Delivery Network
 CDN
     A Content Delivery Network (CDN) is a network of servers located in various geographic regions that work together to deliver web content to users quickly and efficiently.
+
+WSL
+Windows Subsystem for Linux
+    The [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, or Arch Linux) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
 ```

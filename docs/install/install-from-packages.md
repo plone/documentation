@@ -44,7 +44,7 @@ You may host multiple Plone sites on the same server.
 ### Pre-requisites for installation
 
 -   An operating system that runs all the pre-requisites.
-    Most UNIX-based operating systems are supported, including many Linux distributions, macOS, or WSL on Windows.
+    Most UNIX-based operating systems are supported, including many Linux distributions, macOS, or {term}`Windows Subsystem for Linux` (WSL) on Windows.
     A UNIX-based operating system is recommended.
 
     ```{important}
