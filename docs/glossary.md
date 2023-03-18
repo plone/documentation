@@ -293,7 +293,7 @@ hook
 hooks
     In general, a hook in programming is a place in code that allows you to tap in to a module to either provide different behavior or to react when something happens.
 
-    **React [Hooks](https://reactjs.org/docs/hooks-overview.html)** are a React API that allow function components to use React features, such as lifecycle methods, states, and so on.
+    **React [Hooks](https://react.dev/reference/react)** are a React API that allow function components to use React features, such as lifecycle methods, states, and so on.
 
 hoisting
     [Hoisting](https://yarnpkg.com/advanced/lexicon#hoisting) is an optimization provided by Yarn.
@@ -302,7 +302,7 @@ hoisting
     In case two dependencies have conflicting version dependencies of the same library, the hoisting will not be possible (for that conflicting dependency) and you'll see multiple instances of the same library in the bundle, or you'll see that the add-on receives its own `node_modules` folder.
 
 React
-    [React](https://reactjs.org/) is a JavaScript library for building user interfaces.
+    [React](https://www.reactjs.dev/) is a JavaScript library for building user interfaces.
     Volto, the frontend for Plone 6, uses React.
 
 Sphinx
