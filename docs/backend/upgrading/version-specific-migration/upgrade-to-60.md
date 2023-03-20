@@ -546,3 +546,66 @@ In that case, you are advised to add the `image_scales` column manually to the c
 ```{seealso}
 [plone/plone.app.upgrade PR 292](https://github.com/plone/plone.app.upgrade/pull/292)
 ```
+
+
+(v60-tinymce-label)=
+
+## New version of TinyMCE
+
+Plone 6 ships with a new version of TinyMCE.
+While Mockup for Plone 5.2 ships with TinyMCE 4.7 Plone 6.0 ships with TinyMCE 5.10.
+The TinyMCE integration, pat-tinymce has also changed, but the configuration options have been almost kept the same and are likely to be compatible with your existing installation.
+The configuration changes are:
+
+- Added configuration options: `text.enableImageZoom`, `defaultSrcset`, `imageCaptioningEnabled`, `tiny.language`,
+- Removed configuration options: `imageScales`,
+- Option values changes for: `imageClasses`,
+
+But there is more.
+
+
+### TinyMCE templates
+
+While in Plone 5 you had to enable the template plugin (which was already shipped but not exposed to the UI) via the `custom_plugins` configuration option, Plone 6 has this option built-in.
+But in Plone 6 your templates need to have a `description`, otherwise TinyMCE will throw an JavaScript error and the templates won't be usable at all.
+
+This is an example `registry.xml` snippet for configuring TinyMCE with some templates:
+
+```xml
+  <records interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+           prefix="plone">
+    <value key="plugins" purge="False">
+      <element>template</element>
+    </value>
+    <value key="custom_plugins" purge="True">
+      <!-- Remove the old TinyMCE template plugin -->
+    </value>
+    <value key="templates">
+        [
+            {
+                "title": "Template 1",
+                "description": "This is an example template",
+                "url": "++plone++my.site/template1.html"
+            },
+            {
+                "title": "Template 2",
+                "description": "This is another example template",
+                "url": "++plone++my.site/template2.html"
+            }
+        ]
+    </value>
+  </records>
+```
+
+Please make sure you write valid JSON for the `template` option.
+
+
+### Custom Plugins
+
+TODO
+
+
+### More information on TinyMCE 4 to 5 migration
+
+For more information on the TinyMCE 4 to 5 upgrade consult the TinyMCE upgrade guide: https://www.tiny.cloud/docs/migration-from-4x/
+
