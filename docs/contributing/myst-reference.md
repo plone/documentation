@@ -261,7 +261,6 @@ Example MyST syntax is shown below.
 
 ````md
 ```{video} /_static/user-manual/blocks/block-copy-cut.mp4
-    :width: 100
 ```
 ````
 
@@ -270,7 +269,6 @@ Don't use file-relative paths.
 The above MyST markup renders as shown below.
 
 ```{video} /_static/user-manual/blocks/block-copy-cut.mp4
-    :width: 100
 ```
 
 
