@@ -623,7 +623,7 @@ Node Version Manager
     [`nvm`](https://github.com/nvm-sh/nvm/blob/master/README.md) allows you to quickly install and use different versions of node via the command line.
 
 Node.js
-    [Node.js®](https://nodejs.org/en/) is an open-source, cross-platform JavaScript runtime environment.
+    [Node.js®](https://nodejs.org/en) is an open-source, cross-platform JavaScript runtime environment.
 
 view
     A view is the basic element of modern Python web frameworks.
