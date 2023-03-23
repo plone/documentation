@@ -20,8 +20,8 @@ Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter 
 Plone uses the [z3c.form](http://pythonhosted.org/z3c.form) library to build its web-forms. 
 The package responsible for integrating with Plone is [plone.z3cform](http://pypi.python.org/pypi/plone.z3cform).
 
-For an easy way to structure a form and define its widgets and fields, Plone relies on [plone.autoform](http://pypi.python.org/pypi/plone.autoform), in particular its AutoExtensibleForm base class.
-Which is responsible for processing form hints and setting up [z3c.form](http://pythonhosted.org/z3c.form) widgets and groups (fieldsets).
+To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](http://pypi.python.org/pypi/plone.autoform), in particular its `AutoExtensibleForm` base class.
+It is responsible for handling form hints and configuring  z3c.form widgets and groups (fieldsets).
 
 A form, therefore, is simply a view that uses these libraries, although [plone.autoform](http://pypi.python.org/pypi/plone.autoform) provides some helpful base classes that make it easier to construct forms based on the form schema or {ref}`Dexterity behaviors <backend-behaviors-label>`.
 
