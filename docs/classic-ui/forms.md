@@ -78,7 +78,7 @@ class MyForm(AutoExtensibleForm, form.EditForm):
     label = "What's your name?"
     description = "Simple, sample form"
 
-    @button.buttonAndHandler(u'Ok')
+    @button.buttonAndHandler("Ok")
     def handleApply(self, action):
         data, errors = self.extractData()
         if errors:
