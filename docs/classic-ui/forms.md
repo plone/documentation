@@ -39,7 +39,7 @@ plonecli add form
 ```
 
 After using the {term}`plonecli` to add a form, there is a new sub folder `forms` in your package.
-Here we will find a `configure.zcml` containing the registration of the form,
+Here you will find a `configure.zcml` containing the registration of the form,
 
 ```xml
 <!-- ZCML header and other ZCML here  -->
