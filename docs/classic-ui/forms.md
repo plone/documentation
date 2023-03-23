@@ -67,7 +67,7 @@ class IMyForm(Interface):
         Define your form fields here.
     """
     name = schema.TextLine(
-        title=u"Your name",
+        title="Your name",
     )
 
 
