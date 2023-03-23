@@ -93,7 +93,7 @@ class MyForm(AutoExtensibleForm, form.EditForm):
         if changes:
             self.status = "Settings saved"
 
-    @button.buttonAndHandler(u"Cancel")
+    @button.buttonAndHandler("Cancel")
     def handleCancel(self, action):
         """User canceled. Redirect back to the front page.
         """
