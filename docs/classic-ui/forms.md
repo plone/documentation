@@ -75,8 +75,8 @@ class MyForm(AutoExtensibleForm, form.EditForm):
     schema = IMyForm
     ignoreContext = True
 
-    label = u"What's your name?"
-    description = u"Simple, sample form"
+    label = "What's your name?"
+    description = "Simple, sample form"
 
     @button.buttonAndHandler(u'Ok')
     def handleApply(self, action):
