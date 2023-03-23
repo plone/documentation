@@ -38,7 +38,7 @@ cd collective.awesomeaddon
 plonecli add form
 ```
 
-After using the `plonecli` to add a form, we should have a new sub folder `forms` in our package.
+After using the `plonecli` to add a form, there is a new sub folder `forms` in your package.
 Here we will find a `configure.zcml` containing the registration of the form,
 
 ```xml
