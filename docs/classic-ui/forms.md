@@ -42,6 +42,7 @@ After using the `plonecli` to add a form, there is a new sub folder `forms` in y
 Here we will find a `configure.zcml` containing the registration of the form,
 
 ```xml
+<!-- ZCML header and other ZCML here  -->
 <browser:page
   name="my-form"
   for="*"
