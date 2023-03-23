@@ -17,28 +17,28 @@ Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter 
 ```
 
 
-Plone uses the [z3c.form](http://pythonhosted.org/z3c.form) library to build its web-forms. 
+Plone uses the [z3c.form](http://pythonhosted.org/z3c.form) library to build its web-forms.
 The package responsible for integrating with Plone is [plone.z3cform](http://pypi.python.org/pypi/plone.z3cform).
 
 To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](http://pypi.python.org/pypi/plone.autoform), in particular its `AutoExtensibleForm` base class.
 It is responsible for handling form hints and configuring  z3c.form widgets and groups (fieldsets).
 
-A form is a view that utilizes these libraries. 
+A form is a view that utilizes these libraries.
 plone.autoform offers useful base classes for views that simplify the process of creating forms based on either the form schema or {ref}`Dexterity behaviors <backend-behaviors-label>`.
 
 
 (classic-ui-forms-general-forms-label)=
 ## General forms
 
-The plonecli provides you with an option to add a form to your Plone package.
-
+The {term}`plonecli` provides you with an option to add a form to your Plone package.
+Given you have created an addon package with {term}`plonecli` called `collective.awesomeaddon`.
 
 ```shell
 cd collective.awesomeaddon
 plonecli add form
 ```
 
-After using the `plonecli` to add a form, there is a new sub folder `forms` in your package.
+After using the {term}`plonecli` to add a form, there is a new sub folder `forms` in your package.
 Here we will find a `configure.zcml` containing the registration of the form,
 
 ```xml
