@@ -101,3 +101,50 @@ class MyForm(AutoExtensibleForm, form.EditForm):
 
 Dexterity content types are coming with default add and edit forms.
 You can build custom add and edit forms if you need.
+
+### Disable form tabbing
+
+To disable the form tabbing, you have to override the form and provide a property enable_form_tabbing which is False.
+
+The Python code `custom_edit_form.py` should look like this:
+
+```python
+class ICustomEditForm(Interface):
+    """
+    """
+
+@implementer(ICustomEditForm)
+class CustomEditForm(edit.DefaultEditForm):
+    """ Custom edit form disabling form_tabbing
+    """
+    enable_form_tabbing = False
+
+```
+
+to activate it, you have to override the registration of the edit form for your desired content types.
+In your configure.zcml:
+
+```xml
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="example.contenttypes">
+
+  <!-- for TTW CT's -->
+  <browser:page
+    name="edit"
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    class=".custom_edit_form.CustomEditForm"
+    permission="cmf.ModifyPortalContent"
+    layer="example.contenttypes.interfaces.IExampleContenttypesLayer"
+    />
+
+  <browser:page
+    name="edit"
+    for="example.contenttypes.content.technical_facility.ITechnicalFacility"
+    class=".custom_edit_form.CustomEditForm"
+    permission="cmf.ModifyPortalContent"
+    layer="example.contenttypes.interfaces.IExampleContenttypesLayer"
+    />
+</configure>
+```
