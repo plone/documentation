@@ -49,6 +49,7 @@ Here we will find a `configure.zcml` containing the registration of the form,
   class=".my_form.MyForm"
   permission="cmf.ManagePortal"
   layer="p6.theme5.interfaces.IP6Theme5Layer"
+<!-- further ZCML and ZCML footer here  -->
   />
 ```
 
