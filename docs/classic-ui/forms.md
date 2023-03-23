@@ -23,7 +23,8 @@ The package responsible for integrating with Plone is [plone.z3cform](http://pyp
 To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](http://pypi.python.org/pypi/plone.autoform), in particular its `AutoExtensibleForm` base class.
 It is responsible for handling form hints and configuring  z3c.form widgets and groups (fieldsets).
 
-A form, therefore, is simply a view that uses these libraries, although [plone.autoform](http://pypi.python.org/pypi/plone.autoform) provides some helpful base classes that make it easier to construct forms based on the form schema or {ref}`Dexterity behaviors <backend-behaviors-label>`.
+A form is a view that utilizes these libraries. 
+plone.autoform offers useful base classes for views that simplify the process of creating forms based on either the form schema or {ref}`Dexterity behaviors <backend-behaviors-label>`.
 
 
 (classic-ui-forms-general-forms-label)=
