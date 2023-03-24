@@ -18,9 +18,9 @@ Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter 
 
 
 Plone uses the [z3c.form](http://pythonhosted.org/z3c.form) library to build its web-forms.
-The package responsible for integrating with Plone is [plone.z3cform](http://pypi.python.org/pypi/plone.z3cform).
+The package responsible for integrating with Plone is [plone.z3cform](http://http://github/plone//plone.z3cform).
 
-To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](http://pypi.python.org/pypi/plone.autoform), in particular its `AutoExtensibleForm` base class.
+To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](http://github/plone/plone.autoform), in particular its `AutoExtensibleForm` base class.
 It is responsible for handling form hints and configuring  z3c.form widgets and groups (fieldsets).
 
 A form is a view that utilizes these libraries.
@@ -105,21 +105,32 @@ class MyForm(AutoExtensibleForm, form.EditForm):
 ## Dexterity Add- and Edit forms
 
 Dexterity content types are coming with default add and edit forms.
-You can build custom add and edit forms if you need.
+You can build custom add and edit forms to adjust there behavior.
+
+The implementation of the default edit and add forms is in [plone.dexterity.browser.edit.py](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/edit.py) and [plone.dexterity.browser.add.py](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/add.py).
+
+
 
 
 ```{todo}
 Describe Add/Edit forms here and how to customize them.
+Provide mutiple examples.
 ```
 
 
 ### Disable form tabbing
 
-To disable the form tabbing, you have to override the form and provide a property enable_form_tabbing which is False.
+To disable the form tabbing, you have to override the edit and add forms and provide a property enable_form_tabbing which is False.
 
-The Python code `custom_edit_form.py` should look like this:
+The Python code `custom_forms.py` should look like this:
 
 ```python
+from plone.dexterity.browser import add
+from plone.dexterity.browser import edit
+from zope.interface import implementer
+from zope.interface import Interface
+
+
 class ICustomEditForm(Interface):
     """
     """
@@ -130,9 +141,30 @@ class CustomEditForm(edit.DefaultEditForm):
     """
     enable_form_tabbing = False
 
+
+class ICustomAddForm(Interface):
+    """
+    """
+
+
+@implementer(ICustomAddForm)
+class CustomAddForm(add.DefaultAddForm):
+    """ Custom add form disabling form_tabbing
+    """
+    enable_form_tabbing = False
+
+
+class ICustomAddView(Interface):
+    """ """
+
+
+@implementer(ICustomAddView)
+class CustomAddView(add.DefaultAddView):
+    form = CustomAddForm
+
 ```
 
-to activate it, you have to override the registration of the edit form for your desired content types.
+to activate them, you have to override the registration of the forms for your desired content types.
 In your configure.zcml:
 
 ```xml
@@ -141,21 +173,41 @@ In your configure.zcml:
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="example.contenttypes">
 
-  <!-- for TTW CT's -->
+  <!-- Edit form -->
   <browser:page
     name="edit"
-    for="plone.dexterity.interfaces.IDexterityContainer"
-    class=".custom_edit_form.CustomEditForm"
+    for="example.contenttypes.content.technical_facility.ITechnicalFacility"
+    class=".custom_forms.CustomEditForm"
     permission="cmf.ModifyPortalContent"
     layer="example.contenttypes.interfaces.IExampleContenttypesLayer"
     />
 
+  <!-- Edit form for TTW CT's -->
   <browser:page
     name="edit"
-    for="example.contenttypes.content.technical_facility.ITechnicalFacility"
-    class=".custom_edit_form.CustomEditForm"
+    for="plone.dexterity.interfaces.IDexterityContainer"
+    class=".custom_forms.CustomEditForm"
     permission="cmf.ModifyPortalContent"
     layer="example.contenttypes.interfaces.IExampleContenttypesLayer"
     />
+
+  <!-- Add form  -->
+  <adapter
+      factory=".custom_forms.CustomAddView"
+      provides="zope.publisher.interfaces.browser.IBrowserPage"
+      for="Products.CMFCore.interfaces.IFolderish
+           example.contenttypes.interfaces.IExampleContenttypesLayer
+           plone.dexterity.interfaces.IDexterityFTI"
+      name="TechnicalFacility"
+      />
+
+  <class class=".custom_forms.CustomAddView">
+    <require
+        permission="cmf.AddPortalContent"
+        interface="zope.publisher.interfaces.browser.IBrowserPage"
+        />
+  </class>
+
 </configure>
 ```
+
