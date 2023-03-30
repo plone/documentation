@@ -30,6 +30,7 @@ global-utils
 portal-actions
 users-groups
 security
+subscribers
 traversal-acquisition
 workflows
 search

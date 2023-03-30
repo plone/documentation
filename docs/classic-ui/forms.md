@@ -198,7 +198,7 @@ In your configure.zcml:
       for="Products.CMFCore.interfaces.IFolderish
            example.contenttypes.interfaces.IExampleContenttypesLayer
            plone.dexterity.interfaces.IDexterityFTI"
-      name="TechnicalFacility"
+      name="Technical Facility"
       />
 
   <class class=".custom_forms.CustomAddView">
