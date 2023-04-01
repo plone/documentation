@@ -48,10 +48,10 @@ Official MyST documentation
 #### Link to a chapter or page
 
 ```md
-Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
+Here is how to set up and build the documentation locally {doc}`/contributing/documentation/setup-build`.
 ```
 
-Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
+Here is how to set up and build the documentation locally {doc}`/contributing/documentation/setup-build`.
 
 
 (myst-reference-link-heading-label)=
