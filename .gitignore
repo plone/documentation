@@ -8,6 +8,7 @@
 pyvenv.cfg
 /_build
 /styles/Microsoft
+.python-version
 
 # symlinked from submodule
 docs/volto
