@@ -24,7 +24,8 @@ Other chapters cover any variations and additional policies for each package.
 ## Sign and return the Plone Contributor Agreement
 
 You must give permission to the Plone Foundation to publish your contribution, according to the license we use.
-Plone uses the [GNU General Public License, version 2](https://github.com/plone/Products.CMFPlone/blob/master/LICENSE).
+Plone uses the [GNU General Public License, version 2](https://github.com/plone/Products.CMFPlone/blob/master/LICENSE) for most of its packages and for any new packages.
+A few other packages use the [modified BSD license](https://opensource.org/license/bsd-3-clause/).
 You grant permission by signing and returning the Plone Contributor Agreement.
 
 ```{button-link} https://plone.org/foundation/contributors-agreement
@@ -37,7 +38,8 @@ After a member of the Plone Foundation reviews and accepts your signed agreement
 This process may take a few business days.
 
 ```{seealso}
-[Plone License FAQ](https://plone.org/foundation/copyright-licensing-logo/license-faq)
+-   [Plone License FAQ](https://plone.org/foundation/copyright-licensing-logo/license-faq)
+-   [Plone Framework Components Relicensing Policy, Framework Components Available Under a BSD License](https://plone.org/foundation/about/materials/foundation-resolutions/plone-framework-components-relicensing-policy#3b050ad2-361a-46de-b5c6-9b90f8947eb7)
 ```
 
 
