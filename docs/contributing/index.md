@@ -91,7 +91,7 @@ A project configures the types it allows in a file `towncrier.toml` located at t
 The content of this file must include the following.
 
 -   A brief message that summarizes the changes in your contribution.
--   An attribution to yourself, either in the format of `@github_username` or `[github_username]`.
+-   An attribution to yourself, in the format of `@github_username`.
 
 The following text is an example change log entry, placed inside {file}`/news/4569.documentation`.
 
