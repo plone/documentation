@@ -146,7 +146,7 @@ Volto
     See https://github.com/plone/plone.app.multilingual
 
 ```{todo}
-Add other important Plone packages to both the above list and the `toctree`.
+Add other selected Plone packages to both the above list and the `toctree`.
 ```
 
 
