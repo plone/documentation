@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Advanced configuration of Plone content types"
+    "property=og:description": "Advanced configuration of Plone content types"
+    "property=og:title": "Advanced configuration of Plone content types"
+    "keywords": "Plone, advanced, configuration, Dexterity, content types"
 ---
 
 # Advanced configuration
 
-**Further configuration and tips**
+This part describes further configuration and tips for content types in Plone.
 
 ```{toctree}
 :maxdepth: 2
