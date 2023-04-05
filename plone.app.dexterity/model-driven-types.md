@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Model-driven types"
+    "property=og:description": "Model-driven types"
+    "property=og:title": "Model-driven types"
+    "keywords": "Plone, model, content types"
 ---
 
 # Model-driven types
@@ -12,15 +12,16 @@ myst:
 In the previous section, we defined two types by using Zope schema.
 In this section, we're going to define a type's fields using an XML model file.
 
-The great advantage of using a model file is that we can prototype the content type in Dexterity's through-the-web field editor, then export the XML model file for incorporation into our package.
+The advantage of using a model file is that we can prototype the content type in Dexterity's through-the-web field editor, then export the XML model file for incorporation into our package.
 
 XML may be used to do pretty much anything you could do via Zope schema.
 Many users not already schooled in Zope schema will find this by far the easiest and fastest way to create Dexterity content types.
 
+
 ## Setting the field model
 
 Create an `example/conference/models` directory.
-In it, add a `presenter.xml` file with the contents:
+In it, add a `presenter.xml` file with the following content.
 
 ```xml
 <model xmlns:form="http://namespaces.plone.org/supermodel/form"
@@ -49,10 +50,10 @@ In it, add a `presenter.xml` file with the contents:
 </model>
 ```
 
-The XML name spaces we use are described in the `Dexterity XML` reference section.
+The XML name spaces we use are described in the {doc}`reference/dexterity-xml` reference chapter.
 
-Now, open the `presenter.py` that we created in the last section (a copy of our original program.py).
-Delete the field declarations from the IPresenter class and edit to read:
+Open {file}`presenter.py` that we created in the previous chapter, which is a copy of our original {file}`program.py`.
+Delete the field declarations from the `IPresenter` class, and edit as shown below:
 
 ```python
 from example.conference import MessageFactory as _
@@ -61,21 +62,21 @@ from zope import schema
 
 
 class IPresenter(model.Schema):
-
     """Schema for Conference Presenter content type."""
 
-    model.load('models/presenter.xml')
+    model.load("models/presenter.xml")
 ```
 
 Note the `model.load` directive.
 This will automatically load our model file to provide the content type field schema.
 
-## Setting Factory Type Information
 
-This part of the process is identical to what we explained for schema-driven type.
+## Setting factory type information
 
-Look in the `types.xml` file in your packages
-`example/conference/profiles/default` directory. It should now contain:
+This part of the process is identical to what we explained in {doc}`schema-driven-types`.
+
+Look in the {file}`types.xml` file in your package's `example/conference/profiles/default` directory.
+It should now contain the following code.
 
 ```xml
 <object name="portal_types">
@@ -85,7 +86,7 @@ Look in the `types.xml` file in your packages
 </object>
 ```
 
-For the *Presenter* type, we have `example.conference.presenter.xml`:
+For the `Presenter` type, we have `example.conference.presenter.xml`.
 
 ```xml
 <?xml version="1.0"?>
@@ -112,4 +113,4 @@ For the *Presenter* type, we have `example.conference.presenter.xml`:
 </object>
 ```
 
-Note that this is addable anywhere.
+Note that this is may be added anywhere.
