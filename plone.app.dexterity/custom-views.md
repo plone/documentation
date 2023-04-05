@@ -1,38 +1,35 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Configure custom views"
+    "property=og:description": "Configure custom views"
+    "property=og:title": "Configure custom views"
+    "keywords": "Plone, configure, custom views"
 ---
 
 # Custom views
 
-**Configuring custom views and using display forms**
+This chapter describes how to configure custom views and use display forms.
+
 
 ## Simple views
 
-**Creating basic views**
-
-So far, our types have used the default views.
-They use the *display* widgets from [z3c.form], much like the add and edit forms use the *edit* widgets.
+So far our types have used the default views.
+They use the display widgets from [`z3c.form`](https://pypi.org/project/z3c.form/), much like the add and edit forms use the edit widgets.
 This is functional, but not very attractive.
 Most types will need one or more custom view templates.
 
 Dexterity types are no different from any other content type in Plone.
 You can register a view for your schema interface, and it will be available on your type.
-If the view is named *view*, it will be the default view, at least if you use the standard FTI configuration.
-This is because the FTI’s `default_view` property is set to `view`, and `view` is in the list of `view_methods.`
+If the view is named `view`, it will be the default view, at least if you use the standard {term}`FTI` configuration.
+This is because the FTI's `default_view` property is set to `view`, and `view` is in the list of `view_methods`.
 
-First create a view registration with a `<browser:page />` ZCML directive in your `` `configure.zcml `` file:
+First create a view registration with a `<browser:page />` ZCML directive in your {file}`configure.zcml` file.
 
 ```xml
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser">
-
-  ...
 
   <browser:page
       name="view"
@@ -45,7 +42,7 @@ First create a view registration with a `<browser:page />` ZCML directive in you
 </configure>
 ```
 
-Secondly add a browser view in `program.py` as follows:
+Next add a browser view in `program.py` as follows.
 
 ```python
 from Acquisition import aq_inner
@@ -74,7 +71,7 @@ You can add any methods to the view.
 They will be available to the template via the `view` variable.
 The content object is available via `context`.
 
-Finaly add a template in `templates/programview.pt`:
+Finaly add a template in {file}`templates/programview.pt`.
 
 ```html
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
@@ -135,21 +132,19 @@ Finaly add a template in `templates/programview.pt`:
 
 For the most part, this template outputs the values of the various fields, using the `sessions()` method on the view to obtain the sessions contained within the program.
 
-:::{note}
-Notice how the `details` *RichText* field is output as `tal:content="structure context/details/output"`.
+```{note}
+Notice how the `details` `RichText` field is output as `tal:content="structure context/details/output"`.
 The `structure` keyword ensures that the rendered HTML is not escaped.
-The extra traversal to `details/output` is necessary because the *RichText* field actually stores a *RichTextValue* object that contains not only the raw text as entered by the user, but also a MIME type (e.g. `text/html`) and the rendered output text.
-*RichText* fields are covered in more detail {ref}`later in this manual <richtext-label>`.
-:::
+The extra traversal to `details/output` is necessary because the `RichText` field actually stores a `RichTextValue` object that contains not only the raw text as entered by the user, but also a MIME type (for example, `text/html`) and the rendered output text.
+`RichText` fields are covered in more detail {ref}`later in this manual <richtext-label>`.
+```
 
-The view for `Presenter` is even simpler:
+The view for `Presenter` is the following.
 
 ```xml
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser">
-
-    ...
 
     <browser:page
         name="view"
@@ -161,7 +156,7 @@ The view for `Presenter` is even simpler:
 </configure>
 ```
 
-The template, in `templates/presenterview.pt`, is similar to the previous template:
+The template in {file}`templates/presenterview.pt` is similar to the previous template.
 
 ```html
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
@@ -200,38 +195,36 @@ The template, in `templates/presenterview.pt`, is similar to the previous templa
 Obviously, these views are very basic.
 Much more interesting views could be created by putting a little more work into the templates.
 
-You should also realise that you can create any type of view using this technique.
-Your view does not have to be related to a particular content type, even.
-You could set the context to `Interface`, for example, to make a view that’s available on all types.
+You should also realize that you can create any type of view using this technique.
+Your view does not have to be related to a particular content type.
+You could set the context to `Interface`, for example, to make a view that's available on all types.
+
 
 ## Display view
 
-**Using display widgets in your views**
+In this section, we describe how to use display widgets in your views.
 
 In the previous section, we created a browser view.
 This kind of view is the most common.
-Sometimes we want to make use of the widgets and information in the type’s schema more directly.
-For example to invoke transforms or re-use more complex HTML.
+Sometimes we want to make use of the widgets and information in the type's schema more directly.
+For example to invoke transforms or reuse more complex HTML.
 
-To do this, you can use a *display view*.
-This is really just a view base class that knows about the schema of a type.
-We will use an example in `session.py`, with a template in `templates/sessionview.pt`.
+To do this, you can use a display view.
+This is a view base class that knows about the schema of a type.
+We will use an example in {file}`session.py`, with a template in {file}`templates/sessionview.pt`.
 
-:::{note}
-*Display view* involve the same type of overhead as add- and edit-forms.
-If you have complex content type with many behaviors, fieldsets and
-widget hints, you may notice a slow-down. This can be a problem
-on high volume sites.
-:::
+```{note}
+*Display views* involve the same type of overhead as add and edit forms.
+If you have complex content type with many behaviors, fieldsets, and widget hints, you may notice a slow down.
+This can be a problem on high volume sites.
+```
 
-The new view class is pretty much the same as before, except that we derive from `plone.dexterity.browser.view.DefaultView`:
+The new view class is pretty much the same as before, except that we derive from `plone.dexterity.browser.view.DefaultView`.
 
 ```xml
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser">
-
-    ...
 
     <browser:page
         name="view"
@@ -251,33 +244,28 @@ class SessionView(DefaultView):
     pass
 ```
 
-This gives our view a few extra properties that we can use in the template:
+This gives our view a few extra properties that we can use in the template.
 
 `view.w`
-
-: a dictionary of all the display widgets, keyed by field names.
-  For fields provided by behaviors, that is usually prefixed with the behavior interface name (`IBehaviorInterface.field_name`).
-  For the default schema, unqualified names apply.
+:   A dictionary of all the display widgets, keyed by field names.
+    For fields provided by behaviors, that is usually prefixed with the behavior interface name (`IBehaviorInterface.field_name`).
+    For the default schema, unqualified names apply.
 
 `view.widgets`
-
-: contains a list of widgets in schema order for the default fieldset.
+:   Contains a list of widgets in schema order for the default fieldset.
 
 `view.groups`
-
-: contains a list of fieldsets in fieldset order.
+:   Contains a list of fieldsets in fieldset order.
 
 `view.fieldsets`
-
-: contains a dictionary mapping fieldset name to fieldset.
+:   Contains a dictionary mapping fieldset name to fieldset.
 
 `widgets`
-
-: On a fieldset (group), you can access a `widgets` list to get widgets in that fieldset.
+:   On a fieldset (group), you can access a `widgets` list to get widgets in that fieldset.
 
 The `w` dict is the most commonly used.
 
-The `templates/sessionview.pt` template contains the following:
+The {file}`templates/sessionview.pt` template contains the following code.
 
 ```html
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
@@ -305,7 +293,5 @@ The `templates/sessionview.pt` template contains the following:
 </html>
 ```
 
-Notice how we use expressions like `view/w/details/render` (where `details` is the field name) to get the rendering of a widget.
+Notice how we use expressions such as `view/w/details/render` (where `details` is the field name) to get the rendering of a widget.
 Other properties include `__name__`, the field name, and `label`, the field title.
-
-[z3c.form]: http://pypi.python.org/pypi/z3c.form
