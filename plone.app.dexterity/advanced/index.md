@@ -14,19 +14,19 @@ This part describes further configuration and tips for content types in Plone.
 ```{toctree}
 :maxdepth: 2
 
-defaults.rst
-validators.rst
-vocabularies.rst
-references.rst
-rich-text-markup-transformations.rst
-files-and-images.rst
-static-resources.rst
-behaviours.rst
-event-handlers.rst
-permissions.rst
-workflow.rst
-catalog-indexing-strategies.rst
-custom-add-and-edit-forms.rst
-custom-content-classes.rst
-webdav-and-other-file-representations.rst
+defaults
+validators
+vocabularies
+references
+rich-text-markup-transformations
+files-and-images
+static-resources
+behaviours
+event-handlers
+permissions
+workflow
+catalog-indexing-strategies
+custom-add-and-edit-forms
+custom-content-classes
+webdav-and-other-file-representations
 ```
