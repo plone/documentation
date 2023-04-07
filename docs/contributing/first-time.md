@@ -33,6 +33,8 @@ Contributions to Plone are managed through git repositories on GitHub.
 This section first discusses what not to do, then how to work effectively with a project on GitHub.
 
 
+(things-not-to-do-label)=
+
 ### Things not to do
 
 The following is a list of the most frequent mistakes made by first-time contributors.
@@ -67,6 +69,8 @@ Learn from their mistakes, and don't commit them yourself.
     Duplicate pull requests may be ignored and closed without comment by the privileged GitHub teams.
 
 
+(plone-contributors-team-label)=
+
 ### Plone Contributors Team
 
 The Plone GitHub organization uses GitHub Teams to grant groups of GitHub users appropriate access to its repositories.
@@ -86,6 +90,8 @@ Core developers may ignore your contribution because you did not follow these in
 Please don't be "that person".
 
 
+(work-with-github-issues-label)=
+
 ### Work with GitHub issues
 
 1.  **Find issues that you want to work on.**
@@ -102,12 +108,16 @@ Please don't be "that person".
     Check for previous work in pull requests, assignment to another developer, or whether the requirements have changed.
 
 
+(set-up-your-environment-label)=
+
 ### Set up your environment
 
 1.  Start by [forking the project's repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account through the GitHub interface.
 1.  [Clone your forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
 1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
 
+
+(write-code-label)=
 
 ### Write code
 
@@ -136,6 +146,8 @@ We ask for your patience as we work through complex automated workflows that nee
 ```
 
 
+(test-and-code-quality-label)=
+
 ### Test and code quality
 
 Follow the project's testing and code quality policies.
@@ -145,6 +157,8 @@ This will save you and reviewers a lot of time and frustration.
 
 A bug fix or new feature should have a test that ensures that it works as intended.
 
+
+(create-a-pull-request-from-your-fork-label)=
 
 ### Create a pull request from your fork
 
