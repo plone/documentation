@@ -1,17 +1,17 @@
 ---
 myst:
   html_meta:
-    "description": "Contributing to Plone Core Code"
-    "property=og:description": "Contributing to Plone Core Code"
-    "property=og:title": "Contributing to Plone Core Code"
-    "keywords": "Plone, Plone Contributor Agreement, License, Code of Conduct, core, code"
+    "description": "Contributing to Plone Code"
+    "property=og:description": "Contributing to Plone Code"
+    "property=og:title": "Contributing to Plone Code"
+    "keywords": "Plone, Plone Contributor Agreement, License, Code of Conduct, code"
 ---
 
 (contributing-to-plone-core-code-index-label)=
 
-# Contributing to Plone core code
+# Contributing to Plone code
 
-This part of the documentation describes how to contribute to Plone core code, including all its packages and repositories under the Plone GitHub organization.
+This part of the documentation describes how to contribute to Plone code, including all its packages and repositories under the Plone GitHub organization.
 
 To contribute to any package in Plone, you must follow the policies of the [Plone Foundation](https://plone.org/foundation), [Plone GitHub organization](https://github.com/plone/) and the specific package.
 
@@ -104,12 +104,12 @@ Fix broken links for ReactJS.org. @stevepiercy
 
 (contributing-plone-packages-label)=
 
-## Plone core packages
+## Plone packages
 
-Each Plone core package may have specific policies and guidance.
+Each Plone package may have specific policies and guidance.
 This may include writing tests, developing add-ons, internationalization and localization, logging, and debugging.
 
-The following is an abridged list of actively developed Plone core packages with links to how to contribute to them.
+The following is an abridged list of actively developed Plone packages with links to how to contribute to them.
 
 `Products.CMFPlone`
 :   The primary Plone package.
