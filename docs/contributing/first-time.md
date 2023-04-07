@@ -87,14 +87,19 @@ Please don't be "that person".
     Working on documentation or on issues labeled with either `33 needs: docs` or `41 lvl: easy` are the two best ways for first-time contributors to contribute.
     This is because first-timers have a fresh perspective that might be overlooked by old-timers.
 1.  **Discuss whether you should perform any work.**
-    Any method below is acceptable, but are listed in order of most likely to get a response.
+    First see {ref}`Avoid duplicate effort <mistake-2-label>`.
+    Next, any discussion method listed below is acceptable, and they are listed in the order of most likely to get a response.
     -   Search for open issues in the issue trackers of Plone projects on GitHub, and comment on them.
     -   If an issue does not already exist for what you want to work on, then create a new issue in its issue tracker.
+        Use a descriptive title and description, include steps to reproduce the issue, and screenshots or videos that demonstrate the issue.
     -   Discuss during sprints, conferences, trainings, and other Plone events.
-    -   Ask on the [Plone Community Forum](https://community.plone.org/).
-    -   Ask in the [Plone chat on Discord](https://discord.com/invite/zFY3EBbjaj).
+    -   Discuss on the [Plone Community Forum](https://community.plone.org/).
+    -   Discuss in the [Plone chat on Discord](https://discord.com/invite/zFY3EBbjaj).
 1.  **Clarify the scope of work that needs to be done.**
-    Check for previous work in pull requests, assignment to another developer, or whether the requirements have changed.
+    Sometimes the issue description is blank or lacks clarity, the requirements have changed since it was created, or work has been completed in a pull request but the issue was not closed.
+    Ask for clarification, whether it is still relevant, or whether it should be closed.
+
+After you have satisfied the above steps and have clear direction on how to proceed, then you can begin work on the issue.
 
 
 (set-up-your-environment-label)=
