@@ -80,7 +80,7 @@ linkcheck_ignore = [
     r"http://yoursite",
     r"https://www.linode.com",
     r"https://vhs-ehrenamtsportal.de", # SSLError(SSLCertVerificationError
-    r"https://github.com/orgs/plone/teams/developers",  # requires auth
+    r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
     # Ignore specific anchors
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
