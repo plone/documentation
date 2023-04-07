@@ -102,11 +102,11 @@ Fix broken links for ReactJS.org. @stevepiercy
 ```
 
 
-(contributing-plone-packages-label)=
+(contributing-specific-contribution-policies-for-packages-label)=
 
-## Plone packages
+## Specific contribution policies of packages
 
-Each Plone package may have specific policies and guidance.
+Each Plone package may have specific contribution policies and guidance.
 This may include writing tests, developing add-ons, internationalization and localization, logging, and debugging.
 
 The following is an abridged list of actively developed Plone packages with links to how to contribute to them.
@@ -120,7 +120,7 @@ Documentation
     See {doc}`documentation/index`.
 
 Plone API
-:    API methods for Plone functionality.
+:   API methods for Plone functionality.
     See {doc}`../plone.api/contribute/index`.
 
 Plone REST API
@@ -130,26 +130,6 @@ Plone REST API
 Volto
 :   Plone 6 default frontend.
     See {doc}`../volto/developer-guidelines/contributing`.
-
-`plone.app.contentlisting`
-:   Facilitates working with Plone content objects.
-    See https://github.com/plone/plone.app.contenttypes
-
-`plone.app.contenttypes`
-:   Provides default content types for Plone.
-    See https://github.com/plone/plone.app.contenttypes
-
-`plone.app.event`
-:   A calendar framework for Plone.
-    See https://github.com/plone/plone.app.event
-
-`plone.app.multilingual`
-:   The default solution to create multilingual content in a Plone site.
-    See https://github.com/plone/plone.app.multilingual
-
-```{todo}
-Add other selected Plone packages to both the above list and the `toctree`.
-```
 
 
 ```{toctree}
