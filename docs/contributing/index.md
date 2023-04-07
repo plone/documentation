@@ -1,17 +1,17 @@
 ---
 myst:
   html_meta:
-    "description": "Contributing to Plone Code"
-    "property=og:description": "Contributing to Plone Code"
-    "property=og:title": "Contributing to Plone Code"
-    "keywords": "Plone, Plone Contributor Agreement, License, Code of Conduct, code"
+    "description": "Contributing to Plone"
+    "property=og:description": "Contributing to Plone"
+    "property=og:title": "Contributing to Plone"
+    "keywords": "Plone, Plone Contributor Agreement, License, Code of Conduct"
 ---
 
-(contributing-to-plone-core-code-index-label)=
+(contributing-to-plone-index-label)=
 
-# Contributing to Plone code
+# Contributing to Plone
 
-This part of the documentation describes how to contribute to Plone code, including all its packages and repositories under the Plone GitHub organization.
+This part of the documentation describes how to contribute to Plone, including all its packages and repositories under the Plone GitHub organization.
 
 To contribute to any package in Plone, you must follow the policies of the [Plone Foundation](https://plone.org/foundation), [Plone GitHub organization](https://github.com/plone/) and the specific package.
 
