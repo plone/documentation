@@ -11,7 +11,7 @@ myst:
 
 # First-time contributors
 
-This chapter provides guidance to first-time contributors to Plone and all its packages and repositories under the Plone GitHub organization.
+This chapter provides guidance to first-time contributors to Plone and all its projects and repositories under the Plone GitHub organization.
 
 It is assumed that the first-time contributor has already {doc}`installed Plone <../install/index>` on their development machine, has a GitHub account, and has basic knowledge of using git and GitHub.
 

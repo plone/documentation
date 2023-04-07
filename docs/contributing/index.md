@@ -11,12 +11,12 @@ myst:
 
 # Contributing to Plone
 
-This part of the documentation describes how to contribute to Plone, including all its packages and repositories under the Plone GitHub organization.
+This part of the documentation describes how to contribute to Plone, including all its projects and repositories under the Plone GitHub organization.
 
-To contribute to any package in Plone, you must follow the policies of the [Plone Foundation](https://plone.org/foundation), [Plone GitHub organization](https://github.com/plone/) and the specific package.
+To contribute to any project in Plone, you must follow the policies of the [Plone Foundation](https://plone.org/foundation), [Plone GitHub organization](https://github.com/plone/) and the specific project.
 
-This chapter covers policies that apply to all Plone packages.
-Other chapters cover any variations and additional policies for each package.
+This chapter covers policies that apply to all Plone projects.
+Other chapters cover any variations and additional policies for each project.
 
 
 (contributing-sign-and-return-the-plone-contributor-agreement-label)=
@@ -24,8 +24,8 @@ Other chapters cover any variations and additional policies for each package.
 ## Sign and return the Plone Contributor Agreement
 
 You must give permission to the Plone Foundation to publish your contribution, according to the license we use.
-Plone uses the [GNU General Public License, version 2](https://github.com/plone/Products.CMFPlone/blob/master/LICENSE) for most of its packages and for any new packages.
-A few other packages use the [modified BSD license](https://opensource.org/license/bsd-3-clause/).
+Plone uses the [GNU General Public License, version 2](https://github.com/plone/Products.CMFPlone/blob/master/LICENSE) for most of its projects and for any new projects.
+A few other projects use the [modified BSD license](https://opensource.org/license/bsd-3-clause/).
 You grant permission by signing and returning the Plone Contributor Agreement.
 
 ```{button-link} https://plone.org/foundation/contributors-agreement
@@ -102,17 +102,17 @@ Fix broken links for ReactJS.org. @stevepiercy
 ```
 
 
-(contributing-specific-contribution-policies-for-packages-label)=
+(contributing-specific-contribution-policies-for-projects-label)=
 
-## Specific contribution policies of packages
+## Specific contribution policies of projects
 
-Each Plone package may have specific contribution policies and guidance.
+Each Plone project may have specific contribution policies and guidance.
 This may include writing tests, developing add-ons, internationalization and localization, logging, and debugging.
 
-The following is an abridged list of actively developed Plone packages with links to how to contribute to them.
+The following is an abridged list of actively developed Plone projects with links to how to contribute to them.
 
 `Products.CMFPlone`
-:   The primary Plone package.
+:   The primary Plone project.
     See its [repository](https://github.com/plone/Products.CMFPlone).
 
 Documentation
