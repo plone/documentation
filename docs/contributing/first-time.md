@@ -40,29 +40,18 @@ This section first discusses what not to do, then how to work effectively with a
 The following is a list of the most frequent mistakes made by first-time contributors.
 Learn from their mistakes, and don't commit them yourself.
 
+(mistake-1-label)=
+
 1.  **Never ask to be assigned to an issue.**
+    Instead you may post a comment to claim it, if no one else has claimed it (see {ref}`Avoid duplicate effort <mistake-2-label>`).
+    For example, "I am working on this issue in pull request #123."
     You do not need to ask to be assigned to, or to work on, an open issue.
     As in any open source software project, you can start work on open issues at your convenience.
-    Privileged team members may ignore or delete such comments.
+    Privileged team members may ignore or delete comments asking to be assigned to an issue.
 
-1.  **Never edit an issue description that you did not create.**
-    The issue description is the first comment in the issue.
-    Editing the description is destructive behavior.
-    If the description is not clear, then ask the author to clarify it.
-    
-    ```{todo}
-    Verify whether Contributors members can still do this.
-    ```
+    (mistake-2-label)=
 
-1.  **Never close another contributor's pull request.**
-    This is extremly rude and disrespectful behavior.
-    Only members of privileged GitHub teams should close pull requests.
-    
-    ```{todo}
-    Verify whether Contributors members can still do this.
-    ```
-
-1.  **Avoid duplicate effort.**
+2.  **Avoid duplicate effort.**
     Don't work on issues that have already been claimed or worked on, unless such effort has been abandoned by the author.
     GitHub's interface provides links to related issues and pull requests, and who is assigned to an issue.
     Pull requests will be reviewed in the order received.
