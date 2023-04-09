@@ -130,7 +130,7 @@ exclude_patterns = [
     "plone.restapi/news",
     "plone.restapi/performance",
     "plone.restapi/src",
-    "volto/developer-guidelines/branch-policy.md",
+    "volto/contributing/branch-policy.md",
 ]
 
 html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
