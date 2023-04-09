@@ -7,7 +7,8 @@ myst:
     "keywords": "Plone, deployment, automation, caching"
 ---
 
-(caching-profiles-label)=
+(caching-proxies-label)=
+
 # Caching proxies
 
 It is common to place a caching reverse proxy in front of Zope when hosting large Plone sites.

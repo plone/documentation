@@ -48,10 +48,10 @@ Official MyST documentation
 #### Link to a chapter or page
 
 ```md
-Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
+Here is how to set up and build the documentation locally {doc}`/contributing/documentation/setup-build`.
 ```
 
-Here is how to set up and build the documentation locally {doc}`/contributing/setup-build`.
+Here is how to set up and build the documentation locally {doc}`/contributing/documentation/setup-build`.
 
 
 (myst-reference-link-heading-label)=
@@ -261,7 +261,6 @@ Example MyST syntax is shown below.
 
 ````md
 ```{video} /_static/user-manual/blocks/block-copy-cut.mp4
-    :width: 100%
 ```
 ````
 
@@ -270,7 +269,6 @@ Don't use file-relative paths.
 The above MyST markup renders as shown below.
 
 ```{video} /_static/user-manual/blocks/block-copy-cut.mp4
-    :width: 100%
 ```
 
 
