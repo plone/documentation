@@ -129,7 +129,7 @@ Plone REST API
 
 Volto
 :   Plone 6 default frontend.
-    See {doc}`../volto/developer-guidelines/contributing`.
+    See {doc}`../volto/contributing/index`.
 
 
 ```{toctree}
@@ -143,5 +143,5 @@ first-time
 documentation/index
 ../plone.api/contribute/index
 ../plone.restapi/docs/source/contributing/index
-../volto/developer-guidelines/contributing
+../volto/contributing/index
 ```
