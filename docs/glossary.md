@@ -652,7 +652,7 @@ UID
 integer identifier
 intid
     In Plone, an integer identifier, or intid, is used to uniquely identify content objects within a Plone site.
-    Each content item in a Plone site is given a unique intid, which the system uses internally to reference content, keep track of link-integrity, link translations, and other related purposes.
+    Each content item in a Plone site is given a unique intid, which the system uses internally to reference content, keep track of link integrity, link translations, and other related purposes.
 
 WSL
 Windows Subsystem for Linux
