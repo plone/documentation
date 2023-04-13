@@ -26,7 +26,7 @@ like for any other Python application, but this is a more advanced topic.
 Training
 --------
 
-A number of Plone trainers have joined forces to create completely open  `Training materials <http://training.plone.org/5>`_.
+A number of Plone trainers have joined forces to create completely open  `Training materials <https://training.plone.org>`_.
 
 While following a real-life course is the best way to get up to speed with Plone, the material is also very useful for self-study.
 You will find separate chapters on creating packages, writing your own theme and much more here.

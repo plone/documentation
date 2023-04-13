@@ -464,7 +464,7 @@ or a font-based icon provided by your package itself.
 
 It is not possible at this time to set an icon for your add-on package control panels without including css in your package.
 
-For documentation on how to use it in your own add-ons see http://training.plone.org/5/registry.html
+For documentation on how to use it in your own add-ons see `Training materials <https://training.plone.org>`_
 
 Properties
 ----------

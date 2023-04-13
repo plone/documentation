@@ -12,7 +12,7 @@ Introduction
    Important parts for adding JavaScript to addons can be found in the documentation here:
 
 - the :doc:`Plone 5 Resource Registry </adapt-and-extend/theming/resourceregistry>`.
-- `plone training <http://training.plone.org/5/javascript/index.html>`_.
+- `plone training <https://2022.training.plone.org/javascript/index.html>`_.
 
    While we are updating this documentation, you should also look at the following blogposts:
 

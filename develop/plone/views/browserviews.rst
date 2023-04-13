@@ -38,7 +38,7 @@ sufficient, as it is a callable.
 More information
 ================
 
-* `Mastering Plone Training <http://training.plone.org/5/>`_ has several chapters on views.
+* `Mastering Plone Training <https://2022.training.plone.org>`_ has several chapters on views.
 
 
 
