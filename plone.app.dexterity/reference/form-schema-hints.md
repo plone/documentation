@@ -28,7 +28,7 @@ from zope import schema
 
 class ISampleSchema(model.Schema):
 
-    title = schema.TextLine(title=u'Title')
+    title = schema.TextLine(title='Title')
 
     directives.omitted('additionalInfo')
     additionalInfo = schema.Bytes()
@@ -80,7 +80,7 @@ class ISampleSchema(model.Schema):
     # fieldset has already been defined.
 
     fieldset('extra',
-        label=u'Extra information',
+        label='Extra information',
         fields=['footer', 'dummy']
     )
 
@@ -90,16 +90,16 @@ class ISampleSchema(model.Schema):
     directives.widget(body='plone.app.z3cform.wysiwyg.WysiwygFieldWidget')
     primary('body')
     body = schema.Text(
-        title=u'Body text',
+        title='Body text',
         required=False,
-        default=u'Body text goes here'
+        default='Body text goes here'
     )
 
     # The widget can also be specified as an object
 
     directives.widget(footer=WysiwygFieldWidget)
     footer = schema.Text(
-        title=u'Footer text',
+        title='Footer text',
         required=False
     )
 
@@ -108,15 +108,15 @@ class ISampleSchema(model.Schema):
 
     directives.omitted('dummy')
     dummy = schema.Text(
-        title=u'Dummy'
+        title='Dummy'
     )
 
     # A field in 'hidden' mode
 
     directives.mode(secret='hidden')
     secret = schema.TextLine(
-        title=u'Secret',
-        default=u'Secret stuff'
+        title='Secret',
+        default='Secret stuff'
     )
 
     # This field is moved before the 'description' field of the standard
@@ -124,7 +124,7 @@ class ISampleSchema(model.Schema):
 
     directives.order_before(importantNote='IDublinCore.description')
     importantNote = schema.TextLine(
-        title=u'Important note',
+        title='Important note',
     )
 ```
 
@@ -153,7 +153,7 @@ class ISampleSchema(model.Schema):
     directives.read_permission(reviewNotes='cmf.ReviewPortalContent')
     directives.write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
-        title=u'Review notes',
+        title='Review notes',
         required=False,
     )
 ```

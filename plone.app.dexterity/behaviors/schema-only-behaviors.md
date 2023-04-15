@@ -74,13 +74,13 @@ class IRelatedItems(model.Schema):
     """Behavior interface to make a type support related items.
     """
 
-    form.fieldset('categorization', label=u"Categorization",
+    form.fieldset('categorization', label="Categorization",
                   fields=['relatedItems'])
 
     relatedItems = RelationList(
-        title=u"Related Items",
+        title="Related Items",
         default=[],
-        value_type=RelationChoice(title=u"Related",
+        value_type=RelationChoice(title="Related",
                       source=ObjPathSourceBinder()),
         required=False,
         )

@@ -67,30 +67,30 @@ class ISession(model.Schema):
     """
 
     title = schema.TextLine(
-            title=_(u"Title"),
-            description=_(u"Session title"),
+            title=_("Title"),
+            description=_("Session title"),
         )
 
     description = schema.Text(
-            title=_(u"Session summary"),
+            title=_("Session summary"),
         )
 
     directives.primary('details')
     details = RichText(
-            title=_(u"Session details"),
+            title=_("Session details"),
             required=False
         )
 
     form.widget(presenter=AutocompleteFieldWidget)
     presenter = RelationChoice(
-            title=_(u"Presenter"),
+            title=_("Presenter"),
             source=ObjPathSourceBinder(object_provides=IPresenter.__identifier__),
             required=False,
         )
 
     form.write_permission(track='example.conference.ModifyTrack')
     track = schema.Choice(
-            title=_(u"Track"),
+            title=_("Track"),
             source=possibleTracks,
             required=False,
         )

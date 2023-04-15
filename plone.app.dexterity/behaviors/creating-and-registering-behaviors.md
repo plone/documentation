@@ -87,13 +87,13 @@ class ITags(model.Schema):
 
     directives.fieldset(
             'categorization',
-            label=_(u'Categorization'),
+            label=_('Categorization'),
             fields=('tags',),
         )
 
     tags = Tags(
-            title=_(u"Tags"),
-            description=_(u"Applicable tags"),
+            title=_("Tags"),
+            description=_("Applicable tags"),
             required=False,
             allow_uncommon=True,
         )

@@ -55,7 +55,7 @@ object. It is mostly useful in tests:
 
 ```python
 from plone.dexterity.utils import createContent
-context = createContent('example.type', title=u"Foo")
+context = createContent('example.type', title="Foo")
 ```
 
 Any keyword arguments are used to set properties on the new instance
@@ -107,7 +107,7 @@ You can also both create and add an object in one call:
 
 ```python
 from plone.dexterity.utils import createContentInContainer
-createContentInContainer(folder, 'example.type', title=u"Foo")
+createContentInContainer(folder, 'example.type', title="Foo")
 ```
 
 Again, you can pass *checkConstraints=False* to bypass folder

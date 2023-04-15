@@ -65,7 +65,7 @@ class IPresenter(model.Schema):
     ...
 
     picture = NamedBlobImage(
-        title=_(u"Please upload an image"),
+        title=_("Please upload an image"),
         required=False,
     )
 ```

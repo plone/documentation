@@ -49,7 +49,7 @@ The constraint function does not have access to the context, but if you need to 
 To use the constraint, pass the function as the `constraint` argument to the field constructor, for example:
 
 ```python
-my_field = schema.TextLine(title=_(u"My field"), constraint=checkForMagic)
+my_field = schema.TextLine(title=_("My field"), constraint=checkForMagic)
 ```
 
 Constraints are easy to write, but do not necessarily produce very friendly error messages.

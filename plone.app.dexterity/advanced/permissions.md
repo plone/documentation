@@ -129,7 +129,7 @@ class IExampleProtectedInformation(model):
     read_permission(info='cmf.ManagePortal')
     write_permission(info='cmf.ManagePortal')
     info = schema.Text(
-        title=_(u"Information"),
+        title=_("Information"),
     )
 ```
 
@@ -142,7 +142,7 @@ First, we add this to the `IProgram` schema in `program.py`:
 ```
 form.widget(tracks=TextLinesFieldWidget)
 tracks = schema.List(
-        title=_(u"Tracks"),
+        title=_("Tracks"),
         required=True,
         default=[],
         value_type=schema.TextLine(),
@@ -192,7 +192,7 @@ protect it with the relevant write permission:
 ```
 write_permission(track='example.conference.ModifyTrack')
 track = schema.Choice(
-        title=_(u"Track"),
+        title=_("Track"),
         source=possibleTracks,
         required=False,
     )

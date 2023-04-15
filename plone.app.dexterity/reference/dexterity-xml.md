@@ -280,7 +280,7 @@ Sample Python for the validator factory:
 ```python
 @provider(IDefaultFactory)
 def dummy_defaultFactory():
-    return u'something'
+    return 'something'
 ```
 
 For a callable using context:

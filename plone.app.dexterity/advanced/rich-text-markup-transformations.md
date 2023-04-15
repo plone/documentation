@@ -32,7 +32,7 @@ from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 class ITestSchema(model.Schema):
 
     form.widget('body', WysiwygFieldWidget)
-    body = schema.Text(title=u"Body text")
+    body = schema.Text(title="Body text")
 ```
 
 (richtext-label)=
@@ -47,7 +47,7 @@ from plone.supermodel import model
 
 class ITestSchema(model.Schema):
 
-    body = RichText(title=u"Body text")
+    body = RichText(title="Body text")
 ```
 
 The `RichText` field constructor can take the following arguments in
@@ -90,7 +90,7 @@ And this
 class ITestSchema(model.Schema):
 
     body = RichText(
-        title=u"Body text",
+        title="Body text",
         default_mime_type='text/x-rst',
         output_mime_type='text/x-html',
         allowed_mime_types=('text/x-rst', 'text/structured',),
@@ -152,7 +152,7 @@ type from the field instance.):
 from plone.app.textfield.value import RichTextValue
 ...
 
-context.body = RichTextValue(u"Some input text", 'text/plain', 'text/html')
+context.body = RichTextValue("Some input text", 'text/plain', 'text/html')
 ```
 
 Of course, the standard widget used for a `RichText` field will

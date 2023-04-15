@@ -107,7 +107,7 @@ class IReviewers(model.Schema):
 
     directives.fieldset(
             'ownership',
-            label=_(u'Ownership'),
+            label=_('Ownership'),
             fields=(
                 'official_reviewers',
                 'unofficial_reviewers'
@@ -117,13 +117,13 @@ class IReviewers(model.Schema):
     directives.widget(official_reviewers=AutocompleteMultiFieldWidget)
     directives.write_permission(official_reviewers='iz.EditOfficialReviewers')
     official_reviewers = schema.Tuple(
-            title=_(u'Official reviewers'),
+            title=_('Official reviewers'),
             description=_(
-                u'People or groups who may review this item in an official '
-                u'capacity.'
+                'People or groups who may review this item in an official '
+                'capacity.'
             ),
             value_type=schema.Choice(
-                title=_(u"Principal"),
+                title=_("Principal"),
                 source="plone.principalsource.Principals"
             ),
             required=False,
@@ -133,13 +133,13 @@ class IReviewers(model.Schema):
     directives.widget(unofficial_reviewers=AutocompleteMultiFieldWidget)
     directives.write_permission(unofficial_reviewers='iz.EditUnofficialReviewers')
     unofficial_reviewers = schema.Tuple(
-            title=_(u'Unofficial reviewers'),
+            title=_('Unofficial reviewers'),
             description=_(
-                u'People or groups who may review this item in a supplementary '
-                u'capacity'
+                'People or groups who may review this item in a supplementary '
+                'capacity'
             ),
             value_type=schema.Choice(
-                title=_(u"Principal"),
+                title=_("Principal"),
                 source="plone.principalsource.Principals"
             ),
             required=False,

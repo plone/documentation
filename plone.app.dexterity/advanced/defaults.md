@@ -33,13 +33,13 @@ We also need to modify `IProgram` so the `start` and `end` fields use these func
 class IProgram(model.Schema):
 
     start = schema.Datetime(
-        title=_(u"Start date"),
+        title=_("Start date"),
         required=False,
         defaultFactory=startDefaultValue,
     )
 
     end = schema.Datetime(
-        title=_(u"End date"),
+        title=_("End date"),
         required=False,
         defaultFactory=endDefaultValue,
     )
