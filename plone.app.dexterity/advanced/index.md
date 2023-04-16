@@ -21,7 +21,7 @@ references
 rich-text-markup-transformations
 files-and-images
 static-resources
-behaviours
+behaviors
 event-handlers
 permissions
 workflow
