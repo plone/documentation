@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Useful references for field types, widgets, and APIs for content types in Plone"
+    "property=og:description": "Useful references for field types, widgets, and APIs for content types in Plone"
+    "property=og:title": "Useful references for field types, widgets, and APIs for content types in Plone"
+    "keywords": "Plone, reference, field types, widgets, and APIs"
 ---
 
 # Reference
 
-**Useful references for things like field types, wigets and APIs**
+This part of the documentation describes useful references for field types, widgets, and APIs.
 
 ```{toctree}
 :maxdepth: 2
