@@ -12,6 +12,8 @@ myst:
 This chapter describes how to create a minimal type based on a schema.
 
 
+(the-schema-label)=
+
 ## The schema
 
 A simple Dexterity type consists of a schema and a Factory Type Information (FTI), the object configured in {guilabel}`portal_types` in the ZMI.
