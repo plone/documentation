@@ -1,10 +1,10 @@
 ---
 myst:
- html_meta:
- "description": "Standard schema fields in Plone content types"
- "property=og:description": "Standard schema fields in Plone content types"
- "property=og:title": "Standard schema fields in Plone content types"
- "keywords": "Plone, schema fields, content types"
+  html_meta:
+    "description": "Standard schema fields in Plone content types"
+    "property=og:description": "Standard schema fields in Plone content types"
+    "property=og:title": "Standard schema fields in Plone content types"
+    "keywords": "Plone, schema fields, content types"
 ---
 
 # Fields
