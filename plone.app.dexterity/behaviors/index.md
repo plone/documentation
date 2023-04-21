@@ -14,10 +14,10 @@ This section describes how to create reusable behaviors for Dexterity content ty
 ```{toctree}
 :maxdepth: 2
 
-intro.rst
-behavior-basics.rst
-creating-and-registering-behaviors.rst
-providing-marker-interfaces.rst
-schema-only-behaviors.rst
-testing-behaviors.rst
+intro
+behavior-basics
+creating-and-registering-behaviors
+providing-marker-interfaces
+schema-only-behaviors
+testing-behaviors
 ```
