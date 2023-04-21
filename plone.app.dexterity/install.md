@@ -16,6 +16,6 @@ Dexterity is already installed as part of Plone 5.x and later.
 No further action is needed for these versions.
 ```
 
-## Install Dexterity on Plone 4.3
+## Install Dexterity in Plone 4.3
 
 See [Installing Dexterity](https://4.docs.plone.org/external/plone.app.dexterity/docs/install.html).
