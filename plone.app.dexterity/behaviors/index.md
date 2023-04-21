@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "How to create reusable behaviors for Dexterity content types in Plone"
+    "property=og:description": "How to create reusable behaviors for Dexterity content types in Plone"
+    "property=og:title": "How to create reusable behaviors for Dexterity content types in Plone"
+    "keywords": "Plone, reusable, behaviors, content types"
 ---
 
 # Behaviors
 
-**How to create re-usable behaviors for Dexterity types**
+This section describes how to create reusable behaviors for Dexterity content types.
 
 ```{toctree}
 :maxdepth: 2
