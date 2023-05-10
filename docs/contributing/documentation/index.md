@@ -210,8 +210,6 @@ We imported the external repositories the `plone/documentation` repository as de
 
 ```{important}
 We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master`, `plone/plone.restapi@master`, and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
-For Volto, we backport changes to documentation from `plone/volto@master` to `plone/volto@16.x.x`, and deploy documentation from `plone/volto@16.x.x`.
-These branches may change as we get closer to a production release.
 ```
 
 1.  From the project root directory, sync your local `6.0` branch with its remote.
