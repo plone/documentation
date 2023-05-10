@@ -81,4 +81,4 @@ To make it easier for other contributors to work with your project, update the f
 -   Add the symlink `docs/my_package` to `.gitignore`.
 -   Optionally set a branch to work on in `.gitmodules`.
 
-Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6-dev`](https://github.com/plone/documentation/compare).
+Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6.0`](https://github.com/plone/documentation/compare).
