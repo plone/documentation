@@ -132,7 +132,7 @@ This approach allows you to migrate from Plone 4 to 6, from Python 2 to 3, and f
 It is recommended for large and complex migrations.
 
 The recommended tool for this is [`collective.exportimport`](https://github.com/collective/collective.exportimport).
-An alternative is `transmogrifier` (see the training {ref}`training:transmogrifier-label`).
+An alternative is `transmogrifier` (see the training {ref}`training-2022:transmogrifier-label`).
 
 
 (introduction-major-changes-label)=
