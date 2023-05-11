@@ -15,7 +15,7 @@ This guide is for administrators of Plone Documentation.
 It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation.
 
 
-(administrators-import-docs-submodule-label)=
+(administrators-import-docs-and-converting-to-myst-label)=
 
 ## Importing external docs and converting to MyST
 
