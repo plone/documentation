@@ -64,7 +64,6 @@ In this example, the file is `types/Document.xml` and contains this XML:
   <property name="allow_discussion">False</property>
   <property name="factory">Document</property>
   <property name="icon_expr">string:contenttype/document</property>
-  <property name="link_target" />
 
   <!-- Hierarchy control -->
   <property name="allowed_content_types" />
@@ -216,8 +215,8 @@ The following FTI properties are only used in the Classic UI:
 :   Name of the default view used to display this content type.
 
 `default_view_fallback`
-:   ```{todo} add definition of `default_view_fallback `.
-    ```
+:   Boolean.
+    If `True`, the `default_view` will be used if the assigned view is not found.
 
 `icon_expr`
 :   TALES expression returning the name of one of the registered icons.
@@ -225,10 +224,6 @@ The following FTI properties are only used in the Classic UI:
 
 `immediate_view`
 :   Name of the view alias to display after a new item is added.
-
-`link_target`
-:   ```{todo} add definition of `link_target`.
-    ```
 
 `view_methods`
 :   List of views which can be selected to display this content type.
