@@ -207,7 +207,7 @@ The XML sets a number of FTI properties:
 The following FTI properties are only used in the Classic UI:
 
 `add_view_expr`
-:   TALES expression returning the URL for the form to add a new item of this content type.
+:  {term}`TALES` expression returning the URL for the form to add a new item of this content type.
 
 `alias` elements
 :   Controls a mapping from URL to views.
@@ -221,7 +221,7 @@ The following FTI properties are only used in the Classic UI:
     If `True`, the `default_view` will be used if the assigned view is not found.
 
 `icon_expr`
-:   TALES expression returning the name of one of the registered icons.
+:   {term}`TALES` expression returning the name of one of the registered icons.
     See {doc}`icons`.
 
 `immediate_view`
