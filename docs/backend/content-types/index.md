@@ -157,7 +157,7 @@ The XML sets a number of FTI properties:
 
 `allow_discussion`
 :   Boolean.
-    Controls whether Plone's commenting system is enabled for this content type.
+    Controls whether Plone's commenting system is enabled by default for this content type.
 
 `allowed_content_types`
 :   List of content types which can be added inside this one.
