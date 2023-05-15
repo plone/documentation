@@ -144,4 +144,5 @@ documentation/index
 ../plone.api/contribute/index
 ../plone.restapi/docs/source/contributing/index
 ../volto/contributing/index
+github-administration
 ```
