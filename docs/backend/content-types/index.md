@@ -150,89 +150,83 @@ Set the `i18n:domain` to the i18n domain which includes translations for this co
 
 The XML sets a number of FTI properties:
 
-```{glossary}
-:sorted: true
+`action` elements
+:   Defines additional {doc}`actions <portal-actions>` which are available for this content type.
 
-title
-    The name of the content type displayed in the UI.
+`add_permission`
+:   Id of the permission controlling whether the current user has permission to add this content type.
 
-description
-    Short description displayed in the UI.
+`allow_discussion`
+:   Boolean. Controls whether Plone's commenting system is enabled for this content type.
 
-factory
-    Name of the factory adapter used to create new instances of the content type.
+`allowed_content_types`
+:   List of content types which can be added inside this one.
+    Only used if `filter_content_types` is True.
+
+`behaviors`
+:   List of {doc}`behaviors <behaviors>` enabled for this content type.
+
+`description`
+:   Short description displayed in the UI.
+
+`factory`
+:   Name of the factory adapter used to create new instances of the content type.
     Usually the same as the content type name.
 
-add_permission
-    Id of the permission controlling whether the current user has permission to add this content type.
-
-klass
-    Dotted path to the Python class for this content type.
-
-schema
-    Dotted path to the schema for this content type.
-
-model_file
-    Location of an XML file to load as the content type's schema.
-    This is an alternative to `schema` and `model_source`.
-
-model_source
-    Inline XML schema for the content type.
-    This is an alternative to `schema` and `model_file`.
-
-behaviors
-    List of {doc}`behaviors <behaviors>` enabled for this content type.
-
-global_allow
-    Boolean.
-    Set to `True` to allow adding the content type anywhere in the site where the user has permission.
-    Set to `False` to only allow adding it inside other content types that include this one in `allowed_content_types`.
-
-filter_content_types
-    Boolean. Controls which content types can be added inside this one.
+`filter_content_types`
+:   Boolean. Controls which content types can be added inside this one.
     If `True`, allow only the types listed in `allowed_content_types`.
     If `False`, allow any content type that the user has permission to add.
 
-allowed_content_types
-    List of content types which can be added inside this one.
-    Only used if `filter_content_types` is True.
+`global_allow`
+:   Boolean.
+    Set to `True` to allow adding the content type anywhere in the site where the user has permission.
+    Set to `False` to only allow adding it inside other content types that include this one in `allowed_content_types`.
 
-allow_discussion
-    Boolean. Controls whether Plone's commenting system is enabled for this content type.
+`klass`
+:   Dotted path to the Python class for this content type.
 
-`action` elements
-    Defines additional {doc}`actions <portal-actions>` which are available for this content type.
-```
+`model_file`
+:   Location of an XML file to load as the content type's schema.
+    This is an alternative to `schema` and `model_source`.
+
+`model_source`
+:   Inline XML schema for the content type.
+    This is an alternative to `schema` and `model_file`.
+
+`schema`
+:   Dotted path to the schema for this content type.
+
+`title`
+:   The name of the content type displayed in the UI.
+
 
 The following FTI properties are only used in the Classic UI:
 
-```{glossary}
-:sorted: true
-icon_expr
-    TALES expression returning the name of one of the registered icons.
-    See {doc}`icons`.
-
-link_target
-    ```{todo} add definition of `link_target`.
-    ```
-
-add_view_expr
-    TALES expression returning the URL for the form to add a new item of this content type.
-
-default_view
-    Name of the default view used to display this content type.
-
-default_view_fallback
-    ```{todo} add definition of `default_view_fallback `.
-    ```
-
-immediate_view
-    Name of the view alias to display after a new item is added.
-
-view_methods
-    List of views which can be selected to display this content type.
+`add_view_expr`
+:   TALES expression returning the URL for the form to add a new item of this content type.
 
 `alias` elements
-    Controls a mapping from URL to views.
+:   Controls a mapping from URL to views.
     It's not common to change this.
-```
+
+`default_view`
+:   Name of the default view used to display this content type.
+
+`default_view_fallback`
+:   ```{todo} add definition of `default_view_fallback `.
+    ```
+
+`icon_expr`
+:   TALES expression returning the name of one of the registered icons.
+    See {doc}`icons`.
+
+`immediate_view`
+:   Name of the view alias to display after a new item is added.
+
+`link_target`
+:   ```{todo} add definition of `link_target`.
+    ```
+
+`view_methods`
+:   List of views which can be selected to display this content type.
