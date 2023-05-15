@@ -196,7 +196,9 @@ The XML sets a number of FTI properties:
     This is an alternative to `schema` and `model_file`.
 
 `schema`
-:   Dotted path to the schema for this content type.
+:   Dotted path to the Python schema for this content type.
+    One of `model_file`, `model_source`, and `schema` must be set.
+    `schema` is the most commonly used.
 
 `title`
 :   The name of the content type displayed in the UI.
