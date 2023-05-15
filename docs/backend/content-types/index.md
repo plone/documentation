@@ -17,9 +17,10 @@ See the chapter {ref}`training:dexterity1-label` from the Mastering Plone 6 Trai
 
 ## What is a content type?
 
-Each item in a Plone site is an instance of a particular content type. We have different content types to reflect the different kinds of information about which we need to collect and display information.
+Each item in a Plone site is an instance of a particular content type.
+We have different content types to reflect the different kinds of information about which we need to collect and display information.
 
-Pages, news items, events, files (binary) and images are examples of content types.
+Pages, news items, events, files (binary), and images are examples of content types.
 
 Lots of things in Plone can be configured to work differently based on the content type. For example, each content type has:
 - a {ref}`schema <backend-fields-label>` specifying the fields which can be edited for the content type
@@ -31,7 +32,7 @@ It is common in developing a web site that you'll need customized versions of co
 
 ## Factory Type Information
 
-A content type is defined by creating a Factory Type Information (FTI) object.
+A content type is defined by creating a {term}`Factory Type Information` (FTI) object.
 
 To create an FTI in a GenericSetup profile, add the content type to the list in `types.xml`. For example, this adds the standard Plone page (Document) content type:
 
@@ -43,6 +44,7 @@ To create an FTI in a GenericSetup profile, add the content type to the list in 
 
 Then, add a file to the `types` directory with the same name.
 In this example, the file is `types/Document.xml` and contains this XML:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
@@ -179,17 +181,17 @@ model_source
     This is an alternative to `schema` and `model_file`.
 
 behaviors
-    List of {ref}`behaviors <backend-behaviors-label>` enabled for this content type.
+    List of {doc}`behaviors <behaviors>` enabled for this content type.
 
 global_allow
     Boolean.
-    Set to True to allow adding the content type anywhere in the site where the user has permission.
-    Set to False to only allow adding it inside other content types that include this one in `allowed_content_types`.
+    Set to `True` to allow adding the content type anywhere in the site where the user has permission.
+    Set to `False` to only allow adding it inside other content types that include this one in `allowed_content_types`.
 
 filter_content_types
     Boolean. Controls which content types can be added inside this one.
-    If True, allow only the types listed in `allowed_content_types`.
-    If False, allow any content type that the user has permission to add.
+    If `True`, allow only the types listed in `allowed_content_types`.
+    If `False`, allow any content type that the user has permission to add.
 
 allowed_content_types
     List of content types which can be added inside this one.
@@ -199,7 +201,7 @@ allow_discussion
     Boolean. Controls whether Plone's commenting system is enabled for this content type.
 
 `action` elements
-    Defines additional {ref}`actions <backend-portal-actions-label>` which are available for this content type.
+    Defines additional {doc}`actions <portal-actions>` which are available for this content type.
 ```
 
 The following FTI properties are only used in the Classic UI:
@@ -208,10 +210,11 @@ The following FTI properties are only used in the Classic UI:
 :sorted: true
 icon_expr
     TALES expression returning the name of one of the registered icons.
-    See {ref}`classic-ui-icons-label`
+    See {doc}`icons`.
 
 link_target
-    TODO
+    ```{todo} add definition of `link_target`.
+    ```
 
 add_view_expr
     TALES expression returning the URL for the form to add a new item of this content type.
@@ -220,7 +223,8 @@ default_view
     Name of the default view used to display this content type.
 
 default_view_fallback
-    TODO
+    ```{todo} add definition of `default_view_fallback `.
+    ```
 
 immediate_view
     Name of the view alias to display after a new item is added.
