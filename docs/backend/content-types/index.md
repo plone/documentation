@@ -157,7 +157,8 @@ The XML sets a number of FTI properties:
 :   Id of the permission controlling whether the current user has permission to add this content type.
 
 `allow_discussion`
-:   Boolean. Controls whether Plone's commenting system is enabled for this content type.
+:   Boolean.
+    Controls whether Plone's commenting system is enabled for this content type.
 
 `allowed_content_types`
 :   List of content types which can be added inside this one.
@@ -174,7 +175,8 @@ The XML sets a number of FTI properties:
     Usually the same as the content type name.
 
 `filter_content_types`
-:   Boolean. Controls which content types can be added inside this one.
+:   Boolean.
+    Controls which content types can be added inside this one.
     If `True`, allow only the types listed in `allowed_content_types`.
     If `False`, allow any content type that the user has permission to add.
 
