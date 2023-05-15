@@ -150,7 +150,7 @@ Set the `i18n:domain` to the i18n domain which includes translations for this co
 The XML sets a number of FTI properties:
 
 `action` elements
-:   Defines additional {doc}`actions <portal-actions>` which are available for this content type.
+:   Defines additional {doc}`actions </backend/portal-actions>` which are available for this content type.
 
 `add_permission`
 :   Id of the permission controlling whether the current user has permission to add this content type.
@@ -164,7 +164,7 @@ The XML sets a number of FTI properties:
     Only used if `filter_content_types` is True.
 
 `behaviors`
-:   List of {doc}`behaviors <behaviors>` enabled for this content type.
+:   List of {doc}`behaviors </backend/behaviors>` enabled for this content type.
 
 `description`
 :   Short description displayed in the UI.
@@ -222,7 +222,7 @@ The following FTI properties are only used in the Classic UI:
 
 `icon_expr`
 :   {term}`TALES` expression returning the name of one of the registered icons.
-    See {doc}`icons`.
+    See {doc}`/classic-ui/icons`.
 
 `immediate_view`
 :   Name of the view alias to display after a new item is added.
