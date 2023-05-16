@@ -147,7 +147,12 @@ The `name` attribute on the root element in the XML must match the name in the f
 
 Set the `i18n:domain` to the i18n domain which includes translations for this content type. This is usually the same as the name of the Python package which contains the content type.
 
-The XML sets a number of FTI properties:
+
+(global-fti-properties-label)=
+
+### Global FTI properties
+
+The XML sets a number of FTI properties that are used globally, in both Classic UI and Volto:
 
 `action` elements
 :   Defines additional {doc}`actions </backend/portal-actions>` which are available for this content type.
@@ -204,10 +209,15 @@ The XML sets a number of FTI properties:
 :   The name of the content type displayed in the UI.
 
 
-The following FTI properties are only used in the Classic UI:
+
+(classic-ui-only-fti-properties-label)=
+
+### Classic UI only FTI properties
+
+The following FTI properties are used only in Classic UI:
 
 `add_view_expr`
-:  {term}`TALES` expression returning the URL for the form to add a new item of this content type.
+:   {term}`TALES` expression returning the URL for the form to add a new item of this content type.
 
 `alias` elements
 :   Controls a mapping from URL to views.
