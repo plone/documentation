@@ -384,6 +384,9 @@ HAProxy
 nginx
     [nginx](https://docs.nginx.com/nginx/) (pronounced "engine x") is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 
+traefik
+    [traefik](https://traefik.io/) is an open-source reverse proxy and load balancer, suitable for containerized architectures.
+
 Volto
     [Volto](https://github.com/plone/volto) is a React-based frontend for the Plone CMS.
     It is the default user interface for Plone 6.
