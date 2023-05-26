@@ -3,21 +3,21 @@ myst:
   html_meta:
     "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
     "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
-    "property=og:title": "traefik, Frontend, Backend, Varnish container example"
-    "keywords": "Plone 6, Container, Docker, traefik, Frontend, Backend, Varnish"
+    "property=og:title": "Traefik Proxy, Frontend, Backend, Varnish container example"
+    "keywords": "Plone 6, Container, Docker, Traefik Proxy, Frontend, Backend, Varnish"
 ---
 
-# traefik, Frontend, Backend, Varnish container example
+# Traefik Proxy, Frontend, Backend, Varnish container example
 
 This example is a very simple setup with one backend and data being persisted in a Docker volume.
 
-{term}`traefik` in this example is used as a reverse proxy.
+{term}`Traefik Proxy` in this example is used as a reverse proxy.
 
 {term}`Varnish` is used for caching.
 
 A purger component is also used. This solves the problem of invalidating the cache in multiple Varnish servers, which could be desirable in containerized deployment.
 
-## Setup
+## Create a project space
 
 Create an empty project directory named `traefik-volto-plone-varnish`.
 
@@ -32,7 +32,7 @@ cd traefik-volto-plone-varnish
 ```
 
 
-### Varnish configuration
+## Varnish configuration
 
 Create an empty directory named `etc`.
 
@@ -40,7 +40,7 @@ Create an empty directory named `etc`.
 mkdir etc
 ```
 
-Add there a `varnish.vcl` that will be used by the varnish image:
+Add there a file {file}`varnish.vcl` that will be used by the Varnish image:
 
 ```vcl
 vcl 4.0;
@@ -318,9 +318,9 @@ sub vcl_deliver {
 You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
 ```
 
-### Service configuration with Docker Compose
+## Service configuration with Docker Compose
 
-Now let's create a `docker-compose.yml` file:
+Now let's create a {file}`docker-compose.yml` file:
 
 ```yaml
 version: "3"
