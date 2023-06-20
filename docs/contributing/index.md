@@ -101,7 +101,7 @@ The following text is an example change log entry, placed inside {file}`/news/45
 Fix broken links for ReactJS.org. @stevepiercy
 ```
 
-(contributing-project-configuration-files)
+(contributing-project-configuration-files-label)=
 
 ## Project configuration files
 
