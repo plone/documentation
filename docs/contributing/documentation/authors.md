@@ -194,7 +194,7 @@ An [online demo of all lexers that Pygments supports](https://pygments.org/demo/
 You can also use the [`pygmentize`](https://pygments.org/docs/cmdline/) binary.
 
 When using the online lexer, if any red-bordered rectangles appear, then the lexer for Pygments interprets your snippet as not valid.
-You can search the [Pygments issue tracker](https://github.com/pygments/pygments/search) for possible solutions, or submit a pull request to enhance the lexer.
+You can search the [Pygments issue tracker](https://github.com/search?q=repo%3Apygments%2Fpygments+&type=issues) for possible solutions, or submit a pull request to enhance the lexer.
 
 
 (authors-html-meta-data-label)=
