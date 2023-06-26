@@ -315,6 +315,6 @@ hidden: true
 setup-build
 authors
 myst-reference
-sphinx-extensions
+themes-and-extensions
 admins
 ```
