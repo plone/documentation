@@ -448,7 +448,7 @@ The value you use for this CSS rule should identify one of the fontello icons in
 
 It is not possible at this time to set an icon for your add-on package control panels without including CSS in your package.
 
-For documentation on how to use it in your own add-ons see https://training.plone.org/5/mastering-plone-5/registry.html.
+For documentation on how to use it in your own add-ons see {doc}`training:mastering-plone-5/registry`.
 
 
 ### Properties

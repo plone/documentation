@@ -1,18 +1,33 @@
 ---
 myst:
   html_meta:
-    "description": "Sphinx extensions"
-    "property=og:description": "Sphinx extensions"
-    "property=og:title": "Sphinx extensions"
-    "keywords": "Documentation, Plone, Sphinx, reStructuredText, extensions"
+    "description": "Sphinx themes and extensions"
+    "property=og:description": "Sphinx themes and extensions"
+    "property=og:title": "Sphinx themes and extensions"
+    "keywords": "Documentation, Plone, Sphinx, reStructuredText, MyST, Markdown, themes, sphinx-book-theme, pydata_sphinx_theme, extensions"
 ---
 
-(contributing-sphinx-extensions)=
+(contributing-sphinx-themes-and-extensions)=
 
-# Sphinx extensions
+# Sphinx themes and extensions
+
+We learned the hard way that maintaining the design and features of documentation is a lot of work.
+To make all documentation maintainable, we use actively developed themes and extensions to build the documentation.
+
+## Themes
+
+When customizing the theme, we use [Sphinx Book Theme](https://sphinx-book-theme.readthedocs.io/en/stable/), which in turn depends on [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html).
+See their documentation for features, tips, and tricks that you might want to include in your documentation.
+
+We minimize the customizations of these themes as much as possible.
+The one large customization is the search filter by part of the documentation, implemented in modifcations to the templates, {file}`_static/searchtools.js`, and the CSS file {file}`_static/custom.css`.
+
+
+## Extensions
 
 We use several Sphinx extensions to enhance the presentation of Plone documentation.
 
+-   [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) allows you to embed [Graphviz](https://graphviz.org/download/) graphs in your documents.
 -   [`sphinx.ext.intersphinx`](https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html) provides linking between separate projects that use Sphinx for documentation.
 -   [`sphinx.ext.todo`](https://www.sphinx-doc.org/en/master/usage/extensions/todo.html) adds support for todo items.
 -   [`sphinx_copybutton`](https://sphinx-copybutton.readthedocs.io/en/latest/index.html)  adds a little "copy" button to the right of code blocks.
