@@ -1,18 +1,19 @@
 ---
 myst:
   html_meta:
-    "description": "Sphinx themes and extensions"
-    "property=og:description": "Sphinx themes and extensions"
-    "property=og:title": "Sphinx themes and extensions"
+    "description": "Themes and extensions"
+    "property=og:description": "Themes and extensions"
+    "property=og:title": "Themes and extensions"
     "keywords": "Documentation, Plone, Sphinx, reStructuredText, MyST, Markdown, themes, sphinx-book-theme, pydata_sphinx_theme, extensions"
 ---
 
-(contributing-sphinx-themes-and-extensions)=
+(contributing-themes-and-extensions)=
 
-# Sphinx themes and extensions
+# Themes and extensions
 
 We learned the hard way that maintaining the design and features of documentation is a lot of work.
 To make all documentation maintainable, we use actively developed themes and extensions to build the documentation.
+
 
 ## Themes
 
@@ -25,7 +26,19 @@ The one large customization is the search filter by part of the documentation, i
 
 ## Extensions
 
-We use several Sphinx extensions to enhance the presentation of Plone documentation.
+We use several MyST and Sphinx extensions to enhance the presentation of Plone documentation.
+
+
+### MyST
+
+-   [`deflist`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists) supports definition lists.
+-   [`linkify`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#linkify) identifies "bare" web URLs and adds hyperlinks.
+-   [`colon_fence`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#code-fences-using-colons) supports the use of three colons `:::` as delimiters to denote code fences, instead of three backticks `` ``` ``.
+-   [`substitution`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2) supports the use of substitutions with Jinja2.
+-   [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images) supports the use of HTML `<img>` tags.
+
+
+### Sphinx
 
 -   [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) allows you to embed [Graphviz](https://graphviz.org/download/) graphs in your documents.
 -   [`sphinx.ext.intersphinx`](https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html) provides linking between separate projects that use Sphinx for documentation.

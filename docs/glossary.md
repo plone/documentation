@@ -384,6 +384,9 @@ HAProxy
 nginx
     [nginx](https://docs.nginx.com/nginx/) (pronounced "engine x") is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 
+Traefik Proxy
+    [Traefik Proxy](https://traefik.io/traefik/) is an open-source reverse proxy and load balancer, suitable for containerized architectures.
+
 Volto
     [Volto](https://github.com/plone/volto) is a React-based frontend for the Plone CMS.
     It is the default user interface for Plone 6.
@@ -580,7 +583,7 @@ Verb
     One of the basic actions that can be requested to be executed by the server (on an object) based on the {term}`Request`.
 
 Object URL
-    The target object of the {term}`Request`
+    The target object of the {term}`Request`.
 
 Authorization Header
     Part of the {term}`Request` that is responsible for the authentication related to the right user or service to ask for a {term}`Response`.
@@ -600,6 +603,9 @@ content rule
 trigger
     A trigger is an event in Plone that causes the execution of defined actions.
     Example triggers include object modified, user logged in, and workflow state changed.
+
+navigation root
+    An object marked as a navigation root provides a way to root catalog queries, searches, breadcrumbs, and so on, into that object.
 
 FTI
 Factory Type Information

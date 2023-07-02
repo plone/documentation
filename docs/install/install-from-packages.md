@@ -59,6 +59,7 @@ You may host multiple Plone sites on the same server.
 -   {term}`Yeoman`
 -   {term}`Yarn`
 -   {term}`GNU make`
+-   {term}`Docker`
 
 ````{note}
 Update
@@ -193,6 +194,14 @@ Use your favorite search engine or trusted online resource for how to update `ma
 
 
 (install-packages-install-label)=
+
+
+#### Install Docker
+
+Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
+
+Docker Desktop includes all Docker tools.
+
 
 ## Install Plone 6
 

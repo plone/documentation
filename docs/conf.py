@@ -149,14 +149,14 @@ html_static_path = [
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
-    "deflist",  # You will be able to utilise definition lists
+    "deflist",  # Support definition lists.
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
-    "linkify",  # Identify “bare” web URLs and add hyperlinks.
+    "linkify",  # Identify "bare" web URLs and add hyperlinks.
     "colon_fence",  # You can also use ::: delimiters to denote code fences,\
     #  instead of ```.
     "substitution",  # plone.restapi \
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
-    "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
+    "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
 ]
 
 myst_substitutions = {
@@ -188,6 +188,7 @@ intersphinx_mapping = {
     "plone": ("https://6.docs.plone.org/", None),  # for imported packages
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/", None),
+    "training-2022": ("https://2022.training.plone.org/", None),
 }
 
 
@@ -277,7 +278,9 @@ html_title = "%(project)s v%(release)s" % {"project": project, "release": releas
 html_use_index = True
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6.docs.plone.org"
+html_baseurl = "https://6.docs.plone.org/"
+# https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
+sitemap_url_scheme = "{link}"
 
 # -- Options for HTML help output -------------------------------------------------
 
@@ -323,7 +326,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.4",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.6",
     "{NVM_VERSION}": "0.39.3",
 }
 
