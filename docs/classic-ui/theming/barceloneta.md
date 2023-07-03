@@ -140,7 +140,7 @@ the `scss/` folder.
 
 ## Customize Bootstrap and Barceloneta components
 
-The base `theme/theme.scss` file provides all imports of the dependent Bootstrap
+The base `scss/theme.scss` file provides all imports of the dependent Bootstrap
 and Barceloneta resources to build the default Classic UI theme.
 As a convenience `bobtemplates.plone` has created three files to customize
 variables, maps and custom SCSS code.
@@ -153,8 +153,15 @@ scss/_variables.scss
 
 ### SCSS and root variables
 
--   show example how to override variables
--   complete list of variables below
+To set a custom font you have three variables you can modify:
+
+```scss
+$font-family-sans-serif:                    "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif!default;
+$font-family-condensed:                     "Roboto Condensed", "Arial Narrow", sans-serif!default; //just on toolbar
+$font-family-serif:                         Georgia, "Times New Roman", Times, serif!default;
+```
+
+TODO: Link to training docs or take parts over here?
 
 ### Properties
 
@@ -187,7 +194,7 @@ If you have a custom workflow state you can add your state color to the default 
 
 ```scss
 $custom-state-colors: (
-  "my-custom-state-id": #ff0000;
+  "my-custom-state-id": "#ff0000";
 );
 
 // Merge the maps
