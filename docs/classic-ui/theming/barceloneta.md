@@ -11,21 +11,7 @@ myst:
 
 # Classic UI theming based on Barceloneta
 
-```{todo}
-This page is only an outline and needs a lot of work.
-See https://github.com/plone/documentation/issues/1286
-```
-
--   Use of SCSS
--   Colors, fonts, and sizes via variables is changeable
--   Properties for shadows, rounded corners, gradients.
--   `plonetheme.barceloneta` npm package for includes
--   `bobtemplates.plone` template
--   Theming is based on Twitter Bootstrap 5
--   We use Bootstrap markup in templates
--   We use Bootstrap components wherever possible
--   Most of the look and feel can be changed via Bootstrap's variables
--   Hint: order is important in SCSS
+Barceloneta is the default enabled theme for Plone Classic UI.
 
 
 (classic-ui-theming-barceloneta-theme-package-label)=
