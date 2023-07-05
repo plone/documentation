@@ -88,7 +88,7 @@ linkcheck_ignore = [
     r"https://github.com/nodejs/release#release-schedule",
     r"https://github.com/nvm-sh/nvm#install--update-script",
     r"https://github.com/plone/cookiecutter-zope-instance#options",
-    r"https://github.com/plone/plone.app.contenttypes#migration",
+    r"https://github.com/plone/plone.app.contenttypes/blob/2.2.3/docs/README.rst#migration",
     r"https://github.com/plone/plone.docker#for-basic-usage",
     r"https://github.com/plone/plone.rest#cors",
     r"https://github.com/plone/plone.volto/blob/6f5382c74f668935527e962490b81cb72bf3bc94/src/kitconcept/volto/upgrades.py#L6-L54",
