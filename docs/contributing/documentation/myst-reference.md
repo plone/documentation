@@ -268,8 +268,10 @@ Note that the path must be absolute to support both submodules and the main docu
 Don't use file-relative paths.
 The above MyST markup renders as shown below.
 
+````{only} not text
 ```{video} /_static/user-manual/blocks/block-copy-cut.mp4
 ```
+````
 
 
 ### Diagrams and graphs with Graphviz
