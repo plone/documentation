@@ -118,8 +118,7 @@ All the theming relevant files are now located inside `src/plonetheme/themebased
 
 ## npm package
 
-To compile the SCSS code you have to install the required dependencies with `npm`
-and run the package script `build` inside the `theme/` folder:
+To compile the SCSS code you have to install Node.js (v16+) and the required dependencies with `npm`. Then run the package script `build` inside the `theme/` folder:
 
 ```shell
 npm install
@@ -153,27 +152,26 @@ scss/_variables.scss
 
 ### SCSS and root variables
 
-To set a custom font you have three variables you can modify:
+To set a custom font you define the font variables in `scss/_variables.scss`:
 
 ```scss
-$font-family-sans-serif:                    "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif!default;
-$font-family-condensed:                     "Roboto Condensed", "Arial Narrow", sans-serif!default; //just on toolbar
-$font-family-serif:                         Georgia, "Times New Roman", Times, serif!default;
+$font-family-sans-serif: Tahoma, Calimati, Geneva, sans-serif;
+$font-family-serif: Georgia, Norasi, serif;
 ```
 
-TODO: Link to training docs or take parts over here?
+This will override the default values from barceloneta.
+
 
 ### Properties
 
-If you want to disable rounded corners for borders:
+Same procedure if you want to disable rounded corners for borders:
 
 ```scss
 $enabled-rounded: false;
 ```
 
-A complete list of all properties see below. (Link?)
+A complete list of all properties see {ref}`classic-ui-theming-barceloneta-default-variables-properties-label`.
 
-TODO: screenshot?
 
 
 ### Maps
@@ -190,7 +188,7 @@ $state-colors: (
 ) !default;
 ```
 
-If you have a custom workflow state you can add your state color to the default map:
+If you have a custom workflow state you can add your state color to the default map. Just add the following to `scss/_maps.scss`:
 
 ```scss
 $custom-state-colors: (
