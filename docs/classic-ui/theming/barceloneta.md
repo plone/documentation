@@ -24,6 +24,8 @@ To create a addon package with a theme you need:
 - [Python (>=3.8)](https://www.python.org/)
 - [plonecli](https://pypi.org/project/plonecli/)
 
+Read more about package installation in [Install Plone from its packages](../../install/install-from-packages)
+
 Create a Classic UI theme addon:
 
 ```shell
