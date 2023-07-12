@@ -18,14 +18,19 @@ Barceloneta is the default enabled theme for Plone Classic UI.
 
 ## Create a Classic UI theme addon package
 
-Create a Classic UI theme addon with `plonecli`:
+To create a addon package with a theme you need:
+
+- [Node.js (16/18)](https://nodejs.org/en)
+- [Python (>=3.8)](https://www.python.org/)
+- [plonecli](https://pypi.org/project/plonecli/)
+
+Create a Classic UI theme addon:
 
 ```shell
 plonecli create addon plonetheme.themebasedonbarceloneta
 ```
 
-Then change the working directory into the created package and add the
-basic theme structure with:
+Then change the working directory into the created package and add the basic theme structure:
 
 ```shell
 cd plonetheme.themebasedonbarceloneta
@@ -33,7 +38,8 @@ plonecli add theme_barceloneta
 ```
 
 Give your theme a name and optionally commit the changes.
-After that the theming structure is setup and ready for customization.
+After that the theming structure is set up and ready for customization.
+You can create a Plone Site and install your theme addon in the controlpanel.
 
 
 (classic-ui-theming-barceloneta-theme-structure-label)=
@@ -42,7 +48,7 @@ After that the theming structure is setup and ready for customization.
 
 All the theming relevant files are now located inside `src/plonetheme/themebasedonbarceloneta/theme/`:
 
-```
+```text
 ./src/plonetheme/themebasedonbarceloneta/theme/
 ├── barceloneta-apple-touch-icon-114x114-precomposed.png
 ├── barceloneta-apple-touch-icon-144x144-precomposed.png
@@ -70,55 +76,46 @@ All the theming relevant files are now located inside `src/plonetheme/themebased
     └── list.html
 ```
 
-### `index.html`
+`index.html`
+:   Basic HTML structure for the site layout.
 
--   Basic HTML structure for the site layout.
+`manifest.cfg`
+:   Basic theme configuration for the backend.
 
-### `manifest.cfg`
-
--   Basic theme configuration for the backend.
-
-### `package.json`
-
--   npm package configuration which defines all requirements for theming
+`package.json`
+:   npm package configuration which defines all requirements for theming
     with barceloneta.
 
-### `rules.xml`
+`rules.xml`
+:   Diazo rules which translate the `index.html` and fills it with content from the backend.
 
--   Diazo rules which translate the `index.html` and fills it with content
-    from the backend.
+`scss/_custom.scss`
+:   Custom SCSS rules for your theme.
 
-### `scss/_custom.scss`
+`scss/_maps.scss`
+:   Override Bootstrap mapping variables here.
 
--   Custom SCSS rules for your theme.
+`scss/_variables.scss`
+:   Override Bootstrap and/or Barceloneta variables here.
 
-### `scss/_maps.scss`
+`scss/theme.scss`
+:   Base theme file which follows "Option B" of customizing Bootstrap imports to enable custom variable and map injections.
+Note that the order of these imports is mandatory to ensure overriding the defaults.
+See https://getbootstrap.com/docs/5.3/customize/sass/#importing
 
--   Override Bootstrap mapping variables here.
+`styles/theme.css[.min]`
+:   Compiled CSS styles.
 
-### `scss/_variables.scss`
-
--   Override Bootstrap and/or Barceloneta variables here.
-
-### `scss/theme.scss`
-
--   Base theme file which follows "Option B" of customizing Bootstrap imports
-    to enable custom variable and map injections. Note that the order of these imports is mandatory to ensure overriding the defaults. See https://getbootstrap.com/docs/5.3/customize/sass/#importing
-
-### `styles/theme.css[.min]`
-
--   Compiled CSS styles.
-
-### `tinymce-templates/*.html`
-
--   HTML snippets for the TinyMCE `template` plugin.
+`tinymce-templates/*.html`
+:   HTML snippets for the TinyMCE `template` plugin.
 
 
-(classic-ui-theming-barceloneta-npm-package-label)=
+(classic-ui-theming-barceloneta-compiling-theme-resources-label)=
 
-## npm package
+## Compiling theme resources
 
-To compile the SCSS code you have to install Node.js (v16+) and the required dependencies with `npm`. Then run the package script `build` inside the `theme/` folder:
+To compile the SCSS code you have to install the required dependencies with `npm`.
+Then run the package script `build` inside the `theme/` folder:
 
 ```shell
 npm install
@@ -131,52 +128,55 @@ During theme development you can run:
 npm run watch
 ```
 
-this compiles the SCSS resources on the fly when you change something inside
-the `scss/` folder.
+This compiles the SCSS resources on the fly when you change something inside the `scss/` folder.
+You can preview your changes when you reload your browser.
 
 
 (classic-ui-theming-barceloneta-customize-components-label)=
 
 ## Customize Bootstrap and Barceloneta components
 
-The base `scss/theme.scss` file provides all imports of the dependent Bootstrap
-and Barceloneta resources to build the default Classic UI theme.
-As a convenience `bobtemplates.plone` has created three files to customize
-variables, maps and custom SCSS code.
+The base `scss/theme.scss` file provides all imports of the dependent Bootstrap and Barceloneta resources to build the default Classic UI theme.
+As a convenience `bobtemplates.plone` has created three files to customize variables, maps and custom SCSS code.
 
-```
+```text
 scss/_custom.scss
 scss/_maps.scss
 scss/_variables.scss
 ```
 
+
+(classic-ui-theming-barceloneta-scss-and-root-variables-label)=
+
 ### SCSS and root variables
 
-To set a custom font you define the font variables in `scss/_variables.scss`:
+To set a custom font, you define the font variables in `scss/_variables.scss`:
 
 ```scss
 $font-family-sans-serif: Tahoma, Calimati, Geneva, sans-serif;
 $font-family-serif: Georgia, Norasi, serif;
 ```
 
-This will override the default values from barceloneta.
+This will override the default values from Barceloneta.
 
 
-### Properties
+### SCSS and properties
 
-Same procedure if you want to disable rounded corners for borders:
+The following example shows how to disable rounded corners for borders.
 
 ```scss
 $enabled-rounded: false;
 ```
 
-A complete list of all properties see {ref}`classic-ui-theming-barceloneta-default-variables-properties-label`.
+A complete list of all properties see {ref}`classic-ui-theming-barceloneta-default-variables-and-properties-label`.
 
 
+(classic-ui-theming-barceloneta-maps-label)=
 
 ### Maps
 
-Maps are key value pairs to make CSS generation easier. As an example this is the workflow colors map:
+Maps are key/value pairs to make CSS generation easier.
+As an example, the following example shows the workflow colors map:
 
 ```scss
 $state-colors: (
@@ -188,7 +188,7 @@ $state-colors: (
 ) !default;
 ```
 
-If you have a custom workflow state you can add your state color to the default map. Just add the following to `scss/_maps.scss`:
+If you have a custom workflow state, you can add your state color to the default map in `scss/_maps.scss` as shown below.
 
 ```scss
 $custom-state-colors: (
@@ -199,14 +199,16 @@ $custom-state-colors: (
 $state-colors: map-merge($state-colors, $custom-colors);
 ```
 
+(classic-ui-theming-barceloneta-custom-css-code-label)=
 
 ### Custom CSS code
 
-Inside the file `theme/_custom.scss` you can write all your custom CSS/Sass code
-to adapt the theme to your needs. Feel free to add more files inside the `scss/` folder to make your code more readable. Don't forget to import your custom files in `scss/theme.scss`.
+Inside the file `theme/_custom.scss` you can write all your custom CSS/Sass code to adapt the theme to your needs.
+Feel free to add more files inside the `scss/` folder to make your code more readable.
+Don't forget to import your custom files in `scss/theme.scss`.
 
 
-(classic-ui-theming-barceloneta-default-variables-properties-label)=
+(classic-ui-theming-barceloneta-default-variables-and-properties-label)=
 
 ## Default variables and properties
 
