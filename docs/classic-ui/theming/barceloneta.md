@@ -11,37 +11,43 @@ myst:
 
 # Classic UI theming based on Barceloneta
 
+This chapter describes how to create a custom theme for Plone Classic UI based on Barceloneta.
 Barceloneta is the default enabled theme for Plone Classic UI.
 
 
-(classic-ui-theming-barceloneta-theme-package-label)=
+(classic-ui-theming-barceloneta-pre-requisites-label)=
 
-## Create a Classic UI theme addon package
+## Pre-requisites
 
-To create a addon package with a theme you need:
+To create an add-on package with a Plone Classic UI theme, you need to install the following pre-requisites.
 
-- [Node.js (16/18)](https://nodejs.org/en)
-- [Python (>=3.8)](https://www.python.org/)
-- [plonecli](https://pypi.org/project/plonecli/)
+-   [Node.js (16/18)](https://nodejs.org/en)
+-   [Python (>=3.8)](https://www.python.org/)
+-   [plonecli](https://pypi.org/project/plonecli/)
 
-Read more about package installation in [Install Plone from its packages](../../install/install-from-packages)
+Read more about how to install pre-requisites in {doc}`/install/install-from-packages`.
 
-Create a Classic UI theme addon:
+
+(classic-ui-theming-barceloneta-create-a-classic-ui-theme-add-on-package-label)=
+
+## Create a Classic UI theme add-on package
+
+To create a Classic UI theme add-on, begin with the following command.
 
 ```shell
 plonecli create addon plonetheme.themebasedonbarceloneta
 ```
 
-Then change the working directory into the created package and add the basic theme structure:
+Then change the working directory into the package you just created, and add the basic theme structure with the following commands.
 
 ```shell
 cd plonetheme.themebasedonbarceloneta
 plonecli add theme_barceloneta
 ```
 
-Give your theme a name and optionally commit the changes.
-After that the theming structure is set up and ready for customization.
-You can create a Plone Site and install your theme addon in the controlpanel.
+Give your theme a name, and optionally commit the changes.
+After that, the theming structure is set up and ready for customization.
+You can create a Plone Site and install your theme add-on in the controlpanel.
 
 
 (classic-ui-theming-barceloneta-theme-structure-label)=
@@ -85,8 +91,7 @@ All the theming relevant files are now located inside `src/plonetheme/themebased
 :   Basic theme configuration for the backend.
 
 `package.json`
-:   npm package configuration which defines all requirements for theming
-    with barceloneta.
+:   npm package configuration which defines all requirements for theming with barceloneta.
 
 `rules.xml`
 :   Diazo rules which translate the `index.html` and fills it with content from the backend.
@@ -102,8 +107,8 @@ All the theming relevant files are now located inside `src/plonetheme/themebased
 
 `scss/theme.scss`
 :   Base theme file which follows "Option B" of customizing Bootstrap imports to enable custom variable and map injections.
-Note that the order of these imports is mandatory to ensure overriding the defaults.
-See https://getbootstrap.com/docs/5.3/customize/sass/#importing
+    Note that the order of these imports is mandatory to ensure overriding the defaults.
+    See https://getbootstrap.com/docs/5.3/customize/sass/#importing.
 
 `styles/theme.css[.min]`
 :   Compiled CSS styles.
@@ -116,7 +121,7 @@ See https://getbootstrap.com/docs/5.3/customize/sass/#importing
 
 ## Compiling theme resources
 
-To compile the SCSS code you have to install the required dependencies with `npm`.
+To compile the SCSS code, you have to install the required dependencies with `npm`.
 Then run the package script `build` inside the `theme/` folder:
 
 ```shell
@@ -124,7 +129,7 @@ npm install
 npm run build
 ```
 
-During theme development you can run:
+During theme development, you can run:
 
 ```shell
 npm run watch
@@ -139,7 +144,7 @@ You can preview your changes when you reload your browser.
 ## Customize Bootstrap and Barceloneta components
 
 The base `scss/theme.scss` file provides all imports of the dependent Bootstrap and Barceloneta resources to build the default Classic UI theme.
-As a convenience `bobtemplates.plone` has created three files to customize variables, maps and custom SCSS code.
+As a convenience `bobtemplates.plone` has created three files to customize variables, maps, and custom SCSS code.
 
 ```text
 scss/_custom.scss
@@ -194,7 +199,7 @@ If you have a custom workflow state, you can add your state color to the default
 
 ```scss
 $custom-state-colors: (
-  "my-custom-state-id": "#ff0000";
+  "my-custom-state-id": "#ff0000"
 );
 
 // Merge the maps
