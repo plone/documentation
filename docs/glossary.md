@@ -399,7 +399,7 @@ Classic UI
     Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
     It is based on Twitter Bootstrap 5.
     It uses [Mockup](https://github.com/plone/mockup/) as its JavaScript stack.
-    [View Mockup's patterns](https://plone.github.io/mockup/dev/).
+    [View Mockup's patterns](https://plone.github.io/mockup/).
 
     The other frontend is {term}`Volto`.
 
