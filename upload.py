@@ -10,7 +10,7 @@ import re
 # that's actually an API key, not a NUA one
 # but that's the name of the variable on our GitHub repo
 API_KEY = os.environ.get("NUA_KEY")
-KB = "https://europe-1.nuclia.cloud/api/v1/kb/2ff26906-702f-42e3-8da6-95d8074fad4e"
+KB = ""
 PUBLIC_URL = "https://6.docs.plone.org/"
 
 def generate_nuclia_sync():
