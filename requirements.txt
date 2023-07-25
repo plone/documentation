@@ -18,3 +18,5 @@ sphinxcontrib.httpexample  # plone.restapi
 sphinxext-opengraph
 sphinx-design
 sphinxcontrib-video
+nuclia
+nucliadb-sdk
