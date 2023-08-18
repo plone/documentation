@@ -58,54 +58,8 @@ Then views and viewlets from your product can be enabled on the site instance us
 ### Unconditional overrides
 
 If you want to override a view or a viewlet unconditionally for all sites without the add-on product installer support, you need to use `overrides.zcml`.
-You can override classes and templates in this file.
+You can override classes and templates in this file. To do this, you put the ZCML-registration in a files called overrides.zcml in the package root (next to the top most configure.zcml).
 
-Overide a class:
-
-```xml
-<browser:viewlet
-    name="plone.site_actions"
-    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-    class=".yourViewlet.YourClassViewlet"
-    permission="zope2.View"
-    layer="your.app.interfaces.IYourAppLayer"
-/>
-```
-
-Overide a template:
-
-```xml
-<browser:viewlet
-    name="plone.logo"
-    for="*"
-    template="your-logo.pt"
-    permission="zope2.View"
-    layer="your.app.interfaces.IYourAppLayer"
-/>
-```
-You can combine both as well. For example, you can override a class and use a different template for it:
-    
-```xml
-<browser:viewlet
-    name="plone.site_actions"
-    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-    class=".yourViewlet.YourClassViewlet"
-    template="your-logo.pt"
-    permission="zope2.View"
-    layer="your.app.interfaces.IYourAppLayer"
-/>
-```
-
-If you want to override a viewlet or view of a specific add-on product, you need to use enheritance the Layer interface of the add-on product into your own Layer interface.
-For example, if you want to override the `sidebar` viewlet of the `collective.sidebar` add-on product, you need to create a new Layer interface and inherit from the `collective.sidebar` Layer interface.
-
-```python
-from collective.sidebar.interfaces import ICollectiveSidebarLayer
-
-class IYourAppLayer(ICollectiveSidebarLayer):
-    """Marker interface that defines a browser layer."""
-
-```
 
 (classic-ui-creating-a-layer-label)=
 
