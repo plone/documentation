@@ -19,7 +19,7 @@ Insert introduction here.
 :maxdepth: 2
 configuration-registry
 control-panels
-content-types
+content-types/index
 behaviors
 annotations
 vocabularies
