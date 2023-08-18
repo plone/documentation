@@ -173,7 +173,7 @@ You need to declare the `browser` namespace in your `configure.zcml` to use `bro
 ```
 
 The view in question is registered against a {ref}`layer <classic-ui-layers-label>`.
-It will be available after restart, after running the {ref}`GenericSetup profile <backend-configuration-registry-generic-setup-label>`.
+It will be available after restart and running the {ref}`GenericSetup profile <backend-configuration-registry-generic-setup-label>` or enabling the addon.
 
 
 (classic-ui-page-template-label)=
@@ -432,7 +432,7 @@ Since one Zope application server can contain multiple Plone sites, layers are u
 A layer is in use when either:
 
 -   a theme which defines that layer is active, or
--   if a specific add-on product which defines that layer is installed.
+-   if a specific add-on product which defines that layer is installed in the Plone site.
 
 You should register your views against a certain layer in your own code.
 
