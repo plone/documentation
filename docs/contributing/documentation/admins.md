@@ -82,3 +82,30 @@ To make it easier for other contributors to work with your project, update the f
 -   Optionally set a branch to work on in `.gitmodules`.
 
 Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6.0`](https://github.com/plone/documentation/compare).
+
+## Tracking site visitors and detecting 404. 
+
+We use Matomo to have basic and privacy respecting Site analytics for the Documentation.
+A self hosted Matomo instance for the Plone foudatin is running at https://stats.plone.org/
+We use a basic setup for the documentation website in Matomo.
+
+However, instead of embedding a tracking snippet directly, we use Matomo Tag Manager (MTM).
+The MTM snippet is loaded on every documentation page from the `layout.html` template under `docs/_templates'. in the documentation repository.
+Based on programmable triggers, MTM decides which tags are to be loaded. 
+
+After implementing the new documentation domain where we use the main Plone version as subdomain, there were several reports from users of broken links coming in from search engines.
+
+
+
+We now redirect  `https://docs.plone.org/*` to https://6.docs.plone.org/* by adding the path. 
+
+
+
+You have to play a bit with triggers. 
+There is a second trigger now that detects if the page title is "Page not found"
+Then you create a custom html tag that contains a default Matomo tracking snippet that you can find in the website system configuration, but with some extra magic added that adds a category to the page title and adds the referrer, info here (https://matomo.org/faq/how-to/faq_60/)
+The custom 404 page not found html trigger fires the 404 custom html tag.    (This custom html tag is NOT the tag manager snippet by the way, then you might get some nice recursive behavior  ) .   )
+
+And the important detail, there should always be one:  you should also add the 404 trigger to the normal  analytics tag, but then as an exclusion condition, so that both tags don't run at the same time.
+
+It takes some time for Matomo to process things, so we might start to see results tomorrow. All this fancy tag manager stuff is necessary so that you don't have to change the documentation itself to have the snippet hardcoded only on the 404 page in the sphinx/myst templates. (thats the suggestion in https://matomo.org/faq/how-to/faq_60/ )
