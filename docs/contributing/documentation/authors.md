@@ -194,7 +194,7 @@ An [online demo of all lexers that Pygments supports](https://pygments.org/demo/
 You can also use the [`pygmentize`](https://pygments.org/docs/cmdline/) binary.
 
 When using the online lexer, if any red-bordered rectangles appear, then the lexer for Pygments interprets your snippet as not valid.
-You can search the [Pygments issue tracker](https://github.com/pygments/pygments/search) for possible solutions, or submit a pull request to enhance the lexer.
+You can search the [Pygments issue tracker](https://github.com/search?q=repo%3Apygments%2Fpygments+&type=issues) for possible solutions, or submit a pull request to enhance the lexer.
 
 
 (authors-html-meta-data-label)=
@@ -266,4 +266,4 @@ The Plone Documentation Team adopted additional guidelines.
 ## General documentation writing references
 
 -   [Write the Docs - Documentation Guide](https://www.writethedocs.org/guide/)
--   [A Guide to Em Dashes, En Dashes, and Hyphens](https://www.merriam-webster.com/words-at-play/em-dash-en-dash-how-to-use)
+-   [A Guide to Em Dashes, En Dashes, and Hyphens](https://www.merriam-webster.com/grammar/em-dash-en-dash-how-to-use)

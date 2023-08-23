@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "6-dev"
+      - "6.0"
 
 jobs:
   build_deploy:

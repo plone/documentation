@@ -132,7 +132,7 @@ This approach allows you to migrate from Plone 4 to 6, from Python 2 to 3, and f
 It is recommended for large and complex migrations.
 
 The recommended tool for this is [`collective.exportimport`](https://github.com/collective/collective.exportimport).
-An alternative is `transmogrifier` (see the training {ref}`training:transmogrifier-label`).
+An alternative is `transmogrifier` (see the training {ref}`training-2022:transmogrifier-label`).
 
 
 (introduction-major-changes-label)=
@@ -149,7 +149,7 @@ The following major changes in the history of Plone require special attention wh
 With Plone 5.0 the default framework for content types switched from Archetypes to Dexterity.
 
 Up through Plone 5.2.x, there is a built-in migration from Archetypes to Dexterity, but it only supports Python 2.
-See [Migration](https://pypi.org/project/plone.app.contenttypes/2.2.3/#migration) in the latest stable release of `plone.app.contenttypes` for details on the migration of custom and default content types to Dexterity.
+See [Migration](https://github.com/plone/plone.app.contenttypes/blob/2.2.3/docs/README.rst#migration) in the 2.2.3 release of `plone.app.contenttypes` for details on the migration of custom and default content types to Dexterity.
 
 Using [collective.exportimport](https://pypi.org/project/collective.exportimport/) you can export Archetypes content and import it as Dexterity content.
 
