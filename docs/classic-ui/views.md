@@ -751,7 +751,7 @@ The same functionality can be achieved with helper views, with less potential pi
 
 (classic-ui-reusing-view-template-snippets-or-embedding-another-view-label)=
 
-## Reusing view template snippets or embedding another view
+## Reusing view template snippets (macros) or embedding another view
 
 To use the same template code several times you can either:
 
@@ -820,8 +820,32 @@ You need to get access to the view in your code if you are:
 -   calling a view from inside another view, or
 -   calling a view from your unit test code.
 
-Below are two different approaches for that.
+Below are tree different approaches for that.
 
+
+(classic-ui-view-by-plone-api)
+### By using plone.api.content.get_view()
+
+The plone.api provides a method to get a view by it's registered name, the context and the current request.
+
+```python
+from plone import api
+
+portal = api.portal.get()
+view = api.content.get_view(
+    name='plone',
+    context=portal['about'],
+    request=request,
+)
+```
+
+Since version 2.0.0, the request argument can be omitted. In that case, the global request will be used.
+
+For more details see {ref}`content-get-view-example`.
+
+```{note}
+The usage of plone.api in Plone core is limited, if in doubted please use the following methods instead.
+```
 
 (classic-ui-by-using-getmultiadapter-label)=
 
