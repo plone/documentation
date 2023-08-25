@@ -3,12 +3,14 @@ name: Build and deploy Plone 6 documentation to 6.docs.plone.org
 on:
   push:
     branches:
-      - "6-dev"
       - "6.0"
 
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: docs.plone.org
+      url: https://docs.plone.org
     steps:
       - uses: actions/checkout@v3
       - name: Setup Graphviz
@@ -67,9 +69,9 @@ jobs:
         with:
           flags: '-avzr --delete'
           options: ''
-          ssh_options: '-p ${{secrets.DEPLOY_PORT}}'
+          ssh_options: '-p ${{vars.DEPLOY_PORT}}'
           src: '_build/html/'
-          dest: '${{secrets.DEPLOY_USER_DOCS}}@${{secrets.DEPLOY_SERVER_DOCS}}:${{secrets.DEPLOY_PATH_DOCS}}'
+          dest: '${{vars.DEPLOY_USER_DOCS}}@${{vars.DEPLOY_SERVER_DOCS}}:${{vars.DEPLOY_PATH_DOCS}}'
 
       - name: Display status from deploy
         run: echo "${{ steps.deploy.outputs.status }}"
