@@ -824,7 +824,7 @@ Below are three different approaches for that.
 
 
 (classic-ui-view-by-plone-api)
-### By using plone.api.content.get_view()
+### By using `plone.api.content.get_view()`
 
 The plone.api provides a method to get a view by it's registered name, the context and the current request.
 
