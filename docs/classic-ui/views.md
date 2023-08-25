@@ -823,7 +823,8 @@ You need to get access to the view in your code if you are:
 Below are three different approaches for that.
 
 
-(classic-ui-view-by-plone-api)
+(classic-ui-view-by-plone-api)=
+
 ### By using `plone.api.content.get_view()`
 
 The plone.api provides a method to get a view by it's registered name, the context and the current request.
