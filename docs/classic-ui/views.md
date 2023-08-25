@@ -827,7 +827,7 @@ Below are three different approaches for that.
 
 ### By using `plone.api.content.get_view()`
 
-The plone.api provides a method to get a view by it's registered name, the context and the current request.
+The `plone.api` provides a method to get a view by its registered name, the context, and the current request.
 
 ```python
 from plone import api
