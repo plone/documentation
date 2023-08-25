@@ -173,7 +173,7 @@ You need to declare the `browser` namespace in your `configure.zcml` to use `bro
 ```
 
 The view in question is registered against a {ref}`layer <classic-ui-layers-label>`.
-It will be available after restart and running the {ref}`GenericSetup profile <backend-configuration-registry-generic-setup-label>` or enabling the addon.
+It will be available after restart and running the {ref}`GenericSetup profile <backend-configuration-registry-generic-setup-label>`, or enabling the add-on.
 
 
 (classic-ui-page-template-label)=
