@@ -820,7 +820,7 @@ You need to get access to the view in your code if you are:
 -   calling a view from inside another view, or
 -   calling a view from your unit test code.
 
-Below are tree different approaches for that.
+Below are three different approaches for that.
 
 
 (classic-ui-view-by-plone-api)
