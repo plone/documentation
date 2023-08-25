@@ -840,6 +840,7 @@ view = api.content.get_view(
 )
 ```
 
+```{versionchanged} 2.0.0
 Since version 2.0.0, the request argument can be omitted.
 In that case, the global request will be used.
 
