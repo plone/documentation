@@ -846,7 +846,8 @@ In that case, the global request will be used.
 For more details see {ref}`content-get-view-example`.
 
 ```{note}
-The usage of plone.api in Plone core is limited, if in doubted please use the following methods instead.
+The usage of `plone.api` in Plone core is limited.
+If in doubt, please use the following methods instead.
 ```
 
 (classic-ui-by-using-getmultiadapter-label)=
