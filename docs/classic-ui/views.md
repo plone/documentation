@@ -845,6 +845,7 @@ Since version 2.0.0, the request argument can be omitted.
 In that case, the global request will be used.
 
 For more details see {ref}`content-get-view-example`.
+```
 
 ```{note}
 The usage of `plone.api` in Plone core is limited.
