@@ -58,6 +58,7 @@ docs/volto:
 	git submodule init; \
 	git submodule update; \
 	ln -s ../submodules/volto/docs/source ./docs/volto
+	ln -s ../submodules/volto/docs/source/news ./docs/volto/news
 	@echo
 	@echo "Documentation of volto initialized."
 
