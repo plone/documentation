@@ -126,6 +126,11 @@ exclude_patterns = [
     "volto/contributing/branch-policy.md",
 ]
 
+suppress_warnings = [
+    # "toc.excluded",  # Suppress `WARNING: document isn't included in any toctree`
+    "toc.not_readable",  # Suppress `WARNING: toctree contains reference to nonexisting document 'news*'`
+]
+
 html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
 
 html_extra_path = [
