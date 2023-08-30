@@ -393,10 +393,6 @@ msgid "search_form_heading"
 msgstr "Hae sivustolta ${site_title}"
 ```
 
-```{seealso}
-https://web.archive.org/web/20131018150303/http://permalink.gmane.org/gmane.comp.web.zope.plone.collective.cvs/111531
-```
-
 
 (translating-text-strings-overriding-translations-label)=
 
@@ -443,5 +439,3 @@ See the *Overriding Translations* section of Maurits van Rees's [blog entry on P
 ## Additional resources
 
 -   https://reinout.vanrees.org/weblog/2007/12/14/translating-schemata-names.html
--   https://web.archive.org/web/20100830122331/http://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
--   https://web.archive.org/web/20170810113554/http://vincentfretin.ecreall.com/articles/my-translation-doesnt-show-up-in-plone-4
