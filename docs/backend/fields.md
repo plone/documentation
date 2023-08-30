@@ -9,7 +9,7 @@ myst:
 
 (backend-fields-label)=
 
-# Field, widget, schema, content type
+# Field, widget, schema
 
 ```{todo}
 Contribute to this documentation!
@@ -42,6 +42,10 @@ See issue [Backend > Fields needs content](https://github.com/plone/documentatio
 
 This reference documents all fields, widgets, directives that you can use with content types.
 Content types are often called dexterity types which refers to the rework of the content type concept by dexterity and abandoning the Archetypes system.
+
+```{seealso}
+[Example content type](https://github.com/collective/example.contenttype) A Plone content type with all available fields
+``````
 
 
 ### Fields included in Plone
@@ -1064,12 +1068,11 @@ class IMyEvent(model.Schema):
                 raise Invalid('Start must be before the end.')
 ```
 
-### Further reading
-
+```{seealso}
 To learn more about directives, validators and default values, refer to the following:
 
 - [Form schema hints and directives](https://5.docs.plone.org/external/plone.app.dexterity/docs/reference/form-schema-hints.html)
 - [Validation](https://5.docs.plone.org/develop/addons/schema-driven-forms/customising-form-behaviour/validation.html) (this documentation unfortunately still uses the obsolete grok technology)
 - [z3c.form documentation](https://z3cform.readthedocs.io/en/latest/advanced/validator.html)
 - [Default values for fields on add forms](https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/defaults.html)
-- [Example content type](https://github.com/collective/example.contenttype) A Plone content type with all available fields
+```
