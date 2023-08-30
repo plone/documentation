@@ -12,7 +12,7 @@ myst:
 # Widgets
 
 ```{seealso}
-See the chapter {ref}`training:dexterity-reference-label` from the Mastering Plone 6 Training.
+See the chapter {ref}`backend-fields-reference-label`.
 ```
 
 ```{todo}
@@ -23,4 +23,3 @@ See issue [Backend > Widgets needs content](https://github.com/plone/documentati
 (backend-widgets-autoform-label)=
 
 ## autoform (directives): widget and fieldset
-
