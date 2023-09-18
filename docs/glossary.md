@@ -516,7 +516,7 @@ Zope Component Architecture
     It can be used for developing any Python application.
     Maybe it should be called Python Component Architecture.
     ```{seealso}
-    See also https://muthukadan.net/docs/zca.html.
+    See also https://zopecomponent.readthedocs.io/en/latest/index.html.
     ```
 
 browser layer
