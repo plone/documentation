@@ -501,7 +501,7 @@ Given a content type with a `NamedBlobField` named `picture`, we can get the fol
               'width': 800}]}
 ```
 
-In these info's we have everything we need to generate our image URL's, without waking up any object's.
+This information shows we have everything we need to generate our image URLs, without waking up any objects.
 
 ```xml
 <li tal:define="preview python: brain.image_scales['picture'][0]['scales']['preview']">
