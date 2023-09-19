@@ -460,3 +460,51 @@ This will result in a `srcset` as in the following example for a medium image:
 Please note that this example has the `resolve_uid_and_caption` filter disabled to see the scale names better.
 The real `src` URLs look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`.
 ```
+
+## Image scales from catalog brain
+
+For all `NamedBlobImage` fields, we can get existing scale info's directly from the catalog brain.
+
+Given a content type with a `NamedBlobField` named `picture`, we can get the following info's, by calling the `image_scales` attribute on the catalog brain.
+
+```python
+(Pdb) pp brain.image_scales
+{'picture': [{'content-type': 'image/jpeg',
+              'download': '@@images/picture-800-ddae07fbc46b293155bd6fcda7f2572a.jpeg',
+              'filename': 'my-picture.jpg',
+              'height': 800,
+              'scales': {'icon': {'download': '@@images/picture-32-f2f815374aa5434e06fb3a95306527fd.jpeg',
+                                  'height': 32,
+                                  'width': 32},
+                         'large': {'download': '@@images/picture-800-4dab3b3cc42abb6fad29258c7430070a.jpeg',
+                                   'height': 800,
+                                   'width': 800},
+                         'listing': {'download': '@@images/picture-16-d3ac2117158cf38d0e15c5f5feb8b75d.jpeg',
+                                     'height': 16,
+                                     'width': 16},
+                         'mini': {'download': '@@images/picture-200-3de96ae4288dfb18f5589c89b861ecc1.jpeg',
+                                  'height': 200,
+                                  'width': 200},
+                         'preview': {'download': '@@images/picture-400-60f60942c8e4ddd7dcdfa90527a8bae0.jpeg',
+                                     'height': 400,
+                                     'width': 400},
+                         'teaser': {'download': '@@images/picture-600-1ada88b8af6748e9cbe18a34c3127443.jpeg',
+                                    'height': 600,
+                                    'width': 600},
+                         'thumb': {'download': '@@images/picture-128-80fce253497f7a745315f58f3e8f3a0c.jpeg',
+                                   'height': 128,
+                                   'width': 128},
+                         'tile': {'download': '@@images/picture-64-220d6703eac104c59774a379a8276e76.jpeg',
+                                  'height': 64,
+                                  'width': 64}},
+              'size': 238977,
+              'width': 800}]}
+```
+
+In these info's we have everything we need to generate our image URL's, without waking up any object's.
+
+```xml
+<li tal:define="preview python: brain.images_scales['picture'][0]['scales']['preview']">
+  <img src="${python: preview['download']}" width="${python: preview['width']}" height="${python: preview['height']}" />
+</li>
+```
