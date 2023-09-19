@@ -504,7 +504,7 @@ Given a content type with a `NamedBlobField` named `picture`, we can get the fol
 In these info's we have everything we need to generate our image URL's, without waking up any object's.
 
 ```xml
-<li tal:define="preview python: brain.images_scales['picture'][0]['scales']['preview']">
+<li tal:define="preview python: brain.image_scales['picture'][0]['scales']['preview']">
   <img src="${python: preview['download']}"
     width="${python: preview['width']}"
     height="${python: preview['height']}" />
