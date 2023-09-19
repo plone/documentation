@@ -465,7 +465,7 @@ The real `src` URLs look more like `http://localhost:8080/Plone50/dsc04791.jpg/@
 
 For all `NamedBlobImage` fields, we can get existing scale information directly from the catalog brain.
 
-Given a content type with a `NamedBlobField` named `picture`, we can get the following info's, by calling the `image_scales` attribute on the catalog brain.
+Given a content type with a `NamedBlobField` named `picture`, we can get the following information by calling the `image_scales` attribute on the catalog brain.
 
 ```python
 (Pdb) pp brain.image_scales
