@@ -505,6 +505,8 @@ In these info's we have everything we need to generate our image URL's, without 
 
 ```xml
 <li tal:define="preview python: brain.images_scales['picture'][0]['scales']['preview']">
-  <img src="${python: preview['download']}" width="${python: preview['width']}" height="${python: preview['height']}" />
+  <img src="${python: preview['download']}"
+    width="${python: preview['width']}"
+    height="${python: preview['height']}" />
 </li>
 ```
