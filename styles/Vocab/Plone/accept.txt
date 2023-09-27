@@ -4,6 +4,7 @@
 `plone.restapi`
 `plone.volto`
 [Aa]sync
+[Aa]utosave
 [Bb]ackend
 Barceloneta
 buildout
