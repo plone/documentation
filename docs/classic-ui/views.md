@@ -637,11 +637,11 @@ This way you also have a test for the generated view.
 
 ## Guided information
 
-The Mastering Plone Training has several chapters on views.
+The Mastering Plone 5 Training has several chapters on views.
 
-- {ref}`training:views1-label`
-- {ref}`training:views2-label`
-- {ref}`training:views3-label`
+-   {doc}`training:mastering-plone-5/views_1`
+-   {doc}`training:mastering-plone-5/views_2`
+-   {doc}`training:mastering-plone-5/views_3`
 
 
 (classic-ui-anatomy-of-a-view-label)=
