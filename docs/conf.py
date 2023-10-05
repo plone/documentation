@@ -91,6 +91,8 @@ linkcheck_ignore = [
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
+    # Ignore unreliable sites
+    r"https://web.archive.org/",  # volto
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5
