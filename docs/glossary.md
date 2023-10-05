@@ -121,7 +121,8 @@ Diazo
     Diazo allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology.
 
 Dexterity
-    [Dexterity](https://github.com/plone/plone.dexterity), the base framework for building content types, both through-the-web and as filesystem code for Zope.
+    [Dexterity](https://github.com/plone/plone.dexterity) is the base framework for building content types, both through-the-web and as filesystem code.
+     It is aimed at Plone, although this package should work with plain Zope + CMF systems.
 
 Dublin Core
     The Dublin Core Schema is a small set of vocabulary terms that can be used to describe web resources (video, images, web pages, etc.), as well as physical resources such as books or CDs, and objects like artworks.
@@ -515,7 +516,7 @@ Zope Component Architecture
     It can be used for developing any Python application.
     Maybe it should be called Python Component Architecture.
     ```{seealso}
-    See also https://muthukadan.net/docs/zca.html.
+    See also https://zopecomponent.readthedocs.io/en/latest/index.html.
     ```
 
 browser layer
