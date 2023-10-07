@@ -80,7 +80,7 @@ linkcheck_ignore = [
     r"http://yoursite",
     r"https://www.linode.com",
     r"https://vhs-ehrenamtsportal.de", # SSLError(SSLCertVerificationError
-    r"https://github.com/orgs/plone/teams/developers",  # requires auth
+    r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
     # Ignore specific anchors
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
@@ -130,7 +130,7 @@ exclude_patterns = [
     "plone.restapi/news",
     "plone.restapi/performance",
     "plone.restapi/src",
-    "volto/developer-guidelines/branch-policy.md",
+    "volto/contributing/branch-policy.md",
 ]
 
 html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
@@ -323,7 +323,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.2",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.4",
     "{NVM_VERSION}": "0.39.3",
 }
 

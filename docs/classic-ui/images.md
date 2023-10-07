@@ -66,7 +66,7 @@ To get the original image, you can leave out the scale:
 
 (classic-ui-images-by-cacheable-scale-uid-name-label)=
 
-### By cacheable scale UID name
+### By cacheable scale {term}`UID` name
 
 When an image scale is created, it will be cached under the name `UID.EXT` (i.e. `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
 Scaling keeps the uploaded formats, except for TIFF which ends up as JPEG.
@@ -213,7 +213,7 @@ You can also provide the following keyword arguments to set `title`, `alt`, or `
 
 (classic-ui-images-get-image_scale-by-cached-uid-name-label)=
 
-### Get `image_scale` by cached UID name
+### Get `image_scale` by cached {term}`UID` name
 
 If you only have the cached image name from an URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
 But you can use this workaround, by calling the `publishTraverse` method in `ImageScaling` directly:

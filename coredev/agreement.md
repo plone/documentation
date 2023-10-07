@@ -53,12 +53,11 @@ A common way to start contributing is to participate in a [Plone sprint](https:/
 
 ## Dealing with pull requests on GitHub
 
-Before we can merge a pull request, we have to check that the author has signed the contributor's agreement.
+Before we can merge a pull request, we must ensure that the author has signed the Plone Contributor Agreement.
 
-If they're listed in <https://github.com/orgs/plone/teams/developers/members>, the author has signed so we can go ahead and merge.
+If they're listed in either the [Developers](https://github.com/orgs/plone/teams/developers/members) or [Contributors](https://github.com/orgs/plone/teams/contributors/members) team, the author has signed the Plone Contributor Agreement, so we can go ahead and merge.
 
-If they aren't listed there, there's still a chance they have signed the contributor's agreement.
+If they aren't listed there, they may have signed and returned the Plone Contributor Agreement, but they were not yet added to a team.
+You can ask agreements@plone.org to verify.
 
-If they have signed before the move to GitHub, you can ask <agreements@plone.org> to check.
-
-Pull requests without contributor's agreement can only be merged in trivial cases, and only by the release manager.
+Pull requests without a signed Plone Contributor Agreement can only be merged in trivial cases, and only by the release manager.
