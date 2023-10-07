@@ -62,4 +62,5 @@ theming/index
 viewlets
 views
 whatsnew
+../mockup/README.md
 ```

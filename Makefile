@@ -61,8 +61,15 @@ docs/volto:
 	@echo
 	@echo "Documentation of volto initialized."
 
+docs/mockup:
+	git submodule init; \
+	git submodule update; \
+	ln -s ../submodules/mockup ./docs/mockup
+	@echo
+	@echo "Documentation of mockup initialized."
+
 .PHONY: deps
-deps: bin/python docs/volto docs/plone.restapi docs/plone.api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
+deps: bin/python docs/volto docs/plone.restapi docs/plone.api docs/mockup  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
 
 
 .PHONY: html
@@ -235,6 +242,7 @@ netlify:
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
+	ln -s ../submodules/mockup ./docs/mockup
 	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 
 .PHONY: storybook

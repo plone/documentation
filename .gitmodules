@@ -10,3 +10,7 @@
 	path = submodules/plone.api
 	url = https://github.com/plone/plone.api.git
 	branch = master
+[submodule "submodules/mockup"]
+	path = submodules/mockup
+	url = https://github.com/plone/mockup.git
+	branch = improve-docs
