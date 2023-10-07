@@ -121,7 +121,8 @@ Diazo
     Diazo allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology.
 
 Dexterity
-    [Dexterity](https://github.com/plone/plone.dexterity), the base framework for building content types, both through-the-web and as filesystem code for Zope.
+    [Dexterity](https://github.com/plone/plone.dexterity) is the base framework for building content types, both through-the-web and as filesystem code.
+     It is aimed at Plone, although this package should work with plain Zope + CMF systems.
 
 Dublin Core
     The Dublin Core Schema is a small set of vocabulary terms that can be used to describe web resources (video, images, web pages, etc.), as well as physical resources such as books or CDs, and objects like artworks.
@@ -384,6 +385,9 @@ HAProxy
 nginx
     [nginx](https://docs.nginx.com/nginx/) (pronounced "engine x") is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 
+Traefik Proxy
+    [Traefik Proxy](https://traefik.io/traefik/) is an open-source reverse proxy and load balancer, suitable for containerized architectures.
+
 Volto
     [Volto](https://github.com/plone/volto) is a React-based frontend for the Plone CMS.
     It is the default user interface for Plone 6.
@@ -396,7 +400,7 @@ Classic UI
     Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
     It is based on Twitter Bootstrap 5.
     It uses [Mockup](https://github.com/plone/mockup/) as its JavaScript stack.
-    [View Mockup's patterns](https://plone.github.io/mockup/dev/).
+    [View Mockup's patterns](https://plone.github.io/mockup/).
 
     The other frontend is {term}`Volto`.
 
@@ -512,7 +516,7 @@ Zope Component Architecture
     It can be used for developing any Python application.
     Maybe it should be called Python Component Architecture.
     ```{seealso}
-    See also https://muthukadan.net/docs/zca.html.
+    See also https://zopecomponent.readthedocs.io/en/latest/index.html.
     ```
 
 browser layer
@@ -580,7 +584,7 @@ Verb
     One of the basic actions that can be requested to be executed by the server (on an object) based on the {term}`Request`.
 
 Object URL
-    The target object of the {term}`Request`
+    The target object of the {term}`Request`.
 
 Authorization Header
     Part of the {term}`Request` that is responsible for the authentication related to the right user or service to ask for a {term}`Response`.
@@ -600,6 +604,9 @@ content rule
 trigger
     A trigger is an event in Plone that causes the execution of defined actions.
     Example triggers include object modified, user logged in, and workflow state changed.
+
+navigation root
+    An object marked as a navigation root provides a way to root catalog queries, searches, breadcrumbs, and so on, into that object.
 
 FTI
 Factory Type Information

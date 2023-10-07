@@ -173,7 +173,7 @@ You need to declare the `browser` namespace in your `configure.zcml` to use `bro
 ```
 
 The view in question is registered against a {ref}`layer <classic-ui-layers-label>`.
-It will be available after restart, after running the {ref}`GenericSetup profile <backend-configuration-registry-generic-setup-label>`.
+It will be available after restart and running the {ref}`GenericSetup profile <backend-configuration-registry-generic-setup-label>`, or enabling the add-on.
 
 
 (classic-ui-page-template-label)=
@@ -432,7 +432,7 @@ Since one Zope application server can contain multiple Plone sites, layers are u
 A layer is in use when either:
 
 -   a theme which defines that layer is active, or
--   if a specific add-on product which defines that layer is installed.
+-   if a specific add-on product which defines that layer is installed in the Plone site.
 
 You should register your views against a certain layer in your own code.
 
@@ -637,11 +637,11 @@ This way you also have a test for the generated view.
 
 ## Guided information
 
-The Mastering Plone Training has several chapters on views.
+The Mastering Plone 5 Training has several chapters on views.
 
-- {ref}`training:views1-label`
-- {ref}`training:views2-label`
-- {ref}`training:views3-label`
+-   {doc}`training:mastering-plone-5/views_1`
+-   {doc}`training:mastering-plone-5/views_2`
+-   {doc}`training:mastering-plone-5/views_3`
 
 
 (classic-ui-anatomy-of-a-view-label)=
@@ -751,7 +751,7 @@ The same functionality can be achieved with helper views, with less potential pi
 
 (classic-ui-reusing-view-template-snippets-or-embedding-another-view-label)=
 
-## Reusing view template snippets or embedding another view
+## Reusing view template snippets (macros) or embedding another view
 
 To use the same template code several times you can either:
 
@@ -820,8 +820,37 @@ You need to get access to the view in your code if you are:
 -   calling a view from inside another view, or
 -   calling a view from your unit test code.
 
-Below are two different approaches for that.
+Below are three different approaches for that.
 
+
+(classic-ui-view-by-plone-api)=
+
+### By using `plone.api.content.get_view()`
+
+The `plone.api` provides a method to get a view by its registered name, the context, and the current request.
+
+```python
+from plone import api
+
+portal = api.portal.get()
+view = api.content.get_view(
+    name='plone',
+    context=portal['about'],
+    request=request,
+)
+```
+
+```{versionchanged} 2.0.0
+Since version 2.0.0, the request argument can be omitted.
+In that case, the global request will be used.
+
+For more details see {ref}`content-get-view-example`.
+```
+
+```{note}
+The usage of `plone.api` in Plone core is limited.
+If in doubt, please use the following methods instead.
+```
 
 (classic-ui-by-using-getmultiadapter-label)=
 

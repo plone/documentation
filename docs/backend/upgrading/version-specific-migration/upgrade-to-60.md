@@ -162,7 +162,7 @@ If no warnings are shown, the add-on should run fine on Zope 5.
 
 (v60-barceloneta-lts-label)=
 
-## Modernize Plone default theme (Barceloneta LTS)
+## Modernize Plone Classic UI theme (Barceloneta)
 
 The standard theme in Classic UI was updated to Bootstrap 5, CSS variables, and an icon library.
 If you have a theme that builds on Barceloneta, you most likely need various changes.

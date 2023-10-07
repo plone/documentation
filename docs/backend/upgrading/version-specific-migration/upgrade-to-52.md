@@ -294,7 +294,7 @@ eggs =
 ```{note}
 Instead of using Archetypes in Plone 5.2, you should consider migrating to Dexterity.
 Dexterity is also a hard requirement to be able to use Python 3.
-See [`plone.app.contenttypes` documentation on Migration](https://github.com/plone/plone.app.contenttypes#migration) for details on the migration from Archetypes to Dexterity.
+See [`plone.app.contenttypes` documentation on Migration](https://github.com/plone/plone.app.contenttypes/blob/2.2.3/docs/README.rst#migration) for details on the migration from Archetypes to Dexterity.
 ```
 
 

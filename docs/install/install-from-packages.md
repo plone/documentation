@@ -59,6 +59,7 @@ You may host multiple Plone sites on the same server.
 -   {term}`Yeoman`
 -   {term}`Yarn`
 -   {term}`GNU make`
+-   {term}`Docker`
 
 ````{note}
 Update
@@ -178,6 +179,12 @@ Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
     ```console
     3.2.3
     ```
+    
+    If you do not see a version of Yarn 3, then try the following to set the active version.
+    
+    ```shell
+    yarn set version 3.x
+    ```
 
 
 (install-prerequisites-make-label)=
@@ -193,6 +200,14 @@ Use your favorite search engine or trusted online resource for how to update `ma
 
 
 (install-packages-install-label)=
+
+
+#### Install Docker
+
+Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
+
+Docker Desktop includes all Docker tools.
+
 
 ## Install Plone 6
 
