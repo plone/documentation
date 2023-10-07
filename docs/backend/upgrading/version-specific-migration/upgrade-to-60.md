@@ -554,23 +554,22 @@ In that case, you are advised to add the `image_scales` column manually to the c
 
 Plone 6 ships with a new version of TinyMCE.
 While Plone 5.2 ships with TinyMCE 4.7, Plone 6.0 ships with TinyMCE 5.10.
-The TinyMCE integration, pat-tinymce has also changed, but the configuration options have been almost kept the same and are likely to be compatible with your existing installation.
+The TinyMCE integration `pat-tinymce` has also changed, but the configuration options have been almost kept the same and are likely to be compatible with your existing installation.
 The configuration changes are:
 
-- Added configuration options: `text.enableImageZoom`, `defaultSrcset`, `imageCaptioningEnabled`, `tiny.language`,
-- Removed configuration options: `imageScales`,
-- Option values changes for: `imageClasses`,
-
-But there is more.
+-   Added configuration options `text.enableImageZoom`, `defaultSrcset`, `imageCaptioningEnabled`, and `tiny.language`.
+-   Removed configuration option `imageScales`.
+-   Option values changed for `imageClasses`.
 
 
 ### TinyMCE templates
 
-In Plone 6 the TinyMCE template plugin is build-in and can be enabled via checkbox.
-While in Plone 5 you had to enable the template plugin, as an external plugin via the `custom_plugins` configuration option.
-The template registration is the same as before, but in Plone 6 your templates need to have a `description`, otherwise TinyMCE will throw an JavaScript error and the templates won't be usable at all.
+In Plone 6, the TinyMCE template plugin is built-in and can be enabled via a checkbox.
+Whereas in Plone 5, you had to enable the template plugin as an external plugin via the `custom_plugins` configuration option.
+The template registration is the same as before, but in Plone 6 your templates need to have a `description`.
+Otherwise TinyMCE will throw a JavaScript error, and the templates won't be usable at all.
 
-This is an example `registry.xml` snippet for configuring TinyMCE with some templates:
+The following example {file}`registry.xml` may be used for configuring TinyMCE with some templates.
 
 ```xml
   <records interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
@@ -600,8 +599,6 @@ This is an example `registry.xml` snippet for configuring TinyMCE with some temp
 
 Please make sure you write valid JSON for the `template` option.
 
-
-### More information on TinyMCE 4 to 5 migration
-
-For more information on the TinyMCE 4 to 5 upgrade consult the TinyMCE upgrade guide: https://www.tiny.cloud/docs/migration-from-4x/
-
+```{seealso}
+See also the [TinyMCE 4 to 5 upgrade guide](https://www.tiny.cloud/docs/migration-from-4x/).
+```
