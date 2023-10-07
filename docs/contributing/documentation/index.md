@@ -238,11 +238,8 @@ We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master
     # for plone.api
     git checkout master
 
-    # for plone.restapi
-    git checkout master
-
-    # for volto
-    git checkout master
+    # for plone.restapi or volto
+    git checkout main
 
     git pull
     ```
