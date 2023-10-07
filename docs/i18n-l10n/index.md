@@ -62,7 +62,7 @@ language tag
 :   A language tag is a string used as an identifier for a language.
     A language tag may have one or more subtags.
     The basic form of a language tag is `LANGUAGE-[SUBTAG]`.
-    
+
     ```{seealso}
     -   W3C article [Language tags in HTML and XML](https://www.w3.org/International/articles/language-tags/)
     -   W3C Working Draft [Language Tags and Locale Identifiers for the World Wide Web](https://www.w3.org/TR/ltli/)
@@ -145,6 +145,7 @@ These differences depend upon the programming language, either Python or JavaScr
 
 translating-text-strings
 language-negotiation
+language-negotiation-volto
 translating-content
 contributing-translations
 resync-translations
