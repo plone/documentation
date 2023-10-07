@@ -7,19 +7,8 @@ myst:
     "keywords": "Plone, Classic, user, guide"
 ---
 
-(deployment-label)=
-
-# Deployment
-
-```{todo}
-Intro to chapter "deployment"
-```
-
 ```{toctree}
 :maxdepth: 2
 
-provision
-scaling
-backup
-caching/index
+working-with-content/index
 ```

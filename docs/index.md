@@ -40,6 +40,7 @@ backend/index
 classic-ui/index
 i18n-l10n/index
 contributing/index
+guides/index
 ```
 
 ```{toctree}
