@@ -93,7 +93,7 @@ linkcheck_ignore = [
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
     # Ignore unreliable sites
     r"https://web.archive.org/",  # volto
-    r"https://www.youtube.com/playlist",  # volto, TODO uncomment after installing sphinxcontrib.youtube
+    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5
