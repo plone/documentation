@@ -11,16 +11,24 @@ myst:
 
 # Forms
 
+
+
+
+
+
+
+
+
 ```{todo}
 Describe how create forms with Plone's default form framework z3c.form.
-Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter and will be referenced frome examples here.
+Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter and will be referenced from examples here.
 ```
 
 
 Plone uses the [z3c.form](http://pythonhosted.org/z3c.form) library to build its web-forms.
-The package responsible for integrating with Plone is [plone.z3cform](http://http://github/plone//plone.z3cform).
+The package responsible for integrating with Plone is [plone.z3cform](https://github.com/plone//plone.z3cform).
 
-To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](http://github/plone/plone.autoform), in particular its `AutoExtensibleForm` base class.
+To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](https://github.com/plone/plone.autoform), in particular its `AutoExtensibleForm` base class.
 It is responsible for handling form hints and configuring  z3c.form widgets and groups (fieldsets).
 
 A form is a view that utilizes these libraries.
