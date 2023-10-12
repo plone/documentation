@@ -129,6 +129,7 @@ You also have to change the {ref}`classic-ui-viewlets-viewletmanager-label` clas
 See {ref}`classic-ui-viewlets-registering-viewlet-zcml-label`.
 ```
 
+
 ### Hiding viewlets
 
 Hiding a viewlet is also done from the `viewlets.xml` with the `<hidden />` node which is at same level as `<order />`, and is done per skin selection.
@@ -206,7 +207,11 @@ See
 - <https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/viewlets/common.py>
 
 
-### Creating a viewlet using Python code and ZCML
+### Creating a viewlet
+
+```{todo}
+Convert example to using plonecli
+```
 
 Here is an example code which extends an existing Plone base viewlet (found from plone.app.layout.viewlets.base package)
 and then puts this viewlet to a one of viewlet managers using {doc}`ZCML </develop/addons/components/zcml>`.
