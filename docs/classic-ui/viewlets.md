@@ -27,7 +27,7 @@ Similar to Views, Viewlets are usually a combination of:
 .. graphviz::
     :align: center
 
-    digraph viewstructure {
+    digraph viewletstructure {
       {
         node [margin=5,shape=box]
       }
@@ -35,18 +35,50 @@ Similar to Views, Viewlets are usually a combination of:
     }
 ```
 
+
 Each viewlet is associated with a {ref}`classic-ui-viewlets-viewletmanager-label`.
 
-Common viewlet managers are:
+Common viewlet managers and it's viewlets are:
 
-- plone.abovecontent
-- plone.globalstatusmessage
-- plone.abovecontenttitle
-- plone.belowcontenttitle
-- plone.abovecontentbody
-- plone.belowcontentbody
-- plone.belowcontent
-- plone.toolbar
+- **plone.abovecontent**
+
+    - plone.path_bar
+    - plone.lockinfo
+
+- **plone.globalstatusmessage**
+
+    - plone.globalstatusmessage
+
+- **plone.abovecontenttitle**
+
+    - plone.socialtags
+    - contentleadimage
+
+- **plone.belowcontenttitle**
+
+    - plone.documentbyline
+
+- **plone.abovecontentbody**
+
+    - plone.tableofcontents
+
+- **plone.belowcontentbody**
+
+    - plone.contributors
+    - plone.rights
+    - plone.keywords
+    - plone.relateditems
+
+- **plone.belowcontent**
+
+    - plone.documentactions
+    - plone.nextprevious
+    - plone.comments
+
+- **plone.toolbar**
+
+    - plone.contentviews
+
 
 To get an overview of all `viewlet manager` and Viewlets in the current context, you can use the `@@manage-viewlets` view.
 
@@ -87,6 +119,14 @@ To set the order of a viewlet inside it's viewlet manager, use the following `Ge
 <order manager="plone.belowcontentbody" skinname="*">
   <viewlet name="plone.relateditems" insert-before="*"/>
 </order>
+```
+
+```{note}
+You cannot move viewlets between viewlet managers.
+Hide the concerning viewlets in one manager using /@@manage-viewlets and viewlets.xml
+export, then re-register the same viewlet to a new manager.
+You also have to change the {ref}`classic-ui-viewlets-viewletmanager-label` class in the ``ZCML`` registration of the viewlet.
+See {ref}`classic-ui-viewlets-registering-viewlet-zcml-label`.
 ```
 
 ### Hiding viewlets
@@ -246,6 +286,7 @@ Then a sample page template (like.pt). You can use TAL template variable *view* 
 </iframe>
 ```
 
+(classic-ui-viewlets-registering-viewlet-zcml-label)=
 
 ### Registering a viewlet using ZCML
 
