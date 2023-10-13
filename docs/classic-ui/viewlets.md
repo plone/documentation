@@ -216,7 +216,7 @@ Convert example to using plonecli
 Here is an example code which extends an existing Plone base viewlet (found from plone.app.layout.viewlets.base package)
 and then puts this viewlet to a one of viewlet managers using {doc}`ZCML </develop/addons/components/zcml>`.
 
-Example Python code for viewlets.py:
+Example Python code for `viewlets.py`:
 
 ```python
 """
@@ -676,7 +676,7 @@ class ISomethingHeader(IViewletManager):
     """
 ```
 
-We need to create this common.py file so we can tell Plone to render our custom templates for these
+We need to create this `common.py` file so we can tell Plone to render our custom templates for these
 viewlets. Without this piece in place, our viewlets will render with Plone defaults.
 
 theme/browser/common.py code:
@@ -703,13 +703,13 @@ Viewlets can be registered to one special page only
 using a marker interface. This allow loading
 a page specific CSS files.
 
-- [How to get a different look for some pages of a plone-site](http://www.starzel.de/blog/how-to-get-a-different-look-for-some-pages-of-a-plone-site)
+- [How to get a different look for some pages of a plone-site](https://www.starzel.de/blog/how-to-get-a-different-look-for-some-pages-of-a-plone-site)
 
 ### \<head> viewlets
 
 You can register custom JavaScript or CSS files to HTML \<head> section using viewlets.
 
-Below is an head.pt which will be injected in \<head>. This examples shows how to dynamically generate
+Below is an `head.pt` which will be injected in \<head>. This examples shows how to dynamically generate
 `<script>` elements.
 
 ```html
@@ -730,7 +730,7 @@ Then you register it against viewlet manager `plone.app.layout.viewlets.interfac
    />
 ```
 
-viewlet.py code:
+`viewlet.py` code:
 
 ```python
 class FacebookConnectJavascriptViewlet(LikeButtonOnConnectFacebookBaseViewlet):
@@ -788,7 +788,7 @@ A viewlet manager can be rendered in a page template code using the following ex
 ```
 
 ```{note}
-If you get a `ContentProviderLookupError: viewletmanagerid` you are trying to render a Plone page frame in a context which has no acquisition chain properly set up. Check [exceptions documentation](https://docs.plone.org/manage/troubleshooting/exceptions.html#contentproviderlookuperror-plone-htmlhead) for more details.
+If you get a `ContentProviderLookupError: viewletmanagerid` you are trying to render a Plone page frame in a context which has no acquisition chain properly set up. Check [exceptions documentation](https://4.docs.plone.org/manage/troubleshooting/exceptions.html#contentproviderlookuperror-plone-htmlhead) for more details.
 ```
 
 Each viewlet manager allows you to shuffle viewlets inside a viewlet manager.
@@ -810,7 +810,7 @@ and [plone.app.viewletmanager.manager.OrderedViewletManager](https://github.com/
 More info
 
 - <https://github.com/zopefoundation/zope.viewlet/blob/3.7.2/src/zope/viewlet/viewlet.py>
-- <http://docs.plone.org/old-reference-manuals/plone_3_theming/elements/viewletmanager/anatomy.html>
+- <[http://docs.plone.org/old-reference-manuals/plone_3_theming/elements/viewletmanager/anatomy.html](https://4.docs.plone.org/old-reference-manuals/plone_3_theming/elements/viewlet/anatomy.html)>
 
 
 ### Custom viewlet manager
