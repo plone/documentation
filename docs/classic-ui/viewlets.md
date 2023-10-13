@@ -92,7 +92,7 @@ To add viewlets to your HTML code you first need to add them to a viewlet manage
 - Viewlets can be reordered (limited to reordering within a `viewlet manager`)
 - Viewlets can be registered and overridden in a theme specific manner {doc}`using layers </develop/plone/views/layers>`
 - Viewlets have `update()` and `render()` methods
-- Viewlets should honour [zope.contentprovider.interfaces.IContentProvider call contract](https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py).
+- Viewlets should honour [zope.contentprovider.interfaces.IContentProvider call contract](https://github.com/zopefoundation/zope.contentprovider/blob/master/src/zope/contentprovider/interfaces.py), documented in [zope.contentprovider](https://zopecontentprovider.readthedocs.io/en/latest/).
 
 A viewlet can be configured so that it is only available for:
 
