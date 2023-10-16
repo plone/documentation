@@ -9,11 +9,11 @@ myst:
 
 (backend-content-types-label)=
 
-# Content Types
+# Content types
 
-```{seealso}
-See the chapter {ref}`training:dexterity1-label` from the Mastering Plone 6 Training for a step-by-step tutorial to create a custom content type.
-```
+This part of the documentation describes how to develop content types in Plone.
+Content types are implemented through the {term}`Dexterity` framework.
+
 
 ## What is a content type?
 
@@ -22,19 +22,59 @@ We have different content types to reflect the different kinds of information ab
 
 Pages, news items, events, files (binary), and images are examples of content types.
 
-Lots of things in Plone can be configured to work differently based on the content type. For example, each content type has:
-- a {ref}`schema <backend-fields-label>` specifying the fields which can be edited for the content type
-- a list of {ref}`behaviors <backend-behaviors-label>` which supply additional functionality that can be attached to the content types for which the behavior is enabled
-- a {ref}`workflow <backend-workflows-label>` controlling transitions between publishing states and associated permissions
-- a version policy controlling whether to store a revision history
+Lots of things in Plone can be configured to work differently based on the content type.
+For example, each content type has:
+
+-   a {ref}`schema <backend-fields-label>` specifying the fields which can be edited for the content type
+-   a list of {ref}`behaviors <backend-behaviors-label>` which supply additional functionality that can be attached to the content types for which the behavior is enabled
+-   a {ref}`workflow <backend-workflows-label>` controling transitions between publishing states and associated permissions
+-   a version policy controling whether to store a revision history
 
 It is common in developing a web site that you'll need customized versions of common content types, or perhaps even entirely new types.
 
+
+## Topics
+
+This part of the documentation will cover the following topics.
+
+-   Some basic design techniques for solving problems with content types in Plone
+-   Setting up a Dexterity development environment
+-   Creating a package to house your types
+-   Building a custom type based on a schema
+-   Creating custom views and forms for your type
+-   Advanced customization, including workflow and security
+-   Testing your types
+-   A quick reference to common fields, widgets, and APIs
+
+```{seealso}
+See the chapter {ref}`training:dexterity1-label` from the Mastering Plone 6 Training for a step-by-step tutorial to create a custom content type.
+```
+
+```{toctree}
+:maxdepth: 2
+```
+% Uncomment each of the following and move into the toctree above when migrated from Plone 5 documentation
+% designing
+% prerequisite
+% schema-driven-types
+% model-driven-types
+% custom-views
+% advanced/index
+% testing/index
+% reference/index
+
+
 ## Factory Type Information
+
+```{todo}
+Find a new home for this section.
+This page is an introduction, whereas FTI is a topic unto itself.
+```
 
 A content type is defined by creating a {term}`Factory Type Information` (FTI) object.
 
-To create an FTI in a GenericSetup profile, add the content type to the list in `types.xml`. For example, this adds the standard Plone page (Document) content type:
+To create an FTI in a `GenericSetup` profile, add the content type to the list in `types.xml`.
+For example, this adds the standard Plone page (`Document`) content type:
 
 ```xml
 <object name="portal_types">
@@ -145,7 +185,8 @@ In this example, the file is `types/Document.xml` and contains this XML:
 
 The `name` attribute on the root element in the XML must match the name in the filename and the name listed in `types.xml`.
 
-Set the `i18n:domain` to the i18n domain which includes translations for this content type. This is usually the same as the name of the Python package which contains the content type.
+Set the `i18n:domain` to the i18n domain which includes translations for this content type.
+This is usually the same as the name of the Python package which contains the content type.
 
 
 (global-fti-properties-label)=
@@ -207,7 +248,6 @@ The XML sets a number of FTI properties that are used globally, in both Classic 
 
 `title`
 :   The name of the content type displayed in the UI.
-
 
 
 (classic-ui-only-fti-properties-label)=
