@@ -199,7 +199,7 @@ Or you can get the HTML tag back, and replace the current tag with it:
 
 ```xml
 <div tal:define="scale_view context/@@images">
-  <img tal:replace="structured python: scale_view.tag('image', 'mini')">
+  <img tal:replace="structure python: scale_view.tag('image', 'mini')">
 </div>
 ```
 
@@ -207,7 +207,7 @@ You can also provide the following keyword arguments to set `title`, `alt`, or `
 
 ```xml
 <div tal:define="scale_view context/@@images">
-  <img tal:replace="structured python: scale_view.tag('banner', 'mini', title='The Banner', alt='Alternative text', css_class='banner')">
+  <img tal:replace="structure python: scale_view.tag('banner', 'mini', title='The Banner', alt='Alternative text', css_class='banner')">
 </div>
 ```
 

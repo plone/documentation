@@ -52,7 +52,8 @@ See the chapter {ref}`training:dexterity1-label` from the Mastering Plone 6 Trai
 
 ```{toctree}
 :maxdepth: 2
-
+```
+% Uncomment each of the following and move into the toctree above when migrated from Plone 5 documentation
 % designing
 % prerequisite
 % schema-driven-types
@@ -61,7 +62,6 @@ See the chapter {ref}`training:dexterity1-label` from the Mastering Plone 6 Trai
 % advanced/index
 % testing/index
 % reference/index
-```
 
 
 ## Factory Type Information
