@@ -6,80 +6,97 @@ This documentation outlines the process of replacing Sphinx search in a Plone si
 
 ## Approach
 
-### Data Indexing and Processing
+To achieve the transition from Sphinx to Nuclia search, we took an approach as shown in the following generalized outline.
 
-To achieve the transition, the following steps were taken:
+1. Generate Nuclia sync data
 
-1. **Generate Nuclia Sync Data:**
-   - Iterate through `.md` files in the repository [docs](https://github.com/plone/documentation/tree/6.0/docs) .
-   - Calculate the hash of each file and store the mapping in `nuclia_sync.json`.
+    -   Iterate through `.md` files in the repository [docs](https://github.com/plone/documentation/tree/6.0/docs) .
+    -   Calculate the hash of each file and store the mapping in `nuclia_sync.json`.
 
-2. **Extract Headings:**
-   - Use regular expressions to extract headings from Markdown files.
-   - Store the extracted headings and slugs for document URLs.
+2. Extract Headings
 
-3. **Upload Documents:**
-   - Utilize the `NucliaUpload` class from the `nuclia` SDK.
-   - Generated slugs, Extracted headings, Nuclia `API_KEY` and constructed URLs for `.md` can be passed in the class method.
+    -   Use regular expressions to extract headings from Markdown files.
+    -   Store the extracted headings and slugs for document URLs.
 
-4. **Synchronize Documents:**
-   - Compare hashes to determine whether to upload, update, or delete documents, when changes are made.
-   - Handle document deletions using the `NucliaKB` class.
+3. Upload Documents
 
-5. **GitHub Actions Workflow:**
-   - Created a synchronization workflow triggered by a `push` event.
-   - Defined the steps for checking out code, setting up the Python environment, running the sync script, and committing changes back to the repository.
+    -   Utilize the `NucliaUpload` class from the `nuclia` SDK.
+    -   Generated slugs, Extracted headings, Nuclia `API_KEY` and constructed URLs for `.md` can be passed in the class method.
 
-## Replication Steps
+4. Synchronize Documents
+
+    -   Compare hashes to determine whether to upload, update, or delete documents, when changes are made.
+    -   Handle document deletions using the `NucliaKB` class.
+
+5. GitHub Actions Workflow
+
+    -   Created a synchronization workflow triggered by a `push` event.
+    -   Defined the steps for checking out code, setting up the Python environment, running the sync script, and committing changes back to the repository.
+
+## Replication steps
 
 Follow these steps to replicate the process in your own project:
 
-### Set Up
+### Pre-requisites
 
-Copy this in your terminal to clone plone/documentation
+-   See [installation](https://6.docs.plone.org/install/index.html) for requirements to build Plone 6 Documentation.
+-   See `Training <inv:training:std:lable:installation>` for requirements to build Plone Training.
 
-```bash
- git clone `<repository-url>`
+### Global configuration for `upload.py`
 
- pip install -q -r requirements-initial.txt
+1.  `PUBLIC_URL`
+    -   Set the URL of your website.
 
- pip install -q -r requirements.txt
-```
+2.  `API Key`
+    -   Set this variable with the API key of your knowledge box.
 
-### Global Configuration
+3.  `KB`
+    -   Set up this variable with your knowledge box URL.
 
-1. **PUBLIC_URL:**
-    - Set the URL of your website
-2. **API Key:**
-    - Obtain the API key from your nuclia Knowledge Box.
-3. **Knowledge Base URL:**
-    - Set up the variable to define the Nuclia knowledge box URL.
+### Indexing and syncing
 
-### Indexing and Syncing
+1.  Generate Sync Document
 
-1. **Generate Nuclia Sync Data:**
+    -   Make sure to create a `json` file and replace each path of `json` file being read or written inside `upload` script with the path of your `json` file.
+    -   Fill the `json` with content as given below this is essential for syncing old and new data.
 
-    ```bash
-    python3 upload.py
-    ```
+        ```json
+        {
+            "docs" : {
 
-2. **Sync Documents:**
+            }
+        }
+        ```
 
-- Run the `sync` function to upload, update, or delete documents in Nuclia.
+2.  Populate Sync Document
+
+    -   Running the `upload` script will now eventually handle the syncing and indexing to the knowledge box.    
+
+     ```bash
+     python3 upload.py
+     ```
+
+### Integrating the widget
+
+-   Nuclia provides with it's own widget code for our use. 
+
+-   Choose the functionalities you want your widget to have from the widget generator tab. 
+
+-   You will be provided with a code snippet from nuclia which can be used for integration.
+
+-   To perform style changes to the widget you may have to use CSS or other alternatives.
 
 ### GitHub Actions
 
-- **Workflow Setup:**
-     Modify the GitHub Actions workflow `nuclia_sync.yml` to match your repository structure.
+Modify the GitHub Actions workflow `nuclia_sync.yml` to match your repository structure.
 
->## Usage Notes
->
->- Ensure that the API key and knowledge base URL are correctly configured.
->- Regularly update the sync process to keep the knowledge base up to date.
->- Troubleshoot issues by checking API key validity and document URLs.
+## Usage notes
 
-### Conclusion
+-   Ensure that the API key and knowledge box URL are correctly configured.
+-   Troubleshoot issues by checking the API key validity and document URLs.
 
-Replacing Sphinx search with Nuclia search brings improved search functionality to Plone sites. Feel free to reach out for assistance or clarification on any aspect of this documentation.
+## Conclusion
 
+Replacing Sphinx search with Nuclia search brings improved search functionality to Plone sites.
+Feel free to reach out for assistance or clarification on any aspect of this documentation.
 Happy syncing and searching!
