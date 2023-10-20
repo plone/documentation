@@ -82,3 +82,24 @@ To make it easier for other contributors to work with your project, update the f
 -   Optionally set a branch to work on in `.gitmodules`.
 
 Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6.0`](https://github.com/plone/documentation/compare).
+
+
+## Add a project to Netlify
+
+```{todo}
+Some details need to be added to this section, including who to ping about the request with the repository name.
+```
+To add a new site to Netlify to preview built documentation or storybooks, you need to add a new site to Netlify.
+
+1.  Visit [Team Overview](https://app.netlify.com/teams/plone/overview).
+1.  Click {guilabel}`Add a new site` and select {guilabel}`Import an existing project`.
+1.  Click {guilabel}`Deploy with GitHub`.
+1.  Select {guilabel}`plone` for the GitHub organization.
+1.  Click {guilabel}`Configure Netlify on GitHub`.
+1.  Select the organization to where you want to install Netlify.
+1.  Click {guilabel}`Select repositories` and select the repository that you want to add.
+1.  Click {guilabel}`Update access`.
+1.  Netlify sends an email to members of the email group `admins` at `plone.org`, who need to review and approve the request.
+    However the email doesn't specify the repository, and admins will not know what to do.
+    You must send email to that group, including in your request the organization and repository, such as `plone/volto`.
+1.  The admin must login to GitHub as an organization owner, then navigate to the requested repository's {guilabel}`Settings`.
