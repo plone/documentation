@@ -86,9 +86,6 @@ Commit and push your changes to a remote, and submit a pull request against [`pl
 
 ## Add a project to Netlify
 
-```{todo}
-Some details need to be added to this section, including who to ping about the request with the repository name.
-```
 To add a new site to Netlify to preview built documentation or storybooks, you need to add a new site to Netlify.
 
 1.  Visit [Team Overview](https://app.netlify.com/teams/plone/overview).
@@ -102,4 +99,34 @@ To add a new site to Netlify to preview built documentation or storybooks, you n
 1.  Netlify sends an email to members of the email group `admins` at `plone.org`, who need to review and approve the request.
     However the email doesn't specify the repository, and admins will not know what to do.
     You must send email to that group, including in your request the organization and repository, such as `plone/volto`.
-1.  The admin must login to GitHub as an organization owner, then navigate to the requested repository's {guilabel}`Settings`.
+1.  The admin must login to GitHub as an organization owner, then navigate to the requested repository's {guilabel}`Settings`. [What else Admin person?]
+1.  The admin replies to the requestor, letting them know the request was approved.
+
+From here you need to update your repository to work with Netlify.
+For an example, see the following files.
+
+-   [Volto `Makefile`](https://github.com/plone/volto/blob/main/Makefile), specifically the `netlify` section.
+    This will become the command used to build docs on Netlify.
+-   [Volto `requirements-docs.txt`](https://github.com/plone/volto/blob/main/requirements-docs.txt) specifies the requirements to build the docs.
+-   [Volto `netlify.toml`](https://github.com/plone/volto/blob/main/netlify.toml) specifies when to build the docs, specifically only when there are changes to documentation files.
+
+Finally you need to configure your site in Netlify.
+You may have done some of these steps earlier, but you might need to refine them.
+The critical pieces are the following.
+
+1.  From the dashboard, select the site to edit it.
+1.  Click {guilabel}`Site configuration`.
+1.  One time only, under {guilabel}`General > Site details` click {guilabel}`Change site name`.
+    A modal dialog appears.
+    Enter the site name using the pattern `ORGANIZATION_NAME-REPOSITORY_NAME`.
+    For example, `plone-components`.
+    Click {guilabel}`Save`.
+1.  Under {guilabel}`Build & deploy > Continuous deployment`, scroll to {guilabel}`Build settings`, and click {guilabel}`Configure`, then enter the following values.
+    -   {guilabel}`Base directory`: `/`
+    -   {guilabel}`Package directory`: `/`
+    -   {guilabel}`Build command`: `make netlify`.
+        This is the command you would define in your `Makefile`.
+    -   {guilabel}`Publish directory`: `_build/html`.
+        This is where the `make` command will output files.
+    -   Finally click {guilabel}`Save`.
+1.  Under {guilabel}`Build & deploy > Continuous deployment`, scroll to {guilabel}`Branches and deploy contexts`, and click {guilabel}`Configure`, then enter appropriate values.
