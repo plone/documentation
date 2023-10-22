@@ -12,56 +12,65 @@ myst:
 # Widgets
 
 ```{seealso}
-See the chapter {ref}`training:dexterity-reference-label` from the Mastering Plone 6 Training.
+See the chapter {doc}`training:mastering-plone/dexterity_reference` from the Mastering Plone 6 Training.
 ```
 
-(backend-widgets-autoform-label)=
+Widgets render HTML code for input and parse HTTP `post` request input in Plone.
 
-Widgets are responsible for:
+Plone stores widgets as the `widgets` attribute of a form.
+Plone presents widgets as an ordered dict-like `Widgets` class.
 
-1. rendering HTML code for input
-2. parsing HTTP post input
+Widgets are only available after you call the form's `update()` and `updateWidgets()` methods.
+`updateWidgets()` binds widgets to the form's context.
+{doc}`vocabularies` defined by their names are resolved at this point.
 
-Widgets are stored as the `widgets` attribute of a form. It's presented by an ordered dict-like `Widgets` class.
+The Zope publisher will also mangle widget names based on what kind of input the widget accepts.
+When an HTTP `post` request comes in, Zope publisher automatically converts `<select>` dropdowns to lists.
 
-Widgets are only available after the form's `update()` and `updateWidgets()` methods have been called. `updateWidgets()` will bind widgets to the form context. For example, vocabularies defined by name are resolved at this point.
-
-The Zope publisher will also mangle widget names based on what kind of input the widget takes. When an HTTP `POST` request comes in, Zope publisher automatically converts `<select>` dropdowns to lists.
 
 ## Widget reference
-You can find the default widgets in the browser package in ``z3c.form``. The ``z3c.form`` [documentation](https://z3cform.readthedocs.io/en/latest/widgets/index.html) has a listing of all the default widgets that shows the HTML output of each.
 
-More widgets can be found in the [plone.app.z3cform](https://github.com/plone/plone.app.z3cform/tree/master) package.
+You can find the default widgets in the browser package in `z3c.form`.
+The [`z3c.form` documentation](https://z3cform.readthedocs.io/en/latest/widgets/index.html) lists all the default widgets and shows the HTML output of each.
+
+You can find more widgets in the [`plone.app.z3cform`](https://github.com/plone/plone.app.z3cform/tree/master) package.
 
 The main widgets are:
 
-- Checkbox Widget
-- Radio Widget
-- Text Widget
-- TextArea Widget
-- TextLines Widget
-- Password Widget
-- Select Widget
-- Ordered-Select Widget
-- File Widget
-- File Testing Widget
-- Image Widget
-- Multi Widget
-- Object Widget
-- Button Widget
-- Submit Widget
-- Date Widget
-- DateTime Widget
-- Time Widget
-- DateTime Picker
+-   Checkbox Widget
+-   Radio Widget
+-   Text Widget
+-   TextArea Widget
+-   TextLines Widget
+-   Password Widget
+-   Select Widget
+-   Ordered-Select Widget
+-   File Widget
+-   File Testing Widget
+-   Image Widget
+-   Multi Widget
+-   Object Widget
+-   Button Widget
+-   Submit Widget
+-   Date Widget
+-   DateTime Widget
+-   Time Widget
+-   DateTime Picker
 
 ## Changing a field's widget
 
-### Using plone.autoform `widget` directive
+You can change a the widget that you use for a field in several ways.
+This section describes these methods.
 
-``plone.autoform`` builds custom `z3c.form` forms based on a model (schema) of what fields to include and what widgets and options should be used for each field. This model is defined as a `zope.schema` based schema, but extra hints can be supplied to control aspects of form display not normally specified in a Zope schema.
 
-Usually, z3c.form picks a widget based on the type of your field. You can change the widget using the ``widget`` directive if you want users to enter or view data in a different format. For example, change the widget for the ``human`` field to use yes/no radio buttons instead of a checkbox:
+### `plone.autoform` `widget` directive
+
+`plone.autoform` builds custom `z3c.form` forms based on a model (schema) of fields, and their widgets and options.
+This model is defined as a `zope.schema` based schema, but extra hints can be supplied to control aspects of form display not normally specified in a Zope schema.
+
+By default, `z3c.form` picks a widget based on the type of your field.
+You can change the widget using the `widget` directive if you want users to enter or view data in a different format.
+For example, you can change the widget for the `human` boolean field to use "yes" and "no" radio buttons instead of its default checkbox:
 
 ```{code-block} python
 :emphasize-lines: 7
@@ -73,12 +82,14 @@ Usually, z3c.form picks a widget based on the type of your field. You can change
 
     class IMySchema(model.Schema):
 
-        form.widget('human', RadioFieldWidget)
+        form.widget("human", RadioFieldWidget)
         human = schema.Bool(
-            title = u'Are you human?',
-            )
+            title = "Are you human?",
+        )
 ```
-You can also pass widget parameters to control attributes of the widget. For example, set a CSS class:
+
+You can also pass widget parameters to control attributes of the widget.
+For example, you can set a CSS class:
 
 ```{code-block} python
 :emphasize-lines: 7
@@ -90,12 +101,13 @@ You can also pass widget parameters to control attributes of the widget. For exa
 
     class IMySchema(model.Schema):
 
-        form.widget('human', klass='annoying')
+        form.widget("human", klass="annoying")
         human = schema.Bool(
-            title = u'Are you human?',
-            )
+            title = "Are you human?",
+        )
 ```
-In supermodel XML the widget is specified using a ``<form:widget>`` tag, which can have its own elements specifying parameters:
+
+In supermodel XML, you can specify the widget using a `<form:widget>` tag, which can have its own elements specifying parameters:
 
 ```{code-block} xml
 :emphasize-lines: 3,4,5
@@ -109,13 +121,13 @@ In supermodel XML the widget is specified using a ``<form:widget>`` tag, which c
 ```
 
 ```{note}
-In order to be included in the XML representation of a schema, widget parameters must be handled by a WidgetExportImportHandler utility.
-There is a default one which handles the attributes defined in ``z3c.form.browser.interfaces.IHTMLFormElement``.
+To be included in the XML representation of a schema, you must handle widget parameters through a `WidgetExportImportHandler` utility.
+For a generic interface that handles the attributes, see [`z3c.form.browser.interfaces.IHTMLFormElement`](https://github.com/zopefoundation/z3c.form/blob/42f387d105c305757c8c8c3737c39c960f452acb/src/z3c/form/browser/interfaces.py#L147).
 ```
 
-### Setting widget for z3c.form plain forms
+### Set the widget for `z3c.form` plain forms
 
-You can set field’s ``widgetFactory`` after fields have been declared in form class body.
+You can set a field's `widgetFactory` after fields have been declared in a form's class's body.
 
 ```{code-block} python
 :emphasize-lines: 23
@@ -146,9 +158,10 @@ class ReportForm(form.Form):
     fields["variables"].widgetFactory = CheckBoxFieldWidget
 ```
 
-### Setting widget dynamically ``Form.updateWidgets()``
 
-Widget type can be set dynamically based on external conditions.
+### Set a widget dynamically with `Form.updateWidgets()`
+
+You can dynamically set the widget type based on external conditions.
 
 ```{code-block} python
 :emphasize-lines: 9
@@ -162,13 +175,19 @@ class EditForm(form.Form):
         super().updateWidgets(prefix=prefix)
 
         # Set a custom widget for a field for this form instance only
-        self.fields['address'].widgetFactory = BlockDataGridFieldFactory
+        self.fields["address"].widgetFactory = BlockDataGridFieldFactory
 ```
 
-## Accessing and modifying widgets
 
-### Accessing a widget
-A widget can be accessed by its field’s name.
+## Access and modify widgets
+
+From time to time, you might need to access widgets to get their information or modify them.
+For example, when a user fills out one field, a second field may need to display options dependent on the first field.
+
+
+### Access a widget
+
+You can access a widget by its field's name.
 
 ```{code-block} python
 :emphasize-lines: 8
@@ -186,31 +205,31 @@ class MyForm(form.Form):
         for w in widget.items(): print(w) # Dump all widgets
 ```
 
-If you want to access a widget that's part of a group, you can't use the ``updateWidgets()`` method. The groups and their widgets get initialized after the widgets have been updated. Before that, the groups variable is just a list of group factories. During the update method though, the groups have been initialized and have their own widget list each. For accessing widgets there, you have to access the group in the update method like so:
+To access a widget that's part of a group, you can't use the `updateWidgets()` method.
+The groups and their widgets get initialized after the widgets have been updated.
+Before that, the `groups` attribute is just a list of group factories.
+During the update method though, the groups have been initialized and have their own widget list each.
+To access widgets in a group, you have to access the group in the update method:
 
-```{code-block} python
-:linenos:
-
+```python
 from z3c.form import form
 
 
 class MyForm(form.Form):
 
-    ...
-
     def update(self):
         for group in self.groups:
             if "my_field_name" in group.widgets:
-                print(group.widgets['my_field_name'].label)
-
+                print(group.widgets["my_field_name"].label)
 ```
 
-### Introspecting form widgets
-You can customize widget options in the ``updateWidgets()`` method. Note that `fieldset` (Group) is a `subform` and this method only concerns to the current `fieldset`.
 
-```{code-block} python
-:linenos:
+### Introspect form widgets
 
+You can customize widget options in the `updateWidgets()` method.
+Note that `fieldset` (which is a group) is a `subform`, and this method only affects the current `fieldset`.
+
+```python
 from z3c.form import form
 
 
@@ -221,17 +240,17 @@ class MyForm(form.Form):
         super().updateWidgets(prefix=prefix)
 
         # Dump out all widgets - note that each <fieldset> is a subform
-        # and this function only concerns the current fieldset
+        # and this function only affects the current fieldset
         for i in self.widgets.items():
             print(i)
 ```
 
+
 ### Reordering and hiding widgets
-With ``plone.z3cform `` you can reorder the field widgets by overriding the ``update()`` method of the form class.
 
-```{code-block} python
-:linenos:
+With `plone.z3cform`, you can reorder the field widgets by overriding the `update()` method of the form class.
 
+```python
 from z3c.form import form
 from z3c.form.interfaces import HIDDEN_MODE
 from plone.z3cform.fieldsets.utils import move
@@ -242,19 +261,17 @@ class MyForm(form.Form):
     def update(self):
         super().update()
 
-        # Hide widget 'sections'
+        # Hide widget "sections"
         self.widgets["sections"].mode = HIDDEN_MODE
 
         # Set order
-        move(self, 'fullname', before='*')
-        move(self, 'username', after='fullname')
+        move(self, "fullname", before="*")
+        move(self, "username", after="fullname")
 ```
 
- You also can use ``plone.autoform`` directives, in this example used for dexterity forms:
+You also can use `plone.autoform` directives, as in this example used for forms:
 
-```{code-block} python
-:linenos:
-
+```python
 from plone.autoform import directives as form
 from z3c.form.interfaces import IAddForm, IEditForm
 
@@ -265,27 +282,25 @@ class IFlexibleContent(form.Schema):
     """
 
     # Set order
-    form.order_before(sections='title')
+    form.order_before(sections="title")
 
-    # Hide widget 'sections'
-    form.mode(sections='hidden')
+    # Hide widget "sections"
+    form.mode(sections="hidden")
 
     # set mode  
-    form.mode(IEditForm, sections='input')
-    form.mode(IAddForm, sections='input')
+    form.mode(IEditForm, sections="input")
+    form.mode(IAddForm, sections="input")
 
     sections = schema.TextLine(title="Sections")
-
 ```
+
 
 ### Dynamic value for widgets
 
-Sometimes you need to pre-load widget values to be shown when the form is requested:
+Sometimes you need to pre-load widget values to show when the form is requested.
+The following example shows how to do that.
 
-
-```{code-block} python
-:linenos:
-
+```python
 from z3c.form import field
 from z3c.form import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
@@ -295,7 +310,7 @@ from zope.interface import Interface
 
 
 class ICustomSchema(Interface):
-    """ Define a custom form fields """
+    """ Define custom form fields """
 
     variables = schema.List(
         title="Variables",
@@ -305,7 +320,7 @@ class ICustomSchema(Interface):
 
 
 class ReportForm(form.Form):
-    """ A form to output a HTML report from chosen parameters """
+    """ A form to output an HTML report from chosen parameters """
 
     fields = field.Fields(IReportSchema)
 
@@ -313,17 +328,21 @@ class ReportForm(form.Form):
         super().updateWidgets(prefix=prefix)
 
         if self.request.get("METHOD") == "GET":
-          self.widgets["variables"].value = ["02"]  # being "02" a item in the vocabulary
+          self.widgets["variables"].value = ["02"]  # "02" is an item in the vocabulary
 ```
-In the example, a value is dynamically assigned to the variables field. As this field expects a list as input, the value has to be a list. This will result in a checked option value ``02"``.
 
-### Making widgets required conditionally
+In the example, a value is dynamically assigned to the `variables` field.
+As this field expects a list as input, the value must be a list.
+This will result in a checked option value of `02`.
 
-```{code-block} python
-:linenos:
 
+### Make widgets conditionally required
+
+The following example shows how you can conditionally require widgets.
+
+```python
 class ReportForm(form.Form):
-    """ A form to output a HTML report from chosen parameters """
+    """ A form to output an HTML report from chosen parameters """
 
     fields = field.Fields(IReportSchema)
 
@@ -333,20 +352,23 @@ class ReportForm(form.Form):
         self.widgets["announce_type"].required = False
 ```
 
-### Adding a CSS class
-Widgets have a method `addClass()` to add extra CSS classes. This is useful if you have JavaScript/JQuery associated with your special form:
 
-```{code-block} python
+### Add a CSS class to a widget
+
+To add CSS classes to a widget, you can use the method `addClass()`.
+This is useful when you have JavaScript associated with your form:
+
+```python
 widget.addClass("myspecialwidgetclass")
 ```
 
-You can also override the widget CSS class by changing the `klass` attribute:
+You can also override the widget CSS class by changing the `klass` attribute for a given widget:
 
-```{code-block} python
+```python
 self.widgets["my_widget"].klass = "my-custom-css-class"
 ```
 
-Or using the `plone.autoform` directives:
+Or you can use the `plone.autoform` directives:
 
 ```{code-block} python
 :emphasize-lines: 7
@@ -358,31 +380,37 @@ Or using the `plone.autoform` directives:
 
     class IMySchema(model.Schema):
 
-        form.widget('human', klass='annoying')
+        form.widget("human", klass="annoying")
         human = schema.Bool(
-            title = u'Are you human?',
-            )
+            title = "Are you human?",
+        )
 ```
 
-Note that these classes are directly applied to `<input>`, `<select>`, etc. itself, and not to the wrapping `<div>` element.
+Note that these classes are applied directly to `<input>`, `<select>`, and other HTML controls, and not to the wrapping `<div>` HTML element.
+
 
 ### Dynamically disable or enable a field
 
-As you can imagine disabling a field can be done by changing an attribute:
+To disable a field, you can change a field's `disabled` attribute:
 
-```{code-block} python
-    self.widgets["ds_pregu_pers"].disabled = "disabled"
+```python
+self.widgets["ds_pregu_pers"].disabled = "disabled"
 ```
 
-## Setting widget templates
-You might want to customize the template of a widget to have custom HTML code for a specific use case.
 
-### Setting the template of an individual widget
-First copy the existing page template code of the widget. For basic widgets you can find the template in the [`z3c.form`](https://github.com/zopefoundation/z3c.form/tree/master/src/z3c/form/browser) source tree.
+## Set widget templates
 
-`yourwidget.pt` (text widget copied over an example text)
+You might want to customize the template of a widget with custom HTML code.
 
-``` {code-block} html
+
+### Set the template for an individual widget
+
+To set the template for an individual widget, you can copy the existing page template code of the widget.
+For basic widgets, you can find the template in the [`z3c.form`](https://github.com/zopefoundation/z3c.form/tree/master/src/z3c/form/browser) source tree.
+
+The following code is an example of a custom template `yourwidget.pt` for an `input` of `type="text"` widget.
+
+```html
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       tal:omit-tag="">
@@ -421,13 +449,13 @@ First copy the existing page template code of the widget. For basic widgets you 
                            autocapitalize view/autocapitalize;" />
 </html>
 ```
-Now you can override the template factory in the updateWidgets() method of your form class
 
-```{code-block} python
-:linenos:
+Now you can override the template factory in the `updateWidgets()` method of your form class.
 
+```python
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile as Z3ViewPageTemplateFile
 from z3c.form.interfaces import INPUT_MODE
+
 
 class AddForm(DefaultAddForm):
 
@@ -445,21 +473,21 @@ class AddForm(DefaultAddForm):
             # widget.template is a template factory -
             # Widget.render() will associate later this factory with the widget
             widget.template = Z3ViewPageTemplateFile("templates/sections.pt")
-
 ```
+
 You can also interact with your `form` class instance from the widget template:
 
-```{code-block} html
-<!-- Some hidden JSON data for our Javascripts by calling a method on our form class -->
+```html
+<!-- Some hidden JSON data for our JavaScript by calling a method on our form class -->
 <span style="display:none" tal:content="view/form/getBlockPlanJSON" />
 ```
 
 
-### Setting template for your own widget type
+### Set a template for your own widget type
 
-You can set the template used by the widget with the `<z3c:widgetTemplate>` ZCML directive
+You can set the template used by the widget with the `<z3c:widgetTemplate>` ZCML directive.
 
-```{code-block} xml
+```xml
     <z3c:widgetTemplate
         mode="display"
         widget=".interfaces.INamedFileWidget"
@@ -468,24 +496,24 @@ You can set the template used by the widget with the `<z3c:widgetTemplate>` ZCML
         />
 ```
 
+
 ### Widget frame override
 
-You can override widget templates as instructed for ``z3c.form``.
-``plone.app.z3cform`` renders [a frame around each widget](<https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt>)
-which usually consists of
+You can override widget templates as instructed for `z3c.form`.
+`plone.app.z3cform` renders [a frame around each widget](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt), which usually consists of:
 
-* Label
-* Required marker
-* Description
+-   Label
+-   Required marker
+-   Description
 
 You might want to customize this widget frame for your own form.
-Below is an example how to do it.
+Below is an example of how to do it.
 
-Copy [widget.pt](<https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt>) to your own package and customize it in way you wish.
+Copy [`widget.pt`](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt) to your own package, and edit it.
 
-Add the following to ``configure.zcml``
+Then add the following code to `configure.zcml`.
 
-```{code-block} xml
+```xml
     <browser:page
         name="ploneform-render-widget"
         for=".demo.IDemoWidget"
@@ -495,43 +523,39 @@ Add the following to ``configure.zcml``
         />
 
 ```
-Create a new marker interface in Python code
 
-```{code-block} python
-:linenos:
+Then create a new marker interface in Python code.
 
-    from zope.interface import Interface
+```python
+from zope.interface import Interface
 
-    class IDemoWidget(Interface):
-        pass
+
+class IDemoWidget(Interface):
+    pass
 ```
 
-Then apply this marker interface to your widgets in ``form.update()``
+Then apply this marker interface to your widgets in `form.update()`.
 
-```{code-block} python
-:linenos:
+```python
+from zope.interface import alsoProvides
 
-    from zope.interface import alsoProvides
+class MyForm(...):
 
-    class MyForm(...):
-        ...
-        def update(self):
-            super().update()
-            # applies custom widget frame to all widgets in this form instance
-            for widget in form.widgets.values():
-                alsoProvides(widget, IDemoWidget)
+    def update(self):
+        super().update()
+        # applies custom widget frame to all widgets in this form instance
+        for widget in form.widgets.values():
+            alsoProvides(widget, IDemoWidget)
 ```
+
 
 ## Combined widgets
-You can combine several widgets to one with`` z3c.form.browser.multil.MultiWidget`` and ``z3c.form.browser.object.ObjectWidget`` classes.
 
-Example how to create a min max input widget.
+You can combine several widgets into one with `z3c.form.browser.multil.MultiWidget` and `z3c.form.browser.object.ObjectWidget` classes.
 
-Python code to setup the widget:
+The following example shows how to create an input widget with minimum and maximum values.
 
-```{code-block} python
-:linenos:
-
+```python
 import zope.interface
 import zope.schema
 from zope.schema.fieldproperty import FieldProperty
@@ -551,27 +575,24 @@ class IMinMax(zope.interface.Interface):
 @zope.interface.implementer(IMinMax)
 class MinMax(object):
     """ Store min-max field values """
-    min = FieldProperty(IMinMax['min'])
-    max = FieldProperty(IMinMax['max'])
+    min = FieldProperty(IMinMax["min"])
+    max = FieldProperty(IMinMax["max"])
 
 
 registerFactoryAdapter(IMinMax, MinMax)
 
-....
 
 field = zope.schema.Object(
-    __name__='mixmax',
+    __name__="minmax",
     title=label,
     schema=IMinMax,
     required=False
 )
 ```
 
-Then you do some widget marking in ``updateWidgets()``:
+Then you mark the widget in `updateWidgets()`:
 
-```{code-block} python
-:linenos:
-
+```python
 def updateWidgets(self):
     """
     """
