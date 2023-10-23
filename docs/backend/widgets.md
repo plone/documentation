@@ -536,7 +536,6 @@ Remember to fix the path of the template according to your own paths.
 Then create a new marker interface in Python code.
 
 ```python
-
 from zope.interface import Interface
 
 
