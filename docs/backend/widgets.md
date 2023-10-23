@@ -59,7 +59,7 @@ The main widgets are:
 
 ## Changing a field's widget
 
-You can change a the widget that you use for a field in several ways.
+You can change the widget that you use for a field in several ways.
 This section describes these methods.
 
 
