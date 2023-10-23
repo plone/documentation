@@ -70,7 +70,7 @@ This model is defined as a `zope.schema` based schema, but extra hints can be su
 
 By default, `z3c.form` picks a widget based on the type of your field.
 You can change the widget using the `widget` directive if you want users to enter or view data in a different format.
-For example, you can change the widget for the `human` ``boolean`` field to use "yes" and "no" radio buttons instead of its default checkbox:
+For example, you can change the widget for the `human` boolean field to use "yes" and "no" radio buttons instead of its default checkbox:
 
 ```{code-block} python
 :emphasize-lines: 7
