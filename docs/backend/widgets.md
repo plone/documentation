@@ -461,7 +461,6 @@ The following code is an example of a custom template `yourwidget.pt` for an `in
 Now you can override the template factory in the `updateWidgets()` method of your form class.
 
 ```python
-
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile as Z3ViewPageTemplateFile
 from z3c.form.interfaces import INPUT_MODE
 
