@@ -546,7 +546,6 @@ class IDemoWidget(Interface):
 Then apply this marker interface to your widgets in `form.update()`.
 
 ```python
-
 from zope.interface import alsoProvides
 
 class MyForm(...):
