@@ -76,16 +76,16 @@ For example, you can change the widget for the `human` boolean field to use "yes
 :emphasize-lines: 7
 :linenos:
 
-    from plone.supermodel import model
-    from plone.autoform import directives as form
-    from z3c.form.browser.radio import RadioFieldWidget
+from plone.supermodel import model
+from plone.autoform import directives as form
+from z3c.form.browser.radio import RadioFieldWidget
 
-    class IMySchema(model.Schema):
+class IMySchema(model.Schema):
 
-        form.widget("human", RadioFieldWidget)
-        human = schema.Bool(
-            title = "Are you human?",
-        )
+    form.widget("human", RadioFieldWidget)
+    human = schema.Bool(
+        title = "Are you human?",
+    )
 ```
 
 You can also pass widget parameters to control attributes of the widget.
@@ -95,16 +95,16 @@ For example, you can set a CSS class:
 :emphasize-lines: 7
 :linenos:
 
-    from plone.supermodel import model
-    from plone.autoform import directives as form
-    from z3c.form.browser.radio import RadioWidget
+from plone.supermodel import model
+from plone.autoform import directives as form
+from z3c.form.browser.radio import RadioWidget
 
-    class IMySchema(model.Schema):
+class IMySchema(model.Schema):
 
-        form.widget("human", klass="annoying")
-        human = schema.Bool(
-            title = "Are you human?",
-        )
+    form.widget("human", klass="annoying")
+    human = schema.Bool(
+        title = "Are you human?",
+    )
 ```
 
 In supermodel XML, you can specify the widget using a `<form:widget>` tag, which can have its own elements specifying parameters:
@@ -112,12 +112,12 @@ In supermodel XML, you can specify the widget using a `<form:widget>` tag, which
 ```{code-block} xml
 :emphasize-lines: 3,4,5
 
-    <field name="human" type="zope.schema.TextLine">
-        <title>Are you human?</title>
-        <form:widget type="z3c.form.browser.radio.RadioWidget">
-            <klass>annoying</klass>
-        </form:widget>
-    </field>
+<field name="human" type="zope.schema.TextLine">
+    <title>Are you human?</title>
+    <form:widget type="z3c.form.browser.radio.RadioWidget">
+        <klass>annoying</klass>
+    </form:widget>
+</field>
 ```
 
 ```{note}
@@ -212,7 +212,6 @@ During the update method though, the groups have been initialized and have their
 To access widgets in a group, you have to access the group in the update method:
 
 ```python
-
 from z3c.form import form
 
 
@@ -231,7 +230,6 @@ You can customize widget options in the `updateWidgets()` method.
 Note that `fieldset` (which is a group) is a `subform`, and this method only affects the current `fieldset`.
 
 ```python
-
 from z3c.form import form
 
 
@@ -253,7 +251,6 @@ class MyForm(form.Form):
 With `plone.z3cform`, you can reorder the field widgets by overriding the `update()` method of the form class.
 
 ```python
-
 from z3c.form import form
 from z3c.form.interfaces import HIDDEN_MODE
 from plone.z3cform.fieldsets.utils import move
@@ -275,7 +272,6 @@ class MyForm(form.Form):
 You also can use `plone.autoform` directives, as in this example used for forms:
 
 ```python
-
 from plone.autoform import directives as form
 from z3c.form.interfaces import IAddForm, IEditForm
 
@@ -305,7 +301,6 @@ Sometimes you need to pre-load widget values to show when the form is requested.
 The following example shows how to do that.
 
 ```python
-
 from z3c.form import field
 from z3c.form import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
@@ -346,7 +341,6 @@ This will result in a checked option value of `02`.
 The following example shows how you can conditionally require widgets.
 
 ```python
-
 class ReportForm(form.Form):
     """ A form to output an HTML report from chosen parameters """
 
@@ -365,14 +359,12 @@ To add CSS classes to a widget, you can use the method `addClass()`.
 This is useful when you have JavaScript associated with your form:
 
 ```python
-
 widget.addClass("myspecialwidgetclass")
 ```
 
 You can also override the widget CSS class by changing the `klass` attribute for a given widget:
 
 ```python
-
 self.widgets["my_widget"].klass = "my-custom-css-class"
 ```
 
@@ -496,12 +488,12 @@ You can also interact with your `form` class instance from the widget template:
 You can set the template used by the widget with the `<z3c:widgetTemplate>` ZCML directive.
 
 ```xml
-    <z3c:widgetTemplate
-        mode="display"
-        widget=".interfaces.INamedFileWidget"
-        layer="z3c.form.interfaces.IFormLayer"
-        template="file_display.pt"
-        />
+<z3c:widgetTemplate
+    mode="display"
+    widget=".interfaces.INamedFileWidget"
+    layer="z3c.form.interfaces.IFormLayer"
+    template="file_display.pt"
+    />
 ```
 
 
@@ -523,14 +515,13 @@ Then add the following code to `configure.zcml`.
 Remember to fix the path of the template according to your own paths.
 
 ```xml
-    <browser:page
-        name="ploneform-render-widget"
-        for=".demo.IDemoWidget"
-        class="plone.app.z3cform.templates.RenderWidget"
-        permission="zope.Public"
-        template="path/to/template/demo-widget.pt"
-        />
-
+<browser:page
+    name="ploneform-render-widget"
+    for=".demo.IDemoWidget"
+    class="plone.app.z3cform.templates.RenderWidget"
+    permission="zope.Public"
+    template="path/to/template/demo-widget.pt"
+    />
 ```
 
 Then create a new marker interface in Python code.
@@ -599,7 +590,6 @@ class IMyFormSchema(zope.interface.Interface):
         schema=IMinMax,
         required=False
     )
-
 ```
 
 Then you set the `my_combined_field` widget template in `updateWidgets()`:
@@ -630,7 +620,6 @@ Paste the following code in this file.
 The code renders both widgets, {guilabel}`min` and {guilabel}`max`, in a single row.
 
 ```html
-
 <div class="min-max-widget"
      tal:define="widget0 python:view.subform.widgets.values()[0];
                  widget1 python:view.subform.widgets.values()[1];">
@@ -647,12 +636,9 @@ The code renders both widgets, {guilabel}`min` and {guilabel}`max`, in a single 
     </div>
 
     <div class="widget-left" tal:define="widget widget0">
-
         <div tal:content="structure widget/render">
           <input type="text" size="24" value="" />
         </div>
-
-
     </div>
 
     <div class="widget-separator">
@@ -660,23 +646,16 @@ The code renders both widgets, {guilabel}`min` and {guilabel}`max`, in a single 
     </div>
 
     <div class="widget-right" tal:define="widget widget1">
-
         <div class="widget" tal:content="structure widget/render">
           <input type="text" size="24" value="" />
         </div>
-
     </div>
-
 
     <div tal:condition="widget0/error"
          tal:replace="structure widget/error/render">error</div>
-
     <div class="error" tal:condition="widget1/error"
              tal:replace="structure widget1/error/render">error</div>
-
-
     <div style="clear: both"><!-- --></div>
-
     <input name="field-empty-marker" type="hidden" value="1"
            tal:attributes="name string:${view/name}-empty-marker" />
 
