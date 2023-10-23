@@ -565,7 +565,6 @@ You can combine several widgets into one with `z3c.form.browser.multil.MultiWidg
 The following example shows how to create an input widget with minimum and maximum values.
 
 ```python
-
 import zope.interface
 import zope.schema
 from zope.schema.fieldproperty import FieldProperty
