@@ -70,7 +70,7 @@ This model is defined as a `zope.schema` based schema, but extra hints can be su
 
 By default, `z3c.form` picks a widget based on the type of your field.
 You can change the widget using the `widget` directive if you want users to enter or view data in a different format.
-For example, you can change the widget for the `human` boolean field to use "yes" and "no" radio buttons instead of its default checkbox:
+For example, you can change the widget for the `human` ``boolean`` field to use "yes" and "no" radio buttons instead of its default checkbox:
 
 ```{code-block} python
 :emphasize-lines: 7
@@ -211,7 +211,9 @@ Before that, the `groups` attribute is just a list of group factories.
 During the update method though, the groups have been initialized and have their own widget list each.
 To access widgets in a group, you have to access the group in the update method:
 
-```python
+``` {code-block} python
+:linenos:
+
 from z3c.form import form
 
 
@@ -229,7 +231,9 @@ class MyForm(form.Form):
 You can customize widget options in the `updateWidgets()` method.
 Note that `fieldset` (which is a group) is a `subform`, and this method only affects the current `fieldset`.
 
-```python
+``` {code-block} python
+:linenos:
+
 from z3c.form import form
 
 
@@ -250,7 +254,9 @@ class MyForm(form.Form):
 
 With `plone.z3cform`, you can reorder the field widgets by overriding the `update()` method of the form class.
 
-```python
+``` {code-block} python
+:linenos:
+
 from z3c.form import form
 from z3c.form.interfaces import HIDDEN_MODE
 from plone.z3cform.fieldsets.utils import move
@@ -271,7 +277,9 @@ class MyForm(form.Form):
 
 You also can use `plone.autoform` directives, as in this example used for forms:
 
-```python
+``` {code-block} python
+:linenos:
+
 from plone.autoform import directives as form
 from z3c.form.interfaces import IAddForm, IEditForm
 
@@ -300,7 +308,9 @@ class IFlexibleContent(form.Schema):
 Sometimes you need to pre-load widget values to show when the form is requested.
 The following example shows how to do that.
 
-```python
+``` {code-block} python
+:linenos:
+
 from z3c.form import field
 from z3c.form import form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
@@ -340,7 +350,9 @@ This will result in a checked option value of `02`.
 
 The following example shows how you can conditionally require widgets.
 
-```python
+``` {code-block} python
+:linenos:
+
 class ReportForm(form.Form):
     """ A form to output an HTML report from chosen parameters """
 
@@ -358,13 +370,17 @@ class ReportForm(form.Form):
 To add CSS classes to a widget, you can use the method `addClass()`.
 This is useful when you have JavaScript associated with your form:
 
-```python
+``` {code-block} python
+:linenos:
+
 widget.addClass("myspecialwidgetclass")
 ```
 
 You can also override the widget CSS class by changing the `klass` attribute for a given widget:
 
-```python
+``` {code-block} python
+:linenos:
+
 self.widgets["my_widget"].klass = "my-custom-css-class"
 ```
 
@@ -452,7 +468,9 @@ The following code is an example of a custom template `yourwidget.pt` for an `in
 
 Now you can override the template factory in the `updateWidgets()` method of your form class.
 
-```python
+``` {code-block} python
+:linenos:
+
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile as Z3ViewPageTemplateFile
 from z3c.form.interfaces import INPUT_MODE
 
@@ -472,7 +490,7 @@ class AddForm(DefaultAddForm):
 
             # widget.template is a template factory -
             # Widget.render() will associate later this factory with the widget
-            widget.template = Z3ViewPageTemplateFile("templates/sections.pt")
+            widget.template = Z3ViewPageTemplateFile("templates/yourwidget.pt")
 ```
 
 You can also interact with your `form` class instance from the widget template:
@@ -509,9 +527,9 @@ You can override widget templates as instructed for `z3c.form`.
 You might want to customize this widget frame for your own form.
 Below is an example of how to do it.
 
-Copy [`widget.pt`](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt) to your own package, and edit it.
+Copy [`widget.pt`](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt) to your own package, rename it as ``demo-widget.pt`` and edit it.
 
-Then add the following code to `configure.zcml`.
+Then add the following code to `configure.zcml`. Remember to fix the path of the template according to your own paths.
 
 ```xml
     <browser:page
@@ -519,14 +537,16 @@ Then add the following code to `configure.zcml`.
         for=".demo.IDemoWidget"
         class="plone.app.z3cform.templates.RenderWidget"
         permission="zope.Public"
-        template="demo-widget.pt"
+        template="path/to/template/demo-widget.pt"
         />
 
 ```
 
 Then create a new marker interface in Python code.
 
-```python
+``` {code-block} python
+:linenos:
+
 from zope.interface import Interface
 
 
@@ -536,7 +556,9 @@ class IDemoWidget(Interface):
 
 Then apply this marker interface to your widgets in `form.update()`.
 
-```python
+``` {code-block} python
+:linenos:
+
 from zope.interface import alsoProvides
 
 class MyForm(...):
@@ -555,7 +577,9 @@ You can combine several widgets into one with `z3c.form.browser.multil.MultiWidg
 
 The following example shows how to create an input widget with minimum and maximum values.
 
-```python
+``` {code-block} python
+:linenos:
+
 import zope.interface
 import zope.schema
 from zope.schema.fieldproperty import FieldProperty
@@ -582,34 +606,46 @@ class MinMax(object):
 registerFactoryAdapter(IMinMax, MinMax)
 
 
-field = zope.schema.Object(
-    __name__="minmax",
-    title=label,
-    schema=IMinMax,
-    required=False
-)
+class IMyFormSchema(zope.interface.Interface):
+
+    my_combined_field = zope.schema.Object(
+        __name__="minmax",
+        title=label,
+        schema=IMinMax,
+        required=False
+    )
+
 ```
 
-Then you mark the widget in `updateWidgets()`:
+Then you set the {guilabel}`my_combined_field` widget template in `updateWidgets()`:
 
-```python
-def updateWidgets(self):
-    """
-    """
+``` {code-block} python
+:emphasize-lines: 13, 14
+:linenos:
 
-    super(FilteringGroup, self).updateWidgets()
+class MyForm(form.Form):
 
-    # Add min and max CSS class rendering hints
-    for widget in self.widgets.values():
-        if isinstance(widget, z3c.form.browser.object.ObjectWidget):
-            widget.template = Z3ViewPageTemplateFile("templates/minmax.pt")
-            widget.addClass("min-max-widget")
-            zope.interface.alsoProvides(widget, IFilterWidget)
+    fields = field.Fields(IMyFormSchema)
+  
+    def updateWidgets(self, prefix=None):
+        """
+        """
+
+        super().updateWidgets(prefix=prefix)
+
+        # Add min and max CSS class rendering hints
+        for widget in self.widgets.values():
+            if isinstance(widget, z3c.form.browser.object.ObjectWidget):
+                widget.template = Z3ViewPageTemplateFile("minmax.pt")
+                zope.interface.alsoProvides(widget, IFilterWidget)
 ```
 
-And then the page template which renders both 0. widget (min) and 1. widget (max) on the same line.
+Then create the page template `minmax.pt` in the same directory as your form module.
+Paste the following code in this file.
+The code renders both widgets, {guilabel}`min` and {guilabel}`max`, in a single row.
 
-``` {code-block} html
+```html
+
 <div class="min-max-widget"
      tal:define="widget0 python:view.subform.widgets.values()[0];
                  widget1 python:view.subform.widgets.values()[1];">
