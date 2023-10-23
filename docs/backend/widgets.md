@@ -529,7 +529,8 @@ Below is an example of how to do it.
 
 Copy [`widget.pt`](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt) to your own package, rename it as ``demo-widget.pt`` and edit it.
 
-Then add the following code to `configure.zcml`. Remember to fix the path of the template according to your own paths.
+Then add the following code to `configure.zcml`.
+Remember to fix the path of the template according to your own paths.
 
 ```xml
     <browser:page
