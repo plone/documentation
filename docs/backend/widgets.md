@@ -211,8 +211,7 @@ Before that, the `groups` attribute is just a list of group factories.
 During the update method though, the groups have been initialized and have their own widget list each.
 To access widgets in a group, you have to access the group in the update method:
 
-``` {code-block} python
-:linenos:
+```python
 
 from z3c.form import form
 
@@ -231,8 +230,7 @@ class MyForm(form.Form):
 You can customize widget options in the `updateWidgets()` method.
 Note that `fieldset` (which is a group) is a `subform`, and this method only affects the current `fieldset`.
 
-``` {code-block} python
-:linenos:
+```python
 
 from z3c.form import form
 
@@ -254,8 +252,7 @@ class MyForm(form.Form):
 
 With `plone.z3cform`, you can reorder the field widgets by overriding the `update()` method of the form class.
 
-``` {code-block} python
-:linenos:
+```python
 
 from z3c.form import form
 from z3c.form.interfaces import HIDDEN_MODE
@@ -277,8 +274,7 @@ class MyForm(form.Form):
 
 You also can use `plone.autoform` directives, as in this example used for forms:
 
-``` {code-block} python
-:linenos:
+```python
 
 from plone.autoform import directives as form
 from z3c.form.interfaces import IAddForm, IEditForm
@@ -308,8 +304,7 @@ class IFlexibleContent(form.Schema):
 Sometimes you need to pre-load widget values to show when the form is requested.
 The following example shows how to do that.
 
-``` {code-block} python
-:linenos:
+```python
 
 from z3c.form import field
 from z3c.form import form
@@ -350,8 +345,7 @@ This will result in a checked option value of `02`.
 
 The following example shows how you can conditionally require widgets.
 
-``` {code-block} python
-:linenos:
+```python
 
 class ReportForm(form.Form):
     """ A form to output an HTML report from chosen parameters """
@@ -370,16 +364,14 @@ class ReportForm(form.Form):
 To add CSS classes to a widget, you can use the method `addClass()`.
 This is useful when you have JavaScript associated with your form:
 
-``` {code-block} python
-:linenos:
+```python
 
 widget.addClass("myspecialwidgetclass")
 ```
 
 You can also override the widget CSS class by changing the `klass` attribute for a given widget:
 
-``` {code-block} python
-:linenos:
+```python
 
 self.widgets["my_widget"].klass = "my-custom-css-class"
 ```
@@ -468,8 +460,7 @@ The following code is an example of a custom template `yourwidget.pt` for an `in
 
 Now you can override the template factory in the `updateWidgets()` method of your form class.
 
-``` {code-block} python
-:linenos:
+```python
 
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile as Z3ViewPageTemplateFile
 from z3c.form.interfaces import INPUT_MODE
@@ -545,8 +536,7 @@ Remember to fix the path of the template according to your own paths.
 
 Then create a new marker interface in Python code.
 
-``` {code-block} python
-:linenos:
+```python
 
 from zope.interface import Interface
 
@@ -557,8 +547,7 @@ class IDemoWidget(Interface):
 
 Then apply this marker interface to your widgets in `form.update()`.
 
-``` {code-block} python
-:linenos:
+```python
 
 from zope.interface import alsoProvides
 
@@ -578,8 +567,7 @@ You can combine several widgets into one with `z3c.form.browser.multil.MultiWidg
 
 The following example shows how to create an input widget with minimum and maximum values.
 
-``` {code-block} python
-:linenos:
+```python
 
 import zope.interface
 import zope.schema
