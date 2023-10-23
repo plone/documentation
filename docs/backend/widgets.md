@@ -602,7 +602,7 @@ class IMyFormSchema(zope.interface.Interface):
 
 ```
 
-Then you set the {guilabel}`my_combined_field` widget template in `updateWidgets()`:
+Then you set the `my_combined_field` widget template in `updateWidgets()`:
 
 ``` {code-block} python
 :emphasize-lines: 13, 14
