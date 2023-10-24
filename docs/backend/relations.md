@@ -149,7 +149,9 @@ relationlist_field = RelationList(
 directives.widget(
     "relationlist_field",
     RelatedItemsFieldWidget,
-    pattern_options=make_relation_root_path,
+    pattern_options={
+        "basePath": make_relation_root_path,
+    }
 )
 ```
 
