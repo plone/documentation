@@ -11,28 +11,15 @@ myst:
 
 # Forms
 
-
-
-
-
-
-
-
-
 ```{todo}
 Describe how create forms with Plone's default form framework z3c.form.
 Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter and will be referenced from examples here.
 ```
 
-
 Plone uses the [z3c.form](http://pythonhosted.org/z3c.form) library to build its web-forms.
-The package responsible for integrating with Plone is [plone.z3cform](https://github.com/plone//plone.z3cform).
-
-To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](https://github.com/plone/plone.autoform), in particular its `AutoExtensibleForm` base class.
-It is responsible for handling form hints and configuring  z3c.form widgets and groups (fieldsets).
+The packages responsible for integrating with Plone are [plone.z3cform](https://github.com/plone//plone.z3cform) and [plone.app.z3cform](https://github.com/plone/plone.app.z3cform) which contains most of the widgets and default templates. To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](https://github.com/plone/plone.autoform), in particular its `AutoExtensibleForm` base class. It is responsible for handling form hints and configuring z3c.form widgets and groups (fieldsets).
 
 A form is a view that utilizes these libraries.
-plone.autoform offers useful base classes for views that simplify the process of creating forms based on either the form schema or {ref}`Dexterity behaviors <backend-behaviors-label>`.
 
 
 (classic-ui-forms-general-forms-label)=
@@ -46,7 +33,7 @@ cd collective.awesomeaddon
 plonecli add form
 ```
 
-After using the {term}`plonecli` to add a form, there is a new sub folder `forms` in your package.
+After using the {term}`plonecli` to add a form, you'll have a new sub folder `forms` in your package.
 Here you will find a `configure.zcml` containing the registration of the form,
 
 ```xml
@@ -116,8 +103,6 @@ Dexterity content types are coming with default add and edit forms.
 You can build custom add and edit forms to adjust there behavior.
 
 The implementation of the default edit and add forms is in [plone.dexterity.browser.edit.py](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/edit.py) and [plone.dexterity.browser.add.py](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/add.py).
-
-
 
 
 ```{todo}
