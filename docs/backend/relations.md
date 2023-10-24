@@ -335,11 +335,6 @@ When you click on {guilabel}`Edit XML field model`, you will see the fields in t
 
 ## Using different widgets for relations
 
-```{todo}
-Support for `StaticCatalogVocabulary` in Volto is currently missing.
-See issues https://github.com/plone/volto/issues/3355 and https://github.com/plone/volto/issues/3439.
-```
-
 Often the standard widget for relations is not what you want.
 It can be hard to navigate to the content to which you want to relate, and the search mode of the default widget is not suitable for all use cases.
 
