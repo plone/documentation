@@ -19,7 +19,8 @@ Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter 
 Plone uses the [z3c.form](http://pythonhosted.org/z3c.form) library to build its web-forms.
 The packages responsible for integrating with Plone are [plone.z3cform](https://github.com/plone//plone.z3cform) and [plone.app.z3cform](https://github.com/plone/plone.app.z3cform) which contains most of the widgets and default templates. To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](https://github.com/plone/plone.autoform), in particular its `AutoExtensibleForm` base class. It is responsible for handling form hints and configuring z3c.form widgets and groups (fieldsets).
 
-A form is a view that utilizes these libraries.
+A form is a view that utilizes these libraries to auto generate forms.
+
 
 
 (classic-ui-forms-general-forms-label)=
@@ -94,6 +95,23 @@ class MyForm(AutoExtensibleForm, form.EditForm):
         """
 
 ```
+
+Our form `MyForm` is a sub class of the z3c.form base class `z3c.form.form.EditForm` and `plone.autoform.form.AutoExtensibleForm` which add some convenient methods to organize the form fields and widgets.
+Besides some basic properties like `label` and `description`, the more interesting properties are `schema` and `ignoreContext`.
+
+### configuring the form
+
+#### schema
+
+The schema property points to a schema interface, which defines the fields of our form.
+
+```
+schema = IMyForm
+```
+
+### ignoreContext
+
+If your form is not bound to an object (like a Dexterity object), set `ignoreContext = True`.
 
 
 (classic-ui-forms-dexterity-add-edit-forms-label)=
