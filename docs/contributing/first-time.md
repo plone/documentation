@@ -13,7 +13,29 @@ myst:
 
 This chapter provides guidance to first-time contributors to Plone and all its projects and repositories under the Plone GitHub organization.
 
-It is assumed that the first-time contributor has already {doc}`installed Plone <../install/index>` on their development machine, has a GitHub account, and has basic knowledge of using git and GitHub.
+As a first-time contributor to Plone, we expect that you have:
+ 
+-   {ref}`tried a Plone demo <install-index-getting-started-label>`
+-   {doc}`installed Plone <../install/index>` on your development machine
+-   worked through some trainings, such as the recommended:
+    -   {doc}`training:mastering-plone/index`
+    -   {doc}`training:voltohandson/index`
+    -   {doc}`training:voltoaddons/index`
+    -   {doc}`training:volto_customization/index`
+    -   {doc}`training:plone-deployment/index`
+-   read the chapters of {doc}`/index` relevant to your contribution
+-   a sincere interest to contribute to Plone and become an ongoing contributing member of our organization
+-   a GitHub account
+-   basic knowledge of using git and GitHub
+
+```{warning}
+As a first-time contributor, you are warned that Plone might not be a good match for you.
+
+-   Plone is a relatively complex web application.
+    It takes a significant amount of time to learn how to develop Plone.
+-   Members of the Plone GitHub organization volunteer their free time to develop Plone, and offer limited mentoring only through the Google Summer of Code program.
+-   If you want free support, training, or mentoring, you should use the [Plone Community Forum](https://community.plone.org/) and not use GitHub.
+```
 
 
 (first-time-requirements-label)=
@@ -63,7 +85,7 @@ Learn from their mistakes, and don't commit them yourself.
 ### Plone Contributors Team
 
 The Plone GitHub organization uses GitHub Teams to grant groups of GitHub users appropriate access to its repositories.
-New users, including GSoC applicants, are assigned to the [Contributors](https://github.com/orgs/plone/teams/contributors) Team within a few days after they have signed and returned the {ref}`Plone Contributor Agreement <contributing-sign-and-return-the-plone-contributor-agreement-label>`.
+New users, including GSoC applicants, are assigned to the [Contributors](https://github.com/orgs/plone/teams/contributors) Team within a few business days after they have signed and returned the {ref}`Plone Contributor Agreement <contributing-sign-and-return-the-plone-contributor-agreement-label>`.
 New contributors should wait for confirmation that they have been added to this team before creating a pull request to a Plone project.
 
 
@@ -147,7 +169,9 @@ We ask for your patience as we work through complex automated workflows that nee
 Follow the project's testing and code quality policies.
 Most projects have a test suite and code quality checkers and formatters.
 We strongly recommend that you run the project's test suite and code quality checks locally before proceeding.
-This will save you and reviewers a lot of time and frustration.
+Do not depend upon our continuous integration and GitHub Workflows to run these checks for you.
+Every commit you push sends an email notification to repository subscribers.
+This will save you, members, and reviewers a lot of time and frustration.
 
 A bug fix or new feature should have a test that ensures that it works as intended.
 
@@ -168,15 +192,26 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
 
 1.  Visit your fork of the Plone repository on GitHub, and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) against the development branch.
     -   Make your title and description descriptive.
-        Don't be lazy with "Fixes bug" or other useless drivel.
-    -   To automatically close the original issue when your pull request is merged, include "Closes #issue_number" in your description.
+    -   Include "Fixes #" and the related issue number.
+        This enables automatic closing of the related issue when the pull request is merged.
         This also creates a hyperlink to the original issue for easy reference.
+    -   Don't be lazy with "Fixes bug" or other useless drivel.
 1.  [Request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.
 1.  Members who subscribe to the repository will receive a notification and review your request.
 
-```{todo}
-Provide instructions when the contributor needs to update their pull request with changes from the default branch.
-Members of Contributors do not have the button "Update branch" to easily do this, and must use git foo to manage the situation.
+
+### Update your pull request from your fork
+
+Often another pull request will get merged before yours, and your pull request will fall behind the main branch.
+To keep your pull request current, you can issue the follow git commands.
+
+```shell
+# Assume `main` is the main branch.
+git checkout main
+git pull
+git checkout my_branch_name
+git merge main
+git push
 ```
 
 Welcome to the Plone community, and thank you for contributing!
