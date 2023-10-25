@@ -100,8 +100,12 @@ class ICheckoutAddress(zope.interface.Interface):
     street_address = schema.TextLine(title=_(u"Address"), default=u"")
 ```
 
-This schema can be used in {ref}`classic-ui-forms-label` and  concrete persistent class which uses this data model.  We
-can use this class to store data based on our model definition in the ZODB
+This schema can be used in {ref}`classic-ui-forms-label` and Dexterity {ref}`backend-content-types-label` data models.
+
+
+## Advanced
+
+We can use this class to store data based on our model definition in the ZODB
 database.
 
 We use `zope.schema.fieldproperty.FieldProperty` to bind
