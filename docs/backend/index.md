@@ -29,6 +29,7 @@ widgets
 global-utils
 portal-actions
 users-groups
+schemas
 security
 subscribers
 traversal-acquisition

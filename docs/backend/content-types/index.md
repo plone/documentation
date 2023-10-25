@@ -22,13 +22,11 @@ We have different content types to reflect the different kinds of information ab
 
 Pages, news items, events, files (binary), and images are examples of content types.
 
-Lots of things in Plone can be configured to work differently based on the content type.
-For example, each content type has:
-
--   a {ref}`schema <backend-fields-label>` specifying the fields which can be edited for the content type
--   a list of {ref}`behaviors <backend-behaviors-label>` which supply additional functionality that can be attached to the content types for which the behavior is enabled
--   a {ref}`workflow <backend-workflows-label>` controling transitions between publishing states and associated permissions
--   a version policy controling whether to store a revision history
+Lots of things in Plone can be configured to work differently based on the content type. For example, each content type has:
+- a {ref}`schema <backend-schemas-label>` specifying the fields which can be edited for the content type
+- a list of {ref}`behaviors <backend-behaviors-label>` which supply additional functionality that can be attached to the content types for which the behavior is enabled
+- a {ref}`workflow <backend-workflows-label>` controlling transitions between publishing states and associated permissions
+- a version policy controlling whether to store a revision history
 
 It is common in developing a web site that you'll need customized versions of common content types, or perhaps even entirely new types.
 
