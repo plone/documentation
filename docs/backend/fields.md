@@ -11,11 +11,14 @@ myst:
 
 # Fields
 
-This chapter describes the standard schema fields in Plone content types.
+This chapter describes the standard schema fields for Plone forms and content types.
 
-The following tables show the most common field types for use in Dexterity schemata.
-See the documentation on {ref}`creating schemata <backend-schemas-label>` for information about how to use these.
+The following tables show the most common field types for use in {ref}`classic-ui-forms-label` and Dexterity {ref}`backend-content-types-label`.
+See {ref}`schemas <backend-schemas-label>` for information about how fields compose a schema for a form or content type data model.
 
+```{note}
+In VS Code editor, you can install the [Plone Snippets](https://marketplace.visualstudio.com/items?itemName=Derico.plone-vs-snippets) extension. This will give you snippets for most fields, widgets and autoform directives in Python and XML based schemas.
+```
 
 ## Field properties
 
@@ -36,7 +39,7 @@ Refer to the table below to see what properties a particular interface implies.
 | | `max_length `| int | The maximum allowed length or maximum number of elements. Used for `string`, sequence, mapping, or `set` fields. Default is `None` (no check). |
 | `IMinMax` | `min` | | The minimum allowed value. Must be a valid value for the field, for example, an int field should be an integer. Default is `None` (no check). |
 | | `max` | | The maximum allowed value. Must be a valid value for the field, for example an int field should be an integer. Default is `None` (no check). |
-| `ICollection` | `value_type` | | Another `Field` instance that describes the allowable values in a list, tuple, or other collection. Must be set for any collection field. One common usage is to set this to a `Choice` to model a multi-selection field with a vocabulary. |
+| `ICollection` | `value_type` | | Another `Field` instance that describes the allowable values in a list, tuple, or other collection. Must be set for any collection field. One common usage is to set this to a `Choice` to model a multi-selection field with a {ref}`vocabulary <backend-vocabularies-label>`. |
 | | `unique` | bool | Whether or not values in the collection must be unique. Usually not set directly. Use a `Set` or `Frozenset` to guarantee uniqueness in an efficient way. |
 | `IDict` | `key_type` | | Another `Field` instance that describes the allowable keys in a dictionary. Similar to the `value_type` of a collection. Must be set. |
 | | `value_type` | | Another `Field` instance that describes the allowable values in a dictionary. Similar to the `value_type` of a collection. Must be set. |
@@ -55,7 +58,7 @@ The following tables describe the most commonly used field types, grouped by the
 
 | Name | Type | Description | Properties |
 | - | - | - | - |
-| Choice | N/A | Used to model selection from a vocabulary, which must be supplied. Often used as the `value_type` of a selection field. The value type is the value of the terms in the vocabulary. | See {doc}`../advanced/vocabularies`. |
+| Choice | N/A | Used to model selection from a vocabulary, which must be supplied. Often used as the `value_type` of a selection field. The value type is the value of the terms in the vocabulary. | See {ref}`backend-vocabularies-label`. |
 | Bytes | str | Used for binary data. | IField, IMinMaxLen |
 | ASCII | str | ASCII text (multi-line). | IField, IMinMaxLen |
 | BytesLine | str | A single line of binary data, in other words a `Bytes` with new lines disallowed. | IField, IMinMaxLen |
@@ -117,11 +120,12 @@ See [`plone.app.textfield`](https://pypi.org/project/plone.app.textfield/) for m
 
 ### Fields in `plone.schema`
 
-See [`plone.schema`](https://pypi.org/project/plone.schema/) for more details.
+See {ref}`backend-ploneschema-label` for more details.
 
 | Name | Type | Description | Properties |
 | ----- | ---- | ----------------------------------- | ------------------ |
-| Email | str | A field containing an email address | IField, IMinMaxLen |
+| Email | str | A field containing an email address  | IField, IMinMaxLen |
+| JSON  |     |                                      |                    |
 
 
 (backend-fields-schema-label)=

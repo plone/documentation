@@ -30,6 +30,10 @@ When an HTTP `post` request comes in, Zope publisher automatically converts `<se
 
 ## Widget reference
 
+```{note}
+In VS Code editor, you can install the [Plone Snippets](https://marketplace.visualstudio.com/items?itemName=Derico.plone-vs-snippets) extension. This will give you snippets for most fields, widgets and autoform directives in Python and XML based schemas.
+```
+
 You can find the default widgets in the browser package in `z3c.form`.
 The [`z3c.form` documentation](https://z3cform.readthedocs.io/en/latest/widgets/index.html) lists all the default widgets and shows the HTML output of each.
 
@@ -287,7 +291,7 @@ class IFlexibleContent(form.Schema):
     # Hide widget "sections"
     form.mode(sections="hidden")
 
-    # set mode  
+    # set mode
     form.mode(IEditForm, sections="input")
     form.mode(IAddForm, sections="input")
 
@@ -601,7 +605,7 @@ Then you set the `my_combined_field` widget template in `updateWidgets()`:
 class MyForm(form.Form):
 
     fields = field.Fields(IMyFormSchema)
-  
+
     def updateWidgets(self, prefix=None):
         """
         """

@@ -46,9 +46,12 @@ Zope schemas are used for tasks like:
 The basic unit of data model declaration is the {ref}`field <backend-fields-label>`, which specifies what
 kind of data each Python attribute can hold.
 
-### zope.schema / plone.schema
 
-The main package is [zope.schema](http://github.com/zopefoundation/zope.schema), but in we can also use [plone.schema](https://github.com/plone/plone.schema) which provides additional fields and widgets for z3c.form and optional integration with Plone.
+(backend-ploneschema-label)=
+
+### plone.schema vs zope.schema
+
+The main package is [zope.schema](http://github.com/zopefoundation/zope.schema), but we can also use [plone.schema](https://github.com/plone/plone.schema) which provides additional fields and widgets for z3c.form and optional integration with Plone.
 
 Additional features are:
 
@@ -61,6 +64,10 @@ Additional features are:
 
 
 ### Example of a schema
+
+```{note}
+In VS Code editor, you can install the [Plone Snippets](https://marketplace.visualstudio.com/items?itemName=Derico.plone-vs-snippets) extension. This will give you snippets for most fields, widgets and autoform directives in Python and XML based schemas.
+```
 
 Define a schema for a data model to store addresses:
 
