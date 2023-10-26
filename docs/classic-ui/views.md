@@ -230,6 +230,23 @@ You can also use the `@@` notation at the front of the view name to make sure th
 http://localhost:8080/Plone/news/@@my-view
 ```
 
+#### Adding a view to a content type
+
+A {ref}`content type <backend-content-type-label>` can have more than one view, which a user can choose from in the display menu.
+In section {ref}`classic-ui-registering-a-view-label` above, you registered a view. If the view is registered with the wild card, it will be available on any content type. It is also possible to restrict this to certain content type interfaces. Please verify that your desired content type is allowed here and you can access it, like in the previous section described.
+
+The list of available views for a content type is configured in it's {ref}`backend-content-types-fti-label`.
+
+Add the name of the new view `my-view` to the following list:
+
+```xml
+<property name="default_view">document_view</property>
+<property name="view_methods">
+  <element value="document_view" />
+  <element value="my-view" />
+</property>
+```
+
 
 (classic-ui-content-slots-label)=
 
