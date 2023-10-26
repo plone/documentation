@@ -33,7 +33,8 @@ Refer to the table below to see what properties a particular interface implies.
 | | `description` | unicode | A description for the field. Used in the widget. |
 | | `required` | bool | Whether or not the field is required. Used for form validation. The default is `True`. |
 | | `readonly` | bool | Whether or not the field is read only. Default is `False`. |
-| | `default` | | The default value for the field. Used in forms and sometimes as a fallback value. Must be a valid value for the field if set. The default is `None`. |
+| | `default` | | The default value for the field. Used in forms and sometimes as a fallback value. Must be a valid value for the field if set. The default is `None`.|
+| | `defaultFactory` | | The default factory method for the field. Used in forms and sometimes as a fallback value. This is a name of a method which returns a dynamic default value.|
 | | `missing_value` | | A value that represents "this field is not set". Used by form validation. Defaults to `None`. For lists and tuples, it is sometimes useful to set this to an empty list or tuple. |
 | `IMinMaxLen` | `min_length` | int | The minimum required length or minimum number of elements. Used for `string`, sequence, mapping, or `set` fields. Default is `0`. |
 | | `max_length `| int | The maximum allowed length or maximum number of elements. Used for `string`, sequence, mapping, or `set` fields. Default is `None` (no check). |
@@ -48,6 +49,7 @@ Refer to the table below to see what properties a particular interface implies.
 | | `output_mime_type` | str | Default output MIME type for the transformed value of a rich text field. Defaults to `text/x-html-safe`. There must be a transformation chain in the `portal_transforms` tool that can transform from the input value to the `output` value for the output property of the `RichValue` object to contain a value. |
 | | `allowed_mime_types` | tuple | A list of allowed input MIME types. The default is `None`, in which case the site-wide settings from the {guilabel}`Markup` control panel will be used. |
 
+See [IField interface](https://zopeschema.readthedocs.io/en/latest/api.html#zope.schema.interfaces.IField) and [field implementation](https://zopeschema.readthedocs.io/en/latest/api.html#field-implementations) in `zope.schema` documentation for details.
 
 ## Field types
 
