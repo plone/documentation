@@ -19,12 +19,13 @@ substitutions:
 ## Introduction
 
 [Zope schemas](https://zopeschema.readthedocs.io) are a database-neutral and form-library-neutral way to
-describe Python data models.
+describe Python data models. Schemas extend the notion of interfaces to detailed descriptions of Attributes (but not methods). Every schema is an interface and specifies the public fields of an object. A field roughly corresponds to an attribute of a Python object. But a Field provides space for at least a title and a description. It can also constrain its value and provide a validation method. Besides you can optionally specify characteristics such as its value being read-only or not required.
 
 Plone uses Zope schemas for these purposes:
 
 - to describe persistent data models;
 - to describe HTML form data;
+- to describe Plone configuration data
 - to describe ZCML configuration data.
 
 Since Zope schemas are not bound to e.g. a SQL database engine, it gives
@@ -102,10 +103,140 @@ class ICheckoutAddress(zope.interface.Interface):
 
 This schema can be used in {ref}`classic-ui-forms-label` and Dexterity {ref}`backend-content-types-label` data models.
 
+```{note}
+In Dexterity {ref}`backend-content-types-label` the base class for a schema is `plone.supermodel.model.Schema`.
+This provides functionalities to export and import schemas via XML and TTW editor.
+```
+
+
+### Field constructor parameters
+
+The `Field` base class defines a list of standard parameters that you can
+use to construct schema fields.  Each subclass of `Field` will have its own
+set of possible parameters in addition to this.
+
+See [IField interface](https://zopeschema.readthedocs.io/en/latest/api.html#zope.schema.interfaces.IField) and [field implementation](https://zopeschema.readthedocs.io/en/latest/api.html#field-implementations) in `zope.schema` documentation for details.
+
+Title
+
+: field title as unicode string
+
+Description
+
+: field description as unicode string
+
+required
+
+: boolean, whether the field is required
+
+default
+
+: Default value if the attribute is not present
+
+... and so on.
+
+```{warning}
+Do not initialize any non-primitive values using the *default* keyword
+parameter of schema fields.  Python and the ZODB stores objects by
+reference.  Python code will construct only *one* field value during
+schema construction, and share its content across all objects.  This
+is probably not what you intend. Instead, initialize objects in the
+`__init__()` method of your schema implementer.
+
+In particular, dangerous defaults are: `default=[]`, `default={}`,
+`default=SomeObject()`.
+
+Use `defaultFactory=get_default_name` instead!
+```
+
+
+### Schema introspection
+
+The `zope.schema._schema` module provides some introspection functions:
+
+- `getFieldNames(schema_class)`
+- `getFields(schema_class)`
+- `getFieldNamesInOrder(schema)` {{ --- }} retain the orignal field
+  declaration order.
+- `getFieldsInOrder(schema)` {{ --- }} retain the orignal field declaration
+  order.
+
+Example:
+
+```
+import zope.schema
+import zope.interface
+
+class IMyInterface(zope.interface.Interface):
+
+    text = zope.schema.TextLine()
+
+# Get list of schema fields from IMyInterface
+fields = zope.schema.getFields(IMyInterface)
+```
+
+#### Dumping schema data
+
+Below is an example how to extract all schema defined fields from an object.
+
+```
+from collections import OrderedDict
+
+import zope.schema
+
+
+def dump_schemed_data(obj):
+    """
+    Prints out object variables as defined by its zope.schema Interface.
+    """
+    out = OrderedDict()
+
+    # Check all interfaces provided by the object
+    ifaces = obj.__provides__.__iro__
+
+    # Check fields from all interfaces
+    for iface in ifaces:
+        fields = zope.schema.getFieldsInOrder(iface)
+        for name, field in fields:
+            # ('header', <zope.schema._bootstrapfields.TextLine object at 0x1149dd690>)
+            out[name] = getattr(obj, name, None)
+
+    return out
+```
+
+#### Finding the schema for a Dexterity type
+
+When trying to introspect a Dexterity type, you can get a reference to the schema thus:
+
+```
+from zope.component import getUtility
+from plone.dexterity.interfaces import IDexterityFTI
+
+schema = getUtility(IDexterityFTI, name=PORTAL_TYPE_NAME).lookupSchema()
+```
+
+...and then inspect it using the methods above. Note this won't have behavior
+fields added to it at this stage, only the fields directly defined in your
+schema.
+
+
+### More info
+
+- [zope.schema](https://pypi.python.org/pypi/zope.schema) on PyPi
+- [zope.schema source code](http://github.com/zopefoundation/zope.schema) - definite source for field types and usage.
+- [zope.schema documentation](https://zopeschema.readthedocs.io)
+- [plone.schema](https://github.com/plone/plone.schema)
+
+`zope.schema` and `plone.schema` provide a very comprehensive set of {ref}`backend-fields-label` out of the box.
+Finding good documentation for them, however, can be challenging.  Here are
+some starting points:
+
+- {ref}`reference list of fields used in Plone <backend-fields-label>`
+
 
 ## Advanced
 
-We can use this class to store data based on our model definition in the ZODB
+We can use a schema class to store data based on our model definition in the ZODB
 database.
 
 We use `zope.schema.fieldproperty.FieldProperty` to bind
@@ -140,21 +271,7 @@ For persistent objects, see {doc}`persistent object documentation
 </develop/plone/persistency/persistent>`.
 
 
-### More info
-
-- [zope.schema](https://pypi.python.org/pypi/zope.schema) on PyPi
-- [zope.schema source code](http://github.com/zopefoundation/zope.schema) - definite source for field types and usage.
-- [zope.schema documentation](https://zopeschema.readthedocs.io)
-- [plone.schema](https://github.com/plone/plone.schema)
-
-`zope.schema` and `plone.schema` provide a very comprehensive set of {ref}`backend-fields-label` out of the box.
-Finding good documentation for them, however, can be challenging.  Here are
-some starting points:
-
-- {ref}`reference list of fields used in Plone <backend-fields-label>`
-
-
-## Using schemas as data models
+### Using schemas as data models
 
 Based on the example data model above, we can use it in e.g. content type
 {doc}`browser views </develop/plone/views/browserviews>` to store arbitrary data as content
@@ -184,120 +301,13 @@ class MyView(BrowserView):
         context.test_address.arbitary_attribute = u"Don't do this!"
 ```
 
-## Field constructor parameters
-
-The `Field` base class defines a list of standard parameters that you can
-use to construct schema fields.  Each subclass of `Field` will have its own
-set of possible parameters in addition to this.
-
-See the full list [here](http://docs.zope.org/zope3/Code/zope/schema/_bootstrapfields/Field/index.html).
-
-Title
-
-: field title as unicode string
-
-Description
-
-: field description as unicode string
-
-required
-
-: boolean, whether the field is required
-
-default
-
-: Default value if the attribute is not present
-
-... and so on.
-
-```{warning}
-Do not initialize any non-primitive values using the *default* keyword
-parameter of schema fields.  Python and the ZODB stores objects by
-reference.  Python code will construct only *one* field value during
-schema construction, and share its content across all objects.  This
-is probably not what you intend. Instead, initialize objects in the
-`__init__()` method of your schema implementer.
-
-In particular, dangerous defaults are: `default=[]`, `default={}`,
-`default=SomeObject()`.
-```
-
-## Schema introspection
-
-The `zope.schema._schema` module provides some introspection functions:
-
-- `getFieldNames(schema_class)`
-- `getFields(schema_class)`
-- `getFieldNamesInOrder(schema)` {{ --- }} retain the orignal field
-  declaration order.
-- `getFieldsInOrder(schema)` {{ --- }} retain the orignal field declaration
-  order.
-
-Example:
-
-```
-import zope.schema
-import zope.interface
-
-class IMyInterface(zope.interface.Interface):
-
-    text = zope.schema.TextLine()
-
-# Get list of schema fields from IMyInterface
-fields = zope.schema.getFields(IMyInterface)
-```
-
-### Dumping schema data
-
-Below is an example how to extract all schema defined fields from an object.
-
-```
-from collections import OrderedDict
-
-import zope.schema
-
-
-def dump_schemed_data(obj):
-    """
-    Prints out object variables as defined by its zope.schema Interface.
-    """
-    out = OrderedDict()
-
-    # Check all interfaces provided by the object
-    ifaces = obj.__provides__.__iro__
-
-    # Check fields from all interfaces
-    for iface in ifaces:
-        fields = zope.schema.getFieldsInOrder(iface)
-        for name, field in fields:
-            # ('header', <zope.schema._bootstrapfields.TextLine object at 0x1149dd690>)
-            out[name] = getattr(obj, name, None)
-
-    return out
-```
-
-### Finding the schema for a Dexterity type
-
-When trying to introspect a Dexterity type, you can get a reference to the schema thus:
-
-```
-from zope.component import getUtility
-from plone.dexterity.interfaces import IDexterityFTI
-
-schema = getUtility(IDexterityFTI, name=PORTAL_TYPE_NAME).lookupSchema()
-```
-
-...and then inspect it using the methods above. Note this won't have behavior
-fields added to it at this stage, only the fields directly defined in your
-schema.
-
-## Field order
+### Field order
 
 The `order` attribute can be used to determine the order in which fields in
 a schema were defined. If one field was created after another (in the same
 thread), the value of `order` will be greater.
 
-## Default values
+### Default values
 
 To make default values of schema effective, class attributes must be
 implemented using `FieldProperty`.
@@ -324,7 +334,7 @@ something = SomeStorage()
 assert something.some_value == True
 ```
 
-## Validation and type constrains
+### Validation and type constrains
 
 Schema objects using field properties provide automatic validation
 facilities, preventing setting badly formatted attributes.
@@ -387,7 +397,7 @@ class IContact(Interface):
     email = schema.TextLine(title=u'Email', constraint=isEmail)
 ```
 
-## Persistent objects and schema
+### Persistent objects and schema
 
 ZODB persistent objects do not provide facilities for setting field defaults
 or validating the data input.
@@ -463,7 +473,7 @@ header = HeaderBehavior()
 assert header.alternatives = []
 ```
 
-## Collections (and multichoice fields)
+### Collections (and multichoice fields)
 
 Collections are fields composed of several other fields.
 Collections also act as multi-choice fields.
@@ -475,7 +485,7 @@ For more information see:
 - Schema [field sources documentation](https://zopeschema.readthedocs.io/en/latest/sources.html#sources-in-fields)
 - [Choice field](https://zopeschema.readthedocs.io/en/latest/fields.html#choice)
 
-### Single-choice example
+#### Single-choice example
 
 Only one value can be chosen.
 
@@ -518,7 +528,7 @@ class ISyncRunOptions(Interface):
                               default=logging.INFO)
 ```
 
-### Multi-choice example
+#### Multi-choice example
 
 Using zope.schema.List, many values can be chosen once.
 Each value is atomically constrained by *value_type* schema field.
@@ -546,7 +556,7 @@ class IMultiChoice(model.Schema):
                                )
 ```
 
-## Dynamic schemas
+### Dynamic schemas
 
 Schemas are singletons, as there only exist one class instance
 per Python run-time. For example, if you need to feed schemas generated dynamically
@@ -565,7 +575,7 @@ as the same copy is shared between different threads and
 if there are two concurrent HTTP requests problems occur.
 ```
 
-### Replacing schema fields with dynamically modified copies
+#### Replacing schema fields with dynamically modified copies
 
 The below is an example for z3c.form. It uses Python `copy`
 module to copy f.field reference, which points to zope.schema
@@ -600,7 +610,7 @@ def fields(self):
             f.field = schema_field
 ```
 
-### Don't use dict {} or list \[\] as a default value
+#### Don't use dict {} or list \[\] as a default value
 
 Because how Python object construction works, giving \[\] or {}
 as a default value will make all created field values to share this same object.
