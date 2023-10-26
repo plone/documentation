@@ -34,7 +34,7 @@ As a first-time contributor, you are warned that Plone might not be a good match
 -   Plone is a relatively complex web application.
     It takes a significant amount of time to learn how to develop Plone.
 -   Members of the Plone GitHub organization volunteer their free time to develop Plone, and offer limited mentoring only through the Google Summer of Code program.
--   If you want free support, training, or mentoring, you should use the [Plone Community Forum](https://community.plone.org/) and not use GitHub.
+-   If you want free support, training, or mentoring, you should use the [Plone Community Forum](https://community.plone.org/) or participate in an [event](https://plone.org/news-and-events/events), and not use GitHub.
 ```
 
 
