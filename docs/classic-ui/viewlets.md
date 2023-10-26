@@ -302,6 +302,30 @@ You usually map `<viewlet>` to the `browser/configure.zcml` folder.
 </configure>
 ```
 
+#### Overriding a viewlet registration
+
+To change a viewlets manager, we can override the registration in our custom Plone add-on package as follow:
+
+```xml
+<!-- move contentleadimage viewlet to different viewletmanager -->
+<configure package="plone.app.contenttypes.behaviors">
+    <browser:viewlet
+        name="contentleadimage"
+        for="plone.app.contenttypes.behaviors.leadimage.ILeadImage"
+        view="plone.app.layout.globals.interfaces.IViewView"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class="plone.app.contenttypes.behaviors.viewlets.LeadImageViewlet"
+        template="leadimage.pt"
+        permission="zope2.View"
+        layer="collective.example.interfaces.IExampleLayer"
+        />
+</configure>
+```
+
+the override is done here, with the help of a browser layer.
+An alternative way would be to put the registration without a browser layer into a overrides.zcml in the package root of your add-on.
+
+
 
 ### Conditionally rendering viewlets
 
@@ -786,7 +810,7 @@ These settings are stored in the site database.
 A good practice is to export {file}`viewlets.xml` using `portal_setup`, and then include the necessary bits of this {file}`viewlets.xml` with your add-on installer, so that when your add-on is installed, the viewlet configuration is changed accordingly.
 
 ```{note}
-You cannot move viewlets between viewlet managers.
+You cannot move viewlets between viewlet managers TTW.
 Hide the concerning viewlets in one manager using `/@@manage-viewlets` and {file}`viewlets.xml` export, then re-register the same viewlet to a new manager.
 ```
 
