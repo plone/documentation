@@ -28,8 +28,6 @@ Plone 6 has both hardware requirements and software pre-requisites.
 
 The hardware requirements below give a rough estimate of the minimum hardware setup needed for a Plone server.
 
-{term}`Add-on` products and caching solutions may increase RAM requirements.
-
 A single Plone installation is able to run many Plone sites.
 You may host multiple Plone sites on the same server.
 
@@ -37,6 +35,17 @@ You may host multiple Plone sites on the same server.
     2 GB or more RAM per Plone site is recommended.
 -   Minimum 512 MB hard disk space is required.
     40 GB or more hard disk space is recommended.
+
+````{warning}
+When you _build_ Plone, it will approximately double RAM requirements to _install_ Plone.
+{term}`Add-on` products and caching solutions may also increase RAM requirements.
+
+To avoid RAM limitations, we recommend either temporarily resizing your remote machine to accommodate the build, or build your images locally and upload them to an image store, such as [Docker Hub](https://hub.docker.com/) or [GitHub Packages](https://github.com/features/packages).
+
+```{seealso}
+[How much RAM is required to build a Volto front end?](https://community.plone.org/t/how-much-ram-is-required-to-build-a-volto-front-end/17949) and [Dealing with heap exhaustion while building Volto 17 on limited-RAM host](https://community.plone.org/t/dealing-with-heap-exhaustion-while-building-volto-17-on-limited-ram-host/18078).
+```
+````
 
 
 (install-packages-prerequisites-label)=
