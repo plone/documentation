@@ -109,6 +109,7 @@ To standarize the developer experience across packages, a configuration tool is 
 
 See the [tool documentation](https://github.com/plone/meta) for more information.
 
+
 (contributing-specific-contribution-policies-for-projects-label)=
 
 ## Specific contribution policies of projects
@@ -137,6 +138,15 @@ Plone REST API
 Volto
 :   Plone 6 default frontend.
     See {doc}`../volto/contributing/index`.
+
+
+(contributing-releases-label)=
+
+## Releases
+
+The Plone [Release Team](https://plone.org/community/teams/release-team) manages the release of new versions of Plone.
+
+We use [`zest.releaser`](https://zestreleaser.readthedocs.io/en/latest/) for releasing the packages used in Plone, including [Plone core (`Products.CMFPlone`)](https://github.com/plone/Products.CMFPlone/), {doc}`Volto </volto/index>`, {doc}`/classic-ui/index`, {doc}`/plone.restapi/docs/source/index`, {doc}`/plone.api/index`, and {doc}`/backend/index`.
 
 
 ```{toctree}
