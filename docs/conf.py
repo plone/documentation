@@ -74,30 +74,25 @@ pygments_style = "sphinx"
 # Options for the linkcheck builder
 # Ignore localhost
 linkcheck_ignore = [
-    r"http://localhost",
+    # Ignore local and example URLs
     r"http://0.0.0.0",
     r"http://127.0.0.1",
+    r"http://localhost",
     r"http://yoursite",
-    r"https://www.linode.com",
-    r"https://vhs-ehrenamtsportal.de", # SSLError(SSLCertVerificationError
+    # Ignore file downloads
+    r"^/_static/",
+    # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
-    # Ignore specific anchors
-    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
-    r"https://github.com/browserslist/browserslist#queries",
-    r"https://github.com/nodejs/release#release-schedule",
-    r"https://github.com/nvm-sh/nvm#install--update-script",
-    r"https://github.com/plone/cookiecutter-zope-instance#options",
-    r"https://github.com/plone/plone.app.contenttypes#migration",
-    r"https://github.com/plone/plone.docker#for-basic-usage",
-    r"https://github.com/plone/plone.rest#cors",
-    r"https://github.com/plone/plone.volto/blob/6f5382c74f668935527e962490b81cb72bf3bc94/src/kitconcept/volto/upgrades.py#L6-L54",
     r"https://github.com/plone/volto/issues/new/choose",  # requires auth
-    r"https://github.com/tc39/proposals/blob/HEAD/finished-proposals.md#finished-proposals",
-    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=master",  # plone.restapi
-    r"https://github.com/plone/plone.restapi/blob/dde57b88e0f1b5f5e9f04e6a21865bc0dde55b1c/src/plone/restapi/services/content/add.py#L35-L61",  # plone.restapi
+    # Ignore github.com pages with anchors
+    r"https://github.com/.*#.*",
+    # Ignore other specific anchors
+    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
+    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
-    r"^/_static/",
+    # Ignore unreliable sites
+    r"https://web.archive.org/",  # volto
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5
@@ -149,14 +144,14 @@ html_static_path = [
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
-    "deflist",  # You will be able to utilise definition lists
+    "deflist",  # Support definition lists.
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
-    "linkify",  # Identify “bare” web URLs and add hyperlinks.
+    "linkify",  # Identify "bare" web URLs and add hyperlinks.
     "colon_fence",  # You can also use ::: delimiters to denote code fences,\
     #  instead of ```.
     "substitution",  # plone.restapi \
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
-    "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
+    "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
 ]
 
 myst_substitutions = {
@@ -278,7 +273,9 @@ html_title = "%(project)s v%(release)s" % {"project": project, "release": releas
 html_use_index = True
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6.docs.plone.org"
+html_baseurl = "https://6.docs.plone.org/"
+# https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
+sitemap_url_scheme = "{link}"
 
 # -- Options for HTML help output -------------------------------------------------
 
@@ -324,7 +321,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.4",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.7",
     "{NVM_VERSION}": "0.39.3",
 }
 

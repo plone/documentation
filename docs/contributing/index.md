@@ -101,6 +101,13 @@ The following text is an example change log entry, placed inside {file}`/news/45
 Fix broken links for ReactJS.org. @stevepiercy
 ```
 
+(contributing-project-configuration-files-label)=
+
+## Project configuration files
+
+To standarize the developer experience across packages, a configuration tool is used.
+
+See the [tool documentation](https://github.com/plone/meta) for more information.
 
 (contributing-specific-contribution-policies-for-projects-label)=
 

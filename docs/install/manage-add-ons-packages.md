@@ -325,7 +325,7 @@ Add the Plone package you want to check out in {file}`mx.ini`.
 ```ini
 [plone.restapi]
 url = git@github.com:plone/plone.restapi.git
-branch = master
+branch = main
 extras = test
 ```
 

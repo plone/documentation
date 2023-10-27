@@ -162,7 +162,7 @@ If no warnings are shown, the add-on should run fine on Zope 5.
 
 (v60-barceloneta-lts-label)=
 
-## Modernize Plone default theme (Barceloneta LTS)
+## Modernize Plone Classic UI theme (Barceloneta)
 
 The standard theme in Classic UI was updated to Bootstrap 5, CSS variables, and an icon library.
 If you have a theme that builds on Barceloneta, you most likely need various changes.
@@ -545,4 +545,60 @@ In that case, you are advised to add the `image_scales` column manually to the c
 
 ```{seealso}
 [plone/plone.app.upgrade PR 292](https://github.com/plone/plone.app.upgrade/pull/292)
+```
+
+
+(v60-tinymce-label)=
+
+## New version of TinyMCE
+
+Plone 6 ships with a new version of TinyMCE.
+While Plone 5.2 ships with TinyMCE 4.7, Plone 6.0 ships with TinyMCE 5.10.
+The TinyMCE integration `pat-tinymce` has also changed, but the configuration options have been almost kept the same and are likely to be compatible with your existing installation.
+The configuration changes are:
+
+-   Added configuration options `text.enableImageZoom`, `defaultSrcset`, `imageCaptioningEnabled`, and `tiny.language`.
+-   Removed configuration option `imageScales`.
+-   Option values changed for `imageClasses`.
+
+
+### TinyMCE templates
+
+In Plone 6, the TinyMCE template plugin is built-in and can be enabled via a checkbox.
+Whereas in Plone 5, you had to enable the template plugin as an external plugin via the `custom_plugins` configuration option.
+The template registration is the same as before, but in Plone 6 your templates need to have a `description`.
+Otherwise TinyMCE will throw a JavaScript error, and the templates won't be usable at all.
+
+The following example {file}`registry.xml` may be used for configuring TinyMCE with some templates.
+
+```xml
+  <records interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+           prefix="plone">
+    <value key="plugins" purge="False">
+      <element>template</element>
+    </value>
+    <value key="custom_plugins" purge="True">
+      <!-- Remove the old TinyMCE template plugin -->
+    </value>
+    <value key="templates">
+        [
+            {
+                "title": "Template 1",
+                "description": "This is an example template",
+                "url": "++plone++my.site/template1.html"
+            },
+            {
+                "title": "Template 2",
+                "description": "This is another example template",
+                "url": "++plone++my.site/template2.html"
+            }
+        ]
+    </value>
+  </records>
+```
+
+Please make sure you write valid JSON for the `template` option.
+
+```{seealso}
+See also the [TinyMCE 4 to 5 upgrade guide](https://www.tiny.cloud/docs/migration-from-4x/).
 ```

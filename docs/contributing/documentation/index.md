@@ -209,7 +209,7 @@ We use `git submodules` to manage multiple repositories.
 We imported the external repositories the `plone/documentation` repository as described in {doc}`setup-build`.
 
 ```{important}
-We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master`, `plone/plone.restapi@master`, and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master`, `plone/plone.restapi@main`, and `plone/volto@main` as the main branches for developing Plone 6 Documentation.
 ```
 
 1.  From the project root directory, sync your local `6.0` branch with its remote.
@@ -238,11 +238,8 @@ We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master
     # for plone.api
     git checkout master
 
-    # for plone.restapi
-    git checkout master
-
-    # for volto
-    git checkout master
+    # for plone.restapi or volto
+    git checkout main
 
     git pull
     ```
@@ -315,6 +312,6 @@ hidden: true
 setup-build
 authors
 myst-reference
-sphinx-extensions
+themes-and-extensions
 admins
 ```
