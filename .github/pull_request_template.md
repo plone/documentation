@@ -1,3 +1,11 @@
+## First-time contributors
+
+You **must** read and follow our [First-time contributors](https://6.docs.plone.org/contributing/first-time.html).
+
+---
+
+## Submit a pull request
+
 Thank you for your contribution to the Plone Documentation.
 
 Before submitting this pull request, please make sure you follow our guides:
@@ -7,9 +15,9 @@ Before submitting this pull request, please make sure you follow our guides:
 -   [Authors guide](https://6.docs.plone.org/contributing/authors.html)
 -   [MyST reference](https://6.docs.plone.org/contributing/myst-reference.html)
 
-## Issue Number
+## Issue number
 
-- Issue #
+- Fixes #
 
 ## Description
 
