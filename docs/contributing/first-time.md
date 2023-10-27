@@ -13,7 +13,7 @@ myst:
 
 This chapter provides guidance to first-time contributors to Plone and all its projects and repositories under the Plone GitHub organization.
 
-As a first-time contributor to Plone, we expect that you have:
+As a first-time contributor to Plone on GitHub, we expect that you have:
  
 -   {doc}`installed Plone <../install/index>` on your development machine
 -   worked on a Plone project, even if it is just for fun
@@ -29,12 +29,14 @@ As a first-time contributor to Plone, we expect that you have:
 -   basic knowledge of using git and GitHub
 
 ```{warning}
-As a first-time contributor, you are warned that Plone might not be a good match for you.
+As a first-time contributor on GitHub, your expectations should align with ours, else you might feel disappointment or frustration.
 
--   Plone is a relatively complex web application.
-    It takes a significant amount of time to learn how to develop Plone.
--   Members of the Plone GitHub organization volunteer their free time to develop Plone, and offer limited mentoring only through the Google Summer of Code program.
--   If you want free support, training, or mentoring, you should use the [Plone Community Forum](https://community.plone.org/) or participate in an [event](https://plone.org/news-and-events/events), and not use GitHub.
+Plone has a very large and complex code base.
+It takes a significant amount of time to learn how to develop Plone.
+
+As members of the Plone organization, we volunteer our free time to develop Plone on GitHub.
+We do not offer support, training, or mentoring on GitHub.
+For free support, training, or mentoring, you should use the [Plone Community Forum](https://community.plone.org/) or participate in an [event](https://plone.org/news-and-events/events), and not use GitHub.
 ```
 
 
