@@ -15,7 +15,6 @@ This chapter provides guidance to first-time contributors to Plone and all its p
 
 As a first-time contributor to Plone, we expect that you have:
  
--   {ref}`tried a Plone demo <install-index-getting-started-label>`
 -   {doc}`installed Plone <../install/index>` on your development machine
 -   worked on a Plone project, even if it is just for fun
 -   worked through some trainings, such as the recommended:
