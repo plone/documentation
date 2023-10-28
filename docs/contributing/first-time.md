@@ -196,11 +196,12 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
     ```
 
 1.  Visit your fork of the Plone repository on GitHub, and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) against the development branch.
-    -   Make your title and description descriptive.
-    -   Include "Fixes #" and the related issue number.
+    -   Make both your title and description descriptive.
+        Reviewers look at many pull requests, and need to quickly understand the context.
+        A lazily written phrase such as "Fixes bug" is meaningless.
+    -   Include "Fixes #" and the related issue number in the description.
         This enables automatic closing of the related issue when the pull request is merged.
         This also creates a hyperlink to the original issue for easy reference.
-    -   Don't be lazy with "Fixes bug" or other useless drivel.
 1.  [Request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.
 1.  Members who subscribe to the repository will receive a notification and review your request.
 
