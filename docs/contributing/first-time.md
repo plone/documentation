@@ -137,6 +137,20 @@ After you have satisfied the above steps and have clear direction on how to proc
 1.  [Clone your forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
 1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
 
+As a member of the Plone Contributors Team, you do not have write access to push commits to GitHub repositories under the Plone organization.
+You can push commits to your fork.
+Thus a typical workflow will be circular in nature.
+You will pull code from the upstream Plone repository, push your work from your local clone to your remote fork, then make a pull request from your fork to the upstream Plone repository.
+
+````{card}
+```{image} /_static/contributing/first-time-plone-git-workflow.svg
+:alt: Plone git workflow
+:target: /_static/contributing/first-time-plone-git-workflow.svg
+```
++++
+_Plone git workflow_
+````
+
 
 (write-code-label)=
 
