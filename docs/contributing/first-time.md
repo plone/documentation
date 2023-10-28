@@ -225,7 +225,7 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
 ### Update your pull request from your fork
 
 Often another pull request will get merged before yours, and your pull request will fall behind the main branch.
-To keep your pull request current, you can issue the follow git commands.
+To keep your pull request current, you can issue the following git commands.
 
 ```shell
 # Assume `main` is the main branch.
