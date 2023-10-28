@@ -133,10 +133,6 @@ After you have satisfied the above steps and have clear direction on how to proc
 
 ### Set up your environment
 
-1.  Start by [forking the project's repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account through the GitHub interface.
-1.  [Clone your forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
-1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
-
 As a member of the Plone Contributors Team, you do not have write access to push commits to GitHub repositories under the Plone organization.
 You can push commits to your fork.
 Thus a typical workflow will be circular in nature.
@@ -150,6 +146,10 @@ You will pull code from the upstream Plone repository, push your work from your 
 +++
 _Plone git workflow_
 ````
+
+1.  Start by [forking the project's repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account through the GitHub interface.
+1.  [Clone your forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
+1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
 
 
 (write-code-label)=
