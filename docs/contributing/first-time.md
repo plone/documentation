@@ -222,18 +222,19 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
 1.  Members who subscribe to the repository will receive a notification and review your request.
 
 
+(update-your-pull-request-from-your-fork-label)=
+
 ### Update your pull request from your fork
 
 Often another pull request will get merged before yours, and your pull request will fall behind the main branch.
-To keep your pull request current, you can issue the following git commands.
+To keep your pull request current, you can issue the following git commands, assuming you have already checked out the branch for the pull request that you want to update.
+These commands will only work if you have {ref}`set-up-your-environment-label` as mentioned above.
 
 ```shell
 # Assume `main` is the main branch.
-git checkout main
-git pull
-git checkout my-branch-name
-git merge main
-git push origin my-branch-name
+git fetch upstream
+git merge upstream/main  # You might need to resolve conflicts here.
+git push
 ```
 
 Welcome to the Plone community, and thank you for contributing!
