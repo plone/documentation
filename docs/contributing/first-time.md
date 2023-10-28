@@ -158,18 +158,20 @@ _Plone git workflow_
 
 Once you have your environment set up, then you can follow standard best practices for working with git.
 
-Always start by checking out the default branch, usually `main` or `master`, then update the default branch.
+In the following command examples, we will use `main` as the default branch, although `master` may still be in use for some repositories.
+
+Always start by checking out the default branch then update the default branch.
 
 ```shell
 git checkout main
 git pull
 ```
 
-Then create a new branch from the default branch, and check it out to work on it.
+Then create a new branch from the default branch, tracking the upstream Plone repository, and check it out to work on it.
 We recommend using a branch name that includes the issue number and is descriptive of what it resolves.
 
 ```shell
-git checkout -b branch_name
+git checkout -b my-branch-name upstream/main
 ```
 
 Now you can edit your code without affecting the default branch.
@@ -206,7 +208,7 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
     ```shell
     git add <files>
     git commit -m "My commit message"
-    git push
+    git push origin my-branch-name
     ```
 
 1.  Visit your fork of the Plone repository on GitHub, and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) against the development branch.
@@ -229,9 +231,9 @@ To keep your pull request current, you can issue the follow git commands.
 # Assume `main` is the main branch.
 git checkout main
 git pull
-git checkout my_branch_name
+git checkout my-branch-name
 git merge main
-git push
+git push origin my-branch-name
 ```
 
 Welcome to the Plone community, and thank you for contributing!
