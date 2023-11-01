@@ -214,7 +214,7 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
     ```shell
     git add <files>
     git commit -m "My commit message"
-    git push origin my-branch-name
+    git push -u origin my-branch-name
     ```
 
 1.  Visit your fork of the Plone repository on GitHub, and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) against the development branch.
