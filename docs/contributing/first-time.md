@@ -81,6 +81,12 @@ Learn from their mistakes, and don't commit them yourself.
     Pull requests will be reviewed in the order received.
     Duplicate pull requests may be ignored and closed without comment by the privileged GitHub teams.
 
+3.  **Don't create and close multiple pull requests for the same issue.**
+    GitHub should not be used as a place to test your contribution.
+    It makes it impossible for reviewers to provide feedback to your contribution in one place.
+    It also sends notifications to hundreds of developers, informing them that you have not read this guide, and annoying many of them.
+    You should instead learn how to {ref}`work-with-github-issues-label` and {ref}`run tests and code quality checks locally <test-and-code-quality-label>`.
+
 
 (plone-contributors-team-label)=
 
