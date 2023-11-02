@@ -13,12 +13,15 @@ npm
 nvm
 Pastanaga
 Plone
+pluggab(le|ility)
+programatically
 portlet
 prerendered
 Razzle
 renderer
 RichText
 Sass
+transpile[dr]{0,1}
 unregister
 viewlet
 Volto

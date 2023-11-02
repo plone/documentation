@@ -91,6 +91,8 @@ linkcheck_ignore = [
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
+    # Ignore unreliable sites
+    r"https://web.archive.org/",  # volto
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5
@@ -200,11 +202,6 @@ ogp_type = "website"
 ogp_custom_meta_tags = [
     '<meta property="og:locale" content="en_US" />',
 ]
-
-
-# -- sphinx_copybutton -----------------------
-copybutton_prompt_text = r"^ {0,2}\d{1,3}"
-copybutton_prompt_is_regexp = True
 
 
 # -- sphinx-notfound-page configuration ----------------------------------

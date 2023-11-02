@@ -27,7 +27,6 @@ Choose a version.
 
 -   [Plone 6 with Volto frontend](https://demo.plone.org/)
 -   [Plone 6 Classic UI (nightly build)](https://classic.demo.plone.org/login?came_from=/en)
--   [Plone 5.2.x (stable) with Barceloneta frontend](https://52.demo.plone.org/)
 :::
 
 :::{grid-item-card} {octicon}`download;1.5em;sd-mr-1` Install

@@ -15,6 +15,5 @@ sphinx-sitemap
 sphinx-togglebutton
 sphinxcontrib.httpdomain  # plone.restapi
 sphinxcontrib.httpexample  # plone.restapi
-sphinxext-opengraph
-sphinx-design
 sphinxcontrib-video
+sphinxext-opengraph
