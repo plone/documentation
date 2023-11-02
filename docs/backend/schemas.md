@@ -615,7 +615,6 @@ def fields(self):
 Because how Python object construction works, giving \[\] or {}
 as a default value will make all created field values to share this same object.
 
-<http://effbot.org/zone/default-values.htm>
 
 Use value adapters instead
 
