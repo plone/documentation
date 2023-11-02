@@ -60,16 +60,6 @@ Each type has a {ref}`schema <backend-schemas-label>`, which is a set of {ref}`b
 The schema is used to generate forms and describe instances of the type.
 In addition to schema-driven forms, a type typically comes with one or more {ref}`classic-ui-views-label` as well as {ref}`classic-ui-viewlets-label` and is subject to security—for example, add permissions, or per-field read/write permissions—and workflow.
 
-### Example content type
-
-When we attempt to solve a particular content management problem with Plone, we will often design new content types.
-For the purpose of this example, we'll build a simple set of types to manage tasks.
-
-- A content type `Tasks` is used to hold all task objects and present a list of tasks to the user.
-  This type is folderish (Container).
-- A content type `Task` with the information about the task.
-  Fields include name, description, and status of the task.
-  This type is non-folderish (Item).
 
 
 ```{toctree}
