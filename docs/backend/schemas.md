@@ -236,6 +236,11 @@ some starting points:
 
 ## Advanced
 
+```{note}
+Most examples in the section is very low level Zope stuff.
+In Plone you rarely have to deal with it much. But we keep it here for the interested, who things are working internally.
+```
+
 We can use a schema class to store data based on our model definition in the ZODB
 database.
 
@@ -615,6 +620,7 @@ def fields(self):
 Because how Python object construction works, giving \[\] or {}
 as a default value will make all created field values to share this same object.
 
+- https://docs.python-guide.org/writing/gotchas
 
 Use value adapters instead
 
