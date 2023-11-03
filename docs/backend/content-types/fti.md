@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "A content type is an object that can store information and is editable by users."
-    "property=og:description": "A content type is an object that can store information and is editable by users."
+    "description": "Factory type information (FTI) is responsible for content creation in portals in Plone."
+    "property=og:description": "Factory type information (FTI) is responsible for content creation in portals in Plone."
     "property=og:title": "Factory Type Information (FTI)"
-    "keywords": "Content Types,FTI"
+    "keywords": "Content Types, FTI"
 ---
 
 (backend-content-types-fti-label)=
@@ -22,7 +22,7 @@ For example, this adds the standard Plone page (`Document`) content type:
 </object>
 ```
 
-Then, add a file to the `types` directory with the same name.
+Then add a file to the `types` directory with the same name.
 In this example, the file is `types/Document.xml` and contains this XML:
 
 ```xml
@@ -139,7 +139,7 @@ The XML sets a number of FTI properties that are used globally, in both Classic 
 :   Defines additional {doc}`actions </backend/portal-actions>` which are available for this content type.
 
 `add_permission`
-:   Id of the permission controlling whether the current user has permission to add this content type.
+:   ID of the permission controling whether the current user has permission to add this content type.
 
 `allow_discussion`
 :   Boolean.
@@ -147,13 +147,13 @@ The XML sets a number of FTI properties that are used globally, in both Classic 
 
 `allowed_content_types`
 :   List of content types which can be added inside this one.
-    Only used if `filter_content_types` is True.
+    Only used if `filter_content_types` is `True`.
 
 `behaviors`
 :   List of {doc}`behaviors </backend/behaviors>` enabled for this content type.
 
 `description`
-:   Short description displayed in the UI.
+:   Short description displayed in the user interface.
 
 `factory`
 :   Name of the factory adapter used to create new instances of the content type.
@@ -187,7 +187,7 @@ The XML sets a number of FTI properties that are used globally, in both Classic 
     `schema` is the most commonly used.
 
 `title`
-:   The name of the content type displayed in the UI.
+:   The name of the content type displayed in the user interface.
 
 
 (classic-ui-only-fti-properties-label)=
