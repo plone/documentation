@@ -1,19 +1,18 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
+    "description": "How to add custom event handlers for your type in Plone"
+    "property=og:description": "How to add custom event handlers for your type in Plone"
     "property=og:title": "Subscribers (event handlers)"
-    "keywords": ""
+    "keywords": "Plone, subscribers, event handlers"
 ---
 
 (backend-subscribers-label)=
 
 # Subscribers (event handlers)
 
-
-
 ```{todo}
-take over content rom here: https://docs.plone.org/external/plone.app.dexterity/docs/advanced/event-handlers.html and https://docs.plone.org/develop/addons/components/events.html
+Move content from:
+-   https://5.docs.plone.org/external/plone.app.dexterity/docs/advanced/event-handlers.html
+-   https://5.docs.plone.org/develop/addons/components/events.html
 ```
-
