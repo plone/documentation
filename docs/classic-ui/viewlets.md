@@ -19,7 +19,7 @@ They can be injected into different areas of a page, such as above or below the 
 Similar to views, viewlets are usually a combination of:
 
 -   a Python class, which performs the user interface logic setup, and
--   corresponding {ref}`classic-ui-templates-label`, or direct Python string output.
+-   corresponding {doc}`/classic-ui/templates`, or direct Python string output.
 
 ```{eval-rst}
 .. graphviz::
@@ -74,7 +74,7 @@ To add viewlets to your HTML code, you first need to add them to a viewlet manag
 -   Viewlets can be reordered (limited to reordering within a `viewlet manager`).
 -   Viewlets can be registered and overridden in a theme specific manner using {doc}`/classic-ui/layers`.
 -   Viewlets have `update()` and `render()` methods.
--   Viewlets should honour [`zope.contentprovider.interfaces.IContentProvider` call contract](https://github.com/zopefoundation/zope.contentprovider/blob/master/src/zope/contentprovider/interfaces.py), documented in [`zope.contentprovider`](https://zopecontentprovider.readthedocs.io/en/latest/).
+-   Viewlets should honor [`zope.contentprovider.interfaces.IContentProvider`'s call contract](https://github.com/zopefoundation/zope.contentprovider/blob/master/src/zope/contentprovider/interfaces.py), documented in [`zope.contentprovider`](https://zopecontentprovider.readthedocs.io/en/latest/).
 
 A viewlet can be configured so that it is only available for:
 
@@ -97,6 +97,7 @@ The available viewlets may depend on your installed Plone version and installed 
 You can order, hide, and unhide or show viewlets.
 The next sections describe how to do so.
 
+
 ### Ordering viewlets
 
 To set the order of a viewlet inside its viewlet manager, use the following `GenericSetup` configuration.
@@ -110,7 +111,7 @@ To set the order of a viewlet inside its viewlet manager, use the following `Gen
 ```{note}
 You cannot move viewlets between viewlet managers.
 Hide the concerning viewlets in one manager using `/@@manage-viewlets` and {file}`viewlets.xml` export, then re-register the same viewlet to a new manager.
-You also have to change the {ref}`classic-ui-viewlets-viewletmanager-label` class in the ``ZCML`` registration of the viewlet.
+You also have to change the {ref}`classic-ui-viewlets-viewletmanager-label` class in the `ZCML` registration of the viewlet.
 See {ref}`classic-ui-viewlets-registering-viewlet-zcml-label`.
 ```
 
@@ -119,7 +120,7 @@ See {ref}`classic-ui-viewlets-registering-viewlet-zcml-label`.
 
 Hiding a viewlet is also done from the {file}`viewlets.xml` with the `<hidden />` node, which is at same level as `<order />`, and is done per skin selection.
 
-For instance, if you need to remove the global sections for your skin, you'd have to add some declaration, such as the following one to {file}`viewlets.xml`:
+For instance, if you need to remove the global sections for your skin, you'd have to add some declaration, such as the following one in {file}`viewlets.xml`:
 
 ```xml
 <hidden manager="plone.portalheader" skinname="My Theme">
@@ -160,15 +161,15 @@ The `purge` and `remove` node parameters are also supported inside the `<order /
 
 ## Custom viewlet
 
-A viewlet consists of
+A viewlet consists of a
 
 -   Python class
 -   page template (`.pt`) file
--   a {doc}`browser layer <layers>` defining which add-on product must be installed, so that the viewlet is rendered
--   a ``ZCML`` directive to register the viewlet to a correct viewlet manager with a correct layer
+-   {doc}`browser layer </classic-ui/layers>` defining which add-on product must be installed, so that the viewlet is rendered
+-   `ZCML` directive to register the viewlet to a correct viewlet manager with a correct layer
 
 
-### Re-using code from a view
+### Re-use code from a view
 
 When you want a viewlet and view to share the same code, remember that the view instance is available in the viewlet under the `view` attribute.
 
@@ -200,10 +201,16 @@ Convert example to use `plonecli`.
 ```
 
 ```{todo}
-Consider migrating the ZCML documentation from Plone 5 to Plone 6 Documentation.
+Consider migrating the [ZCML documentation](https://5.docs.plone.org/develop/addons/components/zcml.html) from Plone 5 to Plone 6 Documentation.
 ```
 
 The following Python code example, such as in a file {file}`viewlets.py`, extends an existing Plone `base` viewlet (found from the `plone.app.layout.viewlets.base` package), then puts this viewlet into one of viewlet managers using [ZCML](https://5.docs.plone.org/develop/addons/components/zcml.html).
+
+```{todo}
+The following Facebook like viewlet example is obsolete (note that links use `http`) and needs to be replaced with a modern one.
+The concept is valid, but the code will not actually work with Facebook.
+For a somewhat more recent example, see {doc}`training:mastering-plone-5/viewlets_1` in the Master Plone 5 training.
+```
 
 ```python
 """
@@ -302,9 +309,10 @@ You usually map `<viewlet>` to the `browser/configure.zcml` folder.
 </configure>
 ```
 
+
 #### Overriding a viewlet registration
 
-To change a viewlets manager, we can override the registration in our custom Plone add-on package as follow:
+To change a viewlets manager, we can override the registration in our custom Plone add-on package as follows:
 
 ```xml
 <!-- move contentleadimage viewlet to different viewletmanager -->
@@ -322,12 +330,11 @@ To change a viewlets manager, we can override the registration in our custom Plo
 </configure>
 ```
 
-the override is done here, with the help of a browser layer.
-An alternative way would be to put the registration without a browser layer into a overrides.zcml in the package root of your add-on.
+The override is done here, with the help of a browser layer.
+An alternative way would be to put the registration without a browser layer into a {file}`overrides.zcml` in the package root of your add-on.
 
 
-
-### Conditionally rendering viewlets
+### Conditionally render viewlets
 
 There are two primary methods to render viewlets only on some pages.
 
@@ -386,7 +393,7 @@ class LikeViewlet(base.ViewletBase):
 ```
 
 
-### Rendering viewlet by name
+### Render a viewlet by name
 
 The following code is a complex example of how to expose viewlets without going through a viewlet manager.
 
@@ -470,7 +477,7 @@ class Viewlets(BrowserView):
 
     def traverse(self, name, further_path):
         """
-        Allow travering intoviewlets by viewlet name.
+        Allow travering into viewlets by viewlet name.
 
         @return: Viewlet HTML output
 
@@ -486,14 +493,14 @@ class Viewlets(BrowserView):
 ```
 
 
-### Rendering viewlets with accurate layout
+### Render viewlets with accurate layout
 
 Default viewlet managers render viewlets as concatenated HTML strings in the order of their appearance.
 This is unsuitable to build complex layouts.
 
 The following code is an example which defines a master viewlet `HeaderViewlet` which will place other viewlets into the manually tuned HTML markup below.
 
-{file}`theme/browser/header.py`:
+In the file {file}`theme/browser/header.py`:
 
 ```python
 from Acquisition import aq_inner
@@ -565,7 +572,7 @@ class HeaderViewlet(base.ViewletBase):
         return self.index()
 ```
 
-{file}`theme/browser/header_items.pt`:
+In {file}`theme/browser/header_items.pt`:
 
 ```html
 <header>
@@ -586,7 +593,7 @@ class HeaderViewlet(base.ViewletBase):
 </header>
 ```
 
-{file}`theme/browser/configure.zcml`:
+In {file}`theme/browser/configure.zcml`:
 
 ```xml
 <configure xmlns="http://namespaces.zope.org/zope"
@@ -659,7 +666,7 @@ class HeaderViewlet(base.ViewletBase):
 </configure>
 ```
 
-{file}`theme/browser/templates/portal_header.pt`
+In {file}`theme/browser/templates/portal_header.pt`
 
 ```html
 <div id="portal-header">
@@ -667,7 +674,7 @@ class HeaderViewlet(base.ViewletBase):
 </div>
 ```
 
-{file}`theme/browser/interfaces.py`:
+In {file}`theme/browser/interfaces.py`:
 
 ```python
 from plone.theme.interfaces import IDefaultPloneLayer
@@ -686,10 +693,10 @@ class ISomethingHeader(IViewletManager):
     """
 ```
 
-We need to create this {file}`common.py` file so we can tell Plone to render our custom templates for these viewlets.
+We need to create the file {file}`common.py`, so we can tell Plone to render our custom templates for these viewlets.
 Without this piece in place, our viewlets will render with Plone defaults.
 
-{file}`theme/browser/common.py`:
+In {file}`theme/browser/common.py`:
 
 ```python
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -698,13 +705,13 @@ from plone.app.layout.viewlets import common
 # You may also use index in place of render for these subclasses
 
 class SomethingLogoViewlet(common.LogoViewlet):
-    render = ViewPageTemplateFile('templates/logo.pt')
+    render = ViewPageTemplateFile("templates/logo.pt")
 
 class SomethingSiteActionsViewlet(common.SiteActionsViewlet):
-    render = ViewPageTemplateFile('templates/site_actions.pt')
+    render = ViewPageTemplateFile("templates/site_actions.pt")
 
 class SomethingGlobalSectionsViewlet(common.GlobalSectionsViewlet):
-    render = ViewPageTemplateFile('templates/sections.pt')
+    render = ViewPageTemplateFile("templates/sections.pt")
 ```
 
 
@@ -723,7 +730,7 @@ This allows loading CSS files specifically to a page.
 You can register custom JavaScript or CSS files to the HTML `<head>` section using viewlets.
 
 The following code is a template file {file}`head.pt` which will be injected in the `<head>`.
-This examples shows how to dynamically generate `<script>` elements.
+This example shows how to dynamically generate `<script>` elements.
 
 ```html
 <script type="text/javascript" tal:attributes="src view/getConnectScriptSource"></script>
@@ -743,7 +750,7 @@ Then you register it against the viewlet manager `plone.app.layout.viewlets.inte
    />
 ```
 
-{file}`viewlet.py`:
+In {file}`viewlet.py`:
 
 ```python
 class FacebookConnectJavascriptViewlet(LikeButtonOnConnectFacebookBaseViewlet):
@@ -810,15 +817,15 @@ These settings are stored in the site database.
 A good practice is to export {file}`viewlets.xml` using `portal_setup`, and then include the necessary bits of this {file}`viewlets.xml` with your add-on installer, so that when your add-on is installed, the viewlet configuration is changed accordingly.
 
 ```{note}
-You cannot move viewlets between viewlet managers TTW.
+You cannot move viewlets between viewlet managers through-the-web.
 Hide the concerning viewlets in one manager using `/@@manage-viewlets` and {file}`viewlets.xml` export, then re-register the same viewlet to a new manager.
 ```
 
-Viewlet managers are based on [`zope.viewlet.manager.ViewletManager`](https://github.com/zopefoundation/zope.viewlet/blob/3.7.2/src/zope/viewlet/manager.py)
+Viewlet managers are based on [`zope.viewlet.manager.ViewletManager`](https://github.com/zopefoundation/zope.viewlet/blob/master/src/zope/viewlet/manager.py)
 and [`plone.app.viewletmanager.manager.OrderedViewletManager`](https://github.com/plone/plone.app.viewletmanager/blob/master/plone/app/viewletmanager/manager.py).
 
 ```{seealso}
--   [`zope.viewlet`](https://github.com/zopefoundation/zope.viewlet/blob/3.7.2/src/zope/viewlet/viewlet.py)
+-   [`zope.viewlet`](https://github.com/zopefoundation/zope.viewlet/blob/master/src/zope/viewlet/viewlet.py)
 -   [Anatomy of a Viewlet](https://4.docs.plone.org/old-reference-manuals/plone_3_theming/elements/viewlet/anatomy.html)
 ```
 
@@ -906,11 +913,11 @@ Next, re-register some stock viewlets against your new viewlet manager in {file}
     />
 ```
 
-Now, we need to render our viewlet manager somehow.
-One place to do it is in a {file}`main_template.pt`, but because we need to add this HTML output to a header section which is produced by *another* viewlet manager, we need to create a new viewlet just for rendering our viewlet manager.
+Next, we need to render our viewlet manager somehow.
+One place to do it is in a {file}`main_template.pt`, but because we need to add this HTML output to a header section which is produced by _another_ viewlet manager, we need to create a new viewlet just for rendering our viewlet manager.
 Yo, dawg, we put viewlets in your viewlets so you can render viewlets!
 
-{file}`browser/viewlets/headerbottom.pt`:
+In {file}`browser/viewlets/headerbottom.pt`:
 
 ```xml
 <tal:comment replace="nothing">
@@ -961,7 +968,7 @@ class TestMyViewlet(MyPackageTestCase):
         view = View(context, request)
 
         # finally, you need the name of the manager you want to find
-        manager_name = 'plone.portalfooter'
+        manager_name = "plone.portalfooter"
 
         # viewlet managers are found by Multi-Adapter lookup
         manager = queryMultiAdapter((context, request, view), IViewletManager, manager_name, default=None)
@@ -973,7 +980,7 @@ class TestMyViewlet(MyPackageTestCase):
         # now our viewlet should be in the list of viewlets for the manager
         # we can verify this by looking for a viewlet with the name we used
         # to register the viewlet in zcml
-        my_viewlet = [v for v in manager.viewlets if v.__name__ == 'mypackage.myviewlet']
+        my_viewlet = [v for v in manager.viewlets if v.__name__ == "mypackage.myviewlet"]
 
         self.assertEqual(len(my_viewlet), 1)
 ```
@@ -1007,7 +1014,7 @@ class TestMyViewlet(MyPackageTestCase):
         alsoProvides(request, IMyBrowserLayer)
 
         # we also have to make our context an instance of our content type
-        content_id = self.folder.invokeFactory('MyType', 'my-id')
+        content_id = self.folder.invokeFactory("MyType", "my-id")
         context = self.folder[content_id]
 
         # and that's it.  Everything else from here out is identical to the
@@ -1028,7 +1035,7 @@ def fix_tinymce_viewlets(site):
     """
     Make sure TinyMCE viewlet is forced to be in Plone HTML <head> viewletmanager.
 
-    For some reason, runnign in our viewlets.xml has no effect so we need to fix this by hand.
+    For some reason, running in our viewlets.xml has no effect, so we need to fix this by hand.
     """
 
     # Poke me like this: for i in storage._hidden["Isle of Back theme"].items(): print i
@@ -1038,6 +1045,6 @@ def fix_tinymce_viewlets(site):
 
     # Force tinymce.configuration out of hidden viewlets in <head>
     hidden = storage.getHidden(manager, skinname)
-    hidden = (x for x in hidden if x != u'tinymce.configuration')
+    hidden = (x for x in hidden if x != "tinymce.configuration")
     storage.setHidden(manager, skinname, hidden)
 ```
