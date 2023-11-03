@@ -4,7 +4,7 @@ myst:
     "description": "Plone 6 Backend"
     "property=og:description": "Plone 6 Backend"
     "property=og:title": "Plone 6 Backend"
-    "keywords": "Plone 6, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
+    "keywords": "Plone 6, Classic UI, frontend, backend, plone.restapi, plone.api"
 ---
 
 (backend-index-label)=
