@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Create forms in Plone"
+    "property=og:description": "Create forms in Plone"
+    "property=og:title": "Create forms in Plone"
+    "keywords": "Plone, forms"
 ---
 
 (classic-ui-forms-label)=
@@ -12,22 +12,24 @@ myst:
 # Forms
 
 ```{todo}
-Describe how create forms with Plone's default form framework z3c.form.
-Fields, Widgets, Vocabularies aso are descripted in detail in there own chapter and will be referenced from examples here.
+Describe how create forms with Plone's default form framework `z3c.form`.
+{doc}`/backend/fields`, {doc}`/backend/widgets`, {doc}`/backend/vocabularies` are also described in detail in their own chapters, and will be referenced from examples here.
 ```
 
-Plone uses the [z3c.form](http://pythonhosted.org/z3c.form) library to build its web-forms.
-The packages responsible for integrating with Plone are [plone.z3cform](https://github.com/plone//plone.z3cform) and [plone.app.z3cform](https://github.com/plone/plone.app.z3cform) which contains most of the widgets and default templates. To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [plone.autoform](https://github.com/plone/plone.autoform), in particular its `AutoExtensibleForm` base class. It is responsible for handling form hints and configuring z3c.form widgets and groups (fieldsets).
+Plone uses the [`z3c.form`](https://z3cform.readthedocs.io/en/latest/) library to build its web forms.
+The packages responsible for integrating `z3c.form` with Plone are [`plone.z3cform`](https://github.com/plone/plone.z3cform) and [`plone.app.z3cform`](https://github.com/plone/plone.app.z3cform), which contain most of the widgets and default templates.
+To simplify the process of organizing a form and specifying its widgets and fields, Plone utilizes [`plone.autoform`](https://github.com/plone/plone.autoform), in particular its `AutoExtensibleForm` base class.
+It is responsible for handling form hints and configuring `z3c.form` widgets and groups (fieldsets).
 
-A form is a view that utilizes these libraries to auto generate forms.
-
+A form is a view that uses these libraries to generate forms.
 
 
 (classic-ui-forms-general-forms-label)=
+
 ## General forms
 
 The {term}`plonecli` provides you with an option to add a form to your Plone package.
-Given you have created an addon package with {term}`plonecli` called `collective.awesomeaddon`.
+Let's assume you created an add-on package with {term}`plonecli` called `collective.awesomeaddon`.
 
 ```shell
 cd collective.awesomeaddon
@@ -35,7 +37,7 @@ plonecli add form
 ```
 
 After using the {term}`plonecli` to add a form, you'll have a new sub folder `forms` in your package.
-Here you will find a `configure.zcml` containing the registration of the form,
+Here you will find a `configure.zcml` containing the registration of the form.
 
 ```xml
 <!-- ZCML header and other ZCML here  -->
@@ -49,7 +51,7 @@ Here you will find a `configure.zcml` containing the registration of the form,
   />
 ```
 
-and a Python file with the code.
+And a Python file with the code.
 
 ```python
 from plone import schema
@@ -91,37 +93,41 @@ class MyForm(AutoExtensibleForm, form.EditForm):
 
     @button.buttonAndHandler("Cancel")
     def handleCancel(self, action):
-        """User canceled. Redirect back to the front page.
+        """User cancelled. Redirect back to the front page.
         """
-
 ```
 
-Our form `MyForm` is a sub class of the z3c.form base class `z3c.form.form.EditForm` and `plone.autoform.form.AutoExtensibleForm` which add some convenient methods to organize the form fields and widgets.
-Besides some basic properties like `label` and `description`, the more interesting properties are `schema` and `ignoreContext`.
+Our form `MyForm` is a subclass of the `z3c.form` base class, `z3c.form.form.EditForm`, and `plone.autoform.form.AutoExtensibleForm`, which adds some convenient methods to organize the form fields and widgets.
+Besides some basic properties such as `label` and `description`, the more interesting properties are `schema` and `ignoreContext`.
 
-### configuring the form
 
-#### schema
+### Configure the form
+
+In this section, you will configure the form's properties.
+
+
+#### `schema`
 
 The schema property points to a schema interface, which defines the fields of our form.
 
-```
+```python
 schema = IMyForm
 ```
 
-### ignoreContext
 
-If your form is not bound to an object (like a Dexterity object), set `ignoreContext = True`.
+#### `ignoreContext`
+
+If your form is not bound to an object (such as a Dexterity object), set `ignoreContext = True`.
 
 
 (classic-ui-forms-dexterity-add-edit-forms-label)=
-## Dexterity Add- and Edit forms
 
-Dexterity content types are coming with default add and edit forms.
-You can build custom add and edit forms to adjust there behavior.
+## Dexterity add and edit forms
 
-The implementation of the default edit and add forms is in [plone.dexterity.browser.edit.py](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/edit.py) and [plone.dexterity.browser.add.py](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/add.py).
+Dexterity content types come with default add and edit forms.
+You can build custom add and edit forms to adjust their behavior.
 
+The implementation of the default edit and add forms is in [`plone.dexterity.browser.edit.py`](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/edit.py) and [`plone.dexterity.browser.add.py`](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/add.py).
 
 ```{todo}
 Describe Add/Edit forms here and how to customize them.
@@ -131,7 +137,7 @@ Provide mutiple examples.
 
 ### Disable form tabbing
 
-To disable the form tabbing, you have to override the edit and add forms and provide a property enable_form_tabbing which is False.
+To disable the form tabbing, you have to override the edit and add forms, and provide a property `enable_form_tabbing` as `False`.
 
 The Python code `custom_forms.py` should look like this:
 
@@ -172,11 +178,10 @@ class ICustomAddView(Interface):
 @implementer(ICustomAddView)
 class CustomAddView(add.DefaultAddView):
     form = CustomAddForm
-
 ```
 
-to activate them, you have to override the registration of the forms for your desired content types.
-In your configure.zcml:
+To activate them, you must override the registration of the forms for your desired content types.
+In your `configure.zcml`:
 
 ```xml
 <configure
@@ -221,4 +226,3 @@ In your configure.zcml:
 
 </configure>
 ```
-
