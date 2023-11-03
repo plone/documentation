@@ -5,74 +5,70 @@ myst:
     "property=og:description": "A Zope schema provides a storage-neutral way to define Python object models with validators."
     "property=og:title": "Schemas"
     "keywords": "Fields, schema, autoform, supermodel, XML"
-substitutions:
-  '---': |-
-    ```{eval-rst}
-    .. unicode:: U+02014 .. em dash
-    ```
 ---
 
 (backend-schemas-label)=
 
 # Schemas
 
-## Introduction
+[Zope schemas](https://zopeschema.readthedocs.io) are a database-neutral and form-library-neutral way to describe Python data models.
+Schemas extend the notion of interfaces to detailed descriptions of attributes (but not methods).
+Every schema is an interface and specifies the public fields of an object.
+A field roughly corresponds to an attribute of a Python object.
+But a field provides space for at least a title and a description.
+It can also constrain its value and provide a validation method.
+You can optionally specify characteristics, such as its value being read-only or not required.
 
-[Zope schemas](https://zopeschema.readthedocs.io) are a database-neutral and form-library-neutral way to
-describe Python data models. Schemas extend the notion of interfaces to detailed descriptions of Attributes (but not methods). Every schema is an interface and specifies the public fields of an object. A field roughly corresponds to an attribute of a Python object. But a Field provides space for at least a title and a description. It can also constrain its value and provide a validation method. Besides you can optionally specify characteristics such as its value being read-only or not required.
+Plone uses Zope schemas to describe:
 
-Plone uses Zope schemas for these purposes:
+-   persistent data models
+-   HTML form data
+-   Plone configuration data
+-   ZCML configuration data
 
-- to describe persistent data models;
-- to describe HTML form data;
-- to describe Plone configuration data
-- to describe ZCML configuration data.
+Since Zope schemas are not bound to any persistent storage, such as an SQL database engine, it gives you a reusable way to define data models.
 
-Since Zope schemas are not bound to e.g. a SQL database engine, it gives
-you very reusable way to define data models.
+Schemas are just regular Python classes, with some special attribute declarations.
+They are always subclasses of `zope.interface.Interface`.
+The schema itself cannot be a concrete object instance.
+You need to either have a `persistent.Persistent` object (for database data) or a `z3c.form.form.Form` object (for HTML forms).
 
-Schemas are just regular Python classes, with some special attribute
-declarations.  They are always subclasses of `zope.interface.Interface`.
-The schema itself cannot be a concrete object instance {{ --- }} you need to
-either have a `persistent.Persistent` object (for database data) or a
-`z3c.form.form.Form` object (for HTML forms).
+Zope schemas are used for tasks such as:
 
-Zope schemas are used for tasks like:
+-   defining allowed input data format (string, integer, object, list, and others) for Python class instance attributes
+-   specifying required attributes on an object
+-   defining custom validators on input data
 
-- defining allowed input data format (string, integer, object, list, etc.)
-  for Python class instance attributes;
-- specifying required attributes on an object;
-- defining custom validators on input data.
-
-The basic unit of data model declaration is the {ref}`field <backend-fields-label>`, which specifies what
-kind of data each Python attribute can hold.
+The basic unit of data model declaration is the {doc}`field </backend/fields>`, which specifies what kind of data each Python attribute can hold.
 
 
 (backend-ploneschema-label)=
 
-### plone.schema vs zope.schema
+## `plone.schema` versus `zope.schema`
 
-The main package is [zope.schema](http://github.com/zopefoundation/zope.schema), but we can also use [plone.schema](https://github.com/plone/plone.schema) which provides additional fields and widgets for z3c.form and optional integration with Plone.
+The main package is [`zope.schema`](https://github.com/zopefoundation/zope.schema).
+We can also use [`plone.schema`](https://github.com/plone/plone.schema), which provides additional fields and widgets for `z3c.form` and optional integration with Plone.
 
-Additional features are:
+Additional features include:
 
-- Email Field and Widget
-- JSON Field and Widget
-- URI Field and Widget
-- IPath as IChoice derivative (and implementation)
-- integration with plone.supermodel, optional (extra "supermodel")
-- integration with plone.schemaeditor, optional (extra "schemaeditor")
+-   Email field and widget
+-   JSON field and widget
+-   URI field and widget
+-   `IPath` as `IChoice` derivative (and implementation)
+-   integration with `plone.supermodel`, optional (extra "supermodel")
+-   integration with `plone.schemaeditor`, optional (extra "schemaeditor")
 
 
-### Example of a schema
+## Example of a schema
 
-```{note}
-In VS Code editor, you can install the [Plone Snippets](https://marketplace.visualstudio.com/items?itemName=Derico.plone-vs-snippets) extension. This will give you snippets for most fields, widgets and autoform directives in Python and XML based schemas.
+```{tip}
+In VS Code editor, you can install the [Plone Snippets](https://marketplace.visualstudio.com/items?itemName=Derico.plone-vs-snippets) extension.
+This will give you snippets for most fields, widgets, and autoform directives in Python and XML based schemas.
 ```
 
 Define a schema for a data model to store addresses:
 
-```
+```python
 import zope.interface
 from zope import schema
 
@@ -80,90 +76,82 @@ class ICheckoutAddress(zope.interface.Interface):
     """ Provide meaningful address information.
     """
 
-    first_name = schema.TextLine(title=_(u"First name"), default=u"")
-    last_name = schema.TextLine(title=_(u"Last name"), default=u"")
-    organization = schema.TextLine(title=_(u"Organization"), default=u"")
-    phone = schema.TextLine(title=_(u"Phone number"), default=u"")
+    first_name = schema.TextLine(title=_("First name"), default="")
+    last_name = schema.TextLine(title=_("Last name"), default="")
+    organization = schema.TextLine(title=_("Organization"), default="")
+    phone = schema.TextLine(title=_("Phone number"), default="")
     country = schema.Choice(
-        title = _(u"Country"),
+        title = _("Country"),
         vocabulary = "getpaid.countries",
         required=False,
         default=None,
     )
     state = schema.Choice(
-        title = _(u"State"),
+        title = _("State"),
         vocabulary="getpaid.states",
         required=False,
         default=None,
     )
-    city = schema.TextLine(title=_(u"City"), default=u"")
-    postal_code = schema.TextLine(title=_(u"Postal code"), default=u"")
-    street_address = schema.TextLine(title=_(u"Address"), default=u"")
+    city = schema.TextLine(title=_("City"), default="")
+    postal_code = schema.TextLine(title=_("Postal code"), default="")
+    street_address = schema.TextLine(title=_("Address"), default="")
 ```
 
-This schema can be used in {ref}`classic-ui-forms-label` and Dexterity {ref}`backend-content-types-label` data models.
+This schema can be used in {doc}`/classic-ui/forms` and Dexterity {doc}`/backend/content-types/index` data models.
 
 ```{note}
-In Dexterity {ref}`backend-content-types-label` the base class for a schema is `plone.supermodel.model.Schema`.
-This provides functionalities to export and import schemas via XML and TTW editor.
+In Dexterity {doc}`/backend/content-types/index`, the base class for a schema is `plone.supermodel.model.Schema`.
+This provides functionalities to export and import schemas via XML and the {doc}` Through-the-web (TTW) </classic-ui/theming/through-the-web>` editor.
 ```
 
 
-### Field constructor parameters
+## Field constructor parameters
 
-The `Field` base class defines a list of standard parameters that you can
-use to construct schema fields.  Each subclass of `Field` will have its own
-set of possible parameters in addition to this.
+The `Field` base class defines a list of standard parameters that you can use to construct schema fields.
+Each subclass of `Field` will have its own set of possible parameters in addition to this.
+The following is a list of a few of the most common parameters.
 
-See [IField interface](https://zopeschema.readthedocs.io/en/latest/api.html#zope.schema.interfaces.IField) and [field implementation](https://zopeschema.readthedocs.io/en/latest/api.html#field-implementations) in `zope.schema` documentation for details.
+`title`
+:   field title as Unicode string
 
-Title
+`description`
+:   field description as Unicode string
 
-: field title as unicode string
+`required`
+:   boolean, whether the field is required
 
-Description
+`default`
+:   Default value if the attribute is not present
 
-: field description as unicode string
-
-required
-
-: boolean, whether the field is required
-
-default
-
-: Default value if the attribute is not present
-
-... and so on.
+```{seealso}
+See [`IField` interface](https://zopeschema.readthedocs.io/en/latest/api.html#zope.schema.interfaces.IField) and [field implementation](https://zopeschema.readthedocs.io/en/latest/api.html#field-implementations) in the `zope.schema` documentation for details.
+```
 
 ```{warning}
-Do not initialize any non-primitive values using the *default* keyword
-parameter of schema fields.  Python and the ZODB stores objects by
-reference.  Python code will construct only *one* field value during
-schema construction, and share its content across all objects.  This
-is probably not what you intend. Instead, initialize objects in the
-`__init__()` method of your schema implementer.
+Do not initialize any non-primitive values using the `default` keyword parameter of schema fields.
+Python and the ZODB stores objects by reference.
+Python code will construct only _one_ field value during schema construction, and share its content across all objects.
+This is probably not what you intend.
+Instead, initialize objects in the `__init__()` method of your schema implementer.
 
-In particular, dangerous defaults are: `default=[]`, `default={}`,
-`default=SomeObject()`.
+In particular, dangerous defaults are `default=[]`, `default={}`, and `default=SomeObject()`.
 
-Use `defaultFactory=get_default_name` instead!
+Use `defaultFactory=get_default_name` instead.
 ```
 
 
-### Schema introspection
+## Schema introspection
 
 The `zope.schema._schema` module provides some introspection functions:
 
-- `getFieldNames(schema_class)`
-- `getFields(schema_class)`
-- `getFieldNamesInOrder(schema)` {{ --- }} retain the orignal field
-  declaration order.
-- `getFieldsInOrder(schema)` {{ --- }} retain the orignal field declaration
-  order.
+-   `getFieldNames(schema_class)`
+-   `getFields(schema_class)`
+-   `getFieldNamesInOrder(schema)` retains the orignal field declaration order.
+-   `getFieldsInOrder(schema)` retains the original field declaration order.
 
 Example:
 
-```
+```python
 import zope.schema
 import zope.interface
 
@@ -175,11 +163,12 @@ class IMyInterface(zope.interface.Interface):
 fields = zope.schema.getFields(IMyInterface)
 ```
 
-#### Dumping schema data
 
-Below is an example how to extract all schema defined fields from an object.
+### Dump schema data
 
-```
+Below is an example of how to extract all schema defined fields from an object.
+
+```python
 from collections import OrderedDict
 
 import zope.schema
@@ -204,52 +193,45 @@ def dump_schemed_data(obj):
     return out
 ```
 
-#### Finding the schema for a Dexterity type
 
-When trying to introspect a Dexterity type, you can get a reference to the schema thus:
+### Find the schema for a Dexterity type
 
-```
+When trying to introspect a Dexterity type, you can get a reference to the schema as follows:
+
+```python
 from zope.component import getUtility
 from plone.dexterity.interfaces import IDexterityFTI
 
 schema = getUtility(IDexterityFTI, name=PORTAL_TYPE_NAME).lookupSchema()
 ```
 
-...and then inspect it using the methods above. Note this won't have behavior
-fields added to it at this stage, only the fields directly defined in your
-schema.
+Then you can inspect it using the methods above.
+Note this won't have behavior fields added to it at this stage, only the fields directly defined in your schema.
 
+### More schema resources
 
-### More info
-
-- [zope.schema](https://pypi.python.org/pypi/zope.schema) on PyPi
-- [zope.schema source code](http://github.com/zopefoundation/zope.schema) - definite source for field types and usage.
-- [zope.schema documentation](https://zopeschema.readthedocs.io)
-- [plone.schema](https://github.com/plone/plone.schema)
-
-`zope.schema` and `plone.schema` provide a very comprehensive set of {ref}`backend-fields-label` out of the box.
-Finding good documentation for them, however, can be challenging.  Here are
-some starting points:
-
-- {ref}`reference list of fields used in Plone <backend-fields-label>`
+- [`zope.schema`](https://pypi.org/project/zope.schema/) on PyPI
+- [`zope.schema` source code](https://github.com/zopefoundation/zope.schema) is the definitive source for field types and usage.
+- [`zope.schema` documentation](https://zopeschema.readthedocs.io/en/latest/)
+- [`plone.schema`](https://github.com/plone/plone.schema)
+- {doc}`reference list of fields used in Plone </backend/fields>`
 
 
 ## Advanced
 
 ```{note}
-Most examples in the section is very low level Zope stuff.
-In Plone you rarely have to deal with it much. But we keep it here for the interested, who things are working internally.
+Most examples in this section are low level Zope stuff.
+In Plone, you rarely have to deal with it.
+But we keep it here for those who are interested in how things work internally.
 ```
 
-We can use a schema class to store data based on our model definition in the ZODB
-database.
+We can use a schema class to store data based on our model definition in the ZODB database.
 
-We use `zope.schema.fieldproperty.FieldProperty` to bind
-persistent class attributes to the data definition.
+We use `zope.schema.fieldproperty.FieldProperty` to bind persistent class attributes to the data definition.
 
 Example:
 
-```
+```python
 from persistent import Persistent # Automagical ZODB persistent object
 from zope.schema.fieldproperty import FieldProperty
 
@@ -272,19 +254,16 @@ class CheckoutAddress(Persistent):
     street_address = FieldProperty(ICheckoutAddress["street_address"])
 ```
 
-For persistent objects, see {doc}`persistent object documentation
-</develop/plone/persistency/persistent>`.
+For persistent objects, see the [persistent object documentation](https://5.docs.plone.org/develop/plone/persistency/persistent).
 
 
-### Using schemas as data models
+### Use schemas as data models
 
-Based on the example data model above, we can use it in e.g. content type
-{doc}`browser views </develop/plone/views/browserviews>` to store arbitrary data as content
-type attributes.
+Based on the example data model above, we can use it in content type {doc}`browser views </classic-ui/views>` to store arbitrary data as content type attributes.
 
 Example:
 
-```
+```python
 class MyView(BrowserView):
     """ Connect this view to your content type using a ZCML declaration.
     """
@@ -295,31 +274,31 @@ class MyView(BrowserView):
 
         # Store a new address in it as the ``test_address`` attribute
         context.test_address = CheckoutAddress()
-        context.test_address.first_name = u"Mikko"
-        context.test_address.last_name = u"Ohtamaa"
+        context.test_address.first_name = "Mikko"
+        context.test_address.last_name = "Ohtamaa"
 
         # Note that you can still add arbitrary attributes to any
         # persistent object.  They are simply not validated, as they
         # don't go through the ``zope.schema`` FieldProperty
         # declarations.
         # Do not do this, you will regret it later.
-        context.test_address.arbitary_attribute = u"Don't do this!"
+        context.test_address.arbitary_attribute = "Don't do this!"
 ```
+
 
 ### Field order
 
-The `order` attribute can be used to determine the order in which fields in
-a schema were defined. If one field was created after another (in the same
-thread), the value of `order` will be greater.
+The `order` attribute can be used to determine the order in which fields in a schema were defined.
+If one field was created after another (in the same thread), the value of `order` will be greater.
+
 
 ### Default values
 
-To make default values of schema effective, class attributes must be
-implemented using `FieldProperty`.
+To make default values of schema effective, class attributes must be implemented using `FieldProperty`.
 
 Example:
 
-```
+```python
 import zope.interface
 from zope import schema
 from zope.schema.fieldproperty import FieldProperty
@@ -339,26 +318,26 @@ something = SomeStorage()
 assert something.some_value == True
 ```
 
-### Validation and type constrains
 
-Schema objects using field properties provide automatic validation
-facilities, preventing setting badly formatted attributes.
+### Validation and type constraints
+
+Schema objects using field properties provide automatic validation facilities for the prevention of setting badly formatted attributes.
 
 There are two aspects to validation:
 
-- Checking the type constraints (done automatically).
-- Checking whether the value fills certain constrains (validation).
+-   Checking the type constraints (done automatically).
+-   Checking whether the value fills certain constraints (validation).
 
 Example of how type constraints work:
 
-```
+```python
 class ICheckoutData(zope.interface.Interface):
     """ This interface defines all the checkout data we have.
 
     It will also contain the ``billing_address``.
     """
 
-    email = schema.TextLine(title=_(u"Email"), default=u"")
+    email = schema.TextLine(title=_("Email"), default="")
 
 
 class CheckoutData(Persistent):
@@ -384,41 +363,38 @@ def test_store_bad_email(self):
 
 Example of validation (email field):
 
-```
+```python
 from zope import schema
 
 
 class InvalidEmailError(schema.ValidationError):
-    __doc__ = u'Please enter a valid e-mail address.'
+    __doc__ = "Please enter a valid e-mail address."
 
 
 def isEmail(value):
-    if re.match('^'+EMAIL_RE, value):
+    if re.match("^"+EMAIL_RE, value):
         return True
     raise InvalidEmailError
 
 
 class IContact(Interface):
-    email = schema.TextLine(title=u'Email', constraint=isEmail)
+    email = schema.TextLine(title="Email", constraint=isEmail)
 ```
+
 
 ### Persistent objects and schema
 
-ZODB persistent objects do not provide facilities for setting field defaults
-or validating the data input.
+ZODB persistent objects do not provide facilities for setting field defaults or validating the data input.
 
-When you create a persistent class, you need to provide field properties for
-it, which will sanify the incoming and outgoing data.
+When you create a persistent class, you need to provide field properties for it, which will sanitize the incoming and outgoing data.
 
-When the persistent object is created it has no attributes. When you try to
-access the attribute through a named
-`zope.schema.fieldproperty.FieldProperty`
-accessor, it first checks whether the attribute exists. If the attribute is
-not there, it is created and the default value is returned.
+When the persistent object is created, it has no attributes.
+When you try to access the attribute through a named `zope.schema.fieldproperty.FieldProperty` accessor, it first checks whether the attribute exists.
+If the attribute is not there, it is created and the default value is returned.
 
 Example:
 
-```
+```python
 from persistent import Persistent
 from zope import schema
 from zope.interface import implements, alsoProvides
@@ -430,21 +406,21 @@ from zope.schema.fieldproperty import FieldProperty
 class IHeaderBehavior(form.Schema):
     """ Sample schema """
     inheritable = schema.Bool(
-            title=u"Inherit header",
-            description=u"This header is visible on child content",
+            title="Inherit header",
+            description="This header is visible on child content",
             required=False,
             default=False)
 
     block_parents = schema.Bool(
-            title=u"Block parent headers",
-            description=u"Do not show parent headers for this content",
+            title="Block parent headers",
+            description="Do not show parent headers for this content",
             required=False,
             default=False)
 
     # Contains list of HeaderAnimation objects
     alternatives = schema.List(
-            title=u"Available headers and animations",
-            description=u"Headers and animations uploaded here",
+            title="Available headers and animations",
+            description="Headers and animations uploaded here",
             required=False,
             value_type=schema.Object(IHeaderAnimation))
 
@@ -455,15 +431,12 @@ class HeaderBehavior(Persistent):
     """ Sample persistent object for the schema """
 
     implements(IHeaderBehavior)
-
     #
     # zope.schema magic happens here - see FieldProperty!
     #
-
     # We need to declare field properties so that objects will
     # have input data validation and default values taken from schema
     # above
-
     inheritable = FieldProperty(IHeaderBehavior["inheritable"])
     block_parents = FieldProperty(IHeaderBehavior["block_parents"])
     alternatives = FieldProperty(IHeaderBehavior["alternatives"])
@@ -471,32 +444,34 @@ class HeaderBehavior(Persistent):
 
 Now you see the magic:
 
-```
+```python
 header = HeaderBehavior()
 # This  triggers the ``alternatives`` accessor, which returns the default
 # value, which is an empty list
 assert header.alternatives = []
 ```
 
-### Collections (and multichoice fields)
+
+### Collections (and multiple choice fields)
 
 Collections are fields composed of several other fields.
-Collections also act as multi-choice fields.
+Collections also act as multiple choice fields.
 
 For more information see:
 
-<!-- - [Using Zope schemas with a complex vocabulary and multi-select fields](https://web.archive.org/web/20161227025947/http://www.upfrontsystems.co.za/Members/izak/sysadman/using-zope-schemas-with-a-complex-vocabulary-and-multi-select-fields) -->
-- Collections section in [zope.schema documentation](https://zopeschema.readthedocs.io/en/latest/fields.html#collections)
-- Schema [field sources documentation](https://zopeschema.readthedocs.io/en/latest/sources.html#sources-in-fields)
-- [Choice field](https://zopeschema.readthedocs.io/en/latest/fields.html#choice)
+-   [Using Zope schemas with a complex vocabulary and multi-select fields](https://web.archive.org/web/20161227025947/http://www.upfrontsystems.co.za/Members/izak/sysadman/using-zope-schemas-with-a-complex-vocabulary-and-multi-select-fields)
+-   Collections section in [zope.schema documentation](https://zopeschema.readthedocs.io/en/latest/fields.html#collections)
+-   Schema [field sources documentation](https://zopeschema.readthedocs.io/en/latest/sources.html#sources-in-fields)
+-   [Choice field](https://zopeschema.readthedocs.io/en/latest/fields.html#choice)
 
-#### Single-choice example
+
+#### Single choice example
 
 Only one value can be chosen.
 
-Below is code to create Python logging level choice:
+Below is code to create a Python logging level choice:
 
-```
+```python
 import logging
 
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
@@ -508,8 +483,8 @@ def _createLoggingVocabulary():
 
     _levelNames looks like::
 
-        {0: 'NOTSET', 'INFO': 20, 'WARNING': 30, 40: 'ERROR', 10: 'DEBUG', 'WARN': 30, 50:
-        'CRITICAL', 'CRITICAL': 50, 20: 'INFO', 'ERROR': 40, 'DEBUG': 10, 'NOTSET': 0, 30: 'WARNING'}
+        {0: "NOTSET", "INFO": 20, "WARNING": 30, 40: "ERROR", 10: "DEBUG", "WARN": 30, 50:
+        "CRITICAL", "CRITICAL": 50, 20: "INFO", "ERROR": 40, "DEBUG": 10, "NOTSET": 0, 30: "WARNING"}
 
     @return: Iterable of SimpleTerm objects
     """
@@ -528,19 +503,20 @@ logging_vocabulary = SimpleVocabulary(list(_createLoggingVocabulary()))
 class ISyncRunOptions(Interface):
 
     log_level = schema.Choice(vocabulary=logging_vocabulary,
-                              title=u"Log level",
-                              description=u"One of python logging module constants",
+                              title="Log level",
+                              description="One of python logging module constants",
                               default=logging.INFO)
 ```
 
-#### Multi-choice example
+
+#### Multiple choice example
 
 Using zope.schema.List, many values can be chosen once.
 Each value is atomically constrained by *value_type* schema field.
 
 Example:
 
-```
+```python
 from zope import schema
 from plone.supermodel import model
 from plone.autoform import directives as form
@@ -548,54 +524,51 @@ from plone.autoform import directives as form
 from z3c.form.browser.checkbox import CheckBoxFieldWidget
 
 class IMultiChoice(model.Schema):
-    ...
+    # ...
 
     # Contains lists of values from Choice list using special "get_field_list" vocabulary
-    # We also give a plone.autoform.directives hint to render this as
+    # We also give a ``plone.autoform.directives`` hint to render this as
     # multiple checbox choices
     form.widget(yourField=CheckBoxFieldWidget)
-    yourField = schema.List(title=u"Available headers and animations",
-                               description=u"Headers and animations uploaded here",
+    yourField = schema.List(title="Available headers and animations",
+                               description="Headers and animations uploaded here",
                                required=False,
                                value_type=zope.schema.Choice(source=yourVocabularyFunction),
                                )
 ```
 
+
 ### Dynamic schemas
 
-Schemas are singletons, as there only exist one class instance
-per Python run-time. For example, if you need to feed schemas generated dynamically
-to form engine, you need to
+Schemas are singletons, as there exists only one class instance per Python run time.
+For example, if you need to feed schemas generated dynamically to a form engine, then consider the following.
 
-- If the form engine (e.g. z3c.form refers to schema fields, then
-  replace these references with dynamically generated copes)
-- Generate a Python class dynamically. Output Python source code,
-  then `eval()` it. Using `eval()` is almost always considered
-  as a bad practice.
+-   If the form engine, such as `z3c.form`, refers to schema fields, then replace these references with dynamically generated copies.
+-   Generate a Python class dynamically.
+    Output Python source code, then `eval()` it.
+    Using `eval()` is almost always considered a bad practice.
 
 ```{warning}
-Though it is possible, you should not modify zope.schema classes
-in-place
-as the same copy is shared between different threads and
-if there are two concurrent HTTP requests problems occur.
+Though it is possible, you should not modify `zope.schema` classes in-place, as the same copy is shared between different threads.
+If there are two concurrent HTTP requests, problems may occur.
 ```
 
-#### Replacing schema fields with dynamically modified copies
 
-The below is an example for z3c.form. It uses Python `copy`
-module to copy f.field reference, which points to zope.schema
-field. For this field copy, we modify *required* attribute based
-on input.
+#### Replace schema fields with dynamically modified copies
+
+Below is an example for `z3c.form`.
+It uses the Python `copy` module to copy the `f.field` reference, which points to the `zope.schema` field.
+For this field copy, we modify the `required` attribute, based on input.
 
 Example:
 
-```
+```python
 @property
 def fields(self):
     """ Get the field definition for this form.
 
     Form class's fields attribute does not have to
-    be fixed, it can be property also.
+    be fixed. It can also be a property.
     """
 
     # Construct the Fields instance as we would
@@ -615,13 +588,17 @@ def fields(self):
             f.field = schema_field
 ```
 
-#### Don't use dict {} or list \[\] as a default value
+#### Don't use dict `{}` or list `[]` as a default value
 
-Because how Python object construction works, giving \[\] or {}
-as a default value will make all created field values to share this same object.
+Because of how Python object construction works, giving `[]` or `{}` as a default value will make all created field values share this same object.
 
-- https://docs.python-guide.org/writing/gotchas
+```{seealso}
+[The Hitchhiker's Guide to Python, Common Gotchas](https://docs.python-guide.org/writing/gotchas)
+```
 
-Use value adapters instead
+Use value adapters instead.
 
-- <https://pypi.python.org/pypi/plone.directives.form#value-adapters>
+```{seealso}
+[`plone.directives.form` documentation of Value adapters](https://pypi.org/project/plone.directives.form/#value-adapters)
+```
+
