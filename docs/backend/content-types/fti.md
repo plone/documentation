@@ -131,7 +131,7 @@ This is usually the same as the name of the Python package which contains the co
 
 (global-fti-properties-label)=
 
-### Global FTI properties
+## Global FTI properties
 
 The XML sets a number of FTI properties that are used globally, in both Classic UI and Volto:
 
@@ -192,7 +192,7 @@ The XML sets a number of FTI properties that are used globally, in both Classic 
 
 (classic-ui-only-fti-properties-label)=
 
-### Classic UI only FTI properties
+## Classic UI only FTI properties
 
 The following FTI properties are used only in Classic UI:
 
