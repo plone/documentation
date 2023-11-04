@@ -26,11 +26,11 @@ Plone uses Zope schemas to describe:
 -   Plone configuration data
 -   ZCML configuration data
 
-Since Zope schemas are not bound to any persistent storage, such as an SQL database engine, it gives you a reusable way to define data models.
+Since Zope schemas aren't bound to any persistent storage, such as an SQL database engine, it gives you a reusable way to define data models.
 
 Schemas are just regular Python classes, with some special attribute declarations.
-They are always subclasses of `zope.interface.Interface`.
-The schema itself cannot be a concrete object instance.
+They're always subclasses of `zope.interface.Interface`.
+The schema itself can't be a concrete object instance.
 You need to either have a `persistent.Persistent` object (for database data) or a `z3c.form.form.Form` object (for HTML forms).
 
 Zope schemas are used for tasks such as:
@@ -55,8 +55,8 @@ Additional features include:
 -   JSON field and widget
 -   URI field and widget
 -   `IPath` as `IChoice` derivative (and implementation)
--   integration with `plone.supermodel`, optional (extra "supermodel")
--   integration with `plone.schemaeditor`, optional (extra "schemaeditor")
+-   integration with `plone.supermodel`, optional (extra `supermodel`)
+-   integration with `plone.schemaeditor`, optional (extra `schemaeditor`)
 
 
 ## Example of a schema
@@ -121,7 +121,7 @@ The following is a list of a few of the most common parameters.
 :   boolean, whether the field is required
 
 `default`
-:   Default value if the attribute is not present
+:   Default value if the attribute isn't present
 
 ```{seealso}
 See [`IField` interface](https://zopeschema.readthedocs.io/en/latest/api.html#zope.schema.interfaces.IField) and [field implementation](https://zopeschema.readthedocs.io/en/latest/api.html#field-implementations) in the `zope.schema` documentation for details.
@@ -146,7 +146,7 @@ The `zope.schema._schema` module provides some introspection functions:
 
 -   `getFieldNames(schema_class)`
 -   `getFields(schema_class)`
--   `getFieldNamesInOrder(schema)` retains the orignal field declaration order.
+-   `getFieldNamesInOrder(schema)` retains the original field declaration order.
 -   `getFieldsInOrder(schema)` retains the original field declaration order.
 
 Example:
@@ -384,13 +384,13 @@ class IContact(Interface):
 
 ### Persistent objects and schema
 
-ZODB persistent objects do not provide facilities for setting field defaults or validating the data input.
+ZODB persistent objects don't provide facilities for setting field defaults or validating the data input.
 
 When you create a persistent class, you need to provide field properties for it, which will sanitize the incoming and outgoing data.
 
 When the persistent object is created, it has no attributes.
 When you try to access the attribute through a named `zope.schema.fieldproperty.FieldProperty` accessor, it first checks whether the attribute exists.
-If the attribute is not there, it is created and the default value is returned.
+If the attribute isn't there, it's created and the default value is returned.
 
 Example:
 
@@ -460,7 +460,7 @@ Collections also act as multiple choice fields.
 For more information see:
 
 -   [Using Zope schemas with a complex vocabulary and multi-select fields](https://web.archive.org/web/20161227025947/http://www.upfrontsystems.co.za/Members/izak/sysadman/using-zope-schemas-with-a-complex-vocabulary-and-multi-select-fields)
--   Collections section in [zope.schema documentation](https://zopeschema.readthedocs.io/en/latest/fields.html#collections)
+-   Collections section in [`zope.schema` documentation](https://zopeschema.readthedocs.io/en/latest/fields.html#collections)
 -   Schema [field sources documentation](https://zopeschema.readthedocs.io/en/latest/sources.html#sources-in-fields)
 -   [Choice field](https://zopeschema.readthedocs.io/en/latest/fields.html#choice)
 
@@ -511,8 +511,8 @@ class ISyncRunOptions(Interface):
 
 #### Multiple choice example
 
-Using zope.schema.List, many values can be chosen once.
-Each value is atomically constrained by *value_type* schema field.
+Using `zope.schema.List`, many values can be chosen once.
+Each value is atomically constrained by the `value_type` schema field.
 
 Example:
 

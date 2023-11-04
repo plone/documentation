@@ -30,27 +30,27 @@ Refer to the table below to see what properties a particular interface implies.
 
 | Interface | Property | Type | Description |
 | - | - | - | - |
-| `IField` | `title` | int | The title of the field. Used in the widget. |
-| | `description` | unicode | A description for the field. Used in the widget. |
-| | `required` | bool | Whether or not the field is required. Used for form validation. The default is `True`. |
-| | `readonly` | bool | Whether or not the field is read only. Default is `False`. |
+| `IField` | `title` | `int` | The title of the field. Used in the widget. |
+| | `description` | `unicode` | A description for the field. Used in the widget. |
+| | `required` | `bool` | Whether or not the field is required. Used for form validation. The default is `True`. |
+| | `readonly` | `bool` | Whether or not the field is read only. Default is `False`. |
 | | `default` | | The default value for the field. Used in forms and sometimes as a fallback value. Must be a valid value for the field if set. The default is `None`.|
 | | `defaultFactory` | | The default factory method for the field. Used in forms and sometimes as a fallback value. This is a name of a method which returns a dynamic default value.|
-| | `missing_value` | | A value that represents "this field is not set". Used by form validation. Defaults to `None`. For lists and tuples, it is sometimes useful to set this to an empty list or tuple. |
-| `IMinMaxLen` | `min_length` | int | The minimum required length or minimum number of elements. Used for `string`, sequence, mapping, or `set` fields. Default is `0`. |
-| | `max_length `| int | The maximum allowed length or maximum number of elements. Used for `string`, sequence, mapping, or `set` fields. Default is `None` (no check). |
+| | `missing_value` | | A value that represents "this field is not set." Used by form validation. Defaults to `None`. For lists and tuples, it is sometimes useful to set this to an empty list or tuple. |
+| `IMinMaxLen` | `min_length` | `int` | The minimum required length or minimum number of elements. Used for `string`, sequence, mapping, or `set` fields. Default is `0`. |
+| | `max_length `| `int` | The maximum allowed length or maximum number of elements. Used for `string`, sequence, mapping, or `set` fields. Default is `None` (no check). |
 | `IMinMax` | `min` | | The minimum allowed value. Must be a valid value for the field, for example, an `int` field should be an integer. Default is `None` (no check). |
 | | `max` | | The maximum allowed value. Must be a valid value for the field, for example an `int` field should be an integer. Default is `None` (no check). |
 | `ICollection` | `value_type` | | Another `Field` instance that describes the allowable values in a list, tuple, or other collection. Must be set for any collection field. One common usage is to set this to a `Choice` to model a multi-selection field with a {doc}`vocabulary </backend/vocabularies>`. |
-| | `unique` | bool | Whether or not values in the collection must be unique. Usually not set directly. Use a `Set` or `Frozenset` to guarantee uniqueness in an efficient way. |
+| | `unique` | `bool` | Whether or not values in the collection must be unique. Usually not set directly. Use a `Set` or `Frozenset` to guarantee uniqueness in an efficient way. |
 | `IDict` | `key_type` | | Another `Field` instance that describes the allowable keys in a dictionary. Similar to the `value_type` of a collection. Must be a `Set`. |
 | | `value_type` | | Another `Field` instance that describes the allowable values in a dictionary. Similar to the `value_type` of a collection. Must be a `Set`. |
 | `IObject` | `schema` | `Interface` | An interface that must be provided by any object stored in this field. |
-| `IRichText` | `default_mime_type` | str | Default MIME type for the input text of a rich text field. Defaults to `text/html`. |
-| | `output_mime_type` | str | Default output MIME type for the transformed value of a rich text field. Defaults to `text/x-html-safe`. There must be a transformation chain in the `portal_transforms` tool that can transform from the input value to the output value for the `output` property of the `RichValue` object to contain a value. |
-| | `allowed_mime_types` | tuple | A list of allowed input MIME types. The default is `None`, in which case the site-wide settings from the {guilabel}`Markup` control panel will be used. |
+| `IRichText` | `default_mime_type` | `str` | Default MIME type for the input text of a rich text field. Defaults to `text/html`. |
+| | `output_mime_type` | `str` | Default output MIME type for the transformed value of a rich text field. Defaults to `text/x-html-safe`. There must be a transformation chain in the `portal_transforms` tool that can transform from the input value to the output value for the `output` property of the `RichValue` object to contain a value. |
+| | `allowed_mime_types` | `tuple` | A list of allowed input MIME types. The default is `None`, in which case the site-wide settings from the {guilabel}`Markup` control panel will be used. |
 
-See [IField interface](https://zopeschema.readthedocs.io/en/latest/api.html#zope.schema.interfaces.IField) and [field implementation](https://zopeschema.readthedocs.io/en/latest/api.html#field-implementations) in `zope.schema` documentation for details.
+See [`IField` interface](https://zopeschema.readthedocs.io/en/latest/api.html#zope.schema.interfaces.IField) and [`field` implementation](https://zopeschema.readthedocs.io/en/latest/api.html#field-implementations) in `zope.schema` documentation for details.
 
 
 ## Field types
@@ -65,31 +65,31 @@ The following tables describe the most commonly used field types, grouped by the
 | Name | Type | Description | Properties |
 | - | - | - | - |
 | `Choice` | n/a | Used to model selection from a vocabulary, which must be supplied. Often used as the `value_type` of a selection field. The value type is the value of the terms in the vocabulary. | See {doc}`/backend/vocabularies`. |
-| `Bytes` | str | Used for binary data. | `IField`, `IMinMaxLen` |
-| `ASCII` | str | ASCII text (multi-line). | `IField`, `IMinMaxLen` |
-| `BytesLine` | str | A single line of binary data, in other words a `Bytes` with new lines disallowed. | `IField`, `IMinMaxLen` |
-| `ASCIILine` | str | A single line of ASCII text. | `IField`, `IMinMaxLen` |
-| `Text` | unicode | Unicode text (multi-line). Often used with a WYSIWYG widget, although the default is a text area. | `IField`, `IMinMaxLen` |
-| `TextLine` | unicode | A single line of Unicode text. | `IField`, `IMinMaxLen` |
-| `Bool` | bool | `True` or `False`. | `IField` |
-| `Int` | int, long | An integer number. Both ints and longs are allowed. | `IField`, `IMinMax` |
-| `Float` | float | A floating point number. | `IField`, `IMinMax` |
-| `Tuple` | tuple | A tuple (non-mutable). | `IField`, `ICollection`, `IMinMaxLen` |
-| `List` | list | A list. | `IField`, `ICollection`, `IMinMaxLen` |
-| `Set` | set | A set. | `IField`, `ICollection`, `IMinMaxLen` |
-| `Frozenset` | frozenset | A frozenset (non-mutable). | `IField`, `ICollection`, `IMinMaxLen` |
-| `Password` | unicode | Stores a simple string, but implies a password widget. | `IField`, `IMinMaxLen` |
-| `Dict` | dict | Stores a dictionary. Both `key_type` and `value_type` must be set to fields. | `IField`, `IMinMaxLen`, `IDict` |
-| `Datetime` | datetime | Stores a Python `datetime` (not a Zope 2 `DateTime`). | `IField`, `IMinMax` |
-| `Date` | date | Stores a Python `date`. | `IField`, `IMinMax` |
-| `Timedelta` | timedelta | Stores a Python `timedelta`. | `IField`, `IMinMax` |
-| `SourceText` | unicode | A textfield intended to store source text, such as HTML or Python code. | `IField`, `IMinMaxLen` |
-| `Object` | N/A | Stores a Python object that conforms to the interface given as the `schema`. There is no standard widget for this. | `IField`, `IObject` |
-| `URI` | str | A URI (URL) string. | `IField`, `MinMaxLen` |
-| `Id` | str | A unique identifier, either a URI or a dotted name. | `IField`, `IMinMaxLen` |
-| `DottedName` | str | A dotted name string. | `IField`, `IMinMaxLen` |
-| `InterfaceField` | Interface | A Zope interface. | `IField` |
-| `Decimal` | Decimal | Stores a Python `Decimal`. Requires version 3.4 or later of [`zope.schema`](https://pypi.org/project/zope.schema/). Not available by default in Zope 2.10. | `IField`, `IMinMax` |
+| `Bytes` | `str` | Used for binary data. | `IField`, `IMinMaxLen` |
+| `ASCII` | `str` | ASCII text (multi-line). | `IField`, `IMinMaxLen` |
+| `BytesLine` | `str` | A single line of binary data, in other words a `Bytes` with new lines disallowed. | `IField`, `IMinMaxLen` |
+| `ASCIILine` | `str` | A single line of ASCII text. | `IField`, `IMinMaxLen` |
+| `Text` | `unicode` | Unicode text (multi-line). Often used with a WYSIWYG widget, although the default is a text area. | `IField`, `IMinMaxLen` |
+| `TextLine` | `unicode` | A single line of Unicode text. | `IField`, `IMinMaxLen` |
+| `Bool` | `bool` | `True` or `False`. | `IField` |
+| `Int` | `int`, `long` | An integer number. Both `int`s and `long`s are allowed. | `IField`, `IMinMax` |
+| `Float` | `float` | A floating point number. | `IField`, `IMinMax` |
+| `Tuple` | `tuple` | A tuple (non-mutable). | `IField`, `ICollection`, `IMinMaxLen` |
+| `List` | `list` | A list. | `IField`, `ICollection`, `IMinMaxLen` |
+| `Set` | `set` | A set. | `IField`, `ICollection`, `IMinMaxLen` |
+| `Frozenset` | `frozenset` | A `frozenset` (non-mutable). | `IField`, `ICollection`, `IMinMaxLen` |
+| `Password` | `unicode` | Stores a simple string, but implies a password widget. | `IField`, `IMinMaxLen` |
+| `Dict` | `dict` | Stores a dictionary. Both `key_type` and `value_type` must be set to fields. | `IField`, `IMinMaxLen`, `IDict` |
+| `Datetime` | `datetime` | Stores a Python `datetime` (not a Zope 2 `DateTime`). | `IField`, `IMinMax` |
+| `Date` | `date` | Stores a Python `date`. | `IField`, `IMinMax` |
+| `Timedelta` | `timedelta` | Stores a Python `timedelta`. | `IField`, `IMinMax` |
+| `SourceText` | `unicode` | A text field intended to store source text, such as HTML or Python code. | `IField`, `IMinMaxLen` |
+| `Object` | n/a | Stores a Python object that conforms to the interface given as the `schema`. There is no standard widget for this. | `IField`, `IObject` |
+| `URI` | `str` | A URI (URL) string. | `IField`, `MinMaxLen` |
+| `Id` | `str` | A unique identifier, either a URI or a dotted name. | `IField`, `IMinMaxLen` |
+| `DottedName` | `str` | A dotted name string. | `IField`, `IMinMaxLen` |
+| `InterfaceField` | `Interface` | A Zope interface. | `IField` |
+| `Decimal` | `Decimal` | Stores a Python `Decimal`. Requires version 3.4 or later of [`zope.schema`](https://pypi.org/project/zope.schema/). Not available by default in Zope 2.10. | `IField`, `IMinMax` |
 
 
 ### Fields in `plone.namedfile.field`
@@ -141,14 +141,14 @@ See {ref}`backend-ploneschema-label` for more details.
 
 (backend-fields-schema-autoform-label)=
 
-### autoform (directives) schema ordering, filtering, and permissions
+### `autoform` (directives) schema ordering, filtering, and permissions
 
 
 (backend-fields-supermodel-label)=
 
-## supermodel (xml)
+## `supermodel` (XML)
 
 
 (backend-fields-supermodel-autoform-label)=
 
-### autoform (directives) supermodel ordering, filtering, and permissions
+### `autoform` (directives) supermodel ordering, filtering, and permissions
