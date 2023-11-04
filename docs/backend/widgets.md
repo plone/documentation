@@ -15,7 +15,7 @@ myst:
 See the chapter {doc}`training:mastering-plone/dexterity_reference` from the Mastering Plone 6 Training.
 ```
 
-Widgets render HTML code for input and parse HTTP `post` request input in Plone.
+Widgets render HTML code for input and parse the input from an HTTP `post` request in Plone.
 
 Plone stores widgets as the `widgets` attribute of a form.
 Plone presents widgets as an ordered dict-like `Widgets` class.
@@ -29,6 +29,11 @@ When an HTTP `post` request comes in, Zope publisher automatically converts `<se
 
 
 ## Widget reference
+
+```{tip}
+In VS Code editor, you can install the [Plone Snippets](https://marketplace.visualstudio.com/items?itemName=Derico.plone-vs-snippets) extension.
+This will give you snippets for most fields, widgets, and autoform directives in Python and XML based schemas.
+```
 
 You can find the default widgets in the browser package in `z3c.form`.
 The [`z3c.form` documentation](https://z3cform.readthedocs.io/en/latest/widgets/index.html) lists all the default widgets and shows the HTML output of each.
@@ -57,6 +62,7 @@ The main widgets are:
 -   Time Widget
 -   DateTime Picker
 
+
 ## Changing a field's widget
 
 You can change the widget that you use for a field in several ways.
@@ -70,7 +76,7 @@ This model is defined as a `zope.schema` based schema, but extra hints can be su
 
 By default, `z3c.form` picks a widget based on the type of your field.
 You can change the widget using the `widget` directive if you want users to enter or view data in a different format.
-For example, you can change the widget for the `human` boolean field to use "yes" and "no" radio buttons instead of its default checkbox:
+For example, you can change the widget for the `human` boolean field to use `yes` and `no` radio buttons instead of its default checkbox:
 
 ```{code-block} python
 :emphasize-lines: 7
@@ -287,7 +293,7 @@ class IFlexibleContent(form.Schema):
     # Hide widget "sections"
     form.mode(sections="hidden")
 
-    # set mode  
+    # set mode
     form.mode(IEditForm, sections="input")
     form.mode(IAddForm, sections="input")
 
@@ -509,7 +515,7 @@ You can override widget templates as instructed for `z3c.form`.
 You might want to customize this widget frame for your own form.
 Below is an example of how to do it.
 
-Copy [`widget.pt`](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt) to your own package, rename it as ``demo-widget.pt`` and edit it.
+Copy [`widget.pt`](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt) to your own package, rename it as `demo-widget.pt`, and edit it.
 
 Then add the following code to `configure.zcml`.
 Remember to fix the path of the template according to your own paths.
@@ -551,7 +557,7 @@ class MyForm(...):
 
 ## Combined widgets
 
-You can combine several widgets into one with `z3c.form.browser.multil.MultiWidget` and `z3c.form.browser.object.ObjectWidget` classes.
+You can combine several widgets into one with `z3c.form.browser.multi.MultiWidget` and `z3c.form.browser.object.ObjectWidget` classes.
 
 The following example shows how to create an input widget with minimum and maximum values.
 
@@ -566,9 +572,7 @@ from z3c.form.object import registerFactoryAdapter
 
 class IMinMax(zope.interface.Interface):
     """ Helper schema for min and max fields """
-
     min = zope.schema.Float(required=False)
-
     max = zope.schema.Float(required=False)
 
 
@@ -601,7 +605,7 @@ Then you set the `my_combined_field` widget template in `updateWidgets()`:
 class MyForm(form.Form):
 
     fields = field.Fields(IMyFormSchema)
-  
+
     def updateWidgets(self, prefix=None):
         """
         """

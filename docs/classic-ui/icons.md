@@ -16,7 +16,7 @@ Examples include the following.
 
 - Bootstrap icons
 - SVG inline icons
-- Iconresolver
+- `Iconresolver`
 
 
 (classic-ui-icons-bootstrap-label)=
@@ -41,7 +41,7 @@ Plone ships with the following icon registrations by default.
 
 - [Bootstrap](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_bootstrap.xml)
 - [Content Type](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_contenttype.xml)
-- [Mimetype](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_mimetype.xml)
+- [MIME type](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_mimetype.xml)
 - [Language Flags](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_language_flags.xml)
 - [Country Flags](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_country_flags.xml)
 - [Plone](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
