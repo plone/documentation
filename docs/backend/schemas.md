@@ -11,7 +11,7 @@ myst:
 
 # Schemas
 
-[Zope schemas](https://zopeschema.readthedocs.io) are a database-neutral and form-library-neutral way to describe Python data models.
+[Zope schemas](https://zopeschema.readthedocs.io/en/latest/) are a database-neutral and form-library-neutral way to describe Python data models.
 Schemas extend the notion of interfaces to detailed descriptions of attributes (but not methods).
 Every schema is an interface and specifies the public fields of an object.
 A field roughly corresponds to an attribute of a Python object.
