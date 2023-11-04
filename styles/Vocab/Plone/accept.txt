@@ -5,10 +5,11 @@
 `plone.restapi`
 `plone.volto`
 accessor
+APIs
 [Aa]sync
 [Bb]ackend
 Barceloneta
-boolean
+[Bb]oolean
 buildout
 doctest
 folderish
@@ -32,6 +33,7 @@ subfolder
 transpile[dr]{0,1}
 unregister
 UUID
+[Uu]ncomment
 validator
 viewlet
 Volto

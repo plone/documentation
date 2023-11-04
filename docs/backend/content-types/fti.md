@@ -139,7 +139,7 @@ The XML sets a number of FTI properties that are used globally, in both Classic 
 :   Defines additional {doc}`actions </backend/portal-actions>` which are available for this content type.
 
 `add_permission`
-:   ID of the permission controling whether the current user has permission to add this content type.
+:   ID of the permission controlling whether the current user has permission to add this content type.
 
 `allow_discussion`
 :   Boolean.
@@ -197,7 +197,7 @@ The XML sets a number of FTI properties that are used globally, in both Classic 
 The following FTI properties are used only in Classic UI:
 
 `add_view_expr`
-:   {term}`TALES` expression returning the URL for the form to add a new item of this content type.
+:   {term}`TALES` expression returning the URL of the form to add a new item of this content type.
 
 `alias` elements
 :   Controls a mapping from URL to views.

@@ -25,8 +25,8 @@ For example, each content type has:
 
 -   a {doc}`schema </backend/schemas>` specifying the fields which can be edited for the content type
 -   a list of {doc}`behaviors </backend/behaviors>` which supply additional functionality that can be attached to the content types for which the behavior is enabled
--   a {doc}`workflow </backend/workflows>` controling transitions between publishing states and associated permissions
--   a version policy controling whether to store a revision history
+-   a {doc}`workflow </backend/workflows>` controlling transitions between publishing states and associated permissions
+-   a version policy controlling whether to store a revision history
 
 It is common in developing a website that you'll need customized versions of common content types, or perhaps even entirely new types.
 
@@ -39,7 +39,7 @@ The ZODB is well suited to heterogeneous, loosely structured content such as web
 Types in Plone are either `containers` or `items` (this distinction is sometimes called folderish versus non-folderish).
 A one-to-many type relationship is typically modeled as a container (the "one") containing many items (the "many"), although it is also possible to use references across the content hierarchy.
 
-Each type has a {doc}`schema </backend/schemas>`, which is a set of {doc}`/backend/fields` with related properties, such as a title, default value, constraints, and so on.
+Each type has a {doc}`schema </backend/schemas>`, which is a set of {doc}`/backend/fields` with related properties, such as a title, default value, constraints, and other properties.
 The schema is used to generate forms and describe instances of the type.
 In addition to schema-driven forms, a type typically comes with one or more {doc}`/classic-ui/views` as well as {doc}`/classic-ui/viewlets` and is subject to security—for example, add permissions, or per-field read and write permissions—and workflow.
 
@@ -72,7 +72,7 @@ fti
 ```{toctree}
 :maxdepth: 2
 ```
-% Uncomment each of the following and move into the toctree above when migrated from Plone 5 documentation
+% Uncomment each of the following and move into the `toctree` above when migrated from Plone 5 documentation
 % prerequisite
 % schema-driven-types
 % model-driven-types
