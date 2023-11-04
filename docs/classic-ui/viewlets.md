@@ -98,7 +98,7 @@ You can order, hide, and unhide or show viewlets.
 The next sections describe how to do so.
 
 
-### Ordering viewlets
+### Order viewlets
 
 To set the order of a viewlet inside its viewlet manager, use the following `GenericSetup` configuration.
 
@@ -116,9 +116,9 @@ See {ref}`classic-ui-viewlets-registering-viewlet-zcml-label`.
 ```
 
 
-### Hiding viewlets
+### Hide viewlets
 
-Hiding a viewlet is also done from the {file}`viewlets.xml` with the `<hidden />` node, which is at same level as `<order />`, and is done per skin selection.
+You can hide a viewlet from the {file}`viewlets.xml` with the `<hidden />` node, which is at same level as `<order />`, and is done per skin selection.
 
 For instance, if you need to remove the global sections for your skin, you'd have to add some declaration, such as the following one in {file}`viewlets.xml`:
 
@@ -129,7 +129,7 @@ For instance, if you need to remove the global sections for your skin, you'd hav
 ```
 
 
-### Unhiding viewlets
+### Unhide viewlets
 
 If, for any reason, you need to unhide one or more viewlets for a given viewlet manager, you can make use of the `purge` and `remove` node parameters in your `<hidden />` declaration in {file}`viewlets.xml`.
 
@@ -915,7 +915,7 @@ Next, re-register some stock viewlets against your new viewlet manager in {file}
 
 Next, we need to render our viewlet manager somehow.
 One place to do it is in a {file}`main_template.pt`, but because we need to add this HTML output to a header section which is produced by _another_ viewlet manager, we need to create a new viewlet just for rendering our viewlet manager.
-Yo, dawg, we put viewlets in your viewlets so you can render viewlets!
+We put viewlets in your viewlets so you can render viewlets!
 
 In {file}`browser/viewlets/headerbottom.pt`:
 

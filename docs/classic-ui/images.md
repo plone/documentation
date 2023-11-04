@@ -68,7 +68,7 @@ To get the original image, you can leave out the scale:
 
 ### By cacheable scale {term}`UID` name
 
-When an image scale is created, it will be cached under the name `UID.EXT` (i.e. `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
+When an image scale is created, it will be cached under the name `UID.EXT` (such as `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
 Scaling keeps the uploaded formats, except for TIFF which ends up as JPEG.
 It can be resolved as follows:
 
@@ -118,7 +118,7 @@ tag = scale_util.tag(
 )
 ```
 
-If you pass additional kwargs to `tag`, they become attributes on `tag`.
+If you pass additional `kwargs` to `tag`, they become attributes on `tag`.
 
 
 (classic-ui-images-image-scaling-no-tag-creation-label)=
@@ -181,7 +181,7 @@ tag = scale_util.scale("image", width=600, height=200)
 
 ### Using `image_scale` in templates
 
-You could use the URL-variant from above, but that would be an uncached version.
+You could use the URL-variant from above, but that version would not be cached.
 To create a cached scale in a page template you can do the following:
 
 ```xml
@@ -215,7 +215,7 @@ You can also provide the following keyword arguments to set `title`, `alt`, or `
 
 ### Get `image_scale` by cached {term}`UID` name
 
-If you only have the cached image name from an URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
+If you only have the cached image name from a URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
 But you can use this workaround, by calling the `publishTraverse` method in `ImageScaling` directly:
 
 ```python
