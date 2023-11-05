@@ -128,7 +128,7 @@ Then create a new branch from the default branch, and check it out to work on it
 We recommend using a branch name that includes the issue number and is descriptive of what it resolves.
 
 ```shell
-git checkout -b branch_name
+git switch -c branch_name
 ```
 
 Now you can edit your code without affecting the default branch.
