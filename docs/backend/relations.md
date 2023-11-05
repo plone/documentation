@@ -168,7 +168,7 @@ So far we only used the vocabulary `plone.app.vocabularies.Catalog`, which retur
 Alternatively you can use `CatalogSource` to specify a catalog query that only returns the values from the query.
 
 You can pass to `CatalogSource` the same arguments you use for catalog queries.
-This makes it very flexible for limiting relatable items by type, path, date, and so on.
+This makes it very flexible for limiting relatable items by type, path, date, and other items.
 
 Setting the mode of the widget to `search` makes it easier to select from the content that results from your catalog query instead of having to navigate through your content tree.
 
@@ -447,7 +447,7 @@ This returns the related items so that you will be able to render them any way y
 
 ## Inspecting relations
 
-In Plone 6 Classic UI, you can inspect all relations and backrelations in your site using the control panel {guilabel}`Relations` at the browser path `/@@inspect-relations`.
+In Plone 6 Classic UI, you can inspect all relations and back relations in your site using the control panel {guilabel}`Relations` at the browser path `/@@inspect-relations`.
 
 ```{figure} /_static/inspect-relations.png
 :alt: The Relations controlpanel
@@ -467,7 +467,7 @@ In Plone 5 this is available through the add-on [collective.relationhelpers](htt
 
 ### Plone 6
 
-Since Plone 6, `plone.api` has methods to create, read, and delete relations and backrelations.
+Since Plone 6, `plone.api` has methods to create, read, and delete relations and back relations.
 
 ```{code-block} python
 :linenos:
@@ -505,14 +505,14 @@ See the chapter {ref}`plone:chapter-relation` of the docs for `plone.api` for mo
 
 ### Plone 5.2 and older
 
-In older Plone versions, you can use [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers) to create and read relations and backrelations in a very similar way.
+In older Plone versions, you can use [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers) to create and read relations and back relations in a very similar way.
 
 
 (relations-programming-with-relations-rest-api-label)=
 
 ### REST API
 
-A REST API endpoint to create, read, and delete relations and backrelations will be part of `plone.restapi`.
+A REST API endpoint to create, read, and delete relations and back relations will be part of `plone.restapi`.
 See https://github.com/plone/plone.restapi/issues/1432.
 
 
