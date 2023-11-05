@@ -159,7 +159,7 @@ This section describes how to make contributions to files in the `plone/document
 1.  Create a new branch from `6.0`.
 
     ```shell
-    git checkout -b <new_branch>
+    git switch -c <new_branch>
     ```
 
 1.  Edit files, save, preview, and test.
@@ -247,7 +247,7 @@ We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master
 1.  Create a new branch from the development branch.
 
     ```shell
-    git checkout -b <new_branch>
+    git switch -c <new_branch>
     ```
 
 1.  Make edits to files in `docs/<external_package>` using your favorite editor, and save, preview, and test.
