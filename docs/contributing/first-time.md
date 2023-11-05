@@ -177,7 +177,7 @@ Then create a new branch from the default branch, tracking the upstream Plone re
 We recommend using a branch name that includes the issue number and is descriptive of what it resolves.
 
 ```shell
-git checkout -b my-branch-name upstream/main
+git switch -c my-branch-name -t upstream/main
 ```
 
 Now you can edit your code without affecting the default branch.
