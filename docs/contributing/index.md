@@ -109,6 +109,7 @@ To standarize the developer experience across packages, a configuration tool is 
 
 See the [tool documentation](https://github.com/plone/meta) for more information.
 
+
 (contributing-specific-contribution-policies-for-projects-label)=
 
 ## Specific contribution policies of projects
@@ -139,6 +140,17 @@ Volto
     See {doc}`../volto/contributing/index`.
 
 
+(contributing-releases-label)=
+
+## Releases
+
+The Plone [Release Team](https://plone.org/community/teams/release-team) manages the release of new versions of Plone.
+
+We use [`zest.releaser`](https://zestreleaser.readthedocs.io/en/latest/) for releasing the Python packages used in Plone, including [Plone core (`Products.CMFPlone`)](https://github.com/plone/Products.CMFPlone/), {doc}`/classic-ui/index`, {doc}`/plone.restapi/docs/source/index`, {doc}`/plone.api/index`, and {doc}`/backend/index`.
+
+We use [`release-it`](https://github.com/release-it/release-it) for releasing the Node.js packages used in Plone, including {doc}`Volto </volto/index>` and the [Classic UI mockup](https://github.com/plone/mockup).
+
+
 ```{toctree}
 ---
 caption: Contributing
@@ -151,4 +163,5 @@ documentation/index
 ../plone.api/contribute/index
 ../plone.restapi/docs/source/contributing/index
 ../volto/contributing/index
+github-administration
 ```

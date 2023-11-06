@@ -210,11 +210,6 @@ ogp_custom_meta_tags = [
 ]
 
 
-# -- sphinx_copybutton -----------------------
-copybutton_prompt_text = r"^ {0,2}\d{1,3}"
-copybutton_prompt_is_regexp = True
-
-
 # -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
@@ -327,7 +322,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.7",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.8",
     "{NVM_VERSION}": "0.39.3",
 }
 

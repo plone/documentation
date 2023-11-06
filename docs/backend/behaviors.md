@@ -30,7 +30,7 @@ Other behaviors are implemented as add-on products, which can be installed and c
 Once a behavior has been installed, it can be applied to any content type by selecting it in the {guilabel}`Content Types` control panel.
 This allows items of this content type to gain the additional functionality provided by the behavior.
 
-A key feature of behaviors is that they allow encapsulating functionality so that it can be reused for multiple content types without needing to reimplement it.
+A key feature of behaviors is that they allow encapsulating functionality so that it can be reused for multiple content types without needing to implement it again.
 Overall, behaviors are an important part of the Plone content management system and allow for powerful customization and extensibility of content objects.
 
 
@@ -40,7 +40,7 @@ Overall, behaviors are an important part of the Plone content management system 
 
 To view a complete list of built-in behaviors, browse to {guilabel}`Content Types` control panel, then click {guilabel}`Page` (or any other content type), then {guilabel}`Behaviors`.
 
-| short name | Title | Desription |
+| short name | Title | Description |
 |---|---|---|
 | `plone.allowdiscussion` | Allow discussion | Allow discussion on this item |
 | `plone.basic` | Basic metadata | Adds title and description fields. |
@@ -72,11 +72,11 @@ To view a complete list of built-in behaviors, browse to {guilabel}`Content Type
 | `volto.preview_image` | Preview Image | Preview image for listings |
 | `volto.preview_image_link` | Preview Image Link | Preview image for listings based on links |
 | `plone.relateditems` | Related items | Adds the ability to assign related items |
-| `plone.richtext` | RichText | Adds richtext behavior |
+| `plone.richtext` | RichText | Adds RichText behavior |
 | `plone.shortname` | Short name | Gives the ability to rename an item from its edit form. |
 | `plone.tableofcontents` | Table of contents | Adds a table of contents |
-| `plone.thumb_icon` | Thumbs and icon handling | Options to suppress thumbs and/or icons and to override thumb   size in listings, tables etc.
-| `plone.versioning` | Versioning | Versioning support with CMFEditions |
+| `plone.thumb_icon` | Thumbs and icon handling | Options to suppress thumbs or icons and to override thumb size in listings, tables, and other user interface elements |
+| `plone.versioning` | Versioning | Versioning support with `CMFEditions` |
 
 ```{todo}
 For each behavior in the table above, one may view the source code of the checkbox (its `name` attribute) to view its Short Name.
@@ -307,7 +307,7 @@ You do not *need* to know this, but it may help if you run into problems.
 ```
 
 In Plone, behaviors can be globally enabled on content types at runtime.
-With add-ons, behaviors can be enabled even on a single content object or for a whole subtree in the content hierarchy.
+With add-ons, behaviors can be enabled even on a single content object or for a whole subdirectory tree in the content hierarchy.
 
 
 ### Interfaces and adapters
