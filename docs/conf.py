@@ -93,6 +93,7 @@ linkcheck_ignore = [
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
     # Ignore unreliable sites
     r"https://web.archive.org/",  # volto
+    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5
@@ -126,6 +127,11 @@ exclude_patterns = [
     "plone.restapi/performance",
     "plone.restapi/src",
     "volto/contributing/branch-policy.md",
+]
+
+suppress_warnings = [
+    # "toc.excluded",  # Suppress `WARNING: document isn't included in any toctree`
+    "toc.not_readable",  # Suppress `WARNING: toctree contains reference to nonexisting document 'news*'`
 ]
 
 html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
@@ -316,7 +322,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.7",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.8",
     "{NVM_VERSION}": "0.39.3",
 }
 
