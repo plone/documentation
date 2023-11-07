@@ -75,6 +75,9 @@ pip
     pip is the package installer for Python.
     See [tool recommendations](https://packaging.python.org/en/latest/guides/tool-recommendations/) for more information.
 
+pipx
+    A handy tool for installing and running Python applications.
+
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 

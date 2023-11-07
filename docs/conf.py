@@ -323,7 +323,7 @@ def source_replace(app, docname, source):
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
     "{PLONE_BACKEND_PATCH_VERSION}": "6.0.8",
-    "{NVM_VERSION}": "0.39.3",
+    "{NVM_VERSION}": "0.39.5",
 }
 
 

@@ -29,32 +29,21 @@ Plone 6 has both hardware requirements and software pre-requisites.
 The hardware requirements below give a rough estimate of the minimum hardware setup needed for a Plone server.
 
 A single Plone installation is able to run many Plone sites.
-You may host multiple Plone sites on the same server.
 
--   Installation of the Plone backend and Classic UI frontend requires a minimum of 256 MB of RAM and 2GB of disk swap space.
--   Installation of the Volto frontend requires a minimum of 2GB of RAM.
--   After installation, running Plone requires a minimum of 256 MB RAM and 512 MB of disk swap space per Plone site.
+- Installation of the Plone backend and Classic UI frontend requires a minimum of 256 MB of RAM and 2GB of disk swap space.
+- Installation of the Volto frontend requires a minimum of 2GB of RAM.
+- After installation, running Plone requires a minimum of 256 MB RAM and 512 MB of disk swap space per Plone site.
     2 GB or more RAM per Plone site is recommended.
--   Minimum 512 MB hard disk space is required.
+- Minimum 512 MB hard disk space is required.
     40 GB or more hard disk space is recommended.
-
-
-````{warning}
-{term}`Add-on` products and caching solutions may also increase RAM and disk swap space requirements.
-
-To avoid RAM and disk swap limitations, we recommend either temporarily resizing your remote machine to accommodate the build, or build your images locally and upload them to an image store, such as [Docker Hub](https://hub.docker.com/) or [GitHub Packages](https://github.com/features/packages).
-
-```{seealso}
-[How much RAM is required to build a Volto front end?](https://community.plone.org/t/how-much-ram-is-required-to-build-a-volto-front-end/17949) and [Dealing with heap exhaustion while building Volto 17 on limited-RAM host](https://community.plone.org/t/dealing-with-heap-exhaustion-while-building-volto-17-on-limited-ram-host/18078).
-```
-````
+- `Add-on` products and caching solutions may also increase RAM and disk swap space requirements.
 
 
 (install-packages-prerequisites-label)=
 
 ### Pre-requisites for installation
 
--   An operating system that runs all the pre-requisites.
+-   An operating system that runs all the requirements mentioned above.
     Most UNIX-based operating systems are supported, including many Linux distributions, macOS, or {term}`Windows Subsystem for Linux` (WSL) on Windows.
     A UNIX-based operating system is recommended.
 
@@ -63,25 +52,14 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
     If you get Plone to run on Windows alone, please feel free to document and share your process.
     ```
 
--   [Python](https://www.python.org/downloads/) 3.8, 3.9, or 3.10.
+-   [Python](https://www.python.org/downloads/) 3.8, 3.9, 3.10 or 3.11 at the time of writing. Verify with the [Release notes](https://plone.org/download/releases/).
+-   {pipx}`pipx`
 -   {term}`Cookiecutter`
 -   {term}`nvm`
--   {term}`Node.js` LTS 16.x (see "Update" note)
+-   {term}`Node.js` LTS
 -   {term}`Yeoman`
 -   {term}`Yarn`
 -   {term}`GNU make`
--   {term}`Docker`
-
-````{note}
-Update
-:   [Node.js 18 is in LTS state as of 2022-10-25](https://github.com/nodejs/release#release-schedule), and Node.js 16 is now in maintenance mode.
-    However, due to changes in internal SSL libraries, some Volto dependencies have been deprecated and need to be updated in order to continue working in Node.js 18, mainly [Webpack 4](https://github.com/webpack/webpack/issues/14532#issuecomment-947525539).
-    You can still use it, but Node.js should be run under a special flag: `NODE_OPTIONS=--openssl-legacy-provider`.
-
-    ```{seealso}
-    Volto's pull request, [Support Node 18](https://github.com/plone/volto/pull/3699).
-    ```
-````
 
 
 (install-prerequisites-python-label)=
@@ -91,16 +69,17 @@ Update
 Installing Python is beyond the scope of this documentation.
 However, it is recommended to use a Python version manager, [`pyenv`](https://github.com/pyenv/pyenv) that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
 
+Install {pipx}`pipx`.
+
+```shell
+pip install pipx
+```
 
 (install-prerequisites-cookiecutter-label)=
 
 #### Cookiecutter
 
-Install or upgrade {term}`Cookiecutter` in your user's Python:
-
-```shell
-pip install --user --upgrade cookiecutter
-```
+Installation and upgrade is done below in `install-packages-install-label`.
 
 
 (install-prerequisites-nvm-label)=
@@ -149,7 +128,7 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish)
     This command also activates that version.
 
     ```shell
-    nvm install 16
+    nvm install --lts
     ```
 
 2.  Verify that the supported version of Node.js is activated.
@@ -212,17 +191,9 @@ Use your favorite search engine or trusted online resource for how to update `ma
 
 (install-packages-install-label)=
 
-
-#### Install Docker
-
-Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
-
-Docker Desktop includes all Docker tools.
-
-
 ## Install Plone 6
 
-We install Plone 6 with {term}`pip`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
+We install Plone 6 with {term}`pip` or {term}`pipx`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
 
 ```{note}
 We do not maintain documentation for installing Plone 6 or later with `buildout`.
@@ -238,9 +209,10 @@ cd my_project
 ```
 
 Run `cookiecutter` to create a Plone project skeleton using the Cookiecutter {term}`cookiecutter-plone-starter` with the following command.
+This also updates cookiecutter.
 
 ```shell
-cookiecutter https://github.com/collective/cookiecutter-plone-starter
+pipx run cookiecutter gh:collective/cookiecutter-plone-starter
 ```
 
 You will be presented with a series of prompts.
