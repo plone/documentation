@@ -79,7 +79,7 @@ pip install pipx
 
 #### Cookiecutter
 
-Installation and upgrade is done below in `install-packages-install-label`.
+Installation and upgrade is done below in {ref}`install-packages-install-label`.
 
 
 (install-prerequisites-nvm-label)=
