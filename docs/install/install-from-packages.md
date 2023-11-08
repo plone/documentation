@@ -228,53 +228,86 @@ You can accept the default values in square brackets (`[default-option]`) by hit
 For ease of documentation, we will use the default values.
 
 ```console
-You've downloaded <path-to-cookiecutter>/cookiecutter-plone-starter before. Is it okay to delete and re-download it? [yes]: 
-project_title [Project Title]: 
-project_slug [project-title]: 
-description [A new project using Plone 6.]: 
-author [Plone Foundation]: 
-email [collective@plone.org]: 
-python_package_name [project_title]: 
-plone_version [6.0.0]: 
-volto_version [16.5.0]: 
-volto_generator_version [6.2.0]: 
-Select language_code:
-1 - en
-2 - de
-3 - es
-4 - pt-br
-Choose from 1, 2, 3, 4 [1]: 
-github_organization [collective]: 
-Select container_registry:
-1 - Docker Hub
-2 - GitHub
-Choose from 1, 2 [1]: 
+% pipx run cookiecutter gh:collective/cookiecutter-plone-starter
+
+
+Cookiecutter Plone Starter 
 ================================================================================
-Project Title generation
-================================================================================
-Running sanity checks
-  - Python: ✓
-  - Node: ✓
-  - yo: ✓
-  - Docker: ✓
-  - git: ✓
+
+Sanity checks
+--------------------------------------------------------------------------------
+  [1/5] Python: ✓
+  [2/5] Node: ✓
+  [3/5] yo: ✓
+  [4/5] Docker: ✓
+  [5/5] git: ✓
+
+Project details
+--------------------------------------------------------------------------------
+
+  [1/19] Project Title (Project Title): Plone Conference Website 2070
+  [2/19] Project Description (A new project using Plone 6.): 
+  [3/19] Project Slug (Used for repository id) (plone-conference-website-2070): 
+  [4/19] Project URL (without protocol) (plone-conference-website-2070.example.com): 
+  [5/19] Author (Plone Foundation): Elli
+  [6/19] Author E-mail (collective@plone.org): elli@plone.org
+  [7/19] Python Package Name (plone_conference_website_2070): 
+  [8/19] Volto Addon Name (volto-plone-conference-website-2070): 
+  [9/19] Choose a Python Test Framework
+    1 - pytest
+    2 - unittest
+    Choose from [1/2] (1): 
+  [10/19] Plone Version (6.0.8): 
+  [11/19] Should we use Volto Alpha Versions? (No): yes
+  [12/19] Volto Version (18.0.0-alpha.1): 
+  [13/19] Volto Generator Version (8.0.0): 
+  [14/19] Language
+    1 - English
+    2 - Deutsch
+    3 - Español
+    4 - Português (Brasil)
+    5 - Nederlands
+    6 - Suomi
+    Choose from [1/2/3/4/5/6] (1): 
+  [15/19] GitHub Username or Organization (collective): ellizurigo
+  [16/19] Container Registry
+    1 - GitHub Container Registry
+    2 - Docker Hub
+    Choose from [1/2] (1): 
+  [17/19] Should we setup a caching server?
+    1 - Yes
+    2 - No
+    Choose from [1/2] (1): 2
+  [18/19] Add Ansible playbooks?
+    1 - Yes
+    2 - No
+    Choose from [1/2] (1): 
+  [19/19] Add GitHub Action to Deploy this project?
+    1 - Yes
+    2 - No
+    Choose from [1/2] (1): 
+
+Plone Conference Website 2070 generation
+--------------------------------------------------------------------------------
 
 Summary:
-  - Plone version: 6.0.0
-  - Volto version: 16.5.0
-  - Volto Generator version: 6.2.0
-  - Output folder: <path-to-project>/project-title
+  - Plone version: 6.0.8
+  - Volto version: 18.0.0-alpha.1
+  - Volto Generator version: 8.0.0
+  - Output folder: /Users/katjasuss/Desktop/_temp/scratch_cookiecutter_plone/plone-conference-website-2070
 
 Frontend codebase:
- - Installing @plone/generator-volto@6.2.0
- - Generate frontend application with @plone/volto 16.5.0
+ - Installing required npm packages
+ - Generate frontend application with @plone/volto 18.0.0-alpha.1
 
 Backend codebase
+ - Remove folder src/plone_conference_website_2070/src/plone_conference_website_2070/tests not used by pytest
  - Format generated code in the backend
+
 ================================================================================
 
-Project "Project Title" was generated
-
+Project "Plone Conference Website 2070" was generated
+--------------------------------------------------------------------------------
 Now, code it, create a git repository, push to your organization.
 
 Sorry for the convenience,
