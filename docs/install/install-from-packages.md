@@ -30,13 +30,21 @@ The hardware requirements below give a rough estimate of the minimum hardware se
 
 A single Plone installation is able to run many Plone sites.
 
-- Installation of the Plone backend and Classic UI frontend requires a minimum of 256 MB of RAM and 2GB of disk swap space.
-- Installation of the Volto frontend requires a minimum of 2GB of RAM.
-- After installation, running Plone requires a minimum of 256 MB RAM and 512 MB of disk swap space per Plone site.
+-   Installation of the Plone backend and Classic UI frontend requires a minimum of 256 MB of RAM and 2GB of disk swap space.
+-   Installation of the Volto frontend requires a minimum of 2GB of RAM.
+-   After installation, running Plone requires a minimum of 256 MB RAM and 512 MB of disk swap space per Plone site.
     2 GB or more RAM per Plone site is recommended.
-- Minimum 512 MB hard disk space is required.
+-   Minimum 512 MB hard disk space is required.
     40 GB or more hard disk space is recommended.
-- `Add-on` products and caching solutions may also increase RAM and disk swap space requirements.
+
+
+````{warning}
+{term}`Add-on` products and caching solutions may also increase RAM and disk swap space requirements.
+To avoid RAM and disk swap limitations, we recommend either temporarily resizing your remote machine to accommodate the build, or build your images locally and upload them to an image store, such as [Docker Hub](https://hub.docker.com/) or [GitHub Packages](https://github.com/features/packages).
+```{seealso}
+[How much RAM is required to build a Volto front end?](https://community.plone.org/t/how-much-ram-is-required-to-build-a-volto-front-end/17949) and [Dealing with heap exhaustion while building Volto 17 on limited-RAM host](https://community.plone.org/t/dealing-with-heap-exhaustion-while-building-volto-17-on-limited-ram-host/18078).
+```
+````
 
 
 (install-packages-prerequisites-label)=
@@ -52,13 +60,14 @@ A single Plone installation is able to run many Plone sites.
     If you get Plone to run on Windows alone, please feel free to document and share your process.
     ```
 
--   [Python](https://www.python.org/downloads/) 3.8, 3.9, 3.10 or 3.11 at the time of writing. Verify with the [Release notes](https://plone.org/download/releases/).
+-   `Python`
 -   {term}`pipx`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 18.x
 -   {term}`Yeoman`
 -   {term}`Yarn`
 -   {term}`GNU make`
+-   {term}`Docker`
 
 
 (install-prerequisites-python-label)=
@@ -66,7 +75,8 @@ A single Plone installation is able to run many Plone sites.
 #### Python
 
 Installing Python is beyond the scope of this documentation.
-However, it is recommended to use a Python version manager, [`pyenv`](https://github.com/pyenv/pyenv) that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
+However, it is recommended to use a Python version manager, {term}`pyenv` that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
+Plone supports the following Python versions: {SUPPORTED_PYTHON_VERSIONS}.
 
 
 (install-prerequisites-pipx-label)=
