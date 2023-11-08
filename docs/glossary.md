@@ -78,6 +78,11 @@ pip
 pipx
     [pipx](https://pypi.org/project/pipx/) allows you to install and run Python applications in isolated environments.
 
+pyenv
+    Python version management.
+    [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. 
+    Installer for pyenv: https://github.com/pyenv/pyenv#automatic-installer
+
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 
