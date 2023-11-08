@@ -316,13 +316,13 @@ The Plone Community.
 ================================================================================
 ```
 
-Change to your project directory {file}`project-title`.
+Change to your project directory {file}`plone-conference-website-2070`.
 
 ```shell
-cd project-title
+cd plone-conference-website-2070
 ```
 
-Next we switch to using `make`.
+Next you switch to using `make`.
 To see all available commands and their descriptions, enter the following command.
 
 ```shell
