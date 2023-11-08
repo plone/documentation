@@ -76,7 +76,7 @@ pip
     See [tool recommendations](https://packaging.python.org/en/latest/guides/tool-recommendations/) for more information.
 
 pipx
-    A handy tool for installing and running Python applications.
+    [pipx](https://pypi.org/project/pipx/) allows you to install and run Python applications in isolated environments.
 
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.

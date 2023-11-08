@@ -53,10 +53,9 @@ A single Plone installation is able to run many Plone sites.
     ```
 
 -   [Python](https://www.python.org/downloads/) 3.8, 3.9, 3.10 or 3.11 at the time of writing. Verify with the [Release notes](https://plone.org/download/releases/).
--   {pipx}`pipx`
--   {term}`Cookiecutter`
+-   {term}`pipx`
 -   {term}`nvm`
--   {term}`Node.js` LTS
+-   {term}`Node.js` LTS 18.x
 -   {term}`Yeoman`
 -   {term}`Yarn`
 -   {term}`GNU make`
@@ -69,7 +68,12 @@ A single Plone installation is able to run many Plone sites.
 Installing Python is beyond the scope of this documentation.
 However, it is recommended to use a Python version manager, [`pyenv`](https://github.com/pyenv/pyenv) that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
 
-Install {pipx}`pipx`.
+
+(install-prerequisites-pipx-label)=
+
+#### pipx
+
+Install {term}`pipx`.
 
 ```shell
 pip install pipx
@@ -77,9 +81,7 @@ pip install pipx
 
 (install-prerequisites-cookiecutter-label)=
 
-#### Cookiecutter
 
-Installation and upgrade is done below in {ref}`install-packages-install-label`.
 
 
 (install-prerequisites-nvm-label)=
@@ -128,7 +130,8 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish)
     This command also activates that version.
 
     ```shell
-    nvm install --lts
+    nvm install "lts/*"
+    nvm use 18
     ```
 
 2.  Verify that the supported version of Node.js is activated.
@@ -193,7 +196,7 @@ Use your favorite search engine or trusted online resource for how to update `ma
 
 ## Install Plone 6
 
-We install Plone 6 with {term}`pip` or {term}`pipx`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
+We install Plone 6 with {term}`pipx`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
 
 ```{note}
 We do not maintain documentation for installing Plone 6 or later with `buildout`.
@@ -208,8 +211,7 @@ mkdir my_project
 cd my_project
 ```
 
-Run `cookiecutter` to create a Plone project skeleton using the Cookiecutter {term}`cookiecutter-plone-starter` with the following command.
-This also updates cookiecutter.
+Issue the following command to install or update `cookiecutter`, then run it to create a Plone project skeleton using the Cookiecutter {term}`cookiecutter-plone-starter`.
 
 ```shell
 pipx run cookiecutter gh:collective/cookiecutter-plone-starter
