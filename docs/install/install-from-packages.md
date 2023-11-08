@@ -338,21 +338,8 @@ make install
 This will take a few minutes.
 ☕️
 First the backend, then the frontend will be installed.
-At the start of the frontend installation part, you might see a prompt.
 
-```console
-Need to install the following packages:
-  mrs-developer
-Ok to proceed? (y)
-``` 
-
-Hit the {kbd}`Enter` key to proceed and install `mrs-developer`.
-
-When the process completes successfully, it will exit with a message similar to the following.
-
-```console
-✨  Done in 98.97s.
-```
+When the process completes successfully, it will exit with no message.
 
 
 (install-packages-start-plone-label)=
