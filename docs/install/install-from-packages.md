@@ -60,7 +60,7 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
     If you get Plone to run on Windows alone, please feel free to document and share your process.
     ```
 
--   `Python`
+-   Python {SUPPORTED_PYTHON_VERSIONS}
 -   {term}`pipx`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 18.x
@@ -76,7 +76,7 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 
 Installing Python is beyond the scope of this documentation.
 However, it is recommended to use a Python version manager, {term}`pyenv` that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
-Plone supports the following Python versions: {SUPPORTED_PYTHON_VERSIONS}.
+Plone requires Python version {SUPPORTED_PYTHON_VERSIONS}.
 
 
 (install-prerequisites-pipx-label)=
@@ -339,7 +339,8 @@ This will take a few minutes.
 ☕️
 First the backend, then the frontend will be installed.
 
-When the process completes successfully, it will exit with no message.
+
+If mrs-developer is already installed, when the process completes successfully, it will exit with no message.
 
 
 (install-packages-start-plone-label)=
