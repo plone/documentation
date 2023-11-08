@@ -198,6 +198,14 @@ Finally, it is a good idea to update your system's version of `make`, because so
 Use your favorite search engine or trusted online resource for how to update `make`.
 
 
+(install-prerequisites-docker-label)=
+
+#### Install Docker
+
+Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
+Docker Desktop includes all Docker tools.
+
+
 (install-packages-install-label)=
 
 ## Install Plone 6
@@ -341,6 +349,18 @@ First the backend, then the frontend will be installed.
 
 
 If mrs-developer is already installed, when the process completes successfully, it will exit with no message.
+
+At the start of the frontend installation part, you might see a prompt.
+
+```console
+Need to install the following packages:
+  mrs-developer
+Ok to proceed? (y)
+``` 
+
+Hit the {kbd}`Enter` key to proceed and install `mrs-developer`.
+
+When the process completes successfully, it will exit with no message.
 
 
 (install-packages-start-plone-label)=
