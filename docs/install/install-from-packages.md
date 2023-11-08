@@ -89,10 +89,6 @@ Install {term}`pipx`.
 pip install pipx
 ```
 
-(install-prerequisites-cookiecutter-label)=
-
-
-
 
 (install-prerequisites-nvm-label)=
 
