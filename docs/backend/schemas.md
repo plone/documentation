@@ -224,10 +224,10 @@ Note this won't have behavior fields added to it at this stage, only the fields 
 With `plone.autoform` and `plone.supermodel` we can use directives to add information to the schema fields.
 
 
-### Omitting fields
+### Omit fields
 
 A field can be omitted entirely from all forms, or from some forms, using the `omitted` and `no_omit` directives.
-In this example, the `dummy` field is omitted from all forms, and the `edit_only` field is omitted from all forms except those that provide the IEditForm interface:
+In this example, the `dummy` field is omitted from all forms, and the `edit_only` field is omitted from all forms except those that provide the `IEditForm` interface:
 
 ```{code-block} python
 :emphasize-lines: 7,12,13
@@ -239,15 +239,15 @@ from plone.autoform import directives as form
 
 class IMySchema(model.Schema):
 
-    form.omitted('dummy')
+    form.omitted("dummy")
     dummy = schema.Text(
         title=u"Dummy"
         )
 
-    form.omitted('edit_only')
-    form.no_omit(IEditForm, 'edit_only')
+    form.omitted("edit_only")
+    form.no_omit(IEditForm, "edit_only")
     edit_only = schema.TextLine(
-        title = u'Only included on edit forms',
+        title = u"Only included on edit forms",
         )
 ```
 
@@ -272,7 +272,7 @@ In supermodel XML, this can be specified as:
 `form:omitted` may be either a single boolean value, or a space-separated list of form_interface:boolean pairs.
 
 
-### Re-ordering fields
+### Reorder fields
 
 A field's position in the form can be influenced using the `order_before` and `order_after` directives.
 In this example, the `not_last` field is placed before the `summary` field even though it is defined afterward:
@@ -292,15 +292,15 @@ class IMySchema(model.Schema):
         readonly=True
         )
 
-    form.order_before(not_last='summary')
+    form.order_before(not_last="summary")
     not_last = schema.TextLine(
         title=u"Not last",
         )
 ```
 
-The value passed to the directive may be either '*' (indicating before or after all fields) or the name of another field.
-Use `'.fieldname'` to refer to field in the current schema or a base schema.
-Prefix with the schema name (e.g. `'IDublinCore.title'`) to refer to a field in another schema.
+The value passed to the directive may be either `*` (indicating before or after all fields) or the name of another field.
+Use `.fieldname` to refer to field in the current schema or a base schema.
+Prefix with the schema name (e.g. `IDublinCore.title`) to refer to a field in another schema.
 Use an unprefixed name to refer to a field in the current or the default schema for the form.
 
 In supermodel XML, the directives are called `form:before` and `form:after`.
@@ -345,7 +345,7 @@ class IMySchema(model.Schema):
         )
 ```
 
-In supermodel XML fieldsets are specified by grouping fields within a `<fieldset>` tag:
+In supermodel XML, fieldsets are specified by grouping fields within a `<fieldset>` tag:
 
 ```xml
 <fieldset name="extra" label="Extra info">

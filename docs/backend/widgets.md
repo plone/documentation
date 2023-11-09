@@ -65,7 +65,7 @@ The main widgets are:
 
 (backend-widgets-fields-display-label)=
 
-## Changing a field's display mode
+## Change a field's display mode
 
 A field's widget can be displayed in several modes:
 
@@ -91,8 +91,8 @@ from plone.autoform import directives as form
 
 class IMySchema(model.Schema):
 
-    form.mode(secret='hidden')
-    form.mode(IEditForm, secret='input')
+    form.mode(secret="hidden")
+    form.mode(IEditForm, secret="input")
     secret = schema.TextLine(
         title=u"Secret",
         default=u"Secret stuff (except on edit forms)"
@@ -132,7 +132,7 @@ In other words, `form:mode` may be either a single mode, or a space-separated li
 
 (backend-widgets-fields-widget-label)=
 
-## Changing a field's widget
+## Change a field's widget
 
 You can change the widget that you use for a field in several ways.
 This section describes these methods.

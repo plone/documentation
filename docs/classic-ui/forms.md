@@ -131,9 +131,15 @@ See the corresponding chapters to learn how to control field and widget presenta
 
 ```{seealso}
 {ref}`Field permission <backend-fields-schema-label>`
+```
+```{seealso}
 {ref}`Ordering, omitting, grouping <backend-schemas-directives-label>`
-{ref}`Changing a field's display mode <backend-widgets-fields-display-label)>`
-{ref}`Changing a field's widget <backend-widgets-fields-widget-label)>`
+```
+```{seealso}
+{ref}`Changing a field's display mode <backend-widgets-fields-display-label>`
+```
+```{seealso}
+{ref}`Changing a field's widget <backend-widgets-fields-widget-label>`
 ```
 
 
