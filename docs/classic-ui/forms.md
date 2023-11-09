@@ -162,7 +162,7 @@ Instead, either implement the `render()` method, set an `index` attribute to a p
 In the template, you can use the following variables:
 
 -   `view/w` is a dictionary of all widgets, including those from non-default fieldsets (by contrast, the `widgets` variable contains only those widgets in the default fieldset). The keys are the field names, and the values are widget instances. To render a widget (in display mode), you can do `tal:replace="structure view/w/myfield/render" />`.
--   `view/fieldsets` is a dictionary of all fieldsets (not including the default fieldset, i.e. those widgets not placed into a fieldset). They keys are the fieldset names, and the values are the fieldset form instances, which in turn have variables like `widgets` given a list of all widgets.
+-   `view/fieldsets` is a dictionary of all fieldsets (not including the default fieldset, in other words, those widgets not placed into a fieldset. The keys are the fieldset names, and the values are the fieldset form instances, which in turn have variables like `widgets` given a list of all widgets.
 
 
 (classic-ui-forms-dexterity-add-edit-forms-label)=
