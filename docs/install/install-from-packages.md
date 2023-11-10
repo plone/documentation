@@ -63,7 +63,7 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 -   Python {SUPPORTED_PYTHON_VERSIONS}
 -   {term}`pipx`
 -   {term}`nvm`
--   {term}`Node.js` LTS 18.x
+-   {term}`Node.js` LTS 20.x
 -   {term}`Yeoman`
 -   {term}`Yarn`
 -   {term}`GNU make`
@@ -133,11 +133,11 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish)
 #### Node.js
 
 1.  Install or update the supported LTS version of Node.js.
-    This command also activates that version.
+1.  Install or update the supported LTS versions of Node.js, then activate the version supported in Volto.
 
     ```shell
     nvm install "lts/*"
-    nvm use 18
+    nvm use 20
     ```
 
 2.  Verify that the supported version of Node.js is activated.
