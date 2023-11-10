@@ -347,19 +347,6 @@ This will take a few minutes.
 ☕️
 First the backend, then the frontend will be installed.
 
-
-If mrs-developer is already installed, when the process completes successfully, it will exit with no message.
-
-At the start of the frontend installation part, you might see a prompt.
-
-```console
-Need to install the following packages:
-  mrs-developer
-Ok to proceed? (y)
-``` 
-
-Hit the {kbd}`Enter` key to proceed and install `mrs-developer`.
-
 When the process completes successfully, it will exit with no message.
 
 
