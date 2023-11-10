@@ -29,7 +29,6 @@ Plone 6 has both hardware requirements and software pre-requisites.
 The hardware requirements below give a rough estimate of the minimum hardware setup needed for a Plone server.
 
 A single Plone installation is able to run many Plone sites.
-You may host multiple Plone sites on the same server.
 
 -   Installation of the Plone backend and Classic UI frontend requires a minimum of 256 MB of RAM and 2GB of disk swap space.
 -   Installation of the Volto frontend requires a minimum of 2GB of RAM.
@@ -41,9 +40,7 @@ You may host multiple Plone sites on the same server.
 
 ````{warning}
 {term}`Add-on` products and caching solutions may also increase RAM and disk swap space requirements.
-
 To avoid RAM and disk swap limitations, we recommend either temporarily resizing your remote machine to accommodate the build, or build your images locally and upload them to an image store, such as [Docker Hub](https://hub.docker.com/) or [GitHub Packages](https://github.com/features/packages).
-
 ```{seealso}
 [How much RAM is required to build a Volto front end?](https://community.plone.org/t/how-much-ram-is-required-to-build-a-volto-front-end/17949) and [Dealing with heap exhaustion while building Volto 17 on limited-RAM host](https://community.plone.org/t/dealing-with-heap-exhaustion-while-building-volto-17-on-limited-ram-host/18078).
 ```
@@ -54,7 +51,7 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 
 ### Pre-requisites for installation
 
--   An operating system that runs all the pre-requisites.
+-   An operating system that runs all the requirements mentioned above.
     Most UNIX-based operating systems are supported, including many Linux distributions, macOS, or {term}`Windows Subsystem for Linux` (WSL) on Windows.
     A UNIX-based operating system is recommended.
 
@@ -63,25 +60,14 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
     If you get Plone to run on Windows alone, please feel free to document and share your process.
     ```
 
--   [Python](https://www.python.org/downloads/) 3.8, 3.9, or 3.10.
--   {term}`Cookiecutter`
+-   Python {SUPPORTED_PYTHON_VERSIONS}
+-   {term}`pipx`
 -   {term}`nvm`
--   {term}`Node.js` LTS 16.x (see "Update" note)
+-   {term}`Node.js` LTS 20.x
 -   {term}`Yeoman`
 -   {term}`Yarn`
 -   {term}`GNU make`
 -   {term}`Docker`
-
-````{note}
-Update
-:   [Node.js 18 is in LTS state as of 2022-10-25](https://github.com/nodejs/release#release-schedule), and Node.js 16 is now in maintenance mode.
-    However, due to changes in internal SSL libraries, some Volto dependencies have been deprecated and need to be updated in order to continue working in Node.js 18, mainly [Webpack 4](https://github.com/webpack/webpack/issues/14532#issuecomment-947525539).
-    You can still use it, but Node.js should be run under a special flag: `NODE_OPTIONS=--openssl-legacy-provider`.
-
-    ```{seealso}
-    Volto's pull request, [Support Node 18](https://github.com/plone/volto/pull/3699).
-    ```
-````
 
 
 (install-prerequisites-python-label)=
@@ -89,17 +75,18 @@ Update
 #### Python
 
 Installing Python is beyond the scope of this documentation.
-However, it is recommended to use a Python version manager, [`pyenv`](https://github.com/pyenv/pyenv) that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
+However, it is recommended to use a Python version manager, {term}`pyenv` that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
+Plone requires Python version {SUPPORTED_PYTHON_VERSIONS}.
 
 
-(install-prerequisites-cookiecutter-label)=
+(install-prerequisites-pipx-label)=
 
-#### Cookiecutter
+#### pipx
 
-Install or upgrade {term}`Cookiecutter` in your user's Python:
+Install {term}`pipx`.
 
 ```shell
-pip install --user --upgrade cookiecutter
+pip install pipx
 ```
 
 
@@ -146,10 +133,11 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish)
 #### Node.js
 
 1.  Install or update the supported LTS version of Node.js.
-    This command also activates that version.
+1.  Install or update the supported LTS versions of Node.js, then activate the version supported in Volto.
 
     ```shell
-    nvm install 16
+    nvm install "lts/*"
+    nvm use 20
     ```
 
 2.  Verify that the supported version of Node.js is activated.
@@ -210,19 +198,19 @@ Finally, it is a good idea to update your system's version of `make`, because so
 Use your favorite search engine or trusted online resource for how to update `make`.
 
 
-(install-packages-install-label)=
-
+(install-prerequisites-docker-label)=
 
 #### Install Docker
 
 Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
-
 Docker Desktop includes all Docker tools.
 
 
+(install-packages-install-label)=
+
 ## Install Plone 6
 
-We install Plone 6 with {term}`pip`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
+We install Plone 6 with {term}`pipx`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
 
 ```{note}
 We do not maintain documentation for installing Plone 6 or later with `buildout`.
@@ -237,10 +225,10 @@ mkdir my_project
 cd my_project
 ```
 
-Run `cookiecutter` to create a Plone project skeleton using the Cookiecutter {term}`cookiecutter-plone-starter` with the following command.
+Issue the following command to install or update `cookiecutter`, then run it to create a Plone project skeleton using the Cookiecutter {term}`cookiecutter-plone-starter`.
 
 ```shell
-cookiecutter https://github.com/collective/cookiecutter-plone-starter
+pipx run cookiecutter gh:collective/cookiecutter-plone-starter
 ```
 
 You will be presented with a series of prompts.
@@ -248,53 +236,86 @@ You can accept the default values in square brackets (`[default-option]`) by hit
 For ease of documentation, we will use the default values.
 
 ```console
-You've downloaded <path-to-cookiecutter>/cookiecutter-plone-starter before. Is it okay to delete and re-download it? [yes]: 
-project_title [Project Title]: 
-project_slug [project-title]: 
-description [A new project using Plone 6.]: 
-author [Plone Foundation]: 
-email [collective@plone.org]: 
-python_package_name [project_title]: 
-plone_version [6.0.0]: 
-volto_version [16.5.0]: 
-volto_generator_version [6.2.0]: 
-Select language_code:
-1 - en
-2 - de
-3 - es
-4 - pt-br
-Choose from 1, 2, 3, 4 [1]: 
-github_organization [collective]: 
-Select container_registry:
-1 - Docker Hub
-2 - GitHub
-Choose from 1, 2 [1]: 
+% pipx run cookiecutter gh:collective/cookiecutter-plone-starter
+
+
+Cookiecutter Plone Starter 
 ================================================================================
-Project Title generation
-================================================================================
-Running sanity checks
-  - Python: ✓
-  - Node: ✓
-  - yo: ✓
-  - Docker: ✓
-  - git: ✓
+
+Sanity checks
+--------------------------------------------------------------------------------
+  [1/5] Python: ✓
+  [2/5] Node: ✓
+  [3/5] yo: ✓
+  [4/5] Docker: ✓
+  [5/5] git: ✓
+
+Project details
+--------------------------------------------------------------------------------
+
+  [1/19] Project Title (Project Title): Plone Conference Website 2070
+  [2/19] Project Description (A new project using Plone 6.): 
+  [3/19] Project Slug (Used for repository id) (plone-conference-website-2070): 
+  [4/19] Project URL (without protocol) (plone-conference-website-2070.example.com): 
+  [5/19] Author (Plone Foundation): Elli
+  [6/19] Author E-mail (collective@plone.org): elli@plone.org
+  [7/19] Python Package Name (plone_conference_website_2070): 
+  [8/19] Volto Addon Name (volto-plone-conference-website-2070): 
+  [9/19] Choose a Python Test Framework
+    1 - pytest
+    2 - unittest
+    Choose from [1/2] (1): 
+  [10/19] Plone Version (6.0.8): 
+  [11/19] Should we use Volto Alpha Versions? (No): yes
+  [12/19] Volto Version (18.0.0-alpha.1): 
+  [13/19] Volto Generator Version (8.0.0): 
+  [14/19] Language
+    1 - English
+    2 - Deutsch
+    3 - Español
+    4 - Português (Brasil)
+    5 - Nederlands
+    6 - Suomi
+    Choose from [1/2/3/4/5/6] (1): 
+  [15/19] GitHub Username or Organization (collective): ellizurigo
+  [16/19] Container Registry
+    1 - GitHub Container Registry
+    2 - Docker Hub
+    Choose from [1/2] (1): 
+  [17/19] Should we setup a caching server?
+    1 - Yes
+    2 - No
+    Choose from [1/2] (1): 2
+  [18/19] Add Ansible playbooks?
+    1 - Yes
+    2 - No
+    Choose from [1/2] (1): 
+  [19/19] Add GitHub Action to Deploy this project?
+    1 - Yes
+    2 - No
+    Choose from [1/2] (1): 
+
+Plone Conference Website 2070 generation
+--------------------------------------------------------------------------------
 
 Summary:
-  - Plone version: 6.0.0
-  - Volto version: 16.5.0
-  - Volto Generator version: 6.2.0
-  - Output folder: <path-to-project>/project-title
+  - Plone version: 6.0.8
+  - Volto version: 18.0.0-alpha.1
+  - Volto Generator version: 8.0.0
+  - Output folder: /Users/katjasuss/Desktop/_temp/scratch_cookiecutter_plone/plone-conference-website-2070
 
 Frontend codebase:
- - Installing @plone/generator-volto@6.2.0
- - Generate frontend application with @plone/volto 16.5.0
+ - Installing required npm packages
+ - Generate frontend application with @plone/volto 18.0.0-alpha.1
 
 Backend codebase
+ - Remove folder src/plone_conference_website_2070/src/plone_conference_website_2070/tests not used by pytest
  - Format generated code in the backend
+
 ================================================================================
 
-Project "Project Title" was generated
-
+Project "Plone Conference Website 2070" was generated
+--------------------------------------------------------------------------------
 Now, code it, create a git repository, push to your organization.
 
 Sorry for the convenience,
@@ -303,13 +324,13 @@ The Plone Community.
 ================================================================================
 ```
 
-Change to your project directory {file}`project-title`.
+Change to your project directory {file}`plone-conference-website-2070`.
 
 ```shell
-cd project-title
+cd plone-conference-website-2070
 ```
 
-Next we switch to using `make`.
+Next you switch to using `make`.
 To see all available commands and their descriptions, enter the following command.
 
 ```shell
@@ -325,21 +346,8 @@ make install
 This will take a few minutes.
 ☕️
 First the backend, then the frontend will be installed.
-At the start of the frontend installation part, you might see a prompt.
 
-```console
-Need to install the following packages:
-  mrs-developer
-Ok to proceed? (y)
-``` 
-
-Hit the {kbd}`Enter` key to proceed and install `mrs-developer`.
-
-When the process completes successfully, it will exit with a message similar to the following.
-
-```console
-✨  Done in 98.97s.
-```
+When the process completes successfully, it will exit with no message.
 
 
 (install-packages-start-plone-label)=
