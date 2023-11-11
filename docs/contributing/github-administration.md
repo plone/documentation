@@ -50,6 +50,6 @@ The following topics are in use.
 
 ## Manage topics
 
-To update the topics of a GitHub repository, go the the repository, i.e https://github.com/plone/plone.batching and click on the cog wheel on the `About` section on the right side of the screen.
+To update the topics of a GitHub repository, go to the repository's URL, such as https://github.com/plone/plone.batching, and click on the {guilabel}`gear icon` on the {guilabel}`About` section on the right side of the screen.
 
 On the modal that opens up, fill the topics on the `Topics` field.
