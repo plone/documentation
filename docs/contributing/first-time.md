@@ -13,7 +13,31 @@ myst:
 
 This chapter provides guidance to first-time contributors to Plone and all its projects and repositories under the Plone GitHub organization.
 
-It is assumed that the first-time contributor has already {doc}`installed Plone <../install/index>` on their development machine, has a GitHub account, and has basic knowledge of using git and GitHub.
+As a first-time contributor to Plone on GitHub, we expect that you have:
+ 
+-   {doc}`installed Plone <../install/index>` on your development machine
+-   worked on a Plone project, even if it is just for fun
+-   worked through some trainings, such as the recommended:
+    -   {doc}`training:mastering-plone/index`
+    -   {doc}`training:voltohandson/index`
+    -   {doc}`training:voltoaddons/index`
+    -   {doc}`training:volto_customization/index`
+    -   {doc}`training:plone-deployment/index`
+-   read the chapters of {doc}`/index` relevant to your contribution
+-   a sincere interest to contribute to Plone and become an ongoing contributing member of our organization
+-   a GitHub account
+-   basic knowledge of using git and GitHub
+
+```{warning}
+As a first-time contributor on GitHub, your expectations should align with ours, else you might feel disappointment or frustration.
+
+Plone has a very large and complex code base.
+It takes a significant amount of time to learn how to develop Plone.
+
+As members of the Plone organization, we volunteer our free time to develop Plone on GitHub.
+We do not offer support, training, or mentoring on GitHub.
+For free support, training, or mentoring, you should use the [Plone Community Forum](https://community.plone.org/) or participate in an [event](https://plone.org/news-and-events/events), and not use GitHub.
+```
 
 
 (first-time-requirements-label)=
@@ -57,13 +81,19 @@ Learn from their mistakes, and don't commit them yourself.
     Pull requests will be reviewed in the order received.
     Duplicate pull requests may be ignored and closed without comment by the privileged GitHub teams.
 
+3.  **Don't create and close multiple pull requests for the same issue.**
+    GitHub should not be used as a place to test your contribution.
+    It makes it impossible for reviewers to provide feedback to your contribution in one place.
+    It also sends notifications to hundreds of developers, informing them that you have not read this guide, and annoying many of them.
+    You should instead learn how to {ref}`work-with-github-issues-label` and {ref}`run tests and code quality checks locally <test-and-code-quality-label>`.
+
 
 (plone-contributors-team-label)=
 
 ### Plone Contributors Team
 
 The Plone GitHub organization uses GitHub Teams to grant groups of GitHub users appropriate access to its repositories.
-New users, including GSoC applicants, are assigned to the [Contributors](https://github.com/orgs/plone/teams/contributors) Team within a few days after they have signed and returned the {ref}`Plone Contributor Agreement <contributing-sign-and-return-the-plone-contributor-agreement-label>`.
+New users, including GSoC applicants, are assigned to the [Contributors](https://github.com/orgs/plone/teams/contributors) Team within a few business days after they have signed and returned the {ref}`Plone Contributor Agreement <contributing-sign-and-return-the-plone-contributor-agreement-label>`.
 New contributors should wait for confirmation that they have been added to this team before creating a pull request to a Plone project.
 
 
@@ -84,8 +114,11 @@ Please don't be "that person".
 ### Work with GitHub issues
 
 1.  **Find issues that you want to work on.**
+    You can filter GitHub issues by labels.
     Working on documentation or on issues labeled with either `33 needs: docs` or `41 lvl: easy` are the two best ways for first-time contributors to contribute.
     This is because first-timers have a fresh perspective that might be overlooked by old-timers.
+    Issues labeled `42 lvl: moderate`, `43 lvl: complex`, or `03 type: feature (plip)` are not suitable for first-timers because of their complexity.
+    Issues with these labels may take weeks to complete.
 1.  **Discuss whether you should perform any work.**
     First see {ref}`Avoid duplicate effort <mistake-2-label>`.
     Next, any discussion method listed below is acceptable, and they are listed in the order of most likely to get a response.
@@ -106,6 +139,20 @@ After you have satisfied the above steps and have clear direction on how to proc
 
 ### Set up your environment
 
+As a member of the Plone Contributors Team, you do not have write access to push commits to GitHub repositories under the Plone organization.
+You can push commits to your fork.
+Thus a typical workflow will be circular in nature.
+You will pull code from the upstream Plone repository, push your work from your local clone to your remote fork, then make a pull request from your fork to the upstream Plone repository.
+
+````{card}
+```{image} /_static/contributing/first-time-plone-git-workflow.svg
+:alt: Plone git workflow
+:target: /_static/contributing/first-time-plone-git-workflow.svg
+```
++++
+_Plone git workflow_
+````
+
 1.  Start by [forking the project's repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account through the GitHub interface.
 1.  [Clone your forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
 1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
@@ -117,18 +164,20 @@ After you have satisfied the above steps and have clear direction on how to proc
 
 Once you have your environment set up, then you can follow standard best practices for working with git.
 
-Always start by checking out the default branch, usually `main` or `master`, then update the default branch.
+In the following command examples, we will use `main` as the default branch, although `master` may still be in use for some repositories.
+
+Always start by checking out the default branch then update the default branch.
 
 ```shell
 git checkout main
 git pull
 ```
 
-Then create a new branch from the default branch, and check it out to work on it.
+Then create a new branch from the default branch, tracking the upstream Plone repository, and check it out to work on it.
 We recommend using a branch name that includes the issue number and is descriptive of what it resolves.
 
 ```shell
-git switch -c branch_name
+git switch -c my-branch-name -t upstream/main
 ```
 
 Now you can edit your code without affecting the default branch.
@@ -147,7 +196,9 @@ We ask for your patience as we work through complex automated workflows that nee
 Follow the project's testing and code quality policies.
 Most projects have a test suite and code quality checkers and formatters.
 We strongly recommend that you run the project's test suite and code quality checks locally before proceeding.
-This will save you and reviewers a lot of time and frustration.
+Do not depend upon our continuous integration and GitHub Workflows to run these checks for you.
+Every commit you push sends an email notification to repository subscribers.
+This will save you, members, and reviewers a lot of time and frustration.
 
 A bug fix or new feature should have a test that ensures that it works as intended.
 
@@ -163,20 +214,33 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
     ```shell
     git add <files>
     git commit -m "My commit message"
-    git push
+    git push -u origin my-branch-name
     ```
 
 1.  Visit your fork of the Plone repository on GitHub, and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) against the development branch.
-    -   Make your title and description descriptive.
-        Don't be lazy with "Fixes bug" or other useless drivel.
-    -   To automatically close the original issue when your pull request is merged, include "Closes #issue_number" in your description.
+    -   Make both your title and description descriptive.
+        Reviewers look at many pull requests, and need to quickly understand the context.
+        A lazily written phrase such as "Fixes bug" is meaningless.
+    -   Include "Fixes #" and the related issue number in the description.
+        This enables automatic closing of the related issue when the pull request is merged.
         This also creates a hyperlink to the original issue for easy reference.
 1.  [Request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.
 1.  Members who subscribe to the repository will receive a notification and review your request.
 
-```{todo}
-Provide instructions when the contributor needs to update their pull request with changes from the default branch.
-Members of Contributors do not have the button "Update branch" to easily do this, and must use git foo to manage the situation.
+
+(update-your-pull-request-from-your-fork-label)=
+
+### Update your pull request from your fork
+
+Often another pull request will get merged before yours, and your pull request will fall behind the main branch.
+To keep your pull request current, you can issue the following git commands, assuming you have already checked out the branch for the pull request that you want to update.
+These commands will only work if you have {ref}`set-up-your-environment-label` as mentioned above.
+
+```shell
+# Assume `main` is the main branch.
+git fetch upstream
+git merge upstream/main  # You might need to resolve conflicts here.
+git push
 ```
 
 Welcome to the Plone community, and thank you for contributing!
