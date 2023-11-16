@@ -75,6 +75,13 @@ pip
     pip is the package installer for Python.
     See [tool recommendations](https://packaging.python.org/en/latest/guides/tool-recommendations/) for more information.
 
+pipx
+    [pipx](https://pypi.org/project/pipx/) allows you to install and run Python applications in isolated environments.
+
+pyenv
+    Python version management.
+    [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. 
+
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 
