@@ -132,7 +132,6 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish)
 
 #### Node.js
 
-1.  Install or update the supported LTS version of Node.js.
 1.  Install or update the supported LTS versions of Node.js, then activate the version supported in Volto.
 
     ```shell
