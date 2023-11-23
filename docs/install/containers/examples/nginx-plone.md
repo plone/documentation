@@ -35,27 +35,33 @@ Add a `default.conf` that will be used by the nginx image:
 
 ```nginx
 upstream backend {
-  server backend:8080;
+    server backend:8080;
 }
 
 server {
-  listen 80  default_server;
-  server_name  plone.localhost;
+    listen 80 default_server;
+    server_name plone.localhost;
 
-  location ~ / {
-      proxy_set_header        Host $host;
-      proxy_set_header        X-Real-IP $remote_addr;
-      proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-      proxy_set_header        X-Forwarded-Proto $scheme;
-      proxy_redirect http:// https://;
-      proxy_pass http://backend;
-  }
+    location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect http:// https://;
+        if (!-f $request_filename) {
+            rewrite ^/(.*)$ /VirtualHostBase/http/plone.localhost:80/Plone/VirtualHostRoot/$1;
+        }
+    }
+
+    location /VirtualHostBase/ {
+        proxy_pass http://backend;
+    }
 }
 ```
 
 ```{note}
 `http://plone.localhost/` is the URL you will be using to access the website.
-You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
+You can either use `plone.localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
 ```
 
 ### Service configuration with Docker Compose
@@ -103,7 +109,7 @@ This pulls the needed images and starts Plone.
 
 ## Access Plone via Browser
 
-After startup, go to `http://plone.localhost/` and you should see the site.
+After startup, go to `http://plone.localhost/` and you should see the site. You can also open the main Plone control page where you can create more Plone sites at `http://plone.localhost:8080`.
 
 
 ## Shutdown and cleanup
