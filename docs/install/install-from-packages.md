@@ -184,6 +184,8 @@ Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
     yarn set version 3.x
     ```
 
+    If the version doesn't change try deleting the yarn.lock file and set the version again.
+
 
 (install-prerequisites-make-label)=
 
