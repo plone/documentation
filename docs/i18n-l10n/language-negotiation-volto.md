@@ -21,7 +21,7 @@ Then you need to add the list of supported languages to the `supportedLanguages`
 
 As a last thing, you need to set your site's `defaultLanguage` to one of the `supportedLanguages`.
 
-When all these settings are configured, Volto's [`MultilingualRedirector`](https://github.com/plone/volto/blob/main/src/components/theme/MultilingualRedirector/MultilingualRedirector.jsx) will handle the language negotiation and the redirect.
+When all these settings are configured, Volto's [`MultilingualRedirector`](https://github.com/plone/volto/blob/main/packages/volto/src/components/theme/MultilingualRedirector/MultilingualRedirector.jsx) will handle the language negotiation and the redirect.
 
 In its configuration, the component tries to match the `I18N_LANGUAGE` cookie set in the user's browser with the list of supported languages, and if the match does not succeed, it selects the default language configured in Volto.
 
