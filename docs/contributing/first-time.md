@@ -227,8 +227,8 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
 1.  **Request a review.**
     Identify who you should ask by either checking the history of the files you edit, or viewing the project's list of contributors for an active member.
     If you have write access to the repository, [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.
-    If you do not have write access, instead add a comment and mention maintainers of the project, tagging them with `@username`.
-    You can find maintainers by visiting 
+    If you do not have write access, instead add a comment and mention a few active contributors of the project, tagging them with `@username`.
+    You can find them by either checking the files' history via `git blame` or visiting the project's {guilabel}`Contributors` page on GitHub.
 1.  Members who subscribe to the repository will receive a notification and review your request.
     They will usually provide feedback within a week.
 
