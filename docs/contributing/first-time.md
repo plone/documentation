@@ -217,15 +217,20 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
     git push -u origin my-branch-name
     ```
 
-1.  Visit your fork of the Plone repository on GitHub, and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) against the development branch.
+1.  Visit your fork of the Plone repository on GitHub, and [**create a pull request**](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) against the development branch.
     -   Make both your title and description descriptive.
         Reviewers look at many pull requests, and need to quickly understand the context.
         A lazily written phrase such as "Fixes bug" is meaningless.
     -   Include "Fixes #" and the related issue number in the description.
         This enables automatic closing of the related issue when the pull request is merged.
         This also creates a hyperlink to the original issue for easy reference.
-1.  [Request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.
+1.  **Request a review.**
+    Identify who you should ask by either checking the history of the files you edit, or viewing the project's list of contributors for an active member.
+    If you have write access to the repository, [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.
+    If you do not have write access, instead add a comment and mention maintainers of the project, tagging them with `@username`.
+    You can find maintainers by visiting 
 1.  Members who subscribe to the repository will receive a notification and review your request.
+    They will usually provide feedback within a week.
 
 
 (update-your-pull-request-from-your-fork-label)=
