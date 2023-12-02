@@ -5,6 +5,9 @@ on:
     branches:
       - "6.0"
 
+env:
+  node-version: 20.x
+
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
@@ -35,31 +38,35 @@ jobs:
       - name: Prepare deploy
         run: make deploy
 
-      # node setup
-      - name: Use Node.js 16
+      - name: Use Node.js ${{ env.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-      - name: Install Yarn
-        run: npm install -g yarn
-      # node cache
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        working-directory: submodules/volto
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
-      - uses: actions/cache@v3
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+          node-version: ${{ env.node-version }}
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-pnpm-store-
 
       - name: StoryBook build
+        working-directory: submodules/volto
         run: |
-          cd submodules/volto 
-          yarn install --immutable 
-          yarn build-storybook -o ../../_build/html/storybook
+          pnpm i
+          make storybook-build
 
       - name: Deploy to server
         id: deploy
