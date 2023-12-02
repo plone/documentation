@@ -63,11 +63,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: StoryBook build
-        working-directory: submodules/volto
-        run: |
-          pnpm i
-          pnpm build:registry
-          make storybook-build
+        run: make storybook
 
       - name: Deploy to server
         id: deploy
