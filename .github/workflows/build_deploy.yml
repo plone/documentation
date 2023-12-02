@@ -62,11 +62,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-#      - name: StoryBook build
-#        working-directory: submodules/volto
-#        run: |
-#          pnpm i
-#          make storybook-build
+      - name: StoryBook build
+        working-directory: submodules/volto
+        run: |
+          pnpm i
+          pnpm build:registry
+          make storybook-build
 
       - name: Deploy to server
         id: deploy
