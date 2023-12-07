@@ -30,33 +30,6 @@ A more recent Python is preferred.
 Use your system's package manager or [pyenv](https://github.com/pyenv/pyenv) to install an appropriate version of Python.
 
 
-(setup-build-installation-vale-label)=
-
-### Vale
-
-Vale is a linter for narrative text.
-It checks spelling, English grammar, and style guides.
-Plone documentation uses a custom spelling dictionary, with accepted and rejected spellings in `styles/Vocab/Plone`.
-
-Use your operating system's package manager to [install Vale](https://vale.sh/docs/vale-cli/installation/).
-
-Vale also has [integrations](https://vale.sh/docs/integrations/guide/) with various IDEs.
-
--   [JetBrains](https://vale.sh/docs/integrations/jetbrains/)
--   [Vim](https://github.com/dense-analysis/ale)
--   [VS Code](https://github.com/errata-ai/vale-vscode)
-
-Plone documentation uses a file located at the root of the repository, `.vale.ini`, to configure Vale.
-This file allows overriding rules or changing their severity.
-
-The Plone Documentation Team selected the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/) for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences. 
-
-```{note}
-More corrections to spellings and Vale's configuration are welcome by submitting a pull request.
-This is an easy way to become a contributor to Plone.
-```
-
-
 (setup-build-installation-graphviz-label)=
 
 ### Graphviz

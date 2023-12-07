@@ -16,3 +16,4 @@ sphinxcontrib.httpdomain  # plone.restapi
 sphinxcontrib.httpexample  # plone.restapi
 sphinxcontrib-video
 sphinxext-opengraph
+vale
