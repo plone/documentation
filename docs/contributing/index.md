@@ -93,19 +93,26 @@ A package configures the types it allows in a file `towncrier.toml` located at t
 The content of this file must include the following.
 
 -   A brief message that summarizes the changes in your contribution.
-    -   Use a narrative format, in the past tense, proper English spelling and grammar, complete sentences, and inline markup as needed.
-    -   If you fix a bug, write what was broken and is now fixed.
-    -   If you add or change a feature, write a summary of previous behavior and what it does now.
 -   An attribution to yourself, in the format of `@github_username`.
 
 ```{important}
 These change log entries become narrative documentation.
 ```
 
+You can write good change log entries with the following guidance.
+
+-   Use a narrative format, in the past tense, proper English spelling and grammar, and inline markup as needed.
+-   Write your change log entry for its appropriate audience.
+    -   Most entries should address _users_ of the software.
+    -   An entry for a change to a public API should address _developers_.
+-   If you fix a bug, write what was broken and is now fixed.
+-   If you add or change a feature or public API, write a summary of previous behavior, what it does now, and how to use it.
+-   Refer to narrative documentation as needed.
+
 The following text is an example of a good change log entry, placed inside {file}`/news/4470.documentation`.
 
 ```text
-Changed from links to inline literals in `CHANGELOG.md` to fix linkcheckbroken. @stevepiercy
+Changed a few broken links in `CHANGELOG.md` from URLs to inline literals to avoid errors when validating links. See https://6.docs.plone.org/volto/contributing/documentation.html#docs-linkcheckbroken for usage. @stevepiercy
 ```
 
 The following would be a poor change log entry.
