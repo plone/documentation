@@ -108,7 +108,7 @@ The following text is an example of a good change log entry, placed inside {file
 Changed from links to inline literals in `CHANGELOG.md` to fix linkcheckbroken. @stevepiercy
 ```
 
-This would be a poor change log entry.
+The following would be a poor change log entry.
 
 ```text
 Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_guide]
