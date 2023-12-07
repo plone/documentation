@@ -93,13 +93,27 @@ A package configures the types it allows in a file `towncrier.toml` located at t
 The content of this file must include the following.
 
 -   A brief message that summarizes the changes in your contribution.
+    -   Use a narrative format, in the past tense, proper English spelling and grammar, complete sentences, and inline markup as needed.
+    -   If you fix a bug, write what was broken and is now fixed.
+    -   If you add or change a feature, write a summary of previous behavior and what it does now.
 -   An attribution to yourself, in the format of `@github_username`.
 
-The following text is an example change log entry, placed inside {file}`/news/4569.documentation`.
+```{important}
+These change log entries become narrative documentation.
+```
+
+The following text is an example of a good change log entry, placed inside {file}`/news/4470.documentation`.
 
 ```text
-Fixed broken links for ReactJS.org. @stevepiercy
+Changed from links to inline literals in `CHANGELOG.md` to fix linkcheckbroken. @stevepiercy
 ```
+
+This would be a poor change log entry.
+
+```text
+Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_guide]
+```
+
 
 (contributing-project-configuration-files-label)=
 
