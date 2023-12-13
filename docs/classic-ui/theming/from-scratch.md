@@ -66,6 +66,8 @@ prefix = /++theme++plonetheme.munich
 doctype = <!DOCTYPE html>
 ```
 
+(classic-ui-from-scratch-bundle-registration-label)
+
 ### Bundle registration
 
 ```xml
@@ -199,7 +201,7 @@ Run the compilation:
 yarn run css-compile-main
 ```
 
-Finally, register the [CSS as a bundle](#bundle-registration).
+Finally, register the bundle: {ref}`classic-ui-from-scratch-bundle-registration-label`.
 
 With this, you will save yourself quite some work on styling the toolbar, the add/edit forms and controlpanels,
 while keeping the rest of your theming on your own.
