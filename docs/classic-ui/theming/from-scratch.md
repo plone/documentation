@@ -66,7 +66,7 @@ prefix = /++theme++plonetheme.munich
 doctype = <!DOCTYPE html>
 ```
 
-(classic-ui-from-scratch-bundle-registration-label)
+(classic-ui-from-scratch-bundle-registration-label)=
 
 ### Bundle registration
 
