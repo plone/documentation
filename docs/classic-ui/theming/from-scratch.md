@@ -171,9 +171,10 @@ $plone-toolbar-top-height: calc($spacer * 2.5);
 @import "@plone/plonetheme-barceloneta-base/scss/forms";
 ```
 
-!!! tip
-    See all the [barceloneta SCSS files](https://github.com/plone/plonetheme.barceloneta/tree/master/scss)
-    that are available and import the ones that you want to use.
+```{tip}
+See all the [barceloneta SCSS files](https://github.com/plone/plonetheme.barceloneta/tree/master/scss)
+that are available and import the ones that you want to use.
+```
 
 Add `@plone/plonetheme-barceloneta-base` as a dependency:
 
@@ -187,10 +188,11 @@ Add a script on `package.json` to compile the CSS:
   "css-compile-main": "sass --load-path=node_modules --style expanded --source-map --embed-sources --no-error-css plone.scss:../static/plone.css"
 ```
 
-!!! tip
-    Look at [plonetheme.barcelonta package.json](https://github.com/plone/plonetheme.barceloneta/blob/master/package.json)
-    for a few more scripts to prefix and minify your CSS to get a production ready bundle.
-
+```{tip}
+Look at [plonetheme.barcelonta package.json](https://github.com/plone/plonetheme.barceloneta/blob/master/package.json)
+for a few more scripts to prefix and minify your CSS to get a production ready bundle.
+```
+    
 Run the compilation:
 
 ```shell
