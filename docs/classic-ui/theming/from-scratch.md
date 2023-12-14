@@ -122,89 +122,87 @@ yarn dist
 -   Tweak basic settings like rounded corners, shadows, and so on.
 -   Set custom fonts
 -   Define your own stuff
--   Import Boostrap (as basis)
+-   Import Bootstrap (as basis)
 
 
 #### Minimal backend styling
 
-When creating a theme from scratch, it still makes sense (and saves time) to reuse the barceloneta theme for:
+When you create a theme from scratch, it is convenient to reuse the Barceloneta theme for:
 
-- Plone toolbar
-- add/edit forms
-- control panels
+-   Plone toolbar
+-   add and edit forms
+-   control panels
 
-To be able to do so:
+To do so, follow this guide.
 
-- create a new CSS file on your theme like this:
+-   Create a new CSS file in your theme, such as the following.
 
-```scss
-// plone variables (used in toolbar)
-// Plone specific colors
-//colors
-$state-draft-color:                 #fab82a!default; // lime-yellow //draft is visible
-$state-pending-color:               #e2e721!default; // orange
-$state-private-color:               #c4183c!default; // red
-$state-internal-color:              #fab82a!default; // is draft
-$state-internally-published-color:  #883dfa!default; // is intranet
-$plone-link-color:                  #007bb1!default; //plone blue made slightly darker for wcag 2.0
-$spacer:                            1rem!default;
-
-// Toolbar
-$plone-toolbar-bg: rgba(0, 0, 0, 0.9);
-$plone-toolbar-submenu-bg: rgba(20, 20, 20, 0.95);
-$plone-toolbar-font-primary: "Roboto Condensed", sans-serif;
-$plone-toolbar-font-secondary: "Roboto", sans-serif;
-$plone-toolbar-separator-color: rgba(255, 255, 255, 0.17);
-$plone-toolbar-link: $plone-link-color;
-$plone-toolbar-text-color: rgba(255, 255, 255, 0.9);
-$plone-toolbar-submenu-text-color: #fff;
-$plone-toolbar-submenu-header-color: lighten(#000, 80%);
-
-$plone-toolbar-locked-color: var(--bs-warning); // is intranet
-
-$plone-toolbar-width: 220px;
-$plone-toolbar-width-collapsed: calc($spacer * 2.25);
-$plone-toolbar-top-height: calc($spacer * 2.5);
-
-@import "bootstrap/scss/bootstrap";
-
-@import "@plone/plonetheme-barceloneta-base/scss/toolbar";
-@import "@plone/plonetheme-barceloneta-base/scss/controlpanels";
-@import "@plone/plonetheme-barceloneta-base/scss/forms";
-```
-
-```{tip}
-See all the [barceloneta SCSS files](https://github.com/plone/plonetheme.barceloneta/tree/master/scss)
-that are available and import the ones that you want to use.
-```
-
-Add `@plone/plonetheme-barceloneta-base` as a dependency:
-
-```shell
-yarn add @plone/plonetheme-barceloneta-base
-```
-
-Add a script on `package.json` to compile the CSS:
-
-```json
-  "css-compile-main": "sass --load-path=node_modules --style expanded --source-map --embed-sources --no-error-css plone.scss:../static/plone.css"
-```
-
-```{tip}
-Look at [plonetheme.barcelonta package.json](https://github.com/plone/plonetheme.barceloneta/blob/master/package.json)
-for a few more scripts to prefix and minify your CSS to get a production ready bundle.
-```
+    ```scss
+    // plone variables (used in toolbar)
+    // Plone specific colors
+    //colors
+    $state-draft-color:                 #fab82a!default; // lime-yellow //draft is visible
+    $state-pending-color:               #e2e721!default; // orange
+    $state-private-color:               #c4183c!default; // red
+    $state-internal-color:              #fab82a!default; // is draft
+    $state-internally-published-color:  #883dfa!default; // is intranet
+    $plone-link-color:                  #007bb1!default; //plone blue made slightly darker for wcag 2.0
+    $spacer:                            1rem!default;
     
-Run the compilation:
+    // Toolbar
+    $plone-toolbar-bg: rgba(0, 0, 0, 0.9);
+    $plone-toolbar-submenu-bg: rgba(20, 20, 20, 0.95);
+    $plone-toolbar-font-primary: "Roboto Condensed", sans-serif;
+    $plone-toolbar-font-secondary: "Roboto", sans-serif;
+    $plone-toolbar-separator-color: rgba(255, 255, 255, 0.17);
+    $plone-toolbar-link: $plone-link-color;
+    $plone-toolbar-text-color: rgba(255, 255, 255, 0.9);
+    $plone-toolbar-submenu-text-color: #fff;
+    $plone-toolbar-submenu-header-color: lighten(#000, 80%);
+    
+    $plone-toolbar-locked-color: var(--bs-warning); // is intranet
+    
+    $plone-toolbar-width: 220px;
+    $plone-toolbar-width-collapsed: calc($spacer * 2.25);
+    $plone-toolbar-top-height: calc($spacer * 2.5);
+    
+    @import "bootstrap/scss/bootstrap";
+    
+    @import "@plone/plonetheme-barceloneta-base/scss/toolbar";
+    @import "@plone/plonetheme-barceloneta-base/scss/controlpanels";
+    @import "@plone/plonetheme-barceloneta-base/scss/forms";
+    ```
 
-```shell
-yarn run css-compile-main
-```
+    ```{tip}
+    See all the available [Barceloneta SCSS files](https://github.com/plone/plonetheme.barceloneta/tree/master/scss), and import the ones that you want to use.
+    ```
 
-Finally, register the bundle: {ref}`classic-ui-from-scratch-bundle-registration-label`.
+-   Add `@plone/plonetheme-barceloneta-base` as a dependency.
 
-With this, you will save yourself quite some work on styling the toolbar, the add/edit forms and controlpanels,
-while keeping the rest of your theming on your own.
+    ```shell
+    yarn add @plone/plonetheme-barceloneta-base
+    ```
+
+-   Add a script in {file}`package.json` to compile the CSS.
+
+    ```json
+      "css-compile-main": "sass --load-path=node_modules --style expanded --source-map --embed-sources --no-error-css plone.scss:../static/plone.css"
+    ```
+
+    ```{tip}
+    Look at [`plonetheme.barcelonta`'s {file}`package.json`](https://github.com/plone/plonetheme.barceloneta/blob/master/package.json) for a few more scripts that can prefix and minify your CSS and get a bundle for use in production.
+    ```
+
+-   Run the compilation.
+
+    ```shell
+    yarn run css-compile-main
+    ```
+
+-   Finally, {ref}`register the bundle <classic-ui-from-scratch-bundle-registration-label>`.
+
+With this guide, you will save yourself quite some work on styling the toolbar, the add and edit forms, and control panels, while keeping the rest of your theming separate.
+
 
 #### Templates
 
