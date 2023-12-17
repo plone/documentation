@@ -153,9 +153,9 @@ You will pull code from the upstream Plone repository, push your work from your 
 _Plone git workflow_
 ````
 
-1.  Start by [forking the project's repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account through the GitHub interface.
-1.  [Clone your forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
-1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
+1.  Start by [forking the project's repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) to your account through the GitHub interface.
+1.  [Clone your forked repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#cloning-your-forked-repository).
+1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
 
 
 (write-code-label)=
