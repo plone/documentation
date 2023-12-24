@@ -184,12 +184,13 @@ Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
 ```{include} ../volto/contributing/install-make.md
 ```
 
+
 (install-prerequisites-docker-label)=
 
 #### Install Docker
 
-Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
-Docker Desktop includes all Docker tools.
+```{include} ../volto/contributing/install-docker.md
+```
 
 
 (install-packages-install-label)=
