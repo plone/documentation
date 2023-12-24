@@ -671,4 +671,7 @@ intid
 WSL
 Windows Subsystem for Linux
     The [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, or Arch Linux) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
+
+pnpm
+    [pnpm](https://pnpm.io/) is a fast, disk space efficient package manager.
 ```
