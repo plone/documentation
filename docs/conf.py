@@ -127,7 +127,6 @@ exclude_patterns = [
     "plone.restapi/performance",
     "plone.restapi/src",
     "volto/contributing/branch-policy.md",
-    "volto/contributing/install-nvm.md",
     "volto/contributing/install-nodejs.md",
     "volto/contributing/install-make.md",
 ]
