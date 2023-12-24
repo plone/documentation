@@ -94,56 +94,16 @@ pip install pipx
 
 #### nvm
 
-The following terminal session commands use `bash` for the shell.
-Adapt them for your flavor of shell.
-
-```{seealso}
-See the [`nvm` install and update script documentation](https://github.com/nvm-sh/nvm#install--update-script).
-For the `fish` shell, see [`nvm.fish`](https://github.com/joxji/nvm.fish).
+```{include} ../volto/contributing/install-nvm.md
 ```
-
-1.  Create your shell profile, if it does not exist.
-
-    ```shell
-    touch ~/.bash_profile
-    ```
-
-2.  Download and run the `nvm` install and update script, and pipe it into `bash`.
-
-    ```shell
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v{NVM_VERSION}/install.sh | bash
-    ```
-
-3.  Source your profile.
-    Alternatively close the session and open a new one.
-
-    ```shell
-    source ~/.bash_profile
-    ```
-
-4.  Verify that the `nvm` version is that which you just installed or updated:
-
-    ```shell
-    nvm --version
-    ```
 
 
 (install-prerequisites-nodejs-label)=
 
 #### Node.js
 
-1.  Install or update the supported LTS versions of Node.js, then activate the version supported in Volto.
-
-    ```shell
-    nvm install "lts/*"
-    nvm use 20
-    ```
-
-2.  Verify that the supported version of Node.js is activated.
-
-    ```shell
-    node -v
-    ```
+```{include} ../volto/contributing/install-nodejs.md
+```
 
 
 (install-prerequisites-yeoman-label)=
@@ -185,25 +145,20 @@ Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
     ```
 
     If the version doesn't change, you can try deleting the {file}`yarn.lock` file, setting the version, and installing again.
+
     ```shell
     rm yarn.lock
     yarn set version 3.x
     yarn install
     ```
-    
 
 
 (install-prerequisites-make-label)=
 
 #### Make
 
-{term}`Make` comes installed on most Linux distributions.
-On macOS, you must first [install Xcode](https://developer.apple.com/xcode/resources/), then install its command line tools.
-On Windows, it is strongly recommended to [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install), which will include `make`.
-
-Finally, it is a good idea to update your system's version of `make`, because some distributions, especially macOS, have an outdated version.
-Use your favorite search engine or trusted online resource for how to update `make`.
-
+```{include} ../volto/contributing/install-make.md
+```
 
 (install-prerequisites-docker-label)=
 
