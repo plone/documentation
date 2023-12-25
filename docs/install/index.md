@@ -11,7 +11,9 @@ myst:
 
 # Install
 
-In this part of the documentation, you can find how to try Plone and how to choose an installation method if you want to develop in Plone.
+In this part of the documentation, you can find how to try Plone and how to choose an installation method for developing a project using Plone.
+
+For developing Plone and its packages as open source software contributions, see the package's contributing guide.
 
 
 (install-index-getting-started-label)=

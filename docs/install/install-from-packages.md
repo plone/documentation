@@ -51,14 +51,8 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 
 ### Pre-requisites for installation
 
--   An operating system that runs all the requirements mentioned above.
-    Most UNIX-based operating systems are supported, including many Linux distributions, macOS, or {term}`Windows Subsystem for Linux` (WSL) on Windows.
-    A UNIX-based operating system is recommended.
-
-    ```{important}
-    Windows alone is not recommended because it does not support {term}`GNU make`.
-    If you get Plone to run on Windows alone, please feel free to document and share your process.
-    ```
+```{include} ../volto/contributing/install-operating-system.md
+```
 
 -   Python {SUPPORTED_PYTHON_VERSIONS}
 -   {term}`pipx`
@@ -99,7 +93,7 @@ Adapt them for your flavor of shell.
 
 ```{seealso}
 See the [`nvm` install and update script documentation](https://github.com/nvm-sh/nvm#install--update-script).
-For the `fish` shell, see [`nvm.fish`](https://github.com/joxji/nvm.fish).
+For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish).
 ```
 
 1.  Create your shell profile, if it does not exist.
@@ -132,18 +126,8 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/joxji/nvm.fish).
 
 #### Node.js
 
-1.  Install or update the supported LTS versions of Node.js, then activate the version supported in Volto.
-
-    ```shell
-    nvm install "lts/*"
-    nvm use 20
-    ```
-
-2.  Verify that the supported version of Node.js is activated.
-
-    ```shell
-    node -v
-    ```
+```{include} ../volto/contributing/install-nodejs.md
+```
 
 
 (install-prerequisites-yeoman-label)=
@@ -185,32 +169,28 @@ Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
     ```
 
     If the version doesn't change, you can try deleting the {file}`yarn.lock` file, setting the version, and installing again.
+
     ```shell
     rm yarn.lock
     yarn set version 3.x
     yarn install
     ```
-    
 
 
 (install-prerequisites-make-label)=
 
 #### Make
 
-{term}`Make` comes installed on most Linux distributions.
-On macOS, you must first [install Xcode](https://developer.apple.com/xcode/resources/), then install its command line tools.
-On Windows, it is strongly recommended to [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install), which will include `make`.
-
-Finally, it is a good idea to update your system's version of `make`, because some distributions, especially macOS, have an outdated version.
-Use your favorite search engine or trusted online resource for how to update `make`.
+```{include} ../volto/contributing/install-make.md
+```
 
 
 (install-prerequisites-docker-label)=
 
 #### Install Docker
 
-Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
-Docker Desktop includes all Docker tools.
+```{include} ../volto/contributing/install-docker.md
+```
 
 
 (install-packages-install-label)=
