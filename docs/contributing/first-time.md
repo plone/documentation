@@ -90,6 +90,7 @@ Learn from their mistakes, and don't commit them yourself.
 4.  **Don't ask if an issue is open.**
     Instead you can determine whether an issue is open by doing your own research using the following tips.
 
+    -   Start Plone or its specific package, follow the steps to attempt to reproduce the issue, and see if it still exists.
     -   Check the issue's status indicator for a green label of {guilabel}`Open`.
     -   Look for linked open pull requests in the issue's history.
     -   Search open pull requests for the issue.
