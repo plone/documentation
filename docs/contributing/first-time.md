@@ -87,6 +87,18 @@ Learn from their mistakes, and don't commit them yourself.
     It also sends notifications to hundreds of developers, informing them that you have not read this guide, and annoying many of them.
     You should instead learn how to {ref}`work-with-github-issues-label` and {ref}`run tests and code quality checks locally <test-and-code-quality-label>`.
 
+4.  **Don't ask if an issue is open.**
+    Instead you can determine whether an issue is open by doing your own research using the following tips.
+
+    -   Check the issue's status indicator for a green label of {guilabel}`Open`.
+    -   Look for linked open pull requests in the issue's history.
+    -   Search open pull requests for the issue.
+        Sometimes contributors fail to link their pull request to an open issue.
+    -   Review unreleased change log entries in the package's {guilabel}`news` directory.
+        Each pull request must have a change log entry, and these entries end up here when pull requests are merged and closed.
+    -   Search release notes to see whether the issue has been resolved.
+        On rare occasions, contributors forget to close the original issue.
+
 
 (plone-contributors-team-label)=
 
@@ -221,9 +233,14 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
     -   Make both your title and description descriptive.
         Reviewers look at many pull requests, and need to quickly understand the context.
         A lazily written phrase such as "Fixes bug" is meaningless.
-    -   Include "Fixes #" and the related issue number in the description.
+    -   Include "Fixes #ISSUE-NUMBER" in the description.
         This enables automatic closing of the related issue when the pull request is merged.
         This also creates a hyperlink to the original issue for easy reference.
+        
+        ```{seealso}
+        [Linking a pull request to an issue using a keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
+        ```
+
 1.  **Request a review.**
     Identify who you should ask by either checking the history of the files you edit, or viewing the project's list of contributors for an active member.
     If you have write access to the repository, [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.
