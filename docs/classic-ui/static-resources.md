@@ -96,4 +96,10 @@ The following attributes are available for registering a static resource:
 
 ## Loading order of resources
 
+
+```{note}
+Some explanation is done here: {ref}`classic-ui-theming-from-scratch-theme-label`
+```
+
 `depends` is used to define the loading order of resources, by specifying the name of the depending bundle.
+

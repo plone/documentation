@@ -25,7 +25,9 @@ Theming based on a filesystem package without any dependency.
 -   No Diazo needed
 
 
-## Theme package
+(classic-ui-theming-from-scratch-package-label)=
+
+## Theme Package
 
 -   Create a theme package as explained here.
 -   Remove what you do not need
@@ -33,7 +35,9 @@ Theming based on a filesystem package without any dependency.
 -   Static files
 
 
-## Static files
+(classic-ui-theming-from-scratch-static-files-label)=
+
+## Static Files
 
 Register directory to keep static files
 
@@ -48,6 +52,9 @@ Directory: `src/plonetheme/munich/browser/static`
     directory="static"
     />
 ```
+
+
+(classic-ui-theming-from-scratch-theme-label)=
 
 ## Theme
 
