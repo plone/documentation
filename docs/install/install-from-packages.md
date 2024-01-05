@@ -222,6 +222,13 @@ You will be presented with a series of prompts.
 You can accept the default values in square brackets (`[default-option]`) by hitting the {kbd}`Enter` key, or enter your preferred values.
 For ease of documentation, we will use the default values.
 
+(avoid-plone-core-package-names)=
+
+```{important}
+For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6.0-latest/constraints.txt).
+Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the same package.
+```
+
 ```console
 % pipx run cookiecutter gh:collective/cookiecutter-plone-starter
 
@@ -335,6 +342,30 @@ This will take a few minutes.
 First the backend, then the frontend will be installed.
 
 When the process completes successfully, it will exit with no message.
+
+````{note}
+If you used a Plone core package name, then `make install` will return an error message such as the following.
+
+```console
+ERROR: Cannot install plone-volto 1.0.0a1 (from /home/username/projects/volto/plone-volto/backend/src/plone_volto) because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested plone-volto 1.0.0a1 (from /home/username/projects/volto/plone-volto/backend/src/plone_volto)
+    The user requested (constraint) plone-volto==4.2.0
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit 
+make[2]: *** [Makefile:112: build-dev] Error 1
+make[2]: Leaving directory '/home/username/projects/volto/plone-volto/backend'
+make[1]: *** [Makefile:46: install-backend] Error 2
+make[1]: Leaving directory '/home/username/projects/volto/plone-volto'
+```
+
+You must delete your project, {ref}`follow the important note <avoid-plone-core-package-names>`, and run the cookiecutter again.
+````
 
 
 (install-packages-start-plone-label)=
