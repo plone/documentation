@@ -11,58 +11,32 @@ myst:
 
 # Install
 
-In this part of the documentation, you can find how to try Plone and how to choose an installation method for developing a project using Plone.
-
-For developing Plone and its packages as open source software contributions, see the package's contributing guide.
+In this part of the documentation, you can find how to try Plone or how to install Plone to either Create a Plone project or Contribute to a Plone package.
 
 
 (install-index-getting-started-label)=
 
 ## Getting started
 
-::::{grid} 1 2 2 2
-:gutter: 1 1 1 2
+### Install
 
-:::{grid-item-card} {octicon}`browser;1.5em;sd-mr-1` Try a demo
+##### Try a demo
 
 Choose a version.
 
 -   [Plone 6 with Volto frontend](https://demo.plone.org/)
 -   [Plone 6 Classic UI (nightly build)](https://classic.demo.plone.org/login?came_from=/en)
+
+:::{card}
+:link: install-from-packages
+:link-type: any
+{octicon}`container;1.5em;sd-mr-1` [Create a project](install-from-packages)
 :::
 
-:::{grid-item-card} {octicon}`download;1.5em;sd-mr-1` Install
-
-Developers may choose to install Plone from either [the official container images](containers/index) or [packages](install-from-packages).
-+++
-Help me [choose an installation method](install-index-choose-installation-method-label).
-:::
-
-::::
-
-
-(install-index-choose-installation-method-label)=
 
 ## Choose an installation method
 
 Developers may choose to install Plone from either [the official container images](containers/index) or [packages](install-from-packages).
-
-
-### Containers
-
-The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
-They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
-Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
-
-The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
-
-This option is the quickest method to install and develop for Plone 6 and its packages.
-
-:::{card}
-:link: containers/index
-:link-type: any
-{octicon}`container;1.5em;sd-mr-1` [Use containers to install Plone](containers/index)
-:::
 
 
 ### Packages
@@ -86,7 +60,24 @@ This method takes longer than using containers.
 :::
 
 
-(install-index-system-requirements-label)=
+(install-index-system-requirements-label)=  
+
+### Containers
+
+The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
+They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
+Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
+
+The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
+
+This option is the quickest method to install and develop for Plone 6 and its packages.
+
+:::{card}
+:link: containers/index
+:link-type: any
+{octicon}`container;1.5em;sd-mr-1` [Use containers to install Plone](containers/index)
+:::
+
 
 ## System Requirements
 
@@ -100,7 +91,7 @@ System requirements depend upon your choice of installation method.
 :maxdepth: 2
 :hidden: true
 
-containers/index
 install-from-packages
 manage-add-ons-packages
+containers/index
 ```
