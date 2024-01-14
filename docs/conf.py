@@ -137,8 +137,6 @@ suppress_warnings = [
     "toc.not_readable",  # Suppress `WARNING: toctree contains reference to nonexisting document 'news*'`
 ]
 
-html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
-
 html_extra_path = [
     "robots.txt",
 ]
@@ -240,38 +238,38 @@ html_use_opensearch = "https://6.docs.plone.org"
 
 html_sidebars = {
     "**": [
-        "sidebar-logo.html",
-        "search-field.html",
-        "sbt-sidebar-nav.html",
+        "navbar-logo",
+        "search-button-field",
+        "sbt-sidebar-nav",
+        "version-switcher",
+        "ploneorg-link",
     ]
 }
 
+# The name for this set of Sphinx documents.  If None, it defaults to
+# "<project> v<release> documentation".
+html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
+
 html_theme_options = {
+    "logo": {
+        "text": html_title,
+    },
+    "article_header_start": ["toggle-primary-sidebar", "chapter-title"],
     "path_to_docs": "docs",
     "repository_url": "https://github.com/plone/documentation",
     "repository_branch": "main",
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
-    "search_bar_text": "Search",
     "switcher": {
         "json_url": "/_static/switcher.json",
         "version_match": version,
     },
-    "extra_navbar": """
-    <p class="ploneorglink">
-        <a href="https://plone.org">
-            <img src="/_static/logo.svg" alt="plone.org" /> plone.org</a>
-    </p>""",
     "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
     <p><a href="https://www.netlify.com">
   <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" alt="Deploys by Netlify" />
 </a></p>""",
 }
-
-# The name for this set of Sphinx documents.  If None, it defaults to
-# "<project> v<release> documentation".
-html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
 
 # If false, no index is generated.
 html_use_index = True

@@ -3,16 +3,3 @@
 {%- block htmltitle %}
 <title>{{ title|striptags|e }}{%- for parent in parents %} – {{ parent.title }}{%- endfor %}{{ titlesuffix }}</title>
 {%- endblock %}
-
-
-{% block footer %}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // Hide empty sub menu.
-            if ($.trim($(".sticky-top .bd-toc").html()) === "") {
-                $(".sticky-top .bd-toc").css("visibility", "hidden");
-            }
-        });
-    </script>
-
-{% endblock %}
