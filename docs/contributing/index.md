@@ -181,8 +181,8 @@ hidden: true
 
 first-time
 documentation/index
-../plone.api/contribute/index
-../plone.restapi/docs/source/contributing/index
-../volto/contributing/index
+plone-api
+plone-restapi
+volto
 github-administration
 ```
