@@ -8,7 +8,7 @@ myst:
 ---
 
 
-(install-packages-1-label)=
+(create-a-project-label)=
 
 # Create a project
  
