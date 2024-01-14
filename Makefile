@@ -196,8 +196,8 @@ linkcheckbroken: deps  ## Run linkcheck and show only broken links
 
 .PHONY: vale
 vale: deps  ## Run Vale style, grammar, and spell checks
-	vale sync
-	vale --no-wrap $(VALEFILES)
+	bin/vale sync
+	bin/vale --no-wrap $(VALEFILES)
 	@echo
 	@echo "Vale is finished; look for any errors in the above output."
 
@@ -239,7 +239,7 @@ netlify:
 
 .PHONY: storybook
 storybook:
-	cd submodules/volto && yarn && yarn build-storybook -o ../../_build/html/storybook
+	cd submodules/volto && pnpm i && pnpm build:registry && pnpm --filter @plone/volto build-storybook -o ../../../../_build/html/storybook
 
 .PHONY: all
 all: clean vale linkcheck html  ## Clean docs build, then run vale and linkcheck, and build html
