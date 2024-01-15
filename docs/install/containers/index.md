@@ -11,7 +11,14 @@ myst:
 
 # Containers
 
-Using containers is the easiest way to try out and deploy Plone 6.
+The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
+
+Using containers is the easiest way to deploy Plone 6.
+Containers may also be used when {doc}`creating a Plone project <../create-project>` and {doc}`contributing to Plone <plone:contributing/index>`.
+
+The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
+They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
+Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
 
 The community provides official images that could be used for standalone Plone installations.
 These images support a variety of installation options.
