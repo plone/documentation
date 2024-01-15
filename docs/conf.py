@@ -49,6 +49,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_reredirects",
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
@@ -217,6 +218,15 @@ ogp_custom_meta_tags = [
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
+
+
+# -- sphinx-reredirects configuration ----------------------------------
+# https://documatt.com/sphinx-reredirects/usage.html
+redirects = {
+    "contributing/plone-api": "/plone.api/contribute/index.html",
+    "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
+    "contributing/volto": "/volto/contributing/index.html",
+}
 
 
 # -- Options for HTML output -------------------------------------------------
