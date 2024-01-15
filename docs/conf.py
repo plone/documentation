@@ -226,6 +226,7 @@ redirects = {
     "contributing/plone-api": "/plone.api/contribute/index.html",
     "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
     "contributing/volto": "/volto/contributing/index.html",
+    "install/install-from-packages": "/install/create-project.html",
 }
 
 

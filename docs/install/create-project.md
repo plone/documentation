@@ -1,18 +1,20 @@
 ---
 myst:
   html_meta:
-    "description": "How to install Plone 6 from its packages."
-    "property=og:description": "How to install Plone 6 from its packages."
-    "property=og:title": "Install Plone from its packages"
-    "keywords": "Plone, Plone 6, install, pip, packages, source, cookiecutter"
+    "description": "Create a Plone project"
+    "property=og:description": "Create a Plone project"
+    "property=og:title": "Create a Plone project"
+    "keywords": "Plone, Plone 6, create, project, install, cookiecutter"
 ---
 
 
-(install-packages-1-label)=
+(create-a-project-label)=
 
-# Install Plone from its packages
+# Create a project
  
-When you want full control over development or deployment, installing Plone from its packages is a good option.
+This chapter describes how you can create a web application project using Plone, with full control over development and deployment.
+
+If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
 
 
 (install-packages-system-requirements-label)=
@@ -455,5 +457,3 @@ Select the {guilabel}`Login` link to visit the login form, and enter the followi
 Now you can edit content or configure your Plone site.
 
 You can stop the site with {kbd}`ctrl-c`.
-
-Enjoy!
