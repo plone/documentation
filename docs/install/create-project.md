@@ -14,6 +14,8 @@ myst:
  
 This chapter describes how you can create a web application project using Plone, with full control over development and deployment.
 
+If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
+
 
 (install-packages-system-requirements-label)=
 
