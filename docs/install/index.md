@@ -26,7 +26,7 @@ Choose a version to demo.
 
 (install-index-getting-started-label)=
 
-## Getting started
+## Get started
 
 Choose an option to get started with Plone.
 If you are following a [Plone training](https://training.plone.org/), it should specify which option to choose.
