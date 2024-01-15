@@ -10,6 +10,7 @@ sphinx-book-theme==0.3.3  # Temporary pin until we can sort out HTML refactoring
 sphinx-copybutton
 sphinx-design  # Documentation only
 sphinx-notfound-page  # Documentation only
+sphinx-reredirects
 sphinx-sitemap
 sphinx-togglebutton
 sphinxcontrib.httpdomain  # plone.restapi
