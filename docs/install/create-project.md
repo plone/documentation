@@ -147,35 +147,34 @@ npm install -g yo
 
 #### Yarn 3
 
-Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
+Install the latest Yarn 3 version (not the Classic 1.x one).
 
 1.  Open a terminal and type:
 
     ```shell
-    npm install yarn@3
+    corepack enable
     ```
 
 2.  Verify that Yarn v3.x.x is installed and activated.
 
     ```shell
+    yarn set version 3.x
     yarn -v
     ```
     ```console
     3.2.3
     ```
-    
-    If you do not see a version of Yarn 3, then try the following to set the active version.
-    
-    ```shell
-    yarn set version 3.x
-    ```
 
-    If the version doesn't change, you can try deleting the {file}`yarn.lock` file, setting the version, and installing again.
+    If you see a version that is not v3.x.x, you can try deleting the {file}`yarn.lock` file, and installing again.
 
     ```shell
     rm yarn.lock
+    corepack enable
     yarn set version 3.x
-    yarn install
+    yarn -v
+    ```
+    ```console
+    3.2.3
     ```
 
 
