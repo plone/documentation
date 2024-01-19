@@ -30,14 +30,18 @@ Plone uses the [GNU General Public License, version 2](https://github.com/plone/
 A few other projects use the [modified BSD license](https://opensource.org/license/bsd-3-clause/), [MIT License](https://opensource.org/license/mit/), or [Creative Commons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
 You grant permission by signing and returning the Plone Contributor Agreement.
 
+A volunteer member of the Plone Foundation will review your signed agreement.
+
+If accepted, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access, and you will simultaneously receive an email notification from GitHub.
+
+Allow up to one week for processing.
+Contact the Plone Foundation by its email address for further information, including the status of your request.
+
 ```{button-link} https://plone.org/foundation/contributors-agreement
 :color: primary
 
 Sign the Plone Contributor Agreement
 ```
-
-After a member of the Plone Foundation reviews and accepts your signed agreement, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access.
-This process may take a few business days.
 
 ```{seealso}
 -   [Plone License FAQ](https://plone.org/foundation/copyright-licensing-logo/license-faq)
