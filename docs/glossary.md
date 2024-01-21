@@ -674,4 +674,10 @@ Windows Subsystem for Linux
 
 pnpm
     [pnpm](https://pnpm.io/) is a fast, disk space efficient package manager.
+
+Guillotina
+    [Guillotina](https://guillotina.io/) is a full-stack data framework built on [AsyncIO](https://docs.python.org/3/library/asyncio.html).
+
+Nick
+    [Nick](https://nickcms.org/) is a headless content management system {term}`CMS` built with {term}`Node.js`.
 ```
