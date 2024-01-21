@@ -15,6 +15,10 @@ This document describes how to contribute to Plone Documentation.
 
 Contributions to the Plone Documentation are welcome.
 
+```{seealso}
+To set up and build the documentation locally, see {doc}`setup-build`.
+```
+
 
 (contributing-permission-to-publish-label)=
 
