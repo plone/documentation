@@ -17,6 +17,6 @@ body:
     id: description
     attributes:
       label: Description
-      description: Include include screenshots and any other helpful information.
+      description: Include screenshots and any other helpful information.
     validations:
       required: true
