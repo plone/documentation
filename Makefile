@@ -7,8 +7,8 @@ SPHINXOPTS      ?=
 PAPER           ?=
 
 # Internal variables.
-SPHINXBUILD     = $(realpath bin/sphinx-build)
-SPHINXAUTOBUILD = $(realpath bin/sphinx-autobuild)
+SPHINXBUILD     = "$(realpath bin/sphinx-build)"
+SPHINXAUTOBUILD = "$(realpath bin/sphinx-autobuild)"
 DOCS_DIR        = ./docs/
 BUILDDIR        = ../_build
 PAPEROPT_a4     = -D latex_paper_size=a4
