@@ -13,17 +13,38 @@ myst:
 
 This chapter provides guidance to first-time contributors to Plone and all its projects and repositories under the Plone GitHub organization.
 
+
+(for-students-and-learners)=
+
+## For students and learners
+
+```{important}
+**We do not offer training, guidance, or mentoring to students or learners on GitHub.**
+Don't ask for it.
+The Plone organization may delete comments, lock conversations, or block GitHub users who ignore this.
+```
+
+If you are a student or learner of Plone, you probably are not a contributor.
+See the next section, {ref}`expectations-of-first-time-contributors`, to determine whether you are in fact a contributor.
+
+For free support, training, guidance, or mentoring, you should work through some trainings, use the [Plone Community Forum](https://community.plone.org/), participate in an [event](https://plone.org/news-and-events/events), and **not use GitHub**.
+
+
+(expectations-of-first-time-contributors)=
+
+## Expectations of first-time contributors
+
 As a first-time contributor to Plone on GitHub, we expect that you have:
  
 -   {doc}`installed Plone <../install/index>` on your development machine
 -   worked on a Plone project, even if it is just for fun
+-   read and followed the guidance on the pages under {doc}`/contributing/index` both for Plone in general and for the specific project to which you want to contribute, as well as all the guidance on this page
 -   worked through some trainings, such as the recommended:
     -   {doc}`training:mastering-plone/index`
     -   {doc}`training:voltohandson/index`
     -   {doc}`training:voltoaddons/index`
     -   {doc}`training:volto_customization/index`
     -   {doc}`training:plone-deployment/index`
--   read the chapters of {doc}`/index` relevant to your contribution
 -   a sincere interest to contribute to Plone and become an ongoing contributing member of our organization
 -   a GitHub account
 -   basic knowledge of using git and GitHub
@@ -34,9 +55,8 @@ As a first-time contributor on GitHub, your expectations should align with ours,
 Plone has a very large and complex code base.
 It takes a significant amount of time to learn how to develop Plone.
 
-As members of the Plone organization, we volunteer our free time to develop Plone on GitHub.
-We do not offer support, training, or mentoring on GitHub.
-For free support, training, or mentoring, you should use the [Plone Community Forum](https://community.plone.org/) or participate in an [event](https://plone.org/news-and-events/events), and not use GitHub.
+If you want to quickly pad your résumé, satisfy a "contribute to open source" school assignment, or get recognition for participating in events such as Hacktoberfest, then Plone may not be the open source software project for you.
+Such motivation behind these contributions usually results in poor quality breaking code, and drains limited volunteer time to triage.
 ```
 
 
