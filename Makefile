@@ -235,8 +235,7 @@ netlify:
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
-	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	cp netlify_robots.txt $(BUILDDIR)/html/robots.txt
+	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html && cp ./netlify_robots.txt $(BUILDDIR)/html/robots.txt
 
 .PHONY: storybook
 storybook:
