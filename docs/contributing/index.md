@@ -86,7 +86,10 @@ When a package is released with a new version, the release manager runs `towncri
 Because the log file is automatically generated, you should not edit it directly, except to make corrections, such as broken links.
 
 To create a change log entry or news item, create a file in the `news` directory, located in the root of the package.
-Its format must be `###.type`, where `###` is the referenced GitHub issue or pull request number, `.` is the literal extension delimiter, and `type` is one of the following strings.
+For Volto, its repository is in a monorepo structure, consisting of several packages in the `packages` folder.
+Thus for Volto and its packages, change log entries should be created in `packages/PACKAGE_NAME/news/`, which is the root of the package.
+
+The change log entry's format must be `###.type`, where `###` is the referenced GitHub issue or pull request number, `.` is the literal extension delimiter, and `type` is one of the following strings.
 
 -   `breaking` for breaking changes
 -   `bugfix` for bug fixes
