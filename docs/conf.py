@@ -97,7 +97,7 @@ linkcheck_ignore = [
     r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
 ]
 linkcheck_anchors = True
-linkcheck_timeout = 5
+linkcheck_timeout = 10
 linkcheck_retries = 1
 
 # The suffix of source filenames.
