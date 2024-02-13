@@ -237,17 +237,36 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 
 ## Scaling `direction`
 
-The default direction is `thumbnail`.
+If an images is scaled the direction parameter can be used to control the scaling output.
+Either width or height - or both - must be given too.
 
-Other options are:
+This is all about scaling for the display in a web browser.
 
-* `down`
-* `keep`
-* `scale-crop-to-fill`
-* `scale-crop-to-fit`
-* `thumbnail`
-* `up`
+Three different scaling options are supported.
+They correspond to the CSS background-size values (see [background-size documentation of mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size))
 
+The default direction is `scale`.
+
+Possible options are:
+
+* `scale`:
+  Scales to the requested dimensions without cropping.
+  The resulting image may have a different size than requested.
+  This option requires both width and height to be specified.
+  Does not scale up.
+
+  Deprecated spellings: `keep`, `thumbnail`.
+
+* `contain`:
+  Starts by scaling the relatively smallest dimension to the required size and crops the other dimension if needed.
+
+  Deprecated spellings: `scale-crop-to-fit`, `down`.
+
+* `cover`:
+  Scales the relatively largest dimension up to the required size.
+  Despite the deprecated spelling, there is no cropping happening.
+
+  Deprecated spellings: `scale-crop-to-fill`, `up`.
 
 (classic-ui-images-permissions-label)=
 
