@@ -114,7 +114,7 @@ tag = scale_util.tag(
     scale=None,
     height=None,
     width=None,
-    direction="thumbnail"
+    mode="scale"
 )
 ```
 
@@ -233,20 +233,44 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 ```
 
 
-(classic-ui-images-scaling-direction-label)=
+(classic-ui-images-scaling-mode-label)=
 
-## Scaling `direction`
+## Scaling `mode`
 
-The default direction is `thumbnail`.
+```{versionchanged} 6.0
+Added `mode` to replace the deprecated `direction`.
+Added new option names for `mode` to align with CSS `background-size` values, and deprecated previous names `keep`, `thumbnail`, `scale-crop-to-fit`, `down`, `scale-crop-to-fill`, and `up`.
+```
 
-Other options are:
+Scaling is intended for the optimal display of images in a web browser.
 
-* `down`
-* `keep`
-* `scale-crop-to-fill`
-* `scale-crop-to-fit`
-* `thumbnail`
-* `up`
+To scale an image, you can use the `mode` parameter to control the scaling output.
+You must use either `width` or `height`, or both.
+
+Three different scaling options are supported.
+They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) values.
+
+The possible options for `mode` are listed below, where the default option is `scale`.
+
+`scale`
+:   This is the default option.
+    `scale` scales to the requested dimensions without cropping.
+    The resulting image may have a different size than requested.
+    This option requires both `width` and `height` to be specified.
+    It does not scale up.
+
+    Deprecated option names: `keep`, `thumbnail`.
+
+`contain`
+:   `contain` starts by scaling the image either to the smaller dimension when you give both `width` and `height`, or to the only given dimension, then crops to the other dimension if needed.
+
+    Deprecated option names: `scale-crop-to-fit`, `down`.
+
+`cover`
+:   `cover` scales the image either to the larger dimension when you give both `width` and `height`, or to the only given dimension, up to the size you specify.
+    Despite the deprecated option name, it does not crop.
+
+    Deprecated option names: `scale-crop-to-fill`, `up`.
 
 
 (classic-ui-images-permissions-label)=
