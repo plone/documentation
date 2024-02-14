@@ -12,7 +12,7 @@ myst:
 
 # Manage add-ons and packages
 
-This chapter assumes you have previously {doc}`installed Plone from its packages <install-from-packages>`.
+This chapter assumes you have previously followed {doc}`create-project`.
 In this section, we discuss details of the installation process so that you can customize your Plone installation.
 It also covers routine management tasks that a developer might perform.
 
