@@ -237,36 +237,36 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 
 ## Scaling `direction`
 
-If an images is scaled the direction parameter can be used to control the scaling output.
-Either width or height - or both - must be given too.
+Scaling is intended for the optimal display of images in a web browser.
 
-This is all about scaling for the display in a web browser.
+To scale an image, you can use the `direction` parameter to control the scaling output.
+You must use either `width` or `height`, or both.
 
 Three different scaling options are supported.
-They correspond to the CSS background-size values (see [background-size documentation of mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size))
+They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) values.
 
-The default direction is `scale`.
+The possible options for `direction` are listed below, where the default option is `scale`.
 
-Possible options are:
+`scale`
+:   This is the default option.
+    `scale` scales to the requested dimensions without cropping.
+    The resulting image may have a different size than requested.
+    This option requires both `width` and `height` to be specified.
+    It does not scale up.
 
-* `scale`:
-  Scales to the requested dimensions without cropping.
-  The resulting image may have a different size than requested.
-  This option requires both width and height to be specified.
-  Does not scale up.
+    Deprecated spellings: `keep`, `thumbnail`.
 
-  Deprecated spellings: `keep`, `thumbnail`.
+`contain`
+:   `contain` starts by scaling the image either to the smaller dimension when you give both `width` and `height`, or to the only given dimension, then crops to the other dimension if needed.
 
-* `contain`:
-  Starts by scaling the relatively smallest dimension to the required size and crops the other dimension if needed.
+    Deprecated spellings: `scale-crop-to-fit`, `down`.
 
-  Deprecated spellings: `scale-crop-to-fit`, `down`.
+`cover`
+:   `cover` scales the image either to the larger dimension when you give both `width` and `height`, or to the only given dimension, up to the size you specify.
+    Despite the deprecated spelling, it does not crop.
 
-* `cover`:
-  Scales the relatively largest dimension up to the required size.
-  Despite the deprecated spelling, there is no cropping happening.
+    Deprecated spellings: `scale-crop-to-fill`, `up`.
 
-  Deprecated spellings: `scale-crop-to-fill`, `up`.
 
 (classic-ui-images-permissions-label)=
 
