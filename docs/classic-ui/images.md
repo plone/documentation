@@ -238,7 +238,8 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 ## Scaling `mode`
 
 ```{versionchanged} 6.0
-Added new option names to align with CSS `background-size` values, and deprecated previous names.
+Added `mode` to replace the deprecated `direction`.
+Added new option names for `mode` to align with CSS `background-size` values, and deprecated previous names `keep`, `thumbnail`, `scale-crop-to-fit`, `down`, `scale-crop-to-fill`, and `up`.
 ```
 
 Scaling is intended for the optimal display of images in a web browser.
