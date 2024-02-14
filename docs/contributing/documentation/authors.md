@@ -298,4 +298,5 @@ The Plone Documentation Team adopted additional guidelines.
 ## General documentation writing references
 
 -   [Write the Docs - Documentation Guide](https://www.writethedocs.org/guide/)
+-   [Creating effective technical documentation](https://developer.mozilla.org/en-US/blog/technical-writing/), Dipika Bhattacharya, Technical Writer at Mozilla Developer Network
 -   [A Guide to Em Dashes, En Dashes, and Hyphens](https://www.merriam-webster.com/grammar/em-dash-en-dash-how-to-use)
