@@ -95,6 +95,8 @@ linkcheck_ignore = [
     # Ignore unreliable sites
     r"https://web.archive.org/",  # volto
     r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
+    r"https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
+    r"https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 10
