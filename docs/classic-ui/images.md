@@ -114,7 +114,7 @@ tag = scale_util.tag(
     scale=None,
     height=None,
     width=None,
-    direction="thumbnail"
+    mode="scale"
 )
 ```
 
@@ -233,9 +233,9 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 ```
 
 
-(classic-ui-images-scaling-direction-label)=
+(classic-ui-images-scaling-mode-label)=
 
-## Scaling `direction`
+## Scaling `mode`
 
 ```{versionchanged} 6.0
 Added new option names to align with CSS `background-size` values, and deprecated previous names.
@@ -243,13 +243,13 @@ Added new option names to align with CSS `background-size` values, and deprecate
 
 Scaling is intended for the optimal display of images in a web browser.
 
-To scale an image, you can use the `direction` parameter to control the scaling output.
+To scale an image, you can use the `mode` parameter to control the scaling output.
 You must use either `width` or `height`, or both.
 
 Three different scaling options are supported.
 They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) values.
 
-The possible options for `direction` are listed below, where the default option is `scale`.
+The possible options for `mode` are listed below, where the default option is `scale`.
 
 `scale`
 :   This is the default option.
