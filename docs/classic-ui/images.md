@@ -254,18 +254,18 @@ The possible options for `direction` are listed below, where the default option 
     This option requires both `width` and `height` to be specified.
     It does not scale up.
 
-    Deprecated spellings: `keep`, `thumbnail`.
+    Deprecated option names: `keep`, `thumbnail`.
 
 `contain`
 :   `contain` starts by scaling the image either to the smaller dimension when you give both `width` and `height`, or to the only given dimension, then crops to the other dimension if needed.
 
-    Deprecated spellings: `scale-crop-to-fit`, `down`.
+    Deprecated option names: `scale-crop-to-fit`, `down`.
 
 `cover`
 :   `cover` scales the image either to the larger dimension when you give both `width` and `height`, or to the only given dimension, up to the size you specify.
-    Despite the deprecated spelling, it does not crop.
+    Despite the deprecated option name, it does not crop.
 
-    Deprecated spellings: `scale-crop-to-fill`, `up`.
+    Deprecated option names: `scale-crop-to-fill`, `up`.
 
 
 (classic-ui-images-permissions-label)=
