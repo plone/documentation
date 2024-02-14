@@ -237,6 +237,10 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 
 ## Scaling `direction`
 
+```{versionchanged} 6.0
+Added new option names to align with CSS `background-size` values, and deprecated previous names.
+```
+
 Scaling is intended for the optimal display of images in a web browser.
 
 To scale an image, you can use the `direction` parameter to control the scaling output.
