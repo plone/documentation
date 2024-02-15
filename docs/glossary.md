@@ -411,7 +411,7 @@ Classic UI
     The other frontend is {term}`Volto`.
 
 Mockup
-    [Mockup](https://github.com/plone/mockup/) is a package that, together with {term}`Patternslib`, builds the UI toolkit for  {term}`Classic UI`, a frontend for Plone.
+    [Mockup](https://github.com/plone/mockup/) is a package that, together with {term}`Patternslib`, builds the UI toolkit for {term}`Classic UI`, a frontend for Plone.
     Mockup provides the JavaScript stack for Classic UI.
     [View Mockup's patterns](https://plone.github.io/mockup/), based on Patternslib.
 
