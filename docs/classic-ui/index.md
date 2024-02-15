@@ -53,6 +53,7 @@ forms
 icons
 images
 layers
+mockup
 portlets
 recipes
 static-resources
