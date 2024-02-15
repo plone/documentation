@@ -75,6 +75,13 @@ pip
     pip is the package installer for Python.
     See [tool recommendations](https://packaging.python.org/en/latest/guides/tool-recommendations/) for more information.
 
+pipx
+    [pipx](https://pypi.org/project/pipx/) allows you to install and run Python applications in isolated environments.
+
+pyenv
+    Python version management.
+    [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. 
+
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 
@@ -506,7 +513,7 @@ ZPT
     Zope Page Template is a template language for Python.
 
 plonecli
-    The plonecli helps developers to create Plone add-ons in a modular and reproducible way.
+    The [`plonecli`](https://pypi.org/project/plonecli/) helps developers to create Plone add-ons in a modular and reproducible way.
 
 ZCA
 Zope Component Architecture
@@ -664,4 +671,13 @@ intid
 WSL
 Windows Subsystem for Linux
     The [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, or Arch Linux) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
+
+pnpm
+    [pnpm](https://pnpm.io/) is a fast, disk space efficient package manager.
+
+Guillotina
+    [Guillotina](https://guillotina.io/) is a full-stack data framework built on [AsyncIO](https://docs.python.org/3/library/asyncio.html).
+
+Nick
+    [Nick](https://nickcms.org/) is a headless content management system {term}`CMS` built with {term}`Node.js`.
 ```

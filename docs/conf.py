@@ -49,6 +49,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_reredirects",
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
@@ -93,9 +94,12 @@ linkcheck_ignore = [
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
     # Ignore unreliable sites
     r"https://web.archive.org/",  # volto
+    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
+    r"https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
+    r"https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
 ]
 linkcheck_anchors = True
-linkcheck_timeout = 5
+linkcheck_timeout = 10
 linkcheck_retries = 1
 
 # The suffix of source filenames.
@@ -126,6 +130,14 @@ exclude_patterns = [
     "plone.restapi/performance",
     "plone.restapi/src",
     "volto/contributing/branch-policy.md",
+    "volto/contributing/install-operating-system.md",
+    "volto/contributing/install-nodejs.md",
+    "volto/contributing/install-make.md",
+]
+
+suppress_warnings = [
+    # "toc.excluded",  # Suppress `WARNING: document isn't included in any toctree`
+    "toc.not_readable",  # Suppress `WARNING: toctree contains reference to nonexisting document 'news*'`
 ]
 
 html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
@@ -204,15 +216,20 @@ ogp_custom_meta_tags = [
 ]
 
 
-# -- sphinx_copybutton -----------------------
-copybutton_prompt_text = r"^ {0,2}\d{1,3}"
-copybutton_prompt_is_regexp = True
-
-
 # -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
+
+
+# -- sphinx-reredirects configuration ----------------------------------
+# https://documatt.com/sphinx-reredirects/usage.html
+redirects = {
+    "contributing/plone-api": "/plone.api/contribute/index.html",
+    "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
+    "contributing/volto": "/volto/contributing/index.html",
+    "install/install-from-packages": "/install/create-project.html",
+}
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -321,8 +338,9 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.7",
-    "{NVM_VERSION}": "0.39.3",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.9",
+    "{NVM_VERSION}": "0.39.5",
+    "{SUPPORTED_PYTHON_VERSIONS}": "3.8, 3.9, 3.10, or 3.11",
 }
 
 

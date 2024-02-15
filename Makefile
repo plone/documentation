@@ -7,8 +7,8 @@ SPHINXOPTS      ?=
 PAPER           ?=
 
 # Internal variables.
-SPHINXBUILD     = $(realpath bin/sphinx-build)
-SPHINXAUTOBUILD = $(realpath bin/sphinx-autobuild)
+SPHINXBUILD     = "$(realpath bin/sphinx-build)"
+SPHINXAUTOBUILD = "$(realpath bin/sphinx-autobuild)"
 DOCS_DIR        = ./docs/
 BUILDDIR        = ../_build
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -69,7 +69,7 @@ docs/mockup:
 	@echo "Documentation of mockup initialized."
 
 .PHONY: deps
-deps: bin/python docs/volto docs/plone.restapi docs/plone.api docs/mockup  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
+deps: bin/python docs/volto docs/plone.restapi docs/plone.api docs/mockup  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, plone.api, and mockup submodules, and finally create symlinks to the source files.
 
 
 .PHONY: html
@@ -203,8 +203,8 @@ linkcheckbroken: deps  ## Run linkcheck and show only broken links
 
 .PHONY: vale
 vale: deps  ## Run Vale style, grammar, and spell checks
-	vale sync
-	vale --no-wrap $(VALEFILES)
+	bin/vale sync
+	bin/vale --no-wrap $(VALEFILES)
 	@echo
 	@echo "Vale is finished; look for any errors in the above output."
 
@@ -243,11 +243,11 @@ netlify:
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
 	ln -s ../submodules/mockup ./docs/mockup
-	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html && cp ./netlify_robots.txt $(BUILDDIR)/html/robots.txt
 
 .PHONY: storybook
 storybook:
-	cd submodules/volto && yarn && yarn build-storybook -o ../../_build/html/storybook
+	cd submodules/volto && pnpm i && pnpm build:registry && pnpm --filter @plone/volto build-storybook -o ../../../../_build/html/storybook
 
 .PHONY: all
 all: clean vale linkcheck html  ## Clean docs build, then run vale and linkcheck, and build html

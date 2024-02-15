@@ -68,7 +68,7 @@ To get the original image, you can leave out the scale:
 
 ### By cacheable scale {term}`UID` name
 
-When an image scale is created, it will be cached under the name `UID.EXT` (i.e. `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
+When an image scale is created, it will be cached under the name `UID.EXT` (such as `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
 Scaling keeps the uploaded formats, except for TIFF which ends up as JPEG.
 It can be resolved as follows:
 
@@ -114,11 +114,11 @@ tag = scale_util.tag(
     scale=None,
     height=None,
     width=None,
-    direction="thumbnail"
+    mode="scale"
 )
 ```
 
-If you pass additional kwargs to `tag`, they become attributes on `tag`.
+If you pass additional `kwargs` to `tag`, they become attributes on `tag`.
 
 
 (classic-ui-images-image-scaling-no-tag-creation-label)=
@@ -181,7 +181,7 @@ tag = scale_util.scale("image", width=600, height=200)
 
 ### Using `image_scale` in templates
 
-You could use the URL-variant from above, but that would be an uncached version.
+You could use the URL-variant from above, but that version would not be cached.
 To create a cached scale in a page template you can do the following:
 
 ```xml
@@ -215,7 +215,7 @@ You can also provide the following keyword arguments to set `title`, `alt`, or `
 
 ### Get `image_scale` by cached {term}`UID` name
 
-If you only have the cached image name from an URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
+If you only have the cached image name from a URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
 But you can use this workaround, by calling the `publishTraverse` method in `ImageScaling` directly:
 
 ```python
@@ -233,20 +233,44 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 ```
 
 
-(classic-ui-images-scaling-direction-label)=
+(classic-ui-images-scaling-mode-label)=
 
-## Scaling `direction`
+## Scaling `mode`
 
-The default direction is `thumbnail`.
+```{versionchanged} 6.0
+Added `mode` to replace the deprecated `direction`.
+Added new option names for `mode` to align with CSS `background-size` values, and deprecated previous names `keep`, `thumbnail`, `scale-crop-to-fit`, `down`, `scale-crop-to-fill`, and `up`.
+```
 
-Other options are:
+Scaling is intended for the optimal display of images in a web browser.
 
-* `down`
-* `keep`
-* `scale-crop-to-fill`
-* `scale-crop-to-fit`
-* `thumbnail`
-* `up`
+To scale an image, you can use the `mode` parameter to control the scaling output.
+You must use either `width` or `height`, or both.
+
+Three different scaling options are supported.
+They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) values.
+
+The possible options for `mode` are listed below, where the default option is `scale`.
+
+`scale`
+:   This is the default option.
+    `scale` scales to the requested dimensions without cropping.
+    The resulting image may have a different size than requested.
+    This option requires both `width` and `height` to be specified.
+    It does not scale up.
+
+    Deprecated option names: `keep`, `thumbnail`.
+
+`contain`
+:   `contain` starts by scaling the image either to the smaller dimension when you give both `width` and `height`, or to the only given dimension, then crops to the other dimension if needed.
+
+    Deprecated option names: `scale-crop-to-fit`, `down`.
+
+`cover`
+:   `cover` scales the image either to the larger dimension when you give both `width` and `height`, or to the only given dimension, up to the size you specify.
+    Despite the deprecated option name, it does not crop.
+
+    Deprecated option names: `scale-crop-to-fill`, `up`.
 
 
 (classic-ui-images-permissions-label)=
