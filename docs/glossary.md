@@ -406,10 +406,20 @@ Classic UI
     It is integrated with [Products.CMFPlone](https://github.com/plone/Products.CMFPlone/).
     Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
     It is based on Twitter Bootstrap 5.
-    It uses [Mockup](https://github.com/plone/mockup/) as its JavaScript stack.
-    [View Mockup's patterns](https://plone.github.io/mockup/).
+    It uses {term}`Mockup` as its JavaScript stack.
 
     The other frontend is {term}`Volto`.
+
+Mockup
+    [Mockup](https://github.com/plone/mockup/) is a package that, together with {term}`Patternslib`, are used to create {term}`Classic UI`, a frontend for Plone.
+    Mockup provides the JavaScript stack for Classic UI.
+    [View Mockup's patterns](https://plone.github.io/mockup/), based on Patternslib.
+
+Patterns
+Patternslib
+    [Patterns](https://patternslib.com/), or Patternslib, is a toolkit that enables designers to build rich interactive prototypes without the need for writing any JavaScript.
+    All functionality is triggered by classes and other attributes in the HTML, without abusing the HTML as a programming language.
+    Accessibility, SEO, and well-structured HTML are core values of Patterns.
 
 Slate
     [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as `WYSIWYG` editors.
