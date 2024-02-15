@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Mockup together with Patternslib building the UI toolkit for Classic UI, a frontend for Plone."
-    "property=og:description": "Mockup together with Patternslib building the UI toolkit for Classic UI, a frontend for Plone."
+    "description": "Mockup together with Patternslib are used to build the UI toolkit for Classic UI, a frontend for Plone."
+    "property=og:description": "Mockup together with Patternslib are used to build the UI toolkit for Classic UI, a frontend for Plone."
     "property=og:title": "Mockup"
     "keywords": "Mockup, Patternslib, Classic UI, frontend, Plone"
 ---
@@ -11,7 +11,7 @@ myst:
 
 # Mockup
 
-{term}`Mockup` together with {term}`Patternslib` building the UI toolkit for {term}`Classic UI`, a frontend for Plone.
+{term}`Mockup` together with {term}`Patternslib` are used to build the UI toolkit for {term}`Classic UI`, a frontend for Plone.
 
 View the [interactive documentation of Mockup](https://plone.github.io/mockup/).
 
