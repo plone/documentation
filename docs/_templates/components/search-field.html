@@ -1,0 +1,49 @@
+{# A bootstrap-styled field that will direct to the `search.html` page when submitted #}
+<form class="bd-search"
+      action="{{ pathto('search') }}"
+      method="get">
+  <div class="d-flex align-items-center">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search"
+           class="form-control"
+           name="q"
+           id="search-input"
+           placeholder="{{ theme_search_bar_text }}"
+           aria-label="{{ theme_search_bar_text }}"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false"/>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+  </div>
+  <div class="d-flex visually-hidden">
+    <label for="training">Filter by training</label>
+  </div>
+  <div class="d-flex">
+    <label for="doc_section" class="col sr-only">Filter by section</label>
+    <div class="col">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="doc_section" id="doc_section_all" value="all" checked>
+        <label class="form-check-label" for="doc_section_all">
+          All Documentation
+        </label>
+      </div>
+      {% for id, title in
+      [
+          ["backend","Backend"],
+          ["plone.api","plone.api"],
+          ["plone.restapi","plone.restapi"],
+          ["classic-ui","Classic UI"],
+          ["volto","Frontend"],
+          ["contributing","Contributing"],
+      ] %}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="doc_section" id="doc_section_{{id}}" value="{{id}}">
+          <label class="form-check-label" for="doc_section_{{id}}">
+            {{title}}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</form>

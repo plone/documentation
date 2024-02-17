@@ -1,12 +1,10 @@
-docutils<0.17,>=0.15  # sphinx-book-theme 0.2.0 has requirement docutils<0.17,>=0.15
-Sphinx<5,>=3  # sphinx-book-theme 0.3.3 has requirement sphinx<5,>=3
+sphinx
 graphviz
 lesscpy
 linkify-it-py
 myst-parser
-pydata-sphinx-theme==0.8.1  # Build fails in 0.9.0. See https://github.com/plone/documentation/issues/1297
 sphinx-autobuild
-sphinx-book-theme==0.3.3  # Temporary pin until we can sort out HTML refactoring.
+sphinx-book-theme
 sphinx-copybutton
 sphinx-design  # Documentation only
 sphinx-notfound-page  # Documentation only

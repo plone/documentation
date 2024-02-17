@@ -1,136 +1,42 @@
-{#
-  basic/search.html
-  ~~~~~~~~~~~~~~~~~
-
-  Template for the search page.
-
-  :copyright: Copyright 2007-2021 by the Sphinx team, see AUTHORS.
-  :license: BSD, see LICENSE for details.
-#}
-{%- extends "layout.html" %}
-{% set title = _('Search') %}
-{% block header %}
-  <link rel="stylesheet/less" type="text/css" href="/_static/custom.css" />
-  <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
-{% endblock %}
-{%- block scripts %}
+{%- extends "page.html" %}
+{# Over-ride the body to be custom search structure we want #}
+{% block docs_body %}
+  <div class="bd-search-container">
+    <h1>{{ _("Search") }}</h1>
+    <noscript>
+      <div class="admonition error">
+        <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
+        <p>{% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}</p>
+      </div>
+    </noscript>
+    {% block searchtext %}
+      <div>
+        {% trans %}Searching for multiple words only shows matches that contain
+        all words.{% endtrans %}
+      </div>
+    {% endblock %}
+    {% include "components/search-field.html" %}
+    <div id="search-results"></div>
+  </div>
+  <script>
+    // Activate the search field on page load
+    let searchInput = document.querySelector("form.bd-search input");
+    if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
+        console.log("[PST]: Set focus on search field.");
+    }
+  </script>
+{% endblock docs_body %}
+{# Below sections just re-create the behavior of Sphinx default search #}
+{# Page metadata #}
+{%- block htmltitle -%}
+  <title>{{ _("Search") }} - {{ title or docstitle }}</title>
+{%- endblock htmltitle -%}
+{# Manually include the search JS that Sphinx includes #}
+{% block scripts -%}
   {{ super() }}
   <script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
   <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
-{%- endblock %}
-{% block extrahead %}
-  <script src="{{ pathto('searchindex.js', 1) }}" defer></script>
-  {{ super() }}
-{% endblock %}
-{% block body %}
-  <h1 id="search-documentation">{{ _('Search') }}</h1>
-  {% block scriptwarning %}
-    <div id="fallback" class="admonition warning">
-    <script>$('#fallback').hide();</script>
-    <p>
-      {% trans %}Please activate JavaScript to enable the search
-      functionality.{% endtrans %}
-    </p>
-    </div>
-  {% endblock %}
-  {% block searchtext %}
-    <p>
-      {% trans %}Searching for multiple words only shows matches that contain
-      all words.{% endtrans %}
-    </p>
-  {% endblock %}
-  {% block searchbox %}
-    <form
-      action=""
-      method="get"
-      id="search-form"
-      class=""
-      >
-      <div class="row">
-        <div class="input-group col-xl-8 mb-2">
-          <label for="q" class="sr-only">Search string
-          </label>
-          <input
-          type="search" name="q" id="q"
-          class="form-control"
-          placeholder="{{ _(theme_search_bar_text) }}"
-          aria-labelledby="{{ _(theme_search_bar_text) }}"
-          value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-          />
-          <div class="input-group-append">
-            <span class="input-group-text" id="shortcut-page">
-              <kbd id="search-page-shortcut">⌘</kbd>&nbsp;<kbd>K</kbd>
-            </span>
-          </div>
-          <div class="input-group-append">
-            <button
-            type="button"
-            onclick="onReset()"
-            class="btn btn-danger"
-            ><i class="fas fa-times"></i></button>
-          </div>
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-primary"><i class="fas fa-search fa-lg" aria-hidden="true"></i></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="form row mb-2">
-        <label for="doc_section" class="col sr-only">Filter by section</label>
-        <div class="col">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="doc_section" id="doc_section_all" value="all" checked>
-            <label class="form-check-label" for="doc_section_all">
-              All Documentation
-            </label>
-          </div>
-          {% for id, title in
-            [
-              ["backend","Backend"],
-              ["plone.api","plone.api"],
-              ["plone.restapi","plone.restapi"],
-              ["classic-ui","Classic UI"],
-              ["volto","Frontend"],
-              ["contributing","Contributing"],
-            ] %}
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="doc_section" id="doc_section_{{id}}" value="{{id}}">
-              <label class="form-check-label" for="doc_section_{{id}}">
-                {{title}}
-              </label>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-
-      <span id="search-progress" style="padding-left: 10px"></span>
-    </form>
-  {% endblock %}
-
-  {% block searchresults %}
-    <div id="search-results">
-    {% if search_results %}
-      <ul>
-      {% for href, caption, context in search_results %}
-        <li><a href="{{ pathto(item.href) }}">{{ caption }}</a>
-          <div class="context">{{ context|e }}</div>
-        </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-    </div>
-  {% endblock %}
-{% endblock %}
-
-
-{% block footer %}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // Hide empty sub menu.
-            if ($.trim($(".topbar-contents .bd-toc").html()) === "") {
-                $(".topbar-contents .bd-toc").css("visibility", "hidden");
-            }
-        });
-    </script>
-
-{% endblock %}
+  <script src="{{ pathto('searchindex.js', 1) }}"></script>
+{%- endblock scripts %}
