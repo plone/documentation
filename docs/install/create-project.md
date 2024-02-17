@@ -11,7 +11,7 @@ myst:
 (create-a-project-label)=
 
 # Create a project
- 
+
 This chapter describes how you can create a web application project using Plone, with full control over development and deployment.
 
 If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
@@ -134,14 +134,13 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish)
 
 (install-prerequisites-yeoman-label)=
 
-#### Yeoman
+#### Yeoman and the Volto boilerplate generator
 
 Install {term}`Yeoman`.
 
 ```shell
-npm install -g yo
+npm install -g yo @plone/generator-volto
 ```
-
 
 (install-prerequisites-yarn-label)=
 
@@ -155,28 +154,11 @@ Install the latest Yarn 3 version (not the Classic 1.x one).
     corepack enable
     ```
 
-2.  Verify that Yarn v3.x.x is installed and activated.
+2.  Set the yarn version to stable.
 
     ```shell
-    yarn set version 3.x
-    yarn -v
+    yarn set version stable
     ```
-    ```console
-    3.2.3
-    ```
-
-    If you see a version that is not v3.x.x, you can try deleting the {file}`yarn.lock` file, and installing again.
-
-    ```shell
-    rm yarn.lock
-    corepack enable
-    yarn set version 3.x
-    yarn -v
-    ```
-    ```console
-    3.2.3
-    ```
-
 
 (install-prerequisites-make-label)=
 
@@ -234,7 +216,7 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 % pipx run cookiecutter gh:collective/cookiecutter-plone-starter
 
 
-Cookiecutter Plone Starter 
+Cookiecutter Plone Starter
 ================================================================================
 
 Sanity checks
@@ -249,21 +231,21 @@ Project details
 --------------------------------------------------------------------------------
 
   [1/19] Project Title (Project Title): Plone Conference Website 2070
-  [2/19] Project Description (A new project using Plone 6.): 
-  [3/19] Project Slug (Used for repository id) (plone-conference-website-2070): 
-  [4/19] Project URL (without protocol) (plone-conference-website-2070.example.com): 
+  [2/19] Project Description (A new project using Plone 6.):
+  [3/19] Project Slug (Used for repository id) (plone-conference-website-2070):
+  [4/19] Project URL (without protocol) (plone-conference-website-2070.example.com):
   [5/19] Author (Plone Foundation): Elli
   [6/19] Author E-mail (collective@plone.org): elli@plone.org
-  [7/19] Python Package Name (plone_conference_website_2070): 
-  [8/19] Volto Addon Name (volto-plone-conference-website-2070): 
+  [7/19] Python Package Name (plone_conference_website_2070):
+  [8/19] Volto Addon Name (volto-plone-conference-website-2070):
   [9/19] Choose a Python Test Framework
     1 - pytest
     2 - unittest
-    Choose from [1/2] (1): 
-  [10/19] Plone Version (6.0.8): 
+    Choose from [1/2] (1):
+  [10/19] Plone Version (6.0.8):
   [11/19] Should we use Volto Alpha Versions? (No): yes
-  [12/19] Volto Version (18.0.0-alpha.1): 
-  [13/19] Volto Generator Version (8.0.0): 
+  [12/19] Volto Version (18.0.0-alpha.1):
+  [13/19] Volto Generator Version (8.0.0):
   [14/19] Language
     1 - English
     2 - Deutsch
@@ -271,12 +253,12 @@ Project details
     4 - Português (Brasil)
     5 - Nederlands
     6 - Suomi
-    Choose from [1/2/3/4/5/6] (1): 
+    Choose from [1/2/3/4/5/6] (1):
   [15/19] GitHub Username or Organization (collective): ellizurigo
   [16/19] Container Registry
     1 - GitHub Container Registry
     2 - Docker Hub
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [17/19] Should we setup a caching server?
     1 - Yes
     2 - No
@@ -284,11 +266,11 @@ Project details
   [18/19] Add Ansible playbooks?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [19/19] Add GitHub Action to Deploy this project?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
 
 Plone Conference Website 2070 generation
 --------------------------------------------------------------------------------
@@ -358,7 +340,7 @@ To fix this you could try to:
 1. loosen the range of package versions you've specified
 2. remove package versions to allow pip attempt to solve the dependency conflict
 
-ERROR: ResolutionImpossible: for help visit 
+ERROR: ResolutionImpossible: for help visit
 make[2]: *** [Makefile:112: build-dev] Error 1
 make[2]: Leaving directory '/home/username/projects/volto/plone-volto/backend'
 make[1]: *** [Makefile:46: install-backend] Error 2
