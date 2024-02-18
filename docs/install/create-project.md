@@ -137,15 +137,18 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish)
 
 #### Yeoman and the Volto boilerplate generator
 
-Install {term}`Yeoman` and the Volto boilerplate generator
+Install {term}`Yeoman` and the Volto boilerplate generator.
 
 ```shell
 npm install -g yo @plone/generator-volto
 ```
 
+
 (install-prerequisites-yarn-label)=
 
 #### Yarn
+
+Use {term}`Corepack` to enable Yarn, which was already installed with the {ref}`supported version of Node.js <install-packages-prerequisites-label>`.
 
 1.  Open a terminal and type:
 
@@ -153,34 +156,26 @@ npm install -g yo @plone/generator-volto
     corepack enable
     ```
 
-From that moment on, `yarn` will be available for you to use in your system.
-This is thanks that `yarn` is shipped with NodeJS since Node 16 (along with other common package managers).
-The version shipped is v1 (classic `yarn`).
-Volto makes sure that you are using the correct version of `yarn` at runtime.
-This is because it's pinned in the Volto boilerplate to use the right version.
-So from this moment on, you don't have to worry about the version of `yarn` you are using, it will adapt to the project's needs.
+In your generated Volto project from the previous step, you can find the pinned version of Yarn in its {file}`.yarnrc.yml`.
 
-````important
-These instructions will not work if you have used another package manager, such as Homebrew on macOS, to install Yarn.
-You can verify where you installed Yarn and its version.
-Make sure that you are using the yarn version provided by NodeJS by default
+````{important}
+The preceding instructions will not work if you have used another package manager, such as Homebrew on macOS, to install Yarn.
+You can verify where you installed Yarn and its version, and compare that to the pinned value of Yarn in your generated Volto project's {file}`.yarnrc.yml`.
+
 ```shell
 which yarn
-```
-```console
-/opt/homebrew/bin/yarn
-```
-```shell
+# /opt/homebrew/bin/yarn
 yarn -v
+# 3.2.3
 ```
-```console
-3.2.3
-```
+
 If the console includes `homebrew` in the path, and the version of Yarn is not supported, then you must uninstall it.
+
 ```shell
 brew uninstall yarn
 ```
-Now the instructions should work.
+
+Now the instructions to install Yarn should work.
 ````
 
 (install-prerequisites-make-label)=
