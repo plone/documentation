@@ -62,9 +62,9 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 -   {term}`Node.js` LTS 20.x
 -   {term}`Yeoman`
 -   {term}`Yarn`
--   {term}`git`
 -   {term}`GNU make`
 -   {term}`Docker`
+-   {term}`Git`
 
 
 (install-prerequisites-python-label)=
@@ -188,9 +188,17 @@ Now the instructions to install Yarn should work.
 
 (install-prerequisites-docker-label)=
 
-#### Install Docker
+#### Docker
 
 ```{include} ../volto/contributing/install-docker.md
+```
+
+
+(install-prerequisites-git-label)=
+
+#### Git
+
+```{include} ../volto/contributing/install-git.md
 ```
 
 

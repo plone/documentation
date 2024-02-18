@@ -289,6 +289,9 @@ Corepack
     Corepack is distributed by default with all recent Node.js versions.
     Run `corepack enable` to install the required Yarn and pnpm binaries on your path.
 
+Git
+    [Git](https://git-scm.com/) is a free and open source distributed version control system.
+
 Hydration
     After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing {term}`DOM` elements, and recreate and attach their coresponding components.
 
