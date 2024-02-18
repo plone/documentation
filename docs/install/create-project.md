@@ -156,20 +156,16 @@ Use {term}`Corepack` to enable Yarn, which was already installed with the {ref}`
     corepack enable
     ```
 
-In your generated Volto project from the previous step, you can find the pinned version of Yarn in its {file}`.yarnrc.yml`.
-
 ````{important}
 The preceding instructions will not work if you have used another package manager, such as Homebrew on macOS, to install Yarn.
-You can verify where you installed Yarn and its version, and compare that to the pinned value of Yarn in your generated Volto project's {file}`.yarnrc.yml`.
+You can verify where you installed Yarn.
 
 ```shell
 which yarn
 # /opt/homebrew/bin/yarn
-yarn -v
-# 3.2.3
 ```
 
-If the console includes `homebrew` in the path, and the version of Yarn is not supported, then you must uninstall it.
+If the console includes `homebrew` in the path, then you must uninstall it.
 
 ```shell
 brew uninstall yarn
@@ -177,6 +173,7 @@ brew uninstall yarn
 
 Now the instructions to install Yarn should work.
 ````
+
 
 (install-prerequisites-make-label)=
 
