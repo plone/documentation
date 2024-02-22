@@ -700,4 +700,8 @@ Guillotina
 
 Nick
     [Nick](https://nickcms.org/) is a headless content management system {term}`CMS` built with {term}`Node.js`.
+
+predicate
+predicates
+    In programming, a predicate is a test which returns `true` or `false`.
 ```
