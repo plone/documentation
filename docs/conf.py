@@ -130,9 +130,11 @@ exclude_patterns = [
     "plone.restapi/performance",
     "plone.restapi/src",
     "volto/contributing/branch-policy.md",
-    "volto/contributing/install-operating-system.md",
-    "volto/contributing/install-nodejs.md",
+    "volto/contributing/install-docker.md",
+    "volto/contributing/install-git.md",
     "volto/contributing/install-make.md",
+    "volto/contributing/install-nodejs.md",
+    "volto/contributing/install-operating-system.md",
 ]
 
 suppress_warnings = [

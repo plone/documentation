@@ -280,7 +280,17 @@ mrs-developer
     As a byproduct of its update operations, it also automatically adjusts `jsconfig.json`, which is used by Volto to configure webpack aliases.
 
 Yarn
-    [Yarn](https://yarnpkg.com/) is a JavaScript package manager.
+    [Yarn](https://yarnpkg.com/) is both a JavaScript package manager and project manager.
+
+Corepack
+    [Corepack](https://github.com/nodejs/corepack) is a zero-runtime-dependency Node.js script that acts as a bridge between Node.js projects and the package managers they are intended to be used with during development.
+    In practical terms, Corepack lets you use {term}`Yarn`, {term}`npm`, and {term}`pnpm` without having to install them.
+
+    Corepack is distributed by default with all recent Node.js versions.
+    Run `corepack enable` to install the required Yarn and pnpm binaries on your path.
+
+Git
+    [Git](https://git-scm.com/) is a free and open source distributed version control system.
 
 Hydration
     After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing {term}`DOM` elements, and recreate and attach their coresponding components.
