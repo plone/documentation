@@ -173,8 +173,7 @@ collective.easyform
 
 Add it to {file}`instance.yaml` to let Zope know that this add-on should be loaded:
 
-```{code-block} yaml
-:emphasize-lines: 3-6
+```yaml
 default_context:
     zcml_package_includes: project_title, collective.easyform
 ```
