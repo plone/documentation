@@ -176,11 +176,7 @@ Add it to {file}`instance.yaml` to let Zope know that this add-on should be load
 ```{code-block} yaml
 :emphasize-lines: 3-6
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -221,11 +217,7 @@ Add it to {file}`instance.yaml` to let Zope know that this add-on should be load
 
 ```yaml
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -265,11 +257,7 @@ Add it to {file}`instance.yaml` to let Zope know that this add-on should be load
 
 ```yaml
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
