@@ -626,23 +626,25 @@ Plone 6.0 removes such references from the viewlet names to avoid confusion.
 -   Plone 6.0 renames the `plone.belowcontenttitle.keywords` viewlet to `plone.keywords`, and moves it from manager `plone.belowcontent` to `plone.belowcontentbody`.
 -   Plone 6.0 adds the `plone.rights` viewlet in manager `plone.belowcontentbody`.
 
-This is the same information in table form.
+The names in the following table have had the namespace `plone.` removed from them for display purposes only.
+In your code, you should use the object's `plone.` namespace as a prefix.
+This table show the same information, but in table form.
 You can toggle navigation to make more of the table visible.
 
 ```{table} Viewlet changes from 5.2 to 6.0
 
 | 5.2 viewlet name | 5.2 viewlet manager | 6.0 viewlet name | 6.0 viewlet manager |
 | ---------------- | ------------------- | ---------------- | ------------------- |
-|| `plone.documentactions` | | |
-|||| `plone.belowcontentdescription` |
-| `plone.header` | `plone.portaltop` | | `plone.portaltop` |
-| `plone.abovecontenttitle.documentactions` | `plone.belowcontentbody` | `plone.documentactions` | `plone.belowcontent` |
-| `plone.abovecontenttitle.socialtags` | `plone.abovecontenttitle` | `plone.socialtags` | `plone.abovecontenttitle` |
-| `plone.belowcontentbody.relateditems` | `plone.belowcontentbody` | `plone.relateditems` | `plone.belowcontentbody` |
-| `plone.manage_portlets_fallback` | `plone.belowcontent` | | `plone.belowcontent` |
-| `plone.belowcontenttitle.documentbyline` | `plone.belowcontenttitle` | `plone.documentbyline` | `plone.belowcontenttitle` |
-| `plone.belowcontenttitle.keywords` | `plone.belowcontent` | `plone.keywords` | `plone.belowcontentbody` |
-| | `plone.belowcontentbody` | `plone.rights` | `plone.belowcontentbody` |
+|| `documentactions` | | |
+|||| `belowcontentdescription` |
+| `header` | `portaltop` | | `portaltop` |
+| `abovecontenttitle.documentactions` | `belowcontentbody` | `documentactions` | `belowcontent` |
+| `abovecontenttitle.socialtags` | `abovecontenttitle` | `socialtags` | `abovecontenttitle` |
+| `belowcontentbody.relateditems` | `belowcontentbody` | `relateditems` | `belowcontentbody` |
+| `manage_portlets_fallback` | `belowcontent` | | `belowcontent` |
+| `belowcontenttitle.documentbyline` | `belowcontenttitle` | `documentbyline` | `belowcontenttitle` |
+| `belowcontenttitle.keywords` | `belowcontent` | `keywords` | `belowcontentbody` |
+| | `belowcontentbody` | `rights` | `belowcontentbody` |
 ```
 
 One final change is that Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`.
