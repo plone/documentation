@@ -95,8 +95,8 @@ class IMySchema(model.Schema):
     form.mode(secret="hidden")
     form.mode(IEditForm, secret="input")
     secret = schema.TextLine(
-        title=u"Secret",
-        default=u"Secret stuff (except on edit forms)"
+        title="Secret",
+        default="Secret stuff (except on edit forms)"
         )
 ```
 

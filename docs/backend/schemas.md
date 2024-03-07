@@ -241,13 +241,13 @@ class IMySchema(model.Schema):
 
     form.omitted("dummy")
     dummy = schema.Text(
-        title=u"Dummy"
+        title="Dummy"
         )
 
     form.omitted("edit_only")
     form.no_omit(IEditForm, "edit_only")
     edit_only = schema.TextLine(
-        title = u"Only included on edit forms",
+        title = "Only included on edit forms",
         )
 ```
 
@@ -287,14 +287,14 @@ from plone.autoform import directives as form
 class IMySchema(model.Schema):
 
     summary = schema.Text(
-        title=u"Summary",
-        description=u"Summary of the body",
+        title="Summary",
+        description="Summary of the body",
         readonly=True
         )
 
     form.order_before(not_last="summary")
     not_last = schema.TextLine(
-        title=u"Not last",
+        title="Not last",
         )
 ```
 
@@ -332,16 +332,16 @@ from plone.autoform import directives as form
 class IMySchema(model.Schema):
 
     model.fieldset("extra",
-        label=u"Extra info",
+        label="Extra info",
         fields=["footer", "dummy"]
         )
 
     footer = schema.Text(
-        title=u"Footer text",
+        title="Footer text",
         )
 
     dummy = schema.Text(
-        title=u"Dummy"
+        title="Dummy"
         )
 ```
 

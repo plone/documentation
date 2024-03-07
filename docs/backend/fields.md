@@ -161,7 +161,7 @@ class IMySchema(model.Schema):
     form.read_permission(secret="cmf.ManagePortal")
     form.write_permission(secret="cmf.ManagePortal")
     secret = schema.TextLine(
-        title = u"Secret",
+        title = "Secret",
         )
 ```
 
