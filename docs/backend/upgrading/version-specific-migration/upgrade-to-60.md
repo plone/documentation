@@ -608,7 +608,7 @@ See also the [TinyMCE 4 to 5 upgrade guide](https://www.tiny.cloud/docs/migratio
 Plone 6.0 renames various viewlets or moves them to a different viewlet manager.
 This is because some viewlet names contained the name of a viewlet manager.
 This didn't always match the name of their actual viewlet manager, especially after moving them.
-Plone 6.0 removes such references from the viewlet names, to avoid confusion.
+Plone 6.0 removes such references from the viewlet names to avoid confusion.
 
 - Plone 6.0 removes the `plone.documentactions (IDocumentActions)`  viewlet manager. In Plone 5.2 it was already empty.
 - Plone 6.0 adds the `plone.belowcontentdescription (IBelowContentDescription)` viewlet manager. By default this has no viewlets.
