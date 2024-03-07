@@ -625,9 +625,6 @@ Plone 6.0 removes such references from the viewlet names to avoid confusion.
     It remains in manager `plone.belowcontenttitle`.
 -   Plone 6.0 renames the `plone.belowcontenttitle.keywords` viewlet to `plone.keywords`, and moves it from manager `plone.belowcontent` to `plone.belowcontentbody`.
 -   Plone 6.0 adds the `plone.rights` viewlet in manager `plone.belowcontentbody`.
--   Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`.
-    The viewlet remains in manager `plone.portalfooter`.
-    It renders the portlets from the `plone.footerportlets` portlet manager.
 
 This is the same information in table form.
 You can toggle navigation to make more of the table visible.
@@ -647,3 +644,7 @@ You can toggle navigation to make more of the table visible.
 | `plone.belowcontenttitle.keywords` | `plone.belowcontent` | `plone.keywords` | `plone.belowcontentbody` |
 | | `plone.belowcontentbody` | `plone.rights` | `plone.belowcontentbody` |
 ```
+
+One final change is that Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`.
+The viewlet remains in manager `plone.portalfooter`.
+It renders the portlets from the `plone.footerportlets` portlet manager.
