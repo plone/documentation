@@ -606,7 +606,7 @@ See also the [TinyMCE 4 to 5 upgrade guide](https://www.tiny.cloud/docs/migratio
 ## Viewlets
 
 Plone 6.0 renames various viewlets or moves them to a different viewlet manager.
-The reason for renaming, is that some viewlet names contained the name of a viewlet manager.
+This is because some viewlet names contained the name of a viewlet manager.
 This didn't always match the name of their actual viewlet manager, especially after moving them.
 Plone 6.0 removes such references from the viewlet names, to avoid confusion.
 
