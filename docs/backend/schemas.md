@@ -219,7 +219,7 @@ Note this won't have behavior fields added to it at this stage, only the fields 
 
 (backend-schemas-directives-label)=
 
-## Using schema directives
+## Schema directives
 
 With `plone.autoform` and `plone.supermodel`, we can use directives to add information to the schema fields.
 

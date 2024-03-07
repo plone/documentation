@@ -120,7 +120,8 @@ schema = IMyForm
 If your form is not bound to an object (such as a Dexterity object), set `ignoreContext = True`.
 
 
-(classic-ui-forms-autoform-label)=
+(classic-ui-controlling-form-presentation-label)=
+
 ## Controlling form presentation
 
 Directives can be specified in the schema to control aspects of form presentation.
@@ -130,25 +131,18 @@ Directives can be specified in the schema to control aspects of form presentatio
 See the corresponding chapters to learn how to control field and widget presentation in a form.
 
 ```{seealso}
-{ref}`Field permission <backend-fields-schema-label>`
-```
-```{seealso}
-{ref}`Ordering, omitting, grouping <backend-schemas-directives-label>`
-```
-```{seealso}
-{ref}`Changing a field's display mode <backend-widgets-fields-display-label>`
-```
-```{seealso}
-{ref}`Changing a field's widget <backend-widgets-fields-widget-label>`
+-   {ref}`backend-fields-schema-autoform-permission`
+-   {ref}`backend-schemas-directives-label`
+-   {ref}`backend-widgets-change-a-fields-display-label`
+-   {ref}`backend-widgets-change-a-fields-widget-label`
 ```
 
 
 ### Display Forms
 
-
 Sometimes rather than rendering a form for data entry, you want to display stored values based on the same schema.
 This can be done using a "display form".
-The display form renders each field's widget in "display mode" which means that it shows the field value in read-only form rather than as a form input.
+The display form renders each field's widget in "display mode", which means that it shows the field value in read-only form rather than as a form input.
 
 To use the display form, create a view that extends `WidgetsView` like this:
 
@@ -158,8 +152,6 @@ from plone.autoform.view import WidgetsView
 class MyView(WidgetsView):
     schema = IMySchema
     additionalSchemata = (ISchemaOne, ISchemaTwo,)
-
-    # ...
 ```
 
 To render the form, do not override `__call__()`.
@@ -167,8 +159,12 @@ Instead, either implement the `render()` method, set an `index` attribute to a p
 
 In the template, you can use the following variables:
 
--   `view/w` is a dictionary of all widgets, including those from non-default fieldsets (by contrast, the `widgets` variable contains only those widgets in the default fieldset). The keys are the field names, and the values are widget instances. To render a widget (in display mode), you can do `tal:replace="structure view/w/myfield/render" />`.
--   `view/fieldsets` is a dictionary of all fieldsets (not including the default fieldset, in other words, those widgets not placed into a fieldset. The keys are the fieldset names, and the values are the fieldset form instances, which in turn have variables like `widgets` given a list of all widgets.
+-   `view/w` is a dictionary of all widgets, including those from non-default fieldsets.
+    By contrast, the `widgets` variable contains only those widgets in the default fieldset.
+    The keys are the field names, and the values are widget instances.
+    To render a widget (in display mode), you can do `tal:replace="structure view/w/myfield/render" />`.
+-   `view/fieldsets` is a dictionary of all fieldsets not including the default fieldset, in other words, those widgets not placed into a fieldset.
+    The keys are the fieldset names, and the values are the fieldset form instances, which in turn have variables, such as `widgets`, given a list of all widgets.
 
 
 (classic-ui-forms-dexterity-add-edit-forms-label)=
