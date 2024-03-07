@@ -54,9 +54,6 @@ Grunt
 Less
     A dynamic stylesheet language that can be compiled into {term}`CSS` (Cascading Style Sheets).
 
-Linode
-    [Linode.com](https://www.linode.com/) is an American privately owned virtual private server provider company based in Galloway, New Jersey, United States.
-
 mxdev
     [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, and you want to develop only some of those packages.
     It is designed for developers who use stable version constraints, then layer their customizations on top of that base while using a version control system.

@@ -31,4 +31,4 @@ If the site is not configured to be multilingual, Volto doesn't do any redirect.
 
 ## Overriding the default behavior
 
-To do so, you need to provide your own `MultilingualRedirector` component {doc}`customizing it </volto/recipes/customizing-components>`.
+To do so, you need to provide your own `MultilingualRedirector` component {doc}`customizing it </volto/development/customizing-components>`.
