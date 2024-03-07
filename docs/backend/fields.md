@@ -148,7 +148,7 @@ With `plone.autoform` and `plone.supermodel` we can use directives to add inform
 By default, fields are included in the form regardless of the user's permissions.
 Fields can be protected using the `read_permission` and `write_permission` directives.
 The read permission is checked when the field is in display mode, and the write permission is checked when the field is in input mode.
-The permission should be given with its Zope 3-style name (such as `cmf.ManagePortal` instead of `Manage portal`).
+The permission should be given with its Zope 3-style name, such as `cmf.ManagePortal` instead of `Manage portal`.
 
 In this example, the `secret` field is protected by the `cmf.ManagePortal` permission as both a read and write permission.
 This means that in both display and input modes, the field will only be included in the form for users who have that permission:
@@ -165,7 +165,7 @@ class IMySchema(model.Schema):
         )
 ```
 
-In supermodel XML the directives are `security:read-permission` and
+In supermodel XML, the directives are `security:read-permission` and
 `security:write-permission`:
 
 ```xml
