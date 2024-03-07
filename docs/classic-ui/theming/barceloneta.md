@@ -25,7 +25,7 @@ To create an add-on package with a Plone Classic UI theme, you need to install t
 -   [Python (>=3.8)](https://www.python.org/)
 -   [plonecli](https://pypi.org/project/plonecli/)
 
-Read more about how to install pre-requisites in {doc}`/install/install-from-packages`.
+Read more about how to install pre-requisites in {doc}`/install/create-project`.
 
 
 (classic-ui-theming-barceloneta-create-a-classic-ui-theme-add-on-package-label)=

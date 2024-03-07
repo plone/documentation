@@ -16,10 +16,10 @@ This chapter describes how repositories under the Plone GitHub organization are 
 
 (contributing-github-repository-tagging-label)=
 
-## Repository tagging
+## Repository topics
 
-To find repositories and their purpose within the Plone organization, a set of tags are used for repositories within the Plone GitHub organization.
-The following tags are in use.
+To find repositories and their purpose within the Plone organization, a set of topics are used for repositories within the Plone GitHub organization.
+The following topics are in use.
 
 `core`
 : repositories that are required by both Volto and Classic UI projects
@@ -47,3 +47,9 @@ The following tags are in use.
 
 `tooling`
 : tools and applications needed to orchestrate Plone
+
+## Manage topics
+
+To update the topics of a GitHub repository, go to the repository's URL, such as https://github.com/plone/plone.batching, and click on the {guilabel}`gear icon` on the {guilabel}`About` section on the right side of the screen.
+
+On the modal that opens up, fill the topics on the `Topics` field.
