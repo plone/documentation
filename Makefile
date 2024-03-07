@@ -35,7 +35,7 @@ distclean:  ## Clean docs build directory and Python virtual environment
 
 
 bin/python:
-	python3 -m venv . || virtualenv --clear --python=python3 .
+	python3 -m venv .
 	bin/pip install -r requirements-initial.txt
 	bin/pip install -r requirements.txt
 
