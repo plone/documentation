@@ -617,7 +617,7 @@ Plone 6.0 removes such references from the viewlet names to avoid confusion.
 - Plone 6.0 renames the `plone.abovecontenttitle.socialtags` viewlet to `plone.socialtags`. It remains in manager `plone.abovecontenttitle`.
 - Plone 6.0 renames the `plone.belowcontentbody.relateditems` viewlet to `plone.relateditems`. It remains in manager `plone.belowcontentbody`.
 - Plone 6.0 removes the `plone.manage_portlets_fallback` viewlet from the `plone.belowcontent` manager.
-- Plone 6.0 renames the `plone.belowcontenttitle.documentbyline` viewlet to `plone.documentbyline` . It remains in manager `plone.belowcontenttitle`.
+- Plone 6.0 renames the `plone.belowcontenttitle.documentbyline` viewlet to `plone.documentbyline`. It remains in manager `plone.belowcontenttitle`.
 - Plone 6.0 renames the `plone.belowcontenttitle.keywords` viewlet to `plone.keywords` and moves it from manager `plone.belowcontent` to `plone.belowcontentbody`.
 - Plone 6.0 adds the `plone.rights` viewlet in manager `plone.belowcontentbody`.
 - Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`. The viewlet remains in manager `plone.portalfooter`. It renders the portlets from the `plone.footerportlets` portlet manager.
