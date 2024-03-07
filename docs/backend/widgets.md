@@ -63,11 +63,11 @@ The main widgets are:
 -   DateTime Picker
 
 
-(backend-widgets-fields-display-label)=
+(backend-widgets-change-a-fields-display-label)=
 
 ## Change a field's display mode
 
-A field's widget can be displayed in several modes:
+A field's widget can be displayed in several modes.
 
 `input`
 :   Allows the user to enter data into the field
@@ -81,6 +81,7 @@ A field's widget can be displayed in several modes:
 
 ### `plone.autoform` `mode` directive
 
+In the following example, the mode for the `secret` field is set to `hidden` for most forms, but `input` for forms that provide the `IEditForm` interface.
 
 ```{code-block} python
 :emphasize-lines: 6,7
@@ -99,8 +100,6 @@ class IMySchema(model.Schema):
         )
 ```
 
-In this case the mode for the `secret` field is set to 'hidden' for most forms, but 'input' for forms that provide the IEditForm interface.
-
 The corresponding supermodel XML directive is `form:mode`:
 
 ```{code-block} xml
@@ -114,7 +113,7 @@ The corresponding supermodel XML directive is `form:mode`:
 </field>
 ```
 
-The mode can be specified briefly if it should be the same for all forms:
+The mode can be specified briefly, if it should be the same for all forms:
 
 ```{code-block} xml
 :emphasize-lines: 3
@@ -127,10 +126,10 @@ The mode can be specified briefly if it should be the same for all forms:
 </field>
 ```
 
-In other words, `form:mode` may be either a single mode, or a space-separated list of form_interface:mode pairs.
+In other words, `form:mode` may be either a single mode, or a space-separated list of `<form_interface>:<mode>` pairs.
 
 
-(backend-widgets-fields-widget-label)=
+(backend-widgets-change-a-fields-widget-label)=
 
 ## Change a field's widget
 
