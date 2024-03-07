@@ -628,7 +628,7 @@ Plone 6.0 removes such references from the viewlet names to avoid confusion.
 
 The names in the following table have had the namespace `plone.` removed from them for display purposes only.
 In your code, you should use the object's `plone.` namespace as a prefix.
-This table show the same information, but in table form.
+This table shows the same information, but in tabular form.
 You can toggle navigation to make more of the table visible.
 
 ```{table} Viewlet changes from 5.2 to 6.0
