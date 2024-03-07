@@ -27,4 +27,5 @@ upgrade-to-python3
 upgrade-zodb-to-python3
 upgrade-to-60
 migrate-to-volto
+changelog
 ```
