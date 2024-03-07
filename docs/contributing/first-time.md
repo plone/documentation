@@ -13,17 +13,38 @@ myst:
 
 This chapter provides guidance to first-time contributors to Plone and all its projects and repositories under the Plone GitHub organization.
 
+
+(for-students-and-learners)=
+
+## For students and learners
+
+```{important}
+**We do not offer training, guidance, or mentoring to students or learners on GitHub.**
+Don't ask for it.
+The Plone organization may delete comments, lock conversations, or block GitHub users who ignore this.
+```
+
+If you are a student or learner of Plone, you probably are not a contributor.
+See the next section, {ref}`expectations-of-first-time-contributors`, to determine whether you are in fact a contributor.
+
+For free support, training, guidance, or mentoring, you should work through some trainings, use the [Plone Community Forum](https://community.plone.org/), participate in an [event](https://plone.org/news-and-events/events), and **not use GitHub**.
+
+
+(expectations-of-first-time-contributors)=
+
+## Expectations of first-time contributors
+
 As a first-time contributor to Plone on GitHub, we expect that you have:
  
 -   {doc}`installed Plone <../install/index>` on your development machine
 -   worked on a Plone project, even if it is just for fun
+-   read and followed the guidance on the pages under {doc}`/contributing/index` both for Plone in general and for the specific project to which you want to contribute, as well as all the guidance on this page
 -   worked through some trainings, such as the recommended:
     -   {doc}`training:mastering-plone/index`
     -   {doc}`training:voltohandson/index`
     -   {doc}`training:voltoaddons/index`
     -   {doc}`training:volto_customization/index`
     -   {doc}`training:plone-deployment/index`
--   read the chapters of {doc}`/index` relevant to your contribution
 -   a sincere interest to contribute to Plone and become an ongoing contributing member of our organization
 -   a GitHub account
 -   basic knowledge of using git and GitHub
@@ -34,9 +55,8 @@ As a first-time contributor on GitHub, your expectations should align with ours,
 Plone has a very large and complex code base.
 It takes a significant amount of time to learn how to develop Plone.
 
-As members of the Plone organization, we volunteer our free time to develop Plone on GitHub.
-We do not offer support, training, or mentoring on GitHub.
-For free support, training, or mentoring, you should use the [Plone Community Forum](https://community.plone.org/) or participate in an [event](https://plone.org/news-and-events/events), and not use GitHub.
+If you want to quickly pad your résumé, satisfy a "contribute to open source" school assignment, or get recognition for participating in events such as Hacktoberfest, then Plone may not be the open source software project for you.
+Such motivation behind these contributions usually results in poor quality breaking code, and drains limited volunteer time to triage.
 ```
 
 
@@ -87,6 +107,19 @@ Learn from their mistakes, and don't commit them yourself.
     It also sends notifications to hundreds of developers, informing them that you have not read this guide, and annoying many of them.
     You should instead learn how to {ref}`work-with-github-issues-label` and {ref}`run tests and code quality checks locally <test-and-code-quality-label>`.
 
+4.  **Don't ask if an issue is open.**
+    Instead you can determine whether an issue is open by doing your own research using the following tips.
+
+    -   Start Plone or its specific package, follow the steps to attempt to reproduce the issue, and see if it still exists.
+    -   Check the issue's status indicator for a green label of {guilabel}`Open`.
+    -   Look for linked open pull requests in the issue's history.
+    -   Search open pull requests for the issue.
+        Sometimes contributors fail to link their pull request to an open issue.
+    -   Review unreleased change log entries in the package's {guilabel}`news` directory.
+        Each pull request must have a change log entry, and these entries end up here when pull requests are merged and closed.
+    -   Search release notes to see whether the issue has been resolved.
+        On rare occasions, contributors forget to close the original issue.
+
 
 (plone-contributors-team-label)=
 
@@ -115,8 +148,9 @@ Please don't be "that person".
 
 1.  **Find issues that you want to work on.**
     You can filter GitHub issues by labels.
-    Working on documentation or on issues labeled with either `33 needs: docs` or `41 lvl: easy` are the two best ways for first-time contributors to contribute.
+    Working on documentation or on issues labeled with either [`33 needs: docs`](https://github.com/search?q=user%3Aplone+label%3A%2233+needs%3A+docs%22&type=issues&ref=advsearch) or [`41 lvl: easy`](https://github.com/search?q=user%3Aplone+label%3A%2241+lvl%3A+easy%22&type=Issues&ref=advsearch) are the two best ways for first-time contributors to contribute.
     This is because first-timers have a fresh perspective that might be overlooked by old-timers.
+    
     Issues labeled `42 lvl: moderate`, `43 lvl: complex`, or `03 type: feature (plip)` are not suitable for first-timers because of their complexity.
     Issues with these labels may take weeks to complete.
 1.  **Discuss whether you should perform any work.**
@@ -153,9 +187,9 @@ You will pull code from the upstream Plone repository, push your work from your 
 _Plone git workflow_
 ````
 
-1.  Start by [forking the project's repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) to your account through the GitHub interface.
-1.  [Clone your forked repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
-1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
+1.  Start by [forking the project's repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) to your account through the GitHub interface.
+1.  [Clone your forked repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#cloning-your-forked-repository).
+1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
 
 
 (write-code-label)=
@@ -221,9 +255,14 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
     -   Make both your title and description descriptive.
         Reviewers look at many pull requests, and need to quickly understand the context.
         A lazily written phrase such as "Fixes bug" is meaningless.
-    -   Include "Fixes #" and the related issue number in the description.
+    -   Include "Fixes #ISSUE-NUMBER" in the description.
         This enables automatic closing of the related issue when the pull request is merged.
         This also creates a hyperlink to the original issue for easy reference.
+        
+        ```{seealso}
+        [Linking a pull request to an issue using a keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
+        ```
+
 1.  **Request a review.**
     Identify who you should ask by either checking the history of the files you edit, or viewing the project's list of contributors for an active member.
     If you have write access to the repository, [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.

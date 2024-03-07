@@ -12,7 +12,7 @@ myst:
 
 # Manage add-ons and packages
 
-This chapter assumes you have previously {doc}`installed Plone from its packages <install-from-packages>`.
+This chapter assumes you have previously followed {doc}`create-project`.
 In this section, we discuss details of the installation process so that you can customize your Plone installation.
 It also covers routine management tasks that a developer might perform.
 
@@ -173,14 +173,9 @@ collective.easyform
 
 Add it to {file}`instance.yaml` to let Zope know that this add-on should be loaded:
 
-```{code-block} yaml
-:emphasize-lines: 3-6
+```yaml
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -221,11 +216,7 @@ Add it to {file}`instance.yaml` to let Zope know that this add-on should be load
 
 ```yaml
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -265,11 +256,7 @@ Add it to {file}`instance.yaml` to let Zope know that this add-on should be load
 
 ```yaml
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.

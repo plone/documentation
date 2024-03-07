@@ -13,6 +13,8 @@ myst:
 
 This part of the documentation describes how to contribute to Plone, including all its projects and repositories under the Plone GitHub organization.
 
+If instead you want to create a web application project using Plone, see {doc}`/install/create-project`.
+
 To contribute to any project in Plone, you must follow the policies of the [Plone Foundation](https://plone.org/foundation), [Plone GitHub organization](https://github.com/plone/) and the specific project.
 
 This chapter covers policies that apply to all Plone projects.
@@ -28,14 +30,18 @@ Plone uses the [GNU General Public License, version 2](https://github.com/plone/
 A few other projects use the [modified BSD license](https://opensource.org/license/bsd-3-clause/), [MIT License](https://opensource.org/license/mit/), or [Creative Commons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
 You grant permission by signing and returning the Plone Contributor Agreement.
 
+A volunteer member of the Plone Foundation will review your signed agreement.
+
+If accepted, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access, and you will simultaneously receive an email notification from GitHub.
+
+Allow up to one week for processing.
+Contact the Plone Foundation by its email address for further information, including the status of your request.
+
 ```{button-link} https://plone.org/foundation/contributors-agreement
 :color: primary
 
 Sign the Plone Contributor Agreement
 ```
-
-After a member of the Plone Foundation reviews and accepts your signed agreement, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access.
-This process may take a few business days.
 
 ```{seealso}
 -   [Plone License FAQ](https://plone.org/foundation/copyright-licensing-logo/license-faq)
@@ -80,7 +86,10 @@ When a package is released with a new version, the release manager runs `towncri
 Because the log file is automatically generated, you should not edit it directly, except to make corrections, such as broken links.
 
 To create a change log entry or news item, create a file in the `news` directory, located in the root of the package.
-Its format must be `###.type`, where `###` is the referenced GitHub issue or pull request number, `.` is the literal extension delimiter, and `type` is one of the following strings.
+For Volto, its repository is in a monorepo structure, consisting of several packages in the `packages` folder.
+Thus for Volto and its packages, change log entries should be created in `packages/PACKAGE_NAME/news/`, which is the root of the package.
+
+The change log entry's format must be `###.type`, where `###` is the referenced GitHub issue or pull request number, `.` is the literal extension delimiter, and `type` is one of the following strings.
 
 -   `breaking` for breaking changes
 -   `bugfix` for bug fixes
@@ -95,11 +104,32 @@ The content of this file must include the following.
 -   A brief message that summarizes the changes in your contribution.
 -   An attribution to yourself, in the format of `@github_username`.
 
-The following text is an example change log entry, placed inside {file}`/news/4569.documentation`.
+```{important}
+These change log entries become narrative documentation.
+```
+
+You can write good change log entries with the following guidance.
+
+-   Use a narrative format, in the past tense, proper English spelling and grammar, and inline markup as needed.
+-   Write your change log entry for its appropriate audience.
+    -   Most entries should address _users_ of the software.
+    -   An entry for a change to a public API should address _developers_.
+-   If you fix a bug, write what was broken and is now fixed.
+-   If you add or change a feature or public API, write a summary of previous behavior, what it does now, and how to use it.
+-   Refer to narrative documentation as needed.
+
+The following text is an example of a good change log entry, placed inside {file}`/news/4470.documentation`.
 
 ```text
-Fixed broken links for ReactJS.org. @stevepiercy
+Changed a few broken links in `CHANGELOG.md` from URLs to inline literals to avoid errors when validating links. See https://6.docs.plone.org/volto/contributing/documentation.html#docs-linkcheckbroken for usage. @stevepiercy
 ```
+
+The following would be a poor change log entry.
+
+```text
+Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_guide]
+```
+
 
 (contributing-project-configuration-files-label)=
 
@@ -160,8 +190,8 @@ hidden: true
 
 first-time
 documentation/index
-../plone.api/contribute/index
-../plone.restapi/docs/source/contributing/index
-../volto/contributing/index
+plone-api
+plone-restapi
+volto
 github-administration
 ```

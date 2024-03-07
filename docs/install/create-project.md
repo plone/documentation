@@ -1,18 +1,20 @@
 ---
 myst:
   html_meta:
-    "description": "How to install Plone 6 from its packages."
-    "property=og:description": "How to install Plone 6 from its packages."
-    "property=og:title": "Install Plone from its packages"
-    "keywords": "Plone, Plone 6, install, pip, packages, source, cookiecutter"
+    "description": "Create a Plone project"
+    "property=og:description": "Create a Plone project"
+    "property=og:title": "Create a Plone project"
+    "keywords": "Plone, Plone 6, create, project, install, cookiecutter"
 ---
 
 
-(install-packages-1-label)=
+(create-a-project-label)=
 
-# Install Plone from its packages
- 
-When you want full control over development or deployment, installing Plone from its packages is a good option.
+# Create a project
+
+This chapter describes how you can create a web application project using Plone, with full control over development and deployment.
+
+If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
 
 
 (install-packages-system-requirements-label)=
@@ -51,14 +53,8 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 
 ### Pre-requisites for installation
 
--   An operating system that runs all the requirements mentioned above.
-    Most UNIX-based operating systems are supported, including many Linux distributions, macOS, or {term}`Windows Subsystem for Linux` (WSL) on Windows.
-    A UNIX-based operating system is recommended.
-
-    ```{important}
-    Windows alone is not recommended because it does not support {term}`GNU make`.
-    If you get Plone to run on Windows alone, please feel free to document and share your process.
-    ```
+```{include} ../volto/contributing/install-operating-system.md
+```
 
 -   Python {SUPPORTED_PYTHON_VERSIONS}
 -   {term}`pipx`
@@ -68,6 +64,7 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 -   {term}`Yarn`
 -   {term}`GNU make`
 -   {term}`Docker`
+-   {term}`Git`
 
 
 (install-prerequisites-python-label)=
@@ -132,85 +129,74 @@ For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish)
 
 #### Node.js
 
-1.  Install or update the supported LTS versions of Node.js, then activate the version supported in Volto.
-
-    ```shell
-    nvm install "lts/*"
-    nvm use 20
-    ```
-
-2.  Verify that the supported version of Node.js is activated.
-
-    ```shell
-    node -v
-    ```
+```{include} ../volto/contributing/install-nodejs.md
+```
 
 
 (install-prerequisites-yeoman-label)=
 
-#### Yeoman
+#### Yeoman and the Volto boilerplate generator
 
-Install {term}`Yeoman`.
+Install {term}`Yeoman` and the Volto boilerplate generator.
 
 ```shell
-npm install -g yo
+npm install -g yo @plone/generator-volto
 ```
 
 
 (install-prerequisites-yarn-label)=
 
-#### Yarn 3
+#### Yarn
 
-Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
+Use {term}`Corepack` to enable Yarn, which was already installed with the {ref}`supported version of Node.js <install-packages-prerequisites-label>`.
 
 1.  Open a terminal and type:
 
     ```shell
-    npm install yarn@3
+    corepack enable
     ```
 
-2.  Verify that Yarn v3.x.x is installed and activated.
+````{important}
+The preceding instructions will not work if you have used another package manager, such as Homebrew on macOS, to install Yarn.
+You can verify where you installed Yarn.
 
-    ```shell
-    yarn -v
-    ```
-    ```console
-    3.2.3
-    ```
-    
-    If you do not see a version of Yarn 3, then try the following to set the active version.
-    
-    ```shell
-    yarn set version 3.x
-    ```
+```shell
+which yarn
+# /opt/homebrew/bin/yarn
+```
 
-    If the version doesn't change, you can try deleting the {file}`yarn.lock` file, setting the version, and installing again.
-    ```shell
-    rm yarn.lock
-    yarn set version 3.x
-    yarn install
-    ```
-    
+If the console includes `homebrew` in the path, then you must uninstall it.
+
+```shell
+brew uninstall yarn
+```
+
+Now the instructions to install Yarn should work.
+````
 
 
 (install-prerequisites-make-label)=
 
 #### Make
 
-{term}`Make` comes installed on most Linux distributions.
-On macOS, you must first [install Xcode](https://developer.apple.com/xcode/resources/), then install its command line tools.
-On Windows, it is strongly recommended to [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install), which will include `make`.
-
-Finally, it is a good idea to update your system's version of `make`, because some distributions, especially macOS, have an outdated version.
-Use your favorite search engine or trusted online resource for how to update `make`.
+```{include} ../volto/contributing/install-make.md
+```
 
 
 (install-prerequisites-docker-label)=
 
-#### Install Docker
+#### Docker
 
-Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
-Docker Desktop includes all Docker tools.
+```{include} ../volto/contributing/install-docker.md
+```
+
+
+(install-prerequisites-git-label)=
+
+#### Git
+
+```{include} ../volto/contributing/install-git.md
+```
 
 
 (install-packages-install-label)=
@@ -242,11 +228,18 @@ You will be presented with a series of prompts.
 You can accept the default values in square brackets (`[default-option]`) by hitting the {kbd}`Enter` key, or enter your preferred values.
 For ease of documentation, we will use the default values.
 
+(avoid-plone-core-package-names)=
+
+```{important}
+For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6.0-latest/constraints.txt).
+Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the same package.
+```
+
 ```console
 % pipx run cookiecutter gh:collective/cookiecutter-plone-starter
 
 
-Cookiecutter Plone Starter 
+Cookiecutter Plone Starter
 ================================================================================
 
 Sanity checks
@@ -261,21 +254,21 @@ Project details
 --------------------------------------------------------------------------------
 
   [1/19] Project Title (Project Title): Plone Conference Website 2070
-  [2/19] Project Description (A new project using Plone 6.): 
-  [3/19] Project Slug (Used for repository id) (plone-conference-website-2070): 
-  [4/19] Project URL (without protocol) (plone-conference-website-2070.example.com): 
+  [2/19] Project Description (A new project using Plone 6.):
+  [3/19] Project Slug (Used for repository id) (plone-conference-website-2070):
+  [4/19] Project URL (without protocol) (plone-conference-website-2070.example.com):
   [5/19] Author (Plone Foundation): Elli
   [6/19] Author E-mail (collective@plone.org): elli@plone.org
-  [7/19] Python Package Name (plone_conference_website_2070): 
-  [8/19] Volto Addon Name (volto-plone-conference-website-2070): 
+  [7/19] Python Package Name (plone_conference_website_2070):
+  [8/19] Volto Addon Name (volto-plone-conference-website-2070):
   [9/19] Choose a Python Test Framework
     1 - pytest
     2 - unittest
-    Choose from [1/2] (1): 
-  [10/19] Plone Version (6.0.8): 
+    Choose from [1/2] (1):
+  [10/19] Plone Version (6.0.8):
   [11/19] Should we use Volto Alpha Versions? (No): yes
-  [12/19] Volto Version (18.0.0-alpha.1): 
-  [13/19] Volto Generator Version (8.0.0): 
+  [12/19] Volto Version (18.0.0-alpha.1):
+  [13/19] Volto Generator Version (8.0.0):
   [14/19] Language
     1 - English
     2 - Deutsch
@@ -283,12 +276,12 @@ Project details
     4 - Português (Brasil)
     5 - Nederlands
     6 - Suomi
-    Choose from [1/2/3/4/5/6] (1): 
+    Choose from [1/2/3/4/5/6] (1):
   [15/19] GitHub Username or Organization (collective): ellizurigo
   [16/19] Container Registry
     1 - GitHub Container Registry
     2 - Docker Hub
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [17/19] Should we setup a caching server?
     1 - Yes
     2 - No
@@ -296,11 +289,11 @@ Project details
   [18/19] Add Ansible playbooks?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [19/19] Add GitHub Action to Deploy this project?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
 
 Plone Conference Website 2070 generation
 --------------------------------------------------------------------------------
@@ -355,6 +348,30 @@ This will take a few minutes.
 First the backend, then the frontend will be installed.
 
 When the process completes successfully, it will exit with no message.
+
+````{note}
+If you used a Plone core package name, then `make install` will return an error message such as the following.
+
+```console
+ERROR: Cannot install plone-volto 1.0.0a1 (from /home/username/projects/volto/plone-volto/backend/src/plone_volto) because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested plone-volto 1.0.0a1 (from /home/username/projects/volto/plone-volto/backend/src/plone_volto)
+    The user requested (constraint) plone-volto==4.2.0
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit
+make[2]: *** [Makefile:112: build-dev] Error 1
+make[2]: Leaving directory '/home/username/projects/volto/plone-volto/backend'
+make[1]: *** [Makefile:46: install-backend] Error 2
+make[1]: Leaving directory '/home/username/projects/volto/plone-volto'
+```
+
+You must delete your project, {ref}`follow the important note <avoid-plone-core-package-names>`, and run the cookiecutter again.
+````
 
 
 (install-packages-start-plone-label)=
@@ -444,5 +461,3 @@ Select the {guilabel}`Login` link to visit the login form, and enter the followi
 Now you can edit content or configure your Plone site.
 
 You can stop the site with {kbd}`ctrl-c`.
-
-Enjoy!
