@@ -610,22 +610,29 @@ This is because some viewlet names contained the name of a viewlet manager.
 This didn't always match the name of their actual viewlet manager, especially after moving them.
 Plone 6.0 removes such references from the viewlet names to avoid confusion.
 
-- Plone 6.0 removes the `plone.documentactions (IDocumentActions)` viewlet manager. In Plone 5.2 it was already empty.
-- Plone 6.0 adds the `plone.belowcontentdescription (IBelowContentDescription)` viewlet manager. By default this has no viewlets.
-- Plone 6.0 removes the `plone.header` viewlet from `plone.portaltop` manager, making it empty.
-- Plone 6.0 renames the `plone.abovecontenttitle.documentactions` viewlet to `plone.documentactions` and moves it from manager `plone.belowcontentbody` to `plone.belowcontent`.
-- Plone 6.0 renames the `plone.abovecontenttitle.socialtags` viewlet to `plone.socialtags`. It remains in manager `plone.abovecontenttitle`.
-- Plone 6.0 renames the `plone.belowcontentbody.relateditems` viewlet to `plone.relateditems`. It remains in manager `plone.belowcontentbody`.
-- Plone 6.0 removes the `plone.manage_portlets_fallback` viewlet from the `plone.belowcontent` manager.
-- Plone 6.0 renames the `plone.belowcontenttitle.documentbyline` viewlet to `plone.documentbyline`. It remains in manager `plone.belowcontenttitle`.
-- Plone 6.0 renames the `plone.belowcontenttitle.keywords` viewlet to `plone.keywords` and moves it from manager `plone.belowcontent` to `plone.belowcontentbody`.
-- Plone 6.0 adds the `plone.rights` viewlet in manager `plone.belowcontentbody`.
-- Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`. The viewlet remains in manager `plone.portalfooter`. It renders the portlets from the `plone.footerportlets` portlet manager.
+-   Plone 6.0 removes the `plone.documentactions` (`IDocumentActions`) viewlet manager.
+    In Plone 5.2 it was already empty.
+-   Plone 6.0 adds the `plone.belowcontentdescription` (`IBelowContentDescription`) viewlet manager.
+    By default this has no viewlets.
+-   Plone 6.0 removes the `plone.header` viewlet from `plone.portaltop` manager, making it empty.
+-   Plone 6.0 renames the `plone.abovecontenttitle.documentactions` viewlet to `plone.documentactions`, and moves it from manager `plone.belowcontentbody` to `plone.belowcontent`.
+-   Plone 6.0 renames the `plone.abovecontenttitle.socialtags` viewlet to `plone.socialtags`.
+    It remains in manager `plone.abovecontenttitle`.
+-   Plone 6.0 renames the `plone.belowcontentbody.relateditems` viewlet to `plone.relateditems`.
+    It remains in manager `plone.belowcontentbody`.
+-   Plone 6.0 removes the `plone.manage_portlets_fallback` viewlet from the `plone.belowcontent` manager.
+-   Plone 6.0 renames the `plone.belowcontenttitle.documentbyline` viewlet to `plone.documentbyline`.
+    It remains in manager `plone.belowcontenttitle`.
+-   Plone 6.0 renames the `plone.belowcontenttitle.keywords` viewlet to `plone.keywords`, and moves it from manager `plone.belowcontent` to `plone.belowcontentbody`.
+-   Plone 6.0 adds the `plone.rights` viewlet in manager `plone.belowcontentbody`.
+-   Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`.
+    The viewlet remains in manager `plone.portalfooter`.
+    It renders the portlets from the `plone.footerportlets` portlet manager.
 
 This is the same information in table form.
 You can toggle navigation to make more of the table visible.
 
-:::{table} Viewlet changes from 5.2 to 6.0
+```{table} Viewlet changes from 5.2 to 6.0
 
 | 5.2 viewlet name | 5.2 viewlet manager | 6.0 viewlet name | 6.0 viewlet manager |
 | ---------------- | ------------------- | ---------------- | ------------------- |
@@ -639,3 +646,4 @@ You can toggle navigation to make more of the table visible.
 | `plone.belowcontenttitle.documentbyline` | `plone.belowcontenttitle` | `plone.documentbyline` | `plone.belowcontenttitle` |
 | `plone.belowcontenttitle.keywords` | `plone.belowcontent` | `plone.keywords` | `plone.belowcontentbody` |
 | | `plone.belowcontentbody` | `plone.rights` | `plone.belowcontentbody` |
+```
