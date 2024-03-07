@@ -221,7 +221,7 @@ Note this won't have behavior fields added to it at this stage, only the fields 
 
 ## Using schema directives
 
-With `plone.autoform` and `plone.supermodel` we can use directives to add information to the schema fields.
+With `plone.autoform` and `plone.supermodel`, we can use directives to add information to the schema fields.
 
 
 ### Omit fields
@@ -269,13 +269,13 @@ In supermodel XML, this can be specified as:
 </field>
 ```
 
-`form:omitted` may be either a single boolean value, or a space-separated list of form_interface:boolean pairs.
+`form:omitted` may be either a single boolean value, or a space-separated list of `<form_interface>:<boolean>` pairs.
 
 
 ### Reorder fields
 
 A field's position in the form can be influenced using the `order_before` and `order_after` directives.
-In this example, the `not_last` field is placed before the `summary` field even though it is defined afterward:
+In this example, the `not_last` field is placed before the `summary` field, even though it is defined afterward:
 
 ```{code-block} python
 :emphasize-lines: 12
@@ -298,10 +298,10 @@ class IMySchema(model.Schema):
         )
 ```
 
-The value passed to the directive may be either `*` (indicating before or after all fields) or the name of another field.
-Use `.fieldname` to refer to field in the current schema or a base schema.
-Prefix with the schema name (e.g. `IDublinCore.title`) to refer to a field in another schema.
-Use an unprefixed name to refer to a field in the current or the default schema for the form.
+The value passed to the directive may be either `*`, indicating before or after all fields, or the name of another field.
+Use `<.fieldname>` to refer to the field in the current schema or a base schema.
+Prefix with the schema name, such as `IDublinCore.title`, to refer to a field in another schema.
+Use an unprefixed name to refer to a field in either the current or default schema for the form.
 
 In supermodel XML, the directives are called `form:before` and `form:after`.
 For example:
@@ -323,7 +323,7 @@ Fields can be grouped into fieldsets, which will be rendered within an HTML `<fi
 In this example the `footer` and `dummy` fields are placed within the `extra` fieldset:
 
 ```{code-block} python
-:emphasize-lines: 6,7,8,9
+:emphasize-lines: 6-9
 :linenos:
 
 from plone.supermodel import model
@@ -331,9 +331,9 @@ from plone.autoform import directives as form
 
 class IMySchema(model.Schema):
 
-    model.fieldset('extra',
+    model.fieldset("extra",
         label=u"Extra info",
-        fields=['footer', 'dummy']
+        fields=["footer", "dummy"]
         )
 
     footer = schema.Text(
