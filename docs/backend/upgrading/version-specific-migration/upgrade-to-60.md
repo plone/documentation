@@ -650,3 +650,8 @@ Plone 6.0 makes changes to two viewlet managers:
 One final change is that Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`.
 The viewlet remains in manager `plone.portalfooter`.
 It renders the portlets from the `plone.footerportlets` portlet manager.
+
+## Boolean fields
+
+Since `zope.schema==6.1.0` all `zope.schema.Bool` fields need to have a `required=False` attribute,
+otherwise, you will not be able to save the form without marking the checkbox, which effectively turns that field to be always `True`.
