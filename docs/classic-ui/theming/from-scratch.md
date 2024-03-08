@@ -138,10 +138,10 @@ To do so, follow this guide.
 -   Create a new CSS file in your theme, such as the following.
 
     ```scss
-    import "@plone/plonetheme-barceloneta-base/scss/variables.colors.plone";
-    import "@plone/plonetheme-barceloneta-base/scss/variables.colors.dark.plone";
-    import "@plone/plonetheme-barceloneta-base/scss/root_variables";
-    import "bootstrap/scss/bootstrap";
+    @import "@plone/plonetheme-barceloneta-base/scss/variables.colors.plone";
+    @import "@plone/plonetheme-barceloneta-base/scss/variables.colors.dark.plone";
+    @import "@plone/plonetheme-barceloneta-base/scss/root_variables";
+    @import "bootstrap/scss/bootstrap";
     
     @import "@plone/plonetheme-barceloneta-base/scss/toolbar";
     @import "@plone/plonetheme-barceloneta-base/scss/controlpanels";
