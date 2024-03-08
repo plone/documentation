@@ -138,35 +138,10 @@ To do so, follow this guide.
 -   Create a new CSS file in your theme, such as the following.
 
     ```scss
-    // plone variables (used in toolbar)
-    // Plone specific colors
-    //colors
-    $state-draft-color:                 #fab82a!default; // lime-yellow //draft is visible
-    $state-pending-color:               #e2e721!default; // orange
-    $state-private-color:               #c4183c!default; // red
-    $state-internal-color:              #fab82a!default; // is draft
-    $state-internally-published-color:  #883dfa!default; // is intranet
-    $plone-link-color:                  #007bb1!default; //plone blue made slightly darker for wcag 2.0
-    $spacer:                            1rem!default;
-    
-    // Toolbar
-    $plone-toolbar-bg: rgba(0, 0, 0, 0.9);
-    $plone-toolbar-submenu-bg: rgba(20, 20, 20, 0.95);
-    $plone-toolbar-font-primary: "Roboto Condensed", sans-serif;
-    $plone-toolbar-font-secondary: "Roboto", sans-serif;
-    $plone-toolbar-separator-color: rgba(255, 255, 255, 0.17);
-    $plone-toolbar-link: $plone-link-color;
-    $plone-toolbar-text-color: rgba(255, 255, 255, 0.9);
-    $plone-toolbar-submenu-text-color: #fff;
-    $plone-toolbar-submenu-header-color: lighten(#000, 80%);
-    
-    $plone-toolbar-locked-color: var(--bs-warning); // is intranet
-    
-    $plone-toolbar-width: 220px;
-    $plone-toolbar-width-collapsed: calc($spacer * 2.25);
-    $plone-toolbar-top-height: calc($spacer * 2.5);
-    
-    @import "bootstrap/scss/bootstrap";
+import "@plone/plonetheme-barceloneta-base/scss/variables.colors.plone";
+import "@plone/plonetheme-barceloneta-base/scss/variables.colors.dark.plone";
+import "@plone/plonetheme-barceloneta-base/scss/root_variables";
+import "bootstrap/scss/bootstrap";
     
     @import "@plone/plonetheme-barceloneta-base/scss/toolbar";
     @import "@plone/plonetheme-barceloneta-base/scss/controlpanels";
