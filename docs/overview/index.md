@@ -120,11 +120,3 @@ Similarly, to develop for the new React frontend, you need to have some experien
 
 If you are looking for more study material on these technologies beyond the documentation, see and follow one or more [Plone Trainings](https://training.plone.org).
 Our trainings are more verbose and contain extra clarification and examples.
-
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-
-
-```

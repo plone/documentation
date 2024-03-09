@@ -36,22 +36,22 @@ Although there are many container engine tools for developing, managing, and run
 
 ### System requirements
 
-```{todo}
-Add system requirements
-```
+The system requirements include those required by Docker itself.
+
+-   [Linux](https://docs.docker.com/desktop/install/linux-install/)
+-   [macOS](https://docs.docker.com/desktop/install/mac-install/)
+-   [Windows](https://docs.docker.com/desktop/install/windows-install/)
+
+Plone 6 itself requires memory and disk space in addition to those of Docker alone.
+See its {ref}`install-packages-hardware-requirements-label`.
 
 
 ### Install Docker
 
-Install [Docker](https://docs.docker.com/get-docker/) for your operating system.
+Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
 
 Docker Desktop includes all Docker tools.
-Both macOS and Windows use Docker Desktop.
-On some Linux distributions a beta version of Docker Desktop is available.
-If Docker Desktop is not available for your Linux distribution, you may still install Docker Engine and all of its tools.
-Consult [Get Docker](https://docs.docker.com/get-docker/) for details.
-
-{term}`Docker Compose` is one of the Docker tools that will be used throughout this documentation.
+{term}`Docker Compose` is one of the Docker tools that will be used in much of this documentation.
 
 
 ### Start Plone

@@ -10,7 +10,7 @@ PAPER           ?=
 SPHINXBUILD     = $(realpath bin/sphinx-build)
 SPHINXAUTOBUILD = $(realpath bin/sphinx-autobuild)
 DOCS_DIR        = ./docs/
-BUILDDIR        = ../_build/
+BUILDDIR        = ../_build
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .

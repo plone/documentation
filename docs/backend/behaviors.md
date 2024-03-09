@@ -34,6 +34,8 @@ A key feature of behaviors is that they allow encapsulating functionality so tha
 Overall, behaviors are an important part of the Plone content management system and allow for powerful customization and extensibility of content objects.
 
 
+(backend-built-in-behaviors-label)=
+
 ## Built-in behaviors
 
 To view a complete list of built-in behaviors, browse to {guilabel}`Content Types` control panel, then click {guilabel}`Page` (or any other content type), then {guilabel}`Behaviors`.

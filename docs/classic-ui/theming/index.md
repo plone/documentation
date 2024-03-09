@@ -23,4 +23,5 @@ barceloneta
 diazo
 from-scratch
 through-the-web
+color-mode
 ```

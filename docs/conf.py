@@ -79,6 +79,8 @@ linkcheck_ignore = [
     r"http://127.0.0.1",
     r"http://yoursite",
     r"https://www.linode.com",
+    r"https://vhs-ehrenamtsportal.de", # SSLError(SSLCertVerificationError
+    r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
     # Ignore specific anchors
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
@@ -95,10 +97,11 @@ linkcheck_ignore = [
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=master",  # plone.restapi
     r"https://github.com/plone/plone.restapi/blob/dde57b88e0f1b5f5e9f04e6a21865bc0dde55b1c/src/plone/restapi/services/content/add.py#L35-L61",  # plone.restapi
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
+    r"^/_static/",
 ]
 linkcheck_anchors = True
-linkcheck_timeout = 10
-linkcheck_retries = 2
+linkcheck_timeout = 5
+linkcheck_retries = 1
 
 # The suffix of source filenames.
 source_suffix = {
@@ -127,7 +130,7 @@ exclude_patterns = [
     "plone.restapi/news",
     "plone.restapi/performance",
     "plone.restapi/src",
-    "volto/developer-guidelines/branch-policy.md",
+    "volto/contributing/branch-policy.md",
 ]
 
 html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
@@ -184,7 +187,7 @@ myst_substitutions = {
 intersphinx_mapping = {
     "plone": ("https://6.docs.plone.org/", None),  # for imported packages
     "python": ("https://docs.python.org/3/", None),
-    "training": ("https://training.plone.org/5/", None),
+    "training": ("https://training.plone.org/", None),
 }
 
 
@@ -320,7 +323,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.1",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.4",
     "{NVM_VERSION}": "0.39.3",
 }
 

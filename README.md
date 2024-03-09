@@ -51,7 +51,7 @@ For technical support for **Plone in general**, please ask a question on our [Co
 
 [Training](https://github.com/plone/training) is a collection of different trainings, developed and created by the Plone Community.
 
-For an HTML version, please browse to our [Training Website](https://training.plone.org/5/).
+For an HTML version, please browse to our [Training Website](https://training.plone.org/).
 
 
 ## License

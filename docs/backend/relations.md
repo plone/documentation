@@ -597,7 +597,7 @@ The logic for this is provided by the package [z3c.relationfield](https://pypi.o
 This package contains the `RelationValue` object and everything needed to define a relation schema, and all the code that is necessary to automatically update the catalog.
 
 A `RelationValue` object does not reference all objects directly.
-For the target, it uses an ID that it gets from the `IntId` utility.
+For the target, it uses an ID that it gets from the {term}`IntId` utility.
 This ID allows direct recovery of the object.
 The source object stores it directly.
 
@@ -608,7 +608,7 @@ Because of this, the following happens when saving a relation via a form:
 1.  The HTML shows some nice representation of selectable objects.
 2.  When the user submits the form, selected items are submitted by their UUIDs.
 3.  The widget retrieves the original object with the UUID.
-4.  Some data manager gets another unique ID from the `IntID` utility.
+4.  Some data manager gets another unique ID from the {term}`IntId` utility.
 5.  The same data manager creates a `RelationValue` from this ID, and stores this relation value on the source object.
 6.  Some event handlers update the catalogs.
 

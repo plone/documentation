@@ -186,12 +186,12 @@ Configuration registry
     In Volto, it is a singleton object modeled using JavaScript modules.
     It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
     It contains the configuration of the Volto app.
-    
+
     In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for Zope applications.
 
 component shadowing
 shadowing
-    Volto uses a technique called component shadowing to override an existing Volto component with our local custom version, without having to modify Volto's source code. 
+    Volto uses a technique called component shadowing to override an existing Volto component with our local custom version, without having to modify Volto's source code.
 
     Volto's source components are located in the filepath stem of `omelette/src/components/`.
     Custom components that shadow Volto's source would be located in the filepath stem of `src/customizations/components/`.
@@ -272,7 +272,7 @@ mrs-developer
     As a byproduct of its update operations, it also automatically adjusts `jsconfig.json`, which is used by Volto to configure webpack aliases.
 
 Yarn
-    [Yarn](https://classic.yarnpkg.com/) is a JavaScript package manager.
+    [Yarn](https://yarnpkg.com/) is a JavaScript package manager.
 
 Hydration
     After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing {term}`DOM` elements, and recreate and attach their coresponding components.
@@ -293,7 +293,7 @@ hook
 hooks
     In general, a hook in programming is a place in code that allows you to tap in to a module to either provide different behavior or to react when something happens.
 
-    **React [Hooks](https://reactjs.org/docs/hooks-overview.html)** are a React API that allow function components to use React features, such as lifecycle methods, states, and so on.
+    **React [Hooks](https://react.dev/reference/react)** are a React API that allow function components to use React features, such as lifecycle methods, states, and so on.
 
 hoisting
     [Hoisting](https://yarnpkg.com/advanced/lexicon#hoisting) is an optimization provided by Yarn.
@@ -302,7 +302,7 @@ hoisting
     In case two dependencies have conflicting version dependencies of the same library, the hoisting will not be possible (for that conflicting dependency) and you'll see multiple instances of the same library in the bundle, or you'll see that the add-on receives its own `node_modules` folder.
 
 React
-    [React](https://reactjs.org/) is a JavaScript library for building user interfaces.
+    [React](https://www.reactjs.dev/) is a JavaScript library for building user interfaces.
     Volto, the frontend for Plone 6, uses React.
 
 Sphinx
@@ -534,7 +534,7 @@ interface
     An interface is a mechanism for labeling objects as conforming to a given API or contract.
     Interfaces define what methods an object provides.
     Plone extensively uses interfaces to define APIs between different subsystems.
-    
+
     ```{seealso}
     See also https://zopeinterface.readthedocs.io/en/latest/.
     ```
@@ -623,7 +623,7 @@ Node Version Manager
     [`nvm`](https://github.com/nvm-sh/nvm/blob/master/README.md) allows you to quickly install and use different versions of node via the command line.
 
 Node.js
-    [Node.js®](https://nodejs.org/en/) is an open-source, cross-platform JavaScript runtime environment.
+    [Node.js®](https://nodejs.org/en) is an open-source, cross-platform JavaScript runtime environment.
 
 view
     A view is the basic element of modern Python web frameworks.
@@ -635,4 +635,26 @@ traversal
 
 acquisition
     Acquisition is a mechanism that allows objects to inherit attributes from their parent objects in the object hierarchy.
+
+Varnish
+    [Varnish](https://varnish-cache.org) is a popular open source web accelerator that is used to implement HTTP caching.
+
+Content Delivery Network
+CDN
+    A Content Delivery Network (CDN) is a network of servers located in various geographic regions that work together to deliver web content to users quickly and efficiently.
+
+
+unique identifier
+UID
+   UID is an acronym meaning "unique identifier".
+   A UID is an identifier that is guaranteed to be unique among all identifiers used for those objects and for a specific purpose.
+
+integer identifier
+intid
+    In Plone, an integer identifier, or intid, is used to uniquely identify content objects within a Plone site.
+    Each content item in a Plone site is given a unique intid, which the system uses internally to reference content, keep track of link integrity, link translations, and other related purposes.
+
+WSL
+Windows Subsystem for Linux
+    The [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, or Arch Linux) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
 ```

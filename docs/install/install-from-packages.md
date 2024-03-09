@@ -19,6 +19,13 @@ When you want full control over development or deployment, installing Plone from
 
 ## System requirements
 
+Plone 6 has both hardware requirements and software pre-requisites.
+
+
+(install-packages-hardware-requirements-label)=
+
+### Hardware requirements
+
 The hardware requirements below give a rough estimate of the minimum hardware setup needed for a Plone server.
 
 {term}`Add-on` products and caching solutions may increase RAM requirements.
@@ -26,7 +33,6 @@ The hardware requirements below give a rough estimate of the minimum hardware se
 A single Plone installation is able to run many Plone sites.
 You may host multiple Plone sites on the same server.
 
--   Almost any modern operating system, including Linux, macOS, and Windows, but a UNIX-based operating system is recommended.
 -   Minimum 256 MB RAM and 512 MB of swap space per Plone site is required.
     2 GB or more RAM per Plone site is recommended.
 -   Minimum 512 MB hard disk space is required.
@@ -36,6 +42,15 @@ You may host multiple Plone sites on the same server.
 (install-packages-prerequisites-label)=
 
 ### Pre-requisites for installation
+
+-   An operating system that runs all the pre-requisites.
+    Most UNIX-based operating systems are supported, including many Linux distributions, macOS, or {term}`Windows Subsystem for Linux` (WSL) on Windows.
+    A UNIX-based operating system is recommended.
+
+    ```{important}
+    Windows alone is not recommended because it does not support {term}`GNU make`.
+    If you get Plone to run on Windows alone, please feel free to document and share your process.
+    ```
 
 -   [Python](https://www.python.org/downloads/) 3.8, 3.9, or 3.10.
 -   {term}`Cookiecutter`
@@ -145,20 +160,23 @@ npm install -g yo
 
 (install-prerequisites-yarn-label)=
 
-#### Yarn
+#### Yarn 3
 
-Install the Yarn Classic version (not the latest 2.x one) using `npm`.
+Install the latest Yarn 3 version (not the Classic 1.x one) using `npm`.
 
 1.  Open a terminal and type:
 
     ```shell
-    npm install yarn@1
+    npm install yarn@3
     ```
 
-2.  Verify that Yarn v1.x.x is installed and activated.
+2.  Verify that Yarn v3.x.x is installed and activated.
 
     ```shell
     yarn -v
+    ```
+    ```console
+    3.2.3
     ```
 
 
@@ -344,8 +362,6 @@ make start-frontend
 The Plone frontend server starts up and emits messages to the console.
 
 ```console
-yarn run v1.22.19
-$ razzle start
  WAIT  Compiling...
 
 
@@ -356,6 +372,7 @@ $ razzle start
   Compiled successfully in 9.62s
 
 ✅  Server-side HMR Enabled!
+sswp> Handling Hot Module Reloading
 Volto is running in SEAMLESS mode
 Using internal proxy: http://localhost:3000 -> http://localhost:8080/Plone
 🎭 Volto started at 0.0.0.0:3000 🚀

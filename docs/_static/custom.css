@@ -462,3 +462,7 @@ div.viewcode-block:target {
 #main-content ul > li > p:nth-child(n+2) {
   margin-top: 1em;
 }
+
+video {
+  width: 100%;
+}

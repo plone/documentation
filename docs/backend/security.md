@@ -7,6 +7,13 @@ myst:
     "keywords": "Security"
 ---
 
+% TODO ### Create emergency user
+% Add Zope user with administrator permissions via console:
+% 
+% ```shell
+% venv/bin/addzopeuser masterofdesaster VXT+zif -c ./instance/etc/zope.conf
+% ```
+
 (backend-security-label)=
 
 # Security

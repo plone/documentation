@@ -15,3 +15,5 @@ unregister
 viewlet
 Volto
 Zope
+JavaScript
+NodeJS
