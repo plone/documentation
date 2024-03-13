@@ -21,7 +21,7 @@ In this part of the documentation, you can find how to {ref}`try Plone <install-
 Choose a version to demo.
 
 -   [Plone 6 with Volto frontend](https://demo.plone.org/)
--   [Plone 6 with Classic UI](https://classic.demo.plone.org/en)
+-   [Plone 6 with Classic UI](https://classic.demo.plone.org)
 
 
 (install-index-getting-started-label)=
