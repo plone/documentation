@@ -1,3 +1,4 @@
+# See https://github.com/plone/documentation/issues/1214 for current status
 name: Get latest version of submodules and push back to 6.0 branch
 
 on:
