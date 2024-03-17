@@ -228,6 +228,10 @@ You will be presented with a series of prompts.
 You can accept the default values in square brackets (`[default-option]`) by hitting the {kbd}`Enter` key, or enter your preferred values.
 For ease of documentation, we will use the default values.
 
+```{tip}
+See the cookiecutter's README for how to [Use options to avoid prompts](https://github.com/collective/cookiecutter-plone-starter/?tab=readme-ov-file#use-options-to-avoid-prompts).
+```
+
 (avoid-plone-core-package-names)=
 
 ```{important}
