@@ -725,5 +725,5 @@ GitHub workflows
     A [GitHub workflow](https://docs.github.com/en/actions/using-workflows) is a configurable automated process that will run one or more jobs.
 
 husky
-    Husky automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
+    [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
 ```
