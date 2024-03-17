@@ -701,4 +701,13 @@ Nick
 predicate
 predicates
     In programming, a predicate is a test which returns `true` or `false`.
+
+pnpm workspace
+workspace
+    pnpm has built-in support for monorepositories (also known as multi-package repositories, multi-project repositories, or monolithic repositories).
+    Workspaces provide support to manage multiple packages from your local file system from within a singular top-level, root package.
+    By defining a single `package.json` file at the root of the repository and specifying the individual packages as workspaces, pnpm treats them as interdependent projects.
+
+    When you run `pnpm install` at the root of the repository, pnpm installs dependencies for all workspaces, ensuring consistency across the entire project.
+    This centralized approach streamlines development, facilitates code sharing, and simplifies the maintenance of complex projects.
 ```
