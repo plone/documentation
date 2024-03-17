@@ -716,11 +716,14 @@ ESLint
 
 Stylelint
     [Stylelint](https://stylelint.io/) is a CSS linter that helps you avoid errors and enforce conventions.
-    
+
 Prettier
     [Prettier](https://prettier.io/) is an opinionated code formatter.
 
 GitHub workflow
 GitHub workflows
     A [GitHub workflow](https://docs.github.com/en/actions/using-workflows) is a configurable automated process that will run one or more jobs.
+
+husky
+    Husky automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
 ```
