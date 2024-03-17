@@ -713,4 +713,10 @@ workspace
 ESLint
     [ESLint](https://eslint.org/) statically analyzes your code to quickly find problems.
     It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
+
+Stylelint
+    [Stylelint](https://stylelint.io/) is a CSS linter that helps you avoid errors and enforce conventions.
+    
+Prettier
+    [Prettier](https://prettier.io/) is an opinionated code formatter.
 ```
