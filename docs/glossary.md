@@ -719,4 +719,8 @@ Stylelint
     
 Prettier
     [Prettier](https://prettier.io/) is an opinionated code formatter.
+
+GitHub workflow
+GitHub workflows
+    A [GitHub workflow](https://docs.github.com/en/actions/using-workflows) is a configurable automated process that will run one or more jobs.
 ```
