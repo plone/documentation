@@ -726,4 +726,8 @@ GitHub workflows
 
 husky
     [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
+
+Jest
+    [Jest](https://jestjs.io/) is a JavaScript testing framework.
+    Volto uses Jest for unit tests.
 ```
