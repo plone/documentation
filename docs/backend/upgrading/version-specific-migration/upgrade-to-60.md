@@ -653,5 +653,6 @@ It renders the portlets from the `plone.footerportlets` portlet manager.
 
 ## Boolean fields
 
-Since `zope.schema==6.1.0` all `zope.schema.Bool` fields need to have a `required=False` attribute,
+Since `zope.schema==6.1.0`, all `zope.schema.Bool` fields must have a `required=False` attribute.
+This allows you to either tick or not tick the checkbox, submit the form, and process the field with either its value when ticked or `None` when unticked.
 otherwise, you will not be able to save the form without marking the checkbox, which effectively turns that field to be always `True`.
