@@ -63,7 +63,75 @@ The main widgets are:
 -   DateTime Picker
 
 
-## Changing a field's widget
+(backend-widgets-change-a-fields-display-label)=
+
+## Change a field's display mode
+
+A field's widget can be displayed in several modes.
+
+`input`
+:   Allows the user to enter data into the field
+
+`display`
+:   A read-only indication of the field's value
+
+`hidden`
+:   A record of the field's value that is included only in the HTML source
+
+
+### `plone.autoform` `mode` directive
+
+In the following example, the mode for the `secret` field is set to `hidden` for most forms, but `input` for forms that provide the `IEditForm` interface.
+
+```{code-block} python
+:emphasize-lines: 6,7
+:linenos:
+
+from plone.supermodel import model
+from plone.autoform import directives as form
+
+class IMySchema(model.Schema):
+
+    form.mode(secret="hidden")
+    form.mode(IEditForm, secret="input")
+    secret = schema.TextLine(
+        title="Secret",
+        default="Secret stuff (except on edit forms)"
+        )
+```
+
+The corresponding supermodel XML directive is `form:mode`:
+
+```{code-block} xml
+:emphasize-lines: 3
+
+<field type="zope.schema.TextLine"
+        name="secret"
+        form:mode="z3c.form.interfaces.IForm:hidden z3c.form.interfaces.IEditForm:input">
+    <title>Secret</title>
+    <description>Secret stuff (except on edit forms)</description>
+</field>
+```
+
+The mode can be specified briefly, if it should be the same for all forms:
+
+```{code-block} xml
+:emphasize-lines: 3
+
+<field type="zope.schema.TextLine"
+        name="secret"
+        form:mode="hidden">
+    <title>Secret</title>
+    <description>Secret stuff</description>
+</field>
+```
+
+In other words, `form:mode` may be either a single mode, or a space-separated list of `<form_interface>:<mode>` pairs.
+
+
+(backend-widgets-change-a-fields-widget-label)=
+
+## Change a field's widget
 
 You can change the widget that you use for a field in several ways.
 This section describes these methods.
