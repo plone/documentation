@@ -140,7 +140,8 @@ For managing the sources it is recommended to create a `sources.cfg` which you c
         Products.PloneFormGen
         collective.supercool
 
-Adding the add-on package names to the **auto-checkout** list and running buildout will only "check out" that is, copy, the packages to your `src` directory. To get these packages installed, it is necessary to add the package names to the `eggs` list as described above: "Installing add-ons using buildout".
+Adding the add-on package names to the **auto-checkout** list and running buildout will only "check out" that is, copy, the packages to your `src` directory. 
+To get these packages installed, it is necessary to add the package names to the `eggs` list as described above: "Installing add-ons using buildout".
 
 
 .. note::
