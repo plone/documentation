@@ -219,7 +219,7 @@ See https://github.com/smcmahon/Products.PloneFormGen/blob/master/Products/Plone
 ## Resource registry
 
 ```{seealso}
-https://docs.plone.org/adapt-and-extend/theming/resourceregistry.html
+https://5.docs.plone.org/adapt-and-extend/theming/resourceregistry.html
 ```
 
 Plone 5 introduces some new concepts, for some, with working with JavaScript in Plone.
@@ -247,7 +247,7 @@ It also would combine and minify them for you in deployment mode.
 
 #### Registration Changes
 
-Prior to Plone 5, JavaScript files were added to the registry by using a [`GenericSetup` Profile](https://docs.plone.org/develop/addons/components/genericsetup.html) and including a `jsregistry.xml` file to it.
+Prior to Plone 5, JavaScript files were added to the registry by using a [`GenericSetup` Profile](https://5.docs.plone.org/develop/addons/components/genericsetup.html) and including a `jsregistry.xml` file to it.
 
 This would add your JavaScript to the registry, with some options and potentially set ordering.
 
@@ -366,7 +366,7 @@ Here the two dependencies are jQuery and the pattern registry.
 We will not get into the pattern registry, as it is off-topic for this discussion.
 It is basically a registry of JavaScript components.
 
-The necessity for using it here is with AJAX calls and binding new DOM elements dynamically added to the page.
+The necessity for using it here is with AJAX calls and binding new {term}`DOM` elements dynamically added to the page.
 
 Additionally, above this `require` call, we provide some backward compatible code that you can inspect.
 
@@ -448,7 +448,7 @@ The value you use for this CSS rule should identify one of the fontello icons in
 
 It is not possible at this time to set an icon for your add-on package control panels without including CSS in your package.
 
-For documentation on how to use it in your own add-ons see https://training.plone.org/5/mastering-plone-5/registry.html.
+For documentation on how to use it in your own add-ons see {doc}`training:mastering-plone-5/registry`.
 
 
 ### Properties

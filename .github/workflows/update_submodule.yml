@@ -1,4 +1,5 @@
-name: Get latest version of submodules and push back to 6-dev branch
+# See https://github.com/plone/documentation/issues/1214 for current status
+name: Get latest version of submodules and push back to 6.0 branch
 
 on:
   workflow_dispatch:
@@ -9,8 +10,8 @@ jobs:
     steps:
       # Checkout
       - uses: actions/checkout@v3
-        with: 
-          ref: 6-dev
+        with:
+          ref: 6.0
           submodules: true
 
       - name: Submodule update
@@ -26,5 +27,5 @@ jobs:
           git status
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git commit -m "Update submo0dules tip" || echo "No changes to commit"
+          git commit -m "Update submodules tip" || echo "No changes to commit"
           git push

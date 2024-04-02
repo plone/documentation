@@ -1,14 +1,19 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": ""
-    "keywords": ""
+    "description": "Plone Classic UI theming with Diazo"
+    "property=og:description": "Plone Classic UI theming with Diazo"
+    "property=og:title": "Plone Classic UI theming with Diazo"
+    "keywords": "Plone, Classic UI, theming, Diazo"
 ---
 
 (classic-ui-theming-diazo-label)=
 
-# Plone Classic UI Theming with Diazo
+# Classic UI theming with Diazo
+
+```{todo}
+This page is only an outline and needs a lot of work.
+See https://github.com/plone/documentation/issues/1286
+```
 
 Theming based on Diazo.

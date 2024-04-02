@@ -150,7 +150,7 @@ Check this [Cheat Sheet](https://python-future.org/compatible_idioms.html) with 
 `python-modernize` adds an import of the compatibility library `six` if needed.
 The import is added as the last import, therefore it is often necessary to reorder the imports.
 The easiest way is to use [isort](https://pypi.org/project/isort), which does this for you automatically.
-Check the [Python style guide for Plone](https://docs.plone.org/develop/styleguide/python.html#grouping-and-sorting) for information about the order of imports and an example configuration for `isort`.
+Check the [Python style guide for Plone](https://5.docs.plone.org/develop/styleguide/python.html#grouping-and-sorting) for information about the order of imports and an example configuration for `isort`.
 
 If `six` is used in the code, make sure that `six` is added to the `install_requires` list in the `setup.py` of the package.
 
@@ -304,16 +304,6 @@ If you are unlucky, then you have to fix doctests.
 These should be changed so that Python 3 is the default.
 For example, string types (or text) should be represented as `'foo'`, not `u'foo'`, and bytes types (or data) should be represented as `b'bar'`, not `'bar'`.
 Search for examples of `Py23DocChecker` in Plone's packages to find a pattern which allows updated doctests to pass in Python 2.
-
--   To test your code against `buildout.coredev`, start by browsing to [Add-ons \[Jenkins\]](https://jenkins.plone.org/view/Add-ons/).
--   Note there are jobs set up for Plone 4.3, 5.0, 5.1, and 5.2 on Python 2, and three jobs that run tests for Plone 5.2 on Python 3.6, Python 3.7, Python 3.8, and Python 3.9.
--   Click the link {guilabel}`log in` on Jenkins website (top right).
-    For the first login, you must authorize Jenkins to have access to your GitHub account to authenticate.
--   Click the link for the job you want to run.
-    For example, {guilabel}`Test add-on against Plone 5.2 on Python3.8`.
--   Choose the link {guilabel}`Build with parameters` in the menu on the left-hand side.
--   Fill the fields {guilabel}`ADDON_URL` and {guilabel}`ADDON_BRANCH` with your repository's URL and the branch name ("python3" if you followed these instructions).
--   Start the build with the {guilabel}`Build` button.
 
 
 ## 7. Update add-on information

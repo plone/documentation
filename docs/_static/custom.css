@@ -58,6 +58,11 @@ img.figure,
   margin-bottom: 1rem;
 }
 
+img.inline {
+  margin: 0;
+  height: 1em;
+}
+
 span.linenos {
   padding-right: 1em;
 }
@@ -184,6 +189,25 @@ div.admonition.admonition-todo>.admonition-title::before {
   display: block;
 }
 
+#search-form:focus-within #shortcut-page,
+.bd-search:focus-within #shortcut {
+  display: none;
+}
+
+#shortcut-page.input-group-text {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+input#q {
+  border-radius: .25rem 0 0 .25rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-width: 2px;
+}
+
 ul.search {
   margin-left: 0;
 }
@@ -232,6 +256,45 @@ ul.search li {
 
 ul.search li p.context {
   margin-left: 0;
+}
+
+/* Search form sidebar */
+
+.bd-search {
+  font-size: .8rem;
+}
+
+.bd-search:focus-within #search-input {
+  border-radius: .25rem;
+}
+
+#shortcut.input-group-text {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.bd-search input,
+.bd-search .input-group-text {
+  font-size: .8rem;
+  padding-left: .5em;
+}
+
+input#search-input {
+  padding-left: 2.1875rem;
+  border-radius: .25rem 0 0 .25rem;
+}
+
+.search-icon {
+  position: absolute;
+  color: #a4a6a7;
+  left: .625rem;
+  z-index: 100;
+  align-self: center;
+}
+
+.input-group-text kbd {
+  padding: 0rem 0.4rem;
+  font-size: 135%;
 }
 
 .pathseparator {
@@ -392,4 +455,14 @@ div.viewcode-block:target {
   background-color: var(--codeblock-color);
   border-top: 1px solid var(--codeblock-color);
   border-bottom: 1px solid var(--codeblock-color);
+}
+
+/* Fix paragraphs in list items. */
+#main-content ol > li > p:nth-child(n+2),
+#main-content ul > li > p:nth-child(n+2) {
+  margin-top: 1em;
+}
+
+video {
+  width: 100%;
 }

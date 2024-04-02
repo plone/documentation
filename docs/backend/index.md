@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": ""
-    "property=og:description": ""
-    "property=og:title": "Backend"
-    "keywords": "Plone 6, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
+    "description": "Plone 6 Backend"
+    "property=og:description": "Plone 6 Backend"
+    "property=og:title": "Plone 6 Backend"
+    "keywords": "Plone 6, Classic UI, frontend, backend, plone.restapi, plone.api"
 ---
 
 (backend-index-label)=
@@ -17,25 +17,28 @@ Insert introduction here.
 
 ```{toctree}
 :maxdepth: 2
-control-panels
-content-types
-behaviors
 annotations
-vocabularies
-fields
-relations
-widgets
-global-utils
-portal-actions
-users-groups
-security
-workflows
-search
-indexing
+behaviors
 components
-zodb
-../plone.api/index
-plone-restapi
-sending-email
+configuration-registry
+content-types/index
+control-panels
+fields
+global-utils
+indexing
 upgrading/index
+../plone.api/index
+portal-actions
+relations
+schemas
+search
+security
+sending-email
+subscribers
+traversal-acquisition
+users-groups
+vocabularies
+widgets
+workflows
+zodb
 ```

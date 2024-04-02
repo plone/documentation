@@ -40,7 +40,7 @@ services:
       LOG_LEVEL: "info"
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     restart: always
     environment:
       ZEO_ADDRESS: zeo:8100
