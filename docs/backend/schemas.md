@@ -299,7 +299,7 @@ class IMySchema(model.Schema):
 ```
 
 The value passed to the directive may be either `*`, indicating before or after all fields, or the name of another field.
-Use `<.fieldname>` to refer to the field in the current schema or a base schema.
+Use `.<fieldname>` to refer to the field in the current schema or a base schema.
 Prefix with the schema name, such as `IDublinCore.title`, to refer to a field in another schema.
 Use an unprefixed name to refer to a field in either the current or default schema for the form.
 
