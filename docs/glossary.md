@@ -701,4 +701,33 @@ Nick
 predicate
 predicates
     In programming, a predicate is a test which returns `true` or `false`.
+
+pnpm workspace
+workspace
+    pnpm has built-in support for monorepositories (also known as multi-package repositories, multi-project repositories, or monolithic repositories).
+    Workspaces provide support to manage multiple packages from your local file system from within a singular top-level, root package.
+
+    When you run `pnpm install` at the root of the repository, pnpm installs dependencies for all workspaces, ensuring consistency across the entire project.
+    This centralized approach streamlines development, facilitates code sharing, and simplifies the maintenance of complex projects.
+
+ESLint
+    [ESLint](https://eslint.org/) statically analyzes your code to quickly find problems.
+    It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
+
+Stylelint
+    [Stylelint](https://stylelint.io/) is a CSS linter that helps you avoid errors and enforce conventions.
+
+Prettier
+    [Prettier](https://prettier.io/) is an opinionated code formatter.
+
+GitHub workflow
+GitHub workflows
+    A [GitHub workflow](https://docs.github.com/en/actions/using-workflows) is a configurable automated process that will run one or more jobs.
+
+husky
+    [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
+
+Jest
+    [Jest](https://jestjs.io/) is a JavaScript testing framework.
+    Volto uses Jest for unit tests.
 ```

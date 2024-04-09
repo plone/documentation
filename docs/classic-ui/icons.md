@@ -67,13 +67,14 @@ To use a different icon than the system default, you can override the registrati
 
 ## Icon expression
 
-```{todo}
-How does this work? We need an example here!
-```
-
-- The field `icon_expression` is used again to define icons for actions, content types, and other purposes.
+- The field `icon_expr` is used again to define icons for actions, content types, and other purposes.
 - Use the icon name for icon expressions.
 
+Example:
+
+```xml
+<property name="icon_expr">string:list-check</property>
+```
 
 (classic-ui-icons-icon-resolver-label)=
 
