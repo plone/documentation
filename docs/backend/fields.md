@@ -226,7 +226,7 @@ Note that we would normally look up the default output type from the field insta
 ```python
 from plone.app.textfield.value import RichTextValue
 
-context.body = RichTextValue("Some input text", 'text/plain', 'text/html')
+context.body = RichTextValue("Some input text", mimeType="text/html", outputMimeType="text/x-html-safe")
 ```
 
 The standard widget used for a `RichText` field will correctly store this type of object for you, so it is rarely necessary to create one yourself.
