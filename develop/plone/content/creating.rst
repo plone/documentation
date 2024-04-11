@@ -486,9 +486,8 @@ not public and will appear in the review list)::
 
 More info:
 
-* https://plone.org/products/ploneformgen/documentation/how-to/creating-content-from-pfg
+* :doc:`Creating content from PFG </working-with-content/managing-content/ploneformgen/creating_content>`
 
-* https://plone.org/products/ploneformgen/documentation/how-to/creating-content-from-pfg
 
 Creating content using Generic Setup
 ====================================
@@ -582,7 +581,7 @@ Further information
 -------------------
 
 * Original manual:
-  http://vanrees.org/weblog/creating-content-with-genericsetup
+  https://reinout.vanrees.org/weblog/2006/09/13/creating-content-with-genericsetup.html
 * If you want to do things like workflow transitions or setting default views
   after creating, read
   http://keeshink.blogspot.de/2011/05/creating-plone-content-when-installing.html

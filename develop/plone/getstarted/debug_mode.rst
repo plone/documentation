@@ -79,7 +79,7 @@ Installation
 ------------
 This quick start has been tested on Windows 7.  Installation remains the same on older versions of Windows through WinXP.
 
-1. Run installer from `Plone.org <https://plone.org/products>`_ download page
+1. Run installer from `Plone.org <https://plone.org/download>`_ download page
 
 2. The Plone buildout directory will be installed in C:\\Plone41
 

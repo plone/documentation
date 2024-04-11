@@ -29,7 +29,7 @@ and to install the needed bobtemplates for Plone, do::
 
 Create a Plone 5 theme product skeleton with mrbob::
 
-   $ mrbob -O plonetheme.tango bobtemplates:plone_addon
+   $ mrbob -O plonetheme.tango bobtemplates.plone:addon
 
 It will ask you some questions::
 

@@ -125,18 +125,32 @@ Miscellaneous hints
 Setting log level in unit tests
 -------------------------------
 
-Many components use the ``DEBUG`` output level, while the default output
-level for unit testing is ``INFO``.  Import messages may go unnoticed during
-the unit test development.
+Unit tests disable logging to stdout.
+Some important messages may go unnoticed during the unit test development.
+To reveal these messages, change the log level from ``INFO`` to ``DEBUG``.
 
-Add this to your unit test code::
+To enable logging to stdout, add the following to your test setup code.
 
-    def enableDebugLog(self):
-        """ Enable context.plone_log() output from Python scripts """
-        import sys, logging
-        from Products.CMFPlone.log import logger
-        logger.root.setLevel(logging.DEBUG)
-        logger.root.addHandler(logging.StreamHandler(sys.stdout))
+.. code-block:: python
+
+    import logging
+    import sys
+
+
+    def enableLogging(loglevel=logging.INFO):
+        """Enable logging in unit tests.
+        """
+        logging.root.setLevel(loglevel)
+        logging.root.addHandler(logging.StreamHandler(sys.stdout))
+
+
+    class MyTestLayer(PloneSandboxLayer):
+        [...]
+
+        def setUpPloneSite(self, portal):
+            enableLogging(logging.DEBUG)  # Enable logging and optionally set
+                                          # to a different log level.
+
 
 Test outgoing email messages
 ----------------------------

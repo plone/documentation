@@ -126,10 +126,98 @@ For example:
     import zope.component
     import zope.interface
 
-    ...
+    # ...
 
 
-    @form.validator.validator(field=IPizzaOrder['phone_number'])
+    class IPizzaOrder(model.Schema):
+
+        phone_number = schema.TextLine(
+            title=_(u'Phone number'),
+            description=_(
+                u'Your phone number in international format. '
+                u'E.g. +44 12 123 1234'
+            ),
+            required=False,
+            default=u'')
+
+
+    @form.validator(field=IPizzaOrder['phone_number'])
+    def validate_phone_number(value):
+        """Validate international phone number on input
+        """
+
+        allowed_characters = '+- () / 0123456789'
+
+        if value != None:
+            value = value.strip()
+
+            if value == '':
+                # Assume empty string = no input
+                return
+
+            # The value is not required
+            for c in value:
+                if c not in allowed_characters:
+                    raise zope.interface.Invalid(
+                        _(u'Phone number contains bad characters')
+                    )
+
+            if len(value) < 7:
+                raise zope.interface.Invalid(_(u'Phone number is too short'))
+
+
+The ``@form.validator.validator()`` decorator registers a validator adapter.
+When the validation is invoked, the decorated function will be called with the field’s value as an argument and given an opportunity to raise a validation error, much like the constraint above.
+Again like the constraint, the default validator is called first, so things like the required flag, and indeed any custom constraint, are processed first.
+
+The ``@form.validator.validator()`` decorator can take keyword arguments to make the validator more specific or more generic.
+The valid values are:
+
+context
+    The form’s context, typically an interface.
+    This allows a validator to be invoked only on a particular type of content object.
+
+request
+    The form’s request.
+    Normally, this is used to specify a browser layer.
+
+view
+    The form view itself.
+    This allows a validator to be invoked for a particular type of form.
+    As with the other options, we can pass either a class or an interface.
+
+field
+    A field instance, as illustrated above, or a field ``type``, for example, an interface like ``zope.schema.IInt``.
+
+widget
+    The widget being used for the field.
+
+It is important to realise that if we don’t specify the *field* discriminator, or if we pass a field type instead of an instance, the validator will be used for all fields in the form (of the given type).
+Also note how we had to define the constraint function before the form schema interface (since it was referenced in the schema itself), but we define this validator after the schema and form, since here we need the interface to have been defined before we use it.
+
+Advanced field widget validators
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``z3c.form`` validators are in fact a little more powerful than what we have seen above.
+A validator is registered as a multi-adapter providing ``z3c.form.interfaces.IValidator`` and adapting the objects (``context``, ``request``, ``view``, ``field``, ``widget``), corresponding to the discriminants seen above.
+You may wish to register an adapter directly instead of using the ``@form.validator.validator()`` decorator if you:
+
+-  want to skip the default validation of field properties like ``required`` or ``min``/``max``,
+-  need to access the ``context``, ``request``, ``form``, ``field`` and/or ``widget``, or instances to validate the value.
+
+.. code-block:: python
+
+    from example.dexterityforms.interfaces import MessageFactory as _
+    from plone.directives import form
+    from plone.supermodel import model
+    from z3c.form import validator
+    from zope import schema
+    import zope.component
+    import zope.interface
+
+    # ...
+
+
     class IPizzaOrder(model.Schema):
 
         phone_number = schema.TextLine(
@@ -182,9 +270,7 @@ For example:
     zope.component.provideAdapter(PhoneNumberValidator)
 
 
-This registers an adapter,
-extending the SimpleFieldValidator base class,
-and calling the superclass version of validate() to gain the default validation logic.
+This registers an adapter, extending the SimpleFieldValidator base class, and calling the superclass version of ``validate()`` to gain the default validation logic.
 In the validate() method, we can use variables like self.context, self.request, self.view, self.field and self.widget to access the adapted objects.
 The WidgetValidatorDiscriminators class takes care of preparing the adapter discriminators.
 
@@ -193,19 +279,23 @@ The valid values for WidgetValidatorDiscriminators are:
 context
     The form’s context, typically an interface.
     This allows a validator to be invoked only on a particular type of content object.
+
 request
-    The form’s request. Normally, this is used to specify a browser layer.
+    The form’s request.
+    Normally, this is used to specify a browser layer.
+
 view
-    The form view itself. This allows a validator to be invoked for a particular type of form.
+    The form view itself.
+    This allows a validator to be invoked for a particular type of form.
     As with the other options, we can pass either a class or an interface.
+
 field
     A field instance, as illustrated above, or a field *type*, e.g. an interface like *zope.schema.IInt*.
+
 widget
     The widget being used for the field
 
-It is important to realise that if we don’t specify the *field* discriminator,
-or if we pass a field type instead of an instance,
-the validator will be used for all fields in the form (of the given type).
+It is important to realise that if we don’t specify the *field* discriminator, or if we pass a field type instead of an instance, the validator will be used for all fields in the form (of the given type).
 
 
 Form-level validation

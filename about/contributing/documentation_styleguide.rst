@@ -16,7 +16,7 @@ Even better: when there is a clear structure and style for your documentation, t
 
 Further advantages of following this guide:
 
-* The documentation can be included on `docs.plone.org <http://docs.plone.org>`_
+* The documentation can be included on `5.docs.plone.org <https://5.docs.plone.org>`_
 * It will be in optimal format to be translated with tools like `Transifex <https://www.transifex.com/>`_.
 
 Tone

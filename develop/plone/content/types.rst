@@ -184,7 +184,7 @@ Debugging new content type problems
 
 Creating types by hand is not worth the trouble.
 
-* `Why doesn't my custom content type show up in add menu <https://plone.org/documentation/faq/why-doesnt-my-custom-content-type-show-up-in-add-menu/>`_ checklist.
+* `Why doesn't my custom content type show up in add menu <https://5.plone.org/documentation/faq/why-doesnt-my-custom-content-type-show-up-in-add-menu/>`_ checklist.
 
 Creating new content types through-the-web
 =============================================
@@ -194,7 +194,7 @@ There are solutions for non-programmers and Plone novices to create their conten
 Dexterity
 ---------
 
-* http://docs.plone.org/external/plone.app.dexterity/docs/
+* https://5.docs.plone.org/external/plone.app.dexterity/docs/
 
 * Core feature
 

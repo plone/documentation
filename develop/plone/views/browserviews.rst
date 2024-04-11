@@ -38,7 +38,7 @@ sufficient, as it is a callable.
 More information
 ================
 
-* `Mastering Plone Training <http://training.plone.org/5/>`_ has several chapters on views.
+* `Mastering Plone Training <https://2022.training.plone.org>`_ has several chapters on views.
 
 
 
@@ -216,7 +216,7 @@ The following example registers a new view (see below for comments):
 
         <browser:page
               for="*"
-              name="test"
+              name="myview"
               permission="zope2.Public"
               class=".views.MyView"
               />
@@ -231,9 +231,9 @@ The following example registers a new view (see below for comments):
 
 ``name``
     is the name by which the view is exposed to traversal and
-    ``getMultiAdapter()`` look-ups. If your view's name is ``test``, then
+    ``getMultiAdapter()`` look-ups. If your view's name is ``myview``, then
     you can render it in the browser by calling
-    http://yourhost/site/page/@@test
+    http://yourhost/site/page/@@myview
 
 ``permission``
     is the permission needed to access the view.
@@ -301,7 +301,7 @@ to have the same id as a view::
 
 More info
 
-* https://plone.org/products/dexterity/documentation/manual/five.grok/browser-components/views
+* :doc:`Custom views </external/plone.app.dexterity/docs/custom-views>`
 
 Content slots
 -------------
@@ -342,7 +342,7 @@ Example: this ZCML configuration:
 
     <browser:page
         for="*"
-        name="test"
+        name="myview"
         permission="zope2.Public"
         class=".views.MyView"
         />
@@ -360,7 +360,7 @@ is equal to this ZCML configuration::
 
     <browser:page
         for="*"
-        name="test"
+        name="myview"
         permission="zope2.Public"
         class=".views.MyView"
         template="my-template.pt"

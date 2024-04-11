@@ -53,7 +53,7 @@ Importing content from other systems often requires the help of tools to get con
 Tutorials
 ----------
 
-`“Mastering Plone”-training <http://training.plone.org/5>`_
+`“Mastering Plone”-training <https://2022.training.plone.org>`_
 
 Mastering Plone is intended as a week-long training for people who are new to Plone or want to learn about the current best-practices of Plone-development.
 

@@ -14,7 +14,7 @@ Portlets are editable boxes in the left and right side bar of Plone user interfa
 Add-ons allow portlets in other parts in of the user interface too, like above and below the content.
 
 This document is a short introduction.
-Please visit the `Portlets reference manual <http://docs.plone.org/4/en/old-reference-manuals/portlets/index.html>`_ for in-depth information.
+Please visit the `Portlets reference manual <https://4.docs.plone.org/old-reference-manuals/portlets/index.html>`_ for in-depth information.
 
 Related add-ons and packages
 ----------------------------
@@ -26,7 +26,7 @@ for ready solution, for examples, for inspiration.
 
 * https://github.com/collective/collective.portletalias
 
-* https://plone.org/products/contentwellportlets
+* https://github.com/collective/Products.ContentWellPortlets
 
 * https://github.com/miohtama/imageportlet
 
@@ -582,8 +582,6 @@ Or just do it using GenericSetup like a sane person:
 
 * https://plone.org/documentation/manual/developer-manual/generic-setup/reference/portlets
 
-* https://plone.org/products/plone/roadmap/203
-
 Creating a new portlet manager
 ----------------------------------
 
@@ -613,7 +611,7 @@ Example portlet manager viewlets.py::
 
         For more information see
 
-        * http://docs.plone.org/5/en/develop/plone/views/viewlets.html
+        * https://5.docs.plone.org/develop/plone/views/viewlets.html
 
     """
 

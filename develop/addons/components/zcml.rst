@@ -37,9 +37,9 @@ Plone uses ZCML to:
 
 More info:
 
-* `ZCML reference <http://docs.zope.org/zope3/ZCML/@@staticmenu.html>`_ (does not include Plone specific directives)
+* `ZCML reference <https://zopecomponent.readthedocs.io/en/stable/index.html>`_ (does not include Plone specific directives)
 
-* http://docs.zope.org/zopetoolkit/codingstyle/zcml-style.html
+* https://zopetoolkit.readthedocs.io/en/latest/codingstyle/index.html
 
 ZCML workflow
 ==============
@@ -59,8 +59,8 @@ configuration files using the ``<include>`` directive.
 
 When Plone is started all ZCML files are read.
 
-* New way: Python egg ``setup.py`` file contains a
-  `autoinclude <https://plone.org/products/plone/roadmap/247>`_
+* New way: Python egg ``setup.py`` file contains an
+  ``autoinclude``
   hint and is picked up automatically when all the packages are scanned.
 
 * Old way: ZCML reference must be manually added to the ``zcml = section``
@@ -93,8 +93,7 @@ during ZCML parsing, not when site is run.
           ...
           myegg-overrides
 
-    Since Plone 3.3, the ``z3c.autoinclude`` plugin can do this
-    (https://plone.org/products/plone/roadmap/247/).
+    Since Plone 3.3, the ``z3c.autoinclude`` plugin can do this.
 
 
 Specify files and code from another package

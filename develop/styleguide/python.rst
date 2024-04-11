@@ -10,9 +10,9 @@ We've modeled the following rules and recommendations based on the following doc
 
 * `PEP8 <http://www.python.org/dev/peps/pep-0008>`__
 * `PEP257 <http://www.python.org/dev/peps/pep-0257>`_
-* `Rope project <http://rope.sourceforge.net/overview.html>`_
-* `Google Style Guide <http://google-styleguide.googlecode.com/svn/trunk/pyguide.html>`_
-* `Pylons Coding Style <http://docs.pylonsproject.org/en/latest/community/codestyle.html>`_
+* `Rope project <https://github.com/python-rope/rope/blob/master/docs/overview.rst>`_
+* `Google Style Guide <https://google.github.io/styleguide/pyguide.html>`_
+* `Pylons Coding Style <https://pylonsproject.org/community-coding-style-standards.html>`_
 * `Tim Pope on Git commit messages <http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html>`__
 
 
@@ -138,7 +138,7 @@ Indentation
 
 For Python files, we stick with the `PEP 8 recommondation <http://www.python.org/dev/peps/pep-0008/#indentation>`_: Use 4 spaces per indentation level.
 
-For ZCML and XML (GenericSetup) files, we recommend the `Zope Toolkit's coding style on ZCML <http://docs.zope.org/zopetoolkit/codingstyle/zcml-style.html>`_::
+For ZCML and XML (GenericSetup) files, we recommend the `Zope Toolkit's coding style on ZCML <https://zopetoolkit.readthedocs.io/en/latest/codingstyle/zcml-style.html>`_::
 
   Indentation of 2 characters to show nesting, 4 characters to list attributes on separate lines.
   This distinction makes it easier to see the difference between attributes and nested elements.

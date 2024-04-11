@@ -63,7 +63,7 @@ Accessing images
 Both Dexterity and Archetypes offer the same traversable ``@@images`` view.
 It can be used from page templates and Python code to provide access to the image and different image scales for image fields on content.
 
-The code for image access and scales for Dexterity based content is handled by `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_. Old Archetypes based content image scales is handled by `plone.app.imaging <https://plone.org/products/plone.app.imaging>`_.
+The code for image access and scales for Dexterity based content is handled by `plone.namedfile <https://pypi.python.org/pypi/plone.namedfile>`_. Old Archetypes based content image scales is handled by `plone.app.imaging <https://pypi.org/project/plone.app.imaging/>`_.
 
 
 Using direct URLs

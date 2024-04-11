@@ -171,7 +171,7 @@ Example::
     from AccessControl import ClassSecurityInfo, getSecurityManager
     from AccessControl.SecurityManagement import newSecurityManager, setSecurityManager
     from AccessControl.User import nobody
-    from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
+    from AccessControl.User import Super as BaseUnrestrictedUser
 
     class UnrestrictedUser(BaseUnrestrictedUser):
         """Unrestricted user that still has an id.

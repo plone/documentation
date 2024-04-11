@@ -106,7 +106,7 @@ A viewlet manager can be rendered in a page template code using the following ex
 
 .. note::
 
-    If you get a ``ContentProviderLookupError: viewletmanagerid`` you are trying to render a Plone page frame in a context which has no acquisition chain properly set up. Check `exceptions documentation <https://docs.plone.org/manage/troubleshooting/exceptions.html#contentproviderlookuperror-plone-htmlhead>`_ for more details.
+    If you get a ``ContentProviderLookupError: viewletmanagerid`` you are trying to render a Plone page frame in a context which has no acquisition chain properly set up. Check `exceptions documentation <https://5.docs.plone.org/manage/troubleshooting/exceptions.html#contentproviderlookuperror-plone-htmlhead>`_ for more details.
 
 Each viewlet manager allows you to shuffle viewlets inside a viewlet manager.
 This is done by using ``/@@manage-viewlets`` view. These settings
@@ -129,7 +129,7 @@ More info
 
 * https://github.com/zopefoundation/zope.viewlet/blob/3.7.2/src/zope/viewlet/viewlet.py
 
-* http://docs.plone.org/old-reference-manuals/plone_3_theming/elements/viewletmanager/anatomy.html
+* https://5.docs.plone.org/old-reference-manuals/plone_3_theming/elements/viewletmanager/anatomy.html
 
 
 Creating a viewlet manager

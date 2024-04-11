@@ -23,7 +23,7 @@ By default, Plone comes with dynamic views for:
 
 The default view can be also a content item picked from the folder.
 
-Available content item types can be managed from the: Site Setup Control Panel -> Content Rules (site.com/@@content-controlpanel) -> Select your new type from the drop down menu -> Click the "Can be used as default page" checkbox.
+Available content item types can be managed from the: Site Setup Control Panel -> Content Settings (site.com/@@content-controlpanel) -> Select your new type from the drop down menu -> Click the "Can be used as default page" checkbox.
 
 Permission for changing the view template of an item
 ----------------------------------------------------
@@ -361,4 +361,4 @@ Other resources
 
 * https://plone.org/documentation/how-to/how-to-create-and-set-a-custom-homepage-template-using-generic-setup
 
-* `CMFDynamicView plone.org product page <https://plone.org/products/cmfdynamicviewfti/>`_
+* `Products.CMFDynamicViewFTI on GitHub <https://github.com/plone/Products.CMFDynamicViewFTI>`_

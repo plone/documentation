@@ -121,7 +121,7 @@ Tracebacks
 
 When there is an error, a Python program always produces a traceback, a complete information where the application was when the error happened. To help you with an error, a complete traceback log is needed, not just the last line which says something like "AttributeError".
 
-Copy full tracebacks to your message (discussion forums) or pastie.org link (chat). The most reliable way to get the traceback output is to start Plone (Zope application server) in foreground mode in your terminal / command line (see these `debugging tips <http://docs.plone.org/manage/troubleshooting/basic.html>`_)
+Copy full tracebacks to your message (discussion forums) or pastie.org link (chat). The most reliable way to get the traceback output is to start Plone (Zope application server) in foreground mode in your terminal / command line (see these `debugging tips <https://5.docs.plone.org/manage/troubleshooting/basic.html>`_)
 
 First, shut down Plone if it's running as a service / background process. Then start Plone in foreground mode.
 

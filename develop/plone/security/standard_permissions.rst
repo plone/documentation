@@ -10,7 +10,7 @@ Standard permissions and roles
 Standard permissions
 ====================
 
-The standard permissions can be found in ``AccessControl``s and ``Product.CMFCore``\’s ``permissions.zcml``.
+The standard permissions can be found in ``AccessControl``\'s and ``Product.CMFCore``\’s ``permissions.zcml``.
 Here, you will find a short ``id`` (also known as the *Zope 3 permission id*) and a longer ``title`` (also known as the *Zope 2 permission title*).
 For historical reasons, some areas in Plone use the id, whilst others use the title.
 As a rule of thumb:
@@ -25,6 +25,9 @@ As a rule of thumb:
 
 The most commonly used permission are shown below.
 The Zope 2 permission title is shown in parentheses.
+
+``zope.Public`` (:guilabel:`Public`)
+    special permission indicating unconditional access, public resources are always accessible;
 
 ``zope2.View`` (:guilabel:`View`)
     used to control access to the standard view of a content item;

@@ -246,9 +246,7 @@ Other
 
 * http://maurits.vanrees.org/weblog/archive/2007/09/i18n-locales-and-plone-3.0
 
-* http://blogs.ingeniweb.com/blogs/user/7/tag/i18ndude/
-
-* https://plone.org/products/archgenxml/documentation/how-to/handling-i18n-translation-files-with-archgenxml-and-i18ndude/view?searchterm=
+* https://4.docs.plone.org/old-reference-manuals/archgenxml/index.html
 
 
 

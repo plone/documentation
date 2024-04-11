@@ -293,7 +293,8 @@ Example::
 
     # First argument is action category,
     # we have custom "mobile_actions"
-    self.actions = context_state.actions().get('mobile_actions', None)
+    # return a list of actions
+    self.actions = context_state.actions('mobile_actions')
 
 Tabs (sections)
 ----------------

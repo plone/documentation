@@ -8,12 +8,13 @@ Introduction
 
 Plone versioning allows you to go back between older edits of the same content object.
 
-`Versioning allows you to restore and diff previous copies of the same content <https://plone.org/documentation/manual/plone-3-user-manual/managing-content/versioning-plone-v3.0-plone-v3.2>`_.
-More about `CMFEditions here <https://plone.org/products/cmfeditions/documentation/refmanual/cmfeditionoverview>`_.
+`Versioning allows you to restore and diff previous copies of the same content <https://5.docs.plone.org/working-with-content/managing-content/versioning.html>`_.
+More about `CMFEditions here <https://github.com/plone/Products.CMFEditions/tree/master/doc>`_.
 
 See also
 
-* `Versioning tutorial for custom content types <http://www.uwosh.edu/ploneprojects/docs/how-tos/how-to-enable-versioning-history-tab-for-a-custom-content-type/>`_.
+* `Versioning tutorial for Dexterity content types <https://pypi.org/project/plone.app.versioningbehavior/>`_
+* `Old Versioning tutorial for Archetype custom content types <https://web.archive.org/web/20170909085840/http://www.uwosh.edu/ploneprojects/docs/how-tos/how-to-enable-versioning-history-tab-for-a-custom-content-type/>`_.
 
 
 Checking whether versioning is enabled
@@ -56,7 +57,7 @@ Will output (inc. some custom content types)::
 How versioning (CMFEditions) works
 ----------------------------------
 
-* http://svn.zope.de/plone.org/collective/Products.CMFEditions/trunk/doc/DevelDoc.html
+* https://github.com/plone/Products.CMFEditions/blob/master/doc/DevelDoc.txt
 
 .. note::
 

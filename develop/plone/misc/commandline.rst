@@ -209,7 +209,7 @@ Plone site HTTP requests are processed by one process per requests.
 One process cannot handle more than one request once.
 If you need to have long-running transactions you need to at least two front end processes, ZEO clients, so that long-running transactions won't block your site.
 
-* `Converting instance to ZEO based configuration <http://docs.plone.org/4/en/old-reference-manuals/buildout/zope_to_zeo.html>`_
+* `Converting instance to ZEO based configuration <https://4.docs.plone.org/old-reference-manuals/buildout/zope_to_zeo.html>`_
 
 Your code might want to call transaction.commit() now and then to commit the current transaction.
 

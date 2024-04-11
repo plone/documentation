@@ -193,7 +193,7 @@ To redirect traffic from all pages permanently (301) to the landing page of a ne
 .. code-block:: apache
 
     RewriteEngine On
-    RewriteRule (.*) http://docs.plone.org/ [L,R=301]
+    RewriteRule (.*) https://5.docs.plone.org/ [L,R=301]
 
 Proxying other site under Plone URI space
 -----------------------------------------

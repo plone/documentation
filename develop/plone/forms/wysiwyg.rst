@@ -8,14 +8,14 @@ WYSIWYG text editing and TinyMCE
 
 
 Introduction
-------------
+============
 
 Plone supports TinyMCE (default), and CKEditor and others through external add-ons.
 
 In Plone 5, TinyMCE and the Plone integration is provided by the `Mockup project <https://github.com/plone/mockup>`_.
 
 Disabling HTML filtering and safe HTML transformation
-------------------------------------------------------
+=====================================================
 
 By default Plone does HTML filtering to prevent `cross-site scripting <http://en.wikipedia.org/wiki/Cross-site_scripting>`_
 attacks. This will make Plone to strip away from HTML
@@ -30,15 +30,32 @@ If you need to put a `<script>` tag on your content text in TinyMCE you can disa
 
         If you don't trust all of your site editors, then this will open your site for an attack.
 
-**Step 1:** Turn off Plone’s safe_html transform. Go to /portal_transforms/safe_html in the Management Interface, and enter a 1 in the ‘disable_transform’ box. This prevents Plone from removing tags and attributes while rendering rich text.
+Step 1: Turn off Plone’s safe_html transform
+--------------------------------------------
 
-**Step 2:** Set the "X-XSS-Protection: 0" response header. This can be done in your frontend webserver such as apache or nginx. Alternatively, if you only need to disable the protection for users who have permission to edit, you can add this to the site’s main_template:
+Go to the Site Setup, HTML Filtering settings (`@@filter-controlpanel`).
+
+Check the `Disable HTML filtering` box.
+
+This prevents Plone from removing tags and attributes while rendering rich text.
+
+Step 2: Set the "X-XSS-Protection: 0" response header
+-----------------------------------------------------
+
+This can be done in your frontend webserver such as Apache or Nginx.
+
+Alternatively, if you only need to disable the protection for users who have permission to edit, you can add this to the site’s main_template:
 
 .. code-block:: bash
 
     tal:define="dummy python:checkPermission('Modify portal content', context) and request.RESPONSE.setHeader('X-XSS-Protection', '0');"
 
-**Step 3:** Add script tag to the list of `extended_valid_elements` of TinyMCE. Go to the Control Panel, TinyMCE settings, Advanced tab. Add to the Other settings field:
+Step 3: Add script tag to the list of `extended_valid_elements` of TinyMCE
+--------------------------------------------------------------------------
+
+Go to the Site Setup, TinyMCE, Advanced tab. 
+
+Add to the Other settings field:
 
 .. code-block:: bash
 
@@ -53,7 +70,7 @@ More info
 
 
 Content linking
----------------
+===============
 
 Plone offers many kind of support and enhancements in site internal content linking
 
@@ -75,7 +92,7 @@ links where shown on the other page as the original context.
    You might need to turn on *Linking by UID* setting on in the site setup if you are migrating from older Plone sites.
 
 Editor preferences
-------------------
+==================
 
 Plone supports user text changeable editor. The active editor is stored in
 the :doc:`user preferences </develop/plone/members/member_profile>`.
@@ -94,7 +111,7 @@ which is Plone core
 * https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/skins/plone_wysiwyg/wysiwyg_support.pt
 
 Applying styles only edit view
-------------------------------
+==============================
 
 You can use TinyMCE body selector make your CSS class have different styles in view and edit modes (inside TinyMCE)
 
@@ -124,7 +141,7 @@ You can use TinyMCE body selector make your CSS class have different styles in v
 
 
 Customizing TinyMCE options
-----------------------------
+===========================
 
 Plone 4 uses TinyMCE 3. Plone 5 upgraded to TinyMCE 4, which works with a new concept called formats and therefore a new syntax for inline styles: `Your Custom Format's Title|custom_format_id|custom_icon_id`.
 
@@ -206,7 +223,7 @@ Alternatively you can define "Quick access custom formats", namely those accessi
 
 
 Rich text transformations
--------------------------
+=========================
 
 * :doc:`/external/plone.app.dexterity/docs/advanced/rich-text-markup-transformations`
 
@@ -214,13 +231,13 @@ Rich text transformations
 
 
 Hacking TinyMCE JavaScript
---------------------------
+==========================
 
 All JavaScript is built and compiled with Plone 5's new Resource Registry.
 
 
 TinyMCE plug-ins
-----------------
+================
 
 The TinyMCE control panel has the ability to provide custom plugins. Custom plugins
 map to the http://www.tinymce.com/wiki.php/Configuration:external_plugins setting.
@@ -232,7 +249,7 @@ compatibility layer for TinyMCE 3.
 
 
 Adding a new plug-in
----------------------
+====================
 
 Here are instructions how to add new plugins to TinyMCE
 
@@ -253,7 +270,7 @@ Plug-in configuration goes to ``registry.xml`` GS profile with the record:
 
 
 Customizing existing plugin
----------------------------
+===========================
 
 * Go to the Resource Registry control panel
 

@@ -429,15 +429,13 @@ Collections also act as multi-choice fields.
 
 For more information see:
 
-* `Using Zope schemas with a complex vocabulary and multi-select fields <http://www.upfrontsystems.co.za/Members/izak/sysadman/using-zope-schemas-with-a-complex-vocabulary-and-multi-select-fields>`_
+* `Using Zope schemas with a complex vocabulary and multi-select fields <https://web.archive.org/web/20161227025947/http://www.upfrontsystems.co.za/Members/izak/sysadman/using-zope-schemas-with-a-complex-vocabulary-and-multi-select-fields>`_
 
-* Collections section in `zope.schema documentation <http://docs.zope.org/zope3/Code/zope/schema/fields.txt/index.html>`_
+* Collections section in `zope.schema documentation <https://zopeschema.readthedocs.io/en/latest/fields.html#collections>`_
 
-* Schema `field sources documentation <http://docs.zope.org/zope3/Code/zope/schema/sources.txt/index.html>`_
+* Schema `field sources documentation <https://zopeschema.readthedocs.io/en/latest/sources.html>`_
 
-* `Choice field <http://docs.zope.org/zope3/Code/zope/schema/_field/Choice/index.html>`_
-
-* `List field <http://docs.zope.org/zope3/Code/zope/schema/_field/List/index.html>`_.
+* `Choice field <https://zopeschema.readthedocs.io/en/latest/fields.html#choice>`_
 
 
 Single-choice example

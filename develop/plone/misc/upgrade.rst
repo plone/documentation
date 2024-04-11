@@ -12,7 +12,7 @@ General Tips
 ============
 
 This guide contains some tips for Plone upgrades. For more information, see
-also the `official Plone upgrade guide <http://docs.plone.org/manage/upgrading/index.html>`_
+also the `official Plone upgrade guide <https://5.docs.plone.org/manage/upgrading/index.html>`_
 
 
 Recommended setup
@@ -112,15 +112,6 @@ Install plone.app.discussion manually
 #. Click the ``Import all steps`` button at the bottom of the page.
 #. Confirm that *Discussion* is now present as a control panel in your
    *Site Setup*
-
-
-Migrate existing comments
--------------------------
-
-Follow the instructions regarding `How to migrate comments to
-plone.app.discussion
-<https://plone.org/products/plone.app.discussion/documentation/how-to/how-to-migrate-comments-to-plone.app.discussion>`_
-to migrate existing Plone comments.
 
 
 Fixing Creator details on existing comments

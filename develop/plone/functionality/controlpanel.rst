@@ -34,7 +34,7 @@ Example products:
 
 * https://pypi.python.org/pypi/collective.gtags
 
-* https://plone.org/products/collective.habla
+* https://pypi.org/project/collective.habla/
 
 * https://pypi.python.org/pypi/collective.xdv
 
@@ -49,9 +49,7 @@ The add-on package in this case is called
 `silvuple <https://github.com/miohtama/silvuple>`_.
 
 In ``buildout.cfg``, make sure you have the ``extends`` line for
-Dexterity (see the
-`Dexterity installation guide
-<https://plone.org/products/dexterity/documentation/how-to/install>`_.
+Dexterity (see the :doc:`Dexterity installation guide </external/plone.app.dexterity/docs/install>`)
 
 ``setup.py``::
 
@@ -301,7 +299,7 @@ Here are the ingredients:
 Configuring Plone products from buildout
 ========================================
 
-See a section in the `Buildout chapter <http://docs.plone.org/4/en/old-reference-manuals/buildout/additional.html#configuring-products-from-buildout>`_
+See a section in the `Buildout chapter <https://4.docs.plone.org/old-reference-manuals/buildout/additional.html#configuring-products-from-buildout>`_
 
 
 Configuration using environment variables

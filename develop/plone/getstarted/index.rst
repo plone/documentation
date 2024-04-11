@@ -26,7 +26,7 @@ like for any other Python application, but this is a more advanced topic.
 Training
 --------
 
-A number of Plone trainers have joined forces to create completely open  `Training materials <http://training.plone.org/5>`_.
+A number of Plone trainers have joined forces to create completely open  `Training materials <https://training.plone.org>`_.
 
 While following a real-life course is the best way to get up to speed with Plone, the material is also very useful for self-study.
 You will find separate chapters on creating packages, writing your own theme and much more here.
@@ -46,9 +46,9 @@ Non-programming approaches for customizing Plone
 
 If you lack programming skill or resources, you can still get some things done in Plone:
 
-* `Plomino is a a powerful and flexible web-based application builder for Plone <http://www.plomino.net>`_
+* `Plomino is a a powerful and flexible web-based application builder for Plone <https://github.com/plomino/Plomino/wiki>`_
 
-* `PloneFormGen allows you to build forms in a web browser <https://plone.org/products/ploneformgen>`_
+* `PloneFormGen allows you to build forms in a web browser <https://pypi.org/project/Products.PloneFormGen/>`_
 
 * Plone comes with through-the-web Dexterity content type editor
 
@@ -78,9 +78,9 @@ Using Buildout involves using the ``buildout.cfg`` configuration file and the ``
 Finding and installing add-on packages
 --------------------------------------
 
-Plone add-ons can be found at the `plone.org Products
-<https://plone.org/products>`_ page or at the  `PyPI (the Python
-Package index) <https://pypi.python.org>`_.
+Plone add-ons can be found at the `plone.org Add-ons
+<https://plone.org/download/add-ons>`_ page or at the `PyPI (the Python
+Package Index) <https://pypi.python.org>`_.
 
 See the :doc:`Installing add-on packages using buildout
 </manage/installing/installing_addons>` section for more details.
@@ -183,7 +183,7 @@ Plone resources
 
 * `Plone source code in version control system <https://github.com/plone>`_.
 
-* `Plone API (in development) <http://docs.plone.org/develop/plone.api/docs/index.html>`_.
+* `Plone API (in development) <https://5.docs.plone.org/develop/plone.api/docs/index.html>`_.
 
 
 Zope resources

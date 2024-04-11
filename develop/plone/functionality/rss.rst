@@ -171,12 +171,21 @@ the content type.
 Changing RSS feed template
 ---------------------------
 
-RSS feed is stored in template *CMFPlone/skins/plone_templates/rss_template*.
+In Plone 4.2 the RSS feed is stored in a skins template:
+
+* https://github.com/plone/Products.CMFPlone/blob/4.2/Products/CMFPlone/skins/plone_templates/rss_template.pt
+
+Since Plone 4.3 the RSS feed is a browser template, stored in:
+
+* https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/browser/syndication/templates/RSS.pt
 
 Enabling full body text in RSS feed
 ====================================
 
 See `this example <http://rudd-o.com/en/linux-and-free-software/a-hack-to-enable-full-text-feeds-in-plone>`_.
+
+Since Plone 4.1 this was added by default in the RSS template, this can be enabled via the *Render body* setting in the RSS control panel in the site settings.
+For more info see https://5.docs.plone.org/adapt-and-extend/config/syndication.html
 
 
 

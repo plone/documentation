@@ -35,7 +35,7 @@ Starting points to learn *z3c.form* in Plone
 
 * Read about :doc:`creating schema-driven forms with Dexterity content subsystem </develop/addons/schema-driven-forms/index>`
 
-* `Plone training manual <http://training.plone.org/5>`__
+* `Plone training manual <https://training.plone.org/>`__
 
 Other related packages you might want to take a closer look
 
@@ -109,7 +109,7 @@ Here is a minimal form implementation using ``z3c.form`` and Dexterity:
 
 * Include Dexterity in your buildout as instructed by Dexterity manual
 
-* Create Plone add-on product using `Paster <http://docs.plone.org/4/en/develop/addons/paste.html>`_
+* Create Plone add-on product using `Paster <https://4.docs.plone.org/develop/addons/paste.html>`_
 
 .. deprecated:: may_2015
     Use :doc:`bobtemplates.plone </develop/addons/bobtemplates.plone/README>`
@@ -2314,8 +2314,8 @@ In ``configure.zcml`` add an adapter registration like so:
 
 More info
 
-* original documentation: ``z3c.form`` `validators documentation <http://packages.python.org/z3c.form/validator.html>`_.
-* http://docs.plone.org/develop/addons/schema-driven-forms/customising-form-behaviour/validation.html#field-widget-validators
+* original documentation: ``z3c.form`` `validators documentation <https://pythonhosted.org/z3c.form/validator.html>`_.
+* https://5.docs.plone.org/develop/addons/schema-driven-forms/customising-form-behaviour/validation.html#field-widget-validators
 * http://www.jowettenterprises.com/blog/an-image-dimension-validator-for-plone-4
 
 
