@@ -232,6 +232,62 @@ context.body = RichTextValue("Some input text", 'text/plain', 'text/html')
 The standard widget used for a `RichText` field will correctly store this type of object for you, so it is rarely necessary to create one yourself.
 
 
+##### Using RichText fields in templates
+
+If you use a `DisplayForm`, the display widget for the `RichText` field will render the transformed output markup automatically.
+If you write TAL manually, you may try something like the following.
+
+```xml
+<div tal:content="structure context/body" />
+```
+
+This, however, will render a string as follows.
+
+```html
+RichTextValue object. (Did you mean <attribute>.raw or <attribute>.output?)
+```
+
+The correct syntax is:
+
+```xml
+<div tal:content="structure context/body/output" />
+```
+
+This will render the cached, transformed output.
+This operation is approximately as efficient as rendering a simple `Text` field, since the transformation is only applied once, when the value is first saved.
+
+
+##### Alternative transformations
+
+Sometimes, you may want to invoke alternative transformations.
+Under the hood, the default implementation uses the `portal_transforms` tool to calculate a transform chain from the raw value's input MIME type to the desired output MIME type.
+If you need to write your own transforms, take a look at [this tutorial](https://5.docs.plone.org/develop/plone/misc/portal_transforms.html).
+This is abstracted behind an `ITransformer` adapter to allow alternative implementations.
+
+To invoke a transformation in code, you can use the following syntax.
+
+```python
+from plone.app.textfield.interfaces import ITransformer
+
+transformer = ITransformer(context)
+transformedValue = transformer(context.body, 'text/plain')
+```
+
+The `__call__()` method of the `ITransformer` adapter takes a `RichTextValue` object and an output MIME type as parameters.
+
+If you write a page template, there is an even more convenient syntax.
+
+```xml
+<div tal:content="structure context/@@text-transform/body/text/plain" />
+```
+
+The first traversal name gives the name of the field on the context (`body` in this case).
+The second and third give the output MIME type.
+If the MIME type is omitted, the default output MIME type will be used.
+
+```{note}
+Unlike the `output` property, the value is not cached, and so will be calculated each time the page is rendered.
+```
 
 
 
