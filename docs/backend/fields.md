@@ -103,6 +103,25 @@ See [`plone.namedfile`](https://pypi.org/project/plone.namedfile/) and [plone.fo
 | `NamedBlobFile` | `NamedBlobFile` | A binary uploaded file stored as a ZODB blob. Requires the `blobs` extra to `plone.namedfile`. Otherwise identical to `NamedFile`. | `IField` |
 | `NamedBlobImage` | `NamedBlobImage` | A binary uploaded image stored as a ZODB blob. Requires the `blobs` extra to `plone.namedfile`. Otherwise identical to `NamedImage`. | `IField` |
 
+#### NamedBlobImage
+
+The following example shows, how to create an Image object and attach the image file to it.
+
+```python
+img_obj = api.content.create(
+    container=ww_article,
+    type="Image",
+    id="test.jpg",
+)
+img_obj.image = NamedBlobImage(
+    data=img_file,
+    filename="test.jpg",
+)
+```
+
+
+
+
 
 ### Fields in `z3c.relationfield.schema`
 
