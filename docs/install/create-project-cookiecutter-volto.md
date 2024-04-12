@@ -39,7 +39,8 @@ See the prerequisites section of `plone/cookiecutter-volto`.
 
 ### Node.js
 
-You can use nvm to install the latest LTS version of {term}`Node.js` (LTS 20.x).
+```{include} ../volto/contributing/install-nodejs.md
+```
 
 (create-a-project-with-cookiecutter-volto-experimental-installation-docker-label)=
 
