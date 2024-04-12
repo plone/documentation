@@ -58,6 +58,7 @@ See {doc}`plone:contributing/index`.
 :hidden: true
 
 create-project
+create-project-cookiecutter-volto
 manage-add-ons-packages
 containers/index
 ```
