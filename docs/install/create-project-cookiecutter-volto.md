@@ -11,8 +11,10 @@ myst:
 
 # Create a project with cookiecutter-volto (experimental)
 
-In this chapter the usage of the currently experimental {term}`cookiecutter` project for creating Plone 6 projects with a new build setup using {term}`pnpm` is described.
-In order to get started you will need {term}`pipx` - as described in the prerequisites section of `plone/cookiecutter-volto` - {term}`Make`, {term}`Node.js` and {term}`Docker`.
+This chapter describes the usage of the currently experimental {term}`cookiecutter` project [plone/cookiecutter-volto](https://github.com/plone/cookiecutter-volto/).
+The development of this add-on is done in isolation using a new approach using {term}`pnpm` workspaces and latest {term}`mrs-developer` and other Volto core improvements.
+In order to get started you will need {term}`pipx`, {term}`Make`, {term}`Node.js` and {term}`Docker` see {ref}`create-a-project-with-cookiecutter-volto-experimental-installation-label` section below.
+
 After that you can run following command to create your project:
 ```shell
 pipx run cookiecutter gh:plone/cookiecutter-volto
@@ -22,13 +24,17 @@ pipx run cookiecutter gh:plone/cookiecutter-volto
 
 ## Installation
 
-(create-a-project-with-cookiecutter-volto-experimental-installation-gnu-make-label)=
+(create-a-project-with-cookiecutter-volto-experimental-installation-pipx-label)=
 
 ### pipx
 
-See the prerequisites section of `plone/cookiecutter-volto`.
+Install {term}`pipx`.
 
-(create-a-project-with-cookiecutter-volto-experimental-installation-pipx-label)=
+```shell
+pip install pipx
+```
+
+(create-a-project-with-cookiecutter-volto-experimental-installation-gnu-make-label)=
 
 ### GNU make
 
@@ -39,6 +45,44 @@ See the prerequisites section of `plone/cookiecutter-volto`.
 
 ### Node.js
 
+First you'll need nvm, {term}`Node Version Manager`.
+
+#### nvm
+
+The following terminal session commands use `bash` for the shell.
+Adapt them for your flavor of shell.
+
+```{seealso}
+See the [`nvm` install and update script documentation](https://github.com/nvm-sh/nvm#install--update-script).
+For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish).
+```
+
+1.  Create your shell profile, if it does not exist.
+
+    ```shell
+    touch ~/.bash_profile
+    ```
+
+2.  Download and run the `nvm` install and update script, and pipe it into `bash`.
+
+    ```shell
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v{NVM_VERSION}/install.sh | bash
+    ```
+
+3.  Source your profile.
+    Alternatively close the session and open a new one.
+
+    ```shell
+    source ~/.bash_profile
+    ```
+
+4.  Verify that the `nvm` version is that which you just installed or updated:
+
+    ```shell
+    nvm --version
+    ```
+#### Finally install Node.js
+
 ```{include} ../volto/contributing/install-nodejs.md
 ```
 
@@ -47,7 +91,9 @@ See the prerequisites section of `plone/cookiecutter-volto`.
 ### Docker
 
 {term}`Docker` is needed later to start the plone backend inside a container.
-Install {term}`Docker` according to the [official documentation](https://docs.docker.com/get-docker/).
+
+```{include} ../volto/contributing/install-docker.md
+```
 
 
 (project-add-ons-label)=
