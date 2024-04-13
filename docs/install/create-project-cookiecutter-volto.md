@@ -14,10 +14,6 @@ myst:
 This chapter describes the usage of the currently experimental {term}`cookiecutter` project [`cookiecutter-volto`](https://github.com/plone/cookiecutter-volto/).
 The development of this add-on is done in isolation using {term}`pnpm` workspaces, {term}`mrs-developer`, and other Volto core improvements.
 
-After that you can run following command to create your project:
-```shell
-pipx run cookiecutter gh:plone/cookiecutter-volto
-```
 
 (create-a-project-with-cookiecutter-volto-experimental-prerequisites-label)=
 
