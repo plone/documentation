@@ -13,6 +13,7 @@ myst:
 
 This chapter describes the usage of the currently experimental {term}`cookiecutter` project [`cookiecutter-volto`](https://github.com/plone/cookiecutter-volto/).
 The development of this add-on is done in isolation using {term}`pnpm` workspaces, {term}`mrs-developer`, and other Volto core improvements.
+It only works with pnpm and Volto 18 (currently alpha) and only supports frontend development. So you can develop your Plone 6 frontend using latest and advanced technologies.
 
 
 (create-a-project-with-cookiecutter-volto-experimental-prerequisites-label)=
