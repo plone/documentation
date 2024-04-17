@@ -730,4 +730,10 @@ husky
 Jest
     [Jest](https://jestjs.io/) is a JavaScript testing framework.
     Volto uses Jest for unit tests.
+
+lazy load
+lazy loading
+lazy loaded
+    Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
+    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path, which translates into reduced page load times.
 ```
