@@ -600,7 +600,7 @@ The following example {file}`registry.xml` may be used for configuring TinyMCE w
 Please make sure you write valid JSON for the `template` option.
 
 ```{seealso}
-See also the [TinyMCE 4 to 5 upgrade guide](https://www.tiny.cloud/docs/migration-from-4x/).
+See also [Migrating from TinyMCE 4 to TinyMCE 5](https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/).
 ```
 
 ## Viewlets
