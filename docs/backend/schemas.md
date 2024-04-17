@@ -217,6 +217,148 @@ Note this won't have behavior fields added to it at this stage, only the fields 
 - {doc}`reference list of fields used in Plone </backend/fields>`
 
 
+(backend-schemas-directives-label)=
+
+## Schema directives
+
+With `plone.autoform` and `plone.supermodel`, we can use directives to add information to the schema fields.
+
+
+### Omit fields
+
+A field can be omitted entirely from all forms, or from some forms, using the `omitted` and `no_omit` directives.
+In this example, the `dummy` field is omitted from all forms, and the `edit_only` field is omitted from all forms except those that provide the `IEditForm` interface:
+
+```{code-block} python
+:emphasize-lines: 7,12,13
+:linenos:
+
+from z3c.form.interfaces import IEditForm
+from plone.supermodel import model
+from plone.autoform import directives as form
+
+class IMySchema(model.Schema):
+
+    form.omitted("dummy")
+    dummy = schema.Text(
+        title="Dummy"
+        )
+
+    form.omitted("edit_only")
+    form.no_omit(IEditForm, "edit_only")
+    edit_only = schema.TextLine(
+        title = "Only included on edit forms",
+        )
+```
+
+In supermodel XML, this can be specified as:
+
+```{code-block} xml
+:emphasize-lines: 3,9
+
+<field type="zope.schema.TextLine"
+        name="dummy"
+        form:omitted="true">
+    <title>Dummy</title>
+</field>
+
+<field type="zope.schema.TextLine"
+        name="edit-only"
+        form:omitted="z3c.form.interfaces.IForm:true z3c.form.interfaces.IEditForm:false">
+    <title>Only included on edit form</title>
+</field>
+```
+
+`form:omitted` may be either a single boolean value, or a space-separated list of `<form_interface>:<boolean>` pairs.
+
+
+### Reorder fields
+
+A field's position in the form can be influenced using the `order_before` and `order_after` directives.
+In this example, the `not_last` field is placed before the `summary` field, even though it is defined afterward:
+
+```{code-block} python
+:emphasize-lines: 12
+:linenos:
+
+from plone.supermodel import model
+from plone.autoform import directives as form
+
+class IMySchema(model.Schema):
+
+    summary = schema.Text(
+        title="Summary",
+        description="Summary of the body",
+        readonly=True
+        )
+
+    form.order_before(not_last="summary")
+    not_last = schema.TextLine(
+        title="Not last",
+        )
+```
+
+The value passed to the directive may be either `*`, indicating before or after all fields, or the name of another field.
+Use `.<fieldname>` to refer to the field in the current schema or a base schema.
+Prefix with the schema name, such as `IDublinCore.title`, to refer to a field in another schema.
+Use an unprefixed name to refer to a field in either the current or default schema for the form.
+
+In supermodel XML, the directives are called `form:before` and `form:after`.
+For example:
+
+```{code-block} xml
+:emphasize-lines: 3
+
+<field type="zope.schema.TextLine"
+        name="not_last"
+        form:before="*">
+    <title>Not last</title>
+</field>
+```
+
+
+### Organizing fields into fieldsets
+
+Fields can be grouped into fieldsets, which will be rendered within an HTML `<fieldset>` tag.
+In this example the `footer` and `dummy` fields are placed within the `extra` fieldset:
+
+```{code-block} python
+:emphasize-lines: 6-9
+:linenos:
+
+from plone.supermodel import model
+from plone.autoform import directives as form
+
+class IMySchema(model.Schema):
+
+    model.fieldset("extra",
+        label="Extra info",
+        fields=["footer", "dummy"]
+        )
+
+    footer = schema.Text(
+        title="Footer text",
+        )
+
+    dummy = schema.Text(
+        title="Dummy"
+        )
+```
+
+In supermodel XML, fieldsets are specified by grouping fields within a `<fieldset>` tag:
+
+```xml
+<fieldset name="extra" label="Extra info">
+    <field name="footer" type="zope.schema.TextLine">
+        <title>Footer text</title>
+    </field>
+    <field name="dummy" type="zope.schema.TextLine">
+        <title>Dummy</title>
+    </field>
+</fieldset>
+```
+
+
 ## Advanced
 
 ```{note}
@@ -588,17 +730,4 @@ def fields(self):
             f.field = schema_field
 ```
 
-#### Don't use dict `{}` or list `[]` as a default value
-
-Because of how Python object construction works, giving `[]` or `{}` as a default value will make all created field values share this same object.
-
-```{seealso}
-[The Hitchhiker's Guide to Python, Common Gotchas](https://docs.python-guide.org/writing/gotchas)
-```
-
-Use value adapters instead.
-
-```{seealso}
-[`plone.directives.form` documentation of Value adapters](https://pypi.org/project/plone.directives.form/#value-adapters)
-```
 
