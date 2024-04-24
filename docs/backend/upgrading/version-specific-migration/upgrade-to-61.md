@@ -25,3 +25,37 @@ For Plone 6.1, TinyMCE has been upgraded from version 5 to 7.
 -   [How to upgrade TinyMCE 5 to TinyMCE 6](https://www.tiny.cloud/blog/upgrade-to-tinymce-6/)
 -   [Upgrading TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/upgrading/)
 ```
+
+### Enable the TinyMCE accordion plugin
+
+Go to the controlpanel to manage TinyMCE settings
+
+Enable the Plugin in the controlpanel
+
+Add a menu entry `accordion` for TinyMCE in the controlpanel 
+
+```{code-block} json
+{
+  "insert": {
+    "title": "Insert",
+    "items": "link media | template hr | accordion"
+  },
+}
+```
+
+Check your settings in the HTML filter controlpanel
+
+add two new tags to `valid tags`
+
+- `summary`
+- `details`
+
+add a new attribute to `custom_attributes`
+
+- `open`
+
+for a transform to valid bootstrap5 accordion markup use an outputfilter
+
+```{seealso}
+-   [Addon collective.outputfilters.tinymceaccordion](https://github.com/collective/collective.outputfilters.tinymceaccordion)
+```
