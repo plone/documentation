@@ -21,7 +21,7 @@ Plone 6.0 uses TinyMCE, a rich text editor for websites.
 TinyMCE 5 reached its end of support on April 20, 2023.
 For Plone 6.1, TinyMCE has been upgraded from version 5 to 7.
 
-```{seealse}
+```{seealso}
 -   [How to upgrade TinyMCE 5 to TinyMCE 6](https://www.tiny.cloud/blog/upgrade-to-tinymce-6/)
 -   [Upgrading TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/upgrading/)
 ```
