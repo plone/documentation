@@ -28,34 +28,31 @@ For Plone 6.1, TinyMCE has been upgraded from version 5 to 7.
 
 ### Enable the TinyMCE accordion plugin
 
-Go to the controlpanel to manage TinyMCE settings
+1.  Go to the {guilabel}`Site Setup > General > TinyMCE` control panel to manage TinyMCE settings.
+1.  Under the {guilabel}`Plugins and Toolbar` tab, check {guilabel}`accordion` to enable the accordion plugin.
+1.  Under the same tab, add a menu entry `accordion` for TinyMCE in the control panel by editing the `items` key as shown.
 
-Enable the Plugin in the controlpanel
+    ```json
+    {
+      "insert": {
+        "title": "Insert",
+        "items": "link media | template hr | accordion"
+      },
+    }
+    ```
 
-Add a menu entry `accordion` for TinyMCE in the controlpanel 
+1.  Click the {guilabel}`Save` button to save your settings.
+1.  In the {guilabel}`Security > HTML filtering` control panel, add two new tags to {guilabel}`Valid tags`.
 
-```{code-block} json
-{
-  "insert": {
-    "title": "Insert",
-    "items": "link media | template hr | accordion"
-  },
-}
-```
+    -   `summary`
+    -   `details`
 
-Check your settings in the HTML filter controlpanel
+1.  Also in the {guilabel}`Security > HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`.
 
-add two new tags to `valid tags`
+    -   `open`
 
-- `summary`
-- `details`
+1.  For a transform to valid markup of the Bootstrap 5 accordion, use an output filter.
 
-add a new attribute to `custom_attributes`
-
-- `open`
-
-for a transform to valid bootstrap5 accordion markup use an outputfilter
-
-```{seealso}
--   [Addon collective.outputfilters.tinymceaccordion](https://github.com/collective/collective.outputfilters.tinymceaccordion)
-```
+    ```{seealso}
+    -   [Addon collective.outputfilters.tinymceaccordion](https://github.com/collective/collective.outputfilters.tinymceaccordion)
+    ```
