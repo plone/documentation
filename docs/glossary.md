@@ -774,4 +774,8 @@ lazy loading
 lazy loaded
     Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
     It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path, which translates into reduced page load times.
+
+reference implementation
+    A reference implementation is a program that implements all requirements from a corresponding specification.
+    The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
 ```
