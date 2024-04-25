@@ -3,7 +3,7 @@ Sphinx<5,>=3  # sphinx-book-theme 0.3.3 has requirement sphinx<5,>=3
 graphviz
 lesscpy
 linkify-it-py
-myst-parser>=2.0.0,<3.0.0  # Remove pin when upgrading to latest sphinx-book-theme
+myst-parser
 pydata-sphinx-theme==0.8.1  # Build fails in 0.9.0. See https://github.com/plone/documentation/issues/1297
 sphinx-autobuild
 sphinx-book-theme==0.3.3  # Temporary pin until we can sort out HTML refactoring.
