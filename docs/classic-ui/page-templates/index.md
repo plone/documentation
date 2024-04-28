@@ -208,7 +208,9 @@ Chameleon is an HTML/XML template engine for Python.
 
 It’s designed to generate the document output of a web application, typically HTML markup or XML.
 
-The complete documentation for Chameleon can be found at [https://chameleon.readthedocs.io/](https://chameleon.readthedocs.io/) 
+```{seealso}
+[Chameleon documentation](https://chameleon.readthedocs.io/en/latest/)
+```
 
 The language used is *page templates*, originally a Zope invention[^1].
 
