@@ -10,11 +10,6 @@ html_meta:
 
 # Module Federation in Mockup
 
-
-```{seealso}
-Webpack's documentation on [Module Federation](https://webpack.js.org/concepts/module-federation/).
-```
-
 Module Federation allows sharing of dependencies between bundles.
 Each bundle includes the whole set of dependencies.
 However, if multiple bundles have the same dependencies they are loaded only once.
@@ -26,7 +21,13 @@ There is a host bundle, as in the fictional example above, our bundle A.
 In Plone the host bundle is the main mockup bundle.
 Add-ons can add bundles called "remotes" which are initialized for module federation by the host bundle.
 
+```{seealso}
+Webpack's documentation on [Module Federation](https://webpack.js.org/concepts/module-federation/).
+```
+
+
 ## Using module federation
+
 The following instructions are for you if you created an add-on with a Mockup pattern and you want to include the respective JavaScript code in your theme code.
 Starting with the webpack configuration that you get when creating a Barceloneta theme package via [plonecli][1], add the following:
 
