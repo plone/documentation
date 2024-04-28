@@ -5,17 +5,18 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this issue report!
-  - type: checkboxes
-    id: plone-versions
+  - type: textarea
+    id: documentation-url
     attributes:
-      label: Plone Documentation versions affected
-      options:
-        - label: 5.x
-        - label: 6.x
+      label: Links of affected pages in Plone Documentation, if any.
+      value: |
+        - Link_1
+        - Link_2
+        - ...
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: If relevant, please include links to the affected resources, screenshots, and any other helpful information.
+      description: Include screenshots and any other helpful information.
     validations:
       required: true

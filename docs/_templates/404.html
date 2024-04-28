@@ -1,0 +1,31 @@
+{% extends "!page.html" %}
+
+{%- block htmltitle %}
+<title>{{ title|striptags|e }}{%- for parent in parents %} – {{ parent.title }}{%- endfor %}{{ titlesuffix }}</title>
+{%- endblock %}
+
+{% block body %}
+<div>
+    <h1>Page not found</h1>
+    <p>We could not find the page you requested in Plone 6 documentation.</p>
+    <p>You can <a href="/search.html">search</a> Plone 6 documentation.</p>
+    <p>Previous versions of Plone documentation:</p>
+    <ul>
+        <li><a href="https://5.docs.plone.org/">Plone 5</a></li>
+        <li><a href="https://4.docs.plone.org/">Plone 4</a></li>
+        <li><a href="https://3.docs.plone.org/">Plone 3</a></li>
+    </ul>
+    <h2>Why is this happening?</h2>
+    <p>
+        The Plone Documentation team has restructured documentation to redirect visitors to the most current and accurate information, archive previous versions, and identify outdated pages.
+        If you would like to report an issue or request a redirect be set up, you can <a href="https://github.com/plone/documentation/issues/new?assignees=&labels=&projects=&template=new-issue-form.yml" rel="external">create a new issue in the GitHub issue tracker</a>.
+    </p>
+</div>
+
+<style>
+    /* Hide empty sub menu. */
+    .sticky-top .bd-toc {
+        visibility: hidden;
+    }
+</style>
+{% endblock %}

@@ -7,8 +7,13 @@
 # Generated files
 pyvenv.cfg
 /_build
+/styles/Microsoft
+/share
 
 # symlinked from submodule
 docs/volto
 docs/plone.restapi
 docs/plone.api
+
+# editor files
+.vscode

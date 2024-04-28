@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
-  "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
-  "property=og:title": "nginx, Frontend, Backend, ZEO container example"
-  "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, ZEO"
+myst:
+  html_meta:
+    "description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
+    "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
+    "property=og:title": "nginx, Frontend, Backend, ZEO container example"
+    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, ZEO"
 ---
 
 # nginx, Frontend, Backend, ZEO container example
@@ -45,7 +46,7 @@ server {
   server_name  plone.localhost;
 
   location ~ /\+\+api\+\+($|/.*) {
-      rewrite ^/(\+\+api\+\+\/?)+($|/.*) /VirtualHostBase/http/$server_name/Plone/++api++/VirtualHostRoot/$1 break;
+      rewrite ^/(\+\+api\+\+\/?)+($|/.*) /VirtualHostBase/http/$server_name/Plone/++api++/VirtualHostRoot/$2 break;
       proxy_pass http://backend;
   }
 
@@ -105,7 +106,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:6.0.0a6
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     environment:
       SITE: Plone
       ZEO_ADDRESS: db:8100

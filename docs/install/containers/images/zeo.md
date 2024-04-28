@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Using plone/plone-zeo image"
-  "property=og:description": "Using plone/plone-zeo image"
-  "property=og:title": "Plone ZEO image"
-  "keywords": "Plone 6, install, installation, docker, containers, plone/plone-zeo"
+myst:
+  html_meta:
+    "description": "Using plone/plone-zeo image"
+    "property=og:description": "Using plone/plone-zeo image"
+    "property=og:title": "Plone ZEO image"
+    "keywords": "Plone 6, install, installation, docker, containers, plone/plone-zeo"
 ---
 
 # `plone/plone-zeo`

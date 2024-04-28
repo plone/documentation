@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
-  "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
-  "property=og:title": "nginx, Frontend, Backend container example"
-  "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend"
+myst:
+  html_meta:
+    "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
+    "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
+    "property=og:title": "nginx, Frontend, Backend container example"
+    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend"
 ---
 
 # nginx, Frontend, Backend container example
@@ -44,7 +45,7 @@ server {
   server_name  plone.localhost;
 
   location ~ /\+\+api\+\+($|/.*) {
-      rewrite ^/(\+\+api\+\+\/?)+($|/.*) /VirtualHostBase/http/$server_name/Plone/++api++/VirtualHostRoot/$1 break;
+      rewrite ^/(\+\+api\+\+\/?)+($|/.*) /VirtualHostBase/http/$server_name/Plone/++api++/VirtualHostRoot/$2 break;
       proxy_pass http://backend;
   }
 
@@ -103,7 +104,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:6.0.0a6
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     environment:
       SITE: Plone
     volumes:

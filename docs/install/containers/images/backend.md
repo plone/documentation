@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Using plone/plone-backend image"
-  "property=og:description": "Using plone/plone-backend image"
-  "property=og:title": "Plone Backend image"
-  "keywords": "Plone 6, install, installation, docker, containers, backend, plone/plone-backend"
+myst:
+  html_meta:
+    "description": "Using plone/plone-backend image"
+    "property=og:description": "Using plone/plone-backend image"
+    "property=og:title": "Plone Backend image"
+    "keywords": "Plone 6, install, installation, docker, containers, backend, plone/plone-backend"
 ---
 
 # `plone/plone-backend`
@@ -17,7 +18,7 @@ This chapter covers Plone backend [Docker](https://www.docker.com/) images using
 ### Simple usage
 
 ```shell
-docker run -p 8080:8080 plone/plone-backend:6.0.0a6 start
+docker run -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION} start
 ```
 
 Then point your browser at `http://localhost:8080`.
@@ -44,7 +45,25 @@ We encourage users of the `Plone` images to familiarize themselves with the opti
 | `SECURITY_POLICY_IMPLEMENTATION` | `security-policy-implementation` | `C` |
 | `VERBOSE_SECURITY` | `verbose-security` | `false` |
 | `DEFAULT_ZPUBLISHER_ENCODING` | `default-zpublisher-encoding` | `utf-8` |
+| `LISTEN_PORT` | (no equivalent) | `8080` |
 
+#### Listen port
+
+By default, the Zope process inside the container will listen on TCP port 8080.
+In certain circumstances — Kubernetes or Podman pods — there may be a need to run
+more than one Zope process within the network namespace, which would result in
+listen port clashes as two different processes within the same namespace attempt
+to listen to the same TCP port.
+
+In these cases, the variable `LISTEN_PORT` can be set to any particular port above
+1024 to ensure that the container will listen on the desired port.
+
+Plone 6 example:
+
+```shell
+# Makes Zope listen to port 8081 instead of the default 8080.
+docker run -p 8081:8081 -e LISTEN_PORT=8081 plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+```
 
 ### Site creation variables
 
@@ -65,13 +84,13 @@ To recreate the Plone site when restarting the container, you can pass the `DELE
 Plone 6 example:
 
 ```shell
-docker run -p 8080:8080 -e ADDONS="eea.api.layout" -e SITE="Plone" -e PROFILES="eea.api.layout:default" plone/plone-backend:6.0.0a6
+docker run -p 8080:8080 -e ADDONS="eea.api.layout" -e SITE="Plone" -e PROFILES="eea.api.layout:default" plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
 ```
 
 Plone 6 Classic example:
 
 ```shell
-docker run -p 8080:8080 -e ADDONS="eea.facetednavigation" -e SITE="Plone" -e TYPE="classic" -e PROFILES="eea.facetednavigation:default" plone/plone-backend:6.0.0a6
+docker run -p 8080:8080 -e ADDONS="eea.facetednavigation" -e SITE="Plone" -e TYPE="classic" -e PROFILES="eea.facetednavigation:default" plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
 ```
 
 ```{warning}
@@ -105,7 +124,7 @@ version: "3"
 services:
 
   backend:
-    image: plone/plone-backend:6.0.0a6
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     restart: always
     environment:
       ZEO_ADDRESS: zeo:8100
@@ -173,7 +192,7 @@ version: "3"
 services:
 
   backend:
-    image: plone/plone-backend:6.0.0a6
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     environment:
       RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"
     ports:
@@ -205,8 +224,36 @@ services:
 
 These variables are used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
+(containers-images-backend-add-ons-label)=
 
-### Add-on variables
+### Add-ons
+
+It is possible to include add-ons during startup time in a container created using this image.
+
+```{warning}
+We advise against using this feature on production environments — the recommended method is to
+extend the official container images to include your desired add-ons in your own container.
+This has several advantages, among which is the certainty that your container will always
+run the exact add-on code you built into it.
+```
+
+To do so, pass the `ADDONS` environment variable with a space separated list of requirements to be added to the image
+(see below for documentation of the supported variables):
+
+```shell
+docker run -p 8080:8080 -e ADDONS="pas.plugins.authomatic" plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION} start
+```
+
+After Plone has started, you can add your Plone site (if none exists yet) and install the added
+add-ons to your site.
+
+This approach also allows you to test Plone with a specific version of one of its core components
+
+```shell
+docker run -p 8080:8080 -e ADDONS="plone.volto==3.1.0a3" plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION} start
+```
+
+#### Add-on variables
 
 | Environment variable | Description | Details |
 | --- | --- | --- |
@@ -214,29 +261,16 @@ These variables are used to configure [CORS](https://developer.mozilla.org/en-US
 | `DEVELOP` | A space separated list of python libraries to install in editable mode | {ref}`containers-images-backend-developing-packages-label` |
 | `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
 
+#### Adding configuration to `zope.conf` or additional ZCML
 
-(containers-images-backend-add-ons-label)=
+Some Plone add-ons require changes to `zope.conf` or extra ZCML.
 
-#### Add-ons
+With the standard container, it is not possible to add configuration fragments to
+`zope.conf` directly or add extra ZCML, like it is with the `buildout` deployment
+method.
 
-It is possible to install add-ons during startup time in a container created using this image.
-To do so, pass the `ADDONS` environment variable with a space separated list of requirements to be added to the image:
-
-```shell
-docker run -p 8080:8080 -e ADDONS="pas.plugins.authomatic" plone/plone-backend:6.0.0a6 start
-```
-
-This approach also allows you to test Plone with a specific version of one of its core components
-
-```shell
-docker run -p 8080:8080 -e ADDONS="plone.volto==3.1.0a3" plone/plone-backend:6.0.0a6 start
-```
-
-```{warning}
-We advise against using this feature on production environments.
-In this case, extend the image as explained before.
-```
-
+However, you can derive your own container image, and drop in configuration
+fragments.  See {ref}`backend-extending-from-this-image-label` below for instructions.
 
 (containers-images-backend-developing-packages-label)=
 
@@ -246,27 +280,29 @@ It is possible to install local packages instead of packages from pip.
 To do so, pass the `DEVELOP` environment variable with a space separated list of paths to Python packages to be installed.
 These packages will be installed with `pip install --editable`.
 
+```{warning}
+We advise against using this feature on production environments — the recommended method is to
+extend the official container images to include your desired add-ons in your own container.
+```
+
 ```shell
-docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" plone/plone-backend:6.0.0a6 start
+docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION} start
 ```
 
 This approach also allows you to develop local packages by using a volume.
 
 ```shell
-docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.policy:/app/src/mysite.policy plone/plone-backend:6.0.0a6 start
+docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.policy:/app/src/mysite.policy plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION} start
 ```
 
-```{warning}
-We advise against using this feature on production environments.
-```
-
+(backend-extending-from-this-image-label)=
 
 ## Extending from this image
 
 In a directory create a  `Dockerfile` file:
 
 ```Dockerfile
-FROM plone/plone-backend:6.0.0a6
+FROM plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends gcc \
@@ -285,6 +321,56 @@ And start a container.
 docker run -p 8080:8080 myproject:latest start
 ```
 
+### Changing default values of environment variables
+
+All the environment variables documented above are supported in your
+derived container's Dockerfile.  You can override the default values
+of variables as follows:
+
+```Dockerfile
+# Add environment variables before any CMD or ENTRYPOINT stanzas,
+# and after any FROM, RUN and COPY stanzas.
+ENV ZODB_CACHE_SIZE="120000"
+```
+
+Of course, you can always override these variables upon container
+start by using the Docker `docker run` argument `-e VAR=value`.
+
+Be aware that some variables are not intended to be used in production.
+Check the respective variable documentation above to determine whether
+you should use it, or use a different method to get the desired result
+in production.
+
+### Adding `zope.conf` configuration fragments
+
+In the directory containing your `Dockerfile`, create a folder `etc/zope.conf.d`.
+Add your `zope.conf` configuration fragments there.
+
+Now add the following to your `Dockerfile`, before any `CMD` or `ENTRYPOINT`
+stanzas it may have, and after the `FROM` and any `RUN` stanzas:
+
+```Dockerfile
+COPY /etc/zope.conf.d/*.conf /app/etc/zope.conf.d/
+```
+
+This ensures your fragments are deployed in the `zope.conf.d` folder, which then
+will be used to amend the `zope.conf` file prior to starting Plone.
+
+### Adding ZCML fragments
+
+In the directory containing your `Dockerfile`, create a folder `etc/package-includes`.
+Add your ZCML configuration fragments (named `*-meta.zcml`, `*-configure.zcml`,
+`*-overrides.zcml`) as files in that folder.
+
+Now add the following to your `Dockerfile`, before any `CMD` or `ENTRYPOINT`
+stanzas it may have, and after the `FROM` and any `RUN` stanzas:
+
+```Dockerfile
+COPY /etc/package-includes/*.zcml /app/etc/package-includes/
+```
+
+Your ZCML fragments will be copied into the container and automatically included
+when Plone starts.
 
 ## Advanced usage
 

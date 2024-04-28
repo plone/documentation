@@ -15,6 +15,7 @@ ATContentTypes
 autoform
 backend
 Backend
+backtick
 bakula
 barceloneta
 Barceloneta
@@ -55,6 +56,9 @@ config
 contentprovider
 contenttype
 contenttypes
+Cookiecutter
+cookiecutter
+cookiecutters
 Covantec
 coveragerc
 crockfort
@@ -69,6 +73,8 @@ deliverance
 demostorage
 Demostorage
 demoview
+deserialization
+deserializer
 dev
 Diazo
 dict
@@ -100,6 +106,7 @@ Facebook
 facettednavigation
 fallback
 faq
+favicon
 fg
 fieldset
 fieldsets
@@ -114,6 +121,7 @@ freenode
 frontend
 frontpage
 Fulvio
+gcc
 georeference
 Gerken
 getLayout
@@ -128,6 +136,7 @@ GitHub
 gitlab
 Glick
 Gmail
+GmbH
 gnupg
 gomez
 google
@@ -157,6 +166,7 @@ inline
 intranet
 Intranet
 io
+iPhones
 IPython
 irc
 ISocial
@@ -178,6 +188,7 @@ js
 jshint
 json
 jurymember
+kitconcept
 Kupu
 lanyrd
 Lanyrd
@@ -186,10 +197,12 @@ libxml
 libxslt
 Limi
 Lindner
+Linode
 linebreaks
 localhost
 logfiles
 longtest
+Lucene
 lxml
 macagua
 macOS
@@ -220,6 +233,8 @@ Nejc
 nginx
 Nginx
 nocall
+nvm
+Octocat
 offline
 Ohtamaa
 omelette
@@ -286,6 +301,7 @@ pypi
 pypirc
 quickinstaller
 Rapido
+Razzle
 ReactJS
 redmine
 Redux
@@ -336,6 +352,7 @@ Starzel
 styleguide
 subclassing
 subdirectory
+submodule
 Sunbird
 svn
 symlink
@@ -355,6 +372,8 @@ testrunner
 testsuite
 testsuites
 textbox
+Theming
+theming
 thomasdesvenain
 timo
 tinymce
@@ -372,6 +391,7 @@ Trac
 trainings
 transifex
 Transmogrifier
+transpile
 travis
 trello
 ttw
@@ -403,6 +423,7 @@ virtualhost
 Volto
 votable
 voteable
+Vue
 Walkthrough
 Webmail
 webpack

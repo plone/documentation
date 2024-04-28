@@ -1,74 +1,63 @@
 ---
-html_meta:
-  "description": "Install Plone 6"
-  "property=og:description": "Install Plone 6"
-  "property=og:title": "Install Plone 6"
-  "keywords": "Plone 6, install, overview"
+myst:
+  html_meta:
+    "description": "Install Plone 6"
+    "property=og:description": "Install Plone 6"
+    "property=og:title": "Install Plone 6"
+    "keywords": "Plone 6, install, overview"
 ---
 
 (install-index-label)=
 
 # Install
 
+In this part of the documentation, you can find how to {ref}`try Plone <install-index-try-plone-label>` or how to install Plone to either {doc}`Create a Plone project <create-project>` or {doc}`Contribute to a Plone package <plone:contributing/index>`.
+
+
+(install-index-try-plone-label)=
+
+## Try a Plone demo
+
+Choose a version to demo.
+
+-   [Plone 6 with Volto frontend](https://demo.plone.org/)
+-   [Plone 6 with Classic UI](https://classic.demo.plone.org/en)
+
 
 (install-index-getting-started-label)=
 
-## Getting started
+## Get started
 
-What do you want to do?
+Choose an option to get started with Plone.
+If you are following a [Plone training](https://training.plone.org/), it should specify which option to choose.
 
--   Try a demo now.
-    -   [Plone 6 with Volto frontend](https://6.demo.plone.org/)
-    -   [Plone 5.2.x with Barceloneta frontend](https://demo.plone.org/)
--   [Run Plone in containers](containers/index) (why use containers here.)
--   {doc}`source` (contribute to Plone packages, develop add-ons, or install Plone with full control)
+::::{grid} 1 2 2 2
+:gutter: 1 1 1 2
 
+:::{grid-item-card} {octicon}`browser;1.5em;sd-mr-1` Create a project
+:link: create-project
+:link-type: doc
 
-(install-index-choose-installation-method-label)=
+This option is for developers who want to create a web application using Plone.
+See {doc}`create-project`.
+:::
 
-## Choose an installation method
+:::{grid-item-card} {octicon}`repo-push;1.5em;sd-mr-1` Contribute to a Plone package
+:link: plone:contributing/index
+:link-type: doc
 
-% TODO Explanation when to choose which installation method: container vs installation from its packages. Combination for backend and frontend?
+This option is for developers who want to contribute to Plone and its packages.
+See {doc}`plone:contributing/index`.
+:::
 
-Developers may choose to install Plone from either [the official container images](containers/index) or [source](source).
-
-The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
-They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
-Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
-The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
-This option is the quickest method to install and develop for Plone 6 and its packages.
-
-There may be some cases where using a Plone 6 image is not practical or desired.
-You might want to use an SQL database that is not PostgreSQL, or you might use a deployment workflow that has specific requirements.
-For these situations, Plone 6 may be installed manually.
-This method takes longer.
-It might be a challenge if you bump up against system requirements, or need to resolve conflicts between required packages.
-
-```{todo}
-Perhaps merge the subsequent section into this section?
-```
-
-
-(install-index-caveat-label)=
-
-## Caveat that Plone is a large project and source installs are non-trivial
-
-
-(install-index-system-requirements-label)=
-
-## System Requirements
-
-System requirements depend upon your choice of installation method:
-
--   [Use container images](containers/index)
--   {doc}`source`
+::::
 
 
 ```{toctree}
 :maxdepth: 2
 :hidden: true
 
+create-project
+manage-add-ons-packages
 containers/index
-source
-source-step-by-step
 ```
