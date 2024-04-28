@@ -78,11 +78,11 @@ Below this line add the following:
     );
 ```
 
-Replace the name `myaddon` with your addon bundle's name (any unique name will do...),
-replace the filename `myaddon-remote.min.js` with the file name you want to use for your remote bundle,
-and replace `myaddon.min` with the corresponding key in `config.entry` that points to your `index.js`.
+Replace the name `myaddon` with your add-on bundle's unique name.
+Replace the filename `myaddon-remote.min.js` with the file name you want to use for your remote bundle.
+Finally replace `myaddon.min` with the corresponding key in `config.entry` that points to your `index.js`.
 
-For a full but simple example, see the Patterns generator [pat-PATTERN-TEMPLATE][2] or any other Pattern addon in the patternslib GitHub organisation.
+For a full but simple example, see the Patterns generator [pat-PATTERN-TEMPLATE][2] or any other Pattern add-on in the [patternslib GitHub organization](https://github.com/patternslib/).
 For a complex example with Mockup integration see [plone.app.mosaic][3] and [Mockup][4] itself.
 
 [1]: https://pypi.org/project/plonecli/
