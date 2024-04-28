@@ -49,6 +49,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_reredirects",
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
@@ -74,33 +75,32 @@ pygments_style = "sphinx"
 # Options for the linkcheck builder
 # Ignore localhost
 linkcheck_ignore = [
-    r"http://localhost",
+    # Ignore local and example URLs
     r"http://0.0.0.0",
     r"http://127.0.0.1",
+    r"http://localhost",
     r"http://yoursite",
-    r"https://www.linode.com",
-    r"https://vhs-ehrenamtsportal.de", # SSLError(SSLCertVerificationError
+    # Ignore file downloads
+    r"^/_static/",
+    # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
-    # Ignore specific anchors
-    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
-    r"https://github.com/browserslist/browserslist#queries",
-    r"https://github.com/nodejs/release#release-schedule",
-    r"https://github.com/nvm-sh/nvm#install--update-script",
-    r"https://github.com/plone/cookiecutter-zope-instance#options",
-    r"https://github.com/plone/plone.app.contenttypes#migration",
-    r"https://github.com/plone/plone.docker#for-basic-usage",
-    r"https://github.com/plone/plone.rest#cors",
-    r"https://github.com/plone/plone.volto/blob/6f5382c74f668935527e962490b81cb72bf3bc94/src/kitconcept/volto/upgrades.py#L6-L54",
     r"https://github.com/plone/volto/issues/new/choose",  # requires auth
-    r"https://github.com/tc39/proposals/blob/HEAD/finished-proposals.md#finished-proposals",
-    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=master",  # plone.restapi
-    r"https://github.com/plone/plone.restapi/blob/dde57b88e0f1b5f5e9f04e6a21865bc0dde55b1c/src/plone/restapi/services/content/add.py#L35-L61",  # plone.restapi
+    # Ignore github.com pages with anchors
+    r"https://github.com/.*#.*",
+    # Ignore other specific anchors
+    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
+    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
-    r"^/_static/",
+    # Ignore unreliable sites
+    r"https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
+    r"https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
+    r"https://stackoverflow.com",  # volto and documentation  # TODO retest with latest Sphinx.
+    r"https://web.archive.org/",  # volto
+    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
 ]
 linkcheck_anchors = True
-linkcheck_timeout = 5
+linkcheck_timeout = 10
 linkcheck_retries = 1
 
 # The suffix of source filenames.
@@ -131,6 +131,16 @@ exclude_patterns = [
     "plone.restapi/performance",
     "plone.restapi/src",
     "volto/contributing/branch-policy.md",
+    "volto/contributing/install-docker.md",
+    "volto/contributing/install-git.md",
+    "volto/contributing/install-make.md",
+    "volto/contributing/install-nodejs.md",
+    "volto/contributing/install-operating-system.md",
+]
+
+suppress_warnings = [
+    # "toc.excluded",  # Suppress `WARNING: document isn't included in any toctree`
+    "toc.not_readable",  # Suppress `WARNING: toctree contains reference to nonexisting document 'news*'`
 ]
 
 html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
@@ -209,15 +219,20 @@ ogp_custom_meta_tags = [
 ]
 
 
-# -- sphinx_copybutton -----------------------
-copybutton_prompt_text = r"^ {0,2}\d{1,3}"
-copybutton_prompt_is_regexp = True
-
-
 # -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
+
+
+# -- sphinx-reredirects configuration ----------------------------------
+# https://documatt.com/sphinx-reredirects/usage.html
+redirects = {
+    "contributing/plone-api": "/plone.api/contribute/index.html",
+    "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
+    "contributing/volto": "/volto/contributing/index.html",
+    "install/install-from-packages": "/install/create-project.html",
+}
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -326,8 +341,9 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.6",
-    "{NVM_VERSION}": "0.39.3",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.11",
+    "{NVM_VERSION}": "0.39.5",
+    "{SUPPORTED_PYTHON_VERSIONS}": "3.8, 3.9, 3.10, 3.11, or 3.12",
 }
 
 

@@ -54,9 +54,6 @@ Grunt
 Less
     A dynamic stylesheet language that can be compiled into {term}`CSS` (Cascading Style Sheets).
 
-Linode
-    [Linode.com](https://www.linode.com/) is an American privately owned virtual private server provider company based in Galloway, New Jersey, United States.
-
 mxdev
     [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, and you want to develop only some of those packages.
     It is designed for developers who use stable version constraints, then layer their customizations on top of that base while using a version control system.
@@ -74,6 +71,13 @@ NPM
 pip
     pip is the package installer for Python.
     See [tool recommendations](https://packaging.python.org/en/latest/guides/tool-recommendations/) for more information.
+
+pipx
+    [pipx](https://pypi.org/project/pipx/) allows you to install and run Python applications in isolated environments.
+
+pyenv
+    Python version management.
+    [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. 
 
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
@@ -121,7 +125,8 @@ Diazo
     Diazo allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology.
 
 Dexterity
-    [Dexterity](https://github.com/plone/plone.dexterity), the base framework for building content types, both through-the-web and as filesystem code for Zope.
+    [Dexterity](https://github.com/plone/plone.dexterity) is the base framework for building content types, both through-the-web and as filesystem code.
+     It is aimed at Plone, although this package should work with plain Zope + CMF systems.
 
 Dublin Core
     The Dublin Core Schema is a small set of vocabulary terms that can be used to describe web resources (video, images, web pages, etc.), as well as physical resources such as books or CDs, and objects like artworks.
@@ -272,7 +277,17 @@ mrs-developer
     As a byproduct of its update operations, it also automatically adjusts `jsconfig.json`, which is used by Volto to configure webpack aliases.
 
 Yarn
-    [Yarn](https://yarnpkg.com/) is a JavaScript package manager.
+    [Yarn](https://yarnpkg.com/) is both a JavaScript package manager and project manager.
+
+Corepack
+    [Corepack](https://github.com/nodejs/corepack) is a zero-runtime-dependency Node.js script that acts as a bridge between Node.js projects and the package managers they are intended to be used with during development.
+    In practical terms, Corepack lets you use {term}`Yarn`, {term}`npm`, and {term}`pnpm` without having to install them.
+
+    Corepack is distributed by default with all recent Node.js versions.
+    Run `corepack enable` to install the required Yarn and pnpm binaries on your path.
+
+Git
+    [Git](https://git-scm.com/) is a free and open source distributed version control system.
 
 Hydration
     After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing {term}`DOM` elements, and recreate and attach their coresponding components.
@@ -398,10 +413,20 @@ Classic UI
     It is integrated with [Products.CMFPlone](https://github.com/plone/Products.CMFPlone/).
     Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
     It is based on Twitter Bootstrap 5.
-    It uses [Mockup](https://github.com/plone/mockup/) as its JavaScript stack.
-    [View Mockup's patterns](https://plone.github.io/mockup/dev/).
+    It uses {term}`Mockup` as its JavaScript stack.
 
     The other frontend is {term}`Volto`.
+
+Mockup
+    [Mockup](https://github.com/plone/mockup/) is a package that, together with {term}`Patternslib`, builds the UI toolkit for {term}`Classic UI`, a frontend for Plone.
+    Mockup provides the JavaScript stack for Classic UI.
+    [View Mockup's patterns](https://plone.github.io/mockup/), based on Patternslib.
+
+Patterns
+Patternslib
+    [Patterns](https://patternslib.com/), or Patternslib, is a toolkit that enables designers to build rich interactive prototypes without the need for writing any JavaScript.
+    All functionality is triggered by classes and other attributes in the HTML, without abusing the HTML as a programming language.
+    Accessibility, SEO, and well-structured HTML are core values of Patterns.
 
 Slate
     [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as `WYSIWYG` editors.
@@ -505,7 +530,7 @@ ZPT
     Zope Page Template is a template language for Python.
 
 plonecli
-    The plonecli helps developers to create Plone add-ons in a modular and reproducible way.
+    The [`plonecli`](https://pypi.org/project/plonecli/) helps developers to create Plone add-ons in a modular and reproducible way.
 
 ZCA
 Zope Component Architecture
@@ -515,7 +540,7 @@ Zope Component Architecture
     It can be used for developing any Python application.
     Maybe it should be called Python Component Architecture.
     ```{seealso}
-    See also https://muthukadan.net/docs/zca.html.
+    See also https://zopecomponent.readthedocs.io/en/latest/index.html.
     ```
 
 browser layer
@@ -663,4 +688,56 @@ intid
 WSL
 Windows Subsystem for Linux
     The [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, or Arch Linux) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
+
+pnpm
+    [pnpm](https://pnpm.io/) is a fast, disk space efficient package manager.
+
+Guillotina
+    [Guillotina](https://guillotina.io/) is a full-stack data framework built on [AsyncIO](https://docs.python.org/3/library/asyncio.html).
+
+Nick
+    [Nick](https://nickcms.org/) is a headless content management system {term}`CMS` built with {term}`Node.js`.
+
+predicate
+predicates
+    In programming, a predicate is a test which returns `true` or `false`.
+
+pnpm workspace
+workspace
+    pnpm has built-in support for monorepositories (also known as multi-package repositories, multi-project repositories, or monolithic repositories).
+    Workspaces provide support to manage multiple packages from your local file system from within a singular top-level, root package.
+
+    When you run `pnpm install` at the root of the repository, pnpm installs dependencies for all workspaces, ensuring consistency across the entire project.
+    This centralized approach streamlines development, facilitates code sharing, and simplifies the maintenance of complex projects.
+
+ESLint
+    [ESLint](https://eslint.org/) statically analyzes your code to quickly find problems.
+    It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
+
+Stylelint
+    [Stylelint](https://stylelint.io/) is a CSS linter that helps you avoid errors and enforce conventions.
+
+Prettier
+    [Prettier](https://prettier.io/) is an opinionated code formatter.
+
+GitHub workflow
+GitHub workflows
+    A [GitHub workflow](https://docs.github.com/en/actions/using-workflows) is a configurable automated process that will run one or more jobs.
+
+husky
+    [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
+
+Jest
+    [Jest](https://jestjs.io/) is a JavaScript testing framework.
+    Volto uses Jest for unit tests.
+
+lazy load
+lazy loading
+lazy loaded
+    Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
+    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path, which translates into reduced page load times.
+
+reference implementation
+    A reference implementation is a program that implements all requirements from a corresponding specification.
+    The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
 ```

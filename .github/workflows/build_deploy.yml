@@ -3,20 +3,25 @@ name: Build and deploy Plone 6 documentation to 6.docs.plone.org
 on:
   push:
     branches:
-      - "6-dev"
       - "6.0"
+
+env:
+  node-version: 20.x
 
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: docs.plone.org
+      url: https://docs.plone.org
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Graphviz
-        uses: ts-graphviz/setup-graphviz@v1
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v4
+        uses: ts-graphviz/setup-graphviz@v2
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.12'
           cache: 'pip'
       - name: Install dependencies
         run: |
@@ -33,31 +38,32 @@ jobs:
       - name: Prepare deploy
         run: make deploy
 
-      # node setup
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
-      - name: Install Yarn
-        run: npm install -g yarn
-      # node cache
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        working-directory: submodules/volto
-        run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+          node-version: ${{ env.node-version }}
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
       - uses: actions/cache@v3
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        name: Setup pnpm cache
         with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-pnpm-store-
 
       - name: StoryBook build
-        run: |
-          cd submodules/volto 
-          yarn install --immutable 
-          yarn build-storybook -o ../../_build/html/storybook
+        run: make storybook
 
       - name: Deploy to server
         id: deploy
@@ -67,9 +73,9 @@ jobs:
         with:
           flags: '-avzr --delete'
           options: ''
-          ssh_options: '-p ${{secrets.DEPLOY_PORT}}'
+          ssh_options: '-p ${{vars.DEPLOY_PORT}}'
           src: '_build/html/'
-          dest: '${{secrets.DEPLOY_USER_DOCS}}@${{secrets.DEPLOY_SERVER_DOCS}}:${{secrets.DEPLOY_PATH_DOCS}}'
+          dest: '${{vars.DEPLOY_USER_DOCS}}@${{vars.DEPLOY_SERVER_DOCS}}:${{vars.DEPLOY_PATH_DOCS}}'
 
       - name: Display status from deploy
         run: echo "${{ steps.deploy.outputs.status }}"

@@ -7,8 +7,8 @@ SPHINXOPTS      ?=
 PAPER           ?=
 
 # Internal variables.
-SPHINXBUILD     = $(realpath bin/sphinx-build)
-SPHINXAUTOBUILD = $(realpath bin/sphinx-autobuild)
+SPHINXBUILD     = "$(realpath bin/sphinx-build)"
+SPHINXAUTOBUILD = "$(realpath bin/sphinx-autobuild)"
 DOCS_DIR        = ./docs/
 BUILDDIR        = ../_build
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -35,7 +35,7 @@ distclean:  ## Clean docs build directory and Python virtual environment
 
 
 bin/python:
-	python3 -m venv . || virtualenv --clear --python=python3 .
+	python3 -m venv .
 	bin/pip install -r requirements-initial.txt
 	bin/pip install -r requirements.txt
 
@@ -196,8 +196,8 @@ linkcheckbroken: deps  ## Run linkcheck and show only broken links
 
 .PHONY: vale
 vale: deps  ## Run Vale style, grammar, and spell checks
-	vale sync
-	vale --no-wrap $(VALEFILES)
+	bin/vale sync
+	bin/vale --no-wrap $(VALEFILES)
 	@echo
 	@echo "Vale is finished; look for any errors in the above output."
 
@@ -235,11 +235,11 @@ netlify:
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
-	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html && cp ./netlify_robots.txt $(BUILDDIR)/html/robots.txt
 
 .PHONY: storybook
 storybook:
-	cd submodules/volto && yarn && yarn build-storybook -o ../../_build/html/storybook
+	cd submodules/volto && pnpm i && pnpm build:registry && pnpm --filter @plone/volto build-storybook -o ../../../../_build/html/storybook
 
 .PHONY: all
 all: clean vale linkcheck html  ## Clean docs build, then run vale and linkcheck, and build html

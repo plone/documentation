@@ -68,7 +68,7 @@ To get the original image, you can leave out the scale:
 
 ### By cacheable scale {term}`UID` name
 
-When an image scale is created, it will be cached under the name `UID.EXT` (i.e. `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
+When an image scale is created, it will be cached under the name `UID.EXT` (such as `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
 Scaling keeps the uploaded formats, except for TIFF which ends up as JPEG.
 It can be resolved as follows:
 
@@ -114,11 +114,11 @@ tag = scale_util.tag(
     scale=None,
     height=None,
     width=None,
-    direction="thumbnail"
+    mode="scale"
 )
 ```
 
-If you pass additional kwargs to `tag`, they become attributes on `tag`.
+If you pass additional `kwargs` to `tag`, they become attributes on `tag`.
 
 
 (classic-ui-images-image-scaling-no-tag-creation-label)=
@@ -181,7 +181,7 @@ tag = scale_util.scale("image", width=600, height=200)
 
 ### Using `image_scale` in templates
 
-You could use the URL-variant from above, but that would be an uncached version.
+You could use the URL-variant from above, but that version would not be cached.
 To create a cached scale in a page template you can do the following:
 
 ```xml
@@ -199,7 +199,7 @@ Or you can get the HTML tag back, and replace the current tag with it:
 
 ```xml
 <div tal:define="scale_view context/@@images">
-  <img tal:replace="structured python: scale_view.tag('image', 'mini')">
+  <img tal:replace="structure python: scale_view.tag('image', 'mini')">
 </div>
 ```
 
@@ -207,7 +207,7 @@ You can also provide the following keyword arguments to set `title`, `alt`, or `
 
 ```xml
 <div tal:define="scale_view context/@@images">
-  <img tal:replace="structured python: scale_view.tag('banner', 'mini', title='The Banner', alt='Alternative text', css_class='banner')">
+  <img tal:replace="structure python: scale_view.tag('banner', 'mini', title='The Banner', alt='Alternative text', css_class='banner')">
 </div>
 ```
 
@@ -215,7 +215,7 @@ You can also provide the following keyword arguments to set `title`, `alt`, or `
 
 ### Get `image_scale` by cached {term}`UID` name
 
-If you only have the cached image name from an URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
+If you only have the cached image name from a URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
 But you can use this workaround, by calling the `publishTraverse` method in `ImageScaling` directly:
 
 ```python
@@ -233,20 +233,44 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 ```
 
 
-(classic-ui-images-scaling-direction-label)=
+(classic-ui-images-scaling-mode-label)=
 
-## Scaling `direction`
+## Scaling `mode`
 
-The default direction is `thumbnail`.
+```{versionchanged} 6.0
+Added `mode` to replace the deprecated `direction`.
+Added new option names for `mode` to align with CSS `background-size` values, and deprecated previous names `keep`, `thumbnail`, `scale-crop-to-fit`, `down`, `scale-crop-to-fill`, and `up`.
+```
 
-Other options are:
+Scaling is intended for the optimal display of images in a web browser.
 
-* `down`
-* `keep`
-* `scale-crop-to-fill`
-* `scale-crop-to-fit`
-* `thumbnail`
-* `up`
+To scale an image, you can use the `mode` parameter to control the scaling output.
+You must use either `width` or `height`, or both.
+
+Three different scaling options are supported.
+They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) values.
+
+The possible options for `mode` are listed below, where the default option is `scale`.
+
+`scale`
+:   This is the default option.
+    `scale` scales to the requested dimensions without cropping.
+    The resulting image may have a different size than requested.
+    This option requires both `width` and `height` to be specified.
+    It does not scale up.
+
+    Deprecated option names: `keep`, `thumbnail`.
+
+`contain`
+:   `contain` starts by scaling the image either to the smaller dimension when you give both `width` and `height`, or to the only given dimension, then crops to the other dimension if needed.
+
+    Deprecated option names: `scale-crop-to-fit`, `down`.
+
+`cover`
+:   `cover` scales the image either to the larger dimension when you give both `width` and `height`, or to the only given dimension, up to the size you specify.
+    Despite the deprecated option name, it does not crop.
+
+    Deprecated option names: `scale-crop-to-fill`, `up`.
 
 
 (classic-ui-images-permissions-label)=
@@ -459,4 +483,54 @@ This will result in a `srcset` as in the following example for a medium image:
 ```{note}
 Please note that this example has the `resolve_uid_and_caption` filter disabled to see the scale names better.
 The real `src` URLs look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`.
+```
+
+## Image scales from catalog brain
+
+For all `NamedBlobImage` fields, we can get existing scale information directly from the catalog brain.
+
+Given a content type with a `NamedBlobField` named `picture`, we can get the following information by calling the `image_scales` attribute on the catalog brain.
+
+```python
+(Pdb) pp brain.image_scales
+{'picture': [{'content-type': 'image/jpeg',
+              'download': '@@images/picture-800-ddae07fbc46b293155bd6fcda7f2572a.jpeg',
+              'filename': 'my-picture.jpg',
+              'height': 800,
+              'scales': {'icon': {'download': '@@images/picture-32-f2f815374aa5434e06fb3a95306527fd.jpeg',
+                                  'height': 32,
+                                  'width': 32},
+                         'large': {'download': '@@images/picture-800-4dab3b3cc42abb6fad29258c7430070a.jpeg',
+                                   'height': 800,
+                                   'width': 800},
+                         'listing': {'download': '@@images/picture-16-d3ac2117158cf38d0e15c5f5feb8b75d.jpeg',
+                                     'height': 16,
+                                     'width': 16},
+                         'mini': {'download': '@@images/picture-200-3de96ae4288dfb18f5589c89b861ecc1.jpeg',
+                                  'height': 200,
+                                  'width': 200},
+                         'preview': {'download': '@@images/picture-400-60f60942c8e4ddd7dcdfa90527a8bae0.jpeg',
+                                     'height': 400,
+                                     'width': 400},
+                         'teaser': {'download': '@@images/picture-600-1ada88b8af6748e9cbe18a34c3127443.jpeg',
+                                    'height': 600,
+                                    'width': 600},
+                         'thumb': {'download': '@@images/picture-128-80fce253497f7a745315f58f3e8f3a0c.jpeg',
+                                   'height': 128,
+                                   'width': 128},
+                         'tile': {'download': '@@images/picture-64-220d6703eac104c59774a379a8276e76.jpeg',
+                                  'height': 64,
+                                  'width': 64}},
+              'size': 238977,
+              'width': 800}]}
+```
+
+This information shows we have everything we need to generate our image URLs, without waking up any objects.
+
+```xml
+<li tal:define="preview python: brain.image_scales['picture'][0]['scales']['preview']">
+  <img src="${brain/getURL}/${python: preview['download']}"
+    width="${python: preview['width']}"
+    height="${python: preview['height']}" />
+</li>
 ```

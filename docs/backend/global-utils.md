@@ -8,7 +8,7 @@ myst:
 ---
 
 
-# Global utils and helpers
+# Global utilities and helpers
 
 The following are global functions defined in `CMFPlone` and `plone.app.layout`.
 

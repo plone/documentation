@@ -546,3 +546,113 @@ In that case, you are advised to add the `image_scales` column manually to the c
 ```{seealso}
 [plone/plone.app.upgrade PR 292](https://github.com/plone/plone.app.upgrade/pull/292)
 ```
+
+
+(v60-tinymce-label)=
+
+## New version of TinyMCE
+
+Plone 6 ships with a new version of TinyMCE.
+While Plone 5.2 ships with TinyMCE 4.7, Plone 6.0 ships with TinyMCE 5.10.
+The TinyMCE integration `pat-tinymce` has also changed, but the configuration options have been almost kept the same and are likely to be compatible with your existing installation.
+The configuration changes are:
+
+-   Added configuration options `text.enableImageZoom`, `defaultSrcset`, `imageCaptioningEnabled`, and `tiny.language`.
+-   Removed configuration option `imageScales`.
+-   Option values changed for `imageClasses`.
+
+
+### TinyMCE templates
+
+In Plone 6, the TinyMCE template plugin is built-in and can be enabled via a checkbox.
+Whereas in Plone 5, you had to enable the template plugin as an external plugin via the `custom_plugins` configuration option.
+The template registration is the same as before, but in Plone 6 your templates need to have a `description`.
+Otherwise TinyMCE will throw a JavaScript error, and the templates won't be usable at all.
+
+The following example {file}`registry.xml` may be used for configuring TinyMCE with some templates.
+
+```xml
+  <records interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+           prefix="plone">
+    <value key="plugins" purge="False">
+      <element>template</element>
+    </value>
+    <value key="custom_plugins" purge="True">
+      <!-- Remove the old TinyMCE template plugin -->
+    </value>
+    <value key="templates">
+        [
+            {
+                "title": "Template 1",
+                "description": "This is an example template",
+                "url": "++plone++my.site/template1.html"
+            },
+            {
+                "title": "Template 2",
+                "description": "This is another example template",
+                "url": "++plone++my.site/template2.html"
+            }
+        ]
+    </value>
+  </records>
+```
+
+Please make sure you write valid JSON for the `template` option.
+
+```{seealso}
+See also [Migrating from TinyMCE 4 to TinyMCE 5](https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/).
+```
+
+## Viewlets
+
+Plone 6.0 renames various viewlets or moves them to a different viewlet manager.
+This is because some viewlet names contained the name of a viewlet manager.
+This didn't always match the name of their actual viewlet manager, especially after moving them.
+Plone 6.0 removes such references from the viewlet names to avoid confusion.
+
+-   Plone 6.0 removes the `plone.header` viewlet from `plone.portaltop` manager, making it empty.
+-   Plone 6.0 renames the `plone.abovecontenttitle.documentactions` viewlet to `plone.documentactions`, and moves it from manager `plone.belowcontentbody` to `plone.belowcontent`.
+-   Plone 6.0 renames the `plone.abovecontenttitle.socialtags` viewlet to `plone.socialtags`.
+    It remains in manager `plone.abovecontenttitle`.
+-   Plone 6.0 renames the `plone.belowcontentbody.relateditems` viewlet to `plone.relateditems`.
+    It remains in manager `plone.belowcontentbody`.
+-   Plone 6.0 removes the `plone.manage_portlets_fallback` viewlet from the `plone.belowcontent` manager.
+-   Plone 6.0 renames the `plone.belowcontenttitle.documentbyline` viewlet to `plone.documentbyline`.
+    It remains in manager `plone.belowcontenttitle`.
+-   Plone 6.0 renames the `plone.belowcontenttitle.keywords` viewlet to `plone.keywords`, and moves it from manager `plone.belowcontent` to `plone.belowcontentbody`.
+-   Plone 6.0 adds the `plone.rights` viewlet in manager `plone.belowcontentbody`.
+
+The names in the following table have had the namespace `plone.` removed from them for display purposes only.
+In your code, you should use the object's `plone.` namespace as a prefix.
+This table shows the same information, but in tabular form.
+
+```{table} Viewlet changes from 5.2 to 6.0
+
+| 5.2 viewlet name | 5.2 viewlet manager | 6.0 viewlet name | 6.0 viewlet manager |
+| ---------------- | ------------------- | ---------------- | ------------------- |
+| `header` | `portaltop` | | `portaltop` |
+| `abovecontenttitle.documentactions` | `belowcontentbody` | `documentactions` | `belowcontent` |
+| `abovecontenttitle.socialtags` | `abovecontenttitle` | `socialtags` | `abovecontenttitle` |
+| `belowcontentbody.relateditems` | `belowcontentbody` | `relateditems` | `belowcontentbody` |
+| `manage_portlets_fallback` | `belowcontent` | | `belowcontent` |
+| `belowcontenttitle.documentbyline` | `belowcontenttitle` | `documentbyline` | `belowcontenttitle` |
+| `belowcontenttitle.keywords` | `belowcontent` | `keywords` | `belowcontentbody` |
+| | `belowcontentbody` | `rights` | `belowcontentbody` |
+```
+
+Plone 6.0 makes changes to two viewlet managers:
+
+-   Plone 6.0 removes the `plone.documentactions` (`IDocumentActions`) viewlet manager.
+    In Plone 5.2 it was already empty.
+-   Plone 6.0 adds the `plone.belowcontentdescription` (`IBelowContentDescription`) viewlet manager.
+    By default this has no viewlets.
+
+One final change is that Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`.
+The viewlet remains in manager `plone.portalfooter`.
+It renders the portlets from the `plone.footerportlets` portlet manager.
+
+## Boolean fields
+
+Since `zope.schema==6.1.0`, all `zope.schema.Bool` fields must have a `required=False` attribute.
+This allows you to either tick or not tick the checkbox, submit the form, and process the field with either its value when ticked or `None` when unticked.
+Otherwise, you can't save the form without ticking the checkbox, which effectively makes the field value always `True`.
