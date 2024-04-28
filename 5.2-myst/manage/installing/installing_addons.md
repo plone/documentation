@@ -51,6 +51,8 @@ Plone add-ons are distributed as Python modules, also known as eggs.
 Plone add-ons, though Python eggs, must be installed through buildout as only buildout will regenerate the config files reflecting newly downloaded and installed eggs. Other Python installation methods like easy_install and pip do not apply for Plone add-ons.
 ```
 
+(installing-add-ons-using-buildout)=
+
 ## Installing add-ons using buildout
 
 Add-on packages which are uploaded to [PyPI](https://pypi.python.org) can be installed by buildout.
@@ -122,7 +124,8 @@ auto-checkout =
     collective.supercool
 ```
 
-Adding add-on package names to the **auto-checkout** list will make buildout check out the source to the `src` directory upon next buildout run.
+Adding the add-on package names to the `auto-checkout` list and running buildout will only "check out", that is, copy, the packages to your `src` directory.
+To get these packages installed, it is necessary to add the package names to the `eggs` list as described in :ref:`installing-add-ons-using-buildout`.
 
 ```{note}
 It is not recommended to use `auto-checkout = *`, especially when you extend from a big list of sources, such as the plonesource.org list.
