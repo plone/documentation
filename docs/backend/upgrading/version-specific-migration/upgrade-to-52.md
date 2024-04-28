@@ -294,7 +294,7 @@ eggs =
 ```{note}
 Instead of using Archetypes in Plone 5.2, you should consider migrating to Dexterity.
 Dexterity is also a hard requirement to be able to use Python 3.
-See [`plone.app.contenttypes` documentation on Migration](https://github.com/plone/plone.app.contenttypes#migration) for details on the migration from Archetypes to Dexterity.
+See [`plone.app.contenttypes` documentation on Migration](https://github.com/plone/plone.app.contenttypes/blob/2.2.3/docs/README.rst#migration) for details on the migration from Archetypes to Dexterity.
 ```
 
 
@@ -313,7 +313,7 @@ Nothing changes.
 Support for old-style resource registries (`cssregistry.xml` and `jsregistry.xml`) was removed completely, along with the tools `portal_css` or `portal_javascript`.
 
 You need to add resources using the new Resource Registry.
-See https://docs.plone.org/adapt-and-extend/theming/resourceregistry.html#resources for detailed instructions.
+See https://5.docs.plone.org/adapt-and-extend/theming/resourceregistry.html#resources for detailed instructions.
 
 
 ### Restructure `CMFPlone` static resources

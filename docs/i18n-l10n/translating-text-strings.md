@@ -155,7 +155,7 @@ It will use the text content of the element as `msgid`.
 Use attributes `i18n:translate`, `i18n:attributes`, and so on.
 For examples, look at any core Plone `.pt` files.
 
-The `i18n:translate` attribute will hook into the translation machinery, and will look up the corresponding translated string to the one stated there, while looking in the relevant `domain.po` file corresponding to the `i18n:domain` stated in the file and the language negotiated by Plone.
+The `i18n:translate` attribute will {term}`hook` into the translation machinery, and will look up the corresponding translated string to the one stated there, while looking in the relevant `domain.po` file corresponding to the `i18n:domain` stated in the file and the language negotiated by Plone.
 
 
 (translating-text-strings-automatically-translated-message-ids-label)=

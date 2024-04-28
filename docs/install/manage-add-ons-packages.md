@@ -12,7 +12,7 @@ myst:
 
 # Manage add-ons and packages
 
-This chapter assumes you have previously {doc}`installed Plone from its packages <install-from-packages>`.
+This chapter assumes you have previously followed {doc}`create-project`.
 In this section, we discuss details of the installation process so that you can customize your Plone installation.
 It also covers routine management tasks that a developer might perform.
 
@@ -61,7 +61,7 @@ If you want to check out a Plone core package for development, or want to overri
 
 ```
 # constraints.txt with unresolvable version conflict
--c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
+-c https://dist.plone.org/release/{PLONE_BACKEND_PATCH_VERSION}/constraints.txt
 plone.api>=2.0.0a3
 ```
 
@@ -106,7 +106,7 @@ zope.testrunner
 {file}`constraints.txt`
 
 ```ini
--c https://dist.plone.org/release/{PLONE_BACKEND_VERSION}/constraints.txt
+-c https://dist.plone.org/release/{PLONE_BACKEND_PATCH_VERSION}/constraints.txt
 ```
 
 {file}`mx.ini`
@@ -147,7 +147,7 @@ make start-backend
 ```
 
 ```{seealso}
-See the [documentation of `mxdev` in its README.rst](https://github.com/mxstack/mxdev/blob/main/README.rst) for complete information.
+See the [documentation of `mxdev` in its README.md](https://github.com/mxstack/mxdev/blob/main/README.md) for complete information.
 ```
 
 
@@ -171,16 +171,11 @@ This example uses [`collective.easyform`](https://pypi.org/project/collective.ea
 collective.easyform
 ```
 
-Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
+Add it to {file}`instance.yaml` to let Zope know that this add-on should be loaded:
 
-```{code-block} yaml
-:emphasize-lines: 3-6
+```yaml
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -217,15 +212,11 @@ Add the add-on to {file}`requirements.txt`:
 collective.easyform
 ```
 
-Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
+Add it to {file}`instance.yaml` to let Zope know that this add-on should be loaded:
 
 ```yaml
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -261,15 +252,11 @@ branch=dev-branch-name
 extras=test
 ```
 
-Add it to {file}`instance.yml` to let Zope know that this add-on should be loaded:
+Add it to {file}`instance.yaml` to let Zope know that this add-on should be loaded:
 
 ```yaml
 default_context:
-    load_zcml:
-        package_includes: [
-            'project_title',
-            'collective.easyform',
-        ]
+    zcml_package_includes: project_title, collective.easyform
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -325,7 +312,7 @@ Add the Plone package you want to check out in {file}`mx.ini`.
 ```ini
 [plone.restapi]
 url = git@github.com:plone/plone.restapi.git
-branch = master
+branch = main
 extras = test
 ```
 

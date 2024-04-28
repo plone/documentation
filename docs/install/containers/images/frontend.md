@@ -100,7 +100,7 @@ version: "3"
 services:
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     # Plone 5.2 series can be used too
     # image: plone/plone-backend:5.2.7
     ports:

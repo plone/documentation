@@ -106,7 +106,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_VERSION}
+    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     environment:
       SITE: Plone
       RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"

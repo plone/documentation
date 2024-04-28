@@ -34,6 +34,13 @@ cookiecutter-plone-starter
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
 
+CSRF
+Cross-Site Request Forgery
+    Cross-Site Request Forgery (CSRF or XSRF) is a type of web attack that allows an attacker to send malicious requests to a web application on behalf of a legitimate user.
+    The attack works by tricking the user's web browser into sending a request to the web application that the user did not intentionally make.
+    This can allow an attacker to perform actions on the web application without the user's knowledge or consent.
+    In Plone, CSRF protection is done almost transparently by [`plone.protect`](https://pypi.org/project/plone.protect/).
+
 CSS
     Cascading Style Sheets (CSS) is a stylesheet language used for describing the (most of the times visual) representation of web pages.
 
@@ -46,9 +53,6 @@ Grunt
 
 Less
     A dynamic stylesheet language that can be compiled into {term}`CSS` (Cascading Style Sheets).
-
-Linode
-    [Linode.com](https://www.linode.com/) is an American privately owned virtual private server provider company based in Galloway, New Jersey, United States.
 
 mxdev
     [mxdev](https://github.com/mxstack/mxdev) [mɪks dɛv] is a utility that makes it easy to work with Python projects containing lots of packages, and you want to develop only some of those packages.
@@ -67,6 +71,13 @@ NPM
 pip
     pip is the package installer for Python.
     See [tool recommendations](https://packaging.python.org/en/latest/guides/tool-recommendations/) for more information.
+
+pipx
+    [pipx](https://pypi.org/project/pipx/) allows you to install and run Python applications in isolated environments.
+
+pyenv
+    Python version management.
+    [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. 
 
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
@@ -107,14 +118,15 @@ Solr
     [Solr](https://solr.apache.org/) is a popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
 
 ZCML
-    The [Zope Configuration Mark-up Language](https://docs.plone.org/develop/addons/components/zcml.html).
+    The [Zope Configuration Mark-up Language](https://5.docs.plone.org/develop/addons/components/zcml.html).
 
 Diazo
     [Diazo theme engine guide](https://docs.diazo.org/en/latest/).
     Diazo allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology.
 
 Dexterity
-    [Dexterity](https://github.com/plone/plone.dexterity), the base framework for building content types, both through-the-web and as filesystem code for Zope.
+    [Dexterity](https://github.com/plone/plone.dexterity) is the base framework for building content types, both through-the-web and as filesystem code.
+     It is aimed at Plone, although this package should work with plain Zope + CMF systems.
 
 Dublin Core
     The Dublin Core Schema is a small set of vocabulary terms that can be used to describe web resources (video, images, web pages, etc.), as well as physical resources such as books or CDs, and objects like artworks.
@@ -154,30 +166,48 @@ record
     A Rapido app is able to store data as records.
     Records are basic dictionaries.
 
-Project (Volto)
-    The product of running the package `@plone/generator-volto`, resulting in a customizable instance of Volto.
+Add-on
+    An add-on in Plone extends its functionality.
+    It is code that is released as a package to make it easier to install.
 
-Add-on (Volto)
-    A JavaScript package that integrates with Volto's configuration registry and is able to enhance, extend, and customize it.
+    In Volto, an add-on is a JavaScript package.
 
-Add-on configuration loader (Volto)
+    In Plone core, an add-on is a Python package.
+
+    -   [Plone core add-ons](https://github.com/collective/awesome-plone#readme)
+    -   [Volto add-ons](https://github.com/collective/awesome-volto#readme)
+    -   [Add-ons tagged with the trove classifier `Framework :: Plone` on PyPI](https://pypi.org/search/?c=Framework+%3A%3A+Plone)
+
+Volto configuration loader
     A function with signature `config => config`.
-    It gets the Volto Configuration registry, and it must return it back after mutating it.
-    It is similar to `GenericSetup` profiles in Plone Backend.
+    It gets the Volto configuration registry, and it must return it back after mutating it.
+    It is similar to `GenericSetup` profiles in the Plone backend.
     An add-on must provide a default configuration loader that is always loaded when Volto runs.
     An add-on can have multiple configuration loaders, and they can be loaded optionally from the Volto configuration.
 
-Configuration registry (Volto)
-    A singleton object modeled using JavaScript modules.
+Configuration registry
+    In Plone and in general, the configuration registry is where resources are registered for an application.
+
+    In Volto, it is a singleton object modeled using JavaScript modules.
     It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
     It contains the configuration of the Volto app.
 
-Shadowing (Volto)
-    Webpack provides an "alias" mechanism, where the path for a module can be aliased to another module.
-    By using this mechanism Volto enables customization (file overrides), similar to `z3c.jbot.`
+    In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for Zope applications.
+
+component shadowing
+shadowing
+    Volto uses a technique called component shadowing to override an existing Volto component with our local custom version, without having to modify Volto's source code.
+
+    Volto's source components are located in the filepath stem of `omelette/src/components/`.
+    Custom components that shadow Volto's source would be located in the filepath stem of `src/customizations/components/`.
+    Shadow components would have the same filepath as Volto's source compenents, excluding the stem.
+    Thus `omelette/src/components/theme/Header/Header.jsx` would be shadowed by `src/customizations/components/theme/Header/Header.jsx`.
+
+    Webpack provides an alias mechanism that allows component shadowing in Volto, where the path for a module can be aliased to another module.
+    By using this mechanism of file overrides, or component shadowing, Volto enables customization, similar to `z3c.jbot.`
 
 Razzle
-    A tool that simplifies SPA and SSR configuration for React projects.
+    A tool that simplifies {term}`SPA` and {term}`SSR` configuration for React projects.
 
 Webpack
     A tool that loads and bundles code and web resources using loaders.
@@ -194,18 +224,42 @@ Express
     A JavaScript HTTP server with a simple API to build custom applications.
     Volto uses it as its server.
 
-Server-Side Rendering (SSR)
-    When first loading any Plone page, users will get HTML markup that closely matches the final DOM structure of the React components used to render that page.
+SSR
+server-side rendering
+    When a web browser or other HTTP client sends a request, the HTML markup for the page is created on the server, which sends a response consisting of HTML markup back to the client.
 
-Single Page Application (SPA)
-    A type of JavaScript application that aims to provide a better user experience by avoiding unnecessary reloading of the browser page, instead using AJAX to load backend information.
+    In Volto, SSR returns HTML markup that closely matches the final {term}`DOM` structure of the React components used to render that page, but it is not the complete page.
+    After the client loads the initial response, then the {term}`hydration` mechanism performs additional rendering on the client side, populating the DOM with additional HTML markup.
 
-Hot Module Replacement (HMR)
-    A development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
+    In Classic UI, SSR returns the complete page back to the client in the response.
+    In some rare cases, additional HTML snippets may be loaded, such as in overlays or dialogs.
+
+    SSR enables a developer to customize a website per request and per user.
+    In addition, SSR can improve performance and search engine optimization (SEO) for a website.
+
+DOM
+Document Object Model
+    The Document Object Model (DOM) is a programming interface for web documents.
+    It represents the page so that programs can change the document structure, style, and content.
+    The DOM represents the document as nodes and objects; that way, programming languages, such as JavaScript and React, can interact with the page.
+
+SPA
+single page application
+    A type of JavaScript application that aims to provide a better user experience by avoiding unnecessary reloading of the browser page, instead using {term}`AJAX` to load backend information.
+
+HMR
+hot module replacement
+    [Hot module replacement](https://webpack.js.org/guides/hot-module-replacement/) (HMR) is a development feature provided by Webpack that automatically reloads, in the browser, the JavaScript modules that have changed on disk.
+
+Ajax
+AJAX
+Asynchronous JavaScript and XML
+    AJAX allows web applications to change parts of the page dynamically without reloading the entire page.
+    In Plone, after a page with JavaScript is loaded, the JavaScript will send an asynchronous request to the server.
+    The server will send a response back to the client, which is then rendered on the client side.
 
 Yeoman
-    A popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
-    https://yeoman.io/
+    [Yeoman](https://yeoman.io/) is a popular scaffolding tool similar to Plone's `mr.bob` or `ZopeSkel`.
 
 CommonJS
     A JavaScript package standard, the equivalent of a Python wheel or egg.
@@ -223,10 +277,20 @@ mrs-developer
     As a byproduct of its update operations, it also automatically adjusts `jsconfig.json`, which is used by Volto to configure webpack aliases.
 
 Yarn
-    [Yarn](https://classic.yarnpkg.com/) is a JavaScript package manager.
+    [Yarn](https://yarnpkg.com/) is both a JavaScript package manager and project manager.
 
-Hydration (SSR)
-    After loading an HTML page generated with SSR in the browser, React can "populate" the existing DOM elements, recreate and attach their coresponding components.
+Corepack
+    [Corepack](https://github.com/nodejs/corepack) is a zero-runtime-dependency Node.js script that acts as a bridge between Node.js projects and the package managers they are intended to be used with during development.
+    In practical terms, Corepack lets you use {term}`Yarn`, {term}`npm`, and {term}`pnpm` without having to install them.
+
+    Corepack is distributed by default with all recent Node.js versions.
+    Run `corepack enable` to install the required Yarn and pnpm binaries on your path.
+
+Git
+    [Git](https://git-scm.com/) is a free and open source distributed version control system.
+
+Hydration
+    After loading an HTML page generated with {term}`SSR` in the browser, React can populate the existing {term}`DOM` elements, and recreate and attach their coresponding components.
 
 JSX
     A dialect of JavaScript that resembles XML, it is transpiled by Babel to JavaScript functions.
@@ -235,21 +299,25 @@ JSX
 Scoped packages
     Namespace for JavaScript packages, they provide a way to avoid naming conflicts for common package names.
 
-middleware (Redux)
-    Custom wrappers for the Redux store dispatch methods.
-    They allow customizing the behavior of the data flow inside the redux store.
+Redux
+Redux middleware
+    Custom wrappers for the [Redux](https://redux.js.org/) store dispatch methods.
+    They allow customizing the behavior of the data flow inside the Redux store.
 
-hooks (React)
-    Hooks are a React API that allow function components to use React features such as lifecycle methods, states, and so on.
+hook
+hooks
+    In general, a hook in programming is a place in code that allows you to tap in to a module to either provide different behavior or to react when something happens.
 
-hoisting (Yarn)
-    An optimization provided by Yarn.
-    By default JavaScript packages will directly include dependencies inside their local node_modules.
+    **React [Hooks](https://react.dev/reference/react)** are a React API that allow function components to use React features, such as lifecycle methods, states, and so on.
+
+hoisting
+    [Hoisting](https://yarnpkg.com/advanced/lexicon#hoisting) is an optimization provided by Yarn.
+    By default JavaScript packages will directly include dependencies inside their local `node_modules`.
     By hoisting we're "lifting" these inner dependencies to the top level `node_modules` directory, and thus optimize the generated bundles.
     In case two dependencies have conflicting version dependencies of the same library, the hoisting will not be possible (for that conflicting dependency) and you'll see multiple instances of the same library in the bundle, or you'll see that the add-on receives its own `node_modules` folder.
 
 React
-    [React](https://reactjs.org/) is a JavaScript library for building user interfaces.
+    [React](https://www.reactjs.dev/) is a JavaScript library for building user interfaces.
     Volto, the frontend for Plone 6, uses React.
 
 Sphinx
@@ -331,6 +399,9 @@ HAProxy
 nginx
     [nginx](https://docs.nginx.com/nginx/) (pronounced "engine x") is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev.
 
+Traefik Proxy
+    [Traefik Proxy](https://traefik.io/traefik/) is an open-source reverse proxy and load balancer, suitable for containerized architectures.
+
 Volto
     [Volto](https://github.com/plone/volto) is a React-based frontend for the Plone CMS.
     It is the default user interface for Plone 6.
@@ -342,10 +413,20 @@ Classic UI
     It is integrated with [Products.CMFPlone](https://github.com/plone/Products.CMFPlone/).
     Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
     It is based on Twitter Bootstrap 5.
-    It uses [Mockup](https://github.com/plone/mockup/) as its JavaScript stack.
-    [View Mockup's patterns](https://plone.github.io/mockup/dev/).
+    It uses {term}`Mockup` as its JavaScript stack.
 
     The other frontend is {term}`Volto`.
+
+Mockup
+    [Mockup](https://github.com/plone/mockup/) is a package that, together with {term}`Patternslib`, builds the UI toolkit for {term}`Classic UI`, a frontend for Plone.
+    Mockup provides the JavaScript stack for Classic UI.
+    [View Mockup's patterns](https://plone.github.io/mockup/), based on Patternslib.
+
+Patterns
+Patternslib
+    [Patterns](https://patternslib.com/), or Patternslib, is a toolkit that enables designers to build rich interactive prototypes without the need for writing any JavaScript.
+    All functionality is triggered by classes and other attributes in the HTML, without abusing the HTML as a programming language.
+    Accessibility, SEO, and well-structured HTML are core values of Patterns.
 
 Slate
     [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as `WYSIWYG` editors.
@@ -365,7 +446,7 @@ Internationalization
     Developers and template authors usually internationalize the application.
     "i18n" is shorthand for "internationalization" (the letter "I", 18 letters, the letter "N").
     Plone is fully internationalized.
-    
+
     ```{seealso}
     {term}`localization`
     ```
@@ -390,7 +471,7 @@ language tag
     A language tag is a string used as an identifier for a language.
     A language tag may have one or more subtags.
     The basic form of a language tag is `LANGUAGE-[SUBTAG]`.
-    
+
     ```{seealso}
     -   W3C article [Language tags in HTML and XML](https://www.w3.org/International/articles/language-tags/)
     -   W3C Working Draft [Language Tags and Locale Identifiers for the World Wide Web](https://www.w3.org/TR/ltli/)
@@ -434,7 +515,7 @@ react-intl
     A library that is part of [Format.JS](https://formatjs.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
 
 WSGI
-    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language. 
+    The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
 ZEO
     [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
@@ -445,8 +526,50 @@ ZODB
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 
+ZPT
+    Zope Page Template is a template language for Python.
+
+plonecli
+    The [`plonecli`](https://pypi.org/project/plonecli/) helps developers to create Plone add-ons in a modular and reproducible way.
+
+ZCA
+Zope Component Architecture
+    Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
+    It is very well suited to developing large Python software systems.
+    The ZCA is not specific to the Zope web application server.
+    It can be used for developing any Python application.
+    Maybe it should be called Python Component Architecture.
+    ```{seealso}
+    See also https://zopecomponent.readthedocs.io/en/latest/index.html.
+    ```
+
+browser layer
+Layer
+    A layer—also called "browser layer"—is a marker interface and used in ZCML configurations.
+    Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes.
+
+JSON
+    JSON (JavaScript Object Notation, pronounced /ˈdʒeɪsən/; also /ˈdʒeɪˌsɒn/) is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute-value pairs and arrays (or other serializable values).
+
+    ```{seealso}
+    See also https://en.wikipedia.org/wiki/JSON.
+    ```
+
+`HTTPRequest`
+    The `HTTPRequest` object contains information about the current request, which also includes browser layers.
+
+interface
+    An interface is a mechanism for labeling objects as conforming to a given API or contract.
+    Interfaces define what methods an object provides.
+    Plone extensively uses interfaces to define APIs between different subsystems.
+
+    ```{seealso}
+    See also https://zopeinterface.readthedocs.io/en/latest/.
+    ```
+
 Make
 make
+GNU make
     [GNU Make](https://www.gnu.org/software/make/) is a tool which controls the generation of executables and other non-source files of a program from the program's source files.
 
     Make gets its knowledge of how to build your program from a file called the _makefile_, which lists each of the non-source files and how to compute it from other files.
@@ -461,7 +584,7 @@ REST
     REST stands for [Representational State Transfer](https://en.wikipedia.org/wiki/Representational_state_transfer). It is a software architectural principle to create loosely coupled web APIs.
 
 workflow
-    A concept in Plone (and other CMS's) whereby a content object can be in a number of states (private, public, etcetera) and uses transitions to change between them (e.g. "publish", "approve", "reject", "retract"). See the [Plone docs on Workflow](https://docs.plone.org/working-with-content/collaboration-and-workflow/)
+    A concept in Plone (and other CMS's) whereby a content object can be in a number of states (private, public, etcetera) and uses transitions to change between them (e.g. "publish", "approve", "reject", "retract"). See the [Plone docs on Workflow](https://5.docs.plone.org/working-with-content/collaboration-and-workflow/)
 
 HTTP-Request
 HTTP Request
@@ -485,7 +608,7 @@ Verb
     One of the basic actions that can be requested to be executed by the server (on an object) based on the {term}`Request`.
 
 Object URL
-    The target object of the {term}`Request`
+    The target object of the {term}`Request`.
 
 Authorization Header
     Part of the {term}`Request` that is responsible for the authentication related to the right user or service to ask for a {term}`Response`.
@@ -505,4 +628,116 @@ content rule
 trigger
     A trigger is an event in Plone that causes the execution of defined actions.
     Example triggers include object modified, user logged in, and workflow state changed.
+
+navigation root
+    An object marked as a navigation root provides a way to root catalog queries, searches, breadcrumbs, and so on, into that object.
+
+FTI
+Factory Type Information
+    Factory type information (FTI) is responsible for content creation in the portal.
+    FTI is responsible for the following:
+
+    -   Which function is called when new content type is added.
+    -   Icons available for content types.
+    -   Creation views for content types.
+    -   Permission and security.
+    -   Whether discussion is enabled.
+    -   Providing the `factory_type_information` dictionary.
+        This is used elsewhere in the code (often in `__init__.py` of a product) to set the initial values for a ZODB Factory Type Information object (an object in the `portal_types` tool).
+
+    ```{seealso}
+    [`FactoryTypeInformation` class source code](https://github.com/zopefoundation/Products.CMFCore/blob/361a30e0c72a15a21f88433b8d5fc49331f36728/src/Products/CMFCore/TypesTool.py#L431)
+    ```
+
+`nvm`
+Node Version Manager
+    [`nvm`](https://github.com/nvm-sh/nvm/blob/master/README.md) allows you to quickly install and use different versions of node via the command line.
+
+Node.js
+    [Node.js®](https://nodejs.org/en) is an open-source, cross-platform JavaScript runtime environment.
+
+view
+    A view is the basic element of modern Python web frameworks.
+    A view runs code to set up Python variables for a rendering template.
+    The output is not limited to HTML pages and snippets, but may contain {term}`JSON`, file download payloads, or other data formats.
+
+traversal
+    Traversal is the process of determining the object that is the target of a request by examining the URL path of the request or in code, and looking up objects in the object hierarchy.
+
+acquisition
+    Acquisition is a mechanism that allows objects to inherit attributes from their parent objects in the object hierarchy.
+
+Varnish
+    [Varnish](https://varnish-cache.org) is a popular open source web accelerator that is used to implement HTTP caching.
+
+Content Delivery Network
+CDN
+    A Content Delivery Network (CDN) is a network of servers located in various geographic regions that work together to deliver web content to users quickly and efficiently.
+
+
+unique identifier
+UID
+   UID is an acronym meaning "unique identifier".
+   A UID is an identifier that is guaranteed to be unique among all identifiers used for those objects and for a specific purpose.
+
+integer identifier
+intid
+    In Plone, an integer identifier, or intid, is used to uniquely identify content objects within a Plone site.
+    Each content item in a Plone site is given a unique intid, which the system uses internally to reference content, keep track of link integrity, link translations, and other related purposes.
+
+WSL
+Windows Subsystem for Linux
+    The [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install) lets developers install a Linux distribution (such as Ubuntu, OpenSUSE, Kali, Debian, or Arch Linux) and use Linux applications, utilities, and Bash command-line tools directly on Windows, unmodified, without the overhead of a traditional virtual machine or dualboot setup.
+
+pnpm
+    [pnpm](https://pnpm.io/) is a fast, disk space efficient package manager.
+
+Guillotina
+    [Guillotina](https://guillotina.io/) is a full-stack data framework built on [AsyncIO](https://docs.python.org/3/library/asyncio.html).
+
+Nick
+    [Nick](https://nickcms.org/) is a headless content management system {term}`CMS` built with {term}`Node.js`.
+
+predicate
+predicates
+    In programming, a predicate is a test which returns `true` or `false`.
+
+pnpm workspace
+workspace
+    pnpm has built-in support for monorepositories (also known as multi-package repositories, multi-project repositories, or monolithic repositories).
+    Workspaces provide support to manage multiple packages from your local file system from within a singular top-level, root package.
+
+    When you run `pnpm install` at the root of the repository, pnpm installs dependencies for all workspaces, ensuring consistency across the entire project.
+    This centralized approach streamlines development, facilitates code sharing, and simplifies the maintenance of complex projects.
+
+ESLint
+    [ESLint](https://eslint.org/) statically analyzes your code to quickly find problems.
+    It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
+
+Stylelint
+    [Stylelint](https://stylelint.io/) is a CSS linter that helps you avoid errors and enforce conventions.
+
+Prettier
+    [Prettier](https://prettier.io/) is an opinionated code formatter.
+
+GitHub workflow
+GitHub workflows
+    A [GitHub workflow](https://docs.github.com/en/actions/using-workflows) is a configurable automated process that will run one or more jobs.
+
+husky
+    [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
+
+Jest
+    [Jest](https://jestjs.io/) is a JavaScript testing framework.
+    Volto uses Jest for unit tests.
+
+lazy load
+lazy loading
+lazy loaded
+    Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
+    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path, which translates into reduced page load times.
+
+reference implementation
+    A reference implementation is a program that implements all requirements from a corresponding specification.
+    The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
 ```

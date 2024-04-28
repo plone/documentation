@@ -22,7 +22,7 @@ This documentation is for:
 - Developers who customize a site’s capabilities, create add-ons, and contribute to Plone itself
 
 ```{seealso}
-Read the [documentation for the previous version, Plone 5](https://docs.plone.org/).
+Read the [documentation for the previous version, Plone 5](https://5.docs.plone.org/).
 ```
 
 

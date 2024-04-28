@@ -61,7 +61,7 @@ Plone will not translate the content for you.
 It will only create the content in the other language folders, and both LRFs' contents will be linked to the translations.
 
 Plone does not use any third party tools to automatically translate content.
-If needed, you will need to develop such connector tools and hook into a content creation process.
+If needed, you will need to develop such connector tools and {term}`hook` into a content creation process.
 
 
 (translating-content-language-independent-content)=

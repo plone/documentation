@@ -57,7 +57,7 @@ Always back up your Plone site before upgrading.
 ```
 
 ```{seealso}
-See Plone 5.2 documentation, [Backing up your Plone deployment](https://docs.plone.org/manage/deploying/backup.html).
+See Plone 5.2 documentation, [Backing up your Plone deployment](https://5.docs.plone.org/manage/deploying/backup.html).
 ```
 
 ```{todo}

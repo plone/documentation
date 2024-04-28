@@ -149,7 +149,9 @@ relationlist_field = RelationList(
 directives.widget(
     "relationlist_field",
     RelatedItemsFieldWidget,
-    pattern_options=make_relation_root_path,
+    pattern_options={
+        "basePath": make_relation_root_path,
+    }
 )
 ```
 
@@ -166,7 +168,7 @@ So far we only used the vocabulary `plone.app.vocabularies.Catalog`, which retur
 Alternatively you can use `CatalogSource` to specify a catalog query that only returns the values from the query.
 
 You can pass to `CatalogSource` the same arguments you use for catalog queries.
-This makes it very flexible for limiting relatable items by type, path, date, and so on.
+This makes it very flexible for limiting relatable items by type, path, date, and other items.
 
 Setting the mode of the widget to `search` makes it easier to select from the content that results from your catalog query instead of having to navigate through your content tree.
 
@@ -333,11 +335,6 @@ When you click on {guilabel}`Edit XML field model`, you will see the fields in t
 
 ## Using different widgets for relations
 
-```{todo}
-Support for `StaticCatalogVocabulary` in Volto is currently missing.
-See issues https://github.com/plone/volto/issues/3355 and https://github.com/plone/volto/issues/3439.
-```
-
 Often the standard widget for relations is not what you want.
 It can be hard to navigate to the content to which you want to relate, and the search mode of the default widget is not suitable for all use cases.
 
@@ -450,7 +447,7 @@ This returns the related items so that you will be able to render them any way y
 
 ## Inspecting relations
 
-In Plone 6 Classic UI, you can inspect all relations and backrelations in your site using the control panel {guilabel}`Relations` at the browser path `/@@inspect-relations`.
+In Plone 6 Classic UI, you can inspect all relations and back relations in your site using the control panel {guilabel}`Relations` at the browser path `/@@inspect-relations`.
 
 ```{figure} /_static/inspect-relations.png
 :alt: The Relations controlpanel
@@ -470,7 +467,7 @@ In Plone 5 this is available through the add-on [collective.relationhelpers](htt
 
 ### Plone 6
 
-Since Plone 6, `plone.api` has methods to create, read, and delete relations and backrelations.
+Since Plone 6, `plone.api` has methods to create, read, and delete relations and back relations.
 
 ```{code-block} python
 :linenos:
@@ -508,14 +505,14 @@ See the chapter {ref}`plone:chapter-relation` of the docs for `plone.api` for mo
 
 ### Plone 5.2 and older
 
-In older Plone versions, you can use [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers) to create and read relations and backrelations in a very similar way.
+In older Plone versions, you can use [collective.relationhelpers](https://pypi.org/project/collective.relationhelpers) to create and read relations and back relations in a very similar way.
 
 
 (relations-programming-with-relations-rest-api-label)=
 
 ### REST API
 
-A REST API endpoint to create, read, and delete relations and backrelations will be part of `plone.restapi`.
+A REST API endpoint to create, read, and delete relations and back relations will be part of `plone.restapi`.
 See https://github.com/plone/plone.restapi/issues/1432.
 
 
@@ -597,7 +594,7 @@ The logic for this is provided by the package [z3c.relationfield](https://pypi.o
 This package contains the `RelationValue` object and everything needed to define a relation schema, and all the code that is necessary to automatically update the catalog.
 
 A `RelationValue` object does not reference all objects directly.
-For the target, it uses an ID that it gets from the `IntId` utility.
+For the target, it uses an ID that it gets from the {term}`IntId` utility.
 This ID allows direct recovery of the object.
 The source object stores it directly.
 
@@ -608,7 +605,7 @@ Because of this, the following happens when saving a relation via a form:
 1.  The HTML shows some nice representation of selectable objects.
 2.  When the user submits the form, selected items are submitted by their UUIDs.
 3.  The widget retrieves the original object with the UUID.
-4.  Some data manager gets another unique ID from the `IntID` utility.
+4.  Some data manager gets another unique ID from the {term}`IntId` utility.
 5.  The same data manager creates a `RelationValue` from this ID, and stores this relation value on the source object.
 6.  Some event handlers update the catalogs.
 
