@@ -103,9 +103,9 @@ See [`plone.namedfile`](https://pypi.org/project/plone.namedfile/) and [plone.fo
 | `NamedBlobFile` | `NamedBlobFile` | A binary uploaded file stored as a ZODB blob. Requires the `blobs` extra to `plone.namedfile`. Otherwise identical to `NamedFile`. | `IField` |
 | `NamedBlobImage` | `NamedBlobImage` | A binary uploaded image stored as a ZODB blob. Requires the `blobs` extra to `plone.namedfile`. Otherwise identical to `NamedImage`. | `IField` |
 
-#### NamedBlobImage
+#### `NamedBlobImage`
 
-The following example shows, how to create an Image object and attach the image file to it.
+The following example shows how to create an `Image` object, and attach the image file to it.
 
 ```python
 img_obj = api.content.create(
@@ -145,7 +145,8 @@ See [`plone.app.textfield`](https://pypi.org/project/plone.app.textfield/) for m
 | `RichText` | `RichTextValue` | Stores a `RichTextValue`, which encapsulates a raw text value, the source MIME type, and a cached copy of the raw text transformed to the default output MIME type. | `IField`, `IRichText` |
 
 
-The RichText field allows for alternative markups and content filtering.
+The `RichText` field allows for alternative markups and content filtering.
+The following code sample shows how to create a schema with a `RichText` field.
 
 ```python
 from plone.app.textfield import RichText
@@ -208,9 +209,9 @@ class ITestSchema(model.Schema):
 
 (backend-fields-richtextvalue-label)=
 
-#### RichTextValue
+#### `RichTextValue`
 
-The `RichText` field, most of the time does not store a string.
+The `RichText` field usually does not store a string.
 Instead, it stores a `RichTextValue` object.
 This is an immutable object that has the following properties.
 
@@ -218,7 +219,7 @@ This is an immutable object that has the following properties.
 :   A Unicode string with the original input markup.
 
 `mimeType`
-:   The MIME type of the original markup, for example `text/html` or `text/structured`.
+:   The MIME type of the original markup, for example, `text/html` or `text/structured`.
 
 `encoding`
 :   The default character encoding used when transforming the input markup.
@@ -251,7 +252,7 @@ context.body = RichTextValue("Some input text", mimeType="text/html", outputMime
 The standard widget used for a `RichText` field will correctly store this type of object for you, so it is rarely necessary to create one yourself.
 
 
-##### Using RichText fields in templates
+##### `RichText` fields in templates
 
 If you use a `DisplayForm`, the display widget for the `RichText` field will render the transformed output markup automatically.
 If you write TAL manually, you may try something like the following.
@@ -280,7 +281,7 @@ This operation is approximately as efficient as rendering a simple `Text` field,
 
 Sometimes, you may want to invoke alternative transformations.
 Under the hood, the default implementation uses the `portal_transforms` tool to calculate a transform chain from the raw value's input MIME type to the desired output MIME type.
-If you need to write your own transforms, take a look at [this tutorial](https://5.docs.plone.org/develop/plone/misc/portal_transforms.html).
+If you need to write your own transforms, take a look at [Changing Portal Transforms Settings via Python](https://5.docs.plone.org/develop/plone/misc/portal_transforms.html).
 This is abstracted behind an `ITransformer` adapter to allow alternative implementations.
 
 To invoke a transformation in code, you can use the following syntax.
@@ -300,8 +301,8 @@ If you write a page template, there is an even more convenient syntax.
 <div tal:content="structure context/@@text-transform/body/text/plain" />
 ```
 
-The first traversal name gives the name of the field on the context (`body` in this case).
-The second and third give the output MIME type.
+The first traversal name segment gives the name of the field on the context (`body` in this case).
+The second and third segments give the output MIME type.
 If the MIME type is omitted, the default output MIME type will be used.
 
 ```{note}
