@@ -27,5 +27,6 @@ components
 server-environment
 continuous-integration-and-deployment
 orchestration
+optimize-and-tune
 caching/index
 ```

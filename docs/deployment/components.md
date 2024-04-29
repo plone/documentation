@@ -27,9 +27,6 @@ You need the following components to deploy a Plone application.
 -   {term}`Load balancer` or router
 -   Database
 -   Mail service
--   Optimization tasks
-    -   Database parameters
-    -   https://5.docs.plone.org/manage/deploying/performance/index.html
 -   Maintenance tasks
     -   Database backup
     -   Packing database - https://5.docs.plone.org/manage/deploying/packing.html
