@@ -30,7 +30,6 @@ You need the following components to deploy a Plone application.
 -   Maintenance tasks
     -   Database backup
     -   Packing database - https://5.docs.plone.org/manage/deploying/packing.html
-    -   Monitoring
     -   Log rotation
     -   Firewall
     -   Attack protection
@@ -51,5 +50,5 @@ Recommended components, although not required, will help with the performance an
 
 ## Optional components
 
+-   Monitoring
 -   Search
-
