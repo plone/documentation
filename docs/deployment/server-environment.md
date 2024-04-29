@@ -23,3 +23,10 @@ Should we reuse or update {ref}`install-packages-hardware-requirements-label`?
 -   disk
 -   SSH key
 -   preparation for orchestration
+
+Although this documentation does not cover the following topics, you will need to consider them when setting up your server environment.
+
+-   Firewall
+-   Attack protection
+-   DNS
+-   website configuration of virtual hosts, and listening on and binding to IP addresses

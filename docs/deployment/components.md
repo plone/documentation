@@ -31,10 +31,6 @@ You need the following components to deploy a Plone application.
     -   Database backup
     -   Packing database - https://5.docs.plone.org/manage/deploying/packing.html
     -   Log rotation
-    -   Firewall
-    -   Attack protection
-    -   DNS
-    -   Host name resolution
 
 
 (deployment-recommended-components-label)=
