@@ -4,7 +4,7 @@ myst:
     "description": "Components of a Plone 6 application for deployment"
     "property=og:description": "Components of a Plone 6 application for deployment"
     "property=og:title": "Components of a Plone 6 application for deployment"
-    "keywords": "Plone, deployment, components, backend, volto, fronted, TLS termination proxy, load balancer, router, database, mail service, optimization, maintenance"
+    "keywords": "Plone, deployment, components, backend, volto, frontend, TLS termination proxy, load balancer, router, database, mail service, optimization, maintenance"
 ---
 
 (deployment-components-label)=
