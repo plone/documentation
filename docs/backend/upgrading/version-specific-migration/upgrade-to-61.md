@@ -15,16 +15,15 @@ Plone 6.1 has seen the following major changes.
 Some may require changes in your setup.
 
 
-## TinyMCE upgraded
+## TinyMCE upgraded in Classic UI
 
-Plone 6.0 uses TinyMCE, a rich text editor for websites.
+In Plone 6.0, the Classic UI frontend uses TinyMCE 5, a rich text editor for websites.
 TinyMCE 5 reached its end of support on April 20, 2023.
-For Plone 6.1, TinyMCE has been upgraded from version 5 to 7.
+For Plone 6.1, Classic UI upgraded TinyMCE from version 5 to 7.
 
-```{seealso}
--   [How to upgrade TinyMCE 5 to TinyMCE 6](https://www.tiny.cloud/blog/upgrade-to-tinymce-6/)
--   [Upgrading TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/upgrading/)
-```
+If you upgrade a site using Classic UI from Plone 6.0 to 6.1, you do not need to take any action, unless you implemented custom plugins, or you use a plugin which got removed or moved to premium in TinyMCE versions 6 or 7.
+To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/#plugins).
+
 
 ### Enable the TinyMCE accordion plugin
 
