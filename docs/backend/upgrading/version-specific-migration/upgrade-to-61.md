@@ -55,3 +55,17 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
     ```{seealso}
     -   [Addon collective.outputfilters.tinymceaccordion](https://github.com/collective/collective.outputfilters.tinymceaccordion)
     ```
+
+
+## `z3c.form` and `plone.app.z3cform`
+
+````{todo}
+This is a placeholder.
+
+-   Update deprecated imports
+-   New widget templates
+
+```{seealso}
+https://github.com/plone/plone.app.z3cform/pull/181
+```
+````
