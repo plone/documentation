@@ -98,7 +98,7 @@ pipx run cookiecutter gh:plone/cookiecutter-volto
 
 ## Build the frontend and backend
 
-To work on your project, you need to build both the frontend and backend.
+To work on your project, you need to build both the frontend and backend. As already mentioned, only frontend development is supported. The Plone backend is Docker-based.
 
 ```shell
 make install
