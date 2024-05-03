@@ -403,7 +403,7 @@ Traefik Proxy
     [Traefik Proxy](https://traefik.io/traefik/) is an open-source reverse proxy and load balancer, suitable for containerized architectures.
 
 Volto
-    [Volto](https://github.com/plone/volto) is a React-based frontend for the Plone CMS.
+    [Volto](https://github.com/plone/volto) is a React-based frontend for Plone.
     It is the default user interface for Plone 6.
 
     The other frontend is {term}`Classic UI`.
@@ -730,6 +730,44 @@ husky
 Jest
     [Jest](https://jestjs.io/) is a JavaScript testing framework.
     Volto uses Jest for unit tests.
+
+Plone
+    Plone is an open-source content management system (CMS) with over 20 years of stability and security wrapped in a modern, powerful, user-centric package.
+    It continues to set the standard for content management systems by offering the most functionality and customization out of the box.
+
+backend
+Plone backend
+    Plone's backend includes a content management system, a REST API, and {term}`Classic UI` as a {term}`frontend`.
+
+frontend
+Plone frontend
+    A frontend consists of the user interface elements of a web application.
+    Beginning with Plone 6, the default frontend is {term}`Volto`.
+    {term}`Classic UI` is a secondary frontend that is part of the {term}`Plone backend`.
+    
+TLS
+Transport Layer Security
+    Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
+    
+    ```{seealso}
+    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security) article from MDN.
+    ```
+
+TLS termination proxy
+    A {term}`TLS` termination proxy is a proxy server that acts as an intermediary point between client and server applications.
+    It is used to terminate or establish TLS tunnels by decrypting or encrypting communications.
+
+Load balancer
+    A load balancer acts as a traffic proxy and distributes network or application traffic across endpoints on a number of servers.
+
+CI
+continuous integration
+    Continuous integration (CI) is the practice of integrating all your code changes into the main branch of a shared source code repository early and often, automatically testing each change when you commit or merge them, and automatically kicking off a build.
+
+CD
+continuous deployment
+continuous delivery
+    Continuous deployment or continuous delivery is a software development practice that works in conjunction with {term}`CI` to automate the infrastructure provisioning and application release process.
 
 lazy load
 lazy loading
