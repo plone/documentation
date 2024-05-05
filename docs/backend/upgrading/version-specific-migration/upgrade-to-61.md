@@ -15,6 +15,11 @@ Plone 6.1 has seen the following major changes.
 Some may require changes in your setup.
 
 
+## Drop Python 3.8 and 3.9
+
+We only support Python 3.10, 3.11, and 3.12.
+
+
 ## TinyMCE upgraded in Classic UI
 
 In Plone 6.0, the Classic UI frontend uses TinyMCE 5, a rich text editor for websites.
@@ -70,18 +75,14 @@ https://github.com/plone/plone.app.z3cform/pull/181
 ```
 ````
 
-## Drop Python 3.8 and 3.9
-
-We only support Python 3.10, 3.11, and 3.12.
-
 
 ## `plone.app.multilingual` is a core add-on
 
-`plone.app.multilingual` is the package that adds multilingual support to Plone, so for having content in multiple languages.
-Until Plone 6.0 this was a dependency of `Products.CMFPlone`, so it was available for installation in all Plone sites.
-In Plone 6.1 it has become a dependency of the `Plone` package.
+`plone.app.multilingual` is the package that adds multilingual support to Plone, allowing the storage and display of content in multiple languages.
+In Plone 6.0 and earlier, this was a dependency of `Products.CMFPlone`, making it available for installation in all Plone sites.
+In Plone 6.1 it is now a dependency of the `Plone` package.
 
-If your project or your add-on needs this package, and you only depend on `Products.CMFPlone` until now, you should add `plone.app.multilingual` as dependency.
+If your project or your add-on needs this package, and you only depend on `Products.CMFPlone` until now, you should add `plone.app.multilingual` as a dependency.
 Then your project or add-on will keep working in both Plone 6.0 and 6.1.
 
-The goal of turning more of the current core packages into core add-ons, is to make the core smaller, and in some cases solve circular dependencies.
+The goal of turning more of the current core packages into core add-ons is to make the core smaller, and in some cases solve circular dependencies.
