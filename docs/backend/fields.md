@@ -112,10 +112,10 @@ img_obj = api.content.create(
     container=ww_article,
     type="Image",
     id="test.jpg",
-)
-img_obj.image = NamedBlobImage(
-    data=img_file,
-    filename="test.jpg",
+    image=NamedBlobImage(
+        data=img_file,
+        filename="test.jpg",
+    )
 )
 ```
 
