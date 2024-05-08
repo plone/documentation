@@ -290,7 +290,7 @@ To invoke a transformation in code, you can use the following syntax.
 from plone.app.textfield.interfaces import ITransformer
 
 transformer = ITransformer(context)
-transformedValue = transformer(context.body, 'text/plain')
+transformedValue = transformer(context.body, "text/plain")
 ```
 
 The `__call__()` method of the `ITransformer` adapter takes a `RichTextValue` object and an output MIME type as parameters.
