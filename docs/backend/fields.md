@@ -323,19 +323,43 @@ See {ref}`backend-ploneschema-label` for more details.
 
 (backend-fields-schema-label)=
 
-## schema
+## Schema
+
+With `plone.autoform` and `plone.supermodel` we can use directives to add information to the schema fields.
 
 
-(backend-fields-schema-autoform-label)=
+(backend-fields-schema-autoform-permission)=
 
-### `autoform` (directives) schema ordering, filtering, and permissions
+### Protect a field with a permission
 
+By default, fields are included in the form regardless of the user's permissions.
+Fields can be protected using the `read_permission` and `write_permission` directives.
+The read permission is checked when the field is in display mode, and the write permission is checked when the field is in input mode.
+The permission should be given with its Zope 3-style name, such as `cmf.ManagePortal` instead of `Manage portal`.
 
-(backend-fields-supermodel-label)=
+In this example, the `secret` field is protected by the `cmf.ManagePortal` permission as both a read and write permission.
+This means that in both display and input modes, the field will only be included in the form for users who have that permission:
 
-## `supermodel` (XML)
+```python
+from plone.supermodel import model
+from plone.autoform import directives as form
 
+class IMySchema(model.Schema):
+    form.read_permission(secret="cmf.ManagePortal")
+    form.write_permission(secret="cmf.ManagePortal")
+    secret = schema.TextLine(
+        title = "Secret",
+        )
+```
 
-(backend-fields-supermodel-autoform-label)=
+In supermodel XML, the directives are `security:read-permission` and
+`security:write-permission`:
 
-### `autoform` (directives) supermodel ordering, filtering, and permissions
+```xml
+<field type="zope.schema.TextLine"
+        name="secret"
+        security:read-permission="cmf.ManagePortal"
+        security:write-permission="cmf.ManagePortal">
+    <title>Secret</title>
+</field>
+```
