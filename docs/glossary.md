@@ -344,7 +344,7 @@ fence
     You can define a directive with backticks (`` ` ``) followed by a reStructuredText directive in curly brackets (`{}`), and a matching number of closing backticks.
     You can also nest fences by increasing the number of backticks.
 
-    `````md
+    `````{example}
     ````{warning}
     There be dragons!
     ```{important}
@@ -352,13 +352,6 @@ fence
     ```
     ````
     `````
-
-    ````{warning}
-    There be dragons!
-    ```{important}
-    Dragons have feelings, too!
-    ```
-    ````
 
 Open Graph
     The [Open Graph protocol](https://ogp.me/) enables any web page to become a rich object in a social graph.
