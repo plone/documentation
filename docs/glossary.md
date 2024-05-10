@@ -744,7 +744,7 @@ Plone frontend
     A frontend consists of the user interface elements of a web application.
     Beginning with Plone 6, the default frontend is {term}`Volto`.
     {term}`Classic UI` is a secondary frontend that is part of the {term}`Plone backend`.
-    
+
 TLS
 Transport Layer Security
     Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
