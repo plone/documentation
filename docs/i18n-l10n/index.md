@@ -26,6 +26,9 @@ Plone fully supports internationalization and localization.
 Wikipedia article [Internationalization and localization](https://en.wikipedia.org/wiki/Internationalization_and_localization)
 ```
 
+
+(i18n-l10n-supported-languages)=
+
 ## Supported languages
 
 Plone supports many language translations in its two frontends.
