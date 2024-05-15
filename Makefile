@@ -224,6 +224,10 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		--port 8050 \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
+.PHONY: rtd-pr-preview
+rtd-pr-preview: bin/python  ## Build pull request preview on Read the Docs
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
+
 .PHONY: netlify
 netlify:
 	pip install -r requirements-initial.txt
