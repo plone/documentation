@@ -92,7 +92,8 @@ The goal of turning more of the current core packages into core add-ons is to ma
 
 ## Discussion is disabled by default
 
-Discussion, a feature that allows visitors to your site to comment on web pages for any content type, is disabled by default in Plone 6.1 and later.
+Discussion is a feature that allows your site visitors to comment on web pages for any content object.
+Discussion is disabled by default in Plone 6.1 and later.
 To enable discussion, you need to perform the following tasks.
 
 % Please add sufficient details for how to do this task, then delete this comment.
