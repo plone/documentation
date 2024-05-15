@@ -86,3 +86,18 @@ If your project or your add-on needs this package, and you only depend on `Produ
 Then your project or add-on will keep working in both Plone 6.0 and 6.1.
 
 The goal of turning more of the current core packages into core add-ons is to make the core smaller, and in some cases solve circular dependencies.
+
+
+(backend-upgrade-plone-v61-discussion-label)=
+
+## Discussion is disabled by default
+
+Discussion, a feature that allows visitors to your site to comment on pages, is disabled by default in Plone 6.1 and later.
+To enable discussion, you need to perform the following tasks.
+
+% Please add sufficient details for how to do this task, then delete this comment.
+% Also consider that there might be different approaches between Classic UI and Volto that need to be mentioned.
+
+1.  Install the core add-on `plone.app.discussion`.
+1.  Enable add-on.
+1.  🍻
