@@ -50,7 +50,7 @@ A base mental model for how Plone is organized in Plone 6 since alpha 4 is shown
 | - plone.volto              |
 | - plone.classicui          |
 ├────────────────────────────┤
-│ Core-Addons                │
+│ Core add-ons:              │
 │ - plone.distribution       │
 │ - plone.app.exportimport   │
 │ - plone.app.discussion     │
