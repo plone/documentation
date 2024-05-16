@@ -1,26 +1,26 @@
 ---
 myst:
   html_meta:
-    "description": "Create a project with cookiecutter-volto (experimental)"
-    "property=og:description": "Create a project with cookiecutter-volto (experimental)"
-    "property=og:title": "Create a project with cookiecutter-volto (experimental)"
-    "keywords": "Plone, Plone 6, create, project, install, cookiecutter-volto, pnpm"
+    "description": "Create a frontend project with cookieplone (experimental)"
+    "property=og:description": "Create a frontend project with cookieplone (experimental)"
+    "property=og:title": "Create a frontend project with cookieplone (experimental)"
+    "keywords": "Plone, Plone 6, create, project, frontend, install, cookieplone, pnpm"
 ---
 
-(create-a-project-with-cookiecutter-volto-experimental-label)=
+(create-a-frontend-project-with-cookieplone-experimental-label)=
 
-# Create a project with `cookiecutter-volto` (experimental)
+# Create a frontend project with `cookieplone` (experimental)
 
-This chapter describes the usage of the currently experimental {term}`cookiecutter` project [`cookiecutter-volto`](https://github.com/plone/cookiecutter-volto/).
+This chapter describes the usage of the currently experimental {term}`cookiecutter` project [`cookieplone`](https://github.com/plone/cookieplone/).
 The development of this add-on is done in isolation using {term}`pnpm` workspaces, {term}`mrs-developer`, and other Volto core improvements.
 It only works with pnpm and Volto 18 (currently alpha) and only supports frontend development. So you can develop your Plone 6 frontend using latest and advanced technologies.
 
 
-(create-a-project-with-cookiecutter-volto-experimental-prerequisites-label)=
+(create-a-frontend-project-with-cookieplone-experimental-prerequisites-label)=
 
 ## Prerequisites
 
-The following items are required to create a project with `cookiecutter-volto`.
+The following items are required to create a frontend project with `cookieplone`.
 
 ```{include} ../volto/contributing/install-operating-system.md
 ```
@@ -33,7 +33,7 @@ The following items are required to create a project with `cookiecutter-volto`.
 -   {term}`Docker`
 -   {term}`Git`
 
-(create-a-project-with-cookiecutter-volto-experimental-installation-pipx-label)=
+(create-a-frontend-project-with-cookieplone-experimental-installation-pipx-label)=
 
 ### pipx
 
@@ -43,7 +43,7 @@ Install pipx.
 pip install pipx
 ```
 
-(create-a-project-with-cookiecutter-volto-experimental-installation-gnu-make-label)=
+(create-a-frontend-project-with-cookieplone-experimental-installation-gnu-make-label)=
 
 ### GNU make
 
@@ -51,7 +51,7 @@ pip install pipx
 ```
 
 
-(create-a-project-with-cookiecutter-volto-experimental-installation-nvm-label)=
+(create-a-frontend-project-with-cookieplone-experimental-installation-nvm-label)=
 
 ### nvm
 
@@ -59,7 +59,7 @@ pip install pipx
 ```
 
 
-(create-a-project-with-cookiecutter-volto-experimental-installation-node.js-label)=
+(create-a-frontend-project-with-cookieplone-experimental-installation-node.js-label)=
 
 ### Node.js
 
@@ -67,13 +67,13 @@ pip install pipx
 ```
 
 
-(create-a-project-with-cookiecutter-volto-experimental-installation-make-label)=
+(create-a-frontend-project-with-cookieplone-experimental-installation-make-label)=
 
 ### Make
 
 ```{include} ../volto/contributing/install-make.md
 ```
-(create-a-project-with-cookiecutter-volto-experimental-installation-docker-label)=
+(create-a-frontend-project-with-cookieplone-experimental-installation-docker-label)=
 
 ### Docker
 
@@ -85,22 +85,23 @@ pip install pipx
 
 
 
-(create-a-project-with-cookiecutter-volto-experimental-create-the-project-label)=
+(create-a-frontend-project-with-cookieplone-experimental-create-the-project-label)=
 
 ## Create the project
 
-After satisfying the prerequisites, create the project.
+After satisfying the prerequisites and having activated a LTS version of Node, create the project.
 
 ```shell
-pipx run cookiecutter gh:plone/cookiecutter-volto
+pipx install cookieplone
+pipx run cookieplone frontend_addon
 ```
-
 
 ## Build the frontend and backend
 
 To work on your project, you need to build both the frontend and backend. As already mentioned, only frontend development is supported. The Plone backend is Docker-based.
 
 ```shell
+corepack enable
 make install
 ```
 
