@@ -19,7 +19,7 @@ from datetime import datetime
 
 project = "Plone Documentation"
 copyright = "Plone Foundation"
-author = "the Plone community"
+author = "Plone Community"
 trademark_name = "Plone"
 now = datetime.now()
 year = str(now.year)
@@ -43,10 +43,14 @@ templates_path = ["_templates"]
 # or your custom ones.
 extensions = [
     "myst_parser",
+    "notfound.extension",
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",  # plone.api
+    "sphinx.ext.graphviz",
     "sphinx.ext.ifconfig",
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
+    "sphinx.ext.viewcode",  # plone.api
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_examples",
@@ -56,10 +60,6 @@ extensions = [
     "sphinxcontrib.httpexample",  # plone.restapi
     "sphinxcontrib.video",
     "sphinxext.opengraph",
-    "sphinx.ext.viewcode",  # plone.api
-    "sphinx.ext.autosummary",  # plone.api
-    "sphinx.ext.graphviz",
-    "notfound.extension",
 ]
 
 # If true, the Docutils Smart Quotes transform, originally based on SmartyPants
@@ -101,7 +101,7 @@ linkcheck_ignore = [
     r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
 ]
 linkcheck_anchors = True
-linkcheck_timeout = 10
+linkcheck_timeout = 5
 linkcheck_retries = 1
 
 # The suffix of source filenames.
@@ -144,18 +144,106 @@ suppress_warnings = [
     "toc.not_readable",  # Suppress `WARNING: toctree contains reference to nonexisting document 'news*'`
 ]
 
-html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
 
+# -- Options for HTML output -------------------------------------------------
+
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+html_theme = "plone_sphinx_theme"
+html_logo = "_static/logo.svg"
+html_favicon = "_static/favicon.ico"
+html_theme_options = {
+    "article_header_start": ["toggle-primary-sidebar"],
+    "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
+<p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a></p>""",
+    "footer_end": ["version.html"],
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/plone/documentation",
+            "icon": "fa-brands fa-square-github",
+            "type": "fontawesome",
+            "attributes": {
+                "target": "_blank",
+                "rel": "noopener me",
+                "class": "nav-link custom-fancy-css"
+            }
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/plone",
+            "icon": "fa-brands fa-square-twitter",
+            "type": "fontawesome",
+            "attributes": {
+                "target": "_blank",
+                "rel": "noopener me",
+                "class": "nav-link custom-fancy-css"
+            }
+        },
+        {
+            "name": "Mastodon",
+            "url": "https://plone.social/@plone",
+            "icon": "fa-brands fa-mastodon",
+            "type": "fontawesome",
+            "attributes": {
+                "target": "_blank",
+                "rel": "noopener me",
+                "class": "nav-link custom-fancy-css"
+            }
+        },
+    ],
+    "logo": {
+        "text": "Plone Sphinx Theme",
+    },
+    "navigation_with_keys": True,
+    "path_to_docs": "docs",
+    "repository_branch": "6.0",
+    "repository_url": "https://github.com/plone/documentation",
+    "search_bar_text": "Search",  # TODO: Confirm usage of search_bar_text in plone-sphinx-theme
+    "switcher": {
+        "json_url": "/_static/switcher.json",
+        "version_match": version,
+    },
+    "use_edit_page_button": True,
+    "use_issues_button": True,
+    "use_repository_button": True,
+}
+
+html_context = {  # TODO: verify html_context usage in plone-sphinx-theme
+    "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
+}
+
+# Announce that we have an opensearch plugin
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
+html_use_opensearch = "https://6.docs.plone.org"  # TODO: Confirm usage of opensearch in theme
+
+# The name for this set of Sphinx documents.  If None, it defaults to
+# "<project> v<release> documentation".
+html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
+
+# If false, no index is generated.
+html_use_index = True
+
+html_css_files = ["custom.css", ("print.css", {"media": "print"})]
+# html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]  ## TODO: Remove patches
 html_extra_path = [
     "robots.txt",
 ]
-
 html_static_path = [
     "volto/_static",
     "_static",  # Last path wins. See https://github.com/plone/documentation/pull/1442
 ]
 
-# -- Options for myST markdown conversion to html -----------------------------
+
+# -- Options for sphinx_sitemap to html -----------------------------
+
+# Used by sphinx_sitemap to generate a sitemap
+html_baseurl = "https://6.docs.plone.org/"
+# https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
+sitemap_url_scheme = "{link}"
+
+
+# -- Options for MyST markdown conversion to HTML -----------------------------
 
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
@@ -178,6 +266,7 @@ myst_substitutions = {
     "postman_retain_headers": "![](../_static/img/postman_retain_headers.png)",
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
 }
+
 
 # -- Intersphinx configuration ----------------------------------
 
@@ -220,6 +309,11 @@ ogp_custom_meta_tags = [
 ]
 
 
+# -- sphinx.ext.todo -----------------------
+# See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
+todo_include_todos = True
+
+
 # -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
@@ -235,68 +329,6 @@ redirects = {
     "install/install-from-packages": "/install/create-project.html",
 }
 
-
-# -- Options for HTML output -------------------------------------------------
-
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-html_theme = "sphinx_book_theme"
-
-html_logo = "_static/logo.svg"
-html_favicon = "_static/favicon.ico"
-
-html_css_files = ["custom.css", ("print.css", {"media": "print"})]
-
-# See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
-todo_include_todos = True
-
-# Announce that we have an opensearch plugin
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://6.docs.plone.org"
-
-html_sidebars = {
-    "**": [
-        "sidebar-logo.html",
-        "search-field.html",
-        "sbt-sidebar-nav.html",
-    ]
-}
-
-html_theme_options = {
-    "path_to_docs": "docs",
-    "repository_url": "https://github.com/plone/documentation",
-    "repository_branch": "main",
-    "use_repository_button": True,
-    "use_issues_button": True,
-    "use_edit_page_button": True,
-    "search_bar_text": "Search",
-    "switcher": {
-        "json_url": "/_static/switcher.json",
-        "version_match": version,
-    },
-    "extra_navbar": """
-    <p class="ploneorglink">
-        <a href="https://plone.org">
-            <img src="/_static/logo.svg" alt="plone.org" /> plone.org</a>
-    </p>""",
-    "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
-    <p><a href="https://www.netlify.com">
-  <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" alt="Deploys by Netlify" />
-</a></p>""",
-}
-
-# The name for this set of Sphinx documents.  If None, it defaults to
-# "<project> v<release> documentation".
-html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
-
-# If false, no index is generated.
-html_use_index = True
-
-# Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6.docs.plone.org/"
-# https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
-sitemap_url_scheme = "{link}"
 
 # -- Options for HTML help output -------------------------------------------------
 
