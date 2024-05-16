@@ -60,7 +60,7 @@ A base mental model for how Plone is organized in Plone 6 since alpha 4 is shown
 │ - plone.app.update         │
 │                            │
 ├────────────────────────────┤
-│ Core-APIs                  │
+│ Core APIs:                 │
 │ - plone.restapi            │
 │ - plone.api                │
 ├────────────────────────────┤
