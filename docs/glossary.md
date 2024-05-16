@@ -344,7 +344,7 @@ fence
     You can define a directive with backticks (`` ` ``) followed by a reStructuredText directive in curly brackets (`{}`), and a matching number of closing backticks.
     You can also nest fences by increasing the number of backticks.
 
-    `````md
+    `````{example}
     ````{warning}
     There be dragons!
     ```{important}
@@ -352,13 +352,6 @@ fence
     ```
     ````
     `````
-
-    ````{warning}
-    There be dragons!
-    ```{important}
-    Dragons have feelings, too!
-    ```
-    ````
 
 Open Graph
     The [Open Graph protocol](https://ogp.me/) enables any web page to become a rich object in a social graph.
@@ -744,7 +737,7 @@ Plone frontend
     A frontend consists of the user interface elements of a web application.
     Beginning with Plone 6, the default frontend is {term}`Volto`.
     {term}`Classic UI` is a secondary frontend that is part of the {term}`Plone backend`.
-    
+
 TLS
 Transport Layer Security
     Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.

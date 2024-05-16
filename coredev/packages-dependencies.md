@@ -23,7 +23,7 @@ This document shows the current state as an orientation.
 
 There are multiple level of dependencies:
 
--   package level (`setup.py`/`setup.cfg`)
+-   package level (`setup.py`/`setup.cfg`/`pyproject.toml`)
 -   Python level (imports)
 -   ZCML level (includes)
 -   testing (need for layers, such as functional testing)
@@ -41,22 +41,35 @@ A base mental model for how Plone is organized in Plone 6 since alpha 4 is shown
 
 ```
 ┌────────────────────────────┐
-│                            │
-│ On top of Products.CMFPlone│
-│ like:                      │
-│ - Plone                    │
-│ - plone.api                │
-│ - plone.volto              │
+│ "Plone"                    |
+| The Integration of both    |
+| distributions in one       |
+| Release                    |
+├────────────────────────────┤
+| Distributions:             |
+| - plone.volto              |
+| - plone.classicui          |
+├────────────────────────────┤
+│ Core-Addons                │
+│ - plone.distribution       │
+│ - plone.app.exportimport   │
+│ - plone.app.discussion     │
+│ - plone.app.multilingual   │
+│ - plone.app.caching        │
 │ - plone.app.iterate        │
 │ - plone.app.update         │
 │                            │
+├────────────────────────────┤
+│ Core-APIs                  │
+│ - plone.restapi            │
+│ - plone.api                │
 ├────────────────────────────┤
 │                            │
 │     Products.CMFPlone      │
 │                            │
 ├────────────────────────────┤
 │                            │
-│ The space between          │
+│ The space between (core )  │
 │                            │
 │ - most of plone.app.*      │
 │ - but also some other      │
@@ -75,6 +88,7 @@ A base mental model for how Plone is organized in Plone 6 since alpha 4 is shown
 │ - plone.registry           │
 │ - plone.dexterity          │
 │ - plone.behavior           │
+│ - plone.rest               │
 │ - ....                     │
 │                            │
 └────────────────────────────┘
