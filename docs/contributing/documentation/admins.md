@@ -92,7 +92,7 @@ You also need an account on Read the Docs and have write access to the repositor
 
 ### Configuration files
 
-The following are example files that you can use to configure your project for Read the Docs pull request previews.
+The following are example files that you can use to configure your project for pull request previews on Read the Docs.
 
 -   [Plone Sphinx Theme `Makefile`](https://github.com/plone/plone-sphinx-theme/blob/main/Makefile), specifically the `rtd-pr-preview` section.
     This is the command to use to build documentation previews on Read the Docs.
@@ -116,14 +116,6 @@ After logging in to your Read the Docs account, you can import your project.
 1.  A sample `.readthedocs.yaml` file is suggested, if you have not already added one.
 1.  Click {guilabel}`Finish`.
     Read the Docs will redirect you to the project details, and start building the docs.
-
-Plone uses an organization on Read the Docs.
-The main project is Plone Documentation.
-All other Plone projects with documentation should be configured as subprojects.
-
-```{todo}
-Add how to set up a subproject.
-```
 
 For most Plone projects, you will not want to Read the Docs to publish the `latest` or other specific versions.
 Plone projects currently self-host their official documentation.
