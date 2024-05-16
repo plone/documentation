@@ -99,6 +99,8 @@ To enable discussion, you need to perform the following tasks.
 % Please add sufficient details for how to do this task, then delete this comment.
 % Also consider that there might be different approaches between Classic UI and Volto that need to be mentioned.
 
-1.  Install the core add-on `plone.app.discussion`.
-1.  Enable add-on.
+1.  In your Python {file}`requirements.txt` or {file}`pyproject.toml` file, add the core add-on `plone.app.discussion` to your dependencies.
+1.  Run pip to install `plone.app.discussion`.
+1.  Restart the Plone backend to load `plone.app.discussion`.
+1.  Enable the {guilabel}`Discussion` add-on in the Plone control panel under {menuselection}`Site Setup --> General`.
 1.  🍻
