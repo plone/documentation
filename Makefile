@@ -226,6 +226,12 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 
 .PHONY: rtd-pr-preview
 rtd-pr-preview: bin/python  ## Build pull request preview on Read the Docs
+	git submodule init; \
+	git submodule update; \
+	pip install -e submodules/plone.api[test]; \
+	ln -s ../submodules/volto/docs/source ./docs/volto
+	ln -s ../submodules/plone.restapi ./docs/plone.restapi
+	ln -s ../submodules/plone.api/docs ./docs/plone.api
 	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
 
 .PHONY: netlify
