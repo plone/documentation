@@ -21,7 +21,7 @@ build:
     - ln -s ../submodules/volto/docs/source ./docs/volto
     - ln -s ../submodules/plone.restapi ./docs/plone.restapi
     - ln -s ../submodules/plone.api/docs ./docs/plone.api
-    - cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
+    - cd ./docs/ && "$(realpath bin/sphinx-build)" -b html -d $(BUILDDIR)/doctrees . ${READTHEDOCS_OUTPUT}/html/
 
 
 # Build documentation in the "docs/" directory with Sphinx
