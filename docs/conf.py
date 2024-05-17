@@ -15,9 +15,11 @@ import sys
 # Attempt to make plone.api importable to Sphinx
 # sys.path.insert(0, os.path.abspath("."))
 # sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
-# sys.path.insert(0, os.path.abspath("../submodules/plone.api/src"))
-sys.path.insert(0, os.path.abspath("../submodules/plone.api/src/plone"))
-print("======\n" + str(sys.path) + "\n======\n")
+sys.path.insert(0, os.path.abspath("../submodules/plone.api/src"))
+# sys.path.insert(0, os.path.abspath("../submodules/plone.api/src/plone"))
+print("====== sys.path ======\n" + str(sys.path) + "\n======\n")
+print("====== os.listdir() ======\n" + str(os.listdir()) + "\n======\n")
+print("====== os.listdir(sys.path[0]) ======\n" + str(os.listdir(sys.path[0])) + "\n======\n")
 
 # -- Project information -----------------------------------------------------
 
