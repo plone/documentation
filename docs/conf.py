@@ -17,6 +17,7 @@ import sys
 # sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
 # sys.path.insert(0, os.path.abspath("../submodules/plone.api/src"))
 sys.path.insert(0, os.path.abspath("../submodules/plone.api/src/plone"))
+print("======\n" + sys.path + "\n======\n")
 
 # -- Project information -----------------------------------------------------
 
