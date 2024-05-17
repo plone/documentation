@@ -50,7 +50,7 @@ For a complete list of features, usage, and options, read [`cookiecutter-zope-in
 
 This section describes how to manage packages for the Plone backend with `mxdev`.
 
-For developing add-ons for the Plone frontend, Volto, see {doc}`volto/addons/index`.
+For developing add-ons for the Plone frontend, Volto, see {doc}`/volto/addons/index`.
 
 
 (manage-the-problem-with-pip-label)=
