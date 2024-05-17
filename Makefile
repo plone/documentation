@@ -225,7 +225,9 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: rtd-pr-preview
-rtd-pr-preview: bin/python  ## Build pull request preview on Read the Docs
+rtd-pr-preview:  ## Build pull request preview on Read the Docs
+	pip install -r requirements-initial.txt
+	pip install -r requirements.txt
 	git submodule init
 	git submodule update
 	pip install -e submodules/plone.api[test]
