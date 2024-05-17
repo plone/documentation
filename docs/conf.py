@@ -13,9 +13,9 @@ from datetime import datetime
 import os
 import sys
 # Attempt to make plone.api importable to Sphinx
-sys.path.insert(0, os.path.abspath("."))
+# sys.path.insert(0, os.path.abspath("."))
 # sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
-
+sys.path.insert(0, os.path.abspath("../submodules/plone.api/src"))
 
 # -- Project information -----------------------------------------------------
 
