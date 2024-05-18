@@ -12,14 +12,8 @@ from datetime import datetime
 #
 import os
 import sys
-# Attempt to make plone.api importable to Sphinx
-# sys.path.insert(0, os.path.abspath("."))
-# sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
 sys.path.insert(0, os.path.abspath("../submodules/plone.api/src"))
-# sys.path.insert(0, os.path.abspath("../submodules/plone.api/src/plone"))
-print("====== sys.path ======\n" + str(sys.path) + "\n======\n")
-print("====== os.listdir() ======\n" + str(os.listdir()) + "\n======\n")
-print("====== os.listdir(sys.path[0]) ======\n" + str(os.listdir(sys.path[0])) + "\n======\n")
+
 
 # -- Project information -----------------------------------------------------
 
@@ -38,6 +32,7 @@ year = str(now.year)
 version = "6.0"
 # The full version, including alpha/beta/rc tags.
 release = "6.0"
+
 
 # -- General configuration ----------------------------------------------------
 
@@ -161,7 +156,7 @@ html_favicon = "_static/favicon.ico"
 html_theme_options = {
     "article_header_start": ["toggle-primary-sidebar"],
     "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
-<p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a></p>""",
+<p>Pull request previews by <a href="https://readthedocs.org/" target="_blank">Read the Docs</a>.</p>""",
     "footer_end": ["version.html"],
     "icon_links": [
         {
@@ -199,7 +194,7 @@ html_theme_options = {
         },
     ],
     "logo": {
-        "text": "Plone Sphinx Theme",
+        "text": "Plone Documentation",
     },
     "navigation_with_keys": True,
     "path_to_docs": "docs",
@@ -215,6 +210,8 @@ html_theme_options = {
     "use_repository_button": True,
 }
 
+# suggest edit link
+# remark: {{ file_name }} is mandatory in "edit_page_url_template"
 html_context = {  # TODO: verify html_context usage in plone-sphinx-theme
     "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
 }
@@ -241,7 +238,7 @@ html_static_path = [
 ]
 
 
-# -- Options for sphinx_sitemap to html -----------------------------
+# -- Options for sphinx_sitemap to HTML -----------------------------
 
 # Used by sphinx_sitemap to generate a sitemap
 html_baseurl = "https://6.docs.plone.org/"
@@ -315,12 +312,12 @@ ogp_custom_meta_tags = [
 ]
 
 
-# -- sphinx.ext.todo -----------------------
+# -- Options for sphinx.ext.todo -----------------------
 # See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
 todo_include_todos = True
 
 
-# -- sphinx-notfound-page configuration ----------------------------------
+# -- Options for sphinx-notfound-page ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
@@ -351,7 +348,7 @@ latex_documents = [
         "index",
         "PloneDocumentation.tex",
         "Plone Documentation",
-        "The Plone community",
+        "Plone Community",
         "manual",
     ),
 ]
@@ -360,12 +357,6 @@ latex_documents = [
 # the title page.
 latex_logo = "_static/logo_2x.png"
 
-
-# suggest edit link
-# remark: {{ file_name }} is mandatory in "edit_page_url_template"
-html_context = {
-    "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
-}
 
 # An extension that allows replacements for code blocks that
 # are not supported in `rst_epilog` or other substitutions.
