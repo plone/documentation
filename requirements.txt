@@ -4,11 +4,12 @@ graphviz
 lesscpy
 linkify-it-py
 myst-parser
-pydata-sphinx-theme==0.8.1  # Build fails in 0.9.0. See https://github.com/plone/documentation/issues/1297
+pydata-sphinx-theme<=0.8.99  # Build fails in 0.9.0. See https://github.com/plone/documentation/issues/1297
 sphinx-autobuild
 sphinx-book-theme==0.3.3  # Temporary pin until we can sort out HTML refactoring.
 sphinx-copybutton
 sphinx-design  # Documentation only
+sphinx-examples
 sphinx-notfound-page  # Documentation only
 sphinx-reredirects
 sphinx-sitemap
