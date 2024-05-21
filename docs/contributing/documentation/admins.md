@@ -84,9 +84,9 @@ To make it easier for other contributors to work with your project, update the f
 Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6.0`](https://github.com/plone/documentation/compare).
 
 
-## Add a project to Read the Docs
+## Pull request preview builds
 
-To add a new site to Read the Docs to preview documentation or storybooks in pull requests, you need to configure your project's repository and import it into Read the Docs.
+To preview pull request builds of documentation or Storybooks on Read the Docs, you need to configure your project's repository and import it into Read the Docs.
 You also need an account on Read the Docs and have write access to the repository.
 
 
@@ -104,7 +104,7 @@ The following are example files that you can use to configure your project for p
     You might need to adjust the branch name, paths, and files to check for changes.
 
 
-### Read the Docs administration
+### Import your project
 
 After logging in to your Read the Docs account, you can import your project.
 
