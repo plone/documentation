@@ -118,8 +118,55 @@ After logging in to your Read the Docs account, you can import your project.
 1.  Click {guilabel}`Finish`.
     Read the Docs will redirect you to the project details, and start building the docs.
 
-For most Plone projects, you will not want to Read the Docs to publish the `latest` or other specific versions.
-Plone projects currently self-host their official documentation.
 
-1.  For the version that you want to deactivate, click its {guilabel}`…` icon, and select {guilabel}`Configure version`.
-1.  Toggle the {guilabel}`Active` option off, and click {guilabel}`Update version`.
+### Search engine indexing
+
+Many Plone projects currently self-host their official documentation at {doc}`/index`.
+These projects get indexed by search engines.
+
+For pull request previews, unsupported branches or versions, or other situations, you most likely do not want search engines to index your documentation.
+Your options include the following.
+
+-   Deactivate your build
+-   Hide your build
+-   Create a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing
+
+For the last option, you can configure Sphinx to copy the {file}`robots.txt` file.
+However, if you want to have two versions of a {file}`robots.txt` file—say one that allows indexing of your official documentation and another that discourages indexing—you can configure your automation to copy it into place with a command such as the following.
+
+```shell
+cp source-path/block-robots.txt docs-root-path/robots.txt
+```
+
+```{seealso}
+-   [Automation rules](https://docs.readthedocs.io/en/stable/automation-rules.html)
+-   [Versions](https://docs.readthedocs.io/en/stable/versions.html)
+-   [Managing versions automatically](https://docs.readthedocs.io/en/stable/guides/automation-rules.html)
+-   [`robots.txt` support](https://docs.readthedocs.io/en/stable/reference/robots.html)
+```
+
+
+### Cancel builds programmatically
+
+You might want to cancel a build programmatically when certain conditions are met.
+You can do this through your {file}`.readthedocs.yaml` file.
+Read the Docs covers a few scenarios in its documentation, [Cancel build based on a condition](https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition).
+
+
+#### Cancel builds on a branch
+
+If you have pull request preview builds enabled, any pull request to any branch will trigger a build.
+If you do not want to build documentation on a specific branch, you can cancel a build programmatically through your {file}`.readthedocs.yaml` file.
+
+```yaml
+version: 2
+build:
+  os: "ubuntu-22.04"
+  tools:
+    python: "3.12"
+  jobs:
+    post_checkout:
+      # Cancel the Read the Docs build
+      # https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition
+      - exit 183;
+```
