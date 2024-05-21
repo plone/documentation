@@ -153,6 +153,35 @@ You can do this through your {file}`.readthedocs.yaml` file.
 Read the Docs covers a few scenarios in its documentation, [Cancel build based on a condition](https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition).
 
 
+#### Build only on changes
+
+When there are no changes to documentation, it is not necessary to build it.
+You can save time and energy by programmatically building documentation only when it changes.
+
+In your {file}`.readthedocs.yaml` file, you could use the following example.
+
+```yaml
+version: 2
+build:
+  os: "ubuntu-22.04"
+  tools:
+    python: "3.12"
+  jobs:
+    post_checkout:
+      # Cancel building pull requests when there aren't changes in the docs directory or YAML file.
+      # You can add any other files or directories that you'd like here as well,
+      # like your docs requirements file, or other files that will change your docs build.
+      #
+      # If there are no changes (git diff exits with 0) we force the command to return with 183.
+      # This is a special exit code on Read the Docs that will cancel the build immediately.
+      - |
+        if [ "$READTHEDOCS_VERSION_TYPE" = "external" ] && git diff --quiet origin/main -- docs/ .readthedocs.yaml requirements-initial.txt requirements.txt;
+        then
+          exit 183;
+        fi
+```
+
+
 #### Cancel builds on a branch
 
 If you have pull request preview builds enabled, any pull request to any branch will trigger a build.
