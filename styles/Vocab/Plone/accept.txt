@@ -22,6 +22,7 @@ Mockup
 npm
 nvm
 Pastanaga
+PLIP(s)
 Plone
 pluggab(le|ility)
 programatically

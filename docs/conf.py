@@ -59,6 +59,7 @@ extensions = [
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
     "sphinx.ext.graphviz",
+    "sphinxcontrib.mermaid",
     "notfound.extension",
 ]
 
@@ -328,6 +329,7 @@ latex_logo = "_static/logo_2x.png"
 html_context = {
     "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
 }
+
 
 # An extension that allows replacements for code blocks that
 # are not supported in `rst_epilog` or other substitutions.
