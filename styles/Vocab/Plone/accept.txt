@@ -8,6 +8,7 @@ accessor
 APIs
 [Aa]sync
 [Bb]ackend
+backport(ed|ing)
 Barceloneta
 [Bb]oolean
 buildout
@@ -17,7 +18,9 @@ folderish
 fieldset
 getter
 JavaScript
+[Jj]enkins
 jQuery
+libxslt
 Mockup
 npm
 nvm
@@ -35,6 +38,7 @@ RichText
 Sass
 Schuko
 subfolder
+[Tt]owncrier
 transpile[dr]{0,1}
 unregister
 UUID
