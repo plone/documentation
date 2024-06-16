@@ -8,7 +8,7 @@ myst:
 ---
 
 ```{todo}
-This content is probably redundant and should be purged.
+All this can go, it's redundant
 ```
 
 # Plone developer culture

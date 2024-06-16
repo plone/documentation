@@ -7,6 +7,10 @@ myst:
     "keywords": "Contributing, Plone"
 ---
 
+```{todo}
+All this can go, it's redundant
+```
+
 (contributing-to-plone-label)=
 
 # Contributing to Plone
@@ -19,19 +23,19 @@ Sending in a contributors agreement does not guarantee your commit access to the
 
 We ask that before requesting core access you familiarize yourself a little with the community since they will help you get ramped up:
 
--   Ask and (especially) answer questions on [the Plone forum](https://community.plone.org/) and in {doc}`Plone chat <culture>` with a focus on getting to know the active developers a bit.
+- Ask and (especially) answer questions on [the Plone forum](https://community.plone.org/) and in {doc}`Plone chat <culture>` with a focus on getting to know the active developers a bit.
 
--   Attend a [conference](https://plone.org/news-and-events/events/plone-conferences), [symposium](https://plone.org/news-and-events/events/regional), or participate in a [sprint](https://plone.org/news-and-events/events/sprints).
+- Attend a [conference](https://plone.org/news-and-events/events/plone-conferences), [symposium](https://plone.org/news-and-events/events/regional), or participate in a [sprint](https://plone.org/news-and-events/events/sprints).
 
     There are plenty of opportunities to meet the community and start contributing through various coding sessions, either in person or on the web.
 
     You may even be able to get immediate core access at a conference if you are flexing your mad coding skills and the right people are attending.
 
--   Get your feet wet by contributing to the [collective](https://collective.github.io/).
+- Get your feet wet by contributing to the [collective](https://collective.github.io/).
     Don't worry about getting it perfect or asking for help.
     This way you get to know us and we improve our code together as a community.
 
--   **Patches:** Historically we encouraged people to submit patches to the ticket collector.
+- **Patches:** Historically we encouraged people to submit patches to the ticket collector.
     These tickets are usually ignored forever.
     Technically, for us to accept your patch, you must sign the contributors agreement.
     If you want to contribute fixes, please just sign the agreement and go through the standard GitHub pull request process described below until you feel comfortable to bypass review.
@@ -39,7 +43,7 @@ We ask that before requesting core access you familiarize yourself a little with
 
 Once you have familiarized yourself with the community and you are excited to contribute to the core:
 
--   Sign the contributor agreement at <https://plone.org/foundation/contributors-agreement/agreement.pdf>, then either send by postal mail to the address provided, or scan and email it to <agreements@plone.org>.
+- Sign the contributor agreement at <https://plone.org/foundation/contributors-agreement/agreement.pdf>, then either send by postal mail to the address provided, or scan and email it to <agreements@plone.org>.
     This offers both copyright protection and ensures that the Plone Foundation is able to exercise some control over the codebase, ensuring it is not appropriated for someone's unethical purposes.
     For questions about why the agreement is required, please see [About the Plone Contributor Agreement
 ](https://plone.org/foundation/contributors-agreement).
@@ -50,7 +54,6 @@ A common way to start contributing is to participate in a [Plone sprint](https:/
 
 **Welcome to the Plone community!**
 
-
 ## Dealing with pull requests on GitHub
 
 Before we can merge a pull request, we must ensure that the author has signed the Plone Contributor Agreement.
@@ -58,6 +61,6 @@ Before we can merge a pull request, we must ensure that the author has signed th
 If they're listed in either the [Developers](https://github.com/orgs/plone/teams/developers/members) or [Contributors](https://github.com/orgs/plone/teams/contributors/members) team, the author has signed the Plone Contributor Agreement, so we can go ahead and merge.
 
 If they aren't listed there, they may have signed and returned the Plone Contributor Agreement, but they were not yet added to a team.
-You can ask agreements@plone.org to verify.
+You can ask <agreements@plone.org> to verify.
 
 Pull requests without a signed Plone Contributor Agreement can only be merged in trivial cases, and only by the release manager.

@@ -7,27 +7,28 @@ myst:
     "keywords": "Plone, development"
 ---
 
+```{todo}
+Needs updating to Plone6, but contains useful info
+```
+
 # Getting started with development
 
 This document assumes you want to run the current latest Plone source, fix a bug in Plone, or test an add-on in the context of the latest code, and will detail the full process.
 For how to write Plone Improvement Proposals (PLIPs), read {doc}`plips`.
 
-
 ## Version support policy
 
 If you are triaging or fixing bugs, keep in mind that Plone has a [version support policy](https://plone.org/download/release-schedule#91815aec-0513-40e0-a804-55ea787a8c68).
 
-
 ## Dependencies
 
--   git. See [Set up Git](https://docs.github.com/en/get-started/quickstart/set-up-git).
--   [Python](https://python.org/). See the [current supported versions of Python](https://plone.org/download/release-schedule).
--   If you are on macOS, you will need to install [XCode](https://developer.apple.com/xcode/).
+- git. See [Set up Git](https://docs.github.com/en/get-started/quickstart/set-up-git).
+- [Python](https://python.org/). See the [current supported versions of Python](https://plone.org/download/release-schedule).
+- If you are on macOS, you will need to install [XCode](https://developer.apple.com/xcode/).
     You can do this through the App Store or registering through the Apple Developer Program.
--   [Pillow](https://pypi.org/project/Pillow/).
--   [GCC](https://gcc.gnu.org/) in order to compile ZODB, Zope and lxml.
--   [libxml2 and libxslt](https://gitlab.gnome.org/GNOME/libxslt/-/releases), including development headers.
-
+- [Pillow](https://pypi.org/project/Pillow/).
+- [GCC](https://gcc.gnu.org/) in order to compile ZODB, Zope and lxml.
+- [libxml2 and libxslt](https://gitlab.gnome.org/GNOME/libxslt/-/releases), including development headers.
 
 (setup-development-environment)=
 
@@ -66,9 +67,8 @@ or as a WSGI service with:
 
 To login, the defaults are:
 
--   username: admin
--   password: admin
-
+- username: admin
+- password: admin
 
 ## Switching branches
 
@@ -98,7 +98,6 @@ The line with a `*` by it will indicate the branch on which you are currently wo
 Make sure to rerun buildout if you were in a different branch earlier to get the correct versions of packages, otherwise you will get some weird behavior.
 ```
 
-
 ## Jenkins and mr.roboto
 
 Plone has a continuous integration (CI) setup and follows CI rules.
@@ -113,33 +112,32 @@ Build breakages are a normal and expected part of the development process.
 Our aim is to find errors and eliminate them as quickly as possible, without expecting perfection and zero errors.
 Though, there are some essential practices that need to be followed in order to achieve a stable build:
 
-1.  Don't check in on a broken build. Check Jenkins first.
-2.  Always run all commit tests locally before committing.
-3.  Wait for commit tests to pass before moving on.
-4.  Never go home on a broken build.
-5.  Always be prepared to revert to the previous revision.
-6.  Time-box fixing before reverting.
-7.  Don't comment out failing tests.
-8.  Take responsibility for all breakages that result from your changes.
+1. Don't check in on a broken build. Check Jenkins first.
+2. Always run all commit tests locally before committing.
+3. Wait for commit tests to pass before moving on.
+4. Never go home on a broken build.
+5. Always be prepared to revert to the previous revision.
+6. Time-box fixing before reverting.
+7. Don't comment out failing tests.
+8. Take responsibility for all breakages that result from your changes.
 
 See {doc}`continous-integration` for more information.
 
 Since it can be burdensome to check this manually, install the tools locally to always see the current state of the Plone CI Server:
 
--   For Linux and X11 environments, there is [BuildNotify](https://pypi.org/project/BuildNotify/).
--   For macOS there is [CCMenu](http://ccmenu.org/).
--   For windows there is [CCTray](https://cruisecontrolnet.org/cctray_download_plugin-2/).
--   For Firefox there is [CruiseControl Monitor](https://addons.thunderbird.net/EN-US/firefox/addon/cruisecontrol-monitor/?src=cb-dl-name) (no longer supported), and many other [Jenkins plugins](https://addons.mozilla.org/en-US/firefox/search/?q=jenkins).
+- For Linux and X11 environments, there is [BuildNotify](https://pypi.org/project/BuildNotify/).
+- For macOS there is [CCMenu](http://ccmenu.org/).
+- For windows there is [CCTray](https://cruisecontrolnet.org/cctray_download_plugin-2/).
+- For Firefox there is [CruiseControl Monitor](https://addons.thunderbird.net/EN-US/firefox/addon/cruisecontrol-monitor/?src=cb-dl-name) (no longer supported), and many other [Jenkins plugins](https://addons.mozilla.org/en-US/firefox/search/?q=jenkins).
 
 These tools were built to parse a specific file that CruiseControl, another CI tool, generated.
 Jenkins generates this file too.
 You can configure your notifier of choice with this url: `https://jenkins.plone.org/cc.xml` [which is a 404, LOL!]
 
-
 ## Check out packages to fix
 
 Most packages are not in {file}`src/` by default, so you can use `mr.developer` to get the latest and make sure you are always up to date.
-It can be a little daunting at first to find out which packages cause the bug in question, but just ask in https://community.plone.org/ if you need some help.
+It can be a little daunting at first to find out which packages cause the bug in question, but just ask in <https://community.plone.org/> if you need some help.
 Once you know which packages you want, pull their source.
 
 You can get the source of the package with `mr.developer` and the checkout command, or you can go directly to editing {file}`checkouts.cfg`.
@@ -177,7 +175,6 @@ In both methods, `mr.developer` will download the source from GitHub (or otherwi
 You can repeat this process with as many or as few packages as you need.
 For some more tips on working with `mr.developer`, please read {doc}`mrdeveloper`.
 
-
 ## Testing Locally
 
 To run a test for the specific module you modify:
@@ -203,7 +200,6 @@ you may just let jenkins do this part for you.
 More on that below.
 ```
 
-
 ## Updating `CHANGES.rst` and `checkouts.cfg`
 
 Once all the tests are running locally on your machine, you are **ALMOST** ready to commit the changes.
@@ -228,32 +224,30 @@ Not that you would ever skip running all tests.
 
 If your bug is in more than one release, for example 5.2 and 6.0, please checkout both branches, and add it to the file {file}`checkouts.cfg`.
 
-
 ## Commits and pull requests
 
 Review the following checklist:
 
--   Did you fix the original bug?
--   Is your code consistent with our [Style Guides](https://5.docs.plone.org/develop/styleguide/index.html)?
--   Did you remove any extra code and lingering pdbs?
--   Did you write a test case for that bug?
--   DO all test cases for the modules and Plone pass?
--   Did you update {file}`CHANGES.rst` in each packages you touched?
--   Did you add your changed packages to {file}`checkouts.cfg`?
+- Did you fix the original bug?
+- Is your code consistent with our [Style Guides](https://5.docs.plone.org/develop/styleguide/index.html)?
+- Did you remove any extra code and lingering pdbs?
+- Did you write a test case for that bug?
+- DO all test cases for the modules and Plone pass?
+- Did you update {file}`CHANGES.rst` in each packages you touched?
+- Did you add your changed packages to {file}`checkouts.cfg`?
 
 If you answered *YES* to all of these questions, then you are ready to push your changes!
 A couple quick reminders:
 
--   Only commit directly to the development branch if you're confident that your code won't break anything badly and the changes are small and fairly trivial.
+- Only commit directly to the development branch if you're confident that your code won't break anything badly and the changes are small and fairly trivial.
     Otherwise, please create a `pull request` (more on that below).
--   Please try to make one change per commit.
+- Please try to make one change per commit.
     If you are fixing three bugs, make three commits.
     That way, it is easier to see what was done when, and easier to roll back any changes if necessary.
     If you want to make large changes cleaning up whitespace or renaming variables, it is especially important to do so in a separate commit for this reason.
--   We have a few angels that follow the changes and each commit to see what happens to their favourite CMS!
+- We have a few angels that follow the changes and each commit to see what happens to their favourite CMS!
     If you commit something REALLY sketchy, they will politely contact you, most likely after immediately reverting changes.
-    There are no official people assigned to this so if you are especially nervous, ask in https://community.plone.org/.
-
+    There are no official people assigned to this so if you are especially nervous, ask in <https://community.plone.org/>.
 
 ## Commit to `Products.CMFPlone`
 
@@ -315,7 +309,7 @@ git checkout 4.2
 git merge my-awesome-feature-4.2
 ```
 
-### Branches and forks and direct commits - oh my!
+### Branches and forks and direct commits - oh my
 
 ```{note}
 This section needs a rewrite.
@@ -330,10 +324,10 @@ For Plone, this would be the version branch, whereas for most other packages thi
 HOWEVER, there are a few situations where a branch is appropriate.
 If you:
 
--   are just getting started
--   are not sure about your changes
--   want feedback or code review
--   are implementing a non-trivial change
+- are just getting started
+- are not sure about your changes
+- want feedback or code review
+- are implementing a non-trivial change
 
 then you should create a branch of whatever packages you are using, and then use the [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) feature of GitHub to get review.
 Everything about this process would be the same except you need to work on a branch.
@@ -365,12 +359,11 @@ This will turn your request into a pull request on the main branch.
 There are people who look once a week or more for pending pull requests and will confirm whether or not it's a good fix, and give you feedback where necessary.
 The reviewers are informal and very nice, so don't worry.
 They are there to help!
-If you want immediate feedback, visit https://community.plone.org/ with the pull request link and ask for a review.
+If you want immediate feedback, visit <https://community.plone.org/> with the pull request link and ask for a review.
 
 ```{note}
 You still need to update the file {file}`checkouts.cfg` in the correct branches of `buildout.coredev`!
 ```
-
 
 ## Finalize issues
 
@@ -378,7 +371,6 @@ If you are working from an issue, please don't forget to go back to the issue, a
 We don't have integration with GitHub yet so it's a nice way to track changes.
 It also lets the reporter know that you care.
 If the bug is really bad, consider pinging the release manager and asking them to make a release.
-
 
 ## FAQ
 

@@ -8,9 +8,7 @@ myst:
 ---
 
 ```{todo}
-I seriously question the value of this entire guide.
-I think it should be purged.
-Plone should not be in the business of teaching how to use git or GitHub.
+All this can go, it's redundant
 ```
 
 # Working with Git and GitHub
@@ -19,18 +17,16 @@ Plone should not be in the business of teaching how to use git or GitHub.
 
 Our repository on GitHub has the following layout:
 
--   **feature branches**:
+- **feature branches**:
     All development for new features must be done in dedicated branches, normally one branch per feature.
--   **main** or **master** **branch**:
+- **main** or **master** **branch**:
     when features get completed they are merged into the master branch; bugfixes are commited directly on the master branch,
--   **tags**:
+- **tags**:
     whenever we create a new release, we tag the repository so we can later retrace our steps, or rerelease versions.
-
 
 ## Git basics
 
 Some introductory definitions and concepts, if you are already familiar enough with Git, head to next section: {ref}`general-guidelines-label`.
-
 
 ### Mental working model
 
@@ -47,7 +43,6 @@ Not a single commit anymore, but a series of them, meaning that all those fears,
 You can freely fix/change/remove/rework/update/... your commits afterwards.
 
 Push your changes whenever you are sure they are what you, and others, expect them to be.
-
 
 ### Concepts
 
