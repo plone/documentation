@@ -180,6 +180,11 @@ myst_substitutions = {
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
 }
 
+mermaid_params = [
+    "mermaid_version",
+    "10.9.1",
+]
+
 # -- Intersphinx configuration ----------------------------------
 
 # This extension can generate automatic links to the documentation of objects

@@ -102,20 +102,6 @@ Plone has a continuous integration ({term}`CI`) setup and follows CI rules.
 When you push a change to any Plone package, the testing/CI package `mr.roboto` starts running all the tests to make sure that you don't break anything.
 For each Plone and Python version it runs two jobs, one for the package itself (which will give you a fast feedback, within 10 minutes) and one on the full `coredev` build (which can take up to an hour, but makes sure no other packages are affected by your change).
 
-The CI system at `jenkins.plone.org` is a shared resource for Plone developers to notify them of regressions in Plone code.
-Build breakages are a normal and expected part of the development process.
-The aim is to find errors and remove them as quickly as possible, without expecting perfection and zero errors.
-Though, there are some essential practices that you need follow to achieve a stable build:
-
-1. Don't check in on a broken build. Check Jenkins first.
-2. Always run all commit tests locally before committing.
-3. Wait for commit tests to pass before moving on.
-4. Never go home on a broken build.
-5. Always be prepared to revert to the previous revision.
-6. Time-box fixing before reverting.
-7. Don't comment out failing tests.
-8. Take responsibility for all breakages that result from your changes.
-
 See {doc}`continuous-integration` for more information.
 
 ## Check out packages to fix
@@ -251,6 +237,9 @@ It also lets the reporter know that you care.
 ```{toctree}
 :maxdepth: 1
 
+continuous-integration
+mrdeveloper
+troubleshooting
 package-dependencies
 release
 ```

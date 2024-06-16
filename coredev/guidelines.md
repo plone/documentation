@@ -9,7 +9,7 @@ myst:
 
 ```{todo}
 All this can go, it's redundant.
-IMPORTANT: it does need a rewrite on 6.docs.plone.org as there are many packagaes in the wild that link to it.
+IMPORTANT: it does need a rewrite on 6.docs.plone.org as there are many packages in the wild that link to it.
 ```
 
 % Note: this page is linked to from CONTRIBUTING.rst in all packages.  Keep it short!
