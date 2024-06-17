@@ -99,7 +99,7 @@ Make sure to rerun buildout if you were in a different branch earlier to get the
 
 Plone has a continuous integration ({term}`CI`) setup and follows CI rules.
 
-When you push a change to any Plone package, the testing/CI package `mr.roboto` starts running all the tests to make sure that you don't break anything.
+When you push a change to any Plone package, the testing/CI package [mr.roboto](https://github.com/plone/mr.roboto) starts running all the tests to make sure that you don't break anything.
 For each Plone and Python version it runs two jobs, one for the package itself (which will give you a fast feedback, within 10 minutes) and one on the full `coredev` build (which can take up to an hour, but makes sure no other packages are affected by your change).
 
 See {doc}`continuous-integration` for more information.
