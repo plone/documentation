@@ -116,13 +116,12 @@ These are:
     bin/manage changelog
     ```
 
-12. Make the final release on dist.plone.org (remove "-pending")
+12. Make the final release on [dist.plone.org](https://dist.plone.org/) (remove "-pending")
 13. Update the "-latest" link on [dist.plone.org](https://dist.plone.org/).
 14. For Plone 5.x versions only, create the new release on [Launchpad](https://launchpad.net/plone/).
 15. Create a release page on [plone.org](https://plone.org/download/releases)
-16. Send links to the installers list at <plone-installers@lists.sourceforge.net>.
-17. Wait for installers to be uploaded to Launchpad, with a link to the plone.org release page.
-18. Publish release page on plone.org.
-19. Update plone.org homepage links to point to the new release.
-20. Send out announcement to the plone-announce email distribution list.
-21. Ask the security team to update the [Hotfixes](https://plone.org/security/hotfixes/) page in the configuration control panel.
+16. Wait for installers to be uploaded to Launchpad, with a link to the [plone.org](https://plone.org/download/releases) release page.
+17. Publish release page on [plone.org](https://plone.org).
+18. Update plone.org homepage links to point to the new release.
+19. Send out announcement to the plone-announce email distribution list.
+20. Ask the security team to update the [Hotfixes](https://plone.org/security/hotfixes/) page in the configuration control panel.

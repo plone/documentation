@@ -31,7 +31,7 @@ If you are fixing bugs, keep in mind that Plone has a [version support policy](h
 - [GCC](https://gcc.gnu.org/) to compile {term}`ZODB`, {term}`Zope` and {term}`lxml`.
 
 The first step in fixing a bug is getting this [buildout](https://github.com/plone/buildout.coredev) running.
-Start with fixing the bug on the latest branch and then [backporting](http://en.wikipedia.org/wiki/Backporting) as necessary.
+Start with fixing the bug on the latest branch and then [backporting](https://en.wikipedia.org/wiki/Backporting) as necessary.
 [GitHub](https://github.com/plone/buildout.coredev/) by default always points to the currently active branch.
 Depending on the current development cycle there may exist a future branch.
 

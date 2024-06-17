@@ -101,6 +101,7 @@ linkcheck_ignore = [
     r"https://web.archive.org/",  # volto
     r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
     r"https://www.upc.edu/en",  # TODO remove after their certificate is fixed
+    r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5

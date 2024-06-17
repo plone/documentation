@@ -60,7 +60,7 @@ In this case, it's simplest to include it in an extended `README.md`.
 Some excellent examples of a single-page README are <https://pypi.org/project/plone.outputfilters/> and <https://github.com/plone/plone.app.caching>.
 
 If your project is moderately complex, you may want to set up your documentation with multiple pages.
-The preferred way to do this is to add Sphinx to your project, and host your docs on readthedocs.org, so that it rebuilds the documentation whenever you push to GitHub.
+The preferred way to do this is to add Sphinx to your project, and host your docs on [readthedocs.org](https://readthedocs.org), so that it rebuilds the documentation whenever you push to GitHub.
 If you do this, your `README.md` must link off site to the documentation.
 
 ### Reference or API documentation
