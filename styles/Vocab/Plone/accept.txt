@@ -11,6 +11,7 @@ APIs
 backport(ed|ing)
 Barceloneta
 [Bb]oolean
+bugfix
 buildout
 cacheable
 doctest

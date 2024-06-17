@@ -9,10 +9,11 @@ myst:
 
 # Plone Improvement Proposals (PLIPs)
 
-A PLIP is a Plone Improvement Proposal.
+A {term}`PLIP` is a Plone Improvement Proposal.
+
 It is a change to a Plone package that would affect everyone.
 PLIPs go through a different process than bug fixes because of their broad reach.
-The Plone Framework Team reviews all PLIPs to be sure that it's in the best interest of the broader community to be implemented and that it is of high quality.
+The Plone Framework Team reviews all PLIPs to make sure that it's in the best interest of the broader community, and that it's of high quality.
 
 ## Frequently asked questions about PLIPs
 
@@ -34,29 +35,29 @@ You do not have to be the most amazing coder in the world to submit a PLIP.
 The Framework Team is happy to help you at any point in the process.
 
 Submitting a PLIP can be a great learning process.
-We encourage people of all backgrounds to submit a PLIP.
-When the PLIP is accepted, a Framework Team member will "champion" your PLIP and be dedicated to its completion.
+
+When the PLIP is accepted, a Framework Team member will "champion" your PLIP and follow up to its completion.
 
 PLIPs are not just for code experts.
 If you have ideas on new interactions or UI your ideas are more than welcome.
 
-We will help you pair up with implementers if needed.
+The community will help you pair up with implementers if needed.
 
 ### What is a PLIP champion?
 
-When you submit your PLIP and it is approved, a Framework Team member who is especially excited about seeing the PLIP completed will be assigned to your PLIP as a champion.
+When you submit your PLIP and it is approved, a Framework Team member will take on the role of champion for that PLIP.
 
-They are there to push you through completion, as well as answer any questions and provide guidance.
+They are there to help you through completion, answer questions and provide guidance.
 
-A champion fulfill the following tasks.
+A champion fulfills the following tasks:
 
-- Answer any questions the PLIP implementor has, technical or otherwise.
-- Encourage the PLIP author by constantly giving feedback and encouragement.
+- Answer any questions the PLIP implementer has, technical or otherwise.
+- Encourage the PLIP author by giving feedback and encouragement.
 - Keep the implementer aware of timelines, and push to get things done on time.
 - Assist with finding additional help when needed to complete the implementation in a timely matter.
 
-Keep in mind that champions are in passive mode by default.
-If you need help or guidance, please reach out to them as soon as possible to activate help mode.
+Keep in mind that champions are volunteers as well, and have other tasks in life.
+That means you will have to play an active role in asking for help or guidance.
 
 ### Can I get involved in other ways?
 
@@ -148,16 +149,16 @@ In the near future, the seconder should either a coding partner, or someone who 
 ### Evaluating PLIPs
 
 After you submit your PLIP, the Framework Team will meet within a couple weeks, and let you know if the PLIP is accepted.
-If the PLIP is not accepted, please don't be sad!
+If the PLIP is not accepted, please don't be discouraged!
 
-Most PLIPs may first start as an add-on, if possible, to make sure it works in practice.
+Most PLIPs first start as an add-on, if possible, to make sure it works in practice.
 
 All communication with you occurs on the PLIP issue itself.
 Please keep your eyes and inbox open for changes.
 
 These are the criteria by which the framework team will review your work:
 
-- What is size and status of the work needed to be done?
+- What is the size and status of the work needed to be done?
 - Is it already an add-on and well established?
 - Is this idea well baked and expressed clearly?
 - Does the work proposed belong in Plone now, or in the future?
@@ -180,9 +181,8 @@ You can start the development at any time, but if you are going to modify Plone 
 
   - Be {doc}`properly documented <documentation>`.
   - Have clear code.
-  - [Follow our style guides](https://5.docs.plone.org/develop/styleguide/index.html).
-        For convenience and better code quality use Python, JavaScript, and other code linting plugins in your editor.
-  - [Be tested](https://5.docs.plone.org/develop/testing/index.html).
+  - Follow current best practices in coding style. The [Plone Meta](https://github.com/plone/meta) project can help you set up your environment. For Volto, follow [this guide](https://6.docs.plone.org/volto/contributing/linting.html).
+  - [Be tested](https://5.docs.plone.org/develop/testing/index.html). For Volto, follow [this guide](https://6.docs.plone.org/volto/contributing/testing.html)
 
 ```{todo}
 Update links from Plone 5 to Plone 6 Documentation, once content is migrated.
@@ -191,7 +191,8 @@ See https://github.com/plone/documentation/issues/1330 and other issues.
 
 ### Creating a new PLIP branch
 
-Create a buildout configuration file for your PLIP in the `plips` folder.
+Create a buildout configuration file for your PLIP in the `plips` folder of {file}`buildout.coredev`.
+
 Give it a descriptive name, starting with the PLIP number, for example, {file}`plip-1234-widget-frobbing.cfg`.
 
 The PLIP number is your PLIP's issue number.
@@ -267,7 +268,8 @@ After the PLIP has been accepted by the Framework Team and the release managers,
 Merging the PLIP in is not the hardest part, but you must think about it when you develop.
 
 You'll have to interact with a large number of people to get it all set up.
-The merge may cause problems with other PLIPs coming in.
+
+The merge may have unintended interactions with other PLIPs coming in.
 During the merge phase you must be prepared to help out with all the features and bugs that arise.
 
 If all went as planned, the next Plone release will carry on with your PLIP in it.

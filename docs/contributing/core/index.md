@@ -239,7 +239,10 @@ It also lets the reporter know that you care.
 
 continuous-integration
 mrdeveloper
+documentation
 troubleshooting
+plips
+plip-review
 package-dependencies
 release
 ```
