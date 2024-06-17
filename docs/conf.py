@@ -100,6 +100,7 @@ linkcheck_ignore = [
     r"https://stackoverflow.com",  # volto and documentation  # TODO retest with latest Sphinx.
     r"https://web.archive.org/",  # volto
     r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
+    r"https://www.upc.edu/en",  # TODO remove after their certificate is fixed
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5

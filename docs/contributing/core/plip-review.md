@@ -16,7 +16,7 @@ A Plone Improvement Proposal (PLIP) is a formal process to propose a change to i
 A good PLIP review takes about four hours.
 Please plan accordingly.
 
-When you are done, if you have access to core, commit the review to the `plips` folder of [buildout.coredev](github.com/plone/buildout.coredev), and reference the PLIP in your commit message.
+When you are done, if you have access to core, commit the review to the `plips` folder of [buildout.coredev](https://github.com/plone/buildout.coredev), and reference the PLIP in your commit message.
 If you do not have access, attach your review to the PLIP ticket itself.
 
 ## Setting up the environment
