@@ -7,10 +7,6 @@ myst:
     "keywords": "Plone, release, process"
 ---
 
-```{todo}
-Can stay, as it needs a place to live. Check in with Release Managers to update content, if needed
-```
-
 # Plone release process
 
 This chapter describes the process to release Plone and its packages.
@@ -20,7 +16,7 @@ This chapter describes the process to release Plone and its packages.
 To keep the Plone software stack maintainable, the Python egg release process must be automated to a high degree.
 This happens by enforcing Python packaging best practices, and then making automated releases using [`zest.releaser`](https://github.com/zestsoftware/zest.releaser/).
 
-This is extended with Plone coredev specific features by [`plone.releaser`](https://github.com/plone/plone.releaser).
+Plone coredev specific features extend on that using [`plone.releaser`](https://github.com/plone/plone.releaser).
 
 Anyone with necessary PyPI permissions must be able to make a new release by running the `fullrelease` command.
 This command includes the following requirements.
@@ -53,7 +49,7 @@ Some packages need special care, or should be done only by specific people, as t
 These are:
 
 `Products.CMFPlone`, `Plone`, and `plone.app.upgrade`
-:   Please leave these to the release manager, Eric Steele.
+:   Please leave these to the release managers, Eric Steele and Maurits van Rees.
 
 `plone.app.locales`
 :   Please leave this to the i18n team lead, Vincent Fretin.
@@ -69,7 +65,7 @@ These are:
     ```shell
     git clone git@github.com:plone/buildout.coredev.git
     cd buildout.coredev
-    git checkout 5.1
+    git checkout 6.1
     python bootstrap.py
     bin/buildout -c buildout.cfg
     ```
@@ -120,14 +116,12 @@ These are:
     bin/manage changelog
     ```
 
-12. Make the final release on dist.plone.org (remove "-pending")
+12. Make the final release on [dist.plone.org](https://dist.plone.org/) (remove "-pending")
 13. Update the "-latest" link on [dist.plone.org](https://dist.plone.org/).
 14. For Plone 5.x versions only, create the new release on [Launchpad](https://launchpad.net/plone/).
 15. Create a release page on [plone.org](https://plone.org/download/releases)
-16. Send links to the installers list at <plone-installers@lists.sourceforge.net>.
-17. Wait for installers to be uploaded to Launchpad, with a link to the plone.org release page.
-18. Publish release page on plone.org.
-19. Update plone.org homepage links to point to the new release.
-20. Send out announcement to the plone-announce email distribution list.
-21. Update #plone topic (obsolete? maybe announce to Discord?)
-22. Ask the security team to update the [Hotfixes](https://plone.org/security/hotfixes/) page in the configuration control panel.
+16. Wait for installers to be uploaded to Launchpad, with a link to the [plone.org](https://plone.org/download/releases) release page.
+17. Publish release page on [plone.org](https://plone.org).
+18. Update plone.org homepage links to point to the new release.
+19. Send out announcement to the plone-announce email distribution list.
+20. Ask the security team to update the [Hotfixes](https://plone.org/security/hotfixes/) page in the configuration control panel.

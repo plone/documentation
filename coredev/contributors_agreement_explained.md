@@ -8,8 +8,7 @@ myst:
 ---
 
 ```{todo}
-All this content should be audited against the plone.org site, probably removed, and replaced with a link to the authorative content on plone.org.
-Duplicating content is a maintenance burden.
+All this can go, it's redundant
 ```
 
 # Contributor's Agreement for Plone explained
@@ -18,8 +17,7 @@ Prospective contributors to the Plone code base are required to sign a contribut
 
 This document explains the purposes of this, along with questions and answers about what this means.
 
-The Plone Contributor's Agreement can be found at https://plone.org/foundation/contributors-agreement.
-
+The Plone Contributor's Agreement can be found at <https://plone.org/foundation/contributors-agreement>.
 
 ## About the Plone Contributor Agreement
 
@@ -28,10 +26,9 @@ Prior to the Foundation, the intellectual property of Plone was jointly held by 
 
 The community members who formed the Foundation felt that having the Foundation hold these rights provides several benefits:
 
-1.  **Minimizing confusion / maximizing business compatibility** -- Organizations considering adopting Plone have a simple answer for "Who owns this?", rather than a more complicated answer that might scare away the legally-cautious.
-2.  **Trademark protection** -- By having the Foundation hold the trademarks and rights to the Plone branding assets, it can effectively protect these from unfair use.
-3.  **Guarantee of future Open Source versions** -- The Foundation's contributor agreement ensures that there will **always** be an OSI-approved version of Plone.
-
+1. **Minimizing confusion / maximizing business compatibility** -- Organizations considering adopting Plone have a simple answer for "Who owns this?", rather than a more complicated answer that might scare away the legally-cautious.
+2. **Trademark protection** -- By having the Foundation hold the trademarks and rights to the Plone branding assets, it can effectively protect these from unfair use.
+3. **Guarantee of future Open Source versions** -- The Foundation's contributor agreement ensures that there will **always** be an OSI-approved version of Plone.
 
 ## Questions and answers
 
@@ -95,7 +92,7 @@ How much would a non-GPL version of Plone cost?
 > Despite this, though, many large and excellent contributions—such as Archetypes—have been made, and the Foundation hopes that companies will continue to do so.
 > In any event, a company that purchases a non-GPL license (should such ever become available) is contributing financial resources to our community, which can be used to further develop, market, and protect the GPL version of Plone.
 
-- https://plone.org/foundation/contributors-agreement/agreement.pdf
-- https://github.com/collective
-- https://github.com/plone
+- <https://plone.org/foundation/contributors-agreement/agreement.pdf>
+- <https://github.com/collective>
+- <https://github.com/plone>
 - [Policy for Contributor Agreements and patches](https://plone.org/foundation/materials/foundation-resolutions/patch-policy-052011)

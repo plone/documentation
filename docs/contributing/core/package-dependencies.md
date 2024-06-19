@@ -7,19 +7,15 @@ myst:
     "keywords": "Architecture, packages, dependecies, Plone"
 ---
 
-```{todo}
-Needs grammar/style check, and re-do the ASCII art as Mermaid diagram for added clarity and visuals
-```
-
 # Architecture: packages and dependecies
 
 This chapter describes the architecture of Plone's packages and dependencies.
 
 ## Motivation
 
-In the past, lots of indirections were introduced in Plone's packages and dependecies.
-Our goal in the long run is to untangle them and get a direct dependency graph.
-This document shows the current state as an orientation.
+Plone has over the years developed many indirections in its packages and dependencies.
+The goal in the long run is to untangle them and get a simple dependency graph.
+This document shows the current state, as orientation.
 
 ## Overview
 
@@ -30,81 +26,74 @@ There are multiple level of dependencies:
 - ZCML level (includes)
 - testing (need for layers, such as functional testing)
 
-We do not have any circular dependencies at the package level anymore.
-This was solved already.
+At some point there were circular dependencies at the package level.
+This was solved.
 
-Nevertheless we have indirection on all other levels.
+Nevertheless there is indirection on all other levels.
 Since Plone consists of a lot of packages, it is complex to untangle those.
 
 ## Mental model
 
-A base mental model for how Plone is organized in Plone 6 since alpha 4 is shown in the following diagram:
+A base mental model for how Plone is organized in Plone 6 is shown in the following diagram:
+
+```{mermaid}
+block-beta
+    columns 1
+
+    Plone["Plone <br/>the integraton of both distributions in one release"]
+    space
+    Distributions
+    block:dist
+        plone.volto
+        plone.classic
+    end
+    space
+    block:core
+        coreaddons["Core addons"]
+        coreapi["Core APIs"]
+    end
+    space
+    cmfplone["Products.CMFPlone"]
+
+    space:2
+
+    block:layer
+        ploneapp["Most of plone.app.* namespace"]
+        otherlay["Various other packages"]
+    end
+
+space
+
+    plonebase["plone.base"]
+    space
+    foundations["The Foundations"]
+    space:3
+        block:foundationcomponents
+           ploneworld["Plone world"]
+           zopeeco["Zope ecosystem"]
+           zopecore["Zope core"]
+           libraries["Libraries"]
+    end
+    Plone --> Distributions
+    dist --> core
+    cmfplone --> layer
+    core --> cmfplone
+    layer --> plonebase
+    plonebase --> foundations
+
+    style cmfplone fill:#ff0
+    style plonebase fill:#ff0
 
 ```
-┌────────────────────────────┐
-│ "Plone"                    |
-| The Integration of both    |
-| distributions in one       |
-| Release                    |
-├────────────────────────────┤
-| Distributions:             |
-| - plone.volto              |
-| - plone.classicui          |
-├────────────────────────────┤
-│ Core-Addons                │
-│ - plone.distribution       │
-│ - plone.app.exportimport   │
-│ - plone.app.discussion     │
-│ - plone.app.multilingual   │
-│ - plone.app.caching        │
-│ - plone.app.iterate        │
-│ - plone.app.update         │
-│                            │
-├────────────────────────────┤
-│ Core-APIs                  │
-│ - plone.restapi            │
-│ - plone.api                │
-├────────────────────────────┤
-│                            │
-│     Products.CMFPlone      │
-│                            │
-├────────────────────────────┤
-│                            │
-│ The space between (core )  │
-│                            │
-│ - most of plone.app.*      │
-│ - but also some other      │
-│                            │
-├────────────────────────────┤
-│                            │
-│         plone.base         │
-│                            │
-├────────────────────────────┤
-│                            │
-│ The Foundations            │
-│                            │
-│ - Zope                     │
-│ - CMFCore                  │
-│ - PAS/PlonePAS             │
-│ - plone.registry           │
-│ - plone.dexterity          │
-│ - plone.behavior           │
-│ - plone.rest               │
-│ - ....                     │
-│                            │
-└────────────────────────────┘
-```
 
-As a rough model we have two packages as dividing lines:
+As a rough model there are two packages as dividing lines:
 
 1. `Products.CMFPlone`
 2. `plone.base`
 
 ## Packages in detail
 
-If we look deeper into those, we have more sub-dividers, but first group all into the three groups:
-
-Then, based on the 6.0.0.a4 release, these are the packages:
+Looking deeper into those, there are more sub-dividers, but first group all into the three groups:
 
 ### Above `Products.CMFPlone`
 

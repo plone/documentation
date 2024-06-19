@@ -6,21 +6,18 @@ myst:
     "property=og:title": "Writing documentation of Plone"
     "keywords": "documentation, Plone"
 ---
-```{todo}
-shorten & update
-```
 
 # Writing documentation
 
-For general guidance for contributing documentation, see {doc}`contributing/index`.
+For general guidance for contributing documentation, see {doc}`/contributing/documentation/index`.
 
-For documentation authors, see {doc}`contributing/authors`.
+For documentation authors, see {doc}`/contributing/documentation/authors`.
 
 ## Documentation of Plone
 
 The comprehensive resource for Plone documentation is <https://6.docs.plone.org/>.
 The documentation repository is on [GitHub](https://github.com/plone/documentation).
-Information for how to contribute to documentation can be found at {doc}`contributing/index`.
+Information for how to contribute to documentation can be found at {doc}`/contributing/documentation/index`.
 
 ## Documenting a package
 
@@ -47,7 +44,7 @@ The manual goes into further depth for people who want to know all about how to 
 It includes topics like:
 
 - What are its features
-- How to use them (in English—not doctests!)
+- How to use them (in English — not doctests!)
 - Information about architecture
 - Common gotchas
 
@@ -63,7 +60,7 @@ In this case, it's simplest to include it in an extended `README.md`.
 Some excellent examples of a single-page README are <https://pypi.org/project/plone.outputfilters/> and <https://github.com/plone/plone.app.caching>.
 
 If your project is moderately complex, you may want to set up your documentation with multiple pages.
-The preferred way to do this is to add Sphinx to your project, and host your docs on readthedocs.org, so that it rebuilds the documentation whenever you push to GitHub.
+The preferred way to do this is to add Sphinx to your project, and host your docs on [readthedocs.org](https://readthedocs.org), so that it rebuilds the documentation whenever you push to GitHub.
 If you do this, your `README.md` must link off site to the documentation.
 
 ### Reference or API documentation
@@ -75,30 +72,7 @@ If the codebase is written with docstrings, API documentation can be automatical
 
 ### Changes or history
 
-```{todo}
-Update for towncrier.
-Probably purge all this content.
-```
-
-The changelog is a record of all the changes made to the package and who made them, with the most recent changes at the top.
-This is maintained separately from the git commit history to give a chance for more user-friendly messages and to and record when releases were made.
-
-A changelog looks something like:
-
-```text
-Changelog
-=========
-
-1.0 (2012-03-25)
-----------------
-
-* Documented changelogs.
-  [davisagli]
-```
-
-See <https://raw.github.com/plone/plone.app.caching/master/CHANGES.rst> for a full example.
-
-If a change was related to a bug in the issue tracker, the changelog entry should include a link to that issue.
+Best practice is to set up [towncrier](https://pypi.org/project/towncrier/) so your package will have a clear and structured history of changes.
 
 ### Licenses
 

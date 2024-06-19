@@ -23,4 +23,5 @@ sphinxcontrib-qthelp==1.0.3  # https://github.com/plone/documentation/issues/160
 sphinxcontrib-serializinghtml==1.1.5  # https://github.com/plone/documentation/issues/1604
 sphinxcontrib-video
 sphinxext-opengraph
+sphinxcontrib.mermaid==0.9.2
 vale==2.30.0

@@ -7,11 +7,14 @@ myst:
     "keywords": "Developing, Plone, Contributing"
 ---
 
+```{todo}
+Most of this can go
+```
+
 # Development in Plone
 
 This part describes the process of development in Plone.
 It is primarily a technical resource for setting up your development environment, fixing bugs, and writing Plone Improvement Proposals (PLIPs).
-
 
 ## Plone Contributor Agreement
 
@@ -19,7 +22,6 @@ You must sign the [Plone Contributor Agreement](https://plone.org/foundation/con
 
 We can **NOT** accept pull requests from you until you have signed and returned the Contributor Agreement, and been approved.
 Please don't put the code reviewers at risk by ignoring this requirement.
-
 
 ## Contents
 
@@ -37,7 +39,6 @@ release
 git
 package-dependencies
 ```
-
 
 ## Additional material
 
@@ -60,4 +61,4 @@ The style guides are ancient and need to be overhauled.
 Documenation's style is guided by Vale and the Microsoft Style Guide.
 See [Contributing to Documentation](https://6.docs.plone.org/contributing/index.html).
 
-Our coding style guides are located at the [Plone Style Guide](https://5.docs.plone.org/develop/styleguide/index.html section.
+Our coding style guides are located at the [Plone Style Guide](<https://5.docs.plone.org/develop/styleguide/index.html> section.

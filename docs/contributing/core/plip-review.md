@@ -7,10 +7,6 @@ myst:
     "keywords": "PLIP, review, Plone Improvement Proposal, Plone"
 ---
 
-```{todo}
-Combine with PLIP page, remove obsolete technologies, go over language
-```
-
 # PLIP review
 
 A Plone Improvement Proposal (PLIP) is a formal process to propose a change to improve Plone.
@@ -19,17 +15,18 @@ A Plone Improvement Proposal (PLIP) is a formal process to propose a change to i
 
 A good PLIP review takes about four hours.
 Please plan accordingly.
-When you are done, if you have access to core, commit the review to the `plips` folder, and reference the PLIP in your commit message.
+
+When you are done, if you have access to core, commit the review to the `plips` folder of [buildout.coredev](https://github.com/plone/buildout.coredev), and reference the PLIP in your commit message.
 If you do not have access, attach your review to the PLIP ticket itself.
 
 ## Setting up the environment
 
-Follow the instructions in {doc}`getting-started-with-development`.
+Follow the instructions in {doc}`index`.
 You will need to checkout the branch to which the PLIP is assigned.
 Instead of running the buildout with the default buildout file, you will run the configuration specific to that PLIP:
 
 ```shell
-./bin/buildout -c plips/plipXXXX.cfg
+./bin/buildout -c plips/plip-XXXX.cfg
 ```
 
 ## Functionality review
@@ -46,12 +43,13 @@ This section describes the topics that may be addressed in a PLIP review, depend
     Are they properly internationalized?
 - Are there any performance considerations?
     Has the implementer addressed them, if so?
+- For changes in the UI, are they accessible for people using assisted technologies?
 
 ### Bugs
 
 - Are there any bugs?
     Nothing is too big nor small.
-- Do fields handle wacky data?
+- Do fields handle wacky, incomplete or harmful data?
     How about strings in date fields, or nulls in required?
 - Is validation up to snuff and sensical?
     Is it too restrictive or not restrictive enough?
@@ -86,20 +84,14 @@ The PLIP will not be merged until all blockers and critical bugs are fixed.
 
 - Is this code maintainable?
 - Is the code properly documented?
-- Does the code adhere to PEP8 standards (more or less)?
+- Does the code adhere to Plone best practices for formatting?
 - Are they importing deprecated modules?
 
 #### JavaScript
 
-- Does the JavaScript meet our set of JavaScript standards?
-    See our section about [JavaScript](https://5.docs.plone.org/develop/addons/javascript/index.html) and the [JavaScript Style Guide](https://5.docs.plone.org/develop/styleguide/javascript.html).
+- Does the JavaScript meet Plone's set of JavaScript standards?
 - Does the JavaScript work in all currently supported browsers?
     Is it performant?
-
-```{todo}
-Update links from Plone 5 Documentation to Plone 6 Documentation, when they exist.
-See https://github.com/plone/documentation/issues/1330
-```
 
 #### ME/TAL
 
