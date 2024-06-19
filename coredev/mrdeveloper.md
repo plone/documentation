@@ -14,7 +14,7 @@ Review, but keep
 # `mr.developer`
 
 This buildout uses `mr.developer` to manage package development.
-See <https://pypi.org/project/mr.developer/> for more information, or run `bin/develop help` for a list of available commands.
+See https://pypi.org/project/mr.developer/ for more information, or run `bin/develop help` for a list of available commands.
 
 The most common workflow to get all the latest updates is:
 

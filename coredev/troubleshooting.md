@@ -15,10 +15,12 @@ Needs review. In general, a 'troubleshooting' page is nice, but this looks outda
 
 This chapter describes how to troubleshoot development issues in Plone.
 
+
 ## Buildout issues
 
 Buildout can be frustrating for those unfamiliar with parsing through autistic robot language.
 These errors are almost always a quick fix, and a little bit of understanding goes a long way.
+
 
 ### Errors running `bootstrap.py`
 
@@ -61,6 +63,7 @@ If you have several Python installs, and want to switch which Python is tied to 
 You may get the same error above again, but now that you know how to fix it, you can spend that time drinking beer instead of smashing your keyboard.
 
 Hooray!
+
 
 ### When `mr.developer` is unhappy
 
@@ -107,6 +110,7 @@ allow-hosts += sphinx.pocoo.org
 
 Again, this is only necessary if the package wasn't found in the end.
 
+
 ### `mr.developer` path errors
 
 ```console
@@ -121,11 +125,13 @@ To fix, do:
 ln -s plips/.mr.developer.cfg
 ```
 
+
 ## Other random issues
 
 ```{TODO}
 These need to be revalidated
 ```
+
 
 ### Dirty packages
 
@@ -133,12 +139,14 @@ These need to be revalidated
 ERROR: Can't update package 'Some package', because it's dirty.
 ```
 
+
 #### Fix
 
 `mr.developer` is complaining because a file has been changed or added, but not committed.
 
 Use `bin/develop update --force`.
 Adding `*.pyc *~.nib *.egg-info .installed.cfg *.pt.py *.cpt.py *.zpt.py *.html.py *.egg` to your subversion configuration's `global-ignores` has been suggested as a more permanent solution.
+
 
 ### No module named zope 2
 
@@ -149,6 +157,7 @@ ImportError: No module named Zope2" when building using a PLIP cfg file.
 Appears to not actually be the case.
 Delete {file}`mkzopeinstance.py` from {file}`bin/`, and rerun buildout to correct this if you're finding it irksome.
 
+
 ### Can't open file '/Startup/run.py'
 
 Two possible fixes.
@@ -158,12 +167,14 @@ If you use Python 2.4 by mistake, use 2.6 instead.
 Or you may need to make sure you run `bin/buildout …` after `bin/develop …`.
 Try removing {file}`parts/*`, {file}`bin/*`, {file}`.installed.cfg`, then re-bootstrap and re-run buildout, develop, buildout.
 
+
 ### Missing PIL
 
 {file}`pil.cfg` is included within this buildout to aid in PIL installation.
 Run {command}`bin/buildout -c pil.cfg` to install.
 This method does not work on Windows.
 We're unable to run it by default.
+
 
 ### Modified egg issues
 
