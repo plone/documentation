@@ -4,7 +4,7 @@ myst:
     "description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
     "property=og:description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
     "property=og:title": "Administrators Guide"
-    "keywords": "Plone, Documentation, automated deployments, hosting, automated testing, importing external packages"
+    "keywords": "Plone, Documentation, automated deployments, hosting, automated testing, importing external packages, preview, build, pull request"
 ---
 
 (administrators-guide-label)=
@@ -84,49 +84,118 @@ To make it easier for other contributors to work with your project, update the f
 Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6.0`](https://github.com/plone/documentation/compare).
 
 
-## Add a project to Netlify
+## Pull request preview builds
 
-To add a new site to Netlify to preview built documentation or storybooks, you need to add a new site to Netlify.
+To preview pull request builds of documentation or Storybooks on Read the Docs, you need to configure your project's repository and import it into Read the Docs.
+You also need an account on Read the Docs and have write access to the repository.
 
-1.  Visit [Team Overview](https://app.netlify.com/teams/plone/overview).
-1.  Click {guilabel}`Add a new site` and select {guilabel}`Import an existing project`.
-1.  Click {guilabel}`Deploy with GitHub`.
-1.  Select {guilabel}`plone` for the GitHub organization.
-1.  Click {guilabel}`Configure Netlify on GitHub`.
-1.  Select the organization to where you want to install Netlify.
-1.  Click {guilabel}`Select repositories` and select the repository that you want to add.
-1.  Click {guilabel}`Update access`.
-1.  Netlify sends an email to members of the email group `admins` at `plone.org`, who need to review and approve the request.
-    However the email doesn't specify the repository, and admins will not know what to do.
-    You must send email to that group, including in your request the organization and repository, such as `plone/volto`.
-1.  The admin must login to GitHub as an organization owner, then navigate to the requested repository's {guilabel}`Settings`. [What else Admin person?]
-1.  The admin replies to the requestor, letting them know the request was approved.
 
-From here you need to update your repository to work with Netlify.
-For an example, see the following files.
+### Configuration files
 
--   [Volto `Makefile`](https://github.com/plone/volto/blob/main/Makefile), specifically the `netlify` section.
-    This will become the command used to build docs on Netlify.
--   [Volto `requirements-docs.txt`](https://github.com/plone/volto/blob/main/requirements-docs.txt) specifies the requirements to build the docs.
--   [Volto `netlify.toml`](https://github.com/plone/volto/blob/main/netlify.toml) specifies when to build the docs, specifically only when there are changes to documentation files.
+The following are example files that you can use to configure your project for pull request previews on Read the Docs.
 
-Finally you need to configure your site in Netlify.
-You may have done some of these steps earlier, but you might need to refine them.
-The critical pieces are the following.
+-   [Plone Sphinx Theme `Makefile`](https://github.com/plone/plone-sphinx-theme/blob/main/Makefile), specifically the `rtd-pr-preview` section.
+    This is the command to use to build documentation previews on Read the Docs.
+-   [Plone Sphinx Theme `requirements-initial.txt`](https://github.com/plone/plone-sphinx-theme/blob/main/requirements-initial.txt) specifies the initial Python packaging tool requirements to set up a virtual environment.
+-   [Plone Sphinx Theme `requirements-docs.txt`](https://github.com/plone/plone-sphinx-theme/blob/main/requirements-docs.txt) specifies the requirements to use Plone Sphinx Theme and build the docs.
+-   [Plone Sphinx Theme `conf.py`](https://github.com/plone/plone-sphinx-theme/blob/main/docs/conf.py) the Sphinx configuration file to build the docs.
+-   [Plone Sphinx Theme `.readthedocs.yaml`](https://github.com/plone/plone-sphinx-theme/blob/main/.readthedocs.yaml) specifies the configuration and command to build the docs.
+-   [Plone Sphinx Theme `.github/workflows/rtd-pr-preview.yml`](https://github.com/plone/plone-sphinx-theme/blob/main/.github/workflows/rtd-pr-preview.yml) specifies when to build the docs, specifically only when a pull request is opened against the `main` branch and there are changes to documentation files.
+    You might need to adjust the branch name, paths, and files to check for changes.
 
-1.  From the dashboard, select the site to edit it.
-1.  Click {guilabel}`Site configuration`.
-1.  One time only, under {guilabel}`General > Site details` click {guilabel}`Change site name`.
-    A modal dialog appears.
-    Enter the site name using the pattern `ORGANIZATION_NAME-REPOSITORY_NAME`.
-    For example, `plone-components`.
-    Click {guilabel}`Save`.
-1.  Under {guilabel}`Build & deploy > Continuous deployment`, scroll to {guilabel}`Build settings`, and click {guilabel}`Configure`, then enter the following values.
-    -   {guilabel}`Base directory`: `/`
-    -   {guilabel}`Package directory`: `/`
-    -   {guilabel}`Build command`: `make netlify`.
-        This is the command you would define in your `Makefile`.
-    -   {guilabel}`Publish directory`: `_build/html`.
-        This is where the `make` command will output files.
-    -   Finally click {guilabel}`Save`.
-1.  Under {guilabel}`Build & deploy > Continuous deployment`, scroll to {guilabel}`Branches and deploy contexts`, and click {guilabel}`Configure`, then enter appropriate values.
+
+### Import your project
+
+After logging in to your Read the Docs account, you can import your project.
+
+1.  Click {guilabel}`Add project`.
+1.  For {guilabel}`Repository name`, enter the GitHub organization, a forward slash, and the repository to import, for example, `plone/volto`.
+1.  Click {guilabel}`Continue`.
+1.  In the {guilabel}`Add project` screen, you can configure basic project settings, including its {guilabel}`Name`, {guilabel}`Repository URL`, {guilabel}`Default branch`, and {guilabel}`Language`.
+    The defaults are usually accurate.
+1.  Click {guilabel}`Next`.
+1.  A sample `.readthedocs.yaml` file is suggested, if you have not already added one.
+1.  Click {guilabel}`Finish`.
+    Read the Docs will redirect you to the project details, and start building the docs.
+
+
+### Search engine indexing
+
+Many Plone projects currently self-host their official documentation at {doc}`/index`.
+These projects get indexed by search engines.
+
+For pull request previews, unsupported branches or versions, or other situations, you most likely do not want search engines to index your documentation.
+Your options include the following.
+
+-   Deactivate your build
+-   Hide your build
+-   Create a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing
+
+For the last option, you can configure Sphinx to copy the {file}`robots.txt` file.
+However, if you want to have two versions of a {file}`robots.txt` file—say one that allows indexing of your official documentation and another that discourages indexing—you can configure your automation to copy it into place with a command such as the following.
+
+```shell
+cp source-path/block-robots.txt docs-root-path/robots.txt
+```
+
+```{seealso}
+-   [Automation rules](https://docs.readthedocs.io/en/stable/automation-rules.html)
+-   [Versions](https://docs.readthedocs.io/en/stable/versions.html)
+-   [Managing versions automatically](https://docs.readthedocs.io/en/stable/guides/automation-rules.html)
+-   [`robots.txt` support](https://docs.readthedocs.io/en/stable/reference/robots.html)
+```
+
+
+### Cancel builds programmatically
+
+You might want to cancel a build programmatically when certain conditions are met.
+You can do this through your {file}`.readthedocs.yaml` file.
+Read the Docs covers a few scenarios in its documentation, [Cancel build based on a condition](https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition).
+
+
+#### Build only on changes
+
+When there are no changes to documentation, it is not necessary to build it.
+You can save time and energy by programmatically building documentation only when it changes.
+
+In your {file}`.readthedocs.yaml` file, you could use the following example.
+
+```yaml
+version: 2
+build:
+  os: "ubuntu-22.04"
+  tools:
+    python: "3.12"
+  jobs:
+    post_checkout:
+      # Cancel building pull requests when there aren't changes in the docs directory or YAML file.
+      # You can add any other files or directories that you'd like here as well,
+      # like your docs requirements file, or other files that will change your docs build.
+      #
+      # If there are no changes (git diff exits with 0) we force the command to return with 183.
+      # This is a special exit code on Read the Docs that will cancel the build immediately.
+      - |
+        if [ "$READTHEDOCS_VERSION_TYPE" = "external" ] && git diff --quiet origin/main -- docs/ .readthedocs.yaml requirements-initial.txt requirements.txt;
+        then
+          exit 183;
+        fi
+```
+
+
+#### Cancel builds on a branch
+
+If you have pull request preview builds enabled, any pull request to any branch will trigger a build.
+If you do not want to build documentation on a specific branch, you can cancel a build programmatically through your {file}`.readthedocs.yaml` file.
+
+```yaml
+version: 2
+build:
+  os: "ubuntu-22.04"
+  tools:
+    python: "3.12"
+  jobs:
+    post_checkout:
+      # Cancel the Read the Docs build
+      # https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition
+      - exit 183;
+```
