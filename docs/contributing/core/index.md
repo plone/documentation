@@ -139,7 +139,7 @@ Next create a new branch on which you want to work from the current branch, trac
 It's a good idea to use a branch name that includes the issue number and is descriptive of what it resolves.
 
 ```shell
-git switch -c 123-my-branch-name -t origin/6.1
+git switch -c 123-thing-i-fixed -t origin/6.1
 ```
 
 Now you can edit your code without affecting the original branch.
