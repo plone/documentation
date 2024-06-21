@@ -90,12 +90,6 @@ Once that's done, you can start an instance of Plone with the following command.
 ./bin/instance fg
 ```
 
-Alternatively, you can start Plone as a {term}`WSGI` service with the following command.
-
-```shell
-./bin/wsgi
-```
-
 To visit your Plone instance, you can open the link http://0.0.0.0:8080 in a web browser.
 
 Click {guilabel}`View your Plone site` to do exactly that.
