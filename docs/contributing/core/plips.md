@@ -15,9 +15,11 @@ It is a change to a Plone package that would affect everyone.
 PLIPs go through a different process than bug fixes because of their broad reach.
 The Plone Framework Team reviews all PLIPs to make sure that it's in the best interest of the broader community, and that it's of high quality.
 
+
 ## Frequently asked questions about PLIPs
 
 This section provides detailed answers to common questions about PLIPs.
+
 
 ### PLIP or bugfix?
 
@@ -26,6 +28,7 @@ When in doubt, submit it as a PLIP.
 The Framework Team will reclassify it if your proposal falls below the threshold.
 If the change you are proposing is not in the scope of a PLIP, a GitHub pull request or issue is the right format.
 The key point here is that each change must be documented, allowing it to be tracked and understood.
+
 
 ### Who can submit PLIPs?
 
@@ -51,10 +54,10 @@ They are there to help you through completion, answer questions and provide guid
 
 A champion fulfills the following tasks:
 
-- Answer any questions the PLIP implementer has, technical or otherwise.
-- Encourage the PLIP author by giving feedback and encouragement.
-- Keep the implementer aware of timelines, and push to get things done on time.
-- Assist with finding additional help when needed to complete the implementation in a timely matter.
+-   Answer any questions the PLIP implementor has, technical or otherwise.
+-   Encourage the PLIP author by constantly giving feedback and encouragement.
+-   Keep the implementer aware of timelines, and push to get things done on time.
+-   Assist with finding additional help when needed to complete the implementation in a timely matter.
 
 Keep in mind that champions are volunteers as well, and have other tasks in life.
 That means you will have to play an active role in asking for help or guidance.
@@ -72,11 +75,13 @@ Then, follow the instructions for {doc}`reviewing a PLIP <plip-review>`.
 
 Thank you in advance!
 
+
 ### When can I submit a PLIP?
 
 Today, tomorrow, any time!
 
 After the PLIP is accepted, the Framework Team will try to judge complexity and time to completion, and assign it to a milestone.
+
 
 ### When is the PLIP due?
 
@@ -87,26 +92,29 @@ Sometimes life gets in the way, and a PLIP may have to be re-assigned to the fol
 
 In general, PLIPs shouldn't take more than a year, otherwise they should be closed. A new PLIP can follow up if there is more capacity to see it through.
 
+
 ### What happens if your PLIP is not accepted?
 
 If a PLIP isn't accepted in core, it doesn't mean it's a bad idea.
 It is often the case that there are competing implementations, and the community wants to see it vetted as an add-on before "blessing" a particular implementation.
 
+
 ## Process Overview
 
-1. Submit a PLIP at any time.
-2. PLIP is approved for inclusion into core for a given release.
-3. Developer implements PLIP (code, tests, documentation).
-4. PLIP is submitted for review by developer.
-5. Framework Team reviews the PLIP and gives feedback.
-6. Developer addresses concerns in feedback and re-submits the PLIP, if necessary.
-7. This may go back and forth a few times, until both the Framework Team and developer are happy with the result.
-8. PLIP is approved for merge.
+1.  Submit a PLIP at any time.
+2.  PLIP is approved for inclusion into core for a given release.
+3.  Developer implements PLIP (code, tests, documentation).
+4.  PLIP is submitted for review by developer.
+5.  Framework Team reviews the PLIP and gives feedback.
+6.  Developer addresses concerns in feedback and re-submits the PLIP, if necessary.
+7.  This may go back and forth a few times, until both the Framework Team and developer are happy with the result.
+8.  PLIP is approved for merge.
     In rare circumstances, a PLIP will be rejected.
     This is usually the result of the developer not responding to feedback or dropping out of the process.
     Hang in there!
-9. After all other PLIPs are merged, a release is cut.
+9.  After all other PLIPs are merged, a release is cut.
     Standby for bugs!
+
 
 (how-to-submit-a-plip)=
 
@@ -137,14 +145,15 @@ Others may be able to point out risks or even offer up better or existing soluti
 
 Please note a few things:
 
-- It is very rare that the "Risks" section will be empty or none.
-- If you find this is the case, and your PLIP is anything more than trivial, maybe some more vetting should be done.
-- The seconder field is REQUIRED.
+-   It is very rare that the "Risks" section will be empty or none.
+-   If you find this is the case, and your PLIP is anything more than trivial, maybe some more vetting should be done.
+-   The seconder field is REQUIRED.
 
 The PLIP will be sent back to you if it is not filled in.
 Currently, this is just someone else who thinks your PLIP is a good idea, a +1.
 
 In the near future, the seconder should either a coding partner, or someone who is willing and able to finish the PLIP should something happen to the implementer.
+
 
 ### Evaluating PLIPs
 
@@ -158,18 +167,20 @@ Please keep your eyes and inbox open for changes.
 
 These are the criteria by which the framework team will review your work:
 
-- What is the size and status of the work needed to be done?
-- Is it already an add-on and well established?
-- Is this idea well baked and expressed clearly?
-- Does the work proposed belong in Plone now, or in the future?
-- Is this PLIP more appropriate as a qualified add-on?
-- Is this PLIP too risky?
+-   What is size and status of the work needed to be done?
+-   Is it already an add-on and well established?
+-   Is this idea well baked and expressed clearly?
+-   Does the work proposed belong in Plone now, or in the future?
+-   Is this PLIP more appropriate as a qualified add-on?
+-   Is this PLIP too risky?
 
 See the {doc}`plip-review` page for more information.
+
 
 ## Implementing your PLIP
 
 You can start the development at any time, but if you are going to modify Plone itself, it is a good idea to wait to see if your idea is approved.
+
 
 ### General Rules
 
@@ -188,6 +199,7 @@ You can start the development at any time, but if you are going to modify Plone 
 Update links from Plone 5 to Plone 6 Documentation, once content is migrated.
 See https://github.com/plone/documentation/issues/1330 and other issues.
 ```
+
 
 ### Creating a new PLIP branch
 
@@ -224,6 +236,7 @@ zcml +=
 Use the same naming convention when you branch existing packages.
 You should always branch packages when working on PLIPs.
 
+
 ### Working on a PLIP
 
 To work on a PLIP, you bootstrap buildout, and then invoke buildout with your PLIP configuration:
@@ -249,6 +262,7 @@ installed = .installed.cfg
 [instance]
 var = ./var
 ```
+
 
 ### Finishing up
 
