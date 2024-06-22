@@ -9,9 +9,7 @@ myst:
 
 # Plone Improvement Proposals (PLIPs)
 
-A {term}`PLIP` is a Plone Improvement Proposal.
-
-It is a change to a Plone package that would affect everyone.
+A Plone Improvement Proposal, or {term}`PLIP`, is a change to a Plone package that would affect everyone.
 PLIPs go through a different process than bug fixes because of their broad reach.
 The Plone Framework Team reviews all PLIPs to make sure that it's in the best interest of the broader community, and that it's of high quality.
 
@@ -34,23 +32,25 @@ The key point here is that each change must be documented, allowing it to be tra
 
 Anyone who has signed a Plone Contributor Agreement can work on a PLIP.
 
-You do not have to be the most amazing coder in the world to submit a PLIP.
+```{todo}
+The FWT no longer participates in PLIPs.
+Recommend deletion of next two paragraphs.
+```
 The Framework Team is happy to help you at any point in the process.
-
-Submitting a PLIP can be a great learning process.
 
 When the PLIP is accepted, a Framework Team member will "champion" your PLIP and follow up to its completion.
 
-PLIPs are not just for code experts.
-If you have ideas on new interactions or UI your ideas are more than welcome.
-
-The community will help you pair up with implementers if needed.
 
 ### What is a PLIP champion?
 
+```{todo}
+This section is no longer in practice.
+Recommend deletion.
+```
+
 When you submit your PLIP and it is approved, a Framework Team member will take on the role of champion for that PLIP.
 
-They are there to help you through completion, answer questions and provide guidance.
+They are there to help you through completion, answer questions, and provide guidance.
 
 A champion fulfills the following tasks:
 
@@ -62,18 +62,14 @@ A champion fulfills the following tasks:
 Keep in mind that champions are volunteers as well, and have other tasks in life.
 That means you will have to play an active role in asking for help or guidance.
 
+
 ### Can I get involved in other ways?
 
 If you want to experience the process and how it works, help us review PLIPs as the implementations finish up.
-Ask one of the Framework Team members what PLIPs are available for review, or check the status of PLIPs at the [GitHub issues](https://github.com/plone/Products.CMFPlone/issues) page
-for [Products.CMFPlone](https://github.com/Plone/Products.CMFPlone)
-for [issues tagged with "03 type: feature (plip)"](https://github.com/plone/Products.CMFPlone/labels/03%20type%3A%20feature%20%28plip%29).
 
-Make sure to let the community know you intend to review the PLIP by communicating that to the [Framework Team](https://community.plone.org/c/development/framework-team).
+Check the status of PLIPs at https://github.com/search?q=path%3A%2Fplone+label%3A%2203+type%3A+feature+%28plip%29%22++&type=issues&ref=advsearch&state=open.
 
 Then, follow the instructions for {doc}`reviewing a PLIP <plip-review>`.
-
-Thank you in advance!
 
 
 ### When can I submit a PLIP?
