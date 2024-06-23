@@ -9,6 +9,13 @@ myst:
 
 # Plone Improvement Proposals (PLIPs)
 
+```{todo}
+This page needs extensive review.
+It is not clear whether the Framework Team still exists, and PLIPs are now spread over many repositories.
+
+See https://community.plone.org/t/plips-documentation/19609
+```
+
 A Plone Improvement Proposal, or {term}`PLIP`, is a change to a Plone package that would affect everyone who uses that package.
 PLIPs go through a formal process compared to bug fixes because of their broad reach.
 The Plone Framework Team reviews all PLIPs to make sure that it's in the best interest of the broader community, and that it's of high quality.
@@ -17,14 +24,14 @@ The Plone Framework Team reviews all PLIPs to make sure that it's in the best in
 ## Process overview
 
 1.  Developer submits a PLIP.
-2.  [Some indeterminate team?] approves the PLIP for inclusion into Plone core for a given release.
+2.  [SOME_INDETERMINATE_TEAM] approves the PLIP for inclusion into Plone core for a given release.
 3.  Developer implements the PLIP, including code, tests, and documentation.
-4.  Developer creates a pull request of the PLIP for review by the team.
-5.  [Some indeterminate team?] reviews the PLIP and gives feedback.
+4.  Developer creates a pull request of the PLIP for review by the [SOME_INDETERMINATE_TEAM].
+5.  [SOME_INDETERMINATE_TEAM] reviews the PLIP and gives feedback.
 6.  Developer addresses concerns from the feedback, and resubmits the PLIP, if necessary.
-7.  Repeat the two previous steps, until both the [Some indeterminate team?] and developer are happy with the result.
-8.  [Somebody] approves the PLIP for merge.
-9.  [Somebody] merges the PLIP.
+7.  Repeat the two previous steps, until both the [SOME_INDETERMINATE_TEAM] and developer are happy with the result.
+8.  [SOMEBODY] approves the PLIP for merge.
+9.  [SOMEBODY] merges the PLIP.
 
 In rare circumstances, a PLIP may be rejected.
 This is usually the result of the developer not responding to feedback or dropping out of the process.
@@ -34,88 +41,65 @@ This is usually the result of the developer not responding to feedback or droppi
 
 ## Submit a PLIP
 
-Whether you want to update the default theme, or rip out a piece of architecture, major changes should go through the PLIP process.
-If you need help at any point in this process, please contact a member of the Framework Team personally or ask for help at the [Framework Team Space](https://community.plone.org/c/development/framework-team/12).
+Prepare the following information for your PLIP.
 
-A PLIP is a [GitHub issue](https://github.com/plone/Products.CMFPlone/issues) on [`Products.CMFPlone`](https://github.com/Plone/Products.CMFPlone) with a special template and a specific tag.
+-   Title
+-   Proposer (you)
+-   Seconder (another person supporting your PLIP)
+-   Abstract (a comprehensive overview of the subject)
+-   Motivation (reason or motivation for creating this proposal)
+-   Assumptions (preconditions)
+-   Proposal & Implementation (detailed proposal with implementation details and–if needed—possible variants to be discussed)
+-   Deliverables (packages and documentation chapters involved, including any third party packages)
+-   Risks (what will break or affect existing installations of Plone after an upgrade, including the end user point of view, training efforts, and other audiences)
+-   Participants (list of persons and roles known)
 
-To get started, open a new issue.
-The issue will be prefilled with headings and comments for a bug or a PLIP.
-Remove the bug part.
-Fill in all applicable fields.
-After submitting, select the tag `03 type: feature (plip)` for the issues.
+Now that you are prepared, submit your PLIP.
 
-When writing a PLIP, be as specific and to-the-point as you can.
-Remember your audience.
-To get support for your proposal, people will have to be able to read it!
+1.  Visit the package's GitHub issue tracker, and Click {guilabel}`New issue`.
 
-A good PLIP is sufficiently clear for a knowledgeable Plone user to understand the proposed changes, and sufficiently detailed for the release manager and other developers to understand the full impact the proposal would have on the code base.
+    If you do not see the option to create a PLIP, then the repository has not been configured with the PLIP GitHub issue template, and you should instead visit the default Plone issue tracker for PLIPs, [`Products.CMFPlone`](https://github.com/plone/Products.CMFPlone/issues).
 
-You don't have to list every line of code that needs to be changed, but you should also give an indication that you have some idea of how the change can be feasibly implemented.
+2.  For the PLIP option, click {guilabel}`Get started`.
 
-After your PLIP is written, solicit feedback on your idea on the [Plone Community Forum](https://community.plone.org/).
-In this vetting process, you want to make sure that the change won't adversely affect other people on accident.
-Others may be able to point out risks or even offer up better or existing solutions.
+3.  Fill in the title and description.
+    Preserve the headings and comments.
+    The comments provide guidance for you to follow while composing your PLIP.
 
-Please note a few things:
-
--   It is very rare that the "Risks" section will be empty or none.
--   If you find this is the case, and your PLIP is anything more than trivial, maybe some more vetting should be done.
--   The seconder field is REQUIRED.
-
-The PLIP will be sent back to you if it is not filled in.
-Currently, this is just someone else who thinks your PLIP is a good idea, a +1.
-
-In the near future, the seconder should either a coding partner, or someone who is willing and able to finish the PLIP should something happen to the implementer.
+4.  When done, click {guilabel}`Submit new issue` to submit your PLIP.
+ 
+5.  If it does not automatically assign the label {guilabel}`03 type: feature (plip)`, then assign that label to the issue to make it easier to find.
 
 
-### Evaluating PLIPs
+## Get feedback
 
-After you submit your PLIP, the Framework Team will meet within a couple weeks, and let you know if the PLIP is accepted.
-If the PLIP is not accepted, please don't be discouraged!
+After you submit your PLIP, solicit feedback for your idea on the [Plone Community Forum](https://community.plone.org/).
 
-Most PLIPs first start as an add-on, if possible, to make sure it works in practice.
+You may revise your PLIP based on feedback.
 
-All communication with you occurs on the PLIP issue itself.
-Please keep your eyes and inbox open for changes.
-
-These are the criteria by which the framework team will review your work:
-
--   What is size and status of the work needed to be done?
--   Is it already an add-on and well established?
--   Is this idea well baked and expressed clearly?
--   Does the work proposed belong in Plone now, or in the future?
--   Is this PLIP more appropriate as a qualified add-on?
--   Is this PLIP too risky?
-
-See the {doc}`plip-review` page for more information.
+If you need help at any point in this process, please contact a member of the [SOME_INDETERMINATE_TEAM] personally or ask for help at the [Framework Team Space](https://community.plone.org/c/development/framework-team/12).
 
 
-## Implementing your PLIP
+## Implement your PLIP
 
-You can start the development at any time, but if you are going to modify Plone itself, it is a good idea to wait to see if your idea is approved.
-
-
-### General Rules
-
-- Any new packages must be in a branch in the `plone` namespace in GitHub.
-    You don't have to develop there, but it must be there when submitted.
-    Use branches off of the repositories under the Plone GitHub organization, see below.
-- Most importantly, the PLIP reviewers must be able run buildout and everything should "just work"™.
-- Any new code must:
-
-  - Be {doc}`properly documented <documentation>`.
-  - Have clear code.
-  - Follow current best practices in coding style. The [Plone Meta](https://github.com/plone/meta) project can help you set up your environment. For Volto, follow [this guide](https://6.docs.plone.org/volto/contributing/linting.html).
-  - [Be tested](https://5.docs.plone.org/develop/testing/index.html). For Volto, follow [this guide](https://6.docs.plone.org/volto/contributing/testing.html)
-
-```{todo}
-Update links from Plone 5 to Plone 6 Documentation, once content is migrated.
-See https://github.com/plone/documentation/issues/1330 and other issues.
-```
+You can start the development at any time, but if you intend to modify Plone core, it is a good idea to wait to see if your idea is approved.
 
 
-### Creating a new PLIP branch
+### General rules
+
+-   Any new packages must be in a branch in the `plone` namespace in GitHub.
+-   The PLIP reviewers must be able run buildout, and everything should "just work"™.
+-   New code must:
+    -   Be {doc}`properly documented <documentation>`. If it ain't documented, it's broken.
+    -   Have clear code.
+    -   Follow current best practices in coding style.
+        The [Plone Meta](https://github.com/plone/meta) project can help you set up your environment.
+        For Volto, follow {doc}`/volto/contributing/linting`.
+    -   [Be tested](https://5.docs.plone.org/develop/testing/index.html).
+        For Volto, follow {doc}`/volto/contributing/testing`.
+
+
+### Create a new PLIP branch
 
 Create a buildout configuration file for your PLIP in the `plips` folder of {file}`buildout.coredev`.
 
