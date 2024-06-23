@@ -122,6 +122,6 @@ These are:
 15. Create a release page on [plone.org](https://plone.org/download/releases)
 16. Wait for installers to be uploaded to Launchpad, with a link to the [plone.org](https://plone.org/download/releases) release page.
 17. Publish release page on [plone.org](https://plone.org/).
-18. Update plone.org homepage links to point to the new release.
+18. Update [plone.org](https://plone.org/) homepage links to point to the new release.
 19. Send out announcement to the plone-announce email distribution list.
 20. Ask the security team to update the [Hotfixes](https://plone.org/security/hotfixes/) page in the configuration control panel.
