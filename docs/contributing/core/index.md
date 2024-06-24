@@ -71,13 +71,25 @@ On macOS, Developer Tools providers clang for a C compiler.
 On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common option.
 
 
+
 ## Install Plone core for development
 
+The tool that installs Plone core is `buildout.coredev`.
+
+The current default and development branch of `buildout.coredev` is `6.1`
+Older versions are named according to their `major.minor` version.
+Its versions align with Plone's `major.minor` versions.
+
+Use a separate directory for each version of Plone to which you want to contribute.
+This will avoid switching between git branches, then re-running buildout, which can cause dependency conflicts between versions of Plone.
+
 To set up a Plone 6 development environment, change your working directory to wherever you place your projects, and clone https://github.com/plone/buildout.coredev.
+You can specify the branch that you want to check out with the `-b` option.
 
 ```shell
 cd [MY_PROJECTS]
-git clone https://github.com/plone/buildout.coredev
+# clone a specific major.minor version branch
+git clone -b 6.1 https://github.com/plone/buildout.coredev
 cd buildout.coredev
 ```
 
@@ -134,16 +146,13 @@ To login, the default credentials are the following.
 -   password: `admin`
 
 
-## Use the correct branch
+## Work with git
 
 ```{important}
 This section applies to members of the GitHub `plone/developers` team, who have write access to repositories under the Plone GitHub organization.
 
 Members of the `plone/contributors` team do not have write access, and instead must follow the process to set up their remote upstream and origin branches as described in {ref}`set-up-your-environment-label`.
 ```
-
-The current default and development branch of `buildout.coredev` is `6.1`.
-Older versions are named according to their `major.minor` version.
 
 Always begin by checking out the git branch on which you want to work.
 If you have not yet checked out a branch, then you need to track it with the `-t` option and specify the remote to track, usually called `origin`.
@@ -153,7 +162,7 @@ The following command will switch and track changes from the remote `origin` and
 git checkout -t origin/6.1
 ```
 
-If you check out a different branch, and want to return to the previous branch, you need to specify only the local branch.
+Now going forward, you need to specify only the local branch when you want to switch back to it from your development branch.
 
 ```shell
 git checkout 6.1
@@ -165,11 +174,7 @@ Next pull down and merge any recent changes from the remote tracked repository w
 git pull
 ```
 
-```{important}
-Make sure to rerun buildout for the current branch to get the correct versions of packages, otherwise you will get some weird behavior.
-```
-
-Next create a new branch on which you want to work from the current branch, tracking the upstream Plone repository, and check it out.
+Next create a new development branch on which you want to work from the current branch, tracking the upstream Plone repository, and check it out.
 It's a good idea to use a branch name that includes the issue number and is descriptive of what it resolves.
 
 ```shell
