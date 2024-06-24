@@ -268,6 +268,7 @@ If you can't afford this disruption, you can defer it to Jenkins.
 All changes require a change log entry.
 
 For packages that use [towncrier](https://pypi.org/project/towncrier/) to produce change logs, see {ref}`contributing-change-log-label`.
+A package that uses towncrier has a `news` directory at its repository or package root.
 
 For packages that don't use towncrier, edit either {file}`CHANGES.rst`, {file}`CHANGES.txt`, or {file}`HISTORY.txt` in each package you have modified, adding a summary of the change.
 New change log entries should be added at the top of {file}`CHANGES.rst`.
