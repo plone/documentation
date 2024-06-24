@@ -197,9 +197,10 @@ auto-checkout =
 ```
 
 When you make changes in your package, then rerun buildout with the following command, specifying your new buildout configuration file with the `-c` option.
+You can add the `-N` flag to save time by not checking PyPI to see if there are updates to packages that were already installed.
 
 ```shell
-./bin/buildout -c buildout.local.cfg
+./bin/buildout -c buildout.local.cfg -N
 ```
 
 ```{seealso}
