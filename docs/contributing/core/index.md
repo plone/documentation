@@ -237,13 +237,15 @@ If you change the expected behavior of a feature in a package, you should write 
 To run a test for the specific package that you modified, use the `-m` option followed by the package name, as shown in the following example.
 
 ```shell
-./bin/test -m plone.app.caching
+./bin/test -m plone.app.event
 ```
 
 If any test fails, do not commit and push the changes.
 Instead write a test that passes.
 
-After the package level tests pass with your change, you can run the full unit test suite to ensure other packages aren't affected by the change.
+After the package level tests pass with your change, you can {ref}`contributing-core-create-a-pull-request-label` and let CI run and ask Jenkins to run the full test suite.
+
+However, if CI or Jenkins report a test failure that you want to troubleshoot locally, you can run the full unit test suite to ensure other packages aren't affected by the change.
 It takes 5-10 minutes to run the full unit test suite.
 
 ```shell
@@ -283,6 +285,8 @@ The Plone release manager will check this file to see which packages you have up
 {doc}`release`
 ```
 
+
+(contributing-core-create-a-pull-request-label)=
 
 ## Create a pull request
 
