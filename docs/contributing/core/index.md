@@ -274,19 +274,6 @@ For packages that don't use towncrier, edit either {file}`CHANGES.rst`, {file}`C
 New change log entries should be added at the top of {file}`CHANGES.rst`.
 
 
-## Update `checkouts.cfg`
-
-If you didn't do so earlier, edit the file {file}`checkouts.cfg` at the root, and add your changed packages only to the `auto-checkout` list.
-Remove any packages that you previously added to this file, but did not change.
-Leave any pre-existing packages in the original list.
-
-The Plone release manager will check this file to see which packages you have updated to make a proper release.
-
-```{seealso}
-{doc}`release`
-```
-
-
 (contributing-core-create-a-pull-request-label)=
 
 ## Create a pull request
