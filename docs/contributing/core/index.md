@@ -145,9 +145,9 @@ Members of the `plone/contributors` team do not have write access, and instead m
 The current default and development branch of `buildout.coredev` is `6.1`.
 Older versions are named according to their `major.minor` version.
 
-Always begin by checking out the git branch on which you want to work, usually called `origin`.
-If you have not yet checked out a branch, then you need to track it with the `-t` option and specify the remote branch to track.
-The following command will switch and track changes from the remote branch `origin/6.1`.
+Always begin by checking out the git branch on which you want to work.
+If you have not yet checked out a branch, then you need to track it with the `-t` option and specify the remote to track, usually called `origin`.
+The following command will switch and track changes from the remote `origin` and its branch `6.1`.
 
 ```shell
 git checkout -t origin/6.1
