@@ -291,8 +291,6 @@ Plone has a continuous integration ({term}`CI`) setup and follows CI rules.
 When you push a change to a Plone package, there may be GitHub workflows that run automatically.
 The CI package [mr.roboto](https://github.com/plone/mr.roboto) will perform some checks and suggest that you run Jenkins after all other CI runs.
 
-For each Plone and Python version, Jenkins runs two jobs: one for the package itself (which will give you a fast feedback, within 10 minutes) and one on the full `coredev` build (which can take up to an hour, but makes sure no other packages are affected by your change).
-
 See {doc}`continuous-integration` for more information.
 
 
