@@ -174,6 +174,51 @@ Next pull down and merge any recent changes from the remote tracked repository w
 git pull
 ```
 
+
+## Edit packages
+
+First identify the names of the Plone packages you want to work on.
+If you do not know, you can ask in the [Plone Community Forum](https://community.plone.org/).
+Only a few packages are in {file}`src/` by default.
+
+Next create a new file {file}`buildout.local.cfg`, and add the names of packages that you want to develop under the `auto-checkout` list.
+
+```cfg
+[buildout]
+extends =
+  buildout.cfg
+
+auto-checkout =
+    # Add packages that you want to develop
+    plone.app.event
+    icalendar
+    # others
+    ...
+```
+
+When you make changes in your package, then rerun buildout with the following command, specifying your new buildout configuration file with the `-c` option.
+
+```shell
+./bin/buildout -c buildout.local.cfg
+```
+
+```{seealso}
+For tips on working with `mr.developer`, see {doc}`mrdeveloper`.
+```
+
+````{tip}
+To avoid conflicts with `buildout.coredev` files, you can configure git for your user.
+Either create or edit a file at {file}`~/.gitconfig`.
+Then add the following stanza to it.
+
+```cfg
+[core]
+    excludesfile = ~/.gitignore_global
+```
+
+Then add any standard `.gitignore` syntax to exclude files from getting committed and pushed to a remote repository.
+````
+
 Next create a new development branch on which you want to work from the current branch, tracking the upstream Plone repository, and check it out.
 It's a good idea to use a branch name that includes the issue number and is descriptive of what it resolves.
 
@@ -182,40 +227,6 @@ git switch -c 123-thing-i-fixed -t origin/6.1
 ```
 
 Now you can edit your code without affecting the original branch.
-
-
-## Edit packages
-
-First identify the names of the Plone packages you want to work on.
-If you do not know, you can ask in the [Plone Community Forum](https://community.plone.org/).
-Only a few packages are in {file}`src/` by default.
-
-Edit the file {file}`checkouts.cfg` at the root of the repository by adding the package names under the `auto-checkout` list.
-
-```{code-block} cfg
-:emphasize-lines: 10-
-[buildout]
-always-checkout = force
-# always-checkout = false
-auto-checkout =
-# These packages are always checked out:
-    docs
-    # <snip>
-# These packages are manually added, or automatically added by mr.roboto:
-    # <snip>
-    plone.app.event
-    icalendar
-```
-
-Then rerun buildout to install the source packages to edit.
-
-```shell
-./bin/buildout
-```
-
-```{seealso}
-For tips on working with `mr.developer`, see {doc}`mrdeveloper`.
-```
 
 
 ## Test locally
