@@ -76,6 +76,20 @@ git clone https://github.com/plone/buildout.coredev
 cd buildout.coredev
 ```
 
+````{important}
+If you want to use a Python version that is not 3.11, follow these instructions.
+
+Open the file {file}`bootstrap.sh` at the root of the repository.
+Notice that the script expects Python 3.11 to be installed on your system and in your user's `PATH`.
+
+```shell
+#/bin/sh
+`which python3.11` -m venv .
+```
+
+Edit it according to the Python version you want to use, then save and close the file.
+````
+
 Now run the script to install Plone 6.
 
 ```shell
