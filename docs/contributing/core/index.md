@@ -12,6 +12,11 @@ myst:
 This guide describes the process of how to contribute to, and develop in, Plone core.
 It expands upon {doc}`/contributing/index`.
 
+```{important}
+Although Plone core includes Volto—the React based, default frontend for Plone 6—this guide does not apply to Volto and its packages.
+To contribute to Volto, see {doc}`../volto`.
+```
+
 This guide assumes that you have basic knowledge of how to use git and GitHub.
 If you have never contributed to Plone, or you lack basic knowledge of how to use git and GitHub, you should first read {doc}`/contributing/first-time` for more information.
 
@@ -109,11 +114,19 @@ Once that's done, you can start an instance of Plone with the following command.
 To visit your Plone instance, you can open the link http://0.0.0.0:8080 in a web browser.
 
 You will be presented with several options.
-Click the button {guilabel}`Create a new Plone site`.
+Click the button {guilabel}`Create Classic UI Plone site`.
 
 Enter values in the form, and click the button {guilabel}`Create Plone Site`.
 
-You will be redirected to your new Plone site.
+You will be redirected to your new Classic UI Plone site.
+
+```{warning}
+Ignore the warning about accessing the Plone backend through its Classic UI frontend.
+
+Do not follow the instructions to install Volto.
+They will not work with buildout.
+To contribute to Volto, you will need to start over, and follow {doc}`../volto`.
+```
 
 To login, the default credentials are the following.
 
