@@ -36,8 +36,7 @@ However, the following links and sections below may be helpful.
 -   Python {SUPPORTED_PYTHON_VERSIONS}
 -   {term}`GNU make`
 -   {term}`Git`
--   [libxml2 and libxslt](https://gitlab.gnome.org/GNOME/libxslt/-/releases), including development headers
--   [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) to compile {term}`ZODB`, {term}`Zope`, and {term}`lxml`
+-   A C compiler
 
 
 ### Python
@@ -58,10 +57,13 @@ Plone requires Python version {SUPPORTED_PYTHON_VERSIONS}.
 ```{include} ../../volto/contributing/install-git.md
 ```
 
-### libxml2, libxslt, and GCC
+### C compiler
 
-Consult the resources at the links above for installation instructions.
-Package managers may facilitate installation.
+You need a C compiler on your system to compile {term}`ZODB` and {term}`Zope`.
+
+On macOS, Developer Tools providers clang for a C compiler.
+
+On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common option.
 
 
 ## Install Plone core for development
