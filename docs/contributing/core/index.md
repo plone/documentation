@@ -108,7 +108,12 @@ Once that's done, you can start an instance of Plone with the following command.
 
 To visit your Plone instance, you can open the link http://0.0.0.0:8080 in a web browser.
 
-Click {guilabel}`View your Plone site` to do exactly that.
+You will be presented with several options.
+Click the button {guilabel}`Create a new Plone site`.
+
+Enter values in the form, and click the button {guilabel}`Create Plone Site`.
+
+You will be redirected to your new Plone site.
 
 To login, the default credentials are the following.
 
