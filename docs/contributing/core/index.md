@@ -279,8 +279,9 @@ New change log entries should be added at the top of {file}`CHANGES.rst`.
 ## Create a pull request
 
 After you have completed all the foregoing steps, push your changes to a remote branch and create a pull request in GitHub.
-
-If you are working from an issue, return to the original issue, and add a link to the pull request.
+If you are working from an issue, include "Fixes #ISSUE-NUMBER" in the description.
+This enables automatic closing of the related issue when the pull request is merged.
+This also creates a hyperlink to the original issue for easy reference.
 
 
 ## Jenkins and mr.roboto
