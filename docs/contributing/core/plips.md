@@ -9,13 +9,6 @@ myst:
 
 # Plone Improvement Proposals (PLIPs)
 
-```{todo}
-This page needs extensive review.
-It is not clear whether the Framework Team still exists, and PLIPs are now spread over many repositories.
-
-See https://community.plone.org/t/plips-documentation/19609
-```
-
 A Plone Improvement Proposal, or {term}`PLIP`, is a change to a Plone package that would affect everyone who uses that package.
 PLIPs go through a formal process compared to bug fixes because of their broad reach.
 The Plone Framework Team reviews all PLIPs to make sure that it's in the best interest of the broader community, and that it's of high quality.
