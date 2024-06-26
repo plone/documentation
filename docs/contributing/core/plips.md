@@ -16,21 +16,35 @@ The Plone Framework Team reviews all PLIPs to make sure that it's in the best in
 
 ## Process overview
 
-1.  Developer submits a PLIP.
-2.  [SOME_INDETERMINATE_TEAM] approves the PLIP for inclusion into Plone core for a given release.
-3.  Developer implements the PLIP, including code, tests, and documentation.
-4.  Developer creates a pull request of the PLIP for review by the [SOME_INDETERMINATE_TEAM].
-5.  [SOME_INDETERMINATE_TEAM] reviews the PLIP and gives feedback.
-6.  Developer addresses concerns from the feedback, and resubmits the PLIP, if necessary.
-7.  Repeat the two previous steps, until both the [SOME_INDETERMINATE_TEAM] and developer are happy with the result.
-8.  [SOMEBODY] approves the PLIP for merge.
-9.  [SOMEBODY] merges the PLIP.
+1.  Developer submits a PLIP and solicits feedback.
+2.  Developer addresses concerns from the feedback, and resubmits the PLIP, if necessary.
+3.  The designated team approves the PLIP for inclusion into Plone core for a given release.
+4.  Developer implements the PLIP, including code, tests, and documentation.
+5.  Developer creates a pull request of the PLIP for review by the designated team.
+6.  The designated team reviews the pull request of the PLIP and gives feedback.
+7.  Repeat the two previous steps, until both the designated team and developer are happy with the result.
+8.  A designated team member approves the PLIP for merge.
+9.  A designated team member merges the PLIP.
 
 In rare circumstances, a PLIP may be rejected.
 This is usually the result of the developer not responding to feedback or dropping out of the process.
 
 
-(submit-a-plip)=
+(designated-teams-label)=
+
+## Designated teams
+
+The following packages and repositories have designated teams that you can contact by `@`-ing them in its GitHub issue tracker.
+If the repository is not listed, use the default repository for `Products.CMFPlone`.
+
+| Package | Repository | Team |
+|---|---|---|
+| `Products.CMFPlone` | https://github.com/plone/Products.CMFPlone | not applicable |
+| Classic UI | https://github.com/plone/plone.classicui | `@plone/ClassicUI-Team` |
+| Volto | https://github.com/plone/volto | `@plone/volto-team` |
+
+
+(submit-a-plip-label)=
 
 ## Submit a PLIP
 
@@ -61,16 +75,22 @@ Now that you are prepared, submit your PLIP.
 
 4.  When done, click {guilabel}`Submit new issue` to submit your PLIP.
  
-5.  If it does not automatically assign the label {guilabel}`03 type: feature (plip)`, then assign that label to the issue to make it easier to find.
+5.  If GitHub does not automatically assign the label {guilabel}`03 type: feature (plip)`, then assign that label to the issue to make it easier to find.
 
 
 ## Get feedback
 
-After you submit your PLIP, solicit feedback for your idea on the [Plone Community Forum](https://community.plone.org/).
+After you submit your PLIP, solicit feedback for your idea on the [Plone Community Forum](https://community.plone.org/) and through the repository's issue tracker.
 
 You may revise your PLIP based on feedback.
 
-If you need help at any point in this process, please contact a member of the [SOME_INDETERMINATE_TEAM] personally or ask for help at the [Framework Team Space](https://community.plone.org/c/development/framework-team/12).
+If you need help at any point in this process, you can either `@` the team or personally contact a member of the designated team.
+
+
+## Team approves proposal
+
+After incorporating feedback to your proposal, you can request a final review and approval for inclusion in Plone.
+Every PLIP must be approved by the designated team.
 
 
 ## Implement your PLIP
@@ -260,5 +280,3 @@ In general, PLIPs shouldn't take more than a year, otherwise they should be clos
 
 If a PLIP isn't accepted in core, it doesn't mean it's a bad idea.
 It is often the case that there are competing implementations, and the community wants to see it vetted as an add-on before "blessing" a particular implementation.
-
-
