@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Writing documentation of Plone"
-    "property=og:description": "Writing documentation of Plone"
-    "property=og:title": "Writing documentation of Plone"
+    "description": "Write documentation of Plone"
+    "property=og:description": "Write documentation of Plone"
+    "property=og:title": "Write documentation of Plone"
     "keywords": "documentation, Plone"
 ---
 
-# Writing documentation
+# Write documentation
 
 For general guidance for contributing documentation, see {doc}`/contributing/documentation/index`.
 
@@ -20,7 +20,7 @@ The documentation repository is on [GitHub](https://github.com/plone/documentati
 Information for how to contribute to documentation can be found at {doc}`/contributing/documentation/index`.
 
 
-## Documenting a package
+## Document a package
 
 At the very least, your package should include the following forms of documentation.
 
