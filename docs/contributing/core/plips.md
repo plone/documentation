@@ -97,6 +97,11 @@ Every PLIP must be approved by the designated team.
 
 (plip-setup-instructions-label)=
 
+```{important}
+This section does not apply to Volto.
+Instead see {doc}`../../volto/contributing/index`.
+```
+
 ```{note}
 This section assumes you have read and followed the instructions in {doc}`index` to set up your development environment, up until {ref}`contributing-core-edit-packages-label`.
 ```
@@ -113,9 +118,7 @@ You can start the development at any time, but if you intend to modify Plone cor
     -   Have clear code.
     -   Follow current best practices in coding style.
         The [Plone Meta](https://github.com/plone/meta) project can help you set up your environment.
-        For Volto, follow {doc}`/volto/contributing/linting`.
     -   [Be tested](https://5.docs.plone.org/develop/testing/index.html).
-        For Volto, follow {doc}`/volto/contributing/testing`.
 
 
 ### Create a new PLIP branch
