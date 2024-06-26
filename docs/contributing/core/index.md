@@ -155,14 +155,9 @@ Members of the `plone/contributors` team do not have write access, and instead m
 ```
 
 Always begin by checking out the git branch on which you want to work.
-If you have not yet checked out a branch, then you need to track it with the `-t` option and specify the remote to track, usually called `origin`.
-The following command will switch and track changes from the remote `origin` and its branch `6.1`.
+This is the base branch to which you will create a pull request.
 
-```shell
-git checkout -t origin/6.1
-```
-
-Now going forward, you need to specify only the local branch when you want to switch back to it from your development branch.
+If you just cloned `https://github.com/plone/buildout.coredev`, then the `6.1` branch is checked out and current, and you can skip the rest of this section and continue on the next, {ref}`contributing-core-edit-packages-label`.
 
 ```shell
 git checkout 6.1
@@ -174,6 +169,8 @@ Next pull down and merge any recent changes from the remote tracked repository w
 git pull
 ```
 
+
+(contributing-core-edit-packages-label)=
 
 ## Edit packages
 
@@ -225,7 +222,7 @@ Next create a new development branch on which you want to work from the current 
 It's a good idea to use a branch name that includes the issue number and is descriptive of what it resolves.
 
 ```shell
-git switch -c 123-thing-i-fixed -t origin/6.1
+git switch -c 123-thing-i-fixed
 ```
 
 Now you can edit your code without affecting the original branch.
