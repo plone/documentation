@@ -95,6 +95,12 @@ Every PLIP must be approved by the designated team.
 
 ## Implement your PLIP
 
+(plip-setup-instructions-label)=
+
+```{note}
+This section assumes you have read and followed the instructions in {doc}`index` to set up your development environment, up until {ref}`contributing-core-edit-packages-label`.
+```
+
 You can start the development at any time, but if you intend to modify Plone core, it is a good idea to wait to see if your idea is approved.
 
 
@@ -114,15 +120,12 @@ You can start the development at any time, but if you intend to modify Plone cor
 
 ### Create a new PLIP branch
 
-Create a buildout configuration file for your PLIP in the `plips` folder of {file}`buildout.coredev`.
+Create a buildout configuration file for your PLIP in the `plips` folder of `buildout.coredev`.
+Its name should follow the pattern `plip-repository-issue_number-description.cfg`.
+For example, {file}`plip-volto-1234-widget-frobbing.cfg`.
 
-Give it a descriptive name, starting with the PLIP number, for example, {file}`plip-1234-widget-frobbing.cfg`.
-
-The PLIP number is your PLIP's issue number.
-
-This file will define the branches you're working with in your PLIP, along with other buildout configuration.
-
-It should look something like the following, such as in a file {file}`plips/plip-1234-widget-frobbing.cfg`.
+This file will define the branches for your PLIP, along with other buildout configuration.
+The following is example content for the file {file}`plips/plip-volto-1234-widget-frobbing.cfg`.
 
 ```ini
 [buildout]
@@ -132,8 +135,8 @@ auto-checkout +=
     plone.app.someotherpackage
 
 [sources]
-plone.somepackage = git https://github.com/plone/plone.somepackage.git branch=plip-1234-widget-frobbing
-plone.app.someotherpackage = git https://github.com/plone/plone.app.somepackage.git branch=plip-1234-widget-frobbing
+plone.somepackage = git https://github.com/plone/plone.somepackage.git branch=plip-volto-1234-widget-frobbing
+plone.app.someotherpackage = git https://github.com/plone/plone.app.somepackage.git branch=plip-volto-1234-widget-frobbing
 
 [instance]
 eggs +=
@@ -145,138 +148,39 @@ zcml +=
 ```
 
 Use the same naming convention when you branch existing packages.
-You should always branch packages when working on PLIPs.
 
 
-### Working on a PLIP
+### Work on a PLIP
 
-To work on a PLIP, you bootstrap buildout, and then invoke buildout with your PLIP configuration:
+To work on a PLIP, assuming you have followed the {ref}`PLIP set up instructions <plip-setup-instructions-label>`, you can invoke buildout with your PLIP configuration as follows.
 
 ```shell
-virtualenv .
-./bin/pip install -r requirements.txt
-./bin/buildout -c plips/plip-1234-widget-frobbing.cfg
+./bin/buildout -c plips/plip-volto-1234-widget-frobbing.cfg
 ```
 
-If you are using a {file}`local.cfg` to extend your PLIP file with some changes that you do not want to commit accidentally, be aware that you need to override some settings from {file}`plipbase.cfg` to avoid some files being created in the {file}`plips` directory or in the directory above the buildout directory.
-This is done as shown below.
-
-```ini
-[buildout]
-extends = plips/plip-1234-widget-frobbing.cfg
-develop-eggs-directory = ./develop-eggs
-bin-directory = ./bin
-parts-directory = ./parts
-sources-dir = ./src
-installed = .installed.cfg
-
-[instance]
-var = ./var
+```{seealso}
+See {ref}`contributing-core-test-locally-label`, {ref}`contributing-core-change-log-label`, and {ref}`contributing-core-create-a-pull-request-label`.
 ```
 
 
-### Finishing up
+### Finish up
 
-Before marking your PLIP as ready for review, please add a file to give a set of instructions to the PLIP reviewer.
-This file should be called {file}`plip_<number>_notes.txt`.
+Before marking your PLIP as ready for review as a pull request, add a file to give a set of instructions to the PLIP reviewer.
+This file should be called {file}`plip_<repository>_<number>_notes.txt`.
 This should include, but is not limited to:
 
-- URLs pointing to all documentation created and updated
-- Any concerns and issues still remaining
-- Any weird buildout things
+-   URLs pointing to all documentation created and updated
+-   Any concerns and issues still remaining
+-   Any weird buildout things
 
-Once you have finished, update your PLIP issue to indicate that it is ready for review.
-The Framework Team will assign 2-3 people to review your PLIP.
+Once you have finished, update your PLIP issue and pull request to indicate that it is ready for review.
+The designated team will review your PLIP.
 They will follow the guidelines listed at {doc}`plip-review`.
 
-After the PLIP has been accepted by the Framework Team and the release managers, you will be asked to merge your work into the main development line.
-Merging the PLIP in is not the hardest part, but you must think about it when you develop.
-
-You'll have to interact with a large number of people to get it all set up.
+After the PLIP has been accepted by the designated team and the release managers, you will be asked to merge your work into the main development line.
 
 The merge may have unintended interactions with other PLIPs coming in.
 During the merge phase you must be prepared to help out with all the features and bugs that arise.
 
 If all went as planned, the next Plone release will carry on with your PLIP in it.
 You'll be expected to help out with that feature after it's been released (within reason).
-
-
-## Frequently asked questions about PLIPs
-
-This section provides detailed answers to common questions about PLIPs.
-
-
-### PLIP or bug fix?
-
-In general, anything that changes the API of Plone in the backend or the user interface (UI) on the front end should be filed as a PLIP.
-When in doubt, submit it as a PLIP.
-The Framework Team will reclassify it if your proposal falls below the threshold.
-If the change you are proposing is not in the scope of a PLIP, a GitHub pull request or issue is the right format.
-The key point here is that each change must be documented, allowing it to be tracked and understood.
-
-
-### Who can submit PLIPs?
-
-Anyone who has signed a Plone Contributor Agreement can work on a PLIP.
-
-```{todo}
-The FWT no longer participates in PLIPs.
-Recommend deletion of next two paragraphs.
-```
-The Framework Team is happy to help you at any point in the process.
-
-When the PLIP is accepted, a Framework Team member will "champion" your PLIP and follow up to its completion.
-
-
-### What is a PLIP champion?
-
-```{todo}
-This section is no longer in practice.
-Recommend deletion.
-```
-
-When you submit your PLIP and it is approved, a Framework Team member will take on the role of champion for that PLIP.
-
-They are there to help you through completion, answer questions, and provide guidance.
-
-A champion fulfills the following tasks:
-
--   Answer any questions the PLIP implementor has, technical or otherwise.
--   Encourage the PLIP author by constantly giving feedback and encouragement.
--   Keep the implementer aware of timelines, and push to get things done on time.
--   Assist with finding additional help when needed to complete the implementation in a timely matter.
-
-Keep in mind that champions are volunteers as well, and have other tasks in life.
-That means you will have to play an active role in asking for help or guidance.
-
-
-### Can I get involved in other ways?
-
-If you want to experience the process and how it works, help us review PLIPs as the implementations finish up.
-
-Check the status of PLIPs at https://github.com/search?q=path%3A%2Fplone+label%3A%2203+type%3A+feature+%28plip%29%22++&type=issues&ref=advsearch&state=open.
-
-Then, follow the instructions for {doc}`reviewing a PLIP <plip-review>`.
-
-
-### When can I submit a PLIP?
-
-Today, tomorrow, any time!
-
-After the PLIP is accepted, the Framework Team will try to judge complexity and time to completion, and assign it to a milestone.
-
-
-### When is the PLIP due?
-
-**Summary: As soon as you get it done.**
-
-Ideally, a PLIP should be completed for the release to which it's assigned.
-Sometimes life gets in the way, and a PLIP may have to be re-assigned to the following release.
-
-In general, PLIPs shouldn't take more than a year, otherwise they should be closed. A new PLIP can follow up if there is more capacity to see it through.
-
-
-### What happens if your PLIP is not accepted?
-
-If a PLIP isn't accepted in core, it doesn't mean it's a bad idea.
-It is often the case that there are competing implementations, and the community wants to see it vetted as an add-on before "blessing" a particular implementation.

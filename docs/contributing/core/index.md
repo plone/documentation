@@ -180,7 +180,7 @@ Only a few packages are in {file}`src/` by default.
 
 Next create a new file {file}`buildout.local.cfg`, and add the names of packages that you want to develop under the `auto-checkout` list.
 
-```cfg
+```ini
 [buildout]
 extends =
   buildout.cfg
@@ -228,6 +228,8 @@ git switch -c 123-thing-i-fixed
 Now you can edit your code without affecting the original branch.
 
 
+(contributing-core-test-locally-label)=
+
 ## Test locally
 
 If you change the expected behavior of a feature in a package, you should write a test to cover the change.
@@ -260,6 +262,8 @@ If you can't afford this disruption, you can defer it to Jenkins.
 ./bin/test --all
 ```
 
+
+(contributing-core-change-log-label)=
 
 ## Change log
 
