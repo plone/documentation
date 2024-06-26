@@ -27,7 +27,7 @@ From time to time you can check if some old cruft has accumulated.
 bin/develop status
 ```
 
-If this prints any lines with a question mark in front, you can clean the cruft with the following command.
+If this prints any lines with a question mark (`?`) in front, you can clean the cruft with the following command.
 
 ```shell
 bin/develop purge
