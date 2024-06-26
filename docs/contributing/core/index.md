@@ -204,7 +204,8 @@ You can add the `-N` flag to save time by not checking PyPI to see if there are 
 ```
 
 ```{seealso}
-For tips on working with `mr.developer`, see {doc}`mrdeveloper`.
+`mr.developer` checks out additional repositories using the `auto-checkout` option.
+For more information, see {doc}`mrdeveloper`.
 ```
 
 ````{tip}
