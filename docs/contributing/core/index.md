@@ -64,9 +64,9 @@ Plone requires Python version {SUPPORTED_PYTHON_VERSIONS}.
 
 ### C compiler
 
-You need a C compiler on your system to compile {term}`ZODB` and {term}`Zope`.
+You need a C compiler on your system to compile some of the Python libraries that Plone uses.
 
-On macOS, Developer Tools providers clang for a C compiler.
+On macOS, Developer Tools provides Clang for a C compiler.
 
 On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common option.
 
