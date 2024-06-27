@@ -118,7 +118,7 @@ You can start the development at any time, but if you intend to modify Plone cor
     -   Have clear code.
     -   Follow current best practices in coding style.
         The [Plone Meta](https://github.com/plone/meta) project can help you set up your environment.
-    -   [Be tested](https://5.docs.plone.org/develop/testing/index.html).
+    -   Be tested according to Plone core's {doc}`plone5:develop/testing/index`.
 
 
 ### Create a new PLIP branch
