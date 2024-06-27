@@ -202,6 +202,7 @@ mermaid_version = "10.9.1"
 # the entire Plone Documentation is built.
 intersphinx_mapping = {
     "plone": ("https://6.docs.plone.org/", None),  # for imported packages
+    "plone5": ("https://5.docs.plone.org/", None),
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/", None),
     "training-2022": ("https://2022.training.plone.org/", None),
