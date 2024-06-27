@@ -53,7 +53,7 @@ These are:
 :   Please leave these to the release managers, Eric Steele and Maurits van Rees.
 
 `plone.app.locales`
-:   Please leave this to the i18n team lead, Vincent Fretin.
+:   Please leave this to the i18n team lead, Mikel Larreategi, `@erral` on GitHub.
 
 
 ## Plone core release process checklist
@@ -103,7 +103,7 @@ These are:
 
 1.  Make sure `plone.app.upgrade` contains an upgrade step for the future Plone release.
 1.  Update CMFPlone version in `profiles/default/metadata.xml`.
-1.  Create an issue in https://github.com/collective/plone.app.locales/issues to ask the i18n team lead `@vincentfretin` to do a `plone.app.locales` release.
+1.  Create an issue in https://github.com/collective/plone.app.locales/issues to ask the i18n team lead `@erral` to do a `plone.app.locales` release.
 1.  Create a pending release (directory) on [dist.plone.org](https://dist.plone.org/).
 
     1.  Copy all core packages there.
