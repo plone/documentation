@@ -301,10 +301,10 @@ See {doc}`continuous-integration` for more information.
 ```{toctree}
 :maxdepth: 1
 
+documentation
 continuous-integration
 mrdeveloper
-documentation
-troubleshooting
+troubleshoot
 plips
 plip-review
 package-dependencies
