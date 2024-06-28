@@ -80,6 +80,8 @@ Now that you are prepared, submit your PLIP.
  
 5.  If GitHub does not automatically assign the label {guilabel}`03 type: feature (plip)`, then assign that label to the issue to make it easier to find.
 
+6.  If GitHub does not automatically add the PLIP to the [PLIP project board](https://github.com/orgs/plone/projects/47), then add it so it can be tracked.
+
 
 ## Get feedback
 
