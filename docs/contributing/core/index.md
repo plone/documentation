@@ -105,7 +105,7 @@ Notice that the script expects Python 3.11 to be installed on your system and in
 ```
 
 Edit it according to the Python version you want to use, then save and close the file.
-After you have run the script you should undo the change, otherwise you have a local change in git that you might accidentally commit.
+After you have run the script, you should undo the change, otherwise you have a local change in git that you might accidentally commit.
 ````
 
 Now run the script to install Plone 6.
@@ -114,7 +114,7 @@ Now run the script to install Plone 6.
 ./bootstrap.sh
 ```
 
-If you run into issues in this process, see {doc}`troubleshooting`.
+If you run into issues in this process, see {doc}`troubleshoot`.
 
 This will run for a long time if it's your first pull (approximately 10-20 minutes, depending on network speed and your hardware).
 
