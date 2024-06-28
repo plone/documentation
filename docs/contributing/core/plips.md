@@ -41,7 +41,7 @@ If the repository is not listed, use the default repository for `Products.CMFPlo
 
 | Package | Repository | Team |
 |---|---|---|
-| `Products.CMFPlone` | https://github.com/plone/Products.CMFPlone | not applicable |
+| `Products.CMFPlone` | https://github.com/plone/Products.CMFPlone | `@plone/framework-team` |
 | Classic UI | https://github.com/plone/plone.classicui | `@plone/ClassicUI-Team` |
 | Volto | https://github.com/plone/volto | `@plone/volto-team` |
 
