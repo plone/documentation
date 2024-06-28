@@ -114,8 +114,6 @@ Now run the script to install Plone 6.
 ./bootstrap.sh
 ```
 
-If you run into issues in this process, see {doc}`troubleshoot`.
-
 This will run for a long time if it's your first pull (approximately 10-20 minutes, depending on network speed and your hardware).
 
 Once that's done, you can start an instance of Plone with the following command.
@@ -308,7 +306,6 @@ See {doc}`continuous-integration` for more information.
 documentation
 continuous-integration
 mrdeveloper
-troubleshoot
 plips
 plip-review
 package-dependencies
