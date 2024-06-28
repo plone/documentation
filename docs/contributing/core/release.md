@@ -53,12 +53,13 @@ These are:
 :   Please leave these to the release managers, Eric Steele and Maurits van Rees.
 
 `plone.app.locales`
-:   Please leave this to the i18n team lead, Mikel Larreategi, `@erral` on GitHub.
+:   Please leave this to the i18n team lead, Mikel Larreategi `@erral`.
 `plone.staticresources`, `mockup`, `plonetheme.barceloneta`, `plone.classicui`:
-:   Please leave this to the Classic UI team, especially Peter Mathis, Johannes Raggam and Maik Derstappen.
+:   Please leave this to the Classic UI team, especially Peter Mathis `@petschki`, Johannes Raggam `@thet`, and Maik Derstappen `@MrTango`.
 
 `plone.restapi` and `plone.volto`:
-:   Please leave these to Timo Stollenwerk or David Glick.
+:   Please leave these to Timo Stollenwerk `@tisto` or David Glick `@davisagli`.
+
 
 ## Plone core release process checklist
 
