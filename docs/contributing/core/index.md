@@ -254,9 +254,12 @@ It takes 5-10 minutes to run the full unit test suite.
 ./bin/test
 ```
 
-If you run acceptance tests with the `--all` option, it will repeatedly launch and close browser windows that gain focus, disrupting you from doing any other work.
+If you run acceptance tests with the `--all` option, it will run tests in a real browser.
 This takes 30-40 minutes to run.
-If you can't afford this disruption, you can defer it to Jenkins.
+This may repeatedly launch and close browser windows that gain focus, disrupting you from doing any other work.
+If this happens, you can install the `chromedriver` OS package.
+See https://developer.chrome.com/docs/chromedriver.
+Then run `export ROBOT_BROWSER="headlesschrome"` and again run `bin/test --all`.
 
 ```shell
 # Run acceptance tests
