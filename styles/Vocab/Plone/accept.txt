@@ -12,6 +12,7 @@ Barceloneta
 [Bb]oolean
 buildout
 cacheable
+CommonJS
 doctest
 folderish
 fieldset
