@@ -45,7 +45,6 @@ If the repository is not listed, use the default repository for `Products.CMFPlo
 | Classic UI | https://github.com/plone/plone.classicui | `@plone/ClassicUI-Team` |
 | Volto | https://github.com/plone/volto | `@plone/volto-team` |
 
-%TODO: PENDING CONTACT INFORMATION. If any team has issues with another team's PLIP, or if they have some ideas for PLIPs that could potentially impact other teams, then the Steering Circle is the first point of contact for coordination. If further action or coordination is required, then the Plone Foundation Board would be brought in. https://community.plone.org/t/plips-documentation/19609/14?u=stevepiercy
 
 (submit-a-plip-label)=
 
