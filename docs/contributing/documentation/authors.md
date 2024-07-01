@@ -127,13 +127,9 @@ When authors add a link to the documentation, it must be a valid public URL with
 
 If it is not a valid link, or is private or local, then you must exclude it from `linkcheck` by wrapping it in single backticks.
 
-```md
+```{example}
 Visit the URL `http://www.example.com` for an example.
 ```
-
-This will render as follows.
-
-> Visit the URL `http://www.example.com` for an example.
 
 If a link has succumbed to bit rot, then try finding the most recently scraped version on the [Internet Archive Wayback Machine](https://web.archive.org/), and update the link.
 
@@ -239,6 +235,8 @@ Authors should include at least `description`, `property=og:description`, `prope
 
 The following is an example of `html_meta`.
 Note that the content of the two tags `description` and `property=og:description` should be identical.
+
+% Cannot use sphinx-examples for this one.
 
 ```md
 ---
