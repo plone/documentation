@@ -47,8 +47,7 @@ const mf_config = require("@patternslib/dev/webpack/webpack.mf");
 ```
 
 Import all the dependencies you want to share.
-Potentially these are the ones from [Patternslib](https://github.com/Patternslib/Patterns/blob/master/package.json),
-Mockup, and your own dependencies.
+Potentially these are the ones from [Patternslib](https://github.com/Patternslib/Patterns/blob/master/package.json), Mockup, and your own dependencies.
 You can add the Patternslib and Mockup dependencies, even if you are not using them.
 
 ```js
