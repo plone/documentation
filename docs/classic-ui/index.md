@@ -53,6 +53,7 @@ forms
 icons
 images
 layers
+module-federation
 mockup
 portlets
 recipes
