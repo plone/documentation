@@ -1,16 +1,16 @@
 ---
 html_meta:
-  "description": "How to use Module Federation in Mockup and add-on bundles."
-  "property=og:description": "How to use Module Federation in Mockup and add-on bundles."
-  "property=og:title": "Module Federation in Mockup"
-  "keywords": "Plone, Classic UI, classic-ui, Mockup, mockup, module federation, webpack, JavaScript"
+  "description": "How to use module federation in Mockup and add-on bundles."
+  "property=og:description": "How to use module federation in Mockup and add-on bundles."
+  "property=og:title": "Module federation in Mockup"
+  "keywords": "Plone, Classic UI, classic-ui, Mockup, module federation, webpack, JavaScript"
 ---
 
 (classic-ui-module-federation-in-mockup-label)=
 
 # Module federation in Mockup
 
-Module Federation allows sharing of dependencies between bundles.
+Module federation allows sharing of dependencies between bundles.
 Each bundle includes the whole set of dependencies.
 However, if multiple bundles have the same dependencies, then they are loaded only once.
 
@@ -18,11 +18,11 @@ For example, if bundle A and B both depend on jQuery and bundle A has already lo
 But if only bundle B is loaded, it uses its own bundled version of the jQuery library.
 
 There is a host bundle, as in the fictional example above, our bundle A.
-In Plone the host bundle is the main mockup bundle.
+In Plone the host bundle is the main Mockup bundle.
 Add-ons can add bundles called "remotes" which are initialized for module federation by the host bundle.
 
 ```{seealso}
-Webpack's documentation on [Module Federation](https://webpack.js.org/concepts/module-federation/).
+Webpack's documentation on [module federation](https://webpack.js.org/concepts/module-federation/).
 ```
 
 
