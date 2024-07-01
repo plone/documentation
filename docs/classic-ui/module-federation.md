@@ -1,16 +1,16 @@
 ---
 html_meta:
-  "description": "How to use module federation in Mockup and add-on bundles."
-  "property=og:description": "How to use module federation in Mockup and add-on bundles."
-  "property=og:title": "Module federation in Mockup"
-  "keywords": "Plone, Classic UI, classic-ui, Mockup, module federation, webpack, JavaScript"
+  "description": "How to use Module Federation in Mockup and add-on bundles."
+  "property=og:description": "How to use Module Federation in Mockup and add-on bundles."
+  "property=og:title": "Module Federation in Mockup"
+  "keywords": "Plone, Classic UI, classic-ui, Mockup, Module Federation, webpack, JavaScript"
 ---
 
 (classic-ui-module-federation-in-mockup-label)=
 
-# Module federation in Mockup
+# Module Federation in Mockup
 
-Module federation allows sharing of dependencies between bundles.
+Module Federation allows sharing of dependencies between bundles.
 Each bundle includes the whole set of dependencies.
 However, if multiple bundles have the same dependencies, then they are loaded only once.
 
@@ -19,14 +19,14 @@ But if only bundle B is loaded, it uses its own bundled version of the jQuery li
 
 There is a host bundle, as in the fictional example above, our bundle A.
 In Plone the host bundle is the main Mockup bundle.
-Add-ons can add bundles called "remotes" which are initialized for module federation by the host bundle.
+Add-ons can add bundles called "remotes" which are initialized for Module Federation by the host bundle.
 
 ```{seealso}
-Webpack's documentation on [module federation](https://webpack.js.org/concepts/module-federation/).
+Webpack's documentation on [Module Federation](https://webpack.js.org/concepts/module-federation/).
 ```
 
 
-## Use module federation
+## Use Module Federation
 
 If you created an add-on with a Mockup pattern, and you want to include the respective JavaScript code in your theme code, then the following instructions are for you.
 
@@ -38,7 +38,7 @@ Create a new entry point {file}`index.js` which only imports the normal entry po
 import("./patterns");
 ```
 
-Next add the module federation plugin in {file}`webpack.config.js`.
+Next add the Module Federation plugin in {file}`webpack.config.js`.
 There is a configuration factory `mf_config` which you can use for that.
 Add the following line near the top of the file.
 
