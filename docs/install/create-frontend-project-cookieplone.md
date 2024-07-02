@@ -105,6 +105,12 @@ corepack enable
 make install
 ```
 
+```{tip}
+Before using `corepack enable` it is necessary to activate pnpm using corepack with following command:
+`corepack prepare pnpm@latest --activate`
+And after using `corepack enable` you can explicitly use the latest pnpm with:
+`corepack use pnpm@latest`
+```
 
 (project-add-ons-label)=
 
