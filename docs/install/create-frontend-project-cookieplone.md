@@ -107,11 +107,15 @@ make install
 
 ```{tip}
 We need to use pnpm with corepack. So it is necessary to activate the use of pnpm in corepack before using `corepack enable` with following command:
+
 `corepack prepare pnpm@latest --activate`
+
 If you like to specify the version of pnpm, you need to run this after `corepack enable`:
+
 `corepack use pnpm@latest`
-```
+
 This will add a "packageManager" field in your local package.json which will instruct corepack to always use a specific version on that project.
+```
 
 (project-add-ons-label)=
 
