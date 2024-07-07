@@ -233,10 +233,10 @@ Now you can edit your code without affecting the original branch.
 
 If you change the expected behavior of a feature in a package, you should write a test to cover the change.
 
-To run a test for the specific package that you modified, use the `-m` option followed by the package name, as shown in the following example.
+To run a test for the specific package that you modified, use the `-s` option followed by the package name, as shown in the following example.
 
 ```shell
-./bin/test -m plone.app.event
+./bin/test -s plone.app.event
 ```
 
 If any test fails, do not commit and push the changes.
