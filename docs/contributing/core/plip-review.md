@@ -86,7 +86,7 @@ This section describes considerations of code quality.
 -   Is this code maintainable?
 -   Is the code properly documented?
 -   Does the code adhere to formatting and style standards?
--   Are there any importied deprecated modules?
+-   Are there any imported deprecated modules?
 
 
 ### JavaScript
