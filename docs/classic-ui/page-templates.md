@@ -269,10 +269,10 @@ The following snippet is a basic example.
 The `${...}` notation is shorthand for text insertion.
 The Python expression inside the braces is evaluated, and the result included in the output.
 By default, the string is escaped before insertion.
-To avoid this, use the `structure:` prefix:
+To avoid this, use the `structure` keyword:
 
 ```xml
-<div>${structure: ...}</div>
+<div tal:content="structure ..." />
 ```
 
 Note that if the expression result is an object that implements an `__html__()` method, this method will be called and the result treated as "structure".
