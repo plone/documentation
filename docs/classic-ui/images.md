@@ -285,10 +285,10 @@ To access image scales, which are normally not accessible to the current user, o
 
 ## Responsive image support
 
-Plone supports the generation of picture tags with `srcset`s for image optimization.
+Plone supports the generation of `picture` tags with `srcset`s for image optimization.
 Additionally, you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
 
-The configuration allows you to define different picture variants, such as `Large`, `Medium`, or `Small`.
+The configuration allows you to define different `picture` variants, such as `Large`, `Medium`, or `Small`.
 Users can choose from them in editors, such as TinyMCE, and developers can use them in templates.
 
 To generate a `picture` tag, use:
@@ -302,9 +302,9 @@ tag = scale_util.picture("image", scale='larger', picture_variant='large')
 
 (classic-ui-images-responsive-image-support-picture-variants)=
 
-### Picture variants
+### `picture` variants
 
-In `/@@imaging-controlpanel` Plone allows you to define picture variants with a list of available image scales.
+In `/@@imaging-controlpanel` Plone allows you to define `picture` variants with a list of available image scales.
 These are used for HTML {term}`srcset` attributes.
 A `srcset` attribute can help the browser to serve the best fitting image size for the current user's display.
 
@@ -404,10 +404,10 @@ This means the generated `srcset` will contain the scales from `preview` up to `
 
 (classic-ui-images-responsive-image-support-picture-variant-in-editor)=
 
-#### Hiding a picture variant in editors
+#### Hiding a `picture` variant in editors
 
-It is possible to hide a picture variant in editors.
-This is useful when you want to define a picture variant to be used in templates only.
+It is possible to hide a `picture` variant in editors.
+This is useful when you want to define a `picture` variant to be used in templates only.
 
 ```json
     "leadimage": {
