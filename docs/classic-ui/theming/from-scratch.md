@@ -25,6 +25,8 @@ Theming based on a filesystem package without any dependency.
 -   No Diazo needed
 
 
+(classic-ui-theming-from-scratch-package-label)=
+
 ## Theme package
 
 -   Create a theme package as explained here.
@@ -32,6 +34,8 @@ Theming based on a filesystem package without any dependency.
 -   Overrides
 -   Static files
 
+
+(classic-ui-theming-from-scratch-static-files-label)=
 
 ## Static files
 
@@ -48,6 +52,9 @@ Directory: `src/plonetheme/munich/browser/static`
     directory="static"
     />
 ```
+
+
+(classic-ui-theming-from-scratch-theme-label)=
 
 ## Theme
 
@@ -161,7 +168,7 @@ To do so, follow this guide.
 -   Add a script in {file}`package.json` to compile the CSS.
 
     ```json
-      "css-compile-main": "sass --load-path=node_modules --style expanded --source-map --embed-sources --no-error-css plone.scss:../static/plone.css"
+    "css-compile-main": "sass --load-path=node_modules --style expanded --source-map --embed-sources --no-error-css plone.scss:../static/plone.css"
     ```
 
     ```{tip}
