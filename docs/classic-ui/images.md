@@ -291,6 +291,14 @@ Additionally, you can define [media queries](https://developer.mozilla.org/en-US
 The configuration allows you to define different picture variants, such as `Large`, `Medium`, or `Small`.
 Users can choose from them in editors, such as TinyMCE, and developers can use them in templates.
 
+To generate a `picture` tag, use:
+
+```python
+from plone import api
+
+scale_util = api.content.get_view("images", context, request)
+tag = scale_util.picture("image", scale='larger', picture_variant='large')
+```
 
 (classic-ui-images-responsive-image-support-picture-variants)=
 
