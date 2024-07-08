@@ -55,6 +55,7 @@ images
 layers
 module-federation
 mockup
+page-templates
 portlets
 recipes
 static-resources

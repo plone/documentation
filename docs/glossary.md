@@ -136,9 +136,20 @@ ZMI
     The ZMI is a direct interface into the backend software stack of Plone.
     While it can still serve as a valuable tool for Plone specialists to fix problems or accomplish certain tasks, it is not recommended as a regular tool for Plone maintenance.
 
+Template Attribute Language
+TAL
+    The [Template Attribute Language](https://pagetemplates.readthedocs.io/en/latest/tal.html) (TAL) standard is an attribute language used to create dynamic templates.
+    It allows elements of a document to be replaced, repeated, or omitted.
+
+Template Attribute Language Expression Syntax
 TALES
-    TAL Expression Syntax (TALES) expression, which by default expects a path.
-    Python and string expressions are also allowed.
+    The [Template Attribute Language Expression Syntax](https://pagetemplates.readthedocs.io/en/latest/tales.html) (TALES) standard describes expressions that supply {term}`TAL` and {term}`METAL` with data.
+    Python and string expressions are allowed.
+
+Macro Expansion Template Attribute Language
+METAL
+    The [Macro Expansion Template Attribute Language](https://pagetemplates.readthedocs.io/en/latest/metal.html) (METAL) standard is a facility for HTML/XML macro preprocessing.
+    It can be used in conjunction with or independently of {term}`TAL` and {term}`TALES`.
 
 XML
     The Extensible Markup Language.
@@ -519,6 +530,7 @@ ZODB
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 
+Zope Page Template
 ZPT
     Zope Page Template is a template language for Python.
 
