@@ -59,24 +59,24 @@ const package_json_patternslib = require("@patternslib/patternslib/package.json"
 Then find the following line.
 
 ```js
-    config = patternslib_config(env, argv, config, ["@plone/mockup"]);
+config = patternslib_config(env, argv, config, ["@plone/mockup"]);
 ```
 
 Below this line add the following.
 
 ```js
-    config.plugins.push(
-        mf_config({
-            name: "myaddon",
-            filename: "myaddon-remote.min.js",
-            remote_entry: config.entry["myaddon.min"],
-            dependencies: {
-                ...package_json_patternslib.dependencies,
-                ...package_json_mockup.dependencies,
-                ...package_json.dependencies,
-            },
-        })
-    );
+config.plugins.push(
+    mf_config({
+        name: "myaddon",
+        filename: "myaddon-remote.min.js",
+        remote_entry: config.entry["myaddon.min"],
+        dependencies: {
+            ...package_json_patternslib.dependencies,
+            ...package_json_mockup.dependencies,
+            ...package_json.dependencies,
+        },
+    })
+);
 ```
 
 Replace the name `myaddon` with your add-on bundle's unique name.
@@ -93,7 +93,7 @@ To preserve compatibility with older add-ons and JavaScript implementations, the
 Constructs like the following still work:
 
 ```js
-    (function($) {
-        // JS code which uses $
-    })(jQuery);
+(function($) {
+    // JS code which uses $
+})(jQuery);
 ```
