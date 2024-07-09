@@ -165,7 +165,7 @@ Plone API
 
 Plone REST API
 :   A RESTful API for Plone.
-    See {doc}`plone.restapi/docs/source/contributing/index`.
+    See {doc}`/plone.restapi/docs/source/contributing/index`.
 
 Volto
 :   Plone 6 default frontend.
