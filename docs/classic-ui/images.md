@@ -300,7 +300,7 @@ scale_util = api.content.get_view("images", context, request)
 tag = scale_util.picture("image", scale="larger", picture_variant="large")
 ```
 
-The same can be done from a template;
+The same can be done from a template.
 
 ```xml
 <div tal:define="scale_view context/@@images">
