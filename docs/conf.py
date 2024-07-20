@@ -58,6 +58,8 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
+    "sphinx.ext.graphviz",
+    "notfound.extension",
 ]
 
 # If true, the Docutils Smart Quotes transform, originally based on SmartyPants
