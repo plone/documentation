@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Image resolving and scaling in Plone Classic UI"
-  "property=og:description": "Image resolving and scaling in Plone Classic UI"
-  "property=og:title": "Image Handling"
-  "keywords": "Plone, Classic UI, classic-ui, image, resize, scale"
+myst:
+  html_meta:
+    "description": "Image resolving and scaling in Plone Classic UI"
+    "property=og:description": "Image resolving and scaling in Plone Classic UI"
+    "property=og:title": "Image Handling"
+    "keywords": "Plone, Classic UI, classic-ui, image, resize, scale"
 ---
 
 (classic-ui-images-label)=
@@ -24,7 +25,8 @@ We will use the image object as context in the following examples.
 
 ## Default scales
 
-In `/@@imaging-controlpanel` Plone allows you to configure which scales are available and what dimensions they should have. By default we have the following scales configured:
+In `/@@imaging-controlpanel` Plone allows you to configure which scales are available and what dimensions they should have.
+By default, we have the following scales configured:
 
 * huge 1600:65536
 * great 1200:65536
@@ -64,9 +66,9 @@ To get the original image, you can leave out the scale:
 
 (classic-ui-images-by-cacheable-scale-uid-name-label)=
 
-### By cacheable scale UID name
+### By cacheable scale {term}`UID` name
 
-When an image scale is created, it will be cached under the name `UID.EXT` (i.e. `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
+When an image scale is created, it will be cached under the name `UID.EXT` (such as `f4c34254b44ba351af7393bfe0296664.jpeg`) in the object annotations.
 Scaling keeps the uploaded formats, except for TIFF which ends up as JPEG.
 It can be resolved as follows:
 
@@ -112,11 +114,11 @@ tag = scale_util.tag(
     scale=None,
     height=None,
     width=None,
-    direction="thumbnail"
+    mode="scale"
 )
 ```
 
-If you pass additional kwargs to `tag`, they become attributes on `tag`.
+If you pass additional `kwargs` to `tag`, they become attributes on `tag`.
 
 
 (classic-ui-images-image-scaling-no-tag-creation-label)=
@@ -175,11 +177,11 @@ scale_util = api.content.get_view("images", context, request)
 tag = scale_util.scale("image", width=600, height=200)
 ```
 
-(classic-ui-images-using-image_scale0-in-templates-label)=
+(classic-ui-images-using-image_scale-in-templates-label)=
 
-### Using image_scale in templates
+### Using `image_scale` in templates
 
-You could use the URL-variant from above, but that would be an uncached version.
+You could use the URL-variant from above, but that version would not be cached.
 To create a cached scale in a page template you can do the following:
 
 ```xml
@@ -197,7 +199,7 @@ Or you can get the HTML tag back, and replace the current tag with it:
 
 ```xml
 <div tal:define="scale_view context/@@images">
-  <img tal:replace="structured python: scale_view.tag('image', 'mini')">
+  <img tal:replace="structure python: scale_view.tag('image', 'mini')">
 </div>
 ```
 
@@ -205,15 +207,16 @@ You can also provide the following keyword arguments to set `title`, `alt`, or `
 
 ```xml
 <div tal:define="scale_view context/@@images">
-  <img tal:replace="structured python: scale_view.tag('banner', 'mini', title='The Banner', alt='Alternative text', css_class='banner')">
+  <img tal:replace="structure python: scale_view.tag('banner', 'mini', title='The Banner', alt='Alternative text', css_class='banner')">
 </div>
 ```
 
 (classic-ui-images-get-image_scale-by-cached-uid-name-label)=
 
-### Get image_scale by cached UID name
+### Get `image_scale` by cached {term}`UID` name
 
-If you only have the cached image name from an URL and need to get the image scale, unfortunately you can't use restrictedTraverse(), as this will not be able to resolve the scale. But you can use this workaround, by calling the `publishTraverse` method in `ImageScaling` directly:
+If you only have the cached image name from a URL and need to get the image scale, unfortunately you can't use `restrictedTraverse()`, as this will not be able to resolve the scale.
+But you can use this workaround, by calling the `publishTraverse` method in `ImageScaling` directly:
 
 ```python
 import re
@@ -230,20 +233,44 @@ image_scale = scaling_util.publishTraverse(context.REQUEST, groups[1])
 ```
 
 
-(classic-ui-images-scaling-direction-label)=
+(classic-ui-images-scaling-mode-label)=
 
-## Scaling `direction`
+## Scaling `mode`
 
-The default direction is `thumbnail`.
+```{versionchanged} 6.0
+Added `mode` to replace the deprecated `direction`.
+Added new option names for `mode` to align with CSS `background-size` values, and deprecated previous names `keep`, `thumbnail`, `scale-crop-to-fit`, `down`, `scale-crop-to-fill`, and `up`.
+```
 
-Other options are:
+Scaling is intended for the optimal display of images in a web browser.
 
-* `down`
-* `keep`
-* `scale-crop-to-fill`
-* `scale-crop-to-fit`
-* `thumbnail`
-* `up`
+To scale an image, you can use the `mode` parameter to control the scaling output.
+You must use either `width` or `height`, or both.
+
+Three different scaling options are supported.
+They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) values.
+
+The possible options for `mode` are listed below, where the default option is `scale`.
+
+`scale`
+:   This is the default option.
+    `scale` scales to the requested dimensions without cropping.
+    The resulting image may have a different size than requested.
+    This option requires both `width` and `height` to be specified.
+    It does not scale up.
+
+    Deprecated option names: `keep`, `thumbnail`.
+
+`contain`
+:   `contain` starts by scaling the image either to the smaller dimension when you give both `width` and `height`, or to the only given dimension, then crops to the other dimension if needed.
+
+    Deprecated option names: `scale-crop-to-fit`, `down`.
+
+`cover`
+:   `cover` scales the image either to the larger dimension when you give both `width` and `height`, or to the only given dimension, up to the size you specify.
+    Despite the deprecated option name, it does not crop.
+
+    Deprecated option names: `scale-crop-to-fill`, `up`.
 
 
 (classic-ui-images-permissions-label)=
@@ -254,81 +281,272 @@ The `ImageScaling` view explicitly checks the permissions of the current user.
 To access image scales, which are normally not accessible to the current user, override the `validate_access` method in `plone.namedfile.scaling.ImageScale`.
 
 
-## `srcset` configuration
+(classic-ui-images-responsive-image-support)=
 
-In `/@@imaging-controlpanel` Plone allows you to define HTML {term}`srcset` attributes.
-A `srcset` can help the browser serve the best fitting image for the current users situation.
-Which image scale is best for the user can be decided on different metrics.
+## Responsive image support
+
+Plone supports the generation of [`picture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) tags with `srcset`s for image optimization.
+Additionally, you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
+
+The configuration allows you to define different `picture` variants, such as `Large`, `Medium`, or `Small`.
+Users can choose from them in editors, such as TinyMCE, and developers can use them in templates.
+
+To generate a `picture` tag, use the following code.
+
+```python
+from plone import api
+
+scale_util = api.content.get_view("images", context, request)
+tag = scale_util.picture("image", scale="larger", picture_variant="large")
+```
+
+The same can be done from a template.
+
+```xml
+<div tal:define="scale_view context/@@images">
+  <img tal:replace="structure python:scale_view.picture('image', scale='larger', picture_variant='large'" />
+</div>
+```
+
+(classic-ui-images-responsive-image-support-picture-variants)=
+
+### `picture` variants
+
+In `/@@imaging-controlpanel` Plone allows you to define `picture` variants with a list of available image scales.
+These are used for HTML {term}`srcset` attributes.
+A `srcset` attribute can help the browser to serve the best fitting image size for the current user's display.
 
 
-### viewport size
+(classic-ui-images-responsive-image-support-default-configuration-label)=
 
-The first is metric would be the viewport size.
+### Default configuration
+
+The default configuration covers image size optimization, and will provide the browser with the needed information to load the optimal image size.
 
 ```json
 {
-  "scale": "large",
-  "media": "(max-width:800px)"
-},
-{
-  "scale": "larger"
+    "large": {
+        "title": "Large",
+        "sourceset": [
+            "scale": "larger",
+            "additionalScales": ["preview", "teaser", "large", "great", "huge"],
+        ],
+    },
+    "medium": {
+        "title": "Medium",
+        "sourceset": [
+            "scale": "teaser",
+            "additionalScales": ["preview", "large", "larger", "great"],
+        ],
+    },
+    "small": {
+        "title": "Small",
+        "sourceset": [
+            "scale": "preview",
+            "additionalScales": ["large", "larger"],
+        ],
+    },
 }
 ```
 
-With this definition the browser will use the `large` scale when the viewport's width is 800 pixels or fewer.
-When the viewport width is greater than 800 pixels, the browser will use the larger scale `1000px`.
+### Optional settings
 
-
-### Pixel density
-
-Another metric is the pixel density of the user's screen.
-This metric denotes the pixel density, or resolution, of an output device in {term}`dots per inch` (DPI).
+The `sourceset` property is an array and can have more than one entry.
+If we have the following two entries, the `image_srcset` output filter will generate one `source` tag for each entry and an additional `img` tag from the last entry.
 
 ```json
 {
-  "scale": "huge",
-  "media": "(min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2)"
-},
-{
-  "scale": "large"
+    "medium": {
+        "title": "Large",
+        "sourceset": [
+            {
+              "scale": "mobile_crop",
+              "media": "(max-width: 768px)",
+              "additionalScales": ["mobile_crop_highres"],
+            },
+            {
+             "scale": "teaser",
+              "media": "(min-width: 769px)",
+              "additionalScales": ["large", "larger", "great", "huge"],
+            }
+        ],
+    },
 }
 ```
 
-With this definition the browser will use the `huge` scale of 1600 pixels when the screen has a density of 192 DPI, also knows as `2x`.
-We use here two different media queries to also support older Safari versions.
-Mobile devices with Safari-like iPhones only support the old non-standard media query.
-If you do not care about IE support, you can use `min-resolution: 2dppx`, which is closer to `2x`.
-The most common variants are:
 
-- `1x`: 96 DPI
-- `1.25x`: 120 DPI
-- `1.5x`: 144 DPI
-- `2x`: 192 DPI
-- `3x`: 288 DPI
+(classic-ui-images-responsive-image-support-filtering-scales)=
 
+#### Filtering scales
 
-### Combining viewport size and pixel density
-
-It is also possible to combine the two metrics.
+By default, for every `srcset`, all available scales will be included in the `srcset`.
 
 ```json
 {
-  "scale": "great",
-  "media": "(max-width:799px) and (min-resolution: 144dpi), (max-width:799px) and (-webkit-min-device-pixel-ratio: 1.5)"
-},
-{
-  "scale": "large",
-  "media": "(max-width:799px)"
-},
-{
-  "scale": "huge",
-  "media": "(min-width:800px) and (min-resolution: 144dpi), (max-width:800px) and (-webkit-min-device-pixel-ratio: 1.5)"
-},
-{
-  "scale": "larger",
-  "media": "(min-width:800px)"
-},
-{
-  "scale": "huge"
+    "large": {
+        "title": "Large",
+        "sourceset": [
+            {"scale": "larger"},
+        ],
+    },
 }
+```
+
+To restrict the list of used scales inside a `srcset`, you can set the `additionalScales` parameter with an array of allowed scales.
+Without this parameter, all scales which are not globally excluded scales will be used.
+
+```json
+    "small": {
+        "title": "Small",
+        "sourceset": [
+            {
+              "scale": "preview",
+              "additionalScales": ["large", "larger", "great", "huge"],
+            },
+        ],
+    },
+```
+
+This means the generated `srcset` will contain the scales from `preview` up to `huge`, but not `mini`, for example.
+
+
+(classic-ui-images-responsive-image-support-picture-variant-in-editor)=
+
+#### Hiding a `picture` variant in editors
+
+It is possible to hide a `picture` variant in editors.
+This is useful when you want to define a `picture` variant to be used in templates only.
+
+```json
+    "leadimage": {
+        "title": "Lead image",
+        "sourceset": [
+            {
+              "scale": "preview",
+              "additionalScales": ["large", "larger"],
+              "hideInEditor": true,
+            },
+        ],
+    },
+```
+
+
+(classic-ui-images-responsive-image-support-art-direction)=
+
+### Art direction
+
+With image size optimization, the browser is able to choose the optimal image for each display size.
+But we have no control over which scale the browser will actually use.
+For example to force the browser to use a zoomed version of an image for smaller screens, we can use media queries.
+The technique is called [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction).
+
+Let's have a look at a more advanced configuration:
+
+```json
+{
+    "large": {
+        "title": "Large",
+        "sourceset": [
+            {"scale": "larger"},
+        ],
+    },
+    "medium": {
+        "title": "Medium",
+        "sourceset": [
+            {
+              "scale": "mobile_crop",
+              "media": "(max-width: 768px)",
+              "additionalScales": ["mobile_crop_highres"],
+            },
+            {
+             "scale": "teaser",
+              "media": "(min-width: 769px)",
+              "additionalScales": ["large", "larger", "great", "huge"],
+            }
+        ],
+    },
+    "small": {
+        "title": "Small",
+        "sourceset": [
+            {"scale": "preview"},
+        ],
+    },
+}
+
+```
+
+This will result in a `srcset` as in the following example for a medium image:
+
+```html
+<picture>
+  <source media="(max-width: 677px)"
+          srcset="resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/mobile_crop 800w,
+                  resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/mobile_crop_highres 1600w">
+  <source media="(min-width: 678px)"
+          srcset="resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/teaser 600w,
+                  resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/large 800w,
+                  resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/larger 1000w,
+                  resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/great 1200w">
+  <img alt="Alternative text"
+       class="image-richtext image-size-medium"
+       loading="lazy"
+       src="resolveuid/45fed06defa54d15b37c5b1dc882710c/@@images/image/teaser"
+       width="600"
+       height="400">
+</picture>
+```
+
+```{note}
+Please note that this example has the `resolve_uid_and_caption` filter disabled to see the scale names better.
+The real `src` URLs look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`.
+```
+
+## Image scales from catalog brain
+
+For all `NamedBlobImage` fields, we can get existing scale information directly from the catalog brain.
+
+Given a content type with a `NamedBlobField` named `picture`, we can get the following information by calling the `image_scales` attribute on the catalog brain.
+
+```python
+(Pdb) pp brain.image_scales
+{'picture': [{'content-type': 'image/jpeg',
+              'download': '@@images/picture-800-ddae07fbc46b293155bd6fcda7f2572a.jpeg',
+              'filename': 'my-picture.jpg',
+              'height': 800,
+              'scales': {'icon': {'download': '@@images/picture-32-f2f815374aa5434e06fb3a95306527fd.jpeg',
+                                  'height': 32,
+                                  'width': 32},
+                         'large': {'download': '@@images/picture-800-4dab3b3cc42abb6fad29258c7430070a.jpeg',
+                                   'height': 800,
+                                   'width': 800},
+                         'listing': {'download': '@@images/picture-16-d3ac2117158cf38d0e15c5f5feb8b75d.jpeg',
+                                     'height': 16,
+                                     'width': 16},
+                         'mini': {'download': '@@images/picture-200-3de96ae4288dfb18f5589c89b861ecc1.jpeg',
+                                  'height': 200,
+                                  'width': 200},
+                         'preview': {'download': '@@images/picture-400-60f60942c8e4ddd7dcdfa90527a8bae0.jpeg',
+                                     'height': 400,
+                                     'width': 400},
+                         'teaser': {'download': '@@images/picture-600-1ada88b8af6748e9cbe18a34c3127443.jpeg',
+                                    'height': 600,
+                                    'width': 600},
+                         'thumb': {'download': '@@images/picture-128-80fce253497f7a745315f58f3e8f3a0c.jpeg',
+                                   'height': 128,
+                                   'width': 128},
+                         'tile': {'download': '@@images/picture-64-220d6703eac104c59774a379a8276e76.jpeg',
+                                  'height': 64,
+                                  'width': 64}},
+              'size': 238977,
+              'width': 800}]}
+```
+
+This information shows we have everything we need to generate our image URLs, without waking up any objects.
+
+```xml
+<li tal:define="preview python: brain.image_scales['picture'][0]['scales']['preview']">
+  <img src="${brain/getURL}/${python: preview['download']}"
+    width="${python: preview['width']}"
+    height="${python: preview['height']}" />
+</li>
 ```

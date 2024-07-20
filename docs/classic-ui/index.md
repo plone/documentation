@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Classic UI is a secondary user interface for Plone, but updated to use Twitter Bootstrap 5. It is familiar to users of Plone 5."
-  "property=og:description": "Classic UI is a secondary user interface for Plone, but updated to use Twitter Bootstrap 5. It is familiar to users of Plone 5."
-  "property=og:title": "Classic UI"
-  "keywords": "Plone 6, Classic UI, Twitter Bootstrap 5"
+myst:
+  html_meta:
+    "description": "Classic UI is a secondary user interface for Plone, but updated to use Twitter Bootstrap 5. It is familiar to users of Plone 5."
+    "property=og:description": "Classic UI is a secondary user interface for Plone, but updated to use Twitter Bootstrap 5. It is familiar to users of Plone 5."
+    "property=og:title": "Classic UI"
+    "keywords": "Plone 6, Classic UI, Twitter Bootstrap 5"
 ---
 
 (classic-ui-index-label)=
@@ -20,7 +21,7 @@ The default frontend of Plone 6 is Volto.
 It is based on the React JavaScript framework.
 
 The other frontend is based on Twitter Bootstrap 5.
-This frontend is now called "Classic UI".
+This frontend is now called {term}`Classic UI`.
 
 
 ## Which frontend?
@@ -47,17 +48,20 @@ This chapter is a developer reference manual for working with Classic UI.
 ```{toctree}
 :maxdepth: 2
 
-theming/index
-static-resources
-templates
-templates-global-variables
-views
-viewlets
-forms
-portlets
 csrf
-images
+forms
 icons
+images
+layers
+module-federation
+mockup
+portlets
 recipes
+static-resources
+template-global-variables
+templates
+theming/index
+viewlets
+views
 whatsnew
 ```

@@ -1,9 +1,10 @@
 ---
-html_meta:
-  "description": "Icon registration and resolving in Plone Classic UI"
-  "property=og:description": "Icon registration and resolving in Plone Classic UI"
-  "property=og:title": "Icon registration and resolving"
-  "keywords": "Plone, Classic UI, classic-ui, icons, svg"
+myst:
+  html_meta:
+    "description": "Icon registration and resolving in Plone Classic UI"
+    "property=og:description": "Icon registration and resolving in Plone Classic UI"
+    "property=og:title": "Icon registration and resolving"
+    "keywords": "Plone, Classic UI, classic-ui, icons, svg"
 ---
 
 (classic-ui-icons-label)=
@@ -15,7 +16,7 @@ Examples include the following.
 
 - Bootstrap icons
 - SVG inline icons
-- Iconresolver
+- `Iconresolver`
 
 
 (classic-ui-icons-bootstrap-label)=
@@ -40,7 +41,7 @@ Plone ships with the following icon registrations by default.
 
 - [Bootstrap](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_bootstrap.xml)
 - [Content Type](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_contenttype.xml)
-- [Mimetype](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_mimetype.xml)
+- [MIME type](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_mimetype.xml)
 - [Language Flags](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_language_flags.xml)
 - [Country Flags](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_country_flags.xml)
 - [Plone](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
@@ -66,13 +67,14 @@ To use a different icon than the system default, you can override the registrati
 
 ## Icon expression
 
-```{todo}
-How does this work? We need an example here!
-```
-
-- The field `icon_expression` is used again to define icons for actions, content types, and other purposes.
+- The field `icon_expr` is used again to define icons for actions, content types, and other purposes.
 - Use the icon name for icon expressions.
 
+Example:
+
+```xml
+<property name="icon_expr">string:list-check</property>
+```
 
 (classic-ui-icons-icon-resolver-label)=
 

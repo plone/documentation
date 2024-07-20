@@ -1,13 +1,14 @@
 ---
-html_meta:
-  "description": "Global functions defined in CMFPlone and plone.app.layout."
-  "property=og:description": "Global functions defined in CMFPlone and plone.app.layout."
-  "property=og:title": "Global utils and helpers"
-  "keywords": "Plone, Classic UI, templates, global variables, portal_state, context_state, plone_view, portal_url, helper methods"
+myst:
+  html_meta:
+    "description": "Global functions defined in CMFPlone and plone.app.layout."
+    "property=og:description": "Global functions defined in CMFPlone and plone.app.layout."
+    "property=og:title": "Global utils and helpers"
+    "keywords": "Plone, Classic UI, templates, global variables, portal_state, context_state, plone_view, portal_url, helper methods"
 ---
 
 
-# Global utils and helpers
+# Global utilities and helpers
 
 The following are global functions defined in `CMFPlone` and `plone.app.layout`.
 

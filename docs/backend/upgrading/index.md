@@ -1,19 +1,27 @@
 ---
-html_meta:
-  "description": ""
-  "property=og:description": ""
-  "property=og:title": ""
-  "keywords": ""
+myst:
+  html_meta:
+    "description": "Plone Upgrade Guide"
+    "property=og:description": "Plone Upgrade Guide"
+    "property=og:title": "Plone Upgrade Guide"
+    "keywords": "Plone Upgrade Guide"
 ---
 
-(backend-upgrading-index-label)=
+(plone-upgrade-guide-label)=
 
-# Upgrading the Backend
+# Plone Upgrade Guide
+
+This part of the documentation describes how to upgrade an existing Plone installation.
+
+This guide focuses on [Unix-like](https://en.wikipedia.org/wiki/Unix-like) environments, although the discussion may be useful for every platform.
 
 ```{toctree}
-:caption: Upgrading the Backend
+:caption: Upgrade Guide
 :maxdepth: 2
-:hidden:
 
-v60
+intro
+preparations
+add-on-upgrade
+troubleshooting
+version-specific-migration/index
 ```
