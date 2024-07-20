@@ -30,6 +30,8 @@ You must {ref}`contributing-sign-and-return-the-plone-contributor-agreement-labe
 Before you contribute to Plone core, check the [version support policy](https://plone.org/download/release-schedule) to see which versions of Plone are currently supported.
 
 
+(plone-pre-requisites-label)=
+
 ## Pre-requisites
 
 It is beyond the scope of this documentation to provide installation instructions for all pre-requisites for your operating system.
