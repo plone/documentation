@@ -147,6 +147,8 @@ To login, the default credentials are the following.
 -   password: `admin`
 
 
+(contributing-core-work-with-git-label)
+
 ## Work with git
 
 ```{important}
