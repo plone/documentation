@@ -154,7 +154,7 @@ Documentation
 
 Plone API
 :   API methods for Plone functionality.
-    See {doc}`../plone.api/contribute/index`.
+    See {doc}`../plone.api/contribute`.
 
 Plone REST API
 :   A RESTful API for Plone.
