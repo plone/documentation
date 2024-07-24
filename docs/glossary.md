@@ -77,7 +77,7 @@ pipx
 
 pyenv
     Python version management.
-    [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python. 
+    [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python.
 
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
@@ -93,9 +93,6 @@ S3
 
 TTW
     Through-The-Web allows editing or customizing a Plone site through a web browser.
-
-Amazon Opsworks
-    [AWS OpsWorks](https://aws.amazon.com/opsworks/) is a configuration management service that uses Chef, an automation platform that treats server configurations as code.
 
 Ansible
     [Ansible](https://www.ansible.com/) is an open source automation platform.
@@ -470,6 +467,10 @@ language tag
     -   W3C Working Draft [Language Tags and Locale Identifiers for the World Wide Web](https://www.w3.org/TR/ltli/)
     ```
 
+lxml
+    A library used for processing XML and HTML with Python. It is a binding for the libxml2 and libxslt C libraries.
+    See https://lxml.de/
+
 gettext
     UNIX standard software translation tool.
     See https://www.gnu.org/software/gettext/.
@@ -673,6 +674,9 @@ UID
    UID is an acronym meaning "unique identifier".
    A UID is an identifier that is guaranteed to be unique among all identifiers used for those objects and for a specific purpose.
 
+pdb
+    The Python Debugger module is an interactive source code debugger for Python programs. See https://docs.python.org/3/library/pdb.html
+
 integer identifier
 intid
     In Plone, an integer identifier, or intid, is used to uniquely identify content objects within a Plone site.
@@ -741,7 +745,7 @@ Plone frontend
 TLS
 Transport Layer Security
     Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
-    
+
     ```{seealso}
     [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security) article from MDN.
     ```

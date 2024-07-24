@@ -59,6 +59,7 @@ extensions = [
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
     "sphinx.ext.graphviz",
+    "sphinxcontrib.mermaid",
     "notfound.extension",
 ]
 
@@ -99,6 +100,8 @@ linkcheck_ignore = [
     r"https://stackoverflow.com",  # volto and documentation  # TODO retest with latest Sphinx.
     r"https://web.archive.org/",  # volto
     r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
+    r"https://www.upc.edu/en",  # TODO remove after their certificate is fixed
+    r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5
@@ -122,6 +125,7 @@ exclude_patterns = [
     "**/CONTRIBUTORS.rst",
     "**/LICENSE.rst",
     "**/README.rst",
+    "contributing/core/continuous-integration.md",
     "plone.restapi/.*",
     "plone.restapi/bin",
     "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
@@ -179,6 +183,8 @@ myst_substitutions = {
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
 }
 
+mermaid_version = "10.9.1"
+
 # -- Intersphinx configuration ----------------------------------
 
 # This extension can generate automatic links to the documentation of objects
@@ -197,6 +203,7 @@ myst_substitutions = {
 # the entire Plone Documentation is built.
 intersphinx_mapping = {
     "plone": ("https://6.docs.plone.org/", None),  # for imported packages
+    "plone5": ("https://5.docs.plone.org/", None),
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/", None),
     "training-2022": ("https://2022.training.plone.org/", None),
@@ -328,6 +335,7 @@ latex_logo = "_static/logo_2x.png"
 html_context = {
     "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
 }
+
 
 # An extension that allows replacements for code blocks that
 # are not supported in `rst_epilog` or other substitutions.

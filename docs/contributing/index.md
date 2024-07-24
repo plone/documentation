@@ -20,7 +20,6 @@ To contribute to any project in Plone, you must follow the policies of the [Plon
 This chapter covers policies that apply to all Plone projects.
 Other chapters cover any variations and additional policies for each project.
 
-
 (contributing-sign-and-return-the-plone-contributor-agreement-label)=
 
 ## Sign and return the Plone Contributor Agreement
@@ -48,7 +47,6 @@ Sign the Plone Contributor Agreement
 -   [Plone Framework Components Relicensing Policy, Framework Components Available Under a BSD License](https://plone.org/foundation/about/materials/foundation-resolutions/plone-framework-components-relicensing-policy#3b050ad2-361a-46de-b5c6-9b90f8947eb7)
 ```
 
-
 (contributing-code-of-conduct-label)=
 
 ## Code of Conduct
@@ -56,13 +54,11 @@ Sign the Plone Contributor Agreement
 The Plone Foundation has published a [Code of Conduct](https://plone.org/foundation/materials/foundation-resolutions/code-of-conduct).
 All contributors to the Plone Documentation follow the Code of Conduct.
 
-
 (contributing-first-time-contributors-label)=
 
 ## First-time contributors
 
 First-time contributors should read and follow our guide {doc}`first-time`.
-
 
 (contributing-continuous-integration-label)=
 
@@ -71,7 +67,6 @@ First-time contributors should read and follow our guide {doc}`first-time`.
 Plone project repositories use continuous integration (CI) to run tests, ensure code quality, or provide previews for every contribution.
 Plone uses GitHub Actions, Jenkins, Cypress, Netlify, and other services for CI.
 All of a project's CI jobs must pass before a contribution may be accepted.
-
 
 (contributing-change-log-label)=
 
@@ -93,18 +88,18 @@ When making a change to its documentation, set up, continuous integration, or ot
 
 The change log entry's format must be `###.type`, where `###` is the referenced GitHub issue or pull request number, `.` is the literal extension delimiter, and `type` is one of the following strings.
 
--   `breaking` for breaking changes
--   `bugfix` for bug fixes
--   `documentation` for documentation
--   `feature` for new features
--   `internal` for internal changes
+- `breaking` for breaking changes
+- `bugfix` for bug fixes
+- `documentation` for documentation
+- `feature` for new features
+- `internal` for internal changes
 
 A package configures the types it allows in a file `towncrier.toml` located at the root of its package directory.
 
 The content of this file must include the following.
 
--   A brief message that summarizes the changes in your contribution.
--   An attribution to yourself, in the format of `@github_username`.
+- A brief message that summarizes the changes in your contribution.
+- An attribution to yourself, in the format of `@github_username`.
 
 ```{important}
 These change log entries become narrative documentation.
@@ -112,13 +107,13 @@ These change log entries become narrative documentation.
 
 You can write good change log entries with the following guidance.
 
--   Use a narrative format, in the past tense, proper English spelling and grammar, and inline markup as needed.
--   Write your change log entry for its appropriate audience.
-    -   Most entries should address _users_ of the software.
-    -   An entry for a change to a public API should address _developers_.
--   If you fix a bug, write what was broken and is now fixed.
--   If you add or change a feature or public API, write a summary of previous behavior, what it does now, and how to use it.
--   Refer to narrative documentation as needed.
+- Use a narrative format, in the past tense, proper English spelling and grammar, and inline markup as needed.
+- Write your change log entry for its appropriate audience.
+  - Most entries should address _users_ of the software.
+  - An entry for a change to a public API should address _developers_.
+- If you fix a bug, write what was broken and is now fixed.
+- If you add or change a feature or public API, write a summary of previous behavior, what it does now, and how to use it.
+- Refer to narrative documentation as needed.
 
 The following text is an example of a good change log entry, placed inside {file}`/news/4470.documentation`.
 
@@ -132,7 +127,6 @@ The following would be a poor change log entry.
 Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_guide]
 ```
 
-
 (contributing-project-configuration-files-label)=
 
 ## Project configuration files
@@ -140,7 +134,6 @@ Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_
 To standarize the developer experience across packages, a configuration tool is used.
 
 See the [tool documentation](https://github.com/plone/meta) for more information.
-
 
 (contributing-specific-contribution-policies-for-projects-label)=
 
@@ -161,7 +154,7 @@ Documentation
 
 Plone API
 :   API methods for Plone functionality.
-    See {doc}`../plone.api/contribute/index`.
+    See {doc}`../plone.api/contribute`.
 
 Plone REST API
 :   A RESTful API for Plone.
@@ -170,7 +163,6 @@ Plone REST API
 Volto
 :   Plone 6 default frontend.
     See {doc}`../volto/contributing/index`.
-
 
 (contributing-releases-label)=
 
@@ -182,7 +174,6 @@ We use [`zest.releaser`](https://zestreleaser.readthedocs.io/en/latest/) for rel
 
 We use [`release-it`](https://github.com/release-it/release-it) for releasing the Node.js packages used in Plone, including {doc}`Volto </volto/index>` and the [Classic UI mockup](https://github.com/plone/mockup).
 
-
 ```{toctree}
 ---
 caption: Contributing
@@ -192,6 +183,7 @@ hidden: true
 
 first-time
 documentation/index
+core/index
 plone-api
 plone-restapi
 volto
