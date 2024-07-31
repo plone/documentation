@@ -91,6 +91,10 @@ This means that the translator can go to the [Plone project and Weblate](https:/
 
 You will need to create an account there and then your translations will be automatically contributed back to Plone's GitHub repository.
 
+```{note}
+At this moment Volto translations can't be contributed using Weblate. We are working on this issue and we hope to have it fixed as soon as possible.
+```
+
 
 (contributing-plone-core-translations-support-label)=
 
