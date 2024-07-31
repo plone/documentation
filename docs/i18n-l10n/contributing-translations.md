@@ -77,6 +77,20 @@ The process of translating the Volto frontend is the following.
 
 4. Commit your changes, and create a pull request.
 
+(contributing-plone-core-translations-using-weblate)=
+
+## Using Weblate to translate Plone
+
+[Weblate](https://weblate.org/) is an Open Source project to help software developers translate their projects.
+
+It lets the translator to work in a web based interface, without the need of installing any third-party software or without the need to use git or GitHub.
+
+Plone Foundation has obtained a so called `libre` account for Plone, meaning we get the hosting with many other Open Source Projects at the [Hosted](https://hosted.weblate.org/) platform that Weblate offers to Open Source projects.
+
+This means that the translator can go to the [Plone project and Weblate](https://hosted.weblate.org/projects/plone/) and start translating there.
+
+You will need to create an account there and then your translations will be automatically contributed back to Plone's GitHub repository.
+
 
 (contributing-plone-core-translations-support-label)=
 
