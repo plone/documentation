@@ -94,7 +94,8 @@ Translators will need to create an account there.
 Then your translations will be automatically contributed back to Plone's GitHub repository.
 
 ```{note}
-At this moment Volto translations can't be contributed using Weblate. We are working on this issue and we hope to have it fixed as soon as possible.
+At this moment Volto translations can't be contributed using Weblate.
+The Volto Team are working on this issue, and hope to fix it as soon as possible.
 ```
 
 
