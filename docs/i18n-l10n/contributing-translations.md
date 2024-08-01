@@ -85,7 +85,8 @@ The process of translating the Volto frontend is the following.
 
 Translators can work in a web interface, and not have to install third-party software or use git or GitHub.
 
-Plone Foundation has obtained a so called `libre` account for Plone, meaning we get the hosting with many other Open Source Projects at the [Hosted](https://hosted.weblate.org/) platform that Weblate offers to Open Source projects.
+The Plone Foundation has obtained a "gratis Libre plan" account for Plone.
+Plone gets free hosting at the [Hosted](https://hosted.weblate.org/) platform that Weblate offers to open source projects.
 
 This means that the translator can go to the [Plone project and Weblate](https://hosted.weblate.org/projects/plone/) and start translating there.
 
