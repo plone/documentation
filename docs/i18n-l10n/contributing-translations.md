@@ -79,7 +79,7 @@ The process of translating the Volto frontend is the following.
 
 (contributing-plone-core-translations-using-weblate)=
 
-## Using Weblate to translate Plone
+## Weblate for translations
 
 [Weblate](https://weblate.org/) is an Open Source project to help software developers translate their projects.
 
