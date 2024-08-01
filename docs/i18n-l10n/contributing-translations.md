@@ -90,7 +90,8 @@ Plone gets free hosting at the [Hosted](https://hosted.weblate.org/) platform th
 
 Translators can go to the [Plone project in Weblate](https://hosted.weblate.org/projects/plone/) to write translations.
 
-You will need to create an account there and then your translations will be automatically contributed back to Plone's GitHub repository.
+Translators will need to create an account there.
+Then your translations will be automatically contributed back to Plone's GitHub repository.
 
 ```{note}
 At this moment Volto translations can't be contributed using Weblate. We are working on this issue and we hope to have it fixed as soon as possible.
