@@ -88,7 +88,7 @@ Translators can work in a web interface, and not have to install third-party sof
 The Plone Foundation has obtained a "gratis Libre plan" account for Plone.
 Plone gets free hosting at the [Hosted](https://hosted.weblate.org/) platform that Weblate offers to open source projects.
 
-This means that the translator can go to the [Plone project and Weblate](https://hosted.weblate.org/projects/plone/) and start translating there.
+Translators can go to the [Plone project in Weblate](https://hosted.weblate.org/projects/plone/) to write translations.
 
 You will need to create an account there and then your translations will be automatically contributed back to Plone's GitHub repository.
 
