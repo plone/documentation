@@ -77,7 +77,7 @@ The process of translating the Volto frontend is the following.
 
 4. Commit your changes, and create a pull request.
 
-(contributing-plone-core-translations-using-weblate)=
+(contributing-weblate-for-translations)=
 
 ## Weblate for translations
 
