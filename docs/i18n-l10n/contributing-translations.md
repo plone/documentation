@@ -81,7 +81,7 @@ The process of translating the Volto frontend is the following.
 
 ## Weblate for translations
 
-[Weblate](https://weblate.org/) is an Open Source project to help software developers translate their projects.
+[Weblate](https://weblate.org/) is an open source project to help software developers translate their projects.
 
 It lets the translator to work in a web based interface, without the need of installing any third-party software or without the need to use git or GitHub.
 
