@@ -81,7 +81,7 @@ The process of translating the Volto frontend is the following.
 
 ## Weblate for translations
 
-[Weblate](https://weblate.org/) is an open source project to help software developers translate their projects.
+[Weblate](https://weblate.org/en/) is an open source project to help software developers translate their projects.
 Translators can work in a web interface, and not have to install third-party software or use git or GitHub.
 The Plone Foundation has obtained a "gratis Libre plan" account for Plone.
 Plone gets free hosting at the [Hosted](https://hosted.weblate.org/) platform that Weblate offers to open source projects.
