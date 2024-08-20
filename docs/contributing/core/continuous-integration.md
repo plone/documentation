@@ -1,76 +1,89 @@
 ---
 myst:
   html_meta:
-    "description": "Essential continuous integration practices"
-    "property=og:description": "Essential continuous integration practices"
-    "property=og:title": "Essential continuous integration practices"
-    "keywords": "Plone, continuous integration, best practices"
+    "description": "Working with continuous integration via Jenkins and GitHub workflows in Plone"
+    "property=og:description": "Working with continuous integration via Jenkins and GitHub workflows in Plone"
+    "property=og:title": "Continuous integration"
+    "keywords": "Plone, continuous integration, Jenkins, GitHub workflows"
 ---
 
-# Continuous Integration
+# Continuous integration
 
-As a complex system build out of hundreds of small packages, Plone can be easily broken, inadvertently, with any change on any of its packages.
+As a complex system built from hundreds of small packages, Plone can be easily and inadvertently broken from a change to any of its packages.
+To help prevent breaking Plone, a mix of a {term}`continuous integration` (CI) systems of GitHub workflows and Jenkins thoroughly checks all changes.
 
-For that a mix of a {term}`CI` system at [jenkins.plone.org](https://jenkins.plone.org) and GitHub Actions ensure that any change is thoroughly checked.
+Do not use continuous integration as a replacement for running tests and other checks locally before pushing commits to a Plone repository.
+See {ref}`test-and-code-quality-label` for an explanation, and {ref}`contributing-specific-contribution-policies-for-projects-label` for a project's specific contributing guidelines.
+
+
+## GitHub workflows
+
+Most Plone repositories use {term}`GitHub workflows` to run tests, check code quality, and perform other CI tasks on pushed commits to an open pull request.
+
+If a pull request is opened from a branch in the repository, then checks will automatically run.
+Only members of certain Plone GitHub organization teams and users with write permission in the repository can do this.
+Otherwise GitHub workflows do not run automatically, and require a member with write permission to run the checks.
+
+GitHub workflows should pass before running Jenkins checks and before merging an open pull request.
+
 
 ## Jenkins
 
-Jenkins is the primary source of truth to know if the complete test suite of any Plone versions in development is passing or not.
+[Jenkins](https://jenkins.plone.org) is the authoritative source to see whether the complete test suite passes for any Plone version under development.
+Jenkins can be run on a change to any of Plone's hundreds of repositories that it monitors.
 
-Jenkins is configured to react on changes done in any of the hundreds of repositories that all together make Plone.
 
-Whenever a change on any of those repositories happen, Jenkins starts a slew of testing jobs that ultimately answer the question of if those changes pass Plone's test suite.
+### Run Jenkins
 
-### Triggering jobs (automatically)
+Running the entire test suite on Jenkins takes at least 30 minutes, and consumes precious server resources.
+For this reason, Jenkins is configured not to run automatically on each push to an open pull request.
+Instead you should wait until you have completed pushing commits to an open pull request, and have seen that all GitHub workflows have passed.
 
-As running the Jenkins jobs is a bit expensive, in time, Jenkins does not run automatically on any new commit.
-
-Rather, Jenkins waits for a special comment to be found in a pull request on a repository that is monitored by Jenkins.
+After all GitHub checks pass, and if Jenkins monitors the project, you can run Jenkins by adding a comment to the open pull request.
 
 ```text
 @jenkins-plone-org please run jobs
 ```
 
-Pasting the text above on a pull request, will trigger Jenkins to run all configured test suites related to the current pull request, **with the changes of the pull request itself**.
+This will trigger Jenkins to run all configured test suites using the changes in the pull request.
 
-#### buildout.coredev special case
+You can also manually run Jenkins jobs by visiting our [Jenkins server](https://jenkins.plone.org/), logging in with your GitHub account, finding the right job, and clicking the <img alt="Build now icon" src="/_static/contributing/core/icon-build-now.svg" class="inline"> {guilabel}`Build now` button.
 
-`buildout.coredev` is the special repository where our configuration and tooling to orchestrate Plone lies in.
 
-Contrary to all the other repositories, whenever a commit is made on this repository, it automatically triggers Jenkins jobs to be run.
+#### `buildout.coredev` special case
 
-### Triggering jobs (manually)
+`buildout.coredev` contains the configuration and tooling to orchestrate Plone.
+Contrary to all the other repositories, whenever a push is made to this repository, it automatically triggers Jenkins to run its jobs.
 
-Jenkins jobs can also be triggered manually by going to our Jenkins server, login in with your GitHub account, finding the right job, and triggering the `Run` button.
 
 ### Results
 
-Once a jenkins job is finished, it will update its status icon on Jenkins UI itself, but also report back to GitHub, the result of the job.
+Once a Jenkins job completes, it updates its status icon in the Jenkins UI, and reports the result of the job to the open pull request on GitHub.
 
-For pull requests, this means a green check mark or a red cross will be displayed at the end of the pull request, on pull requests listings, even on the favicon itself.
+In GitHub at the end of the pull request, a status indicator of either a green check mark {guilabel}`✅` or a red cross {guilabel}`❌` will be displayed for the job, followed by a {guilabel}`Details` link back to the Jenkins job build for that pull request.
+The status indicator will also appear in the GitHub Octocat favicon in the web browser tab on the pull request, and on lists of pull requests.
 
-This gives the expected feedback to the pull request author, or any reviewer interested in knowing how a given pull request fared in Jenkins. Thus allowing pull request reviewers or authors to decide if the pull request can already be merged.
+You can use the results to decide whether to merge the pull request.
 
-#### On failures
 
-If the Jenkins jobs reports failures, the statuses of the pull request will provide a `Details` link back to Jenkins.
+### Failure
 
-That link leads back to the Jenkins job build for that pull request.
+If the Jenkins job reports a failure, you can investigate its cause.
+Click the {guilabel}`Details` link to show the stacktrace on Jenkins.
 
-In that page, there is the list of test failures (if any) already listed. Clicking on them show the stacktrace that should help diagnose why there was an error on a given test.
+In the side bar of the job build page in Jenkins, click the <img alt="Console Output terminal icon" src="/_static/contributing/core/icon-terminal.svg" class="inline"> {guilabel}` Console Output` link to show the full console output.
+You can examine all the steps and debugging information that Jenkins generated while running the job.
+This can be helpful whenever the errors were not in a single test, but rather a test set up or tear down or other problem.
 
-On the side bar of the job build page in Jenkins there is also `Console Output` link. This leads to the **full job output**, note that is large, where it can be seen all the steps and debugging information that Jenkins generated running the job.
 
-This can be helpful whenever the errors where not on a single test, but rather a general testing set up/tear down problem.
+### Retry
 
-### Retrying
-
-If there were errors on the Jenkins jobs, and corrections have been made on the code, triggering the jenkins jobs again is a matter of giving the special comment on the GitHub pull request again:
+If there were errors on the Jenkins jobs, and you push additional commits to correct the errors, you can trigger the Jenkins jobs again by adding a comment to the open pull request in GitHub.
 
 ```text
 @jenkins-plone-org please run jobs
 ```
 
-Jenkins jobs can also be restarted within Jenkins UI itself. On the Jenkins job itself, and provided you are logged in, you can find a `Retry` link on the left toolbar. Clicking it will trigger a new Jenkins job with the same configuration as the one you are on.
-
+You can also restart Jenkins jobs in the Jenkins UI.
+After logging in to Jenkins, and finding the appropriate job, you can click the <img alt="Retry icon" src="/_static/contributing/core/icon-retry.svg" class="inline"> {guilabel}`Retry` link on the left toolbar to retry the failed job.
 Jenkins will update GitHub statuses accordingly.
