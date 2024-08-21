@@ -55,7 +55,7 @@ See its {ref}`install-packages-hardware-requirements-label`.
 
 ### Install Docker
 
-Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
+Install [Docker Desktop](https://docs.docker.com/get-started/get-docker/) for your operating system.
 
 Docker Desktop includes all Docker tools.
 {term}`Docker Compose` is one of the Docker tools that will be used in much of this documentation.
