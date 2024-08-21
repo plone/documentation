@@ -40,7 +40,7 @@ Optionally sign the [Plone Contributor Agreement](https://plone.org/foundation/c
 
 The process of translating Plone Classic UI is the following.
 
-1.  Go to https://github.com/collective/plone.app.locales and clone it into your computer.
+1.  Follow the instructions to set up Volto for development as described in {doc}`../volto/contributing/developing-core`.
 
 2.  Create a new branch to work on your translations.
     Name the branch with something identifiable.
