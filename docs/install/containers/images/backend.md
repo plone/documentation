@@ -31,7 +31,7 @@ There are several ways to store data used by applications that run in Docker con
 
 We encourage users of the `Plone` images to familiarize themselves with the options available.
 
-[The Docker documentation](https://docs.docker.com/guides/docker-concepts/running-containers/persisting-container-data) is a good starting point for understanding the different storage options and variations.
+[The Docker documentation](https://docs.docker.com/get-started/docker-concepts/running-containers/persisting-container-data/) is a good starting point for understanding the different storage options and variations.
 
 
 ## Configuration Variables
