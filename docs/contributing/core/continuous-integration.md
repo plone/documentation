@@ -1,111 +1,89 @@
 ---
 myst:
   html_meta:
-    "description": "Essential continuous integration practices"
-    "property=og:description": "Essential continuous integration practices"
-    "property=og:title": "Essential continuous integration practices"
-    "keywords": "Plone, continuous integration, best practices"
+    "description": "Working with continuous integration via Jenkins and GitHub workflows in Plone"
+    "property=og:description": "Working with continuous integration via Jenkins and GitHub workflows in Plone"
+    "property=og:title": "Continuous integration"
+    "keywords": "Plone, continuous integration, Jenkins, GitHub workflows"
 ---
 
-# Essential continuous integration practices
+# Continuous integration
 
-The {term}`CI` system at [jenkins.plone.org](https://jenkins.plone.org) is a shared resource for Plone core developers to notify them of regressions in Plone core code.
+As a complex system built from hundreds of small packages, Plone can be easily and inadvertently broken from a change to any of its packages.
+To help prevent breaking Plone, a mix of a {term}`continuous integration` (CI) systems of GitHub workflows and Jenkins thoroughly checks all changes.
 
-Build breakages are a normal and expected part of the development process.
-The aim is to find errors and remove them as quickly as possible, without expecting perfection and zero errors.
-However, there are some essential practices that you need follow to achieve a stable build:
+Do not use continuous integration as a replacement for running tests and other checks locally before pushing commits to a Plone repository.
+See {ref}`test-and-code-quality-label` for an explanation, and {ref}`contributing-specific-contribution-policies-for-projects-label` for a project's specific contributing guidelines.
 
 
-## 1) Don't check in on a broken build
+## GitHub workflows
 
-Do not make things more complicated for the developer who is responsible for breaking the build.
+Most Plone repositories use {term}`GitHub workflows` to run tests, check code quality, and perform other CI tasks on pushed commits to an open pull request.
 
-If the build breaks, the developer has to identify the cause of the breakage as soon as possible and should fix it.
-This strategy gives the developer the best option to find out what caused the breakage and fix it immediately.
-Fixing the build is easier with a clear look at the problem.
-Checking in further changes and triggering new builds will complicate matters and lead to more problems.
+If a pull request is opened from a branch in the repository, then checks will automatically run.
+Only members of certain Plone GitHub organization teams and users with write permission in the repository can do this.
+Otherwise GitHub workflows do not run automatically, and require a member with write permission to run the checks.
 
-If the build is broken over a longer period of time (more than a couple of hours) you should either:
+GitHub workflows should pass before running Jenkins checks and before merging an open pull request.
 
--   notify the developer who is responsible for the breakage
--   fix the problem yourself
--   revert the commit so you and others can continue to work
 
-```{note}
-There is one exception to this rule.
-Sometimes there are changes or tests that depend on changes in other packages.
-If this is the case, there is no way around breaking a single build for a certain period of time.
-In this case, run the all tests locally with all the changes and commit them within a time frame of ten minutes.
+## Jenkins
+
+[Jenkins](https://jenkins.plone.org) is the authoritative source to see whether the complete test suite passes for any Plone version under development.
+Jenkins can be run on a change to any of Plone's hundreds of repositories that it monitors.
+
+
+### Run Jenkins
+
+Running the entire test suite on Jenkins takes at least 30 minutes, and consumes precious server resources.
+For this reason, Jenkins is configured not to run automatically on each push to an open pull request.
+Instead you should wait until you have completed pushing commits to an open pull request, and have seen that all GitHub workflows have passed.
+
+After all GitHub checks pass, and if Jenkins monitors the project, you can run Jenkins by adding a comment to the open pull request.
+
+```text
+@jenkins-plone-org please run jobs
 ```
 
+This will trigger Jenkins to run all configured test suites using the changes in the pull request.
 
-## 2) Always run all commit tests locally before committing
-
-Follow this practice so the build stays green, and other developers can continue to work without breaking the first rule.
-
-Remember that Plone development can happen all over the world, at all times.
-Other developers may have checked in changes since your last synchronization.
-These may interact with your work.
-
-Therefore it's essential that you merge changes from the main branch into your feature branch, then run the tests again, before you push your changes to GitHub.
-
-A common source of errors on check-in is to forget to add some files to the repository.
-Use {command}`git status` to check and correct for this.
-Also double-check to not check in files that should not be part of a package, such as editor configuration files and git submodules.
+You can also manually run Jenkins jobs by visiting our [Jenkins server](https://jenkins.plone.org/), logging in with your GitHub account, finding the right job, and clicking the <img alt="Build now icon" src="/_static/contributing/core/icon-build-now.svg" class="inline"> {guilabel}`Build now` button.
 
 
-## 3) Wait for commit tests to pass before moving on
+#### `buildout.coredev` special case
 
-Always monitor the build's progress, and fix the problem right away if it fails.
-If you introduced a regression, you have a far better chance of fixing the build sooner than later.
-Also another developer might have committed in the meantime (by breaking rule 1), making things more complicated for you.
-
-
-## 4) Never go home on a broken build
-
-Take into account the first rule of CI ("Don't check in on a broken build").
-Breaking the build essentially stops all other developers from working on it.
-Therefore going home on a broken build—or even on a build that has not finished yet—is _not_ acceptable.
-It will prevent all other developers from working, or they will need to fix the errors that you introduced.
+`buildout.coredev` contains the configuration and tooling to orchestrate Plone.
+Contrary to all the other repositories, whenever a push is made to this repository, it automatically triggers Jenkins to run its jobs.
 
 
-## 5) Always be prepared to revert to the previous revision
+### Results
 
-For other developers to work on the build, you should always be prepared to revert to the previous passing revision.
+Once a Jenkins job completes, it updates its status icon in the Jenkins UI, and reports the result of the job to the open pull request on GitHub.
 
+In GitHub at the end of the pull request, a status indicator of either a green check mark {guilabel}`✅` or a red cross {guilabel}`❌` will be displayed for the job, followed by a {guilabel}`Details` link back to the Jenkins job build for that pull request.
+The status indicator will also appear in the GitHub Octocat favicon in the web browser tab on the pull request, and on lists of pull requests.
 
-## 6) Time-box fixing before reverting
-
-When the build breaks on check-in, try to fix it for ten minutes.
-If, after ten minutes, you aren't finished with the solution, revert to the previous version from your version control system.
-This way you will allow other developers to continue to work.
+You can use the results to decide whether to merge the pull request.
 
 
-## 7) Don't comment out failing tests
+### Failure
 
-Once you begin to enforce the previous rule, the result is often that developers start commenting out failing tests in order to get the build passing again as quickly as possible.
-While this impulse is understandable, it is _not acceptable_.
+If the Jenkins job reports a failure, you can investigate its cause.
+Click the {guilabel}`Details` link to show the stacktrace on Jenkins.
 
-The tests were passing for a while and then start to fail.
-This means that you either caused a regression, made assumptions that are no longer valid, or the application has changed the functionality being tested for a valid reason.
-
-You should always either fix the code (if a regression has been found), modify the test (if one of the assumptions has changed), or delete it (if the functionality under test no longer exists).
-
-
-## 8) Take responsibility for all breakages that result from your changes
-
-If you commit a change and all the tests you wrote pass, but others break, the build is still broken.
-This also applies to tests that fail in `buildout.coredev` and don't belong directly to the package you worked on.
-This means that you have introduced a regression bug into the application.
-
-It is _your responsibility_ to fix all tests that do not pass because of your changes.
-
-There are some tests in Plone that fail randomly, and the community is always working on fixing those.
-If you think you hit such a test, try to fix it or re-run the Jenkins job to see if it passes again.
-
-In any case, the developer who made the commit is responsible to make it pass.
+In the side bar of the job build page in Jenkins, click the <img alt="Console Output terminal icon" src="/_static/contributing/core/icon-terminal.svg" class="inline"> {guilabel}` Console Output` link to show the full console output.
+You can examine all the steps and debugging information that Jenkins generated while running the job.
+This can be helpful whenever the errors were not in a single test, but rather a test set up or tear down or other problem.
 
 
-## Further reading
+### Retry
 
-These rules were taken from the excellent book "Continuous Delivery" by Jez Humble and David Farley (Addison Wesley), and have been adopted and rewritten for the Plone community.
+If there were errors on the Jenkins jobs, and you push additional commits to correct the errors, you can trigger the Jenkins jobs again by adding a comment to the open pull request in GitHub.
+
+```text
+@jenkins-plone-org please run jobs
+```
+
+You can also restart Jenkins jobs in the Jenkins UI.
+After logging in to Jenkins, and finding the appropriate job, you can click the <img alt="Retry icon" src="/_static/contributing/core/icon-retry.svg" class="inline"> {guilabel}`Retry` link on the left toolbar to retry the failed job.
+Jenkins will update GitHub statuses accordingly.
