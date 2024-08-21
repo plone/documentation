@@ -107,10 +107,6 @@ Chef
 CloudFormation
     [AWS CloudFormation](https://aws.amazon.com/cloudformation/) gives developers and systems administrators an way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
 
-Travis CI
-    Travis CI is a hosted, distributed continuous integration service used to build and test software projects hosted at GitHub.
-    Open source projects may be tested with limited runs via [travis-ci.com](https://www.travis-ci.com).
-
 Solr
     [Solr](https://solr.apache.org/) is a popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
 

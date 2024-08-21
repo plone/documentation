@@ -125,7 +125,6 @@ exclude_patterns = [
     "**/CONTRIBUTORS.rst",
     "**/LICENSE.rst",
     "**/README.rst",
-    "contributing/core/continuous-integration.md",
     "plone.restapi/.*",
     "plone.restapi/bin",
     "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
