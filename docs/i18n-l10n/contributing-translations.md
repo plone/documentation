@@ -40,7 +40,7 @@ Optionally sign the [Plone Contributor Agreement](https://plone.org/foundation/c
 
 The process of translating Plone Classic UI is the following.
 
-1.  Go to https://github.com/collective/plone.app.locales and clone it into your computer.
+1.  Follow the instructions to set up Volto for development as described in {doc}`../volto/contributing/developing-core`.
 
 2.  Create a new branch to work on your translations.
     Name the branch with something identifiable.
@@ -75,7 +75,10 @@ The process of translating the Volto frontend is the following.
     -  To update a translation, translate your language's `po` file found at `locales/{language_code}/LC_MESSAGES/volto.po`.
     -  To create a new translation, create a new directory at `locales/{language_code}/LC_MESSAGES/`, copy the file `locales/volto.pot` to `locales/{language_code}/LC_MESSAGES/volto.po` (note to drop the trailing `t`), and start translating.
 
-4. Commit your changes, and create a pull request.
+4. Run `yarn i18n` to convert your `po` files into `json`.
+   Volto loads these `json` files to provide translated text strings in the interface.
+
+5. Commit your changes, and create a pull request.
 
 (contributing-weblate-for-translations)=
 
