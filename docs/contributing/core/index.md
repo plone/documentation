@@ -299,7 +299,7 @@ Plone has a continuous integration ({term}`CI`) setup and follows CI rules.
 When you push a change to a Plone package, there may be GitHub workflows that run automatically.
 The CI package [mr.roboto](https://github.com/plone/mr.roboto) will perform some checks and suggest that you run Jenkins after all other CI runs.
 
-%% See {doc}`continuous-integration` for more information.
+See {doc}`continuous-integration` for more information.
 
 
 ## Additional material
@@ -308,7 +308,7 @@ The CI package [mr.roboto](https://github.com/plone/mr.roboto) will perform some
 :maxdepth: 1
 
 documentation
-%% continuous-integration
+continuous-integration
 mrdeveloper
 plips
 plip-review
