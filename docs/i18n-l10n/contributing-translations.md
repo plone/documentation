@@ -111,7 +111,7 @@ See the Weblate documentation, [Translating using Weblate](https://docs.weblate.
 
 When you save a translation, then it is committed on a branch used only for translations in the respective GitHub repository.
 
-[Compare recent commits to the branch `translations-plone` on the package `plone.app.locales`](https://github.com/collective/plone.app.locales/compare/master...translations-plone).
+[See recent commits to the package `plone.app.locales`](https://github.com/collective/plone.app.locales/commits/master/).
 
 Maintainers will periodically create a pull request from the changes, and merge it.
 
