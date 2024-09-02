@@ -90,17 +90,29 @@ The goal of turning more of the current core packages into core add-ons is to ma
 
 (backend-upgrade-plone-v61-discussion-label)=
 
-## Discussion is disabled by default
+
+## Discussion is a core add-on
 
 Discussion is a feature that allows your site visitors to comment on web pages for any content object.
+The code behind this is in the `plone.app.discussion` package.
+In Plone 6.0 and earlier, this was a dependency of `Products.CMFPlone`, making it available for installation in all Plone sites.
+In Plone 6.1 it's a dependency of the `Plone` package.
+
 Discussion is disabled by default in Plone 6.1 and later.
 To enable discussion, you need to perform the following tasks.
-
-% Please add sufficient details for how to do this task, then delete this comment.
-% Also consider that there might be different approaches between Classic UI and Volto that need to be mentioned.
 
 1.  In your Python {file}`requirements.txt` or {file}`pyproject.toml` file, add the core add-on `plone.app.discussion` to your dependencies.
 1.  Run pip to install `plone.app.discussion`.
 1.  Restart the Plone backend to load `plone.app.discussion`.
-1.  Enable the {guilabel}`Discussion` add-on in the Plone control panel under {menuselection}`Site Setup --> General`.
+1.  Enable the {guilabel}`Discussion Support` add-on in the {guilabel}`Add-ons` control panel under {menuselection}`Site Setup --> General`.
+1.  If you use Plone Classic UI, you can then use the {guilabel}`Discussion` control panel to further configure this feature, for example for enabling comment moderation.
 1.  🍻
+
+If you have an existing Plone 5.2 or 6.0 site and you migrate to 6.1, then migration code handles the change:
+
+* If the `plone.app.discussion` Python package is in your setup, the migration does nothing: existing discussion configuration and comments remain unchanged.
+* If the `plone.app.discussion` Python package is _not_ in your setup, and the site has no existing comments (discussions), then the migration code removes the Discussion configuration from your site.
+  Apparently you were _not_ using comments in your site, so the configuration is no longer needed.
+* If the `plone.app.discussion` Python package is _not_ in your setup, but the site has existing comments (discussions), then the migration code stops with an error.
+  Apparently you _were_ using comments in your site.
+  Easiest solution here is to add the `plone.app.discussion` package to your dependencies.
