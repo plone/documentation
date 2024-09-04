@@ -525,12 +525,14 @@ plonecli
 ZCA
 Zope Component Architecture
     Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
+    It uses the design patterns of interface, adapter, factory, and subscriber.
     It is very well suited to developing large Python software systems.
     The ZCA is not specific to the Zope web application server.
     It can be used for developing any Python application.
     Maybe it should be called Python Component Architecture.
+
     ```{seealso}
-    See also https://zopecomponent.readthedocs.io/en/latest/index.html.
+    https://zopecomponent.readthedocs.io/en/latest/index.html
     ```
 
 browser layer
@@ -618,6 +620,9 @@ content rule
 trigger
     A trigger is an event in Plone that causes the execution of defined actions.
     Example triggers include object modified, user logged in, and workflow state changed.
+
+DSL
+    Domain Specific Language
 
 navigation root
     An object marked as a navigation root provides a way to root catalog queries, searches, breadcrumbs, and so on, into that object.

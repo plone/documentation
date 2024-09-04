@@ -19,6 +19,7 @@ Insert introduction here.
 :maxdepth: 2
 annotations
 behaviors
+components
 configuration-registry
 content-types/index
 control-panels
