@@ -437,6 +437,31 @@ environment-vars =
 zcml = my.package
 ```
 
+When doing so, you may need to add the following zcml stanza in your package's `configure.zcml` file:
+
+```xml
+
+<include package="Products.CMFPlone" />
+
+```
+
+This **must** go *after* the `registerTranslations` stanza, before any other registration you may have in your package.
+
+It should look like this:
+
+```xml
+<configure xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n_domain="my.package">
+    <i18n:registerTranslations directory="locales" />
+    
+    <include package="Products.CMFPlone" />
+
+    <!-- any other registration -->
+
+</configure>
+```
+
+
 See the *Overriding Translations* section of Maurits van Rees's [blog entry on Plone i18n](https://maurits.vanrees.org/weblog/archive/2010/10/i18n-plone-4#overriding-translations).
 
 
