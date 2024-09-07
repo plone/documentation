@@ -437,17 +437,15 @@ environment-vars =
 zcml = my.package
 ```
 
-When doing so, you may need to add the following zcml stanza in your package's `configure.zcml` file:
+When doing so, you may need to add the following ZCML stanza in your package's {file}`configure.zcml` file:
 
 ```xml
-
 <include package="Products.CMFPlone" />
-
 ```
 
-This **must** go *after* the `registerTranslations` stanza, before any other registration you may have in your package.
+This **must** go *after* the `registerTranslations` stanza, and before any other registration you might have in your package.
 
-It should look like this:
+The registration should look like the following example.
 
 ```xml
 <configure xmlns:i18n="http://namespaces.zope.org/i18n"
