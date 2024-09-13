@@ -1,19 +1,19 @@
 ---
 myst:
   html_meta:
-    "description": "Managing Users And Groups in Plone"
-    "property=og:description": "Managing Users And Groups in Plone"
-    "property=og:title": "Managing Users And Groups in Plone"
-    "keywords": "user, groups, plone"
+    "description": "Managing users and groups in Plone"
+    "property=og:description": "Managing users and groups in Plone"
+    "property=og:title": "Managing users and groups in Plone"
+    "keywords": "user, groups, Plone"
 ---
 
 (backend-users-groups-label)=
 
-# Users and Groups
+# Users and groups
 
 
 ```{toctree}
-:caption: Users and Groups
+:caption: Users and groups
 :maxdepth: 2
 
 emergency-user
