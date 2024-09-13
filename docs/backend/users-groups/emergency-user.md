@@ -4,37 +4,61 @@ myst:
     "description": "Create an emergency user"
     "property=og:description": "Create an emergency user"
     "property=og:title": "Create an emergency user"
-    "keywords": "Plone, user and groups, emergency user, pip, buildout"
+    "keywords": "Plone, users, groups, emergency user, pip, buildout"
 ---
-
 
 (user-groups-emergency-user-label)=
 
 # Emergency user
 
-sometimes it is needed to create an emergency user. the password of admin ist lost or you have inherit a project without a proper documentation. The usecase: you will login as admin to your, but you can't.
+An emergency user is one that you can use to regain administrative access to a Plone site.
+If you lose the administrator password, or you inherit a project without proper documentation, you can create an emergency user.
 
-First of all, do the following steps not in a production environment! Shutdown your instance.
+First of all, do the following steps not in a production environment!
+
+
+(user-groups-create-an-emergency-user-label)=
+
+## Create an emergency user
+
+There are two procedures to create an emergency user, depending on how you created and manage the Plone site.
+For both scenarios, the commands you run will stop the Plone site, add a new user, and start the Plone site.
+
+```{important}
+You should always stop your Plone site before adding a new user.
+```
+
+```{important}
+The new username must not be an existing one.
+Therefore you should avoid the username `admin`, but use another arbitrary name, such as `admin2`.
+```
+
 
 (user-groups-emergency-user-pip-installation-label)=
 
-## Create an emergency user in a pip based Plone instance
+### pip based Plone instance
 
-```bash
+You can run the following shell commands to create an emergency user.
+
+```shell
+./venv/bin/instance stop
 ./venv/bin/addzopeuser -c instance/etc/zope.conf <user> <password>
+./venv/bin/instance start
 ```
 
-start your instance and login with the created user.
+Now you can login with the created user.
+
 
 (user-groups-emergency-user-buildout-installation-label)=
 
-## Create an emergency user in a buildout based Plone instance
+### Buildout based Plone instance
 
-With buildout and plone.recipe.zope2instance you can do
+With buildout and `plone.recipe.zope2instance`, you can run the following shell commands to create an emergency user.
 
-```bash
+```shell
+bin/instance stop
 bin/instance adduser <user> <password>
+bin/instance start
 ```
 
-start your instance and login with the created user.
-
+Now you can login with the created user.
