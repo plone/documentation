@@ -45,7 +45,7 @@ Although there are many container engine tools for developing, managing, and run
 
 The system requirements include those required by Docker itself.
 
--   [Linux](https://docs.docker.com/desktop/install/linux//)
+-   [Linux](https://docs.docker.com/desktop/install/linux/)
 -   [macOS](https://docs.docker.com/desktop/install/mac-install/)
 -   [Windows](https://docs.docker.com/desktop/install/windows-install/)
 
