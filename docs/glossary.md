@@ -34,6 +34,15 @@ cookiecutter-plone-starter
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
 
+Cookieplone
+    [Cookieplone](https://github.com/plone/cookieplone) is the recommended way to develop Volto projects since version 18.0.0-alpha.43, using it as a boilerplate generator.
+    It uses {term}`Cookiecutter`.
+
+@plone/generator-volto
+plone/generator-volto
+    [@plone/generator-volto](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
+    See {reff}`upgrade-18-cookieplone-label`.
+
 CSRF
 Cross-Site Request Forgery
     Cross-Site Request Forgery (CSRF or XSRF) is a type of web attack that allows an attacker to send malicious requests to a web application on behalf of a legitimate user.
