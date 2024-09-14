@@ -14,9 +14,6 @@ myst:
 
 This chapter provides instructions and tips for porting Plone projects to Python 3.
 
-```{seealso}
-If you want to upgrade add-ons to Python 3, the list of all Plone packages that still need to be ported can be found on the GitHub project board [Python 3 porting state for Plone add-ons](https://github.com/orgs/collective/projects/1).
-```
 
 ## Principles
 
