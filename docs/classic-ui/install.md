@@ -39,7 +39,7 @@ sudo apt install python3.12 python3.12-dev python3.12-venv
 Select a directory of your choice
 
 ```bash
-mkdir -p /tmp/plone && cd /tmp/plone
+mkdir -p /opt/plone && cd /opt/plone
 ```
 
 Create a virtual environment
@@ -98,10 +98,40 @@ Now you can call the url `http://localhost:8080` in your browser and you can add
 
 Let's have fun with Plone!
 
+### Example to start the instance via systemd
+
+ The following systemd service configuration works with the runwsgi script. It assumes your installation is located at /opt/plone and the user account your Plone instance runs under user *plone*:
+
+```ini
+[Unit]
+Description=Plone instance
+After=network.target
+
+[Service]
+Type=simple
+User=plone
+ExecStart=/opt/plone/bin/runwsgi /opt/plone/instance/etc/zope.ini
+KillMode=control-group
+TimeoutStartSec=10
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Save this configuration under /etc/systemd/system/plone.service and execute `systemctl daemon-reload` for systemd to read it. After that you can use standard `systemctl` commands to `start`, `restart` or `stop` the Plone instance:
+
+```
+systemctl start plone
+systemctl restart plone
+systemctl status plone
+systemctl stop plone
+```
+
 
 (classic-ui-installation-example-plone-systemd)=
 
-### Example to create a Zeo Server - Client installation
+### Example to create a zeo server - client installation
 
 Go to a directory of you choice
 
@@ -220,26 +250,24 @@ your site is available via browser:
 
 for production environment daemonize the services via systemd
 
-```todo
-daemonize scripts
-```
 
+### Example to start the zeo cluster via systemd
 
-(classic-ui-installation-example-plone-systemd)=
+The following systemd service configuration works with the runwsgi script. It assumes your installation is located at /opt/plone and the user account your Plone instance runs under user *plone*:
 
-### Example to start the instance via systemd
+You need a service file for every client and for the zeoserver.
 
- The following systemd service configuration works with the runwsgi script. It assumes your installation is located at /opt/plone and the user account your Plone instance runs under user plone:
+`plone-zeoserver.service`
 
 ```ini
 [Unit]
-Description=Plone instance
+Description=Plone zeoserver
 After=network.target
 
 [Service]
 Type=simple
 User=plone
-ExecStart=/opt/plone/bin/runwsgi /opt/plone/instance/etc/zope.ini
+ExecStart=/opt/plone/zeoserver/bin/runzeo
 KillMode=control-group
 TimeoutStartSec=10
 TimeoutStopSec=10
@@ -248,14 +276,79 @@ TimeoutStopSec=10
 WantedBy=multi-user.target
 ```
 
-Save this configuration under /etc/systemd/system/plone.service and execute `systemctl daemon-reload` for systemd to read it. After that you can use standard `systemctl` commands to `start`, `restart` or `stop` the Plone instance:
+`plone-client1.service`
+
+```ini
+[Unit]
+Description=Plone client1
+Requires=plone-zeoserver.service
+
+[Service]
+Type=simple
+User=plone
+ExecStart=/opt/plone/venv/bin/runwsgi /opt/plone/client1/etc/zope.ini
+KillMode=control-group
+TimeoutStartSec=10
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+
+`plone-client2.service`
+
+```ini
+[Unit]
+Description=Plone client2
+Requires=plone-zeoserver.service
+
+[Service]
+Type=simple
+User=plone
+ExecStart=/opt/plone/venv/bin/runwsgi /opt/plone/client2/etc/zope.ini
+KillMode=control-group
+TimeoutStartSec=10
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+Save this configurations in /etc/systemd/system `plone-zeoserver.service`, `plone-client1.service` and  `plone-client2.service` and execute `systemctl daemon-reload` for systemd to read it. After that you can use standard `systemctl` commands to `start`, `restart` or `stop` the Plone instance:
+
+for startup the cluster, use:
 
 ```
-systemctl start plone
-systemctl restart plone
-systemctl status plone
-systemctl stop plone
+systemctl start plone-client1.service
+systemctl start plone-client2.service
 ```
+
+the zeoserver starts automatically, because the clients have a requirements directive in the service definition `Requires=plone-zeoserver.service`
+
+for a full shutdown of cluster, use
+
+```
+systemctl stop plone-zeoserver.service
+```
+
+the clients stops automatically, because the clients have a requirements directive in the service definition `Requires=plone-zeoserver.service`
+
+to enable the startup of cluster on boot process:
+
+`systemctl enable plone-client1.service`
+
+`systemctl enable plone-client2.service`
+
+to disable the startup of cluster on boot process:
+
+`systemctl disable plone-client1.service`
+
+`systemctl disable plone-client2.service`
+
+(classic-ui-installation-example-plone-systemd)=
+
+
 
 (classic-ui-installation-buildout-label)=
 
@@ -279,7 +372,7 @@ sudo apt install python3.12 python3.12-dev python3.12-venv
 Select a directory of your choice
 
 ```bash
-mkdir -p /tmp/plone && cd /tmp/plone
+mkdir -p /opt/plone && cd /opt/plone
 ```
 
 Create a virtual environment
