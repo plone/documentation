@@ -98,12 +98,163 @@ Now you can call the url `http://localhost:8080` in your browser and you can add
 
 Let's have fun with Plone!
 
-```{todo}
-add an example to create a zeo installation
+
+(classic-ui-installation-example-plone-systemd)=
+
+### Example to create a Zeo Server - Client installation
+
+Go to a directory of you choice
+
+You need three files
+
+`requirements.txt`
+
+```
+-c constraints.txt
+Plone
+
+cookiecutter
+zope.mkzeoinstance
 ```
 
-```{todo}
-add an example to start the instance via for systemd
+`constraints.txt`
+
+```
+-c https://dist.plone.org/release/6.1-latest/constraints.txt
+```
+
+`setup-zeo.sh`
+
+``` bash
+#!/bin/bash
+
+ZEO_HOST=127.0.0.1
+ZEO_PORT=8100
+ZEO_NAME=zeoserver
+
+# number of clients
+CLIENTS=2
+
+CLIENT_HOST=127.0.0.1
+# a counter calculate the port number to 8081, 8082 ...
+CLIENT_PORT_BASE=808
+
+BLOBSTORAGE=$(pwd)/$ZEO_NAME/var/blobs/
+
+if [[ ! -v INITIAL_PASSWORD ]]; then
+    echo "INITIAL_PASSWORD is not set"
+    exit 1
+elif [[ -z "$INITIAL_PASSWORD" ]]; then
+    echo "INITIAL_PASSWORD is set to the empty string"
+    exit 1
+fi
+
+# Create the zeo server
+# configure zeo with mkzeoinstance
+./venv/bin/mkzeoinstance ${ZEO_NAME} ${ZEO_HOST}:${ZEO_PORT} -b ${BLOBSTORAGE}
+
+# Create the zeo clients
+COUNTER=0
+for OUTPUT in $(seq $CLIENTS)
+do
+  let COUNTER++
+  CLIENT_NAME=client${COUNTER}
+  CLIENT_PORT=${CLIENT_PORT_BASE}${COUNTER}
+  CLIENT_FILE=${CLIENT_NAME}.yaml
+
+  # configure a wsgi client with cookiecutter-zope-instance
+  cat <<EOF | tee ${CLIENT_FILE}
+  default_context:
+    target: ${CLIENT_NAME}
+    wsgi_listen: ${CLIENT_HOST}:${CLIENT_PORT}
+    db_storage: zeo
+    db_zeo_server: ${ZEO_HOST}:${ZEO_PORT}
+    db_blob_mode: shared
+    db_blob_location: ${BLOBSTORAGE}
+    environment: {
+      zope_i18n_compile_mo_files: true
+    }
+    initial_user_name: admin
+    initial_user_password: ${INITIAL_PASSWORD}
+    verbose_security: false
+    debug_mode: false
+EOF
+
+  cookiecutter -f --no-input --config-file ${CLIENT_FILE} https://github.com/plone/cookiecutter-zope-instance
+
+  rm ${CLIENT_FILE}
+done
+```
+
+then install Plone like described in the section {ref}`classic-ui-installation-label`.
+
+```
+python3.12 -m venv ./venv
+. venv/bin/activate
+pip install -r requirements.txt
+```
+
+make the setup file executable
+
+```
+chmod u+x setup-zeo.sh
+```
+
+run the setup script with a initial password
+
+```
+INITIAL_PASSWORD=<YOUR-SECRET-PASSWORD> ./setup-zeo.sh
+```
+
+For quick test start the zeoserver and the clients in foreground mode
+
+```
+zeoserver/bin/runzeo
+runwsgi -v client1/etc/zope.ini
+runwsgi -v client2/etc/zope.ini
+```
+
+your site is available via browser:
+
+`localhost:8081` or `localhost:8082`
+
+for production environment daemonize the services via systemd
+
+```todo
+daemonize scripts
+```
+
+
+(classic-ui-installation-example-plone-systemd)=
+
+### Example to start the instance via systemd
+
+ The following systemd service configuration works with the runwsgi script. It assumes your installation is located at /opt/plone and the user account your Plone instance runs under user plone:
+
+```ini
+[Unit]
+Description=Plone instance
+After=network.target
+
+[Service]
+Type=simple
+User=plone
+ExecStart=/opt/plone/bin/runwsgi /opt/plone/instance/etc/zope.ini
+KillMode=control-group
+TimeoutStartSec=10
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Save this configuration under /etc/systemd/system/plone.service and execute `systemctl daemon-reload` for systemd to read it. After that you can use standard `systemctl` commands to `start`, `restart` or `stop` the Plone instance:
+
+```
+systemctl start plone
+systemctl restart plone
+systemctl status plone
+systemctl stop plone
 ```
 
 (classic-ui-installation-buildout-label)=
