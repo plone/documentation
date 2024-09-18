@@ -11,14 +11,14 @@ myst:
 
 # Install
 
-In this part of the documentation, you can find how to {ref}`try Plone <install-index-try-plone-label>` or how to install Plone to either {doc}`Create a Plone project <create-project>` or {doc}`Contribute to a Plone package <plone:contributing/index>`.
+In this part of the documentation, you can find how to try Plone without having to install it yourself or how to install Plone for development purposes, to either {doc}`Create a Plone project <create-project>` or {doc}`Contribute to a Plone package <plone:contributing/index>`.
 
 
 (install-index-try-plone-label)=
 
 ## Try a Plone demo
 
-Choose a version to demo.
+You can try both of Plone's front ends on these demo sites.
 
 -   [Plone 6 with Volto frontend](https://demo.plone.org/)
 -   [Plone 6 with Classic UI](https://classic.demo.plone.org/login?came_from=/en)
