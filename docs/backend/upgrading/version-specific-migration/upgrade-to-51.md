@@ -432,7 +432,7 @@ Your folderish content types should either use the templates from `plone.app.con
 
 ### Rejected And Postponed PLIPs
 
-For details about rejected or postponed PLIPs see the [github PLIP project](https://github.com/plone/Products.CMFPlone/projects/1) and the [Framework Team PLIP status sheet](https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/edit).
+For details about rejected or postponed PLIPs see the [github PLIP project](https://github.com/orgs/plone/projects/47) and the [Framework Team PLIP status sheet](https://docs.google.com/spreadsheets/d/15Cut73TS5l_x8djkxNre5k8fd7haGC5OOSGigtL2drQ/edit).
 
 
 ## Known Issues

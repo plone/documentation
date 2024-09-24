@@ -125,15 +125,21 @@ exclude_patterns = [
     "**/CONTRIBUTORS.rst",
     "**/LICENSE.rst",
     "**/README.rst",
+    "**/eggs",
+    "_inc/.*",
     "plone.restapi/.*",
     "plone.restapi/bin",
+    "plone.restapi/develop-eggs",
     "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
+    "plone.restapi/eggs",
     "plone.restapi/ideas",
     "plone.restapi/include",
     "plone.restapi/lib",
     "plone.restapi/news",
+    "plone.restapi/parts",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "plone.restapi/var",
     "volto/contributing/branch-policy.md",
     "volto/contributing/install-docker.md",
     "volto/contributing/install-git.md",
@@ -349,7 +355,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.12",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.13",
     "{NVM_VERSION}": "0.39.5",
     "{SUPPORTED_PYTHON_VERSIONS}": "3.8, 3.9, 3.10, 3.11, or 3.12",
 }
