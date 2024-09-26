@@ -34,65 +34,188 @@ Nevertheless there is indirection on all other levels.
 Since Plone consists of a lot of packages, it is complex to untangle those.
 
 
-## Mental model
+## Mental model 
 
-A base mental model for how Plone is organized in Plone 6, and is shown in the following diagram:
+### Borders
+
+As a rough base mental model for how Plone is organized in Plone 6.1, there are two packages as dividing lines:
+
+1.  `Products.CMFPlone` and all below defines the Plone core. Everything in here depends on the `plone.base`.
+2.  `plone.base` as the border to the Application Server and Content Management Framework and its dependencies
 
 ```{mermaid}
 block-beta
-    columns 1
-
-    Plone["Plone <br/>the integraton of both distributions in one release"]
-    space
+    columns 4
+    Plone["Plone<br/>integraton of all in one release"]:4
     Distributions
-    block:dist
-        plone.volto
-        plone.classicui
-    end
-    space
-    block:core
-        coreaddons["Core add-ons"]
-        coreapi["Core APIs"]
-    end
-    space
-    cmfplone["Products.CMFPlone"]
+    Upgrade
+    coreapis["Core APIs"]
+    coreaddons["Core add-ons"]
+    cmfplone["Products.CMFPlone"]:4
+    ploneapp["Most of plone.app.* namespace"]:2
+    otherlay["Various related packages"]:2
+    plonebase["plone.base"]:4
+    block:groupfoundation:4
+        zopecore["Zope core/ ZCA"]
+        zopeeco["Zope ecosystem"]
+        cmfcore["CMFCore"]
+        ploneworld["Plone generic libraries"]
+        libraries["Other libraries"]
+    end  
+    style cmfplone fill:#fff9e6
+    style plonebase fill:#fff9e6
+```
 
-    space:2
+### Main components
 
-    block:layer
-        ploneapp["Most of plone.app.* namespace"]
-        otherlay["Various other packages"]
-    end
+Some explanation on the mental model
 
-space
+- Foundation:
+  - `Zope` core and its dependencies is the application server,
+  - the Zope component architecture (ZCA) framework and 
+  - some additional packages from the wider Zope ecosystem.
+  - then there are generic, standalone Plone libraries,  
+  - plus various other Python libraries.
+- `Products.CMFCore` provides on top of Zope very basic content management features we rely on.
+- `plone.base` defines several interfaces as contracts for the component architecture we build on. 
+   Additional it provides some base classes and utility functions we use often. 
+   It also depends on `Products.CMFCore` and so `Zope`.
+   Additional it depends on generic functionality like `plone.dexterity`, `plone.behavior` and `plone.registry`.
+- The space of plenty `plone.*`, `plone.app.*` and related libraries defines the core of Plone.
+- On top of this core, depending on these packages, is `Products.CMFPlone` which is the package to depend on if the basic Plone core is referenced.
+- On top of `Products.CMFPlone` 
+  - are the core APIs like `plone.api` and `plone.restapi`,
+  - there is the distribution support `plone.distribution` and specific distributions, currently `plone.volto`, `plone.classicui`, 
+  - are core addons like Working Copy Support (`plone.app.iterate`), discussion support (`plone.app.discussion`), ... 
+  - is `plone.app.upgrade`, the package to upgrade between Plone version.
+- The package `Plone` is the package to depend on if you want to depend on the whole Plone with everything.
+  This meta package without any code depends on all other packages.
+  It is what you want to install if you do not want to care about the details with all batteries included.
 
-    plonebase["plone.base"]
-    space
-    foundations["The Foundations"]
-    space:3
-        block:foundationcomponents
-           ploneworld["Plone world"]
-           zopeeco["Zope ecosystem"]
-           zopecore["Zope core"]
-           libraries["Libraries"]
-    end
-    Plone --> Distributions
-    dist --> core
-    cmfplone --> layer
-    core --> cmfplone
-    layer --> plonebase
-    plonebase --> foundations
+### The space on top of CMFPlone
 
-    style cmfplone fill:#ff0
-    style plonebase fill:#ff0
+Add-on developers and integrators are primary interacting with the dependencies on top of CMFPlone.
+The following diagram visualizes this part.
+
+```{mermaid}
+---
+config:
+  sankey:
+    showValues: false
+    width: 1600
+    height: 800
+    nodeAlignment: "right"
+---
+
+sankey-beta
+
+    Plone,Distributions,100
+
+    Distributions,plone.volto,50
+    Distributions,plone.classicui,30
+    Distributions,other dist.,20
+
+
+
+    plone.volto,plone.distribution,10
+    plone.volto,plone.restapi,20
+    plone.volto,plone.api,20
+
+    Multlilingual,plone.api,20
+    Commenting,plone.api,20
+    Working Copies,plone.api, 20
+    Caching,plone.api,20
+
+    plone.classicui,plone.distribution,15
+    plone.classicui,plone.api,15
+    other dist.,plone.distribution,4
+    other dist.,plone.api,8
+    other dist.,plone.restapi,8
+
+
+    Plone,Core-Addons,80
+
+    Core-Addons,Multlilingual,20
+    Core-Addons,Commenting,20
+    Core-Addons,Working Copies,20
+    Core-Addons,Caching,20
+
+    plone.distribution,Export/Import,15
+    plone.distribution,plone.api,14
+    plone.restapi,Core,20
+    Export/Import,plone.api,8
+    plone.restapi,plone.api,15
+    Export/Import,plone.restapi,7
+    Upgrade,Core,20
+    plone.api,Core,160
+
+    Plone,Upgrade,20
 
 ```
 
-As a rough model, there are two packages as dividing lines:
+## A more detailed view on the architecture
 
-1.  `Products.CMFPlone`
-2.  `plone.base`
+A more detailed view on the whole architecture is sketched here:
 
+```{mermaid}
+flowchart TB
+ subgraph Release["Release"]
+        Plone[["'Plone' Package"]]
+  end
+ subgraph subGraph1["Distributions"]
+        volto{{"plone.volto"}}
+        classicui{{"plone.classicui"}}
+        other{{"other ..."}}
+  end
+ subgraph Core-Addons["Core-Addons"]
+        multilingual("Multilingual")
+        iterate("Working Copies")
+        discussion("Commenting")
+        caching("Caching")
+  end
+ subgraph API["API"]
+        restapi("RestAPI")
+        ploneapi("API")
+        upgrade("Upgrade")
+        exportimport("Export/Import")
+        distribution["Distribution"]
+  end
+ subgraph subGraph4["The Inner Core"]
+        thecore((("Core-Features: plone.*, ...")))
+  end
+ subgraph Core["Core"]
+        cmfplone["Products.CMFPlone"]
+        plonebase["plone.base"]
+        subGraph4
+  end
+ subgraph Foundations["Foundations"]
+        zope["Zope/CMF/ZODB/..."]
+        supportlibs["Several Supporting Libraries"]
+  end
+    Plone == provides ==> volto
+    Plone -. provides .-> classicui & other & upgrade & multilingual & iterate & discussion & caching
+    volto -- installs --> restapi
+    volto == is a ==> distribution
+    classicui -. is a .-> distribution
+    other -. is a .-> distribution
+    distribution -- uses --> exportimport
+    distribution == depends on ==> ploneapi
+    restapi -- depends on --> ploneapi
+    cmfplone == depends on ==> thecore
+    thecore == depends on ==> plonebase
+    plonebase == depends on ==> zope
+    plonebase -- depends on --> supportlibs
+    zope -- depends on --> supportlibs
+    ploneapi == depends on ==> cmfplone
+    upgrade -- depends on --> cmfplone
+    multilingual -- depends on --> ploneapi
+    iterate -- depends on --> ploneapi
+    discussion -- depends on --> ploneapi
+    caching -- depends on --> ploneapi
+    exportimport -- uses serializers of --> restapi
+    exportimport -- depends on --> ploneapi
+
+```
 
 ## Packages in detail
 
