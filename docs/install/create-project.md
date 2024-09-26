@@ -1,21 +1,31 @@
 ---
 myst:
   html_meta:
-    "description": "Create a Plone project"
-    "property=og:description": "Create a Plone project"
-    "property=og:title": "Create a Plone project"
-    "keywords": "Plone, Plone 6, create, project, install, cookiecutter"
+    "description": "Create a Plone project with the Volto frontend"
+    "property=og:description": "Create a Plone project with the Volto frontend"
+    "property=og:title": "Create a Plone project with the Volto frontend"
+    "keywords": "Plone, Plone 6, Volto, create, project, install, cookiecutter"
 ---
 
 
 (create-a-project-label)=
 
-# Create a project
+# Create a project with the Volto frontend
 
 This chapter describes how you can create a web application project using Plone, with full control over development and deployment.
 
 If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
 
+:::{note}
+These instructions are valid for the current stable version of Plone.
+Volto 18.0.0-alpha.43 introduced a new project generator, Cookieplone.
+To create a project using Cookieplone, see {doc}`/install/create-project-cookieplone`.
+:::
+
+:::{note}
+These instructions create a project using the Volto frontend.
+If you'd like to use the Classic UI instead, see {doc}`/install/create-project-classicui`.
+:::
 
 (install-packages-system-requirements-label)=
 
@@ -28,25 +38,8 @@ Plone 6 has both hardware requirements and software pre-requisites.
 
 ### Hardware requirements
 
-The hardware requirements below give a rough estimate of the minimum hardware setup needed for a Plone server.
-
-A single Plone installation is able to run many Plone sites.
-
--   Installation of the Plone backend and Classic UI frontend requires a minimum of 256 MB of RAM and 2GB of disk swap space.
--   Installation of the Volto frontend requires a minimum of 2GB of RAM.
--   After installation, running Plone requires a minimum of 256 MB RAM and 512 MB of disk swap space per Plone site.
-    2 GB or more RAM per Plone site is recommended.
--   Minimum 512 MB hard disk space is required.
-    40 GB or more hard disk space is recommended.
-
-
-````{warning}
-{term}`Add-on` products and caching solutions may also increase RAM and disk swap space requirements.
-To avoid RAM and disk swap limitations, we recommend either temporarily resizing your remote machine to accommodate the build, or build your images locally and upload them to an image store, such as [Docker Hub](https://hub.docker.com/) or [GitHub Packages](https://github.com/features/packages).
-```{seealso}
-[How much RAM is required to build a Volto front end?](https://community.plone.org/t/how-much-ram-is-required-to-build-a-volto-front-end/17949) and [Dealing with heap exhaustion while building Volto 17 on limited-RAM host](https://community.plone.org/t/dealing-with-heap-exhaustion-while-building-volto-17-on-limited-ram-host/18078).
+```{include} /_inc/_hardware-requirements.md
 ```
-````
 
 
 (install-packages-prerequisites-label)=
@@ -71,9 +64,8 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 
 #### Python
 
-Installing Python is beyond the scope of this documentation.
-However, it is recommended to use a Python version manager, {term}`pyenv` that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
-Plone requires Python version {SUPPORTED_PYTHON_VERSIONS}.
+```{include} /_inc/_install-python.md
+```
 
 
 (install-prerequisites-pipx-label)=
@@ -91,38 +83,8 @@ pip install pipx
 
 #### nvm
 
-The following terminal session commands use `bash` for the shell.
-Adapt them for your flavor of shell.
-
-```{seealso}
-See the [`nvm` install and update script documentation](https://github.com/nvm-sh/nvm#install--update-script).
-For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish).
+```{include} ../volto/contributing/install-nvm.md
 ```
-
-1.  Create your shell profile, if it does not exist.
-
-    ```shell
-    touch ~/.bash_profile
-    ```
-
-2.  Download and run the `nvm` install and update script, and pipe it into `bash`.
-
-    ```shell
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v{NVM_VERSION}/install.sh | bash
-    ```
-
-3.  Source your profile.
-    Alternatively close the session and open a new one.
-
-    ```shell
-    source ~/.bash_profile
-    ```
-
-4.  Verify that the `nvm` version is that which you just installed or updated:
-
-    ```shell
-    nvm --version
-    ```
 
 
 (install-prerequisites-nodejs-label)=

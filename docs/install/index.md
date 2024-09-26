@@ -58,6 +58,8 @@ See {doc}`plone:contributing/index`.
 :hidden: true
 
 create-project
+create-project-cookieplone
+create-project-classicui
 manage-add-ons-packages
 containers/index
 ```
