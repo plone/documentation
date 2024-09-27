@@ -27,6 +27,12 @@ Otherwise GitHub workflows do not run automatically, and require a member with w
 GitHub workflows should pass before running Jenkins checks and before merging an open pull request.
 
 
+## `mr-roboto`
+
+[`mr-roboto`](https://github.com/plone/mr.roboto) enforces the requirement of a signed Plone Contributor Agreement from a new contributor, and being assigned to a Plone team on GitHub.
+It also suggests to run Jenkins for many Plone packages.
+
+
 ## Jenkins
 
 [Jenkins](https://jenkins.plone.org) is the authoritative source to see whether the complete test suite passes for any Plone version under development.
