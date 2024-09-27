@@ -1,25 +1,25 @@
 ---
 myst:
   html_meta:
-    "description": "Create a Plone project with the Classic UI"
-    "property=og:description": "Create a Plone project with the Classic UI"
-    "property=og:title": "Create a Plone project with the Classic UI"
+    "description": "Create a Plone project with Classic UI"
+    "property=og:description": "Create a Plone project with Classic UI"
+    "property=og:title": "Create a Plone project with Classic UI"
     "keywords": "Plone, Plone 6, Classic UI, create, project, install, cookiecutter"
 ---
 
 
-(create-a-project-classicui-label)=
+(create-a-project-classic-ui-label)=
 
-# Create a project with the Classic UI
+# Create a project with Classic UI
 
-This chapter describes how you can create a web application project using Plone, with full control over development and deployment.
+This chapter describes how you can create a web application project using Plone, while having full control over its development and deployment.
 
 If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
 
-:::{note}
-These instructions create a project using the Classic UI.
+```{note}
+These instructions create a project using Classic UI.
 If you'd like to use the Volto frontend instead, see {doc}`/install/create-project`.
-:::
+```
 
 ## System requirements
 
