@@ -111,7 +111,7 @@ After your Plone Contributor Agreement has been approved, and you have been adde
 
 1.  Clarify the scope of work that needs to be done.
     Check for previous work, assignment to another developer, or whether the requirements have changed.
-1.  [Assign yourself to the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users).
+1.  [Assign yourself to the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/assigning-issues-and-pull-requests-to-other-github-users).
     This signals to other developers that you are working on the issue.
 
 From here, you can either make {ref}`contributing-quick-edits-label` or {ref}`contributing-large-edits-label`.
