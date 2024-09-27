@@ -24,7 +24,7 @@ To create a project using Cookieplone, see {doc}`/install/create-project-cookiep
 
 :::{note}
 These instructions create a project using the Volto frontend.
-If you'd like to use the Classic UI instead, see {doc}`/install/create-project-classicui`.
+If you'd like to use the Classic UI instead, see {doc}`/install/create-project-classic-ui`.
 :::
 
 (install-packages-system-requirements-label)=

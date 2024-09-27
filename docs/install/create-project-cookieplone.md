@@ -23,7 +23,7 @@ To create a project using a stable Plone release, see {doc}`/install/create-proj
 
 :::{note}
 These instructions create a project using the Volto frontend.
-If you'd like to use the Classic UI instead, see {doc}`/install/create-project-classicui`.
+If you'd like to use the Classic UI instead, see {doc}`/install/create-project-classic-ui`.
 :::
 
 ## System requirements
