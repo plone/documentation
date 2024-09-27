@@ -59,7 +59,7 @@ See {doc}`plone:contributing/index`.
 
 create-project
 create-project-cookieplone
-create-project-classicui
+create-project-classic-ui
 manage-add-ons-packages
 containers/index
 ```
