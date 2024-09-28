@@ -69,7 +69,7 @@ pip install pipx
 
 ## Generate the project
 
-After satisfying the prerequisites, generate the project.
+After satisfying the pre-requisites, generate the project.
 
 ```shell
 pipx run cookieplone backend_addon

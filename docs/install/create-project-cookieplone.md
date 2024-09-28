@@ -90,7 +90,7 @@ pip install pipx
 
 ## Generate the project
 
-After satisfying the prerequisites and having activated an LTS version of Node,
+After satisfying the pre-requisites and having activated an LTS version of Node,
 generate the project.
 
 ```shell

@@ -7,6 +7,7 @@ myst:
     "keywords": "Plone, Plone 6, Volto, create, project, install, cookiecutter"
 ---
 
+
 (create-a-project-label)=
 
 # Create a project with Volto (stable release)
