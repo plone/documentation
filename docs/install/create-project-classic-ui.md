@@ -158,7 +158,7 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 Change to your project directory.
 
 ```shell
-cd collective.classicuiproject
+cd collective.addon
 ```
 
 To install the project's dependencies, use the following command.
@@ -192,8 +192,33 @@ Starting server in PID 20912.
 2024-09-25 16:47:17,772 INFO    [waitress:486][MainThread] Serving on http://127.0.0.1:8080
 ```
 
-Open a browser at the following URL to visit your Plone site.
+You can stop the site with {kbd}`ctrl-c`.
+
+
+## Create Classic UI Plone site
+
+While the Plone backend server is running, open a browser and visit the following URL.
 
 http://localhost:8080
 
-You can stop the site with {kbd}`ctrl-c`.
+```{image} /_static/plone-classic-ui-landing-page.png
+:class: figure
+:alt: Plone Classic UI landing page
+```
+
+Click the button {guilabel}`Create Classic UI Plone site` to do exactly that.
+
+Use the username and password of `admin` to authenticate.
+You will be redirected to the Create a Plone site page.
+
+```{image} /_static/plone-classic-ui-site-page.png
+:class: figure
+:alt: Plone Classic UI site page
+```
+
+Enter values for {guilabel}`Path identifier`, {guilabel}`Title`, {guilabel}`Language`, and {guilabel}`Default timezone`.
+The default values are usually good.
+
+Click the button {guilabel}`Create Plone site`.
+
+You will be redirected to the Plone site you just created.
