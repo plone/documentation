@@ -12,7 +12,7 @@ myst:
 
 # Create a project with Volto (development or pre-release)
 
-This chapter describes how you can create a web application using the current **stable release** version of Plone with **Volto 18 or later** for the frontend, while having full control over its development and deployment.
+This chapter describes how you can create a web application using the latest **development release** version of Plone with **Volto 18 or later** for the frontend, while having full control over its development and deployment.
 
 ```{seealso}
 For other installation options, see {doc}`/install/index`.
