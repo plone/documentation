@@ -1,12 +1,11 @@
 ---
 myst:
   html_meta:
-    "description": "Create a Plone project with the Volto frontend"
-    "property=og:description": "Create a Plone project with the Volto frontend"
-    "property=og:title": "Create a Plone project with the Volto frontend"
+    "description": "Create a Plone project with the Volto frontend (stable release)"
+    "property=og:description": "Create a Plone project with the Volto frontend (stable release)"
+    "property=og:title": "Create a Plone project with the Volto frontend (stable release)"
     "keywords": "Plone, Plone 6, Volto, create, project, install, cookiecutter"
 ---
-
 
 (create-a-project-label)=
 
