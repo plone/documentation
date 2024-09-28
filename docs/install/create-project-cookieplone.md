@@ -72,11 +72,11 @@ pip install pipx
 ```{include} ../volto/contributing/install-nodejs.md
 ```
 
-Enable {term}`corepack` so that Node.js will take care of installing {term}`pnpm` as a package manager.
+3.  Enable {term}`corepack` so that Node.js will install {term}`pnpm` as a package manager.
 
-```console
-corepack enable
-```
+    ```shell
+    corepack enable
+    ```
 
 
 #### Make
