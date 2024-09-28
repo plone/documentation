@@ -28,6 +28,17 @@ Cookiecutter
     A command-line utility that creates projects from cookiecutters (project templates), for example, creating a Python package project from a Python package project template.
     [See Cookiecutter's documentation](https://cookiecutter.readthedocs.io/en/stable/).
 
+Cookieplone
+    ```{versionadded} Volto 18.0.0-alpha.43
+    ```
+
+    [Cookieplone](https://github.com/plone/cookieplone) is the method to create a Plone project.
+    You can use Cookieplone to build a backend add-on, a new Volto add-on, a full project with both backend and frontend, or even documentation.
+    Cookieplone simplifies the process using robust Cookiecutter templates from {term}`cookieplone-templates`.
+    
+cookieplone-templates
+    [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates for Plone integrators to create web application projects.
+
 cookiecutter-plone-starter
     [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) is a framework for jumpstarting Plone 6 projects quickly.
 

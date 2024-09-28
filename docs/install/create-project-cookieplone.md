@@ -4,7 +4,7 @@ myst:
     "description": "Create a Plone project with the Volto frontend (development or pre-release)"
     "property=og:description": "Create a Plone project with the Volto frontend (development or pre-release)"
     "property=og:title": "Create a Plone project with the Volto frontend (development or pre-release)"
-    "keywords": "Plone, Plone 6, Volto, create, project, install, cookieplone"
+    "keywords": "Plone, Plone 6, Volto, create, project, install, Cookieplone"
 ---
 
 
@@ -19,7 +19,7 @@ For other installation options, see {doc}`/install/index`.
 ```
 
 ```{versionadded} Volto 18.0.0-alpha.43
-Cookieplone is now the method to create a Plone project with unstable versions of Volto, version 18.0.0-alpha.43 and above.
+{term}`Cookieplone` is now the method to create a Plone project with unstable versions of Volto, version 18.0.0-alpha.43 and above.
 ```
 
 
