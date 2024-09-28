@@ -10,16 +10,14 @@ myst:
 
 (create-a-project-classic-ui-label)=
 
-# Create a project with Classic UI
+# Create a project with Classic UI (stable release)
 
-This chapter describes how you can create a web application project using Plone, while having full control over its development and deployment.
+This chapter describes how you can create a web application using the current **stable release** version of Plone with **Classic UI** for the frontend, while having full control over its development and deployment.
 
-If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
-
-```{note}
-These instructions create a project using Classic UI.
-If you'd like to use the Volto frontend instead, see {doc}`/install/create-project`.
+```{seealso}
+For other installation options, see {doc}`/install/index`.
 ```
+
 
 ## System requirements
 

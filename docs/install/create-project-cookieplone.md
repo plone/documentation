@@ -10,21 +10,18 @@ myst:
 
 (create-project-cookieplone-label)=
 
-# Create a project with the Volto frontend (Volto 18+)
+# Create a project with Volto (development or pre-release)
 
-This chapter describes how you can create a web application project using Plone, with full control over development and deployment.
+This chapter describes how you can create a web application using the current **stable release** version of Plone with **Volto 17 or earlier** for the frontend, while having full control over its development and deployment.
 
-If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
+```{seealso}
+For other installation options, see {doc}`/install/index`.
+```
 
-:::{note}
-These instructions are valid for unstable versions of Volto, version 18.0.0-alpha.43 and above.
-To create a project using a stable Plone release, see {doc}`/install/create-project`.
-:::
+```{versionadded} Volto 18.0.0-alpha.43
+Cookieplone is now the method to create a Plone project with unstable versions of Volto, version 18.0.0-alpha.43 and above.
+```
 
-:::{note}
-These instructions create a project using the Volto frontend.
-If you'd like to use the Classic UI instead, see {doc}`/install/create-project-classic-ui`.
-:::
 
 ## System requirements
 
