@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Create a Plone project with Classic UI"
-    "property=og:description": "Create a Plone project with Classic UI"
-    "property=og:title": "Create a Plone project with Classic UI"
+    "description": "Create a Plone project with Classic UI (stable release)"
+    "property=og:description": "Create a Plone project with Classic UI (stable release)"
+    "property=og:title": "Create a Plone project with Classic UI (stable release)"
     "keywords": "Plone, Plone 6, Classic UI, create, project, install, cookiecutter"
 ---
 
