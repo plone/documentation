@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Create a Plone project with the Volto frontend (Volto 18+)"
-    "property=og:description": "Create a Plone project with the Volto frontend (Volto 18+)"
-    "property=og:title": "Create a Plone project with the Volto frontend (Volto 18+)"
+    "description": "Create a Plone project with the Volto frontend (development or pre-release)"
+    "property=og:description": "Create a Plone project with the Volto frontend (development or pre-release)"
+    "property=og:title": "Create a Plone project with the Volto frontend (development or pre-release)"
     "keywords": "Plone, Plone 6, Volto, create, project, install, cookieplone"
 ---
 
@@ -12,7 +12,7 @@ myst:
 
 # Create a project with Volto (development or pre-release)
 
-This chapter describes how you can create a web application using the current **stable release** version of Plone with **Volto 17 or earlier** for the frontend, while having full control over its development and deployment.
+This chapter describes how you can create a web application using the current **stable release** version of Plone with **Volto 18 or later** for the frontend, while having full control over its development and deployment.
 
 ```{seealso}
 For other installation options, see {doc}`/install/index`.
