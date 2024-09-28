@@ -90,67 +90,68 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 
 ```console
 % pipx run cookieplone backend_addon
-╭─────────────────────────────────────────────────────── cookieplone ───────────────────────────────────────────────────────╮
-│                                                                                                                           │
-│                                                     .xxxxxxxxxxxxxx.                                                      │
-│                                                 ;xxxxxxxxxxxxxxxxxxxxxx;                                                  │
-│                                              ;xxxxxxxxxxxxxxxxxxxxxxxxxxxx;                                               │
-│                                            xxxxxxxxxx              xxxxxxxxxx                                             │
-│                                          xxxxxxxx.                    .xxxxxxxx                                           │
-│                                         xxxxxxx      xxxxxxx:            xxxxxxx                                          │
-│                                       :xxxxxx       xxxxxxxxxx             xxxxxx:                                        │
-│                                      :xxxxx+       xxxxxxxxxxx              +xxxxx:                                       │
-│                                     .xxxxx.        :xxxxxxxxxx               .xxxxx.                                      │
-│                                     xxxxx+          ;xxxxxxxx                 +xxxxx                                      │
-│                                     xxxxx              +xx.                    xxxxx.                                     │
-│                                    xxxxx:                      .xxxxxxxx       :xxxxx                                     │
-│                                    xxxxx                      .xxxxxxxxxx       xxxxx                                     │
-│                                    xxxxx                      xxxxxxxxxxx       xxxxx                                     │
-│                                    xxxxx                      .xxxxxxxxxx       xxxxx                                     │
-│                                    xxxxx:                      .xxxxxxxx       :xxxxx                                     │
-│                                    .xxxxx              ;xx.       ...          xxxxx.                                     │
-│                                     xxxxx+          :xxxxxxxx                 +xxxxx                                      │
-│                                     .xxxxx.        :xxxxxxxxxx               .xxxxx.                                      │
-│                                      :xxxxx+       xxxxxxxxxxx              ;xxxxx:                                       │
-│                                       :xxxxxx       xxxxxxxxxx             xxxxxx:                                        │
-│                                         xxxxxxx      xxxxxxx;            xxxxxxx                                          │
-│                                          xxxxxxxx.                    .xxxxxxxx                                           │
-│                                            xxxxxxxxxx              xxxxxxxxxx                                             │
-│                                              ;xxxxxxxxxxxxxxxxxxxxxxxxxxxx+                                               │
-│                                                 ;xxxxxxxxxxxxxxxxxxxxxx;                                                  │
-│                                                     .xxxxxxxxxxxxxx.                                                      │
-│                                                                                                                           │
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-╭─────────────────────────────────────────────────────── Plone Addon ───────────────────────────────────────────────────────╮
-│ Creating a new Plone Addon                                                                                                │
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-  [1/7] Addon Title (Addon): Classic UI Project
-  [2/7] A short description of your addon (A new addon for Plone): A Plone Classic UI project
+╭─────────────────────────────────── cookieplone ────────────────────────────────────╮
+│                                                                                    │
+│                                  .xxxxxxxxxxxxxx.                                  │
+│                              ;xxxxxxxxxxxxxxxxxxxxxx;                              │
+│                           ;xxxxxxxxxxxxxxxxxxxxxxxxxxxx;                           │
+│                         xxxxxxxxxx              xxxxxxxxxx                         │
+│                       xxxxxxxx.                    .xxxxxxxx                       │
+│                      xxxxxxx      xxxxxxx:            xxxxxxx                      │
+│                    :xxxxxx       xxxxxxxxxx             xxxxxx:                    │
+│                   :xxxxx+       xxxxxxxxxxx              +xxxxx:                   │
+│                  .xxxxx.        :xxxxxxxxxx               .xxxxx.                  │
+│                  xxxxx+          ;xxxxxxxx                 +xxxxx                  │
+│                  xxxxx              +xx.                    xxxxx.                 │
+│                 xxxxx:                      .xxxxxxxx       :xxxxx                 │
+│                 xxxxx                      .xxxxxxxxxx       xxxxx                 │
+│                 xxxxx                      xxxxxxxxxxx       xxxxx                 │
+│                 xxxxx                      .xxxxxxxxxx       xxxxx                 │
+│                 xxxxx:                      .xxxxxxxx       :xxxxx                 │
+│                 .xxxxx              ;xx.       ...          xxxxx.                 │
+│                  xxxxx+          :xxxxxxxx                 +xxxxx                  │
+│                  .xxxxx.        :xxxxxxxxxx               .xxxxx.                  │
+│                   :xxxxx+       xxxxxxxxxxx              ;xxxxx:                   │
+│                    :xxxxxx       xxxxxxxxxx             xxxxxx:                    │
+│                      xxxxxxx      xxxxxxx;            xxxxxxx                      │
+│                       xxxxxxxx.                    .xxxxxxxx                       │
+│                         xxxxxxxxxx              xxxxxxxxxx                         │
+│                           ;xxxxxxxxxxxxxxxxxxxxxxxxxxxx+                           │
+│                              ;xxxxxxxxxxxxxxxxxxxxxx;                              │
+│                                  .xxxxxxxxxxxxxx.                                  │
+│                                                                                    │
+╰────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────── Plone Addon ────────────────────────────────────╮
+│ Creating a new Plone Addon                                                         │
+╰────────────────────────────────────────────────────────────────────────────────────╯
+  [1/7] Addon Title (Addon): 
+  [2/7] A short description of your addon (A new addon for Plone): 
   [3/7] Author (Plone Community): 
   [4/7] Author E-mail (collective@plone.org): 
   [5/7] GitHub Username or Organization (collective): 
-  [6/7] Python package name (collective.classicuiproject): 
+  [6/7] Python package name (collective.addon): 
   [7/7] Support headless Plone?
     1 - Yes
     2 - No
     Choose from [1/2] (1): 
  -> Initialize Git repository
-╭───────────────────────────────────────────────── New addon was generated ─────────────────────────────────────────────────╮
-│                                                                                                                           │
-│ Classic UI Project                                                                                                        │
-│                                                                                                                           │
-│ Now, enter the repository run the code formatter with:                                                                    │
-│                                                                                                                           │
-│ make format                                                                                                               │
-│                                                                                                                           │
-│ start coding, and push to your organization.                                                                              │
-│                                                                                                                           │
-│ Sorry for the convenience,                                                                                                │
-│ The Plone Community.                                                                                                      │
-│                                                                                                                           │
-│ https://plone.org/                                                                                                        │
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────────── New addon was generated ──────────────────────────────╮
+│                                                                                    │
+│ Addon                                                                              │
+│                                                                                    │
+│ Now, enter the repository run the code formatter with:                             │
+│                                                                                    │
+│ make format                                                                        │
+│                                                                                    │
+│ start coding, and push to your organization.                                       │
+│                                                                                    │
+│ Sorry for the convenience,                                                         │
+│ The Plone Community.                                                               │
+│                                                                                    │
+│ https://plone.org/                                                                 │
+╰────────────────────────────────────────────────────────────────────────────────────╯
 ```
+
 
 ## Install the project
 
