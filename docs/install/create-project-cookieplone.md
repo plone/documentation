@@ -221,7 +221,7 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 
 To work on your project, you need to install both the frontend and backend.
 
-Change to your project directory.
+Change your current working directory to {file}`project-title`.
 
 ```shell
 cd project-title
@@ -278,8 +278,7 @@ Start the Plone frontend with the following command.
 make frontend-start
 ```
 
-The Plone frontend server starts up and emits messages to the console.
-The output should end with:
+The Plone frontend server starts up and emits messages to the console, and should end with the following.
 
 ```console
 webpack 5.90.1 compiled successfully in 11004 ms
