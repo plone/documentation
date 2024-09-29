@@ -35,10 +35,11 @@ Cookieplone
     [Cookieplone](https://github.com/plone/cookieplone) is the method to create a Plone project.
     You can use Cookieplone to build a backend add-on, a new Volto add-on, or a full project with both backend and frontend.
     Cookieplone simplifies the process using robust Cookiecutter templates from {term}`cookieplone-templates`.
-    
+
 cookieplone-templates
     [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates for Plone integrators to create web application projects.
 
+@plone/generator-volto
 plone/generator-volto
     ```{deprecated} Volto 18.0.0-alpha.43
     ```
