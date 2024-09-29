@@ -39,7 +39,6 @@ Cookieplone
 cookieplone-templates
     [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates for Plone integrators to create web application projects.
 
-@plone/generator-volto
 plone/generator-volto
     ```{deprecated} Volto 18.0.0-alpha.43
     ```
