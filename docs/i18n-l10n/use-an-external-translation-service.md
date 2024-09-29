@@ -33,59 +33,17 @@ The usage of Google Cloud Translation API may create extra cost for the site adm
 
 ## Using other translation services
 
-If the site administrator doesn't want to use Google Cloud Translation API but some other service, they will need to override the view that makes the call to Google Cloud Translation API.
+If the site administrator doesn't want to use Google Cloud Translation API but some other service, they can provide an adapter that calls an some other service.
 
-To do so plone.app.multilingual registers a view called `gtranslation_service`, its code lies on [plone.app.multilingual.brwoser.translate.gtranslation_service_dexterity](https://github.com/plone/plone.app.multilingual/blob/master/src/plone/app/multilingual/browser/translate.py#L52)
+To do so, a new adapter needs to be registered, to provide the `IExternalTranslationService` interface.
 
-This view gets 3 parameters:
+This interface describes an object that needs to have the following attribute and methods:
 
-- context_uid: the UID of the object to be translated.
-- field: the name of the field of the object that needs to be translated. It's this view's job to extract the value of that field from the object.
-- lang_source: the source language code.
+- order: the order in which this adapter will be executed. This way, one can prioritize some services,
+- is_available(): to return whether the adapter is available (for instance, is the Google translation API key entered into the control panel?)
+- available_languages(): a list of language pairs (source, target), that this adapter supports.
+- translate_content(): the actual function that does the translation call
 
-The first part of the view (the one that gets the object and the field content to be translated), can be copied from the original code, only the call to the translation service will need to be written.
+Add-on authors can look at `{file}plone.app.multilingual.google_translate.py` where they can find an example of such an implementation.
 
-The required code would be something like this:
-
-```python
-
-class TranslateUsingMyService(BrowserView):
-    def __call__(self):
-        if self.request.method != "POST" and not (
-            "field" in self.request.form.keys()
-            and "lang_source" in self.request.form.keys()
-        ):
-            return _("Need a field")
-        else:
-            manager = ITranslationManager(self.context)
-            context_uid = self.request.form.get("context_uid", None)
-            if context_uid is None:
-                # try with context if no translation uid is present
-                manager = ITranslationManager(self.context)
-            else:
-                catalog = getToolByName(self.context, "portal_catalog")
-                brains = catalog(UID=context_uid)
-                if len(brains):
-                    context = brains[0].getObject()
-                    manager = ITranslationManager(context)
-                else:
-                    manager = ITranslationManager(self.context)
-
-            registry = getUtility(IRegistry)
-            settings = registry.forInterface(
-                IMultiLanguageExtraOptionsSchema, prefix="plone"
-            )
-            lang_target = ILanguage(self.context).get_language()
-            lang_source = self.request.form["lang_source"]
-            orig_object = manager.get_translation(lang_source)
-            field = self.request.form["field"].split(".")[-1]
-            if hasattr(orig_object, field):
-                question = getattr(orig_object, field, "")
-                if hasattr(question, "raw"):
-                    question = question.raw
-            else:
-                return _("Invalid field")
-
-            # And here do the call to the external translation service
-            return call_to_my_service(question, lang_target, lang_source)
-```
+The adapter, needs to be registered in `ZCML`. Add-on authors can look at `{file}plone.app.multilingual.configure.zcml` where they can find an example of such registration.
