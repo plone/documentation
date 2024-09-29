@@ -39,6 +39,14 @@ Cookieplone
 cookieplone-templates
     [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates for Plone integrators to create web application projects.
 
+@plone/generator-volto
+plone/generator-volto
+    ```{deprecated} Volto 18.0.0-alpha.43
+    ```
+
+    [@plone/generator-volto](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
+    See {ref}`upgrade-18-cookieplone-label`.
+
 cookiecutter-plone-starter
     [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) is a framework for jumpstarting Plone 6 projects quickly.
 
