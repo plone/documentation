@@ -307,6 +307,9 @@ First the backend, then the frontend will be installed.
 
 When the process completes successfully, it will exit with no message.
 
+```{include} /_inc/_install-pillow.md
+```
+
 ````{note}
 If you used a Plone core package name, then `make install` will return an error message such as the following.
 

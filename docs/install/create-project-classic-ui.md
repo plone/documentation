@@ -168,7 +168,12 @@ make install
 ```
 
 This will take a few minutes.
+☕️
+
 When the process completes successfully, it will exit with no message.
+
+```{include} /_inc/_install-pillow.md
+```
 
 
 ## Start Plone
