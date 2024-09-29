@@ -37,7 +37,7 @@ Cookieplone
     Cookieplone simplifies the process using robust Cookiecutter templates from {term}`cookieplone-templates`.
 
 cookieplone-templates
-    [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates for Plone integrators to create web application projects.
+    [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates used by {term}`Cookieplone`.
 
 @plone/generator-volto
 plone/generator-volto
