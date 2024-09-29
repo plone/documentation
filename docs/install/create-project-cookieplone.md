@@ -115,40 +115,42 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 
 ```console
 % pipx run cookieplone project
-╭─────────────────────────────────────────────────────── cookieplone ───────────────────────────────────────────────────────╮
-│                                                                                                                           │
-│                                                     .xxxxxxxxxxxxxx.                                                      │
-│                                                 ;xxxxxxxxxxxxxxxxxxxxxx;                                                  │
-│                                              ;xxxxxxxxxxxxxxxxxxxxxxxxxxxx;                                               │
-│                                            xxxxxxxxxx              xxxxxxxxxx                                             │
-│                                          xxxxxxxx.                    .xxxxxxxx                                           │
-│                                         xxxxxxx      xxxxxxx:            xxxxxxx                                          │
-│                                       :xxxxxx       xxxxxxxxxx             xxxxxx:                                        │
-│                                      :xxxxx+       xxxxxxxxxxx              +xxxxx:                                       │
-│                                     .xxxxx.        :xxxxxxxxxx               .xxxxx.                                      │
-│                                     xxxxx+          ;xxxxxxxx                 +xxxxx                                      │
-│                                     xxxxx              +xx.                    xxxxx.                                     │
-│                                    xxxxx:                      .xxxxxxxx       :xxxxx                                     │
-│                                    xxxxx                      .xxxxxxxxxx       xxxxx                                     │
-│                                    xxxxx                      xxxxxxxxxxx       xxxxx                                     │
-│                                    xxxxx                      .xxxxxxxxxx       xxxxx                                     │
-│                                    xxxxx:                      .xxxxxxxx       :xxxxx                                     │
-│                                    .xxxxx              ;xx.       ...          xxxxx.                                     │
-│                                     xxxxx+          :xxxxxxxx                 +xxxxx                                      │
-│                                     .xxxxx.        :xxxxxxxxxx               .xxxxx.                                      │
-│                                      :xxxxx+       xxxxxxxxxxx              ;xxxxx:                                       │
-│                                       :xxxxxx       xxxxxxxxxx             xxxxxx:                                        │
-│                                         xxxxxxx      xxxxxxx;            xxxxxxx                                          │
-│                                          xxxxxxxx.                    .xxxxxxxx                                           │
-│                                            xxxxxxxxxx              xxxxxxxxxx                                             │
-│                                              ;xxxxxxxxxxxxxxxxxxxxxxxxxxxx+                                               │
-│                                                 ;xxxxxxxxxxxxxxxxxxxxxx;                                                  │
-│                                                     .xxxxxxxxxxxxxx.                                                      │
-│                                                                                                                           │
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-╭────────────────────────────────────────────────────── Plone Project ──────────────────────────────────────────────────────╮
-│ Creating a new Plone Project                                                                                              │
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────── cookieplone ────────────────────────────────╮
+│                                                                             │
+│                              .xxxxxxxxxxxxxx.                               │
+│                          ;xxxxxxxxxxxxxxxxxxxxxx;                           │
+│                       ;xxxxxxxxxxxxxxxxxxxxxxxxxxxx;                        │
+│                     xxxxxxxxxx              xxxxxxxxxx                      │
+│                   xxxxxxxx.                    .xxxxxxxx                    │
+│                  xxxxxxx      xxxxxxx:            xxxxxxx                   │
+│                :xxxxxx       xxxxxxxxxx             xxxxxx:                 │
+│               :xxxxx+       xxxxxxxxxxx              +xxxxx:                │
+│              .xxxxx.        :xxxxxxxxxx               .xxxxx.               │
+│              xxxxx+          ;xxxxxxxx                 +xxxxx               │
+│              xxxxx              +xx.                    xxxxx.              │
+│             xxxxx:                      .xxxxxxxx       :xxxxx              │
+│             xxxxx                      .xxxxxxxxxx       xxxxx              │
+│             xxxxx                      xxxxxxxxxxx       xxxxx              │
+│             xxxxx                      .xxxxxxxxxx       xxxxx              │
+│             xxxxx:                      .xxxxxxxx       :xxxxx              │
+│             .xxxxx              ;xx.       ...          xxxxx.              │
+│              xxxxx+          :xxxxxxxx                 +xxxxx               │
+│              .xxxxx.        :xxxxxxxxxx               .xxxxx.               │
+│               :xxxxx+       xxxxxxxxxxx              ;xxxxx:                │
+│                :xxxxxx       xxxxxxxxxx             xxxxxx:                 │
+│                  xxxxxxx      xxxxxxx;            xxxxxxx                   │
+│                   xxxxxxxx.                    .xxxxxxxx                    │
+│                     xxxxxxxxxx              xxxxxxxxxx                      │
+│                       ;xxxxxxxxxxxxxxxxxxxxxxxxxxxx+                        │
+│                          ;xxxxxxxxxxxxxxxxxxxxxx;                           │
+│                              .xxxxxxxxxxxxxx.                               │
+│                                                                             │
+╰─────────────────────────────────────────────────────────────────────────────╯
+You've downloaded /Users/stevepiercy/.cookiecutters/cookieplone-templates 
+before. Is it okay to delete and re-download it? [y/n] (y): 
+╭─────────────────────────────── Plone Project ───────────────────────────────╮
+│ Creating a new Plone Project                                                │
+╰─────────────────────────────────────────────────────────────────────────────╯
   [1/17] Project Title (Project Title): 
   [2/17] Project Description (A new project using Plone 6.): 
   [3/17] Project Slug (Used for repository id) (project-title): 
@@ -157,8 +159,8 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
   [6/17] Author E-mail (collective@plone.org): 
   [7/17] Should we use prerelease versions? (No): 
   [8/17] Plone Version (6.0.13): 
-  [9/17] Volto Version (18.0.0-alpha.43): 
-  [10/17] Python Package Name (project.title): 
+  [9/17] Volto Version (18.0.0-alpha.43):
+  [10/17] Python Package Name (project.title):
   [11/17] Volto Addon Name (volto-project-title): 
   [12/17] Language
     1 - English
@@ -186,32 +188,33 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
     1 - Yes
     2 - No
     Choose from [1/2] (1): 
-╭──────────────────────────────────────────────── Project Title generation ─────────────────────────────────────────────────╮
-│                                                                                                                           │
-│ Summary:                                                                                                                  │
-│                                                                                                                           │
-│   - Plone version: 6.0.13                                                                                                 │
-│   - Volto version: 18.0.0-alpha.43                                                                                        │
-│   - Output folder: /Users/davisagli/Plone/project-title                                                                   │
-│                                                                                                                           │
-│                                                                                                                           │
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────── Project Title generation ──────────────────────────╮
+│                                                                             │
+│ Summary:                                                                    │
+│                                                                             │
+│   - Plone version: 6.0.13                                                   │
+│   - Volto version: 18.0.0-alpha.43                                          │
+│   - Output folder:                                                          │
+│ <PATH_TO>/project-title                                                     │
+│                                                                             │
+│                                                                             │
+╰─────────────────────────────────────────────────────────────────────────────╯
  -> Initialize Git repository
  -> Setup Backend
  -> Setup Frontend
  -> Setup Cache
  -> Setup Project Settings
-╭──────────────────────────────────────────────── New project was generated ────────────────────────────────────────────────╮
-│                                                                                                                           │
-│ Project Title                                                                                                             │
-│                                                                                                                           │
-│ Now, code it, create a git repository, push to your organization.                                                         │
-│                                                                                                                           │
-│ Sorry for the convenience,                                                                                                │
-│ The Plone Community.                                                                                                      │
-│                                                                                                                           │
-│ https://plone.org/                                                                                                        │
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────────── New project was generated ─────────────────────────╮
+│                                                                             │
+│ Project Title                                                               │
+│                                                                             │
+│ Now, code it, create a git repository, push to your organization.           │
+│                                                                             │
+│ Sorry for the convenience,                                                  │
+│ The Plone Community.                                                        │
+│                                                                             │
+│ https://plone.org/                                                          │
+╰─────────────────────────────────────────────────────────────────────────────╯
 ```
 
 ## Install the project
