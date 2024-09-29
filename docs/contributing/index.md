@@ -31,7 +31,7 @@ You grant permission by signing and returning the Plone Contributor Agreement.
 
 A volunteer member of the Plone Foundation will review your signed agreement.
 
-If accepted, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access, and you will simultaneously receive an email notification from GitHub.
+If accepted, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access, and you will simultaneously receive an email from GitHub for you to accept the invitation to join the team.
 
 Allow up to one week for processing.
 Contact the Plone Foundation by its email address for further information, including the status of your request.
