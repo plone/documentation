@@ -89,3 +89,8 @@ class TranslateUsingMyService(BrowserView):
             # And here do the call to the external translation service
             return call_to_my_service(question, lang_target, lang_source)
 ```
+
+
+```{note}
+Due to the way that the Google Translate integration is built in plone.app.multilingual, you will need to enter something in the Google Translate API Key field, in the Multilingual Settings of your site. It doesn't need to be a valid Google Translate API Key, it can be a random string.
+```
