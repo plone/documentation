@@ -60,13 +60,13 @@ All contributors to the Plone Documentation follow the Code of Conduct.
 
 First-time contributors should read and follow our guide {doc}`first-time`.
 
+
 (contributing-continuous-integration-label)=
 
 ## Continuous integration
 
-Plone project repositories use continuous integration (CI) to run tests, ensure code quality, or provide previews for every contribution.
-Plone uses GitHub Actions, Jenkins, Cypress, Netlify, and other services for CI.
-All of a project's CI jobs must pass before a contribution may be accepted.
+```{include} /_inc/_continuous-integration.md
+```
 
 (contributing-change-log-label)=
 

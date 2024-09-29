@@ -756,6 +756,8 @@ Load balancer
 CI
 continuous integration
     Continuous integration (CI) is the practice of integrating all your code changes into the main branch of a shared source code repository early and often, automatically testing each change when you commit or merge them, and automatically kicking off a build.
+    
+    Read about Plone's {doc}`/contributing/core/continuous-integration`.
 
 CD
 continuous deployment
