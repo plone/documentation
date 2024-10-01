@@ -39,12 +39,12 @@ Cookieplone
 cookieplone-templates
     [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates used by {term}`Cookieplone`.
 
-@plone/generator-volto
 plone/generator-volto
+@plone/generator-volto
     ```{deprecated} Volto 18.0.0-alpha.43
     ```
 
-    [@plone/generator-volto](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
+    [`@plone/generator-volto`](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
     See {ref}`upgrade-18-cookieplone-label`.
 
 cookiecutter-plone-starter
