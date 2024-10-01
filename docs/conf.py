@@ -245,6 +245,7 @@ redirects = {
     "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
     "contributing/volto": "/volto/contributing/index.html",
     "install/install-from-packages": "/install/create-project.html",
+    "manage/add-ons-frontend": "/volto/addons/index.html",
 }
 
 
