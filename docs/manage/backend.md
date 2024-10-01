@@ -280,3 +280,20 @@ Your instance is running in the foreground.
 ```{seealso}
 For an explanation of the command `make build-backend`, see {doc}`/conceptual-guides/make-build-backend-walk-through`.
 ```
+
+
+(manage-configuration-with-cookiecutter-zope-instance-label)=
+
+## Configuration with `cookiecutter-zope-instance`
+
+You can configure your instance's options, including the following.
+
+-   persistent storage: blobs, direct filestorage, relational database, ZEO, and so on
+-   ports
+-   threads
+-   cache
+-   debugging and profiling for development
+
+```{seealso}
+For a complete list of features, usage, and options, read [`cookiecutter-zope-instance`'s `README.rst`](https://github.com/plone/cookiecutter-zope-instance#readme).
+```
