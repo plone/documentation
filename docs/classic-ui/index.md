@@ -51,7 +51,6 @@ This chapter is a developer reference manual for working with Classic UI.
 csrf
 forms
 icons
-install
 images
 layers
 module-federation
