@@ -93,15 +93,17 @@ Start the instance for quick test
 ./venv/bin/runwsgi -v instance/etc/zope.ini
 ```
 
-Your instance starts in foreground mode, which is only advisable for troubleshooting or for local demonstration purposes,
+Your instance starts in foreground mode, which is only advisable for troubleshooting or for local demonstration purposes.
 
-Now you can call the url `http://localhost:8080` in your browser and you can add a **Classic UI Plone site**
+Now you can call the url `http://localhost:8080` in your browser and you can add a **Classic UI Plone site**.
 
 Let's have fun with Plone!
 
+
 ### Example to start the instance via systemd
 
- The following systemd service configuration works with the runwsgi script. It assumes your installation is located at /opt/plone and the user account your Plone instance runs under user *plone*:
+The following systemd service configuration works with the runwsgi script.
+It assumes your installation is located at /opt/plone and the user account your Plone instance runs under user `plone`:
 
 ```ini
 [Unit]
@@ -120,9 +122,10 @@ TimeoutStopSec=10
 WantedBy=multi-user.target
 ```
 
-Save this configuration under /etc/systemd/system/plone.service and execute `systemctl daemon-reload` for systemd to read it. After that you can use standard `systemctl` commands to `start`, `restart` or `stop` the Plone instance:
+Save this configuration under /etc/systemd/system/plone.service and execute `systemctl daemon-reload` for systemd to read it.
+After that you can use standard `systemctl` commands to `start`, `restart` or `stop` the Plone instance:
 
-```
+```shell
 systemctl start plone
 systemctl restart plone
 systemctl status plone
@@ -264,7 +267,8 @@ for production environment daemonize the services via systemd
 
 ### Example to start the zeo cluster via systemd
 
-The following systemd service configuration works with the runwsgi script. It assumes your installation is located at /opt/plone and the user account your Plone instance runs under user *plone*:
+The following systemd service configuration works with the runwsgi script.
+It assumes your installation is located at /opt/plone and the user account your Plone instance runs under user *plone*:
 
 You need a service file for every client and for the zeoserver.
 
@@ -325,8 +329,9 @@ TimeoutStopSec=10
 WantedBy=multi-user.target
 ```
 
-
-Save this configurations in /etc/systemd/system `plone-zeoserver.service`, `plone-client1.service` and  `plone-client2.service` and execute `systemctl daemon-reload` for systemd to read it. After that you can use standard `systemctl` commands to `start`, `restart` or `stop` the Plone instance:
+Save these configurations in `/etc/systemd/system` as `plone-zeoserver.service`, `plone-client1.service`, and `plone-client2.service`.
+Execute `systemctl daemon-reload` for systemd to reload it.
+After that you can use standard `systemctl` commands to `start`, `restart`, or `stop` the Plone instance:
 
 for startup the cluster, use:
 
@@ -446,8 +451,8 @@ Stop the instance
 ./bin/instance stop
 ```
 
-Your instance starts in foreground mode, which is only advisable for troubleshooting or for local demonstration purposes,
+Your instance starts in foreground mode, which is only advisable for troubleshooting or for local demonstration purposes.
 
-Now you can call the url `http://localhost:8080` in your browser and you can add a **Classic UI Plone site**
+Now you can call the url `http://localhost:8080` in your browser and you can add a **Classic UI Plone site**.
 
 Let's have fun with Plone!
