@@ -38,8 +38,9 @@ sudo apt install python3.12 python3.12-dev python3.12-venv
 
 Select a directory of your choice
 
-mkdir -p /opt/plone && cd /opt/plone
 ```shell
+mkdir -p /opt/plone
+cd /opt/plone
 ```
 
 Create a virtual environment
@@ -126,6 +127,16 @@ systemctl start plone
 systemctl restart plone
 systemctl status plone
 systemctl stop plone
+```
+
+Alternatively, you can use the `service` command.
+% TODO: Why would someone use `service *` versus `systemctl *`? Is this OS dependent?
+
+```shell
+service plone start
+service plone stop
+service plone status
+service plone restart
 ```
 
 
