@@ -21,7 +21,7 @@ For other installation options, see {doc}`/install/index`.
 
 ## System requirements
 
-Plone 6 has both hardware requirements and software pre-requisites.
+Plone 6 has both hardware requirements and software prerequisites.
 
 
 ### Hardware requirements
@@ -29,7 +29,7 @@ Plone 6 has both hardware requirements and software pre-requisites.
 ```{include} /_inc/_hardware-requirements.md
 ```
 
-### Pre-requisites for installation
+### Prerequisites for installation
 
 ```{include} ../volto/contributing/install-operating-system.md
 ```
@@ -69,7 +69,7 @@ pip install pipx
 
 ## Generate the project
 
-After satisfying the pre-requisites, generate the project.
+After satisfying the prerequisites, generate the project.
 
 ```shell
 pipx run cookieplone backend_addon
