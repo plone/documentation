@@ -32,41 +32,41 @@ in our example we use python3.12
 
 On debian based systems you can install python with following command
 
-```bash
+```shell
 sudo apt install python3.12 python3.12-dev python3.12-venv
 ```
 
 Select a directory of your choice
 
-```bash
 mkdir -p /opt/plone && cd /opt/plone
+```shell
 ```
 
 Create a virtual environment
 
-```bash
+```shell
 python3 -m venv ./venv
 ```
 
 Activate the virtual environment
 
-```bash
+```shell
 source ./venv/bin/activate
 ```
 
 Install Plone and a helper package
 
-```bash
+```shell
 pip install Plone cookiecutter
 ```
 
-```bash
+```shell
 cookiecutter -f --no-input --config-file ./instance.yaml https://github.com/plone/cookiecutter-zope-instance
 ```
 
 Deactivate the virtual environment
 
-```bash
+```shell
 deactivate
 ```
 
@@ -88,7 +88,7 @@ default_context:
 
 Start the instance for quick test
 
-```bash
+```shell
 ./venv/bin/runwsgi -v instance/etc/zope.ini
 ```
 
@@ -365,31 +365,31 @@ in our example we use python3.12
 
 On debian based systems you can install python with following command
 
-```bash
+```shell
 sudo apt install python3.12 python3.12-dev python3.12-venv
 ```
 
 Select a directory of your choice
 
-```bash
+```shell
 mkdir -p /opt/plone && cd /opt/plone
 ```
 
 Create a virtual environment
 
-```bash
+```shell
 python3 -m venv .
 ```
 
 Activate the virtual environment
 
-```bash
+```shell
 source ./bin/activate
 ```
 
 install requirements
 
-```bash
+```shell
 pip install -r https://dist.plone.org/release/6-latest/requirements.txt
 ```
 
@@ -413,25 +413,25 @@ eggs =
 
 run buildout
 
-```bash
+```shell
 buildout
 ```
 
 Start the instance for quick test in foreground mode
 
-```bash
+```shell
 ./bin/instance fg
 ```
 
 Start the instance normal
 
-```bash
+```shell
 ./bin/instance start
 ```
 
 Stop the instance
 
-```bash
+```shell
 ./bin/instance stop
 ```
 
