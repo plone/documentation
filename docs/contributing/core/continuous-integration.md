@@ -36,7 +36,7 @@ When you push a commit to a Plone repository on GitHub, the email address in you
 If it does not match, then `mr.roboto` will notify you that there is a problem that prevents your pull request from being merged.
 You must resolve the issue.
 
-To change the email address in your commits, see [Setting your commit email address](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address].
+To change the email address in your commits, see [Setting your commit email address](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address).
 
 To add an email address to your GitHub account, see [Adding an email address to your GitHub account](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/adding-an-email-address-to-your-github-account).
 
