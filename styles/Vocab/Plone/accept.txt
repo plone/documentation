@@ -30,9 +30,9 @@ Pastanaga
 PLIP(s)
 Plone
 pluggab(le|ility)
-programatically
 [Pp]ortlet
 prerendered
+programatically
 [Qq]uerystring
 Razzle
 [Rr]enderer
@@ -42,10 +42,10 @@ Schuko
 subfolder
 [Tt]owncrier
 transpile[dr]{0,1}
-unregister
-UUID
 [Uu]ncomment
 [Uu]nhide
+unregister
+UUID
 validator
 [Vv]iewlet
 Volto

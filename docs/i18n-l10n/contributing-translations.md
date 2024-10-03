@@ -23,9 +23,9 @@ Translations can be added or updated as needed by the citizens of Earth.
 You will need to work in one repository for Plone core, and optionally another one for Volto.
 
 
-(contributing-plone-core-translations-pre-requisites-label)=
+(contributing-plone-core-translations-prerequisites-label)=
 
-## Pre-requisites
+## Prerequisites
 
 Request write access to https://github.com/collective/plone.app.locales to be able to commit your translation directly.
 

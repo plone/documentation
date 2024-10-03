@@ -39,16 +39,18 @@ Cookieplone
 cookieplone-templates
     [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates used by {term}`Cookieplone`.
 
-@plone/generator-volto
 plone/generator-volto
+@plone/generator-volto
     ```{deprecated} Volto 18.0.0-alpha.43
     ```
 
-    [@plone/generator-volto](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
+    [`@plone/generator-volto`](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
     See {ref}`upgrade-18-cookieplone-label`.
 
 cookiecutter-plone-starter
-    [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) is a framework for jumpstarting Plone 6 projects quickly.
+    [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) creates a Plone project that you can install using {term}`Make`.
+    It generates files for installing and configuring both the frontend and backend.
+    For the backend, it uses {term}`cookiecutter-zope-instance` to generate configuration files for a Zope WSGI instance.
 
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
