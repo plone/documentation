@@ -30,11 +30,11 @@ You must {ref}`contributing-sign-and-return-the-plone-contributor-agreement-labe
 Before you contribute to Plone core, check the [version support policy](https://plone.org/download/release-schedule) to see which versions of Plone are currently supported.
 
 
-(plone-pre-requisites-label)=
+(plone-prerequisites-label)=
 
-## Pre-requisites
+## Prerequisites
 
-It is beyond the scope of this documentation to provide installation instructions for all pre-requisites for your operating system.
+It is beyond the scope of this documentation to provide installation instructions for all prerequisites for your operating system.
 However, the following links and sections below may be helpful.
 
 ```{include} ../../volto/contributing/install-operating-system.md
