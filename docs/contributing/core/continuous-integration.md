@@ -32,6 +32,14 @@ GitHub workflows should pass before running Jenkins checks and before merging an
 [`mr-roboto`](https://github.com/plone/mr.roboto) enforces the requirement of a signed Plone Contributor Agreement from a new contributor, and being assigned to a Plone team on GitHub.
 It also suggests to run Jenkins for many Plone packages.
 
+When you push a commit to a Plone repository on GitHub, the email address in your commit must match an email address in your GitHub account.
+If it does not match, then `mr.roboto` will notify you that there is a problem that prevents your pull request from being merged.
+You must resolve the issue.
+
+To change the email address in your commits, see [Setting your commit email address](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address).
+
+To add an email address to your GitHub account, see [Adding an email address to your GitHub account](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/adding-an-email-address-to-your-github-account).
+
 
 ## Jenkins
 
