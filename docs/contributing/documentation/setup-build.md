@@ -18,7 +18,7 @@ This document covers how to set up and build the Plone Documentation and check i
 
 ## Installation
 
-Installation of Plone 6 Documentation includes pre-requisites and the repository itself.
+Installation of Plone 6 Documentation includes prerequisites and the repository itself.
 
 ```{include} ../../volto/contributing/install-operating-system.md
 ```

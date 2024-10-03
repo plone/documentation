@@ -23,7 +23,7 @@ For other installation options, see {doc}`/install/index`.
 
 ## System requirements
 
-Plone 6 has both hardware requirements and software pre-requisites.
+Plone 6 has both hardware requirements and software prerequisites.
 
 
 (install-packages-hardware-requirements-label)=
@@ -36,7 +36,7 @@ Plone 6 has both hardware requirements and software pre-requisites.
 
 (install-packages-prerequisites-label)=
 
-### Pre-requisites for installation
+### Prerequisites for installation
 
 ```{include} ../volto/contributing/install-operating-system.md
 ```
