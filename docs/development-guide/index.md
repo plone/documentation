@@ -69,7 +69,7 @@ Until it is complete, Plone 5 documentation is the authoritative source for writ
 
 ## Content type schemas
 
-{doc}`plone5:develop/plone/content/index`
+-   {doc}`/backend/content-types/index`
 -   {doc}`plone5:develop/plone/content/index` (Plone 5)
 
 
