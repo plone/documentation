@@ -54,27 +54,28 @@ Until it is complete, Plone 5 documentation is the authoritative source for writ
 
 ## {term}`ZCA`
 
-{doc}`plone5:develop/addons/components/index`
+{doc}`plone5:develop/addons/components/index` (Plone 5)
 
 
 ## {term}`ZCML`
 
-{doc}`plone5:develop/addons/components/zcml`
+{doc}`plone5:develop/addons/components/zcml` (Plone 5)
 
 
 ## GenericSetup
 
-{doc}`plone5:develop/addons/components/genericsetup`
+{doc}`plone5:develop/addons/components/genericsetup` (Plone 5)
 
 
 ## Content type schemas
 
 {doc}`plone5:develop/plone/content/index`
+-   {doc}`plone5:develop/plone/content/index` (Plone 5)
 
 
 ## Register views
 
-{doc}`plone5:develop/plone/views/index`
+{doc}`plone5:develop/plone/views/index` (Plone 5)
 
 
 ## Register API services
