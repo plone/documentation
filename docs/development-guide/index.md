@@ -26,22 +26,27 @@ This development guide points you, as a developer, to the appropriate resource.
 
 ## Tests
 
-Tests ensure that Plone functions as expected, and that changes to the code base during development don't break anything.
+Tests ensure that your project functions as expected, and that changes to the code base during development don't break anything.
+
 
 
 ### Volto
 
+```{note}
+Frontend testing for Plone 6 is in the process of being written using Cookieplone and pytest.
+Until it is complete, you can refer to the following guides and use tests in Volto core and add-ons for examples.
+```
+
 -   {doc}`Volto acceptance tests </volto/contributing/acceptance-tests>`
 -   {doc}`Volto unit tests </volto/contributing/testing>`
+-   {ref}`testing-the-add-on-label`
 
 
 ### Backend
 
--   {doc}`Plone REST API tests </plone.restapi/docs/source/contributing/index>`
--   {doc}`plone.api tests </plone.api/contribute>`
--   {doc}`Backend tests <develop/testing/index>` (Plone 5)
-
 ```{note}
 Backend testing for Plone 6 is in the process of being written using Cookieplone and pytest.
-Until it is complete, Plone 5 documentation is the authoritative source for testing the Plone backend, except for the explicitly listed backend packages above.
+Until it is complete, Plone 5 documentation is the authoritative source for writing tests for the Plone backend.
 ```
+
+-   {doc}`Backend tests <plone5:develop/testing/index>` (Plone 5)
