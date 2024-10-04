@@ -50,3 +50,33 @@ Until it is complete, Plone 5 documentation is the authoritative source for writ
 ```
 
 -   {doc}`Backend tests <plone5:develop/testing/index>` (Plone 5)
+
+
+## {term}`ZCA`
+
+{doc}`plone5:develop/addons/components/index`
+
+
+## {term}`ZCML`
+
+{doc}`plone5:develop/addons/components/zcml`
+
+
+## GenericSetup
+
+{doc}`plone5:develop/addons/components/genericsetup`
+
+
+## Content type schemas
+
+{doc}`plone5:develop/plone/content/index`
+
+
+## Register views
+
+{doc}`plone5:develop/plone/views/index`
+
+
+## Register API services
+
+{doc}`backend/configuration-registry`
