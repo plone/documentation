@@ -40,11 +40,22 @@ We use several MyST and Sphinx extensions to enhance the presentation of Plone d
 
 ### Sphinx
 
+-   [`myst_parser`](https://myst-parser.readthedocs.io/en/latest/) parses MyST, a rich and extensible flavour of Markdown for authoring documentation.
+-   [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/), with a configuration name of `sphinx_design`, adds grids, cards, icons, badges, buttons, tabs, and dropdowns.
+-   [`sphinx-examples`](https://ebp-sphinx-examples.readthedocs.io/en/latest/) adds "example snippets" that allow you to show off source Markdown and the result of rendering it in Sphinx.
+-   [`sphinx-notfound-page`](https://sphinx-notfound-page.readthedocs.io/en/latest/index.html), with a configuration name of `notfound.extension`, creates a custom 404 page and helps generate proper static resource links to render the page properly.
+-   [`sphinx.ext.autodoc`](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html) pulls in documentation from Python docstrings to generate reStructuredText which in turn gets parsed by Sphinx and rendered to the output format.
+    It is used by {doc}`/plone.api/index`.
+-   [`sphinx.ext.autosummary`](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) generates function/method/attribute summary lists.
+    It is used by {doc}`/plone.api/index`.
 -   [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) allows you to embed [Graphviz](https://graphviz.org/download/) graphs in your documents.
+-   [`sphinx.ext.ifconfig`](https://www.sphinx-doc.org/en/master/usage/extensions/ifconfig.html) includes content based on configuration.
 -   [`sphinx.ext.intersphinx`](https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html) provides linking between separate projects that use Sphinx for documentation.
 -   [`sphinx.ext.todo`](https://www.sphinx-doc.org/en/master/usage/extensions/todo.html) adds support for todo items.
+-   [`sphinx.ext.viewcode`](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html) generates pages of source code modules and links between the source and the description.
+    It is used by {doc}`/plone.api/index`.
 -   [`sphinx_copybutton`](https://sphinx-copybutton.readthedocs.io/en/latest/index.html)  adds a little "copy" button to the right of code blocks.
--   [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/) adds grids, cards, icons, badges, buttons, tabs, and dropdowns.
+-   [`sphinx_reredirects`](https://documatt.com/sphinx-reredirects/) handles redirects for moved pages.
 -   [`sphinx_sitemap`](https://pypi.org/project/sphinx-sitemap/) generates multiversion and multilanguage [sitemaps.org](https://www.sitemaps.org/protocol.html) compliant sitemaps.
 -   [`sphinxcontrib.httpdomain`](https://sphinxcontrib-httpdomain.readthedocs.io/en/stable/) provides a Sphinx domain for describing HTTP APIs.
     It is used by Plone's {doc}`plone.restapi/docs/source/index`.
@@ -53,7 +64,3 @@ We use several MyST and Sphinx extensions to enhance the presentation of Plone d
     It is used by Plone's {doc}`plone.restapi/docs/source/index`.
 -   [`sphinxcontrib.video`](https://pypi.org/project/sphinxcontrib-video/) allows you to embed local videos as defined by the HTML5 standard.
 -   [`sphinxext.opengraph`](https://pypi.org/project/sphinxext-opengraph/) generates [OpenGraph metadata](https://ogp.me/).
--   [`sphinx.ext.viewcode`](https://www.sphinx-doc.org/en/master/usage/extensions/viewcode.html) generates pages of source code modules and links between the source and the description.
-    It is used by {doc}`/plone.api/index`.
--   [`sphinx.ext.autosummary`](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html) generates function/method/attribute summary lists.
-    It is used by {doc}`/plone.api/index`.

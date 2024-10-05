@@ -26,7 +26,7 @@ To upgrade add-ons to Plone 5, see also {doc}`upgrade-addons-to-50`.
 -   Always upgrade from the latest version of 4.x to the latest version of 5.x (4.3.20 to 5.2.9 at the time of writing).
     This will resolve many migration-specific issues.
 -   If you have problems, ask for help on https://community.plone.org.
--   The talk _How to upgrade sites to Plone 5_ has a [video](https://www.youtube.com/watch?t=1m17s&v=bQ-IpO-7F00&feature=youtu.be) and [slides](https://de.slideshare.net/derschmock/upgrade-to-plone-5).
+-   The talk _How to upgrade sites to Plone 5_ has a [video](https://www.youtube.com/watch?t=1m17s&v=bQ-IpO-7F00&feature=youtu.be) and [slides](https://www.slideshare.net/slideshow/upgrade-to-plone-5/54040952).
 
 
 (upgrading-plone-4.x-to-5.0-changes-due-to-implemented-plips-label)=

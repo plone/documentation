@@ -47,16 +47,16 @@ Official MyST documentation
 
 #### Link to a chapter or page
 
-```md
+```{example}
 Here is how to set up and build the documentation locally {doc}`/contributing/documentation/setup-build`.
 ```
-
-Here is how to set up and build the documentation locally {doc}`/contributing/documentation/setup-build`.
 
 
 (myst-reference-link-heading-label)=
 
 #### Link to a heading
+
+% Headings cannot be nested in sphinx-examples
 
 ```md
 (myst-reference-hello-heading-label)=
@@ -75,28 +75,20 @@ Read the section {ref}`myst-reference-hello-heading-label`.
 
 #### Link to an arbitrary location
 
-```md
+```{example}
 (example-target-label)=
 
 I have an HTML anchor above me.
 
 Click the link to visit {ref}`my text <example-target-label>`.
 ```
-
-(example-target-label)=
-
-I have an HTML anchor above me.
-
-Click the link to visit {ref}`my text <example-target-label>`.
 
 
 #### Link to external page
 
-```md
+```{example}
 Use [Shimmer](http://example.com) for cleaner whiter teeth.
 ```
-
-Use [Shimmer](http://example.com) for cleaner whiter teeth.
 
 
 ### Images and figures
@@ -140,7 +132,7 @@ Cards allow the display of a caption, create a link to the source image to displ
 
 The following MyST example will display as shown below.
 
-`````md
+`````{example}
 ````{card}
 ```{image} /_static/caching/caching-disabled.png
 :alt: Caching Control Panel
@@ -150,15 +142,6 @@ The following MyST example will display as shown below.
 _Caching Control Panel_
 ````
 `````
-
-````{card}
-```{image} /_static/caching/caching-disabled.png
-:alt: Caching Control Panel
-:target: /_static/caching/caching-disabled.png
-```
-+++
-_Caching Control Panel_
-````
 
 
 #### Accessibility with `alt` text
@@ -174,37 +157,31 @@ Accessibility is part of the [Plone brand and identity](https://plone.org/access
 
 The following MyST example will display as shown below.
 
-````md
+````{example}
 ```{image} /_static/standards.png
 :alt: XKCD "Standards" comic strip
 ```
 ````
 
-```{image} /_static/standards.png
-:alt: XKCD "Standards" comic strip
-```
-
 
 #### Inline images
 
 For inline images, we use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
+The HTML attribute `class` must be set to `inline` to render the image inline at `1rem`. 
+Images and figures should always include `alt` text.
 Example syntax is shown below.
 
 ```html
 You can copy <img alt="Copy icon" src="../../_images/copy.svg" class="inline"> blocks.
 ```
 
-Note that the HTML attribute `class` must be set to `inline` to render the image inline at `1rem`. 
-
-The above syntax renders as shown below.
-
 > You can copy <img alt="Copy icon" src="/_static/copy.svg" class="inline"> blocks.
 
-Images and figures should always include `alt` text.
+#### Figure example
 
-The following MyST example will display as shown below.
+The following MyST example for `figure` will display as shown below.
 
-````md
+````{example}
 ```{eval-rst}
 .. figure:: /_static/voting_flowchart.png
     :alt: Voting flowchart
@@ -223,24 +200,6 @@ The following MyST example will display as shown below.
     ======  =======
 ```
 ````
-
-```{eval-rst}
-.. figure:: /_static/voting_flowchart.png
-    :alt: Voting flowchart
-
-    This is a caption in a single paragraph.
-    
-    This is a legend, which consists of all elements after the caption.
-    It can include a table.
-    
-    ======  =======
-    Symbol  Meaning
-    ======  =======
-    ⃞       Object
-    ⬭       View
-    ➞       Flow
-    ======  =======
-```
 
 
 ### Video
@@ -255,23 +214,18 @@ If you include audio, it is helpful to include closed captions or a transcript.
 It is helpful to include overlays of key strokes, and mouse and other input gestures, to describe how to interact with the user interface.
 
 Paths to videos must resolve in both the main documentation and the submodule's documentation, if present.
+Note that the path must be absolute to support both submodules and the main documentation.
+Don't use file-relative paths.
 See {ref}`static-assets-label` for details.
 
 Example MyST syntax is shown below.
 
-````md
-```{video} /_static/user-manual/blocks/block-copy-cut.mp4
-```
-````
-
-Note that the path must be absolute to support both submodules and the main documentation.
-Don't use file-relative paths.
-The above MyST markup renders as shown below.
-
+`````{example}
 ````{only} not text
-```{video} /_static/user-manual/blocks/block-copy-cut.mp4
+```{video} ../../volto/_static/user-manual/blocks/block-copy-cut.mp4
 ```
 ````
+`````
 
 
 ### Diagrams and graphs with Graphviz
@@ -280,7 +234,7 @@ We use [Graphviz](https://graphviz.org/download/) and its Sphinx extension [`sph
 
 The following MyST example will display as shown below.
 
-````markdown
+````{example}
 ```{eval-rst}
 .. graphviz::
     :align: center
@@ -293,41 +247,23 @@ The following MyST example will display as shown below.
     }
 ```
 ````
-
-```{eval-rst}
-.. graphviz::
-    :align: center
-
-    digraph viewstructure {
-      {
-        node [margin=5,shape=box]
-      }
-      ZCML -> {Python, Template};
-    }
-```
 
 
 ### Code block
 
 A Python code snippet without reStructuredText options, using a simple fence.
 
-````md
+````{example}
 ```python
 a = 2
 print("my 1st line")
 print(f"my {a}nd line")
 ```
 ````
-
-```python
-a = 2
-print("my 1st line")
-print(f"my {a}nd line")
-```
 
 A Python code snippet with reStructuredText options, using a fence with the parsed reStructuredText directive `code-block`.
 
-````md
+````{example}
 ```{code-block} python
 :linenos:
 :emphasize-lines: 1, 3
@@ -338,27 +274,19 @@ print(f"my {a}nd line")
 ```
 ````
 
-```{code-block} python
-:linenos:
-:emphasize-lines: 1, 3
-
-a = 2
-print("my 1st line")
-print(f"my {a}nd line")
-```
 
 ### Escape literal backticks inline
 
-```md
+```{example}
 This is MyST syntax for term ``{term}`React` ``
 ```
-
-This is MyST syntax for term ``{term}`React` ``
 
 
 ### Glossary terms
 
 Add a term to the {ref}`glossary-label`, located at {file}`/glossary.md`.
+
+% For sphinx-examples, do not add a glossary term, as it will conflict with that in the actual glossary.
 
 ```md
 React
@@ -368,18 +296,16 @@ React
 
 Reference a term in the {ref}`glossary-label`.
 
-```md
+```{example}
 Using {term}`React` makes frontends fun again!
 ```
-
-Using {term}`React` makes frontends fun again!
 
 
 ### Nesting directives
 
 You can [nest directives](https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#nesting-directives), such as [admonitions](https://myst-parser.readthedocs.io/en/latest/syntax/admonitions.html) and code blocks, by ensuring that the backtick-lines corresponding to the outermost directive are longer than the backtick-lines for the inner directives.
 
-`````
+`````{example}
 ````{tip}
 To use formatted string literals ("f-strings"), begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
 Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
@@ -394,19 +320,3 @@ print(f"my {a}nd line")
 ```
 ````
 `````
-
-This would be rendered as:
-
-````{tip}
-To use formatted string literals ("f-strings"), begin a string with `f` or `F` before the opening quotation mark or triple quotation mark.
-Inside this string, you can write a Python expression between `{` and `}` characters that can refer to variables or literal values.
-
-```{code-block} python
-:linenos:
-:emphasize-lines: 1, 3
-
-a = 2
-print("my 1st line")
-print(f"my {a}nd line")
-```
-````

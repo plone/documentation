@@ -53,15 +53,12 @@ Open `/_build/html/index.html` in a web browser.
 
 ### American English spelling, grammar, and syntax, and style guide
 
-Spellings are enforced through [`Vale`](https://vale.sh/).
+[Vale](https://vale.sh/) is a linter for narrative text.
+It checks spelling, English grammar, and style guides.
 Plone uses American English.
 
-Spelling is configured in {file}`Makefile`, {file}`.vale.ini`, and in files in `styles/Vocab/Plone/`.
-
-Authors should add new words and proper names using correct casing to {file}`styles/Vocab/Plone/accept.txt`, sorted alphabetically and case-insensitive.
-
 Vale also provides English grammar and syntax checking, as well as a Style Guide.
-We follow the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).
+The Plone Documentation Team selected the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/) for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences. 
 
 To perform all these checks, run the following command.
 
@@ -73,6 +70,41 @@ Because it is difficult to automate good American English grammar and syntax, we
 We also understand that contributors might not be fluent in English.
 We encourage contributors to make a reasonable effort, and to request a review of their pull request from community members who are fluent in English to fix grammar and syntax.
 Please ask!
+
+```{note}
+More corrections to spellings and Vale's configuration are welcome by submitting a pull request.
+This is an easy way to become a contributor to Plone.
+See {ref}`authors-advanced-vale-usage-label` for details.
+```
+
+
+(authors-advanced-vale-usage-label)=
+
+#### Advanced Vale usage
+
+To have Vale check only a specific file or directory of files, you can issue [Vale commands](https://vale.sh/manual/) with options in a shell session.
+To allow this, you must either:
+
+-   activate your Python virtual environment
+-   use the virtual environment path, such as `bin/vale`
+-   install Vale using operating system's package manager
+
+The Vale `Makefile` command automatically installs Vale into your Python virtual environment—which is also created via any documentation `Makefile` commands—when you invoke it for the first time.
+
+Vale has [integrations](https://vale.sh/docs/integrations/guide/) with various IDEs.
+Integration might require installing Vale using operating system's package manager.
+
+-   [JetBrains](https://vale.sh/docs/integrations/jetbrains/)
+-   [Vim](https://github.com/dense-analysis/ale)
+-   [VS Code](https://github.com/errata-ai/vale-vscode)
+
+Plone configures Vale in three places:
+
+-   {file}`.vale.ini` is Vale's configuration file.
+    This file allows overriding rules or changing their severity.
+-   {file}`Makefile` passes options to the `vale` command, such as the files Vale checks.
+-   Plone documentation uses a custom spelling dictionary, with accepted and rejected spellings in `styles/Vocab/Plone`.
+    Authors should add new words and proper names using correct casing to {file}`styles/Vocab/Plone/accept.txt`, sorted alphabetically and case-insensitive.
 
 
 (authors-linkcheck-label)=
@@ -95,13 +127,9 @@ When authors add a link to the documentation, it must be a valid public URL with
 
 If it is not a valid link, or is private or local, then you must exclude it from `linkcheck` by wrapping it in single backticks.
 
-```md
+```{example}
 Visit the URL `http://www.example.com` for an example.
 ```
-
-This will render as follows.
-
-> Visit the URL `http://www.example.com` for an example.
 
 If a link has succumbed to bit rot, then try finding the most recently scraped version on the [Internet Archive Wayback Machine](https://web.archive.org/), and update the link.
 
@@ -208,6 +236,8 @@ Authors should include at least `description`, `property=og:description`, `prope
 The following is an example of `html_meta`.
 Note that the content of the two tags `description` and `property=og:description` should be identical.
 
+% Cannot use sphinx-examples for this one.
+
 ```md
 ---
 myst:
@@ -266,4 +296,5 @@ The Plone Documentation Team adopted additional guidelines.
 ## General documentation writing references
 
 -   [Write the Docs - Documentation Guide](https://www.writethedocs.org/guide/)
+-   [Creating effective technical documentation](https://developer.mozilla.org/en-US/blog/technical-writing/), Dipika Bhattacharya, Technical Writer at Mozilla Developer Network
 -   [A Guide to Em Dashes, En Dashes, and Hyphens](https://www.merriam-webster.com/grammar/em-dash-en-dash-how-to-use)

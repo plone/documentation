@@ -11,49 +11,36 @@ myst:
 
 # Building and checking the quality of documentation
 
-This document covers how to build the Plone Documentation and check it for quality.
+This document covers how to set up and build the Plone Documentation and check it for quality.
 
 
 (setup-build-installation-label)=
 
 ## Installation
 
-Installation of Plone 6 Documentation includes pre-requisites and the repository itself.
+Installation of Plone 6 Documentation includes prerequisites and the repository itself.
+
+```{include} ../../volto/contributing/install-operating-system.md
+```
+-   {ref}`setup-build-installation-python-label` {SUPPORTED_PYTHON_VERSIONS}
+-   {ref}`setup-build-installation-gnu-make-label`
+-   {ref}`setup-build-installation-graphviz-label`
 
 
 (setup-build-installation-python-label)=
 
 ### Python
 
-Python 3.8 or later is required.
-A more recent Python is preferred.
-Use your system's package manager or [pyenv](https://github.com/pyenv/pyenv) to install an appropriate version of Python.
+Installing Python is beyond the scope of this documentation.
+However, it is recommended to use a Python version manager, {term}`pyenv` that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
+Plone requires Python version {SUPPORTED_PYTHON_VERSIONS}.
 
 
-(setup-build-installation-vale-label)=
+(setup-build-installation-gnu-make-label)=
 
-### Vale
+### GNU make
 
-Vale is a linter for narrative text.
-It checks spelling, English grammar, and style guides.
-Plone documentation uses a custom spelling dictionary, with accepted and rejected spellings in `styles/Vocab/Plone`.
-
-Use your operating system's package manager to [install Vale](https://vale.sh/docs/vale-cli/installation/).
-
-Vale also has [integrations](https://vale.sh/docs/integrations/guide/) with various IDEs.
-
--   [JetBrains](https://vale.sh/docs/integrations/jetbrains/)
--   [Vim](https://github.com/dense-analysis/ale)
--   [VS Code](https://github.com/errata-ai/vale-vscode)
-
-Plone documentation uses a file located at the root of the repository, `.vale.ini`, to configure Vale.
-This file allows overriding rules or changing their severity.
-
-The Plone Documentation Team selected the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/) for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences. 
-
-```{note}
-More corrections to spellings and Vale's configuration are welcome by submitting a pull request.
-This is an easy way to become a contributor to Plone.
+```{include} ../../volto/contributing/install-make.md
 ```
 
 

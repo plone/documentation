@@ -23,9 +23,9 @@ Translations can be added or updated as needed by the citizens of Earth.
 You will need to work in one repository for Plone core, and optionally another one for Volto.
 
 
-(contributing-plone-core-translations-pre-requisites-label)=
+(contributing-plone-core-translations-prerequisites-label)=
 
-## Pre-requisites
+## Prerequisites
 
 Request write access to https://github.com/collective/plone.app.locales to be able to commit your translation directly.
 
@@ -40,7 +40,7 @@ Optionally sign the [Plone Contributor Agreement](https://plone.org/foundation/c
 
 The process of translating Plone Classic UI is the following.
 
-1.  Go to https://github.com/collective/plone.app.locales and clone it into your computer.
+1.  Follow the instructions to set up Volto for development as described in {doc}`../volto/contributing/developing-core`.
 
 2.  Create a new branch to work on your translations.
     Name the branch with something identifiable.
@@ -75,7 +75,45 @@ The process of translating the Volto frontend is the following.
     -  To update a translation, translate your language's `po` file found at `locales/{language_code}/LC_MESSAGES/volto.po`.
     -  To create a new translation, create a new directory at `locales/{language_code}/LC_MESSAGES/`, copy the file `locales/volto.pot` to `locales/{language_code}/LC_MESSAGES/volto.po` (note to drop the trailing `t`), and start translating.
 
-4. Commit your changes, and create a pull request.
+4. Run `make i18n` to convert your `po` files into `json`.
+   Volto loads these `json` files to provide translated text strings in the interface.
+
+5. Commit your changes, and create a pull request.
+
+(contributing-weblate-for-translations)=
+
+## Weblate for translations
+
+[Weblate](https://weblate.org/en/) is an open source project to help software developers translate their projects.
+Translators can work in a web interface, and not have to install third-party software or use git or GitHub.
+The Plone Foundation has obtained a "gratis Libre plan" account for Plone.
+Plone gets free hosting at the [Hosted](https://hosted.weblate.org/) platform that Weblate offers to open source projects.
+
+
+### Weblate workflow
+
+Translators will need to create an account on Weblate with an email and password.
+Authentication with GitHub and other third-party accounts might not work.
+
+Translators can go to the [Plone project in Weblate](https://hosted.weblate.org/projects/plone/).
+
+You will see several components listed.
+The `volto` component is for the package `volto`, whose repository is at https://github.com/plone/volto.
+
+```{note}
+At this moment Volto translations can't be contributed using Weblate.
+The Volto Team are working on this issue, and hope to fix it as soon as possible.
+```
+
+All other components are for the package `plone.app.locales`, whose repository is at https://github.com/collective/plone.app.locales.
+
+See the Weblate documentation, [Translating using Weblate](https://docs.weblate.org/en/latest/user/translating.html), for how to use it to write translations.
+
+When you save a translation, then it is committed on a branch used only for translations in the respective GitHub repository.
+
+[See recent commits to the package `plone.app.locales`](https://github.com/collective/plone.app.locales/commits/master/).
+
+Maintainers will periodically create a pull request from the changes, and merge it.
 
 
 (contributing-plone-core-translations-support-label)=

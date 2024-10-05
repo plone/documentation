@@ -15,6 +15,10 @@ This document describes how to contribute to Plone Documentation.
 
 Contributions to the Plone Documentation are welcome.
 
+```{seealso}
+To set up and build the documentation locally, see {doc}`setup-build`.
+```
+
 
 (contributing-permission-to-publish-label)=
 
@@ -107,7 +111,7 @@ After your Plone Contributor Agreement has been approved, and you have been adde
 
 1.  Clarify the scope of work that needs to be done.
     Check for previous work, assignment to another developer, or whether the requirements have changed.
-1.  [Assign yourself to the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users).
+1.  [Assign yourself to the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/assigning-issues-and-pull-requests-to-other-github-users).
     This signals to other developers that you are working on the issue.
 
 From here, you can either make {ref}`contributing-quick-edits-label` or {ref}`contributing-large-edits-label`.
@@ -159,7 +163,7 @@ This section describes how to make contributions to files in the `plone/document
 1.  Create a new branch from `6.0`.
 
     ```shell
-    git checkout -b <new_branch>
+    git switch -c <new_branch>
     ```
 
 1.  Edit files, save, preview, and test.
@@ -247,7 +251,7 @@ We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master
 1.  Create a new branch from the development branch.
 
     ```shell
-    git checkout -b <new_branch>
+    git switch -c <new_branch>
     ```
 
 1.  Make edits to files in `docs/<external_package>` using your favorite editor, and save, preview, and test.

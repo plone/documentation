@@ -600,5 +600,59 @@ The following example {file}`registry.xml` may be used for configuring TinyMCE w
 Please make sure you write valid JSON for the `template` option.
 
 ```{seealso}
-See also the [TinyMCE 4 to 5 upgrade guide](https://www.tiny.cloud/docs/migration-from-4x/).
+See also [Migrating from TinyMCE 4 to TinyMCE 5](https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/).
 ```
+
+## Viewlets
+
+Plone 6.0 renames various viewlets or moves them to a different viewlet manager.
+This is because some viewlet names contained the name of a viewlet manager.
+This didn't always match the name of their actual viewlet manager, especially after moving them.
+Plone 6.0 removes such references from the viewlet names to avoid confusion.
+
+-   Plone 6.0 removes the `plone.header` viewlet from `plone.portaltop` manager, making it empty.
+-   Plone 6.0 renames the `plone.abovecontenttitle.documentactions` viewlet to `plone.documentactions`, and moves it from manager `plone.belowcontentbody` to `plone.belowcontent`.
+-   Plone 6.0 renames the `plone.abovecontenttitle.socialtags` viewlet to `plone.socialtags`.
+    It remains in manager `plone.abovecontenttitle`.
+-   Plone 6.0 renames the `plone.belowcontentbody.relateditems` viewlet to `plone.relateditems`.
+    It remains in manager `plone.belowcontentbody`.
+-   Plone 6.0 removes the `plone.manage_portlets_fallback` viewlet from the `plone.belowcontent` manager.
+-   Plone 6.0 renames the `plone.belowcontenttitle.documentbyline` viewlet to `plone.documentbyline`.
+    It remains in manager `plone.belowcontenttitle`.
+-   Plone 6.0 renames the `plone.belowcontenttitle.keywords` viewlet to `plone.keywords`, and moves it from manager `plone.belowcontent` to `plone.belowcontentbody`.
+-   Plone 6.0 adds the `plone.rights` viewlet in manager `plone.belowcontentbody`.
+
+The names in the following table have had the namespace `plone.` removed from them for display purposes only.
+In your code, you should use the object's `plone.` namespace as a prefix.
+This table shows the same information, but in tabular form.
+
+```{table} Viewlet changes from 5.2 to 6.0
+
+| 5.2 viewlet name | 5.2 viewlet manager | 6.0 viewlet name | 6.0 viewlet manager |
+| ---------------- | ------------------- | ---------------- | ------------------- |
+| `header` | `portaltop` | | `portaltop` |
+| `abovecontenttitle.documentactions` | `belowcontentbody` | `documentactions` | `belowcontent` |
+| `abovecontenttitle.socialtags` | `abovecontenttitle` | `socialtags` | `abovecontenttitle` |
+| `belowcontentbody.relateditems` | `belowcontentbody` | `relateditems` | `belowcontentbody` |
+| `manage_portlets_fallback` | `belowcontent` | | `belowcontent` |
+| `belowcontenttitle.documentbyline` | `belowcontenttitle` | `documentbyline` | `belowcontenttitle` |
+| `belowcontenttitle.keywords` | `belowcontent` | `keywords` | `belowcontentbody` |
+| | `belowcontentbody` | `rights` | `belowcontentbody` |
+```
+
+Plone 6.0 makes changes to two viewlet managers:
+
+-   Plone 6.0 removes the `plone.documentactions` (`IDocumentActions`) viewlet manager.
+    In Plone 5.2 it was already empty.
+-   Plone 6.0 adds the `plone.belowcontentdescription` (`IBelowContentDescription`) viewlet manager.
+    By default this has no viewlets.
+
+One final change is that Plone 6.0 moves the `plone.footer` viewlet from `plone.app.layout/viewlets` to `plone.app.portlets`.
+The viewlet remains in manager `plone.portalfooter`.
+It renders the portlets from the `plone.footerportlets` portlet manager.
+
+## Boolean fields
+
+Since `zope.schema==6.1.0`, all `zope.schema.Bool` fields must have a `required=False` attribute.
+This allows you to either tick or not tick the checkbox, submit the form, and process the field with either its value when ticked or `None` when unticked.
+Otherwise, you can't save the form without ticking the checkbox, which effectively makes the field value always `True`.

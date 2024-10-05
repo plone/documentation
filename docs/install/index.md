@@ -11,95 +11,49 @@ myst:
 
 # Install
 
-In this part of the documentation, you can find how to try Plone and how to choose an installation method if you want to develop in Plone.
+In this part of the documentation, you can find how to install Plone to either create a Plone project or contribute to a Plone package.
+You can also {ref}`try a Plone demo <install-index-try-plone-label>`.
 
 
 (install-index-getting-started-label)=
 
-## Getting started
+## Get started
 
-::::{grid} 1 2 2 2
-:gutter: 1 1 1 2
+Choose an option to get started with Plone.
+If you are following a [Plone training](https://training.plone.org/), it should specify which option to choose.
 
-:::{grid-item-card} {octicon}`browser;1.5em;sd-mr-1` Try a demo
+{doc}`create-project`
+:   This option is for developers who want to create a web application using the current **stable release** version of Plone with **Volto 17 or earlier** for the frontend.
 
-Choose a version.
+{doc}`create-project-classic-ui`
+:   This option is for developers who want to create a web application using the current **stable release** version of Plone with **Classic UI** for the frontend.
+
+{doc}`create-project-cookieplone`
+:   This option is for developers who want to create a web application using the latest **development release** version of Plone with **Volto 18 or later** for the frontend.
+    The "development" version also means "pre-release", and includes alpha and beta versions and release candidates.
+    It allows developers to work with the cutting edge of Plone.
+    A development version is not stable, and features may change with little notice.
+
+{doc}`Contribute to a Plone package </contributing/index>`
+:   This option is for developers who want to contribute to Plone and its packages.
+
+
+(install-index-try-plone-label)=
+
+## Try a Plone demo
+
+Choose a version to demo.
 
 -   [Plone 6 with Volto frontend](https://demo.plone.org/)
--   [Plone 6 Classic UI (nightly build)](https://classic.demo.plone.org/login?came_from=/en)
--   [Plone 5.2.x (stable) with Barceloneta frontend](https://52.demo.plone.org/en/)
-:::
-
-:::{grid-item-card} {octicon}`download;1.5em;sd-mr-1` Install
-
-Developers may choose to install Plone from either [the official container images](containers/index) or [packages](install-from-packages).
-+++
-Help me [choose an installation method](install-index-choose-installation-method-label).
-:::
-
-::::
-
-
-(install-index-choose-installation-method-label)=
-
-## Choose an installation method
-
-Developers may choose to install Plone from either [the official container images](containers/index) or [packages](install-from-packages).
-
-
-### Containers
-
-The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
-They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
-Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
-
-The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
-
-This option is the quickest method to install and develop for Plone 6 and its packages.
-
-:::{card}
-:link: containers/index
-:link-type: any
-{octicon}`container;1.5em;sd-mr-1` [Use containers to install Plone](containers/index)
-:::
-
-
-### Packages
-
-There may be some cases where using a Plone 6 image and containers is not practical or desired.
-
--   You use an SQL database that is not PostgreSQL.
--   You develop custom applications, themes, and add-ons for Plone.
--   You use a deployment workflow that has specific requirements.
-
-For these situations, Plone 6 may be installed from its packages.
-
-It might be a challenge if you bump up against system requirements, or need to resolve conflicts between required packages.
-
-This method takes longer than using containers.
-
-:::{card}
-:link: install-from-packages
-:link-type: any
-{octicon}`package;1.5em;sd-mr-1` [Install Plone from its packages](install-from-packages)
-:::
-
-
-(install-index-system-requirements-label)=
-
-## System Requirements
-
-System requirements depend upon your choice of installation method.
-
--   [Container system requirements](install-containers-index-system-requirements-label)
--   [Packages system requirements](install-packages-system-requirements-label)
+-   [Plone 6 with Classic UI](https://classic.demo.plone.org/login?came_from=/en)
 
 
 ```{toctree}
 :maxdepth: 2
 :hidden: true
 
+create-project
+create-project-classic-ui
+create-project-cookieplone
 containers/index
-install-from-packages
-manage-add-ons-packages
 ```

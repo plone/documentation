@@ -15,17 +15,17 @@ This chapter describes how to create a custom theme for Plone Classic UI based o
 Barceloneta is the default enabled theme for Plone Classic UI.
 
 
-(classic-ui-theming-barceloneta-pre-requisites-label)=
+(classic-ui-theming-barceloneta-prerequisites-label)=
 
-## Pre-requisites
+## Prerequisites
 
-To create an add-on package with a Plone Classic UI theme, you need to install the following pre-requisites.
+To create an add-on package with a Plone Classic UI theme, you need to install the following prerequisites.
 
 -   [Node.js (16/18)](https://nodejs.org/en)
 -   [Python (>=3.8)](https://www.python.org/)
 -   [plonecli](https://pypi.org/project/plonecli/)
 
-Read more about how to install pre-requisites in {doc}`/install/install-from-packages`.
+Read more about how to install prerequisites in {doc}`/install/create-project`.
 
 
 (classic-ui-theming-barceloneta-create-a-classic-ui-theme-add-on-package-label)=

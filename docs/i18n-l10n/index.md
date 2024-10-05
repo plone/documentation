@@ -27,6 +27,17 @@ Wikipedia article [Internationalization and localization](https://en.wikipedia.o
 ```
 
 
+(i18n-l10n-supported-languages)=
+
+## Supported languages
+
+Plone supports many language translations in its two frontends.
+For Volto, see [`plone/volto`](https://github.com/plone/volto/tree/main/packages/volto/locales).
+For Classic UI, see [`collective/plone.app.locales`](https://github.com/collective/plone.app.locales/tree/master/plone/app/locales/locales).
+
+You can contribute new languages to both frontends.
+
+
 (i18n-l10n-code-versus-content-label)=
 
 ## Code versus content
@@ -128,7 +139,7 @@ In general, the process of internationalization and localization of a Plone appl
 Depending on which part of your Plone application that you internationalize and localize, there are different implementation details and tools that are used.
 These differences depend upon the programming language, either Python or JavaScript, being used by that part.
 
--   For the Plone 6 frontend {term}`Volto`, see {doc}`/volto/recipes/i18n`.
+-   For the Plone 6 frontend {term}`Volto`, see {doc}`/volto/development/i18n`.
     Volto is based on the JavaScript library React, and uses both {term}`react-intl` and {term}`gettext`.
 -   For the rest of Plone 6, see {doc}`translating-text-strings`.
     This is based on Python, and uses {term}`gettext`.
