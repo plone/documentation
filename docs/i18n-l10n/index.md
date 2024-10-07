@@ -160,5 +160,6 @@ language-negotiation-volto
 translating-content
 contributing-translations
 resync-translations
+use-an-external-translation-service
 ```
 
