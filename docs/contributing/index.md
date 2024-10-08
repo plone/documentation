@@ -31,7 +31,7 @@ You grant permission by signing and returning the Plone Contributor Agreement.
 
 A volunteer member of the Plone Foundation will review your signed agreement.
 
-If accepted, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access, and you will simultaneously receive an email notification from GitHub.
+If accepted, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access, and you will simultaneously receive an email from GitHub for you to accept the invitation to join the team.
 
 Allow up to one week for processing.
 Contact the Plone Foundation by its email address for further information, including the status of your request.
@@ -54,19 +54,28 @@ Sign the Plone Contributor Agreement
 The Plone Foundation has published a [Code of Conduct](https://plone.org/foundation/materials/foundation-resolutions/code-of-conduct).
 All contributors to the Plone Documentation follow the Code of Conduct.
 
+
 (contributing-first-time-contributors-label)=
 
 ## First-time contributors
 
 First-time contributors should read and follow our guide {doc}`first-time`.
 
+
+(report-bugs-and-feature-requests-label)=
+
+## Report bugs and request features
+
+When you experience a bug with, or want to request a feature for Plone, but you don't know in which package you should create the GitHub issue, you can create an issue in the primary Plone repository, [`Products.CMFPlone`](https://github.com/plone/Products.CMFPlone/).
+Someone will help identify in which of the dozens of repositories that make up Plone the actual change and pull request should be made.
+
+
 (contributing-continuous-integration-label)=
 
 ## Continuous integration
 
-Plone project repositories use continuous integration (CI) to run tests, ensure code quality, or provide previews for every contribution.
-Plone uses GitHub Actions, Jenkins, Cypress, Netlify, and other services for CI.
-All of a project's CI jobs must pass before a contribution may be accepted.
+```{include} /_inc/_continuous-integration.md
+```
 
 (contributing-change-log-label)=
 

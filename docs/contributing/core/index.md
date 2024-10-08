@@ -30,11 +30,11 @@ You must {ref}`contributing-sign-and-return-the-plone-contributor-agreement-labe
 Before you contribute to Plone core, check the [version support policy](https://plone.org/download/release-schedule) to see which versions of Plone are currently supported.
 
 
-(plone-pre-requisites-label)=
+(plone-prerequisites-label)=
 
-## Pre-requisites
+## Prerequisites
 
-It is beyond the scope of this documentation to provide installation instructions for all pre-requisites for your operating system.
+It is beyond the scope of this documentation to provide installation instructions for all prerequisites for your operating system.
 However, the following links and sections below may be helpful.
 
 ```{include} ../../volto/contributing/install-operating-system.md
@@ -292,14 +292,10 @@ This enables automatic closing of the related issue when the pull request is mer
 This also creates a hyperlink to the original issue for easy reference.
 
 
-## Jenkins and mr.roboto
+## Continuous integration
 
-Plone has a continuous integration ({term}`CI`) setup and follows CI rules.
-
-When you push a change to a Plone package, there may be GitHub workflows that run automatically.
-The CI package [mr.roboto](https://github.com/plone/mr.roboto) will perform some checks and suggest that you run Jenkins after all other CI runs.
-
-See {doc}`continuous-integration` for more information.
+```{include} /_inc/_continuous-integration.md
+```
 
 
 ## Additional material

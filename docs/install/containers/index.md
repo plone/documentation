@@ -11,7 +11,7 @@ myst:
 
 # Containers
 
-The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
+The Plone 6 images have all the system requirements, prerequisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
 
 Using containers is the easiest way to deploy Plone 6.
 Containers may also be used when {doc}`creating a Plone project <../create-project>` and {doc}`contributing to Plone <plone:contributing/index>`.
