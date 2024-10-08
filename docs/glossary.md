@@ -777,7 +777,7 @@ Load balancer
 CI
 continuous integration
     Continuous integration (CI) is the practice of integrating all your code changes into the main branch of a shared source code repository early and often, automatically testing each change when you commit or merge them, and automatically kicking off a build.
-    
+
     Read about Plone's {doc}`/contributing/core/continuous-integration`.
 
 CD
@@ -794,4 +794,10 @@ lazy loaded
 reference implementation
     A reference implementation is a program that implements all requirements from a corresponding specification.
     The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
+
+distribution
+    A Plone distribution is a Python package that defines a distribution of Plone.
+    It is a way of defining what happens when you create a new Plone site.
+    A distribution defines dependencies and default content, including default users.
+    This is new in Plone 6.1.
 ```
