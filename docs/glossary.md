@@ -802,4 +802,5 @@ distribution
 
     A Plone distribution is a Python package that defines specific features, themes, add-ons, and configurations that get activated when creating a Plone site.
     It is available in core Plone as the recommended way for creating a Plone site.
+    [`plone.distribution`](https://github.com/plone/plone.distribution) is the main package that offers the basis for distributions.
 ```
