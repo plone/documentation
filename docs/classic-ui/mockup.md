@@ -27,10 +27,29 @@ Install {term}`plonecli` into your Python user packages to make it available to 
 pip install plonecli --user
 ```
 
-Create a theme package add-on with `plonecli`.
+Create an add-on package with `plonecli`.
 
 ```shell
-plonecli add mockup_pattern
+plonecli add project.addon
+```
+
+This will create a package `project.addon`, which you can install in your Plone site.
+
+You can `cd` to the project, and add features to that package, such as content types, behaviors, control panels, or REST API endpoints.
+
+```shell
+cd project.addon
+plonecli add content_type
+plonecli add behavior
+plonecli theme_barceloneta
+```
+
+Each of the features asks several questions to create the desired feature, customized to your preferences.
+
+You can check the full list of available features using the `-l` parameter:
+
+```shell
+plonecli -l
 ```
 
 
