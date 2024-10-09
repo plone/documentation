@@ -136,9 +136,14 @@ When you install the [`Plone` 6.1 Python package](https://pypi.org/project/Plone
 
 When you start a new project with `Plone` 6.1, the launch screen prompts you to choose a frontend distribution when creating a new Plone site.
 
-```{image} images/distribution-chooser.png
-:alt: screenshot of the launch screen
+````{card}
+```{image} /backend/upgrading/version-specific-migration/images/distribution-chooser.png
+:alt: Launch screen for choosing a frontend distribution
+:target: /_images/distribution-chooser.png
 ```
++++
+_Launch screen for choosing a frontend distribution_
+````
 
 After you select a frontend distribution, you will fill out a brief form to configure your new Plone 6.1 site, similar to the process for Plone 6.0.
 
