@@ -128,8 +128,8 @@ Now it is available in core Plone as the recommended way for creating a Plone si
 When you install the [`Plone` 6.1 Python package](https://pypi.org/project/Plone/), you get several new packages and two distributions:
 
 -   [`plone.distribution`](https://github.com/plone/plone.distribution) is the new main package that offers the basis for distributions.
--   [`plone.exportimport`](https://github.com/plone/plone.exportimport) imports and exports content, users, and other objects between Plone sites and when upgrading Plone.
-    It is now the preferred method, and `plone.distribution` uses it.
+-   [`plone.exportimport`](https://github.com/plone/plone.exportimport) imports and exports content, users, and other objects between Plone sites.
+    `plone.distribution` uses it.
 -   [`plone.volto`](https://github.com/plone/plone.volto) is the distribution to create a Plone site with the default frontend Volto.
     This package was already present in Plone 6.0, but was upgraded to a distribution.
 -   [`plone.classicui`](https://github.com/plone/plone.classicui) is a new package and is the distribution to create a Plone site with the Classic UI frontend.
