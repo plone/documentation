@@ -95,7 +95,7 @@ class TranslateUsingMyService(BrowserView):
 ```
 
 ```{note}
-Due to the way that the Google Translate integration is built in `plone.app.multilingual`, you will need to enter something in the {guilable}`Google Translate API Key` field in the {guilable}`Multilingual Settings` 
+Due to the way that the Google Translate integration is built in `plone.app.multilingual`, you will need to enter something in the {guilabel}`Google Translate API Key` field in the {guilabel}`Multilingual Settings` 
 control panel of your site.
 It doesn't need to be a valid Google Translate API Key; it can be a random string.
 ```
