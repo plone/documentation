@@ -149,11 +149,11 @@ After you select a distribution, you will fill out a brief form to configure you
 
 Distributions are optional.
 If your project only uses the `Products.CMFPlone` Python package, you can still create a Plone site in the usual way.
-Consider, however, the following differences from distributions.
+Consider, however, the following differences from distributions and from Plone 6.0.
 
 -   The configuration form is simpler and shorter.
 -   The created site has no content, and therefore no {guilabel}`News` or {guilabel}`Events` folders.
--   You must install then activate add-ons through the {guilabel}`Add-ons` control panel.
+-   You must install and then activate add-ons through the {guilabel}`Add-ons` control panel.
 
 There are a few things you should consider when upgrading a project to, or making an add-on compatible with, Plone 6.1:
 
