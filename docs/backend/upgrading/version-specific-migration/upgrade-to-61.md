@@ -153,7 +153,7 @@ Consider, however, the following differences from distributions and from Plone 6
 
 -   The configuration form is simpler and shorter.
 -   The created site has no content, and therefore no {guilabel}`News` or {guilabel}`Events` folders.
--   You must install and then activate add-ons through the {guilabel}`Add-ons` control panel.
+-   You must activate add-ons through the {guilabel}`Add-ons` control panel.
 
 There are a few things you should consider when upgrading a project to, or making an add-on compatible with, Plone 6.1:
 
