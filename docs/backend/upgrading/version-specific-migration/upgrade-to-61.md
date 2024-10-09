@@ -134,7 +134,7 @@ When you install the [`Plone` 6.1 Python package](https://pypi.org/project/Plone
     This package was already present in Plone 6.0, but was upgraded to a distribution.
 -   [`plone.classicui`](https://github.com/plone/plone.classicui) is a new package and is the distribution to create a Plone site with the Classic UI frontend.
 
-When you start a new project with `Plone` 6.1, the launch screen prompts you to choose a frontend distribution when creating a new Plone site.
+When you start Plone, the launch screen prompts you to choose a distribution when creating a new Plone site.
 
 ````{card}
 ```{image} /backend/upgrading/version-specific-migration/images/distribution-chooser.png
