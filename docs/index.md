@@ -42,6 +42,7 @@ classic-ui/index
 i18n-l10n/index
 conceptual-guides/index
 contributing/index
+guides/index
 ```
 
 ```{toctree}
