@@ -138,14 +138,14 @@ When you start Plone, the launch screen prompts you to choose a distribution whe
 
 ````{card}
 ```{image} /backend/upgrading/version-specific-migration/images/distribution-chooser.png
-:alt: Launch screen for choosing a frontend distribution
+:alt: Launch screen for choosing a distribution
 :target: /_images/distribution-chooser.png
 ```
 +++
-_Launch screen for choosing a frontend distribution_
+_Launch screen for choosing a distribution_
 ````
 
-After you select a frontend distribution, you will fill out a brief form to configure your new Plone 6.1 site, similar to the process for Plone 6.0.
+After you select a distribution, you will fill out a brief form to configure your new Plone 6.1 site, similar to the process for Plone 6.0.
 
 Distributions are optional.
 If your project only uses the `Products.CMFPlone` Python package, you can still create a Plone site in the usual way.
@@ -170,8 +170,8 @@ There are a few things you should consider when upgrading a project to, or makin
     This is fine.
     If you know you only need `plone.volto` or only need `plone.classicui`, you can switch to that.
     You can also limit the options for selecting a distribution by setting the environment variable `ALLOWED_DISTRIBUTIONS` with fewer options.
-    Set `ALLOWED_DISTRIBUTIONS=default` for the default Volto frontend distribution (`plone.volto`).
-    Set `ALLOWED_DISTRIBUTIONS=classic` for the Classic UI frontend distribution (`plone.classicui`).
+    Set `ALLOWED_DISTRIBUTIONS=default` for the distribution targeting the default Volto frontend (`plone.volto`).
+    Set `ALLOWED_DISTRIBUTIONS=classic` for the distribution with the Classic UI frontend (`plone.classicui`).
 -   If you switch from `Plone` to `plone.volto` or `plone.classicui`, you might want to install extra core add-ons, for example `plone.app.upgrade` or `plone.app.caching`.
 -   If your add-on is only for Volto, you may want to add `plone.volto` as a dependency.
 -   If your add-on is only for Classic UI, you may want to add `plone.classicui` as a dependency.
