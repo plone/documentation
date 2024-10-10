@@ -55,5 +55,6 @@ Choose a version to demo.
 create-project
 create-project-classic-ui
 create-project-cookieplone
+install
 containers/index
 ```
