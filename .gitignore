@@ -14,6 +14,3 @@ pyvenv.cfg
 docs/volto
 docs/plone.restapi
 docs/plone.api
-
-# editor files
-.vscode
