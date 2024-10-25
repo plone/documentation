@@ -523,7 +523,7 @@ manual `.po` entries
     Entries which cannot be detected by an automatic code scan.
 
 react-intl
-    A library that is part of [Format.JS](https://formatjs.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
+    A library that is part of [Format.JS](https://formatjs.github.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
 
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
