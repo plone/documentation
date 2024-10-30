@@ -30,7 +30,7 @@ pip install plonecli --user
 Create an add-on package with `plonecli`.
 
 ```shell
-plonecli add project.addon
+plonecli create addon project.addon
 ```
 
 This will create a package `project.addon`, which you can install in your Plone site.
@@ -51,6 +51,82 @@ You can check the full list of available features using the `-l` parameter:
 ```shell
 plonecli -l
 ```
+
+## Create a custom pattern
+
+To create a custom pattern in your addon use the `mockup_pattern` bobtemplate:
+
+```shell
+cd project.addon
+plonecli add mockup_pattern
+```
+
+Now enter your pattern name without *pat-* prefix:
+
+```shell
+--> Pattern name (without “pat-” prefix) [my-pattern]: testpattern
+```
+
+This creates the necessary JS resources and webpack configuration for you:
+
+```text
+...
+├── resources
+|   ├── pat-testpattern
+|   |   ├── documentation.md
+|   |   ├── testpattern.js
+|   |   ├── testpattern.scss
+|   |   ├── testpattern.test.js
+│   ├── bundle.js
+│   ├── index.html
+│   ├── index.js
+├── package.json
+├── webpack.config.js
+...
+```
+
+All your pattern JS code goes into `resources/pat-testpattern/testpattern.js`.
+SCSS files can be imported too since webpack provides the `sass-loader` module.
+
+Next step is to install the npm packages (yarn recommended):
+
+```shell
+yarn install
+```
+
+When you have finished your JS code you have to build the bundle with:
+
+```shell
+yarn build
+```
+
+This creates the webpack chunks and the JS bundle files in your addon package:
+
+```text
+...
+├── src
+|   ├── project
+|   |   ├── addon
+|   |   |   ├── browser
+|   |   |   |   ├── static
+|   |   |   |   |   ├── bundles
+|   |   |   |   |   |   ├── chunks
+|   |   |   |   |   |   ├── addon-remote.min.js
+|   |   |   |   |   |   ├── addon-remote.min.js.map
+|   |   |   |   |   |   ├── addon.min.js
+|   |   |   |   |   |   ├── addon.min.js.map
+```
+
+Note that `plonecli` also creates a XML file in `src/project/addon/profiles/default/registry/bundles.xml`
+which registers the `addon-remote.min.js` in the resources registry.
+
+```{important}
+You have to re-import your profile with an upgrade step if you have installed
+your addon in Plone before adding the pattern.
+```
+
+You can test your pattern now with the browser view `@@addon-pattern-demo` (see /src/project/addon/browser/pattern-demo.pt)
+or implement it in your own templates by adding the CSS class `pat-testpattern` to a tag.
 
 
 ## References
