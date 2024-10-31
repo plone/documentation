@@ -796,11 +796,7 @@ reference implementation
     The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
 
 distribution
-
-    ```{versionadded} Plone 6.1
-    ```
-
-    A Plone distribution is a Python package that defines specific features, themes, add-ons, and configurations that get activated when creating a Plone site.
-    It is available in core Plone as the recommended way for creating a Plone site.
-    [`plone.distribution`](https://github.com/plone/plone.distribution) is the main package that offers the basis for distributions.
+    A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations.
+    It is a convenient way to get a specific type of website up and running quickly, as the distribution includes everything needed to run that type of site.
+    See {doc}`/conceptual-guides/distributions` for more information.
 ```
