@@ -23,6 +23,8 @@ For other installation options, see {doc}`/install/index`.
 ```
 
 
+(create-project-cookieplone-system-requirements)=
+
 ## System requirements
 
 Plone 6 has both hardware requirements and software prerequisites.

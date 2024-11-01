@@ -523,7 +523,7 @@ manual `.po` entries
     Entries which cannot be detected by an automatic code scan.
 
 react-intl
-    A library that is part of [Format.JS](https://formatjs.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
+    [`react-intl`](https://formatjs.github.io/docs/react-intl) is a library that is part of [Format.JS](https://formatjs.github.io/) which helps developers set up their applications for internationalization.
 
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
@@ -706,12 +706,6 @@ Windows Subsystem for Linux
 pnpm
     [pnpm](https://pnpm.io/) is a fast, disk space efficient package manager.
 
-Guillotina
-    [Guillotina](https://guillotina.io/) is a full-stack data framework built on [AsyncIO](https://docs.python.org/3/library/asyncio.html).
-
-Nick
-    [Nick](https://nickcms.org/) is a headless content management system {term}`CMS` built with {term}`Node.js`.
-
 predicate
 predicates
     In programming, a predicate is a test which returns `true` or `false`.
@@ -744,6 +738,10 @@ husky
 Jest
     [Jest](https://jestjs.io/) is a JavaScript testing framework.
     Volto uses Jest for unit tests.
+
+Cypress
+    [Cypress](https://www.cypress.io/) is a JavaScript testing framework that runs your app in the browser for visually debugging it.
+    Volto uses Cypress for acceptance tests.
 
 Plone
     Plone is an open-source content management system (CMS) with over 20 years of stability and security wrapped in a modern, powerful, user-centric package.
