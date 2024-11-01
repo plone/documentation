@@ -33,7 +33,7 @@ In `setup.py`, always add the correct Trove classifiers:
 
 ```python
         "Framework :: Plone",
-        "Framework :: Plone :: 6.0",
+        "Framework :: Plone :: 6.1",
         "Framework :: Plone :: Distribution",
 ```
 
@@ -41,7 +41,7 @@ and also require `plone.distribution` to be available:
 
 ```python
     install_requires=[
-        "Plone",
+        "Products.CMFPlone",
         "setuptools",
         "plone.distribution",
     ],
