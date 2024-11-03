@@ -282,10 +282,18 @@ CommonJS
 Transpilation
     The transformation of JavaScript code that uses advanced language features, unavailable for some browsers, to code rewritten to support them.
 
-ES6
-    ECMAScript 6, a newer version of the JavaScript language.
+ECMAScript
+    ECMAScript is a standard for scripting languages, including JavaScript, JScript, and ActionScript.
+    It is best known as a JavaScript standard intended to ensure the interoperability of web pages across different web browsers.
+    It is standardized by [Ecma International](https://ecma-international.org/) in the document [ECMA-262](https://ecma-international.org/publications-and-standards/standards/ecma-262/).
+
+TC39
+    Ecma International's [TC39](https://tc39.es/) is a group of JavaScript developers, implementers, academics, and more, collaborating with the community to maintain and evolve the definition of JavaScript.
+    They established a [process](https://tc39.es/process-document/) where the proposals are discussed, developed, and eventually approved (or dropped).
+    The process has five Stages (0 to 4) where reaching the Stage 4 means the proposal is finished, and it becomes part of the JavaScript specification.
 
 mrs-developer
+`mrs-developer`
     Also called "missdev", a tool similar to buildout's `mr.developer`.
     It automatically downloads and keeps up to date copies of software and add-ons under development based on definitions stored in `mrs.developer.json`.
     As a byproduct of its update operations, it also automatically adjusts `jsconfig.json`, which is used by Volto to configure webpack aliases.
