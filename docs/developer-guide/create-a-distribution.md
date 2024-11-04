@@ -308,15 +308,15 @@ In the example above, `Plone` is the ID of the Plone site to export.
 
 ## Limit available distributions
 
-By default, Plone 6.1 ships with two ready-to-use distributions:
+By default, Plone 6.1 ships with two ready-to-use distributions.
 
-[`plone.volto`](https://github.com/plone/plone.volto)
+`default`
 :   Create a Plone site with the Volto frontend.
 
-[`plone.classicui`](https://github.com/plone/plone.classicui) 
+`classic` 
 :   Create a Plone site with the Classic UI frontend.
 
-If you want to limit the choice of distributions when creating a new site, it is possible to set the environment variable `ALLOWED_DISTRIBUTIONS` with fewer options.
+If you want to limit the choice of distributions when creating a new site, you can set the environment variable `ALLOWED_DISTRIBUTIONS` to a comma-separated sting of only those distributions' names.
 
 ```shell
 ALLOWED_DISTRIBUTIONS=default
