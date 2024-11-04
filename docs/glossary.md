@@ -804,5 +804,9 @@ reference implementation
 distribution
     A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations.
     It is a convenient way to get a specific type of website up and running quickly, as the distribution includes everything needed to run that type of site.
-    See {doc}`/conceptual-guides/distributions` for more information.
+
+    ```{seealso}
+    -   {doc}`/conceptual-guides/distributions`
+    -   {doc}`/developer-guide/create-a-distribution`
+    ```
 ```
