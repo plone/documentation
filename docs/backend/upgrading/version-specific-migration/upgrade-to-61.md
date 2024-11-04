@@ -64,16 +64,30 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 
 ## `z3c.form` and `plone.app.z3cform`
 
-````{todo}
-This is a placeholder.
+`plone.app.z3cform` is the form widget integration package for `z3c.form` in Plone. This basically adds Bootstrap 5 styling and mockup pattern options to all widgets.
 
--   Update deprecated imports
--   New widget templates
+In Plone 6.1 all widget classes have moved to the module `plone.app.z3cform.widgets` and the previous paths are marked as deprecated and will be removed in Plone 7.
 
-```{seealso}
-https://github.com/plone/plone.app.z3cform/pull/181
-```
-````
+The `BaseWidget` for patterns is refactored to the new `z3c.form` extendable attributes introduced in version 5.1 (see https://github.com/zopefoundation/z3c.form/pull/116) and doesn't use lxml anymore.
+If you have customizations in your base pattern widget class see the new implementation here https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/widgets/base.py.
+
+`RelatedItemsWidget` is marked as deprecated.
+The implementation for selecting related items, internal links/images in TinyMCE or internal paths for collection criterias is done with the new `ContentBrowserWidget` which introduces `pat-contentbrowser` from mockup (see below).
+
+
+## `mockup`: new pattern `pat-contentbrowser`
+
+We introduce the new content browsing pattern `pat-contentbrowser` for Classi UI.
+
+This is a "miller column browser" implementation which replaces `pat-relateditems` seamlessly.
+All basic options from `pat-relateditems` are implemented and behave the same as before (see http://plone.github.io/mockup/pat/contenbrowser/)
+
+Additionally `pat-contentbrowser` comes with some new features:
+
+- keyboard navigation
+- multiselection of items with Shift/Ctrl/CMD + click combination. This comes in handy for selecting multiple related items in one step.
+- uploading items to the current path
+
 
 
 ## `plone.app.multilingual` is a core add-on
