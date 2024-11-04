@@ -14,8 +14,12 @@ myst:
 ```{versionadded} Plone 6.1
 ```
 
-A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations.
+A Plone {term}`distribution` is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations.
 It is a convenient way to get a specific type of website up and running quickly, as the distribution includes everything needed to run that type of site.
+
+```{seealso}
+To create your own distribution, see {doc}`/developer-guide/create-a-distribution`.
+```
 
 
 ## Built-in distributions
