@@ -809,4 +809,8 @@ distribution
     -   {doc}`/conceptual-guides/distributions`
     -   {doc}`/developer-guide/create-a-distribution`
     ```
+
+JSON Schema
+    [JSON Schema](https://json-schema.org/) is the vocabulary that enables JSON data consistency, validity, and interoperability at scale.
+
 ```
