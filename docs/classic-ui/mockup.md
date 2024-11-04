@@ -54,20 +54,20 @@ plonecli -l
 
 ## Create a custom pattern
 
-To create a custom pattern in your addon use the `mockup_pattern` bobtemplate:
+To create a custom {term}`pattern` in your add-on, use the `mockup_pattern` {term}`bobtemplate`:
 
 ```shell
 cd project.addon
 plonecli add mockup_pattern
 ```
 
-Now enter your pattern name without *pat-* prefix:
+Next, enter your pattern name without the `pat-` prefix.
 
 ```shell
 --> Pattern name (without “pat-” prefix) [my-pattern]: testpattern
 ```
 
-This creates the necessary JS resources and webpack configuration for you:
+This creates the necessary JavaScript resources and webpack configuration for you, as shown in the following file system tree diagram.
 
 ```text
 ...
@@ -85,22 +85,22 @@ This creates the necessary JS resources and webpack configuration for you:
 ...
 ```
 
-All your pattern JS code goes into `resources/pat-testpattern/testpattern.js`.
-SCSS files can be imported too since webpack provides the `sass-loader` module.
+All your pattern JavaScript code goes into {file}`resources/pat-testpattern/testpattern.js`.
+SCSS files can be imported, too, since webpack provides the `sass-loader` module.
 
-Next step is to install the npm packages (yarn recommended):
+Next, install the npm packages using {term}`yarn`.
 
 ```shell
 yarn install
 ```
 
-When you have finished your JS code you have to build the bundle with:
+When you finish writing your JavaScript code, you have to build the bundle with the following command.
 
 ```shell
 yarn build
 ```
 
-This creates the webpack chunks and the JS bundle files in your addon package:
+This creates the webpack chunks and the JavaScript bundle files in your add-on package.
 
 ```text
 ...
@@ -117,16 +117,14 @@ This creates the webpack chunks and the JS bundle files in your addon package:
 |   |   |   |   |   |   ├── addon.min.js.map
 ```
 
-Note that `plonecli` also creates a XML file in `src/project/addon/profiles/default/registry/bundles.xml`
-which registers the `addon-remote.min.js` in the resources registry.
+Note that `plonecli` also creates an XML file in {file}`src/project/addon/profiles/default/registry/bundles.xml`, which registers the {file}`addon-remote.min.js` file in the resource registry.
 
 ```{important}
-You have to re-import your profile with an upgrade step if you have installed
-your addon in Plone before adding the pattern.
+You must re-import your profile with an upgrade step if you installed your add-on in Plone before adding the pattern.
 ```
 
-You can test your pattern now with the browser view `@@addon-pattern-demo` (see /src/project/addon/browser/pattern-demo.pt)
-or implement it in your own templates by adding the CSS class `pat-testpattern` to a tag.
+You can test your pattern now with the browser view `@@addon-pattern-demo` (see {file}`/src/project/addon/browser/pattern-demo.pt`)
+Alternatively you can implement it in your own templates by adding the CSS class `pat-testpattern` to a tag.
 
 
 ## References
