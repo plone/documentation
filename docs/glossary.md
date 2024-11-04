@@ -802,6 +802,7 @@ reference implementation
     The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
 
 distribution
+distributions
     A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations.
     It is a convenient way to get a specific type of website up and running quickly, as the distribution includes everything needed to run that type of site.
 
