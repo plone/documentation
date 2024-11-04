@@ -25,7 +25,7 @@ You can access it the same way in Plone 6.0, but the appearance and options are 
 ```
 
 Visit the Plone backend in a web browser.
-Usually it is running at http://localhost:8080/
+Usually it is running at http://localhost:8080/.
 
 The launch screen prompts you to choose one of the available {term}`distributions` to create a new site.
 

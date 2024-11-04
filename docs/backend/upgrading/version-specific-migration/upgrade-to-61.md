@@ -126,33 +126,33 @@ A Plone distribution is a Python package that defines specific features, themes,
 Now it is available in core Plone as the recommended way for {doc}`creating a new Plone site </install/add-site>`.
 
 ```{seealso}
-For more information, see {doc}`/conceptual-guides/distributions`.
+For more information about distribution concepts, see {doc}`/conceptual-guides/distributions`.
 ```
 
 Distributions are optional.
 If your project only uses the `Products.CMFPlone` Python package, you can still create a Plone site in the old way.
-Consider, however, the following differences from distributions and from Plone 6.0.
+Consider, however, that doing so you will have the following differences when compared to using distributions.
 
 -   The configuration form is simpler and shorter.
 -   The created site has no content, and therefore no {guilabel}`News` or {guilabel}`Events` folders.
 -   You must activate add-ons through the {guilabel}`Add-ons` control panel.
 
-There are a few things you should consider when upgrading a project to, or making an add-on compatible with, Plone 6.1:
+There are a few things you should consider when upgrading a project to, or making an add-on compatible with, Plone 6.1.
 
 -   In general, you don't need to change anything.
     Your existing site will keep working.
     But adding a new site may change in the ways described earlier.
--   Do you want to use the `Products.CMFPlone` package (0 distributions), either `plone.volto` or `plone.classicui` (1 distribution), or `Plone` (2 distributions)?
--   If your site uses the default Volto frontend, you will already have `plone.volto` as a dependency.
+-   Do you want to use the `Products.CMFPlone` package (no distributions), either `plone.volto` or `plone.classicui` (one distribution), or `Plone` (two distributions)?
+-   If your site uses Volto for the frontend, you will already have `plone.volto` as a dependency.
     This can stay the same.
 -   If your site uses only the `Products.CMFPlone` package, the frontend is Classic UI.
     This can stay the same, but you may want to depend on `plone.classicui`.
     With that package you can still create a new site and have the same content as before.
 -   If your site uses the `Plone` package, you will have the two new distributions available.
     This is fine.
-    If you know you only need `plone.volto` or only need `plone.classicui`, you can switch to only that one.
+    If you know you only need `plone.volto` or only need `plone.classicui`, you can switch to only one or the other.
     You can also limit the options for selecting a distribution by setting the environment variable `ALLOWED_DISTRIBUTIONS` with fewer options.
-    Set `ALLOWED_DISTRIBUTIONS=default` for the distribution targeting the default Volto frontend (`plone.volto`).
+    Set `ALLOWED_DISTRIBUTIONS=default` for the distribution targeting the Volto frontend (`plone.volto`).
     Set `ALLOWED_DISTRIBUTIONS=classic` for the distribution with the Classic UI frontend (`plone.classicui`).
 -   If you switch from `Plone` to `plone.volto` or `plone.classicui`, you might want to install extra core add-ons, for example `plone.app.upgrade` or `plone.app.caching`.
 -   If your add-on is only for Volto, you might want to add `plone.volto` as a dependency.
