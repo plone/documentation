@@ -11,76 +11,83 @@ myst:
 
 # Create a Plone distribution
 
+This section explains how a developer can create a custom Plone {term}`distribution`.
 A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations.
-This section explains how a developer can create a custom Plone distribution.
 
 ```{seealso}
 For a conceptual guide, see {doc}`/conceptual-guides/distributions`.
 ```
+
 
 ## Create a backend add-on
 
 These instructions assume that you already have created a Plone backend add-on package,
 and now you want to add a distribution to it.
 
-A Plone distribution exists inside a Python Package that can be installed by `pip`.
+A Plone distribution exists inside a Python package that can be installed by `pip`.
+
 
 ## Update `setup.py`
 
-The package will follow some conventions to make it "discoverable" by others.
+Your package should follow conventions that make it discoverable by other developers.
 
-In `setup.py`, always add the correct Trove classifiers:
-
-```python
-        "Framework :: Plone",
-        "Framework :: Plone :: 6.1",
-        "Framework :: Plone :: Distribution",
-```
-
-and also require `plone.distribution` to be available:
+In your {file}`setup.py` file, always add the correct [Python Trove classifiers](https://pypi.org/classifiers/).
 
 ```python
-    install_requires=[
-        "Products.CMFPlone",
-        "setuptools",
-        "plone.distribution",
-    ],
+"Framework :: Plone",
+"Framework :: Plone :: 6.1",
+"Framework :: Plone :: Distribution",
 ```
+
+Add `plone.distribution` to your `install_requires` stanza in your {file}`setup.py` file.
+
+```{code-block} python
+:emphasize-lines: 4
+
+install_requires=[
+    "Products.CMFPlone",
+    "setuptools",
+    "plone.distribution",
+],
+```
+
 
 ## Update `configure.zcml`
 
-In your main `configure.zcml`, make sure to have the `plone` XML namespace declared:
+In your main {file}`configure.zcml` file, add the `plone` XML namespace with the following declaration.
 
-```xml
+```{code-block} xml
+:emphasize-lines: 3
+
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:plone="http://namespaces.plone.org/plone"
     >
 ```
 
-And also include `plone.distribution`:
+Register `plone.distribution` as a package to include with the following `<include>` directive.
 
 ```xml
 <include package="plone.distribution" />
 ```
 
-Then declare the distributions included in your package:
+Then declare the distributions you want to include in your package.
 
 ```xml
-  <plone:distribution
-      name="blog"
-      title="Personal Blog"
-      description="A Plone site already configured to host a personal Blog."
-      directory="distributions/blog"
-      />
+<plone:distribution
+    name="blog"
+    title="Personal Blog"
+    description="A Plone site already configured to host a personal blog."
+    directory="distributions/blog"
+    />
 ```
 
-This example registers a distribution that will configure a Personal Blog, with some default content.
+The above example registers a distribution that will configure a personal blog with some default content.
+
 
 ## Add distribution handlers
 
-When registering a distribution, you can provide a `pre_handler`, a `handler` and a `post_handler` which must be
-functions with the following signatures.
+When registering a distribution, you can provide a `pre_handler`, a `handler`, and a `post_handler`, each of which must be a function with their respective signature, as shown in the following example.
 
 ```python
 def pre_handler(answers: dict) -> dict:
@@ -93,46 +100,58 @@ def post_handler(distribution: Distribution, site, answers: dict):
     return site
 ```
 
-Each of those handlers will be called in this way:
+Each of those handlers will be called as follows.
 
-- `pre_handler`: it will process the answers to do modifications on them before creating the site
-- `handler`: it will be run after the bare Plone site will be created, but instead of the default handler that installs the required GenericSetup profiles and creates the content.
-- `post_handler`: it will be run after the site is set up.
+`pre_handler`
+:   Processes the answers to prepare the distribution before creating the site.
 
-If you have added some extra fields in the Plone site creation form and want to do some extra configuration in the
-Plone site, you can add your own handler and register as follows:
+`handler`
+:   Runs after creating the bare Plone site instead of the default handler.
+    It installs the required GenericSetup profiles and creates the content.
 
-```xml
-  <plone:distribution
-      name="blog"
-      title="Personal Blog"
-      description="A Plone site already configured to host a personal Blog."
-      directory="distributions/blog"
-      post_handler=".handlers.blog.post_handler"
-      />
+`post_handler`
+:   Runs after the site is set up.
+
+To add extra configuration to your Plone site, and assuming you added extra inputs to the Plone site creation form, then you can add your own handler, registering it as shown in the following example.
+
+```{code-block} xml
+:emphasize-lines: 6
+
+<plone:distribution
+    name="blog"
+    title="Personal Blog"
+    description="A Plone site already configured to host a personal Blog."
+    directory="distributions/blog"
+    post_handler=".handlers.blog.post_handler"
+    />
 ```
 
+
 ## Add a distribution folder
+ 
+To organize your distribution configuration, you can follow the convention to use the {file}`distributions/<distribution_name>` folder in the root of your package.
+In that folder, you need to provide the items described in the following sections.
 
-A convention is to use the `distributions/<distribution_name>`folder in the root of your package to organize your distribution configuration.
-
-In that folder, you will need to provide:
 
 ### `image.png`
 
-A 1080x768 image of your distribution. It could be the default page of a new site, your logo, or any other way of representing this distribution.
+A 1080 pixels wide by 768 pixels tall image in PNG format representing your distribution.
+It could be the default page of a new site, your logo, or any other way of representing your distribution.
+
 
 ### `profiles.json`
 
-A `JSON` file with the GenericSetup profiles that are used by your distribution during installation.
+A file {file}`profiles.json` containing the GenericSetup profiles that your distribution uses during installation.
 
-This file needs to contain two keys:
+This file needs to contain two keys.
 
-- **base**: List of profiles installed in every new site using this distribution.
+`base`
+:   List of profiles to install in every new site using this distribution.
 
-- **content**: List of profiles installed when the user decides to create a site with example content.
+`content`
+:   List of profiles to install when the user decides to create a site with example content.
 
-The configuration for a new Volto site is:
+As an example, the configuration for a new Plone site with Volto as its frontend would be the following.
 
 ```json
 {
@@ -148,25 +167,29 @@ The configuration for a new Volto site is:
 }
 ```
 
+
 ### `schema.json`
 
-In case you require additional input from the user during site creation, you can customize the form using the `schema.json` file.
+If you require additional input from the user during site creation, you can customize the form using the {file}`schema.json` file.
 
-The file should contain two keys:
+The file should contain two keys.
 
-- **schema**: A JSON Schema definition.
-- **uischema**: A [react-jsonschema-form](https://rjsf-team.github.io/react-jsonschema-form/docs/) configuration to modify how the form is displayed.
+`schema`
+:   A {term}`JSON Schema` definition.
 
-The **schema** should have at least the following keys:
+`uischema`
+:   A [`react-jsonschema-form`](https://rjsf-team.github.io/react-jsonschema-form/docs/) configuration to modify the display of the form.
 
-- site_id
-- title
-- description
-- default_language
-- portal_timezone
-- setup_content
+The `schema` should have at least the following keys.
 
-The `schema.json` used for the default site creation is:
+-   `site_id`
+-   `title`
+-   `description`
+-   `default_language`
+-   `portal_timezone`
+-   `setup_content`
+
+The following code example is the content of the {file}`schema.json` file for creating the site.
 
 ```json
 {
@@ -211,42 +234,41 @@ The `schema.json` used for the default site creation is:
 }
 ```
 
-:::{note}
-You probably noticed the entries for `default_language`:
+````{note}
+You may have noticed the entries for both `default_language` and `portal_timezone`.
 
 ```json
-{"$ref": "#/definitions/languages"}
+      "default_language": {"$ref": "#/definitions/languages"},
+      "portal_timezone": {"$ref": "#/definitions/timezones"},
 ```
 
-and `portal_timezone`:
-
-```json
-{"$ref": "#/definitions/timezones"}
-```
-
-Both definitions are added in runtime by `plone.distribution` to provide a list of languages and timezones available on the installation.
-:::
+`plone.distribution` adds both definitions at runtime, providing a list of languages and timezones available on the installation.
+````
 
 ## Add a dependency on an add-on
 
 If you want to add a Plone backend add-on to your Plone distribution, then you must perform the following steps.
 
-Add your add-on, such as `collective.person`, to your `setup.py`:
+Add your add-on, such as `collective.person`, to your {file}`setup.py` file's `install_requires` stanza.
 
-```python
-    install_requires=[
-        "setuptools",
-        "Plone",
-        "plone.distribution>=1.0.0b2",
-        "plone.api",
-        "collective.person",
-    ],
+```{code-block} python
+:emphasize-lines: 6
+
+install_requires=[
+    "setuptools",
+    "Plone",
+    "plone.distribution>=1.0.0b2",
+    "plone.api",
+    "collective.person",
+],
 ```
 
-Add it to your `dependencies.zcml`:
+Then add it to your {file}`dependencies.zcml` file.
 
-```xml
-  <!-- List all packages you depend here -->
+```{code-block} xml
+:emphasize-lines: 5
+
+  <!-- List all packages your distribution depends on here -->
   <include package="plone.volto" />
   <include package="plone.restapi" />
   <include package="collective.person" />
@@ -255,22 +277,25 @@ Add it to your `dependencies.zcml`:
 </configure>
 ```
 
-Add it to your `profiles.json`:
+Finally, add it to your {file}`profiles.json` file.
 
-```json
-  "base": [
-    "plone.app.contenttypes:default",
-    "plone.app.caching:default",
-    "plone.restapi:default",
-    "plone.volto:default",
-    "collective.person:default",
-    "plonetheme.barceloneta:default"
-  ],
+```{code-block} json
+:emphasize-lines: 6
+
+"base": [
+  "plone.app.contenttypes:default",
+  "plone.app.caching:default",
+  "plone.restapi:default",
+  "plone.volto:default",
+  "collective.person:default",
+  "plonetheme.barceloneta:default"
+],
 ```
+
 
 ## Add example content
 
-The distribution's content is loaded from JSON data in the `content` folder.
+The distribution loads its content from JSON data in the `content` folder.
 
 To export content from a site into this folder, use the `bin/export-distribution` script.
 
@@ -278,16 +303,20 @@ To export content from a site into this folder, use the `bin/export-distribution
 bin/export-distribution path/to/zope.conf Plone
 ```
 
-In the example above, "Plone" is the ID of the Plone site to export.
+In the example above, `Plone` is the ID of the Plone site to export.
+
 
 ## Limit available distributions
 
 By default, Plone 6.1 ships with two ready-to-use distributions:
 
-- **default**: Plone Site (Volto frontend)
-- **classic**: Plone Site (Classic UI)
+[`plone.volto`](https://github.com/plone/plone.volto)
+:   Create a Plone site with the Volto frontend.
 
-If you want to limit the choice of distributions when creating a new site, it is possible to set the environment variable `ALLOWED_DISTRIBUTIONS` with fewer options:
+[`plone.classicui`](https://github.com/plone/plone.classicui) 
+:   Create a Plone site with the Classic UI frontend.
+
+If you want to limit the choice of distributions when creating a new site, it is possible to set the environment variable `ALLOWED_DISTRIBUTIONS` with fewer options.
 
 ```shell
 ALLOWED_DISTRIBUTIONS=default
