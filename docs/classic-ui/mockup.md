@@ -61,7 +61,8 @@ cd project.addon
 plonecli add mockup_pattern
 ```
 
-Next, enter your pattern name without the `pat-` prefix.
+Next, enter your pattern name without the `pat-` prefix
+In the following example, its name is `testpattern`.
 
 ```shell
 --> Pattern name (without “pat-” prefix) [my-pattern]: testpattern
@@ -124,7 +125,11 @@ You must re-import your profile with an upgrade step if you installed your add-o
 ```
 
 You can test your pattern now with the browser view `@@addon-pattern-demo` (see {file}`/src/project/addon/browser/pattern-demo.pt`)
-Alternatively you can implement it in your own templates by adding the CSS class `pat-testpattern` to a tag.
+Alternatively you can implement it in your own templates by adding the CSS class `pat-testpattern` to an HTML tag, such as an `img` tag.
+
+```html
+<img class="pat-testpattern">
+```
 
 
 ## References
