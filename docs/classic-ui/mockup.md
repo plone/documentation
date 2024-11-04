@@ -101,7 +101,7 @@ When you finish writing your JavaScript code, you have to build the bundle with 
 yarn build
 ```
 
-This creates the webpack chunks and the JavaScript bundle files in your add-on package.
+This creates the webpack chunks, the JS bundle files, a demo browser view in your addon package:
 
 ```text
 ...
@@ -116,15 +116,16 @@ This creates the webpack chunks and the JavaScript bundle files in your add-on p
 |   |   |   |   |   |   ├── addon-remote.min.js.map
 |   |   |   |   |   |   ├── addon.min.js
 |   |   |   |   |   |   ├── addon.min.js.map
+|   |   |   |   ├── pattern-demo.pt
 ```
 
-Note that `plonecli` also creates an XML file in {file}`src/project/addon/profiles/default/registry/bundles.xml`, which registers the {file}`addon-remote.min.js` file in the resource registry.
+There is also a XML file in `src/project/addon/profiles/default/registry/bundles.xml` which registers the `addon-remote.min.js` in the resources registry.
 
 ```{important}
-You must re-import your profile with an upgrade step if you installed your add-on in Plone before adding the pattern.
+You must re-import your profile with an upgrade step if you installed your add-on in Plone before adding the pattern by uninstall/install the addon in the controlpanel or writing a genericsetup upgrade step.
 ```
 
-You can test your pattern now with the browser view `@@addon-pattern-demo` (see {file}`/src/project/addon/browser/pattern-demo.pt`)
+You can access the demo browser view in your browser with `http://localhost:8080/Plone/@@addon-pattern-demo`
 Alternatively you can implement it in your own templates by adding the CSS class `pat-testpattern` to an HTML tag, such as an `img` tag.
 
 ```html
