@@ -123,7 +123,7 @@ If you have an existing Plone 5.2 or 6.0 site and you migrate to 6.1, then migra
 
 Plone 6.1 introduces the concept of a Plone {term}`distribution`.
 A Plone distribution is a Python package that defines specific features, themes, add-ons, and configurations that get activated when creating a Plone site.
-Now it is available in core Plone as the recommended way for {doc}`creating a new Plone site </install/add-site>`.
+Now it is available in core Plone as the recommended way for {doc}`creating a new Plone site </admin-guide/add-site>`.
 
 ```{seealso}
 For more information about distribution concepts, see {doc}`/conceptual-guides/distributions`.
