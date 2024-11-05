@@ -7,8 +7,6 @@ myst:
     "keywords": "Plone 6, create, add, factory, distributions"
 ---
 
-% TODO: This should move into the Admin guide once https://github.com/plone/documentation/pull/1746 is merged.
-
 (add-a-plone-site-label)=
 
 # Add a Plone site
@@ -28,8 +26,7 @@ Visit the Plone backend in a web browser.
 Usually it is running at http://localhost:8080/.
 
 The launch screen prompts you to choose one of the available {term}`distributions` to create a new site.
-
-% TODO: Add a link to the choose-user-interface doc once https://github.com/plone/documentation/pull/1749 is merged.
+You can read {doc}`/conceptual-guides/choose-user-interface` to help inform your choice between Volto and Classic UI.
 
 ````{card}
 ```{image} /backend/upgrading/version-specific-migration/images/distribution-chooser.png
