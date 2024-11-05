@@ -3,13 +3,13 @@ myst:
   html_meta:
     "description": "Plone 6 upgrade Guide"
     "property=og:description": "Plone 6 upgrade guide"
-    "property=og:title": "Plone 6 upgrade guide"
+    "property=og:title": "Upgrade Plone"
     "keywords": "Plone, upgrade"
 ---
 
 (upgrade-guide-label)=
 
-# Upgrade guide
+# Upgrade Plone
 
 Plone has several components, each of which have their own upgrade guides:
 
