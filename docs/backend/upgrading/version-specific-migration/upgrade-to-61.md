@@ -145,7 +145,7 @@ There are a few things you should consider when upgrading a project to, or makin
 -   Do you want to use the `Products.CMFPlone` package (no distributions), either `plone.volto` or `plone.classicui` (one distribution), or `Plone` (two distributions)?
 -   If your site uses Volto for the frontend, you will already have `plone.volto` as a dependency.
     This can stay the same.
--   If your site uses only the `Products.CMFPlone` package, the frontend is Classic UI.
+-   If your site depends on the `Products.CMFPlone` package without the `Plone` or `plone.volto` packages, then the frontend is Classic UI.
     This can stay the same, but you may want to depend on `plone.classicui`.
     With that package you can still create a new site and have the same content as before.
 -   If your site uses the `Plone` package, you will have the two new distributions available.
