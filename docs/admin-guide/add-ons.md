@@ -15,8 +15,7 @@ This chapter explains how to install {term}`add-ons <add-on>` as Python packages
 
 ```{note}
 The Volto frontend has its own system of add-ons using Node.js packages.
-% TODO: update the following link after https://github.com/plone/volto/pull/6397 is merged to point to `/development/add-ons/index`.
-See {doc}`/volto/addons/index`.
+See {doc}`/volto/development/add-ons/index`.
 ```
 
 
