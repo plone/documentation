@@ -54,7 +54,7 @@ plonecli -l
 
 ## Create a custom pattern
 
-To create a custom {term}`pattern` in your add-on, use the `mockup_pattern` {term}`bobtemplate`:
+To create a custom {term}`pattern` in your add-on, use the `mockup_pattern` {term}`bobtemplate`.
 
 ```shell
 cd project.addon
@@ -101,7 +101,7 @@ When you finish writing your JavaScript code, you have to build the bundle with 
 yarn build
 ```
 
-This creates the webpack chunks, the JS bundle files, a demo browser view in your addon package:
+This creates the webpack chunks, the JavaScript bundle files, and a demo browser view in your add-on package.
 
 ```text
 ...
@@ -119,13 +119,15 @@ This creates the webpack chunks, the JS bundle files, a demo browser view in you
 |   |   |   |   ├── pattern-demo.pt
 ```
 
-There is also a XML file in `src/project/addon/profiles/default/registry/bundles.xml` which registers the `addon-remote.min.js` in the resources registry.
+There is also an XML file in {file}`src/project/addon/profiles/default/registry/bundles.xml` which registers the {file}`addon-remote.min.js` in the resources registry.
 
 ```{important}
-You must re-import your profile with an upgrade step if you installed your add-on in Plone before adding the pattern by uninstall/install the addon in the controlpanel or writing a genericsetup upgrade step.
+You must re-import your profile with an upgrade step if you installed your add-on in Plone before adding the pattern.
+Uninstall, then re-install, the add-on in the control panel.
+Alternatively you can write a GenericSetup upgrade step.
 ```
 
-You can access the demo browser view in your browser with `http://localhost:8080/Plone/@@addon-pattern-demo`
+You can access the demo browser view in your browser with `http://localhost:8080/Plone/@@addon-pattern-demo`.
 Alternatively you can implement it in your own templates by adding the CSS class `pat-testpattern` to an HTML tag, such as an `img` tag.
 
 ```html
