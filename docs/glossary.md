@@ -108,9 +108,9 @@ pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 
 REST API
-    ```{todo}
-    REST API in general. REST API of Plone.
-    ```
+    A REST API (also called a RESTful API or RESTful web API) is an application programming interface (API) that conforms to the design principles of the representational state transfer (REST) architectural style.
+    REST APIs provide a flexible, lightweight way to integrate applications and to connect components in microservices architectures.
+    Plone uses [`plone.restapi`](https://github.com/plone/plone.restapi/) for its REST API.
 
 S3
     [Amazon Web Services S3](https://aws.amazon.com/s3/).
@@ -172,11 +172,11 @@ Rapido application
     It contains the features you implement.
     It is a folder containing templates, Python code, and YAML files.
 
-block
-    Blocks display a chunk of HTML which can be inserted in your Plone pages.
+blocks
+    Blocks are the fundamental components of a page layout in {term}`Volto`.
 
 element
-    Elements are the dynamic components of your blocks.
+    Elements are the dynamic components of your {term}`blocks`.
     They can be input fields, buttons, or computed HTML.
     They can also return JSON if you call them from a JavaScript app.
 
@@ -422,18 +422,19 @@ Traefik Proxy
 
 Volto
     [Volto](https://github.com/plone/volto) is a React-based frontend for Plone.
-    It is the default user interface for Plone 6.
+    It is one of two supported user interfaces, or frontends, for Plone 6.
 
-    The other frontend is {term}`Classic UI`.
+    ````{seealso}
+    {doc}`/conceptual-guides/choose-user-interface`
+    ````
 
 Classic UI
-    Classic UI is a secondary frontend for Plone 6.
-    It is integrated with [Products.CMFPlone](https://github.com/plone/Products.CMFPlone/).
-    Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
-    It is based on Twitter Bootstrap 5.
-    It uses {term}`Mockup` as its JavaScript stack.
+    Classic UI is a frontend for Plone 6 that is based on {term}`ZPT` and {term}`Mockup`.
+    It is one of two supported user interfaces, or frontends, for Plone 6.
 
-    The other frontend is {term}`Volto`.
+    ````{seealso}
+    {doc}`/conceptual-guides/choose-user-interface`
+    ````
 
 Mockup
     [Mockup](https://github.com/plone/mockup/) is a package that, together with {term}`Patternslib`, builds the UI toolkit for {term}`Classic UI`, a frontend for Plone.
@@ -447,11 +448,17 @@ Patternslib
     Accessibility, SEO, and well-structured HTML are core values of Patterns.
 
 Slate
-    [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as `WYSIWYG` editors.
+    [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as {term}`WYSIWYG` editors.
     It enables you to create powerful, intuitive editors similar to those you've probably used in Medium, Dropbox Paper, or Google Docs.
 
 `volto-slate`
-    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced WYSIWYG functionality and behavior.
+    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced {term}`WYSIWYG` functionality and behavior.
+
+WYSIWYG
+    WYSIWYG is an acronym for "what you see is what you get", referring to software that allows content to be edited in a form that resembles its appearance when printed or displayed as a finished product.    
+
+TinyMCE
+    The rich text {term}`WYSIWYG` editor used in {term}`Classic UI`.
 
 elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
@@ -802,4 +809,8 @@ lazy loaded
 reference implementation
     A reference implementation is a program that implements all requirements from a corresponding specification.
     The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
+
+portlets
+    Portlets are widgets that can be inserted in predefined locations in pages in {term}`Classic UI`.
+    Portlets are most commonly used to add sidebars to the left or right of the main page content.
 ```
