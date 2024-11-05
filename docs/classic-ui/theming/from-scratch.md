@@ -25,6 +25,8 @@ Theming based on a filesystem package without any dependency.
 -   No Diazo needed
 
 
+(classic-ui-theming-from-scratch-package-label)=
+
 ## Theme package
 
 -   Create a theme package as explained here.
@@ -32,6 +34,8 @@ Theming based on a filesystem package without any dependency.
 -   Overrides
 -   Static files
 
+
+(classic-ui-theming-from-scratch-static-files-label)=
 
 ## Static files
 
@@ -49,6 +53,9 @@ Directory: `src/plonetheme/munich/browser/static`
     />
 ```
 
+
+(classic-ui-theming-from-scratch-theme-label)=
+
 ## Theme
 
 ### Manifest
@@ -65,6 +72,8 @@ rules =
 prefix = /++theme++plonetheme.munich
 doctype = <!DOCTYPE html>
 ```
+
+(classic-ui-from-scratch-bundle-registration-label)=
 
 ### Bundle registration
 
@@ -120,7 +129,61 @@ yarn dist
 -   Tweak basic settings like rounded corners, shadows, and so on.
 -   Set custom fonts
 -   Define your own stuff
--   Import Boostrap (as basis)
+-   Import Bootstrap (as basis)
+
+
+#### Minimal backend styling
+
+When you create a theme from scratch, it is convenient to reuse the Barceloneta theme for:
+
+-   Plone toolbar
+-   add and edit forms
+-   control panels
+
+To do so, follow this guide.
+
+-   Create a new CSS file in your theme, such as the following.
+
+    ```scss
+    @import "@plone/plonetheme-barceloneta-base/scss/variables.colors.plone";
+    @import "@plone/plonetheme-barceloneta-base/scss/variables.colors.dark.plone";
+    @import "@plone/plonetheme-barceloneta-base/scss/root_variables";
+    @import "bootstrap/scss/bootstrap";
+    
+    @import "@plone/plonetheme-barceloneta-base/scss/toolbar";
+    @import "@plone/plonetheme-barceloneta-base/scss/controlpanels";
+    @import "@plone/plonetheme-barceloneta-base/scss/forms";
+    ```
+
+    ```{tip}
+    See all the available [Barceloneta SCSS files](https://github.com/plone/plonetheme.barceloneta/tree/master/scss), and import the ones that you want to use.
+    ```
+
+-   Add `@plone/plonetheme-barceloneta-base` as a dependency.
+
+    ```shell
+    yarn add @plone/plonetheme-barceloneta-base
+    ```
+
+-   Add a script in {file}`package.json` to compile the CSS.
+
+    ```json
+    "css-compile-main": "sass --load-path=node_modules --style expanded --source-map --embed-sources --no-error-css plone.scss:../static/plone.css"
+    ```
+
+    ```{tip}
+    Look at [`plonetheme.barcelonta`'s {file}`package.json`](https://github.com/plone/plonetheme.barceloneta/blob/master/package.json) for a few more scripts that can prefix and minify your CSS and get a bundle for use in production.
+    ```
+
+-   Run the compilation.
+
+    ```shell
+    yarn run css-compile-main
+    ```
+
+-   Finally, {ref}`register the bundle <classic-ui-from-scratch-bundle-registration-label>`.
+
+With this guide, you will save yourself quite some work on styling the toolbar, the add and edit forms, and control panels, while keeping the rest of your theming separate.
 
 
 #### Templates

@@ -11,11 +11,11 @@ myst:
 
 The Plone community maintains the following official images:
 
-| Image | Description |
-| --- | --- |
-| [plone/plone-backend](backend) | Plone backend. Could be used standalone or as a headless CMS |
-| [plone/plone-frontend](frontend) | Plone default frontend written in React. Requires a Plone backend |
-| [plone/plone-zeo](zeo) | ZEO server, a specialized database to be used with Plone backend |
+| Image           | Description                                                       |
+|-----------------|-------------------------------------------------------------------|
+| {doc}`backend`  | Plone backend. Could be used standalone or as a headless CMS      |
+| {doc}`frontend` | Plone default frontend written in React. Requires a Plone backend |
+| {doc}`zeo`      | ZEO server, a specialized database to be used with Plone backend  |
 
 ```{toctree}
 :maxdepth: 2

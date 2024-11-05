@@ -31,7 +31,7 @@ There are several ways to store data used by applications that run in Docker con
 
 We encourage users of the `Plone` images to familiarize themselves with the options available.
 
-[The Docker documentation](https://docs.docker.com/) is a good starting point for understanding the different storage options and variations.
+[The Docker documentation](https://docs.docker.com/get-started/docker-concepts/running-containers/persisting-container-data/) is a good starting point for understanding the different storage options and variations.
 
 
 ## Configuration Variables
@@ -374,22 +374,30 @@ when Plone starts.
 
 ## Advanced usage
 
+This section describes advanced usage of the Plone backend Docker image.
 
-### Arbitrary `--user`
 
-This image supports running as a (mostly) arbitrary user via `--user` on `docker run`, as long as the owner of `/data` matches:
+### Arbitrary user and persistent data
+
+You can run Docker as an arbitrary user with the `--user` option.
+
+To persist backend data between restarts of Docker, use both options of `--user` and `-v`.
+
+The following command will run the Plone backend container as an arbitrary user, and persist the backend data in a volume, provided that the owner of the directory `/data` is the same as the `--user` option.
 
 ```shell
 docker run --user="$(id -u)" -v $(pwd)/data:/data plone/plone-backend
 ```
 
-The main caveat to note is that some environment variables, such as `ADDONS` and `DEVELOP`, will not work:
+````{note}
+Some environment variables, such as `ADDONS` and `DEVELOP`, will not work.
 
 ```console
 $ docker run --user="$(id -u)" -v $(pwd)/data:/data -e ADDONS="eea.facetednavigation" plone/plone-backend
 ...
 error: [Errno 13] Permission denied: '/app/lib/python3.9/site-packages/eea'
 ```
+````
 
 
 ### Multiple containers with ZEO

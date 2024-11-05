@@ -12,9 +12,9 @@ myst:
 # Color modes
 
 Bootstrap 5.3 has introduced [color modes](https://getbootstrap.com/docs/5.3/customize/color-modes/).
-This chapter is a guide for how to implement color modes in Plone 6.1.
+This chapter is a guide for how to implement color modes in Plone 6.
 
-```{versionadded} Plone 6.1
+```{versionadded} Plone 6.0.6
 ```
 
 
@@ -24,8 +24,8 @@ This chapter is a guide for how to implement color modes in Plone 6.1.
 ## Preferred color modes
 
 You will need to add some JavaScript functionality to set the Bootstrap theme to the user's preferred color scheme.
-Add the JavaScript file to the `browser/static` folder of your Plone 6.1 project.
-Register it in the `browser/profiles/default/registry` of your Plone 6.1 project.
+Add the JavaScript file to the `browser/static` folder of your Plone 6 project.
+Register it in the `browser/profiles/default/registry` of your Plone 6 project.
 See {ref}`classic-ui-static-resources-registering-label` for more information.
 
 ```js
@@ -75,8 +75,8 @@ If you want to add a theme toggler to your site, you can use the following examp
 You will need to add some JavaScript functionality to the toggler.
 The following code snippet is based on the [Bootstrap 5.3 documentation](https://getbootstrap.com/docs/5.3/customize/color-modes/#javascript).
 
-Add the JavaScript file to the `browser/static` folder of your Plone 6.1 project.
-Register it in the `browser/profiles/default/registry` of your Plone 6.1 project.
+Add the JavaScript file to the `browser/static` folder of your Plone 6 project.
+Register it in the `browser/profiles/default/registry` of your Plone 6 project.
 See {ref}`classic-ui-static-resources-registering-label` for more information.
 
 ```js
@@ -150,7 +150,3 @@ See the following example.
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 ```
-
-## Using color modes in Plone 6.0
-
-To use color modes in Plone 6.0, manually include `barceloneta=3.1.0` and `plone.staticresources=2.1.0`, as described in {ref}`manage-add-an-add-on`.

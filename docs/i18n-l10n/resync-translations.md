@@ -103,10 +103,10 @@ When the release manager requests to create a new `plone.app.locales` release, t
 ## Resync translations in Volto
 
 In Volto, the GitHub test setup warns a developer when their new contributions require regenerating the translation file.
-This is done by running a yarn script as follows:
+This is done by running a make command as follows:
 
 ```shell
-yarn i18n
+make i18n
 ```
 
 This will update the PO files and will leave them ready to be translated by translators.
@@ -116,9 +116,9 @@ This will update the PO files and will leave them ready to be translated by tran
 
 ## Create a release of Volto with the new translations
 
-The Volto release process requires running the same yarn script as in the previous step.
+The Volto release process requires running the same make command as in the previous step.
 It will convert the translations in PO files to the JSON files that Volto uses to render the user interface.
 
 ```shell
-yarn i18n
+make i18n
 ```

@@ -1,5 +1,3 @@
-node
-nodejs
-javscript
-js
-Javascript
+[^.]js
+NodeJS
+[Pp]re-requisite

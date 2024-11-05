@@ -27,6 +27,17 @@ Wikipedia article [Internationalization and localization](https://en.wikipedia.o
 ```
 
 
+(i18n-l10n-supported-languages)=
+
+## Supported languages
+
+Plone supports many language translations in its two frontends.
+For Volto, see [`plone/volto`](https://github.com/plone/volto/tree/main/packages/volto/locales).
+For Classic UI, see [`collective/plone.app.locales`](https://github.com/collective/plone.app.locales/tree/master/plone/app/locales/locales).
+
+You can contribute new languages to both frontends.
+
+
 (i18n-l10n-code-versus-content-label)=
 
 ## Code versus content
@@ -62,7 +73,7 @@ language tag
 :   A language tag is a string used as an identifier for a language.
     A language tag may have one or more subtags.
     The basic form of a language tag is `LANGUAGE-[SUBTAG]`.
-    
+
     ```{seealso}
     -   W3C article [Language tags in HTML and XML](https://www.w3.org/International/articles/language-tags/)
     -   W3C Working Draft [Language Tags and Locale Identifiers for the World Wide Web](https://www.w3.org/TR/ltli/)
@@ -128,7 +139,7 @@ In general, the process of internationalization and localization of a Plone appl
 Depending on which part of your Plone application that you internationalize and localize, there are different implementation details and tools that are used.
 These differences depend upon the programming language, either Python or JavaScript, being used by that part.
 
--   For the Plone 6 frontend {term}`Volto`, see {doc}`/volto/recipes/i18n`.
+-   For the Plone 6 frontend {term}`Volto`, see {doc}`/volto/development/i18n`.
     Volto is based on the JavaScript library React, and uses both {term}`react-intl` and {term}`gettext`.
 -   For the rest of Plone 6, see {doc}`translating-text-strings`.
     This is based on Python, and uses {term}`gettext`.
@@ -145,8 +156,10 @@ These differences depend upon the programming language, either Python or JavaScr
 
 translating-text-strings
 language-negotiation
+language-negotiation-volto
 translating-content
 contributing-translations
 resync-translations
+use-an-external-translation-service
 ```
 

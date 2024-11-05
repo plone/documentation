@@ -1,4 +1,4 @@
-[![Testing Status](https://github.com/plone/documentation/actions/workflows/test.yml/badge.svg?branch=6-dev "Testing Status")](https://github.com/plone/documentation/actions/workflows/test.yml)
+[![Testing Status](https://github.com/plone/documentation/actions/workflows/test.yml/badge.svg?branch=6.0 "Testing Status")](https://github.com/plone/documentation/actions/workflows/test.yml)
 
 # Plone Documentation
 
@@ -9,7 +9,7 @@ This is the repository for Plone Documentation.
 
 Browse the Plone 6 Documentation at https://6.docs.plone.org/.
 
-Active development on the Plone 6 Documentation takes place on the branch [`6-dev`](https://github.com/plone/documentation/tree/6-dev).
+Active development on the Plone 6 Documentation takes place on the branch [`6.0`](https://github.com/plone/documentation/tree/6.0).
 
 
 ## Plone 5.2
@@ -24,7 +24,7 @@ Development on the Plone 5.2 Documentation takes place on the branch [`5.2`](htt
 - [Contributing to Plone 6 Documentation](https://6.docs.plone.org/contributing/index.html)
 - [Release Plone 6 docs Project Board](https://github.com/orgs/plone/projects/12)
 - [Issue Tracker](https://github.com/plone/documentation/issues)
-- [Source Code](https://github.com/plone/documentation/tree/6-dev)
+- [Source Code](https://github.com/plone/documentation/tree/6.0)
 
 
 ### Contributing to frontend (Volto), `plone.api`, and `plone.restapi` documentation

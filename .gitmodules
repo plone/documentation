@@ -1,11 +1,11 @@
 [submodule "submodules/volto"]
 	path = submodules/volto
 	url = https://github.com/plone/volto.git
-	branch = master
+	branch = main
 [submodule "submodules/plone.restapi"]
 	path = submodules/plone.restapi
 	url = https://github.com/plone/plone.restapi.git
-	branch = master
+	branch = main
 [submodule "submodules/plone.api"]
 	path = submodules/plone.api
 	url = https://github.com/plone/plone.api.git

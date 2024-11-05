@@ -15,6 +15,10 @@ This document describes how to contribute to Plone Documentation.
 
 Contributions to the Plone Documentation are welcome.
 
+```{seealso}
+To set up and build the documentation locally, see {doc}`setup-build`.
+```
+
 
 (contributing-permission-to-publish-label)=
 
@@ -107,7 +111,7 @@ After your Plone Contributor Agreement has been approved, and you have been adde
 
 1.  Clarify the scope of work that needs to be done.
     Check for previous work, assignment to another developer, or whether the requirements have changed.
-1.  [Assign yourself to the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users).
+1.  [Assign yourself to the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/assigning-issues-and-pull-requests-to-other-github-users).
     This signals to other developers that you are working on the issue.
 
 From here, you can either make {ref}`contributing-quick-edits-label` or {ref}`contributing-large-edits-label`.
@@ -127,7 +131,7 @@ Quick edits for minor issues, such as typographical errors, misspellings, and En
     :alt: GitHub Edit this file
     ```
 1.  Make edits, add a commit message, select {guilabel}`Create a new branch for this commit and start a pull request`, then click {guilabel}`Propose changes`.
-1.  Make your pull request against the branch `6-dev`.
+1.  Make your pull request against the branch `6.0`.
 1.  Members who subscribe to the repository will receive a notification and review your request.
 1.  Request a review from other team members.
 
@@ -148,18 +152,18 @@ This practice differs depending on whether you are making contributions to only 
 
 This section describes how to make contributions to files in the `plone/documentation` repository only, and excludes files in `submodules/plone.api/docs`, `submodules/plone.restapi/docs` and `submodules/volto/docs`.
 
-1.  From the project root directory, sync your local `6-dev` branch with its remote.
+1.  From the project root directory, sync your local `6.0` branch with its remote.
     You might need to resolve conflicts.
 
     ```shell
-    git checkout 6-dev
+    git checkout 6.0
     git pull
     ```
 
-1.  Create a new branch from `6-dev`.
+1.  Create a new branch from `6.0`.
 
     ```shell
-    git checkout -b <new_branch>
+    git switch -c <new_branch>
     ```
 
 1.  Edit files, save, preview, and test.
@@ -195,7 +199,7 @@ This section describes how to make contributions to files in the `plone/document
     git push
     ```
 
-1.  Visit the GitHub `documentation` repository, and [create a pull request](https://github.com/plone/documentation/compare) against the branch `6-dev`.
+1.  Visit the GitHub `documentation` repository, and [create a pull request](https://github.com/plone/documentation/compare) against the branch `6.0`.
 1.  Members who subscribe to the repository will receive a notification and review your request.
 1.  Request a review from other team members.
 
@@ -209,15 +213,14 @@ We use `git submodules` to manage multiple repositories.
 We imported the external repositories the `plone/documentation` repository as described in {doc}`setup-build`.
 
 ```{important}
-We currently use the branches `plone/documentation@6-dev`, `plone/plone.api@master`, `plone/plone.restapi@master`, and `plone/volto@master` as the main branches for developing Plone 6 Documentation.
-These branches may change as we get closer to a production release.
+We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master`, `plone/plone.restapi@main`, and `plone/volto@main` as the main branches for developing Plone 6 Documentation.
 ```
 
-1.  From the project root directory, sync your local `6-dev` branch with its remote.
+1.  From the project root directory, sync your local `6.0` branch with its remote.
     You might need to resolve conflicts.
 
     ```shell
-    git checkout 6-dev
+    git checkout 6.0
     git pull
     ```
 
@@ -239,11 +242,8 @@ These branches may change as we get closer to a production release.
     # for plone.api
     git checkout master
 
-    # for plone.restapi
-    git checkout master
-
-    # for volto
-    git checkout master
+    # for plone.restapi or volto
+    git checkout main
 
     git pull
     ```
@@ -251,7 +251,7 @@ These branches may change as we get closer to a production release.
 1.  Create a new branch from the development branch.
 
     ```shell
-    git checkout -b <new_branch>
+    git switch -c <new_branch>
     ```
 
 1.  Make edits to files in `docs/<external_package>` using your favorite editor, and save, preview, and test.
@@ -316,6 +316,6 @@ hidden: true
 setup-build
 authors
 myst-reference
-sphinx-extensions
+themes-and-extensions
 admins
 ```

@@ -49,6 +49,8 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_examples",
+    "sphinx_reredirects",
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
@@ -57,6 +59,7 @@ extensions = [
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
     "sphinx.ext.graphviz",
+    "sphinxcontrib.mermaid",
     "notfound.extension",
 ]
 
@@ -74,30 +77,32 @@ pygments_style = "sphinx"
 # Options for the linkcheck builder
 # Ignore localhost
 linkcheck_ignore = [
-    r"http://localhost",
+    # Ignore local and example URLs
     r"http://0.0.0.0",
     r"http://127.0.0.1",
+    r"http://localhost",
     r"http://yoursite",
-    r"https://www.linode.com",
-    r"https://vhs-ehrenamtsportal.de", # SSLError(SSLCertVerificationError
+    # Ignore file downloads
+    r"^/_static/",
+    # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
-    # Ignore specific anchors
-    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
-    r"https://github.com/browserslist/browserslist#queries",
-    r"https://github.com/nodejs/release#release-schedule",
-    r"https://github.com/nvm-sh/nvm#install--update-script",
-    r"https://github.com/plone/cookiecutter-zope-instance#options",
-    r"https://github.com/plone/plone.app.contenttypes#migration",
-    r"https://github.com/plone/plone.docker#for-basic-usage",
-    r"https://github.com/plone/plone.rest#cors",
-    r"https://github.com/plone/plone.volto/blob/6f5382c74f668935527e962490b81cb72bf3bc94/src/kitconcept/volto/upgrades.py#L6-L54",
     r"https://github.com/plone/volto/issues/new/choose",  # requires auth
-    r"https://github.com/tc39/proposals/blob/HEAD/finished-proposals.md#finished-proposals",
-    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=master",  # plone.restapi
-    r"https://github.com/plone/plone.restapi/blob/dde57b88e0f1b5f5e9f04e6a21865bc0dde55b1c/src/plone/restapi/services/content/add.py#L35-L61",  # plone.restapi
+    r"https://opensource.org/",  # requires auth
+    # Ignore github.com pages with anchors
+    r"https://github.com/.*#.*",
+    # Ignore other specific anchors
+    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
+    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
-    r"^/_static/",
+    # Ignore unreliable sites
+    r"https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
+    r"https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
+    r"https://stackoverflow.com",  # volto and documentation  # TODO retest with latest Sphinx.
+    r"https://web.archive.org/",  # volto
+    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
+    r"https://www.upc.edu/en",  # TODO remove after their certificate is fixed
+    r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5
@@ -121,16 +126,32 @@ exclude_patterns = [
     "**/CONTRIBUTORS.rst",
     "**/LICENSE.rst",
     "**/README.rst",
+    "**/eggs",
+    "_inc/.*",
     "plone.restapi/.*",
     "plone.restapi/bin",
+    "plone.restapi/develop-eggs",
     "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
+    "plone.restapi/eggs",
     "plone.restapi/ideas",
     "plone.restapi/include",
     "plone.restapi/lib",
     "plone.restapi/news",
+    "plone.restapi/parts",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "plone.restapi/var",
     "volto/contributing/branch-policy.md",
+    "volto/contributing/install-docker.md",
+    "volto/contributing/install-git.md",
+    "volto/contributing/install-make.md",
+    "volto/contributing/install-nodejs.md",
+    "volto/contributing/install-operating-system.md",
+]
+
+suppress_warnings = [
+    # "toc.excluded",  # Suppress `WARNING: document isn't included in any toctree`
+    "toc.not_readable",  # Suppress `WARNING: toctree contains reference to nonexisting document 'news*'`
 ]
 
 html_js_files = ["patch_scrollToActive.js", "search_shortcut.js"]
@@ -149,14 +170,14 @@ html_static_path = [
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
-    "deflist",  # You will be able to utilise definition lists
+    "deflist",  # Support definition lists.
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
-    "linkify",  # Identify “bare” web URLs and add hyperlinks.
+    "linkify",  # Identify "bare" web URLs and add hyperlinks.
     "colon_fence",  # You can also use ::: delimiters to denote code fences,\
     #  instead of ```.
     "substitution",  # plone.restapi \
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
-    "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
+    "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
 ]
 
 myst_substitutions = {
@@ -167,6 +188,8 @@ myst_substitutions = {
     "postman_retain_headers": "![](../_static/img/postman_retain_headers.png)",
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
 }
+
+mermaid_version = "10.9.1"
 
 # -- Intersphinx configuration ----------------------------------
 
@@ -186,8 +209,10 @@ myst_substitutions = {
 # the entire Plone Documentation is built.
 intersphinx_mapping = {
     "plone": ("https://6.docs.plone.org/", None),  # for imported packages
+    "plone5": ("https://5.docs.plone.org/", None),
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/", None),
+    "training-2022": ("https://2022.training.plone.org/", None),
 }
 
 
@@ -208,15 +233,21 @@ ogp_custom_meta_tags = [
 ]
 
 
-# -- sphinx_copybutton -----------------------
-copybutton_prompt_text = r"^ {0,2}\d{1,3}"
-copybutton_prompt_is_regexp = True
-
-
 # -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
+
+
+# -- sphinx-reredirects configuration ----------------------------------
+# https://documatt.com/sphinx-reredirects/usage.html
+redirects = {
+    "contributing/plone-api": "/plone.api/contribute/index.html",
+    "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
+    "contributing/volto": "/volto/contributing/index.html",
+    "install/install-from-packages": "/install/create-project.html",
+    "manage/frontend": "/volto/addons/index.html",
+}
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -277,7 +308,9 @@ html_title = "%(project)s v%(release)s" % {"project": project, "release": releas
 html_use_index = True
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6.docs.plone.org"
+html_baseurl = "https://6.docs.plone.org/"
+# https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
+sitemap_url_scheme = "{link}"
 
 # -- Options for HTML help output -------------------------------------------------
 
@@ -310,6 +343,7 @@ html_context = {
     "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
 }
 
+
 # An extension that allows replacements for code blocks that
 # are not supported in `rst_epilog` or other substitutions.
 # https://stackoverflow.com/a/56328457/2214933
@@ -323,8 +357,9 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.4",
-    "{NVM_VERSION}": "0.39.3",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.13",
+    "{SUPPORTED_PYTHON_VERSIONS_PLONE60}": "3.8, 3.9, 3.10, 3.11, or 3.12",
+    "{SUPPORTED_PYTHON_VERSIONS_PLONE61}": "3.10, 3.11, or 3.12",
 }
 
 

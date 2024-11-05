@@ -5,3 +5,4 @@ Disallow: /.doctrees/
 Disallow: /*.txt$
 Disallow: /.buildinfo$
 Disallow: /objects.inv$
+Sitemap: https://6.docs.plone.org/sitemap.xml

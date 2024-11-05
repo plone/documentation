@@ -1,4 +1,4 @@
 # From https://dist.plone.org/release/6-latest/constraints.txt
-pip==22.3.1
-setuptools==65.5.1
-wheel==0.38.4
+pip==24.0
+setuptools==71.0.0
+wheel==0.43.0

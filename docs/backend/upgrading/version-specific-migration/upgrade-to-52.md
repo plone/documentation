@@ -81,7 +81,7 @@ This is [PLIP 1351](https://github.com/plone/Products.CMFPlone/issues/1351).
 #### For end users
 
 This has no changes for Editors.
-Admins will notice that the ZMI has a new Twitter Bootstrap-based theme, and some control panels have moved.
+Admins will notice that the ZMI has a new Bootstrap-based theme, and some control panels have moved.
 
 
 #### For developers
@@ -294,7 +294,7 @@ eggs =
 ```{note}
 Instead of using Archetypes in Plone 5.2, you should consider migrating to Dexterity.
 Dexterity is also a hard requirement to be able to use Python 3.
-See [`plone.app.contenttypes` documentation on Migration](https://github.com/plone/plone.app.contenttypes#migration) for details on the migration from Archetypes to Dexterity.
+See [`plone.app.contenttypes` documentation on Migration](https://github.com/plone/plone.app.contenttypes/blob/2.2.3/docs/README.rst#migration) for details on the migration from Archetypes to Dexterity.
 ```
 
 
