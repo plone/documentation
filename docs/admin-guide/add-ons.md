@@ -132,7 +132,7 @@ Follow the upgrade information, if present.
 Else click the {guilabel}`Install` button to complete installation of the add-on.
 
 
-## with Buildout
+## Buildout
 
 Use the following instructions if you installed Plone with Buildout.
 
