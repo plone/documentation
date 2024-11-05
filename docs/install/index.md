@@ -73,7 +73,6 @@ Plone trainings take place at every annual Plone Conference.
 
 (get-started-contribute-label)=
 
-=======
 ## Contribute to Plone
 
 See the {doc}`Contributor Guide </contributing/index>` to learn how to participate in the Plone community and contribute to our open source software. 
