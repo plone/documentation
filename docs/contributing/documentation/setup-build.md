@@ -22,7 +22,7 @@ Installation of Plone 6 Documentation includes prerequisites and the repository 
 
 ```{include} ../../volto/contributing/install-operating-system.md
 ```
--   {ref}`setup-build-installation-python-label` {SUPPORTED_PYTHON_VERSIONS}
+-   {ref}`setup-build-installation-python-label` {SUPPORTED_PYTHON_VERSIONS_PLONE60}
 -   {ref}`setup-build-installation-gnu-make-label`
 -   {ref}`setup-build-installation-graphviz-label`
 
@@ -31,10 +31,8 @@ Installation of Plone 6 Documentation includes prerequisites and the repository 
 
 ### Python
 
-Installing Python is beyond the scope of this documentation.
-However, it is recommended to use a Python version manager, {term}`pyenv` that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
-Plone requires Python version {SUPPORTED_PYTHON_VERSIONS}.
-
+```{include} /_inc/_install-python-plone60.md
+```
 
 (setup-build-installation-gnu-make-label)=
 

@@ -32,9 +32,8 @@ Read the [documentation for the previous version, Plone 5](https://5.docs.plone.
 
 overview/index
 install/index
-manage/index
 developer-guide/index
-upgrade/index
+admin-guide/index
 deployment/index
 volto/index
 classic-ui/index

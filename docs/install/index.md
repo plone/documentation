@@ -1,60 +1,79 @@
 ---
 myst:
   html_meta:
-    "description": "Install Plone 6"
-    "property=og:description": "Install Plone 6"
-    "property=og:title": "Install Plone 6"
-    "keywords": "Plone 6, install, overview"
+    "description": "Get started with Plone 6"
+    "property=og:description": "Get started with Plone 6"
+    "property=og:title": "Get started"
+    "keywords": "Plone 6, install"
 ---
 
-(install-index-label)=
+(get-started-label)=
 
-# Install
+# Get started
 
-In this part of the documentation, you can find how to install Plone to either create a Plone project or contribute to a Plone package.
-You can also {ref}`try a Plone demo <install-index-try-plone-label>`.
+This part of the documentation helps you find the best way to get started with Plone, depending on what you want to do.
 
-
-(install-index-getting-started-label)=
-
-## Get started
-
-Choose an option to get started with Plone.
-If you are following a [Plone training](https://training.plone.org/), it should specify which option to choose.
-
-{doc}`create-project`
-:   This option is for developers who want to create a web application using the current **stable release** version of Plone with **Volto 17 or earlier** for the frontend.
-
-{doc}`create-project-classic-ui`
-:   This option is for developers who want to create a web application using the current **stable release** version of Plone with **Classic UI** for the frontend.
-
-{doc}`create-project-cookieplone`
-:   This option is for developers who want to create a web application using the latest **development release** version of Plone with **Volto 18 or later** for the frontend.
-    The "development" version also means "pre-release", and includes alpha and beta versions and release candidates.
-    It allows developers to work with the cutting edge of Plone.
-    A development version is not stable, and features may change with little notice.
-
-{doc}`Contribute to a Plone package </contributing/index>`
-:   This option is for developers who want to contribute to Plone and its packages.
+```{contents} I'd like to...
+:local: true
+```
 
 
-(install-index-try-plone-label)=
+(get-started-try-plone-label)=
 
 ## Try a Plone demo
 
 Choose a version to demo.
 
--   [Plone 6 with Volto frontend](https://demo.plone.org/)
--   [Plone 6 with Classic UI](https://classic.demo.plone.org/login?came_from=/en)
+https://volto.demo.plone.org/
+:   Plone 6 with Volto frontend
+
+https://demo.plone.org/
+:   Plone 6 with Volto frontend and some add-ons, including Volto Light Theme, with content that demonstrates all the content types of Plone and blocks in Volto
+
+[https://classic.demo.plone.org/](https://classic.demo.plone.org/login?came_from=/en)
+:   Plone 6 with Classic UI frontend
 
 
-```{toctree}
-:maxdepth: 2
-:hidden: true
+(get-started-install-label)=
 
-create-project
-create-project-classic-ui
-create-project-cookieplone
-containers/index
-add-site
-```
+## Install Plone
+
+First, choose a Plone user interface, or frontend.
+% TODO: once https://github.com/plone/documentation/pull/1749 is merged, link to it
+
+If you are following a [Plone training](https://training.plone.org/), it should specify which option to choose.
+
+{doc}`create-project-cookieplone`
+:   This is the recommended way to install Plone for a new project with the Volto frontend.
+
+{doc}`/admin-guide/install-buildout`
+:   This is one way to install Plone with the Classic UI frontend.
+    Using Buildout will be the most familiar way for admins who have experience with Plone 3, 4, or 5.
+
+{doc}`/admin-guide/install-pip`
+:   This is one way to install Plone with the Classic UI frontend.
+    It provides a basic installation without many additional tools to help with development.
+
+{doc}`create-project`
+:   Installing Plone 6.0 with `cookiecutter-plone-starter` was the recommended way to install for a new project with the Volto frontend, but it is now deprecated in Plone 6.1.
+
+{doc}`Install Plone as a contributor </contributing/index>`
+:   This option is for developers who want to contribute to Plone and its packages.
+
+
+(get-started-learn-more-label)=
+
+## Learn more about Plone
+
+The {doc}`/conceptual-guides/index` explain concepts to help you understand Plone.
+
+The community has created a set of [Plone trainings](https://training.plone.org/) which are hosted separately from the documentation.
+Plone trainings take place at every annual Plone Conference.
+
+
+(get-started-contribute-label)=
+
+=======
+## Contribute to Plone
+
+See the {doc}`Contributor Guide </contributing/index>` to learn how to participate in the Plone community and contribute to our open source software. 

@@ -21,6 +21,10 @@ AWS
 Barceloneta
     The default theme for Plone 5.
 
+Buildout
+    [Buildout](https://github.com/buildout/buildout/) is a Python-based tool for building and assembling applications from multiple parts, based on a configuration file.
+    It was the most common way of installing Plone 3, 4, and 5, and can still be used with Plone 6.
+
 CMS
     Content Management System
 
@@ -292,7 +296,6 @@ TC39
     They established a [process](https://tc39.es/process-document/) where the proposals are discussed, developed, and eventually approved (or dropped).
     The process has five Stages (0 to 4) where reaching the Stage 4 means the proposal is finished, and it becomes part of the JavaScript specification.
 
-mrs-developer
 `mrs-developer`
     Also called "missdev", a tool similar to buildout's `mr.developer`.
     It automatically downloads and keeps up to date copies of software and add-ons under development based on definitions stored in `mrs.developer.json`.
@@ -692,7 +695,6 @@ Varnish
 Content Delivery Network
 CDN
     A Content Delivery Network (CDN) is a network of servers located in various geographic regions that work together to deliver web content to users quickly and efficiently.
-
 
 unique identifier
 UID
