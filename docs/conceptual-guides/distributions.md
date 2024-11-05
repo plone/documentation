@@ -53,7 +53,7 @@ Custom Plone distributions can be distributions for use by others.
 Examples of third-party Plone distributions include:
 
 - [SENAITE](https://www.senaite.com)
-- [Quaive](https://quaivecloud.com/)
+- [Quaive](https://quaive.com/)
 - [Portal Modelo](https://www.interlegis.leg.br/produtos-servicos/portal-modelo/)
 - [Portal Padrão](https://identidade-digital-de-governo-plone.readthedocs.io/en/latest/)
 
