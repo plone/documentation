@@ -29,6 +29,7 @@ install-pip
 :maxdepth: 1
 
 run-plone
+add-site
 configure-zope
 add-ons
 override-core
