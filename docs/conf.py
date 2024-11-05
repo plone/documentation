@@ -82,8 +82,9 @@ linkcheck_ignore = [
     r"http://127.0.0.1",
     r"http://localhost",
     r"http://yoursite",
-    # Ignore file downloads
+    # Ignore static file downloads
     r"^/_static/",
+    r"^/_images/",
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
