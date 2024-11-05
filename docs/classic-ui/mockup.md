@@ -30,7 +30,7 @@ pip install plonecli --user
 Create an add-on package with `plonecli`.
 
 ```shell
-plonecli add project.addon
+plonecli create addon project.addon
 ```
 
 This will create a package `project.addon`, which you can install in your Plone site.
@@ -50,6 +50,88 @@ You can check the full list of available features using the `-l` parameter:
 
 ```shell
 plonecli -l
+```
+
+## Create a custom pattern
+
+To create a custom {term}`pattern` in your add-on, use the `mockup_pattern` {term}`bobtemplate`.
+
+```shell
+cd project.addon
+plonecli add mockup_pattern
+```
+
+Next, enter your pattern name without the `pat-` prefix
+In the following example, its name is `testpattern`.
+
+```shell
+--> Pattern name (without “pat-” prefix) [my-pattern]: testpattern
+```
+
+This creates the necessary JavaScript resources and webpack configuration for you, as shown in the following file system tree diagram.
+
+```text
+...
+├── resources
+|   ├── pat-testpattern
+|   |   ├── documentation.md
+|   |   ├── testpattern.js
+|   |   ├── testpattern.scss
+|   |   ├── testpattern.test.js
+│   ├── bundle.js
+│   ├── index.html
+│   ├── index.js
+├── package.json
+├── webpack.config.js
+...
+```
+
+All your pattern JavaScript code goes into {file}`resources/pat-testpattern/testpattern.js`.
+SCSS files can be imported, too, since webpack provides the `sass-loader` module.
+
+Next, install the npm packages using {term}`yarn`.
+
+```shell
+yarn install
+```
+
+When you finish writing your JavaScript code, you have to build the bundle with the following command.
+
+```shell
+yarn build
+```
+
+This creates the webpack chunks, the JavaScript bundle files, and a demo browser view in your add-on package.
+
+```text
+...
+├── src
+|   ├── project
+|   |   ├── addon
+|   |   |   ├── browser
+|   |   |   |   ├── static
+|   |   |   |   |   ├── bundles
+|   |   |   |   |   |   ├── chunks
+|   |   |   |   |   |   ├── addon-remote.min.js
+|   |   |   |   |   |   ├── addon-remote.min.js.map
+|   |   |   |   |   |   ├── addon.min.js
+|   |   |   |   |   |   ├── addon.min.js.map
+|   |   |   |   ├── pattern-demo.pt
+```
+
+There is also an XML file in {file}`src/project/addon/profiles/default/registry/bundles.xml` which registers the {file}`addon-remote.min.js` in the resources registry.
+
+```{important}
+You must re-import your profile with an upgrade step if you installed your add-on in Plone before adding the pattern.
+Uninstall, then re-install, the add-on in the control panel.
+Alternatively you can write a GenericSetup upgrade step.
+```
+
+You can access the demo browser view in your browser with `http://localhost:8080/Plone/@@addon-pattern-demo`.
+Alternatively you can implement it in your own templates by adding the CSS class `pat-testpattern` to an HTML tag, such as an `img` tag.
+
+```html
+<img class="pat-testpattern">
 ```
 
 

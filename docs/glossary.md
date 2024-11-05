@@ -441,6 +441,17 @@ Mockup
     Mockup provides the JavaScript stack for Classic UI.
     [View Mockup's patterns](https://plone.github.io/mockup/), based on Patternslib.
 
+bobtemplate
+bobtemplates
+bobtemplates.plone
+    `bobtemplates.plone` provides {term}`mr.bob` templates to generate packages for Plone projects.
+    The {term}`plonecli` command line client provides a developer-friendly interface to `bobtemplates.plone`.
+
+mr.bob
+    [`mr.bob`](https://mrbob.readthedocs.io/en/latest/) is a tool that takes a directory skeleton, copies over its directory structure to a target folder, and can use the Jinja2 (or some other) templating engine to dynamically generate the files.
+    Additionally, it can ask you questions needed to render the structure, or provide a configuration file to answer them.
+
+Pattern
 Patterns
 Patternslib
     [Patterns](https://patternslib.com/), or Patternslib, is a toolkit that enables designers to build rich interactive prototypes without the need for writing any JavaScript.
