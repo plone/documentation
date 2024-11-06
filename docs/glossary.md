@@ -54,10 +54,10 @@ plone/generator-volto
 cookiecutter-plone-starter
     [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) creates a Plone project that you can install using {term}`Make`.
     It generates files for installing and configuring both the frontend and backend.
-    For the backend, it uses {term}`cookiecutter-zope-instance` to generate configuration files for a Zope WSGI instance.
+    For the backend, it uses {term}`cookiecutter-zope-instance` to generate configuration files for a {term}`Zope instance`.
 
 cookiecutter-zope-instance
-    [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
+    [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a {term}`Zope instance`.
 
 CSRF
 Cross-Site Request Forgery
@@ -144,13 +144,13 @@ Diazo
 
 Dexterity
     [Dexterity](https://github.com/plone/plone.dexterity) is the base framework for building content types, both through-the-web and as filesystem code.
-     It is aimed at Plone, although this package should work with plain Zope + CMF systems.
+     It is aimed at Plone, although this package should work with plain {term}`Zope` + CMF systems.
 
 Dublin Core
     The Dublin Core Schema is a small set of vocabulary terms that can be used to describe web resources (video, images, web pages, etc.), as well as physical resources such as books or CDs, and objects like artworks.
 
 ZMI
-    The Zope Management Interface.
+    The {term}`Zope` Management Interface.
     The ZMI is a direct interface into the backend software stack of Plone.
     While it can still serve as a valuable tool for Plone specialists to fix problems or accomplish certain tasks, it is not recommended as a regular tool for Plone maintenance.
 
@@ -210,7 +210,7 @@ Configuration registry
     It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
     It contains the configuration of the Volto app.
 
-    In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for Zope applications.
+    In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for {term}`Zope` applications.
 
 component shadowing
 shadowing
@@ -566,6 +566,10 @@ ZODB
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 
+Zope instance
+    A Zope instance is a particular set of configuration for running {term}`Zope`.
+    A new Zope instance can be created using {term}`cookiecutter-zope-instance`.
+
 ZPT
     Zope Page Template is a template language for Python.
 
@@ -576,7 +580,7 @@ ZCA
 Zope Component Architecture
     Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
     It is very well suited to developing large Python software systems.
-    The ZCA is not specific to the Zope web application server.
+    The ZCA is not specific to the {term}`Zope` web application server.
     It can be used for developing any Python application.
     Maybe it should be called Python Component Architecture.
     ```{seealso}
@@ -803,7 +807,7 @@ Load balancer
 CI
 continuous integration
     Continuous integration (CI) is the practice of integrating all your code changes into the main branch of a shared source code repository early and often, automatically testing each change when you commit or merge them, and automatically kicking off a build.
-    
+
     Read about Plone's {doc}`/contributing/core/continuous-integration`.
 
 CD
@@ -821,7 +825,21 @@ reference implementation
     A reference implementation is a program that implements all requirements from a corresponding specification.
     The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
 
+distribution
+distributions
+    A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations.
+    It is a convenient way to get a specific type of website up and running quickly, as the distribution includes everything needed to run that type of site.
+
+    ```{seealso}
+    -   {doc}`/conceptual-guides/distributions`
+    -   {doc}`/developer-guide/create-a-distribution`
+    ```
+
+JSON Schema
+    [JSON Schema](https://json-schema.org/) is the vocabulary that enables JSON data consistency, validity, and interoperability at scale.
+
 portlets
     Portlets are widgets that can be inserted in predefined locations in pages in {term}`Classic UI`.
     Portlets are most commonly used to add sidebars to the left or right of the main page content.
+
 ```

@@ -16,6 +16,7 @@ This part of the documentation provides explanation of concepts to deepen and br
 :maxdepth: 2
 
 choose-user-interface
+distributions
 package-management
 make-build-backend-walk-through
 ```
