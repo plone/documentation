@@ -82,14 +82,18 @@ linkcheck_ignore = [
     r"http://127.0.0.1",
     r"http://localhost",
     r"http://yoursite",
-    # Ignore file downloads
+    # Ignore static file downloads
     r"^/_static/",
+    r"^/_images/",
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
-    r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
-    r"https://github.com/plone/volto/issues/new/choose",  # requires auth
+    r"https://github.com/plone/documentation/issues/new",  # requires auth
+    r"https://github.com/plone/volto/issues/new",  # requires auth
+    r"https://opensource.org/",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
+    # Ignore github.com searches
+    r"https://github.com/search",
     # Ignore other specific anchors
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
@@ -357,8 +361,8 @@ def source_replace(app, docname, source):
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
     "{PLONE_BACKEND_PATCH_VERSION}": "6.0.13",
-    "{NVM_VERSION}": "0.39.5",
-    "{SUPPORTED_PYTHON_VERSIONS}": "3.8, 3.9, 3.10, 3.11, or 3.12",
+    "{SUPPORTED_PYTHON_VERSIONS_PLONE60}": "3.8, 3.9, 3.10, 3.11, or 3.12",
+    "{SUPPORTED_PYTHON_VERSIONS_PLONE61}": "3.10, 3.11, or 3.12",
 }
 
 

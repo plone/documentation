@@ -80,6 +80,10 @@ The process of translating the Volto frontend is the following.
 
 5. Commit your changes, and create a pull request.
 
+```{seealso}
+{doc}`Volto frontend development internationalization </volto/development/i18n>`
+```
+
 (contributing-weblate-for-translations)=
 
 ## Weblate for translations
