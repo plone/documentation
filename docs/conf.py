@@ -87,8 +87,8 @@ linkcheck_ignore = [
     r"^/_images/",
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
-    r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
-    r"https://github.com/plone/volto/issues/new/choose",  # requires auth
+    r"https://github.com/plone/documentation/issues/new",  # requires auth
+    r"https://github.com/plone/volto/issues/new",  # requires auth
     r"https://opensource.org/",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
