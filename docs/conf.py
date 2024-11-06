@@ -49,6 +49,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx_copybutton",
     "sphinx_design",
+    "sphinx_examples",
     "sphinx_reredirects",
     "sphinx_sitemap",
     "sphinxcontrib.httpdomain",  # plone.restapi
@@ -58,6 +59,7 @@ extensions = [
     "sphinx.ext.viewcode",  # plone.api
     "sphinx.ext.autosummary",  # plone.api
     "sphinx.ext.graphviz",
+    "sphinxcontrib.mermaid",
     "notfound.extension",
 ]
 
@@ -80,14 +82,18 @@ linkcheck_ignore = [
     r"http://127.0.0.1",
     r"http://localhost",
     r"http://yoursite",
-    # Ignore file downloads
+    # Ignore static file downloads
     r"^/_static/",
+    r"^/_images/",
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
-    r"https://github.com/plone/documentation/issues/new/choose",  # requires auth
-    r"https://github.com/plone/volto/issues/new/choose",  # requires auth
+    r"https://github.com/plone/documentation/issues/new",  # requires auth
+    r"https://github.com/plone/volto/issues/new",  # requires auth
+    r"https://opensource.org/",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
+    # Ignore github.com searches
+    r"https://github.com/search",
     # Ignore other specific anchors
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
@@ -98,9 +104,11 @@ linkcheck_ignore = [
     r"https://stackoverflow.com",  # volto and documentation  # TODO retest with latest Sphinx.
     r"https://web.archive.org/",  # volto
     r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
+    r"https://www.upc.edu/en",  # TODO remove after their certificate is fixed
+    r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
 linkcheck_anchors = True
-linkcheck_timeout = 10
+linkcheck_timeout = 5
 linkcheck_retries = 1
 
 # The suffix of source filenames.
@@ -121,15 +129,21 @@ exclude_patterns = [
     "**/CONTRIBUTORS.rst",
     "**/LICENSE.rst",
     "**/README.rst",
+    "**/eggs",
+    "_inc/.*",
     "plone.restapi/.*",
     "plone.restapi/bin",
+    "plone.restapi/develop-eggs",
     "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
+    "plone.restapi/eggs",
     "plone.restapi/ideas",
     "plone.restapi/include",
     "plone.restapi/lib",
     "plone.restapi/news",
+    "plone.restapi/parts",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "plone.restapi/var",
     "volto/contributing/branch-policy.md",
     "volto/contributing/install-docker.md",
     "volto/contributing/install-git.md",
@@ -178,6 +192,8 @@ myst_substitutions = {
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
 }
 
+mermaid_version = "10.9.1"
+
 # -- Intersphinx configuration ----------------------------------
 
 # This extension can generate automatic links to the documentation of objects
@@ -196,6 +212,7 @@ myst_substitutions = {
 # the entire Plone Documentation is built.
 intersphinx_mapping = {
     "plone": ("https://6.docs.plone.org/", None),  # for imported packages
+    "plone5": ("https://5.docs.plone.org/", None),
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/", None),
     "training-2022": ("https://2022.training.plone.org/", None),
@@ -232,6 +249,7 @@ redirects = {
     "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
     "contributing/volto": "/volto/contributing/index.html",
     "install/install-from-packages": "/install/create-project.html",
+    "manage/frontend": "/volto/addons/index.html",
 }
 
 
@@ -328,6 +346,7 @@ html_context = {
     "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
 }
 
+
 # An extension that allows replacements for code blocks that
 # are not supported in `rst_epilog` or other substitutions.
 # https://stackoverflow.com/a/56328457/2214933
@@ -341,9 +360,9 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.10.1",
-    "{NVM_VERSION}": "0.39.5",
-    "{SUPPORTED_PYTHON_VERSIONS}": "3.8, 3.9, 3.10, 3.11, or 3.12",
+    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.13",
+    "{SUPPORTED_PYTHON_VERSIONS_PLONE60}": "3.8, 3.9, 3.10, 3.11, or 3.12",
+    "{SUPPORTED_PYTHON_VERSIONS_PLONE61}": "3.10, 3.11, or 3.12",
 }
 
 

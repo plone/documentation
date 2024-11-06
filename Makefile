@@ -224,18 +224,17 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		--port 8050 \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
-.PHONY: netlify
-netlify:
+.PHONY: rtd-pr-preview
+rtd-pr-preview:  ## Build pull request preview on Read the Docs
 	pip install -r requirements-initial.txt
 	pip install -r requirements.txt
-	pip install -r requirements-netlify.txt
-	git submodule init; \
-	git submodule update; \
-	pip install -e submodules/plone.api[test]; \
+	git submodule init
+	git submodule update
+	pip install -e submodules/plone.api[test]
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
-	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html && cp ./netlify_robots.txt $(BUILDDIR)/html/robots.txt
+	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
 
 .PHONY: storybook
 storybook:

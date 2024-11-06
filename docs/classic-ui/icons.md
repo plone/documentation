@@ -23,7 +23,7 @@ Examples include the following.
 
 ## Bootstrap Icons
 
-Twitter Bootstrap 5 is the default CSS framework in Plone 6.
+Bootstrap 5 is the default CSS framework in Plone 6.
 Plone uses its icons.
 Check out all the available Bootstrap icons at [icons.getbootstrap.com](https://icons.getbootstrap.com/).
 

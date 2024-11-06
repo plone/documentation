@@ -260,7 +260,7 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
         This also creates a hyperlink to the original issue for easy reference.
         
         ```{seealso}
-        [Linking a pull request to an issue using a keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
+        [Linking a pull request to an issue using a keyword](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword)
         ```
 
 1.  **Request a review.**

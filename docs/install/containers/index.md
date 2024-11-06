@@ -11,10 +11,10 @@ myst:
 
 # Containers
 
-The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
+The Plone 6 images have all the system requirements, prerequisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
 
 Using containers is the easiest way to deploy Plone 6.
-Containers may also be used when {doc}`creating a Plone project <../create-project>` and {doc}`contributing to Plone <plone:contributing/index>`.
+You may also use containers when {doc}`creating a Plone project </install/create-project-cookieplone>`.
 
 The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
 They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
@@ -45,7 +45,7 @@ Although there are many container engine tools for developing, managing, and run
 
 The system requirements include those required by Docker itself.
 
--   [Linux](https://docs.docker.com/desktop/install/linux-install/)
+-   [Linux](https://docs.docker.com/desktop/install/linux/)
 -   [macOS](https://docs.docker.com/desktop/install/mac-install/)
 -   [Windows](https://docs.docker.com/desktop/install/windows-install/)
 
@@ -55,7 +55,7 @@ See its {ref}`install-packages-hardware-requirements-label`.
 
 ### Install Docker
 
-Install [Docker Desktop](https://docs.docker.com/get-docker/) for your operating system.
+Install [Docker Desktop](https://docs.docker.com/get-started/get-docker/) for your operating system.
 
 Docker Desktop includes all Docker tools.
 {term}`Docker Compose` is one of the Docker tools that will be used in much of this documentation.

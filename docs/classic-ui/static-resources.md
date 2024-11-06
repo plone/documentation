@@ -14,6 +14,10 @@ myst:
 We often want to ship a website with a static resource, such as an image, icon, CSS, or JavaScript file.
 For this, we need to register static resources.
 
+```{seealso}
+For some additional implementation information, see {ref}`classic-ui-theming-from-scratch-theme-label`.
+```
+
 
 (classic-ui-static-resources-registering-label)=
 
@@ -96,4 +100,4 @@ The following attributes are available for registering a static resource:
 
 ## Loading order of resources
 
-`depends` is used to define the loading order of resources, by specifying the name of the depending bundle.
+`depends` is used to define the loading order of resources by specifying the name of the depending bundle.
