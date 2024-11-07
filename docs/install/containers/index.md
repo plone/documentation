@@ -45,9 +45,9 @@ Although there are many container engine tools for developing, managing, and run
 
 The system requirements include those required by Docker itself.
 
--   [Linux](https://docs.docker.com/desktop/install/linux/)
--   [macOS](https://docs.docker.com/desktop/install/mac-install/)
--   [Windows](https://docs.docker.com/desktop/install/windows-install/)
+-   [Linux](https://docs.docker.com/desktop/setup/install/linux/)
+-   [macOS](https://docs.docker.com/desktop/setup/install/mac-install/)
+-   [Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
 Plone 6 itself requires memory and disk space in addition to those of Docker alone.
 See its {ref}`install-packages-hardware-requirements-label`.
