@@ -101,6 +101,8 @@ pip install pipx
 ```
 
 
+(create-project-cookieplone-generate-the-project-label)=
+
 ## Generate the project
 
 After satisfying the prerequisites and having activated an LTS version of Node,
