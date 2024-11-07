@@ -66,13 +66,13 @@ Docker Desktop includes all Docker tools.
 First start the Plone Backend, naming it `plone6-backend` and creating a site with its default configuration, using the following command.
 
 ```shell
-docker run --name plone6-backend -e SITE=Plone -e CORS_ALLOW_ORIGIN='*' -d -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+docker run --name plone6-backend -e SITE=Plone -d -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
 ```
 
 Now start the Plone Frontend, linking it to the `plone6-backend`:
 
 ```shell
-docker run --name plone6-frontend --link plone6-backend:backend -e RAZZLE_API_PATH=http://localhost:8080/Plone -e RAZZLE_INTERNAL_API_PATH=http://backend:8080/Plone -d -p 3000:3000 plone/plone-frontend:latest
+docker run --name plone6-frontend --link plone6-backend:backend -e RAZZLE_DEV_PROXY_API_PATH=http://backend:8080/Plone -d -p 3000:3000 plone/plone-frontend:latest
 ```
 
 
