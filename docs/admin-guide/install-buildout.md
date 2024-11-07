@@ -77,7 +77,7 @@ eggs =
     Plone
 ```
 
-Install Buildout script in bin directory.
+Use Buildout's [`bootstrap` command](https://www.buildout.org/en/latest/topics/bootstrapping.html) to install a local `buildout` script in the {file}`bin` directory.
 
 ```shell
 venv/bin/buildout bootstrap
@@ -91,7 +91,7 @@ bin/buildout
 
 This may take a few minutes.
 
-When ever the buildout configuration has changed, re-run ./bin/buildout
+Whenever you change the Buildout configuration, run `./bin/buildout` again.
 
 ## Start Plone in foreground mode
 
