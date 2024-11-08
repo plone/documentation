@@ -19,6 +19,7 @@ There are different commands to run Plone, depending on which method you used to
 
 Running Plone in foreground mode will show output in the terminal.
 This is recommended while developing a Plone site.
+The command you use depends on the installation method you used.
 
 Cookieplone:
 :   ```shell
