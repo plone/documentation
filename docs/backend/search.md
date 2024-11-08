@@ -11,7 +11,7 @@ myst:
 
 # Search
 
-To index and search content in Plone, see the Plone 5 documentation {doc}`/develop/plone/searching_and_indexing/index`.
+To index and search content in Plone, see the Plone 5 documentation {doc}`plone5:develop/plone/searching_and_indexing/index`.
 
 Alternatively, you can integrate any open source search engine with your Plone site.
 
