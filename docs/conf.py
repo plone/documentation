@@ -23,17 +23,15 @@ author = "Plone community"
 trademark_name = "Plone"
 now = datetime.now()
 year = str(now.year)
-copyright = year
-
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = "6.0"
+version = "6"
 # The full version, including alpha/beta/rc tags.
-release = "6.0"
+release = "6"
 
 # -- General configuration ----------------------------------------------------
 
@@ -214,8 +212,9 @@ html_theme_options = {
         },
     ],
     "logo": {
-        "text": "Plone Sphinx Theme",
+        "text": "Plone Documentation v" + version,
     },
+    "primary_sidebar_end": ["version-switcher"],
     "navigation_with_keys": True,
     "path_to_docs": "docs",
     "repository_branch": "main",
@@ -248,8 +247,8 @@ html_use_index = True
 
 html_css_files = ["custom.css", ("print.css", {"media": "print"})]
 html_js_files = [
-    "patch_scrollToActive.js",
-    "search_shortcut.js"
+    # "patch_scrollToActive.js",
+    # "search_shortcut.js"
 ]
 
 html_extra_path = [
