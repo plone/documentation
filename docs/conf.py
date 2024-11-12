@@ -165,11 +165,26 @@ suppress_warnings = [
 html_theme = "plone_sphinx_theme"
 html_logo = "_static/logo.svg"
 html_favicon = "_static/favicon.ico"
+# The default value includes icon-links, so override it with that one omitted, and add it to html_theme_options[footer_content_items].
+html_sidebars = {
+    "**": [
+        "navbar-logo",
+        "search-button-field",
+        "sbt-sidebar-nav",
+    ]
+}
+
 html_theme_options = {
     "article_header_start": ["toggle-primary-sidebar"],
+    "footer_content_items": [
+        "author",
+        "copyright",
+        "last-updated",
+        "extra-footer",
+        "icon-links",
+    ],
     "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
     <p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a>.</p>""",
-    "footer_end": ["version.html"],
     "icon_links": [
         {
             "name": "GitHub",
@@ -219,9 +234,11 @@ html_theme_options = {
     "logo": {
         "text": "Plone Documentation v" + version,
     },
-    "primary_sidebar_end": ["version-switcher"],
     "navigation_with_keys": True,
     "path_to_docs": "docs",
+    "primary_sidebar_end": [
+        "version-switcher",
+    ],
     "repository_branch": "main",
     "repository_url": "https://github.com/plone/documentation",
     "search_bar_text": "Search",
