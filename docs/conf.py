@@ -167,14 +167,8 @@ html_logo = "_static/logo.svg"
 html_favicon = "_static/favicon.ico"
 html_theme_options = {
     "article_header_start": ["toggle-primary-sidebar"],
-    # "extra_navbar": """
-    # <p class="ploneorglink">
-    #     <a href="https://plone.org">
-    #         <img src="/_static/logo.svg" alt="plone.org" /> plone.org</a>
-    # </p>""",
     "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
     <p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a>.</p>""",
-    # "navbar_center": ["chapter-title.html"],
     "footer_end": ["version.html"],
     "icon_links": [
         {
@@ -192,6 +186,17 @@ html_theme_options = {
             "name": "Mastodon",
             "url": "https://plone.social/@plone",
             "icon": "fa-brands fa-mastodon",
+            "type": "fontawesome",
+            "attributes": {
+                "target": "_blank",
+                "rel": "noopener me",
+                "class": "nav-link custom-fancy-css"
+            }
+        },
+        {
+            "name": "YouTube",
+            "url": "https://www.youtube.com/@PloneCMS",
+            "icon": "fa-brands fa-youtube",
             "type": "fontawesome",
             "attributes": {
                 "target": "_blank",
