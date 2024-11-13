@@ -245,7 +245,7 @@ html_theme_options = {
     "repository_url": "https://github.com/plone/documentation",
     "search_bar_text": "Search",
     "switcher": {
-        "json_url": "/_static/switcher.json",
+        "json_url": "https://6.docs.plone.org/_static/switcher.json",
         "version_match": version,
     },
     "use_edit_page_button": True,
