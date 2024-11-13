@@ -263,7 +263,7 @@ bin/test --all
 ```
 
 Plone uses [Playwright](https://playwright.dev/) to run robot tests.
-`plone.app.robotframework` provides a script to install Playwrite browsers.
+`plone.app.robotframework` provides a script to install Playwright browsers.
 
 ```shell
 ./bin/rfbrowser init
