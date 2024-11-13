@@ -85,12 +85,14 @@ linkcheck_ignore = [
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new",  # requires auth
-    r"https://github.com/plone/volto/issues/new",  # requires auth
     r"https://opensource.org/",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
     # Ignore github.com searches
     r"https://github.com/search",
+    # Ignore rate limiting by github.com
+    r"https://github.com/plone/volto/issues",
+    r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
