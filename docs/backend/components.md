@@ -1,47 +1,55 @@
-# Component Architecture
+---
+myst:
+  html_meta:
+    "description": "Conceptual guide of the Zope Component Architecture in Plone"
+    "property=og:description": "Conceptual guide of the Zope Component Architecture in Plone"
+    "property=og:title": "Conceptual guide of the Zope Component Architecture in Plone"
+    "keywords": "Plone, Plone 6, Zope Component Architecture, ZCA, interface, adapter, utility, event, subscriber, registry, lookup"
+---
 
-## Introduction
+# Component architecture
 
-### Overview
-
-The Zope Component Architecture - in short ZCA - is a Python framework for supporting component-based design and programming utilizing the design patterns interface, adapter, abstract factory and publish-subscribe.
+The {term}`Zope Component Architecture` (ZCA) is a Python framework for supporting component-based design and programming, utilizing the design patterns interface, adapter, abstract factory, and publish-subscribe.
 
 Plone logic is wired together by Zope Component Architecture.
 It provides the "enterprise business logic" engine for Plone.
-The following high-level concepts are the core of the ZCA:
+
+
+## Concepts
+
+The following high-level concepts are the core of the ZCA.
 
 Interface
-: Abstract definition of the intended public behavior of an object providing the interface.
+:   Abstract definition of the intended public behavior of an object providing the interface.
 
 Adapter
-: Specific implementation of an interface.
-  An adapter provides an interface on its own and adapts one or more objects with specific interfaces.
+:   Specific implementation of an interface.
+    An adapter provides an interface on its own, and adapts one or more objects with specific interfaces.
 
 Utility
-: Specific implementation of an interface either as a singleton or factored-on lookup.
+:   Specific implementation of an interface either as a singleton or factored-on lookup.
 
 Events and subscribers
-: Events are emitted and a subscriber may listen to those events.
-  Events provide an interface and subscribers are registered for specific interfaces.
-  Events are only dispatched to subscribers matching the interface of the event.
+:   Events are emitted, and a subscriber may listen to those events.
+    Events provide an interface, and subscribers are registered for specific interfaces.
+    Events are only dispatched to subscribers matching the interface of the event.
 
 Registries
-: Adapters, utilities and subscribers are registered in registries.
-  Here the wiring is done.
-  Additional to the interface, a name might be provided for adapters and utilities (so-called named adapters or named utilities).
-  Registration can be done in Python code or via ZCML, an XML dialect.
+:   Adapters, utilities, and subscribers are registered in registries.
+    Here the wiring is done.
+    Additional to the interface, a name might be provided for adapters and utilities (so-called named adapters or named utilities).
+    Registration can be done in Python code or via {term}`ZCML`, an XML dialect.
 
 Lookup
-: The lookup functions are providing the logic to dynamically factor an adapter or utility matching the object that was fed in.
-: You can ask to get an adapter to an object and pass in a name and the lookup method introspects the interface provided by the object and searches the registry for matches.
+:   The lookup functions are providing the logic to dynamically factor an adapter or utility matching the object that was fed in.
+    You can ask to get an adapter to an object and pass in a name and the lookup method introspects the interface provided by the object and searches the registry for matches.
 
 
+## Design patterns
 
-### Design Patterns
+To better understand the Zope Component Architecture, it helps to review the basics of a few of the 23 classical [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern).
 
-For the understanding of the Zope Component Architecture, it helps to understand the basics of a few of the 23 classical [design patterns](https://en.wikipedia.org/wiki/Software_design_pattern).
-
-The interface pattern (formerly called so, modern it is called protocol pattern) is used to define the behavior of the adapter.
+The interface pattern (its former name, and is now called "protocol pattern") is used to define the behavior of the adapter.
 
 > [...] a protocol or interface type is a data type describing a set of method signatures, the implementations of which may be provided by multiple classes that are otherwise not necessarily related to each other.
 > A class which provides the methods listed in a protocol is said to adopt the protocol, or to implement the interface.
