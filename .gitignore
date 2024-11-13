@@ -1,11 +1,7 @@
 # Dependencies
-/bin
-/include
-/lib
-/lib64
+/venv
 
 # Generated files
-pyvenv.cfg
 /_build
 /styles/Microsoft
 /share

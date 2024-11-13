@@ -5,10 +5,11 @@ SHELL           = bash
 # You can set these variables from the command line.
 SPHINXOPTS      ?=
 PAPER           ?=
+VALEOPTS        ?=
 
 # Internal variables.
-SPHINXBUILD     = "$(realpath bin/sphinx-build)"
-SPHINXAUTOBUILD = "$(realpath bin/sphinx-autobuild)"
+SPHINXBUILD     = "$(realpath venv/bin/sphinx-build)"
+SPHINXAUTOBUILD = "$(realpath venv/bin/sphinx-autobuild)"
 DOCS_DIR        = ./docs/
 BUILDDIR        = ../_build
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -29,20 +30,25 @@ clean:  ## Clean docs build directory
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
 
 .PHONY: distclean
-distclean:  ## Clean docs build directory and Python virtual environment
+distclean:  ## Clean docs build directory and Python virtual environment, then install requirements
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
-	rm -rf ./bin/ ./lib/ ./lib64 ./include ./pyvenv.cfg
+	python3 -m venv venv --clear
+	venv/bin/pip install -r requirements-initial.txt
+	venv/bin/pip install -r requirements.txt
+	@echo
+	@echo "Installation of requirements completed."
 
-
-bin/python:
-	python3 -m venv .
-	bin/pip install -r requirements-initial.txt
-	bin/pip install -r requirements.txt
+venv/bin/python:  ## Setup up Python virtual environment and install requirements
+	python3 -m venv venv
+	venv/bin/pip install -r requirements-initial.txt
+	venv/bin/pip install -r requirements.txt
+	@echo
+	@echo "Installation of requirements completed."
 
 docs/plone.api:
 	git submodule init; \
 	git submodule update; \
-	bin/pip install -e submodules/plone.api/"[test]"; \
+	venv/bin/pip install -e submodules/plone.api/"[test]"; \
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
 	@echo
 	@echo "Documentation of plone.api initialized."
@@ -62,7 +68,7 @@ docs/volto:
 	@echo "Documentation of volto initialized."
 
 .PHONY: deps
-deps: bin/python docs/volto docs/plone.restapi docs/plone.api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
+deps: venv/bin/python docs/volto docs/plone.restapi docs/plone.api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
 
 
 .PHONY: html
@@ -196,8 +202,8 @@ linkcheckbroken: deps  ## Run linkcheck and show only broken links
 
 .PHONY: vale
 vale: deps  ## Run Vale style, grammar, and spell checks
-	bin/vale sync
-	bin/vale --no-wrap $(VALEFILES)
+	venv/bin/vale sync
+	venv/bin/vale --no-wrap $(VALEOPTS) $(VALEFILES)
 	@echo
 	@echo "Vale is finished; look for any errors in the above output."
 
