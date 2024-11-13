@@ -248,9 +248,17 @@ It takes 5-10 minutes to run the full unit test suite.
 If you run acceptance tests with the `--all` option, it will run tests in a real browser.
 This takes 30-40 minutes to run.
 This may repeatedly launch and close browser windows that gain focus, disrupting you from doing any other work.
-If this happens, you can install the `chromedriver` OS package.
-See https://developer.chrome.com/docs/chromedriver.
-Then run `export ROBOT_BROWSER="headlesschrome"` and again run `bin/test --all`.
+If this happens, you can use `headlesschrome` as testbrowser by setting an environment variable `export ROBOT_BROWSER="headlesschrome"` and again run `bin/test --all`.
+
+Since we use [Playwright](https://playwright.dev/) for our robottests you have to install it first.
+`plone.app.robotframework` provides a script for that:
+
+```shell
+# Install playwright browsers
+./bin/rfbrowser init
+```
+
+After the browser resources are downloaded and initalized you can run the tests.
 
 ```shell
 # Run acceptance tests
