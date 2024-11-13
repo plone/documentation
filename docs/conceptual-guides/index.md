@@ -19,4 +19,5 @@ choose-user-interface
 distributions
 package-management
 make-build-backend-walk-through
+components
 ```
