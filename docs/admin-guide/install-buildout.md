@@ -25,7 +25,7 @@ For other installation options, see {ref}`get-started-install-label`.
 ## Prerequisites for installation
 
 -   For Plone 6.0, Python {SUPPORTED_PYTHON_VERSIONS_PLONE60}
-% TODO: These instructions install Plone 6.0.x. Uncomment next line and change the subsequent include when Plone 6.1 is released and "latest". 
+% TODO: These instructions install Plone 6.0.x. Uncomment next line and change the subsequent include when Plone 6.1 is released and "latest".
 % -   For Plone 6.1, Python {SUPPORTED_PYTHON_VERSIONS_PLONE61}
 
 
@@ -47,14 +47,16 @@ cd <my_projects>/plone
 Create a Python virtual environment.
 
 ```shell
-python3 -m venv .
+python3 -m venv venv
 ```
 
 Install the minimal Python packages needed in order to run Buildout.
 
 ```shell
-bin/pip install -r https://dist.plone.org/release/6-latest/requirements.txt
+venv/bin/pip install -r https://dist.plone.org/release/6-latest/requirements.txt
 ```
+
+
 
 Create a {file}`buildout.cfg` file in your directory with the following contents.
 
@@ -75,6 +77,12 @@ eggs =
     Plone
 ```
 
+Use Buildout's [`bootstrap` command](https://www.buildout.org/en/latest/topics/bootstrapping.html) to install a local `buildout` script in the {file}`bin` directory.
+
+```shell
+venv/bin/buildout bootstrap
+```
+
 Run Buildout.
 
 ```shell
@@ -83,6 +91,7 @@ bin/buildout
 
 This may take a few minutes.
 
+Whenever you change the Buildout configuration, run `./bin/buildout` again.
 
 ## Start Plone in foreground mode
 

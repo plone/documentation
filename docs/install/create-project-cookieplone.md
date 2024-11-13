@@ -33,10 +33,15 @@ For other installation options, see {ref}`get-started-install-label`.
 Plone 6 has both hardware requirements and software prerequisites.
 
 
+(create-project-cookieplone-hardware-requirements-label)=
+
 ### Hardware requirements
 
 ```{include} /_inc/_hardware-requirements.md
 ```
+
+
+(create-project-cookieplone-prerequisites-for-installation-label)=
 
 ### Prerequisites for installation
 
@@ -95,6 +100,8 @@ pip install pipx
 ```{include} ../volto/contributing/install-git.md
 ```
 
+
+(create-project-cookieplone-generate-the-project-label)=
 
 ## Generate the project
 

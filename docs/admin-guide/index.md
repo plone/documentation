@@ -11,7 +11,7 @@ myst:
 
 # Admin guide
 
-In this part of the documentation, you can find how to install, operate, configure, and deploy Plone.
+In this part of the documentation, you can find how to install, operate, and configure Plone.
 
 
 ```{toctree}

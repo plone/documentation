@@ -41,6 +41,8 @@ https://demo.plone.org/
 First, choose a Plone user interface, or frontend.
 You can read {doc}`/conceptual-guides/choose-user-interface` to help inform your choice between Volto and Classic UI.
 
+If you choose Classic UI, then you can read {doc}`/conceptual-guides/compare-buildout-pip` to help inform your choice between Buildout and pip for an installation method.
+
 Then choose one of the following installation methods.
 If you are following a [Plone training](https://training.plone.org/), it should specify which option to choose.
 
