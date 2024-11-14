@@ -93,6 +93,7 @@ linkcheck_ignore = [
     # Ignore github.com searches
     r"https://github.com/search",
     # Ignore rate limiting by github.com
+    r"https://github.com/collective/plone.app.locales/commits/master/",  # 429 Client Error: Too Many Requests for url
     r"https://github.com/plone/volto/issues",
     r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
@@ -100,7 +101,7 @@ linkcheck_ignore = [
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
     # Ignore unreliable sites
-    r"https://web.archive.org/",  # volto
+    r"https://web.archive.org/",
     r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
     r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
@@ -279,7 +280,6 @@ html_static_path = [
     "_static",  # Last path wins. See https://github.com/plone/documentation/pull/1442
 ]
 
-
 # -- Options for autodoc ----------------------------------------------------
 
 # https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#configuration
@@ -289,7 +289,6 @@ html_static_path = [
 
 # Don't show class signature with the class' name.
 autodoc_class_signature = "separated"
-
 
 # -- Options for MyST markdown conversion to HTML -----------------------------
 
