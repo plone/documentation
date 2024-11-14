@@ -1,44 +1,54 @@
 ---
 myst:
   html_meta:
-    "description": "Create a Plone project with the Volto frontend (development or pre-release)"
-    "property=og:description": "Create a Plone project with the Volto frontend (development or pre-release)"
-    "property=og:title": "Create a Plone project with the Volto frontend (development or pre-release)"
+    "description": "Install Plone with Cookieplone"
+    "property=og:description": "Install Plone with Cookieplone"
+    "property=og:title": "Install Plone with Cookieplone"
     "keywords": "Plone, Plone 6, Volto, create, project, install, Cookieplone"
 ---
 
 
-(create-project-cookieplone-label)=
+(install-cookieplone-label)=
 
-# Create a project with Volto (development or pre-release)
+# Install Plone with Cookieplone
 
-This chapter describes how you can create a web application using the latest **development release** version of Plone with **Volto 18 or later** for the frontend, while having full control over its development and deployment.
+This chapter describes how you can create a web application using the {term}`Cookieplone` template.
+
+This template is the recommended way to start a new Plone project using the Volto frontend.
+It also includes tools for development and deployment.
 
 ```{seealso}
-For other installation options, see {doc}`/install/index`.
+For other installation options, see {ref}`get-started-install-label`.
 ```
 
 ```{versionadded} Volto 18.0.0-alpha.43
-{term}`Cookieplone` is now the method to create a Plone project with unstable versions of Volto, version 18.0.0-alpha.43 and above.
+{term}`Cookieplone` was added as the recommended template to create a Plone project with Volto starting in Volto 18.0.0-alpha.43 and above.
 ```
 
+
+(create-project-cookieplone-system-requirements)=
 
 ## System requirements
 
 Plone 6 has both hardware requirements and software prerequisites.
 
 
+(create-project-cookieplone-hardware-requirements-label)=
+
 ### Hardware requirements
 
 ```{include} /_inc/_hardware-requirements.md
 ```
+
+
+(create-project-cookieplone-prerequisites-for-installation-label)=
 
 ### Prerequisites for installation
 
 ```{include} ../volto/contributing/install-operating-system.md
 ```
 
--   Python {SUPPORTED_PYTHON_VERSIONS}
+-   Python {SUPPORTED_PYTHON_VERSIONS_PLONE61}
 -   {term}`pipx`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 20.x
@@ -48,7 +58,7 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 #### Python
 
-```{include} /_inc/_install-python.md
+```{include} /_inc/_install-python-plone61.md
 ```
 
 
@@ -90,6 +100,8 @@ pip install pipx
 ```{include} ../volto/contributing/install-git.md
 ```
 
+
+(create-project-cookieplone-generate-the-project-label)=
 
 ## Generate the project
 

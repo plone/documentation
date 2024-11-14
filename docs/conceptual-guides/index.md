@@ -15,6 +15,9 @@ This part of the documentation provides explanation of concepts to deepen and br
 ```{toctree}
 :maxdepth: 2
 
+choose-user-interface
+distributions
 package-management
 make-build-backend-walk-through
+components
 ```

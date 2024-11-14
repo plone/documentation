@@ -47,7 +47,7 @@ Add screenshots.
 
 ## CSS variables
 
-Plone uses Twitter Bootstrap's CSS variables.
+Plone uses Bootstrap's CSS variables.
 They are used to tweak colors, fonts, spacing, and other CSS attributes.
 
 ```{todo}

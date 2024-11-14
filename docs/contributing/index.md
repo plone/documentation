@@ -13,7 +13,7 @@ myst:
 
 This part of the documentation describes how to contribute to Plone, including all its projects and repositories under the Plone GitHub organization.
 
-If instead you want to create a web application project using Plone, see {doc}`/install/create-project`.
+If instead you want to create a web application project using Plone, see {ref}`get-started-install-label`.
 
 To contribute to any project in Plone, you must follow the policies of the [Plone Foundation](https://plone.org/foundation), [Plone GitHub organization](https://github.com/plone/) and the specific project.
 

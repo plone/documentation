@@ -53,7 +53,7 @@ The generated files indicate from where the constraints were fetched, and commen
 You or your development tools, such as GNU Make, must perform that step.
 
 ```{seealso}
-{doc}`/manage/backend`
+{doc}`/admin-guide/add-ons`
 ```
 
 
