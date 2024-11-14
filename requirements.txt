@@ -1,7 +1,5 @@
-# requirements.txt
-graphviz
+lesscpy
 linkify-it-py
-myst-parser
 plone-sphinx-theme
 sphinx-autobuild
 sphinx-copybutton
@@ -14,4 +12,5 @@ sphinxcontrib.httpdomain  # plone.restapi
 sphinxcontrib.httpexample  # plone.restapi
 sphinxcontrib-video
 sphinxext-opengraph
-vale==2.30.0
+sphinxcontrib.mermaid
+vale

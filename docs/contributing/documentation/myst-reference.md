@@ -222,7 +222,7 @@ Example MyST syntax is shown below.
 
 `````{example}
 ````{only} not text
-```{video} /_static/user-manual/blocks/block-copy-cut.mp4
+```{video} ../../volto/_static/user-manual/blocks/block-copy-cut.mp4
 ```
 ````
 `````

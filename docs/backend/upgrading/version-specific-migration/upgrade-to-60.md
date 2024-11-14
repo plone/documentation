@@ -128,9 +128,9 @@ zodb-temporary-storage = off
 
 (v60-templates-bootstrap-5-label)=
 
-## Changed templates to Twitter Bootstrap 5 markup
+## Changed templates to Bootstrap 5 markup
 
-All templates in core Plone have been updated to use Twitter Bootstrap 5 markup.
+All templates in core Plone have been updated to use Bootstrap 5 markup.
 Add-on authors are encouraged to do the same.
 If you have customized a core template, you should check if your change is still needed, and update it to fit the new markup.
 Any CSS and JavaScript that relies on a specific structure, or certain IDs or classes, should be checked as well.

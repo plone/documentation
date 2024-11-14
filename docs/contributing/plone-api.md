@@ -9,4 +9,4 @@ myst:
 
 # Contributing to `plone.api`
 
-See {doc}`/plone.api/contribute/index` under {guilabel}`Backend > plone.api`.
+See {doc}`/plone.api/contribute` under {guilabel}`Backend > plone.api`.

@@ -1,62 +1,51 @@
 ---
 myst:
   html_meta:
-    "description": "Create a Plone project"
-    "property=og:description": "Create a Plone project"
-    "property=og:title": "Create a Plone project"
-    "keywords": "Plone, Plone 6, create, project, install, cookiecutter"
+    "description": "Install Plone with cookiecutter-plone-starter (deprecated)"
+    "property=og:description": "Install Plone with cookiecutter-plone-starter (deprecated)"
+    "property=og:title": "Install Plone with cookiecutter-plone-starter (deprecated)"
+    "keywords": "Plone, Plone 6, Volto, create, project, install, cookiecutter"
 ---
 
 
 (create-a-project-label)=
 
-# Create a project
+# Install Plone with `cookiecutter-plone-starter` (deprecated)
 
-This chapter describes how you can create a web application project using Plone, with full control over development and deployment.
+```{deprecated} Plone 6.1 and Volto 18
+This method to install Plone is now deprecated.
+It was the recommended way to start a new Plone project with Plone 6.0 and Volto 17 or earlier.
+For other installation options, see {ref}`get-started-install-label`.
+```
 
-If instead you want to contribute to a Plone package, see {doc}`/contributing/index`.
+This chapter describes how you can create a web application using the {term}`cookiecutter-plone-starter` template.
+
+This template creates a web application using Plone with the Volto frontend, along with tools for development and deployment.
 
 
 (install-packages-system-requirements-label)=
 
 ## System requirements
 
-Plone 6 has both hardware requirements and software pre-requisites.
+Plone 6.0 has both hardware requirements and software prerequisites.
 
 
 (install-packages-hardware-requirements-label)=
 
 ### Hardware requirements
 
-The hardware requirements below give a rough estimate of the minimum hardware setup needed for a Plone server.
-
-A single Plone installation is able to run many Plone sites.
-
--   Installation of the Plone backend and Classic UI frontend requires a minimum of 256 MB of RAM and 2GB of disk swap space.
--   Installation of the Volto frontend requires a minimum of 2GB of RAM.
--   After installation, running Plone requires a minimum of 256 MB RAM and 512 MB of disk swap space per Plone site.
-    2 GB or more RAM per Plone site is recommended.
--   Minimum 512 MB hard disk space is required.
-    40 GB or more hard disk space is recommended.
-
-
-````{warning}
-{term}`Add-on` products and caching solutions may also increase RAM and disk swap space requirements.
-To avoid RAM and disk swap limitations, we recommend either temporarily resizing your remote machine to accommodate the build, or build your images locally and upload them to an image store, such as [Docker Hub](https://hub.docker.com/) or [GitHub Packages](https://github.com/features/packages).
-```{seealso}
-[How much RAM is required to build a Volto front end?](https://community.plone.org/t/how-much-ram-is-required-to-build-a-volto-front-end/17949) and [Dealing with heap exhaustion while building Volto 17 on limited-RAM host](https://community.plone.org/t/dealing-with-heap-exhaustion-while-building-volto-17-on-limited-ram-host/18078).
+```{include} /_inc/_hardware-requirements.md
 ```
-````
 
 
 (install-packages-prerequisites-label)=
 
-### Pre-requisites for installation
+### Prerequisites for installation
 
 ```{include} ../volto/contributing/install-operating-system.md
 ```
 
--   Python {SUPPORTED_PYTHON_VERSIONS}
+-   Python {SUPPORTED_PYTHON_VERSIONS_PLONE60}
 -   {term}`pipx`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 20.x
@@ -71,9 +60,8 @@ To avoid RAM and disk swap limitations, we recommend either temporarily resizing
 
 #### Python
 
-Installing Python is beyond the scope of this documentation.
-However, it is recommended to use a Python version manager, {term}`pyenv` that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
-Plone requires Python version {SUPPORTED_PYTHON_VERSIONS}.
+```{include} /_inc/_install-python-plone60.md
+```
 
 
 (install-prerequisites-pipx-label)=
@@ -91,38 +79,8 @@ pip install pipx
 
 #### nvm
 
-The following terminal session commands use `bash` for the shell.
-Adapt them for your flavor of shell.
-
-```{seealso}
-See the [`nvm` install and update script documentation](https://github.com/nvm-sh/nvm#install--update-script).
-For the `fish` shell, see [`nvm.fish`](https://github.com/jorgebucaran/nvm.fish).
+```{include} ../volto/contributing/install-nvm.md
 ```
-
-1.  Create your shell profile, if it does not exist.
-
-    ```shell
-    touch ~/.bash_profile
-    ```
-
-2.  Download and run the `nvm` install and update script, and pipe it into `bash`.
-
-    ```shell
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v{NVM_VERSION}/install.sh | bash
-    ```
-
-3.  Source your profile.
-    Alternatively close the session and open a new one.
-
-    ```shell
-    source ~/.bash_profile
-    ```
-
-4.  Verify that the `nvm` version is that which you just installed or updated:
-
-    ```shell
-    nvm --version
-    ```
 
 
 (install-prerequisites-nodejs-label)=
@@ -201,15 +159,9 @@ Now the instructions to install Yarn should work.
 
 (install-packages-install-label)=
 
-## Install Plone 6
+## Install Plone 6.0
 
-We install Plone 6 with {term}`pipx`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
-
-```{note}
-We do not maintain documentation for installing Plone 6 or later with `buildout`.
-For Plone 5, `buildout` was the preferred installation method.
-You can read the [documentation of how to install Plone 5 with `buildout`](https://5.docs.plone.org/manage/installing/installation_minimal_buildout.html), and adapt it to your needs for Plone 6.
-```
+We install Plone 6.0 with {term}`pipx`, {term}`Cookiecutter`, {term}`mxdev`, {term}`make`, and other developer tools.
 
 Create a new directory to hold your project, and make it your current directory.
 
@@ -352,6 +304,9 @@ This will take a few minutes.
 First the backend, then the frontend will be installed.
 
 When the process completes successfully, it will exit with no message.
+
+```{include} /_inc/_install-pillow.md
+```
 
 ````{note}
 If you used a Plone core package name, then `make install` will return an error message such as the following.
