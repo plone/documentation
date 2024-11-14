@@ -98,14 +98,7 @@ Add-on developers and integrators primarily interact with the dependencies on to
 The following diagram visualizes this part.
 
 ```{mermaid}
----
-config:
-  sankey:
-    showValues: false
-    width: 1600
-    height: 800
-    nodeAlignment: "right"
----
+:config: {"sankey": {"showValues": false, "width": 1600, "height": 800, "nodeAlignment": "right"}}
 
 sankey-beta
 
