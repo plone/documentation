@@ -359,7 +359,7 @@ graphviz_output_format = "svg"
 
 
 # -- Mermaid configuration ----------------------------------
-# mermaid_version = "10.9.1"
+mermaid_version = "11.2.0"
 
 
 # -- OpenGraph configuration ----------------------------------
