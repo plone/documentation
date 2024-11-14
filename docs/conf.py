@@ -92,8 +92,9 @@ linkcheck_ignore = [
     r"https://github.com/.*#.*",
     # Ignore github.com searches
     r"https://github.com/search",
+    # Ignore GitHub 429 Client Error: Too Many Requests for url
+    r"https://github.com/collective/plone.app.locales/commits/master/",
     # Ignore rate limiting by github.com
-    r"https://github.com/collective/plone.app.locales/commits/master/",  # 429 Client Error: Too Many Requests for url
     r"https://github.com/plone/volto/issues",
     r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
