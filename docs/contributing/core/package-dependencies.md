@@ -25,22 +25,22 @@ There are multiple level of dependencies:
 
 -   package level (`setup.py`/`setup.cfg`/`pyproject.toml`)
 -   Python level (imports)
--   ZCML level (includes)
+-   {term}`ZCML` level (includes)
 -   testing (need for layers, such as functional testing)
 
 Circular dependencies at the package level have now been resolved.
-
 Nevertheless there is indirection on all other levels.
 Since Plone consists of a lot of packages, it is complex to untangle those.
 
 
-## Mental model 
+## Mental model
 
 ### Borders
 
-As a rough base mental model for how Plone is organized in Plone 6.1, there are two packages as dividing lines:
+As a rough base mental model for how Plone is organized in Plone 6.1, there are two packages that serve as dividing lines.
 
-1.  `Products.CMFPlone` and all below defines the Plone core. Everything in here depends on the `plone.base`.
+1.  `Products.CMFPlone` and all below defines the Plone core.
+    Everything in here depends on the `plone.base`.
 2.  `plone.base` as the border to the Application Server and Content Management Framework and its dependencies
 
 ```{mermaid}
@@ -68,33 +68,33 @@ block-beta
 
 ### Main components
 
-Some explanation on the mental model
+The following points describe the mental model.
 
-- Foundation:
-  - `Zope` core and its dependencies is the application server,
-  - the Zope component architecture (ZCA) framework and 
-  - some additional packages from the wider Zope ecosystem.
-  - then there are generic, standalone Plone libraries,  
-  - plus various other Python libraries.
-- `Products.CMFCore` provides on top of Zope very basic content management features we rely on.
-- `plone.base` defines several interfaces as contracts for the component architecture we build on. 
-   Additional it provides some base classes and utility functions we use often. 
-   It also depends on `Products.CMFCore` and so `Zope`.
-   Additional it depends on generic functionality like `plone.dexterity`, `plone.behavior` and `plone.registry`.
-- The space of plenty `plone.*`, `plone.app.*` and related libraries defines the core of Plone.
-- On top of this core, depending on these packages, is `Products.CMFPlone` which is the package to depend on if the basic Plone core is referenced.
-- On top of `Products.CMFPlone` 
-  - are the core APIs like `plone.api` and `plone.restapi`,
-  - there is the distribution support `plone.distribution` and specific distributions, currently `plone.volto`, `plone.classicui`, 
-  - are core addons like Working Copy Support (`plone.app.iterate`), discussion support (`plone.app.discussion`), ... 
-  - is `plone.app.upgrade`, the package to upgrade between Plone version.
-- The package `Plone` is the package to depend on if you want to depend on the whole Plone with everything.
-  This meta package without any code depends on all other packages.
-  It is what you want to install if you do not want to care about the details with all batteries included.
+-   Foundation:
+    - `Zope` core and its dependencies is the application server,
+    - the Zope component architecture (ZCA) framework and 
+    - some additional packages from the wider Zope ecosystem.
+    - Then there are generic, standalone Plone libraries,  
+    - plus various other Python libraries.
+-   `Products.CMFCore` provides very basic content management features on top of Zope on which Plone relies.
+-   `plone.base` defines several interfaces as contracts for the component architecture on which Plone is built.
+    Additionally it provides some base classes and utility functions that Plone often uses. 
+    It also depends on `Products.CMFCore`, and therefore `Zope`.
+    Additionally it depends on generic functionality provided by `plone.dexterity`, `plone.behavior`, and `plone.registry`.
+-   The space of many `plone.*`, `plone.app.*`, and their related libraries defines the core of Plone.
+-   On top of this core, depending on these packages, is `Products.CMFPlone`, which is the package to depend on if the basic Plone core is referenced.
+-   On top of `Products.CMFPlone` are the following.
+    -   The core APIs `plone.api` and `plone.restapi`.
+    -   There is distribution support in `plone.distribution` and specific distributions, currently `plone.volto` and `plone.classicui`.
+    -   Core add-ons include Working Copy Support from `plone.app.iterate`, discussion support (`plone.app.discussion`), and other add-ons.
+    -   `plone.app.upgrade` is the package to upgrade between Plone version.
+-   If you want to depend on the whole Plone with everything, you should depend on the package `Plone`.
+    This meta package without any code depends on all other packages.
+    It is what you want to install if you don't care about the details and get "batteries included".
 
-### The space on top of CMFPlone
+### The space on top of `Products.CMFPlone`
 
-Add-on developers and integrators are primary interacting with the dependencies on top of CMFPlone.
+Add-on developers and integrators primarily interact with the dependencies on top of `Products.CMFPlone`.
 The following diagram visualizes this part.
 
 ```{mermaid}
@@ -150,12 +150,11 @@ sankey-beta
     plone.api,Core,160
 
     Plone,Upgrade,20
-
 ```
 
-## A more detailed view on the architecture
+## Detailed view of the architecture
 
-A more detailed view on the whole architecture is sketched here:
+A more detailed view of the whole architecture is sketched here:
 
 ```{mermaid}
 flowchart TB
@@ -214,12 +213,11 @@ flowchart TB
     caching -- depends on --> ploneapi
     exportimport -- uses serializers of --> restapi
     exportimport -- depends on --> ploneapi
-
 ```
 
 ## Packages in detail
 
-Looking deeper into those packages, there are more sub-divisions, but first we place them into three groups:
+Looking deeper into those packages, there are more sub-divisions, but first we place them into three groups.
 
 
 ### Above `Products.CMFPlone`
