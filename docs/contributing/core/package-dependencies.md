@@ -44,6 +44,9 @@ As a rough base mental model for how Plone is organized in Plone 6.1, there are 
 2.  `plone.base` as the border to the Application Server and Content Management Framework and its dependencies
 
 ```{mermaid}
+:alt: Mental model of Plone
+:caption: Mental model of Plone
+
 block-beta
     columns 4
     Plone["Plone<br/>integraton of all in one release"]:4
@@ -96,9 +99,13 @@ The following points describe the mental model.
 
 Add-on developers and integrators primarily interact with the dependencies on top of `Products.CMFPlone`.
 The following diagram visualizes this part.
+You can zoom in on the diagram.
 
 ```{mermaid}
 :config: {"sankey": {"showValues": false, "width": 1600, "height": 800, "nodeAlignment": "right"}}
+:zoom:
+:alt: Diagram of the space on top of Products.CMFPlone
+:caption: Diagram of the space on top of Products.CMFPlone
 
 sankey-beta
 
@@ -147,9 +154,14 @@ sankey-beta
 
 ## Detailed view of the architecture
 
-A more detailed view of the whole architecture is sketched here:
+The following diagram provides a more detailed view of the whole architecture of Plone.
+You can zoom in on the diagram.
 
 ```{mermaid}
+:zoom:
+:alt: Architecture of Plone
+:caption: Architecture of Plone
+
 flowchart TB
  subgraph Release["Release"]
         Plone[["'Plone' Package"]]
