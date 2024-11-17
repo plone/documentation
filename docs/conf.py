@@ -249,15 +249,16 @@ html_theme_options = {
         "json_url": "https://6.docs.plone.org/_static/switcher.json",
         "version_match": version,
     },
-    "use_edit_page_button": True,
+    "use_edit_page_button": False,  # This option does not support multiple repositories.
     "use_issues_button": True,
     "use_repository_button": True,
 }
 # suggest edit link
 # remark: {{ file_name }} is mandatory in "edit_page_url_template"
-html_context = {
-    "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
-}
+# used by `use_edit_page_button`, but it does not support multiple repositories
+# html_context = {
+#     "edit_page_url_template": "https://6.docs.plone.org/contributing/documentation/index.html?{{ file_name }}#making-contributions-on-github",
+# }
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
