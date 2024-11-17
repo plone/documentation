@@ -96,11 +96,11 @@ The following are example files that you can use to configure your project for p
 
 -   [Plone Sphinx Theme `Makefile`](https://github.com/plone/plone-sphinx-theme/blob/main/Makefile), specifically the `rtd-pr-preview` section.
     This is the command to use to build documentation previews on Read the Docs.
--   [Plone Sphinx Theme `requirements-dev.txt`](https://github.com/plone/plone-sphinx-theme/blob/main/requirements-docs.txt) specifies the requirements to use Plone Sphinx Theme and build the docs.
+-   [Plone Sphinx Theme `requirements-docs.txt`](https://github.com/plone/plone-sphinx-theme/blob/main/requirements-docs.txt) specifies the requirements to use Plone Sphinx Theme and build the docs.
 -   [Plone Sphinx Theme `conf.py`](https://github.com/plone/plone-sphinx-theme/blob/main/docs/conf.py) the Sphinx configuration file to build the docs.
--   [Plone Sphinx Theme `.readthedocs.yaml`](https://github.com/plone/plone-sphinx-theme/blob/main/.readthedocs.yaml) specifies the configuration and command to build the docs.
--   [Plone Sphinx Theme `.github/workflows/rtd-pr-preview.yml`](https://github.com/plone/plone-sphinx-theme/blob/main/.github/workflows/rtd-pr-preview.yml) specifies when to build the docs, specifically only when a pull request is opened against the `main` branch and there are changes to documentation files.
-    You might need to adjust the branch name, paths, and files to check for changes.
+-   [Plone Sphinx Theme `.readthedocs.yaml`](https://github.com/plone/plone-sphinx-theme/blob/main/.readthedocs.yaml) specifies the configuration and Makefile command that Read the Docs uses to build the docs.
+-   [Plone Sphinx Theme `.github/workflows/rtd-pr-preview.yml`](https://github.com/plone/plone-sphinx-theme/blob/main/.github/workflows/rtd-pr-preview.yml) specifies when to build the docs, specifically only when a pull request is opened and there are changes to the documentation files.
+    You might need to adjust the `paths` and `project-slug` for your documentation.
 
 
 ### Import your project
@@ -113,9 +113,10 @@ After logging in to your Read the Docs account, you can import your project.
 1.  In the {guilabel}`Add project` screen, you can configure basic project settings, including its {guilabel}`Name`, {guilabel}`Repository URL`, {guilabel}`Default branch`, and {guilabel}`Language`.
     The defaults are usually accurate.
 1.  Click {guilabel}`Next`.
-1.  A sample `.readthedocs.yaml` file is suggested, if you have not already added one.
-1.  Click {guilabel}`Finish`.
-    Read the Docs will redirect you to the project details, and start building the docs.
+    Read the Docs will redirect you to the project details, and start building the docs, but you don't need to wait.
+1.  Click the {guilabel}`Settings` button.
+1.  Scroll to the end of the page and check the box for {guilabel}`Build pull requests for this project`.
+1.  Click {guilabel}`Save` to save the new setting.
 
 
 ### Search engine indexing
@@ -138,10 +139,10 @@ cp source-path/block-robots.txt docs-root-path/robots.txt
 ```
 
 ```{seealso}
+-   [`robots.txt` support](https://docs.readthedocs.io/en/stable/reference/robots.html)
 -   [Automation rules](https://docs.readthedocs.io/en/stable/automation-rules.html)
 -   [Versions](https://docs.readthedocs.io/en/stable/versions.html)
 -   [Managing versions automatically](https://docs.readthedocs.io/en/stable/guides/automation-rules.html)
--   [`robots.txt` support](https://docs.readthedocs.io/en/stable/reference/robots.html)
 ```
 
 
