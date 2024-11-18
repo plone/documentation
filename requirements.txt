@@ -3,13 +3,13 @@ linkify-it-py
 plone-sphinx-theme
 sphinx-autobuild
 sphinx-copybutton
-sphinx-design
+sphinx-design  # Documentation only
 sphinx-examples
 sphinx-notfound-page  # Documentation only
 sphinx-reredirects
 sphinx-sitemap
-sphinxcontrib.httpdomain
-sphinxcontrib.httpexample
+sphinxcontrib.httpdomain  # plone.restapi
+sphinxcontrib.httpexample  # plone.restapi
 sphinxcontrib-video
 sphinxext-opengraph
 sphinxcontrib.mermaid

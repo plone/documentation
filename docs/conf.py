@@ -33,6 +33,7 @@ version = "6"
 # The full version, including alpha/beta/rc tags.
 release = "6"
 
+
 # -- General configuration ----------------------------------------------------
 
 # Add any paths that contain templates here, relative to this directory.
@@ -85,11 +86,14 @@ linkcheck_ignore = [
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new",  # requires auth
+    r"https://github.com/plone/volto/issues/new/choose",  # requires auth
     r"https://opensource.org/",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
     # Ignore github.com searches
     r"https://github.com/search",
+    # Ignore GitHub 429 Client Error: Too Many Requests for url
+    r"https://github.com/collective/plone.app.locales/commits/master/",
     # Ignore rate limiting by github.com
     r"https://github.com/plone/volto/issues",
     r"https://github.com/plone/volto/pull",
@@ -98,11 +102,8 @@ linkcheck_ignore = [
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
     # Ignore unreliable sites
-    # r"https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
-    # r"https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
-    # r"https://stackoverflow.com",  # volto and documentation  # TODO retest with latest Sphinx.
-    r"https://web.archive.org/",  # volto
-#    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
+    r"https://web.archive.org/",
+    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
     r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
 linkcheck_allowed_redirects = {  # TODO: Confirm usage of linkcheck_allowed_redirects
@@ -241,22 +242,23 @@ html_theme_options = {
     "primary_sidebar_end": [
         "version-switcher",
     ],
-    "repository_branch": "main",
+    "repository_branch": "6.0",
     "repository_url": "https://github.com/plone/documentation",
     "search_bar_text": "Search",
     "switcher": {
         "json_url": "https://6.docs.plone.org/_static/switcher.json",
         "version_match": version,
     },
-    "use_edit_page_button": True,
+    "use_edit_page_button": False,  # This option does not support multiple repositories.
     "use_issues_button": True,
     "use_repository_button": True,
 }
 # suggest edit link
 # remark: {{ file_name }} is mandatory in "edit_page_url_template"
-html_context = {
-    "edit_page_url_template": "https://6.docs.plone.org/contributing/index.html?{{ file_name }}#making-contributions-on-github",
-}
+# used by `use_edit_page_button`, but it does not support multiple repositories
+# html_context = {
+#     "edit_page_url_template": "https://6.docs.plone.org/contributing/documentation/index.html?{{ file_name }}#making-contributions-on-github",
+# }
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
@@ -275,7 +277,6 @@ html_js_files = []
 html_extra_path = [
     "robots.txt",
 ]
-
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -295,16 +296,7 @@ html_static_path = [
 # Don't show class signature with the class' name.
 autodoc_class_signature = "separated"
 
-
-# -- Options for sphinx_sitemap to html -----------------------------
-
-# Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6.docs.plone.org/"
-# https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
-sitemap_url_scheme = "{link}"
-sitemap_filename = "sitemap-custom.xml"
-
-# -- Options for myST markdown conversion to html -----------------------------
+# -- Options for MyST markdown conversion to HTML -----------------------------
 
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
@@ -327,6 +319,7 @@ myst_substitutions = {
     "postman_retain_headers": "![](../_static/img/postman_retain_headers.png)",
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
 }
+
 
 # -- Intersphinx configuration ----------------------------------
 
@@ -374,12 +367,13 @@ ogp_custom_meta_tags = [
 ]
 
 
-# -- sphinx.ext.todo -----------------------
+# -- Options for sphinx.ext.todo -----------------------
+
 # See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
 todo_include_todos = True
 
 
-# -- sphinx-notfound-page configuration ----------------------------------
+# -- Options for sphinx-notfound-page ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
@@ -394,6 +388,15 @@ redirects = {
     "install/install-from-packages": "/install/create-project.html",
     "manage/frontend": "/volto/addons/index.html",
 }
+
+
+# -- Options for sphinx_sitemap to HTML -----------------------------
+
+# Used by sphinx_sitemap to generate a sitemap
+html_baseurl = "https://6.docs.plone.org/"
+# https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
+sitemap_url_scheme = "{link}"
+sitemap_filename = "sitemap-custom.xml"
 
 
 # -- Options for HTML help output -------------------------------------------------
@@ -411,7 +414,7 @@ latex_documents = [
         "index",
         "PloneDocumentation.tex",
         "Plone Documentation",
-        "The Plone community",
+        "Plone community",
         "manual",
     ),
 ]
@@ -421,6 +424,7 @@ latex_documents = [
 latex_logo = "_static/logo_2x.png"
 
 # --  Configuration for source_replacements extension -----------------------
+
 # An extension that allows replacements for code blocks that
 # are not supported in `rst_epilog` or other substitutions.
 # https://stackoverflow.com/a/56328457/2214933

@@ -30,8 +30,13 @@ clean:  ## Clean docs build directory
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
 
 .PHONY: distclean
-distclean: clean ## Clean docs build directory and Python virtual environment
+distclean: clean ## Clean docs build directory, Python virtual environment, and symlinks
 	rm -rf venv
+	rm docs/plone.api
+	rm docs/plone.restapi
+	rm docs/volto
+	@echo
+	@echo "Cleaned docs build directory, Python virtual environment, and symlinks."
 
 venv/bin/python:  ## Setup up Python virtual environment and install requirements
 	python3 -m venv venv
@@ -40,24 +45,24 @@ venv/bin/python:  ## Setup up Python virtual environment and install requirement
 	@echo
 	@echo "Installation of requirements completed."
 
-docs/plone.api:
-	git submodule init; \
-	git submodule update; \
-	venv/bin/pip install -e submodules/plone.api/"[test]"; \
+docs/plone.api:  ## Setup plone.api docs
+	git submodule init
+	git submodule update
+	venv/bin/pip install -e submodules/plone.api/"[test]"
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
 	@echo
 	@echo "Documentation of plone.api initialized."
 
-docs/plone.restapi:
-	git submodule init; \
-	git submodule update; \
+docs/plone.restapi:  ## Setup plone.restapi docs
+	git submodule init
+	git submodule update
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	@echo
 	@echo "Documentation of plone.restapi initialized."
 
-docs/volto:
-	git submodule init; \
-	git submodule update; \
+docs/volto:  ## Setup Volto docs
+	git submodule init
+	git submodule update
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	@echo
 	@echo "Documentation of volto initialized."
