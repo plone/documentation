@@ -231,7 +231,7 @@ Example MyST syntax is shown below.
 
 ### Video - remote
 
-You can embed a remotely hosted video from [YouTube](https://www.youtube.com/), [Vimeo](https://vimeo.com/, or [PeerTube](https://joinpeertube.org/).
+You can embed a remotely hosted video from [YouTube](https://www.youtube.com/), [Vimeo](https://vimeo.com/), or [PeerTube](https://joinpeertube.org/).
 
 The following example shows how to embed a video from YouTube using privacy mode.
 You should use privacy mode so that visitors from the European Union don't get blocked.
