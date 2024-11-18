@@ -223,6 +223,7 @@ Example MyST syntax is shown below.
 `````{example}
 ````{only} not text
 ```{video} ../../volto/_static/user-manual/blocks/block-copy-cut.mp4
+:alt: Copy or cut a block in Volto
 ```
 ````
 `````
