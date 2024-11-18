@@ -202,7 +202,7 @@ The following MyST example for `figure` will display as shown below.
 ````
 
 
-### Video
+### Video - local
 
 To embed local videos, such as recordings of demonstrating the user interface, we require that the videos be saved as `.mp4` for greatest compatibility, usability, accessibility, and reduced file size.
 
@@ -227,6 +227,23 @@ Example MyST syntax is shown below.
 ```
 ````
 `````
+
+
+### Video - remote
+
+You can embed a remotely hosted video from [YouTube](https://www.youtube.com/), [Vimeo](https://vimeo.com/, or [PeerTube](https://joinpeertube.org/).
+
+The following example shows how to embed a video from YouTube using privacy mode.
+You should use privacy mode so that visitors from the European Union don't get blocked.
+
+```{youtube} kHec4MXH8vo
+:privacy_mode:
+:width: 100%
+```
+
+```{seealso}
+For additional configuration options, see the usage documentation for [`sphinxcontrib-youtube`](https://sphinxcontrib-youtube.readthedocs.io/en/latest/usage.html).
+```
 
 
 ### Diagrams and graphs with Graphviz
