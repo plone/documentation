@@ -168,7 +168,9 @@ git pull
 
 First identify the names of the Plone packages you want to work on.
 If you do not know, you can open an issue in the Plone GitHub repository for [`Products.CMFPlone`](https://github.com/plone/Products.CMFPlone/issues/), and someone might identify the source within a few days.
+You can also read the conceptual guide {doc}`/conceptual-guides/package-dependencies` to get a mental model of the structure of Plone.
 You can also ask in the [Plone Community Forum](https://community.plone.org/).
+
 Only a few packages are in {file}`src/` by default.
 
 Next create a new file {file}`buildout.local.cfg`, and add the names of packages that you want to develop under the `auto-checkout` list.

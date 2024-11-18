@@ -18,6 +18,7 @@ This part of the documentation provides explanation of concepts to deepen and br
 choose-user-interface
 distributions
 package-management
+package-dependencies
 make-build-backend-walk-through
 components
 ```
