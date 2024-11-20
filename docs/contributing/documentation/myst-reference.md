@@ -16,7 +16,7 @@ This chapter provides information and examples for how to write proper MyST synt
 
 ## MyST, reStructuredText, and Markdown
 
-We use [MyST, or Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/), a rich and extensible flavor of Markdown, for authoring training documentation.
+You can use [MyST, or Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/), a rich and extensible flavor of Markdown, for authoring training documentation.
 
 MyST extends {term}`Markdown` by incorporating all the features of {term}`reStructuredText` and {term}`Sphinx` and its extensions.
 Contributors are welcome to use either Markdown or MyST syntax.
@@ -126,7 +126,7 @@ This will preserve legibility of images.
 
 #### Enhance images
 
-We use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
+You can use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
 
 Cards allow the display of a caption, create a link to the source image to display when it is too large to fit within the documentation page without scaling, and add a border to demarcate the image from the page's white background.
 
@@ -166,7 +166,7 @@ The following MyST example will display as shown below.
 
 #### Inline images
 
-For inline images, we use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
+For inline images, you can use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
 The HTML attribute `class` must be set to `inline` to render the image inline at `1rem`. 
 Images and figures should always include `alt` text.
 Example syntax is shown below.
@@ -220,8 +220,8 @@ See {ref}`static-assets-label` for details.
 
 Example MyST syntax is shown below.
 
-`````{example}
-````{only} not text
+`````{only} not text
+````{example}
 ```{video} ../../volto/_static/user-manual/blocks/block-copy-cut.mp4
 :alt: Copy or cut a block in Volto
 ```
@@ -233,22 +233,45 @@ Example MyST syntax is shown below.
 
 You can embed a remotely hosted video from [YouTube](https://www.youtube.com/), [Vimeo](https://vimeo.com/), or [PeerTube](https://joinpeertube.org/).
 
-The following example shows how to embed a video from YouTube using privacy mode.
-You should use privacy mode so that visitors from the European Union don't get blocked.
+You should use privacy or "do not track" mode so that visitors do not get tracked by advertisers or analytics.
+PeerTube does not need a privacy mode because it does not track users.
 
+Use the following parameters in the `youtube` directive.
+
+`:privacy_mode:`
+:   For videos hosted at YouTube.
+    Links to videos hosted at `www.youtube.com` get converted to `www.youtube-nocookie.com`.
+
+`:url_parameters:`
+:   For additional privacy on YouTube, use the argument `?privacy_mode=1`.
+    For Vimeo, use `?dnt=1`.
+
+The following example shows how to embed a video from YouTube using privacy mode arguments.
+
+`````{only} not text
+````{example}
 ```{youtube} kHec4MXH8vo
 :privacy_mode:
+:url_parameters: ?privacy_mode=1
 :width: 100%
 ```
+````
+`````
 
 ```{seealso}
 For additional configuration options, see the usage documentation for [`sphinxcontrib-youtube`](https://sphinxcontrib-youtube.readthedocs.io/en/latest/usage.html).
+
+For an in depth discussion of privacy issues, see [How to embed YouTube videos with maximum privacy (GDPR-compliant)](https://usercode.de/blog/how-to-embed-youtube-videos-with-maximum-privacy-gdpr-compliant).
+
+-   PeerTube's [Privacy guide](https://docs.joinpeertube.org/admin/privacy-guide) helps administrators comply with terms of government policies.
+-   YouTube's [Manage video embedding options, Turn on privacy-enhanced mode](https://support.google.com/youtube/answer/171780?hl=en#zippy=%2Cturn-on-privacy-enhanced-mode)
+-   Vimeo's [supported player parameters](https://help.vimeo.com/hc/en-us/articles/12426260232977-About-Player-parameters#h_01FNYA7F7GKWE17XDQJPMBC058)
 ```
 
 
 ### Diagrams and graphs with Graphviz
 
-We use [Graphviz](https://graphviz.org/download/) and its Sphinx extension [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) to render diagrams and graph visualizations.
+You can use [Graphviz](https://graphviz.org/download/) and its Sphinx extension [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) to render diagrams and graph visualizations.
 
 The following MyST example will display as shown below.
 
