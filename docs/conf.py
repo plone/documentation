@@ -62,6 +62,7 @@ extensions = [
     "sphinxcontrib.httpexample",  # plone.restapi
     "sphinxcontrib.mermaid",
     "sphinxcontrib.video",
+    "sphinxcontrib.youtube",
     "sphinxext.opengraph",
 ]
 
