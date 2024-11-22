@@ -20,7 +20,7 @@ This document covers how to set up and build the Plone Documentation and check i
 
 Installation of Plone 6 Documentation includes prerequisites and the repository itself.
 
-```{include} ../../volto/contributing/install-operating-system.md
+```{include} ../../volto/_inc/_install-operating-system.md
 ```
 -   {ref}`setup-build-installation-python-label` {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 -   {ref}`setup-build-installation-gnu-make-label`
@@ -38,7 +38,7 @@ Installation of Plone 6 Documentation includes prerequisites and the repository 
 
 ### GNU make
 
-```{include} ../../volto/contributing/install-make.md
+```{include} ../../volto/_inc/_install-make.md
 ```
 
 

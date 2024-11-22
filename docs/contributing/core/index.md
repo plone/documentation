@@ -37,7 +37,7 @@ Before you contribute to Plone core, check the [version support policy](https://
 It is beyond the scope of this documentation to provide installation instructions for all prerequisites for your operating system.
 However, the following links and sections below may be helpful.
 
-```{include} ../../volto/contributing/install-operating-system.md
+```{include} ../../volto/_inc/_install-operating-system.md
 ```
 
 -   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
@@ -55,13 +55,13 @@ Plone requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
 
 ### Make
 
-```{include} ../../volto/contributing/install-make.md
+```{include} ../../volto/_inc/_install-make.md
 ```
 
 
 ### Git
 
-```{include} ../../volto/contributing/install-git.md
+```{include} ../../volto/_inc/_install-git.md
 ```
 
 ### C compiler

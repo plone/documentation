@@ -148,12 +148,7 @@ exclude_patterns = [
     "plone.restapi/performance",
     "plone.restapi/src",
     "plone.restapi/var",
-    "volto/contributing/branch-policy.md",
-    "volto/contributing/install-docker.md",
-    "volto/contributing/install-git.md",
-    "volto/contributing/install-make.md",
-    "volto/contributing/install-nodejs.md",
-    "volto/contributing/install-operating-system.md",
+    "volto/_inc/*",
 ]
 
 suppress_warnings = [
@@ -442,8 +437,6 @@ def source_replace(app, docname, source):
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
     "{PLONE_BACKEND_PATCH_VERSION}": "6.0.13",
-    # "{SUPPORTED_PYTHON_VERSIONS_PLONE60}": "3.8, 3.9, 3.10, 3.11, or 3.12",
-    # "{SUPPORTED_PYTHON_VERSIONS_PLONE61}": "3.10, 3.11, or 3.12",
 }
 
 # Finally, configure app attributes.
