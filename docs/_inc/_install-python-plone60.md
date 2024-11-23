@@ -4,7 +4,7 @@ However, it is recommended to use a Python version manager, {term}`pyenv`, that 
 Plone 6.0 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE60}}.
 
 ```{warning}
-Do not create or activate a Python virtual environment.
+Do not activate a Python virtual environment.
 Doing so may cause installation errors.
 Let the tools handle this for you.
 Additionally the commands in this guide use explicit paths to packages.
