@@ -32,6 +32,11 @@ The URL may vary, according to its configuration in the repository's {file}`Make
 ```
 
 
+## Editor tools
+
+-   [MyST-Markdown VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight)
+
+
 (authors-quality-checks-label)=
 
 ## Quality checks
