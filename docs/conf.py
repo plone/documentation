@@ -241,6 +241,7 @@ html_theme_options = {
     "repository_branch": "6.0",
     "repository_url": "https://github.com/plone/documentation",
     "search_bar_text": "Search",
+    "show_toc_level": 2,
     "switcher": {
         "json_url": "https://6.docs.plone.org/_static/switcher.json",
         "version_match": version,
