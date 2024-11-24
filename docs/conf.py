@@ -100,16 +100,16 @@ linkcheck_ignore = [
     r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
-    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
+    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",  # volto
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
     # Ignore unreliable sites
     r"https://web.archive.org/",
-    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
     r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
-linkcheck_allowed_redirects = {  # TODO: Confirm usage of linkcheck_allowed_redirects
+linkcheck_allowed_redirects = {
     # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
-    r"https://chrome\.google\.com/webstore/detail/.*": r"https://consent\.google\.com/.*",
+    # Example
+    # r"https://chrome\.google\.com/webstore/detail/.*": r"https://consent\.google\.com/.*",
 }
 linkcheck_anchors = True
 linkcheck_timeout = 5
