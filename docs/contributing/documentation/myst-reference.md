@@ -112,7 +112,7 @@ For example, in the `volto` submodule, inside its `src/docs` directory, place an
 In your markup, use that same `docs`-root-relative path for the target, such as `/_static/user-manual/block-left-add-icon.png`.
 Don't use file-relative paths.
 
-Configuration in the `conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
+Configuration in the {file}`conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
 
 
 #### Width of media
