@@ -7,5 +7,5 @@ Plone 6.0 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE60}}.
 Do not activate a Python virtual environment.
 Doing so may cause installation errors.
 Let the tools handle this for you.
-Additionally the commands in this guide use explicit paths to packages.
+Additionally the commands in this guide use explicit paths to binaries.
 ```
