@@ -158,10 +158,20 @@ The following diagram provides a more detailed view of the whole architecture of
 You can zoom in on the diagram.
 
 ```{mermaid}
+:config: {"theme": "base", "darkMode": "true"}
 :zoom:
 :alt: Architecture of Plone
-:caption: Architecture of Plone
 :caption: _Architecture of Plone_
+
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#fefefe',
+      'lineColor': '#aaa'
+    }
+  }
+}%%
 
 flowchart TB
  subgraph Release["Release"]
