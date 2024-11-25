@@ -45,7 +45,7 @@ As a rough base mental model for how Plone is organized in Plone 6.1, there are 
 
 ```{mermaid}
 :alt: Mental model of Plone
-:caption: Mental model of Plone
+:caption: _Mental model of Plone_
 
 block-beta
     columns 4
@@ -105,7 +105,7 @@ You can zoom in on the diagram.
 :config: {"sankey": {"showValues": false, "width": 1600, "height": 800, "nodeAlignment": "right"}}
 :zoom:
 :alt: Diagram of the space on top of Products.CMFPlone
-:caption: Diagram of the space on top of Products.CMFPlone
+:caption: _Diagram of the space on top of `Products.CMFPlone`_
 
 sankey-beta
 
@@ -161,6 +161,7 @@ You can zoom in on the diagram.
 :zoom:
 :alt: Architecture of Plone
 :caption: Architecture of Plone
+:caption: _Architecture of Plone_
 
 flowchart TB
  subgraph Release["Release"]
