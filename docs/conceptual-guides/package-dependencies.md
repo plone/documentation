@@ -3,11 +3,11 @@ myst:
   html_meta:
     "description": "This chapter describes the architecture of Plone's packages and dependencies."
     "property=og:description": "This chapter describes the architecture of Plone's packages and dependencies."
-    "property=og:title": "Architecture: packages and dependecies"
-    "keywords": "Architecture, packages, dependecies, Plone"
+    "property=og:title": "Architecture: packages and dependencies"
+    "keywords": "Architecture, packages, dependencies, Plone"
 ---
 
-# Architecture: packages and dependecies
+# Architecture: packages and dependencies
 
 This chapter describes the architecture of Plone's packages and dependencies.
 
@@ -29,19 +29,22 @@ There are multiple level of dependencies:
 -   testing (need for layers, such as functional testing)
 
 Circular dependencies at the package level have now been resolved.
-Nevertheless there is indirection on all other levels.
+Nevertheless, there is indirection on all other levels.
 Since Plone consists of a lot of packages, it is complex to untangle those.
 
 
 ## Mental model
 
+This section describes a mental model that organizes Plone 6.1 packages into three groups separated by two packages that define the borders between these groups.
+
+
 ### Borders
 
-As a rough base mental model for how Plone is organized in Plone 6.1, there are two packages that serve as dividing lines.
+In Plone 6.1, there are two packages that serve as dividing lines.
 
-1.  `Products.CMFPlone` and all below defines the Plone core.
+1.  `Products.CMFPlone` and all packages below it define the Plone core.
     Everything in here depends on the `plone.base`.
-2.  `plone.base` as the border to the Application Server and Content Management Framework and its dependencies
+2.  `plone.base` is the border between the Application Server and Content Management Framework (CMF) with its dependencies.
 
 ```{mermaid}
 :alt: Mental model of Plone
@@ -81,19 +84,20 @@ The following points describe the mental model.
     - plus various other Python libraries.
 -   `Products.CMFCore` provides very basic content management features on top of Zope on which Plone relies.
 -   `plone.base` defines several interfaces as contracts for the component architecture on which Plone is built.
-    Additionally it provides some base classes and utility functions that Plone often uses. 
+    Additionally, it provides some base classes and utility functions that Plone often uses. 
     It also depends on `Products.CMFCore`, and therefore `Zope`.
-    Additionally it depends on generic functionality provided by `plone.dexterity`, `plone.behavior`, and `plone.registry`.
+    Additionally, it depends on generic functionality provided by `plone.dexterity`, `plone.behavior`, and `plone.registry`.
 -   The space of many `plone.*`, `plone.app.*`, and their related libraries defines the core of Plone.
 -   On top of this core, depending on these packages, is `Products.CMFPlone`, which is the package to depend on if the basic Plone core is referenced.
 -   On top of `Products.CMFPlone` are the following.
     -   The core APIs `plone.api` and `plone.restapi`.
     -   There is distribution support in `plone.distribution` and specific distributions, currently `plone.volto` and `plone.classicui`.
     -   Core add-ons include Working Copy Support from `plone.app.iterate`, discussion support (`plone.app.discussion`), and other add-ons.
-    -   `plone.app.upgrade` is the package to upgrade between Plone version.
+    -   `plone.app.upgrade` is the package to upgrade between Plone versions.
 -   If you want to depend on the whole Plone with everything, you should depend on the package `Plone`.
     This meta package without any code depends on all other packages.
     It is what you want to install if you don't care about the details and get "batteries included".
+
 
 ### The space on top of `Products.CMFPlone`
 
@@ -151,6 +155,7 @@ sankey-beta
 
     Plone,Upgrade,20
 ```
+
 
 ## Detailed view of the architecture
 
@@ -231,9 +236,10 @@ flowchart TB
     exportimport -- depends on --> ploneapi
 ```
 
+
 ## Packages in detail
 
-Looking deeper into those packages, there are more sub-divisions, but first we place them into three groups.
+Looking deeper into those packages, there are more subdivisions which fall into three groups.
 
 
 ### Above `Products.CMFPlone`
