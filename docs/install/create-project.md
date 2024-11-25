@@ -30,6 +30,15 @@ This template creates a web application using Plone with the Volto frontend, alo
 Plone 6.0 has both hardware requirements and software prerequisites.
 
 
+### Supported web browsers
+
+```{include} /_inc/_install-browser-reqs-volto.md
+```
+
+```{include} /_inc/_install-browser-reqs-classic-ui.md
+```
+
+
 (install-packages-hardware-requirements-label)=
 
 ### Hardware requirements

@@ -22,6 +22,13 @@ For other installation options, see {ref}`get-started-install-label`.
 
 (install-buildout-prerequisites)=
 
+
+## Supported web browsers
+
+```{include} /_inc/_install-browser-reqs-classic-ui.md
+```
+
+
 ## Prerequisites for installation
 
 -   For Plone 6.0, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE60}}

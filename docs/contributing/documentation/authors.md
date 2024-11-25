@@ -18,13 +18,23 @@ For general markup syntax, see {doc}`myst-reference`.
 
 ## Synchronize the browser while editing
 
-Use `sphinx-autobuild` to view changes in the browser while you edit documentation.
+The following shell command rebuilds documentation as you edit its files, with live reload in the browser.
 
 ```shell
 make livehtml
 ```
 
-You can open a browser at http://127.0.0.1:8000/ to preview the documentation.
+The console will give you the URL to open in a web browser.
+The URL may vary, according to its configuration in the repository's {file}`Makefile`.
+
+```console
+[sphinx-autobuild] Serving on http://127.0.0.1:8050
+```
+
+
+## Editor tools
+
+-   [MyST-Markdown VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ExecutableBookProject.myst-highlight)
 
 
 (authors-quality-checks-label)=
@@ -46,18 +56,37 @@ To validate markup, run the following command.
 make html
 ```
 
-Open `/_build/html/index.html` in a web browser.
+The console will report any errors.
+You should fix the errors for those pages that you edit.
+
+
+### Override `html` build configuration options
+
+Sphinx supports overriding configuration options.
+The following examples serve as tips for spotting mistakes in your documentation when you have too many errors or warnings.
+
+In Sphinx, you can use the `SPHINXOPTS` environment variable to set [configuration options](https://www.sphinx-doc.org/en/master/usage/configuration.html) of [`sphinx-build`](https://www.sphinx-doc.org/en/master/man/sphinx-build.html).
+Syntax is in the following form.
+
+```shell
+make SPHINXOPTS="OPTION VALUE" BUILDER
+```
+
+The following example shows how to clean then build a live HTML preview of the documentation while suppressing syntax highlighting failures.
+
+```shell
+make SPHINXOPTS="-D suppress_warnings=['misc.highlighting_failure']" clean livehtml
+```
 
 
 (authors-english-label)=
 
-### American English spelling, grammar, and syntax, and style guide
+### Vale for American English spelling, grammar, and syntax, and style guide
 
 [Vale](https://vale.sh/) is a linter for narrative text.
-It checks spelling, English grammar, and style guides.
+It checks spelling, English grammar and syntax, and style guides.
 Plone uses American English.
 
-Vale also provides English grammar and syntax checking, as well as a Style Guide.
 The Plone Documentation Team selected the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/) for its ease of use—especially for non-native English readers and writers—and attention to non-technical audiences. 
 
 To perform all these checks, run the following command.
@@ -66,8 +95,9 @@ To perform all these checks, run the following command.
 make vale
 ```
 
-Because it is difficult to automate good American English grammar and syntax, we do not strictly enforce it.
+Because it is difficult to automate good American English grammar and syntax, it is not strictly enforced.
 We also understand that contributors might not be fluent in English.
+If you are more comfortable writing in your preferred language, then you may submit a pull request written in your language, and the Documentation Team will use translation tools to translate it to English.
 We encourage contributors to make a reasonable effort, and to request a review of their pull request from community members who are fluent in English to fix grammar and syntax.
 Please ask!
 
@@ -82,14 +112,14 @@ See {ref}`authors-advanced-vale-usage-label` for details.
 
 #### Advanced Vale usage
 
-To have Vale check only a specific file or directory of files, you can issue [Vale commands](https://vale.sh/manual/) with options in a shell session.
-To allow this, you must either:
+You can pass options to Vale in the `VALEOPTS` and `VALEFILES` environment variables.
+In the following example, you can run Vale to display warnings or errors only, not suggestions, in the console on a single file.
 
--   activate your Python virtual environment
--   use the virtual environment path, such as `bin/vale`
--   install Vale using operating system's package manager
+```shell
+make vale VALEOPTS="--minAlertLevel='warning'" VALEFILES="docs/index.md"
+```
 
-The Vale `Makefile` command automatically installs Vale into your Python virtual environment—which is also created via any documentation `Makefile` commands—when you invoke it for the first time.
+The command `make vale` automatically installs Vale into your Python virtual environment—which is also created via any documentation `Makefile` commands—when you invoke it for the first time.
 
 Vale has [integrations](https://vale.sh/docs/integrations/guide/) with various IDEs.
 Integration might require installing Vale using operating system's package manager.
@@ -103,8 +133,11 @@ Plone configures Vale in three places:
 -   {file}`.vale.ini` is Vale's configuration file.
     This file allows overriding rules or changing their severity.
 -   {file}`Makefile` passes options to the `vale` command, such as the files Vale checks.
--   Plone documentation uses a custom spelling dictionary, with accepted and rejected spellings in `styles/Vocab/Plone`.
-    Authors should add new words and proper names using correct casing to {file}`styles/Vocab/Plone/accept.txt`, sorted alphabetically and case-insensitive.
+-   Plone documentation uses a custom spelling dictionary, with accepted and rejected spellings in {file}`styles/config/vocabularies/Plone/`.
+    Authors should add new words and proper names using correct casing to {file}`styles/config/vocabularies/Plone/accept.txt`, sorted alphabetically and case-insensitive.
+
+    If Vale does not reject a spelling that should be rejected, then you can add it to {file}`styles/config/vocabularies/Plone/reject.txt`.
+-   You can add additional spellings to accept or reject in their respective files inside the {file}`styles/config/vocabularies/Base/` folder.
 
 
 (authors-linkcheck-label)=
@@ -113,33 +146,41 @@ Plone configures Vale in three places:
 
 ```{important}
 Before you add a link, consider whether you really need it for the documentation.
-Avoid linking to blog posts because they rapidly succumb to bitrot.
-It is preferred to copy the content from the source and add a link to the source as a reference through a `seealso` admonition or footnote, than to merely link to the source.
+Avoid linking to blog posts because they rapidly succumb to bit rot.
+It is preferable to copy the content from the source and add a link to the source as a reference through a `seealso` admonition, than to merely link to the source.
 ```
 
 Valid links are enforced automatically through Sphinx's `linkcheck` builder.
+To validate links, run the following command.
+
+```shell
+make linkcheckbroken
+```
+
+Only broken links will show in the console output.
+Open `/_build/linkcheck/output.txt` for a list of all links that were checked and their result.
 
 [Configuration of the `linkcheck` builder](https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder) is in {file}`Makefile` and {file}`docs/conf.py`.
 
-`linkcheck_ignore` supports regular expression syntax.
+When you add a link to the documentation, it must be a valid public URL without requiring authentication.
 
-When authors add a link to the documentation, it must be a valid public URL without requiring authentication.
+If a link has succumbed to bit rot, then try finding the most recently scraped version on the [Internet Archive Wayback Machine](https://web.archive.org/), and update the link.
 
-If it is not a valid link, or is private or local, then you must exclude it from `linkcheck` by wrapping it in single backticks.
+If it is not a valid link, or is private or local, then you must exclude it from `linkcheck`.
+You can do so by wrapping it in single backticks in the page.
 
 ```{example}
 Visit the URL `http://www.example.com` for an example.
 ```
 
-If a link has succumbed to bit rot, then try finding the most recently scraped version on the [Internet Archive Wayback Machine](https://web.archive.org/), and update the link.
+Alternatively, you can add it to the `linkcheck_ignore` list in {file}`conf.py`.
+`linkcheck_ignore` supports regular expression syntax.
 
-To validate links, run the following command.
-
-```shell
-make linkcheck
+```python
+linkcheck_ignore = [
+    r"http://0.0.0.0",
+]
 ```
-
-Open `/_build/linkcheck/output.txt` for a list of broken links.
 
 ```{danger}
 Please do not abuse `linkcheck_ignore`.
@@ -167,8 +208,19 @@ For example, JSON does not allow comments.
 Do not indicate elided or omitted code with ellipses (`...` or `…`).
 These are almost never valid syntax and will cause syntax highlighting to fail for the code block.
 
+````{note}
+There are some known issues with syntax highlighting with the lexers for `jsx`, `less`, and `scss`.
+Try your best to fix the code example.
 
-#### Choosing a Lexer
+```{seealso}
+-   [WARNING: Lexing literal_block ... as "jsx" resulted in an error at token: "'". Retrying in relaxed mode.](https://github.com/pygments/pygments/issues/2816)
+-   [LESS lexer marks nested `.` and `h2` as invalid](https://github.com/pygments/pygments/issues/2817)
+-   [WARNING: Lexing literal_block ... as "scss" resulted in an error at token: '$'](https://github.com/pygments/pygments/issues/2818)
+```
+````
+
+
+#### Choose a Lexer
 
 Some lexers are less than perfect.
 If your code block does not highlight well, then consider specifying a less ambitious lexer, such as `text`.
@@ -183,9 +235,6 @@ If you have a mix of a shell command and its output, then use `console`.
 If `xml` does not work well, then try `html`.
 
 `jsx` has a complex syntax that is difficult to parse.
-We have high hopes for the project [`jsx-lexer`](https://github.com/fcurella/jsx-lexer).
-We include it in our `requirements.txt` file.
-Please contribute to its further development.
 
 The lexers `html+ng2`, `scss`, `http`, `less` are also suboptimal and particular.
 
@@ -204,15 +253,15 @@ The Sphinx console will display any warnings, such as the following.
 ```
 
 The above warning indicates that the syntax is not valid.
-Common mistakes include:
+Common mistakes include the following.
 
-- Using `...` or `…` to indicate omitted code.
-  It is preferable to never use ellipses.
-  If you must do that, comment it out using the language's comment syntax.
-- Using comments in JSON.
-- A previous code block bleeds through to the next due to invalid MyST syntax.
+-   Using `...` or `…` to indicate omitted code.
+    It is preferable to never use ellipses.
+    If you must do that, comment it out using the language's comment syntax.
+-   Using comments in JSON.
+-   A previous code block bleeds through to the next due to invalid MyST syntax.
 
-To validate code block syntax, run the following command.
+To validate code block syntax of a page you edit, run the following command.
 
 ```shell
 make html
@@ -230,7 +279,15 @@ You can search the [Pygments issue tracker](https://github.com/search?q=repo%3Ap
 ### HTML and Open Graph metadata
 
 All documents must have a `myst` topmatter key with an `html_meta` directive at the top of every page.
-When rendered to HTML, it inserts `<meta>` tags for improved search engine results and nicer social media posts.
+
+When you create a new page, you can either copy an existing page that has the `html_meta` information, or you can create an empty file and run a `make` command to add a metadata section as shown.
+
+```shell
+touch path-to-file/my-file.md
+make html_meta
+```
+
+When rendered to HTML, the `html_meta` directive inserts `<meta>` tags for improved search engine results and nicer social media posts.
 Authors should include at least `description`, `property=og:description`, `property=og:title`, and `keywords` meta tags.
 
 The following is an example of `html_meta`.
@@ -262,6 +319,17 @@ Additional {term}`Open Graph` metadata is implemented through the Sphinx extensi
 See the site-wide configuration in {file}`conf.py`.
 
 
+## Diátaxis framework
+
+Plone Documentation uses the {term}`Diátaxis framework`, a systematic approach to technical documentation authoring.
+Rather than attempt to organize documentation toward a specific role such as "developer", "user", or "administrator", the Diátaxis framework organizes documentation into the four categories of tutorials, how-to guides, explanation, and reference.
+In this way, your title or role does not matter.
+Instead, what you want to achieve matters.
+By keeping each page focused on one category, readers can focus on getting work done, understanding, or experimenting.
+
+Although Plone 6 Documentation is not completely aligned with the Diátaxis framework, it is gradually moving toward it.
+
+
 ## Plone documentation styleguide
 
 We follow [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).
@@ -269,25 +337,23 @@ We follow [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/styl
 Key concepts from that guide include the following.
 
 -   Documentation should be informational, but friendly.
--   Address the reader by using "you" instead of "the user".
--   Headings should be Sentence cased, not Title Cased.
+-   Address the reader by using "you" instead of "the user", or by using the collective "we" and "our".
+-   Headings should be "Sentence cased", not "Title Cased".
 
 The Plone Documentation Team adopted additional guidelines.
 
 -   Use one sentence per line.
     Keep sentences short and understandable.
     This will greatly improve the editing and maintenance of your documentation.
-
--   Do not follow PEP8 maximum line length standard.
+-   Do not follow the PEP8 maximum line length standard.
     Documentation is narrative text and images, not Python code.
-
 -   Use dashes `-` in filenames and avoid underscores.
-
 -   Images should be no wider than 740 pixels to fit within the documentation's main view port.
     This avoids scaling and reducing legibility of images.
     To make that work in Volto, set your browser width to 1180 pixels.
     You will notice that the drag and trash icons for each block move inside the block from outside.
-
+    
+    If you create images wider than 740 pixels, then you must use image display enhancement as described in {ref}`enhance-images-label`.
 -   In user documentation, provide screenshots of each step where the interface changes.
     It is painstaking, but worth the effort.
     Provide sufficient detail of what each option is and does.
@@ -295,6 +361,7 @@ The Plone Documentation Team adopted additional guidelines.
 
 ## General documentation writing references
 
+-   [Diátaxis framework](https://www.diataxis.fr/)
 -   [Write the Docs - Documentation Guide](https://www.writethedocs.org/guide/)
 -   [Creating effective technical documentation](https://developer.mozilla.org/en-US/blog/technical-writing/), Dipika Bhattacharya, Technical Writer at Mozilla Developer Network
 -   [A Guide to Em Dashes, En Dashes, and Hyphens](https://www.merriam-webster.com/grammar/em-dash-en-dash-how-to-use)

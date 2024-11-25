@@ -41,9 +41,10 @@ As a first-time contributor to Plone on GitHub, we expect that you have:
 -   read and followed the guidance on the pages under {doc}`/contributing/index` both for Plone in general and for the specific project to which you want to contribute, as well as all the guidance on this page
 -   worked through some trainings, such as the recommended:
     -   {doc}`training:mastering-plone/index`
+    -   {doc}`training:volto-customization/index`
+    -   {doc}`training:customizing-volto-light-theme/index`
     -   {doc}`training:voltohandson/index`
     -   {doc}`training:voltoaddons/index`
-    -   {doc}`training:volto_customization/index`
     -   {doc}`training:plone-deployment/index`
 -   a sincere interest to contribute to Plone and become an ongoing contributing member of our organization
 -   a GitHub account

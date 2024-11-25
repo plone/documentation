@@ -11,7 +11,7 @@ myst:
 
 # Themes and extensions
 
-We learned the hard way that maintaining the design and features of documentation is a lot of work.
+The Plone Documentation team learned the hard way that maintaining the design and features of documentation is a lot of work.
 To make all documentation maintainable, we use actively developed themes and extensions to build the documentation.
 
 
@@ -21,7 +21,6 @@ When customizing the theme, we use [Sphinx Book Theme](https://sphinx-book-theme
 See their documentation for features, tips, and tricks that you might want to include in your documentation.
 
 We minimize the customizations of these themes as much as possible.
-The one large customization is the search filter by part of the documentation, implemented in modifcations to the templates, {file}`_static/searchtools.js`, and the CSS file {file}`_static/custom.css`.
 
 
 ## Extensions

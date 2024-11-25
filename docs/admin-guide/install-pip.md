@@ -20,6 +20,13 @@ It provides a basic installation without many additional tools to help with deve
 For other installation options, see {ref}`get-started-install-label`.
 ```
 
+
+## Supported web browsers
+
+```{include} /_inc/_install-browser-reqs-classic-ui.md
+```
+
+
 (install-pip-prerequisites)=
 
 ## Prerequisites for installation

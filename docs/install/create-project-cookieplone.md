@@ -33,6 +33,12 @@ For other installation options, see {ref}`get-started-install-label`.
 Plone 6 has both hardware requirements and software prerequisites.
 
 
+### Supported web browsers
+
+```{include} /_inc/_install-browser-reqs-volto.md
+```
+
+
 (create-project-cookieplone-hardware-requirements-label)=
 
 ### Hardware requirements

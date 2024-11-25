@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": "How to set up the Plone Documentation locally"
-    "property=og:description": "How to set up the Plone Documentation locally"
-    "property=og:title": "Building and Checking the Quality of Documentation"
+    "description": "How to set up, build, and check quality of Plone Documentation locally"
+    "property=og:description": "How to set up, build, and check quality of Plone Documentation locally"
+    "property=og:title": "Set up, build, and check the quality of documentation"
     "keywords": "setup, build, documentation, quality, development, Vale, spell, grammar, style, check, linkcheck"
 ---
 
 (setup-build-label)=
 
-# Building and checking the quality of documentation
+# Set up, build, and check the quality of documentation
 
 This document covers how to set up and build the Plone Documentation and check it for quality.
 
@@ -67,62 +67,73 @@ sudo apt-get install graphviz
 
 ### Clone `plone/documentation`
 
-Clone the Plone Documentation repository, and change your working directory into the cloned project.
-Then with a single command using `Makefile`, create a Python virtual environment, install project dependencies, pull in Volto documentation as a git submodule, build the docs, and view the results in a web browser by opening `/_build/html/index.html`.
+In a terminal session, clone the Plone Documentation repository, and change your working directory into the cloned project.
+Then with a single `make` command, create a Python virtual environment, install project dependencies, pull in documentation from remote repositories as a git submodule, build the documentation, and preview the results in a web browser.
 
 ```shell
 git clone https://github.com/plone/documentation.git
 cd documentation
-make html
+make livehtml
 ```
 
 (setup-build-available-documentation-builds-label)=
 
 ## Available documentation builds
 
-All build and check documentation commands use the file `Makefile`.
-
-To see the most frequently used builds, use the following command.
+All build and check commands use the file `Makefile`.
+To see descriptions of the builds and checks, use the following command.
 
 ```shell
 make help
 ```
 
-Else you can open `Makefile` to see other build formats, including PDF.
+Else you can open the {file}`Makefile` file to see other build formats.
 
+The following sections describe the most frequently used `make` commands while in the primary `documentation` folder.
 
-### `html`
+All `make` commands that build documentation will
 
-`html` is the HTML version of the documentation.
+-   create a Python virtual environment,
+-   install requirements,
+-   initialize or update the `volto`, `plone.restapi`, and `plone.api` submodules, and
+-   finally create symlinks to the source files.
+
+````{tip}
+If you want to build documentation for only one of the subprojects, navigate to the root of the project in the `/submodules` folder, then use any of the following commands, but with the prefix of `docs-`.
 
 ```shell
-make html
+cd submodules/volto
+make docs-livehtml
 ```
-
-Open `/_build/html/index.html` in a web browser.
+````
 
 
 ### `livehtml`
 
-`livehtml` rebuilds Sphinx documentation on changes, with live-reload in the browser.
+`livehtml` rebuilds documentation as you edit its files, with live reload in the browser.
 
 ```shell
 make livehtml
 ```
 
-Open http://0.0.0.0:8000/ in a web browser.
+The console will give you the URL to open in a web browser.
+The URL may vary, according to its configuration in the repository's {file}`Makefile`.
+
+```console
+[sphinx-autobuild] Serving on http://127.0.0.1:8050
+```
 
 
-### `linkcheck`
+### `linkcheckbroken`
 
-`linkcheck` checks all links.
+`linkcheckbroken` checks all links, returning a list of only broken links.
 See {ref}`authors-linkcheck-label` for configuration.
 
 ```shell
-make linkcheck
+make linkcheckbroken
 ```
 
-Open `/_build/linkcheck/output.txt` for a list of broken links.
+Open `/_build/linkcheck/output.txt` for the entire list of links that were checked and their result.
 
 
 ### `vale`
@@ -137,11 +148,21 @@ make vale
 See the output on the console for suggestions.
 
 
-### `html_meta`
+### `clean`
 
-`html_meta` adds a meta data section to each chapter if missing.
-See {ref}`authors-html-meta-data-label` for more info.
+`clean` removes all builds and cached files of the documentation.
+Use this command before a build to troubleshoot issues with edits not showing up and to ensure that cached files do not hide errors in the documentation.
 
 ```shell
-make html_meta
+make clean
+```
+
+
+### `distclean`
+
+`distclean` cleans the documentation build directory, Python virtual environment, and symlinks.
+Use this command when packages that you have installed in your virtual environment yield unexpected results.
+
+```shell
+make distclean
 ```

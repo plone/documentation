@@ -850,4 +850,11 @@ portlets
     Portlets are widgets that can be inserted in predefined locations in pages in {term}`Classic UI`.
     Portlets are most commonly used to add sidebars to the left or right of the main page content.
 
+Diátaxis framework
+    Plone Documentation uses the [Diátaxis framework](https://www.diataxis.fr/), a systematic approach to technical documentation authoring.
+
+Vale
+    [Vale](https://vale.sh/) is an open-source, command-line tool that helps maintain a consistent and on-brand voice in documentation.
+    Plone Documentation uses it to check spelling, English grammar and syntax, and style guides.
+
 ```
