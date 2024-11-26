@@ -32,30 +32,6 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 
 ### Enable the TinyMCE accordion plugin
 
-1.  Go to the {guilabel}`Site Setup > General > TinyMCE` control panel to manage TinyMCE settings.
-1.  Under the {guilabel}`Plugins and Toolbar` tab, check {guilabel}`accordion` to enable the accordion plugin.
-1.  Under the same tab, add a menu entry `accordion` for TinyMCE in the control panel by editing the `items` key as shown.
-
-    ```json
-    {
-      "insert": {
-        "title": "Insert",
-        "items": "link media | template hr | accordion"
-      },
-    }
-    ```
-
-1.  Click the {guilabel}`Save` button to save your settings.
-1.  In the {guilabel}`Security > HTML filtering` control panel, add two new tags to {guilabel}`Valid tags`.
-
-    -   `button`
-    -   `details`
-    -   `summary`
-
-1.  Also in the {guilabel}`Security > HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`.
-
-    -   `open`
-
 1.  Install the add-on [`collective.outputfilters.tinymceaccordion`](https://pypi.org/project/collective.outputfilters.tinymceaccordion/) to use an output filter that transforms the TinyMCE markup to valid HTML markup for the Bootstrap 5 accordion.
     After installation, you will need to restart your Plone site.
 
@@ -71,6 +47,35 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
     [instance]
     eggs += collective.outputfilters.tinymceaccordion
     ```
+
+1.  Complete installation of the add-on by navigating to {menuselection}`Site Setup --> General --> Add-ons`, then clicking {guilabel}`Install` for `collective.outputfilters.tinymceaccordion`.
+
+1.  Go to the {guilabel}`Site Setup > General > TinyMCE` control panel to manage TinyMCE settings.
+
+1.  Under the {guilabel}`Plugins and Toolbar` tab, check {guilabel}`accordion` to enable the accordion plugin.
+
+1.  Under the same tab, add a menu entry `accordion` for TinyMCE in the control panel by editing the `items` key as shown.
+
+    ```json
+    {
+      "insert": {
+        "title": "Insert",
+        "items": "link media | template hr | accordion"
+      },
+    }
+    ```
+
+1.  Click the {guilabel}`Save` button to save your settings.
+
+1.  In the {guilabel}`Security > HTML filtering` control panel, add two new tags to {guilabel}`Valid tags`.
+
+    -   `button`
+    -   `details`
+    -   `summary`
+
+1.  Also in the {guilabel}`Security > HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`.
+
+    -   `open`
 
 
 ## `z3c.form` and `plone.app.z3cform`
