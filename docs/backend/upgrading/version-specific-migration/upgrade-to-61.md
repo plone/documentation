@@ -62,9 +62,9 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 
 1.  Complete installation of the add-on by navigating to {menuselection}`Site Setup --> General --> Add-ons`, then clicking {guilabel}`Install` for `collective.outputfilters.tinymceaccordion`.
 
-1.  Go to the {guilabel}`Site Setup > General > TinyMCE` control panel to manage TinyMCE settings.
+1.  Go to the {menuselection}`Site Setup --> General --> TinyMCE` control panel to manage TinyMCE settings.
 
-1.  Under the {guilabel}`Plugins and Toolbar` tab, if not already checked, check {guilabel}`accordion` to enable the accordion plugin.
+1.  Under the {menuselection}`Plugins and Toolbar` tab, if not already checked, check {guilabel}`accordion` to enable the accordion plugin.
 
 1.  Under the same tab, edit the `insert` menu by editing its `items` key as shown.
 
@@ -79,13 +79,13 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 
 1.  Click the {guilabel}`Save` button to save your settings.
 
-1.  In the {guilabel}`Security > HTML filtering` control panel, ensure that you have the following tags under {guilabel}`Valid tags`.
+1.  In the {menuselection}`Security --> HTML filtering` control panel, ensure that you have the following tags under {guilabel}`Valid tags`.
 
     -   `button`
     -   `details`
     -   `summary`
 
-1.  Also in the {guilabel}`Security > HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`, if not already present.
+1.  Also in the {menuselection}`Security --> HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`, if not already present.
 
     -   `open`
 
