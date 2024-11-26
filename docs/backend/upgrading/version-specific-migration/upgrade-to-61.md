@@ -72,7 +72,7 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
     eggs += collective.outputfilters.tinymceaccordion
     
     [versions]
-    collective.outputfilters.tinymceaccordion = 1.0a7
+    collective.outputfilters.tinymceaccordion
     ```
 
 
