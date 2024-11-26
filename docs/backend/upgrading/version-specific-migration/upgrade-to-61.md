@@ -33,28 +33,40 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 ### Enable the TinyMCE accordion plugin
 
 1.  Install the add-on [`collective.outputfilters.tinymceaccordion`](https://pypi.org/project/collective.outputfilters.tinymceaccordion/) to use an output filter that transforms the TinyMCE markup to valid HTML markup for the Bootstrap 5 accordion.
-    After installation, you will need to restart your Plone site.
+    Install via either pip or buildout.
 
-    Install using pip.    
+    -   Install using pip.
+
+        ```shell
+        pip install collective.outputfilters.tinymceaccordion   
+        ```
+
+    -   Configure your local buildout file.
+
+        ```cfg
+        [instance]
+        eggs += collective.outputfilters.tinymceaccordion
+        ```
+        
+        Then run the command to install.
+    
+        ```shell
+        bin/buildout
+        ```
+    
+1.  Start your Plone instance.
 
     ```shell
-    pip install collective.outputfilters.tinymceaccordion   
-    ```
-
-    Install using your local buildout configuration file.
-
-    ```cfg
-    [instance]
-    eggs += collective.outputfilters.tinymceaccordion
+    bin/instance fg
     ```
 
 1.  Complete installation of the add-on by navigating to {menuselection}`Site Setup --> General --> Add-ons`, then clicking {guilabel}`Install` for `collective.outputfilters.tinymceaccordion`.
 
 1.  Go to the {guilabel}`Site Setup > General > TinyMCE` control panel to manage TinyMCE settings.
 
-1.  Under the {guilabel}`Plugins and Toolbar` tab, check {guilabel}`accordion` to enable the accordion plugin.
+1.  Under the {guilabel}`Plugins and Toolbar` tab, if not already checked, check {guilabel}`accordion` to enable the accordion plugin.
 
-1.  Under the same tab, add a menu entry `accordion` for TinyMCE in the control panel by editing the `items` key as shown.
+1.  Under the same tab, edit the `insert` menu by editing its `items` key as shown.
 
     ```json
     {
@@ -67,13 +79,13 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 
 1.  Click the {guilabel}`Save` button to save your settings.
 
-1.  In the {guilabel}`Security > HTML filtering` control panel, add two new tags to {guilabel}`Valid tags`.
+1.  In the {guilabel}`Security > HTML filtering` control panel, ensure that you have the following tags under {guilabel}`Valid tags`.
 
     -   `button`
     -   `details`
     -   `summary`
 
-1.  Also in the {guilabel}`Security > HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`.
+1.  Also in the {guilabel}`Security > HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`, if not already present.
 
     -   `open`
 
