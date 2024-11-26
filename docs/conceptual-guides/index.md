@@ -19,6 +19,7 @@ choose-user-interface
 compare-buildout-pip
 distributions
 package-management
+package-dependencies
 make-build-backend-walk-through
 components
 ```

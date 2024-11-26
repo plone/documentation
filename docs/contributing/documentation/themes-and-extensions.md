@@ -61,6 +61,7 @@ We use several MyST and Sphinx extensions to enhance the presentation of Plone d
 -   [`sphinxcontrib.httpexample`](https://sphinxcontrib-httpexample.readthedocs.io/en/latest/) enhances `sphinxcontrib-httpdomain` by generating RESTful HTTP API call examples for different tools from a single HTTP request example.
     Supported tools include [curl](https://curl.se/), [wget](https://www.gnu.org/software/wget/), [httpie](https://httpie.io/), and [python-requests](https://requests.readthedocs.io/en/latest/).
     It is used by Plone's {doc}`/plone.restapi/docs/source/index`.
+-   [`sphinxcontrib.mermaid`](https://pypi.org/project/sphinxcontrib-mermaid/) allows you to embed [Mermaid](https://mermaid.js.org/) graphs in your documents, including general flowcharts, sequence diagrams, and Gantt charts.
 -   [`sphinxcontrib.video`](https://pypi.org/project/sphinxcontrib-video/) allows you to embed local videos as defined by the HTML5 standard.
 -   [`sphinxcontrib.youtube`](https://pypi.org/project/sphinxcontrib-video/) allows you to embed remotely hosted videos from [YouTube](https://www.youtube.com/), [Vimeo](https://vimeo.com/, or [PeerTube](https://joinpeertube.org/).
 -   [`sphinxext.opengraph`](https://pypi.org/project/sphinxext-opengraph/) generates [OpenGraph metadata](https://ogp.me/).

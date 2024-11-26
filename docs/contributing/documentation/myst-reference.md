@@ -269,6 +269,38 @@ For an in depth discussion of privacy issues, see [How to embed YouTube videos w
 ```
 
 
+### Diagrams and graphs with Mermaid
+
+You can use [Mermaid](https://mermaid.js.org/) and its Sphinx extension [`sphinxcontrib.mermaid`](https://pypi.org/project/sphinxcontrib-mermaid/) to render graphs in your documents, including general flowcharts, sequence diagrams, and Gantt charts.
+
+````{example}
+```{mermaid}
+:alt: Mental model of Plone
+:caption: Mental model of Plone
+block-beta
+    columns 4
+    Plone["Plone<br/>integraton of all in one release"]:4
+    Distributions
+    Upgrade
+    coreapis["Core APIs"]
+    coreaddons["Core add-ons"]
+    cmfplone["Products.CMFPlone"]:4
+    ploneapp["Most of plone.app.* namespace"]:2
+    otherlay["Various related packages"]:2
+    plonebase["plone.base"]:4
+    block:groupfoundation:4
+        zopecore["Zope core/ ZCA"]
+        zopeeco["Zope ecosystem"]
+        cmfcore["CMFCore"]
+        ploneworld["Plone generic libraries"]
+        libraries["Other libraries"]
+    end  
+    style cmfplone fill:#fff9e6
+    style plonebase fill:#fff9e6
+```
+````
+
+
 ### Diagrams and graphs with Graphviz
 
 You can use [Graphviz](https://graphviz.org/download/) and its Sphinx extension [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) to render diagrams and graph visualizations.
