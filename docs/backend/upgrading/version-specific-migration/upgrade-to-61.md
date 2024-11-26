@@ -56,10 +56,23 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 
     -   `open`
 
-1.  For a transform to valid markup of the Bootstrap 5 accordion, use an output filter.
+1.  Install the add-on [`collective.outputfilters.tinymceaccordion`](https://pypi.org/project/collective.outputfilters.tinymceaccordion/) to use an output filter that transforms the TinyMCE markup to valid HTML markup for the Bootstrap 5 accordion.
+    After installation, you will need to restart your Plone site.
 
-    ```{seealso}
-    -   [Add-on `collective.outputfilters.tinymceaccordion`](https://pypi.org/project/collective.outputfilters.tinymceaccordion/)
+    Install using pip.    
+
+    ```shell
+    pip install collective.outputfilters.tinymceaccordion   
+    ```
+
+    Install using your local buildout configuration file.
+
+    ```cfg
+    [instance]
+    eggs += collective.outputfilters.tinymceaccordion
+    
+    [versions]
+    collective.outputfilters.tinymceaccordion = 1.0a7
     ```
 
 
