@@ -48,8 +48,9 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 1.  Click the {guilabel}`Save` button to save your settings.
 1.  In the {guilabel}`Security > HTML filtering` control panel, add two new tags to {guilabel}`Valid tags`.
 
-    -   `summary`
+    -   `button`
     -   `details`
+    -   `summary`
 
 1.  Also in the {guilabel}`Security > HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`.
 
@@ -58,7 +59,7 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 1.  For a transform to valid markup of the Bootstrap 5 accordion, use an output filter.
 
     ```{seealso}
-    -   [Addon collective.outputfilters.tinymceaccordion](https://github.com/collective/collective.outputfilters.tinymceaccordion)
+    -   [Add-on `collective.outputfilters.tinymceaccordion`](https://github.com/collective/collective.outputfilters.tinymceaccordion)
     ```
 
 
