@@ -212,7 +212,7 @@ Add-on authors may want to use this to get, create, or delete relations.
 Mockup contains the source of most Classic UI Plone JavaScript.
 The compiled version is in `plone.staticresources`.
 
-Mockup is now based on [Patternslib 4](https://patternslib.com/).
+Mockup is now based on [Patternslib 9](https://patternslib.com/).
 It uses ES6 module imports instead of RequireJS.
 Add-ons for Classic UI Plone that use JavaScript should be updated to use ES6 modules as well.
 
