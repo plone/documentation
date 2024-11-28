@@ -1,16 +1,5 @@
 linkify-it-py
 plone-sphinx-theme
 sphinx-autobuild
-sphinx-copybutton
-sphinx-design  # Documentation only
-sphinx-examples
 sphinx-notfound-page  # Documentation only
 sphinx-reredirects
-sphinx-sitemap
-sphinxcontrib.httpdomain  # plone.restapi
-sphinxcontrib.httpexample  # plone.restapi
-sphinxcontrib-video
-sphinxcontrib-youtube
-sphinxext-opengraph
-sphinxcontrib.mermaid
-vale
