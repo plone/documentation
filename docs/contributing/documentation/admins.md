@@ -126,24 +126,28 @@ After logging in to your Read the Docs account, you can import your project.
 1.  Click {guilabel}`Save` to save the new setting.
 
 
-### Search engine indexing
+### Prevent search engine indexing
 
 Many Plone projects currently self-host their official documentation at {doc}`/index`.
 These projects get indexed by search engines.
 
 For pull request previews, unsupported branches or versions, or other situations, you most likely do not want search engines to index your documentation.
-Your options include the following.
+
+You can create a branch that serves as a landing page for your documentation.
+Using `sphinx-reredirects`, you can configure this page to redirect to your official documentation.
+
+In Plone 6 Documentation, the branch `rtd-redirect` consists of a single landing page that redirects visitors to https://6.docs.plone.org/.
+You can use this branch as a minimal example for your documentation.
+
+This branch also includes a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing.
+
+In addition, you should consider configure Read the Docs for the following.
 
 -   Deactivate your build
 -   Hide your build
--   Create a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing
+-   Set your default branch from your default to the home page branch, such as `rtd-redirect`.
 
-For the last option, you can configure Sphinx to copy the {file}`robots.txt` file.
-However, if you want to have two versions of a {file}`robots.txt` file—say one that allows indexing of your official documentation and another that discourages indexing—you can configure your automation to copy it into place with a command such as the following.
-
-```shell
-cp source-path/block-robots.txt docs-root-path/robots.txt
-```
+With this configuration and setup, you will also continue to have pull request preview builds.
 
 ```{seealso}
 -   [`robots.txt` support](https://docs.readthedocs.io/en/stable/reference/robots.html)
