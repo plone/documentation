@@ -140,6 +140,7 @@ In Plone 6 Documentation, the branch `rtd-redirect` consists of a single landing
 You can use this branch as a minimal example for your documentation.
 
 This branch also includes a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing.
+It also includes a 404 not found page that directs visitors the correct site.
 
 In addition, you should consider configure Read the Docs for the following.
 
