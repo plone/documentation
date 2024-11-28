@@ -273,10 +273,13 @@ For an in depth discussion of privacy issues, see [How to embed YouTube videos w
 
 You can use [Mermaid](https://mermaid.js.org/) and its Sphinx extension [`sphinxcontrib.mermaid`](https://pypi.org/project/sphinxcontrib-mermaid/) to render graphs in your documents, including general flowcharts, sequence diagrams, and Gantt charts.
 
+You can use the [Mermaid Playground](https://www.mermaidchart.com/play) to compose Mermaid markup and preview a live diagram.
+
 ````{example}
 ```{mermaid}
 :alt: Mental model of Plone
 :caption: Mental model of Plone
+:zoom:
 block-beta
     columns 4
     Plone["Plone<br/>integraton of all in one release"]:4
