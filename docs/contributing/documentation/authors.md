@@ -75,7 +75,7 @@ make SPHINXOPTS="OPTION VALUE" BUILDER
 The following example shows how to clean then build a live HTML preview of the documentation while suppressing syntax highlighting failures.
 
 ```shell
-make SPHINXOPTS="-D suppress_warnings=['misc.highlighting_failure']" clean livehtml
+make SPHINXOPTS="-D suppress_warnings='misc.highlighting_failure'" clean livehtml
 ```
 
 
