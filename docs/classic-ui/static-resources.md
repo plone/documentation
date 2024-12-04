@@ -106,6 +106,7 @@ The following attributes are available for registering a static resource.
     If you set multiple bundles to `all`, then these bundles will render in the order in which you define them.
 
     ```{note}
+    You can also add custom CSS through-the-web via the {guilabel}`Theming` control panel, under {menuselection}`Site Setup --> Theming --> Advanced settings --> Custom Styles`.
     Setting `depends` to `all` does not affect custom CSS that you define in the {guilabel}`Theming` control panel, which _always_ renders as the last style resource.
     It only affects bundles, not control panel settings.
     ```
@@ -124,13 +125,3 @@ The following attributes are available for registering a static resource.
     Whether the bundle should be loaded deferred or not.
     If you use `load_async`, this attribute has no effect.
     *Only JavaScript*
-
-You can use the `depends` attribute to define the order in which resources load.
-
-You can specify a list of either the names of the bundles on which this bundle depends or a single list item of `["all"]`.
-In the latter case of `["all"]` for a bundle, all other JavaScript and CSS resources in their resource groups will render before this bundle, making it the final bundle to render in its resource group.
-This includes the theme, such as Barceloneta's theme CSS.
-
-This feature lets you override a theme with custom CSS from a bundle.
-Previously you had to add the CSS customizations to the registry via the `custom_css` settings, then update the registry after every change.
-
