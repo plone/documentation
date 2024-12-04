@@ -12,7 +12,8 @@ myst:
 # Static resources
 
 We often want to ship a website with a static resource, such as an image, icon, CSS, or JavaScript file.
-For this, we need to register static resources.
+For CSS and JavaScript files we can use the resource registry to register them and have them delivered to the client browser.
+The benefit of using the resource registry for CSS and JavaScript resources over putting them hard-coded into templates is that the resource registry provides an programmatic way, which is easy to extend and configure in code and also through the web, cares about dependencies between resources and handles caching automatically for us.
 
 ```{seealso}
 For some additional implementation information, see {ref}`classic-ui-theming-from-scratch-theme-label`.
@@ -33,7 +34,7 @@ The JavaScript files have to be in the `browser/static` folder of your Plone 6 p
   <records interface="plone.base.interfaces.resources.IBundleRegistry" prefix="plone.bundles/jscript">
     <value key="enabled">True</value>
     <value key="jscompilation">++plone++myproject.site/javascript.min.js</value>
-    <value key="load_async">False</value> 
+    <value key="load_async">False</value>
     <value key="load_defer">False</value>
     <value key="depends">plone</value>
   </records>
@@ -41,7 +42,7 @@ The JavaScript files have to be in the `browser/static` folder of your Plone 6 p
 ```
 
 You can register a CSS resource in the same way.
-  
+
 ```xml
     <registry>
     <records interface="plone.base.interfaces.resources.IBundleRegistry" prefix="plone.bundles/css">
@@ -54,13 +55,13 @@ You can register a CSS resource in the same way.
 
 Registering a JavaScript file and a CSS file in the same bundle is also possible.
 
-```xml 
+```xml
 <registry>
   <records interface="plone.base.interfaces.resources.IBundleRegistry" prefix="plone.bundles/css">
     <value key="enabled">True</value>
     <value key="csscompilation">++plone++myproject.site/style.min.css</value>
     <value key="jscompilation">++plone++myproject.site/javascript.min.js</value>
-    <value key="load_async">False</value> 
+    <value key="load_async">False</value>
     <value key="load_defer">False</value>
     <value key="depends">plone</value>
   </records>
@@ -85,14 +86,17 @@ The following attributes are available for registering a static resource:
 :   The path to the compiled CSS file.
 
 `depends`
-:   A list of bundles that this bundle depends on.
+:   A comma separated list of bundles that this bundle depends on.
+    For a single dependency, just put it's name in there.
+    When a bundle depends on another one, the script or link tag is rendered after the bundle it depends on.
+    The bundle you want to depend on must exist, otherwise the resource is not rendered.
 
 `load_async`
 :   Whether the bundle should be loaded asynchronously or not.
     *Only JavaScript*
 
 `load_defer`
-:   Whether the bundle should be loaded deferred or not.
+:   Whether the bundle should be loaded deferred or not (not effect if `load_async` is used).
     *Only JavaScript*
 
 
