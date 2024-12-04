@@ -90,6 +90,9 @@ The following attributes are available for registering a static resource:
     For a single dependency, just put it's name in there.
     When a bundle depends on another one, the script or link tag is rendered after the bundle it depends on.
     The bundle you want to depend on must exist, otherwise the resource is not rendered.
+    You can use the special value `all` to depend on all other resources and have the resource rendered after all other (new in Plone 6.0.14).
+    This allows CSS files be loaded after the automatically added theme resources and overload CSS declarations from own CSS customization files.
+    There is one exception though - the custom CSS files which can be edited trough the web in the theming control panel always come last.
 
 `load_async`
 :   Whether the bundle should be loaded asynchronously or not.
