@@ -103,6 +103,8 @@ The following attributes are available for registering a static resource.
     The `depends` attribute may be assigned the value of `all`, making this bundle render last, after all other bundles.
     The `all` value lets you load CSS files after the automatically added theme resources and override CSS declarations from your own custom CSS files.
 
+    If you set multiple bundles to `all`, then these bundles will render in the order in which you define them.
+
     ```{note}
     Setting `depends` to `all` does not affect custom CSS that you define in the {guilabel}`Theming` control panel, which _always_ renders as the last style resource.
     It only affects bundles, not control panel settings.
