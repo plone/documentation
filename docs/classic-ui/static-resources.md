@@ -52,7 +52,7 @@ You can register a CSS resource in the same way.
   </registry>
 ```
 
-Registering a JavaScript file and a CSS file in the same bundle is also possible.
+You can also register a JavaScript file and a CSS file in the same bundle.
 
 ```xml 
 <registry>
@@ -100,4 +100,20 @@ The following attributes are available for registering a static resource:
 
 ## Loading order of resources
 
-`depends` is used to define the loading order of resources by specifying the name of the depending bundle.
+You can use the `depends` attribute to define the order in which resources load.
+
+You can specify a list of either the names of the bundles on which this bundle depends or a single list item of `["all"]`.
+In the latter case of `["all"]` for a bundle, all other JavaScript and CSS resources in their resource groups will render before this bundle, making it the final bundle to render in its resource group.
+This includes the theme, such as Barceloneta's theme CSS.
+
+This feature lets you override a theme with custom CSS from a bundle.
+Previously you had to add the CSS customizations to the registry via the `custom_css` settings, then update the registry after every change.
+
+```{versionadded} Plone 6.0.14
+The `depends` attribute may be assigned the value of `["all"]`, making this bundle render last, after all other bundles.
+```
+
+```{note}
+Setting `depends=["all"]` does not affect custom CSS that you define in the {guilabel}`Theming` control panel, which _always_ renders as the last style resource.
+It only affects bundles, not control panel settings.
+```
