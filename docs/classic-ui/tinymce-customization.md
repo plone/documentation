@@ -26,7 +26,7 @@ They are less complicated to implement than the third option.
 
 This option is best for system administrators and developers who write their own add-ons to ease reproducibility.
 
-You can add a GenericSetup configuration file to your add-on, such as {file}`profiles/default/registry/tinymce.xml`, with the following content.
+You can add a GenericSetup configuration file to your add-on, such as {file}`profiles/default/registry/tinymce.xml`, with the JSON configuration of the custom format.
 
 ```xml
 <registry>
@@ -44,6 +44,32 @@ You can add a GenericSetup configuration file to your add-on, such as {file}`pro
 </registry>
 ```
 
+```{important}
+The contents of the `formats` record will overwrite the default content in the controlpanel.
+If you want to preserve the default content, you will have to copy it into your xml.
+```
+
+The next step is to define, where the new format should be placed inside the format menu subcategories.
+To do that, you can add your custom format to one of these fields: `Header styles`, `Inline styles`, `Block styles`, `Alignment styles` or `Table styles`.
+The value of each line in those field is `Title|format`.
+
+Example XML snippet for `Inline styles`:
+
+```xml
+<record field="inline_styles"
+        interface="plone.base.interfaces.controlpanel.ITinyMCESchema"
+        name="plone.inline_styles">
+  <value>
+    <element>My custom format|myformat</element>
+  </value>
+</record>
+```
+
+```{note}
+This example adds your custom format to the default values of `Inline styles` field.
+The default values are not removed.
+```
+
 
 ### Edit the `Formats` option in the TinyMCE control panel
 
@@ -53,6 +79,7 @@ You can manually customize the `Formats` value through-the-web in the TinyMCE co
 
 1.  Navigate to {menuselection}`Site Setup --> TinyMCE --> Default`, or append `@@tinymce-controlpanel` to the root of your website in your browser's location bar.
 1.  Scroll down to {guilabel}`Formats`, and edit the JSON configuration.
+1.  Insert your custom format to one of the fields mentioned above.
 1.  Click the {guilabel}`Save` button.
 
 
