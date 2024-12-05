@@ -18,7 +18,7 @@ This chapter is a developer reference manual for customizing {term}`TinyMCE`.
 
 ## Remove formats
 
-In Plone 6, TinyMCE has a special logic that automatically reads registered files named {file}`tinymce-formats.css` and adds the CSS classes defined in those files to TinyMCE's {menuselection}`Format --> Formats` menu.
+In Plone 6, TinyMCE has a special logic that automatically reads registered files named {file}`tinymce-formats.css` and adds the CSS classes defined in those files to TinyMCE's {menuselection}`Format --> Formats` menu by using the [`importcss_file_filter` option](https://www.tiny.cloud/docs/tinymce/latest/importcss/#importcss_file_filter).
 
 Plone 6 Classic UI ships with the Barceloneta theme which includes two custom formats,`highlight-inline` and `p.highlight-paragraph`, in the TinyMCE {menuselection}`Format --> Formats` menu.
 You can remove these formats through the TinyMCE control panel.
