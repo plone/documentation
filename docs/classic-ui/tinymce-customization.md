@@ -103,6 +103,27 @@ CSS styles defined in this file will automatically be added to the top level of 
 
 ## Remove imported formats
 
+Similar to adding formats, you can remove formats in a couple of ways.
+
+
+### Add-on GenericSetup configuration file
+
+Alternatively, you can use GenericSetup in your add-on.
+
+```xml
+<record field="content_css"
+          interface="plone.base.interfaces.controlpanel.ITinyMCESchema"
+          name="plone.content_css"
+  >
+    <value purge="true">
+      <element>++theme++barceloneta/tinymce/tinymce-ui-content.css</element>
+    </value>
+  </record>
+```
+
+
+### Configure the TinyMCE control panel
+
 Plone 6 Classic UI ships with the Barceloneta theme which includes two custom formats, `highlight-inline` and `p.highlight-paragraph`, in the TinyMCE {menuselection}`Format --> Formats` menu.
 You can remove these formats through the TinyMCE control panel.
 
