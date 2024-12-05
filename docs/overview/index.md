@@ -32,7 +32,7 @@ Plone works as a:
 - React-based frontend for editing and viewing content, backed by a server with a REST API.
 - Headless CMS server with a REST API, allowing a developer to build a custom frontend with their chosen technology.
 
-(overview-3-label)=
+(overview-key-benefits-label)=
 
 ## Key benefits
 
@@ -67,9 +67,9 @@ Plone is easy to set up compared to other CMSs in its category, extremely flexib
 
 
 
-(overview-4-label)=
+(overview-high-level-overview-for-developers-label)=
 
-## High Level Overview for Developers
+## High level overview for developers
 
 Plone is a content management platform with its backend written in Python.
 It is built on top of the open source Zope web application server and development system. 
@@ -78,15 +78,15 @@ Throughout its history, Plone has used {term}`server-side rendering` to generate
 Additionally, Plone's use of a component architecture makes it easy to extend and customize, allowing users to create unique, feature rich websites that are tailored to their specific needs.
 
 With the release of Plone 6, you now have the option to choose from two different out-of-the-box supported configurations when setting up a new Plone website.
-The Python-based backend server in Plone can still be used alone to render content server-side and deliver HTML to the browser, a setup that is referred to in the Plone documentation as "Classic UI". 
-This configuration has been supported by Plone since its initial release and is still available in the latest version of the platform.
+The Python-based backend server in Plone can be used alone to render content server-side and deliver HTML to the browser, a setup that is referred to in the Plone documentation as "Classic UI". 
+This configuration has been supported by Plone since its initial release and is available in the latest version of the platform.
 For container-based deployment, only the `plone-backend` image is required.
 It may be used as a base image, adding customizations, to make a derivative image.
 
-The default and recommended configuration for new websites in Plone is the new React-based JavaScript frontend called "Volto".
+The latest configuration for new websites in Plone is the new React-based JavaScript frontend called "Volto".
 For this setup you still need to run the Python-based backend server, as well as enable the REST API, and update the configuration profile.
 These settings and profile are applied automatically when you select the {guilabel}`Create Plone Site` option in the Plone website creation form.
-In addition a separate NodeJS based frontend server will serve the JavaScript frontend resources and provide {term}`SSR` with {term}`hydration`.
+In addition, a separate Node.js based frontend server will serve the JavaScript frontend resources and provide {term}`SSR` with {term}`hydration`.
 To deploy this setup using containers, you will need the `plone-frontend` image for the frontend server.
 
 Beginning with Plone 6, we now support two programming language stacks, one each for Python and JavaScript.
@@ -95,28 +95,33 @@ See, for example, the development setup and information on deployment options.
 It will take some time until we find and can implement the best structure to explain these new possibilities and the expansion of Plone's capabilities.
 
 ```{seealso}
+You can also read the conceptual guide {doc}`/conceptual-guides/package-dependencies` to get a mental model of the structure of Plone.
+```
+```{seealso}
 https://training.plone.org/mastering-plone/what_is_plone.html
 ```
 
 
-(overview-5-label)=
+(overview-deployment-label)=
+
 ## Deployment
 
-To run a public Plone website in production, you will also need to configure and run a reverse proxy (or ingress), arrange for SSL certificates (either from Let's Encrypt or manually), guarantee persistence of the content database, and arrange backups.
+To run a public Plone website in production, you also need to configure and run a reverse proxy (or ingress), arrange for SSL certificates (either from Let's Encrypt or manually), guarantee persistence of the content database, and arrange backups.
 This is the domain of systems administrators and modern developer-operations professionals.
 Our documentation contains setup examples for these services, yet requires that the reader have some generic experience and knowledge of these domains.
 
 
-(overview-6-label)=
-## Good to know / What to know
+(overview-good-to-know-label)=
+
+## Good to know
 
 One of the key benefits of the new React-based frontend for Plone 6 is that you can now customize and theme Plone extensively using HTML, CSS, and JavaScript using up-to-date frontend technologies without having to set up a local Python development environment.
 The Plone backend can be run on a local developer machine in a container.
 
 Basic familiarity with programming in Python and managing Python modules and packages using `virtualenv` and `pip` is required to work on the backend code.
-We use `virtualenv` and {term}`mxdev` to manage the source installation of packages in Plone 6.
+We use `venv` and {term}`mxdev` to manage the source installation of packages in Plone 6.
 
-Similarly, to develop for the new React frontend, you need to have some experience with setting up NodeJS, using a tool like NVM (Node Version Manager) to isolate your setup, and familiarity with {term}`Yarn` and {term}`React`.
+Similarly, to develop for the new React frontend, you need to have some experience with setting up Node.js, using a tool like {term}`nvm` to isolate your setup, and familiarity with {term}`Yarn` and {term}`React`.
 
 If you are looking for more study material on these technologies beyond the documentation, see and follow one or more [Plone Trainings](https://training.plone.org).
 Our trainings are more verbose and contain extra clarification and examples.

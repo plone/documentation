@@ -663,9 +663,9 @@ This way you will also have a test for the generated view.
 
 The Mastering Plone 5 Training has several chapters on views.
 
--   {doc}`training:mastering-plone-5/views_1`
--   {doc}`training:mastering-plone-5/views_2`
--   {doc}`training:mastering-plone-5/views_3`
+-   {doc}`training-2023:mastering-plone-5/views_1`
+-   {doc}`training-2023:mastering-plone-5/views_2`
+-   {doc}`training-2023:mastering-plone-5/views_3`
 
 
 (classic-ui-anatomy-of-a-view-label)=

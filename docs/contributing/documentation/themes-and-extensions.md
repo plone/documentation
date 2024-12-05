@@ -11,7 +11,7 @@ myst:
 
 # Themes and extensions
 
-We learned the hard way that maintaining the design and features of documentation is a lot of work.
+The Plone Documentation team learned the hard way that maintaining the design and features of documentation is a lot of work.
 To make all documentation maintainable, we use actively developed themes and extensions to build the documentation.
 
 
@@ -21,7 +21,6 @@ When customizing the theme, we use [Sphinx Book Theme](https://sphinx-book-theme
 See their documentation for features, tips, and tricks that you might want to include in your documentation.
 
 We minimize the customizations of these themes as much as possible.
-The one large customization is the search filter by part of the documentation, implemented in modifcations to the templates, {file}`_static/searchtools.js`, and the CSS file {file}`_static/custom.css`.
 
 
 ## Extensions
@@ -62,6 +61,7 @@ We use several MyST and Sphinx extensions to enhance the presentation of Plone d
 -   [`sphinxcontrib.httpexample`](https://sphinxcontrib-httpexample.readthedocs.io/en/latest/) enhances `sphinxcontrib-httpdomain` by generating RESTful HTTP API call examples for different tools from a single HTTP request example.
     Supported tools include [curl](https://curl.se/), [wget](https://www.gnu.org/software/wget/), [httpie](https://httpie.io/), and [python-requests](https://requests.readthedocs.io/en/latest/).
     It is used by Plone's {doc}`/plone.restapi/docs/source/index`.
+-   [`sphinxcontrib.mermaid`](https://pypi.org/project/sphinxcontrib-mermaid/) allows you to embed [Mermaid](https://mermaid.js.org/) graphs in your documents, including general flowcharts, sequence diagrams, and Gantt charts.
 -   [`sphinxcontrib.video`](https://pypi.org/project/sphinxcontrib-video/) allows you to embed local videos as defined by the HTML5 standard.
 -   [`sphinxcontrib.youtube`](https://pypi.org/project/sphinxcontrib-video/) allows you to embed remotely hosted videos from [YouTube](https://www.youtube.com/), [Vimeo](https://vimeo.com/, or [PeerTube](https://joinpeertube.org/).
 -   [`sphinxext.opengraph`](https://pypi.org/project/sphinxext-opengraph/) generates [OpenGraph metadata](https://ogp.me/).

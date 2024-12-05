@@ -33,6 +33,12 @@ For other installation options, see {ref}`get-started-install-label`.
 Plone 6 has both hardware requirements and software prerequisites.
 
 
+### Supported web browsers
+
+```{include} /_inc/_install-browser-reqs-volto.md
+```
+
+
 (create-project-cookieplone-hardware-requirements-label)=
 
 ### Hardware requirements
@@ -45,10 +51,10 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 ### Prerequisites for installation
 
-```{include} ../volto/contributing/install-operating-system.md
+```{include} ../volto/_inc/_install-operating-system.md
 ```
 
--   Python {SUPPORTED_PYTHON_VERSIONS_PLONE61}
+-   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 -   {term}`pipx`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 20.x
@@ -64,22 +70,19 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 #### pipx
 
-Install {term}`pipx`.
-
-```shell
-pip install pipx
+```{include} /_inc/_install-pipx.md
 ```
 
 
 #### nvm
 
-```{include} ../volto/contributing/install-nvm.md
+```{include} ../volto/_inc/_install-nvm.md
 ```
 
 
 #### Node.js
 
-```{include} ../volto/contributing/install-nodejs.md
+```{include} ../volto/_inc/_install-nodejs.md
 ```
 
 3.  Enable {term}`corepack` so that Node.js will install {term}`pnpm` as a package manager.
@@ -91,13 +94,13 @@ pip install pipx
 
 #### Make
 
-```{include} ../volto/contributing/install-make.md
+```{include} ../volto/_inc/_install-make.md
 ```
 
 
 #### Git
 
-```{include} ../volto/contributing/install-git.md
+```{include} ../volto/_inc/_install-git.md
 ```
 
 

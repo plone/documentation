@@ -52,4 +52,12 @@ contributing/index
 glossary
 ```
 
+```{toctree}
+:caption: Tutorials
+:maxdepth: 1
+:hidden: true
+
+training/index
+```
+
 {ref}`genindex`

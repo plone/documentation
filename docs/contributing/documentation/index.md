@@ -9,22 +9,43 @@ myst:
 
 (contributing-documentation-index-label)=
 
-# Contributing to documentation
+# Contribute to documentation
 
-This document describes how to contribute to Plone Documentation.
+This part of the documentation describes how to contribute to Plone Documentation.
+Contributions to Plone Documentation are welcome.
 
-Contributions to the Plone Documentation are welcome.
-
-```{seealso}
-To set up and build the documentation locally, see {doc}`setup-build`.
+```{contents} On this page
+:local:
 ```
+
+## Choose your path
+
+{doc}`/contributing/first-time`
+:   First-time contributors to Plone and its documentation should read this first.
+    Fixing typographical errors and writing documentation is a relatively easy way to learn how to contribute to Plone.
+
+{doc}`setup-build`
+:   Start here if you have previously contributed to Plone.
+    This guide shows you how to set up and build your environment to contribute to documentation.
+
+{doc}`authors`
+:   This guide shows you how to run a live preview of documentation while you edit it, perform quality checks, choose a code syntax highlighting lexer, improve search engine results, and follow structure, organization, and styles in Plone Documentation.
+
+{doc}`myst-reference`
+:   This reference guide provides frequently used MyST markup code snippets that you can use while you write documentation.
+
+{doc}`themes-and-extensions`
+:   This reference guide describes the themes and extensions used in Plone Documentation, with links to their documentation and usage.
+
+{doc}`admins`
+:   This guide covers automated deployments, hosting, automated testing, previewing, and importing and converting external package documentation into Plone Documentation.
 
 
 (contributing-permission-to-publish-label)=
 
 ## Granting permission to publish
 
-Before you contribute, you must give permission to publish your contribution according to the license we use.
+Before you contribute documentation, you must give permission to publish your contribution according to the license we use.
 You may give that permission in two ways.
 
 - Sign the [Plone Contributor Agreement](https://plone.org/foundation/contributors-agreement).
@@ -38,112 +59,71 @@ The Plone Documentation is licensed under the [Creative Commons Attribution 4.0 
 A copy of the license is included in the root of this repository.
 
 
-(contributing-roles-label)=
+(documentation-repositories-label)=
 
-## Contributor roles
+## Documentation repositories
 
-Contributors to the Plone Documentation may perform one or many roles.
-
-- **Plone users and developers** use this documentation because it is accurate and actively maintained.
-  People in these roles typically contribute minor corrections.
-  They should read {doc}`setup-build` and {doc}`myst-reference`.
-- **Authors** create Plone Documentation.
-  They should read {doc}`setup-build` and {doc}`myst-reference`.
-  They should also read {doc}`authors` for guidance and tips for writing good technical documentation.
-
-
-(contributing-quality-requirements-label)=
-
-## Documentation quality requirements
-
-We use GitHub Actions with every pull request to enforce Plone Documentation quality.
-We recommend that you build the documentation locally to catch errors and warnings early on.
-See {doc}`setup-build` for instructions for how to set up and build the documentation and to run quality checks.
-
-
-(contributing-manage-on-github-label)=
-
-## Making contributions on GitHub
-
-Contributions are managed through git repositories on GitHub.
+Plone documentation consists of several repositories.
 
 -   [`documentation`](https://github.com/plone/documentation)
 -   [`plone.api`](https://github.com/plone/plone.api)
 -   [`plone.restapi`](https://github.com/plone/plone.restapi)
 -   [`volto`](https://github.com/plone/volto)
 
-In the Plone organization, it is strongly recommended that you read {ref}`contributing-permission-to-publish-label` and take appropriate action.
+[`documentation`](https://github.com/plone/documentation) is the primary repository.
+When you {doc}`setup and build <setup-build>` the documentation, it will automatically pull in the other repositories via git submodules.
 
-After your Plone Contributor Agreement has been approved, and you have been added to the Plone GitHub organization as a member of the [Developers](https://github.com/orgs/plone/teams/developers) team, we recommend that you follow our guidelines.
+```{important}
+We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master`, `plone/plone.restapi@main`, and `plone/volto@main` as the default branches for developing Plone 6 Documentation.
+```
 
-1.  Discuss whether you should perform any work.
-    Any method below is acceptable, but are listed in order of most likely to get a response.
 
-    -   Search for open issues in the issue trackers of documented projects, and comment on them.
-        If an issue does not already exist for what you want to work on, then create a new issue in its issue tracker.
+## GitHub menu
 
-        As a convenience, at the top right of every page, there is a GitHub navigation menu.
-        Tap, click, or hover over the GitHub Octocat icon for options.
+In the upper right of the documentation, you will see the GitHub Octocat icon. 
 
-        ```{image} /_static/github-navigation.png
-        :alt: GitHub navigation menu 
-        ```
+```{image} /_static/contributing/github-navigation.png
+:alt: GitHub navigation menu
+```
 
-        You can use this menu to quickly navigate to the `documentation` source repository or open an issue.
-        Note that this navigation convenience is provided only for the `documentation` repository.
+You can use this menu to quickly navigate to the `documentation` source repository or open an issue.
+You can also browse open issues and pull requests to see what has already been reported, or work started on, to improve Plone Documentation.
 
-        -   [`documentation`](https://github.com/plone/documentation/issues)
-        -   [`plone.api`](https://github.com/plone/plone.api/issues)
-        -   [`plone.restapi`](https://github.com/plone/plone.restapi/issues)
-        -   [`volto`](https://github.com/plone/volto/issues)
-
-    -   Discuss during sprints, conferences, trainings, and other Plone events.
-    -   Ask on the [Plone Community Forum, Documentation topic](https://community.plone.org/c/documentation/13).
-    -   Ask in the [Plone chat on Discord](https://discord.com/invite/zFY3EBbjaj).
-
-1.  For first-time contributors especially, **you do not need to ask to be assigned to, or to work on, an open issue**.
-    As in any open source project, you can start work on open issues at your convenience.
-
-    ```{tip}
-    Working on documentation or on issues labeled with either `33 needs: docs` or `41 lvl: easy` are the two best ways for first-timers to contribute.
-    This is because first-timers have a fresh perspective that might be overlooked by old-timers.
-    ```
-
-1.  Clarify the scope of work that needs to be done.
-    Check for previous work, assignment to another developer, or whether the requirements have changed.
-1.  [Assign yourself to the issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/assigning-issues-and-pull-requests-to-other-github-users).
-    This signals to other developers that you are working on the issue.
-
-From here, you can either make {ref}`contributing-quick-edits-label` or {ref}`contributing-large-edits-label`.
+```{tip}
+Working on documentation or on issues labeled with either `33 needs: docs` or `41 lvl: easy` are the two best ways for first-timers to contribute.
+This is because first-timers have a fresh perspective that might be overlooked by old-timers.
+```
 
 
 (contributing-quick-edits-label)=
 
-### Quick edits
+## Edit via GitHub's website
 
-Quick edits for minor issues, such as typographical errors, misspellings, and English grammar and syntax, can be made through the GitHub user interface.
+You can make small edits for minor issues, such as typographical errors, misspellings, and English grammar and syntax, through the GitHub website.
 
-1.  Navigate to the repository as noted in {ref}`contributing-manage-on-github-label`.
-1.  Navigate with the `docs` directory to find the source file to edit.
+1.  Navigate to the repository as noted in {ref}`documentation-repositories-label`.
+1.  Navigate into the `docs` directory to find the source file to edit.
 1.  Click the {guilabel}`pencil icon` to edit the file in the browser.
 
     ```{image} /_static/edit-pencil-icon.png
     :alt: GitHub Edit this file
     ```
 1.  Make edits, add a commit message, select {guilabel}`Create a new branch for this commit and start a pull request`, then click {guilabel}`Propose changes`.
-1.  Make your pull request against the branch `6.0`.
+1.  Make your pull request against the default branch of the repository.
 1.  Members who subscribe to the repository will receive a notification and review your request.
 1.  Request a review from other team members.
 
 
 (contributing-large-edits-label)=
 
-### Large edits
+## Edit in your local editor
 
-For large edits, first follow the instructions in {doc}`setup-build`.
+For large edits in your local editor, first follow the instructions in {doc}`setup-build`.
 
 Once you have your environment set up, then you can follow the standard practice for making a pull request.
-This practice differs depending on whether you are making contributions to only the core `documentation` files, or `plone.api`, `plone.restapi` and `volto` files as well.
+This practice differs according to the repository's files that you edit.
+
+You can then edit the documentation of either Plone in the primary repository or any of the other projects in their folder inside the {file}`/submodules` folder.
 
 
 (contributing-documentation-only-label)=
@@ -173,7 +153,7 @@ This section describes how to make contributions to files in the `plone/document
     # Optionally clean the builds to avoid cache issues
     make clean
     make html
-    make linkcheck
+    make linkcheckbroken
     ```
 
     ```{note}
@@ -208,43 +188,30 @@ This section describes how to make contributions to files in the `plone/document
 
 ### Editing external package documentation
 
-If you want to edit documentation of imported external packages, the process is slightly different.
-We use `git submodules` to manage multiple repositories.
-We imported the external repositories the `plone/documentation` repository as described in {doc}`setup-build`.
-
-```{important}
-We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master`, `plone/plone.restapi@main`, and `plone/volto@main` as the main branches for developing Plone 6 Documentation.
-```
-
-1.  From the project root directory, sync your local `6.0` branch with its remote.
-    You might need to resolve conflicts.
-
-    ```shell
-    git checkout 6.0
-    git pull
-    ```
+To edit documentation of imported external packages, including `plone/plone.api`, `plone/plone.restapi`, and `plone/volto`, the process is slightly different.
+Plone Documentation uses git submodules to manage multiple repositories.
+You already imported the external repositories into the `plone/documentation` repository as described in {doc}`setup-build`.
 
 1.  Change your working directory to the imported package's directory under `submodules/`.
 
     ```shell
     # Choose one.
-    cd submodules/plone.api
-    cd submodules/plone.restapi
-    cd submodules/volto
+    cd submodules/plone.api/docs
+    cd submodules/plone.restapi/docs/source
+    cd submodules/volto/docs/source
     ```
 
-1.  Update the submodule, and sync your local development branch with its remote.
+1.  Sync your local development branch with its remote.
     You might need to resolve conflicts.
 
     ```shell
-    git submodule update
-
     # for plone.api
     git checkout master
 
     # for plone.restapi or volto
     git checkout main
-
+    
+    # pull in the latest changes
     git pull
     ```
 
@@ -254,19 +221,20 @@ We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master
     git switch -c <new_branch>
     ```
 
-1.  Make edits to files in `docs/<external_package>` using your favorite editor, and save, preview, and test.
-    You must run and pass the builds `html` and `linkcheck` without causing new errors.
+1.  Make edits to files in `submodules/<external_package>/<path-to-docs>` using your favorite editor, and save, preview, and test.
+    You must run and pass the builds `livehtml` and `linkcheckbroken` without causing new errors.
 
     ```shell
     # Optionally clean the builds to avoid cache issues.
-    # Note that for the external packages' documentation only,
-    # we use "docs-" as a prefix for make targets to avoid a conflicts.
+    # For the external packages' documentation only, you must use
+    # "docs-" as a prefix for `make` targets. This convention avoids
+    # conflicts with the `make` targets of source code.
     make docs-clean
-    make docs-html
-    make docs-linkcheck
+    make docs-livehtml
+    make docs-linkcheckbroken
     ```
 
-1.  Back in `submodules/<external_package>`, commit and push your changes to the remote.
+1.  Commit and push your changes to the remote.
 
     ```shell
     git add <files>
@@ -274,29 +242,16 @@ We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master
     git push
     ```
 
-1.  Now return to the project root directory, and update the submodule to point to the commit you just made, and push your changes to the remote repository.
-
-    ```shell
-    cd ../..
-
-    # for plone.api
-    git add submodules/plone.api
-    git commit -m "Update submodules/plone.api tip"
-
-    # for plone.restapi
-    git add submodules/plone.restapi
-    git commit -m "Update submodules/plone.restapi tip"
-
-    # for Volto
-    git add submodules/volto
-    git commit -m "Update submodules/volto tip"
-
-    git push
-    ```
-
 1.  Visit the GitHub `plone/<external_package>` repository, and create a pull request against the development branch.
 1.  Members who subscribe to the `plone/<external_package>` repository will receive a notification and review your request.
 1.  Request a review from other team members.
+
+
+## More ways to contribute to documentation
+
+-   Discuss during sprints, conferences, trainings, and other Plone events.
+-   Ask on the [Plone Community Forum, Documentation topic](https://community.plone.org/c/documentation/13).
+-   Ask in the [Plone Documentation chat on Discord](https://discord.com/invite/d9dZcA4Ezw).
 
 
 (contributing-documentation-code-of-conduct-label)=
@@ -308,7 +263,7 @@ See {ref}`contributing-code-of-conduct-label`.
 
 ```{toctree}
 ---
-caption: Contributing to Documentation
+caption: Contribute to Documentation
 maxdepth: 2
 hidden: true
 ---

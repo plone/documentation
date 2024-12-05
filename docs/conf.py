@@ -100,16 +100,17 @@ linkcheck_ignore = [
     r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
-    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
+    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",  # volto
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
+    r"https://browsersl.ist/#",
     # Ignore unreliable sites
     r"https://web.archive.org/",
-    r"https://www.youtube.com/playlist",  # volto, TODO remove after installing sphinxcontrib.youtube
     r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
-linkcheck_allowed_redirects = {  # TODO: Confirm usage of linkcheck_allowed_redirects
+linkcheck_allowed_redirects = {
     # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
-    r"https://chrome\.google\.com/webstore/detail/.*": r"https://consent\.google\.com/.*",
+    # Example
+    # r"https://chrome\.google\.com/webstore/detail/.*": r"https://consent\.google\.com/.*",
 }
 linkcheck_anchors = True
 linkcheck_timeout = 5
@@ -148,12 +149,7 @@ exclude_patterns = [
     "plone.restapi/performance",
     "plone.restapi/src",
     "plone.restapi/var",
-    "volto/contributing/branch-policy.md",
-    "volto/contributing/install-docker.md",
-    "volto/contributing/install-git.md",
-    "volto/contributing/install-make.md",
-    "volto/contributing/install-nodejs.md",
-    "volto/contributing/install-operating-system.md",
+    "volto/_inc/*",
 ]
 
 suppress_warnings = [
@@ -246,6 +242,7 @@ html_theme_options = {
     "repository_branch": "6.0",
     "repository_url": "https://github.com/plone/documentation",
     "search_bar_text": "Search",
+    "show_toc_level": 2,
     "switcher": {
         "json_url": "https://6.docs.plone.org/_static/switcher.json",
         "version_match": version,
@@ -319,6 +316,8 @@ myst_substitutions = {
     "postman_response": "![](../_static/img/postman_response.png)",
     "postman_retain_headers": "![](../_static/img/postman_retain_headers.png)",
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
+    "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.8, 3.9, 3.10, 3.11, or 3.12",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, or 3.12",
 }
 
 
@@ -344,6 +343,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/", None),
     "training-2022": ("https://2022.training.plone.org/", None),
+    "training-2023": ("https://2023.training.plone.org/", None),
 }
 
 
@@ -440,10 +440,7 @@ def source_replace(app, docname, source):
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
     "{PLONE_BACKEND_PATCH_VERSION}": "6.0.13",
-    "{SUPPORTED_PYTHON_VERSIONS_PLONE60}": "3.8, 3.9, 3.10, 3.11, or 3.12",
-    "{SUPPORTED_PYTHON_VERSIONS_PLONE61}": "3.10, 3.11, or 3.12",
 }
-
 
 # Finally, configure app attributes.
 def setup(app):

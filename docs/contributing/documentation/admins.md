@@ -1,18 +1,25 @@
 ---
 myst:
   html_meta:
-    "description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
-    "property=og:description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
-    "property=og:title": "Administrators Guide"
+    "description": "Administrators guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
+    "property=og:description": "Administrators guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
+    "property=og:title": "Administrators guide"
     "keywords": "Plone, Documentation, automated deployments, hosting, automated testing, importing external packages, preview, build, pull request"
 ---
 
 (administrators-guide-label)=
 
-# Administrators Guide
+# Administrators guide
 
 This guide is for administrators of Plone Documentation.
 It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation.
+
+
+## Deployments and hosting
+
+Plone Documentation is automatically deployed through GitHub Workflows.
+The Plone Admin and Infrastructure Team maintains the processes and the servers where this documentation is hosted.
+Some individual projects may also host their projects on Read the Docs.
 
 
 (administrators-import-docs-and-converting-to-myst-label)=
@@ -57,7 +64,7 @@ We did this for `plone.app.dexterity` and several other projects.
 ## Importing external docs with submodules
 
 To add an external package to Plone Documentation, we use git submodules.
-We did this with Volto documentation.
+We did this with `volto`, `plone.api`, and `plone.restapi` documentation.
 Your package must be available under the Plone GitHub organization.
 
 Inside the repository `plone/documentation`, add a git submodule that points to your project.
@@ -119,24 +126,29 @@ After logging in to your Read the Docs account, you can import your project.
 1.  Click {guilabel}`Save` to save the new setting.
 
 
-### Search engine indexing
+### Prevent search engine indexing
 
 Many Plone projects currently self-host their official documentation at {doc}`/index`.
 These projects get indexed by search engines.
 
 For pull request previews, unsupported branches or versions, or other situations, you most likely do not want search engines to index your documentation.
-Your options include the following.
+
+You can create a branch that serves as a landing page for your documentation.
+Using `sphinx-reredirects`, you can configure this page to redirect to your official documentation.
+
+In Plone 6 Documentation, the branch `rtd-redirect` consists of a single landing page that redirects visitors to https://6.docs.plone.org/.
+You can use this branch as a minimal example for your documentation.
+
+This branch also includes a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing.
+It also includes a 404 not found page that directs visitors the correct site.
+
+In addition, you should consider configure Read the Docs for the following.
 
 -   Deactivate your build
 -   Hide your build
--   Create a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing
+-   Set your default branch from your default to the home page branch, such as `rtd-redirect`.
 
-For the last option, you can configure Sphinx to copy the {file}`robots.txt` file.
-However, if you want to have two versions of a {file}`robots.txt` file—say one that allows indexing of your official documentation and another that discourages indexing—you can configure your automation to copy it into place with a command such as the following.
-
-```shell
-cp source-path/block-robots.txt docs-root-path/robots.txt
-```
+With this configuration and setup, you will also continue to have pull request preview builds.
 
 ```{seealso}
 -   [`robots.txt` support](https://docs.readthedocs.io/en/stable/reference/robots.html)
@@ -199,3 +211,64 @@ build:
       # https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition
       - exit 183;
 ```
+
+
+## Update git submodules
+
+Only members of the Plone Documentation Team should update git submodules from the primary repository `documentation`.
+
+1.  Update all branches to pull in the latest changes to their primary branches.
+    Start from the root of the `documentation` project directory.
+
+    ```shell
+    # documentation
+    git checkout 6.0
+    git pull
+    # plone.api
+    cd submodules/plone.api
+    git checkout master
+    git pull
+    # plone.restapi
+    cd ../../submodules/plone.restapi
+    git checkout main
+    git pull
+    # plone.api
+    cd ../../submodules/volto
+    git checkout main
+    git pull
+    ```
+
+1.  Get the status of the submodules to determine whether you need to update the git submodules.
+    
+    ```shell
+    cd ../..
+    git status
+    ```
+
+    If you see any of the submodules listed to add, then proceed to the next step, else you have nothing more to do.
+
+1.  Update the submodule to point to the latest commit, and push your changes to the remote repository.
+    You can combine multiple submodules in a single command.
+
+    ```shell
+    cd ../..
+
+    # for plone.api
+    git add submodules/plone.api
+    git commit -m "Update tip submodules/plone.api"
+
+    # for plone.restapi
+    git add submodules/plone.restapi
+    git commit -m "Update tip submodules/plone.restapi"
+
+    # for Volto
+    git add submodules/volto
+    git commit -m "Update tip submodules/volto"
+    
+    ## for all submodules
+    git add submodules/plone.api submodules/plone.restapi submodules/volto
+    git commit -m "Update tips submodules/plone.api submodules/plone.restapi submodules/volto"
+
+    # finally push your changes
+    git push
+    ```

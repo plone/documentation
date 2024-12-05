@@ -34,6 +34,7 @@ static-resources
 template-global-variables
 templates
 theming/index
+tinymce-customization
 viewlets
 views
 whatsnew
