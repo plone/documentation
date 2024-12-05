@@ -43,4 +43,4 @@ The file must satisfy the following requirements.
 
 CSS styles defined in this file will automatically be added to the top level of TinyMCE's {menuselection}`Format --> Formats` menu.
 
-Alternatively, you can customize TinyMCE by adding the styles through the [`formats` option in the JSON configuration](https://www.tiny.cloud/docs/tinymce/7/content-formatting/).
+Alternatively, you can customize TinyMCE by adding the styles through the [`formats` option in the JSON configuration](https://www.tiny.cloud/docs/tinymce/latest/content-formatting/).
