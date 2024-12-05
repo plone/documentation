@@ -14,18 +14,19 @@ myst:
 This chapter is a developer reference manual for customizing {term}`TinyMCE`.
 
 
-(tinymce-remove-formats-label)=
+## Customize {menuselection}`Format` menu
 
-## Customize format menu
+There are several options to customize TinyMCE's {menuselection}`Format --> Formats` menu.
 
-There are two options to customize TinyMCEs {menuselection}`Format --> Formats` menu.
+The first two options use TinyMCE's [`formats` JSON configuration](https://www.tiny.cloud/docs/tinymce/latest/content-formatting/).
+They are less complicated to implement than the third option.
 
-### Adjust the `formats` option in the JSON configuration (recommended).
 
-See the [`formats` JSON configuration](https://www.tiny.cloud/docs/tinymce/latest/content-formatting/).
+### Add-on GenericSetup configuration file
 
-You can customize this value TTW in the TinyMCE Controlpanel or you can add a GenericSetup configuration file to your addon
-(eg. {file}`profiles/default/registry/tinymce.xml`) with the following content:
+This option is best for system administrators and developers who write their own add-ons to ease reproducibility.
+
+You can add a GenericSetup configuration file to your add-on, such as {file}`profiles/default/registry/tinymce.xml`, with the following content.
 
 ```xml
 <registry>
@@ -44,24 +45,38 @@ You can customize this value TTW in the TinyMCE Controlpanel or you can add a Ge
 ```
 
 
+### Edit the `Formats` option in the TinyMCE control panel
+
+This option is good for quick edits, but is not as reproducible as the GenericSetup option.
+
+You can manually customize the `Formats` value through-the-web in the TinyMCE control panel.
+
+1.  Navigate to {menuselection}`Site Setup --> TinyMCE --> Default`, or append `@@tinymce-controlpanel` to the root of your website in your browser's location bar.
+1.  Scroll down to {guilabel}`Formats`, and edit the JSON configuration.
+1.  Click the {guilabel}`Save` button.
+
+
+
 ### Inject formats with files named {file}`tinymce-formats.css`
+
+This option is more complex to implement than the previous options.
 
 In Plone 6, TinyMCE has a special logic that automatically reads registered files named {file}`tinymce-formats.css` and adds the CSS classes defined in those files to TinyMCE's {menuselection}`Format --> Formats` menu by using the [`importcss_file_filter` option](https://www.tiny.cloud/docs/tinymce/latest/importcss/#importcss_file_filter).
 
 To add custom formats, you can provide your own files.
-The file must satisfy the following requirements.
 
-1.  named {file}`tinymce-formats.css`
-1.  registered as a resource in your Plone site
-1.  included in the TinyMCE control panel in the textarea input {guilabel}`Choose the CSS used in WYSIWYG Editor Area`.
-    See {ref}`tinymce-remove-formats-label`.
+1.  Name the file {file}`tinymce-formats.css`.
+1.  Register the file as a resource in your Plone site.
+1.  Include the file in the TinyMCE control panel in the textarea input {guilabel}`Choose the CSS used in WYSIWYG Editor Area`.
+    1.  Navigate to {menuselection}`Site Setup --> TinyMCE --> Default`, or append `@@tinymce-controlpanel` to the root of your website in your browser's location bar.
+    1.  Scroll down to {guilabel}`Choose the CSS used in WYSIWYG Editor Area`.
 
 CSS styles defined in this file will automatically be added to the top level of TinyMCE's {menuselection}`Format --> Formats` menu.
 
 
 ## Remove imported formats
 
-Plone 6 Classic UI ships with the Barceloneta theme which includes two custom formats,`highlight-inline` and `p.highlight-paragraph`, in the TinyMCE {menuselection}`Format --> Formats` menu.
+Plone 6 Classic UI ships with the Barceloneta theme which includes two custom formats, `highlight-inline` and `p.highlight-paragraph`, in the TinyMCE {menuselection}`Format --> Formats` menu.
 You can remove these formats through the TinyMCE control panel.
 
 1.  Navigate to {menuselection}`Site Setup --> TinyMCE --> Default`, or append `@@tinymce-controlpanel` to the root of your website in your browser's location bar.
@@ -70,4 +85,3 @@ You can remove these formats through the TinyMCE control panel.
 1.  Click the {guilabel}`Save` button.
 
 Once removed, the custom formats will no longer appear in the menu.
-
