@@ -45,15 +45,25 @@ You can add a GenericSetup configuration file to your add-on, such as {file}`pro
 ```
 
 ```{important}
-The contents of the `formats` record will overwrite the default content in the controlpanel.
-If you want to preserve the default content, you will have to copy it into your xml.
+The content of the `formats` record will overwrite the value in the {guilabel}`Formats` field in the TinyMCE control panel at {menuselection}`Site Setup --> TinyMCE --> Default`.
+If you want to preserve the default content, you must copy it into your XML.
 ```
 
-The next step is to define, where the new format should be placed inside the format menu subcategories.
-To do that, you can add your custom format to one of these fields: `Header styles`, `Inline styles`, `Block styles`, `Alignment styles` or `Table styles`.
-The value of each line in those field is `Title|format`.
+Next, define where to place the new format inside the {menuselection}`Format` menu's submenus.
+You can add your custom format to one of the following menu items.
+These menu items in the TinyMCE editor correspond to field items in the TinyMCE control panel at {menuselection}`Site Setup --> TinyMCE --> Default`.
 
-Example XML snippet for `Inline styles`:
+(tinymce-formats-styles-label)=
+
+-   {guilabel}`Header styles`
+-   {guilabel}`Inline styles`
+-   {guilabel}`Block styles`
+-   {guilabel}`Alignment styles`
+-   {guilabel}`Table styles`
+
+The syntax for each element in those fields is `Title|format`.
+The following example XML snippet adds your format to the {menuselection}`Inline styles` menu.
+Unlike the previous example, the example does not remove the default values, but appends to it.
 
 ```xml
 <record field="inline_styles"
@@ -63,11 +73,6 @@ Example XML snippet for `Inline styles`:
     <element>My custom format|myformat</element>
   </value>
 </record>
-```
-
-```{note}
-This example adds your custom format to the default values of `Inline styles` field.
-The default values are not removed.
 ```
 
 
@@ -83,10 +88,10 @@ You can manually customize the `Formats` value through-the-web in the TinyMCE co
 1.  Click the {guilabel}`Save` button.
 
 
-
 ### Inject formats with files named {file}`tinymce-formats.css`
 
 This option is more complex to implement than the previous options.
+However it is the only option where you can add items to the {menuselection}`Formats` submenu as siblings to the {ref}`Formats styles <tinymce-formats-styles-label>` configurations.
 
 In Plone 6, TinyMCE has a special logic that automatically reads registered files named {file}`tinymce-formats.css` and adds the CSS classes defined in those files to TinyMCE's {menuselection}`Format --> Formats` menu by using the [`importcss_file_filter` option](https://www.tiny.cloud/docs/tinymce/latest/importcss/#importcss_file_filter).
 
