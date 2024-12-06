@@ -35,6 +35,6 @@ newPRWelcomeComment: >
 firstPRMergeComment: >
   Congratulations on your first merged pull request in this project! :tada:
 
-  ![Congratulations](https://raw.githubusercontent.com/plone/documentation/.github/images/congratulations.jpg)
+  ![Congratulations](https://raw.githubusercontent.com/plone/documentation/fda4eadee4b0b71c4bcd0da739847444f74d3fc5/.github/images/congratulations.jpg)
 
   <br>Thank you for contributing, we are very proud of you! :heart:
