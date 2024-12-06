@@ -27,6 +27,8 @@ The Plone organization may delete comments, lock conversations, or block GitHub 
 If you are a student or learner of Plone, you probably are not a contributor.
 See the next section, {ref}`expectations-of-first-time-contributors`, to determine whether you are in fact a contributor.
 
+To learn how to use git and GitHub and make your first contribution to open source software, visit the amazing resource [`first-contributions`](https://github.com/firstcontributions/first-contributions).
+
 For free support, training, guidance, or mentoring, you should work through some trainings, use the [Plone Community Forum](https://community.plone.org/), participate in an [event](https://plone.org/news-and-events/events), and **not use GitHub**.
 
 

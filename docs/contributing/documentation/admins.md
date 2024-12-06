@@ -272,3 +272,10 @@ Only members of the Plone Documentation Team should update git submodules from t
     # finally push your changes
     git push
     ```
+
+
+## Welcome bot
+
+[Welcome](https://github.com/apps/welcome) bot automatically makes comments in issues and pull requests when a person creates their first issue, pull request, or merged pull request.
+It is configured as a GitHub app.
+Its configuration file is located at {file}`.github/config.yml`.
