@@ -78,6 +78,8 @@ We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master
 ```
 
 
+(contributing-documentation-github-menu-label)=
+
 ## GitHub menu
 
 In the upper right of the documentation, you will see the GitHub Octocat icon. 
@@ -88,6 +90,7 @@ In the upper right of the documentation, you will see the GitHub Octocat icon.
 
 You can use this menu to quickly navigate to the `documentation` source repository or open an issue.
 You can also browse open issues and pull requests to see what has already been reported, or work started on, to improve Plone Documentation.
+You can also give a reaction of a thumbs up 👍 on an issue or pull request to express that it is valuable to work on.
 
 ```{tip}
 Working on documentation or on issues labeled with either `33 needs: docs` or `41 lvl: easy` are the two best ways for first-timers to contribute.
