@@ -56,7 +56,7 @@ You can register a CSS resource in the same way.
   </registry>
 ```
 
-It is also possible to include both a JavaScript file and a CSS file in the same bundle.
+You can also register both a JavaScript file and a CSS file in the same bundle.
 
 ```xml
 <registry>
