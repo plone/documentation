@@ -120,7 +120,7 @@ You can accept the default values in square brackets (`[default-option]`) by hit
 For ease of documentation, we will use the default values.
 
 ```{tip}
-See the cookiecutter's README for how to [Use options to avoid prompts](https://github.com/collective/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
+See the cookiecutter's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
 ```
 
 ```{important}
