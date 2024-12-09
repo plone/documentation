@@ -33,7 +33,15 @@ module.exports = defineConfig({
 });
 ```
 
+Copy all the tests from {file}`submodules/volto/packages/volto/cypress` to {file}`recordings/project-title/frontend/cypress` so you have something to start from.
+
 Now you will start the backend, frontend, and acceptance test servers, one each in its own terminal session.
+
+```{note}
+None of these commands are documented anywhere.
+You could run `make help`, and get a dump of the commands, but that lacks context for usage.
+See https://github.com/plone/documentation/issues/1758.
+```
 
 In the current session, issue the following command to start the backend server.
 
