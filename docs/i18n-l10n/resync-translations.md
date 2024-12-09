@@ -27,7 +27,7 @@ Here we will explain the procedure to update them.
 2.  Initialize the buildout.
 
     ```shell
-    ./bootstraph.sh
+    ./bootstrap.sh
     ```
 
 3.  Run buildout using the `experimental/i18n.cfg` file:
