@@ -18,6 +18,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 VALEFILES       := $(shell find -L $(DOCS_DIR) -type d \( -path $(DOCS_DIR)/plone.restapi/lib/* -o  -path $(DOCS_DIR)"/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
+RECORDINGS		= ./recordings
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
@@ -245,6 +246,11 @@ rtd-pr-preview:  ## Build pull request preview on Read the Docs
 .PHONY: storybook
 storybook:
 	cd submodules/volto && pnpm i && pnpm build:registry && pnpm --filter @plone/volto build-storybook -o ../../../../_build/html/storybook
+
+.PHONY: recording-init  ## Initializes the image and video recording environment
+recording-init:
+	mkdir "$(RECORDINGS)" && cd "$(RECORDINGS)" && pipx run cookieplone --no-input project
+	cd "$(RECORDINGS)/project-title" && make install
 
 .PHONY: all
 all: clean vale linkcheck html  ## Clean docs build, then run vale and linkcheck, and build html
