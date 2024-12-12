@@ -138,3 +138,31 @@ You can remove these formats through the TinyMCE control panel.
 1.  Click the {guilabel}`Save` button.
 
 Once removed, the custom formats will no longer appear in the menu.
+
+
+
+## Configure `<iframe>` sandboxing
+
+Since version 7.0, TinyMCE adds the attribute `sandbox=""` to make the `<iframe>` elements [sandboxed](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) with all restrictions.
+
+To customize this behavior there are two options which can be added to the `Other settings` JSON configuration in the `Advanced` tab of the TinyMCE controlpanel.
+
+If you want to deactivate sandboxing in general this is the JSON configuration:
+
+```JSON
+{
+  "sandbox_iframes": false
+}
+```
+
+You can also exclude certain URLs from beeing sandboxed. The option is:
+
+```JSON
+{
+  "sandbox_iframes_exclusions": [
+    "my.url.com"
+  ]
+}
+```
+
+See [this article](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#sandbox-iframes-exclusions) for TinyMCEs default settings.
