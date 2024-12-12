@@ -115,6 +115,8 @@ linkcheck_allowed_redirects = {
 linkcheck_anchors = True
 linkcheck_timeout = 5
 linkcheck_retries = 1
+# See https://github.com/plone/documentation/issues/1815
+linkcheck_report_timeouts_as_broken = False
 
 # The suffix of source filenames.
 source_suffix = {
