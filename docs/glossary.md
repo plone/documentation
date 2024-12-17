@@ -120,7 +120,7 @@ TTW
     Through-The-Web allows editing or customizing a Plone site through a web browser.
 
 Ansible
-    [Ansible](https://www.ansible.com/) is an open source automation platform.
+    [Ansible](https://www.redhat.com/en/ansible-collaborative) is an open source automation platform.
     Ansible can help you with configuration management, application deployment, task automation.
 
 Archetypes

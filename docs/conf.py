@@ -385,7 +385,7 @@ notfound_template = "404.html"
 # -- sphinx-reredirects configuration ----------------------------------
 # https://documatt.com/sphinx-reredirects/usage.html
 redirects = {
-    "contributing/plone-api": "/plone.api/contribute/index.html",
+    "contributing/plone-api": "/plone.api/contribute.html",
     "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
     "contributing/volto": "/volto/contributing/index.html",
     "install/install-from-packages": "/install/create-project.html",
