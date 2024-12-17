@@ -226,7 +226,7 @@ Only members of the Plone Documentation Team should update git submodules from t
     git pull
     # plone.api
     cd submodules/plone.api
-    git checkout master
+    git checkout main
     git pull
     # plone.restapi
     cd ../../submodules/plone.restapi

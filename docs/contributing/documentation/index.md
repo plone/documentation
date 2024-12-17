@@ -74,7 +74,7 @@ Plone documentation consists of several repositories.
 When you {doc}`setup and build <setup-build>` the documentation, it will automatically pull in the other repositories via git submodules.
 
 ```{important}
-We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master`, `plone/plone.restapi@main`, and `plone/volto@main` as the default branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@6.0`, `plone/plone.api@main`, `plone/plone.restapi@main`, and `plone/volto@main` as the default branches for developing Plone 6 Documentation.
 ```
 
 
@@ -208,10 +208,6 @@ You already imported the external repositories into the `plone/documentation` re
     You might need to resolve conflicts.
 
     ```shell
-    # for plone.api
-    git checkout master
-
-    # for plone.restapi or volto
     git checkout main
     
     # pull in the latest changes

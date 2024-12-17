@@ -206,7 +206,7 @@ _Plone git workflow_
 
 Once you have your environment set up, then you can follow standard best practices for working with git.
 
-In the following command examples, we will use `main` as the default branch, although `master` may still be in use for some repositories.
+In the following command examples, you should use `main` as the default branch, although `master` may still be in use for some repositories.
 
 Always start by checking out the default branch then update the default branch.
 
