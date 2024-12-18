@@ -13,23 +13,22 @@ myst:
 
 This chapter provides guidance to first-time contributors to Plone and all its projects and repositories under the Plone GitHub organization.
 
+```{important}
+For free support, training, guidance, or mentoring, you should work through some [trainings](https://training.plone.org/), ask questions in the [Plone Community Forum](https://community.plone.org/), participate in an [event](https://plone.org/news-and-events/events), and **do not use GitHub**.
+Members of the Plone organization may delete comments, lock conversations, or block GitHub users who ignore this.
+```
+
 
 (for-students-and-learners)=
 
 ## For students and learners
 
-```{important}
-**We do not offer training, guidance, or mentoring to students or learners on GitHub.**
-Don't ask for it.
-The Plone organization may delete comments, lock conversations, or block GitHub users who ignore this.
-```
+If you are a student or learner of Plone, you might not be a contributor yet, but you can work toward that.
+See the next section, {ref}`expectations-of-first-time-contributors`, to determine what it takes to become a contributor.
 
-If you are a student or learner of Plone, you probably are not a contributor.
-See the next section, {ref}`expectations-of-first-time-contributors`, to determine whether you are in fact a contributor.
-
+```{seealso}
 To learn how to use git and GitHub and make your first contribution to open source software, visit the amazing resource [`first-contributions`](https://github.com/firstcontributions/first-contributions).
-
-For free support, training, guidance, or mentoring, you should work through some trainings, use the [Plone Community Forum](https://community.plone.org/), participate in an [event](https://plone.org/news-and-events/events), and **not use GitHub**.
+```
 
 
 (expectations-of-first-time-contributors)=
@@ -68,6 +67,8 @@ Such motivation behind these contributions usually results in poor quality break
 ## Requirements
 
 All first-time contributors to Plone must follow the contributing requirements described in {doc}`index`.
+**Do this step now.**
+If you skip this step, then your contribution can't be accepted.
 
 For [Plone Google Summer of Code (GSoC)](https://plone.org/community/gsoc) applicants, you must also follow both our and its program guidelines.
 
@@ -78,6 +79,10 @@ For [Plone Google Summer of Code (GSoC)](https://plone.org/community/gsoc) appli
 
 Contributions to Plone are managed through git repositories on GitHub.
 This section first discusses what not to do, then how to work effectively with a project on GitHub.
+
+```{danger}
+Only people who have completed the {ref}`first-time-requirements-label` described above should make contributions.
+```
 
 
 (things-not-to-do-label)=
@@ -90,17 +95,17 @@ Learn from their mistakes, and don't commit them yourself.
 (mistake-1-label)=
 
 1.  **Never ask to be assigned to an issue.**
-    Instead you may post a comment to claim it, if no one else has claimed it (see {ref}`Avoid duplicate effort <mistake-2-label>`).
-    For example, "I am working on this issue in pull request #123."
-    You do not need to ask to be assigned to, or to work on, an open issue.
-    As in any open source software project, you can start work on open issues at your convenience.
-    Privileged team members may ignore or delete comments asking to be assigned to an issue.
+    If an issue is unclaimed—either by assignment, an open pull request, or an explicit comment such as "I am working on this issue"—then it is available to work on by **any member of a Plone Team in GitHub**.
+    As a member of a Plone Team, you may post a comment in any unclaimed issue to claim it.
+    See {ref}`Avoid duplicate effort <mistake-2-label>`.
+    Privileged Plone Team members may ignore or delete comments asking to be assigned to an issue.
 
     (mistake-2-label)=
 
 2.  **Avoid duplicate effort.**
     Don't work on issues that have already been claimed or worked on, unless such effort has been abandoned by the author.
-    GitHub's interface provides links to related issues and pull requests, and who is assigned to an issue.
+    Use GitHub's interface to view related issues, pull requests, and who is assigned to an issue.
+    If it is not clear whether an issue has been claimed or abandoned, you may ask by posting a comment such as, "Is anyone working on this issue?"
     Pull requests will be reviewed in the order received.
     Duplicate pull requests may be ignored and closed without comment by the privileged GitHub teams.
 
@@ -129,8 +134,8 @@ Learn from their mistakes, and don't commit them yourself.
 ### Plone Contributors Team
 
 The Plone GitHub organization uses GitHub Teams to grant groups of GitHub users appropriate access to its repositories.
-New users, including GSoC applicants, are assigned to the [Contributors](https://github.com/orgs/plone/teams/contributors) Team within a few business days after they have signed and returned the {ref}`Plone Contributor Agreement <contributing-sign-and-return-the-plone-contributor-agreement-label>`.
-New contributors should wait for confirmation that they have been added to this team before creating a pull request to a Plone project.
+First-time contributors, including GSoC applicants, are assigned to the [Contributors](https://github.com/orgs/plone/teams/contributors) Team within a few business days after they have signed and returned the {ref}`Plone Contributor Agreement <contributing-sign-and-return-the-plone-contributor-agreement-label>`.
+New contributors should wait for an invitation to join this team, and accept it, before creating a pull request to a Plone project.
 
 
 (first-time-mr-roboto-on-github-label)=
