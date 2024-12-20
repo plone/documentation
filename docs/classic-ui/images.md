@@ -438,7 +438,7 @@ This is useful when you want to define a `picture` variant to be used in templat
 With image size optimization, the browser is able to choose the optimal image for each display size.
 But we have no control over which scale the browser will actually use.
 For example to force the browser to use a zoomed version of an image for smaller screens, we can use media queries.
-The technique is called [art direction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#art_direction).
+The technique is called [art direction](https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images#art_direction).
 
 Let's have a look at a more advanced configuration:
 
