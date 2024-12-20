@@ -114,12 +114,10 @@ During in-place migrations, it is advisable **not to skip over** breaking (major
 
 Going from Plone 5.2 to Plone 6.0 is fine.
 
-If you are at Plone 2.5 and want to upgrade to the latest Plone 6, you should approach this in several steps:
+If you are at Plone 4 and want to upgrade to the latest Plone 6, you should approach this in several steps:
 
--   First upgrade from Plone 2.5 to the latest Plone 3 version (3.3.6).
--   Then upgrade from Plone 3 to the latest Plone 4 version (4.3.20).
--   Then upgrade from Plone 4 to the latest Plone 5 version (5.2.15).
--   Then upgrade from Plone 5 to the latest Plone 6 version ({PLONE_BACKEND_PATCH_VERSION}).
+-   First upgrade from Plone 4 to the latest Plone 5 version.
+-   Then upgrade from Plone 5 to the latest Plone 6 version.
 
 
 (introduction-upgrade-strategies-export-import-migrations-label)=
