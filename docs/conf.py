@@ -318,8 +318,8 @@ myst_substitutions = {
     "postman_response": "![](../_static/img/postman_response.png)",
     "postman_retain_headers": "![](../_static/img/postman_retain_headers.png)",
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
-    "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.8, 3.9, 3.10, 3.11, or 3.12",
-    "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, or 3.12",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
 }
 
 
@@ -441,7 +441,7 @@ def source_replace(app, docname, source):
 # Dict of replacements.
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.13",
+    "{PLONE_BACKEND_PATCH_VERSION}": "4",
 }
 
 # Finally, configure app attributes.
