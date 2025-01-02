@@ -274,8 +274,9 @@ Only members of the Plone Documentation Team should update git submodules from t
     ```
 
 
-## Welcome bot
+## `boring-cyborg` bot
 
-[Welcome](https://github.com/apps/welcome) bot automatically makes comments in issues and pull requests when a person creates their first issue, pull request, or merged pull request.
+[`boring-cyborg`](https://probot.github.io/apps/boring-cyborg/) bot automatically makes comments in issues and pull requests when a person creates their first issue, pull request, or merged pull request.
+It also can automatically assign reviewers to pull requests, and has other add-ons.
 It is configured as a GitHub app.
-Its configuration file is located at {file}`.github/config.yml`.
+Its configuration file is located at {file}`.github/boring-cyborg.yml`.
