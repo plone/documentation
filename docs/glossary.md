@@ -863,9 +863,12 @@ schema enhancer
     This function receives an object with `formData`, which is the block data; `schema`, which is the original schema to modify; and the injected `intl`, which aids with internationalization.
 
 variation
-    A variation is a common development pattern that provides versions of a given block.
-    You can use a variation to enhance the default behavior of a block without shadowing its stock components.
-    These enhancements can either be at the settings level via schema enhancers or, if the code of your block allows it, use alternative renderers showing the enhanced fields, modifying the block behavior or its look and feel.
-    Editors can select a variation on demand.
+    A variation is a common development pattern that provides alternative views for the same data.
+    For example, a teaser block can present data as `title + link`, `title + description + link`, or `title + image + link`.
+        
+    An advanced variation can enhance the block by adding data fields to the block.
+    For example, a listing block variation can show news items with `title + link`.
+    Extending this example, a developer can add a boolean field to the block that toggles the display of the link.
+    Thus an editor can select between `title + link` or just `title`.
 
 ```
