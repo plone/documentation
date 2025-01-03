@@ -857,4 +857,15 @@ Vale
     [Vale](https://vale.sh/) is an open-source, command-line tool that helps maintain a consistent and on-brand voice in documentation.
     Plone Documentation uses it to check spelling, English grammar and syntax, and style guides.
 
+schema enhancer
+    A schema enhancer uses the `schemaEnhancer` function, which can modify the schema used by the `InlineForm` component.
+    Any registered extension plugin can provide a `schemaEnhancer` function.
+    This function receives an object with `formData`, which is the block data; `schema`, which is the original schema to modify; and the injected `intl`, which aids with internationalization.
+
+variation
+    A variation is a common development pattern that provides versions of a given block.
+    You can use a variation to enhance the default behavior of a block without shadowing its stock components.
+    These enhancements can either be at the settings level via schema enhancers or, if the code of your block allows it, use alternative renderers showing the enhanced fields, modifying the block behavior or its look and feel.
+    Editors can select a variation on demand.
+
 ```
