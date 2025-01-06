@@ -22,5 +22,5 @@ You can help consolidate all of development documentation here, even if it is to
 :maxdepth: 2
 
 create-a-distribution
-standardize-project-configuration
+standardize-python-project-configuration
 ```
