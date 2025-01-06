@@ -9,19 +9,33 @@ myst:
 
 (classic-ui-theming-index-label)=
 
-# Theming of Classic UI 
+# Theming Classic UI 
+
+This section of the documentation describes how to theme Classic UI.
+
+Small theme changes—such as the site logo and favicon and minimal CSS changes—can be made by {doc}`changing theme settings through the web <settings-ttw>`.
+Other theming methods should be used for larger customizations or entire website designs.
+These other methods include creating an add-on, tweaking the Barceloneta theme, Diazo, and from scratch.
 
 ```{todo}
-This page is only an outline and needs a lot of work.
-See https://github.com/plone/documentation/issues/1645
+Provide more information about the other methods and why a developer should choose one versus another.
 ```
+
+## How-to guides
 
 ```{toctree}
 :maxdepth: 2
 
-barceloneta
-diazo
-from-scratch
-through-the-web
-color-mode
+settings-ttw
+create-add-on
+color-modes
+```
+
+## Reference
+
+```{toctree}
+:maxdepth: 2
+
+scss-structure
+css-custom-properties
 ```
