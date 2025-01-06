@@ -857,4 +857,32 @@ Vale
     [Vale](https://vale.sh/) is an open-source, command-line tool that helps maintain a consistent and on-brand voice in documentation.
     Plone Documentation uses it to check spelling, English grammar and syntax, and style guides.
 
+schema enhancer
+    A schema enhancer uses the `schemaEnhancer` function, which can modify the schema used by the `InlineForm` component.
+    Any registered extension plugin can provide a `schemaEnhancer` function.
+    This function receives an object with `formData`, which is the block data; `schema`, which is the original schema to modify; and the injected `intl`, which aids with internationalization.
+
+variation
+    A variation is a common development pattern that provides alternative views for the same data.
+    For example, a teaser block can present data as `title + link`, `title + description + link`, or `title + image + link`.
+        
+    An advanced variation can enhance the block by adding data fields to the block.
+    For example, a listing block variation can show news items with `title + link`.
+    Extending this example, a developer can add a boolean field to the block that toggles the display of the link.
+    Thus an editor can select between `title + link` or just `title`.
+
+HOC
+Higher-Order Component
+    A higher-order component (HOC) is an advanced technique in React for reusing component logic.
+    HOCs are not part of the React API, per se.
+    They are a pattern that emerges from React's compositional nature.
+    Concretely, a higher-order component is a function that takes a component and returns a new component.
+    
+    ```{important}
+    Higher-order components are not commonly used in modern React code.
+    ```
+    ```{seealso}
+    https://legacy.reactjs.org/docs/higher-order-components.html
+    ```
+
 ```
