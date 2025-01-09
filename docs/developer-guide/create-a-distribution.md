@@ -255,15 +255,15 @@ The next lines hide three fields:
     "…": "…"
   },
   "uischema": {
-      "description": {
-          "ui:widget": "hidden"
-      },
-      "default_language": {
-          "ui:widget": "hidden"
-      },
-      "portal_timezone": {
-          "ui:widget": "hidden"
-      }
+    "description": {
+      "ui:widget": "hidden"
+    },
+    "default_language": {
+      "ui:widget": "hidden"
+    },
+    "portal_timezone": {
+      "ui:widget": "hidden"
+    }
   }
 }
 ```
