@@ -252,7 +252,7 @@ The next lines hide three fields:
 ```json
 {
   "schema": {
-    ...
+    "…": "…"
   },
   "uischema": {
       "description": {
