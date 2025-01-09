@@ -54,7 +54,7 @@ Examples of third-party Plone distributions include:
 
 - [SENAITE](https://www.senaite.com)
 - [Quaive](https://quaive.com/)
-- [Portal Modelo](https://www12.senado.leg.br/interlegis)
+- [Portal Modelo](https://www12.senado.leg.br/interlegis/produtos/portal-modelo)
 - [Portal Padrão](https://identidade-digital-de-governo-plone.readthedocs.io/en/latest/)
 
 
