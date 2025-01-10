@@ -245,6 +245,30 @@ You may have noticed the entries for both `default_language` and `portal_timezon
 `plone.distribution` adds both definitions at runtime, providing a list of languages and timezones available on the installation.
 ````
 
+If you want to hide fields in the form, you can use the `uischema`.
+This is especially useful for fields that must be in the schema, but for which you always want the default value.
+The next lines hide three fields:
+
+```json
+{
+  "schema": {
+    "…": "…"
+  },
+  "uischema": {
+    "description": {
+      "ui:widget": "hidden"
+    },
+    "default_language": {
+      "ui:widget": "hidden"
+    },
+    "portal_timezone": {
+      "ui:widget": "hidden"
+    }
+  }
+}
+```
+
+
 ## Add a dependency on an add-on
 
 If you want to add a Plone backend add-on to your Plone distribution, then you must perform the following steps.
