@@ -49,7 +49,7 @@ When you upload a new favicon, the previous field {guilabel}`MIME type of the si
 Navigate to {menuselection}`Admin --> Site Setup --> Theming --> Advanced settings --> Custom Styles`, or visit the URL path `/@@theming-controlpanel#autotoc-item-autotoc-2` in your web browser's address bar.
 
 Enter any arbitrary styles, and save your changes.
-The changes are stored in the file {file}`custom.css`.
+The changes are stored in a `BrowserView` called `custom.css`.
 It is shipped as the last resource after all other CSS files.
 It can be used to override default CSS, sometimes with the use of the CSS property `!important` or specific CSS selectors.
 
