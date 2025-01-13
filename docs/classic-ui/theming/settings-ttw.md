@@ -13,7 +13,7 @@ myst:
 
 This chapter describes how to change Classic UI theme settings through-the-web ({term}`TTW`) in Plone 6.
 
-Small theme changes can be made via control panels or by updating Plone 6 Classic UI's `custom.css`.
+Small theme changes can be made via control panels.
 Other theming methods should be used for larger customizations or entire website designs.
 
 
