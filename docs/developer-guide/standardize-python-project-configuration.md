@@ -36,14 +36,13 @@ See a description of all of [`plone/meta`'s features](https://github.com/plone/m
 
 ### Setup
 
-Clone `plone/meta` to any machine, then change your current working directory into `meta/config`, create a Python virtual environment, activate it, and install `plone/meta`'s requirements.
+Clone `plone/meta` to any machine, then change your current working directory into `meta/config`, create a Python virtual environment, and install `plone/meta`'s requirements.
 
 ```shell
 git clone https://github.com/plone/meta.git
 cd meta/config
 python3 -m venv venv
-. venv/bin/activate
-pip install -r requirements.txt
+venv/bin/pip install -r requirements.txt
 ```
 
 
@@ -75,7 +74,7 @@ If you prefer to review changes before committing them, then use the `--no-commi
 For help for the script, use the following command.
 
 ```shell
-python config-package.py --help
+venv/bin/python config-package.py --help
 ```
 
 
@@ -84,7 +83,7 @@ python config-package.py --help
 Now you can run the Python script {file}`config-package.py` to generate configuration files from Jinja2 template files to manage your project.
 
 ```shell
-python config-package.py [OPTIONS] PATH/TO/PACKAGE
+venv/bin/python config-package.py [OPTIONS] PATH/TO/PACKAGE
 ```
 
 
@@ -100,5 +99,5 @@ Anytime someone runs the Python script {file}`config-package.py`, any changes ma
 Then run the Python script {file}`config-package.py` to regenerate configuration files from your project's {file}`.meta.toml`.
 
 ```shell
-python config-package.py [OPTIONS] PATH/TO/PACKAGE
+venv/bin/python config-package.py [OPTIONS] PATH/TO/PACKAGE
 ```
