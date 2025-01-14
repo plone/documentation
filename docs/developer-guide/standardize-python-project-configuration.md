@@ -13,7 +13,7 @@ This part of the documentation describes how to standardize Python project confi
 It does not cover the following.
 
 -   Volto or any other JavaScript-based project, which has its own ecosystem.
--   Monorepos, such as [Cookieplone](https://github.com/plone/cookieplone).
+-   Monorepo projects with backend and frontend code bases, such as those created by [Cookieplone](https://github.com/plone/cookieplone).
     Repositories must have a single Python package at the top level.
 -   Project that support multiple versions of Plone in the same branch.
 
