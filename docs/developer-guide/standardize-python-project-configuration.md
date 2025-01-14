@@ -15,7 +15,7 @@ It does not cover the following.
 -   Volto or any other JavaScript-based project, which has its own ecosystem.
 -   Monorepo projects with backend and frontend code bases, such as those created by [Cookieplone](https://github.com/plone/cookieplone).
     Repositories must have a single Python package at the top level.
--   Project that support multiple versions of Plone in the same branch.
+-   Projects that support multiple versions of Plone in the same branch.
 
 Plone consists of hundreds of projects.
 To lessen the effort of configuring a new project in the Plone GitHub organization, and to keep these projects current with latest configuration practices, the Plone community agreed upon a trusted set of configuration items.
