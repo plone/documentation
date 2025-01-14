@@ -12,6 +12,11 @@ Support for Python 3.8.
 ```
 
 ```{warning}
+Python 3.9 will reach [end of life in October 2025](https://devguide.python.org/versions/).
+Do not create a new Plone project with Python 3.9.
+```
+
+```{warning}
 Do not create or activate a Python virtual environment at this time.
 The instructions below will create one.
 ```
