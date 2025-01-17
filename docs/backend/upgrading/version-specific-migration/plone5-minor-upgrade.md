@@ -51,7 +51,7 @@ Save your changes.
 
 ### Upgrading
 
-Stop your Plone instance:
+Stop your Zope instance:
 
 ```console
 bin/plonectl stop
@@ -65,7 +65,7 @@ bin/buildout
 
 This may take a some time, as Plone downloads new releases.
 
-When buildout finishes running, restart your Plone instance:
+When buildout finishes running, restart your Zope instance:
 
 ```console
 bin/plonectl start

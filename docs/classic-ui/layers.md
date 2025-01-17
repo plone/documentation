@@ -20,7 +20,7 @@ Layers are useful in the following scenarios.
 Layers are marker interfaces applied to the {term}`HTTPRequest` object.
 They are usually used in conjunction with Zope Configuration Mark-up Language ({term}`ZCML`) directives to dynamically activate various parts of the configuration, such as theme files or add-on product functionality.
 
-Layers ensure that only one add-on product can override the specific Plone instance functionality in your site at a time, while still allowing you to have possibly conflicting add-on products in your buildout and ZCML.
+Layers ensure that only one add-on product can override the specific Zope instance functionality in your site at a time, while still allowing you to have possibly conflicting add-on products in your buildout and ZCML.
 Multiple Plone site instances can share the same ZCML and code files.
 
 Many ZCML directives take the optional `layer` parameter.

@@ -171,7 +171,7 @@ def some_function(request):
     # modify the database here
 ```
 
-Disabling all CSRF protection for the whole Plone instance is possible by starting Plone with the environment variable `PLONE_CSRF_DISABLED=true` set.
+Disabling all CSRF protection for the whole Zope instance is possible by starting Plone with the environment variable `PLONE_CSRF_DISABLED=true` set.
 This is not recommended but can be handy temporarily in special situations.
 
 

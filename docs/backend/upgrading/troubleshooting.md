@@ -86,7 +86,7 @@ If the problem disappears, you will need to double-check the offending product.
 
 (upgrading-troubleshooting-test-with-a-fresh-plone-instance-label)=
 
-## Test with a fresh Plone instance
+## Test with a fresh Zope instance
 
 Create a new Plone site with your new version of Plone.
 You do not need a new Zope instance, because you can add another Plone site in the root of Zope.
