@@ -151,10 +151,10 @@ In addition, you should consider configure Read the Docs for the following.
 With this configuration and setup, you will also continue to have pull request preview builds.
 
 ```{seealso}
--   [`robots.txt` support](https://docs.readthedocs.io/en/stable/reference/robots.html)
--   [Automation rules](https://docs.readthedocs.io/en/stable/automation-rules.html)
--   [Versions](https://docs.readthedocs.io/en/stable/versions.html)
--   [Managing versions automatically](https://docs.readthedocs.io/en/stable/guides/automation-rules.html)
+-   [`robots.txt` support](https://docs.readthedocs.com/platform/stable/reference/robots.html)
+-   [Automation rules](https://docs.readthedocs.com/platform/stable/automation-rules.html)
+-   [Versions](https://docs.readthedocs.com/platform/stable/versions.html)
+-   [Managing versions automatically](https://docs.readthedocs.com/platform/stable/guides/automation-rules.html)
 ```
 
 
@@ -162,7 +162,7 @@ With this configuration and setup, you will also continue to have pull request p
 
 You might want to cancel a build programmatically when certain conditions are met.
 You can do this through your {file}`.readthedocs.yaml` file.
-Read the Docs covers a few scenarios in its documentation, [Cancel build based on a condition](https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition).
+Read the Docs covers a few scenarios in its documentation, [Cancel build based on a condition](https://docs.readthedocs.com/platform/stable/build-customization.html).
 
 
 #### Build only on changes
@@ -178,19 +178,19 @@ build:
   os: "ubuntu-22.04"
   tools:
     python: "3.12"
-  jobs:
-    post_checkout:
-      # Cancel building pull requests when there aren't changes in the docs directory or YAML file.
-      # You can add any other files or directories that you'd like here as well,
-      # like your docs requirements file, or other files that will change your docs build.
-      #
-      # If there are no changes (git diff exits with 0) we force the command to return with 183.
-      # This is a special exit code on Read the Docs that will cancel the build immediately.
-      - |
-        if [ "$READTHEDOCS_VERSION_TYPE" = "external" ] && git diff --quiet origin/main -- docs/ .readthedocs.yaml requirements-initial.txt requirements.txt;
-        then
-          exit 183;
-        fi
+  commands:
+    # Cancel building pull requests when there aren't changes in the docs directory or YAML file.
+    # You can add any other files or directories that you'd like here as well,
+    # like your docs requirements file, or other files that will change your docs build.
+    #
+    # If there are no changes (git diff exits with 0) we force the command to return with 183.
+    # This is a special exit code on Read the Docs that will cancel the build immediately.
+    - |
+      if [ "$READTHEDOCS_VERSION_TYPE" = "external" ] && git diff --quiet origin/main -- docs/ .readthedocs.yaml requirements-initial.txt requirements.txt;
+      then
+        exit 183;
+      fi
+    # build.commands to build docs
 ```
 
 
@@ -208,7 +208,7 @@ build:
   jobs:
     post_checkout:
       # Cancel the Read the Docs build
-      # https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition
+      # https://docs.readthedocs.com/platform/stable/build-customization.html
       - exit 183;
 ```
 
