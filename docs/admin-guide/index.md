@@ -32,6 +32,7 @@ run-plone
 add-site
 configure-zope
 add-ons
+import-export
 override-core
 /upgrade/index
 ```
