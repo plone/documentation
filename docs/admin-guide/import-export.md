@@ -61,7 +61,7 @@ plone-importer instance/etc/zope.conf Plone /tmp/plone_data/
 -   Content (Dexterity content items)
     -   Ordering
     -   Local roles
-    -   Versions
+    -   Versions (when using the `--include-revisions` command line option)
     -   Default pages
 -   Principals (members and groups)
 -   Relations (relationships between content items)
