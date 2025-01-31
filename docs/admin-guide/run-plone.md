@@ -4,7 +4,7 @@ myst:
     "description": "Run Plone"
     "property=og:description": "Run Plone"
     "property=og:title": "Run Plone"
-    "keywords": "Plone 6, run, start, command, Cookieplone, Buildout, pip, cookiecutter-plone-starter"
+    "keywords": "Plone, run, start, command, Cookieplone, Buildout, pip, cookiecutter-plone-starter"
 ---
 
 (run-plone-label)=

@@ -4,7 +4,7 @@ myst:
     "description": "Install Plone with Buildout"
     "property=og:description": "Install Plone with Buildout"
     "property=og:title": "Install Plone with Buildout"
-    "keywords": "Plone 6, install, Classic UI, Buildout"
+    "keywords": "Plone, install, Classic UI, Buildout"
 ---
 
 (install-buildout-label)=

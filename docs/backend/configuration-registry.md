@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Configuration Registry in Plone 6"
-    "property=og:description": "Configuration Registry in Plone 6"
-    "property=og:title": "Configuration Registry in Plone 6"
-    "keywords": "Plone 6, Configuration Registry, backend, plone.registry, plone.app.registry, GenericSetup"
+    "description": "Configuration Registry in Plone"
+    "property=og:description": "Configuration Registry in Plone"
+    "property=og:title": "Configuration Registry in Plone"
+    "keywords": "Plone, Configuration Registry, backend, plone.registry, plone.app.registry, GenericSetup"
 ---
 
 (backend-configuration-registry-label)=

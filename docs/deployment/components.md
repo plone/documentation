@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Components of a Plone 6 application for deployment"
-    "property=og:description": "Components of a Plone 6 application for deployment"
-    "property=og:title": "Components of a Plone 6 application for deployment"
+    "description": "Components of a Plone application for deployment"
+    "property=og:description": "Components of a Plone application for deployment"
+    "property=og:title": "Components of a Plone application for deployment"
     "keywords": "Plone, deployment, components, backend, volto, frontend, TLS termination proxy, load balancer, router, database, mail service, optimization, maintenance"
 ---
 

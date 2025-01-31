@@ -143,6 +143,6 @@ Alternatively you can implement it in your own templates by adding the CSS class
 -   [`bobtemplates.plone` repository](https://github.com/plone/bobtemplates.plone)
 -   [`mr.bob` repository](https://github.com/collective/mr.bob)
 -   [Plone CLI (`plonecli`) repository](https://github.com/plone/plonecli)
--   {ref}`v60-mockup-resource-registry-label` in Plone 6.0
+-   {ref}`v60-mockup-resource-registry-label` in Plone 6
 -   [Mockup repository on GitHub](https://github.com/plone/mockup)
 -   [Patternslib](https://patternslib.com/)

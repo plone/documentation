@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Prepare a server environment for a deployment of Plone 6"
-    "property=og:description": "Prepare a server environment for a deployment of Plone 6"
-    "property=og:title": "Prepare a server environment for a deployment of Plone 6"
+    "description": "Prepare a server environment for a deployment of Plone"
+    "property=og:description": "Prepare a server environment for a deployment of Plone"
+    "property=og:title": "Prepare a server environment for a deployment of Plone"
     "keywords": "Plone, deployment, server, environment"
 ---
 
@@ -11,7 +11,7 @@ myst:
 
 # Server environment
 
-This page in the deployment guide covers how to prepare a server environment for a Plone 6 deployment.
+This page in the deployment guide covers how to prepare a server environment for a Plone deployment.
 You will need to prepare your environment with the following items.
 
 ```{note}

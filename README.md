@@ -1,15 +1,22 @@
-[![Testing Status](https://github.com/plone/documentation/actions/workflows/test.yml/badge.svg?branch=6.0 "Testing Status")](https://github.com/plone/documentation/actions/workflows/test.yml)
+[![Testing Status](https://github.com/plone/documentation/actions/workflows/test.yml/badge.svg?branch=7 "Testing Status")](https://github.com/plone/documentation/actions/workflows/test.yml)
 
 # Plone Documentation
 
 This is the repository for Plone Documentation.
 
 
+## Plone 7
+
+Browse the Plone 7 Documentation at https://7.docs.plone.org/.
+
+Active development on the Plone 7 Documentation takes place on the branch [`7`](https://github.com/plone/documentation/tree/7).
+
+
 ## Plone 6
 
 Browse the Plone 6 Documentation at https://6.docs.plone.org/.
 
-Active development on the Plone 6 Documentation takes place on the branch [`6.0`](https://github.com/plone/documentation/tree/6.0).
+Development on the Plone 6 Documentation takes place on the branch [`6.0`](https://github.com/plone/documentation/tree/6.0).
 
 
 ## Plone 5.2

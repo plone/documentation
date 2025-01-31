@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
-    "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
+    "description": "Very simple Plone setup with only one backend and data being persisted in a Docker volume."
+    "property=og:description": "Very simple Plone setup with only one backend and data being persisted in a Docker volume."
     "property=og:title": "Traefik Proxy, Frontend, Backend, Varnish container example"
-    "keywords": "Plone 6, Container, Docker, Traefik Proxy, Frontend, Backend, Varnish"
+    "keywords": "Plone, Container, Docker, Traefik Proxy, Frontend, Backend, Varnish"
 ---
 
 # Traefik Proxy, Frontend, Backend, Varnish container example

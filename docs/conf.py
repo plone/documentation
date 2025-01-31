@@ -29,9 +29,9 @@ year = str(now.year)
 # built documents.
 #
 # The short X.Y version.
-version = "6"
+version = "7"
 # The full version, including alpha/beta/rc tags.
-release = "6"
+release = "7"
 
 
 # -- General configuration ----------------------------------------------------
@@ -153,6 +153,12 @@ exclude_patterns = [
     "plone.restapi/src",
     "plone.restapi/var",
     "volto/_inc/*",
+    # TODO: Remove the following three entries after Plone 7 is final
+    "backend/**",
+    "classic-ui/**",
+    "plone.api/**",
+    "plone.restapi/**",
+    "volto/**",
 ]
 
 suppress_warnings = [
@@ -242,12 +248,12 @@ html_theme_options = {
     "primary_sidebar_end": [
         "version-switcher",
     ],
-    "repository_branch": "6.0",
+    "repository_branch": "7",
     "repository_url": "https://github.com/plone/documentation",
     "search_bar_text": "Search",
     "show_toc_level": 2,
     "switcher": {
-        "json_url": "https://6.docs.plone.org/_static/switcher.json",
+        "json_url": "https://7.docs.plone.org/_static/switcher.json",
         "version_match": version,
     },
     "use_edit_page_button": False,  # This option does not support multiple repositories.
@@ -258,12 +264,12 @@ html_theme_options = {
 # remark: {{ file_name }} is mandatory in "edit_page_url_template"
 # used by `use_edit_page_button`, but it does not support multiple repositories
 # html_context = {
-#     "edit_page_url_template": "https://6.docs.plone.org/contributing/documentation/index.html?{{ file_name }}#making-contributions-on-github",
+#     "edit_page_url_template": "https://7.docs.plone.org/contributing/documentation/index.html?{{ file_name }}#making-contributions-on-github",
 # }
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://6.docs.plone.org"
+html_use_opensearch = "https://7.docs.plone.org"
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -341,7 +347,8 @@ myst_substitutions = {
 # We use Intersphinx to resolve targets when either the individual project's or
 # the entire Plone Documentation is built.
 intersphinx_mapping = {
-    "plone": ("https://6.docs.plone.org/", None),  # for imported packages
+    "plone": ("https://7.docs.plone.org/", None),  # for imported packages
+    "plone6": ("https://6.docs.plone.org/", None),  # for imported packages
     "plone5": ("https://5.docs.plone.org/", None),
     "python": ("https://docs.python.org/3/", None),
     "training": ("https://training.plone.org/", None),
@@ -361,9 +368,9 @@ mermaid_version = "11.2.0"
 
 # -- OpenGraph configuration ----------------------------------
 
-ogp_site_url = "https://6.docs.plone.org/"
+ogp_site_url = "https://7.docs.plone.org/"
 ogp_description_length = 200
-ogp_image = "https://6.docs.plone.org/_static/Plone_logo_square.png"
+ogp_image = "https://7.docs.plone.org/_static/Plone_logo_square.png"
 ogp_site_name = "Plone Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
@@ -397,7 +404,7 @@ redirects = {
 # -- Options for sphinx_sitemap to HTML -----------------------------
 
 # Used by sphinx_sitemap to generate a sitemap
-html_baseurl = "https://6.docs.plone.org/"
+html_baseurl = "https://7.docs.plone.org/"
 # https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
 sitemap_url_scheme = "{link}"
 sitemap_filename = "sitemap-custom.xml"

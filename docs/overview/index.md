@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Plone 6 overview"
-    "property=og:description": "Plone 6 overview"
-    "property=og:title": "Plone 6 overview"
-    "keywords": "Plone 6, overview"
+    "description": "Plone overview"
+    "property=og:description": "Plone overview"
+    "property=og:title": "Plone overview"
+    "keywords": "Plone, overview"
 ---
 
 (overview-label)=
@@ -119,7 +119,7 @@ One of the key benefits of the new React-based frontend for Plone 6 is that you 
 The Plone backend can be run on a local developer machine in a container.
 
 Basic familiarity with programming in Python and managing Python modules and packages using `virtualenv` and `pip` is required to work on the backend code.
-We use `venv` and {term}`mxdev` to manage the source installation of packages in Plone 6.
+We use `venv` and {term}`mxdev` to manage the source installation of packages in Plone.
 
 Similarly, to develop for the new React frontend, you need to have some experience with setting up Node.js, using a tool like {term}`nvm` to isolate your setup, and familiarity with {term}`Yarn` and {term}`React`.
 

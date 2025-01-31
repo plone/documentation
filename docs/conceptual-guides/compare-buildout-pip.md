@@ -4,7 +4,7 @@ myst:
     "description": "Compare Plone Classic UI's installation tools, Buildout and pip"
     "property=og:description": "Compare Plone Classic UI's installation tools, Buildout and pip"
     "property=og:title": "Compare Buildout and pip"
-    "keywords": "Plone 6, Conceptual guides, Classic UI, Buildout, pip, install"
+    "keywords": "Plone, Conceptual guides, Classic UI, Buildout, pip, install"
 ---
 
 # Compare Buildout and pip

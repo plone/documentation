@@ -4,7 +4,7 @@ myst:
     "description": "How to add a Plone site to an existing Zope instance"
     "property=og:description": "How to add a Plone site to an existing Zope instance"
     "property=og:title": "Add a Plone site"
-    "keywords": "Plone 6, create, add, factory, distributions"
+    "keywords": "Plone, create, add, factory, distributions"
 ---
 
 (add-a-plone-site-label)=

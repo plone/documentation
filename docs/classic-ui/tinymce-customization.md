@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "TinyMCE customization in Plone 6"
-    "property=og:description": "TinyMCE customization in Plone 6"
-    "property=og:title": "TinyMCE customization in Plone 6"
-    "keywords": "Plone 6, Classic UI, Bootstrap 5, TinyMCE, customization"
+    "description": "TinyMCE customization in Plone"
+    "property=og:description": "TinyMCE customization in Plone"
+    "property=og:title": "TinyMCE customization in Plone"
+    "keywords": "Plone, Classic UI, Bootstrap 5, TinyMCE, customization"
 ---
 
 (classic-ui-tinymce-customization-label)=
@@ -93,7 +93,7 @@ You can manually customize the `Formats` value through-the-web in the TinyMCE co
 This option is more complex to implement than the previous options.
 However it is the only option where you can add items to the {menuselection}`Formats` submenu as siblings to the {ref}`Formats styles <tinymce-formats-styles-label>` configurations.
 
-In Plone 6, TinyMCE has a special logic that automatically reads registered files named {file}`tinymce-formats.css` and adds the CSS classes defined in those files to TinyMCE's {menuselection}`Format --> Formats` menu by using the [`importcss_file_filter` option](https://www.tiny.cloud/docs/tinymce/latest/importcss/#importcss_file_filter).
+In Plone, TinyMCE has a special logic that automatically reads registered files named {file}`tinymce-formats.css` and adds the CSS classes defined in those files to TinyMCE's {menuselection}`Format --> Formats` menu by using the [`importcss_file_filter` option](https://www.tiny.cloud/docs/tinymce/latest/importcss/#importcss_file_filter).
 
 To add custom formats, you can provide your own files.
 
@@ -129,7 +129,7 @@ Alternatively, you can use GenericSetup in your add-on.
 
 ### Configure the TinyMCE control panel
 
-Plone 6 Classic UI ships with the Barceloneta theme which includes two custom formats, `highlight-inline` and `p.highlight-paragraph`, in the TinyMCE {menuselection}`Format --> Formats` menu.
+Plone Classic UI ships with the Barceloneta theme which includes two custom formats, `highlight-inline` and `p.highlight-paragraph`, in the TinyMCE {menuselection}`Format --> Formats` menu.
 You can remove these formats through the TinyMCE control panel.
 
 1.  Navigate to {menuselection}`Site Setup --> TinyMCE --> Default`, or append `@@tinymce-controlpanel` to the root of your website in your browser's location bar.

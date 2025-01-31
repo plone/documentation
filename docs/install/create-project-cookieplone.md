@@ -4,7 +4,7 @@ myst:
     "description": "Install Plone with Cookieplone"
     "property=og:description": "Install Plone with Cookieplone"
     "property=og:title": "Install Plone with Cookieplone"
-    "keywords": "Plone, Plone 6, Volto, create, project, install, Cookieplone"
+    "keywords": "Plone, Volto, create, project, install, Cookieplone"
 ---
 
 
@@ -30,7 +30,7 @@ For other installation options, see {ref}`get-started-install-label`.
 
 ## System requirements
 
-Plone 6 has both hardware requirements and software prerequisites.
+Plone has both hardware requirements and software prerequisites.
 
 
 ### Supported web browsers
@@ -268,7 +268,7 @@ When the process completes successfully, it will exit with no message.
 
 ## Start Plone
 
-Plone 6 has two servers: one for the frontend, and one for the backend.
+Plone has two servers: one for the frontend, and one for the backend.
 As such, we need to maintain two active shell sessions, one for each server, to start your Plone site.
 
 

@@ -4,7 +4,7 @@ myst:
     "description": "Explanation of how to choose between Plone's two user interfaces, Volto and Classic UI"
     "property=og:description": "Explanation of how to choose between Plone's two user interfaces, Volto and Classic UI"
     "property=og:title": "Choose a user interface"
-    "keywords": "Plone 6, Conceptual guides, UI, user interface, frontend, Volto, Classic UI, distribution"
+    "keywords": "Plone, Conceptual guides, UI, user interface, frontend, Volto, Classic UI, distribution"
 ---
 
 # Choose a user interface

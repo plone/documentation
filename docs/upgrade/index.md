@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Plone 6 upgrade Guide"
-    "property=og:description": "Plone 6 upgrade guide"
+    "description": "Plone upgrade Guide"
+    "property=og:description": "Plone upgrade guide"
     "property=og:title": "Upgrade Plone"
     "keywords": "Plone, upgrade"
 ---

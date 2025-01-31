@@ -4,7 +4,7 @@ myst:
     "description": "A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations."
     "property=og:description": "A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations."
     "property=og:title": "Plone distributions"
-    "keywords": "Plone 6, distribution, plone.distribution"
+    "keywords": "Plone, distribution, plone.distribution"
 ---
 
 (plone-distributions-label)=

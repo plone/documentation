@@ -4,7 +4,7 @@ myst:
     "description": "Conceptual guide of the Zope Component Architecture in Plone"
     "property=og:description": "Conceptual guide of the Zope Component Architecture in Plone"
     "property=og:title": "Conceptual guide of the Zope Component Architecture in Plone"
-    "keywords": "Plone, Plone 6, Zope Component Architecture, ZCA, interface, adapter, utility, event, subscriber, registry, lookup"
+    "keywords": "Plone, Zope Component Architecture, ZCA, interface, adapter, utility, event, subscriber, registry, lookup"
 ---
 
 # Component architecture

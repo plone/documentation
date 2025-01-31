@@ -11,7 +11,7 @@ myst:
 
 # Icons
 
-This sections describes how to work with icons in Plone 6 Classic UI.
+This sections describes how to work with icons in Plone Classic UI.
 Examples include the following.
 
 - Bootstrap icons
@@ -23,7 +23,7 @@ Examples include the following.
 
 ## Bootstrap Icons
 
-Bootstrap 5 is the default CSS framework in Plone 6.
+Bootstrap 5 is the default CSS framework in Plone Classic UI.
 Plone uses its icons.
 Check out all the available Bootstrap icons at [icons.getbootstrap.com](https://icons.getbootstrap.com/).
 

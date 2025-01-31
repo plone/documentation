@@ -4,7 +4,7 @@ myst:
     "description": "Using plone/plone-backend image"
     "property=og:description": "Using plone/plone-backend image"
     "property=og:title": "Plone Backend image"
-    "keywords": "Plone 6, install, installation, docker, containers, backend, plone/plone-backend"
+    "keywords": "Plone, install, installation, docker, containers, backend, plone/plone-backend"
 ---
 
 # `plone/plone-backend`
@@ -58,7 +58,7 @@ to listen to the same TCP port.
 In these cases, the variable `LISTEN_PORT` can be set to any particular port above
 1024 to ensure that the container will listen on the desired port.
 
-Plone 6 example:
+Plone example:
 
 ```shell
 # Makes Zope listen to port 8081 instead of the default 8080.
@@ -81,13 +81,13 @@ If you want a Plone Classic UI instance, pass the environment variable and value
 To initialize it with additional profiles, pass them as space separated values via the `PROFILES` environment variable, for example, `PROFILES=eea.api.layout:default`.
 To recreate the Plone site when restarting the container, you can pass the `DELETE_EXISTING` environment variable.
 
-Plone 6 example:
+Plone example:
 
 ```shell
 docker run -p 8080:8080 -e ADDONS="eea.api.layout" -e SITE="Plone" -e PROFILES="eea.api.layout:default" plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
 ```
 
-Plone 6 Classic example:
+Plone Classic example:
 
 ```shell
 docker run -p 8080:8080 -e ADDONS="eea.facetednavigation" -e SITE="Plone" -e TYPE="classic" -e PROFILES="eea.facetednavigation:default" plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}

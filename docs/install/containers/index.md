@@ -1,23 +1,23 @@
 ---
 myst:
   html_meta:
-    "description": "Using Plone 6 with containers"
-    "property=og:description": "Using Plone 6 with containers"
+    "description": "Using Plone with containers"
+    "property=og:description": "Using Plone with containers"
     "property=og:title": "Containers"
-    "keywords": "Plone 6, install, installation, Docker, containers"
+    "keywords": "Plone, install, installation, Docker, containers"
 ---
 
 (install-containers-label)=
 
 # Containers
 
-The Plone 6 images have all the system requirements, prerequisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
+The Plone images have all the system requirements, prerequisites, and Plone already installed, except those requirements needed for running the container engine itself.
 
-Using containers is the easiest way to deploy Plone 6.
+Using containers is the easiest way to deploy Plone.
 You may also use containers when {doc}`creating a Plone project </install/create-project-cookieplone>`.
 
-The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
-They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
+The Plone container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
+They should work with any OCI-compliant container engine for developing, managing, and running Plone images.
 Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
 
 The community provides official images that could be used for standalone Plone installations.
@@ -49,7 +49,7 @@ The system requirements include those required by Docker itself.
 -   [macOS](https://docs.docker.com/desktop/setup/install/mac-install/)
 -   [Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
-Plone 6 itself requires memory and disk space in addition to those of Docker alone.
+Plone itself requires memory and disk space in addition to those of Docker alone.
 See its {ref}`install-packages-hardware-requirements-label`.
 
 

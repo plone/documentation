@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Static resources in Plone 6"
-    "property=og:description": "Static resources in Plone 6"
-    "property=og:title": "Static resources in Plone 6"
+    "description": "Static resources in Plone"
+    "property=og:description": "Static resources in Plone"
+    "property=og:title": "Static resources in Plone"
     "keywords": "Plone, static, resources, JavaScript, CSS"
 ---
 
@@ -27,10 +27,10 @@ For some additional implementation information, see {ref}`classic-ui-theming-fro
 
 ## Registering JavaScript and CSS
 
-To register a static resource in Plone 6, we need to use the `plone.base.interfaces.resources.IBundleRegistry` interface.
+To register a static resource in Plone, we need to use the `plone.base.interfaces.resources.IBundleRegistry` interface.
 
-The following example registers a JavaScript resource in `browser/profiles/default/registry` of your Plone 6 project.
-The JavaScript files have to be in the `browser/static` folder of your Plone 6 project.
+The following example registers a JavaScript resource in `browser/profiles/default/registry` of your Plone project.
+The JavaScript files have to be in the `browser/static` folder of your Plone project.
 
 ```xml
 <registry>

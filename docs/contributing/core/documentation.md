@@ -15,7 +15,7 @@ For documentation authors, see {doc}`/contributing/documentation/authors`.
 
 ## Documentation of Plone
 
-The comprehensive resource for Plone documentation is https://6.docs.plone.org/.
+The comprehensive resource for Plone documentation is https://7.docs.plone.org/.
 The documentation repository is on [GitHub](https://github.com/plone/documentation).
 Information for how to contribute to documentation can be found at {doc}`/contributing/documentation/index`.
 

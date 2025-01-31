@@ -327,7 +327,7 @@ In this way, your title or role does not matter.
 Instead, what you want to achieve matters.
 By keeping each page focused on one category, readers can focus on getting work done, understanding, or experimenting.
 
-Although Plone 6 Documentation is not completely aligned with the Diátaxis framework, it is gradually moving toward it.
+Although Plone Documentation is not completely aligned with the Diátaxis framework, it is gradually moving toward it.
 
 
 ## Plone documentation styleguide

@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": "What's new in Plone 6 Classic UI"
-    "property=og:description": "What's new in Plone 6 Classic UI"
-    "property=og:title": "What's new in Plone 6 Classic UI"
-    "keywords": "Plone 6, Classic UI"
+    "description": "What's new in Plone Classic UI"
+    "property=og:description": "What's new in Plone Classic UI"
+    "property=og:title": "What's new in Plone Classic UI"
+    "keywords": "Plone, Classic UI"
 ---
 
 (classic-ui-whatsnew-label)=
 
-# What's new in Plone 6 Classic UI
+# What's new in Plone Classic UI
 
 -   HTML markup is now based on [Bootstrap 5](https://getbootstrap.com/).
 -   Bootstrap 5 icons are now included.

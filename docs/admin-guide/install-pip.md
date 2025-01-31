@@ -4,7 +4,7 @@ myst:
     "description": "Install Plone with pip"
     "property=og:description": "Install Plone with pip"
     "property=og:title": "Install Plone with pip"
-    "keywords": "Plone 6, install, Classic UI, pip"
+    "keywords": "Plone, install, Classic UI, pip"
 ---
 
 (install-pip-label)=

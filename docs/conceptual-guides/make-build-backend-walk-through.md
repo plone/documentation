@@ -4,7 +4,7 @@ myst:
     "description": "make build-backend in Plone."
     "property=og:description": "make build-backend in Plone."
     "property=og:title": "make build-backend details"
-    "keywords": "Plone 6, make, build-backend"
+    "keywords": "Plone, make, build-backend"
 ---
 
 (make-build-backend-details-label)=

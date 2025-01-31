@@ -4,7 +4,7 @@ myst:
     "description": "How to upgrade to Plone 6.1"
     "property=og:description": "How to upgrade to Plone 6.1"
     "property=og:title": "How to upgrade to Plone 6.1"
-    "keywords": "Upgrade, Plone 6"
+    "keywords": "Upgrade, Plone"
 ---
 
 (backend-upgrade-plone-v61-label)=

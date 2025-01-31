@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Official Plone 6 Docker images"
-    "property=og:description": "Official Plone 6 Docker images"
-    "property=og:title": "Plone 6 Official Images"
-    "keywords": "Plone 6, install, installation, docker, containers, Official Images"
+    "description": "Official Plone Docker images"
+    "property=og:description": "Official Plone Docker images"
+    "property=og:title": "Plone Official Images"
+    "keywords": "Plone, install, installation, docker, containers, Official Images"
 ---
 
 # Official Images

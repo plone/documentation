@@ -4,16 +4,16 @@ myst:
     "description": "Package management in Plone."
     "property=og:description": "Package management in Plone."
     "property=og:title": "Package management"
-    "keywords": "Plone 6, package management, mxdev"
+    "keywords": "Plone, package management, mxdev"
 ---
 
 # Package management
 
-Plone 6 consists of a collection of Python and Node.js packages.
+Plone consists of a collection of Python and Node.js packages.
 Over the decades of its existence, Plone has used several package management tools, sometimes multiple tools at one time.
 Each one has its strengths and weaknesses for performing specific tasks, such as installation, conflict resolution, updates and upgrades, and working with virtual environments and across platforms.
 
-With Volto as the default frontend in Plone 6, first npm, then pnpm, was brought into the mix as a package manager for its Node.js packages.
+With Volto as the default frontend in Plone, first npm, then pnpm, was brought into the mix as a package manager for its Node.js packages.
 
 Python itself has a complex and convoluted history with package management, as [xkcd](https://xkcd.com/1987/) illustrates.
 

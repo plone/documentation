@@ -97,7 +97,7 @@ directives.widget(
 ### Configure the relations widget
 
 ```{note}
-These settings only have an effect in Plone 6 Classic UI.
+These settings only have an effect in Plone Classic UI.
 ```
 
 `RelatedItemsFieldWidget` is the Python class of the default widget used by relation fields.
@@ -161,7 +161,7 @@ directives.widget(
 ### Using the search mode of the relations widget
 
 ```{note}
-These settings only have an effect in Plone 6 Classic UI.
+These settings only have an effect in Plone Classic UI.
 ```
 
 So far we only used the vocabulary `plone.app.vocabularies.Catalog`, which returns the full content tree.
@@ -447,7 +447,7 @@ This returns the related items so that you will be able to render them any way y
 
 ## Inspecting relations
 
-In Plone 6 Classic UI, you can inspect all relations and back relations in your site using the control panel {guilabel}`Relations` at the browser path `/@@inspect-relations`.
+In Plone Classic UI, you can inspect all relations and back relations in your site using the control panel {guilabel}`Relations` at the browser path `/@@inspect-relations`.
 
 ```{figure} /_static/inspect-relations.png
 :alt: The Relations controlpanel

@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Plone 6 Backend"
-    "property=og:description": "Plone 6 Backend"
-    "property=og:title": "Plone 6 Backend"
-    "keywords": "Plone 6, Classic UI, frontend, backend, plone.restapi, plone.api"
+    "description": "Plone Backend"
+    "property=og:description": "Plone Backend"
+    "property=og:title": "Plone Backend"
+    "keywords": "Plone, Classic UI, frontend, backend, plone.restapi, plone.api"
 ---
 
 (backend-index-label)=

@@ -4,7 +4,7 @@ myst:
     "description": "Using plone/plone-zeo image"
     "property=og:description": "Using plone/plone-zeo image"
     "property=og:title": "Plone ZEO image"
-    "keywords": "Plone 6, install, installation, docker, containers, plone/plone-zeo"
+    "keywords": "Plone, install, installation, docker, containers, plone/plone-zeo"
 ---
 
 # `plone/plone-zeo`

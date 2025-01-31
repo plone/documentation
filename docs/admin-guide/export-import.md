@@ -4,7 +4,7 @@ myst:
     "description": "Export and import Plone site data with plone.exportimport"
     "property=og:description": "Export and import Plone site data with plone.exportimport"
     "property=og:title": "Export and import Plone site data with plone.exportimport"
-    "keywords": "Plone 6, plone.exportimport, export, import, site, data, Content, Principals, Relations, Translations, Discussions, Redirects"
+    "keywords": "Plone, plone.exportimport, export, import, site, data, Content, Principals, Relations, Translations, Discussions, Redirects"
 ---
 
 (exportimport)=

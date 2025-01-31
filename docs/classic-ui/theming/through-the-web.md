@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
-    "property=og:description": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
-    "property=og:title": "Through-the-web (TTW) theme customization in Plone 6 Classic UI"
-    "keywords": "Plone 6, Classic UI, Through-the-web, TTW, theme, customization"
+    "description": "Through-the-web (TTW) theme customization in Plone Classic UI"
+    "property=og:description": "Through-the-web (TTW) theme customization in Plone Classic UI"
+    "property=og:title": "Through-the-web (TTW) theme customization in Plone Classic UI"
+    "keywords": "Plone, Classic UI, Through-the-web, TTW, theme, customization"
 ---
 
 (classic-ui-through-the-web-label)=
@@ -17,7 +17,7 @@ See https://github.com/plone/documentation/issues/1645
 ```
 
 TTW customization is useful when you need to make small CSS changes.
-Theme changes can be made via control panels or by updating Plone 6 Classic UI's `custom.css`.
+Theme changes can be made via control panels or by updating Plone Classic UI's `custom.css`.
 Other theming methods should be used for larger customizations or entire website designs.
 
 

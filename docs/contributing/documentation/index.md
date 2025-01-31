@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Contributing to Plone 6 Documentation"
-    "property=og:description": "Contributing to Plone 6 Documentation"
-    "property=og:title": "Contributing to Plone 6 Documentation"
+    "description": "Contributing to Plone Documentation"
+    "property=og:description": "Contributing to Plone Documentation"
+    "property=og:title": "Contributing to Plone Documentation"
     "keywords": "Plone, Plone Contributor Agreement, License, Code of Conduct"
 ---
 
@@ -74,7 +74,7 @@ Plone documentation consists of several repositories.
 When you {doc}`setup and build <setup-build>` the documentation, it will automatically pull in the other repositories via git submodules.
 
 ```{important}
-We currently use the branches `plone/documentation@6.0`, `plone/plone.api@main`, `plone/plone.restapi@main`, and `plone/volto@main` as the default branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@7`, `plone/plone.api@main`, `plone/plone.restapi@main`, and `plone/volto@main` as the default branches for developing Plone 7 Documentation.
 ```
 
 
@@ -135,15 +135,15 @@ You can then edit the documentation of either Plone in the primary repository or
 
 This section describes how to make contributions to files in the `plone/documentation` repository only, and excludes files in `submodules/plone.api/docs`, `submodules/plone.restapi/docs` and `submodules/volto/docs`.
 
-1.  From the project root directory, sync your local `6.0` branch with its remote.
+1.  From the project root directory, sync your local `7` branch with its remote.
     You might need to resolve conflicts.
 
     ```shell
-    git checkout 6.0
+    git checkout 7
     git pull
     ```
 
-1.  Create a new branch from `6.0`.
+1.  Create a new branch from `7`.
 
     ```shell
     git switch -c <new_branch>
@@ -182,7 +182,7 @@ This section describes how to make contributions to files in the `plone/document
     git push
     ```
 
-1.  Visit the GitHub `documentation` repository, and [create a pull request](https://github.com/plone/documentation/compare) against the branch `6.0`.
+1.  Visit the GitHub `documentation` repository, and [create a pull request](https://github.com/plone/documentation/compare) against the branch `7`.
 1.  Members who subscribe to the repository will receive a notification and review your request.
 1.  Request a review from other team members.
 

@@ -4,7 +4,7 @@ myst:
     "description": "Migrating from Plone Classic UI to Volto"
     "property=og:description": "Migrating from Plone Classic UI to Volto"
     "property=og:title": "Migrating from Plone Classic UI to Volto"
-    "keywords": "Migrating, Upgrading, Plone 6, Volto, Classic UI"
+    "keywords": "Migrating, Upgrading, Plone, Volto, Classic UI"
 ---
 
 (backend-migrate-to-volto-label)=

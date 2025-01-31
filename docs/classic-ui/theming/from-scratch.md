@@ -18,7 +18,7 @@ See https://github.com/plone/documentation/issues/1645
 
 Theming based on a filesystem package without any dependency.
 
--   Theming for Plone 6 Classic UI
+-   Theming for Plone Classic UI
 -   Theme stored in a filesystem package
 -   Built from scratch
 -   No dependencies to Barceloneta
@@ -66,7 +66,7 @@ Directory: `src/plonetheme/munich/browser/static`
 ```ini
 [theme]
 title = Munich Theme
-description = A modernized Plone 6 theme
+description = A modernized Plone theme
 preview = preview.png
 rules =
 prefix = /++theme++plonetheme.munich

@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Theming of Plone 6 Classic UI"
-    "property=og:description": "Theming of Plone 6 Classic UI"
-    "property=og:title": "Theming of Plone 6 Classic UI"
-    "keywords": "Theming, Plone 6, Classic UI, Barceloneta, Diazo, scratch, through-the-web"
+    "description": "Theming of Plone Classic UI"
+    "property=og:description": "Theming of Plone Classic UI"
+    "property=og:title": "Theming of Plone Classic UI"
+    "keywords": "Theming, Plone, Classic UI, Barceloneta, Diazo, scratch, through-the-web"
 ---
 
 (classic-ui-theming-index-label)=

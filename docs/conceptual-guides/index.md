@@ -4,7 +4,7 @@ myst:
     "description": "Conceptual guides provide explanation of concepts to deepen and broaden your understanding of Plone."
     "property=og:description": "Conceptual guides provide explanation of concepts to deepen and broaden your understanding of Plone."
     "property=og:title": "Conceptual guides"
-    "keywords": "Plone 6, Conceptual guides"
+    "keywords": "Plone, Conceptual guides"
 ---
 
 # Conceptual guides

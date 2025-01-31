@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Internationalization (i18n) and localization (l10n) in Plone 6"
-    "property=og:description": "Internationalization (i18n) and localization (l10n) in Plone 6"
-    "property=og:title": "Internationalization (i18n) and localization (l10n) in Plone 6"
+    "description": "Internationalization (i18n) and localization (l10n) in Plone"
+    "property=og:description": "Internationalization (i18n) and localization (l10n) in Plone"
+    "property=og:title": "Internationalization (i18n) and localization (l10n) in Plone"
     "keywords": "Plone, Internationalization, i18n, language, translation, localization"
 ---
 
@@ -139,9 +139,9 @@ In general, the process of internationalization and localization of a Plone appl
 Depending on which part of your Plone application that you internationalize and localize, there are different implementation details and tools that are used.
 These differences depend upon the programming language, either Python or JavaScript, being used by that part.
 
--   For the Plone 6 frontend {term}`Volto`, see {doc}`/volto/development/i18n`.
+-   For the Plone frontend {term}`Volto`, see {doc}`/volto/development/i18n`.
     Volto is based on the JavaScript library React, and uses both {term}`react-intl` and {term}`gettext`.
--   For the rest of Plone 6, see {doc}`translating-text-strings`.
+-   For the rest of Plone, see {doc}`translating-text-strings`.
     This is based on Python, and uses {term}`gettext`.
 -   For user-generated content translations, see {doc}`translating-content`.
 

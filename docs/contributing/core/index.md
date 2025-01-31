@@ -1,19 +1,19 @@
 ---
 myst:
   html_meta:
-    "description": "Contribute to Plone 6 Core"
-    "property=og:description": "Contribute to Plone 6 Core"
-    "property=og:title": "Contribute to Plone 6 Core"
+    "description": "Contribute to Plone Core"
+    "property=og:description": "Contribute to Plone Core"
+    "property=og:title": "Contribute to Plone Core"
     "keywords": "Plone, Plone Contributor Agreement, License"
 ---
 
-# Contribute to Plone 6 core
+# Contribute to Plone core
 
 This guide describes the process of how to contribute to, and develop in, Plone core.
 It expands upon {doc}`/contributing/index`.
 
 ```{important}
-Although Plone core includes Volto—the React based, default frontend for Plone 6—this guide does not apply to Volto and its packages.
+Although Plone core includes Volto—the React based, default frontend for Plone—this guide does not apply to Volto and its packages.
 To contribute to Volto, see {doc}`../volto`.
 ```
 
@@ -85,7 +85,7 @@ Its versions align with Plone's `major.minor` versions.
 Use a separate directory for each version of Plone to which you want to contribute.
 This will avoid switching between git branches, then re-running buildout, which can cause dependency conflicts between versions of Plone.
 
-To set up a Plone 6 development environment, change your working directory to wherever you place your projects, and clone https://github.com/plone/buildout.coredev.
+To set up a Plone development environment, change your working directory to wherever you place your projects, and clone https://github.com/plone/buildout.coredev.
 You can specify the branch that you want to check out with the `-b` option.
 
 ```shell
@@ -110,7 +110,7 @@ Edit it according to the Python version you want to use, then save and close the
 After you have run the script, you should undo the change, otherwise you have a local change in git that you might accidentally commit.
 ````
 
-Now run the script to install Plone 6.
+Now run the script to install Plone.
 
 ```shell
 ./bootstrap.sh

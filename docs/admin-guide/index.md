@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "How to install, operate, configure, and deploy Plone 6"
-    "property=og:description": "How to install, operate, configure, and deploy Plone 6"
+    "description": "How to install, operate, configure, and deploy Plone"
+    "property=og:description": "How to install, operate, configure, and deploy Plone"
     "property=og:title": "Admin guide"
-    "keywords": "Plone 6, admin, install, configuration, deploy"
+    "keywords": "Plone, admin, install, configuration, deploy"
 ---
 
 (admin-index-label)=

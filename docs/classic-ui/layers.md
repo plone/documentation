@@ -3,7 +3,7 @@ myst:
   html_meta:
     "description": "Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes."
     "property=og:description": "Layers allow you to enable and disable views and other site functionality based on installed add-ons and themes."
-    "property=og:title": "Layers in Plone 6"
+    "property=og:title": "Layers in Plone"
     "keywords": "layer, layers, browser layer, views, viewlets, portlets"
 ---
 

@@ -367,7 +367,7 @@ Add a term to the {ref}`glossary-label`, located at {file}`/glossary.md`.
 ```md
 React
     [React](https://reactjs.org/) is a JavaScript library for building user interfaces.
-    Volto, the frontend for Plone 6, uses React.
+    Volto, the frontend for Plone, uses React.
 ```
 
 Reference a term in the {ref}`glossary-label`.

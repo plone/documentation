@@ -4,12 +4,12 @@ myst:
     "description": "Using plone/plone-frontend image"
     "property=og:description": "Using plone/plone-frontend image"
     "property=og:title": "Plone Frontend image"
-    "keywords": "Plone 6, install, installation, docker, containers, plone/plone-frontend"
+    "keywords": "Plone, install, installation, docker, containers, plone/plone-frontend"
 ---
 
 # `plone/plone-frontend`
 
-This chapter covers the Plone 6 default frontend [Docker](https://www.docker.com/) image using Node.
+This chapter covers the Plone default frontend [Docker](https://www.docker.com/) image using Node.
 The frontend is written using React and requires a Plone backend to be running and accessible.
 
 This image is **not a base image** to be extended in your projects, but an example of the Plone user experience out of the box.

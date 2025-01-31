@@ -4,7 +4,7 @@ myst:
     "description": "Install Plone add-ons"
     "property=og:description": "Install Plone add-ons"
     "property=og:title": "Install Plone add-ons"
-    "keywords": "Plone 6, add-on, package, plugin, extension, install"
+    "keywords": "Plone, add-on, package, plugin, extension, install"
 ---
 
 (install-plone-add-ons-label)=

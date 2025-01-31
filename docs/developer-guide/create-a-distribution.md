@@ -4,7 +4,7 @@ myst:
     "description": "How to create a custom Plone distribution"
     "property=og:description": "How to create a custom Plone distribution"
     "property=og:title": "Create a Plone distribution"
-    "keywords": "Plone 6, distribution, plone.distribution"
+    "keywords": "Plone, distribution, plone.distribution"
 ---
 
 (create-a-plone-distribution-label)=
@@ -332,7 +332,7 @@ In the example above, `Plone` is the ID of the Plone site to export.
 
 ## Limit available distributions
 
-By default, Plone 6.1 ships with two ready-to-use distributions.
+By default, Plone ships with two ready-to-use distributions.
 
 `default`
 :   Create a Plone site with the Volto frontend.

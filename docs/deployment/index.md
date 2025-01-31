@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Deployment of Plone 6"
-    "property=og:description": "Deployment of Plone 6"
-    "property=og:title": "Deployment of Plone 6"
+    "description": "Deployment of Plone"
+    "property=og:description": "Deployment of Plone"
+    "property=og:title": "Deployment of Plone"
     "keywords": "Plone, deployment, server, environment, continuous integration, continuous deployment, automation, tuning, optimatization, orchestration, Docker, Swarm, Kubernetes"
 ---
 
@@ -11,7 +11,7 @@ myst:
 
 # Deployment
 
-This part of the documentation describes how to deploy your Plone 6 application.
+This part of the documentation describes how to deploy your Plone application.
 This how-to guide covers the components of a Plone application, a server environment, continuous integration (CI) and continuous deployment (CD), and orchestration for a deployment.
 It is not comprehensive of all ways to deploy Plone, but covers common usage.
 

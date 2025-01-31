@@ -4,7 +4,7 @@ myst:
     "description": "Override core Plone packages"
     "property=og:description": "Override core Plone packages"
     "property=og:title": "Override core Plone packages"
-    "keywords": "Plone 6, core, package, version, override, Cookieplone, cookiecutter-plone-starter, Buildout"
+    "keywords": "Plone, core, package, version, override, Cookieplone, cookiecutter-plone-starter, Buildout"
 ---
 
 (override-core-plone-packages-label)=

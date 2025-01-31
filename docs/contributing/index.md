@@ -138,7 +138,7 @@ You can write a good change log entry with the following guidance.
 The following text is an example of a good change log entry, placed inside {file}`/news/4470.documentation`.
 
 ```text
-Changed a few broken links in `CHANGELOG.md` from URLs to inline literals to avoid errors when validating links. See https://6.docs.plone.org/volto/contributing/documentation.html#docs-linkcheckbroken for usage. @stevepiercy
+Changed a few broken links in `CHANGELOG.md` from URLs to inline literals to avoid errors when validating links. See https://7.docs.plone.org/volto/contributing/documentation.html#docs-linkcheckbroken for usage. @stevepiercy
 ```
 
 The following would be a poor change log entry.
@@ -182,7 +182,7 @@ Plone REST API
     See {doc}`/plone.restapi/docs/source/contributing/index`.
 
 Volto
-:   Plone 6 default frontend.
+:   Plone default frontend.
     See {doc}`../volto/contributing/index`.
 
 (contributing-releases-label)=

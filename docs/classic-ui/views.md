@@ -3,7 +3,7 @@ myst:
   html_meta:
     "description": "Render HTML pages in Plone using the Zope view pattern."
     "property=og:description": "Render HTML pages in Plone using the Zope view pattern."
-    "property=og:title": "Views in Plone 6"
+    "property=og:title": "Views in Plone"
     "keywords": "views, browser view, templates, plonecli, acquisition, permissions, content, slots, Zope, Plone"
 ---
 

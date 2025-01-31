@@ -4,7 +4,7 @@ myst:
     "description": "Configure Zope options"
     "property=og:description": "Configure Zope options"
     "property=og:title": "Configure Zope"
-    "keywords": "Plone 6, Zope, instance, app server, config, Cookieplone, Buildout, pip, cookiecutter-plone-starter, cookiecutter-zope-instance, plone.recipe.zope2instance"
+    "keywords": "Plone, Zope, instance, app server, config, Cookieplone, Buildout, pip, cookiecutter-plone-starter, cookiecutter-zope-instance, plone.recipe.zope2instance"
 ---
 
 (configure-zope-label)=

@@ -4,7 +4,7 @@ myst:
     "description": "Classic UI is a secondary user interface for Plone, but updated to use Bootstrap 5. It is familiar to users of Plone 5."
     "property=og:description": "Classic UI is a secondary user interface for Plone, but updated to use Bootstrap 5. It is familiar to users of Plone 5."
     "property=og:title": "Classic UI"
-    "keywords": "Plone 6, Classic UI, Bootstrap 5"
+    "keywords": "Plone, Classic UI, Bootstrap 5"
 ---
 
 (classic-ui-index-label)=

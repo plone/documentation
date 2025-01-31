@@ -3,13 +3,13 @@ myst:
   html_meta:
     "description": "This website is the HTML documentation of Plone, an open source, enterprise-level content management system."
     "property=og:description": "This website is the HTML documentation of Plone, an open source, enterprise-level content management system."
-    "property=og:title": "Plone 6 Documentation"
-    "keywords": "Plone 6, content management system, CMS, open source, Documentation, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
+    "property=og:title": "Plone 7 Documentation"
+    "keywords": "Plone 7, content management system, CMS, open source, Documentation, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
 ---
 
 (index-label)=
 
-# Plone 6 Documentation
+# Plone 7 Documentation
 
 This is the community-maintained documentation for the Plone content management system.
 
@@ -35,14 +35,16 @@ install/index
 admin-guide/index
 developer-guide/index
 deployment/index
-volto/index
-classic-ui/index
-plone.restapi/docs/source/index
-backend/index
 i18n-l10n/index
 conceptual-guides/index
 contributing/index
 ```
+
+% volto/index
+% classic-ui/index
+% plone.restapi/docs/source/index
+% backend/index
+
 
 ```{toctree}
 :caption: Appendices

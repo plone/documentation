@@ -1,6 +1,11 @@
 [
     {
-        "name": "6 (stable)",
+        "name": "7 (stable)",
+        "version": "7",
+        "url": "https://7.docs.plone.org/"
+    },
+    {
+        "name": "6",
         "version": "6",
         "url": "https://6.docs.plone.org/"
     },

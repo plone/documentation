@@ -1,9 +1,9 @@
 ---
 myst:
   html_meta:
-    "description": "Optimize and tune a Plone 6 application for deployment"
-    "property=og:description": "Optimize and tune a Plone 6 application for deployment"
-    "property=og:title": "Optimize and tune a Plone 6 application for deployment"
+    "description": "Optimize and tune a Plone application for deployment"
+    "property=og:description": "Optimize and tune a Plone application for deployment"
+    "property=og:title": "Optimize and tune a Plone application for deployment"
     "keywords": "Plone, deployment, optimize, optimization, tune, backend, volto, frontend, load balancer, database, maintenance"
 ---
 

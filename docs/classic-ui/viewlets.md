@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Viewlets in Plone 6 Classic UI"
-    "property=og:description": "Viewlets in Plone 6 Classic UI"
-    "property=og:title": "Viewlets in Plone 6 Classic UI"
-    "keywords": "Plone 6, Classic UI, viewlets, snippets"
+    "description": "Viewlets in Plone Classic UI"
+    "property=og:description": "Viewlets in Plone Classic UI"
+    "property=og:title": "Viewlets in Plone Classic UI"
+    "keywords": "Plone, Classic UI, viewlets, snippets"
 ---
 
 (classic-ui-viewlets-label)=

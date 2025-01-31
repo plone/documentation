@@ -88,7 +88,7 @@ To make it easier for other contributors to work with your project, update the f
 -   Add the symlink `docs/my_package` to `.gitignore`.
 -   Optionally set a branch to work on in `.gitmodules`.
 
-Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@6.0`](https://github.com/plone/documentation/compare).
+Commit and push your changes to a remote, and submit a pull request against [`plone/documentation@7`](https://github.com/plone/documentation/compare).
 
 
 ## Pull request preview builds
@@ -136,7 +136,7 @@ For pull request previews, unsupported branches or versions, or other situations
 You can create a branch that serves as a landing page for your documentation.
 Using `sphinx-reredirects`, you can configure this page to redirect to your official documentation.
 
-In Plone 6 Documentation, the branch `rtd-redirect` consists of a single landing page that redirects visitors to https://6.docs.plone.org/.
+In Plone Documentation, the branch `rtd-redirect` consists of a single landing page that redirects visitors to https://6.docs.plone.org/.
 You can use this branch as a minimal example for your documentation.
 
 This branch also includes a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing.
@@ -222,7 +222,7 @@ Only members of the Plone Documentation Team should update git submodules from t
 
     ```shell
     # documentation
-    git checkout 6.0
+    git checkout 7
     git pull
     # plone.api
     cd submodules/plone.api

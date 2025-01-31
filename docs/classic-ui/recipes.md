@@ -11,7 +11,7 @@ myst:
 
 # Recipes
 
-This chapter provides several recipes to working with the Classic UI in Plone 6.
+This chapter provides several recipes to working with the Classic UI in Plone.
 
 
 (classic-ui-recipes-add-custom-classes-to-body-label)=
