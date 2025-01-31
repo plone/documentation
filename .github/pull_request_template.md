@@ -1,6 +1,6 @@
 ## First-time contributors
 
-You **must** read and follow our [First-time contributors](https://6.docs.plone.org/contributing/first-time.html).
+You **must** read and follow our [First-time contributors](https://7.docs.plone.org/contributing/first-time.html).
 
 ---
 
@@ -10,10 +10,10 @@ Thank you for your contribution to the Plone Documentation.
 
 Before submitting this pull request, please make sure you follow our guides:
 
--   [Contributing to Plone documentation](https://6.docs.plone.org/contributing/index.html)
--   [Building and checking the quality of documentation](https://6.docs.plone.org/contributing/setup-build.html)
--   [Authors guide](https://6.docs.plone.org/contributing/authors.html)
--   [MyST reference](https://6.docs.plone.org/contributing/myst-reference.html)
+-   [Contributing to Plone documentation](https://7.docs.plone.org/contributing/index.html)
+-   [Building and checking the quality of documentation](https://7.docs.plone.org/contributing/setup-build.html)
+-   [Authors guide](https://7.docs.plone.org/contributing/authors.html)
+-   [MyST reference](https://7.docs.plone.org/contributing/myst-reference.html)
 
 ## Issue number
 

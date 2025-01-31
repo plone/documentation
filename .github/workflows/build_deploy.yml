@@ -1,9 +1,9 @@
-name: Build and deploy Plone 6 documentation to 6.docs.plone.org
+name: Build and deploy Plone 7 documentation to 7.docs.plone.org
 
 on:
   push:
     branches:
-      - "6.0"
+      - "7"
 
 env:
   node-version: 20.x
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: docs.plone.org
-      url: https://docs.plone.org
+      url: https://7.docs.plone.org
     steps:
       - uses: actions/checkout@v4
       - name: Setup Graphviz

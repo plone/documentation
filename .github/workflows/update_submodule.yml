@@ -1,5 +1,5 @@
 # See https://github.com/plone/documentation/issues/1214 for current status
-name: Get latest version of submodules and push back to 6.0 branch
+name: Get latest version of submodules and push back to 7 branch
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ jobs:
       # Checkout
       - uses: actions/checkout@v3
         with:
-          ref: 6.0
+          ref: 7
           submodules: true
 
       - name: Submodule update

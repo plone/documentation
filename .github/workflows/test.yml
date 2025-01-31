@@ -1,4 +1,4 @@
-name: Test Plone 6 documentation
+name: Test Plone 7 documentation
 
 on: [push, pull_request]
 jobs:
