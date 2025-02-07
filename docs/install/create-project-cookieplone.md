@@ -136,7 +136,6 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 ```
 
 ```console
-% pipx run cookieplone project
 ╭──────────────────────────────── cookieplone ────────────────────────────────╮
 │                                                                             │
 │                              .xxxxxxxxxxxxxx.                               │
@@ -171,7 +170,17 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 You've downloaded /Users/stevepiercy/.cookiecutters/cookieplone-templates 
 before. Is it okay to delete and re-download it? [y/n] (y): 
 ╭─────────────────────────────── Plone Project ───────────────────────────────╮
+│                                                                             │
 │ Creating a new Plone Project                                                │
+│                                                                             │
+│ Sanity check results:                                                       │
+│                                                                             │
+│   - Cookieplone: ✓                                                          │
+│   - Python: ✓                                                               │
+│   - Node: ✓                                                                 │
+│   - git: ✓                                                                  │
+│   - Docker (optional): ✓                                                    │
+│                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
   [1/17] Project Title (Project Title): 
   [2/17] Project Description (A new project using Plone 6.): 
@@ -180,9 +189,9 @@ before. Is it okay to delete and re-download it? [y/n] (y):
   [5/17] Author (Plone Foundation): 
   [6/17] Author E-mail (collective@plone.org): 
   [7/17] Should we use prerelease versions? (No): 
-  [8/17] Plone Version (6.0.13): 
-  [9/17] Volto Version (18.0.0-alpha.43):
-  [10/17] Python Package Name (project.title):
+  [8/17] Plone Version (6.1.0): 
+  [9/17] Volto Version (18.8.1): 
+  [10/17] Python Package Name (project.title): 
   [11/17] Volto Addon Name (volto-project-title): 
   [12/17] Language
     1 - English
@@ -214,10 +223,9 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 │                                                                             │
 │ Summary:                                                                    │
 │                                                                             │
-│   - Plone version: 6.0.13                                                   │
-│   - Volto version: 18.0.0-alpha.43                                          │
-│   - Output folder:                                                          │
-│ <PATH_TO>/project-title                                                     │
+│   - Plone version: 6.1.0                                                    │
+│   - Volto version: 18.8.1                                                   │
+│   - Output folder: <PATH_TO>/project-title                                  │
 │                                                                             │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
