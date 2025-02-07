@@ -24,5 +24,5 @@ The Plone community manages these configuration items using the [`plone/meta`](h
 You can follow these practices in your own projects, or suggest new or alternative configuration items through the `plone/meta` repository, sharing them with the rest of the Plone community.
 
 ```{seealso}
-[`plone/meta` setup](https://github.com/plone/meta?tab=readme-ov-file#setup)
+See also [`plone/meta` documentation](https://github.com/plone/meta?tab=readme-ov-file#setup) for setup and usage.
 ```
