@@ -67,8 +67,7 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```{include} /_inc/_install-python-plone61.md
 ```
 
-Plone 6.0 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE60}}.
-However, Cookieplone does not support Python 3.9.
+Plone 6.1 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
 
 ```{warning}
 Python 3.9 will reach [end of life in October 2025](https://devguide.python.org/versions/).
@@ -132,7 +131,7 @@ See the cookiecutter's README for how to [Use options to avoid prompts](https://
 ```
 
 ```{important}
-For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6.0-latest/constraints.txt).
+For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6.1-latest/constraints.txt).
 Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the same package.
 ```
 

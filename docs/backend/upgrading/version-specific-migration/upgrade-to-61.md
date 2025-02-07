@@ -17,7 +17,7 @@ Some may require changes in your setup.
 
 ## Drop Python 3.8 and 3.9
 
-We only support Python 3.10, 3.11, and 3.12.
+We only support Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
 
 
 ## TinyMCE upgraded in Classic UI

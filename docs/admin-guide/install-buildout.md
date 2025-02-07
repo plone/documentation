@@ -31,14 +31,12 @@ For other installation options, see {ref}`get-started-install-label`.
 
 ## Prerequisites for installation
 
--   For Plone 6.0, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE60}}
-% TODO: These instructions install Plone 6.0.x. Uncomment next line and change the subsequent include when Plone 6.1 is released and "latest".
-% -   For Plone 6.1, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
+-   For Plone 6.1, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 
 
 ### Python
 
-```{include} /_inc/_install-python-plone60.md
+```{include} /_inc/_install-python-plone61.md
 ```
 
 
