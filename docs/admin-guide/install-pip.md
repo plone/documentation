@@ -58,7 +58,7 @@ python3 -m venv venv
 Install Plone and a helper package, {term}`pipx`.
 
 ```shell
-venv/bin/pip install -c https://dist.plone.org/release/6.1-latest/constraints.txt Plone pipx
+venv/bin/pip install -c https://dist.plone.org/release/6-latest/constraints.txt Plone pipx
 ```
 
 

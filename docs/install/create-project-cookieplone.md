@@ -131,7 +131,7 @@ See the cookiecutter's README for how to [Use options to avoid prompts](https://
 ```
 
 ```{important}
-For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6.1-latest/constraints.txt).
+For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6-latest/constraints.txt).
 Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the same package.
 ```
 
