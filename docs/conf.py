@@ -441,7 +441,7 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.1",
 }
 
 # Finally, configure app attributes.
