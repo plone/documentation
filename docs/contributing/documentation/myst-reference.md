@@ -261,7 +261,7 @@ The following example shows how to embed a video from YouTube using privacy mode
 ```{seealso}
 For additional configuration options, see the usage documentation for [`sphinxcontrib-youtube`](https://sphinxcontrib-youtube.readthedocs.io/en/latest/usage.html).
 
-For an in depth discussion of privacy issues, see [How to embed YouTube videos with maximum privacy (GDPR-compliant)](https://usercode.de/blog/how-to-embed-youtube-videos-with-maximum-privacy-gdpr-compliant).
+For an in depth discussion of privacy issues, see [How to embed YouTube videos with maximum privacy (GDPR-compliant)](https://web.archive.org/web/20240919142343/https://usercode.de/blog/how-to-embed-youtube-videos-with-maximum-privacy-gdpr-compliant).
 
 -   PeerTube's [Privacy guide](https://docs.joinpeertube.org/admin/privacy-guide) helps administrators comply with terms of government policies.
 -   YouTube's [Manage video embedding options, Turn on privacy-enhanced mode](https://support.google.com/youtube/answer/171780)

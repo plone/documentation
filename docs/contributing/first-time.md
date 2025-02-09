@@ -13,21 +13,22 @@ myst:
 
 This chapter provides guidance to first-time contributors to Plone and all its projects and repositories under the Plone GitHub organization.
 
+```{important}
+For free support, training, guidance, or mentoring, you should work through some [trainings](https://training.plone.org/), ask questions in the [Plone Community Forum](https://community.plone.org/), participate in an [event](https://plone.org/news-and-events/events), and **do not use GitHub**.
+Members of the Plone organization may delete comments, lock conversations, or block GitHub users who ignore this.
+```
+
 
 (for-students-and-learners)=
 
 ## For students and learners
 
-```{important}
-**We do not offer training, guidance, or mentoring to students or learners on GitHub.**
-Don't ask for it.
-The Plone organization may delete comments, lock conversations, or block GitHub users who ignore this.
+If you are a student or learner of Plone, you might not be a contributor yet, but you can work toward that.
+See the next section, {ref}`expectations-of-first-time-contributors`, to determine what it takes to become a contributor.
+
+```{seealso}
+To learn how to use git and GitHub and make your first contribution to open source software, visit the amazing resource [`first-contributions`](https://github.com/firstcontributions/first-contributions).
 ```
-
-If you are a student or learner of Plone, you probably are not a contributor.
-See the next section, {ref}`expectations-of-first-time-contributors`, to determine whether you are in fact a contributor.
-
-For free support, training, guidance, or mentoring, you should work through some trainings, use the [Plone Community Forum](https://community.plone.org/), participate in an [event](https://plone.org/news-and-events/events), and **not use GitHub**.
 
 
 (expectations-of-first-time-contributors)=
@@ -66,6 +67,7 @@ Such motivation behind these contributions usually results in poor quality break
 ## Requirements
 
 All first-time contributors to Plone must follow the contributing requirements described in {doc}`index`.
+Although you can open a pull request at any time, Plone Team members may ignore it until, or close it unless, you satisfy the contributing requirements.
 
 For [Plone Google Summer of Code (GSoC)](https://plone.org/community/gsoc) applicants, you must also follow both our and its program guidelines.
 
@@ -88,17 +90,17 @@ Learn from their mistakes, and don't commit them yourself.
 (mistake-1-label)=
 
 1.  **Never ask to be assigned to an issue.**
-    Instead you may post a comment to claim it, if no one else has claimed it (see {ref}`Avoid duplicate effort <mistake-2-label>`).
-    For example, "I am working on this issue in pull request #123."
-    You do not need to ask to be assigned to, or to work on, an open issue.
-    As in any open source software project, you can start work on open issues at your convenience.
-    Privileged team members may ignore or delete comments asking to be assigned to an issue.
+    If an issue is claimed—either by assignment, an open pull request, or an explicit comment such as "I am working on this issue"—then it is not available to work on.
+    Otherwise, it is available, and you must claim it before you start work on it.
+    See {ref}`Avoid duplicate effort <mistake-2-label>`.
+    Privileged Plone Team members may ignore or delete comments asking to be assigned to an issue.
 
     (mistake-2-label)=
 
 2.  **Avoid duplicate effort.**
     Don't work on issues that have already been claimed or worked on, unless such effort has been abandoned by the author.
-    GitHub's interface provides links to related issues and pull requests, and who is assigned to an issue.
+    Use GitHub's interface to view related issues, pull requests, and who is assigned to an issue.
+    If it is not clear whether an issue has been claimed or abandoned, you may ask by posting a comment such as, "Is anyone working on this issue?"
     Pull requests will be reviewed in the order received.
     Duplicate pull requests may be ignored and closed without comment by the privileged GitHub teams.
 
@@ -109,7 +111,7 @@ Learn from their mistakes, and don't commit them yourself.
     You should instead learn how to {ref}`work-with-github-issues-label` and {ref}`run tests and code quality checks locally <test-and-code-quality-label>`.
 
 4.  **Don't ask if an issue is open.**
-    Instead you can determine whether an issue is open by doing your own research using the following tips.
+    Instead, you can determine whether an issue is open by doing your own research using the following tips.
 
     -   Start Plone or its specific package, follow the steps to attempt to reproduce the issue, and see if it still exists.
     -   Check the issue's status indicator for a green label of {guilabel}`Open`.
@@ -127,19 +129,19 @@ Learn from their mistakes, and don't commit them yourself.
 ### Plone Contributors Team
 
 The Plone GitHub organization uses GitHub Teams to grant groups of GitHub users appropriate access to its repositories.
-New users, including GSoC applicants, are assigned to the [Contributors](https://github.com/orgs/plone/teams/contributors) Team within a few business days after they have signed and returned the {ref}`Plone Contributor Agreement <contributing-sign-and-return-the-plone-contributor-agreement-label>`.
-New contributors should wait for confirmation that they have been added to this team before creating a pull request to a Plone project.
+First-time contributors, including GSoC applicants, are assigned to the [Contributors](https://github.com/orgs/plone/teams/contributors) Team within a few business days after they have signed and returned the {ref}`Plone Contributor Agreement <contributing-sign-and-return-the-plone-contributor-agreement-label>`.
+New contributors should wait for an invitation to join this team, and accept it, before creating a pull request to a Plone project.
 
 
 (first-time-mr-roboto-on-github-label)=
 
 ### `mr-roboto` on GitHub
 
-[`mr-roboto`](https://github.com/plone/mr.roboto) enforces the requirement of a signed Plone Contributor Agreement from a new contributor, and being assigned to a Plone team on GitHub.
+[`mr-roboto`](https://github.com/plone/mr.roboto) enforces the requirement of a signed Plone Contributor Agreement from all contributors by virtue of being assigned to a Plone Team on GitHub.
 
-New contributors to Plone who submit a pull request and do not wait for confirmation that they have been added to the Contributors team will be subjected to persistent nagging from `mr-roboto`.
-`mr-roboto` will not respond to you if you `@` it.
-Core developers may ignore your contribution because you did not follow these instructions.
+New contributors to Plone who submit a pull request and do not wait for confirmation that they have been added to the Contributors Team will be subjected to persistent nagging from `mr-roboto`.
+`mr-roboto` will not respond to you if you `@` it, and if you do that anyway, then that indicates you did not read these guidelines.
+Plone Team members may ignore or close your contribution because you did not follow these instructions.
 Please don't be "that person".
 
 
@@ -176,7 +178,7 @@ After you have satisfied the above steps and have clear direction on how to proc
 
 As a member of the Plone Contributors Team, you do not have write access to push commits to GitHub repositories under the Plone organization.
 You can push commits to your fork.
-Thus a typical workflow will be circular in nature.
+Thus, a typical workflow will be circular in nature.
 You will pull code from the upstream Plone repository, push your work from your local clone to your remote fork, then make a pull request from your fork to the upstream Plone repository.
 
 ````{card}
@@ -199,7 +201,7 @@ _Plone git workflow_
 
 Once you have your environment set up, then you can follow standard best practices for working with git.
 
-In the following command examples, we will use `main` as the default branch, although `master` may still be in use for some repositories.
+In the following command examples, you should use `main` as the default branch, although `master` may still be in use for some repositories.
 
 Always start by checking out the default branch then update the default branch.
 

@@ -32,11 +32,11 @@ If you want to check out a Plone core package for development, or want to overri
 
 ```text
 # constraints.txt with unresolvable version conflict
--c https://dist.plone.org/release/{PLONE_BACKEND_PATCH_VERSION}/constraints.txt
-plone.api>=2.0.0a3
+-c https://dist.plone.org/release/6.0.9/constraints.txt
+plone.api>=2.1.0
 ```
 
-Unfortunately `pip` does not allow overriding constraints this way. 
+Unfortunately `pip` does not allow overriding constraints this way.
 {term}`mxdev` solves this issue.
 
 

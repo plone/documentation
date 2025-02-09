@@ -105,6 +105,7 @@ linkcheck_ignore = [
     r"https://browsersl.ist/#",
     # Ignore unreliable sites
     r"https://web.archive.org/",
+    r"https://www.gnu.org/",  # Consider removal when upgrading Sphinx
     r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
 linkcheck_allowed_redirects = {
@@ -115,6 +116,8 @@ linkcheck_allowed_redirects = {
 linkcheck_anchors = True
 linkcheck_timeout = 5
 linkcheck_retries = 1
+# See https://github.com/plone/documentation/issues/1815
+linkcheck_report_timeouts_as_broken = False
 
 # The suffix of source filenames.
 source_suffix = {
@@ -316,8 +319,8 @@ myst_substitutions = {
     "postman_response": "![](../_static/img/postman_response.png)",
     "postman_retain_headers": "![](../_static/img/postman_retain_headers.png)",
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
-    "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.8, 3.9, 3.10, 3.11, or 3.12",
-    "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, or 3.12",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
 }
 
 
@@ -383,7 +386,7 @@ notfound_template = "404.html"
 # -- sphinx-reredirects configuration ----------------------------------
 # https://documatt.com/sphinx-reredirects/usage.html
 redirects = {
-    "contributing/plone-api": "/plone.api/contribute/index.html",
+    "contributing/plone-api": "/plone.api/contribute.html",
     "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
     "contributing/volto": "/volto/contributing/index.html",
     "install/install-from-packages": "/install/create-project.html",
@@ -438,8 +441,7 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
-    "{PLONE_BACKEND_PATCH_VERSION}": "6.0.13",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.1",
 }
 
 # Finally, configure app attributes.

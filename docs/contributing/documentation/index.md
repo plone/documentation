@@ -74,9 +74,11 @@ Plone documentation consists of several repositories.
 When you {doc}`setup and build <setup-build>` the documentation, it will automatically pull in the other repositories via git submodules.
 
 ```{important}
-We currently use the branches `plone/documentation@6.0`, `plone/plone.api@master`, `plone/plone.restapi@main`, and `plone/volto@main` as the default branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@6.0`, `plone/plone.api@main`, `plone/plone.restapi@main`, and `plone/volto@main` as the default branches for developing Plone 6 Documentation.
 ```
 
+
+(contributing-documentation-github-menu-label)=
 
 ## GitHub menu
 
@@ -88,6 +90,7 @@ In the upper right of the documentation, you will see the GitHub Octocat icon.
 
 You can use this menu to quickly navigate to the `documentation` source repository or open an issue.
 You can also browse open issues and pull requests to see what has already been reported, or work started on, to improve Plone Documentation.
+You can also give a reaction of a thumbs up 👍 on an issue or pull request to express that it is valuable to work on.
 
 ```{tip}
 Working on documentation or on issues labeled with either `33 needs: docs` or `41 lvl: easy` are the two best ways for first-timers to contribute.
@@ -205,10 +208,6 @@ You already imported the external repositories into the `plone/documentation` re
     You might need to resolve conflicts.
 
     ```shell
-    # for plone.api
-    git checkout master
-
-    # for plone.restapi or volto
     git checkout main
     
     # pull in the latest changes

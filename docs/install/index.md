@@ -48,6 +48,7 @@ If you are following a [Plone training](https://training.plone.org/), it should 
 
 {doc}`create-project-cookieplone`
 :   This is the recommended way to install Plone for a new project with the Volto frontend.
+    Cookieplone requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
 
 {doc}`/admin-guide/install-buildout`
 :   This is one way to install Plone with the Classic UI frontend.

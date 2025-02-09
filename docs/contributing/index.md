@@ -34,7 +34,7 @@ A volunteer member of the Plone Foundation will review your signed agreement.
 If accepted, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access, and you will simultaneously receive an email from GitHub for you to accept the invitation to join the team.
 
 Allow up to one week for processing.
-Contact the Plone Foundation by its email address for further information, including the status of your request.
+Contact the Plone Foundation at agreements@plone.org for further information, including the status of your request.
 
 ```{button-link} https://plone.org/foundation/contributors-agreement
 :color: primary
@@ -138,7 +138,7 @@ You can write a good change log entry with the following guidance.
 The following text is an example of a good change log entry, placed inside {file}`/news/4470.documentation`.
 
 ```text
-Changed a few broken links in {file}`CHANGELOG.md` from URLs to inline literals to avoid errors when validating links. See https://6.docs.plone.org/volto/contributing/documentation.html#docs-linkcheckbroken for usage. @stevepiercy
+Changed a few broken links in `CHANGELOG.md` from URLs to inline literals to avoid errors when validating links. See https://6.docs.plone.org/volto/contributing/documentation.html#docs-linkcheckbroken for usage. @stevepiercy
 ```
 
 The following would be a poor change log entry.

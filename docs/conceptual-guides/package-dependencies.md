@@ -246,17 +246,21 @@ Looking deeper into those packages, there are more subdivisions which fall into 
 
 -   Plone
 -   plone.api
+-   plone.app.caching
+-   plone.app.discussion
 -   plone.app.iterate
+-   plone.app.multilingual
 -   plone.app.upgrade
+-   plone.classicui
+-   plone.distribution
+-   plone.exportimport
 -   plone.restapi
 -   plone.volto
 -   Products.CMFPlacefulWorkflow
 
-
 ### Between `Products.CMFPlone` and `plone.base`
 
 -   collective.monkeypatcher
--   plone.app.caching
 -   plone.app.content
 -   plone.app.contentlisting
 -   plone.app.contentmenu
@@ -264,7 +268,6 @@ Looking deeper into those packages, there are more subdivisions which fall into 
 -   plone.app.contenttypes
 -   plone.app.customerize
 -   plone.app.dexterity
--   plone.app.discussion
 -   plone.app.event
 -   plone.app.i18n
 -   plone.app.intid
@@ -272,7 +275,6 @@ Looking deeper into those packages, there are more subdivisions which fall into 
 -   plone.app.linkintegrity
 -   plone.app.locales
 -   plone.app.lockingbehavior
--   plone.app.multilingual
 -   plone.app.portlets
 -   plone.app.querystring
 -   plone.app.redirector

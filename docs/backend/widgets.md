@@ -538,8 +538,8 @@ class AddForm(DefaultAddForm):
         # Call parent to set-up initial widget data
         super().updateWidgets(self, prefix=prefix)
 
-        # Note we need to be discreet to different form modes (view, edit, hidden)
-        if self.fields["sections"].mode == INPUT_MODE:
+        # Please note that the different form modes (show, edit, hide) have to be taken into account.
+        if self.widgets["sections"].mode == INPUT_MODE:
 
             # Modify a widget with certain name for our purposes
             widget = self.widgets["sections"]
