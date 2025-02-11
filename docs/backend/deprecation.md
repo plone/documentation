@@ -311,4 +311,4 @@ jbot_deprecations = {
 </configure>
 ```
 
-this will load the defined `jbot_deprecations` dictionary.
+If a `z3c.jbot` version that supports deprecation is found, trying to override the template with the old location will trigger a deprecation warning that will instruct the user to rename its override file.
