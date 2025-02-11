@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    "description": "A guide how to do depracations, including Python, ZCML and templates in Plone."
+    "description": "A guide how to do deprecations, including Python, ZCML and templates in Plone."
     "property=og:description": "A guide how to do depracations, including Python, ZCML and templates in Plone."
     "property=og:title": "Deprecation"
     "keywords": "depracation, zcml, template, jbot"
