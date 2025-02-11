@@ -277,6 +277,8 @@ def deprecate_profile_some_confusing_name(tool):
 Sometimes we need to move templates to new locations. Since addons often use [z3c.jbot](https://github.com/zopefoundation/z3c.jbot) to override templates by their position, we need to point them to the new position as well as make sure that the override still works with the old position.
 
 
+To deprecate a package:
+
 In the old package folders `__init__.py` we add a mapping dict with the name `jbot_deprecations` of old and new template location:
 
 ```python
