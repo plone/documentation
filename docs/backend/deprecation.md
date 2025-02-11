@@ -301,8 +301,7 @@ jbot_deprecations = {
 
   <include
       zcml:condition="installed z3c.jbot"
-      package="z3c.jbot" 
-      file="meta.zcml" 
+      package="z3c.jbot"
       />
   <browser:jbotDeprecated
       zcml:condition="have jbot-deprecations"
