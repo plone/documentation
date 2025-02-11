@@ -299,10 +299,15 @@ jbot_deprecations = {
     xmlns:zcml="http://namespaces.zope.org/zcml"
     >
 
-  <configure zcml:condition="have jbot-deprecations">
-    <include package="z3c.jbot" file="meta.zcml" />
-    <browser:jbotDeprecated dictionary=".jbot_deprecations" />
-  </configure>
+  <include
+      zcml:condition="installed z3c.jbot"
+      package="z3c.jbot" 
+      file="meta.zcml" 
+      />
+  <browser:jbotDeprecated
+      zcml:condition="have jbot-deprecations"
+      dictionary=".jbot_deprecations"
+      />
 
 </configure>
 ```
