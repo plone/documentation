@@ -120,7 +120,7 @@ Enable Warnings
 
 : Warnings are written to `stderr` by default, but `DeprecationWarning` output is surpressed by default.
 
-  Output can be enabled by starting the Python interpreter with the [-W \[all|module|once\]](https://docs.python.org/2/using/cmdline.html#cmdoption-W) option.
+  Output can be enabled by starting the Python interpreter with the [-W \[all|module|once\]](https://docs.python.org/3/using/cmdline.html#cmdoption-W) option.
 
   It is possible to enable output in code too:
 
@@ -131,7 +131,7 @@ Enable Warnings
 
 Configure Logging
 
-: Once output is enabled it is possible to [redirect warnings to the logger](https://docs.python.org/2/library/logging.html#logging.captureWarnings):
+: Once output is enabled it is possible to [redirect warnings to the logger](https://docs.python.org/3/library/logging.html#logging.captureWarnings):
 
   ```python
   import logging
@@ -159,7 +159,7 @@ the call looks like so:
 
 Python offers a built-in `DeprecationWarning` which can be issued using standard libraries `warnings` module.
 
-For details read the [official documentation about warnings](https://docs.python.org/2/library/warnings.html).
+For details read the [official documentation about warnings](https://docs.python.org/3/library/warnings.html).
 
 In short it works like so
 
@@ -172,7 +172,7 @@ warnings.warn('deprecated', DeprecationWarning)
 
 Given a package `old.pkg` with a module `foo.py` need to be moved to a package `new.pkg` as `bar.py`.
 
-[zope.deprecation Moving modules](http://docs.zope.org/zope.deprecation/api.html#moving-modules) offers a helper.
+[zope.deprecation Moving modules](https://zopedeprecation.readthedocs.io/en/latest/api.html#moving-modules) offers a helper.
 
 1. Move the `foo.py` as `bar.py` to the `new.pkg`.
 2. At the old place create a new `foo.py` and add to it
@@ -193,7 +193,7 @@ This is the same as moving a module, just create for each module a file.
 
 ### Deprecating methods and properties
 
-You can use the `@deprecate` decorator from [zope.deprecation Deprecating methods and properties](http://docs.zope.org/zope.deprecation/api.html#deprecating-methods-and-properties) to deprecate methods in a module:
+You can use the `@deprecate` decorator from [zope.deprecation Deprecating methods and properties](https://zopedeprecation.readthedocs.io/en/latest/api.html#deprecating-methods-and-properties) to deprecate methods in a module:
 
 ```python
 from zope.deprecation import deprecate
