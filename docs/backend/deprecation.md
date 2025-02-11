@@ -4,7 +4,7 @@ myst:
     "description": "A guide how to do deprecations, including Python, ZCML and templates in Plone."
     "property=og:description": "A guide how to do deprecations, including Python, ZCML and templates in Plone."
     "property=og:title": "Deprecation"
-    "keywords": "depracation, zcml, template, jbot"
+    "keywords": "deprecation, zcml, template, jbot"
 ---
 
 (backend-deprecation-label)=
