@@ -287,7 +287,7 @@ jbot_deprecations = {
 }
 ```
 
-add a jbot-deprecations config to the `configure.zcml` file
+2. Add this deprecation snippet to the package `configure.zcml` file:
 
 create a `jbot_deprecations.zcml` file:
 
