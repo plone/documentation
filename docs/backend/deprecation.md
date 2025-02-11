@@ -295,7 +295,6 @@ jbot_deprecations = {
 
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:zcml="http://namespaces.zope.org/zcml"
