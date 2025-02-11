@@ -279,7 +279,7 @@ Sometimes we need to move templates to new locations. Since addons often use [z3
 
 To deprecate a package:
 
-In the old package folders `__init__.py` we add a mapping dict with the name `jbot_deprecations` of old and new template location:
+1. In the old package folders `__init__.py` add a dictionary `jbot_deprecations` that maps the old template locations to their new counterparts, e.g.:
 
 ```python
 jbot_deprecations = {
