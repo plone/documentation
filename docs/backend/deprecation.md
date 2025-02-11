@@ -289,8 +289,6 @@ jbot_deprecations = {
 
 2. Add this deprecation snippet to the package `configure.zcml` file:
 
-create a `jbot_deprecations.zcml` file:
-
 ```{code-block} xml
 :emphasize-lines: 6,9-12
 :linenos:
