@@ -29,6 +29,7 @@ At some point we
 While refactoring code, moving modules, functions, classes and methods is often needed.
 To not break third party code imports from the old place or usage of old functions/ methods must work for while.
 Deprecated methods are usually removed with the next major release of Plone.
+
 Following the [semantic versioning guideline](http://semver.org) is recommended.
 
 ### Help Programmers, No annoyance
