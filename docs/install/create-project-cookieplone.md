@@ -189,8 +189,8 @@ before. Is it okay to delete and re-download it? [y/n] (y):
   [5/17] Author (Plone Foundation): 
   [6/17] Author E-mail (collective@plone.org): 
   [7/17] Should we use prerelease versions? (No): 
-  [8/17] Plone Version (6.1.0): 
-  [9/17] Volto Version (18.8.1): 
+  [8/17] Plone Version (6.1.0): (press enter for a new project)
+  [9/17] Volto Version (18.8.1): (press enter for a new project)
   [10/17] Python Package Name (project.title): 
   [11/17] Volto Addon Name (volto-project-title): 
   [12/17] Language

@@ -1,0 +1,8 @@
+site_name: Plone Documentation
+theme: readthedocs
+
+nav:
+  - Home: index.md
+  - Cookieplone: install/cookiieplone-project.md
+  - Training: training/index.md
+  - cookieplone-create-project: install/create-project-cookieplone.md
