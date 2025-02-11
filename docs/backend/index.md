@@ -22,6 +22,7 @@ behaviors
 configuration-registry
 content-types/index
 control-panels
+deprecation
 fields
 global-utils
 indexing

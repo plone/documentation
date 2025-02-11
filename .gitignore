@@ -13,3 +13,6 @@ docs/volto
 
 # editor files
 .vscode
+/bin/
+/lib
+/lib64
