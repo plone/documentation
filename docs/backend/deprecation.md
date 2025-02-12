@@ -19,7 +19,7 @@ It also has a value as a general overview on how to deprecate in Python.
 
 ### Why Deprecation
 
-At some point we
+At some point we:
 
 - need to get rid of old code,
 - want to unify api style (consistent api),
