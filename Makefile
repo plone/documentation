@@ -45,30 +45,37 @@ venv/bin/python:  ## Setup up Python virtual environment and install requirement
 	@echo
 	@echo "Installation of requirements completed."
 
-docs/plone.api:  ## Setup plone.api docs
+docs/api/plone.api: ## Setup plone.api docs
 	git submodule init
 	git submodule update
 	venv/bin/pip install -e submodules/plone.api/"[test]"
-	ln -s ../submodules/plone.api/docs ./docs/plone.api
+	ln -sfn ../../submodules/plone.api/docs ./docs/api/plone.api
 	@echo
 	@echo "Documentation of plone.api initialized."
 
-docs/plone.restapi:  ## Setup plone.restapi docs
+docs/api/plone.restapi: ## Setup plone.restapi docs
 	git submodule init
 	git submodule update
-	ln -s ../submodules/plone.restapi ./docs/plone.restapi
+	ln -sfn ../../submodules/plone.restapi ./docs/api/plone.restapi
 	@echo
 	@echo "Documentation of plone.restapi initialized."
 
 docs/volto:  ## Setup Volto docs
 	git submodule init
 	git submodule update
-	ln -s ../submodules/volto/docs/source ./docs/volto
+	ln -sfn ../submodules/volto/docs/source ./docs/volto
 	@echo
 	@echo "Documentation of volto initialized."
 
+docs/api/plone-registry:  ## Setup @plone/registry docs
+	git submodule init
+	git submodule update
+	ln -sfn ../../submodules/volto/packages/registry/docs ./docs/api/registry
+	@echo
+	@echo "Documentation of @plone/registry initialized."
+
 .PHONY: deps
-deps: venv/bin/python docs/volto docs/plone.restapi docs/plone.api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
+deps: venv/bin/python docs/volto docs/api/plone.restapi docs/api/plone.api docs/api/plone-registry  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
 
 
 .PHONY: html
@@ -209,8 +216,9 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		--ignore "*.swp" \
 		--port 8050 \
 		--watch volto \
-		--watch plone.api \
-		--watch plone.restapi \
+		--watch api/plone.api \
+		--watch api/plone.restapi \
+		--watch api/registry \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: rtd-pr-preview

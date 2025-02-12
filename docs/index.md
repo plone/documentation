@@ -45,6 +45,14 @@ contributing/index
 % plone.restapi/docs/source/index
 % backend/index
 
+```{toctree}
+:caption: API
+:maxdepth: 2
+:hidden:
+
+api/registry/index
+api/plone.restapi/docs/source/index
+```
 
 ```{toctree}
 :caption: Appendices

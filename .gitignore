@@ -7,8 +7,9 @@
 /styles/Microsoft
 
 # symlinked from submodule
-docs/plone.api
-docs/plone.restapi
+docs/api/plone.api
+docs/api/plone.restapi
+docs/api/registry
 docs/volto
 
 # editor files
