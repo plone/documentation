@@ -22,7 +22,7 @@ It also has a value as a general overview on how to deprecate in Python.
 At some point we:
 
 - need to get rid of old code,
-- want to unify api style (consistent api),
+- want to unify API style (consistent API),
 - fix typos in namings,
 - move code or templates around (inside package or to another package).
 
