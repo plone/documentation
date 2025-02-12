@@ -13,27 +13,7 @@ make recording-init
 
 The command will run Cookieplone, generator a project, and install it.
 
-Next edit the file `recordings/project-title/frontend/cypress.config.js`, inserting the emphasized line.
-
-```{code-block} js
-:emphasize-lines: 11
-const { defineConfig } = require('cypress');
-
-module.exports = defineConfig({
-  viewportWidth: 1280,
-  viewportHeight: 1280,
-  retries: {
-    runMode: 3,
-  },
-  e2e: {
-    baseUrl: 'http://localhost:3000',
-    experimentalStudio: true,
-    specPattern: 'cypress/tests/**/*.cy.{js,jsx,ts,tsx}',
-  },
-});
-```
-
-Copy all the tests from {file}`submodules/volto/packages/volto/cypress` to {file}`recordings/project-title/frontend/cypress` so you have something to start from.
+This project will serve as baseline for the tests. Eventually, we could pull a specific branch for generating the tests.
 
 Now you will start the backend, frontend, and acceptance test servers, one each in its own terminal session.
 
@@ -46,7 +26,7 @@ See https://github.com/plone/documentation/issues/1758.
 In the current session, issue the following command to start the backend server.
 
 ```shell
-make acceptance-backend-dev-start
+make acceptance-backend-start
 ```
 
 In the second session, issue the following command to start the frontend server.
