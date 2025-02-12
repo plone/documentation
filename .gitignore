@@ -13,3 +13,5 @@ docs/volto
 
 # editor files
 .vscode
+
+mkdocs.yml

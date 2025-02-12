@@ -124,7 +124,7 @@ pipx run cookieplone project
 
 You will be presented with a series of prompts.
 You can accept the default values in square brackets (`[default-option]`) by hitting the {kbd}`Enter` key, or enter your preferred values.
-For ease of documentation, we will use the default values.
+For ease of documentation, we will use the default values. 
 
 ```{tip}
 See the cookiecutter's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
@@ -132,6 +132,7 @@ See the cookiecutter's README for how to [Use options to avoid prompts](https://
 
 ```{important}
 For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6-latest/constraints.txt).
+Kindly press enter when you will be asked about the Plone and Volto versions during the project setup. This is for having a latest and stable version of plone and volto for your project.
 Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the same package.
 ```
 
