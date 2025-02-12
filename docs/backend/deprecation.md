@@ -61,7 +61,7 @@ Renaming
 
 Moving a module, class, function, etc to another place
 
-: For some reason, i.e. merging packages, consistent api or resolving cirular import problems, we need to move code around.
+: For some reason, i.e. merging packages, consistent API or resolving cirular import problems, we need to move code around.
   When imported from the old place it logs a verbose deprecation warning with information where to import from in future.
 
 Deprecation of a whole package
