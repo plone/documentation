@@ -1,5 +1,7 @@
 # Dependencies
 /venv
+mkdocs-env
+.gitignore
 
 # Generated files
 /_build
