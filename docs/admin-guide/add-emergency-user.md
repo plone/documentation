@@ -1,64 +1,103 @@
 ---
 myst:
   html_meta:
-    "description": "Create an emergency user"
-    "property=og:description": "Create an emergency user"
-    "property=og:title": "Create an emergency user"
-    "keywords": "Plone, users, groups, emergency user, pip, buildout"
+    "description": "How to create an emergency user in an existing Zope instance"
+    "property=og:description": "How to create an emergency user in an existing Zope instance"
+    "property=og:title": "How to create an emergency user"
+    "keywords": "Plone, Zope, users, emergency user, administration, pip, buildout"
 ---
 
 (user-groups-emergency-user-label)=
 
-# Emergency user
+# Zope Manager Users
 
-An emergency user is one that you can use to regain administrative access to a Plone site.
-If you lose the administrator password, or you inherit a project without proper documentation, you can create an emergency user.
+Zope manager users have full access to the whole Zope instance.
 
-First of all, do the following steps not in a production environment!
+Some installation methods automatically create a zope admin user for you already.
 
+The credentials for this user are usually:
+
+- username: `admin`
+- password: `admin`
+
+There are multiple reasons why you might need to add a new Zope manager user, such as:
+
+- Your installation method did not create one.
+- You lost access to your instance.
+- You inherited a project without proper documentation.
+
+If you need to regain access to your instance, this user is also refered to as an emergency user.
+
+This guide explains how to add a Zope manager user to an existing Zope instance.
+
+```{note}
+The emergency user is a superuser with full access to the Zope instance.
+It is not limited to a specific Plone site.
+Please be aware of the security implications.
+```
 
 (user-groups-create-an-emergency-user-label)=
 
-## Create an emergency user
+## Adding a New Zope Manager User
 
-There are two procedures to create an emergency user, depending on how you created and manage the Plone site.
-For both scenarios, the commands you run will stop the Plone site, add a new user, and start the Plone site.
-
-```{important}
-You should always stop your Plone site before adding a new user.
-```
+There are multiple ways to create a Zope manager user, depending on how you created and managed your Zope instance.
 
 ```{important}
-The new username must not be an existing one.
-Therefore you should avoid the username `admin`, but use another arbitrary name, such as `admin2`.
+If you are running a standalone instance, it must be stopped before adding the user.
 ```
 
+### Using the `adduser` instance command
 
-(user-groups-emergency-user-pip-installation-label)=
+If your site was installed with `buildout`, you can add a Zope manager user via an instance script.
 
-### pip based Plone instance
+Run the following command in the terminal:
 
-You can run the following shell commands to create an emergency user.
-
-```shell
-./venv/bin/instance stop
-./venv/bin/addzopeuser -c instance/etc/zope.conf <user> <password>
-./venv/bin/instance start
+```bash
+$ bin/instance adduser username password
+Created user: username
 ```
 
-Now you can login with the created user.
+The name of the instance script might vary based on your installation.
+Replace `username` and `password` with the desired values.
 
+If the user already exists:
 
-(user-groups-emergency-user-buildout-installation-label)=
+- No user will be created
+- The password will not be changed
 
-### Buildout based Plone instance
+The command will return a message like this:
 
-With buildout and `plone.recipe.zope2instance`, you can run the following shell commands to create an emergency user.
-
-```shell
-bin/instance stop
-bin/instance adduser <user> <password>
-bin/instance start
+```bash
+$ bin/instance adduser foo baz
+Created user: None
 ```
 
-Now you can login with the created user.
+### Using the `addzopeuser` command
+
+For `pip` based installations, you will have a script called `addzopeuser` in the `bin` directory of your virtual environment.
+
+The `addzopeuser` script might also be available in `buildout` based installations.
+
+Run in the terminal:
+
+```bash
+$ .venv/bin/addzopeuser -c path/to/etc/zope.conf username password
+User username created.
+```
+
+The `addzopeuser` script and `zope.conf` locations might vary based on your installations.
+Replace `username` and `password` with the desired values.
+
+If the user already exists:
+
+- No user will be created
+- The password will not be changed
+
+The command will return a message like this:
+
+```bash
+$ .venv/bin/addzopeuser -c tmp/zeoclient/etc/zope.conf foo baz
+Got no result back. User creation may have failed.
+Maybe the user already exists and nothing is done then.
+Or the implementation does not give info when it succeeds.
+```
