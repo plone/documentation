@@ -208,6 +208,9 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
 		--ignore "*.swp" \
 		--port 8050 \
+		--watch volto \
+		--watch plone.api \
+		--watch plone.restapi \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: rtd-pr-preview
