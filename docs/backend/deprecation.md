@@ -101,7 +101,11 @@ deprecation-warnings = on
 ...
 ```
 
-This just sets a configuration option in `zope.conf`.
+This adds this line to the `zope.conf` file:
+
+```
+debug-mode on
+```
 
 Without the recipe this can be set manually as well:
 In `zope.conf` custom filters for warnings can be defined.
