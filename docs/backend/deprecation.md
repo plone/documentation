@@ -55,7 +55,7 @@ It must not flood the logs.
 
 Renaming
 
-: We may want to rename classes, methods, functions or global or class variables in order to get a more consistent api or because of a typo, etc.
+: We may want to rename classes, methods, functions or global or class variables in order to get a more consistent API or because of a typo, etc.
   We never just rename, we always provide a deprecated version logging a verbose deprecation warning with information where to
   import from in future.
 
