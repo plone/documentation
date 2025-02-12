@@ -1,19 +1,15 @@
 # Dependencies
-/bin
-/include
-/lib
-/lib64
+/venv
 
 # Generated files
-pyvenv.cfg
 /_build
-/styles/Microsoft
 /share
+/styles/Microsoft
 
 # symlinked from submodule
-docs/volto
-docs/plone.restapi
 docs/plone.api
+docs/plone.restapi
+docs/volto
 
 # editor files
 .vscode

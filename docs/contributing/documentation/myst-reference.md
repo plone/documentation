@@ -16,7 +16,7 @@ This chapter provides information and examples for how to write proper MyST synt
 
 ## MyST, reStructuredText, and Markdown
 
-We use [MyST, or Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/), a rich and extensible flavor of Markdown, for authoring training documentation.
+You can use [MyST, or Markedly Structured Text](https://myst-parser.readthedocs.io/en/latest/), a rich and extensible flavor of Markdown, for authoring training documentation.
 
 MyST extends {term}`Markdown` by incorporating all the features of {term}`reStructuredText` and {term}`Sphinx` and its extensions.
 Contributors are welcome to use either Markdown or MyST syntax.
@@ -112,7 +112,7 @@ For example, in the `volto` submodule, inside its `src/docs` directory, place an
 In your markup, use that same `docs`-root-relative path for the target, such as `/_static/user-manual/block-left-add-icon.png`.
 Don't use file-relative paths.
 
-Configuration in the `conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
+Configuration in the {file}`conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
 
 
 #### Width of media
@@ -126,7 +126,7 @@ This will preserve legibility of images.
 
 #### Enhance images
 
-We use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
+You can use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
 
 Cards allow the display of a caption, create a link to the source image to display when it is too large to fit within the documentation page without scaling, and add a border to demarcate the image from the page's white background.
 
@@ -166,7 +166,7 @@ The following MyST example will display as shown below.
 
 #### Inline images
 
-For inline images, we use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
+For inline images, you can use the MyST extension [`html_image`](https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images).
 The HTML attribute `class` must be set to `inline` to render the image inline at `1rem`. 
 Images and figures should always include `alt` text.
 Example syntax is shown below.
@@ -202,7 +202,7 @@ The following MyST example for `figure` will display as shown below.
 ````
 
 
-### Video
+### Video - local
 
 To embed local videos, such as recordings of demonstrating the user interface, we require that the videos be saved as `.mp4` for greatest compatibility, usability, accessibility, and reduced file size.
 
@@ -220,17 +220,93 @@ See {ref}`static-assets-label` for details.
 
 Example MyST syntax is shown below.
 
-`````{example}
-````{only} not text
+`````{only} not text
+````{example}
 ```{video} ../../volto/_static/user-manual/blocks/block-copy-cut.mp4
+:alt: Copy or cut a block in Volto
 ```
 ````
 `````
 
 
+### Video - remote
+
+You can embed a remotely hosted video from [YouTube](https://www.youtube.com/), [Vimeo](https://vimeo.com/), or [PeerTube](https://joinpeertube.org/).
+
+You should use privacy or "do not track" mode so that visitors do not get tracked by advertisers or analytics.
+PeerTube does not need a privacy mode because it does not track users.
+
+Use the following parameters in the `youtube` directive.
+
+`:privacy_mode:`
+:   For videos hosted at YouTube.
+    Links to videos hosted at `www.youtube.com` get converted to `www.youtube-nocookie.com`.
+
+`:url_parameters:`
+:   For additional privacy on YouTube, use the argument `?privacy_mode=1`.
+    For Vimeo, use `?dnt=1`.
+
+The following example shows how to embed a video from YouTube using privacy mode arguments.
+
+`````{only} not text
+````{example}
+```{youtube} kHec4MXH8vo
+:privacy_mode:
+:url_parameters: ?privacy_mode=1
+:width: 100%
+```
+````
+`````
+
+```{seealso}
+For additional configuration options, see the usage documentation for [`sphinxcontrib-youtube`](https://sphinxcontrib-youtube.readthedocs.io/en/latest/usage.html).
+
+For an in depth discussion of privacy issues, see [How to embed YouTube videos with maximum privacy (GDPR-compliant)](https://web.archive.org/web/20240919142343/https://usercode.de/blog/how-to-embed-youtube-videos-with-maximum-privacy-gdpr-compliant).
+
+-   PeerTube's [Privacy guide](https://docs.joinpeertube.org/admin/privacy-guide) helps administrators comply with terms of government policies.
+-   YouTube's [Manage video embedding options, Turn on privacy-enhanced mode](https://support.google.com/youtube/answer/171780)
+-   Vimeo's [supported player parameters](https://help.vimeo.com/hc/en-us/articles/12426260232977-About-Player-parameters#h_01FNYA7F7GKWE17XDQJPMBC058)
+```
+
+
+### Diagrams and graphs with Mermaid
+
+You can use [Mermaid](https://mermaid.js.org/) and its Sphinx extension [`sphinxcontrib.mermaid`](https://pypi.org/project/sphinxcontrib-mermaid/) to render graphs in your documents, including general flowcharts, sequence diagrams, and Gantt charts.
+
+You can use the [Mermaid Playground](https://www.mermaidchart.com/play) to compose Mermaid markup and preview a live diagram.
+
+````{example}
+```{mermaid}
+:alt: Mental model of Plone
+:caption: Mental model of Plone
+:zoom:
+block-beta
+    columns 4
+    Plone["Plone<br/>integraton of all in one release"]:4
+    Distributions
+    Upgrade
+    coreapis["Core APIs"]
+    coreaddons["Core add-ons"]
+    cmfplone["Products.CMFPlone"]:4
+    ploneapp["Most of plone.app.* namespace"]:2
+    otherlay["Various related packages"]:2
+    plonebase["plone.base"]:4
+    block:groupfoundation:4
+        zopecore["Zope core/ ZCA"]
+        zopeeco["Zope ecosystem"]
+        cmfcore["CMFCore"]
+        ploneworld["Plone generic libraries"]
+        libraries["Other libraries"]
+    end  
+    style cmfplone fill:#fff9e6
+    style plonebase fill:#fff9e6
+```
+````
+
+
 ### Diagrams and graphs with Graphviz
 
-We use [Graphviz](https://graphviz.org/download/) and its Sphinx extension [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) to render diagrams and graph visualizations.
+You can use [Graphviz](https://graphviz.org/download/) and its Sphinx extension [`sphinx.ext.graphviz`](https://www.sphinx-doc.org/en/master/usage/extensions/graphviz.html) to render diagrams and graph visualizations.
 
 The following MyST example will display as shown below.
 

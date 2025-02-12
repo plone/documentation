@@ -34,7 +34,7 @@ A volunteer member of the Plone Foundation will review your signed agreement.
 If accepted, your GitHub account will be added to a team in the Plone GitHub organization with appropriate access, and you will simultaneously receive an email from GitHub for you to accept the invitation to join the team.
 
 Allow up to one week for processing.
-Contact the Plone Foundation by its email address for further information, including the status of your request.
+Contact the Plone Foundation at agreements@plone.org for further information, including the status of your request.
 
 ```{button-link} https://plone.org/foundation/contributors-agreement
 :color: primary
@@ -89,6 +89,11 @@ The log file is usually named `CHANGES.rst`, `CHANGES.md`, or `CHANGELOG.md`, an
 When a package is released with a new version, the release manager runs `towncrier` as part of the release process.
 Because the log file is automatically generated, you should not edit it directly, except to make corrections, such as broken links.
 
+
+(contributing-create-a-news-item-file-label)=
+
+### Create a news item file
+
 To create a change log entry or news item, create a file in the `news` directory, located in the root of the package.
 
 For Volto, its repository is in a monorepo structure, consisting of several packages in the `packages` folder.
@@ -105,24 +110,30 @@ The change log entry's format must be `###.type`, where `###` is the referenced 
 
 A package configures the types it allows in a file `towncrier.toml` located at the root of its package directory.
 
-The content of this file must include the following.
 
-- A brief message that summarizes the changes in your contribution.
-- An attribution to yourself, in the format of `@github_username`.
+(write-a-good-change-log-entry-label)=
+
+### Write a good change log entry
 
 ```{important}
 These change log entries become narrative documentation.
 ```
 
-You can write good change log entries with the following guidance.
+The content of this file must include the following.
 
-- Use a narrative format, in the past tense, proper English spelling and grammar, and inline markup as needed.
-- Write your change log entry for its appropriate audience.
-  - Most entries should address _users_ of the software.
-  - An entry for a change to a public API should address _developers_.
-- If you fix a bug, write what was broken and is now fixed.
-- If you add or change a feature or public API, write a summary of previous behavior, what it does now, and how to use it.
-- Refer to narrative documentation as needed.
+-   A brief message that summarizes the changes in your contribution.
+-   An attribution to yourself, in the format of `@github_username`.
+
+You can write a good change log entry with the following guidance.
+
+-   Use a narrative format, in the past tense, proper English spelling and grammar, and inline markup as needed.
+-   Write your change log entry for its appropriate audience.
+    -   Most entries should address _users_ of the software.
+    -   An entry for a change to a public API should address _developers_.
+-   If you fix a bug, write what was broken and is now fixed.
+    You should not write _how_ you fixed it.
+-   If you add or change a feature or public API, write a summary of previous behavior, what it does now, and how to use it.
+-   Refer to narrative documentation as needed.
 
 The following text is an example of a good change log entry, placed inside {file}`/news/4470.documentation`.
 
@@ -135,6 +146,7 @@ The following would be a poor change log entry.
 ```text
 Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_guide]
 ```
+
 
 (contributing-project-configuration-files-label)=
 
@@ -167,7 +179,7 @@ Plone API
 
 Plone REST API
 :   A RESTful API for Plone.
-    See {doc}`plone.restapi/docs/source/contributing/index`.
+    See {doc}`/plone.restapi/docs/source/contributing/index`.
 
 Volto
 :   Plone 6 default frontend.

@@ -33,17 +33,28 @@ For other installation options, see {ref}`get-started-install-label`.
 Plone 6 has both hardware requirements and software prerequisites.
 
 
+### Supported web browsers
+
+```{include} /_inc/_install-browser-reqs-volto.md
+```
+
+
+(create-project-cookieplone-hardware-requirements-label)=
+
 ### Hardware requirements
 
 ```{include} /_inc/_hardware-requirements.md
 ```
 
+
+(create-project-cookieplone-prerequisites-for-installation-label)=
+
 ### Prerequisites for installation
 
-```{include} ../volto/contributing/install-operating-system.md
+```{include} ../volto/_inc/_install-operating-system.md
 ```
 
--   Python {SUPPORTED_PYTHON_VERSIONS_PLONE61}
+-   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 -   {term}`pipx`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 20.x
@@ -56,25 +67,29 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```{include} /_inc/_install-python-plone61.md
 ```
 
+Plone 6.1 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
+
+```{warning}
+Python 3.9 will reach [end of life in October 2025](https://devguide.python.org/versions/).
+Do not create a new Plone project with Python 3.9.
+```
+
 
 #### pipx
 
-Install {term}`pipx`.
-
-```shell
-pip install pipx
+```{include} /_inc/_install-pipx.md
 ```
 
 
 #### nvm
 
-```{include} ../volto/contributing/install-nvm.md
+```{include} ../volto/_inc/_install-nvm.md
 ```
 
 
 #### Node.js
 
-```{include} ../volto/contributing/install-nodejs.md
+```{include} ../volto/_inc/_install-nodejs.md
 ```
 
 3.  Enable {term}`corepack` so that Node.js will install {term}`pnpm` as a package manager.
@@ -86,15 +101,17 @@ pip install pipx
 
 #### Make
 
-```{include} ../volto/contributing/install-make.md
+```{include} ../volto/_inc/_install-make.md
 ```
 
 
 #### Git
 
-```{include} ../volto/contributing/install-git.md
+```{include} ../volto/_inc/_install-git.md
 ```
 
+
+(create-project-cookieplone-generate-the-project-label)=
 
 ## Generate the project
 
@@ -110,16 +127,15 @@ You can accept the default values in square brackets (`[default-option]`) by hit
 For ease of documentation, we will use the default values.
 
 ```{tip}
-See the cookiecutter's README for how to [Use options to avoid prompts](https://github.com/collective/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
+See the cookiecutter's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
 ```
 
 ```{important}
-For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6.0-latest/constraints.txt).
+For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6-latest/constraints.txt).
 Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the same package.
 ```
 
 ```console
-% pipx run cookieplone project
 ╭──────────────────────────────── cookieplone ────────────────────────────────╮
 │                                                                             │
 │                              .xxxxxxxxxxxxxx.                               │
@@ -154,7 +170,17 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 You've downloaded /Users/stevepiercy/.cookiecutters/cookieplone-templates 
 before. Is it okay to delete and re-download it? [y/n] (y): 
 ╭─────────────────────────────── Plone Project ───────────────────────────────╮
+│                                                                             │
 │ Creating a new Plone Project                                                │
+│                                                                             │
+│ Sanity check results:                                                       │
+│                                                                             │
+│   - Cookieplone: ✓                                                          │
+│   - Python: ✓                                                               │
+│   - Node: ✓                                                                 │
+│   - git: ✓                                                                  │
+│   - Docker (optional): ✓                                                    │
+│                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
   [1/17] Project Title (Project Title): 
   [2/17] Project Description (A new project using Plone 6.): 
@@ -163,9 +189,9 @@ before. Is it okay to delete and re-download it? [y/n] (y):
   [5/17] Author (Plone Foundation): 
   [6/17] Author E-mail (collective@plone.org): 
   [7/17] Should we use prerelease versions? (No): 
-  [8/17] Plone Version (6.0.13): 
-  [9/17] Volto Version (18.0.0-alpha.43):
-  [10/17] Python Package Name (project.title):
+  [8/17] Plone Version (6.1.0): 
+  [9/17] Volto Version (18.8.1): 
+  [10/17] Python Package Name (project.title): 
   [11/17] Volto Addon Name (volto-project-title): 
   [12/17] Language
     1 - English
@@ -197,10 +223,9 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 │                                                                             │
 │ Summary:                                                                    │
 │                                                                             │
-│   - Plone version: 6.0.13                                                   │
-│   - Volto version: 18.0.0-alpha.43                                          │
-│   - Output folder:                                                          │
-│ <PATH_TO>/project-title                                                     │
+│   - Plone version: 6.1.0                                                    │
+│   - Volto version: 18.8.1                                                   │
+│   - Output folder: <PATH_TO>/project-title                                  │
 │                                                                             │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯

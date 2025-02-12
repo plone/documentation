@@ -1,18 +1,25 @@
 ---
 myst:
   html_meta:
-    "description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
-    "property=og:description": "Administrators' guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
-    "property=og:title": "Administrators Guide"
+    "description": "Administrators guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
+    "property=og:description": "Administrators guide to writing Plone Documentation. It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation."
+    "property=og:title": "Administrators guide"
     "keywords": "Plone, Documentation, automated deployments, hosting, automated testing, importing external packages, preview, build, pull request"
 ---
 
 (administrators-guide-label)=
 
-# Administrators Guide
+# Administrators guide
 
 This guide is for administrators of Plone Documentation.
 It covers automated deployments, hosting, automated testing, previewing, and importing external package documentation into Plone Documentation.
+
+
+## Deployments and hosting
+
+Plone Documentation is automatically deployed through GitHub Workflows.
+The Plone Admin and Infrastructure Team maintains the processes and the servers where this documentation is hosted.
+Some individual projects may also host their projects on Read the Docs.
 
 
 (administrators-import-docs-and-converting-to-myst-label)=
@@ -57,7 +64,7 @@ We did this for `plone.app.dexterity` and several other projects.
 ## Importing external docs with submodules
 
 To add an external package to Plone Documentation, we use git submodules.
-We did this with Volto documentation.
+We did this with `volto`, `plone.api`, and `plone.restapi` documentation.
 Your package must be available under the Plone GitHub organization.
 
 Inside the repository `plone/documentation`, add a git submodule that points to your project.
@@ -96,11 +103,11 @@ The following are example files that you can use to configure your project for p
 
 -   [Plone Sphinx Theme `Makefile`](https://github.com/plone/plone-sphinx-theme/blob/main/Makefile), specifically the `rtd-pr-preview` section.
     This is the command to use to build documentation previews on Read the Docs.
--   [Plone Sphinx Theme `requirements-dev.txt`](https://github.com/plone/plone-sphinx-theme/blob/main/requirements-docs.txt) specifies the requirements to use Plone Sphinx Theme and build the docs.
+-   [Plone Sphinx Theme `requirements-docs.txt`](https://github.com/plone/plone-sphinx-theme/blob/main/requirements-docs.txt) specifies the requirements to use Plone Sphinx Theme and build the docs.
 -   [Plone Sphinx Theme `conf.py`](https://github.com/plone/plone-sphinx-theme/blob/main/docs/conf.py) the Sphinx configuration file to build the docs.
--   [Plone Sphinx Theme `.readthedocs.yaml`](https://github.com/plone/plone-sphinx-theme/blob/main/.readthedocs.yaml) specifies the configuration and command to build the docs.
--   [Plone Sphinx Theme `.github/workflows/rtd-pr-preview.yml`](https://github.com/plone/plone-sphinx-theme/blob/main/.github/workflows/rtd-pr-preview.yml) specifies when to build the docs, specifically only when a pull request is opened against the `main` branch and there are changes to documentation files.
-    You might need to adjust the branch name, paths, and files to check for changes.
+-   [Plone Sphinx Theme `.readthedocs.yaml`](https://github.com/plone/plone-sphinx-theme/blob/main/.readthedocs.yaml) specifies the configuration and Makefile command that Read the Docs uses to build the docs.
+-   [Plone Sphinx Theme `.github/workflows/rtd-pr-preview.yml`](https://github.com/plone/plone-sphinx-theme/blob/main/.github/workflows/rtd-pr-preview.yml) specifies when to build the docs, specifically only when a pull request is opened and there are changes to the documentation files.
+    You might need to adjust the `paths` and `project-slug` for your documentation.
 
 
 ### Import your project
@@ -113,35 +120,41 @@ After logging in to your Read the Docs account, you can import your project.
 1.  In the {guilabel}`Add project` screen, you can configure basic project settings, including its {guilabel}`Name`, {guilabel}`Repository URL`, {guilabel}`Default branch`, and {guilabel}`Language`.
     The defaults are usually accurate.
 1.  Click {guilabel}`Next`.
-1.  A sample `.readthedocs.yaml` file is suggested, if you have not already added one.
-1.  Click {guilabel}`Finish`.
-    Read the Docs will redirect you to the project details, and start building the docs.
+    Read the Docs will redirect you to the project details, and start building the docs, but you don't need to wait.
+1.  Click the {guilabel}`Settings` button.
+1.  Scroll to the end of the page and check the box for {guilabel}`Build pull requests for this project`.
+1.  Click {guilabel}`Save` to save the new setting.
 
 
-### Search engine indexing
+### Prevent search engine indexing
 
 Many Plone projects currently self-host their official documentation at {doc}`/index`.
 These projects get indexed by search engines.
 
 For pull request previews, unsupported branches or versions, or other situations, you most likely do not want search engines to index your documentation.
-Your options include the following.
+
+You can create a branch that serves as a landing page for your documentation.
+Using `sphinx-reredirects`, you can configure this page to redirect to your official documentation.
+
+In Plone 6 Documentation, the branch `rtd-redirect` consists of a single landing page that redirects visitors to https://6.docs.plone.org/.
+You can use this branch as a minimal example for your documentation.
+
+This branch also includes a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing.
+It also includes a 404 not found page that directs visitors the correct site.
+
+In addition, you should consider configure Read the Docs for the following.
 
 -   Deactivate your build
 -   Hide your build
--   Create a custom {file}`robots.txt` file to discourage, but not absolutely prevent, search engine indexing
+-   Set your default branch from your default to the home page branch, such as `rtd-redirect`.
 
-For the last option, you can configure Sphinx to copy the {file}`robots.txt` file.
-However, if you want to have two versions of a {file}`robots.txt` file—say one that allows indexing of your official documentation and another that discourages indexing—you can configure your automation to copy it into place with a command such as the following.
-
-```shell
-cp source-path/block-robots.txt docs-root-path/robots.txt
-```
+With this configuration and setup, you will also continue to have pull request preview builds.
 
 ```{seealso}
--   [Automation rules](https://docs.readthedocs.io/en/stable/automation-rules.html)
--   [Versions](https://docs.readthedocs.io/en/stable/versions.html)
--   [Managing versions automatically](https://docs.readthedocs.io/en/stable/guides/automation-rules.html)
--   [`robots.txt` support](https://docs.readthedocs.io/en/stable/reference/robots.html)
+-   [`robots.txt` support](https://docs.readthedocs.com/platform/stable/reference/robots.html)
+-   [Automation rules](https://docs.readthedocs.com/platform/stable/automation-rules.html)
+-   [Versions](https://docs.readthedocs.com/platform/stable/versions.html)
+-   [Managing versions automatically](https://docs.readthedocs.com/platform/stable/guides/automation-rules.html)
 ```
 
 
@@ -149,7 +162,7 @@ cp source-path/block-robots.txt docs-root-path/robots.txt
 
 You might want to cancel a build programmatically when certain conditions are met.
 You can do this through your {file}`.readthedocs.yaml` file.
-Read the Docs covers a few scenarios in its documentation, [Cancel build based on a condition](https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition).
+Read the Docs covers a few scenarios in its documentation, [Cancel build based on a condition](https://docs.readthedocs.com/platform/stable/build-customization.html).
 
 
 #### Build only on changes
@@ -165,19 +178,19 @@ build:
   os: "ubuntu-22.04"
   tools:
     python: "3.12"
-  jobs:
-    post_checkout:
-      # Cancel building pull requests when there aren't changes in the docs directory or YAML file.
-      # You can add any other files or directories that you'd like here as well,
-      # like your docs requirements file, or other files that will change your docs build.
-      #
-      # If there are no changes (git diff exits with 0) we force the command to return with 183.
-      # This is a special exit code on Read the Docs that will cancel the build immediately.
-      - |
-        if [ "$READTHEDOCS_VERSION_TYPE" = "external" ] && git diff --quiet origin/main -- docs/ .readthedocs.yaml requirements-initial.txt requirements.txt;
-        then
-          exit 183;
-        fi
+  commands:
+    # Cancel building pull requests when there aren't changes in the docs directory or YAML file.
+    # You can add any other files or directories that you'd like here as well,
+    # like your docs requirements file, or other files that will change your docs build.
+    #
+    # If there are no changes (git diff exits with 0) we force the command to return with 183.
+    # This is a special exit code on Read the Docs that will cancel the build immediately.
+    - |
+      if [ "$READTHEDOCS_VERSION_TYPE" = "external" ] && git diff --quiet origin/main -- docs/ .readthedocs.yaml requirements-initial.txt requirements.txt;
+      then
+        exit 183;
+      fi
+    # build.commands to build docs
 ```
 
 
@@ -195,6 +208,75 @@ build:
   jobs:
     post_checkout:
       # Cancel the Read the Docs build
-      # https://docs.readthedocs.io/en/stable/build-customization.html#cancel-build-based-on-a-condition
+      # https://docs.readthedocs.com/platform/stable/build-customization.html
       - exit 183;
 ```
+
+
+## Update git submodules
+
+Only members of the Plone Documentation Team should update git submodules from the primary repository `documentation`.
+
+1.  Update all branches to pull in the latest changes to their primary branches.
+    Start from the root of the `documentation` project directory.
+
+    ```shell
+    # documentation
+    git checkout 6.0
+    git pull
+    # plone.api
+    cd submodules/plone.api
+    git checkout main
+    git pull
+    # plone.restapi
+    cd ../../submodules/plone.restapi
+    git checkout main
+    git pull
+    # plone.api
+    cd ../../submodules/volto
+    git checkout main
+    git pull
+    ```
+
+1.  Get the status of the submodules to determine whether you need to update the git submodules.
+    
+    ```shell
+    cd ../..
+    git status
+    ```
+
+    If you see any of the submodules listed to add, then proceed to the next step, else you have nothing more to do.
+
+1.  Update the submodule to point to the latest commit, and push your changes to the remote repository.
+    You can combine multiple submodules in a single command.
+
+    ```shell
+    cd ../..
+
+    # for plone.api
+    git add submodules/plone.api
+    git commit -m "Update tip submodules/plone.api"
+
+    # for plone.restapi
+    git add submodules/plone.restapi
+    git commit -m "Update tip submodules/plone.restapi"
+
+    # for Volto
+    git add submodules/volto
+    git commit -m "Update tip submodules/volto"
+    
+    ## for all submodules
+    git add submodules/plone.api submodules/plone.restapi submodules/volto
+    git commit -m "Update tips submodules/plone.api submodules/plone.restapi submodules/volto"
+
+    # finally push your changes
+    git push
+    ```
+
+
+## `boring-cyborg` bot
+
+[`boring-cyborg`](https://probot.github.io/apps/boring-cyborg/) bot automatically makes comments in issues and pull requests when a person creates their first issue, pull request, or merged pull request.
+It also can automatically assign reviewers to pull requests, and has other add-ons.
+It is configured as a GitHub app.
+Its configuration file is located at {file}`.github/boring-cyborg.yml`.

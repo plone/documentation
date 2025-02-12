@@ -16,7 +16,10 @@ This part of the documentation provides explanation of concepts to deepen and br
 :maxdepth: 2
 
 choose-user-interface
+compare-buildout-pip
 distributions
 package-management
+package-dependencies
 make-build-backend-walk-through
+components
 ```

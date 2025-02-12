@@ -168,7 +168,7 @@ The standard theme in Classic UI was updated to Bootstrap 5, CSS variables, and 
 If you have a theme that builds on Barceloneta, you most likely need various changes.
 
 It may be best to start with a fresh theme, and try to keep the changes minimal.
-The training documentation lists {doc}`three possible theming strategies <theming_plone_5/index>`:
+The training documentation lists {doc}`three possible theming strategies <training-2022:theming_plone_5/index>`:
 
 -   Create a theme based on Barceloneta.
 -   Create a theme from scratch.
@@ -212,7 +212,7 @@ Add-on authors may want to use this to get, create, or delete relations.
 Mockup contains the source of most Classic UI Plone JavaScript.
 The compiled version is in `plone.staticresources`.
 
-Mockup is now based on [Patternslib 4](https://patternslib.com/).
+Mockup is now based on [Patternslib 9](https://patternslib.com/).
 It uses ES6 module imports instead of RequireJS.
 Add-ons for Classic UI Plone that use JavaScript should be updated to use ES6 modules as well.
 

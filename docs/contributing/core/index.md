@@ -37,10 +37,10 @@ Before you contribute to Plone core, check the [version support policy](https://
 It is beyond the scope of this documentation to provide installation instructions for all prerequisites for your operating system.
 However, the following links and sections below may be helpful.
 
-```{include} ../../volto/contributing/install-operating-system.md
+```{include} ../../volto/_inc/_install-operating-system.md
 ```
 
--   Python {SUPPORTED_PYTHON_VERSIONS_PLONE61}
+-   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 -   {term}`GNU make`
 -   {term}`Git`
 -   A C compiler
@@ -50,18 +50,18 @@ However, the following links and sections below may be helpful.
 
 Installing Python is beyond the scope of this documentation.
 However, it is recommended to use a Python version manager, {term}`pyenv` that allows you to install multiple versions of Python on your development environment without destroying your system's Python.
-Plone requires Python version {SUPPORTED_PYTHON_VERSIONS_PLONE61}.
+Plone requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
 
 
 ### Make
 
-```{include} ../../volto/contributing/install-make.md
+```{include} ../../volto/_inc/_install-make.md
 ```
 
 
 ### Git
 
-```{include} ../../volto/contributing/install-git.md
+```{include} ../../volto/_inc/_install-git.md
 ```
 
 ### C compiler
@@ -167,7 +167,10 @@ git pull
 ## Edit packages
 
 First identify the names of the Plone packages you want to work on.
-If you do not know, you can ask in the [Plone Community Forum](https://community.plone.org/).
+If you do not know, you can open an issue in the Plone GitHub repository for [`Products.CMFPlone`](https://github.com/plone/Products.CMFPlone/issues/), and someone might identify the source within a few days.
+You can also read the conceptual guide {doc}`/conceptual-guides/package-dependencies` to get a mental model of the structure of Plone.
+You can also ask in the [Plone Community Forum](https://community.plone.org/).
+
 Only a few packages are in {file}`src/` by default.
 
 Next create a new file {file}`buildout.local.cfg`, and add the names of packages that you want to develop under the `auto-checkout` list.
@@ -248,12 +251,29 @@ It takes 5-10 minutes to run the full unit test suite.
 If you run acceptance tests with the `--all` option, it will run tests in a real browser.
 This takes 30-40 minutes to run.
 This may repeatedly launch and close browser windows that gain focus, disrupting you from doing any other work.
-If this happens, you can install the `chromedriver` OS package.
-See https://developer.chrome.com/docs/chromedriver.
-Then run `export ROBOT_BROWSER="headlesschrome"` and again run `bin/test --all`.
+If this happens, you can use `headlesschrome` as the test browser.
+First set an environment variable.
 
 ```shell
-# Run acceptance tests
+export ROBOT_BROWSER="headlesschrome"
+```
+
+Then run all tests again.
+
+```shell
+bin/test --all
+```
+
+Plone uses [Playwright](https://playwright.dev/) to run robot tests.
+`plone.app.robotframework` provides a script to install Playwright browsers.
+
+```shell
+./bin/rfbrowser init
+```
+
+After the script downloads and initalizes browser resources, you can run the acceptance tests.
+
+```shell
 ./bin/test --all
 ```
 

@@ -20,18 +20,23 @@ It provides a basic installation without many additional tools to help with deve
 For other installation options, see {ref}`get-started-install-label`.
 ```
 
+
+## Supported web browsers
+
+```{include} /_inc/_install-browser-reqs-classic-ui.md
+```
+
+
 (install-pip-prerequisites)=
 
 ## Prerequisites for installation
 
--   For Plone 6.0, Python {SUPPORTED_PYTHON_VERSIONS_PLONE60}
-% TODO: These instructions install Plone 6.0.x. Uncomment next line and change the subsequent include when Plone 6.1 is released and "latest". 
-% -   For Plone 6.1, Python {SUPPORTED_PYTHON_VERSIONS_PLONE61}
+-   For Plone 6.1, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 
 
 ### Python
 
-```{include} /_inc/_install-python-plone60.md
+```{include} /_inc/_install-python-plone61.md
 ```
 
 
@@ -47,13 +52,13 @@ cd <my_projects>/plone
 Create a Python virtual environment.
 
 ```shell
-python3 -m venv .
+python3 -m venv venv
 ```
 
 Install Plone and a helper package, {term}`pipx`.
 
 ```shell
-bin/pip install -c https://dist.plone.org/release/6.0-latest/constraints.txt Plone pipx
+venv/bin/pip install -c https://dist.plone.org/release/6-latest/constraints.txt Plone pipx
 ```
 
 

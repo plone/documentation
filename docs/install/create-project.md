@@ -30,6 +30,15 @@ This template creates a web application using Plone with the Volto frontend, alo
 Plone 6.0 has both hardware requirements and software prerequisites.
 
 
+### Supported web browsers
+
+```{include} /_inc/_install-browser-reqs-volto.md
+```
+
+```{include} /_inc/_install-browser-reqs-classic-ui.md
+```
+
+
 (install-packages-hardware-requirements-label)=
 
 ### Hardware requirements
@@ -42,10 +51,10 @@ Plone 6.0 has both hardware requirements and software prerequisites.
 
 ### Prerequisites for installation
 
-```{include} ../volto/contributing/install-operating-system.md
+```{include} ../volto/_inc/_install-operating-system.md
 ```
 
--   Python {SUPPORTED_PYTHON_VERSIONS_PLONE60}
+-   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 -   {term}`pipx`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 20.x
@@ -68,10 +77,7 @@ Plone 6.0 has both hardware requirements and software prerequisites.
 
 #### pipx
 
-Install {term}`pipx`.
-
-```shell
-pip install pipx
+```{include} /_inc/_install-pipx.md
 ```
 
 
@@ -79,7 +85,7 @@ pip install pipx
 
 #### nvm
 
-```{include} ../volto/contributing/install-nvm.md
+```{include} ../volto/_inc/_install-nvm.md
 ```
 
 
@@ -87,7 +93,7 @@ pip install pipx
 
 #### Node.js
 
-```{include} ../volto/contributing/install-nodejs.md
+```{include} ../volto/_inc/_install-nodejs.md
 ```
 
 
@@ -137,7 +143,7 @@ Now the instructions to install Yarn should work.
 
 #### Make
 
-```{include} ../volto/contributing/install-make.md
+```{include} ../volto/_inc/_install-make.md
 ```
 
 
@@ -145,7 +151,7 @@ Now the instructions to install Yarn should work.
 
 #### Docker
 
-```{include} ../volto/contributing/install-docker.md
+```{include} ../volto/_inc/_install-docker.md
 ```
 
 
@@ -153,7 +159,7 @@ Now the instructions to install Yarn should work.
 
 #### Git
 
-```{include} ../volto/contributing/install-git.md
+```{include} ../volto/_inc/_install-git.md
 ```
 
 

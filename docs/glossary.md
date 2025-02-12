@@ -120,7 +120,7 @@ TTW
     Through-The-Web allows editing or customizing a Plone site through a web browser.
 
 Ansible
-    [Ansible](https://www.ansible.com/) is an open source automation platform.
+    [Ansible](https://www.redhat.com/en/ansible-collaborative) is an open source automation platform.
     Ansible can help you with configuration management, application deployment, task automation.
 
 Archetypes
@@ -295,6 +295,9 @@ TC39
     Ecma International's [TC39](https://tc39.es/) is a group of JavaScript developers, implementers, academics, and more, collaborating with the community to maintain and evolve the definition of JavaScript.
     They established a [process](https://tc39.es/process-document/) where the proposals are discussed, developed, and eventually approved (or dropped).
     The process has five Stages (0 to 4) where reaching the Stage 4 means the proposal is finished, and it becomes part of the JavaScript specification.
+
+`mr.developer`
+    [`mr.developer`](https://pypi.org/project/mr.developer/) is a {term}`Buildout` extension that makes it easy to work with buildouts containing lots of packages, where you only want to develop a few of them.
 
 `mrs-developer`
     Also called "missdev", a tool similar to buildout's `mr.developer`.
@@ -579,12 +582,14 @@ plonecli
 ZCA
 Zope Component Architecture
     Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
+    It uses the design patterns of interface, adapter, factory, and subscriber.
     It is very well suited to developing large Python software systems.
     The ZCA is not specific to the {term}`Zope` web application server.
     It can be used for developing any Python application.
     Maybe it should be called Python Component Architecture.
+
     ```{seealso}
-    See also https://zopecomponent.readthedocs.io/en/latest/index.html.
+    https://zopecomponent.readthedocs.io/en/latest/index.html
     ```
 
 browser layer
@@ -672,6 +677,9 @@ content rule
 trigger
     A trigger is an event in Plone that causes the execution of defined actions.
     Example triggers include object modified, user logged in, and workflow state changed.
+
+DSL
+    Domain Specific Language
 
 navigation root
     An object marked as a navigation root provides a way to root catalog queries, searches, breadcrumbs, and so on, into that object.
@@ -841,5 +849,40 @@ JSON Schema
 portlets
     Portlets are widgets that can be inserted in predefined locations in pages in {term}`Classic UI`.
     Portlets are most commonly used to add sidebars to the left or right of the main page content.
+
+Diátaxis framework
+    Plone Documentation uses the [Diátaxis framework](https://www.diataxis.fr/), a systematic approach to technical documentation authoring.
+
+Vale
+    [Vale](https://vale.sh/) is an open-source, command-line tool that helps maintain a consistent and on-brand voice in documentation.
+    Plone Documentation uses it to check spelling, English grammar and syntax, and style guides.
+
+schema enhancer
+    A schema enhancer uses the `schemaEnhancer` function, which can modify the schema used by the `InlineForm` component.
+    Any registered extension plugin can provide a `schemaEnhancer` function.
+    This function receives an object with `formData`, which is the block data; `schema`, which is the original schema to modify; and the injected `intl`, which aids with internationalization.
+
+variation
+    A variation is a common development pattern that provides alternative views for the same data.
+    For example, a teaser block can present data as `title + link`, `title + description + link`, or `title + image + link`.
+        
+    An advanced variation can enhance the block by adding data fields to the block.
+    For example, a listing block variation can show news items with `title + link`.
+    Extending this example, a developer can add a boolean field to the block that toggles the display of the link.
+    Thus an editor can select between `title + link` or just `title`.
+
+HOC
+Higher-Order Component
+    A higher-order component (HOC) is an advanced technique in React for reusing component logic.
+    HOCs are not part of the React API, per se.
+    They are a pattern that emerges from React's compositional nature.
+    Concretely, a higher-order component is a function that takes a component and returns a new component.
+    
+    ```{important}
+    Higher-order components are not commonly used in modern React code.
+    ```
+    ```{seealso}
+    https://legacy.reactjs.org/docs/higher-order-components.html
+    ```
 
 ```

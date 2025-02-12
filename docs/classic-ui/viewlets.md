@@ -209,7 +209,7 @@ The following Python code example, such as in a file {file}`viewlets.py`, extend
 ```{todo}
 The following Facebook like viewlet example is obsolete (note that links use `http`) and needs to be replaced with a modern one.
 The concept is valid, but the code will not actually work with Facebook.
-For a somewhat more recent example, see {doc}`training:mastering-plone-5/viewlets_1` in the Master Plone 5 training.
+For a somewhat more recent example, see {doc}`training-2023:mastering-plone-5/viewlets_1` in the Master Plone 5 training.
 ```
 
 ```python
