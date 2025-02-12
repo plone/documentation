@@ -42,7 +42,7 @@ For other installation options, see {ref}`get-started-install-label`.
 
 ## Installation
 
-Select a directory of your choice, and change it to your working directory.
+Select a directory of your choice, and change it to your working directory. Please ensure your working directory doesn't have spaces or special characters, ideally choose a simple diectory (eg. C:\ or E:\).
 
 ```shell
 mkdir -p <my_projects>/plone
@@ -55,11 +55,30 @@ Create a Python virtual environment.
 python3 -m venv venv
 ```
 
+Activate your virtual environment.
+
+```shell
+source venv/bin/activate
+```
+
+For Windows:
+
+```shell
+.\venv\Scripts\activate
+```
+
 Install Plone and a helper package, {term}`pipx`.
 
 ```shell
 venv/bin/pip install -c https://dist.plone.org/release/6-latest/constraints.txt Plone pipx
 ```
+
+For Windows:
+
+```shell
+.\venv\Scripts\pip install -c https://dist.plone.org/release/6-latest/constraints.txt Plone pipx
+```
+
 
 
 ## Create a Zope instance
@@ -86,6 +105,12 @@ Now run the {term}`cookiecutter` tool to create configuration for a Zope instanc
 bin/pipx run cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
 ```
 
+For Windows(venv):
+
+```
+.\venv\Scripts pip install cookiecutter
+.\venv\Scripts\cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
+```
 
 ## Start Plone in foreground mode
 
@@ -93,6 +118,12 @@ Start the instance for a quick test.
 
 ```shell
 bin/runwsgi -v instance/etc/zope.ini
+```
+
+For Windows(venv),
+
+```shell
+.\venv\Scripts\runwsgi -v instance/etc/zope.ini
 ```
 
 ```{include} /_inc/_create-classic-ui-instance.md
