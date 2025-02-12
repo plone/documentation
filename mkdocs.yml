@@ -6,3 +6,5 @@ nav:
   - Cookieplone: install/cookiieplone-project.md
   - Training: training/index.md
   - cookieplone-create-project: install/create-project-cookieplone.md
+  - Reference Guide:
+          - Cookieplone Make Commands: reference-guide/cookieplone-make-commands.md
