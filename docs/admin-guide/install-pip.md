@@ -31,6 +31,9 @@ For other installation options, see {ref}`get-started-install-label`.
 
 ## Prerequisites for installation
 
+```{include} /_inc_/_install-operating-system1.md
+```
+
 -   For Plone 6.1, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 
 
@@ -55,30 +58,11 @@ Create a Python virtual environment.
 python3 -m venv venv
 ```
 
-Activate your virtual environment.
-
-```shell
-source venv/bin/activate
-```
-
-For Windows:
-
-```shell
-.\venv\Scripts\activate
-```
-
 Install Plone and a helper package, {term}`pipx`.
 
 ```shell
 venv/bin/pip install -c https://dist.plone.org/release/6-latest/constraints.txt Plone pipx
 ```
-
-For Windows:
-
-```shell
-.\venv\Scripts\pip install -c https://dist.plone.org/release/6-latest/constraints.txt Plone pipx
-```
-
 
 
 ## Create a Zope instance
@@ -90,7 +74,7 @@ default_context:
   initial_user_name: "admin"
 # Use a secure token for the password in a production environment.
   initial_user_password: "admin"
-  wsgi_listen: "localhost:8080"
+  wsgi_listen: "localhost:8080" 
   debug_mode: false
   verbose_security: false
   db_storage: "direct"
@@ -105,12 +89,6 @@ Now run the {term}`cookiecutter` tool to create configuration for a Zope instanc
 bin/pipx run cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
 ```
 
-For Windows(venv):
-
-```
-.\venv\Scripts pip install cookiecutter
-.\venv\Scripts\cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
-```
 
 ## Start Plone in foreground mode
 
@@ -120,11 +98,6 @@ Start the instance for a quick test.
 bin/runwsgi -v instance/etc/zope.ini
 ```
 
-For Windows(venv),
-
-```shell
-.\venv\Scripts\runwsgi -v instance/etc/zope.ini
-```
 
 ```{include} /_inc/_create-classic-ui-instance.md
 ```
