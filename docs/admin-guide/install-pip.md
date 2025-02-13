@@ -31,7 +31,7 @@ For other installation options, see {ref}`get-started-install-label`.
 
 ## Prerequisites for installation
 
-```{include} /_inc_/_install-operating-system1.md
+```{include} /_inc/_install-operating-system1.md
 ```
 
 -   For Plone 6.1, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
