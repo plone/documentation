@@ -30,7 +30,7 @@ install-pip
 
 run-plone
 add-site
-add-emergency-user
+zope-manager-users
 configure-zope
 add-ons
 export-import
