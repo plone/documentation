@@ -7,48 +7,49 @@ myst:
     "keywords": "Plone, Zope, users, emergency user, administration, pip, buildout"
 ---
 
-(user-groups-emergency-user-label)=
+(admin-guide-zope-manager-user-label)=
 
 # Zope Manager Users
 
 Zope manager users have full access to the whole Zope instance.
 
-Some installation methods automatically create a zope admin user for you already.
+Some installation methods automatically create a zope `admin` user for you already.
 
-The credentials for this user are usually:
+This guide explains how to add a Zope manager user to an existing Zope instance.
 
-- username: `admin`
-- password: `admin`
-
-There are multiple reasons why you might need to add a new Zope manager user, such as:
+There are multiple reasons why you might need to do that, such as:
 
 - Your installation method did not create one.
 - You lost access to your instance.
 - You inherited a project without proper documentation.
 
-If you need to regain access to your instance, this user is also refered to as an emergency user.
-
-This guide explains how to add a Zope manager user to an existing Zope instance.
+```{note}
+If you need to regain access to your instance, this user is also referred to as an **emergency user**.
+```
 
 ```{note}
 The emergency user is a superuser with full access to the Zope instance.
 It is not limited to a specific Plone site.
 Please be aware of the security implications.
+You might want to change the passwords of the already existing manager users after you regained to your instance.
 ```
 
-(user-groups-create-an-emergency-user-label)=
+(admin-guide-adding-a-new-zope-manager-user-label)=
 
 ## Adding a New Zope Manager User
 
-There are multiple ways to create a Zope manager user, depending on how you created and managed your Zope instance.
+There are multiple ways to create a Zope manager user.
+That depends on how you created and managed your Zope instance.
 
 ```{important}
 If you are running a standalone instance, it must be stopped before adding the user.
 ```
 
+(admin-guide-using-the-adduser-instance-command-label)=
+
 ### Using the `adduser` instance command
 
-If your site was installed with `buildout`, you can add a Zope manager user via an instance script.
+If your site was installed with `buildout` and `plone.recipe.zope2instance`, you can add a Zope manager user via an instance script.
 
 Run the following command in the terminal:
 
@@ -71,6 +72,8 @@ The command will return a message like this:
 $ bin/instance adduser foo baz
 Created user: None
 ```
+
+(admin-guide-using-the-addzopeuser-command-label)=
 
 ### Using the `addzopeuser` command
 
