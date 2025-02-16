@@ -30,11 +30,11 @@ While refactoring code, moving modules, functions, classes and methods is often 
 To not break third party code imports from the old place or usage of old functions/ methods must work for while.
 Deprecated methods are usually removed with the next major release of Plone.
 
-Following the [semantic versioning guideline](http://semver.org) is recommended.
+Following the [semantic versioning guideline](https://semver.org) is recommended.
 
 ### Help Programmers, No annoyance
 
-Deprecation has to support the consumers of the code - the programmers using it.
+The developers should use code deprecations to support the consumers of the code.
 From their point of view, Plone core code is an API to them.
 Any change is annoying to them anyway, but they feel better if deprecation warnings are telling them what to do.
 
@@ -66,12 +66,12 @@ Moving a module, class, function, etc to another place
 
 Deprecation of a whole package
 
-: A whole package (folder with `__init__.py`)
+: A whole [package](https://docs.python.org/3/tutorial/modules.html#packages)
 
   - all imports still working, logging deprecation warnings on first import
   - ZCML still exists, but is empty (or includes the zcml from the new place if theres no auto import (i.e. for meta.zcml).
 
-Deprecation of a whole python egg
+Deprecation of a whole released/ installable package.
 
 : We will provide a last major release with no 'real' code, only backward compatible (bbb) imports of public API are provided.
   This will be done the way described above for a whole package.
