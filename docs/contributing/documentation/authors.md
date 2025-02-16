@@ -337,16 +337,32 @@ We follow [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/styl
 Key concepts from that guide include the following.
 
 -   Documentation should be informational, but friendly.
--   Address the reader by using "you" instead of "the user", or by using the collective "we" and "our".
+-   Address the reader by using "you" and "your" instead of "the user" or "the user's".
+-   When giving instructions, use the [imperative](https://learn.microsoft.com/en-us/style-guide/grammar/verbs#mood-of-verbs).
+-   Use the [active voice](https://learn.microsoft.com/en-us/style-guide/grammar/verbs#active-and-passive-voice) whenever possible, avoiding the passive voice.
 -   Headings should be "Sentence cased", not "Title Cased".
 
 The Plone Documentation Team adopted additional guidelines.
 
 -   Use one sentence per line.
     Keep sentences short and understandable.
-    This will greatly improve the editing and maintenance of your documentation.
--   Do not follow the PEP8 maximum line length standard.
-    Documentation is narrative text and images, not Python code.
+
+    Never break a single sentence across multiple lines.
+    Documentation is narrative text and images, not code.
+    Do not follow the PEP8 maximum line length standard.
+    Similarly, never use English semantic line breaks.
+    English semantic rules are difficult to understand and enforce.
+
+    Not following this guidance makes pull request reviews needlessly difficult, often resulting in noisy diffs.
+    The reviewer can't give targeted feedback for a single sentence when there are multiple sentences on one line.
+    When a single sentence is broken across multiple lines, the reviewer has to submit one suggestion per line.
+    Most reviewers won't do that, and instead make a comment instead of a suggestion.
+    This in turn deprives you of the easy option to commit the suggestion to the pull request by a single click of a button in the GitHub user interface.
+
+    Following this guidance will greatly improve the editing and maintenance of your documentation.
+
+-   Have the file [`.vscode/settings.json`](/_static/settings.json) in the root of your project to prevent VSCode from reformatting files with the `.md` extension. 
+
 -   Use dashes `-` in filenames and avoid underscores.
 -   Images should be no wider than 740 pixels to fit within the documentation's main view port.
     This avoids scaling and reducing legibility of images.
