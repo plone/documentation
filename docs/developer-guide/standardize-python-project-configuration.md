@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "Standardize project configuration in Plone with plone/meta"
-    "property=og:description": "Standardize project configuration in Plone with plone/meta"
-    "property=og:title": "Standardize project configuration in Plone with plone/meta"
-    "keywords": "Plone 6, standardize, project, configuration, development, plone/meta"
+    "description": "Standardize project configuration in Plone with plone.meta"
+    "property=og:description": "Standardize project configuration in Plone with plone.meta"
+    "property=og:title": "Standardize project configuration in Plone with plone.meta"
+    "keywords": "Plone 6, standardize, project, configuration, development, plone.meta"
 ---
 
 # Standardize Python project configuration
@@ -19,9 +19,9 @@ It does not cover the following.
 
 Plone consists of hundreds of projects.
 To lessen the effort of configuring a new project in the Plone GitHub organization, and to keep these projects current with latest configuration practices, the Plone community agreed upon a trusted set of configuration items.
-The Plone community manages these configuration items using the [`plone/meta`](https://github.com/plone/meta) project.
+The Plone community manages these configuration items using the [`plone.meta`](https://github.com/plone/meta) project.
 
-You can follow these practices in your own projects, or suggest new or alternative configuration items through the `plone/meta` repository, sharing them with the rest of the Plone community.
+You can follow these practices in your own projects, or suggest new or alternative configuration items through the `plone.meta` repository, sharing them with the rest of the Plone community.
 
 ```{seealso}
 See also [`plone/meta` documentation](https://github.com/plone/meta?tab=readme-ov-file#setup) for setup and usage.
