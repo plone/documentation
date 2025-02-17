@@ -19,9 +19,9 @@ Some installation methods automatically create a Zope manager user named `admin`
 
 There are multiple reasons why you might need to add a Zope manager user, including the following.
 
-- Your installation method did not create one.
-- You lost access to your instance.
-- You inherited a project without proper documentation.
+-   Your installation method did not create one.
+-   You lost access to your instance.
+-   You inherited a project without proper documentation.
 
 ```{note}
 If you need to regain access to your instance, this user is also referred to as an "emergency user" in this context only.
