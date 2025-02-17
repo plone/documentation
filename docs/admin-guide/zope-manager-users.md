@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": "How to create an emergency user in an existing Zope instance"
-    "property=og:description": "How to create an emergency user in an existing Zope instance"
-    "property=og:title": "How to create an emergency user"
-    "keywords": "Plone, Zope, users, emergency user, administration, pip, buildout"
+    "description": "How to create a Zope manager user in an existing Zope instance"
+    "property=og:description": "How to create a Zope manager user in an existing Zope instance"
+    "property=og:title": "Zope manager users"
+    "keywords": "Plone, Zope, users, admin user, emergency user, administration, pip, buildout"
 ---
 
 (admin-guide-zope-manager-user-label)=
 
-# Zope Manager Users
+# Zope manager users
 
 Zope manager users have full access to the whole Zope instance.
 
@@ -36,7 +36,7 @@ You might want to change the passwords of the already existing manager users aft
 
 (admin-guide-adding-a-new-zope-manager-user-label)=
 
-## Adding a New Zope Manager User
+## Add a new Zope manager user
 
 There are multiple ways to create a Zope manager user.
 That depends on how you created and managed your Zope instance.
