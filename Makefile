@@ -67,8 +67,13 @@ docs/volto:  ## Setup Volto docs
 	@echo
 	@echo "Documentation of volto initialized."
 
+docs/registry:  ## Setup @plone/registry docs
+	ln -sfn ../submodules/volto/packages/registry/docs ./docs/registry
+	@echo
+	@echo "Documentation of @plone/registry initialized."
+
 .PHONY: deps
-deps: venv/bin/python docs/volto docs/plone.restapi docs/plone.api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
+deps: venv/bin/python docs/volto docs/plone.restapi docs/plone.api docs/registry  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
 
 
 .PHONY: html
@@ -211,6 +216,7 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		--watch volto \
 		--watch plone.api \
 		--watch plone.restapi \
+		--watch registry \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: rtd-pr-preview

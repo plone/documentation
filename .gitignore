@@ -9,6 +9,7 @@
 # symlinked from submodule
 docs/plone.api
 docs/plone.restapi
+docs/registry
 docs/volto
 
 # editor files
