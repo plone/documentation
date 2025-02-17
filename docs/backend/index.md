@@ -35,7 +35,6 @@ security
 sending-email
 subscribers
 traversal-acquisition
-users-groups/index
 vocabularies
 widgets
 workflows
