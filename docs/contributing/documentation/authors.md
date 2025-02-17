@@ -354,9 +354,11 @@ The Plone Documentation Team adopted additional guidelines.
     English semantic rules are difficult to understand and enforce.
 
     Not following this guidance makes pull request reviews needlessly difficult, often resulting in noisy diffs.
+
     The reviewer can't give targeted feedback for a single sentence when there are multiple sentences on one line.
-    When a single sentence is broken across multiple lines, the reviewer has to submit one suggestion per line.
-    Most reviewers won't do that, and instead make a comment instead of a suggestion.
+    
+    When a single sentence is broken across multiple lines, the reviewer may not know that they can submit [one suggestion for multiple lines](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request#adding-comments-to-a-pull-request).
+    Instead, they either make a comment or a single suggestion leaving the author to manually edit the lines.
     This in turn deprives you of the easy option to commit the suggestion to the pull request by a single click of a button in the GitHub user interface.
 
     Following this guidance will greatly improve the editing and maintenance of your documentation.
