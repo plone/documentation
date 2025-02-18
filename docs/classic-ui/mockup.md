@@ -137,7 +137,7 @@ Alternatively you can implement it in your own templates by adding the CSS class
 
 ## References
 
--   [`bobtemplates.plone` documentation](https://bobtemplatesplone.readthedocs.io/en/latest/)
+-   [`bobtemplates.plone` documentation](https://bobtemplatesplone.readthedocs.io/)
 -   [`mr.bob` documentation](https://mrbob.readthedocs.io/en/latest/)
 -   [Plone CLI documentation](https://plonecli.readthedocs.io/en/latest/)
 -   [`bobtemplates.plone` repository](https://github.com/plone/bobtemplates.plone)
