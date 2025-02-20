@@ -118,4 +118,13 @@ So, you will be adding a stanza like this in your `rules.xml` file:
 <replace css:theme-children="#content" css:content-children="article#content" css:if-content="#content"/>
 ```
 
+## How to theme using diazo
+
+You can start with the provided `rules.xml` file and you will need to write your own rules to bring the dynamic content from Plone to the theme.
+
+Sometimes you will face difficult situations where you may find hard to put in the same place items that Plone produces in very different places.
+
+For instance, you may need to put together the main menu, the language change and the search box. Sometimes it is easier just to override the corresponding template in Plone, build the new html structure there and just replace one thing in the `rules.xml` file than trying to write complex diazo rules (even writing XSLT sometimes).
+
+The size of the rules.xml file and the number of rules there can impact in the performance of your site.
 
