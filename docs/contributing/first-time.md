@@ -67,8 +67,7 @@ Such motivation behind these contributions usually results in poor quality break
 ## Requirements
 
 All first-time contributors to Plone must follow the contributing requirements described in {doc}`index`.
-**Do this step now.**
-If you skip this step, then your contribution can't be accepted.
+Although you can open a pull request at any time, Plone Team members may ignore it until, or close it unless, you satisfy the contributing requirements.
 
 For [Plone Google Summer of Code (GSoC)](https://plone.org/community/gsoc) applicants, you must also follow both our and its program guidelines.
 
@@ -79,10 +78,6 @@ For [Plone Google Summer of Code (GSoC)](https://plone.org/community/gsoc) appli
 
 Contributions to Plone are managed through git repositories on GitHub.
 This section first discusses what not to do, then how to work effectively with a project on GitHub.
-
-```{danger}
-Only people who have completed the {ref}`first-time-requirements-label` described above should make contributions.
-```
 
 
 (things-not-to-do-label)=
@@ -95,8 +90,8 @@ Learn from their mistakes, and don't commit them yourself.
 (mistake-1-label)=
 
 1.  **Never ask to be assigned to an issue.**
-    If an issue is unclaimed—either by assignment, an open pull request, or an explicit comment such as "I am working on this issue"—then it is available to work on by **any member of a Plone Team in GitHub**.
-    As a member of a Plone Team, you may post a comment in any unclaimed issue to claim it.
+    If an issue is claimed—either by assignment, an open pull request, or an explicit comment such as "I am working on this issue"—then it is not available to work on.
+    Otherwise, it is available, and you must claim it before you start work on it.
     See {ref}`Avoid duplicate effort <mistake-2-label>`.
     Privileged Plone Team members may ignore or delete comments asking to be assigned to an issue.
 
@@ -116,7 +111,7 @@ Learn from their mistakes, and don't commit them yourself.
     You should instead learn how to {ref}`work-with-github-issues-label` and {ref}`run tests and code quality checks locally <test-and-code-quality-label>`.
 
 4.  **Don't ask if an issue is open.**
-    Instead you can determine whether an issue is open by doing your own research using the following tips.
+    Instead, you can determine whether an issue is open by doing your own research using the following tips.
 
     -   Start Plone or its specific package, follow the steps to attempt to reproduce the issue, and see if it still exists.
     -   Check the issue's status indicator for a green label of {guilabel}`Open`.
@@ -142,11 +137,11 @@ New contributors should wait for an invitation to join this team, and accept it,
 
 ### `mr-roboto` on GitHub
 
-[`mr-roboto`](https://github.com/plone/mr.roboto) enforces the requirement of a signed Plone Contributor Agreement from a new contributor, and being assigned to a Plone team on GitHub.
+[`mr-roboto`](https://github.com/plone/mr.roboto) enforces the requirement of a signed Plone Contributor Agreement from all contributors by virtue of being assigned to a Plone Team on GitHub.
 
-New contributors to Plone who submit a pull request and do not wait for confirmation that they have been added to the Contributors team will be subjected to persistent nagging from `mr-roboto`.
-`mr-roboto` will not respond to you if you `@` it.
-Core developers may ignore your contribution because you did not follow these instructions.
+New contributors to Plone who submit a pull request and do not wait for confirmation that they have been added to the Contributors Team will be subjected to persistent nagging from `mr-roboto`.
+`mr-roboto` will not respond to you if you `@` it, and if you do that anyway, then that indicates you did not read these guidelines.
+Plone Team members may ignore or close your contribution because you did not follow these instructions.
 Please don't be "that person".
 
 
@@ -183,7 +178,7 @@ After you have satisfied the above steps and have clear direction on how to proc
 
 As a member of the Plone Contributors Team, you do not have write access to push commits to GitHub repositories under the Plone organization.
 You can push commits to your fork.
-Thus a typical workflow will be circular in nature.
+Thus, a typical workflow will be circular in nature.
 You will pull code from the upstream Plone repository, push your work from your local clone to your remote fork, then make a pull request from your fork to the upstream Plone repository.
 
 ````{card}

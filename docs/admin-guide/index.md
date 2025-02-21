@@ -30,8 +30,10 @@ install-pip
 
 run-plone
 add-site
+zope-manager-users
 configure-zope
 add-ons
+export-import
 override-core
 /upgrade/index
 ```

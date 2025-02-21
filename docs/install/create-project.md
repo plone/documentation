@@ -32,7 +32,7 @@ Plone 6.0 has both hardware requirements and software prerequisites.
 
 ### Supported web browsers
 
-```{include} /_inc/_install-browser-reqs-volto.md
+```{include} /volto/_inc/_install-browser-reqs-volto.md
 ```
 
 ```{include} /_inc/_install-browser-reqs-classic-ui.md
@@ -54,7 +54,7 @@ Plone 6.0 has both hardware requirements and software prerequisites.
 ```{include} ../volto/_inc/_install-operating-system.md
 ```
 
--   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE60}}
+-   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
 -   {term}`pipx`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 20.x

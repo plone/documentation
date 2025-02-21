@@ -105,6 +105,7 @@ linkcheck_ignore = [
     r"https://browsersl.ist/#",
     # Ignore unreliable sites
     r"https://web.archive.org/",
+    r"https://www.gnu.org/",  # Consider removal when upgrading Sphinx
     r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
 ]
 linkcheck_allowed_redirects = {
@@ -440,7 +441,7 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_MINOR_VERSION}": "6.0",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.1",
 }
 
 # Finally, configure app attributes.
