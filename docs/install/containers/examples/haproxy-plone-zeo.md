@@ -17,7 +17,7 @@ We will use the image [`plone/plone-haproxy`](https://github.com/plone/plone-hap
 
 ## Setup
 
-Create a directory for your project, and inside it create a `docker-compose.yml` file that starts your Plone instance and the ZEO instance with volume mounts for data persistence.
+Create a directory for your project, and inside it create a `docker-compose.yml` file that starts your Zope instance and the ZEO instance with volume mounts for data persistence.
 
 ```yaml
 version: "3"

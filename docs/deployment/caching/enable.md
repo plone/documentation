@@ -125,7 +125,7 @@ When the caching control panel is not there, there can be various reasons for th
 
 If you want to install it in an existing Plone Site:
 
-1.  Make sure the package is available in the Plone instance by adding `plone.app.caching` or `Plone` to your installation.
+1.  Make sure the package is available in the Zope instance by adding `plone.app.caching` or `Plone` to your installation.
 2.  From the Plone Site Setup, under the {guilabel}`Advanced` heading or navigation item, select the <img alt="Management Interface" src="/_static/caching/icon-management-interface.svg" class="inline"> {guilabel}`Management Interface` control panel.
 3.  Click {guilabel}`portal_setup`, and then click the {guilabel}`Import` tab.
 4.  Select the profile by title {guilabel}`HTTP caching support`, or by id {guilabel}`profile-plone.app.caching:default`.

@@ -54,7 +54,7 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
         bin/buildout
         ```
     
-1.  Start your Plone instance.
+1.  Start your Zope instance.
 
     ```shell
     bin/instance fg

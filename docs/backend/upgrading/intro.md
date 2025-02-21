@@ -20,7 +20,7 @@ Upgrading Plone includes the Plone application and its add-ons, as well as migra
 
 A *migration* is the process of taking a component in your Plone site, and moving it from its current version to a newer one.
 Migration is necessary because the internals of Plone sometimes change to support new functionality.
-When that's the case, the content that is stored in your Plone instance may not align with the requirements of the new version.
+When that's the case, the content that is stored in your Plone site may not align with the requirements of the new version.
 To handle this situation, Plone has a built-in tool that migrates existing content to the new structure.
 
 Before migrating you should read this entire document, as well as {ref}`introduction-version-specific-upgrade-guides-label`, to understand the potential impact migrating will have on your Plone site.

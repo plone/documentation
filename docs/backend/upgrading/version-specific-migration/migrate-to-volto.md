@@ -36,7 +36,7 @@ As a pre-requisite, your Plone site must be {doc}`upgraded to Plone 6 <upgrade-t
 Plone provides a form `/@@migrate_to_volto` that allows you to run all the required changes to your existing site to make it compatible with Volto.
 
 You can access this form in the browser when you are logged in as an Administrator.
-Open `http://localhost:8080/Plone/@@migrate_to_volto`, where `localhost` is your hostname, `8080` is the port on which Plone runs, and `Plone` is the name of the Plone instance.
+Open `http://localhost:8080/Plone/@@migrate_to_volto`, where `localhost` is your hostname, `8080` is the port on which Plone runs, and `Plone` is the name of the Plone site.
 
 Additionally, after upgrading an existing site to Plone 6 (see {doc}`upgrade-to-60`), a message will appear, **You can prepare your site for Volto, the default frontend of Plone 6!**, with a link to that form.
 
