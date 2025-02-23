@@ -1,61 +1,106 @@
 ---
 myst:
   html_meta:
-    "description": "Reference guide for all make commands used in Cookieplone."
-    "property=og:description": "Reference guide for all make commands used in Cookieplone."
-    "property=og:title": "Cookieplone Make Commands"
-    "keywords": "Plone 6, Reference Guide, Make Commands, Cookieplone"
+    description: "Reference guide for all make commands used in Cookieplone."
+    property=og:description: "Reference guide for all make commands used in Cookieplone."
+    property=og:title: "Cookieplone Make Commands"
+    keywords: "Plone 6, Reference Guide, Make Commands, Cookieplone"
 ---
 
-# 🍪 Cookieplone Make Commands
+# Cookieplone Make Commands
 
-This page provides a reference guide for all `make` commands used in Cookieplone.
+This guide provides a reference for all `make` commands used in Cookieplone.
 
-## 🖥️ Frontend Commands
+## Frontend Commands
 
-- **`make frontend-install`** → Installs dependencies for the React frontend.  
-- **`make frontend-start`** → Starts the frontend development server.  
-- **`make frontend-build`** → Builds the React frontend for production.  
-- **`make frontend-test`** → Runs tests for the frontend.  
+```{list-table}
+:header-rows: 1
 
-## ⚙️ Backend Commands
+* - Command
+  - Description
+* - `make frontend-install`
+  - Installs dependencies for the React frontend.
+* - `make frontend-start`
+  - Starts the frontend development server.
+* - `make frontend-build`
+  - Builds the React frontend for production.
+* - `make frontend-test`
+  - Runs frontend tests.
+```
 
-- **`make backend-install`** → Creates a virtual environment and installs Plone.  
-- **`make backend-start`** → Starts the Plone backend server.  
-- **`make backend-build`** → Builds the backend.  
-- **`make backend-test`** → Runs tests on the backend.  
-- **`make backend-create-site`** → Creates a new Plone site.  
-- **`make backend-update-example-content`** → Exports example content.  
+## Backend Commands
 
-## 🐳 Docker Commands
+```{list-table}
+:header-rows: 1
 
-- **`make stack-start`** → Starts all services (Frontend + Backend) using Docker.  
-- **`make stack-stop`** → Stops all running services.  
-- **`make stack-status`** → Checks service status.  
-- **`make stack-create-site`** → Creates a new Plone site in Docker.  
-- **`make stack-rm`** → Removes all services and volumes.  
-- **`make build-images`** → Builds Docker images for the project.  
+* - Command
+  - Description
+* - `make backend-install`
+  - Creates a virtual environment and installs Plone.
+* - `make backend-start`
+  - Starts the Plone backend server.
+* - `make backend-build`
+  - Builds the backend.
+* - `make backend-test`
+  - Runs backend tests.
+* - `make backend-create-site`
+  - Creates a new Plone site.
+* - `make backend-update-example-content`
+  - Exports example content.
+```
 
-## 🛠️ Utility Commands
+## Docker Commands
 
-- **`make install`** → Runs both `backend-install` and `frontend-install`.  
-- **`make start`** → Starts the entire project.  
-- **`make test`** → Runs tests for both frontend and backend.  
-- **`make check`** → Formats and lints the entire codebase.  
-- **`make clean`** → Cleans temp files.  
-- **`make help`** → Shows available commands.  
+```{list-table}
+:header-rows: 1
+
+* - Command
+  - Description
+* - `make stack-start`
+  - Starts all services (Frontend + Backend) using Docker.
+* - `make stack-stop`
+  - Stops all running services.
+* - `make stack-status`
+  - Checks service status.
+* - `make stack-create-site`
+  - Creates a new Plone site in Docker.
+* - `make stack-rm`
+  - Removes all services and volumes.
+* - `make build-images`
+  - Builds Docker images for the project.
+```
+
+## Utility Commands
+
+```{list-table}
+:header-rows: 1
+
+* - Command
+  - Description
+* - `make install`
+  - Runs `backend-install` and `frontend-install`.
+* - `make start`
+  - Starts the entire project.
+* - `make test`
+  - Runs tests for both frontend and backend.
+* - `make check`
+  - Formats and lints the codebase.
+* - `make clean`
+  - Removes temporary files.
+* - `make help`
+  - Displays available commands.
+```
 
 ---
 
-### **📌 Notes**
-- Run **`make install`** before any `start` command to avoid missing dependencies.  
-- If using Docker, **use `make stack-start`** instead of manually starting frontend and backend.  
+## Notes
 
-📌 **Tip:** If you're unsure about a command, run `make help` to list all options.
+- Run **`make install`** before any `start` command to ensure all dependencies are installed.
+- If using Docker, prefer **`make stack-start`** instead of starting frontend and backend manually.
 
----
+## Rebuild the Documentation
 
-### **🚀 Next Steps**
-Rebuild with:
+To generate the updated documentation, run:
+
 ```sh
 make html
