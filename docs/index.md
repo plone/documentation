@@ -6,9 +6,6 @@ myst:
     "property=og:title": "Plone 6 Documentation"
     "keywords": "Plone 6, content management system, CMS, open source, Documentation, Volto, Classic UI, frontend, backend, plone.restapi, plone.api"
 ---
-
-(index-label)=
-
 # Plone 6 Documentation
 
 This is the community-maintained documentation for the Plone content management system.

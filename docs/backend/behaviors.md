@@ -7,8 +7,6 @@ myst:
     "keywords": "Behaviors"
 ---
 
-(backend-behaviors-label)=
-
 # Behaviors
 
 In Plone, behaviors are a way to add reusable functionality to content objects without modifying the objects themselves.
@@ -32,7 +30,6 @@ This allows items of this content type to gain the additional functionality prov
 
 A key feature of behaviors is that they allow encapsulating functionality so that it can be reused for multiple content types without needing to implement it again.
 Overall, behaviors are an important part of the Plone content management system and allow for powerful customization and extensibility of content objects.
-
 
 (backend-built-in-behaviors-label)=
 
@@ -88,19 +85,17 @@ An issue has been created to better expose these in the user interface.
 
 There are two ways to add or remove a behavior on a content type:
 
--   Through the web using the {guilabel}`Content Types` control panel.
--   Using a custom add-on `GenericSetup` profile.
-
+- Through the web using the {guilabel}`Content Types` control panel.
+- Using a custom add-on `GenericSetup` profile.
 
 ### Through the web
 
-1.  Go to the {guilabel}`Site Setup` and chose the {guilabel}`Content Types` control panel.
-2.  Select the content type to which you want to add or remove a behavior.
-3.  Then click on the {guilabel}`Behaviors` tab of the settings of the content type.
-4.  A list of all available behaviors appears.
+1. Go to the {guilabel}`Site Setup` and chose the {guilabel}`Content Types` control panel.
+2. Select the content type to which you want to add or remove a behavior.
+3. Then click on the {guilabel}`Behaviors` tab of the settings of the content type.
+4. A list of all available behaviors appears.
     Select or deselect the checkbox of the behavior you want to add to or remove from the type.
-5.  Save the form by clicking on the {guilabel}`Save` button at the bottom of the page.
-
+5. Save the form by clicking on the {guilabel}`Save` button at the bottom of the page.
 
 ### Using a `GenericSetup` profile
 
@@ -130,7 +125,6 @@ The file `Event.xml` contains the following.
 
 After you apply the profile (or uninstall and install the custom add-on), the behavior is effective on the `Event` content type.
 
-
 ## Custom behaviors
 
 There are two types of behaviors:
@@ -140,7 +134,6 @@ Schema-only behaviors
 
 Full behaviors
 : A Python class containing the logic of the behavior, an interface or schema defining the contract of the behavior, and a marker interface applicable to a content type.
-
 
 ### Create a schema-only behavior
 
@@ -291,13 +284,11 @@ plonecli add behavior
 
 This will create the behavior Python file in the `behaviors` folder where you can define your behavior's schema fields, and registers the behavior in the `configure.zcml`.
 
-
 ### Further reading on working with behaviors
 
 ```{seealso}
 See the chapter {ref}`training:behaviors1-label` from the Mastering Plone 6 Training.
 ```
-
 
 ## How behaviors work
 
@@ -309,7 +300,6 @@ You do not *need* to know this, but it may help if you run into problems.
 In Plone, behaviors can be globally enabled on content types at runtime.
 With add-ons, behaviors can be enabled even on a single content object or for a whole subdirectory tree in the content hierarchy.
 
-
 ### Interfaces and adapters
 
 To explain interfaces and adapters, let's begin with an analogy using electrical systems.
@@ -319,18 +309,18 @@ When you travel to another country, you may need an outlet adapter for the outle
 For example, assume you have a device that has a plug for Schuko outlets, and in Italy there are Type L outlets.
 If we were to represent the behavior of choosing the correct outlet adapter in Plone, you would do the following.
 
--   You need an outlet adapter for your Schuko plug.
-    1.  You look at the outlet and see it is Type L.
-    2.  You look in your box containing different adapters and choose the correct outlet adapter to use.
-    3.  You plug that into the wall outlet.
-    4.  Finally, you can use your Schuko providing device on an Italian Type L outlet.
--   In Python, you would call `getAdapter(context, ISchuko)` (context is here the outlet type), which would then do the following.
-    1.  Determine the type of interface provided by the `context`.
+- You need an outlet adapter for your Schuko plug.
+    1. You look at the outlet and see it is Type L.
+    2. You look in your box containing different adapters and choose the correct outlet adapter to use.
+    3. You plug that into the wall outlet.
+    4. Finally, you can use your Schuko providing device on an Italian Type L outlet.
+- In Python, you would call `getAdapter(context, ISchuko)` (context is here the outlet type), which would then do the following.
+    1. Determine the type of interface provided by the `context`.
         As a result, it finds `ITypeL` interface.
-    2.  Looks in the component registry if there is a class that adapts to `ITypeL`.
+    2. Looks in the component registry if there is a class that adapts to `ITypeL`.
         At the same time, it provides the requested `ISchuko` adapter.
-    3.  Initializes the adapter class with the context, and returns it as the result.
-    4.  Finally, the `ISchuko` providing adapter can be used on a `ITypeL` providing context.
+    3. Initializes the adapter class with the context, and returns it as the result.
+    4. Finally, the `ISchuko` providing adapter can be used on a `ITypeL` providing context.
 
 This process of choosing the right adapter based on the information of the context and the requested interface implements the design pattern of an abstract factory.
 
@@ -341,9 +331,9 @@ It executes exactly the same logic behind the scenes with the same result.
 
 Similarly, using the {ref}`behavior code example <behavior-code-example>` above:
 
--   You would call an abstract factory with `getAdapter(context, IPriceBehavior)` to get an adapter, `price_for_context`.
+- You would call an abstract factory with `getAdapter(context, IPriceBehavior)` to get an adapter, `price_for_context`.
     Although it is an interface, it is more of a shortcut to factory usage.
--   The adapter that is specific to the given content type is assigned to the variable `price_for_context`.
+- The adapter that is specific to the given content type is assigned to the variable `price_for_context`.
     Now you can use `price_for_context` for whatever you like.
 
 When a behavior is enabled for a particular object, it will be possible to adapt that object to the behavior's interface.
