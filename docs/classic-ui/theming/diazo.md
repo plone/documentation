@@ -64,25 +64,12 @@ This process creates a {file}`theme` folder inside {file}`diazo.theme/src/diazo/
 Begin with any theme from outside Plone.
 It should be composed of the required HTML, CSS, and JavaScript files.
 
-CSS and JavaScript files should be properly versioned or hashed to avoid any caching problems whenever the theme is updated.
-
-If the CSS file is called {file}`global.css`, and your designer updates the CSS without changing the file name, you will surely face caching issues.
-Browsers, varnish, or other proxy servers might cache your files, and not serve them to the end users until the cache expires or gets flushed.
-
-To avoid this issue, CSS bundling techniques that use npm tooling—such as Gulp, Grunt, or Webpack—create hashed or versioned filenames for CSS and JavaScript files.
-The following HTML snippets show examples of versioned files.
-
-```html
-  <link id="frontend-css" rel="stylesheet" href="./css/app.css?v=14" />
-  <script id="frontend-javascript" src="./js/app.js?v=3"></script>
-```
-
 When you have all files of your theme, put them in the {file}`theme` folder, and organize the CSS and JavaScript folders as you received them from your designer.
 
 You may want to remove the `plonecli` generated `styles` and `tinymce-templates` folders.
 
 
-## Adjust the theme manifest
+### Adjust the theme manifest
 
 Open the {file}`manifest.cfg` file.
 You will see the following lines.
@@ -103,7 +90,28 @@ This way, you signal that you don't want either Plone or Diazo to manage the CSS
 But it means that you will need to handle them in your design HTML files.
 
 
-## HTML template structure
+## Theme development advice
+
+This section describes common practices when developing a Diazo theme.
+
+
+### Avoid cache issues
+
+CSS and JavaScript files should be properly versioned or hashed to avoid any caching problems whenever the theme is updated.
+
+If the CSS file is called {file}`global.css`, and your designer updates the CSS without changing the file name, you will surely face caching issues.
+Browsers, varnish, or other proxy servers might cache your files, and not serve them to the end users until the cache expires or gets flushed.
+
+To avoid this issue, CSS bundling techniques that use npm tooling—such as Gulp, Grunt, or Webpack—create hashed or versioned filenames for CSS and JavaScript files.
+The following HTML snippets show examples of versioned files.
+
+```html
+  <link id="frontend-css" rel="stylesheet" href="./css/app.css?v=14" />
+  <script id="frontend-javascript" src="./js/app.js?v=3"></script>
+```
+
+
+### HTML template structure
 
 Your theme should be as simple as possible.
 That will make your {file}`rules.xml` file also as simple as possible.
@@ -123,7 +131,7 @@ Add a stanza in your {file}`rules.xml` file.
 ```
 
 
-## How to theme using Diazo
+### How to theme using Diazo
 
 You can start with the provided {file}`rules.xml` file.
 You will need to write your own rules to bring the dynamic content from Plone into the theme.
