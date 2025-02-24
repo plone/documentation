@@ -131,7 +131,7 @@ Add a stanza in your {file}`rules.xml` file.
 ```
 
 
-### How to theme using Diazo
+### Minimize rules
 
 You can start with the provided {file}`rules.xml` file.
 You will need to write your own rules to bring the dynamic content from Plone into the theme.
