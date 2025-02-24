@@ -30,7 +30,7 @@ Answer all the questions.
 
 Next, add a theme called "theme" to the add-on package using `plonecli`.
 
-```
+```shell
 cd diazo.theme
 plonecli add theme
 ```
