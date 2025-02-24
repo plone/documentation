@@ -143,6 +143,9 @@ Add a stanza in your {file}`rules.xml` file.
 ### Minimize rules
 
 You can start with the provided {file}`rules.xml` file.
+
+You can read about how to write your rules and their syntax in the [official Diazo documentation](https://docs.diazo.org/en/latest/basic.html)
+
 You will need to write your own rules to bring the dynamic content from Plone into the theme.
 
 Sometimes you will face difficult situations where you may find it hard to put items in the same place that Plone produces in very different places.
