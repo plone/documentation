@@ -58,6 +58,15 @@ This process creates a {file}`theme` folder inside {file}`diazo.theme/src/diazo/
     └── bs-pricing.html
 ```
 
+The purpose of each file is the following:
+
+- `index.html`: this is the theme file. The purpose of Diazo theming is to fill the theme file with the content coming from Plone.
+- `manifest.cfg`: this file contains the theme configuration, such as the theme name, the path to the rules file and some other configurations.
+- `package.json`: this theme folder is by itself a javascript package, and, in case you want to develop your theme here, in this file you can configure which are the dependencies of your theme. For instance you can add `bootstrap` or `tailwind` as dependencies and manage those dependencies and the building of your final CSS from here.
+- `README.rst`: the file that explains how this theme is built and developed.
+- `rules.xml`: the file where you will write your rules to bring Plone content to the theme in the `index.html` file
+- `styles` folder: where you can save your theme's CSS files.
+- `tinymce-templates`: template files that can be loaded into the TinyMCE editor in Plone (it requires additional configuration in the add-ons profile's `registry.xml` file.
 
 ## Integrate an external theme using Diazo
 
