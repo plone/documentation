@@ -17,8 +17,8 @@ Small theme changesâ€”such as the site logo and favicon and minimal CSS changesâ
 Other theming methods should be used for larger customizations or entire website designs.
 These other methods include creating an add-on, tweaking the Barceloneta theme, Diazo, and from scratch.
 
-```{todo}
-Provide more information about the other methods and why a developer should choose one versus another.
+```{note}
+For guidance to choose an appropriate theming method for your use case, you can post to the [Plone Community Forum Classic UI category](https://community.plone.org/c/development/classic-ui/56), or join the [Classic UI channel on Discord](https://discord.com/channels/786421998426521600/787254601656827924).
 ```
 
 ## How-to guides
@@ -29,6 +29,7 @@ Provide more information about the other methods and why a developer should choo
 settings-ttw
 create-add-on
 color-modes
+diazo
 ```
 
 ## Reference
