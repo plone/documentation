@@ -119,7 +119,7 @@ That will make your {file}`rules.xml` file also as simple as possible.
 The {file}`rules.xml` file declares which parts of theme will be replaced by the HTML produced by Plone.
 
 It is a good practice to have a `<div>` element called `content` in your theme, which will contain the maximum space of the content area of your site.
-That way you can inject the HTML produced by Plone there using Plone's content section too.
+That way you can inject the HTML produced by Plone there using Plone's content section, too.
 
 Add a stanza in your {file}`rules.xml` file.
 
