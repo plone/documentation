@@ -69,7 +69,7 @@ When you have all files of your theme, put them in the {file}`theme` folder, and
 You may want to remove the `plonecli` generated `styles` and `tinymce-templates` folders.
 
 
-### Adjust the theme manifest
+## Adjust the theme manifest
 
 Open the {file}`manifest.cfg` file.
 You will see the following lines.
