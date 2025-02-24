@@ -35,7 +35,10 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 ### Supported web browsers
 
-```{include} /_inc/_install-browser-reqs-volto.md
+```{include} /volto/_inc/_install-browser-reqs-volto.md
+```
+
+```{include} /_inc/_install-browser-reqs-classic-ui.md
 ```
 
 
