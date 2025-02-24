@@ -11,40 +11,38 @@ myst:
 
 # Classic UI theming with Diazo
 
-```{todo}
-This page is only an outline and needs a lot of work.
-See https://github.com/plone/documentation/issues/1645
-```
+Diazo allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology.
+With Diazo, you can take an HTML wireframe created by a web designer, and turn it into a theme for your favourite CMS, redesign the user interface of a legacy web application without even having access to the original source code, or build a unified user experience across multiple disparate systems, all in a matter of hours, not weeks.
 
-Diazo allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology. With Diazo, you can take an HTML wireframe created by a web designer and turn it into a theme for your favourite CMS, redesign the user interface of a legacy web application without even having access to the original source code, or build a unified user experience across multiple disparate systems, all in a matter of hours, not weeks.
+When using Diazo, you will work with syntax and concepts familiar from working with HTML and CSS.
+And by allowing you to seamlessly integrate XSLT into your rule files, Diazo makes common cases simple and complex requirements possible.
 
-When using Diazo, you will work with syntax and concepts familiar from working with HTML and CSS. And by allowing you seamlessly integrate XSLT into your rule files, Diazo makes common cases simple and complex requirements possible.
 
-## Create an addon package
+## Create an add-on package
 
-To create a Diazo theme, you need to create an add.on package. To do so, you can do it using `plonecli`.
+To create a Diazo theme, you need to create an add-on package with [`plonecli`](https://github.com/plone/plonecli).
 
-```
+```shell
 plonecli create addon diazo.theme
 ```
 
-You need to answer to all the questions, you can accept the default ones.
+Answer all the questions.
 
-Then you need to add a `theme` to the add-on package, you can do it like this using `plonecli`:
+Next, add a theme called "theme" to the add-on package using `plonecli`.
 
 ```
 cd diazo.theme
 plonecli add theme
 ```
 
-you need to answer the question of the theme name and you are done!
+Answer the question of the theme name.
 
-## Theme structure
 
-This process has created a `theme` folder inside diazo.theme/src/diazo/theme, with the following structure:
+### Theme structure
 
-```
-$ tree .
+This process creates a {file}`theme` folder inside {file}`diazo.theme/src/diazo/theme`, with the following structure.
+
+```console
 .
 ├── index.html
 ├── manifest.cfg
@@ -52,79 +50,87 @@ $ tree .
 ├── README.rst
 ├── rules.xml
 ├── styles
-│   ├── theme.min.css
-│   └── theme.scss
+│   ├── theme.min.css
+│   └── theme.scss
 └── tinymce-templates
     ├── bs-dark-hero.html
     ├── bs-hero-left.html
     └── bs-pricing.html
-
-3 directories, 10 files
 ```
 
-## How to integrate an external theme using Diazo
 
-First of all you need to have a theme built externally to Plone. It should be composed by the required HTML, CSS and JS files.
+## Integrate an external theme using Diazo
 
-CSS and JS files should be properly versioned or hashed, in order to avoid any caching problems whenever the theme is updated.
+Begin with any theme from outside Plone.
+It should be composed of the required HTML, CSS, and JavaScript files.
 
-If the CSS file is called `global.css` and your designer updates the CSS without changing the file name, you will surely face caching issues because browsers, varnish or other proxy servers *may* cache your files and may not serve them fresh to the end users.
+CSS and JavaScript files should be properly versioned or hashed to avoid any caching problems whenever the theme is updated.
 
-To avoid so, it is common to use CSS bundling techniques using npm tooling like Gulp, Grunt or Webpack, and create hashed or versioned filenames for CSS and JS files like
+If the CSS file is called {file}`global.css`, and your designer updates the CSS without changing the file name, you will surely face caching issues.
+Browsers, varnish, or other proxy servers might cache your files, and not serve them to the end users until the cache expires or gets flushed.
 
-```
+To avoid this issue, CSS bundling techniques that use npm tooling—such as Gulp, Grunt, or Webpack—create hashed or versioned filenames for CSS and JavaScript files.
+The following HTML snippets show examples of versioned files.
+
+```html
   <link id="frontend-css" rel="stylesheet" href="./css/app.css?v=14" />
-
   <script id="frontend-javascript" src="./js/app.js?v=3"></script>
-
 ```
 
-When you have all files of your theme, put them in the `theme` folder, and organize the CSS and JS folders like you have received from your designer.
+When you have all files of your theme, put them in the {file}`theme` folder, and organize the CSS and JavaScript folders as you received them from your designer.
 
-You may want to remove the plonecli generated `styles` and `tinymce-templates` folders.
+You may want to remove the `plonecli` generated `styles` and `tinymce-templates` folders.
+
 
 ## Adjust the theme manifest
 
-Open the `manifest.cfg` file. You will see the following lines there:
+Open the {file}`manifest.cfg` file.
+You will see the following lines.
 
-```
+```cfg
 production-css = ++theme++my-shiny-theme/styles/theme.min.css
 tinymce-content-css = ++theme++my-shiny-theme/styles/theme.min.css
 ```
 
-Comment them, and leave them like this:
+Comment them out as shown.
 
-```
+```cfg
 # production-css = ++theme++my-shiny-theme/styles/theme.min.css
 # tinymce-content-css = ++theme++my-shiny-theme/styles/theme.min.css
 ```
 
-This way we signal that we don't want either Plone or Diazo manage the CSS files at all.
-
-But it means that we will need to handle them in our design HTML files.
-
-## HTML Template structure
-
-You want to have an as simple as possible theme because that means that your `rules.xml` file will also be simple.
-
-The `rules.xml` file is the file that will say which parts of theme will be repaced by the HTML produced by Plone.
-
-It is a good practice to have a div called `content` in your theme which will contain the maximum space of the content area of your site, because that way you can inject the HTML produced by Plone there using Plone's content section too.
-
-So, you will be adding a stanza like this in your `rules.xml` file:
+This way, you signal that you don't want either Plone or Diazo to manage the CSS files at all.
+But it means that you will need to handle them in your design HTML files.
 
 
+## HTML template structure
+
+Your theme should be as simple as possible.
+That will make your {file}`rules.xml` file also as simple as possible.
+
+The {file}`rules.xml` file declares which parts of theme will be replaced by the HTML produced by Plone.
+
+It is a good practice to have a `<div>` element called `content` in your theme, which will contain the maximum space of the content area of your site.
+That way you can inject the HTML produced by Plone there using Plone's content section too.
+
+Add a stanza in your {file}`rules.xml` file.
+
+```xml
+<replace
+        css:theme-children="#content"
+        css:content-children="article#content"
+        css:if-content="#content"/>
 ```
-<replace css:theme-children="#content" css:content-children="article#content" css:if-content="#content"/>
-```
 
-## How to theme using diazo
 
-You can start with the provided `rules.xml` file and you will need to write your own rules to bring the dynamic content from Plone to the theme.
+## How to theme using Diazo
 
-Sometimes you will face difficult situations where you may find hard to put in the same place items that Plone produces in very different places.
+You can start with the provided {file}`rules.xml` file.
+You will need to write your own rules to bring the dynamic content from Plone into the theme.
 
-For instance, you may need to put together the main menu, the language change and the search box. Sometimes it is easier just to override the corresponding template in Plone, build the new html structure there and just replace one thing in the `rules.xml` file than trying to write complex diazo rules (even writing XSLT sometimes).
+Sometimes you will face difficult situations where you may find it hard to put items in the same place that Plone produces in very different places.
 
-The size of the rules.xml file and the number of rules there can impact in the performance of your site.
+For instance, you may need to put together the main menu, the language change, and the search box.
+Sometimes it is easier to override the corresponding template in Plone, build the new HTML structure there, and replace one thing in the {file}`rules.xml` file than trying to write complex Diazo rules or writing XSLT.
 
+The size of the {file}`rules.xml` file and the number of rules it contains can negatively impact the performance of your site.
