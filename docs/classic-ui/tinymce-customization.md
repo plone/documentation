@@ -140,7 +140,6 @@ You can remove these formats through the TinyMCE control panel.
 Once removed, the custom formats will no longer appear in the menu.
 
 
-
 ## Configure `<iframe>` sandboxing
 
 Since version 7.0, TinyMCE adds the attribute `sandbox=""` to make the `<iframe>` elements [sandboxed](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) with all restrictions.
@@ -170,10 +169,17 @@ See [`sandbox_iframes_exclusions`](https://www.tiny.cloud/docs/tinymce/latest/co
 ```
 
 
+(classic-ui-tinymce-customization-insert-preconfigured-html-blocks-label)=
+
 ## Insert preconfigured HTML blocks
 
 You can add custom HTML blocks in TinyMCE.
-You can insert them in your content using the TinyMCE insert template menu option.
+You can insert them in your content using the TinyMCE {menuselection}`Insert Template` menu option using the [TinyMCE Template plugin](https://www.tiny.cloud/docs/tinymce/6/template/).
+
+```{important}
+The Template plugin has been completely removed from the TinyMCE 7.0 release used in Plone 6.1.
+As an alternative solution, you can use the [Advanced Template Premium plugin](https://www.tiny.cloud/docs/tinymce/6/advanced-templates/). 
+```
 
 This option is best for system administrators and developers who write their own add-ons to ease reproducibility.
 
@@ -197,4 +203,10 @@ The following example adds three HTML files, each of which contains its custom H
     </value>
   </record>
 </registry>
+```
+
+```{tip}
+The file {file}`profiles/default/registry.xml` can be split in several files in {file}
+the directory `profiles/default/registry` with arbitrary names ending in `.xml`.
+This makes it easier to maintain and reuse your registry files.
 ```
