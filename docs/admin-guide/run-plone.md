@@ -92,7 +92,7 @@ Buildout:
 
 pip:
 :   ```shell
-    bin/zconsole debug instance/etc/zope.ini
+    bin/zconsole debug instance/etc/zope.conf
     ```
 
 `cookiecutter-plone-starter`:
@@ -101,3 +101,15 @@ pip:
     ```
 
 For any of these commands, press {kbd}`ctrl-d` to stop the process.
+
+### Set a "fake" request
+
+To make sure that the request is fully set up for any code that uses `zope.globalrequest.getRequest`, you might need to use the following code.
+
+```python
+from Testing.makerequest import makerequest
+from zope.globalrequest import setRequest
+
+app = makerequest(app)
+setRequest(app.REQUEST)
+```
