@@ -11,11 +11,13 @@ myst:
 
 # Classic UI theming with Diazo
 
-Diazo allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology.
+{term}`Diazo` allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology.
 With Diazo, you can take an HTML wireframe created by a web designer, and turn it into a theme for your favourite CMS, redesign the user interface of a legacy web application without even having access to the original source code, or build a unified user experience across multiple disparate systems, all in a matter of hours, not weeks.
 
+A Diazo theme consists of a static HTML page, referred to as the _theme_, and a rules file, conventionally called {file}`rules.xml`.
+
 When using Diazo, you will work with syntax and concepts familiar from working with HTML and CSS.
-And by allowing you to seamlessly integrate XSLT into your rule files, Diazo makes common cases simple and complex requirements possible.
+And by allowing you to seamlessly integrate XSLT into your rules files, Diazo makes common cases simple, and complex requirements possible.
 
 
 ## Create an add-on package
@@ -30,7 +32,7 @@ pipx run plonecli create addon diazo.theme
 
 Answer all the questions.
 
-Next, add a theme called "theme" to the add-on package using `plonecli`.
+Next, add a theme called `theme` to the add-on package using `plonecli`.
 
 ```shell
 cd diazo.theme
@@ -42,7 +44,7 @@ Answer the question of the theme name.
 
 ### Theme structure
 
-This process creates a {file}`theme` folder inside {file}`diazo.theme/src/diazo/theme`, with the following structure.
+The previous step creates a {file}`theme` folder inside {file}`diazo.theme/src/diazo/theme`, with the following structure.
 
 ```console
 .
@@ -60,15 +62,33 @@ This process creates a {file}`theme` folder inside {file}`diazo.theme/src/diazo/
     └── bs-pricing.html
 ```
 
-The purpose of each file is the following:
+The purpose of each item is described as follows.
 
-- `index.html`: this is the theme file. The purpose of Diazo theming is to fill the theme file with the content coming from Plone.
-- `manifest.cfg`: this file contains the theme configuration, such as the theme name, the path to the rules file and some other configurations.
-- `package.json`: this theme folder is by itself a javascript package, and, in case you want to develop your theme here, in this file you can configure which are the dependencies of your theme. For instance you can add `bootstrap` or `tailwind` as dependencies and manage those dependencies and the building of your final CSS from here.
-- `README.rst`: the file that explains how this theme is built and developed.
-- `rules.xml`: the file where you will write your rules to bring Plone content to the theme in the `index.html` file
-- `styles` folder: where you can save your theme's CSS files.
-- `tinymce-templates`: template files that can be loaded into the TinyMCE editor in Plone (it requires additional configuration in the add-ons profile's `registry.xml` file.
+{file}`index.html`
+:   This is the theme file.
+    Plone populates it with its content, according to rules defined in {file}`rules.xml`.
+
+{file}`manifest.cfg`
+:   This file contains the theme configuration, such as the theme name, the path to the rules file and some other configurations.
+
+{file}`package.json`
+:   The theme folder is, by itself, a JavaScript package.
+    If you want to develop your theme here, you can declare the dependencies of your theme in this file.
+    For instance, you can add `bootstrap` or `tailwind` as dependencies, and manage those dependencies and the building of your final CSS from here.
+
+{file}`README.rst`
+:   The file that explains how this theme is built and developed.
+
+{file}`rules.xml`
+:   The file where you will write your rules to bring Plone content into the theme in the {file}`index.html` file.
+
+{file}`styles` folder
+:   Where you can save your theme's CSS files.
+
+{file}`tinymce-templates`
+:   Template files that can be loaded into the TinyMCE editor in Plone.
+    It requires additional configuration in the add-on's profile's {file}`registry.xml` file.
+
 
 ## Integrate an external theme using Diazo
 
@@ -146,7 +166,7 @@ Add a stanza in your {file}`rules.xml` file.
 
 You can start with the provided {file}`rules.xml` file.
 
-You can read about how to write your rules and their syntax in the [official Diazo documentation](https://docs.diazo.org/en/latest/basic.html)
+You can read about how to write your rules and their syntax in the [official Diazo documentation](https://docs.diazo.org/en/latest/basic.html).
 
 You will need to write your own rules to bring the dynamic content from Plone into the theme.
 
