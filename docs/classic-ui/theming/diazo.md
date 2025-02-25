@@ -24,7 +24,7 @@ And by allowing you to seamlessly integrate XSLT into your rules files, Diazo ma
 
 To create a Diazo theme, you need to create an add-on package with [`plonecli`](https://github.com/plone/plonecli).
 
-You can run `plonecli` using [pipx](https://pipx.pypa.io/stable/), without needing to install plonecli, as follows:
+You can run `plonecli` using [pipx](https://pipx.pypa.io/stable/), without needing to install `plonecli`, as follows.
 
 ```shell
 pipx run plonecli create addon diazo.theme
