@@ -172,11 +172,13 @@ See [`sandbox_iframes_exclusions`](https://www.tiny.cloud/docs/tinymce/latest/co
 
 ## Insert preconfigured HTML blocks
 
-You can add custom HTML blocks in TinyMCE and they can be inserted in your content using the TinyMCE insert template menu option.
+You can add custom HTML blocks in TinyMCE.
+You can insert them in your content using the TinyMCE insert template menu option.
 
 This option is best for system administrators and developers who write their own add-ons to ease reproducibility.
 
 You can add a GenericSetup configuration file to your add-on, such as {file}`profiles/default/registry/tinymce.xml`, with the configuration of the HTML blocks.
+The following example adds three HTML files, each of which contains its custom HTML block.
 
 ```xml
 <registry>
@@ -194,9 +196,5 @@ You can add a GenericSetup configuration file to your add-on, such as {file}`pro
       ]
     </value>
   </record>
-
 </registry>
 ```
-
-In this example, we are adding 3 HTML files that contain the a custom HTML.
-
