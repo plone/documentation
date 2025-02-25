@@ -168,3 +168,35 @@ You can also exclude certain URLs from being sandboxed as follows.
 ```{seealso}
 See [`sandbox_iframes_exclusions`](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#sandbox-iframes-exclusions) for TinyMCE's default settings.
 ```
+
+
+## Insert preconfigured HTML blocks
+
+You can add custom HTML blocks in TinyMCE and they can be inserted in your content using the TinyMCE insert template menu option.
+
+This option is best for system administrators and developers who write their own add-ons to ease reproducibility.
+
+You can add a GenericSetup configuration file to your add-on, such as {file}`profiles/default/registry/tinymce.xml`, with the configuration of the HTML blocks.
+
+```xml
+<registry>
+    <record name="plone.templates" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="templates">
+    <field type="plone.registry.field.Text">
+      <default></default>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="help_tinymce_templates">Enter the list of templates in json format                 http://www.tinymce.com/wiki.php/Plugin:template</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="label_tinymce_templates">Templates</title>
+    </field>
+    <value>[
+      {"title": "Image and Text", "url": "++theme++my.theme/tinymce-templates/bs-dark-hero.html"},
+      {"title": "Image and Text", "url": "++theme++my.theme/tinymce-templates/bs-hero-left.html"},
+      {"title": "Image and Text", "url": "++theme++my.theme/tinymce-templates/bs-pricing.html"},
+      ]
+    </value>
+  </record>
+
+</registry>
+```
+
+In this example, we are adding 3 HTML files that contain the a custom HTML.
+
