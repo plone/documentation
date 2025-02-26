@@ -140,7 +140,6 @@ You can remove these formats through the TinyMCE control panel.
 Once removed, the custom formats will no longer appear in the menu.
 
 
-
 ## Configure `<iframe>` sandboxing
 
 Since version 7.0, TinyMCE adds the attribute `sandbox=""` to make the `<iframe>` elements [sandboxed](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) with all restrictions.
@@ -167,4 +166,42 @@ You can also exclude certain URLs from being sandboxed as follows.
 
 ```{seealso}
 See [`sandbox_iframes_exclusions`](https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#sandbox-iframes-exclusions) for TinyMCE's default settings.
+```
+
+
+(classic-ui-tinymce-customization-insert-preconfigured-html-blocks-label)=
+
+## Insert preconfigured HTML blocks
+
+You can add custom HTML blocks in TinyMCE.
+You can insert them in your content using the TinyMCE {menuselection}`Insert Template` menu option using the [TinyMCE Template plugin](https://www.tiny.cloud/docs/tinymce/6/template/).
+
+This option is best for system administrators and developers who write their own add-ons to ease reproducibility.
+
+You can add a GenericSetup configuration file to your add-on, such as {file}`profiles/default/registry/tinymce.xml`, with the configuration of the HTML blocks.
+The following example adds three HTML files, each of which contains its custom HTML block.
+
+```xml
+<registry>
+    <record name="plone.templates" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="templates">
+    <field type="plone.registry.field.Text">
+      <default></default>
+      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="help_tinymce_templates">Enter the list of templates in json format                 http://www.tinymce.com/wiki.php/Plugin:template</description>
+      <required>False</required>
+      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="label_tinymce_templates">Templates</title>
+    </field>
+    <value>[
+      {"title": "Image and Text", "url": "++theme++my.theme/tinymce-templates/bs-dark-hero.html"},
+      {"title": "Image and Text", "url": "++theme++my.theme/tinymce-templates/bs-hero-left.html"},
+      {"title": "Image and Text", "url": "++theme++my.theme/tinymce-templates/bs-pricing.html"},
+      ]
+    </value>
+  </record>
+</registry>
+```
+
+```{tip}
+The file {file}`profiles/default/registry.xml` can be split in several files in {file}
+the directory `profiles/default/registry` with arbitrary names ending in `.xml`.
+This makes it easier to maintain and reuse your registry files.
 ```
