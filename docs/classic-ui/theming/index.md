@@ -57,6 +57,7 @@ To summarize:
 settings-ttw
 create-add-on
 color-modes
+diazo
 ```
 
 ## Reference
