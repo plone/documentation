@@ -176,11 +176,6 @@ See [`sandbox_iframes_exclusions`](https://www.tiny.cloud/docs/tinymce/latest/co
 You can add custom HTML blocks in TinyMCE.
 You can insert them in your content using the TinyMCE {menuselection}`Insert Template` menu option using the [TinyMCE Template plugin](https://www.tiny.cloud/docs/tinymce/6/template/).
 
-```{important}
-The Template plugin has been completely removed from the TinyMCE 7.0 release used in Plone 6.1.
-As an alternative solution, you can use the [Advanced Template Premium plugin](https://www.tiny.cloud/docs/tinymce/6/advanced-templates/). 
-```
-
 This option is best for system administrators and developers who write their own add-ons to ease reproducibility.
 
 You can add a GenericSetup configuration file to your add-on, such as {file}`profiles/default/registry/tinymce.xml`, with the configuration of the HTML blocks.
