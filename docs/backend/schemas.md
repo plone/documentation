@@ -101,7 +101,6 @@ This schema can be used in {doc}`/classic-ui/forms` and Dexterity {doc}`/backend
 
 ```{note}
 In Dexterity {doc}`/backend/content-types/index`, the base class for a schema is `plone.supermodel.model.Schema`.
-This provides functionalities to export and import schemas via XML and the {doc}` Through-the-web (TTW) </classic-ui/theming/through-the-web>` editor.
 ```
 
 

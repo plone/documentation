@@ -91,4 +91,5 @@ Until it is complete, Plone 5 documentation is the authoritative source for writ
 
 create-a-backend-add-on
 create-a-distribution
+standardize-python-project-configuration
 ```
