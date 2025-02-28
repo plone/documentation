@@ -42,6 +42,7 @@ backend/index
 i18n-l10n/index
 conceptual-guides/index
 contributing/index
+reference-guide/index
 ```
 
 ```{toctree}
