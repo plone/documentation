@@ -21,6 +21,75 @@ This documentation is for:
 - Deployers who configure servers for site hosting
 - Developers who customize a site’s capabilities, create add-ons, and contribute to Plone itself
 
+
+:::::{grid} 1 1 2 2
+:gutter: 3 3 4 5
+
+::::{grid-item-card} 
+:img-top: images/particle_background.jpg
+:img-alt:
+:link: https://6.docs.plone.org/contributing/index.html
+
+Contributing guide
+^^^
+This part of the documentation describes how to contribute to Plone, including all its projects and repositories under the Plone GitHub organization.
++++
+```{button-link} https://6.docs.plone.org/contributing/index.html
+:color: primary
+:expand:
+Go to Contributing guide
+```
+::::
+
+::::{grid-item-card} 
+:img-top: images/particle_background.jpg
+:img-alt:
+:link: https://6.docs.plone.org/install/index.html
+
+Get started
+^^^
+This part of the documentation helps you find the best way to get started with Plone, depending on what you want to do.
++++
+```{button-link} https://6.docs.plone.org/install/index.html
+:color: primary
+:expand:
+Go to Get started
+```
+::::
+
+::::{grid-item-card}
+:img-top: images/particle_background.jpg
+:img-alt:
+:link: https://6.docs.plone.org/developer-guide/index.html
+
+Developer guide
+^^^
+This part of the documentation provides information for how to develop in Plone.
++++
+```{button-link} https://6.docs.plone.org/developer-guide/index.html
+:color: primary
+:expand:
+Go to Developer guide
+```
+::::
+
+::::{grid-item-card} 
+:img-top: images/particle_background.jpg
+:img-alt:
+:link: https://6.docs.plone.org/conceptual-guides/index.html
+
+Conceptual guides
+^^^
+This part of the documentation provides explanation of concepts to deepen and broaden your understanding of Plone.
++++
+```{button-link} https://6.docs.plone.org/conceptual-guides/index.html
+:color: primary
+:expand:
+Go to Conceptual guides
+```
+::::
+
+
 ```{seealso}
 Read the [documentation for the previous version, Plone 5](https://5.docs.plone.org/).
 ```
