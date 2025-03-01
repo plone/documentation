@@ -117,7 +117,7 @@ Use {term}`Corepack` to enable Yarn, which was already installed with the {ref}`
 1.  Open a terminal and type:
 
     ```shell
-    corepack enable
+    npm i -g corepack@latest && corepack enable
     ```
 
 ````{important}
