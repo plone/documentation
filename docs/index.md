@@ -26,10 +26,8 @@ This documentation is for:
 :gutter: 3 3 4 5
 
 ::::{grid-item-card} 
-:img-top: images/particle_background.jpg
-:img-alt:
 :link: https://6.docs.plone.org/contributing/index.html
-
+{octicon}`book;1.5em;sd-text-info`
 Contributing guide
 ^^^
 This part of the documentation describes how to contribute to Plone, including all its projects and repositories under the Plone GitHub organization.
@@ -42,10 +40,8 @@ Go to Contributing guide
 ::::
 
 ::::{grid-item-card} 
-:img-top: images/particle_background.jpg
-:img-alt:
 :link: https://6.docs.plone.org/install/index.html
-
+{octicon}`zap;1.5em;sd-text-info`
 Get started
 ^^^
 This part of the documentation helps you find the best way to get started with Plone, depending on what you want to do.
@@ -58,10 +54,8 @@ Go to Get started
 ::::
 
 ::::{grid-item-card}
-:img-top: images/particle_background.jpg
-:img-alt:
 :link: https://6.docs.plone.org/developer-guide/index.html
-
+{octicon}`person;1.5em;sd-text-info`
 Developer guide
 ^^^
 This part of the documentation provides information for how to develop in Plone.
@@ -74,11 +68,9 @@ Go to Developer guide
 ::::
 
 ::::{grid-item-card} 
-:img-top: images/particle_background.jpg
-:img-alt:
 :link: https://6.docs.plone.org/conceptual-guides/index.html
-
-Conceptual guides
+{octicon}`light-bulb;1.5em;sd-text-info`
+Conceptual guides 
 ^^^
 This part of the documentation provides explanation of concepts to deepen and broaden your understanding of Plone.
 +++
@@ -88,7 +80,7 @@ This part of the documentation provides explanation of concepts to deepen and br
 Go to Conceptual guides
 ```
 ::::
-
+:::::
 
 ```{seealso}
 Read the [documentation for the previous version, Plone 5](https://5.docs.plone.org/).
