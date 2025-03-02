@@ -13,15 +13,6 @@ myst:
 
 This is the community-maintained documentation for the Plone content management system.
 
-This documentation is for:
-
-- Editors who write and update content on a site
-- Site administrators who install Plone and add-ons, and set up a site
-- Designers who create site themes
-- Deployers who configure servers for site hosting
-- Developers who customize a site’s capabilities, create add-ons, and contribute to Plone itself
-
-
 :::::{grid} 1 1 2 2
 :gutter: 3 3 4 5
 
