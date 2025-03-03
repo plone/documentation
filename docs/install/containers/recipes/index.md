@@ -118,3 +118,41 @@ RUN <<EOT
 
 After making these changes, build the project container as usual.
 It will no longer output the access log, but will continue to output the event log.
+
+
+## Pack the ZODB
+
+A common maintenance task of a Plone instance is to pack the ZODB.
+
+The official `plone/plone-backend` container and project containers based on them have a `pack` command to pack the ZODB.
+
+The command will work on standalone mode, ZEO mode and Relstorage mode (with Posgres).
+
+To run the command you have to run your container passing the command:
+
+In standalone mode you will have a volume mounting the ZODB, so it will be something like:
+
+```
+docker run -v /path/to/your/volume:/data plone/plone-backend pack
+```
+
+In ZEO mode, you will have to run it next to your ZEO instance:
+
+```
+docker run -e ZEO_ADDRESS=zeo:8100 --link zeo plone/plone-backend pack
+```
+
+In Relstorage, you will need to pass the connection DSN:
+
+```
+docker run -e RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432'" pack
+```
+
+If you are running your containers using docker compose, the command is much easier:
+
+```
+docker compose run backend pack
+```
+
+Provided that the name of the service that runs the Plone instance is `backend`, otherwise exchange `backend` with your container's name.
+
