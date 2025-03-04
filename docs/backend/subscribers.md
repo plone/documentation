@@ -11,11 +11,13 @@ myst:
 
 # Subscribers (event handlers)
 
-In Plone 6, the event system provides a robust mechanism for developers to execute custom actions in response to various occurrences within the system. This capability is facilitated through the use of event subscribers, also known as event handlers, which listen for specific events and perform predefined operations when those events are triggered.
+In Plone 6, the event system provides a robust mechanism for developers to execute custom actions in response to various occurrences within the system.
+This capability is facilitated through the use of event subscribers, also known as event handlers, which listen for specific events and perform predefined operations when those events are triggered.
 
 ## Overview of the Event System
 
-Plone's event system is built upon the Zope Component Architecture's `zope.event` package, enabling a publish-subscribe pattern where events are broadcasted, and subscribers (event handlers) respond accordingly. Key characteristics of this system include:
+Plone's event system is built upon the Zope Component Architecture's `zope.event` package, enabling a publish-subscribe pattern where events are broadcasted, and subscribers (event handlers) respond accordingly.
+Key characteristics of this system include:
 
 - **Simplicity**: The event system is straightforward to implement and use.
 - **Non-deterministic Handler Execution Order**: The order in which event handlers are invoked is not specified and cannot be controlled.
@@ -23,7 +25,9 @@ Plone's event system is built upon the Zope Component Architecture's `zope.event
 - **No Return Values**: Event handlers do not return values.
 - **Exception Handling**: Exceptions raised within an event handler can interrupt the request processing.
 
-Events are typically defined by interfaces and may carry pertinent information about the event. Object events, which pertain to specific content objects, implement the `zope.component.interfaces.IObjectEvent` interface and include an `object` attribute referencing the related content object. This structure allows event handlers to be registered for specific object types and event types.
+Events are typically defined by interfaces and may carry pertinent information about the event.
+Object events, which pertain to specific content objects, implement the `zope.component.interfaces.IObjectEvent` interface and include an `object` attribute referencing the related content object.
+This structure allows event handlers to be registered for specific object types and event types.
 
 ## Commonly Used Event Types
 
@@ -44,14 +48,12 @@ Event handlers can be registered in two primary ways: using ZCML (Zope Configura
 
 To register an event handler via ZCML, add a `<subscriber>` directive to your package's `configure.zcml` file:
 
-
 ```xml
 <subscriber
     for=".interfaces.IMyContentTypeClass zope.lifecycleevent.IObjectCreatedEvent"
     handler=".your_module.your_function"
 />
 ```
-
 
 In this configuration:
 
@@ -64,7 +66,6 @@ This setup ensures that `your_function` is called whenever an object implementin
 
 Alternatively, you can register an event handler using the `subscribe` decorator from the `zope.component` module:
 
-
 ```python
 from zope.component import adapter
 from zope.lifecycleevent.interfaces import IObjectCreatedEvent
@@ -75,13 +76,11 @@ def your_function(obj, event):
     # Your code here
 ```
 
-
 In this example, `your_function` will be invoked whenever an object implementing `IMyContentTypeClass` is created.
 
 ## Firing Events
 
 To emit an event, use the `notify` function from the `zope.event` module:
-
 
 ```python
 from zope.event import notify
@@ -89,7 +88,6 @@ from zope.lifecycleevent import ObjectModifiedEvent
 
 notify(ObjectModifiedEvent(your_object))
 ```
-
 
 This call broadcasts an `ObjectModifiedEvent`, and all subscribers to this event will be notified.
 
@@ -101,4 +99,4 @@ When implementing event handlers, keep the following considerations in mind:
 - **Error Handling**: Exceptions in event handlers can disrupt the normal flow of the application. Ensure proper error handling within your handlers.
 - **Asynchronous Processing**: For tasks that require significant processing time, consider using asynchronous processing mechanisms to avoid blocking the main application flow.
 
-By effectively leveraging event subscribers, developers can create responsive and dynamic behaviors in Plone 6, enhancing the functionality and user experience of their applications. 
+By effectively leveraging event subscribers, developers can create responsive and dynamic behaviors in Plone 6, enhancing the functionality and user experience of their applications.
