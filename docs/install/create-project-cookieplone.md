@@ -98,7 +98,7 @@ Do not create a new Plone project with Python 3.9.
 3.  Enable {term}`corepack` so that Node.js will install {term}`pnpm` as a package manager.
 
     ```shell
-    corepack enable
+    npm i -g corepack@latest && corepack enable
     ```
 
 
