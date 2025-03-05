@@ -17,27 +17,29 @@ This is the community-maintained documentation for the Plone content management 
 :gutter: 3 3 4 5
 
 ::::{grid-item-card} 
-:link: https://6.docs.plone.org/install/index.html
+:link: install/index
+:link-type: doc
 {octicon}`zap;1.5em;sd-text-info`
 Get started
 ^^^
 This part of the documentation helps you find the best way to get started with Plone, depending on what you want to do.
 +++
-```{button-link} https://6.docs.plone.org/install/index.html
+```{button-ref} {doc} install/index
 :color: primary
 :expand:
 Go to Get started
-```
+``` 
 ::::
 
 ::::{grid-item-card} 
-:link: http://127.0.0.1:8050/user-guide/index.html
+:link: user-guide/index
+:link-type: doc
 {octicon}`person;1.5em;sd-text-info`
 User guide 
 ^^^
 This part of the documentation helps you understand how to use Plone effectively, covering essential features, navigation, content management, and common tasks for users and administrators.
 +++
-```{button-link} http://127.0.0.1:8050/user-guide/index.html
+```{button-ref} {doc} user-guide/index
 :color: primary
 :expand:
 Go to User guide
@@ -45,13 +47,14 @@ Go to User guide
 ::::
 
 ::::{grid-item-card}
-:link: https://6.docs.plone.org/developer-guide/index.html
-{octicon}`person;1.5em;sd-text-info`
+:link: developer-guide/index
+:link-type: doc
+{octicon}`person-add;1.5em;sd-text-info`
 Developer guide
 ^^^
-This part of the documentation provides information for how to develop in Plone.
+This part of the documentation describes how to develop a Plone site.
 +++
-```{button-link} https://6.docs.plone.org/developer-guide/index.html
+```{button-ref} {doc} developer-guide/index 
 :color: primary
 :expand:
 Go to Developer guide
@@ -59,13 +62,14 @@ Go to Developer guide
 ::::
 
 ::::{grid-item-card} 
-:link: http://127.0.0.1:8050/reference-guide/index.html
+:link: reference-guide/index
+:link-type: doc
 {octicon}`bookmark;1.5em;sd-text-info`
 Reference guide 
 ^^^
 This part of the documentation provides explanation of APIs, functions, modules, and objects included in Plone, describing what they are and what they do.
 +++
-```{button-link} http://127.0.0.1:8050/reference-guide/index.html
+```{button-ref} {doc} reference-guide/index 
 :color: primary
 :expand:
 Go to Reference guide
@@ -73,13 +77,14 @@ Go to Reference guide
 ::::
 
 ::::{grid-item-card} 
-:link: https://6.docs.plone.org/conceptual-guides/index.html
+:link: conceptual-guides/index
+:link-type: doc
 {octicon}`light-bulb;1.5em;sd-text-info`
 Conceptual guides 
 ^^^
 This part of the documentation provides explanation of concepts to deepen and broaden your understanding of Plone.
 +++
-```{button-link} https://6.docs.plone.org/conceptual-guides/index.html
+```{button-ref} {doc} conceptual-guides/index 
 :color: primary
 :expand:
 Go to Conceptual guides
@@ -87,16 +92,17 @@ Go to Conceptual guides
 ::::
 
 ::::{grid-item-card} 
-:link: https://6.docs.plone.org/contributing/index.html
+:link: contributing/index
+:link-type: doc
 {octicon}`book;1.5em;sd-text-info`
-Contributing guide
+Contributor guide
 ^^^
 This part of the documentation describes how to contribute to Plone, including all its projects and repositories under the Plone GitHub organization.
 +++
-```{button-link} https://6.docs.plone.org/contributing/index.html
+```{button-ref} {doc} contributing/index 
 :color: primary
 :expand:
-Go to Contributing guide
+Go to Contributor guide
 ```
 ::::
 
