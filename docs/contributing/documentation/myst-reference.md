@@ -350,6 +350,57 @@ print(f"my {a}nd line")
 ```
 ````
 
+### Tabs
+
+A simple tab component without synchronization, using a basic tab-set.
+
+::::{tab-set}
+
+:::{tab-item} Label1
+Content 1
+:::
+
+:::{tab-item} Label2
+Content 2
+:::
+
+::::
+
+A synchronized tab component, where tab selection is linked across multiple tab-sets using a unique sync key.
+
+::::{tab-set}
+:sync-group: category
+
+:::{tab-item} Label1
+:sync: key1
+
+Content 1
+:::
+
+:::{tab-item} Label2
+:sync: key2
+
+Content 2
+:::
+
+::::
+
+::::{tab-set}
+:sync-group: category
+
+:::{tab-item} Label1
+:sync: key1
+
+Content 1
+:::
+
+:::{tab-item} Label2
+:sync: key2
+
+Content 2
+:::
+
+::::
 
 ### Escape literal backticks inline
 
