@@ -17,7 +17,7 @@ Some may require changes in your setup.
 
 ## Drop Python 3.8 and 3.9
 
-We only support Python 3.10, 3.11, and 3.12.
+We only support Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
 
 
 ## TinyMCE upgraded in Classic UI
@@ -32,9 +32,41 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
 
 ### Enable the TinyMCE accordion plugin
 
-1.  Go to the {guilabel}`Site Setup > General > TinyMCE` control panel to manage TinyMCE settings.
-1.  Under the {guilabel}`Plugins and Toolbar` tab, check {guilabel}`accordion` to enable the accordion plugin.
-1.  Under the same tab, add a menu entry `accordion` for TinyMCE in the control panel by editing the `items` key as shown.
+1.  Install the add-on [`collective.outputfilters.tinymceaccordion`](https://pypi.org/project/collective.outputfilters.tinymceaccordion/) to use an output filter that transforms the TinyMCE markup to valid HTML markup for the Bootstrap 5 accordion.
+    Install via either pip or buildout.
+
+    -   Install using pip.
+
+        ```shell
+        pip install collective.outputfilters.tinymceaccordion   
+        ```
+
+    -   Configure your local buildout file.
+
+        ```cfg
+        [instance]
+        eggs += collective.outputfilters.tinymceaccordion
+        ```
+        
+        Then run the command to install.
+    
+        ```shell
+        bin/buildout
+        ```
+    
+1.  Start your Plone instance.
+
+    ```shell
+    bin/instance fg
+    ```
+
+1.  Complete installation of the add-on by navigating to {menuselection}`Site Setup --> General --> Add-ons`, then clicking {guilabel}`Install` for `collective.outputfilters.tinymceaccordion`.
+
+1.  Go to the {menuselection}`Site Setup --> General --> TinyMCE` control panel to manage TinyMCE settings.
+
+1.  Under the {menuselection}`Plugins and Toolbar` tab, if not already checked, check {guilabel}`accordion` to enable the accordion plugin.
+
+1.  Under the same tab, edit the `insert` menu by editing its `items` key as shown.
 
     ```json
     {
@@ -46,34 +78,49 @@ To upgrade your plugin implementation to TinyMCE 7, see the [upgrade guides](htt
     ```
 
 1.  Click the {guilabel}`Save` button to save your settings.
-1.  In the {guilabel}`Security > HTML filtering` control panel, add two new tags to {guilabel}`Valid tags`.
 
-    -   `summary`
+1.  In the {menuselection}`Security --> HTML filtering` control panel, ensure that you have the following tags under {guilabel}`Valid tags`.
+
+    -   `button`
     -   `details`
+    -   `summary`
 
-1.  Also in the {guilabel}`Security > HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`.
+1.  Also in the {menuselection}`Security --> HTML filtering` control panel, add a new attribute to {guilabel}`Custom attributes`, if not already present.
 
     -   `open`
-
-1.  For a transform to valid markup of the Bootstrap 5 accordion, use an output filter.
-
-    ```{seealso}
-    -   [Addon collective.outputfilters.tinymceaccordion](https://github.com/collective/collective.outputfilters.tinymceaccordion)
-    ```
 
 
 ## `z3c.form` and `plone.app.z3cform`
 
-````{todo}
-This is a placeholder.
+[`plone.app.z3cform`](https://github.com/plone/plone.app.z3cform) is the form widget integration package for [`z3c.form`](https://github.com/zopefoundation/z3c.form) in Plone.
+This adds [Bootstrap 5](https://getbootstrap.com/) styling and mockup pattern options to all widgets.
 
--   Update deprecated imports
--   New widget templates
+In Plone 6.1 all Classic UI widget classes were moved to the module `plone.app.z3cform.widgets`.
+The previous paths are marked as deprecated and will be removed in Plone 7.
 
-```{seealso}
-https://github.com/plone/plone.app.z3cform/pull/181
-```
-````
+The `BaseWidget` for patterns is refactored to the new `z3c.form` extendable attributes introduced in version 5.1 and doesn't use LXML anymore.
+See https://github.com/zopefoundation/z3c.form/pull/116.
+If you have customizations in your base pattern widget class, see the new implementation at https://github.com/plone/plone.app.z3cform/blob/e9d1ebf478e663d2da259cb9435927f7ad1ddb92/plone/app/z3cform/widgets/base.py.
+
+`RelatedItemsWidget` is marked as deprecated.
+The implementation for selecting related items, internal links and images in TinyMCE, or internal paths for collection criteria is now done with the new `ContentBrowserWidget`.
+This introduces a new pattern `pat-contentbrowser` from mockup.
+See the next section for details.
+
+
+## `mockup` new pattern `pat-contentbrowser`
+
+A new content browsing pattern [`pat-contentbrowser`](https://plone.github.io/mockup/pat/contenbrowser/) for Classic UI is now available.
+
+This is a [Miller column browser](https://en.wikipedia.org/wiki/Miller_columns) implementation which replaces [`pat-relateditems`](https://plone.github.io/mockup/pat/relateditems/) seamlessly.
+All basic options from `pat-relateditems` are implemented and behave the same as before.
+
+Additionally `pat-contentbrowser` comes with some new features.
+
+-   Keyboard navigation.
+-   Multi-selection of items with {kbd}`Shift/Ctrl/CMD + click` combination.
+    This comes in handy for selecting multiple related items in one step.
+-   Uploading items to the current path.
 
 
 ## `plone.app.multilingual` is a core add-on
@@ -117,3 +164,44 @@ If you have an existing Plone 5.2 or 6.0 site and you migrate to 6.1, then migra
 -   If the `plone.app.discussion` Python package is _not_ in your setup, but the site has existing comments (discussions), then the migration code stops with an error.
     Apparently you _were_ using comments in your site.
     Add the `plone.app.discussion` package to your dependencies, and run the migration again.
+
+
+## Distributions
+
+Plone 6.1 introduces the concept of a Plone {term}`distribution`.
+A Plone distribution is a Python package that defines specific features, themes, add-ons, and configurations that get activated when creating a Plone site.
+Now it is available in core Plone as the recommended way for {doc}`creating a new Plone site </admin-guide/add-site>`.
+
+```{seealso}
+For more information about distribution concepts, see {doc}`/conceptual-guides/distributions`.
+```
+
+Distributions are optional.
+If your project only uses the `Products.CMFPlone` Python package, you can still create a Plone site in the old way.
+Consider, however, that doing so you will have the following differences when compared to using distributions.
+
+-   The configuration form is simpler and shorter.
+-   The created site has no content, and therefore no {guilabel}`News` or {guilabel}`Events` folders.
+-   You must activate add-ons through the {guilabel}`Add-ons` control panel.
+
+There are a few things you should consider when upgrading a project to, or making an add-on compatible with, Plone 6.1.
+
+-   In general, you don't need to change anything.
+    Your existing site will keep working.
+    But adding a new site may change in the ways described earlier.
+-   Do you want to use the `Products.CMFPlone` package (no distributions), either `plone.volto` or `plone.classicui` (one distribution), or `Plone` (two distributions)?
+-   If your site uses Volto for the frontend, you will already have `plone.volto` as a dependency.
+    This can stay the same.
+-   If your site depends on the `Products.CMFPlone` package without the `Plone` or `plone.volto` packages, then the frontend is Classic UI.
+    This can stay the same, but you may want to depend on `plone.classicui`.
+    With that package you can still create a new site and have the same content as before.
+-   If your site uses the `Plone` package, you will have the two new distributions available.
+    This is fine.
+    If you know you only need `plone.volto` or only need `plone.classicui`, you can switch to only one or the other.
+    You can also limit the options for selecting a distribution by setting the environment variable `ALLOWED_DISTRIBUTIONS` with fewer options.
+    Set `ALLOWED_DISTRIBUTIONS=default` for the distribution targeting the Volto frontend (`plone.volto`).
+    Set `ALLOWED_DISTRIBUTIONS=classic` for the distribution with the Classic UI frontend (`plone.classicui`).
+-   If you switch from `Plone` to `plone.volto` or `plone.classicui`, you might want to install extra core add-ons, for example `plone.app.upgrade` or `plone.app.caching`.
+-   If your add-on is only for Volto, you might want to add `plone.volto` as a dependency.
+-   If your add-on is only for Classic UI, you might want to add `plone.classicui` as a dependency.
+    Note though that `plone.classicui` is not available for Plone 6.0.

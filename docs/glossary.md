@@ -21,6 +21,10 @@ AWS
 Barceloneta
     The default theme for Plone 5.
 
+Buildout
+    [Buildout](https://github.com/buildout/buildout/) is a Python-based tool for building and assembling applications from multiple parts, based on a configuration file.
+    It was the most common way of installing Plone 3, 4, and 5, and can still be used with Plone 6.
+
 CMS
     Content Management System
 
@@ -28,11 +32,27 @@ Cookiecutter
     A command-line utility that creates projects from cookiecutters (project templates), for example, creating a Python package project from a Python package project template.
     [See Cookiecutter's documentation](https://cookiecutter.readthedocs.io/en/stable/).
 
-cookiecutter-plone-starter
-    [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) is a framework for jumpstarting Plone 6 projects quickly.
+Cookieplone
+    ```{versionadded} Volto 18.0.0-alpha.43
+    ```
+
+    [Cookieplone](https://github.com/plone/cookieplone) is the method to create a Plone project.
+    You can use Cookieplone to build a backend add-on, a new Volto add-on, or a full project with both backend and frontend.
+    Cookieplone simplifies the process using robust Cookiecutter templates from {term}`cookieplone-templates`.
+
+cookieplone-templates
+    [`cookieplone-templates`](https://github.com/plone/cookieplone-templates) is a collection of templates used by {term}`Cookieplone`.
+
+plone/generator-volto
+@plone/generator-volto
+    ```{deprecated} Volto 18.0.0-alpha.43
+    ```
+
+    [`@plone/generator-volto`](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
+    See {ref}`upgrade-18-cookieplone-label`.
 
 cookiecutter-zope-instance
-    [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a Zope WSGI instance.
+    [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a {term}`Zope instance`.
 
 CSRF
 Cross-Site Request Forgery
@@ -83,9 +103,9 @@ pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 
 REST API
-    ```{todo}
-    REST API in general. REST API of Plone.
-    ```
+    A REST API (also called a RESTful API or RESTful web API) is an application programming interface (API) that conforms to the design principles of the representational state transfer (REST) architectural style.
+    REST APIs provide a flexible, lightweight way to integrate applications and to connect components in microservices architectures.
+    Plone uses [`plone.restapi`](https://github.com/plone/plone.restapi/) for its REST API.
 
 S3
     [Amazon Web Services S3](https://aws.amazon.com/s3/).
@@ -95,7 +115,7 @@ TTW
     Through-The-Web allows editing or customizing a Plone site through a web browser.
 
 Ansible
-    [Ansible](https://www.ansible.com/) is an open source automation platform.
+    [Ansible](https://www.redhat.com/en/ansible-collaborative) is an open source automation platform.
     Ansible can help you with configuration management, application deployment, task automation.
 
 Archetypes
@@ -119,13 +139,13 @@ Diazo
 
 Dexterity
     [Dexterity](https://github.com/plone/plone.dexterity) is the base framework for building content types, both through-the-web and as filesystem code.
-     It is aimed at Plone, although this package should work with plain Zope + CMF systems.
+     It is aimed at Plone, although this package should work with plain {term}`Zope` + CMF systems.
 
 Dublin Core
     The Dublin Core Schema is a small set of vocabulary terms that can be used to describe web resources (video, images, web pages, etc.), as well as physical resources such as books or CDs, and objects like artworks.
 
 ZMI
-    The Zope Management Interface.
+    The {term}`Zope` Management Interface.
     The ZMI is a direct interface into the backend software stack of Plone.
     While it can still serve as a valuable tool for Plone specialists to fix problems or accomplish certain tasks, it is not recommended as a regular tool for Plone maintenance.
 
@@ -147,11 +167,11 @@ Rapido application
     It contains the features you implement.
     It is a folder containing templates, Python code, and YAML files.
 
-block
-    Blocks display a chunk of HTML which can be inserted in your Plone pages.
+blocks
+    Blocks are the fundamental components of a page layout in {term}`Volto`.
 
 element
-    Elements are the dynamic components of your blocks.
+    Elements are the dynamic components of your {term}`blocks`.
     They can be input fields, buttons, or computed HTML.
     They can also return JSON if you call them from a JavaScript app.
 
@@ -185,7 +205,7 @@ Configuration registry
     It is accessible from the Volto project by importing the module `@plone/volto/config` with `import registry from '@plone/volto/config'`.
     It contains the configuration of the Volto app.
 
-    In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for Zope applications.
+    In Plone core, [`plone.app.registry`](https://pypi.org/project/plone.app.registry/) provides Plone UI and `GenericSetup` integration for [`plone.registry`](https://pypi.org/project/plone.registry/), which in turn implements a configuration registry for {term}`Zope` applications.
 
 component shadowing
 shadowing
@@ -261,10 +281,20 @@ CommonJS
 Transpilation
     The transformation of JavaScript code that uses advanced language features, unavailable for some browsers, to code rewritten to support them.
 
-ES6
-    ECMAScript 6, a newer version of the JavaScript language.
+ECMAScript
+    ECMAScript is a standard for scripting languages, including JavaScript, JScript, and ActionScript.
+    It is best known as a JavaScript standard intended to ensure the interoperability of web pages across different web browsers.
+    It is standardized by [Ecma International](https://ecma-international.org/) in the document [ECMA-262](https://ecma-international.org/publications-and-standards/standards/ecma-262/).
 
-mrs-developer
+TC39
+    Ecma International's [TC39](https://tc39.es/) is a group of JavaScript developers, implementers, academics, and more, collaborating with the community to maintain and evolve the definition of JavaScript.
+    They established a [process](https://tc39.es/process-document/) where the proposals are discussed, developed, and eventually approved (or dropped).
+    The process has five Stages (0 to 4) where reaching the Stage 4 means the proposal is finished, and it becomes part of the JavaScript specification.
+
+`mr.developer`
+    [`mr.developer`](https://pypi.org/project/mr.developer/) is a {term}`Buildout` extension that makes it easy to work with buildouts containing lots of packages, where you only want to develop a few of them.
+
+`mrs-developer`
     Also called "missdev", a tool similar to buildout's `mr.developer`.
     It automatically downloads and keeps up to date copies of software and add-ons under development based on definitions stored in `mrs.developer.json`.
     As a byproduct of its update operations, it also automatically adjusts `jsconfig.json`, which is used by Volto to configure webpack aliases.
@@ -277,7 +307,6 @@ Corepack
     In practical terms, Corepack lets you use {term}`Yarn`, {term}`npm`, and {term}`pnpm` without having to install them.
 
     Corepack is distributed by default with all recent Node.js versions.
-    Run `corepack enable` to install the required Yarn and pnpm binaries on your path.
 
 Git
     [Git](https://git-scm.com/) is a free and open source distributed version control system.
@@ -390,24 +419,36 @@ Traefik Proxy
 
 Volto
     [Volto](https://github.com/plone/volto) is a React-based frontend for Plone.
-    It is the default user interface for Plone 6.
+    It is one of two supported user interfaces, or frontends, for Plone 6.
 
-    The other frontend is {term}`Classic UI`.
+    ````{seealso}
+    {doc}`/conceptual-guides/choose-user-interface`
+    ````
 
 Classic UI
-    Classic UI is a secondary frontend for Plone 6.
-    It is integrated with [Products.CMFPlone](https://github.com/plone/Products.CMFPlone/).
-    Its theme is named [Barceloneta](https://github.com/plone/plonetheme.barceloneta/).
-    It is based on Twitter Bootstrap 5.
-    It uses {term}`Mockup` as its JavaScript stack.
+    Classic UI is a frontend for Plone 6 that is based on {term}`ZPT` and {term}`Mockup`.
+    It is one of two supported user interfaces, or frontends, for Plone 6.
 
-    The other frontend is {term}`Volto`.
+    ````{seealso}
+    {doc}`/conceptual-guides/choose-user-interface`
+    ````
 
 Mockup
     [Mockup](https://github.com/plone/mockup/) is a package that, together with {term}`Patternslib`, builds the UI toolkit for {term}`Classic UI`, a frontend for Plone.
     Mockup provides the JavaScript stack for Classic UI.
     [View Mockup's patterns](https://plone.github.io/mockup/), based on Patternslib.
 
+bobtemplate
+bobtemplates
+bobtemplates.plone
+    `bobtemplates.plone` provides {term}`mr.bob` templates to generate packages for Plone projects.
+    The {term}`plonecli` command line client provides a developer-friendly interface to `bobtemplates.plone`.
+
+mr.bob
+    [`mr.bob`](https://mrbob.readthedocs.io/en/latest/) is a tool that takes a directory skeleton, copies over its directory structure to a target folder, and can use the Jinja2 (or some other) templating engine to dynamically generate the files.
+    Additionally, it can ask you questions needed to render the structure, or provide a configuration file to answer them.
+
+Pattern
 Patterns
 Patternslib
     [Patterns](https://patternslib.com/), or Patternslib, is a toolkit that enables designers to build rich interactive prototypes without the need for writing any JavaScript.
@@ -415,11 +456,17 @@ Patternslib
     Accessibility, SEO, and well-structured HTML are core values of Patterns.
 
 Slate
-    [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as `WYSIWYG` editors.
+    [Slate.js](https://docs.slatejs.org/) is a highly customizable platform for creating rich-text editors, also known as {term}`WYSIWYG` editors.
     It enables you to create powerful, intuitive editors similar to those you've probably used in Medium, Dropbox Paper, or Google Docs.
 
 `volto-slate`
-    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced WYSIWYG functionality and behavior.
+    `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced {term}`WYSIWYG` functionality and behavior.
+
+WYSIWYG
+    WYSIWYG is an acronym for "what you see is what you get", referring to software that allows content to be edited in a form that resembles its appearance when printed or displayed as a finished product.    
+
+TinyMCE
+    The rich text {term}`WYSIWYG` editor used in {term}`Classic UI`.
 
 elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
@@ -502,7 +549,7 @@ manual `.po` entries
     Entries which cannot be detected by an automatic code scan.
 
 react-intl
-    A library that is part of [Format.JS](https://formatjs.io/docs/getting-started/installation) which helps developers set up their applications for internationalization.
+    [`react-intl`](https://formatjs.github.io/docs/react-intl) is a library that is part of [Format.JS](https://formatjs.github.io/) which helps developers set up their applications for internationalization.
 
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
@@ -516,6 +563,10 @@ ZODB
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
 
+Zope instance
+    A Zope instance is a particular set of configuration for running {term}`Zope`.
+    A new Zope instance can be created using {term}`cookiecutter-zope-instance`.
+
 ZPT
     Zope Page Template is a template language for Python.
 
@@ -525,12 +576,14 @@ plonecli
 ZCA
 Zope Component Architecture
     Zope Component Architecture (ZCA) is a Python framework for supporting component based design and programming.
+    It uses the design patterns of interface, adapter, factory, and subscriber.
     It is very well suited to developing large Python software systems.
-    The ZCA is not specific to the Zope web application server.
+    The ZCA is not specific to the {term}`Zope` web application server.
     It can be used for developing any Python application.
     Maybe it should be called Python Component Architecture.
+
     ```{seealso}
-    See also https://zopecomponent.readthedocs.io/en/latest/index.html.
+    https://zopecomponent.readthedocs.io/en/latest/index.html
     ```
 
 browser layer
@@ -619,6 +672,9 @@ trigger
     A trigger is an event in Plone that causes the execution of defined actions.
     Example triggers include object modified, user logged in, and workflow state changed.
 
+DSL
+    Domain Specific Language
+
 navigation root
     An object marked as a navigation root provides a way to root catalog queries, searches, breadcrumbs, and so on, into that object.
 
@@ -664,7 +720,6 @@ Content Delivery Network
 CDN
     A Content Delivery Network (CDN) is a network of servers located in various geographic regions that work together to deliver web content to users quickly and efficiently.
 
-
 unique identifier
 UID
    UID is an acronym meaning "unique identifier".
@@ -684,12 +739,6 @@ Windows Subsystem for Linux
 
 pnpm
     [pnpm](https://pnpm.io/) is a fast, disk space efficient package manager.
-
-Guillotina
-    [Guillotina](https://guillotina.io/) is a full-stack data framework built on [AsyncIO](https://docs.python.org/3/library/asyncio.html).
-
-Nick
-    [Nick](https://nickcms.org/) is a headless content management system {term}`CMS` built with {term}`Node.js`.
 
 predicate
 predicates
@@ -724,6 +773,10 @@ Jest
     [Jest](https://jestjs.io/) is a JavaScript testing framework.
     Volto uses Jest for unit tests.
 
+Cypress
+    [Cypress](https://www.cypress.io/) is a JavaScript testing framework that runs your app in the browser for visually debugging it.
+    Volto uses Cypress for acceptance tests.
+
 Plone
     Plone is an open-source content management system (CMS) with over 20 years of stability and security wrapped in a modern, powerful, user-centric package.
     It continues to set the standard for content management systems by offering the most functionality and customization out of the box.
@@ -756,7 +809,7 @@ Load balancer
 CI
 continuous integration
     Continuous integration (CI) is the practice of integrating all your code changes into the main branch of a shared source code repository early and often, automatically testing each change when you commit or merge them, and automatically kicking off a build.
-    
+
     Read about Plone's {doc}`/contributing/core/continuous-integration`.
 
 CD
@@ -768,9 +821,62 @@ lazy load
 lazy loading
 lazy loaded
     Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
-    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path, which translates into reduced page load times.
+    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Critical_rendering_path), which translates into reduced page load times.
 
 reference implementation
     A reference implementation is a program that implements all requirements from a corresponding specification.
     The reference implementation often accompanies a technical standard, and demonstrates what should be considered the "correct" behavior of any other implementation of it.
+
+distribution
+distributions
+    A Plone distribution is a pre-packaged version of Plone that includes specific features, themes, modules, and configurations.
+    It is a convenient way to get a specific type of website up and running quickly, as the distribution includes everything needed to run that type of site.
+
+    ```{seealso}
+    -   {doc}`/conceptual-guides/distributions`
+    -   {doc}`/developer-guide/create-a-distribution`
+    ```
+
+JSON Schema
+    [JSON Schema](https://json-schema.org/) is the vocabulary that enables JSON data consistency, validity, and interoperability at scale.
+
+portlets
+    Portlets are widgets that can be inserted in predefined locations in pages in {term}`Classic UI`.
+    Portlets are most commonly used to add sidebars to the left or right of the main page content.
+
+Diátaxis framework
+    Plone Documentation uses the [Diátaxis framework](https://www.diataxis.fr/), a systematic approach to technical documentation authoring.
+
+Vale
+    [Vale](https://vale.sh/) is an open-source, command-line tool that helps maintain a consistent and on-brand voice in documentation.
+    Plone Documentation uses it to check spelling, English grammar and syntax, and style guides.
+
+schema enhancer
+    A schema enhancer uses the `schemaEnhancer` function, which can modify the schema used by the `InlineForm` component.
+    Any registered extension plugin can provide a `schemaEnhancer` function.
+    This function receives an object with `formData`, which is the block data; `schema`, which is the original schema to modify; and the injected `intl`, which aids with internationalization.
+
+variation
+    A variation is a common development pattern that provides alternative views for the same data.
+    For example, a teaser block can present data as `title + link`, `title + description + link`, or `title + image + link`.
+        
+    An advanced variation can enhance the block by adding data fields to the block.
+    For example, a listing block variation can show news items with `title + link`.
+    Extending this example, a developer can add a boolean field to the block that toggles the display of the link.
+    Thus an editor can select between `title + link` or just `title`.
+
+HOC
+Higher-Order Component
+    A higher-order component (HOC) is an advanced technique in React for reusing component logic.
+    HOCs are not part of the React API, per se.
+    They are a pattern that emerges from React's compositional nature.
+    Concretely, a higher-order component is a function that takes a component and returns a new component.
+    
+    ```{important}
+    Higher-order components are not commonly used in modern React code.
+    ```
+    ```{seealso}
+    https://legacy.reactjs.org/docs/higher-order-components.html
+    ```
+
 ```

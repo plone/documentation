@@ -32,13 +32,15 @@ Read the [documentation for the previous version, Plone 5](https://5.docs.plone.
 
 overview/index
 install/index
-upgrade/index
+admin-guide/index
+developer-guide/index
 deployment/index
 volto/index
+classic-ui/index
 plone.restapi/docs/source/index
 backend/index
-classic-ui/index
 i18n-l10n/index
+conceptual-guides/index
 contributing/index
 ```
 
@@ -48,6 +50,14 @@ contributing/index
 :hidden: true
 
 glossary
+```
+
+```{toctree}
+:caption: Tutorials
+:maxdepth: 1
+:hidden: true
+
+training/index
 ```
 
 {ref}`genindex`

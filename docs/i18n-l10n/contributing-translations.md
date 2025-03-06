@@ -23,9 +23,9 @@ Translations can be added or updated as needed by the citizens of Earth.
 You will need to work in one repository for Plone core, and optionally another one for Volto.
 
 
-(contributing-plone-core-translations-pre-requisites-label)=
+(contributing-plone-core-translations-prerequisites-label)=
 
-## Pre-requisites
+## Prerequisites
 
 Request write access to https://github.com/collective/plone.app.locales to be able to commit your translation directly.
 
@@ -79,6 +79,10 @@ The process of translating the Volto frontend is the following.
    Volto loads these `json` files to provide translated text strings in the interface.
 
 5. Commit your changes, and create a pull request.
+
+```{seealso}
+{doc}`Volto frontend development internationalization </volto/development/i18n>`
+```
 
 (contributing-weblate-for-translations)=
 

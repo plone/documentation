@@ -11,25 +11,30 @@ myst:
 
 # Containers
 
-The Plone 6 images have all the system requirements, pre-requisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
+The Plone 6 images have all the system requirements, prerequisites, and Plone 6 already installed, except those requirements needed for running the container engine itself.
 
 Using containers is the easiest way to deploy Plone 6.
-Containers may also be used when {doc}`creating a Plone project <../create-project>` and {doc}`contributing to Plone <plone:contributing/index>`.
+You may also use containers when {doc}`creating a Plone project </install/create-project-cookieplone>`.
 
 The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
 They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
 Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
 
-The community provides official images that could be used for standalone Plone installations.
+## Resources
+
+The community provides {doc}`images/index` that you can use for standalone Plone installations.
 These images support a variety of installation options.
-You can choose from Classic UI or the new frontend, or specialized databases using ZEO or a relational database.
+You can choose from Volto or Classic UI for a frontend, or specialized databases using ZEO or a relational database.
+
+The {doc}`examples/index` and {doc}`recipes/index` provide configuration for proxy servers, load balancers, and caching services.
 
 ```{toctree}
 :maxdepth: 2
-:hidden: true
+:hidden:
 
 images/index
 examples/index
+recipes/index
 ```
 
 ## Getting started
@@ -45,9 +50,9 @@ Although there are many container engine tools for developing, managing, and run
 
 The system requirements include those required by Docker itself.
 
--   [Linux](https://docs.docker.com/desktop/install/linux/)
--   [macOS](https://docs.docker.com/desktop/install/mac-install/)
--   [Windows](https://docs.docker.com/desktop/install/windows-install/)
+-   [Linux](https://docs.docker.com/desktop/setup/install/linux/)
+-   [macOS](https://docs.docker.com/desktop/setup/install/mac-install/)
+-   [Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
 Plone 6 itself requires memory and disk space in addition to those of Docker alone.
 See its {ref}`install-packages-hardware-requirements-label`.
@@ -66,13 +71,13 @@ Docker Desktop includes all Docker tools.
 First start the Plone Backend, naming it `plone6-backend` and creating a site with its default configuration, using the following command.
 
 ```shell
-docker run --name plone6-backend -e SITE=Plone -e CORS_ALLOW_ORIGIN='*' -d -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+docker run --name plone6-backend -e SITE=Plone -d -p 8080:8080 plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
 ```
 
 Now start the Plone Frontend, linking it to the `plone6-backend`:
 
 ```shell
-docker run --name plone6-frontend --link plone6-backend:backend -e RAZZLE_API_PATH=http://localhost:8080/Plone -e RAZZLE_INTERNAL_API_PATH=http://backend:8080/Plone -d -p 3000:3000 plone/plone-frontend:latest
+docker run --name plone6-frontend --link plone6-backend:backend -e RAZZLE_DEV_PROXY_API_PATH=http://backend:8080/Plone -d -p 3000:3000 plone/plone-frontend:latest
 ```
 
 

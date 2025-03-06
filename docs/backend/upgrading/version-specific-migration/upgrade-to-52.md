@@ -81,7 +81,7 @@ This is [PLIP 1351](https://github.com/plone/Products.CMFPlone/issues/1351).
 #### For end users
 
 This has no changes for Editors.
-Admins will notice that the ZMI has a new Twitter Bootstrap-based theme, and some control panels have moved.
+Admins will notice that the ZMI has a new Bootstrap-based theme, and some control panels have moved.
 
 
 #### For developers
