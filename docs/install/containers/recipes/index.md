@@ -122,7 +122,9 @@ It will no longer output the access log, but will continue to output the event l
 
 ## Pack the ZODB
 
-A common maintenance task of a Plone instance is to pack the ZODB.
+A common maintenance task of a Plone instance is to [pack the ZODB](https://zodb.org/en/stable/reference/zodb.html#ZODB.DB.pack).
+Packing removes old revisions of objects.
+It is similar to [routine vacuuming in PostgreSQL](https://www.postgresql.org/docs/8.3/routine-vacuuming.html).
 
 The official `plone/plone-backend` container and project containers based on them have a `pack` command to pack the ZODB.
 
