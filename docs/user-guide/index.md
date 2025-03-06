@@ -9,8 +9,7 @@ myst:
 
 # User guide
 
-This user guide details application programming interfaces (APIs), functions, modules, and objects included in Plone, describing what they are and what they do.
-Its audience is primarily developers of Plone and its projects and add-ons.
+This part of the documentation helps you understand how to use Plone effectively, covering essential features, navigation, content management, and other common tasks for site editors and administrators.
 
 ## Plone User Manual
 

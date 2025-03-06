@@ -37,7 +37,7 @@ Go to Get started
 {octicon}`person;1.5em;sd-text-info`
 User guide 
 ^^^
-This part of the documentation helps you understand how to use Plone effectively, covering essential features, navigation, content management, and common tasks for users and administrators.
+This part of the documentation helps you understand how to use Plone effectively, covering essential features, navigation, content management, and other common tasks for site editors and administrators.
 +++
 ```{button-ref} {doc} user-guide/index
 :color: primary
@@ -52,7 +52,7 @@ Go to User guide
 {octicon}`person-add;1.5em;sd-text-info`
 Developer guide
 ^^^
-This part of the documentation describes how to develop a Plone site.
+This part of the documentation describes how to develop a Plone project.
 +++
 ```{button-ref} {doc} developer-guide/index 
 :color: primary
@@ -67,7 +67,7 @@ Go to Developer guide
 {octicon}`bookmark;1.5em;sd-text-info`
 Reference guide 
 ^^^
-This part of the documentation provides explanation of APIs, functions, modules, and objects included in Plone, describing what they are and what they do.
+This part of the documentation describes the APIs, functions, modules, and objects included in Plone.
 +++
 ```{button-ref} {doc} reference-guide/index 
 :color: primary
@@ -94,7 +94,7 @@ Go to Conceptual guides
 ::::{grid-item-card} 
 :link: contributing/index
 :link-type: doc
-{octicon}`book;1.5em;sd-text-info`
+{octicon}`git-pull-request;1.5em;sd-text-info`
 Contributor guide
 ^^^
 This part of the documentation describes how to contribute to Plone, including all its projects and repositories under the Plone GitHub organization.
