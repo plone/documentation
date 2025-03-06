@@ -11,7 +11,7 @@ myst:
 
 # `make build-backend` details
 
-This chapter assumes you have previously followed {doc}`/install/create-project`.
+This chapter assumes you have previously followed {doc}`/install/create-project-cookieplone`.
 
 The `Makefile` at the root of your project invokes commands in `backend/Makefile`.
 Here are excerpts from `backend/Makefile` to show details of the `make build-backend` command.

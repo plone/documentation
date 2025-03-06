@@ -4,7 +4,7 @@ myst:
     "description": "Override core Plone packages"
     "property=og:description": "Override core Plone packages"
     "property=og:title": "Override core Plone packages"
-    "keywords": "Plone 6, core, package, version, override, Cookieplone, cookiecutter-plone-starter, Buildout"
+    "keywords": "Plone 6, core, package, version, override, Cookieplone, Buildout"
 ---
 
 (override-core-plone-packages-label)=
@@ -17,7 +17,7 @@ Sometimes you will need to override one or more package versions to fix a bug.
 
 ## Cookieplone
 
-Use the following instructions if you installed Plone with Cookieplone or `cookiecutter-plone-starter`.
+Use the following instructions if you installed Plone with Cookieplone.
 
 
 ### Override a core Plone package
@@ -42,10 +42,6 @@ To actually download and install the new package version, run the following comm
 
 ```shell
 make backend-build
-```
-
-```{note}
-If you installed Plone using `cookiecutter-plone-starter`, run `make build-backend` instead.
 ```
 
 Now restart the backend.
@@ -75,10 +71,6 @@ To actually download and install the new package version, run the following comm
 
 ```shell
 make backend-build
-```
-
-```{note}
-If you installed Plone using `cookiecutter-plone-starter`, run `make build-backend` instead.`
 ```
 
 Now restart the backend.
