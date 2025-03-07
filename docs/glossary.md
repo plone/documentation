@@ -554,11 +554,20 @@ react-intl
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
+ZODB Extension Objects
 ZEO
     [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
 
+Zope Object Database
 ZODB
     [A native object database for Python](https://zodb.org/en/latest/).
+
+`FileStorage`
+    `FileStorage` is a Python class in {term}`ZODB` that saves data in a file.    
+
+    ```{seealso}
+    https://zodb.org/en/latest/reference/storages.html#filestorage
+    ```
 
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
