@@ -51,11 +51,6 @@ plone/generator-volto
     [`@plone/generator-volto`](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
     See {ref}`upgrade-18-cookieplone-label`.
 
-cookiecutter-plone-starter
-    [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) creates a Plone project that you can install using {term}`Make`.
-    It generates files for installing and configuring both the frontend and backend.
-    For the backend, it uses {term}`cookiecutter-zope-instance` to generate configuration files for a {term}`Zope instance`.
-
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a {term}`Zope instance`.
 

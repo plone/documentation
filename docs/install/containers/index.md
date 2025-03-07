@@ -20,16 +20,21 @@ The Plone 6 container images are compliant with the [Open Container Initiative (
 They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
 Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
 
-The community provides official images that could be used for standalone Plone installations.
+## Resources
+
+The community provides {doc}`images/index` that you can use for standalone Plone installations.
 These images support a variety of installation options.
-You can choose from Classic UI or the new frontend, or specialized databases using ZEO or a relational database.
+You can choose from Volto or Classic UI for a frontend, or specialized databases using ZEO or a relational database.
+
+The {doc}`examples/index` and {doc}`recipes/index` provide configuration for proxy servers, load balancers, and caching services.
 
 ```{toctree}
 :maxdepth: 2
-:hidden: true
+:hidden:
 
 images/index
 examples/index
+recipes/index
 ```
 
 ## Getting started

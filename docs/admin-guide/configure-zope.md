@@ -4,7 +4,7 @@ myst:
     "description": "Configure Zope options"
     "property=og:description": "Configure Zope options"
     "property=og:title": "Configure Zope"
-    "keywords": "Plone 6, Zope, instance, app server, config, Cookieplone, Buildout, pip, cookiecutter-plone-starter, cookiecutter-zope-instance, plone.recipe.zope2instance"
+    "keywords": "Plone 6, Zope, instance, app server, config, Cookieplone, Buildout, pip, cookiecutter-zope-instance, plone.recipe.zope2instance"
 ---
 
 (configure-zope-label)=
@@ -25,7 +25,7 @@ You can configure your Zope instance's options, including the following.
 
 ## Cookieplone
 
-If you installed Plone using Cookieplone, `cookiecutter-plone-starter`, or pip, then Zope is configured using {term}`cookiecutter-zope-instance`.
+If you installed Plone using Cookieplone or pip, then Zope is configured using {term}`cookiecutter-zope-instance`.
 For a complete list of features, usage, and options, read [`cookiecutter-zope-instance`'s README](https://github.com/plone/cookiecutter-zope-instance#readme).
 
 
