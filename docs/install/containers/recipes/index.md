@@ -147,13 +147,17 @@ docker run -e ZEO_ADDRESS=zeo:8100 --link zeo plone/plone-backend pack
 ```
 
 In RelStorage mode, pass the connection DSN.
+The following command assumes that the service that runs the Plone instance is named `backend`.
+Replace `backend` with your container's name.
 
 ```shell
-docker run -e RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432'" pack
+docker run -e RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432'" backend pack
 ```
 
 In Docker Swarm, if the database is only available on an internal network, it's required to specify the network.
 For this situation, it might be easier to use `docker exec` to run the pack command in an existing `plone-backend` container.
+The following command assumes that the service that runs the Plone instance is named `backend`.
+Replace `backend` with your container's name.
 
 ```shell
 docker exec RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432' network='internal" pack
