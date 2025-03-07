@@ -142,7 +142,7 @@ Every time you commit a git submodule, your deity kills a kitten.
 Please save teh kittehs!
 Never commit a git submodule.
 
-If you mistakenly ~~kill a kitten~~ commit a git submodule, then you can revert the commit, depending on whether it was the most recent commit or earlier.
+If you mistakenly ~~kill a kitten~~ commit a git submodule, then you can ~~time travel~~ revert the commit, depending on whether it was the most recent commit or earlier.
 Use one of the following processes for what works best in your situation.
 
 If it was in your most recent commit, use the following.
