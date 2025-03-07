@@ -19,7 +19,7 @@ It also automatically manages caching of static resources.
 If you were to hard-code these resources in templates with `<link>` or `<script>` tags, you would not have these advantages.
 
 ```{seealso}
-For some additional implementation information, see {ref}`classic-ui-theming-from-scratch-theme-label`.
+For some additional implementation information, see {doc}`theming/create-add-on`.
 ```
 
 
