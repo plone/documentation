@@ -58,9 +58,6 @@ If you are following a [Plone training](https://training.plone.org/), it should 
 :   This is one way to install Plone with the Classic UI frontend.
     It provides a basic installation without many additional tools to help with development.
 
-{doc}`create-project`
-:   Installing Plone 6.0 with `cookiecutter-plone-starter` was the recommended way to install for a new project with the Volto frontend, but it is now deprecated in Plone 6.1.
-
 {doc}`Install Plone as a contributor </contributing/index>`
 :   This option is for developers who want to contribute to Plone and its packages.
 

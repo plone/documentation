@@ -391,6 +391,7 @@ redirects = {
     "contributing/volto": "/volto/contributing/index.html",
     "install/install-from-packages": "/install/create-project.html",
     "manage/frontend": "/volto/addons/index.html",
+    "install/create-project": "/install/create-project-cookieplone.html",
 }
 
 
