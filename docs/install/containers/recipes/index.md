@@ -160,7 +160,7 @@ The following command assumes that the service that runs the Plone instance is n
 Replace `backend` with your container's name.
 
 ```shell
-docker exec RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432' network='internal" pack
+docker exec RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432' network='internal" backend pack
 ```
 
 In running containers that use Docker Compose, the command is less complicated.
