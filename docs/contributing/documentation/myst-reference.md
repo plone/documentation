@@ -352,55 +352,61 @@ print(f"my {a}nd line")
 
 ### Tabs
 
-A simple tab component without synchronization, using a basic tab-set.
+You can use [Sphinx Design](https://sphinx-design.readthedocs.io/en/latest/) to provide code examples or commands for multiple operating systems or software versions in a tabbed interface.
 
-::::{tab-set}
+The following snippet is an example of a tab component without synchronization, using a basic tab-set, and will display as shown.
 
-:::{tab-item} Label1
+`````{example}
+````{tab-set}
+
+```{tab-item} Label1
 Content 1
-:::
+```
 
-:::{tab-item} Label2
+```{tab-item} Label2
 Content 2
-:::
+```
 
-::::
+````
+`````
 
-A synchronized tab component, where tab selection is linked across multiple tab-sets using a unique sync key.
+The following snippet is an example of a tab component with synchronization, where tab selection is linked across multiple tab-sets using a unique sync key, and will display as shown.
 
-::::{tab-set}
+`````{example}
+````{tab-set}
 :sync-group: category
 
-:::{tab-item} Label1
+```{tab-item} Label1
 :sync: key1
 
 Content 1
-:::
+```
 
-:::{tab-item} Label2
+```{tab-item} Label2
 :sync: key2
 
 Content 2
-:::
+```
 
-::::
+````
 
-::::{tab-set}
+````{tab-set}
 :sync-group: category
 
-:::{tab-item} Label1
+```{tab-item} Label1
 :sync: key1
 
 Content 1
-:::
+```
 
-:::{tab-item} Label2
+```{tab-item} Label2
 :sync: key2
 
 Content 2
-:::
+```
 
-::::
+````
+`````
 
 ### Escape literal backticks inline
 
