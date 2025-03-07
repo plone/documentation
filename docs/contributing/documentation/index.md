@@ -129,6 +129,56 @@ This practice differs according to the repository's files that you edit.
 You can then edit the documentation of either Plone in the primary repository or any of the other projects in their folder inside the {file}`/submodules` folder.
 
 
+### Git submodules
+
+```{danger}
+Every time you commit a git submodule, your deity kills a kitten.
+```
+
+```{image} /_static/contributing/git-commit-submodule.jpg
+:alt: Two furry brown brick characters with stubby arms and legs and razor sharp teeth chase an adorable kitten across a lush green lawn to its ultimate demise.
+```
+
+Please save teh kittehs!
+Never commit a git submodule.
+
+If you mistakenly ~~kill a kitten~~ commit a git submodule, then you can ~~time travel~~ revert the commit, depending on whether it was the most recent commit or earlier.
+Use one of the following processes for what works best in your situation.
+
+If it was in your most recent commit, use the following.
+This command will also revert all other changes in the commit.
+
+```shell
+git reset --hard HEAD~1
+```
+
+If it was an earlier commit, use the following process.
+Check out only the submodule folder to a specific commit or remote branch where the folder's changes are not committed.
+
+```shell
+git fetch
+git checkout <remote>/<branch> -- <submodule-folder>
+```
+
+Alternatively, use the log to copy the commit hash, and use that to check out that hash for your submodule folder.
+
+```shell
+git log
+git checkout <commit-hash> -- <submodule-folder>
+```
+
+Finally, to force your cloned repository to use the same submodule as the upstream, pull the changes from upstream, then push to your cloned repository branch.
+
+```shell
+git pull upstream main
+git push
+```
+
+```{seealso}
+[How to undo a committed submodule command](https://stackoverflow.com/a/46500544/2214933).
+```
+
+
 (contributing-documentation-only-label)=
 
 ### Working with only the `plone/documentation` repository
