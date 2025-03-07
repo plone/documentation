@@ -147,8 +147,6 @@ docker run -e ZEO_ADDRESS=zeo:8100 --link zeo plone/plone-backend pack
 ```
 
 In RelStorage mode, pass the connection DSN.
-The following command assumes that the service that runs the Plone instance is named `backend`.
-Replace `backend` with your container's name.
 
 ```shell
 docker run -e RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432'" plone/plone-backend pack
