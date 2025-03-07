@@ -350,6 +350,63 @@ print(f"my {a}nd line")
 ```
 ````
 
+### Tabs
+
+You can use [Sphinx Design](https://sphinx-design.readthedocs.io/en/latest/) to provide code examples or commands for multiple operating systems or software versions in a tabbed interface.
+
+The following snippet is an example of a tab component without synchronization, using a basic tab-set, and will display as shown.
+
+`````{example}
+````{tab-set}
+
+```{tab-item} Label1
+Content 1
+```
+
+```{tab-item} Label2
+Content 2
+```
+
+````
+`````
+
+The following snippet is an example of a tab component with synchronization, where tab selection is linked across multiple tab-sets using a unique sync key, and will display as shown.
+
+`````{example}
+````{tab-set}
+:sync-group: category
+
+```{tab-item} Label1
+:sync: key1
+
+Content 1
+```
+
+```{tab-item} Label2
+:sync: key2
+
+Content 2
+```
+
+````
+
+````{tab-set}
+:sync-group: category
+
+```{tab-item} Label1
+:sync: key1
+
+Content 1
+```
+
+```{tab-item} Label2
+:sync: key2
+
+Content 2
+```
+
+````
+`````
 
 ### Escape literal backticks inline
 
