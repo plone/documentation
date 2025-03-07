@@ -151,7 +151,7 @@ The following command assumes that the service that runs the Plone instance is n
 Replace `backend` with your container's name.
 
 ```shell
-docker run -e RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432'" backend pack
+docker run -e RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432'" plone/plone-backend pack
 ```
 
 In Docker Swarm, if the database is only available on an internal network, it's required to specify the network.
