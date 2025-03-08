@@ -158,6 +158,7 @@ exclude_patterns = [
 suppress_warnings = [
     # "toc.excluded",  # Suppress `WARNING: document isn't included in any toctree`
     "toc.not_readable",  # Suppress `WARNING: toctree contains reference to nonexisting document 'news*'`
+    "myst.strikethrough",  # Suppress `WARNING: Strikethrough is currently only supported in HTML output [myst.strikethrough]`
 ]
 
 
@@ -310,6 +311,7 @@ myst_enable_extensions = [
     "substitution",  # plone.restapi \
     # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
     "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
+    "strikethrough",  # See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-strikethrough
 ]
 
 myst_substitutions = {
