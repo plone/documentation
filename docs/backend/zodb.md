@@ -4,7 +4,7 @@ myst:
     "description": "Zope Object Database (ZODB)"
     "property=og:description": "Zope Object Database (ZODB)"
     "property=og:title": "Zope Object Database (ZODB)"
-    "keywords": "Plone, ZODB, Zope Object Database, RelStorage, ZEO, ZODB Extension Objects"
+    "keywords": "Plone, ZODB, Zope Object Database, RelStorage, ZEO, ZODB Enterprise Objects"
 ---
 
 % TODO: Diátaxis conceptual guide
@@ -37,7 +37,7 @@ Built-in versioning and undo
 : The database allows versioning, enabling rollback to previous states if needed.
 
 Scalability
-: ZODB can be used in standalone applications or scaled with {term}`ZODB Extension Objects` (ZEO) for distributed storage.
+: ZODB can be used in standalone applications or scaled with {term}`ZODB Enterprise Objects` (ZEO) for distributed storage.
   Additionally, ZODB supports the {term}`RelStorage` adapter, which allows it to use relational databases, including PostgreSQL, MySQL, or Oracle, as a backend, providing flexibility for integration with existing database infrastructures.
 
 

@@ -70,8 +70,6 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```{include} /_inc/_install-python-plone61.md
 ```
 
-Plone 6.1 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
-
 ```{warning}
 Python 3.9 will reach [end of life in October 2025](https://devguide.python.org/versions/).
 Do not create a new Plone project with Python 3.9.
