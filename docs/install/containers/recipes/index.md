@@ -122,12 +122,15 @@ It will no longer output the access log, but will continue to output the event l
 
 ## Pack the ZODB
 
+```{versionadded} Plone 6.0.15 and Plone 6.1.1
+```
+
 A common maintenance task of a Plone instance is to [pack the ZODB](https://zodb.org/en/stable/reference/zodb.html#ZODB.DB.pack).
 Packing removes old revisions of objects.
 It is similar to [routine vacuuming in PostgreSQL](https://www.postgresql.org/docs/8.3/routine-vacuuming.html).
 
 The official {doc}`/install/containers/images/backend` container and project containers based on them have a `pack` command to pack the ZODB.
-The command will work in standalone mode, ZEO mode, and RelStorage mode but only with PostgreSQL.
+The command will work in standalone mode, ZEO mode, and with PostgreSQL only in RelStorage mode.
 
 Invoke the command in a running container by passing in the appropriate command for the mode.
 
@@ -146,7 +149,16 @@ docker run -e ZEO_ADDRESS=zeo:8100 --link zeo plone/plone-backend pack
 In RelStorage mode, pass the connection DSN.
 
 ```shell
-docker run -e RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432'" pack
+docker run -e RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432'" plone/plone-backend pack
+```
+
+In Docker Swarm, if the database is only available on an internal network, it's required to specify the network.
+For this situation, it might be easier to use `docker exec` to run the pack command in an existing `plone-backend` container.
+The following command assumes that the service that runs the Plone instance is named `backend`.
+Replace `backend` with your container's name.
+
+```shell
+docker exec RELSTORAGE_DSN="dbname='plone' user='plone' host='db' password='password' port='5432' network='internal" backend pack
 ```
 
 In running containers that use Docker Compose, the command is less complicated.
