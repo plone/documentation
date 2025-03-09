@@ -122,7 +122,7 @@ It will no longer output the access log, but will continue to output the event l
 
 ## Pack the ZODB
 
-```{versionadded} Plone 6.0.15
+```{versionadded} Plone 6.0.15 and Plone 6.1.1
 ```
 
 A common maintenance task of a Plone instance is to [pack the ZODB](https://zodb.org/en/stable/reference/zodb.html#ZODB.DB.pack).
