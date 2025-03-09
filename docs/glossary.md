@@ -554,7 +554,7 @@ react-intl
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
-ZODB Extension Objects
+ZODB Enterprise Objects
 ZEO
     [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
 
