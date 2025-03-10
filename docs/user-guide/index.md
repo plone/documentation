@@ -4,18 +4,18 @@ myst:
     "description": "Plone user guide"
     "property=og:description": "Plone user guide"
     "property=og:title": "Plone user guide"
-    "keywords": "Plone, user, guide"
+    "keywords": "Plone, user, guide, editor, administrator"
 ---
 
 # User guide
 
-This part of the documentation helps you understand how to use Plone effectively, covering essential features, navigation, content management, and other common tasks for site editors and administrators.
+This part of the documentation describes how to use Plone effectively, covering tasks for site editors and administrators.
 
-## Plone User Manual
+```{toctree}
+:maxdepth: 2
 
-[Plone User Manual](https://6.docs.plone.org/volto/user-manual/index.html)
+editor
+% TODO site administrator
+```
 
-
-## Content Editing for Plone
-
-[Content Editing for Plone](https://training.plone.org/content-editing/index.html)
+Addtionally, Plone Training offers {doc}`training:content-editing/index`.
