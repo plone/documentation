@@ -13,10 +13,10 @@ myst:
 
 This is the community-maintained documentation for the Plone content management system.
 
-:::::{grid} 1 1 2 2
+`````{grid} 1 1 2 2
 :gutter: 3 3 4 5
 
-::::{grid-item-card} 
+````{grid-item-card} 
 :link: install/index
 :link-type: doc
 {octicon}`zap;1.5em;sd-text-info`
@@ -24,29 +24,30 @@ Get started
 ^^^
 This part of the documentation helps you find the best way to get started with Plone, depending on what you want to do.
 +++
-```{button-ref} {doc} install/index
+```{button-ref} install/index
 :color: primary
 :expand:
 Go to Get started
 ``` 
-::::
+````
 
-::::{grid-item-card} 
+````{grid-item-card} 
 :link: user-guide/index
 :link-type: doc
 {octicon}`person;1.5em;sd-text-info`
-User guide 
+User guide
 ^^^
 This part of the documentation helps you understand how to use Plone effectively, covering essential features, navigation, content management, and other common tasks for site editors and administrators.
 +++
-```{button-ref} {doc} user-guide/index
+```{button-ref} user-guide/index
+:ref-type: doc
 :color: primary
 :expand:
 Go to User guide
 ```
-::::
+````
 
-::::{grid-item-card}
+````{grid-item-card}
 :link: developer-guide/index
 :link-type: doc
 {octicon}`person-add;1.5em;sd-text-info`
@@ -54,14 +55,15 @@ Developer guide
 ^^^
 This part of the documentation describes how to develop a Plone project.
 +++
-```{button-ref} {doc} developer-guide/index 
+```{button-ref} developer-guide/index 
+:ref-type: doc
 :color: primary
 :expand:
 Go to Developer guide
 ```
-::::
+````
 
-::::{grid-item-card} 
+````{grid-item-card} 
 :link: reference-guide/index
 :link-type: doc
 {octicon}`bookmark;1.5em;sd-text-info`
@@ -69,14 +71,15 @@ Reference guide
 ^^^
 This part of the documentation describes the APIs, functions, modules, and objects included in Plone.
 +++
-```{button-ref} {doc} reference-guide/index 
+```{button-ref} reference-guide/index 
+:ref-type: doc
 :color: primary
 :expand:
 Go to Reference guide
 ```
-::::
+````
 
-::::{grid-item-card} 
+````{grid-item-card} 
 :link: conceptual-guides/index
 :link-type: doc
 {octicon}`light-bulb;1.5em;sd-text-info`
@@ -84,14 +87,15 @@ Conceptual guides
 ^^^
 This part of the documentation provides explanation of concepts to deepen and broaden your understanding of Plone.
 +++
-```{button-ref} {doc} conceptual-guides/index 
+```{button-ref} conceptual-guides/index 
+:ref-type: doc
 :color: primary
 :expand:
 Go to Conceptual guides
 ```
-::::
+````
 
-::::{grid-item-card} 
+````{grid-item-card} 
 :link: contributing/index
 :link-type: doc
 {octicon}`git-pull-request;1.5em;sd-text-info`
@@ -99,14 +103,15 @@ Contributor guide
 ^^^
 This part of the documentation describes how to contribute to Plone, including all its projects and repositories under the Plone GitHub organization.
 +++
-```{button-ref} {doc} contributing/index 
+```{button-ref} contributing/index
+:ref-type: doc
 :color: primary
 :expand:
 Go to Contributor guide
 ```
-::::
+````
 
-:::::
+`````
 
 ```{seealso}
 Read the [documentation for the previous version, Plone 5](https://5.docs.plone.org/).
