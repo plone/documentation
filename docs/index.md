@@ -38,7 +38,7 @@ Go to Get started
 {octicon}`person;1.5em;sd-text-info`
 User guide
 ^^^
-This part of the documentation helps you understand how to use Plone effectively, covering essential features, navigation, content management, and other common tasks for site editors and administrators.
+This part of the documentation describes how to use Plone effectively, covering tasks for site editors and administrators.
 +++
 ```{button-ref} user-guide/index
 :ref-type: doc
