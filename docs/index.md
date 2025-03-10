@@ -22,7 +22,8 @@ This is the community-maintained documentation for the Plone content management 
 {octicon}`zap;1.5em;sd-text-info`
 Get started
 ^^^
-This part of the documentation helps you find the best way to get started with Plone, depending on what you want to do.
+This part of the documentation describes how to get started with Plone.
+Choose from a trying a demo of Plone or installing Plone.
 +++
 ```{button-ref} install/index
 :color: primary
