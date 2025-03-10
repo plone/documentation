@@ -133,9 +133,13 @@ master_doc = "index"
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "spelling_wordlist.txt",
+    "**/CHANGES.md",
     "**/CHANGES.rst",
+    "**/LICENSE.rst",
+    "**/CONTRIBUTORS.md",
     "**/CONTRIBUTORS.rst",
     "**/LICENSE.rst",
+    "**/README.md",
     "**/README.rst",
     "**/eggs",
     "_inc/.*",
@@ -151,6 +155,7 @@ exclude_patterns = [
     "plone.restapi/parts",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "plone.restapi/styles",
     "plone.restapi/var",
     "volto/_inc/*",
 ]
