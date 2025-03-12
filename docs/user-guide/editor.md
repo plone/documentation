@@ -9,4 +9,4 @@ myst:
 
 # Editor guide
 
-See {doc}`/volto/user-manual/index` under {guilabel}`Frontend`.
+See {doc}`/volto/user-manual/index` under {guilabel}`Volto UI`.
