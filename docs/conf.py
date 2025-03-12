@@ -400,6 +400,11 @@ redirects = {
     "manage/frontend": "/volto/addons/index.html",
     "install/create-project": "/install/create-project-cookieplone.html",
     "user-guide/editor": "/volto/user-manual/index.html",
+    "reference-guide/volto-configuration-settings.html": "/volto/configuration/settings-reference.html",
+    "reference-guide/volto-javascript-client.html": "/volto/client/index.html",
+    "reference-guide/plone.restapi-usage.html": "/plone.restapi/docs/source/usage/index.html",
+    "reference-guide/plone.restapi-endpoints.html": "/plone.restapi/docs/source/endpoints/index.html",
+    "reference-guide/plone.api-methods.html": "/plone.api/api/index.html",
 }
 
 
