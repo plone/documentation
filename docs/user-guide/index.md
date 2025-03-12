@@ -18,4 +18,4 @@ editor
 % TODO site administrator
 ```
 
-Addtionally, Plone Training offers {doc}`training:content-editing/index`.
+Additionally, Plone Training offers {doc}`training:content-editing/index`.
