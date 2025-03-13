@@ -58,6 +58,7 @@ extensions = [
     "sphinx_examples",
     "sphinx_reredirects",
     "sphinx_sitemap",
+    "sphinx_tippy",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
     "sphinxcontrib.mermaid",
@@ -138,6 +139,7 @@ exclude_patterns = [
     "**/eggs",
     "_inc/.*",
     "plone.restapi/.*",
+    "plone.restapi/*.md",
     "plone.restapi/bin",
     "plone.restapi/develop-eggs",
     "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
@@ -301,15 +303,14 @@ autodoc_class_signature = "separated"
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
-    "deflist",  # Support definition lists.
-    # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
-    "linkify",  # Identify "bare" web URLs and add hyperlinks.
-    "colon_fence",  # You can also use ::: delimiters to denote code fences,\
-    #  instead of ```.
-    "substitution",  # plone.restapi \
-    # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
+    "attrs_block", # Support parsing of block attributes.
+    "attrs_inline", # Support parsing of inline attributes.
+    "colon_fence",  # You can also use ::: delimiters to denote code fences, instead of ```.
+    "deflist",  # Support definition lists. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
     "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
+    "linkify",  # Identify "bare" web URLs and add hyperlinks.
     "strikethrough",  # See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-strikethrough
+    "substitution",  # Use Jinja2 for substitutions. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
 ]
 
 myst_substitutions = {
@@ -402,6 +403,16 @@ html_baseurl = "https://6.docs.plone.org/"
 # https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
 sitemap_url_scheme = "{link}"
 sitemap_filename = "sitemap-custom.xml"
+
+
+# -- sphinx-tippy configuration ----------------------------------
+tippy_anchor_parent_selector = "article.bd-article"
+tippy_enable_doitips = False
+tippy_enable_wikitips = False
+tippy_props = {
+    "interactive": True,
+    "placement": "auto-end",
+}
 
 
 # -- Options for HTML help output -------------------------------------------------
