@@ -252,60 +252,6 @@ Add the name of the new view `my-view` to the following list:
 
 (classic-ui-template-slots-label)=
 
-### UI Component Demo Views in ClassicUI
-
-Plone's ClassicUI includes special demonstration views that render ready-made examples of interface components using your site's active theme. These live previews help developers verify styling implementation and explore available UI patterns.
-These views work in any context - append to site root or content URLs. No special permissions are required.
-
-#### Accessing Component Demo Views:
-
-Append one of these view names to any Plone site URL:
-
-```
-http://localhost:8080/Plone/@@test-rendering
-http://localhost:8080/Plone/about/@@test-rendering-cheatsheet
-http://localhost:8080/Plone/@@test-rendering-icons
-```
-
-Three dedicated preview tabs are available:
-
-1.  Component Alerts Demo (`@@test-rendering`)
-    Displays Bootstrap-style status message examples:  
-    ```
-    http://localhost:8080/Plone/@@test-rendering
-    ```
-    
-    Shows all alert variants including:
-    - Success/warning/error notifications
-    - Dismissible alerts
-    - Contextual color examples
-
-2. Bootstrap Pattern Library (`@@test-rendering-cheatsheet`)
-   Renders a comprehensive component reference based on Bootstrap's official cheatsheet:
-    ```
-    http://localhost:8080/Plone/@@test-rendering-cheatsheet
-    ```
-    
-    Includes:
-    - Grid layout examples
-    - Form control variants
-    - Navigation components
-    - Interactive element states
-
-3. Icon Showcase (`@@test-rendering-icons`)
-   Presents all icon classes available in the current theme:
-    ```
-    http://localhost:8080/Plone/@@test-rendering-icons
-    ```
-    
-    Includes:
-    - Icon resolver usage examples
-    - Code samples for both URL and tag generation
-
-```{seealso}
-If you are looking for an overview of UI components in the VoltoUI you can find informations on [Storybook](https://6.docs.plone.org/storybook/) currently under [VoltoUI/Contributing to Volto/Style Guide](https://6.docs.plone.org/volto/contributing/style-guide.html) and in the [documentation of the related make commands ](https://6.docs.plone.org/volto/contributing/documentation.html#storybook-entry)
-```
-
 ### Template slots
 
 In the generated template above, we have a `fill-slot` attribute.

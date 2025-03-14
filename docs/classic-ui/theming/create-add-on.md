@@ -141,3 +141,77 @@ $state-colors: map-merge($state-colors, $custom-colors);
 Inside the file `theme/_custom.scss` you can write all your custom CSS/Sass code to adapt the theme to your needs.
 Feel free to add more files inside the `scss/` folder to make your code more readable.
 Don't forget to import your custom files in `scss/theme.scss`.
+
+## Styles Test Rendering
+
+Plone's Classic UI includes special demonstration views that render ready-made examples of interface components using your site's active theme. These live previews help developers verify styling implementation and explore available UI patterns.
+These views work in any context - append to site root or content URLs. No special permissions are required.
+
+### Accessing Component Demo Views:
+
+Append one of these view names to any Plone site URL:
+
+   - /@@test-rendering
+   - /@@test-rendering-cheatsheet 
+   - /@@test-rendering-icons
+
+Three dedicated preview tabs are available:
+
+1.  Component Alerts Demo (`@@test-rendering`)
+    Displays Bootstrap-style status message examples:  
+    - /@@test-rendering
+    
+    Shows all alert variants including:
+    - Success/warning/error notifications
+    - Dismissible alerts
+    - Contextual color examples
+
+    ````{card}
+    ```{image} /_static/test-rendering/test-rendering.png
+    :alt: Alerts Demo
+    :target: /_static/test-rendering/test-rendering.png
+    ```
+    +++
+    _Alerts Demo_
+    ````
+
+2. Bootstrap Pattern Library (`@@test-rendering-cheatsheet`)
+   Renders a comprehensive component reference based on Bootstrap's official cheatsheet:
+    - /@@test-rendering-cheatsheet
+    
+    Includes:
+    - Grid layout examples
+    - Form control variants
+    - Navigation components
+    - Interactive element states
+    - Colormode switcher
+  
+    ````{card}
+    ```{image} /_static/test-rendering/bootstrap-cheatsheet.png
+    :alt: Bootstrap cheatsheet
+    :target: /_static/test-rendering/bootstrap-cheatsheet.png
+    ```
+    +++
+    _Bootstrap cheatsheet_
+    ````
+
+3. Icon Showcase (`@@test-rendering-icons`)
+   Presents all icon classes available in the current theme:
+    - /@@test-rendering-icons
+    
+    Includes:
+    - Icon resolver usage examples
+    - Code samples for both URL and tag generation
+
+    ````{card}
+    ```{image} /_static/test-rendering/icons.png
+    :alt: Icon Showcase
+    :target: /_static/test-rendering/icons.png
+    ```
+    +++
+    _Icon Showcase_
+    ````
+
+```{seealso}
+If you are looking for an overview of UI components in the VoltoUI you can find informations on [Storybook](https://6.docs.plone.org/storybook/) currently under [VoltoUI/Contributing to Volto/Style Guide](https://6.docs.plone.org/volto/contributing/style-guide.html) and in the [documentation of the related make commands ](https://6.docs.plone.org/volto/contributing/documentation.html#storybook-entry)
+```
