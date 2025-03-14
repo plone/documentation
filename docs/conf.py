@@ -103,7 +103,7 @@ linkcheck_ignore = [
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",  # volto
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
-    r"https://browsersl.ist/#",
+    r"https://browsersl.ist/#",  # volto
     # Ignore unreliable sites
     r"https://web.archive.org/",
     r"https://www.gnu.org/",  # Consider removal when upgrading Sphinx

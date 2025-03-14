@@ -15,7 +15,7 @@ This page in the deployment guide covers how to prepare a server environment for
 You will need to prepare your environment with the following items.
 
 ```{note}
-Should we reuse or update {ref}`install-packages-hardware-requirements-label`?
+Should we reuse or update {ref}`create-project-cookieplone-hardware-requirements-label`?
 ```
 
 -   server instance with an operating system that Plone can run on
