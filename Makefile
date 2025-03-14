@@ -48,10 +48,14 @@ venv/bin/python:  ## Setup up Python virtual environment and install requirement
 docs/plone.api:  ## Setup plone.api docs
 	git submodule init
 	git submodule update
-	venv/bin/pip install -e submodules/plone.api/"[test]"
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
 	@echo
 	@echo "Documentation of plone.api initialized."
+
+.PHONY: install-api
+install-api: docs/plone.api
+	venv/bin/pip install plone.api -c submodules/plone.api/constraints.txt
+	venv/bin/pip install --no-deps -e submodules/plone.api/"[test]"
 
 docs/plone.restapi:  ## Setup plone.restapi docs
 	git submodule init
@@ -68,8 +72,7 @@ docs/volto:  ## Setup Volto docs
 	@echo "Documentation of volto initialized."
 
 .PHONY: deps
-deps: venv/bin/python docs/volto docs/plone.restapi docs/plone.api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
-
+deps: venv/bin/python docs/volto docs/plone.restapi install-api  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, and finally create symlinks to the source files.
 
 .PHONY: html
 html: deps  ## Build html
@@ -219,7 +222,8 @@ rtd-pr-preview:  ## Build pull request preview on Read the Docs
 	pip install -r requirements.txt
 	git submodule init
 	git submodule update
-	pip install -e submodules/plone.api[test]
+	pip install plone.api -c submodules/plone.api/constraints.txt
+	pip install --no-deps -e submodules/plone.api[test]
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
