@@ -11,5 +11,8 @@ docs/plone.api
 docs/plone.restapi
 docs/volto
 
+# created on first make command
+plone.api-install
+
 # editor files
 .vscode
