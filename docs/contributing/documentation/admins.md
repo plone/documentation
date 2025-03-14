@@ -103,7 +103,7 @@ The following are example files that you can use to configure your project for p
 
 -   [Plone Sphinx Theme `Makefile`](https://github.com/plone/plone-sphinx-theme/blob/main/Makefile), specifically the `rtd-pr-preview` section.
     This is the command to use to build documentation previews on Read the Docs.
--   [Plone Sphinx Theme `requirements-docs.txt`](https://github.com/plone/plone-sphinx-theme/blob/main/requirements-docs.txt) specifies the requirements to use Plone Sphinx Theme and build the docs.
+-   [Plone Sphinx Theme `pyproject.toml`](https://github.com/plone/plone-sphinx-theme/blob/main/pyproject.toml) specifies the requirements to use Plone Sphinx Theme and build the docs.
 -   [Plone Sphinx Theme `conf.py`](https://github.com/plone/plone-sphinx-theme/blob/main/docs/conf.py) the Sphinx configuration file to build the docs.
 -   [Plone Sphinx Theme `.readthedocs.yaml`](https://github.com/plone/plone-sphinx-theme/blob/main/.readthedocs.yaml) specifies the configuration and Makefile command that Read the Docs uses to build the docs.
 -   [Plone Sphinx Theme `.github/workflows/rtd-pr-preview.yml`](https://github.com/plone/plone-sphinx-theme/blob/main/.github/workflows/rtd-pr-preview.yml) specifies when to build the docs, specifically only when a pull request is opened and there are changes to the documentation files.

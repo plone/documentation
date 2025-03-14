@@ -415,6 +415,13 @@ This is MyST syntax for term ``{term}`React` ``
 ```
 
 
+### Strikethrough
+
+```{example}
+This is MyST markup for ~~strikethrough~~ inline text format.
+```
+
+
 ### Glossary terms
 
 Add a term to the {ref}`glossary-label`, located at {file}`/glossary.md`.
