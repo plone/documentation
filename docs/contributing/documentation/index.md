@@ -175,7 +175,7 @@ git push
 ```
 
 ```{seealso}
-[How to undo a committed submodule command](https://stackoverflow.com/a/46500544/2214933).
+[How to undo a committed submodule command](https://stackoverflow.com/questions/46500441/how-to-undo-a-committed-submodule-command/46500544#46500544).
 ```
 
 

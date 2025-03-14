@@ -138,6 +138,7 @@ exclude_patterns = [
     "**/eggs",
     "_inc/.*",
     "plone.restapi/.*",
+    "plone.restapi/*.md",
     "plone.restapi/bin",
     "plone.restapi/develop-eggs",
     "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
