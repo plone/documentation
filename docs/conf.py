@@ -321,6 +321,7 @@ myst_substitutions = {
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
     "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, or 3.13",
 }
 
 
