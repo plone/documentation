@@ -35,7 +35,10 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 ### Supported web browsers
 
-```{include} /_inc/_install-browser-reqs-volto.md
+```{include} /volto/_inc/_install-browser-reqs-volto.md
+```
+
+```{include} /_inc/_install-browser-reqs-classic-ui.md
 ```
 
 
@@ -67,8 +70,6 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```{include} /_inc/_install-python-plone61.md
 ```
 
-Plone 6.1 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
-
 ```{warning}
 Python 3.9 will reach [end of life in October 2025](https://devguide.python.org/versions/).
 Do not create a new Plone project with Python 3.9.
@@ -95,7 +96,7 @@ Do not create a new Plone project with Python 3.9.
 3.  Enable {term}`corepack` so that Node.js will install {term}`pnpm` as a package manager.
 
     ```shell
-    corepack enable
+    npm i -g corepack@latest && corepack enable
     ```
 
 

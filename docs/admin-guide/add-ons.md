@@ -21,7 +21,7 @@ See {doc}`/volto/development/add-ons/index`.
 
 ## Cookieplone
 
-Use the following instructions if you installed Plone with either Cookieplone or `cookiecutter-plone-starter`.
+Use the following instructions if you installed Plone with Cookieplone.
 
 
 ### Install an add-on
@@ -50,10 +50,6 @@ To actually download and install the new add-on, run the following command.
 
 ```shell
 make backend-build
-```
-
-```{note}
-If you installed Plone using `cookiecutter-plone-starter`, run `make build-backend` instead.
 ```
 
 Now restart the backend.
@@ -114,10 +110,6 @@ To actually download and install the new add-on, run the following command.
 
 ```shell
 make backend-build
-```
-
-```{note}
-If you installed Plone using `cookiecutter-plone-starter`, run `make build-backend` instead.
 ```
 
 Now restart the backend.

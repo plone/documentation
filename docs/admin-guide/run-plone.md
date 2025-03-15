@@ -4,7 +4,7 @@ myst:
     "description": "Run Plone"
     "property=og:description": "Run Plone"
     "property=og:title": "Run Plone"
-    "keywords": "Plone 6, run, start, command, Cookieplone, Buildout, pip, cookiecutter-plone-starter"
+    "keywords": "Plone 6, run, start, command, Cookieplone, Buildout, pip"
 ---
 
 (run-plone-label)=
@@ -36,11 +36,6 @@ pip:
     bin/runwsgi instance/etc/zope.ini
     ```
 
-`cookiecutter-plone-starter`:
-:   ```shell
-    make start-backend
-    ```
-
 For any of these commands, press {kbd}`ctrl-c` to stop the process.
 
 
@@ -51,11 +46,6 @@ If you use the Volto frontend, you need to run the frontend in a separate proces
 Cookieplone:
 :   ```shell
     make frontend-start
-    ```
-
-`cookiecutter-plone-starter`:
-:   ```shell
-    make start-frontend
     ```
 
 For any of these commands, press {kbd}`ctrl-c` to stop the process.
@@ -92,12 +82,19 @@ Buildout:
 
 pip:
 :   ```shell
-    bin/zconsole debug instance/etc/zope.ini
-    ```
-
-`cookiecutter-plone-starter`:
-:   ```shell
-    make -C backend debug
+    bin/zconsole debug instance/etc/zope.conf
     ```
 
 For any of these commands, press {kbd}`ctrl-d` to stop the process.
+
+### Set a "fake" request
+
+To make sure that the request is fully set up for any code that uses `zope.globalrequest.getRequest`, you might need to use the following code.
+
+```python
+from Testing.makerequest import makerequest
+from zope.globalrequest import setRequest
+
+app = makerequest(app)
+setRequest(app.REQUEST)
+```

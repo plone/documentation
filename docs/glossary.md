@@ -51,11 +51,6 @@ plone/generator-volto
     [`@plone/generator-volto`](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
     See {ref}`upgrade-18-cookieplone-label`.
 
-cookiecutter-plone-starter
-    [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) creates a Plone project that you can install using {term}`Make`.
-    It generates files for installing and configuring both the frontend and backend.
-    For the backend, it uses {term}`cookiecutter-zope-instance` to generate configuration files for a {term}`Zope instance`.
-
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a {term}`Zope instance`.
 
@@ -312,7 +307,6 @@ Corepack
     In practical terms, Corepack lets you use {term}`Yarn`, {term}`npm`, and {term}`pnpm` without having to install them.
 
     Corepack is distributed by default with all recent Node.js versions.
-    Run `corepack enable` to install the required Yarn and pnpm binaries on your path.
 
 Git
     [Git](https://git-scm.com/) is a free and open source distributed version control system.
@@ -560,11 +554,20 @@ react-intl
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
+ZODB Enterprise Objects
 ZEO
     [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
 
+Zope Object Database
 ZODB
     [A native object database for Python](https://zodb.org/en/latest/).
+
+`FileStorage`
+    `FileStorage` is a Python class in {term}`ZODB` that saves data in a file.    
+
+    ```{seealso}
+    https://zodb.org/en/latest/reference/storages.html#filestorage
+    ```
 
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
@@ -827,7 +830,7 @@ lazy load
 lazy loading
 lazy loaded
     Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
-    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path, which translates into reduced page load times.
+    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Critical_rendering_path), which translates into reduced page load times.
 
 reference implementation
     A reference implementation is a program that implements all requirements from a corresponding specification.

@@ -21,7 +21,6 @@ In this part of the documentation, you can find how to install, operate, and con
 /install/create-project-cookieplone
 install-buildout
 install-pip
-/install/create-project
 ```
 
 ```{toctree}
@@ -30,6 +29,7 @@ install-pip
 
 run-plone
 add-site
+zope-manager-users
 configure-zope
 add-ons
 export-import

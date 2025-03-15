@@ -7,6 +7,7 @@ sphinx-examples
 sphinx-notfound-page  # Documentation only
 sphinx-reredirects
 sphinx-sitemap
+sphinx-tippy
 sphinxcontrib.httpdomain  # plone.restapi
 sphinxcontrib.httpexample  # plone.restapi
 sphinxcontrib-video
