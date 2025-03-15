@@ -1,10 +1,10 @@
 ---
 myst:
   html_meta:
-    "description": "How to add a Control Panel"
-    "property=og:description": "How to add a Control Panel"
-    "property=og:title": "Control panels"
-    "keywords": "Plone, Add, Control Panel"
+    "description": "How to create a control panel"
+    "property=og:description": "How to create a control panel"
+    "property=og:title": "Create a control panel"
+    "keywords": "Plone, create, control panel, plonecli, registry"
 ---
 
 (backend-controlpanels-label)=
