@@ -58,6 +58,7 @@ extensions = [
     "sphinx_examples",
     "sphinx_reredirects",
     "sphinx_sitemap",
+    "sphinx_tippy",
     "sphinxcontrib.httpdomain",  # plone.restapi
     "sphinxcontrib.httpexample",  # plone.restapi
     "sphinxcontrib.mermaid",
@@ -102,7 +103,7 @@ linkcheck_ignore = [
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
     r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",  # volto
     r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
-    r"https://browsersl.ist/#",
+    r"https://browsersl.ist/#",  # volto
     # Ignore unreliable sites
     r"https://web.archive.org/",
     r"https://www.gnu.org/",  # Consider removal when upgrading Sphinx
@@ -116,8 +117,6 @@ linkcheck_allowed_redirects = {
 linkcheck_anchors = True
 linkcheck_timeout = 5
 linkcheck_retries = 1
-# See https://github.com/plone/documentation/issues/1815
-linkcheck_report_timeouts_as_broken = False
 
 # The suffix of source filenames.
 source_suffix = {
@@ -140,6 +139,7 @@ exclude_patterns = [
     "**/eggs",
     "_inc/.*",
     "plone.restapi/.*",
+    "plone.restapi/*.md",
     "plone.restapi/bin",
     "plone.restapi/develop-eggs",
     "plone.restapi/docs/source/glossary.md",  # There can be only one Glossary.
@@ -303,15 +303,14 @@ autodoc_class_signature = "separated"
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
-    "deflist",  # Support definition lists.
-    # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
-    "linkify",  # Identify "bare" web URLs and add hyperlinks.
-    "colon_fence",  # You can also use ::: delimiters to denote code fences,\
-    #  instead of ```.
-    "substitution",  # plone.restapi \
-    # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
+    "attrs_block", # Support parsing of block attributes.
+    "attrs_inline", # Support parsing of inline attributes.
+    "colon_fence",  # You can also use ::: delimiters to denote code fences, instead of ```.
+    "deflist",  # Support definition lists. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
     "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
+    "linkify",  # Identify "bare" web URLs and add hyperlinks.
     "strikethrough",  # See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-strikethrough
+    "substitution",  # Use Jinja2 for substitutions. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
 ]
 
 myst_substitutions = {
@@ -323,6 +322,7 @@ myst_substitutions = {
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
     "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, or 3.13",
 }
 
 
@@ -404,6 +404,16 @@ html_baseurl = "https://6.docs.plone.org/"
 # https://sphinx-sitemap.readthedocs.io/en/latest/advanced-configuration.html#customizing-the-url-scheme
 sitemap_url_scheme = "{link}"
 sitemap_filename = "sitemap-custom.xml"
+
+
+# -- sphinx-tippy configuration ----------------------------------
+tippy_anchor_parent_selector = "article.bd-article"
+tippy_enable_doitips = False
+tippy_enable_wikitips = False
+tippy_props = {
+    "interactive": True,
+    "placement": "auto-end",
+}
 
 
 # -- Options for HTML help output -------------------------------------------------

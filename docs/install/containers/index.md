@@ -55,7 +55,7 @@ The system requirements include those required by Docker itself.
 -   [Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
 
 Plone 6 itself requires memory and disk space in addition to those of Docker alone.
-See its {ref}`install-packages-hardware-requirements-label`.
+See its {ref}`create-project-cookieplone-hardware-requirements-label`.
 
 
 ### Install Docker

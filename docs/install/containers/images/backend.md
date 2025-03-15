@@ -222,7 +222,7 @@ services:
 | `CORS_ALLOW_HEADERS` | A comma separated list of request headers allowed to be sent by the client, for example `X-My-Header` | `Accept,Authorization,Content-Type,X-Custom-Header` |
 | `CORS_MAX_AGE` | Indicates how long the results of a preflight request can be cached | `3600` |
 
-These variables are used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+These variables are used to configure [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS).
 
 (containers-images-backend-add-ons-label)=
 
