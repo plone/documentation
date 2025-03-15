@@ -10,7 +10,7 @@
  */
 "use strict";
 
-var title_repository = 'Plone training';
+var title_repository = 'Plone documentation';
 
 
 /**
