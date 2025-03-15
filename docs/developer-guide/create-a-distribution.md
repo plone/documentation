@@ -295,8 +295,8 @@ Then add it to your {file}`dependencies.zcml` file.
   <!-- List all packages your distribution depends on here -->
   <include package="plone.volto" />
   <include package="plone.restapi" />
-  <include package="collective.person" />
   <include package="plone.distribution" />
+  <include package="collective.person" />
 
 </configure>
 ```
