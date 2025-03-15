@@ -21,7 +21,6 @@ annotations
 behaviors
 configuration-registry
 content-types/index
-control-panels
 fields
 global-utils
 indexing
