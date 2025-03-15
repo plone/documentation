@@ -9,35 +9,38 @@ myst:
 
 (backend-controlpanels-label)=
 
-# Control panels
+# Create a control panel
 
-## Adding a control panel
+There are two approaches to create a control panel for your Plone add-on:
 
-There are two approaches to creating a control panel for your Plone add-on:
+-   [`plonecli`](https://pypi.org/project/plonecli/)
+-   manual
 
-### Approach 1: Using plonecli
 
-To add a control panel to your add-on, you can use [`plonecli`](https://pypi.org/project/plonecli/) as follows:
+## `plonecli`
+
+To add a control panel to your add-on, you can use [`plonecli`](https://pypi.org/project/plonecli/) as follows.
 
 ```shell
 plonecli add controlpanel
 ```
 
-This will create the control panel Python file in the control panel's folder where you can define your control panel schema fields.
+This creates the control panel Python file in the control panel's folder where you can define your control panel schema fields.
 
-### Approach 2: Creating a Custom Control Panel Manually
 
-Creating a custom control panel involves these main steps:
+## Manual
 
-1. Define an interface for your settings
-2. Create a form based on that interface
-3. Register the control panel view in ZCML
-4. Add the control panel to the Plone control panel listing
-5. Set default values in the registry
+To manually create a control panel, go through the following steps.
 
-#### 1. Define the Settings Interface and Form
+-   Define the settings interface and form.
+-   Register the control panel view in ZCML.
+-   Add the control panel to the Plone control panel listing.
+-   Set default values in the registry.
 
-First, create a Python module that defines your control panel's settings interface and form class:
+
+### Define the settings interface and form
+
+Create a Python module, {file}`mypackage/controlpanel/settings.py`, that defines your control panel's settings interface and form class as follows.
 
 ```python
 # mypackage/controlpanel/settings.py
@@ -76,9 +79,10 @@ class MyControlPanelForm(RegistryEditForm):
 MyControlPanelView = layout.wrap_form(MyControlPanelForm, ControlPanelFormWrapper)
 ```
 
-#### 2. Register the Control Panel View in ZCML
 
-Next, register the control panel view in ZCML:
+### Register the control panel view
+
+Create a file {file}`mypackage/controlpanel/configure.zcml` with the following content to register the control panel view in ZCML.
 
 ```xml
 <!-- mypackage/controlpanel/configure.zcml -->
@@ -97,8 +101,9 @@ Next, register the control panel view in ZCML:
 </configure>
 ```
 
-Make sure to include this configure.zcml from your package's main configure.zcml:
+Make sure to include the above file in your package's main {file}`mypackage/configure.zcml` as shown by the highlighted line below.
 
+{emphasize-lines="9"}
 ```xml
 <!-- mypackage/configure.zcml -->
 <configure
@@ -113,9 +118,9 @@ Make sure to include this configure.zcml from your package's main configure.zcml
 </configure>
 ```
 
-#### 3. Add the Control Panel Entry
+### Add the control panel entry
 
-Create a controlpanel.xml in your package's GenericSetup profile to add your control panel to the Plone control panel listing:
+Create a {file}`mypackage/profiles/default/controlpanel.xml` in your package's GenericSetup profile with the following content to add your control panel to the Plone control panel listing.
 
 ```xml
 <!-- mypackage/profiles/default/controlpanel.xml -->
@@ -135,16 +140,28 @@ Create a controlpanel.xml in your package's GenericSetup profile to add your con
 </object>
 ```
 
-The category attribute can be one of:
-- `plone-general` - General settings
-- `plone-content` - Content-related settings
-- `plone-users` - Users and groups settings
-- `plone-security` - Security settings
-- `plone-advanced` - Advanced settings
+The category attribute can be one of the following values.
+These values correspond to the groups in Site Setup.
 
-#### 4. Set Default Values in the Registry
+`plone-general`
+:   General settings
 
-Define default values for your settings in registry.xml:
+`plone-content`
+:   Content-related settings
+
+`plone-users`
+:   Users and groups settings
+
+`plone-security`
+:   Security settings
+
+`plone-advanced`
+:   Advanced settings
+
+
+### Set default values in the registry
+
+Define default values for your settings in {file}`mypackage/profiles/default/registry.xml`.
 
 ```xml
 <!-- mypackage/profiles/default/registry.xml -->
@@ -158,9 +175,10 @@ Define default values for your settings in registry.xml:
 </registry>
 ```
 
-#### 5. Accessing Your Settings in Code
 
-You can access your settings in Python code as follows:
+### Access your settings in code
+
+You can access your settings in Python code as follows.
 
 ```python
 from plone.registry.interfaces import IRegistry
@@ -174,12 +192,13 @@ my_setting_value = settings.my_setting
 my_choice_value = settings.my_choice
 ```
 
-## Registering a Control panel
 
-To manually register a view as a control panel, add the following registration to your `/profiles/default/controlpanel.xml`.
+## Register a control panel
+
+To manually register a view as a control panel, add the following registration to your {file}`/profiles/default/controlpanel.xml`.
 
 ```xml
-  <?xml version="1.0"?>
+<?xml version="1.0"?>
   <object
       name="portal_control-panel"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
@@ -199,11 +218,10 @@ To manually register a view as a control panel, add the following registration t
   </object>
 ```
 
-## Advanced Topics
 
-### Using FieldSet for Grouping Fields
+## Use `FieldSet` to group fields
 
-For complex control panels, you might want to group fields together:
+For complex control panels, you can group fields together as in the following example.
 
 ```python
 from plone.supermodel import model
@@ -235,39 +253,59 @@ class IMyControlPanelSettings(Interface):
     )
 ```
 
-### Common Schema Fields
 
-Here are some commonly used schema field types:
+## Common schema fields
 
-- `schema.TextLine`: For single-line text
-- `schema.Text`: For multi-line text
-- `schema.Bool`: For boolean values
-- `schema.Int`: For integer values
-- `schema.Float`: For floating-point values
-- `schema.Choice`: For selection from a list of values
-- `schema.Datetime`: For date and time values
-- `schema.List`: For list of values
+The following is a list of commonly used schema field types.
 
-### Note on Updating Control Panel Fields
+`schema.TextLine`
+:   For single-line text
 
-When you modify the fields in your control panel settings interface, the changes won't be automatically reflected in existing sites. You'll need to:
+`schema.Text`
+:   For multi-line text
 
-1. Run the appropriate upgrade steps, or
-2. Reinstall your add-on, or
-3. Test with a fresh site installation
+`schema.Bool`
+:   For boolean values
+
+`schema.Int`
+:   For integer values
+
+`schema.Float`
+:   For floating-point values
+
+`schema.Choice`
+:   For selection from a list of values
+
+`schema.Datetime`
+:   For date and time values
+
+`schema.List`
+:   For list of values
+
+
+## Modify control panel fields
+
+When you modify the fields in your control panel settings interface, the changes won't be automatically reflected in existing sites.
+You'll need to perform one or more of the following steps.
+
+-   Run the appropriate upgrade steps.
+-   Reinstall your add-on.
+-   Test with a fresh site installation.
+
 
 ## Troubleshooting
 
 If your control panel doesn't appear or doesn't work as expected:
 
-1. Verify that all ZCML is properly registered
-2. Check for errors in the Plone error log
-3. Ensure your GenericSetup profiles are correctly installed
-4. Validate that the interface path in registry.xml matches your actual Python path
+-   Verify that all ZCML is properly registered
+-   Check for errors in the Plone error log
+-   Ensure your GenericSetup profiles are correctly installed
+-   Validate that the interface path in registry.xml matches your actual Python path
 
-## Complete Example
 
-Below is a complete file structure for a simple add-on with a control panel:
+## Example file structure
+
+Below is a complete example file structure for a basic add-on with a control panel.
 
 ```
 mypackage/
