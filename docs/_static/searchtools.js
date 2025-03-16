@@ -109,7 +109,7 @@ function _getBreadcrumbs(item, linkUrl) {
         return `<a href="/${el.path}">${el.title}</a>` 
       })
   markup.push(`<span class="lastbreadcrumb">${item[1]}</span>`)
-  return markup.join('<span class="pathseparator">&gt;</span>');
+  return markup.join('<span class="pathseparator"> &gt; </span>');
 }
 
 const _displayItem = (item, searchTerms) => {
