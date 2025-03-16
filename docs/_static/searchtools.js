@@ -3,6 +3,31 @@
  */
 "use strict";
 
+var title_repository = 'Plone documentation';
+
+/**
+ * Return array with titles of ancestors of file.
+ * @param {number} idx - The index of the result item in global list of files
+ * @returns array
+ */
+function _getParentTitles(idx, docNames, titles) {
+  let path = docNames[idx]
+  let parentpathtokens = path.split('/').slice(0, -1);
+
+  let parentTitles = parentpathtokens.map((el, index) => {
+    let foo = `${parentpathtokens.slice(0, index+1).join('/')}`
+    let parentId = docNames.indexOf(foo);
+    if (parentId === -1) {
+      foo = `${parentpathtokens.slice(0, index+1).join('/')}/index`
+      parentId = docNames.indexOf(foo);
+    }
+    let title = parentId === -1 ? title_repository : titles[parentId];
+    return title
+  })
+
+  return parentTitles
+}
+
 /**
  * Simple result scoring code.
  */
@@ -58,6 +83,34 @@ const _removeChildren = (element) => {
 const _escapeRegExp = (string) =>
   string.replace(/[.*+\-?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
 
+function _getBreadcrumbs(item, linkUrl) {
+  // No breadcrumbs for top level pages
+  if (item[0].split('/')[1] == 'index') {
+    return null
+  }
+  let parentTitles = item[6];
+  
+  let parentDefaultTitles = [
+    "Plone documentation",
+    "Documentation for Plone developers"
+  ];
+  parentTitles = Array.isArray(parentTitles) ? parentTitles : parentDefaultTitles;      
+  let pathTokens = item[0].split('/')
+    .slice(0, -1);
+  let pathArray = pathTokens.map((el, index) => {
+    return {
+      "path": pathTokens.slice(0, index+1).join('/'),
+      "title": parentTitles[index]
+    }
+  })
+  let markup = pathArray
+    .map((el, idx) => {
+        return `<a href="/${el.path}">${el.title}</a>` 
+      })
+  markup.push(`<span class="lastbreadcrumb">${item[1]}</span>`)
+  return markup.join('<span class="pathseparator"> &gt; </span>');
+}
+
 const _displayItem = (item, searchTerms, highlightTerms) => {
   const docBuilder = DOCUMENTATION_OPTIONS.BUILDER;
   const docFileSuffix = DOCUMENTATION_OPTIONS.FILE_SUFFIX;
@@ -71,7 +124,7 @@ const _displayItem = (item, searchTerms, highlightTerms) => {
   // Add a class representing the item's type:
   // can be used by a theme's CSS selector for styling
   // See SearchResultKind for the class names.
-  listItem.classList.add(`kind-${kind}`);
+  // listItem.classList.add(`kind-${kind}`);
   let requestUrl;
   let linkUrl;
   if (docBuilder === "dirhtml") {
@@ -87,6 +140,16 @@ const _displayItem = (item, searchTerms, highlightTerms) => {
     requestUrl = contentRoot + docName + docFileSuffix;
     linkUrl = docName + docLinkSuffix;
   }
+
+  let breadcrumbs = _getBreadcrumbs(item, linkUrl);
+  if (breadcrumbs) {
+    let breadcrumbsNode = document.createElement("div");  
+    breadcrumbsNode.innerHTML = breadcrumbs;
+    breadcrumbsNode.classList.add("breadcrumbs");
+    listItem.appendChild(breadcrumbsNode);
+  }
+
+  // Title links to chapter
   let linkEl = listItem.appendChild(document.createElement("a"));
   linkEl.href = linkUrl + anchor;
   linkEl.dataset.score = score;
@@ -345,7 +408,7 @@ const Search = {
             null,
             score + boost,
             filenames[file],
-            SearchResultKind.title,
+            _getParentTitles(file, docNames, titles),
           ]);
         }
       }
@@ -415,6 +478,7 @@ const Search = {
   query: (query) => {
     const [searchQuery, searchTerms, excludedTerms, highlightTerms, objectTerms] = Search._parseQuery(query);
     const results = Search._performSearch(searchQuery, searchTerms, excludedTerms, highlightTerms, objectTerms);
+    const qresults = results;
 
     // for debugging
     //Search.lastresults = results.slice();  // a copy
@@ -598,8 +662,8 @@ const Search = {
         "",
         null,
         score,
-        filenames[file],
-        SearchResultKind.text,
+        filenames[file],        
+        _getParentTitles(file, docNames, titles)
       ]);
     }
     return results;
