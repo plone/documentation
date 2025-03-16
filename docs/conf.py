@@ -132,9 +132,13 @@ master_doc = "index"
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "spelling_wordlist.txt",
+    "**/CHANGES.md",
     "**/CHANGES.rst",
+    "**/LICENSE.rst",
+    "**/CONTRIBUTORS.md",
     "**/CONTRIBUTORS.rst",
     "**/LICENSE.rst",
+    "**/README.md",
     "**/README.rst",
     "**/eggs",
     "_inc/.*",
@@ -151,6 +155,7 @@ exclude_patterns = [
     "plone.restapi/parts",
     "plone.restapi/performance",
     "plone.restapi/src",
+    "plone.restapi/styles",
     "plone.restapi/var",
     "volto/_inc/*",
 ]
@@ -394,6 +399,12 @@ redirects = {
     "install/install-from-packages": "/install/create-project.html",
     "manage/frontend": "/volto/addons/index.html",
     "install/create-project": "/install/create-project-cookieplone.html",
+    "user-guide/editor": "/volto/user-manual/index.html",
+    "reference-guide/volto-configuration-settings.html": "/volto/configuration/settings-reference.html",
+    "reference-guide/volto-javascript-client.html": "/volto/client/index.html",
+    "reference-guide/plone.restapi-usage.html": "/plone.restapi/docs/source/usage/index.html",
+    "reference-guide/plone.restapi-endpoints.html": "/plone.restapi/docs/source/endpoints/index.html",
+    "reference-guide/plone.api-methods.html": "/plone.api/api/index.html",
 }
 
 
