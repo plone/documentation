@@ -9,4 +9,4 @@ myst:
 
 # Contributing to Volto
 
-See {doc}`/volto/contributing/index` under {guilabel}`Frontend`.
+See {doc}`/volto/contributing/index` under {guilabel}`Volto UI`.

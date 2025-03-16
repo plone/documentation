@@ -60,20 +60,3 @@ If you are following a [Plone training](https://training.plone.org/), it should 
 
 {doc}`Install Plone as a contributor </contributing/index>`
 :   This option is for developers who want to contribute to Plone and its packages.
-
-
-(get-started-learn-more-label)=
-
-## Learn more about Plone
-
-The {doc}`/conceptual-guides/index` explain concepts to help you understand Plone.
-
-The community has created a set of [Plone trainings](https://training.plone.org/) which are hosted separately from the documentation.
-Plone trainings take place at every annual Plone Conference.
-
-
-(get-started-contribute-label)=
-
-## Contribute to Plone
-
-See the {doc}`Contributor Guide </contributing/index>` to learn how to participate in the Plone community and contribute to our open source software. 
