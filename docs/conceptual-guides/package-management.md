@@ -59,6 +59,10 @@ You or your development tools, such as GNU Make, must perform that step.
 
 ## Manage frontend Node.js packages
 
-```{todo}
-Why do we use pnpm?
-```
+[pnpm](https://pnpm.io/) is a fast, storage-efficient package manager with built-in workspace support, making it ideal for monorepos.
+
+- Fast installs – Links dependencies instead of duplicating them, reducing install times.
+- Storage efficiency – Uses a content-addressable store, sharing packages globally to save disk space.
+- Built-in workspaces – `pnpm workspaces` allow seamless management of multiple packages in a monorepo.
+- Strict dependency isolation – Prevents accidental usage of undeclared dependencies.
+- Optimized CI/CD – Faster caching and reduced network requests improve build performance.
