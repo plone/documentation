@@ -1,0 +1,17 @@
+/*
+  Remove the external link icon from Plone Sphinx Theme for links
+  in submodules that refer to Plone 6 Documentation via Intersphinx.
+  Although these links have `external` in their class, they are
+  actually internal to Plone 6 Documentation.
+*/
+.reference.external::after {
+  all: unset;
+}
+a:not([title="(in Plone Documentation v6)"]).reference.external::after {
+  margin-left: .3em;
+  display: inline-block;
+  content: var(--pst-icon-external-link);
+  white-space: nowrap;
+  font: var(--fa-font-solid);
+  font-size: .75em;
+}
