@@ -91,14 +91,24 @@ Use [Shimmer](http://example.com) for cleaner whiter teeth.
 ```
 
 
-### Images and figures
+(media-specifications)=
 
-[Figures](https://docutils.sourceforge.io/docs/ref/rst/directives.html#figure) allow a caption and legend, whereas [images](https://docutils.sourceforge.io/docs/ref/rst/directives.html#images) do not.
-However we can {ref}`enhance images with cards <enhance-images-label>` to add a caption and more features.
+### Media specifications
 
-Use `image` for anything but diagrams.
+This section describes the specifications for images, figures, videos, diagrams, and other media.
 
-Use `figure` for diagrams.
+
+(width-of-media)=
+
+#### Width of media
+
+The main content area of a page in the documentation is 790 pixels wide.
+When taking screenshots or videos, resize your browser window, or try to limit the width of your media.
+This will preserve legibility of images and videos when displayed inline.
+
+If you {ref}`enhance-images-label`, constrain the width of your media to 760 pixels, to accommodate the padding and margins from the enhancement.
+
+If you don't enhance images, constrain the width of your media to 790 pixels.
 
 
 (static-assets-label)=
@@ -115,20 +125,9 @@ Don't use file-relative paths.
 Configuration in the {file}`conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
 
 
-#### Width of media
+(enhance-media-label)=
 
-The main content area of a page in the documentation is 790 pixels wide.
-When taking screenshots or videos, resize your browser window, or try to limit the width of your media.
-This will preserve legibility of images and videos when displayed inline.
-
-If you {ref}`enhance-images-label`, constrain the width of your media to 760 pixels, to accommodate the padding and margins from the enhancement.
-
-If you don't enhance images, constrain the width of your media to 790 pixels.
-
-
-(enhance-images-label)=
-
-#### Enhance images
+#### Enhance media
 
 You can use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
 
@@ -164,6 +163,30 @@ The following MyST example will display as shown below.
 ````{example}
 ```{image} /_static/standards.png
 :alt: XKCD "Standards" comic strip
+```
+````
+
+
+### Images and figures
+
+[Figures](https://docutils.sourceforge.io/docs/ref/rst/directives.html#figure) allow a caption and legend, whereas [images](https://docutils.sourceforge.io/docs/ref/rst/directives.html#images) do not.
+However, we can {ref}`enhance images with cards <enhance-media-label>` to add a caption and more features.
+
+Use `image` for anything but diagrams.
+
+Use `figure` for diagrams.
+
+```{seealso}
+{ref}`media-specifications`
+```
+
+
+#### Image example
+
+The following is an example of an image that occupies the full width of the content area without {ref}`media enhancement <enhance-media-label>`.
+
+````{example}
+```{image} /_static/caching/caching-disabled.png
 ```
 ````
 
@@ -232,6 +255,10 @@ Example MyST syntax is shown below.
 ````
 `````
 
+```{seealso}
+{ref}`media-specifications`
+```
+
 
 ### Video - remote
 
@@ -272,6 +299,10 @@ For an in depth discussion of privacy issues, see [How to embed YouTube videos w
 -   Vimeo's [supported player parameters](https://help.vimeo.com/hc/en-us/articles/12426260232977-About-Player-parameters#h_01FNYA7F7GKWE17XDQJPMBC058)
 ```
 
+```{seealso}
+{ref}`media-specifications`
+```
+
 
 ### Diagrams and graphs with Mermaid
 
@@ -307,6 +338,10 @@ block-beta
 ```
 ````
 
+```{seealso}
+{ref}`media-specifications`
+```
+
 
 ### Diagrams and graphs with Graphviz
 
@@ -327,6 +362,10 @@ The following MyST example will display as shown below.
     }
 ```
 ````
+
+```{seealso}
+{ref}`media-specifications`
+```
 
 
 ### Code block
