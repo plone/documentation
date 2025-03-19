@@ -40,9 +40,13 @@ Plone events can be scoped:
 -   per behavior or marker interface
 
 
-### Register an event handler on your content type's creation
+### Register an event handler on content type creation
 
-In your `.product/your/product/configure.zcml` insert:
+The following example demonstrates how to register an event handler when a content type is created.
+
+In your {file}`.product/your/product/configure.zcml` insert the following code.
+
+{lineno-start=1}
 ```xml
 <subscriber
     for=".interfaces.IMyContentTypeClass
@@ -50,40 +54,46 @@ In your `.product/your/product/configure.zcml` insert:
     handler=".your_python_file.your_method"
     />
 ```
+
 The second line defines to which interface you want to bind the execution of your code. 
-Here, the event handler code will only be executed if the object is a content-type providing the interface `.interfaces.IMyContentTypeClass`. 
-If you want this to be interface-agnostic, insert an asterix `*` as a wildcard instead.
+Here, the event handler code will only be executed if the object is a content type providing the interface `.interfaces.IMyContentTypeClass`.
+If you want this to be interface agnostic, insert an asterix `*` as a wildcard instead.
 
-The third line defines the event on which this should happen, which is here ‘IObjectCreatedEvent'. 
-For more available possible events to be used as a trigger, see {ref}`event-handlers` 
+The third line defines the event on which this should happen, which is `IObjectCreatedEvent`. 
+For more available possible events to use as a trigger, see {ref}`subscribers-event-handlers`. 
 
-The fourth line gives the path to the callable (function) that is supposed to be executed.
+The fourth line gives the path to the callable function to be executed.
 
-Create your `.product/your/product/your_python_file.py` and insert:
+Create your {file}`.product/your/product/your_python_file.py` and insert the following code.
+
 ```python
 def your_subscriber(object, event):
-    ...
-    # do sth with your created contenttype
+    # do something with your created content type
 ```
 
-### Subscribing using ZCML
 
-Subscribing to a global event using {term}`ZCML`.
+### Subscribe to an event using ZCML
+
+Subscribe to a global event using {term}`ZCML` by inserting the following code in your {file}`.product/your/product/configure.zcml`.
+
 ```xml
 <subscriber
     for="Products.PlonePAS.events.UserLoggedOutEvent"
     handler=".smartcard.clear_extra_cookies_on_logout"
     />
 ```
-For this event, the Python code in `smartcard.py` would be:
+
+For this event, the Python code in {file}`smartcard.py` would be the following.
+
 ```python
 def clear_extra_cookies_on_logout(event):
     # What event contains depends on the
     # triggerer of the event and event class
     request = event.object.REQUEST
-    ...
 ```
-Custom event example subscribing to all `IMyEvents` when fired by `IMyObject`:
+
+The following example for a custom event subscribes content types to all `IMyEvents` when fired by `IMyObject`.
+
 ```xml
 <subscriber
     for=".interfaces.IMyObject
@@ -91,7 +101,9 @@ Custom event example subscribing to all `IMyEvents` when fired by `IMyObject`:
     handler=".content.MyObject.myEventHandler"
     />
 ```
-Life cycle events example:
+
+The following example shows how to subscribe a content type to the life cycle event.
+
 ```xml
 <subscriber
     zcml:condition="installed zope.lifecycleevent"
@@ -101,11 +113,12 @@ Life cycle events example:
     />
 ```
 
-### Subscribing using Python
 
-The following subscription is valid through the process life cycle. In unit tests, it is important to clear test event handlers between the test steps.
+### Subscribe to an event using Python
 
-Example:
+The following example shows how subscription is valid through the process life cycle.
+In unit tests, it is important to clear test event handlers between the test steps.
+
 ```python
 import zope.component
 
@@ -121,11 +134,13 @@ gsm = zope.component.getGlobalSiteManager()
 gsm.registerHandler(my_event_handler, (IMyObject,IMyEvent))
 ```
 
-## Firing an event
+
+## Fire an event
 
 Use `zope.event.notify()` to fire event objects to their subscribers.
 
-Example of how to fire an event in unit tests:
+The following code shows how to fire an event in unit tests.
+
 ```python
 import zope.event
 from plone.postpublicationhook.event import AfterPublicationEvent
@@ -134,24 +149,32 @@ event = AfterPublicationEvent(self.portal, self.portal.REQUEST)
 zope.event.notify(event)
 ```
 
+
+(subscribers-event-types-label)=
+
 ## Event types
+
+Plone has the following types of events.
+
 
 ### Creation events
 
-`zope.lifecycleevent.IObjectCreatedEvent` is fired for all Zopeish objects when they are being created (they don't necessarily need to be content objects) or being copied (IObjectCopiedEvent).
+`zope.lifecycleevent.IObjectCreatedEvent` is fired for all Zope-ish objects when they are created, or copied via `IObjectCopiedEvent`.
+They don't have to be content objects.
 
 ### Modified events
 
-`zope.lifecycleevent.IObjectModifiedEvent`
-called for creation-stage events as well, unlike the previous event type.
+`zope.lifecycleevent.IObjectModifiedEvent` is called for creation stage events as well, unlike the previous event type.
 
 ### Delete events
 
-Delete events can be fired several times for the same object. Some delete event transactions are rolled back.
+Delete events can be fired several times for the same object.
+Some delete event transactions are rolled back.
 
 ### Copy events
 
-`zope.lifecycleevent.IObjectCopiedEvent` is triggered when an object is copied (will also fire IObjectCreatedEvent event code).
+`zope.lifecycleevent.IObjectCopiedEvent` is triggered when an object is copied.
+It will also fire `IObjectCreatedEvent` event code.
 
 ### Workflow events
 
@@ -161,21 +184,23 @@ Delete events can be fired several times for the same object. Some delete event 
 
 The DCWorkflow events are low-level events that can tell you a lot about the previous and current states.
 
-`Products.CMFCore.interfaces.IActionSucceededEvent` this is a higher level event that is more commonly used to react after a workflow action has completed.
+`Products.CMFCore.interfaces.IActionSucceededEvent` is a higher level event that is more commonly used to react after a workflow action has completed.
 
 ### Zope startup events
 
-`zope.processlifetime.IProcessStarting` is triggered after component registry has been loaded and Zope is starting up.
+`zope.processlifetime.IProcessStarting` is triggered after the component registry has been loaded and Zope is starting up.
 
 `zope.processlifetime.IDatabaseOpened` is triggered after the main ZODB database has been opened.
 
-(event-handlers)=
 
-## Event Handlers
+(subscribers-event-handlers)=
 
-*Adding custom event handlers for your type*
+## Event handlers
 
-Zope (and so Plone) has a powerful event notification and subscriber subsystem. Events notifications are already fired at several places.
+This section describes how to add custom event handlers for your type.
+
+Plone has a powerful event notification and subscriber subsystem.
+Events notifications are already fired at several places.
 
 With custom subscribers to these events more dynamic functionality can be added. It is possible to react when something happens to objects of a specific type.
 
