@@ -11,25 +11,36 @@ myst:
 
 # Subscribers (event handlers)
 
-The Zope Component Architecture’s zope.event package is used to manage subscribeable events in Plone.
+A _subscriber_ is a callable object that takes one argument, an object that we call the _event_.
 
-Some of the notable characteristics of the Plone event system are:
+_Events_ are objects that represent something happening in a system.
+They are used to extend processing by providing processing plug points.
 
-- It is simple;
-- Subscriber calling order is random — you cannot set the order in which event handlers are called;
-- Events cannot be cancelled — all handlers will always get the event;
-- Event handlers cannot have return values;
-- Exceptions raised in an event handler will interrupt the request processing.
+A _notification_ alerts subscribers that an event has occurred.
 
-## Registering an event handler
+The {term}`Zope Component Architecture`'s [`zope.event`](https://zopeevent.readthedocs.io/en/latest/) package is used to manage subscribable events in Plone.
+
+The Plone event system has some notable characteristics:
+
+-   It's simple.
+-   The calling order of subscribers is random.
+    You can't set the order in which event handlers are called.
+-   Events can't be cancelled.
+    All handlers will always get the event.
+-   Event handlers can't have return values.
+-   Exceptions raised in an event handler will interrupt the request processing.
+
+
+## Register an event handler
 
 Plone events can be scoped:
 
-- Globally (no scope)
-- Per content type
-- per behavior/ marker interface
+-   globally (no scope)
+-   per content type
+-   per behavior or marker interface
 
-### Example: Register an event-handler on your content type’s creation
+
+### Register an event handler on your content type's creation
 
 In your `.product/your/product/configure.zcml` insert:
 ```xml
@@ -43,7 +54,7 @@ The second line defines to which interface you want to bind the execution of you
 Here, the event handler code will only be executed if the object is a content-type providing the interface `.interfaces.IMyContentTypeClass`. 
 If you want this to be interface-agnostic, insert an asterix `*` as a wildcard instead.
 
-The third line defines the event on which this should happen, which is here ‘IObjectCreatedEvent’. 
+The third line defines the event on which this should happen, which is here ‘IObjectCreatedEvent'. 
 For more available possible events to be used as a trigger, see {ref}`event-handlers` 
 
 The fourth line gives the path to the callable (function) that is supposed to be executed.
@@ -127,7 +138,7 @@ zope.event.notify(event)
 
 ### Creation events
 
-`zope.lifecycleevent.IObjectCreatedEvent` is fired for all Zopeish objects when they are being created (they don’t necessarily need to be content objects) or being copied (IObjectCopiedEvent).
+`zope.lifecycleevent.IObjectCreatedEvent` is fired for all Zopeish objects when they are being created (they don't necessarily need to be content objects) or being copied (IObjectCopiedEvent).
 
 ### Modified events
 
@@ -168,7 +179,7 @@ Zope (and so Plone) has a powerful event notification and subscriber subsystem. 
 
 With custom subscribers to these events more dynamic functionality can be added. It is possible to react when something happens to objects of a specific type.
 
-Zope’s event model is synchronous. When an event is broadcast (via the `notify()` function from the zope.event package) all registered event handlers will be called. This happens for example from the `save` action of an add form, on move or delete of content-objects. There is no guarantee of which order the event handlers will be called in, however.
+Zope's event model is synchronous. When an event is broadcast (via the `notify()` function from the zope.event package) all registered event handlers will be called. This happens for example from the `save` action of an add form, on move or delete of content-objects. There is no guarantee of which order the event handlers will be called in, however.
 
 Each event is described by an interface, and will typically carry some information about the event. Some events are known as object events, and provide `zope.component.interfaces.IObjectEvent`. These have an `object` attribute giving access to the (content) object that the event relates to. Object events allow event handlers to be registered for a specific type of object as well as a specific type of event.
 
@@ -186,20 +197,20 @@ Some of the most commonly used event types in Plone are shown below. They are al
 
 `OFS.interfaces.IObjectWillBeRemovedEvent` fired before an object is removed. Until here no deletion has happend. It is also fired on move of an object (copy/paste).
 
-`zope.lifecycleevent.interfaces.IObjectMovedEvent` fired when an object is added to, removed from, renamed in, or moved between containers. This event is a super-type of IObjectAddedEvent and IObjectRemovedEvent, shown above. An event handler registered for this interface will be invoked for the ‘added’ and ‘removed’ cases as well. When an object is moved or renamed, all of oldParent, newParent, oldName and newName will be set.
+`zope.lifecycleevent.interfaces.IObjectMovedEvent` fired when an object is added to, removed from, renamed in, or moved between containers. This event is a super-type of IObjectAddedEvent and IObjectRemovedEvent, shown above. An event handler registered for this interface will be invoked for the ‘added' and ‘removed' cases as well. When an object is moved or renamed, all of oldParent, newParent, oldName and newName will be set.
 
 `Products.CMFCore.interfaces.IActionSucceededEvent` fired when a workflow event has completed. The `workflow` attribute holds the workflow instance involved, and the `action` attribute holds the action (transition) invoked.
 
 Event handlers can be registered using ZCML with the `<subscriber />` directive.
 
-As an example, let’s add an event handler to the `Presenter` type. It tries to find users with matching names matching the presenter id, and send these users an email.
+As an example, let's add an event handler to the `Presenter` type. It tries to find users with matching names matching the presenter id, and send these users an email.
 
 First, we require an additional import at the top of `presenter.py`:
 ```python
 from plone import api
 ```
 
-Then, we’ll add the following event subscriber after the schema definition:
+Then, we'll add the following event subscriber after the schema definition:
 ```python
 def notifyUser(presenter, event):
     acl_users = api.portal.get_tool('acl_users')
