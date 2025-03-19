@@ -106,7 +106,7 @@ The main content area of a page in the documentation is 790 pixels wide.
 When taking screenshots or videos, resize your browser window, or try to limit the width of your media.
 This will preserve legibility of images and videos when displayed inline.
 
-If you {ref}`enhance-images-label`, constrain the width of your media to 760 pixels, to accommodate the padding and margins from the enhancement.
+If you {ref}`enhance-media-label`, constrain the width of your media to 760 pixels, to accommodate the padding and margins from the enhancement.
 
 If you don't enhance images, constrain the width of your media to 790 pixels.
 
