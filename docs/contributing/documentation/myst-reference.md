@@ -108,7 +108,7 @@ This will preserve legibility of images and videos when displayed inline.
 
 If you {ref}`enhance-media-label`, constrain the width of your media to 760 pixels, to accommodate the padding and margins from the enhancement.
 
-If you don't enhance images, constrain the width of your media to 790 pixels.
+If you don't enhance media, constrain the width of your media to 790 pixels.
 
 
 (static-assets-label)=
