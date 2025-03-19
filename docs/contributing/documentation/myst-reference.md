@@ -131,7 +131,7 @@ Configuration in the {file}`conf.py` files for the main documentation and its su
 
 You can use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
 
-Cards allow the display of a caption, create a link to the source image to display when it is too large to fit within the documentation page without scaling, and add a border to demarcate the image from the page's white background.
+Cards allow the display of a caption, create a link to the source image to display when it is too large to fit within the documentation page without scaling, and add a border to demarcate the image from the page's background color.
 
 The following MyST example will display as shown below.
 
