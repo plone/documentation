@@ -142,12 +142,13 @@ Inside the file `theme/_custom.scss` you can write all your custom CSS/Sass code
 Feel free to add more files inside the `scss/` folder to make your code more readable.
 Don't forget to import your custom files in `scss/theme.scss`.
 
-## Styles Test Rendering
+## Styles test rendering
 
 Plone's Classic UI includes special demonstration views that render ready-made examples of interface components using your site's active theme. These live previews help developers verify styling implementation and explore available UI patterns.
 These views work in any context - append to site root or content URLs. No special permissions are required.
 
-### Accessing Component Demo Views:
+
+### Access component demo views
 
 Append one of these view names to any Plone site URL:
 
