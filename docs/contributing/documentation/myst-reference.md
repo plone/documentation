@@ -111,18 +111,22 @@ If you {ref}`enhance-media-label`, constrain the width of your media to 760 pixe
 If you don't enhance media, constrain the width of your media to 790 pixels.
 
 
-(static-assets-label)=
+(static-asset-paths-label)=
 
-#### Static assets
+#### Static asset paths
 
 When the documentation is in a submodule, paths to static assets—including, images, figures, and videos—must resolve in both the main documentation and the submodule's documentation.
 
-Inside the `docs` directory, place static assets in the `/_static/` directory, and preferably inside a subdirectory named after the part or page of the documentation.
-For example, in the `volto` submodule, inside its `src/docs` directory, place an image at `/_static/user-manual/block-left-add-icon.png`.
-In your markup, use that same `docs`-root-relative path for the target, such as `/_static/user-manual/block-left-add-icon.png`.
-Don't use file-relative paths.
+Inside the {file}`docs` directory of either main documentation or the submodule, place static assets in the {file}`/_static/` directory, and preferably inside a subdirectory named after the part or page of the documentation.
 
-Configuration in the {file}`conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
+For example, in the main documentation, place an image at {file}`docs/_static/contributing/git-commit-submodule.jpg`.
+Whereas, in the `volto` submodule, place an image inside it at {file}`src/docs/_static/user-manual/block-left-add-icon.png`.
+
+If the static asset exists only in the main documentation and is referenced only from within the main documentation, then in your markup you should use a root-relative path for the media target, such as `/_static/contributing/git-commit-submodule.jpg`.
+
+Otherwise, you should adjust your markup to use an appropriate relative path through the submodule.
+For example, to refer to a video from within the `volto` submodule, use `../_static/user-manual/blocks/block-copy-cut.mp4`.
+To refer to that same video from the main documentation, include the submodule's relative path `../../volto/_static/user-manual/blocks/block-copy-cut.mp4`.
 
 
 (enhance-media-label)=
@@ -241,9 +245,7 @@ If you include audio, it is helpful to include closed captions or a transcript.
 It is helpful to include overlays of key strokes, and mouse and other input gestures, to describe how to interact with the user interface.
 
 Paths to videos must resolve in both the main documentation and the submodule's documentation, if present.
-Note that the path must be absolute to support both submodules and the main documentation.
-Don't use file-relative paths.
-See {ref}`static-assets-label` for details.
+See {ref}`static-asset-paths-label` for details.
 
 Example MyST syntax is shown below.
 
