@@ -66,32 +66,31 @@ Migrate the Plone 5.2 docs for Backing up your Plone deployment into Plone 6 doc
 
 ### Introduction
 
-The key rules of backing up a working system are probably:
+The key rules for backing up a working system are:
 
 - Back up everything
 - Maintain multiple generations of backup
 - Test restoring your backups
 
 ```{note}
-This guide assumes that you are already doing this for your system as a whole, and will only cover the considerations specific to Plone. When we say we are assuming you’re already doing this for the system as a whole, what we mean is that your system backup mechanisms - rsync, bacula, whatever - are already backing up the directories into which you’ve installed Plone.
+This guide assumes you are already backing up your system as a whole. It only covers considerations specific to Plone. When we say we are assuming you’re already doing this for the system as a whole, what we mean is that your system backup mechanisms - rsync, bacula, whatever - are already backing up the directories into which you’ve installed Plone.
 ```
 
-Your buildout and buildout caches are already backed up, and you’ve tested the restore process.
-Your remaining consideration is making sure that Plone’s database files are adequately backed up and recoverable.
+Your buildout and buildout caches are already backed up, and you’ve tested the restore process. Your remaining consideration is making sure that Plone’s database files are adequately backed up and recoverable.
 
 ### Objects in motion
 
 Objects in motion tend to remain in motion. Objects that are in motion are difficult or impossible to back up accurately.
 
-Translation: Plone is a long-lived process that is constantly changing its content database. The largest of these files, the Data.fs filestorage which contains everything except Binary Large OBjects (BLOBs), is always open for writing. The BLOB storage, a potentially complex file hierarchy, is constantly changing and must be referentially synchronized to the filestorage.
+In other words, Plone is a long-lived process that constantly changes its content database. The largest of these files, the Data.fs filestorage which contains everything except Binary Large OBjects (BLOBs), is always open for writing. The BLOB storage, a potentially complex file hierarchy, is constantly changing and must be referentially synchronized to the filestorage.
 
 This means that most system backup schemes are incapable of making useful backups of the content database while it’s in use. We assume you don’t want to stop your Plone site to backup, so you need to add procedures to make sure you have useful backups of Plone’s data. (We assume that you know that the same thing is true of your relational database storage.)
 
 ### Where’s my data?
 
-Your Plone instance installation will contain a `./var` directory (in the same directory as buildout.cfg) that contains the frequently changing data files for the instance. Much of what’s in `./var`, though, is not your actual content database. Rather, it’s log, process id, and socket files.
+Your Plone instance installation contains a `./var` directory. This directory is located in the same directory as `buildout.cfg`. It holds the frequently changing data files for the instance. Much of what’s in `./var`, though, is not your actual content database. Rather, it’s log, process id, and socket files.
 
-The directories that actually contain content data are:
+The directories containing content data are:
 
 #### Filestorage
 `./var/filestorage`:
@@ -109,7 +108,7 @@ The key thing to know about filestorage and blobstorage is that they are maintai
 
 ### collective.recipe.backup
 
-[collective.recipe.backup](https://pypi.python.org/pypi/collective.recipe.backup) is a well-maintained and well-supported recipe for solving the “objects in motion” problem for a live Plone database. It makes it easy to both back up and restore the object database. The recipe is basically a sophisticated wrapper around `repozo`, a Zope database backup tool, and `rsync`, the common file synchronization tool.
+[collective.recipe.backup](https://pypi.python.org/pypi/collective.recipe.backup) is a well-maintained recipe that solves the “objects in motion” problem for a live Plone database. It makes it easy to both back up and restore the object database. The recipe is basically a sophisticated wrapper around `repozo`, a Zope database backup tool, and `rsync`, the common file synchronization tool.
 
 If you’re using any of Plone’s installation kits, `collective.recipe.backup` is included in your install. If not, you may add it to your buildout by adding a `backup` part:
 
@@ -136,9 +135,9 @@ If this is unspecified, the backup destination is the buildout var directory. Th
 
 ### Operation
 
-Once you’ve run buildout, you’ll have `bin/backup` and `bin/restore` scripts in your buildout. Since all options are set via buildout, there are few command-line options, and operation is generally as simple as using the bare commands. `bin/restore` will accept a date-time argument if you’re keeping multiple backups. See the docs for details.
+After running buildout, you’ll find `bin/backup` and `bin/restore` scripts in your buildout directory. Since all options are set via buildout, there are few command-line options, and operation is generally as simple as using the bare commands. `bin/restore` will accept a date-time argument if you’re keeping multiple backups. See the docs for details.
 
-Backup operations may be run without stopping Plone. Restore operations require that you stop Plone, then restart after the restore is complete.
+You can run backup operations without stopping Plone. For restore operations, stop Plone before starting and restart after the restore is complete.
 
 `bin/backup` is commonly included in a cron table for regular operation. Make sure you test backup/restore before relying on it.
 
@@ -148,7 +147,7 @@ Backup operations may be run without stopping Plone. Restore operations require 
 
 When incremental backup is enabled, doing a database packing operation will automatically cause the next backup to be a full backup.
 
-If your backup continuity needs are extreme, your incremental backup may be equally extreme. There are Plone installations where incremental backups are run every few minutes.
+If your backup continuity needs are critical, your incremental backup schedule may need to be frequent. There are Plone installations where incremental backups are run every few minutes.
 
 (upgrade-setup-a-test-environment-to-rehearse-the-upgrade-label)=
 
