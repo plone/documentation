@@ -91,44 +91,51 @@ Use [Shimmer](http://example.com) for cleaner whiter teeth.
 ```
 
 
-### Images and figures
+(media-specifications)=
 
-[Figures](https://docutils.sourceforge.io/docs/ref/rst/directives.html#figure) allow a caption and legend, whereas [images](https://docutils.sourceforge.io/docs/ref/rst/directives.html#images) do not.
-However we can {ref}`enhance images with cards <enhance-images-label>` to add a caption and more features.
+### Media specifications
 
-Use `image` for anything but diagrams.
-
-Use `figure` for diagrams.
+This section describes the specifications for images, figures, videos, diagrams, and other media.
 
 
-(static-assets-label)=
-
-#### Static assets
-
-When the documentation is in a submodule, paths to static assets—including, images, figures, and videos—must resolve in both the main documentation and the submodule's documentation.
-
-Inside the `docs` directory, place static assets in the `/_static/` directory, and preferably inside a subdirectory named after the part or page of the documentation.
-For example, in the `volto` submodule, inside its `src/docs` directory, place an image at `/_static/user-manual/block-left-add-icon.png`.
-In your markup, use that same `docs`-root-relative path for the target, such as `/_static/user-manual/block-left-add-icon.png`.
-Don't use file-relative paths.
-
-Configuration in the {file}`conf.py` files for the main documentation and its submodules handle the resolution of `docs`-root-relative paths for you.
-
+(width-of-media)=
 
 #### Width of media
 
-The main content area of a page in the documentation is 743 pixels wide.
-When taking screenshots or videos, resize your browser window, or try to limit the width of your media to 740 pixels.
-This will preserve legibility of images.
+The main content area of a page in the documentation is 790 pixels wide.
+When taking screenshots or videos, resize your browser window, or try to limit the width of your media.
+This will preserve legibility of images and videos when displayed inline.
+
+If you {ref}`enhance-media-label`, constrain the width of your media to 760 pixels, to accommodate the padding and margins from the enhancement.
+
+If you don't enhance media, constrain the width of your media to 790 pixels.
 
 
-(enhance-images-label)=
+(static-asset-paths-label)=
 
-#### Enhance images
+#### Static asset paths
+
+When the documentation is in a submodule, paths to static assets—including, images, figures, and videos—must resolve in both the main documentation and the submodule's documentation.
+
+Inside the {file}`docs` directory of either main documentation or the submodule, place static assets in the {file}`/_static/` directory, and preferably inside a subdirectory named after the part or page of the documentation.
+
+For example, in the main documentation, place an image at {file}`docs/_static/contributing/git-commit-submodule.jpg`.
+Whereas, in the `volto` submodule, place an image inside it at {file}`src/docs/_static/user-manual/block-left-add-icon.png`.
+
+If the static asset exists only in the main documentation and is referenced only from within the main documentation, then in your markup you should use a root-relative path for the media target, such as `/_static/contributing/git-commit-submodule.jpg`.
+
+Otherwise, you should adjust your markup to use an appropriate relative path through the submodule.
+For example, to refer to a video from within the `volto` submodule, use `../_static/user-manual/blocks/block-copy-cut.mp4`.
+To refer to that same video from the main documentation, include the submodule's relative path `../../volto/_static/user-manual/blocks/block-copy-cut.mp4`.
+
+
+(enhance-media-label)=
+
+#### Enhance media
 
 You can use cards from the Sphinx extension [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/cards.html) to enhance the display and functionality of images.
 
-Cards allow the display of a caption, create a link to the source image to display when it is too large to fit within the documentation page without scaling, and add a border to demarcate the image from the page's white background.
+Cards allow the display of a caption, create a link to the source image to display when it is too large to fit within the documentation page without scaling, and add a border to demarcate the image from the page's background color.
 
 The following MyST example will display as shown below.
 
@@ -160,6 +167,30 @@ The following MyST example will display as shown below.
 ````{example}
 ```{image} /_static/standards.png
 :alt: XKCD "Standards" comic strip
+```
+````
+
+
+### Images and figures
+
+[Figures](https://docutils.sourceforge.io/docs/ref/rst/directives.html#figure) allow a caption and legend, whereas [images](https://docutils.sourceforge.io/docs/ref/rst/directives.html#images) do not.
+However, we can {ref}`enhance images with cards <enhance-media-label>` to add a caption and more features.
+
+Use `image` for anything but diagrams.
+
+Use `figure` for diagrams.
+
+```{seealso}
+{ref}`media-specifications`
+```
+
+
+#### Image example
+
+The following is an example of an image that occupies the full width of the content area without {ref}`media enhancement <enhance-media-label>`.
+
+````{example}
+```{image} /_static/caching/caching-disabled.png
 ```
 ````
 
@@ -214,9 +245,7 @@ If you include audio, it is helpful to include closed captions or a transcript.
 It is helpful to include overlays of key strokes, and mouse and other input gestures, to describe how to interact with the user interface.
 
 Paths to videos must resolve in both the main documentation and the submodule's documentation, if present.
-Note that the path must be absolute to support both submodules and the main documentation.
-Don't use file-relative paths.
-See {ref}`static-assets-label` for details.
+See {ref}`static-asset-paths-label` for details.
 
 Example MyST syntax is shown below.
 
@@ -227,6 +256,10 @@ Example MyST syntax is shown below.
 ```
 ````
 `````
+
+```{seealso}
+{ref}`media-specifications`
+```
 
 
 ### Video - remote
@@ -268,6 +301,10 @@ For an in depth discussion of privacy issues, see [How to embed YouTube videos w
 -   Vimeo's [supported player parameters](https://help.vimeo.com/hc/en-us/articles/12426260232977-About-Player-parameters#h_01FNYA7F7GKWE17XDQJPMBC058)
 ```
 
+```{seealso}
+{ref}`media-specifications`
+```
+
 
 ### Diagrams and graphs with Mermaid
 
@@ -303,6 +340,10 @@ block-beta
 ```
 ````
 
+```{seealso}
+{ref}`media-specifications`
+```
+
 
 ### Diagrams and graphs with Graphviz
 
@@ -323,6 +364,10 @@ The following MyST example will display as shown below.
     }
 ```
 ````
+
+```{seealso}
+{ref}`media-specifications`
+```
 
 
 ### Code block
