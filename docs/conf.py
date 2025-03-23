@@ -278,7 +278,7 @@ html_title = "%(project)s v%(release)s" % {"project": project, "release": releas
 # If false, no index is generated.
 html_use_index = True
 
-html_css_files = [("print.css", {"media": "print"})]
+html_css_files = ["documentation.css", ("print.css", {"media": "print"})]
 html_js_files = []
 
 html_extra_path = [

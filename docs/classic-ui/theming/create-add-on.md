@@ -141,3 +141,79 @@ $state-colors: map-merge($state-colors, $custom-colors);
 Inside the file `theme/_custom.scss` you can write all your custom CSS/Sass code to adapt the theme to your needs.
 Feel free to add more files inside the `scss/` folder to make your code more readable.
 Don't forget to import your custom files in `scss/theme.scss`.
+
+
+## Styles test rendering
+
+Plone's Classic UI includes special demonstration views that render ready-made examples of interface components using your site's active theme.
+These views help developers verify styling implementation and explore available UI patterns.
+These views work in any context.
+No special permissions are required.
+
+Append one of the following view names with a leading slash `/` to any Plone site URL.
+
+-   `/@@test-rendering`
+-   `/@@test-rendering-cheatsheet` 
+-   `/@@test-rendering-icons`
+
+Each view name corresponds to a named tab in Plone as described in the following sections.
+
+
+### {guilabel}`Test Rendering`
+
+The {guilabel}`Test Rendering` tab at the view name `@@test-rendering` displays Bootstrap style status message examples.
+It shows all alert variants including:
+
+-   Success, warning, and error notifications
+-   Dismissible alerts
+-   Contextual color examples
+
+````{card}
+```{image} /_static/test-rendering/test-rendering.png
+:alt: Test Rendering
+:target: /_static/test-rendering/test-rendering.png
+```
++++
+_Test Rendering_
+````
+
+### {guilabel}`Bootstrap Cheatsheet`
+
+The {guilabel}`Bootstrap Cheatsheet` tab at the view name `@@test-rendering-cheatsheet` displays the kitchen sink of Bootstrap components.
+It includes the following examples and dozens more:
+
+-   color mode switcher interface, located in the lower right corner of the browser window
+-   grid layout examples
+-   form control variants
+-   navigation components
+-   interactive element states
+  
+````{card}
+```{image} /_static/test-rendering/bootstrap-cheatsheet.png
+:alt: Bootstrap Cheatsheet
+:target: /_static/test-rendering/bootstrap-cheatsheet.png
+```
++++
+_Bootstrap Cheatsheet_
+````
+
+### {guilabel}`Icons`
+
+The {guilabel}`Icons` tab at the view name `@@test-rendering-icons` displays a few icon classes.
+It includes the following examples:
+
+-   icon resolver usage
+-   code samples for both URL and tag generation
+
+````{card}
+```{image} /_static/test-rendering/icons.png
+:alt: Icons
+:target: /_static/test-rendering/icons.png
+```
++++
+_Icons_
+````
+
+```{seealso}
+For an overview of UI components in Volto, see its [Storybook](https://6.docs.plone.org/storybook/).
+```
