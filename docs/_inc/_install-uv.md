@@ -2,18 +2,21 @@ Install {term}`uv` -- and {term}`uvx` -- on your local environment.
 
 Carefully read the console output for further instructions, and follow them, if needed.
 
-macOS, Linux, and Windows (with WSL2) installation:
+`````{tab-set}
 
+````{tab-item} macOS, Linux and Windows with WSL2
 ```shell
-curl -LsSf https://astral.sh/uv/install.sh | sh
+brew install zlib libjpeg
 ```
+````
 
-Windows installation:
-
+````{tab-item} Windows
 ```shell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
+````
+`````
 
 ```{seealso}
--   [`UV` installation methods](https://docs.astral.sh/uv/getting-started/installation/)
+-   [Other {term}`UV` installation methods](https://docs.astral.sh/uv/getting-started/installation/)
 ```

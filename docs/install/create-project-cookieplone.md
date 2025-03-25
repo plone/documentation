@@ -72,7 +72,7 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 #### Python
 
-`UV` will download and install the required Python version for your project.
+{term}`UV` will download and install the required Python version for your project.
 
 
 #### nvm
