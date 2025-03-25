@@ -99,6 +99,12 @@ pyenv
     Python version management.
     [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python.
 
+UV
+    [UV](https://docs.astral.sh/uv/) is a Python package and project manager, written in Rust.
+
+uvx
+    `uvx` is a command implemented by [UV](https://docs.astral.sh/uv/) to execute and installs command-line tools provided by Python packages in an ephemeral environment, similar to {term}`pipx`
+
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
 
@@ -463,7 +469,7 @@ Slate
     `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced {term}`WYSIWYG` functionality and behavior.
 
 WYSIWYG
-    WYSIWYG is an acronym for "what you see is what you get", referring to software that allows content to be edited in a form that resembles its appearance when printed or displayed as a finished product.    
+    WYSIWYG is an acronym for "what you see is what you get", referring to software that allows content to be edited in a form that resembles its appearance when printed or displayed as a finished product.
 
 TinyMCE
     The rich text {term}`WYSIWYG` editor used in {term}`Classic UI`.
@@ -563,7 +569,7 @@ ZODB
     [A native object database for Python](https://zodb.org/en/latest/).
 
 `FileStorage`
-    `FileStorage` is a Python class in {term}`ZODB` that saves data in a file.    
+    `FileStorage` is a Python class in {term}`ZODB` that saves data in a file.
 
     ```{seealso}
     https://zodb.org/en/latest/reference/storages.html#filestorage
@@ -868,7 +874,7 @@ schema enhancer
 variation
     A variation is a common development pattern that provides alternative views for the same data.
     For example, a teaser block can present data as `title + link`, `title + description + link`, or `title + image + link`.
-        
+
     An advanced variation can enhance the block by adding data fields to the block.
     For example, a listing block variation can show news items with `title + link`.
     Extending this example, a developer can add a boolean field to the block that toggles the display of the link.
@@ -880,7 +886,7 @@ Higher-Order Component
     HOCs are not part of the React API, per se.
     They are a pattern that emerges from React's compositional nature.
     Concretely, a higher-order component is a function that takes a component and returns a new component.
-    
+
     ```{important}
     Higher-order components are not commonly used in modern React code.
     ```

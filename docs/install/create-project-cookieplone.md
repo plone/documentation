@@ -57,29 +57,22 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```{include} ../volto/_inc/_install-operating-system.md
 ```
 
--   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
--   {term}`pipx`
+-   {term}`UV`
 -   {term}`nvm`
 -   {term}`Node.js` LTS 20.x
 -   {term}`GNU make`
 -   {term}`Git`
 
 
+#### UV
+
+```{include} /_inc/_install-uv.md
+```
+
+
 #### Python
 
-```{include} /_inc/_install-python-plone61.md
-```
-
-```{warning}
-Python 3.9 will reach [end of life in October 2025](https://devguide.python.org/versions/).
-Do not create a new Plone project with Python 3.9.
-```
-
-
-#### pipx
-
-```{include} /_inc/_install-pipx.md
-```
+`UV` will download and install the required Python version for your project.
 
 
 #### nvm
@@ -168,8 +161,8 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 │                              .xxxxxxxxxxxxxx.                               │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
-You've downloaded /Users/stevepiercy/.cookiecutters/cookieplone-templates 
-before. Is it okay to delete and re-download it? [y/n] (y): 
+You've downloaded /Users/stevepiercy/.cookiecutters/cookieplone-templates
+before. Is it okay to delete and re-download it? [y/n] (y):
 ╭─────────────────────────────── Plone Project ───────────────────────────────╮
 │                                                                             │
 │ Creating a new Plone Project                                                │
@@ -177,23 +170,23 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 │ Sanity check results:                                                       │
 │                                                                             │
 │   - Cookieplone: ✓                                                          │
-│   - Python: ✓                                                               │
+│   - UV: ✓                                                                   │
 │   - Node: ✓                                                                 │
 │   - git: ✓                                                                  │
 │   - Docker (optional): ✓                                                    │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
-  [1/17] Project Title (Project Title): 
-  [2/17] Project Description (A new project using Plone 6.): 
-  [3/17] Project Slug (Used for repository id) (project-title): 
-  [4/17] Project URL (without protocol) (project-title.example.com): 
-  [5/17] Author (Plone Foundation): 
-  [6/17] Author E-mail (collective@plone.org): 
-  [7/17] Should we use prerelease versions? (No): 
-  [8/17] Plone Version (6.1.0): 
-  [9/17] Volto Version (18.8.1): 
-  [10/17] Python Package Name (project.title): 
-  [11/17] Volto Addon Name (volto-project-title): 
+  [1/17] Project Title (Project Title):
+  [2/17] Project Description (A new project using Plone 6.):
+  [3/17] Project Slug (Used for repository id) (project-title):
+  [4/17] Project URL (without protocol) (project-title.example.com):
+  [5/17] Author (Plone Foundation):
+  [6/17] Author E-mail (collective@plone.org):
+  [7/17] Should we use prerelease versions? (No):
+  [8/17] Plone Version (6.1.0):
+  [9/17] Volto Version (18.8.1):
+  [10/17] Python Package Name (project.title):
+  [11/17] Volto Addon Name (volto-project-title):
   [12/17] Language
     1 - English
     2 - Deutsch
@@ -201,25 +194,25 @@ before. Is it okay to delete and re-download it? [y/n] (y):
     4 - Português (Brasil)
     5 - Nederlands
     6 - Suomi
-    Choose from [1/2/3/4/5/6] (1): 
-  [13/17] GitHub or GitLab Username or Organization (collective): 
+    Choose from [1/2/3/4/5/6] (1):
+  [13/17] GitHub or GitLab Username or Organization (collective):
   [14/17] Container Registry
     1 - GitHub Container Registry
     2 - Docker Hub
     3 - GitLab
-    Choose from [1/2/3] (1): 
+    Choose from [1/2/3] (1):
   [15/17] Should we setup a caching server?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [16/17] Add Ansible playbooks?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [17/17] Add GitHub Action to Deploy this project?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
 ╭───────────────────────── Project Title generation ──────────────────────────╮
 │                                                                             │
 │ Summary:                                                                    │
