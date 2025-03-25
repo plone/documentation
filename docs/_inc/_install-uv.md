@@ -6,7 +6,7 @@ Carefully read the console output for further instructions, and follow them, if 
 
 ````{tab-item} macOS, Linux and Windows with WSL2
 ```shell
-brew install zlib libjpeg
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 ````
 
