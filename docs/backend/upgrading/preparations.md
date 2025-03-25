@@ -56,13 +56,6 @@ If Plone is being upgraded at the same time as a Zope version, Plone will usuall
 Always back up your Plone site before upgrading.
 ```
 
-```{seealso}
-See Plone 5.2 documentation, [Backing up your Plone deployment](https://5.docs.plone.org/manage/deploying/backup.html).
-```
-
-```{todo}
-Migrate the Plone 5.2 docs for Backing up your Plone deployment into Plone 6 docs.
-```
 
 ### Introduction
 
