@@ -1,10 +1,9 @@
-Install {term}`uv` -- and {term}`uvx` -- on your local environment.
-
+Install {term}`uv`.
 Carefully read the console output for further instructions, and follow them, if needed.
 
 `````{tab-set}
 
-````{tab-item} macOS, Linux and Windows with WSL2
+````{tab-item} macOS, Linux, and Windows with WSL
 ```shell
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
@@ -18,5 +17,5 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 `````
 
 ```{seealso}
--   [Other {term}`UV` installation methods](https://docs.astral.sh/uv/getting-started/installation/)
+-   [Other {term}`uv` installation methods](https://docs.astral.sh/uv/getting-started/installation/)
 ```

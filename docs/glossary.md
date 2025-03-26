@@ -99,11 +99,12 @@ pyenv
     Python version management.
     [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python.
 
-UV
-    [UV](https://docs.astral.sh/uv/) is a Python package and project manager, written in Rust.
+uv
+    [uv](https://docs.astral.sh/uv/) is a Python package and project manager, written in Rust.
 
-uvx
-    `uvx` is a command implemented by [UV](https://docs.astral.sh/uv/) to execute and installs command-line tools provided by Python packages in an ephemeral environment, similar to {term}`pipx`
+`uvx`
+    `uvx` is an alias for `uv tool run`, implemented in {term}`uv`.
+     It executes and installs command-line tools provided by Python packages in an ephemeral environment, similar to {term}`pipx`.
 
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.

@@ -57,14 +57,14 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```{include} ../volto/_inc/_install-operating-system.md
 ```
 
--   {term}`UV`
+-   {term}`uv`
 -   {term}`nvm`
 -   {term}`Node.js`
 -   {term}`GNU make`
 -   {term}`Git`
 
 
-#### UV
+#### uv
 
 ```{include} /_inc/_install-uv.md
 ```
@@ -72,7 +72,7 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 #### Python
 
-{term}`UV` will download and install the required Python version for your project.
+{term}`uv` will download and install the required Python version for your project.
 
 
 #### nvm
@@ -161,7 +161,7 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 │                              .xxxxxxxxxxxxxx.                               │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
-You've downloaded /Users/stevepiercy/.cookiecutters/cookieplone-templates
+You've downloaded /Users/username/.cookiecutters/cookieplone-templates
 before. Is it okay to delete and re-download it? [y/n] (y):
 ╭─────────────────────────────── Plone Project ───────────────────────────────╮
 │                                                                             │
@@ -170,7 +170,7 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 │ Sanity check results:                                                       │
 │                                                                             │
 │   - Cookieplone: ✓                                                          │
-│   - UV: ✓                                                                   │
+│   - uv: ✓                                                                   │
 │   - Node: ✓                                                                 │
 │   - git: ✓                                                                  │
 │   - Docker (optional): ✓                                                    │
