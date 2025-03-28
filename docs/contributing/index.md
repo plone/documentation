@@ -150,6 +150,15 @@ Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_
 ```
 
 
+(contributing-project-configuration-files-label)=
+
+## Project configuration files
+
+To standarize the developer experience across packages, a configuration tool is used.
+
+See the [tool documentation](https://github.com/plone/meta) for more information.
+
+
 (contributing-guidance-for-merging-pull-requests-label)=
 
 ## Guidance for merging pull requests
@@ -166,14 +175,6 @@ Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_
 -   Thank the contributor.
 -   🍻
 
-
-(contributing-project-configuration-files-label)=
-
-## Project configuration files
-
-To standarize the developer experience across packages, a configuration tool is used.
-
-See the [tool documentation](https://github.com/plone/meta) for more information.
 
 (contributing-specific-contribution-policies-for-projects-label)=
 
