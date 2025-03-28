@@ -168,7 +168,8 @@ See the [tool documentation](https://github.com/plone/meta) for more information
     If you ignore a check, then write the good reason either in a comment or in the merge message.
 -   Get at least one approval from another Plone contributor, preferably a member of the GitHub Team for the repository.
 -   If the pull request has documentation, ask for a review from `@plone/documentation-team`.
--   You don't need to write anything in the merge message, as it usually populates with all the commit messages.
+-   Usually the merge message populates with all the commit messages, but some repositories aren't configured to do this.
+    It's helpful to include a descriptive message in the merge request.    
 -   After merging, look for any linked issues that should be closed, and close them.
     Sometimes the contributor forgets to include `closes #123` in the description, which would automatically close the related issue.
 -   If the change is a bugfix, make sure that it is not merged to an older release branch unless it is also merged in separate pull request to `main`.
