@@ -95,6 +95,7 @@ Plone gets free hosting at the [Hosted](https://hosted.weblate.org/) platform th
 
 Translators will need to create an account on Weblate with an email and password.
 Authentication with GitHub and other third-party accounts might not work.
+You can [configure your Weblate account to receive notifications](https://hosted.weblate.org/accounts/profile/#notifications) either automatically whenever you make a contribution to a project or manually watch specific projects.
 
 Translators can go to the [Plone project in Weblate](https://hosted.weblate.org/projects/plone/).
 
