@@ -101,11 +101,6 @@ Translators can go to the [Plone project in Weblate](https://hosted.weblate.org/
 You will see several components listed.
 The `volto` component is for the package `volto`, whose repository is at https://github.com/plone/volto.
 
-```{note}
-At this moment Volto translations can't be contributed using Weblate.
-The Volto Team are working on this issue, and hope to fix it as soon as possible.
-```
-
 All other components are for the package `plone.app.locales`, whose repository is at https://github.com/collective/plone.app.locales.
 
 See the Weblate documentation, [Translating using Weblate](https://docs.weblate.org/en/latest/user/translating.html), for how to use it to write translations.
@@ -114,7 +109,7 @@ When you save a translation, then it is committed on a branch used only for tran
 
 [See recent commits to the package `plone.app.locales`](https://github.com/collective/plone.app.locales/commits/master/).
 
-Maintainers will periodically create a pull request from the changes, and merge it.
+Maintainers will periodically review the pull request that Weblate creates automatically, and merge it.
 
 
 (contributing-plone-core-translations-support-label)=
