@@ -31,7 +31,11 @@ Request write access to https://github.com/collective/plone.app.locales to be ab
 
 To do so, [join the collective GitHub organization](https://collective.github.io/).
 
-Optionally sign the [Plone Contributor Agreement](https://plone.org/foundation/contributors-agreement) for translating Volto.
+Signing the [Plone Contributor Agreement](https://plone.org/foundation/contributors-agreement) is not required for translating Plone or Volto.
+
+Translation strings do not constitute an original "work" as per the [Plone Contributor Agreement](https://plone.org/foundation/contributors-agreement), and that's the reason behind not requiring signing it.
+
+Moreover, machine translations are in no way covered under any kind of copyright, the person using the software cannot claim ownership of those works.
 
 
 (contributing-plone-core-translations-translate-plone-classic-ui-label)=
