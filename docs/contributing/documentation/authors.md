@@ -371,7 +371,7 @@ The Plone Documentation Team adopted additional guidelines.
     To make that work in Volto, set your browser width to 1180 pixels.
     You will notice that the drag and trash icons for each block move inside the block from outside.
     
-    If you create images wider than 740 pixels, then you must use image display enhancement as described in {ref}`enhance-images-label`.
+    If you create images wider than 740 pixels, then you must use image display enhancement as described in {ref}`enhance-media-label`.
 -   In user documentation, provide screenshots of each step where the interface changes.
     It is painstaking, but worth the effort.
     Provide sufficient detail of what each option is and does.
