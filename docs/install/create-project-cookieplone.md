@@ -13,8 +13,9 @@ myst:
 # Install Plone with Cookieplone
 
 This chapter describes how you can create a web application using {term}`Cookieplone`.
-Cookieplone is the recommended way to create a Plone project as an add-on using the Volto frontend.
-It also includes tools for development and deployment.
+Cookieplone is the recommended way to create a Plone project using the Volto frontend.
+The following instructions can be used to start building a Plone site, or to develop an add-on that can be released and used as a part of other Plone sites.
+Cookieplone will also include tools for development and deployment.
 
 ```{seealso}
 For other installation options, see {ref}`get-started-install-label`.
