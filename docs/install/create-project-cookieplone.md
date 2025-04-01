@@ -12,9 +12,8 @@ myst:
 
 # Install Plone with Cookieplone
 
-This chapter describes how you can create a web application using the {term}`Cookieplone` template.
-
-This template is the recommended way to start a new Plone project using the Volto frontend.
+This chapter describes how you can create a web application using {term}`Cookieplone`.
+Cookieplone is the recommended way to create a Plone project as an add-on using the Volto frontend.
 It also includes tools for development and deployment.
 
 ```{seealso}
@@ -22,7 +21,7 @@ For other installation options, see {ref}`get-started-install-label`.
 ```
 
 ```{versionadded} Volto 18.0.0-alpha.43
-{term}`Cookieplone` was added as the recommended template to create a Plone project with Volto starting in Volto 18.0.0-alpha.43 and above.
+{term}`Cookieplone` was added as the recommended tool to create a Plone project with Volto starting in Volto 18.0.0-alpha.43 and above.
 ```
 
 
@@ -30,7 +29,15 @@ For other installation options, see {ref}`get-started-install-label`.
 
 ## System requirements
 
-Plone 6 has both hardware requirements and software prerequisites.
+Plone has both hardware requirements and software prerequisites.
+
+
+(create-project-cookieplone-hardware-requirements-label)=
+
+### Hardware requirements
+
+```{include} /volto/_inc/_hardware-requirements.md
+```
 
 
 ### Supported web browsers
@@ -39,14 +46,6 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```
 
 ```{include} /_inc/_install-browser-reqs-classic-ui.md
-```
-
-
-(create-project-cookieplone-hardware-requirements-label)=
-
-### Hardware requirements
-
-```{include} /_inc/_hardware-requirements.md
 ```
 
 
@@ -66,13 +65,8 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 #### uv
 
-```{include} /_inc/_install-uv.md
+```{include} ../volto/_inc/_install-uv.md
 ```
-
-
-#### Python
-
-{term}`uv` will download and install the required Python version for your project.
 
 
 #### nvm
@@ -81,16 +75,12 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```
 
 
+(prerequisites-for-installation-nodejs-label)=
+
 #### Node.js
 
 ```{include} ../volto/_inc/_install-nodejs.md
 ```
-
-3.  Enable {term}`corepack` so that Node.js will install {term}`pnpm` as a package manager.
-
-    ```shell
-    npm i -g corepack@latest && corepack enable
-    ```
 
 
 #### Make
@@ -109,8 +99,7 @@ Plone 6 has both hardware requirements and software prerequisites.
 
 ## Generate the project
 
-After satisfying the prerequisites and having activated an LTS version of Node,
-generate the project.
+After satisfying the prerequisites and having {ref}`activated an LTS version of Node.js <prerequisites-for-installation-nodejs-label>`, generate the project.
 
 ```shell
 uvx cookieplone project

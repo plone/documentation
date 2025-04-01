@@ -73,6 +73,18 @@ docs/volto:  ## Setup Volto docs
 	@echo "Documentation of volto initialized."
 	@echo
 
+ln-seven:  ## Toggle the symlink to Seven
+	rm docs/volto
+	ln -s ../submodules/volto/docs ./docs/volto
+	@echo "Symlink to Volto changed to Seven."
+	@echo
+
+ln-volto:  ## Toggle the symlink to Volto
+	rm docs/volto
+	ln -s ../submodules/volto/docs/source ./docs/volto
+	@echo "Symlink to Seven changed to Volto."
+	@echo
+
 .PHONY: deps
 deps: venv/bin/python docs/volto docs/plone.restapi venv/plone.api-install  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, create symlinks to the source files, and finally install plone.api.
 
