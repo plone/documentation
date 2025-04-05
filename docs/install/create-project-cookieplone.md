@@ -12,9 +12,8 @@ myst:
 
 # Install Plone with Cookieplone
 
-This chapter describes how you can create a web application using the {term}`Cookieplone` template.
-
-This template is the recommended way to start a new Plone project using the Volto frontend.
+This chapter describes how you can create a web application using {term}`Cookieplone`.
+Cookieplone is the recommended way to create a Plone project as an add-on using the Volto frontend.
 It also includes tools for development and deployment.
 
 ```{seealso}
@@ -22,7 +21,7 @@ For other installation options, see {ref}`get-started-install-label`.
 ```
 
 ```{versionadded} Volto 18.0.0-alpha.43
-{term}`Cookieplone` was added as the recommended template to create a Plone project with Volto starting in Volto 18.0.0-alpha.43 and above.
+{term}`Cookieplone` was added as the recommended tool to create a Plone project with Volto starting in Volto 18.0.0-alpha.43 and above.
 ```
 
 
@@ -30,7 +29,15 @@ For other installation options, see {ref}`get-started-install-label`.
 
 ## System requirements
 
-Plone 6 has both hardware requirements and software prerequisites.
+Plone has both hardware requirements and software prerequisites.
+
+
+(create-project-cookieplone-hardware-requirements-label)=
+
+### Hardware requirements
+
+```{include} /volto/_inc/_hardware-requirements.md
+```
 
 
 ### Supported web browsers
@@ -42,14 +49,6 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```
 
 
-(create-project-cookieplone-hardware-requirements-label)=
-
-### Hardware requirements
-
-```{include} /_inc/_hardware-requirements.md
-```
-
-
 (create-project-cookieplone-prerequisites-for-installation-label)=
 
 ### Prerequisites for installation
@@ -57,28 +56,16 @@ Plone 6 has both hardware requirements and software prerequisites.
 ```{include} ../volto/_inc/_install-operating-system.md
 ```
 
--   Python {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}
--   {term}`pipx`
+-   {term}`uv`
 -   {term}`nvm`
--   {term}`Node.js` LTS 20.x
+-   {term}`Node.js`
 -   {term}`GNU make`
 -   {term}`Git`
 
 
-#### Python
+#### uv
 
-```{include} /_inc/_install-python-plone61.md
-```
-
-```{warning}
-Python 3.9 will reach [end of life in October 2025](https://devguide.python.org/versions/).
-Do not create a new Plone project with Python 3.9.
-```
-
-
-#### pipx
-
-```{include} /_inc/_install-pipx.md
+```{include} ../volto/_inc/_install-uv.md
 ```
 
 
@@ -88,16 +75,12 @@ Do not create a new Plone project with Python 3.9.
 ```
 
 
+(prerequisites-for-installation-nodejs-label)=
+
 #### Node.js
 
 ```{include} ../volto/_inc/_install-nodejs.md
 ```
-
-3.  Enable {term}`corepack` so that Node.js will install {term}`pnpm` as a package manager.
-
-    ```shell
-    npm i -g corepack@latest && corepack enable
-    ```
 
 
 #### Make
@@ -116,11 +99,10 @@ Do not create a new Plone project with Python 3.9.
 
 ## Generate the project
 
-After satisfying the prerequisites and having activated an LTS version of Node,
-generate the project.
+After satisfying the prerequisites and having {ref}`activated an LTS version of Node.js <prerequisites-for-installation-nodejs-label>`, generate the project.
 
 ```shell
-pipx run cookieplone project
+uvx cookieplone project
 ```
 
 You will be presented with a series of prompts.
@@ -128,7 +110,7 @@ You can accept the default values in square brackets (`[default-option]`) by hit
 For ease of documentation, we will use the default values.
 
 ```{tip}
-See the cookiecutter's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
+See the cookieplone's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
 ```
 
 ```{important}
@@ -168,8 +150,8 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 │                              .xxxxxxxxxxxxxx.                               │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
-You've downloaded /Users/stevepiercy/.cookiecutters/cookieplone-templates 
-before. Is it okay to delete and re-download it? [y/n] (y): 
+You've downloaded /Users/username/.cookiecutters/cookieplone-templates
+before. Is it okay to delete and re-download it? [y/n] (y):
 ╭─────────────────────────────── Plone Project ───────────────────────────────╮
 │                                                                             │
 │ Creating a new Plone Project                                                │
@@ -177,23 +159,23 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 │ Sanity check results:                                                       │
 │                                                                             │
 │   - Cookieplone: ✓                                                          │
-│   - Python: ✓                                                               │
+│   - uv: ✓                                                                   │
 │   - Node: ✓                                                                 │
 │   - git: ✓                                                                  │
 │   - Docker (optional): ✓                                                    │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
-  [1/17] Project Title (Project Title): 
-  [2/17] Project Description (A new project using Plone 6.): 
-  [3/17] Project Slug (Used for repository id) (project-title): 
-  [4/17] Project URL (without protocol) (project-title.example.com): 
-  [5/17] Author (Plone Foundation): 
-  [6/17] Author E-mail (collective@plone.org): 
-  [7/17] Should we use prerelease versions? (No): 
-  [8/17] Plone Version (6.1.0): 
-  [9/17] Volto Version (18.8.1): 
-  [10/17] Python Package Name (project.title): 
-  [11/17] Volto Addon Name (volto-project-title): 
+  [1/17] Project Title (Project Title):
+  [2/17] Project Description (A new project using Plone 6.):
+  [3/17] Project Slug (Used for repository id) (project-title):
+  [4/17] Project URL (without protocol) (project-title.example.com):
+  [5/17] Author (Plone Foundation):
+  [6/17] Author E-mail (collective@plone.org):
+  [7/17] Should we use prerelease versions? (No):
+  [8/17] Plone Version (6.1.0):
+  [9/17] Volto Version (18.8.1):
+  [10/17] Python Package Name (project.title):
+  [11/17] Volto Addon Name (volto-project-title):
   [12/17] Language
     1 - English
     2 - Deutsch
@@ -201,25 +183,25 @@ before. Is it okay to delete and re-download it? [y/n] (y):
     4 - Português (Brasil)
     5 - Nederlands
     6 - Suomi
-    Choose from [1/2/3/4/5/6] (1): 
-  [13/17] GitHub or GitLab Username or Organization (collective): 
+    Choose from [1/2/3/4/5/6] (1):
+  [13/17] GitHub or GitLab Username or Organization (collective):
   [14/17] Container Registry
     1 - GitHub Container Registry
     2 - Docker Hub
     3 - GitLab
-    Choose from [1/2/3] (1): 
+    Choose from [1/2/3] (1):
   [15/17] Should we setup a caching server?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [16/17] Add Ansible playbooks?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [17/17] Add GitHub Action to Deploy this project?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
 ╭───────────────────────── Project Title generation ──────────────────────────╮
 │                                                                             │
 │ Summary:                                                                    │

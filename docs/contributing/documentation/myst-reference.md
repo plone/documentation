@@ -22,7 +22,7 @@ MyST extends {term}`Markdown` by incorporating all the features of {term}`reStru
 Contributors are welcome to use either Markdown or MyST syntax.
 
 MyST may be more familiar to reStructuredText authors.
-MyST allows the use of a {term}`fence` and `{rst-eval}` to evaluate native reStructuredText.
+MyST allows the use of a {term}`fence` and `{eval-rst}` to evaluate native reStructuredText.
 This may be useful when Markdown does not provide sufficient flexibility, such as for `figure`.
 
 
