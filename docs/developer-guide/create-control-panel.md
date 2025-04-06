@@ -192,7 +192,7 @@ my_choice_value = settings.my_choice
 ```
 
 
-## Register a control panel
+### Register a control panel
 
 To manually register a view as a control panel, add the following registration to your {file}`/profiles/default/controlpanel.xml`.
 
@@ -323,9 +323,10 @@ mypackage/
 
 ## REST API compatible control panels
 
-For better integration between backend and Volto, you can create REST API compatible control panels using the adapter pattern. This approach is particularly useful when developing control panels that need to work seamlessly with Volto.
+For better integration between backend and Volto, you can create REST API compatible control panels using the adapter pattern.
+This approach is particularly useful when developing control panels that need to work seamlessly with Volto.
 
-Create a Python module like `mypackage/controlpanel.py`:
+Create a Python module {file}`mypackage/controlpanel.py` as follows.
 
 ```python
 from plone.restapi.controlpanels import RegistryConfigletPanel
@@ -337,7 +338,7 @@ _ = MessageFactory("mypackage")
 
 @adapter(Interface, Interface)
 class MyAddonControlPanel(RegistryConfigletPanel):
-    """Volto-compatible REST API control panel for my addon settings."""
+    """Volto-compatible REST API control panel for my add-on settings."""
 
     schema = IMyControlPanelSettings
     schema_prefix = "my.addon"
@@ -347,7 +348,7 @@ class MyAddonControlPanel(RegistryConfigletPanel):
     group = "General"
 ```
 
-Then register the adapter in your ZCML configuration file:
+Then register the adapter in your ZCML configuration file.
 
 ```xml
 <!-- mypackage/configure.zcml or mypackage/controlpanel/configure.zcml -->
@@ -363,16 +364,26 @@ Then register the adapter in your ZCML configuration file:
 </configure>
 ```
 
-The `group` property in the control panel class corresponds to the control panel category in Volto:
-- `General`: General settings (corresponds to `plone-general`)
-- `Content`: Content-related settings (corresponds to `plone-content`)
-- `Users`: Users and groups settings (corresponds to `plone-users`)
-- `Security`: Security settings (corresponds to `plone-security`)
-- `Advanced`: Advanced settings (corresponds to `plone-advanced`)
+The `group` property in the control panel class corresponds to the control panel category in Volto.
+
+`General`
+:   General settings (corresponds to `plone-general`)
+
+`Content`
+:   Content-related settings (corresponds to `plone-content`)
+
+`Users`
+:   Users and groups settings (corresponds to `plone-users`)
+
+`Security`
+:   Security settings (corresponds to `plone-security`)
+
+`Advanced`
+:   Advanced settings (corresponds to `plone-advanced`)
 
 With this approach, your control panel will be automatically available through the REST API at the endpoint `@controlpanels/my-controlpanel`, making it easy to integrate with Volto without additional configuration.
 
-You will still need to set up the registry.xml with default values as described earlier.
+You will still need to set up {file}`registry.xml` with default values as described earlier.
 
 ```{seealso}
 See the chapter {ref}`training:controlpanel-label` from the Mastering Plone 6 Training.
