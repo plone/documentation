@@ -145,6 +145,7 @@ user-guide/index
 :hidden: true
 
 glossary
+genindex
 ```
 
 ```{toctree}
@@ -154,5 +155,3 @@ glossary
 
 training/index
 ```
-
-{ref}`genindex`

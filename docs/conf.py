@@ -75,6 +75,7 @@ extensions = [
 smartquotes = False
 
 # Options for the linkcheck builder
+linkcheck_anchors = True
 # Ignore localhost
 linkcheck_ignore = [
     # Ignore local and example URLs
@@ -114,9 +115,9 @@ linkcheck_allowed_redirects = {
     # Example
     # r"https://chrome\.google\.com/webstore/detail/.*": r"https://consent\.google\.com/.*",
 }
-linkcheck_anchors = True
-linkcheck_timeout = 5
 linkcheck_retries = 1
+linkcheck_report_timeouts_as_broken = True
+linkcheck_timeout = 5
 
 # The suffix of source filenames.
 source_suffix = {
@@ -185,6 +186,8 @@ html_sidebars = {
 
 html_theme_options = {
     "article_header_start": ["toggle-primary-sidebar"],
+    "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
+    <p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a>.</p>""",
     "footer_content_items": [
         "author",
         "copyright",
@@ -192,8 +195,6 @@ html_theme_options = {
         "extra-footer",
         "icon-links",
     ],
-    "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
-    <p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a>.</p>""",
     "icon_links": [
         {
             "name": "GitHub",
@@ -275,12 +276,8 @@ html_use_opensearch = "https://6.docs.plone.org"
 # "<project> v<release> documentation".
 html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
 
-# If false, no index is generated.
-html_use_index = True
-
 html_css_files = ["documentation.css", ("print.css", {"media": "print"})]
 html_js_files = []
-
 html_extra_path = [
     "robots.txt",
 ]
@@ -308,8 +305,8 @@ autodoc_class_signature = "separated"
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
-    "attrs_block", # Support parsing of block attributes.
-    "attrs_inline", # Support parsing of inline attributes.
+    "attrs_block",  # Support parsing of block attributes.
+    "attrs_inline",  # Support parsing of inline attributes.
     "colon_fence",  # You can also use ::: delimiters to denote code fences, instead of ```.
     "deflist",  # Support definition lists. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
     "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
@@ -354,6 +351,7 @@ intersphinx_mapping = {
     "training": ("https://training.plone.org/", None),
     "training-2022": ("https://2022.training.plone.org/", None),
     "training-2023": ("https://2023.training.plone.org/", None),
+    "training-2024": ("https://2024.training.plone.org/", None),
 }
 
 
