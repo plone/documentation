@@ -1,15 +1,22 @@
 ---
 myst:
   html_meta:
-    "description": "How to create a control panel"
-    "property=og:description": "How to create a control panel"
-    "property=og:title": "Create a control panel"
-    "keywords": "Plone, create, control panel, plonecli, registry"
+    "description": "How to create a control panel in Plone for Classic UI and Volto"
+    "property=og:description": "How to create a control panel in Plone for Classic UI and Volto"
+    "property=og:title": "Create a control panel in Plone for Classic UI and Volto"
+    "keywords": "Plone, create, control panel, plonecli, registry, Classic UI, Volto, frontend, backend"
 ---
 
 (backend-controlpanels-label)=
 
 # Create a control panel
+
+This chapter describes how to create a control panel for your Plone add-on, whether accessed through either the Classic UI or Volto frontend.
+
+It also covers advanced topics—including how to group fields in your control panel—and provides a schema field reference, troubleshooting tips, control panel file structure, and a Plone REST API compatibility reference.
+
+
+## Creation approaches
 
 There are two approaches to create a control panel for your Plone add-on:
 
@@ -140,22 +147,22 @@ Create a {file}`mypackage/profiles/default/controlpanel.xml` in your package's G
 ```
 
 The category attribute can be one of the following values.
-These values correspond to the groups in Site Setup.
+These values correspond to the groups in {guilabel}`Site Setup`.
 
 `plone-general`
-:   General settings
+:   {guilabel}`General`
 
 `plone-content`
-:   Content-related settings
+:   {guilabel}`Content`
 
 `plone-users`
-:   Users and groups settings
+:   {guilabel}`Users`
 
 `plone-security`
-:   Security settings
+:   {guilabel}`Security`
 
 `plone-advanced`
-:   Advanced settings
+:   {guilabel}`Advanced`
 
 
 ### Set default values in the registry
@@ -216,6 +223,8 @@ To manually register a view as a control panel, add the following registration t
     </configlet>
   </object>
 ```
+
+Your control panel should now appear in {guilabel}`Site Setup`.
 
 
 ## Use `FieldSet` to group fields
@@ -296,10 +305,10 @@ You'll need to perform one or more of the following steps.
 
 If your control panel doesn't appear or doesn't work as expected:
 
--   Verify that all ZCML is properly registered
--   Check for errors in the Plone error log
--   Ensure your GenericSetup profiles are correctly installed
--   Validate that the interface path in registry.xml matches your actual Python path
+-   Verify that all ZCML is properly registered.
+-   Check for errors in the Plone error log.
+-   Ensure your GenericSetup profiles are correctly installed.
+-   Validate that the interface path in {file}`registry.xml` matches your actual Python path.
 
 
 ## Example file structure
@@ -321,9 +330,9 @@ mypackage/
         └── registry.xml
 ```
 
-## REST API compatible control panels
+## REST API compatibility
 
-For better integration between backend and Volto, you can create REST API compatible control panels using the adapter pattern.
+For better integration between Plone's backend and its frontend Volto, you can create REST API compatible control panels using the adapter pattern.
 This approach is particularly useful when developing control panels that need to work seamlessly with Volto.
 
 Create a Python module {file}`mypackage/controlpanel.py` as follows.
