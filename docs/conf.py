@@ -79,7 +79,6 @@ linkcheck_anchors = True
 # Ignore localhost
 linkcheck_ignore = [
     # Ignore local and example URLs
-    r"http://0.0.0.0",
     r"http://127.0.0.1",
     r"http://localhost",
     r"http://yoursite",
@@ -89,26 +88,19 @@ linkcheck_ignore = [
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new",  # requires auth
-    r"https://github.com/plone/volto/issues/new/choose",  # requires auth
-    r"https://opensource.org/",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
-    # Ignore github.com searches
-    r"https://github.com/search",
-    # Ignore GitHub 429 Client Error: Too Many Requests for url
-    r"https://github.com/collective/plone.app.locales/commits/master/",
     # Ignore rate limiting by github.com
     r"https://github.com/plone/volto/issues",
     r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
-    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",  # volto
-    r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
+    r"https://hosted.weblate.org/accounts/profile/#notifications",
     r"https://browsersl.ist/#",  # volto
     # Ignore unreliable sites
-    r"https://web.archive.org/",
-    r"https://www.gnu.org/",  # Consider removal when upgrading Sphinx
-    r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
+    r"https://.*.gnu.org/",
+    # fluke where Sphinx interprets this as a URL
+    r"http://z3c.pt",
 ]
 linkcheck_allowed_redirects = {
     # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
