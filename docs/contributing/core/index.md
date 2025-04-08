@@ -79,61 +79,31 @@ On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common opti
 The tool that installs Plone core is `buildout.coredev`.
 
 The current default and development branch of `buildout.coredev` is `6.1`
-Older versions are named according to their `major.minor` version.
+Former versions are named according to their `major.minor` version.
 Its versions align with Plone's `major.minor` versions.
 
 Use a separate directory for each version of Plone to which you want to contribute.
-This will avoid switching between git branches, then re-running buildout, which can cause dependency conflicts between versions of Plone.
+This will avoid switching between git branches which can cause dependency conflicts between versions of Plone.
 
 To set up a Plone 6 development environment, change your working directory to wherever you place your projects, and clone https://github.com/plone/buildout.coredev.
-You can specify the branch that you want to check out with the `-b` option.
 
 ```shell
-cd [MY_PROJECTS]
-# clone a specific major.minor version branch
-git clone -b 6.1 https://github.com/plone/buildout.coredev
+git clone https://github.com/plone/buildout.coredev
 cd buildout.coredev
 ```
 
-````{important}
-If you want to use a Python version that is not 3.11, follow these instructions.
+If you want to contribute to another Plone version but the current one, switch the branch.
 
-Open the file {file}`bootstrap.sh` at the root of the repository.
-Notice that the script expects Python 3.11 to be installed on your system and in your user's `PATH`.
+Install Plone and run it:
 
 ```shell
-#/bin/sh
-`which python3.11` -m venv .
+make run
 ```
 
-Edit it according to the Python version you want to use, then save and close the file.
-After you have run the script, you should undo the change, otherwise you have a local change in git that you might accidentally commit.
-````
+See more make options with `make help`.
 
-Now run the script to install Plone 6.
-
-```shell
-./bootstrap.sh
-```
-
-This will run for a long time if it's your first pull (approximately 10-20 minutes, depending on network speed and your hardware).
-
-Once that's done, you can start an instance of Plone with the following command.
-
-```shell
-./bin/instance fg
-```
-
-```{include} /_inc/_create-classic-ui-instance.md
-```
-
-```{warning}
-Ignore the warning about accessing the Plone backend through its Classic UI frontend.
-
-Do not follow the instructions to install Volto.
-They will not work with buildout.
-To contribute to Volto, you will need to start over, and follow {doc}`../volto`.
-```
+If you prefer buildout, skip to former docs.
+See options on the bottom left of docs.plone.org.
 
 
 (contributing-core-work-with-git-label)=
