@@ -60,7 +60,7 @@ Here, the event handler code will only be executed if the object is a content ty
 If you want this to be interface agnostic, insert an asterix `*` as a wildcard instead.
 
 The third line defines the event on which this should happen, which is `IObjectCreatedEvent`. 
-For more available possible events to use as a trigger, see {ref}`subscribers-event-handlers`. 
+For more available possible events to use as a trigger, see {ref}`subscribers-event-types-label`. 
 
 The fourth line gives the path to the callable function to be executed.
 

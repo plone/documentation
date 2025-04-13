@@ -30,12 +30,12 @@ clean:  ## Clean docs build directory
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
 
 .PHONY: distclean
-distclean: clean ## Clean docs build directory, Python virtual environment, and symlinks
+distclean: clean ## Clean Python virtual environment and symlinks to submodules
 	rm -rf venv
 	rm docs/plone.api
 	rm docs/plone.restapi
 	rm docs/volto
-	@echo "Cleaned docs build directory, Python virtual environment, and symlinks."
+	@echo "Cleaned Python virtual environment and symlinks to submodules."
 	@echo
 
 venv/bin/python:  ## Setup up Python virtual environment and install requirements
@@ -71,6 +71,18 @@ docs/volto:  ## Setup Volto docs
 	git submodule update
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	@echo "Documentation of volto initialized."
+	@echo
+
+ln-seven:  ## Toggle the symlink to Seven
+	rm docs/volto
+	ln -s ../submodules/volto/docs ./docs/volto
+	@echo "Symlink to Volto changed to Seven."
+	@echo
+
+ln-volto:  ## Toggle the symlink to Volto
+	rm docs/volto
+	ln -s ../submodules/volto/docs/source ./docs/volto
+	@echo "Symlink to Seven changed to Volto."
 	@echo
 
 .PHONY: deps
