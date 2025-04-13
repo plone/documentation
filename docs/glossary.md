@@ -919,4 +919,8 @@ TDD
     -   Write the functional code until the test passes.
     -   Refactor both new and old code to make it well structured.
 
+BLOB
+Binary Large Object
+    A blob is a mass of data in binary form that does not necessarily conform to any file format.
+
 ```
