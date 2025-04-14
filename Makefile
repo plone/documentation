@@ -30,12 +30,12 @@ clean:  ## Clean docs build directory
 	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
 
 .PHONY: distclean
-distclean: clean ## Clean docs build directory, Python virtual environment, and symlinks
+distclean: clean ## Clean Python virtual environment and symlinks to submodules
 	rm -rf venv
 	rm docs/plone.api
 	rm docs/plone.restapi
 	rm docs/volto
-	@echo "Cleaned docs build directory, Python virtual environment, and symlinks."
+	@echo "Cleaned Python virtual environment and symlinks to submodules."
 	@echo
 
 venv/bin/python:  ## Setup up Python virtual environment and install requirements
