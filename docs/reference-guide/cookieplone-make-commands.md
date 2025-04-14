@@ -30,19 +30,21 @@ You can refer to these files for implementation details.
 You can run the following make targets by using the command structure of `make <TARGET>`.
 
 `frontend-install`
-:   Invokes the target `make install` in `frontend/Makefile`.
-    This installs the add-ons in the development environment.
+:   Invokes the target `install` in `frontend/Makefile`.
+    Uses pnpm to run the mrs-developer tool with the default settings.
+    It then installs dependencies using pnpm.
+    After that, it runs `build-deps` to build dependency packages.  
 
 `frontend-build`
-:   Invokes the target `make build` in `frontend/Makefile`.
+:   Invokes the target `build` in `frontend/Makefile`.
     This creates a production bundle for distribution of the project with the add-on.
 
 `frontend-start`
-:   Invokes the target `make start` in `frontend/Makefile`.
+:   Invokes the target `start` in `frontend/Makefile`.
     This starts Volto, allowing reloading of the add-on during development.
 
 `frontend-test`
-:   Invokes the target `make test` in `frontend/Makefile`.
+:   Invokes the target `test` in `frontend/Makefile`.
     This runs unit tests.
 
 
@@ -54,32 +56,32 @@ You can refer to these files for implementation details.
 You can run the following make targets by using the command structure of `make <TARGET>`.
 
 `backend-install`
-:   Invokes the target `make install` in `backend/Makefile`.
+:   Invokes the target `install` in `backend/Makefile`.
     This creates a `Python` virtual environment if one does not exist.
     It then installs Plone and its dependencies in that virtual environment.
-    After installation, it runs `make backend-create-site` to initialize a new Plone site.
+    After installation, it runs `make backend-create-site` to initialize a new Plone site with default content.
 
 `backend-build`
-:   Invokes the target `make install` in `backend/Makefile`.
+:   Invokes the target `install` in `backend/Makefile`.
     This creates a production bundle for distribution of the project with the add-on.
 
 `backend-create-site`
-:   Invokes the target `make create-site` in `backend/Makefile`.
-    This first ensures the virtual env exists.
+:   Invokes the target `create-site` in `backend/Makefile`.
+    This first ensures the virtual environment exists.
     Creates a new Plone site with default content.
   
 `backend-update-example-content`
-:   Invokes the target `make update-example-content` in `backend/Makefile`.
-    This first ensures the virtual env exists.
-    Checks if example-content exists. If yes, deletes all files inside to ensure a fresh export.
-    Then exports the Plone content.
+:   Invokes the target `update-example-content` in `backend/Makefile`.
+    This first ensures the virtual environment exists.
+    Next, it removes all content from the destination directory, if any content exists.
+    Finally, it exports the Plone site content.
 
 `backend-start`
-:   Invokes the target `make start` in `backend/Makefile`.
-    This starts a Plone instance on localhost:8080.
+:   Invokes the target `start` in `backend/Makefile`.
+    This starts a Plone instance on `localhost:8080`.
 
 `backend-test`
-:   Invokes the target `make test` in `backend/Makefile`.
+:   Invokes the target `test` in `backend/Makefile`.
     This runs unit tests.
 
 
@@ -91,11 +93,11 @@ You can refer to these files for implementation details.
 You can run the following make targets by using the command structure of `make <TARGET>`.
 
 `install`
-:   Invokes the target `make backend-install` and `make frontend-install` in `backend/Makefile` and `frontend/Makefile` respectively.
+:   Invokes the target `backend-install` and `make frontend-install` in `backend/Makefile` and `frontend/Makefile` respectively.
     This installs the add-ons in the development environment for both backend and frontend.
 
 `clean`
-:   Invokes the target `make clean` in both `backend/Makefile` and `frontend/Makefile`.
+:   Invokes the target `clean` in both `backend/Makefile` and `frontend/Makefile`.
     This command cleans both backend (removing virtual environments, cached files, and instance data) and frontend (removing core files and node_modules) environments.
 
 
@@ -107,12 +109,13 @@ You can refer to these files for implementation details.
 You can run the following make targets by using the command structure of `make <TARGET>`.
 
 `format`
-:   Invokes the target `make format` in both `backend/Makefile` and `frontend/Makefile`. 
-    This formats the codebase according to Plone standards
+:   Invokes the target `format` in both `backend/Makefile` and `frontend/Makefile`. 
+    This formats the code base according to Plone standards
 
 `lint`
-:   Invokes the target `make lint` in both `backend/Makefile` and `frontend/Makefile`. 
-    Checks for problems (linting, formatting, style issues) but does not auto-fix them, it only reports errors.
+:   Invokes the target `lint` in both `backend/Makefile` and `frontend/Makefile`. 
+    Checks for problems—such as linting, formatting, and style issues—but does not auto-fix them.
+    It only reports errors.
 
 `check`
 :   Runs both `format` and `lint` in sequence.
@@ -126,8 +129,8 @@ You can refer to these files for implementation details.
 You can run the following make targets by using the command structure of `make <TARGET>`.
 
 `i18n`
-:   Invokes the target `make i18n` in both `backend/Makefile` and `frontend/Makefile`. 
-    It is used to update locales in your project.
+:   Invokes the target `i18n` in both `backend/Makefile` and `frontend/Makefile`. 
+    It updates translations in your project.
 
 
 ## Testing
@@ -138,7 +141,7 @@ You can refer to these files for implementation details.
 You can run the following make targets by using the command structure of `make <TARGET>`.
 
 `test`
-:   Invokes the target `make backend-test` and `make frontend-test` in `backend/Makefile` and `frontend/Makefile` respectively. 
+:   Invokes the target `backend-test` and `make frontend-test` in `backend/Makefile` and `frontend/Makefile` respectively. 
     This runs unit tests in the project.
 
 
@@ -150,5 +153,5 @@ You can refer to these files for implementation details.
 You can run the following make targets by using the command structure of `make <TARGET>`.
 
 `build-images`
-:   Invokes the target `make build-image` in both `backend/Makefile` and `frontend/Makefile`. 
-    This build Docker Images for both backend and frontend.
+:   Invokes the target `build-image` in both `backend/Makefile` and `frontend/Makefile`. 
+    This builds Docker images for both backend and frontend.
