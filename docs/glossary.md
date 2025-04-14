@@ -895,4 +895,28 @@ Higher-Order Component
     https://legacy.reactjs.org/docs/higher-order-components.html
     ```
 
+Mocha
+    [Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on {term}`Node.js` and in the browser, making asynchronous testing simple and fun.    
+
+Chai
+    [Chai](https://www.chaijs.com/) Chai is a {term}`BDD` and {term}`TDD` assertion library for {term}`Node.js` and the browser that can be delightfully paired with any JavaScript testing framework.
+
+Behavior-Driven Development
+BDD
+    Behavior-Driven Development (BDD) is a software development approach that originated from Test-Driven Development (TDD).
+    It emphasizes collaboration among developers, testers, and non-technical stakeholders to ensure the developed software meets the desired behavior (or functionality).
+
+    In BDD, the focus is on defining the behavior of a system in a human-readable language, often using a domain-specific language.
+    This language is typically structured in a way that allows it to serve as both documentation and executable tests.
+    BDD scenarios are written in plain language that describe how the system should behave in different situations.
+
+Test-Driven Development
+TDD
+    Test-Driven Development (TDD) is a technique for building software that guides software development by writing tests.
+    It follows three steps repeatedly:
+
+    -   Write a test for the next bit of functionality you want to add.
+    -   Write the functional code until the test passes.
+    -   Refactor both new and old code to make it well structured.
+
 ```
