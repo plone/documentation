@@ -226,33 +226,43 @@ To manually register a view as a control panel, add the following registration t
 
 After you perform the above steps for the manual process, you must restart the Plone site. To stop a running Plone instance, press {kbd}`ctrl-c` in the terminal where Plone is running. To start it again, use the appropriate command based on your installation method:
 
-````{tab-set}
+`````{tab-set}
 
-```{tab-item} Buildout
-To start a Plone instance installed with Buildout:
-`bin/instance fg`
+````{tab-item} buildout
+```shell
+bin/instance fg
 ```
-
-```{tab-item} Pip
-To start a Plone instance installed with Pip:
-`bin/runwsgi -v instance/etc/zope.ini`
-```
-
-```{tab-item} Cookiecutter (Backend only)
-To start a Plone backend instance created with the Cookiecutter template:
-`make backend-start`
-```
-
-```{tab-item} Cookiecutter (Full stack)
-For a full stack setup with both backend and frontend:
-
-1. Start the backend in one terminal:
-`make backend-start`
-2. Start the frontend in another terminal:
-`make frontend-start`
-```
-
 ````
+
+````{tab-item} pip
+```shell
+bin/runwsgi -v instance/etc/zope.ini
+```
+````
+
+````{tab-item} Cookieplone
+For a backend add-on only, use the following command.
+
+```shell
+make backend-start
+```
+
+For both a backend and frontend add-on project, open two separate terminal sessions.
+
+In the first session, start the backend.
+
+```shell
+make backend-start
+```
+
+In the second session, start the frontent.
+
+```shell
+make frontend-start
+```
+````
+
+`````
 
 Your control panel should now appear in {guilabel}`Site Setup`.
 
