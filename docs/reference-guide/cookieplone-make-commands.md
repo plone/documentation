@@ -31,9 +31,9 @@ You can run the following make targets by using the command structure of `make <
 
 `frontend-install`
 :   Invokes the target `install` in `frontend/Makefile`.
-    Uses pnpm to run the mrs-developer tool with the default settings.
-    It then installs dependencies using pnpm.
-    After that, it runs `build-deps` to build dependency packages.  
+    Uses `pnpm dlx` to run [mrs-developer](https://github.com/collective/mrs-developer) to retrieve dependencies in the file {file}`frontend/mrs.developer.json`.
+    It then installs the dependencies.
+    Finally, it builds the dependency packages `@plone/registry` and `@plone/components` from source.
 
 `frontend-build`
 :   Invokes the target `build` in `frontend/Makefile`.
@@ -63,7 +63,9 @@ You can run the following make targets by using the command structure of `make <
 
 `backend-build`
 :   Invokes the target `install` in `backend/Makefile`.
-    This creates a production bundle for distribution of the project with the add-on.
+    This creates a `Python` virtual environment if one does not exist.
+    It then installs Plone and its dependencies in that virtual environment.
+    This is useful when you need to reload changes from your backend add-on, and don't need to recreate a full Plone site.
 
 `backend-create-site`
 :   Invokes the target `create-site` in `backend/Makefile`.
@@ -110,7 +112,7 @@ You can run the following make targets by using the command structure of `make <
 
 `format`
 :   Invokes the target `format` in both `backend/Makefile` and `frontend/Makefile`. 
-    This formats the code base according to Plone standards
+    This formats the code base according to Plone standards.
 
 `lint`
 :   Invokes the target `lint` in both `backend/Makefile` and `frontend/Makefile`. 
