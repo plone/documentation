@@ -24,7 +24,7 @@ There are two approaches to create a control panel for your Plone add-on:
 -   manual
 
 
-## `plonecli`
+### `plonecli`
 
 To add a control panel to your add-on, you can use [`plonecli`](https://pypi.org/project/plonecli/) as follows.
 
@@ -35,7 +35,7 @@ plonecli add controlpanel
 This creates the control panel Python file in the control panel's folder where you can define your control panel schema fields.
 
 
-## Manual
+### Manual
 
 To manually create a control panel, go through the following steps.
 
@@ -44,7 +44,7 @@ To manually create a control panel, go through the following steps.
 -   Add the control panel to the Plone control panel listing.
 -   Set default values in the registry.
 
-### Define the settings interface and form
+#### Define the settings interface and form
 
 Create a Python module, {file}`mypackage/controlpanel/settings.py`, that defines your control panel's settings interface and form class as follows.
 
@@ -86,7 +86,7 @@ MyControlPanelView = layout.wrap_form(MyControlPanelForm, ControlPanelFormWrappe
 ```
 
 
-### Register the control panel view
+#### Register the control panel view
 
 Create a file {file}`mypackage/controlpanel/configure.zcml` with the following content to register the control panel view in ZCML.
 
@@ -124,7 +124,7 @@ Make sure to include the above file in your package's main {file}`mypackage/conf
 </configure>
 ```
 
-### Add the control panel entry
+#### Add the control panel entry
 
 Create a {file}`mypackage/profiles/default/controlpanel.xml` in your package's GenericSetup profile with the following content to add your control panel to the Plone control panel listing.
 
@@ -165,7 +165,7 @@ These values correspond to the groups in {guilabel}`Site Setup`.
 :   {guilabel}`Advanced`
 
 
-### Set default values in the registry
+#### Set default values in the registry
 
 Define default values for your settings in {file}`mypackage/profiles/default/registry.xml`.
 
@@ -182,24 +182,7 @@ Define default values for your settings in {file}`mypackage/profiles/default/reg
 ```
 
 
-### Access your settings in code
-
-You can access your settings in Python code as follows.
-
-```python
-from plone.registry.interfaces import IRegistry
-from zope.component import getUtility
-
-registry = getUtility(IRegistry)
-settings = registry.forInterface(IMyControlPanelSettings, prefix="my.addon")
-
-# Now you can access the settings
-my_setting_value = settings.my_setting
-my_choice_value = settings.my_choice
-```
-
-
-### Register a control panel
+#### Register a control panel
 
 To manually register a view as a control panel, add the following registration to your {file}`/profiles/default/controlpanel.xml`.
 
@@ -266,6 +249,21 @@ make frontend-start
 
 Your control panel should now appear in {guilabel}`Site Setup`.
 
+## Access your settings in code
+
+You can access your settings in Python code as follows.
+
+```python
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
+
+registry = getUtility(IRegistry)
+settings = registry.forInterface(IMyControlPanelSettings, prefix="my.addon")
+
+# Now you can access the settings
+my_setting_value = settings.my_setting
+my_choice_value = settings.my_choice
+```
 
 ## Use `FieldSet` to group fields
 
