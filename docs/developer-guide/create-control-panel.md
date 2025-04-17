@@ -83,7 +83,7 @@ class MyControlPanelForm(RegistryEditForm):
     
     schema = IMyControlPanelSettings
     schema_prefix = "my.addon"
-    label = "My Addon Settings"
+    label = "My add-on settings"
 
 # Wrap the form with plone.z3cform's ControlPanelFormWrapper to get the Plone
 # control panel look and feel
@@ -139,7 +139,7 @@ Create a {file}`mypackage/profiles/default/controlpanel.xml` in your package's G
 <?xml version="1.0"?>
 <object name="portal_controlpanel">
     <configlet
-        title="My Addon Settings"
+        title="My add-on settings"
         action_id="my-controlpanel"
         appId="my.addon"
         category="plone-general"
@@ -405,7 +405,7 @@ class MyAddonControlPanel(RegistryConfigletPanel):
     schema_prefix = "my.addon"
     configlet_id = "my-controlpanel"
     configlet_category_id = "plone-general"
-    title = _("My Addon Settings")
+    title = _("My add-on settings")
     group = "General"
 ```
 
