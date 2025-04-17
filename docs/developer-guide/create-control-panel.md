@@ -64,18 +64,18 @@ class IMyControlPanelSettings(Interface):
     """Schema for the control panel form."""
     
     my_setting = schema.TextLine(
-        title=u'My Setting',
-        description=u'Enter the value for my setting',
+        title="My Setting",
+        description="Enter the value for my setting",
         required=False,
-        default=u''
+        default=""
     )
     
     my_choice = schema.Choice(
-        title=u'My Choice',
-        description=u'Select a value for my choice',
+        title="My Choice",
+        description="Select a value for my choice",
         required=False,
-        default=u'value3',
-        values=['value1', 'value2', 'value3']
+        default="value3",
+        values=["value1", "value2", "value3"]
     )
 
 class MyControlPanelForm(RegistryEditForm):
@@ -83,7 +83,7 @@ class MyControlPanelForm(RegistryEditForm):
     
     schema = IMyControlPanelSettings
     schema_prefix = "my.addon"
-    label = u"My Addon Settings"
+    label = "My Addon Settings"
 
 # Wrap the form with plone.z3cform's ControlPanelFormWrapper to get the Plone
 # control panel look and feel
@@ -288,26 +288,26 @@ from plone.supermodel import model
 class IMyControlPanelSettings(Interface):
     
     model.fieldset(
-        'advanced',
-        label=u"Advanced Settings",
-        fields=['advanced_setting1', 'advanced_setting2']
+        "advanced",
+        label="Advanced Settings",
+        fields=["advanced_setting1", "advanced_setting2"]
     )
     
     # Basic settings
     my_setting = schema.TextLine(
-        title=u'My Setting',
-        description=u'Enter the value for my setting',
+        title="My Setting",
+        description="Enter the value for my setting",
         required=False
     )
     
     # Advanced settings
     advanced_setting1 = schema.TextLine(
-        title=u'Advanced Setting 1',
+        title="Advanced Setting 1",
         required=False
     )
     
     advanced_setting2 = schema.Bool(
-        title=u'Advanced Setting 2',
+        title="Advanced Setting 2",
         default=False
     )
 ```
