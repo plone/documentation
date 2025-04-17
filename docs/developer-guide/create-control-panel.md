@@ -40,7 +40,7 @@ It also goes through all the following steps to create a control panel.
 
 ## Steps to create a control panel
 
-Whether performed automatically with `plonecli` or manually, the following steps are required to  create a control panel.
+Whether performed automatically with `plonecli` or manually, the following steps are required to create a control panel.
 
 -   Define the settings interface and form.
 -   Register the control panel view in ZCML.
