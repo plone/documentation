@@ -12,16 +12,15 @@ myst:
 This guide describes the process of how to contribute to, and develop in, Plone core.
 It expands upon {doc}`/contributing/index`.
 
-```{important}
-Although Plone core includes Volto—the React based, default frontend for Plone 6—this guide does not apply to Volto and its packages.
+Although Plone core includes Volto — the React based, default frontend for Plone 6 — this guide does not apply to Volto and its packages.
 To contribute to Volto, see {doc}`../volto`.
-```
 
 This guide assumes that you have basic knowledge of how to use git and GitHub.
 If you have never contributed to Plone, or you lack basic knowledge of how to use git and GitHub, you should first read {doc}`/contributing/first-time` for more information.
 
 ```{important}
-You must {ref}`contributing-sign-and-return-the-plone-contributor-agreement-label` before your contribution can be accepted.
+Please {ref}`contributing-sign-and-return-the-plone-contributor-agreement-label` before you contribute.
+This is not optional, but a must before your contribution can be accepted.
 ```
 
 
@@ -73,7 +72,7 @@ On macOS, Developer Tools provides Clang for a C compiler.
 On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common option.
 
 
-
+(contributing-core)=
 ## Install Plone core for development
 
 The tool that installs Plone core is `buildout.coredev`.
@@ -83,16 +82,14 @@ Former versions are named according to their `major.minor` version.
 Its versions align with Plone's `major.minor` versions.
 
 Use a separate directory for each version of Plone to which you want to contribute.
-This will avoid switching between git branches which can cause dependency conflicts between versions of Plone.
+This will avoid switching between git branches, which can cause dependency conflicts between versions of Plone.
 
-To set up a Plone 6 development environment, change your working directory to wherever you place your projects, and clone https://github.com/plone/buildout.coredev.
+To set up a Plone 6 development environment, clone https://github.com/plone/buildout.coredev.
 
 ```shell
 git clone https://github.com/plone/buildout.coredev
 cd buildout.coredev
 ```
-
-If you want to contribute to another Plone version but the current one, switch the branch.
 
 Install Plone and run it:
 
@@ -100,10 +97,7 @@ Install Plone and run it:
 make run
 ```
 
-See more make options with `make help`.
-
-If you prefer buildout, skip to former docs.
-See options on the bottom left of docs.plone.org.
+See more `make` options/targets in the README of the buildout.coredev repo.
 
 
 (contributing-core-work-with-git-label)=
