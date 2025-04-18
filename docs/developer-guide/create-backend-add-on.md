@@ -97,7 +97,7 @@ You can now start developing your new add-on and add features to it.
 To list the available {term}`mr.bob` templates, issue the following command.
 
 ```shell
-venv/bin/plonecli -l
+plonecli -l
 ```
 
 You should see output similar to the following.
@@ -136,7 +136,7 @@ Then issue the command to add a feature as a subtemplate, and answer the prompts
 
 ```shell
 cd src/collective.myaddon/
-../venv/bin/plonecli add <TEMPLATE>
+plonecli add <TEMPLATE>
 ```
 
 ```{seealso}
