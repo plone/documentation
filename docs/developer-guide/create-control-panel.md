@@ -28,7 +28,7 @@ Since it's used for development, it's advantageous to install it in your user en
 pip install plonecli --user
 ```
 
-You can automatically create a control panel using the following command.
+`plonecli` is primarily designed for scaffolding Plone add-ons. If you have an existing add-on created with `plonecli`, you can automatically create a control panel using the following command while in the add-on root directory:
 
 ```shell
 plonecli add controlpanel
@@ -36,6 +36,30 @@ plonecli add controlpanel
 
 This creates the control panel Python file in the control panel's folder where you can define your control panel schema fields.
 It also goes through all the following steps to create a control panel.
+
+### Using `plonecli` in a non-add-on project
+
+If you're working on a Plone project that wasn't created as an add-on (for example, a custom policy package or a custom theme package), you have two options:
+
+1. **Create the control panel manually**: Follow the steps in this chapter to create all necessary files by hand.
+
+2. **Use `plonecli` partially**: You can use `plonecli` to generate the control panel code in a temporary add-on and then copy the relevant files to your project. For example:
+
+   ```shell
+   # Create a temporary add-on
+   mkdir temp_addon
+   cd temp_addon
+   plonecli create addon temp.addon
+   cd temp.addon
+   
+   # Generate the control panel
+   plonecli add controlpanel
+   
+   # Examine and copy the generated files to your project
+   # You'll need to adapt paths and import statements
+   ```
+
+   After generating the files, you'll need to adapt them to fit your project's structure and naming conventions.
 
 
 ## Steps to create a control panel
