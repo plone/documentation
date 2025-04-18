@@ -21,6 +21,8 @@ It also covers advanced topics—including how to group fields in your control p
 
 ## `plonecli`
 
+> **Note**: This method only works when developing Plone add-ons. If you're working on a Plone project that is not an add-on, you'll need to follow the manual steps described in the next section.
+
 Given you've already created a Plone add-on using one of the following methods.
 
 -   {doc}`/install/create-project-cookieplone`
@@ -225,17 +227,9 @@ To register the view as a control panel so that it appears in the {guilabel}`Sit
 
 ## Load your control panel
 
-After performing the above steps, you must add them to your buildout configuration, run buildout, and restart the Plone site.
+After performing the above steps, you must perform below mentioned steps as they are important to load the profile (including registry) to the project.
 
-```{todo}
-Add a sample buildout configuration.
-```
-
-Run buildout with the `-N` option, so that it does not check for new versions of Python requirements.
-
-```shell
-bin/buildout -N
-```
+### Restarting the instance
 
 To stop a running Plone instance, press {kbd}`ctrl-c` in the terminal where Plone is running.
 To start it again, use the appropriate command based on your installation method.
@@ -277,6 +271,34 @@ make frontend-start
 ````
 
 `````
+
+### Importing the Generic Profile
+
+​To apply your newly created control panel in a Plone project, you'll need to manually import the GenericSetup profile associated with your project. Here's how you can do this:​
+
+#### Access the ZMI (Zope Management Interface)
+
+Navigate to your Plone site's URL and append /manage to access the ZMI. For example:​
+
+```bash
+http://localhost:8080/Plone/manage
+
+```
+
+#### Navigate to the Setup Tool
+
+In the ZMI, locate and click on portal_setup.​
+
+#### Import the Profile
+
+- Within portal_setup, go to the Import tab.
+- From the Profile dropdown menu, select your project's profile. This is typically named in the format:​
+```
+profile-your.projectname:default
+```
+- Click the Import All Steps button to apply the profile.​
+
+This process will register your control panel and any associated registry settings defined in your registry.xml and controlpanel.xml files.
 
 Your control panel should now appear in {guilabel}`Site Setup`.
 
