@@ -97,7 +97,7 @@ Install Plone and run it:
 make run
 ```
 
-See more `make` options/targets in the README of the buildout.coredev repo.
+See more `make` options/targets in the READMEs of the `buildout.coredev` repo.
 
 
 (contributing-core-work-with-git-label)=
