@@ -13,54 +13,32 @@ myst:
 
 This chapter describes how to create a control panel for your Plone add-on, whether accessed through either the Classic UI or Volto frontend.
 
-It also covers advanced topics—including how to group fields in your control panel—and provides a schema field reference, troubleshooting tips, control panel file structure, and a Plone REST API compatibility reference.
+This chapter begins with automating all the manual steps to create a control panel using {term}`plonecli`.
+It then walks through all these manual steps.
 
-[`plonecli`](https://pypi.org/project/plonecli/) automates all the manual steps to create a control panel.
-This chapter will walk through all those steps as well.
+It also covers advanced topics—including how to group fields in your control panel—and provides a schema field reference, troubleshooting tips, control panel file structure, and a Plone REST API compatibility reference.
 
 
 ## `plonecli`
 
-You can install `plonecli` as any other Python package.
-Since it's used for development, it's advantageous to install it in your user environment, thus making it available to all your Plone projects.
+Given you've already created a Plone add-on using one of the following methods.
 
-```shell
-pip install plonecli --user
-```
+-   {doc}`/install/create-project-cookieplone`
+-   {doc}`create-backend-add-on`
 
-`plonecli` is primarily designed for scaffolding Plone add-ons. If you have an existing add-on created with `plonecli`, you can automatically create a control panel using the following command while in the add-on root directory:
+Then, as described in {ref}`backend-add-on-subtemplates-label`, from the root of your add-on, issue the following command to add a control panel as a subtemplate in your add-on.
 
 ```shell
 plonecli add controlpanel
 ```
 
-This creates the control panel Python file in the control panel's folder where you can define your control panel schema fields.
-It also goes through all the following steps to create a control panel.
+This creates Python modules in the folder {file}`src/collective/myaddon/controlpanel`.
+This is where you can define your control panel schema fields, as described in {ref}`define-the-settings-interface-and-form-label`.
 
-### Using `plonecli` in a non-add-on project
+`plonecli` also goes through all the steps to create a control panel, as described in {ref}`steps-to-create-a-control-panel-label`.
 
-If you're working on a Plone project that wasn't created as an add-on (for example, a custom policy package or a custom theme package), you have two options:
 
-1. **Create the control panel manually**: Follow the steps in this chapter to create all necessary files by hand.
-
-2. **Use `plonecli` partially**: You can use `plonecli` to generate the control panel code in a temporary add-on and then copy the relevant files to your project. For example:
-
-   ```shell
-   # Create a temporary add-on
-   mkdir temp_addon
-   cd temp_addon
-   plonecli create addon temp.addon
-   cd temp.addon
-   
-   # Generate the control panel
-   plonecli add controlpanel
-   
-   # Examine and copy the generated files to your project
-   # You'll need to adapt paths and import statements
-   ```
-
-   After generating the files, you'll need to adapt them to fit your project's structure and naming conventions.
-
+(steps-to-create-a-control-panel-label)=
 
 ## Steps to create a control panel
 
@@ -72,10 +50,15 @@ Whether performed automatically with `plonecli` or manually, the following steps
 -   Set default values in the registry.
 -   Register the control panel in XML.
 
+The code examples are for illustrative purposes only, and may differ from those that `plonecli` generates and what you'll actually create.
+The language addresses you as if you'd manually perform these steps.
+
+
+(define-the-settings-interface-and-form-label)=
 
 ### Define the settings interface and form
 
-Create a Python module, {file}`mypackage/controlpanel/settings.py`, that defines your control panel's settings interface and form class as follows.
+Create a Python module, {file}`mypackage/controlpanel/settings.py`, that defines your control panel's settings interface and form class, or schema, as follows.
 
 ```python
 # mypackage/controlpanel/settings.py
@@ -116,6 +99,8 @@ MyControlPanelView = layout.wrap_form(MyControlPanelForm, ControlPanelFormWrappe
 
 
 ### Register the control panel view
+
+This step registers a view to display the control panel defined in the previous step.
 
 Create a file {file}`mypackage/controlpanel/configure.zcml` with the following content to register the control panel view in ZCML.
 
@@ -214,7 +199,7 @@ Define default values for your settings in {file}`mypackage/profiles/default/reg
 
 ### Register the control panel
 
-To register the view as a control panel, add the following registration to your {file}`/profiles/default/controlpanel.xml`.
+To register the view as a control panel so that it appears in the {guilabel}`Site Setup`, add the following registration to your {file}`/profiles/default/controlpanel.xml`.
 
 ```xml
 <?xml version="1.0"?>
@@ -240,7 +225,18 @@ To register the view as a control panel, add the following registration to your 
 
 ## Load your control panel
 
-After performing the above steps, you must restart the Plone site.
+After performing the above steps, you must add them to your buildout configuration, run buildout, and restart the Plone site.
+
+```{todo}
+Add a sample buildout configuration.
+```
+
+Run buildout with the `-N` option, so that it does not check for new versions of Python requirements.
+
+```shell
+bin/buildout -N
+```
+
 To stop a running Plone instance, press {kbd}`ctrl-c` in the terminal where Plone is running.
 To start it again, use the appropriate command based on your installation method.
 
@@ -390,7 +386,7 @@ If your control panel doesn't appear or doesn't work as expected:
 
 Below is a complete example file structure for a basic add-on with a control panel.
 
-```
+```text
 mypackage/
 ├── __init__.py
 ├── configure.zcml
