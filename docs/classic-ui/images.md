@@ -285,7 +285,7 @@ To access image scales, which are normally not accessible to the current user, o
 
 ## Responsive image support
 
-Plone supports the generation of [`picture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) tags with `srcset`s for image optimization.
+Plone supports the generation of [`picture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture) tags with `srcset`s for image optimization.
 Additionally, you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
 
 The configuration allows you to define different `picture` variants, such as `Large`, `Medium`, or `Small`.
@@ -438,7 +438,7 @@ This is useful when you want to define a `picture` variant to be used in templat
 With image size optimization, the browser is able to choose the optimal image for each display size.
 But we have no control over which scale the browser will actually use.
 For example to force the browser to use a zoomed version of an image for smaller screens, we can use media queries.
-The technique is called [art direction](https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images#art_direction).
+The technique is called [art direction](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images#art_direction).
 
 Let's have a look at a more advanced configuration:
 
