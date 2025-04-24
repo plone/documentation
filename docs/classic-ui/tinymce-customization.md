@@ -142,7 +142,7 @@ Once removed, the custom formats will no longer appear in the menu.
 
 ## Configure `<iframe>` sandboxing
 
-Since version 7.0, TinyMCE adds the attribute `sandbox=""` to make the `<iframe>` elements [sandboxed](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) with all restrictions.
+Since version 7.0, TinyMCE adds the attribute `sandbox=""` to make the `<iframe>` elements [sandboxed](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) with all restrictions.
 
 To customize this behavior, there are two options which you can add to the {guilabel}`Other settings` JSON configuration in the {guilabel}`Advanced` tab of the {guilabel}`TinyMCE` control panel.
 
