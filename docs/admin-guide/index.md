@@ -34,6 +34,7 @@ configure-zope
 add-ons
 export-import
 override-core
+backup-restore-plone-buildout
 /upgrade/index
 ```
 % TODO: uncomment and add the following link to the Operate toctree when https://github.com/plone/volto/pull/6397 is merged.
