@@ -332,7 +332,7 @@ Although Plone 6 Documentation is not completely aligned with the Diátaxis fram
 
 ## Plone documentation styleguide
 
-We follow [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).
+We follow the [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/).
 
 Key concepts from that guide include the following.
 
