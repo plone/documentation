@@ -52,10 +52,6 @@ If Plone is being upgraded at the same time as a Zope version, Plone will usuall
 
 ## Back up your Plone site
 
-```{danger}
-Always back up your Plone site before upgrading.
-```
-
 ```{seealso}
 For a Plone site installed via buildout, follow {doc}`/admin-guide/backup-restore-plone-buildout` for details.
 ```
