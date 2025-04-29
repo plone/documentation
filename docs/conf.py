@@ -386,15 +386,16 @@ redirects = {
     "contributing/plone-api": "/plone.api/contribute.html",
     "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
     "contributing/volto": "/volto/contributing/index.html",
+    "developer-guide/develop-volto-add-ons-index": "/volto/development/add-ons/index.html",
+    "install/create-project": "/install/create-project-cookieplone.html",
     "install/install-from-packages": "/install/create-project.html",
     "manage/frontend": "/volto/addons/index.html",
-    "install/create-project": "/install/create-project-cookieplone.html",
-    "user-guide/editor": "/volto/user-manual/index.html",
-    "reference-guide/volto-configuration-settings.html": "/volto/configuration/settings-reference.html",
-    "reference-guide/volto-javascript-client.html": "/volto/client/index.html",
+    "reference-guide/plone.api-methods.html": "/plone.api/api/index.html",
     "reference-guide/plone.restapi-usage.html": "/plone.restapi/docs/source/usage/index.html",
     "reference-guide/plone.restapi-endpoints.html": "/plone.restapi/docs/source/endpoints/index.html",
-    "reference-guide/plone.api-methods.html": "/plone.api/api/index.html",
+    "reference-guide/volto-configuration-settings.html": "/volto/configuration/settings-reference.html",
+    "reference-guide/volto-javascript-client.html": "/volto/client/index.html",
+    "user-guide/editor": "/volto/user-manual/index.html",
 }
 
 
