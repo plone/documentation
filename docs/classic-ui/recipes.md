@@ -46,3 +46,51 @@ Then register the adapter in ZCML.
     name="myproject-customclasses"
 />
 ```
+
+(classic-ui-recipes-customize-pattern-options)=
+
+## Customize `pattern_options`
+
+This example shows how to customize the {menuselection}`Favorites` menu in the contentbrowser pattern:
+
+First create a multiadapter:
+
+```{code-block} python
+:linenos:
+
+    from plone import api
+    from z3c.form.interface import IValue
+    from zope.interface import implementer
+
+
+    @implementer(IValue)
+    class ContentbrowserPatternOptions:
+
+        def __init__(self, context, request, form, field, widget):
+            self.context = context
+            self.request = request
+            self.form = form
+            self.field = field
+            self.widget = widget
+
+        def get(self):
+            portal_path = "/".join(api.portal.get().getPhysicalPath())
+            return {
+                "favorites": [
+                    {"title": "my favorite folder", "path": f"{portal_path}/path/to/my/favorite/folder"},
+                    {"title": "Portal", "path": portal_path},
+                ],
+            }
+```
+
+And register it with zcml:
+
+```xml
+<adapter factory=".ContentbrowserPatternOptions"
+         for="*
+              *
+              *
+              *
+              plone.app.z3cform.interfaces.IContentBrowserWidget"
+         name="pattern_options">
+```
