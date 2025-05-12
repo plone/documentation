@@ -474,7 +474,7 @@ self.widgets["ds_pregu_pers"].disabled = "disabled"
 
 ### Customize existing widgets `pattern_options`
 
-There is a special attribute called `pattern_options` which is used in Classic-UI for pattern configuration and in Volto (how ?).
+There is a special attribute called `pattern_options` which is used in Classic UI for pattern configuration and in Volto (how ?).
 
 If you define your own schema you can set this attribute with autoform directives (see {ref}`relations-configure-the-relateditemsfieldwidget-label` for example).
 
