@@ -476,7 +476,8 @@ self.widgets["ds_pregu_pers"].disabled = "disabled"
 
 There is a special attribute called `pattern_options` which is used in Classic UI for pattern configuration and in Volto (how ?).
 
-If you define your own schema you can set this attribute with autoform directives (see {ref}`relations-configure-the-relateditemsfieldwidget-label` for example).
+If you define your own schema, you can set this attribute with autoform directives.
+See {ref}`relations-configure-the-relateditemsfieldwidget-label` for an example.
 
 To customize or extend `pattern_options` for existing schema widgets you can create a `z3c.form.interface.IValue` multiadapter:
 
