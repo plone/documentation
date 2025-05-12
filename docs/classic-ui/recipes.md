@@ -51,39 +51,38 @@ Then register the adapter in ZCML.
 
 ## Customize `pattern_options`
 
-This example shows how to customize the {menuselection}`Favorites` menu in the contentbrowser pattern:
+The following example shows how to customize the {menuselection}`Favorites` menu in the `contentbrowser` pattern.
 
-First create a multiadapter:
+First create a multiadapter as shown.
 
 ```{code-block} python
-:linenos:
 
-    from plone import api
-    from z3c.form.interface import IValue
-    from zope.interface import implementer
+from plone import api
+from z3c.form.interface import IValue
+from zope.interface import implementer
 
 
-    @implementer(IValue)
-    class ContentbrowserPatternOptions:
+@implementer(IValue)
+class ContentbrowserPatternOptions:
 
-        def __init__(self, context, request, form, field, widget):
-            self.context = context
-            self.request = request
-            self.form = form
-            self.field = field
-            self.widget = widget
+    def __init__(self, context, request, form, field, widget):
+        self.context = context
+        self.request = request
+        self.form = form
+        self.field = field
+        self.widget = widget
 
-        def get(self):
-            portal_path = "/".join(api.portal.get().getPhysicalPath())
-            return {
-                "favorites": [
-                    {"title": "my favorite folder", "path": f"{portal_path}/path/to/my/favorite/folder"},
-                    {"title": "Portal", "path": portal_path},
-                ],
-            }
+    def get(self):
+        portal_path = "/".join(api.portal.get().getPhysicalPath())
+        return {
+            "favorites": [
+                {"title": "my favorite folder", "path": f"{portal_path}/path/to/my/favorite/folder"},
+                {"title": "Portal", "path": portal_path},
+            ],
+        }
 ```
 
-And register it with zcml:
+Then register it with ZCML as shown.
 
 ```xml
 <adapter factory=".ContentbrowserPatternOptions"

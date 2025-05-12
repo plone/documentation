@@ -479,32 +479,30 @@ There is a special attribute called `pattern_options` which is used in Classic U
 If you define your own schema, you can set this attribute with autoform directives.
 See {ref}`relations-configure-the-relateditemsfieldwidget-label` for an example.
 
-To customize or extend `pattern_options` for existing schema widgets you can create a `z3c.form.interface.IValue` multiadapter:
+To customize or extend `pattern_options` for existing schema widgets, you can create a `z3c.form.interface.IValue` multiadapter as shown.
 
 ```{code-block} python
-:linenos:
+from z3c.form.interface import IValue
+from zope.interface import implementer
 
-    from z3c.form.interface import IValue
-    from zope.interface import implementer
+@implementer(IValue)
+class CustomPatternOptions:
 
-    @implementer(IValue)
-    class CustomPatternOptions:
+    def __init__(self, context, request, form, field, widget):
+        self.context = context
+        self.request = request
+        self.form = form
+        self.field = field
+        self.widget = widget
 
-        def __init__(self, context, request, form, field, widget):
-            self.context = context
-            self.request = request
-            self.form = form
-            self.field = field
-            self.widget = widget
-
-        def get(self):
-            # return a dictionary with your custom options
-            return {
-                "myoption": "value",
-            }
+    def get(self):
+        # return a dictionary with your custom options
+        return {
+            "myoption": "value",
+        }
 ```
 
-Now register the adapter with zcml:
+Now register the adapter with ZCML as shown.
 
 ```xml
 <adapter factory=".CustomPatternOptions"
@@ -514,9 +512,8 @@ Now register the adapter with zcml:
 
 This registers the `pattern_options` for every field in every widget.
 
-You can define the adapter more explicit by providing the fields and/or widgets interface in the `for` attribute.
-
-See an example here {ref}`classic-ui-recipes-customize-pattern-options`.
+You can define the adapter more explicitly by providing the fields or widgets interface in the `for` attribute.
+See an example in {ref}`classic-ui-recipes-customize-pattern-options`.
 
 
 ## Set widget templates
