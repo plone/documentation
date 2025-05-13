@@ -482,10 +482,17 @@ See {ref}`relations-configure-the-relateditemsfieldwidget-label` for an example.
 To customize or extend `pattern_options` for existing schema widgets, you can create a `z3c.form.interface.IValue` multiadapter as shown.
 
 ```{code-block} python
-from z3c.form.interface import IValue
+from z3c.form.interfaces import IForm
+from z3c.form.interfaces import IValue
+from z3c.form.interfaces import IWidget
+from zope.component impport adapter
 from zope.interface import implementer
+from zope.interface import Interface
+from zope.publisher.interfaces import  IRequest
+from zope.schema.interfaces import IField
 
 @implementer(IValue)
+@adapter(Interface, IRequest, IForm, IField, IWidget)
 class CustomPatternOptions:
 
     def __init__(self, context, request, form, field, widget):
@@ -506,7 +513,6 @@ Now register the adapter with ZCML as shown.
 
 ```xml
 <adapter factory=".CustomPatternOptions"
-         for="* * * * *"
          name="pattern_options">
 ```
 

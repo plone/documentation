@@ -58,11 +58,17 @@ First create a multiadapter as shown.
 ```{code-block} python
 
 from plone import api
-from z3c.form.interface import IValue
+from plone.app.z3cform.interfaces import IContentBrowserWidget
+from plone.dexterity.interfaces import IDexterityContent
+from z3c.form.interfaces import IForm
+from z3c.form.interfaces import IValue
+from zope.component impport adapter
 from zope.interface import implementer
-
+from zope.publisher.interfaces import  IRequest
+from zope.schema.interfaces import IField
 
 @implementer(IValue)
+@adapter(IDexterityContent, IRequest, IForm, IField, IContentBrowserWidget)
 class ContentbrowserPatternOptions:
 
     def __init__(self, context, request, form, field, widget):
@@ -86,10 +92,5 @@ Then register it with ZCML as shown.
 
 ```xml
 <adapter factory=".ContentbrowserPatternOptions"
-         for="*
-              *
-              *
-              *
-              plone.app.z3cform.interfaces.IContentBrowserWidget"
          name="pattern_options">
 ```
