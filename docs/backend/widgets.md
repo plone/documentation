@@ -509,17 +509,17 @@ class CustomPatternOptions:
         }
 ```
 
-Now register the adapter with ZCML as shown.
+This defines an adapter for every field widget in every form.
+
+You can define the adapter more explicitly by providing different interfaces.
+See an example in {ref}`classic-ui-recipes-customize-pattern-options`.
+
+Now register the `pattern_options` named adapter with ZCML as shown.
 
 ```xml
 <adapter factory=".CustomPatternOptions"
          name="pattern_options">
 ```
-
-This registers the `pattern_options` for every field in every widget.
-
-You can define the adapter more explicitly by providing the fields or widgets interface in the `for` attribute.
-See an example in {ref}`classic-ui-recipes-customize-pattern-options`.
 
 
 ## Set widget templates
