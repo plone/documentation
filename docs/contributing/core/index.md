@@ -136,45 +136,20 @@ You can also ask in the [Plone Community Forum](https://community.plone.org/).
 
 Only a few packages are in {file}`src/` by default.
 
-Next create a new file {file}`buildout.local.cfg`, and add the names of packages that you want to develop under the `auto-checkout` list.
+Next edit file {file}`mxcheckouts.ini`, and add the name of the package that you want to develop.
+For example `plone.app.multilingual`:
 
 ```ini
-[buildout]
-extends =
-  buildout.cfg
-
-auto-checkout =
-    # Add packages that you want to develop
-    plone.app.event
-    icalendar
-    # others
-    ...
+[plone.app.multilingual]
+use = true
 ```
 
-When you make changes in your package, then rerun buildout with the following command, specifying your new buildout configuration file with the `-c` option.
-You can add the `-N` flag to save time by not checking PyPI to see if there are updates to packages that were already installed.
+You can now check out the package and start your instance with the checked out package:
 
 ```shell
-./bin/buildout -c buildout.local.cfg -N
+make sources-dirty
+make run
 ```
-
-```{seealso}
-`mr.developer` checks out additional repositories using the `auto-checkout` option.
-For more information, see {doc}`mrdeveloper`.
-```
-
-````{tip}
-To avoid conflicts with `buildout.coredev` files, you can configure Git for your user.
-Either create or edit a file at {file}`~/.gitconfig`.
-Then add the following stanza to it.
-
-```cfg
-[core]
-    excludesfile = ~/.gitignore_global
-```
-
-Then add any standard `.gitignore` syntax to exclude files from getting committed and pushed to a remote repository.
-````
 
 Next create a new development branch on which you want to work from the current branch, tracking the upstream Plone repository, and check it out.
 It's a good idea to use a branch name that includes the issue number and is descriptive of what it resolves.
@@ -190,54 +165,41 @@ Now you can edit your code without affecting the original branch.
 
 ## Test locally
 
-If you change the expected behavior of a feature in a package, you should write a test to cover the change.
+If you change the expected behavior of a feature in a package, you should write a unit and/or acceptance test to cover the change.
 
-To run a test for the specific package that you modified, use the `-s` option followed by the package name, as shown in the following example.
+Plone uses [Playwright](https://playwright.dev/) to run acceptance tests.
+`plone.app.robotframework` provides a script to install Playwright browsers.
 
 ```shell
-./bin/test -s plone.app.event
+.venv/bin/rfbrowser init
+```
+
+To run tests for the specific package that you modified, use `.venv/bin/pytest` followed by the package name, as shown in the following example.
+
+```shell
+.venv/bin/pytest src/plone.app.multilingual
 ```
 
 If any test fails, do not commit and push the changes.
 Instead write a test that passes.
 
+You can run all tests for the package you are developing or just unit tests or just acceptance tests.
+
+```shell
+.venv/bin/pytest src/plone.app.multilingual -v -k "not robot" 
+```
+
+```shell
+.venv/bin/pytest src/plone.app.multilingual -v -k "robot" 
+```
+
 After the package level tests pass with your change, you can {ref}`contributing-core-create-a-pull-request-label` and let CI run and ask Jenkins to run the full test suite.
 
-However, if CI or Jenkins report a test failure that you want to troubleshoot locally, you can run the full unit test suite to ensure other packages aren't affected by the change.
-It takes 5-10 minutes to run the full unit test suite.
+However, if CI or Jenkins report a test failure that you want to troubleshoot locally, you can run the full test suite to ensure other packages aren't affected by the change.
+It takes a while to run the full unit test suite.
 
 ```shell
-# Run unit tests
-./bin/test
-```
-
-If you run acceptance tests with the `--all` option, it will run tests in a real browser.
-This takes 30-40 minutes to run.
-This may repeatedly launch and close browser windows that gain focus, disrupting you from doing any other work.
-If this happens, you can use `headlesschrome` as the test browser.
-First set an environment variable.
-
-```shell
-export ROBOT_BROWSER="headlesschrome"
-```
-
-Then run all tests again.
-
-```shell
-bin/test --all
-```
-
-Plone uses [Playwright](https://playwright.dev/) to run robot tests.
-`plone.app.robotframework` provides a script to install Playwright browsers.
-
-```shell
-./bin/rfbrowser init
-```
-
-After the script downloads and initalizes browser resources, you can run the acceptance tests.
-
-```shell
-./bin/test --all
+.venv/bin/pytest
 ```
 
 
