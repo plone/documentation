@@ -15,8 +15,8 @@ It expands upon {doc}`/contributing/index`.
 Although Plone core includes Volto—the React based, default frontend for Plone 6—this guide does not apply to Volto and its packages.
 To contribute to Volto, see {doc}`../volto`.
 
-This guide assumes that you have basic knowledge of how to use git and GitHub.
-If you have never contributed to Plone, or you lack basic knowledge of how to use git and GitHub, you should first read {doc}`/contributing/first-time` for more information.
+This guide assumes that you have basic knowledge of how to use Git and GitHub.
+If you have never contributed to Plone, or you lack basic knowledge of how to use Git and GitHub, you should first read {doc}`/contributing/first-time` for more information.
 
 ```{important}
 You must {ref}`contributing-sign-and-return-the-plone-contributor-agreement-label` before your contribution can be accepted.
@@ -81,7 +81,7 @@ Older versions are named according to their `major.minor` version.
 Its versions align with Plone's `major.minor` versions.
 
 Use a separate directory for each version of Plone to which you want to contribute.
-This will avoid switching between git branches, which can cause dependency conflicts between versions of Plone.
+This will avoid switching between Git branches, which can cause dependency conflicts between versions of Plone.
 
 To set up a Plone 6 development environment, clone https://github.com/plone/buildout.coredev.
 
@@ -101,7 +101,7 @@ See more `make` options/targets in the READMEs of the `buildout.coredev` repo.
 
 (contributing-core-work-with-git-label)=
 
-## Work with git
+## Work with Git
 
 ```{important}
 This section applies to members of the GitHub `plone/developers` team, who have write access to repositories under the Plone GitHub organization.
@@ -109,7 +109,7 @@ This section applies to members of the GitHub `plone/developers` team, who have 
 Members of the `plone/contributors` team do not have write access, and instead must follow the process to set up their remote upstream and origin branches as described in {ref}`set-up-your-environment-label`.
 ```
 
-Always begin by checking out the git branch on which you want to work.
+Always begin by checking out the Git branch on which you want to work.
 This is the base branch to which you will create a pull request.
 
 If you just cloned `https://github.com/plone/buildout.coredev`, then the `6.1` branch is checked out and current, and you can skip the rest of this section and continue on the next, {ref}`contributing-core-edit-packages-label`.
@@ -164,7 +164,7 @@ For more information, see {doc}`mrdeveloper`.
 ```
 
 ````{tip}
-To avoid conflicts with `buildout.coredev` files, you can configure git for your user.
+To avoid conflicts with `buildout.coredev` files, you can configure Git for your user.
 Either create or edit a file at {file}`~/.gitconfig`.
 Then add the following stanza to it.
 
