@@ -19,8 +19,7 @@ This guide assumes that you have basic knowledge of how to use git and GitHub.
 If you have never contributed to Plone, or you lack basic knowledge of how to use git and GitHub, you should first read {doc}`/contributing/first-time` for more information.
 
 ```{important}
-Please {ref}`contributing-sign-and-return-the-plone-contributor-agreement-label` before you contribute.
-This is not optional, but a must before your contribution can be accepted.
+You must {ref}`contributing-sign-and-return-the-plone-contributor-agreement-label` before your contribution can be accepted.
 ```
 
 
