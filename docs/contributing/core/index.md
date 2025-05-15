@@ -12,7 +12,7 @@ myst:
 This guide describes the process of how to contribute to, and develop in, Plone core.
 It expands upon {doc}`/contributing/index`.
 
-Although Plone core includes Volto — the React based, default frontend for Plone 6 — this guide does not apply to Volto and its packages.
+Although Plone core includes Volto—the React based, default frontend for Plone 6—this guide does not apply to Volto and its packages.
 To contribute to Volto, see {doc}`../volto`.
 
 This guide assumes that you have basic knowledge of how to use git and GitHub.
