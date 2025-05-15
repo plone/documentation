@@ -77,7 +77,7 @@ On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common opti
 The tool that installs Plone core is `buildout.coredev`.
 
 The current default and development branch of `buildout.coredev` is `6.1`
-Former versions are named according to their `major.minor` version.
+Older versions are named according to their `major.minor` version.
 Its versions align with Plone's `major.minor` versions.
 
 Use a separate directory for each version of Plone to which you want to contribute.
