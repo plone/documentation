@@ -501,6 +501,52 @@ Please note that this example has the `resolve_uid_and_caption` filter disabled 
 The real `src` URLs look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`.
 ```
 
+### All image scales in the srcset
+
+Image scales and srcset without using picture and source tags
+-------------------------------------------------------------
+
+Nowadays modern browsers are able to render different images depending on their width
+if urls and widths are correctly provided in an attribute called `srcset` and the rendered
+space is provided in the attribute `sizes`.
+
+So one can do the following:
+
+```html
+    <img tal:define="images context/@@images;"
+         tal:replace="structure python:images.srcset(sizes='90vw')" />
+```
+
+This will render the `img` with the urls of all scales configured in Plone, calculating the width
+of each of the scales and will add the `sizes="90vw"` attribute which instructs the browser to "render
+the image that best fits as it will take the 90% of the current viewport-width" whichever is the current
+viewport.
+
+This will mean that for bigger screens the browser will download a bigger image while in small screens
+a smaller scale is enough.
+
+This also means that the developer does not need to worry on creating a specific scale, they only need to
+provide the correct media query to signal the required width.
+
+The `scrset` method of the `@@images` view takes also all other parameters that can be rendered in the `img`
+tag such as `title`, `alt` or `loading`:
+
+
+```html
+    <img tal:define="images context/@@images;"
+         tal:replace="structure python:images.srcset(sizes='90vw',
+                                                     alt='This is the alternative text',
+                                                     loading='lazy',
+                                                     css_class='rounded-img')" />
+```
+
+```{note}
+while using this approach may be useful for projects, using it in reusable addons is not recomended
+because it may require overriding it to your needs in a project. For such cases, we recomend using configurable
+picture variants.
+```
+
+
 ## Image scales from catalog brain
 
 For all `NamedBlobImage` fields, we can get existing scale information directly from the catalog brain.
