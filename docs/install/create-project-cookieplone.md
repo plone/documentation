@@ -31,11 +31,6 @@ You need to decide which type of project to create first.
 Read {doc}`/conceptual-guides/choose-user-interface` and test them on https://demo.plone.org (Volto) and https://classic.demo.plone.org (Classic UI).
 
 
-```{versionadded} Volto 18.0.0-alpha.43
-{term}`Cookieplone` was added as the recommended tool to create a Plone project with Volto starting in Volto 18.0.0-alpha.43 and above.
-```
-
-
 (create-project-cookieplone-system-requirements)=
 
 ## System requirements
