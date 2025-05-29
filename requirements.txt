@@ -1,5 +1,5 @@
 linkify-it-py
-plone-sphinx-theme
+plone-sphinx-theme<2
 sphinx-autobuild
 sphinx-copybutton
 sphinx-design  # Documentation only

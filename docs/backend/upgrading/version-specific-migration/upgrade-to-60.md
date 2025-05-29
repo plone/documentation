@@ -223,6 +223,7 @@ Add-ons for Classic UI Plone only need to register bundles, not individual resou
 [PLIP 3211](https://github.com/plone/Products.CMFPlone/issues/3211)
 ```
 
+The cookie key for the folder contents page size has changed from `_fc_perPage` to `_fc_pageSize` due to an upgrade of the underlying `backbone.paginator` library.
 
 (v60-relations-control-panel-label)=
 

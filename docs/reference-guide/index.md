@@ -12,6 +12,9 @@ myst:
 This reference guide details application programming interfaces (APIs), functions, modules, and objects included in Plone, describing what they are and what they do.
 Its audience is primarily developers of Plone and its projects and add-ons.
 
+{doc}`/reference-guide/cookieplone-make-commands`
+:   This chapter describes all the `make` commands in a {term}`Cookieplone` project.
+
 {doc}`Volto configuration settings </volto/configuration/settings-reference>`
 :   This reference contains a summary of the configuration options and what they control.
 
@@ -30,6 +33,7 @@ Its audience is primarily developers of Plone and its projects and add-ons.
 
 ```{toctree}
 :hidden:
+cookieplone-make-commands
 volto-configuration-settings
 volto-javascript-client
 plone.restapi-usage

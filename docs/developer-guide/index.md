@@ -21,6 +21,7 @@ You can help consolidate all of development documentation here, even if it is to
 ```{toctree}
 :maxdepth: 2
 
+develop-volto-add-ons-index
 create-a-distribution
 standardize-python-project-configuration
 ```

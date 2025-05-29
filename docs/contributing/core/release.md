@@ -35,10 +35,6 @@ All files mentioned in this list may be written in Markdown or reStructuredText 
     The `.mo` files can be created with the `zest.pocompile` add-on, which should be installed together with `zest.releaser`.
 -   `.gitignore` and `MANIFEST.in` must reflect the files going in to the package (must include page template and `.po` files).
 
-```{seealso}
-[High quality automated package releases for Python with `zest.releaser`](https://opensourcehacker.com/2012/08/14/high-quality-automated-package-releases-for-python-with-zest-releaser/).
-```
-
 
 ## Special packages
 

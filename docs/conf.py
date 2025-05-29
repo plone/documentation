@@ -75,10 +75,10 @@ extensions = [
 smartquotes = False
 
 # Options for the linkcheck builder
+linkcheck_anchors = True
 # Ignore localhost
 linkcheck_ignore = [
     # Ignore local and example URLs
-    r"http://0.0.0.0",
     r"http://127.0.0.1",
     r"http://localhost",
     r"http://yoursite",
@@ -88,35 +88,28 @@ linkcheck_ignore = [
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",  # requires auth
     r"https://github.com/plone/documentation/issues/new",  # requires auth
-    r"https://github.com/plone/volto/issues/new/choose",  # requires auth
-    r"https://opensource.org/",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
-    # Ignore github.com searches
-    r"https://github.com/search",
-    # Ignore GitHub 429 Client Error: Too Many Requests for url
-    r"https://github.com/collective/plone.app.locales/commits/master/",
     # Ignore rate limiting by github.com
     r"https://github.com/plone/volto/issues",
     r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
     r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
-    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",  # volto
-    r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",  # volto
+    r"https://hosted.weblate.org/accounts/profile/#notifications",
     r"https://browsersl.ist/#",  # volto
     # Ignore unreliable sites
-    r"https://web.archive.org/",
-    r"https://www.gnu.org/",  # Consider removal when upgrading Sphinx
-    r"http://z3c.pt",  # fluke where Sphinx interprets this as a URL
+    r"https://.*.gnu.org/",
+    # fluke where Sphinx interprets this as a URL
+    r"http://z3c.pt",
 ]
 linkcheck_allowed_redirects = {
     # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
     # Example
     # r"https://chrome\.google\.com/webstore/detail/.*": r"https://consent\.google\.com/.*",
 }
-linkcheck_anchors = True
-linkcheck_timeout = 5
 linkcheck_retries = 1
+linkcheck_report_timeouts_as_broken = True
+linkcheck_timeout = 5
 
 # The suffix of source filenames.
 source_suffix = {
@@ -185,6 +178,8 @@ html_sidebars = {
 
 html_theme_options = {
     "article_header_start": ["toggle-primary-sidebar"],
+    "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
+    <p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a>.</p>""",
     "footer_content_items": [
         "author",
         "copyright",
@@ -192,8 +187,6 @@ html_theme_options = {
         "extra-footer",
         "icon-links",
     ],
-    "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
-    <p>Pull request previews by <a href="https://readthedocs.org/">Read the Docs</a>.</p>""",
     "icon_links": [
         {
             "name": "GitHub",
@@ -275,12 +268,8 @@ html_use_opensearch = "https://6.docs.plone.org"
 # "<project> v<release> documentation".
 html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
 
-# If false, no index is generated.
-html_use_index = True
-
 html_css_files = ["documentation.css", ("print.css", {"media": "print"})]
 html_js_files = []
-
 html_extra_path = [
     "robots.txt",
 ]
@@ -308,8 +297,8 @@ autodoc_class_signature = "separated"
 # For more information see:
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = [
-    "attrs_block", # Support parsing of block attributes.
-    "attrs_inline", # Support parsing of inline attributes.
+    "attrs_block",  # Support parsing of block attributes.
+    "attrs_inline",  # Support parsing of inline attributes.
     "colon_fence",  # You can also use ::: delimiters to denote code fences, instead of ```.
     "deflist",  # Support definition lists. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
     "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
@@ -354,6 +343,7 @@ intersphinx_mapping = {
     "training": ("https://training.plone.org/", None),
     "training-2022": ("https://2022.training.plone.org/", None),
     "training-2023": ("https://2023.training.plone.org/", None),
+    "training-2024": ("https://2024.training.plone.org/", None),
 }
 
 
@@ -396,15 +386,16 @@ redirects = {
     "contributing/plone-api": "/plone.api/contribute.html",
     "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
     "contributing/volto": "/volto/contributing/index.html",
+    "developer-guide/develop-volto-add-ons-index": "/volto/development/add-ons/index.html",
+    "install/create-project": "/install/create-project-cookieplone.html",
     "install/install-from-packages": "/install/create-project.html",
     "manage/frontend": "/volto/addons/index.html",
-    "install/create-project": "/install/create-project-cookieplone.html",
-    "user-guide/editor": "/volto/user-manual/index.html",
-    "reference-guide/volto-configuration-settings.html": "/volto/configuration/settings-reference.html",
-    "reference-guide/volto-javascript-client.html": "/volto/client/index.html",
+    "reference-guide/plone.api-methods.html": "/plone.api/api/index.html",
     "reference-guide/plone.restapi-usage.html": "/plone.restapi/docs/source/usage/index.html",
     "reference-guide/plone.restapi-endpoints.html": "/plone.restapi/docs/source/endpoints/index.html",
-    "reference-guide/plone.api-methods.html": "/plone.api/api/index.html",
+    "reference-guide/volto-configuration-settings.html": "/volto/configuration/settings-reference.html",
+    "reference-guide/volto-javascript-client.html": "/volto/client/index.html",
+    "user-guide/editor": "/volto/user-manual/index.html",
 }
 
 

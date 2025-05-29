@@ -28,10 +28,9 @@ You will need to work in one repository for Plone core, and optionally another o
 ## Prerequisites
 
 Request write access to https://github.com/collective/plone.app.locales to be able to commit your translation directly.
-
 To do so, [join the collective GitHub organization](https://collective.github.io/).
 
-Optionally sign the [Plone Contributor Agreement](https://plone.org/foundation/contributors-agreement) for translating Volto.
+Because translation strings do not constitute an original "work", translators are not required to sign the [Plone Contributor Agreement (PCA)](https://plone.org/foundation/contributors-agreement) to contribute translations to either Plone or Volto.
 
 
 (contributing-plone-core-translations-translate-plone-classic-ui-label)=
@@ -95,16 +94,12 @@ Plone gets free hosting at the [Hosted](https://hosted.weblate.org/) platform th
 
 Translators will need to create an account on Weblate with an email and password.
 Authentication with GitHub and other third-party accounts might not work.
+You can [configure your Weblate account to receive notifications](https://hosted.weblate.org/accounts/profile/#notifications) either automatically whenever you make a contribution to a project or manually watch specific projects.
 
 Translators can go to the [Plone project in Weblate](https://hosted.weblate.org/projects/plone/).
 
 You will see several components listed.
 The `volto` component is for the package `volto`, whose repository is at https://github.com/plone/volto.
-
-```{note}
-At this moment Volto translations can't be contributed using Weblate.
-The Volto Team are working on this issue, and hope to fix it as soon as possible.
-```
 
 All other components are for the package `plone.app.locales`, whose repository is at https://github.com/collective/plone.app.locales.
 
@@ -114,7 +109,7 @@ When you save a translation, then it is committed on a branch used only for tran
 
 [See recent commits to the package `plone.app.locales`](https://github.com/collective/plone.app.locales/commits/master/).
 
-Maintainers will periodically create a pull request from the changes, and merge it.
+Maintainers will periodically review the pull request that Weblate creates automatically, and merge it.
 
 
 (contributing-plone-core-translations-support-label)=
