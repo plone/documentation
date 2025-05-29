@@ -26,18 +26,24 @@ Use the following instructions if you installed Plone with Cookieplone.
 
 ### Install an add-on
 
-Add a line with the name of your add-on in the file {file}`backend/requirements.txt`.
+Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
 This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
 
 ```
-collective.easyform==4.2.1
+dependencies = [
+    "Products.CMFPlone==6.1.1",
+    "plone.api",
+    "plone.classicui",
+    "plone.app.caching",
+    "collective.easyform==4.4.0",
+]
 ```
 
 ```{tip}
 Including the add-on version, or "pinning a version", ensures that it won't unintentionally get upgraded in the future.
 ```
 
-Also add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` to make sure its configuration will be loaded.
+Also add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` to make sure its configuration will be loaded. This
 
 ```yaml
 default_context:
