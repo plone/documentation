@@ -36,7 +36,7 @@ Cookieplone
     ```{versionadded} Volto 18.0.0-alpha.43
     ```
 
-    [Cookieplone](https://github.com/plone/cookieplone) is the method to create a Plone project.
+    [Cookieplone](https://github.com/plone/cookieplone) is the recommended way to create a Plone project.
     You can use Cookieplone to build full Plone projects with either {term}`Volto` or {term}`Classic UI`. You can also create a backend add-on, a Volto add-on or a Documentation scaffold.
     Cookieplone simplifies the process using robust Cookiecutter templates from {term}`cookieplone-templates`.
 

@@ -186,40 +186,51 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 │   - Docker (optional): ✓                                                    │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
-  [1/17] Project Title (Project Title):
-  [2/17] Project Description (A new project using Plone 6.):
-  [3/17] Project Slug (Used for repository id) (project-title):
-  [4/17] Project URL (without protocol) (project-title.example.com):
-  [5/17] Author (Plone Foundation):
-  [6/17] Author E-mail (collective@plone.org):
-  [7/17] Should we use prerelease versions? (No):
-  [8/17] Plone Version (6.1.0):
-  [9/17] Volto Version (18.8.1):
-  [10/17] Python Package Name (project.title):
-  [11/17] Volto Addon Name (volto-project-title):
-  [12/17] Language
+  [1/19] Project Title (Project Title):
+  [2/19] Project Description (A new project using Plone 6.):
+  [3/19] Project Slug (Used for repository id) (project-title):
+  [4/19] Project URL (without protocol) (project-title.example.com):
+  [5/19] Author (Plone Foundation):
+  [6/19] Author E-mail (collective@plone.org):
+  [7/19] Should we use prerelease versions? (No):
+  [8/19] Plone Version (6.1.1):
+  [9/19] Volto Version (18.22.0):
+  [10/19] Python Package Name (project.title):
+  [11/19] Volto Addon Name (volto-project-title):
+  [12/19] Language
     1 - English
     2 - Deutsch
     3 - Español
     4 - Português (Brasil)
     5 - Nederlands
     6 - Suomi
-    Choose from [1/2/3/4/5/6] (1):
-  [13/17] GitHub or GitLab Username or Organization (collective):
-  [14/17] Container Registry
+    7 - Italiano
+    8 - Svenska
+    Choose from [1/2/3/4/5/6/7/8] (1):
+  [13/19] GitHub or GitLab username or organization slug from URL (collective):
+  [14/19] Container Registry
     1 - GitHub Container Registry
     2 - Docker Hub
     3 - GitLab
     Choose from [1/2/3] (1):
-  [15/17] Should we setup a caching server?
+  [15/19] Which persistent storage to use in the deployment stack?
+    1 - RelStorage with PostgreSQL (recommended)
+    2 - ZEO with FileStorage
+    3 - Local FileStorage, implies a single backend
+    Choose from [1/2/3] (1):
+  [16/19] Should we setup a caching server?
     1 - Yes
     2 - No
     Choose from [1/2] (1):
-  [16/17] Add Ansible playbooks?
+  [17/19] Add Ansible playbooks?
     1 - Yes
     2 - No
     Choose from [1/2] (1):
-  [17/17] Add GitHub Action to Deploy this project?
+  [18/19] Add GitHub Action to Deploy this project?
+    1 - Yes
+    2 - No
+    Choose from [1/2] (1):
+  [19/19] Would you like to add a documentation scaffold to your project?
     1 - Yes
     2 - No
     Choose from [1/2] (1):
@@ -227,17 +238,26 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 │                                                                             │
 │ Summary:                                                                    │
 │                                                                             │
-│   - Plone version: 6.1.0                                                    │
-│   - Volto version: 18.8.1                                                   │
-│   - Output folder: <PATH_TO>/project-title                                  │
+│   - Plone version: 6.1.1                                                    │
+│   - Volto version: 18.22.0                                                  │
+│   - Output folder: /Users/pbauer/workspace/project-title                    │
 │                                                                             │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
- -> Initialize Git repository
  -> Setup Backend
  -> Setup Frontend
+ -> Generate documentation scaffold
  -> Setup Cache
  -> Setup Project Settings
+==> Format codebase
+Installed 1 package in 2ms
+Found 4 errors (4 fixed, 0 remaining).
+Installed 1 package in 3ms
+2 files reformatted, 17 files left unchanged
+Installed 6 packages in 12ms
+ -> Organize documentation files
+ -> Remove unneeded documentation files
+ -> Initialize Git repository
 ╭───────────────────────── New project was generated ─────────────────────────╮
 │                                                                             │
 │ Project Title                                                               │
