@@ -170,7 +170,7 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
 You've downloaded /Users/username/.cookiecutters/cookieplone-templates before.
-Is it okay to delete and re-download it? [y/n] (y): 
+Is it okay to delete and re-download it? [y/n] (y):
 ╭─────────────────────────────── Plone Project ───────────────────────────────╮
 │                                                                             │
 │ Creating a new Plone Project                                                │
@@ -184,17 +184,17 @@ Is it okay to delete and re-download it? [y/n] (y):
 │   - Docker (optional): ✓                                                    │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
-  [1/19] Project Title (Project Title): 
-  [2/19] Project Description (A new project using Plone 6.): 
-  [3/19] Project Slug (Used for repository id) (project-title): 
-  [4/19] Project URL (without protocol) (project-title.example.com): 
-  [5/19] Author (Plone Foundation): 
-  [6/19] Author E-mail (collective@plone.org): 
-  [7/19] Should we use prerelease versions? (No): 
-  [8/19] Plone Version (6.1.1): 
-  [9/19] Volto Version (18.22.0): 
-  [10/19] Python Package Name (project.title): 
-  [11/19] Volto Addon Name (volto-project-title): 
+  [1/19] Project Title (Project Title):
+  [2/19] Project Description (A new project using Plone 6.):
+  [3/19] Project Slug (Used for repository id) (project-title):
+  [4/19] Project URL (without protocol) (project-title.example.com):
+  [5/19] Author (Plone Foundation):
+  [6/19] Author E-mail (collective@plone.org):
+  [7/19] Should we use prerelease versions? (No):
+  [8/19] Plone Version (6.1.1):
+  [9/19] Volto Version (18.22.0):
+  [10/19] Python Package Name (project.title):
+  [11/19] Volto Addon Name (volto-project-title):
   [12/19] Language
     1 - English
     2 - Deutsch
@@ -204,34 +204,34 @@ Is it okay to delete and re-download it? [y/n] (y):
     6 - Suomi
     7 - Italiano
     8 - Svenska
-    Choose from [1/2/3/4/5/6/7/8] (1): 
+    Choose from [1/2/3/4/5/6/7/8] (1):
   [13/19] GitHub or GitLab username or organization slug from URL (collective):
   [14/19] Container Registry
     1 - GitHub Container Registry
     2 - Docker Hub
     3 - GitLab
-    Choose from [1/2/3] (1): 
+    Choose from [1/2/3] (1):
   [15/19] Which persistent storage to use in the deployment stack?
     1 - RelStorage with PostgreSQL (recommended)
     2 - ZEO with FileStorage
     3 - Local FileStorage, implies a single backend
-    Choose from [1/2/3] (1): 
+    Choose from [1/2/3] (1):
   [16/19] Should we setup a caching server?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [17/19] Add Ansible playbooks?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [18/19] Add GitHub Action to Deploy this project?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
   [19/19] Would you like to add a documentation scaffold to your project?
     1 - Yes
     2 - No
-    Choose from [1/2] (1): 
+    Choose from [1/2] (1):
 ╭───────────────────────── Project Title generation ──────────────────────────╮
 │                                                                             │
 │ Summary:                                                                    │
@@ -310,17 +310,19 @@ In the currently open session, issue the following command.
 make backend-start
 ```
 
-The Plone backend server starts up and emits messages to the console.
+The Plone backend server starts up and emits messages to the console similar to the following.
 
 ```console
-2024-09-25 16:47:15,699 INFO    [chameleon.config:39][MainThread] directory cache: /<path-to-project>/backend/instance/var/cache.
-2024-09-25 16:47:16,387 WARNING [ZODB.FileStorage:412][MainThread] Ignoring index for /<path-to-project>/backend/instance/var/filestorage/Data.fs
-2024-09-25 16:47:16,508 INFO    [plone.restapi.patches:16][MainThread] PATCH: Disabled ZPublisher.HTTPRequest.ZopeFieldStorage.VALUE_LIMIT. This enables file uploads larger than 1MB.
-2024-09-25 16:47:17,018 INFO    [plone.volto:23][MainThread] Aliasing collective.folderish classes to plone.volto classes.
-2024-09-25 16:47:17,760 INFO    [Zope:42][MainThread] Ready to handle requests
-Starting server in PID 20912.
-2024-09-25 16:47:17,772 INFO    [waitress:486][MainThread] Serving on http://[::1]:8080
-2024-09-25 16:47:17,772 INFO    [waitress:486][MainThread] Serving on http://127.0.0.1:8080
+🐎 This Python uses horse-with-no-namespace to make pkg_resources namespace packages compatible with PEP 420 namespace packages.
+2025-05-30 00:03:13,990 INFO    [chameleon.config:39][MainThread] directory cache: /Users/username/PATH_TO/project-title/backend/instance/var/cache.
+2025-05-30 00:03:14,760 WARNING [ZODB.FileStorage:409][MainThread] Ignoring index for /Users/username/PATH_TO/project-title/backend/instance/var/filestorage/Data.fs
+2025-05-30 00:03:14,897 INFO    [plone.restapi.patches:16][MainThread] PATCH: Disabled ZPublisher.HTTPRequest.ZopeFieldStorage.VALUE_LIMIT. This enables file uploads larger than 1MB.
+2025-05-30 00:03:15,091 INFO    [plone.app.event:18][MainThread] icalendar has been set up to use pytz instead of zoneinfo.
+2025-05-30 00:03:15,917 INFO    [plone.volto:22][MainThread] Aliasing collective.folderish classes to plone.volto classes.
+2025-05-30 00:03:16,407 INFO    [Zope:42][MainThread] Ready to handle requests
+Starting server in PID 31951.
+2025-05-30 00:03:16,410 INFO    [waitress:449][MainThread] Serving on http://[::1]:8080
+2025-05-30 00:03:16,410 INFO    [waitress:449][MainThread] Serving on http://127.0.0.1:8080
 ```
 
 
@@ -334,14 +336,13 @@ Start the Plone frontend with the following command.
 make frontend-start
 ```
 
-The Plone frontend server starts up and emits messages to the console, and should end with the following.
+The Plone frontend server starts up and emits messages to the console, and should end with output similar to the following.
 
 ```console
-webpack 5.90.1 compiled successfully in 11004 ms
+webpack 5.90.1 compiled successfully in 14898 ms
 sswp> Handling Hot Module Reloading
-Using volto.config.js in: /<path-to-project>/frontend/volto.config.js
 ✅  Server-side HMR Enabled!
-Volto is running in SEAMLESS mode
+API server (API_PATH) is set to: http://localhost:3000
 Proxying API requests from http://localhost:3000/++api++ to http://localhost:8080/Plone
 🎭 Volto started at 0.0.0.0:3000 🚀
 ```
