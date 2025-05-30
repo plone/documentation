@@ -20,6 +20,11 @@ It also includes tools for development and deployment.
 For other installation options, see {ref}`get-started-install-label`.
 ```
 
+```{versionadded} Volto 18.0.0-alpha.43
+{term}`Cookieplone` was added as the recommended tool to create a Plone project with the Volto frontend starting in Volto 18.0.0-alpha.43 and above.
+Subsequently, support for the Classic UI frontend was added in https://github.com/plone/cookieplone-templates/pull/240.
+```
+
 
 ```{versionadded} Volto 18.0.0-alpha.43
 {term}`Cookieplone` was added as the recommended tool to create a Plone project with the Volto frontend starting in Volto 18.0.0-alpha.43 and above.
