@@ -404,7 +404,6 @@ For {guilabel}`Project Slug`, you must not use any of the Plone core package nam
 Note that pip normalizes these names, so `my.project` and `my-project` are the same package.
 ```
 
-
 ```console
 ╭──────────────────────────────── cookieplone ────────────────────────────────╮
 │                                                                             │
@@ -437,8 +436,8 @@ Note that pip normalizes these names, so `my.project` and `my-project` are the s
 │                              .xxxxxxxxxxxxxx.                               │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
-You've downloaded /Users/username/.cookiecutters/cookieplone-templates
-before. Is it okay to delete and re-download it? [y/n] (y):
+You've downloaded /Users/username/.cookiecutters/cookieplone-templates before.
+Is it okay to delete and re-download it? [y/n] (y):
 ╭─────────────────────────────── Plone Project ───────────────────────────────╮
 │                                                                             │
 │ Creating a new Plone Project                                                │
@@ -502,7 +501,7 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 │ Summary:                                                                    │
 │                                                                             │
 │   - Plone version: 6.1.1                                                    │
-│   - Output folder: /Users/pbauer/workspace/project-title                    │
+│   - Output folder: <PATH_TO>/project-title                                  │
 │                                                                             │
 │                                                                             │
 ╰─────────────────────────────────────────────────────────────────────────────╯
@@ -513,9 +512,9 @@ before. Is it okay to delete and re-download it? [y/n] (y):
 ==> Format codebase
 Installed 1 package in 3ms
 Found 4 errors (4 fixed, 0 remaining).
-Installed 1 package in 3ms
-4 files reformatted, 13 files left unchanged
-Installed 6 packages in 15ms
+Installed 1 package in 1ms
+17 files left unchanged
+Installed 6 packages in 21ms
  -> Organize documentation files
  -> Remove unneeded documentation files
  -> Initialize Git repository
@@ -568,14 +567,14 @@ The Plone server starts up and emits messages to the console.
 
 ```console
 🐎 This Python uses horse-with-no-namespace to make pkg_resources namespace packages compatible with PEP 420 namespace packages.
-2025-05-29 13:06:11,239 INFO    [chameleon.config:39][MainThread] directory cache: <path-to-project>/backend/instance/var/cache.
-2025-05-29 13:06:11,735 WARNING [ZODB.FileStorage:409][MainThread] Ignoring index for <path-to-project>/backend/instance/var/filestorage/Data.fs
-2025-05-29 13:06:11,826 INFO    [plone.restapi.patches:16][MainThread] PATCH: Disabled ZPublisher.HTTPRequest.ZopeFieldStorage.VALUE_LIMIT. This enables file uploads larger than 1MB.
-2025-05-29 13:06:12,169 INFO    [plone.app.event:18][MainThread] icalendar has been set up to use pytz instead of zoneinfo.
-2025-05-29 13:06:13,047 INFO    [Zope:42][MainThread] Ready to handle requests
-Starting server in PID 23623.
-2025-05-29 13:06:13,051 INFO    [waitress:449][MainThread] Serving on http://[::1]:8080
-2025-05-29 13:06:13,051 INFO    [waitress:449][MainThread] Serving on http://127.0.0.1:8080
+2025-05-30 00:31:48,278 INFO    [chameleon.config:39][MainThread] directory cache: <PATH_TO>/project-title/backend/instance/var/cache.
+2025-05-30 00:31:48,991 WARNING [ZODB.FileStorage:409][MainThread] Ignoring index for <PATH_TO>/project-title/backend/instance/var/filestorage/Data.fs
+2025-05-30 00:31:49,106 INFO    [plone.restapi.patches:16][MainThread] PATCH: Disabled ZPublisher.HTTPRequest.ZopeFieldStorage.VALUE_LIMIT. This enables file uploads larger than 1MB.
+2025-05-30 00:31:49,443 INFO    [plone.app.event:18][MainThread] icalendar has been set up to use pytz instead of zoneinfo.
+2025-05-30 00:31:50,363 INFO    [Zope:42][MainThread] Ready to handle requests
+Starting server in PID 35793.
+2025-05-30 00:31:50,365 INFO    [waitress:449][MainThread] Serving on http://[::1]:8080
+2025-05-30 00:31:50,366 INFO    [waitress:449][MainThread] Serving on http://127.0.0.1:8080
 ```
 
 Open a browser at the following URL to visit your Plone site.
