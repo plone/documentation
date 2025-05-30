@@ -275,7 +275,8 @@ Installed 6 packages in 10ms
 ╰─────────────────────────────────────────────────────────────────────────────╯
 ```
 
-### Install the project
+
+### Install the Volto project
 
 To work on your project, you need to install both the frontend and backend.
 
