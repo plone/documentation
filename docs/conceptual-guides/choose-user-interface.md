@@ -25,7 +25,7 @@ The choice of user interface has implications for editors, admins, and developer
 :target: /_static/volto-ui.png
 ```
 
-Test it on https://volto.demo.plone.org (without add-ons) or https://demo.plone.org (with add-ons)
+Test it on https://volto.demo.plone.org (without add-ons) or https://demo.plone.org (with add-ons).
 
 For editors and other end users:
 
@@ -49,7 +49,7 @@ For developers and integrators:
 :target: /_static/classic-ui.png
 ```
 
-Test it on https://classic.demo.plone.org
+Test it on https://classic.demo.plone.org.
 
 For editors and other end users:
 
