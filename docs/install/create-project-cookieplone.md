@@ -26,12 +26,6 @@ Subsequently, support for the Classic UI frontend was added in https://github.co
 ```
 
 
-```{versionadded} Volto 18.0.0-alpha.43
-{term}`Cookieplone` was added as the recommended tool to create a Plone project with the Volto frontend starting in Volto 18.0.0-alpha.43 and above.
-Subsequently, support for the Classic UI frontend was added in https://github.com/plone/cookieplone-templates/pull/240.
-```
-
-
 (create-project-cookieplone-choose-a-user-interface)=
 
 ## Choose a user interface
