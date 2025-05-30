@@ -49,7 +49,7 @@ For developers and integrators:
 :target: /_static/classic-ui.png
 ```
 
-Test it on https://classic.demo.plone.org.
+Test it on https://classic.demo.plone.org/en.
 
 For editors and other end users:
 
