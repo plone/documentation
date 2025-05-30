@@ -29,7 +29,8 @@ Use the following instructions if you installed Plone with Cookieplone.
 Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
 This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
 
-```
+```{code-block} toml
+:emphasize-lines: 6
 dependencies = [
     "Products.CMFPlone==6.1.1",
     "plone.api",
