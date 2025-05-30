@@ -31,10 +31,9 @@ Subsequently, support for the Classic UI frontend was added in https://github.co
 
 ## Choose a user interface
 
-With Cookieplone you can create projects that either use the {term}`Volto` frontend or the {term}`Classic UI` frontend.
-
-You need to decide which type of project to create first.
-Read {doc}`/conceptual-guides/choose-user-interface` and test them on https://demo.plone.org (Volto) and https://classic.demo.plone.org (Classic UI).
+With Cookieplone, you can create projects that use either {term}`Volto` or {term}`Classic UI` as a frontend, or user interface.
+First, choose a Plone frontend.
+You can read {doc}`/conceptual-guides/choose-user-interface` to help inform your choice between Volto and Classic UI.
 
 
 (create-project-cookieplone-system-requirements)=
@@ -69,8 +68,8 @@ Plone has both hardware requirements and software prerequisites.
 ```
 
 -   {term}`uv`
--   {term}`nvm` (not required for {term}`Classic UI` projects)
--   {term}`Node.js` (not required for {term}`Classic UI` projects)
+-   {term}`nvm` (required only for Volto projects)
+-   {term}`Node.js` (required only for Volto projects)
 -   {term}`GNU make`
 -   {term}`Git`
 
