@@ -30,8 +30,8 @@ Subsequently, support for the Classic UI frontend was added in https://github.co
 
 ## Choose a user interface
 
-With Cookieplone, you can create projects that use either {term}`Volto` or {term}`Classic UI` as a frontend, or user interface.
-First, choose a Plone frontend.
+With Cookieplone, you can create projects that use either {term}`Volto` or {term}`Classic UI` as a frontend.
+First, choose a Plone frontend, or user interface.
 You can read {doc}`/conceptual-guides/choose-user-interface` to help inform your choice between Volto and Classic UI.
 
 
