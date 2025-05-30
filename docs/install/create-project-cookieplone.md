@@ -272,7 +272,7 @@ Installed 6 packages in 10ms
 
 ### Install the Volto project
 
-To work on your project, you need to install both the frontend and backend.
+To work on your Volto project, you need to install both the Plone backend and frontend.
 
 Change your current working directory to {file}`project-title`.
 
@@ -280,7 +280,7 @@ Change your current working directory to {file}`project-title`.
 cd project-title
 ```
 
-To install both the Plone backend and frontend, use the following command.
+To install both the Plone backend and Volto as frontend, use the following command.
 
 ```shell
 make install
@@ -288,7 +288,7 @@ make install
 
 This will take a few minutes.
 ☕️
-First the backend, then the frontend will be installed.
+First the backend, then Volto as the frontend will be installed.
 
 When the process completes successfully, it will exit with no message.
 
@@ -298,7 +298,7 @@ When the process completes successfully, it will exit with no message.
 
 ### Start Plone
 
-Plone 6 has two servers: one for the frontend, and one for the backend.
+Plone with Volto for its frontend has two servers: one each for the backend and frontend.
 As such, we need to maintain two active shell sessions, one for each server, to start your Plone site.
 
 
@@ -373,22 +373,20 @@ Now you can edit content or configure your Plone site.
 
 You can stop the site with {kbd}`ctrl-c`.
 
+
 (install-cookieplone-generate-classic-project-label)=
 
-## Install a Classic UI project
+## Create a Classic UI project
 
-### Create the project
+This section describes how to install Plone by creating a project with Classic UI as the frontend.
 
-After satisfying the prerequisites and having, generate the project.
 
-To create a {term}`Classic UI` project run the following.
+### Generate a Classic UI project
+
+After satisfying the prerequisites, generate the Classic UI project.
 
 ```shell
 uvx cookieplone classic_project
-```
-
-```{seealso}
-To instead create a Volto project see {ref}`create-project-cookieplone-generate-the-project-label`
 ```
 
 You will be presented with a series of prompts.
@@ -531,7 +529,7 @@ Installed 6 packages in 21ms
 ╰─────────────────────────────────────────────────────────────────────────────╯
 ```
 
-### Install the project
+### Install the Classic UI project
 
 To work on your project, you need to install it.
 
@@ -541,13 +539,13 @@ Change your current working directory to {file}`project-title`.
 cd project-title
 ```
 
-To install Plone, use the following command.
+To install Plone with Classic UI for the frontend, use the following command.
 
 ```shell
 make install
 ```
 
-This will take a few minutes if you do it for the very first time.
+This will take a few minutes.
 ☕️
 When the process completes successfully, it will exit with no message.
 
