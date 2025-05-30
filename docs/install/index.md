@@ -47,7 +47,7 @@ Then choose one of the following installation methods.
 If you are following a [Plone training](https://training.plone.org/), it should specify which option to choose.
 
 {doc}`create-project-cookieplone`
-:   This is the recommended way to install Plone for with either the Volto frontend or the Classic UI frontend.
+:   This is the recommended way to install Plone with either Volto or Classic UI for a frontend.
     Cookieplone requires {term}`uv`.
 
 {doc}`/admin-guide/install-buildout`
