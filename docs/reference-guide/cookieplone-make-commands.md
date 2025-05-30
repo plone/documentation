@@ -25,7 +25,7 @@ It's organized according to its components.
 ## Frontend
 
 ```{note}
-In {term}`Classic UI` projects the frontend commands are not available.
+In {term}`Classic UI` projects, the frontend commands are not available.
 ```
 
 When you issue a `make` command at the root of your project, you call the file {file}`Makefile` also at the root.
