@@ -117,18 +117,12 @@ Node.js is required only for Volto projects and not for Classic UI projects.
 This section describes how to install Plone by creating a project with Volto as the frontend.
 
 
-### Create the project
+### Generate a Volto project
 
-After satisfying the prerequisites and having {ref}`activated an LTS version of Node.js <prerequisites-for-installation-nodejs-label>`, generate the project.
-
-To create a {term}`Volto` project run the following.
+After satisfying the prerequisites and having {ref}`activated an LTS version of Node.js <prerequisites-for-installation-nodejs-label>`, generate a Volto project.
 
 ```shell
 uvx cookieplone project
-```
-
-```{seealso}
-To instead create a Classic UI project see {ref}`install-cookieplone-generate-classic-project-label`
 ```
 
 You will be presented with a series of prompts.
