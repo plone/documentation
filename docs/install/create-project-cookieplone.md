@@ -110,9 +110,12 @@ Node.js is required only for Volto projects and not for Classic UI projects.
 ```
 
 
-(create-project-cookieplone-generate-the-project-label)=
+(create-project-cookieplone-create-volto-project-label)=
 
-## Install a Volto project
+## Create a Volto project
+
+This section describes how to install Plone by creating a project with Volto as the frontend.
+
 
 ### Create the project
 
