@@ -82,19 +82,21 @@ Plone has both hardware requirements and software prerequisites.
 
 #### nvm
 
+nvm is required only for Volto projects and not for Classic UI projects.
+
 ```{include} ../volto/_inc/_install-nvm.md
 ```
 
-nvm is only required for {term}`Volto` projects, but not for {term}`Classic UI` projects.
 
 (prerequisites-for-installation-nodejs-label)=
 
 #### Node.js
 
+Node.js is required only for Volto projects and not for Classic UI projects.
+
 ```{include} ../volto/_inc/_install-nodejs.md
 ```
 
-Node.js is only required for {term}`Volto` projects, but not for {term}`Classic UI` projects.
 
 #### Make
 
