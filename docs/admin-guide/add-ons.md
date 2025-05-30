@@ -44,7 +44,7 @@ dependencies = [
 Including the add-on version, or "pinning a version", ensures that it won't unintentionally get upgraded in the future.
 ```
 
-Also add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` to make sure its configuration will be loaded. This
+Also add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` to make sure its configuration will be loaded.
 
 ```yaml
 default_context:
