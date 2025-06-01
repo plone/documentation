@@ -84,7 +84,7 @@ Replace the name `myaddon` with your add-on bundle's unique name.
 Replace the file name {file}`myaddon-remote.min.js` with the file name you want to use for your remote bundle.
 Finally replace `myaddon.min` with the corresponding key in `config.entry` that points to your {file}`index.js`.
 
-For a full and basic example, see the Patterns generator [pat-PATTERN-TEMPLATE](https://github.com/Patternslib/pat-PATTERN_TEMPLATE/blob/master/webpack.config.js) or any other Pattern add-on in the [patternslib GitHub organization](https://github.com/patternslib/).
+For a full and basic example, see the Patterns generator [pat-PATTERN-TEMPLATE](https://github.com/Patternslib/pat-PATTERN_TEMPLATE/blob/main/webpack.config.js) or any other Pattern add-on in the [patternslib GitHub organization](https://github.com/patternslib/).
 For a complex example with Mockup integration see [`plone.app.mosaic`](https://github.com/plone/plone.app.mosaic/blob/master/webpack.config.js) and [Mockup](https://github.com/plone/mockup/blob/master/webpack.config.js) itself.
 
 

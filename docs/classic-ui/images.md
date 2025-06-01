@@ -501,6 +501,39 @@ Please note that this example has the `resolve_uid_and_caption` filter disabled 
 The real `src` URLs look more like `http://localhost:8080/Plone50/dsc04791.jpg/@@images/778f9c06-36b0-485d-ab80-12c623dc4bc3.jpeg`.
 ```
 
+### All image scales in the srcset
+
+Modern browsers can download appropriate sized images depending on their viewport width when URLs and widths are correctly provided in an attribute called `srcset` and the viewport width is provided in the attribute `sizes`.
+
+Examine the following {term}`TALES` example.
+
+```html
+    <img tal:define="images context/@@images;"
+         tal:replace="structure python:images.srcset(sizes='90vw')" />
+```
+
+This example will render the HTML `img` tag with the URLs of all scales configured in Plone, calculating the width of each of the scales, and will add the `sizes="90vw"` attribute.
+The `sizes` attribute instructs the browser to retrieve the image that best fits in 90% of the current viewport width.
+
+This means that the appropriate scaled image will be downloaded and displayed.
+
+This also means that the developer does not need to worry about creating a specific scale.
+Instead they only need to provide the correct media query to signal the required width.
+
+The `scrset` method of the `@@images` view also takes all other parameters that are HTML attributes of the `img` tag, such as `title`, `alt` or `loading`.
+
+```html
+    <img tal:define="images context/@@images;"
+         tal:replace="structure python:images.srcset(sizes='90vw',
+                                                     alt='This is the alternative text',
+                                                     loading='lazy',
+                                                     css_class='rounded-img')" />
+```
+
+```{note}
+While using this approach may be useful for projects, using it in reusable add-ons is not recommended, because it may require overriding it to your needs in a project.
+Use configurable picture variants instead.
+```
 ## Image scales from catalog brain
 
 For all `NamedBlobImage` fields, we can get existing scale information directly from the catalog brain.

@@ -36,8 +36,9 @@ Cookieplone
     ```{versionadded} Volto 18.0.0-alpha.43
     ```
 
-    [Cookieplone](https://github.com/plone/cookieplone) is the method to create a Plone project.
-    You can use Cookieplone to build a backend add-on, a new Volto add-on, or a full project with both backend and frontend.
+    [Cookieplone](https://github.com/plone/cookieplone) is the recommended way to create a Plone project.
+    You can use Cookieplone to build full Plone projects with either {term}`Volto` or {term}`Classic UI` for a frontend.
+    You can also create a backend add-on, a Volto add-on, or a documentation scaffold.
     Cookieplone simplifies the process using robust Cookiecutter templates from {term}`cookieplone-templates`.
 
 cookieplone-templates
@@ -896,7 +897,7 @@ Higher-Order Component
     ```
 
 Mocha
-    [Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on {term}`Node.js` and in the browser, making asynchronous testing simple and fun.    
+    [Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on {term}`Node.js` and in the browser, making asynchronous testing simple and fun.
 
 Chai
     [Chai](https://www.chaijs.com/) Chai is a {term}`BDD` and {term}`TDD` assertion library for {term}`Node.js` and the browser that can be delightfully paired with any JavaScript testing framework.

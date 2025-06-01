@@ -86,8 +86,9 @@ linkcheck_ignore = [
     r"^/_static/",
     r"^/_images/",
     # Ignore pages that require authentication
-    r"https://github.com/orgs/plone/teams/",  # requires auth
-    r"https://github.com/plone/documentation/issues/new",  # requires auth
+    r"https://github.com/orgs/plone/teams/",
+    r"https://github.com/plone/documentation/issues/new",
+    r"https://stackoverflow.com",
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
     # Ignore rate limiting by github.com
@@ -106,6 +107,8 @@ linkcheck_allowed_redirects = {
     # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
     # Example
     # r"https://chrome\.google\.com/webstore/detail/.*": r"https://consent\.google\.com/.*",
+    # Weblate now temporarily redirects to stop bots and AI
+    r"https://hosted\.weblate\.org/.*": r"https://hosted\.weblate\.org/\.within\.website/\?redir=/.*",
 }
 linkcheck_retries = 1
 linkcheck_report_timeouts_as_broken = True
@@ -383,6 +386,7 @@ notfound_template = "404.html"
 # -- sphinx-reredirects configuration ----------------------------------
 # https://documatt.com/sphinx-reredirects/usage.html
 redirects = {
+    "conceptual-guides/make-build-backend-walk-through": "/conceptual-guides/make-backend-build.html",
     "contributing/plone-api": "/plone.api/contribute.html",
     "contributing/plone-restapi": "/plone.restapi/docs/source/contributing/index.html",
     "contributing/volto": "/volto/contributing/index.html",
