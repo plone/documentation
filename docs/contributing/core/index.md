@@ -90,13 +90,20 @@ git clone https://github.com/plone/buildout.coredev
 cd buildout.coredev
 ```
 
-Install Plone and run it:
+Use the following command to install Plone and run it.
 
 ```shell
 make run
 ```
 
-See more `make` options/targets in the READMEs of the `buildout.coredev` repo: https://github.com/plone/buildout.coredev/blob/6.1/README-make.md
+To create and visit a new Plone site, visit http://localhost:8080, select the Classic UI distribution, and fill out and submit the form, ensuring you create a site with sample content against which you can test.
+
+Stop Plone with the keyboard shortcut {kbd}`ctrl-c`.
+
+```{seealso}
+For more Make targets, see documentation in [`buildout.coredev`'s `README-make.md` file](https://github.com/plone/buildout.coredev/blob/6.1/README-make.md).
+The most relevant section is [How to use the `Makefile`](https://github.com/plone/buildout.coredev/blob/6.1/README-make.md#how-to-use-the-makefile).
+```
 
 
 (contributing-core-work-with-git-label)=
@@ -136,15 +143,15 @@ You can also ask in the [Plone Community Forum](https://community.plone.org/).
 
 Only a few packages are in {file}`src/` by default.
 
-Next edit file {file}`mxcheckouts.ini`, and add the name of the package that you want to develop.
-For example `plone.app.multilingual`:
+Next, edit the file {file}`mxcheckouts.ini` at the root of your checkout, adding the name of the package that you want to develop as a new section.
+The following example adds `plone.app.multilingual`.
 
 ```ini
 [plone.app.multilingual]
 use = true
 ```
 
-You can now check out the package and start your instance with the checked out package:
+You can now check out the package and start your instance with the checked out package using the following commands.
 
 ```shell
 make sources-dirty
@@ -165,7 +172,7 @@ Now you can edit your code without affecting the original branch.
 
 ## Test locally
 
-If you change the expected behavior of a feature in a package, you should write a unit and/or acceptance test to cover the change.
+If you change the expected behavior of a feature in a package, you should write a unit or acceptance test, as appropriate, to cover the change.
 
 Plone uses [Playwright](https://playwright.dev/) to run acceptance tests.
 `plone.app.robotframework` provides a script to install Playwright browsers.
@@ -193,10 +200,11 @@ You can run all tests for the package you are developing or just unit tests or j
 .venv/bin/pytest src/plone.app.multilingual -v -k "robot" 
 ```
 
-After the package level tests pass with your change, you can {ref}`contributing-core-create-a-pull-request-label` and let CI run and ask Jenkins to run the full test suite.
+After the package level tests pass with your change, you can {ref}`contributing-core-create-a-pull-request-label`, which will start the CI checks.
+After all CI checks pass, then you can ask Jenkins to run the full test suite.
 
-However, if CI or Jenkins report a test failure that you want to troubleshoot locally, you can run the full test suite to ensure other packages aren't affected by the change.
-It takes a while to run the full unit test suite.
+If either CI or Jenkins report a test failure, and you want to troubleshoot it locally, then you can run the full test suite to ensure other packages aren't affected by the change.
+It takes about 15-20 minutes to run the full unit test suite.
 
 ```shell
 .venv/bin/pytest
