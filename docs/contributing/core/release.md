@@ -68,7 +68,7 @@ These are:
     ```shell
     git clone git@github.com:plone/buildout.coredev.git
     cd buildout.coredev
-    git checkout 6.1
+    git checkout {PLONE_BACKEND_MINOR_VERSION}
     ./bootstrap.sh
     bin/buildout -c buildout.cfg
     ```

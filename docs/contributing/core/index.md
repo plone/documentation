@@ -76,7 +76,7 @@ On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common opti
 
 The tool that installs Plone core is `buildout.coredev`.
 
-The current default and development branch of `buildout.coredev` is `6.1`
+The current default and development branch of `buildout.coredev` is `{PLONE_BACKEND_MINOR_VERSION}`
 Older versions are named according to their `major.minor` version.
 Its versions align with Plone's `major.minor` versions.
 
@@ -101,8 +101,8 @@ To create and visit a new Plone site, visit http://localhost:8080, select the Cl
 Stop Plone with the keyboard shortcut {kbd}`ctrl-c`.
 
 ```{seealso}
-For more Make targets, see documentation in [`buildout.coredev`'s `README-make.md` file](https://github.com/plone/buildout.coredev/blob/6.1/README-make.md).
-The most relevant section is [How to use the `Makefile`](https://github.com/plone/buildout.coredev/blob/6.1/README-make.md#how-to-use-the-makefile).
+For more Make targets, see documentation in [`buildout.coredev`'s `README-make.md` file](https://github.com/plone/buildout.coredev/blob/{PLONE_BACKEND_MINOR_VERSION}/README-make.md).
+The most relevant section is [How to use the `Makefile`](https://github.com/plone/buildout.coredev/blob/{PLONE_BACKEND_MINOR_VERSION}/README-make.md#how-to-use-the-makefile).
 ```
 
 
@@ -119,10 +119,10 @@ Members of the `plone/contributors` team do not have write access, and instead m
 Always begin by checking out the Git branch on which you want to work.
 This is the base branch to which you will create a pull request.
 
-If you just cloned `https://github.com/plone/buildout.coredev`, then the `6.1` branch is checked out and current, and you can skip the rest of this section and continue on the next, {ref}`contributing-core-edit-packages-label`.
+If you just cloned `https://github.com/plone/buildout.coredev`, then the `{PLONE_BACKEND_MINOR_VERSION}` branch is checked out and current, and you can skip the rest of this section and continue on the next, {ref}`contributing-core-edit-packages-label`.
 
 ```shell
-git checkout 6.1
+git checkout {PLONE_BACKEND_MINOR_VERSION}
 ```
 
 Next pull down and merge any recent changes from the remote tracked repository with a single command.
