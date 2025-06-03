@@ -76,7 +76,7 @@ On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common opti
 
 The tool that installs Plone core is `buildout.coredev`.
 
-The current default and development branch of `buildout.coredev` is `{PLONE_BACKEND_MINOR_VERSION}`
+The current default and development branch of `buildout.coredev` is `{PLONE_BACKEND_MINOR_VERSION}`.
 Older versions are named according to their `major.minor` version.
 Its versions align with Plone's `major.minor` versions.
 
@@ -190,7 +190,9 @@ To run tests for the specific package that you modified, use `.venv/bin/pytest` 
 If any test fails, do not commit and push the changes.
 Instead write a test that passes.
 
-Following [How to invoke pytest](https://docs.pytest.org/en/stable/how-to/usage.html), you can run all tests for the package you're developing, only unit tests, or only acceptance tests, using the pytest keyword option `-k` followed by a string expression in double quotes, as shown below.
+Following [How to invoke pytest](https://docs.pytest.org/en/stable/how-to/usage.html), you can run tests for the package you're developing.
+Using the pytest keyword option `-k`, followed by a string expression in double quotes, you can select only unit tests or only acceptance tests to run as shown below.
+With no options, pytest will run all tests.
 
 ```shell
 .venv/bin/pytest src/plone.app.multilingual -v -k "not robot" 
