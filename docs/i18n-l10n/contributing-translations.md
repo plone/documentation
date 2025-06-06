@@ -117,7 +117,7 @@ Maintainers will periodically review the pull request that Weblate creates autom
 For all pull requests, Volto's CI checks for both the presence of a change log entry and that the `.po` files used in translations comply with a standard format.
 
 Weblate doesn't create a change log entry, and its `.po` file style guide does not match Volto's.
-This means that a maintainer has to perform the following tasks to merge the changes coming from Weblate.
+This means that a Volto Team member has to perform the following tasks to merge the changes coming from Weblate.
 
 - Checkout the `translations-18.x.x` branch from the Volto repository.
 - Add a change log file in the `packages/volto/news` folder.
