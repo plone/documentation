@@ -112,6 +112,19 @@ When you save a translation, then it is committed on a branch used only for tran
 Maintainers will periodically review the pull request that Weblate creates automatically, and merge it.
 
 
+### Wewblate workflow in Volto
+
+Volto does some checks in all pull-requests that require a changelog entry to be present and the po files to have a given formatting.
+
+Weblate doesn't create such changelog entry and its po style guide does not match the one of Volto, so to merge the changes coming to weblate, a maintainer has to do the following:
+
+- Clone the `translations-18.x.x` branch from the Volto repository
+- Add a changelog file in the `news` folder with the relevant entry
+- Run `make i18n` to reformat the po files.
+- Push back the changes to GitHub and wait to the CI checks to success.
+- Merge the pull request when the checks are green.
+
+
 (contributing-plone-core-translations-support-label)=
 
 ## Support
