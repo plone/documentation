@@ -40,15 +40,18 @@ We did this for `plone.app.dexterity` and several other projects.
 1.  Delete any non-documentation files from the clone.
 1.  Move the documentation files and subfolders to the root of the clone, retaining the documentation structure.
 1.  Convert the reStructuredText documentation files to MyST.
-    The example commands below assume that there are files at the root of the clone and in one sub-level of nested directories.
-    For deeper nesting, insert globbing syntax for each sub-level as `**/`
+    The example commands below assume that there are files at the root of the clone and in one sublevel of nested directories.
+    For deeper nesting, insert globbing syntax for each sublevel as `**/`.
 
     ```shell
-    bin/rst2myst convert -R project/*.rst
-    bin/rst2myst convert -R project/**/*.rst
+    bin/rst2myst convert project/*.rst
+    bin/rst2myst convert project/**/*.rst
+    ```
+    ```{seealso}
+    [Command line options for `rst2myst`](https://rst-to-myst.readthedocs.io/en/latest/cli.html)
     ```
 
-1.  Add HTML meta data to the converted files.
+1.  Add HTML metadata to the converted files.
 
     ```shell
     cd project
