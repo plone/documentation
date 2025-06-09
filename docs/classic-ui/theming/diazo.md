@@ -133,7 +133,7 @@ CSS and JavaScript files should be properly versioned or hashed to avoid any cac
 If the CSS file is called {file}`global.css`, and your designer updates the CSS without changing the file name, you will surely face caching issues.
 Browsers, varnish, or other proxy servers might cache your files, and not serve them to the end users until the cache expires or gets flushed.
 
-To avoid this issue, CSS bundling techniques that use npm tooling—such as Gulp, Grunt, or Webpack—create hashed or versioned filenames for CSS and JavaScript files.
+To avoid this issue, CSS bundling techniques that use npm tooling—such as Gulp, Grunt, or webpack—create hashed or versioned filenames for CSS and JavaScript files.
 The following HTML snippets show examples of versioned files.
 
 ```html
