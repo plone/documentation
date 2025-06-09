@@ -1,6 +1,3 @@
--{0,1}plone-{0,1}
--{0,1}volto-{0,1}
--{0,1}zope-{0,1}
 `plone.api`
 `plone.restapi`
 `plone.volto`
