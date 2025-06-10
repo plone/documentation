@@ -96,7 +96,7 @@ Use the following command to install Plone and run it.
 make run
 ```
 
-To create and visit a new Plone site, visit http://localhost:8080, select the Classic UI distribution, and fill out and submit the form, ensuring you create a site with sample content against which you can test.
+To create and visit a new Plone site, visit http://localhost:8080, select a distribution, and fill out and submit the form, ensuring you create a site with sample content against which you can test.
 
 Stop Plone with the keyboard shortcut {kbd}`ctrl-c`.
 
