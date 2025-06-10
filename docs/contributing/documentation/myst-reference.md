@@ -298,7 +298,7 @@ For an in depth discussion of privacy issues, see [How to embed YouTube videos w
 
 -   PeerTube's [Privacy guide](https://docs.joinpeertube.org/admin/privacy-guide) helps administrators comply with terms of government policies.
 -   YouTube's [Manage video embedding options, Turn on privacy-enhanced mode](https://support.google.com/youtube/answer/171780)
--   Vimeo's [supported player parameters](https://help.vimeo.com/hc/en-us/articles/12426260232977-About-Player-parameters#h_01FNYA7F7GKWE17XDQJPMBC058)
+-   Vimeo's [supported player parameters](https://help.vimeo.com/hc/en-us/articles/12426260232977-About-Player-Parameters)
 ```
 
 ```{seealso}

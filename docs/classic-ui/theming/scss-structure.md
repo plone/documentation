@@ -48,7 +48,7 @@ All the theming relevant files are now located inside `src/plonetheme/themebased
 :   Basic theme configuration for the backend.
 
 `package.json`
-:   npm package configuration which defines all requirements for theming with barceloneta.
+:   npm package configuration which defines all requirements for theming with Barceloneta.
 
 `rules.xml`
 :   Diazo rules which translate the `index.html` and fills it with content from the backend.
