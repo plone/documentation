@@ -90,6 +90,8 @@ The above example registers a distribution that will configure a personal blog w
 When registering a distribution, you can provide a `pre_handler`, a `handler`, and a `post_handler`, each of which must be a function with their respective signature, as shown in the following example.
 
 ```python
+from plone.distribution.core import Distribution
+
 def pre_handler(answers: dict) -> dict:
     return answers
 
@@ -295,8 +297,8 @@ Then add it to your {file}`dependencies.zcml` file.
   <!-- List all packages your distribution depends on here -->
   <include package="plone.volto" />
   <include package="plone.restapi" />
-  <include package="collective.person" />
   <include package="plone.distribution" />
+  <include package="collective.person" />
 
 </configure>
 ```

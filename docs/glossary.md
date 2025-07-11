@@ -36,8 +36,9 @@ Cookieplone
     ```{versionadded} Volto 18.0.0-alpha.43
     ```
 
-    [Cookieplone](https://github.com/plone/cookieplone) is the method to create a Plone project.
-    You can use Cookieplone to build a backend add-on, a new Volto add-on, or a full project with both backend and frontend.
+    [Cookieplone](https://github.com/plone/cookieplone) is the recommended way to create a Plone project.
+    You can use Cookieplone to build full Plone projects with either {term}`Volto` or {term}`Classic UI` for a frontend.
+    You can also create a backend add-on, a Volto add-on, or a documentation scaffold.
     Cookieplone simplifies the process using robust Cookiecutter templates from {term}`cookieplone-templates`.
 
 cookieplone-templates
@@ -50,11 +51,6 @@ plone/generator-volto
 
     [`@plone/generator-volto`](https://www.npmjs.com/package/@plone/generator-volto) is deprecated in favor of {term}`Cookieplone` since Volto 18.0.0-alpha.43.
     See {ref}`upgrade-18-cookieplone-label`.
-
-cookiecutter-plone-starter
-    [cookiecutter-plone-starter](https://github.com/collective/cookiecutter-plone-starter/) creates a Plone project that you can install using {term}`Make`.
-    It generates files for installing and configuring both the frontend and backend.
-    For the backend, it uses {term}`cookiecutter-zope-instance` to generate configuration files for a {term}`Zope instance`.
 
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a {term}`Zope instance`.
@@ -103,6 +99,13 @@ pipx
 pyenv
     Python version management.
     [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python.
+
+uv
+    [uv](https://docs.astral.sh/uv/) is a Python package and project manager, written in Rust.
+
+`uvx`
+    `uvx` is an alias for `uv tool run`, implemented in {term}`uv`.
+     It executes and installs command-line tools provided by Python packages in an ephemeral environment, similar to {term}`pipx`.
 
 pm2
     [PM2](https://pm2.keymetrics.io/) is a daemon process manager.
@@ -312,7 +315,6 @@ Corepack
     In practical terms, Corepack lets you use {term}`Yarn`, {term}`npm`, and {term}`pnpm` without having to install them.
 
     Corepack is distributed by default with all recent Node.js versions.
-    Run `corepack enable` to install the required Yarn and pnpm binaries on your path.
 
 Git
     [Git](https://git-scm.com/) is a free and open source distributed version control system.
@@ -469,7 +471,7 @@ Slate
     `volto-slate` is an interactive default text editor for Volto, developed on top of {term}`Slate`, offering enhanced {term}`WYSIWYG` functionality and behavior.
 
 WYSIWYG
-    WYSIWYG is an acronym for "what you see is what you get", referring to software that allows content to be edited in a form that resembles its appearance when printed or displayed as a finished product.    
+    WYSIWYG is an acronym for "what you see is what you get", referring to software that allows content to be edited in a form that resembles its appearance when printed or displayed as a finished product.
 
 TinyMCE
     The rich text {term}`WYSIWYG` editor used in {term}`Classic UI`.
@@ -560,11 +562,20 @@ react-intl
 WSGI
     The Web Server Gateway Interface (WSGI, pronounced _WIZ-ghee_) is a simple calling convention for web servers to forward requests to web applications or frameworks written in the Python programming language.
 
+ZODB Enterprise Objects
 ZEO
     [ZEO](https://zeo.readthedocs.io/en/latest/) is a client-server storage for ZODB for sharing a single storage among many clients.
 
+Zope Object Database
 ZODB
     [A native object database for Python](https://zodb.org/en/latest/).
+
+`FileStorage`
+    `FileStorage` is a Python class in {term}`ZODB` that saves data in a file.
+
+    ```{seealso}
+    https://zodb.org/en/latest/reference/storages.html#filestorage
+    ```
 
 Zope
     [Zope](https://zope.readthedocs.io/en/latest/) is a Python-based application server for building secure and highly scalable web applications.
@@ -827,7 +838,7 @@ lazy load
 lazy loading
 lazy loaded
     Lazy loading is a strategy to identify resources as non-blocking (non-critical) and load these only when needed.
-    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path, which translates into reduced page load times.
+    It's a way to shorten the length of the [critical rendering path](https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Critical_rendering_path), which translates into reduced page load times.
 
 reference implementation
     A reference implementation is a program that implements all requirements from a corresponding specification.
@@ -865,7 +876,7 @@ schema enhancer
 variation
     A variation is a common development pattern that provides alternative views for the same data.
     For example, a teaser block can present data as `title + link`, `title + description + link`, or `title + image + link`.
-        
+
     An advanced variation can enhance the block by adding data fields to the block.
     For example, a listing block variation can show news items with `title + link`.
     Extending this example, a developer can add a boolean field to the block that toggles the display of the link.
@@ -877,12 +888,40 @@ Higher-Order Component
     HOCs are not part of the React API, per se.
     They are a pattern that emerges from React's compositional nature.
     Concretely, a higher-order component is a function that takes a component and returns a new component.
-    
+
     ```{important}
     Higher-order components are not commonly used in modern React code.
     ```
     ```{seealso}
     https://legacy.reactjs.org/docs/higher-order-components.html
     ```
+
+Mocha
+    [Mocha](https://mochajs.org/) is a feature-rich JavaScript test framework running on {term}`Node.js` and in the browser, making asynchronous testing simple and fun.
+
+Chai
+    [Chai](https://www.chaijs.com/) Chai is a {term}`BDD` and {term}`TDD` assertion library for {term}`Node.js` and the browser that can be delightfully paired with any JavaScript testing framework.
+
+Behavior-Driven Development
+BDD
+    Behavior-Driven Development (BDD) is a software development approach that originated from Test-Driven Development (TDD).
+    It emphasizes collaboration among developers, testers, and non-technical stakeholders to ensure the developed software meets the desired behavior (or functionality).
+
+    In BDD, the focus is on defining the behavior of a system in a human-readable language, often using a domain-specific language.
+    This language is typically structured in a way that allows it to serve as both documentation and executable tests.
+    BDD scenarios are written in plain language that describe how the system should behave in different situations.
+
+Test-Driven Development
+TDD
+    Test-Driven Development (TDD) is a technique for building software that guides software development by writing tests.
+    It follows three steps repeatedly:
+
+    -   Write a test for the next bit of functionality you want to add.
+    -   Write the functional code until the test passes.
+    -   Refactor both new and old code to make it well structured.
+
+blob
+Binary large object
+    A blob is a mass of data in binary form that does not necessarily conform to any file format.
 
 ```

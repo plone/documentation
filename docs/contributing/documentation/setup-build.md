@@ -138,7 +138,7 @@ Open `/_build/linkcheck/output.txt` for the entire list of links that were check
 
 ### `vale`
 
-`vale` checks for American English spelling, grammar, syntax, and the Microsoft Developer Style Guide.
+`vale` checks for American English spelling, grammar, and syntax, and follows the Microsoft Writing Style Guide.
 See {ref}`authors-english-label` for configuration.
 
 ```shell

@@ -20,6 +20,7 @@ To contribute to any project in Plone, you must follow the policies of the [Plon
 This chapter covers policies that apply to all Plone projects.
 Other chapters cover any variations and additional policies for each project.
 
+
 (contributing-sign-and-return-the-plone-contributor-agreement-label)=
 
 ## Sign and return the Plone Contributor Agreement
@@ -77,6 +78,7 @@ Someone will help identify in which of the dozens of repositories that make up P
 ```{include} /_inc/_continuous-integration.md
 ```
 
+
 (contributing-change-log-label)=
 
 ## Change log entry
@@ -102,11 +104,11 @@ When making a change to its documentation, set up, continuous integration, or ot
 
 The change log entry's format must be `###.type`, where `###` is the referenced GitHub issue or pull request number, `.` is the literal extension delimiter, and `type` is one of the following strings.
 
-- `breaking` for breaking changes
-- `bugfix` for bug fixes
-- `documentation` for documentation
-- `feature` for new features
-- `internal` for internal changes
+-   `breaking` for breaking changes
+-   `bugfix` for bug fixes
+-   `documentation` for documentation
+-   `feature` for new features
+-   `internal` for internal changes
 
 A package configures the types it allows in a file `towncrier.toml` located at the root of its package directory.
 
@@ -155,6 +157,25 @@ Fix #123456 by chaning config of additionalToolbarComponents [did_not_read_this_
 To standarize the developer experience across packages, a configuration tool is used.
 
 See the [tool documentation](https://github.com/plone/meta) for more information.
+
+
+(contributing-guidance-for-merging-pull-requests-label)=
+
+## Guidance for merging pull requests
+
+-   If you have any doubt, don't merge, but ask.
+-   All {doc}`CI checks <core/continuous-integration>` must pass, unless there is a good reason to ignore it.
+    If you ignore a check, then write the good reason either in a comment or in the merge message.
+-   Get at least one approval from another Plone contributor, preferably a member of the GitHub Team for the repository.
+-   If the pull request has documentation, ask for a review from `@plone/documentation-team`.
+-   Usually the merge message populates with all the commit messages, but some repositories aren't configured to do this.
+    It's helpful to include a descriptive message in the merge request.    
+-   After merging, look for any linked issues that should be closed, and close them.
+    Sometimes the contributor forgets to include `closes #123` in the description, which would automatically close the related issue.
+-   If the change is a bugfix, make sure that it is not merged to an older release branch unless it is also merged in separate pull request to `main`.
+-   Thank the contributor.
+-   🍻
+
 
 (contributing-specific-contribution-policies-for-projects-label)=
 

@@ -7,7 +7,7 @@ myst:
     "keywords": "Plone, Classic UI, theming, color modes, Bootstrap, Twitter"
 ---
 
-(color-modes-label)=
+(classic-ui-theming-color-modes-label)=
 
 # Color modes
 
@@ -24,8 +24,8 @@ This chapter is a guide for how to implement color modes in Plone 6.
 ## Preferred color modes
 
 You will need to add some JavaScript functionality to set the Bootstrap theme to the user's preferred color scheme.
-Add the JavaScript file to the `browser/static` folder of your Plone 6 project.
-Register it in the `browser/profiles/default/registry` of your Plone 6 project.
+Add the JavaScript file to the {file}`browser/static` folder of your Plone 6 project.
+Register it in the {file}`browser/profiles/default/registry` of your Plone 6 project.
 See {ref}`classic-ui-static-resources-registering-label` for more information.
 
 ```js
@@ -75,8 +75,8 @@ If you want to add a theme toggler to your site, you can use the following examp
 You will need to add some JavaScript functionality to the toggler.
 The following code snippet is based on the [Bootstrap 5.3 documentation](https://getbootstrap.com/docs/5.3/customize/color-modes/#javascript).
 
-Add the JavaScript file to the `browser/static` folder of your Plone 6 project.
-Register it in the `browser/profiles/default/registry` of your Plone 6 project.
+Add the JavaScript file to the {file}`browser/static` folder of your Plone 6 project.
+Register it in the {file}`browser/profiles/default/registry` of your Plone 6 project.
 See {ref}`classic-ui-static-resources-registering-label` for more information.
 
 ```js
