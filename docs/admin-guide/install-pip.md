@@ -83,7 +83,7 @@ default_context:
 Now run the {term}`cookiecutter` tool to create configuration for a Zope instance.
 
 ```
-bin/pipx run cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
+venv/bin/pipx run cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
 ```
 
 
@@ -92,7 +92,7 @@ bin/pipx run cookiecutter -f --no-input --config-file instance.yaml gh:plone/coo
 Start the instance for a quick test.
 
 ```shell
-bin/runwsgi -v instance/etc/zope.ini
+venv/bin/runwsgi -v instance/etc/zope.ini
 ```
 
 ```{include} /_inc/_create-classic-ui-instance.md
