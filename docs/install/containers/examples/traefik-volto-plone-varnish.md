@@ -403,7 +403,7 @@ services:
     depends_on:
       - db
 #   If the Docker container is run with a UID other than the UID which owns the local file system persistent storage,
-#   explicitly make the container run with the correct uid, for example  user: 1000:1000
+#   explicitly make the container run with the correct UID. For example, `user: 1000:1000`.
 #   In that case make sure also the 'db' service gets the same 'user: 1000:1000' configuration,
 #   as they both need access to the filesystem
 
