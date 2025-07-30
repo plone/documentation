@@ -397,7 +397,7 @@ services:
       ZEO_ADDRESS: db:8100
       ZEO_SHARED_BLOB_DIR: on  # otherwise the backend will create its own blob storage
     volumes:
-      - data:/data              #the backend and db need access to the same volume
+      - data:/data              # the backend and database need access to the same volume
     ports:
       - 8080:8080
     depends_on:
