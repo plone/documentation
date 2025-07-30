@@ -2,7 +2,7 @@
 myst:
   html_meta:
     "description": "Basic Plone 6 setup with only one backend, a ZEO server, and data being persisted in a Docker volume."
-    "property=og:description": "Basic Plone 6 setup with only one backend, a ZEO server and data being persisted in a Docker volume."
+    "property=og:description": "Basic Plone 6 setup with only one backend, a ZEO server, and data being persisted in a Docker volume."
     "property=og:title": "Traefik Proxy, Frontend, Backend, Varnish container example"
     "keywords": "Plone 6, Container, Docker, Traefik Proxy, Frontend, Backend, Varnish"
 ---
