@@ -109,7 +109,7 @@ services:
     environment:
       SITE: Plone
       ZEO_ADDRESS: db:8100
-      ZEO_SHARED_BLOB_DIR: on   #otherwise the backend will create its own filestorage/blogstorage
+      ZEO_SHARED_BLOB_DIR: on   # otherwise the backend will create its own blob storage
     volumes:
       - data:/data              #the backend and db need access to the same volume
     ports:
