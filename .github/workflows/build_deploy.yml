@@ -15,7 +15,7 @@ jobs:
       name: docs.plone.org
       url: https://docs.plone.org
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v2
       - name: Set up Python 3.12
