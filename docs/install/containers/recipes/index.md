@@ -170,3 +170,89 @@ docker compose run backend pack
 The above command assumes that the service that runs the Plone instance is named `backend`.
 Otherwise replace `backend` with your container's name.
 
+
+## Interactive shell for debugging
+
+When developing or troubleshooting Plone applications in Docker containers, you may need an interactive Python shell with the Plone environment loaded.
+This is the Docker equivalent of the `bin/instance debug` command used in traditional Plone installations.
+
+### Using docker exec
+
+If you have a running Plone container, you can start an interactive shell using `docker exec`:
+
+```shell
+docker exec -it <container_name> /bin/bash
+```
+
+Once inside the container, you can start the Plone debug console:
+
+```shell
+bin/instance debug
+```
+
+### Using docker run
+
+Alternatively, you can start a new container instance specifically for debugging:
+
+```shell
+docker run -it --rm plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION} /bin/bash
+```
+
+Then start the debug console:
+
+```shell
+bin/instance debug
+```
+
+### Using Docker Compose
+
+If you're using Docker Compose, you can run an interactive shell with:
+
+```shell
+docker compose exec backend /bin/bash
+```
+
+Then start the debug console:
+
+```shell
+bin/instance debug
+```
+
+Or run it directly in one command:
+
+```shell
+docker compose exec backend bin/instance debug
+```
+
+### Accessing the Plone site
+
+Once in the debug console, you can access your Plone site and perform debugging operations:
+
+```python
+# Access the root application
+app = self.app
+
+# Access your Plone site (replace 'Plone' with your site ID)
+site = app['Plone']
+
+# Access content
+folder = site['my-folder']
+item = folder['my-item']
+
+# Set up a fake request for testing
+from Testing.makerequest import makerequest
+from zope.globalrequest import setRequest
+
+app = makerequest(app)
+setRequest(app.REQUEST)
+```
+
+### Exiting the debug console
+
+To exit the debug console, use {kbd}`ctrl-d` or type `exit()`.
+
+```{note}
+The interactive shell provides full access to your Plone environment and database.
+Use it carefully in production environments.
+```
+
