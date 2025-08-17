@@ -163,10 +163,14 @@ As an example, the configuration for a new Plone site with Volto as its frontend
     "plonetheme.barceloneta:default",
     "plone.volto:default"
   ],
-  "content": [
-    "plone.volto:default-homepage"
-  ]
+  "content": []
 }
+```
+
+```{note}
+The `plone.volto:default-homepage` profile was removed from `plone.volto` in version 5.
+For creating example content, use the `content` folder with exported content instead of profiles.
+See the {ref}`add-example-content-label` section below for details.
 ```
 
 
@@ -319,6 +323,8 @@ Finally, add it to your {file}`profiles.json` file.
 ```
 
 
+(add-example-content-label)=
+
 ## Add example content
 
 The distribution loads its content from JSON data in the `content` folder.
@@ -330,6 +336,11 @@ bin/export-distribution path/to/zope.conf Plone
 ```
 
 In the example above, `Plone` is the ID of the Plone site to export.
+
+```{note}
+This is the recommended approach for creating example content in distributions.
+The old approach of using profiles like `plone.volto:default-homepage` has been deprecated and removed from `plone.volto` in version 5.
+```
 
 
 ## Limit available distributions

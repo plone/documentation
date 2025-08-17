@@ -108,7 +108,8 @@ services:
     environment:
       - SITE=Plone
       - 'ADDONS=plone.restapi==8.21.0 plone.volto==4.0.0a3 plone.rest==2.0.0a2 plone.app.iterate==4.0.2 plone.app.vocabularies==4.3.0'
-      - 'PROFILES=plone.volto:default-homepage'
+      # Note: plone.volto:default-homepage profile was removed in version 5
+      # Use content export/import instead for example content
 
   frontend:
     image: 'myfrontend:latest'
