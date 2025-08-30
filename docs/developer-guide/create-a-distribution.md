@@ -162,9 +162,6 @@ As an example, the configuration for a new Plone site with Volto as its frontend
     "plone.app.caching:default",
     "plonetheme.barceloneta:default",
     "plone.volto:default"
-  ],
-  "content": [
-    "plone.volto:default-homepage"
   ]
 }
 ```
