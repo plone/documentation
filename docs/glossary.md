@@ -217,15 +217,11 @@ Configuration registry
 
 component shadowing
 shadowing
-    Volto uses a technique called component shadowing to override an existing Volto component with our local custom version, without having to modify Volto's source code.
+    Component or module shadowing allows you to override a component from an existing package in a clean and structured way, without directly modifying third-party code.
+    This technique is particularly useful for customizing the behavior or appearance of specific components in Volto or any add-ons.
 
-    Volto's source components are located in the filepath stem of `omelette/src/components/`.
-    Custom components that shadow Volto's source would be located in the filepath stem of `src/customizations/components/`.
-    Shadow components would have the same filepath as Volto's source compenents, excluding the stem.
-    Thus `omelette/src/components/theme/Header/Header.jsx` would be shadowed by `src/customizations/components/theme/Header/Header.jsx`.
-
-    Webpack provides an alias mechanism that allows component shadowing in Volto, where the path for a module can be aliased to another module.
-    By using this mechanism of file overrides, or component shadowing, Volto enables customization, similar to `z3c.jbot.`
+    This mechanism is powered by Webpack's [`resolve.alias`](https://webpack.js.org/configuration/resolve/#resolvealias), which maps a module path to an alternative file or folder.
+    Webpack resolves the override at build time, replacing the original module with your custom implementation.
 
 Razzle
     A tool that simplifies {term}`SPA` and {term}`SSR` configuration for React projects.
