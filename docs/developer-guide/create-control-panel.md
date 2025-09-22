@@ -11,49 +11,58 @@ myst:
 
 # Create a control panel
 
-This chapter describes how to create a control panel for your Plone add-on, whether accessed through either the Classic UI or Volto frontend.
+This chapter describes how to create a control panel for Plone, whether accessed through either the Classic UI or Volto frontend.
 
-This chapter begins with automating all the manual steps to create a control panel using {term}`plonecli`.
-It then walks through all these manual steps.
+There are two main approaches to creating a control panel:
 
-It also covers advanced topics—including how to group fields in your control panel—and provides a schema field reference, troubleshooting tips, control panel file structure, and a Plone REST API compatibility reference.
+1. **Automated approach** - Using {term}`plonecli` (only works with backend add-ons)
+2. **Manual approach** - Step-by-step implementation (works for backend add-ons, custom control panels in Plone sites, or any Plone project)
 
+This chapter covers both approaches, followed by advanced topics including field grouping, schema reference, troubleshooting tips, and REST API compatibility.
 
-## `plonecli`
+---
 
-> **Note**: This method only works when developing Plone add-ons. If you're working on a Plone project that is not an add-on, you'll need to follow the manual steps described in the next section.
+## Approach 1: Automated creation with `plonecli` (Backend add-ons only)
 
-Given you've already created a Plone add-on using one of the following methods.
+**Prerequisites:**
+- You have already created a Plone backend add-on using one of the following methods:
+  - {doc}`/install/create-project-cookieplone`
+  - {doc}`create-backend-add-on`
 
--   {doc}`/install/create-project-cookieplone`
--   {doc}`create-backend-add-on`
+**Steps:**
 
-Then, as described in {ref}`backend-add-on-subtemplates-label`, from the root of your add-on, issue the following command to add a control panel as a subtemplate in your add-on.
+1. From the root of your add-on, run the following command as described in {ref}`backend-add-on-subtemplates-label`:
 
-```shell
-plonecli add controlpanel
-```
+   ```shell
+   plonecli add controlpanel
+   ```
 
-This creates Python modules in the folder {file}`src/collective/myaddon/controlpanel`.
-This is where you can define your control panel schema fields, as described in {ref}`define-the-settings-interface-and-form-label`.
+2. This creates Python modules in the folder {file}`src/collective/myaddon/controlpanel`, where you can define your control panel schema fields.
 
-`plonecli` also goes through all the steps to create a control panel, as described in {ref}`steps-to-create-a-control-panel-label`.
+3. `plonecli` automatically performs all the manual steps described in the next approach.
 
+---
 
 (steps-to-create-a-control-panel-label)=
 
-## Steps to create a control panel
+## Approach 2: Manual creation (All Plone projects)
 
-Whether performed automatically with `plonecli` or manually, the following steps are required to create a control panel.
+This approach works for:
+- Backend add-ons (alternative to plonecli)
+- Custom control panels created directly in a Plone site
+- Any Plone project or installation
 
--   Define the settings interface and form.
--   Register the control panel view in ZCML.
--   Add the control panel to the Plone control panel listing.
--   Set default values in the registry.
--   Register the control panel in XML.
+You'll need to complete the following steps:
 
-The code examples are for illustrative purposes only, and may differ from those that `plonecli` generates and what you'll actually create.
-The language addresses you as if you'd manually perform these steps.
+1. Define the settings interface and form
+2. Register the control panel view in ZCML
+3. Add the control panel to the Plone control panel listing
+4. Set default values in the registry
+5. Register the control panel in XML
+
+```{note}
+The code examples below are for illustrative purposes and show the general structure. Adapt the paths, names, and values to match your specific project or add-on.
+```
 
 
 (define-the-settings-interface-and-form-label)=
@@ -302,8 +311,17 @@ This process will register your control panel and any associated registry settin
 
 Your control panel should now appear in {guilabel}`Site Setup`.
 
+```{tip}
+**Manual approach complete!** You have successfully created a control panel using the manual method. This approach works for any Plone project, whether it's a backend add-on or a custom control panel in a Plone site.
+```
 
-## Access your settings in code
+---
+
+## Common tasks and advanced topics
+
+The following sections apply to control panels created with either approach (automated or manual).
+
+### Access your settings in code
 
 You can access your settings in Python code as follows.
 
@@ -320,7 +338,7 @@ my_choice_value = settings.my_choice
 ```
 
 
-## Use `FieldSet` to group fields
+### Use `FieldSet` to group fields
 
 For complex control panels, you can group fields together as in the following example.
 
@@ -355,7 +373,7 @@ class IMyControlPanelSettings(Interface):
 ```
 
 
-## Common schema fields
+### Common schema fields
 
 The following is a list of commonly used schema field types.
 
@@ -384,7 +402,7 @@ The following is a list of commonly used schema field types.
 :   For list of values
 
 
-## Modify control panel fields
+### Modify control panel fields
 
 When you modify the fields in your control panel settings interface, the changes won't be automatically reflected in existing sites.
 You'll need to perform one or more of the following steps.
@@ -394,7 +412,7 @@ You'll need to perform one or more of the following steps.
 -   Test with a fresh site installation.
 
 
-## Troubleshooting
+### Troubleshooting
 
 If your control panel doesn't appear or doesn't work as expected:
 
@@ -404,7 +422,7 @@ If your control panel doesn't appear or doesn't work as expected:
 -   Validate that the interface path in {file}`registry.xml` matches your actual Python path.
 
 
-## Example file structure
+### Example file structure
 
 Below is a complete example file structure for a basic add-on with a control panel.
 
@@ -424,7 +442,7 @@ mypackage/
 ```
 
 
-## REST API compatibility
+### REST API compatibility
 
 For better integration between Plone's backend and its frontend Volto, you can create REST API compatible control panels using the adapter pattern.
 This approach is particularly useful when developing control panels that need to work seamlessly with Volto.
