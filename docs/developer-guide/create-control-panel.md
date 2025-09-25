@@ -11,42 +11,60 @@ myst:
 
 # Create a control panel
 
-This chapter describes how to create a control panel for your Plone add-on, whether accessed through either the Classic UI or Volto frontend.
-
-It also covers advanced topics—including how to group fields in your control panel—and provides a schema field reference, troubleshooting tips, control panel file structure, and a Plone REST API compatibility reference.
-
-
-## Creation approaches
-
-There are two approaches to create a control panel for your Plone add-on:
-
--   [`plonecli`](https://pypi.org/project/plonecli/)
--   manual
+This chapter describes how to create a control panel for Plone, either {ref}`automatically <create-a-control-panel-automated-method-label>` or {ref}`manually <create-a-control-panel-manual-method-label>`, whether accessed through the Classic UI or Volto frontend.
+It continues with {ref}`common tasks and advanced topics <common-tasks-and-advanced-topics-label>`, including field grouping, schema reference, {ref}`troubleshooting <control-panel-troubleshooting-label>` tips, and {ref}`rest-api-compatibility-label`.
 
 
-### `plonecli`
+(create-a-control-panel-automated-method-label)=
 
-To add a control panel to your add-on, you can use [`plonecli`](https://pypi.org/project/plonecli/) as follows.
+## Automated method with `plonecli`
+
+The automated method uses {term}`plonecli` and works only with backend add-ons.
+It requires that you have already created a Plone backend add-on using one of the following methods.
+
+-   {doc}`/install/create-project-cookieplone`
+-   {doc}`create-backend-add-on`
+
+From the root of your add-on, run the following command as described in {ref}`backend-add-on-subtemplates-label`.
 
 ```shell
 plonecli add controlpanel
 ```
 
-This creates the control panel Python file in the control panel's folder where you can define your control panel schema fields.
+This creates Python modules in the folder {file}`src/collective/myaddon/controlpanel`, where you can define your control panel schema fields.
+
+`plonecli` automatically performs all the manual steps described in the next approach.
 
 
-### Manual
+(create-a-control-panel-manual-method-label)=
 
-To manually create a control panel, go through the following steps.
+## Manual method
 
--   Define the settings interface and form.
--   Register the control panel view in ZCML.
--   Add the control panel to the Plone control panel listing.
--   Set default values in the registry.
+The manual method works for:
 
-#### Define the settings interface and form
+-   backend add-ons that were not created via `plonecli`
+-   custom control panels created directly in a Plone site
+-   any Plone project or installation
 
-Create a Python module, {file}`mypackage/controlpanel/settings.py`, that defines your control panel's settings interface and form class as follows.
+You'll need to complete the following steps, as described in the following sections.
+
+1.  {ref}`define-the-settings-interface-and-form-label`.
+1.  {ref}`register-the-control-panel-view-label`.
+1.  {ref}`add-the-control-panel-entry-label`.
+1.  {ref}`register-the-control-panel-label`.
+1.  {ref}`set-default-values-in-the-registry-label`.
+
+```{note}
+The code examples below are for illustrative purposes and show the general structure.
+Adapt the paths, names, and values to match your specific project or add-on.
+```
+
+
+(define-the-settings-interface-and-form-label)=
+
+### Define the settings interface and form
+
+Create a Python module, {file}`mypackage/controlpanel/settings.py`, that defines your control panel's settings interface and form class, or schema, as follows.
 
 ```python
 # mypackage/controlpanel/settings.py
@@ -59,18 +77,18 @@ class IMyControlPanelSettings(Interface):
     """Schema for the control panel form."""
     
     my_setting = schema.TextLine(
-        title=u'My Setting',
-        description=u'Enter the value for my setting',
+        title="My Setting",
+        description="Enter the value for my setting",
         required=False,
-        default=u''
+        default=""
     )
     
     my_choice = schema.Choice(
-        title=u'My Choice',
-        description=u'Select a value for my choice',
+        title="My Choice",
+        description="Select a value for my choice",
         required=False,
-        default=u'value3',
-        values=['value1', 'value2', 'value3']
+        default="value3",
+        values=["value1", "value2", "value3"]
     )
 
 class MyControlPanelForm(RegistryEditForm):
@@ -78,7 +96,7 @@ class MyControlPanelForm(RegistryEditForm):
     
     schema = IMyControlPanelSettings
     schema_prefix = "my.addon"
-    label = u"My Addon Settings"
+    label = "My add-on settings"
 
 # Wrap the form with plone.z3cform's ControlPanelFormWrapper to get the Plone
 # control panel look and feel
@@ -86,7 +104,11 @@ MyControlPanelView = layout.wrap_form(MyControlPanelForm, ControlPanelFormWrappe
 ```
 
 
-#### Register the control panel view
+(register-the-control-panel-view-label)=
+
+### Register the control panel view
+
+This step registers a view to display the control panel defined in the previous step.
 
 Create a file {file}`mypackage/controlpanel/configure.zcml` with the following content to register the control panel view in ZCML.
 
@@ -107,7 +129,7 @@ Create a file {file}`mypackage/controlpanel/configure.zcml` with the following c
 </configure>
 ```
 
-Make sure to include the above file in your package's main {file}`mypackage/configure.zcml` as shown by the highlighted line below.
+Include the above file in your package's main {file}`mypackage/configure.zcml`, as shown by the highlighted line below.
 
 {emphasize-lines="9"}
 ```xml
@@ -124,7 +146,12 @@ Make sure to include the above file in your package's main {file}`mypackage/conf
 </configure>
 ```
 
-#### Add the control panel entry
+
+(add-the-control-panel-entry-label)=
+
+### Add the control panel entry
+
+This step adds the control panel to the Plone control panel listing.
 
 Create a {file}`mypackage/profiles/default/controlpanel.xml` in your package's GenericSetup profile with the following content to add your control panel to the Plone control panel listing.
 
@@ -133,7 +160,7 @@ Create a {file}`mypackage/profiles/default/controlpanel.xml` in your package's G
 <?xml version="1.0"?>
 <object name="portal_controlpanel">
     <configlet
-        title="My Addon Settings"
+        title="My add-on settings"
         action_id="my-controlpanel"
         appId="my.addon"
         category="plone-general"
@@ -165,7 +192,10 @@ These values correspond to the groups in {guilabel}`Site Setup`.
 :   {guilabel}`Advanced`
 
 
-#### Set default values in the registry
+
+(set-default-values-in-the-registry-label)=
+
+### Set default values in the registry
 
 Define default values for your settings in {file}`mypackage/profiles/default/registry.xml`.
 
@@ -182,9 +212,11 @@ Define default values for your settings in {file}`mypackage/profiles/default/reg
 ```
 
 
-#### Register a control panel
+(register-the-control-panel-label)=
 
-To manually register a view as a control panel, add the following registration to your {file}`/profiles/default/controlpanel.xml`.
+### Register the control panel
+
+To register the view as a control panel so that it appears in the {guilabel}`Site Setup`, add the following registration to your {file}`/profiles/default/controlpanel.xml`.
 
 ```xml
 <?xml version="1.0"?>
@@ -207,7 +239,18 @@ To manually register a view as a control panel, add the following registration t
   </object>
 ```
 
-After you perform the above steps for the manual process, you must restart the Plone site. To stop a running Plone instance, press {kbd}`ctrl-c` in the terminal where Plone is running. To start it again, use the appropriate command based on your installation method:
+
+## Load your control panel
+
+After performing the above steps, you must {ref}`import-the-generic-profile-label` and {ref}`restart-the-instance-label`, as they are important to load the profile, including the registry to the project.
+
+
+(restart-the-instance-label)=
+
+### Restart the instance
+
+To stop a running Plone instance, press {kbd}`ctrl-c` in the terminal where Plone is running.
+To start it again, use the appropriate command based on your installation method.
 
 `````{tab-set}
 
@@ -247,9 +290,44 @@ make frontend-start
 
 `````
 
+
+(import-the-generic-profile-label)=
+
+### Import the generic profile
+
+To apply your newly created control panel in a Plone project, you'll need to manually import the GenericSetup profile associated with your project.
+Perform the following steps to do so.
+
+1.  Navigate to your Plone site's URL and append `/manage` to access the {term}`Zope Management Interface` (ZMI).
+
+    ```shell
+    http://localhost:8080/Plone/manage
+    ```
+
+1.  Navigate to the {guilabel}`Setup Tool` by locating and clicking on {guilabel}`portal_setup`.
+1.  Within {guilabel}`portal_setup`, go to the {guilabel}`Import` tab.
+1.  From the {guilabel}`Profile` select menu, select your project's profile.
+    This is typically named in the following format.
+
+    ```text
+    profile-your.projectname:default
+    ```
+
+1.  Click the {guilabel}`Import All Steps` button to apply the profile.
+
+This process will register your control panel and any associated registry settings defined in your {file}`registry.xml` and {file}`controlpanel.xml` files.
+
 Your control panel should now appear in {guilabel}`Site Setup`.
 
-## Access your settings in code
+
+(common-tasks-and-advanced-topics-label)=
+
+## Common tasks and advanced topics
+
+The following sections apply to control panels created with either the automated or manual methods.
+
+
+### Access your settings in code
 
 You can access your settings in Python code as follows.
 
@@ -265,7 +343,8 @@ my_setting_value = settings.my_setting
 my_choice_value = settings.my_choice
 ```
 
-## Use `FieldSet` to group fields
+
+### Use `FieldSet` to group fields
 
 For complex control panels, you can group fields together as in the following example.
 
@@ -275,32 +354,32 @@ from plone.supermodel import model
 class IMyControlPanelSettings(Interface):
     
     model.fieldset(
-        'advanced',
-        label=u"Advanced Settings",
-        fields=['advanced_setting1', 'advanced_setting2']
+        "advanced",
+        label="Advanced Settings",
+        fields=["advanced_setting1", "advanced_setting2"]
     )
     
     # Basic settings
     my_setting = schema.TextLine(
-        title=u'My Setting',
-        description=u'Enter the value for my setting',
+        title="My Setting",
+        description="Enter the value for my setting",
         required=False
     )
     
     # Advanced settings
     advanced_setting1 = schema.TextLine(
-        title=u'Advanced Setting 1',
+        title="Advanced Setting 1",
         required=False
     )
     
     advanced_setting2 = schema.Bool(
-        title=u'Advanced Setting 2',
+        title="Advanced Setting 2",
         default=False
     )
 ```
 
 
-## Common schema fields
+### Common schema fields
 
 The following is a list of commonly used schema field types.
 
@@ -329,7 +408,7 @@ The following is a list of commonly used schema field types.
 :   For list of values
 
 
-## Modify control panel fields
+### Modify control panel fields
 
 When you modify the fields in your control panel settings interface, the changes won't be automatically reflected in existing sites.
 You'll need to perform one or more of the following steps.
@@ -339,9 +418,11 @@ You'll need to perform one or more of the following steps.
 -   Test with a fresh site installation.
 
 
-## Troubleshooting
+(control-panel-troubleshooting-label)=
 
-If your control panel doesn't appear or doesn't work as expected:
+### Troubleshooting
+
+If your control panel doesn't appear or doesn't work as expected, try the following troubleshooting tasks.
 
 -   Verify that all ZCML is properly registered.
 -   Check for errors in the Plone error log.
@@ -349,11 +430,11 @@ If your control panel doesn't appear or doesn't work as expected:
 -   Validate that the interface path in {file}`registry.xml` matches your actual Python path.
 
 
-## Example file structure
+### Example file structure
 
 Below is a complete example file structure for a basic add-on with a control panel.
 
-```
+```text
 mypackage/
 ├── __init__.py
 ├── configure.zcml
@@ -368,7 +449,10 @@ mypackage/
         └── registry.xml
 ```
 
-## REST API compatibility
+
+(rest-api-compatibility-label)=
+
+### REST API compatibility
 
 For better integration between Plone's backend and its frontend Volto, you can create REST API compatible control panels using the adapter pattern.
 This approach is particularly useful when developing control panels that need to work seamlessly with Volto.
@@ -391,7 +475,7 @@ class MyAddonControlPanel(RegistryConfigletPanel):
     schema_prefix = "my.addon"
     configlet_id = "my-controlpanel"
     configlet_category_id = "plone-general"
-    title = _("My Addon Settings")
+    title = _("My add-on settings")
     group = "General"
 ```
 
@@ -430,7 +514,7 @@ The `group` property in the control panel class corresponds to the control panel
 
 With this approach, your control panel will be automatically available through the REST API at the endpoint `@controlpanels/my-controlpanel`, making it easy to integrate with Volto without additional configuration.
 
-You will still need to set up {file}`registry.xml` with default values as described earlier.
+You'll still need to set up {file}`registry.xml` with default values as described earlier.
 
 ```{seealso}
 See the chapter {ref}`training:controlpanel-label` from the Mastering Plone 6 Training.

@@ -152,6 +152,7 @@ Dublin Core
     The Dublin Core Schema is a small set of vocabulary terms that can be used to describe web resources (video, images, web pages, etc.), as well as physical resources such as books or CDs, and objects like artworks.
 
 ZMI
+Zope Management Interface
     The {term}`Zope` Management Interface.
     The ZMI is a direct interface into the backend software stack of Plone.
     While it can still serve as a valuable tool for Plone specialists to fix problems or accomplish certain tasks, it is not recommended as a regular tool for Plone maintenance.
@@ -586,8 +587,10 @@ Zope instance
 ZPT
     Zope Page Template is a template language for Python.
 
-plonecli
+Plone CLI
+`plonecli`
     The [`plonecli`](https://pypi.org/project/plonecli/) helps developers to create Plone add-ons in a modular and reproducible way.
+    It uses logic from {term}`bobtemplates.plone`.
 
 ZCA
 Zope Component Architecture
