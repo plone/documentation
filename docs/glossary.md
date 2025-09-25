@@ -920,4 +920,13 @@ blob
 Binary large object
     A blob is a mass of data in binary form that does not necessarily conform to any file format.
 
+content management system user interface
+CMSUI
+    In Seven, the content management system user interface (CMSUI) is the editor and administrator part of the app.
+    Its counterpart is the {term}`Public UI`.
+   
+Public UI
+    In Seven, Public UI is the end user interface part, which displays content to both authenticated and anonymous users.
+    Its counterpart is the {term}`CMSUI`.
+ 
 ```
