@@ -11,57 +11,52 @@ myst:
 
 # Create a control panel
 
-This chapter describes how to create a control panel for Plone, whether accessed through either the Classic UI or Volto frontend.
+This chapter describes how to create a control panel for Plone, either {ref}`automatically <create-a-control-panel-automated-method-label>` or {ref}`manually <create-a-control-panel-manual-method-label>`, whether accessed through the Classic UI or Volto frontend.
+It continues with {ref}`common tasks and advanced topics <common-tasks-and-advanced-topics-label>`, including field grouping, schema reference, {ref}`troubleshooting <control-panel-troubleshooting-label>` tips, and {ref}`rest-api-compatibility-label`.
 
-There are two main approaches to creating a control panel:
 
-1. **Automated approach** - Using {term}`plonecli` (only works with backend add-ons)
-2. **Manual approach** - Step-by-step implementation (works for backend add-ons, custom control panels in Plone sites, or any Plone project)
+(create-a-control-panel-automated-method-label)=
 
-This chapter covers both approaches, followed by advanced topics including field grouping, schema reference, troubleshooting tips, and REST API compatibility.
+## Automated method with `plonecli`
 
----
+The automated method uses {term}`plonecli` and works only with backend add-ons.
+It requires that you have already created a Plone backend add-on using one of the following methods.
 
-## Approach 1: Automated creation with `plonecli` (Backend add-ons only)
+-   {doc}`/install/create-project-cookieplone`
+-   {doc}`create-backend-add-on`
 
-**Prerequisites:**
-- You have already created a Plone backend add-on using one of the following methods:
-  - {doc}`/install/create-project-cookieplone`
-  - {doc}`create-backend-add-on`
+From the root of your add-on, run the following command as described in {ref}`backend-add-on-subtemplates-label`.
 
-**Steps:**
+```shell
+plonecli add controlpanel
+```
 
-1. From the root of your add-on, run the following command as described in {ref}`backend-add-on-subtemplates-label`:
+This creates Python modules in the folder {file}`src/collective/myaddon/controlpanel`, where you can define your control panel schema fields.
 
-   ```shell
-   plonecli add controlpanel
-   ```
+`plonecli` automatically performs all the manual steps described in the next approach.
 
-2. This creates Python modules in the folder {file}`src/collective/myaddon/controlpanel`, where you can define your control panel schema fields.
 
-3. `plonecli` automatically performs all the manual steps described in the next approach.
+(create-a-control-panel-manual-method-label)=
 
----
+## Manual method
 
-(steps-to-create-a-control-panel-label)=
+The manual method works for:
 
-## Approach 2: Manual creation (All Plone projects)
+-   backend add-ons that were not created via `plonecli`
+-   custom control panels created directly in a Plone site
+-   any Plone project or installation
 
-This approach works for:
-- Backend add-ons (alternative to plonecli)
-- Custom control panels created directly in a Plone site
-- Any Plone project or installation
+You'll need to complete the following steps, as described in the following sections.
 
-You'll need to complete the following steps:
-
-1. Define the settings interface and form
-2. Register the control panel view in ZCML
-3. Add the control panel to the Plone control panel listing
-4. Set default values in the registry
-5. Register the control panel in XML
+1.  {ref}`define-the-settings-interface-and-form-label`.
+1.  {ref}`register-the-control-panel-view-label`.
+1.  {ref}`add-the-control-panel-entry-label`.
+1.  {ref}`register-the-control-panel-label`.
+1.  {ref}`set-default-values-in-the-registry-label`.
 
 ```{note}
-The code examples below are for illustrative purposes and show the general structure. Adapt the paths, names, and values to match your specific project or add-on.
+The code examples below are for illustrative purposes and show the general structure.
+Adapt the paths, names, and values to match your specific project or add-on.
 ```
 
 
@@ -109,6 +104,8 @@ MyControlPanelView = layout.wrap_form(MyControlPanelForm, ControlPanelFormWrappe
 ```
 
 
+(register-the-control-panel-view-label)=
+
 ### Register the control panel view
 
 This step registers a view to display the control panel defined in the previous step.
@@ -150,7 +147,11 @@ Include the above file in your package's main {file}`mypackage/configure.zcml`, 
 ```
 
 
+(add-the-control-panel-entry-label)=
+
 ### Add the control panel entry
+
+This step adds the control panel to the Plone control panel listing.
 
 Create a {file}`mypackage/profiles/default/controlpanel.xml` in your package's GenericSetup profile with the following content to add your control panel to the Plone control panel listing.
 
@@ -191,6 +192,9 @@ These values correspond to the groups in {guilabel}`Site Setup`.
 :   {guilabel}`Advanced`
 
 
+
+(set-default-values-in-the-registry-label)=
+
 ### Set default values in the registry
 
 Define default values for your settings in {file}`mypackage/profiles/default/registry.xml`.
@@ -207,6 +211,8 @@ Define default values for your settings in {file}`mypackage/profiles/default/reg
 </registry>
 ```
 
+
+(register-the-control-panel-label)=
 
 ### Register the control panel
 
@@ -236,9 +242,12 @@ To register the view as a control panel so that it appears in the {guilabel}`Sit
 
 ## Load your control panel
 
-After performing the above steps, you must perform below mentioned steps as they are important to load the profile (including registry) to the project.
+After performing the above steps, you must {ref}`import-the-generic-profile-label` and {ref}`restart-the-instance-label`, as they are important to load the profile, including the registry to the project.
 
-### Restarting the instance
+
+(restart-the-instance-label)=
+
+### Restart the instance
 
 To stop a running Plone instance, press {kbd}`ctrl-c` in the terminal where Plone is running.
 To start it again, use the appropriate command based on your installation method.
@@ -281,45 +290,42 @@ make frontend-start
 
 `````
 
-### Importing the Generic Profile
 
-​To apply your newly created control panel in a Plone project, you'll need to manually import the GenericSetup profile associated with your project. Here's how you can do this:​
+(import-the-generic-profile-label)=
 
-#### Access the ZMI (Zope Management Interface)
+### Import the generic profile
 
-Navigate to your Plone site's URL and append /manage to access the ZMI. For example:​
+To apply your newly created control panel in a Plone project, you'll need to manually import the GenericSetup profile associated with your project.
+Perform the following steps to do so.
 
-```bash
-http://localhost:8080/Plone/manage
+1.  Navigate to your Plone site's URL and append `/manage` to access the {term}`Zope Management Interface` (ZMI).
 
-```
+    ```shell
+    http://localhost:8080/Plone/manage
+    ```
 
-#### Navigate to the Setup Tool
+1.  Navigate to the {guilabel}`Setup Tool` by locating and clicking on {guilabel}`portal_setup`.
+1.  Within {guilabel}`portal_setup`, go to the {guilabel}`Import` tab.
+1.  From the {guilabel}`Profile` select menu, select your project's profile.
+    This is typically named in the following format.
 
-In the ZMI, locate and click on portal_setup.​
+    ```text
+    profile-your.projectname:default
+    ```
 
-#### Import the Profile
+1.  Click the {guilabel}`Import All Steps` button to apply the profile.
 
-- Within portal_setup, go to the Import tab.
-- From the Profile dropdown menu, select your project's profile. This is typically named in the format:​
-```
-profile-your.projectname:default
-```
-- Click the Import All Steps button to apply the profile.​
-
-This process will register your control panel and any associated registry settings defined in your registry.xml and controlpanel.xml files.
+This process will register your control panel and any associated registry settings defined in your {file}`registry.xml` and {file}`controlpanel.xml` files.
 
 Your control panel should now appear in {guilabel}`Site Setup`.
 
-```{tip}
-**Manual approach complete!** You have successfully created a control panel using the manual method. This approach works for any Plone project, whether it's a backend add-on or a custom control panel in a Plone site.
-```
 
----
+(common-tasks-and-advanced-topics-label)=
 
 ## Common tasks and advanced topics
 
-The following sections apply to control panels created with either approach (automated or manual).
+The following sections apply to control panels created with either the automated or manual methods.
+
 
 ### Access your settings in code
 
@@ -412,9 +418,11 @@ You'll need to perform one or more of the following steps.
 -   Test with a fresh site installation.
 
 
+(control-panel-troubleshooting-label)=
+
 ### Troubleshooting
 
-If your control panel doesn't appear or doesn't work as expected:
+If your control panel doesn't appear or doesn't work as expected, try the following troubleshooting tasks.
 
 -   Verify that all ZCML is properly registered.
 -   Check for errors in the Plone error log.
@@ -441,6 +449,8 @@ mypackage/
         └── registry.xml
 ```
 
+
+(rest-api-compatibility-label)=
 
 ### REST API compatibility
 
@@ -504,7 +514,7 @@ The `group` property in the control panel class corresponds to the control panel
 
 With this approach, your control panel will be automatically available through the REST API at the endpoint `@controlpanels/my-controlpanel`, making it easy to integrate with Volto without additional configuration.
 
-You will still need to set up {file}`registry.xml` with default values as described earlier.
+You'll still need to set up {file}`registry.xml` with default values as described earlier.
 
 ```{seealso}
 See the chapter {ref}`training:controlpanel-label` from the Mastering Plone 6 Training.
