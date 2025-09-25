@@ -133,7 +133,7 @@ You should see output similar to the following.
 You can add different features to your add-on through subtemplates, using any of the available mr.bob templates.
 You can use them multiple times to create different features of the same type, such as two different content types.
 
-First change your working directory into the root of your add-on.
+First, change your working directory into the root of your add-on.
 Then issue the command to add a feature as a subtemplate, and answer the prompts.
 
 ```shell
@@ -142,7 +142,7 @@ plonecli add <TEMPLATE>
 ```
 
 ```{seealso}
-The `plonecli` `README.md` has a section on [Usage](https://github.com/plone/plonecli?tab=readme-ov-file#usage).
+The `plonecli` {file}`README.md` has a section on [Usage](https://github.com/plone/plonecli?tab=readme-ov-file#usage).
 ```
 
 ```{seealso}
