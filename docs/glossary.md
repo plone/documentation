@@ -924,9 +924,29 @@ content management system user interface
 CMSUI
     In Seven, the content management system user interface (CMSUI) is the editor and administrator part of the app.
     Its counterpart is the {term}`Public UI`.
-   
+
 Public UI
     In Seven, Public UI is the end user interface part, which displays content to both authenticated and anonymous users.
     Its counterpart is the {term}`CMSUI`.
- 
+
+Prisma
+    [Prisma](https://www.prisma.io/) is an open-source database toolkit for TypeScript and Node.js that simplifies database access and management.
+    It provides a type-safe and intuitive way to interact with databases, making it easier to build and maintain applications.
+
+    Prisma consists of three main components:
+
+    Prisma Client
+    :    An auto-generated query builder that allows developers to interact with the database using a type-safe API.
+
+    Prisma Migrate
+    :    A migration tool that helps manage database schema changes over time.
+
+    Prisma Studio
+    :    A visual interface for exploring and managing data in the database.
+
+    Prisma supports various databases, including PostgreSQL, MySQL, SQLite, SQL Server, and MongoDB.
+
+    ```{seealso}
+    https://www.prisma.io/
+    ```
 ```
