@@ -784,7 +784,11 @@ husky
 
 Jest
     [Jest](https://jestjs.io/) is a JavaScript testing framework.
-    Volto uses Jest for unit tests.
+    Volto was previously using Jest for unit tests.
+
+Vitest  
+    [Vitest](https://vitest.dev/) is a modern, Vite-powered testing framework for JavaScript and TypeScript projects.  
+    Volto uses Vitest for running unit tests.
 
 Cypress
     [Cypress](https://www.cypress.io/) is a JavaScript testing framework that runs your app in the browser for visually debugging it.
