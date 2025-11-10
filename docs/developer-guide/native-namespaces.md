@@ -155,7 +155,7 @@ Only relevant for Plone core packages
 
 As the switch to the native namespace has to be coordinated, all python distributions need to be only for the same Plone version, in this case it was decided to do it for the Plone 6.2 version.
 
-Thus, we need to ensure that the test matrix, only tests against this Plone version.
+Thus, we need to ensure that the test matrix only tests against this Plone version.
 
 For that, update `.meta.toml` with the following changes:
 
