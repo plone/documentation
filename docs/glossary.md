@@ -206,6 +206,17 @@ Volto configuration loader
     An add-on must provide a default configuration loader that is always loaded when Volto runs.
     An add-on can have multiple configuration loaders, and they can be loaded optionally from the Volto configuration.
 
+(contentIcons)=
+contentIcons
+A Volto configuration option (typically a boolean) that controls whether small content-type icons are shown next to items in lists, teasers, and navigation components.  
+When enabled, an icon representing the item's content type (for example: document, image, file) is displayed alongside the item's title.
+
+(excludeLinksAndReferencesMenuItem)=
+excludeLinksAndReferencesMenuItem
+A Volto configuration key or menu setting that, when enabled, removes or hides the "Links and References" menu item from link pickers or site menus.  
+Use this option to prevent the Links and References entry from appearing in UI menus where it is not desired.
+
+
 Configuration registry
     In Plone and in general, the configuration registry is where resources are registered for an application.
 
