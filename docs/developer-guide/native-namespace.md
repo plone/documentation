@@ -24,34 +24,51 @@ To convert a given Python distribution to use a native namespace, follow these s
 ## Create maintenance branch
 
 ```{note}
-Only relevant for Plone core packages
+This step is relevant only for Plone core packages.
 ```
 
 ```{tip}
 This part is only needed when the `main` or `master` branch is used on multiple versions of the Plone core development buildout.
 ```
 
-Clone the repository or ensure you are at latest changes:
+If you haven't cloned the package's repository, then do so.
 
 ```shell
 git clone git@github.com:plone/$package
 cd $package
-# or update
+```
+
+Otherwise, pull the latest changes into your local repository.
+
+```shell
 git fetch -p
 git checkout main # or master
 git rebase
 ```
 
-Find out what's the last release and create a branch for it:
+Find the last release tag, and create a branch for it.
+
+List all tags.
 
 ```shell
-# list all tags
 git for-each-ref --sort=taggerdate --format '%(tag)' refs/tags
-# get the last tag's major number
+```
+
+Get the last tag's major number.
+
+```shell
 MAJOR=`git for-each-ref --sort=taggerdate --format '%(tag)' refs/tags | tail -n1 | cut -d"." -f1`
-# create a branch for it
+```
+
+Create a branch for it.
+
+```shell
 git checkout -b $MAJOR.x
-# push the newly created branch
+```
+
+Push the newly created branch.
+
+```shell
 git push
 ```
 
