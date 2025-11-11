@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "How to convert a Python distribution from a pkg_resources namespace to a native namespace"
+    "property=og:description": "How to convert a Python distribution from a pkg_resources namespace to a native namespace"
+    "property=og:title": "Native namespace"
+    "keywords": "Plone 6, developer guide, native namespaces, pkg_resources, Python"
+---
+
 # Native namespace
 
 This document explains the steps needed to convert a python distribution from `pkg_resources` namespace to native namespaces.
