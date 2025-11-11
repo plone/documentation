@@ -9,23 +9,19 @@ myst:
 
 # Native namespace
 
-This document explains the steps needed to convert a python distribution from `pkg_resources` namespace to native namespaces.
+This chapter is guide for how to convert a Python distribution from a `pkg_resources` namespace to a native namespace.
 
-## Background
-
-Python, since Python 3.3, added support for native namespaces, see [PEP 420](https://peps.python.org/pep-0420/).
+Python 3.3 added support for native namespaces.
+See [PEP 420](https://peps.python.org/pep-0420/) for more details.
 
 Plone has been using `pkg_resources`-style namespaces, but they are deprecated in `setuptools`.
-
-`setuptools` is planning to remove `pkg_resources`'s namespaces support by the end of 2025.
-
+`setuptools` is planning to remove `pkg_resources`'s namespace support by the end of 2025.
 [PLIP 3928](https://github.com/plone/Products.CMFPlone/issues/3928) tracks the changes needed for Plone to adapt to the _new_ native namespaces.
 
-## Steps
+To convert a given Python distribution to use a native namespace, follow these steps.
 
-To convert a given (`$package`) python distribution to use native namespaces follow these steps.
 
-### Create maintenance branch
+## Create maintenance branch
 
 ```{note}
 Only relevant for Plone core packages
@@ -59,7 +55,7 @@ git checkout -b $MAJOR.x
 git push
 ```
 
-### Update buildout.coredev
+## Update `buildout.coredev`
 
 ```{note}
 Only relevant for Plone core packages
@@ -92,7 +88,7 @@ You can use this [handy table](https://jenkins.plone.org/roboto/branches) to kno
 To lower the amount of builds in Jenkins, either do a few at a time or add a `[ci-skip]` on the commit message
 ```
 
-### Numbers before
+## Numbers before
 
 One risk of changing to the native namespaces is that some files, or tests, might be left behind.
 
@@ -128,7 +124,7 @@ python -c "import glob; from zipfile import ZipFile; print(len(ZipFile(glob.glob
 
 Keep these numbers around for later.
 
-### Build backend
+## Build backend
 
 To ensure the package continues to build, ensure that `setuptools` is defined as its build backend.
 
@@ -141,7 +137,7 @@ requires = ["setuptools>=68.2,<80", "wheel"]
 
 If they are not there, add them, commit and push the changes.
 
-### Convert to native namespace
+## Convert to native namespace
 
 Use `plone.meta`'s `switch-to-pep420` script:
 
@@ -156,7 +152,7 @@ This will also bump the version to a new major release.
 If the `main` or `master` branch is already an alpha version that is only used in Plone 6.2, you can specify that you don't want this version bump by adding the `--no-breaking` option.
 ```
 
-### Update the test matrix
+## Update the test matrix
 
 ```{note}
 Only relevant for Plone core packages
@@ -185,7 +181,7 @@ Review the changes and ensure all changes are sound.
 If the diff is quite big, run `config-package` before all the changes, get that on a Pull Request, approved and merged and then do a follow up Pull Request to move to native namespace.
 ```
 
-### Compare numbers
+## Compare numbers
 
 Get the list of tests, like before and compare the lists to ensure that the same amount of tests are found.
 
