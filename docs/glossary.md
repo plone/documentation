@@ -55,6 +55,14 @@ plone/generator-volto
 cookiecutter-zope-instance
     [cookiecutter-zope-instance](https://github.com/plone/cookiecutter-zope-instance) is a cookiecutter template to create a full and complex configuration of a {term}`Zope instance`.
 
+contentIcons
+    Icons used in the {term}`Volto` UI to visually represent different content types, such as pages, files, news items, or custom content types.  
+    These icons help users quickly identify the type of content they are interacting with.
+
+excludeLinksAndReferencesMenuItem
+    A menu item in {term}`Volto` that allows a view to exclude links and references from being displayed.  
+    This is useful for creating simplified or focused views where only the main content is shown, without additional references or navigation links.
+
 CSRF
 Cross-Site Request Forgery
     Cross-Site Request Forgery (CSRF or XSRF) is a type of web attack that allows an attacker to send malicious requests to a web application on behalf of a legitimate user.
