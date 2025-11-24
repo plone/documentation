@@ -158,28 +158,30 @@ You can run the following make targets by using the command structure of `make <
 
 Cookieplone projects include a `devops` folder when deployment-related questions are answered "Yes" during project generation.
 These questions include the following.
+
 -   Add Ansible playbooks?
 -   Add GitHub Action to Deploy this project?
 
 When any of these options are selected, Cookieplone generates a {file}`devops/Makefile` file containing deployment and CI/CD helper commands.
 
-You can view the available DevOps commands in your generated project by running:
+You can view the available devops commands in your generated project by running the following help command from the project root.
 
-```bash
-# from the project root
+```shell
 make -C devops help
+```
 
-# or
+Alternatively, change the working directory to {file}`devops` and run its help command.
+
+```shell
 cd devops
 make help
-
 ```
-The commands vary depending on your Cookieplone template options, so this is the authoritative way to inspect your environment.
 
-Below is the current working output of the DevOps make help command
-(as fixed in cookieplone-templates#305):
+The available commands align with the selected Cookieplone template options.
 
-```
+When all devops options have been selected, the following output is the result of running the devops help command.
+
+```console
 # === DevOps Makefile Commands ===
 deploy                 Deploy the project using the configured provider
 deploy-check           Validate deployment configuration
@@ -193,7 +195,9 @@ format                 Format DevOps files (YAML, JSON, etc.)
 clean                  Clean temporary deployment artifacts
 help                   Show this help
 ```
+
 These commands support devops tasks, such as:
+
 -   provisioning via Ansible
 -   deploying through GitHub Actions or GitLab CI
 -   editing and viewing encrypted secrets
