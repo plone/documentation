@@ -290,33 +290,41 @@ Example: `https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcs
 
 It displays the following examples (all rendered with the current theme’s styling):
 
-- **Standard image scales**
-  Shows the classic Plone scales with different modes:
-  - Mini
-  - Mini mode=cover
-  - Mini mode=contain
+Standard image scales
+:   Shows the Classic UI Plone scales with different modes:
+    -   Mini
+    -   Mini mode=cover
+    -   Mini mode=contain
 
-````{card}
-```{image} /_static/images-test/examples.png
-:alt: Example
-:target: /_static/images-test/examples.png
-```
-+++
-_Example_
-````
+    ````{card}
+    ```{image} /_static/images-test/examples.png
+    :alt: Example
+    :target: /_static/images-test/examples.png
+    ```
+    +++
+    _Example_
+    ````
 
-- **Picture tags** (Plone 6+ only)
-  Demonstrates the use of `<picture>` elements with configured picture variants.
-  If the site runs on Plone 5.2 or earlier, a regular `<img>` tag is rendered instead.
-  - Picture Tag Large – uses the configured `large` picture variant
-  - Picture Tag Medium – uses the `medium` variant with multiple `<source>` elements and media queries for art direction
-  - Picture Tag Small – uses the `small` variant
-  - Picture Tag Small with title/alt – same as above but with `title` and `alt` attributes explicitly set
+Picture tags (Plone 6+ only)
+:   Demonstrates the use of `<picture>` elements with configured picture variants.
+    If the site runs on Plone 5.2 or earlier, a regular `<img>` tag is rendered instead.
+    
+    Picture Tag Large
+    :   uses the configured `large` picture variant
 
-- **img with srcset attributes**
-  Shows how to use Plone’s `@@images` view to generate a full responsive `<img>` tag with a complete `srcset`.
-  The browser automatically selects the most appropriate scale based on the available space and device pixel ratio.
-  The example includes the required `sizes` attribute and demonstrates the resulting HTML output.
+    Picture Tag Medium
+    :   uses the `medium` variant with multiple `<source>` elements and media queries for art direction
+
+    Picture Tag Small
+    :   uses the `small` variant
+
+    Picture Tag Small with title/alt
+    :   same as the previous, but with `title` and `alt` attributes explicitly set
+
+`img` with `srcset` attributes
+:   Shows how to use Plone’s `@@images` view to generate a full responsive `<img>` tag with a complete `srcset`.
+    The browser automatically selects the most appropriate scale based on the available space and device pixel ratio.
+    The example includes the required `sizes` attribute and demonstrates the resulting HTML output.
 
 This view is especially valuable for theme developers who need to verify that responsive images, picture variants, and srcset functionality are correctly styled and behave as expected across devices and Plone versions.
 
