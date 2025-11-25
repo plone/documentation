@@ -472,6 +472,56 @@ self.widgets["ds_pregu_pers"].disabled = "disabled"
 ```
 
 
+### Customize existing widgets `pattern_options`
+
+There is a special attribute called `pattern_options` which is primarily used in Classic UI for pattern configuration.
+
+If you define your own schema, you can set this attribute with autoform directives.
+See {ref}`relations-configure-the-relateditemsfieldwidget-label` for an example.
+
+To customize or extend `pattern_options` for existing schema widgets, you can create a `z3c.form.interface.IValue` multiadapter as shown.
+
+```{code-block} python
+from z3c.form.interfaces import IForm
+from z3c.form.interfaces import IValue
+from z3c.form.interfaces import IWidget
+from zope.component impport adapter
+from zope.interface import implementer
+from zope.interface import Interface
+from zope.publisher.interfaces import  IRequest
+from zope.schema.interfaces import IField
+
+@implementer(IValue)
+@adapter(Interface, IRequest, IForm, IField, IWidget)
+class CustomPatternOptions:
+
+    def __init__(self, context, request, form, field, widget):
+        self.context = context
+        self.request = request
+        self.form = form
+        self.field = field
+        self.widget = widget
+
+    def get(self):
+        # return a dictionary with your custom options
+        return {
+            "myoption": "value",
+        }
+```
+
+This defines an adapter for every field widget in every form.
+
+You can define the adapter more explicitly by providing different interfaces.
+See an example in {ref}`classic-ui-recipes-customize-pattern-options`.
+
+Now register the `pattern_options` named adapter with ZCML as shown.
+
+```xml
+<adapter factory=".CustomPatternOptions"
+         name="pattern_options">
+```
+
+
 ## Set widget templates
 
 You might want to customize the template of a widget with custom HTML code.

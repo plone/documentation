@@ -21,16 +21,23 @@ See {doc}`/volto/development/add-ons/index`.
 
 ## Cookieplone
 
-Use the following instructions if you installed Plone with either Cookieplone or `cookiecutter-plone-starter`.
+Use the following instructions if you installed Plone with Cookieplone.
 
 
 ### Install an add-on
 
-Add a line with the name of your add-on in the file {file}`backend/requirements.txt`.
-This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
+Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
+This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
 
-```
-collective.easyform==4.2.1
+```{code-block} toml
+:emphasize-lines: 6
+dependencies = [
+    "Products.CMFPlone==6.1.1",
+    "plone.api",
+    "plone.classicui",
+    "plone.app.caching",
+    "collective.easyform==4.4.0",
+]
 ```
 
 ```{tip}
@@ -50,10 +57,6 @@ To actually download and install the new add-on, run the following command.
 
 ```shell
 make backend-build
-```
-
-```{note}
-If you installed Plone using `cookiecutter-plone-starter`, run `make build-backend` instead.
 ```
 
 Now restart the backend.
@@ -114,10 +117,6 @@ To actually download and install the new add-on, run the following command.
 
 ```shell
 make backend-build
-```
-
-```{note}
-If you installed Plone using `cookiecutter-plone-starter`, run `make build-backend` instead.
 ```
 
 Now restart the backend.

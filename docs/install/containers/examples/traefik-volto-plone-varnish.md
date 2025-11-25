@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
-    "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
+    "description": "Basic Plone 6 setup with only one backend, a ZEO server, and data being persisted in a Docker volume."
+    "property=og:description": "Basic Plone 6 setup with only one backend, a ZEO server, and data being persisted in a Docker volume."
     "property=og:title": "Traefik Proxy, Frontend, Backend, Varnish container example"
     "keywords": "Plone 6, Container, Docker, Traefik Proxy, Frontend, Backend, Varnish"
 ---
 
-# Traefik Proxy, Frontend, Backend, Varnish container example
+# Traefik Proxy, Frontend, Backend, ZEO, Varnish container example
 
-This example is a very simple setup with one backend and data being persisted in a Docker volume.
+This example is a basic setup with one backend accessing a ZEO server and data being persisted in a Docker volume.
 
 {term}`Traefik Proxy` in this example is used as a reverse proxy.
 
@@ -323,7 +323,6 @@ You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to po
 Now let's create a {file}`docker-compose.yml` file:
 
 ```yaml
-version: "3"
 services:
   webserver:
     image: traefik
@@ -381,7 +380,7 @@ services:
       - traefik.http.routers.rt-frontend-public.service=svc-varnish
       - traefik.http.routers.rt-frontend-public.middlewares=gzip
       # Router: Internal
-      - traefik.http.routers.rt-frontend-internal.rule=Host(`plone.localhost`) && Headers(`X-Varnish-Routed`, `1`)
+      - traefik.http.routers.rt-frontend-internal.rule=Host(`plone.localhost`) && Header(`X-Varnish-Routed`, `1`)
       - traefik.http.routers.rt-frontend-internal.entrypoints=http
       - traefik.http.routers.rt-frontend-internal.service=svc-frontend
     depends_on:
@@ -394,6 +393,21 @@ services:
     environment:
       SITE: Plone
       PROFILES: "plone.app.caching:with-caching-proxy"
+    environment:
+      ZEO_ADDRESS: db:8100
+      ZEO_SHARED_BLOB_DIR: on  # otherwise the backend will create its own blob storage
+    volumes:
+      - data:/data              # the backend and database need access to the same volume
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+#   If the Docker container is run with a UID other than the UID which owns the local file system persistent storage,
+#   explicitly make the container run with the correct UID. For example, `user: 1000:1000`.
+#   In that case, also make sure that the `db` service gets the same `user: 1000:1000` configuration,
+#   as they both need access to the file system.
+
+
     labels:
       - traefik.enable=true
       - traefik.constraint-label=public
@@ -414,12 +428,12 @@ services:
       - traefik.http.routers.rt-backend-api-public.middlewares=gzip
       # Router: Internal
       ## /++api++/
-      - traefik.http.routers.rt-backend-api-internal.rule=Host(`plone.localhost`) && PathPrefix(`/++api++`) && Headers(`X-Varnish-Routed`, `1`)
+      - traefik.http.routers.rt-backend-api-internal.rule=Host(`plone.localhost`) && PathPrefix(`/++api++`) && Header(`X-Varnish-Routed`, `1`)
       - traefik.http.routers.rt-backend-api-internal.entrypoints=http
       - traefik.http.routers.rt-backend-api-internal.service=svc-backend
       - traefik.http.routers.rt-backend-api-internal.middlewares=gzip,mw-backend-vhm-api
       ## /ClassicUI/
-      - traefik.http.routers.rt-backend-ui-internal.rule=Host(`plone.localhost`) && PathPrefix(`/ClassicUI`) && Headers(`X-Varnish-Routed`, `1`)
+      - traefik.http.routers.rt-backend-ui-internal.rule=Host(`plone.localhost`) && PathPrefix(`/ClassicUI`) && Header(`X-Varnish-Routed`, `1`)
       - traefik.http.routers.rt-backend-ui-internal.entrypoints=http
       - traefik.http.routers.rt-backend-ui-internal.service=svc-backend
       - traefik.http.routers.rt-backend-ui-internal.middlewares=gzip,mw-backend-vhm-ui
@@ -452,6 +466,16 @@ services:
       - "8000-8001:80"
     depends_on:
       - backend
+
+  db:
+    image: plone/plone-zeo:latest
+    volumes:
+      - data:/data
+    ports:
+    - "8100:8100"
+
+volumes:
+  data: {}
 ```
 
 

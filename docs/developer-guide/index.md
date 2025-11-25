@@ -90,6 +90,8 @@ Until it is complete, Plone 5 documentation is the authoritative source for writ
 :hidden:
 
 create-a-backend-add-on
+develop-volto-add-ons-index
 create-a-distribution
 standardize-python-project-configuration
+native-namespace
 ```

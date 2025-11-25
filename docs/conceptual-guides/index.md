@@ -20,6 +20,6 @@ compare-buildout-pip
 distributions
 package-management
 package-dependencies
-make-build-backend-walk-through
+make-backend-build
 components
 ```

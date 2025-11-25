@@ -12,13 +12,11 @@ myst:
 This guide describes the process of how to contribute to, and develop in, Plone core.
 It expands upon {doc}`/contributing/index`.
 
-```{important}
 Although Plone core includes Volto—the React based, default frontend for Plone 6—this guide does not apply to Volto and its packages.
 To contribute to Volto, see {doc}`../volto`.
-```
 
-This guide assumes that you have basic knowledge of how to use git and GitHub.
-If you have never contributed to Plone, or you lack basic knowledge of how to use git and GitHub, you should first read {doc}`/contributing/first-time` for more information.
+This guide assumes that you have basic knowledge of how to use Git and GitHub.
+If you have never contributed to Plone, or you lack basic knowledge of how to use Git and GitHub, you should first read {doc}`/contributing/first-time` for more information.
 
 ```{important}
 You must {ref}`contributing-sign-and-return-the-plone-contributor-agreement-label` before your contribution can be accepted.
@@ -73,72 +71,44 @@ On macOS, Developer Tools provides Clang for a C compiler.
 On Linux, [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a common option.
 
 
-
+(contributing-core)=
 ## Install Plone core for development
 
 The tool that installs Plone core is `buildout.coredev`.
 
-The current default and development branch of `buildout.coredev` is `6.1`
+The current default and development branch of `buildout.coredev` is `{PLONE_BACKEND_MINOR_VERSION}`.
 Older versions are named according to their `major.minor` version.
 Its versions align with Plone's `major.minor` versions.
 
 Use a separate directory for each version of Plone to which you want to contribute.
-This will avoid switching between git branches, then re-running buildout, which can cause dependency conflicts between versions of Plone.
+This will avoid switching between Git branches, which can cause dependency conflicts between versions of Plone.
 
-To set up a Plone 6 development environment, change your working directory to wherever you place your projects, and clone https://github.com/plone/buildout.coredev.
-You can specify the branch that you want to check out with the `-b` option.
+To set up a Plone 6 development environment, clone https://github.com/plone/buildout.coredev.
 
 ```shell
-cd [MY_PROJECTS]
-# clone a specific major.minor version branch
-git clone -b 6.1 https://github.com/plone/buildout.coredev
+git clone https://github.com/plone/buildout.coredev
 cd buildout.coredev
 ```
 
-````{important}
-If you want to use a Python version that is not 3.11, follow these instructions.
-
-Open the file {file}`bootstrap.sh` at the root of the repository.
-Notice that the script expects Python 3.11 to be installed on your system and in your user's `PATH`.
+Use the following command to install Plone and run it.
 
 ```shell
-#/bin/sh
-`which python3.11` -m venv .
+make run
 ```
 
-Edit it according to the Python version you want to use, then save and close the file.
-After you have run the script, you should undo the change, otherwise you have a local change in git that you might accidentally commit.
-````
+To create and visit a new Plone site, visit http://localhost:8080, select the Classic UI distribution, and fill out and submit the form, ensuring you create a site with sample content against which you can test.
 
-Now run the script to install Plone 6.
+Stop Plone with the keyboard shortcut {kbd}`ctrl-c`.
 
-```shell
-./bootstrap.sh
-```
-
-This will run for a long time if it's your first pull (approximately 10-20 minutes, depending on network speed and your hardware).
-
-Once that's done, you can start an instance of Plone with the following command.
-
-```shell
-./bin/instance fg
-```
-
-```{include} /_inc/_create-classic-ui-instance.md
-```
-
-```{warning}
-Ignore the warning about accessing the Plone backend through its Classic UI frontend.
-
-Do not follow the instructions to install Volto.
-They will not work with buildout.
-To contribute to Volto, you will need to start over, and follow {doc}`../volto`.
+```{seealso}
+For more Make targets, see documentation in [`buildout.coredev`'s `README-make.md` file](https://github.com/plone/buildout.coredev/blob/{PLONE_BACKEND_MINOR_VERSION}/README-make.md).
+The most relevant section is [How to use the `Makefile`](https://github.com/plone/buildout.coredev/blob/{PLONE_BACKEND_MINOR_VERSION}/README-make.md#how-to-use-the-makefile).
 ```
 
 
 (contributing-core-work-with-git-label)=
 
-## Work with git
+## Work with Git
 
 ```{important}
 This section applies to members of the GitHub `plone/developers` team, who have write access to repositories under the Plone GitHub organization.
@@ -146,13 +116,13 @@ This section applies to members of the GitHub `plone/developers` team, who have 
 Members of the `plone/contributors` team do not have write access, and instead must follow the process to set up their remote upstream and origin branches as described in {ref}`set-up-your-environment-label`.
 ```
 
-Always begin by checking out the git branch on which you want to work.
+Always begin by checking out the Git branch on which you want to work.
 This is the base branch to which you will create a pull request.
 
-If you just cloned `https://github.com/plone/buildout.coredev`, then the `6.1` branch is checked out and current, and you can skip the rest of this section and continue on the next, {ref}`contributing-core-edit-packages-label`.
+If you just cloned `https://github.com/plone/buildout.coredev`, then the `{PLONE_BACKEND_MINOR_VERSION}` branch is checked out and current, and you can skip the rest of this section and continue on the next, {ref}`contributing-core-edit-packages-label`.
 
 ```shell
-git checkout 6.1
+git checkout {PLONE_BACKEND_MINOR_VERSION}
 ```
 
 Next pull down and merge any recent changes from the remote tracked repository with a single command.
@@ -173,45 +143,20 @@ You can also ask in the [Plone Community Forum](https://community.plone.org/).
 
 Only a few packages are in {file}`src/` by default.
 
-Next create a new file {file}`buildout.local.cfg`, and add the names of packages that you want to develop under the `auto-checkout` list.
+Next, edit the file {file}`mxcheckouts.ini` at the root of your checkout, adding the name of the package that you want to develop as a new section.
+The following example adds `plone.app.multilingual`.
 
 ```ini
-[buildout]
-extends =
-  buildout.cfg
-
-auto-checkout =
-    # Add packages that you want to develop
-    plone.app.event
-    icalendar
-    # others
-    ...
+[plone.app.multilingual]
+use = true
 ```
 
-When you make changes in your package, then rerun buildout with the following command, specifying your new buildout configuration file with the `-c` option.
-You can add the `-N` flag to save time by not checking PyPI to see if there are updates to packages that were already installed.
+You can now check out the package and start your instance with the checked out package using the following commands.
 
 ```shell
-./bin/buildout -c buildout.local.cfg -N
+make sources-dirty
+make run
 ```
-
-```{seealso}
-`mr.developer` checks out additional repositories using the `auto-checkout` option.
-For more information, see {doc}`mrdeveloper`.
-```
-
-````{tip}
-To avoid conflicts with `buildout.coredev` files, you can configure git for your user.
-Either create or edit a file at {file}`~/.gitconfig`.
-Then add the following stanza to it.
-
-```cfg
-[core]
-    excludesfile = ~/.gitignore_global
-```
-
-Then add any standard `.gitignore` syntax to exclude files from getting committed and pushed to a remote repository.
-````
 
 Next create a new development branch on which you want to work from the current branch, tracking the upstream Plone repository, and check it out.
 It's a good idea to use a branch name that includes the issue number and is descriptive of what it resolves.
@@ -227,54 +172,44 @@ Now you can edit your code without affecting the original branch.
 
 ## Test locally
 
-If you change the expected behavior of a feature in a package, you should write a test to cover the change.
+If you change the expected behavior of a feature in a package, you should write a unit or acceptance test, as appropriate, to cover the change.
 
-To run a test for the specific package that you modified, use the `-s` option followed by the package name, as shown in the following example.
+Plone uses [Playwright](https://playwright.dev/) to run acceptance tests.
+`plone.app.robotframework` provides a script to install Playwright browsers.
 
 ```shell
-./bin/test -s plone.app.event
+.venv/bin/rfbrowser init
+```
+
+To run tests for the specific package that you modified, use `.venv/bin/pytest` followed by the package name, as shown in the following example.
+
+```shell
+.venv/bin/pytest src/plone.app.multilingual
 ```
 
 If any test fails, do not commit and push the changes.
 Instead write a test that passes.
 
-After the package level tests pass with your change, you can {ref}`contributing-core-create-a-pull-request-label` and let CI run and ask Jenkins to run the full test suite.
-
-However, if CI or Jenkins report a test failure that you want to troubleshoot locally, you can run the full unit test suite to ensure other packages aren't affected by the change.
-It takes 5-10 minutes to run the full unit test suite.
+Following [How to invoke pytest](https://docs.pytest.org/en/stable/how-to/usage.html), you can run tests for the package you're developing.
+Using the pytest keyword option `-k`, followed by a string expression in double quotes, you can select only unit tests or only acceptance tests to run as shown below.
+With no options, pytest will run all tests.
 
 ```shell
-# Run unit tests
-./bin/test
+.venv/bin/pytest src/plone.app.multilingual -v -k "not robot" 
 ```
 
-If you run acceptance tests with the `--all` option, it will run tests in a real browser.
-This takes 30-40 minutes to run.
-This may repeatedly launch and close browser windows that gain focus, disrupting you from doing any other work.
-If this happens, you can use `headlesschrome` as the test browser.
-First set an environment variable.
-
 ```shell
-export ROBOT_BROWSER="headlesschrome"
+.venv/bin/pytest src/plone.app.multilingual -v -k "robot" 
 ```
 
-Then run all tests again.
+After the package level tests pass with your change, you can {ref}`contributing-core-create-a-pull-request-label`, which will start the CI checks.
+After all CI checks pass, then you can ask Jenkins to run the full test suite.
+
+If either CI or Jenkins report a test failure, and you want to troubleshoot it locally, then you can run the full test suite to ensure other packages aren't affected by the change.
+It takes about 15-20 minutes to run the full unit test suite.
 
 ```shell
-bin/test --all
-```
-
-Plone uses [Playwright](https://playwright.dev/) to run robot tests.
-`plone.app.robotframework` provides a script to install Playwright browsers.
-
-```shell
-./bin/rfbrowser init
-```
-
-After the script downloads and initalizes browser resources, you can run the acceptance tests.
-
-```shell
-./bin/test --all
+.venv/bin/pytest
 ```
 
 

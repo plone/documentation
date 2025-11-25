@@ -4,7 +4,7 @@ myst:
     "description": "Run Plone"
     "property=og:description": "Run Plone"
     "property=og:title": "Run Plone"
-    "keywords": "Plone 6, run, start, command, Cookieplone, Buildout, pip, cookiecutter-plone-starter"
+    "keywords": "Plone 6, run, start, command, Cookieplone, Buildout, pip"
 ---
 
 (run-plone-label)=
@@ -36,11 +36,6 @@ pip:
     bin/runwsgi instance/etc/zope.ini
     ```
 
-`cookiecutter-plone-starter`:
-:   ```shell
-    make start-backend
-    ```
-
 For any of these commands, press {kbd}`ctrl-c` to stop the process.
 
 
@@ -51,11 +46,6 @@ If you use the Volto frontend, you need to run the frontend in a separate proces
 Cookieplone:
 :   ```shell
     make frontend-start
-    ```
-
-`cookiecutter-plone-starter`:
-:   ```shell
-    make start-frontend
     ```
 
 For any of these commands, press {kbd}`ctrl-c` to stop the process.
@@ -93,11 +83,6 @@ Buildout:
 pip:
 :   ```shell
     bin/zconsole debug instance/etc/zope.conf
-    ```
-
-`cookiecutter-plone-starter`:
-:   ```shell
-    make -C backend debug
     ```
 
 For any of these commands, press {kbd}`ctrl-d` to stop the process.

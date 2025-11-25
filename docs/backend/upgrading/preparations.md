@@ -4,7 +4,7 @@ myst:
     "description": "Plone upgrade preparations"
     "property=og:description": "Plone upgrade preparations"
     "property=og:title": "Plone upgrade preparations"
-    "keywords": "Plone, upgrade, preparations"
+    "keywords": "Plone, upgrade, preparations, ZODB, collective.recipe.backup, buildout, backup, restore"
 ---
 
 
@@ -12,7 +12,7 @@ myst:
 
 # Preparations
 
-This chapter lists things to do before you migrate Plone.
+This chapter describes things to do before you migrate Plone.
 
 
 (upgrade-gather-informationlabel)=
@@ -52,22 +52,13 @@ If Plone is being upgraded at the same time as a Zope version, Plone will usuall
 
 ## Back up your Plone site
 
-```{danger}
-Always back up your Plone site before upgrading.
-```
-
 ```{seealso}
-See Plone 5.2 documentation, [Backing up your Plone deployment](https://5.docs.plone.org/manage/deploying/backup.html).
+For a Plone site installed via buildout, follow {doc}`/admin-guide/backup-restore-plone-buildout` for details.
 ```
-
-```{todo}
-Migrate the Plone 5.2 docs for Backing up your Plone deployment into Plone 6 docs.
-```
-
 
 (upgrade-setup-a-test-environment-to-rehearse-the-upgrade-label)=
 
-## Setup a test environment to rehearse the upgrade
+## Set up a test environment to rehearse the upgrade
 
 ```{danger}
 Never work directly on your live site until you know that the upgrade was successful.

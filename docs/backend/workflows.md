@@ -12,7 +12,7 @@ myst:
 # Workflows
 
 ```{seealso}
-See the training {ref}`training:workflow-label`.
+See the training {ref}`training-2024:workflow-label`.
 ```
 
 ```{todo}

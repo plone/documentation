@@ -28,10 +28,9 @@ You will need to work in one repository for Plone core, and optionally another o
 ## Prerequisites
 
 Request write access to https://github.com/collective/plone.app.locales to be able to commit your translation directly.
-
 To do so, [join the collective GitHub organization](https://collective.github.io/).
 
-Optionally sign the [Plone Contributor Agreement](https://plone.org/foundation/contributors-agreement) for translating Volto.
+Because translation strings do not constitute an original "work", translators are not required to sign the [Plone Contributor Agreement (PCA)](https://plone.org/foundation/contributors-agreement) to contribute translations to either Plone or Volto.
 
 
 (contributing-plone-core-translations-translate-plone-classic-ui-label)=
@@ -75,10 +74,7 @@ The process of translating the Volto frontend is the following.
     -  To update a translation, translate your language's `po` file found at `locales/{language_code}/LC_MESSAGES/volto.po`.
     -  To create a new translation, create a new directory at `locales/{language_code}/LC_MESSAGES/`, copy the file `locales/volto.pot` to `locales/{language_code}/LC_MESSAGES/volto.po` (note to drop the trailing `t`), and start translating.
 
-4. Run `make i18n` to convert your `po` files into `json`.
-   Volto loads these `json` files to provide translated text strings in the interface.
-
-5. Commit your changes, and create a pull request.
+4.  Commit your changes, and create a pull request.
 
 ```{seealso}
 {doc}`Volto frontend development internationalization </volto/development/i18n>`
@@ -98,16 +94,12 @@ Plone gets free hosting at the [Hosted](https://hosted.weblate.org/) platform th
 
 Translators will need to create an account on Weblate with an email and password.
 Authentication with GitHub and other third-party accounts might not work.
+You can [configure your Weblate account to receive notifications](https://hosted.weblate.org/accounts/profile/#notifications) either automatically whenever you make a contribution to a project or manually watch specific projects.
 
 Translators can go to the [Plone project in Weblate](https://hosted.weblate.org/projects/plone/).
 
 You will see several components listed.
 The `volto` component is for the package `volto`, whose repository is at https://github.com/plone/volto.
-
-```{note}
-At this moment Volto translations can't be contributed using Weblate.
-The Volto Team are working on this issue, and hope to fix it as soon as possible.
-```
 
 All other components are for the package `plone.app.locales`, whose repository is at https://github.com/collective/plone.app.locales.
 
@@ -117,7 +109,21 @@ When you save a translation, then it is committed on a branch used only for tran
 
 [See recent commits to the package `plone.app.locales`](https://github.com/collective/plone.app.locales/commits/master/).
 
-Maintainers will periodically create a pull request from the changes, and merge it.
+Maintainers will periodically review the pull request that Weblate creates automatically, and merge it.
+
+
+### Weblate workflow in Volto
+
+For all pull requests, Volto's CI checks for both the presence of a change log entry and that the `.po` files used in translations comply with a standard format.
+
+Weblate doesn't create a change log entry, and its `.po` file style guide does not match Volto's.
+This means that a Volto Team member has to perform the following tasks to merge the changes coming from Weblate.
+
+- Checkout the `translations-18.x.x` branch from the Volto repository.
+- Add a change log file in the `packages/volto/news` folder.
+- Run `make i18n` to reformat the `.po` files.
+- Commit and push the changes to GitHub.
+- When all CI checks succeed, then merge the pull request.
 
 
 (contributing-plone-core-translations-support-label)=
