@@ -306,14 +306,6 @@ Best practice for all versions of GenericSetup is this:
 Besides out-of-the-box XML steps which provide both install and uninstall,
 GenericSetup provides a way to run custom Python code when your add-on package is installed and uninstalled.
 
-This is not a very straightforward process, though.
-
-````{note}
-An easier way may be possible for you.
-GenericSetup 1.8.2 has an option to point to a function to run before or after applying all import steps for your profile.
-
-If you do not need to support older versions, this is the easiest way.
-
 In `configure.zcml`:
 
 ```
