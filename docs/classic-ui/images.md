@@ -274,7 +274,9 @@ The possible options for `mode` are listed below, where the default option is `s
 
 ### Images Test Rendering
 
-Plone's Classic UI includes special demonstration views that render ready-made examples of image handling and responsive image components using your site's active theme. These views help developers verify image scaling, srcset generation, and explore available image optimization patterns. These views work on image content types (e.g., images or documents with images).
+Plone's Classic UI includes special demonstration views that render ready-made examples of image handling and responsive image components using your site's active theme.
+These views help developers verify image scaling, `srcset` generation, and explore available image optimization patterns.
+These views work on image content types, including images and documents with images.
 
 Append the view name `/@@images-test` to an image URL, optionally followed by an anchor, such as `#srcset`, for specific sections.
 
@@ -331,7 +333,7 @@ Picture tags
     {ref}`classic-ui-images-responsive-image-support`
     ```
 
-This view is especially valuable for theme developers who need to verify that responsive images, picture variants, and srcset functionality are correctly styled and behave as expected across devices and Plone versions.
+This view is especially valuable for theme developers who need to verify that responsive images, picture variants, and `srcset` functionality are correctly styled and behave as expected across devices and Plone versions.
 
 
 (classic-ui-images-permissions-label)=
