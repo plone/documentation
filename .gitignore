@@ -1,15 +1,2 @@
-# Dependencies
-/venv
-
-# Generated files
-/_build
-/share
-/styles/Microsoft
-
-# symlinked from submodule
-docs/plone.api
-docs/plone.restapi
-docs/volto
-
-# editor files
-.vscode
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
