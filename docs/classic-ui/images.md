@@ -272,7 +272,7 @@ The possible options for `mode` are listed below, where the default option is `s
 
     Deprecated option names: `scale-crop-to-fill`, `up`.
 
-### Images Test Rendering
+### Images test rendering
 
 Plone's Classic UI includes special demonstration views that render ready-made examples of image handling and responsive image components using your site's active theme.
 These views help developers verify image scaling, `srcset` generation, and explore available image optimization patterns.
