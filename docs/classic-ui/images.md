@@ -284,11 +284,11 @@ For example, on the Classic UI demo site, the URL would be https://classic.demo.
 
 ````{card}
 ```{image} /_static/images-test/images-test.png
-:alt: Images Test
+:alt: Images test view
 :target: /_static/images-test/images-test.png
 ```
 +++
-_Images Test_
+_Images test view_
 ````
 
 The view displays the following examples, all rendered with the current settings in `/@@imaging-controlpanel`.
@@ -301,11 +301,11 @@ Standard image scales
 
     ````{card}
     ```{image} /_static/images-test/examples.png
-    :alt: Example
+    :alt: Example standard image scales
     :target: /_static/images-test/examples.png
     ```
     +++
-    _Example_
+    _Example standard image scales_
     ````
 
 Picture tags
@@ -324,14 +324,32 @@ Picture tags
     Picture Tag Small with title/alt
     :   same as the previous, but with `title` and `alt` attributes explicitly set
 
+````{card}
+```{image} /_static/images-test/picture-tags.png
+:alt: Images picture tags
+:target: /_static/images-test/picture-tags.png
+```
++++
+_Images picture tags_
+````
+
 `img` with `srcset` attributes
 :   Shows how to use Plone’s `@@images` view to generate a full responsive `<img>` tag with a complete `srcset`.
     The browser automatically selects the most appropriate scale based on the available space and device pixel ratio.
     The example includes the required `sizes` attribute and demonstrates the resulting HTML output.
 
-    ```{seealso}
-    {ref}`classic-ui-images-responsive-image-support`
-    ```
+````{card}
+```{image} /_static/images-test/image-srcset.png
+:alt: Images srcset attributes
+:target: /_static/images-test/image-srcset.png
+```
++++
+_Images srcset attributes_
+````
+
+```{seealso}
+{ref}`classic-ui-images-responsive-image-support`
+```
 
 This view is especially valuable for theme developers who need to verify that responsive images, picture variants, and `srcset` functionality are correctly styled and behave as expected across devices and Plone versions.
 
