@@ -25,6 +25,10 @@ Buildout
     [Buildout](https://github.com/buildout/buildout/) is a Python-based tool for building and assembling applications from multiple parts, based on a configuration file.
     It was the most common way of installing Plone 3, 4, and 5, and can still be used with Plone 6.
 
+    Usage of Buildout in Plone appears in various places in this documentation.
+    For a history and extended usage of Buildout, you can refer to the Plone 4 Documentation's section on [Buildout](https://4.docs.plone.org/old-reference-manuals/buildout/).
+    The Plone community authored this reference manual, as Buildout's own documentation is suboptimal.
+
 CMS
     Content Management System
 
