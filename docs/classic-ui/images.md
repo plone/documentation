@@ -326,25 +326,29 @@ Picture tags
 
 ````{card}
 ```{image} /_static/images-test/picture-tags.png
-:alt: Images picture tags
+:alt: Picture tags
 :target: /_static/images-test/picture-tags.png
 ```
 +++
-_Images picture tags_
+_Picture tags_
 ````
 
 `img` with `srcset` attributes
 :   Shows how to use Plone’s `@@images` view to generate a full responsive `<img>` tag with a complete `srcset`.
     The browser automatically selects the most appropriate scale based on the available space and device pixel ratio.
     The example includes the required `sizes` attribute and demonstrates the resulting HTML output.
+    
+    ```{seealso}
+    {ref}`classic-ui-images-responsive-image-support`
+    ```
 
 ````{card}
 ```{image} /_static/images-test/image-srcset.png
-:alt: Images srcset attributes
+:alt: img with srcset attributes
 :target: /_static/images-test/image-srcset.png
 ```
 +++
-_Images srcset attributes_
+_img with srcset attributes_
 ````
 
 ```{seealso}
