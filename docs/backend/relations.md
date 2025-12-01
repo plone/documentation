@@ -61,7 +61,7 @@ minions = RelationList(
 )
 ```
 
-We can see that the [code for the behavior `IRelatedItems`](https://github.com/plone/plone.app.relationfield/blob/master/plone/app/relationfield/behavior.py) does exactly the same thing.
+We can see that the [code for the behavior `IRelatedItems`](https://github.com/plone/plone.app.relationfield/blob/master/src/plone/app/relationfield/behavior.py) does exactly the same thing.
 
 
 (relations-controlling-relation-targets-label)=

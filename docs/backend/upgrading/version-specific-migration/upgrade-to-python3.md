@@ -382,6 +382,6 @@ Here is a list of helpful references on the topic of porting Python 2 to Python 
 -   https://eev.ee/blog/2016/07/31/python-faq-how-do-i-port-to-python-3/
 -   https://diveintopython3.net/
 -   https://docs.djangoproject.com/en/1.11/topics/python3/
--   https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html
+-   https://docs.ansible.com/projects/ansible/latest/dev_guide/developing_python_3.html
 -   https://docs.python.org/2/library/doctest.html#debugging
 ```

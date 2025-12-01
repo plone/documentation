@@ -248,7 +248,7 @@ To scale an image, you can use the `mode` parameter to control the scaling outpu
 You must use either `width` or `height`, or both.
 
 Three different scaling options are supported.
-They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) values.
+They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-size) values.
 
 The possible options for `mode` are listed below, where the default option is `scale`.
 
@@ -371,7 +371,7 @@ To access image scales, which are normally not accessible to the current user, o
 ## Responsive image support
 
 Plone supports the generation of [`picture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture) tags with `srcset`s for image optimization.
-Additionally, you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
+Additionally, you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
 
 The configuration allows you to define different `picture` variants, such as `Large`, `Medium`, or `Small`.
 Users can choose from them in editors, such as TinyMCE, and developers can use them in templates.

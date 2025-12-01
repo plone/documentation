@@ -401,7 +401,7 @@ DPI
     Screens typically contain 72 or 96 dots per inch.
 
     ```{seealso}
-    https://developer.mozilla.org/en-US/docs/Web/CSS/resolution#dpi
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/resolution#dpi
     ```
 
 Docker
@@ -781,7 +781,7 @@ Prettier
 
 GitHub workflow
 GitHub workflows
-    A [GitHub workflow](https://docs.github.com/en/actions/writing-workflows) is a configurable automated process that will run one or more jobs.
+    A [GitHub workflow](https://docs.github.com/en/actions/how-tos/write-workflows) is a configurable automated process that will run one or more jobs.
 
 husky
     [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
@@ -817,7 +817,7 @@ Transport Layer Security
     Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
 
     ```{seealso}
-    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security) article from MDN.
+    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security) article from MDN.
     ```
 
 TLS termination proxy
