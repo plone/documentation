@@ -279,6 +279,7 @@ These views help developers verify image scaling, `srcset` generation, and explo
 These views work on image content types, including images and documents with images.
 
 Append the view name `/@@images-test` to an image URL, optionally followed by an anchor, such as `#srcset`, for specific sections.
+You must be authenticated as a site admin to view this demo.
 
 For example, on the Classic UI demo site, the URL would be https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset.
 
