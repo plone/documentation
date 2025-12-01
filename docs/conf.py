@@ -91,6 +91,7 @@ linkcheck_ignore = [
     # Ignore pages that are rate limited or otherwise blocked
     r"https://stackoverflow.com",
     r"https://www.npmjs.com/",
+    r"https://hosted.weblate.org/",
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
     # Ignore rate limiting by github.com
