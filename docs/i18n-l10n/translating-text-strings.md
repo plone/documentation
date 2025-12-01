@@ -56,7 +56,11 @@ Information in the PO file headers is ignored.
 
 [`i18ndude`](https://pypi.org/project/i18ndude/) should be used to create a script which searches particular packages for translation strings.
 
-If you have created your add-on using [bobtemplates.plone](https://pypi.org/project/bobtemplates.plone/), then you will already have a script {file}`update.sh` inside your package and a script {file}`update_locale` in your {term}`buildout` to extract the messages from your code.
+If you have created your add-on using [`bobtemplates.plone`](https://pypi.org/project/bobtemplates.plone/), then you will already have a script {file}`update.sh` inside your package and a script {file}`update_locale` in your {term}`buildout` to extract the messages from your code.
+
+If you have created your add-on or projects using [Cookieplone](https://github.com/plone/cookieplone), then you will already have a `make i18n` command in the {file}`backend` folder that extracts the messages from your code.
+
+This command will call `i18ndude` under the hood using `uvx`, without you needing to install it separately.
 
 After running that script, a new `domain.pot` file will be created in your `locales` directory where all the messages will be saved. 
 
