@@ -139,12 +139,8 @@ Available mr.bob templates:
  All templates below `addon` can be added to your newly created addon with:
 
  ```shell
- uvx plonecli add <subtemplate>
+ make add <subtemplate>
  ```
-
-```{note}
-When you have created a project with `cookieplone`, then you can simply do `make add <subtemplate>` inside the {file}`backend` folder.
-```
 
 Currently documented subtemplates:
 
