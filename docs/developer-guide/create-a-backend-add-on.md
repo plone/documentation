@@ -213,7 +213,7 @@ Available mr.bob templates:
  All templates below `addon` can be added to your newly created addon with:
 
  ```shell
- uvx ploncli add <subtemplate>
+ uvx plonecli add <subtemplate>
  ```
 
 Currently documented subtemplates:
