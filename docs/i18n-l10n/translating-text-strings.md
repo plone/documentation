@@ -273,40 +273,6 @@ To make this easier, and if you use [zest.releaser](https://pypi.org/project/zes
 This script hooks into the release process and builds the MO files for you.
 
 
-(translating-text-strings-installing-i18ndude-label)=
-
-### Installing i18ndude
-
-The recommended method is to have {term}`i18ndude` installed via your buildout.
-
-Add the following to your `buildout.cfg`:
-
-```cfg
-parts =
-    ...
-    i18ndude
-
-[i18ndude]
-unzip = true
-recipe = zc.recipe.egg
-eggs = i18ndude
-```
-
-After running buildout, `i18ndude` will be available in your `buildout/bin` folder.
-
-```console
-bin/i18ndude -h
-Usage: i18ndude command [options] [path | file1 file2 ...]]
-```
-
-You can also call it relative to your current package source folder.
-
-```console
-server:home moo$  cd src/mfabrik.plonezohointegration/
-server:mfabrik.plonezohointegration moo$ ../../bin/i18ndude
-```
-
-
 (translating-text-strings-setting-up-folder-structure-for-finnish-and-english-label)=
 
 ### Setting up folder structure for Finnish and English
