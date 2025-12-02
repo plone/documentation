@@ -121,8 +121,8 @@ Also have a look at Plone {doc}`/backend/behaviors`, which provide default featu
 
 ## Related content
 
-- {doc}`/backend/schemas` — Define schemas for your content types
-- {doc}`/backend/fields` — Field types for content type schemas
-- {doc}`/backend/widgets` — Customize form widgets
-- {doc}`/backend/behaviors` — Add reusable behaviors to content types
-- {doc}`/backend/content-types/fti` — Configure Factory Type Information
+- {ref}`Schemas <backend-schemas-label>`
+- {ref}`Fields <backend-fields-label>`
+- {ref}`Widgets <backend-widgets-label>`
+- {ref}`Behaviors <backend-behaviors-label>`
+- {ref}`Factory Type Information <backend-content-types-fti-label>`

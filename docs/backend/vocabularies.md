@@ -22,6 +22,6 @@ See issue [Backend > Vocabularies needs content](https://github.com/plone/docume
 
 ## Related content
 
-- {doc}`/backend/fields` — Use vocabularies with Choice fields
-- {doc}`/backend/schemas` — Define schemas with Choice fields
-- {doc}`/backend/content-types/index` — Use vocabularies in content type schemas
+- {ref}`Fields <backend-fields-label>`
+- {ref}`Schemas <backend-schemas-label>`
+- {ref}`Content types <backend-content-types-index-label>`

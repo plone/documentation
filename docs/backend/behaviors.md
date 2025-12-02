@@ -381,6 +381,6 @@ This dynamically provided interface enables the component architecture to react 
 
 ## Related content
 
-- {doc}`/backend/content-types/index` — Add behaviors to content types
-- {doc}`/backend/schemas` — Define schemas for behaviors
-- {doc}`/backend/fields` — Field types used in behavior schemas
+- {ref}`Content types <backend-content-types-index-label>`
+- {ref}`Schemas <backend-schemas-label>`
+- {ref}`Fields <backend-fields-label>`

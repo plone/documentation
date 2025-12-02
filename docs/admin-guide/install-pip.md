@@ -100,6 +100,6 @@ bin/runwsgi -v instance/etc/zope.ini
 
 ## Related content
 
-- {doc}`/admin-guide/add-site` — Add a Plone site after installation
-- {doc}`/admin-guide/install-buildout` — Alternative installation method using Buildout
-- {doc}`/conceptual-guides/compare-buildout-pip` — Compare Buildout and pip installation methods
+- {ref}`Add a Plone site <add-a-plone-site-label>`
+- {ref}`Install Plone with Buildout <install-buildout-label>`
+- {ref}`Compare Buildout and pip <compare-buildout-pip-label>`

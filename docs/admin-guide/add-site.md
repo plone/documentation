@@ -72,8 +72,8 @@ Regardless of the frontend you select, you will be redirected to the backend's u
 If you select the Volto frontend, you can switch to it by changing the port number in the URL, usually `3000`, and visiting it at http://localhost:3000, for example.
 ```
 
-## Related Content
+## Related content
 
-- {doc}`/install/create-project-cookieplone` — Create a new Plone project using Cookiecutter.
-- {doc}`/admin-guide/install-buildout` — Install Plone using Buildout.
-- {doc}`/admin-guide/install-pip` — Install Plone using pip.
+- {ref}`Install Plone with Cookieplone <install-cookieplone-label>`
+- {ref}`Install Plone with Buildout <install-buildout-label>`
+- {ref}`Install Plone with pip <install-pip-label>`

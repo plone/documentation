@@ -129,7 +129,7 @@ bin/instance stop
 
 ## Related content
 
-- {doc}`/admin-guide/add-site` — Add a Plone site after installation
-- {doc}`/admin-guide/install-pip` — Alternative installation method using pip
-- {doc}`/admin-guide/backup-restore-plone-buildout` — Back up and restore your Plone site
-- {doc}`/conceptual-guides/compare-buildout-pip` — Compare Buildout and pip installation methods
+- {ref}`Add a Plone site <add-a-plone-site-label>`
+- {ref}`Install Plone with pip <install-pip-label>`
+- {ref}`Back up and restore a Plone buildout <back-up-and-restore-a-plone-buildout-label>`
+- {ref}`Compare Buildout and pip <compare-buildout-pip-label>`
