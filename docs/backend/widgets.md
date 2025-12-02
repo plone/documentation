@@ -624,7 +624,7 @@ You can set the template used by the widget with the `<z3c:widgetTemplate>` ZCML
 ### Widget frame override
 
 You can override widget templates as instructed for `z3c.form`.
-`plone.app.z3cform` renders [a frame around each widget](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt), which usually consists of:
+`plone.app.z3cform` renders [a frame around each widget](https://github.com/plone/plone.app.z3cform/blob/master/src/plone/app/z3cform/templates/widget.pt), which usually consists of:
 
 -   Label
 -   Required marker
@@ -633,7 +633,7 @@ You can override widget templates as instructed for `z3c.form`.
 You might want to customize this widget frame for your own form.
 Below is an example of how to do it.
 
-Copy [`widget.pt`](https://github.com/plone/plone.app.z3cform/blob/master/plone/app/z3cform/templates/widget.pt) to your own package, rename it as `demo-widget.pt`, and edit it.
+Copy [`widget.pt`](https://github.com/plone/plone.app.z3cform/blob/master/src/plone/app/z3cform/templates/widget.pt) to your own package, rename it as `demo-widget.pt`, and edit it.
 
 Then add the following code to `configure.zcml`.
 Remember to fix the path of the template according to your own paths.

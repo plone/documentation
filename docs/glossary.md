@@ -25,6 +25,10 @@ Buildout
     [Buildout](https://github.com/buildout/buildout/) is a Python-based tool for building and assembling applications from multiple parts, based on a configuration file.
     It was the most common way of installing Plone 3, 4, and 5, and can still be used with Plone 6.
 
+    Usage of Buildout in Plone appears in various places in this documentation.
+    For a history and extended usage of Buildout, you can refer to the Plone 4 Documentation's section on [Buildout](https://4.docs.plone.org/old-reference-manuals/buildout/).
+    The Plone community authored this reference manual, as Buildout's own documentation is suboptimal.
+
 CMS
     Content Management System
 
@@ -397,7 +401,7 @@ DPI
     Screens typically contain 72 or 96 dots per inch.
 
     ```{seealso}
-    https://developer.mozilla.org/en-US/docs/Web/CSS/resolution#dpi
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/resolution#dpi
     ```
 
 Docker
@@ -777,7 +781,7 @@ Prettier
 
 GitHub workflow
 GitHub workflows
-    A [GitHub workflow](https://docs.github.com/en/actions/writing-workflows) is a configurable automated process that will run one or more jobs.
+    A [GitHub workflow](https://docs.github.com/en/actions/how-tos/write-workflows) is a configurable automated process that will run one or more jobs.
 
 husky
     [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
@@ -813,7 +817,7 @@ Transport Layer Security
     Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
 
     ```{seealso}
-    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security) article from MDN.
+    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security) article from MDN.
     ```
 
 TLS termination proxy
