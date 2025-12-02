@@ -5,6 +5,3 @@ All of a project's CI jobs must pass before a contribution may be accepted.
 ```{seealso}
 {doc}`/contributing/core/continuous-integration`
 ```
-
-
-
