@@ -97,3 +97,9 @@ bin/runwsgi -v instance/etc/zope.ini
 
 ```{include} /_inc/_create-classic-ui-instance.md
 ```
+
+## Related content
+
+- {doc}`/admin-guide/add-site` — Add a Plone site after installation
+- {doc}`/admin-guide/install-buildout` — Alternative installation method using Buildout
+- {doc}`/conceptual-guides/compare-buildout-pip` — Compare Buildout and pip installation methods

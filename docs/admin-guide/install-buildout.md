@@ -126,3 +126,10 @@ Stop the instance.
 ```shell
 bin/instance stop
 ```
+
+## Related content
+
+- {doc}`/admin-guide/add-site` — Add a Plone site after installation
+- {doc}`/admin-guide/install-pip` — Alternative installation method using pip
+- {doc}`/admin-guide/backup-restore-plone-buildout` — Back up and restore your Plone site
+- {doc}`/conceptual-guides/compare-buildout-pip` — Compare Buildout and pip installation methods

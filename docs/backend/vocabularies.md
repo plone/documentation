@@ -19,3 +19,9 @@ See the chapter {ref}`training:vocabularies-label` from the Mastering Plone 6 Tr
 Contribute to this documentation!
 See issue [Backend > Vocabularies needs content](https://github.com/plone/documentation/issues/1306).
 ```
+
+## Related content
+
+- {doc}`/backend/fields` — Use vocabularies with Choice fields
+- {doc}`/backend/schemas` — Define schemas with Choice fields
+- {doc}`/backend/content-types/index` — Use vocabularies in content type schemas

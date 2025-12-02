@@ -7,3 +7,8 @@ The instructions below will create one.
 ```
 
 Plone 6.1 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
+
+## Related content
+
+- {doc}`Plone installation requirements </install/index>`
+

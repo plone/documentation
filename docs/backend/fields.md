@@ -363,3 +363,10 @@ In supermodel XML, the directives are `security:read-permission` and
     <title>Secret</title>
 </field>
 ```
+
+## Related content
+
+- {doc}`/backend/schemas` — How fields compose schemas
+- {doc}`/backend/content-types/index` — Use fields in content type schemas
+- {doc}`/backend/vocabularies` — Define vocabularies for Choice fields
+- {doc}`/backend/relations` — Relation fields for linking content

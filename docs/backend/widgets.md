@@ -783,3 +783,10 @@ The code renders both widgets, {guilabel}`min` and {guilabel}`max`, in a single 
 
 </div>
 ```
+
+## Related content
+
+- {doc}`/backend/fields` — Field types that use widgets
+- {doc}`/backend/schemas` — Define schemas with widget directives
+- {doc}`/classic-ui/forms` — Use widgets in forms
+- {doc}`/backend/content-types/index` — Customize widgets for content types

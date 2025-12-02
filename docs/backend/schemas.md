@@ -729,4 +729,11 @@ def fields(self):
             f.field = schema_field
 ```
 
+## Related content
+
+- {doc}`/backend/fields` — Field types used in schemas
+- {doc}`/backend/content-types/index` — Use schemas to define content types
+- {doc}`/classic-ui/forms` — Use schemas to create forms
+- {doc}`/backend/vocabularies` — Define vocabularies for Choice fields
+
 
