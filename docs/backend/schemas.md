@@ -733,9 +733,9 @@ def fields(self):
 
 ## Related content
 
-- {ref}`Fields <backend-fields-label>`
-- {ref}`Content types <backend-content-types-index-label>`
-- {ref}`Forms <classic-ui-forms-label>`
-- {ref}`Vocabularies <backend-vocabularies-label>`
+- {ref}`backend-fields-label`
+- {ref}`backend-content-types-index-label`
+- {ref}`classic-ui-forms-label`
+- {ref}`backend-vocabularies-label`
 
 

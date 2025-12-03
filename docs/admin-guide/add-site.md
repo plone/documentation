@@ -74,6 +74,6 @@ If you select the Volto frontend, you can switch to it by changing the port numb
 
 ## Related content
 
-- {ref}`Install Plone with Cookieplone <install-cookieplone-label>`
-- {ref}`Install Plone with Buildout <install-buildout-label>`
-- {ref}`Install Plone with pip <install-pip-label>`
+- {ref}`install-cookieplone-label`
+- {ref}`install-buildout-label`
+- {ref}`install-pip-label`

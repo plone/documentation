@@ -121,8 +121,8 @@ Also have a look at Plone {doc}`/backend/behaviors`, which provide default featu
 
 ## Related content
 
-- {ref}`Schemas <backend-schemas-label>`
-- {ref}`Fields <backend-fields-label>`
-- {ref}`Widgets <backend-widgets-label>`
-- {ref}`Behaviors <backend-behaviors-label>`
-- {ref}`Factory Type Information <backend-content-types-fti-label>`
+- {ref}`backend-schemas-label`
+- {ref}`backend-fields-label`
+- {ref}`backend-widgets-label`
+- {ref}`backend-behaviors-label`
+- {ref}`backend-content-types-fti-label`

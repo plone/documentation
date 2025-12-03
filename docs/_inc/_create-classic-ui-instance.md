@@ -15,4 +15,4 @@ To stop the Plone instance in foreground mode, type {kbd}`ctrl-c`.
 
 ## Related content
 
-- {ref}`Classic UI <classic-ui-index-label>`
+- {ref}`classic-ui-index-label`

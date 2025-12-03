@@ -96,6 +96,6 @@ Some Plone sites require incremental backups every few minutes.
 
 ## Related content
 
-- {ref}`Export and import site data <exportimport>`
-- {ref}`Install Plone with Buildout <install-buildout-label>`
-- {ref}`Install Plone with pip <install-pip-label>`
+- {ref}`exportimport`
+- {ref}`install-buildout-label`
+- {ref}`install-pip-label`

@@ -129,7 +129,7 @@ bin/instance stop
 
 ## Related content
 
-- {ref}`Add a Plone site <add-a-plone-site-label>`
-- {ref}`Install Plone with pip <install-pip-label>`
-- {ref}`Back up and restore a Plone buildout <back-up-and-restore-a-plone-buildout-label>`
-- {ref}`Compare Buildout and pip <compare-buildout-pip-label>`
+- {ref}`add-a-plone-site-label`
+- {ref}`install-pip-label`
+- {ref}`back-up-and-restore-a-plone-buildout-label`
+- {ref}`compare-buildout-pip-label`
