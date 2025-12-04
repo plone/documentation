@@ -1,88 +1,24 @@
 ---
 myst:
   html_meta:
-    "description": "A guide how to do deprecations, including Python, ZCML and templates in Plone."
-    "property=og:description": "A guide how to do deprecations, including Python, ZCML and templates in Plone."
-    "property=og:title": "Deprecation"
-    "keywords": "deprecation, zcml, template, jbot"
+    "description": "How to implement deprecations in Plone, including Python, ZCML and templates."
+    "property=og:description": "How to implement deprecations in Plone, including Python, ZCML and templates."
+    "property=og:title": "Implement deprecations"
+    "keywords": "deprecation, zcml, template, jbot, Plone, Python"
 ---
 
-(backend-deprecation-label)=
-# Deprecation
+(developer-deprecation-label)=
 
-## Introduction
+# Implement deprecations
 
-This document describes rationales, configuration and best practices of deprecations in Plone, Zope and Python.
-It is meant as a styleguide on how to apply deprecations in Plone core packages.
-It also has a value as a general overview on how to deprecate in Python.
+This chapter describes how to enable deprecation warnings and best practices for implementing deprecations in Plone, Zope, and Python.
+
+```{seealso}
+For background on deprecation philosophy and use cases, see {doc}`/conceptual-guides/deprecation`.
+```
 
 
-### Why Deprecation
-
-At some point we:
-
-- need to get rid of old code,
-- want to unify API style (consistent API),
-- fix typos in namings,
-- move code or templates around (inside package or to another package).
-
-While refactoring code, moving modules, functions, classes and methods is often needed.
-To not break third party code imports from the old place or usage of old functions/ methods must work for while.
-Deprecated methods are usually removed with the next major release of Plone.
-
-Following the [semantic versioning guideline](https://semver.org) is recommended.
-
-### Help Programmers, No annoyance
-
-The developers should use code deprecations to support the consumers of the code.
-From their point of view, Plone core code is an API to them.
-Any change is annoying to them anyway, but they feel better if deprecation warnings are telling them what to do.
-
-Deprecations must always log at level *warning* and have to answers the question:
-
-**"Why is the code gone from the old place? What to do instead?"**
-
-A short message is enough., i.e.:
-
-- "Replaced by new API xyz, found at abc.cde".,
-- "Moved to xyz, because of abc.",
-- "Name had a typo, new name is "xyz".
-
-All logging has to be done once, i.e. on first usage or first import.
-It must not flood the logs.
-
-### Use Cases
-
-Renaming
-
-: We may want to rename classes, methods, functions or global or class variables in order to get a more consistent API or because of a typo, etc.
-  We never just rename, we always provide a deprecated version logging a verbose deprecation warning with information where to
-  import from in future.
-
-Moving a module, class, function, etc to another place
-
-: For some reason, i.e. merging packages, consistent API or resolving cirular import problems, we need to move code around.
-  When imported from the old place it logs a verbose deprecation warning with information where to import from in future.
-
-Deprecation of a whole package
-
-: A whole [package](https://docs.python.org/3/tutorial/modules.html#packages)
-
-  - all imports still working, logging deprecation warnings on first import
-  - ZCML still exists, but is empty (or includes the zcml from the new place if theres no auto import (i.e. for meta.zcml).
-
-Deprecation of a whole released/ installable package.
-
-: We will provide a last major release with no 'real' code, only backward compatible (bbb) imports of public API are provided.
-  This will be done the way described above for a whole package.
-  The README clearly states why it was moved and where to find the code now.
-
-Deprecation of a GenericSetup profile
-
-: They may got renamed for consistency or are superfluos after an update.
-  Code does not need to break to support this.
-
-## Enable Deprecation Warnings
+## Enable deprecation warnings
 
 ### Zope
 
@@ -158,9 +94,10 @@ the call looks like so:
 ./bin/python -W module ./bin/test
 ```
 
-## Deprecation Best Practice
 
-### Vanilla Deprecation Messages
+## Deprecation best practice
+
+### Vanilla deprecation messages
 
 Python offers a built-in `DeprecationWarning` which can be issued using standard libraries `warnings` module.
 
@@ -173,7 +110,7 @@ import warnings
 warnings.warn('deprecated', DeprecationWarning)
 ```
 
-### Moving Whole Modules
+### Moving whole modules
 
 Given a package `old.pkg` with a module `foo.py` need to be moved to a package `new.pkg` as `bar.py`.
 
@@ -192,7 +129,7 @@ Now you can still import the namespace from `bar` at the old place, but get a de
 > DeprecationWarning: old.pkg.foo has moved to new.pkg.bar.
 > Import of old.pkg.foo will become unsupported in Version 2.0
 
-### Moving Whole Packages
+### Moving whole packages
 
 This is the same as moving a module, just create for each module a file.
 
