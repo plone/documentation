@@ -101,14 +101,10 @@ services:
 
   backend:
     image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
-    # Plone 5.2 series can be used too
-    # image: plone/plone-backend:5.2.7
     ports:
       - '8080:8080'
     environment:
       - SITE=Plone
-      - 'ADDONS=plone.restapi==8.21.0 plone.volto==4.0.0a3 plone.rest==2.0.0a2 plone.app.iterate==4.0.2 plone.app.vocabularies==4.3.0'
-      - 'PROFILES=plone.volto:default-homepage'
 
   frontend:
     image: 'myfrontend:latest'

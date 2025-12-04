@@ -13,6 +13,7 @@ bugfix
 buildout
 cacheable
 Classic UI
+CMSUI
 CommonJS
 Cookieplone
 doctest
@@ -39,6 +40,7 @@ pluggab(le|ility)
 [Pp]ortlets?
 prerendered
 programatically
+Public UI
 [Qq]uerystring
 Razzle
 [Rr]enderers?

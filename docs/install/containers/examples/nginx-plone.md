@@ -69,7 +69,6 @@ You can either use `plone.localhost`, or add it in your `/etc/hosts` file or DNS
 Now let's create a `docker-compose.yml` file:
 
 ```yaml
-version: "3"
 services:
 
   webserver:

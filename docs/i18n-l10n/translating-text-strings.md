@@ -34,7 +34,7 @@ Plone internally uses the UNIX standard {term}`gettext` tool to perform {term}`i
 The package `zope.i18n` implements several APIs related to internationalization and localization.
 
 -   Follows {term}`gettext` best practices.
--   Translations are stored in the `locales` folder of your application, such as `locales/fi/LC_MESSAGES/your.app.po`.
+-   Translations are stored in the `locales` folder of your application, such as {file}`locales/fi/LC_MESSAGES/your.app.po`.
 -   Uses the package [`zope.i18nmessageid`](https://pypi.org/project/zope.i18nmessageid/).
     This provides a string-like class which allows storing the translation domain with translatable text strings.
 -   {term}`PO file`s must usually be manually converted to binary {term}`MO file`s every time the translations are updated.
@@ -56,11 +56,15 @@ Information in the PO file headers is ignored.
 
 [`i18ndude`](https://pypi.org/project/i18ndude/) should be used to create a script which searches particular packages for translation strings.
 
-If you have created your add-on using [bobtemplates.plone](https://pypi.org/project/bobtemplates.plone/), then you will already have a script `update.sh` inside your package and a script `update_locale` in your buildout to extract the messages from your code.
+If you have created your add-on using [`bobtemplates.plone`](https://pypi.org/project/bobtemplates.plone/), then you will already have a script {file}`update.sh` inside your package and a script {file}`update_locale` in your {term}`buildout` to extract the messages from your code.
 
-After running that script, a new `domain.pot` file will be created in your `locales` directory where all the messages will be saved. 
+If you have created your add-on or projects using [Cookieplone](https://github.com/plone/cookieplone), then you will already have a `make i18n` command in the {file}`backend` folder that extracts the messages from your code.
 
-To have those messages translated into some languages, you will need to create a language directory inside the `locales` directory, and a `LC_MESSAGES` directory inside it.
+This command will call `i18ndude` under the hood using `uvx`, without you needing to install it separately.
+
+After running that script, a new {file}`domain.pot` file will be created in your {file}`locales` directory where all the messages will be saved. 
+
+To have those messages translated into some languages, you will need to create a language directory inside the {file}`locales` directory, and a {file}`LC_MESSAGES` directory inside it.
 This follows the gettext standard.
 After doing that, the directory structure will be as follows.
 
@@ -70,11 +74,11 @@ After doing that, the directory structure will be as follows.
 ./locales/ga/LC_MESSAGES/domain.po
 ```
 
-You will need to provide your translations in those `domain.po` files. 
+You will need to provide your translations in those {file}`domain.po` files. 
 
-If you add, update, or remove strings in your package, you will need to run only the `update.sh` script to update all language files.
+If you add, update, or remove strings in your package, you will need to run only the {file}`update.sh` script to update all language files.
 
-You also need to have the following ZCML entry to signal Plone that the files stored in the `locales` folder follow the gettext standard and that it needs to use them when requesting translated strings.
+You also need to have the following ZCML entry to signal Plone that the files stored in the {file}`locales` folder follow the gettext standard and that it needs to use them when requesting translated strings.
 
 ```xml
 <configure xmlns:i18n="http://namespaces.zope.org/i18n">
@@ -89,7 +93,7 @@ You also need to have the following ZCML entry to signal Plone that the files st
 
 You will need to declare you own `MessageFactory`.
 This is a callable that marks strings with a translation domain.
-`MessageFactory` is usually declared in the main `__init__.py` file of your package.
+`MessageFactory` is usually declared in the main {file}`__init__.py` file of your package.
 It is imported from wherever it is needed in your package.
 `_` is the standard name that is used in gettext to identify the translation function, and the previous scripts will use that assumption to identify translatable strings.
 
@@ -155,7 +159,7 @@ It will use the text content of the element as `msgid`.
 Use attributes `i18n:translate`, `i18n:attributes`, and so on.
 For examples, look at any core Plone `.pt` files.
 
-The `i18n:translate` attribute will {term}`hook` into the translation machinery, and will look up the corresponding translated string to the one stated there, while looking in the relevant `domain.po` file corresponding to the `i18n:domain` stated in the file and the language negotiated by Plone.
+The `i18n:translate` attribute will {term}`hook` into the translation machinery, and will look up the corresponding translated string to the one stated there, while looking in the relevant {file}`domain.po` file corresponding to the `i18n:domain` stated in the file and the language negotiated by Plone.
 
 
 (translating-text-strings-automatically-translated-message-ids-label)=
@@ -269,40 +273,6 @@ To make this easier, and if you use [zest.releaser](https://pypi.org/project/zes
 This script hooks into the release process and builds the MO files for you.
 
 
-(translating-text-strings-installing-i18ndude-label)=
-
-### Installing i18ndude
-
-The recommended method is to have {term}`i18ndude` installed via your [buildout](https://www.buildout.org/en/latest/).
-
-Add the following to your `buildout.cfg`:
-
-```cfg
-parts =
-    ...
-    i18ndude
-
-[i18ndude]
-unzip = true
-recipe = zc.recipe.egg
-eggs = i18ndude
-```
-
-After running buildout, `i18ndude` will be available in your `buildout/bin` folder.
-
-```console
-bin/i18ndude -h
-Usage: i18ndude command [options] [path | file1 file2 ...]]
-```
-
-You can also call it relative to your current package source folder.
-
-```console
-server:home moo$  cd src/mfabrik.plonezohointegration/
-server:mfabrik.plonezohointegration moo$ ../../bin/i18ndude
-```
-
-
 (translating-text-strings-setting-up-folder-structure-for-finnish-and-english-label)=
 
 ### Setting up folder structure for Finnish and English
@@ -336,9 +306,9 @@ i18ndude rebuild-pot --pot locales/mydomain.pot --create your.app.package .
 `i18ndude` scans source `.py` and `.pt` files for translatable text strings.
 On some occasions this is not enough, for example, when you dynamically generate message IDs in your code.
 Entries which cannot be detected by an automatic code scan are called {term}`manual .po entries`.
-They are managed in `locales/manual.pot`, which is merged into the generated `locales/yournamespace.app.pot` file.
+They are managed in {file}`locales/manual.pot`, which is merged into the generated {file}`locales/yournamespace.app.pot` file.
 
-Here is a sample `manual.pot` file.
+Here is a sample {file}`manual.pot` file.
 
 ```po
 msgstr ""
@@ -404,11 +374,11 @@ https://web.archive.org/web/20131018150303/http://permalink.gmane.org/gmane.comp
 
 If you need to change a translation from a PO file, you could create a new Python package and register your own PO files.
 
-To do this, create the package and add a `locales` directory in there, along the lines of what [plone.app.locales](https://pypi.org/project/plone.app.locales/) does.
+To do this, create the package and add a {file}`locales` directory in there, along the lines of what [`plone.app.locales`](https://pypi.org/project/plone.app.locales/) does.
 Then you can add your own translations in the language that you need.
-For example, `locales/fr/LC_MESSAGES/plone.po` overrides French messages in the `plone` domain.
+For example, {file}`locales/fr/LC_MESSAGES/plone.po` overrides French messages in the `plone` domain.
 
-Reference the translation in `configure.zcml` of your package:
+Reference the translation in {file}`configure.zcml` of your package:
 
 ```xml
 <configure xmlns:i18n="http://namespaces.zope.org/i18n"
@@ -417,7 +387,7 @@ Reference the translation in `configure.zcml` of your package:
 </configure>
 ```
 
-Your ZCML needs to be included *before* the one from [plone.app.locales](https://pypi.org/project/plone.app.locales/).
+Your ZCML needs to be included *before* the one from [`plone.app.locales`](https://pypi.org/project/plone.app.locales/).
 The first translation of a `msgid` wins.
 To manage this, you can include the ZCML in the buildout:
 

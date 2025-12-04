@@ -11,7 +11,7 @@ myst:
 
 # CSS custom properties
 
-This chapter describes the [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties) used in Bootstrap and customized by Classic UI themes.
+This chapter describes the [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties) used in Bootstrap and customized by Classic UI themes.
 Custom properties (sometimes referred to as CSS variables or cascading variables) are entities defined by CSS authors that represent specific values to be reused throughout a document.
 
 

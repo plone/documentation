@@ -25,6 +25,10 @@ Buildout
     [Buildout](https://github.com/buildout/buildout/) is a Python-based tool for building and assembling applications from multiple parts, based on a configuration file.
     It was the most common way of installing Plone 3, 4, and 5, and can still be used with Plone 6.
 
+    Usage of Buildout in Plone appears in various places in this documentation.
+    For a history and extended usage of Buildout, you can refer to the Plone 4 Documentation's section on [Buildout](https://4.docs.plone.org/old-reference-manuals/buildout/).
+    The Plone community authored this reference manual, as Buildout's own documentation is suboptimal.
+
 CMS
     Content Management System
 
@@ -217,15 +221,11 @@ Configuration registry
 
 component shadowing
 shadowing
-    Volto uses a technique called component shadowing to override an existing Volto component with our local custom version, without having to modify Volto's source code.
+    Component or module shadowing allows you to override a component from an existing package in a clean and structured way, without directly modifying third-party code.
+    This technique is particularly useful for customizing the behavior or appearance of specific components in Volto or any add-ons.
 
-    Volto's source components are located in the filepath stem of `omelette/src/components/`.
-    Custom components that shadow Volto's source would be located in the filepath stem of `src/customizations/components/`.
-    Shadow components would have the same filepath as Volto's source compenents, excluding the stem.
-    Thus `omelette/src/components/theme/Header/Header.jsx` would be shadowed by `src/customizations/components/theme/Header/Header.jsx`.
-
-    Webpack provides an alias mechanism that allows component shadowing in Volto, where the path for a module can be aliased to another module.
-    By using this mechanism of file overrides, or component shadowing, Volto enables customization, similar to `z3c.jbot.`
+    This mechanism is powered by Webpack's [`resolve.alias`](https://webpack.js.org/configuration/resolve/#resolvealias), which maps a module path to an alternative file or folder.
+    Webpack resolves the override at build time, replacing the original module with your custom implementation.
 
 Razzle
     A tool that simplifies {term}`SPA` and {term}`SSR` configuration for React projects.
@@ -401,7 +401,7 @@ DPI
     Screens typically contain 72 or 96 dots per inch.
 
     ```{seealso}
-    https://developer.mozilla.org/en-US/docs/Web/CSS/resolution#dpi
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/resolution#dpi
     ```
 
 Docker
@@ -781,14 +781,18 @@ Prettier
 
 GitHub workflow
 GitHub workflows
-    A [GitHub workflow](https://docs.github.com/en/actions/writing-workflows) is a configurable automated process that will run one or more jobs.
+    A [GitHub workflow](https://docs.github.com/en/actions/how-tos/write-workflows) is a configurable automated process that will run one or more jobs.
 
 husky
     [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
 
 Jest
     [Jest](https://jestjs.io/) is a JavaScript testing framework.
-    Volto uses Jest for unit tests.
+    Volto was previously using Jest for unit tests.
+
+Vitest  
+    [Vitest](https://vitest.dev/) is a modern, Vite-powered testing framework for JavaScript and TypeScript projects.  
+    Volto uses Vitest for running unit tests.
 
 Cypress
     [Cypress](https://www.cypress.io/) is a JavaScript testing framework that runs your app in the browser for visually debugging it.
@@ -813,7 +817,7 @@ Transport Layer Security
     Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
 
     ```{seealso}
-    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security) article from MDN.
+    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security) article from MDN.
     ```
 
 TLS termination proxy
@@ -924,4 +928,33 @@ blob
 Binary large object
     A blob is a mass of data in binary form that does not necessarily conform to any file format.
 
+content management system user interface
+CMSUI
+    In Seven, the content management system user interface (CMSUI) is the editor and administrator part of the app.
+    Its counterpart is the {term}`Public UI`.
+
+Public UI
+    In Seven, Public UI is the end user interface part, which displays content to both authenticated and anonymous users.
+    Its counterpart is the {term}`CMSUI`.
+
+Prisma
+    [Prisma](https://www.prisma.io/) is an open-source database toolkit for TypeScript and Node.js that simplifies database access and management.
+    It provides a type-safe and intuitive way to interact with databases, making it easier to build and maintain applications.
+
+    Prisma consists of three main components:
+
+    Prisma Client
+    :    An auto-generated query builder that allows developers to interact with the database using a type-safe API.
+
+    Prisma Migrate
+    :    A migration tool that helps manage database schema changes over time.
+
+    Prisma Studio
+    :    A visual interface for exploring and managing data in the database.
+
+    Prisma supports various databases, including PostgreSQL, MySQL, SQLite, SQL Server, and MongoDB.
+
+    ```{seealso}
+    https://www.prisma.io/
+    ```
 ```

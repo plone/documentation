@@ -62,7 +62,7 @@ from plone.app.z3cform.interfaces import IContentBrowserWidget
 from plone.dexterity.interfaces import IDexterityContent
 from z3c.form.interfaces import IForm
 from z3c.form.interfaces import IValue
-from zope.component impport adapter
+from zope.component import adapter
 from zope.interface import implementer
 from zope.publisher.interfaces import  IRequest
 from zope.schema.interfaces import IField
@@ -92,5 +92,5 @@ Then register it with ZCML as shown.
 
 ```xml
 <adapter factory=".ContentbrowserPatternOptions"
-         name="pattern_options">
+         name="pattern_options"/>
 ```

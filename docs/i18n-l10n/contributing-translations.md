@@ -112,7 +112,7 @@ When you save a translation, then it is committed on a branch used only for tran
 Maintainers will periodically review the pull request that Weblate creates automatically, and merge it.
 
 
-### Wewblate workflow in Volto
+### Weblate workflow in Volto
 
 For all pull requests, Volto's CI checks for both the presence of a change log entry and that the `.po` files used in translations comply with a standard format.
 
