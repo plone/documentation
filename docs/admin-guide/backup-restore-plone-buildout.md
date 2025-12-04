@@ -96,6 +96,6 @@ Some Plone sites require incremental backups every few minutes.
 
 ## Related content
 
-- {ref}`exportimport`
-- {ref}`install-buildout-label`
-- {ref}`install-pip-label`
+-   {doc}`/admin-guide/export-import`
+-   {ref}`install-buildout-label`
+-   {doc}`/admin-guide/install-pip`

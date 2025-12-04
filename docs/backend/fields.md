@@ -368,7 +368,7 @@ In supermodel XML, the directives are `security:read-permission` and
 
 ## Related content
 
-- {ref}`backend-schemas-label`
-- {ref}`backend-content-types-index-label`
-- {ref}`backend-vocabularies-label`
-- {ref}`relations-label`
+-   {doc}`/backend/schemas`
+-   {ref}`backend-content-types-index-label`
+-   {doc}`/backend/vocabularies`
+-   {ref}`relations-label`

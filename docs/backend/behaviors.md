@@ -381,6 +381,6 @@ This dynamically provided interface enables the component architecture to react 
 
 ## Related content
 
-- {ref}`backend-content-types-index-label`
-- {ref}`backend-schemas-label`
-- {ref}`backend-fields-label`
+-   {doc}`/backend/content-types/index`
+-   {ref}`backend-schemas-label`
+-   {doc}`/backend/fields`

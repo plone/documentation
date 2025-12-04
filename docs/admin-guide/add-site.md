@@ -74,6 +74,9 @@ If you select the Volto frontend, you can switch to it by changing the port numb
 
 ## Related content
 
-- {ref}`install-cookieplone-label`
-- {ref}`install-buildout-label`
-- {ref}`install-pip-label`
+-   {doc}`/install/create-project-cookieplone`
+-   {doc}`/admin-guide/install-buildout`
+-   {doc}`/admin-guide/install-pip`
+-   {doc}`/conceptual-guides/distributions`
+-   {doc}`/developer-guide/create-a-distribution`
+-   {doc}`/conceptual-guides/choose-user-interface`

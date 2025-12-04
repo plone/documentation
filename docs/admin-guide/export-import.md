@@ -114,5 +114,5 @@ Consider a File content item with UID `3e0dd7c4b2714eafa1d6fc6a1493f953` and a P
 
 ## Related content
 
-- {ref}`back-up-and-restore-a-plone-buildout-label`
-- {ref}`add-a-plone-site-label`
+-   {doc}`/admin-guide/backup-restore-plone-buildout`
+-   {ref}`add-a-plone-site-label`

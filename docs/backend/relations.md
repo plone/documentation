@@ -646,7 +646,7 @@ But it can also be the name of a relation that is created by code, for example, 
 
 ## Related content
 
-- {ref}`backend-schemas-label`
-- {ref}`backend-fields-relation-fields-label`
-- {ref}`backend-content-types-index-label`
-- {ref}`backend-vocabularies-label`
+-   {doc}`/backend/schemas`
+-   {ref}`backend-fields-relation-fields-label`
+-   {doc}`/backend/content-types/index`
+-   {ref}`backend-vocabularies-label`

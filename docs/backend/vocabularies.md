@@ -22,6 +22,6 @@ See issue [Backend > Vocabularies needs content](https://github.com/plone/docume
 
 ## Related content
 
-- {ref}`backend-fields-label`
-- {ref}`backend-schemas-label`
-- {ref}`backend-content-types-index-label`
+-   {doc}`/backend/fields`
+-   {ref}`backend-schemas-label`
+-   {doc}`/backend/content-types/index`

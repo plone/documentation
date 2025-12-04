@@ -100,6 +100,6 @@ bin/runwsgi -v instance/etc/zope.ini
 
 ## Related content
 
-- {ref}`add-a-plone-site-label`
-- {ref}`install-buildout-label`
-- {ref}`compare-buildout-pip-label`
+-   {doc}`/admin-guide/add-site`
+-   {ref}`install-buildout-label`
+-   {doc}`/conceptual-guides/compare-buildout-pip`

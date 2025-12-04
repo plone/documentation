@@ -786,7 +786,7 @@ The code renders both widgets, {guilabel}`min` and {guilabel}`max`, in a single 
 
 ## Related content
 
-- {ref}`backend-fields-label`
-- {ref}`backend-schemas-label`
-- {ref}`classic-ui-forms-label`
-- {ref}`backend-content-types-index-label`
+-   {doc}`/backend/fields`
+-   {ref}`backend-schemas-label`
+-   {doc}`/classic-ui/forms`
+-   {ref}`backend-content-types-index-label`
