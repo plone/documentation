@@ -101,5 +101,5 @@ bin/runwsgi -v instance/etc/zope.ini
 ## Related content
 
 -   {doc}`/admin-guide/add-site`
--   {ref}`install-buildout-label`
+-   {doc}`/admin-guide/install-buildout`
 -   {doc}`/conceptual-guides/compare-buildout-pip`

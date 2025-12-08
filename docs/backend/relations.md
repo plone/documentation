@@ -649,4 +649,4 @@ But it can also be the name of a relation that is created by code, for example, 
 -   {doc}`/backend/schemas`
 -   {ref}`backend-fields-relation-fields-label`
 -   {doc}`/backend/content-types/index`
--   {ref}`backend-vocabularies-label`
+-   {doc}`/backend/vocabularies`

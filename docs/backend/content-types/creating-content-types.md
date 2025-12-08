@@ -122,7 +122,7 @@ Also have a look at Plone {doc}`/backend/behaviors`, which provide default featu
 ## Related content
 
 -   {doc}`/backend/schemas`
--   {ref}`backend-fields-label`
+-   {doc}`/backend/fields`
 -   {doc}`/backend/widgets`
--   {ref}`backend-behaviors-label`
+-   {doc}`/backend/behaviors`
 -   {doc}`/backend/content-types/fti`

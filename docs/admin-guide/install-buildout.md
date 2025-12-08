@@ -130,6 +130,6 @@ bin/instance stop
 ## Related content
 
 -   {doc}`/admin-guide/add-site`
--   {ref}`install-pip-label`
+-   {doc}`/admin-guide/install-pip`
 -   {doc}`/admin-guide/backup-restore-plone-buildout`
--   {ref}`compare-buildout-pip-label`
+-   {ref}`/conceptual-guides/compare-buildout-pip`
