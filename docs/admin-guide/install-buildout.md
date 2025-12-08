@@ -132,4 +132,4 @@ bin/instance stop
 -   {doc}`/admin-guide/add-site`
 -   {doc}`/admin-guide/install-pip`
 -   {doc}`/admin-guide/backup-restore-plone-buildout`
--   {ref}`/conceptual-guides/compare-buildout-pip`
+-   {doc}`/conceptual-guides/compare-buildout-pip`
