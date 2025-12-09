@@ -19,3 +19,9 @@ See the chapter {ref}`training:vocabularies-label` from the Mastering Plone 6 Tr
 Contribute to this documentation!
 See issue [Backend > Vocabularies needs content](https://github.com/plone/documentation/issues/1306).
 ```
+
+## Related content
+
+-   {doc}`/backend/fields`
+-   {doc}`/backend/schemas`
+-   {doc}`/backend/content-types/index`

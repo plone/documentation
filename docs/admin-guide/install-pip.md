@@ -97,3 +97,9 @@ bin/runwsgi -v instance/etc/zope.ini
 
 ```{include} /_inc/_create-classic-ui-instance.md
 ```
+
+## Related content
+
+-   {doc}`/admin-guide/add-site`
+-   {doc}`/admin-guide/install-buildout`
+-   {doc}`/conceptual-guides/compare-buildout-pip`

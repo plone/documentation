@@ -7,6 +7,8 @@ myst:
     "keywords": "Plone 6, Conceptual guides, Classic UI, Buildout, pip, install"
 ---
 
+(compare-buildout-pip-label)=
+
 # Compare Buildout and pip
 
 This guide explains the differences between two tools, {term}`Buildout` and {term}`pip`, to install Plone and its Classic UI user interface, helping to inform your choice when developing your new project in Plone.

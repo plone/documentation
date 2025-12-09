@@ -783,3 +783,10 @@ The code renders both widgets, {guilabel}`min` and {guilabel}`max`, in a single 
 
 </div>
 ```
+
+## Related content
+
+-   {doc}`/backend/fields`
+-   {doc}`/backend/schemas`
+-   {doc}`/classic-ui/forms`
+-   {doc}`/backend/content-types/index`

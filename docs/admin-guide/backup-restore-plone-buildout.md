@@ -93,3 +93,8 @@ When you enable incremental backups, the database packing operation will automat
 
 If your backup continuity need is critical, then your incremental backup schedule may need to be frequent.
 Some Plone sites require incremental backups every few minutes.
+
+## Related content
+
+-   {doc}`/admin-guide/export-import`
+-   {doc}`/admin-guide/install-buildout`

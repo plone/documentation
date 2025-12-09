@@ -111,3 +111,8 @@ Consider a File content item with UID `3e0dd7c4b2714eafa1d6fc6a1493f953` and a P
 | --- | --- |
 | `content/3e0dd7c4b2714eafa1d6fc6a1493f953/data.json` | JSON File with serialized representation of a content item |
 | `content/3e0dd7c4b2714eafa1d6fc6a1493f953/file/plone.pdf` | Blob file stored in the `file` field in the content item |
+
+## Related content
+
+-   {doc}`/admin-guide/backup-restore-plone-buildout`
+-   {ref}`add-a-plone-site-label`

@@ -118,3 +118,11 @@ For now your content type doesn't have any custom schema with fields defined.
 See {doc}`/backend/schemas`, {doc}`/backend/fields` and {doc}`/backend/widgets` for information on how to add custom fields and widgets to your content type.
 
 Also have a look at Plone {doc}`/backend/behaviors`, which provide default features you can enable per content type.
+
+## Related content
+
+-   {doc}`/backend/schemas`
+-   {doc}`/backend/fields`
+-   {doc}`/backend/widgets`
+-   {doc}`/backend/behaviors`
+-   {doc}`/backend/content-types/fti`
