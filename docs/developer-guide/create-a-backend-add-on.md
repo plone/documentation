@@ -103,7 +103,7 @@ You can now continue to add subtemplates to your addon {ref}`create-a-backend-ad
 
 ## Add `plonecli` subtemplate to an addon
 
-The generated addon contains a {file}`bobtemplates.cfg` file which lets you add several subtemplates with `plonecli`.
+The generated addon contains a {file}`bobtemplate.cfg` file which lets you add several subtemplates with `plonecli`.
 
 Run the following command to list the available subtemplates.
 
