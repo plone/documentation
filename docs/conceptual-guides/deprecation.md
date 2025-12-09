@@ -1,87 +1,86 @@
 ---
 myst:
   html_meta:
-    "description": "Understanding deprecation in Plone - rationales, philosophy, and use cases."
-    "property=og:description": "Understanding deprecation in Plone - rationales, philosophy, and use cases."
+    "description": "Understanding deprecation in Plone - rationale, philosophy, and use cases"
+    "property=og:description": "Understanding deprecation in Plone - rationale, philosophy, and use cases"
     "property=og:title": "Deprecation"
-    "keywords": "deprecation, Plone, Python, philosophy"
+    "keywords": "deprecation, Plone, Python, Node.js, React, philosophy, rationale, use cases"
 ---
 
 (conceptual-deprecation-label)=
 
 # Deprecation
 
-This chapter describes rationales and philosophy of deprecations in Plone, Zope, and Python.
-It is meant as a guide on how to think about deprecations in Plone core packages.
+This chapter describes the rationale and philosophy of deprecations in Plone.
+It is meant as a guide for how to think about deprecations in Plone core packages.
 
 ```{seealso}
 For implementation details and code examples, see {doc}`/developer-guide/deprecation`.
 ```
 
+(why-deprecation-label)=
+
 
 ## Why deprecation
 
-At some point we:
+Developers may need to get rid of old code, unify to a consistent API style, fix typos in names, move code or templates around, resolve technical debt, address security issues, or adapt to changes in external dependencies.
 
-- need to get rid of old code,
-- want to unify API style (consistent API),
-- fix typos in namings,
-- move code or templates around (inside package or to another package).
+When refactoring code, it's often necessary to move modules, functions, classes, and methods.
+It's critical not to break third party code imports from the old place.
+It's also important that usage of old functions or methods must work for a while to allow developers to migrate or update their code.
 
-While refactoring code, moving modules, functions, classes and methods is often needed.
-To not break third party code imports from the old place or usage of old functions/ methods must work for while.
 Deprecated methods are usually removed with the next major release of Plone.
+Plone follows the [semantic versioning guideline](https://semver.org).
 
-Following the [semantic versioning guideline](https://semver.org) is recommended.
 
+## Help programmers without annoyance
 
-## Help programmers, no annoyance
+Developers should use code deprecations to support the consumers of the code, that is, their fellow Plone developers.
+From the consumer's point of view, Plone core code is an API.
+Any change may annoy them, but they feel better when deprecation warnings tell them how to adapt their code to the changes.
 
-The developers should use code deprecations to support the consumers of the code.
-From their point of view, Plone core code is an API to them.
-Any change is annoying to them anyway, but they feel better if deprecation warnings are telling them what to do.
+Deprecations must always log at the level of warning.
 
-Deprecations must always log at level *warning* and have to answers the question:
+Deprecations should always answer the following questions.
 
-**"Why is the code gone from the old place? What to do instead?"**
+-   Why is the code gone from the old place?
+-   What to do instead?
 
-A short message is enough., i.e.:
+A short message is enough, such as the following examples.
 
-- "Replaced by new API xyz, found at abc.cde".,
-- "Moved to xyz, because of abc.",
-- "Name had a typo, new name is "xyz".
+-   "Replaced by new API `xyz`, found at `abc.cde`".
+-   "Moved to `xyz`, because of `abc`".
+-   "Name had a typo, new name is `xyz`".
 
-All logging has to be done once, i.e. on first usage or first import.
+All logging must be done only once, in other words, on the first usage or import.
 It must not flood the logs.
 
 
 ## Use cases
 
-Renaming
+The following use cases describe when to deprecate.
 
-: We may want to rename classes, methods, functions or global or class variables in order to get a more consistent API or because of a typo, etc.
-  We never just rename, we always provide a deprecated version logging a verbose deprecation warning with information where to
-  import from in future.
+Rename
+:   Developers may want to rename classes, methods, functions, or global or class variables to get a more consistent API or because of a typo.
+    Never just rename.
+    Always provide a deprecated version that logs a verbose deprecation warning with information for where to import from in the future.
 
-Moving a module, class, function, etc to another place
+Move objects
+:   For reasons described in {ref}`why-deprecation-label`, developers may need to move code around.
+    When imported from the old place, it logs a verbose deprecation warning with information of where to import from in the future.
 
-: For some reason, i.e. merging packages, consistent API or resolving cirular import problems, we need to move code around.
-  When imported from the old place it logs a verbose deprecation warning with information where to import from in future.
+Deprecation of a whole Python or npm package
+:   A whole {ref}`Python package <python:tut-packages>` or [npm package](https://www.npmjs.com/) may be moved to a new location.
 
-Deprecation of a whole package
+    -   All imports still work.
+    -   Log deprecation warnings on first import.
+    -   The ZCML still exists, but is empty or includes the ZCML from the new place, if there's no auto import for `meta.zcml`.
 
-: A whole [package](https://docs.python.org/3/tutorial/modules.html#packages)
-
-  - all imports still working, logging deprecation warnings on first import
-  - ZCML still exists, but is empty (or includes the zcml from the new place if theres no auto import (i.e. for meta.zcml).
-
-Deprecation of a whole released/ installable package.
-
-: We will provide a last major release with no 'real' code, only backward compatible (bbb) imports of public API are provided.
-  This will be done the way described above for a whole package.
-  The README clearly states why it was moved and where to find the code now.
+Deprecation of a whole released or installable package
+:   Plone developers provide a major release with no "real" code, but only backward compatible imports of the public API.
+    This will be done the way described above for a whole package.
+    The README clearly states why it was moved and where to find the code now.
 
 Deprecation of a GenericSetup profile
-
-: They may got renamed for consistency or are superfluos after an update.
-  Code does not need to break to support this.
+:   These may have been renamed for consistency or are superfluous after an update.
+    Code does not need to break to support this.
