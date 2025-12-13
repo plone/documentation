@@ -18,8 +18,8 @@ It is meant as a guide for how to think about deprecations in Plone core package
 For implementation details and code examples, see {doc}`/developer-guide/deprecation`.
 ```
 
-(why-deprecation-label)=
 
+(why-deprecation-label)=
 
 ## Why deprecation
 
@@ -44,7 +44,7 @@ Deprecations must always log at the level of warning.
 Deprecations should always answer the following questions.
 
 -   Why is the code gone from the old place?
--   What to do instead?
+-   What should the developer do instead?
 
 A short message is enough, such as the following examples.
 
@@ -62,7 +62,7 @@ The following use cases describe when to deprecate.
 
 Rename
 :   Developers may want to rename classes, methods, functions, or global or class variables to get a more consistent API or because of a typo.
-    Never just rename.
+    Renaming alone is not enough to deprecate code.
     Always provide a deprecated version that logs a verbose deprecation warning with information for where to import from in the future.
 
 Move objects
@@ -78,8 +78,8 @@ Deprecation of a whole Python or npm package
 
 Deprecation of a whole released or installable package
 :   Plone developers provide a major release with no "real" code, but only backward compatible imports of the public API.
-    This will be done the way described above for a whole package.
-    The README clearly states why it was moved and where to find the code now.
+    This should be done the way described above for a whole package.
+    The README should clearly state why it was moved and where to find the code now.
 
 Deprecation of a GenericSetup profile
 :   These may have been renamed for consistency or are superfluous after an update.
