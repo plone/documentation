@@ -13,7 +13,6 @@ myst:
 
 When translating content items in Plone, you can connect to an external translation service to translate your content.
 
-T
 
 The `plone.app.multilingual` product that turns Plone into a multilingual-content site supports a pluggable way to hook any translation service into Plone.
 
