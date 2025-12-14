@@ -28,4 +28,4 @@ Due to not needing it anymore, the `plone.google_translation_key` registry entry
 
 The `babel_view` has been modified to call a new REST API endpoint instead of the old `gtranslation_service` browser view.
 
-To keep using the previously existing Google Translate integation, site administrators have to install a new package that provides those (and more) services, the package is called `collective.translators`.
+To keep using the previously existing Google Translate integration, site administrators have to install a new package that provides those and more services, called [`collective.translators`](https://github.com/collective/collective.translators).
