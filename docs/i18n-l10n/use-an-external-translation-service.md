@@ -40,7 +40,7 @@ When you click this icon, it will invoke the translation utility, and the transl
 
 Plone does not implement by itself this interface in any of its utilities.
 
-You will need to use an external package that offers this service (see the next section) or create your own utility.
+You'll need to use an external package that offers this service as described in {ref}`pre-configured-services-label`, or create your own utility.
 
 (pre-configured-services-label)=
 
