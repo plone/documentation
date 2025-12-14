@@ -17,7 +17,7 @@ Some may require changes in your setup.
 
 ## Drop of Google Translate integration
 
-plone.app.multilingual had an integration to use Google Translate to translate the content in the `babel_view` (where the content in two languages is shown side-by-side).
+`plone.app.multilingual` had an integration to use Google Translate to translate the content in the `babel_view`, where the content in two languages is shown side-by-side.
 
 This integration has been removed in Plone 6.2, and has been exchanged by a generic translation service integration. See the {ref}`use-an-external-translation-service-label` section for details.
 
