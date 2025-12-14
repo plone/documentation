@@ -42,6 +42,8 @@ Plone does not implement by itself this interface in any of its utilities.
 
 You will need to use an external package that offers this service (see the next section) or create your own utility.
 
+(pre-configured-services-label)=
+
 ## Using the translation service with pre-configured services
 
 To easily use some external tools, the Plone community has implemented a package called [collective.translators](https://github.com/collective/collective.translators) that implements this functionality for Google Translate, Deepl, Deepseek, Ollama and Libre Translate.
