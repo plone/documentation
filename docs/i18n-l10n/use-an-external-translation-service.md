@@ -48,7 +48,7 @@ You'll need to use an external package that offers this service as described in 
 
 To use some external tools, the Plone community has implemented a package called [`collective.translators`](https://github.com/collective/collective.translators) that implements this functionality for Google Translate, Deepl, Deepseek, Ollama, and Libre Translate.
 
-Each of those services provides a control panel to tweak the configuration (API keys, languages, service endpoints, etc.)
+Each of those services provides a control panel to tweak the configuration, including API keys, languages, service endpoints, and other configuration items.
 
 ```{note}
 The usage of some of those services may create extra cost for the site administrator.
