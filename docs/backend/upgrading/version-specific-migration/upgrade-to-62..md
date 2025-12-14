@@ -22,7 +22,7 @@ Some may require changes in your setup.
 This integration has been removed in Plone 6.2, and has been exchanged by a generic translation service integration.
 See the {doc}`use-an-external-translation-service-label` chapter for details.
 
-To achieve that integration the previously existing `gtranslation_service` browser view has been removed from plone.app.multilingual.
+To achieve that integration, the previously existing `gtranslation_service` browser view has been removed from `plone.app.multilingual`.
 
 Due to not needing it anymore, the `plone.google_translation_key` registry entry has been removed and will be removed by the upgrade step to Plone 6.2.
 
