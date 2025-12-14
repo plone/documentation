@@ -16,7 +16,7 @@ When translating content items in Plone, you can connect to an external translat
 
 The `plone.app.multilingual` product that turns Plone into a multilingual-content site supports a pluggable way to hook any translation service into Plone.
 
-To do so, one has to implement a utility that implements a `IExternalTranslationService` interface.
+To do so, one has to implement a utility that implements an `IExternalTranslationService` interface.
 
 This utility class must implement the `IExternalTranslationService` interface from `plone.app.multilingual.interfaces` and it should provide at least these methods and an attribute:
 
