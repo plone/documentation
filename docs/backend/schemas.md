@@ -39,6 +39,8 @@ Zope schemas are used for tasks such as:
 -   specifying required attributes on an object
 -   defining custom validators on input data
 
+(schemas-fields-label)=
+
 The basic unit of data model declaration is the {doc}`field </backend/fields>`, which specifies what kind of data each Python attribute can hold.
 
 
@@ -728,5 +730,12 @@ def fields(self):
             schema_field.required = False
             f.field = schema_field
 ```
+
+## Related content
+
+-   {doc}`/backend/fields`
+-   {doc}`/backend/content-types/index`
+-   {doc}`/classic-ui/forms`
+-   {doc}`/backend/vocabularies`
 
 

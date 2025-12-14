@@ -33,7 +33,7 @@ Wikipedia article [Internationalization and localization](https://en.wikipedia.o
 
 Plone supports many language translations in its two frontends.
 For Volto, see [`plone/volto`](https://github.com/plone/volto/tree/main/packages/volto/locales).
-For Classic UI, see [`collective/plone.app.locales`](https://github.com/collective/plone.app.locales/tree/master/plone/app/locales/locales).
+For Classic UI, see [`collective/plone.app.locales`](https://github.com/collective/plone.app.locales/tree/master/src/plone/app/locales/locales).
 
 You can contribute new languages to both frontends.
 

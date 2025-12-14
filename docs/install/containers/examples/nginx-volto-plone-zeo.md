@@ -83,7 +83,6 @@ You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to po
 Now let's create a `docker-compose.yml` file:
 
 ```yaml
-version: "3"
 services:
 
   webserver:
@@ -110,6 +109,9 @@ services:
     environment:
       SITE: Plone
       ZEO_ADDRESS: db:8100
+      ZEO_SHARED_BLOB_DIR: on   # otherwise the backend will create its own blob storage
+    volumes:
+      - data:/data              # the backend and database need access to the same volume
     ports:
     - "8080:8080"
     depends_on:

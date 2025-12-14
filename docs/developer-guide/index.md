@@ -24,4 +24,5 @@ You can help consolidate all of development documentation here, even if it is to
 develop-volto-add-ons-index
 create-a-distribution
 standardize-python-project-configuration
+native-namespace
 ```

@@ -71,3 +71,12 @@ The launch screen for adding a site is hosted by the Plone backend server.
 Regardless of the frontend you select, you will be redirected to the backend's user interface after you create the site.
 If you select the Volto frontend, you can switch to it by changing the port number in the URL, usually `3000`, and visiting it at http://localhost:3000, for example.
 ```
+
+## Related content
+
+-   {doc}`/install/create-project-cookieplone`
+-   {doc}`/admin-guide/install-buildout`
+-   {doc}`/admin-guide/install-pip`
+-   {doc}`/conceptual-guides/distributions`
+-   {doc}`/developer-guide/create-a-distribution`
+-   {doc}`/conceptual-guides/choose-user-interface`

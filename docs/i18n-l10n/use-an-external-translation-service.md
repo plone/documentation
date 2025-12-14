@@ -16,7 +16,7 @@ When translating content items in Plone, you can connect to an external translat
 
 ## Using Google Cloud Translation API
 
-The `plone.app.multilingual` product that turns Plone into a multilingual-content site supports [Google Cloud Translation API](https://cloud.google.com/translate/docs/reference/rest), which allows the content editor to use its translations.
+The `plone.app.multilingual` product that turns Plone into a multilingual-content site supports [Google Cloud Translation API](https://docs.cloud.google.com/translate/docs/reference/rest), which allows the content editor to use its translations.
 
 To use this service as a site administrator, you need to create a project in Google Cloud, enable the Cloud Translation API, and create an API key under the Credentials of the Google Cloud Console.
 You should enter this API key in the {guilabel}`Multilingual Settings` control panel in Plone.
