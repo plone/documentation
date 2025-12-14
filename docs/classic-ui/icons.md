@@ -31,9 +31,31 @@ Icons are shipped via `plone.staticresources`.
 See the file [package.json](https://github.com/plone/plone.staticresources/blob/master/package.json) of the package to get the actual version of the icons in Plone.
 
 
+(classic-ui-icons-disable-glyphicons-label)=
+
+## Disabling GlyphIcons
+
+Plone Classic UI does not use GlyphIcons by default in Plone 6, as Bootstrap Icons are the preferred icon set.
+However, in some projects or legacy setups, GlyphIcons may still be loaded or referenced through custom themes or add-ons.
+
+If you want to explicitly disable GlyphIcons to avoid loading unused assets or to prevent accidental usage, you can do so by removing or overriding the related resources.
+
+### Disable GlyphIcons in Classic UI
+
+Ensure that your theme or add-on does **not** include GlyphIcons CSS or resources.
+If GlyphIcons are loaded via custom Diazo rules, theme bundles, or legacy add-ons, remove those references.
+
+For example, remove any references similar to:
+
+```html
+<link rel="stylesheet" href="++plone++static/glyphicons.css" />
+```
+
+
 (classic-ui-icons-registration-label)=
 
 ## Registration
+
 
 Icons are registered in Plone's registry.
 This provides an option to customize the content type and Plone UI icons by overriding icons via XML.
