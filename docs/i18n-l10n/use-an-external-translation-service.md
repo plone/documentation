@@ -21,10 +21,18 @@ To do so, one has to implement a utility that implements a `IExternalTranslation
 
 This utility class must implement the `IExternalTranslationService` interface from `plone.app.multilingual.interfaces` and it should provide at least these methods and an attribute:
 
-    - `is_available()`: Returns True if the service is enabled and ready.
-    - `available_languages()`: Returns a list of supported language codes or pairs that can be used (source, target).
-    - `translate_content(content, source_language, target_language)`: Performs the translation and returns the translated text.
-    - `order`: the order in which this utility will be executed. This way, one can prioritize some services over others in given conditions.
+`is_available()`
+:   Returns `True` if the service is enabled and ready.
+
+`available_languages()`
+:   Returns a list of supported language codes or pairs that can be used (source, target).
+
+`translate_content(content, source_language, target_language)`
+:   Performs the translation and returns the translated text.
+
+`order`
+:   The order in which this utility will be executed.
+    This way, one can prioritize some services over others with given conditions.
 
 After doing so, as a content editor, when you edit a translation of a given content page, an icon will display next to the original content.
 
