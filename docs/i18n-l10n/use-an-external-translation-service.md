@@ -14,42 +14,88 @@ myst:
 When translating content items in Plone, you can connect to an external translation service to translate your content.
 
 
-The `plone.app.multilingual` product that turns Plone into a multilingual content site supports a pluggable way to hook any translation service into Plone.
+## Using Google Cloud Translation API
 
-To do so, one has to implement a utility that implements an `IExternalTranslationService` interface.
+The `plone.app.multilingual` product that turns Plone into a multilingual-content site supports [Google Cloud Translation API](https://docs.cloud.google.com/translate/docs/reference/rest), which allows the content editor to use its translations.
 
-This utility class must implement the `IExternalTranslationService` interface from `plone.app.multilingual.interfaces` and it should provide at least these methods and an attribute:
+To use this service as a site administrator, you need to create a project in Google Cloud, enable the Cloud Translation API, and create an API key under the Credentials of the Google Cloud Console.
+You should enter this API key in the {guilabel}`Multilingual Settings` control panel in Plone.
 
-`is_available()`
-:   Returns `True` if the service is enabled and ready.
-
-`available_languages()`
-:   Returns a list of supported language codes or pairs that can be used (source, target).
-
-`translate_content(content, source_language, target_language)`
-:   Performs the translation and returns the translated text.
-
-`order`
-:   The order in which this utility will be executed.
-    This way, one can prioritize some services over others with given conditions.
-
-After doing so, as a content editor, when you edit a translation of a given content page, a translate icon <img alt="Translate icon" src="../_static/translate.svg" class="inline"> will display next to the original content.
-
-When you click this icon, it will invoke the translation utility, and the translation obtained through the service will be entered automatically in the corresponding field.
-
-Plone does not implement this interface by itself in any of its utilities.
-
-You'll need to use an external package that offers this service as described in {ref}`pre-configured-services-label`, or create your own utility.
-
-(pre-configured-services-label)=
-
-## Using the translation service with pre-configured services
-
-To use some external tools, the Plone community has implemented a package called [`collective.translators`](https://github.com/collective/collective.translators) that implements this functionality for AWS, Deepl, Deepseek, Google Translate, Libre Translate, and Ollama.
-
-Each of those services provides a control panel to tweak the configuration, including API keys, languages, service endpoints, and other configuration items.
+After doing so, as a content editor, when you edit a translation of a given content page, an icon will display next to the original content.
+When you click this icon, it invokes the Google Cloud Translation API, and the translation obtained through the service will be entered automatically in the corresponding field.
 
 ```{note}
-The usage of some of those services may create extra cost for the site administrator.
-Check the terms of use of each of the tools for details.
+The usage of Google Cloud Translation API may create extra cost for the site administrator.
+See [Cloud Translation pricing](https://cloud.google.com/translate/pricing) for details.
+```
+
+
+## Using other translation services
+
+If you want to use another service beside Google Cloud Translation API, you will need to override the view that calls Google Cloud Translation API.
+
+To do so, `plone.app.multilingual` registers a view called `gtranslation_service`.
+Its code is in [`plone.app.multilingual.brwoser.translate.gtranslation_service_dexterity`](https://github.com/plone/plone.app.multilingual/blob/7aedd0ab71d3edf5d1fb4cb86b9f611d428ed76b/src/plone/app/multilingual/browser/translate.py#L52).
+This view gets three parameters:
+
+`context_uid`
+:   The UID of the object to be translated.
+
+`field`
+:   The name of the field of the object that needs to be translated.
+    This view's job is to extract the value of that field from the object.
+
+`lang_source`
+:   The source language code.
+
+The first part of the view—that which gets the object and the field content to be translated—can be copied from the original code.
+You need to write only the call to the translation service.
+The required code would be something like the following example:
+
+```python
+class TranslateUsingMyService(BrowserView):
+    def __call__(self):
+        if self.request.method != "POST" and not (
+            "field" in self.request.form.keys()
+            and "lang_source" in self.request.form.keys()
+        ):
+            return _("Need a field")
+        else:
+            manager = ITranslationManager(self.context)
+            context_uid = self.request.form.get("context_uid", None)
+            if context_uid is None:
+                # try with context if no translation uid is present
+                manager = ITranslationManager(self.context)
+            else:
+                catalog = getToolByName(self.context, "portal_catalog")
+                brains = catalog(UID=context_uid)
+                if len(brains):
+                    context = brains[0].getObject()
+                    manager = ITranslationManager(context)
+                else:
+                    manager = ITranslationManager(self.context)
+
+            registry = getUtility(IRegistry)
+            settings = registry.forInterface(
+                IMultiLanguageExtraOptionsSchema, prefix="plone"
+            )
+            lang_target = ILanguage(self.context).get_language()
+            lang_source = self.request.form["lang_source"]
+            orig_object = manager.get_translation(lang_source)
+            field = self.request.form["field"].split(".")[-1]
+            if hasattr(orig_object, field):
+                question = getattr(orig_object, field, "")
+                if hasattr(question, "raw"):
+                    question = question.raw
+            else:
+                return _("Invalid field")
+
+            # And here do the call to the external translation service
+            return call_to_my_service(question, lang_target, lang_source)
+```
+
+```{note}
+Due to the way that the Google Translate integration is built in `plone.app.multilingual`, you will need to enter something in the {guilabel}`Google Translate API Key` field in the {guilabel}`Multilingual Settings` 
+control panel of your site.
+It doesn't need to be a valid Google Translate API Key; it can be a random string.
 ```
