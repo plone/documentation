@@ -39,9 +39,6 @@ Plone Classic UI does not use [GLYPHICONS](https://www.glyphicons.com/) by defau
 However, in some projects or legacy setups, GLYPHICONS may still be loaded or referenced through custom themes or add-ons.
 
 If you want to explicitly disable GlyphIcons to avoid loading unused assets or to prevent accidental usage, you can do so by removing or overriding the related resources.
-
-### Disable GlyphIcons in Classic UI
-
 Ensure that your theme or add-on does **not** include GlyphIcons CSS or resources.
 If GlyphIcons are loaded via custom Diazo rules, theme bundles, or legacy add-ons, remove those references.
 
