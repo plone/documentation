@@ -66,6 +66,8 @@ Enable warnings
 :   Warnings are written to `stderr` by default, but `DeprecationWarning` output is surpressed by default.
     
     Output can be enabled by starting the Python interpreter with the {ref}`-W[all|module|once]  <python:using-on-warnings>` argument.
+    
+    As an alternative, the environment variable {envvar}`python:PYTHONWARNINGS` can be set to `default`, in other words, `PYTHONWANRINGS=default`.
  
     It's possible to enable output in code, too.
     
