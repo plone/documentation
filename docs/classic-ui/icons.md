@@ -56,7 +56,6 @@ For example, remove any references similar to:
 
 ## Registration
 
-
 Icons are registered in Plone's registry.
 This provides an option to customize the content type and Plone UI icons by overriding icons via XML.
 Plone ships with the following icon registrations by default.
