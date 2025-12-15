@@ -42,7 +42,7 @@ If you want to explicitly disable GlyphIcons to avoid loading unused assets or t
 Ensure that your theme or add-on does _not_ include GLYPHICONS CSS or resources.
 If GLYPHICONS are loaded via custom Diazo rules, theme bundles, or legacy add-ons, then remove those references.
 
-For example, remove any references similar to:
+For example, remove any references similar to the following.
 
 ```html
 <link rel="stylesheet" href="++plone++static/glyphicons.css" />
