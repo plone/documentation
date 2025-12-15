@@ -15,11 +15,18 @@ Plone 6.2 has seen the following major changes.
 Some may require changes in your setup.
 
 
-## Drop of Google Translate integration
+## Replaced Google Translate integration with generic translation integration
 
-`plone.app.multilingual` had an integration to use Google Translate to translate the content in the `babel_view`, where the content in two languages is shown side-by-side.
+`plone.app.multilingual` had an integration to use only Google Translate to translate the content in the `babel_view`, where the content in two languages is shown side-by-side.
+This integration was limited to only Google Translate.
+In Plone 6.2, this integration has been replaced with a generic translation service integration hook.
 
-This integration has been removed in Plone 6.2, and has been exchanged by a generic translation service integration.
+[`collective.translators`](https://github.com/collective/collective.translators) provides some implementations for that hook, supporting AWS, Deepl, Deepseek, Google Translate, Libre Translate, and Ollama.
+It can be extended to support more translation providers.
+
+It is not mandatory to use `collective.translator`.
+Any developer can write the integration with the tool of their choice.
+
 See the {doc}`use-an-external-translation-service-label` chapter for details.
 
 To achieve that integration, the previously existing `gtranslation_service` browser view has been removed from `plone.app.multilingual`.
