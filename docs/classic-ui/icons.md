@@ -35,7 +35,7 @@ See the file [package.json](https://github.com/plone/plone.staticresources/blob/
 
 ## Disable GLYPHICONS®
 
-Plone Classic UI does not use GlyphIcons by default in Plone 6, as Bootstrap Icons are the preferred icon set.
+Plone Classic UI does not use [GLYPHICONS](https://www.glyphicons.com/) by default in Plone 6, as [Bootstrap Icons](https://icons.getbootstrap.com/) are the preferred icon set.
 However, in some projects or legacy setups, GlyphIcons may still be loaded or referenced through custom themes or add-ons.
 
 If you want to explicitly disable GlyphIcons to avoid loading unused assets or to prevent accidental usage, you can do so by removing or overriding the related resources.
