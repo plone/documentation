@@ -33,7 +33,7 @@ This utility class must implement the `IExternalTranslationService` interface fr
 :   The order in which this utility will be executed.
     This way, one can prioritize some services over others with given conditions.
 
-After doing so, as a content editor, when you edit a translation of a given content page, an icon will display next to the original content.
+After doing so, as a content editor, when you edit a translation of a given content page, a translate icon <img alt="Translate icon" src="/_images/translate.svg" class="inline"> will display next to the original content.
 
 When you click this icon, it will invoke the translation utility, and the translation obtained through the service will be entered automatically in the corresponding field.
 
