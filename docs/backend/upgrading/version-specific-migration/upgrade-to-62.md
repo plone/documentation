@@ -27,12 +27,10 @@ It can be extended to support more translation providers.
 It is not mandatory to use `collective.translator`.
 Any developer can write the integration with the tool of their choice.
 
-See the {doc}`../../../i18n-l10n/use-an-external-translation-service-label` chapter for details.
+See the {doc}`/i18n-l10n/use-an-external-translation-service-label` chapter for details.
 
 To achieve that integration, the previously existing `gtranslation_service` browser view has been removed from `plone.app.multilingual`.
 
-Due to not needing it anymore, the `plone.google_translation_key` registry entry has been removed and will be removed by the upgrade step to Plone 6.2.
+Due to not needing it anymore, the `plone.google_translation_key` registry entry has been removed, and it will be removed when performing the upgrade step to Plone 6.2.
 
 The `babel_view` has been modified to call a new REST API endpoint instead of the old `gtranslation_service` browser view.
-
-To keep using the previously existing Google Translate integration, site administrators have to install a new package that provides those and more services, called [`collective.translators`](https://github.com/collective/collective.translators).

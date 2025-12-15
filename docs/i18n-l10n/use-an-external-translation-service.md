@@ -14,7 +14,7 @@ myst:
 When translating content items in Plone, you can connect to an external translation service to translate your content.
 
 
-The `plone.app.multilingual` product that turns Plone into a multilingual-content site supports a pluggable way to hook any translation service into Plone.
+The `plone.app.multilingual` product that turns Plone into a multilingual content site supports a pluggable way to hook any translation service into Plone.
 
 To do so, one has to implement a utility that implements an `IExternalTranslationService` interface.
 
@@ -37,7 +37,7 @@ After doing so, as a content editor, when you edit a translation of a given cont
 
 When you click this icon, it will invoke the translation utility, and the translation obtained through the service will be entered automatically in the corresponding field.
 
-Plone does not implement by itself this interface in any of its utilities.
+Plone does not implement this interface by itself in any of its utilities.
 
 You'll need to use an external package that offers this service as described in {ref}`pre-configured-services-label`, or create your own utility.
 
@@ -45,7 +45,7 @@ You'll need to use an external package that offers this service as described in 
 
 ## Using the translation service with pre-configured services
 
-To use some external tools, the Plone community has implemented a package called [`collective.translators`](https://github.com/collective/collective.translators) that implements this functionality for Google Translate, Deepl, Deepseek, Ollama, and Libre Translate.
+To use some external tools, the Plone community has implemented a package called [`collective.translators`](https://github.com/collective/collective.translators) that implements this functionality for AWS, Deepl, Deepseek, Google Translate, Libre Translate, and Ollama.
 
 Each of those services provides a control panel to tweak the configuration, including API keys, languages, service endpoints, and other configuration items.
 
