@@ -30,7 +30,8 @@ The third style is `pkgutil`, but Plone has never used it.
 Native namespaces exist since Python 3.3.
 Because Plone started in the days of Python 2, it has always used `pkg_resources`.
 `pkg_resources` is part of the `setuptools` package.
-This part is deprecated: it's scheduled to be removed around the end of 2025, in `setuptools` 81.
+This part is deprecated.
+It's scheduled to be removed around the end of 2025, in `setuptools` 81.
 This means Plone needs to move to native namespaces.
 
 In general, this move shouldn't cause problems for integrators.
@@ -48,7 +49,7 @@ In a normal install:
 * `zc.buildout` 5 works fine.
 
 If for one or both of these packages you don't use a final release from https://pypi.org, but an editable install, it may not work.
-You can solve this by installing an extra package with `pip`: `horse-with-no-namespace`.
+You can solve this by installing an extra package with `pip`, `horse-with-no-namespace`.
 
 ```{note}
 If you let `zc.buildout` install `horse-with-no-namespace`, it won't work.
@@ -67,7 +68,8 @@ If you use the Volto frontend, this means that you get lots of code that you nev
 
 Plone 6.2 starts separating Classic UI code from the core of Plone.
 This is ongoing work, described in {term}`PLIP` [3953](https://github.com/plone/Products.CMFPlone/issues/3953).
-You won't yet get less code: this is preparation for a more complete separation in Plone 7.
+You won't yet get less code yet.
+This PLIP is preparation for a more complete separation in Plone 7.
 
 The focus currently is on moving page templates into the `plone.app.layout` package.
 Templates from the following packages are now in a new location:
@@ -78,6 +80,6 @@ Templates from the following packages are now in a new location:
 ```{note}
 If you use the `z3c.jbot` add-on to override a template that has been moved, your override will still work.
 This is because we keep a mapping from the old to the new location.
-For example, `plone.locking` registers that `plone.locking.browser.info.pt` has a new location: `plone.app.layout.viewlets.locking.pt`.
+For example, `plone.locking` registers that `plone.locking.browser.info.pt` has a new location, `plone.app.layout.viewlets.locking.pt`.
 You should rename your override to the new location if you no longer need compatibility with Plone 6.1 or earlier.
 ```
