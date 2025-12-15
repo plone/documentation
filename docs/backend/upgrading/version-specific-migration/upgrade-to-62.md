@@ -27,7 +27,7 @@ It can be extended to support more translation providers.
 It is not mandatory to use `collective.translator`.
 Any developer can write the integration with the tool of their choice.
 
-See the {doc}`use-an-external-translation-service-label` chapter for details.
+See the {doc}`../../../i18n-l10n/use-an-external-translation-service-label` chapter for details.
 
 To achieve that integration, the previously existing `gtranslation_service` browser view has been removed from `plone.app.multilingual`.
 
