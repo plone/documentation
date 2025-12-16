@@ -174,7 +174,7 @@ In the template, you can use the following variables:
 Dexterity content types come with default add and edit forms.
 You can build custom add and edit forms to adjust their behavior.
 
-The implementation of the default edit and add forms is in [`plone.dexterity.browser.edit.py`](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/edit.py) and [`plone.dexterity.browser.add.py`](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/add.py).
+The implementation of the default edit and add forms is in [`plone.dexterity.browser.edit.py`](https://github.com/plone/plone.dexterity/blob/master/src/plone/dexterity/browser/edit.py) and [`plone.dexterity.browser.add.py`](https://github.com/plone/plone.dexterity/blob/master/src/plone/dexterity/browser/add.py).
 
 ```{todo}
 Describe Add/Edit forms here and how to customize them.

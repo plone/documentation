@@ -73,11 +73,15 @@ Plone has both hardware requirements and software prerequisites.
 -   {term}`Git`
 
 
+(prerequisites-for-installation-uv-label)=
+
 #### uv
 
 ```{include} ../volto/_inc/_install-uv.md
 ```
 
+
+(prerequisites-for-installation-nvm-label)=
 
 #### nvm
 
@@ -97,11 +101,15 @@ Node.js is required only for Volto projects and not for Classic UI projects.
 ```
 
 
+(prerequisites-for-installation-make-label)=
+
 #### Make
 
 ```{include} ../volto/_inc/_install-make.md
 ```
 
+
+(prerequisites-for-installation-git-label)=
 
 #### Git
 

@@ -250,7 +250,7 @@ rtd-pr-preview:  ## Build pull request preview on Read the Docs
 
 .PHONY: storybook
 storybook:
-	cd submodules/volto && pnpm i && pnpm build:registry && pnpm --filter @plone/volto build-storybook -o ../../../../_build/html/storybook
+	cd submodules/volto && pnpm i && pnpm build:registry && pnpm build:components && pnpm --filter @plone/volto build-storybook -o ../../../../_build/html/storybook
 
 .PHONY: all
 all: clean vale linkcheck html  ## Clean docs build, then run vale and linkcheck, and build html

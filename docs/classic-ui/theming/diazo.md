@@ -176,3 +176,44 @@ For instance, you may need to put together the main menu, the language change, a
 Sometimes it is easier to override the corresponding template in Plone, build the new HTML structure there, and replace one thing in the {file}`rules.xml` file than trying to write complex Diazo rules or writing XSLT.
 
 The size of the {file}`rules.xml` file and the number of rules it contains can negatively impact the performance of your site.
+
+
+### Disable Diazo for AJAX requests
+
+When sending an AJAX request to normal browser views in Plone, Plone prepares a response as an HTML page, then normally transforms it via the Diazo theming engine.
+In some cases this is unnecessary overhead, such as when you want to inject a small snippet of HTML only into the page.
+
+To prevent this transformation, disable AJAX requests for Diazo themes by using the `ajax_load` HTTP request parameter.
+`ajax_load` is used in Plone to indicate AJAX requests.
+When added to the query string, `ajax_load=1` disables a full page rendering, whereas `ajax_load=0` enables it.
+
+```{versionadded} plonetheme.barceloneta 3.3.0
+In Plone Classic UI's standard theme, `plonetheme.barceloneta` version 3.3.0, the `ajax_load` theme parameter to disable Diazo was added.
+If you use this theme version 3.3.0 or later, then the next steps are obsolete.
+```
+
+Manually add the HTTP request parameter and its value as follows.
+
+Add a theme parameter to your {file}`manifest.cfg` file.
+
+```cfg
+[theme:parameters]
+ajax_load = python:request.get('ajax_load')
+```
+
+Then disable Diazo for AJAX requests in your {file}`rules.xml` file.
+
+```xml
+<notheme if="$ajax_load" /><!-- don't theme ajax requests -->
+```
+
+Choose any method to load this change in your theme.
+
+-   Restart your instance.
+-   In the {guilabel}`Theming` control panel, select another theme, then switch back to your own theme.
+-   For a programmatic way, see [(Re)Introduce the ajax_load theme parameter and skip diazo theming, if set. `plone/plonetheme.barceloneta` #404](https://github.com/plone/plonetheme.barceloneta/pull/404).
+
+
+### Completely disable Diazo
+
+You can fully disable Diazo and `plone.app.theming` based themes by setting the `plone.app.theming.interfaces.IThemeSettings.enabled` registry entry to `False`.

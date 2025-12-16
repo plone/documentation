@@ -88,7 +88,11 @@ linkcheck_ignore = [
     # Ignore pages that require authentication
     r"https://github.com/orgs/plone/teams/",
     r"https://github.com/plone/documentation/issues/new",
+    r"https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset",
+    # Ignore pages that are rate limited or otherwise blocked
     r"https://stackoverflow.com",
+    r"https://www.npmjs.com/",
+    r"https://hosted.weblate.org/",
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
     # Ignore rate limiting by github.com

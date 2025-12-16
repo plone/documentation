@@ -7,6 +7,8 @@ myst:
     "keywords": "Content types, Dexterity, Plone"
 ---
 
+(backend-content-types-index-label)=
+
 # Content Types
 
 This part of the documentation describes how to develop content types in Plone.

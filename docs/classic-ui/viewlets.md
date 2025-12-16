@@ -190,7 +190,7 @@ These methods should honor the [`zope.contentprovider.interfaces.IContentProvide
 
 ```{seealso}
 -   [`zope.contentprovider.interfaces`](https://github.com/zopefoundation/zope.contentprovider/blob/3.7.2/src/zope/contentprovider/interfaces.py)
--   [`plone.app.layout.viewlets.common`](https://github.com/plone/plone.app.layout/blob/master/plone/app/layout/viewlets/common.py)
+-   [`plone.app.layout.viewlets.common`](https://github.com/plone/plone.app.layout/blob/master/src/plone/app/layout/viewlets/common.py)
 ```
 
 
@@ -822,7 +822,7 @@ Hide the concerning viewlets in one manager using `/@@manage-viewlets` and {file
 ```
 
 Viewlet managers are based on [`zope.viewlet.manager.ViewletManager`](https://github.com/zopefoundation/zope.viewlet/blob/master/src/zope/viewlet/manager.py)
-and [`plone.app.viewletmanager.manager.OrderedViewletManager`](https://github.com/plone/plone.app.viewletmanager/blob/master/plone/app/viewletmanager/manager.py).
+and [`plone.app.viewletmanager.manager.OrderedViewletManager`](https://github.com/plone/plone.app.viewletmanager/blob/master/src/plone/app/viewletmanager/manager.py).
 
 ```{seealso}
 -   [`zope.viewlet`](https://github.com/zopefoundation/zope.viewlet/blob/master/src/zope/viewlet/viewlet.py)

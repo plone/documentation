@@ -126,3 +126,10 @@ Stop the instance.
 ```shell
 bin/instance stop
 ```
+
+## Related content
+
+-   {doc}`/admin-guide/add-site`
+-   {doc}`/admin-guide/install-pip`
+-   {doc}`/admin-guide/backup-restore-plone-buildout`
+-   {doc}`/conceptual-guides/compare-buildout-pip`
