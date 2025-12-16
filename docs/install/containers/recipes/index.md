@@ -170,3 +170,19 @@ docker compose run backend pack
 The above command assumes that the service that runs the Plone instance is named `backend`.
 Otherwise replace `backend` with your container's name.
 
+## Open an interactive debugging shell with Docker Compose
+
+You can open an interactive Plone debugging shell without stopping a running site.
+This is useful for inspecting content, running scripts, or debugging issues in a live environment.
+
+Run the following command from a directory that already contains a Plone Docker Compose setup.
+Replace `backend` with the name of your Plone service if needed.
+
+```shell
+docker compose run --rm backend console
+```
+
+This command starts a separate Zope instance connected to the same database.
+
+You cannot debug a running FileStorage-based setup because the database file is locked.
+Instead, use ZEO or RelStorage to open an interactive shell while the site is running.
