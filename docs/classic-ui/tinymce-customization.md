@@ -205,3 +205,36 @@ The file {file}`profiles/default/registry.xml` can be split in several files in 
 the directory `profiles/default/registry` with arbitrary names ending in `.xml`.
 This makes it easier to maintain and reuse your registry files.
 ```
+
+## Use TinyMCE with a commercial license
+
+If you own a commercial TinyMCE license, you can provide the key in {menuselection}`Site Setup --> TinyMCE --> Advanced`
+
+The TinyMCE 8 commercial license key will have a `T8LK:` prefix.
+
+See more information in the [TinyMCE licensing documentation](https://www.tiny.cloud/docs/tinymce/latest/license-key/)
+
+If you have a TinyMCE license before version 8, read the important [License key migration documentation](https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/#license-key-system-update)
+
+
+### Setup commercial license key manager plugin
+
+Since we cannot provide the license key manager plugin out of the box, because this is only shipped with a paid TinyMCE package, you have to provide the plugin in your own addon package.
+
+See [Setting up the Commercial License Key Manager](https://www.tiny.cloud/docs/tinymce/latest/license-key/#setting-up-the-commercial-license-key-manager) for more information how to get the plugin.
+
+You have to provide the plugin file as a static resource and register it in {menuselection}`Site Setup --> TinyMCE --> Plugins and Toolbar -> Custom plugins` like this:
+
+```
+licensekeymanager|++plone++path.to.licensekeymanager.resource.js
+```
+
+You can also provide this value in your add-on GenericSetup configuration, such as {file}`profiles/default/registry/tinymce.xml`.
+
+```xml
+<records prefix="plone" interface="plone.base.interfaces.controlpanel.ITinyMCESchema">
+  <value key="custom_plugins" purge="false">
+    <element>licensekeymanager|++plone++path.to.licensekeymanager.resource.js</element>
+  </value>
+</records>
+```
