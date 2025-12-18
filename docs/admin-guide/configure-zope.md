@@ -15,21 +15,25 @@ Plone runs in an application server called {term}`Zope`.
 
 You can configure your Zope instance's options, including the following.
 
--   persistent storage: blobs, direct file storage, relational database, ZEO, and other storage mechanisms
--   ports
--   threads
--   cache
--   logging
--   debugging and profiling for development
-
+- persistent storage: blobs, direct file storage, relational database, ZEO, and other storage mechanisms
+- ports
+- threads
+- cache
+- logging
+- debugging and profiling for development
 
 ## Cookieplone
 
 If you installed Plone using Cookieplone or pip, then Zope is configured using {term}`cookiecutter-zope-instance`.
 For a complete list of features, usage, and options, read [`cookiecutter-zope-instance`'s README](https://github.com/plone/cookiecutter-zope-instance#readme).
 
-
 ## Buildout
 
 If you installed Plone using Buildout, then Zope is configured using `plone.recipe.zope2instance`.
 For a complete list of features, usage, and options, read [`plone.recipe.zope2instance`'s README](https://pypi.org/project/plone.recipe.zope2instance/).
+
+## Related content
+
+- {doc}`/admin-guide/run-plone` - Learn how to run and manage a Plone instance.
+- {doc}`/admin-guide/zope-manager-users` - Understand how to manage users with the Zope Management Interface.
+- {doc}`/deployment/index` - Explore deployment considerations for Plone and Zope.
