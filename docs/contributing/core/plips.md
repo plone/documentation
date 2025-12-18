@@ -99,7 +99,12 @@ After incorporating feedback to your proposal, you can request a final review an
 
 You can do this by mentioning one of the appropriate {ref}`designated-teams-label`, with `@plone/framework-team` as the default if you're not certain.
 
-Every PLIP must be approved by the designated team. Once your PLIP has been approved by one of the three teams, you can start implementing your PLIP.
+Every PLIP must be approved by the designated team for work to be merged.
+
+Although work may be started at any time, the PLIP may be revised many times or even rejected.
+Set expectations accordingly before starting work on the PLIP.
+In general, it's a good idea to wait for approval of the PLIP before starting work, but there are exceptions, such as creating a proof of concept to demonstrate what the PLIP would be designed to do, or you might need it for your own project anyway.
+
 
 ## Implement your PLIP
 
