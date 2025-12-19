@@ -222,7 +222,7 @@ If you have a TinyMCE license before version 8, read the important [License key 
 
 ### Setup commercial license key manager plugin
 
-Since we cannot provide the license key manager plugin out of the box, because this is only shipped with a paid TinyMCE package, you have to provide the plugin in your own addon package.
+Since we can't provide the license key manager plugin out of the box, because this is only shipped with a paid TinyMCE package, you have to provide the plugin in your own add-on package.
 
 See [Setting up the Commercial License Key Manager](https://www.tiny.cloud/docs/tinymce/latest/license-key/#setting-up-the-commercial-license-key-manager) for more information how to get the plugin.
 
