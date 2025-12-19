@@ -24,8 +24,16 @@ Most of these are namespace packages.
 Examples are `plone.batching` and `plone.api`, which share the `plone` namespace.
 
 There are three styles or techniques of namespaces.
-For Plone only two are important: `pkg_resources` and native (sometimes referred to as implicit).
+For Plone only two are important: `pkg_resources` and native.
 The third style is `pkgutil`, but Plone has never used it.
+
+Native namespaces are also referred to as implicit namespaces.
+The two terms mean the same.
+
+```{seealso}
+- [Python Packaging Guide on native namespaces](https://packaging.python.org/en/latest/guides/.packaging-namespace-packages/#native-namespace-packages)
+- [PEP 420 - Implicit Namespace Packages](https://peps.python.org/pep-0420/)
+```
 
 Native namespaces exist since Python 3.3.
 Because Plone started in the days of Python 2, it has always used `pkg_resources`.
