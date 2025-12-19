@@ -130,7 +130,7 @@ Given a package {file}`old.pkg` with a module {file}`foo.py`, to move it to a pa
     moved("new.pkg.bar", "Version 2.0")
     ```
 
-1.  Now you can still import the namespace from `bar` at the old place, but get a deprecation warning.
+1.  Now you can still import the module at the old place, but get a deprecation warning.
 
     ```console
     DeprecationWarning: old.pkg.foo has moved to new.pkg.bar.
