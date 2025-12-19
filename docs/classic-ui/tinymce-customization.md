@@ -226,7 +226,7 @@ Since we can't provide the license key manager plugin out of the box, because th
 
 See [Setting up the Commercial License Key Manager](https://www.tiny.cloud/docs/tinymce/latest/license-key/#setting-up-the-commercial-license-key-manager) for more information how to get the plugin.
 
-You have to provide the plugin file as a static resource and register it in {menuselection}`Site Setup --> TinyMCE --> Plugins and Toolbar -> Custom plugins` like this:
+You have to provide the plugin file as a static resource and register it in {menuselection}`Site Setup --> TinyMCE --> Plugins and Toolbar -> Custom plugins` as shown.
 
 ```text
 licensekeymanager|++plone++path.to.licensekeymanager.resource.js
