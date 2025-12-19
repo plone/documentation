@@ -251,8 +251,9 @@ To deprecate a package, follow these steps.
         >
     
       <include
-          zcml:condition="installed z3c.jbot"
           package="z3c.jbot"
+          file="meta.zcml"
+          zcml:condition="installed z3c.jbot"
           />
       <browser:jbotDeprecated
           zcml:condition="have jbot-deprecations"
