@@ -228,7 +228,7 @@ See [Setting up the Commercial License Key Manager](https://www.tiny.cloud/docs/
 
 You have to provide the plugin file as a static resource and register it in {menuselection}`Site Setup --> TinyMCE --> Plugins and Toolbar -> Custom plugins` like this:
 
-```
+```text
 licensekeymanager|++plone++path.to.licensekeymanager.resource.js
 ```
 
