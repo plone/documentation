@@ -217,7 +217,7 @@ The TinyMCE 8 commercial license key will have a `T8LK:` prefix.
 
 See more information in the [TinyMCE licensing documentation](https://www.tiny.cloud/docs/tinymce/latest/license-key/).
 
-If you have a TinyMCE license before version 8, read the important [License key migration documentation](https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/#license-key-system-update)
+If you have a TinyMCE license before version 8, read the important [License key migration documentation](https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/#license-key-system-update).
 
 
 ### Setup commercial license key manager plugin
