@@ -154,8 +154,23 @@ Please don't be "that person".
     Working on documentation or on issues labeled with either [`33 needs: docs`](https://github.com/search?q=user%3Aplone+label%3A%2233+needs%3A+docs%22&type=issues&ref=advsearch) or [`41 lvl: easy`](https://github.com/search?q=user%3Aplone+label%3A%2241+lvl%3A+easy%22&type=Issues&ref=advsearch) are the two best ways for first-time contributors to contribute.
     This is because first-timers have a fresh perspective that might be overlooked by old-timers.
     
-    Issues labeled `42 lvl: moderate`, `43 lvl: complex`, or `03 type: feature (plip)` are not suitable for first-timers because of their complexity.
+    ```{warning}
+    Don't work on issues with any of the following labels.
+    
+    Issues with any of the following labels are not suitable for first-timers because of their complexity.
     Issues with these labels may take weeks to complete.
+
+    -   {guilabel}`42 lvl: moderate`
+    -   {guilabel}`43 lvl: complex`
+    -   {guilabel}`03 type: feature (plip)`
+
+    Issues with any of the following labels are not ready to develop.
+    They must be verified, discussed, and clarified before work can begin.
+
+    -   {guilabel}`30 needs: triage`
+    -   {guilabel}`30.1 needs: confirmation`
+    ```
+
 1.  **Discuss whether you should perform any work.**
     First see {ref}`Avoid duplicate effort <mistake-2-label>`.
     Next, any discussion method listed below is acceptable, and they are listed in the order of most likely to get a response.
