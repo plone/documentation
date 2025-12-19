@@ -69,7 +69,12 @@ Such motivation behind these contributions usually results in poor quality break
 All first-time contributors to Plone must follow the contributing requirements described in {doc}`index`.
 Although you can open a pull request at any time, Plone Team members may ignore it until, or close it unless, you satisfy the contributing requirements.
 
+```{warning}
 For [Plone Google Summer of Code (GSoC)](https://plone.org/community/gsoc) applicants, you must also follow both our and its program guidelines.
+Failure to do so may result in your suspension or banishment from the Plone GitHub organization.
+Additionally, it will prevent you from being selected to participate in GSoC.
+Check each year's program guidelines for details.
+```
 
 
 (contributing-make-contributions-through-github-label)=
