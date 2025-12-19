@@ -208,6 +208,9 @@ This makes it easier to maintain and reuse your registry files.
 
 ## Use TinyMCE with a commercial license
 
+```{versionadded} Plone 6.2
+```
+
 If you own a commercial TinyMCE license, you can provide the key in {menuselection}`Site Setup --> TinyMCE --> Advanced`
 
 The TinyMCE 8 commercial license key will have a `T8LK:` prefix.
