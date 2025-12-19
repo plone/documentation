@@ -160,7 +160,7 @@ Please don't be "that person".
     This is because first-timers have a fresh perspective that might be overlooked by old-timers.
     
     ```{warning}
-    Don't work on issues with any of the following labels.
+    Don't write code or documentation for issues with any of the following labels.
     
     Issues with any of the following labels are not suitable for first-timers because of their complexity.
     Issues with these labels may take weeks to complete.
@@ -171,7 +171,8 @@ Please don't be "that person".
 
     Issues with any of the following labels are not ready to develop.
     They must be verified, discussed, and clarified before work can begin.
-
+    You may verify them, which is a helpful way to move the issue forward, but you should not write code or documentation for them until a clear plan of action has been established in the issue.
+    
     -   {guilabel}`30 needs: triage`
     -   {guilabel}`30.1 needs: confirmation`
     ```
