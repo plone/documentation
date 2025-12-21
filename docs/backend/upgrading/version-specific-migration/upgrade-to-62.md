@@ -31,7 +31,7 @@ Native namespaces are also referred to as implicit namespaces.
 The two terms mean the same.
 
 ```{seealso}
-- [Python Packaging Guide on native namespaces](https://packaging.python.org/en/latest/guides/.packaging-namespace-packages/#native-namespace-packages)
+- [Python Packaging Guide on native namespaces](https://packaging.python.org/en/latest/guides/packaging-namespace-packages/#native-namespace-packages)
 - [PEP 420 - Implicit Namespace Packages](https://peps.python.org/pep-0420/)
 ```
 
