@@ -28,6 +28,7 @@ jQuery
 libxslt
 middleware
 Mockup
+namespaces?
 npm
 nvm
 Pastanaga

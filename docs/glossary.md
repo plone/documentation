@@ -731,7 +731,7 @@ acquisition
     Acquisition is a mechanism that allows objects to inherit attributes from their parent objects in the object hierarchy.
 
 Varnish
-    [Varnish](https://varnish-cache.org) is a popular open source web accelerator that is used to implement HTTP caching.
+    [Varnish](https://vinyl-cache.org/) is a popular open source web accelerator that is used to implement HTTP caching.
 
 Content Delivery Network
 CDN
