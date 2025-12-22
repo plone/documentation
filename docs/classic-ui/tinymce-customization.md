@@ -220,11 +220,11 @@ See more information in the [TinyMCE licensing documentation](https://www.tiny.c
 If you have a TinyMCE license before version 8, read the important [License key migration documentation](https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/#license-key-system-update).
 
 
-### Setup commercial license key manager plugin
+### Commercial license key manager plugin
 
 Since we can't provide the license key manager plugin out of the box, because this is only shipped with a paid TinyMCE package, you have to provide the plugin in your own add-on package.
 
-See [Setting up the Commercial License Key Manager](https://www.tiny.cloud/docs/tinymce/latest/license-key/#setting-up-the-commercial-license-key-manager) for more information how to get the plugin.
+See [Setting up the Commercial License Key Manager](https://www.tiny.cloud/docs/tinymce/latest/license-key/#setting-up-the-commercial-license-key-manager) for more information of how to get the plugin.
 
 You have to provide the plugin file as a static resource and register it in {menuselection}`Site Setup --> TinyMCE --> Plugins and Toolbar -> Custom plugins` as shown.
 

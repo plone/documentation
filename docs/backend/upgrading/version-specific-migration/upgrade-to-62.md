@@ -94,8 +94,8 @@ You should rename your override to the new location if you no longer need compat
 
 ## TinyMCE 8 for Classic UI
 
-The WYSIWYG editor for Classic UI {glossary}`TinyMCE` was updated to Version 8.
+The {term}`WYSIWYG` editor for Classic UI, {glossary}`TinyMCE`, was updated to version 8.
 
-You are now able to provide your commercial license in the {menuitem}`TinyMCE controlpanel`.
+You're now able to enter your commercial license key in the {menuitem}`TinyMCE` control panel.
 
-See this {doc}`guide </classic-ui/tinymce-customizations>` for setup instructions.
+See {doc}`/classic-ui/tinymce-customizations` for setup instructions.
