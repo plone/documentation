@@ -89,6 +89,7 @@ linkcheck_ignore = [
     r"https://github.com/orgs/plone/teams/",
     r"https://github.com/plone/documentation/issues/new",
     r"https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset",
+    r"https://javascript.plainenglish.io/you-dont-need-lodash-how-i-gave-up-lodash-693c8b96a07c",
     # Ignore pages that are rate limited or otherwise blocked
     r"https://stackoverflow.com",
     r"https://www.npmjs.com/",
