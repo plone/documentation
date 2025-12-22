@@ -98,4 +98,4 @@ The {term}`WYSIWYG` editor for Classic UI, {glossary}`TinyMCE`, was updated to v
 
 You're now able to enter your commercial license key in the {menuitem}`TinyMCE` control panel.
 
-See {doc}`/classic-ui/tinymce-customizations` for setup instructions.
+See {doc}`/classic-ui/tinymce-customization` for setup instructions.
