@@ -395,6 +395,27 @@ print(f"my {a}nd line")
 ```
 ````
 
+
+### GUI-related roles
+
+Use the following MyST roles to document interactions with graphical user interfaces.
+
+#### `guilabel`
+
+Use the `guilabel` role to refer to labels in a graphical user interface, such as buttons, menu items, or tabs.
+
+```{example}
+Click the {guilabel}`Save` button to store your changes.
+```
+
+#### `menuselection`
+
+Use the `menuselection` role to describe a sequence of menu selections in a graphical user interface.
+
+```{example}
+Navigate to {menuselection}`File --> Preferences --> Settings`.
+```
+
 ### Tabs
 
 You can use [Sphinx Design](https://sphinx-design.readthedocs.io/en/latest/) to provide code examples or commands for multiple operating systems or software versions in a tabbed interface.

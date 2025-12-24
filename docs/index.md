@@ -23,7 +23,7 @@ This is the community-maintained documentation for the Plone content management 
 Get started
 ^^^
 This part of the documentation describes how to get started with Plone.
-Choose from a trying a demo of Plone or installing Plone.
+Choose from trying a demo of Plone or installing Plone.
 +++
 ```{button-ref} install/index
 :color: primary

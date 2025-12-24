@@ -31,7 +31,7 @@ Native namespaces are also referred to as implicit namespaces.
 The two terms mean the same.
 
 ```{seealso}
-- [Python Packaging Guide on native namespaces](https://packaging.python.org/en/latest/guides/.packaging-namespace-packages/#native-namespace-packages)
+- [Python Packaging Guide on native namespaces](https://packaging.python.org/en/latest/guides/packaging-namespace-packages/#native-namespace-packages)
 - [PEP 420 - Implicit Namespace Packages](https://peps.python.org/pep-0420/)
 ```
 
@@ -91,3 +91,11 @@ This is because we keep a mapping from the old to the new location.
 For example, `plone.locking` registers that `plone.locking.browser.info.pt` has a new location, `plone.app.layout.viewlets.locking.pt`.
 You should rename your override to the new location if you no longer need compatibility with Plone 6.1 or earlier.
 ```
+
+## TinyMCE 8 for Classic UI
+
+The {term}`WYSIWYG` editor for Classic UI, {term}`TinyMCE`, was updated to version 8.
+
+You're now able to enter your commercial license key in the {menuselection}`TinyMCE` control panel.
+
+See {doc}`/classic-ui/tinymce-customization` for setup instructions.
