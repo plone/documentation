@@ -60,7 +60,7 @@ The {file}`zope.conf` setting is not taken into account.
 
 To enable deprecation warnings, use the `-W` command.
 
-Given you're using a modern buildout with a virtual environment as recommended, the command would be the following
+Given you're using a modern buildout with a virtual environment as recommended, the command would be the following.
 
 ```shell
 ./bin/python -W module ./bin/test
