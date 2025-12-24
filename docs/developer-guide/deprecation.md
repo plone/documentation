@@ -23,38 +23,6 @@ For background on deprecation philosophy and use cases, see {doc}`/conceptual-gu
 This section describes how to enable deprecation warnings in Zope, Python, and tests.
 
 
-### Zope
-
-Zope configures logging and warnings, so the steps as described below in {ref}`deprecation-warning-python-label` aren't needed.
-
-Using `plone.recipe.zope2instance`, add the option `deprecation-warnings = on` to the buildout's `[instance]` section.
-
-```cfg
-[buildout]
-parts = instance
-
-[instance]
-recipe = plone.recipe.zope2instance
-# …
-deprecation-warnings = on
-# …
-```
-
-This adds the following line to the {file}`zope.conf` file.
-
-```cfg
-debug-mode on
-```
-
-Without the recipe, this can be set manually as well.
-In {file}`zope.conf`, define custom filters for warnings, such as the following example.
-
-```xml
-<warnfilter>
-    action always
-    category exceptions.DeprecationWarning
-</warnfilter>
-```
 
 
 (deprecation-warning-python-label)=
