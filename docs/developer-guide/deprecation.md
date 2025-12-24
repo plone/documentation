@@ -20,7 +20,7 @@ For background on deprecation philosophy and use cases, see {doc}`/conceptual-gu
 
 ## Enable deprecation warnings
 
-This section describes how to enable deprecation warnings in Zope, Python, and tests.
+This section describes how to enable deprecation warnings in Python, both in an interpreter and code, and when running tests.
 
 
 
