@@ -96,6 +96,6 @@ You should rename your override to the new location if you no longer need compat
 
 The {term}`WYSIWYG` editor for Classic UI, {term}`TinyMCE`, was updated to version 8.
 
-You're now able to enter your commercial license key in the {menuitem}`TinyMCE` control panel.
+You're now able to enter your commercial license key in the {menuselection}`TinyMCE` control panel.
 
 See {doc}`/classic-ui/tinymce-customization` for setup instructions.
