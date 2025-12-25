@@ -6,6 +6,7 @@ SHELL           = bash
 SPHINXOPTS      ?=
 PAPER           ?=
 VALEOPTS        ?=
+VALEFILES       ?= $(shell find -L $(DOCS_DIR) -type d \( -path $(DOCS_DIR)/plone.restapi/lib/* -o  -path $(DOCS_DIR)"/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
 
 # Internal variables.
 SPHINXBUILD     = "$(realpath venv/bin/sphinx-build)"
@@ -17,7 +18,6 @@ PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
-VALEFILES       := $(shell find -L $(DOCS_DIR) -type d \( -path $(DOCS_DIR)/plone.restapi/lib/* -o  -path $(DOCS_DIR)"/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
