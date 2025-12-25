@@ -155,3 +155,5 @@ genindex
 
 training/index
 ```
+![Dependency Diagram](image.png)
+![QR Code](qrcode_localhost.png)
