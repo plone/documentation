@@ -1,4 +1,91 @@
+ GNU nano 7.2                                            index.md
 ---
+myst:
+  html_meta:
+    "description": "Plone 6 overview"
+    "property=og:description": "Plone 6 overview"
+    "property=og:title": "Plone 6 overview"
+    "keywords": "Plone 6, overview"
+---
+
+(overview-label)=
+
+
+# Overview
+
+Plone is a content management system (CMS) that is well-known for its user-friendly interface and robust security featu>
+With Plone, even non-technical users can easily create and manage the content for a public website or intranet using on>
+Plone's intuitive interface and comprehensive set of features make it a popular choice for businesses, governments, uni>
+
+Plone has a long history and has been trusted by users around the world since its initial release on October 4, 2001.
+Over the years, Plone has undergone many improvements and enhancements, making it a highly mature and stable CMS.
+Additionally, Plone is supported by a strong community of users and developers who contribute to its ongoing success.
+
+Plone has the maturity, stability, and reliability of an application maintained by open source developers with decades >
+
+Lots of customizations can be made through-the-web, such as creating content types, themes, workflows, and much more.
+A full file system based development workflow is possible and recommended for team work and deployment, backed by sourc>
+                                                   [ Read 127 lines ]
+^G Help        ^O Write Out   ^W Where Is    ^K Cut         ^T Execute     ^C Location    M-U Undo       M-A Set Mark
+^X Exit        ^R Read File   ^\ Replace     ^U Paste       ^J Justify     ^/ Go T GNU nano 7.2                                            index.md
+---
+myst:
+  html_meta:
+    "description": "Plone 6 overview"
+    "property=og:description": "Plone 6 overview"
+    "property=og:title": "Plone 6 overview"
+    "keywords": "Plone 6, overview"
+---
+
+(overview-label)=
+
+
+# Overview
+
+Plone is a content management system (CMS) that is well-known for its user-friendly interface and robust security featu>
+With Plone, even non-technical users can easily create and manage the content for a public website or intranet using on>
+Plone's intuitive interface and comprehensive set of features make it a popular choice for businesses, governments, uni>
+
+Plone has a long history and has been trusted by users around the world since its initial release on October 4, 2001.
+Over the years, Plone has undergone many improvements and enhancements, making it a highly mature and stable CMS.
+Additionally, Plone is supported by a strong community of users and developers who contribute to its ongoing success.
+
+Plone has the maturity, stability, and reliability of an application maintained by open source developers with decades >
+
+Lots of customizations can be made through-the-web, such as creating content types, themes, workflows, and much more.
+A full file system based development workflow is possible and recommended for team work and deployment, backed by sourc>
+                                                   [ Read 127 lines ]
+^G Help        ^O Write Out   ^W Where Is    ^K Cut         ^T Execute     ^C Location    M-U Undo       M-A Set Mark
+^X Exit        ^R Read File   ^\ Replace     ^U Paste       ^J Justify     ^/ Go T GNU nano 7.2                                            index.md
+---
+myst:
+  html_meta:
+    "description": "Plone 6 overview"
+    "property=og:description": "Plone 6 overview"
+    "property=og:title": "Plone 6 overview"
+    "keywords": "Plone 6, overview"
+---
+
+(overview-label)=
+
+
+# Overview
+
+Plone is a content management system (CMS) that is well-known for its user-friendly interface and robust security featu>
+With Plone, even non-technical users can easily create and manage the content for a public website or intranet using on>
+Plone's intuitive interface and comprehensive set of features make it a popular choice for businesses, governments, uni>
+
+Plone has a long history and has been trusted by users around the world since its initial release on October 4, 2001.
+Over the years, Plone has undergone many improvements and enhancements, making it a highly mature and stable CMS.
+Additionally, Plone is supported by a strong community of users and developers who contribute to its ongoing success.
+
+Plone has the maturity, stability, and reliability of an application maintained by open source developers with decades >
+
+Lots of customizations can be made through-the-web, such as creating content types, themes, workflows, and much more.
+A full file system based development workflow is possible and recommended for team work and deployment, backed by sourc>
+                                                   [ Read 127 lines ]
+^G Help        ^O Write Out   ^W Where Is    ^K Cut         ^T Execute     ^C Location    M-U Undo       M-A Set Mark
+^X Exit        ^R Read File   ^\ Replace     ^U Paste       ^J Justify     ^/ Go T---
 myst:
   html_meta:
     "description": "Plone 6 overview"
@@ -125,3 +212,24 @@ Similarly, to develop for the new React frontend, you need to have some experien
 
 If you are looking for more study material on these technologies beyond the documentation, see and follow one or more [Plone Trainings](https://training.plone.org).
 Our trainings are more verbose and contain extra clarification and examples.
+## Dependency Visualization
+
+To better understand the relationships between Plone’s Python packages,
+a dependency graph was generated using the following tools:
+
+- `pipdeptree`
+- `pipforester`
+- `graphviz`
+
+This visualization helps identify direct and indirect dependencies,
+as well as cyclic dependencies, between core Plone packages and their
+dependencies. It can be useful for contributors who want to explore
+Plone’s internal package structure or analyze dependency complexity.
+```{figure} /_static/images/plone-dependencies.svg
+:alt: Plone Python dependency graph
+:width: 100%
+
+Dependency graph of Plone Python packages generated using
+`pipdeptree` and `pipforester`. Cyclic dependencies are detected
+and handled automatically.
+
