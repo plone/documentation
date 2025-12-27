@@ -29,6 +29,9 @@ The customized Barceloneta theme, creating a theme from scratch, and Diazo offer
 Barceloneta theme
 :   Ideal for a starting point, especially if you want to tweak it as an existing, solid theme.
     You can customize its components and styles without starting from zero.
+ > **Note:** When creating a new theme based on Barceloneta, you must give the theme a unique name. This includes renaming the theme folder and updating the `title` value in `manifest.cfg` before creating the ZIP file. Otherwise, uploading the theme may fail with an override error.
+
+
 
 From scratch
 :   If your project requires something completely unique and none of the existing themes fit, building a theme from scratch would be the way to go.
