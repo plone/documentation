@@ -1,3 +1,4 @@
+
 ---
 myst:
   html_meta:
@@ -155,8 +156,3 @@ genindex
 
 training/index
 ```
-## Dependency Diagram
-
-![Plone dependency diagram](_static/plone-dependencies.png)
-![QR Code](_static/qrcode_localhost.png)
-

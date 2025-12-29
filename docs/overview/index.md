@@ -233,3 +233,10 @@ Dependency graph of Plone Python packages generated using
 `pipdeptree` and `pipforester`. Cyclic dependencies are detected
 and handled automatically.
 
+## Python Dependency Diagram
+
+The following diagram shows the Python package dependencies for Plone.
+It was generated using `pipdeptree` and `pipforester` from a Plone
+installation in a virtual environment.
+
+![Plone dependency diagram](_static/plone-dependencies.png)
