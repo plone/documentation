@@ -22,17 +22,17 @@ This is recommended while developing a Plone site.
 The command you use depends on the installation method you used.
 
 Cookieplone:
-: ```shell
+:   ```shell
     make backend-start
     ```
 
 Buildout:
-: ```shell
+:   ```shell
     bin/instance fg
     ```
 
 pip:
-: ```shell
+:   ```shell
     bin/runwsgi instance/etc/zope.ini
     ```
 
@@ -44,7 +44,7 @@ For any of these commands, press {kbd}`ctrl-c` to stop the process.
 If you use the Volto frontend, you need to run the frontend in a separate process and terminal session.
 
 Cookieplone:
-: ```shell
+:   ```shell
     make frontend-start
     ```
 
@@ -54,14 +54,14 @@ For any of these commands, press {kbd}`ctrl-c` to stop the process.
 ## Start Plone as a background service
 
 Buildout:
-: `shell
+:   ```shell
     bin/instance start
     ```
 
 ## Stop Plone as a background service
 
 Buildout:
-: ```shell
+:   ```shell
     bin/instance stop
     ```
 
@@ -71,17 +71,17 @@ The debug console gives you a Python prompt with the Plone site's configuration 
 Use this for troubleshooting.
 
 Cookieplone:
-: ```shell
+:   ```shell
     make -C backend console
     ```
 
 Buildout:
-: ```shell
+:   ```shell
     bin/instance debug
     ```
 
 pip:
-: ```shell
+:   ```shell
     bin/zconsole debug instance/etc/zope.conf
     ```
 
