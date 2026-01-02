@@ -17,6 +17,7 @@ This part of the documentation helps you find the best way to get started with P
 :local: true
 ```
 
+
 (get-started-try-plone-label)=
 
 ## Try a Plone demo
@@ -24,13 +25,14 @@ This part of the documentation helps you find the best way to get started with P
 Choose a version to demo.
 
 https://volto.demo.plone.org/
-: Plone 6 with Volto frontend
+:  Plone 6 with Volto frontend
 
 https://demo.plone.org/
-: Plone 6 with Volto frontend and some add-ons, including Volto Light Theme, with content that demonstrates all the content types of Plone and blocks in Volto
+:  Plone 6 with Volto frontend and some add-ons, including Volto Light Theme, with content that demonstrates all the content types of Plone and blocks in Volto
 
 [https://classic.demo.plone.org/](https://classic.demo.plone.org/login?came_from=/en)
-: Plone 6 with Classic UI frontend
+:  Plone 6 with Classic UI frontend
+
 
 (get-started-install-label)=
 
@@ -46,18 +48,18 @@ If you are following a [Plone training](https://training.plone.org/), it should 
 ```
 
 {doc}`create-project-cookieplone`
-: This is the recommended way to install Plone with either Volto or Classic UI for a frontend.
+:  This is the recommended way to install Plone with either Volto or Classic UI for a frontend.
 
 {doc}`/admin-guide/install-buildout`
-: This is another way to install Plone with the Classic UI frontend, but not Volto.
-Using Buildout will be the most familiar way for admins who have experience with Plone 3, 4, or 5.
+:  This is another way to install Plone with the Classic UI frontend, but not Volto.
+   Using Buildout will be the most familiar way for admins who have experience with Plone 3, 4, or 5.
 
 {doc}`/admin-guide/install-pip`
-: This is another way to install Plone with the Classic UI frontend, but not Volto.
-It provides a basic installation without many additional tools to help with development.
+:  This is another way to install Plone with the Classic UI frontend, but not Volto.
+   It provides a basic installation without many additional tools to help with development.
 
 {doc}`Install Plone as a contributor </contributing/index>`
-: This option is for developers who want to contribute to Plone and its packages.
+:  This option is for developers who want to contribute to Plone and its packages.
 
 ## Related content
 
