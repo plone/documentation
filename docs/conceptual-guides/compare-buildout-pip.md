@@ -38,3 +38,8 @@ The choice of installation tool has implications for admins and developers.
 ```{seealso}
 [Proposal: Use pip constraints as canonical version location #3670](https://github.com/plone/Products.CMFPlone/issues/3670)
 ```
+
+## Related content
+
+-   {doc}`/admin-guide/install-buildout`
+-   {doc}`/admin-guide/install-pip`

@@ -70,3 +70,7 @@ For developers and integrators:
 
 ````
 `````
+## Related content
+
+-   {doc}`/volto/index`
+-   {doc}`/classic-ui/index`
