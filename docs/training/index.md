@@ -8,6 +8,6 @@ instructions.
 For supported and up-to-date installation methods, please refer to the
 authoritative Plone 6 documentation:
 
-https://6.docs.plone.org/install/
+{doc}`/install/index`
 
 See {doc}`training:index`.
