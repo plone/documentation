@@ -28,8 +28,7 @@ for root, dirs, files in os.walk(docs_dir):
     for name in files:
         if name.endswith(".md"):
             filename = os.path.join(root, name)
-            # print(filename)
-            with open(filename, "r+") as f:
+            with open(filename, "r+", encoding="utf-8") as f:
                 data = f.read()
                 if not data.startswith(metadata_check):
                     f.seek(0)

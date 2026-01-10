@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": ""
+    "property=og:description": ""
+    "property=og:title": ""
+    "keywords": ""
+---
+
 
 Your instance starts in foreground mode.
 This should be used only for troubleshooting or local demonstration purposes.

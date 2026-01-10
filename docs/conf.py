@@ -6,23 +6,17 @@
 
 from datetime import datetime
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath("."))
+
 
 
 # -- Project information -----------------------------------------------------
 
 project = "Plone Documentation"
-copyright = "Plone Foundation"
-author = "Plone community"
-trademark_name = "Plone"
 now = datetime.now()
 year = str(now.year)
+copyright = f"{year}, Plone Foundation"
+author = "Plone community"
+trademark_name = "Plone"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
