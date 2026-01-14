@@ -30,7 +30,7 @@ If not explicitly given, at the end a default view is looked up.
 This can be a registered page template, a callable view class, or a REST API endpoint.
 
 ```{seealso}
-{ref}`Chapter Views <classic-ui-views-label>`
+{doc}`/classic-ui/views`
 ```
 
 In code, traversal can be achieved by using the `restrictedTraverse` and `unrestrictedTraverse` methods of content objects.
@@ -87,3 +87,10 @@ For example, if object `A` contains object `B`, and object `A` has a property `x
 -   About traversal: [Zope Developers Handbook, Chapter Object Publishing](https://zope.readthedocs.io/en/latest/zdgbook/ObjectPublishing.html)
 -   About acquisition: [Zope Developers Handbook, Chapter Acquisition](https://zope.readthedocs.io/en/latest/zdgbook/Acquisition.html)
 ```
+
+## Related content
+
+-   {doc}`/backend/portal-actions`
+-   {doc}`/backend/security`
+-   {doc}`/classic-ui/views`
+

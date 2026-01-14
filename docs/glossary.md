@@ -401,7 +401,7 @@ DPI
     Screens typically contain 72 or 96 dots per inch.
 
     ```{seealso}
-    https://developer.mozilla.org/en-US/docs/Web/CSS/resolution#dpi
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/resolution#dpi
     ```
 
 Docker
@@ -533,7 +533,9 @@ Language Root Folder
 
 LIF
 Language Independent Folder
-    A folder containing static assets, such as images and files, for a given language.
+    A folder containing static assets, such as images and files, that are shared across all supported languages in a Plone site.
+    The folder's contents are independent of any language.
+    Contents added to such a folder in a given language tree will be automatically replicated to all other folders in different language trees.
 
 PO file
 `.po`
@@ -731,7 +733,7 @@ acquisition
     Acquisition is a mechanism that allows objects to inherit attributes from their parent objects in the object hierarchy.
 
 Varnish
-    [Varnish](https://varnish-cache.org) is a popular open source web accelerator that is used to implement HTTP caching.
+    [Varnish](https://vinyl-cache.org/) is a popular open source web accelerator that is used to implement HTTP caching.
 
 Content Delivery Network
 CDN
@@ -781,7 +783,7 @@ Prettier
 
 GitHub workflow
 GitHub workflows
-    A [GitHub workflow](https://docs.github.com/en/actions/writing-workflows) is a configurable automated process that will run one or more jobs.
+    A [GitHub workflow](https://docs.github.com/en/actions/how-tos/write-workflows) is a configurable automated process that will run one or more jobs.
 
 husky
     [Husky](https://typicode.github.io/husky/) automatically lints your commit messages, code, and runs tests upon committing or pushing commits to a remote repository.
@@ -817,7 +819,7 @@ Transport Layer Security
     Transport Layer Security (TLS) is a cryptographic protocol designed to provide communications security over a computer network.
 
     ```{seealso}
-    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security) article from MDN.
+    [Transport Layer Security](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Transport_Layer_Security) article from MDN.
     ```
 
 TLS termination proxy

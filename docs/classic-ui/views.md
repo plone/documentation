@@ -38,7 +38,7 @@ This enhances readability and makes components more reusable.
 You can override the Python logic, the template file, or both.
 
 When you work with Plone, the most common view type is `BrowserView` from the package [`Products.Five`](https://github.com/zopefoundation/Zope/blob/master/src/Products/Five/doc/manual.txt).
-Other view types include `DefaultView` from [`plone.dexterity`](https://github.com/plone/plone.dexterity/blob/master/plone/dexterity/browser/view.py) and `CollectionView` from [`plone.app.contenttypes`](https://github.com/plone/plone.app.contenttypes/blob/master/plone/app/contenttypes/browser/collection.py).
+Other view types include `DefaultView` from [`plone.dexterity`](https://github.com/plone/plone.dexterity/blob/master/src/plone/dexterity/browser/view.py) and `CollectionView` from [`plone.app.contenttypes`](https://github.com/plone/plone.app.contenttypes/blob/master/src/plone/app/contenttypes/browser/collection.py).
 
 Each `BrowserView` class is a Python callable.
 The `BrowserView.__call__()` method acts as an entry point to executing the view code.
@@ -255,7 +255,7 @@ Add the name of the new view `my-view` to the following list:
 ### Template slots
 
 In the generated template above, we have a `fill-slot` attribute.
-This will fill the slot with the name `content-core`, which is defined in Plone's [`main_template`](https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/browser/templates/main_template.pt).
+This will fill the slot with the name `content-core`, which is defined in Plone's [`main_template`](https://github.com/plone/Products.CMFPlone/blob/master/src/Products/CMFPlone/browser/templates/main_template.pt).
 The following list shows the available options for `<metal fill-slot="">` in your template.
 
 ```{note}
@@ -1121,3 +1121,9 @@ return self.obj.absolute_url()  # Acquistion chain messed up, getPhysicalPath() 
 ```
 
 One workaround to avoid this mess is to use `aq_inner` when accessing `self.obj` values, as described in [Dealing with view implicit acquisition problems in Plone](https://stackoverflow.com/questions/11753940/dealing-with-view-implicit-acquisition-problems-in-plone/11755348#11755348).
+
+## Related content
+
+-   {doc}`/classic-ui/layers`
+-   {doc}`/classic-ui/templates`
+-   {doc}`/classic-ui/viewlets`

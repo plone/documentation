@@ -123,6 +123,8 @@ img_obj = api.content.create(
 
 
 
+(backend-fields-relation-fields-label)=
+
 ### Fields in `z3c.relationfield.schema`
 
 See [`z3c.relationfield`](https://pypi.org/project/z3c.relationfield/) for more details.
@@ -363,3 +365,10 @@ In supermodel XML, the directives are `security:read-permission` and
     <title>Secret</title>
 </field>
 ```
+
+## Related content
+
+-   {doc}`/backend/schemas`
+-   {doc}`/backend/content-types/index`
+-   {doc}`/backend/vocabularies`
+-   {doc}`/backend/relations`

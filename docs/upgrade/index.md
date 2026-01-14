@@ -19,6 +19,7 @@ Plone has several components, each of which have their own upgrade guides:
 
 For Plone 6 the most relevant guides are:
 
+-   {doc}`../backend/upgrading/version-specific-migration/upgrade-to-62`
 -   {doc}`../backend/upgrading/version-specific-migration/upgrade-to-61`
 -   {doc}`../backend/upgrading/version-specific-migration/upgrade-to-60`
 -   {doc}`../backend/upgrading/version-specific-migration/migrate-to-volto`

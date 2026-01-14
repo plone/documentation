@@ -15,7 +15,7 @@ This chapter provides guidance to first-time contributors to Plone and all its p
 
 ```{important}
 For free support, training, guidance, or mentoring, you should work through some [trainings](https://training.plone.org/), ask questions in the [Plone Community Forum](https://community.plone.org/), participate in an [event](https://plone.org/news-and-events/events), and **do not use GitHub**.
-Members of the Plone organization may delete comments, lock conversations, or block GitHub users who ignore this.
+Members of the Plone organization may delete comments, lock conversations, or suspend or block GitHub users who ignore this.
 ```
 
 
@@ -67,9 +67,22 @@ Such motivation behind these contributions usually results in poor quality break
 ## Requirements
 
 All first-time contributors to Plone must follow the contributing requirements described in {doc}`index`.
-Although you can open a pull request at any time, Plone Team members may ignore it until, or close it unless, you satisfy the contributing requirements.
+You must also follow the contributing requirements described in this chapter.
 
+````{danger}
+Failure to follow these contributing requirements may result in your suspension or banishment from the Plone GitHub organization.
+
+```{note}
+Although that may seem severe, this policy is in place to protect the existing contributors in the Plone Community from the flood of first-time contributors who don't follow our guidelines.
+As new contributors, we welcome you to join the Plone party, as long as you don't 💩 on the dance floor.
+```
+````
+
+```{warning}
 For [Plone Google Summer of Code (GSoC)](https://plone.org/community/gsoc) applicants, you must also follow both our and its program guidelines.
+Additionally, it will prevent you from being selected to participate in GSoC.
+Check each year's program guidelines for details.
+```
 
 
 (contributing-make-contributions-through-github-label)=
@@ -98,6 +111,9 @@ Learn from their mistakes, and don't commit them yourself.
     (mistake-2-label)=
 
 2.  **Avoid duplicate effort.**
+    Search for existing issues and pull requests that match your description.
+    Don't create a new issue or pull request if one already exists.
+
     Don't work on issues that have already been claimed or worked on, unless such effort has been abandoned by the author.
     Use GitHub's interface to view related issues, pull requests, and who is assigned to an issue.
     If it is not clear whether an issue has been claimed or abandoned, you may ask by posting a comment such as, "Is anyone working on this issue?"
@@ -150,12 +166,33 @@ Please don't be "that person".
 ### Work with GitHub issues
 
 1.  **Find issues that you want to work on.**
-    You can filter GitHub issues by labels.
+    You can filter GitHub issues by labels and projects.
     Working on documentation or on issues labeled with either [`33 needs: docs`](https://github.com/search?q=user%3Aplone+label%3A%2233+needs%3A+docs%22&type=issues&ref=advsearch) or [`41 lvl: easy`](https://github.com/search?q=user%3Aplone+label%3A%2241+lvl%3A+easy%22&type=Issues&ref=advsearch) are the two best ways for first-time contributors to contribute.
     This is because first-timers have a fresh perspective that might be overlooked by old-timers.
     
-    Issues labeled `42 lvl: moderate`, `43 lvl: complex`, or `03 type: feature (plip)` are not suitable for first-timers because of their complexity.
+    ```{warning}
+    Don't write code or documentation for issues with any of the following labels.
+    
+    Issues with any of the following labels are not suitable for first-timers because of their complexity.
     Issues with these labels may take weeks to complete.
+
+    -   {guilabel}`42 lvl: moderate`
+    -   {guilabel}`43 lvl: complex`
+    -   {guilabel}`03 type: feature (plip)`
+    -   {guilabel}`06 type: plip task`
+
+    Don't work on any issue in the following projects.
+    
+    -   {guilabel}`Project: Seven`
+
+    Issues with any of the following labels are not ready to develop.
+    They must be verified, discussed, and clarified before work can begin.
+    You may verify them, which is a helpful way to move the issue forward, but you should not write code or documentation for them until a clear plan of action has been established in the issue.
+    
+    -   {guilabel}`30 needs: triage`
+    -   {guilabel}`30.1 needs: confirmation`
+    ```
+
 1.  **Discuss whether you should perform any work.**
     First see {ref}`Avoid duplicate effort <mistake-2-label>`.
     Next, any discussion method listed below is acceptable, and they are listed in the order of most likely to get a response.

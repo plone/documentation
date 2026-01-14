@@ -248,7 +248,7 @@ To scale an image, you can use the `mode` parameter to control the scaling outpu
 You must use either `width` or `height`, or both.
 
 Three different scaling options are supported.
-They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size) values.
+They correspond to the CSS [`background-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/background-size) values.
 
 The possible options for `mode` are listed below, where the default option is `scale`.
 
@@ -279,6 +279,7 @@ These views help developers verify image scaling, `srcset` generation, and explo
 These views work on image content types, including images and documents with images.
 
 Append the view name `/@@images-test` to an image URL, optionally followed by an anchor, such as `#srcset`, for specific sections.
+You must be authenticated as a site admin to view this demo.
 
 For example, on the Classic UI demo site, the URL would be https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset.
 
@@ -371,7 +372,7 @@ To access image scales, which are normally not accessible to the current user, o
 ## Responsive image support
 
 Plone supports the generation of [`picture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture) tags with `srcset`s for image optimization.
-Additionally, you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
+Additionally, you can define [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using) for [art direction](classic-ui-images-responsive-image-support-art-direction) and further optimization.
 
 The configuration allows you to define different `picture` variants, such as `Large`, `Medium`, or `Small`.
 Users can choose from them in editors, such as TinyMCE, and developers can use them in templates.

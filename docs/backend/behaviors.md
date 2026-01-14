@@ -378,3 +378,9 @@ The [README file of `plone.behavior`](https://github.com/plone/plone.behavior/bl
 Plone content objects have logic to look up the behaviors' names registered from their types' configuration, the {term}`Factory Type Information` (FTI).
 At runtime, the logic provides the interface (or marker) from the behavior to the object.
 This dynamically provided interface enables the component architecture to react to this new interface by adding additional form fields, bindings events, enabling more specific views, and more.
+
+## Related content
+
+-   {doc}`/backend/content-types/index`
+-   {doc}`/backend/schemas`
+-   {doc}`/backend/fields`

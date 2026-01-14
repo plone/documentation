@@ -61,7 +61,7 @@ minions = RelationList(
 )
 ```
 
-We can see that the [code for the behavior `IRelatedItems`](https://github.com/plone/plone.app.relationfield/blob/master/plone/app/relationfield/behavior.py) does exactly the same thing.
+We can see that the [code for the behavior `IRelatedItems`](https://github.com/plone/plone.app.relationfield/blob/master/src/plone/app/relationfield/behavior.py) does exactly the same thing.
 
 
 (relations-controlling-relation-targets-label)=
@@ -643,3 +643,10 @@ Thus the API for getting the target uses:
 In addition, the relation value knows under which attribute it has been stored as `from_attribute`.
 It is usually the name of the field with which the relation is created.
 But it can also be the name of a relation that is created by code, for example, through link integrity relations (`isReferencing`) or the relation between a working copy and the original (`iterate-working-copy`).
+
+## Related content
+
+-   {doc}`/backend/schemas`
+-   {ref}`backend-fields-relation-fields-label`
+-   {doc}`/backend/content-types/index`
+-   {doc}`/backend/vocabularies`
