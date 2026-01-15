@@ -17,86 +17,78 @@ This section explains how a developer can create an {term}`add-on` for the Plone
 
 Follow the section {ref}`create-project-cookieplone-system-requirements` to set up your system.
 
-## Generate the add-on project with `cookieplone`
+## Generate the add-on project with `plonecli`
 
-To develop an add-on for backend and/or Classic-UI, run the following command to generate your add-on project using the `backend_addon` Cookieplone template.
-See {doc}`plone:install/create-project-cookieplone` for details of the latter scenario.
-The following output assumes the former scenario.
+Choose your desired local development base folder and run the following command to create an addon project with `plonecli`
 
 ```shell
-uvx cookieplone backend_addon
+uvx plonecli create addon <addon namespace package>
 ```
 
 ```console
-> uvx cookieplone backend_addon
-╭──────────────────────────────── cookieplone ─────────────────────────────────╮
-│                                                                              │
-│                                   *******                                    │
-│                               ***************                                │
-│                             ***             ***                              │
-│                           ***    ***          ***                            │
-│                          ***    *****          ***                           │
-│                         ***      ***            ***                          │
-│                         ***               ***   ***                          │
-│                         ***              *****  ***                          │
-│                         ***      ***      ***   ***                          │
-│                          ***    *****          ***                           │
-│                           ***    ***          ***                            │
-│                             ***             ***                              │
-│                               ***************                                │
-│                                   *******                                    │
-│                                                                              │
-╰──────────────────────────────────────────────────────────────────────────────╯
-You've downloaded /Users/<username>/.cookiecutters/cookieplone-templates before. Is
-it okay to delete and re-download it? [y/n] (y):
-╭──────────────────────────────── Plone Addon ─────────────────────────────────╮
-│                                                                              │
-│ Creating a new Plone Addon                                                   │
-│                                                                              │
-│ Sanity check results:                                                        │
-│                                                                              │
-│   - Cookieplone: ✓                                                           │
-│   - uv: ✓                                                                    │
-│   - git: ✓                                                                   │
-│                                                                              │
-╰──────────────────────────────────────────────────────────────────────────────╯
-  [1/10] Addon Title (Addon):
-  [2/10] A short description of your addon (A new addon for Plone):
-  [3/10] Author (Plone Community):
-  [4/10] Author E-mail (collective@plone.org):
-  [5/10] GitHub Username or Organization (collective):
-  [6/10] Should we use prerelease versions? (No):
-  [7/10] Plone Version (6.1.3):
-  [8/10] Python package name (collective.addon):
-  [9/10] Support headless Plone?
-    1 - Yes
-    2 - No
-    Choose from [1/2] (1):
-  [10/10] Would you like to add a documentation scaffold to your project?
-    1 - Yes
-    2 - No
-    Choose from [1/2] (1):
- -> Remove files used in classic UI setup
- -> Create namespace packages
- -> Format code
- -> Initialize Git repository
- -> Generate documentation scaffold
-╭────────────────────────── New addon was generated ───────────────────────────╮
-│                                                                              │
-│ Addon                                                                        │
-│                                                                              │
-│ Now, enter the repository, start coding, and push to your organization.      │
-│                                                                              │
-│ Sorry for the convenience,                                                   │
-│ The Plone Community.                                                         │
-│                                                                              │
-│ https://plone.org/                                                           │
-╰──────────────────────────────────────────────────────────────────────────────╯
+> uvx plonecli create addon collective.addon
+RUN: bobtemplates.plone:addon -O collective.addon
+
+Welcome to mr.bob interactive mode. Before we generate directory structure,
+some questions need to be answered.
+
+Answer with a question mark to display help.
+Values in square brackets at the end of the questions show the default value if
+there is no answer.
+
+
+--> Package description [An add-on for Plone]:
+
+--> Plone version [6.0.0]:
+
+--> Python version for virtualenv [python3]:
+
+--> Do you want me to activate VS Code support? (y/n) [y]:
+
+
+
+isort-apply: successful:
+isort-apply: install_deps> python -I -m pip install isort -c constraints.txt
+isort-apply: commands[0]> isort /Users/<username>/Development/collective.addon/src
+/Users/<username>/Development/collective.addon/setup.py
+Fixing /Users/<username>/Development/collective.addon/src/collective/addon/testing.py
+Fixing /Users/<username>/Development/collective.addon/src/collective/addon/tests/test_setup.py
+  isort-apply: OK (2.57=setup[1.94]+cmd[0.63] seconds)
+  congratulations :) (2.59 seconds)
+
+
+Identified `/` as project root containing a file system root.
+Sources to be formatted: "Users/<username>/Development/collective.addon/src",
+  "Users/<username>/Development/collective.addon/setup.py"
+src/collective/__init__.py wasn't modified on disk since last run.
+src/collective/addon/browser/__init__.py wasn't modified on disk since last run.
+src/collective/addon/locales/__init__.py wasn't modified on disk since last run.
+src/collective/addon/tests/__init__.py wasn't modified on disk since last run.
+src/collective/addon/interfaces.py already well formatted, good job.
+reformatted src/collective/addon/__init__.py
+reformatted src/collective/addon/setuphandlers.py
+reformatted src/collective/addon/testing.py
+reformatted setup.py
+reformatted src/collective/addon/locales/update.py
+reformatted src/collective/addon/tests/test_setup.py
+
+All done! ✨ 🍰 ✨
+6 files reformatted, 5 files left unchanged.
+
+black-enforce: successful:
+black-enforce: install_deps> python -I -m pip install black -c constraints.txt
+black-enforce: commands[0]> black -v src setup.py
+  black-enforce: OK (2.60=setup[2.12]+cmd[0.48] seconds)
+  congratulations :) (2.61 seconds)
+
+
+git init is disabled!
+Generated file structure at /Users/<username>/Development/collective.addon/collective.addon
 ```
 
-Cookieplone creates a folder with the name of the add-on, in this example, `collective.addon`.
+Plonecli creates a folder with the name of the add-on, in this example, `collective.addon`.
 
-You can now continue to add subtemplates to your addon {ref}`create-a-backend-add-on-add-subtemplate-label`
+You can now continue to add subtemplates to your addon.
 
 
 (create-a-backend-add-on-add-subtemplate-label)=
