@@ -215,7 +215,7 @@ For a somewhat more recent example, see {doc}`training-2023:mastering-plone-5/vi
 ```python
 """
 Facebook like viewlet for Plone.
-http://mfabrik.com
+https://mfabrik.com
 """
 
 import urllib
