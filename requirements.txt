@@ -4,6 +4,7 @@ sphinx-autobuild
 sphinx-copybutton
 sphinx-design  # Documentation only
 sphinx-examples
+sphinx-llms-txt
 sphinx-notfound-page  # Documentation only
 sphinx-reredirects
 sphinx-sitemap
