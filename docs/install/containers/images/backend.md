@@ -75,7 +75,7 @@ docker run -p 8081:8081 -e LISTEN_PORT=8081 plone/plone-backend:{PLONE_BACKEND_M
 
 By default, the container checks permissions on `/data` to ensure the `plone` user can write to it.
 On large datasets, this `find` command can take a long time.
-If you are confident that permissions are correct, set `SKIP_FIND_AND_CHOWN` (to any value) to skip this step and speed up startup.
+If you are confident that permissions are correct, set `SKIP_FIND_AND_CHOWN` to any value to skip this step and speed up startup.
 
 ### Site creation variables
 
