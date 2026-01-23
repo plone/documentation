@@ -382,6 +382,47 @@ Now you can edit content or configure your Plone site.
 You can stop the site with {kbd}`ctrl-c`.
 
 
+(troubleshooting-volto-frontend-access-from-other-machine-label)=
+
+### Troubleshooting frontend access from another machine
+
+When developing Plone with Volto on a remote server, virtual machine (VM), Windows Subsystem for Linux (WSL), or any environment where you access the frontend from a different machine than where it runs, you may encounter a problem where the page loads but CSS styles are missing.
+
+This happens because the frontend development server references `localhost` for Hot Module Replacement (HMR) assets.
+When accessing from another machine, the browser tries to load CSS and JavaScript from `localhost:3001` on the remote machine, which fails.
+
+
+#### Solution
+
+Set the `HOST` environment variable to the IP address or hostname of the server when starting the frontend.
+
+```shell
+HOST=<your-server-ip> make frontend-start
+```
+
+For example, if your server's IP address is `192.168.1.100`:
+
+```shell
+HOST=192.168.1.100 make frontend-start
+```
+
+The frontend will start and display output similar to the following.
+
+```console
+✅  Server-side HMR Enabled!
+API server (API_PATH) is set to: http://192.168.1.100:3000
+Proxying API requests from http://192.168.1.100:3000/++api++ to http://localhost:8080/Plone
+🎭 Volto started at 0.0.0.0:3000 🚀
+```
+
+Now you can access the Plone frontend from another machine using the server's IP address, for example, `http://192.168.1.100:3000`.
+
+```{note}
+If you still cannot access the frontend from another machine, check that your firewall allows incoming connections on ports `3000` and `3001`.
+Port `3001` is used for Hot Module Replacement (HMR) during development.
+```
+
+
 (install-cookieplone-generate-classic-project-label)=
 
 ## Create a Classic UI project
