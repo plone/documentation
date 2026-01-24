@@ -33,7 +33,6 @@ schemas
 search
 security
 sending-email
-subscribers
 traversal-acquisition
 users-groups
 vocabularies
