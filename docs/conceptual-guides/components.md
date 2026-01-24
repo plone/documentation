@@ -167,40 +167,174 @@ A global utility is constructed when Plone is started and ZCML is read. (needs V
 A local component is either a persistent object in the ZODB or constructed when (TODO: When? Traversal time? Lookup time?)
 ```
 
-```{note}
-If you need to use parameters, such as context or request, consider using views or adapters instead.
-```
 
 To learn about some important utilities in Plone, read the chapter {doc}`/backend/global-utils`.
 
 
-```{todo}
-The rest of this chapter is a work in progress and an outline of great things to come.
-Pull requests are welcome!
-```
-
 ### Adapters
 
-- general
-- views, viewlets
-- forms
-- overriding
-  - adapters
-  - utilities
-  - views
+Adapters are a core part of the {term}`Zope Component Architecture` (ZCA).
+They allow you to extend or change the behavior of an object without modifying its class.
+They map one interface to another, allowing objects to gain new behavior without changing their original class.
+By moving functionality out of the class and into adapters, Plone achieves loose coupling and a highly modular design, where components depend on interfaces rather than concrete implementations.
+
+There are two kinds of adapters:
+
+Normal Adapters
+
+Normal adapters adapt a single object and are used when behavior depends on just one context. They are commonly applied to content objects to add computed values, helper methods, or additional behavior without modifying the original class. Because they deal with only one parameter, they are simple, lightweight, and easy to understand.
+
+Multi-Adapters
+
+Multi-adapters adapt multiple objects at once, passed as a tuple of parameters. They are used when behavior depends on more than one context, such as the content object, the current request, or the active view. 
+
+
+#### Views, Viewlets
+
+In Plone, views and viewlets are implemented as adapters.
+
+Views:
+
+In Plone, views are implemented as multi-adapters that adapt both the context (the content object being viewed) and the request (the current HTTP request). Their main responsibility is to produce rendered output, such as HTML pages, JSON responses for APIs, or other representations of content. Views are registered using ZCML, which allows them to be cleanly integrated into the system and easily replaced or customized. Because views are adapters, they can be overridden by registering another view with the same name and interfaces, making it possible to change or extend behavior without modifying any core Plone code.
+
+Viewlets:
+
+Viewlets, on the other hand, are small, reusable user interface components that together make up a page layout, such as headers, footers, navigation elements, or portlets. A viewlet is a more complex multi-adapter that adapts the context, request, the current view, and a viewlet manager, which controls where and how the viewlet is rendered on the page. This design allows viewlets to be highly flexible and context-aware. Themes and add-ons commonly override viewlet adapters to customize the look, placement, or behavior of specific UI elements, again without changing Plone’s core templates or logic.
+
+
+#### Forms
+
+Adapters play a central role in schema-driven forms in Plone. Rather than embedding logic directly inside form or field classes, Plone uses adapters to control field behavior, select appropriate widgets, apply validators, and perform data conversion between user input and stored values. This design brings several important benefits: form logic becomes highly reusable, behavior can be customized per content type or context, and developers can alter or extend form behavior without subclassing forms directly. As a result, forms remain clean, flexible, and easy to maintain, even in large and complex Plone applications.
+
+
+#### Overriding
+
+Plone allows behavior to be overridden without modifying core code, mainly through adapters and ZCML load order. This keeps customizations clean and upgrade-safe.
+
+##### Overriding Adapters
+
+Adapters are overridden by registering a new adapter with the same required and provided interfaces. The last loaded adapter wins, making this approach common in add-ons and themes for changing business logic or content-specific behavior.
+
+##### Overriding Utilities
+
+Utilities are global, context-independent services. They are overridden by re-registering the same interface and are typically used for configuration and core services like mail or search.
+
+##### Overriding Views
+
+Views can be overridden by:
+
+Views can be overridden by registering a new view with the same name and controlling ZCML order. This is widely used for custom templates, API changes, and theme customization—all without touching core code.
 
 
 ### Lookup
 
-- lookup adapter
-  - using the Interface as abstract factory
-  - using the API
-  - IRO, names ...
-- lookup an utility, names, singletons and factory based
+Lookup is the dynamic process of retrieving an adapter or utility from the component registry.
+The registry matches the requested interface against registered factories or components.
+
+#### Lookup an adapter
+
+There are two main ways to look up adapters.
+
+Using the interface as an abstract factory
+:   The notation `IMyInterface(context)` is shorthand for `getAdapter(context, IMyInterface)`.
+    It uses the interface as an abstract factory and returns the adapted object.
+
+Using the API
+:   Use `zope.component.getAdapter()` or `zope.component.getMultiAdapter()` when you want an error if no adapter is found.
+    Use `queryAdapter()` or `queryMultiAdapter()` when you want `None` instead.
+
+
+For multi-adapters, pass a tuple of objects in the order declared in the registration:
+
+
+##### Interface Resolution Order (IRO) and names
+
+Adapter lookups consider the interfaces provided by the context in interface resolution order (IRO).
+More specific interfaces win over more general ones.
+
+Named adapters allow multiple implementations for the same required/provided interfaces.
+You can pass a `name` to `getAdapter()` or `queryAdapter()` to select a specific implementation.
+
+
+
+#### Lookup a utility
+
+Utilities are looked up by provided interface and optional name.
+
+Use `getUtility()` when you want an error if the utility is not found.
+Use `queryUtility()` when you want `None` instead.
+
+
+To list utilities, use `getUtilitiesFor()` or `getAllUtilitiesRegisteredFor()`:
+
+
+#### Global and local lookup
+
+Lookups use the current site manager.
+In a Plone site, the local component registry is active and falls back to the global registry when needed.
+Outside a site context, lookups use the global registry.
+
 
 
 ### Events and Subscribers
 
-- general zope events
-- lifecycle events
-- important events in plone
+Events are objects that represent something happening in the system.
+Subscribers (event handlers) are callables that react to those events.
+Plone uses `zope.event` and the Zope Component Architecture to register and dispatch subscribers.
+
+#### General Zope events
+
+Events are interface-driven.
+Subscribers are registered for a combination of object interface and event interface.
+When an event is notified, all matching subscribers are called.
+
+
+#### Lifecycle events
+
+The most common lifecycle events in Plone come from `zope.lifecycleevent`, such as:
+
+`IObjectCreatedEvent`
+:   Fired when a new object is created.
+    Often used to set defaults, initialize metadata, or attach related content.
+
+`IObjectModifiedEvent`
+:   Fired when an object is modified.
+    Use it to react to data changes (for example, reindexing or updating derived fields).
+
+`IObjectMovedEvent`
+:   Fired when an object is moved or renamed.
+    Useful for updating references, breadcrumbs, or paths stored elsewhere.
+
+`IObjectRemovedEvent`
+:   Fired when an object is removed.
+    Use it to clean up external resources or related objects.
+
+`IObjectCopiedEvent`
+:   Fired when an object is copied.
+    You can use it to adjust IDs, titles, or external references on the new copy.
+
+#### Important events in Plone
+
+Plone adds a few events you may need to handle explicitly:
+
+Workflow events
+:   `Products.DCWorkflow.interfaces.IBeforeTransitionEvent` is fired before a workflow transition is executed.
+    It is useful for validation, veto logic, or preparing state changes.
+    `Products.DCWorkflow.interfaces.IAfterTransitionEvent` is fired after the transition completes,
+    and is commonly used for side effects such as notifications or reindexing.
+    `Products.CMFCore.interfaces.IActionSucceededEvent` is a higher-level event that signals a completed action,
+    and is often easier to use for general workflow reactions.
+
+Local roles change event
+:   `LocalrolesModifiedEvent` is triggered when local roles are updated, for example in the sharing view.
+    Use it to update cached permissions, invalidate security-related indexes, or refresh UI state.
+    If your add-on depends on local roles or sharing changes, subscribe to this event.
+
+Login and logout events
+:   `Products.PlonePAS.events.UserLoggedInEvent` and
+    `Products.PlonePAS.events.UserLoggedOutEvent` are fired on successful login and logout.
+    They are useful for audit trails, login/logout hooks, cleanup tasks, or session initialization.
+
+Modification date handling
+:   Dexterity updates the modification date when objects are modified.
+    If your subscriber changes data, be aware that it may update the modification timestamp and trigger more events.
