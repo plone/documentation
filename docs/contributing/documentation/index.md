@@ -69,12 +69,13 @@ Plone documentation consists of several repositories.
 -   [`plone.api`](https://github.com/plone/plone.api)
 -   [`plone.restapi`](https://github.com/plone/plone.restapi)
 -   [`volto`](https://github.com/plone/volto)
+-   [`diazo`](https://github.com/plone/diazo)
 
 [`documentation`](https://github.com/plone/documentation) is the primary repository.
 When you {doc}`setup and build <setup-build>` the documentation, it will automatically pull in the other repositories via git submodules.
 
 ```{important}
-We currently use the branches `plone/documentation@6.0`, `plone/plone.api@main`, `plone/plone.restapi@main`, and `plone/volto@main` as the default branches for developing Plone 6 Documentation.
+We currently use the branches `plone/documentation@6.0`, `plone/plone.api@main`, `plone/plone.restapi@main`, `plone/volto@main`, and `plone/diazo@main` as the default branches for developing Plone 6 Documentation.
 ```
 
 
@@ -241,7 +242,7 @@ This section describes how to make contributions to files in the `plone/document
 
 ### Editing external package documentation
 
-To edit documentation of imported external packages, including `plone/plone.api`, `plone/plone.restapi`, and `plone/volto`, the process is slightly different.
+To edit documentation of imported external packages, including `plone/plone.api`, `plone/plone.restapi`, `plone/volto`, and `plone/diazo`, the process is slightly different.
 Plone Documentation uses git submodules to manage multiple repositories.
 You already imported the external repositories into the `plone/documentation` repository as described in {doc}`setup-build`.
 
@@ -252,6 +253,7 @@ You already imported the external repositories into the `plone/documentation` re
     cd submodules/plone.api/docs
     cd submodules/plone.restapi/docs/source
     cd submodules/volto/docs/source
+    cd submodules/diazo/docs
     ```
 
 1.  Sync your local development branch with its remote.
