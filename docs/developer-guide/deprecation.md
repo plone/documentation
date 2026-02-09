@@ -191,7 +191,7 @@ def deprecate_profile_some_confusing_name(tool):
     )
 ```
 
-### Deprecate a template position
+### Deprecate a template location
 
 Sometimes you need to move templates to new locations.
 Since add-ons often use [`z3c.jbot`](https://github.com/zopefoundation/z3c.jbot) to override templates by their position, you'll need to point them to the new position as well as make sure that the override still works with the old position.
