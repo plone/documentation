@@ -19,25 +19,20 @@ It provides XML-based rules to change the site settings.
 remove archetypes example code everywhere
 ```
 
+GenericSetup is mainly used to prepare the Plone site for add-on packages, by:
 
-## Introduction
-
-GenericSetup is an XML-based way to import and export Plone site configurations.
-
-It is mainly used to prepare the Plone site for add-on packages, by:
-
-- registering Registry entries (resources, configuration, etc)
-- setting various properties,
-- registering portlets,
-- registering portal_catalog search query indexes,
-- providing upgrade steps for addon version upgrades
-- ... etc ...
+-   registering Registry entries, such as resources and configuration
+-   setting various properties
+-   registering portlets
+-   registering portal_catalog search query indexes
+-   providing upgrade steps for addon version upgrades
+-   and other preparations
 
 GenericSetup is mostly used to apply an add-on's specific changes to the site configuration and to enable specific behaviors when the add-on installer is run.
 
-GenericSetup XML files are usually in a `profiles/default` folder inside the add-on package.
+GenericSetup XML files are usually in a {file}`profiles/default` folder inside the add-on package.
 
-All run-time through-the-web ({term}`TTW`) configurable items  (for example viewlets order through `/@@manage-viewlets` page) are made repeatable using GenericSetup profile files.
+All run-time through-the-web ({term}`TTW`) configurable items—for example, viewlet order through the `/@@manage-viewlets` page—are made repeatable using GenericSetup profile files.
 
 You can always change the configuration options through Plone or using the Management Interface, and then you export the resulting profile as an XML file, using the *Export* tab in `portal_setup` accessible from the Management Interface.
 
