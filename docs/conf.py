@@ -56,6 +56,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_examples",
+    "sphinx_llms_txt",
     "sphinx_reredirects",
     "sphinx_sitemap",
     "sphinx_tippy",
@@ -204,8 +205,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
         {
             "name": "Mastodon",
@@ -215,8 +216,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
         {
             "name": "YouTube",
@@ -226,8 +227,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
         {
             "name": "X (formerly Twitter)",
@@ -237,8 +238,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
     ],
     "logo": {
@@ -382,7 +383,14 @@ ogp_custom_meta_tags = [
 todo_include_todos = True
 
 
-# -- Options for sphinx-notfound-page ----------------------------------
+# -- sphinx-llms-txt ----------------------------------
+llms_txt_exclude = [
+    "search",  # Exclude the search page
+    "genindex",  # Exclude the index page
+]
+
+
+# -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
@@ -408,7 +416,7 @@ redirects = {
 }
 
 
-# -- Options for sphinx_sitemap to HTML -----------------------------
+# -- sphinx_sitemap configuration -----------------------------
 
 # Used by sphinx_sitemap to generate a sitemap
 html_baseurl = "https://6.docs.plone.org/"
@@ -453,6 +461,7 @@ latex_logo = "_static/logo_2x.png"
 
 # --  Configuration for source_replacements extension -----------------------
 
+
 # An extension that allows replacements for code blocks that
 # are not supported in `rst_epilog` or other substitutions.
 # https://stackoverflow.com/a/56328457/2214933
@@ -467,6 +476,7 @@ def source_replace(app, docname, source):
 source_replacements = {
     "{PLONE_BACKEND_MINOR_VERSION}": "6.1",
 }
+
 
 # Finally, configure app attributes.
 def setup(app):
