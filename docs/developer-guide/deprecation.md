@@ -209,7 +209,7 @@ To deprecate a template, follow these steps.
 1.  Add this deprecation snippet to the package {file}`configure.zcml` file.
 
     ```{code-block} xml
-    :emphasize-lines: 7-14
+    :emphasize-lines: 7-15
     :linenos:
     
     <configure
