@@ -1121,3 +1121,9 @@ return self.obj.absolute_url()  # Acquistion chain messed up, getPhysicalPath() 
 ```
 
 One workaround to avoid this mess is to use `aq_inner` when accessing `self.obj` values, as described in [Dealing with view implicit acquisition problems in Plone](https://stackoverflow.com/questions/11753940/dealing-with-view-implicit-acquisition-problems-in-plone/11755348#11755348).
+
+## Related content
+
+-   {doc}`/classic-ui/layers`
+-   {doc}`/classic-ui/templates`
+-   {doc}`/classic-ui/viewlets`
