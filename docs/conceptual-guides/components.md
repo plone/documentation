@@ -9,7 +9,8 @@ myst:
 
 # Component architecture
 
-The {term}`Zope Component Architecture` (ZCA) is a Python framework for supporting component-based design and programming, utilizing the design patterns interface, adapter, abstract factory, and publish-subscribe.
+The {term}`Zope Component Architecture` (ZCA) is a Python framework for supporting component-based design and programming.
+It utilizes the design patterns interface, adapter, abstract factory, and publish-subscribe.
 
 Plone logic is wired together by Zope Component Architecture.
 It provides the "enterprise business logic" engine for Plone.
@@ -24,25 +25,30 @@ Interface
 
 Adapter
 :   Specific implementation of an interface.
-    An adapter provides an interface on its own, and adapts one or more objects with specific interfaces.
+    An adapter provides an interface on its own.
+    It adapts one or more objects with specific interfaces.
 
 Utility
 :   Specific implementation of an interface either as a singleton or factored-on lookup.
 
 Events and subscribers
-:   Events are emitted, and a subscriber may listen to those events.
-    Events provide an interface, and subscribers are registered for specific interfaces.
+:   Events are emitted.
+    A subscriber may listen to those events.
+    Events provide an interface.
+    Subscribers are registered for specific interfaces.
     Events are only dispatched to subscribers matching the interface of the event.
 
 Registries
 :   Adapters, utilities, and subscribers are registered in registries.
     Here the wiring is done.
-    Additional to the interface, a name might be provided for adapters and utilities (so-called named adapters or named utilities).
+    Additional to the interface, a name might be provided for adapters and utilities.
+    These are so-called named adapters or named utilities.
     Registration can be done in Python code or via {term}`ZCML`, an XML dialect.
 
 Lookup
 :   The lookup functions are providing the logic to dynamically factor an adapter or utility matching the object that was fed in.
-    You can ask to get an adapter to an object and pass in a name and the lookup method introspects the interface provided by the object and searches the registry for matches.
+    You can ask to get an adapter to an object and pass in a name.
+    The lookup method introspects the interface provided by the object and searches the registry for matches.
 
 
 ## Design patterns
@@ -96,13 +102,17 @@ Plone incorporates the component architecture in its design.
 ### Registries
 
 The component registry is used to register adapters, utilities, and subscribers.
-On lookup, it is used to find and initialize the matching adapter for the given objects, and name if given; to adapt; to find the right utility for an interface, and name if given; and to call the matching subscribers for an event.
+On lookup, it is used to find and initialize the matching adapter for the given objects, and name if given.
+It is used to adapt.
+It is used to find the right utility for an interface, and name if given.
+It is used to call the matching subscribers for an event.
 
 We have two levels of registries.
 
 Global component registry
 :   The Global component registry is always and globally available as a singleton.
-    Configuration is done in Plone using {term}`ZCML` files, which is a {term}`XML`-{term}`DSL`.
+    Configuration is done in Plone using {term}`ZCML` files.
+    ZCML is a {term}`XML`-{term}`DSL`.
     Usually they are named {file}`configure.zcml`, but they may include differently named ZCML files.
 
 Local component registry
@@ -110,7 +120,8 @@ Local component registry
     If there are one, two, or more Plone sites created in one database, each has its own local component registry.
     The local registry is activated and registered on traversal time.
     If a lookup in the local registry fails, then it falls back to the lookup in the global registry.
-    In theory, registries can be stacked upon each other in several layers, but in practice in Plone, we have two levels: local and global.
+    In theory, registries can be stacked upon each other in several layers.
+    In practice in Plone, we have two levels: local and global.
     Configuration is done in the profile {term}`GenericSetup` in a file {file}`componentregistry.xml`.
     Note its syntax is completely different from ZCML.
 
@@ -120,7 +131,8 @@ Local component registry
 Utility classes provide site-wide utility objects or functions.
 Compared to "plain Python functions", utilities provide the advantage of being plug-in points without the need for monkey-patching.
 
-They are registered by marker interfaces, and optionally with a name, in which case they are called "named utilities".
+They are registered by marker interfaces, and optionally with a name.
+In which case they are called "named utilities".
 Accordingly, utilities can be looked up by name or interface.
 
 Site customization logic or add-on products can override utilities for enhanced or modified functionality.
@@ -143,7 +155,9 @@ local
 
 #### Register a utility
 
-You can register utilities in two ways, either by providing a _factory_, or a callable, which creates the object as a result, or by _component_, a ready-to-use object.
+You can register utilities in two ways.
+Either by providing a _factory_, or a callable, which creates the object as a result.
+Or by _component_, a ready-to-use object.
 Utility factories take no constructor parameters.
 
 A utility factory can be provided by either a function or class.
@@ -158,35 +172,42 @@ A utility component can be either a:
 
 -   function that needs to provide a (marker) interface, or
 -   a global instance of a class implementing a marker interface, or
-in the case of a local registry, a so-called "local component" which persists as an object in the ZODB and itself needs to provide a marker interface.
+-   in the case of a local registry, a so-called "local component" which persists as an object in the ZODB and itself needs to provide a marker interface.
 
 Utilities may or may not have a name.
 
-```{todo}
-A global utility is constructed when Plone is started and ZCML is read. (needs Verification)
-A local component is either a persistent object in the ZODB or constructed when (TODO: When? Traversal time? Lookup time?)
-```
+A global utility is constructed when Plone is started and ZCML is loaded.
+A local component is stored as a persistent object in the ZODB.
 
 
 To learn about some important utilities in Plone, read the chapter {doc}`/backend/global-utils`.
 
+```{note}
+If you need to use parameters, such as context or request, consider using views or adapters instead.
+```
 
 ### Adapters
 
 Adapters are a core part of the {term}`Zope Component Architecture` (ZCA).
 They allow you to extend or change the behavior of an object without modifying its class.
 They map one interface to another, allowing objects to gain new behavior without changing their original class.
-By moving functionality out of the class and into adapters, Plone achieves loose coupling and a highly modular design, where components depend on interfaces rather than concrete implementations.
+By moving functionality out of the class and into adapters, Plone achieves loose coupling and a highly modular design.
+Components depend on interfaces rather than concrete implementations.
 
 There are two kinds of adapters:
 
 Normal Adapters
 
-Normal adapters adapt a single object and are used when behavior depends on just one context. They are commonly applied to content objects to add computed values, helper methods, or additional behavior without modifying the original class. Because they deal with only one parameter, they are simple, lightweight, and easy to understand.
+Normal adapters adapt a single object and are used when behavior depends on just one context.
+They are commonly applied to content objects to add computed values, helper methods, or additional behavior without modifying the original class.
+Because they deal with only one parameter, they are simple, lightweight, and easy to understand.
 
 Multi-Adapters
 
-Multi-adapters adapt multiple objects at once, passed as a tuple of parameters. They are used when behavior depends on more than one context, such as the content object, the current request, or the active view. 
+Multi-adapters adapt multiple objects at once, passed as a tuple of parameters.
+They are used when behavior depends on more than one context, such as the content object, the current request, or the active view.'
+
+Adapters may or may not have a name. 
 
 
 #### Views, Viewlets
@@ -195,35 +216,57 @@ In Plone, views and viewlets are implemented as adapters.
 
 Views:
 
-In Plone, views are implemented as multi-adapters that adapt both the context (the content object being viewed) and the request (the current HTTP request). Their main responsibility is to produce rendered output, such as HTML pages, JSON responses for APIs, or other representations of content. Views are registered using ZCML, which allows them to be cleanly integrated into the system and easily replaced or customized. Because views are adapters, they can be overridden by registering another view with the same name and interfaces, making it possible to change or extend behavior without modifying any core Plone code.
+In Plone, views are implemented as multi-adapters that adapt both the context (the content object being viewed) and the request (the current HTTP request).
+Their main responsibility is to produce rendered output, such as HTML pages, JSON responses for APIs, or other representations of content.
+Views are registered using ZCML.
+This allows them to be cleanly integrated into the system and easily replaced or customized.
+Because views are adapters, they can be overridden by registering another view with the same name and interfaces.
+This makes it possible to change or extend behavior without modifying any core Plone code.
 
 Viewlets:
 
-Viewlets, on the other hand, are small, reusable user interface components that together make up a page layout, such as headers, footers, navigation elements, or portlets. A viewlet is a more complex multi-adapter that adapts the context, request, the current view, and a viewlet manager, which controls where and how the viewlet is rendered on the page. This design allows viewlets to be highly flexible and context-aware. Themes and add-ons commonly override viewlet adapters to customize the look, placement, or behavior of specific UI elements, again without changing Plone’s core templates or logic.
+Viewlets are only used in the Classic UI.
+Viewlets, on the other hand, are small, reusable user interface components that together make up a page layout, such as headers, footers, navigation elements, or portlets.
+A viewlet is a more complex multi-adapter that adapts the context, request, the current view, and a viewlet manager.
+The viewlet manager controls where and how the viewlet is rendered on the page.
+This design allows viewlets to be highly flexible and context-aware.
+Themes and add-ons commonly override viewlet adapters to customize the look, placement, or behavior of specific UI elements.
+This is done without changing Plone's core templates or logic.
 
 
 #### Forms
 
-Adapters play a central role in schema-driven forms in Plone. Rather than embedding logic directly inside form or field classes, Plone uses adapters to control field behavior, select appropriate widgets, apply validators, and perform data conversion between user input and stored values. This design brings several important benefits: form logic becomes highly reusable, behavior can be customized per content type or context, and developers can alter or extend form behavior without subclassing forms directly. As a result, forms remain clean, flexible, and easy to maintain, even in large and complex Plone applications.
+Adapters play a central role in schema-driven forms in Plone.
+Rather than embedding logic directly inside form or field classes, Plone uses adapters to control field behavior, select appropriate widgets, apply validators, and perform data conversion between user input and stored values.
+This design brings several important benefits.
+Form logic becomes highly reusable.
+Behavior can be customized per content type or context.
+Developers can alter or extend form behavior without subclassing forms directly.
+As a result, forms remain clean, flexible, and easy to maintain, even in large and complex Plone applications.
 
 
 #### Overriding
 
-Plone allows behavior to be overridden without modifying core code, mainly through adapters and ZCML load order. This keeps customizations clean and upgrade-safe.
+Plone allows behavior to be overridden without modifying core code, mainly through adapters and ZCML load order.
+This keeps customizations clean and upgrade-safe.
 
 ##### Overriding Adapters
 
-Adapters are overridden by registering a new adapter with the same required and provided interfaces. The last loaded adapter wins, making this approach common in add-ons and themes for changing business logic or content-specific behavior.
+Adapters win based on the specificity of their interfaces, not the order in which they were registered.
+So an adapter for `IDexterityContent` will win over an adapter for `Interface`.
+This is because `IDexterityContent` is a subclass of `Interface`, so is considered more specific.
+If there are two adapters with the same name and required and provided interfaces, the registry will raise an exception when they are registered.
 
 ##### Overriding Utilities
 
-Utilities are global, context-independent services. They are overridden by re-registering the same interface and are typically used for configuration and core services like mail or search.
+Utilities are global, but there can also be local utilities registered in a persistent registry connected to a particular persistent object, such as the Plone site root.
+Utilities are overridden by re-registering the same interface.
+They are typically used for configuration and core services like mail or search.
 
 ##### Overriding Views
 
-Views can be overridden by:
-
-Views can be overridden by registering a new view with the same name and controlling ZCML order. This is widely used for custom templates, API changes, and theme customization—all without touching core code.
+Views can be overridden by registering a new view with the same name and controlling ZCML order.
+This is widely used for custom templates, API changes, and theme customization—all without touching core code.
 
 
 ### Lookup
@@ -241,10 +284,6 @@ Using the interface as an abstract factory
 
 Using the API
 :   Use `zope.component.getAdapter()` or `zope.component.getMultiAdapter()` when you want an error if no adapter is found.
-    Use `queryAdapter()` or `queryMultiAdapter()` when you want `None` instead.
-
-
-For multi-adapters, pass a tuple of objects in the order declared in the registration:
 
 
 ##### Interface Resolution Order (IRO) and names
@@ -281,6 +320,8 @@ Outside a site context, lookups use the global registry.
 Events are objects that represent something happening in the system.
 Subscribers (event handlers) are callables that react to those events.
 Plone uses `zope.event` and the Zope Component Architecture to register and dispatch subscribers.
+
+For information on how to register and use subscribers, see {doc}`/backend/subscribers`.
 
 #### General Zope events
 
@@ -320,10 +361,10 @@ Plone adds a few events you may need to handle explicitly:
 Workflow events
 :   `Products.DCWorkflow.interfaces.IBeforeTransitionEvent` is fired before a workflow transition is executed.
     It is useful for validation, veto logic, or preparing state changes.
-    `Products.DCWorkflow.interfaces.IAfterTransitionEvent` is fired after the transition completes,
-    and is commonly used for side effects such as notifications or reindexing.
-    `Products.CMFCore.interfaces.IActionSucceededEvent` is a higher-level event that signals a completed action,
-    and is often easier to use for general workflow reactions.
+    `Products.DCWorkflow.interfaces.IAfterTransitionEvent` is fired after the transition completes.
+    It is commonly used for side effects such as notifications or reindexing.
+    `Products.CMFCore.interfaces.IActionSucceededEvent` is a higher-level event that signals a completed action.
+    It is often easier to use for general workflow reactions.
 
 Local roles change event
 :   `LocalrolesModifiedEvent` is triggered when local roles are updated, for example in the sharing view.
