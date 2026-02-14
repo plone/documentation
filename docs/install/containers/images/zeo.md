@@ -9,7 +9,9 @@ myst:
 
 # `plone/plone-zeo`
 
-A ZEO Server [Docker](https://www.docker.com/) image using Python 3 and [pip](https://pip.pypa.io/en/stable/).
+This chapter covers how to use the ZEO Server [Docker](https://www.docker.com/) image using Python 3 and [pip](https://pip.pypa.io/en/stable/).
+
+For a complete reference of all environment variables, see {doc}`zeo-reference`.
 
 
 ## Using this image
@@ -68,15 +70,7 @@ We encourage users of the `Plone` images to familiarize themselves with the opti
 
 ## Configuration
 
-
-### Main variables
-
-| Environment variable | ZEO option | Default value |
-| --- | --- | --- |
-| `ZEO_PORT` | `address` | `8100` |
-| `ZEO_READ_ONLY` | `read-only` | `false` |
-| `ZEO_INVALIDATION_QUEUE_SIZE` | `invalidation-queue-size` | `100` |
-| `ZEO_PACK_KEEP_OLD` | `pack-keep-old` | `true` |
+For a complete reference of all environment variables, see {doc}`zeo-reference`.
 
 In case you need to configure an option not present in the environment variables, we suggest you to create a new image based on the default one:
 
