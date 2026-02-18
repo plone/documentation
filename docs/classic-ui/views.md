@@ -715,7 +715,6 @@ However, in most cases:
 Replace links to Plone 5.2 docs with links to Plone 6 docs.
 Specifically:
 
--   {doc}`TAL page template </classic-ui/templates>`
 -   {doc}`interface </backend/interfaces>`
 ```
 
@@ -839,7 +838,7 @@ Make sure that you declare the `i18n:domain` again, or the strings in this templ
 
 ## Access a view instance in code
 
-You need to get access to the view in your code if you call a view from either: 
+You need to get access to the view in your code if you call a view from either:
 
 -   inside another view
 -   your unit test code
