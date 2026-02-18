@@ -711,13 +711,6 @@ class MyView(object):
 
 However, in most cases:
 
-```{todo}
-Replace links to Plone 5.2 docs with links to Plone 6 docs.
-Specifically:
-
--   {doc}`interface </backend/interfaces>`
-```
-
 -   Full Plone page views are a subclass of [`Products.Five.browser.BrowserView`](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/__init__.py#L20) which is a wrapper class.
     It wraps [`zope.publisher.browser.BrowserView`](https://github.com/zopefoundation/zope.publisher/blob/dea3d4757390d04f6a5b53e696f08d0cab5f6023/src/zope/publisher/browser.py#L958), and adds an acquisition (parent traversal) support for it.
 -   Views have an attribute `index`, which points to a {doc}`TAL page template </classic-ui/templates>` that is responsible for rendering the HTML code.
