@@ -9,8 +9,7 @@ myst:
 
 # Component architecture
 
-The {term}`Zope Component Architecture` (ZCA) is a Python framework for supporting component-based design and programming.
-It utilizes the design patterns interface, adapter, abstract factory, and publish-subscribe.
+The {term}`Zope Component Architecture` (ZCA) is a Python framework for supporting component-based design and programming, utilizing the design patterns interface, adapter, abstract factory, and publish-subscribe.
 
 Plone logic is wired together by Zope Component Architecture.
 It provides the "enterprise business logic" engine for Plone.
@@ -25,30 +24,25 @@ Interface
 
 Adapter
 :   Specific implementation of an interface.
-    An adapter provides an interface on its own.
-    It adapts one or more objects with specific interfaces.
+    An adapter provides an interface on its own, and adapts one or more objects with specific interfaces.
 
 Utility
 :   Specific implementation of an interface either as a singleton or factored-on lookup.
 
 Events and subscribers
-:   Events are emitted.
-    A subscriber may listen to those events.
-    Events provide an interface.
-    Subscribers are registered for specific interfaces.
+:   Events are emitted, and a subscriber may listen to those events.
+    Events provide an interface, and subscribers are registered for specific interfaces.
     Events are only dispatched to subscribers matching the interface of the event.
 
 Registries
 :   Adapters, utilities, and subscribers are registered in registries.
     Here the wiring is done.
-    Additional to the interface, a name might be provided for adapters and utilities.
-    These are so-called named adapters or named utilities.
+    Additional to the interface, a name might be provided for adapters and utilities (so-called named adapters or named utilities).
     Registration can be done in Python code or via {term}`ZCML`, an XML dialect.
 
 Lookup
 :   The lookup functions are providing the logic to dynamically factor an adapter or utility matching the object that was fed in.
-    You can ask to get an adapter to an object and pass in a name.
-    The lookup method introspects the interface provided by the object and searches the registry for matches.
+    You can ask to get an adapter to an object and pass in a name and the lookup method introspects the interface provided by the object and searches the registry for matches.
 
 
 ## Design patterns
@@ -102,17 +96,13 @@ Plone incorporates the component architecture in its design.
 ### Registries
 
 The component registry is used to register adapters, utilities, and subscribers.
-On lookup, it is used to find and initialize the matching adapter for the given objects, and name if given.
-It is used to adapt.
-It is used to find the right utility for an interface, and name if given.
-It is used to call the matching subscribers for an event.
+On lookup, it is used to find and initialize the matching adapter for the given objects, and name if given; to adapt; to find the right utility for an interface, and name if given; and to call the matching subscribers for an event.
 
 We have two levels of registries.
 
 Global component registry
 :   The Global component registry is always and globally available as a singleton.
-    Configuration is done in Plone using {term}`ZCML` files.
-    ZCML is a {term}`XML`-{term}`DSL`.
+    Configuration is done in Plone using {term}`ZCML` files, which is a {term}`XML`-{term}`DSL`.
     Usually they are named {file}`configure.zcml`, but they may include differently named ZCML files.
 
 Local component registry
@@ -120,8 +110,7 @@ Local component registry
     If there are one, two, or more Plone sites created in one database, each has its own local component registry.
     The local registry is activated and registered on traversal time.
     If a lookup in the local registry fails, then it falls back to the lookup in the global registry.
-    In theory, registries can be stacked upon each other in several layers.
-    In practice in Plone, we have two levels: local and global.
+    In theory, registries can be stacked upon each other in several layers, but in practice in Plone, we have two levels: local and global.
     Configuration is done in the profile {term}`GenericSetup` in a file {file}`componentregistry.xml`.
     Note its syntax is completely different from ZCML.
 
@@ -131,8 +120,7 @@ Local component registry
 Utility classes provide site-wide utility objects or functions.
 Compared to "plain Python functions", utilities provide the advantage of being plug-in points without the need for monkey-patching.
 
-They are registered by marker interfaces, and optionally with a name.
-In which case they are called "named utilities".
+They are registered by marker interfaces, and optionally with a name, in which case they are called "named utilities".
 Accordingly, utilities can be looked up by name or interface.
 
 Site customization logic or add-on products can override utilities for enhanced or modified functionality.
@@ -155,9 +143,7 @@ local
 
 #### Register a utility
 
-You can register utilities in two ways.
-Either by providing a _factory_, or a callable, which creates the object as a result.
-Or by _component_, a ready-to-use object.
+You can register utilities in two ways, either by providing a _factory_, or a callable, which creates the object as a result, or by _component_, a ready-to-use object.
 Utility factories take no constructor parameters.
 
 A utility factory can be provided by either a function or class.
@@ -172,7 +158,7 @@ A utility component can be either a:
 
 -   function that needs to provide a (marker) interface, or
 -   a global instance of a class implementing a marker interface, or
--   in the case of a local registry, a so-called "local component" which persists as an object in the ZODB and itself needs to provide a marker interface.
+in the case of a local registry, a so-called "local component" which persists as an object in the ZODB and itself needs to provide a marker interface.
 
 Utilities may or may not have a name.
 

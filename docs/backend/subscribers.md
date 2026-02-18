@@ -1,11 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "How to register and use event subscribers in Plone"
-    "property=og:description": "How to register and use event subscribers in Plone"
+    "description": "How to add custom event handlers for your type in Plone"
+    "property=og:description": "How to add custom event handlers for your type in Plone"
     "property=og:title": "Subscribers (event handlers)"
-    "keywords": "Plone, events, subscribers, event handlers, ZCA"
+    "keywords": "Plone, subscribers, event handlers"
 ---
+
+(backend-subscribers-label)=
 
 # Subscribers (event handlers)
 
@@ -16,70 +18,72 @@ They are used to extend processing by providing processing plug points.
 
 A _notification_ alerts subscribers that an event has occurred.
 
-The Zope Component Architecture's zope.event package is used to manage subscribable events in Plone.
+The {term}`Zope Component Architecture`'s [`zope.event`](https://zopeevent.readthedocs.io/en/latest/) package is used to manage subscribable events in Plone.
 
 The Plone event system has some notable characteristics:
 
-- It's simple.
-- The calling order of subscribers is random.
-  You can't set the order in which event handlers are called.
-- Events can't be cancelled.
-  All handlers will always get the event.
-- Event handlers can't have return values.
-- Exceptions raised in an event handler will interrupt the request processing.
+-   It's simple.
+-   The calling order of subscribers is random.
+    You can't set the order in which event handlers are called.
+-   Events can't be cancelled.
+    All handlers will always get the event.
+-   Event handlers can't have return values.
+-   Exceptions raised in an event handler will interrupt the request processing.
 
-For a conceptual overview of events and subscribers, see {doc}`/conceptual-guides/components`.
 
 ## Register an event handler
 
 Plone events can be scoped:
 
-- globally (no scope)
-- per content type
-- per behavior or marker interface
+-   globally (no scope)
+-   per content type
+-   per behavior or marker interface
+
 
 ### Register an event handler on content type creation
 
 The following example demonstrates how to register an event handler when a content type is created.
 
-In your `.product/your/product/configure.zcml` insert the following code.
+In your {file}`.product/your/product/configure.zcml` insert the following code.
 
+{lineno-start=1}
 ```xml
 <subscriber
     for=".interfaces.IMyContentTypeClass
          zope.lifecycleevent.IObjectCreatedEvent"
     handler=".your_python_file.your_method"
-/>
+    />
 ```
 
-The second line defines to which interface you want to bind the execution of your code.
+The second line defines to which interface you want to bind the execution of your code. 
 Here, the event handler code will only be executed if the object is a content type providing the interface `.interfaces.IMyContentTypeClass`.
 If you want this to be interface agnostic, insert an asterix `*` as a wildcard instead.
 
-The third line defines the event on which this should happen, which is `IObjectCreatedEvent`.
-For more available possible events to use as a trigger, see {ref}`event-types`.
+The third line defines the event on which this should happen, which is `IObjectCreatedEvent`. 
+For more available possible events to use as a trigger, see {ref}`subscribers-event-types-label`. 
 
 The fourth line gives the path to the callable function to be executed.
 
-Create your `.product/your/product/your_python_file.py` and insert the following code.
+Create your {file}`.product/your/product/your_python_file.py` and insert the following code.
 
 ```python
 def your_subscriber(object, event):
     # do something with your created content type
 ```
 
+
 ### Subscribe to an event using ZCML
 
-Subscribe to a global event using ZCML by inserting the following code in your `.product/your/product/configure.zcml`.
+Subscribe to a global event using {term}`ZCML` by inserting the following code in your {file}`.product/your/product/configure.zcml`.
 
 ```xml
 <subscriber
     for="Products.PlonePAS.events.UserLoggedOutEvent"
     handler=".smartcard.clear_extra_cookies_on_logout"
-/>
+    />
 ```
 
-For this event, the Python code in `smartcard.py` would be the following.
+For this event, the Python code in {file}`smartcard.py` would be the following.
 
 ```python
 def clear_extra_cookies_on_logout(event):
@@ -95,7 +99,7 @@ The following example for a custom event subscribes content types to all `IMyEve
     for=".interfaces.IMyObject
          .interfaces.IMyEvent"
     handler=".content.MyObject.myEventHandler"
-/>
+    />
 ```
 
 The following example shows how to subscribe a content type to the life cycle event.
@@ -106,8 +110,9 @@ The following example shows how to subscribe a content type to the life cycle ev
     for=".interfaces.ISitsPatient
          zope.lifecycleevent.IObjectModifiedEvent"
     handler=".content.SitsPatient.objectModified"
-/>
+    />
 ```
+
 
 ## Fire an event
 
@@ -123,10 +128,13 @@ event = AfterPublicationEvent(self.portal, self.portal.REQUEST)
 zope.event.notify(event)
 ```
 
-(event-types)=
+
+(subscribers-event-types-label)=
+
 ## Event types
 
 Plone has the following types of events.
+
 
 ### Creation events
 
