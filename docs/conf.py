@@ -383,7 +383,14 @@ ogp_custom_meta_tags = [
 todo_include_todos = True
 
 
-# -- Options for sphinx-notfound-page ----------------------------------
+# -- sphinx-llms-txt ----------------------------------
+llms_txt_exclude = [
+    "search",  # Exclude the search page
+    "genindex",  # Exclude the index page
+]
+
+
+# -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
@@ -409,7 +416,7 @@ redirects = {
 }
 
 
-# -- Options for sphinx_sitemap to HTML -----------------------------
+# -- sphinx_sitemap configuration -----------------------------
 
 # Used by sphinx_sitemap to generate a sitemap
 html_baseurl = "https://6.docs.plone.org/"
