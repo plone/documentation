@@ -1,9 +1,8 @@
 {# A bootstrap-styled field that will direct to the `search.html` page when submitted #}
-<form class="bd-search"
+<form class="bd-search mt-3 mb-5 p-3"
       action="{{ pathto('search') }}"
       method="get">
-  <div class="d-flex align-items-center">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <div class="input-group">
     <input type="search"
            class="form-control"
            name="q"
@@ -14,14 +13,15 @@
            autocorrect="off"
            autocapitalize="off"
            spellcheck="false"/>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+    <button class="btn btn-primary" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    <!-- <span class="input-group-text search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span> -->
   </div>
-  <div class="d-flex visually-hidden">
-    <label for="section">Filter by section</label>
-  </div>
-  <div class="d-flex">
-    <select class="form-control" name="section" id="section" onchange="this.form.submit()">
-      <option value="all">all sections</option>
+  <div class="facet mt-3">
+    <label for="section" class="form-label">Filter by section</label>
+    <select class="form-select" name="section" id="section" onchange="this.form.submit()">
+      <option value="all">All sections</option>
       {% for id, title in
         [
           ['admin-guide', 'Admin Guide'],
