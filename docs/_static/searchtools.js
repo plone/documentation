@@ -244,6 +244,7 @@ if (typeof splitQuery === "undefined") {
 const Search = {
   _index: null,
   _queued_query: null,
+  _queued_section: null,
   _pulse_status: -1,
 
   htmlToText: (htmlString, anchor) => {
@@ -272,10 +273,15 @@ const Search = {
 
   init: () => {
     const query = new URLSearchParams(window.location.search).get("q");
+    const section = new URLSearchParams(window.location.search).get("section");
+    const select = document
+      .querySelector('select[name="section"]')
     document
       .querySelectorAll('input[name="q"]')
       .forEach((el) => (el.value = query));
-    if (query) Search.performSearch(query);
+    if (section) select.value = section;
+    else select.value = "all";
+    if (query) Search.performSearch(query, section);
   },
 
   loadIndex: (url) =>
@@ -285,14 +291,19 @@ const Search = {
     Search._index = index;
     if (Search._queued_query !== null) {
       const query = Search._queued_query;
+      const section = Search._queued_section;
       Search._queued_query = null;
-      Search.query(query);
+      Search._queued_section = null;
+      Search.query(query, section);
     }
   },
 
   hasIndex: () => Search._index !== null,
 
-  deferQuery: (query) => (Search._queued_query = query),
+  deferQuery: (query, section) => {
+    Search._queued_query = query;
+    Search._queued_section = section;
+  },
 
   stopPulse: () => (Search._pulse_status = -1),
 
@@ -310,7 +321,7 @@ const Search = {
   /**
    * perform a search for something (or wait until index is loaded)
    */
-  performSearch: (query) => {
+  performSearch: (query, section) => {
     // create the required interface elements
     const searchText = document.createElement("h2");
     searchText.textContent = _("Searching");
@@ -335,8 +346,8 @@ const Search = {
     Search.startPulse();
 
     // index already loaded, the browser was quick!
-    if (Search.hasIndex()) Search.query(query);
-    else Search.deferQuery(query);
+    if (Search.hasIndex()) Search.query(query, section);
+    else Search.deferQuery(query, section);
   },
 
   _parseQuery: (query) => {
@@ -475,10 +486,16 @@ const Search = {
     return results.reverse();
   },
 
-  query: (query) => {
+  query: (query, section) => {
     const [searchQuery, searchTerms, excludedTerms, highlightTerms, objectTerms] = Search._parseQuery(query);
-    const results = Search._performSearch(searchQuery, searchTerms, excludedTerms, highlightTerms, objectTerms);
-    const qresults = results;
+    let results = Search._performSearch(searchQuery, searchTerms, excludedTerms, highlightTerms, objectTerms);
+
+    // Filter results by section
+    if (section && section !== 'all') {
+      results = results.filter(result => {
+        return result[0].split('/')[0] === section;
+      });
+    }
 
     // for debugging
     //Search.lastresults = results.slice();  // a copy
