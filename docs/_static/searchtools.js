@@ -275,7 +275,7 @@ const Search = {
     const query = new URLSearchParams(window.location.search).get("q");
     const section = new URLSearchParams(window.location.search).get("section");
     const select = document
-      .querySelector('select[name="section"]')
+      .querySelector('select[name="section"]');
     document
       .querySelectorAll('input[name="q"]')
       .forEach((el) => (el.value = query));

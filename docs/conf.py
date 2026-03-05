@@ -277,7 +277,7 @@ html_use_opensearch = "https://6.docs.plone.org"
 # "<project> v<release> documentation".
 html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
 
-html_css_files = ["documentation.css", ("print.css", {"media": "print"})]
+html_css_files = ["search.css", ("print.css", {"media": "print"})]
 html_js_files = []
 html_extra_path = [
     "robots.txt",
