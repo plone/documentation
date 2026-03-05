@@ -253,20 +253,20 @@ const Search = {
       htmlElement.querySelectorAll(removalQuery).forEach((el) => { el.remove() });
     }
     if (anchor) {
-      const anchorContent = htmlElement.querySelector(`[role="main"] ${anchor}`);
+      const anchorContent = htmlElement.querySelector(`.bd-article ${anchor}`);
       if (anchorContent) return anchorContent.textContent;
 
       console.warn(
-        `Anchored content block not found. Sphinx search tries to obtain it via DOM query '[role=main] ${anchor}'. Check your theme or template.`
+        `Anchored content block not found. Sphinx search tries to obtain it via DOM query '.bd-article ${anchor}'. Check your theme or template.`
       );
     }
 
     // if anchor not specified or not found, fall back to main content
-    const docContent = htmlElement.querySelector('[role="main"]');
+    const docContent = htmlElement.querySelector('.bd-article');
     if (docContent) return docContent.textContent;
 
     console.warn(
-      "Content block not found. Sphinx search tries to obtain it via DOM query '[role=main]'. Check your theme or template."
+      "Content block not found. Sphinx search tries to obtain it via DOM query '.bd-article'. Check your theme or template."
     );
     return "";
   },
