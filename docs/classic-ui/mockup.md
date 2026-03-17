@@ -89,16 +89,16 @@ This creates the necessary JavaScript resources and webpack configuration for yo
 All your pattern JavaScript code goes into {file}`resources/pat-testpattern/testpattern.js`.
 SCSS files can be imported, too, since webpack provides the `sass-loader` module.
 
-Next, install the npm packages using {term}`yarn`.
+Next, install the npm packages using {term}`pnpm`.
 
 ```shell
-yarn install
+pnpm install
 ```
 
 When you finish writing your JavaScript code, you have to build the bundle with the following command.
 
 ```shell
-yarn build
+pnpm build
 ```
 
 This creates the webpack chunks, the JavaScript bundle files, and a demo browser view in your add-on package.
