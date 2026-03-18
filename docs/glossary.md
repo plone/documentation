@@ -959,4 +959,13 @@ Prisma
     ```{seealso}
     https://www.prisma.io/
     ```
+
+Plate
+    [Plate](https://platejs.org/) is a {term}`Slate`-based editor, introduced in Seven.
+    Plate has a large community and provides a rich set of plugins to customize the editor experience.
+    Key features include the single page editor, as well as AI integration.
+    
+    ```{seealso}
+    https://platejs.org/
+    ```
 ```
