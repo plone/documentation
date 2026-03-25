@@ -6,4 +6,4 @@ Do not create or activate a Python virtual environment at this time.
 The instructions below will create one.
 ```
 
-Plone 6.1 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE61}}.
+Plone 6.2 requires Python version {{SUPPORTED_PYTHON_VERSIONS_PLONE62}}.
