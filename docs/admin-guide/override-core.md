@@ -14,13 +14,49 @@ myst:
 Plone includes a few hundred Python packages.
 Sometimes you will need to override one or more package versions to fix a bug.
 
+## Override the version of a core Plone package
 
-## Cookieplone
+Choose a tab depending on your Python package manager.
 
-Use the following instructions if you installed Plone with Cookieplone.
+`````{tab-set}
 
+````{tab-item} uv
 
-### Override a core Plone package
+```{tip}
+Use the following instructions if you have a project that was created using Cookieplone after March 2026.
+```
+
+Edit `constraint-dependencies` in the file {file}`pyproject.toml`.
+This example uses `plone.api`.
+
+```
+[tool.uv]
+constraint-dependencies = [
+    "plone.api==2.0.0a3",
+]
+```
+
+Stop the backend with {kbd}`ctrl-c`.
+
+To actually download and install the new package version, run the following command.
+
+```shell
+make backend-build
+```
+
+Now restart the backend.
+
+```{seealso}
+{doc}`run-plone`
+```
+
+````
+
+````{tab-item} pip
+
+```{tip}
+Use the following instructions if you have a project that was created using Cookieplone before March 2026.
+```
 
 Add a version override to the file {file}`mx.ini`.
 This example uses `plone.api`.
@@ -33,7 +69,7 @@ version-overrides =
 
 ```{seealso}
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
-For an explanation of why Plone uses `mxdev`, see {ref}`manage-backend-python-packages-label`.
+For an explanation of why Plone uses `mxdev`, see {ref}`manage-packages-mxdev-label`.
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -50,41 +86,13 @@ Now restart the backend.
 {doc}`run-plone`
 ```
 
+````
 
-### Install a core Plone package from source
+````{tab-item} Buildout
 
-You can also use `mxdev` to install core Plone packages from a source control system such as GitHub.
-
-Add the Plone package you want to check out in the file {file}`mx.ini`.
-This example uses `plone.restapi`.
-
-```cfg
-[plone.restapi]
-url = git@github.com:plone/plone.restapi.git
-branch = main
-extras = test
-```
-
-Stop the backend with {kbd}`ctrl-c`.
-
-To actually download and install the new package version, run the following command.
-
-```shell
-make backend-build
-```
-
-Now restart the backend.
-
-```{seealso}
-{doc}`run-plone`
-```
-
-
-## Buildout
-
+```{tip}
 Use the following instructions if you installed Plone with Buildout.
-
-### Override a core Plone package
+```
 
 Update the file {file}`buildout.cfg`.
 This example uses `plone.api`.
@@ -115,7 +123,7 @@ The version pins specified in the `[versions]` section will take precedence over
 To actually download and install the new package version, run the following command.
 
 ```shell
-bin/buildout
+bin/buildout -N
 ```
 
 Then restart your instance.
@@ -124,10 +132,91 @@ Then restart your instance.
 {doc}`run-plone`
 ```
 
+````
 
-### Install a core Plone package from source
+`````
+
+## Install a core Plone package from source
 
 A core Plone package can be installed from a source control system such as GitHub.
+
+Choose a tab depending on your Python package manager.
+
+`````{tab-set}
+
+````{tab-item} uv
+
+```{tip}
+Use the following instructions if you have a project that was created using Cookieplone after March 2026.
+```
+
+This example uses `plone.restapi`.
+
+Clone the repository into a local directory.
+
+```shell
+git clone git@github.com:plone/plone.restapi.git
+```
+
+Add the local directory to your `uv` project as an editable package.
+
+```shell
+cd backend
+uv add --editable ../plone.restapi
+```
+
+Stop the backend with {kbd}`ctrl-c`.
+
+Now restart the backend.
+
+```{seealso}
+{doc}`run-plone`
+```
+
+````
+
+````{tab-item} pip
+
+```{tip}
+Use the following instructions if you have a project that was created using Cookieplone before March 2026.
+```
+
+Add the Plone package you want to check out in the file {file}`mx.ini`.
+This example uses `plone.restapi`.
+
+```cfg
+[plone.restapi]
+url = git@github.com:plone/plone.restapi.git
+branch = main
+extras = test
+```
+
+```{seealso}
+The {file}`mx.ini` file configures a tool called {term}`mxdev`.
+For an explanation of why Plone uses `mxdev`, see {ref}`manage-packages-mxdev-label`.
+```
+
+Stop the backend with {kbd}`ctrl-c`.
+
+To actually download and install the new package version, run the following command.
+
+```shell
+make backend-build
+```
+
+Now restart the backend.
+
+```{seealso}
+{doc}`run-plone`
+```
+
+````
+
+````{tab-item} Buildout
+
+```{tip}
+Use the following instructions if you installed Plone with Buildout.
+```
 
 Update the file {file}`buildout.cfg`.
 This example uses `plone.restapi`.
@@ -176,3 +265,7 @@ Then restart your instance.
 ```{seealso}
 This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
 ```
+
+````
+
+`````

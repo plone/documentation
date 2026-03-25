@@ -24,8 +24,6 @@ Python itself has a complex and convoluted history with package management, as [
 ```
 
 
-(manage-backend-python-packages-label)=
-
 ## Manage backend Python packages
 
 ### pip
@@ -43,6 +41,8 @@ bin/pip install -c https://dist.plone.org/release/6.1-latest/constraints.txt Plo
 In the Plone community, constraints are sometimes called "version pins."
 
 As a best practice, pip should always be used inside a specific {term}`virtualenv` to keep the packages separate from other applications.
+
+(manage-packages-mxdev-label)=
 
 ### mxdev
 
