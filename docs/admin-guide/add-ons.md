@@ -98,32 +98,7 @@ You can control which version of an add-on to install through "version pinning."
 
 ### Install the add-on
 
-Stop the backend with {kbd}`ctrl-c`.
-
-To actually download and install the new add-on, run the following command.
-
-`````{tab-set}
-````{tab-item} Cookieplone
-:sync: cookieplone
-
-```shell
-make backend-build
-```
-````
-
-````{tab-item} Buildout
-:sync: buildout
-
-```shell
-bin/buildout -N
-```
-````
-`````
-
-Next, restart the backend.
-
-```{seealso}
-{doc}`run-plone`
+```{include} /_inc/_build-and-restart.md
 ```
 
 In your web browser, and assuming you are currently logged in as an administrator, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
@@ -148,10 +123,10 @@ First, configure your project according to the instructions in the tabbed interf
 Select the tab according to your Python package manager.
 
 ```{tip}
-For projects created with Cookieplone, select either the tab labeled:
+For projects created with Cookieplone, select the tab labeled:
 
--   {guilabel}`uv` if the file {file}`backend/pyproject.toml`, under the table `[tool.uv]` has the setting of `managed = true`
--   {guilabel}`pip` if your project doesn't have this setting
+-   {guilabel}`pip` if your project has the file {file}`backend/mx.ini`
+-   {guilabel}`uv` if your project doesn't have this file
 ```
 
 `````{tab-set}
@@ -247,6 +222,11 @@ eggs =
 [sources]
 collective.easyform = git https://github.com/collective/collective.easyform.git
 ```
+
+```{seealso}
+This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
+```
+
 ````
 `````
 
@@ -260,43 +240,7 @@ This way you always get the version that's currently available in the source con
 
 ### Install the add-on
 
-Stop the backend with {kbd}`ctrl-c`.
-
-To actually download and install the new add-on, run the following command.
-
-`````{tab-set}
-````{tab-item} uv
-:sync: uv
-
-```shell
-make backend-build
-```
-````
-
-````{tab-item} pip
-:sync: pip
-
-```shell
-make backend-build
-```
-````
-
-````{tab-item} Buildout
-:sync: buildout
-
-```shell
-bin/buildout
-```
-```{seealso}
-This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
-```
-````
-`````
-
-Next, restart the backend.
-
-```{seealso}
-{doc}`run-plone`
+```{include} /_inc/_build-and-restart.md
 ```
 
 In your web browser, and assuming you are currently logged in as an administrator, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
