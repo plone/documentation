@@ -46,10 +46,6 @@ dependencies = [
 ]
 ```
 
-```{tip}
-Including the add-on version, or "pinning a version", ensures that it won't unintentionally get upgraded in the future.
-```
-
 Also add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` to make sure its configuration will be loaded.
 
 ```yaml
@@ -92,10 +88,6 @@ eggs =
 collective.easyform = 4.2.1
 ```
 
-```{tip}
-Including the add-on version, or "pinning a version", ensures that it won't unintentionally get upgraded in the future.
-```
-
 To actually download and install the new add-on, run the following command.
 
 ```shell
@@ -105,6 +97,13 @@ bin/buildout -N
 ````
 
 `````
+
+```{tip}
+You can control which version of an add-on to install through "version pinning."
+
+-   Specify the add-on version to avoid its unintentional upgrade.
+-   Leave it off to always install the latest version.
+```
 
 Now restart the backend.
 
