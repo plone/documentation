@@ -20,22 +20,17 @@ See {doc}`/volto/development/add-ons/index`.
 
 ## Install an add-on from PyPI
 
-This section describes how to install an add-on that is released on {term}`PyPI`
+This section describes how to install an add-on that is released on {term}`PyPI`.
 
 
 ### Configure add-on installation
 
 First, configure your project according to the instructions in the tabbed interface below.
-Select the tab according to your Python package manager.
-
-```{tip}
-Select the tab {guilabel}`uv` for projects created with Cookieplone which have in the file {file}`backend/pyproject.toml`, under the `[tool.uv]` table, the setting of `managed = true`.
-Select the tab {guilabel}`pip` for projects created with Cookieplone that don't have this setting.
-```
+Select the tab according to the method you used to create your project.
 
 `````{tab-set}
 
-````{tab-item} uv
+````{tab-item} Cookieplone
 
 Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
 This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -43,48 +38,11 @@ This example adds [`collective.easyform`](https://pypi.org/project/collective.ea
 ```{code-block} toml
 :emphasize-lines: 6
 dependencies = [
-    "Products.CMFPlone==6.1.1",
+    "Products.CMFPlone==6.1.4",
     "plone.api",
     "plone.classicui",
     "plone.app.caching",
-    "collective.easyform==4.4.0",
-]
-```
-
-```{tip}
-Including the add-on version, or "pinning a version", ensures that it won't unintentionally get upgraded in the future.
-```
-
-Also add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` to make sure its configuration will be loaded.
-
-```yaml
-default_context:
-    zcml_package_includes: project_title, collective.easyform
-```
-
-Stop the backend with {kbd}`ctrl-c`.
-
-To actually download and install the new add-on, run the following command.
-
-```shell
-make backend-build
-```
-
-````
-
-````{tab-item} pip
-
-Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
-This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
-
-```{code-block} toml
-:emphasize-lines: 6
-dependencies = [
-    "Products.CMFPlone==6.1.1",
-    "plone.api",
-    "plone.classicui",
-    "plone.app.caching",
-    "collective.easyform==4.4.0",
+    "collective.easyform==4.5.1",
 ]
 ```
 
@@ -215,11 +173,11 @@ This example adds [`collective.easyform`](https://pypi.org/project/collective.ea
 ```{code-block} toml
 :emphasize-lines: 6
 dependencies = [
-    "Products.CMFPlone==6.1.1",
+    "Products.CMFPlone==6.1.4",
     "plone.api",
     "plone.classicui",
     "plone.app.caching",
-    "collective.easyform",
+    "collective.easyform==4.5.1",
 ]
 ```
 
