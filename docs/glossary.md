@@ -88,7 +88,7 @@ NFS
     [Network File System](https://en.wikipedia.org/wiki/Network_File_System).
 
 
-NPM
+npm
     npm is a package manager for the JavaScript programming language.
     It is the default package manager for the JavaScript runtime environment Node.js.
     Also a registry of JavaScript packages, similar to PyPI.
@@ -969,7 +969,7 @@ virtual environment
     A virtual environment is an isolated Python environment with its own set of installed packages.
     A virtual environment is created on top of an existing Python installation, known as the virtual environment's "base" Python, and by default is isolated from the packages in the base environment, so that only those explicitly installed in the virtual environment are available.
     
-    ```seealso
+    ```{seealso}
     -   {term}`virtualenv`
     -   {term}`venv`
     ```
@@ -979,5 +979,5 @@ virtualenv
     Since Python 3.3, a subset of it has been integrated into the standard library under the {term}`venv` module.
 
 venv
-    The {doc}`venv` module in the Python standard library supports creating lightweight {term}`virtual environment`s, each with their own independent set of Python packages installed in their {doc}`site` directories.
+    The `venv` module in the Python standard library supports creating lightweight {term}`virtual environment`s, each with their own independent set of Python packages installed in their {file}`site-packages` directories.
 ```
