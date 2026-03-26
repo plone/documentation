@@ -20,7 +20,13 @@ See {doc}`/volto/development/add-ons/index`.
 
 ## Install an add-on from PyPI
 
-For instructions to install an add-on that is released on {term}`PyPI`, select the tab below according to your Python package manager.
+This section describes how to install an add-on that is released on {term}`PyPI`
+
+
+### Configure add-on installation
+
+First, configure your project according to the instructions in the tabbed interface below.
+Select the tab according to your Python package manager.
 
 ```{tip}
 Select the tab for uv if you have a project that was created using Cookieplone, and you have `managed = true` set in the `[tool.uv]` section of the file {file}`backend/pyproject.toml`.
