@@ -23,12 +23,50 @@ See {doc}`/volto/development/add-ons/index`.
 For instructions to install an add-on that is released on {term}`PyPI`, select the tab below according to your Python package manager.
 
 ```{tip}
-Select the tab for uv if you have a project that was created using Cookieplone.
+Select the tab for uv if you have a project that was created using Cookieplone, and you have `managed = true` set in the `[tool.uv]` section of the file {file}`backend/pyproject.toml`.
+Select the tab for pip if you have a project that was created using Cookieplone that does not have this setting.
 ```
 
 `````{tab-set}
 
 ````{tab-item} uv
+
+Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
+This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
+
+```{code-block} toml
+:emphasize-lines: 6
+dependencies = [
+    "Products.CMFPlone==6.1.1",
+    "plone.api",
+    "plone.classicui",
+    "plone.app.caching",
+    "collective.easyform==4.4.0",
+]
+```
+
+```{tip}
+Including the add-on version, or "pinning a version", ensures that it won't unintentionally get upgraded in the future.
+```
+
+Also add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` to make sure its configuration will be loaded.
+
+```yaml
+default_context:
+    zcml_package_includes: project_title, collective.easyform
+```
+
+Stop the backend with {kbd}`ctrl-c`.
+
+To actually download and install the new add-on, run the following command.
+
+```shell
+make backend-build
+```
+
+````
+
+````{tab-item} pip
 
 Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
 This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -126,7 +164,8 @@ An unreleased add-on can be installed from a source control system such as GitHu
 For instructions to install an add-on that is released on {term}`PyPI`, select the tab below according to your Python package manager.
 
 ```{tip}
-Select the tab for uv if you have a project that was created using Cookieplone.
+Select the tab for uv if you have a project that was created using Cookieplone, and you have `managed = true` set in the `[tool.uv]` section of the file {file}`backend/pyproject.toml`.
+Select the tab for pip if you have a project that was created using Cookieplone that does not have this setting.
 ```
 
 `````{tab-set}
@@ -160,6 +199,58 @@ default_context:
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
+````
+
+````{tab-item} pip
+
+Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
+This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
+
+```{code-block} toml
+:emphasize-lines: 6
+dependencies = [
+    "Products.CMFPlone==6.1.1",
+    "plone.api",
+    "plone.classicui",
+    "plone.app.caching",
+    "collective.easyform",
+]
+```
+
+```{note}
+When installing an add-on from source, it's best not to pin a version.
+This way you always get the version that's currently available in the source control system.
+```
+
+Next add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` so that its configuration will load.
+
+```yaml
+default_context:
+    zcml_package_includes: project_title, collective.easyform
+```
+
+Finally, add the package's source to the file {file}`mx.ini`.
+
+```cfg
+[collective.easyform]
+url=git@github.com:collective/collective.easyform.git
+branch=dev-branch-name
+extras=test
+```
+
+```{seealso}
+The {file}`mx.ini` file configures a tool called {term}`mxdev`.
+For an explanation of why Plone uses `mxdev`, see {ref}`manage-packages-mxdev-label`.
+```
+
+Stop the backend with {kbd}`ctrl-c`.
+
+To actually download and install the new add-on, run the following command.
+
+```shell
+make backend-build
+```
+
 ````
 
 ````{tab-item} Buildout

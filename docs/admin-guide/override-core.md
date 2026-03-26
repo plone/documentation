@@ -19,8 +19,8 @@ Sometimes you will need to override one or more package versions to fix a bug.
 For instructions of how to override a core Plone package, select the tab below according to your Python package manager.
 
 ```{tip}
-Select the tab for uv if you have a project that was created using Cookieplone after March 19, 2026.
-Select the tab for pip if you have a project that was created using Cookieplone earlier.
+Select the tab for uv if you have a project that was created using Cookieplone, and you have `managed = true` set in the `[tool.uv]` section of the file {file}`backend/pyproject.toml`.
+Select the tab for pip if you have a project that was created using Cookieplone that does not have this setting.
 ```
 
 `````{tab-set}
@@ -136,8 +136,8 @@ A core Plone package can be installed from a source control system such as GitHu
 For instructions, select the tab below according to your Python package manager.
 
 ```{tip}
-Select the tab for uv if you have a project that was created using Cookieplone after March 19, 2026.
-Select the tab for pip if you have a project that was created using Cookieplone earlier.
+Select the tab for uv if you have a project that was created using Cookieplone, and you have `managed = true` set in the `[tool.uv]` section of the file {file}`backend/pyproject.toml`.
+Select the tab for pip if you have a project that was created using Cookieplone that does not have this setting.
 ```
 
 `````{tab-set}
