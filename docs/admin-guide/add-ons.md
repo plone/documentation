@@ -18,13 +18,17 @@ The Volto frontend has its own system of add-ons using Node.js packages.
 See {doc}`/volto/development/add-ons/index`.
 ```
 
+## Install an add-on from PyPI
 
-## Cookieplone
+For instructions to install an add-on that is released on {term}`PyPI`, select the tab below according to your Python package manager.
 
-Use the following instructions if you installed Plone with Cookieplone.
+```{tip}
+Select the tab for uv if you have a project that was created using Cookieplone.
+```
 
+`````{tab-set}
 
-### Install an add-on
+````{tab-item} uv
 
 Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
 This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -59,83 +63,9 @@ To actually download and install the new add-on, run the following command.
 make backend-build
 ```
 
-Now restart the backend.
+````
 
-```{seealso}
-{doc}`run-plone`
-```
-
-In your web browser, and assuming you are currently logged in as an administrator, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
-
-Then click the {guilabel}`Install` button next to your add-on to complete installation of the add-on.
-
-Some add-ons have configuration options.
-To configure such add-ons, return to the {guilabel}`Site Setup` control panel.
-At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a control panel to configure the add-on that you just installed.
-
-
-### Install an add-on from source
-
-An add-on can be installed from a source control system such as GitHub.
-
-Add a line with the name of your add-on in the file {file}`backend/requirements.txt`.
-This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
-
-```
-collective.easyform
-```
-
-```{note}
-When installing an add-on from source, it's best not to pin a version.
-This way you always get the version that's currently available in the source control system.
-```
-
-Next add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` so that its configuration will load.
-
-```yaml
-default_context:
-    zcml_package_includes: project_title, collective.easyform
-```
-
-Finally, add the package's source to the file {file}`mx.ini`.
-
-```cfg
-[collective.easyform]
-url=git@github.com:collective/collective.easyform.git
-branch=dev-branch-name
-extras=test
-```
-
-```{seealso}
-The {file}`mx.ini` file configures a tool called {term}`mxdev`.
-See the [documentation of `mxdev` in its README.md](https://github.com/mxstack/mxdev/blob/main/README.md) for complete information.
-```
-
-Stop the backend with {kbd}`ctrl-c`.
-
-To actually download and install the new add-on, run the following command.
-
-```shell
-make backend-build
-```
-
-Now restart the backend.
-
-```{seealso}
-{doc}`run-plone`
-```
-
-In your web browser, and assuming you are currently logged in as an administrator, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
-An upgrade step might need to be performed in the Plone control panel.
-Follow the upgrade information, if present.
-Else click the {guilabel}`Install` button to complete installation of the add-on.
-
-
-## Buildout
-
-Use the following instructions if you installed Plone with Buildout.
-
-### Install an add-on
+````{tab-item} Buildout
 
 Update the file {file}`buildout.cfg`.
 This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -167,19 +97,72 @@ Including the add-on version, or "pinning a version", ensures that it won't unin
 To actually download and install the new add-on, run the following command.
 
 ```shell
-bin/buildout
+bin/buildout -N
 ```
 
-Then restart your instance.
+````
+
+`````
+
+Now restart the backend.
 
 ```{seealso}
 {doc}`run-plone`
 ```
 
+In your web browser, and assuming you are currently logged in as an administrator, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
 
-### Install an add-on from source
+Then click the {guilabel}`Install` button next to your add-on to complete installation of the add-on.
 
-You can install an add-on from a source control system such as GitHub.
+Some add-ons have configuration options.
+To configure such add-ons, return to the {guilabel}`Site Setup` control panel.
+At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a control panel to configure the add-on that you just installed.
+
+
+## Install an add-on from source
+
+An unreleased add-on can be installed from a source control system such as GitHub.
+
+For instructions to install an add-on that is released on {term}`PyPI`, select the tab below according to your Python package manager.
+
+```{tip}
+Select the tab for uv if you have a project that was created using Cookieplone.
+```
+
+`````{tab-set}
+
+````{tab-item} uv
+
+Clone the repository into a local directory.
+This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
+
+```shell
+git clone git@github.com:collective/collective.easyform.git
+```
+
+Add the local directory to your uv project as an editable package.
+
+```shell
+cd backend
+uv add --editable ../collective.easyform
+```
+
+```{note}
+When installing an add-on from source, it's best not to pin a version.
+This way you always get the version that's currently available in the source control system.
+```
+
+Next add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` so that its configuration will load.
+
+```yaml
+default_context:
+    zcml_package_includes: project_title, collective.easyform
+```
+
+Stop the backend with {kbd}`ctrl-c`.
+````
+
+````{tab-item} Buildout
 
 Update the file {file}`buildout.cfg`.
 This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -213,12 +196,24 @@ To actually download and install the new add-on, run the following command.
 bin/buildout
 ```
 
-Then restart your instance.
+```{seealso}
+This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
+```
+
+````
+
+`````
+
+Now restart the backend.
 
 ```{seealso}
 {doc}`run-plone`
 ```
 
-```{seealso}
-This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
-```
+In your web browser, and assuming you are currently logged in as an administrator, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
+
+Then click the {guilabel}`Install` button next to your add-on to complete installation of the add-on.
+
+Some add-ons have configuration options.
+To configure such add-ons, return to the {guilabel}`Site Setup` control panel.
+At the bottom of the page, you should see the heading {guilabel}`Add-on Configuration`, and a control panel to configure the add-on that you just installed.

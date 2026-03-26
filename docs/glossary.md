@@ -104,6 +104,9 @@ pyenv
     Python version management.
     [pyenv](https://github.com/pyenv/pyenv) lets you easily switch between multiple versions of Python.
 
+PyPI
+    The [Python Package Index](https://pypi.org/) is a repository of software for the Python programming language.
+
 uv
     [uv](https://docs.astral.sh/uv/) is a Python package and project manager, written in Rust.
 
