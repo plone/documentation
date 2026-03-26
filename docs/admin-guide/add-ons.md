@@ -18,10 +18,14 @@ The Volto frontend has its own system of add-ons using Node.js packages.
 See {doc}`/volto/development/add-ons/index`.
 ```
 
+(install-an-add-on-from-pypi-label)=
+
 ## Install an add-on from PyPI
 
 This section describes how to install an add-on that is released on {term}`PyPI`.
 
+
+(configure-add-on-installation-pypi-label)=
 
 ### Configure add-on installation
 
@@ -89,6 +93,9 @@ You can control which version of an add-on to install through "version pinning."
 -   Leave it off to always install the latest version.
 ```
 
+
+(install-the-add-on-pypi-label)=
+
 ### Install the add-on
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -113,7 +120,7 @@ bin/buildout -N
 ````
 `````
 
-Finally, restart the backend.
+Next, restart the backend.
 
 ```{seealso}
 {doc}`run-plone`
@@ -130,18 +137,26 @@ At the bottom of the page, you should see the heading {guilabel}`Add-on Configur
 
 ## Install an add-on from source
 
-An unreleased add-on can be installed from a source control system such as GitHub.
+This section describes how to install an unreleased add-on from a source control system, such as GitHub.
 
-For instructions to install an add-on that is released on {term}`PyPI`, select the tab below according to your Python package manager.
+
+(configure-add-on-installation-source-label)=
+
+### Configure add-on installation
+
+First, configure your project according to the instructions in the tabbed interface below.
+Select the tab according to your Python package manager.
 
 ```{tip}
-Select the tab for uv if you have a project that was created using Cookieplone, and you have `managed = true` set in the `[tool.uv]` section of the file {file}`backend/pyproject.toml`.
-Select the tab for pip if you have a project that was created using Cookieplone that does not have this setting.
+For projects created with Cookieplone, select either the tab labeled:
+
+-   {guilabel}`uv` if the file {file}`backend/pyproject.toml`, under the table `[tool.uv]` has the setting of `managed = true`
+-   {guilabel}`pip` if your project doesn't have this setting
 ```
 
 `````{tab-set}
-
 ````{tab-item} uv
+:sync: uv
 
 Clone the repository into a local directory.
 This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -157,22 +172,16 @@ cd backend
 uv add --editable ../collective.easyform
 ```
 
-```{note}
-When installing an add-on from source, it's best not to pin a version.
-This way you always get the version that's currently available in the source control system.
-```
-
-Next add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` so that its configuration will load.
+To configure the add-on to load, in the file {file}`backend/instance.yaml`, under the key `default_context`, for the key `zcml_package_includes`, set its value to the add-on's name.
 
 ```yaml
 default_context:
     zcml_package_includes: project_title, collective.easyform
 ```
-
-Stop the backend with {kbd}`ctrl-c`.
 ````
 
 ````{tab-item} pip
+:sync: pip
 
 Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
 This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -184,16 +193,11 @@ dependencies = [
     "plone.api",
     "plone.classicui",
     "plone.app.caching",
-    "collective.easyform==4.5.1",
+    "collective.easyform",
 ]
 ```
 
-```{note}
-When installing an add-on from source, it's best not to pin a version.
-This way you always get the version that's currently available in the source control system.
-```
-
-Next add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` so that its configuration will load.
+To configure the add-on to load, in the file {file}`backend/instance.yaml`, under the key `default_context`, for the key `zcml_package_includes`, set its value to the add-on's name.
 
 ```yaml
 default_context:
@@ -213,18 +217,10 @@ extras=test
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
 For an explanation of why Plone uses `mxdev`, see {ref}`manage-packages-mxdev-label`.
 ```
-
-Stop the backend with {kbd}`ctrl-c`.
-
-To actually download and install the new add-on, run the following command.
-
-```shell
-make backend-build
-```
-
 ````
 
 ````{tab-item} Buildout
+:sync: buildout
 
 Update the file {file}`buildout.cfg`.
 This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -251,22 +247,53 @@ eggs =
 [sources]
 collective.easyform = git https://github.com/collective/collective.easyform.git
 ```
+````
+`````
+
+```{tip}
+When installing an add-on from source, it's best not to pin a version.
+This way you always get the version that's currently available in the source control system.
+```
+
+
+(install-the-add-on-source-label)=
+
+### Install the add-on
+
+Stop the backend with {kbd}`ctrl-c`.
 
 To actually download and install the new add-on, run the following command.
+
+`````{tab-set}
+````{tab-item} uv
+:sync: uv
+
+```shell
+make backend-build
+```
+````
+
+````{tab-item} pip
+:sync: pip
+
+```shell
+make backend-build
+```
+````
+
+````{tab-item} Buildout
+:sync: buildout
 
 ```shell
 bin/buildout
 ```
-
 ```{seealso}
 This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
 ```
-
 ````
-
 `````
 
-Now restart the backend.
+Next, restart the backend.
 
 ```{seealso}
 {doc}`run-plone`
