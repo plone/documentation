@@ -29,8 +29,8 @@ First, configure your project according to the instructions in the tabbed interf
 Select the tab according to your Python package manager.
 
 ```{tip}
-Select the tab for uv if you have a project that was created using Cookieplone, and you have `managed = true` set in the `[tool.uv]` section of the file {file}`backend/pyproject.toml`.
-Select the tab for pip if you have a project that was created using Cookieplone that does not have this setting.
+Select the tab {guilabel}`uv` for projects created with Cookieplone which have in the file {file}`backend/pyproject.toml`, under the `[tool.uv]` table, the setting of `managed = true`.
+Select the tab {guilabel}`pip` for projects created with Cookieplone that don't have this setting.
 ```
 
 `````{tab-set}
