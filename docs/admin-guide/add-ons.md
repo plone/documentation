@@ -29,8 +29,8 @@ First, configure your project according to the instructions in the tabbed interf
 Select the tab according to the method you used to create your project.
 
 `````{tab-set}
-
 ````{tab-item} Cookieplone
+:sync: cookieplone
 
 Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
 This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -46,24 +46,16 @@ dependencies = [
 ]
 ```
 
-Also add the add-on to `zcml_package_includes` in the file {file}`backend/instance.yaml` to make sure its configuration will be loaded.
+To configure the add-on to load, in the file {file}`backend/instance.yaml`, under the key `default_context`, for the key `zcml_package_includes`, set its value to the add-on's name.
 
 ```yaml
 default_context:
     zcml_package_includes: project_title, collective.easyform
 ```
-
-Stop the backend with {kbd}`ctrl-c`.
-
-To actually download and install the new add-on, run the following command.
-
-```shell
-make backend-build
-```
-
 ````
 
 ````{tab-item} Buildout
+:sync: buildout
 
 Update the file {file}`buildout.cfg`.
 This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
@@ -85,17 +77,9 @@ eggs =
     collective.easyform
 
 [versions]
-collective.easyform = 4.2.1
+collective.easyform = 4.5.1
 ```
-
-To actually download and install the new add-on, run the following command.
-
-```shell
-bin/buildout -N
-```
-
 ````
-
 `````
 
 ```{tip}
@@ -105,7 +89,31 @@ You can control which version of an add-on to install through "version pinning."
 -   Leave it off to always install the latest version.
 ```
 
-Now restart the backend.
+### Install the add-on
+
+Stop the backend with {kbd}`ctrl-c`.
+
+To actually download and install the new add-on, run the following command.
+
+`````{tab-set}
+````{tab-item} Cookieplone
+:sync: cookieplone
+
+```shell
+make backend-build
+```
+````
+
+````{tab-item} Buildout
+:sync: buildout
+
+```shell
+bin/buildout -N
+```
+````
+`````
+
+Finally, restart the backend.
 
 ```{seealso}
 {doc}`run-plone`
