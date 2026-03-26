@@ -16,7 +16,7 @@ Sometimes you will need to override one or more package versions to fix a bug.
 
 ## Override the version of a core Plone package
 
-Choose a tab depending on your Python package manager.
+For instructions of how to override a core Plone package, select the tab below according to your Python package manager.
 
 `````{tab-set}
 
@@ -69,7 +69,7 @@ version-overrides =
 
 ```{seealso}
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
-For an explanation of why Plone uses `mxdev`, see {ref}`manage-packages-mxdev-label`.
+For an explanation of why Plone uses `mxdev` for projects using pip as the Python package manager, see {ref}`manage-packages-mxdev-label`.
 ```
 
 Stop the backend with {kbd}`ctrl-c`.
@@ -158,7 +158,7 @@ Clone the repository into a local directory.
 git clone git@github.com:plone/plone.restapi.git
 ```
 
-Add the local directory to your `uv` project as an editable package.
+Add the local directory to your uv project as an editable package.
 
 ```shell
 cd backend

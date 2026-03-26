@@ -965,6 +965,19 @@ Plate
     Plate has a large community and provides a rich set of plugins to customize the editor experience.
     Key features include the single page editor, as well as AI integration.
 
+virtual environment
+    A virtual environment is an isolated Python environment with its own set of installed packages.
+    A virtual environment is created on top of an existing Python installation, known as the virtual environment's "base" Python, and by default is isolated from the packages in the base environment, so that only those explicitly installed in the virtual environment are available.
+    
+    ```seealso
+    -   {term}`virtualenv`
+    -   {term}`venv`
+    ```
+
 virtualenv
-    A virtualenv is an isolated Python environment with its own set of installed packages.
+    [`virtualenv`](https://virtualenv.pypa.io/en/latest/) is a tool to create isolated Python environments.
+    Since Python 3.3, a subset of it has been integrated into the standard library under the {term}`venv` module.
+
+venv
+    The {doc}`venv` module in the Python standard library supports creating lightweight {term}`virtual environment`s, each with their own independent set of Python packages installed in their {doc}`site` directories.
 ```
