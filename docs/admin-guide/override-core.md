@@ -18,13 +18,14 @@ Sometimes you will need to override one or more package versions to fix a bug.
 
 For instructions of how to override a core Plone package, select the tab below according to your Python package manager.
 
+```{tip}
+Select the tab for uv if you have a project that was created using Cookieplone after March 19, 2026.
+Select the tab for pip if you have a project that was created using Cookieplone earlier.
+```
+
 `````{tab-set}
 
 ````{tab-item} uv
-
-```{tip}
-Use the following instructions if you have a project that was created using Cookieplone after March 2026.
-```
 
 Edit `constraint-dependencies` in the file {file}`pyproject.toml`.
 This example uses `plone.api`.
@@ -53,10 +54,6 @@ Now restart the backend.
 ````
 
 ````{tab-item} pip
-
-```{tip}
-Use the following instructions if you have a project that was created using Cookieplone before March 2026.
-```
 
 Add a version override to the file {file}`mx.ini`.
 This example uses `plone.api`.
@@ -89,10 +86,6 @@ Now restart the backend.
 ````
 
 ````{tab-item} Buildout
-
-```{tip}
-Use the following instructions if you installed Plone with Buildout.
-```
 
 Update the file {file}`buildout.cfg`.
 This example uses `plone.api`.
@@ -140,15 +133,16 @@ Then restart your instance.
 
 A core Plone package can be installed from a source control system such as GitHub.
 
-Choose a tab depending on your Python package manager.
+For instructions, select the tab below according to your Python package manager.
+
+```{tip}
+Select the tab for uv if you have a project that was created using Cookieplone after March 19, 2026.
+Select the tab for pip if you have a project that was created using Cookieplone earlier.
+```
 
 `````{tab-set}
 
 ````{tab-item} uv
-
-```{tip}
-Use the following instructions if you have a project that was created using Cookieplone after March 2026.
-```
 
 This example uses `plone.restapi`.
 
@@ -176,10 +170,6 @@ Now restart the backend.
 ````
 
 ````{tab-item} pip
-
-```{tip}
-Use the following instructions if you have a project that was created using Cookieplone before March 2026.
-```
 
 Add the Plone package you want to check out in the file {file}`mx.ini`.
 This example uses `plone.restapi`.
@@ -213,10 +203,6 @@ Now restart the backend.
 ````
 
 ````{tab-item} Buildout
-
-```{tip}
-Use the following instructions if you installed Plone with Buildout.
-```
 
 Update the file {file}`buildout.cfg`.
 This example uses `plone.restapi`.
