@@ -16,11 +16,11 @@ Sometimes you will need to override one or more package versions to fix a bug.
 
 ## Override the version of a core Plone package
 
-The Python packages which are dependencies of Plone are pinned to specific versions at the time a Plone release is created.
+Plone's Python package dependencies are pinned to specific versions at the time a Plone release is created.
 This section describes how to override the version of one of these packages, in case you need a newer one.
 
 ```{caution}
-By doing this, you are intentionally using a combination of package versions that has not been tested by the Plone development team.
+When you override package versions, the combination of packages isn't tested by the Plone development team.
 Use at your own risk!
 ```
 
@@ -37,11 +37,10 @@ For projects created with Cookieplone, select the tab labeled:
 ```
 
 `````{tab-set}
-
 ````{tab-item} uv
 :sync: uv
 
-Edit `constraint-dependencies` in the file {file}`pyproject.toml`.
+In the file {file}`pyproject.toml`, under the table `[tool.uv]`, edit `constraint-dependencies`.
 This example uses `plone.api`.
 
 ```
@@ -50,13 +49,12 @@ constraint-dependencies = [
     "plone.api==2.0.0a3",
 ]
 ```
-
 ````
 
 ````{tab-item} pip
 :sync: pip
 
-Add a version override to the file {file}`backend/mx.ini`.
+In the file {file}`backend/mx.ini`, under the `[settings]` section, add `version-overrides` setting.
 This example uses `plone.api`.
 
 ```
@@ -67,9 +65,8 @@ version-overrides =
 
 ```{seealso}
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
-For an explanation of why Plone uses `mxdev`, see {ref}`manage-packages-mxdev-label`.
+For an explanation of why Plone uses mxdev, see {ref}`manage-packages-mxdev-label`.
 ```
-
 ````
 
 ````{tab-item} Buildout
@@ -98,11 +95,9 @@ plone.api = 2.0.0a3
 ```
 
 ```{note}
-The version pins specified in the `[versions]` section will take precedence over the pins inherited from `https://dist.plone.org/release/6-latest/versions.cfg`.
+The version pins specified in the `[versions]` section will take precedence over the pins inherited from https://dist.plone.org/release/6-latest/versions.cfg.
 ```
-
 ````
-
 `````
 
 ### Install the package
@@ -128,7 +123,6 @@ For projects created with Cookieplone, select the tab labeled:
 ```
 
 `````{tab-set}
-
 ````{tab-item} uv
 :sync: uv
 
@@ -146,7 +140,6 @@ Add the local directory to your uv project as an editable package.
 cd backend
 uv add --editable ../plone.restapi
 ```
-
 ````
 
 ````{tab-item} pip
@@ -164,9 +157,8 @@ extras = test
 
 ```{seealso}
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
-For an explanation of why Plone uses `mxdev`, see {ref}`manage-packages-mxdev-label`.
+For an explanation of why Plone uses mxdev, see {ref}`manage-packages-mxdev-label`.
 ```
-
 ````
 
 ````{tab-item} Buildout
@@ -207,9 +199,7 @@ Setting an empty version ensures that the copy of `plone.restapi` from source co
 ```{seealso}
 This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
 ```
-
 ````
-
 `````
 
 ### Install the package

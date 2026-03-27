@@ -11,7 +11,7 @@ myst:
 
 Plone 6 consists of a collection of Python and Node.js packages.
 Over the decades of its existence, Plone has used several package management tools, sometimes multiple tools at one time.
-Each one has its strengths and weaknesses for performing specific tasks, such as installation, conflict resolution, updates and upgrades, and working with virtual environments and across platforms.
+Each one has its strengths and weaknesses for performing specific tasks, such as installation, conflict resolution, updates, upgrades, and working with virtual environments and across platforms.
 
 With Volto as the default frontend in Plone 6, first npm, then pnpm, was brought into the mix as a package manager for its Node.js packages.
 
@@ -25,6 +25,21 @@ Python itself has a complex and convoluted history with package management, as [
 
 
 ## Manage backend Python packages
+
+uv, pip with mxdev, and buildout are supported tools to manage the Python packages in the Plone backend.
+The following sections explain each of these tools in more detail.
+
+
+### uv
+
+{term}`uv` is a package manager which is popular for its speed, its ability to manage the installation of Python itself, and its ability to consistently reproduce installed packages using a {file}`uv.lock` file.
+
+When a project is fully managed using uv, it is configured in its {file}`pyproject.toml` file, and its packages are installed using `uv sync`.
+
+uv also has a [pip interface](https://docs.astral.sh/uv/pip/), and installs packages into a virtual environment via the command `uv pip install`.
+
+If you create a Plone project using Cookieplone, it creates a backend managed by uv.
+
 
 ### pip
 
@@ -49,36 +64,25 @@ As a best practice, pip should always be used inside a specific Python {term}`vi
 
 During development, it is sometimes necessary to override the Plone version constraints.
 This makes it possible to:
-- install a newer version of a core Plone package that was released with a bugfix
-- install an unreleased core Plone package from a source control system
+- {ref}`install a newer version of a core Plone package that was released to PyPI <install-an-add-on-from-pypi-label>` with a bugfix
+- {ref}`install an unreleased core Plone package from a source control system <install-an-add-on-from-source-label>`
 
-Unfortunately pip does not allow overriding constraints this way.
+pip does not allow overriding constraints this way.
 {term}`mxdev` solves this issue.
 
-`mxdev` resolves Plone constraints according to your needs for pinning versions or source checkouts.
+mxdev resolves Plone constraints according to your needs for pinning versions or source checkouts.
 It reads its configuration file {file}`mx.ini`, and your {file}`requirements.txt` and {file}`constraints.txt` files.
 Then it fetches the requirements and constraints of Plone.
 Finally, it writes new combined requirements in {file}`requirements-mxdev.txt` and new constraints in {file}`constraints-mxdev.txt`.
 Together these two files contain the combined requirements and constraints, but modified according to the configuration in {file}`mx.ini`.
 The generated files indicate from where the constraints were fetched, and comments are added when a modification was necessary.
 
-`mxdev` does not run `pip` or install packages.
+mxdev does not run pip or install packages.
 You or your development tools, such as GNU Make, must perform that step.
 
 ```{seealso}
 {doc}`/admin-guide/add-ons`
 ```
-
-### uv
-
-More recently, {term}`uv` has become popular as a way to install Python packages.
-This package manager is popular for its speed, its ability to manage the installation of Python itself, and its ability to consistently reproduce installed packages using a {file}`uv.lock` file.
-
-When a project is fully managed using uv, it is configured in `pyproject.toml` and the packages are installed using `uv sync`.
-
-uv also has a backwards-compatible mode which works more like pip, and installs packages into a virtual environment via the command `uv pip install`.
-
-If you create a Plone project using Cookieplone, it creates a backend managed by uv.
 
 ### buildout
 
@@ -89,9 +93,8 @@ It not only installs packages, but can set up other things using an extensible s
 Buildout does not install Python packages into a virtual environment.
 Instead, it creates scripts that add the necessary packages to `sys.path` before running the script target.
 
-## Manage frontend Node.js packages
 
-### pnpm
+## Manage frontend Node.js packages
 
 Plone uses {term}`pnpm` to install Node.js packages.
 
