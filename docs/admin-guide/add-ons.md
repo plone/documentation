@@ -210,7 +210,7 @@ extras=test
 
 ```{seealso}
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
-For an explanation of why Plone uses `mxdev`, see {ref}`manage-packages-mxdev-label`.
+For an explanation of why Plone uses mxdev, see {ref}`manage-packages-mxdev-label`.
 ```
 ````
 
