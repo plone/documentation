@@ -10,7 +10,7 @@ backport(ed|ing)
 Barceloneta
 [Bb]oolean
 bugfix
-buildout
+[Bb]uildout
 cacheable
 Classic UI
 CMSUI
@@ -28,6 +28,7 @@ jQuery
 libxslt
 middleware
 Mockup
+mxdev
 namespaces?
 npm
 nvm
@@ -39,6 +40,7 @@ PLIP(s)
 Plone
 plonecli
 pluggab(le|ility)
+pnpm
 [Pp]ortlets?
 prerendered
 programatically
@@ -67,4 +69,5 @@ Volto
 Vue
 webpack
 wireframe
+xkcd
 Zope
