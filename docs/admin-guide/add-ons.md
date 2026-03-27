@@ -98,7 +98,32 @@ You can control which version of an add-on to install through "version pinning."
 
 ### Install the add-on
 
-```{include} /_inc/_build-and-restart.md
+If the backend is running, stop it with {kbd}`ctrl-c`.
+
+To actually download and install the new add-on, run the following command.
+
+`````{tab-set}
+````{tab-item} Cookieplone
+:sync: cookieplone
+
+```shell
+make backend-build
+```
+````
+
+````{tab-item} Buildout
+:sync: buildout
+
+```shell
+bin/buildout -N
+```
+````
+`````
+
+Next, restart the backend.
+
+```{seealso}
+{doc}`run-plone`
 ```
 
 In your web browser, and assuming you are currently logged in as an administrator, visit the URL http://localhost:8080/Plone/prefs_install_products_form.
