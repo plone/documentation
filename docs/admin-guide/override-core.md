@@ -37,7 +37,6 @@ For projects created with Cookieplone, select the tab labeled:
 ```
 
 `````{tab-set}
-
 ````{tab-item} uv
 :sync: uv
 
@@ -50,7 +49,6 @@ constraint-dependencies = [
     "plone.api==2.0.0a3",
 ]
 ```
-
 ````
 
 ````{tab-item} pip
@@ -69,7 +67,6 @@ version-overrides =
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
 For an explanation of why Plone uses mxdev, see {ref}`manage-packages-mxdev-label`.
 ```
-
 ````
 
 ````{tab-item} Buildout
@@ -100,9 +97,7 @@ plone.api = 2.0.0a3
 ```{note}
 The version pins specified in the `[versions]` section will take precedence over the pins inherited from `https://dist.plone.org/release/6-latest/versions.cfg`.
 ```
-
 ````
-
 `````
 
 ### Install the package
@@ -128,7 +123,6 @@ For projects created with Cookieplone, select the tab labeled:
 ```
 
 `````{tab-set}
-
 ````{tab-item} uv
 :sync: uv
 
@@ -146,7 +140,6 @@ Add the local directory to your uv project as an editable package.
 cd backend
 uv add --editable ../plone.restapi
 ```
-
 ````
 
 ````{tab-item} pip
@@ -166,7 +159,6 @@ extras = test
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
 For an explanation of why Plone uses mxdev, see {ref}`manage-packages-mxdev-label`.
 ```
-
 ````
 
 ````{tab-item} Buildout
@@ -207,9 +199,7 @@ Setting an empty version ensures that the copy of `plone.restapi` from source co
 ```{seealso}
 This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
 ```
-
 ````
-
 `````
 
 ### Install the package
