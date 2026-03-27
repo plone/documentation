@@ -95,7 +95,7 @@ plone.api = 2.0.0a3
 ```
 
 ```{note}
-The version pins specified in the `[versions]` section will take precedence over the pins inherited from `https://dist.plone.org/release/6-latest/versions.cfg`.
+The version pins specified in the `[versions]` section will take precedence over the pins inherited from https://dist.plone.org/release/6-latest/versions.cfg.
 ```
 ````
 `````
