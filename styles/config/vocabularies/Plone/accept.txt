@@ -13,15 +13,18 @@ bugfix
 [Bb]uildout
 cacheable
 Classic UI
+CMSs
 CMSUI
 CommonJS
 Cookieplone
 doctest
 ETags?
+extranets
 [Ff]avicon
 folderish
 fieldset
 getter
+interoperate
 JavaScript
 [Jj]enkins
 jQuery
