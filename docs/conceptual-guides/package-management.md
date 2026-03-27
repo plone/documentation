@@ -34,9 +34,9 @@ The following sections explain each of these tools in more detail.
 
 {term}`uv` is a package manager which is popular for its speed, its ability to manage the installation of Python itself, and its ability to consistently reproduce installed packages using a {file}`uv.lock` file.
 
-When a project is fully managed using uv, it is configured in `pyproject.toml` and the packages are installed using `uv sync`.
+When a project is fully managed using uv, it is configured in its {file}`pyproject.toml` file, and its packages are installed using `uv sync`.
 
-uv also has a backwards-compatible mode which works more like pip, and installs packages into a virtual environment via the command `uv pip install`.
+uv also has a [pip interface](https://docs.astral.sh/uv/pip/), and installs packages into a virtual environment via the command `uv pip install`.
 
 If you create a Plone project using Cookieplone, it creates a backend managed by uv.
 
