@@ -26,6 +26,10 @@ Python itself has a complex and convoluted history with package management, as [
 
 ## Manage backend Python packages
 
+pip with mxdev and uv are supported tools to manage the Python packages in the Plone backend.
+The following sections explain each of these tools in more detail.
+
+
 ### pip
 
 By convention in the Python community, {term}`pip` is commonly used to install Python packages.
