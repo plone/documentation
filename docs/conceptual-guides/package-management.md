@@ -26,7 +26,7 @@ Python itself has a complex and convoluted history with package management, as [
 
 ## Manage backend Python packages
 
-uv, pip with mxdev, buildout and are supported tools to manage the Python packages in the Plone backend.
+uv, pip with mxdev, and buildout are supported tools to manage the Python packages in the Plone backend.
 The following sections explain each of these tools in more detail.
 
 
