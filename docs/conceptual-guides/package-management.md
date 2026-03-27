@@ -93,9 +93,8 @@ It not only installs packages, but can set up other things using an extensible s
 Buildout does not install Python packages into a virtual environment.
 Instead, it creates scripts that add the necessary packages to `sys.path` before running the script target.
 
-## Manage frontend Node.js packages
 
-### pnpm
+## Manage frontend Node.js packages
 
 Plone uses {term}`pnpm` to install Node.js packages.
 
