@@ -11,7 +11,7 @@ myst:
 
 Plone 6 consists of a collection of Python and Node.js packages.
 Over the decades of its existence, Plone has used several package management tools, sometimes multiple tools at one time.
-Each one has its strengths and weaknesses for performing specific tasks, such as installation, conflict resolution, updates and upgrades, and working with virtual environments and across platforms.
+Each one has its strengths and weaknesses for performing specific tasks, such as installation, conflict resolution, updates, upgrades, and working with virtual environments and across platforms.
 
 With Volto as the default frontend in Plone 6, first npm, then pnpm, was brought into the mix as a package manager for its Node.js packages.
 
@@ -53,20 +53,20 @@ As a best practice, pip should always be used inside a specific Python {term}`vi
 
 During development, it is sometimes necessary to override the Plone version constraints.
 This makes it possible to:
-- install a newer version of a core Plone package that was released with a bugfix
-- install an unreleased core Plone package from a source control system
+- {ref}`install a newer version of a core Plone package that was released to PyPI <install-an-add-on-from-pypi-label>` with a bugfix
+- {ref}`install an unreleased core Plone package from a source control system <install-an-add-on-from-source-label>`
 
-Unfortunately pip does not allow overriding constraints this way.
+pip does not allow overriding constraints this way.
 {term}`mxdev` solves this issue.
 
-`mxdev` resolves Plone constraints according to your needs for pinning versions or source checkouts.
+mxdev resolves Plone constraints according to your needs for pinning versions or source checkouts.
 It reads its configuration file {file}`mx.ini`, and your {file}`requirements.txt` and {file}`constraints.txt` files.
 Then it fetches the requirements and constraints of Plone.
 Finally, it writes new combined requirements in {file}`requirements-mxdev.txt` and new constraints in {file}`constraints-mxdev.txt`.
 Together these two files contain the combined requirements and constraints, but modified according to the configuration in {file}`mx.ini`.
 The generated files indicate from where the constraints were fetched, and comments are added when a modification was necessary.
 
-`mxdev` does not run `pip` or install packages.
+mxdev does not run pip or install packages.
 You or your development tools, such as GNU Make, must perform that step.
 
 ```{seealso}

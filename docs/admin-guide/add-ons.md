@@ -130,6 +130,8 @@ Next, restart the backend.
 ```
 
 
+(install-an-add-on-from-source-label)=
+
 ## Install an add-on from source
 
 This section describes how to install an unreleased add-on from a source control system, such as GitHub.
