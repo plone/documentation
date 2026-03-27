@@ -26,8 +26,19 @@ Python itself has a complex and convoluted history with package management, as [
 
 ## Manage backend Python packages
 
-pip with mxdev and uv are supported tools to manage the Python packages in the Plone backend.
+uv, pip with mxdev, buildout and are supported tools to manage the Python packages in the Plone backend.
 The following sections explain each of these tools in more detail.
+
+
+### uv
+
+{term}`uv` is a package manager which is popular for its speed, its ability to manage the installation of Python itself, and its ability to consistently reproduce installed packages using a {file}`uv.lock` file.
+
+When a project is fully managed using uv, it is configured in `pyproject.toml` and the packages are installed using `uv sync`.
+
+uv also has a backwards-compatible mode which works more like pip, and installs packages into a virtual environment via the command `uv pip install`.
+
+If you create a Plone project using Cookieplone, it creates a backend managed by uv.
 
 
 ### pip
@@ -72,17 +83,6 @@ You or your development tools, such as GNU Make, must perform that step.
 ```{seealso}
 {doc}`/admin-guide/add-ons`
 ```
-
-### uv
-
-More recently, {term}`uv` has become popular as a way to install Python packages.
-This package manager is popular for its speed, its ability to manage the installation of Python itself, and its ability to consistently reproduce installed packages using a {file}`uv.lock` file.
-
-When a project is fully managed using uv, it is configured in `pyproject.toml` and the packages are installed using `uv sync`.
-
-uv also has a backwards-compatible mode which works more like pip, and installs packages into a virtual environment via the command `uv pip install`.
-
-If you create a Plone project using Cookieplone, it creates a backend managed by uv.
 
 ### buildout
 
