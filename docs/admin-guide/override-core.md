@@ -40,7 +40,7 @@ For projects created with Cookieplone, select the tab labeled:
 ````{tab-item} uv
 :sync: uv
 
-Edit `constraint-dependencies` in the file {file}`pyproject.toml`.
+In the file {file}`pyproject.toml`, under the table `[tool.uv]`, edit `constraint-dependencies`.
 This example uses `plone.api`.
 
 ```
@@ -54,7 +54,7 @@ constraint-dependencies = [
 ````{tab-item} pip
 :sync: pip
 
-Add a version override to the file {file}`backend/mx.ini`.
+In the file {file}`backend/mx.ini`, under the `[settings]` section, add `version-overrides` setting.
 This example uses `plone.api`.
 
 ```
