@@ -16,7 +16,7 @@ Sometimes you will need to override one or more package versions to fix a bug.
 
 ## Override the version of a core Plone package
 
-The Python packages on which Plone depends are pinned to specific versions at the time a Plone release is created.
+Plone's Python package dependencies are pinned to specific versions at the time a Plone release is created.
 This section describes how to override the version of one of these packages, in case you need a newer one.
 
 ```{caution}
