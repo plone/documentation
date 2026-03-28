@@ -18,8 +18,8 @@ The `Makefile` at the root of your project invokes commands in `backend/Makefile
 The command `make backend-build` performs the following tasks.
 
 -   Invokes the target `install` in `backend/Makefile`.
--   `install` has the two dependencies `$(VENV_FOLDER)` and `config`.
--   `$(VENV_FOLDER)` creates and populates a virtual Python environment with uv from a {file}`constraints.txt` file generated using mxdev.
--   `config` creates the Zope and Plone configuration files using cookiecutter-zope-instance.
+-   `install` has the two dependencies `sync` and `config`.
+-   `sync` runs `uv sync` to install the project as defined in {file}`pyproject.toml`.
+-   `config` creates the Zope and Plone configuration files using {term}`cookiecutter-zope-instance`.
 
 You can configure your Zope instance as described in the section {doc}`/admin-guide/configure-zope`.
