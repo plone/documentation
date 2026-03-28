@@ -982,5 +982,5 @@ virtualenv
     Since Python 3.3, a subset of it has been integrated into the standard library under the {term}`venv` module.
 
 venv
-    The `venv` module in the Python standard library supports creating lightweight {term}`virtual environment`s, each with their own independent set of Python packages installed in their {file}`site-packages` directories.
+    The {mod}`venv` module in the Python standard library supports creating lightweight {term}`virtual environment`s, each with their own independent set of Python packages installed in their {file}`site-packages` directories.
 ```
