@@ -63,7 +63,7 @@ chmod 755 entrypoint.sh
 ```
 
 ```{note}
-Do not forget to add the `exec "$@"` command at the end of the `entrypoint.sh` file to run the default `yarn start` command.
+Do not forget to add the `exec "$@"` command at the end of the `entrypoint.sh` file to run the default `pnpm start` command.
 ```
 
 In the `Dockerfile` you will need to add two commands to make the Docker container run `entrypoint.sh` on start:
@@ -77,7 +77,7 @@ In the `Dockerfile` you will need to add two commands to make the Docker contain
 ```
 
 ```diff
-  CMD ["yarn", "start:prod"]
+  CMD ["pnpm", "start:prod"]
 + ENTRYPOINT ["/entrypoint.sh"]
 ```
 
