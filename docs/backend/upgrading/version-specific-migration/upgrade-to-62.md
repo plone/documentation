@@ -88,7 +88,7 @@ Templates from the following packages are now in a new location:
 * `plone.locking`
 * `plone.protect`
 
-Starting with Plone 6.2, you can choose to activate plone.app.layout in the Add-ons control panel.
+Starting with Plone 6.2, you can activate plone.app.layout in the {guilabel}`Add-ons` control panel.
 
 If you use the Classic UI, you should do this. If you use Volto as your (main) UI, you should not do this.
 
