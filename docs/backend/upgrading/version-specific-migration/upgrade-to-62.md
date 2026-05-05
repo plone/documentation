@@ -90,7 +90,8 @@ Templates from the following packages are now in a new location:
 
 Starting with Plone 6.2, you can activate plone.app.layout in the {guilabel}`Add-ons` control panel.
 
-If you use the Classic UI, you should do this. If you use Volto as your (main) UI, you should not do this.
+If you use Classic UI, you should activate it.
+If you use Volto, you should not activate it.
 
 The automatic upgrade tries to do the right thing, but you should check the Add-ons control panel.
 
