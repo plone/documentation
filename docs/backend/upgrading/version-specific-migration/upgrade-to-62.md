@@ -88,6 +88,15 @@ Templates from the following packages are now in a new location:
 * `plone.locking`
 * `plone.protect`
 
+Starting with Plone 6.2, you can choose to activate plone.app.layout in the Add-ons control panel.
+
+If you use the Classic UI, you should do this. If you use Volto as your (main) UI, you should not do this.
+
+The automatic upgrade tries to do the right thing, but you should check the Add-ons control panel.
+
+The setting currently has little influence, so if you are not sure: don't worry about it.
+
+
 ```{note}
 If you use the `z3c.jbot` add-on to override a template that has been moved, your override will still work.
 This is because we keep a mapping from the old to the new location.
