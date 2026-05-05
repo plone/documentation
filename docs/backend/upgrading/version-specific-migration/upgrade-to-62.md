@@ -95,9 +95,6 @@ If you use Volto, you should not activate it.
 
 The automatic upgrade attempts to activate plone.app.layout according to your original configuration, but you should check the {guilabel}`Add-ons` control panel to make sure.
 
-
-
-
 ```{note}
 If you use the `z3c.jbot` add-on to override a template that has been moved, your override will still work.
 This is because we keep a mapping from the old to the new location.
