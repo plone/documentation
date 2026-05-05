@@ -114,7 +114,8 @@ Our documentation contains setup examples for these services, yet requires that 
 One of the key benefits of the new React-based frontend for Plone 6 is that you can now customize and theme Plone extensively using HTML, CSS, and JavaScript using up-to-date frontend technologies without having to set up a local Python development environment.
 The Plone backend can be run on a local developer machine in a container.
 
-Basic familiarity with programming in Python and managing Python modules and packages using {term}`pip` or {term}`uv` is required to work on the backend code.
+Basic familiarity with programming in Python and managing Python modules and packages using `virtualenv` and `pip` is required to work on the backend code.
+We use `venv` and {term}`mxdev` to manage the source installation of packages in Plone 6.
 
 Similarly, to develop for the new React frontend, you need to have some experience with setting up Node.js, using a tool like {term}`nvm` to isolate your setup, and familiarity with {term}`pnpm` and {term}`React`.
 

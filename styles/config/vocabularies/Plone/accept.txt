@@ -10,28 +10,24 @@ backport(ed|ing)
 Barceloneta
 [Bb]oolean
 bugfix
-[Bb]uildout
+buildout
 cacheable
 Classic UI
-CMSs
 CMSUI
 CommonJS
 Cookieplone
 doctest
 ETags?
-extranets
 [Ff]avicon
 folderish
 fieldset
 getter
-interoperate
 JavaScript
 [Jj]enkins
 jQuery
 libxslt
 middleware
 Mockup
-mxdev
 namespaces?
 npm
 nvm
@@ -43,7 +39,6 @@ PLIP(s)
 Plone
 plonecli
 pluggab(le|ility)
-pnpm
 [Pp]ortlets?
 prerendered
 programatically
@@ -72,5 +67,4 @@ Volto
 Vue
 webpack
 wireframe
-xkcd
 Zope
