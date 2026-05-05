@@ -95,7 +95,7 @@ If you use Volto, you should not activate it.
 
 The automatic upgrade attempts to activate plone.app.layout according to your original configuration, but you should check the {guilabel}`Add-ons` control panel to make sure.
 
-The setting currently has little influence, so if you're not sure, then don't worry about it.
+
 
 
 ```{note}
