@@ -210,6 +210,40 @@ services:
     - "5432:5432"
 ```
 
+### ZODB-PGJSONB variables
+
+[zodb-pgjsonb](https://bluedynamics.github.io/zodb-pgjsonb/) is a PostgreSQL based storage where ZODB pickles are converted to JSON and stored in JSONB columns in PostgreSQL.
+
+The available variables are the following:
+
+| Environment variable | Description | RelStorage option | Default value |
+| --- | --- | --- | --- |
+| `ZODB_PGJSONB_DSN` | {ref}`containers-images-backend-pgsjonb-dsn-label` for the database interface | | |
+| `ZODB_PGJSONB_HISTORY_PRESERVING` | History preserving mode | `history-preserving` | `false` |
+| `ZODB_PGJSONB_Z3BLOBS_ENABLED` | Enable sending blobs to S3 | - | `false` |
+| `ZODB_PGJSONB_S3BLOBS_ENDPOINT_URL` | S3 endpoint url | `s3-endpoint-url` | `` required if ZODB_PGJSONB_Z3BLOBS_ENABLED=true|
+| `ZODB_PGJSONB_S3BLOBS_BUCKET_NAME` | S3 bucket name | `s3-bucket-name` | `` required if ZODB_PGJSONB_Z3BLOBS_ENABLED=true|
+| `ZODB_PGJSONB_S3BLOBS_ACCESS_KEY` | S3 access key | `s3-access-key` | `` required if ZODB_PGJSONB_Z3BLOBS_ENABLED=true|
+| `ZODB_PGJSONB_S3BLOBS_SECRET_KEY` | S3 secret key | `s3-secret-key` | `` required if ZODB_PGJSONB_Z3BLOBS_ENABLED=true|
+| `ZODB_PGJSONB_S3BLOBS_USE_SSL` | Whether to use SSL when connecting to the S3 endpoint | `s3-use-ssl` | `false` |
+| `ZODB_PGJSONB_S3BLOBS_REGION` | S3 region | `s3-region` | `none` |
+| `ZODB_PGJSONB_S3BLOBS_PREFIX` | S3 prefix | `s3-prefix` | `` |
+| `ZODB_PGJSONB_S3BLOBS_THRESHOLD` | Blobs bigger in size than this value will be uploaded to S3 | `blob-threshold` | `100KB` |
+| `ZODB_PGJSONB_S3BLOBS_CACHE_DIR` | Local dir for a LRU blob-cache | `blob-cache-dir` | `auto` |
+| `ZODB_PGJSONB_S3BLOBS_CACHE_SIZE` | Local cache-dir max size | `blob-cache-size` | `1GB` |
+
+
+(containers-images-backend-pgsjonb-dsn-label)=
+
+#### PGJSONB DSN
+
+A valid PostgreSQL DSN is required with a list of parameters separated with whitespace.
+A typical DSN looks like the following:
+
+```console
+dbname='zodb' user='username' host='localhost' password='pass' port='5431'
+```
+
 
 ### CORS variables
 
