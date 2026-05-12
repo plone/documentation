@@ -98,23 +98,22 @@ Since Plone 5.1, when there is a `default` profile, it's used as the installatio
 In this case, it's ignored, and Plone falls back to using the first profile sorted alphabetically by `name`.
 
 
-## Add-on specific issues
+## Add-on properties
 
-## Add-on-specific Issues
+Add-on packages may contain any of the following items.
 
-Add-on packages may contain:
+-   A default GenericSetup XML profile, which is automatically run when the package is installed using the quick-installer.
+    The profile name is usually `default`.
+-   Other profiles, which the user may install using the ZMI {guilabel}`portal_setup` under the {guilabel}`Export` tab, or which can be manually enabled for unit tests.
+-   An `setup_various` step, which runs Python code every time the GenericSetup XML profile is installed.
+    See {ref}`genericsetup-custom-installer-code-label`.
+-   A `pre_handler` or `post_handler` when you use GenericSetup 1.8.2 or later.
+    See {ref}`genericsetup-custom-installer-code-label`.
 
-- A default GenericSetup XML profile which is automatically run when the package is installed using the quick-installer.
-  The profile name is usually `default`.
-- Other profiles which the user may install using the `portal_setup` *Import* tab, or which can be manually enabled for unit tests.
-- An "Import various" step, which runs Python code every time the GenericSetup XML profile is installed.
-  See {ref}`custominstall`.
-- A `pre_handler` or `post_handler` when you use GenericSetup 1.8.2 or higher.
-  See note at {ref}`custominstall`.
+```{seealso}
+[Custom import steps](https://web.archive.org/web/20151016163743/https://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html)
+```
 
-For more information about custom import steps, see:
-
-- <http://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html>
 
 ## Listing Available Profiles
 
