@@ -63,8 +63,6 @@ If this file has problems, your add-on might not appear in the add-on installer 
 -   [GenericSetup source code](https://github.com/zopefoundation/Products.GenericSetup)
 ```
 
-- [GenericSetup package page](https://pypi.python.org/pypi/Products.GenericSetup).
-- [GenericSetup source code](https://github.com/zopefoundation/Products.GenericSetup).
 
 ## Creating A Profile
 
