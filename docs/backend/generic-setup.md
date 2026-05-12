@@ -90,22 +90,15 @@ XML files for the `default` profile go in the {file}`profiles/default` folder in
 </configure>
 ```
 
-### Multiple Profiles
+### Multiple profiles
 
-When you have more than one profile in your add-on package, the add-ons control panel needs to decide which one to use when you install it.
+When you have more than one profile in your add-on package, the add-ons control panel decides which one to use when you install it.
 
-Since Plone 5.1, when there is a `default` profile, it is always used as the installation profile, regardless of other profile names.
+Since Plone 5.1, when there is a `default` profile, it's used as the installation profile, except when this `default` profile is marked in an `INonInstallable` utility.
+In this case, it's ignored, and Plone falls back to using the first profile sorted alphabetically by `name`.
 
-Exception: when this `default` profile is marked in an `INonInstallable` utility, it is ignored and Plone falls back to using the first from the alphabetical sorting.
 
-```{note}
-In Plone 5.0 and lower,
-the profiles are sorted alphabetically by id,
-and the first one is chosen.
-If you have profiles `base` and `default`,
-the `base` profile is installed.
-It is recommended to let `default` be the alphabetically first profile.
-```
+## Add-on specific issues
 
 ## Add-on-specific Issues
 
