@@ -94,8 +94,13 @@ XML files for the `default` profile go in the {file}`profiles/default` folder in
 
 When you have more than one profile in your add-on package, the add-ons control panel decides which one to use when you install it.
 
-Since Plone 5.1, when there is a `default` profile, it's used as the installation profile, except when this `default` profile is marked in an `INonInstallable` utility.
+When there is a `default` profile, it's used as the installation profile, except when this `default` profile is marked in an `INonInstallable` utility.
 In this case, it's ignored, and Plone falls back to using the first profile sorted alphabetically by `name`.
+
+```{versionchanged} Plone 5.1
+The profile `name` of `default` now takes precedence over the `name` of the first profile sorted alphabetically.
+In previous versions, the first profile sorted alphabetically by `name` was chosen without regard to the `default` name.
+```
 
 
 ## Add-on properties
