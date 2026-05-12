@@ -64,14 +64,14 @@ If this file has problems, your add-on might not appear in the add-on installer 
 ```
 
 
-## Creating A Profile
+## Create a profile
 
-You use `<genericsetup>` directive in your add-on package's `configure.zcml`.
+Use the `<genericsetup>` directive in your add-on package's {file}`configure.zcml`.
 The name for the default profile executed by the Plone add-on installer is `default`.
 
-If you need different profiles, for example for unit testing, you can declare them here.
+If you need different profiles, for example, for unit testing, you can declare them here.
 
-XML files for the `default` profile go in the `profiles/default` folder inside your add-on package.
+XML files for the `default` profile go in the {file}`profiles/default` folder inside your add-on package.
 
 ```xml
 <configure
