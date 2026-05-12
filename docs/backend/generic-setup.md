@@ -149,30 +149,33 @@ Sample results:
 ...
 ```
 
-## Installing A Profile
 
-This is usually unit test specific question how to enable certain add-ons for unit testing.
+## Install a profile
 
-### plone.app.testing
+This section describes how to install a profile and enable add-ons for unit tests.
 
-See [Product and profile installation](http://docs.plone.org/external/plone.app.testing/docs/source/README.html#product-and-profile-installation).
 
-### Manually
+### `plone.app.testing`
+
+See [Product and profile installation](https://github.com/plone/plone.app.testing#product-and-profile-installation).
+
+
+### Manual installation
 
 You might want to install profiles manually if they need to be enabled only for certain tests.
 
-The profile name is in the format `profile-${package_name}:${profile id}`
+The profile name is in the format `profile-${package_name}:${profile id}`.
 
-Unit testing example:
+Run the extended profile of the `your.addonpackage` package for unit tests.
 
+```python
+setup_tool.runAllImportStepsFromProfile('your.addonpackage:extended')
 ```
-# Run the extended profile of the "your.addonpackage" package.
-setup_tool.runAllImportStepsFromProfile('profile-your.addonpackage:extended')
-```
 
-```{note}
-Since Products.GenericSetup 1.8.0 the `profile-` part is optional.
-The code can handle both.
+```{versionchanged} Products.GenericSetup 1.8.0
+Since `Products.GenericSetup` 1.8.0, the `profile-` prefix is optional.
+In previous versions, the prefix was required, for example, `profile-your.addonpackage:extended`.
+GenericSetup supports both forms.
 ```
 
 ## Missing Upgrade Procedure
