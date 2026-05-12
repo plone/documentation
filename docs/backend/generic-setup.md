@@ -11,54 +11,57 @@ myst:
 
 # GenericSetup
 
-GenericSetup is a framework to modify the Plone site during add-on package installation and uninstallation.
-
-It provides XML-based rules to change the site settings.
-
 ```{todo}
 remove archetypes example code everywhere
 ```
+
+This chapter describes how to use GenericSetup to modify the Plone site during add-on package installation and uninstallation.
+
+
+## Usage overview
 
 GenericSetup is mainly used to prepare the Plone site for add-on packages, by:
 
 -   registering Registry entries, such as resources and configuration
 -   setting various properties
 -   registering portlets
--   registering portal_catalog search query indexes
--   providing upgrade steps for addon version upgrades
+-   registering `portal_catalog` search query indexes
+-   providing upgrade steps for add-on version upgrades
+-   enable specific behaviors
 -   and other preparations
 
-GenericSetup is mostly used to apply an add-on's specific changes to the site configuration and to enable specific behaviors when the add-on installer is run.
-
+GenericSetup provides XML-based rules to change the site settings.
 GenericSetup XML files are usually in a {file}`profiles/default` folder inside the add-on package.
 
 All run-time through-the-web ({term}`TTW`) configurable items—for example, viewlet order through the `/@@manage-viewlets` page—are made repeatable using GenericSetup profile files.
 
-You can always change the configuration options through Plone or using the Management Interface, and then you export the resulting profile as an XML file, using the *Export* tab in `portal_setup` accessible from the Management Interface.
+You can always change the configuration options through either Plone or the {term}`Zope Management Interface` (ZMI), and then export the resulting profile as an XML file.
+To export, navigate to {menuselection}`Site Setup --> Management Interface`, then click {guilabel}`portal_setup`, and finally click the {guilabel}`Export` tab to select the steps to export.
 
-Directly editing XML profile files does not change anything on the site, even after Zope restart.
-This is because run-time TTW configurable items are stored in the database.
+Directly editing XML profile files does not change anything on the site, even after a Zope restart.
+This is because run-time TTW configurable items are stored in the database, instead of the file system.
 
-If you edit profile files, you need to either reimport the edited files using the `portal_setup` tool or fully rerun the add-on package installer in Plone control panel.
-
-This import will read XML files and change the Plone database accordingly.
+If you edit profile files, you need to either reimport the edited files using the `portal_setup` tool or fully rerun the add-on package installer by navigating to {menuselection}`Site Setup --> Add-ons`.
+The import or rerun will read XML files and change the Plone database accordingly.
 
 ```{note}
-Difference between ZCML and GenericSetup
-
-ZCML changes affect loaded Python code in **all** sites inside Zope whereas GenericSetup XML files affect only one Plone site and its database.
+ZCML changes affect loaded Python code in all sites inside Zope, whereas GenericSetup XML files affect only one Plone site and its database.
 GenericSetup XML files are always database changes.
 
-Relationship between ZCML and site-specific behavior is usually done using {doc}`layers </develop/plone/views/layers>`.
-ZCML directives, like viewlets and views, are registered to be active only on a certain layer using `layer` attribute.
+Creating relationships between ZCML and site-specific behavior is usually done using {doc}`layers </develop/plone/views/layers>`.
+ZCML directives, like viewlets and views, are registered to be active only on a certain layer using the `layer` attribute.
 When GenericSetup XML is imported through `portal_setup`, or the add-on package installer is run for a Plone site, the layer is activated for the particular site only, enabling all views registered for this layer.
 ```
 
 ```{note}
-The `metadata.xml` file (add-on dependency and version information) is read during Plone start-up.
-If this file has problems, your add-on might not appear in the installer control panel.
+The {file}`metadata.xml` file, which contains add-on dependency and version information, is read during Plone start up.
+If this file has problems, your add-on might not appear in the add-on installer control panel.
 ```
 
+```{seealso}
+-   [GenericSetup package page](https://pypi.python.org/pypi/Products.GenericSetup)
+-   [GenericSetup source code](https://github.com/zopefoundation/Products.GenericSetup)
+```
 
 - [GenericSetup package page](https://pypi.python.org/pypi/Products.GenericSetup).
 - [GenericSetup source code](https://github.com/zopefoundation/Products.GenericSetup).
