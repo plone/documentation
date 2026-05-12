@@ -183,14 +183,15 @@ In previous versions, the prefix was required, for example, `profile-your.addonp
 GenericSetup supports both forms.
 ```
 
-## Missing Upgrade Procedure
 
-In the Add-ons control panel you may see a warning that your add-on package is [missing an upgrade procedure](http://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on).
+## Missing upgrade procedure
+
+In the {guilabel}`Add-ons` control panel, you may see a warning that your add-on package is [missing an upgrade procedure](https://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on).
 
 This means you need to write some {ref}`genericsetup-upgrade-steps-label`.
 
 
-## Uninstall Profile
+## Uninstall profile
 
 When you deactivate an add-on in the control panel, Plone looks for a profile with the name `uninstall` and applies it.
 
@@ -204,12 +205,10 @@ If you do activate the add-on, no deactivate button will be shown.
 
 GenericSetup profile can contain dependencies to other add-on package installers and profiles.
 
-For example, if you want to declare a dependency to the *your.addonpackage* package, that it is automatically installed when your add-on is installed,
-you can use the declaration below.
+For example, if you want to declare a dependency to the `your.addonpackage` package that it is automatically installed when your add-on is installed, then use the declaration below.
+This way you can be sure that all layers, portlets, and other features which require database changes are usable from `your.addonpackage` when it is run.
 
-This way you can be sure that all layers, portlets and other features which require database changes are usable from *your.addonpackage* when it is run.
-
-`metadata.xml`:
+Edit {file}`metadata.xml`.
 
 ```xml
 <?xml version="1.0"?>
@@ -221,7 +220,7 @@ This way you can be sure that all layers, portlets and other features which requ
 </metadata>
 ```
 
-*your.addonpackage* declares the profile in its configure.zcml:
+`your.addonpackage` declares the profile in its {file}`configure.zcml`.
 
 ```xml
 <genericsetup:registerProfile
@@ -234,21 +233,21 @@ This way you can be sure that all layers, portlets and other features which requ
 ```
 
 ```{warning}
-Unlike other GenericSetup XML files, `metadata.xml` is read on the start-up and this read is cached.
-Always restart Plone after editing `metadata.xml`.
+Unlike other GenericSetup XML files, {file}`metadata.xml` is read on startup and cached.
+Always restart Plone after editing {file}`metadata.xml`.
 
-If your `metadata.xml` file contains syntax errors or dependencies to a missing or non-existent package (e.g. due to a typo in a name) your add-on will disappear from the installation control panel.
+If your {file}`metadata.xml` file contains syntax errors or dependencies to a missing or non-existent package, then your add-on will disappear from the installation control panel.
 ```
 
 ```{note}
 For some old add-ons in the `Products.*` Python namespace, you must not include the full package name in the dependencies.
 
-This is true when this add-on has registered its profile in Python instead of zcml, and there it has used only part of its package name.
+This is true when this add-on has registered its profile in Python instead of ZCML, and it has used only part of its package name.
 
 In most cases you *do* need to use the full `Products.xxx` name.
 ```
 
-To declare a dependency on the `simple` profile of `Products.PluggableAuthService`:
+The following code example shows how to declare a dependency on the `simple` profile of `Products.PluggableAuthService`.
 
 ```xml
 <?xml version="1.0"?>
@@ -260,6 +259,7 @@ To declare a dependency on the `simple` profile of `Products.PluggableAuthServic
   </dependencies>
 </metadata>
 ```
+
 
 ## Metadata version numbers
 
