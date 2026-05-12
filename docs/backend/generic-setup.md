@@ -115,17 +115,16 @@ Add-on packages may contain any of the following items.
 ```
 
 
-## Listing Available Profiles
+## List available profiles
 
-Example:
+List all known profiles for the Plone instance.
 
-```
-# List all profiles know to the Plone instance.
+```python
 setup_tool = self.portal.portal_setup
 
 profiles = setup_tool.listProfileInfo()
 for profile in profiles:
-   print str(profile)
+    print str(profile)
 ```
 
 Sample results:
