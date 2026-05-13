@@ -1494,7 +1494,7 @@ This will reset the permission to the same settings as on the Zope level:
 
 ```{eval-rst}
 .. automodule:: Products.GenericSetup.rolemap
-  :members: importRolemap RolemapImportConfigurator
+   :members: importRolemap, RolemapImportConfigurator
 
 ```
 
