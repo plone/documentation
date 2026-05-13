@@ -1489,13 +1489,9 @@ This will reset the permission to the same settings as on the Zope level:
 ```
 ````
 
-% todo: fix WARNING:
-% WARNING: missing attribute mentioned in :members: option: module Products.GenericSetup.rolemap, attribute importRolemap RolemapImportConfigurator [autodoc]
-
 ```{eval-rst}
 .. automodule:: Products.GenericSetup.rolemap
    :members: importRolemap, RolemapImportConfigurator
-
 ```
 
 ### sharing.xml
