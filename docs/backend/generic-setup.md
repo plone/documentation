@@ -278,26 +278,6 @@ If you experience problems with upgrade steps, you might need to upgrade Generic
 {ref}`genericsetup-upgrade-steps-label`
 ```
 
-If you are seeing this, then you are using an old version of GenericSetup.
-
-You want numerical sorting here, which is correctly done currently. Versions with dots work fine too.
-
-They get ordered just like they would when used for packages on PyPI.
-
-Best practice for all versions of GenericSetup is this:
-
-- Start with 1000.
-  This avoids problems with ancient GenericSetup that used alphabetical sorting.
-- Simply increase the version by 1 each time you need a new metadata version.
-  For example: 1001, 1002, etc.
-- If your add-on package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version.
-  There is no need.
-- If you make changes for a new major release, you should increase the metadata version significantly.
-  This leaves room for small metadata version increases on a maintenance branch.
-  Example:
-  You have branch master with version 1025.
-  You make backwards incompatible changes and you increase the version to 2000.
-  You create a maintenance branch where the next metadata version will be 1026.
 
 (genericsetup-custom-installer-code-label)=
 
