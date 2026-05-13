@@ -721,7 +721,7 @@ For example, if you only need to change the 'Allow anonymous to view about' prop
   <object name="site_properties" meta_type="Plone Property Sheet">
     <property name="allowAnonymousViewAbout" type="boolean">True</property>
   </object>
-</object
+</object>
 ```
 
 
