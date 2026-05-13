@@ -191,6 +191,8 @@ In the {guilabel}`Add-ons` control panel, you may see a warning that your add-on
 This means you need to write some {ref}`genericsetup-upgrade-steps-label`.
 
 
+(genericsetup-uninstall-profile-label)=
+
 ## Uninstall profile
 
 When you deactivate an add-on in the control panel, Plone looks for a profile with the name `uninstall` and applies it.
@@ -281,14 +283,17 @@ If you experience problems with upgrade steps, you might need to upgrade Generic
 
 (genericsetup-custom-installer-code-label)=
 
-## Custom Installer Code (`setuphandlers.py`)
+## Custom installer code
 
-Besides out-of-the-box XML steps which provide both install and uninstall,
-GenericSetup provides a way to run custom Python code when your add-on package is installed and uninstalled.
+In addition to upgrade steps to install and uninstall add-ons, GenericSetup provides a way to run custom Python code when your add-on package is installed and uninstalled.
+The following examples show how to do this.
 
-In `configure.zcml`:
+First, edit {file}`configure.zcml`, adding a `pre_handler` and `post_handler` attribute to the `registerProfile` element.
 
-```
+```{code-block} xml
+:linenos:
+:emphasize-lines: 11-13
+
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
@@ -307,38 +312,34 @@ In `configure.zcml`:
 </configure>
 ```
 
-In `setuphandlers.py`:
+Then edit {file}`setuphandlers.py`, adding the Python functions `run_before` and `run_after` according to the `pre_handler` and `post_handler` attributes.
 
 ```python
 def run_before(context):
     # This is run before running the first import step of
-    # the default profile.  context is portal_setup.
+    # the default profile.  The context is portal_setup.
     # If you need the same context as you would get in
     # an import step, like setup_various below, do this:
     profile_id = 'profile-your.addonpackage:default'
     good_old_context = context._getImportContext(profile_id)
-    ...
+    # ...
 
 def run_after(context):
     # This is run after running the last import step of
     # the default profile.  context is portal_setup.
     ...
+    # the default profile. The context is portal_setup.
+    # ...
 ```
 
-The best practice is to create a `setuphandlers.py` file which contains a function `setup_various()` which runs the required Python code
-to make changes to Plone site object.
-
+The best practice is to create a {file}`setuphandlers.py` file, and include a function `setup_various()` which runs the required Python code to make changes to the Plone site object.
 This function is registered as a custom `genericsetup:importStep` in XML.
-
-```{note}
-When you write a custom `importStep`, remember to write uninstallation code as well.
-```
 
 However, the trick is that all GenericSetup import steps, including your custom step, are run for *every* add-on package when they are installed.
 
-If your need to run code which is **specific to your add-on install only** you need to use a marker text file which is checked by the GenericSetup context.
+If you need to run code which is **specific to your add-on install only** you need to use a marker text file which is checked by the GenericSetup context.
 
-Also you need to register this custom import step in `configure.zcml`:
+Also, you need to register this custom import step in {file}`configure.zcml`.
 
 ```xml
 <configure
@@ -354,6 +355,13 @@ Also you need to register this custom import step in `configure.zcml`:
 
 </configure>
 ```
+
+````{tip}
+When you write a custom `importStep`, remember to write uninstallation code as well.
+```{seealso}
+{ref}`genericsetup-uninstall-profile-label`
+```
+````
 
 You can run other steps before yours by using the `depends` directive.
 
