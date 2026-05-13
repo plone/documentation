@@ -263,15 +263,20 @@ The following code example shows how to declare a dependency on the `simple` pro
 
 ## Metadata version numbers
 
-Some old add-on packages may have a `metadata.xml` without version number, but this is considered bad practice.
+The metadata `version` number in your {file}`metadata.xml` indicates the version of your add-on package.
+It's used to determine whether the add-on package needs to be upgraded.
 
-What should the version number in your `metadata.xml` be?
+Upgrade steps are executed in the Python version sort order, according to [Version specifiers](https://packaging.python.org/en/latest/specifications/version-specifiers/).
 
-This mostly matters when you are adding upgrade steps, see also the [Upgrade steps] section.
+```{note}
+Legacy add-on packages might not have a version number, or use an integer version number.
+In old versions of GenericSetup, sorting was done alphabetically, not according to the Python version specifiers.
+If you experience problems with upgrade steps, you might need to upgrade GenericSetup, or add a metadata `version` number to align with your package's version number.
+```
 
-Upgrade steps have a sort order in which they are executed. This used to be alphabetical sorting.
-
-When you had eleven upgrade steps, marked from 1 through 11, alphabetical sorting meant this order: 1, 10, 11, 2, 3, etc.
+```{seealso}
+{ref}`genericsetup-upgrade-steps-label`
+```
 
 If you are seeing this, then you are using an old version of GenericSetup.
 
