@@ -787,7 +787,7 @@ Example:
 - `workflows`: use the **plone** domain
 
 
-(genericsetup-generic-setup-files-label)-
+(genericsetup-generic-setup-files-label)=
 
 ## Generic Setup Files
 
@@ -1469,7 +1469,7 @@ ValueError: The permission <em>Pass the bridge</em> is invalid.
 ```
 
 A permission is created on the Zope level when it is used in code.
-See {doc}`Creating permissions </develop/plone/security/permissions>`.
+See {ref}`backend-security-permissions-label`.
 
 When a role in a permission does not exist, it is silently ignored.
 The roles listed in a permission are not added.
@@ -1501,7 +1501,7 @@ This will reset the permission to the same settings as on the Zope level:
 ### sharing.xml
 
 The sharing.xml file let you add custom roles to the sharing tab.
-For reference, visit: {ref}`security-label`.
+For reference, visit {doc}`/backend/security`.
 
 
 ### typeinfo
@@ -1741,4 +1741,4 @@ Next to this, the `workflows` directory is checked.
 This contains sub directories with the same name as the workflows.
 Each sub directory contains a file `definition.xml` with the definition for this workflow.
 
-See {ref}`workflows-label`.
+See {doc}`/backend/workflows`.
