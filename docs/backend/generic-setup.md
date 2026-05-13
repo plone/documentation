@@ -326,8 +326,6 @@ def run_before(context):
 
 def run_after(context):
     # This is run after running the last import step of
-    # the default profile.  context is portal_setup.
-    ...
     # the default profile. The context is portal_setup.
     # ...
 ```
@@ -457,7 +455,7 @@ See {ref}`genericsetup-generic-setup-files-label` for a list.
 ```
 
 
-(genericsetup-upgrade-steps-label)-
+(genericsetup-upgrade-steps-label)=
 
 ## Upgrade Steps
 
@@ -577,7 +575,7 @@ Some of the most used ones are here:
 - <https://github.com/zopefoundation/Products.CMFCore/blob/master/src/Products/CMFCore/exportimport/configure.zcml>
 - <https://github.com/plone/Products.CMFPlone/blob/master/src/Products/CMFPlone/exportimport/configure.zcml>
 
-After restarting Zope, your upgrade step should be visible in the Management Interface:
+After restarting Zope, your upgrade step should be visible in the ZMI:
 the `portal_setup` tool has a tab `Upgrades`.
 
 Select your package profile to see which upgrade steps Zope knows about for your add-on.
@@ -751,7 +749,7 @@ Example:
 ```
 
 ```{note}
-In the portal_actions tool, in the Management Interface, you will see an i18n domain specified for each action.
+In the portal_actions tool, in the ZMI, you will see an i18n domain specified for each action.
 ```
 
 - `catalog.xml`: no i18n needed
@@ -1490,6 +1488,9 @@ This will reset the permission to the same settings as on the Zope level:
 <permission name="Pass the bridge" acquire="True" />
 ```
 ````
+
+% todo: fix WARNING:
+% WARNING: missing attribute mentioned in :members: option: module Products.GenericSetup.rolemap, attribute importRolemap RolemapImportConfigurator [autodoc]
 
 ```{eval-rst}
 .. automodule:: Products.GenericSetup.rolemap
