@@ -48,7 +48,7 @@ The import or rerun will read XML files and change the Plone database accordingl
 ZCML changes affect loaded Python code in all sites inside Zope, whereas GenericSetup XML files affect only one Plone site and its database.
 GenericSetup XML files are always database changes.
 
-Creating relationships between ZCML and site-specific behavior is usually done using {doc}`layers </develop/plone/views/layers>`.
+Creating relationships between ZCML and site-specific behavior is usually done using {doc}`layers </classic-ui/layers>`.
 ZCML directives, like viewlets and views, are registered to be active only on a certain layer using the `layer` attribute.
 When GenericSetup XML is imported through `portal_setup`, or the add-on package installer is run for a Plone site, the layer is activated for the particular site only, enabling all views registered for this layer.
 ```
