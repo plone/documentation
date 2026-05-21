@@ -110,10 +110,8 @@ Add-on packages may contain any of the following items.
     See {ref}`genericsetup-custom-installer-code-label`.
 -   A `pre_handler` or `post_handler` when you use GenericSetup 1.8.2 or later.
     See {ref}`genericsetup-custom-installer-code-label`.
-
-```{seealso}
-[Custom import steps](https://web.archive.org/web/20151016163743/https://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html)
-```
+-   Custom import steps to process additional XML files.
+    See {ref}`genericsetup-custom-import-steps`.
 
 
 ## List available profiles
@@ -121,11 +119,12 @@ Add-on packages may contain any of the following items.
 List all known profiles for the Plone instance.
 
 ```python
-setup_tool = self.portal.portal_setup
+from plone import api
+setup_tool = api.portal.get_tool("portal_setup")
 
 profiles = setup_tool.listProfileInfo()
 for profile in profiles:
-    print str(profile)
+    print(str(profile))
 ```
 
 Sample results:
@@ -167,7 +166,7 @@ You might want to install profiles manually if they need to be enabled only for 
 
 The profile name is in the format `profile-${package_name}:${profile id}`.
 
-Run the extended profile of the `your.addonpackage` package for unit tests.
+For example, this runs the `extended` profile of the `your.addonpackage` package.
 
 ```python
 setup_tool.runAllImportStepsFromProfile('your.addonpackage:extended')
@@ -191,17 +190,17 @@ This means you need to write some {ref}`genericsetup-upgrade-steps-label`.
 
 ## Uninstall profile
 
-When you deactivate an add-on in the control panel, Plone looks for a profile with the name `uninstall` and applies it.
+When you uninstall an add-on in the control panel, Plone looks for a profile with the name `uninstall` and applies it.
 
 ```{note}
 If there is no `uninstall` profile, a warning is displayed before installing the add-on.
-If you do activate the add-on, no deactivate button will be shown.
+If you do install the add-on, no uninstall button will be shown.
 ```
 
 
 ## Dependencies
 
-GenericSetup profile can contain dependencies to other add-on package installers and profiles.
+A GenericSetup profile can contain dependencies to other add-on package installers and profiles.
 
 For example, if you want to declare a dependency to the `your.addonpackage` package that it is automatically installed when your add-on is installed, then use the declaration below.
 This way you can be sure that all layers, portlets, and other features which require database changes are usable from `your.addonpackage` when it is run.
@@ -267,7 +266,7 @@ It's used to determine whether the add-on package needs to be upgraded.
 Upgrade steps are executed in the Python version sort order, according to [Version specifiers](https://packaging.python.org/en/latest/specifications/version-specifiers/).
 
 ```{note}
-Legacy add-on packages might not have a version number, or use an integer version number.
+Legacy add-on packages might not have a version number.
 In old versions of GenericSetup, sorting was done alphabetically, not according to the Python version specifiers.
 If you experience problems with upgrade steps, you might need to upgrade GenericSetup, or add a metadata `version` number to align with your package's version number.
 ```
@@ -281,7 +280,7 @@ If you experience problems with upgrade steps, you might need to upgrade Generic
 
 ## Custom installer code
 
-In addition to upgrade steps to install and uninstall add-ons, GenericSetup provides a way to run custom Python code when your add-on package is installed and uninstalled.
+GenericSetup provides a way to run custom Python code before or after your add-on package is installed.
 The following examples show how to do this.
 
 First, edit {file}`configure.zcml`, adding a `pre_handler` and `post_handler` attribute to the `registerProfile` element.
@@ -314,11 +313,7 @@ Then edit {file}`setuphandlers.py`, adding the Python functions `run_before` and
 def run_before(context):
     # This is run before running the first import step of
     # the default profile.  The context is portal_setup.
-    # If you need the same context as you would get in
-    # an import step, like setup_various below, do this:
-    profile_id = 'profile-your.addonpackage:default'
-    good_old_context = context._getImportContext(profile_id)
-    # ...
+    # Add custom code here...
 
 def run_after(context):
     # This is run after running the last import step of
@@ -326,14 +321,37 @@ def run_after(context):
     # ...
 ```
 
-The best practice is to create a {file}`setuphandlers.py` file, and include a function `setup_various()` which runs the required Python code to make changes to the Plone site object.
-This function is registered as a custom `genericsetup:importStep` in XML.
+## Custom install steps
 
-However, the trick is that all GenericSetup import steps, including your custom step, are run for *every* add-on package when they are installed.
+You can register a custom import step.
+This is a Python function which will be run for _every_ GenericSetup profile.
+It provides a way to extend the possible changes that can be made when a profile is installed.
 
-If you need to run code which is **specific to your add-on install only** you need to use a marker text file which is checked by the GenericSetup context.
+```{tip}
+If you only want to run custom code when one add-on is installed, use ref`{genericsetup-custom-installer-code-label}` instead.
+```
 
-Also, you need to register this custom import step in {file}`configure.zcml`.
+By convention, custom import steps are usually placed in a {file}`setuphandlers.py` file.
+
+```python
+
+def run_custom_code(site):
+    """Run custom add-on package installation code to modify Plone
+       site object and others
+
+    @param site: Plone site
+    """
+
+def setup_various(context):
+    """
+    @param context: Products.GenericSetup.context.DirectoryImportContext instance
+    """
+    portal = context.getSite()
+
+    run_custom_code(portal)
+```
+
+This function is registered as a custom `genericsetup:importStep` in {file}`configure.zcml`.
 
 ```xml
 <configure
@@ -357,7 +375,9 @@ When you write a custom `importStep`, remember to write uninstallation code as w
 ```
 ````
 
-You can run other steps before yours by using the `depends` directive.
+### Control the import step execution order
+
+You can make sure that other import steps are processed before yours by using the `depends` directive.
 
 For instance, if your import step depends on a content type to be installed first, you must use:
 
@@ -377,70 +397,7 @@ For instance, if your import step depends on a content type to be installed firs
 </configure>
 ```
 
-`setuphandlers.py` example
-
-```python
-
-def run_custom_code(site):
-    """Run custom add-on package installation code to modify Plone
-       site object and others
-
-    @param site: Plone site
-    """
-
-def setup_various(context):
-    """
-    @param context: Products.GenericSetup.context.DirectoryImportContext instance
-    """
-
-    # We check from our GenericSetup context whether we are running
-    # add-on installation for your package or any other
-    if context.readDataFile('your.addonpackage.marker.txt') is None:
-        # Not your add-on
-        return
-
-    portal = context.getSite()
-
-    run_custom_code(portal)
-```
-
-And add a dummy text file
-`your.addonpackage/your/addonpackage/profiles/default/your.addonpackage.marker.txt`:
-
-This text file can contain any content - it just needs to be present
-
-
-
-## Overriding Import Step Order
-
-If you need to override the order of import steps in a package that is not yours,
-it might work if you [use an overrides.zcml](http://plone.293351.n2.nabble.com/Overriding-import-step-order-td2189638.html).
-
-### Controlling The Import Step Execution Order
-
-If you need to control the execution order of one of your own custom import steps, you can do this in your import step definition in zcml.
-
-To make sure the catalog and typeinfo steps are run before your own step, use this code:
-
-```xml
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="poi">
-
-  <genericsetup:importStep
-      name="poi_various"
-      title="Poi various import handlers"
-      description=""
-      handler="Products.Poi.setuphandlers.import_various">
-    <depends name="catalog"/>
-    <depends name="typeinfo"/>
-  </gs:importStep>
-
-</configure>
-```
-
-```{note}
+```{tip}
 The name that you need, is usually the name of the related xml file, but with the `.xml` stripped.
 For the `catalog.xml` the import step name is `catalog`.
 But there are exceptions.
