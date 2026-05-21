@@ -11,10 +11,6 @@ myst:
 
 # GenericSetup
 
-```{todo}
-remove archetypes example code everywhere
-```
-
 This chapter describes how to use GenericSetup to modify the Plone site during add-on package installation and uninstallation.
 
 
@@ -894,34 +890,23 @@ Uninstall example:
 ### componentregistry.xml
 
 
-Setup items in the local component registry of the Plone Site.
+Register {term}`Zope Component Architecture` components in the local component registry of the Plone Site.
 The items can be adapters, subscribers or utilities.
 
-This can also be done in zcml, which puts it in the global registry that is defined at startup.
+This can also be done in ZCML, which puts it in the global registry that is defined at startup.
 
-The difference is, when you put it in xml, the item is only added to a specific Plone Site when you install the package in the add-ons control panel.
-
-Both have their uses.
+The difference is, when you put it in {file}`componentregistry.xml`, the item is only added to a specific Plone Site when you install the package in the add-ons control panel.
 
 Example:
 
 ```xml
 <?xml version="1.0"?>
 <componentregistry>
-  <adapters>
-     <adapter
-       for="archetypes.multilingual.interfaces.IArchetypesTranslatable"
-       provides="plone.app.multilingual.interfaces.ITranslationCloner"
-       factory="archetypes.multilingual.cloner.Cloner"
-     />
-  </adapters>
-  <subscribers>
-    <subscriber
-      for="archetypes.multilingual.interfaces.IArchetypesTranslatable
-           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-      handler="archetypes.multilingual.subscriber.handler"
-      />
-  </subscribers>
+  <utilities>
+    <utility
+      interface="collective.solr.interfaces.ISolrConnectionManager"
+      factory="collective.solr.manager.SolrConnectionManager"/>
+  </utilities>
 </componentregistry>
 ```
 
@@ -947,27 +932,11 @@ Uninstall example:
 ```xml
 <?xml version="1.0"?>
 <componentregistry>
-  <adapters>
-    <adapter
-      remove="true"
-      for="archetypes.multilingual.interfaces.IArchetypesTranslatable"
-      provides="plone.app.multilingual.interfaces.ITranslationCloner"
-      factory="archetypes.multilingual.cloner.Cloner"
-    />
-  </adapters>
-  <subscribers>
-    <subscriber
-      remove="true"
-      for="archetypes.multilingual.interfaces.IArchetypesTranslatable
-           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-      handler="archetypes.multilingual.subscriber.handler"
-      />
-  </subscribers>
   <utilities>
     <utility
       remove="true"
-      interface="Products.ATContentTypes.interface.IATCTTool"
-      object="portal_atct"/>
+      interface="collective.solr.interfaces.ISolrConnectionManager"
+      factory="collective.solr.manager.SolrConnectionManager"/>
   </utilities>
 </componentregistry>
 ```
@@ -1088,19 +1057,10 @@ This configures how the difference between two versions of a field are shown on 
 
 The configuration is stored in the `portal_diff` tool.
 
-For Archetypes content, you need a different `difftype`:
-
-```xml
-<type portal_type="Document">
-  <field name="any" difftype="Compound Diff for AT types"/>
-</type>
-```
-
 A new `difftype` can be registered by calling `Products.CMFDiffTool.CMFDiffTool.registerDiffType`.
-The `difftypes` in standard Plone 5 are:
+The available `difftypes` in Plone are:
 
 - `Lines Diff`
-- `Compound Diff for AT types`
 - `Binary Diff`
 - `Field Diff`
 - `List Diff`
@@ -1529,11 +1489,10 @@ Partial example from `plone.app.contenttypes`:
 This adds content types in the `portal_types` tool.
 The `meta_type` can be:
 
-- `Dexterity FTI` for Dexterity content.
+- `Dexterity FTI` for Dexterity content, including the Plone Site itself.
   This is probably what you want.
-- `Factory-based Type Information with dynamic views` for Archetypes content and for the Plone Site itself
-- `Factory-based Type Information` for Archetypes content that does not need dynamic views,
-  the ability to choose a view in the `display` menu.
+- `Factory-based Type Information with dynamic views` for custom content types that use dynamic views (the ability to choose a view in the Display menu).
+- `Factory-based Type Information` for custom content types that do not need dynamic views.
 
 The `types.xml` should be accompanied by a `types` folder with details information on the new types.
 If you are editing an already existing type, then `types.xml` is not needed:
@@ -1602,62 +1561,6 @@ This file is in `plone.app.contenttypes`:
     <permission value="Modify portal content"/>
   </action>
 
-</object>
-```
-
-For comparison, here is the `types.xml` from `plone.app.collection` which has an old style Archetypes Collection:
-
-```xml
-<?xml version="1.0"?>
-<object name="portal_types">
-  <!-- We remove the existing FTI since it could be Dexterity-based and would
-       not be compatible in that case.  You get this error when installing:
-       ValueError: undefined property 'content_meta_type' -->
-  <object name="Collection" remove="True"/>
-  <object name="Collection"
-          meta_type="Factory-based Type Information with dynamic views" />
-</object>
-```
-
-And here is the `types/Collection.xml` from `plone.app.collection`:
-
-```xml
-<?xml version="1.0"?>
-<object name="Collection"
-        meta_type="Factory-based Type Information with dynamic views"
-        i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Collection</property>
-  <property name="description"
-            i18n:translate="">Collection of searchable information</property>
-  <property name="icon_expr"></property>
-  <property name="content_meta_type">Collection</property>
-  <property name="product">plone.app.collection</property>
-  <property name="factory">addCollection</property>
-  <property name="immediate_view">standard_view</property>
-  <property name="global_allow">True</property>
-  <property name="filter_content_types">True</property>
-  <property name="allowed_content_types"/>
-  <property name="allow_discussion">False</property>
-  <property name="default_view">standard_view</property>
-  <property name="view_methods">
-    <element value="standard_view" />
-    <element value="summary_view" />
-    <element value="all_content" />
-    <element value="tabular_view" />
-    <element value="thumbnail_view" />
-  </property>
-  <alias from="(Default)" to="(dynamic view)" />
-  <alias from="edit" to="atct_edit" />
-  <alias from="sharing" to="@@sharing" />
-  <alias from="view" to="(selected layout)" />
-  <action title="View" action_id="view" category="object" condition_expr=""
-          url_expr="string:${object_url}/" visible="True">
-    <permission value="View" />
-  </action>
-  <action title="Edit" action_id="edit" category="object" condition_expr=""
-          url_expr="string:${object_url}/edit" visible="True">
-    <permission value="Modify portal content" />
-  </action>
 </object>
 ```
 
