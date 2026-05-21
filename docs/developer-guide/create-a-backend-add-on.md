@@ -19,7 +19,7 @@ Follow the section {ref}`create-project-cookieplone-system-requirements` to set 
 
 ## Generate the add-on project with `plonecli`
 
-Choose your desired local development base folder and run the following command to create an addon project with `plonecli`
+Choose your desired local development base folder and run the following command to create an add-on project with `plonecli`.
 
 ```shell
 uvx plonecli create addon <addon namespace package>
@@ -139,7 +139,7 @@ Currently documented subtemplates:
 - behavior: {ref}`backend-behaviors-label`
 - content_type: {ref}`creating-content-types-label`
 - controlpanel: {ref}`control-panels-label`
-- form: {reg}`forms-label`
+- form: {ref}`forms-label`
 - mockup_pattern: {ref}`mockup-and-patternslib-label`
 - theme_barceloneta: {ref}`create-a-theme-add-on-label`
 

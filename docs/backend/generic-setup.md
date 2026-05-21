@@ -11,66 +11,63 @@ myst:
 
 # GenericSetup
 
-GenericSetup is a framework to modify the Plone site during add-on package installation and uninstallation.
+This chapter describes how to use GenericSetup to modify the Plone site during add-on package installation and uninstallation.
 
-It provides XML-based rules to change the site settings.
 
-```{todo}
-remove archetypes example code everywhere
-```
+## Usage overview
 
 GenericSetup is mainly used to prepare the Plone site for add-on packages, by:
 
 -   registering Registry entries, such as resources and configuration
 -   setting various properties
 -   registering portlets
--   registering portal_catalog search query indexes
--   providing upgrade steps for addon version upgrades
+-   registering `portal_catalog` search query indexes
+-   providing upgrade steps for add-on version upgrades
+-   enable specific behaviors
 -   and other preparations
 
-GenericSetup is mostly used to apply an add-on's specific changes to the site configuration and to enable specific behaviors when the add-on installer is run.
-
+GenericSetup provides XML-based rules to change the site settings.
 GenericSetup XML files are usually in a {file}`profiles/default` folder inside the add-on package.
 
 All run-time through-the-web ({term}`TTW`) configurable items—for example, viewlet order through the `/@@manage-viewlets` page—are made repeatable using GenericSetup profile files.
 
-You can always change the configuration options through Plone or using the Management Interface, and then you export the resulting profile as an XML file, using the *Export* tab in `portal_setup` accessible from the Management Interface.
+You can always change the configuration options through either Plone or the {term}`Zope Management Interface` (ZMI), and then export the resulting profile as an XML file.
+To export, navigate to {menuselection}`Site Setup --> Management Interface`, then click {guilabel}`portal_setup`, and finally click the {guilabel}`Export` tab to select the steps to export.
 
-Directly editing XML profile files does not change anything on the site, even after Zope restart.
-This is because run-time TTW configurable items are stored in the database.
+Directly editing XML profile files does not change anything on the site, even after a Zope restart.
+This is because run-time TTW configurable items are stored in the database, instead of the file system.
 
-If you edit profile files, you need to either reimport the edited files using the `portal_setup` tool or fully rerun the add-on package installer in Plone control panel.
-
-This import will read XML files and change the Plone database accordingly.
+If you edit profile files, you need to either reimport the edited files using the `portal_setup` tool or fully rerun the add-on package installer by navigating to {menuselection}`Site Setup --> Add-ons`.
+The import or rerun will read XML files and change the Plone database accordingly.
 
 ```{note}
-Difference between ZCML and GenericSetup
-
-ZCML changes affect loaded Python code in **all** sites inside Zope whereas GenericSetup XML files affect only one Plone site and its database.
+ZCML changes affect loaded Python code in all sites inside Zope, whereas GenericSetup XML files affect only one Plone site and its database.
 GenericSetup XML files are always database changes.
 
-Relationship between ZCML and site-specific behavior is usually done using {doc}`layers </develop/plone/views/layers>`.
-ZCML directives, like viewlets and views, are registered to be active only on a certain layer using `layer` attribute.
+Creating relationships between ZCML and site-specific behavior is usually done using {doc}`layers </classic-ui/layers>`.
+ZCML directives, like viewlets and views, are registered to be active only on a certain layer using the `layer` attribute.
 When GenericSetup XML is imported through `portal_setup`, or the add-on package installer is run for a Plone site, the layer is activated for the particular site only, enabling all views registered for this layer.
 ```
 
 ```{note}
-The `metadata.xml` file (add-on dependency and version information) is read during Plone start-up.
-If this file has problems, your add-on might not appear in the installer control panel.
+The {file}`metadata.xml` file, which contains add-on dependency and version information, is read during Plone start up.
+If this file has problems, your add-on might not appear in the add-on installer control panel.
+```
+
+```{seealso}
+-   [GenericSetup package page](https://pypi.python.org/pypi/Products.GenericSetup)
+-   [GenericSetup source code](https://github.com/zopefoundation/Products.GenericSetup)
 ```
 
 
-- [GenericSetup package page](https://pypi.python.org/pypi/Products.GenericSetup).
-- [GenericSetup source code](https://github.com/zopefoundation/Products.GenericSetup).
+## Create a profile
 
-## Creating A Profile
-
-You use `<genericsetup>` directive in your add-on package's `configure.zcml`.
+Use the `<genericsetup>` directive in your add-on package's {file}`configure.zcml`.
 The name for the default profile executed by the Plone add-on installer is `default`.
 
-If you need different profiles, for example for unit testing, you can declare them here.
+If you need different profiles, for example, for unit testing, you can declare them here.
 
-XML files for the `default` profile go in the `profiles/default` folder inside your add-on package.
+XML files for the `default` profile go in the {file}`profiles/default` folder inside your add-on package.
 
 ```xml
 <configure
@@ -89,50 +86,45 @@ XML files for the `default` profile go in the `profiles/default` folder inside y
 </configure>
 ```
 
-### Multiple Profiles
+### Multiple profiles
 
-When you have more than one profile in your add-on package, the add-ons control panel needs to decide which one to use when you install it.
+When you have more than one profile in your add-on package, the add-ons control panel decides which one to use when you install it.
 
-Since Plone 5.1, when there is a `default` profile, it is always used as the installation profile, regardless of other profile names.
+When there is a `default` profile, it's used as the installation profile, except when this `default` profile is marked in an `INonInstallable` utility.
+In this case, it's ignored, and Plone falls back to using the first profile sorted alphabetically by `name`.
 
-Exception: when this `default` profile is marked in an `INonInstallable` utility, it is ignored and Plone falls back to using the first from the alphabetical sorting.
-
-```{note}
-In Plone 5.0 and lower,
-the profiles are sorted alphabetically by id,
-and the first one is chosen.
-If you have profiles `base` and `default`,
-the `base` profile is installed.
-It is recommended to let `default` be the alphabetically first profile.
+```{versionchanged} Plone 5.1
+The profile `name` of `default` now takes precedence over the `name` of the first profile sorted alphabetically.
+In previous versions, the first profile sorted alphabetically by `name` was chosen without regard to the `default` name.
 ```
 
-## Add-on-specific Issues
 
-Add-on packages may contain:
+## Add-on properties
 
-- A default GenericSetup XML profile which is automatically run when the package is installed using the quick-installer.
-  The profile name is usually `default`.
-- Other profiles which the user may install using the `portal_setup` *Import* tab, or which can be manually enabled for unit tests.
-- An "Import various" step, which runs Python code every time the GenericSetup XML profile is installed.
-  See {ref}`custominstall`.
-- A `pre_handler` or `post_handler` when you use GenericSetup 1.8.2 or higher.
-  See note at {ref}`custominstall`.
+Add-on packages may contain any of the following items.
 
-For more information about custom import steps, see:
+-   A default GenericSetup XML profile, which is automatically run when the package is installed using the quick-installer.
+    The profile name is usually `default`.
+-   Other profiles, which the user may install using the ZMI {guilabel}`portal_setup` under the {guilabel}`Import` tab, or which can be manually enabled for unit tests.
+-   An `setup_various` step, which runs Python code every time the GenericSetup XML profile is installed.
+    See {ref}`genericsetup-custom-installer-code-label`.
+-   A `pre_handler` or `post_handler` when you use GenericSetup 1.8.2 or later.
+    See {ref}`genericsetup-custom-installer-code-label`.
+-   Custom import steps to process additional XML files.
+    See {ref}`genericsetup-custom-import-steps`.
 
-- <http://plone.293351.n2.nabble.com/indexing-of-content-created-by-Generic-Setup-td4454703.html>
 
-## Listing Available Profiles
+## List available profiles
 
-Example:
+List all known profiles for the Plone instance.
 
-```
-# List all profiles know to the Plone instance.
-setup_tool = self.portal.portal_setup
+```python
+from plone import api
+setup_tool = api.portal.get_tool("portal_setup")
 
 profiles = setup_tool.listProfileInfo()
 for profile in profiles:
-   print str(profile)
+    print(str(profile))
 ```
 
 Sample results:
@@ -157,59 +149,63 @@ Sample results:
 ...
 ```
 
-## Installing A Profile
 
-This is usually unit test specific question how to enable certain add-ons for unit testing.
+## Install a profile
 
-### plone.app.testing
+This section describes how to install a profile and enable add-ons for unit tests.
 
-See [Product and profile installation](http://docs.plone.org/external/plone.app.testing/docs/source/README.html#product-and-profile-installation).
 
-### Manually
+### `plone.app.testing`
+
+See [Product and profile installation](https://github.com/plone/plone.app.testing#product-and-profile-installation).
+
+
+### Manual installation
 
 You might want to install profiles manually if they need to be enabled only for certain tests.
 
-The profile name is in the format `profile-${package_name}:${profile id}`
+The profile name is in the format `profile-${package_name}:${profile id}`.
 
-Unit testing example:
+For example, this runs the `extended` profile of the `your.addonpackage` package.
 
-```
-# Run the extended profile of the "your.addonpackage" package.
-setup_tool.runAllImportStepsFromProfile('profile-your.addonpackage:extended')
-```
-
-```{note}
-Since Products.GenericSetup 1.8.0 the `profile-` part is optional.
-The code can handle both.
+```python
+setup_tool.runAllImportStepsFromProfile('your.addonpackage:extended')
 ```
 
-## Missing Upgrade Procedure
+```{versionchanged} Products.GenericSetup 1.8.0
+Since `Products.GenericSetup` 1.8.0, the `profile-` prefix is optional.
+In previous versions, the prefix was required, for example, `profile-your.addonpackage:extended`.
+GenericSetup supports both forms.
+```
 
-In the Add-ons control panel you may see a warning that your add-on package is [missing an upgrade procedure](http://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on).
+
+## Missing upgrade procedure
+
+In the {guilabel}`Add-ons` control panel, you may see a warning that your add-on package is [missing an upgrade procedure](https://stackoverflow.com/questions/15316583/how-to-define-a-procedure-to-upgrade-an-add-on).
 
 This means you need to write some {ref}`genericsetup-upgrade-steps-label`.
 
 
-## Uninstall Profile
+(genericsetup-uninstall-profile-label)=
 
-When you deactivate an add-on in the control panel, Plone looks for a profile with the name `uninstall` and applies it.
+## Uninstall profile
+
+When you uninstall an add-on in the control panel, Plone looks for a profile with the name `uninstall` and applies it.
 
 ```{note}
 If there is no `uninstall` profile, a warning is displayed before installing the add-on.
-If you do activate the add-on, no deactivate button will be shown.
+If you do install the add-on, no uninstall button will be shown.
 ```
 
 
 ## Dependencies
 
-GenericSetup profile can contain dependencies to other add-on package installers and profiles.
+A GenericSetup profile can contain dependencies to other add-on package installers and profiles.
 
-For example, if you want to declare a dependency to the *your.addonpackage* package, that it is automatically installed when your add-on is installed,
-you can use the declaration below.
+For example, if you want to declare a dependency to the `your.addonpackage` package that it is automatically installed when your add-on is installed, then use the declaration below.
+This way you can be sure that all layers, portlets, and other features which require database changes are usable from `your.addonpackage` when it is run.
 
-This way you can be sure that all layers, portlets and other features which require database changes are usable from *your.addonpackage* when it is run.
-
-`metadata.xml`:
+Edit {file}`metadata.xml`.
 
 ```xml
 <?xml version="1.0"?>
@@ -221,7 +217,7 @@ This way you can be sure that all layers, portlets and other features which requ
 </metadata>
 ```
 
-*your.addonpackage* declares the profile in its configure.zcml:
+`your.addonpackage` declares the profile in its {file}`configure.zcml`.
 
 ```xml
 <genericsetup:registerProfile
@@ -234,21 +230,21 @@ This way you can be sure that all layers, portlets and other features which requ
 ```
 
 ```{warning}
-Unlike other GenericSetup XML files, `metadata.xml` is read on the start-up and this read is cached.
-Always restart Plone after editing `metadata.xml`.
+Unlike other GenericSetup XML files, {file}`metadata.xml` is read on startup and cached.
+Always restart Plone after editing {file}`metadata.xml`.
 
-If your `metadata.xml` file contains syntax errors or dependencies to a missing or non-existent package (e.g. due to a typo in a name) your add-on will disappear from the installation control panel.
+If your {file}`metadata.xml` file contains syntax errors or dependencies to a missing or non-existent package, then your add-on will disappear from the installation control panel.
 ```
 
 ```{note}
 For some old add-ons in the `Products.*` Python namespace, you must not include the full package name in the dependencies.
 
-This is true when this add-on has registered its profile in Python instead of zcml, and there it has used only part of its package name.
+This is true when this add-on has registered its profile in Python instead of ZCML, and it has used only part of its package name.
 
 In most cases you *do* need to use the full `Products.xxx` name.
 ```
 
-To declare a dependency on the `simple` profile of `Products.PluggableAuthService`:
+The following code example shows how to declare a dependency on the `simple` profile of `Products.PluggableAuthService`.
 
 ```xml
 <?xml version="1.0"?>
@@ -261,49 +257,38 @@ To declare a dependency on the `simple` profile of `Products.PluggableAuthServic
 </metadata>
 ```
 
+
 ## Metadata version numbers
 
-Some old add-on packages may have a `metadata.xml` without version number, but this is considered bad practice.
+The metadata `version` number in your {file}`metadata.xml` indicates the version of your add-on package.
+It's used to determine whether the add-on package needs to be upgraded.
 
-What should the version number in your `metadata.xml` be?
+Upgrade steps are executed in the Python version sort order, according to [Version specifiers](https://packaging.python.org/en/latest/specifications/version-specifiers/).
 
-This mostly matters when you are adding upgrade steps, see also the [Upgrade steps] section.
+```{note}
+Legacy add-on packages might not have a version number.
+In old versions of GenericSetup, sorting was done alphabetically, not according to the Python version specifiers.
+If you experience problems with upgrade steps, you might need to upgrade GenericSetup, or add a metadata `version` number to align with your package's version number.
+```
 
-Upgrade steps have a sort order in which they are executed. This used to be alphabetical sorting.
+```{seealso}
+{ref}`genericsetup-upgrade-steps-label`
+```
 
-When you had eleven upgrade steps, marked from 1 through 11, alphabetical sorting meant this order: 1, 10, 11, 2, 3, etc.
-
-If you are seeing this, then you are using an old version of GenericSetup.
-
-You want numerical sorting here, which is correctly done currently. Versions with dots work fine too.
-
-They get ordered just like they would when used for packages on PyPI.
-
-Best practice for all versions of GenericSetup is this:
-
-- Start with 1000.
-  This avoids problems with ancient GenericSetup that used alphabetical sorting.
-- Simply increase the version by 1 each time you need a new metadata version.
-  For example: 1001, 1002, etc.
-- If your add-on package version number changes, but your profile stays the same and no upgrade step is needed, you should **not** change the metadata version.
-  There is no need.
-- If you make changes for a new major release, you should increase the metadata version significantly.
-  This leaves room for small metadata version increases on a maintenance branch.
-  Example:
-  You have branch master with version 1025.
-  You make backwards incompatible changes and you increase the version to 2000.
-  You create a maintenance branch where the next metadata version will be 1026.
 
 (genericsetup-custom-installer-code-label)=
 
-## Custom Installer Code (`setuphandlers.py`)
+## Custom installer code
 
-Besides out-of-the-box XML steps which provide both install and uninstall,
-GenericSetup provides a way to run custom Python code when your add-on package is installed and uninstalled.
+GenericSetup provides a way to run custom Python code before or after your add-on package is installed.
+The following examples show how to do this.
 
-In `configure.zcml`:
+First, edit {file}`configure.zcml`, adding a `pre_handler` and `post_handler` attribute to the `registerProfile` element.
 
-```
+```{code-block} xml
+:linenos:
+:emphasize-lines: 11-13
+
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
@@ -322,38 +307,53 @@ In `configure.zcml`:
 </configure>
 ```
 
-In `setuphandlers.py`:
+Then edit {file}`setuphandlers.py`, adding the Python functions `run_before` and `run_after` according to the `pre_handler` and `post_handler` attributes.
 
 ```python
 def run_before(context):
     # This is run before running the first import step of
-    # the default profile.  context is portal_setup.
-    # If you need the same context as you would get in
-    # an import step, like setup_various below, do this:
-    profile_id = 'profile-your.addonpackage:default'
-    good_old_context = context._getImportContext(profile_id)
-    ...
+    # the default profile.  The context is portal_setup.
+    # Add custom code here...
 
 def run_after(context):
     # This is run after running the last import step of
-    # the default profile.  context is portal_setup.
-    ...
+    # the default profile. The context is portal_setup.
+    # ...
 ```
 
-The best practice is to create a `setuphandlers.py` file which contains a function `setup_various()` which runs the required Python code
-to make changes to Plone site object.
+(genericsetup-custom-import-steps)=
 
-This function is registered as a custom `genericsetup:importStep` in XML.
+## Custom import steps
 
-```{note}
-When you write a custom `importStep`, remember to write uninstallation code as well.
+You can register a custom import step.
+This is a Python function which will be run for _every_ GenericSetup profile.
+It provides a way to extend the possible changes that can be made when a profile is installed.
+
+```{tip}
+If you only want to run custom code when one add-on is installed, use ref`{genericsetup-custom-installer-code-label}` instead.
 ```
 
-However, the trick is that all GenericSetup import steps, including your custom step, are run for *every* add-on package when they are installed.
+By convention, custom import steps are usually placed in a {file}`setuphandlers.py` file.
 
-If your need to run code which is **specific to your add-on install only** you need to use a marker text file which is checked by the GenericSetup context.
+```python
 
-Also you need to register this custom import step in `configure.zcml`:
+def run_custom_code(site):
+    """Run custom add-on package installation code to modify Plone
+       site object and others
+
+    @param site: Plone site
+    """
+
+def setup_various(context):
+    """
+    @param context: Products.GenericSetup.context.DirectoryImportContext instance
+    """
+    portal = context.getSite()
+
+    run_custom_code(portal)
+```
+
+This function is registered as a custom `genericsetup:importStep` in {file}`configure.zcml`.
 
 ```xml
 <configure
@@ -370,7 +370,16 @@ Also you need to register this custom import step in `configure.zcml`:
 </configure>
 ```
 
-You can run other steps before yours by using the `depends` directive.
+````{tip}
+When you write a custom `importStep`, remember to write uninstallation code as well.
+```{seealso}
+{ref}`genericsetup-uninstall-profile-label`
+```
+````
+
+### Control the import step execution order
+
+You can make sure that other import steps are processed before yours by using the `depends` directive.
 
 For instance, if your import step depends on a content type to be installed first, you must use:
 
@@ -390,70 +399,7 @@ For instance, if your import step depends on a content type to be installed firs
 </configure>
 ```
 
-`setuphandlers.py` example
-
-```python
-
-def run_custom_code(site):
-    """Run custom add-on package installation code to modify Plone
-       site object and others
-
-    @param site: Plone site
-    """
-
-def setup_various(context):
-    """
-    @param context: Products.GenericSetup.context.DirectoryImportContext instance
-    """
-
-    # We check from our GenericSetup context whether we are running
-    # add-on installation for your package or any other
-    if context.readDataFile('your.addonpackage.marker.txt') is None:
-        # Not your add-on
-        return
-
-    portal = context.getSite()
-
-    run_custom_code(portal)
-```
-
-And add a dummy text file
-`your.addonpackage/your/addonpackage/profiles/default/your.addonpackage.marker.txt`:
-
-This text file can contain any content - it just needs to be present
-
-
-
-## Overriding Import Step Order
-
-If you need to override the order of import steps in a package that is not yours,
-it might work if you [use an overrides.zcml](http://plone.293351.n2.nabble.com/Overriding-import-step-order-td2189638.html).
-
-### Controlling The Import Step Execution Order
-
-If you need to control the execution order of one of your own custom import steps, you can do this in your import step definition in zcml.
-
-To make sure the catalog and typeinfo steps are run before your own step, use this code:
-
-```xml
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="poi">
-
-  <genericsetup:importStep
-      name="poi_various"
-      title="Poi various import handlers"
-      description=""
-      handler="Products.Poi.setuphandlers.import_various">
-    <depends name="catalog"/>
-    <depends name="typeinfo"/>
-  </gs:importStep>
-
-</configure>
-```
-
-```{note}
+```{tip}
 The name that you need, is usually the name of the related xml file, but with the `.xml` stripped.
 For the `catalog.xml` the import step name is `catalog`.
 But there are exceptions.
@@ -464,7 +410,7 @@ See {ref}`genericsetup-generic-setup-files-label` for a list.
 ```
 
 
-(genericsetup-upgrade-steps-label)-
+(genericsetup-upgrade-steps-label)=
 
 ## Upgrade Steps
 
@@ -584,7 +530,7 @@ Some of the most used ones are here:
 - <https://github.com/zopefoundation/Products.CMFCore/blob/master/src/Products/CMFCore/exportimport/configure.zcml>
 - <https://github.com/plone/Products.CMFPlone/blob/master/src/Products/CMFPlone/exportimport/configure.zcml>
 
-After restarting Zope, your upgrade step should be visible in the Management Interface:
+After restarting Zope, your upgrade step should be visible in the ZMI:
 the `portal_setup` tool has a tab `Upgrades`.
 
 Select your package profile to see which upgrade steps Zope knows about for your add-on.
@@ -730,7 +676,7 @@ For example, if you only need to change the 'Allow anonymous to view about' prop
   <object name="site_properties" meta_type="Plone Property Sheet">
     <property name="allowAnonymousViewAbout" type="boolean">True</property>
   </object>
-</object
+</object>
 ```
 
 
@@ -758,7 +704,7 @@ Example:
 ```
 
 ```{note}
-In the portal_actions tool, in the Management Interface, you will see an i18n domain specified for each action.
+In the portal_actions tool, in the ZMI, you will see an i18n domain specified for each action.
 ```
 
 - `catalog.xml`: no i18n needed
@@ -796,7 +742,7 @@ Example:
 - `workflows`: use the **plone** domain
 
 
-(genericsetup-generic-setup-files-label)-
+(genericsetup-generic-setup-files-label)=
 
 ## Generic Setup Files
 
@@ -903,34 +849,23 @@ Uninstall example:
 ### componentregistry.xml
 
 
-Setup items in the local component registry of the Plone Site.
+Register {term}`Zope Component Architecture` components in the local component registry of the Plone Site.
 The items can be adapters, subscribers or utilities.
 
-This can also be done in zcml, which puts it in the global registry that is defined at startup.
+This can also be done in ZCML, which puts it in the global registry that is defined at startup.
 
-The difference is, when you put it in xml, the item is only added to a specific Plone Site when you install the package in the add-ons control panel.
-
-Both have their uses.
+The difference is, when you put it in {file}`componentregistry.xml`, the item is only added to a specific Plone Site when you install the package in the add-ons control panel.
 
 Example:
 
 ```xml
 <?xml version="1.0"?>
 <componentregistry>
-  <adapters>
-     <adapter
-       for="archetypes.multilingual.interfaces.IArchetypesTranslatable"
-       provides="plone.app.multilingual.interfaces.ITranslationCloner"
-       factory="archetypes.multilingual.cloner.Cloner"
-     />
-  </adapters>
-  <subscribers>
-    <subscriber
-      for="archetypes.multilingual.interfaces.IArchetypesTranslatable
-           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-      handler="archetypes.multilingual.subscriber.handler"
-      />
-  </subscribers>
+  <utilities>
+    <utility
+      interface="collective.solr.interfaces.ISolrConnectionManager"
+      factory="collective.solr.manager.SolrConnectionManager"/>
+  </utilities>
 </componentregistry>
 ```
 
@@ -956,27 +891,11 @@ Uninstall example:
 ```xml
 <?xml version="1.0"?>
 <componentregistry>
-  <adapters>
-    <adapter
-      remove="true"
-      for="archetypes.multilingual.interfaces.IArchetypesTranslatable"
-      provides="plone.app.multilingual.interfaces.ITranslationCloner"
-      factory="archetypes.multilingual.cloner.Cloner"
-    />
-  </adapters>
-  <subscribers>
-    <subscriber
-      remove="true"
-      for="archetypes.multilingual.interfaces.IArchetypesTranslatable
-           zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-      handler="archetypes.multilingual.subscriber.handler"
-      />
-  </subscribers>
   <utilities>
     <utility
       remove="true"
-      interface="Products.ATContentTypes.interface.IATCTTool"
-      object="portal_atct"/>
+      interface="collective.solr.interfaces.ISolrConnectionManager"
+      factory="collective.solr.manager.SolrConnectionManager"/>
   </utilities>
 </componentregistry>
 ```
@@ -1097,19 +1016,10 @@ This configures how the difference between two versions of a field are shown on 
 
 The configuration is stored in the `portal_diff` tool.
 
-For Archetypes content, you need a different `difftype`:
-
-```xml
-<type portal_type="Document">
-  <field name="any" difftype="Compound Diff for AT types"/>
-</type>
-```
-
 A new `difftype` can be registered by calling `Products.CMFDiffTool.CMFDiffTool.registerDiffType`.
-The `difftypes` in standard Plone 5 are:
+The available `difftypes` in Plone are:
 
 - `Lines Diff`
-- `Compound Diff for AT types`
 - `Binary Diff`
 - `Field Diff`
 - `List Diff`
@@ -1478,7 +1388,7 @@ ValueError: The permission <em>Pass the bridge</em> is invalid.
 ```
 
 A permission is created on the Zope level when it is used in code.
-See {doc}`Creating permissions </develop/plone/security/permissions>`.
+See {ref}`backend-security-permissions-label`.
 
 When a role in a permission does not exist, it is silently ignored.
 The roles listed in a permission are not added.
@@ -1498,16 +1408,10 @@ This will reset the permission to the same settings as on the Zope level:
 ```
 ````
 
-```{eval-rst}
-.. automodule:: Products.GenericSetup.rolemap
-  :members: importRolemap RolemapImportConfigurator
-
-```
-
 ### sharing.xml
 
 The sharing.xml file let you add custom roles to the sharing tab.
-For reference, visit: {ref}`security-label`.
+For reference, visit {doc}`/backend/security`.
 
 
 ### typeinfo
@@ -1539,11 +1443,10 @@ Partial example from `plone.app.contenttypes`:
 This adds content types in the `portal_types` tool.
 The `meta_type` can be:
 
-- `Dexterity FTI` for Dexterity content.
+- `Dexterity FTI` for Dexterity content, including the Plone Site itself.
   This is probably what you want.
-- `Factory-based Type Information with dynamic views` for Archetypes content and for the Plone Site itself
-- `Factory-based Type Information` for Archetypes content that does not need dynamic views,
-  the ability to choose a view in the `display` menu.
+- `Factory-based Type Information with dynamic views` for custom content types that use dynamic views (the ability to choose a view in the Display menu).
+- `Factory-based Type Information` for custom content types that do not need dynamic views.
 
 The `types.xml` should be accompanied by a `types` folder with details information on the new types.
 If you are editing an already existing type, then `types.xml` is not needed:
@@ -1612,62 +1515,6 @@ This file is in `plone.app.contenttypes`:
     <permission value="Modify portal content"/>
   </action>
 
-</object>
-```
-
-For comparison, here is the `types.xml` from `plone.app.collection` which has an old style Archetypes Collection:
-
-```xml
-<?xml version="1.0"?>
-<object name="portal_types">
-  <!-- We remove the existing FTI since it could be Dexterity-based and would
-       not be compatible in that case.  You get this error when installing:
-       ValueError: undefined property 'content_meta_type' -->
-  <object name="Collection" remove="True"/>
-  <object name="Collection"
-          meta_type="Factory-based Type Information with dynamic views" />
-</object>
-```
-
-And here is the `types/Collection.xml` from `plone.app.collection`:
-
-```xml
-<?xml version="1.0"?>
-<object name="Collection"
-        meta_type="Factory-based Type Information with dynamic views"
-        i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Collection</property>
-  <property name="description"
-            i18n:translate="">Collection of searchable information</property>
-  <property name="icon_expr"></property>
-  <property name="content_meta_type">Collection</property>
-  <property name="product">plone.app.collection</property>
-  <property name="factory">addCollection</property>
-  <property name="immediate_view">standard_view</property>
-  <property name="global_allow">True</property>
-  <property name="filter_content_types">True</property>
-  <property name="allowed_content_types"/>
-  <property name="allow_discussion">False</property>
-  <property name="default_view">standard_view</property>
-  <property name="view_methods">
-    <element value="standard_view" />
-    <element value="summary_view" />
-    <element value="all_content" />
-    <element value="tabular_view" />
-    <element value="thumbnail_view" />
-  </property>
-  <alias from="(Default)" to="(dynamic view)" />
-  <alias from="edit" to="atct_edit" />
-  <alias from="sharing" to="@@sharing" />
-  <alias from="view" to="(selected layout)" />
-  <action title="View" action_id="view" category="object" condition_expr=""
-          url_expr="string:${object_url}/" visible="True">
-    <permission value="View" />
-  </action>
-  <action title="Edit" action_id="edit" category="object" condition_expr=""
-          url_expr="string:${object_url}/edit" visible="True">
-    <permission value="Modify portal content" />
-  </action>
 </object>
 ```
 
@@ -1747,4 +1594,4 @@ Next to this, the `workflows` directory is checked.
 This contains sub directories with the same name as the workflows.
 Each sub directory contains a file `definition.xml` with the definition for this workflow.
 
-See {ref}`workflows-label`.
+See {doc}`/backend/workflows`.
