@@ -321,7 +321,9 @@ def run_after(context):
     # ...
 ```
 
-## Custom install steps
+(genericsetup-custom-import-steps)=
+
+## Custom import steps
 
 You can register a custom import step.
 This is a Python function which will be run for _every_ GenericSetup profile.
