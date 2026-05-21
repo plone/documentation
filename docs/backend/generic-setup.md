@@ -1406,11 +1406,6 @@ This will reset the permission to the same settings as on the Zope level:
 ```
 ````
 
-```{eval-rst}
-.. automodule:: Products.GenericSetup.rolemap
-   :members: importRolemap, RolemapImportConfigurator
-```
-
 ### sharing.xml
 
 The sharing.xml file let you add custom roles to the sharing tab.
