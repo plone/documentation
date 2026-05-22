@@ -326,6 +326,7 @@ myst_substitutions = {
     "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, 3.13, or 3.14",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE63": "3.11, 3.12, 3.13, or 3.14",
 }
 
 
@@ -474,7 +475,7 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_MINOR_VERSION}": "6.2",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.3",
 }
 
 

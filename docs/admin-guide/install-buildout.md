@@ -31,12 +31,12 @@ For other installation options, see {ref}`get-started-install-label`.
 
 ## Prerequisites for installation
 
--   For Plone 6.2, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE62}}
+-   For Plone 6.3, Python {{SUPPORTED_PYTHON_VERSIONS_PLONE63}}
 
 
 ### Python
 
-```{include} /_inc/_install-python-plone62.md
+```{include} /_inc/_install-python-plone63.md
 ```
 
 
