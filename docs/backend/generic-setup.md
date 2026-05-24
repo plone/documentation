@@ -106,8 +106,6 @@ Add-on packages may contain any of the following items.
 -   A default GenericSetup XML profile, which is automatically run when the package is installed using the quick-installer.
     The profile name is usually `default`.
 -   Other profiles, which the user may install using the ZMI {guilabel}`portal_setup` under the {guilabel}`Import` tab, or which can be manually enabled for unit tests.
--   An `setup_various` step, which runs Python code every time the GenericSetup XML profile is installed.
-    See {ref}`genericsetup-custom-installer-code-label`.
 -   A `pre_handler` or `post_handler` when you use GenericSetup 1.8.2 or later.
     See {ref}`genericsetup-custom-installer-code-label`.
 -   Custom import steps to process additional XML files.
