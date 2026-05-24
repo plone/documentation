@@ -167,6 +167,7 @@ The profile name is in the format `profile-${package_name}:${profile id}`.
 For example, this runs the `extended` profile of the `your.addonpackage` package.
 
 ```python
+from plone import api
 setup_tool.runAllImportStepsFromProfile('your.addonpackage:extended')
 ```
 
