@@ -329,7 +329,7 @@ This is a Python function which will be run for _every_ GenericSetup profile.
 It provides a way to extend the possible changes that can be made when a profile is installed.
 
 ```{tip}
-If you only want to run custom code when one add-on is installed, use ref`{genericsetup-custom-installer-code-label}` instead.
+If you only want to run custom code when one add-on is installed, use {ref}`genericsetup-custom-installer-code-label` instead.
 ```
 
 By convention, custom import steps are usually placed in a {file}`setuphandlers.py` file.
