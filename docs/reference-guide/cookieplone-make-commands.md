@@ -142,6 +142,38 @@ You can run the following make targets by using the command structure of `make <
     This runs unit tests in the project.
 
 
+## Acceptance tests
+
+When you issue a `make` command at the root of your project, you call the file {file}`Makefile` also at the root.
+In turn, it invokes commands in the files {file}`backend/Makefile` and {file}`frontend/Makefile`.
+You can refer to these files for implementation details.
+You can run the following make targets by using the command structure of `make <TARGET>`.
+
+`acceptance-backend-start`
+:   Invokes the target `acceptance-backend-start` in {file}`backend/Makefile`.
+    This starts a Plone backend configured for acceptance testing.
+
+`acceptance-frontend-dev-start`
+:   Invokes the target `acceptance-frontend-dev-start` in {file}`frontend/Makefile`.
+    This starts the Volto frontend in development mode for acceptance testing.
+
+`acceptance-test`
+:   Invokes the target `acceptance-test` in {file}`frontend/Makefile`.
+    This runs acceptance tests in interactive mode.
+
+`acceptance-images-build`
+:   Builds both backend and frontend Docker images for acceptance testing.
+
+`acceptance-containers-start`
+:   Starts backend and frontend acceptance Docker containers.
+
+`acceptance-containers-stop`
+:   Stops the running acceptance Docker containers.
+
+`ci-acceptance-test`
+:   Runs acceptance tests in CI mode using Docker containers.
+
+
 ## Container images
 
 When you issue a `make` command at the root of your project, you call the file {file}`Makefile` also at the root.

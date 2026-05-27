@@ -226,3 +226,7 @@ Indexes the object path, such as `/news/news-item-1`.
 ## `Subject` (`KeywordIndex`)
 
 Indexes the `Subject` field which contains a list of object categories.
+
+## Related content
+
+-   {doc}`/backend/search`
