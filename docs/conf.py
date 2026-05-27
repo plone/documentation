@@ -277,7 +277,7 @@ html_use_opensearch = "https://6.docs.plone.org"
 # "<project> v<release> documentation".
 html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
 
-html_css_files = ["documentation.css", ("print.css", {"media": "print"})]
+html_css_files = ["search.css", ("print.css", {"media": "print"})]
 html_js_files = []
 html_extra_path = [
     "robots.txt",
@@ -325,7 +325,7 @@ myst_substitutions = {
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
     "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
-    "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, or 3.13",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, 3.13, or 3.14",
 }
 
 
@@ -383,7 +383,14 @@ ogp_custom_meta_tags = [
 todo_include_todos = True
 
 
-# -- Options for sphinx-notfound-page ----------------------------------
+# -- sphinx-llms-txt ----------------------------------
+llms_txt_exclude = [
+    "search",  # Exclude the search page
+    "genindex",  # Exclude the index page
+]
+
+
+# -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
@@ -409,7 +416,7 @@ redirects = {
 }
 
 
-# -- Options for sphinx_sitemap to HTML -----------------------------
+# -- sphinx_sitemap configuration -----------------------------
 
 # Used by sphinx_sitemap to generate a sitemap
 html_baseurl = "https://6.docs.plone.org/"
@@ -467,7 +474,7 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_MINOR_VERSION}": "6.1",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.2",
 }
 
 

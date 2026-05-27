@@ -711,21 +711,13 @@ class MyView(object):
 
 However, in most cases:
 
-```{todo}
-Replace links to Plone 5.2 docs with links to Plone 6 docs.
-Specifically:
-
--   [TAL page template](https://5.docs.plone.org/adapt-and-extend/theming/templates_css/template_basics)
--   [interface](https://5.docs.plone.org/develop/addons/components/interfaces)
-```
-
 -   Full Plone page views are a subclass of [`Products.Five.browser.BrowserView`](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/__init__.py#L20) which is a wrapper class.
     It wraps [`zope.publisher.browser.BrowserView`](https://github.com/zopefoundation/zope.publisher/blob/dea3d4757390d04f6a5b53e696f08d0cab5f6023/src/zope/publisher/browser.py#L958), and adds an acquisition (parent traversal) support for it.
--   Views have an attribute `index`, which points to a [TAL page template](https://5.docs.plone.org/adapt-and-extend/theming/templates_css/template_basics) that is responsible for rendering the HTML code.
+-   Views have an attribute `index`, which points to a {doc}`TAL page template </classic-ui/templates>` that is responsible for rendering the HTML code.
     You get the HTML output with `self.index()`.
     The page template gets a context argument `view`, pointing to the view class instance.
     The `index` value is usually an instance of [`Products.Five.browser.pagetemplate.ViewPageTemplateFile`](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/pagetemplatefile.py#L35) for full Plone pages or [`zope.pagetemplate.pagetemplatefile.PageTemplateFile`](https://github.com/zopefoundation/zope.pagetemplate/blob/14ba59c98e12517b9f8abcdb24bc882bb435ed7c/src/zope/pagetemplate/pagetemplatefile.py#L43) for HTML snippets without using acquisition.
--   View classes should implement the [interface](https://5.docs.plone.org/develop/addons/components/interfaces)
+-   View classes should implement the {doc}`interface </backend/interfaces>`
   [`zope.browser.interfaces.IBrowserView`](https://github.com/zopefoundation/zope.browser/blob/1239c75e4e190df992bf34a88b4ead2c952afe86/src/zope/browser/interfaces.py#L27).
 
 Views that render page snippets and parts can be direct subclasses of `zope.publisher.browser.BrowserView`, as snippets might not need acquisition support which adds some overhead to the rendering process.
@@ -839,7 +831,7 @@ Make sure that you declare the `i18n:domain` again, or the strings in this templ
 
 ## Access a view instance in code
 
-You need to get access to the view in your code if you call a view from either: 
+You need to get access to the view in your code if you call a view from either:
 
 -   inside another view
 -   your unit test code

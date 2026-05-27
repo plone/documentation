@@ -18,6 +18,7 @@ This part of the documentation provides explanation of concepts to deepen and br
 choose-user-interface
 compare-buildout-pip
 distributions
+deprecation
 package-management
 package-dependencies
 make-backend-build

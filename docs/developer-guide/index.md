@@ -25,4 +25,5 @@ develop-volto-add-ons-index
 create-a-distribution
 standardize-python-project-configuration
 native-namespace
+deprecation
 ```
