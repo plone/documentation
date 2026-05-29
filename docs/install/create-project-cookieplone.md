@@ -376,7 +376,7 @@ You can stop the site with {kbd}`ctrl-c`.
 
 This section describes how to install Plone by creating a project with Classic UI as the frontend.
 
-To create a ClassicUI project run the same command as in the section {ref}`create-project-cookieplone-create-volto-project-label`.: 
+After satisfying the prerequisites, generate a ClassicUI project.
 
 ```shell
 uvx cookieplone project
