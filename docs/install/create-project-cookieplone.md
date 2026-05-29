@@ -120,9 +120,9 @@ Node.js is required only for Volto projects and not for Classic UI projects.
 
 (create-project-cookieplone-create-volto-project-label)=
 
-## Create a Plone project
+## Create a Volto project
 
-After satisfying the prerequisites, generate a Plone project.
+After satisfying the prerequisites and having {ref}`activated an LTS version of Node.js <prerequisites-for-installation-nodejs-label>`, generate a Volto project.
 
 ```shell
 uvx cookieplone project
@@ -132,8 +132,6 @@ You will be presented with a series of prompts.
 You can accept the default values in square brackets (`[default-option]`) by hitting the {kbd}`Enter` key, or enter your preferred values.
 
 For ease of documentation, we will use the default values and thus create a project using the Volto frontend. 
-
-To create a project using the ClassicUI frontend instead answer `No` when asked `Use Volto as frontend (Yes/no)`.
 
 ```{tip}
 See Cookieplone's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
@@ -175,18 +173,9 @@ Note that pip normalizes these names, so `plone.volto` and `plone-volto` are the
   [7/20] Python Package Name (project.title):
   [8/20] Should we use prerelease versions? (yes/No):
   [9/20] Plone Version (6.2.0):
-```
-The next questions will determine if you will create a Volto or ClassicUI project.  
-```
   [10/20] Use Volto as frontend (Yes/no): 
-```
-These two questions are only asked if you choose to create a project using Volto:
-```
   [11/20] Volto Version (19.1.0): 
   [12/20] Volto Addon Name (volto-project-title):
-```
-For the remaining questions again we choose the default answer.
-```
   [13/20] Language
     1 - English
     2 - Deutsch
@@ -278,9 +267,9 @@ Proceed? [Y/n]:
 ```
 
 
-### Install the project
+### Install the Volto project
 
-To work on your project, you need to install both the backend and frontend.
+To work on your Volto project, you need to install both the Plone backend and frontend.
 
 Change your current working directory to {file}`project-title`.
 
@@ -304,7 +293,7 @@ When the process completes successfully, it will exit with no message.
 ```
 
 
-### Start Plone backend and Volto frontend
+### Start Plone
 
 Plone with Volto for its frontend has two servers: one each for the backend and frontend.
 As such, we need to maintain two active shell sessions, one for each server, to start your Plone site.
@@ -333,17 +322,17 @@ Starting server in PID 93865.
 ```
 
 
-#### Start Volto frontend
+#### Start Plone frontend
 
 Create a second shell session in a new window.
 Change your current working directory to {file}`project-title`.
-Start the Volto frontend with the following command.
+Start the Plone frontend with the following command.
 
 ```shell
 make frontend-start
 ```
 
-The Volto frontend server starts up and emits messages to the console, and should end with output similar to the following.
+The Plone frontend server starts up and emits messages to the console, and should end with output similar to the following.
 
 ```console
 webpack 5.90.1 compiled successfully in 14898 ms
@@ -393,9 +382,146 @@ To create a ClassicUI project run the same command as in the section {ref}`creat
 uvx cookieplone project
 ```
 
-Only when asked `Use Volto as frontend (Yes/no)` you answer `No`!
+You will be presented with a series of prompts.
+You can accept the default values in square brackets (`[default-option]`) by hitting the {kbd}`Enter` key, or enter your preferred values.
 
-### Install the project
+```{tip}
+See Cookieplone's README for how to [Use options to avoid prompts](https://github.com/plone/cookieplone/?tab=readme-ov-file#use-options-to-avoid-prompts).
+```
+
+```{important}
+For {guilabel}`Project Slug`, you must not use any of the Plone core package names listed in [`constraints.txt`](https://dist.plone.org/release/6-latest/constraints.txt).
+Note that pip normalizes these names, so `my.project` and `my-project` are the same package.
+```
+
+We accept the default values, except when asked `Use Volto as frontend (Yes/no)` we answer `No`!
+
+```console
+╭──────────────────────────── cookieplone (2.0.0a3) ─────────────────────────────╮
+│                                                                                │
+│                                    *******                                     │
+│                                ***************                                 │
+│                              ***             ***                               │
+│                            ***    ***          ***                             │
+│                           ***    *****          ***                            │
+│                          ***      ***            ***                           │
+│                          ***               ***   ***                           │
+│                          ***              *****  ***                           │
+│                          ***      ***      ***   ***                           │
+│                           ***    *****          ***                            │
+│                            ***    ***          ***                             │
+│                              ***             ***                               │
+│                                ***************                                 │
+│                                    *******                                     │
+│                                                                                │
+╰───────────────────── Made with ❤️ by the Plone Community ──────────────────────╯
+```
+
+```
+  [1/18] Project Title (Project Title)
+  [2/18] Project Description (A new project using Plone 6.):
+  [3/18] Project Slug (Used for repository id) (project-title):
+  [4/18] Project URL (without protocol) (project-title.example.com):
+  [5/18] Author (Plone Foundation):
+  [6/18] Author E-mail (collective@plone.org):
+  [7/18] Python Package Name (project.title):
+  [8/18] Should we use prerelease versions? (yes/No):
+  [9/18] Plone Version (6.2.0):
+```
+
+To the question `Use Volto as frontend` you need to answer `No` to create a ClassicUI project!
+
+```
+  [10/18] Use Volto as frontend (Yes/no): No
+  [11/18] Language
+    1 - English
+    2 - Deutsch
+    3 - Español
+    4 - Português (Brasil)
+    5 - Nederlands
+    6 - Suomi
+    7 - Italiano
+    8 - Svenska
+    Choose from [1/2/3/4/5/6/7/8] (1):
+  [12/18] GitHub or GitLab username or organization slug from URL (collective):
+  [13/18] Container Registry
+    1 - GitHub Container Registry
+    2 - Docker Hub
+    3 - GitLab
+    Choose from [1/2/3] (1):
+  [14/18] Which persistent storage to use in the deployment stack?
+    1 - RelStorage with PostgreSQL (recommended)
+    2 - ZEO with FileStorage
+    3 - Local FileStorage, implies a single backend
+    Choose from [1/2/3] (1):
+  [15/18] Should we setup a caching server? (Yes/no)
+  [16/18] Add Ansible playbooks? (Yes/no)
+  [17/18] Add GitHub Action to Deploy this project? (Yes/no)
+  [18/18] Would you like to add a documentation scaffold to your project? (Yes/no)
+
+╭─ Review your answers ──────────────────────────────────────────────────────────╮
+│                                                                                │
+│   Container Registry                     GitHub Container Registry             │
+│   Should we use prerelease versions?     No                                    │
+│   Language                               English                               │
+│   Python Package Name                    project.title                         │
+│   Which persistent storage to use in     RelStorage with PostgreSQL            │
+│   the deployment stack?                  (recommended)                         │
+│   Author E-mail                          <your@email>                          │
+│   GitHub or GitLab username or           collective                            │
+│   organization slug from URL                                                   │
+│   Project Title                          Project Title                         │
+│   Use Volto as frontend?                 No                                   │
+│   Add Ansible playbooks?                 Yes                                   │
+│   Author                                 <Your Name>                           │
+│   Should we setup a caching server?      Yes                                   │
+│   Plone Version                          6.2.0                                 │
+│   Project Description                    A new project using Plone 6.          │
+│   Project URL (without protocol)         project-title.example.com             │
+│   Project Slug (Used for repository      project-title                         │
+│   id)                                                                          │
+│   Add GitHub Action to Deploy this       Yes                                   │
+│   project?                                                                     │
+│   Would you like to add a                Yes                                   │
+│   documentation scaffold to your                                               │
+│   project?                                                                     │
+│                                                                                │
+╰────────────────────────────────────────────────────────────────────────────────╯
+Proceed? [Y/n]:
+
+ -> Setup Backend
+ -> Ignoring (Setup Frontend)
+ -> Generate documentation scaffold
+ -> Setup Cache
+ -> Setup Project Settings
+ -> Setup VSCode configuration
+ -> Setup GitHub CI
+ -> Ignoring (Remove unneeded documentation files)
+ -> Ignoring (Remove unneeded cache files)
+ -> Ignoring (Remove unneeded deploy files)
+ -> Remove frontend files for Classic UI
+ -> Backend final cleanup
+ -> Format backend code
+ -> Ignoring (Format frontend code)
+ -> Ignoring (Remove Ansible files)
+ -> Ignoring (Remove GitHub Actions deployment files)
+ -> Organize documentation files
+ -> Ignoring (Remove unneeded documentation files)
+ -> Initialize Git repository
+ ╭─────────────────────────── New project was generated ───────────────────────────╮
+│                                                                                 │
+│ Project Title                                                                   │
+│                                                                                 │
+│ Now, code it, create a git repository, push to your organization.               │
+│                                                                                 │
+│ Sorry for the convenience,                                                      │
+│ The Plone Community.                                                            │
+│                                                                                 │
+│ https://plone.org/                                                              │
+╰─────────────────────────────────────────────────────────────────────────────────╯
+```
+
+### Install the Classic UI project
 
 To work on your project, you need to install it.
 
