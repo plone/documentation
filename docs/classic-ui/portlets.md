@@ -208,7 +208,7 @@ To call a portlet by its URL, for example to update it via an AJAX call, you
 can use the `@@render-portlet` view in your portlet renderer with a
 `portlethash` as query parameter.
 
-The following example shows how to construct a reload URL for a portlet::
+The following example shows how to construct a reload URL for a portlet.
 
 ```python
 from plone.app.portlets.portlets.base import Renderer
