@@ -40,7 +40,7 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
    If you do not see the {guilabel}`Manage portlets` link, you may need to contact the site administrator to request access.
 
 3. In the {menuselection}`Add portlets` menu, select the portlet type that you want to add, and click the {guilabel}`Add` button.
-  This will open a form to edit the settings for the selected portlet type.
+   This will open a form to edit the settings for the selected portlet type.
 
 4. Click the {guilabel}`Save` button to save your changes and add the portlet to the web page.
    This adds the portlet to the list of {guilabel}`Portlets assigned here` on the screen.
@@ -49,7 +49,6 @@ As a user, you can add a portlet to a web page in a Plone site by following thes
    The {guilabel}`Hide` button will deactivate the portlet.
    The {guilabel}`X` button deletes the portlet.
    These options will only appear at the root from which the object inherits its settings.
-
 
 ## Writing a custom Portlet
 
@@ -202,3 +201,31 @@ These values should match the corresponding classes and interfaces defined in th
 This file registers the `MyPortlet` class as a portlet with Plone. It also specifies the portlet's name, title, description, and category.
 
 For more examples of how to write and register portlets, look at the source code of the Plone core package [`plone.app.portlets`](https://github.com/plone/plone.app.portlets), or of other Plone add-ons that include portlets.
+
+## Calling a single portlet via a URL
+
+To call a portlet by its URL, for example to update it via an AJAX call, you
+can use the `@@render-portlet` view in your portlet renderer with a
+`portlethash` as query parameter.
+
+The following example shows how to construct a reload URL for a portlet::
+
+```python
+from plone.app.portlets.portlets.base import Renderer
+from Products.CMFPlone.utils import safe_unicode
+
+
+class BasePortletRenderer(Renderer):
+    @property
+    def hash(self):
+        portlethash = self.request.form.get(
+            "portlethash", getattr(self, "__portlet_metadata__", {}).get("hash", "")
+        )
+        return portlethash
+
+    @property
+    def reload_url(self):
+        base_url = self.context.absolute_url()
+        hash = safe_unicode(self.hash)
+        return f"{base_url}/@@render-portlet?portlethash={hash}"
+```
