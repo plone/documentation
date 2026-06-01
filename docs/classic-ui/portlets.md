@@ -204,9 +204,7 @@ For more examples of how to write and register portlets, look at the source code
 
 ## Call one portlet by URL
 
-To call a portlet by its URL, for example to update it via an AJAX call, you
-can use the `@@render-portlet` view in your portlet renderer with a
-`portlethash` as query parameter.
+To call a portlet by its URL, for example, to update it via an AJAX call, use the `@@render-portlet` view in your portlet renderer with `portlethash` as a query parameter.
 
 The following example shows how to construct a reload URL for a portlet.
 
