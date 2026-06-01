@@ -202,7 +202,7 @@ This file registers the `MyPortlet` class as a portlet with Plone. It also speci
 
 For more examples of how to write and register portlets, look at the source code of the Plone core package [`plone.app.portlets`](https://github.com/plone/plone.app.portlets), or of other Plone add-ons that include portlets.
 
-## Calling a single portlet via a URL
+## Call one portlet by URL
 
 To call a portlet by its URL, for example to update it via an AJAX call, you
 can use the `@@render-portlet` view in your portlet renderer with a
