@@ -1,0 +1,48 @@
+{# A bootstrap-styled field that will direct to the `search.html` page when submitted #}
+<form class="bd-search mt-3 mb-5 p-3"
+      action="{{ pathto('search') }}"
+      method="get">
+  <div class="input-group">
+    <input type="search"
+           class="form-control"
+           name="q"
+           id="search-input"
+           placeholder="{{ theme_search_bar_text }}"
+           aria-label="{{ theme_search_bar_text }}"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false"/>
+    <button class="btn btn-primary" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    <!-- <span class="input-group-text search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span> -->
+  </div>
+  <div class="facet mt-3">
+    <label for="section" class="form-label">Filter by section</label>
+    <select class="form-select" name="section" id="section" onchange="this.form.submit()">
+      <option value="all">All sections</option>
+      {% for id, title in
+        [
+          ['admin-guide', 'Admin Guide'],
+          ['backend', 'Backend'],
+          ['classic-ui', 'Classic UI'],
+          ['conceptual-guides', 'Conceptual Guides'],
+          ['contributing', 'Contributing to Plone'],
+          ['deployment', 'Deployment'],
+          ['developer-guide', 'Developer Guide'],
+          ['glossary', 'Glossary'],
+          ['i18n-l10n', 'Internationalization and Localization'],
+          ['install', 'Install'],
+          ['overview', 'Overview'],
+          ['reference-guide', 'Reference Guide'],
+          ['upgrade', 'Upgrade'],
+          ['plone.restapi', 'Plone REST API'],
+          ['plone.api', 'Plone API'],
+          ['volto', 'Volto UI'],
+        ] %}
+        <option value="{{id}}">{{ title }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</form>

@@ -1,0 +1,69 @@
+/*
+  Remove the external link icon from Plone Sphinx Theme for links
+  in submodules that refer to Plone 6 Documentation via Intersphinx.
+  Although these links have `external` in their class, they are
+  actually internal to Plone 6 Documentation.
+*/
+.reference.external::after {
+  all: unset;
+}
+a:not([title="(in Plone Documentation v6)"]).reference.external::after {
+  margin-left: .3em;
+  display: inline-block;
+  content: var(--pst-icon-external-link);
+  white-space: nowrap;
+  font: var(--fa-font-solid);
+  font-size: .75em;
+}
+
+/* Search form styling */
+.bd-search {
+  max-width: 600px;
+}
+
+.bd-search .input-group-text {
+  background-color: var(--pst-color-surface);
+  border-color: var(--pst-color-border);
+  color: var(--pst-color-text-muted);
+}
+
+.bd-search .form-control,
+.bd-search .form-select {
+  border-color: var(--pst-color-border);
+  background-color: var(--pst-color-surface);
+  color: var(--pst-color-text-base);
+}
+
+.bd-search .form-control:focus,
+.bd-search .form-select:focus {
+  border-color: var(--pst-color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--pst-color-primary-rgb), 0.25);
+}
+
+.bd-search .form-label {
+  font-weight: 500;
+  color: var(--pst-color-text-base);
+}
+
+.bd-search .search-button__kbd-shortcut kbd {
+  background-color: var(--pst-color-text-muted);
+  color: var(--pst-color-surface);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+.bd-search-container ul.search {
+  padding-inline-start: 0;
+}
+
+/* Search results styling */
+#search-results .breadcrumbs {
+  font-size: 0.85em;
+  color: var(--pst-color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+#search-results .breadcrumbs .pathseparator {
+  padding: 0 0.5em;
+}

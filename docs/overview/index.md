@@ -9,15 +9,14 @@ myst:
 
 (overview-label)=
 
-
 # Overview
 
-Plone is a content management system (CMS) that is well-known for its user-friendly interface and robust security features. 
-With Plone, even non-technical users can easily create and manage the content for a public website or intranet using only a web browser. 
+Plone is a content management system (CMS) that is well-known for its user-friendly interface and robust security features.
+With Plone, even non-technical users can easily create and manage the content for a public website or intranet using only a web browser.
 Plone's intuitive interface and comprehensive set of features make it a popular choice for businesses, governments, universities, and any organization that needs a reliable and easy-to-use CMS.
 
-Plone has a long history and has been trusted by users around the world since its initial release on October 4, 2001. 
-Over the years, Plone has undergone many improvements and enhancements, making it a highly mature and stable CMS. 
+Plone has a long history and has been trusted by users around the world since its initial release on October 4, 2001.
+Over the years, Plone has undergone many improvements and enhancements, making it a highly mature and stable CMS.
 Additionally, Plone is supported by a strong community of users and developers who contribute to its ongoing success.
 
 Plone has the maturity, stability, and reliability of an application maintained by open source developers with decades of experience, while continually evolving and adapting to modern technology.
@@ -65,20 +64,18 @@ Plone is easy to set up compared to other CMSs in its category, extremely flexib
 - **Plone is technology neutral.**
   Plone can interoperate with most relational database systems—both open source and commercial—and runs on many platforms, including Linux, Windows, macOS, and BSD.
 
-
-
 (overview-high-level-overview-for-developers-label)=
 
 ## High level overview for developers
 
 Plone is a content management platform with its backend written in Python.
-It is built on top of the open source Zope web application server and development system. 
+It is built on top of the open source Zope web application server and development system.
 Plone makes use of the pluggable Zope Component Architecture (ZCA) to provide a highly modular and extensible system.
-Throughout its history, Plone has used {term}`server-side rendering` to generate HTML-based content, with advanced resource management features for adding and bundling CSS and JavaScript. 
+Throughout its history, Plone has used {term}`server-side rendering` to generate HTML-based content, with advanced resource management features for adding and bundling CSS and JavaScript.
 Additionally, Plone's use of a component architecture makes it easy to extend and customize, allowing users to create unique, feature rich websites that are tailored to their specific needs.
 
 With the release of Plone 6, you now have the option to choose from two different out-of-the-box supported configurations when setting up a new Plone website.
-The Python-based backend server in Plone can be used alone to render content server-side and deliver HTML to the browser, a setup that is referred to in the Plone documentation as "Classic UI". 
+The Python-based backend server in Plone can be used alone to render content server-side and deliver HTML to the browser, a setup that is referred to in the Plone documentation as "Classic UI".
 This configuration has been supported by Plone since its initial release and is available in the latest version of the platform.
 For container-based deployment, only the `plone-backend` image is required.
 It may be used as a base image, adding customizations, to make a derivative image.
@@ -97,10 +94,10 @@ It will take some time until we find and can implement the best structure to exp
 ```{seealso}
 You can also read the conceptual guide {doc}`/conceptual-guides/package-dependencies` to get a mental model of the structure of Plone.
 ```
+
 ```{seealso}
 https://training.plone.org/mastering-plone/what_is_plone.html
 ```
-
 
 (overview-deployment-label)=
 
@@ -110,7 +107,6 @@ To run a public Plone website in production, you also need to configure and run 
 This is the domain of systems administrators and modern developer-operations professionals.
 Our documentation contains setup examples for these services, yet requires that the reader have some generic experience and knowledge of these domains.
 
-
 (overview-good-to-know-label)=
 
 ## Good to know
@@ -118,10 +114,9 @@ Our documentation contains setup examples for these services, yet requires that 
 One of the key benefits of the new React-based frontend for Plone 6 is that you can now customize and theme Plone extensively using HTML, CSS, and JavaScript using up-to-date frontend technologies without having to set up a local Python development environment.
 The Plone backend can be run on a local developer machine in a container.
 
-Basic familiarity with programming in Python and managing Python modules and packages using `virtualenv` and `pip` is required to work on the backend code.
-We use `venv` and {term}`mxdev` to manage the source installation of packages in Plone 6.
+Basic familiarity with programming in Python and managing Python modules and packages using {term}`pip` or {term}`uv` is required to work on the backend code.
 
-Similarly, to develop for the new React frontend, you need to have some experience with setting up Node.js, using a tool like {term}`nvm` to isolate your setup, and familiarity with {term}`Yarn` and {term}`React`.
+Similarly, to develop for the new React frontend, you need to have some experience with setting up Node.js, using a tool like {term}`nvm` to isolate your setup, and familiarity with {term}`pnpm` and {term}`React`.
 
 If you are looking for more study material on these technologies beyond the documentation, see and follow one or more [Plone Trainings](https://training.plone.org).
 Our trainings are more verbose and contain extra clarification and examples.

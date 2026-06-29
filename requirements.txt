@@ -1,9 +1,11 @@
 linkify-it-py
 plone-sphinx-theme<2
+sphinx<9  # See https://github.com/plone/documentation/issues/2037
 sphinx-autobuild
 sphinx-copybutton
 sphinx-design  # Documentation only
 sphinx-examples
+sphinx-llms-txt
 sphinx-notfound-page  # Documentation only
 sphinx-reredirects
 sphinx-sitemap
