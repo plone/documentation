@@ -1,5 +1,5 @@
 # requirements-initial.txt
-# From https://dist.plone.org/release/6.2.0/constraints.txt
-pip==26.1.1
+# From https://dist.plone.org/release/6.2.1/constraints.txt
+pip==26.1.2
 setuptools==81.0.0
 wheel==0.47.0
