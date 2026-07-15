@@ -85,3 +85,10 @@ testbrowser
 plone.app.testing
 plone.testing
 zope.testrunner
+PloneSandboxLayer
+PloneWithPackageLayer
+IntegrationTesting
+FunctionalTesting
+setUpZope
+setUpPloneSite
+applyProfile

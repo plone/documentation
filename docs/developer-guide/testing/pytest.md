@@ -16,7 +16,7 @@ This guide shows you how to write and run tests with pytest, the runner most new
 For `zope.testrunner` instead, see {doc}`zope-testrunner`.
 
 pytest has no native concept of a testing layer.
-The [pytest-plone](https://plone.github.io/pytest-plone/) plugin bridges that gap: it turns the layers you declared in `testing.py` into pytest fixtures.
+The [pytest-plone](https://plone.github.io/pytest-plone/) plugin bridges that gap: it turns the layers you declared in your {doc}`testing.py <write-a-testing-layer>` into pytest fixtures.
 You keep your layers exactly as they are.
 
 ## Install the plugin

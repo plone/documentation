@@ -32,11 +32,11 @@ Both test runners consume the same layer.
 Choosing a runner does not change how you write `testing.py`.
 
 If your package has no `testing.py`, write one first.
-[plone.app.testing](https://github.com/plone/plone.app.testing/blob/master/README.rst) documents how.
+See {doc}`write-a-testing-layer`.
 
 ## Choose a runner
 
-| | `zope.testrunner` | pytest |
+| | zope.testrunner | pytest |
 | --- | --- | --- |
 | Tests are | `unittest.TestCase` classes | plain functions |
 | Layers | native | via [pytest-plone](https://plone.github.io/pytest-plone/) |
@@ -52,6 +52,7 @@ Do not use both in one package.
 ```{toctree}
 :maxdepth: 1
 
+write-a-testing-layer
 zope-testrunner
 pytest
 ```

@@ -9,11 +9,13 @@ myst:
 
 (test-with-zope-testrunner)=
 
-# Test with `zope.testrunner`
+# Test with zope.testrunner
 
 This guide shows you how to write and run tests with `unittest` and `zope.testrunner`, the runner Plone core uses.
 
 For pytest instead, see {doc}`pytest`.
+This guide assumes your package already has a testing layer.
+See {doc}`write-a-testing-layer` if it does not.
 
 ## Install the runner
 

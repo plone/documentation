@@ -70,11 +70,12 @@ You declare your own layer in a `testing.py` module in your package.
 That is where you say which ZCML to load and which profile to install.
 Both test runners described below consume the same layers.
 A layer is not a property of the runner.
+Writing one is the shared setup step for either runner, covered in {doc}`/developer-guide/testing/write-a-testing-layer`.
 
 ```{seealso}
 The layer machinery lives in the packages that own it:
 
-- [plone.app.testing](https://github.com/plone/plone.app.testing/blob/master/README.rst): the Plone-specific layers, and how to write your own `testing.py`.
+- [plone.app.testing](https://github.com/plone/plone.app.testing/blob/master/README.rst): the Plone-specific layers, and the complete reference for the tools used to write a `testing.py`.
 - [plone.testing](https://github.com/plone/plone.testing/blob/master/src/plone/testing/README.rst): the underlying layer model.
 ```
 
@@ -85,7 +86,7 @@ Both work.
 Both use the same layers.
 They differ in how you write the tests, not in what the tests can do.
 
-### `zope.testrunner`
+### zope.testrunner
 
 The traditional choice, and what Plone core itself uses.
 
