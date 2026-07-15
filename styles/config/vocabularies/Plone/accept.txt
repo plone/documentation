@@ -74,3 +74,14 @@ webpack
 wireframe
 xkcd
 Zope
+`plone.app.testing`
+`plone.testing`
+`pytest-plone`
+`zope.testrunner`
+conftest
+pytest
+pytest-plone
+testbrowser
+plone.app.testing
+plone.testing
+zope.testrunner

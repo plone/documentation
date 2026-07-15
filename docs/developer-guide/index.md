@@ -26,4 +26,5 @@ create-a-distribution
 standardize-python-project-configuration
 native-namespace
 deprecation
+testing/index
 ```
