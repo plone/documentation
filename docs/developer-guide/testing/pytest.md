@@ -122,6 +122,12 @@ pytest --durations=0
 
 ## Measure coverage
 
+The `--cov` options come from the `pytest-cov` plugin, so install it first:
+
+```shell
+pip install pytest-cov
+```
+
 ```shell
 pytest --cov=my.addon --cov-report term-missing
 ```

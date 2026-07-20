@@ -40,7 +40,8 @@ Functional test
 
 Acceptance test
 :   Drives the whole system as a user would, through a browser.
-    In Plone this means Robot Framework or a Zope testbrowser for Classic UI, and Cypress for Volto.
+    In Plone this means Robot Framework or a Zope testbrowser for Classic UI.
+    The Volto frontend has its own browser-based end-to-end testing tools, covered in the Volto documentation.
 
 The line that matters most in practice is between integration and functional.
 It is a question of isolation, and isolation is where the cost is.
@@ -118,7 +119,7 @@ Neither runner is deprecated, and neither is going away.
 Choose `zope.testrunner` if you contribute to Plone core, or maintain a package whose tests already use it.
 There is no reward for converting a working suite.
 
-Choose pytest for new work, unless you have a reason not to.
+Choose `pytest` for new work, unless you have a reason not to.
 It is where the wider Python ecosystem is, and it is what Cookieplone gives you.
 
 The one thing not to do is mix both in the same package.
