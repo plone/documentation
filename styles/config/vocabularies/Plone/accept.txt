@@ -45,6 +45,11 @@ Plone
 plone.app.testing
 plone.meta
 plone.testing
+plone.testing.layer
+plone.testing.security
+plone.testing.zca
+plone.testing.zodb
+plone.testing.zope
 plonecli
 pluggab(le|ility)
 pnpm
@@ -60,9 +65,11 @@ Razzle
 RichText
 Sass
 Schuko
+[Ss]andbox(ed|ing)?
 subfolder
 testbrowser
 toggler
+traceback
 [Tt]owncrier
 transpilation
 transpile[drs]{0,1}
@@ -81,4 +88,6 @@ webpack
 wireframe
 xkcd
 Zope
+zope.testbrowser
 zope.testrunner
+ZServer

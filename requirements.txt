@@ -17,3 +17,4 @@ sphinxcontrib-youtube
 sphinxext-opengraph
 sphinxcontrib.mermaid
 vale
+sphinx-autodoc2  # developer-guide/testing plone.app.testing reference

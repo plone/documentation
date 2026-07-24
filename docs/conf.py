@@ -45,6 +45,7 @@ templates_path = ["_templates"]
 extensions = [
     "myst_parser",
     "notfound.extension",
+    "autodoc2",  # developer-guide/testing plone.app.testing reference (static, no import)
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",  # plone.api
     "sphinx.ext.doctest",  # plone.api
@@ -301,6 +302,26 @@ html_static_path = [
 # Don't show class signature with the class' name.
 autodoc_class_signature = "separated"
 
+# -- Options for autodoc2 (plone.app.testing reference) -----------------------
+# autodoc2 analyses the source statically, so no package import and no Plone
+# installation are needed. It reads the plone.app.testing submodule directly.
+# The ``module`` key gives the namespace package its full dotted name.
+autodoc2_packages = [
+    {
+        "path": "../submodules/plone.app.testing/src/plone/app/testing",
+        "module": "plone.app.testing",
+        "auto_mode": False,
+    },
+    {
+        "path": "../submodules/plone.testing/src/plone/testing",
+        "module": "plone.testing",
+        "auto_mode": False,
+    },
+]
+autodoc2_render_plugin = "myst"
+# The plone.app.testing docstrings are reStructuredText, not MyST.
+autodoc2_docstring_parser_regexes = [(r".*", "rst")]
+
 # -- Options for MyST markdown conversion to HTML -----------------------------
 
 # For more information see:
@@ -310,6 +331,7 @@ myst_enable_extensions = [
     "attrs_inline",  # Support parsing of inline attributes.
     "colon_fence",  # You can also use ::: delimiters to denote code fences, instead of ```.
     "deflist",  # Support definition lists. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#definition-lists
+    "fieldlist",  # Render reST field lists (:param:) from autodoc2 docstrings.
     "html_image",  # For inline images. See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#html-images
     "linkify",  # Identify "bare" web URLs and add hyperlinks.
     "strikethrough",  # See https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-strikethrough

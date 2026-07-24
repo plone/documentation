@@ -49,10 +49,28 @@ Choose pytest for new work.
 
 Do not use both in one package.
 
+## Guides
+
+- {doc}`write-a-testing-layer`: the `testing.py` layer both runners share.
+- {doc}`zope-testrunner`: write and run tests with `unittest` and `zope.testrunner`.
+- {doc}`pytest`: write and run tests with pytest.
+- {doc}`install-add-ons-in-tests`: apply profiles and install add-ons in a test.
+- {doc}`drive-the-test-browser`: end-to-end tests with `zope.testbrowser`.
+
+## Reference and background
+
+- {doc}`testing-api-reference`: the layers, fixtures, helpers, and sandboxing, from both packages.
+- {doc}`how-testing-layers-work`: the layer model beneath it all.
+
 ```{toctree}
+:hidden:
 :maxdepth: 1
 
 write-a-testing-layer
 zope-testrunner
 pytest
+install-add-ons-in-tests
+drive-the-test-browser
+testing-api-reference
+how-testing-layers-work
 ```
