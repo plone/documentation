@@ -2,6 +2,7 @@ linkify-it-py
 plone-sphinx-theme<2
 sphinx<9  # See https://github.com/plone/documentation/issues/2037
 sphinx-autobuild
+sphinx-autodoc2
 sphinx-copybutton
 sphinx-design  # Documentation only
 sphinx-examples
@@ -17,4 +18,3 @@ sphinxcontrib-youtube
 sphinxext-opengraph
 sphinxcontrib.mermaid
 vale
-sphinx-autodoc2  # developer-guide/testing plone.app.testing reference

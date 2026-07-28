@@ -15,7 +15,8 @@ This guide shows you how to write an end-to-end functional test that drives Plon
 
 ```{important}
 `zope.testbrowser` runs entirely in Python and does **not** run JavaScript.
-Use it for server-rendered pages (Classic UI). To test a Volto frontend, use the Volto documentation's end-to-end testing tools instead.
+Use it for server-rendered pages (Blicca, the frontend formerly called Classic UI).
+To test a Volto frontend, see [Test add-ons](/volto/development/add-ons/test-add-ons-19) instead.
 ```
 
 You need a **functional** layer, either `PLONE_FUNCTIONAL_TESTING` or your own layer built with `FunctionalTesting`.

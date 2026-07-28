@@ -16,7 +16,9 @@ This guide shows you how to install a GenericSetup profile or an add-on inside a
 It uses the helpers from {doc}`testing-api-reference`.
 The examples assume a layer whose fixture already loaded your add-on's ZCML—see {doc}`write-a-testing-layer`.
 
+```{tip}
 If you use pytest, {doc}`pytest-plone </developer-guide/testing/pytest>` also offers an `installer` fixture and an `@pytest.mark.portal(profiles=[...])` marker that do the same thing with less boilerplate.
+```
 
 ## Apply a profile
 

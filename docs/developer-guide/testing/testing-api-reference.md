@@ -17,7 +17,7 @@ Technical reference for Plone's testing API, drawn from two packages:
 - [plone.testing](https://github.com/plone/plone.testing): the underlying layer model and the Zope-level tools.
 
 You import from whichever package a symbol lives in, but from a test author's point of view they are one toolkit, so this page is organized by task rather than by package.
-Each symbol is documented at its canonical location; re-exports are noted.
+Each symbol is documented at its canonical location; where one package re-exports a symbol from the other, that is noted.
 
 To use these to write a `testing.py`, see {doc}`write-a-testing-layer`.
 For the model behind them, see {doc}`how-testing-layers-work`.

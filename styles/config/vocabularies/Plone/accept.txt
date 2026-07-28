@@ -9,6 +9,7 @@ APIs
 backport(ed|ing)
 Barceloneta
 [Bb]oolean
+Blicca
 bugfix
 [Bb]uildout
 cacheable

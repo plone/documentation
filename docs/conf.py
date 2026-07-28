@@ -45,7 +45,7 @@ templates_path = ["_templates"]
 extensions = [
     "myst_parser",
     "notfound.extension",
-    "autodoc2",  # developer-guide/testing plone.app.testing reference (static, no import)
+    "autodoc2",  # static API docs from source, no package import needed
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",  # plone.api
     "sphinx.ext.doctest",  # plone.api
@@ -302,10 +302,10 @@ html_static_path = [
 # Don't show class signature with the class' name.
 autodoc_class_signature = "separated"
 
-# -- Options for autodoc2 (plone.app.testing reference) -----------------------
+# -- Options for autodoc2 -----------------------------------------------------
 # autodoc2 analyses the source statically, so no package import and no Plone
-# installation are needed. It reads the plone.app.testing submodule directly.
-# The ``module`` key gives the namespace package its full dotted name.
+# installation are needed. It reads the package submodules directly.
+# The ``module`` key gives each namespace package its full dotted name.
 autodoc2_packages = [
     {
         "path": "../submodules/plone.app.testing/src/plone/app/testing",

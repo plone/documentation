@@ -50,8 +50,10 @@ This is how a functional layer can, for example, replace the database with a san
 
 ## Layers compose through bases
 
-A layer declares its bases—the layers it builds on—through `defaultBases` or the `bases` argument.
-The test runner sets up each base once, in order, before the layer itself, and reuses an already-set-up base rather than building it again.
+A layer declares its bases—the layers it builds on.
+When you write a reusable layer class, you set them as the `defaultBases` class attribute.
+When you instantiate a layer directly to combine existing ones, you pass them as the `bases` argument instead; that is the exception, not the rule.
+Either way, the test runner sets up each base once, in order, before the layer itself, and reuses an already-set-up base rather than building it again.
 
 The result is a tree of layers, each built once.
 A typical add-on's stack looks like this:
