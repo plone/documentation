@@ -59,7 +59,7 @@ Do not use both in one package.
 
 ## Reference and background
 
-- {doc}`testing-api-reference`: the layers, fixtures, helpers, and sandboxing, from both packages.
+- {doc}`testing-api-reference`: the layers, fixtures, helpers, and sandboxing, across `plone.app.testing` and `plone.testing`.
 - {doc}`how-testing-layers-work`: the layer model beneath it all.
 
 ```{toctree}
