@@ -45,7 +45,9 @@ You'll need to use an external package that offers this service as described in 
 
 ## Using the translation service with pre-configured services
 
-To use some external tools, the Plone community has implemented a package called [`collective.translators`](https://github.com/collective/collective.translators) that implements this functionality for AWS, Deepl, Deepseek, Google Translate, Libre Translate, and Ollama.
+To use some external tools, the Plone community has implemented a package called [`collective.translators`](https://github.com/collective/collective.translators) that implements this functionality for AWS, Deepl, Deepseek, Libre Translate, or Ollama, to name a few.
+
+Plone itself, implements the connection to Google Translate, you will need to add the required key in the Multilingual configuration control panel.
 
 Each of those services provides a control panel to tweak the configuration, including API keys, languages, service endpoints, and other configuration items.
 
