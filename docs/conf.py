@@ -56,6 +56,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_examples",
+    "sphinx_llms_txt",
     "sphinx_reredirects",
     "sphinx_sitemap",
     "sphinx_tippy",
@@ -89,6 +90,7 @@ linkcheck_ignore = [
     r"https://github.com/orgs/plone/teams/",
     r"https://github.com/plone/documentation/issues/new",
     r"https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset",
+    r"https://javascript.plainenglish.io/you-dont-need-lodash-how-i-gave-up-lodash-693c8b96a07c",
     # Ignore pages that are rate limited or otherwise blocked
     r"https://stackoverflow.com",
     r"https://www.npmjs.com/",
@@ -203,8 +205,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
         {
             "name": "Mastodon",
@@ -214,8 +216,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
         {
             "name": "YouTube",
@@ -225,8 +227,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
         {
             "name": "X (formerly Twitter)",
@@ -236,8 +238,8 @@ html_theme_options = {
             "attributes": {
                 "target": "_blank",
                 "rel": "noopener me",
-                "class": "nav-link custom-fancy-css"
-            }
+                "class": "nav-link custom-fancy-css",
+            },
         },
     ],
     "logo": {
@@ -275,7 +277,7 @@ html_use_opensearch = "https://6.docs.plone.org"
 # "<project> v<release> documentation".
 html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
 
-html_css_files = ["documentation.css", ("print.css", {"media": "print"})]
+html_css_files = ["search.css", ("print.css", {"media": "print"})]
 html_js_files = []
 html_extra_path = [
     "robots.txt",
@@ -323,7 +325,7 @@ myst_substitutions = {
     "fawrench": '<span class="fa fa-wrench" style="font-size: 1.6em;"></span>',
     "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
-    "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, or 3.13",
+    "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, 3.13, or 3.14",
 }
 
 
@@ -381,7 +383,14 @@ ogp_custom_meta_tags = [
 todo_include_todos = True
 
 
-# -- Options for sphinx-notfound-page ----------------------------------
+# -- sphinx-llms-txt ----------------------------------
+llms_txt_exclude = [
+    "search",  # Exclude the search page
+    "genindex",  # Exclude the index page
+]
+
+
+# -- sphinx-notfound-page configuration ----------------------------------
 
 notfound_urls_prefix = ""
 notfound_template = "404.html"
@@ -407,7 +416,7 @@ redirects = {
 }
 
 
-# -- Options for sphinx_sitemap to HTML -----------------------------
+# -- sphinx_sitemap configuration -----------------------------
 
 # Used by sphinx_sitemap to generate a sitemap
 html_baseurl = "https://6.docs.plone.org/"
@@ -452,6 +461,7 @@ latex_logo = "_static/logo_2x.png"
 
 # --  Configuration for source_replacements extension -----------------------
 
+
 # An extension that allows replacements for code blocks that
 # are not supported in `rst_epilog` or other substitutions.
 # https://stackoverflow.com/a/56328457/2214933
@@ -464,8 +474,9 @@ def source_replace(app, docname, source):
 
 # Dict of replacements.
 source_replacements = {
-    "{PLONE_BACKEND_MINOR_VERSION}": "6.1",
+    "{PLONE_BACKEND_MINOR_VERSION}": "6.2",
 }
+
 
 # Finally, configure app attributes.
 def setup(app):

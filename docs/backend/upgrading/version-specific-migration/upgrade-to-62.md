@@ -15,6 +15,11 @@ Plone 6.2 has seen the following major changes.
 Some may require changes in your setup.
 
 
+## Added support for Python 3.14
+
+Plone 6.2 supports Python 3.14.
+
+
 ## Move to native namespaces
 
 Plone 6.2 has migrated all core Python packages from `pkg_resources`-style namespaces to native namespaces.
@@ -31,16 +36,14 @@ Native namespaces are also referred to as implicit namespaces.
 The two terms mean the same.
 
 ```{seealso}
-- [Python Packaging Guide on native namespaces](https://packaging.python.org/en/latest/guides/.packaging-namespace-packages/#native-namespace-packages)
+- [Python Packaging Guide on native namespaces](https://packaging.python.org/en/latest/guides/packaging-namespace-packages/#native-namespace-packages)
 - [PEP 420 - Implicit Namespace Packages](https://peps.python.org/pep-0420/)
 ```
 
 Native namespaces exist since Python 3.3.
-Because Plone started in the days of Python 2, it has always used `pkg_resources`.
-`pkg_resources` is part of the `setuptools` package.
-This part is deprecated.
-It's scheduled to be removed around the end of 2025, in `setuptools` 81.
-This means Plone needs to move to native namespaces.
+Because Plone started in the days of Python 2, it has always used `pkg_resources`, until now.
+[`pkg_resources` was removed from `setuptools` 82.0.0](https://setuptools.pypa.io/en/latest/history.html#v82-0-0).
+This means Plone needed to move to native namespaces.
 
 In general, this move shouldn't cause problems for integrators.
 To install Plone 6.2 you can keep using the same version of `pip` (or `uv`), or `zc.buildout` as you do for Plone 6.1.
@@ -85,6 +88,13 @@ Templates from the following packages are now in a new location:
 * `plone.locking`
 * `plone.protect`
 
+Starting with Plone 6.2, you can activate plone.app.layout in the {guilabel}`Add-ons` control panel.
+
+If you use Classic UI, you should activate it.
+If you use Volto, you should not activate it.
+
+The automatic upgrade attempts to activate plone.app.layout according to your original configuration, but you should check the {guilabel}`Add-ons` control panel to make sure.
+
 ```{note}
 If you use the `z3c.jbot` add-on to override a template that has been moved, your override will still work.
 This is because we keep a mapping from the old to the new location.
@@ -92,23 +102,10 @@ For example, `plone.locking` registers that `plone.locking.browser.info.pt` has 
 You should rename your override to the new location if you no longer need compatibility with Plone 6.1 or earlier.
 ```
 
+## TinyMCE 8 for Classic UI
 
-## Replaced Google Translate integration with generic translation integration
+The {term}`WYSIWYG` editor for Classic UI, {term}`TinyMCE`, was updated to version 8.
 
-`plone.app.multilingual` had an integration to use only Google Translate to translate the content in the `babel_view`, where the content in two languages is shown side-by-side.
-This integration was limited to only Google Translate.
-In Plone 6.2, this integration has been replaced with a generic translation service integration hook.
+You're now able to enter your commercial license key in the {menuselection}`TinyMCE` control panel.
 
-[`collective.translators`](https://github.com/collective/collective.translators) provides some implementations for that hook, supporting AWS, Deepl, Deepseek, Google Translate, Libre Translate, and Ollama.
-It can be extended to support more translation providers.
-
-It is not mandatory to use `collective.translator`.
-Any developer can write the integration with the tool of their choice.
-
-See the {doc}`/i18n-l10n/use-an-external-translation-service` chapter for details.
-
-To achieve that integration, the previously existing `gtranslation_service` browser view has been removed from `plone.app.multilingual`.
-
-Due to not needing it anymore, the `plone.google_translation_key` registry entry has been removed, and it will be removed when performing the upgrade step to Plone 6.2.
-
-The `babel_view` has been modified to call a new REST API endpoint instead of the old `gtranslation_service` browser view.
+See {doc}`/classic-ui/tinymce-customization` for setup instructions.

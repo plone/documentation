@@ -45,6 +45,7 @@ We use several MyST and Sphinx extensions to enhance the presentation of Plone d
 -   [`myst_parser`](https://myst-parser.readthedocs.io/en/latest/) parses MyST, a rich and extensible flavour of Markdown for authoring documentation.
 -   [`sphinx-design`](https://sphinx-design.readthedocs.io/en/latest/), with a configuration name of `sphinx_design`, adds grids, cards, icons, badges, buttons, tabs, and dropdowns.
 -   [`sphinx-examples`](https://ebp-sphinx-examples.readthedocs.io/en/latest/) adds "example snippets" that allow you to show off source Markdown and the result of rendering it in Sphinx.
+-   [`sphinx-llms-txt`](https://sphinx-llms-txt.readthedocs.io/en/stable/) generates a summary {file}`llms.txt` file and a single combined documentation {file}`llms-full.txt` file.
 -   [`sphinx-notfound-page`](https://sphinx-notfound-page.readthedocs.io/en/latest/index.html), with a configuration name of `notfound.extension`, creates a custom 404 page and helps generate proper static resource links to render the page.
 -   [`sphinx-tippy`](https://sphinx-tippy.readthedocs.io/en/latest/), with a configuration name of `sphinx_tippy`, provides hover tips in your documentation.
 -   [`sphinx.ext.autodoc`](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html) pulls in documentation from Python docstrings to generate reStructuredText which in turn gets parsed by Sphinx and rendered to the output format.

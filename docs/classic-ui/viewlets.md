@@ -1048,3 +1048,11 @@ def fix_tinymce_viewlets(site):
     hidden = (x for x in hidden if x != "tinymce.configuration")
     storage.setHidden(manager, skinname, hidden)
 ```
+
+## Related content
+   
+-   {doc}`/classic-ui/layers`
+-   {doc}`/classic-ui/templates`
+-   {doc}`/classic-ui/views`
+
+

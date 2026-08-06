@@ -35,3 +35,6 @@ Help us [Migrate content from v5 "Queries, Search And Indexing" #1730](https://g
 
 ## Querystring
 
+## Related content
+
+-   {doc}`/backend/indexing`
