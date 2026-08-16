@@ -42,11 +42,11 @@ This example adds [`collective.easyform`](https://pypi.org/project/collective.ea
 ```{code-block} toml
 :emphasize-lines: 6
 dependencies = [
-    "Products.CMFPlone==6.1.4",
+    "Products.CMFPlone==6.2.0",
     "plone.api",
     "plone.classicui",
     "plone.app.caching",
-    "collective.easyform==4.5.1",
+    "collective.easyform==5.0.0",
 ]
 ```
 
@@ -81,7 +81,7 @@ eggs =
     collective.easyform
 
 [versions]
-collective.easyform = 4.5.1
+collective.easyform = 5.0.0
 ```
 ````
 `````
@@ -147,26 +147,26 @@ Select the tab according to your Python package manager.
 ```{tip}
 For projects created with Cookieplone, select the tab labeled:
 
--   {guilabel}`pip` if your project has the file {file}`backend/mx.ini`
--   {guilabel}`uv` if your project doesn't have this file
+-   {guilabel}`uv` if your {file}`pyproject.toml` has the setting `managed = true` in the part `tool.uv`.
+-   {guilabel}`pip` if your {file}`pyproject.toml` doesn't have this setting
 ```
 
 `````{tab-set}
 ````{tab-item} uv
 :sync: uv
 
-Clone the repository into a local directory.
-This example uses [`collective.easyform`](https://pypi.org/project/collective.easyform/).
+Add the name of your add-on in the file {file}`backend/pyproject.toml` in the section `dependencies`.
+This example adds [`collective.easyform`](https://pypi.org/project/collective.easyform/).
 
-```shell
-git clone git@github.com:collective/collective.easyform.git
-```
-
-Add the local directory to your uv project as an editable package.
-
-```shell
-cd backend
-uv add --editable ../collective.easyform
+```{code-block} toml
+:emphasize-lines: 6
+dependencies = [
+    "Products.CMFPlone==6.2.0",
+    "plone.api",
+    "plone.classicui",
+    "plone.app.caching",
+    "collective.easyform",
+]
 ```
 
 To configure the add-on to load, in the file {file}`backend/instance.yaml`, under the key `default_context`, for the key `zcml_package_includes`, set its value to the add-on's name.
@@ -174,6 +174,22 @@ To configure the add-on to load, in the file {file}`backend/instance.yaml`, unde
 ```yaml
 default_context:
     zcml_package_includes: project_title, collective.easyform
+```
+
+Finally, add the package's source to the file {file}`mx.ini`.
+
+```cfg
+[collective.easyform]
+url=git@github.com:collective/collective.easyform.git
+branch=dev-branch-name
+extras=test
+```
+
+When installing the add-on in the next step the add-on will be added as a "editable dependency" in your {file}`pyproject.toml` like this: 
+
+```cfg
+[tool.uv.sources]
+"collective.easyform" = {path = "sources/collective.easyform", editable = true}
 ```
 ````
 
@@ -186,7 +202,7 @@ This example adds [`collective.easyform`](https://pypi.org/project/collective.ea
 ```{code-block} toml
 :emphasize-lines: 6
 dependencies = [
-    "Products.CMFPlone==6.1.4",
+    "Products.CMFPlone==6.2.0",
     "plone.api",
     "plone.classicui",
     "plone.app.caching",
