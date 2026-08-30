@@ -10,3 +10,11 @@
 	path = submodules/plone.api
 	url = https://github.com/plone/plone.api.git
 	branch = main
+[submodule "submodules/plone.app.testing"]
+	path = submodules/plone.app.testing
+	url = https://github.com/plone/plone.app.testing.git
+	branch = master
+[submodule "submodules/plone.testing"]
+	path = submodules/plone.testing
+	url = https://github.com/plone/plone.testing.git
+	branch = master
