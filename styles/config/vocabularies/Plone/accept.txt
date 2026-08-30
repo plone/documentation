@@ -61,6 +61,7 @@ transpilation
 transpile[drs]{0,1}
 [Uu]ncomment
 [Uu]nhide
+uninstallation
 unregister
 untranspiled
 UUID
