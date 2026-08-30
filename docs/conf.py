@@ -160,6 +160,20 @@ exclude_patterns = [
     "plone.restapi/styles",
     "plone.restapi/var",
     "volto/_inc/*",
+    "diazo/CHANGES.rst",
+    "diazo/CONTRIBUTING.rst",
+    "diazo/LICENSE.txt",
+    "diazo/MANIFEST.in",
+    "diazo/README.rst",
+    "diazo/pyproject.toml",
+    "diazo/setup.cfg",
+    "diazo/setup.py",
+    "diazo/tox.ini",
+    "diazo/examples",
+    "diazo/src",
+    "diazo/news",
+    "diazo/oldchanges.rst",
+    "diazo/TODO.txt",
 ]
 
 suppress_warnings = [

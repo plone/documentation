@@ -166,7 +166,7 @@ Add a stanza in your {file}`rules.xml` file.
 
 You can start with the provided {file}`rules.xml` file.
 
-You can read about how to write your rules and their syntax in the [official Diazo documentation](https://docs.diazo.org/en/latest/basic.html).
+You can read about how to write your rules and their syntax in the {doc}`Diazo documentation </diazo/index>`.
 
 You will need to write your own rules to bring the dynamic content from Plone into the theme.
 
