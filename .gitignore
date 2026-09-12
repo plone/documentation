@@ -1,4 +1,5 @@
 # Dependencies
+/.venv
 /venv
 
 # Generated files
