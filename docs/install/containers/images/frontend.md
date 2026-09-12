@@ -25,7 +25,7 @@ This image is **not a base image** to be extended in your projects, but an examp
 | --- | --- | --- |
 | `RAZZLE_API_PATH` | Used to generate frontend calls to the backend. Needs to be a public URL accessible by client browser. | `http://api.site.org/++api++/` |
 | `RAZZLE_INTERNAL_API_PATH` | Used by the middleware to construct requests to the backend. It can be a non-public address. | `http://backend:8080/Plone` |
-| `VOLTO_ROBOTSTXT` | Override the `robots.txt` file. | `"User-agent: *\nDisallow: "` |
+| `VOLTO_ROBOTSTXT` | Override the {file}`robots.txt` file. | `"User-agent: *\nDisallow: "` |
 
 ```{note}
 For an extensive list of environment variables used by the frontend, visit {doc}`/volto/configuration/environmentvariables`.
@@ -34,15 +34,15 @@ For an extensive list of environment variables used by the frontend, visit {doc}
 
 ## Using as an example for your Volto project
 
-To use this image as an example of a Docker image for your own Volto project, you will need to edit the file `Dockerfile` in your project.
-`Dockerfile` is pulled from the root of the [`plone/plone-frontend`](https://github.com/plone/plone-frontend/) repository.
+To use this image as an example of a Docker image for your own Volto project, you will need to edit the file {file}`Dockerfile` in your project.
+{file}`Dockerfile` is pulled from the root of the [`plone/container-frontend`](https://github.com/plone/container-frontend/) repository.
 
 ```{note}
-The examples for `Dockerfile` in this documentation use Volto 15.x.
+The examples for {file}`Dockerfile` in this documentation use Volto 15.x.
 You might need to adapt the examples for more recent releases.
 ```
 
-In `Dockerfile` replace the `yo @plone/volto` command with the `COPY . /build/plone-frontend` command.
+In {file}`Dockerfile` replace the `yo @plone/volto` command with the `COPY . /build/plone-frontend` command.
 
 ```diff
    # Generate new volto app
@@ -56,17 +56,17 @@ In `Dockerfile` replace the `yo @plone/volto` command with the `COPY . /build/pl
 The `plone-frontend` Docker image does not have a custom entry point file.
 For any commands you need to run when starting your Docker container, you will need to create it.
 
-After creating the `entrypoint.sh` file, make sure it has the execute permission:
+After creating the {file}`entrypoint.sh` file, make sure it has the execute permission:
 
 ```shell
 chmod 755 entrypoint.sh
 ```
 
 ```{note}
-Do not forget to add the `exec "$@"` command at the end of the `entrypoint.sh` file to run the default `pnpm start` command.
+Do not forget to add the `exec "$@"` command at the end of the {file}`entrypoint.sh` file to run the default `pnpm start` command.
 ```
 
-In the `Dockerfile` you will need to add two commands to make the Docker container run `entrypoint.sh` on start:
+In the {file}`Dockerfile` you will need to add two commands to make the Docker container run {file}`entrypoint.sh` on start:
 
 ```diff
       --no-interactive
@@ -93,7 +93,7 @@ docker build . -t myfrontend:latest -f Dockerfile
 
 ### Start it
 
-You can use it in the following `docker-compose.yml` file.
+You can use it in the following {file}`docker-compose.yml` file.
 
 ```yaml
 version: "3"
@@ -135,6 +135,6 @@ For a complete list of tags and versions, visit the [`plone/plone-frontend` page
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/plone/plone-frontend/issues)
-- [Source Code](https://github.com/plone/plone-frontend/)
-- [Documentation](https://github.com/plone/plone-frontend/)
+- [Issue Tracker](https://github.com/plone/container-frontend/issues)
+- [Source Code](https://github.com/plone/container-frontend/)
+- [Documentation](https://github.com/plone/container-frontend/)

@@ -18,7 +18,7 @@ You may also use containers when {doc}`creating a Plone project </install/create
 
 The Plone 6 container images are compliant with the [Open Container Initiative (OCI)](https://opencontainers.org/).
 They should work with any OCI-compliant container engine for developing, managing, and running Plone 6 images.
-Two popular options include [podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
+Two popular options include [Podman](https://podman.io/) and [Docker](https://www.docker.com/products/docker-desktop/).
 
 ## Resources
 
@@ -102,6 +102,6 @@ docker stop plone6-backend && docker rm plone6-backend
 
 ## Next steps
 
-Get to know the [Official Images](images/index) maintained by the Plone community.
+Get to know the {doc}`container images <images/index>` maintained by the Plone community.
 
-Also see some [examples](examples/index) of how to use the Official Images to bootstrap your projects.
+Also see some {doc}`examples <examples/index>` of how to use the container images to bootstrap your projects.

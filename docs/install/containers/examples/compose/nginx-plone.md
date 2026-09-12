@@ -16,7 +16,7 @@ This example is a simple setup with one backend and data being persisted in a Do
 
 ## Setup
 
-Create an empty project directory named `nginx-plone`.
+Create an empty project directory named {file}`nginx-plone`.
 
 ```shell
 mkdir nginx-plone
@@ -31,7 +31,7 @@ cd nginx-plone
 
 ### nginx configuration
 
-Add a `default.conf` that will be used by the nginx image:
+Add a {file}`default.conf` that will be used by the nginx image:
 
 ```nginx
 upstream backend {
@@ -61,12 +61,12 @@ server {
 
 ```{note}
 `http://plone.localhost/` is the URL you will be using to access the website.
-You can either use `plone.localhost`, or add it in your `/etc/hosts` file or DNS, to point to the Docker host IP.
+You can either use `plone.localhost`, or add it in your {file}`/etc/hosts` file or DNS, to point to the Docker host IP.
 ```
 
 ### Service configuration with Docker Compose
 
-Now let's create a `docker-compose.yml` file:
+Now let's create a {file}`docker-compose.yml` file:
 
 ```yaml
 services:
@@ -81,17 +81,34 @@ services:
     - "80:80"
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+    image: plone/plone-backend:${STACK_BACKEND_TAG:?Set STACK_BACKEND_TAG}
     environment:
       SITE: Plone
       TYPE: classic
     volumes:
-      - data:/data
+      - vol-site-data:/data
     ports:
     - "8080:8080"
 
 volumes:
-  data: {}
+  vol-site-data: {}
+```
+
+
+### Environment variables
+
+The {file}`docker-compose.yml` file reads the tags of its images from the following environment variables.
+All of them are required, and `docker compose` stops with an error if one of them is missing.
+
+| Variable | Description | Default value | Example |
+| --- | --- | --- | --- |
+| `STACK_BACKEND_TAG` | Tag (version) of the image for the backend | | {{PLONE_BACKEND_MINOR_VERSION}} |
+
+Create a {file}`.env` file in your project directory with your values.
+Docker Compose reads it automatically when you run `docker compose` from that directory.
+
+```shell
+STACK_BACKEND_TAG={PLONE_BACKEND_MINOR_VERSION}
 ```
 
 

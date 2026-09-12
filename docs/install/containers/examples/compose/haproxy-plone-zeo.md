@@ -17,10 +17,9 @@ We will use the image [`plone/plone-haproxy`](https://github.com/plone/plone-hap
 
 ## Setup
 
-Create a directory for your project, and inside it create a `docker-compose.yml` file that starts your Plone instance and the ZEO instance with volume mounts for data persistence.
+Create a directory for your project, and inside it create a {file}`docker-compose.yml` file that starts your Plone instance and the ZEO instance with volume mounts for data persistence.
 
 ```yaml
-version: "3"
 services:
 
   lb:
@@ -40,7 +39,7 @@ services:
       LOG_LEVEL: "info"
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+    image: plone/plone-backend:${STACK_BACKEND_TAG:?Set STACK_BACKEND_TAG}
     restart: always
     environment:
       ZEO_ADDRESS: zeo:8100
@@ -50,15 +49,32 @@ services:
       - zeo
 
   zeo:
-    image: plone/plone-zeo:latest
+    image: plone/plone-zeo:${STACK_ZEO_TAG:?Set STACK_ZEO_TAG}
     restart: always
     volumes:
-      - data:/data
-    ports:
-    - "8100"
+      - vol-site-data:/data
 
 volumes:
-  data: {}
+  vol-site-data: {}
+```
+
+
+### Environment variables
+
+The {file}`docker-compose.yml` file reads the tags of its images from the following environment variables.
+All of them are required, and `docker compose` stops with an error if one of them is missing.
+
+| Variable | Description | Default value | Example |
+| --- | --- | --- | --- |
+| `STACK_BACKEND_TAG` | Tag (version) of the image for the backend | | {{PLONE_BACKEND_MINOR_VERSION}} |
+| `STACK_ZEO_TAG` | Tag (version) of the image for the ZEO server | | {{PLONE_ZEO_VERSION}} |
+
+Create a {file}`.env` file in your project directory with your values.
+Docker Compose reads it automatically when you run `docker compose` from that directory.
+
+```shell
+STACK_BACKEND_TAG={PLONE_BACKEND_MINOR_VERSION}
+STACK_ZEO_TAG={PLONE_ZEO_VERSION}
 ```
 
 

@@ -1,0 +1,53 @@
+---
+myst:
+  html_meta:
+    "description": "Examples of Plone 6 setup with containers"
+    "property=og:description": "Examples of Plone 6 setup with containers"
+    "property=og:title": "Examples of Plone 6 using containers"
+    "keywords": "Plone 6, install, installation, docker, containers"
+---
+
+# Examples of Plone 6 using containers
+
+```{toctree}
+:maxdepth: 2
+:hidden: true
+
+traefik-volto-plone
+traefik-volto-plone-zeo
+traefik-volto-plone-postgresql
+traefik-plone
+traefik-volto-plone-varnish
+nginx-volto-plone
+nginx-volto-plone-zeo
+nginx-volto-plone-postgresql
+nginx-plone
+haproxy-plone-zeo
+```
+
+Examples of projects running Plone using `docker compose`.
+
+## Traefik
+
+| Project example | Description |
+| --- | --- |
+| {doc}`traefik-volto-plone <traefik-volto-plone>` | Stack with Traefik, Frontend, and Backend |
+| {doc}`traefik-volto-plone-zeo <traefik-volto-plone-zeo>` | Stack with Traefik, Frontend, Backend, and ZEO server |
+| {doc}`traefik-volto-plone-postgresql <traefik-volto-plone-postgresql>` | Stack with Traefik, Frontend, Backend, and PostgreSQL DB |
+| {doc}`traefik-plone <traefik-plone>` | Stack with Traefik and Backend (Plone Classic) |
+| {doc}`traefik-volto-plone-varnish <traefik-volto-plone-varnish>` | Stack with Traefik, Frontend, Backend, ZEO server, and Varnish |
+
+## nginx
+
+| Project example | Description |
+| --- | --- |
+| {doc}`nginx-volto-plone <nginx-volto-plone>` | Stack with nginx, Frontend, and Backend |
+| {doc}`nginx-volto-plone-zeo <nginx-volto-plone-zeo>` | Stack with nginx, Frontend, Backend, and ZEO server |
+| {doc}`nginx-volto-plone-postgresql <nginx-volto-plone-postgresql>` | Stack with nginx, Frontend, Backend, and PostgreSQL DB |
+| {doc}`nginx-plone <nginx-plone>` | Stack with nginx and Backend (Plone Classic) |
+
+## HAProxy
+
+| Project example | Description |
+| --- | --- |
+| {doc}`haproxy-plone-zeo <haproxy-plone-zeo>` | Stack with HAProxy, Backend, and ZEO server |
