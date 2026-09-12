@@ -50,7 +50,7 @@ We encourage users of the `Plone` images to familiarize themselves with the opti
 #### Listen port
 
 By default, the Zope process inside the container will listen on TCP port 8080.
-In certain circumstances — Kubernetes or Podman pods — there may be a need to run
+In certain circumstances—Kubernetes or Podman pods—there may be a need to run
 more than one Zope process within the network namespace, which would result in
 listen port clashes as two different processes within the same namespace attempt
 to listen to the same TCP port.
@@ -97,7 +97,7 @@ docker run -p 8080:8080 -e ADDONS="eea.facetednavigation" -e SITE="Plone" -e TYP
 We advise against using this feature on production environments.
 ```
 
-### ZOPE variables
+### Zope variables
 
 | Environment variable | Description | Default value |
 | --- | --- | --- |
@@ -270,7 +270,7 @@ With the standard container, it is not possible to add configuration fragments t
 method.
 
 However, you can derive your own container image, and drop in configuration
-fragments.  See {ref}`backend-extending-from-this-image-label` below for instructions.
+fragments. See {ref}`backend-extending-from-this-image-label` below for instructions.
 
 (containers-images-backend-developing-packages-label)=
 
@@ -324,7 +324,7 @@ docker run -p 8080:8080 myproject:latest start
 ### Changing default values of environment variables
 
 All the environment variables documented above are supported in your
-derived container's Dockerfile.  You can override the default values
+derived container's `Dockerfile`. You can override the default values
 of variables as follows:
 
 ```Dockerfile
@@ -413,6 +413,6 @@ For a complete list of tags and versions, visit the [`plone/plone-backend` page 
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/plone/plone-backend/issues)
-- [Source Code](https://github.com/plone/plone-backend/)
-- [Documentation](https://github.com/plone/plone-backend/)
+- [Issue Tracker](https://github.com/plone/container-backend/issues)
+- [Source Code](https://github.com/plone/container-backend/)
+- [Documentation](https://github.com/plone/container-backend/)

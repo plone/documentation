@@ -35,7 +35,7 @@ For an extensive list of environment variables used by the frontend, visit {doc}
 ## Using as an example for your Volto project
 
 To use this image as an example of a Docker image for your own Volto project, you will need to edit the file `Dockerfile` in your project.
-`Dockerfile` is pulled from the root of the [`plone/plone-frontend`](https://github.com/plone/plone-frontend/) repository.
+`Dockerfile` is pulled from the root of the [`plone/container-frontend`](https://github.com/plone/container-frontend/) repository.
 
 ```{note}
 The examples for `Dockerfile` in this documentation use Volto 15.x.
@@ -135,6 +135,6 @@ For a complete list of tags and versions, visit the [`plone/plone-frontend` page
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/plone/plone-frontend/issues)
-- [Source Code](https://github.com/plone/plone-frontend/)
-- [Documentation](https://github.com/plone/plone-frontend/)
+- [Issue Tracker](https://github.com/plone/container-frontend/issues)
+- [Source Code](https://github.com/plone/container-frontend/)
+- [Documentation](https://github.com/plone/container-frontend/)

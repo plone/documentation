@@ -95,6 +95,6 @@ For a complete list of tags and versions, visit the [`plone/plone-zeo` page on D
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/plone/plone-zeo/issues)
-- [Source Code](https://github.com/plone/plone-zeo/)
-- [Documentation](https://github.com/plone/plone-zeo/)
+- [Issue Tracker](https://github.com/plone/container-zeo/issues)
+- [Source Code](https://github.com/plone/container-zeo/)
+- [Documentation](https://github.com/plone/container-zeo/)

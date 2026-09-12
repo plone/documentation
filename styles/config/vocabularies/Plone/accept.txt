@@ -4,6 +4,7 @@
 accessor
 APIs
 [Aa]sync
+Aurora
 [Aa]utosave
 [Bb]ackend
 backport(ed|ing)
@@ -42,6 +43,7 @@ Plate
 PLIP(s)
 Plone
 plonecli
+Podman
 pluggab(le|ility)
 pnpm
 [Pp]ortlets?
