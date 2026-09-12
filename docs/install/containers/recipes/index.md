@@ -97,7 +97,7 @@ level = INFO
 formatter = generic
 ```
 
-Comparing this file with the [original `zope.ini` file](https://github.com/plone/container-backend/blob/6.1.x/skeleton/etc/zope.ini) that comes with the `plone/plone-backend` container, you may realize that the only change is the `translogger` configuration was removed from the `pipeline` section.
+Comparing this file with the [original {file}`zope.ini` file](https://github.com/plone/container-backend/blob/6.1.x/skeleton/etc/zope.ini) that comes with the `plone/plone-backend` container, you may realize that the only change is the `translogger` configuration was removed from the `pipeline` section.
 This [`translogger` middleware produces logs in the Apache Combined Log Format](https://docs.pylonsproject.org/projects/waitress/en/latest/logging.html).
 The above configuration removes it from the setup.
 

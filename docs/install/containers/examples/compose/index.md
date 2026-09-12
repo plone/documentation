@@ -31,23 +31,23 @@ Examples of projects running Plone using `docker compose`.
 
 | Project example | Description |
 | --- | --- |
-| [`traefik-volto-plone`](traefik-volto-plone) | Stack with Traefik, Frontend, and Backend |
-| [`traefik-volto-plone-zeo`](traefik-volto-plone-zeo) | Stack with Traefik, Frontend, Backend, and ZEO server |
-| [`traefik-volto-plone-postgresql`](traefik-volto-plone-postgresql) | Stack with Traefik, Frontend, Backend, and PostgreSQL DB |
-| [`traefik-plone`](traefik-plone) | Stack with Traefik and Backend (Plone Classic) |
-| [`traefik-volto-plone-varnish`](traefik-volto-plone-varnish) | Stack with Traefik, Frontend, Backend, ZEO server, and Varnish |
+| {doc}`traefik-volto-plone <traefik-volto-plone>` | Stack with Traefik, Frontend, and Backend |
+| {doc}`traefik-volto-plone-zeo <traefik-volto-plone-zeo>` | Stack with Traefik, Frontend, Backend, and ZEO server |
+| {doc}`traefik-volto-plone-postgresql <traefik-volto-plone-postgresql>` | Stack with Traefik, Frontend, Backend, and PostgreSQL DB |
+| {doc}`traefik-plone <traefik-plone>` | Stack with Traefik and Backend (Plone Classic) |
+| {doc}`traefik-volto-plone-varnish <traefik-volto-plone-varnish>` | Stack with Traefik, Frontend, Backend, ZEO server, and Varnish |
 
 ## nginx
 
 | Project example | Description |
 | --- | --- |
-| [`nginx-volto-plone`](nginx-volto-plone) | Stack with nginx, Frontend, and Backend |
-| [`nginx-volto-plone-zeo`](nginx-volto-plone-zeo) | Stack with nginx, Frontend, Backend, and ZEO server |
-| [`nginx-volto-plone-postgresql`](nginx-volto-plone-postgresql) | Stack with nginx, Frontend, Backend, and PostgreSQL DB |
-| [`nginx-plone`](nginx-plone) | Stack with nginx and Backend (Plone Classic) |
+| {doc}`nginx-volto-plone <nginx-volto-plone>` | Stack with nginx, Frontend, and Backend |
+| {doc}`nginx-volto-plone-zeo <nginx-volto-plone-zeo>` | Stack with nginx, Frontend, Backend, and ZEO server |
+| {doc}`nginx-volto-plone-postgresql <nginx-volto-plone-postgresql>` | Stack with nginx, Frontend, Backend, and PostgreSQL DB |
+| {doc}`nginx-plone <nginx-plone>` | Stack with nginx and Backend (Plone Classic) |
 
 ## HAProxy
 
 | Project example | Description |
 | --- | --- |
-| [`haproxy-plone-zeo`](haproxy-plone-zeo) | Stack with HAProxy, Backend, and ZEO server |
+| {doc}`haproxy-plone-zeo <haproxy-plone-zeo>` | Stack with HAProxy, Backend, and ZEO server |

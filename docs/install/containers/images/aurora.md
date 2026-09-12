@@ -51,7 +51,7 @@ docker run -d --name aurora -p 3000:3000 -e PLONE_API_PATH=http://host.docker.in
 
 ### Service configuration with Docker Compose
 
-Create a directory for your project, and inside it create a `docker-compose.yml` file with the following content.
+Create a directory for your project, and inside it create a {file}`docker-compose.yml` file with the following content.
 
 ```yaml
 services:
@@ -81,7 +81,7 @@ Now run `docker compose up -d` from your project directory.
 Point your browser at `http://localhost:3000`, and you should see your Plone site.
 Until the backend finishes starting, Aurora returns an error page.
 
-The [`examples` directory of the `plone/container-aurora` repository](https://github.com/plone/container-aurora/tree/main/examples) contains more complete configurations, with a web server in front of Aurora, and with ZEO or PostgreSQL as the database.
+The [{file}`examples` directory of the `plone/container-aurora` repository](https://github.com/plone/container-aurora/tree/main/examples) contains more complete configurations, with a web server in front of Aurora, and with ZEO or PostgreSQL as the database.
 
 
 ## Configuration variables
@@ -118,7 +118,7 @@ The `plone/aurora` image is built in two stages.
 The first stage builds Aurora in `plone/aurora-builder`, and the second copies the result onto `plone/aurora-prod-config`.
 Use the same structure to build your own image.
 
-In a directory, create a `Dockerfile` file.
+In a directory, create a {file}`Dockerfile` file.
 
 ```Dockerfile
 # syntax=docker/dockerfile:1

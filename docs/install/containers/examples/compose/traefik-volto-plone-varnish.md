@@ -19,7 +19,7 @@ A purger component is also used. This solves the problem of invalidating the cac
 
 ## Create a project space
 
-Create an empty project directory named `traefik-volto-plone-varnish`.
+Create an empty project directory named {file}`traefik-volto-plone-varnish`.
 
 ```shell
 mkdir traefik-volto-plone-varnish
@@ -34,7 +34,7 @@ cd traefik-volto-plone-varnish
 
 ## Varnish configuration
 
-Create an empty directory named `etc`.
+Create an empty directory named {file}`etc`.
 
 ```shell
 mkdir etc
@@ -315,7 +315,7 @@ sub vcl_deliver {
 
 ```{note}
 `http://plone.localhost/` is the URL you will be using to access the website.
-You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
+You can either use `localhost`, or add it in your {file}`/etc/hosts` file or DNS to point to the Docker host IP.
 ```
 
 ## Service configuration with Docker Compose
@@ -325,7 +325,7 @@ Now let's create a {file}`docker-compose.yml` file:
 ```yaml
 services:
   webserver:
-    image: traefik:{TRAEFIK_VERSION}
+    image: traefik:${STACK_TRAEFIK_TAG:?Set STACK_TRAEFIK_TAG}
 
     ports:
       - 80:80
@@ -364,7 +364,7 @@ services:
       - --api
 
   frontend:
-    image: plone/plone-frontend:{PLONE_FRONTEND_VERSION}
+    image: plone/plone-frontend:${STACK_FRONTEND_TAG:?Set STACK_FRONTEND_TAG}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
       RAZZLE_API_PATH: http://plone.localhost
@@ -389,7 +389,7 @@ services:
       - "3000:3000"
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+    image: plone/plone-backend:${STACK_BACKEND_TAG:?Set STACK_BACKEND_TAG}
     environment:
       SITE: Plone
       PROFILES: "plone.app.caching:with-caching-proxy"
@@ -465,12 +465,35 @@ services:
       - backend
 
   db:
-    image: plone/plone-zeo:{PLONE_ZEO_VERSION}
+    image: plone/plone-zeo:${STACK_ZEO_TAG:?Set STACK_ZEO_TAG}
     volumes:
       - vol-site-data:/data
 
 volumes:
   vol-site-data: {}
+```
+
+
+### Environment variables
+
+The {file}`docker-compose.yml` file reads the tags of its images from the following environment variables.
+All of them are required, and `docker compose` stops with an error if one of them is missing.
+
+| Variable | Description | Default value | Example |
+| --- | --- | --- | --- |
+| `STACK_FRONTEND_TAG` | Tag (version) of the image for the frontend | | {{PLONE_FRONTEND_VERSION}} |
+| `STACK_BACKEND_TAG` | Tag (version) of the image for the backend | | {{PLONE_BACKEND_MINOR_VERSION}} |
+| `STACK_ZEO_TAG` | Tag (version) of the image for the ZEO server | | {{PLONE_ZEO_VERSION}} |
+| `STACK_TRAEFIK_TAG` | Tag (version) of the image for Traefik | | {{TRAEFIK_VERSION}} |
+
+Create a {file}`.env` file in your project directory with your values.
+Docker Compose reads it automatically when you run `docker compose` from that directory.
+
+```shell
+STACK_FRONTEND_TAG={PLONE_FRONTEND_VERSION}
+STACK_BACKEND_TAG={PLONE_BACKEND_MINOR_VERSION}
+STACK_ZEO_TAG={PLONE_ZEO_VERSION}
+STACK_TRAEFIK_TAG={TRAEFIK_VERSION}
 ```
 
 

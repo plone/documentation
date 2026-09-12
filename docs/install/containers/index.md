@@ -102,6 +102,6 @@ docker stop plone6-backend && docker rm plone6-backend
 
 ## Next steps
 
-Get to know the [container images](images/index) maintained by the Plone community.
+Get to know the {doc}`container images <images/index>` maintained by the Plone community.
 
-Also see some [examples](examples/index) of how to use the container images to bootstrap your projects.
+Also see some {doc}`examples <examples/index>` of how to use the container images to bootstrap your projects.

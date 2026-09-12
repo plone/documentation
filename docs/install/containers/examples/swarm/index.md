@@ -24,8 +24,8 @@ Examples of stacks for running Plone with `docker swarm`.
 
 | Stack example | Description |
 | --- | --- |
-| [`traefik-volto-plone`](traefik-volto-plone) | Stack with Traefik, Frontend, and Backend |
-| [`traefik-volto-plone-zeo`](traefik-volto-plone-zeo) | Stack with Traefik, Frontend, Backend, and ZEO server |
-| [`traefik-volto-plone-postgresql`](traefik-volto-plone-postgresql) | Stack with Traefik, Frontend, Backend, and PostgreSQL DB |
-| [`traefik-plone`](traefik-plone) | Stack with Traefik and Backend (Plone Classic) |
-| [`traefik-volto-plone-varnish`](traefik-volto-plone-varnish) | Stack with Traefik, Frontend, Backend, ZEO server, and Varnish |
+| {doc}`traefik-volto-plone <traefik-volto-plone>` | Stack with Traefik, Frontend, and Backend |
+| {doc}`traefik-volto-plone-zeo <traefik-volto-plone-zeo>` | Stack with Traefik, Frontend, Backend, and ZEO server |
+| {doc}`traefik-volto-plone-postgresql <traefik-volto-plone-postgresql>` | Stack with Traefik, Frontend, Backend, and PostgreSQL DB |
+| {doc}`traefik-plone <traefik-plone>` | Stack with Traefik and Backend (Plone Classic) |
+| {doc}`traefik-volto-plone-varnish <traefik-volto-plone-varnish>` | Stack with Traefik, Frontend, Backend, ZEO server, and Varnish |

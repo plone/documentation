@@ -15,7 +15,7 @@ This example is a very simple setup with one backend and data being persisted in
 
 ## Setup
 
-Create an empty project directory named `nginx-volto-plone`
+Create an empty project directory named {file}`nginx-volto-plone`
 
 ```shell
 mkdir nginx-volto-plone
@@ -30,7 +30,7 @@ cd nginx-volto-plone
 
 ### nginx configuration
 
-Add a `default.conf` that will be used by the nginx image:
+Add a {file}`default.conf` that will be used by the nginx image:
 
 ```nginx
 upstream backend {
@@ -73,12 +73,12 @@ server {
 
 ```{note}
 `http://plone.localhost/` is the URL you will be using to access the website.
-You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
+You can either use `localhost`, or add it in your {file}`/etc/hosts` file or DNS to point to the Docker host IP.
 ```
 
 ### Service configuration with Docker Compose
 
-Now let's create a `docker-compose.yml` file:
+Now let's create a {file}`docker-compose.yml` file:
 
 ```yaml
 services:
@@ -94,7 +94,7 @@ services:
     - "80:80"
 
   frontend:
-    image: plone/plone-frontend:{PLONE_FRONTEND_VERSION}
+    image: plone/plone-frontend:${STACK_FRONTEND_TAG:?Set STACK_FRONTEND_TAG}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
@@ -103,7 +103,7 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+    image: plone/plone-backend:${STACK_BACKEND_TAG:?Set STACK_BACKEND_TAG}
     environment:
       SITE: Plone
     volumes:
@@ -113,6 +113,25 @@ services:
 
 volumes:
   vol-site-data: {}
+```
+
+
+### Environment variables
+
+The {file}`docker-compose.yml` file reads the tags of its images from the following environment variables.
+All of them are required, and `docker compose` stops with an error if one of them is missing.
+
+| Variable | Description | Default value | Example |
+| --- | --- | --- | --- |
+| `STACK_FRONTEND_TAG` | Tag (version) of the image for the frontend | | {{PLONE_FRONTEND_VERSION}} |
+| `STACK_BACKEND_TAG` | Tag (version) of the image for the backend | | {{PLONE_BACKEND_MINOR_VERSION}} |
+
+Create a {file}`.env` file in your project directory with your values.
+Docker Compose reads it automatically when you run `docker compose` from that directory.
+
+```shell
+STACK_FRONTEND_TAG={PLONE_FRONTEND_VERSION}
+STACK_BACKEND_TAG={PLONE_BACKEND_MINOR_VERSION}
 ```
 
 

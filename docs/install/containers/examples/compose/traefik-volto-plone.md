@@ -16,7 +16,7 @@ In this example, {term}`Traefik Proxy` routes requests to the frontend and the b
 
 ## Setup
 
-Create an empty project directory named `traefik-volto-plone`.
+Create an empty project directory named {file}`traefik-volto-plone`.
 
 ```shell
 mkdir traefik-volto-plone
@@ -31,14 +31,14 @@ cd traefik-volto-plone
 
 ### Service configuration with Docker Compose
 
-Create a `docker-compose.yml` file with the following content.
+Create a {file}`docker-compose.yml` file with the following content.
 Traefik reads its routing configuration from the labels of the `frontend` and `backend` services, so this example doesn't need a separate proxy configuration file.
 
 ```yaml
 services:
 
   traefik:
-    image: traefik:{TRAEFIK_VERSION}
+    image: traefik:${STACK_TRAEFIK_TAG:?Set STACK_TRAEFIK_TAG}
     ports:
       - "80:80"
     volumes:
@@ -50,7 +50,7 @@ services:
       - --accesslog
 
   frontend:
-    image: plone/plone-frontend:{PLONE_FRONTEND_VERSION}
+    image: plone/plone-frontend:${STACK_FRONTEND_TAG:?Set STACK_FRONTEND_TAG}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     depends_on:
@@ -65,7 +65,7 @@ services:
       - traefik.http.routers.rt-frontend.service=svc-frontend
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+    image: plone/plone-backend:${STACK_BACKEND_TAG:?Set STACK_BACKEND_TAG}
     environment:
       SITE: Plone
     volumes:
@@ -89,7 +89,28 @@ volumes:
 
 ```{note}
 Use `http://plone.localhost/` to access the website.
-If `plone.localhost` doesn't resolve on your computer, add it to your `/etc/hosts` file, pointing to the IP address of the Docker host.
+If `plone.localhost` doesn't resolve on your computer, add it to your {file}`/etc/hosts` file, pointing to the IP address of the Docker host.
+```
+
+
+### Environment variables
+
+The {file}`docker-compose.yml` file reads the tags of its images from the following environment variables.
+All of them are required, and `docker compose` stops with an error if one of them is missing.
+
+| Variable | Description | Default value | Example |
+| --- | --- | --- | --- |
+| `STACK_FRONTEND_TAG` | Tag (version) of the image for the frontend | | {{PLONE_FRONTEND_VERSION}} |
+| `STACK_BACKEND_TAG` | Tag (version) of the image for the backend | | {{PLONE_BACKEND_MINOR_VERSION}} |
+| `STACK_TRAEFIK_TAG` | Tag (version) of the image for Traefik | | {{TRAEFIK_VERSION}} |
+
+Create a {file}`.env` file in your project directory with your values.
+Docker Compose reads it automatically when you run `docker compose` from that directory.
+
+```shell
+STACK_FRONTEND_TAG={PLONE_FRONTEND_VERSION}
+STACK_BACKEND_TAG={PLONE_BACKEND_MINOR_VERSION}
+STACK_TRAEFIK_TAG={TRAEFIK_VERSION}
 ```
 
 

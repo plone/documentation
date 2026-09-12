@@ -38,7 +38,7 @@ The stack runs the following services.
 
 ## Setup
 
-Create an empty project directory named `swarm-traefik-volto-plone-zeo`.
+Create an empty project directory named {file}`swarm-traefik-volto-plone-zeo`.
 
 ```shell
 mkdir swarm-traefik-volto-plone-zeo
@@ -63,7 +63,7 @@ docker network create --driver overlay nw-public
 
 ### Stack file
 
-Create a `stack.yml` file with the following content.
+Create a {file}`stack.yml` file with the following content.
 
 ```yaml
 services:
@@ -85,7 +85,7 @@ services:
           - node.role == manager
 
   traefik:
-    image: traefik:{TRAEFIK_VERSION}
+    image: traefik:${STACK_TRAEFIK_TAG:?Set STACK_TRAEFIK_TAG}
     ports:
       - "80:80"
       - "443:443"
@@ -146,7 +146,7 @@ services:
         - traefik.http.routers.generic-https-redirect.middlewares=https-redirect
 
   frontend:
-    image: plone/plone-frontend:{PLONE_FRONTEND_VERSION}
+    image: plone/plone-frontend:${STACK_FRONTEND_TAG:?Set STACK_FRONTEND_TAG}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://${STACK_NAME:?Set STACK_NAME}_backend:8080/Plone
       RAZZLE_API_PATH: https://${STACK_HOSTNAME:?Set STACK_HOSTNAME}
@@ -154,7 +154,7 @@ services:
       - nw-public
       - nw-internal
     deploy:
-      replicas: ${STACK_FRONT_REPLICAS:-2}
+      replicas: ${STACK_FRONTEND_REPLICAS:-2}
       update_config:
         parallelism: 1
         delay: 5s
@@ -186,7 +186,7 @@ services:
         - traefik.http.routers.rt-${STACK_NAME}-frontend.middlewares=gzip
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+    image: plone/plone-backend:${STACK_BACKEND_TAG:?Set STACK_BACKEND_TAG}
     environment:
       SITE: Plone
       ZEO_ADDRESS: "${STACK_NAME}_db:8100"
@@ -194,7 +194,7 @@ services:
       - nw-public
       - nw-internal
     deploy:
-      replicas: ${STACK_BACK_REPLICAS:-2}
+      replicas: ${STACK_BACKEND_REPLICAS:-2}
       update_config:
         parallelism: 1
         delay: 5s
@@ -232,7 +232,7 @@ services:
         - traefik.http.routers.rt-${STACK_NAME}-backend-classic.middlewares=gzip,mw-${STACK_NAME}-backend-auth,mw-${STACK_NAME}-backend-vhm-classic
 
   db:
-    image: plone/plone-zeo:{PLONE_ZEO_VERSION}
+    image: plone/plone-zeo:${STACK_ZEO_TAG:?Set STACK_ZEO_TAG}
     volumes:
       - vol-site-data:/data
     networks:
@@ -278,8 +278,12 @@ Variables without a default value are required, and `docker stack deploy` stops 
 | `STACK_NAME` | Name of the stack, which must match the name you pass to `docker stack deploy`. The services use it to reach each other, and Traefik uses it to name routers, services, and middleware. | | `plone` |
 | `STACK_HOSTNAME` | Public host name of the site | | `www.example.com` |
 | `STACK_HOSTNAME_REDIRECT` | Host name that permanently redirects to `STACK_HOSTNAME` | | `example.com` |
-| `STACK_FRONT_REPLICAS` | Number of frontend replicas | `2` | `3` |
-| `STACK_BACK_REPLICAS` | Number of backend replicas | `2` | `4` |
+| `STACK_FRONTEND_REPLICAS` | Number of frontend replicas | `2` | `3` |
+| `STACK_BACKEND_REPLICAS` | Number of backend replicas | `2` | `4` |
+| `STACK_FRONTEND_TAG` | Tag (version) of the image for the frontend | | {{PLONE_FRONTEND_VERSION}} |
+| `STACK_BACKEND_TAG` | Tag (version) of the image for the backend | | {{PLONE_BACKEND_MINOR_VERSION}} |
+| `STACK_ZEO_TAG` | Tag (version) of the image for the ZEO server | | {{PLONE_ZEO_VERSION}} |
+| `STACK_TRAEFIK_TAG` | Tag (version) of the image for Traefik | | {{TRAEFIK_VERSION}} |
 | `TRAEFIK_HOSTNAME` | Host name of the Traefik dashboard | | `traefik.example.com` |
 | `TRAEFIK_EMAIL` | Email address of your Let's Encrypt account | | `admin@example.com` |
 | `TRAEFIK_BASIC_AUTH` | User name and password hash for the Traefik dashboard, in the format `user:hash` | | `admin:$apr1$Zq3mQ2vH$IX.Ug0PreO6h.m494Bn9L0` |
@@ -292,13 +296,17 @@ To create a password hash, run the following command, with your password instead
 openssl passwd -apr1 secret
 ```
 
-Create a `.env` file with your values.
+Create a {file}`.env` file with your values.
 Wrap values that contain a dollar sign, such as password hashes, in single quotes.
 
 ```shell
 STACK_NAME=plone
 STACK_HOSTNAME=www.example.com
 STACK_HOSTNAME_REDIRECT=example.com
+STACK_FRONTEND_TAG={PLONE_FRONTEND_VERSION}
+STACK_BACKEND_TAG={PLONE_BACKEND_MINOR_VERSION}
+STACK_ZEO_TAG={PLONE_ZEO_VERSION}
+STACK_TRAEFIK_TAG={TRAEFIK_VERSION}
 TRAEFIK_HOSTNAME=traefik.example.com
 TRAEFIK_EMAIL=admin@example.com
 TRAEFIK_BASIC_AUTH='admin:$apr1$Zq3mQ2vH$IX.Ug0PreO6h.m494Bn9L0'
@@ -306,7 +314,7 @@ BASIC_AUTH_USER=admin
 BASIC_AUTH_PASSWORD_HASH='$apr1$Zq3mQ2vH$IX.Ug0PreO6h.m494Bn9L0'
 ```
 
-`docker stack deploy` doesn't read `.env` files.
+`docker stack deploy` doesn't read {file}`.env` files.
 Load the variables into your shell before you deploy.
 
 ```shell
@@ -344,7 +352,7 @@ To run four backend replicas, scale the backend service.
 docker service scale "${STACK_NAME}_backend=4"
 ```
 
-The next `docker stack deploy` sets the number of replicas back to the value of `STACK_BACK_REPLICAS`.
+The next `docker stack deploy` sets the number of replicas back to the value of `STACK_BACKEND_REPLICAS`.
 
 
 ## Shutdown and cleanup

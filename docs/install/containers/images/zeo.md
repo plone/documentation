@@ -26,7 +26,7 @@ docker run -p 8100:8100 plone/plone-zeo:latest
 
 ### Service configuration with Docker Compose
 
-Create a directory for your project, and inside it create a `docker-compose.yml` file that starts your Plone instance and the ZEO instance with volume mounts for data persistence:
+Create a directory for your project, and inside it create a {file}`docker-compose.yml` file that starts your Plone instance and the ZEO instance with volume mounts for data persistence:
 
 ```yaml
 version: "3"

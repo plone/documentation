@@ -55,8 +55,8 @@ Each release lists only its last version.
 
 % TODO: List the variants of the Plone 4.3 to 5.2 images, such as `-alpine`, `-python2`, `-python36`, and `-python37`.
 
-All images listen on port 8080, and store their data in a `/data` volume.
-To use an existing database, place its `Data.fs` file at `/data/filestorage/Data.fs` before the first start.
+All images listen on port 8080, and store their data in a {file}`/data` volume.
+To use an existing database, place its {file}`Data.fs` file at {file}`/data/filestorage/Data.fs` before the first start.
 
 
 ## Plone 5.2
@@ -317,7 +317,7 @@ Then point your browser at `http://localhost:8080/Plone`, and log in with the us
 
 ## Upgrade a database
 
-The images for Plone 1.0 to 4.2 carry an `upgrade` command that runs the Plone migration against the database in `/data`.
+The images for Plone 1.0 to 4.2 carry an `upgrade` command that runs the Plone migration against the database in {file}`/data`.
 To upgrade a database across several releases, mount the same volume into each next release, one at a time.
 
 Stop any container that uses the database, then run the following command.

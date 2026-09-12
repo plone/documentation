@@ -4,6 +4,7 @@
 
 # -- Path setup --------------------------------------------------------------
 
+import re
 from datetime import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -316,6 +317,17 @@ myst_enable_extensions = [
     "substitution",  # Use Jinja2 for substitutions. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
 ]
 
+# Versions of the container images used in the documentation.
+# Use them as MyST substitutions in text, such as {{PLONE_BACKEND_MINOR_VERSION}},
+# and as source replacements in code blocks, such as {PLONE_BACKEND_MINOR_VERSION}.
+container_image_versions = {
+    "PLONE_BACKEND_MINOR_VERSION": "6.2",
+    "PLONE_FRONTEND_VERSION": "19",
+    "PLONE_ZEO_VERSION": "6",
+    "TRAEFIK_VERSION": "v3.7",
+    "POSTGRES_VERSION": "18",
+}
+
 myst_substitutions = {
     "postman_basic_auth": "![](../_static/img/postman_basic_auth.png)",
     "postman_headers": "![](../_static/img/postman_headers.png)",
@@ -326,6 +338,7 @@ myst_substitutions = {
     "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, 3.13, or 3.14",
+    **container_image_versions,
 }
 
 
@@ -467,18 +480,16 @@ latex_logo = "_static/logo_2x.png"
 # https://stackoverflow.com/a/56328457/2214933
 def source_replace(app, docname, source):
     result = source[0]
-    for key in app.config.source_replacements:
-        result = result.replace(key, app.config.source_replacements[key])
+    for key, value in app.config.source_replacements.items():
+        # Skip MyST substitutions, such as {{KEY}}, which contain the key {KEY}.
+        pattern = rf"(?<!\{{){re.escape(key)}(?!\}})"
+        result = re.sub(pattern, lambda match, value=value: value, result)
     source[0] = result
 
 
-# Dict of replacements.
+# Dict of replacements, such as {PLONE_BACKEND_MINOR_VERSION}.
 source_replacements = {
-    "{PLONE_BACKEND_MINOR_VERSION}": "6.2",
-    "{PLONE_FRONTEND_VERSION}": "19",
-    "{PLONE_ZEO_VERSION}": "6",
-    "{TRAEFIK_VERSION}": "v3.7",
-    "{POSTGRES_VERSION}": "18",
+    f"{{{key}}}": value for key, value in container_image_versions.items()
 }
 
 
