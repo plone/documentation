@@ -96,7 +96,7 @@ services:
     - "80:80"
 
   frontend:
-    image: plone/plone-frontend:latest
+    image: plone/plone-frontend:{PLONE_FRONTEND_VERSION}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
@@ -111,22 +111,20 @@ services:
       ZEO_ADDRESS: db:8100
       ZEO_SHARED_BLOB_DIR: on   # otherwise the backend will create its own blob storage
     volumes:
-      - data:/data              # the backend and database need access to the same volume
+      - vol-site-data:/data     # the backend and database need access to the same volume
     ports:
     - "8080:8080"
     depends_on:
       - db
 
   db:
-    image: plone/plone-zeo:latest
+    image: plone/plone-zeo:{PLONE_ZEO_VERSION}
     restart: always
     volumes:
-      - data:/data
-    ports:
-    - "8100:8100"
+      - vol-site-data:/data
 
 volumes:
-  data: {}
+  vol-site-data: {}
 ```
 
 

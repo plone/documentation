@@ -20,7 +20,6 @@ We will use the image [`plone/plone-haproxy`](https://github.com/plone/plone-hap
 Create a directory for your project, and inside it create a `docker-compose.yml` file that starts your Plone instance and the ZEO instance with volume mounts for data persistence.
 
 ```yaml
-version: "3"
 services:
 
   lb:
@@ -50,15 +49,13 @@ services:
       - zeo
 
   zeo:
-    image: plone/plone-zeo:latest
+    image: plone/plone-zeo:{PLONE_ZEO_VERSION}
     restart: always
     volumes:
-      - data:/data
-    ports:
-    - "8100"
+      - vol-site-data:/data
 
 volumes:
-  data: {}
+  vol-site-data: {}
 ```
 
 

@@ -1,31 +1,30 @@
 ---
 myst:
   html_meta:
-    "description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
-    "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
-    "property=og:title": "nginx, Frontend, Backend, PostgreSQL container example"
-    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, PostgreSQL, "
+    "description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
+    "property=og:description": "Very simple Plone 6 setup with only one backend and data being persisted in a Docker volume."
+    "property=og:title": "nginx, Frontend, Backend container example"
+    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend"
 ---
 
-# nginx, Frontend, Backend, PostgreSQL container example
+# nginx, Frontend, Backend container example
 
-This example is a very simple setup with one or more backend instances accessing a Postgres server and data being persisted in a Docker volume.
+This example is a very simple setup with one backend and data being persisted in a Docker volume.
 
 {term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
 
-
 ## Setup
 
-Create an empty project directory named `nginx-volto-plone-postgresql`.
+Create an empty project directory named `nginx-volto-plone`
 
 ```shell
-mkdir nginx-volto-plone-postgresql
+mkdir nginx-volto-plone
 ```
 
 Change into your project directory.
 
 ```shell
-cd nginx-volto-plone-postgresql
+cd nginx-volto-plone
 ```
 
 
@@ -77,7 +76,6 @@ server {
 You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
 ```
 
-
 ### Service configuration with Docker Compose
 
 Now let's create a `docker-compose.yml` file:
@@ -96,7 +94,7 @@ services:
     - "80:80"
 
   frontend:
-    image: plone/plone-frontend:latest
+    image: plone/plone-frontend:{PLONE_FRONTEND_VERSION}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
@@ -108,25 +106,13 @@ services:
     image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
     environment:
       SITE: Plone
-      RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"
+    volumes:
+      - vol-site-data:/data
     ports:
     - "8080:8080"
-    depends_on:
-      - db
-
-  db:
-    image: postgres
-    environment:
-      POSTGRES_USER: plone
-      POSTGRES_PASSWORD: plone
-      POSTGRES_DB: plone
-    volumes:
-    - data:/var/lib/postgresql/data
-    ports:
-    - "5432:5432"
 
 volumes:
-  data: {}
+  vol-site-data: {}
 ```
 
 
@@ -144,15 +130,6 @@ This pulls the needed images and starts Plone.
 ## Access Plone via Browser
 
 After startup, go to `http://plone.localhost/` and you should see the site.
-
-
-## Increase the number of backends
-
-To use two containers for backend, run `docker compose` with `--scale`.
-
-```shell
-docker compose up --scale backend=2
-```
 
 
 ## Shutdown and cleanup

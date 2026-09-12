@@ -25,15 +25,18 @@ extranets
 folderish
 fieldset
 getter
+HAProxy
 interoperate
 JavaScript
 [Jj]enkins
 jQuery
+Let's Encrypt
 libxslt
 middleware
 Mockup
 mxdev
 namespaces?
+nginx
 npm
 nvm
 Pastanaga
@@ -59,6 +62,7 @@ Schuko
 subfolder
 toggler
 [Tt]owncrier
+Traefik
 transpilation
 transpile[drs]{0,1}
 [Uu]ncomment

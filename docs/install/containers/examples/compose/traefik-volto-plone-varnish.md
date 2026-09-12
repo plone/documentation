@@ -325,7 +325,7 @@ Now let's create a {file}`docker-compose.yml` file:
 ```yaml
 services:
   webserver:
-    image: traefik
+    image: traefik:{TRAEFIK_VERSION}
 
     ports:
       - 80:80
@@ -364,7 +364,7 @@ services:
       - --api
 
   frontend:
-    image: plone/plone-frontend:latest
+    image: plone/plone-frontend:{PLONE_FRONTEND_VERSION}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
       RAZZLE_API_PATH: http://plone.localhost
@@ -393,13 +393,10 @@ services:
     environment:
       SITE: Plone
       PROFILES: "plone.app.caching:with-caching-proxy"
-    environment:
       ZEO_ADDRESS: db:8100
       ZEO_SHARED_BLOB_DIR: on  # otherwise the backend will create its own blob storage
     volumes:
-      - data:/data              # the backend and database need access to the same volume
-    ports:
-      - 8080:8080
+      - vol-site-data:/data     # the backend and database need access to the same volume
     depends_on:
       - db
 #   If the Docker container is run with a UID other than the UID which owns the local file system persistent storage,
@@ -468,14 +465,12 @@ services:
       - backend
 
   db:
-    image: plone/plone-zeo:latest
+    image: plone/plone-zeo:{PLONE_ZEO_VERSION}
     volumes:
-      - data:/data
-    ports:
-    - "8100:8100"
+      - vol-site-data:/data
 
 volumes:
-  data: {}
+  vol-site-data: {}
 ```
 
 

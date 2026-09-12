@@ -86,12 +86,12 @@ services:
       SITE: Plone
       TYPE: classic
     volumes:
-      - data:/data
+      - vol-site-data:/data
     ports:
     - "8080:8080"
 
 volumes:
-  data: {}
+  vol-site-data: {}
 ```
 
 
