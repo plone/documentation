@@ -10,3 +10,7 @@
 	path = submodules/plone.api
 	url = https://github.com/plone/plone.api.git
 	branch = main
+[submodule "submodules/diazo"]
+	path = submodules/diazo
+	url = https://github.com/plone/diazo.git
+	branch = main
