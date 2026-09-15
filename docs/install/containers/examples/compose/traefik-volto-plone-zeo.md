@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Simple Plone 6 setup with Traefik and one or more backend instances accessing a ZEO server, with data persisted in a Docker volume."
-    "property=og:description": "Simple Plone 6 setup with Traefik and one or more backend instances accessing a ZEO server, with data persisted in a Docker volume."
+    "description": "ZEO server, Traefik, a frontend, and one or more backend instances in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
+    "property=og:description": "ZEO server, Traefik, a frontend, and one or more backend instances in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
     "property=og:title": "Traefik, Frontend, Backend, ZEO container example"
     "keywords": "Plone 6, Container, Docker, Traefik, Frontend, Backend, ZEO"
 ---

@@ -1,15 +1,15 @@
 ---
 myst:
   html_meta:
-    "description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
-    "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume."
+    "description": "PostgreSQL server, nginx, a frontend, and one or more backend instances in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
+    "property=og:description": "PostgreSQL server, nginx, a frontend, and one or more backend instances in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
     "property=og:title": "nginx, Frontend, Backend, PostgreSQL container example"
-    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, PostgreSQL, "
+    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, PostgreSQL"
 ---
 
 # nginx, Frontend, Backend, PostgreSQL container example
 
-This example is a very simple setup with one or more backend instances accessing a Postgres server and data being persisted in a Docker volume.
+This example is a very simple setup with one or more backend instances accessing a PostgreSQL server and data being persisted in a Docker volume.
 
 {term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
 

@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Simple Plone 6 setup with Traefik, one frontend, and one backend, with data persisted in a Docker volume."
-    "property=og:description": "Simple Plone 6 setup with Traefik, one frontend, and one backend, with data persisted in a Docker volume."
+    "description": "Traefik, a frontend, and a single backend in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
+    "property=og:description": "Traefik, a frontend, and a single backend in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
     "property=og:title": "Traefik, Frontend, Backend container example"
     "keywords": "Plone 6, Container, Docker, Traefik, Frontend, Backend"
 ---

@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Examples of Plone 6 setup with containers"
-    "property=og:description": "Examples of Plone 6 setup with containers"
-    "property=og:title": "Examples of Plone 6 using containers"
-    "keywords": "Plone 6, install, installation, docker, containers"
+    "description": "Docker Swarm stacks that run Plone 6 behind Traefik, with a scalable frontend and backend."
+    "property=og:description": "Docker Swarm stacks that run Plone 6 behind Traefik, with a scalable frontend and backend."
+    "property=og:title": "Docker Swarm examples"
+    "keywords": "Plone 6, install, installation, Docker, Docker Swarm, containers"
 ---
 
-# Examples of Plone 6 using containers
+# Docker Swarm examples
 
 ```{toctree}
 :maxdepth: 2
@@ -20,7 +20,7 @@ traefik-plone
 traefik-volto-plone-varnish
 ```
 
-Examples of stacks for running Plone with `docker swarm`.
+Examples of stacks running Plone on a Docker Swarm cluster.
 
 | Stack example | Description |
 | --- | --- |

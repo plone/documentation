@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Simple Plone 6 setup with scalable backend and data being persisted in a ZEO volume."
-    "property=og:description": "Simple Plone 6 setup with scalable backend and data being persisted in a ZEO volume."
+    "description": "HAProxy, a ZEO server, and one or more backend instances in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
+    "property=og:description": "HAProxy, a ZEO server, and one or more backend instances in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
     "property=og:title": "HAProxy, Backend, ZEO container example"
     "keywords": "Plone 6, Container, Docker, HAProxy, ZEO"
 ---

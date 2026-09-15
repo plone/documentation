@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Examples of Plone 6 setup with containers"
-    "property=og:description": "Examples of Plone 6 setup with containers"
-    "property=og:title": "Examples of Plone 6 using containers"
-    "keywords": "Plone 6, install, installation, docker, containers"
+    "description": "Docker Compose projects that run Plone 6 behind Traefik, nginx, or HAProxy."
+    "property=og:description": "Docker Compose projects that run Plone 6 behind Traefik, nginx, or HAProxy."
+    "property=og:title": "Docker Compose examples"
+    "keywords": "Plone 6, install, installation, Docker, Docker Compose, containers"
 ---
 
-# Examples of Plone 6 using containers
+# Docker Compose examples
 
 ```{toctree}
 :maxdepth: 2

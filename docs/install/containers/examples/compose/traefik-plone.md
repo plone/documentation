@@ -1,8 +1,8 @@
 ---
 myst:
   html_meta:
-    "description": "Simple Plone 6 Classic UI setup with Traefik and one backend, with data persisted in a Docker volume."
-    "property=og:description": "Simple Plone 6 Classic UI setup with Traefik and one backend, with data persisted in a Docker volume."
+    "description": "Traefik and a Classic UI backend in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
+    "property=og:description": "Traefik and a Classic UI backend in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
     "property=og:title": "Traefik, Plone Classic container example"
     "keywords": "Plone 6, Container, Docker, Traefik, Plone Classic"
 ---

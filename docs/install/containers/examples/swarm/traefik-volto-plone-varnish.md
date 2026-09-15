@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Plone 6 stack for Docker Swarm with Traefik, Varnish, a scalable frontend and backend, and a ZEO server."
-    "property=og:description": "Plone 6 stack for Docker Swarm with Traefik, Varnish, a scalable frontend and backend, and a ZEO server."
-    "property=og:title": "Docker Swarm: Traefik, Frontend, Backend, ZEO, Varnish example"
+    "description": "Varnish cache, ZEO server, scalable frontend and backend, and Traefik in a Plone 6 stack for Docker Swarm."
+    "property=og:description": "Varnish cache, ZEO server, scalable frontend and backend, and Traefik in a Plone 6 stack for Docker Swarm."
+    "property=og:title": "Traefik, Frontend, Backend, ZEO, Varnish example for Docker Swarm"
     "keywords": "Plone 6, Container, Docker, Docker Swarm, Traefik, Frontend, Backend, ZEO, Varnish"
 ---
 
-# Docker Swarm: Traefik, Frontend, Backend, ZEO, Varnish example
+# Traefik, Frontend, Backend, ZEO, Varnish example for Docker Swarm
 
 This example deploys Plone 6 as a stack on a Docker Swarm cluster, with {term}`Varnish` caching the responses of the frontend and the backend.
 The stack runs the following services.

@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Plone 6 Classic UI stack for Docker Swarm with Traefik and a backend that stores its data in a Docker volume."
-    "property=og:description": "Plone 6 Classic UI stack for Docker Swarm with Traefik and a backend that stores its data in a Docker volume."
-    "property=og:title": "Docker Swarm: Traefik, Plone Classic example"
+    "description": "Classic UI backend and Traefik in a Plone 6 stack for Docker Swarm, with data stored in a Docker volume."
+    "property=og:description": "Classic UI backend and Traefik in a Plone 6 stack for Docker Swarm, with data stored in a Docker volume."
+    "property=og:title": "Traefik, Plone Classic example for Docker Swarm"
     "keywords": "Plone 6, Container, Docker, Docker Swarm, Traefik, Plone Classic"
 ---
 
-# Docker Swarm: Traefik, Plone Classic example
+# Traefik, Plone Classic example for Docker Swarm
 
 This example deploys a Plone 6 site with the Classic UI as a stack on a Docker Swarm cluster.
 The stack runs the following services.

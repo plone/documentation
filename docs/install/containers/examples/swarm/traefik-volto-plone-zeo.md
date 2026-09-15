@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Plone 6 stack for Docker Swarm with Traefik, a scalable frontend and backend, and a ZEO server."
-    "property=og:description": "Plone 6 stack for Docker Swarm with Traefik, a scalable frontend and backend, and a ZEO server."
-    "property=og:title": "Docker Swarm: Traefik, Frontend, Backend, ZEO example"
+    "description": "ZEO server, scalable frontend and backend, and Traefik in a Plone 6 stack for Docker Swarm."
+    "property=og:description": "ZEO server, scalable frontend and backend, and Traefik in a Plone 6 stack for Docker Swarm."
+    "property=og:title": "Traefik, Frontend, Backend, ZEO example for Docker Swarm"
     "keywords": "Plone 6, Container, Docker, Docker Swarm, Traefik, Frontend, Backend, ZEO"
 ---
 
-# Docker Swarm: Traefik, Frontend, Backend, ZEO example
+# Traefik, Frontend, Backend, ZEO example for Docker Swarm
 
 This example deploys Plone 6 as a stack on a Docker Swarm cluster.
 The stack runs the following services.

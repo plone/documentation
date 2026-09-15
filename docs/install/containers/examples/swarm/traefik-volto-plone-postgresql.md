@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Plone 6 stack for Docker Swarm with Traefik, a scalable frontend and backend, and a PostgreSQL database."
-    "property=og:description": "Plone 6 stack for Docker Swarm with Traefik, a scalable frontend and backend, and a PostgreSQL database."
-    "property=og:title": "Docker Swarm: Traefik, Frontend, Backend, PostgreSQL example"
+    "description": "PostgreSQL database, scalable frontend and backend, and Traefik in a Plone 6 stack for Docker Swarm."
+    "property=og:description": "PostgreSQL database, scalable frontend and backend, and Traefik in a Plone 6 stack for Docker Swarm."
+    "property=og:title": "Traefik, Frontend, Backend, PostgreSQL example for Docker Swarm"
     "keywords": "Plone 6, Container, Docker, Docker Swarm, Traefik, Frontend, Backend, PostgreSQL"
 ---
 
-# Docker Swarm: Traefik, Frontend, Backend, PostgreSQL example
+# Traefik, Frontend, Backend, PostgreSQL example for Docker Swarm
 
 This example deploys Plone 6 as a stack on a Docker Swarm cluster.
 The stack runs the following services.

@@ -15,10 +15,10 @@ The Plone community maintains the following official images:
 
 | Image           | Description                                                       |
 |-----------------|-------------------------------------------------------------------|
-| {doc}`aurora`   | Aurora, the future React frontend of Plone. Requires a Plone backend |
 | {doc}`backend`  | Plone backend. Could be used standalone or as a headless CMS      |
 | {doc}`frontend` | Plone default frontend written in React. Requires a Plone backend |
 | {doc}`zeo`      | ZEO server, a specialized database to be used with Plone backend  |
+| {doc}`aurora`   | Aurora, the future React frontend of Plone. Requires a Plone backend |
 
 
 ## Other container images
