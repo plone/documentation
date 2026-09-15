@@ -22,6 +22,9 @@ The Plone community maintains the following official images:
 :hidden: true
 
 backend
+backend-reference
 frontend
+frontend-reference
 zeo
+zeo-reference
 ```

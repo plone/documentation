@@ -14,22 +14,7 @@ The frontend is written using React and requires a Plone backend to be running a
 
 This image is **not a base image** to be extended in your projects, but an example of the Plone user experience out of the box.
 
-
-## Configuration Variables
-
-
-### Main variables
-
-
-| Environment variable | Description | Example |
-| --- | --- | --- |
-| `RAZZLE_API_PATH` | Used to generate frontend calls to the backend. Needs to be a public URL accessible by client browser. | `http://api.site.org/++api++/` |
-| `RAZZLE_INTERNAL_API_PATH` | Used by the middleware to construct requests to the backend. It can be a non-public address. | `http://backend:8080/Plone` |
-| `VOLTO_ROBOTSTXT` | Override the `robots.txt` file. | `"User-agent: *\nDisallow: "` |
-
-```{note}
-For an extensive list of environment variables used by the frontend, visit {doc}`/volto/configuration/environmentvariables`.
-```
+For a complete reference of all environment variables, see {doc}`frontend-reference`.
 
 
 ## Using as an example for your Volto project
