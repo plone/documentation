@@ -100,7 +100,7 @@ To create a change log entry or news item, create a file in the `news` directory
 
 For Volto, its repository is in a monorepo structure, consisting of several packages in the `packages` folder.
 Thus for Volto and its packages, change log entries should be created in `packages/PACKAGE_NAME/news/`, which is the root of the package.
-When making a change to its documentation, set up, continuous integration, or other repository-wide items, place a change log entry in `packages/volto/news/` as a default.
+When making a change to its documentation, setup, continuous integration, or other repository-wide items, place a change log entry in `packages/volto/news/` as a default.
 
 The change log entry's format must be `###.type`, where `###` is the referenced GitHub issue or pull request number, `.` is the literal extension delimiter, and `type` is one of the following strings.
 
@@ -109,8 +109,25 @@ The change log entry's format must be `###.type`, where `###` is the referenced 
 -   `documentation` for documentation
 -   `feature` for new features
 -   `internal` for internal changes
+-   `chore` for routine tasks that shouldn't be published in the change log, but will satisfy the status checks for the presence of a change log entry
 
-A package configures the types it allows in a file `towncrier.toml` located at the root of its package directory.
+A package configures the types it allows in a file {file}`towncrier.toml` located at the root of its package directory.
+
+To avoid a filename conflict with an existing file or another pull request for the same issue number, append a period (`.`) and an integer to the filename, incrementing it as needed to make the entire filename unique.
+
+```text
+1158.documentation
+1158.documentation.1
+1158.documentation.2
+```
+
+For orphan change log entries—that is, those that don't need to be linked to any issue ID or other identifier—start the file name with `+`.
+Orphan change log entries are _always_ included in the change log, even if it's a `chore` type, as they're considered to be important enough to be published in the change log
+They'll be included at the end of the category corresponding to the file name's extension.
+
+```text
++anything.bugfix
+```
 
 
 (write-a-good-change-log-entry-label)=
