@@ -32,21 +32,22 @@ Select the tab according to your Python package manager.
 ```{tip}
 For projects created with Cookieplone, select the tab labeled:
 
--   {guilabel}`pip` if your project has the file {file}`backend/mx.ini`
--   {guilabel}`uv` if your project doesn't have this file
+-   {guilabel}`uv` if your {file}`pyproject.toml` has the setting `managed = true` in the part `tool.uv`.
+-   {guilabel}`pip` if your {file}`pyproject.toml` doesn't have this setting
 ```
 
 `````{tab-set}
 ````{tab-item} uv
 :sync: uv
 
-In the file {file}`pyproject.toml`, under the table `[tool.uv]`, edit `constraint-dependencies`.
+In the file {file}`pyproject.toml`, under the table `[tool.uv]`, add or edit `override-dependencies`.
 This example uses `plone.api`.
 
-```
+```toml
 [tool.uv]
-constraint-dependencies = [
-    "plone.api==2.0.0a3",
+managed = True
+override-dependencies = [
+    "plone.api==3.0.0a3",
 ]
 ```
 ````
@@ -60,7 +61,7 @@ This example uses `plone.api`.
 ```
 [settings]
 version-overrides =
-    plone.api==2.0.0a3
+    plone.api==3.0.0a3
 ```
 
 ```{seealso}
@@ -91,7 +92,7 @@ eggs =
     Plone
 
 [versions]
-plone.api = 2.0.0a3
+plone.api = 3.0.0a3
 ```
 
 ```{note}
@@ -118,31 +119,50 @@ Select the tab according to your Python package manager.
 ```{tip}
 For projects created with Cookieplone, select the tab labeled:
 
--   {guilabel}`pip` if your project has the file {file}`backend/mx.ini`
--   {guilabel}`uv` if your project doesn't have this file
+-   {guilabel}`uv` if your {file}`pyproject.toml` has the setting `managed = true` in the part `tool.uv`.
+-   {guilabel}`pip` if your {file}`pyproject.toml` doesn't have this setting
 ```
 
-`````{tab-set}
-````{tab-item} uv
+``````{tab-set}
+`````{tab-item} uv
 :sync: uv
 
 This example uses `plone.restapi`.
 
 Clone the repository into a local directory.
 
+add the package's source to the file {file}`mx.ini`.
+
+```cfg
+[plone.restapi]
+url=git@github.com:collective/plone.restapi.git
+branch=dev-branch-name
+extras=test
+```
+
+When installing the add-on in the next step the add-on will be added as a "editable dependency" in your {file}`pyproject.toml` like this: 
+
+```cfg
+[tool.uv.sources]
+"plone.restapi" = {path = "sources/plone.restapi", editable = true}
+```
+````{tip}
+The result is the same as cloning the repository in a local directory...
+
 ```shell
 git clone git@github.com:plone/plone.restapi.git
 ```
 
-Add the local directory to your uv project as an editable package.
+...and then adding the local directory to your uv project as an editable package:
 
 ```shell
 cd backend
 uv add --editable ../plone.restapi
 ```
 ````
+`````
 
-````{tab-item} pip
+`````{tab-item} pip
 :sync: pip
 
 Add the Plone package you want to check out in the file {file}`backend/mx.ini`.
@@ -159,9 +179,9 @@ extras = test
 The {file}`mx.ini` file configures a tool called {term}`mxdev`.
 For an explanation of why Plone uses mxdev, see {ref}`manage-packages-mxdev-label`.
 ```
-````
+`````
 
-````{tab-item} Buildout
+`````{tab-item} Buildout
 :sync: buildout
 
 Update the file {file}`buildout.cfg`.
@@ -199,8 +219,8 @@ Setting an empty version ensures that the copy of `plone.restapi` from source co
 ```{seealso}
 This approach uses the [`mr.developer`](https://pypi.org/project/mr.developer/) Buildout extension.
 ```
-````
 `````
+``````
 
 ### Install the package
 
