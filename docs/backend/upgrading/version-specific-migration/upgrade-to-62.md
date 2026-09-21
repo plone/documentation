@@ -15,6 +15,11 @@ Plone 6.2 has seen the following major changes.
 Some may require changes in your setup.
 
 
+## Added support for Python 3.14
+
+Plone 6.2 supports Python 3.14.
+
+
 ## Move to native namespaces
 
 Plone 6.2 has migrated all core Python packages from `pkg_resources`-style namespaces to native namespaces.
@@ -36,11 +41,9 @@ The two terms mean the same.
 ```
 
 Native namespaces exist since Python 3.3.
-Because Plone started in the days of Python 2, it has always used `pkg_resources`.
-`pkg_resources` is part of the `setuptools` package.
-This part is deprecated.
-It's scheduled to be removed around the end of 2025, in `setuptools` 81.
-This means Plone needs to move to native namespaces.
+Because Plone started in the days of Python 2, it has always used `pkg_resources`, until now.
+[`pkg_resources` was removed from `setuptools` 82.0.0](https://setuptools.pypa.io/en/latest/history.html#v82-0-0).
+This means Plone needed to move to native namespaces.
 
 In general, this move shouldn't cause problems for integrators.
 To install Plone 6.2 you can keep using the same version of `pip` (or `uv`), or `zc.buildout` as you do for Plone 6.1.
@@ -84,6 +87,13 @@ Templates from the following packages are now in a new location:
 
 * `plone.locking`
 * `plone.protect`
+
+Starting with Plone 6.2, you can activate plone.app.layout in the {guilabel}`Add-ons` control panel.
+
+If you use Classic UI, you should activate it.
+If you use Volto, you should not activate it.
+
+The automatic upgrade attempts to activate plone.app.layout according to your original configuration, but you should check the {guilabel}`Add-ons` control panel to make sure.
 
 ```{note}
 If you use the `z3c.jbot` add-on to override a template that has been moved, your override will still work.
