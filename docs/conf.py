@@ -144,7 +144,7 @@ exclude_patterns = [
     "**/README.md",
     "**/README.rst",
     "**/eggs",
-    "_inc/.*",
+    "_inc/*.*",
     "plone.restapi/.*",
     "plone.restapi/*.md",
     "plone.restapi/bin",
@@ -366,6 +366,7 @@ intersphinx_mapping = {
     "training-2022": ("https://2022.training.plone.org/", None),
     "training-2023": ("https://2023.training.plone.org/", None),
     "training-2024": ("https://2024.training.plone.org/", None),
+    "training-2025": ("https://2025.training.plone.org/", None),
 }
 
 
