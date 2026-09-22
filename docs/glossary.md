@@ -983,4 +983,7 @@ virtualenv
 
 venv
     The {mod}`venv` module in the Python standard library supports creating lightweight {term}`virtual environment`s, each with their own independent set of Python packages installed in their {file}`site-packages` directories.
+
+monorepo
+    In version-control systems, a monorepo or monorepository is a software development strategy in which the code for a number of projects is stored in the same repository.
 ```
