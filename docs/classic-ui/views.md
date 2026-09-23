@@ -717,7 +717,7 @@ However, in most cases:
     You get the HTML output with `self.index()`.
     The page template gets a context argument `view`, pointing to the view class instance.
     The `index` value is usually an instance of [`Products.Five.browser.pagetemplate.ViewPageTemplateFile`](https://github.com/zopefoundation/Zope/blob/d1814d0a6bddb615629b552de10e9aa5ad30a6da/src/Products/Five/browser/pagetemplatefile.py#L35) for full Plone pages or [`zope.pagetemplate.pagetemplatefile.PageTemplateFile`](https://github.com/zopefoundation/zope.pagetemplate/blob/14ba59c98e12517b9f8abcdb24bc882bb435ed7c/src/zope/pagetemplate/pagetemplatefile.py#L43) for HTML snippets without using acquisition.
--   View classes should implement the {doc}`interface </backend/interfaces>`
+-   View classes should implement the {ref}`interface <classic-ui-register-and-unregister-a-view-directly-using-zope.component-architecture-label>`
   [`zope.browser.interfaces.IBrowserView`](https://github.com/zopefoundation/zope.browser/blob/1239c75e4e190df992bf34a88b4ead2c952afe86/src/zope/browser/interfaces.py#L27).
 
 Views that render page snippets and parts can be direct subclasses of `zope.publisher.browser.BrowserView`, as snippets might not need acquisition support which adds some overhead to the rendering process.

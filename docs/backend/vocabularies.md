@@ -663,17 +663,12 @@ The response includes the `token` and `title` for each term:
 7. **Document your vocabularies** with docstrings explaining what they contain and when to use them.
 
 
-## See Also
-
-- {ref}`fields-label` for field types that use vocabularies
-- {doc}`../forms/index` for form handling
-- [zope.schema documentation](https://zopeschema.readthedocs.io/)
-- [plone.app.vocabularies source code](https://github.com/plone/plone.app.vocabularies)
-- [bobtemplates.plone documentation](https://bobtemplatesplone.readthedocs.io/)
-
-
 ## Related content
 
--   {doc}`/backend/fields`
+-   {doc}`/backend/fields` for field types that use vocabularies
+-   {doc}`classic-ui/forms` for form handling
+-   [`zope.schema documentation`](https://zopeschema.readthedocs.io/)
+-   [`plone.app.vocabularies` source code](https://github.com/plone/plone.app.vocabularies)
+-   [`bobtemplates.plone` documentation](https://bobtemplatesplone.readthedocs.io/)
 -   {doc}`/backend/schemas`
 -   {doc}`/backend/content-types/index`
