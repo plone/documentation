@@ -223,6 +223,10 @@ Volto
 :   Plone 6 default frontend.
     See {doc}`../volto/contributing/index`.
 
+Diazo
+:   Theme engine for Plone.
+    See the [Diazo documentation](https://docs.diazo.org/).
+
 (contributing-releases-label)=
 
 ## Releases

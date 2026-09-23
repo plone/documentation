@@ -11,6 +11,7 @@
 docs/plone.api
 docs/plone.restapi
 docs/volto
+docs/diazo
 
 # editor files
 .vscode
