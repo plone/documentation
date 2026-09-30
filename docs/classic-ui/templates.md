@@ -971,4 +971,4 @@ import pdb; pdb.set_trace()
 - {doc}`viewlets`
 - {doc}`template-global-variables`
 - [Chameleon documentation](https://chameleon.readthedocs.io/)
-- [Plone Training: Page Templates](https://training.plone.org/mastering-plone-5/zpt.html)
+- {doc}`training-2023:mastering-plone-5/zpt`
