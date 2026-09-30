@@ -37,17 +37,15 @@ After doing so, as a content editor, when you edit a translation of a given cont
 
 When you click this icon, it will invoke the translation utility, and the translation obtained through the service will be entered automatically in the corresponding field.
 
-Plone does not implement this interface by itself in any of its utilities.
+plone.app.multilingual implements this interface for Google Translate. You will need to add the Google Translate API key in the Multilingual configuration control panel.
 
-You'll need to use an external package that offers this service as described in {ref}`pre-configured-services-label`, or create your own utility.
+If you want to use some other translations services, you can use an external package that offers this service as described in {ref}`pre-configured-services-label`, or create your own utility.
 
 (pre-configured-services-label)=
 
 ## Using the translation service with pre-configured services
 
 To use some external tools, the Plone community has implemented a package called [`collective.translators`](https://github.com/collective/collective.translators) that implements this functionality for AWS, Deepl, Deepseek, Libre Translate, or Ollama, to name a few.
-
-Plone itself, implements the connection to Google Translate, you will need to add the required key in the Multilingual configuration control panel.
 
 Each of those services provides a control panel to tweak the configuration, including API keys, languages, service endpoints, and other configuration items.
 
