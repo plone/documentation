@@ -17,6 +17,7 @@ Classic UI
 CMSs
 CMSUI
 CommonJS
+conftest
 Cookieplone
 doctest
 ETags?
@@ -45,6 +46,9 @@ pipx
 Plate
 PLIP(s)
 Plone
+plone.app.testing
+plone.meta
+plone.testing
 plonecli
 Podman
 pluggab(le|ility)
@@ -53,6 +57,8 @@ pnpm
 prerendered
 programatically
 Public UI
+pytest
+pytest-plone
 [Qq]uerystring
 Razzle
 [Rr]enderers?
@@ -60,6 +66,7 @@ RichText
 Sass
 Schuko
 subfolder
+testbrowser
 toggler
 [Tt]owncrier
 Traefik
@@ -80,3 +87,4 @@ webpack
 wireframe
 xkcd
 Zope
+zope.testrunner
