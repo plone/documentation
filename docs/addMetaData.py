@@ -1,5 +1,6 @@
-import os
 import logging
+import os
+
 metadata_check = """---
 myst:
 """
@@ -39,5 +40,5 @@ for root, dirs, files in os.walk(docs_dir):
                     logger.info(f"{filename} html_meta prepended.")
                 else:
                     count_files["unmodified"] += 1
-logger.info(f'html_meta snippet added to {count_files["modified"]} files.')
-logger.info(f'{count_files["unmodified"]} files unmodified.')
+logger.info(f"html_meta snippet added to {count_files['modified']} files.")
+logger.info(f"{count_files['unmodified']} files unmodified.")
