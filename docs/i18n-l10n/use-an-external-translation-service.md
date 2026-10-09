@@ -39,6 +39,11 @@ When you click this icon, it will invoke the translation utility, and the transl
 
 plone.app.multilingual implements this interface for Google Translate. You will need to add the Google Translate API key in the Multilingual configuration control panel.
 
+```{note}
+The usage of Google Cloud Translation API may create extra cost for the site administrator.
+See [Cloud Translation pricing](https://cloud.google.com/products/translate/pricing) for details.
+```
+
 If you want to use some other translations services, you can use an external package that offers this service as described in {ref}`pre-configured-services-label`, or create your own utility.
 
 (pre-configured-services-label)=
