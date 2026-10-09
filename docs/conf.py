@@ -93,21 +93,23 @@ linkcheck_ignore = [
     r"https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset",
     r"https://javascript.plainenglish.io/you-dont-need-lodash-how-i-gave-up-lodash-693c8b96a07c",
     # Ignore pages that are rate limited or otherwise blocked
-    r"https://stackoverflow.com",
-    r"https://www.npmjs.com/",
+    r"https://codesandbox.io/",
+    r"https://docutils.sourceforge.io/",
     r"https://hosted.weblate.org/",
+    r"https://medium.com",
+    r"https://pastanaga.io",
+    r"https://stackoverflow.com",
+    r"https://v5.reactrouter.com",
+    r"https://www.merriam-webster.com/",
+    r"https://www.npmjs.com/",
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
-    # Ignore rate limiting by github.com
+    # Ignore redirects and rate limiting by github.com
     r"https://github.com/plone/volto/issues",
     r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
-    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
-    r"https://hosted.weblate.org/accounts/profile/#notifications",
     r"https://browsersl.ist/#",  # volto
-    # Ignore unreliable sites
-    r"https://.*.gnu.org/",
-    # fluke where Sphinx interprets this as a URL
+    # fluke where Sphinx MyST linkify extension interprets this as a URL
     r"http://z3c.pt",
 ]
 linkcheck_allowed_redirects = {
