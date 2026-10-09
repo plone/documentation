@@ -189,7 +189,7 @@ changes: deps
 
 .PHONY: linkcheck
 linkcheck: deps  ## Run linkcheck
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck -W $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
 	@echo
