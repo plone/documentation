@@ -227,9 +227,9 @@ You will pull code from the upstream Plone repository, push your work from your 
 _Plone git workflow_
 ````
 
-1.  Start by [forking the project's repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) to your account through the GitHub interface.
-1.  [Clone your forked repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#cloning-your-forked-repository).
-1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
+1.  Start by [forking the project's repository](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo) to your account through the GitHub interface.
+1.  [Clone your forked repository](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo#cloning-your-forked-repository).
+1.  [Configure git to sync your fork with the upstream repository](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository).
 
 
 (write-code-label)=
@@ -291,7 +291,7 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
     git push -u origin my-branch-name
     ```
 
-1.  Visit your fork of the Plone repository on GitHub, and [**create a pull request**](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) against the development branch.
+1.  Visit your fork of the Plone repository on GitHub, and [**create a pull request**](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request) against the development branch.
     -   Make both your title and description descriptive.
         Reviewers look at many pull requests, and need to quickly understand the context.
         A lazily written phrase such as "Fixes bug" is meaningless.
@@ -305,7 +305,7 @@ Once you have completed, tested, and linted your code, and created a {ref}`contr
 
 1.  **Request a review.**
     Identify who you should ask by either checking the history of the files you edit, or viewing the project's list of contributors for an active member.
-    If you have write access to the repository, [request a review](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review) from other team members.
+    If you have write access to the repository, [request a review](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/requesting-a-pull-request-review) from other team members.
     If you do not have write access, instead add a comment and mention a few active contributors of the project, tagging them with `@username`.
     You can find them by either checking the files' history via `git blame` or visiting the project's {guilabel}`Contributors` page on GitHub.
 1.  Members who subscribe to the repository will receive a notification and review your request.
