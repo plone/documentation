@@ -162,7 +162,7 @@ Nothing changes.
 You can now use a RESTful hypermedia API for Plone to build modern JavaScript frontends on top of Plone.
 Also, the REST API can be used to import or export data.
 
-See https://plonerestapi.readthedocs.io/en/latest/ for details.
+See {doc}`/plone.restapi/docs/source/index` for details.
 
 
 ### New navigation with dropdown
