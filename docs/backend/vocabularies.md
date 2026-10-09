@@ -212,7 +212,7 @@ def available_documents_source(context):
     """Return a vocabulary of documents in the current folder."""
     # Get the portal catalog
     catalog = context.portal_catalog
-    
+
     # Query for documents
     brains = catalog.searchResults(
         portal_type='Document',
@@ -221,7 +221,7 @@ def available_documents_source(context):
             'depth': 1,
         },
     )
-    
+
     # Build vocabulary terms
     terms = [
         SimpleTerm(
@@ -231,7 +231,7 @@ def available_documents_source(context):
         )
         for brain in brains
     ]
-    
+
     return SimpleVocabulary(terms)
 ```
 
@@ -577,18 +577,18 @@ from zope.schema.vocabulary import SimpleVocabulary
 def authors_vocabulary_factory(context):
     """Vocabulary of authors from existing content."""
     catalog = api.portal.get_tool('portal_catalog')
-    
+
     # Get unique creators from all content
     brains = catalog.searchResults(
         portal_type=['Document', 'News Item', 'Event'],
     )
-    
+
     # Collect unique authors
     authors = set()
     for brain in brains:
         if brain.Creator:
             authors.add(brain.Creator)
-    
+
     # Build terms sorted alphabetically
     terms = []
     for author_id in sorted(authors):
@@ -598,7 +598,7 @@ def authors_vocabulary_factory(context):
             fullname = user.getProperty('fullname') or author_id
         else:
             fullname = author_id
-        
+
         terms.append(
             SimpleTerm(
                 value=author_id,
@@ -606,7 +606,7 @@ def authors_vocabulary_factory(context):
                 title=fullname,
             )
         )
-    
+
     return SimpleVocabulary(terms)
 ```
 
@@ -667,7 +667,7 @@ The response includes the `token` and `title` for each term:
 
 - {ref}`fields-label` for field types that use vocabularies
 - {doc}`../forms/index` for form handling
-- [zope.schema documentation](https://zopeschema.readthedocs.io/)
+- [zope.schema documentation](https://zopeschema.readthedocs.io/en/latest/)
 - [plone.app.vocabularies source code](https://github.com/plone/plone.app.vocabularies)
 - [bobtemplates.plone documentation](https://bobtemplatesplone.readthedocs.io/)
 
