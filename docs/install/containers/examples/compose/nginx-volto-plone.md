@@ -1,37 +1,36 @@
 ---
 myst:
   html_meta:
-    "description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
-    "property=og:description": "Very simple Plone 6 setup with only one or more backend instances accessing a ZEO server and data being persisted in a Docker volume."
-    "property=og:title": "nginx, Frontend, Backend, ZEO container example"
-    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend, ZEO"
+    "description": "nginx, a frontend, and a single backend in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
+    "property=og:description": "nginx, a frontend, and a single backend in a Plone 6 project for Docker Compose, with data persisted in a Docker volume."
+    "property=og:title": "nginx, Frontend, Backend container example"
+    "keywords": "Plone 6, Container, Docker, nginx, Frontend, Backend"
 ---
 
-# nginx, Frontend, Backend, ZEO container example
+# nginx, Frontend, Backend container example
 
-This example is a very simple setup with one or more backend instances accessing a ZEO server and data being persisted in a Docker volume.
+This example is a very simple setup with one backend and data being persisted in a Docker volume.
 
 {term}`nginx` in this example is used as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
 
-
 ## Setup
 
-Create an empty project directory named `nginx-volto-plone-zeo`.
+Create an empty project directory named {file}`nginx-volto-plone`
 
 ```shell
-mkdir nginx-volto-plone-zeo
+mkdir nginx-volto-plone
 ```
 
 Change into your project directory.
 
 ```shell
-cd nginx-volto-plone-zeo
+cd nginx-volto-plone
 ```
 
 
 ### nginx configuration
 
-Add a `default.conf` that will be used by the nginx image:
+Add a {file}`default.conf` that will be used by the nginx image:
 
 ```nginx
 upstream backend {
@@ -74,13 +73,12 @@ server {
 
 ```{note}
 `http://plone.localhost/` is the URL you will be using to access the website.
-You can either use `localhost`, or add it in your `/etc/hosts` file or DNS to point to the Docker host IP.
+You can either use `localhost`, or add it in your {file}`/etc/hosts` file or DNS to point to the Docker host IP.
 ```
-
 
 ### Service configuration with Docker Compose
 
-Now let's create a `docker-compose.yml` file:
+Now let's create a {file}`docker-compose.yml` file:
 
 ```yaml
 services:
@@ -96,7 +94,7 @@ services:
     - "80:80"
 
   frontend:
-    image: plone/plone-frontend:latest
+    image: plone/plone-frontend:${STACK_FRONTEND_TAG:?Set STACK_FRONTEND_TAG}
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     ports:
@@ -105,28 +103,35 @@ services:
       - backend
 
   backend:
-    image: plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
+    image: plone/plone-backend:${STACK_BACKEND_TAG:?Set STACK_BACKEND_TAG}
     environment:
       SITE: Plone
-      ZEO_ADDRESS: db:8100
-      ZEO_SHARED_BLOB_DIR: on   # otherwise the backend will create its own blob storage
     volumes:
-      - data:/data              # the backend and database need access to the same volume
+      - vol-site-data:/data
     ports:
     - "8080:8080"
-    depends_on:
-      - db
-
-  db:
-    image: plone/plone-zeo:latest
-    restart: always
-    volumes:
-      - data:/data
-    ports:
-    - "8100:8100"
 
 volumes:
-  data: {}
+  vol-site-data: {}
+```
+
+
+### Environment variables
+
+The {file}`docker-compose.yml` file reads the tags of its images from the following environment variables.
+All of them are required, and `docker compose` stops with an error if one of them is missing.
+
+| Variable | Description | Default value | Example |
+| --- | --- | --- | --- |
+| `STACK_FRONTEND_TAG` | Tag (version) of the image for the frontend | | {{PLONE_FRONTEND_VERSION}} |
+| `STACK_BACKEND_TAG` | Tag (version) of the image for the backend | | {{PLONE_BACKEND_MINOR_VERSION}} |
+
+Create a {file}`.env` file in your project directory with your values.
+Docker Compose reads it automatically when you run `docker compose` from that directory.
+
+```shell
+STACK_FRONTEND_TAG={PLONE_FRONTEND_VERSION}
+STACK_BACKEND_TAG={PLONE_BACKEND_MINOR_VERSION}
 ```
 
 
@@ -144,15 +149,6 @@ This pulls the needed images and starts Plone.
 ## Access Plone via Browser
 
 After startup, go to `http://plone.localhost/` and you should see the site.
-
-
-## Increase the number of backends
-
-To use two containers for the backend, run `docker compose` with `--scale`.
-
-```shell
-docker compose up --scale backend=2
-```
 
 
 ## Shutdown and cleanup

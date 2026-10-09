@@ -4,6 +4,7 @@
 
 # -- Path setup --------------------------------------------------------------
 
+import re
 from datetime import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -92,21 +93,23 @@ linkcheck_ignore = [
     r"https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset",
     r"https://javascript.plainenglish.io/you-dont-need-lodash-how-i-gave-up-lodash-693c8b96a07c",
     # Ignore pages that are rate limited or otherwise blocked
-    r"https://stackoverflow.com",
-    r"https://www.npmjs.com/",
+    r"https://codesandbox.io/",
+    r"https://docutils.sourceforge.io/",
     r"https://hosted.weblate.org/",
+    r"https://medium.com",
+    r"https://pastanaga.io",
+    r"https://stackoverflow.com",
+    r"https://v5.reactrouter.com",
+    r"https://www.merriam-webster.com/",
+    r"https://www.npmjs.com/",
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
-    # Ignore rate limiting by github.com
+    # Ignore redirects and rate limiting by github.com
     r"https://github.com/plone/volto/issues",
     r"https://github.com/plone/volto/pull",
     # Ignore other specific anchors
-    r"https://coveralls.io/repos/github/plone/plone.restapi/badge.svg\?branch=main",  # plone.restapi
-    r"https://hosted.weblate.org/accounts/profile/#notifications",
     r"https://browsersl.ist/#",  # volto
-    # Ignore unreliable sites
-    r"https://.*.gnu.org/",
-    # fluke where Sphinx interprets this as a URL
+    # fluke where Sphinx MyST linkify extension interprets this as a URL
     r"http://z3c.pt",
 ]
 linkcheck_allowed_redirects = {
@@ -143,7 +146,7 @@ exclude_patterns = [
     "**/README.md",
     "**/README.rst",
     "**/eggs",
-    "_inc/.*",
+    "_inc/*.*",
     "plone.restapi/.*",
     "plone.restapi/*.md",
     "plone.restapi/bin",
@@ -316,6 +319,17 @@ myst_enable_extensions = [
     "substitution",  # Use Jinja2 for substitutions. https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#substitutions-with-jinja2
 ]
 
+# Versions of the container images used in the documentation.
+# Use them as MyST substitutions in text, such as {{PLONE_BACKEND_MINOR_VERSION}},
+# and as source replacements in code blocks, such as {PLONE_BACKEND_MINOR_VERSION}.
+container_image_versions = {
+    "PLONE_BACKEND_MINOR_VERSION": "6.2",
+    "PLONE_FRONTEND_VERSION": "19",
+    "PLONE_ZEO_VERSION": "6",
+    "TRAEFIK_VERSION": "v3.7",
+    "POSTGRES_VERSION": "18",
+}
+
 myst_substitutions = {
     "postman_basic_auth": "![](../_static/img/postman_basic_auth.png)",
     "postman_headers": "![](../_static/img/postman_headers.png)",
@@ -326,6 +340,7 @@ myst_substitutions = {
     "SUPPORTED_PYTHON_VERSIONS_PLONE60": "3.9, 3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE61": "3.10, 3.11, 3.12, or 3.13",
     "SUPPORTED_PYTHON_VERSIONS_PLONE62": "3.10, 3.11, 3.12, 3.13, or 3.14",
+    **container_image_versions,
 }
 
 
@@ -353,6 +368,7 @@ intersphinx_mapping = {
     "training-2022": ("https://2022.training.plone.org/", None),
     "training-2023": ("https://2023.training.plone.org/", None),
     "training-2024": ("https://2024.training.plone.org/", None),
+    "training-2025": ("https://2025.training.plone.org/", None),
 }
 
 
@@ -467,14 +483,16 @@ latex_logo = "_static/logo_2x.png"
 # https://stackoverflow.com/a/56328457/2214933
 def source_replace(app, docname, source):
     result = source[0]
-    for key in app.config.source_replacements:
-        result = result.replace(key, app.config.source_replacements[key])
+    for key, value in app.config.source_replacements.items():
+        # Skip MyST substitutions, such as {{KEY}}, which contain the key {KEY}.
+        pattern = rf"(?<!\{{){re.escape(key)}(?!\}})"
+        result = re.sub(pattern, lambda match, value=value: value, result)
     source[0] = result
 
 
-# Dict of replacements.
+# Dict of replacements, such as {PLONE_BACKEND_MINOR_VERSION}.
 source_replacements = {
-    "{PLONE_BACKEND_MINOR_VERSION}": "6.2",
+    f"{{{key}}}": value for key, value in container_image_versions.items()
 }
 
 

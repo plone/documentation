@@ -14,7 +14,7 @@ This chapter offers some useful recipes when working with Plone containers.
 
 ## Remove access log from Plone containers
 
-When you generate a project using [Cookieplone](https://github.com/plone/cookieplone), it creates Plone containers for your project that are based on the official [`plone/plone-backend`](https://github.com/plone/plone-backend) images.
+When you generate a project using [Cookieplone](https://github.com/plone/cookieplone), it creates Plone containers for your project that are based on the official [`plone/plone-backend`](https://github.com/plone/container-backend) images.
 
 When you run your container or the official `plone/plone-backend` image with logging, the output mixes both the event log and the access log, making it hard to follow the logs you may have added to your application.
 In such cases, you may have a Docker Compose setup with several components including a proxy server that already provides access logs.
@@ -97,7 +97,7 @@ level = INFO
 formatter = generic
 ```
 
-Comparing this file with the [original `zope.ini` file](https://github.com/plone/plone-backend/blob/6.1.x/skeleton/etc/zope.ini) that comes with the `plone/plone-backend` container, you may realize that the only change is the `translogger` configuration was removed from the `pipeline` section.
+Comparing this file with the [original {file}`zope.ini` file](https://github.com/plone/container-backend/blob/6.1.x/skeleton/etc/zope.ini) that comes with the `plone/plone-backend` container, you may realize that the only change is the `translogger` configuration was removed from the `pipeline` section.
 This [`translogger` middleware produces logs in the Apache Combined Log Format](https://docs.pylonsproject.org/projects/waitress/en/latest/logging.html).
 The above configuration removes it from the setup.
 
