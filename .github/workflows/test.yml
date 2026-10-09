@@ -29,5 +29,5 @@ jobs:
           VALEFILES=$(find -L ./docs/ -type d \( -path "./docs/plone.restapi/lib/*" -o -path "./docs/plone.restapi/performance/*" \) -prune -false -o -type f -name "*.md" -print)
           vale --no-exit $VALEFILES
 
-`      - name: Check for broken links
+      - name: Check for broken links
         run: make linkcheckbroken
