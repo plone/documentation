@@ -100,6 +100,7 @@ linkcheck_ignore = [
     # Ignore pages that are rate limited or otherwise blocked
     r"https://codesandbox.io/",  #volto
     r"https://docutils.sourceforge.io/",
+    r"https://flaviocopes.com",  # volto
     r"https://hosted.weblate.org/",
     r"https://medium.com",
     r"https://stackoverflow.com",  #volto
