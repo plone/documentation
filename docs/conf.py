@@ -77,41 +77,6 @@ extensions = [
 smartquotes = False
 
 # Options for the linkcheck builder
-linkcheck_anchors = True
-# Ignore localhost
-linkcheck_ignore = [
-    # Ignore local and example URLs
-    r"http://127.0.0.1",
-    r"http://localhost",
-    r"http://yoursite",
-    # Ignore static file downloads
-    r"^/_static/",
-    r"^/_images/",
-    # Ignore pages that require authentication
-    r"https://github.com/orgs/plone/teams/",
-    r"https://github.com/plone/documentation/issues/new",
-    r"https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset",
-    r"https://javascript.plainenglish.io/you-dont-need-lodash-how-i-gave-up-lodash-693c8b96a07c",
-    # Ignore pages that are rate limited or otherwise blocked
-    r"https://codesandbox.io/",
-    r"https://docutils.sourceforge.io/",
-    r"https://hosted.weblate.org/",
-    r"https://medium.com",
-    r"https://pastanaga.io",
-    r"https://stackoverflow.com",
-    r"https://v5.reactrouter.com",
-    r"https://www.merriam-webster.com/",
-    r"https://www.npmjs.com/",
-    # Ignore github.com pages with anchors
-    r"https://github.com/.*#.*",
-    # Ignore redirects and rate limiting by github.com
-    r"https://github.com/plone/volto/issues",
-    r"https://github.com/plone/volto/pull",
-    # Ignore other specific anchors
-    r"https://browsersl.ist/#",  # volto
-    # fluke where Sphinx MyST linkify extension interprets this as a URL
-    r"http://z3c.pt",
-]
 linkcheck_allowed_redirects = {
     # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
     # Example
@@ -119,8 +84,43 @@ linkcheck_allowed_redirects = {
     # Weblate now temporarily redirects to stop bots and AI
     r"https://hosted\.weblate\.org/.*": r"https://hosted\.weblate\.org/\.within\.website/\?redir=/.*",
 }
-linkcheck_retries = 1
+linkcheck_ignore = [
+    # Ignore local and example URLs
+    r"http://127.0.0.1",
+    r"http://localhost",
+    r"http://yoursite",
+    # Ignore static file downloads
+    r"^/_images/",
+    r"^/_static/",
+    # Ignore pages that require authentication
+    r"https://classic.demo.plone.org/en/demo/an-image.jpg/@@images-test#srcset",
+    r"https://github.com/orgs/plone/teams/",
+    r"https://github.com/plone/documentation/issues/new",
+    r"https://javascript.plainenglish.io/you-dont-need-lodash-how-i-gave-up-lodash-693c8b96a07c",
+    # Ignore pages that are rate limited or otherwise blocked
+    r"https://codesandbox.io/",  #volto
+    r"https://docutils.sourceforge.io/",
+    r"https://hosted.weblate.org/",
+    r"https://medium.com",
+    r"https://stackoverflow.com",  #volto
+    r"https://v5.reactrouter.com",  #volto
+    r"https://web.archive.org/",
+    r"https://www.merriam-webster.com/",
+    r"https://www.npmjs.com",  #volto
+    # Bad TLS certificate
+    r"https://pastanaga.io",  # See https://github.com/plone/volto/issues/8399
+    # Ignore redirects and rate limiting by github.com
+    r"https://github.com/plone/volto/issues",
+    r"https://github.com/plone/volto/pull",
+    # Ignore github.com pages with anchors
+    r"https://github.com/.*#.*",
+    # Ignore other specific anchors
+    r"https://browsersl.ist/#",  # volto
+    # fluke where Sphinx MyST linkify extension interprets this as a URL
+    r"http://z3c.pt",
+]
 linkcheck_report_timeouts_as_broken = True
+linkcheck_retries = 1
 linkcheck_timeout = 5
 
 # The suffix of source filenames.
