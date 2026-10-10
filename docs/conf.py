@@ -77,6 +77,7 @@ extensions = [
 smartquotes = False
 
 # Options for the linkcheck builder
+linkcheck_anchors = True
 linkcheck_allowed_redirects = {
     # All HTTP redirections from the source URI to the canonical URI will be treated as "working".
     # Example
@@ -106,6 +107,7 @@ linkcheck_ignore = [
     r"https://stackoverflow.com",  #volto
     r"https://v5.reactrouter.com",  #volto
     r"https://web.archive.org/",
+    r"https://www.gnu.org",
     r"https://www.merriam-webster.com/",
     r"https://www.npmjs.com",  #volto
     # Bad TLS certificate
