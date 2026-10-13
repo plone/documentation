@@ -35,6 +35,7 @@ distclean: clean ## Clean Python virtual environment and symlinks to submodules
 	rm docs/plone.api
 	rm docs/plone.restapi
 	rm docs/volto
+	rm docs/diazo
 	@echo "Cleaned Python virtual environment and symlinks to submodules."
 	@echo
 
@@ -73,6 +74,13 @@ docs/volto:  ## Setup Volto docs
 	@echo "Documentation of volto initialized."
 	@echo
 
+docs/diazo:  ## Setup diazo docs
+	git submodule init
+	git submodule update
+	ln -s ../submodules/diazo/docs ./docs/diazo
+	@echo "Documentation of diazo initialized."
+	@echo
+
 ln-seven:  ## Toggle the symlink to Seven
 	rm docs/volto
 	ln -s ../submodules/volto/docs ./docs/volto
@@ -86,7 +94,7 @@ ln-volto:  ## Toggle the symlink to Volto
 	@echo
 
 .PHONY: deps
-deps: venv/bin/python docs/volto docs/plone.restapi venv/plone.api-install  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, and plone.api submodules, create symlinks to the source files, and finally install plone.api.
+deps: venv/bin/python docs/volto docs/plone.restapi docs/diazo venv/plone.api-install  ## Create Python virtual environment, install requirements, initialize or update the volto, plone.restapi, diazo, and plone.api submodules, create symlinks to the source files, and finally install plone.api.
 
 .PHONY: html
 html: deps  ## Build html
@@ -233,6 +241,7 @@ livehtml: deps  ## Rebuild Sphinx documentation on changes, with live-reload in 
 		--watch volto \
 		--watch plone.api \
 		--watch plone.restapi \
+		--watch diazo \
 		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
 
 .PHONY: rtd-pr-preview
@@ -246,6 +255,7 @@ rtd-pr-preview:  ## Build pull request preview on Read the Docs
 	ln -s ../submodules/volto/docs/source ./docs/volto
 	ln -s ../submodules/plone.restapi ./docs/plone.restapi
 	ln -s ../submodules/plone.api/docs ./docs/plone.api
+	ln -s ../submodules/diazo/docs ./docs/diazo
 	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
 
 .PHONY: storybook
