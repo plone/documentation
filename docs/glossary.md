@@ -159,6 +159,7 @@ Dexterity
 Dublin Core
     The Dublin Core Schema is a small set of vocabulary terms that can be used to describe web resources (video, images, web pages, etc.), as well as physical resources such as books or CDs, and objects like artworks.
 
+Zope Management Interface
 ZMI
     The {term}`Zope` Management Interface.
     The ZMI is a direct interface into the backend software stack of Plone.
