@@ -112,6 +112,66 @@ Consider a File content item with UID `3e0dd7c4b2714eafa1d6fc6a1493f953` and a P
 | `content/3e0dd7c4b2714eafa1d6fc6a1493f953/data.json` | JSON File with serialized representation of a content item |
 | `content/3e0dd7c4b2714eafa1d6fc6a1493f953/file/plone.pdf` | Blob file stored in the `file` field in the content item |
 
+
+## Custom export
+
+```{versionadded} Plone 6.3
+The `IObjectsExporter` adapter is new in Plone 6.3.
+Prior to it, although possible, it was harder to customize the content exporter.
+```
+
+By default, all content from an existing Plone site is exported.
+While that's great for migrations, it is not practical/feasible for larger sites.
+
+There are other scenarios where a custom data export makes sense:
+
+- sensitive content should not be exported
+- only a specific part of the site is relevant
+- ...
+
+For that, you can _override_ the `plone.exportimport.interfaces.IObjectsExporter` adapter.
+
+In {file}`overrides.zcml` add:
+
+```XML
+<adapter
+    factory="my.addon.adapters.ObjectsExporter"
+    provides="plone.exportimport.interfaces.IObjectsExporter"
+    for="plone.base.interfaces.siteroot.IPloneSiteRoot"
+    />
+```
+
+In {file}`my.package.adapters.py` add:
+
+```python
+from collections.abc import Generator
+
+
+class ObjectsExporter:
+
+    def __init__(self, obj):
+        self.obj = obj
+        self.errors = None
+
+    def get_objects(self, query, errors) -> Generator:
+        """Return all objects to be serialized"""
+        self.errors = errors
+
+        yield from self.gather_objects()
+
+    def gather_objects(self):
+        # custom logic to select which specific content gets exported
+```
+
+With this, the default `plone-exporter` will no longer export **all content**.
+
+```{warning}
+As soon as you override the export be aware that other parts of the export might not work.
+
+Carefully check that your custom objects exporter works as expected.
+```
+
+
 ## Related content
 
 -   {doc}`/admin-guide/backup-restore-plone-buildout`
