@@ -37,7 +37,7 @@ Each release lists only its last version.
 
 | Plone release | Last version | Python | Tags | Platforms |
 | --- | --- | --- | --- | --- |
-| 5.2 | 5.2.4 | 3.8.8 | `plone/plone:5.2`, `plone/plone:5.2.4` | linux/amd64 |
+| 5.2 | 5.2.14 | 3.8.20 | `plone/plone:5.2`, `plone/plone:5.2.14` | linux/amd64 |
 | 5.1 | 5.1.6 | 2.7.17 | `plone/plone:5.1`, `plone/plone:5.1.6` | linux/amd64 |
 | 5.0 | 5.0.8 | 2.7.14 | `plone/plone:5.0`, `plone/plone:5.0.8` | linux/amd64 |
 | 4.3 | 4.3.19 | 2.7.17 | `plone/plone:4.3`, `plone/plone:4.3.19` | linux/amd64 |
@@ -58,6 +58,12 @@ Each release lists only its last version.
 All images listen on port 8080, and store their data in a {file}`/data` volume.
 To use an existing database, place its {file}`Data.fs` file at {file}`/data/filestorage/Data.fs` before the first start.
 
+The tags `plone/plone:latest` and `plone/plone:5` point to the Plone 5.2 image.
+
+Each release also has a demo variant, tagged with a `-demo` suffix, that ships with a Plone site already created.
+The demo variants of Plone 4.3 to 5.2 always use the user `admin` with the password `admin`, and don't read the `ADMIN_USER` and `ADMIN_PASSWORD` environment variables.
+On their first start, they copy their database into {file}`/data`, unless {file}`/data` already holds a database.
+
 
 ## Plone 5.2
 
@@ -66,6 +72,17 @@ docker run -p 8080:8080 -v plone52-data:/data plone/plone:5.2
 ```
 
 Then point your browser at `http://localhost:8080`, and add a Plone site with the user `admin` and the password `admin`.
+
+
+### Plone 5.2 demo variant
+
+The `plone/plone:5.2-demo` image ships with a Plone site already created with the ID `Plone`.
+
+```shell
+docker run -p 8080:8080 plone/plone:5.2-demo
+```
+
+Then point your browser at `http://localhost:8080/Plone`, and log in with the user `admin` and the password `admin`.
 
 
 ## Plone 5.1
@@ -77,6 +94,17 @@ docker run -p 8080:8080 -v plone51-data:/data plone/plone:5.1
 Then point your browser at `http://localhost:8080`, and add a Plone site with the user `admin` and the password `admin`.
 
 
+### Plone 5.1 demo variant
+
+The `plone/plone:5.1-demo` image ships with a Plone site already created with the ID `Plone`.
+
+```shell
+docker run -p 8080:8080 plone/plone:5.1-demo
+```
+
+Then point your browser at `http://localhost:8080/Plone`, and log in with the user `admin` and the password `admin`.
+
+
 ## Plone 5.0
 
 ```shell
@@ -86,6 +114,17 @@ docker run -p 8080:8080 -v plone50-data:/data plone/plone:5.0
 Then point your browser at `http://localhost:8080`, and add a Plone site with the user `admin` and the password `admin`.
 
 
+### Plone 5.0 demo variant
+
+The `plone/plone:5.0-demo` image ships with a Plone site already created with the ID `Plone`.
+
+```shell
+docker run -p 8080:8080 plone/plone:5.0-demo
+```
+
+Then point your browser at `http://localhost:8080/Plone`, and log in with the user `admin` and the password `admin`.
+
+
 ## Plone 4.3
 
 ```shell
@@ -93,6 +132,17 @@ docker run -p 8080:8080 -v plone43-data:/data plone/plone:4.3
 ```
 
 Then point your browser at `http://localhost:8080`, and add a Plone site with the user `admin` and the password `admin`.
+
+
+### Plone 4.3 demo variant
+
+The `plone/plone:4.3-demo` image ships with a Plone site already created with the ID `Plone`.
+
+```shell
+docker run -p 8080:8080 plone/plone:4.3-demo
+```
+
+Then point your browser at `http://localhost:8080/Plone`, and log in with the user `admin` and the password `admin`.
 
 
 ## Plone 4.2

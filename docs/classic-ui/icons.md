@@ -28,7 +28,7 @@ Plone uses its icons.
 Check out all the available Bootstrap icons at [icons.getbootstrap.com](https://icons.getbootstrap.com/).
 
 Icons are shipped via `plone.staticresources`.
-See the file [package.json](https://github.com/plone/plone.staticresources/blob/master/package.json) of the package to get the actual version of the icons in Plone.
+See the file [`resource-versions.json`](https://github.com/plone/plone.staticresources/blob/master/resource-versions.json) of the package to get the actual version of the icons in Plone.
 
 
 (classic-ui-icons-registration-label)=
@@ -45,7 +45,7 @@ Plone ships with the following icon registrations by default.
 - [Language Flags](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_language_flags.xml)
 - [Country Flags](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_country_flags.xml)
 - [Plone](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
-- [Toolbar](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_plone.xml)
+- [Toolbar](https://github.com/plone/plone.staticresources/blob/master/src/plone/staticresources/profiles/default/registry/icons_toolbar.xml)
 
 The icons above are made available as Plone resources.
 For example, the icon registered as `lightning` has the resource path of `++plone++bootstrap-icons/lightning.svg`.
