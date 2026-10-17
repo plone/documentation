@@ -85,7 +85,7 @@ The following tables describe the most commonly used field types, grouped by the
 | `Timedelta` | `timedelta` | Stores a Python `timedelta`. | `IField`, `IMinMax` |
 | `SourceText` | `unicode` | A text field intended to store source text, such as HTML or Python code. | `IField`, `IMinMaxLen` |
 | `Object` | n/a | Stores a Python object that conforms to the interface given as the `schema`. There is no standard widget for this. | `IField`, `IObject` |
-| `URI` | `str` | A URI (URL) string. | `IField`, `MinMaxLen` |
+| `URI` | `str` | A URI (URL) string. | `IField`, `IMinMaxLen` |
 | `Id` | `str` | A unique identifier, either a URI or a dotted name. | `IField`, `IMinMaxLen` |
 | `DottedName` | `str` | A dotted name string. | `IField`, `IMinMaxLen` |
 | `InterfaceField` | `Interface` | A Zope interface. | `IField` |
