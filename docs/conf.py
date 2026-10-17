@@ -11,7 +11,7 @@
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 sys.path.insert(0, os.path.abspath("."))
 
@@ -22,7 +22,7 @@ project = "Plone Documentation"
 copyright = "Plone Foundation"
 author = "Plone community"
 trademark_name = "Plone"
-now = datetime.now(timezone.utc)
+now = datetime.now(UTC)
 year = str(now.year)
 
 # The version info for the project you're documenting, acts as replacement for
@@ -44,7 +44,7 @@ templates_path = ["_templates"]
 # They can be extensions coming with Sphinx (named "sphinx.ext.*")
 # or your custom ones.
 extensions = [
-    "latest_gh_version_substitution",
+    "collective.sphinxextexternalpackageversion",
     "myst_parser",
     "notfound.extension",
     "sphinx.ext.autodoc",
@@ -100,17 +100,17 @@ linkcheck_ignore = [
     r"https://github.com/plone/documentation/issues/new",
     r"https://javascript.plainenglish.io/you-dont-need-lodash-how-i-gave-up-lodash-693c8b96a07c",
     # Ignore pages that are rate limited or otherwise blocked
-    r"https://codesandbox.io/",  #volto
+    r"https://codesandbox.io/",  # volto
     r"https://docutils.sourceforge.io/",
     r"https://flaviocopes.com",  # volto
     r"https://hosted.weblate.org/",
     r"https://medium.com",
-    r"https://stackoverflow.com",  #volto
-    r"https://v5.reactrouter.com",  #volto
+    r"https://stackoverflow.com",  # volto
+    r"https://v5.reactrouter.com",  # volto
     r"https://web.archive.org/",
     r"https://www.gnu.org",
     r"https://www.merriam-webster.com/",
-    r"https://www.npmjs.com",  #volto
+    r"https://www.npmjs.com",  # volto
     # Bad TLS certificate
     r"https://pastanaga.io",  # See https://github.com/plone/volto/issues/8399
     # Ignore redirects and rate limiting by github.com
