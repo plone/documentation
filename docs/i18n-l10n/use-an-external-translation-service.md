@@ -26,7 +26,7 @@ When you click this icon, it invokes the Google Cloud Translation API, and the t
 
 ```{note}
 The usage of Google Cloud Translation API may create extra cost for the site administrator.
-See [Cloud Translation pricing](https://cloud.google.com/translate/pricing) for details.
+See [Cloud Translation pricing](https://cloud.google.com/products/translate/pricing) for details.
 ```
 
 

@@ -121,7 +121,7 @@ make vale VALEOPTS="--minAlertLevel='warning'" VALEFILES="docs/index.md"
 
 The command `make vale` automatically installs Vale into your Python virtual environment—which is also created via any documentation `Makefile` commands—when you invoke it for the first time.
 
-Vale has [integrations](https://vale.sh/docs/) with various IDEs.
+Vale has [integrations](https://docs.vale.sh/) with various IDEs.
 Integration might require installing Vale using operating system's package manager.
 
 -   [JetBrains](https://plugins.jetbrains.com/plugin/19613-vale-cli/docs)
@@ -357,7 +357,7 @@ The Plone Documentation Team adopted additional guidelines.
 
     The reviewer can't give targeted feedback for a single sentence when there are multiple sentences on one line.
     
-    When a single sentence is broken across multiple lines, the reviewer may not know that they can submit [one suggestion for multiple lines](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request#adding-comments-to-a-pull-request).
+    When a single sentence is broken across multiple lines, the reviewer may not know that they can submit [one suggestion for multiple lines](https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/commenting-on-a-pull-request#adding-comments-to-a-pull-request).
     Instead, they either make a comment or a single suggestion leaving the author to manually edit the lines.
     This in turn deprives you of the easy option to commit the suggestion to the pull request by a single click of a button in the GitHub user interface.
 
