@@ -14,7 +14,7 @@ myst:
 Page Templates are the primary way to generate HTML output in Plone Classic UI.
 They are HTML files enhanced with special attributes written in TAL (Template Attribute Language), TALES (TAL Expression Syntax), and METAL (Macro Expansion for TAL).
 
-Plone uses [Chameleon](https://chameleon.readthedocs.io/) as its template engine, integrated through the Zope framework.
+Plone uses [Chameleon](https://chameleon.readthedocs.io/en/latest/) as its template engine, integrated through the Zope framework.
 Chameleon is a fast HTML/XML template engine that implements the ZPT (Zope Page Templates) specification with additional features.
 
 
@@ -970,5 +970,5 @@ import pdb; pdb.set_trace()
 - {doc}`views`
 - {doc}`viewlets`
 - {doc}`template-global-variables`
-- [Chameleon documentation](https://chameleon.readthedocs.io/)
-- [Plone Training: Page Templates](https://training.plone.org/mastering-plone-5/zpt.html)
+- [Chameleon documentation](https://chameleon.readthedocs.io/en/latest/)
+- {doc}`training-2023:mastering-plone-5/zpt`

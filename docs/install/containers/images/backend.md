@@ -50,7 +50,7 @@ We encourage users of the `Plone` images to familiarize themselves with the opti
 #### Listen port
 
 By default, the Zope process inside the container will listen on TCP port 8080.
-In certain circumstances — Kubernetes or Podman pods — there may be a need to run
+In certain circumstances—Kubernetes or Podman pods—there may be a need to run
 more than one Zope process within the network namespace, which would result in
 listen port clashes as two different processes within the same namespace attempt
 to listen to the same TCP port.
@@ -97,7 +97,7 @@ docker run -p 8080:8080 -e ADDONS="eea.facetednavigation" -e SITE="Plone" -e TYP
 We advise against using this feature on production environments.
 ```
 
-### ZOPE variables
+### Zope variables
 
 | Environment variable | Description | Default value |
 | --- | --- | --- |
@@ -169,7 +169,7 @@ volumes:
 
 ```{note}
 Currently this image supports only the configuration of a PostgreSQL backend via configuration variables.
-If you need to use MySQL or Oracle, we recommend that you extend this image and overwrite the `/app/etc/relstorage.conf` file.
+If you need to use MySQL or Oracle, we recommend that you extend this image and overwrite the {file}`/app/etc/relstorage.conf` file.
 ```
 
 
@@ -208,6 +208,40 @@ services:
       POSTGRES_DB: plone
     ports:
     - "5432:5432"
+```
+
+### ZODB-PGJSONB variables
+
+[zodb-pgjsonb](https://bluedynamics.github.io/zodb-pgjsonb/) is a PostgreSQL based storage where ZODB pickles are converted to JSON and stored in JSONB columns in PostgreSQL.
+
+The available variables are the following:
+
+| Environment variable | Description | RelStorage option | Default value |
+| --- | --- | --- | --- |
+| `ZODB_PGJSONB_DSN` | {ref}`containers-images-backend-pgsjonb-dsn-label` for the database interface | | |
+| `ZODB_PGJSONB_HISTORY_PRESERVING` | History preserving mode | `history-preserving` | `false` |
+| `ZODB_PGJSONB_S3BLOBS_ENABLED` | Enable sending blobs to S3 | - | `false` |
+| `ZODB_PGJSONB_S3BLOBS_ENDPOINT_URL` | S3 endpoint url | `s3-endpoint-url` | `` required if ZODB_PGJSONB_Z3BLOBS_ENABLED=true|
+| `ZODB_PGJSONB_S3BLOBS_BUCKET_NAME` | S3 bucket name | `s3-bucket-name` | `` required if ZODB_PGJSONB_Z3BLOBS_ENABLED=true|
+| `ZODB_PGJSONB_S3BLOBS_ACCESS_KEY` | S3 access key | `s3-access-key` | `` required if ZODB_PGJSONB_Z3BLOBS_ENABLED=true|
+| `ZODB_PGJSONB_S3BLOBS_SECRET_KEY` | S3 secret key | `s3-secret-key` | `` required if ZODB_PGJSONB_Z3BLOBS_ENABLED=true|
+| `ZODB_PGJSONB_S3BLOBS_USE_SSL` | Whether to use SSL when connecting to the S3 endpoint | `s3-use-ssl` | `true` |
+| `ZODB_PGJSONB_S3BLOBS_REGION` | S3 region | `s3-region` | `` |
+| `ZODB_PGJSONB_S3BLOBS_PREFIX` | S3 prefix | `s3-prefix` | `` |
+| `ZODB_PGJSONB_S3BLOBS_THRESHOLD` | Blobs bigger in size than this value will be uploaded to S3 | `blob-threshold` | `100KB` |
+| `ZODB_PGJSONB_S3BLOBS_CACHE_DIR` | Local dir for a LRU blob-cache | `blob-cache-dir` | `/data/blobcache` |
+| `ZODB_PGJSONB_S3BLOBS_CACHE_SIZE` | Local cache-dir max size | `blob-cache-size` | `1GB` |
+
+
+(containers-images-backend-pgsjonb-dsn-label)=
+
+#### PGJSONB DSN
+
+A valid PostgreSQL DSN is required with a list of parameters separated with whitespace.
+A typical DSN looks like the following:
+
+```console
+dbname='zodb' user='username' host='localhost' password='pass' port='5431'
 ```
 
 
@@ -261,16 +295,16 @@ docker run -p 8080:8080 -e ADDONS="plone.volto==3.1.0a3" plone/plone-backend:{PL
 | `DEVELOP` | A space separated list of python libraries to install in editable mode | {ref}`containers-images-backend-developing-packages-label` |
 | `PIP_PARAMS` | Parameters used in `pip` installation commands | [`pip install`](https://pip.pypa.io/en/stable/cli/pip_install/) |
 
-#### Adding configuration to `zope.conf` or additional ZCML
+#### Adding configuration to {file}`zope.conf` or additional ZCML
 
-Some Plone add-ons require changes to `zope.conf` or extra ZCML.
+Some Plone add-ons require changes to {file}`zope.conf` or extra ZCML.
 
 With the standard container, it is not possible to add configuration fragments to
-`zope.conf` directly or add extra ZCML, like it is with the `buildout` deployment
+{file}`zope.conf` directly or add extra ZCML, like it is with the `buildout` deployment
 method.
 
 However, you can derive your own container image, and drop in configuration
-fragments.  See {ref}`backend-extending-from-this-image-label` below for instructions.
+fragments. See {ref}`backend-extending-from-this-image-label` below for instructions.
 
 (containers-images-backend-developing-packages-label)=
 
@@ -299,7 +333,7 @@ docker run -p 8080:8080 -e DEVELOP="/app/src/mysite.policy" -v /path/to/mysite.p
 
 ## Extending from this image
 
-In a directory create a  `Dockerfile` file:
+In a directory create a  {file}`Dockerfile` file:
 
 ```Dockerfile
 FROM plone/plone-backend:{PLONE_BACKEND_MINOR_VERSION}
@@ -324,7 +358,7 @@ docker run -p 8080:8080 myproject:latest start
 ### Changing default values of environment variables
 
 All the environment variables documented above are supported in your
-derived container's Dockerfile.  You can override the default values
+derived container's {file}`Dockerfile`. You can override the default values
 of variables as follows:
 
 ```Dockerfile
@@ -341,28 +375,28 @@ Check the respective variable documentation above to determine whether
 you should use it, or use a different method to get the desired result
 in production.
 
-### Adding `zope.conf` configuration fragments
+### Adding {file}`zope.conf` configuration fragments
 
-In the directory containing your `Dockerfile`, create a folder `etc/zope.conf.d`.
-Add your `zope.conf` configuration fragments there.
+In the directory containing your {file}`Dockerfile`, create a folder {file}`etc/zope.conf.d`.
+Add your {file}`zope.conf` configuration fragments there.
 
-Now add the following to your `Dockerfile`, before any `CMD` or `ENTRYPOINT`
+Now add the following to your {file}`Dockerfile`, before any `CMD` or `ENTRYPOINT`
 stanzas it may have, and after the `FROM` and any `RUN` stanzas:
 
 ```Dockerfile
 COPY /etc/zope.conf.d/*.conf /app/etc/zope.conf.d/
 ```
 
-This ensures your fragments are deployed in the `zope.conf.d` folder, which then
-will be used to amend the `zope.conf` file prior to starting Plone.
+This ensures your fragments are deployed in the {file}`zope.conf.d` folder, which then
+will be used to amend the {file}`zope.conf` file prior to starting Plone.
 
 ### Adding ZCML fragments
 
-In the directory containing your `Dockerfile`, create a folder `etc/package-includes`.
-Add your ZCML configuration fragments (named `*-meta.zcml`, `*-configure.zcml`,
-`*-overrides.zcml`) as files in that folder.
+In the directory containing your {file}`Dockerfile`, create a folder {file}`etc/package-includes`.
+Add your ZCML configuration fragments (named {file}`*-meta.zcml`, {file}`*-configure.zcml`,
+{file}`*-overrides.zcml`) as files in that folder.
 
-Now add the following to your `Dockerfile`, before any `CMD` or `ENTRYPOINT`
+Now add the following to your {file}`Dockerfile`, before any `CMD` or `ENTRYPOINT`
 stanzas it may have, and after the `FROM` and any `RUN` stanzas:
 
 ```Dockerfile
@@ -383,7 +417,7 @@ You can run Docker as an arbitrary user with the `--user` option.
 
 To persist backend data between restarts of Docker, use both options of `--user` and `-v`.
 
-The following command will run the Plone backend container as an arbitrary user, and persist the backend data in a volume, provided that the owner of the directory `/data` is the same as the `--user` option.
+The following command will run the Plone backend container as an arbitrary user, and persist the backend data in a volume, provided that the owner of the directory {file}`/data` is the same as the `--user` option.
 
 ```shell
 docker run --user="$(id -u)" -v $(pwd)/data:/data plone/plone-backend
@@ -413,6 +447,6 @@ For a complete list of tags and versions, visit the [`plone/plone-backend` page 
 
 ## Contribute
 
-- [Issue Tracker](https://github.com/plone/plone-backend/issues)
-- [Source Code](https://github.com/plone/plone-backend/)
-- [Documentation](https://github.com/plone/plone-backend/)
+- [Issue Tracker](https://github.com/plone/container-backend/issues)
+- [Source Code](https://github.com/plone/container-backend/)
+- [Documentation](https://github.com/plone/container-backend/)

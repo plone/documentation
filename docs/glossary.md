@@ -350,7 +350,7 @@ hoisting
     In case two dependencies have conflicting version dependencies of the same library, the hoisting will not be possible (for that conflicting dependency) and you'll see multiple instances of the same library in the bundle, or you'll see that the add-on receives its own `node_modules` folder.
 
 React
-    [React](https://www.reactjs.dev/) is a JavaScript library for building user interfaces.
+    [React](https://reactjs.dev/) is a JavaScript library for building user interfaces.
     Volto, the frontend for Plone 6, uses React.
 
 Sphinx
@@ -983,4 +983,7 @@ virtualenv
 
 venv
     The {mod}`venv` module in the Python standard library supports creating lightweight {term}`virtual environment`s, each with their own independent set of Python packages installed in their {file}`site-packages` directories.
+
+monorepo
+    In version-control systems, a monorepo or monorepository is a software development strategy in which the code for a number of projects is stored in the same repository.
 ```

@@ -148,7 +148,7 @@ Plone 6.0 means we move from Zope 4 to 5.
 This drops support for Python 2.7, drops `ZServer`, and removes deprecated code.
 
 ```{seealso}
-[Zope 5.0a1](https://zope.readthedocs.io/en/latest/changes.html#a1-2020-02-28)
+[Zope 5.0a1](https://zope.readthedocs.io/en/5.x/changes.html#a1-2020-02-28)
 ```
 
 Some imports may need to change.
