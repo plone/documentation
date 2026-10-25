@@ -35,8 +35,16 @@ The following command shows typical usage.
 plone-exporter instance/etc/zope.conf Plone /tmp/plone_data/
 ```
 
+
 By default, the revisions history (older versions of each content item) are not exported.
 If you do want them, add `--include-revisions` on the command line.
+
+##Partial export
+Use the content-path option to export only specific content.It can be repeated, and each path is relative to the site root. 
+
+Use the paths-file option to read paths from a text file, with one content path per line. Empty lines and lines starting with a hash are ignored.
+
+The two options can be combined
 
 
 ### `plone-importer`
