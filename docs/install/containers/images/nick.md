@@ -45,18 +45,25 @@ Then use the digest in place of the tag, as `plone/nick@sha256:<digest>`.
 The image runs `nick`, which migrates the database, installs the profiles, and starts the API on port 8080 and the job worker.
 Set `DB_PASSWORD` and `SECRET`; the container stops at startup if either one is missing.
 
-Create a network, and start a PostgreSQL database on it.
+Create a network and two named volumes, and start a PostgreSQL database on the network.
 
 ```shell
 docker network create plone
-docker run -d --name nick-db --network plone -e POSTGRES_USER=nick -e POSTGRES_PASSWORD=nick -e POSTGRES_DB=nick postgres:18-alpine
+docker volume create nick-data
+docker volume create nick-blobs
+docker run -d --name nick-db --network plone -v nick-data:/var/lib/postgresql -e POSTGRES_USER=nick -e POSTGRES_PASSWORD=nick -e POSTGRES_DB=nick postgres:18-alpine
 ```
+
+A named volume is storage that Docker manages, and it outlives the container that uses it.
+The `nick-data` volume keeps the database, and the `nick-blobs` volume keeps the uploaded files in the default `file` blob storage.
+Without them, removing a container removes the data it holds.
+Removing a container with `docker rm` keeps its volumes, but `docker volume rm` deletes the data in them.
 
 Start Nick on the same network, and point it at the database.
 Give PostgreSQL a few seconds to start before you run Nick.
 
 ```shell
-docker run -d --name nick --network plone -p 8080:8080 -e DB_HOST=nick-db -e DB_USER=nick -e DB_PASSWORD=nick -e DB_NAME=nick -e SECRET=change-me plone/nick:latest
+docker run -d --name nick --network plone -p 8080:8080 -v nick-blobs:/app/var/blobstorage -e DB_HOST=nick-db -e DB_USER=nick -e DB_PASSWORD=nick -e DB_NAME=nick -e SECRET=change-me plone/nick:latest
 ```
 
 Then request the API from your computer.
@@ -143,7 +150,9 @@ volumes:
   data: {}
 ```
 
-The `api` and `worker` services share the `blobs` volume, which mounts the `file` blob storage.
+The `data` volume holds the PostgreSQL database.
+The `blobs` volume holds the uploaded files in the `file` blob storage, and the `api` and `worker` services share it.
+`docker compose down` keeps both volumes, but `docker compose down -v` deletes them, and the data with them.
 The stack uses the `nick` password and the `change-me` secret for demonstration only.
 
 
