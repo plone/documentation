@@ -21,10 +21,10 @@ The moving tags point to the newest release they cover:
 
 - `3.0` points to the newest 3.0.x release.
 - `3` points to the newest 3.x release.
-- `latest` points to the version in the `version.txt` file of the repository.
+- `latest` points to the version in the {file}`version.txt` file of the repository.
 
 A prerelease, such as `3.1.0-alpha.1`, gets only its own tag.
-It does not move `latest`, `3` or `3.0`.
+It does not move `latest`, `3`, or `3.0`.
 
 Published images are rebuilt in place, so a tag such as `plone/nick:3.0.0` can point to a new build of the same version.
 To run one exact build, pin its image digest.
@@ -37,13 +37,16 @@ docker buildx imagetools inspect plone/nick:3.0.0 --format '{{.Manifest.Digest}}
 Then use the digest in place of the tag, as `plone/nick@sha256:<digest>`.
 
 
-## Using this image
+## Usage
+
+This section describes how to use the `plone/nick` image.
 
 
 ### Run with PostgreSQL
 
 The image runs `nick`, which migrates the database, installs the profiles, and starts the API on port 8080 and the job worker.
-Set `DB_PASSWORD` and `SECRET`; the container stops at startup if either one is missing.
+Pass the required `DB_PASSWORD` and `SECRET` environment variables with the `-e` option of `docker run`, as in the following examples.
+The container stops at startup if either one is missing.
 
 Create a network and two named volumes, and start a PostgreSQL database on the network.
 
@@ -56,8 +59,24 @@ docker run -d --name nick-db --network plone -v nick-data:/var/lib/postgresql -e
 
 A named volume is storage that Docker manages, and it outlives the container that uses it.
 The `nick-data` volume keeps the database, and the `nick-blobs` volume keeps the uploaded files in the default `file` blob storage.
-Without them, removing a container removes the data it holds.
-Removing a container with `docker rm` keeps its volumes, but `docker volume rm` deletes the data in them.
+With these named volumes, it's possible to remove the container without removing the data and files it holds.
+
+To remove the containers only, stop them, and then remove them with the following command.
+The volumes and their data remain.
+
+```shell
+docker stop nick nick-db
+docker rm nick nick-db
+```
+
+To remove the data, remove the volumes with the following command.
+
+```shell
+docker volume rm nick-data nick-blobs
+```
+
+It's not possible to remove a volume that a container references, even if that container is stopped.
+Remove the containers first.
 
 Start Nick on the same network, and point it at the database.
 Give PostgreSQL a few seconds to start before you run Nick.
@@ -74,7 +93,7 @@ curl -H "Accept: application/json" http://localhost:8080/
 ```
 
 The `DB_HOST` value must name a database that the container can reach, which is why both containers join the same network.
-Use your own values for `DB_USER`, `DB_PASSWORD`, `DB_NAME` and `SECRET` in any real setup.
+Use your own values for `DB_USER`, `DB_PASSWORD`, `DB_NAME`, and `SECRET` in any real setup.
 
 
 ### Run with Docker Compose
@@ -160,7 +179,7 @@ The stack uses the `nick` password and the `change-me` secret for demonstration 
 
 By default, the container runs all three modules.
 To run only some of them, pass the modules as the command, or set the `NICK_MODULES` variable.
-The modules are `migrate`, `api` and `worker`.
+The modules are `migrate`, `api`, and `worker`.
 
 ```shell
 docker run plone/nick --modules=migrate
@@ -170,7 +189,13 @@ docker run plone/nick --modules=worker
 
 The `migrate` module exits with a non-zero status when it hits errors.
 Each command needs the database and secret variables from the previous section.
-To set the modules with an environment variable instead, use `-e NICK_MODULES=api`.
+
+To set the modules with an environment variable instead, pass it before the image name.
+For example, for the `api` module, use the following command.
+
+```shell
+docker run -e NICK_MODULES=api plone/nick
+```
 
 
 ## Configuration variables
@@ -187,12 +212,12 @@ Set `PROFILES` and a real `SECRET` before you run the image in production.
 | `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` | PostgreSQL connection. `DB_PASSWORD` is required. |
 | `SECRET` | Secret that signs the authentication tokens. Required. |
 | `PROFILES` | Profiles to install, separated by commas. Default: `@plone/nick:default`, the demo site with an `admin` user whose password is `admin`. |
-| `NICK_MODULES` | Modules to run: `migrate`, `api` or `worker`, separated by commas. Default: all of them. |
+| `NICK_MODULES` | Modules to run: `migrate`, `api`, or `worker`, separated by commas. Default: all of them. |
 | `PORT` | Port where the API listens. Default: `8080`. |
 | `ALLOWED_ORIGINS` | Origins that CORS allows, such as the address of the frontend. |
-| `BLOBS_DIR` | Directory of the `file` blob storage. Default: `/app/var/blobstorage`. Mount a volume there, or use the `db` or `s3` blob storage. |
-| `ADDONS` | Add-ons from npm to install when the container starts, as space-separated `pnpm add` specs. Use it only to try add-ons out. |
-| `/app/config.ts` | A `config.ts` file mounted at this path replaces the environment configuration. |
+| `BLOBS_DIR` | Directory of the `file` blob storage. Default: {file}`/app/var/blobstorage`. Mount a volume there, or use the `db` or `s3` blob storage. |
+| `ADDONS` | Add-ons from npm to install when the container starts, as space-separated `pnpm add` specs. Use it only to try out add-ons. |
+| `/app/config.ts` | A {file}`config.ts` file mounted at this path replaces the environment configuration. |
 
 Nick reads other settings from the environment as well.
 For the full list, and for the settings of a production deployment, see the [Deployment](https://nick.docs.plone.org/admin-guide/deployment) guide in the Nick documentation.
@@ -200,7 +225,7 @@ For the full list, and for the settings of a production deployment, see the [Dep
 
 ## Add-ons
 
-A Nick add-on is an npm package with profiles, migrations and code.
+A Nick add-on is an npm package with profiles, migrations, and code.
 Build an image on top of this one to add your add-ons, as in the following {file}`Dockerfile`.
 
 ```Dockerfile
@@ -214,11 +239,13 @@ ENV PROFILES=@plone/nick:core,@acme/nick-addon:default
 Read the [Add-ons](https://nick.docs.plone.org/developer-guide/addons) chapter of the Nick documentation for how to write one.
 
 The `ADDONS` variable installs add-ons every time the container starts.
-Use it only to try an add-on out, and build an image for production.
+Use it only to try out an add-on, and build an image for production.
 
 
 ## Contribute
 
-- [Issue tracker](https://github.com/plone/container-nick/issues)
-- [Source code](https://github.com/plone/container-nick)
+To contribute to Nick or its image, use the following links.
+
+- [`container-nick` issue tracker](https://github.com/plone/container-nick/issues)
+- [`container-nick` source code](https://github.com/plone/container-nick)
 - [Nick source code](https://github.com/plone/nick)
