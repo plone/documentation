@@ -19,6 +19,7 @@ The Plone community maintains the following official images:
 | {doc}`frontend` | Plone default frontend written in React. Requires a Plone backend |
 | {doc}`zeo`      | ZEO server, a specialized database to be used with Plone backend  |
 | {doc}`aurora`   | Aurora, the future React frontend of Plone. Requires a Plone backend |
+| {doc}`nick`     | Nick, the Nearly Headless CMS that serves the Plone REST API. Requires a PostgreSQL database |
 
 
 ## Other container images
@@ -39,5 +40,6 @@ aurora
 backend
 frontend
 zeo
+nick
 historical
 ```
