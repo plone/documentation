@@ -479,6 +479,10 @@ WYSIWYG
 TinyMCE
     The rich text {term}`WYSIWYG` editor used in {term}`Classic UI`.
 
+toast
+    A toast is a user interface element that, like bread from a toaster, pops up on the screen.
+    It typically displays brief status information to the visitor, such as a confirmation or an error, and disappears after a few seconds or when dismissed.
+
 elementEditor
     A generic {term}`volto-slate` plugin architecture that can be used to create other editor interactions that follow the pattern of having a button that toggles a format (an inline element).
     It also creates a separate edit form for advanced customization of the data attached to the element.
