@@ -23,6 +23,7 @@ configuration-registry
 content-types/index
 control-panels
 fields
+generic-setup
 global-utils
 indexing
 upgrading/index

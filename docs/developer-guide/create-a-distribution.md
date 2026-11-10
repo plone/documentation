@@ -19,10 +19,9 @@ For a conceptual guide, see {doc}`/conceptual-guides/distributions`.
 ```
 
 
-## Create a backend add-on
+## Use a backend add-on
 
-These instructions assume that you already have created a Plone backend add-on package,
-and now you want to add a distribution to it.
+These instructions assume that you have already {doc}`created a Plone backend add-on package <create-a-backend-add-on>`, and now you want to add a distribution to it.
 
 A Plone distribution exists inside a Python package that can be installed by `pip`.
 
