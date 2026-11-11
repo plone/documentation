@@ -1,0 +1,69 @@
+extends: script
+message: "Start each sentence on a new line."
+link: https://sembr.org
+level: warning
+scope: raw
+script: |
+  text := import("text")
+
+  matches := []
+
+  // Regions the rule must not fire in: fenced code blocks and inline code.
+  hidden := []
+  for m in text.re_find("(?s)```.*?```", scope, -1) {
+    hidden = append(hidden, {begin: m[0].begin, end: m[0].end})
+  }
+  for m in text.re_find("`[^`\n]+`", scope, -1) {
+    hidden = append(hidden, {begin: m[0].begin, end: m[0].end})
+  }
+
+  is_hidden := func(pos) {
+    for h in hidden {
+      if pos >= h.begin && pos < h.end {
+        return true
+      }
+    }
+    return false
+  }
+
+  // Words whose trailing period doesn't end a sentence.
+  abbrevs := {"etc.": true, "vs.": true, "cf.": true, "al.": true,
+    "Dr.": true, "Mr.": true, "Mrs.": true, "Ms.": true, "Prof.": true,
+    "St.": true, "No.": true, "Fig.": true, "Eq.": true, "Ex.": true}
+
+  for m in text.re_find(`[A-Za-z0-9][.!?]['")\]]* +['"(]*[A-Z]`, scope, -1) {
+    at := m[0].begin
+    if is_hidden(at) {
+      continue
+    }
+
+    // Sembr governs prose: skip headings and table rows.
+    line_start := 0
+    for i := at; i > 0; i-- {
+      if scope[i-1] == '\n' {
+        line_start = i
+        break
+      }
+    }
+    first := scope[line_start]
+    if first == '#' || first == '|' {
+      continue
+    }
+
+    // The word the period ends: dotted abbreviations (e.g., U.S.) and
+    // single-letter initials (John B. Smith) don't end sentences.
+    word_start := at
+    for i := at; i > line_start; i-- {
+      c := scope[i-1]
+      if !(c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9' || c == '.') {
+        break
+      }
+      word_start = i - 1
+    }
+    word := scope[word_start:at+2]
+    if abbrevs[word] || text.contains(word[:len(word)-1], ".") || at - word_start == 0 {
+      continue
+    }
+
+    matches = append(matches, {begin: at + 1, end: m[0].end})
+  }

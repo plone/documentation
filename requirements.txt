@@ -16,4 +16,4 @@ sphinxcontrib-video
 sphinxcontrib-youtube
 sphinxext-opengraph
 sphinxcontrib.mermaid
-vale
+vale==3.18.0
