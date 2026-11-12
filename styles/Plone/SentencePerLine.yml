@@ -67,3 +67,4 @@ script: |
 
     matches = append(matches, {begin: at + 1, end: m[0].end})
   }
+  matches
