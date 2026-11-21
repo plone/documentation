@@ -1,3 +1,4 @@
+collective-sphinxextexternalpackageversion
 linkify-it-py
 plone-sphinx-theme<2
 sphinx<9  # See https://github.com/plone/documentation/issues/2037

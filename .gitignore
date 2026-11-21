@@ -14,3 +14,5 @@ docs/volto
 
 # editor files
 .vscode
+
+*.pyc
