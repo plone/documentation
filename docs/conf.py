@@ -5,7 +5,9 @@
 # -- Path setup --------------------------------------------------------------
 
 import re
+import sys
 from datetime import datetime
+from pathlib import Path
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -14,6 +16,23 @@ from datetime import datetime
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath("."))
+
+# The plone-client-python http:example builder lives in the plone.restapi
+# submodule (plone/plone.restapi#2098) and arrives with a submodule update.
+# Register it only when the submodule provides it, so the build is unchanged until then.
+plone_restapi_source = Path(__file__).resolve().parent / "plone.restapi" / "docs" / "source"
+if (plone_restapi_source / "plone_client_python.py").is_file():
+    sys.path.insert(0, str(plone_restapi_source))
+
+    from plone_client_python import build_plone_client_python
+    from sphinxcontrib.httpexample import register_builder
+
+    register_builder(
+        "plone-client-python",
+        build_plone_client_python,
+        "python",
+        "plone-client",
+    )
 
 
 # -- Project information -----------------------------------------------------
