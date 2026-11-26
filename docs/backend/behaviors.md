@@ -78,11 +78,6 @@ To view a complete list of built-in behaviors, browse to {guilabel}`Content Type
 | `plone.thumb_icon` | Thumbs and icon handling | Options to suppress thumbs or icons and to override thumb size in listings, tables, and other user interface elements |
 | `plone.versioning` | Versioning | Versioning support with `CMFEditions` |
 
-```{todo}
-For each behavior in the table above, one may view the source code of the checkbox (its `name` attribute) to view its Short Name.
-An issue has been created to better expose these in the user interface.
-[Control panel for Content Type > Behaviors short names not displayed to user Products.CMFPlone#3706](https://github.com/plone/Products.CMFPlone/issues/3706)
-```
 
 ## Adding or removing a behavior from a content type
 
