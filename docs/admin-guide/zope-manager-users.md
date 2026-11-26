@@ -107,3 +107,45 @@ When you run the script, if the user already exists:
     Maybe the user already exists and nothing is done then.
     Or the implementation does not give info when it succeeds.
     ```
+### `addzopeuser` script in dockerized setup
+
+#### Prerequisites
+-   A running docker swarm stack from the full featured docker based Plone Volto deployment 
+-   Created by current Cookieplone project template including backend, frontend, postgres, traefik, varnish:
+
+#### Create a new Zope Manager User with a non existing user-ID
+
+-   Enter the host via ssh as root
+-   list the running containers: docker ps
+-   enter a shell in the first backend container listed: `docker exec -it [[4-digitPartOfID]] bash`
+-   run command in the app folder: `./docker-entrypoint.sh bin/addzopeuser -c /app/etc/relstorage.conf userid password`
+
+Response: `User userid created`
+The user is now available in the ZMI root at at /acl_users/users/manage_users
+
+#### Hown to access the ZMI root from via basicauth and the new user 
+In the Volto page root use the url `/ClassicUI/aq_parent/acl_users/users/manage_users`
+
+##### Notes on permissions
+
+-   Check permissions in the ZMI root at `/acl_users/manage_access` and search for userid
+-   In Volto from the browser use the url `/ClassicUI/aq_parent/acl_users/manage_access`
+
+The new user has `Manager` role, but not `Owner` role and no `Take ownership` permission
+-   You can add the Owner role in the ZMI root manually, but only as the original `admin` user.
+
+####` Remark on httpauth challenges for the ZMI `admin user in Cookieplone based Volto and ClassicUI projects using Traefik
+
+The original cookieplone-template `project` in the above full setup includes a traefik middleware `mw-backend-auth` in the `docker-compose.yaml` `service -> backend -> labels` section. This basic httpauth overrides the ZMI httpauth for the original admin user-id.
+
+```{note}
+To change the Traefik middleware basicauth password edit the yaml file in devops/stacks/[hosturl].yml named after the hostname and follow the instructions in the comments for `mw-backend-auth` to create a proper hash and redeploy the project.
+```
+
+```{important}
+Test the resulting logins in fresh incognito windows!
+```
+
+in the ZMI root
+at the Plonelogin
+How this has impact on the Plone Volto login needs testing in your particular setup.
